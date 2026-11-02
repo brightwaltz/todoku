@@ -55,6 +55,25 @@ class Source:
     quote: str = ""
 
 
+# 手続の出どころ。国の制度の根拠法令・条項は、このデータを MCP サーバーで引いて写した
+PROCEDURES_DATASET = "デジタル庁「行政手続等の棚卸調査結果（令和7年度）」（調査時点 2025-11-01）"
+PROCEDURE_MATCHES = {
+    "direct": "この制度の申請の手続",
+    "general": "この制度を受けるときに使う一般の手続（データにこの制度の記載はない）",
+}
+
+
+@dataclass(frozen=True)
+class Procedure:
+    id: str
+    name: str
+    law: str
+    article: str
+    attachments: str = ""
+    match: str = "direct"
+    note: str = ""
+
+
 @dataclass
 class Program:
     id: str
@@ -72,6 +91,8 @@ class Program:
     bring: list[str] = field(default_factory=list)
     amount: list[str] = field(default_factory=list)
     timing: list[str] = field(default_factory=list)
+    # 行政手続データの手続（根拠法令・条項）。国の制度だけ
+    procedures: list[Procedure] = field(default_factory=list)
     # 前提の手続き（via と prereq で参照している制度）。読み込みのときに埋める
     depends_on: set[str] = field(default_factory=set)
 
@@ -171,6 +192,10 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
     if level == "machida" and not any("city.machida.tokyo.jp" in s.url for s in sources):
         raise RuleError(f"{where}: 町田市の制度に町田市のページの出典がない")
 
+    procedures = [_load_procedure(p, where) for p in raw.get("procedures") or []]
+    if procedures and level != "national":
+        raise RuleError(f"{where}: procedures は国の制度だけ")
+
     return Program(
         id=pid,
         number=int(need("number")),
@@ -187,7 +212,33 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         bring=list(raw.get("bring") or []),
         amount=_as_list(raw.get("amount")),
         timing=_as_list(raw.get("timing")),
+        procedures=procedures,
         depends_on=depends_on,
+    )
+
+
+def _load_procedure(raw: dict, where: str) -> Procedure:
+    if not isinstance(raw, dict):
+        raise RuleError(f"{where}: procedures の中は辞書で書く: {raw!r}")
+    for key in ("id", "name", "law", "article"):
+        if not raw.get(key):
+            raise RuleError(f"{where}: 手続に {key} がない")
+    if not isinstance(raw["id"], str):
+        raise RuleError(f"{where}: 手続ID は文字列で書く（先頭の 0 や英字を失わないように）: {raw['id']!r}")
+    match = raw.get("match", "direct")
+    if match not in PROCEDURE_MATCHES:
+        raise RuleError(f"{where}: 手続の match は {sorted(PROCEDURE_MATCHES)} のどれか")
+    note = (raw.get("note") or "").strip()
+    if match == "general" and not note:
+        raise RuleError(f"{where}: 一般の手続（{raw['id']}）には、この制度との関係を note に書く")
+    return Procedure(
+        id=raw["id"],
+        name=raw["name"],
+        law=raw["law"],
+        article=raw["article"],
+        attachments=raw.get("attachments", ""),
+        match=match,
+        note=note,
     )
 
 

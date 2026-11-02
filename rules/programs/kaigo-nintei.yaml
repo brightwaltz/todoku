@@ -41,3 +41,15 @@ sources:
     title: 要介護（要支援）認定の申請
     license: 町田市ホームページ利用規約（転載不可・リンク可）
     checked: 2026-11-02
+procedures:
+  # デジタル庁「行政手続等の棚卸調査結果（令和7年度）」を、Claude Code から行政手続データの MCP サーバーで引いた（2026-11-03）
+  - id: "110382"
+    name: "要介護認定の申請"
+    law: "介護保険法"
+    article: "第27条第1項"
+    attachments: "その他の添付書類"
+  - id: "110391"
+    name: "要支援認定の申請"
+    law: "介護保険法"
+    article: "第32条第1項"
+    attachments: "その他の添付書類"
