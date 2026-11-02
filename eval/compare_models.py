@@ -158,7 +158,7 @@ def main(argv: list[str] | None = None) -> int:
                 continue
             r = score_reads(extraction, case.get("answers") or {})
             r["read"] = {e.fact: [e.value, e.confidence] for e in extraction.facts}
-            r["wrong_detail"] = {f: [r["read"][f][0], case["answers"].get(f, DONT_KNOW)] for f in r["high_wrong"]}
+            r["wrong_detail"] = {f: [r["read"][f][0], (case.get("answers") or {}).get(f, DONT_KNOW)] for f in r["high_wrong"]}
             runs["cases"][case["id"]] = r
         runs["calls"] = list(getattr(client, "calls", []))
         per_model[model] = runs
