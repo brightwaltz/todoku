@@ -44,9 +44,10 @@ def test_step_until_done_and_no_text_needed():
 
 
 def test_step_drops_unknown_facts_and_values():
-    data = client.post("/api/step", json={"facts": {"nope": True, "care_level": "care9"}}).json()
+    data = client.post("/api/step", json={"facts": {"nope": True, "care_level": "care9", "on_welfare": 1}}).json()
     assert all(k["fact"] != "nope" for k in data["known"])
     assert all(k["fact"] != "care_level" for k in data["known"])
+    assert all(k["fact"] != "on_welfare" for k in data["known"])
 
 
 def test_summary_only_points_at_shown_programs():

@@ -79,6 +79,8 @@ def clean_facts(raw: dict[str, Any]) -> dict[str, Any]:
         fact = RULES.facts.get(fid)
         if fact is None:
             continue
+        if fact.type == "bool" and not isinstance(value, bool) and value != DONT_KNOW:
+            continue  # 1 や "true" は受け付けない（True と 1 は == で等しいため、ここで弾く）
         if value == DONT_KNOW or value in fact.values():
             out[fid] = value
     return out
