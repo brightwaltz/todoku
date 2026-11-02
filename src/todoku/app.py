@@ -18,7 +18,9 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from . import rules as rules_mod
-from .claude import ClaudeRefused, make_client
+import anthropic
+
+from .claude import ClaudeFailed, ClaudeRefused, make_client
 from .engine import DONT_KNOW, SHOWN, Result, evaluate, known, with_implied
 from .questions import MAX_QUESTIONS, next_question
 
@@ -179,6 +181,8 @@ def consult(body: ConsultIn, request: Request) -> dict:
         extraction = CLAUDE.extract(RULES, text)
     except ClaudeRefused:
         raise HTTPException(422, "この相談文は読み取れませんでした。言い方を変えて試してください")
+    except (ClaudeFailed, anthropic.APIError):
+        raise HTTPException(503, "読み取りがうまくいきませんでした。少し待ってから、もう一度試してください")
     facts = extraction.confirmed()
     suggestions = extraction.suggestions()
     return {
@@ -211,8 +215,8 @@ def summary(body: SummaryIn, request: Request) -> dict:
     shown = [r for r in results.values() if r.status in SHOWN and r.status != "unknown"]
     try:
         lines = CLAUDE.summarize(RULES, body.subject[:12] or "ご本人", shown)
-    except ClaudeRefused:
-        lines = []
+    except (ClaudeFailed, anthropic.APIError):
+        lines = []  # まとめが出なくても、結果は規則ファイルから読める
     return {"engine": CLAUDE.name, "lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]}
 
 

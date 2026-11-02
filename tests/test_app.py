@@ -89,3 +89,16 @@ def test_index_and_health():
     assert client.get("/static/app.js").status_code == 200
     h = client.get("/api/health").json()
     assert h["programs"] == 20
+
+
+def test_claude_failure_becomes_a_message(monkeypatch):
+    from todoku import app as app_mod
+    from todoku.claude import ClaudeFailed
+
+    def broken(rules, text):
+        raise ClaudeFailed("max_tokens で切れた")
+
+    monkeypatch.setattr(app_mod.CLAUDE, "extract", broken)
+    res = client.post("/api/consult", json={"text": "母のことで相談です"})
+    assert res.status_code == 503
+    assert "もう一度" in res.json()["detail"]

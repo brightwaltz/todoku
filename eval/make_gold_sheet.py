@@ -19,7 +19,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from todoku import rules as rules_mod  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-MARKS = "○＝案内すべき（今すぐ、または前の手続きを済ませれば対象になりうる）／×＝案内すべきでない／？＝この説明だけでは決められない"
+MARKS = ("○＝公式の条件に当たりうる（今すぐ、または前の手続きを済ませれば。本人が望むかは問わない）／"
+         "×＝条件に当たらない（すでに受けている・済んでいる制度も×）／？＝この説明だけでは決められない")
 
 
 def main() -> None:
@@ -36,7 +37,9 @@ def main() -> None:
         for case in cases:
             w.writerow([case["id"], case["text"].strip(), case["profile"].strip()] + [""] * len(programs))
     lines = ["# 正解付けに使う制度の一覧", "", f"記号：{MARKS}", "",
-             "公式ページだけを見て付けてください（窓口の規則ファイルは見ない）。", ""]
+             "公式ページだけを見て付けてください（窓口の規則ファイルは見ない）。",
+             "「本人が望むか」「役に立ちそうか」ではなく、公式の条件に当たりうるかで付けます。",
+             "記入した表は UTF-8 の CSV で eval/gold.csv として保存してください（評価の道具がこの名前を読みます）。", ""]
     for p in programs:
         lines.append(f"## {p.number} {p.name}（{rules_mod.LEVELS[p.level]}）")
         for s in p.sources:

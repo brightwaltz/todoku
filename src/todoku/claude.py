@@ -199,7 +199,11 @@ SUMMARY_SCHEMA = {
 }
 
 
-class ClaudeRefused(RuntimeError):
+class ClaudeFailed(RuntimeError):
+    """Claude の答えが使えなかった（途中で切れた、JSON が壊れていた、拒否された）。"""
+
+
+class ClaudeRefused(ClaudeFailed):
     pass
 
 
@@ -223,8 +227,15 @@ class RealClaude:
         )
         if response.stop_reason == "refusal":
             raise ClaudeRefused(getattr(response.stop_details, "category", None))
-        text = next(b.text for b in response.content if b.type == "text")
-        return json.loads(text)
+        if response.stop_reason == "max_tokens":
+            raise ClaudeFailed("max_tokens で切れた")
+        text = next((b.text for b in response.content if b.type == "text"), None)
+        if text is None:
+            raise ClaudeFailed("文字の答えがない")
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError as e:
+            raise ClaudeFailed(f"JSON が壊れていた：{e}") from e
 
     def extract(self, rules: RuleSet, text: str) -> Extraction:
         raw = self._json(
