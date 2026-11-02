@@ -27,7 +27,7 @@ def rs():
 def test_every_national_program_has_procedures(rs):
     for p in rs.programs.values():
         if p.level == "national":
-            assert p.procedures, f"{p.id}: 国の制度に手続がない"
+            assert p.procedures or p.procedures_none, f"{p.id}: 国の制度に、手続も手続がない理由もない"
         else:
             assert not p.procedures, f"{p.id}: 町田市の制度に手続がある"
 
@@ -91,3 +91,11 @@ def test_city_program_cannot_have_procedures(tmp_path):
     last = path.read_text(encoding="utf-8").splitlines()[-1] + "\n"
     with pytest.raises(rules_mod.RuleError, match="国の制度だけ"):
         rules_mod.load(_broken(tmp_path, "city_alone.yaml", last, last + PROC))
+
+
+def test_procedures_none_needs_a_reason_and_only_one_of_the_two(tmp_path):
+    none = '\nprocedures_none: "行政手続データにない（試験）"\n'
+    rs = rules_mod.load(_broken(tmp_path, "base.yaml", "apply: {where: 市役所}\n", "apply: {where: 市役所}\n" + none))
+    assert rs.programs["base"].procedures_none.startswith("行政手続データにない")
+    with pytest.raises(rules_mod.RuleError, match="両方"):
+        rules_mod.load(_broken(tmp_path / "b", "base.yaml", "apply: {where: 市役所}\n", "apply: {where: 市役所}\n" + PROC + none.lstrip("\n")))

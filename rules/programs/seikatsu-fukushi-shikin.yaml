@@ -1,0 +1,37 @@
+id: seikatsu-fukushi-shikin
+number: 27
+name: 生活福祉資金貸付（福祉費）
+level: national
+kind: review
+summary: 収入の少ない世帯などが、住宅の改修や介護サービスを使うための費用を、低い利子（保証人がいれば無利子）で借りられる。
+weight: 1
+eligibility:
+  all:
+    - {fact: tax_status, in: [household_exempt], label: 世帯の全員が住民税非課税（低所得の世帯の目安）}
+    - any:
+        - {fact: plans_home_modification, is: true, label: 住宅の改修を考えている}
+        - {fact: plans_equipment_purchase, is: true, label: 福祉用具を買うことを考えている}
+        - {fact: uses_care_services, is: true, label: 介護保険のサービスを使っている}
+at_application:
+  - 返していける見込みがあるかも審査される
+  - 保証人がいれば無利子、いなければ年1.5%
+  - 高齢者の世帯や障害者の世帯も対象になりうる（扱いは都道府県の社会福祉協議会で違うことがある）
+apply:
+  where: お住まいの市区町村の社会福祉協議会（貸し付けるのは都道府県の社会福祉協議会）
+amount:
+  - 福祉費の限度額は580万円以内（用途ごとに目安がある）
+  - 据置期間は6か月以内、返済は据置のあと20年以内
+sources:
+  - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/index.html
+    publisher: 厚生労働省
+    title: 生活福祉資金貸付制度
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 必要な資金を他から借り受けることが困難な世帯（市町村民税非課税程度）
+  - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/kashitsukejoken.html
+    publisher: 厚生労働省
+    title: 生活福祉資金貸付条件等一覧
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 住宅の増改築、補修等及び公営住宅の譲り受けに必要な経費
+procedures_none: "都道府県社会福祉協議会の貸付で、行政手続データにない（2026-11-03 に MCP で全文検索。「生活福祉資金」0 件、「福祉資金」は母子・父子・寡婦福祉資金だけ）"

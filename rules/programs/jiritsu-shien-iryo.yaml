@@ -1,0 +1,44 @@
+id: jiritsu-shien-iryo
+number: 24
+name: 自立支援医療（精神通院医療）
+level: national
+kind: review
+summary: 認知症などの精神疾患で通院による治療を続ける人は、通院の医療費の自己負担が原則1割になり、世帯の所得に応じて月の上限が決まる。
+weight: 2
+eligibility:
+  all:
+    - {fact: dementia_diagnosis, is: true, label: 認知症と診断されている（認知症は対象の病気に含まれる）}
+    - {fact: residence, in: [home, facility], label: 入院していない（入院の医療は対象外）}
+at_application:
+  - 通院による治療を続ける必要があること（指定自立支援医療機関の医師の診断書で判断される）
+  - 使えるのは指定の医療機関・薬局での外来、外来での投薬、デイケア、訪問看護など
+  - 受給者証の有効期間は1年以内
+apply:
+  where: お住まいの市区町村の障害福祉（精神保健福祉）の担当窓口
+bring:
+  - 申請書
+  - 指定自立支援医療機関の医師の診断書
+  - 所得の分かる書類（課税・非課税証明書など）
+  - 加入している医療保険が分かるもの
+amount:
+  - 自己負担は原則1割
+  - 月の上限は世帯の所得で決まる（例：生活保護は0円、市町村民税非課税で本人の収入が80万円以下なら2,500円）
+sources:
+  - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/jiritsu/gaiyo.html
+    publisher: 厚生労働省
+    title: 自立支援医療制度の概要
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 精神保健福祉法第5条に規定する統合失調症などの精神疾患を有する者で、通院による精神医療を継続的に要する者
+  - url: https://www.mhlw.go.jp/bunya/shougaihoken/jiritsu/dl/03.pdf
+    publisher: 厚生労働省
+    title: 自立支援医療（精神通院医療）の説明（対象の病気に認知症を含む）
+    license: PDL1.0
+    checked: 2026-11-03
+procedures:
+  # デジタル庁「行政手続等の棚卸調査結果（令和7年度）」を、Claude Code から行政手続データの MCP サーバーで引いた（2026-11-03）
+  - id: "45747"
+    name: "自立支援医療費の支給認定の申請"
+    law: "障害者の日常生活及び社会生活を総合的に支援するための法律"
+    article: "第53条第1項"
+    attachments: "住民票; 所得証明書・納税証明書; その他の添付書類"

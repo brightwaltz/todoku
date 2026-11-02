@@ -1,0 +1,47 @@
+id: tokubetsu-shogaisha-teate
+number: 22
+name: 特別障害者手当
+level: national
+kind: review
+summary: 精神や身体に著しく重い障害があり、日常生活で常に特別の介護が要る20歳以上の在宅の人に、毎月手当が出る。重さは医師の認定診断書で判断される。
+weight: 2
+eligibility:
+  all:
+    - {fact: severe_constant_care, is: true, label: 日常生活のほとんどに常に介護が要る（重さは医師の認定診断書で判断される）}
+    - {fact: residence, in: [home, hospital], label: 施設に入所していない（入院が3か月を超えて続くと対象外）}
+at_application:
+  - 20歳以上であること
+  - 医師の認定診断書（障害の種類ごとの様式）で、著しく重度の障害と認められること
+  - 施設に入所していないこと。病院に3か月を超えて続けて入院していないこと
+  - 本人・配偶者・扶養義務者の所得が限度額を超えないこと（超えると8月分から翌年7月分まで止まる）
+apply:
+  where: お住まいの市区町村の障害福祉の担当窓口
+bring:
+  - 認定診断書（障害の種類ごとの様式）
+amount:
+  - 月額30,450円（厚生労働省のページの額。額は年度によって改定される）
+  - 2月・5月・8月・11月に、それぞれ前の月の分までがまとめて支払われる
+sources:
+  - url: https://www.mhlw.go.jp/bunya/shougaihoken/jidou/tokubetsu.html
+    publisher: 厚生労働省
+    title: 特別障害者手当について
+    license: PDL1.0
+    checked: 2026-11-03
+  - url: https://www.mhlw.go.jp/toukei/saikin/hw/gyousei/fukushi/m25/dl/03yougo.pdf
+    publisher: 厚生労働省
+    title: 福祉行政報告例 用語の解説
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 20歳以上の重度障害者を対象として支給される手当をいう。
+  - url: https://www.pref.shimane.lg.jp/medical/fukushi/syougai/ippan/fukushiaramashi/tokujitokushou/
+    publisher: 島根県
+    title: 特別児童扶養手当・特別障害者手当等（所得の限度額と支払いの月）
+    license: 利用条件を確かめていない（引用しない）
+    checked: 2026-11-03
+procedures:
+  # デジタル庁「行政手続等の棚卸調査結果（令和7年度）」を、Claude Code から行政手続データの MCP サーバーで引いた（2026-11-03）
+  - id: "113125"
+    name: "特別障害者手当認定の請求"
+    law: "障害児福祉手当及び特別障害者手当の支給に関する省令"
+    article: "第15条"
+    attachments: "住民票; 戸籍; 所得証明書・納税証明書"

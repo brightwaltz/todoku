@@ -17,18 +17,19 @@ def rs():
     return rules_mod.load()
 
 
-def test_twenty_programs_ten_each(rs):
+def test_programs_by_level(rs):
+    # 国 17（全国で判定）・町田市 10・市区町村の型 5（町田市以外で、あるかを窓口で確かめる）
     levels = [p.level for p in rs.programs.values()]
-    assert len(levels) == 20
-    assert levels.count("national") == 10 and levels.count("machida") == 10
-    assert sorted(p.number for p in rs.programs.values()) == list(range(1, 21))
+    assert len(levels) == 32
+    assert levels.count("national") == 17 and levels.count("machida") == 10 and levels.count("local") == 5
+    assert sorted(p.number for p in rs.programs.values()) == list(range(1, 33))
 
 
 def test_every_program_has_dated_official_sources(rs):
     for p in rs.programs.values():
         assert p.sources, p.id
         for s in p.sources:
-            assert s.checked.isoformat() == "2026-11-02", p.id
+            assert s.checked.isoformat() in ("2026-11-02", "2026-11-03"), p.id
             if "city.machida.tokyo.jp" in s.url:
                 assert not s.quote, f"{p.id}: 町田市のページは引用しない"
         assert p.apply.get("where"), p.id
@@ -151,3 +152,38 @@ def test_hearing_aid_tax_rule(rs):
 def test_first_question_is_certification(rs):
     q = next_question(rs, dict(MACHIDA_HOME_75))
     assert q.fact == "care_level"
+
+
+# ---- 全国対応（2026-11-03 に足した国の 7 制度と市区町村の型 5 件） ----
+
+YOKOHAMA_DEMENTIA = {"lives_in_machida": False, "age_band": "age_75_plus", "residence": "home",
+                     "dementia_diagnosis": True, "wandering_risk": True}
+
+
+def test_outside_machida_shows_local_types_to_check(rs):
+    s = statuses(rs, YOKOHAMA_DEMENTIA)
+    assert s["local-haikai"] == "unknown" and s["local-koken"] == "unknown"  # あるかを窓口で確かめる
+    assert s["machida-gps"] == "ineligible"
+    assert s["nichijo-jiritsu-shien"] == "eligible" and s["jiritsu-shien-iryo"] == "eligible"  # 国の制度は全国で判定
+
+
+def test_machida_shows_city_programs_not_types(rs):
+    s = statuses(rs, {**YOKOHAMA_DEMENTIA, "lives_in_machida": True})
+    assert all(s[pid] == "ineligible" for pid, p in rs.programs.items() if p.level == "local")
+
+
+def test_hearing_aid_needs_the_certificate_first(rs):
+    s = statuses(rs, {**MACHIDA_HOME_75, "hearing_difficulty": True, "hearing_70db": True})
+    assert s["shintai-techo-chokaku"] == "eligible" and s["hosougu-hochoki"] == "after_prereq"
+    s = statuses(rs, {**MACHIDA_HOME_75, "hearing_difficulty": True, "hearing_70db": False})
+    assert s["shintai-techo-chokaku"] == "ineligible" and s["hosougu-hochoki"] == "ineligible"
+
+
+def test_care_leave_comes_with_the_benefit(rs):
+    s = statuses(rs, {**MACHIDA_HOME_75, "caregiver_employee": True})
+    assert s["kaigo-kyuka"] == "eligible" and s["kaigo-kyugyo-kyufu"] == "eligible"
+
+
+def test_special_allowance_is_for_people_at_home(rs):
+    assert statuses(rs, {**MACHIDA_HOME_75, "severe_constant_care": True})["tokubetsu-shogaisha-teate"] == "eligible"
+    assert statuses(rs, {**MACHIDA_HOME_75, "severe_constant_care": True, "residence": "facility"})["tokubetsu-shogaisha-teate"] == "ineligible"

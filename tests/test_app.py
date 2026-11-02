@@ -58,6 +58,8 @@ def test_step_until_done_and_no_text_needed():
     assert statuses["kaigo-nintei"] == "eligible"
     chain = next(r for r in data["results"] if r["id"] == "shogaisha-kojo")
     assert chain["waiting_on"][0]["name"] == "障害者控除対象者認定書"
+    nintei = next(r for r in data["results"] if r["id"] == "kaigo-nintei")
+    assert nintei["procedures"] and nintei["procedures_source"].startswith("デジタル庁")
 
 
 def test_step_drops_unknown_facts_and_values():
@@ -106,7 +108,7 @@ def test_index_and_health():
     assert client.get("/static/app.js").status_code == 200
     assert client.get("/static/app.js").headers["cache-control"] == "no-cache"
     h = client.get("/api/health").json()
-    assert h["programs"] == 20
+    assert h["programs"] == 32
 
 
 def test_rate_limit_counts_each_client_ip(monkeypatch):

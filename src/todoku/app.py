@@ -166,6 +166,9 @@ def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
              "checked": s.checked.isoformat(), "quote": s.quote}
             for s in p.sources
         ],
+        # 行政手続データの手続（根拠法令・条項）。画面では出典の名前を添える
+        "procedures": [{"name": d.name, "law": d.law, "article": d.article, "match": d.match} for d in p.procedures],
+        "procedures_source": rules_mod.PROCEDURES_DATASET if p.procedures else "",
     }
 
 

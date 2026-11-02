@@ -23,7 +23,7 @@ def satisfy(node: dict, facts: dict) -> bool:
                 facts.update(trial)
                 return True
         return False
-    if "step" in node:
+    if "step" in node or "ask_at" in node:
         return True
     if "prereq" in node:
         return satisfy(RS.programs[node["prereq"]].eligibility, facts)
@@ -39,7 +39,9 @@ def satisfy(node: dict, facts: dict) -> bool:
 def test_program_can_be_shown(pid):
     facts: dict = {}
     assert satisfy(RS.programs[pid].eligibility, facts), pid
-    assert statuses(RS, facts)[pid] in ("eligible", "after_prereq"), (pid, facts)
+    # 市区町村の型は、あるかどうかを窓口で確かめる（ask_at）ので、いちばん良くても「確かめる」
+    best = ("unknown",) if RS.programs[pid].level == "local" else ("eligible", "after_prereq")
+    assert statuses(RS, facts)[pid] in best, (pid, facts)
 
 
 @pytest.mark.parametrize("pid", sorted(RS.programs))

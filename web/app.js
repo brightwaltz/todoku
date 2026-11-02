@@ -450,11 +450,20 @@ function programCard(r) {
   body.append(el("h3", {}, "申請先"), el("p", {}, r.apply.where));
   if (r.apply.how) body.append(el("p", {}, r.apply.how));
   if (r.apply.phone) body.append(el("p", {}, "電話：", telLinks(r.apply.phone)));
+  if (r.procedures.length) body.append(el("h3", {}, "根拠の法令"), procedureView(r));
   if (r.bring.length) body.append(el("h3", {}, "持ち物・書類"), el("ul", { class: "plain" }, r.bring.map((t) => el("li", {}, t))));
   if (r.amount.length) body.append(el("h3", {}, "受けられる内容"), el("ul", { class: "plain" }, r.amount.map((t) => el("li", {}, t))));
   if (r.timing.length) body.append(el("h3", {}, "時期・期限"), el("ul", { class: "plain" }, r.timing.map((t) => el("li", {}, t))));
   body.append(el("h3", {}, "出典"), ...r.sources.map(sourceView));
   return el("details", { class: "card prog", id: `p-${r.id}` }, el("summary", {}, sumParts), body);
+}
+
+// 行政手続データの手続。税の控除のように、この制度だけの手続がないときは「使う手続」と書き、控除の根拠に見せない
+function procedureView(r) {
+  const [d] = r.procedures;
+  const rest = r.procedures.length > 1 ? ` ほか ${r.procedures.length - 1} 件` : "";
+  const what = d.match === "general" ? `使う手続：${d.name}（${d.law} ${d.article}）` : `${d.law} ${d.article}（${d.name}）`;
+  return el("p", {}, what + rest, el("br"), el("span", { class: "note" }, `出典：${r.procedures_source}`));
 }
 
 function telLinks(text) {

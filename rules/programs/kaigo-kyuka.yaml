@@ -1,0 +1,33 @@
+id: kaigo-kyuka
+number: 21
+name: 介護休暇
+level: national
+kind: condition
+summary: 介護をする家族が、1年に5日（介護される家族が2人以上なら10日）まで、1日単位か時間単位で仕事を休める。勤め先に申し出る。
+weight: 2
+eligibility:
+  fact: caregiver_employee
+  is: true
+  label: 介護をする家族が、会社などに雇われて働いている
+at_application:
+  - 介護される家族が、2週間以上の期間にわたり常に介護が要る状態であること（介護保険の認定とは別の基準）
+  - 介護される人が、配偶者・父母・子・祖父母・兄弟姉妹・孫・配偶者の父母であること
+  - 日々雇われる人は対象外。労使協定があると、週の所定労働日数が2日以下の人は対象外になることがある
+apply:
+  where: 勤め先（事業主）に申し出る
+amount:
+  - 介護される家族が1人なら1年に5日まで、2人以上なら10日まで
+  - 1日単位か時間単位で休める
+sources:
+  - url: https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/kaigo/shorttime-leave/
+    publisher: 厚生労働省
+    title: 介護休業制度特設サイト「介護休暇」
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 対象家族が１人の場合は、１年間に５日まで。
+  - url: https://www.mhlw.go.jp/content/11900000/001259367.pdf
+    publisher: 厚生労働省
+    title: 育児・介護休業法 改正のリーフレット（労使協定で対象外にできる人）
+    license: PDL1.0
+    checked: 2026-11-03
+procedures_none: "介護休暇は労働者が事業主に申し出る手続で、行政手続データにない（2026-11-03 に MCP で全文検索。「介護休暇」の 3 件は国家公務員の勤務時間法の手続）"

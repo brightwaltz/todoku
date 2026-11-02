@@ -1,0 +1,33 @@
+id: hosougu-hochoki
+number: 26
+name: 補装具費の支給（補聴器）
+level: national
+kind: review
+summary: 聴覚障害の身体障害者手帳を持つ人が補聴器を作るとき、費用が補装具費として支給される。自己負担は原則1割で、所得に応じた月の上限がある。
+weight: 2
+eligibility:
+  all:
+    - {fact: hearing_difficulty, is: true, label: 聞こえにくく補聴器を考えている}
+    - {prereq: shintai-techo-chokaku, label: 聴覚障害の身体障害者手帳を持っている}
+at_application:
+  - 身体障害者更生相談所などの判定か意見にもとづいて、市区町村長が決める
+  - 世帯で市町村民税の所得割がいちばん多い人の納税額が46万円以上だと対象外
+apply:
+  where: お住まいの市区町村の障害福祉の担当窓口
+amount:
+  - 原則1割負担
+  - 月の上限は、生活保護と市町村民税非課税の世帯は0円、課税の世帯は37,200円
+sources:
+  - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/yogu/hosouguhisikyuuseido.html
+    publisher: 厚生労働省
+    title: 補装具費支給制度の概要
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 身体障害者更生相談所等の判定又は意見に基づく市町村長の決定により、補装具費の支給を受ける。
+procedures:
+  # デジタル庁「行政手続等の棚卸調査結果（令和7年度）」を、Claude Code から行政手続データの MCP サーバーで引いた（2026-11-03）
+  - id: "45716"
+    name: "補装具費の支給に関する申請"
+    law: "障害者の日常生活及び社会生活を総合的に支援するための法律"
+    article: "第76条第1項"
+    attachments: "所得証明書・納税証明書; その他の添付書類"

@@ -1,0 +1,28 @@
+id: nichijo-jiritsu-shien
+number: 23
+name: 日常生活自立支援事業
+level: national
+kind: review
+summary: 認知症などで判断に不安がある人が、社会福祉協議会と契約して、福祉サービスを使う手続きや、日々のお金の出し入れの手伝いを受けられる。
+weight: 2
+eligibility:
+  fact: dementia_diagnosis
+  is: true
+  label: 認知症と診断されている（診断がなくても、判断に不安があれば社会福祉協議会に相談できる）
+at_application:
+  - 契約の内容を判断できること（社会福祉協議会が確かめる）
+  - 利用料は社会福祉協議会ごとに決まる。契約の前の相談と、生活保護を受けている世帯の利用料は無料
+apply:
+  where: お住まいの市区町村の社会福祉協議会（事業をするのは都道府県・指定都市の社会福祉協議会）
+amount:
+  - 福祉サービスを使う手続き、住宅の改造や日常の買い物などの契約、住民票の届け出などの行政手続きの手伝い
+  - 預金の出し入れなど日々のお金の管理と、定期的な訪問
+  - 利用料の例：訪問1回あたり平均1,200円（厚生労働省のページ）
+sources:
+  - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/chiiki-fukusi-yougo
+    publisher: 厚生労働省
+    title: 日常生活自立支援事業
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 本事業の契約の内容について判断し得る能力を有していると認められる方
+procedures_none: "社会福祉協議会との契約で、行政手続データにない（2026-11-03 に MCP で全文検索。「日常生活自立支援」「福祉サービス利用援助」「社会福祉協議会」とも 0 件）"

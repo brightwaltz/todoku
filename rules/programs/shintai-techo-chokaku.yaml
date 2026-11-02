@@ -1,0 +1,40 @@
+id: shintai-techo-chokaku
+number: 25
+name: 身体障害者手帳（聴覚障害）
+level: national
+kind: review
+summary: 両耳の聴力が70デシベル以上などのとき、聴覚障害の身体障害者手帳（6級から）の対象になる。手帳があると、補聴器の補装具費などが使える。
+weight: 1
+eligibility:
+  all:
+    - {fact: hearing_difficulty, is: true, label: 聞こえにくい}
+    - {fact: hearing_70db, is: true, label: 両耳とも聴力が70デシベル以上（耳鼻咽喉科の検査）}
+at_application:
+  - 指定医（身体障害者福祉法第15条の指定医）の診断書・意見書で判断される
+  - 障害が一定以上で、ずっと続くと見込まれること
+apply:
+  where: お住まいの市区町村の障害福祉の担当窓口（交付するのは都道府県知事・指定都市市長・中核市市長）
+bring:
+  - 指定医の診断書・意見書
+  - 本人の写真
+amount:
+  - 聴覚障害の等級は2・3・4・6級（両耳70デシベル以上で6級、80デシベル以上で4級、90デシベル以上で3級、100デシベル以上で2級）
+sources:
+  - url: https://www.mhlw.go.jp/content/001679529.pdf
+    publisher: 厚生労働省
+    title: 身体障害者手帳の概要
+    license: PDL1.0
+    checked: 2026-11-03
+    quote: 身体障害者福祉法別表に掲げる身体上の障害があるもの
+  - url: https://www.mhlw.go.jp/content/0000172197.pdf
+    publisher: 厚生労働省
+    title: 身体障害者障害程度等級表
+    license: PDL1.0
+    checked: 2026-11-03
+procedures:
+  # デジタル庁「行政手続等の棚卸調査結果（令和7年度）」を、Claude Code から行政手続データの MCP サーバーで引いた（2026-11-03）
+  - id: "45712"
+    name: "身体障害者手帳の交付申請"
+    law: "身体障害者福祉法"
+    article: "第15条第1項"
+    attachments: "その他の添付書類"

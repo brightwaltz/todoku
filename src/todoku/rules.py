@@ -93,6 +93,8 @@ class Program:
     timing: list[str] = field(default_factory=list)
     # 行政手続データの手続（根拠法令・条項）。国の制度だけ
     procedures: list[Procedure] = field(default_factory=list)
+    # 行政手続データに手続がないときの理由（探したことが分かるように、空にせず理由を書く）
+    procedures_none: str = ""
     # 前提の手続き（via と prereq で参照している制度）。読み込みのときに埋める
     depends_on: set[str] = field(default_factory=set)
 
@@ -196,6 +198,11 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         raise RuleError(f"{where}: 市区町村の型には、実施しているかを確かめる ask_at の条件が要る")
 
     procedures = [_load_procedure(p, where) for p in raw.get("procedures") or []]
+    procedures_none = (raw.get("procedures_none") or "").strip()
+    if procedures_none and procedures:
+        raise RuleError(f"{where}: procedures と procedures_none は両方書かない")
+    if procedures_none and level != "national":
+        raise RuleError(f"{where}: procedures_none は国の制度だけ")
     if procedures and level != "national":
         raise RuleError(f"{where}: procedures は国の制度だけ")
 
@@ -216,6 +223,7 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         amount=_as_list(raw.get("amount")),
         timing=_as_list(raw.get("timing")),
         procedures=procedures,
+        procedures_none=procedures_none,
         depends_on=depends_on,
     )
 

@@ -1,0 +1,25 @@
+id: local-iro
+number: 32
+name: 家族介護慰労金
+level: local
+kind: review
+summary: 在宅で家族を介護している人に、慰労金などを贈る市区町村の事業。2017年4月時点で、全国1,741市町村のうち681がしていた。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: false, label: 町田市以外にお住まい（町田市は市の制度を一つずつ示しています）}
+    - {fact: care_level, in: [care1, care2, care3, care4, care5], label: 要介護の認定を受けている}
+    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - {ask_at: お住まいの市区町村の高齢者福祉・介護保険の窓口, label: お住まいの市区町村がこの事業をしている（窓口で確かめる）}
+at_application:
+  - 事業をしているか、対象や内容、費用は市区町村ごとに違う
+  - 数字は 2017年4月時点の全国調査で、今とは違う可能性がある
+  - ここでの条件は、この事業に関係しそうかの目安で、市区町村の要件ではない
+apply:
+  where: お住まいの市区町村の高齢者福祉・介護保険の担当窓口、または地域包括支援センター
+sources:
+  - url: https://www.pref.saitama.lg.jp/documents/149759/739.pdf
+    publisher: 厚生労働省 老健局（介護保険最新情報 Vol.739 の参考資料。埼玉県のサイトに載った写し）
+    title: 平成29年度介護保険事務調査の集計結果について（訂正後。調査時点 2017年4月1日、1,741市町村）
+    license: 利用条件を確かめていない（引用しない）
+    checked: 2026-11-03
