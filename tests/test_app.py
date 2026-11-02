@@ -34,6 +34,16 @@ def test_consult_reads_and_asks():
     assert set(q["affects_ids"]) <= ids
 
 
+def test_fake_reads_the_draft_made_by_taps():
+    # 選ぶだけで作った下書きの文を、試験モードでも読める（本物の Claude と同じ流れを鍵なしで試すため）
+    draft = "母（75歳以上）のことです。東京都町田市に住んでいます。最近、病院から退院しました。私は働きながら介護をしています。"
+    data = client.post("/api/consult", json={"text": draft, "municipality": "132098"}).json()
+    assert data["facts"]["age_band"] == "age_75_plus"
+    assert data["facts"]["residence"] == "home"
+    assert data["facts"]["caregiver_employee"] is True
+    assert data["place"]["name"] == "町田市"
+
+
 def test_step_until_done_and_no_text_needed():
     facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none"}
     asked = 0

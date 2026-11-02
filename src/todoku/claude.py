@@ -285,7 +285,7 @@ class RealClaude:
 # (正規表現, 事実, 値, 確信)。Claude の代わりではなく、画面と流れを鍵なしで試すためのもの
 FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"町田", "lives_in_machida", True, "high"),
-    (r"(8|9)\d歳|[89]十代|後期高齢", "age_band", "age_75_plus", "high"),
+    (r"(8|9)\d歳|[89]十代|後期高齢|75歳以上|7[5-9]歳", "age_band", "age_75_plus", "high"),
     (r"7[0-4]歳", "age_band", "age_70_74", "high"),
     (r"6[5-9]歳", "age_band", "age_65_69", "high"),
     (r"高齢の(母|父)|年老いた", "age_band", "age_75_plus", "low"),
@@ -296,7 +296,7 @@ FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"一人暮らし|ひとり暮らし|独り暮らし|独居", "household", "alone", "high"),
     (r"日中.{0,4}(一人|ひとり)", "household", "alone_daytime", "high"),
     (r"夫婦(二人|ふたり)", "household", "elderly_only", "low"),
-    (r"退院(して|した)|自宅で|家で", "residence", "home", "high"),
+    (r"退院(して|した|しま)|自宅で|家で", "residence", "home", "high"),
     (r"入院中", "residence", "hospital", "high"),
     (r"(施設|特養|老健)に入所", "residence", "facility", "high"),
     (r"手すり|段差", "plans_home_modification", True, "low"),
@@ -306,8 +306,8 @@ FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"おむつ", "uses_diapers", True, "high"),
     (r"寝たきり", "bedridden_6m", True, "low"),
     (r"聞こえ", "hearing_difficulty", True, "low"),
+    (r"私は(会社勤め|会社員|パート|働きながら)", "caregiver_employee", True, "high"),  # 先に当たった行が使われる
     (r"(会社|職場|仕事).*(休|辞め)|働きながら", "caregiver_employee", True, "low"),
-    (r"私は(会社勤め|会社員|パート)", "caregiver_employee", True, "high"),
     (r"(入院|手術).*(費用|お金|高く)|医療費", "high_medical_costs", True, "low"),
     (r"非課税", "tax_status", "household_exempt", "low"),
     (r"デイサービス|ヘルパー|ケアマネ", "uses_care_services", True, "high"),
