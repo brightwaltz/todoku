@@ -21,7 +21,7 @@ from pydantic import BaseModel, Field
 from . import rules as rules_mod
 import anthropic
 
-from .claude import ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
+from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
 from .engine import DONT_KNOW, SHOWN, Result, evaluate, known, with_implied
 from .questions import MAX_QUESTIONS, next_question
 
@@ -188,6 +188,18 @@ def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: s
         return None
     fact = RULES.facts[q.fact]
     affects = [RULES.programs[p].name for p in q.affects]
+    if q.suggested in ALWAYS_CONFIRM.get(q.fact, ()):
+        # 取り違えやすい値（認定の区分）は「合っていますか？」と聞かない。思い違いのままでも「はい」を押せてしまうため。
+        # 読んだ値は文で知らせるだけにして、全部の選択肢から書類を見て選んでもらう。確かめられなければ読んだ値で進める
+        read = fact.label_of(q.suggested)
+        return {
+            "fact": q.fact, "confirm": False,
+            "text": personalize(f"ご本人の{fact.name}を、書類で確かめて選んでください", subject),
+            "hint": f"相談の文からは「{read}」と読みました。取り違えやすいので、確かめています。{fact.check}",
+            "options": [{"value": v, "label": label} for v, label in fact.options],
+            "keep": {"value": q.suggested, "label": f"いま確かめられない（「{read}」として進める）"},
+            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+        }
     if q.suggested is not None and fact.type == "enum":
         return {
             "fact": q.fact, "confirm": True,

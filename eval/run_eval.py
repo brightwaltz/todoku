@@ -27,6 +27,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from todoku import rules as rules_mod  # noqa: E402
+from todoku.claude import ALWAYS_CONFIRM  # noqa: E402
 from todoku.engine import DONT_KNOW, statuses  # noqa: E402
 from todoku.questions import MAX_QUESTIONS, Question, next_question, referenced_facts  # noqa: E402
 
@@ -94,6 +95,11 @@ def simulate(rs, case: dict, facts: dict, suggestions: dict, max_questions: int,
             break
         truth = answer_of(case, q.fact)
         asked.append(q.fact)
+        if q.suggested in ALWAYS_CONFIRM.get(q.fact, ()):
+            # 画面と同じく、書類を見て全部の選択肢から選ぶ問い（app.question_view）。確かめられなければ読んだ値で進める
+            facts[q.fact] = q.suggested if truth == DONT_KNOW else truth
+            suggestions.pop(q.fact, None)
+            continue
         if q.suggested is not None and truth != q.suggested and rs.facts[q.fact].type == "enum":
             suggestions.pop(q.fact, None)  # 「いいえ」：読み取りを捨てる。事実は分からないまま
             continue

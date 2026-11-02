@@ -345,10 +345,18 @@ function renderQuestion(q, max, first = false) {
   $("ask-text").textContent = q.text;
   const box = $("ask-options");
   box.replaceChildren();
+  // 選択肢が多い問い（認定の区分）は、短い選択肢を 2 列に並べて縦の長さを抑える
+  const two = q.options.length > 6;
+  box.className = two ? "options two" : "options";
   for (const o of q.options) {
-    box.append(el("button", { class: "option", onclick: () => answer(q, o.value) }, o.label));
+    const wide = two && o.label.length > 6;
+    box.append(el("button", { class: wide ? "option wide" : "option", onclick: () => answer(q, o.value) }, o.label));
   }
-  box.append(el("button", { class: "option dk", onclick: () => answer(q, DONT_KNOW) }, "わからない"));
+  // 書類で確かめる問いは、「わからない」の代わりに「読んだ値のまま進める」を出す
+  box.append(q.keep
+    ? el("button", { class: "option dk", onclick: () => answer(q, q.keep.value) }, q.keep.label)
+    : el("button", { class: "option dk", onclick: () => answer(q, DONT_KNOW) }, "わからない"));
+  $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
   const names = q.affects.slice(0, 3).join("、") + (q.affects.length > 3 ? ` ほか ${q.affects.length - 3} 件` : "");
   $("ask-why").textContent = `この答えで判定が決まる制度：${names}`;
   $("ask-check").textContent = q.check;

@@ -37,7 +37,7 @@ care_level:
     - {value: care3, label: 要介護3}
     - {value: care4, label: 要介護4}
     - {value: care5, label: 要介護5}
-  check: 介護保険の被保険者証の「要介護状態区分等」の欄か、市から届いた認定の通知に書かれています。
+  check: 介護保険の被保険者証の「要介護状態区分等」の欄か、市区町村から届いた認定の通知に書かれています。
 
 residence:
   name: いま暮らしている所

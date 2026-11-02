@@ -34,6 +34,36 @@ def test_consult_reads_and_asks():
     assert set(q["affects_ids"]) <= ids
 
 
+def test_care_level_read_is_checked_against_the_card():
+    # 認定の区分は、文に書いてあっても「合っていますか？」と聞かない（思い違いのままでも「はい」を押せるため。事例 c15）
+    text = "町田市に住む母（82歳）は要介護2と言われています。私は会社勤めです。"
+    data = client.post("/api/consult", json={"text": text}).json()
+    assert "care_level" not in data["facts"] and data["suggestions"]["care_level"] == "care2"
+    q = data["question"]
+    assert q["fact"] == "care_level" and q["confirm"] is False
+    # 読んだ値と、書類のどこを見るかを、選択肢の前の文で出す
+    assert "「要介護2」" in q["hint"] and "被保険者証" in q["hint"]
+    # 全部の選択肢から選ぶ。読んだ値に印は付けない
+    assert [o["value"] for o in q["options"]] == rules_mod.load().facts["care_level"].values()
+    assert all(set(o) == {"value", "label"} for o in q["options"])
+    # 「わからない」の代わりに、読んだ値のまま進める
+    assert q["keep"]["value"] == "care2" and "要介護2" in q["keep"]["label"]
+    # 被保険者証で要支援2と分かったら、その値で判定する
+    after = client.post("/api/step", json={"facts": {**data["facts"], "care_level": "support2"},
+                                           "suggestions": {}, "asked": 1}).json()
+    assert {"fact": "care_level", "value": "support2"}.items() <= next(
+        k for k in after["known"] if k["fact"] == "care_level").items()
+    assert after["question"] is None or after["question"]["fact"] != "care_level"
+
+
+def test_other_low_reads_still_ask_yes_no():
+    # 区分でない値（受けていない・申請中など）の確かめは今のまま「合っていますか？」（はい・いいえ）
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus"}
+    q = client.post("/api/step", json={"facts": facts, "suggestions": {"care_level": "none"}}).json()["question"]
+    assert q["fact"] == "care_level" and q["confirm"] is True
+    assert [o["label"] for o in q["options"]] == ["はい", "いいえ"] and "keep" not in q
+
+
 def test_fake_reads_the_draft_made_by_taps():
     # 選ぶだけで作った下書きの文を、試験モードでも読める（本物の Claude と同じ流れを鍵なしで試すため）
     draft = "母（75歳以上）のことです。東京都町田市に住んでいます。最近、病院から退院しました。私は働きながら介護をしています。"
