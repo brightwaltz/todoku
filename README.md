@@ -141,7 +141,7 @@ export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所の
 
 ### 入口の読み取りに使うモデル
 
-`eval/compare_models.py` で決めました。2026-11-03 に、同じ 30 件の相談文を Opus 5.5・Sonnet 5.5・Haiku 5.5（effort low）に読ませ、事例の答えと比べました（90 回、計 0.644 ドル。表と誤りの一覧は `eval/model_comparison.md`）。
+`eval/compare_models.py` で決めました。2026-11-03 に、同じ 30 件の相談文を Opus 5.5・Sonnet 5.5・Haiku 5.5（effort low）に読ませ、事例の答えと比べました（90 回、計 0.644 ドル。表と誤りの一覧は `eval/model_comparison.md`）。このときの指示は、書き出しが「東京都町田市の…相談窓口で」でした。同じ日に全国向けの書き出しに直しましたが、比べ直してはいません。
 
 | モデル | 確信「高」で正しい／誤り | 取れた率（相対） | 確信「低」で違う候補 | 1 回の費用 | 1 回の秒数（中央値） |
 |---|---|---|---|---|---|
