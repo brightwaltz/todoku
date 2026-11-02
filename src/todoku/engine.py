@@ -133,6 +133,10 @@ def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], lea
         # 本人が先に済ませればよいこと（例：医師に証明書を書いてもらう）
         leaves.append(Leaf(node["label"], P))
         return P
+    if "ask_at" in node:
+        # 規則では決めず、問いにもしない条件（例：お住まいの市区町村がその事業をしているか）。確かめる先は ask_at に書く
+        leaves.append(Leaf(node["label"], U))
+        return U
     if "prereq" in node:
         s = STATE_OF_PREREQ[statuses[node["prereq"]]]
         leaves.append(Leaf(node["label"], s, prereq=node["prereq"]))

@@ -136,3 +136,41 @@ def test_cycle_is_rejected(tmp_path):
     path.write_text(text, encoding="utf-8")
     with pytest.raises(rules_mod.RuleError, match="循環"):
         rules_mod.load(tmp_path / "rules")
+
+
+LOCAL_TYPE = """id: local_type
+number: 9
+name: 市区町村の型
+level: local
+kind: review
+summary: 試験用の、市区町村にあるかもしれない事業
+eligibility:
+  all:
+    - {fact: age65, is: true, label: 65歳以上}
+ASK_AT
+apply: {where: 市区町村の窓口}
+sources:
+  - {url: "https://example.lg.jp/a", publisher: 県, license: 利用条件を確かめていない, checked: 2026-11-03}
+"""
+
+
+def _with_local(tmp_path, ask_at_line):
+    import shutil
+
+    shutil.copytree(FIXTURE, tmp_path / "rules")
+    (tmp_path / "rules" / "programs" / "local_type.yaml").write_text(LOCAL_TYPE.replace("ASK_AT", ask_at_line), encoding="utf-8")
+    return rules_mod.load(tmp_path / "rules")
+
+
+def test_ask_at_stays_unknown_and_is_never_asked(tmp_path):
+    rs = _with_local(tmp_path, "    - {ask_at: 市区町村の窓口, label: 市区町村がこの事業をしている}")
+    r = evaluate(rs, {"age65": True})["local_type"]
+    assert r.status == "unknown"
+    assert [(leaf.label, leaf.state) for leaf in r.leaves] == [("65歳以上", "T"), ("市区町村がこの事業をしている", "U")]
+    assert r.missing_facts == []  # 聞ける事実がないので、問いにならない
+    assert evaluate(rs, {"age65": False})["local_type"].status == "ineligible"
+
+
+def test_local_type_without_ask_at_is_rejected(tmp_path):
+    with pytest.raises(rules_mod.RuleError, match="ask_at"):
+        _with_local(tmp_path, "    - {fact: alone, is: true, label: ひとり暮らし}")

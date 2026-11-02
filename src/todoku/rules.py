@@ -12,7 +12,7 @@ import yaml
 
 DEFAULT_RULES_DIR = Path(__file__).resolve().parents[2] / "rules"
 
-LEVELS = {"national": "国", "machida": "町田市"}
+LEVELS = {"national": "国", "machida": "町田市", "local": "市区町村（型）"}
 KINDS = {"review": "審査", "condition": "条件"}
 # 原文の引用を画面に出してよい利用条件。町田市は独自の規約で無断転載が禁じられているので入らない
 QUOTABLE_LICENSES = {"PDL1.0"}
@@ -191,6 +191,9 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
     sources = [_load_source(s, where) for s in need("sources")]
     if level == "machida" and not any("city.machida.tokyo.jp" in s.url for s in sources):
         raise RuleError(f"{where}: 町田市の制度に町田市のページの出典がない")
+    if level == "local" and not _has_key(eligibility, "ask_at"):
+        # 型は「お住まいの市区町村にあるか」を規則では決めない。必ず確かめる先（ask_at）を書く
+        raise RuleError(f"{where}: 市区町村の型には、実施しているかを確かめる ask_at の条件が要る")
 
     procedures = [_load_procedure(p, where) for p in raw.get("procedures") or []]
     if procedures and level != "national":
@@ -270,6 +273,13 @@ def _load_source(raw: dict, where: str) -> Source:
     )
 
 
+def _has_key(node: dict, key: str) -> bool:
+    if key in node:
+        return True
+    children = node.get("all") or node.get("any") or ([node["not"]] if "not" in node else [])
+    return any(_has_key(c, key) for c in children)
+
+
 def _check_node(node: Any, facts: dict[str, Fact], depends_on: set[str], where: str, inside_not: bool) -> None:
     if not isinstance(node, dict):
         raise RuleError(f"{where}: 条件は辞書で書く: {node!r}")
@@ -294,6 +304,10 @@ def _check_node(node: Any, facts: dict[str, Fact], depends_on: set[str], where: 
         if inside_not:
             raise RuleError(f"{where}: not の中で prereq は使えない")
         depends_on.add(node["prereq"])
+        return
+    if "ask_at" in node:
+        if inside_not:
+            raise RuleError(f"{where}: not の中で ask_at は使えない")
         return
     fid = node.get("fact")
     if fid not in facts:
