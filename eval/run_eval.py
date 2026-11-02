@@ -187,6 +187,7 @@ def main(modes: list[str]) -> None:
     stamp = dt.datetime.now().strftime("%Y%m%d-%H%M")
     for mode in modes:
         results = {}
+        start = len(claude.calls) if claude else 0
         for case in cases:
             if case["id"] not in gold:
                 continue
@@ -199,6 +200,11 @@ def main(modes: list[str]) -> None:
             else:
                 sys.exit(f"知らない比べ方：{mode}")
         summary = score(results, gold)
+        if claude and mode != "rules":
+            used = claude.calls[start:]
+            summary["api"] = {"calls": len(used), "models": sorted({c["model"] for c in used}),
+                              "input_tokens": sum(c["input_tokens"] for c in used),
+                              "output_tokens": sum(c["output_tokens"] for c in used)}
         if mode == "pipeline":
             summary["asked_mean"] = sum(len(r["asked"]) for r in results.values()) / max(len(results), 1)
             summary["wrong_reads"] = sum(len(r["wrong_reads"]) for r in results.values())
@@ -219,6 +225,9 @@ def main(modes: list[str]) -> None:
         if rr is not None:
             print(f"  ○のうち案内できた率 {rr:.1%}／示せた率（情報が足りないを含む）{rs_:.1%}")
         print(f"  ×なのに案内した数 {summary['cells']['no_recommended']}（1 件あたり {summary['wrong_recommended_per_case']:.2f}）")
+        if "api" in summary:
+            a = summary["api"]
+            print(f"  API 呼び出し {a['calls']} 回（{'・'.join(a['models'])}）入力 {a['input_tokens']}・出力 {a['output_tokens']} トークン")
 
 
 if __name__ == "__main__":

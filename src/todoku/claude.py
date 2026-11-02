@@ -214,6 +214,7 @@ class RealClaude:
         import anthropic
 
         self._client = anthropic.Anthropic()
+        self.calls: list[dict] = []  # 呼び出しごとの答えたモデルとトークン数（評価の費用を数えるため）
 
     def _json(self, system: str, user: str, schema: dict, max_tokens: int) -> dict:
         response = self._client.beta.messages.create(
@@ -225,6 +226,8 @@ class RealClaude:
             output_config={"effort": EFFORT, "format": {"type": "json_schema", "schema": schema}},
             messages=[{"role": "user", "content": user}],
         )
+        self.calls.append({"model": response.model, "stop": response.stop_reason,
+                           "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens})
         if response.stop_reason == "refusal":
             raise ClaudeRefused(getattr(response.stop_details, "category", None))
         if response.stop_reason == "max_tokens":
