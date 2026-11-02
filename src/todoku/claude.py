@@ -76,8 +76,17 @@ def parse_value(rules: RuleSet, fid: str, raw: Any) -> Any:
     raise ValueError(raw)
 
 
+# 相談文にはっきり書いてあっても、確信を low にして確かめる問いに回す値。
+# 相談した人の思い違いで、判定が大きく変わるもの。例：事例 c15 は「要介護2と言われています」と書いてあるが、
+# 本当は要支援2。3 モデルとも確信「高」で読み、そのまま判定に入っていた（eval/model_comparison.md）。
+# 区分は被保険者証で確かめられる。none・applying・jiritsu はこの扱いにしない
+ALWAYS_CONFIRM: dict[str, frozenset[str]] = {
+    "care_level": frozenset({"support1", "support2", "care1", "care2", "care3", "care4", "care5"}),
+}
+
+
 def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
-    """形・値・根拠を確かめる。根拠が相談文にない事実は確信を low に落とす。"""
+    """形・値・根拠を確かめる。根拠が相談文にない事実と、ALWAYS_CONFIRM の値は確信を low に落とす。"""
     out = Extraction(subject=(raw.get("subject") or "ご本人").strip()[:12] or "ご本人")
     seen: set[str] = set()
     norm_text = normalize(text)
@@ -94,6 +103,8 @@ def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
         evidence = (item.get("evidence") or "").strip()
         confidence = "high" if item.get("confidence") == "high" else "low"
         if not evidence or normalize(evidence) not in norm_text:
+            confidence = "low"
+        if value in ALWAYS_CONFIRM.get(fid, ()):
             confidence = "low"
         seen.add(fid)
         out.facts.append(Extracted(fid, value, confidence, evidence))
