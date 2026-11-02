@@ -12,7 +12,7 @@ spec.loader.exec_module(run_eval)
 RS = rules_mod.load()
 CASE = {
     "id": "t1",
-    "text": "町田市に住む母（82歳）が退院してから家で転びやすくなりました。介護保険は使ったことがありません。",
+    "text": "町田市に住む母（82歳）が退院してから家で転びやすくなりました。要介護の認定は受けていません。",
     "answers": {**{f: DONT_KNOW for f in RS.facts},
                 "lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none",
                 "household": "alone_daytime", "plans_home_modification": True, "caregiver_employee": True},
@@ -33,7 +33,7 @@ def test_pipeline_variants_without_api():
     assert set(res["variants"]) == {f"{o}-{k}" for o in ("value", "fixed") for k in range(4)}
     assert res["variants"]["value-0"]["asked"] == []
     assert len(res["variants"]["value-3"]["asked"]) <= 3
-    # 値打ち順は、決まった順よりも少ない問いで多くを拾う（この例では 1 問で介護休業給付金に届く）
+    # 値打ち順は、決まった順よりも少ない問いで多くを拾う（この例では 3 問目で介護休業給付金に届き、決まった順は届かない）
     s_value = run_eval.score({"t1": res["variants"]["value-3"]}, GOLD)
     s_fixed = run_eval.score({"t1": res["variants"]["fixed-3"]}, GOLD)
-    assert s_value["recall_recommended"] >= s_fixed["recall_recommended"]
+    assert s_value["recall_recommended"] > s_fixed["recall_recommended"]

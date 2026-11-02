@@ -21,9 +21,11 @@ def test_consult_reads_and_asks():
     assert data["facts"]["age_band"] == "age_75_plus"
     assert data["facts"]["household"] == "alone_daytime"
     assert data["facts"]["caregiver_employee"] is True
+    assert data["facts"]["uses_care_services"] is False
+    # 「介護保険は使ったことがない」から認定の有無までは読まない。いちばん値打ちのある認定を先に聞き返す
+    assert "care_level" not in data["facts"]
     q = data["question"]
-    assert data["facts"]["care_level"] == "none"
-    assert q is not None and q["fact"] != "care_level"
+    assert q is not None and q["fact"] == "care_level"
     # 答えを先に選んでおかない：選択肢に印はなく、「わからない」は画面が足す
     assert all(set(o) == {"value", "label"} for o in q["options"])
 

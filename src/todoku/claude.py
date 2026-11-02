@@ -281,7 +281,7 @@ FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"高齢の(母|父)|年老いた", "age_band", "age_75_plus", "low"),
     (r"要介護\s*([1-5１-５])", "care_level", None, "high"),
     (r"要支援\s*([12１２])", "care_level", None, "high"),
-    (r"認定.*(受けていない|受けていません|申請していない)|介護保険.*使ったことが(ない|ありません)", "care_level", "none", "high"),
+    (r"認定.*(受けていない|受けていません|申請していない)", "care_level", "none", "high"),
     (r"(認定|介護保険).*申請中", "care_level", "applying", "high"),
     (r"一人暮らし|ひとり暮らし|独り暮らし|独居", "household", "alone", "high"),
     (r"日中.{0,4}(一人|ひとり)", "household", "alone_daytime", "high"),
@@ -301,6 +301,8 @@ FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"(入院|手術).*(費用|お金|高く)|医療費", "high_medical_costs", True, "low"),
     (r"非課税", "tax_status", "household_exempt", "low"),
     (r"デイサービス|ヘルパー|ケアマネ", "uses_care_services", True, "high"),
+    # 「介護保険を使ったことがない」は、サービスを使っていないことで、認定がないことまでは言っていない（本物の Claude もそう読む）
+    (r"介護保険.*使ったことが(ない|ありません)", "uses_care_services", False, "high"),
 ]
 
 SUBJECTS = [("母", "お母さま"), ("父", "お父さま"), ("妻", "奥さま"), ("夫", "ご主人"), ("祖母", "おばあさま"), ("祖父", "おじいさま")]
