@@ -1,0 +1,145 @@
+# 事実の定義。判定器（engine.py）と聞き返し（questions.py）が使う。
+# - type: bool はボタンが「はい／いいえ」、enum は options の順に並ぶ。どちらにも「わからない」が付く。
+# - question は問いの元の文。Claude は相談文の呼び方に合わせて言い換えるだけで、選択肢は変えない。
+# - check は「わからない」と答えた人に添える確かめ方。
+# - 並び順は、問いの値打ちが同じときの順番に使う。
+
+lives_in_machida:
+  type: bool
+  question: ご本人は町田市にお住まいですか？
+  check: 住民票のある市区町村です。町田市の制度は町田市に住所がある方が対象です。
+
+age_band:
+  type: enum
+  question: ご本人の年齢はどのくらいですか？
+  options:
+    - {value: under_40, label: 40歳未満}
+    - {value: age_40_64, label: 40〜64歳}
+    - {value: age_65_69, label: 65〜69歳}
+    - {value: age_70_74, label: 70〜74歳}
+    - {value: age_75_plus, label: 75歳以上}
+  check: 健康保険証や介護保険の被保険者証の生年月日で確かめられます。
+
+care_level:
+  type: enum
+  question: 要介護・要支援の認定は受けていますか？
+  options:
+    - {value: none, label: 受けていない}
+    - {value: applying, label: 申請中}
+    - {value: jiritsu, label: 申請したが「非該当（自立）」だった}
+    - {value: support1, label: 要支援1}
+    - {value: support2, label: 要支援2}
+    - {value: care1, label: 要介護1}
+    - {value: care2, label: 要介護2}
+    - {value: care3, label: 要介護3}
+    - {value: care4, label: 要介護4}
+    - {value: care5, label: 要介護5}
+  check: 介護保険の被保険者証の「要介護状態区分等」の欄か、市から届いた認定の通知に書かれています。
+
+residence:
+  type: enum
+  question: ご本人は今どこで暮らしていますか？
+  options:
+    - {value: home, label: 自宅}
+    - {value: hospital, label: 入院中}
+    - {value: facility, label: 施設に入所中}
+  check: 有料老人ホームやサービス付き高齢者向け住宅は、制度によって扱いが変わります。担当のケアマネジャーか高齢者支援センターに確かめてください。
+
+household:
+  type: enum
+  question: ご本人はどなたと暮らしていますか？
+  options:
+    - {value: alone, label: ひとり暮らし}
+    - {value: elderly_only, label: 高齢者だけの世帯（夫婦など）}
+    - {value: alone_daytime, label: 家族と同居だが、日中はひとり}
+    - {value: with_family, label: 家族と同居で、日中も誰かいる}
+  check: 「日中はひとり」は、同居の家族が仕事などで週3日以上・1日6時間以上いない場合です。
+
+tax_status:
+  type: enum
+  question: ご本人の住民税はどうなっていますか？
+  options:
+    - {value: household_exempt, label: 世帯の全員が非課税}
+    - {value: self_exempt, label: 本人は非課税だが、世帯に課税の人がいる}
+    - {value: self_taxed, label: 本人が課税}
+  check: 市から届く介護保険料の通知の「段階」で分かります。町田市の住民税の通知書や、市役所での課税（非課税）証明書でも確かめられます。
+
+on_welfare:
+  type: bool
+  question: ご本人は生活保護を受けていますか？
+  check: 生活保護の受給者証、または担当のケースワーカーに確かめてください。
+
+uses_care_services:
+  type: bool
+  question: 介護保険のサービス（デイサービス、ヘルパーなど）を使っていますか？使う予定でもかまいません。
+  check: 担当のケアマネジャーが作る「サービス利用票」に、使っているサービスが書かれています。
+
+shortstay_or_facility:
+  type: bool
+  question: 特養・老健などの施設への入所や、ショートステイを使っている（使う予定がある）ですか？
+  check: 担当のケアマネジャーに確かめてください。
+
+high_medical_costs:
+  type: bool
+  question: 入院や通院で、1か月の医療費の自己負担が高くなった（なりそう）ですか？
+  check: 病院の領収書の「負担額」の欄を月ごとに足すと分かります。
+
+caregiver_employee:
+  type: bool
+  question: 介護をするご家族は、会社などに雇われて働いていますか？
+  check: 給与明細に「雇用保険料」が引かれていれば、雇用保険に入っています。
+
+dementia_diagnosis:
+  type: bool
+  question: ご本人は、認知症（または物忘れの病気）と医師に診断されていますか？
+  check: かかりつけの医師に確かめてください。
+
+wandering_risk:
+  type: bool
+  question: ご本人がひとりで出かけて、帰り道が分からなくなったことや、そのおそれはありますか？
+  check: ご家族が見ている様子でかまいません。
+
+fire_risk:
+  type: bool
+  question: 物忘れなどで、コンロの火の消し忘れが心配ですか？
+  check: ご家族が見ている様子でかまいません。
+
+chronic_attack_risk:
+  type: bool
+  question: ご本人に、発作が起きるおそれのある持病（心臓の病気など）があり、ふだんから注意が要りますか？
+  check: かかりつけの医師に確かめてください。
+
+incontinence_bedding:
+  type: bool
+  question: 失禁で布団を清潔に保てず、干すこともできない状態ですか？
+  check: ご家族が見ている様子でかまいません。
+
+uses_diapers:
+  type: bool
+  question: ご本人は紙おむつを使っていますか？
+  check: ご家族が見ている様子でかまいません。
+
+bedridden_6m:
+  type: bool
+  question: ご本人は、おおむね6か月以上、寝たきりの状態ですか？
+  check: かかりつけの医師に確かめてください。
+
+hearing_difficulty:
+  type: bool
+  question: ご本人は聞こえにくく、補聴器を考えていますか？
+  check: 耳鼻咽喉科で聴力を検査してもらうと分かります。
+
+plans_home_modification:
+  type: bool
+  question: 手すりを付ける・段差をなくすなど、家の工事を考えていますか？
+  check: 工事の前に申請が要る制度があります。工事を始める前に確かめてください。
+
+plans_fixture_replacement:
+  type: bool
+  question: 浴槽や流し・洗面台の取り替え、和式から洋式トイレへの取り替えを考えていますか？
+  check: 工事の前に申請が要ります。工事を始める前に確かめてください。
+
+plans_equipment_purchase:
+  type: bool
+  question: ポータブルトイレや入浴用のいすなど、福祉用具を買うことを考えていますか？
+  check: 買う前に、担当のケアマネジャーか高齢者支援センターに相談してください。

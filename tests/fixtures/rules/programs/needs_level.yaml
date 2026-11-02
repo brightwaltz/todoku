@@ -1,0 +1,14 @@
+id: needs_level
+number: 2
+name: 認定が要る給付
+level: national
+kind: condition
+summary: 認定を受けた人の給付
+weight: 2
+eligibility:
+  all:
+    - {fact: age65, is: true, label: 65歳以上}
+    - {fact: level, in: [low, high], label: 認定あり, via: base}
+apply: {where: 市役所}
+sources:
+  - {url: "https://example.go.jp/b", publisher: 国, license: PDL1.0, checked: 2026-11-02}

@@ -1,0 +1,16 @@
+id: city_alone
+number: 3
+name: ひとり暮らしの見守り
+level: machida
+kind: condition
+summary: 試験用
+weight: 1
+eligibility:
+  all:
+    - {fact: age65, is: true, label: 65歳以上}
+    - any:
+        - {fact: alone, is: true, label: ひとり暮らし}
+        - {fact: level, in: [high], label: 重い認定}
+apply: {where: 市役所}
+sources:
+  - {url: "https://www.city.machida.tokyo.jp/x.html", publisher: 町田市, license: 町田市ウェブサイト利用規約, checked: 2026-11-02}

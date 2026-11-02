@@ -1,0 +1,13 @@
+id: tax_deduction
+number: 4
+name: 認定書が先に要る控除
+level: national
+kind: review
+summary: 試験用
+weight: 1
+eligibility:
+  all:
+    - {prereq: needs_level, label: 先に認定が要る給付}
+apply: {where: 税務署}
+sources:
+  - {url: "https://example.go.jp/c", publisher: 国, license: PDL1.0, checked: 2026-11-02}

@@ -1,0 +1,18 @@
+id: base
+number: 1
+name: 認定
+level: national
+kind: review
+summary: 試験用の前提の手続き
+weight: 1
+done_when:
+  fact: level
+  in: [low, high]
+  label: 認定済み
+eligibility:
+  all:
+    - {fact: age65, is: true, label: 65歳以上}
+    - {fact: level, in: [none], label: 認定なし}
+apply: {where: 市役所}
+sources:
+  - {url: "https://example.go.jp/a", publisher: 国, license: PDL1.0, checked: 2026-11-02, quote: "引用してよい文"}
