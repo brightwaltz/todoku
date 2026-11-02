@@ -80,7 +80,7 @@ function renderExtracted(data) {
   list.replaceChildren();
   for (const f of data.extracted) {
     list.append(el("li", {},
-      `${shortQuestion(f.question)}：${f.label}`,
+      `${f.name}：${f.label}`,
       f.confidence === "low" ? el("span", { class: "tentative" }, "（あとで確かめます）") : null,
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
   }
@@ -89,10 +89,6 @@ function renderExtracted(data) {
     ? "試験モード：Claude を使わず、キーワードで読み取っています。"
     : "Claude が読み取り、根拠の箇所が相談の文章にあるかをプログラムで確かめました。";
   show("extracted");
-}
-
-function shortQuestion(q) {
-  return q.replace(/^ご本人は|^ご本人の/, "").replace(/[？?].*$/, "").replace(/ですか$|ますか$/, "");
 }
 
 // ---- 聞き返し ----
@@ -185,7 +181,7 @@ function programCard(r) {
       ...r.waiting_on.map((w, i) => [i ? "、" : "", el("a", { href: `#p-${w.id}`, onclick: (ev) => openCard(ev, w.id) }, w.name)])));
   }
   if (r.status === "unknown" && r.missing.length) {
-    sumParts.push(el("p", { class: "chain" }, "分からない点：", r.missing.map((m) => shortQuestion(m.question)).join("、")));
+    sumParts.push(el("p", { class: "chain" }, "分からない点：", r.missing.map((m) => m.name).join("、")));
   }
   const body = el("div", { class: "body" });
   body.append(el("h3", {}, "判定の理由"), el("ul", { class: "reasons" },

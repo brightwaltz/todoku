@@ -31,6 +31,7 @@ class Fact:
     check: str
     options: tuple[tuple[Any, str], ...]
     order: int
+    name: str = ""
     # ほかの事実から「いいえ」と決まる場合（例：認定がなければ介護サービスは使っていない）
     false_when: dict | None = None
 
@@ -126,13 +127,13 @@ def _load_facts(path: Path) -> dict[str, Fact]:
                 raise RuleError(f"facts.yaml: {fid} の選択肢が重複している")
         else:
             raise RuleError(f"facts.yaml: {fid} の type が bool でも enum でもない")
-        for key in ("question", "check"):
+        for key in ("name", "question", "check"):
             if not spec.get(key):
                 raise RuleError(f"facts.yaml: {fid} に {key} がない")
         false_when = spec.get("false_when")
         if false_when is not None and ftype != "bool":
             raise RuleError(f"facts.yaml: false_when は bool の事実だけ（{fid}）")
-        facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order, false_when)
+        facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order, spec["name"], false_when)
     for fact in facts.values():
         if fact.false_when is not None:
             ref = facts.get(fact.false_when.get("fact"))

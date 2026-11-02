@@ -1,9 +1,11 @@
 # 試験用の事実（本番の rules/facts.yaml とは別）
 age65:
+  name: age65
   type: bool
   question: 65歳以上ですか？
   check: 保険証で確かめる
 level:
+  name: level
   type: enum
   question: 認定は？
   options:
@@ -12,10 +14,12 @@ level:
     - {value: high, label: 重い}
   check: 被保険者証で確かめる
 alone:
+  name: alone
   type: bool
   question: ひとり暮らしですか？
   check: 住民票で確かめる
 noise:
+  name: noise
   type: bool
   question: どの制度にも効かない問い
   check: なし

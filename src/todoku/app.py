@@ -86,14 +86,15 @@ def clean_facts(raw: dict[str, Any]) -> dict[str, Any]:
 
 def fact_view(fid: str, value: Any) -> dict:
     fact = RULES.facts[fid]
-    return {"fact": fid, "value": value, "label": "わからない" if value == DONT_KNOW else fact.label_of(value),
-            "question": fact.question}
+    return {"fact": fid, "name": fact.name, "value": value,
+            "label": "わからない" if value == DONT_KNOW else fact.label_of(value), "question": fact.question}
 
 
 def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
     p = r.program
     missing = [
-        {"fact": f, "question": personalize(RULES.facts[f].question, subject), "check": RULES.facts[f].check,
+        {"fact": f, "name": RULES.facts[f].name, "question": personalize(RULES.facts[f].question, subject),
+         "check": RULES.facts[f].check,
          "answered_dont_know": facts.get(f) == DONT_KNOW}
         for f in r.missing_facts
     ]
