@@ -139,6 +139,10 @@ def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
          "answered_dont_know": facts.get(f) == DONT_KNOW}
         for f in r.missing_facts
     ]
+    # 町田市に住んでいると分かっているときだけ、町田市の窓口・電話・書類の名前を出す
+    here = facts.get("lives_in_machida") is True
+    other = {} if here else p.elsewhere
+    sources = [s for s in p.sources if here or "city.machida.tokyo.jp" not in s.url] or p.sources
     return {
         "id": p.id,
         "number": p.number,
@@ -157,14 +161,14 @@ def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
         "missing": missing,
         "waiting_on": [{"id": w, "name": RULES.programs[w].name} for w in r.waiting_on],
         "at_application": p.at_application,
-        "apply": p.apply,
-        "bring": p.bring,
+        "apply": other.get("apply", p.apply),
+        "bring": other.get("bring", p.bring),
         "amount": p.amount,
-        "timing": p.timing,
+        "timing": other.get("timing", p.timing),
         "sources": [
             {"url": s.url, "publisher": s.publisher, "title": s.title, "license": s.license,
              "checked": s.checked.isoformat(), "quote": s.quote}
-            for s in p.sources
+            for s in sources
         ],
         # 行政手続データの手続（根拠法令・条項）。画面では出典の名前を添える
         "procedures": [{"name": d.name, "law": d.law, "article": d.article, "match": d.match} for d in p.procedures],

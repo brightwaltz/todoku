@@ -198,3 +198,14 @@ def test_samples_without_claude(monkeypatch):
     # 置いてある結果も検査し直す：根拠が相談文にない事実は確信を low に落とす
     assert data["suggestions"] == {"household": "alone"}
     assert data["question"] is not None
+
+
+def test_other_cities_see_their_own_offices():
+    facts = {"age_band": "age_75_plus", "residence": "home"}
+    def where(code):
+        data = client.post("/api/step", json={"facts": facts, "municipality": code}).json()
+        return next(r for r in data["results"] if r["id"] == "kaigo-nintei")
+    yokohama, machida = where("141003"), where("132098")
+    assert "町田" not in yokohama["apply"]["where"] and "phone" not in yokohama["apply"]
+    assert all("city.machida.tokyo.jp" not in s["url"] for s in yokohama["sources"])
+    assert "町田市" in machida["apply"]["where"]

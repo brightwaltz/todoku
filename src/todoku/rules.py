@@ -95,6 +95,8 @@ class Program:
     procedures: list[Procedure] = field(default_factory=list)
     # 行政手続データに手続がないときの理由（探したことが分かるように、空にせず理由を書く）
     procedures_none: str = ""
+    # 町田市以外にお住まいの人に出す申請先・持ち物・時期（apply・bring・timing を置き換える）
+    elsewhere: dict = field(default_factory=dict)
     # 前提の手続き（via と prereq で参照している制度）。読み込みのときに埋める
     depends_on: set[str] = field(default_factory=set)
 
@@ -206,6 +208,15 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
     if procedures and level != "national":
         raise RuleError(f"{where}: procedures は国の制度だけ")
 
+    # 国の制度で、申請先などが町田市の書き方のとき、町田市以外にお住まいの人に出す書き方
+    elsewhere = dict(raw.get("elsewhere") or {})
+    if elsewhere and level != "national":
+        raise RuleError(f"{where}: elsewhere は国の制度だけ")
+    if set(elsewhere) - {"apply", "bring", "timing"}:
+        raise RuleError(f"{where}: elsewhere に書けるのは apply・bring・timing だけ")
+    if "apply" in elsewhere and not (elsewhere["apply"] or {}).get("where"):
+        raise RuleError(f"{where}: elsewhere の apply に where がない")
+
     return Program(
         id=pid,
         number=int(need("number")),
@@ -224,6 +235,7 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         timing=_as_list(raw.get("timing")),
         procedures=procedures,
         procedures_none=procedures_none,
+        elsewhere=elsewhere,
         depends_on=depends_on,
     )
 

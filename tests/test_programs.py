@@ -187,3 +187,21 @@ def test_care_leave_comes_with_the_benefit(rs):
 def test_special_allowance_is_for_people_at_home(rs):
     assert statuses(rs, {**MACHIDA_HOME_75, "severe_constant_care": True})["tokubetsu-shogaisha-teate"] == "eligible"
     assert statuses(rs, {**MACHIDA_HOME_75, "severe_constant_care": True, "residence": "facility"})["tokubetsu-shogaisha-teate"] == "ineligible"
+
+
+def test_city_wording_has_a_version_for_other_cities(rs):
+    # 国の制度の申請先・持ち物・時期に町田市の書き方があれば、町田市以外の人向けの書き方（elsewhere）もある
+    for p in rs.programs.values():
+        if p.level != "national":
+            continue
+        for key in ("apply", "bring", "timing"):
+            if "町田" in str(getattr(p, key)):
+                assert key in p.elsewhere, f"{p.id}: {key} に町田市以外の書き方がない"
+        assert "町田" not in str(p.elsewhere), p.id
+        assert "町田" not in p.summary, p.id
+
+
+def test_tax_certificate_outside_machida_is_a_step(rs):
+    outside = {"lives_in_machida": False, "age_band": "age_75_plus", "residence": "home"}
+    assert statuses(rs, outside)["shogaisha-kojo"] == "after_prereq"
+    assert statuses(rs, {**outside, "age_band": "age_40_64"})["shogaisha-kojo"] == "ineligible"
