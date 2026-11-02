@@ -9,6 +9,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 import unicodedata
 from dataclasses import dataclass, field
 from typing import Any, Protocol
@@ -210,24 +211,33 @@ class ClaudeRefused(ClaudeFailed):
 class RealClaude:
     name = "claude"
 
-    def __init__(self) -> None:
+    def __init__(self, model: str | None = None, effort: str | None = None) -> None:
         import anthropic
 
         self._client = anthropic.Anthropic()
+        self.model = model or MODEL
+        self.effort = effort or EFFORT
         self.calls: list[dict] = []  # 呼び出しごとの答えたモデルとトークン数（評価の費用を数えるため）
 
+    def _fallback(self) -> dict:
+        # 拒否されたときの代わりのモデル（サーバー側）は Opus と Sonnet だけ。Haiku 5.5 には付けられない
+        if self.model.startswith("claude-haiku-"):
+            return {}
+        return {"betas": ["server-side-fallback-2026-07-01"], "fallbacks": "default"}
+
     def _json(self, system: str, user: str, schema: dict, max_tokens: int) -> dict:
+        started = time.monotonic()
         response = self._client.beta.messages.create(
-            model=MODEL,
+            model=self.model,
             max_tokens=max_tokens,
-            betas=["server-side-fallback-2026-07-01"],
-            fallbacks="default",
             system=system,
-            output_config={"effort": EFFORT, "format": {"type": "json_schema", "schema": schema}},
+            output_config={"effort": self.effort, "format": {"type": "json_schema", "schema": schema}},
             messages=[{"role": "user", "content": user}],
+            **self._fallback(),
         )
         self.calls.append({"model": response.model, "stop": response.stop_reason,
-                           "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens})
+                           "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens,
+                           "seconds": round(time.monotonic() - started, 2)})
         if response.stop_reason == "refusal":
             raise ClaudeRefused(getattr(response.stop_details, "category", None))
         if response.stop_reason == "max_tokens":
