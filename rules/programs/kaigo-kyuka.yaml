@@ -17,7 +17,10 @@ apply:
   where: 勤め先（事業主）に申し出る
 amount:
   - 介護される家族が1人なら1年に5日まで、2人以上なら10日まで
-  - 1日単位か時間単位で休める
+  - 1日単位か時間単位で休める（時間単位で取りにくい仕事の人は、労使協定で1日単位だけになることがある）
+  - 休んだ日を有給にするか無給にするかは、会社の規定による
+timing:
+  - 「1年間」は、会社が決めていなければ4月1日から翌年3月31日まで
 sources:
   - url: https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/kaigo/shorttime-leave/
     publisher: 厚生労働省

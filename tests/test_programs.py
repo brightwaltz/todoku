@@ -173,9 +173,9 @@ def test_machida_shows_city_programs_not_types(rs):
 
 
 def test_hearing_aid_needs_the_certificate_first(rs):
-    s = statuses(rs, {**MACHIDA_HOME_75, "hearing_difficulty": True, "hearing_70db": True})
+    s = statuses(rs, {**MACHIDA_HOME_75, "hearing_difficulty": True, "hearing_certifiable": True})
     assert s["shintai-techo-chokaku"] == "eligible" and s["hosougu-hochoki"] == "after_prereq"
-    s = statuses(rs, {**MACHIDA_HOME_75, "hearing_difficulty": True, "hearing_70db": False})
+    s = statuses(rs, {**MACHIDA_HOME_75, "hearing_difficulty": True, "hearing_certifiable": False})
     assert s["shintai-techo-chokaku"] == "ineligible" and s["hosougu-hochoki"] == "ineligible"
 
 
@@ -205,3 +205,16 @@ def test_tax_certificate_outside_machida_is_a_step(rs):
     outside = {"lives_in_machida": False, "age_band": "age_75_plus", "residence": "home"}
     assert statuses(rs, outside)["shogaisha-kojo"] == "after_prereq"
     assert statuses(rs, {**outside, "age_band": "age_40_64"})["shogaisha-kojo"] == "ineligible"
+
+
+def test_loan_is_open_to_elderly_households_with_income(rs):
+    # 生活福祉資金の高齢者世帯（65 歳以上の人がいる世帯）には、所得の限定が書かれていない
+    s = statuses(rs, {**MACHIDA_HOME_75, "tax_status": "self_taxed", "plans_home_modification": True})
+    assert s["seikatsu-fukushi-shikin"] == "eligible"
+
+
+def test_daily_life_support_does_not_need_a_diagnosis(rs):
+    s = statuses(rs, {**MACHIDA_HOME_75, "dementia_diagnosis": False, "money_management_difficulty": True})
+    assert s["nichijo-jiritsu-shien"] == "eligible"
+    s = statuses(rs, {**MACHIDA_HOME_75, "dementia_diagnosis": False, "money_management_difficulty": False})
+    assert s["nichijo-jiritsu-shien"] == "ineligible"

@@ -53,4 +53,36 @@ def test_program_can_be_ruled_out(pid):
         for v in RS.facts[fid].values():
             if v != facts[fid] and statuses(RS, {**facts, fid: v})[pid] == "ineligible":
                 return
+    # 「どれか 1 つ」（any）の条件は、1 つ変えるだけでは外れない。条件の木から外れる組み合わせを組み立てて確かめる
+    facts = {}
+    if refuse(RS.programs[pid].eligibility, facts) and statuses(RS, facts)[pid] == "ineligible":
+        return
     pytest.fail(f"{pid} はどの事実を変えても当てはまらなくならない")
+
+
+def refuse(node: dict, facts: dict) -> bool:
+    """node を満たさないように facts に値を足す（satisfy の逆）。できなければ False。"""
+    if "all" in node:
+        for child in node["all"]:
+            trial = dict(facts)
+            if refuse(child, trial):
+                facts.update(trial)
+                return True
+        return False
+    if "any" in node:
+        return all(refuse(c, facts) for c in node["any"])
+    if "not" in node:
+        return satisfy(node["not"], facts)
+    if "step" in node or "ask_at" in node:
+        return False
+    if "prereq" in node:
+        return refuse(RS.programs[node["prereq"]].eligibility, facts)
+    want = node["in"] if "in" in node else [node.get("eq", node.get("is"))]
+    current = facts.get(node["fact"])
+    if current is not None:
+        return current not in want
+    others = [v for v in RS.facts[node["fact"]].values() if v not in want]
+    if not others:
+        return False
+    facts[node["fact"]] = others[0]
+    return True

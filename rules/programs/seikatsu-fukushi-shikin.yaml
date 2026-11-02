@@ -3,19 +3,23 @@ number: 27
 name: 生活福祉資金貸付（福祉費）
 level: national
 kind: review
-summary: 収入の少ない世帯などが、住宅の改修や介護サービスを使うための費用を、低い利子（保証人がいれば無利子）で借りられる。
+summary: 収入の少ない世帯や、65歳以上の人がいる世帯などが、住宅の改修や介護サービスを使うための費用を、低い利子（保証人がいれば無利子）で借りられる。
 weight: 1
 eligibility:
   all:
-    - {fact: tax_status, in: [household_exempt], label: 世帯の全員が住民税非課税（低所得の世帯の目安）}
+    # 対象の世帯は、低所得者世帯（市町村民税非課税程度）・障害者世帯・高齢者世帯（65歳以上の人がいる世帯。所得の限定は書かれていない）
+    - any:
+        - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上の人がいる世帯（高齢者世帯）}
+        - {fact: tax_status, in: [household_exempt], label: 世帯の全員が住民税非課税（低所得者世帯の目安）}
     - any:
         - {fact: plans_home_modification, is: true, label: 住宅の改修を考えている}
         - {fact: plans_equipment_purchase, is: true, label: 福祉用具を買うことを考えている}
         - {fact: uses_care_services, is: true, label: 介護保険のサービスを使っている}
 at_application:
-  - 返していける見込みがあるかも審査される
-  - 保証人がいれば無利子、いなければ年1.5%
-  - 高齢者の世帯や障害者の世帯も対象になりうる（扱いは都道府県の社会福祉協議会で違うことがある）
+  - 貸付なので、返していける見込みがあるかも審査される
+  - 保証人は原則として要る。保証人がいれば無利子、いなければ年1.5%
+  - 障害者手帳を持つ人がいる世帯（障害者世帯）も対象
+  - 都道府県の社会福祉協議会によっては、高齢者世帯を「療養や介護が要る65歳以上の人がいる世帯」に限っている
 apply:
   where: お住まいの市区町村の社会福祉協議会（貸し付けるのは都道府県の社会福祉協議会）
 amount:

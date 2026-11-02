@@ -19,8 +19,10 @@ apply:
 bring:
   - 認定診断書（障害の種類ごとの様式）
 amount:
-  - 月額30,450円（厚生労働省のページの額。額は年度によって改定される）
+  - 月額30,450円（令和8年4月分から。それまでは29,590円。額は年度によって改定される）
   - 2月・5月・8月・11月に、それぞれ前の月の分までがまとめて支払われる
+timing:
+  - 請求した月の翌月分から支給される（さかのぼっては出ない）
 sources:
   - url: https://www.mhlw.go.jp/bunya/shougaihoken/jidou/tokubetsu.html
     publisher: 厚生労働省
@@ -35,7 +37,12 @@ sources:
     quote: 20歳以上の重度障害者を対象として支給される手当をいう。
   - url: https://www.pref.shimane.lg.jp/medical/fukushi/syougai/ippan/fukushiaramashi/tokujitokushou/
     publisher: 島根県
-    title: 特別児童扶養手当・特別障害者手当等（所得の限度額と支払いの月）
+    title: 特別児童扶養手当・特別障害者手当等（所得の限度額と支払いの月、令和8年4月からの額）
+    license: 利用条件を確かめていない（引用しない）
+    checked: 2026-11-03
+  - url: https://www.fukushi.metro.tokyo.lg.jp/shisetsu/jigyosyo/shinsho/teate/toku_shou
+    publisher: 東京都福祉局
+    title: 特別障害者手当（支給は請求した月の翌月分から）
     license: 利用条件を確かめていない（引用しない）
     checked: 2026-11-03
 procedures:
