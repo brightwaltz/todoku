@@ -54,6 +54,46 @@ button { font: inherit; cursor: pointer; }
 .facts li:last-child { border-bottom: none; }
 .facts .ev { color: var(--muted); font-size: 14px; }
 .facts .tentative { color: var(--pre); font-size: 14px; font-weight: 700; margin-left: .4em; }
+/* 相談の文章の印と事実の行は、--i 番目ごとに 150ms ずつ遅れて現れる */
+.said { white-space: pre-wrap; margin: 0 0 12px; padding: 10px 12px; background: var(--card); border-radius: 10px; font-size: 16px; }
+.said mark {
+  color: inherit; background: linear-gradient(var(--pre-bg), var(--pre-bg)) no-repeat; background-size: 100% 100%;
+  border-bottom: 2px solid var(--pre); -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  animation: mark-in .45s ease-out both; animation-delay: calc(var(--i) * 150ms);
+}
+.said mark.low { background: none; border-bottom: 2px dotted var(--pre); animation-name: fade-in; }
+.facts li { animation: fade-in .45s ease-out both; animation-delay: calc(var(--i, 0) * 150ms); }
+@keyframes mark-in { from { background-size: 0 100%; border-bottom-color: transparent; } }
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } }
+/* いまの見立て：質問に答えている間は画面の上に留まる細い帯。点は制度 1 つずつ */
+.board-card { padding: 10px 12px; }
+.board-card.live { position: sticky; top: 0; z-index: 5; box-shadow: 0 3px 10px rgba(0, 0, 0, .08); }
+.board-card .note { font-size: 12px; margin: 6px 0 0; }
+.board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.col { border: 1px solid var(--line); border-radius: 10px; padding: 6px; background: var(--soft); }
+.col-head { display: flex; flex-direction: column; font-size: 11px; line-height: 1.25; margin-bottom: 5px; }
+.col-head .label { color: var(--muted); font-weight: 700; }
+.col-head .count { font-size: 18px; font-weight: 700; line-height: 1.2; align-self: flex-start; }
+.col-head .count.bump { animation: bump .6s ease-out; }
+@keyframes bump { 40% { transform: scale(1.4); color: var(--accent); } }
+.tiles { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 3px; }
+.tile { position: relative; width: 10px; height: 10px; border-radius: 50%; border: 1px solid var(--line); background: #fff; }
+.tile.eligible { background: var(--ok); border-color: var(--ok); }
+.tile.after_prereq { background: var(--pre); border-color: var(--pre); }
+.tile.unknown { background: var(--unk-bg); border-color: var(--unk); }
+/* 今の質問の答えで判定が決まりうる制度。動きが終わってから輪を 2 回 */
+.tile.pulse::after {
+  content: ""; position: absolute; inset: -2px; border-radius: 50%; opacity: 0; pointer-events: none;
+  animation: ring 1s ease-out .45s 2;
+}
+@keyframes ring { from { box-shadow: 0 0 0 0 var(--accent); opacity: .7; } to { box-shadow: 0 0 0 6px var(--accent); opacity: 0; } }
+.change { margin: 6px 0 0; font-weight: 700; color: var(--accent); font-size: 14px; }
+.change:empty { margin: 0; }  /* 読み上げの領域は消さずに残す */
+.change:not(:empty) + .note { display: none; }  /* 1 問答えたら、説明の代わりに変わったことを出す */
+#ask { scroll-margin-top: var(--board-h, 0px); }
+@media (prefers-reduced-motion: reduce) {
+  .said mark, .facts li, .col-head .count.bump, .tile.pulse::after { animation: none; }
+}
 .ask { border: 3px solid var(--accent); }
 .ask-count { color: var(--accent); font-weight: 700; margin: 0 0 4px; font-size: 15px; }
 #ask-text:focus { outline: none; }

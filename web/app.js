@@ -70,14 +70,15 @@ async function send() {
   state.startedAt = Date.now();
   $("send").disabled = true;
   show("reading"); show("extracted", false); show("ask", false); show("result", false);
+  clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await api("/api/consult", { text });
     state.subject = data.subject;
     state.facts = data.facts;
     state.suggestions = data.suggestions;
     state.engine = data.engine;
-    renderExtracted(data);
-    render(data);
+    renderExtracted(data, text);
+    render(data, true);
   } catch (e) {
     resendAfterGate = e instanceof GateError;
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
@@ -88,11 +89,12 @@ async function send() {
   show("reading", false);
 }
 
-function renderExtracted(data) {
+function renderExtracted(data, text) {
+  $("said").replaceChildren(...markEvidence(text, data.extracted));
   const list = $("extracted-list");
   list.replaceChildren();
-  for (const f of data.extracted) {
-    list.append(el("li", {},
+  for (const [i, f] of data.extracted.entries()) {
+    list.append(el("li", { style: `--i: ${i}` },
       `${f.name}：${f.label}`,
       f.confidence === "low" ? el("span", { class: "tentative" }, "（あとで確かめます）") : null,
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
@@ -104,13 +106,141 @@ function renderExtracted(data) {
   show("extracted");
 }
 
+// 相談の文章のうち、事実の根拠になった言葉に印を付ける。印 i と事実の行 i は同じ遅れで現れる
+function markEvidence(text, extracted) {
+  const spans = [];
+  for (const [i, f] of extracted.entries()) {
+    const at = f.evidence ? text.indexOf(f.evidence) : -1;
+    if (at < 0) continue;
+    const end = at + f.evidence.length;
+    if (spans.some((s) => at < s.end && s.start < end)) continue;  // 重なる印は後のものを付けない
+    spans.push({ start: at, end, i, low: f.confidence === "low" });
+  }
+  spans.sort((a, b) => a.start - b.start);
+  const parts = [];
+  let last = 0;
+  for (const s of spans) {
+    parts.push(text.slice(last, s.start),
+      el("mark", { class: s.low ? "low" : "", style: `--i: ${s.i}` }, text.slice(s.start, s.end)));
+    last = s.end;
+  }
+  parts.push(text.slice(last));
+  return parts;  // 文字列は replaceChildren がテキストノードにする
+}
+
+// ---- いまの見立て ----
+// 制度ごとの札を 4 つの列に置き、答えのたびに列が変わった札だけを動かす（FLIP）
+const BOARD = [
+  ["eligible", "当てはまる", "当てはまる見込み"],
+  ["after_prereq", "先に手続き", "先に手続きが要る制度"],
+  ["unknown", "確かめる", "確かめると分かる制度"],
+  ["no", "当てはまらない", "当てはまらない制度"],
+];
+const colOf = (status) => (status === "ineligible" || status === "done" ? "no" : status);
+const calm = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let tiles = new Map();  // 制度の id → 札。同じ札を動かすので作り直さない
+let boardPrev = null;   // 前回の { 制度の id: 列 }
+
+function clearBoard() {
+  tiles = new Map();
+  boardPrev = null;
+  $("board-cols").replaceChildren();
+  $("board-change").textContent = "";
+  show("board", false);
+}
+
+function restart(node, cls) {
+  node.classList.remove(cls);
+  void node.offsetWidth;  // 外したことを描画に知らせてから付け直す（続けて同じ動きを出すため）
+  node.classList.add(cls);
+}
+
+function renderBoard(data) {
+  const box = $("board-cols");
+  if (!box.children.length) {
+    box.append(...BOARD.map(([key, label]) => el("div", { class: `col ${key}`, "data-col": key },
+      el("div", { class: "col-head" }, el("span", { class: "label" }, label), el("span", { class: "count" }, "0")),
+      el("ul", { class: "tiles", "aria-label": label }))));
+  }
+  show("board");  // 隠れていると位置が測れない
+  // 1. 動かす前の位置を測る
+  const first = new Map([...tiles].map(([id, t]) => [id, t.getBoundingClientRect()]));
+  // 2. 札を今の列に並べ直す（順は判定の並び）
+  const now = {};
+  for (const r of data.results) {
+    let t = tiles.get(r.id);
+    if (!t) {
+      t = el("li", { class: "tile", title: r.name, "aria-label": r.name });
+      tiles.set(r.id, t);
+    }
+    t.className = `tile ${r.status}`;
+    now[r.id] = colOf(r.status);
+    box.querySelector(`[data-col="${now[r.id]}"] .tiles`).append(t);
+  }
+  const moved = boardPrev ? data.results.filter((r) => boardPrev[r.id] && boardPrev[r.id] !== now[r.id]) : [];
+  // 3. 動いた札を元の位置に戻して見せ、transform を外して新しい位置まで滑らせる
+  if (!calm()) {
+    for (const r of moved) {
+      const t = tiles.get(r.id);
+      const a = first.get(r.id);
+      const b = t.getBoundingClientRect();
+      t.style.transition = "none";
+      t.style.transform = `translate(${a.left - b.left}px, ${a.top - b.top}px)`;
+      void t.offsetWidth;
+      t.style.transition = "transform 420ms cubic-bezier(.2, .7, .3, 1)";
+      t.style.transform = "";
+      t.addEventListener("transitionend", () => { t.style.transition = ""; }, { once: true });
+    }
+  }
+  for (const [key] of BOARD) {
+    const col = box.querySelector(`[data-col="${key}"]`);
+    const count = col.querySelector(".count");
+    const n = String(col.querySelector(".tiles").children.length);
+    if (count.textContent !== n) {
+      count.textContent = n;
+      if (boardPrev) restart(count, "bump");
+    }
+  }
+  // 4. 質問の答えで判定が決まりうる制度の札に、輪を 2 回
+  for (const t of tiles.values()) t.classList.remove("pulse");
+  if (data.question) for (const id of data.question.affects_ids) { const t = tiles.get(id); if (t) restart(t, "pulse"); }
+  $("board-change").textContent = changeText(moved, now);
+  boardPrev = now;
+  // 質問へ移るとき、上に留まる見立ての帯の下に問いが来るように
+  $("board").classList.toggle("live", Boolean(data.question));
+  document.documentElement.style.setProperty("--board-h", `${$("board").offsetHeight + 8}px`);
+}
+
+function changeText(moved, now) {
+  const parts = [];
+  for (const [key, , say] of BOARD) {
+    const names = moved.filter((r) => now[r.id] === key).map((r) => r.name);
+    if (!names.length) continue;
+    // 上に留まる帯を低く保つため、名前を添えるのは「当てはまる見込み」に入った制度だけ（2 件まで）
+    const named = key === "eligible"
+      ? `（${names.slice(0, 2).join("、")}${names.length > 2 ? ` ほか ${names.length - 2} 件` : ""}）` : "";
+    parts.push(`${say} +${names.length}${named}`);
+  }
+  return parts.join("・");
+}
+
 // ---- 聞き返し ----
-function render(data) {
-  if (data.question) { renderQuestion(data.question, data.max_questions); show("ask"); show("result", false); }
+function render(data, first = false) {
+  renderBoard(data);
+  if (data.question) { show("ask"); show("result", false); renderQuestion(data.question, data.max_questions, first); }
   else { show("ask", false); renderResult(data); }
 }
 
-function renderQuestion(q, max) {
+// 読み取った直後は、根拠の言葉に印が付き終わるのを見せてから質問へ移る（自分で動かしたら追わない）
+function revealThenAsk() {
+  $("extracted").scrollIntoView({ behavior: "smooth", block: "start" });
+  const wait = calm() ? 0 : $("extracted-list").children.length * 150 + 1200;
+  const timer = setTimeout(() => $("ask").scrollIntoView({ behavior: "smooth", block: "start" }), wait);
+  const stop = () => clearTimeout(timer);
+  for (const ev of ["wheel", "touchmove", "keydown"]) window.addEventListener(ev, stop, { once: true, passive: true });
+}
+
+function renderQuestion(q, max, first = false) {
   $("ask-count").textContent = `質問 ${state.asked + 1}（多くて ${max} つ）`;
   $("ask-text").textContent = q.text;
   const box = $("ask-options");
@@ -124,7 +254,8 @@ function renderQuestion(q, max) {
   $("ask-check").textContent = q.check;
   // 選択肢ではなく問いの文に移る（1 つ目の選択肢に色が付くと、先に選んであるように見えるため）
   $("ask-text").focus({ preventScroll: true });
-  $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (first) revealThenAsk();
+  else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 async function answer(q, value) {
@@ -272,6 +403,7 @@ $("again").addEventListener("click", () => {
   state = fresh();
   $("text").value = "";
   show("extracted", false); show("ask", false); show("result", false);
+  clearBoard();
   window.scrollTo({ top: 0, behavior: "smooth" });
   $("text").focus();
 });

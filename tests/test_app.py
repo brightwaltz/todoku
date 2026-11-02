@@ -28,6 +28,10 @@ def test_consult_reads_and_asks():
     assert q is not None and q["fact"] == "care_level"
     # 答えを先に選んでおかない：選択肢に印はなく、「わからない」は画面が足す
     assert all(set(o) == {"value", "label"} for o in q["options"])
+    # 画面の見立てで札を光らせるための id。名前と対になり、どれも結果にある制度
+    ids = {r["id"] for r in data["results"]}
+    assert q["affects_ids"] and len(q["affects_ids"]) == len(q["affects"])
+    assert set(q["affects_ids"]) <= ids
 
 
 def test_step_until_done_and_no_text_needed():

@@ -148,13 +148,13 @@ def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: s
             "fact": q.fact, "confirm": True,
             "text": f"{subject}は「{fact.label_of(q.suggested)}」で合っていますか？",
             "options": [{"value": q.suggested, "label": "はい"}, {"value": NOT_THIS, "label": "いいえ"}],
-            "check": fact.check, "affects": affects,
+            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
         }
     return {
         "fact": q.fact, "confirm": False,
         "text": personalize(fact.question, subject),
         "options": [{"value": v, "label": label} for v, label in fact.options],
-        "check": fact.check, "affects": affects,
+        "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
     }
 
 

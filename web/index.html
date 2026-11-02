@@ -44,8 +44,15 @@
 
   <section id="extracted" class="card soft" hidden>
     <h2>相談の文章から読み取ったこと</h2>
+    <p class="said" id="said"></p>
     <ul id="extracted-list" class="facts"></ul>
     <p class="note" id="engine-note"></p>
+  </section>
+
+  <section id="board" class="card board-card" hidden aria-label="いまの見立て">
+    <div class="board" id="board-cols"></div>
+    <p class="change" id="board-change" aria-live="polite"></p>
+    <p class="note">点は制度 1 つずつです。答えるたびに、規則のプログラムが判定し直します（AI は使いません）。</p>
   </section>
 
   <section id="ask" class="card ask" hidden aria-live="polite">
