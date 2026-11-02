@@ -20,6 +20,7 @@ def test_consult_reads_and_asks():
     assert data["facts"]["lives_in_machida"] is True
     assert data["facts"]["age_band"] == "age_75_plus"
     assert data["facts"]["household"] == "alone_daytime"
+    assert data["facts"]["caregiver_employee"] is True
     q = data["question"]
     assert data["facts"]["care_level"] == "none"
     assert q is not None and q["fact"] != "care_level"
@@ -87,6 +88,7 @@ def test_check_summary_rejects_numbers_and_foreign_ids():
 def test_index_and_health():
     assert client.get("/").status_code == 200
     assert client.get("/static/app.js").status_code == 200
+    assert client.get("/static/app.js").headers["cache-control"] == "no-cache"
     h = client.get("/api/health").json()
     assert h["programs"] == 20
 

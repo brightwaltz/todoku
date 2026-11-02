@@ -297,6 +297,7 @@ FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"寝たきり", "bedridden_6m", True, "low"),
     (r"聞こえ", "hearing_difficulty", True, "low"),
     (r"(会社|職場|仕事).*(休|辞め)|働きながら", "caregiver_employee", True, "low"),
+    (r"私は(会社勤め|会社員|パート)", "caregiver_employee", True, "high"),
     (r"(入院|手術).*(費用|お金|高く)|医療費", "high_medical_costs", True, "low"),
     (r"非課税", "tax_status", "household_exempt", "low"),
     (r"デイサービス|ヘルパー|ケアマネ", "uses_care_services", True, "high"),

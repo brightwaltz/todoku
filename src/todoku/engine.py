@@ -109,11 +109,17 @@ def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], lea
                 return s
         return T
     if "any" in node:
-        states = [_eval(c, facts, statuses, leaves) for c in node["any"]]
-        for s in (T, P, U):
-            if s in states:
-                return s
-        return F
+        branches = []
+        for c in node["any"]:
+            inner: list[Leaf] = []
+            branches.append((_eval(c, facts, statuses, inner), inner))
+        states = [b for b, _ in branches]
+        result = next((s for s in (T, P, U) if s in states), F)
+        # 通った枝があれば、その枝の理由だけを残す（当てはまるのに、別の道の × が並ばないように）
+        for state, inner in branches:
+            if result not in (T, P) or state == result:
+                leaves.extend(inner)
+        return result
     if "not" in node:
         inner: list[Leaf] = []
         s = _eval(node["not"], facts, statuses, inner)

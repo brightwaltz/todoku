@@ -220,6 +220,14 @@ def summary(body: SummaryIn, request: Request) -> dict:
     return {"engine": CLAUDE.name, "lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]}
 
 
+@app.middleware("http")
+async def revalidate_pages(request: Request, call_next):
+    response = await call_next(request)
+    if request.url.path == "/" or request.url.path.startswith("/static/"):
+        response.headers["Cache-Control"] = "no-cache"  # 直した後に古い画面が残らないよう、毎回 ETag で確かめ直させる
+    return response
+
+
 @app.get("/api/health")
 def health() -> dict:
     return {"ok": True, "programs": len(RULES.programs), "engine": CLAUDE.name, "passphrase": bool(PASSPHRASE)}

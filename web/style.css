@@ -56,6 +56,7 @@ button { font: inherit; cursor: pointer; }
 .facts .tentative { color: var(--pre); font-size: 14px; font-weight: 700; margin-left: .4em; }
 .ask { border: 3px solid var(--accent); }
 .ask-count { color: var(--accent); font-weight: 700; margin: 0 0 4px; font-size: 15px; }
+#ask-text:focus { outline: none; }
 .options { display: grid; gap: 10px; margin: 8px 0 12px; }
 .option { background: #fff; color: var(--ink); border: 2px solid var(--accent); text-align: left; }
 .option:active, .option:focus-visible { background: #e3f1ee; }
@@ -95,7 +96,7 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
 .src { font-size: 14px; color: var(--muted); }
 .src a { color: var(--accent); word-break: break-all; }
 blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line); background: var(--soft); font-size: 15px; }
-.tel { color: var(--accent); font-weight: 700; }
+.tel { color: var(--accent); font-weight: 700; white-space: nowrap; }
 .foot { color: var(--muted); font-size: 14px; padding-bottom: 40px; }
 .error { color: var(--no); font-weight: 700; }
 @media (max-width: 420px) {

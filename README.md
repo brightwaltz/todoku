@@ -79,6 +79,7 @@ uv sync
 uv run pytest                      # 判定器・規則・API のテスト
 TODOKU_FAKE_CLAUDE=1 uv run uvicorn todoku.app:app --port 8000   # 鍵なしの試験モード（キーワードで読み取る）
 ANTHROPIC_API_KEY=... uv run uvicorn todoku.app:app --port 8000  # Claude で読み取る
+ANTHROPIC_API_KEY=... uv run python scripts/first_call.py           # デモの相談文を Claude で 1 回だけ読み取る（トークン数も出す）
 ```
 
 環境変数：`TODOKU_PASSPHRASE`（合言葉。設定すると画面で求める）、`TODOKU_RATE_LIMIT`（Claude を呼ぶ API の 10 分あたりの回数、IP ごと）、`TODOKU_MODEL`（既定 `claude-opus-5-5`）、`TODOKU_EFFORT`（既定 `low`）。

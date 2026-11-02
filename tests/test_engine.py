@@ -64,6 +64,14 @@ def test_any_true_wins(rs):
     assert s["city_alone"] == "unknown"
 
 
+def test_any_shows_only_the_branch_that_passed(rs):
+    # 当てはまるときは通った枝の理由だけ。通らないときは、どの道もだめだったと分かるよう全部
+    res = evaluate(rs, {"age65": True, "alone": False, "level": "high"})
+    assert {leaf.label: leaf.state for leaf in res["city_alone"].leaves} == {"65歳以上": "T", "重い認定": "T"}
+    res = evaluate(rs, {"age65": True, "alone": False, "level": "low"})
+    assert {leaf.label for leaf in res["city_alone"].leaves} == {"65歳以上", "ひとり暮らし", "重い認定"}
+
+
 def test_dont_know_stays_unknown_and_is_reported(rs):
     res = evaluate(rs, {"age65": True, "level": "low", "alone": DONT_KNOW})
     assert res["city_alone"].status == "unknown"

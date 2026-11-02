@@ -49,7 +49,7 @@
 
   <section id="ask" class="card ask" hidden aria-live="polite">
     <p class="ask-count" id="ask-count"></p>
-    <h2 id="ask-text"></h2>
+    <h2 id="ask-text" tabindex="-1"></h2>
     <div id="ask-options" class="options"></div>
     <p class="why" id="ask-why"></p>
     <details><summary>確かめ方</summary><p id="ask-check"></p></details>
@@ -60,7 +60,7 @@
     <div class="card summary" id="summary" hidden>
       <h2>まず知っておきたいこと</h2>
       <ul id="summary-lines"></ul>
-      <p class="note">このまとめは Claude が判定の結果から書きました。判定そのものは規則のプログラムが決めています。</p>
+      <p class="note" id="summary-note"></p>
     </div>
     <div class="stats" id="stats"></div>
     <div id="groups"></div>

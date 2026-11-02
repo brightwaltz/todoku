@@ -109,7 +109,8 @@ function renderQuestion(q, max) {
   const names = q.affects.slice(0, 3).join("、") + (q.affects.length > 3 ? ` ほか ${q.affects.length - 3} 件` : "");
   $("ask-why").textContent = `この答えで判定が決まる制度：${names}`;
   $("ask-check").textContent = q.check;
-  box.querySelector("button").focus({ preventScroll: true });
+  // 選択肢ではなく問いの文に移る（1 つ目の選択肢に色が付くと、先に選んであるように見えるため）
+  $("ask-text").focus({ preventScroll: true });
   $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -241,6 +242,9 @@ async function summarize() {
     const data = await api("/api/summary", { facts: state.facts, subject: state.subject });
     if (!data.lines.length) return;
     $("summary-lines").replaceChildren(...data.lines.map((l) => el("li", {}, l.text)));
+    $("summary-note").textContent = data.engine === "fake"
+      ? "試験モード：このまとめは決まった文の組み立てです。判定そのものは規則のプログラムが決めています。"
+      : "このまとめは Claude が判定の結果から書きました。判定そのものは規則のプログラムが決めています。";
     show("summary");
   } catch (e) { /* まとめが出なくても結果は読める */ }
 }
