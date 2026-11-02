@@ -27,7 +27,7 @@ import yaml
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from todoku import rules as rules_mod  # noqa: E402
 from todoku.engine import DONT_KNOW, statuses  # noqa: E402
-from todoku.questions import MAX_QUESTIONS, next_question  # noqa: E402
+from todoku.questions import MAX_QUESTIONS, Question, next_question, referenced_facts  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "out"
@@ -71,17 +71,24 @@ def run_rules(rs, case: dict) -> dict:
     return {"statuses": statuses(rs, dict(case["answers"])), "asked": []}
 
 
-def run_pipeline(rs, case: dict, claude, max_questions: int = MAX_QUESTIONS) -> dict:
-    extraction = claude.extract(rs, case["text"])
-    facts = extraction.confirmed()
-    suggestions = extraction.suggestions()
-    wrong_reads = [
-        {"fact": e.fact, "read": e.value, "truth": answer_of(case, e.fact), "confidence": e.confidence}
-        for e in extraction.facts if answer_of(case, e.fact) not in (e.value, DONT_KNOW)
-    ]
+def fixed_order_question(rs, facts: dict, suggestions: dict, asked: int, max_questions: int):
+    """比べる相手：値打ちを数えず、facts.yaml の順に、まだ分からない事実を聞く（決まった順の問診票）。"""
+    if asked >= max_questions:
+        return None
+    for fid in sorted(referenced_facts(rs), key=lambda f: rs.facts[f].order):
+        value = facts.get(fid)
+        if value is None:
+            return Question(fid, 0.0, suggestions.get(fid))
+    return None
+
+
+def simulate(rs, case: dict, facts: dict, suggestions: dict, max_questions: int, order: str) -> dict:
+    """読み取った事実から始めて、最大 max_questions 問を事例の答えで返す。"""
+    facts, suggestions = dict(facts), dict(suggestions)
+    pick = next_question if order == "value" else fixed_order_question
     asked = []
     for i in range(max_questions):
-        q = next_question(rs, facts, suggestions, asked=i, max_questions=max_questions)
+        q = pick(rs, facts, suggestions, asked=i, max_questions=max_questions)
         if q is None:
             break
         truth = answer_of(case, q.fact)
@@ -91,7 +98,24 @@ def run_pipeline(rs, case: dict, claude, max_questions: int = MAX_QUESTIONS) -> 
             continue
         facts[q.fact] = truth
         suggestions.pop(q.fact, None)
-    return {"statuses": statuses(rs, facts), "asked": asked, "wrong_reads": wrong_reads,
+    return {"statuses": statuses(rs, facts), "asked": asked}
+
+
+def run_pipeline(rs, case: dict, claude) -> dict:
+    extraction = claude.extract(rs, case["text"])
+    facts = extraction.confirmed()
+    suggestions = extraction.suggestions()
+    wrong_reads = [
+        {"fact": e.fact, "read": e.value, "truth": answer_of(case, e.fact), "confidence": e.confidence}
+        for e in extraction.facts if answer_of(case, e.fact) not in (e.value, DONT_KNOW)
+    ]
+    main_run = simulate(rs, case, facts, suggestions, MAX_QUESTIONS, "value")
+    # 読み取りは 1 回だけ。聞く数と順番を変えた結果は、追加の API 呼び出しなしで出せる
+    variants = {
+        f"{order}-{k}": simulate(rs, case, facts, suggestions, k, order)
+        for order in ("value", "fixed") for k in range(0, MAX_QUESTIONS + 1)
+    }
+    return {**main_run, "wrong_reads": wrong_reads, "variants": variants,
             "read": {e.fact: [e.value, e.confidence] for e in extraction.facts}}
 
 
@@ -177,6 +201,15 @@ def main(modes: list[str]) -> None:
         if mode == "pipeline":
             summary["asked_mean"] = sum(len(r["asked"]) for r in results.values()) / max(len(results), 1)
             summary["wrong_reads"] = sum(len(r["wrong_reads"]) for r in results.values())
+            summary["by_questions"] = {}
+            for key in next(iter(results.values()))["variants"]:
+                sub = {cid: r["variants"][key] for cid, r in results.items()}
+                s = score(sub, gold)
+                summary["by_questions"][key] = {"recall_recommended": s["recall_recommended"],
+                                                "recall_shown": s["recall_shown"],
+                                                "wrong_recommended": s["cells"]["no_recommended"]}
+                print(f"  {key:8s} 案内できた率 {s['recall_recommended']:.1%}  示せた率 {s['recall_shown']:.1%}"
+                      f"  ×なのに案内 {s['cells']['no_recommended']}")
         (OUT / f"{mode}-{stamp}.json").write_text(
             json.dumps({"mode": mode, "summary": summary, "results": results}, ensure_ascii=False, indent=1),
             encoding="utf-8")
