@@ -121,3 +121,68 @@ def test_claude_failure_becomes_a_message(monkeypatch):
     res = client.post("/api/consult", json={"text": "母のことで相談です"})
     assert res.status_code == 503
     assert "もう一度" in res.json()["detail"]
+
+
+def test_municipality_sets_lives_in_machida():
+    from todoku import app as app_mod
+
+    other = "011002"  # 札幌市（web/municipalities.json にある町田市以外のコード）
+    assert other in app_mod.PLACES
+    # 相談文に「町田」とあっても、画面で選んだ市区町村を優先する（読み取りの後に上書き）
+    data = client.post("/api/consult", json={"text": DEMO, "municipality": "132098"}).json()
+    assert data["facts"]["lives_in_machida"] is True
+    assert data["place"] == {"code": "132098", "pref": "東京都", "name": "町田市"}
+    data = client.post("/api/consult", json={"text": DEMO, "municipality": other}).json()
+    assert data["facts"]["lives_in_machida"] is False
+    assert "lives_in_machida" not in data["suggestions"]
+    # 一覧にないコードは無視する
+    data = client.post("/api/step", json={"facts": {}, "municipality": "999999"}).json()
+    assert all(k["fact"] != "lives_in_machida" for k in data["known"])
+    assert data["place"] is None
+    data = client.post("/api/step", json={"facts": {"lives_in_machida": True}, "municipality": other}).json()
+    assert next(k for k in data["known"] if k["fact"] == "lives_in_machida")["value"] is False
+
+
+def test_passphrase_only_for_claude(monkeypatch):
+    from todoku import app as app_mod
+
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    assert client.post("/api/consult", json={"text": DEMO}).status_code == 401
+    assert client.post("/api/step", json={"facts": {}}).status_code == 200
+    assert client.get("/api/samples").status_code == 200
+
+
+def test_samples_without_claude(monkeypatch):
+    from todoku import app as app_mod
+
+    listed = client.get("/api/samples").json()
+    assert len(listed) == 3
+    assert all(set(s) == {"id", "label", "text", "ready"} for s in listed)
+    # 用意のない見本（reading が null）は 404
+    blank = {"id": "blank", "label": "空", "text": "母のことです。", "municipality": "", "reading": None, "made": None}
+    ready = {"id": "ready", "label": "用意済み", "text": DEMO, "municipality": "132098",
+             "reading": {"subject": "お母さま", "facts": [
+                 {"fact": "age_band", "value": "age_75_plus", "confidence": "high", "evidence": "82歳"},
+                 {"fact": "uses_care_services", "value": "false", "confidence": "high", "evidence": "介護保険は使ったことがありません"},
+                 {"fact": "household", "value": "alone", "confidence": "high", "evidence": "ひとり暮らし"},
+             ]},
+             "made": {"model": "claude-test", "date": "2026-11-03"}}
+    monkeypatch.setattr(app_mod, "SAMPLES", [blank, ready])
+
+    def no_claude(rules, text):
+        raise AssertionError("見本で Claude を呼んだ")
+
+    monkeypatch.setattr(app_mod.CLAUDE, "extract", no_claude)
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")  # 見本は合言葉なしで見られる
+    assert client.post("/api/sample", json={"id": "blank"}).status_code == 404
+    assert client.post("/api/sample", json={"id": "nope"}).status_code == 404
+    res = client.post("/api/sample", json={"id": "ready"})
+    assert res.status_code == 200
+    data = res.json()
+    assert data["engine"] == "sample" and data["sample"] is True
+    assert data["made"]["model"] == "claude-test"
+    assert data["facts"]["lives_in_machida"] is True
+    assert data["facts"]["uses_care_services"] is False
+    # 置いてある結果も検査し直す：根拠が相談文にない事実は確信を low に落とす
+    assert data["suggestions"] == {"household": "alone"}
+    assert data["question"] is not None

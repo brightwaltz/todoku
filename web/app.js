@@ -4,21 +4,41 @@
 
 const DONT_KNOW = "__dont_know__";
 const NOT_THIS = "__not__";
-const EXAMPLES = [
-  "町田市に住む母（82歳）が先月退院してから、家の中で転びやすくなりました。介護保険は使ったことがありません。私は会社勤めで、日中は母ひとりです。",
-  "父が認知症と診断されました。最近、散歩に出て帰り道が分からなくなることがあります。町田市で父と母の二人暮らしです。",
-  "町田市でひとり暮らしの祖母が要介護4になり、紙おむつを使っています。世帯は住民税非課税です。",
+// 選ぶだけで下書きを作る入口。書くのが難しい人のために、選んだものを文にして欄に入れる（本人が直して送る）
+const WHO = ["母", "父", "妻", "夫", "祖母", "祖父", "ご自分", "ほかの方"];
+const AGES = ["65歳未満", "65〜74歳", "75歳以上"];
+const WORRIES = [
+  ["転びやすい", "家の中で転びやすくなりました。"],
+  ["退院した", "最近、病院から退院しました。"],
+  ["物忘れ", "物忘れが増えてきました。"],
+  ["道に迷う", "外出すると道に迷うことがあります。"],
+  ["火の消し忘れ", "火の消し忘れが心配です。"],
+  ["おむつ", "紙おむつを使っています。"],
+  ["聞こえにくい", "耳が聞こえにくくなりました。"],
+  ["日中ひとり", "日中はひとりで過ごしています。"],
+  ["医療費", "入院や通院の医療費の負担が重くなっています。"],
+  ["仕事と介護", "私は働きながら介護をしています。"],
+  ["家を直したい", "手すりを付けたり、段差をなくしたりしたいです。"],
+  ["介護サービス", "介護保険のサービスを使っています。"],
 ];
 
 const $ = (id) => document.getElementById(id);
 let state = fresh();
 let aikotoba = "";
 try { aikotoba = sessionStorage.getItem("aikotoba") || ""; } catch (e) { /* 保存できない環境でも動く */ }
+let pick = freshPick();
+let lastDraft = "";     // 最後に作った下書き。欄がこれと違えば、本人が書き換えたとみなして上書きしない
+let prefs = [];         // municipalities.json の都道府県（市区町村つき）
 let resendAfterGate = false;  // 合言葉で止まった相談を、合言葉のあとで送り直す
 class GateError extends Error {}
 
 function fresh() {
-  return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "" };
+  return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
+    municipality: "", sample: false };
+}
+
+function freshPick() {
+  return { who: "", age: "", worries: new Set(), pref: "", city: "" };
 }
 
 function el(tag, attrs = {}, ...children) {
@@ -40,7 +60,7 @@ function show(id, on = true) { $(id).hidden = !on; }
 function askGate(wrong) {
   $("gate-msg").textContent = wrong
     ? "合言葉が違います。入れ直してください。"
-    : "試しに使っていただくための合言葉を入れてください。";
+    : "ご自分の相談を送るには合言葉が要ります。下の見本は合言葉なしで見られます。";
   show("gate");
   $("gate").scrollIntoView({ block: "start" });
   $("aikotoba").focus();
@@ -62,21 +82,98 @@ async function api(path, body) {
   return res.json();
 }
 
+// ---- 選ぶだけの下書き ----
+function chipGroup(boxId, labels, multi) {
+  $(boxId).replaceChildren(...labels.map((label) => el("button", {
+    type: "button", class: "chip pick-chip", "aria-pressed": "false",
+    onclick: (ev) => choose(boxId, label, multi, ev.currentTarget),
+  }, label)));
+}
+
+function choose(boxId, label, multi, button) {
+  const on = button.getAttribute("aria-pressed") !== "true";
+  if (multi) {
+    if (on) pick.worries.add(label); else pick.worries.delete(label);
+  } else {
+    // 1 つだけ選ぶ組。もう一度押すと外れる
+    for (const b of $(boxId).children) b.setAttribute("aria-pressed", "false");
+    pick[boxId === "pick-who" ? "who" : "age"] = on ? label : "";
+  }
+  button.setAttribute("aria-pressed", String(on));
+  redraft();
+}
+
+function buildDraft() {
+  if (!pick.who && !pick.worries.size) return "";
+  const parts = [];
+  const age = pick.age ? `（${pick.age}）` : "";
+  if (pick.who === "ご自分") parts.push(`私自身${age}のことです。`);
+  else if (pick.who) parts.push(`${pick.who}${age}のことです。`);
+  else if (pick.age) parts.push(`${pick.age}の方のことです。`);
+  const pref = prefs.find((p) => p.code === pick.pref);
+  if (pref) {
+    const city = pref.cities.find(([code]) => code === pick.city);
+    parts.push(`${pref.name}${city ? city[1] : ""}に住んでいます。`);
+  }
+  for (const [label, sentence] of WORRIES) if (pick.worries.has(label)) parts.push(sentence);
+  return parts.join("");
+}
+
+// 選ぶたびに作り直す。ただし本人が欄を書き換えていたら上書きせず、作り直すボタンを出す
+function redraft(force = false) {
+  const box = $("text");
+  const draft = buildDraft();
+  const edited = box.value !== lastDraft && box.value.trim() !== "";
+  if (edited && !force) { show("redraft", draft !== "" && draft !== box.value); return; }
+  box.value = draft;
+  lastDraft = draft;
+  show("redraft", false);
+}
+
+function fillCities() {
+  const pref = prefs.find((p) => p.code === pick.pref);
+  $("city").replaceChildren(el("option", { value: "" }, "市区町村"),
+    ...(pref ? pref.cities.map(([code, name]) => el("option", { value: code }, name)) : []));
+  $("city").disabled = !pref;
+}
+
+function resetPick() {
+  pick = freshPick();
+  lastDraft = "";
+  document.querySelectorAll(".pick-chip").forEach((b) => b.setAttribute("aria-pressed", "false"));
+  $("pref").value = "";
+  fillCities();
+  show("redraft", false);
+}
+
 // ---- 相談を送る ----
 async function send() {
   const text = $("text").value.trim();
   if (!text) { $("text").focus(); return; }
+  await consultWith(text, () => api("/api/consult", { text, municipality: pick.city }));
+}
+
+// 見本は、前もって Claude が読み取った結果をサーバから受け取る（Claude を呼ばない）
+async function openSample(s) {
+  if (!s.ready) { $("text").value = s.text; redraft(); return; }  // 用意がなければ、欄に例文を入れるだけ
+  await consultWith(s.text, () => api("/api/sample", { id: s.id }));
+}
+
+async function consultWith(text, call) {
   state = fresh();
   state.startedAt = Date.now();
   $("send").disabled = true;
+  $("reading").replaceChildren(el("p", {}, "読み取っています…"));
   show("reading"); show("extracted", false); show("ask", false); show("result", false);
   clearBoard();  // 前の相談の見立てから動かさない
   try {
-    const data = await api("/api/consult", { text });
+    const data = await call();
     state.subject = data.subject;
     state.facts = data.facts;
     state.suggestions = data.suggestions;
     state.engine = data.engine;
+    state.sample = Boolean(data.sample);
+    state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
     render(data, true);
   } catch (e) {
@@ -100,9 +197,12 @@ function renderExtracted(data, text) {
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
   }
   if (!data.extracted.length) list.append(el("li", {}, "読み取れた事実はありませんでした。いくつか質問します。"));
-  $("engine-note").textContent = data.engine === "fake"
-    ? "試験モード：Claude を使わず、キーワードで読み取っています。"
-    : "Claude が読み取り、根拠の箇所が相談の文章にあるかをプログラムで確かめました。";
+  const made = data.made && data.made.model && data.made.date ? `（${data.made.model}、${data.made.date}）` : "";
+  $("engine-note").textContent = data.sample
+    ? `見本：前もって Claude${made}が読み取った結果です。この見本では Claude を呼びません。`
+    : data.engine === "fake"
+      ? "試験モード：Claude を使わず、キーワードで読み取っています。"
+      : "Claude が読み取り、根拠の箇所が相談の文章にあるかをプログラムで確かめました。";
   show("extracted");
 }
 
@@ -274,7 +374,7 @@ async function step(stop = false) {
   try {
     const data = await api("/api/step", {
       facts: state.facts, suggestions: state.suggestions, subject: state.subject,
-      asked: stop ? 99 : state.asked,
+      asked: stop ? 99 : state.asked, municipality: state.municipality,
     });
     render(data);
   } catch (e) {
@@ -316,7 +416,11 @@ function renderResult(data) {
   show("ineligible-box", no.length > 0);
   show("result");
   $("result").scrollIntoView({ behavior: "smooth", block: "start" });
-  summarize();
+  if (state.sample) {
+    // まとめは答えによって変わり Claude が書くので、見本では出さない（見出しだけの空のカードも出さない）
+    show("summary", false);
+    $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
+  } else summarize();
 }
 
 function reasonText(r) {
@@ -383,7 +487,7 @@ function openCard(ev, id) {
 async function summarize() {
   show("summary", false);
   try {
-    const data = await api("/api/summary", { facts: state.facts, subject: state.subject });
+    const data = await api("/api/summary", { facts: state.facts, subject: state.subject, municipality: state.municipality });
     if (!data.lines.length) return;
     $("summary-lines").replaceChildren(...data.lines.map((l) => el("li", {}, l.text)));
     $("summary-note").textContent = data.engine === "fake"
@@ -394,14 +498,33 @@ async function summarize() {
 }
 
 // ---- 始める ----
-document.querySelectorAll(".chip").forEach((b) => b.addEventListener("click", () => {
-  $("text").value = EXAMPLES[Number(b.dataset.ex)];
-}));
+chipGroup("pick-who", WHO, false);
+chipGroup("pick-age", AGES, false);
+chipGroup("pick-worry", WORRIES.map(([label]) => label), true);
+$("pref").addEventListener("change", () => { pick.pref = $("pref").value; pick.city = ""; fillCities(); redraft(); });
+$("city").addEventListener("change", () => { pick.city = $("city").value; redraft(); });
+$("redraft").addEventListener("click", () => redraft(true));
+$("text").addEventListener("input", () => {
+  const draft = buildDraft();
+  const edited = $("text").value !== lastDraft && $("text").value.trim() !== "";
+  show("redraft", edited && draft !== "" && draft !== $("text").value);
+});
+fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
+  prefs = data.prefectures;
+  $("pref").append(...prefs.map((p) => el("option", { value: p.code }, p.name)));
+}).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
+// 見本は取れたときだけ出す
+fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
+  if (!list.length) return;
+  $("sample-list").replaceChildren(...list.map((s) => el("button", { type: "button", class: "chip", onclick: () => openSample(s) }, s.label)));
+  show("samples");
+}).catch(() => { /* 見本の行は出さない */ });
 $("send").addEventListener("click", send);
 $("skip").addEventListener("click", () => step(true));
 $("again").addEventListener("click", () => {
   state = fresh();
   $("text").value = "";
+  resetPick();
   show("extracted", false); show("ask", false); show("result", false);
   clearBoard();
   window.scrollTo({ top: 0, behavior: "smooth" });

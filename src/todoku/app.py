@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import time
 from collections import defaultdict, deque
@@ -20,7 +21,7 @@ from pydantic import BaseModel, Field
 from . import rules as rules_mod
 import anthropic
 
-from .claude import ClaudeFailed, ClaudeRefused, make_client
+from .claude import ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
 from .engine import DONT_KNOW, SHOWN, Result, evaluate, known, with_implied
 from .questions import MAX_QUESTIONS, next_question
 
@@ -29,6 +30,7 @@ PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
 # Claude を呼ぶ API の回数制限（IP ごと、10 分あたり）
 RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
 NOT_THIS = "__not__"
+MACHIDA = "132098"  # 町田市の団体コード
 
 STATUS_LABEL = {
     "eligible": "当てはまる見込み",
@@ -44,8 +46,20 @@ CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
 
 
+def load_places() -> dict[str, tuple[str, str]]:
+    """団体コード → (都道府県名, 市区町村名)。画面の選択肢と同じ web/municipalities.json から作る。"""
+    data = json.loads((WEB_DIR / "municipalities.json").read_text(encoding="utf-8"))
+    return {code: (pref["name"], name) for pref in data["prefectures"] for code, name in pref["cities"]}
+
+
+PLACES = load_places()
+# 合言葉なしで見られる見本。reading は前もって本物の Claude が読み取った結果（scripts/make_samples.py で書く）
+SAMPLES: list[dict] = json.loads((WEB_DIR / "samples.json").read_text(encoding="utf-8"))
+
+
 class ConsultIn(BaseModel):
     text: str = Field(max_length=2000)
+    municipality: str = Field("", max_length=6)
 
 
 class StepIn(BaseModel):
@@ -53,17 +67,24 @@ class StepIn(BaseModel):
     suggestions: dict[str, Any] = {}
     subject: str = "ご本人"
     asked: int = 0
+    municipality: str = Field("", max_length=6)
 
 
 class SummaryIn(BaseModel):
     facts: dict[str, Any] = {}
     subject: str = "ご本人"
+    municipality: str = Field("", max_length=6)
+
+
+class SampleIn(BaseModel):
+    id: str = Field(max_length=40)
 
 
 def guard(request: Request, costly: bool) -> None:
-    if PASSPHRASE and request.headers.get("x-aikotoba") != PASSPHRASE:
-        raise HTTPException(401, "合言葉が違います")
+    # 合言葉と回数制限は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通す
     if costly:
+        if PASSPHRASE and request.headers.get("x-aikotoba") != PASSPHRASE:
+            raise HTTPException(401, "合言葉が違います")
         # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える（回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限）
         ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
         now = time.time()
@@ -87,6 +108,21 @@ def clean_facts(raw: dict[str, Any]) -> dict[str, Any]:
         if value == DONT_KNOW or value in fact.values():
             out[fid] = value
     return out
+
+
+def apply_place(facts: dict[str, Any], suggestions: dict[str, Any], code: str) -> None:
+    """画面で選んだ市区町村を、読み取りや画面の事実より優先する。一覧にないコードは無視する。"""
+    if code not in PLACES:
+        return
+    facts["lives_in_machida"] = code == MACHIDA
+    suggestions.pop("lives_in_machida", None)
+
+
+def place_view(code: str) -> dict | None:
+    if code not in PLACES:
+        return None
+    pref, name = PLACES[code]
+    return {"code": code, "pref": pref, "name": name}
 
 
 def fact_view(fid: str, value: Any) -> dict:
@@ -158,7 +194,7 @@ def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: s
     }
 
 
-def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int) -> dict:
+def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int, municipality: str = "") -> dict:
     results = evaluate(RULES, facts)
     order = {"eligible": 0, "after_prereq": 1, "unknown": 2, "ineligible": 3, "done": 4}
     ranked = sorted(results.values(), key=lambda r: (order[r.status], -RULES.weight(r.program.id), r.program.number))
@@ -169,6 +205,25 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "known": [fact_view(f, v) for f, v in implied.items() if f in RULES.facts],
         "results": [result_view(r, facts, subject) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
+        "place": place_view(municipality),
+    }
+
+
+def consult_view(extraction: Extraction, municipality: str) -> dict:
+    """読み取りの結果を画面に返す形にする（/api/consult と見本で同じ形）。"""
+    facts = extraction.confirmed()
+    suggestions = extraction.suggestions()
+    apply_place(facts, suggestions, municipality)
+    return {
+        "subject": extraction.subject,
+        "facts": facts,
+        "suggestions": suggestions,
+        "extracted": [
+            {**fact_view(e.fact, e.value), "confidence": e.confidence, "evidence": e.evidence}
+            for e in extraction.facts
+        ],
+        "dropped": len(extraction.dropped),
+        **step_view(facts, suggestions, extraction.subject, 0, municipality),
     }
 
 
@@ -184,20 +239,7 @@ def consult(body: ConsultIn, request: Request) -> dict:
         raise HTTPException(422, "この相談文は読み取れませんでした。言い方を変えて試してください")
     except (ClaudeFailed, anthropic.APIError):
         raise HTTPException(503, "読み取りがうまくいきませんでした。少し待ってから、もう一度試してください")
-    facts = extraction.confirmed()
-    suggestions = extraction.suggestions()
-    return {
-        "engine": CLAUDE.name,
-        "subject": extraction.subject,
-        "facts": facts,
-        "suggestions": suggestions,
-        "extracted": [
-            {**fact_view(e.fact, e.value), "confidence": e.confidence, "evidence": e.evidence}
-            for e in extraction.facts
-        ],
-        "dropped": len(extraction.dropped),
-        **step_view(facts, suggestions, extraction.subject, 0),
-    }
+    return {"engine": CLAUDE.name, **consult_view(extraction, body.municipality)}
 
 
 @app.post("/api/step")
@@ -205,13 +247,15 @@ def step(body: StepIn, request: Request) -> dict:
     guard(request, costly=False)
     facts = clean_facts(body.facts)
     suggestions = {k: v for k, v in clean_facts(body.suggestions).items() if k not in facts}
-    return step_view(facts, suggestions, body.subject[:12] or "ご本人", body.asked)
+    apply_place(facts, suggestions, body.municipality)
+    return step_view(facts, suggestions, body.subject[:12] or "ご本人", body.asked, body.municipality)
 
 
 @app.post("/api/summary")
 def summary(body: SummaryIn, request: Request) -> dict:
     guard(request, costly=True)
     facts = clean_facts(body.facts)
+    apply_place(facts, {}, body.municipality)
     results = evaluate(RULES, facts)
     shown = [r for r in results.values() if r.status in SHOWN and r.status != "unknown"]
     try:
@@ -219,6 +263,23 @@ def summary(body: SummaryIn, request: Request) -> dict:
     except (ClaudeFailed, anthropic.APIError):
         lines = []  # まとめが出なくても、結果は規則ファイルから読める
     return {"engine": CLAUDE.name, "lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]}
+
+
+@app.get("/api/samples")
+def samples() -> list[dict]:
+    return [{"id": s["id"], "label": s["label"], "text": s["text"], "ready": s.get("reading") is not None}
+            for s in SAMPLES]
+
+
+@app.post("/api/sample")
+def sample(body: SampleIn) -> dict:
+    """見本を、前もって読み取った結果で返す。Claude を呼ばないので合言葉は求めない。"""
+    s = next((s for s in SAMPLES if s["id"] == body.id), None)
+    if s is None or s.get("reading") is None:
+        raise HTTPException(404, "この見本はまだ用意できていません")
+    extraction = check_extraction(RULES, s["text"], s["reading"])  # 置いてある結果も、毎回同じ検査を通す
+    return {"engine": "sample", "sample": True, "made": s.get("made"),
+            **consult_view(extraction, s.get("municipality", ""))}
 
 
 @app.middleware("http")

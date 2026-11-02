@@ -21,21 +21,45 @@
 <main class="wrap">
   <section id="gate" class="card" hidden>
     <label for="aikotoba">合言葉</label>
-    <p class="note" id="gate-msg">試しに使っていただくための合言葉を入れてください。</p>
+    <p class="note" id="gate-msg">ご自分の相談を送るには合言葉が要ります。下の見本は合言葉なしで見られます。</p>
     <input id="aikotoba" type="password" autocomplete="off">
     <button class="primary" id="gate-ok">はじめる</button>
   </section>
 
   <section id="input" class="card">
-    <label for="text" class="big">困っていることを、そのまま書いてください</label>
+    <h2>困っていることを教えてください</h2>
+    <p class="note lead-note">書くのが難しければ、選ぶだけで下書きを作ります。</p>
+
+    <fieldset class="pick">
+      <legend>どなたのことですか（1 つ）</legend>
+      <div class="chips" id="pick-who"></div>
+    </fieldset>
+    <fieldset class="pick">
+      <legend>年齢（選ばなくてもかまいません）</legend>
+      <div class="chips" id="pick-age"></div>
+    </fieldset>
+    <fieldset class="pick">
+      <legend>お住まい（選ばなくてもかまいません）</legend>
+      <div class="places">
+        <select id="pref" aria-label="都道府県"><option value="">都道府県</option></select>
+        <select id="city" aria-label="市区町村" disabled><option value="">市区町村</option></select>
+      </div>
+    </fieldset>
+    <fieldset class="pick">
+      <legend>気になっていること（いくつでも）</legend>
+      <div class="chips" id="pick-worry"></div>
+    </fieldset>
+
+    <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
     <textarea id="text" rows="5" maxlength="2000" placeholder="例：町田市に住む母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
-    <div class="examples" aria-label="書き方の例">
-      <button class="chip" data-ex="0">退院した母</button>
-      <button class="chip" data-ex="1">道に迷う父</button>
-      <button class="chip" data-ex="2">要介護4の祖母</button>
-    </div>
+    <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
+    <p class="note">スマホのキーボードのマイクで、話して入れることもできます。</p>
     <button class="primary" id="send">相談する</button>
     <p class="note">相談の文章はサーバに残しません。体の状態の判断や治療の助言はしません。示すのは公的な制度と、その申請先・持ち物です。</p>
+    <div id="samples" hidden>
+      <p class="note">見本（合言葉なしで見られます）</p>
+      <div class="examples" id="sample-list"></div>
+    </div>
   </section>
 
   <section id="reading" class="card" hidden aria-live="polite">

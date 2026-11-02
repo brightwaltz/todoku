@@ -1,0 +1,26 @@
+[
+  {
+    "id": "taiin-haha",
+    "label": "退院した母",
+    "text": "町田市に住む母（82歳）が先月退院してから、家の中で転びやすくなりました。介護保険は使ったことがありません。私は会社勤めで、日中は母ひとりです。",
+    "municipality": "132098",
+    "reading": null,
+    "made": null
+  },
+  {
+    "id": "mayou-chichi",
+    "label": "道に迷う父",
+    "text": "父が認知症と診断されました。最近、散歩に出て帰り道が分からなくなることがあります。町田市で父と母の二人暮らしです。",
+    "municipality": "132098",
+    "reading": null,
+    "made": null
+  },
+  {
+    "id": "kaigo4-sobo",
+    "label": "要介護4の祖母",
+    "text": "町田市でひとり暮らしの祖母が要介護4になり、紙おむつを使っています。世帯は住民税非課税です。",
+    "municipality": "132098",
+    "reading": null,
+    "made": null
+  }
+]
