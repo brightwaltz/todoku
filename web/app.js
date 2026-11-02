@@ -14,6 +14,8 @@ const $ = (id) => document.getElementById(id);
 let state = fresh();
 let aikotoba = "";
 try { aikotoba = sessionStorage.getItem("aikotoba") || ""; } catch (e) { /* 保存できない環境でも動く */ }
+let resendAfterGate = false;  // 合言葉で止まった相談を、合言葉のあとで送り直す
+class GateError extends Error {}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "" };
@@ -35,13 +37,23 @@ function el(tag, attrs = {}, ...children) {
 
 function show(id, on = true) { $(id).hidden = !on; }
 
+function askGate(wrong) {
+  $("gate-msg").textContent = wrong
+    ? "合言葉が違います。入れ直してください。"
+    : "試しに使っていただくための合言葉を入れてください。";
+  show("gate");
+  $("gate").scrollIntoView({ block: "start" });
+  $("aikotoba").focus();
+  if (wrong) $("aikotoba").select();  // 違ったときは、そのまま打ち直せるように
+}
+
 async function api(path, body) {
   const res = await fetch(path, {
     method: "POST",
     headers: { "Content-Type": "application/json", "X-Aikotoba": aikotoba },
     body: JSON.stringify(body),
   });
-  if (res.status === 401) { show("gate"); throw new Error("合言葉を入れてください"); }
+  if (res.status === 401) { askGate(aikotoba !== ""); throw new GateError("合言葉を入れると、続けて読み取ります"); }
   if (!res.ok) {
     let msg = "うまくいきませんでした";
     try { msg = (await res.json()).detail || msg; } catch (e) { /* 本文なし */ }
@@ -67,6 +79,7 @@ async function send() {
     renderExtracted(data);
     render(data);
   } catch (e) {
+    resendAfterGate = e instanceof GateError;
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
     $("send").disabled = false;
     return;
@@ -263,7 +276,14 @@ $("again").addEventListener("click", () => {
   $("text").focus();
 });
 $("gate-ok").addEventListener("click", () => {
+  if (!$("aikotoba").value.trim()) { $("aikotoba").focus(); return; }
   aikotoba = $("aikotoba").value;
   try { sessionStorage.setItem("aikotoba", aikotoba); } catch (e) { /* 保存できなくても続ける */ }
   show("gate", false);
+  if (resendAfterGate) { resendAfterGate = false; send(); }
 });
+$("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") $("gate-ok").click(); });
+// 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
+fetch("/api/health").then((r) => r.json()).then((h) => {
+  if (h.passphrase && !aikotoba) show("gate");
+}).catch(() => { /* 分からなければ、送ったときに聞く */ });
