@@ -22,5 +22,13 @@
     "municipality": "132098",
     "reading": null,
     "made": null
+  },
+  {
+    "id": "yokohama-chichi",
+    "label": "横浜市の父（認知症）",
+    "text": "横浜市に住む父（78歳）が認知症と診断されました。散歩に出ると帰り道が分からなくなることがあり、お金の管理も一人では難しくなってきました。母と二人暮らしで、私は離れて住んでいます。",
+    "municipality": "141003",
+    "reading": null,
+    "made": null
   }
 ]
