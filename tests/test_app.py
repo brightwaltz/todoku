@@ -95,6 +95,17 @@ def test_index_and_health():
     assert h["programs"] == 20
 
 
+def test_rate_limit_counts_each_client_ip(monkeypatch):
+    from todoku import app as app_mod
+
+    monkeypatch.setattr(app_mod, "RATE_LIMIT", 1)
+    monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
+    send = lambda ip: client.post("/api/consult", json={"text": DEMO}, headers={"fly-client-ip": ip}).status_code
+    assert send("203.0.113.1") == 200
+    assert send("203.0.113.1") == 429
+    assert send("203.0.113.2") == 200  # 中継が同じでも、別の人は別に数える
+
+
 def test_claude_failure_becomes_a_message(monkeypatch):
     from todoku import app as app_mod
     from todoku.claude import ClaudeFailed

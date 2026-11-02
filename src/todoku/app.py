@@ -64,7 +64,8 @@ def guard(request: Request, costly: bool) -> None:
     if PASSPHRASE and request.headers.get("x-aikotoba") != PASSPHRASE:
         raise HTTPException(401, "合言葉が違います")
     if costly:
-        ip = request.client.host if request.client else "?"
+        # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える（回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限）
+        ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
         now = time.time()
         hits = _hits[ip]
         while hits and now - hits[0] > 600:
