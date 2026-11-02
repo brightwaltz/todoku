@@ -1,0 +1,31 @@
+id: machida-shogaisha-nintei
+number: 19
+name: 障害者控除対象者認定書
+level: machida
+kind: review
+summary: 要介護1〜5の65歳以上の人が、税の障害者控除を受けるための町田市の認定書。前の年の分も申請できる。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住民登録がある}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: care_level, in: [care1, care2, care3, care4, care5], label: 要介護1〜5, via: kaigo-nintei}
+at_application:
+  - 要介護認定の調査票の内容が市の基準を満たすか（申請のあと市が確かめる）
+  - 障害者と特別障害者のどちらに当たるかも、市が決める
+apply:
+  where: 町田市 高齢者支援課 高齢者相談・支援担当（市役所1階 112番窓口）
+  how: 窓口、郵送、オンライン。本人のほか家族も申請できる
+  phone: 042-724-2141
+bring:
+  - 申請書
+  - 本人確認書類（介護保険の被保険者証なども使える）
+  - 郵送のときは本人確認書類の写しと、切手を貼った返信用封筒
+timing:
+  - 前の年より前の分も申請できる
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zeikojo/syogaikoujyo.html
+    publisher: 町田市
+    title: 障害者控除対象者認定書
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

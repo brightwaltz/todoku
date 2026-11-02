@@ -1,0 +1,36 @@
+id: kogaku-gassan
+number: 4
+name: 高額医療・高額介護合算療養費
+level: national
+kind: condition
+summary: 8月から翌年7月までの1年の、医療と介護の自己負担の合計が限度額を超えた分が戻る。
+weight: 2
+eligibility:
+  all:
+    - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
+    - {fact: uses_care_services, is: true, label: 介護保険のサービスを使っている（使う予定）, via: kaigo-nintei}
+    - {fact: high_medical_costs, is: true, label: 医療費の自己負担も多くかかっている}
+at_application:
+  - 8月1日〜翌年7月31日の1年で、同じ医療保険に入っている世帯の医療と介護の自己負担の合計が、所得の区分で決まる限度額を超えたか（超えた額が500円以下なら支給されない）
+  - 高額療養費・高額介護サービス費で戻った分は差し引いて計算する
+apply:
+  where: 7月31日に入っていた医療保険。町田市の国民健康保険と後期高齢者医療は保険年金課。会社の健康保険の人は、先に町田市 介護保険課 給付係で介護の自己負担額証明書をもらい、健康保険に出す
+  phone: 保険年金課 保険給付係 042-724-2130／高齢者医療係 042-724-2144／介護保険課 給付係 042-724-4366
+bring:
+  - 申請書、マイナンバーカードか資格確認書、振込口座が分かるもの（町田市の国民健康保険）
+  - 会社の健康保険の人は、介護保険課の自己負担額証明書
+amount:
+  - 70歳以上の1年の限度額は、一般の区分で56万円、住民税非課税の世帯で31万円（一定の所得以下なら19万円）
+timing:
+  - 町田市の国民健康保険では、対象になる人に3月下旬ごろ案内が届く。時効は7月31日の翌日から2年
+sources:
+  - url: https://www.kyoukaikenpo.or.jp/benefit/high_cost_medical_expenses/003/index.html
+    publisher: 全国健康保険協会（協会けんぽ）
+    title: 高額介護合算療養費
+    license: 協会けんぽのサイトの規定（引用可・改変不可）
+    checked: 2026-11-02
+  - url: https://www.city.machida.tokyo.jp/kurashi/hoken/kokuho/ironnakyuufu/kaigogatusann.html
+    publisher: 町田市
+    title: 国民健康保険 高額医療・高額介護合算療養費
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

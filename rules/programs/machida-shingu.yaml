@@ -1,0 +1,29 @@
+id: machida-shingu
+number: 16
+name: 寝具乾燥消毒
+level: machida
+kind: condition
+summary: 失禁で布団を干せない人の寝具を、業者が預かって乾燥・消毒や丸洗いをする。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: household, in: [alone, elderly_only], label: ひとり暮らしか、高齢者だけの世帯}
+    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - {fact: incontinence_bedding, is: true, label: 失禁で布団を清潔に保てず、干すこともできない}
+apply:
+  where: 担当の高齢者支援センターか、担当のケアマネジャーを通して申し込む
+  phone: 問い合わせは高齢者支援課 042-724-2141
+bring:
+  - 寝具乾燥消毒事業利用申請書（2026年4月から新しい様式）
+amount:
+  - 敷き布団・掛け布団・毛布を各1枚。乾燥・消毒は年6回で1回300円、丸洗いは年1回で400円（生活保護の人は負担なし）
+timing:
+  - 締切はない。実施月の前の月末までに承認されれば、その月から始まる
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/shingushodoku.html
+    publisher: 町田市
+    title: 寝具乾燥消毒
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

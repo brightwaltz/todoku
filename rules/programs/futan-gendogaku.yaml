@@ -1,0 +1,42 @@
+id: futan-gendogaku
+number: 7
+name: 介護保険負担限度額認定（特定入所者介護サービス費）
+level: national
+kind: review
+summary: 施設やショートステイの食費・居住費が、所得と資産に応じた額まで下がる。
+weight: 2
+eligibility:
+  all:
+    - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
+    - any:
+        - {fact: residence, in: [facility], label: 施設に入所している}
+        - {fact: shortstay_or_facility, is: true, label: 施設への入所かショートステイを使う（予定を含む）, via: kaigo-nintei}
+    - {fact: tax_status, in: [household_exempt], label: 世帯の全員が住民税非課税}
+at_application:
+  - 配偶者（別の世帯でも）も住民税非課税であること
+  - 年金などの収入と、預貯金などの額が、段階ごとの基準以下であること（例：第2段階は単身650万円・夫婦1,650万円以下）
+  - 特養・老健・介護医療院とショートステイが対象。グループホームや有料老人ホームは対象外
+apply:
+  where: 町田市 介護保険課 給付係（市役所1階 111番窓口）
+  how: 窓口、郵送、電子申請（マイナポータル）
+  phone: 042-724-4366
+bring:
+  - 申請書と同意書
+  - 本人と配偶者の全部の通帳の写し（名義、最新の残高、直近2か月の出入り）
+  - 有価証券や投資信託の残高が分かるもの、借入があればその書類の写し
+amount:
+  - 食費・居住費が段階ごとの額に下がる（例：特養の食費の基準は1日1,545円で、第2段階は390円）
+timing:
+  - 申請した月の1日から翌年7月31日まで有効。さかのぼれるのは申請した月の1日まで
+  - 決定まではおよそ2週間
+sources:
+  - url: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
+    publisher: 厚生労働省（介護サービス情報公表システム）
+    title: サービスにかかる利用料
+    license: PDL1.0
+    checked: 2026-11-02
+  - url: https://www.city.machida.tokyo.jp/iryo/kaigo/hutan/hutangendogaku.html
+    publisher: 町田市
+    title: 介護保険負担限度額認定
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

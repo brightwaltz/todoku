@@ -1,0 +1,36 @@
+id: machida-hochoki
+number: 17
+name: 高齢者補聴器購入助成
+level: machida
+kind: review
+summary: 住民税非課税の65歳以上の人が補聴器を買うとき、30,000円まで助成する。買う前の申請が要る。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: hearing_difficulty, is: true, label: 聞こえにくく、補聴器を考えている}
+    - {fact: tax_status, in: [household_exempt, self_exempt], label: 本人が住民税非課税}
+at_application:
+  - 耳鼻咽喉科の検査で補聴器が必要と認められること（原則として両耳とも平均40dB以上70dB未満）
+  - 聴覚の障害で身体障害者手帳の対象になる人は対象外
+  - 過去5年にこの助成を受けていないこと。アンケートと介護予防の事業などへの参加に協力できること
+apply:
+  where: 町田市 高齢者支援課 高齢者相談・支援担当
+  how: 電子申請、窓口、郵送（申請書は高齢者支援課と各高齢者支援センターにある）
+  phone: 042-724-2141
+bring:
+  - 交付申請書
+  - 医師意見書（市から用紙が届く）
+  - 買ったあと：請求書、領収書の写し、通帳の写し、アンケート
+amount:
+  - 補聴器本体の購入費を30,000円まで（受診料・検査料は自己負担）
+timing:
+  - 補聴器を買うのは、市の交付決定のあと。前に買ったものは対象外
+  - 2026年度の受付は2027年2月上旬ごろまでの予定。予算がなくなりしだい終わる
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/hocyouki.html
+    publisher: 町田市
+    title: 高齢者補聴器購入費助成
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

@@ -1,0 +1,32 @@
+id: machida-omutsu-kakunin
+number: 20
+name: おむつ代の医療費控除の確認書
+level: machida
+kind: review
+summary: 医師のおむつ使用証明書の代わりに使える、町田市の確認書。市が持っている主治医意見書で確かめる。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住民登録がある}
+    - {fact: care_level, in: [care1, care2, care3, care4, care5], label: 町田市の要介護1〜5の認定を受けている, via: kaigo-nintei}
+    - {fact: uses_diapers, is: true, label: 紙おむつを使っている}
+    - {fact: bedridden_6m, is: true, label: おおむね6か月以上寝たきり}
+at_application:
+  - 市が持っている主治医意見書で、寝たきりの程度と、尿失禁（またはカテーテルの使用）が確かめられること
+  - 控除を受けるのが1年目なら、その年の認定の期間が6か月以上あること
+  - ほかの市町村の介護保険の認定を受けている人は対象外（医師のおむつ使用証明書を使う）
+apply:
+  where: 町田市 高齢者支援課 高齢者相談・支援担当（市役所1階 112番窓口）
+  how: 窓口、郵送
+  phone: 042-724-2141
+bring:
+  - 申請書と本人確認書類（申請する人が本人・家族・後見人などで変わる）
+  - 郵送のときは書類の写しと、切手を貼った返信用封筒
+timing:
+  - その年の分は、翌年の1月1日以降に申請する
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zeikojo/omutsukoujyo.html
+    publisher: 町田市
+    title: おむつ代の医療費控除
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

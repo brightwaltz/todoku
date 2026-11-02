@@ -1,0 +1,38 @@
+id: iryohi-kojo-omutsu
+number: 10
+name: 医療費控除（おむつ代）
+level: national
+kind: condition
+summary: 寝たきりでおむつが要る人のおむつ代は、医療費控除の対象になる。証明書（医師のおむつ使用証明書か、町田市の確認書）が先に要る。
+weight: 1
+eligibility:
+  all:
+    - {fact: uses_diapers, is: true, label: 紙おむつを使っている}
+    - {fact: bedridden_6m, is: true, label: おおむね6か月以上寝たきり}
+    - any:
+        - {prereq: machida-omutsu-kakunin, label: 町田市のおむつ代の確認書を受ける（要介護1〜5の人）}
+        - {step: true, label: 医師に「おむつ使用証明書」を書いてもらう}
+at_application:
+  - 寝たきりの間、医師の治療を受けていて、医師がおむつを使う必要を認めていること
+  - 医療費の合計から保険などで補われた分と10万円（所得が200万円未満なら所得の5%）を引いた額が控除になる
+apply:
+  where: 確定申告（町田税務署）。年末調整では受けられない
+  phone: 町田税務署 042-728-7211
+bring:
+  - 医療費控除の明細書と、おむつ代の領収書
+  - 医師のおむつ使用証明書か、町田市の確認書
+amount:
+  - 控除の上限は200万円
+timing:
+  - その年の1〜12月に払った分が対象。翌年1月1日から5年間は還付申告ができる
+sources:
+  - url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1122.htm
+    publisher: 国税庁
+    title: No.1122 医療費控除の対象となる医療費
+    license: PDL1.0
+    checked: 2026-11-02
+  - url: https://www.nta.go.jp/law/joho-zeikaishaku/shotoku/shinkoku/241009/pdf/omutuBetten.pdf
+    publisher: 国税庁（厚生労働省の通知）
+    title: おむつ代の医療費控除の取扱い（令和6年10月10日付の通知）
+    license: PDL1.0
+    checked: 2026-11-02

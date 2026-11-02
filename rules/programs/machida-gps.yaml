@@ -1,0 +1,27 @@
+id: machida-gps
+number: 14
+name: 行方不明高齢者探索サービス（GPS）
+level: machida
+kind: condition
+summary: 認知症などで行方不明になるおそれのある人に、居場所を探せる GPS の端末を貸し出す。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: おおむね65歳以上}
+    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - {fact: dementia_diagnosis, is: true, label: 認知症（または近い記憶の障害）と診断されている}
+    - {fact: wandering_risk, is: true, label: 行方不明になるおそれがある}
+at_application:
+  - 心臓ペースメーカーなど医療用の電気機器を使っている人は対象外
+apply:
+  where: 担当の高齢者支援センターに申し込む
+  phone: 問い合わせは高齢者支援課 042-724-2141
+amount:
+  - 月440円（生活保護の世帯は無料）。通話料などは利用者が払う
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/gps.html
+    publisher: 町田市
+    title: 認知症等による行方不明高齢者探索サービス事業（GPS）
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

@@ -1,0 +1,33 @@
+id: shogaisha-kojo
+number: 9
+name: 障害者控除（要介護の高齢者）
+level: national
+kind: review
+summary: 65歳以上で市の認定を受けた人は、障害者手帳がなくても所得税・住民税の障害者控除を受けられる。扶養している家族の税も軽くなる。
+weight: 2
+eligibility:
+  all:
+    - {prereq: machida-shogaisha-nintei, label: 町田市の障害者控除対象者認定書を受ける}
+at_application:
+  - 控除を受けるのは、本人か、本人を扶養している家族で、所得税・住民税を納めている人
+  - 市の認定が「特別障害者に準ずる」なら、控除の額が大きくなる
+apply:
+  where: 確定申告（町田税務署）
+  phone: 町田税務署 042-728-7211
+bring:
+  - 町田市の障害者控除対象者認定書
+amount:
+  - 所得控除の額は、障害者27万円、特別障害者40万円、いつも同居している特別障害者75万円
+timing:
+  - その年の12月31日の状態で決まる。過去の年の分も、翌年1月1日から5年間は還付申告ができる
+sources:
+  - url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1160.htm
+    publisher: 国税庁
+    title: No.1160 障害者控除
+    license: PDL1.0
+    checked: 2026-11-02
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zeikojo/syogaikoujyo.html
+    publisher: 町田市
+    title: 障害者控除対象者認定書
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

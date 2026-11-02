@@ -31,6 +31,8 @@ class Fact:
     check: str
     options: tuple[tuple[Any, str], ...]
     order: int
+    # ほかの事実から「いいえ」と決まる場合（例：認定がなければ介護サービスは使っていない）
+    false_when: dict | None = None
 
     def values(self) -> list[Any]:
         return [v for v, _ in self.options]
@@ -127,7 +129,15 @@ def _load_facts(path: Path) -> dict[str, Fact]:
         for key in ("question", "check"):
             if not spec.get(key):
                 raise RuleError(f"facts.yaml: {fid} に {key} がない")
-        facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order)
+        false_when = spec.get("false_when")
+        if false_when is not None and ftype != "bool":
+            raise RuleError(f"facts.yaml: false_when は bool の事実だけ（{fid}）")
+        facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order, false_when)
+    for fact in facts.values():
+        if fact.false_when is not None:
+            ref = facts.get(fact.false_when.get("fact"))
+            if ref is None or any(v not in ref.values() for v in fact.false_when.get("in", [])):
+                raise RuleError(f"facts.yaml: {fact.id} の false_when が事実と合わない")
     return facts
 
 
@@ -224,6 +234,10 @@ def _check_node(node: Any, facts: dict[str, Fact], depends_on: set[str], where: 
         return
     if not node.get("label"):
         raise RuleError(f"{where}: 条件に label がない: {node!r}")
+    if "step" in node:
+        if inside_not:
+            raise RuleError(f"{where}: not の中で step は使えない")
+        return
     if "prereq" in node:
         if inside_not:
             raise RuleError(f"{where}: not の中で prereq は使えない")

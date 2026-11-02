@@ -1,0 +1,41 @@
+id: kaigo-kyugyo-kyufu
+number: 8
+name: 介護休業給付金
+level: national
+kind: condition
+summary: 介護をする家族が仕事を休むとき、休業前の賃金の67%が雇用保険から出る。同じ家族について通算93日・3回まで。
+weight: 3
+eligibility:
+  fact: caregiver_employee
+  is: true
+  label: 介護をする家族が、会社などに雇われて働いている（雇用保険に入っている）
+at_application:
+  - 休業を始める前の2年間に、雇用保険に入っていた期間が12か月以上あること
+  - 介護される人が、配偶者・父母・子・配偶者の父母・祖父母・兄弟姉妹・孫であること
+  - 2週間以上、常に介護が要る状態であること（介護保険の区分とは別の基準）
+  - 勤め先に介護休業を申し出て、実際に休むこと
+apply:
+  where: 勤め先の所在地を受け持つハローワーク。原則として勤め先を通して出す（本人が出すことも、電子申請もできる）
+bring:
+  - 介護休業給付金支給申請書
+  - 勤め先に出した介護休業申出書
+  - 介護される家族との続柄が分かる書類（住民票記載事項証明書など）
+  - 出勤簿やタイムカード、賃金台帳
+amount:
+  - 1か月ごとに、休業前の賃金日額×支給日数×67%（月の上限は366,222円。毎年8月1日に変わる）
+  - 同じ家族について通算93日・3回まで
+timing:
+  - 休業が終わった日（3か月を超えるときは始めた日から3か月たった日）の翌日から2か月たつ日が属する月の末日まで
+sources:
+  - url: https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html
+    publisher: 厚生労働省（ハローワークインターネットサービス）
+    title: 雇用継続給付
+    license: PDL1.0
+    checked: 2026-11-02
+    quote: 介護休業給付の各支給対象期間（1か月）ごとの支給額は、原則として休業開始時賃金日額×支給日数×67％です。
+  - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000158665.html
+    publisher: 厚生労働省
+    title: 介護休業給付の内容と支給申請手続 Q&A
+    license: PDL1.0
+    checked: 2026-11-02
+    quote: 介護休業を開始した日前２年間に被保険者期間が12か月（※）以上必要となります。

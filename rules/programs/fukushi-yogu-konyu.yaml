@@ -1,0 +1,37 @@
+id: fukushi-yogu-konyu
+number: 6
+name: 福祉用具購入費の支給
+level: national
+kind: condition
+summary: ポータブルトイレ（腰掛便座）や入浴用のいすなどを買ったとき、1年10万円まで、その9割（所得により8割・7割）を介護保険から受け取れる。
+weight: 2
+eligibility:
+  all:
+    - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
+    - {fact: residence, in: [home], label: 自宅で暮らしている（入院中・入所中に買ったものは対象外）}
+    - {fact: plans_equipment_purchase, is: true, label: 福祉用具を買うことを考えている}
+at_application:
+  - 買うものが対象の種目（腰掛便座、入浴補助用具、簡易浴槽、移動用リフトのつり具など）に当たるか
+  - 都道府県の指定を受けた店で買うこと
+  - 同じ種目を前に買って支給を受けていないこと
+apply:
+  where: 買う前に担当のケアマネジャーか高齢者支援センターに相談する。申請は町田市 介護保険課 給付係
+  phone: 042-724-4366
+bring:
+  - 申請書、請求書、福祉用具が必要な理由、領収書、商品のパンフレットなど
+amount:
+  - 毎年4月〜翌年3月の1年で10万円まで。その9割（所得により8割・7割）が支給される
+timing:
+  - 買ったあとに申請する
+sources:
+  - url: https://www.mhlw.go.jp/content/12300000/001668164.pdf
+    publisher: 厚生労働省
+    title: 福祉用具・住宅改修の概要（介護保険福祉用具・住宅改修評価検討会 参考資料）
+    license: PDL1.0
+    checked: 2026-11-02
+    quote: また、販売は原則年間10万円を支給限度基準額としている。
+  - url: https://www.city.machida.tokyo.jp/iryo/kaigo/business/fukushiyogu/yogu_simn.html
+    publisher: 町田市
+    title: 福祉用具購入費
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

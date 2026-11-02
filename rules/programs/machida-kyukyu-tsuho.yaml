@@ -1,0 +1,26 @@
+id: machida-kyukyu-tsuho
+number: 13
+name: 救急通報システム
+level: machida
+kind: condition
+summary: ボタンを押すと事業者が様子を確かめ、家に駆けつける通報機器を借りられる。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: household, in: [alone, elderly_only, alone_daytime], label: ひとり暮らし、高齢者だけの世帯、または日中はひとり}
+    - {fact: chronic_attack_risk, is: true, label: 発作が起きるおそれのある持病があり、ふだんから注意が要る}
+at_application:
+  - 持病でふだんから注意が要る状態かは、申し込みのときに確かめる
+apply:
+  where: 担当の高齢者支援センターに申し込む
+  phone: 問い合わせは高齢者支援課 042-724-2141
+amount:
+  - 住民税が課税の人は、初めに8,943円（年度で変わることがある）。非課税の人は負担なし
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kinkyutuhoshisutemu.html
+    publisher: 町田市
+    title: 救急通報システム
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

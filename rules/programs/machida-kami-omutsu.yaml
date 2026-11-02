@@ -1,0 +1,34 @@
+id: machida-kami-omutsu
+number: 11
+name: 在宅高齢者紙おむつ支給
+level: machida
+kind: condition
+summary: 自宅で暮らす要介護4・5の人に、町田市が年4回、カタログから選んだ紙おむつを届ける。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: residence, in: [home, hospital], label: 自宅で暮らしている（一時的な入院を含む）}
+    - {fact: care_level, in: [care4, care5], label: 要介護4か5, via: kaigo-nintei}
+    - {fact: tax_status, in: [household_exempt], label: 世帯の全員が住民税非課税}
+    - {fact: on_welfare, is: false, label: 生活保護を受けていない}
+at_application:
+  - 入院が長引いて退院の見通しが立たないときや、施設に入所したときは対象外
+apply:
+  where: 町田市 高齢者支援課 高齢者相談・支援担当
+  how: 電子申請（本人・親族・法定代理人）、窓口、郵送。ケアマネジャーを通すときは紙の申請書
+  phone: 042-724-2141
+bring:
+  - 利用申請書（カタログで選んだ品番を書く）
+  - 前年の1月2日以降に町田市へ転入した人は、前の市区町村の非課税証明書が要ることがある
+amount:
+  - 年4回（6・9・12・3月）、上限額の範囲で選んだ紙おむつが届く
+timing:
+  - 申請からおよそ1週間〜10日で結果が届く。条件を満たしている間は毎年続く
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/kamiomutushikyu.html
+    publisher: 町田市
+    title: 在宅高齢者紙おむつ支給
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

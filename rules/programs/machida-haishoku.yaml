@@ -1,0 +1,31 @@
+id: machida-haishoku
+number: 12
+name: 自立支援・配食ネットワーク
+level: machida
+kind: review
+summary: ひとり暮らしなどの要介護の人に、食事を届けながら様子を見守る。いつもと様子が違えば連絡が行く。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: household, in: [alone, elderly_only], label: ひとり暮らしか、高齢者だけの世帯}
+    - {fact: care_level, in: [care1, care2, care3, care4, care5], label: 要介護1〜5, via: kaigo-nintei}
+at_application:
+  - ケアマネジャー（いなければ高齢者支援センター）が、配食の事業所と内容を調整してから申請する
+  - デイサービスに行く日や、訪問サービスと同じ時間帯は使えない
+apply:
+  where: 担当のケアマネジャー（いなければ高齢者支援センター）を通して、町田市 高齢者支援課に申請する
+  phone: 高齢者支援課 042-724-2141
+bring:
+  - 利用申請書、情報提供票、週間サービス計画書の写し（ケアマネジャーが用意する）
+amount:
+  - 要介護1〜3は週3食まで、要介護4・5は週5食まで。費用は事業所ごとに違い、事業所に直接払う
+timing:
+  - 市が受け付けてからおよそ1週間で使えるようになる
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/jiritsushienhaishoku.html
+    publisher: 町田市
+    title: 自立支援・配食ネットワーク
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

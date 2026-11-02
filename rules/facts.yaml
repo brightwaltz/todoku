@@ -73,11 +73,13 @@ uses_care_services:
   type: bool
   question: 介護保険のサービス（デイサービス、ヘルパーなど）を使っていますか？使う予定でもかまいません。
   check: 担当のケアマネジャーが作る「サービス利用票」に、使っているサービスが書かれています。
+  false_when: {fact: care_level, in: [none, applying, jiritsu]}
 
 shortstay_or_facility:
   type: bool
-  question: 特養・老健などの施設への入所や、ショートステイを使っている（使う予定がある）ですか？
+  question: 特養・老健などの施設への入所や、ショートステイを使っていますか？使う予定でもかまいません。
   check: 担当のケアマネジャーに確かめてください。
+  false_when: {fact: care_level, in: [none, applying, jiritsu]}
 
 high_medical_costs:
   type: bool

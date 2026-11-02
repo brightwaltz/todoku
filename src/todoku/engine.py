@@ -2,7 +2,8 @@
 
 条件の葉の状態：
   T 満たす / F 満たさない / U 分からない / P 前提の手続きを済ませれば満たせる
-all は F > U > P > T、any は T > U > P > F の順に強い。
+all は F > U > P > T、any は T > P > U > F の順に強い（any は、前提の手続きで届く道があれば
+「先に手続きが要る」と言える）。
 
 制度の状態：
   done          もう済んでいる（done_when が T）
@@ -68,8 +69,21 @@ def known(value: Any) -> bool:
     return value is not None and value != DONT_KNOW
 
 
+def with_implied(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, Any]:
+    """facts.yaml の false_when で「いいえ」と決まる事実を埋める。"""
+    out = dict(facts)
+    for fact in rules.facts.values():
+        cond = fact.false_when
+        if cond is None or known(out.get(fact.id)):
+            continue
+        if out.get(cond["fact"]) in cond["in"]:
+            out[fact.id] = False
+    return out
+
+
 def evaluate(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, Result]:
     """事実（分からないものは入れないか DONT_KNOW）から、全制度の判定を返す。"""
+    facts = with_implied(rules, facts)
     results: dict[str, Result] = {}
     for pid in rules.order:
         program = rules.programs[pid]
@@ -96,7 +110,7 @@ def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], lea
         return T
     if "any" in node:
         states = [_eval(c, facts, statuses, leaves) for c in node["any"]]
-        for s in (T, U, P):
+        for s in (T, P, U):
             if s in states:
                 return s
         return F
@@ -109,6 +123,10 @@ def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], lea
             leaf.state = {T: F, F: T}.get(leaf.state, leaf.state)
         leaves.extend(inner)
         return flipped
+    if "step" in node:
+        # 本人が先に済ませればよいこと（例：医師に証明書を書いてもらう）
+        leaves.append(Leaf(node["label"], P))
+        return P
     if "prereq" in node:
         s = STATE_OF_PREREQ[statuses[node["prereq"]]]
         leaves.append(Leaf(node["label"], s, prereq=node["prereq"]))

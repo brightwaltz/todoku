@@ -1,0 +1,43 @@
+id: kaigo-nintei
+number: 1
+name: 要介護・要支援認定の申請
+level: national
+kind: review
+summary: 介護保険のサービスを使うための入口の手続き。住宅改修・福祉用具・町田市のいくつもの制度が、この認定を前提にしている。
+weight: 3
+done_when:
+  fact: care_level
+  in: [support1, support2, care1, care2, care3, care4, care5]
+  label: 要介護・要支援の認定を受けている
+eligibility:
+  all:
+    - any:
+        - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+        - {fact: age_band, in: [age_40_64], label: 40〜64歳（介護が要る原因が特定疾病のとき）}
+    - {fact: care_level, in: [none, applying], label: まだ認定を受けていない（申請中を含む）}
+at_application:
+  - 介護が必要な状態か、どの区分（要支援1・2、要介護1〜5、非該当）になるかは、市の認定調査と主治医意見書をもとに介護認定審査会が決める
+  - 40〜64歳の人は、介護が要る原因が16種類の特定疾病のどれかであること
+apply:
+  where: 町田市 介護保険課・高齢者支援課（市役所1階 111・112番窓口）、市民センター、高齢者支援センター
+  how: 窓口、郵送（介護保険課 認定係あて）、電子申請（まちドア。本人のマイナンバーカードが要る）。ケアマネジャーや高齢者支援センターの職員に申請を手伝ってもらえる
+  phone: 介護保険課 認定係 042-724-4365
+bring:
+  - 介護保険の被保険者証
+  - 認定申請書（2026年4月から新しい様式）
+  - 40〜64歳の人は医療保険の保険証
+amount:
+  - 申請にお金はかからない。主治医意見書の作成料を本人が払うこともない
+timing:
+  - 結果は原則として申請から30日以内に届く（厚生労働省）
+sources:
+  - url: https://www.kaigokensaku.mhlw.go.jp/commentary/flow.html
+    publisher: 厚生労働省（介護サービス情報公表システム）
+    title: サービス利用までの流れ
+    license: PDL1.0
+    checked: 2026-11-02
+  - url: https://www.city.machida.tokyo.jp/iryo/kaigo/nagare/the-step-of-service.html
+    publisher: 町田市
+    title: 要介護（要支援）認定の申請
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

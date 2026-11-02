@@ -1,0 +1,28 @@
+id: machida-jutaku-setsubi
+number: 18
+name: 住宅設備改修給付（介護保険外）
+level: machida
+kind: review
+summary: 浴槽・流し・洗面台の取り替えや、和式から洋式トイレへの取り替えの費用を、町田市が9割まで給付する。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
+    - {fact: plans_fixture_replacement, is: true, label: 浴槽・流し・洗面台・便器の取り替えを考えている}
+at_application:
+  - 同じ項目を、その世帯ですでに使っていないこと
+  - 工事を始める前に申請すること
+apply:
+  where: 町田市 介護保険課 給付係（担当のケアマネジャーに相談する）
+  phone: 042-724-4366
+amount:
+  - 浴槽の取り替えは10万円まで（給付は9万円まで）、流し・洗面台は15万6千円まで（14万400円まで）、和式から洋式への便器の取り替えは10万円まで（9万円まで）。どれも1世帯1回
+sources:
+  - url: https://www.city.machida.tokyo.jp/iryo/kaigo/business/jutakukaisyu/jukai.html
+    publisher: 町田市
+    title: 住宅改修（介護保険以外の住宅改修）
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

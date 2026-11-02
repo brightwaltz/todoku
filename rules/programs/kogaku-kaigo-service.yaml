@@ -1,0 +1,33 @@
+id: kogaku-kaigo-service
+number: 3
+name: 高額介護（介護予防）サービス費
+level: national
+kind: condition
+summary: 1か月の介護サービスの利用者負担が、世帯の所得で決まる上限を超えた分が戻る。
+weight: 2
+eligibility:
+  all:
+    - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
+    - {fact: uses_care_services, is: true, label: 介護保険のサービスを使っている（使う予定）, via: kaigo-nintei}
+at_application:
+  - 1か月の利用者負担（1〜3割）の合計が上限を超えたかは、市が計算する
+  - 福祉用具の購入費、住宅改修、施設やショートステイの食費・居住費は含まない
+apply:
+  where: 町田市 介護保険課 給付係
+  how: 対象になると、サービスを使った月のおよそ4か月後に市から申請書が届く。最初の1回だけ出せば、次からは自動で振り込まれる
+  phone: 042-724-4366
+bring:
+  - 市から届いた申請書
+amount:
+  - 月の上限は、世帯の全員が住民税非課税なら世帯で24,600円（年金などの収入が少ない人は個人で15,000円）、課税の世帯は44,400円（所得の多い世帯は93,000円か140,100円）、生活保護の人は15,000円
+sources:
+  - url: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
+    publisher: 厚生労働省（介護サービス情報公表システム）
+    title: サービスにかかる利用料
+    license: PDL1.0
+    checked: 2026-11-02
+  - url: https://www.city.machida.tokyo.jp/iryo/kaigo/hutan/riyoshahutan_kogaku.html
+    publisher: 町田市
+    title: 高額介護（介護予防）サービス費
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02

@@ -1,0 +1,43 @@
+id: kogaku-ryoyohi
+number: 2
+name: 高額療養費
+level: national
+kind: condition
+summary: 1か月の医療費の自己負担が上限を超えた分が戻る。70歳以上は外来だけの上限もある。
+weight: 3
+eligibility:
+  fact: high_medical_costs
+  is: true
+  label: 入院や通院で、1か月の医療費の自己負担が多くかかった（かかりそう）
+at_application:
+  - 1か月の自己負担が、年齢と所得の区分で決まる上限を超えたかは、加入している医療保険が計算する
+  - 入院中の食事代や差額ベッド代は含まない
+apply:
+  where: 加入している医療保険。町田市の国民健康保険は保険年金課 保険給付係、75歳以上の後期高齢者医療は保険年金課 高齢者医療係、会社の健康保険はその保険者（協会けんぽは都道府県の支部）
+  how: マイナ保険証などを使えば、病院の窓口での支払いが上限までになる。払いすぎた分は、届いた申請書を出すと戻る
+  phone: 保険年金課 保険給付係 042-724-2130／高齢者医療係 042-724-2144
+bring:
+  - 届いた申請書（町田市の国民健康保険・後期高齢者医療）
+amount:
+  - 70歳以上で一般の区分なら、令和8年8月から外来は個人で月22,000円、入院と合わせて世帯で月61,500円が上限
+  - 住民税非課税の世帯は、外来は個人で月11,000円（一定の所得以下なら8,000円）が上限
+timing:
+  - 町田市の国民健康保険は受診月から最短3か月後、後期高齢者医療は約4か月後に申請書が届く
+  - 後期高齢者医療は、一度申請すれば次からは自動で振り込まれる
+sources:
+  - url: https://www.mhlw.go.jp/content/001725284.pdf
+    publisher: 厚生労働省
+    title: 高額療養費制度の見直しについて（令和8年8月から）
+    license: PDL1.0
+    checked: 2026-11-02
+    quote: 原則、マイナ保険証をお持ちの方は、医療機関を受診する際、手続きなしで高額療養費の適用を受けられます。
+  - url: https://www.city.machida.tokyo.jp/kurashi/hoken/kokuho/ironnakyuufu/kougaku.html
+    publisher: 町田市
+    title: 国民健康保険 高額療養費
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02
+  - url: https://www.city.machida.tokyo.jp/iryo/old_iryo/koukikoureisyairyou/koukikoureikyuuhu.html
+    publisher: 町田市
+    title: 後期高齢者医療の給付
+    license: 町田市ホームページ利用規約（転載不可・リンク可）
+    checked: 2026-11-02
