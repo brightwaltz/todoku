@@ -209,3 +209,10 @@ def test_other_cities_see_their_own_offices():
     assert "町田" not in yokohama["apply"]["where"] and "phone" not in yokohama["apply"]
     assert all("city.machida.tokyo.jp" not in s["url"] for s in yokohama["sources"])
     assert "町田市" in machida["apply"]["where"]
+
+
+def test_yes_no_reasons_carry_no_value():
+    data = client.post("/api/step", json={"facts": {"age_band": "age_75_plus", "residence": "home", "wandering_risk": True},
+                                          "municipality": "141003"}).json()
+    card = next(r for r in data["results"] if r["id"] == "local-haikai")
+    assert all(x["value"] is None for x in card["reasons"])  # 町田市以外・行方不明のおそれ（はい・いいえ）と、確かめる先

@@ -154,7 +154,9 @@ def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
         "summary": p.summary,
         "reasons": [
             {"label": leaf.label, "state": leaf.state,
-             "value": None if leaf.fact is None or not known(leaf.value) else RULES.facts[leaf.fact].label_of(leaf.value),
+             # はい・いいえの事実は ✓・✕ だけで分かるので値を添えない（「町田市以外にお住まい（いいえ）」と読めてしまうため）
+             "value": None if leaf.fact is None or not known(leaf.value) or RULES.facts[leaf.fact].type == "bool"
+             else RULES.facts[leaf.fact].label_of(leaf.value),
              "prereq": RULES.programs[leaf.prereq].name if leaf.prereq else None}
             for leaf in r.leaves
         ],
