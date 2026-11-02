@@ -154,7 +154,15 @@ function renderResult(data) {
     if (!items.length) continue;
     groups.append(el("h2", { class: "group-title" }, title, el("span", { class: "n" }, `${items.length} 件`)));
     groups.append(el("p", { class: "note" }, hint));
-    for (const r of items) groups.append(programCard(r));
+    // 確かめると使えるかもしれない制度は多くなりやすいので、重みの大きい順に 5 件だけ先に出す
+    const first = status === "unknown" ? items.slice(0, 5) : items;
+    for (const r of first) groups.append(programCard(r));
+    if (first.length < items.length) {
+      const rest = el("div", { hidden: "" }, items.slice(first.length).map(programCard));
+      const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); } },
+        `ほか ${items.length - first.length} 件を見る`);
+      groups.append(more, rest);
+    }
   }
   const no = data.results.filter((r) => r.status === "ineligible" || r.status === "done");
   $("ineligible-title").textContent = `当てはまらない・済んでいる制度（${no.length} 件）`;
@@ -221,7 +229,10 @@ function sourceView(s) {
 function openCard(ev, id) {
   ev.preventDefault();
   const card = $(`p-${id}`);
-  if (card) { card.open = true; card.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  if (!card) return;
+  if (card.parentElement.hidden) card.parentElement.hidden = false;
+  card.open = true;
+  card.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 async function summarize() {
