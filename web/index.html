@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>とどく｜尋ねなかった制度まで</title>
+<meta name="description" content="町田市の高齢の方と介護する家族のための相談窓口（試作）。困りごとを書くと、尋ねていない公的制度まで、理由・申請先・持ち物・出典つきで示します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>とどく <span>尋ねなかった制度まで</span></h1>
+    <p class="lead">町田市にお住まいの高齢の方と、介護するご家族のための相談窓口（試作）</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="gate" class="card" hidden>
+    <label for="aikotoba">合言葉</label>
+    <input id="aikotoba" type="password" autocomplete="off">
+    <button class="primary" id="gate-ok">はじめる</button>
+  </section>
+
+  <section id="input" class="card">
+    <label for="text" class="big">困っていることを、そのまま書いてください</label>
+    <textarea id="text" rows="5" maxlength="2000" placeholder="例：町田市に住む母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
+    <div class="examples" aria-label="書き方の例">
+      <button class="chip" data-ex="0">退院した母</button>
+      <button class="chip" data-ex="1">道に迷う父</button>
+      <button class="chip" data-ex="2">要介護4の祖母</button>
+    </div>
+    <button class="primary" id="send">相談する</button>
+    <p class="note">相談の文章はサーバに残しません。体の状態の判断や治療の助言はしません。示すのは公的な制度と、その申請先・持ち物です。</p>
+  </section>
+
+  <section id="reading" class="card" hidden aria-live="polite">
+    <p>読み取っています…</p>
+  </section>
+
+  <section id="extracted" class="card soft" hidden>
+    <h2>相談の文章から読み取ったこと</h2>
+    <ul id="extracted-list" class="facts"></ul>
+    <p class="note" id="engine-note"></p>
+  </section>
+
+  <section id="ask" class="card ask" hidden aria-live="polite">
+    <p class="ask-count" id="ask-count"></p>
+    <h2 id="ask-text"></h2>
+    <div id="ask-options" class="options"></div>
+    <p class="why" id="ask-why"></p>
+    <details><summary>確かめ方</summary><p id="ask-check"></p></details>
+    <button class="link" id="skip">聞き返しをやめて、結果を見る</button>
+  </section>
+
+  <section id="result" hidden>
+    <div class="card summary" id="summary" hidden>
+      <h2>まず知っておきたいこと</h2>
+      <ul id="summary-lines"></ul>
+      <p class="note">このまとめは Claude が判定の結果から書きました。判定そのものは規則のプログラムが決めています。</p>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div id="groups"></div>
+    <details class="card soft" id="ineligible-box">
+      <summary id="ineligible-title"></summary>
+      <ul id="ineligible-list" class="plain"></ul>
+    </details>
+    <button class="secondary" id="again">別の相談をする</button>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>判定は公式ページの条件を書き写した規則で行います（確認日を各制度に表示）。申請できるかの最終的な判断は、申請先で行われます。困ったときは、お住まいの地域の高齢者支援センターに相談してください。</p>
+  <p>Built with Claude: Japan 2026 の期間中に作った試作です。</p>
+</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>
