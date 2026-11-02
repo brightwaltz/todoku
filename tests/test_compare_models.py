@@ -18,12 +18,14 @@ def test_score_reads_splits_by_confidence_and_truth():
         Extracted("household", "alone", "high", "ひとり暮らし"),       # 高・正しい
         Extracted("age_band", "age_65_74", "high", "70代"),           # 高・誤り
         Extracted("tax_status", "household_exempt", "high", "非課税"),  # 本人は分からないのに決めた → 誤り
-        Extracted("care_level", "care1", "low", "要介護"),             # answers にない → 低・違う候補
+        Extracted("care_level", "care1", "low", "要介護"),             # answers にない事実 → 採点できない
     ])
     r = cm.score_reads(ex, ANSWERS)
     assert r["high_right"] == ["household"]
     assert sorted(r["high_wrong"]) == ["age_band", "tax_status"]
-    assert r["low_wrong"] == ["care_level"] and r["low_right"] == []
+    assert r["low_wrong"] == [] and r["low_right"] == []
+    assert r["unscored"] == ["care_level"]
+    assert r["wrong_detail"]["age_band"] == ["age_65_74", "age_75_plus"]
 
 
 def test_relative_recall_uses_union_of_models():
@@ -49,3 +51,20 @@ def test_fake_run_does_not_touch_the_report(tmp_path, monkeypatch):
     assert list(tmp_path.glob("compare-models-*-fake.json"))
     after = cm.REPORT.read_text(encoding="utf-8") if cm.REPORT.exists() else None
     assert before == after
+
+
+def test_rescore_uses_saved_reads_without_api(tmp_path, monkeypatch):
+    import json
+
+    case = cm.load_cases()[0]
+    fact, truth = next(iter(case["answers"].items()))
+    saved = {"effort": "low", "fake": False, "runs": {"claude-opus-5-5": {
+        "cases": {case["id"]: {"read": {fact: [truth, "high"], "new_fact_not_in_cases": [True, "low"]}}},
+        "calls": [{"model": "claude-opus-5-5", "input_tokens": 1000, "output_tokens": 100, "seconds": 1.0}]}}}
+    path = tmp_path / "compare-models-20261103-0154.json"
+    path.write_text(json.dumps(saved, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(cm, "REPORT", tmp_path / "model_comparison.md")
+    assert cm.main(["--rescore", str(path)]) == 0
+    text = (tmp_path / "model_comparison.md").read_text(encoding="utf-8")
+    assert "数え直した" in text and "2026-11-03 01:54" in text
+    assert "| claude-opus-5-5 | 1 | 0 | 100.0% | 100.0% | 0 | 0 | 1 |" in text
