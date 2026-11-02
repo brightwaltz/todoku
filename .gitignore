@@ -1,0 +1,10 @@
+# 鍵はリポジトリの外（~/.config/bwcj26/.env）に置く。念のためここでも除外する
+.env
+.env.*
+*.key
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+eval/out/
