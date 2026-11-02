@@ -4,31 +4,197 @@
     "label": "退院した母",
     "text": "町田市に住む母（82歳）が先月退院してから、家の中で転びやすくなりました。介護保険は使ったことがありません。私は会社勤めで、日中は母ひとりです。",
     "municipality": "132098",
-    "reading": null,
-    "made": null
+    "reading": {
+      "subject": "お母さま",
+      "facts": [
+        {
+          "fact": "lives_in_machida",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "町田市に住む母"
+        },
+        {
+          "fact": "age_band",
+          "value": "age_75_plus",
+          "confidence": "high",
+          "evidence": "母（82歳）"
+        },
+        {
+          "fact": "residence",
+          "value": "home",
+          "confidence": "high",
+          "evidence": "先月退院してから、家の中で転びやすくなりました"
+        },
+        {
+          "fact": "household",
+          "value": "alone_daytime",
+          "confidence": "high",
+          "evidence": "日中は母ひとりです"
+        },
+        {
+          "fact": "caregiver_employee",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "私は会社勤めで"
+        },
+        {
+          "fact": "uses_care_services",
+          "value": "false",
+          "confidence": "high",
+          "evidence": "介護保険は使ったことがありません"
+        }
+      ]
+    },
+    "made": {
+      "model": "claude-opus-5-5",
+      "date": "2026-11-03"
+    }
   },
   {
     "id": "mayou-chichi",
     "label": "道に迷う父",
     "text": "父が認知症と診断されました。最近、散歩に出て帰り道が分からなくなることがあります。町田市で父と母の二人暮らしです。",
     "municipality": "132098",
-    "reading": null,
-    "made": null
+    "reading": {
+      "subject": "お父さま",
+      "facts": [
+        {
+          "fact": "dementia_diagnosis",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "父が認知症と診断されました。"
+        },
+        {
+          "fact": "wandering_risk",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "最近、散歩に出て帰り道が分からなくなることがあります。"
+        },
+        {
+          "fact": "lives_in_machida",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "町田市で父と母の二人暮らしです。"
+        },
+        {
+          "fact": "household",
+          "value": "elderly_only",
+          "confidence": "low",
+          "evidence": "町田市で父と母の二人暮らしです。"
+        }
+      ]
+    },
+    "made": {
+      "model": "claude-opus-5-5",
+      "date": "2026-11-03"
+    }
   },
   {
     "id": "kaigo4-sobo",
     "label": "要介護4の祖母",
     "text": "町田市でひとり暮らしの祖母が要介護4になり、紙おむつを使っています。世帯は住民税非課税です。",
     "municipality": "132098",
-    "reading": null,
-    "made": null
+    "reading": {
+      "subject": "おばあさま",
+      "facts": [
+        {
+          "fact": "lives_in_machida",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "町田市でひとり暮らしの祖母"
+        },
+        {
+          "fact": "household",
+          "value": "alone",
+          "confidence": "high",
+          "evidence": "ひとり暮らしの祖母"
+        },
+        {
+          "fact": "care_level",
+          "value": "care4",
+          "confidence": "high",
+          "evidence": "要介護4になり"
+        },
+        {
+          "fact": "uses_diapers",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "紙おむつを使っています"
+        },
+        {
+          "fact": "tax_status",
+          "value": "household_exempt",
+          "confidence": "high",
+          "evidence": "世帯は住民税非課税です"
+        },
+        {
+          "fact": "residence",
+          "value": "home",
+          "confidence": "low",
+          "evidence": "町田市でひとり暮らしの祖母"
+        }
+      ]
+    },
+    "made": {
+      "model": "claude-opus-5-5",
+      "date": "2026-11-03"
+    }
   },
   {
     "id": "yokohama-chichi",
     "label": "横浜市の父（認知症）",
     "text": "横浜市に住む父（78歳）が認知症と診断されました。散歩に出ると帰り道が分からなくなることがあり、お金の管理も一人では難しくなってきました。母と二人暮らしで、私は離れて住んでいます。",
     "municipality": "141003",
-    "reading": null,
-    "made": null
+    "reading": {
+      "subject": "お父さま",
+      "facts": [
+        {
+          "fact": "lives_in_machida",
+          "value": "false",
+          "confidence": "high",
+          "evidence": "横浜市に住む父（78歳）"
+        },
+        {
+          "fact": "age_band",
+          "value": "age_75_plus",
+          "confidence": "high",
+          "evidence": "父（78歳）"
+        },
+        {
+          "fact": "dementia_diagnosis",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "認知症と診断されました"
+        },
+        {
+          "fact": "wandering_risk",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "散歩に出ると帰り道が分からなくなることがあり"
+        },
+        {
+          "fact": "money_management_difficulty",
+          "value": "true",
+          "confidence": "high",
+          "evidence": "お金の管理も一人では難しくなってきました"
+        },
+        {
+          "fact": "residence",
+          "value": "home",
+          "confidence": "low",
+          "evidence": "母と二人暮らしで"
+        },
+        {
+          "fact": "household",
+          "value": "elderly_only",
+          "confidence": "low",
+          "evidence": "母と二人暮らしで"
+        }
+      ]
+    },
+    "made": {
+      "model": "claude-opus-5-5",
+      "date": "2026-11-03"
+    }
   }
 ]
