@@ -22,10 +22,21 @@ const WORRIES = [
   ["介護サービス", "介護保険のサービスを使っています。"],
 ];
 
+// 合言葉はヘッダ（X-Aikotoba）で送る。ブラウザはヘッダに日本語を入れられず、fetch が送る前に失敗する（見本も動かなくなる）。
+// 全角の英数字は半角に直し、それでも半角の英数字・記号でない文字が残れば null を返す。
+// サーバは合言葉を UTF-8 のバイトで比べるので、ASCII でない文字の合言葉は、ここで断らなくても画面からは通らない
+function aikotobaWord(raw) {
+  const word = raw.normalize("NFKC").trim();
+  return /^[\x20-\x7e]*$/.test(word) ? word : null;
+}
+
 const $ = (id) => document.getElementById(id);
 let state = fresh();
 let aikotoba = "";
-try { aikotoba = sessionStorage.getItem("aikotoba") || ""; } catch (e) { /* 保存できない環境でも動く */ }
+try {
+  aikotoba = aikotobaWord(sessionStorage.getItem("aikotoba") || "") ?? "";
+  if (!aikotoba) sessionStorage.removeItem("aikotoba");  // 前の版で保存した、送れない合言葉を残さない
+} catch (e) { /* 保存できない環境でも動く */ }
 let pick = freshPick();
 let lastDraft = "";     // 最後に作った下書き。欄がこれと違えば、本人が書き換えたとみなして上書きしない
 let prefs = [];         // municipalities.json の都道府県（市区町村つき）
@@ -69,10 +80,12 @@ function askGate(wrong) {
 
 async function api(path, body) {
   let res;
+  const headers = { "Content-Type": "application/json" };
+  if (aikotoba) headers["X-Aikotoba"] = aikotoba;  // aikotobaWord を通した値だけが入る
   try {
     res = await fetch(path, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "X-Aikotoba": aikotoba },
+      headers,
       body: JSON.stringify(body),
     });
   } catch (e) {
@@ -671,8 +684,15 @@ $("again").addEventListener("click", () => {
   $("text").focus();
 });
 $("gate-ok").addEventListener("click", () => {
-  if (!$("aikotoba").value.trim()) { $("aikotoba").focus(); return; }
-  aikotoba = $("aikotoba").value;
+  const word = aikotobaWord($("aikotoba").value);
+  if (word === null) {
+    $("gate-msg").textContent = "合言葉は半角の英数字で入れてください。日本語の文字は使えません。";
+    $("aikotoba").focus();
+    $("aikotoba").select();
+    return;
+  }
+  if (!word) { $("aikotoba").focus(); return; }
+  aikotoba = word;
   try { sessionStorage.setItem("aikotoba", aikotoba); } catch (e) { /* 保存できなくても続ける */ }
   show("gate", false);
   if (resendAfterGate) { resendAfterGate = false; send(); }

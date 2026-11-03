@@ -198,6 +198,32 @@ def test_passphrase_compare_takes_any_bytes(monkeypatch):
     assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": "ひみ".encode()}).status_code == 401
 
 
+def test_screen_keeps_aikotoba_header_safe():
+    # 画面（web/app.js）は合言葉をヘッダで送る。fetch は ISO-8859-1 にない文字をヘッダに入れられず、送る前に失敗する。
+    # 日本語を入れると「通信できませんでした」になり、保存した値のせいで、そのタブでは見本も動かなくなっていた（T-015）
+    import json
+    import re
+    import shutil
+    import subprocess
+    from pathlib import Path
+
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("node が無い")
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    func = re.search(r"^function aikotobaWord\(raw\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
+    cases = ["todoku-test", "  todoku-test ", "ｔｏｄｏｋｕ－ｔｅｓｔ", "あいことば", "café", "todoku　test", "", "　"]
+    run = f"{func}\nconsole.log(JSON.stringify({json.dumps(cases)}.map(aikotobaWord)))"
+    got = json.loads(subprocess.run([node, "-e", run], capture_output=True, text=True, check=True).stdout)
+    # 全角の英数字と全角の空白は半角に直して通す。日本語・ASCII でない文字は null（画面で断る）
+    assert got == ["todoku-test", "todoku-test", "todoku-test", None, None, "todoku test", "", ""]
+    # 送れない値を送らない：合言葉を入れる所（保存した値・欄）は aikotobaWord を通し、ヘッダはその値だけを付ける
+    assert 'aikotobaWord(sessionStorage.getItem("aikotoba") || "")' in js
+    assert 'aikotobaWord($("aikotoba").value)' in js
+    assert '"X-Aikotoba": aikotoba' not in js
+    assert len(re.findall(r"^\s+aikotoba = ", js, re.M)) == 2  # 宣言の後に入れる所は、上の 2 か所だけ
+
+
 def test_claude_failure_becomes_a_message(monkeypatch):
     from todoku import app as app_mod
     from todoku.claude import ClaudeFailed
