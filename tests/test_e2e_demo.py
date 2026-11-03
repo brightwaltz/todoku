@@ -10,17 +10,11 @@ os.environ["TODOKU_FAKE_CLAUDE"] = "1"
 import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
 
-from todoku import app as app_mod  # noqa: E402
 from todoku.app import app  # noqa: E402
 from todoku.engine import DONT_KNOW  # noqa: E402
 
 client = TestClient(app)
-
-
-@pytest.fixture(autouse=True)
-def fresh_rate_limit(monkeypatch):
-    # 回数制限は接続元ごとに数える。ほかのテストの相談で上限に届かないよう、毎回数え直す
-    monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
+# 回数制限の数え直しは tests/conftest.py の fresh_rate_limit（接続元ごとと全体）が毎回行う
 NOT_THIS = "__not__"  # web/app.js の NOT_THIS と同じ
 SUMMARIZED = {"eligible", "pending", "after_prereq"}  # まとめが扱う状態（app.py の SUMMARIZED と同じ）
 
