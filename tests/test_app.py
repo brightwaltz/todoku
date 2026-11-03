@@ -453,6 +453,33 @@ def test_passphrase_only_for_claude(monkeypatch):
     assert client.get("/api/samples").status_code == 200
 
 
+def test_real_claude_without_passphrase_closes_claude_routes(monkeypatch):
+    # 鍵があるのに合言葉がない（設定し忘れ）ときは、Claude を呼ぶ口を 503 で閉じ、見本と判定し直しは動かす
+    from todoku import app as app_mod
+
+    class RealLike:
+        name = "claude"
+
+        def extract(self, rules, text):
+            raise AssertionError("合言葉なしで Claude を呼んだ")
+
+        def summarize(self, rules, subject, shown):
+            raise AssertionError("合言葉なしで Claude を呼んだ")
+
+    monkeypatch.setattr(app_mod, "CLAUDE", RealLike())
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "")
+    res = client.post("/api/consult", json={"text": DEMO})
+    assert res.status_code == 503 and "合言葉" in res.json()["detail"]
+    assert client.post("/api/summary", json={"facts": {}}).status_code == 503
+    assert len(app_mod._hits_all) == 0 and not any(app_mod._hits.values())  # 断った回は数えない
+    assert client.post("/api/step", json={"facts": {}}).status_code == 200
+    sample_id = client.get("/api/samples").json()[0]["id"]
+    assert client.post("/api/sample", json={"id": sample_id}).status_code == 200
+    # 合言葉を設定すれば、いつもどおり合言葉を求める
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    assert client.post("/api/consult", json={"text": DEMO}).status_code == 401
+
+
 def test_samples_without_claude(monkeypatch):
     from todoku import app as app_mod
 

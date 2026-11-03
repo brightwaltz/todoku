@@ -149,7 +149,7 @@
 uv sync
 uv run pytest                      # 判定器・規則・API のテスト
 TODOKU_FAKE_CLAUDE=1 uv run uvicorn todoku.app:app --port 8000   # 鍵なしの試験モード（キーワードで読み取る）
-ANTHROPIC_API_KEY=... uv run uvicorn todoku.app:app --port 8000  # Claude で読み取る
+ANTHROPIC_API_KEY=... TODOKU_PASSPHRASE=... uv run uvicorn todoku.app:app --port 8000  # Claude で読み取る（合言葉も要る）
 ANTHROPIC_API_KEY=... uv run python scripts/first_call.py           # デモの相談文を Claude で 1 回だけ読み取る（トークン数も出す）
 ```
 
@@ -161,7 +161,7 @@ cd administrative-procedures-mcp && ./setup.sh   # データの取得と準備�
 export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所のサーバーを起動する
 ```
 
-環境変数：`TODOKU_PASSPHRASE`（合言葉。半角の英数字と記号で決める。画面はヘッダで送るので日本語の文字は送れず、欄で断る。設定すると、Claude を呼ぶ読み取り `/api/consult` とまとめ `/api/summary` で求める。規則だけで判定し直す `/api/step` と見本 `/api/sample` には要らない）、`TODOKU_RATE_LIMIT`（Claude を呼ぶ API の 10 分あたりの回数、IP ごと。既定 20。合言葉を間違えた回も数える）、`TODOKU_RATE_LIMIT_ALL`（同じくアプリ全体の 10 分あたりの回数。既定 60。接続元を偽って IP ごとの制限を外しても、これは超えない。合言葉が通った回だけ数える。数えるのはマシンごとなので、マシンが 2 台なら 2 倍になる）、`TODOKU_MODEL`（既定 `claude-opus-5-5`）、`TODOKU_EFFORT`（既定 `low`）。
+環境変数：`TODOKU_PASSPHRASE`（合言葉。半角の英数字と記号で決める。画面はヘッダで送るので日本語の文字は送れず、欄で断る。Claude を呼ぶ読み取り `/api/consult` とまとめ `/api/summary` で求める。鍵があるのに設定していなければ、この 2 つは 503 で断る〔設定し忘れて合言葉なしで開かないため〕。規則だけで判定し直す `/api/step` と見本 `/api/sample` には要らない）、`TODOKU_RATE_LIMIT`（Claude を呼ぶ API の 10 分あたりの回数、IP ごと。既定 20。合言葉を間違えた回も数える）、`TODOKU_RATE_LIMIT_ALL`（同じくアプリ全体の 10 分あたりの回数。既定 60。接続元を偽って IP ごとの制限を外しても、これは超えない。合言葉が通った回だけ数える。数えるのはマシンごとなので、マシンが 2 台なら 2 倍になる）、`TODOKU_MODEL`（既定 `claude-opus-5-5`）、`TODOKU_EFFORT`（既定 `low`）。
 
 合言葉と回数制限は、使いすぎの手間を増やすだけの対策です。費用を止めるのは、API の専用ワークスペースに設定した上限です。相談の文章と答えはサーバに保存しません（画面が持ち、毎回送ります）。応答には CSP（よその出どころとインラインのスクリプト・style 属性を止める）・`X-Content-Type-Options: nosniff`・`Referrer-Policy: no-referrer`・ほかのサイトの枠に入れさせないヘッダを付けています（`src/todoku/app.py` の `SECURITY_HEADERS`）。
 

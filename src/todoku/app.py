@@ -149,6 +149,11 @@ class SampleIn(In):
 def guard(request: Request, costly: bool) -> None:
     # 合言葉と回数制限は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通す
     if costly:
+        # 本物の Claude を呼ぶのに合言葉がない（fly secrets の設定し忘れなど）ときは、Claude を呼ぶ口を閉じる。
+        # 黙って合言葉なしで開くと、だれでも費用を使える。起動で止めると見本と判定し直しまで止まるので、ここで断る。
+        # 数える前に断る（設定の誤りで、利用者の回数を減らさない）
+        if CLAUDE.name == "claude" and not PASSPHRASE:
+            raise HTTPException(503, "この窓口は合言葉が設定されていないため、相談の読み取りを止めています。見本は試せます")
         # 回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限
         # 見回し・数え・積むまでを鍵 1 本で囲む。数えてから積むまでの間に別のスレッドが入ると、上限を超えて通る
         with _lock:
