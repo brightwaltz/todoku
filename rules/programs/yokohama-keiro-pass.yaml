@@ -1,0 +1,33 @@
+id: yokohama-keiro-pass
+number: 34
+name: 敬老特別乗車証（敬老パス）
+level: yokohama
+kind: condition
+summary: 横浜市に住む70歳以上の人が、負担金を払って敬老パス（乗車証）を受け取れる。負担金は所得で変わり、世帯の全員が非課税なら年3,200円。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
+    - {fact: age_band, in: [age_70_74, age_75_plus], label: 70歳以上}
+at_application:
+  - タクシー券や障害者の自動車燃料券を続けて使う人は、敬老パスを申請できない
+  - 障害者手帳などがあれば、負担金が無料になる場合がある
+  - 負担金の区分は、市民税の課税と合計所得金額で決まる
+apply:
+  where: お住まいの区の区役所 高齢・障害支援課
+  how: 窓口か郵送。70歳になる人には案内が届く
+  phone: 敬老パス問合せダイヤル 0120-206-160（8時〜19時、土日・祝日も）
+bring:
+  - 交付申請書
+  - 負担金の区分を確かめる書類（課税証明書など）
+amount:
+  - 年の負担金：生活保護を受けているか世帯の全員が非課税なら3,200円、本人が非課税で世帯に課税の人がいれば4,000円
+  - 本人が課税なら、合計所得金額で7,000円〜20,500円
+timing:
+  - 使えるのは10月1日から翌年の9月30日まで（申し込んだ日からの1年ではない）
+sources:
+  - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigoyobo-kenkoudukuri-ikigai/ikigai-shakaisanka/keirou.html
+    publisher: 横浜市 健康福祉局
+    title: 敬老特別乗車証（敬老パス）
+    license: 横浜市サイトポリシー（著作権法上の引用を除き転載不可・リンク可）
+    checked: 2026-11-03

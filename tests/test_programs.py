@@ -19,10 +19,12 @@ def rs():
 
 def test_programs_by_level(rs):
     # 国 17（全国で判定）・町田市 10・市区町村の型 5（町田市以外で、あるかを窓口で確かめる）
+    # 11/3 に東京都 1・横浜市 7 を足した（33〜40）
     levels = [p.level for p in rs.programs.values()]
-    assert len(levels) == 32
+    assert len(levels) == 40
     assert levels.count("national") == 17 and levels.count("machida") == 10 and levels.count("local") == 5
-    assert sorted(p.number for p in rs.programs.values()) == list(range(1, 33))
+    assert levels.count("tokyo") == 1 and levels.count("yokohama") == 7
+    assert sorted(p.number for p in rs.programs.values()) == list(range(1, 41))
 
 
 def test_every_program_has_dated_official_sources(rs):
@@ -239,3 +241,45 @@ def test_checks_read_anywhere(rs):
         assert "町田市の住民税" not in fact.check, fact.id
         if "高齢者支援センター" in fact.check:
             assert "地域包括支援センター（町田市では「高齢者支援センター」）" in fact.check, fact.id
+
+
+YOKOHAMA_HOME_75 = {"lives_in_yokohama": True, "age_band": "age_75_plus", "residence": "home"}
+
+
+def test_place_facts_follow_the_city(rs):
+    # 町田市に住んでいると分かれば東京都に住んでいて、横浜市ではない（住所を選ばず、読み取りだけで分かったときも）
+    res = evaluate(rs, {"lives_in_machida": True, "age_band": "age_75_plus"})
+    assert res["tokyo-silver-pass"].status == "eligible"
+    assert res["yokohama-keiro-pass"].status == "ineligible"
+    res = evaluate(rs, {"lives_in_yokohama": True, "age_band": "age_70_74"})
+    assert res["yokohama-keiro-pass"].status == "eligible"
+    assert res["tokyo-silver-pass"].status == "ineligible" and res["machida-kami-omutsu"].status == "ineligible"
+    # 町田市以外とだけ分かっているときは、東京都かどうかは決まらない
+    assert evaluate(rs, {"lives_in_machida": False, "age_band": "age_75_plus"})["tokyo-silver-pass"].status == "unknown"
+    assert evaluate(rs, {"lives_in_tokyo": True, "age_band": "age_65_69"})["tokyo-silver-pass"].status == "ineligible"
+
+
+def test_yokohama_programs(rs):
+    # 横浜市の公式ページ（2026-11-03 に確認）の条件から作った場面。当てはまる見込みと、当てはまらないを 1 つずつ
+    def status(pid, **facts):
+        return evaluate(rs, {**YOKOHAMA_HOME_75, **facts})[pid].status
+    assert status("yokohama-keiro-pass") == "eligible"
+    assert status("yokohama-keiro-pass", age_band="age_65_69") == "ineligible"
+    assert status("yokohama-kami-omutsu", care_level="care4", tax_status="household_exempt") == "eligible"
+    assert status("yokohama-kami-omutsu", care_level="care4", on_welfare=True) == "eligible"
+    assert status("yokohama-kami-omutsu", care_level="care4", tax_status="self_taxed", on_welfare=False) == "ineligible"
+    assert status("yokohama-kami-omutsu", care_level="none", tax_status="household_exempt") == "after_prereq"
+    assert status("yokohama-sos", dementia_diagnosis=True, wandering_risk=True) == "eligible"
+    assert status("yokohama-sos", dementia_diagnosis=True, wandering_risk=False) == "ineligible"
+    hearing = {"hearing_difficulty": True, "hearing_certifiable": False, "tax_status": "household_exempt"}
+    assert status("yokohama-hochoki", **hearing) == "eligible"
+    assert status("yokohama-hochoki", **{**hearing, "hearing_certifiable": True}) == "ineligible"
+    assert status("yokohama-mimamori", household="alone") == "eligible"
+    assert status("yokohama-mimamori", household="with_family") == "ineligible"
+    assert status("yokohama-ribiyo", care_level="care5") == "eligible"
+    assert status("yokohama-ribiyo", care_level="care5", residence="facility") == "ineligible"
+    assert status("yokohama-shika-kenshin", care_level="care3", on_welfare=False) == "eligible"
+    assert status("yokohama-shika-kenshin", care_level="care3", on_welfare=True) == "ineligible"
+    # 横浜市以外の人には、どれも当てはまらない
+    away = evaluate(rs, {**YOKOHAMA_HOME_75, "lives_in_yokohama": False, "care_level": "care5", "household": "alone"})
+    assert all(away[p.id].status == "ineligible" for p in rs.programs.values() if p.level == "yokohama")

@@ -269,10 +269,12 @@ def ask_view(q: Question, subject: str) -> dict:
 def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int, municipality: str = "") -> dict:
     results = evaluate(RULES, facts)
     implied = with_implied(RULES, facts)
-    if any(implied.get(RULES_CITY[level]) is True for level in RULES_CITY):
+    city = next((level for level, fid in RULES_CITY.items() if implied.get(fid) is True), None)
+    if city:
         # 町田市・横浜市では市の制度を一つずつ判定するので、市区町村の型は出さない（判定は変えない）。
-        # 「当てはまらない」に並ぶと、町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めてしまうため
-        results = {pid: r for pid, r in results.items() if r.program.level != "local"}
+        # 「当てはまらない」に並ぶと、町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めてしまうため。
+        # その市で書けていない型（規則の shown_in）だけは出す
+        results = {pid: r for pid, r in results.items() if r.program.level != "local" or city in r.program.shown_in}
     hidden_places = []
     for level, fid in rules_mod.LEVEL_PLACE.items():
         # その市・都・県以外と分かったら、そこの制度は出さない（町田市で型を出さないのと同じ扱い。判定は変えない）。
@@ -305,7 +307,8 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
                   if f in RULES.facts and (f not in RULES.places or f == RULES.place_question)],
         "results": [result_view(r, implied, subject, municipality, pending) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
-        "hidden_places": hidden_places,
+        # 1 行で知らせるのは、市の制度を一つずつ判定している市（町田市・横浜市）の外に住む人にだけ
+        "hidden_places": hidden_places if city is None else [],
         "place": place_view(municipality),
         "center_search": center_search(municipality),
     }

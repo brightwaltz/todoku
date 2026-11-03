@@ -1,0 +1,42 @@
+id: yokohama-hochoki
+number: 37
+name: 難聴者補聴器購入費助成
+level: yokohama
+kind: review
+summary: 横浜市に住む、市民税非課税の世帯の人が補聴器を買うとき、20,000円まで助成する。買う前に補聴器相談医の受診が要る。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: hearing_difficulty, is: true, label: 聞こえにくく、補聴器を考えている}
+    - {fact: hearing_certifiable, is: false, label: 聴覚の障害で身体障害者手帳の対象ではない}
+    - any:
+        - {fact: tax_status, in: [household_exempt], label: 世帯の全員が市民税非課税}
+        - {fact: on_welfare, is: true, label: 生活保護を受けている}
+at_application:
+  - 対象は申請の日に50歳以上の人（50〜64歳の人も対象）
+  - 両耳とも30dB以上の難聴で、補聴器相談医が補聴器の使用を必要と証明すること（30dB未満でも相談医が必要と認めれば対象）
+  - 買う前に、市内の補聴器相談医のいる医療機関を受診して意見書をもらう（買う前の相談が確かめられないと対象外）
+  - 2026年4月1日以降に買った、管理医療機器の補聴器だけ（集音器・付属品・修理は対象外）
+  - 市のほかの助成やこの助成を、前に受けていないこと。装用の前と後のアンケートに答えること
+apply:
+  where: 横浜市 医療局 医療政策課（郵送だけで受け付ける）
+  how: 郵送（〒231-0005 横浜市中区本町6-50-10）。装用前のアンケートは電子申請でもよい
+bring:
+  - 交付申請書兼実績報告書
+  - 医師意見書
+  - 購入日と価格が分かる領収書など
+  - 補聴器装用前アンケート
+  - 交付が決まったあと：請求書と、通帳などの写し
+amount:
+  - 購入費を20,000円まで（購入費が少なければ購入費）
+timing:
+  - 申請は2026年6月22日〜2027年2月26日（必着）。先着300人で、予算に達すると締め切る
+  - 買ってからおよそ3か月後に、装用後のアンケートに答える
+sources:
+  - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/kenko-iryo/iryo/seisaku/hochokijosei.html
+    publisher: 横浜市 医療局
+    title: 横浜市難聴者補聴器購入費助成事業
+    license: 横浜市サイトポリシー（著作権法上の引用を除き転載不可・リンク可）
+    checked: 2026-11-03

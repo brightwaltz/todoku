@@ -1,0 +1,27 @@
+id: yokohama-ribiyo
+number: 39
+name: 訪問理美容サービス
+level: yokohama
+kind: condition
+summary: 横浜市で自宅に暮らす要介護4・5の人が、理容師・美容師に家へ来てもらってカットを受けられる（1回2,000円、年6回まで）。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: おおむね65歳以上}
+    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - {fact: care_level, in: [care4, care5], label: 要介護4か5, via: kaigo-nintei}
+at_application:
+  - 理容所・美容所に出向くのが難しく、原則として座っていられること
+  - 要支援1〜要介護3でも、福祉保健センター長が特に必要と認めれば対象になる
+apply:
+  where: お住まいの区の区役所 高齢・障害支援課、または地域包括支援センター
+  how: 窓口。要介護4・5の人は横浜市電子申請・届出システムでも申請できる（利用券が届くまで、およそ1か月）
+amount:
+  - カット代は1回2,000円で、年6回まで（年度の途中で決まった人は、決まった月に応じて減る）
+sources:
+  - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/ribiyou.html
+    publisher: 横浜市 健康福祉局
+    title: 訪問理美容サービス事業
+    license: 横浜市サイトポリシー（著作権法上の引用を除き転載不可・リンク可）
+    checked: 2026-11-03

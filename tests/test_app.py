@@ -138,7 +138,7 @@ def test_index_and_health():
     assert client.get("/static/app.js").status_code == 200
     assert client.get("/static/app.js").headers["cache-control"] == "no-cache"
     h = client.get("/api/health").json()
-    assert h["programs"] == 32
+    assert h["programs"] == 40  # 33〜40 は東京都 1 件と横浜市 7 件（11/3 に足した）
 
 
 def test_rate_limit_counts_each_client_ip(monkeypatch):
@@ -242,8 +242,9 @@ def test_other_cities_see_their_own_offices():
 
 
 def test_yes_no_reasons_carry_no_value():
+    # 横浜市では型を出さない（市の制度を一つずつ判定している）ので、型の札を見るのは大阪市で
     data = client.post("/api/step", json={"facts": {"age_band": "age_75_plus", "residence": "home", "wandering_risk": True},
-                                          "municipality": "141003"}).json()
+                                          "municipality": "271004"}).json()
     card = next(r for r in data["results"] if r["id"] == "local-haikai")
     assert all(x["value"] is None for x in card["reasons"])  # 町田市以外・行方不明のおそれ（はい・いいえ）と、確かめる先
 
@@ -330,26 +331,30 @@ def test_machida_hides_the_types():
     # 町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めるため（Managed Agent の通し、11/3）
     facts = {"age_band": "age_75_plus", "residence": "home", "uses_diapers": True, "care_level": "care4"}
     machida = client.post("/api/step", json={"facts": facts, "municipality": "132098"}).json()
-    yokohama = client.post("/api/step", json={"facts": facts, "municipality": "141003"}).json()
+    osaka = client.post("/api/step", json={"facts": facts, "municipality": "271004"}).json()
     assert not [r for r in machida["results"] if r["id"].startswith("local-")]
-    assert sum(machida["counts"].values()) == len(machida["results"]) == 27  # 札・数・一覧がそろう
-    assert any(r["id"] == "local-kaigo-yohin" for r in yokohama["results"])
-    # 町田市以外では町田市の制度 10 件を出さない（11/3 の判断 2）ので、32 件から 22 件になった
-    assert len(yokohama["results"]) == 22
+    # 国 17・町田市 10・東京都 1（11/3 に東京都と横浜市の制度を足して 27 件から 28 件に）
+    assert sum(machida["counts"].values()) == len(machida["results"]) == 28  # 札・数・一覧がそろう
+    assert any(r["id"] == "local-kaigo-yohin" for r in osaka["results"])
+    # 町田市・横浜市・東京都の外では、そこの制度を出さない：国 17・型 5（前は横浜市で見ていた。横浜市は型を出さなくなった）
+    assert len(osaka["results"]) == 22
 
 
 def test_other_cities_hide_machida_programs():
-    # 町田市以外と分かったら、住所だけで外れる町田市の制度を「当てはまらない」に並べず、町田市なら判定すると 1 行で伝える
+    # その市・都以外と分かったら、住所だけで外れる制度を「当てはまらない」に並べず、そこなら判定すると 1 行で伝える
     facts = {"age_band": "age_75_plus", "residence": "home", "uses_diapers": True, "care_level": "care4"}
     def step(code):
         return client.post("/api/step", json={"facts": facts, "municipality": code}).json()
-    yokohama, machida, nowhere = step("141003"), step("132098"), step("")
-    assert not [r for r in yokohama["results"] if r["id"].startswith("machida-")]
-    assert yokohama["hidden_places"] == [{"name": "町田市", "n": 10}]
+    yokohama, machida, osaka, nowhere = step("141003"), step("132098"), step("271004"), step("")
+    assert not [r for r in yokohama["results"] if r["id"].startswith(("machida-", "tokyo-"))]
+    assert not [r for r in machida["results"] if r["id"].startswith("yokohama-")]
     assert sum(yokohama["counts"].values()) == len(yokohama["results"])
+    assert osaka["hidden_places"] == [{"name": "町田市", "n": 10}, {"name": "横浜市", "n": 7}, {"name": "東京都", "n": 1}]
+    # 町田市・横浜市に住む人には、ほかの市の件数を知らせない（自分の市の制度を一つずつ見ているため）
     assert machida["hidden_places"] == [] and any(r["id"].startswith("machida-") for r in machida["results"])
-    # 住所が分からない間は今までどおり、町田市の制度も型も出す
-    assert nowhere["hidden_places"] == [] and len(nowhere["results"]) == 32
+    assert yokohama["hidden_places"] == [] and any(r["id"].startswith("yokohama-") for r in yokohama["results"])
+    # 住所が分からない間は今までどおり、市・都の制度も型も出す
+    assert nowhere["hidden_places"] == [] and len(nowhere["results"]) == 40
     from pathlib import Path
     script = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
     assert "data.hidden_places" in script
@@ -376,3 +381,42 @@ def test_status_names_are_the_result_headings():
         label = STATUS_LABEL[status]
         assert f'["{status}", "{label}",' in js
         assert f"| {label} |" in readme
+
+
+def test_yokohama_shows_its_programs_and_one_type():
+    # 横浜市では市の制度を一つずつ判定するので型は出さない。成年後見の利用支援だけは、横浜市の制度として書けていないので型のまま出す
+    facts = {"age_band": "age_75_plus", "residence": "home", "dementia_diagnosis": True, "wandering_risk": True}
+    data = client.post("/api/step", json={"facts": facts, "municipality": "141003"}).json()
+    ids = [r["id"] for r in data["results"]]
+    assert [i for i in ids if i.startswith("local-")] == ["local-koken"]
+    assert {"yokohama-keiro-pass", "yokohama-sos"} <= {r["id"] for r in data["results"] if r["status"] == "eligible"}
+    # 横浜市のページは横浜市の人にだけ出典に出す。国の制度の申請先は町田市の書き方にしない
+    sos = next(r for r in data["results"] if r["id"] == "yokohama-sos")
+    assert all("city.yokohama.lg.jp" in s["url"] for s in sos["sources"])
+    assert "町田" not in next(r for r in data["results"] if r["id"] == "kaigo-nintei")["apply"]["where"]
+
+
+def test_place_question_counts_every_city():
+    # 住所の問いは、規則が使う市・都ごとに 1 つと「そのほか」で値打ちを数える。分かっている住所と合わないものは外す
+    from todoku.engine import statuses
+    from todoku.questions import place_choices, score_fact
+    rs = rules_mod.load()
+    assert len(place_choices(rs, {})) == 4  # 町田市・横浜市・東京都のほかの市区町村・そのほか
+    assert len(place_choices(rs, {"lives_in_machida": False})) == 3
+    facts = {"age_band": "age_75_plus"}
+    score, affects = score_fact(rs, facts, "lives_in_machida", statuses(rs, facts))
+    assert score > 0 and {"yokohama-keiro-pass", "tokyo-silver-pass", "machida-gps"} <= set(affects)
+
+
+def test_place_facts_are_not_read_by_claude():
+    # 横浜市・東京都に住んでいるかは、選んだ市区町村から決める。Claude の読み取りの一覧と形には入れない（抽出の指示は変えない）
+    from todoku.claude import _catalog, _extract_schema
+    rs = rules_mod.load()
+    catalog = _catalog(rs)
+    assert "lives_in_machida" in catalog
+    assert "lives_in_yokohama" not in catalog and "lives_in_tokyo" not in catalog
+    enum = _extract_schema(rs)["properties"]["facts"]["items"]["properties"]["fact"]["enum"]
+    assert "lives_in_yokohama" not in enum and "lives_in_machida" in enum
+    out = check_extraction(rs, "横浜市に住む父", {"subject": "お父さま", "facts": [
+        {"fact": "lives_in_yokohama", "value": "true", "confidence": "high", "evidence": "横浜市に住む"}]})
+    assert not out.facts and out.dropped

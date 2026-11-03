@@ -14,6 +14,23 @@ lives_in_machida:
   check: 住民票のある市区町村です。町田市の制度は町田市に住所がある方が対象です。
   place: {city: "132098"}
 
+lives_in_yokohama:
+  name: 横浜市に住んでいる
+  type: bool
+  question: ご本人は横浜市にお住まいですか？
+  check: 住民票のある市区町村です。横浜市の制度は横浜市に住所がある方が対象です。
+  place: {city: "141003"}
+  read: false
+
+lives_in_tokyo:
+  name: 東京都に住んでいる
+  type: bool
+  question: ご本人は東京都にお住まいですか？
+  check: 住民票のある都道府県です。東京都の制度は都内に住所がある方が対象です。
+  place: {pref: "13"}
+  read: false
+
+
 age_band:
   name: 年齢
   type: enum

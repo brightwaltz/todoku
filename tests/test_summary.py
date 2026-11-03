@@ -48,3 +48,10 @@ def test_client_waits_at_most_a_minute(monkeypatch):
     claude = RealClaude()
     assert claude._client.timeout == 60.0
     assert claude._client.max_retries == 1
+
+
+def test_yokohama_and_tokyo_lines_need_their_programs():
+    # 町田市・横浜市・東京都の名前を含む行は、その段の制度が画面に出ているときだけ通す（ほかの所に住む人に窓口を取り違えさせない）
+    machida = shown_for({**MACHIDA, "age_band": "age_75_plus"})
+    assert any(r.program.level == "tokyo" for r in machida) and not any(r.program.level == "yokohama" for r in machida)
+    assert texts(machida, "東京都のシルバーパスも買えます。", "横浜市の窓口でも相談できます。") == ["東京都のシルバーパスも買えます。"]

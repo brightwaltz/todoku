@@ -1,0 +1,26 @@
+id: yokohama-mimamori
+number: 38
+name: 高齢者見守り・安否確認機器補助
+level: yokohama
+kind: condition
+summary: 横浜市でひとり暮らしの65歳以上の人が、市に登録された見守りサービスを使うと、月の利用料を1,000円まで補助する。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
+    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    - {fact: household, in: [alone], label: ひとり暮らし}
+at_application:
+  - 市のほかの見守りサービス（センサーの付いた高齢者向けの市営住宅など）を使っていない人。前にこの補助に申し込んだ人は対象外
+  - 使えるのは、市に登録された事業者のサービスだけ
+apply:
+  where: 市に登録された見守りサービスの事業者に、直接申し込む
+  phone: 事業の問い合わせは健康福祉局 高齢在宅支援課 045-671-2405
+amount:
+  - 見守り機器の月の利用料を、1,000円まで補助する
+sources:
+  - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/mimamori.html
+    publisher: 横浜市 健康福祉局
+    title: 高齢者見守り・安否確認機器補助事業
+    license: 横浜市サイトポリシー（著作権法上の引用を除き転載不可・リンク可）
+    checked: 2026-11-03

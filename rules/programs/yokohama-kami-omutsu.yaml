@@ -1,0 +1,31 @@
+id: yokohama-kami-omutsu
+number: 35
+name: 高齢者紙おむつ給付
+level: yokohama
+kind: condition
+summary: 横浜市で自宅に暮らす要介護4・5の人に、住民税が非課税の世帯などなら、紙おむつを毎月届ける（自己負担は1割）。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
+    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - {fact: care_level, in: [care4, care5], label: 要介護4か5, via: kaigo-nintei}
+    - any:
+        - {fact: tax_status, in: [household_exempt], label: 世帯の全員が市民税非課税}
+        - {fact: on_welfare, is: true, label: 生活保護を受けている}
+at_application:
+  - 寝たきりか認知症の状態であること
+  - 要介護1〜3でも、区の福祉保健センター長が必要と認めれば対象になる（上限は月6,000円分）
+apply:
+  where: お住まいの区の福祉保健センター 高齢・障害支援課、または地域包括支援センター
+  how: 窓口か、横浜市電子申請・届出システム（先に「手続き判定」で使えるかを確かめる）
+  phone: 問い合わせは各区の高齢・障害支援課（市の担当は健康福祉局 高齢在宅支援課 045-671-2405）
+amount:
+  - 要介護4・5は月8,000円分まで（2,000円が1単位で、毎月変えられる）
+  - 自己負担は1割（1単位200円）。生活保護の世帯などは無料
+sources:
+  - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/kourei-omutsu.html
+    publisher: 横浜市 健康福祉局
+    title: 高齢者紙おむつ給付事業
+    license: 横浜市サイトポリシー（著作権法上の引用を除き転載不可・リンク可）
+    checked: 2026-11-03

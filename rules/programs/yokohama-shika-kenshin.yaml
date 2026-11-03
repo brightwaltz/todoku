@@ -1,0 +1,32 @@
+id: yokohama-shika-kenshin
+number: 40
+name: 在宅要介護者訪問歯科健診
+level: yokohama
+kind: condition
+summary: 横浜市で自宅に暮らし、歯科健診に行けない75歳以上の要介護3〜5の人が、家で歯科健診を無料で受けられる。
+weight: 1
+eligibility:
+  all:
+    - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
+    - {fact: age_band, in: [age_75_plus], label: 75歳以上}
+    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - {fact: care_level, in: [care3, care4, care5], label: 要介護3〜5, via: kaigo-nintei}
+    - {fact: on_welfare, is: false, label: 生活保護を受けていない}
+at_application:
+  - 65〜74歳でも、後期高齢者医療の被保険者なら対象
+  - 要支援1〜要介護2でも、医科の訪問診療を受けていれば対象になる
+  - 医療保険や介護保険で、歯科の治療や管理を受けている人は対象外
+apply:
+  where: 横浜市歯科医師会 歯科医療連携室（市の委託先）
+  how: 電話か、ちらしの裏の申し込み用連絡表をFAXで送る（FAX 0120-458-557）
+  phone: 0120-814-594
+amount:
+  - 健診は無料（治療が要るときの治療費は別）
+timing:
+  - 受付は2026年9月1日〜2027年1月31日。市内で先着480人で、達すると締め切る
+sources:
+  - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/houmonsikakensin.html
+    publisher: 横浜市 健康福祉局
+    title: 在宅要介護者訪問歯科健診事業
+    license: 横浜市サイトポリシー（著作権法上の引用を除き転載不可・リンク可）
+    checked: 2026-11-03

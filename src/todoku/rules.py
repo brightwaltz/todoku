@@ -109,6 +109,8 @@ class Program:
     elsewhere: dict = field(default_factory=dict)
     # 前提の手続き（via と prereq で参照している制度）。読み込みのときに埋める
     depends_on: set[str] = field(default_factory=set)
+    # 市区町村の型だけ：市の制度を一つずつ判定している市（段の名前）でも、型のまま出す市
+    shown_in: tuple[str, ...] = ()
 
 
 @dataclass
@@ -253,6 +255,10 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
     if "apply" in elsewhere and not (elsewhere["apply"] or {}).get("where"):
         raise RuleError(f"{where}: elsewhere の apply に where がない")
 
+    shown_in = tuple(raw.get("shown_in") or ())
+    if shown_in and (level != "local" or set(shown_in) - set(LEVEL_PLACE)):
+        raise RuleError(f"{where}: shown_in は市区町村の型だけに、段の名前（{'・'.join(LEVEL_PLACE)}）で書く")
+
     return Program(
         id=pid,
         number=int(need("number")),
@@ -274,6 +280,7 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         procedures_none=procedures_none,
         elsewhere=elsewhere,
         depends_on=depends_on,
+        shown_in=shown_in,
     )
 
 
