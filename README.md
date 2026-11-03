@@ -12,6 +12,8 @@
 
 知らない制度は、尋ねることもできません。たとえば「母が退院してから家で転びやすくなった」という相談には、要介護認定の申請に加えて、認定を受けたあとで使える税の障害者控除（町田市の認定書が先に要る）まで、前提の手続きの順番つきで出てきます。住宅改修や福祉用具も、工事や購入の予定を確かめる候補として出ます。
 
+働く家族の側の制度は、あまり使われていません。介護をしながら雇われて働く人のうち、介護休業を使ったのは 3.2% でした（総務省「平成24年就業構造基本調査」、[厚生労働省の資料](https://www.mhlw.go.jp/file/05-Shingikai-12602000-Seisakutoukatsukan-Sanjikanshitsu_Roudouseisakutantou/0000103635.pdf)）。介護・看護のために仕事を辞めた人は、1 年で約 11 万人います（[令和4年就業構造基本調査](https://www.stat.go.jp/data/shugyou/2022/pdf/kgaiyou.pdf)）。
+
 > Built with Claude: Japan 2026（2026-11-02〜11-08）の期間中に新しく作りました。下の「期間中に作ったもの」を参照してください。
 
 ## 判定は規則、言葉は Claude
@@ -41,6 +43,23 @@
 | 済んでいる | もう認定を受けているなど、済んでいる手続き。「当てはまらない」と一緒にたたんで出す |
 
 「わからない」も正式な答えです。分からない制度は外さずに、確かめ方を添えて示します。
+
+## 先行例から学んだこと（2026-11-04 に調べた）
+
+国内外の行政・研究・民間の取り組みを調べました。海外には、当てはまりそうな制度をまとめて示す道具が多くあります（フランスの [Mes Aides](https://caf.fr/allocataires/caf-de-seine-et-marne/actualites-departementales/simulateur-mes-aides-evaluez-vos-droits-24-aides-sociales-en-moins-de-7-minutes) など）。国内にも、千葉市の「あなたが使える制度お知らせサービス」（[総務省の事例集](https://www.soumu.go.jp/main_content/000944773.pdf)）や、東京都の「プッシュ型子育てサービス」（[GovTech東京](https://www.govtechtokyo.or.jp/)、先行配信の 6 自治体に町田市も入っています）があります。ただ、どちらも子育てと健診が中心です。介護の相談から、尋ねていない制度まで示す仕組みは、探した範囲では見つかりませんでした。
+
+| 先行例で分かったこと | とどくの作り |
+|---|---|
+| LLM が対話で受給資格まで決めると、外れが多い。NYC の 82 制度で、GPT-4o の F1 は 35.7。判定をプログラムに移すと 56.2 に上がり、往復は 13.9% 減った（[Toles ほか、IJCNLP-AACL 2025](https://arxiv.org/abs/2502.19610)）。チャットボットの誤った提案は、易しい問いでケースワーカーの正答を 3 分の 2 減らした（[Gosciak ほか 2026、プレプリント](https://arxiv.org/abs/2603.11213)） | 判定は規則のプログラム。Claude は相談文から事実を取り出すだけ |
+| LLM の聞き方で多い失敗は、細かすぎる問いと、要らない追加の問い（[Toles ほか](https://arxiv.org/abs/2502.19610)、[Steenhuis・Westermann 2024](https://arxiv.org/abs/2410.03762)） | 次の問いは、答え次第で判定が変わる制度の数 × 重みで選ぶ |
+| 短い検査をいつ打ち切るかに、筋の通った決まりはまだない（[Krantsevich ほか、Annals of Applied Statistics 2023](https://arxiv.org/abs/2106.10364)） | 最大 3 問の枠も、理論から決めた数ではない |
+| 知らせる相手を広げると、対象でない人の申請も増える。英国の招待状の試行では、選び方を直すと、申請のうち資格のあった割合が 37.4% から 75.3% に上がった（[英国 DWP 2024](https://www.gov.uk/government/publications/pension-credit-invitation-to-claim-trial/executive-summary)、[ベルギー Van Gestel ほか 2023](https://doi.org/10.1017/S004727942100088X)） | 「当てはまる見込み」と「確かめると使えるかもしれない」を分けて示す |
+| 申請した人は、対象外にされた理由が分からず戸惑う（[Urban Institute 2023](https://digitalgovernmenthub.org/wp-content/uploads/2023/02/urbaninstitute_improvements.pdf)） | 当てはまらない制度にも、満たしていない条件を理由として付ける |
+| 英国の介護者は、介護している相手の給付の手続きを通して、自分の手当を知ることが多い（[英国 DWP 2024](https://www.gov.uk/government/publications/experience-of-claiming-and-receiving-carers-allowance/893f05bd-6e8f-4bcd-b9e3-4e8c3790e2b8)）。ある制度で外れた人は次の制度へ回し、本人が知っていると当てにしない（[USDR](https://usdr.gitbook.io/benefits-resource-hub/ui-journey-map/the-claimant-journey/know-what-im-eligible-for)） | 「先に手続きをすると使える」制度を、前提の手続きの順番つきで示す |
+| 知らせるだけでも受給は増える（カリフォルニアで 0.14〜2 ポイント、[Linos ほか 2025、ワーキングペーパー](https://digitalgovernmenthub.org/wp-content/uploads/2025/07/RWP25_001_Linos.pdf)）。救急外来で退院後にメッセージを送ると、相談員へ連絡した人が 0% から 25% になり、連絡の多くは退院から 3 日以内だった（[Penn LDI 2026](https://ldi.upenn.edu/our-work/research-updates/in-philly-emergency-departments-text-messages-helped-patients-seek-public-benefits-more-often/)） | 上の「母が退院してから」のような、退院の直後の相談を例にしている |
+| 行政の生成 AI の検証では、答えが資料に無い問いを足し、「わからない」と答えられるかを確かめた（[デジタル庁 2024](https://www.digital.go.jp/assets/contents/node/information/field_ref_resources/19c125e9-35c5-48ba-a63f-f817bce95715/e03a8092/20240510_resources_ai_r5mainresults.pdf)） | Claude は事実ごとに確信と根拠の言葉を返す。根拠が無ければ確かめる問いに回す |
+
+働く家族については、介護に直面したと会社に申し出た人に、会社が介護休業などを個別に知らせて意向を確かめることが、2025 年 4 月から義務になりました（[厚生労働省の Q&A](https://www.mhlw.go.jp/content/11900000/001567572.pdf)）。とどくは、会社に申し出る前の家族にも、介護休業給付などを示します。
 
 ## 扱う制度（確認日は 1〜20 が 2026-11-02、21〜40 が 2026-11-03）
 
