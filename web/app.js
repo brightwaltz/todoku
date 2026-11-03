@@ -421,32 +421,50 @@ function fillAnswers(box, q, pick, pickPlace) {
 }
 
 // later：結果の画面で、確かめていない読み取りに答えたとき。聞き返しの数に入れず、新しい問いも出さない
-async function answer(q, value, later = false) {
-  state.presses += 1;
-  if (!later) state.asked += 1;
-  if (!(q.confirm && value === NOT_THIS)) state.facts[q.fact] = value;
-  delete state.suggestions[q.fact];
-  await step(later);
+function answer(q, value, later = false) {
+  const facts = { ...state.facts };
+  const suggestions = { ...state.suggestions };
+  if (!(q.confirm && value === NOT_THIS)) facts[q.fact] = value;
+  delete suggestions[q.fact];
+  return step({ facts, suggestions, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1 }, later);
 }
 
 // お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める
-async function answerPlace(code, later = false) {
-  state.presses += 1;
-  if (!later) state.asked += 1;
-  state.municipality = code;
-  delete state.suggestions.lives_in_machida;
-  await step(later);
+function answerPlace(code, later = false) {
+  const suggestions = { ...state.suggestions };
+  delete suggestions.lives_in_machida;
+  return step({ suggestions, municipality: code, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1 }, later);
 }
 
-async function step(stop = false) {
+// 送っている間は選択肢を止める（2 度押しで問いが 1 つ飛ばないように）。答えは応答が届いてから state に入れる
+// （通信に失敗して押し直しても、数がずれない）
+let busy = false;
+async function step(change = {}, stop = false) {
+  if (busy) return;
+  const mine = state;  // 待つ間に別の相談を始めたら、古い応答は描かない
+  const next = { ...state, ...change };
+  setBusy(true);
   try {
     const data = await api("/api/step", {
-      facts: state.facts, suggestions: state.suggestions, subject: state.subject,
-      asked: stop ? 99 : state.asked, municipality: state.municipality,
+      facts: next.facts, suggestions: next.suggestions, subject: next.subject,
+      asked: stop ? 99 : next.asked, municipality: next.municipality,
     });
+    if (mine !== state) return;
+    Object.assign(state, change);
     render(data);
   } catch (e) {
-    $("ask-why").textContent = e.message;
+    if (mine === state) (state.resultShown ? $("later-change") : $("ask-why")).textContent = e.message;
+  } finally {
+    setBusy(false);
+  }
+}
+
+function setBusy(on) {
+  busy = on;
+  // 元から止まっている欄（都道府県を選ぶ前の市区町村など）は、送り終えても止めたままにする
+  for (const node of document.querySelectorAll("#ask-options :is(button, select), #later-list :is(button, select), #skip")) {
+    if (on && !node.disabled) { node.disabled = true; node.dataset.busy = "1"; }
+    else if (!on && node.dataset.busy) { node.disabled = false; delete node.dataset.busy; }
   }
 }
 
@@ -627,7 +645,7 @@ fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
   show("samples");
 }).catch(() => { /* 見本の行は出さない */ });
 $("send").addEventListener("click", send);
-$("skip").addEventListener("click", () => step(true));
+$("skip").addEventListener("click", () => step({}, true));
 $("again").addEventListener("click", () => {
   state = fresh();
   $("text").value = "";

@@ -121,6 +121,7 @@ select:disabled { color: var(--muted); background: var(--soft); }
 .option { background: #fff; color: var(--ink); border: 2px solid var(--accent); text-align: left; }
 .option:active, .option:focus-visible { background: #e3f1ee; }
 .option.dk { border-style: dashed; color: var(--muted); }
+.option:disabled { opacity: .5; cursor: default; }  /* 送っている間と、市区町村を選ぶ前の「決定」 */
 .options.two { grid-template-columns: 1fr 1fr; }
 .options.two .wide, .options.two .dk { grid-column: 1 / -1; }
 .why { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
