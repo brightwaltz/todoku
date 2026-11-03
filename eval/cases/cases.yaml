@@ -1,7 +1,9 @@
 # 架空の相談事例（評価用）。人物と困りごとから書き、制度の名前では組み立てていない。
 # - text: 相談した人が窓口に書く文章（そのまま窓口に入る）
 # - profile: 正解を付ける人が読む人物の説明（相談文の思い違いも、ここに本当のことを書く）
-# - answers: 窓口に聞かれたら相談した人が答える内容（rules/facts.yaml の 22 の事実）
+# - answers: 窓口に聞かれたら相談した人が答える内容（rules/facts.yaml の 25 の事実）。
+#   severe_constant_care・money_management_difficulty・hearing_certifiable の 3 つは 2026-11-03 に書き足した
+#   （道具なしの claude-opus-5-5 に相談文と人物の説明だけを渡した答えを、手を加えずに入れた。eval/PROTOCOL.md）
 
 - id: c01
   text: |
@@ -31,6 +33,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: true
+    hearing_certifiable: false
 
 - id: c02
   text: |
@@ -60,6 +65,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: "__dont_know__"
 
 - id: c03
   text: |
@@ -89,6 +97,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: true
+    money_management_difficulty: true
+    hearing_certifiable: false
 
 - id: c04
   text: |
@@ -118,6 +129,9 @@
     plans_home_modification: true
     plans_fixture_replacement: false
     plans_equipment_purchase: true
+    severe_constant_care: "__dont_know__"
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c05
   text: |
@@ -147,6 +161,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c06
   text: |
@@ -176,6 +193,9 @@
     plans_home_modification: true
     plans_fixture_replacement: false
     plans_equipment_purchase: true
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c07
   text: |
@@ -205,6 +225,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: "__dont_know__"
+    money_management_difficulty: true
+    hearing_certifiable: false
 
 - id: c08
   text: |
@@ -234,6 +257,9 @@
     plans_home_modification: true
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c09
   text: |
@@ -263,6 +289,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: true
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c10
   text: |
@@ -292,6 +321,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: true
+    severe_constant_care: false
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c11
   text: |
@@ -321,6 +353,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c12
   text: |
@@ -350,6 +385,9 @@
     plans_home_modification: true
     plans_fixture_replacement: true
     plans_equipment_purchase: true
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c13
   text: |
@@ -379,6 +417,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c14
   text: |
@@ -408,6 +449,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c15
   text: |
@@ -437,6 +481,9 @@
     plans_home_modification: true
     plans_fixture_replacement: false
     plans_equipment_purchase: true
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c16
   text: |
@@ -466,6 +513,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c17
   text: |
@@ -495,6 +545,9 @@
     plans_home_modification: true
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c18
   text: |
@@ -524,6 +577,9 @@
     plans_home_modification: true
     plans_fixture_replacement: true
     plans_equipment_purchase: true
+    severe_constant_care: "__dont_know__"
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c19
   text: |
@@ -553,6 +609,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: true
+    money_management_difficulty: true
+    hearing_certifiable: false
 
 - id: c20
   text: |
@@ -582,6 +641,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: true
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c21
   text: |
@@ -611,6 +673,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c22
   text: |
@@ -640,6 +705,9 @@
     plans_home_modification: false
     plans_fixture_replacement: true
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: "__dont_know__"
 
 - id: c23
   text: |
@@ -669,6 +737,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c24
   text: |
@@ -698,6 +769,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: true
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c25
   text: |
@@ -727,6 +801,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c26
   text: |
@@ -756,6 +833,9 @@
     plans_home_modification: true
     plans_fixture_replacement: true
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c27
   text: |
@@ -785,6 +865,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: true
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
 
 - id: c28
   text: |
@@ -814,6 +897,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c29
   text: |
@@ -843,6 +929,9 @@
     plans_home_modification: false
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: true
+    money_management_difficulty: "__dont_know__"
+    hearing_certifiable: false
 
 - id: c30
   text: |
@@ -872,3 +961,6 @@
     plans_home_modification: true
     plans_fixture_replacement: false
     plans_equipment_purchase: false
+    severe_constant_care: false
+    money_management_difficulty: false
+    hearing_certifiable: false
