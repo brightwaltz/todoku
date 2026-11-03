@@ -40,10 +40,12 @@ sources:
     title: 特別児童扶養手当・特別障害者手当等（所得の限度額と支払いの月、令和8年4月からの額）
     license: 利用条件を確かめていない（引用しない）
     checked: 2026-11-03
-  - url: https://www.fukushi.metro.tokyo.lg.jp/shisetsu/jigyosyo/shinsho/teate/toku_shou
-    publisher: 東京都福祉局
-    title: 特別障害者手当（支給は請求した月の翌月分から）
-    license: 利用条件を確かめていない（引用しない）
+  # 支給が請求した月の翌月分から、の出典は、前は東京都福祉局のページだった。福祉局はトップページ以外へのリンクに
+  # 事前の許諾が要る（サイトポリシー）ので、法令に替えた（11/3、資料蓄積の指摘）
+  - url: https://laws.e-gov.go.jp/law/339AC0000000134
+    publisher: e-Gov 法令検索（デジタル庁）
+    title: 特別児童扶養手当等の支給に関する法律 第26条の5（第5条の2第1項の準用：支給は認定の請求をした月の翌月から）
+    license: 法令の本文（著作権法第13条により権利の対象外。e-Gov は PDL1.0）
     checked: 2026-11-03
 procedures:
   # デジタル庁「行政手続等の棚卸調査結果（令和7年度）」を、Claude Code から行政手続データの MCP サーバーで引いた（2026-11-03）
