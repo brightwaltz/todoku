@@ -85,8 +85,16 @@ ALWAYS_CONFIRM: dict[str, frozenset[str]] = {
 }
 
 
+# 画面に返す根拠の長さの上限。見本 4 件の根拠は長くて 27 字
+EVIDENCE_MAX = 200
+
+
 def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
-    """形・値・根拠を確かめる。根拠が相談文にない事実と、ALWAYS_CONFIRM の値は確信を low に落とす。"""
+    """形・値・根拠を確かめる。根拠が相談文にない事実と、ALWAYS_CONFIRM の値は確信を low に落とす。
+
+    根拠は相談文に見つかったときだけ返し、EVIDENCE_MAX 字で切る。見つからない根拠は空にする
+    （Claude が相談文にない文、たとえば指示文を根拠に写しても、画面に出さない。11/3 の安全点検の 4）。
+    """
     out = Extraction(subject=(raw.get("subject") or "ご本人").strip()[:12] or "ご本人")
     seen: set[str] = set()
     norm_text = normalize(text)
@@ -104,6 +112,9 @@ def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
         confidence = "high" if item.get("confidence") == "high" else "low"
         if not evidence or normalize(evidence) not in norm_text:
             confidence = "low"
+            evidence = ""
+        # 相談文の中にあると確かめてから切る（前の方だけでも相談文の一部なので、画面の印はそのまま付く）
+        evidence = evidence[:EVIDENCE_MAX]
         if value in ALWAYS_CONFIRM.get(fid, ()):
             confidence = "low"
         seen.add(fid)
@@ -163,6 +174,20 @@ SUMMARY_SYSTEM = """あなたは、高齢者と介護する家族のための公
 - 「申請済み・結果待ち」の制度は、もう申請してある。「申請すると」とは書かず、「〜の結果が出ると、〜も使えるようになります」のように伝える。
 - 金額・日数・電話番号などの数字は書かない（画面の別の場所に、出典つきで出る）。
 - 2〜4 行。"""
+
+
+# 相談文を包むタグと同じ形（半角・全角の括弧と斜線、間の空白も）。相談文の中にあれば、送る前に消す
+WRAPPER_TAG = re.compile(r"[<＜]\s*[/／]?\s*相談文\s*[>＞]")
+
+
+def strip_wrapper_tags(text: str) -> str:
+    """相談文の中の <相談文>・</相談文> を消す。タグを閉じたように見せて、後ろの文を指示に見せる手を防ぐ。
+
+    これは手間を増やすだけの守りで、「相談文はここまで」のような別の言い方は止められない。
+    判定を守っているのは、構造化出力と check_extraction（読める事実と値を決まった一覧に限る）の方。
+    根拠を確かめるのは、利用者が書いたままの相談文（画面が印を付けるのと同じ文）。
+    """
+    return WRAPPER_TAG.sub("", text)
 
 
 def _catalog(rules: RuleSet) -> str:
@@ -279,7 +304,7 @@ class RealClaude:
     def extract(self, rules: RuleSet, text: str) -> Extraction:
         raw = self._json(
             EXTRACT_SYSTEM.format(catalog=_catalog(rules)),
-            f"<相談文>\n{text}\n</相談文>",
+            f"<相談文>\n{strip_wrapper_tags(text)}\n</相談文>",
             _extract_schema(rules),
             max_tokens=8000,
         )
