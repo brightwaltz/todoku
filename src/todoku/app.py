@@ -22,7 +22,7 @@ from . import rules as rules_mod
 import anthropic
 
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
-from .engine import DONT_KNOW, SHOWN, Result, evaluate, known, statuses, with_implied
+from .engine import DONT_KNOW, Result, evaluate, known, statuses, with_implied
 from .questions import MAX_QUESTIONS, Question, next_question, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
@@ -44,11 +44,15 @@ def center_search(code: str) -> str:
 
 STATUS_LABEL = {
     "eligible": "当てはまる見込み",
+    "pending": "申請済み・結果待ち",
     "after_prereq": "先に手続きが要る",
     "unknown": "情報が足りない",
     "ineligible": "当てはまらない",
     "done": "済んでいる",
 }
+
+# まとめ（/api/summary）に渡す状態。画面の app.js の SUMMARIZED と同じにする
+SUMMARIZED = ("eligible", "pending", "after_prereq")
 
 app = FastAPI(title="todoku", docs_url=None, redoc_url=None)
 RULES = rules_mod.load()
@@ -141,7 +145,8 @@ def fact_view(fid: str, value: Any) -> dict:
             "label": "わからない" if value == DONT_KNOW else fact.label_of(value), "question": fact.question}
 
 
-def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: str = "") -> dict:
+def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: str = "",
+                pending: frozenset[str] = frozenset()) -> dict:
     p = r.program
     missing = [
         {"fact": f, "name": RULES.facts[f].name, "question": personalize(RULES.facts[f].question, subject),
@@ -174,7 +179,8 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
             for leaf in r.leaves
         ],
         "missing": missing,
-        "waiting_on": [{"id": w, "name": RULES.programs[w].name} for w in r.waiting_on],
+        # 前提の制度を申請済みなら、画面で「結果待ち」と添える（もう一度申請するように読めないように）
+        "waiting_on": [{"id": w, "name": RULES.programs[w].name, "pending": w in pending} for w in r.waiting_on],
         "at_application": p.at_application,
         "apply": apply,
         "bring": other.get("bring", p.bring),
@@ -254,7 +260,8 @@ def ask_view(q: Question, subject: str) -> dict:
 
 def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int, municipality: str = "") -> dict:
     results = evaluate(RULES, facts)
-    order = {"eligible": 0, "after_prereq": 1, "unknown": 2, "ineligible": 3, "done": 4}
+    order = {"eligible": 0, "pending": 1, "after_prereq": 2, "unknown": 3, "ineligible": 4, "done": 5}
+    pending = frozenset(pid for pid, r in results.items() if r.status == "pending")
     ranked = sorted(results.values(), key=lambda r: (order[r.status], -RULES.weight(r.program.id), r.program.number))
     implied = with_implied(RULES, facts)
     question = question_view(facts, suggestions, subject, asked)
@@ -264,7 +271,7 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "unconfirmed": unconfirmed_view(facts, suggestions, subject) if question is None else [],
         "max_questions": MAX_QUESTIONS,
         "known": [fact_view(f, v) for f, v in implied.items() if f in RULES.facts],
-        "results": [result_view(r, facts, subject, municipality) for r in ranked],
+        "results": [result_view(r, facts, subject, municipality, pending) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
         "place": place_view(municipality),
         "center_search": center_search(municipality),
@@ -319,7 +326,8 @@ def summary(body: SummaryIn, request: Request) -> dict:
     facts = clean_facts(body.facts)
     apply_place(facts, {}, body.municipality)
     results = evaluate(RULES, facts)
-    shown = [r for r in results.values() if r.status in SHOWN and r.status != "unknown"]
+    # 申請済み・結果待ちの制度も渡す（前提にしている制度について「申請すると」と書かせないため）
+    shown = [r for r in results.values() if r.status in SUMMARIZED]
     try:
         lines = CLAUDE.summarize(RULES, body.subject[:12] or "ご本人", shown)
     except (ClaudeFailed, anthropic.APIError):

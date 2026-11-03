@@ -158,6 +158,7 @@ SUMMARY_SYSTEM = """あなたは、高齢者と介護する家族のための公
 決まり：
 - 下の「結果」にある制度だけを、program_ids で指す。
 - 1 行は 60 字以内の、やさしい日本語の文。前提の手続きがあれば「まず〜を申請すると、〜も使えるようになります」のように順番を伝える。
+- 「申請済み・結果待ち」の制度は、もう申請してある。「申請すると」とは書かず、「〜の結果が出ると、〜も使えるようになります」のように伝える。
 - 金額・日数・電話番号などの数字は書かない（画面の別の場所に、出典つきで出る）。
 - 2〜4 行。"""
 
@@ -288,7 +289,8 @@ class RealClaude:
             items.append({
                 "program_id": r.program.id,
                 "name": r.program.name,
-                "status": {"eligible": "当てはまる見込み", "after_prereq": "先に手続きが要る", "unknown": "情報が足りない"}[r.status],
+                "status": {"eligible": "当てはまる見込み", "pending": "申請済み・結果待ち", "after_prereq": "先に手続きが要る",
+                           "unknown": "情報が足りない"}[r.status],
                 "waiting_on": [rules.programs[p].name for p in r.waiting_on],
                 "summary": r.program.summary,
             })
@@ -368,14 +370,15 @@ class FakeClaude:
 
     def summarize(self, rules: RuleSet, subject: str, shown: list[Result]) -> list[SummaryLine]:
         lines = []
-        firsts = [r for r in shown if r.status == "eligible" and rules.dependents.get(r.program.id)]
+        firsts = [r for r in shown if r.status in ("eligible", "pending") and rules.dependents.get(r.program.id)]
         for first in firsts[:2]:
             after = [r for r in shown if first.program.id in r.waiting_on]
             if after:
                 names = "・".join(r.program.name for r in after[:3])
                 lines.append(SummaryLine(
                     [first.program.id] + [r.program.id for r in after[:3]],
-                    f"まず{first.program.name}をすると、{names}も使えるようになります。",
+                    f"{first.program.name}の結果が出ると、{names}も使えるようになります。" if first.status == "pending"
+                    else f"まず{first.program.name}をすると、{names}も使えるようになります。",
                 ))
         return check_summary(shown, {"lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]})
 

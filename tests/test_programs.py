@@ -218,3 +218,14 @@ def test_daily_life_support_does_not_need_a_diagnosis(rs):
     assert s["nichijo-jiritsu-shien"] == "eligible"
     s = statuses(rs, {**MACHIDA_HOME_75, "dementia_diagnosis": False, "money_management_difficulty": False})
     assert s["nichijo-jiritsu-shien"] == "ineligible"
+
+
+def test_applying_waits_for_the_result(rs):
+    # 申請中なら、認定の申請は「申請済み・結果待ち」。認定が前提の制度は「先に手続きが要る」のまま
+    base = {**MACHIDA_HOME_75, "care_level": "applying", "plans_home_modification": True, "tax_status": "household_exempt"}
+    res = evaluate(rs, base)
+    assert res["kaigo-nintei"].status == "pending"
+    assert res["kaigo-nintei"].leaves[0].label == "申請して、結果を待っている"
+    assert res["futan-gendogaku"].status == "after_prereq" and "kaigo-nintei" in res["futan-gendogaku"].waiting_on
+    assert res["jutaku-kaishu"].status == "eligible"  # 申請中でも住宅改修は申請できる（今までどおり）
+    assert statuses(rs, {**base, "care_level": "none"})["kaigo-nintei"] == "eligible"

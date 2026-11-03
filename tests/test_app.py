@@ -296,3 +296,18 @@ def test_unconfirmed_reads_are_offered_on_the_result():
     again = client.post("/api/step", json={"facts": {**facts, "household": "alone"},
                                            "suggestions": {"care_level": "care2"}, "asked": 99}).json()
     assert [q["fact"] for q in again["unconfirmed"]] == ["care_level"]
+
+
+def test_pending_certification_is_marked_on_dependents():
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "applying",
+             "plans_home_modification": True}
+    data = client.post("/api/step", json={"facts": facts, "asked": 99}).json()
+    nintei = next(r for r in data["results"] if r["id"] == "kaigo-nintei")
+    assert nintei["status"] == "pending" and nintei["status_label"] == "申請済み・結果待ち"
+    assert data["counts"]["pending"] == 1
+    yogu = next(r for r in data["results"] if r["id"] == "fukushi-yogu-konyu")
+    assert {"id": "kaigo-nintei", "name": "要介護・要支援認定の申請", "pending": True} in yogu["waiting_on"]
+    # まとめにも渡す（試験モードの文は「結果が出ると」）
+    lines = client.post("/api/summary", json={"facts": facts}).json()["lines"]
+    firsts = [l["text"] for l in lines if l["program_ids"][0] == "kaigo-nintei"]
+    assert firsts and all("結果が出ると" in t and "申請すると" not in t for t in firsts)

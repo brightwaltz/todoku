@@ -7,6 +7,7 @@ all は F > U > P > T、any は T > P > U > F の順に強い（any は、前提
 
 制度の状態：
   done          もう済んでいる（done_when が T）
+  pending       申請して結果を待っている（pending_when が T）。前提にしている制度は P のまま
   eligible      当てはまる見込み（残りは申請で確かめる）
   after_prereq  先に手続きが要る
   unknown       情報が足りない
@@ -25,9 +26,9 @@ DONT_KNOW = "__dont_know__"
 
 STATUS_OF_STATE = {T: "eligible", P: "after_prereq", U: "unknown", F: "ineligible"}
 # 前提の制度の状態を、それを参照する葉の状態に直す
-STATE_OF_PREREQ = {"done": T, "eligible": P, "after_prereq": P, "unknown": U, "ineligible": F}
+STATE_OF_PREREQ = {"done": T, "pending": P, "eligible": P, "after_prereq": P, "unknown": U, "ineligible": F}
 # via：葉が F のとき、前提の制度を済ませれば満たせるか
-STATE_OF_VIA = {"done": F, "eligible": P, "after_prereq": P, "unknown": U, "ineligible": F}
+STATE_OF_VIA = {"done": F, "pending": P, "eligible": P, "after_prereq": P, "unknown": U, "ineligible": F}
 # 画面に出す状態（ineligible と done はたたむ）
 SHOWN = ("eligible", "after_prereq", "unknown")
 
@@ -91,6 +92,11 @@ def evaluate(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, Result]:
         if program.done_when is not None and _eval(program.done_when, facts, statuses, []) == T:
             results[pid] = Result(program, "done", [])
             continue
+        if program.pending_when is not None:
+            leaves = []
+            if _eval(program.pending_when, facts, statuses, leaves) == T:
+                results[pid] = Result(program, "pending", leaves)
+                continue
         leaves: list[Leaf] = []
         state = _eval(program.eligibility, facts, statuses, leaves)
         results[pid] = Result(program, STATUS_OF_STATE[state], leaves)

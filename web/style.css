@@ -145,6 +145,7 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
 .pill { font-size: 13px; font-weight: 700; border-radius: 999px; padding: 2px 10px; }
 .pill.eligible { background: var(--ok-bg); color: var(--ok); }
 .pill.after_prereq { background: var(--pre-bg); color: var(--pre); }
+.pill.pending { background: var(--unk-bg); color: var(--ink); }
 .pill.unknown { background: var(--unk-bg); color: var(--unk); }
 .prog .sum { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
 .prog .chain { margin: 8px 0 0; font-size: 15px; color: var(--pre); font-weight: 700; }

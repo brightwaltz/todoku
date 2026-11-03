@@ -86,6 +86,8 @@ class Program:
     eligibility: dict
     sources: list[Source]
     done_when: dict | None = None
+    # 申請して結果を待っている（例：認定を申請中）。前提にしている制度は「先に手続きが要る」のまま
+    pending_when: dict | None = None
     at_application: list[str] = field(default_factory=list)
     apply: dict = field(default_factory=dict)
     bring: list[str] = field(default_factory=list)
@@ -191,6 +193,9 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
     done_when = raw.get("done_when")
     if done_when is not None:
         _check_node(done_when, facts, set(), where, inside_not=False)
+    pending_when = raw.get("pending_when")
+    if pending_when is not None:
+        _check_node(pending_when, facts, set(), where, inside_not=False)
 
     sources = [_load_source(s, where) for s in need("sources")]
     if level == "machida" and not any("city.machida.tokyo.jp" in s.url for s in sources):
@@ -228,6 +233,7 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         eligibility=eligibility,
         sources=sources,
         done_when=done_when,
+        pending_when=pending_when,
         at_application=list(raw.get("at_application") or []),
         apply=dict(need("apply")),
         bring=list(raw.get("bring") or []),

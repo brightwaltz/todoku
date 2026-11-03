@@ -262,7 +262,8 @@ const BOARD = [
   ["unknown", "確かめる", "確かめると分かる制度"],
   ["no", "当てはまらない", "当てはまらない制度"],
 ];
-const colOf = (status) => (status === "ineligible" || status === "done" ? "no" : status);
+// 済んでいる・申請済み（結果待ち）の制度は、いま手を打たなくてよいので「当てはまらない」の列にたたむ（結果の画面では別に出す）
+const colOf = (status) => (["ineligible", "done", "pending"].includes(status) ? "no" : status);
 const calm = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let tiles = new Map();  // 制度の id → 札。同じ札を動かすので作り直さない
 let boardPrev = null;   // 前回の { 制度の id: 列 }
@@ -444,9 +445,10 @@ async function step(stop = false) {
 }
 
 // ---- 結果 ----
-const SUMMARIZED = ["eligible", "after_prereq"];  // まとめ（/api/summary）が扱う状態
+const SUMMARIZED = ["eligible", "pending", "after_prereq"];  // まとめ（/api/summary）が扱う状態。app.py の SUMMARIZED と同じ
 const GROUPS = [
   ["eligible", "当てはまる見込み", "申請できそうな制度です。最終的な判断は申請先で行われます。"],
+  ["pending", "申請して結果を待っている", "申請が済んでいる手続きです。結果が届くと、下の「先に手続きをすると使える」制度が使えるようになることがあります。"],
   ["after_prereq", "先に手続きをすると使える", "前の手続きを済ませると、対象になりそうな制度です。"],
   ["unknown", "確かめると使えるかもしれない", "分からない点があり、まだ決められない制度です。確かめ方を添えています。"],
 ];
@@ -518,7 +520,8 @@ function programCard(r) {
   const sumParts = [head, el("p", { class: "sum" }, r.summary)];
   if (r.waiting_on.length) {
     sumParts.push(el("p", { class: "chain" }, "先に：",
-      ...r.waiting_on.map((w, i) => [i ? "、" : "", el("a", { href: `#p-${w.id}`, onclick: (ev) => openCard(ev, w.id) }, w.name)])));
+      ...r.waiting_on.map((w, i) => [i ? "、" : "", el("a", { href: `#p-${w.id}`, onclick: (ev) => openCard(ev, w.id) }, w.name),
+        w.pending ? "（申請済み・結果待ち）" : ""])));
   }
   if (r.status === "unknown" && r.missing.length) {
     sumParts.push(el("p", { class: "chain" }, "分からない点：", r.missing.map((m) => m.name).join("、")));

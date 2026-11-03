@@ -9,12 +9,16 @@ done_when:
   fact: care_level
   in: [support1, support2, care1, care2, care3, care4, care5]
   label: 要介護・要支援の認定を受けている
+pending_when:
+  fact: care_level
+  in: [applying]
+  label: 申請して、結果を待っている
 eligibility:
   all:
     - any:
         - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
         - {fact: age_band, in: [age_40_64], label: 40〜64歳（介護が要る原因が特定疾病のとき）}
-    - {fact: care_level, in: [none, applying], label: まだ認定を受けていない（申請中を含む）}
+    - {fact: care_level, in: [none], label: まだ認定を受けていない}
 at_application:
   - 介護が必要な状態か、どの区分（要支援1・2、要介護1〜5、非該当）になるかは、市の認定調査と主治医意見書をもとに介護認定審査会が決める
   - 40〜64歳の人は、介護が要る原因が16種類の特定疾病のどれかであること
