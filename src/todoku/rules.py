@@ -127,7 +127,7 @@ class RuleSet:
 
     @property
     def places(self) -> dict[str, dict]:
-        """住所の事実 → place（facts.yaml の順）。最初のものが、市区町村を選ぶ問いを受け持つ。"""
+        """住所の事実 → place（facts.yaml の順）。住所が分からないときは最初のものが、市区町村を選ぶ問いを受け持つ（町田市ではないとだけ分かったときは、まだ分からない次のもの。questions.place_fact）。"""
         return {f.id: f.place for f in self.facts.values() if f.place}
 
     @property
