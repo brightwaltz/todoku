@@ -569,6 +569,25 @@ def test_yokohama_shows_its_programs_and_one_type():
     assert "町田" not in next(r for r in data["results"] if r["id"] == "kaigo-nintei")["apply"]["where"]
 
 
+def test_type_place_reason_matches_the_cities_listed_one_by_one():
+    # 型の住所の条件の文は、市の制度を一つずつ示している市（RULES_CITY）を全部名指す。横浜市でも出す型は、出す訳も書く（指摘 R-6）
+    from todoku.app import RULES, RULES_CITY
+    from todoku.engine import evaluate
+    names = [rules_mod.LEVELS[level] for level in RULES_CITY]
+    for r in evaluate(RULES, {}).values():
+        if r.program.level != "local":
+            continue
+        label = next(leaf.label for leaf in r.leaves if leaf.fact == "lives_in_machida")
+        assert all(n in label for n in names), f"{r.program.id}: {label}"
+        assert all(f"{rules_mod.LEVELS[c]}の" in label.split("。", 1)[-1] for c in r.program.shown_in), f"{r.program.id}: {label}"
+    # 横浜市の人に出る成年後見の型の理由（画面に出る文）
+    facts = {"age_band": "age_75_plus", "residence": "home", "dementia_diagnosis": True}
+    data = client.post("/api/step", json={"facts": facts, "municipality": "141003"}).json()
+    koken = next(r for r in data["results"] if r["id"] == "local-koken")
+    place = next(x for x in koken["reasons"] if x["label"].startswith("町田市以外にお住まい"))
+    assert place["state"] == "T" and "横浜市" in place["label"] and "この型で示します" in place["label"]
+
+
 def test_place_question_counts_every_city():
     # 住所の問いは、規則が使う市・都ごとに 1 つと「そのほか」で値打ちを数える。分かっている住所と合わないものは外す
     from todoku.engine import statuses

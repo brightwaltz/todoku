@@ -10,7 +10,7 @@ weight: 1
 shown_in: [yokohama]
 eligibility:
   all:
-    - {fact: lives_in_machida, is: false, label: 町田市以外にお住まい（町田市は市の制度を一つずつ示しています）}
+    - {fact: lives_in_machida, is: false, label: 町田市以外にお住まい（町田市と横浜市は、市の制度を一つずつ示しています。横浜市の成年後見の支援は市の制度としてまだ書けていないので、この型で示します）}
     - {fact: dementia_diagnosis, is: true, label: 認知症と診断されている}
     - {ask_at: お住まいの市区町村の高齢者福祉・介護保険の窓口, label: お住まいの市区町村がこの事業をしている（窓口で確かめる）}
 at_application:
