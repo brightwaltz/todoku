@@ -124,6 +124,11 @@ select:disabled { color: var(--muted); background: var(--soft); }
 .options.two { grid-template-columns: 1fr 1fr; }
 .options.two .wide, .options.two .dk { grid-column: 1 / -1; }
 .why { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+/* 結果の画面の「まだ確かめていないこと」。1 つずつ点線で区切る */
+.later-item { padding: 12px 0 0; border-top: 1px dashed var(--line); }
+.later-item:first-child { border-top: none; padding-top: 4px; }
+.later-item h3 { font-size: 18px; line-height: 1.5; margin: 0 0 6px; }
+#later-change:not(:empty) { margin: -6px 0 14px; }
 .link { background: none; border: none; color: var(--accent); text-decoration: underline; padding: 8px 0; font-size: 15px; }
 details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
 .summary { border-left: 6px solid var(--accent); }

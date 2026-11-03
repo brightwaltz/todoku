@@ -275,3 +275,24 @@ def test_residence_is_asked_as_a_place():
     # 選んだ市区町村を送れば、もう聞かない
     data = client.post("/api/step", json={"facts": facts, "asked": 1, "municipality": "141003"}).json()
     assert data["question"] is None or data["question"]["fact"] != "lives_in_machida"
+
+
+def test_unconfirmed_reads_are_offered_on_the_result():
+    # 3 問で確かめきれなかった読み取りは、結果の画面で同じ形の問いにする（「（あとで確かめます）」の約束を守る）
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home"}
+    suggestions = {"household": "alone", "care_level": "care2"}
+    asking = client.post("/api/step", json={"facts": facts, "suggestions": suggestions}).json()
+    assert asking["question"] is not None and asking["unconfirmed"] == []
+    done = client.post("/api/step", json={"facts": facts, "suggestions": suggestions, "subject": "お母さま",
+                                          "asked": 99}).json()
+    assert done["question"] is None
+    by_fact = {q["fact"]: q for q in done["unconfirmed"]}
+    assert set(by_fact) == {"household", "care_level"}
+    assert by_fact["household"]["confirm"] is True
+    assert by_fact["household"]["text"] == "お母さまは「ひとり暮らし」で合っていますか？"
+    assert by_fact["care_level"]["keep"]["value"] == "care2"  # 区分は書類で選ぶ形のまま
+    assert by_fact["care_level"]["affects_ids"]
+    # 確かめた読み取りは、もう出さない
+    again = client.post("/api/step", json={"facts": {**facts, "household": "alone"},
+                                           "suggestions": {"care_level": "care2"}, "asked": 99}).json()
+    assert [q["fact"] for q in again["unconfirmed"]] == ["care_level"]

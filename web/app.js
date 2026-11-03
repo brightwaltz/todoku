@@ -34,7 +34,7 @@ class GateError extends Error {}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
-    municipality: "", sample: false };
+    municipality: "", sample: false, resultShown: false, summaryKey: "" };
 }
 
 function freshPick() {
@@ -369,72 +369,66 @@ function revealThenAsk() {
 
 function renderQuestion(q, max, first = false) {
   $("ask-count").textContent = `質問 ${state.asked + 1}（多くて ${max} つ）`;
-  $("ask-text").textContent = q.text;
-  const box = $("ask-options");
-  box.replaceChildren();
-  if (q.place && prefs.length) {
-    // お住まいは、町田市かどうかではなく市区町村で聞く（選んだ所は、入口で選んだときと同じに扱う）
-    $("ask-text").textContent = q.place.text;
-    box.className = "options";
-    const pref = el("select", { "aria-label": "都道府県" }, el("option", { value: "" }, "都道府県"),
-      ...prefs.map((p) => el("option", { value: p.code }, p.name)));
-    const city = el("select", { "aria-label": "市区町村", disabled: "" }, el("option", { value: "" }, "市区町村"));
-    pref.addEventListener("change", () => { state.presses += 1; fillCities(pref.value, city); });
-    city.addEventListener("change", () => { if (city.value) answerPlace(city.value); });
-    box.append(el("div", { class: "places" }, pref, city),
-      el("button", { class: "option dk", onclick: () => answer(q, DONT_KNOW) }, "わからない"));
-    $("ask-hint").textContent = "";
-    showWhy(q);
-    return focusQuestion(first);
-  }
-  // 選択肢が多い問い（認定の区分）は、短い選択肢を 2 列に並べて縦の長さを抑える
-  const two = q.options.length > 6;
-  box.className = two ? "options two" : "options";
-  for (const o of q.options) {
-    const wide = two && o.label.length > 6;
-    box.append(el("button", { class: wide ? "option wide" : "option", onclick: () => answer(q, o.value) }, o.label));
-  }
-  // 書類で確かめる問いは、「わからない」の代わりに「読んだ値のまま進める」を出す
-  box.append(q.keep
-    ? el("button", { class: "option dk", onclick: () => answer(q, q.keep.value) }, q.keep.label)
-    : el("button", { class: "option dk", onclick: () => answer(q, DONT_KNOW) }, "わからない"));
+  $("ask-text").textContent = askText(q);
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
-  showWhy(q);
-  focusQuestion(first);
-}
-
-function showWhy(q) {
-  const names = q.affects.slice(0, 3).join("、") + (q.affects.length > 3 ? ` ほか ${q.affects.length - 3} 件` : "");
-  $("ask-why").textContent = `この答えで判定が決まる制度：${names}`;
+  fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code));
+  $("ask-why").textContent = `この答えで判定が決まる制度：${affectNames(q.affects)}`;
   $("ask-check").textContent = q.check;
-}
-
-function focusQuestion(first) {
   // 選択肢ではなく問いの文に移る（1 つ目の選択肢に色が付くと、先に選んであるように見えるため）
   $("ask-text").focus({ preventScroll: true });
   if (first) revealThenAsk();
   else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-// お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める
-async function answerPlace(code) {
-  state.presses += 1;
-  state.asked += 1;
-  state.municipality = code;
-  delete state.suggestions.lives_in_machida;
-  await step();
+// お住まいは、町田市かどうかではなく市区町村で聞く（市区町村の一覧が取れなかったときは、はい・いいえで聞く）
+const asksPlace = (q) => Boolean(q.place && prefs.length);
+const askText = (q) => (asksPlace(q) ? q.place.text : q.text);
+const affectNames = (list) => list.slice(0, 3).join("、") + (list.length > 3 ? ` ほか ${list.length - 3} 件` : "");
+
+// 問いの答え方を box に並べる。結果の画面の「まだ確かめていないこと」でも同じ形にする
+function fillAnswers(box, q, pick, pickPlace) {
+  box.replaceChildren();
+  if (asksPlace(q)) {
+    // 選んだ所は、入口で選んだときと同じに扱う
+    box.className = "options";
+    const pref = el("select", { "aria-label": "都道府県" }, el("option", { value: "" }, "都道府県"),
+      ...prefs.map((p) => el("option", { value: p.code }, p.name)));
+    const city = el("select", { "aria-label": "市区町村", disabled: "" }, el("option", { value: "" }, "市区町村"));
+    pref.addEventListener("change", () => { state.presses += 1; fillCities(pref.value, city); });
+    city.addEventListener("change", () => { if (city.value) pickPlace(city.value); });
+    box.append(el("div", { class: "places" }, pref, city),
+      el("button", { class: "option dk", onclick: () => pick(DONT_KNOW) }, "わからない"));
+    return;
+  }
+  // 選択肢が多い問い（認定の区分）は、短い選択肢を 2 列に並べて縦の長さを抑える
+  const two = q.options.length > 6;
+  box.className = two ? "options two" : "options";
+  for (const o of q.options) {
+    const wide = two && o.label.length > 6;
+    box.append(el("button", { class: wide ? "option wide" : "option", onclick: () => pick(o.value) }, o.label));
+  }
+  // 書類で確かめる問いは、「わからない」の代わりに「読んだ値のまま進める」を出す
+  box.append(q.keep
+    ? el("button", { class: "option dk", onclick: () => pick(q.keep.value) }, q.keep.label)
+    : el("button", { class: "option dk", onclick: () => pick(DONT_KNOW) }, "わからない"));
 }
 
-async function answer(q, value) {
+// later：結果の画面で、確かめていない読み取りに答えたとき。聞き返しの数に入れず、新しい問いも出さない
+async function answer(q, value, later = false) {
   state.presses += 1;
-  state.asked += 1;
-  if (q.confirm && value === NOT_THIS) {
-    delete state.suggestions[q.fact];
-  } else {
-    state.facts[q.fact] = value;
-    delete state.suggestions[q.fact];
-  }
-  await step();
+  if (!later) state.asked += 1;
+  if (!(q.confirm && value === NOT_THIS)) state.facts[q.fact] = value;
+  delete state.suggestions[q.fact];
+  await step(later);
+}
+
+// お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める
+async function answerPlace(code, later = false) {
+  state.presses += 1;
+  if (!later) state.asked += 1;
+  state.municipality = code;
+  delete state.suggestions.lives_in_machida;
+  await step(later);
 }
 
 async function step(stop = false) {
@@ -450,13 +444,32 @@ async function step(stop = false) {
 }
 
 // ---- 結果 ----
+const SUMMARIZED = ["eligible", "after_prereq"];  // まとめ（/api/summary）が扱う状態
 const GROUPS = [
   ["eligible", "当てはまる見込み", "申請できそうな制度です。最終的な判断は申請先で行われます。"],
   ["after_prereq", "先に手続きをすると使える", "前の手続きを済ませると、対象になりそうな制度です。"],
   ["unknown", "確かめると使えるかもしれない", "分からない点があり、まだ決められない制度です。確かめ方を添えています。"],
 ];
 
+// 聞き返しのあとも確かめていない読み取り。答えると規則だけで判定し直す（Claude は呼ばない）
+function renderLater(items) {
+  $("later-list").replaceChildren(...items.map((q) => {
+    const box = el("div");
+    fillAnswers(box, q, (v) => answer(q, v, true), (code) => answerPlace(code, true));
+    return el("div", { class: "later-item" },
+      el("h3", {}, askText(q)),
+      q.hint ? el("p", { class: "hint" }, q.hint) : null,
+      box,
+      q.affects.length ? el("p", { class: "why" }, `この答えで判定が決まる制度：${affectNames(q.affects)}`) : null);
+  }));
+  show("later", items.length > 0);
+}
+
 function renderResult(data) {
+  const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
+  state.resultShown = true;
+  renderLater(data.unconfirmed);
+  $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
   $("stats").textContent = `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
   const groups = $("groups");
@@ -482,12 +495,15 @@ function renderResult(data) {
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
   show("result");
-  $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!again) $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+  // まとめが扱う制度が変わったときだけ書き直す（確かめても判定が同じなら、Claude を呼ばない）
+  const key = data.results.filter((r) => SUMMARIZED.includes(r.status)).map((r) => r.id).join(",");
   if (state.sample) {
     // まとめは答えによって変わり Claude が書くので、見本では出さない（見出しだけの空のカードも出さない）
     show("summary", false);
     $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
-  } else summarize();
+  } else if (key !== state.summaryKey) summarize();
+  state.summaryKey = key;
 }
 
 function reasonText(r) {

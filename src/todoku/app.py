@@ -22,8 +22,8 @@ from . import rules as rules_mod
 import anthropic
 
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
-from .engine import DONT_KNOW, SHOWN, Result, evaluate, known, with_implied
-from .questions import MAX_QUESTIONS, next_question
+from .engine import DONT_KNOW, SHOWN, Result, evaluate, known, statuses, with_implied
+from .questions import MAX_QUESTIONS, Question, next_question, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
@@ -197,8 +197,22 @@ def personalize(text: str, subject: str) -> str:
 
 def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int) -> dict | None:
     q = next_question(RULES, facts, suggestions, asked=asked)
-    if q is None:
-        return None
+    return None if q is None else ask_view(q, subject)
+
+
+def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str) -> list[dict]:
+    """聞き返しが終わっても確かめていない読み取り（確信の低いもの）。結果の画面で、同じ形の問いで確かめられるようにする。"""
+    base = statuses(RULES, facts)
+    out = []
+    for fid in sorted(suggestions, key=lambda f: RULES.facts[f].order):
+        if fid in facts:
+            continue
+        _, affects = score_fact(RULES, facts, fid, base)
+        out.append(ask_view(Question(fid, 0.0, suggestions[fid], affects), subject))
+    return out
+
+
+def ask_view(q: Question, subject: str) -> dict:
     fact = RULES.facts[q.fact]
     affects = [RULES.programs[p].name for p in q.affects]
     if q.suggested in ALWAYS_CONFIRM.get(q.fact, ()):
@@ -243,8 +257,11 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
     order = {"eligible": 0, "after_prereq": 1, "unknown": 2, "ineligible": 3, "done": 4}
     ranked = sorted(results.values(), key=lambda r: (order[r.status], -RULES.weight(r.program.id), r.program.number))
     implied = with_implied(RULES, facts)
+    question = question_view(facts, suggestions, subject, asked)
     return {
-        "question": question_view(facts, suggestions, subject, asked),
+        "question": question,
+        # 聞き返しが終わったら、確かめていない読み取りを結果の画面に出す（答えても Claude は呼ばない）
+        "unconfirmed": unconfirmed_view(facts, suggestions, subject) if question is None else [],
         "max_questions": MAX_QUESTIONS,
         "known": [fact_view(f, v) for f, v in implied.items() if f in RULES.facts],
         "results": [result_view(r, facts, subject, municipality) for r in ranked],
