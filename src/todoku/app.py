@@ -9,6 +9,7 @@ from __future__ import annotations
 import hmac
 import json
 import os
+import threading
 import time
 from collections import defaultdict, deque
 from pathlib import Path
@@ -69,6 +70,9 @@ CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
 _hits_all: deque = deque()
 _swept = 0.0  # 最後に forget_idle で _hits を見回した時刻
+# 回数制限の表（_hits・_hits_all・_swept）を読み書きするときに持つ鍵。口は同期の関数でスレッドで動くので、
+# 鍵なしだと recent() の popleft が IndexError（500）になり、ほかのスレッドが積んだ記録を消して数え漏らしていた（T-039）
+_lock = threading.Lock()
 
 
 def load_places() -> dict[str, tuple[str, str]]:
@@ -146,27 +150,29 @@ def guard(request: Request, costly: bool) -> None:
     # 合言葉と回数制限は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通す
     if costly:
         # 回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限
-        now = time.time()
-        forget_idle(now)
-        # 先にアプリ全体を見る。上限に届いていれば、接続元ごとの数も増やさない
-        if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
-            raise HTTPException(429, "しばらく時間をおいてから試してください")
-        # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。値を変えれば外せるので、アプリ全体の上限も置く
-        ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
-        hits = recent(_hits[ip], now)
-        if len(hits) >= RATE_LIMIT:
-            raise HTTPException(429, "しばらく時間をおいてから試してください")
-        # 合言葉を確かめる前に数える。間違えた回も数えないと、合言葉を何度でも試せる
-        hits.append(now)
-        if PASSPHRASE and not same_word(request.headers.get("x-aikotoba", ""), PASSPHRASE):
-            raise HTTPException(401, "合言葉が違います")
-        # アプリ全体は、合言葉が通った回（Claude を呼ぶ回）だけ数える。間違えた回も数えると、
-        # 合言葉を知らない人が接続元を変えながら送るだけで、ほかの全員を止められる
-        _hits_all.append(now)
+        # 見回し・数え・積むまでを鍵 1 本で囲む。数えてから積むまでの間に別のスレッドが入ると、上限を超えて通る
+        with _lock:
+            now = time.time()
+            forget_idle(now)
+            # 先にアプリ全体を見る。上限に届いていれば、接続元ごとの数も増やさない
+            if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
+                raise HTTPException(429, "しばらく時間をおいてから試してください")
+            # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。値を変えれば外せるので、アプリ全体の上限も置く
+            ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
+            hits = recent(_hits[ip], now)
+            if len(hits) >= RATE_LIMIT:
+                raise HTTPException(429, "しばらく時間をおいてから試してください")
+            # 合言葉を確かめる前に数える。間違えた回も数えないと、合言葉を何度でも試せる
+            hits.append(now)
+            if PASSPHRASE and not same_word(request.headers.get("x-aikotoba", ""), PASSPHRASE):
+                raise HTTPException(401, "合言葉が違います")
+            # アプリ全体は、合言葉が通った回（Claude を呼ぶ回）だけ数える。間違えた回も数えると、
+            # 合言葉を知らない人が接続元を変えながら送るだけで、ほかの全員を止められる
+            _hits_all.append(now)
 
 
 def recent(hits: deque, now: float) -> deque:
-    """WINDOW 秒より前の記録を捨てて、同じ deque を返す。"""
+    """WINDOW 秒より前の記録を捨てて、同じ deque を返す。_lock を持って呼ぶ（見てから popleft するので）。"""
     while hits and now - hits[0] > WINDOW:
         hits.popleft()
     return hits
@@ -183,7 +189,7 @@ def forget_idle(now: float) -> None:
     if now - _swept < WINDOW:
         return
     _swept = now
-    # 口は同期の関数でスレッドで動くので、2 つが同時に見回しても落ちないよう pop にする
+    # 呼ぶのは guard の _lock の中だけ（recent() と同じく、鍵の外から呼ぶと競合する）
     for ip, hits in list(_hits.items()):
         if not recent(hits, now):
             _hits.pop(ip, None)

@@ -222,6 +222,44 @@ def test_rate_limit_forgets_idle_client_ips():
     assert len(app_mod._hits["203.0.113.8"]) == 1  # 消さなかった行の数は変えない
 
 
+def test_rate_limit_survives_concurrent_requests(monkeypatch):
+    import threading
+    import time
+
+    from starlette.requests import Request
+
+    from todoku import app as app_mod
+
+    # 口は同期の関数でスレッドで動く。2 つが同時に recent() に入ると、両方が同じ古い記録を見て popleft し、
+    # 2 つ目が IndexError（500）になるか、1 つ目が積んだ記録を消して数え漏らしていた（T-039）
+    class SlowDeque(app_mod.deque):
+        def __getitem__(self, i):
+            v = super().__getitem__(i)
+            time.sleep(0.05)  # 読んだ後に止まり、別のスレッドを先に進ませる（読む前に止まると、鍵がなくても当たらない）
+            return v
+
+    monkeypatch.setattr(app_mod, "_hits_all", SlowDeque([time.time() - app_mod.WINDOW - 1]))
+    barrier = threading.Barrier(2)
+    errors = []
+
+    def send(ip):
+        req = Request({"type": "http", "method": "POST", "path": "/api/consult",
+                       "headers": [(b"fly-client-ip", ip.encode())], "client": ("127.0.0.1", 1)})
+        barrier.wait()
+        try:
+            app_mod.guard(req, costly=True)
+        except Exception as e:  # noqa: BLE001
+            errors.append(repr(e))
+
+    threads = [threading.Thread(target=send, args=(f"203.0.113.{n}",)) for n in (1, 2)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(timeout=5)
+    assert errors == []
+    assert len(app_mod._hits_all) == 2  # 古い記録は消え、通った 2 回はどちらも残る
+
+
 def test_wrong_passphrase_does_not_use_up_the_whole_app(monkeypatch):
     from todoku import app as app_mod
 
