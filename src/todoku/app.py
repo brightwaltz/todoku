@@ -23,7 +23,7 @@ import anthropic
 
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
 from .engine import DONT_KNOW, T, U, Result, evaluate, known, statuses, with_implied
-from .questions import MAX_QUESTIONS, Question, next_question, score_fact
+from .questions import MAX_QUESTIONS, Question, next_question, place_fact, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
@@ -219,7 +219,10 @@ def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: s
 
 
 def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str) -> list[dict]:
-    """聞き返しが終わっても確かめていない読み取り（確信の低いもの）。結果の画面で、同じ形の問いで確かめられるようにする。"""
+    """聞き返しが終わっても確かめていない読み取り（確信の低いもの）。結果の画面で、同じ形の問いで確かめられるようにする。
+
+    住所の問いを受け持つ事実がまだあれば（3 問の枠で聞けなかったとき）、市区町村を選ぶ欄も先頭に出す。
+    """
     base = statuses(RULES, facts)
     out = []
     for fid in sorted(suggestions, key=lambda f: RULES.facts[f].order):
@@ -227,6 +230,11 @@ def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject
             continue
         _, affects = score_fact(RULES, facts, fid, base)
         out.append(ask_view(Question(fid, 0.0, suggestions[fid], affects), subject))
+    place = place_fact(RULES, facts)
+    if place and place not in suggestions:  # 確信の低い読み取り（lives_in_machida）なら、上のループがもう出している
+        score, affects = score_fact(RULES, facts, place, base)
+        if score > 0:
+            out.insert(0, ask_view(Question(place, score, None, affects), subject))
     return out
 
 

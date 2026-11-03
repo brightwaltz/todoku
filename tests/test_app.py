@@ -477,3 +477,20 @@ def test_place_question_comes_back_for_not_machida():
 def test_place_facts_keep_only_dont_know():
     from todoku.app import clean_facts
     assert clean_facts({"lives_in_yokohama": True, "lives_in_tokyo": DONT_KNOW}) == {"lives_in_tokyo": DONT_KNOW}
+
+
+def test_place_is_offered_on_the_result_when_not_asked():
+    # 3 問を住所より値打ちの高い問いが埋めたときは、結果の画面の「まだ確かめていないこと」に市区町村を選ぶ欄を出す
+    facts = {"lives_in_machida": False, "age_band": "age_40_64", "residence": "home", "care_level": "care2"}
+    places = set(rules_mod.load().places)
+    data = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": 99}).json()
+    assert data["question"] is None
+    first = data["unconfirmed"][0]
+    assert first["fact"] == "lives_in_yokohama"
+    assert first["text"] == "お母さまはどちらにお住まいですか？" and first["options"] == []
+    # 市区町村を選ぶか「わからない」と答えたら、もう出さない
+    data = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": 99, "municipality": "271004"}).json()
+    assert not [u for u in data["unconfirmed"] if u["fact"] in places]
+    data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
+                                          "asked": 99}).json()
+    assert not [u for u in data["unconfirmed"] if u["fact"] in places]
