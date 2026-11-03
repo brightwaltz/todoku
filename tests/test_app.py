@@ -145,6 +145,21 @@ def test_index_and_health():
     assert h["programs"] == 40  # 33〜40 は東京都 1 件と横浜市 7 件（11/3 に足した）
 
 
+def test_entry_text_names_every_place_with_rules():
+    """最初の画面の lead と meta の description は、制度を判定する都・市を全部挙げる（「町田市だけ」と狭く書かない）。"""
+    import re
+    html = client.get("/").text
+    lead = re.search(r'<p class="lead">(.*?)</p>', html).group(1)
+    desc = re.search(r'<meta name="description" content="([^"]*)"', html).group(1)
+    places = {rules_mod.LEVELS[p.level] for p in rules_mod.load().programs.values()
+              if p.level not in ("national", "local")}
+    assert places, "都・市の制度が規則にない"
+    for where, text in (("lead", lead), ("description", desc)):
+        missing = [place for place in sorted(places) if place not in text]
+        assert not missing, f"{where} に {missing} がない"
+        assert "だけ" not in text, f"{where} が範囲を狭く書いている：{text}"
+
+
 def test_rate_limit_counts_each_client_ip(monkeypatch):
     from todoku import app as app_mod
 
