@@ -9,7 +9,7 @@
 正解（eval/gold.csv）は柴田が判定結果を見ずに付けたもの。○＝公式の条件に当たりうる（本人が望むかは問わない）、
 ×＝当たらない（済んでいるものを含む）、？＝決められない（採点に入れない）。知らない印があれば止める。
 「申請済み・結果待ち」（pending）は案内にも示したにも数えず、正解の印ごとの数を別に出す。
-窓口が「案内した」とみなすのは「当てはまる見込み」と「先に手続きが要る」。「情報が足りない」は「示した」として別に数える。
+窓口が「案内した」とみなすのは「当てはまる見込み」と「先に手続きをすると使える」。「確かめると使えるかもしれない」は「示した」として別に数える。
 
 使い方：
   uv run python eval/run_eval.py rules
@@ -289,10 +289,10 @@ def main(modes: list[str]) -> None:
             encoding="utf-8")
         c = summary["cells"]
         print(f"[{mode}] 事例 {summary['cases']} 件、○ {c['yes']} マス・× {c['no']} マス・？ {c['unsure']} マス（？は数えない）")
-        print(f"  ○のうち案内できた率 {pct(summary['recall_recommended'])}／示せた率（情報が足りないを含む）{pct(summary['recall_shown'])}")
+        print(f"  ○のうち案内できた率 {pct(summary['recall_recommended'])}／示せた率（確かめると使えるかもしれないを含む）{pct(summary['recall_shown'])}")
         per_case = summary["wrong_recommended_per_case"]
         print(f"  ×なのに案内した数 {c['no_recommended']}（1 件あたり {'—' if per_case is None else f'{per_case:.2f}'}）"
-              f"／×なのに示した数（情報が足りないを含む）{c['no_shown']}")
+              f"／×なのに示した数（確かめると使えるかもしれないを含む）{c['no_shown']}")
         if c["pending_yes"] + c["pending_no"] + c["pending_unsure"]:
             print(f"  申請済み・結果待ちとして出さなかったマス：○ {c['pending_yes']}・× {c['pending_no']}・？ {c['pending_unsure']}")
         if summary["failed"]:
