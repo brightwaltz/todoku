@@ -168,6 +168,25 @@ def test_security_headers_on_every_response():
     assert not re.search(r'setAttribute\(\s*["\']style', js)
 
 
+def test_page_names_its_icon_so_browsers_do_not_ask_for_favicon_ico():
+    """画面がアイコンを名指しする（T-048）。名指しがないとブラウザが /favicon.ico を取りに行き、最初の読み込みで
+    404 が console.error に出ていた（T-043 の気づき 7）。アイコンは CSP の img-src 'self' で読める自前の SVG で、
+    直に開かれても動くもの（スクリプト・イベントの属性）とよその参照を持たない。"""
+    import re
+    html = client.get("/").text
+    links = re.findall(r'<link rel="icon" href="([^"]+)" type="image/svg\+xml">', html)
+    assert links == ["/static/favicon.svg"]
+    r = client.get(links[0])
+    assert r.status_code == 200
+    assert r.headers["content-type"].startswith("image/svg+xml")
+    assert r.headers["x-content-type-options"] == "nosniff"
+    svg = r.text
+    assert svg.lstrip().startswith("<svg") and "<script" not in svg.lower()
+    assert not re.search(r"\son\w+\s*=", svg, re.I)  # onload= など
+    assert not re.search(r"(href|src)\s*=", svg, re.I) and "url(" not in svg  # よその出どころを引かない
+    assert "#0d6b5b" in svg  # 画面の上の帯（style.css の --accent）と同じ色
+
+
 def test_entry_text_names_every_place_with_rules():
     """最初の画面の lead と meta の description は、制度を判定する都・市を全部挙げる（「町田市だけ」と狭く書かない）。"""
     import re
