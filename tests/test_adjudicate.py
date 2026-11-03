@@ -146,3 +146,36 @@ def test_policy_of_order():
     assert adjudicate.policy_of(case("__dont_know__"), NS(leaves=[leaf_u]), "？", b) == "p-care-unknown"
     assert adjudicate.policy_of(case("none"), NS(leaves=[leaf_p]), "？", b) == "p-prereq"
     assert adjudicate.policy_of(case("care2"), NS(leaves=[]), "○", b) is None
+
+
+def _c(case, num, a, b1, b2):
+    return {"case": case, "num": num, "a": {"mark": a, "why": ""}, "b": [{"mark": b1}, {"mark": b2}]}
+
+
+def test_build_gold_follows_decisions():
+    adj = {
+        "agreed": [{"case": "c01", "num": 2, "mark": "×"}, {"case": "c02", "num": 2, "mark": "○"}],
+        "policies": [{"id": "p-prereq", "cells": [_c("c01", 5, "○", "×", "×"), _c("c02", 5, "○", "×", "○")]},
+                     {"id": "p-pending", "cells": [_c("c04", 1, "申", "申", "申")]}],
+        "issues": [{"id": "i01", "cells": [_c("c03", 9, "×", "○", "○"), _c("c05", 9, "×", "○", "○")]}],
+        "audit": [{"case": "c01", "num": 2, "a": {"mark": "×"}}, {"case": "c02", "num": 2, "a": {"mark": "○"}}],
+    }
+    decisions = {
+        "p-prereq": {"choice": "r2", "resolved": "B", "overrides": {}},   # B に合わせる：割れた c02-5 は決まらない
+        "p-pending": {"choice": "○"},
+        "i01": {"mark": "○", "overrides": {"c05-9": "？"}},
+        "a-c01-2": {"mark": "×"},
+        "a-c02-2": {"mark": "×"},                                         # 抜き取りで誤りが 1 件
+    }
+    gold, rep = adjudicate.build_gold(adj, decisions)
+    assert gold["c01"][5] == "×" and 5 not in gold["c02"]
+    assert rep["undecided"] == ["c02-5"]
+    assert gold["c04"][1] == "○"
+    assert gold["c03"][9] == "○" and gold["c05"][9] == "？"
+    assert gold["c02"][2] == "×"                                          # 柴田の印を正解にする
+    assert rep["audit_n"] == 2 and len(rep["audit_wrong"]) == 1
+
+
+def test_upper_bound_matches_rule_of_three():
+    assert abs(adjudicate.upper_bound(0, 40) - 0.072) < 0.003
+    assert adjudicate.upper_bound(2, 40) > adjudicate.upper_bound(1, 40) > adjudicate.upper_bound(0, 40)

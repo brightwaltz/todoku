@@ -2,6 +2,7 @@
 
 手順は eval/PROTOCOL.md。API は呼ばない。
   uv run python eval/adjudicate.py prepare eval/out/blind/read-A.json eval/out/blind/read-B.json
+  uv run python eval/adjudicate.py gold eval/out/adjudication-….json eval/out/decisions-….json   （裁定ページの db を書き出したもの）
 結果は eval/out/adjudication-<日時>.json（町田市の引用を含むので eval/out/ に置く。リポジトリに入れない）。
 
 マスの印：○＝当たりうる、×＝当たらない（済んでいるを含む）、？＝決められない、申＝申請済み・結果待ち。
@@ -185,6 +186,7 @@ def prepare(paths: list[str]) -> dict:
     stats["policies"] = {p["id"]: len(p["cells"]) for p in policy_list}
     return {"made": datetime.now().isoformat(timespec="seconds"), "seed": SEED, "runs": [r["_path"] for r in runs],
             "models": [r["model"] for r in runs], "programs": nums, "stats": stats,
+            "agreed": [{"case": c["case"], "num": c["num"], "mark": c["a"]["mark"]} for c in agreed],
             "policies": policy_list, "issues": issue_list, "audit": audit}
 
 
@@ -209,7 +211,97 @@ def summarize(cells, agreed, issues, runs) -> dict:
             "usd": [round(r.get("usd", 0), 3) for r in runs]}
 
 
+# ---- 裁いた結果から正解表を作る -------------------------------------------------
+
+def b_mark_of(cell: dict) -> str | None:
+    """B の 2 回がそろって ○・×・？ なら、その印。割れた・申・答えなしは None。"""
+    ms = {b["mark"] for b in cell["b"] if b}
+    if len(ms) == 1 and len(cell["b"]) == len([b for b in cell["b"] if b]):
+        m = ms.pop()
+        return m if m in ("○", "×", "？") else None
+    return None
+
+
+def decided_mark(item: dict, cell: dict, kind: str, decisions: dict) -> str | None:
+    d = decisions.get(item["id"], {})
+    key = f"{cell['case']}-{cell['num']}"
+    if (d.get("overrides") or {}).get(key):
+        return d["overrides"][key]
+    if kind == "policy":
+        if d.get("resolved") == "A":
+            return cell["a"]["mark"] if cell["a"]["mark"] in ("○", "×", "？") else None
+        if d.get("resolved") == "B":
+            return b_mark_of(cell)
+        return d.get("choice") if d.get("choice") in ("○", "×", "？") else None
+    return d.get("mark") if d.get("mark") in ("○", "×", "？") else None
+
+
+def upper_bound(k: int, n: int, alpha: float = 0.05) -> float:
+    """n 件中 k 件が誤りのとき、誤り率の片側 95% の上限（Clopper-Pearson、二分法）。"""
+    from math import comb
+    if n == 0:
+        return 1.0
+    lo, hi = k / n, 1.0
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        cdf = sum(comb(n, i) * mid ** i * (1 - mid) ** (n - i) for i in range(k + 1))
+        lo, hi = (mid, hi) if cdf > alpha else (lo, mid)
+    return hi
+
+
+def build_gold(adj: dict, decisions: dict) -> tuple[dict, dict]:
+    """（事例→{制度番号: 印}、報告）を返す。決まっていないマスは入れない（空欄）。"""
+    gold: dict[str, dict[int, str]] = defaultdict(dict)
+    report = {"agreed": defaultdict(int), "policy": defaultdict(int), "issue": defaultdict(int),
+              "undecided": [], "audit_n": 0, "audit_wrong": [], "audit_unmarked": 0}
+    for c in adj["agreed"]:
+        gold[c["case"]][c["num"]] = c["mark"]
+        report["agreed"][c["mark"]] += 1
+    for kind, items in (("policy", adj["policies"]), ("issue", adj["issues"])):
+        for it in items:
+            for cell in it["cells"]:
+                m = decided_mark(it, cell, kind, decisions)
+                if m is None:
+                    report["undecided"].append(f"{cell['case']}-{cell['num']}")
+                    continue
+                gold[cell["case"]][cell["num"]] = m
+                report[kind][m] += 1
+    for a in adj["audit"]:
+        d = decisions.get(f"a-{a['case']}-{a['num']}", {})
+        if d.get("mark") not in ("○", "×", "？"):
+            report["audit_unmarked"] += 1
+            continue
+        report["audit_n"] += 1
+        if d["mark"] != a["a"]["mark"]:
+            report["audit_wrong"].append({"case": a["case"], "num": a["num"], "agreed": a["a"]["mark"], "teacher": d["mark"]})
+            gold[a["case"]][a["num"]] = d["mark"]   # 柴田の印を正解にする
+    k, n = len(report["audit_wrong"]), report["audit_n"]
+    report["audit_upper"] = round(upper_bound(k, n), 3) if n else None
+    return gold, report
+
+
+def write_gold(gold: dict, path: Path) -> None:
+    import csv
+    rs = rules_mod.load()
+    progs = sorted(rs.programs.values(), key=lambda p: p.number)
+    with path.open("w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["事例"] + [f"{p.number} {p.name}" for p in progs])
+        for case in load_cases():
+            w.writerow([case["id"]] + [gold.get(case["id"], {}).get(p.number, "") for p in progs])
+
+
 def main() -> None:
+    if len(sys.argv) == 4 and sys.argv[1] == "gold":
+        adj = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
+        decisions = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
+        gold, rep = build_gold(adj, decisions)
+        write_gold(gold, ROOT / "eval" / "gold.csv")
+        path = OUT / f"gold-report-{datetime.now():%Y%m%d-%H%M}.json"
+        path.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
+        print(f"一致 {dict(rep['agreed'])}、決まりの問い {dict(rep['policy'])}、論点 {dict(rep['issue'])}、未決 {len(rep['undecided'])} マス")
+        print(f"抜き取り {rep['audit_n']} 件中 {len(rep['audit_wrong'])} 件が誤り（上限 {rep['audit_upper']}）、未記入 {rep['audit_unmarked']} → eval/gold.csv")
+        return
     if len(sys.argv) < 3 or sys.argv[1] != "prepare":
         sys.exit(__doc__)
     data = prepare(sys.argv[2:])
