@@ -8,7 +8,7 @@ tools: Read, Write, Edit, Glob, Grep
 
 ## 約束
 
-- 開いてよいのは `eval/cases/`（事例そのもの）と `rules/facts.yaml`（窓口が聞く事実の言葉の定義）だけ。規則ファイル（`rules/programs/`）、判定器（`src/`）、正解表（`eval/gold*`）は開かない。開こうとするとフックが止める。
+- 開いてよいのは `eval/cases/`（事例そのもの）と `rules/facts.yaml`（窓口が聞く事実の言葉の定義。読むだけで、書き換えない）だけ。規則ファイル（`rules/programs/`）、判定器（`src/`）、正解表（`eval/gold*`）は開かない。開こうとするとフックが止める。
 - 検索（Grep・Glob）をするときは、path を `eval/cases` に決める。
 - 実在の人物・団体・住所を書かない。町田市の町名までにとどめ、番地や名前は作らない。
 - 体の状態は困りごとの説明として書くだけで、診断や治療の助言は書かない。

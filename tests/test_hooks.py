@@ -38,6 +38,13 @@ def call(tool: str, agent: str | None, **args) -> dict:
         ("Glob", {"pattern": "**/*.yaml"}),
         ("Bash", {"command": "cat rules/programs/kaigo-nintei.yaml"}),
         ("WebFetch", {"url": "https://example.com"}),
+        # facts.yaml は読むだけ
+        ("Write", {"file_path": str(ROOT / "rules/facts.yaml"), "content": "x"}),
+        ("Edit", {"file_path": "rules/facts.yaml", "old_string": "a", "new_string": "b"}),
+        # 場所を eval/cases に決めても、pattern・glob で外を指す検索
+        ("Glob", {"pattern": "../../rules/programs/*.yaml", "path": "eval/cases"}),
+        ("Glob", {"pattern": "/etc/*", "path": "eval/cases"}),
+        ("Grep", {"pattern": "care_level", "path": "eval/cases", "glob": "../../rules/**"}),
     ],
 )
 def test_case_writer_is_blocked_outside_cases(tool, args):
@@ -53,6 +60,8 @@ def test_case_writer_is_blocked_outside_cases(tool, args):
         ("Read", {"file_path": str(ROOT / "rules/facts.yaml")}),
         ("Write", {"file_path": str(ROOT / "eval/cases/new.yaml"), "content": "x"}),
         ("Grep", {"pattern": "age_band", "path": "eval/cases"}),
+        ("Glob", {"pattern": "*.yaml", "path": "eval/cases"}),
+        ("Edit", {"file_path": str(ROOT / "eval/cases/cases.yaml"), "old_string": "a", "new_string": "b"}),
     ],
 )
 def test_case_writer_may_use_cases_and_facts(tool, args):
@@ -63,6 +72,13 @@ def test_case_writer_may_use_cases_and_facts(tool, args):
 def test_other_agents_are_untouched(agent):
     payload = call("Read", agent, file_path=str(ROOT / "rules/programs/jutaku-kaishu.yaml"))
     assert run("blind_case_writer.py", payload).returncode == 0
+
+
+def test_unreadable_input_is_blocked():
+    # 誰の呼び出しか分からない入力は通さない
+    done = subprocess.run([sys.executable, "-I", str(HOOKS / "blind_case_writer.py")], input="{not json",
+                          capture_output=True, text=True, env={"CLAUDE_PROJECT_DIR": str(ROOT), "PATH": "/usr/bin:/bin"}, timeout=30)
+    assert done.returncode == 2 and "読めない" in done.stderr
 
 
 def test_check_rules_ignores_other_files():

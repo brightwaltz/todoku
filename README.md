@@ -178,7 +178,7 @@ export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所の
 | サブエージェント | `rule-reader` | 公式ページを読んで条件を報告するだけ（規則は書かない）。町田市のページの原文は写さない |
 | サブエージェント | `case-writer` | 評価の事例を、規則を見ずに人物から書く。評価が自分の規則をなぞるだけにならないように |
 | フック（PostToolUse） | `.claude/hooks/check_rules.py` | `rules/` の YAML を書き換えた直後に、規則の読み込みの検査を回して誤りを Claude に返す（町田市の原文の引用もここで止まる）。ネットにはつながない |
-| フック（PreToolUse） | `.claude/hooks/blind_case_writer.py` | `case-writer` が `eval/cases/` と `rules/facts.yaml` の外を開こうとしたら止める。約束を文章で頼むだけでなく、仕組みで開けなくする |
+| フック（PreToolUse） | `.claude/hooks/blind_case_writer.py` | `case-writer` が `eval/cases/` と `rules/facts.yaml`（読むだけ）の外を開こうとしたら止める。facts.yaml への書き込みと、`..` で外を指す検索も止める。約束を文章で頼むだけでなく、仕組みで開けなくする |
 
 フックは `tests/test_hooks.py` で確かめています。2026-11-03 に、非対話の Claude Code で `case-writer` に規則ファイルを読ませようとして、フックが止めることも確かめました。
 - **Claude API（Claude Opus 5.5）**：相談文からの事実の取り出しと、最後のまとめ。どちらも構造化出力（JSON スキーマ）で受け取り、プログラムで確かめてから使います。拒否されたときの代わりのモデル（`fallbacks: "default"`）を有効にしています。
