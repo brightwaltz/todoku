@@ -36,6 +36,10 @@ RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
 # アプリ全体の回数制限（10 分あたり、合言葉が通った回だけ）。接続元を偽って IP ごとの制限を外しても、Claude を呼ぶ回数はこれを超えない。
 # 数えるのはプロセスの中なので、マシン 1 台（uvicorn を 1 つで動かしている）ごとの上限。マシンが N 台なら N 倍になる
 RATE_LIMIT_ALL = int(os.environ.get("TODOKU_RATE_LIMIT_ALL", "60"))
+# Fly.io の上で動いているか（Fly はマシンに FLY_APP_NAME を入れる。fly.toml には書いていない）。起動時に 1 回だけ決める。
+# Fly の中継が付ける Fly-Client-IP は Fly の上でだけ信じる。ほかの置き場ではだれでも付けられるので、接続そのものの相手で数える
+# （手間を増やすだけの対策。Fly の上でも、中継がヘッダを上書きしなければ偽れる）
+ON_FLY = bool(os.environ.get("FLY_APP_NAME", "").strip())
 WINDOW = 600
 # 本文の大きさの上限。相談文は 2000 字まで、事実は 20 ほどなので、ふつうの要求は数 KB
 MAX_BODY = 64 * 1024
@@ -163,8 +167,10 @@ def guard(request: Request, costly: bool) -> None:
             # 先にアプリ全体を見る。上限に届いていれば、接続元ごとの数も増やさない
             if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
                 raise HTTPException(429, "しばらく時間をおいてから試してください")
-            # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。値を変えれば外せるので、アプリ全体の上限も置く
-            ip = client_key(request.headers.get("fly-client-ip") or (request.client.host if request.client else "?"))
+            # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。値を変えれば外せるので、アプリ全体の上限も置く。
+            # Fly の外（ON_FLY が偽）ではヘッダを見ない。付けて送るだけで、接続元ごとの上限を外せるため
+            forwarded = request.headers.get("fly-client-ip") if ON_FLY else None
+            ip = client_key(forwarded or (request.client.host if request.client else "?"))
             hits = recent(_hits[ip], now)
             if len(hits) >= RATE_LIMIT:
                 raise HTTPException(429, "しばらく時間をおいてから試してください")

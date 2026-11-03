@@ -14,3 +14,10 @@ def fresh_rate_limit(monkeypatch):
     monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
     monkeypatch.setattr(app_mod, "_hits_all", app_mod.deque())
     monkeypatch.setattr(app_mod, "_swept", 0.0)  # 見回した時刻も戻す。残すと、次のテストで見回さないことがある
+
+
+@pytest.fixture
+def on_fly(monkeypatch):
+    # Fly.io の上の形（FLY_APP_NAME がある）で動かす。Fly-Client-IP を信じるのはこのときだけ（T-042）。
+    # autouse にはしない。既定（Fly の外）でヘッダを見ないことも、ほかのテストで試すため
+    monkeypatch.setattr(app_mod, "ON_FLY", True)

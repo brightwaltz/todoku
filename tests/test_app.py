@@ -183,6 +183,7 @@ def test_entry_text_names_every_place_with_rules():
         assert "だけ" not in text, f"{where} が範囲を狭く書いている：{text}"
 
 
+@pytest.mark.usefixtures("on_fly")
 def test_rate_limit_counts_each_client_ip(monkeypatch):
     from todoku import app as app_mod
 
@@ -194,6 +195,7 @@ def test_rate_limit_counts_each_client_ip(monkeypatch):
     assert send("203.0.113.2") == 200  # 中継が同じでも、別の人は別に数える
 
 
+@pytest.mark.usefixtures("on_fly")
 def test_rate_limit_counts_ipv6_per_64(monkeypatch):
     from todoku import app as app_mod
 
@@ -210,6 +212,22 @@ def test_rate_limit_counts_ipv6_per_64(monkeypatch):
     assert sorted(app_mod._hits) == ["2001:db8:1:2::/64", "2001:db8:1:3::/64", "203.0.113.1", "203.0.113.2", "fe80::/64"]
 
 
+def test_rate_limit_ignores_fly_client_ip_off_fly(monkeypatch):
+    from todoku import app as app_mod
+
+    # Fly の外（FLY_APP_NAME がない）では、Fly-Client-IP を付けて送るだけで接続元ごとの上限を外せていた（T-042）。
+    # ヘッダを見ず、接続そのものの相手（TestClient では testclient）で数える
+    assert app_mod.ON_FLY is False  # テストは Fly の外で動く。Fly の上の形は on_fly の fixture で作る
+    monkeypatch.setattr(app_mod, "RATE_LIMIT", 1)
+    send = lambda headers: client.post("/api/consult", json={"text": DEMO}, headers=headers).status_code
+    assert send({"fly-client-ip": "203.0.113.1"}) == 200
+    assert send({"fly-client-ip": "203.0.113.2"}) == 429  # ヘッダを変えても同じ接続元
+    assert send({"fly-client-ip": "2001:db8:1:2::1"}) == 429
+    assert send({}) == 429
+    assert sorted(app_mod._hits) == ["testclient"]
+
+
+@pytest.mark.usefixtures("on_fly")
 def test_rate_limit_caps_the_whole_app(monkeypatch):
     from todoku import app as app_mod
 
@@ -223,6 +241,7 @@ def test_rate_limit_caps_the_whole_app(monkeypatch):
     assert len(app_mod._hits["203.0.113.3"]) == 0  # 全体で断った回は、接続元ごとの数を増やさない
 
 
+@pytest.mark.usefixtures("on_fly")
 def test_rate_limit_forgets_idle_client_ips():
     import time
 
@@ -238,6 +257,7 @@ def test_rate_limit_forgets_idle_client_ips():
     assert len(app_mod._hits["203.0.113.8"]) == 1  # 消さなかった行の数は変えない
 
 
+@pytest.mark.usefixtures("on_fly")
 def test_rate_limit_survives_concurrent_requests(monkeypatch):
     import threading
     import time
@@ -276,6 +296,7 @@ def test_rate_limit_survives_concurrent_requests(monkeypatch):
     assert len(app_mod._hits_all) == 2  # 古い記録は消え、通った 2 回はどちらも残る
 
 
+@pytest.mark.usefixtures("on_fly")
 def test_wrong_passphrase_does_not_use_up_the_whole_app(monkeypatch):
     from todoku import app as app_mod
 
@@ -289,6 +310,7 @@ def test_wrong_passphrase_does_not_use_up_the_whole_app(monkeypatch):
     assert send("himitsu", "203.0.113.4") == 429
 
 
+@pytest.mark.usefixtures("on_fly")
 def test_wrong_passphrase_counts_toward_rate_limit(monkeypatch):
     from todoku import app as app_mod
 
