@@ -49,8 +49,8 @@ def center_search(code: str) -> str:
 STATUS_LABEL = {
     "eligible": "当てはまる見込み",
     "pending": "申請済み・結果待ち",
-    "after_prereq": "先に手続きが要る",
-    "unknown": "情報が足りない",
+    "after_prereq": "先に手続きをすると使える",
+    "unknown": "確かめると使えるかもしれない",
     "ineligible": "当てはまらない",
     "done": "済んでいる",
 }
@@ -264,6 +264,10 @@ def ask_view(q: Question, subject: str) -> dict:
 
 def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int, municipality: str = "") -> dict:
     results = evaluate(RULES, facts)
+    if facts.get("lives_in_machida") is True:
+        # 町田市では市の制度を一つずつ判定するので、市区町村の型は出さない（判定は変えない）。
+        # 「当てはまらない」に並ぶと、町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めてしまうため
+        results = {pid: r for pid, r in results.items() if r.program.level != "local"}
     order = {"eligible": 0, "pending": 1, "after_prereq": 2, "unknown": 3, "ineligible": 4, "done": 5}
     pending = frozenset(pid for pid, r in results.items() if r.status == "pending")
     ranked = sorted(results.values(), key=lambda r: (order[r.status], -RULES.weight(r.program.id), r.program.number))

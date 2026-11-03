@@ -86,7 +86,7 @@ class Program:
     eligibility: dict
     sources: list[Source]
     done_when: dict | None = None
-    # 申請して結果を待っている（例：認定を申請中）。前提にしている制度は「先に手続きが要る」のまま
+    # 申請して結果を待っている（例：認定を申請中）。前提にしている制度は「先に手続きをすると使える」のまま
     pending_when: dict | None = None
     at_application: list[str] = field(default_factory=list)
     apply: dict = field(default_factory=dict)

@@ -289,8 +289,8 @@ class RealClaude:
             items.append({
                 "program_id": r.program.id,
                 "name": r.program.name,
-                "status": {"eligible": "当てはまる見込み", "pending": "申請済み・結果待ち", "after_prereq": "先に手続きが要る",
-                           "unknown": "情報が足りない"}[r.status],
+                "status": {"eligible": "当てはまる見込み", "pending": "申請済み・結果待ち", "after_prereq": "先に手続きをすると使える",
+                           "unknown": "確かめると使えるかもしれない"}[r.status],
                 "waiting_on": [rules.programs[p].name for p in r.waiting_on],
                 "summary": r.program.summary,
             })

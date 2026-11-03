@@ -264,8 +264,8 @@ function markEvidence(text, extracted) {
 // 制度ごとの札を 4 つの列に置き、答えのたびに列が変わった札だけを動かす（FLIP）
 const BOARD = [
   ["eligible", "当てはまる", "当てはまる見込み"],
-  ["after_prereq", "先に手続き", "先に手続きが要る制度"],
-  ["unknown", "確かめる", "確かめると分かる制度"],
+  ["after_prereq", "先に手続き", "先に手続きをすると使える制度"],
+  ["unknown", "確かめる", "確かめると使えるかもしれない制度"],
   ["no", "当てはまらない", "当てはまらない制度"],
 ];
 // 済んでいる・申請済み（結果待ち）の制度は、いま手を打たなくてよいので「当てはまらない」の列にたたむ（結果の画面では別に出す）
@@ -474,7 +474,7 @@ function setBusy(on) {
 const SUMMARIZED = ["eligible", "pending", "after_prereq"];  // まとめ（/api/summary）が扱う状態。app.py の SUMMARIZED と同じ
 const GROUPS = [
   ["eligible", "当てはまる見込み", "申請できそうな制度です。最終的な判断は申請先で行われます。"],
-  ["pending", "申請して結果を待っている", "申請が済んでいる手続きです。結果が届くと、下の「先に手続きをすると使える」制度が使えるようになることがあります。"],
+  ["pending", "申請済み・結果待ち", "申請が済んでいる手続きです。結果が届くと、下の「先に手続きをすると使える」制度が使えるようになることがあります。"],
   ["after_prereq", "先に手続きをすると使える", "前の手続きを済ませると、対象になりそうな制度です。"],
   ["unknown", "確かめると使えるかもしれない", "分からない点があり、まだ決められない制度です。確かめ方を添えています。"],
 ];
@@ -536,7 +536,8 @@ function renderResult(data) {
 
 function reasonText(r) {
   const f = r.reasons.find((x) => x.state === "F");
-  return f ? `${f.label}${f.value ? `（${f.value}）` : ""} に当たらない` : "条件に当たらない";
+  // 「町田市以外にお住まい に当たらない」は二重の否定に読めるので、満たしていない条件として名指す
+  return f ? `条件「${f.label}」を満たしていない${f.value ? `（${f.value}）` : ""}` : "満たしていない条件がある";
 }
 
 function programCard(r) {

@@ -39,12 +39,12 @@ def test_done_when(rs):
 
 
 def test_via_makes_after_prereq(rs):
-    # 認定がなくても、認定を受ければ使える給付は「先に手続きが要る」
+    # 認定がなくても、認定を受ければ使える給付は「先に手続きをすると使える」
     res = evaluate(rs, {"age65": True, "level": "none"})
     assert res["base"].status == "eligible"
     assert res["needs_level"].status == "after_prereq"
     assert res["needs_level"].waiting_on == ["base"]
-    # 前提の制度を「先に手続きが要る」で待つ制度も、同じく待つ
+    # 前提の制度を「先に手続きをすると使える」で待つ制度も、同じく待つ
     assert res["tax_deduction"].status == "after_prereq"
     assert res["tax_deduction"].waiting_on == ["needs_level"]
 

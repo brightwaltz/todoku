@@ -3,14 +3,14 @@
 条件の葉の状態：
   T 満たす / F 満たさない / U 分からない / P 前提の手続きを済ませれば満たせる
 all は F > U > P > T、any は T > P > U > F の順に強い（any は、前提の手続きで届く道があれば
-「先に手続きが要る」と言える）。
+「先に手続きをすると使える」と言える）。
 
 制度の状態：
   done          もう済んでいる（done_when が T）
   pending       申請して結果を待っている（pending_when が T）。前提にしている制度は P のまま
   eligible      当てはまる見込み（残りは申請で確かめる）
-  after_prereq  先に手続きが要る
-  unknown       情報が足りない
+  after_prereq  先に手続きをすると使える
+  unknown       確かめると使えるかもしれない
   ineligible    当てはまらない
 """
 

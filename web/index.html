@@ -21,14 +21,18 @@
 <main class="wrap">
   <section id="gate" class="card" hidden>
     <label for="aikotoba">合言葉</label>
-    <p class="note" id="gate-msg">ご自分の相談を送るには合言葉が要ります。下の見本は合言葉なしで見られます。</p>
+    <p class="note" id="gate-msg">いまは試しに動かしているため、ご自分の相談を送るには合言葉が要ります。下の見本は、合言葉なしで最後まで試せます。</p>
     <input id="aikotoba" type="password" autocomplete="off">
     <button class="primary" id="gate-ok">はじめる</button>
   </section>
 
   <section id="input" class="card">
     <h2>困っていることを教えてください</h2>
-    <p class="note lead-note">書くのが難しければ、選ぶだけで下書きを作ります。</p>
+    <div id="samples" hidden>
+      <p class="note">見本で試す（合言葉なしで、最後まで動きます）</p>
+      <div class="examples" id="sample-list"></div>
+    </div>
+    <p class="note lead-note">書くのが難しければ、下の項目を選んでいくだけで、相談の文を作ります。</p>
 
     <fieldset class="pick">
       <legend>どなたのことですか（1 つ）</legend>
@@ -53,13 +57,9 @@
     <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
     <textarea id="text" rows="5" maxlength="2000" placeholder="例：町田市に住む母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
     <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
-    <p class="note">スマホのキーボードのマイクで、話して入れることもできます。</p>
+    <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
     <button class="primary" id="send">相談する</button>
-    <p class="note">相談の文章はサーバに残しません。体の状態の判断や治療の助言はしません。示すのは公的な制度と、その申請先・持ち物です。</p>
-    <div id="samples" hidden>
-      <p class="note">見本（合言葉なしで見られます）</p>
-      <div class="examples" id="sample-list"></div>
-    </div>
+    <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
   </section>
 
   <section id="reading" class="card" hidden aria-live="polite">
@@ -92,7 +92,7 @@
   <section id="result" hidden>
     <div class="card ask" id="later" hidden>
       <h2>まだ確かめていないこと</h2>
-      <p class="note lead-note">相談の文から、確信が低いまま読み取ったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
+      <p class="note lead-note">相談の文からは、はっきり読み取れなかったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
       <div id="later-list"></div>
     </div>
     <p class="change" id="later-change" aria-live="polite"></p>

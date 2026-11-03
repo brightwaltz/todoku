@@ -323,3 +323,27 @@ def test_large_bodies_are_refused():
     many = {"facts": {f"k{i}": True for i in range(65)}}
     assert client.post("/api/step", json=many).status_code == 422
     assert client.post("/api/step", json={"facts": {"age_band": "age_75_plus"}}).status_code == 200
+
+
+def test_machida_hides_the_types():
+    # 町田市では市の制度を一つずつ判定するので、型は出さない。「介護用品（紙おむつなど）の支給」が当てはまらないに並ぶと、
+    # 町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めるため（Managed Agent の通し、11/3）
+    facts = {"age_band": "age_75_plus", "residence": "home", "uses_diapers": True, "care_level": "care4"}
+    machida = client.post("/api/step", json={"facts": facts, "municipality": "132098"}).json()
+    yokohama = client.post("/api/step", json={"facts": facts, "municipality": "141003"}).json()
+    assert not [r for r in machida["results"] if r["id"].startswith("local-")]
+    assert sum(machida["counts"].values()) == len(machida["results"]) == 27  # 札・数・一覧がそろう
+    assert any(r["id"] == "local-kaigo-yohin" for r in yokohama["results"])
+    assert len(yokohama["results"]) == 32
+
+
+def test_status_names_are_the_result_headings():
+    # 札（status_label）と、結果の見出し・README の表の呼び名を 1 つにする（「情報が足りない」は書き方を責めるように読める）
+    from pathlib import Path
+    from todoku.app import STATUS_LABEL
+    root = Path(__file__).resolve().parents[1]
+    js, readme = (root / "web/app.js").read_text(encoding="utf-8"), (root / "README.md").read_text(encoding="utf-8")
+    for status in ("eligible", "pending", "after_prereq", "unknown"):
+        label = STATUS_LABEL[status]
+        assert f'["{status}", "{label}",' in js
+        assert f"| {label} |" in readme
