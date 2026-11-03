@@ -14,9 +14,10 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 from . import rules as rules_mod
 import anthropic
@@ -76,12 +77,47 @@ RULES_CITY = {level: fid for level, fid in rules_mod.LEVEL_PLACE.items() if "cit
 SAMPLES: list[dict] = json.loads((WEB_DIR / "samples.json").read_text(encoding="utf-8"))
 
 
-class ConsultIn(BaseModel):
+def has_broken_text(data: Any) -> bool:
+    """対になっていないサロゲート（JSON の \\ud800 や生の ED A0 80）を含む文字列が、鍵か値のどこかにあるか。
+
+    入れ子が深くても止まらないよう、再帰せずに辿る。
+    """
+    stack = [data]
+    while stack:
+        x = stack.pop()
+        if isinstance(x, str):
+            try:
+                x.encode("utf-8")
+            except UnicodeEncodeError:
+                return True
+        elif isinstance(x, dict):
+            stack.extend(x.keys())
+            stack.extend(x.values())
+        elif isinstance(x, list):
+            stack.extend(x)
+    return False
+
+
+class In(BaseModel):
+    """画面から来る本文の型の土台。壊れた文字は、形を確かめる前に断る。
+
+    通すと、応答を UTF-8 に直すところで 500 になり、uvicorn のトレースバックに相談文の全文が出ていた（T-002）。
+    """
+
+    @model_validator(mode="before")
+    @classmethod
+    def no_broken_text(cls, data: Any) -> Any:
+        if has_broken_text(data):
+            raise ValueError("broken text")
+        return data
+
+
+class ConsultIn(In):
     text: str = Field(max_length=2000)
     municipality: str = Field("", max_length=6)
 
 
-class StepIn(BaseModel):
+class StepIn(In):
     facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     suggestions: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     subject: str = "ご本人"
@@ -89,13 +125,13 @@ class StepIn(BaseModel):
     municipality: str = Field("", max_length=6)
 
 
-class SummaryIn(BaseModel):
+class SummaryIn(In):
     facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     subject: str = "ご本人"
     municipality: str = Field("", max_length=6)
 
 
-class SampleIn(BaseModel):
+class SampleIn(In):
     id: str = Field(max_length=40)
 
 
@@ -446,6 +482,13 @@ class BodyLimit:
 
 
 app.add_middleware(BodyLimit)
+
+
+@app.exception_handler(RequestValidationError)
+async def invalid_body(request: Request, exc: RequestValidationError) -> JSONResponse:
+    # FastAPI の既定の 422 は、送られた文（input）をそのまま返す。文が壊れていると、それを UTF-8 に直すところで 500 になり、
+    # トレースバックに相談文の全文が出ていた（T-002）。送られた文は返さず、画面（app.js）がそのまま出せる 1 文だけにする
+    return JSONResponse({"detail": "送られた内容を読めませんでした。文を書き直して、もう一度試してください"}, status_code=422)
 
 
 @app.middleware("http")

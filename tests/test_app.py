@@ -2,6 +2,7 @@ import os
 
 os.environ["TODOKU_FAKE_CLAUDE"] = "1"
 
+import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
 
 from todoku.app import app  # noqa: E402
@@ -326,6 +327,39 @@ def test_large_bodies_are_refused():
     many = {"facts": {f"k{i}": True for i in range(65)}}
     assert client.post("/api/step", json=many).status_code == 422
     assert client.post("/api/step", json={"facts": {"age_band": "age_75_plus"}}).status_code == 200
+
+
+SECRET = "ひみつの相談"
+BROKEN = [  # 対になっていないサロゲート（JSON の \ud800 と、生のバイト）。subject は 12 字で切られる前に残る短さにする
+    ("/api/consult", b'{"text": "' + SECRET.encode() + b'\\ud800"}'),
+    ("/api/consult", b'{"text": "' + SECRET.encode() + b'\xed\xa0\x80"}'),
+    ("/api/consult", b'{"text": "' + SECRET.encode() + b'", "municipality": "13\\ud800"}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'\\ud800", "facts": {"care_level": "care2"}, "asked": 1}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'", "municipality": "13\\ud800"}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'", "facts": {"care_level": "\\ud800"}}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'", "suggestions": {"\\ud800": true}}'),
+    ("/api/summary", b'{"subject": "' + SECRET.encode() + b'\\ud800", "facts": {"care_level": "care2"}}'),
+    ("/api/sample", b'{"id": "' + SECRET.encode() + b'\\ud800"}'),
+]
+
+
+@pytest.mark.parametrize("path,raw", BROKEN)
+def test_broken_characters_are_refused_without_echo(path, raw):
+    # 壊れた文字で 500 になると、uvicorn のトレースバックに相談文の全文が出て fly logs に残った（Managed Agent の指摘、T-002）。
+    # トレースバックが出るのは例外がアプリの外に出たときだけ。client は例外をそのまま投げるので、ここで 4xx が返れば出ていない
+    res = client.post(path, content=raw, headers={"content-type": "application/json"})
+    assert res.status_code == 422
+    assert SECRET not in res.text
+    assert isinstance(res.json()["detail"], str)  # 画面（app.js）は detail をそのまま文として出す
+
+
+def test_validation_errors_do_not_echo_the_text():
+    # 長すぎる相談文も、送った文を返さない。detail は画面にそのまま出せる 1 文にする
+    res = client.post("/api/consult", json={"text": SECRET * 400})
+    assert res.status_code == 422 and SECRET not in res.text and isinstance(res.json()["detail"], str)
+    # 壊れていない文字（絵文字・サロゲートの対）はふつうに通る
+    ok = client.post("/api/step", json={"subject": "母😀", "facts": {"age_band": "age_75_plus"}})
+    assert ok.status_code == 200
 
 
 def test_machida_hides_the_types():
