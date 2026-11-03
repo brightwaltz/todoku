@@ -1,3 +1,4 @@
+import json
 import os
 
 os.environ["TODOKU_FAKE_CLAUDE"] = "1"
@@ -813,3 +814,16 @@ def test_person_questions_name_the_person():
     missing = {m["fact"]: m["question"] for r in data["results"] for m in r["missing"] if m["fact"] in PERSON_FACTS}
     assert set(missing) == set(PERSON_FACTS)
     assert all(t.startswith("お母さまは、") and "ご本人" not in t for t in missing.values()), missing
+
+
+def test_read_facts_do_not_carry_unpersonalized_questions():
+    # 読み取ったこと（extracted）と分かっていること（known）は名前と値だけを返す。問いの文を持たせると、
+    # 相談文の呼び方に置き換えないまま「ご本人は、…」が API に出ていたため（T-027。画面はこの欄を使っていなかった）
+    for s in client.get("/api/samples").json():
+        data = client.post("/api/sample", json={"id": s["id"]}).json()
+        assert data["subject"] != "ご本人" and data["extracted"] and data["known"], s["id"]
+        for f in data["extracted"]:
+            assert set(f) == {"fact", "name", "value", "label", "confidence", "evidence"}, (s["id"], f)
+        for f in data["known"]:
+            assert set(f) == {"fact", "name", "value", "label"}, (s["id"], f)
+        assert "ご本人" not in json.dumps(data["extracted"] + data["known"], ensure_ascii=False), s["id"]

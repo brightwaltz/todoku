@@ -215,9 +215,11 @@ def place_view(code: str) -> dict | None:
 
 
 def fact_view(fid: str, value: Any) -> dict:
+    # 問いの文は返さない。画面は名前と値だけを使い、問いの文は相談文の呼び方に置き換えずに「ご本人は、…」のまま出ていたため（T-027）。
+    # 問いは ask_view・result_view の missing で、置き換えてから返す
     fact = RULES.facts[fid]
     return {"fact": fid, "name": fact.name, "value": value,
-            "label": "わからない" if value == DONT_KNOW else fact.label_of(value), "question": fact.question}
+            "label": "わからない" if value == DONT_KNOW else fact.label_of(value)}
 
 
 def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: str = "",
