@@ -7,6 +7,7 @@
 from __future__ import annotations
 
 import hmac
+import ipaddress
 import json
 import os
 import threading
@@ -163,7 +164,7 @@ def guard(request: Request, costly: bool) -> None:
             if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
                 raise HTTPException(429, "しばらく時間をおいてから試してください")
             # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。値を変えれば外せるので、アプリ全体の上限も置く
-            ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
+            ip = client_key(request.headers.get("fly-client-ip") or (request.client.host if request.client else "?"))
             hits = recent(_hits[ip], now)
             if len(hits) >= RATE_LIMIT:
                 raise HTTPException(429, "しばらく時間をおいてから試してください")
@@ -174,6 +175,25 @@ def guard(request: Request, costly: bool) -> None:
             # アプリ全体は、合言葉が通った回（Claude を呼ぶ回）だけ数える。間違えた回も数えると、
             # 合言葉を知らない人が接続元を変えながら送るだけで、ほかの全員を止められる
             _hits_all.append(now)
+
+
+def client_key(ip: str) -> str:
+    """回数制限で数える接続元の鍵。IPv6 は /64 ごとにまとめる（手間を増やすだけの対策）。
+
+    IPv6 は 1 つの契約に /64（またはそれより広い範囲）が割り当てられることが多く、
+    アドレスを変えながら送るだけで接続元ごとの上限を外せるため。IPv4 と、アドレスと読めない値は今のまま数える。
+    IPv4 を IPv6 の形で書いたもの（::ffff:203.0.113.1）は、/64 にすると IPv4 の全員が 1 つにまとまるので IPv4 として数える。
+    """
+    try:
+        addr = ipaddress.ip_address(ip)
+    except ValueError:
+        return ip
+    if addr.version == 4:
+        return ip
+    if addr.ipv4_mapped:
+        return str(addr.ipv4_mapped)
+    # 文字列でなく数で渡す（fe80::1%eth0 のような範囲の印つきは、文字列に /64 を付けると読めずに 500 になる）
+    return str(ipaddress.IPv6Network((int(addr), 64), strict=False))
 
 
 def recent(hits: deque, now: float) -> deque:

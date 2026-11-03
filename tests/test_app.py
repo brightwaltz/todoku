@@ -194,6 +194,22 @@ def test_rate_limit_counts_each_client_ip(monkeypatch):
     assert send("203.0.113.2") == 200  # 中継が同じでも、別の人は別に数える
 
 
+def test_rate_limit_counts_ipv6_per_64(monkeypatch):
+    from todoku import app as app_mod
+
+    # IPv6 は 1 人で /64 を持てるので、アドレスを変えながら送ると接続元ごとの上限を外せていた（T-041）。/64 ごとに数える
+    monkeypatch.setattr(app_mod, "RATE_LIMIT", 1)
+    send = lambda ip: client.post("/api/consult", json={"text": DEMO}, headers={"fly-client-ip": ip}).status_code
+    assert send("2001:db8:1:2::1") == 200
+    assert send("2001:db8:1:2:ffff::9") == 429  # 同じ /64 の別のアドレス
+    assert send("2001:db8:1:3::1") == 200  # 隣の /64 は別に数える
+    assert send("::ffff:203.0.113.1") == 200  # IPv4 を IPv6 の形で書いたものは IPv4 として数え、::/64 にまとめない
+    assert send("::ffff:203.0.113.2") == 200
+    assert send("203.0.113.1") == 429  # 同じ IPv4 を普通の形で書いても同じ接続元
+    assert send("fe80::1%eth0") == 200  # 範囲の印つきでも 500 にならない
+    assert sorted(app_mod._hits) == ["2001:db8:1:2::/64", "2001:db8:1:3::/64", "203.0.113.1", "203.0.113.2", "fe80::/64"]
+
+
 def test_rate_limit_caps_the_whole_app(monkeypatch):
     from todoku import app as app_mod
 
