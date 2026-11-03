@@ -130,11 +130,11 @@ function redraft(force = false) {
   show("redraft", false);
 }
 
-function fillCities() {
-  const pref = prefs.find((p) => p.code === pick.pref);
-  $("city").replaceChildren(el("option", { value: "" }, "市区町村"),
+function fillCities(prefCode = pick.pref, select = $("city")) {
+  const pref = prefs.find((p) => p.code === prefCode);
+  select.replaceChildren(el("option", { value: "" }, "市区町村"),
     ...(pref ? pref.cities.map(([code, name]) => el("option", { value: code }, name)) : []));
-  $("city").disabled = !pref;
+  select.disabled = !pref;
 }
 
 function resetPick() {
@@ -372,6 +372,21 @@ function renderQuestion(q, max, first = false) {
   $("ask-text").textContent = q.text;
   const box = $("ask-options");
   box.replaceChildren();
+  if (q.place && prefs.length) {
+    // お住まいは、町田市かどうかではなく市区町村で聞く（選んだ所は、入口で選んだときと同じに扱う）
+    $("ask-text").textContent = q.place.text;
+    box.className = "options";
+    const pref = el("select", { "aria-label": "都道府県" }, el("option", { value: "" }, "都道府県"),
+      ...prefs.map((p) => el("option", { value: p.code }, p.name)));
+    const city = el("select", { "aria-label": "市区町村", disabled: "" }, el("option", { value: "" }, "市区町村"));
+    pref.addEventListener("change", () => { state.presses += 1; fillCities(pref.value, city); });
+    city.addEventListener("change", () => { if (city.value) answerPlace(city.value); });
+    box.append(el("div", { class: "places" }, pref, city),
+      el("button", { class: "option dk", onclick: () => answer(q, DONT_KNOW) }, "わからない"));
+    $("ask-hint").textContent = "";
+    showWhy(q);
+    return focusQuestion(first);
+  }
   // 選択肢が多い問い（認定の区分）は、短い選択肢を 2 列に並べて縦の長さを抑える
   const two = q.options.length > 6;
   box.className = two ? "options two" : "options";
@@ -384,13 +399,30 @@ function renderQuestion(q, max, first = false) {
     ? el("button", { class: "option dk", onclick: () => answer(q, q.keep.value) }, q.keep.label)
     : el("button", { class: "option dk", onclick: () => answer(q, DONT_KNOW) }, "わからない"));
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
+  showWhy(q);
+  focusQuestion(first);
+}
+
+function showWhy(q) {
   const names = q.affects.slice(0, 3).join("、") + (q.affects.length > 3 ? ` ほか ${q.affects.length - 3} 件` : "");
   $("ask-why").textContent = `この答えで判定が決まる制度：${names}`;
   $("ask-check").textContent = q.check;
+}
+
+function focusQuestion(first) {
   // 選択肢ではなく問いの文に移る（1 つ目の選択肢に色が付くと、先に選んであるように見えるため）
   $("ask-text").focus({ preventScroll: true });
   if (first) revealThenAsk();
   else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める
+async function answerPlace(code) {
+  state.presses += 1;
+  state.asked += 1;
+  state.municipality = code;
+  delete state.suggestions.lives_in_machida;
+  await step();
 }
 
 async function answer(q, value) {

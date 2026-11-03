@@ -213,6 +213,16 @@ def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: s
             "keep": {"value": q.suggested, "label": f"いま確かめられない（「{read}」として進める）"},
             "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
         }
+    if q.fact == "lives_in_machida":
+        # 町田市かどうかだけを聞くと、町田市以外の人は「いいえ」しか押せない。画面は市区町村を選ぶ欄を出す（選んだ所は apply_place が扱う）。
+        # はい・いいえは、市区町村の一覧を読み込めなかった画面のための控え
+        return {
+            "fact": q.fact, "confirm": False,
+            "text": personalize(fact.question, subject),
+            "place": {"text": personalize("ご本人はどちらにお住まいですか？", subject)},
+            "options": [{"value": v, "label": label} for v, label in fact.options],
+            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+        }
     if q.suggested is not None and fact.type == "enum":
         return {
             "fact": q.fact, "confirm": True,

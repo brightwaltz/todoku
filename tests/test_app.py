@@ -263,3 +263,15 @@ def test_center_search_points_at_the_prefecture():
     assert "center_search" not in next(r for r in machida["results"] if r["id"] == "kaigo-nintei")["apply"]
     assert all("center_search" not in r["apply"] for r in yokohama["results"]
                if "地域包括支援センター" not in r["apply"]["where"] + r["apply"].get("how", ""))
+
+
+def test_residence_is_asked_as_a_place():
+    # お住まいが分からないときは「町田市にお住まいですか？」ではなく、市区町村を選ぶ問いにする（はい・いいえは控え）
+    facts = {"age_band": "age_75_plus", "residence": "home", "care_level": "care2"}
+    q = client.post("/api/step", json={"facts": facts, "subject": "お母さま"}).json()["question"]
+    assert q["fact"] == "lives_in_machida"
+    assert q["place"]["text"] == "お母さまはどちらにお住まいですか？"
+    assert [o["value"] for o in q["options"]] == [True, False]
+    # 選んだ市区町村を送れば、もう聞かない
+    data = client.post("/api/step", json={"facts": facts, "asked": 1, "municipality": "141003"}).json()
+    assert data["question"] is None or data["question"]["fact"] != "lives_in_machida"
