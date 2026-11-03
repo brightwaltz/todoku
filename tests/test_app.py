@@ -217,7 +217,7 @@ def test_rate_limit_ignores_fly_client_ip_off_fly(monkeypatch):
 
     # Fly の外（FLY_APP_NAME がない）では、Fly-Client-IP を付けて送るだけで接続元ごとの上限を外せていた（T-042）。
     # ヘッダを見ず、接続そのものの相手（TestClient では testclient）で数える
-    assert app_mod.ON_FLY is False  # テストは Fly の外で動く。Fly の上の形は on_fly の fixture で作る
+    monkeypatch.setattr(app_mod, "ON_FLY", False)  # Fly の外の形。FLY_APP_NAME がある所で流しても同じに試す（Fly の上の形は on_fly の fixture）
     monkeypatch.setattr(app_mod, "RATE_LIMIT", 1)
     send = lambda headers: client.post("/api/consult", json={"text": DEMO}, headers=headers).status_code
     assert send({"fly-client-ip": "203.0.113.1"}) == 200
