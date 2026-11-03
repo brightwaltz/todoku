@@ -240,10 +240,15 @@ def decided_mark(item: dict, cell: dict, kind: str, decisions: dict) -> str | No
     if (d.get("overrides") or {}).get(key):
         return d["overrides"][key]
     if kind == "policy":
-        if d.get("resolved") == "A":
+        # 取り消した選択（choice が空）に resolved が残っていても使わない
+        if d.get("choice") not in ("r1", "r2", "○", "×", "？"):
+            return None
+        if d.get("choice") in ("r1", "r2") and d.get("resolved") == "A":
             return cell["a"]["mark"] if cell["a"]["mark"] in ("○", "×", "？") else None
-        if d.get("resolved") == "B":
+        if d.get("choice") in ("r1", "r2") and d.get("resolved") == "B":
             return b_mark_of(cell)
+        if d.get("choice") in ("r1", "r2"):
+            return None
         return d.get("choice") if d.get("choice") in ("○", "×", "？") else None
     return d.get("mark") if d.get("mark") in ("○", "×", "？") else None
 

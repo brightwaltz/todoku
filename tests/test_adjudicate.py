@@ -63,16 +63,22 @@ def test_read_input_has_no_rules_text():
         pytest.skip("公式資料が保存されていない（eval/sources.py fetch の前）")
     import re
     progs = sources.program_sources()
+    checked = 0
     for p in rs.programs.values():
         if p.number not in blind_read.SCORED:   # 33 番以降は正解を作らないので、読み B にも渡さない
             continue
-        text, _ = sources.program_text(p.number, progs, index)
+        try:
+            text, _ = sources.program_text(p.number, progs, index)
+        except RuntimeError:  # 読み B を流したあとに出典が替わった制度（例：22 は 11/3 夜に法令へ）は、保存した資料がない
+            continue
+        checked += 1
         assert p.summary not in text
         # 資料の見出し（【資料N】の行と URL の行）に、規則の title を書かない（本文に同じ語が出るのはかまわない）
         headers = re.findall(r"【資料\d+】[^\n]*\n[^\n]*", text)
         assert len(headers) == len(progs[p.number]["sources"])
         for s in progs[p.number]["sources"]:
             assert all(s.get("title", "") not in h for h in headers)
+    assert checked >= 25, checked
     assert "label" not in blind_read.READ_SYSTEM and "規則" not in blind_read.READ_SYSTEM
 
 
@@ -188,3 +194,16 @@ def test_upper_bound_matches_rule_of_three():
 
 def test_scored_programs_are_1_to_32():
     assert list(blind_read.SCORED) == list(range(1, 33))
+
+
+def test_cleared_policy_choice_is_undecided():
+    """「読み1 に合わせる」を押してから取り消した（choice が空、resolved が残った）決まりの問いは、決まっていない扱い。"""
+    adj = {"agreed": [], "issues": [], "audit": [],
+           "policies": [{"id": "p-plan", "cells": [_c("c01", 5, "×", "○", "○")]}]}
+    for d in ({"choice": None, "resolved": "A"}, {"choice": None, "resolved": "B"}, {"resolved": "A"}):
+        gold, rep = adjudicate.build_gold(adj, {"p-plan": d})
+        assert 5 not in gold.get("c01", {}) and rep["undecided"] == ["c01-5"]
+    gold, _ = adjudicate.build_gold(adj, {"p-plan": {"choice": "r2", "resolved": "B"}})
+    assert gold["c01"][5] == "○"
+    gold, _ = adjudicate.build_gold(adj, {"p-plan": {"choice": "×", "resolved": "×"}})
+    assert gold["c01"][5] == "×"
