@@ -146,6 +146,17 @@ def test_index_and_health():
     assert h["programs"] == 40  # 33〜40 は東京都 1 件と横浜市 7 件（11/3 に足した）
 
 
+def test_index_and_health_answer_head_like_get():
+    """「/」と /api/health は HEAD に 200 で答え、本文は送らず、ヘッダは GET と同じ（T-056）。@app.get だけだと 405 だった。"""
+    for path in ["/", "/api/health"]:
+        g, h = client.get(path), client.head(path)
+        assert h.status_code == 200, path
+        assert h.content == b"", path
+        for k in ["content-type", "content-length", "content-security-policy", "x-frame-options"]:
+            assert h.headers.get(k) == g.headers.get(k), (path, k)
+    assert client.head("/").headers["cache-control"] == "no-cache"
+
+
 def test_security_headers_on_every_response():
     """全部の応答に CSP・nosniff・Referrer-Policy・枠に入れさせないヘッダが付く（T-033）。CSP は 'unsafe-inline' を許さず、
     画面の el() は style 属性を setAttribute でなく CSSOM で付ける（属性のままだと CSP で止まり、段階の動きが消える）。"""

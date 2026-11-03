@@ -669,12 +669,14 @@ async def revalidate_pages(request: Request, call_next):
     return response
 
 
-@app.get("/api/health")
+# 「/」と /api/health は HEAD にも答える（T-056）。@app.get だけだと HEAD は 405 になり、`curl -I` や
+# 死活の見張り（HEAD で聞くものがある）が「落ちている」と読む。FileResponse は HEAD では本文を送らない
+@app.api_route("/api/health", methods=["GET", "HEAD"])
 def health() -> dict:
     return {"ok": True, "programs": len(RULES.programs), "engine": CLAUDE.name, "passphrase": bool(PASSPHRASE)}
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def index() -> FileResponse:
     return FileResponse(WEB_DIR / "index.html")
 
