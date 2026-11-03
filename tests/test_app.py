@@ -250,6 +250,42 @@ def test_screen_keeps_aikotoba_header_safe():
     assert len(re.findall(r"^\s+aikotoba = ", js, re.M)) == 2  # 宣言の後に入れる所は、上の 2 か所だけ
 
 
+def test_board_does_not_count_settled_programs_as_not_eligible():
+    # 見立ての帯：済んでいる・申請済み（結果待ち）の制度は「当てはまらない」の列にも、その増減にも数えない（T-022）。
+    # 祖母の見本で「要介護4」と答えると要介護認定が済んでいるになり、「当てはまらない制度 +1」と出て、駄目になった制度があるように読めた
+    import json
+    import re
+    import shutil
+    import subprocess
+    from pathlib import Path
+
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("node が無い")
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    consts = re.search(r"^// ---- いまの見立て ----\n(.*?)^const calm = ", js, re.S | re.M).group(1)  # 帯の列と置き場（DOM を使わない）
+    func = re.search(r"^function changeText\(moved, now\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
+    cases = [["ineligible", "done", "pending"], ["done"], ["pending"], ["ineligible", "ineligible"]]
+    run = f"""{consts}
+{func}
+const keys = BOARD.map(([key]) => key);
+const out = {json.dumps(cases)}.map((sts) => {{
+  const moved = sts.map((status, i) => ({{ id: `p${{i}}`, name: `制度${{i}}`, status }}));
+  const now = Object.fromEntries(moved.map((r) => [r.id, colOf(r.status)]));
+  return changeText(moved, now);
+}});
+console.log(JSON.stringify({{ out, cols: ["ineligible", "done", "pending"].map((s) => keys.includes(colOf(s)) ? colOf(s) : null) }}))"""
+    got = json.loads(subprocess.run([node, "-e", run], capture_output=True, text=True, check=True).stdout)
+    # 当てはまらないの列に置くのは ineligible だけ。済んでいる・結果待ちは列に置かない（列の数に入らない）
+    assert got["cols"] == ["no", None, None]
+    mixed, done, pending, two_no = got["out"]
+    assert mixed.count("当てはまらない制度") == 1 and "当てはまらない制度 +1" in mixed
+    assert "済んでいる制度 +1" in mixed and "申請済み・結果待ちの制度 +1" in mixed
+    assert done == "済んでいる制度 +1"
+    assert pending == "申請済み・結果待ちの制度 +1"
+    assert two_no == "当てはまらない制度 +2"
+
+
 def test_claude_failure_becomes_a_message(monkeypatch):
     from todoku import app as app_mod
     from todoku.claude import ClaudeFailed

@@ -281,11 +281,13 @@ const BOARD = [
   ["unknown", "確かめる", "確かめると使えるかもしれない制度"],
   ["no", "当てはまらない", "当てはまらない制度"],
 ];
-// 済んでいる・申請済み（結果待ち）の制度は、いま手を打たなくてよいので「当てはまらない」の列にたたむ（結果の画面では別に出す）
-const colOf = (status) => (["ineligible", "done", "pending"].includes(status) ? "no" : status);
+// 済んでいる・申請済み（結果待ち）の制度は、いま手を打たなくてよく、当てはまらないのでもないので、帯に札を置かない
+// （列の数にも入れない）。動いたことは変化の文で言い、結果の画面では別に出す（T-022）
+const OFF_BOARD = [["done", "済んでいる制度"], ["pending", "申請済み・結果待ちの制度"]];
+const colOf = (status) => (status === "ineligible" ? "no" : status);
 const calm = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let tiles = new Map();  // 制度の id → 札。同じ札を動かすので作り直さない
-let boardPrev = null;   // 前回の { 制度の id: 列 }
+let boardPrev = null;   // 前回の { 制度の id: 列（帯に置かない制度は状態） }
 
 function clearBoard() {
   tiles = new Map();
@@ -314,14 +316,19 @@ function renderBoard(data) {
   // 2. 札を今の列に並べ直す（順は判定の並び）
   const now = {};
   for (const r of data.results) {
+    now[r.id] = colOf(r.status);
+    const list = box.querySelector(`[data-col="${now[r.id]}"] .tiles`);
     let t = tiles.get(r.id);
+    if (!list) {  // 済んでいる・結果待ち：札を置かない（前に置いていたら外す）
+      if (t) { t.remove(); tiles.delete(r.id); }
+      continue;
+    }
     if (!t) {
       t = el("li", { class: "tile", title: r.name, "aria-label": r.name });
       tiles.set(r.id, t);
     }
     t.className = `tile ${r.status}`;
-    now[r.id] = colOf(r.status);
-    box.querySelector(`[data-col="${now[r.id]}"] .tiles`).append(t);
+    list.append(t);
   }
   // 途中で町田市と分かると、型の制度が結果から外れる。外れた札は残さない（数にも入れない）
   let removed = 0;
@@ -332,6 +339,7 @@ function renderBoard(data) {
     for (const r of moved) {
       const t = tiles.get(r.id);
       const a = first.get(r.id);
+      if (!t || !a) continue;  // 帯から外した札と、帯に戻って作り直した札は滑らせない
       const b = t.getBoundingClientRect();
       t.style.transition = "none";
       t.style.transform = `translate(${a.left - b.left}px, ${a.top - b.top}px)`;
@@ -363,7 +371,7 @@ function renderBoard(data) {
 
 function changeText(moved, now, removed = 0) {
   const parts = [];
-  for (const [key, , say] of BOARD) {
+  for (const [key, say] of [...BOARD.map(([k, , s]) => [k, s]), ...OFF_BOARD]) {
     const names = moved.filter((r) => now[r.id] === key).map((r) => r.name);
     if (!names.length) continue;
     // 上に留まる帯を低く保つため、名前を添えるのは「当てはまる見込み」に入った制度だけ（2 件まで）
