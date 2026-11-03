@@ -171,6 +171,32 @@ def test_rate_limit_counts_each_client_ip(monkeypatch):
     assert send("203.0.113.2") == 200  # 中継が同じでも、別の人は別に数える
 
 
+def test_rate_limit_caps_the_whole_app(monkeypatch):
+    from todoku import app as app_mod
+
+    # Fly-Client-IP を変えながら送ると、接続元ごとの制限は外せる（T-012）。アプリ全体の上限で止める
+    monkeypatch.setattr(app_mod, "RATE_LIMIT_ALL", 2)
+    send = lambda ip, path="/api/consult", body={"text": DEMO}: client.post(
+        path, json=body, headers={"fly-client-ip": ip}).status_code
+    assert [send("203.0.113.1"), send("203.0.113.2"), send("203.0.113.3")] == [200, 200, 429]
+    assert send("203.0.113.4", "/api/summary", {"facts": {}}) == 429  # まとめも Claude を呼ぶので同じ上限
+    assert send("203.0.113.5", "/api/step", {"facts": {}}) == 200  # 規則だけの判定し直しは数えない
+    assert len(app_mod._hits["203.0.113.3"]) == 0  # 全体で断った回は、接続元ごとの数を増やさない
+
+
+def test_wrong_passphrase_does_not_use_up_the_whole_app(monkeypatch):
+    from todoku import app as app_mod
+
+    # 合言葉を間違えた回はアプリ全体に数えない。数えると、合言葉を知らない人が接続元を変えて送るだけで全員を止められる
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    monkeypatch.setattr(app_mod, "RATE_LIMIT_ALL", 1)
+    send = lambda word, ip: client.post(
+        "/api/consult", json={"text": DEMO}, headers={"fly-client-ip": ip, "x-aikotoba": word}).status_code
+    assert [send("himitsy", "203.0.113.1"), send("", "203.0.113.2")] == [401, 401]
+    assert send("himitsu", "203.0.113.3") == 200
+    assert send("himitsu", "203.0.113.4") == 429
+
+
 def test_wrong_passphrase_counts_toward_rate_limit(monkeypatch):
     from todoku import app as app_mod
 

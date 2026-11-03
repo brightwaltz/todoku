@@ -31,6 +31,10 @@ WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
 # Claude を呼ぶ API の回数制限（IP ごと、10 分あたり）
 RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
+# アプリ全体の回数制限（10 分あたり、合言葉が通った回だけ）。接続元を偽って IP ごとの制限を外しても、Claude を呼ぶ回数はこれを超えない。
+# 数えるのはプロセスの中なので、マシン 1 台（uvicorn を 1 つで動かしている）ごとの上限。マシンが N 台なら N 倍になる
+RATE_LIMIT_ALL = int(os.environ.get("TODOKU_RATE_LIMIT_ALL", "60"))
+WINDOW = 600
 # 本文の大きさの上限。相談文は 2000 字まで、事実は 20 ほどなので、ふつうの要求は数 KB
 MAX_BODY = 64 * 1024
 # 事実と読み取りの鍵の数の上限（定義にある事実の数より十分大きく）
@@ -63,6 +67,7 @@ app = FastAPI(title="todoku", docs_url=None, redoc_url=None)
 RULES = rules_mod.load()
 CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
+_hits_all: deque = deque()
 
 
 def load_places() -> dict[str, tuple[str, str]]:
@@ -139,18 +144,30 @@ class SampleIn(In):
 def guard(request: Request, costly: bool) -> None:
     # 合言葉と回数制限は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通す
     if costly:
-        # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える（回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限）
-        ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
+        # 回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限
         now = time.time()
-        hits = _hits[ip]
-        while hits and now - hits[0] > 600:
-            hits.popleft()
+        # 先にアプリ全体を見る。上限に届いていれば、接続元ごとの数も増やさない
+        if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
+            raise HTTPException(429, "しばらく時間をおいてから試してください")
+        # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。値を変えれば外せるので、アプリ全体の上限も置く
+        ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
+        hits = recent(_hits[ip], now)
         if len(hits) >= RATE_LIMIT:
             raise HTTPException(429, "しばらく時間をおいてから試してください")
         # 合言葉を確かめる前に数える。間違えた回も数えないと、合言葉を何度でも試せる
         hits.append(now)
         if PASSPHRASE and not same_word(request.headers.get("x-aikotoba", ""), PASSPHRASE):
             raise HTTPException(401, "合言葉が違います")
+        # アプリ全体は、合言葉が通った回（Claude を呼ぶ回）だけ数える。間違えた回も数えると、
+        # 合言葉を知らない人が接続元を変えながら送るだけで、ほかの全員を止められる
+        _hits_all.append(now)
+
+
+def recent(hits: deque, now: float) -> deque:
+    """WINDOW 秒より前の記録を捨てて、同じ deque を返す。"""
+    while hits and now - hits[0] > WINDOW:
+        hits.popleft()
+    return hits
 
 
 def same_word(sent: str, word: str) -> bool:
