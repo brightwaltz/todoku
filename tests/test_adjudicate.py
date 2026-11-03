@@ -64,6 +64,8 @@ def test_read_input_has_no_rules_text():
     import re
     progs = sources.program_sources()
     for p in rs.programs.values():
+        if p.number not in blind_read.SCORED:   # 33 番以降は正解を作らないので、読み B にも渡さない
+            continue
         text, _ = sources.program_text(p.number, progs, index)
         assert p.summary not in text
         # 資料の見出し（【資料N】の行と URL の行）に、規則の title を書かない（本文に同じ語が出るのはかまわない）
@@ -179,3 +181,7 @@ def test_build_gold_follows_decisions():
 def test_upper_bound_matches_rule_of_three():
     assert abs(adjudicate.upper_bound(0, 40) - 0.072) < 0.003
     assert adjudicate.upper_bound(2, 40) > adjudicate.upper_bound(1, 40) > adjudicate.upper_bound(0, 40)
+
+
+def test_scored_programs_are_1_to_32():
+    assert list(blind_read.SCORED) == list(range(1, 33))

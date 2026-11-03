@@ -42,6 +42,8 @@ PRICES = {
     "claude-opus-5-5": {"in": 4.0, "out": 20.0, "cache_write": 5.0, "cache_read": 0.20},
 }
 
+# 正解を作るのは制度 1〜32 だけ。33 番以降（東京都・神奈川県・横浜市、2026-11-03 夜に追加）は正解がなく採点しない
+SCORED = range(1, 33)
 # 28〜32（町田市以外の人に出す市区町村の型）は、町田市以外に住む事例だけで採点する（先生の判断、2026-11-03）
 LOCAL_TYPES = range(28, 33)
 
@@ -205,7 +207,7 @@ def cmd_read(args) -> None:
     if model not in PRICES:
         sys.exit(f"知らないモデル：{model}")
     progs = program_sources()
-    nums = list(progs) if args.programs == "all" else [int(x) for x in args.programs.split(",")]
+    nums = [n for n in progs if n in SCORED] if args.programs == "all" else [int(x) for x in args.programs.split(",")]
     cases = load_cases()
     index = load_index()
     if args.dry_run:

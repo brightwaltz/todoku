@@ -31,7 +31,7 @@ sys.path.insert(0, str(ROOT / "eval"))
 from todoku import rules as rules_mod  # noqa: E402
 from todoku.engine import DONT_KNOW, F, P, U, evaluate  # noqa: E402
 
-from blind_read import LOCAL_TYPES, cases_in_scope, load_cases  # noqa: E402
+from blind_read import SCORED, cases_in_scope, load_cases  # noqa: E402
 from sources import CACHE  # noqa: E402
 
 OUT = ROOT / "eval" / "out"
@@ -283,7 +283,7 @@ def build_gold(adj: dict, decisions: dict) -> tuple[dict, dict]:
 def write_gold(gold: dict, path: Path) -> None:
     import csv
     rs = rules_mod.load()
-    progs = sorted(rs.programs.values(), key=lambda p: p.number)
+    progs = sorted((p for p in rs.programs.values() if p.number in SCORED), key=lambda p: p.number)
     with path.open("w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f)
         w.writerow(["事例"] + [f"{p.number} {p.name}" for p in progs])
