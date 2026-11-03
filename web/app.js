@@ -68,11 +68,17 @@ function askGate(wrong) {
 }
 
 async function api(path, body) {
-  const res = await fetch(path, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", "X-Aikotoba": aikotoba },
-    body: JSON.stringify(body),
-  });
+  let res;
+  try {
+    res = await fetch(path, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "X-Aikotoba": aikotoba },
+      body: JSON.stringify(body),
+    });
+  } catch (e) {
+    // 通信が切れたとき、ブラウザの英語の文（Failed to fetch・Load failed）を出さない
+    throw new Error("通信できませんでした。電波の届く所で、もう一度試してください");
+  }
   if (res.status === 401) { askGate(aikotoba !== ""); throw new GateError("合言葉を入れると、続けて読み取ります"); }
   if (!res.ok) {
     let msg = "うまくいきませんでした";
