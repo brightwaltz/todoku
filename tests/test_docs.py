@@ -64,3 +64,16 @@ def test_spec_fly_stop_mode_matches_fly_toml():
     assert words[mode] in section
     if mode == "suspend":
         assert "自動停止" not in section
+
+
+def test_docs_and_page_do_not_say_rules_copy_official_pages():
+    """規則が公式ページを「書き写した」と言わないか（11/4 T-026）。
+
+    README の「出典と利用条件」は、町田市・横浜市・東京都福祉局のページの文章は写しておらず、
+    条件は自分の言葉で書いた、としている。役割の表と画面の下の注が「書き写した」と言うと食い違う。
+    """
+    page = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
+    for name, doc in (("README.md", README), ("docs/spec.md", SPEC), ("web/index.html", page)):
+        assert "書き写" not in doc, name
+    row = next(line for line in README.splitlines() if line.startswith("| 申請先・持ち物・金額・出典 |"))
+    assert "自分の言葉で書き" in row and "確認日" in row and "出典" in row.split("|")[2]
