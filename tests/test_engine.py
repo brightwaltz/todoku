@@ -174,3 +174,85 @@ def test_ask_at_stays_unknown_and_is_never_asked(tmp_path):
 def test_local_type_without_ask_at_is_rejected(tmp_path):
     with pytest.raises(rules_mod.RuleError, match="ask_at"):
         _with_local(tmp_path, "    - {fact: alone, is: true, label: ひとり暮らし}")
+
+
+def test_statuses_matches_evaluate_on_real_rules():
+    """statuses は evaluate と同じ状態を返す（T-047。問いの値打ちを数える側は、葉を作らない別の道で速くした）。
+
+    本物の規則で、事例 30 件の答えと見本 4 件の読み取りから、事実を抜いたり「わからない」や別の値に替えたりした組を試す。
+    """
+    import json
+    import random
+
+    import yaml
+
+    root = Path(__file__).resolve().parents[1]
+    rs = rules_mod.load()
+    cases = yaml.safe_load((root / "eval" / "cases" / "cases.yaml").read_text(encoding="utf-8"))
+    cases = cases["cases"] if isinstance(cases, dict) else cases
+    starts = [{k: v for k, v in (c.get("answers") or {}).items() if k in rs.facts} for c in cases]
+    for s in json.loads((root / "web" / "samples.json").read_text(encoding="utf-8")):
+        # 保存した読み取りは Claude の返した形のまま（はい・いいえは "true"・"false" の文字）
+        starts.append({e["fact"]: {"true": True, "false": False}.get(e["value"], e["value"])
+                       for e in s["reading"]["facts"] if e["fact"] in rs.facts})
+    starts.append({})
+    assert len(starts) >= 35 and sum(1 for s in starts if s) >= 34
+    rng = random.Random(47)
+    tried = seen = 0
+    states = set()
+    for start in starts:
+        for _ in range(40):
+            facts = {}
+            for fid, v in start.items():
+                roll = rng.random()
+                if roll < 0.2:
+                    continue
+                facts[fid] = DONT_KNOW if roll < 0.3 else rng.choice(rs.facts[fid].values()) if roll < 0.45 else v
+            for fid in rng.sample(sorted(rs.facts), 3):  # 事例にない事実も、たまに入れる
+                facts.setdefault(fid, rng.choice(rs.facts[fid].values()))
+            full = evaluate(rs, facts)
+            got = statuses(rs, facts)
+            assert list(got.items()) == [(pid, r.status) for pid, r in full.items()], facts
+            tried += 1
+            states.update(got.values())
+    assert tried == len(starts) * 40
+    # 6 つの状態がどれも出る組を試している（どれかの道を通らないまま一致しても意味がないため）
+    assert states == {"done", "pending", "eligible", "after_prereq", "unknown", "ineligible"}
+
+
+NOT_PROGRAM = """id: not_program
+number: 8
+name: not と any と step の試験
+level: national
+kind: review
+summary: 試験用
+eligibility:
+  any:
+    - all:
+        - not: {any: [{fact: alone, is: true, label: ひとり暮らし}, {fact: level, eq: high, label: 認定が重い}]}
+        - {fact: age65, is: true, label: 65歳以上}
+    - all:
+        - {prereq: needs_level, label: 先に認定が要る給付}
+        - {step: 医師に書いてもらう, label: 証明書}
+apply: {where: 市役所}
+sources:
+  - {url: "https://example.go.jp/n", publisher: 国, license: PDL1.0, checked: 2026-11-03}
+"""
+
+
+def test_statuses_matches_evaluate_with_not(tmp_path):
+    """本物の規則には not がないので、試験用の規則に not・any・step を使う制度を足して、事実の組を全部試す（T-047）。"""
+    import itertools
+    import shutil
+
+    shutil.copytree(FIXTURE, tmp_path / "rules")
+    (tmp_path / "rules" / "programs" / "not_program.yaml").write_text(NOT_PROGRAM, encoding="utf-8")
+    rs = rules_mod.load(tmp_path / "rules")
+    choices = {fid: [None, DONT_KNOW, *rs.facts[fid].values()] for fid in rs.facts}
+    seen = set()
+    for combo in itertools.product(*choices.values()):
+        facts = {fid: v for fid, v in zip(choices, combo) if v is not None}
+        got = statuses(rs, facts)
+        assert list(got.items()) == [(pid, r.status) for pid, r in evaluate(rs, facts).items()], facts
+        seen.add(got["not_program"])
+    assert seen == {"eligible", "after_prereq", "unknown", "ineligible"}
