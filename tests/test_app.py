@@ -334,7 +334,36 @@ def test_machida_hides_the_types():
     assert not [r for r in machida["results"] if r["id"].startswith("local-")]
     assert sum(machida["counts"].values()) == len(machida["results"]) == 27  # 札・数・一覧がそろう
     assert any(r["id"] == "local-kaigo-yohin" for r in yokohama["results"])
-    assert len(yokohama["results"]) == 32
+    # 町田市以外では町田市の制度 10 件を出さない（11/3 の判断 2）ので、32 件から 22 件になった
+    assert len(yokohama["results"]) == 22
+
+
+def test_other_cities_hide_machida_programs():
+    # 町田市以外と分かったら、住所だけで外れる町田市の制度を「当てはまらない」に並べず、町田市なら判定すると 1 行で伝える
+    facts = {"age_band": "age_75_plus", "residence": "home", "uses_diapers": True, "care_level": "care4"}
+    def step(code):
+        return client.post("/api/step", json={"facts": facts, "municipality": code}).json()
+    yokohama, machida, nowhere = step("141003"), step("132098"), step("")
+    assert not [r for r in yokohama["results"] if r["id"].startswith("machida-")]
+    assert yokohama["hidden_machida"] == 10
+    assert sum(yokohama["counts"].values()) == len(yokohama["results"])
+    assert machida["hidden_machida"] == 0 and any(r["id"].startswith("machida-") for r in machida["results"])
+    # 住所が分からない間は今までどおり、町田市の制度も型も出す
+    assert nowhere["hidden_machida"] == 0 and len(nowhere["results"]) == 32
+    from pathlib import Path
+    script = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    assert "data.hidden_machida" in script
+
+
+def test_unknown_results_are_closest_first():
+    # 確かめるは、分からない条件が少ない順、次に当てはまった条件が多い順（11/3 の判断 1）。祖母の相談の紙おむつが先頭に来る
+    sample = client.post("/api/sample", json={"id": "kaigo4-sobo"}).json()  # 見本を 3 問に答えた後（要介護4・75歳以上・自宅）
+    facts = {**sample["facts"], "care_level": "care4", "age_band": "age_75_plus", "residence": "home"}
+    data = client.post("/api/step", json={"facts": facts, "municipality": sample["place"]["code"]}).json()
+    unknown = [r for r in data["results"] if r["status"] == "unknown"]
+    keys = [(sum(x["state"] == "U" for x in r["reasons"]), -sum(x["state"] == "T" for x in r["reasons"])) for r in unknown]
+    assert keys == sorted(keys)
+    assert unknown[0]["id"] == "machida-kami-omutsu"
 
 
 def test_status_names_are_the_result_headings():

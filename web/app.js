@@ -509,7 +509,7 @@ function renderResult(data) {
     if (!items.length) continue;
     groups.append(el("h2", { class: "group-title" }, title, el("span", { class: "n" }, `${items.length} 件`)));
     groups.append(el("p", { class: "note" }, hint));
-    // 確かめると使えるかもしれない制度は多くなりやすいので、重みの大きい順に 5 件だけ先に出す
+    // 確かめると使えるかもしれない制度は多くなりやすいので、あと少し確かめれば決まる順に 5 件だけ先に出す（順は step_view）
     const first = status === "unknown" ? items.slice(0, 5) : items;
     for (const r of first) groups.append(programCard(r));
     if (first.length < items.length) {
@@ -524,6 +524,9 @@ function renderResult(data) {
   $("ineligible-list").replaceChildren(...no.map((r) => el("li", {},
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
+  // 町田市以外の人には町田市の制度を出さないので、町田市なら判定することだけを 1 行で伝える
+  $("other-city").textContent = data.hidden_machida ? `町田市にお住まいなら、市の制度 ${data.hidden_machida} 件も判定します。` : "";
+  show("other-city", data.hidden_machida > 0);
   show("result");
   if (!again) $("result").scrollIntoView({ behavior: "smooth", block: "start" });
   // まとめが扱う制度が変わったときだけ書き直す（確かめても判定が同じなら、Claude を呼ばない）

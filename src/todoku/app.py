@@ -22,7 +22,7 @@ from . import rules as rules_mod
 import anthropic
 
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
-from .engine import DONT_KNOW, Result, evaluate, known, statuses, with_implied
+from .engine import DONT_KNOW, T, U, Result, evaluate, known, statuses, with_implied
 from .questions import MAX_QUESTIONS, Question, next_question, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
@@ -268,9 +268,25 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         # 町田市では市の制度を一つずつ判定するので、市区町村の型は出さない（判定は変えない）。
         # 「当てはまらない」に並ぶと、町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めてしまうため
         results = {pid: r for pid, r in results.items() if r.program.level != "local"}
+    hidden_machida = 0
+    if facts.get("lives_in_machida") is False:
+        # 町田市以外と分かったら、町田市の制度は出さない（町田市で型を出さないのと同じ扱い。判定は変えない）。
+        # 「当てはまらない」に住所だけで外れた 10 件が並ぶため（11/3 の判断 2）。住所が分からない間は出す
+        hidden_machida = sum(1 for r in results.values() if r.program.level == "machida")
+        results = {pid: r for pid, r in results.items() if r.program.level != "machida"}
     order = {"eligible": 0, "pending": 1, "after_prereq": 2, "unknown": 3, "ineligible": 4, "done": 5}
     pending = frozenset(pid for pid, r in results.items() if r.status == "pending")
-    ranked = sorted(results.values(), key=lambda r: (order[r.status], -RULES.weight(r.program.id), r.program.number))
+
+    def rank(r: Result) -> tuple:
+        # 確かめるは、あと少し確かめれば決まる制度から：分からない条件が少ない順、次に当てはまった条件が多い順（11/3 の判断 1）。
+        # 重い順だけだと、祖母の相談で本人が書いた紙おむつの支給が、閉じた 18 件に隠れたため
+        if r.status != "unknown":
+            return (order[r.status], 0, 0, -RULES.weight(r.program.id), r.program.number)
+        unknown = sum(1 for leaf in r.leaves if leaf.state == U)
+        met = sum(1 for leaf in r.leaves if leaf.state == T)
+        return (order[r.status], unknown, -met, -RULES.weight(r.program.id), r.program.number)
+
+    ranked = sorted(results.values(), key=rank)
     implied = with_implied(RULES, facts)
     question = question_view(facts, suggestions, subject, asked)
     return {
@@ -281,6 +297,7 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "known": [fact_view(f, v) for f, v in implied.items() if f in RULES.facts],
         "results": [result_view(r, facts, subject, municipality, pending) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
+        "hidden_machida": hidden_machida,
         "place": place_view(municipality),
         "center_search": center_search(municipality),
     }
