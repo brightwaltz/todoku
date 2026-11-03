@@ -147,7 +147,7 @@
 
 ```bash
 uv sync
-uv run pytest                      # 判定器・規則・API のテスト
+uv run pytest                      # 判定器・規則・API のテスト（公式資料を eval/sources.py fetch で取る前は 1 件を飛ばす）
 TODOKU_FAKE_CLAUDE=1 uv run uvicorn todoku.app:app --port 8000   # 鍵なしの試験モード（キーワードで読み取る）
 ANTHROPIC_API_KEY=... TODOKU_PASSPHRASE=... uv run uvicorn todoku.app:app --port 8000  # Claude で読み取る（合言葉も要る）
 ANTHROPIC_API_KEY=... uv run python scripts/first_call.py           # デモの相談文を Claude で 1 回だけ読み取る（トークン数も出す）
@@ -193,7 +193,7 @@ export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所の
 作者がまだ裁いていないので、正解は暫定の表です。読み A と読み B が一致した 655 マス（○ 144・× 495・？ 16）だけを正解にし、食い違った 165 マス（決まりの問い 5 件・論点 28 件）は空欄にしました。一致したマスからの抜き取り 40 マスも、まだ付け直していません。事例は 30 件、採点したのは ？ を除く 639 マスです。暫定の表は `eval/adjudicate.py gold` の 3 つめの引数に出力先を渡して `eval/out/` に作り、リポジトリには入れていません。
 
 - **規則だけ**：○ 144 マスをすべて案内し、× 495 マスで案内した数は 0 でした。ただし、正解が「規則と目隠しの Claude が一致したマス」だけなので、この数は定義上こうなります。規則の正しさを測った数ではありません。突き合わせの材料を作った 2026-11-03 21:00 から今までの規則の変更で、655 マスの判定が 1 つも動いていないことを確かめた数です。
-- **窓口全体**：相談文の読み取りには、`eval/compare_models.py` が 2026-11-03 01:54 に保存した Opus 5.5 の読み取りを使いました（`eval/run_eval.py rules pipeline --reads …`。API は呼び直していません）。そのときの指示は町田市向けの書き出しで、今の全国向けの指示とは違います。認定の区分の確信を「低」に落とす扱い（`ALWAYS_CONFIRM`）は、今の窓口と同じく当てました。
+- **窓口全体**：相談文の読み取りには、`eval/compare_models.py` が 2026-11-03 01:54 に保存した Opus 5.5 の読み取り（暫定の表と同じく `eval/out/` にあり、リポジトリには入れていません）を使いました（`eval/run_eval.py rules pipeline --reads …`。API は呼び直していません）。そのときの指示は町田市向けの書き出しで、今の全国向けの指示とは違います。認定の区分の確信を「低」に落とす扱い（`ALWAYS_CONFIRM`）は、今の窓口と同じく当てました。
 - **Claude だけ**：API を呼ぶので、まだ流していません。
 
 | 聞き返し | ○ 144 のうち案内した | ○ 144 のうち示した | × 495 のうち案内した | × 495 のうち示した |
