@@ -81,7 +81,7 @@ function focusOn(node) {
 function askGate(wrong) {
   $("gate-msg").textContent = wrong
     ? "合言葉が違います。入れ直してください。"
-    : "ご自分の相談を送るには合言葉が要ります。下の見本は合言葉なしで見られます。";
+    : "ご自分の相談を送るには合言葉が要ります。上の見本は合言葉なしで見られます。";
   show("gate");
   $("gate").scrollIntoView({ block: "start" });
   $("aikotoba").focus();

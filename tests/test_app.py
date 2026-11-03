@@ -1109,3 +1109,24 @@ def test_one_phone_number_per_paragraph():
     assert re.search(r'^function phoneViews\(phone\) \{\n\s+return phone\.split\("／"\)\.map\(\(part\) => el\("p", \{\}, "電話：", telLinks\(part\)\)\);', js, re.M)
     assert "...phoneViews(r.apply.phone)" in js
     assert "telLinks(r.apply.phone)" not in js
+
+
+def test_gate_sits_below_samples_and_is_not_the_loudest_button():
+    # 最初の画面で、合言葉の欄を見本より上の、いちばん目立つ所に出さない（T-044）。
+    # 審査などで合言葉を持たない人は見本しか通れないので、見本のボタンを合言葉の欄より上に置き、
+    # 塗りの大きいボタン（.primary）を見本より上に置かない。欄は相談の文の前に残す（書き始める前に要ると分かるように）。
+    # 位置は 1280・390 の画面でも測った（$OPS/shots/T-044-*）。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    html = (root / "index.html").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+
+    at = {k: html.index(f'id="{k}"') for k in ("input", "samples", "sample-list", "gate", "text", "send")}
+    assert at["input"] < at["samples"] < at["sample-list"] < at["gate"] < at["text"] < at["send"]
+    gate_ok = re.search(r'<button[^>]*id="gate-ok"[^>]*>', html).group(0)
+    assert "primary" not in gate_ok
+    assert 'class="primary"' not in html[: at["samples"]]
+    # 見本は合言葉の欄より上にあるので、「下の見本」と書かない
+    assert "下の見本" not in html and "下の見本" not in js

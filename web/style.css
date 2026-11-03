@@ -67,6 +67,16 @@ select:disabled { color: var(--muted); background: var(--soft); }
 #samples { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--line); }
 #samples .note { margin-top: 8px; }
 #samples .examples { margin-top: 6px; }
+/* 合言葉の欄（T-044）。見本より下・相談の文の前に置き、塗りのボタンにしない（審査などで合言葉を持たない人の目を見本へ向ける） */
+.gate { margin-top: 18px; padding: 12px 14px; background: var(--soft); border-radius: 10px; }
+.gate label { display: block; font-weight: 700; font-size: 16px; }
+.gate .note { margin: 2px 0 8px; }
+.gate-row { display: flex; gap: 8px; align-items: stretch; }
+.gate-row input { flex: 1 1 auto; min-width: 0; }
+.gate-ok {
+  flex: 0 0 auto; min-height: 48px; padding: 6px 14px; border: 2px solid var(--accent); border-radius: 10px;
+  background: #fff; color: var(--accent); font-size: 16px; font-weight: 700;
+}
 .note { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
 .facts { list-style: none; padding: 0; margin: 0; }
 .facts li { padding: 6px 0; border-bottom: 1px dashed var(--line); }

@@ -22,13 +22,6 @@
   <!-- 読み上げに知らせる領域。hidden を外すのと同時に出す領域は読まれないことがあるので、いつも置いておく（T-030） -->
   <p id="status" class="sr-only" role="status"></p>
 
-  <section id="gate" class="card" hidden>
-    <label for="aikotoba">合言葉</label>
-    <p class="note" id="gate-msg">いまは試しに動かしているため、ご自分の相談を送るには合言葉が要ります。下の見本は、合言葉なしで最後まで試せます。</p>
-    <input id="aikotoba" type="password" autocomplete="off">
-    <button class="primary" id="gate-ok">はじめる</button>
-  </section>
-
   <section id="input" class="card">
     <h2>困っていることを教えてください</h2>
     <div id="samples" hidden>
@@ -57,6 +50,15 @@
       <div class="chips" id="pick-worry"></div>
     </fieldset>
 
+    <!-- 合言葉の欄は、見本より下・自分で書く欄の前に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044） -->
+    <div id="gate" class="gate" hidden>
+      <label for="aikotoba">合言葉</label>
+      <p class="note" id="gate-msg">いまは試しに動かしているため、ご自分の相談を送るには合言葉が要ります。上の見本は、合言葉なしで最後まで試せます。</p>
+      <div class="gate-row">
+        <input id="aikotoba" type="password" autocomplete="off">
+        <button type="button" class="gate-ok" id="gate-ok">合言葉を使う</button>
+      </div>
+    </div>
     <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
     <textarea id="text" rows="5" maxlength="2000" placeholder="例：町田市に住む母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
     <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
