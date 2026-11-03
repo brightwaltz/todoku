@@ -20,6 +20,7 @@ from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from starlette.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field, model_validator
 
 from . import rules as rules_mod
@@ -626,6 +627,29 @@ class BodyLimit:
 
 
 app.add_middleware(BodyLimit)
+
+
+class GZipButIndex:
+    """応答を gzip で縮めて返す（受け手が Accept-Encoding: gzip のとき）。ただし「/」は縮めない。
+
+    /api/sample と、答えるたびの /api/step は 1 回 約 84KB（40 制度の申請先・持ち物・出典を毎回返す）で、
+    縮めないまま送っていた（T-061）。level 1 で 84KB → 23KB、手元で 0.42ms（/api/step の往復は 3.6ms）。
+    level 6 でも 18KB にしかならず 1.2ms かかるので、CPU の少ない 1 にした。app.js・municipalities.json も 3 分の 1 になる。
+    「/」を外すのは、HEAD / と GET / のヘッダを同じに保つため（T-056。HEAD は本文がなく縮まらない）。index.html は 7KB。
+    応答に秘密（合言葉・鍵）は入らないので、縮めた長さから秘密を探る攻撃（BREACH）の的はない。
+    """
+
+    def __init__(self, app):
+        self.app = app
+        self.gzip = GZipMiddleware(app, minimum_size=500, compresslevel=1)
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] == "http" and scope["path"] != "/":
+            return await self.gzip(scope, receive, send)
+        return await self.app(scope, receive, send)
+
+
+app.add_middleware(GZipButIndex)
 
 
 @app.exception_handler(RequestValidationError)

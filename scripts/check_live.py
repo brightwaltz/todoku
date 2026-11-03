@@ -10,6 +10,7 @@
 - /api/health：本物の Claude で動いていて（engine が claude）、合言葉が設定されている（fly secrets の設定し忘れがない）
 - 画面：GET / と HEAD /・HEAD /api/health が 200、安全のヘッダ（CSP など 4 つ）と Cache-Control: no-cache、タブのアイコン
 - 見本：全部を、どの問いも 1 つ目の選択肢で答えて結果まで通す（/api/sample と /api/step。審査の人が合言葉なしで通る道）
+- 縮めて返す：Accept-Encoding: gzip を付けた /api/sample が gzip で返り、解くと JSON になる（T-061）
 - 合言葉の口：合言葉なしの /api/consult が 401 で断られる（503 なら合言葉の設定し忘れ、200 なら合言葉なしで開いている）
 
 合言葉は受け取らないし送らない。/api/summary（合言葉があると Claude を呼ぶ）には送らない。
@@ -20,6 +21,7 @@ HEAD・安全のヘッダ・タブのアイコンは、2026-11-04 より前の�
 from __future__ import annotations
 
 import argparse
+import gzip
 import json
 import sys
 import urllib.error
@@ -46,6 +48,25 @@ def call(base: str, method: str, path: str, body: dict | None = None) -> tuple[i
         except json.JSONDecodeError:
             payload = raw
         return res.status, headers, payload
+
+
+def gzipped_sample(base: str, sample_id: str) -> tuple[bool, str]:
+    """Accept-Encoding: gzip で /api/sample を引き、gzip で返って解くと JSON になるか。call() は縮めずに受け取る。"""
+    req = urllib.request.Request(base + "/api/sample", data=json.dumps({"id": sample_id}).encode(), method="POST",
+                                 headers={"Content-Type": "application/json", "Accept-Encoding": "gzip"})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as res:
+            raw, encoding = res.read(), res.headers.get("Content-Encoding", "")
+    except urllib.error.HTTPError as e:
+        return False, f"{e.code}"
+    if encoding != "gzip":
+        return False, f"Content-Encoding が「{encoding}」・{len(raw)} バイト"
+    try:
+        size = len(gzip.decompress(raw))
+        json.loads(gzip.decompress(raw))
+    except (OSError, ValueError) as e:
+        return False, f"解けない: {e}"
+    return True, f"{size} → {len(raw)} バイト"
 
 
 def walk(base: str, start: dict) -> tuple[int, list[dict]]:
@@ -109,6 +130,10 @@ def run(base: str, allow_fake: bool = False) -> list[tuple[str, bool, str]]:
     status, _, samples = call(base, "GET", "/api/samples")
     samples = samples if isinstance(samples, list) else []
     check("見本の一覧", status == 200 and bool(samples), f"{status} {len(samples)} 件")
+    ready = [s for s in samples if s.get("ready")]
+    if ready:
+        ok, detail = gzipped_sample(base, ready[0]["id"])
+        check("/api/sample を gzip で縮めて返す" + NEW_IN_DEV, ok, detail)
     for s in samples:
         name = f"見本「{s.get('label', s.get('id'))}」を結果まで通す"
         if not s.get("ready"):

@@ -67,6 +67,7 @@ def test_all_checks_pass_on_local_server(server):
     samples = (ROOT / "web" / "samples.json").read_text(encoding="utf-8")
     assert sum(1 for l in lines if l.startswith("OK  見本「")) == samples.count('"reading"') >= 4, res.stdout
     assert any(l.startswith("OK  合言葉なしの /api/consult が 401") for l in lines), res.stdout
+    assert any(l.startswith("OK  /api/sample を gzip で縮めて返す") for l in lines), res.stdout
 
 
 def test_fake_engine_is_ng_without_allow_fake(server):

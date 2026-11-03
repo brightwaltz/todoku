@@ -157,6 +157,25 @@ def test_index_and_health_answer_head_like_get():
     assert client.head("/").headers["cache-control"] == "no-cache"
 
 
+def test_large_responses_are_gzipped_but_index_is_not():
+    """/api/sample・/api/step と画面のファイルは、Accept-Encoding: gzip なら縮めて返す（T-061。1 回 約 84KB を縮めずに送っていた）。
+    「/」は HEAD と GET のヘッダを同じに保つため縮めない（T-056）。小さい /api/health も縮めない。"""
+    gz, plain = {"accept-encoding": "gzip"}, {"accept-encoding": "identity"}
+    a = client.post("/api/sample", json={"id": "taiin-haha"}, headers=gz)
+    b = client.post("/api/sample", json={"id": "taiin-haha"}, headers=plain)
+    assert a.headers.get("content-encoding") == "gzip" and "content-encoding" not in b.headers
+    assert int(a.headers["content-length"]) * 3 < int(b.headers["content-length"])
+    assert a.json() == b.json()  # httpx が解いた中身は、縮めないときと同じ
+    assert "content-security-policy" in a.headers and a.headers.get("x-frame-options") == "DENY"
+    body = {k: a.json()[k] for k in ("facts", "suggestions", "subject")} | {"asked": 0, "municipality": ""}
+    assert client.post("/api/step", json=body, headers=gz).headers.get("content-encoding") == "gzip"
+    for path in ["/static/app.js", "/static/municipalities.json"]:
+        r = client.get(path, headers=gz)
+        assert r.headers.get("content-encoding") == "gzip" and r.headers["cache-control"] == "no-cache", path
+    for path in ["/", "/api/health"]:
+        assert "content-encoding" not in client.get(path, headers=gz).headers, path
+
+
 def test_security_headers_on_every_response():
     """全部の応答に CSP・nosniff・Referrer-Policy・枠に入れさせないヘッダが付く（T-033）。CSP は 'unsafe-inline' を許さず、
     画面の el() は style 属性を setAttribute でなく CSSOM で付ける（属性のままだと CSP で止まり、段階の動きが消える）。"""
