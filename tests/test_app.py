@@ -780,3 +780,36 @@ def test_care_level_question_names_the_person():
                                            "asked": 1}).json()
     missing = [m["question"] for r in after["results"] for m in r["missing"] if m["fact"] == "care_level"]
     assert missing and all(m.startswith("お母さまは、") for m in missing)
+
+
+# ご本人のことを聞くのに主語が無かった問い（T-025）。介護をする家族に聞く問い（caregiver_employee・fire_risk）と、
+# 家の工事や福祉用具を考えているかの問いは、聞く相手が家族なので主語を書かない
+PERSON_FACTS = ("uses_care_services", "shortstay_or_facility", "high_medical_costs",
+                "hearing_certifiable", "incontinence_bedding")
+
+
+def test_person_questions_name_the_person():
+    for fid in PERSON_FACTS:
+        assert rules_mod.load().facts[fid].question.startswith("ご本人は、"), fid
+    # 見本「退院した母」のデモの道：認定を「受けていない」と答えると、2 問目は医療費の問いで、相談文の呼び方で出る
+    start = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    assert start["subject"] == "お母さま" and start["question"]["fact"] == "care_level"
+    second = client.post("/api/step", json={"facts": {**start["facts"], "care_level": "none"},
+                                            "suggestions": start["suggestions"], "subject": start["subject"],
+                                            "asked": 1}).json()["question"]
+    assert second["fact"] == "high_medical_costs"
+    assert second["text"].startswith("お母さまは、") and "ご本人" not in second["text"]
+    # 「わからない」と答え続けた後の「まだ確かめていないこと」にも、5 問とも同じ呼び方で出る
+    facts = {**start["facts"], "care_level": DONT_KNOW}
+    data = client.post("/api/step", json={"facts": facts, "suggestions": start["suggestions"],
+                                          "subject": start["subject"], "asked": 1}).json()
+    asked = 1
+    while data.get("question") and asked < 30:
+        asked += 1
+        facts = {**facts, data["question"]["fact"]: DONT_KNOW}
+        data = client.post("/api/step", json={"facts": facts, "suggestions": start["suggestions"],
+                                              "subject": start["subject"], "asked": asked}).json()
+    assert not data.get("question")
+    missing = {m["fact"]: m["question"] for r in data["results"] for m in r["missing"] if m["fact"] in PERSON_FACTS}
+    assert set(missing) == set(PERSON_FACTS)
+    assert all(t.startswith("お母さまは、") and "ご本人" not in t for t in missing.values()), missing

@@ -109,14 +109,14 @@ on_welfare:
 uses_care_services:
   name: 介護保険のサービスの利用
   type: bool
-  question: 介護保険のサービス（デイサービス、ヘルパーなど）を使っていますか？使う予定でもかまいません。
+  question: ご本人は、介護保険のサービス（デイサービス、ヘルパーなど）を使っていますか？使う予定でもかまいません。
   check: 担当のケアマネジャーが作る「サービス利用票」に、使っているサービスが書かれています。
   false_when: {fact: care_level, in: [none, applying, jiritsu]}
 
 high_medical_costs:
   name: 医療費の自己負担が多い
   type: bool
-  question: 入院や通院で、1か月の医療費の自己負担が高くなった（なりそう）ですか？
+  question: ご本人は、入院や通院で、1か月の医療費の自己負担が高くなった（なりそう）ですか？
   check: 病院の領収書の「負担額」の欄を月ごとに足すと分かります。
 
 caregiver_employee:
@@ -177,7 +177,7 @@ chronic_attack_risk:
 incontinence_bedding:
   name: 失禁で布団を干せない
   type: bool
-  question: 失禁で布団を清潔に保てず、干すこともできない状態ですか？
+  question: ご本人は、失禁で布団を清潔に保てず、干すこともできない状態ですか？
   check: ご家族が見ている様子でかまいません。
 
 uses_diapers:
@@ -207,5 +207,5 @@ hearing_difficulty:
 hearing_certifiable:
   name: 聴力が身体障害者手帳の基準に当たると言われた
   type: bool
-  question: 耳鼻咽喉科の聴力検査で、身体障害者手帳の聴覚障害の基準に当たる（両耳とも70デシベル以上など）と言われたことがありますか？
+  question: ご本人は、耳鼻咽喉科の聴力検査で、身体障害者手帳の聴覚障害の基準に当たる（両耳とも70デシベル以上など）と言われたことがありますか？
   check: 基準は、両耳とも70デシベル以上、片耳90デシベル以上でもう片耳50デシベル以上、言葉の聞き取り（最良の語音明瞭度）が50%以下のどれかです。耳鼻咽喉科で聴力を測ると分かり、手帳の診断書は都道府県知事の定める医師が書きます。
