@@ -854,3 +854,26 @@ def test_unread_facts_can_be_answered_on_the_result():
     again = client.post("/api/step", json={**body, "facts": {**facts, "on_welfare": False}}).json()
     assert again["question"] is None
     assert "on_welfare" not in [q["fact"] for q in again["unread"]]
+
+
+def test_tap_targets_are_at_least_44px():
+    # 高齢の方がスマホで押し違えないよう、押す所は高さ 44px 以上にする（T-029。実際の大きさはブラウザで測った）。
+    # 選ぶ札・文字のボタン・畳む見出し・ページ下のリンクは min-height か上下の余白で、文の中の電話番号は
+    # 行の高さを変えずに ::after で押せる範囲だけを上下に広げる。大きいボタン（.primary など）は元から 56px。
+    import re
+    from pathlib import Path
+
+    css = (Path(__file__).resolve().parents[1] / "web" / "style.css").read_text(encoding="utf-8")
+
+    def rule(selector):
+        m = re.search(r"^" + re.escape(selector) + r" \{([^}]*)\}", css, re.M)
+        assert m, selector
+        return m.group(1)
+
+    for sel in (".chip", ".link", ".foot a", ".primary, .secondary, .option", "select"):
+        h = re.search(r"min-height: (\d+)px", rule(sel))
+        assert h and int(h.group(1)) >= 44, sel
+    # 「確かめ方」などの畳む見出し：文字 15px × 行の高さ 1.75 ＋ 上下の余白 9px で 44px
+    assert "padding: 9px 0" in rule("details summary")
+    assert "position: relative" in rule(".tel")
+    assert "inset: -14px 0" in rule(".tel::after")
