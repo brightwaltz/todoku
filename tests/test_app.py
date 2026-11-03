@@ -156,6 +156,33 @@ def test_rate_limit_counts_each_client_ip(monkeypatch):
     assert send("203.0.113.2") == 200  # 中継が同じでも、別の人は別に数える
 
 
+def test_wrong_passphrase_counts_toward_rate_limit(monkeypatch):
+    from todoku import app as app_mod
+
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    monkeypatch.setattr(app_mod, "RATE_LIMIT", 3)
+    monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
+    send = lambda word, ip="203.0.113.1": client.post(
+        "/api/consult", json={"text": DEMO}, headers={"fly-client-ip": ip, "x-aikotoba": word}).status_code
+    # 間違えた回も数える。数えないと、合言葉を何度でも試せる（回数制限は手間を増やすだけの対策）
+    assert [send("himitsy"), send("himits"), send("")] == [401, 401, 401]
+    assert send("himitsu") == 429  # 上限に届いたら、合っていても断る
+    assert send("himitsu", ip="203.0.113.2") == 200  # 別の人は別に数える
+
+
+def test_passphrase_compare_takes_any_bytes(monkeypatch):
+    from todoku import app as app_mod
+
+    monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
+    # 中継は送られたバイトをそのまま渡し、Starlette は latin-1 で文字にする。ASCII でない文字でも 500 にしない
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": "ひみつ".encode()}).status_code == 401
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": b"himitsu"}).status_code == 200
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "ひみつ")  # 合言葉が日本語でも、UTF-8 のバイトで送れば通る
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": "ひみつ".encode()}).status_code == 200
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": "ひみ".encode()}).status_code == 401
+
+
 def test_claude_failure_becomes_a_message(monkeypatch):
     from todoku import app as app_mod
     from todoku.claude import ClaudeFailed

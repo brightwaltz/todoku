@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import hmac
 import json
 import os
 import time
@@ -138,8 +139,6 @@ class SampleIn(In):
 def guard(request: Request, costly: bool) -> None:
     # 合言葉と回数制限は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通す
     if costly:
-        if PASSPHRASE and request.headers.get("x-aikotoba") != PASSPHRASE:
-            raise HTTPException(401, "合言葉が違います")
         # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える（回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限）
         ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
         now = time.time()
@@ -148,7 +147,20 @@ def guard(request: Request, costly: bool) -> None:
             hits.popleft()
         if len(hits) >= RATE_LIMIT:
             raise HTTPException(429, "しばらく時間をおいてから試してください")
+        # 合言葉を確かめる前に数える。間違えた回も数えないと、合言葉を何度でも試せる
         hits.append(now)
+        if PASSPHRASE and not same_word(request.headers.get("x-aikotoba", ""), PASSPHRASE):
+            raise HTTPException(401, "合言葉が違います")
+
+
+def same_word(sent: str, word: str) -> bool:
+    """合言葉を、かかる時間が中身によらない比べ方で比べる（手間を増やすだけの対策の一つ）。
+
+    Starlette はヘッダを latin-1 で文字にするので、latin-1 で送られたバイトに戻し、合言葉の UTF-8 と比べる。
+    文字のまま compare_digest に渡すと、ASCII でない文字で TypeError（500）になる。
+    環境変数の読めないバイトは os.environ が surrogateescape で文字にするので、同じ方法でバイトに戻す。
+    """
+    return hmac.compare_digest(sent.encode("latin-1"), word.encode("utf-8", "surrogateescape"))
 
 
 def clean_facts(raw: dict[str, Any]) -> dict[str, Any]:
