@@ -77,3 +77,18 @@ def test_docs_and_page_do_not_say_rules_copy_official_pages():
         assert "書き写" not in doc, name
     row = next(line for line in README.splitlines() if line.startswith("| 申請先・持ち物・金額・出典 |"))
     assert "自分の言葉で書き" in row and "確認日" in row and "出典" in row.split("|")[2]
+
+
+def test_pyproject_has_no_uv_init_leftovers():
+    """pyproject.toml に uv init の雛形が残っていないか（11/4 T-058）。
+
+    説明が "Add your description here" のままで、`uv run todoku` は
+    "Hello from todoku!" を出すだけだった。説明は README の書き出しと同じ文にする。
+    """
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    assert project["description"] != "Add your description here"
+    lead = README.split("\n\n", 2)[1].replace("**", "")
+    assert project["description"] in lead
+    for target in project.get("scripts", {}).values():
+        module, _, func = target.partition(":")
+        assert callable(getattr(__import__(module, fromlist=[func]), func))

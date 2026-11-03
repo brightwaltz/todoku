@@ -1,7 +1,7 @@
 [project]
 name = "todoku"
 version = "0.1.0"
-description = "Add your description here"
+description = "高齢の方や介護する家族が困りごとを書くと、尋ねていない公的制度まで、判定の理由・申請先・持ち物・出典つきで示す相談窓口の試作"
 authors = [
     { name = "Kenichi Shibata", email = "brightwaltz@gmail.com" }
 ]
@@ -12,9 +12,6 @@ dependencies = [
     "pyyaml>=6.0.3",
     "uvicorn[standard]>=0.54.0",
 ]
-
-[project.scripts]
-todoku = "todoku:main"
 
 [build-system]
 requires = ["uv_build>=0.13.0,<0.14.0"]
