@@ -37,3 +37,90 @@ def test_pipeline_variants_without_api():
     s_value = run_eval.score({"t1": res["variants"]["value-3"]}, GOLD)
     s_fixed = run_eval.score({"t1": res["variants"]["fixed-3"]}, GOLD)
     assert s_value["recall_recommended"] > s_fixed["recall_recommended"]
+
+
+# ---- 正解の読み方・問いの扱い・失敗の受け止め（3rd の点検、11/3） ----
+
+import pytest  # noqa: E402
+
+
+@pytest.mark.parametrize("cell,mark", [
+    ("○", "yes"), ("〇", "yes"), ("◯", "yes"), (" o ", "yes"), ("yes", "yes"),
+    ("×", "no"), ("✕", "no"), ("✗", "no"), ("Ｘ", "no"), ("no", "no"),
+    ("？", "unsure"), ("?", "unsure"), ("unsure", "unsure"), ("", None), (None, None),
+])
+def test_parse_mark_reads_variants(cell, mark):
+    assert run_eval.parse_mark(cell) == mark
+
+
+def test_parse_mark_rejects_unknown():
+    with pytest.raises(ValueError):
+        run_eval.parse_mark("△")
+
+
+def test_load_gold_counts_blanks_and_stops_on_unknown(tmp_path, capsys):
+    path = tmp_path / "gold.csv"
+    path.write_text("事例,1 要介護・要支援認定の申請,2 高額療養費,8 介護休業給付金\nc01,◯,Ｘ,\nc02,,,\n", encoding="utf-8")
+    gold = run_eval.load_gold(RS, path)
+    no2 = next(p.id for p in RS.programs.values() if p.number == 2)
+    assert gold == {"c01": {"kaigo-nintei": "yes", no2: "no"}}
+    assert "空欄 4 マス" in capsys.readouterr().err
+    path.write_text("事例,1 要介護・要支援認定の申請\nc01,△\n", encoding="utf-8")
+    with pytest.raises(SystemExit):
+        run_eval.load_gold(RS, path)
+
+
+def test_confirm_question_answered_dont_know_is_not_asked_again():
+    # 画面の確かめる問い（はい・いいえ）には「わからない」もあり、押すと DONT_KNOW が入って二度と聞かれない
+    facts = {k: v for k, v in CASE["answers"].items() if k != "household"}
+    case = {**CASE, "answers": {**CASE["answers"], "household": DONT_KNOW}}
+    res = run_eval.simulate(RS, case, facts, {"household": "alone"}, 3, "fixed")
+    assert res["asked"] == ["household"]
+
+
+def test_place_run_skips_the_place_question():
+    case = {**CASE, "text": "母（82歳）が退院してから家で転びやすくなりました。"}
+    res = run_eval.run_pipeline(RS, case, FakeClaude())
+    assert "lives_in_machida" not in res["place"]["asked"]
+
+
+def test_claude_only_sees_only_gold_programs():
+    sent = {}
+
+    class Stub:
+        def _json(self, system, user, schema, max_tokens):
+            sent.update(system=system, schema=schema)
+            return {"recommend": ["kaigo-nintei"]}
+
+    res = run_eval.run_claude_only(RS, CASE, Stub(), ["kaigo-nintei", "machida-gps"])
+    assert sent["schema"]["properties"]["recommend"]["items"]["enum"] == ["kaigo-nintei", "machida-gps"]
+    assert "東京都町田市の" not in sent["system"] and RS.programs["machida-gps"].summary in sent["system"]
+    assert res["statuses"]["kaigo-nintei"] == "eligible" and res["statuses"]["machida-gps"] == "ineligible"
+
+
+def test_failed_cases_are_reported_not_fatal(tmp_path, monkeypatch, capsys):
+    import todoku.claude as claude_mod
+
+    class Flaky(FakeClaude):
+        calls: list = []
+
+        def extract(self, rules, text):
+            if "退院" in text:
+                raise RuntimeError("切れた")
+            return super().extract(rules, text)
+
+    cases = run_eval.load_cases()[:3]
+    gold = {c["id"]: {"kaigo-nintei": "yes"} for c in cases}
+    cases[0] = {**cases[0], "text": "退院した母のことです。"}
+    monkeypatch.setattr(run_eval, "load_cases", lambda: cases)
+    monkeypatch.setattr(run_eval, "load_gold", lambda rs: gold)
+    monkeypatch.setattr(run_eval, "OUT", tmp_path)
+    monkeypatch.setattr(claude_mod, "RealClaude", Flaky)
+    run_eval.main(["pipeline", "claude_only"])  # claude_only は FakeClaude に _json がなく、全件失敗する
+    out = capsys.readouterr().out
+    assert f"失敗した事例：{cases[0]['id']}" in out
+    assert "[claude_only] 事例 0 件" in out and "—" in out
+
+
+def test_pct_handles_none():
+    assert run_eval.pct(None) == "—" and run_eval.pct(0.5) == "50.0%"
