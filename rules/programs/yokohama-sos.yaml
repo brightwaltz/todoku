@@ -3,14 +3,15 @@ number: 36
 name: 認知症高齢者等SOSネットワーク（事前登録・見守りシール）
 level: yokohama
 kind: condition
-summary: 行方不明になるおそれのある認知症の人の情報を、前もって区役所に登録できる。登録した在宅の人は、衣類や持ち物に付ける見守りシールも使える。
+summary: 認知症で道に迷うおそれがある人の情報を、前もって区役所に登録できる。登録した在宅の人は、衣類や持ち物に付ける見守りシールも使える。
 weight: 1
 eligibility:
   all:
     - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
-    - {fact: dementia_diagnosis, is: true, label: 認知症と診断されている（若年性の認知症も含む）}
-    - {fact: wandering_risk, is: true, label: 行方不明になるおそれがある}
+    # ページは「認知症の人」とだけ書き、診断は求めていないので、診断の有無では外さない（3rd の照合、11/3）
+    - {fact: wandering_risk, is: true, label: 道に迷う・行方不明になるおそれがある}
 at_application:
+  - 認知症（若年性の認知症も含む）の人が対象
   - 見守りシールは、自宅で暮らし（施設への入所や長い入院は除く）、迎えに行ける家族などがいて、県と県警に登録の情報を渡すことに同意した人
   - 登録のときに、写真や印鑑が要ることがある
 apply:

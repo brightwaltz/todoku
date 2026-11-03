@@ -8,14 +8,19 @@ weight: 1
 eligibility:
   all:
     - {fact: lives_in_yokohama, is: true, label: 横浜市に住んでいる}
-    - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+    # 対象は申請の日に50歳以上。規則の年齢の区切り（40〜64歳）では決まらないので、その人は窓口で確かめる（3rd の照合、11/3）
+    - any:
+        - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
+        - all:
+            - {fact: age_band, in: [age_40_64], label: 40〜64歳}
+            - {ask_at: 申請のとき（横浜市 医療局 医療政策課）, label: 申請の日に50歳以上（窓口で確かめる）}
     - {fact: hearing_difficulty, is: true, label: 聞こえにくく、補聴器を考えている}
-    - {fact: hearing_certifiable, is: false, label: 聴覚の障害で身体障害者手帳の対象ではない}
     - any:
         - {fact: tax_status, in: [household_exempt], label: 世帯の全員が市民税非課税}
         - {fact: on_welfare, is: true, label: 生活保護を受けている}
 at_application:
-  - 対象は申請の日に50歳以上の人（50〜64歳の人も対象）
+  - 対象は申請の日に50歳以上の人（その年度に50歳になる人を含む）
+  - 聴覚の障害で身体障害者手帳を交付されている人は対象外（手帳の対象になると言われていても、交付されていなければ対象）
   - 両耳とも30dB以上の難聴で、補聴器相談医が補聴器の使用を必要と証明すること（30dB未満でも相談医が必要と認めれば対象）
   - 買う前に、市内の補聴器相談医のいる医療機関を受診して意見書をもらう（買う前の相談が確かめられないと対象外）
   - 2026年4月1日以降に買った、管理医療機器の補聴器だけ（集音器・付属品・修理は対象外）

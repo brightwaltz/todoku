@@ -420,3 +420,11 @@ def test_place_facts_are_not_read_by_claude():
     out = check_extraction(rs, "横浜市に住む父", {"subject": "お父さま", "facts": [
         {"fact": "lives_in_yokohama", "value": "true", "confidence": "high", "evidence": "横浜市に住む"}]})
     assert not out.facts and out.dropped
+
+
+def test_place_facts_come_only_from_the_place():
+    # 横浜市・東京都に住んでいるかを本文で送っても使わない（町田市と横浜市の両方に住んでいることにできないように。3rd の点検）
+    facts = {"lives_in_machida": True, "lives_in_yokohama": True, "age_band": "age_75_plus"}
+    data = client.post("/api/step", json={"facts": facts, "municipality": ""}).json()
+    assert not [r for r in data["results"] if r["id"].startswith("yokohama-")]
+    assert any(r["id"] == "tokyo-silver-pass" and r["status"] == "eligible" for r in data["results"])

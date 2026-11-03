@@ -122,6 +122,8 @@ def clean_facts(raw: dict[str, Any]) -> dict[str, Any]:
         fact = RULES.facts.get(fid)
         if fact is None:
             continue
+        if fact.place and not fact.read:
+            continue  # 横浜市・東京都に住んでいるかは、選んだ市区町村（apply_place）か町田市の答えから決める。送られた値は使わない
         if fact.type == "bool" and not isinstance(value, bool) and value != DONT_KNOW:
             continue  # 1 や "true" は受け付けない（True と 1 は == で等しいため、ここで弾く）
         if value == DONT_KNOW or value in fact.values():

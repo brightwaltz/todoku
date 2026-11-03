@@ -271,9 +271,14 @@ def test_yokohama_programs(rs):
     assert status("yokohama-kami-omutsu", care_level="none", tax_status="household_exempt") == "after_prereq"
     assert status("yokohama-sos", dementia_diagnosis=True, wandering_risk=True) == "eligible"
     assert status("yokohama-sos", dementia_diagnosis=True, wandering_risk=False) == "ineligible"
+    assert status("yokohama-sos", dementia_diagnosis=False, wandering_risk=True) == "eligible"  # 診断は求めていない
     hearing = {"hearing_difficulty": True, "hearing_certifiable": False, "tax_status": "household_exempt"}
     assert status("yokohama-hochoki", **hearing) == "eligible"
-    assert status("yokohama-hochoki", **{**hearing, "hearing_certifiable": True}) == "ineligible"
+    assert status("yokohama-hochoki", **{**hearing, "tax_status": "self_taxed", "on_welfare": False}) == "ineligible"
+    # 手帳の対象と言われていても、交付されていなければ対象。50 歳以上かは 40〜64 歳の人だけ窓口で確かめる（3rd の照合）
+    assert status("yokohama-hochoki", **{**hearing, "hearing_certifiable": True}) == "eligible"
+    assert status("yokohama-hochoki", **{**hearing, "age_band": "age_40_64"}) == "unknown"
+    assert status("yokohama-hochoki", **{**hearing, "age_band": "under_40"}) == "ineligible"
     assert status("yokohama-mimamori", household="alone") == "eligible"
     assert status("yokohama-mimamori", household="with_family") == "ineligible"
     assert status("yokohama-ribiyo", care_level="care5") == "eligible"
