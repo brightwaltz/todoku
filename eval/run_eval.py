@@ -16,6 +16,7 @@
 使い方：
   uv run python eval/run_eval.py rules
   uv run python eval/run_eval.py rules --gold eval/gold_no_policy.csv
+  uv run python eval/run_eval.py --rescore eval/out/pipeline-….json --gold eval/gold_no_policy.csv   保存した結果を別の正解表で数え直す（API は呼ばない）
   ANTHROPIC_API_KEY=... uv run python eval/run_eval.py pipeline claude_only   （API の料金がかかる）
 """
 
@@ -249,6 +250,52 @@ def report_line(key: str, s: dict) -> str:
             f"  ×なのに案内 {c['no_recommended']}  ×なのに示した {c['no_shown']}")
 
 
+def by_questions(ok: dict, gold: dict) -> dict:
+    out = {}
+    for key in list(next(iter(ok.values()))["variants"]) + ["place"]:
+        sub = {cid: (r["place"] if key == "place" else r["variants"][key]) for cid, r in ok.items()}
+        s = score(sub, gold)
+        out[key] = {"recall_recommended": s["recall_recommended"], "recall_shown": s["recall_shown"],
+                    "wrong_recommended": s["cells"]["no_recommended"], "wrong_shown": s["cells"]["no_shown"]}
+        print(report_line("お住まい選択" if key == "place" else key, s))
+    return out
+
+
+def print_summary(mode: str, summary: dict) -> None:
+    c = summary["cells"]
+    print(f"[{mode}] 事例 {summary['cases']} 件、○ {c['yes']} マス・× {c['no']} マス・？ {c['unsure']} マス（？は数えない。正解表 {summary['gold']}）")
+    print(f"  ○のうち案内できた率 {pct(summary['recall_recommended'])}／示せた率（確かめると使えるかもしれないを含む）{pct(summary['recall_shown'])}")
+    per_case = summary["wrong_recommended_per_case"]
+    print(f"  ×なのに案内した数 {c['no_recommended']}（1 件あたり {'—' if per_case is None else f'{per_case:.2f}'}）"
+          f"／×なのに示した数（確かめると使えるかもしれないを含む）{c['no_shown']}")
+    if c["pending_yes"] + c["pending_no"] + c["pending_unsure"]:
+        print(f"  申請済み・結果待ちとして出さなかったマス：○ {c['pending_yes']}・× {c['pending_no']}・？ {c['pending_unsure']}")
+    if summary.get("failed"):
+        print(f"  失敗した事例：{'・'.join(summary['failed'])}（数えていない）")
+    if "api" in summary:
+        a = summary["api"]
+        print(f"  API 呼び出し {a['calls']} 回（{'・'.join(a['models'])}）入力 {a['input_tokens']}・出力 {a['output_tokens']} トークン")
+
+
+def rescore(path: Path, gold_path: Path | None) -> None:
+    """保存した結果（{mode}-….json）を、別の正解表で数え直す。API は呼ばない。"""
+    data = json.loads(path.read_text(encoding="utf-8"))
+    rs = rules_mod.load()
+    gold = load_gold(rs, gold_path)
+    results = data["results"]
+    ok = {cid: r for cid, r in results.items() if "error" not in r}
+    summary = score(results, gold)
+    summary["failed"] = sorted(set(results) - set(ok))
+    summary["gold"] = (gold_path or HERE / "gold.csv").name
+    summary["rescored_from"] = path.name
+    if data["mode"] == "pipeline" and ok:
+        summary["by_questions"] = by_questions(ok, gold)
+    print_summary(data["mode"], summary)
+    tag = "" if gold_path is None else f"-{gold_path.stem}"
+    (OUT / f"{path.stem}-rescored{tag}.json").write_text(
+        json.dumps({"mode": data["mode"], "summary": summary}, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def main(args: list[str]) -> None:
     gold_path = None
     if "--gold" in args:
@@ -257,6 +304,12 @@ def main(args: list[str]) -> None:
             sys.exit("--gold のあとに正解表のパスを書いてください")
         gold_path = Path(args[i + 1])
         args = args[:i] + args[i + 2:]
+    if "--rescore" in args:
+        i = args.index("--rescore")
+        if i + 1 >= len(args):
+            sys.exit("--rescore のあとに、保存した結果のパスを書いてください")
+        rescore(Path(args[i + 1]), gold_path)
+        return
     modes = args or ["rules"]
     unknown = [m for m in modes if m not in MODES]
     if unknown:
@@ -264,7 +317,8 @@ def main(args: list[str]) -> None:
     rs = rules_mod.load()
     cases = load_cases()
     gold = load_gold(rs, gold_path)
-    gold_programs = sorted({pid for marks in gold.values() for pid in marks})
+    # Claude だけに渡す制度の一覧は、正解表の版によらず 1〜32（採点する制度）
+    gold_programs = sorted(p.id for p in rs.programs.values() if 1 <= p.number <= 32)
     claude = None
     if {"pipeline", "claude_only"} & set(modes):
         from todoku.claude import RealClaude
@@ -300,34 +354,14 @@ def main(args: list[str]) -> None:
         if mode == "pipeline" and ok:
             summary["asked_mean"] = sum(len(r["asked"]) for r in ok.values()) / len(ok)
             summary["wrong_reads"] = sum(len(r["wrong_reads"]) for r in ok.values())
-            summary["by_questions"] = {}
-            for key in list(next(iter(ok.values()))["variants"]) + ["place"]:
-                sub = {cid: (r["place"] if key == "place" else r["variants"][key]) for cid, r in ok.items()}
-                s = score(sub, gold)
-                summary["by_questions"][key] = {"recall_recommended": s["recall_recommended"],
-                                                "recall_shown": s["recall_shown"],
-                                                "wrong_recommended": s["cells"]["no_recommended"],
-                                                "wrong_shown": s["cells"]["no_shown"]}
-                print(report_line("お住まい選択" if key == "place" else key, s))
+            summary["by_questions"] = by_questions(ok, gold)
         summary["gold"] = (gold_path or HERE / "gold.csv").name
         summaries[mode] = summary
         tag = "" if gold_path is None else f"-{gold_path.stem}"
         (OUT / f"{mode}-{stamp}{tag}.json").write_text(
             json.dumps({"mode": mode, "summary": summary, "results": results}, ensure_ascii=False, indent=1),
             encoding="utf-8")
-        c = summary["cells"]
-        print(f"[{mode}] 事例 {summary['cases']} 件、○ {c['yes']} マス・× {c['no']} マス・？ {c['unsure']} マス（？は数えない。正解表 {summary['gold']}）")
-        print(f"  ○のうち案内できた率 {pct(summary['recall_recommended'])}／示せた率（確かめると使えるかもしれないを含む）{pct(summary['recall_shown'])}")
-        per_case = summary["wrong_recommended_per_case"]
-        print(f"  ×なのに案内した数 {c['no_recommended']}（1 件あたり {'—' if per_case is None else f'{per_case:.2f}'}）"
-              f"／×なのに示した数（確かめると使えるかもしれないを含む）{c['no_shown']}")
-        if c["pending_yes"] + c["pending_no"] + c["pending_unsure"]:
-            print(f"  申請済み・結果待ちとして出さなかったマス：○ {c['pending_yes']}・× {c['pending_no']}・？ {c['pending_unsure']}")
-        if summary["failed"]:
-            print(f"  失敗した事例：{'・'.join(summary['failed'])}（数えていない）")
-        if "api" in summary:
-            a = summary["api"]
-            print(f"  API 呼び出し {a['calls']} 回（{'・'.join(a['models'])}）入力 {a['input_tokens']}・出力 {a['output_tokens']} トークン")
+        print_summary(mode, summary)
     if "pipeline" in summaries and "claude_only" in summaries and "by_questions" in summaries["pipeline"]:
         v0, co = summaries["pipeline"]["by_questions"]["value-0"], summaries["claude_only"]
         print(f"[相談文だけで比べる] 窓口（聞き返さない）案内できた率 {pct(v0['recall_recommended'])}・×なのに案内 {v0['wrong_recommended']}"

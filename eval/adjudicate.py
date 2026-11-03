@@ -274,8 +274,20 @@ def upper_bound(k: int, n: int, alpha: float = 0.05) -> float:
     return hi
 
 
-def check_recs(adj: dict, decisions: dict, recs: dict) -> None:
-    """db の「推しどおり」に入っている印が、コミットした推し（確かなマス）と同じか。違えば止める。"""
+def rec_version(path: Path = RECS) -> str:
+    """推しの版（裁定ページの build_adj.py と同じ計算：ファイルの sha256 の先頭 12 桁）。"""
+    import hashlib
+    return hashlib.sha256(path.read_bytes()).hexdigest()[:12]
+
+
+def check_recs(adj: dict, decisions: dict, recs: dict, ver: str | None = None) -> None:
+    """db の「推しどおり」に入っている印が、コミットした推し（確かなマス）と同じか。違えば止める。
+    ver を渡すと、推しを付けたあとのページで一度も押していない問い（前回の「全部 ？」のまま）も止める。"""
+    if ver:
+        stale = [x["id"] for x in adj["policies"] + adj["issues"] if decisions.get(x["id"], {}).get("rec_seen") != ver]
+        stale += [k for k in recs.get("extra", {}) if decisions.get(k, {}).get("rec_seen") != ver]
+        if stale:
+            sys.exit(f"推しを付けた版（{ver}）のページでまだ選んでいない問い：{'・'.join(stale)}")
     for it in adj["policies"] + adj["issues"]:
         d = decisions.get(it["id"], {})
         if d.get("choice") != "rec":
@@ -298,10 +310,10 @@ def source_of(it: dict, cell: dict, kind: str, decisions: dict) -> str:
     return "推しどおり" if d.get("choice") == "rec" else f"先生が{'型' if kind == 'policy' else '論点'}ごとに"
 
 
-def build_gold(adj: dict, decisions: dict, recs: dict | None = None) -> tuple[dict, dict]:
+def build_gold(adj: dict, decisions: dict, recs: dict | None = None, ver: str | None = None) -> tuple[dict, dict]:
     """（事例→{制度番号: 印}、報告）を返す。決まっていないマスは入れない（空欄）。"""
     if recs:
-        check_recs(adj, decisions, recs)
+        check_recs(adj, decisions, recs, ver)
     rec_mark = {}
     if recs:
         rec_mark = {k: v["mark"] for x in recs["items"].values() for k, v in x["cells"].items()}
@@ -372,7 +384,7 @@ def main() -> None:
         adj = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
         decisions = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
         recs = json.loads(RECS.read_text(encoding="utf-8")) if RECS.exists() else None
-        gold, rep = build_gold(adj, decisions, recs)
+        gold, rep = build_gold(adj, decisions, recs, rec_version() if recs else None)
         write_gold(gold, ROOT / "eval" / "gold.csv")
         write_gold(gold, ROOT / "eval" / "gold_no_policy.csv", set(rep["policy_cells"]))
         path = OUT / f"gold-report-{datetime.now():%Y%m%d-%H%M}.json"

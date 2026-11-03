@@ -144,3 +144,20 @@ def test_cases_have_municipality_matching_lives_in_machida():
     for c in run_eval.load_cases():
         assert (c["municipality"] == "132098") == (c["answers"]["lives_in_machida"] is True), c["id"]
         assert RS.place_values(c["municipality"])["lives_in_machida"] is c["answers"]["lives_in_machida"]
+
+
+def test_rescore_counts_saved_results_with_another_gold(tmp_path, monkeypatch, capsys):
+    """保存した結果を、別の正解表（決まりの問いを空欄にした版など）で数え直す。API は呼ばない。"""
+    monkeypatch.setattr(run_eval, "OUT", tmp_path)
+    cases = run_eval.load_cases()[:2]
+    monkeypatch.setattr(run_eval, "load_cases", lambda: cases)
+    full, part = tmp_path / "gold.csv", tmp_path / "gold_no_policy.csv"
+    full.write_text(f"事例,1 要介護・要支援認定の申請,2 高額療養費\n{cases[0]['id']},○,×\n{cases[1]['id']},×,×\n", encoding="utf-8")
+    part.write_text(f"事例,1 要介護・要支援認定の申請,2 高額療養費\n{cases[0]['id']},,×\n{cases[1]['id']},×,×\n", encoding="utf-8")
+    run_eval.main(["rules", "--gold", str(full)])
+    saved = next(tmp_path.glob("rules-*-gold.json"))
+    capsys.readouterr()
+    run_eval.main(["--rescore", str(saved), "--gold", str(part)])
+    out = capsys.readouterr().out
+    assert "[rules] 事例 2 件、○ 0 マス・× 3 マス" in out and "gold_no_policy.csv" in out
+    assert next(tmp_path.glob("rules-*-gold-rescored-gold_no_policy.json"))

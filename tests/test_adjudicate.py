@@ -293,3 +293,17 @@ def test_committed_recommendations_cover_every_disputed_cell():
         n = adjudicate.norm(w)
         hits = [n[i:i + 20] for i in range(max(0, len(n) - 19)) if any(n[i:i + 20] in t for t in texts)]
         assert not hits, (w, hits[:1])
+
+
+def test_stale_policy_choice_stops_gold_when_version_given():
+    """推しを付けたあとのページで押していない問い（前回の「全部 ？」のまま）は、書き出しの段で止める。"""
+    adj, recs = _adj_rec(), _recs()
+    d = {"p-plan": {"choice": "？", "resolved": "？"},
+         "i01": {"choice": "rec", "rec": {"c03-9": "○"}, "rec_seen": "v1"},
+         "x-c16-6": {"mark": "○", "case": "c16", "num": 6, "rec_seen": "v1"}}
+    with pytest.raises(SystemExit):
+        adjudicate.build_gold(adj, d, recs, "v1")
+    d["p-plan"] = {"choice": "rec", "rec": {"c01-5": "○"}, "overrides": {"c02-5": "×"}, "rec_seen": "v1"}
+    gold, rep = adjudicate.build_gold(adj, d, recs, "v1")
+    assert rep["undecided"] == [] and rep["rec_changed"] == []
+    assert adjudicate.rec_version() == __import__("hashlib").sha256((ROOT / "eval" / "recommendations.json").read_bytes()).hexdigest()[:12]
