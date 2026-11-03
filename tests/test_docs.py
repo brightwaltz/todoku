@@ -92,3 +92,16 @@ def test_pyproject_has_no_uv_init_leftovers():
     for target in project.get("scripts", {}).values():
         module, _, func = target.partition(":")
         assert callable(getattr(__import__(module, fromlist=[func]), func))
+
+
+def test_readme_lists_claude_api_with_the_other_claude_uses():
+    """「Claude の使い方」の Claude API の行が、Claude Code・MCP と同じ箇条書きにあるか（11/4 T-060）。
+
+    11/3 に「Claude Code の設定（`.claude/`）」の小節を MCP と Claude API の行の間に挿し込んだため、
+    Claude API の行が小節の表の下に取り残され、Claude Code の設定の一部に見えていた。
+    """
+    section = README.split("\n## Claude の使い方\n", 1)[1].split("\n## ", 1)[0]
+    head = section.split("\n### ", 1)[0]
+    assert "- **Claude Code**" in head
+    assert "- **MCP**" in head
+    assert "- **Claude API" in head

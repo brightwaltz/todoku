@@ -239,6 +239,7 @@ export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所の
 
 - **Claude Code**：開発の全体。公式ページの読み直しは、調査役（サブエージェント）5 人に制度を振り分けて並行で行い、その報告から規則ファイルとテストを書きました。架空事例は、規則ファイルを開かない約束の調査役が人物から書きました。
 - **MCP**：国の制度の手続は、Claude Code に行政手続データの MCP サーバー（`.mcp.json`）を使わせて探しました。書き込みの道具は渡さず、答えを JSON で受け取り、手続ID ごとに CLI で引き直してから規則ファイルに入れました（上の「国の制度の手続」）。
+- **Claude API（Claude Opus 5.5）**：相談文からの事実の取り出しと、最後のまとめ。どちらも構造化出力（JSON スキーマ）で受け取り、プログラムで確かめてから使います。拒否されたときの代わりのモデル（`fallbacks: "default"`）を有効にしています。
 
 ### Claude Code の設定（`.claude/`）
 
@@ -253,7 +254,6 @@ export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所の
 | フック（PreToolUse） | `.claude/hooks/blind_case_writer.py` | `case-writer` が `eval/cases/` と `rules/facts.yaml`（読むだけ）の外を開こうとしたら止める。facts.yaml への書き込みと、`..` で外を指す検索も止める。約束を文章で頼むだけでなく、仕組みで開けなくする |
 
 フックは `tests/test_hooks.py` で確かめています。2026-11-03 に、非対話の Claude Code で `case-writer` に規則ファイルを読ませようとして、フックが止めることも確かめました。
-- **Claude API（Claude Opus 5.5）**：相談文からの事実の取り出しと、最後のまとめ。どちらも構造化出力（JSON スキーマ）で受け取り、プログラムで確かめてから使います。拒否されたときの代わりのモデル（`fallbacks: "default"`）を有効にしています。
 
 ## 扱わないこと
 
