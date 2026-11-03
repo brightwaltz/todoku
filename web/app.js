@@ -310,6 +310,8 @@ function renderBoard(data) {
     now[r.id] = colOf(r.status);
     box.querySelector(`[data-col="${now[r.id]}"] .tiles`).append(t);
   }
+  // 途中で町田市と分かると、型の制度が結果から外れる。外れた札は残さない（数にも入れない）
+  for (const [id, t] of tiles) if (!(id in now)) { t.remove(); tiles.delete(id); }
   const moved = boardPrev ? data.results.filter((r) => boardPrev[r.id] && boardPrev[r.id] !== now[r.id]) : [];
   // 3. 動いた札を元の位置に戻して見せ、transform を外して新しい位置まで滑らせる
   if (!calm()) {
