@@ -146,6 +146,28 @@ def test_index_and_health():
     assert h["programs"] == 40  # 33〜40 は東京都 1 件と横浜市 7 件（11/3 に足した）
 
 
+def test_security_headers_on_every_response():
+    """全部の応答に CSP・nosniff・Referrer-Policy・枠に入れさせないヘッダが付く（T-033）。CSP は 'unsafe-inline' を許さず、
+    画面の el() は style 属性を setAttribute でなく CSSOM で付ける（属性のままだと CSP で止まり、段階の動きが消える）。"""
+    import re
+    from pathlib import Path
+    for path in ["/", "/static/app.js", "/static/style.css", "/api/samples", "/api/health"]:
+        h = client.get(path).headers
+        csp = h["content-security-policy"]
+        assert "script-src 'self'" in csp and "frame-ancestors 'none'" in csp and "unsafe-inline" not in csp, path
+        assert h["x-content-type-options"] == "nosniff", path
+        assert h["referrer-policy"] == "no-referrer", path
+        assert h["x-frame-options"] == "DENY", path
+        assert "strict-transport-security" not in h, path  # deploy 後に戻せないので付けない
+    html = client.get("/").text
+    assert "<style" not in html and " style=" not in html and "<script>" not in html  # インラインは CSP で止まる
+    for host in re.findall(r'<link [^>]*href="https://([^/"]+)', html):
+        assert host in ("fonts.googleapis.com", "fonts.gstatic.com"), host  # 読み込むのは CSP の style-src・font-src に入れた所だけ（<a> の行き先は CSP の外）
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    assert 'k === "style") node.style.cssText = v' in js
+    assert not re.search(r'setAttribute\(\s*["\']style', js)
+
+
 def test_entry_text_names_every_place_with_rules():
     """最初の画面の lead と meta の description は、制度を判定する都・市を全部挙げる（「町田市だけ」と狭く書かない）。"""
     import re

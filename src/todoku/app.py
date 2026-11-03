@@ -548,9 +548,35 @@ async def invalid_body(request: Request, exc: RequestValidationError) -> JSONRes
     return JSONResponse({"detail": "送られた内容を読めませんでした。文を書き直して、もう一度試してください"}, status_code=422)
 
 
+# 守りを重ねるためのヘッダ（11/3 の安全点検の 5）。画面に文を差し込む道は見つかっていないが、今後できても
+# よその出どころのスクリプト・インラインのスクリプトと style 属性を動かせなくし、ほかのサイトの枠に入れさせない。
+# style 属性は web/app.js の el() が CSSOM（style.cssText）で付けるので 'unsafe-inline' は要らない。
+# HSTS は deploy した後にブラウザに残って戻せないので付けない（http→https は fly.toml の force_https が回す）。
+CONTENT_SECURITY_POLICY = "; ".join([
+    "default-src 'self'",
+    "script-src 'self'",
+    "style-src 'self' https://fonts.googleapis.com",
+    "font-src https://fonts.gstatic.com",
+    "img-src 'self' data:",
+    "connect-src 'self'",
+    "object-src 'none'",
+    "base-uri 'none'",
+    "form-action 'none'",
+    "frame-ancestors 'none'",
+])
+SECURITY_HEADERS = {
+    "Content-Security-Policy": CONTENT_SECURITY_POLICY,
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+    "X-Frame-Options": "DENY",
+}
+
+
 @app.middleware("http")
 async def revalidate_pages(request: Request, call_next):
     response = await call_next(request)
+    for k, v in SECURITY_HEADERS.items():
+        response.headers[k] = v
     if request.url.path == "/" or request.url.path.startswith("/static/"):
         response.headers["Cache-Control"] = "no-cache"  # 直した後に古い画面が残らないよう、毎回 ETag で確かめ直させる
     return response
