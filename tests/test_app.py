@@ -246,3 +246,20 @@ def test_yes_no_reasons_carry_no_value():
                                           "municipality": "141003"}).json()
     card = next(r for r in data["results"] if r["id"] == "local-haikai")
     assert all(x["value"] is None for x in card["reasons"])  # 町田市以外・行方不明のおそれ（はい・いいえ）と、確かめる先
+
+
+def test_center_search_points_at_the_prefecture():
+    def step(code):
+        return client.post("/api/step", json={"facts": {"age_band": "age_75_plus", "residence": "home"},
+                                              "municipality": code}).json()
+    yokohama, nowhere = step("141003"), step("")
+    pref14 = "https://www.kaigokensaku.mhlw.go.jp/14/index.php?action_kouhyou_pref_seikatu_search_facility_search=true&SearchType=community"
+    assert yokohama["center_search"] == pref14
+    assert nowhere["center_search"] == "https://www.kaigokensaku.mhlw.go.jp/"  # 都道府県が分からなければ入口
+    # 申請先に地域包括支援センターを挙げた制度にだけ付ける。町田市の申請先（高齢者支援センター）には付けない
+    nintei = next(r for r in yokohama["results"] if r["id"] == "kaigo-nintei")
+    assert nintei["apply"]["center_search"] == pref14
+    machida = step("132098")
+    assert "center_search" not in next(r for r in machida["results"] if r["id"] == "kaigo-nintei")["apply"]
+    assert all("center_search" not in r["apply"] for r in yokohama["results"]
+               if "地域包括支援センター" not in r["apply"]["where"] + r["apply"].get("how", ""))

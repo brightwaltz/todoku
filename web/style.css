@@ -160,6 +160,7 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
 blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line); background: var(--soft); font-size: 15px; }
 .tel { color: var(--accent); font-weight: 700; white-space: nowrap; }
 .foot { color: var(--muted); font-size: 14px; padding-bottom: 40px; }
+.foot a { color: var(--accent); }
 .error { color: var(--no); font-weight: 700; }
 @media (max-width: 420px) {
   body { font-size: 17px; }

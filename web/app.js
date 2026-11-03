@@ -353,6 +353,7 @@ function changeText(moved, now) {
 // ---- 聞き返し ----
 function render(data, first = false) {
   renderBoard(data);
+  $("center-link").href = data.center_search;  // ページ下の相談先も、お住まいの都道府県の検索にする
   if (data.question) { show("ask"); show("result", false); renderQuestion(data.question, data.max_questions, first); }
   else { show("ask", false); renderResult(data); }
 }
@@ -484,6 +485,7 @@ function programCard(r) {
   body.append(el("h3", {}, "申請先"), el("p", {}, r.apply.where));
   if (r.apply.how) body.append(el("p", {}, r.apply.how));
   if (r.apply.phone) body.append(el("p", {}, "電話：", telLinks(r.apply.phone)));
+  if (r.apply.center_search) body.append(el("p", {}, centerLink(r.apply.center_search)));
   if (r.procedures.length) body.append(el("h3", {}, "根拠の法令"), procedureView(r));
   if (r.bring.length) body.append(el("h3", {}, "持ち物・書類"), el("ul", { class: "plain" }, r.bring.map((t) => el("li", {}, t))));
   if (r.amount.length) body.append(el("h3", {}, "受けられる内容"), el("ul", { class: "plain" }, r.amount.map((t) => el("li", {}, t))));
@@ -498,6 +500,11 @@ function procedureView(r) {
   const rest = r.procedures.length > 1 ? ` ほか ${r.procedures.length - 1} 件` : "";
   const what = d.match === "general" ? `使う手続：${d.name}（${d.law} ${d.article}）` : `${d.law} ${d.article}（${d.name}）`;
   return el("p", {}, what + rest, el("br"), el("span", { class: "note" }, `出典：${r.procedures_source}`));
+}
+
+// 申請先に挙げた地域包括支援センターを探すページ（厚生労働省。お住まいの都道府県が分かれば、その県の検索）
+function centerLink(url) {
+  return el("a", { href: url, target: "_blank", rel: "noopener" }, "地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）");
 }
 
 function telLinks(text) {

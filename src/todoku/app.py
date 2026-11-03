@@ -31,6 +31,16 @@ PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
 RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
 NOT_THIS = "__not__"
 MACHIDA = "132098"  # 町田市の団体コード
+# 地域包括支援センターを探すページ（厚生労働省 介護サービス情報公表システム、PDL1.0。リンクだけ）。都道府県が分からなければ入口
+KAIGOKENSAKU = "https://www.kaigokensaku.mhlw.go.jp/"
+CENTER = "地域包括支援センター"
+
+
+def center_search(code: str) -> str:
+    """団体コードの頭 2 桁が都道府県コード。2026-11-03 に 47 都道府県中 5 件（01・13・14・46・47）を開いて確かめた。"""
+    if code not in PLACES:
+        return KAIGOKENSAKU
+    return f"{KAIGOKENSAKU}{code[:2]}/index.php?action_kouhyou_pref_seikatu_search_facility_search=true&SearchType=community"
 
 STATUS_LABEL = {
     "eligible": "当てはまる見込み",
@@ -131,7 +141,7 @@ def fact_view(fid: str, value: Any) -> dict:
             "label": "わからない" if value == DONT_KNOW else fact.label_of(value), "question": fact.question}
 
 
-def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
+def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: str = "") -> dict:
     p = r.program
     missing = [
         {"fact": f, "name": RULES.facts[f].name, "question": personalize(RULES.facts[f].question, subject),
@@ -143,6 +153,9 @@ def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
     here = facts.get("lives_in_machida") is True
     other = {} if here else p.elsewhere
     sources = [s for s in p.sources if here or "city.machida.tokyo.jp" not in s.url] or p.sources
+    apply = dict(other.get("apply", p.apply))
+    if CENTER in apply.get("where", "") + apply.get("how", ""):
+        apply["center_search"] = center_search(municipality)  # 申請先に挙げたセンターを、その場で探せるように
     return {
         "id": p.id,
         "number": p.number,
@@ -163,7 +176,7 @@ def result_view(r: Result, facts: dict[str, Any], subject: str) -> dict:
         "missing": missing,
         "waiting_on": [{"id": w, "name": RULES.programs[w].name} for w in r.waiting_on],
         "at_application": p.at_application,
-        "apply": other.get("apply", p.apply),
+        "apply": apply,
         "bring": other.get("bring", p.bring),
         "amount": p.amount,
         "timing": other.get("timing", p.timing),
@@ -224,9 +237,10 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "question": question_view(facts, suggestions, subject, asked),
         "max_questions": MAX_QUESTIONS,
         "known": [fact_view(f, v) for f, v in implied.items() if f in RULES.facts],
-        "results": [result_view(r, facts, subject) for r in ranked],
+        "results": [result_view(r, facts, subject, municipality) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
         "place": place_view(municipality),
+        "center_search": center_search(municipality),
     }
 
 
