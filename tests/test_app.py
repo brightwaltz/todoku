@@ -827,3 +827,30 @@ def test_read_facts_do_not_carry_unpersonalized_questions():
         for f in data["known"]:
             assert set(f) == {"fact", "name", "value", "label"}, (s["id"], f)
         assert "ご本人" not in json.dumps(data["extracted"] + data["known"], ensure_ascii=False), s["id"]
+
+
+def test_unread_facts_can_be_answered_on_the_result():
+    # 相談の文から読み取れなかった事実（生活保護など）にも、結果の画面で答えられる（T-014）
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "care4",
+             "uses_diapers": DONT_KNOW}
+    suggestions = {"household": "alone"}
+    asking = client.post("/api/step", json={"facts": facts, "suggestions": suggestions}).json()
+    assert asking["question"] is not None and asking["unread"] == []  # 聞き返しの間は出さない
+    body = {"facts": facts, "suggestions": suggestions, "subject": "おばあさま", "asked": 99}
+    done = client.post("/api/step", json=body).json()
+    assert done["question"] is None
+    unread = [q["fact"] for q in done["unread"]]
+    assert "on_welfare" in unread
+    # 分かっている事実・「わからない」と答えた事実・確信の低い読み取り（unconfirmed で聞く）は入れない
+    assert not set(unread) & (set(facts) | set(suggestions)) and len(unread) == len(set(unread))
+    assert [q["fact"] for q in done["unconfirmed"]] == ["household"]
+    shown = {r["id"] for r in done["results"]}
+    for q in done["unread"]:
+        assert q["affects_ids"] and set(q["affects_ids"]) <= shown
+        assert "ご本人" not in q["text"]
+    welfare = next(q for q in done["unread"] if q["fact"] == "on_welfare")
+    assert welfare["text"] == "おばあさまは生活保護を受けていますか？"
+    # 答えても聞き返しの数は増えず、答えた事実は一覧から消える
+    again = client.post("/api/step", json={**body, "facts": {**facts, "on_welfare": False}}).json()
+    assert again["question"] is None
+    assert "on_welfare" not in [q["fact"] for q in again["unread"]]

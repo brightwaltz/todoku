@@ -25,7 +25,7 @@ import anthropic
 
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
 from .engine import DONT_KNOW, T, U, Result, evaluate, known, statuses, with_implied
-from .questions import MAX_QUESTIONS, Question, next_question, place_fact, score_fact
+from .questions import MAX_QUESTIONS, Question, candidates, next_question, place_fact, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
@@ -307,6 +307,24 @@ def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject
     return out
 
 
+def unread_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, visible: frozenset[str]) -> list[dict]:
+    """聞き返しが終わっても分かっていない事実のうち、答えると結果の画面の制度の判定が変わるもの（T-014）。
+
+    相談の文から読み取れなかった事実（生活保護など）にも、結果の画面で答えられるようにする。
+    並びは次の問いの選び方と同じ値打ちの高い順。「わからない」と答えた事実と、確信の低い読み取り（unconfirmed で聞く）は入れない
+    """
+    base = statuses(RULES, facts)
+    ranked = []
+    for fid in candidates(RULES, facts):
+        if fid in suggestions or fid in RULES.places:  # 住所の問いは unconfirmed_view が市区町村を選ぶ欄として出す（T-070 で合わせた）
+            continue
+        score, affects = score_fact(RULES, facts, fid, base)
+        if score > 0 and any(p in visible for p in affects):
+            ranked.append((-score, RULES.facts[fid].order, Question(fid, score, None, affects)))
+    ranked.sort(key=lambda t: t[:2])
+    return [ask_view(q, subject, visible) for _, _, q in ranked]
+
+
 def ask_view(q: Question, subject: str, visible: frozenset[str] | None = None) -> dict:
     fact = RULES.facts[q.fact]
     # 「この答えで判定が決まる制度」には、結果の画面に出す制度（visible）だけを挙げる。step_view が外した型の名前が
@@ -388,6 +406,8 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "question": question,
         # 聞き返しが終わったら、確かめていない読み取りを結果の画面に出す（答えても Claude は呼ばない）
         "unconfirmed": unconfirmed_view(facts, suggestions, subject, visible) if question is None else [],
+        # 読み取れなかった事実も、結果の画面で答えられるようにする（答えても Claude は呼ばない。画面は先頭の数件だけを先に出す）
+        "unread": unread_view(facts, suggestions, subject, visible) if question is None else [],
         "max_questions": MAX_QUESTIONS,
         # 住所は、問いを受け持つ事実（町田市に住んでいる）だけを出す。東京都・横浜市などはそこから決まる
         "known": [fact_view(f, v) for f, v in implied.items()

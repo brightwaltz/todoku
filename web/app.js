@@ -45,7 +45,7 @@ class GateError extends Error {}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
-    municipality: "", sample: false, resultShown: false, summaryKey: "" };
+    municipality: "", sample: false, resultShown: false, summaryKey: "", laterOpen: false };
 }
 
 function freshPick() {
@@ -508,9 +508,14 @@ const GROUPS = [
   ["unknown", "確かめると使えるかもしれない", "分からない点があり、まだ決められない制度です。確かめ方を添えています。"],
 ];
 
-// 聞き返しのあとも確かめていない読み取り。答えると規則だけで判定し直す（Claude は呼ばない）
-function renderLater(items) {
-  $("later-list").replaceChildren(...items.map((q) => {
+// 読み取れなかった事実（unread）は、値打ちの高い順にこの数だけ先に出し、残りはボタンに畳む（T-014）。
+// 0 にして全部を畳んでいる：結果の画面の先頭が問いで埋まり、「当てはまる見込み」が下へ押し出されるため（D-0011 で確認中。3 なら先に 3 問出す）
+const UNREAD_FIRST = 0;
+
+// 聞き返しのあとも確かめていない読み取り（unconfirmed）と、読み取れなかった事実（unread）。
+// 答えると規則だけで判定し直す（Claude は呼ばない）
+function renderLater(unconfirmed, unread = []) {
+  const item = (q) => {
     const box = el("div");
     fillAnswers(box, q, (v) => answer(q, v, true), (code) => answerPlace(code, true));
     return el("div", { class: "later-item" },
@@ -518,14 +523,24 @@ function renderLater(items) {
       q.hint ? el("p", { class: "hint" }, q.hint) : null,
       box,
       q.affects.length ? el("p", { class: "why" }, `この答えで判定が決まる制度：${affectNames(q.affects)}`) : null);
-  }));
-  show("later", items.length > 0);
+  };
+  // 一度「ほか N 件を見る」を押したら、答えて出し直しても開いたままにする
+  const first = state.laterOpen ? unread.length : UNREAD_FIRST;
+  const nodes = [...unconfirmed.map(item), ...unread.slice(0, first).map(item)];
+  if (unread.length > first) {
+    const rest = el("div", { hidden: "" }, unread.slice(first).map(item));
+    const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); state.laterOpen = true; } },
+      first ? `ほか ${unread.length - first} 件を見る` : `読み取れなかったことにも答える（${unread.length} 件）`);
+    nodes.push(more, rest);
+  }
+  $("later-list").replaceChildren(...nodes);
+  show("later", unconfirmed.length + unread.length > 0);
 }
 
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
   state.resultShown = true;
-  renderLater(data.unconfirmed);
+  renderLater(data.unconfirmed, data.unread);
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
   $("stats").textContent = `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
