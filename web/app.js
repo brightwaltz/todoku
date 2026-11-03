@@ -187,6 +187,8 @@ async function consultWith(text, call) {
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
+    // 読み取ったことの欄へ送る前に消す。送った後に消すと、その高さぶん中身が上へずれ、見出しが画面の上に切れる（T-023）
+    show("reading", false);
     state.subject = data.subject;
     state.facts = data.facts;
     state.suggestions = data.suggestions;
@@ -198,11 +200,11 @@ async function consultWith(text, call) {
   } catch (e) {
     resendAfterGate = e instanceof GateError;
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
+    show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
     $("send").disabled = false;
     return;
   }
   $("send").disabled = false;
-  show("reading", false);
 }
 
 function renderExtracted(data, text) {

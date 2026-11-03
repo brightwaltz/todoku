@@ -286,6 +286,52 @@ console.log(JSON.stringify({{ out, cols: ["ineligible", "done", "pending"].map((
     assert two_no == "当てはまらない制度 +2"
 
 
+def test_reading_card_is_gone_before_scrolling_to_what_was_read():
+    # 読み取った直後に、読み取ったことの欄へ送る（render → renderQuestion → revealThenAsk）。読み取り中の札を消すのがその後だと、
+    # 送った後に札の高さ（約 118px）ぶん中身が上へずれ、「相談の文章から読み取ったこと」の見出しが画面の上に切れた（T-023）
+    import json
+    import re
+    import shutil
+    import subprocess
+    from pathlib import Path
+
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("node が無い")
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    func = re.search(r"^async function consultWith\(text, call\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
+    run = f"""
+const hidden = {{}}, nodes = {{}}, seen = [];
+const $ = (id) => (nodes[id] ||= {{ disabled: false, kids: [], replaceChildren(...k) {{ this.kids = k; }} }});
+const show = (id, on = true) => {{ hidden[id] = !on; }};
+const el = (tag, attrs, text) => text;
+const fresh = () => ({{}});
+const clearBoard = () => {{}};
+class GateError extends Error {{}}
+let state, resendAfterGate, renderFails = false;
+const renderExtracted = () => {{ seen.push(["extracted", hidden.reading]); }};
+const render = () => {{ seen.push(["render", hidden.reading]); if (renderFails) throw new Error("落ちた"); }};
+{func}
+(async () => {{
+  const data = {{ subject: "母", facts: {{}}, suggestions: [], engine: "fake", place: null }};
+  await consultWith("t", async () => data);
+  const ok = {{ seen: [...seen], reading: hidden.reading }};
+  await consultWith("t", async () => {{ throw new Error("通信できませんでした"); }});
+  const failed = {{ reading: hidden.reading, msg: $("reading").kids }};
+  renderFails = true;
+  await consultWith("t", async () => data);
+  const broke = {{ reading: hidden.reading, msg: $("reading").kids }};
+  console.log(JSON.stringify({{ ok, failed, broke }}));
+}})();
+"""
+    got = json.loads(subprocess.run([node, "-e", run], capture_output=True, text=True, check=True).stdout)
+    # 読み取ったことの欄を出す時も、送る時（render）も、読み取り中の札はもう消えている
+    assert got["ok"] == {"seen": [["extracted", True], ["render", True]], "reading": True}
+    # 読み取りに失敗したときは、札に知らせを出して見せる（受け取った後に落ちたときも）
+    assert got["failed"] == {"reading": False, "msg": ["通信できませんでした"]}
+    assert got["broke"] == {"reading": False, "msg": ["落ちた"]}
+
+
 def test_claude_failure_becomes_a_message(monkeypatch):
     from todoku import app as app_mod
     from todoku.claude import ClaudeFailed
