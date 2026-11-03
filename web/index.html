@@ -19,6 +19,9 @@
 </header>
 
 <main class="wrap">
+  <!-- 読み上げに知らせる領域。hidden を外すのと同時に出す領域は読まれないことがあるので、いつも置いておく（T-030） -->
+  <p id="status" class="sr-only" role="status"></p>
+
   <section id="gate" class="card" hidden>
     <label for="aikotoba">合言葉</label>
     <p class="note" id="gate-msg">いまは試しに動かしているため、ご自分の相談を送るには合言葉が要ります。下の見本は、合言葉なしで最後まで試せます。</p>
@@ -62,7 +65,7 @@
     <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
   </section>
 
-  <section id="reading" class="card" hidden aria-live="polite">
+  <section id="reading" class="card" hidden>
     <p>読み取っています…</p>
   </section>
 
@@ -79,7 +82,7 @@
     <p class="note">点は制度 1 つずつです。答えるたびに、規則のプログラムが判定し直します（AI は使いません）。</p>
   </section>
 
-  <section id="ask" class="card ask" hidden aria-live="polite">
+  <section id="ask" class="card ask" hidden>
     <p class="ask-count" id="ask-count"></p>
     <h2 id="ask-text" tabindex="-1"></h2>
     <p class="hint" id="ask-hint"></p>

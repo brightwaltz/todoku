@@ -305,6 +305,7 @@ def test_reading_card_is_gone_before_scrolling_to_what_was_read():
 const hidden = {{}}, nodes = {{}}, seen = [];
 const $ = (id) => (nodes[id] ||= {{ disabled: false, kids: [], replaceChildren(...k) {{ this.kids = k; }} }});
 const show = (id, on = true) => {{ hidden[id] = !on; }};
+const said = [], say = (t) => {{ said.push(t); }};  // いつもある読み上げの領域 #status（T-030）
 const el = (tag, attrs, text) => text;
 const fresh = () => ({{}});
 const clearBoard = () => {{}};
@@ -322,7 +323,7 @@ const render = () => {{ seen.push(["render", hidden.reading]); if (renderFails) 
   renderFails = true;
   await consultWith("t", async () => data);
   const broke = {{ reading: hidden.reading, msg: $("reading").kids }};
-  console.log(JSON.stringify({{ ok, failed, broke }}));
+  console.log(JSON.stringify({{ ok, failed, broke, said }}));
 }})();
 """
     got = json.loads(subprocess.run([node, "-e", run], capture_output=True, text=True, check=True).stdout)
@@ -331,6 +332,8 @@ const render = () => {{ seen.push(["render", hidden.reading]); if (renderFails) 
     # 読み取りに失敗したときは、札に知らせを出して見せる（受け取った後に落ちたときも）
     assert got["failed"] == {"reading": False, "msg": ["通信できませんでした"]}
     assert got["broke"] == {"reading": False, "msg": ["落ちた"]}
+    # 読み上げには #status で、読み取りの間は「読み取っています…」、読み取れたら空、失敗したらその知らせを伝える（T-030）
+    assert got["said"] == ["読み取っています…", "", "読み取っています…", "通信できませんでした", "読み取っています…", "", "落ちた"]
 
 
 def test_claude_failure_becomes_a_message(monkeypatch):
@@ -877,3 +880,37 @@ def test_tap_targets_are_at_least_44px():
     assert "padding: 9px 0" in rule("details summary")
     assert "position: relative" in rule(".tel")
     assert "inset: -14px 0" in rule(".tel::after")
+
+
+def test_screen_reader_status_and_focus_after_buttons_vanish():
+    # 読み上げとキーボード（T-030。動きはブラウザで確かめた。VoiceOver の実機では確かめていない）。
+    # (1) 押したボタンが消える所（結果の画面が出たとき・「まだ確かめていないこと」に答えたとき・「ほか N 件」）で
+    #     フォーカスを body に落とさず、次に読む所へ移す。
+    # (2) 問いが変わるたびに選択肢まで読み上げないよう、#ask は aria-live にせず、問いの文へのフォーカスの移動で伝える。
+    # (3) 「読み取っています…」は、hidden を外すのと同時に出す領域ではなく、いつもある role=status の領域で伝える。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    html = (root / "index.html").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+    css = (root / "style.css").read_text(encoding="utf-8")
+
+    def tag(id_):
+        m = re.search(r'<[a-z]+ id="' + id_ + r'"[^>]*>', html)
+        assert m, id_
+        return m.group(0)
+
+    assert "aria-live" not in tag("ask") and "aria-live" not in tag("reading")
+    status = tag("status")
+    assert 'role="status"' in status and "hidden" not in status
+    # どの section の中でもなく main の直下に置く（section ごと hidden になると、読み上げの領域として働かない）
+    assert re.search(r'<main class="wrap">\s*(<!--[^>]*-->\s*)?<p id="status"', html)
+    sr = re.search(r"^\.sr-only \{([^}]*)\}", css, re.M)
+    assert sr and "display: none" not in sr.group(1) and "visibility" not in sr.group(1)
+    assert 'say("読み取っています…")' in js and "say(e.message)" in js
+    # 結果の画面が出たら先頭の見出しへ、答えたら同じ位置に来た問いへ、「ほか N 件」は開いた中身へ
+    assert "focusOn(resultHeading())" in js
+    assert "state.laterAt = laterSpots().indexOf(" in js
+    assert 'focusOn(rest.querySelector("h3"))' in js and 'focusOn(rest.querySelector("summary"))' in js
+    assert "more.remove(); }" not in js  # 消すだけで、フォーカスを移さないボタンを残さない

@@ -67,6 +67,15 @@ function el(tag, attrs = {}, ...children) {
 }
 
 function show(id, on = true) { $(id).hidden = !on; }
+// 読み上げに知らせる（#status はいつもある領域。空にしておくと、次に同じ文を入れても読まれる）
+function say(text) { $("status").textContent = text; }
+// 押したボタンが消えると、フォーカスが body に落ちて読み上げ・キーボードの人が先頭から辿り直すことになるので、次に読む所へ移す（T-030）
+const seen = (node) => Boolean(node) && node.getClientRects().length > 0;
+function focusOn(node) {
+  if (!node) return;
+  if (!node.matches("a[href], button, summary, input, select, textarea") && !node.hasAttribute("tabindex")) node.setAttribute("tabindex", "-1");
+  node.focus({ preventScroll: true });
+}
 
 function askGate(wrong) {
   $("gate-msg").textContent = wrong
@@ -183,12 +192,14 @@ async function consultWith(text, call) {
   state.startedAt = Date.now();
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
+  say("読み取っています…");
   show("reading"); show("extracted", false); show("ask", false); show("result", false);
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
     // 読み取ったことの欄へ送る前に消す。送った後に消すと、その高さぶん中身が上へずれ、見出しが画面の上に切れる（T-023）
     show("reading", false);
+    say("");
     state.subject = data.subject;
     state.facts = data.facts;
     state.suggestions = data.suggestions;
@@ -200,6 +211,7 @@ async function consultWith(text, call) {
   } catch (e) {
     resendAfterGate = e instanceof GateError;
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
+    say(e.message);
     show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
     $("send").disabled = false;
     return;
@@ -411,6 +423,8 @@ function renderQuestion(q, max, first = false) {
   $("ask-why").textContent = q.affects.length ? `この答えで判定が決まる制度：${affectNames(q.affects)}` : "";
   $("ask-check").textContent = q.check;
   // 選択肢ではなく問いの文に移る（1 つ目の選択肢に色が付くと、先に選んであるように見えるため）
+  // #ask の aria-live はやめ、問いの文へのフォーカスの移動で伝える。もう問いの文にあると focus() では読み直されないので、いったん外す
+  if (document.activeElement === $("ask-text")) $("ask-text").blur();
   $("ask-text").focus({ preventScroll: true });
   if (first) revealThenAsk();
   else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -484,7 +498,10 @@ async function step(change = {}, stop = false) {
     Object.assign(state, change);
     render(data);
   } catch (e) {
-    if (mine === state) (state.resultShown ? $("later-change") : $("ask-why")).textContent = e.message;
+    if (mine === state) {
+      (state.resultShown ? $("later-change") : $("ask-why")).textContent = e.message;
+      if (!state.resultShown) say(e.message);  // #later-change は読み上げの領域。問いの欄はそうでないので知らせる
+    }
   } finally {
     setBusy(false);
   }
@@ -517,25 +534,35 @@ const UNREAD_FIRST = 0;
 function renderLater(unconfirmed, unread = []) {
   const item = (q) => {
     const box = el("div");
-    fillAnswers(box, q, (v) => answer(q, v, true), (code) => answerPlace(code, true));
-    return el("div", { class: "later-item" },
+    const node = el("div", { class: "later-item" },
       el("h3", {}, askText(q)),
       q.hint ? el("p", { class: "hint" }, q.hint) : null,
       box,
       q.affects.length ? el("p", { class: "why" }, `この答えで判定が決まる制度：${affectNames(q.affects)}`) : null);
+    // 答えた問いは出し直すと消えるので、何番目だったかを覚えておき、同じ位置に来た問いへフォーカスを移す
+    const mark = () => { state.laterAt = laterSpots().indexOf(node.querySelector("h3")); };
+    fillAnswers(box, q, (v) => { mark(); answer(q, v, true); }, (code) => { mark(); answerPlace(code, true); });
+    return node;
   };
   // 一度「ほか N 件を見る」を押したら、答えて出し直しても開いたままにする
   const first = state.laterOpen ? unread.length : UNREAD_FIRST;
   const nodes = [...unconfirmed.map(item), ...unread.slice(0, first).map(item)];
   if (unread.length > first) {
     const rest = el("div", { hidden: "" }, unread.slice(first).map(item));
-    const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); state.laterOpen = true; } },
+    const more = el("button", { class: "link", onclick: () => {
+      rest.hidden = false; more.remove(); state.laterOpen = true; focusOn(rest.querySelector("h3"));
+    } },
       first ? `ほか ${unread.length - first} 件を見る` : `読み取れなかったことにも答える（${unread.length} 件）`);
     nodes.push(more, rest);
   }
   $("later-list").replaceChildren(...nodes);
   show("later", unconfirmed.length + unread.length > 0);
 }
+
+// 「まだ確かめていないこと」の欄で、フォーカスを移せる所（見えている問いの見出しと、畳んだ問いを開くボタン）
+const laterSpots = () => [...$("later-list").querySelectorAll(".later-item h3, #later-list > button")].filter(seen);
+// 結果の画面の先頭の見出し（「まだ確かめていないこと」、無ければ「当てはまる見込み」など）
+const resultHeading = () => [...$("result").querySelectorAll("h2")].find(seen);
 
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
@@ -556,7 +583,7 @@ function renderResult(data) {
     for (const r of first) groups.append(programCard(r));
     if (first.length < items.length) {
       const rest = el("div", { hidden: "" }, items.slice(first.length).map(programCard));
-      const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); } },
+      const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); focusOn(rest.querySelector("summary")); } },
         `ほか ${items.length - first.length} 件を見る`);
       groups.append(more, rest);
     }
@@ -573,7 +600,15 @@ function renderResult(data) {
     `${h.name}にお住まいなら${hidden.length > 1 ? "" : "、"}${h.name.slice(-1)}の制度 ${h.n} 件`).join("、") + "も判定します。" : "";
   show("other-city", hidden.length > 0);
   show("result");
-  if (!again) $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!again) {
+    $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+    focusOn(resultHeading());
+  } else if (state.laterAt !== undefined) {
+    // 答えた問いの位置に来た問い（最後の問いなら 1 つ前、欄が空になったら結果の先頭の見出し）へ
+    const spots = laterSpots();
+    focusOn(spots[Math.min(state.laterAt, spots.length - 1)] || resultHeading());
+    state.laterAt = undefined;
+  }
   // まとめが扱う制度が変わったときだけ書き直す（確かめても判定が同じなら、Claude を呼ばない）
   const key = data.results.filter((r) => SUMMARIZED.includes(r.status)).map((r) => r.id).join(",");
   if (state.sample) {

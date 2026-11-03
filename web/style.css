@@ -115,7 +115,10 @@ select:disabled { color: var(--muted); background: var(--soft); }
 }
 .ask { border: 3px solid var(--accent); }
 .ask-count { color: var(--accent); font-weight: 700; margin: 0 0 4px; font-size: 15px; }
-#ask-text:focus { outline: none; }
+/* 画面が変わったときにフォーカスを移す見出し（押す所ではないので輪郭を出さない） */
+[tabindex="-1"]:focus { outline: none; }
+/* 目には見せず、読み上げには読ませる（display:none や visibility:hidden では読まれない） */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .hint { margin: 0 0 4px; }
 .hint:empty { display: none; }
 .options { display: grid; gap: 10px; margin: 8px 0 12px; }
