@@ -882,6 +882,34 @@ def test_tap_targets_are_at_least_44px():
     assert "inset: -14px 0" in rule(".tel::after")
 
 
+def test_small_text_is_at_least_14px():
+    # 帯の注と結果の札（pill・tag）は 14px 以上（T-031。ブラウザで測ると、結果のカードの高さは 390 で 8 枚の合計 +6px、
+    # 1280 で 0px）。帯の列の名前は D-0012 で聞いている（B が 14px。A なら下の .col-head の 1 行を 11 に戻す）。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    css = (root / "style.css").read_text(encoding="utf-8")
+
+    def size(selector):
+        m = re.search(r"^" + re.escape(selector) + r" \{[^}]*font-size: (\d+)px", css, re.M)
+        assert m, selector
+        return int(m.group(1))
+
+    for sel in (".board-card .note", ".tag", ".pill"):
+        assert size(sel) >= 14, sel
+    assert size(".col-head") >= 14
+    # 14px では 390 の 4 列で 4 字までしか並ばないので、列の名前は言葉の切れ目でだけ折り返す
+    assert "display: inline-block" in re.search(r"^\.col-head \.ph \{([^}]*)\}", css, re.M).group(1)
+    js = (root / "app.js").read_text(encoding="utf-8")
+    board = re.search(r"const BOARD = \[(.*?)\n\];", js, re.S).group(1)
+    rows = re.findall(r'\["(\w+)", "([^"]+)", "[^"]+", \[([^\]]*)\]\]', board)
+    assert len(rows) == 4
+    for key, label, parts in rows:
+        assert "".join(re.findall(r'"([^"]+)"', parts)) == label, key
+    assert 'parts.map((t) => el("span", { class: "ph" }, t))' in js
+
+
 def test_screen_reader_status_and_focus_after_buttons_vanish():
     # 読み上げとキーボード（T-030。動きはブラウザで確かめた。VoiceOver の実機では確かめていない）。
     # (1) 押したボタンが消える所（結果の画面が出たとき・「まだ確かめていないこと」に答えたとき・「ほか N 件」）で

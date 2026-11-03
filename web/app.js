@@ -289,11 +289,12 @@ function markEvidence(text, extracted) {
 
 // ---- いまの見立て ----
 // 制度ごとの札を 4 つの列に置き、答えのたびに列が変わった札だけを動かす（FLIP）
+// 4 つ目は列の名前の折り返してよい所。スマホの 4 列（名前の幅 65px・14px で 4 字）で「当てはま／る」と切れないように
 const BOARD = [
-  ["eligible", "当てはまる", "当てはまる見込み"],
-  ["after_prereq", "先に手続き", "先に手続きをすると使える制度"],
-  ["unknown", "確かめる", "確かめると使えるかもしれない制度"],
-  ["no", "当てはまらない", "当てはまらない制度"],
+  ["eligible", "当てはまる", "当てはまる見込み", ["当ては", "まる"]],
+  ["after_prereq", "先に手続き", "先に手続きをすると使える制度", ["先に", "手続き"]],
+  ["unknown", "確かめる", "確かめると使えるかもしれない制度", ["確かめる"]],
+  ["no", "当てはまらない", "当てはまらない制度", ["当ては", "まらない"]],
 ];
 // 済んでいる・申請済み（結果待ち）の制度は、いま手を打たなくてよく、当てはまらないのでもないので、帯に札を置かない
 // （列の数にも入れない）。動いたことは変化の文で言い、結果の画面では別に出す（T-022）
@@ -320,8 +321,9 @@ function restart(node, cls) {
 function renderBoard(data) {
   const box = $("board-cols");
   if (!box.children.length) {
-    box.append(...BOARD.map(([key, label]) => el("div", { class: `col ${key}`, "data-col": key },
-      el("div", { class: "col-head" }, el("span", { class: "label" }, label), el("span", { class: "count" }, "0")),
+    box.append(...BOARD.map(([key, label, , parts]) => el("div", { class: `col ${key}`, "data-col": key },
+      el("div", { class: "col-head" }, el("span", { class: "label" }, ...parts.map((t) => el("span", { class: "ph" }, t))),
+        el("span", { class: "count" }, "0")),
       el("ul", { class: "tiles", "aria-label": label }))));
   }
   show("board");  // 隠れていると位置が測れない
