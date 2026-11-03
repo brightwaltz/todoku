@@ -43,6 +43,8 @@ def referenced_facts(rules: RuleSet) -> set[str]:
         walk(program.eligibility)
         if program.done_when:
             walk(program.done_when)
+        if program.pending_when:
+            walk(program.pending_when)
     return found
 
 
