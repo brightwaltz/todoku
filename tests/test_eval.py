@@ -113,7 +113,7 @@ def test_failed_cases_are_reported_not_fatal(tmp_path, monkeypatch, capsys):
     gold = {c["id"]: {"kaigo-nintei": "yes"} for c in cases}
     cases[0] = {**cases[0], "text": "退院した母のことです。"}
     monkeypatch.setattr(run_eval, "load_cases", lambda: cases)
-    monkeypatch.setattr(run_eval, "load_gold", lambda rs: gold)
+    monkeypatch.setattr(run_eval, "load_gold", lambda rs, path=None: gold)
     monkeypatch.setattr(run_eval, "OUT", tmp_path)
     monkeypatch.setattr(claude_mod, "RealClaude", Flaky)
     run_eval.main(["pipeline", "claude_only"])  # claude_only は FakeClaude に _json がなく、全件失敗する

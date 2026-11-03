@@ -3,6 +3,8 @@
 手順は eval/PROTOCOL.md。API は呼ばない。
   uv run python eval/adjudicate.py prepare eval/out/blind/read-A.json eval/out/blind/read-B.json
   uv run python eval/adjudicate.py gold eval/out/adjudication-….json eval/out/decisions-….json   （裁定ページの db を書き出したもの）
+gold は eval/gold.csv と、決まりの問いのマス（と同じ型で別に見たマス）を空欄にした eval/gold_no_policy.csv を書く。
+裁くときに見せた Claude の推しは eval/recommendations.json（裁定の前にコミット）。db の「推しどおり」は、このファイルと照合する。
 結果は eval/out/adjudication-<日時>.json（町田市の引用を含むので eval/out/ に置く。リポジトリに入れない）。
 
 マスの印：○＝当たりうる、×＝当たらない（済んでいるを含む）、？＝決められない、申＝申請済み・結果待ち。
@@ -35,6 +37,8 @@ from blind_read import SCORED, cases_in_scope, load_cases  # noqa: E402
 from sources import CACHE  # noqa: E402
 
 OUT = ROOT / "eval" / "out"
+RECS = ROOT / "eval" / "recommendations.json"
+MARKS = ("○", "×", "？")
 SEED = 20261103
 AUDIT_YES = 20
 AUDIT_NO = 20
@@ -239,6 +243,10 @@ def decided_mark(item: dict, cell: dict, kind: str, decisions: dict) -> str | No
     key = f"{cell['case']}-{cell['num']}"
     if (d.get("overrides") or {}).get(key):
         return d["overrides"][key]
+    # 推しどおり（2026-11-04）：押したときの推しの印を db の文書に入れてある（確かなマスだけ。迷うマスは overrides で 1 マスずつ）
+    if d.get("choice") == "rec":
+        m = (d.get("rec") or {}).get(key)
+        return m if m in MARKS else None
     if kind == "policy":
         # 取り消した選択（choice が空）に resolved が残っていても使わない
         if d.get("choice") not in ("r1", "r2", "○", "×", "？"):
@@ -266,23 +274,71 @@ def upper_bound(k: int, n: int, alpha: float = 0.05) -> float:
     return hi
 
 
-def build_gold(adj: dict, decisions: dict) -> tuple[dict, dict]:
+def check_recs(adj: dict, decisions: dict, recs: dict) -> None:
+    """db の「推しどおり」に入っている印が、コミットした推し（確かなマス）と同じか。違えば止める。"""
+    for it in adj["policies"] + adj["issues"]:
+        d = decisions.get(it["id"], {})
+        if d.get("choice") != "rec":
+            continue
+        want = {k: v["mark"] for k, v in recs["items"][it["id"]]["cells"].items() if v["sure"]}
+        if (d.get("rec") or {}) != want:
+            sys.exit(f"{it['id']} の「推しどおり」の印が eval/recommendations.json と合いません（ページの版が古い？）")
+    for k, d in decisions.items():
+        if k.startswith("x-") and d.get("mark") in MARKS:
+            x = recs.get("extra", {}).get(k)
+            if not x or (x["case"], x["num"]) != (d.get("case"), d.get("num")):
+                sys.exit(f"{k} は eval/recommendations.json の「別に見るマス」にありません")
+
+
+def source_of(it: dict, cell: dict, kind: str, decisions: dict) -> str:
+    """マスの正解がどこから来たか（報告用）。"""
+    d = decisions.get(it["id"], {})
+    if (d.get("overrides") or {}).get(f"{cell['case']}-{cell['num']}"):
+        return "先生が 1 マスずつ"
+    return "推しどおり" if d.get("choice") == "rec" else f"先生が{'型' if kind == 'policy' else '論点'}ごとに"
+
+
+def build_gold(adj: dict, decisions: dict, recs: dict | None = None) -> tuple[dict, dict]:
     """（事例→{制度番号: 印}、報告）を返す。決まっていないマスは入れない（空欄）。"""
+    if recs:
+        check_recs(adj, decisions, recs)
+    rec_mark = {}
+    if recs:
+        rec_mark = {k: v["mark"] for x in recs["items"].values() for k, v in x["cells"].items()}
+        rec_mark.update({f"{x['case']}-{x['num']}": x["mark"] for x in recs.get("extra", {}).values()})
     gold: dict[str, dict[int, str]] = defaultdict(dict)
     report = {"agreed": defaultdict(int), "policy": defaultdict(int), "issue": defaultdict(int),
-              "undecided": [], "audit_n": 0, "audit_wrong": [], "audit_unmarked": 0}
+              "undecided": [], "audit_n": 0, "audit_wrong": [], "audit_unmarked": 0,
+              "source": {}, "policy_cells": [], "extra": {}, "rec_changed": []}
     for c in adj["agreed"]:
         gold[c["case"]][c["num"]] = c["mark"]
         report["agreed"][c["mark"]] += 1
+        report["source"][f"{c['case']}-{c['num']}"] = "一致"
     for kind, items in (("policy", adj["policies"]), ("issue", adj["issues"])):
         for it in items:
             for cell in it["cells"]:
+                key = f"{cell['case']}-{cell['num']}"
+                if kind == "policy":
+                    report["policy_cells"].append(key)
                 m = decided_mark(it, cell, kind, decisions)
                 if m is None:
-                    report["undecided"].append(f"{cell['case']}-{cell['num']}")
+                    report["undecided"].append(key)
                     continue
                 gold[cell["case"]][cell["num"]] = m
                 report[kind][m] += 1
+                report["source"][key] = source_of(it, cell, kind, decisions)
+                if key in rec_mark and rec_mark[key] != m:
+                    report["rec_changed"].append({"cell": key, "rec": rec_mark[key], "final": m})
+    # 一致したが、決まりの問いと同じ型で読みの理由が外れていたマス（別に見る。結果を見てから足した）
+    for k, d in sorted(decisions.items()):
+        if k.startswith("x-") and d.get("mark") in MARKS:
+            key = f"{d['case']}-{d['num']}"
+            gold[d["case"]][int(d["num"])] = d["mark"]
+            report["extra"][key] = d["mark"]
+            report["source"][key] = "別に見た"
+            report["policy_cells"].append(key)
+            if key in rec_mark and rec_mark[key] != d["mark"]:
+                report["rec_changed"].append({"cell": key, "rec": rec_mark[key], "final": d["mark"]})
     for a in adj["audit"]:
         d = decisions.get(f"a-{a['case']}-{a['num']}", {})
         if d.get("mark") not in ("○", "×", "？"):
@@ -292,12 +348,14 @@ def build_gold(adj: dict, decisions: dict) -> tuple[dict, dict]:
         if d["mark"] != a["a"]["mark"]:
             report["audit_wrong"].append({"case": a["case"], "num": a["num"], "agreed": a["a"]["mark"], "teacher": d["mark"]})
             gold[a["case"]][a["num"]] = d["mark"]   # 柴田の印を正解にする
+            report["source"][f"{a['case']}-{a['num']}"] = "抜き取りで直した"
     k, n = len(report["audit_wrong"]), report["audit_n"]
     report["audit_upper"] = round(upper_bound(k, n), 3) if n else None
     return gold, report
 
 
-def write_gold(gold: dict, path: Path) -> None:
+def write_gold(gold: dict, path: Path, blank: set[str] = frozenset()) -> None:
+    """正解表を書く。blank に入れたマス（"c01-5" の形）は空欄にする。"""
     import csv
     rs = rules_mod.load()
     progs = sorted((p for p in rs.programs.values() if p.number in SCORED), key=lambda p: p.number)
@@ -305,19 +363,24 @@ def write_gold(gold: dict, path: Path) -> None:
         w = csv.writer(f)
         w.writerow(["事例"] + [f"{p.number} {p.name}" for p in progs])
         for case in load_cases():
-            w.writerow([case["id"]] + [gold.get(case["id"], {}).get(p.number, "") for p in progs])
+            w.writerow([case["id"]] + ["" if f"{case['id']}-{p.number}" in blank else gold.get(case["id"], {}).get(p.number, "")
+                                       for p in progs])
 
 
 def main() -> None:
     if len(sys.argv) == 4 and sys.argv[1] == "gold":
         adj = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
         decisions = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
-        gold, rep = build_gold(adj, decisions)
+        recs = json.loads(RECS.read_text(encoding="utf-8")) if RECS.exists() else None
+        gold, rep = build_gold(adj, decisions, recs)
         write_gold(gold, ROOT / "eval" / "gold.csv")
+        write_gold(gold, ROOT / "eval" / "gold_no_policy.csv", set(rep["policy_cells"]))
         path = OUT / f"gold-report-{datetime.now():%Y%m%d-%H%M}.json"
         path.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"一致 {dict(rep['agreed'])}、決まりの問い {dict(rep['policy'])}、論点 {dict(rep['issue'])}、未決 {len(rep['undecided'])} マス")
-        print(f"抜き取り {rep['audit_n']} 件中 {len(rep['audit_wrong'])} 件が誤り（上限 {rep['audit_upper']}）、未記入 {rep['audit_unmarked']} → eval/gold.csv")
+        print(f"別に見たマス {rep['extra']}、推しと違う印になったマス {len(rep['rec_changed'])}")
+        print(f"抜き取り {rep['audit_n']} 件中 {len(rep['audit_wrong'])} 件が誤り（上限 {rep['audit_upper']}）、未記入 {rep['audit_unmarked']}"
+              f" → eval/gold.csv、決まりの問いの {len(rep['policy_cells'])} マスを空欄にした eval/gold_no_policy.csv")
         return
     if len(sys.argv) < 3 or sys.argv[1] != "prepare":
         sys.exit(__doc__)

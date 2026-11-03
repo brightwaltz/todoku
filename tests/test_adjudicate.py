@@ -207,3 +207,89 @@ def test_cleared_policy_choice_is_undecided():
     assert gold["c01"][5] == "○"
     gold, _ = adjudicate.build_gold(adj, {"p-plan": {"choice": "×", "resolved": "×"}})
     assert gold["c01"][5] == "×"
+
+
+def _recs():
+    return {"items": {
+        "p-plan": {"cells": {"c01-5": {"mark": "○", "sure": True}, "c02-5": {"mark": "×", "sure": False}}},
+        "i01": {"cells": {"c03-9": {"mark": "○", "sure": True}}}},
+        "extra": {"x-c16-6": {"case": "c16", "num": 6, "mark": "○", "sure": False}}}
+
+
+def _adj_rec():
+    return {"agreed": [{"case": "c16", "num": 6, "mark": "×"}], "audit": [],
+            "policies": [{"id": "p-plan", "cells": [_c("c01", 5, "×", "○", "○"), _c("c02", 5, "×", "○", "×")]}],
+            "issues": [{"id": "i01", "cells": [_c("c03", 9, "×", "○", "○")]}]}
+
+
+def test_rec_choice_uses_sure_cells_and_leaves_unsure_to_teacher():
+    """「推しどおり」は確かなマスだけに効く。迷うマスは 1 マスずつ押すまで決まらない。"""
+    adj, recs = _adj_rec(), _recs()
+    d = {"p-plan": {"choice": "rec", "rec": {"c01-5": "○"}}}
+    gold, rep = adjudicate.build_gold(adj, d, recs)
+    assert gold["c01"][5] == "○" and rep["undecided"] == ["c02-5", "c03-9"]
+    assert rep["source"]["c01-5"] == "推しどおり"
+    # 迷うマスを 1 マスずつ押す → 推しと違えば数える
+    d["p-plan"]["overrides"] = {"c02-5": "？"}
+    gold, rep = adjudicate.build_gold(adj, d, recs)
+    assert gold["c02"][5] == "？" and rep["source"]["c02-5"] == "先生が 1 マスずつ"
+    assert rep["rec_changed"] == [{"cell": "c02-5", "rec": "×", "final": "？"}]
+    # 1 マスを「全体の答えに戻す」（overrides から消す）と推しに戻る
+    d["p-plan"]["overrides"] = {}
+    d["p-plan"]["rec"]["c01-5"] = "○"
+    gold, _ = adjudicate.build_gold(adj, d, recs)
+    assert gold["c01"][5] == "○"
+
+
+def test_issue_mark_and_rec_switch_both_ways():
+    adj, recs = _adj_rec(), _recs()
+    gold, rep = adjudicate.build_gold(adj, {"i01": {"choice": "rec", "rec": {"c03-9": "○"}, "mark": None}}, recs)
+    assert gold["c03"][9] == "○" and rep["source"]["c03-9"] == "推しどおり"
+    gold, rep = adjudicate.build_gold(adj, {"i01": {"choice": None, "rec": {"c03-9": "○"}, "mark": "×"}}, recs)
+    assert gold["c03"][9] == "×" and rep["source"]["c03-9"] == "先生が論点ごとに"
+    assert rep["rec_changed"] == [{"cell": "c03-9", "rec": "○", "final": "×"}]
+
+
+def test_rec_in_db_must_match_committed_file():
+    adj, recs = _adj_rec(), _recs()
+    with pytest.raises(SystemExit):
+        adjudicate.build_gold(adj, {"p-plan": {"choice": "rec", "rec": {"c01-5": "×"}}}, recs)
+    with pytest.raises(SystemExit):   # 迷うマスまで「推しどおり」に入っているのは古いページ
+        adjudicate.build_gold(adj, {"p-plan": {"choice": "rec", "rec": {"c01-5": "○", "c02-5": "×"}}}, recs)
+    with pytest.raises(SystemExit):   # 推しのファイルにない「別に見るマス」
+        adjudicate.build_gold(adj, {"x-c09-6": {"mark": "○", "case": "c09", "num": 6}}, recs)
+
+
+def test_extra_cell_overrides_agreed_and_is_blanked_in_no_policy(tmp_path):
+    adj, recs = _adj_rec(), _recs()
+    d = {"p-plan": {"choice": "○"}, "x-c16-6": {"mark": "○", "case": "c16", "num": 6}}
+    gold, rep = adjudicate.build_gold(adj, d, recs)
+    assert gold["c16"][6] == "○" and rep["source"]["c16-6"] == "別に見た"
+    assert set(rep["policy_cells"]) == {"c01-5", "c02-5", "c16-6"}
+    path = tmp_path / "g.csv"
+    adjudicate.write_gold(gold, path, set(rep["policy_cells"]))
+    import csv
+    rows = {r["事例"]: r for r in csv.DictReader(path.open(encoding="utf-8-sig"))}
+    col5 = next(k for k in rows["c01"] if k.startswith("5 "))
+    col6 = next(k for k in rows["c16"] if k.startswith("6 "))
+    assert rows["c01"][col5] == "" and rows["c16"][col6] == ""
+
+
+def test_committed_recommendations_cover_every_disputed_cell():
+    """コミットした推しは、裁定の材料のすべてのマスに 1 つずつ印を持ち、町田市などの文を引いていない。"""
+    recs = json.loads((ROOT / "eval" / "recommendations.json").read_text(encoding="utf-8"))
+    n = sum(len(x["cells"]) for x in recs["items"].values())
+    assert n == 165 and set(recs["extra"]) == {"x-c16-6", "x-c17-6"}
+    for x in recs["items"].values():
+        for v in x["cells"].values():
+            assert v["mark"] in ("○", "×", "？") and v["why"] and isinstance(v["sure"], bool)
+    # 公式資料の本文（手元に取ってあるときだけ。.gitignore 済み）と 20 字以上続けて同じ文がない
+    texts = [adjudicate.norm(f.read_text(encoding="utf-8")) for f in sources.CACHE.glob("*.txt")] if sources.CACHE.exists() else []
+    if not texts:
+        pytest.skip("公式資料の本文が手元にない")
+    whys = [v["why"] for x in recs["items"].values() for v in x["cells"].values()] + [x["summary"] for x in recs["items"].values()]
+    whys += [x["why"] for x in recs["extra"].values()]
+    for w in whys:
+        n = adjudicate.norm(w)
+        hits = [n[i:i + 20] for i in range(max(0, len(n) - 19)) if any(n[i:i + 20] in t for t in texts)]
+        assert not hits, (w, hits[:1])

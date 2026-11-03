@@ -4,15 +4,18 @@
   rules        規則だけ。事例の答え（事実）をすべて与えて判定する。規則の正しさを見る。Claude は使わない
   pipeline     窓口全体。相談文 → Claude が事実を取り出す → 最大 3 問を事例の答えで返す → 判定。
                入口でお住まいの市区町村を選んだ場合（place）も、追加の API 呼び出しなしで出す
-  claude_only  Claude だけ。同じ相談文と、正解表にある制度（20）の名前と説明を渡し、案内すべき制度を選ばせる（問いは返さない）
+  claude_only  Claude だけ。同じ相談文と、正解表にある制度（1〜32）の名前と説明を渡し、案内すべき制度を選ばせる（問いは返さない）
 
-正解（eval/gold.csv）は柴田が判定結果を見ずに付けたもの。○＝公式の条件に当たりうる（本人が望むかは問わない）、
-×＝当たらない（済んでいるものを含む）、？＝決められない（採点に入れない）。知らない印があれば止める。
+正解（eval/gold.csv）は、規則の読みと目隠しの Claude の読みを突き合わせ、食い違ったマスだけを柴田が裁いて作った
+（eval/PROTOCOL.md。裁くときに Claude の推し eval/recommendations.json を見せた）。
+○＝公式の条件に当たりうる（本人が望むかは問わない）、×＝当たらない（済んでいるものを含む）、？＝決められない（採点に入れない）。
+知らない印があれば止める。--gold eval/gold_no_policy.csv で、決まりの問いのマスを空欄にした正解表でも採点できる。
 「申請済み・結果待ち」（pending）は案内にも示したにも数えず、正解の印ごとの数を別に出す。
 窓口が「案内した」とみなすのは「当てはまる見込み」と「先に手続きをすると使える」。「確かめると使えるかもしれない」は「示した」として別に数える。
 
 使い方：
   uv run python eval/run_eval.py rules
+  uv run python eval/run_eval.py rules --gold eval/gold_no_policy.csv
   ANTHROPIC_API_KEY=... uv run python eval/run_eval.py pipeline claude_only   （API の料金がかかる）
 """
 
@@ -65,7 +68,7 @@ def load_cases() -> list[dict]:
 def load_gold(rs: rules_mod.RuleSet, path: Path | None = None) -> dict[str, dict[str, str]]:
     path = path or HERE / "gold.csv"
     if not path.exists():
-        sys.exit("eval/gold.csv がありません（gold_sheet.csv に正解を付けて、この名前で置いてください）")
+        sys.exit(f"{path} がありません（eval/adjudicate.py gold で作ります）")
     by_number = {p.number: p.id for p in rs.programs.values()}
     gold: dict[str, dict[str, str]] = {}
     blanks = 0
@@ -246,13 +249,21 @@ def report_line(key: str, s: dict) -> str:
             f"  ×なのに案内 {c['no_recommended']}  ×なのに示した {c['no_shown']}")
 
 
-def main(modes: list[str]) -> None:
+def main(args: list[str]) -> None:
+    gold_path = None
+    if "--gold" in args:
+        i = args.index("--gold")
+        if i + 1 >= len(args):
+            sys.exit("--gold のあとに正解表のパスを書いてください")
+        gold_path = Path(args[i + 1])
+        args = args[:i] + args[i + 2:]
+    modes = args or ["rules"]
     unknown = [m for m in modes if m not in MODES]
     if unknown:
         sys.exit(f"知らない比べ方：{'・'.join(unknown)}（{'・'.join(MODES)} のどれか）")
     rs = rules_mod.load()
     cases = load_cases()
-    gold = load_gold(rs)
+    gold = load_gold(rs, gold_path)
     gold_programs = sorted({pid for marks in gold.values() for pid in marks})
     claude = None
     if {"pipeline", "claude_only"} & set(modes):
@@ -298,12 +309,14 @@ def main(modes: list[str]) -> None:
                                                 "wrong_recommended": s["cells"]["no_recommended"],
                                                 "wrong_shown": s["cells"]["no_shown"]}
                 print(report_line("お住まい選択" if key == "place" else key, s))
+        summary["gold"] = (gold_path or HERE / "gold.csv").name
         summaries[mode] = summary
-        (OUT / f"{mode}-{stamp}.json").write_text(
+        tag = "" if gold_path is None else f"-{gold_path.stem}"
+        (OUT / f"{mode}-{stamp}{tag}.json").write_text(
             json.dumps({"mode": mode, "summary": summary, "results": results}, ensure_ascii=False, indent=1),
             encoding="utf-8")
         c = summary["cells"]
-        print(f"[{mode}] 事例 {summary['cases']} 件、○ {c['yes']} マス・× {c['no']} マス・？ {c['unsure']} マス（？は数えない）")
+        print(f"[{mode}] 事例 {summary['cases']} 件、○ {c['yes']} マス・× {c['no']} マス・？ {c['unsure']} マス（？は数えない。正解表 {summary['gold']}）")
         print(f"  ○のうち案内できた率 {pct(summary['recall_recommended'])}／示せた率（確かめると使えるかもしれないを含む）{pct(summary['recall_shown'])}")
         per_case = summary["wrong_recommended_per_case"]
         print(f"  ×なのに案内した数 {c['no_recommended']}（1 件あたり {'—' if per_case is None else f'{per_case:.2f}'}）"
@@ -322,4 +335,4 @@ def main(modes: list[str]) -> None:
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:] or ["rules"])
+    main(sys.argv[1:])
