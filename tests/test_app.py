@@ -134,7 +134,7 @@ def test_check_summary_rejects_numbers_and_foreign_ids():
         {"program_ids": ["kaigo-kyugyo-kyufu"], "text": "賃金の67%が出ます。"},
         {"program_ids": ["machida-gps"], "text": "GPS も使えます。"},
     ]}
-    lines = check_summary(shown, raw)
+    lines = check_summary(rs, shown, raw)
     assert [l.text for l in lines] == ["仕事を休むときは介護休業給付金があります。"]
 
 

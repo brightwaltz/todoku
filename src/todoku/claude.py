@@ -126,12 +126,31 @@ def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
 KANJI_AMOUNT = re.compile(r"[一二三四五六七八九十百千万億]+(割|円|日|か月|ヶ月|カ月|か年|年|回|歳|時間|週|パーセント|％|%)")
 
 
-def check_summary(shown: list[Result], raw: dict) -> list[SummaryLine]:
-    """まとめの文を確かめる。画面に出ていない制度を指す行、数字を含む行、町田市の制度が出ていないのに「町田」を含む行は捨てる。"""
+# まとめの行に書かせない言い切り。判定は規則が決め、結果は「見込み」なので、Claude が「必ず受けられます」と請け合わない
+OVERCLAIM = re.compile(r"必ず|確実に|絶対|間違いなく")
+# URL・メールアドレス（NFKC で全角を半角にしてから見る）。出典は規則ファイルから出し、まとめの文にはリンク先を書かせない
+LINK = re.compile(r"https?:|://|www\.|@|[a-z0-9-]+\.[a-z]{2,}", re.IGNORECASE)
+
+
+def check_summary(rules: RuleSet, shown: list[Result], raw: dict) -> list[SummaryLine]:
+    """まとめの文を確かめる。捨てる行：画面に出ていない制度を指す行、数字を含む行、町田市の制度が出ていないのに「町田」を含む行、
+    言い切り（「必ず」など）・URL・メールアドレスを含む行、まとめに渡していない規則の制度名を含む行（11/3 の安全点検の 4）。
+
+    文字列の照合は、書き間違いや指示された行を「捨てやすくする」だけの守りで、別の言い方は止められない
+    （制度名は規則の正式名だけを見ていて、「障害者控除」のような略し方は見ない）。まとめの文に入れられるのは
+    構造化出力の lines だけで、program_ids は画面の制度に限り、出典・金額・申請先は規則ファイルから出す。
+    """
     allowed = {r.program.id for r in shown}
     shown_levels = {r.program.level for r in shown}
     # 市・都・県の名前（「町田」「横浜」「東京」「神奈川」）。その段の制度が出ていないのに名前を含む行は捨てる
     places = {LEVELS[level][:-1]: level for level in LEVEL_PLACE}
+    # まとめに渡した制度の名前：画面の制度と、その前提の制度（RealClaude.summarize が waiting_on として名前を渡し、
+    # 「まず〜を申請すると」と書かせている）。それ以外の規則の制度の正式名を含む行は捨てる。
+    # 渡した名前の一部になっている名前は見ない（今の規則にはないが、足した制度の名前が別の名前の中に入っても正しい行を捨てない）
+    told = {r.program.id for r in shown} | {pid for r in shown for pid in r.waiting_on}
+    told_names = [normalize(rules.programs[pid].name) for pid in told if pid in rules.programs]
+    others = [n for pid, p in rules.programs.items() if pid not in told
+              for n in [normalize(p.name)] if not any(n in t for t in told_names)]
     lines = []
     for item in raw.get("lines", []):
         ids = [i for i in item.get("program_ids", []) if isinstance(i, str)]
@@ -143,6 +162,9 @@ def check_summary(shown: list[Result], raw: dict) -> list[SummaryLine]:
             continue
         # 町田市以外の人に「町田市の窓口で」と書かない（町田市の制度が画面に出ているときだけ通す。横浜市・都・県も同じ）
         if any(name in text and level not in shown_levels for name, level in places.items()):
+            continue
+        norm = normalize(text)
+        if OVERCLAIM.search(norm) or LINK.search(norm) or any(n in norm for n in others):
             continue
         lines.append(SummaryLine(ids, text))
     return lines[:4]
@@ -173,6 +195,7 @@ SUMMARY_SYSTEM = """あなたは、高齢者と介護する家族のための公
 - 1 行は 60 字以内の、やさしい日本語の文。前提の手続きがあれば「まず〜を申請すると、〜も使えるようになります」のように順番を伝える。
 - 「申請済み・結果待ち」の制度は、もう申請してある。「申請すると」とは書かず、「〜の結果が出ると、〜も使えるようになります」のように伝える。
 - 金額・日数・電話番号などの数字は書かない（画面の別の場所に、出典つきで出る）。
+- 「必ず」「確実に」のような言い切りはしない（判定は見込み）。URL・メールアドレスと、結果にない制度の名前は書かない。
 - 2〜4 行。"""
 
 
@@ -330,7 +353,7 @@ class RealClaude:
             SUMMARY_SCHEMA,
             max_tokens=4000,
         )
-        return check_summary(shown, raw)
+        return check_summary(rules, shown, raw)
 
 
 # ---- 鍵がないときの試験用 -----------------------------------------------------
@@ -409,7 +432,7 @@ class FakeClaude:
                     f"{first.program.name}の結果が出ると、{names}も使えるようになります。" if first.status == "pending"
                     else f"まず{first.program.name}をすると、{names}も使えるようになります。",
                 ))
-        return check_summary(shown, {"lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]})
+        return check_summary(rules, shown, {"lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]})
 
 
 def make_client() -> ClaudeLike:
