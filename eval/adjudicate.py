@@ -9,7 +9,7 @@
 - 読み A：eligible・after_prereq→○、ineligible・done→×、unknown→？、pending→申
 - 読み B：当たりうる→○、当たらない・済んでいる→×、決められない→？、申請済み・結果待ち→申
 一致：A と B の全部の回が同じ印で、申を含まず、B の ○・× の引用がどれも原文に見つかる。
-それ以外は、まず制度をまたぐ型（POLICIES：申請中・非該当だった人・区分が分からない人・前の手続き待ち）に入れ、
+それ以外は、まず制度をまたぐ型（POLICIES：申請中・非該当だった人・区分が分からない人・使う予定がない人・前の手続き待ち）に入れ、
 残りを論点に入れる。論点は「制度×A の印×A の決め手」でまとめる。
 抜き取り：一致した ○ と × から、乱数の種 20261103 で ○ 20・× 20（足りなければ全部）。
 """
@@ -51,6 +51,10 @@ POLICIES = {
                   "前に申請して非該当だった人。その後の様子の変わり方をどう読むか（申請し直せるか、認定を前提にした制度をどうするか）。"),
     "p-care-unknown": ("認定は受けているが、区分を相談した人が知らない人",
                        "人物の説明では認定を受けているが、要支援か要介護か、いくつかは書かれていない人。"),
+    "p-plan": ("使う予定がない人",
+               "工事・福祉用具の購入・浴槽などの取り替え・ショートステイや施設を、今は考えていない人。公式の条件には当たりうるが、"
+               "使う予定がないことだけで印が割れているマスです。予定がない人にも ○ を付けるか（正解付けページの定義は「本人が望むか、"
+               "役に立ちそうかは問わない」）、予定がないので × にするか。"),
     "p-prereq": ("前の手続きを済ませれば当たりうる人",
                  "今はまだ前の手続き（要介護認定など）を済ませていない人。「済ませれば当たる」を、今の様子からは当たりそうにない人にも当てはめるか。"),
 }
@@ -91,7 +95,11 @@ def a_reading(result) -> tuple[str, str]:
     return "○", ("先に手続き：" + "／".join(dict.fromkeys(pre))) if st == "after_prereq" else "条件を満たす"
 
 
-def policy_of(case: dict, res, a_mark: str, bs: list[dict]) -> str | None:
+# 「使う予定」の事実（本番の結果を見て足した型 p-plan の決め手。PROTOCOL.md の変更の記録）
+PLAN_FACTS = ("plans_home_modification", "plans_equipment_purchase", "plans_fixture_replacement", "shortstay_or_facility")
+
+
+def policy_of(case: dict, res, a_mark: str, bs: list[dict], res_if_planned=None) -> str | None:
     """食い違ったマスが、制度をまたぐ型（POLICIES）のどれに当たるか。"""
     care = case["answers"].get("care_level")
     marks = {a_mark, *[b["mark"] for b in bs]}
@@ -102,6 +110,9 @@ def policy_of(case: dict, res, a_mark: str, bs: list[dict]) -> str | None:
         return "p-jiritsu"
     if care == DONT_KNOW and any(lf.state == U and lf.fact == "care_level" for lf in res.leaves):
         return "p-care-unknown"
+    # 予定を「ある」にして判定し直すと ○ になる＝使う予定だけが決め手
+    if a_mark == "×" and res_if_planned is not None and A_MARK.get(res_if_planned.status) == "○":
+        return "p-plan"
     if has_p:
         return "p-prereq"
     return None
@@ -139,6 +150,7 @@ def prepare(paths: list[str]) -> dict:
     cells, agreed, issues, policies = [], [], defaultdict(list), defaultdict(list)
     for case in cases:
         results = evaluate(rs, dict(case["answers"]))
+        planned = evaluate(rs, {**case["answers"], **{f: True for f in PLAN_FACTS}})
         for num in nums:
             if case not in cases_in_scope(num, cases):
                 continue
@@ -165,7 +177,7 @@ def prepare(paths: list[str]) -> dict:
             if key is None:
                 agreed.append(cell)
                 continue
-            pol = policy_of(case, res, a_mark, bs) if key[1] not in ("B の答えがない", "引用が原文に見つからない") else None
+            pol = policy_of(case, res, a_mark, bs, planned[prog.id]) if key[1] not in ("B の答えがない", "引用が原文に見つからない") else None
             if pol:
                 cell["policy"] = pol
                 policies[pol].append(cell)

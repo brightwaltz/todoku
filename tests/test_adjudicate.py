@@ -148,6 +148,9 @@ def test_policy_of_order():
     assert adjudicate.policy_of(case("__dont_know__"), NS(leaves=[leaf_u]), "？", b) == "p-care-unknown"
     assert adjudicate.policy_of(case("none"), NS(leaves=[leaf_p]), "？", b) == "p-prereq"
     assert adjudicate.policy_of(case("care2"), NS(leaves=[]), "○", b) is None
+    # 予定を「ある」にすると ○ になる × は「使う予定がない人」、ならないものは型に入れない
+    assert adjudicate.policy_of(case("care1"), NS(leaves=[]), "×", b, NS(status="eligible", leaves=[])) == "p-plan"
+    assert adjudicate.policy_of(case("care1"), NS(leaves=[]), "×", b, NS(status="ineligible", leaves=[])) is None
 
 
 def _c(case, num, a, b1, b2):
