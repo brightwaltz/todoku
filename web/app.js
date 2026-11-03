@@ -311,7 +311,8 @@ function renderBoard(data) {
     box.querySelector(`[data-col="${now[r.id]}"] .tiles`).append(t);
   }
   // 途中で町田市と分かると、型の制度が結果から外れる。外れた札は残さない（数にも入れない）
-  for (const [id, t] of tiles) if (!(id in now)) { t.remove(); tiles.delete(id); }
+  let removed = 0;
+  for (const [id, t] of tiles) if (!(id in now)) { t.remove(); tiles.delete(id); if (boardPrev) removed += 1; }
   const moved = boardPrev ? data.results.filter((r) => boardPrev[r.id] && boardPrev[r.id] !== now[r.id]) : [];
   // 3. 動いた札を元の位置に戻して見せ、transform を外して新しい位置まで滑らせる
   if (!calm()) {
@@ -339,14 +340,15 @@ function renderBoard(data) {
   // 4. 質問の答えで判定が決まりうる制度の札に、輪を 2 回
   for (const t of tiles.values()) t.classList.remove("pulse");
   if (data.question) for (const id of data.question.affects_ids) { const t = tiles.get(id); if (t) restart(t, "pulse"); }
-  $("board-change").textContent = changeText(moved, now);
+  // 住所で外れた制度を数えないと、結果の画面で住所を選んだときに「判定は変わりませんでした」と出るため
+  $("board-change").textContent = changeText(moved, now, removed);
   boardPrev = now;
   // 質問へ移るとき、上に留まる見立ての帯の下に問いが来るように
   $("board").classList.toggle("live", Boolean(data.question));
   document.documentElement.style.setProperty("--board-h", `${$("board").offsetHeight + 8}px`);
 }
 
-function changeText(moved, now) {
+function changeText(moved, now, removed = 0) {
   const parts = [];
   for (const [key, , say] of BOARD) {
     const names = moved.filter((r) => now[r.id] === key).map((r) => r.name);
@@ -356,6 +358,7 @@ function changeText(moved, now) {
       ? `（${names.slice(0, 2).join("、")}${names.length > 2 ? ` ほか ${names.length - 2} 件` : ""}）` : "";
     parts.push(`${say} +${names.length}${named}`);
   }
+  if (removed > 0) parts.push(`お住まいの地域の外の制度 −${removed}`);
   return parts.join("・");
 }
 
