@@ -428,3 +428,52 @@ def test_place_facts_come_only_from_the_place():
     data = client.post("/api/step", json={"facts": facts, "municipality": ""}).json()
     assert not [r for r in data["results"] if r["id"].startswith("yokohama-")]
     assert any(r["id"] == "tokyo-silver-pass" and r["status"] == "eligible" for r in data["results"])
+
+
+def test_place_is_asked_again_when_only_not_machida():
+    # 町田市ではないとだけ分かった人にも、横浜市・東京都かを聞き直す（町田市の答えだけで住所の問いを済ませていた。3rd の点検）
+    from todoku.questions import candidates, place_fact
+    rs = rules_mod.load()
+    assert place_fact(rs, {}) == "lives_in_machida"
+    assert place_fact(rs, {"lives_in_machida": True}) is None  # 東京都・横浜市は町田市の答えから埋まる
+    assert place_fact(rs, {"lives_in_machida": False}) == "lives_in_yokohama"
+    names = candidates(rs, {"lives_in_machida": False})
+    assert "lives_in_yokohama" in names and "lives_in_machida" not in names and "lives_in_tokyo" not in names
+    # 住所の問いに「わからない」と答えたら、住所はもう聞かない
+    facts = {"lives_in_machida": False, "lives_in_yokohama": DONT_KNOW}
+    assert place_fact(rs, facts) is None and not set(candidates(rs, facts)) & set(rs.places)
+    assert place_fact(rs, {"lives_in_machida": DONT_KNOW}) is None
+
+
+def test_place_question_comes_back_for_not_machida():
+    facts = {"lives_in_machida": False, "age_band": "age_75_plus", "residence": "home", "care_level": "care2"}
+    places = set(rules_mod.load().places)
+    asked, q = 0, None
+    for _ in range(3):
+        q = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": asked}).json()["question"]
+        if q is None or q["fact"] in places:
+            break
+        facts[q["fact"]] = DONT_KNOW
+        asked += 1
+    assert q is not None and q["fact"] == "lives_in_yokohama"
+    assert q["text"] == q["place"]["text"] == "お母さまはどちらにお住まいですか？"
+    assert q["options"] == []  # 横浜市・東京都の事実の はい・いいえ は使わないので、控えの選択肢は出さない
+    # 市区町村を選べば、もう聞かない。住所だけで外れる横浜市・東京都の制度は 1 行にまとめる
+    data = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": asked + 1,
+                                          "municipality": "271004"}).json()
+    assert data["question"] is None or data["question"]["fact"] not in places
+    assert not [r for r in data["results"] if r["id"].startswith("yokohama-") or r["id"] == "tokyo-silver-pass"]
+    assert {"横浜市", "東京都"} <= {h["name"] for h in data["hidden_places"]}
+    # 「わからない」と答えれば、もう聞かない。横浜市の制度は住所が分からないまま残す（要介護2で外れるものは、住所でなく区分で外れる）
+    data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
+                                          "asked": asked + 1}).json()
+    assert data["question"] is None or data["question"]["fact"] not in places
+    assert next(k for k in data["known"] if k["fact"] == "lives_in_machida")["value"] is False
+    yokohama = [r for r in data["results"] if r["id"].startswith("yokohama-")]
+    assert yokohama and all(any(x["label"] == "横浜市に住んでいる" and x["state"] == "U" for x in r["reasons"]) for r in yokohama)
+    assert next(r for r in yokohama if r["id"] == "yokohama-keiro-pass")["status"] == "unknown"
+
+
+def test_place_facts_keep_only_dont_know():
+    from todoku.app import clean_facts
+    assert clean_facts({"lives_in_yokohama": True, "lives_in_tokyo": DONT_KNOW}) == {"lives_in_tokyo": DONT_KNOW}

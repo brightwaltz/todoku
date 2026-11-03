@@ -122,7 +122,9 @@ def clean_facts(raw: dict[str, Any]) -> dict[str, Any]:
         fact = RULES.facts.get(fid)
         if fact is None:
             continue
-        if fact.place and not fact.read:
+        # 「わからない」だけは通す：住所の問いを 2 度目に受け持つのは横浜市・東京都の事実で、その「わからない」を捨てると同じ問いが繰り返し出るため。
+        # 「わからない」は住所を決めないので、両市に住んでいることにはできない（はい・いいえの値は今までどおり使わない）
+        if fact.place and not fact.read and value != DONT_KNOW:
             continue  # 横浜市・東京都に住んでいるかは、選んだ市区町村（apply_place）か町田市の答えから決める。送られた値は使わない
         if fact.type == "bool" and not isinstance(value, bool) and value != DONT_KNOW:
             continue  # 1 や "true" は受け付けない（True と 1 は == で等しいため、ここで弾く）
@@ -243,14 +245,16 @@ def ask_view(q: Question, subject: str) -> dict:
             "keep": {"value": q.suggested, "label": f"いま確かめられない（「{read}」として進める）"},
             "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
         }
-    if q.fact == RULES.place_question:
+    if q.fact in RULES.places:
         # 町田市かどうかだけを聞くと、町田市以外の人は「いいえ」しか押せない。画面は市区町村を選ぶ欄を出す（選んだ所は apply_place が扱う）。
         # はい・いいえは、市区町村の一覧を読み込めなかった画面のための控え
+        first = q.fact == RULES.place_question
         return {
             "fact": q.fact, "confirm": False,
-            "text": personalize(fact.question, subject),
+            "text": personalize(fact.question if first else "ご本人はどちらにお住まいですか？", subject),
             "place": {"text": personalize("ご本人はどちらにお住まいですか？", subject)},
-            "options": [{"value": v, "label": label} for v, label in fact.options],
+            # 町田市ではないと分かった後の聞き直し（横浜市・東京都の事実）では、はい・いいえを clean_facts が使わないので控えを出さない
+            "options": [{"value": v, "label": label} for v, label in fact.options] if first else [],
             "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
         }
     if q.suggested is not None and fact.type == "enum":

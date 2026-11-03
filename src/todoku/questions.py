@@ -3,7 +3,9 @@
 問いの値打ち＝その事実の答え次第で状態が変わる制度の重みの和（選択肢ごとの平均）。
 答えるたびに数え直す。どの答えでも全制度の状態が同じになる事実は聞かない。
 
-住所の事実（facts.yaml の place）は 1 つの問い（市区町村を選ぶ欄）で聞く。問いは最初の住所の事実が受け持ち、
+住所の事実（facts.yaml の place）は 1 つの問い（市区町村を選ぶ欄）で聞く。問いは、まだ分からない最初の住所の事実が受け持つ
+（ふつうは町田市。町田市ではないとだけ分かったときは横浜市・東京都の事実が受け持ち、同じ欄をもう一度出す）。
+住所の問いに「わからない」と答えたら、住所はもう聞かない。
 選択肢の代わりに「規則が使う市・都道府県ごとに 1 つと、そのほか」で値打ちを数える。
 """
 
@@ -89,13 +91,26 @@ def _score(rules: RuleSet, base: Mapping[str, str], outcomes: list[dict[str, str
     return total, tuple(affected)
 
 
+def place_fact(rules: RuleSet, facts: Mapping[str, Any]) -> str | None:
+    """住所の問い（市区町村を選ぶ欄）を受け持つ事実：規則が使う住所の事実のうち、分かっている住所から埋めてもまだ分からない最初のもの。
+
+    町田市ではないとだけ分かった人にも、横浜市・東京都かを聞き直すため（町田市の答えだけで住所の問いを済ませていた）。
+    住所の事実のどれかに「わからない」と答えていれば、住所はもう聞かない。
+    """
+    if any(facts.get(fid) == DONT_KNOW for fid in rules.places):
+        return None
+    used = referenced_facts(rules)
+    now = with_implied(rules, facts)
+    return next((fid for fid in rules.places if fid in used and not known(now.get(fid))), None)
+
+
 def candidates(rules: RuleSet, facts: Mapping[str, Any]) -> list[str]:
-    """聞いてよい事実。住所の事実は、最初のもの（市区町村を選ぶ問い）だけを、それがまだ分からないときに候補にする。"""
-    place_question = rules.place_question
+    """聞いてよい事実。住所の事実は、住所の問いを受け持つもの（place_fact）だけを候補にする。"""
+    place = place_fact(rules, facts)
     out = []
-    for fid in sorted(referenced_facts(rules) | ({place_question} if place_question else set()),
+    for fid in sorted(referenced_facts(rules) | ({place} if place else set()),
                       key=lambda f: rules.facts[f].order):
-        if fid in rules.places and fid != place_question:
+        if fid in rules.places and fid != place:
             continue
         if known(facts.get(fid)) or facts.get(fid) == DONT_KNOW:
             continue
