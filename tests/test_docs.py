@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import json
 import re
+import tomllib
 from collections import Counter
 from pathlib import Path
 
@@ -48,3 +49,18 @@ def test_sample_count_in_readme_and_spec():
     for doc in (README, SPEC):
         found = re.findall(r"見本 (\d+) 件", doc)
         assert found and all(int(k) == len(samples) for k in found), found
+
+
+def test_spec_fly_stop_mode_matches_fly_toml():
+    """spec の「公開」の止め方が fly.toml の auto_stop_machines と合っているか（11/4 T-021）。
+
+    fly.toml は "suspend"（一時停止）なのに、spec は「自動停止」と書いていた。
+    """
+    conf = tomllib.loads((ROOT / "fly.toml").read_text(encoding="utf-8"))
+    mode = conf["http_service"]["auto_stop_machines"]
+    words = {"suspend": "一時停止", "stop": "停止"}
+    section = SPEC.split("## 公開", 1)[1].split("\n## ", 1)[0]
+    assert f'`auto_stop_machines = "{mode}"`' in section
+    assert words[mode] in section
+    if mode == "suspend":
+        assert "自動停止" not in section
