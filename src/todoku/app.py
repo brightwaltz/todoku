@@ -261,12 +261,14 @@ def personalize(text: str, subject: str) -> str:
     return text.replace("ご本人", subject) if subject and subject != "ご本人" else text
 
 
-def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int) -> dict | None:
+def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int,
+                  visible: frozenset[str] | None = None) -> dict | None:
     q = next_question(RULES, facts, suggestions, asked=asked)
-    return None if q is None else ask_view(q, subject)
+    return None if q is None else ask_view(q, subject, visible)
 
 
-def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str) -> list[dict]:
+def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str,
+                     visible: frozenset[str] | None = None) -> list[dict]:
     """聞き返しが終わっても確かめていない読み取り（確信の低いもの）。結果の画面で、同じ形の問いで確かめられるようにする。
 
     住所の問いを受け持つ事実がまだあれば（3 問の枠で聞けなかったとき）、市区町村を選ぶ欄も先頭に出す。
@@ -277,18 +279,21 @@ def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject
         if fid in facts:
             continue
         _, affects = score_fact(RULES, facts, fid, base)
-        out.append(ask_view(Question(fid, 0.0, suggestions[fid], affects), subject))
+        out.append(ask_view(Question(fid, 0.0, suggestions[fid], affects), subject, visible))
     place = place_fact(RULES, facts)
     if place and place not in suggestions:  # 確信の低い読み取り（lives_in_machida）なら、上のループがもう出している
         score, affects = score_fact(RULES, facts, place, base)
         if score > 0:
-            out.insert(0, ask_view(Question(place, score, None, affects), subject))
+            out.insert(0, ask_view(Question(place, score, None, affects), subject, visible))
     return out
 
 
-def ask_view(q: Question, subject: str) -> dict:
+def ask_view(q: Question, subject: str, visible: frozenset[str] | None = None) -> dict:
     fact = RULES.facts[q.fact]
-    affects = [RULES.programs[p].name for p in q.affects]
+    # 「この答えで判定が決まる制度」には、結果の画面に出す制度（visible）だけを挙げる。step_view が外した型の名前が
+    # 問いにだけ出ると食い違うため（T-007）。問いの値打ちには外した制度も入れたまま（判定は変えない）
+    ids = [p for p in q.affects if visible is None or p in visible]
+    affects = [RULES.programs[p].name for p in ids]
     if q.suggested in ALWAYS_CONFIRM.get(q.fact, ()):
         # 取り違えやすい値（認定の区分）は「合っていますか？」と聞かない。思い違いのままでも「はい」を押せてしまうため。
         # 読んだ値は文で知らせるだけにして、全部の選択肢から書類を見て選んでもらう。確かめられなければ読んだ値で進める
@@ -299,7 +304,7 @@ def ask_view(q: Question, subject: str) -> dict:
             "hint": f"相談の文からは「{read}」と読みました。取り違えやすいので、確かめています。{fact.check}",
             "options": [{"value": v, "label": label} for v, label in fact.options],
             "keep": {"value": q.suggested, "label": f"いま確かめられない（「{read}」として進める）"},
-            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+            "check": fact.check, "affects": affects, "affects_ids": ids,
         }
     if q.fact in RULES.places:
         # 町田市かどうかだけを聞くと、町田市以外の人は「いいえ」しか押せない。画面は市区町村を選ぶ欄を出す（選んだ所は apply_place が扱う）。
@@ -311,20 +316,20 @@ def ask_view(q: Question, subject: str) -> dict:
             "place": {"text": personalize("ご本人はどちらにお住まいですか？", subject)},
             # 町田市ではないと分かった後の聞き直し（横浜市・東京都の事実）では、はい・いいえを clean_facts が使わないので控えを出さない
             "options": [{"value": v, "label": label} for v, label in fact.options] if first else [],
-            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+            "check": fact.check, "affects": affects, "affects_ids": ids,
         }
     if q.suggested is not None and fact.type == "enum":
         return {
             "fact": q.fact, "confirm": True,
             "text": f"{subject}は「{fact.label_of(q.suggested)}」で合っていますか？",
             "options": [{"value": q.suggested, "label": "はい"}, {"value": NOT_THIS, "label": "いいえ"}],
-            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+            "check": fact.check, "affects": affects, "affects_ids": ids,
         }
     return {
         "fact": q.fact, "confirm": False,
         "text": personalize(fact.question, subject),
         "options": [{"value": v, "label": label} for v, label in fact.options],
-        "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+        "check": fact.check, "affects": affects, "affects_ids": ids,
     }
 
 
@@ -358,11 +363,12 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         return (order[r.status], unknown, -met, -RULES.weight(r.program.id), r.program.number)
 
     ranked = sorted(results.values(), key=rank)
-    question = question_view(facts, suggestions, subject, asked)
+    visible = frozenset(results)  # 上の 2 つの絞り込みの後に残った、結果の画面に出す制度
+    question = question_view(facts, suggestions, subject, asked, visible)
     return {
         "question": question,
         # 聞き返しが終わったら、確かめていない読み取りを結果の画面に出す（答えても Claude は呼ばない）
-        "unconfirmed": unconfirmed_view(facts, suggestions, subject) if question is None else [],
+        "unconfirmed": unconfirmed_view(facts, suggestions, subject, visible) if question is None else [],
         "max_questions": MAX_QUESTIONS,
         # 住所は、問いを受け持つ事実（町田市に住んでいる）だけを出す。東京都・横浜市などはそこから決まる
         "known": [fact_view(f, v) for f, v in implied.items()

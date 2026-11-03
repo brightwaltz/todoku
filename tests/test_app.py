@@ -304,6 +304,32 @@ def test_household_check_shows_no_machida_rule_elsewhere():
     assert any("週に3日以上" in t and "6時間以上" in t for t in tsuho["at_application"])
 
 
+def test_affects_name_only_programs_on_the_result_screen():
+    # 「この答えで判定が決まる制度」には、結果の画面に出る制度だけを挙げる（T-007）。
+    # 横浜市では型（配食・見守りなど）を判定はしたまま結果から外すので、問いの一覧に名前だけ出ると食い違う
+    def visible(q: dict, shown: set[str]) -> None:
+        assert set(q["affects_ids"]) <= shown, (q["fact"], set(q["affects_ids"]) - shown)
+        assert len(q["affects"]) == len(q["affects_ids"])
+
+    for start in ({}, {"age_band": "age_75_plus", "residence": "home"}):
+        body = {"facts": dict(start), "suggestions": {"household": "alone"}, "municipality": "141003", "asked": 0}
+        for _ in range(5):
+            data = client.post("/api/step", json=body).json()
+            shown = {r["id"] for r in data["results"]}
+            if data["question"] is None:
+                assert data["unconfirmed"]
+                for u in data["unconfirmed"]:
+                    visible(u, shown)
+                break
+            q = data["question"]
+            visible(q, shown)
+            body["facts"][q["fact"]] = DONT_KNOW
+            body["suggestions"].pop(q["fact"], None)
+            body["asked"] += 1
+        else:
+            pytest.fail("聞き返しが終わらない")
+
+
 def test_yes_no_reasons_carry_no_value():
     # 横浜市では型を出さない（市の制度を一つずつ判定している）ので、型の札を見るのは大阪市で
     data = client.post("/api/step", json={"facts": {"age_band": "age_75_plus", "residence": "home", "wandering_risk": True},

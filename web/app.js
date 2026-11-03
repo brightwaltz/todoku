@@ -384,7 +384,8 @@ function renderQuestion(q, max, first = false) {
   $("ask-text").textContent = askText(q);
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
   fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code));
-  $("ask-why").textContent = `この答えで判定が決まる制度：${affectNames(q.affects)}`;
+  // 結果に出す制度だけを挙げるので、空になりうる（「確かめていないこと」の欄と同じく、そのときは出さない）
+  $("ask-why").textContent = q.affects.length ? `この答えで判定が決まる制度：${affectNames(q.affects)}` : "";
   $("ask-check").textContent = q.check;
   // 選択肢ではなく問いの文に移る（1 つ目の選択肢に色が付くと、先に選んであるように見えるため）
   $("ask-text").focus({ preventScroll: true });
