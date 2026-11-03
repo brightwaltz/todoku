@@ -38,8 +38,13 @@ sources:
   - url: https://www.kaigokensaku.mhlw.go.jp/commentary/flow.html
     publisher: 厚生労働省（介護サービス情報公表システム）
     title: サービス利用までの流れ
-    license: PDL1.0
+    license: 介護サービス情報公表システムの規定（転載は出所を明記）
     checked: 2026-11-02
+  - url: https://www.kaigokensaku.mhlw.go.jp/commentary/about.html
+    publisher: 厚生労働省（介護サービス情報公表システム）
+    title: 介護保険とは
+    license: 介護サービス情報公表システムの規定（転載は出所を明記）
+    checked: 2026-11-03
   - url: https://www.city.machida.tokyo.jp/iryo/kaigo/nagare/the-step-of-service.html
     publisher: 町田市
     title: 要介護（要支援）認定の申請

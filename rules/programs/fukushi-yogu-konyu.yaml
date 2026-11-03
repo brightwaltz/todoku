@@ -30,6 +30,11 @@ sources:
     license: PDL1.0
     checked: 2026-11-02
     quote: また、販売は原則年間10万円を支給限度基準額としている。
+  - url: https://laws.e-gov.go.jp/law/411M50000100036
+    publisher: e-Gov 法令検索（デジタル庁）
+    title: 介護保険法施行規則 第72条（居宅介護福祉用具購入費支給限度額管理期間）
+    license: 法令の本文（著作権法第13条により権利の対象外。e-Gov は PDL1.0）
+    checked: 2026-11-03
   - url: https://www.city.machida.tokyo.jp/iryo/kaigo/business/fukushiyogu/yogu_simn.html
     publisher: 町田市
     title: 福祉用具購入費

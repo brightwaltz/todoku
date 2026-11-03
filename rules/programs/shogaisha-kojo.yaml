@@ -32,6 +32,16 @@ sources:
     title: No.1160 障害者控除
     license: PDL1.0
     checked: 2026-11-02
+  - url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1186.htm
+    publisher: 国税庁
+    title: No.1186 身体障害者手帳等の交付を申請中である場合の障害者控除の適用について
+    license: PDL1.0
+    checked: 2026-11-03
+  - url: https://laws.e-gov.go.jp/law/340AC0000000033
+    publisher: e-Gov 法令検索（デジタル庁）
+    title: 所得税法 第85条（扶養親族等の判定の時期等）
+    license: 法令の本文（著作権法第13条により権利の対象外。e-Gov は PDL1.0）
+    checked: 2026-11-03
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zeikojo/syogaikoujyo.html
     publisher: 町田市
     title: 障害者控除対象者認定書

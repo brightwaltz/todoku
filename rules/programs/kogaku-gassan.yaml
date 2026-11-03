@@ -29,6 +29,11 @@ sources:
     title: 高額介護合算療養費
     license: 協会けんぽのサイトの規定（引用可・改変不可）
     checked: 2026-11-02
+  - url: https://www.mhlw.go.jp/web/t_doc?dataId=00tb5461&dataType=1&pageNo=1
+    publisher: 厚生労働省保険局
+    title: 健康保険における高額介護合算療養費の支給等の事務の取扱いについて（平成21年4月30日 保保発第0430001号）
+    license: PDL1.0
+    checked: 2026-11-03
   - url: https://www.city.machida.tokyo.jp/kurashi/hoken/kokuho/ironnakyuufu/kaigogatusann.html
     publisher: 町田市
     title: 国民健康保険 高額医療・高額介護合算療養費

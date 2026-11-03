@@ -24,7 +24,7 @@ sources:
   - url: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
     publisher: 厚生労働省（介護サービス情報公表システム）
     title: サービスにかかる利用料
-    license: PDL1.0
+    license: 介護サービス情報公表システムの規定（転載は出所を明記）
     checked: 2026-11-02
   - url: https://www.city.machida.tokyo.jp/iryo/kaigo/hutan/riyoshahutan_kogaku.html
     publisher: 町田市
