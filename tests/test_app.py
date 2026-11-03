@@ -345,14 +345,14 @@ def test_other_cities_hide_machida_programs():
         return client.post("/api/step", json={"facts": facts, "municipality": code}).json()
     yokohama, machida, nowhere = step("141003"), step("132098"), step("")
     assert not [r for r in yokohama["results"] if r["id"].startswith("machida-")]
-    assert yokohama["hidden_machida"] == 10
+    assert yokohama["hidden_places"] == [{"name": "町田市", "n": 10}]
     assert sum(yokohama["counts"].values()) == len(yokohama["results"])
-    assert machida["hidden_machida"] == 0 and any(r["id"].startswith("machida-") for r in machida["results"])
+    assert machida["hidden_places"] == [] and any(r["id"].startswith("machida-") for r in machida["results"])
     # 住所が分からない間は今までどおり、町田市の制度も型も出す
-    assert nowhere["hidden_machida"] == 0 and len(nowhere["results"]) == 32
+    assert nowhere["hidden_places"] == [] and len(nowhere["results"]) == 32
     from pathlib import Path
     script = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
-    assert "data.hidden_machida" in script
+    assert "data.hidden_places" in script
 
 
 def test_unknown_results_are_closest_first():

@@ -15,7 +15,7 @@ from dataclasses import dataclass, field
 from typing import Any, Protocol
 
 from .engine import Result
-from .rules import RuleSet
+from .rules import LEVEL_PLACE, LEVELS, RuleSet
 
 MODEL = os.environ.get("TODOKU_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("TODOKU_EFFORT", "low")
@@ -92,7 +92,7 @@ def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
     norm_text = normalize(text)
     for item in raw.get("facts", []):
         fid = item.get("fact")
-        if fid not in rules.facts or fid in seen:
+        if fid not in rules.facts or not rules.facts[fid].read or fid in seen:
             out.dropped.append(item)
             continue
         try:
@@ -118,7 +118,9 @@ KANJI_AMOUNT = re.compile(r"[一二三四五六七八九十百千万億]+(割|�
 def check_summary(shown: list[Result], raw: dict) -> list[SummaryLine]:
     """まとめの文を確かめる。画面に出ていない制度を指す行、数字を含む行、町田市の制度が出ていないのに「町田」を含む行は捨てる。"""
     allowed = {r.program.id for r in shown}
-    machida_shown = any(r.program.level == "machida" for r in shown)
+    shown_levels = {r.program.level for r in shown}
+    # 市・都・県の名前（「町田」「横浜」「東京」「神奈川」）。その段の制度が出ていないのに名前を含む行は捨てる
+    places = {LEVELS[level][:-1]: level for level in LEVEL_PLACE}
     lines = []
     for item in raw.get("lines", []):
         ids = [i for i in item.get("program_ids", []) if isinstance(i, str)]
@@ -128,8 +130,8 @@ def check_summary(shown: list[Result], raw: dict) -> list[SummaryLine]:
         # 金額や日数は規則ファイルから出す。Claude の文には数字を入れさせない
         if re.search(r"[0-9０-９]", text) or KANJI_AMOUNT.search(text) or len(text) > 120:
             continue
-        # 町田市以外の人に「町田市の窓口で」と書かない（町田市の制度が画面に出ているときだけ通す）
-        if "町田" in text and not machida_shown:
+        # 町田市以外の人に「町田市の窓口で」と書かない（町田市の制度が画面に出ているときだけ通す。横浜市・都・県も同じ）
+        if any(name in text and level not in shown_levels for name, level in places.items()):
             continue
         lines.append(SummaryLine(ids, text))
     return lines[:4]
@@ -166,6 +168,8 @@ SUMMARY_SYSTEM = """あなたは、高齢者と介護する家族のための公
 def _catalog(rules: RuleSet) -> str:
     lines = []
     for fact in rules.facts.values():
+        if not fact.read:
+            continue  # 住所の事実（横浜市・東京都など）は、選んだ市区町村から決める
         if fact.type == "bool":
             values = "true / false"
         else:
@@ -184,7 +188,7 @@ def _extract_schema(rules: RuleSet) -> dict:
                 "items": {
                     "type": "object",
                     "properties": {
-                        "fact": {"type": "string", "enum": list(rules.facts)},
+                        "fact": {"type": "string", "enum": [f.id for f in rules.facts.values() if f.read]},
                         "value": {"type": "string"},
                         "confidence": {"type": "string", "enum": ["high", "low"]},
                         "evidence": {"type": "string"},

@@ -79,7 +79,27 @@ def with_implied(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, Any]:
             continue
         if out.get(cond["fact"]) in cond["in"]:
             out[fact.id] = False
+    _imply_place(rules, out)
     return out
+
+
+def _imply_place(rules: RuleSet, out: dict[str, Any]) -> None:
+    """住所の事実を、分かっている住所から埋める（町田市に住んでいれば東京都に住んでいて、横浜市・神奈川県ではない）。
+
+    読み取りで「町田市に住んでいる」だけが分かったときも、画面と評価で同じ判定になるように、evaluate の前にここで埋める。
+    """
+    places = rules.places
+    city = next((p["city"] for fid, p in places.items() if "city" in p and out.get(fid) is True), None)
+    pref = city[:2] if city else next((p["pref"] for fid, p in places.items() if "pref" in p and out.get(fid) is True), None)
+    not_prefs = {p["pref"] for fid, p in places.items() if "pref" in p and out.get(fid) is False}
+    for fid, p in places.items():
+        if known(out.get(fid)):
+            continue
+        if "city" in p:
+            if city or (pref and p["city"][:2] != pref) or p["city"][:2] in not_prefs:
+                out[fid] = False
+        elif pref:
+            out[fid] = p["pref"] == pref
 
 
 def evaluate(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, Result]:

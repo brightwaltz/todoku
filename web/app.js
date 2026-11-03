@@ -524,9 +524,12 @@ function renderResult(data) {
   $("ineligible-list").replaceChildren(...no.map((r) => el("li", {},
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
-  // 町田市以外の人には町田市の制度を出さないので、町田市なら判定することだけを 1 行で伝える
-  $("other-city").textContent = data.hidden_machida ? `町田市にお住まいなら、市の制度 ${data.hidden_machida} 件も判定します。` : "";
-  show("other-city", data.hidden_machida > 0);
+  // 住所で外れる市・都の制度は出さないので、そこに住んでいれば判定することだけを 1 行で伝える
+  // 例：「町田市にお住まいなら、市の制度 10 件も判定します。」（市・都は名前の最後の字）
+  const hidden = data.hidden_places || [];
+  $("other-city").textContent = hidden.length ? hidden.map((h) =>
+    `${h.name}にお住まいなら${hidden.length > 1 ? "" : "、"}${h.name.slice(-1)}の制度 ${h.n} 件`).join("、") + "も判定します。" : "";
+  show("other-city", hidden.length > 0);
   show("result");
   if (!again) $("result").scrollIntoView({ behavior: "smooth", block: "start" });
   // まとめが扱う制度が変わったときだけ書き直す（確かめても判定が同じなら、Claude を呼ばない）

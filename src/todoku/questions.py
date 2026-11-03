@@ -2,6 +2,9 @@
 
 問いの値打ち＝その事実の答え次第で状態が変わる制度の重みの和（選択肢ごとの平均）。
 答えるたびに数え直す。どの答えでも全制度の状態が同じになる事実は聞かない。
+
+住所の事実（facts.yaml の place）は 1 つの問い（市区町村を選ぶ欄）で聞く。問いは最初の住所の事実が受け持ち、
+選択肢の代わりに「規則が使う市・都道府県ごとに 1 つと、そのほか」で値打ちを数える。
 """
 
 from __future__ import annotations
@@ -9,7 +12,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import Any, Mapping
 
-from .engine import DONT_KNOW, evaluate, known, statuses
+from .engine import DONT_KNOW, evaluate, known, statuses, with_implied
 from .rules import RuleSet
 
 MAX_QUESTIONS = 3
@@ -49,18 +52,55 @@ def referenced_facts(rules: RuleSet) -> set[str]:
 
 
 def score_fact(rules: RuleSet, facts: Mapping[str, Any], fid: str, base: Mapping[str, str]) -> tuple[float, tuple[str, ...]]:
-    values = rules.facts[fid].values()
-    outcomes = [statuses(rules, {**facts, fid: v}) for v in values]
-    if all(o == outcomes[0] for o in outcomes[1:]):
+    if fid in rules.places:
+        return _score(rules, base, [statuses(rules, {**facts, **a}) for a in place_choices(rules, facts)])
+    return _score(rules, base, [statuses(rules, {**facts, fid: v}) for v in rules.facts[fid].values()])
+
+
+def place_choices(rules: RuleSet, facts: Mapping[str, Any]) -> list[dict[str, bool]]:
+    """住所の問いの答えの代わり：規則が使う市ごと・都道府県（その中のほかの市）ごとに 1 つと、そのほか。
+
+    分かっている住所と合わないものは外す。規則が町田市しか使わなければ「町田市／そのほか」の 2 つで、はい・いいえと同じに数える。
+    """
+    used = referenced_facts(rules)
+    places = {fid: p for fid, p in rules.places.items() if fid in used}
+    codes = [p["city"] for p in places.values() if "city" in p]
+    codes += [p["pref"] + "0000" for p in places.values() if "pref" in p]  # その都道府県の、規則にない市区町村
+    codes.append("000000")  # そのほか
+    now = with_implied(rules, facts)
+    choices = []
+    for code in codes:
+        values = {fid: v for fid, v in rules.place_values(code).items() if fid in used}
+        if all(not known(now.get(fid)) or now[fid] == v for fid, v in values.items()):
+            choices.append(values)
+    return choices
+
+
+def _score(rules: RuleSet, base: Mapping[str, str], outcomes: list[dict[str, str]]) -> tuple[float, tuple[str, ...]]:
+    if len(outcomes) < 2 or all(o == outcomes[0] for o in outcomes[1:]):
         return 0.0, ()
     total = 0.0
     affected = []
     for pid, now in base.items():
         changed = sum(1 for o in outcomes if o[pid] != now)
         if changed:
-            total += rules.weight(pid) * changed / len(values)
+            total += rules.weight(pid) * changed / len(outcomes)
             affected.append(pid)
     return total, tuple(affected)
+
+
+def candidates(rules: RuleSet, facts: Mapping[str, Any]) -> list[str]:
+    """聞いてよい事実。住所の事実は、最初のもの（市区町村を選ぶ問い）だけを、それがまだ分からないときに候補にする。"""
+    place_question = rules.place_question
+    out = []
+    for fid in sorted(referenced_facts(rules) | ({place_question} if place_question else set()),
+                      key=lambda f: rules.facts[f].order):
+        if fid in rules.places and fid != place_question:
+            continue
+        if known(facts.get(fid)) or facts.get(fid) == DONT_KNOW:
+            continue
+        out.append(fid)
+    return out
 
 
 def next_question(
@@ -80,9 +120,7 @@ def next_question(
     suggestions = suggestions or {}
     base = statuses(rules, facts)
     best: Question | None = None
-    for fid in sorted(referenced_facts(rules), key=lambda f: rules.facts[f].order):
-        if known(facts.get(fid)) or facts.get(fid) == DONT_KNOW:
-            continue
+    for fid in candidates(rules, facts):
         score, affects = score_fact(rules, facts, fid, base)
         if score <= 0:
             continue
@@ -95,9 +133,7 @@ def plan(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, Any]:
     """画面とテスト向け：今の判定と、聞く候補の値打ちの一覧。"""
     base = statuses(rules, facts)
     ranked = []
-    for fid in referenced_facts(rules):
-        if known(facts.get(fid)) or facts.get(fid) == DONT_KNOW:
-            continue
+    for fid in candidates(rules, facts):
         score, affects = score_fact(rules, facts, fid, base)
         if score > 0:
             ranked.append((score, -rules.facts[fid].order, fid, affects))

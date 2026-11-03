@@ -34,7 +34,6 @@ MAX_BODY = 64 * 1024
 # 事実と読み取りの鍵の数の上限（定義にある事実の数より十分大きく）
 MAX_KEYS = 64
 NOT_THIS = "__not__"
-MACHIDA = "132098"  # 町田市の団体コード
 # 地域包括支援センターを探すページ（厚生労働省 介護サービス情報公表システム、PDL1.0。リンクだけ）。都道府県が分からなければ入口
 KAIGOKENSAKU = "https://www.kaigokensaku.mhlw.go.jp/"
 CENTER = "地域包括支援センター"
@@ -71,6 +70,8 @@ def load_places() -> dict[str, tuple[str, str]]:
 
 
 PLACES = load_places()
+# 市の制度を一つずつ判定している市（段 → 住所の事実）。そこに住んでいる人には、市区町村の型を出さない
+RULES_CITY = {level: fid for level, fid in rules_mod.LEVEL_PLACE.items() if "city" in (RULES.places.get(fid) or {})}
 # 合言葉なしで見られる見本。reading は前もって本物の Claude が読み取った結果（scripts/make_samples.py で書く）
 SAMPLES: list[dict] = json.loads((WEB_DIR / "samples.json").read_text(encoding="utf-8"))
 
@@ -132,8 +133,9 @@ def apply_place(facts: dict[str, Any], suggestions: dict[str, Any], code: str) -
     """画面で選んだ市区町村を、読み取りや画面の事実より優先する。一覧にないコードは無視する。"""
     if code not in PLACES:
         return
-    facts["lives_in_machida"] = code == MACHIDA
-    suggestions.pop("lives_in_machida", None)
+    facts.update(RULES.place_values(code))  # 町田市・横浜市・東京都…に住んでいるかを、すべてここで決める
+    for fid in RULES.places:
+        suggestions.pop(fid, None)
 
 
 def place_view(code: str) -> dict | None:
@@ -158,10 +160,12 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
          "answered_dont_know": facts.get(f) == DONT_KNOW}
         for f in r.missing_facts
     ]
-    # 町田市に住んでいると分かっているときだけ、町田市の窓口・電話・書類の名前を出す
+    # 町田市に住んでいると分かっているときだけ、町田市の窓口・電話・書類の名前を出す（国の制度の申請先は町田市で書いてある）
     here = facts.get("lives_in_machida") is True
     other = {} if here else p.elsewhere
-    sources = [s for s in p.sources if here or "city.machida.tokyo.jp" not in s.url] or p.sources
+    # 住んでいると分かっていない市・都・県のページは、出典から外す（ほかに出典がなければ、そのまま出す）
+    away = [site for level, site in rules_mod.LEVEL_SITE.items() if facts.get(rules_mod.LEVEL_PLACE[level]) is not True]
+    sources = [s for s in p.sources if not any(site in s.url for site in away)] or p.sources
     apply = dict(other.get("apply", p.apply))
     if CENTER in apply.get("where", "") + apply.get("how", ""):
         apply["center_search"] = center_search(municipality)  # 申請先に挙げたセンターを、その場で探せるように
@@ -237,7 +241,7 @@ def ask_view(q: Question, subject: str) -> dict:
             "keep": {"value": q.suggested, "label": f"いま確かめられない（「{read}」として進める）"},
             "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
         }
-    if q.fact == "lives_in_machida":
+    if q.fact == RULES.place_question:
         # 町田市かどうかだけを聞くと、町田市以外の人は「いいえ」しか押せない。画面は市区町村を選ぶ欄を出す（選んだ所は apply_place が扱う）。
         # はい・いいえは、市区町村の一覧を読み込めなかった画面のための控え
         return {
@@ -264,16 +268,19 @@ def ask_view(q: Question, subject: str) -> dict:
 
 def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int, municipality: str = "") -> dict:
     results = evaluate(RULES, facts)
-    if facts.get("lives_in_machida") is True:
-        # 町田市では市の制度を一つずつ判定するので、市区町村の型は出さない（判定は変えない）。
+    implied = with_implied(RULES, facts)
+    if any(implied.get(RULES_CITY[level]) is True for level in RULES_CITY):
+        # 町田市・横浜市では市の制度を一つずつ判定するので、市区町村の型は出さない（判定は変えない）。
         # 「当てはまらない」に並ぶと、町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めてしまうため
         results = {pid: r for pid, r in results.items() if r.program.level != "local"}
-    hidden_machida = 0
-    if facts.get("lives_in_machida") is False:
-        # 町田市以外と分かったら、町田市の制度は出さない（町田市で型を出さないのと同じ扱い。判定は変えない）。
-        # 「当てはまらない」に住所だけで外れた 10 件が並ぶため（11/3 の判断 2）。住所が分からない間は出す
-        hidden_machida = sum(1 for r in results.values() if r.program.level == "machida")
-        results = {pid: r for pid, r in results.items() if r.program.level != "machida"}
+    hidden_places = []
+    for level, fid in rules_mod.LEVEL_PLACE.items():
+        # その市・都・県以外と分かったら、そこの制度は出さない（町田市で型を出さないのと同じ扱い。判定は変えない）。
+        # 「当てはまらない」に住所だけで外れた制度が並ぶため（11/3 の判断 2）。住所が分からない間は出す
+        n = sum(1 for r in results.values() if r.program.level == level)
+        if implied.get(fid) is False and n:
+            hidden_places.append({"name": rules_mod.LEVELS[level], "n": n})
+            results = {pid: r for pid, r in results.items() if r.program.level != level}
     order = {"eligible": 0, "pending": 1, "after_prereq": 2, "unknown": 3, "ineligible": 4, "done": 5}
     pending = frozenset(pid for pid, r in results.items() if r.status == "pending")
 
@@ -287,17 +294,18 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         return (order[r.status], unknown, -met, -RULES.weight(r.program.id), r.program.number)
 
     ranked = sorted(results.values(), key=rank)
-    implied = with_implied(RULES, facts)
     question = question_view(facts, suggestions, subject, asked)
     return {
         "question": question,
         # 聞き返しが終わったら、確かめていない読み取りを結果の画面に出す（答えても Claude は呼ばない）
         "unconfirmed": unconfirmed_view(facts, suggestions, subject) if question is None else [],
         "max_questions": MAX_QUESTIONS,
-        "known": [fact_view(f, v) for f, v in implied.items() if f in RULES.facts],
-        "results": [result_view(r, facts, subject, municipality, pending) for r in ranked],
+        # 住所は、問いを受け持つ事実（町田市に住んでいる）だけを出す。東京都・横浜市などはそこから決まる
+        "known": [fact_view(f, v) for f, v in implied.items()
+                  if f in RULES.facts and (f not in RULES.places or f == RULES.place_question)],
+        "results": [result_view(r, implied, subject, municipality, pending) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
-        "hidden_machida": hidden_machida,
+        "hidden_places": hidden_places,
         "place": place_view(municipality),
         "center_search": center_search(municipality),
     }

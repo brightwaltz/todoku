@@ -12,7 +12,11 @@ import yaml
 
 DEFAULT_RULES_DIR = Path(__file__).resolve().parents[2] / "rules"
 
-LEVELS = {"national": "国", "machida": "町田市", "local": "市区町村（型）"}
+LEVELS = {"national": "国", "machida": "町田市", "yokohama": "横浜市", "tokyo": "東京都", "local": "市区町村（型）"}
+# 住所で決まる制度の段：その住所の事実と、出典に要るサイト（その市・都・県の公式ページの出典を 1 つは持つ）
+# 神奈川県は、個人で申し込める県の制度が見つからなかったので段を置いていない（11/3 の下調べ）
+LEVEL_PLACE = {"machida": "lives_in_machida", "yokohama": "lives_in_yokohama", "tokyo": "lives_in_tokyo"}
+LEVEL_SITE = {"machida": "city.machida.tokyo.jp", "yokohama": "city.yokohama.lg.jp", "tokyo": "metro.tokyo.lg.jp"}
 KINDS = {"review": "審査", "condition": "条件"}
 # 原文の引用を画面に出してよい利用条件。町田市は独自の規約で無断転載が禁じられているので入らない
 QUOTABLE_LICENSES = {"PDL1.0"}
@@ -34,6 +38,10 @@ class Fact:
     name: str = ""
     # ほかの事実から「いいえ」と決まる場合（例：認定がなければ介護サービスは使っていない）
     false_when: dict | None = None
+    # 住所の事実：{"city": 団体コード} か {"pref": 都道府県の番号}。値は選んだ市区町村から決まる
+    place: dict | None = None
+    # False なら Claude に相談文から読ませない
+    read: bool = True
 
     def values(self) -> list[Any]:
         return [v for v, _ in self.options]
@@ -115,6 +123,19 @@ class RuleSet:
     def weight(self, program_id: str) -> int:
         return self.programs[program_id].weight + self.dependents.get(program_id, 0)
 
+    @property
+    def places(self) -> dict[str, dict]:
+        """住所の事実 → place（facts.yaml の順）。最初のものが、市区町村を選ぶ問いを受け持つ。"""
+        return {f.id: f.place for f in self.facts.values() if f.place}
+
+    @property
+    def place_question(self) -> str | None:
+        return next(iter(self.places), None)
+
+    def place_values(self, code: str) -> dict[str, bool]:
+        """選んだ市区町村（団体コード）から、住所の事実をすべて決める。都道府県は団体コードの上 2 桁。"""
+        return {fid: code == p["city"] if "city" in p else code[:2] == p["pref"] for fid, p in self.places.items()}
+
 
 def rules_dir() -> Path:
     return Path(os.environ.get("TODOKU_RULES_DIR", DEFAULT_RULES_DIR))
@@ -160,7 +181,16 @@ def _load_facts(path: Path) -> dict[str, Fact]:
         false_when = spec.get("false_when")
         if false_when is not None and ftype != "bool":
             raise RuleError(f"facts.yaml: false_when は bool の事実だけ（{fid}）")
-        facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order, spec["name"], false_when)
+        place = spec.get("place")
+        if place is not None:
+            ok = ftype == "bool" and isinstance(place, dict) and len(place) == 1 and (
+                str(place.get("city", "")).isdigit() and len(str(place.get("city"))) == 6
+                or str(place.get("pref", "")).isdigit() and len(str(place.get("pref"))) == 2)
+            if not ok:
+                raise RuleError(f"facts.yaml: {fid} の place は bool の事実に {{city: 6 桁}} か {{pref: 2 桁}} で書く")
+            place = {k: str(v) for k, v in place.items()}
+        facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order, spec["name"], false_when,
+                          place, bool(spec.get("read", True)))
     for fact in facts.values():
         if fact.false_when is not None:
             ref = facts.get(fact.false_when.get("fact"))
@@ -198,8 +228,9 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         _check_node(pending_when, facts, set(), where, inside_not=False)
 
     sources = [_load_source(s, where) for s in need("sources")]
-    if level == "machida" and not any("city.machida.tokyo.jp" in s.url for s in sources):
-        raise RuleError(f"{where}: 町田市の制度に町田市のページの出典がない")
+    site = LEVEL_SITE.get(level)
+    if site and not any(site in s.url for s in sources):
+        raise RuleError(f"{where}: {LEVELS[level]}の制度に{LEVELS[level]}のページの出典がない")
     if level == "local" and not _has_key(eligibility, "ask_at"):
         # 型は「お住まいの市区町村にあるか」を規則では決めない。必ず確かめる先（ask_at）を書く
         raise RuleError(f"{where}: 市区町村の型には、実施しているかを確かめる ask_at の条件が要る")
