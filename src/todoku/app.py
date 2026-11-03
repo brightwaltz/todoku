@@ -36,6 +36,11 @@ RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
 # アプリ全体の回数制限（10 分あたり、合言葉が通った回だけ）。接続元を偽って IP ごとの制限を外しても、Claude を呼ぶ回数はこれを超えない。
 # 数えるのはプロセスの中なので、マシン 1 台（uvicorn を 1 つで動かしている）ごとの上限。マシンが N 台なら N 倍になる
 RATE_LIMIT_ALL = int(os.environ.get("TODOKU_RATE_LIMIT_ALL", "60"))
+# 聞き返し（/api/step）の回数制限（IP ごと、STEP_WINDOW 秒あたり）。費用はかからないが合言葉なしで CPU を使うので、
+# 1 人が送り続けて、ほかの人の画面を遅くしないための上限（手間を増やすだけの対策。接続元を変えながら送れば外せる）。
+# 審査の人が同じ Wi-Fi（同じ IP）から何人も同時に問いに答えても届かないよう、大きめにする（1 回の判定は約 2〜4ms。T-047）
+STEP_LIMIT = int(os.environ.get("TODOKU_STEP_LIMIT", "300"))
+STEP_WINDOW = 60
 # Fly.io の上で動いているか（Fly はマシンに FLY_APP_NAME を入れる。fly.toml には書いていない）。起動時に 1 回だけ決める。
 # Fly の中継が付ける Fly-Client-IP は Fly の上でだけ信じる。ほかの置き場ではだれでも付けられるので、接続そのものの相手で数える
 # （手間を増やすだけの対策。Fly の上でも、中継がヘッダを上書きしなければ偽れる）
@@ -75,7 +80,9 @@ CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
 _hits_all: deque = deque()
 _swept = 0.0  # 最後に forget_idle で _hits を見回した時刻
-# 回数制限の表（_hits・_hits_all・_swept）を読み書きするときに持つ鍵。口は同期の関数でスレッドで動くので、
+_step_hits: dict[str, deque] = defaultdict(deque)  # 聞き返しの回数（接続元ごと）。Claude を呼ぶ口の _hits・_hits_all とは別に数える
+_step_swept = 0.0  # 最後に forget_idle で _step_hits を見回した時刻
+# 回数制限の表（_hits・_hits_all・_swept・_step_hits・_step_swept）を読み書きするときに持つ鍵。口は同期の関数でスレッドで動くので、
 # 鍵なしだと recent() の popleft が IndexError（500）になり、ほかのスレッドが積んだ記録を消して数え漏らしていた（T-039）
 _lock = threading.Lock()
 
@@ -152,7 +159,17 @@ class SampleIn(In):
 
 
 def guard(request: Request, costly: bool) -> None:
-    # 合言葉と回数制限は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通す
+    # 合言葉は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通し、
+    # 接続元ごとのゆるい回数制限（STEP_LIMIT）だけを掛ける。Claude を呼ぶ口の回数（_hits・_hits_all）は減らさない
+    if not costly:
+        with _lock:
+            now = time.time()
+            forget_idle(now)
+            hits = recent(_step_hits[source(request)], now, STEP_WINDOW)
+            if len(hits) >= STEP_LIMIT:
+                raise HTTPException(429, "しばらく時間をおいてから試してください")
+            hits.append(now)
+        return
     if costly:
         # 本物の Claude を呼ぶのに合言葉がない（fly secrets の設定し忘れなど）ときは、Claude を呼ぶ口を閉じる。
         # 黙って合言葉なしで開くと、だれでも費用を使える。起動で止めると見本と判定し直しまで止まるので、ここで断る。
@@ -167,11 +184,8 @@ def guard(request: Request, costly: bool) -> None:
             # 先にアプリ全体を見る。上限に届いていれば、接続元ごとの数も増やさない
             if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
                 raise HTTPException(429, "しばらく時間をおいてから試してください")
-            # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。値を変えれば外せるので、アプリ全体の上限も置く。
-            # Fly の外（ON_FLY が偽）ではヘッダを見ない。付けて送るだけで、接続元ごとの上限を外せるため
-            forwarded = request.headers.get("fly-client-ip") if ON_FLY else None
-            ip = client_key(forwarded or (request.client.host if request.client else "?"))
-            hits = recent(_hits[ip], now)
+            # 接続元の決め方は source()。Fly-Client-IP の値を変えれば外せるので、アプリ全体の上限も置く
+            hits = recent(_hits[source(request)], now)
             if len(hits) >= RATE_LIMIT:
                 raise HTTPException(429, "しばらく時間をおいてから試してください")
             # 合言葉を確かめる前に数える。間違えた回も数えないと、合言葉を何度でも試せる
@@ -181,6 +195,16 @@ def guard(request: Request, costly: bool) -> None:
             # アプリ全体は、合言葉が通った回（Claude を呼ぶ回）だけ数える。間違えた回も数えると、
             # 合言葉を知らない人が接続元を変えながら送るだけで、ほかの全員を止められる
             _hits_all.append(now)
+
+
+def source(request: Request) -> str:
+    """回数制限で数える接続元の鍵。
+
+    Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。
+    Fly の外（ON_FLY が偽）ではヘッダを見ない。付けて送るだけで、接続元ごとの上限を外せるため。
+    """
+    forwarded = request.headers.get("fly-client-ip") if ON_FLY else None
+    return client_key(forwarded or (request.client.host if request.client else "?"))
 
 
 def client_key(ip: str) -> str:
@@ -202,28 +226,35 @@ def client_key(ip: str) -> str:
     return str(ipaddress.IPv6Network((int(addr), 64), strict=False))
 
 
-def recent(hits: deque, now: float) -> deque:
-    """WINDOW 秒より前の記録を捨てて、同じ deque を返す。_lock を持って呼ぶ（見てから popleft するので）。"""
-    while hits and now - hits[0] > WINDOW:
+def recent(hits: deque, now: float, window: float = WINDOW) -> deque:
+    """window 秒より前の記録を捨てて、同じ deque を返す。_lock を持って呼ぶ（見てから popleft するので）。"""
+    while hits and now - hits[0] > window:
         hits.popleft()
     return hits
 
 
 def forget_idle(now: float) -> None:
-    """窓から外れて記録が空になった接続元を _hits から消す。
+    """窓から外れて記録が空になった接続元を _hits と _step_hits から消す。
 
     消さないと、接続元を変えながら送るだけで、来なくなった接続元の行が表に残り続ける。
-    全部の行を見るので、見回すのは WINDOW 秒に 1 回だけ（来なくなった行は、遅くとも 2×WINDOW 秒で消える）。
+    全部の行を見るので、見回すのはそれぞれの窓（WINDOW・STEP_WINDOW）の秒数に 1 回だけ（来なくなった行は、遅くとも窓の 2 倍の秒数で消える）。
     同じ窓の中で接続元を変えて送られた分は残る（合言葉を間違えた回も数えるため）。
+    _step_hits は合言葉なしで行が増えるので、窓を短くして早めに消す。
     """
-    global _swept
-    if now - _swept < WINDOW:
-        return
-    _swept = now
+    global _swept, _step_swept
     # 呼ぶのは guard の _lock の中だけ（recent() と同じく、鍵の外から呼ぶと競合する）
-    for ip, hits in list(_hits.items()):
-        if not recent(hits, now):
-            _hits.pop(ip, None)
+    if now - _swept >= WINDOW:
+        _swept = now
+        forget_empty(_hits, now, WINDOW)
+    if now - _step_swept >= STEP_WINDOW:
+        _step_swept = now
+        forget_empty(_step_hits, now, STEP_WINDOW)
+
+
+def forget_empty(table: dict[str, deque], now: float, window: float) -> None:
+    for ip, hits in list(table.items()):
+        if not recent(hits, now, window):
+            table.pop(ip, None)
 
 
 def same_word(sent: str, word: str) -> bool:

@@ -277,6 +277,60 @@ def test_rate_limit_forgets_idle_client_ips():
 
 
 @pytest.mark.usefixtures("on_fly")
+def test_step_limit_counts_each_client_ip_apart_from_claude(monkeypatch):
+    from todoku import app as app_mod
+
+    # 聞き返し（/api/step）は合言葉なしで CPU を使うので、送り続けるとほかの人の画面が遅くなっていた（11/3 の安全点検の 7、T-051）。
+    # 接続元ごとのゆるい上限を掛ける。Claude を呼ぶ口の回数とは別に数え、互いに減らさない
+    monkeypatch.setattr(app_mod, "STEP_LIMIT", 2)
+    step = lambda ip: client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": ip}).status_code
+    assert [step("203.0.113.1"), step("203.0.113.1"), step("203.0.113.1")] == [200, 200, 429]
+    r = client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": "203.0.113.1"})
+    assert r.json()["detail"] == "しばらく時間をおいてから試してください"  # 画面は detail を問いの欄に出す
+    assert step("2001:db8:1:2::1") == 200  # 別の人は別に数える。IPv6 は /64 ごと（Claude を呼ぶ口と同じ決め方）
+    assert step("2001:db8:1:2::ffff") == 200
+    assert step("2001:db8:1:2::2") == 429
+    assert len(app_mod._hits) == 0 and len(app_mod._hits_all) == 0  # Claude を呼ぶ口の回数は減らさない
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"fly-client-ip": "203.0.113.1"}).status_code == 200
+    assert len(app_mod._step_hits["203.0.113.1"]) == 2  # 読み取りは聞き返しの数に入れない（断った回も積まない）
+
+
+def test_step_limit_ignores_fly_client_ip_off_fly(monkeypatch):
+    from todoku import app as app_mod
+
+    # Fly の外ではヘッダを見ない（T-042 と同じ決め方）。付けて送るだけで上限を外せないこと
+    monkeypatch.setattr(app_mod, "ON_FLY", False)
+    monkeypatch.setattr(app_mod, "STEP_LIMIT", 1)
+    step = lambda ip: client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": ip}).status_code
+    assert [step("203.0.113.1"), step("203.0.113.2")] == [200, 429]
+    assert sorted(app_mod._step_hits) == ["testclient"]
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_step_limit_window_and_idle_rows(monkeypatch):
+    import time
+
+    from todoku import app as app_mod
+
+    # 窓（STEP_WINDOW 秒）より前の回は数えない。来なくなった接続元の行は、窓ごとの見回しで消す
+    monkeypatch.setattr(app_mod, "STEP_LIMIT", 1)
+    old = time.time() - app_mod.STEP_WINDOW - 1
+    app_mod._step_hits["203.0.113.1"].append(old)
+    for i in range(50):
+        app_mod._step_hits[f"198.51.100.{i}"].append(old)
+    app_mod._step_hits["203.0.113.8"].append(time.time())  # 窓の中に記録がある接続元は残す
+    step = lambda ip: client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": ip}).status_code
+    assert step("203.0.113.1") == 200  # 窓の外の 1 回は数えないので、上限 1 でも通る
+    assert sorted(app_mod._step_hits) == ["203.0.113.1", "203.0.113.8"]
+    assert list(app_mod._step_hits["203.0.113.1"]) != [old] and len(app_mod._step_hits["203.0.113.1"]) == 1
+    assert step("203.0.113.8") == 429  # 窓の中の 1 回は数える
+    # 見回しのすぐ後（見回さない間）でも、窓の外の回は数えない（Claude を呼ぶ口の 10 分の窓で数えない）
+    monkeypatch.setattr(app_mod, "_step_swept", time.time())
+    app_mod._step_hits["203.0.113.2"].append(old)
+    assert step("203.0.113.2") == 200
+
+
+@pytest.mark.usefixtures("on_fly")
 def test_rate_limit_survives_concurrent_requests(monkeypatch):
     import threading
     import time

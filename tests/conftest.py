@@ -14,6 +14,9 @@ def fresh_rate_limit(monkeypatch):
     monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
     monkeypatch.setattr(app_mod, "_hits_all", app_mod.deque())
     monkeypatch.setattr(app_mod, "_swept", 0.0)  # 見回した時刻も戻す。残すと、次のテストで見回さないことがある
+    # 聞き返し（/api/step）の数も同じ（T-051）
+    monkeypatch.setattr(app_mod, "_step_hits", app_mod.defaultdict(app_mod.deque))
+    monkeypatch.setattr(app_mod, "_step_swept", 0.0)
 
 
 @pytest.fixture
