@@ -1,4 +1,6 @@
-FROM python:3.12-slim
+# 元のイメージは版と digest で固定する（3.12.16-slim-trixie、2026-10-28 作成）。安全の更新は自動では入らない。
+# 上げ方: `docker buildx imagetools inspect python:3.12-slim` の Digest と org.opencontainers.image.version を見て、下のタグと sha256 を書き換える
+FROM python:3.12.16-slim@sha256:b18b261e1b4974b4f321451ad5251ded85abb22c2b8b262da527dda1d031ab30
 COPY --from=ghcr.io/astral-sh/uv:0.13.0 /uv /uvx /bin/
 WORKDIR /app
 COPY pyproject.toml uv.lock ./
