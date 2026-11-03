@@ -206,13 +206,39 @@ function renderExtracted(data, text) {
   show("extracted");
 }
 
+// サーバの照合（claude.normalize）と同じく、NFKC にそろえて空白を除く。全角・半角が違っても根拠の言葉が見つかるように
+const squash = (s) => s.normalize("NFKC").replace(/\s+/g, "");
+
+// 文をそろえた形にし、そろえた後の 1 文字ごとに元の文の何文字目から何文字目までかを持つ（印は元の文に付けるため）
+function squashed(text) {
+  const units = [];
+  let i = 0;
+  for (const ch of text) {
+    const n = squash(ch);
+    const last = units[units.length - 1];
+    if (last && /^\p{M}/u.test(n)) {
+      // 半角の濁点（ｶﾞ）のように、前の字と合わせて 1 字になるものは、前の字とまとめてそろえ直す
+      last.end = i + ch.length;
+      last.n = squash(text.slice(last.start, last.end));
+    } else units.push({ start: i, end: i + ch.length, n });
+    i += ch.length;
+  }
+  const starts = [], ends = [];
+  // indexOf と length は UTF-16 の単位で数えるので、こちらも同じ単位で並べる
+  for (const u of units) for (let k = 0; k < u.n.length; k++) { starts.push(u.start); ends.push(u.end); }
+  return { s: units.map((u) => u.n).join(""), starts, ends };
+}
+
 // 相談の文章のうち、事実の根拠になった言葉に印を付ける。印 i と事実の行 i は同じ遅れで現れる
 function markEvidence(text, extracted) {
+  const flat = squashed(text);
   const spans = [];
   for (const [i, f] of extracted.entries()) {
-    const at = f.evidence ? text.indexOf(f.evidence) : -1;
-    if (at < 0) continue;
-    const end = at + f.evidence.length;
+    const ev = f.evidence ? squash(f.evidence) : "";
+    const k = ev ? flat.s.indexOf(ev) : -1;
+    if (k < 0) continue;
+    const at = flat.starts[k];
+    const end = flat.ends[k + ev.length - 1];
     if (spans.some((s) => at < s.end && s.start < end)) continue;  // 重なる印は後のものを付けない
     spans.push({ start: at, end, i, low: f.confidence === "low" });
   }
