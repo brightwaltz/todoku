@@ -14,7 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -29,6 +29,10 @@ WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
 # Claude を呼ぶ API の回数制限（IP ごと、10 分あたり）
 RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
+# 本文の大きさの上限。相談文は 2000 字まで、事実は 20 ほどなので、ふつうの要求は数 KB
+MAX_BODY = 64 * 1024
+# 事実と読み取りの鍵の数の上限（定義にある事実の数より十分大きく）
+MAX_KEYS = 64
 NOT_THIS = "__not__"
 MACHIDA = "132098"  # 町田市の団体コード
 # 地域包括支援センターを探すページ（厚生労働省 介護サービス情報公表システム、PDL1.0。リンクだけ）。都道府県が分からなければ入口
@@ -77,15 +81,15 @@ class ConsultIn(BaseModel):
 
 
 class StepIn(BaseModel):
-    facts: dict[str, Any] = {}
-    suggestions: dict[str, Any] = {}
+    facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
+    suggestions: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     subject: str = "ご本人"
     asked: int = 0
     municipality: str = Field("", max_length=6)
 
 
 class SummaryIn(BaseModel):
-    facts: dict[str, Any] = {}
+    facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     subject: str = "ご本人"
     municipality: str = Field("", max_length=6)
 
@@ -350,6 +354,52 @@ def sample(body: SampleIn) -> dict:
     extraction = check_extraction(RULES, s["text"], s["reading"])  # 置いてある結果も、毎回同じ検査を通す
     return {"engine": "sample", "sample": True, "made": s.get("made"),
             **consult_view(extraction, s.get("municipality", ""))}
+
+
+class BodyLimit:
+    """本文が MAX_BODY を超える要求を 413 で断る。
+
+    Content-Length を見るだけだと、長さを書かない送り方（chunked）で回り込めるので、読んだ量も数えて止める。
+    合言葉の要らない /api/step にも大きな本文を送れたため（3rd の点検、13.9MB で RSS が 89→318MB）。
+    """
+
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] != "http" or scope["method"] != "POST":
+            return await self.app(scope, receive, send)
+        length = dict(scope["headers"]).get(b"content-length", b"0")
+        if not length.isdigit() or int(length) > MAX_BODY:
+            return await self.too_large(scope, receive, send)
+        chunks, size = [], 0
+        while True:
+            message = await receive()
+            if message["type"] == "http.disconnect":
+                return
+            size += len(message.get("body", b""))
+            if size > MAX_BODY:
+                return await self.too_large(scope, receive, send)
+            chunks.append(message.get("body", b""))
+            if not message.get("more_body"):
+                break
+        body, given = b"".join(chunks), False
+
+        async def replay():
+            nonlocal given
+            if not given:
+                given = True
+                return {"type": "http.request", "body": body, "more_body": False}
+            return await receive()
+
+        await self.app(scope, replay, send)
+
+    @staticmethod
+    async def too_large(scope, receive, send):
+        await JSONResponse({"detail": "送られた内容が大きすぎます"}, status_code=413)(scope, receive, send)
+
+
+app.add_middleware(BodyLimit)
 
 
 @app.middleware("http")

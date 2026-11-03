@@ -311,3 +311,15 @@ def test_pending_certification_is_marked_on_dependents():
     lines = client.post("/api/summary", json={"facts": facts}).json()["lines"]
     firsts = [l["text"] for l in lines if l["program_ids"][0] == "kaigo-nintei"]
     assert firsts and all("結果が出ると" in t and "申請すると" not in t for t in firsts)
+
+
+def test_large_bodies_are_refused():
+    # 合言葉の要らない /api/step でも、大きな本文は読み込まずに断る（長さを書かない送り方でも数えて止める）
+    big = {"facts": {"age_band": "age_75_plus"}, "subject": "x" * (70 * 1024)}
+    assert client.post("/api/step", json=big).status_code == 413
+    chunked = client.post("/api/step", content=iter([b'{"facts": {}, "subject": "', b"x" * (70 * 1024), b'"}']),
+                          headers={"content-type": "application/json"})
+    assert chunked.status_code == 413
+    many = {"facts": {f"k{i}": True for i in range(65)}}
+    assert client.post("/api/step", json=many).status_code == 422
+    assert client.post("/api/step", json={"facts": {"age_band": "age_75_plus"}}).status_code == 200
