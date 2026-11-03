@@ -57,6 +57,23 @@ def test_bad_answers_raise(monkeypatch, stop, text, error):
     assert len(claude.calls) == 1  # 失敗した呼び出しも費用には数える
 
 
+def test_server_client_does_not_keep_calls(monkeypatch):
+    from todoku import claude as claude_mod
+
+    # サーバーの呼び先（make_client）は何日も動くので、calls を貯めない（T-037）。評価の RealClaude() は今までどおり貯める
+    monkeypatch.delenv("TODOKU_FAKE_CLAUDE", raising=False)
+    monkeypatch.setenv("ANTHROPIC_API_KEY", "not-a-real-key")
+    server = claude_mod.make_client()
+    assert isinstance(server, RealClaude)
+    claude, _ = make(monkeypatch)
+    server._client = claude._client
+    for _ in range(3):
+        server.extract(RS, TEXT)
+        claude.extract(RS, TEXT)
+    assert server.calls == []
+    assert len(claude.calls) == 3
+
+
 def test_model_and_effort_can_be_chosen(monkeypatch):
     claude, sent = make(monkeypatch, model="claude-sonnet-5-5", effort="medium")
     claude.extract(RS, TEXT)

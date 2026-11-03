@@ -68,6 +68,7 @@ RULES = rules_mod.load()
 CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
 _hits_all: deque = deque()
+_swept = 0.0  # 最後に forget_idle で _hits を見回した時刻
 
 
 def load_places() -> dict[str, tuple[str, str]]:
@@ -146,6 +147,7 @@ def guard(request: Request, costly: bool) -> None:
     if costly:
         # 回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限
         now = time.time()
+        forget_idle(now)
         # 先にアプリ全体を見る。上限に届いていれば、接続元ごとの数も増やさない
         if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
             raise HTTPException(429, "しばらく時間をおいてから試してください")
@@ -168,6 +170,23 @@ def recent(hits: deque, now: float) -> deque:
     while hits and now - hits[0] > WINDOW:
         hits.popleft()
     return hits
+
+
+def forget_idle(now: float) -> None:
+    """窓から外れて記録が空になった接続元を _hits から消す。
+
+    消さないと、接続元を変えながら送るだけで、来なくなった接続元の行が表に残り続ける。
+    全部の行を見るので、見回すのは WINDOW 秒に 1 回だけ（来なくなった行は、遅くとも 2×WINDOW 秒で消える）。
+    同じ窓の中で接続元を変えて送られた分は残る（合言葉を間違えた回も数えるため）。
+    """
+    global _swept
+    if now - _swept < WINDOW:
+        return
+    _swept = now
+    # 口は同期の関数でスレッドで動くので、2 つが同時に見回しても落ちないよう pop にする
+    for ip, hits in list(_hits.items()):
+        if not recent(hits, now):
+            _hits.pop(ip, None)
 
 
 def same_word(sent: str, word: str) -> bool:

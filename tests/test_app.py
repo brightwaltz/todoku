@@ -207,6 +207,21 @@ def test_rate_limit_caps_the_whole_app(monkeypatch):
     assert len(app_mod._hits["203.0.113.3"]) == 0  # 全体で断った回は、接続元ごとの数を増やさない
 
 
+def test_rate_limit_forgets_idle_client_ips():
+    import time
+
+    from todoku import app as app_mod
+
+    # 接続元を変えながら送ると、来なくなった接続元の行が _hits に残り続けていた（T-037）。窓から外れて空になった行は消す
+    old = time.time() - app_mod.WINDOW - 1
+    for i in range(50):
+        app_mod._hits[f"198.51.100.{i}"].append(old)
+    app_mod._hits["203.0.113.8"].append(time.time())  # 窓の中に記録がある接続元は残す
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"fly-client-ip": "203.0.113.9"}).status_code == 200
+    assert sorted(app_mod._hits) == ["203.0.113.8", "203.0.113.9"]
+    assert len(app_mod._hits["203.0.113.8"]) == 1  # 消さなかった行の数は変えない
+
+
 def test_wrong_passphrase_does_not_use_up_the_whole_app(monkeypatch):
     from todoku import app as app_mod
 

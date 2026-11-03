@@ -284,7 +284,7 @@ class ClaudeRefused(ClaudeFailed):
 class RealClaude:
     name = "claude"
 
-    def __init__(self, model: str | None = None, effort: str | None = None) -> None:
+    def __init__(self, model: str | None = None, effort: str | None = None, keep_calls: bool = True) -> None:
         import anthropic
 
         # SDK の既定（読み取りの待ち 600 秒・再試行 2 回）のままだと、API が応答しないとき画面が最長で約 30 分止まる。
@@ -292,7 +292,10 @@ class RealClaude:
         self._client = anthropic.Anthropic(timeout=60.0, max_retries=1)
         self.model = model or MODEL
         self.effort = effort or EFFORT
-        self.calls: list[dict] = []  # 呼び出しごとの答えたモデルとトークン数（評価の費用を数えるため）
+        # 呼び出しごとの答えたモデルとトークン数（評価の費用を数えるため）。評価は len と切り出し（calls[start:]）で数えるので、
+        # 上限で古いものを捨てる形にはしない。何日も動くサーバーは誰も読まないので、keep_calls=False で貯めない
+        self.keep_calls = keep_calls
+        self.calls: list[dict] = []
 
     def _fallback(self) -> dict:
         # 拒否されたときの代わりのモデル（サーバー側）は Opus と Sonnet だけ。Haiku 5.5 には付けられない
@@ -310,9 +313,10 @@ class RealClaude:
             messages=[{"role": "user", "content": user}],
             **self._fallback(),
         )
-        self.calls.append({"model": response.model, "stop": response.stop_reason,
-                           "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens,
-                           "seconds": round(time.monotonic() - started, 2)})
+        if self.keep_calls:
+            self.calls.append({"model": response.model, "stop": response.stop_reason,
+                               "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens,
+                               "seconds": round(time.monotonic() - started, 2)})
         if response.stop_reason == "refusal":
             raise ClaudeRefused(getattr(response.stop_details, "category", None))
         if response.stop_reason == "max_tokens":
@@ -436,6 +440,7 @@ class FakeClaude:
 
 
 def make_client() -> ClaudeLike:
+    # サーバー（app.py）の呼び先。評価と見本の台本は RealClaude() を直に作り、calls を貯める
     if os.environ.get("ANTHROPIC_API_KEY") and os.environ.get("TODOKU_FAKE_CLAUDE") != "1":
-        return RealClaude()
+        return RealClaude(keep_calls=False)
     return FakeClaude()

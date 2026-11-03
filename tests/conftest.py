@@ -13,3 +13,4 @@ def fresh_rate_limit(monkeypatch):
     # 回数制限は 10 分の窓で数える。ほかのテストの相談で上限（接続元ごと・アプリ全体）に届かないよう、毎回数え直す
     monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
     monkeypatch.setattr(app_mod, "_hits_all", app_mod.deque())
+    monkeypatch.setattr(app_mod, "_swept", 0.0)  # 見回した時刻も戻す。残すと、次のテストで見回さないことがある
