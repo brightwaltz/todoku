@@ -268,6 +268,8 @@ def print_summary(mode: str, summary: dict) -> None:
     per_case = summary["wrong_recommended_per_case"]
     print(f"  ×なのに案内した数 {c['no_recommended']}（1 件あたり {'—' if per_case is None else f'{per_case:.2f}'}）"
           f"／×なのに示した数（確かめると使えるかもしれないを含む）{c['no_shown']}")
+    if "asked_mean" in summary:
+        print(f"  返した問いの数 1 件あたり {summary['asked_mean']:.2f}（上限 3）。問いの数ごとの率は上の value-0〜3")
     if c["pending_yes"] + c["pending_no"] + c["pending_unsure"]:
         print(f"  申請済み・結果待ちとして出さなかったマス：○ {c['pending_yes']}・× {c['pending_no']}・？ {c['pending_unsure']}")
     if summary.get("failed"):
@@ -289,6 +291,7 @@ def rescore(path: Path, gold_path: Path | None) -> None:
     summary["gold"] = (gold_path or HERE / "gold.csv").name
     summary["rescored_from"] = path.name
     if data["mode"] == "pipeline" and ok:
+        summary["asked_mean"] = sum(len(r["asked"]) for r in ok.values()) / len(ok)
         summary["by_questions"] = by_questions(ok, gold)
     print_summary(data["mode"], summary)
     tag = "" if gold_path is None else f"-{gold_path.stem}"
