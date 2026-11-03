@@ -48,7 +48,7 @@ age_band:
 care_level:
   name: 要介護・要支援の認定
   type: enum
-  question: 要介護・要支援の認定は受けていますか？
+  question: ご本人は、要介護・要支援の認定を受けていますか？
   options:
     - {value: none, label: 受けていない}
     - {value: applying, label: 申請中}

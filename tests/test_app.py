@@ -686,3 +686,15 @@ def test_place_is_offered_on_the_result_when_not_asked():
     data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
                                           "asked": 99}).json()
     assert not [u for u in data["unconfirmed"] if u["fact"] in places]
+def test_care_level_question_names_the_person():
+    # 認定の問いにも主語を書き、相談文の呼び方に置き換える（指摘 P-6。見本「退院した母」では最初の問いになる）
+    start = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    q = start["question"]
+    assert start["subject"] == "お母さま" and q["fact"] == "care_level" and q["confirm"] is False
+    assert q["text"].startswith("お母さまは、") and "ご本人" not in q["text"]
+    # 「わからない」と答えた後の「まだ確かめていないこと」の問いも同じ呼び方
+    after = client.post("/api/step", json={"facts": {**start["facts"], "care_level": DONT_KNOW},
+                                           "suggestions": start["suggestions"], "subject": start["subject"],
+                                           "asked": 1}).json()
+    missing = [m["question"] for r in after["results"] for m in r["missing"] if m["fact"] == "care_level"]
+    assert missing and all(m.startswith("お母さまは、") for m in missing)
