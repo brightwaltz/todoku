@@ -8,7 +8,8 @@
 - 読み A：eligible・after_prereq→○、ineligible・done→×、unknown→？、pending→申
 - 読み B：当たりうる→○、当たらない・済んでいる→×、決められない→？、申請済み・結果待ち→申
 一致：A と B の全部の回が同じ印で、申を含まず、B の ○・× の引用がどれも原文に見つかる。
-それ以外は論点に入れる。論点は「制度×A の印×A の決め手」でまとめる。
+それ以外は、まず制度をまたぐ型（POLICIES：申請中・非該当だった人・区分が分からない人・前の手続き待ち）に入れ、
+残りを論点に入れる。論点は「制度×A の印×A の決め手」でまとめる。
 抜き取り：一致した ○ と × から、乱数の種 20261103 で ○ 20・× 20（足りなければ全部）。
 """
 
@@ -27,7 +28,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "eval"))
 from todoku import rules as rules_mod  # noqa: E402
-from todoku.engine import F, U, evaluate  # noqa: E402
+from todoku.engine import DONT_KNOW, F, P, U, evaluate  # noqa: E402
 
 from blind_read import LOCAL_TYPES, cases_in_scope, load_cases  # noqa: E402
 from sources import CACHE  # noqa: E402
@@ -39,6 +40,19 @@ AUDIT_NO = 20
 
 A_MARK = {"eligible": "○", "after_prereq": "○", "ineligible": "×", "done": "×", "unknown": "？", "pending": "申"}
 B_MARK = {"当たりうる": "○", "当たらない": "×", "済んでいる": "×", "決められない": "？", "申請済み・結果待ち": "申"}
+
+# 制度をまたいで同じ型の食い違い（試しの結果を見て、本番の結果を見る前に足した。PROTOCOL.md の変更の記録）。
+# 柴田は、型ごとに 1 回「どちらの読みに合わせるか／？にするか／制度ごとに見るか」を選ぶ。上から順に当てはめる。
+POLICIES = {
+    "p-pending": ("申請して結果を待っている人",
+                  "要介護認定を申請して、結果がまだ出ていない人。認定の申請そのものや、認定を前提にした制度に、どの印を付けますか。"),
+    "p-jiritsu": ("前の認定で「非該当（自立）」だった人",
+                  "前に申請して非該当だった人。その後の様子の変わり方をどう読むか（申請し直せるか、認定を前提にした制度をどうするか）。"),
+    "p-care-unknown": ("認定は受けているが、区分を相談した人が知らない人",
+                       "人物の説明では認定を受けているが、要支援か要介護か、いくつかは書かれていない人。"),
+    "p-prereq": ("前の手続きを済ませれば当たりうる人",
+                 "今はまだ前の手続き（要介護認定など）を済ませていない人。「済ませれば当たる」を、今の様子からは当たりそうにない人にも当てはめるか。"),
+}
 
 
 def norm(text: str) -> str:
@@ -76,6 +90,22 @@ def a_reading(result) -> tuple[str, str]:
     return "○", ("先に手続き：" + "／".join(dict.fromkeys(pre))) if st == "after_prereq" else "条件を満たす"
 
 
+def policy_of(case: dict, res, a_mark: str, bs: list[dict]) -> str | None:
+    """食い違ったマスが、制度をまたぐ型（POLICIES）のどれに当たるか。"""
+    care = case["answers"].get("care_level")
+    marks = {a_mark, *[b["mark"] for b in bs]}
+    has_p = any(lf.state == P for lf in res.leaves)
+    if "申" in marks or (care == "applying" and has_p):
+        return "p-pending"
+    if care == "jiritsu":
+        return "p-jiritsu"
+    if care == DONT_KNOW and any(lf.state == U and lf.fact == "care_level" for lf in res.leaves):
+        return "p-care-unknown"
+    if has_p:
+        return "p-prereq"
+    return None
+
+
 def load_runs(paths: list[str]) -> list[dict]:
     runs = []
     for p in paths:
@@ -105,14 +135,15 @@ def prepare(paths: list[str]) -> dict:
     cases = load_cases()
     runs = load_runs(paths)
     nums = sorted({int(n) for r in runs for n, p in r["programs"].items() if "judgments" in p})
-    cells, agreed, issues = [], [], defaultdict(list)
+    cells, agreed, issues, policies = [], [], defaultdict(list), defaultdict(list)
     for case in cases:
         results = evaluate(rs, dict(case["answers"]))
         for num in nums:
             if case not in cases_in_scope(num, cases):
                 continue
             prog = by_number[num]
-            a_mark, a_why = a_reading(results[prog.id])
+            res = results[prog.id]
+            a_mark, a_why = a_reading(res)
             bs = [b_cell(r, num, case["id"]) for r in runs]
             if any(b is None for b in bs):
                 key = (num, "B の答えがない", "")
@@ -132,6 +163,11 @@ def prepare(paths: list[str]) -> dict:
             cells.append(cell)
             if key is None:
                 agreed.append(cell)
+                continue
+            pol = policy_of(case, res, a_mark, bs) if key[1] not in ("B の答えがない", "引用が原文に見つからない") else None
+            if pol:
+                cell["policy"] = pol
+                policies[pol].append(cell)
             else:
                 issues[key].append(cell)
     rng = random.Random(SEED)
@@ -143,10 +179,13 @@ def prepare(paths: list[str]) -> dict:
         num, kind, why = key
         issue_list.append({"id": f"i{i:02d}", "num": num, "program": by_number[num].name, "kind": kind,
                            "a_why": why, "cells": cs})
+    policy_list = [{"id": pid, "title": POLICIES[pid][0], "question": POLICIES[pid][1], "cells": policies[pid]}
+                   for pid in POLICIES if policies[pid]]
     stats = summarize(cells, agreed, issue_list, runs)
+    stats["policies"] = {p["id"]: len(p["cells"]) for p in policy_list}
     return {"made": datetime.now().isoformat(timespec="seconds"), "seed": SEED, "runs": [r["_path"] for r in runs],
             "models": [r["model"] for r in runs], "programs": nums, "stats": stats,
-            "issues": issue_list, "audit": audit}
+            "policies": policy_list, "issues": issue_list, "audit": audit}
 
 
 def summarize(cells, agreed, issues, runs) -> dict:
@@ -180,6 +219,9 @@ def main() -> None:
     print(f"マス {s['cells']}：一致 {s['agreed']}（{dict(s['agreed_by_mark'])}）、論点に入れた {s['issue_cells']} マス → 論点 {s['issues']} 件")
     print(f"A と B の一致率 {s['a_b_agreement']}、B どうし {s['b_b_agreement']}、引用 {s['quotes']}、費用 {s['usd']}")
     print(f"抜き取り {len(data['audit'])} 件 → {path.relative_to(ROOT)}")
+    for po in data["policies"]:
+        progs = sorted({c["num"] for c in po["cells"]})
+        print(f"  {po['id']} {po['title']}｜{len(po['cells'])} マス（制度 {','.join(map(str, progs))}）")
     for it in data["issues"]:
         print(f"  {it['id']} {it['num']:>2} {it['program']}｜{it['kind']}｜{it['a_why'][:50]}｜{len(it['cells'])} マス")
 

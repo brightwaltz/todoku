@@ -104,15 +104,18 @@ def test_prepare_groups_disagreements_and_samples_audit(tmp_path, monkeypatch):
     nintei = next(p for p in rs.programs.values() if p.number == 1)
     # A が × の事例を 2 件選び、B の片方だけ ○ にする → 同じ論点に 2 マス
     no_cases = [c["id"] for c in cases
-                if adjudicate.a_reading(evaluate(rs, dict(c["answers"]))[nintei.id])[0] == "×"][:2]
+                if c["answers"]["care_level"] not in ("applying", "jiritsu", "__dont_know__")
+                and adjudicate.a_reading(evaluate(rs, dict(c["answers"]))[nintei.id])[0] == "×"][:2]
     flip = {(1, cid): "当たりうる" for cid in no_cases}
     r1 = _fake_run(tmp_path, "m1", [1, 11], flip=flip)
     r2 = _fake_run(tmp_path, "m2", [1, 11], bad_quote={(11, cases[0]["id"])})
     data = adjudicate.prepare([r1, r2])
     kinds = {(it["num"], it["kind"]): len(it["cells"]) for it in data["issues"]}
-    # 申請中は 1 つの論点にまとまる
+    # 申請中は、制度をまたぐ型「p-pending」に 1 つにまとまり、制度ごとの論点には残らない
     applying = sum(1 for c in cases if c["answers"]["care_level"] == "applying")
-    assert kinds.get((1, "申請済み・結果待ち")) == applying
+    pending = next(po for po in data["policies"] if po["id"] == "p-pending")
+    assert sum(1 for c in pending["cells"] if c["num"] == 1) == applying
+    assert (1, "申請済み・結果待ち") not in kinds
     # B が割れた 2 マスは「1 番・A は ×・同じ決め手」の論点に入る
     flipped = [it for it in data["issues"] if it["num"] == 1 and it["kind"] == "×"]
     assert sum(len(it["cells"]) for it in flipped) == 2
@@ -123,7 +126,23 @@ def test_prepare_groups_disagreements_and_samples_audit(tmp_path, monkeypatch):
     assert s["agreed"] + s["issue_cells"] == s["cells"]
     # 抜き取りは一致したマスからだけ、同じ種なら同じ結果
     agreed_keys = {(c["case"], c["num"]) for c in data["audit"]}
-    issue_keys = {(c["case"], c["num"]) for it in data["issues"] for c in it["cells"]}
+    issue_keys = {(c["case"], c["num"]) for it in data["issues"] + data["policies"] for c in it["cells"]}
     assert not agreed_keys & issue_keys
     again = adjudicate.prepare([r1, r2])
     assert [(c["case"], c["num"]) for c in again["audit"]] == [(c["case"], c["num"]) for c in data["audit"]]
+
+
+def test_policy_of_order():
+    """制度をまたぐ型は、申請中 → 非該当 → 区分が分からない → 前の手続き待ち の順に当てはめる。"""
+    from types import SimpleNamespace as NS
+    from todoku.engine import P, U
+    b = [{"mark": "×"}, {"mark": "×"}]
+    leaf_p = NS(state=P, fact="care_level")
+    leaf_u = NS(state=U, fact="care_level")
+    case = lambda care: {"answers": {"care_level": care}}  # noqa: E731
+    assert adjudicate.policy_of(case("applying"), NS(leaves=[leaf_p]), "○", b) == "p-pending"
+    assert adjudicate.policy_of(case("care1"), NS(leaves=[]), "申", b) == "p-pending"
+    assert adjudicate.policy_of(case("jiritsu"), NS(leaves=[leaf_p]), "○", b) == "p-jiritsu"
+    assert adjudicate.policy_of(case("__dont_know__"), NS(leaves=[leaf_u]), "？", b) == "p-care-unknown"
+    assert adjudicate.policy_of(case("none"), NS(leaves=[leaf_p]), "？", b) == "p-prereq"
+    assert adjudicate.policy_of(case("care2"), NS(leaves=[]), "○", b) is None
