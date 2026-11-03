@@ -401,9 +401,11 @@ function fillAnswers(box, q, pick, pickPlace) {
     const pref = el("select", { "aria-label": "都道府県" }, el("option", { value: "" }, "都道府県"),
       ...prefs.map((p) => el("option", { value: p.code }, p.name)));
     const city = el("select", { "aria-label": "市区町村", disabled: "" }, el("option", { value: "" }, "市区町村"));
-    pref.addEventListener("change", () => { state.presses += 1; fillCities(pref.value, city); });
-    city.addEventListener("change", () => { if (city.value) pickPlace(city.value); });
-    box.append(el("div", { class: "places" }, pref, city),
+    // 選んだだけでは送らない（閉じた欄で ↓ を押しても change が起きるブラウザがあり、別の市区町村が送られうるため）
+    const go = el("button", { class: "option", disabled: "", onclick: () => pickPlace(city.value) }, "この市区町村で進める");
+    pref.addEventListener("change", () => { state.presses += 1; fillCities(pref.value, city); go.disabled = true; });
+    city.addEventListener("change", () => { state.presses += 1; go.disabled = !city.value; });
+    box.append(el("div", { class: "places" }, pref, city), go,
       el("button", { class: "option dk", onclick: () => pick(DONT_KNOW) }, "わからない"));
     return;
   }
