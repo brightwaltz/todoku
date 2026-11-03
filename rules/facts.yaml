@@ -88,7 +88,7 @@ household:
     - {value: elderly_only, label: 高齢者だけの世帯（夫婦など）}
     - {value: alone_daytime, label: 家族と同居だが、日中はひとり}
     - {value: with_family, label: 家族と同居で、日中も誰かいる}
-  check: 「日中はひとり」の目安は制度によって違います。町田市の救急通報システムでは、同居の家族が仕事などで、週に3日以上、1日に6時間以上、家をあける場合です。
+  check: 「日中はひとり」の目安は制度によって違います。申し込む窓口で確かめてください。
 
 tax_status:
   name: 住民税

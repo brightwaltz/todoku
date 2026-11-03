@@ -272,6 +272,23 @@ def test_other_cities_see_their_own_offices():
     assert "町田市" in machida["apply"]["where"]
 
 
+def test_household_check_shows_no_machida_rule_elsewhere():
+    # 「日中はひとり」の町田市の目安（週3日以上・1日6時間以上）は、町田市の救急通報システムの札にだけ書く。
+    # 事実の確かめ方に書くと、横浜市の見守り機器補助の札や、横浜市の人への問いにも出てしまったため（T-005）
+    facts = {"age_band": "age_75_plus", "residence": "home"}
+    def step(code, **extra):
+        return client.post("/api/step", json={"facts": facts, "municipality": code, "asked": 99, **extra}).json()
+    yokohama = step("141003")
+    mimamori = next(r for r in yokohama["results"] if r["id"] == "yokohama-mimamori")
+    checks = [m["check"] for m in mimamori["missing"] if m["fact"] == "household"]
+    assert checks and all("町田" not in c for c in checks)
+    unconfirmed = step("141003", suggestions={"household": "alone"})["unconfirmed"]
+    assert [u["fact"] for u in unconfirmed] == ["household"] and "町田" not in unconfirmed[0]["check"]
+    # 町田市では、救急通報システムの札に目安が残る
+    tsuho = next(r for r in step("132098")["results"] if r["id"] == "machida-kyukyu-tsuho")
+    assert any("週に3日以上" in t and "6時間以上" in t for t in tsuho["at_application"])
+
+
 def test_yes_no_reasons_carry_no_value():
     # 横浜市では型を出さない（市の制度を一つずつ判定している）ので、型の札を見るのは大阪市で
     data = client.post("/api/step", json={"facts": {"age_band": "age_75_plus", "residence": "home", "wandering_risk": True},
