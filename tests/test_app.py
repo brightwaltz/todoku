@@ -914,3 +914,30 @@ def test_screen_reader_status_and_focus_after_buttons_vanish():
     assert "state.laterAt = laterSpots().indexOf(" in js
     assert 'focusOn(rest.querySelector("h3"))' in js and 'focusOn(rest.querySelector("summary"))' in js
     assert "more.remove(); }" not in js  # 消すだけで、フォーカスを移さないボタンを残さない
+
+
+def test_one_phone_number_per_paragraph():
+    # 電話番号の押せる範囲は ::after で上下 14px 広げている（T-029）。1 つの段落で続く行に番号が並ぶと、行の間隔（約 30px）
+    # より範囲が広く、上の番号の少し下を押すと下の番号に電話がかかった（390px の高額療養費・高額介護合算療養費。T-032）。
+    # 画面は「／」で区切って 1 件ずつ段落に分けるので、規則の phone は「／」で区切った 1 件に番号が 1 つまでにする。
+    import re
+    from pathlib import Path
+
+    import yaml
+
+    root = Path(__file__).resolve().parents[1]
+    js = (root / "web" / "app.js").read_text(encoding="utf-8")
+    pattern = re.search(r"text\.matchAll\(/(.+?)/g\)", js).group(1)  # telLinks が番号と見なす形
+    phones = {}
+    for f in sorted((root / "rules" / "programs").glob("*.yaml")):
+        phone = (yaml.safe_load(f.read_text(encoding="utf-8")).get("apply") or {}).get("phone")
+        if phone:
+            phones[f.stem] = phone
+    split = {k: v.split("／") for k, v in phones.items()}
+    assert all(len(re.findall(pattern, part)) <= 1 for parts in split.values() for part in parts), split
+    assert len(split["kogaku-gassan"]) == 3 and len(split["kogaku-ryoyohi"]) == 2  # 分けた後も 1 件ずつに番号が残る
+    assert all(re.search(pattern, part) for k in ("kogaku-gassan", "kogaku-ryoyohi") for part in split[k])
+    # カードは phoneViews で「／」ごとに段落を作り、番号の並ぶ文字列をそのまま 1 つの段落に入れない
+    assert re.search(r'^function phoneViews\(phone\) \{\n\s+return phone\.split\("／"\)\.map\(\(part\) => el\("p", \{\}, "電話：", telLinks\(part\)\)\);', js, re.M)
+    assert "...phoneViews(r.apply.phone)" in js
+    assert "telLinks(r.apply.phone)" not in js

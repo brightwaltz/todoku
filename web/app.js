@@ -647,7 +647,7 @@ function programCard(r) {
   if (r.at_application.length) body.append(el("h3", {}, "申請のときに確かめられること"), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
   body.append(el("h3", {}, "申請先"), el("p", {}, r.apply.where));
   if (r.apply.how) body.append(el("p", {}, r.apply.how));
-  if (r.apply.phone) body.append(el("p", {}, "電話：", telLinks(r.apply.phone)));
+  if (r.apply.phone) body.append(...phoneViews(r.apply.phone));
   if (r.apply.center_search) body.append(el("p", {}, centerLink(r.apply.center_search)));
   if (r.procedures.length) body.append(el("h3", {}, "根拠の法令"), procedureView(r));
   if (r.bring.length) body.append(el("h3", {}, "持ち物・書類"), el("ul", { class: "plain" }, r.bring.map((t) => el("li", {}, t))));
@@ -668,6 +668,12 @@ function procedureView(r) {
 // 申請先に挙げた地域包括支援センターを探すページ（厚生労働省。お住まいの都道府県が分かれば、その県の検索）
 function centerLink(url) {
   return el("a", { href: url, target: "_blank", rel: "noopener" }, "地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）");
+}
+
+// 電話番号が「／」で並ぶときは 1 件ずつ段落に分ける。1 つの段落で続く行に番号が並ぶと、行の間隔（約 30px）が
+// 押せる範囲（.tel::after の上下 14px）より狭く、上の番号の少し下を押すと下の番号にかかるため（T-032）
+function phoneViews(phone) {
+  return phone.split("／").map((part) => el("p", {}, "電話：", telLinks(part)));
 }
 
 function telLinks(text) {

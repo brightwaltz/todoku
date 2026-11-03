@@ -169,7 +169,8 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; paddin
 .src { font-size: 14px; color: var(--muted); }
 .src a { color: var(--accent); word-break: break-all; }
 blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line); background: var(--soft); font-size: 15px; }
-/* 文の中の電話番号は行の高さを変えず、押せる範囲だけを上下に広げる（1 行に収まるので効く） */
+/* 文の中の電話番号は行の高さを変えず、押せる範囲だけを上下に広げる（1 行に収まるので効く）。
+   となりの行の番号と範囲が重ならないよう、番号は 1 つの段落に 1 つだけにする（app.js の phoneViews） */
 .tel { color: var(--accent); font-weight: 700; white-space: nowrap; position: relative; }
 .tel::after { content: ""; position: absolute; inset: -14px 0; }
 .foot { color: var(--muted); font-size: 14px; padding-bottom: 40px; }
