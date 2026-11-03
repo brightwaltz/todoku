@@ -96,10 +96,24 @@ def answer_of(case: dict, fid: str) -> Any:
     return case["answers"].get(fid, DONT_KNOW)
 
 
+def place_answers(rs, case: dict) -> dict[str, bool]:
+    """事例の市区町村コード（cases.yaml の municipality）から、住所の事実をすべて決める（画面で市区町村を選んだときと同じ place_values）。"""
+    code = case.get("municipality")
+    return rs.place_values(code) if code else {}
+
+
+def apply_place(rs, case: dict, facts: dict, suggestions: dict, fid: str) -> None:
+    """住所の問い（市区町村を選ぶ欄）に事例の答えで答える。コードがあれば住所の事実を全部埋め、なければその事実だけ。"""
+    pa = place_answers(rs, case)
+    facts.update(pa or {fid: answer_of(case, fid)})
+    for f in (pa or {fid: None}):
+        suggestions.pop(f, None)
+
+
 # ---- 3 つの比べ方 -------------------------------------------------------------
 
 def run_rules(rs, case: dict) -> dict:
-    return {"statuses": statuses(rs, dict(case["answers"])), "asked": []}
+    return {"statuses": statuses(rs, {**case["answers"], **place_answers(rs, case)}), "asked": []}
 
 
 def fixed_order_question(rs, facts: dict, suggestions: dict, asked: int, max_questions: int):
@@ -124,6 +138,9 @@ def simulate(rs, case: dict, facts: dict, suggestions: dict, max_questions: int,
             break
         truth = answer_of(case, q.fact)
         asked.append(q.fact)
+        if q.fact in rs.places:
+            apply_place(rs, case, facts, suggestions, q.fact)
+            continue
         if q.suggested in ALWAYS_CONFIRM.get(q.fact, ()):
             # 画面と同じく、書類を見て全部の選択肢から選ぶ問い（app.question_view）。確かめられなければ読んだ値で進める
             facts[q.fact] = q.suggested if truth == DONT_KNOW else truth
@@ -154,10 +171,8 @@ def run_pipeline(rs, case: dict, claude) -> dict:
     }
     # 入口でお住まいの市区町村を選んだ場合（画面の apply_place と同じく、読み取りより優先する）。選ぶかは利用者しだいなので、両方を出す
     place_facts, place_suggestions = dict(facts), dict(suggestions)
-    lives = answer_of(case, "lives_in_machida")
-    if lives != DONT_KNOW:
-        place_facts["lives_in_machida"] = lives
-        place_suggestions.pop("lives_in_machida", None)
+    if place_answers(rs, case) or answer_of(case, "lives_in_machida") != DONT_KNOW:
+        apply_place(rs, case, place_facts, place_suggestions, rs.place_question or "lives_in_machida")
     place_run = simulate(rs, case, place_facts, place_suggestions, MAX_QUESTIONS, "value")
     return {**main_run, "wrong_reads": wrong_reads, "variants": variants, "place": place_run,
             "read": {e.fact: [e.value, e.confidence] for e in extraction.facts}}

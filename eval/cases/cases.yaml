@@ -4,8 +4,11 @@
 # - answers: 窓口に聞かれたら相談した人が答える内容（rules/facts.yaml の 25 の事実）。
 #   severe_constant_care・money_management_difficulty・hearing_certifiable の 3 つは 2026-11-03 に書き足した
 #   （道具なしの claude-opus-5-5 に相談文と人物の説明だけを渡した答えを、手を加えずに入れた。eval/PROTOCOL.md）
+# - municipality: 本人が住む市区町村の団体コード（人物の説明の市名から。町田市 132098・相模原市 141500・八王子市 132012）。
+#   住所の問いに答えるとき、画面で市区町村を選んだのと同じく place_values で住所の事実を全部決める（2026-11-03 夜）
 
 - id: c01
+  municipality: "132098"
   text: |
     町田市に住んでいる母のことで相談します。母は78歳でひとり暮らしをしていて、去年アルツハイマー型の認知症と診断されました。先月は鍋を火にかけたまま出かけてしまい、スーパーからの帰り道が分からなくなったこともあります。私は会社勤めで平日は様子を見に行けず、時短勤務にするか辞めるか悩んでいます。
   profile: |
@@ -38,6 +41,7 @@
     hearing_certifiable: false
 
 - id: c02
+  municipality: "132098"
   text: |
     補聴器って高いですか？
   profile: |
@@ -70,6 +74,7 @@
     hearing_certifiable: "__dont_know__"
 
 - id: c03
+  municipality: "132098"
   text: |
     寝たきりの義母を家でみています。おむつ代が毎月かなりかかるのですが、何か助けてもらえるものはあるのでしょうか。
   profile: |
@@ -102,6 +107,7 @@
     hearing_certifiable: false
 
 - id: c04
+  municipality: "132098"
   text: |
     夫が脳梗塞で倒れて入院しています。来月には退院と言われましたが、玄関に段差があって、お風呂も一人で入れるか心配です。病院の人に言われて介護の申請は出しました。私もパートに出ているので、この先どうしたらいいのか分かりません。
   profile: |
@@ -134,6 +140,7 @@
     hearing_certifiable: false
 
 - id: c05
+  municipality: "132098"
   text: |
     夫が若年性認知症と診断されました。まだ58歳です。私は仕事を辞めて家にいるべきなのか、毎日そればかり考えて眠れません。
   profile: |
@@ -166,6 +173,7 @@
     hearing_certifiable: false
 
 - id: c06
+  municipality: "132098"
   text: |
     去年の冬に家の中で転んでから、ひとりで歩くのが怖くなりました。廊下とトイレに手すりを付けたいのですが、いくらくらいかかるものでしょうか。お風呂で使ういすも欲しいです。
   profile: |
@@ -198,6 +206,7 @@
     hearing_certifiable: false
 
 - id: c07
+  municipality: "132098"
   text: |
     夫が施設に入って1年になります。毎月の支払いが年金だけでは足りなくて、私の貯金を取り崩しています。このままだと私の生活がもちません。
   profile: |
@@ -230,6 +239,7 @@
     hearing_certifiable: false
 
 - id: c08
+  municipality: "132098"
   text: |
     去年、介護の申請をしたら自立と言われました。でも最近は膝が痛くて、二階に上がるのもひと苦労です。階段に手すりを付けたいと思っています。
   profile: |
@@ -262,6 +272,7 @@
     hearing_certifiable: false
 
 - id: c09
+  municipality: "132098"
   text: |
     町田市に住んでいる父のことです。肺炎で入院して3か月になり、病院からそろそろ退院後の行き先を考えてほしいと言われました。うちは夫婦共働きで、家で父をみるのは難しいです。入院費も毎月かさんでいます。
   profile: |
@@ -294,6 +305,7 @@
     hearing_certifiable: false
 
 - id: c10
+  municipality: "132098"
   text: |
     母が夜のうちに漏らしてしまって、布団がどんどんだめになっていきます。私も腰を痛めていて、重い布団を干すことができません。毎朝それで気持ちが沈みます。
   profile: |
@@ -326,6 +338,7 @@
     hearing_certifiable: false
 
 - id: c11
+  municipality: "132098"
   text: |
     心臓が悪くて、夜中に胸が苦しくなることがあります。ひとり暮らしなので、倒れても誰にも気づいてもらえないのではと不安です。
   profile: |
@@ -358,6 +371,7 @@
     hearing_certifiable: false
 
 - id: c12
+  municipality: "132098"
   text: |
     町田市で母と二人暮らしをしています。母は71歳で、2か月前に家の中で転んで足の付け根を骨折し、手術をして先月退院しました。いまは要支援2で週1回リハビリの人が来てくれていますが、家の中は段差が多く、お風呂の浴槽も深くてまたげません。手すりを付けたり浴槽を替えたりしたいのですが、私は会社勤めで日中は母ひとりなので、何から手を付ければいいのか分かりません。
   profile: |
@@ -390,6 +404,7 @@
     hearing_certifiable: false
 
 - id: c13
+  municipality: "132098"
   text: |
     夫が夕方になると「家に帰る」と言って出て行こうとします。一度は駅の近くで見つけてもらいました。もう疲れてしまいました。
   profile: |
@@ -422,6 +437,7 @@
     hearing_certifiable: false
 
 - id: c14
+  municipality: "132098"
   text: |
     ひとり暮らしの父が、やかんを空焚きして焦がしました。去年、介護の申請をしたら自立と言われたのですが、このままで大丈夫なのか心配です。
   profile: |
@@ -454,6 +470,7 @@
     hearing_certifiable: false
 
 - id: c15
+  municipality: "132098"
   text: |
     母は要介護2と言われています。リウマチの注射の薬がとても高くて、毎月の支払いが大変です。お風呂も手すりがないと入れなくなってきました。
   profile: |
@@ -486,6 +503,7 @@
     hearing_certifiable: false
 
 - id: c16
+  municipality: "141500"
   text: |
     相模原市に住む母のことで相談です。母は71歳で父と二人暮らしなんですが、脳梗塞の後で右手が不自由になり、要介護2になりました。父も74歳で、母の世話がだんだん大変そうです。
   profile: |
@@ -518,6 +536,7 @@
     hearing_certifiable: false
 
 - id: c17
+  municipality: "132012"
   text: |
     一人暮らしの父が心配です。
   profile: |
@@ -550,6 +569,7 @@
     hearing_certifiable: false
 
 - id: c18
+  municipality: "132098"
   text: |
     妻が脳出血で倒れて、半年のリハビリ入院を終えて先月家に戻りました。車いすなので和式のトイレが使えず、玄関の段差もあって困っています。うちは店をやっていて、私が店と介護の両方を見ています。
   profile: |
@@ -582,6 +602,7 @@
     hearing_certifiable: false
 
 - id: c19
+  municipality: "132098"
   text: |
     父は特養に入っていて、もう2年近く寝たきりです。施設でもおむつ代は別にかかると聞きましたが、家族の負担を軽くしてもらえる方法はありますか。
   profile: |
@@ -614,6 +635,7 @@
     hearing_certifiable: false
 
 - id: c20
+  municipality: "132098"
   text: |
     母の発作が心配です。
   profile: |
@@ -646,6 +668,7 @@
     hearing_certifiable: false
 
 - id: c21
+  municipality: "132098"
   text: |
     町田市に住んでいます。妻がこのところ鍋を焦がすことが続いていて、仕事中も気が気ではありません。会社を辞めて家にいたほうがいいのか、迷っています。
   profile: |
@@ -678,6 +701,7 @@
     hearing_certifiable: false
 
 - id: c22
+  municipality: "132098"
   text: |
     夫の耳がずいぶん遠くなって、補聴器を買おうか迷っています。それと、うちのお風呂は浴槽が深くて夫がまたぐのが危なっかしいので、浅いものに取り替えたいと思っています。どちらも費用が気になります。
   profile: |
@@ -710,6 +734,7 @@
     hearing_certifiable: "__dont_know__"
 
 - id: c23
+  municipality: "132098"
   text: |
     母の抗がん剤の治療で、毎月の病院代が思っていたよりずっと高くて驚いています。これはずっと続くのでしょうか。
   profile: |
@@ -742,6 +767,7 @@
     hearing_certifiable: false
 
 - id: c24
+  municipality: "132098"
   text: |
     夫が寝たきりになって8か月になります。ほとんど私ひとりでみていて、少しでいいから休みたいです。
   profile: |
@@ -774,6 +800,7 @@
     hearing_certifiable: false
 
 - id: c25
+  municipality: "132098"
   text: |
     離れて暮らす母のことで相談です。町田の実家でひとり暮らしをしていて、ヘルパーさんが週2回来てくれています。心臓の持病もあるので、家で倒れていても誰も気づかないのではと思うと落ち着きません。
   profile: |
@@ -806,6 +833,7 @@
     hearing_certifiable: false
 
 - id: c26
+  municipality: "132098"
   text: |
     夫がパーキンソン病で、家の中でよくつまずきます。トイレが和式なので、しゃがむのが大変そうです。私は仕事があるので、昼間は夫ひとりになってしまいます。
   profile: |
@@ -838,6 +866,7 @@
     hearing_certifiable: false
 
 - id: c27
+  municipality: "132098"
   text: |
     お風呂で使ういすって、どこで買えばいいんでしょうか。
   profile: |
@@ -870,6 +899,7 @@
     hearing_certifiable: false
 
 - id: c28
+  municipality: "132098"
   text: |
     父が先週の夜中にひとりで家を出てしまい、隣の市で警察に保護されました。父は3年前から認知症で、私が会社に行っている昼間は父ひとりです。デイサービスには週3回通っていますが、それ以外の日が心配で、仕事を休むか、いっそ辞めるか考えていますし、来月の出張のときに泊まりで預けられる所があるのかも知りたいです。夫も単身赴任中で、正直なところ私ひとりではもう限界です。
   profile: |
@@ -902,6 +932,7 @@
     hearing_certifiable: false
 
 - id: c29
+  municipality: "132098"
   text: |
     姉が骨折で入院していて、病院からもう一人暮らしは無理だと言われました。生活保護を受けているのですが、そういう人でも入れる施設はあるのでしょうか。
   profile: |
@@ -934,6 +965,7 @@
     hearing_certifiable: false
 
 - id: c30
+  municipality: "132098"
   text: |
     母は年金だけなので、住民税はかかっていないはずです。最近足が弱って、家の中の段差でつまずくようになりました。何か使える助けはありますか。
   profile: |

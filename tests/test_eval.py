@@ -124,3 +124,23 @@ def test_failed_cases_are_reported_not_fatal(tmp_path, monkeypatch, capsys):
 
 def test_pct_handles_none():
     assert run_eval.pct(None) == "—" and run_eval.pct(0.5) == "50.0%"
+
+
+def test_place_question_fills_all_place_facts_like_the_screen():
+    """住所の問いには、事例の市区町村コードから、画面と同じ place_values で住所の事実を全部入れる（3rd の点検、11/3 夜）。"""
+    hachioji = {**CASE, "municipality": "132012", "answers": {**CASE["answers"], "lives_in_machida": False}}
+    facts, sugg = {}, {"lives_in_machida": True}
+    run_eval.apply_place(RS, hachioji, facts, sugg, RS.place_question)
+    assert facts == RS.place_values("132012")
+    assert facts["lives_in_machida"] is False and facts.get("lives_in_tokyo") is True
+    assert sugg == {}
+    # コードのない事例は、前と同じく lives_in_machida の答えだけを入れる
+    facts2 = {}
+    run_eval.apply_place(RS, CASE, facts2, {}, "lives_in_machida")
+    assert facts2 == {"lives_in_machida": True}
+
+
+def test_cases_have_municipality_matching_lives_in_machida():
+    for c in run_eval.load_cases():
+        assert (c["municipality"] == "132098") == (c["answers"]["lives_in_machida"] is True), c["id"]
+        assert RS.place_values(c["municipality"])["lives_in_machida"] is c["answers"]["lives_in_machida"]
