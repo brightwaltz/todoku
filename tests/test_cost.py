@@ -184,6 +184,19 @@ def test_silver_pass_bring_names_the_tax_certificate_for_the_135_man_yen_case():
     assert "通知書" in bring and "生活保護の受給証明書" in bring
 
 
+def test_silver_pass_bring_warns_about_the_provisional_notice_and_livelihood_aid():
+    """持ち物の書類の注（T-097、2026-11-05 に東京都福祉局の「シルバーパスについて」の頁の注2・注4で照らした）。
+
+    介護保険料の通知書は 4月ごろに届く仮決定の通知書は使えず、出し直しもできないので、無ければ
+    住民税の課税（非課税）証明書を取る。生活保護の受給証明書は「生活扶助」の記載があるものだけ。
+    """
+    bring = RULES.programs["tokyo-silver-pass"].bring
+    notice = next(b for b in bring if "仮決定" in b)
+    assert "使えない" in notice and "出し直" in notice and "課税（非課税）証明書" in notice
+    welfare = next(b for b in bring if "生活保護の受給証明書" in b)
+    assert "生活扶助" in welfare
+
+
 def test_silver_pass_notes_the_145_man_yen_case_for_salary_income():
     """申請のときの注（T-094、2026-11-05 に東京都福祉局の「シルバーパスについて」の頁で照らした）。
 
