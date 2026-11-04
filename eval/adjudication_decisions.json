@@ -1,0 +1,646 @@
+{
+ "a-c16-1": {
+  "case": "c16",
+  "mark": null,
+  "num": 1,
+  "updated": "2026-11-03T12:06:59.072Z"
+ },
+ "i01": {
+  "choice": "rec",
+  "mark": null,
+  "rec": {
+   "c02-1": "×",
+   "c11-1": "×",
+   "c23-1": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "updated": "2026-11-04T00:13:43.207Z"
+ },
+ "i02": {
+  "choice": "rec",
+  "mark": null,
+  "rec": {
+   "c16-3": "○"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "updated": "2026-11-04T00:13:37.871Z"
+ },
+ "i03": {
+  "chat_cells": [
+   "c07-4",
+   "c19-4"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c07-4": "○",
+   "c19-4": "○"
+  },
+  "rec": {
+   "c01-4": "×",
+   "c03-4": "×",
+   "c05-4": "×",
+   "c06-4": "×",
+   "c10-4": "×",
+   "c13-4": "×",
+   "c16-4": "×",
+   "c20-4": "×",
+   "c22-4": "×",
+   "c24-4": "×",
+   "c26-4": "×",
+   "c28-4": "×",
+   "c30-4": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "updated": "2026-11-04T00:13:48.000Z",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i04": {
+  "choice": "rec",
+  "mark": null,
+  "rec": {
+   "c27-4": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "updated": "2026-11-04T00:13:51.490Z"
+ },
+ "i05": {
+  "choice": "rec",
+  "mark": null,
+  "rec": {
+   "c04-5": "○"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "updated": "2026-11-04T00:13:54.063Z"
+ },
+ "i06": {
+  "chat_cells": [
+   "c09-5"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c09-5": "○"
+  },
+  "rec": {},
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i07": {
+  "choice": "rec",
+  "mark": null,
+  "rec": {
+   "c17-5": "○"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "updated": "2026-11-04T00:13:59.776Z"
+ },
+ "i08": {
+  "chat_cells": [
+   "c09-6"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c09-6": "○"
+  },
+  "rec": {},
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i09": {
+  "chat_cells": [
+   "c05-7",
+   "c13-7",
+   "c15-7",
+   "c20-7"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c15-7": "×",
+   "c20-7": "×"
+  },
+  "rec": {
+   "c05-7": "×",
+   "c13-7": "？"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i10": {
+  "chat_cells": [
+   "c09-7"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c09-7": "×"
+  },
+  "rec": {},
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i11": {
+  "chat_cells": [
+   "c19-7"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c19-7": "○"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i12": {
+  "chat_cells": [
+   "c04-8",
+   "c12-8",
+   "c17-8",
+   "c21-8",
+   "c25-8",
+   "c26-8",
+   "c27-8"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c12-8": "？",
+   "c17-8": "×",
+   "c21-8": "○",
+   "c26-8": "？"
+  },
+  "rec": {
+   "c04-8": "×",
+   "c25-8": "？",
+   "c27-8": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i13": {
+  "chat_cells": [
+   "c16-8",
+   "c30-8"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c30-8": "？"
+  },
+  "rec": {
+   "c16-8": "？"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i14": {
+  "chat_cells": [
+   "c07-12",
+   "c19-12",
+   "c29-12"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c07-12": "×",
+   "c19-12": "×",
+   "c29-12": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i15": {
+  "chat_cells": [
+   "c09-18",
+   "c29-18"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c09-18": "○",
+   "c29-18": "×"
+  },
+  "rec": {},
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i16": {
+  "chat_cells": [
+   "c12-21",
+   "c17-21",
+   "c25-21",
+   "c26-21",
+   "c27-21"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c12-21": "？",
+   "c17-21": "×",
+   "c26-21": "？"
+  },
+  "rec": {
+   "c25-21": "？",
+   "c27-21": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i17": {
+  "chat_cells": [
+   "c16-21",
+   "c30-21"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c16-21": "○",
+   "c30-21": "？"
+  },
+  "rec": {},
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i18": {
+  "chat_cells": [
+   "c09-22",
+   "c29-22"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c29-22": "？"
+  },
+  "rec": {
+   "c09-22": "？"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i19": {
+  "chat_cells": [
+   "c04-22"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c04-22": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i20": {
+  "chat_cells": [
+   "c28-22"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c28-22": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i21": {
+  "chat_cells": [
+   "c04-23",
+   "c09-23",
+   "c18-23",
+   "c20-23",
+   "c24-23",
+   "c29-23"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c04-23": "×",
+   "c09-23": "×",
+   "c18-23": "×",
+   "c20-23": "×",
+   "c24-23": "×",
+   "c29-23": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i22": {
+  "chat_cells": [
+   "c03-23",
+   "c19-23"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c03-23": "○",
+   "c19-23": "○"
+  },
+  "rec": {},
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i23": {
+  "chat_cells": [
+   "c20-24"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c20-24": "○"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i24": {
+  "chat_cells": [
+   "c18-27",
+   "c26-27"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c18-27": "○"
+  },
+  "rec": {
+   "c26-27": "？"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i25": {
+  "chat_cells": [
+   "c29-27"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {
+   "c29-27": "？"
+  },
+  "rec": {},
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i26": {
+  "chat_cells": [
+   "c16-28",
+   "c17-28"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c16-28": "×",
+   "c17-28": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i27": {
+  "chat_cells": [
+   "c16-31",
+   "c17-31"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c16-31": "×",
+   "c17-31": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "i28": {
+  "chat_cells": [
+   "c17-32"
+  ],
+  "choice": "rec",
+  "mark": null,
+  "overrides": {},
+  "rec": {
+   "c17-32": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "p-care-unknown": {
+  "choice": "rec",
+  "rec": {
+   "c25-1": "×",
+   "c25-18": "○",
+   "c25-3": "○",
+   "c25-4": "×",
+   "c25-5": "○",
+   "c25-6": "○",
+   "c25-7": "？"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "resolved": null,
+  "updated": "2026-11-04T00:12:47.583Z"
+ },
+ "p-jiritsu": {
+  "chat_cells": [
+   "c08-27",
+   "c14-21",
+   "c14-8"
+  ],
+  "choice": "rec",
+  "overrides": {
+   "c08-27": "？",
+   "c14-21": "○",
+   "c14-8": "○"
+  },
+  "rec": {
+   "c08-1": "○",
+   "c14-1": "○",
+   "c14-23": "？",
+   "c14-24": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "resolved": null,
+  "updated": "2026-11-04T00:12:42.577Z",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "p-pending": {
+  "chat_cells": [
+   "c17-9",
+   "c21-19"
+  ],
+  "choice": "rec",
+  "overrides": {
+   "c17-9": "○",
+   "c21-19": "○"
+  },
+  "rec": {
+   "c04-1": "？",
+   "c04-18": "○",
+   "c04-19": "○",
+   "c04-6": "○",
+   "c04-9": "○",
+   "c17-1": "？",
+   "c17-3": "○",
+   "c17-4": "×",
+   "c17-7": "○",
+   "c21-1": "？",
+   "c21-18": "○",
+   "c21-6": "○",
+   "c21-9": "○"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "resolved": null,
+  "updated": "2026-11-04T00:12:16.630Z",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "p-plan": {
+  "chat_cells": [
+   "c11-27"
+  ],
+  "choice": "rec",
+  "overrides": {
+   "c11-27": "？"
+  },
+  "rec": {
+   "c01-18": "○",
+   "c01-5": "○",
+   "c01-6": "○",
+   "c01-7": "○",
+   "c02-18": "×",
+   "c02-27": "？",
+   "c02-5": "×",
+   "c03-18": "○",
+   "c03-5": "○",
+   "c03-6": "○",
+   "c05-5": "○",
+   "c05-6": "○",
+   "c06-18": "○",
+   "c06-7": "○",
+   "c10-18": "○",
+   "c10-5": "○",
+   "c11-18": "×",
+   "c11-5": "×",
+   "c13-18": "○",
+   "c13-5": "○",
+   "c13-6": "○",
+   "c15-18": "○",
+   "c16-5": "○",
+   "c20-18": "○",
+   "c20-5": "○",
+   "c20-6": "○",
+   "c21-27": "○",
+   "c21-5": "○",
+   "c22-5": "○",
+   "c22-6": "○",
+   "c22-7": "○",
+   "c23-18": "×",
+   "c23-27": "○",
+   "c23-5": "×",
+   "c24-18": "○",
+   "c24-5": "○",
+   "c24-6": "○",
+   "c26-6": "○",
+   "c27-18": "○",
+   "c27-5": "○",
+   "c28-18": "○",
+   "c28-5": "○",
+   "c28-6": "○",
+   "c30-18": "○",
+   "c30-6": "○"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "resolved": null,
+  "updated": "2026-11-04T00:12:55.704Z",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "p-prereq": {
+  "chat_cells": [
+   "c16-9"
+  ],
+  "choice": "rec",
+  "overrides": {
+   "c16-9": "○"
+  },
+  "rec": {
+   "c02-11": "×",
+   "c02-12": "×",
+   "c02-19": "×",
+   "c02-3": "×",
+   "c02-7": "×",
+   "c02-9": "×",
+   "c11-12": "×",
+   "c11-19": "×",
+   "c11-3": "×",
+   "c11-7": "×",
+   "c11-9": "×",
+   "c23-11": "×",
+   "c23-19": "×",
+   "c23-3": "×",
+   "c23-4": "×",
+   "c23-7": "×",
+   "c23-9": "×"
+  },
+  "rec_seen": "db89e461ea2a",
+  "rec_ver": "db89e461ea2a",
+  "resolved": null,
+  "updated": "2026-11-04T00:13:10.695Z",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "x-c16-6": {
+  "case": "c16",
+  "chat_cells": [
+   "c16-6"
+  ],
+  "mark": "○",
+  "num": 6,
+  "rec_seen": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ },
+ "x-c17-6": {
+  "case": "c17",
+  "chat_cells": [
+   "c17-6"
+  ],
+  "mark": "○",
+  "num": 6,
+  "rec_seen": "db89e461ea2a",
+  "via": "2026-11-04 チャット：「裁定のartifactsを確認した。途中まで入れたが、全て推奨どおり」（Claude が db に書き込み）"
+ }
+}

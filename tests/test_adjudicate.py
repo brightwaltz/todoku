@@ -307,3 +307,15 @@ def test_stale_policy_choice_stops_gold_when_version_given():
     gold, rep = adjudicate.build_gold(adj, d, recs, "v1")
     assert rep["undecided"] == [] and rep["rec_changed"] == []
     assert adjudicate.rec_version() == __import__("hashlib").sha256((ROOT / "eval" / "recommendations.json").read_bytes()).hexdigest()[:12]
+
+
+def test_chat_cells_are_reported_separately():
+    """先生がチャットで一括して答え、Claude が db に書いたマスは、出所を分けて数える。"""
+    adj, recs = _adj_rec(), _recs()
+    d = {"p-plan": {"choice": "rec", "rec": {"c01-5": "○"}, "overrides": {"c02-5": "×"}, "chat_cells": ["c02-5"]},
+         "i01": {"choice": "rec", "rec": {"c03-9": "○"}, "chat_cells": ["c03-9"]},
+         "x-c16-6": {"mark": "○", "case": "c16", "num": 6, "chat_cells": ["c16-6"]}}
+    gold, rep = adjudicate.build_gold(adj, d, recs)
+    assert rep["source"] == {"c16-6": "別に見た（チャットで推しどおり）", "c01-5": "推しどおり",
+                             "c02-5": "チャットで推しどおり", "c03-9": "チャットで推しどおり"}
+    assert set(rep["decided_cells"]) == {"c01-5", "c02-5", "c03-9", "c16-6"} and rep["rec_changed"] == []

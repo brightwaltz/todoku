@@ -3,7 +3,8 @@
 手順は eval/PROTOCOL.md。API は呼ばない。
   uv run python eval/adjudicate.py prepare eval/out/blind/read-A.json eval/out/blind/read-B.json
   uv run python eval/adjudicate.py gold eval/out/adjudication-….json eval/out/decisions-….json   （裁定ページの db を書き出したもの）
-gold は eval/gold.csv と、決まりの問いのマス（と同じ型で別に見たマス）を空欄にした eval/gold_no_policy.csv を書く。
+gold は eval/gold.csv と、決まりの問いのマス（と同じ型で別に見たマス）を空欄にした eval/gold_no_policy.csv、
+一致したマスだけの eval/gold_agreed_only.csv を書く。
 裁くときに見せた Claude の推しは eval/recommendations.json（裁定の前にコミット）。db の「推しどおり」は、このファイルと照合する。
 結果は eval/out/adjudication-<日時>.json（町田市の引用を含むので eval/out/ に置く。リポジトリに入れない）。
 
@@ -305,7 +306,10 @@ def check_recs(adj: dict, decisions: dict, recs: dict, ver: str | None = None) -
 def source_of(it: dict, cell: dict, kind: str, decisions: dict) -> str:
     """マスの正解がどこから来たか（報告用）。"""
     d = decisions.get(it["id"], {})
-    if (d.get("overrides") or {}).get(f"{cell['case']}-{cell['num']}"):
+    key = f"{cell['case']}-{cell['num']}"
+    if key in (d.get("chat_cells") or []):
+        return "チャットで推しどおり"   # 先生がチャットで一括して答え、Claude が db に書いたマス（via に先生の文）
+    if (d.get("overrides") or {}).get(key):
         return "先生が 1 マスずつ"
     return "推しどおり" if d.get("choice") == "rec" else f"先生が{'型' if kind == 'policy' else '論点'}ごとに"
 
@@ -321,7 +325,7 @@ def build_gold(adj: dict, decisions: dict, recs: dict | None = None, ver: str | 
     gold: dict[str, dict[int, str]] = defaultdict(dict)
     report = {"agreed": defaultdict(int), "policy": defaultdict(int), "issue": defaultdict(int),
               "undecided": [], "audit_n": 0, "audit_wrong": [], "audit_unmarked": 0,
-              "source": {}, "policy_cells": [], "extra": {}, "rec_changed": []}
+              "source": {}, "policy_cells": [], "decided_cells": [], "extra": {}, "rec_changed": []}
     for c in adj["agreed"]:
         gold[c["case"]][c["num"]] = c["mark"]
         report["agreed"][c["mark"]] += 1
@@ -338,6 +342,7 @@ def build_gold(adj: dict, decisions: dict, recs: dict | None = None, ver: str | 
                     continue
                 gold[cell["case"]][cell["num"]] = m
                 report[kind][m] += 1
+                report["decided_cells"].append(key)
                 report["source"][key] = source_of(it, cell, kind, decisions)
                 if key in rec_mark and rec_mark[key] != m:
                     report["rec_changed"].append({"cell": key, "rec": rec_mark[key], "final": m})
@@ -347,8 +352,9 @@ def build_gold(adj: dict, decisions: dict, recs: dict | None = None, ver: str | 
             key = f"{d['case']}-{d['num']}"
             gold[d["case"]][int(d["num"])] = d["mark"]
             report["extra"][key] = d["mark"]
-            report["source"][key] = "別に見た"
+            report["source"][key] = "別に見た（チャットで推しどおり）" if key in (d.get("chat_cells") or []) else "別に見た"
             report["policy_cells"].append(key)
+            report["decided_cells"].append(key)
             if key in rec_mark and rec_mark[key] != d["mark"]:
                 report["rec_changed"].append({"cell": key, "rec": rec_mark[key], "final": d["mark"]})
     for a in adj["audit"]:
@@ -387,6 +393,11 @@ def main() -> None:
         gold, rep = build_gold(adj, decisions, recs, rec_version() if recs else None)
         write_gold(gold, ROOT / "eval" / "gold.csv")
         write_gold(gold, ROOT / "eval" / "gold_no_policy.csv", set(rep["policy_cells"]))
+        # いちばん控えめな版：2 つの読みが一致したマスだけ（裁いたマス・別に見たマスを空欄）。抜き取りで直したマスは残す
+        fixed = {f"{w['case']}-{w['num']}" for w in rep["audit_wrong"]}
+        write_gold(gold, ROOT / "eval" / "gold_agreed_only.csv", set(rep["decided_cells"]) - fixed)
+        from collections import Counter
+        print(f"正解の出所 {dict(Counter(rep['source'].values()))}")
         path = OUT / f"gold-report-{datetime.now():%Y%m%d-%H%M}.json"
         path.write_text(json.dumps(rep, ensure_ascii=False, indent=1), encoding="utf-8")
         print(f"一致 {dict(rep['agreed'])}、決まりの問い {dict(rep['policy'])}、論点 {dict(rep['issue'])}、未決 {len(rep['undecided'])} マス")
