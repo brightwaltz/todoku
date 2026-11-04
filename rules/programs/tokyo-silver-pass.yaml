@@ -28,7 +28,8 @@ timing:
   - 使い始める月の初日から1年間使える（東京都福祉局のページ）
 cost:
   self_pay: partial
-  share: "年12,000円。住民税が非課税なら1,000円"
+  # 2026-11-05 に照らし直し、合計所得 135 万円以下の人も 1,000 円なので足した
+  share: "年12,000円。非課税か所得135万円以下なら1,000円"
   who_can_apply: [本人, 代理人]
   source: https://www.silver-pass.tokyo/
 sources:

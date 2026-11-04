@@ -108,3 +108,46 @@ console.log(JSON.stringify([
     card = re.search(r"^function programCard\(.*?^\}\n", JS, re.S | re.M).group(0)
     # 札を閉じたままでも見える所（summary の中）に出す
     assert card.index('class: "cost"') < card.index('const body = el("div"')
+
+
+# T-073b（2026-11-05）：埋めた cost を、source の頁を開いて照らし直した。照らした頁の URL を制度ごとに残す。
+# 30 件中 25 件はそのまま言え、3 件は出典を言える頁に替え（kaigo-nintei・jiritsu-shien-iryo・kogaku-ryoyohi）、
+# 2 件は share を頁に合わせた（yokohama-keiro-pass・tokyo-silver-pass）。ask にしたものはない。
+COST_RECHECKED_20261105 = {
+    "fukushi-yogu-konyu": "https://www.mhlw.go.jp/content/12300000/001668164.pdf",
+    "futan-gendogaku": "https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html",
+    "hosougu-hochoki": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/yogu/hosouguhisikyuuseido.html",
+    "iryohi-kojo-omutsu": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1122.htm",
+    "jiritsu-shien-iryo": "https://www.mhlw.go.jp/bunya/shougaihoken/jiritsu/dl/03.pdf",
+    "jutaku-kaishu": "https://www.mhlw.go.jp/content/12300000/001668164.pdf",
+    "kaigo-kyugyo-kyufu": "https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html",
+    "kaigo-kyuka": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/kaigo/shorttime-leave/",
+    "kaigo-nintei": "https://www.kaigokensaku.mhlw.go.jp/commentary/flow.html",
+    "kogaku-gassan": "https://www.kyoukaikenpo.or.jp/benefit/high_cost_medical_expenses/003/index.html",
+    "kogaku-kaigo-service": "https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html",
+    "kogaku-ryoyohi": "https://www.city.machida.tokyo.jp/iryo/old_iryo/koukikoureisyairyou/koukikoureikyuuhu.html",
+    "local-iro": "https://www.pref.saitama.lg.jp/documents/149759/739.pdf",
+    "machida-gps": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/gps.html",
+    "machida-haishoku": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/jiritsushienhaishoku.html",
+    "machida-hochoki": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/hocyouki.html",
+    "machida-jutaku-setsubi": "https://www.city.machida.tokyo.jp/iryo/kaigo/business/jutakukaisyu/jukai.html",
+    "machida-kasai-yobo": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kasaianzenshisutemu.html",
+    "machida-kyukyu-tsuho": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kinkyutuhoshisutemu.html",
+    "machida-shingu": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/shingushodoku.html",
+    "nichijo-jiritsu-shien": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/chiiki-fukusi-yougo",
+    "seikatsu-fukushi-shikin": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/index.html",
+    "shogaisha-kojo": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1160.htm",
+    "tokubetsu-shogaisha-teate": "https://www.mhlw.go.jp/bunya/shougaihoken/jidou/tokubetsu.html",
+    "tokyo-silver-pass": "https://www.silver-pass.tokyo/",
+    "yokohama-hochoki": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/kenko-iryo/iryo/seisaku/hochokijosei.html",
+    "yokohama-kami-omutsu": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/kourei-omutsu.html",
+    "yokohama-keiro-pass": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigoyobo-kenkoudukuri-ikigai/ikigai-shakaisanka/keirou.html",
+    "yokohama-mimamori": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/mimamori.html",
+    "yokohama-shika-kenshin": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/houmonsikakensin.html",
+}
+
+
+def test_filled_cost_was_rechecked_on_its_source_page():
+    """埋めた cost は、照らし直した頁を指したまま。source を替えたり新しく埋めたりしたら、頁を開いて照らしてからここに足す。"""
+    filled = {p.id: p.cost.source for p in RULES.programs.values() if p.cost.self_pay != "ask"}
+    assert filled == COST_RECHECKED_20261105

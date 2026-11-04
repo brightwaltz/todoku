@@ -27,7 +27,8 @@ timing:
   - 使えるのは10月1日から翌年の9月30日まで（申し込んだ日からの1年ではない）
 cost:
   self_pay: partial
-  share: "年3,200円〜20,500円（所得による）"
+  # 2026-11-05 に照らし直し、負担金が無料の段階があるので足した
+  share: "無料か年3,200円〜20,500円（所得による）"
   source: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigoyobo-kenkoudukuri-ikigai/ikigai-shakaisanka/keirou.html
 sources:
   - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigoyobo-kenkoudukuri-ikigai/ikigai-shakaisanka/keirou.html

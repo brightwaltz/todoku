@@ -27,7 +27,8 @@ timing:
 cost:
   self_pay: receive
   share: "月の上限を超えた分が戻る"
-  source: https://www.mhlw.go.jp/content/001725284.pdf
+  # 2026-11-05 に照らし直し、限度額を超えた分が払い戻されると書いている町田市の後期高齢者医療の頁に替えた（厚生労働省の PDF は文字を取り出せない）
+  source: https://www.city.machida.tokyo.jp/iryo/old_iryo/koukikoureisyairyou/koukikoureikyuuhu.html
 sources:
   - url: https://www.mhlw.go.jp/content/001725284.pdf
     publisher: 厚生労働省
