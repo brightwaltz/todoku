@@ -41,7 +41,21 @@ def test_same_seed_same_residents_and_false_when_holds():
 
 
 def test_every_source_is_labelled():
-    assert {kind for kind, _ in population.SOURCES.values()} <= {"memory", "assumed"}
+    assert {kind for kind, _ in population.SOURCES.values()} <= {"stat", "assumed"}
+
+
+def test_population_matches_the_checked_statistics():
+    # T-077b で照らした数（population.py の SOURCES の stat と、認知症の全体の 12.3%）から大きく外れない
+    people = population.generate(20000, seed=5)
+    share = lambda pred: sum(1 for f in people if pred(f)) / len(people)  # noqa: E731
+    assert abs(share(lambda f: f["age_band"] == "age_75_plus") - 0.573) < 0.015  # 人口推計 2024 年 10 月
+    assert abs(share(lambda f: f["care_level"] in population.CERTIFIED) - 0.19) < 0.015  # 白書 第 1 号被保険者の 19.0%
+    assert abs(share(lambda f: f["on_welfare"]) - 0.029) < 0.006
+    assert abs(share(lambda f: f["household"] == "alone") - 0.236) < 0.015
+    assert abs(share(lambda f: f["dementia_diagnosis"]) - 0.123) < 0.015
+    certified = [f for f in people if f["care_level"] in population.CERTIFIED]
+    heavy = sum(1 for f in certified if f["care_level"] in population.HEAVY) / len(certified)
+    assert abs(heavy - (902 + 870 + 571) / 6814) < 0.03  # 白書 図 1-2-2-6（2022 年度）の要介護 3〜5
 
 
 def test_theme_tables_cover_the_entry_events():

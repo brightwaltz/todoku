@@ -10,7 +10,7 @@
      そのうち相談の主題に直接つながる制度（--rule）を除いた数を「主題の外」とする
 主題の決め方（--rule）は判断待ち（integration-1105.md の下書き）。既定の facts は、出来事ごとの事実（THEME_FACTS）を
 判定の条件に使う制度を「直接つながる」とみなす。none は除かない。
-割合の出どころは population.py の SOURCES と README.md。memory・assumed の割合で出した数なので、外に言う前に照らす。
+割合の出どころは population.py の SOURCES と README.md。stat（統計の頁で照らした）と assumed（仮定）が混ざるので、外に言うときは assumed の仮定に左右されると書く。
 """
 
 from __future__ import annotations
@@ -175,7 +175,7 @@ def main(argv: list[str] | None = None) -> dict:
                                           for k, v in s["outside_histogram"].items()))
         names = "、".join(f"{rs.programs[p].name} {c}" for p, c in s["top_outside_programs"][:5])
         print(f"  主題の外で多い制度: {names}")
-    print("割合は memory・assumed（population.py の SOURCES）。統計の頁で照らす前の数なので、外には出さない")
+    print("割合は stat と assumed（population.py の SOURCES）。住民税・世帯の一部・認知症・暮らしている所などは仮定なので、外に言うときはそう書く")
     if args.json:
         args.json.write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     return report
