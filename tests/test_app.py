@@ -75,7 +75,9 @@ def test_fake_reads_the_draft_made_by_taps():
 
 
 def test_step_until_done_and_no_text_needed():
-    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none"}
+    # 介助の要る場面がある人（認定の申請が当てはまる。裁定 p-prereq、11/4）
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none",
+             "needs_daily_help": True}
     asked = 0
     while True:
         data = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": asked}).json()
@@ -101,7 +103,7 @@ def test_step_drops_unknown_facts_and_values():
 
 def test_summary_only_points_at_shown_programs():
     facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none",
-             "plans_home_modification": True}
+             "needs_daily_help": True}
     data = client.post("/api/summary", json={"facts": facts, "subject": "お母さま"}).json()
     assert data["lines"]
     assert all("kaigo-nintei" in line["program_ids"] for line in data["lines"])
@@ -123,7 +125,8 @@ def test_check_extraction_downgrades_missing_evidence():
 
 def test_check_summary_rejects_numbers_and_foreign_ids():
     rs = rules_mod.load()
-    shown = [r for r in evaluate(rs, {"caregiver_employee": True}).values() if r.status == "eligible"]
+    shown = [r for r in evaluate(rs, {"caregiver_employee": True, "caregiver_insured": True, "care_level": "care2"}).values()
+             if r.status == "eligible"]
     raw = {"lines": [
         {"program_ids": ["kaigo-kyugyo-kyufu"], "text": "仕事を休むときは介護休業給付金があります。"},
         {"program_ids": ["kaigo-kyugyo-kyufu"], "text": "賃金の67%が出ます。"},
@@ -300,8 +303,7 @@ def test_unconfirmed_reads_are_offered_on_the_result():
 
 
 def test_pending_certification_is_marked_on_dependents():
-    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "applying",
-             "plans_home_modification": True}
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "applying"}
     data = client.post("/api/step", json={"facts": facts, "asked": 99}).json()
     nintei = next(r for r in data["results"] if r["id"] == "kaigo-nintei")
     assert nintei["status"] == "pending" and nintei["status_label"] == "申請済み・結果待ち"

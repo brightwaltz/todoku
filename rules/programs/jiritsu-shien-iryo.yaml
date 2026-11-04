@@ -7,7 +7,10 @@ summary: 認知症などの精神疾患で通院による治療を続ける人�
 weight: 2
 eligibility:
   all:
-    - {fact: dementia_diagnosis, is: true, label: 認知症と診断されている（認知症は対象の病気に含まれる）}
+    - any:
+        - {fact: dementia_diagnosis, is: true, label: 認知症と診断されている（認知症は対象の病気に含まれる）}
+        # 精神疾患（てんかんを含む）で通院による治療を続ける人が対象（厚生労働省の PDF）
+        - {fact: mental_outpatient, is: true, label: てんかんや精神の病気で、通院して治療を続けている}
     - {fact: residence, in: [home, facility], label: 入院していない（入院の医療は対象外）}
 at_application:
   - 通院による治療を続ける必要があること（指定自立支援医療機関の医師の診断書で判断される）

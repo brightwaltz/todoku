@@ -326,7 +326,6 @@ FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"退院(して|した|しま)|自宅で|家で", "residence", "home", "high"),
     (r"入院中", "residence", "hospital", "high"),
     (r"(施設|特養|老健)に入所", "residence", "facility", "high"),
-    (r"手すり|段差", "plans_home_modification", True, "low"),
     (r"認知症", "dementia_diagnosis", True, "low"),
     (r"道に迷|徘徊|帰れなく", "wandering_risk", True, "high"),
     (r"火の(消し忘れ|始末)", "fire_risk", True, "high"),

@@ -42,6 +42,8 @@ class Fact:
     place: dict | None = None
     # False なら Claude に相談文から読ませない
     read: bool = True
+    # 選択肢の means：「このどれか（どれかは分からない）」を表す値と、その中身（例：認定は受けているが区分は分からない）
+    means: tuple[tuple[Any, tuple[Any, ...]], ...] = ()
 
     def values(self) -> list[Any]:
         return [v for v, _ in self.options]
@@ -175,6 +177,10 @@ def _load_facts(path: Path) -> dict[str, Fact]:
             options = tuple((o["value"], o["label"]) for o in spec["options"])
             if len({v for v, _ in options}) != len(options):
                 raise RuleError(f"facts.yaml: {fid} の選択肢が重複している")
+            means = tuple((o["value"], tuple(o["means"])) for o in spec["options"] if "means" in o)
+            for value, inner in means:
+                if not inner or any(v not in {x for x, _ in options} or v == value for v in inner):
+                    raise RuleError(f"facts.yaml: {fid} の {value} の means は、ほかの選択肢を並べて書く")
         else:
             raise RuleError(f"facts.yaml: {fid} の type が bool でも enum でもない")
         for key in ("name", "question", "check"):
@@ -192,7 +198,7 @@ def _load_facts(path: Path) -> dict[str, Fact]:
                 raise RuleError(f"facts.yaml: {fid} の place は bool の事実に {{city: 6 桁}} か {{pref: 2 桁}} で書く")
             place = {k: str(v) for k, v in place.items()}
         facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order, spec["name"], false_when,
-                          place, bool(spec.get("read", True)))
+                          place, bool(spec.get("read", True)), means if ftype == "enum" else ())
     for fact in facts.values():
         if fact.false_when is not None:
             ref = facts.get(fact.false_when.get("fact"))
@@ -387,6 +393,16 @@ def _check_node(node: Any, facts: dict[str, Fact], depends_on: set[str], where: 
     for v in values:
         if v not in fact.values():
             raise RuleError(f"{where}: {fid} に値 {v!r} はない")
+    if op == "in":
+        # means の値（例：区分の分からない認定）は、中身が全部 in にあれば満たし、一部だけなら「わからない」（unsure）にする
+        for value, inner in fact.means:
+            if value in node["in"]:
+                continue
+            hits = [v for v in inner if v in node["in"]]
+            if len(hits) == len(inner):
+                node["in"] = [*node["in"], value]
+            elif hits and value not in node.get("unsure", []):
+                node["unsure"] = [*node.get("unsure", []), value]
     if "via" in node:
         if inside_not:
             raise RuleError(f"{where}: not の中で via は使えない")

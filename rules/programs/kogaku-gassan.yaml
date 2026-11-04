@@ -9,7 +9,12 @@ eligibility:
   all:
     - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
     - {fact: uses_care_services, is: true, label: 介護保険のサービスを使っている（使う予定）, via: kaigo-nintei}
-    - {fact: high_medical_costs, is: true, label: 医療費の自己負担も多くかかっている}
+    - any:
+        - {fact: high_medical_costs, is: true, label: 医療費の自己負担も多くかかっている}
+        # 医療費が小さくても、施設の介護の自己負担が毎月あり、世帯が非課税なら、合計が限度額を超えうる（裁定 i03、11/4）
+        - all:
+            - {fact: residence, in: [facility], label: 施設に入所している}
+            - {fact: tax_status, in: [household_exempt], label: 世帯の全員が住民税非課税（限度額が低い）}
 at_application:
   - 8月1日〜翌年7月31日の1年で、同じ医療保険に入っている世帯の医療と介護の自己負担の合計が、所得の区分で決まる限度額を超えたか（超えた額が500円以下なら支給されない）
   - 高額療養費・高額介護サービス費で戻った分は差し引いて計算する

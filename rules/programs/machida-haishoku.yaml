@@ -10,6 +10,13 @@ eligibility:
     - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
     - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
     - {fact: household, in: [alone, elderly_only], label: ひとり暮らしか、高齢者だけの世帯}
+    # 食事を自宅に届ける事業なので、施設に入所している人は当たらない（裁定、11/4）
+    - any:
+        - {fact: residence, in: [home], label: 自宅で暮らしている}
+        # 入院中でも、戻る家があれば当たりうる（裁定、11/4）
+        - all:
+            - {fact: residence, in: [hospital], label: 入院中}
+            - {ask_at: 申請のとき（高齢者支援センター）, label: 退院したら自宅に戻る（窓口で確かめる）}
     - {fact: care_level, in: [care1, care2, care3, care4, care5], label: 要介護1〜5, via: kaigo-nintei}
 at_application:
   - ケアマネジャー（いなければ高齢者支援センター）が、配食の事業所と内容を調整してから申請する

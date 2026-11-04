@@ -8,7 +8,12 @@ weight: 2
 eligibility:
   all:
     - {fact: severe_constant_care, is: true, label: 日常生活のほとんどに常に介護が要る（重さは医師の認定診断書で判断される）}
-    - {fact: residence, in: [home, hospital], label: 施設に入所していない（入院が3か月を超えて続くと対象外）}
+    - any:
+        - {fact: residence, in: [home], label: 自宅で暮らしている}
+        # 入院が 3 か月を超えて続くと対象外。入院中の人は、入院の長さを確かめる（裁定、11/4）
+        - all:
+            - {fact: residence, in: [hospital], label: 入院中}
+            - {ask_at: 申請のとき（市区町村の障害福祉の窓口）, label: 入院が3か月を超えて続いていない（窓口で確かめる）}
 at_application:
   - 20歳以上であること
   - 医師の認定診断書（障害の種類ごとの様式）で、著しく重度の障害と認められること

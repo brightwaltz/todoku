@@ -9,9 +9,14 @@ eligibility:
   all:
     - {fact: lives_in_machida, is: true, label: 町田市に住んでいる}
     - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
-    - {fact: residence, in: [home], label: 自宅で暮らしている}
+    - any:
+        - {fact: residence, in: [home], label: 自宅で暮らしている}
+        # 入院中でも、戻る家があれば当たりうる（裁定、11/4）
+        - all:
+            - {fact: residence, in: [hospital], label: 入院中}
+            - {ask_at: 申請のとき（高齢者支援課）, label: 退院したら自宅に戻る（窓口で確かめる）}
     - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
-    - {fact: plans_fixture_replacement, is: true, label: 浴槽・流し・洗面台・便器の取り替えを考えている}
+    # 使う予定は条件にしない。○ は「公式の条件に当たりうる（本人が望むかは問わない）」（裁定 p-plan、11/4）
 at_application:
   - 同じ項目を、その世帯ですでに使っていないこと
   - 工事を始める前に申請すること

@@ -18,7 +18,10 @@ eligibility:
     - any:
         - {fact: age_band, in: [age_65_69, age_70_74, age_75_plus], label: 65歳以上}
         - {fact: age_band, in: [age_40_64], label: 40〜64歳（介護が要る原因が特定疾病のとき）}
-    - {fact: care_level, in: [none], label: まだ認定を受けていない}
+    # 前に「非該当（自立）」だった人も、様子が変われば申請し直せる（非該当の人は申請できない、という定めはない。裁定 p-jiritsu）
+    - {fact: care_level, in: [none, jiritsu], label: まだ認定を受けていない（前に「非該当」だった場合を含む）}
+    # 当たりうるかは、いまの様子で決める（裁定 p-prereq）。介助や手助けの要る場面がなければ、申請しても非該当の見込み
+    - {fact: needs_daily_help, is: true, label: 日々の暮らしで介助や手助けが要る場面がある}
 at_application:
   - 介護が必要な状態か、どの区分（要支援1・2、要介護1〜5、非該当）になるかは、市の認定調査と主治医意見書をもとに介護認定審査会が決める
   - 40〜64歳の人は、介護が要る原因が16種類の特定疾病のどれかであること

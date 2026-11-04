@@ -173,7 +173,8 @@ def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], lea
     if not known(value):
         s = U
     elif "in" in node:
-        s = T if value in node["in"] else F
+        # unsure は、区分の分からない認定のように「どれかは分からない」値（rules.py が means から書く）
+        s = T if value in node["in"] else U if value in node.get("unsure", ()) else F
     elif "eq" in node:
         s = T if value == node["eq"] else F
     else:

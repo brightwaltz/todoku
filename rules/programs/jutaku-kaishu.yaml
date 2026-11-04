@@ -8,8 +8,13 @@ weight: 3
 eligibility:
   all:
     - {fact: care_level, in: [applying, support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている（申請中を含む）, via: kaigo-nintei}
-    - {fact: residence, in: [home], label: 自宅で暮らしている}
-    - {fact: plans_home_modification, is: true, label: 手すり・段差などの工事を考えている}
+    - any:
+        - {fact: residence, in: [home], label: 自宅で暮らしている}
+        # 入院中でも、戻る家があれば当たりうる（裁定、11/4）
+        - all:
+            - {fact: residence, in: [hospital], label: 入院中}
+            - {ask_at: 申請のとき（市区町村の介護保険の窓口）, label: 退院したら自宅に戻る（窓口で確かめる）}
+    # 使う予定は条件にしない。○ は「公式の条件に当たりうる（本人が望むかは問わない）」（裁定 p-plan、11/4）
 at_application:
   - 工事が対象の種類（手すり、段差の解消、床や通路の材料の変更、引き戸などへの扉の取り替え、洋式便器などへの取り替えと、それに付く工事）に当たるか
   - 工事をする家が住民票の住所であること。借家なら持ち主の承諾が要る
