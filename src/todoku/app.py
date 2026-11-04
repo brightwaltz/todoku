@@ -25,6 +25,7 @@ from pydantic import BaseModel, Field, model_validator
 
 from . import events as events_mod
 from .city import city_page
+from .japan_map import japan_map
 from . import rules as rules_mod
 import anthropic
 
@@ -97,6 +98,8 @@ def load_places() -> dict[str, tuple[str, str]]:
 
 
 PLACES = load_places()
+# 都道府県コード → 名前（全国の見取り図のタイルに使う。T-080c）
+PREFS = {code[:2]: pref for code, (pref, _) in PLACES.items()}
 # 市の制度を一つずつ判定している市（段 → 住所の事実）。そこに住んでいる人には、市区町村の型を出さない
 RULES_CITY = {level: fid for level, fid in rules_mod.LEVEL_PLACE.items() if "city" in (RULES.places.get(fid) or {})}
 # 合言葉なしで見られる見本。reading は前もって本物の Claude が読み取った結果（scripts/make_samples.py で書く）
@@ -717,7 +720,7 @@ async def revalidate_pages(request: Request, call_next):
     response = await call_next(request)
     for k, v in SECURITY_HEADERS.items():
         response.headers[k] = v
-    if request.url.path == "/" or request.url.path.startswith(("/static/", "/city/")):
+    if request.url.path == "/" or request.url.path.startswith(("/static/", "/city/", "/japan-map")):
         response.headers["Cache-Control"] = "no-cache"  # 直した後に古い画面が残らないよう、毎回 ETag で確かめ直させる
     return response
 
@@ -740,7 +743,13 @@ def city(code: str) -> HTMLResponse:
     if code not in PLACES:
         raise HTTPException(404, "その団体コードの市区町村は一覧にありません")
     pref, name = PLACES[code]
-    return HTMLResponse(city_page(RULES, code, pref, name, center_search(code)))
+    return HTMLResponse(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2])))
+
+
+@app.get("/japan-map", response_class=HTMLResponse)
+def japan_map_part() -> HTMLResponse:
+    """全国の見取り図の HTML の断片（T-080c）。入口の app.js が読み込んで差し込む。規則だけから作り、Claude は呼ばない。"""
+    return HTMLResponse(japan_map(RULES, PREFS))
 
 
 app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")

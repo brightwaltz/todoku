@@ -181,6 +181,7 @@ function resetPick() {
   fillCities();
   show("redraft", false);
   show("city-link-box", false);
+  markPref();
 }
 
 // ---- 相談を送る ----
@@ -902,7 +903,25 @@ function showCityLink() {
   }
   show("city-link-box", Boolean(city));
 }
-$("pref").addEventListener("change", () => { pick.pref = $("pref").value; pick.city = ""; fillCities(); redraft(); showCityLink(); });
+function choosePref(code) {
+  pick.pref = code; pick.city = ""; fillCities(); redraft(); showCityLink(); markPref();
+}
+$("pref").addEventListener("change", () => choosePref($("pref").value));
+// 全国の見取り図で、選んでいる都道府県のタイルに印を付ける（T-080c）
+function markPref() {
+  for (const a of document.querySelectorAll("#japan-box a[data-pref]")) {
+    if (a.dataset.pref === pick.pref) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+  }
+}
+// タイルを押すと、その都道府県を選んで市区町村の欄へ移る（/city/ の頁からは /?pref=NN で来る）
+function pickFromMap(code, smooth) {
+  if (!prefs.some((p) => p.code === code)) return false;
+  $("pref").value = code;
+  choosePref(code);
+  $("city").scrollIntoView({ behavior: smooth && !calm() ? "smooth" : "auto", block: "center" });
+  $("city").focus({ preventScroll: true });
+  return true;
+}
 $("city").addEventListener("change", () => { pick.city = $("city").value; redraft(); showCityLink(); });
 $("redraft").addEventListener("click", () => redraft(true));
 $("text").addEventListener("input", () => {
@@ -913,7 +932,24 @@ $("text").addEventListener("input", () => {
 fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
   prefs = data.prefectures;
   $("pref").append(...prefs.map((p) => el("option", { value: p.code }, p.name)));
+  const asked = new URLSearchParams(location.search).get("pref");
+  if (asked) {
+    pickFromMap(asked, false);
+    history.replaceState(null, "", location.pathname + location.hash);  // 結果を残すリンクに ?pref= を混ぜない
+  }
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
+// 全国の見取り図（T-080c）。サーバが規則から作った SVG の断片を差し込む（よそのデータは入らない）。取れなければ出さない
+fetch("/japan-map").then((r) => (r.ok ? r.text() : "")).then((html) => {
+  const fig = new DOMParser().parseFromString(html, "text/html").querySelector("figure.japan-map");
+  if (!fig) return;
+  $("japan-box").replaceChildren(document.importNode(fig, true));
+  $("japan-box").addEventListener("click", (ev) => {
+    const a = ev.target.closest("a[data-pref]");
+    if (a && pickFromMap(a.dataset.pref, true)) ev.preventDefault();
+  });
+  markPref();
+  show("japan");
+}).catch(() => { /* 見取り図は出さない */ });
 // 出来事のボタンも、取れたときだけ出す（T-071）
 fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;

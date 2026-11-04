@@ -252,3 +252,20 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .city-group .note, .wrap > .note { overflow-wrap: anywhere; }
 .city-link { margin: 8px 0 0; font-size: 16px; }
 .city-link a { display: inline-flex; align-items: center; min-height: 44px; }
+/* 全国の見取り図（T-080c）。3 段の色は明るさで分け、白黒でも区別できる（文字との比：濃 6.4・中 7.6・淡 14） */
+.japan-map { margin: 0; }
+.japan-map svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
+.japan-map rect { stroke: transparent; stroke-width: 3; }
+.japan-map text { font-size: 16px; fill: var(--ink); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.japan-map .tier-0 rect, .map-swatch.tier-0 { fill: #d5eae3; background: #d5eae3; }
+.japan-map .tier-1 rect, .map-swatch.tier-1 { fill: #7cbcad; background: #7cbcad; }
+.japan-map .tier-2 rect, .map-swatch.tier-2 { fill: #0d6b5b; background: #0d6b5b; }
+.japan-map .tier-2 text { fill: #ffffff; }
+.japan-map a:hover rect { stroke: var(--muted); }
+.japan-map a:focus { outline: none; }
+.japan-map a:focus-visible rect, .japan-map a[aria-current] rect { stroke: var(--ink); }
+.map-legend { list-style: none; padding: 0; margin: 12px 0 4px; font-size: 16px; }
+.map-legend li { display: flex; gap: 8px; align-items: baseline; margin: 4px 0; }
+.map-swatch { flex: none; display: inline-block; width: 16px; height: 16px; border-radius: 4px; border: 1px solid var(--line); transform: translateY(2px); }
+/* 390px でタイルの一辺を 24px 以上にする（WCAG 2.2 の 2.5.8 の下限。44px には届かない。お住まいの select が本筋の道） */
+@media (max-width: 420px) { .map-card { padding: 14px 8px; } .map-card h2, .map-card figcaption { padding: 0 8px; } }

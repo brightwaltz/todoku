@@ -74,6 +74,12 @@
     <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
   </section>
 
+  <!-- 全国の見取り図（T-080c）。中身は /japan-map（規則から作る SVG）を app.js が差し込む。取れなければ出さない -->
+  <section id="japan" class="card soft map-card" hidden aria-labelledby="japan-title">
+    <h2 id="japan-title">全国どこでも使えます</h2>
+    <div id="japan-box"></div>
+  </section>
+
   <section id="reading" class="card" hidden>
     <p>読み取っています…</p>
   </section>

@@ -59,7 +59,7 @@ def _sources(p: Program, values: dict[str, bool]) -> list:
     return [s for s in p.sources if not any(site in s.url for site in away)] or p.sources
 
 
-def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str) -> str:
+def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, map_html: str = "") -> str:
     groups = city_groups(rules, code, pref, name)
     values = rules.place_values(code)
     here_machida = values.get(rules.place_question) is True
@@ -105,6 +105,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str) 
 <p class="note">住所で決まる段（国・都道府県・市区町村）ごとに、規則にした制度を並べています。当てはまるかどうかは、ご本人の状況で変わります。
 <a href="/">とどくで相談する</a>と、状況に合わせて判定します。</p>
 {"".join(body)}
+{f'<section class="card soft city-group map-card" data-level="map"><h2>ほかの都道府県</h2>{map_html}</section>' if map_html else ""}
 <section class="card soft city-group" data-level="center">
 <h2>相談先</h2>
 <p>介護や福祉のことは、お住まいの地域の地域包括支援センターでまとめて相談できます。</p>
