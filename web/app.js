@@ -47,7 +47,8 @@ class GateError extends Error {}
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
     municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
-    oneOnly: false, held: null };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
+    oneOnly: false, held: null, trail: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
+    // trail：押した数ごとの見立ての数（T-082。手間と分かることの図）
 }
 
 function freshPick() {
@@ -430,6 +431,7 @@ function changeText(moved, now, removed = 0) {
 
 // ---- 聞き返し ----
 function render(data, first = false) {
+  state.trail = tally(state.trail, state.presses, data.results);
   renderBoard(data);
   $("center-link").href = data.center_search;  // ページ下の相談先も、お住まいの都道府県の検索にする
   show("pause", false);
@@ -648,6 +650,7 @@ function renderResult(data) {
   state.resultShown = true;
   renderLater(data.unconfirmed, data.unread);
   renderMap(data, again);
+  renderEffort();
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
   $("stats").textContent = state.restored ? "残したリンクから開いた結果です"
@@ -704,6 +707,53 @@ function renderResult(data) {
   } else if (key !== state.summaryKey) summarize();
   state.summaryKey = key;
   showKeep(data);
+}
+
+// ---- 手間と分かること（T-082）----
+// 押した数ごとに、その人の道で返った results（/api/step と、最初の読み取り）を見立ての帯と同じ 4 つの列で数えてためる。
+// 済んでいる・結果待ちは帯と同じく数えない。同じ押した数の応答（聞き返しをやめた・ここでやめる）は置き換える。
+// 層：型（app.py の LEVELS["local"]）はプラスアルファの層、ほかは公式ページの条件を書き写した規則で判定した確かな層。
+// 層の数は、当てはまらないを除いた 3 つの列で数える（当てはまらない型を「候補」と数えないため）
+const TYPE_LEVEL = "市区町村（型）";
+const LIVE_COLS = ["eligible", "after_prereq", "unknown"];
+function tally(trail, presses, results) {
+  const n = Object.fromEntries(BOARD.map(([key]) => [key, 0]));
+  let sure = 0, extra = 0;
+  for (const r of results || []) {
+    const col = colOf(r.status);
+    if (!(col in n)) continue;
+    n[col] += 1;
+    if (LIVE_COLS.includes(col)) { if (r.level === TYPE_LEVEL) extra += 1; else sure += 1; }
+  }
+  const entry = { presses, n, sure, extra };
+  const last = trail[trail.length - 1];
+  return last && last.presses === presses ? [...trail.slice(0, -1), entry] : [...trail, entry];
+}
+
+// 棒 1 本が押した数 1 つ。棒の長さは制度の数、区切りは列。数が細くて入らない区切りは字を出さない（読み上げの文には全部入れる）
+function renderEffort() {
+  const trail = state.trail;
+  show("effort", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
+  if (trail.length < 2) return;
+  const total = (t) => BOARD.reduce((sum, [key]) => sum + t.n[key], 0);
+  const most = Math.max(...trail.map(total), 1);
+  $("effort-bars").replaceChildren(...trail.map((t) => {
+    const label = `${t.presses} 回`;
+    const bar = el("span", { class: "effort-bar", "aria-hidden": "true" }, ...BOARD.filter(([key]) => t.n[key]).map(([key]) => {
+      const seg = el("span", { class: `seg ${key}` }, t.n[key] / most >= 0.07 ? String(t.n[key]) : "");
+      seg.style.flexGrow = String(t.n[key]);
+      return seg;
+    }));
+    bar.style.width = `${(total(t) / most) * 100}%`;
+    return el("li", { "aria-label": `押した数 ${label}：` + BOARD.map(([key, short]) => `${short} ${t.n[key]} 件`).join("・") },
+      el("span", { class: "effort-label", "aria-hidden": "true" }, label), el("span", { class: "effort-track" }, bar));
+  }));
+  $("effort-legend").replaceChildren(...BOARD.map(([key, short]) =>
+    el("li", {}, el("span", { class: `effort-swatch ${key}`, "aria-hidden": "true" }), short)));
+  const last = trail[trail.length - 1];
+  $("effort-layers").textContent = `${last.presses} 回押した後の、当てはまらないを除く ${last.sure + last.extra} 件のうち、`
+    + `確かな層（公式ページの条件を書き写した規則で判定した国・都・市の制度）が ${last.sure} 件`
+    + (last.extra ? `、プラスアルファの層（どこの市区町村にもある事業の型。お住まいの市の条件では判定していない候補）が ${last.extra} 件です。` : "です。");
 }
 
 // ---- 制度の地図（T-081）----

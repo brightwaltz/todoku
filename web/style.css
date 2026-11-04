@@ -317,3 +317,20 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .pmap .edges.late { animation: none; }
 }
 @media print { .pmap .pt { transition: none; } }
+/* 手間と分かること（T-082）。色は見立ての帯の札と同じ */
+.effort { margin: 0 0 16px; }
+.effort-bars { list-style: none; padding: 0; margin: 10px 0 0; }
+.effort-bars li { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+.effort-label { flex: 0 0 3.2em; text-align: right; font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.effort-track { flex: 1 1 auto; min-width: 0; }
+.effort-bar { display: flex; height: 28px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.effort-bar .seg { display: flex; align-items: center; justify-content: center; min-width: 0; font-size: 13px; font-weight: 700;
+  font-variant-numeric: tabular-nums; overflow: hidden; white-space: nowrap; }
+.effort-bar .seg + .seg { border-left: 1px solid var(--card); }
+.seg.eligible, .effort-swatch.eligible { background: var(--ok); color: #fff; }
+.seg.after_prereq, .effort-swatch.after_prereq { background: var(--pre); color: #fff; }
+.seg.unknown, .effort-swatch.unknown { background: var(--unk-bg); color: var(--ink); }
+.seg.no, .effort-swatch.no { background: var(--card); color: var(--ink); }
+.effort-swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line); }
+.effort-swatch.unknown { border-color: var(--unk); }
+@media print { .effort-bar .seg { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
