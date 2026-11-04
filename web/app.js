@@ -775,7 +775,10 @@ $("gate-ok").addEventListener("click", () => {
   aikotoba = word;
   try { sessionStorage.setItem("aikotoba", aikotoba); } catch (e) { /* 保存できなくても続ける */ }
   show("gate", false);
-  if (resendAfterGate) { resendAfterGate = false; send(); }
+  // 欄ごと隠すので、押したボタン・合言葉の欄からフォーカスが body に落ちる。送り直すなら送るボタンへ
+  // （consultWith がそれを押したボタンとして覚え、失敗したらそこへ戻す）、書く前なら相談の欄へ移す（T-063）
+  if (resendAfterGate) { resendAfterGate = false; $("send").focus(); send(); }
+  else $("text").focus();
 });
 $("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") $("gate-ok").click(); });
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）

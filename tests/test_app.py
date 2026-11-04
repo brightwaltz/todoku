@@ -1217,6 +1217,20 @@ def test_focus_returns_to_pressed_button_after_failed_send():
     assert err.index('$("send").disabled = false') < err.index("backTo(pressed)") < err.index("return;")
 
 
+def test_focus_moves_on_after_aikotoba_is_used():
+    # 「合言葉を使う」（Enter も同じ）は合言葉の欄ごと隠すので、押したボタン・欄からフォーカスが body に落ちていた（T-063。動きはブラウザで確かめた）。
+    # 送り直すなら送るボタンへ移してから送る（consultWith がそれを押したボタンとして覚え、失敗したらそこへ戻す）。書く前なら相談の欄へ。
+    import re
+    from pathlib import Path
+
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    handler = re.search(r'^\$\("gate-ok"\)\.addEventListener\("click", \(\) => \{\n.*?^\}\);', js, re.M | re.S).group(0)
+    after = handler[handler.index('show("gate", false);'):]
+    resend = after.index("if (resendAfterGate)")
+    assert resend < after.index('$("send").focus();') < after.index("send();")
+    assert after.index("send();") < after.index('else $("text").focus();')
+
+
 def test_one_phone_number_per_paragraph():
     # 電話番号の押せる範囲は ::after で上下 14px 広げている（T-029）。1 つの段落で続く行に番号が並ぶと、行の間隔（約 30px）
     # より範囲が広く、上の番号の少し下を押すと下の番号に電話がかかった（390px の高額療養費・高額介護合算療養費。T-032）。
