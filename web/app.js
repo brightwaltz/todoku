@@ -780,7 +780,8 @@ $("gate-ok").addEventListener("click", () => {
   if (resendAfterGate) { resendAfterGate = false; $("send").focus(); send(); }
   else $("text").focus();
 });
-$("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") $("gate-ok").click(); });
+// Enter の既定の動きを止める。止めないと、keydown の中で相談の欄へ移したフォーカスの先に改行が入る（T-063）
+$("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") { ev.preventDefault(); $("gate-ok").click(); } });
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 fetch("/api/health").then((r) => r.json()).then((h) => {
   if (h.passphrase && !aikotoba) show("gate");

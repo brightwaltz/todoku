@@ -1229,6 +1229,9 @@ def test_focus_moves_on_after_aikotoba_is_used():
     resend = after.index("if (resendAfterGate)")
     assert resend < after.index('$("send").focus();') < after.index("send();")
     assert after.index("send();") < after.index('else $("text").focus();')
+    # 合言葉の欄の Enter は既定の動きを止めてから押す。止めないと、keydown の中で移した相談の欄に改行が 1 つ入っていた
+    enter = re.search(r'^\$\("aikotoba"\)\.addEventListener\("keydown", .*$', js, re.M).group(0)
+    assert enter.index("ev.preventDefault();") < enter.index('$("gate-ok").click();')
 
 
 def test_one_phone_number_per_paragraph():
