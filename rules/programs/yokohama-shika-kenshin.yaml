@@ -24,6 +24,10 @@ amount:
   - 健診は無料（治療が要るときの治療費は別）
 timing:
   - 受付は2026年9月1日〜2027年1月31日。市内で先着480人で、達すると締め切る
+cost:
+  self_pay: none
+  share: "健診は無料。治療が要るときの費用は別"
+  source: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/houmonsikakensin.html
 sources:
   - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/houmonsikakensin.html
     publisher: 横浜市 健康福祉局

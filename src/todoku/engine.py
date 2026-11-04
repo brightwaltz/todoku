@@ -106,25 +106,88 @@ def evaluate(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, Result]:
     """事実（分からないものは入れないか DONT_KNOW）から、全制度の判定を返す。"""
     facts = with_implied(rules, facts)
     results: dict[str, Result] = {}
+    so_far: dict[str, str] = {}  # ここまでに判定した制度の状態（前提の手続きの葉が引く。rules.order は前提が先）
     for pid in rules.order:
         program = rules.programs[pid]
-        statuses = {k: r.status for k, r in results.items()}
-        if program.done_when is not None and _eval(program.done_when, facts, statuses, []) == T:
-            results[pid] = Result(program, "done", [])
-            continue
-        if program.pending_when is not None:
-            leaves = []
-            if _eval(program.pending_when, facts, statuses, leaves) == T:
-                results[pid] = Result(program, "pending", leaves)
-                continue
-        leaves: list[Leaf] = []
-        state = _eval(program.eligibility, facts, statuses, leaves)
-        results[pid] = Result(program, STATUS_OF_STATE[state], leaves)
+        results[pid] = _result(program, facts, so_far)
+        so_far[pid] = results[pid].status
     return results
 
 
+def _result(program: Program, facts: Mapping[str, Any], so_far: Mapping[str, str]) -> Result:
+    if program.done_when is not None and _state(program.done_when, facts, so_far) == T:
+        return Result(program, "done", [])
+    if program.pending_when is not None:
+        leaves: list[Leaf] = []
+        if _eval(program.pending_when, facts, so_far, leaves) == T:
+            return Result(program, "pending", leaves)
+    leaves = []
+    state = _eval(program.eligibility, facts, so_far, leaves)
+    return Result(program, STATUS_OF_STATE[state], leaves)
+
+
 def statuses(rules: RuleSet, facts: Mapping[str, Any]) -> dict[str, str]:
-    return {pid: r.status for pid, r in evaluate(rules, facts).items()}
+    """evaluate と同じ状態を、理由（葉）を作らずに返す。
+
+    次に聞く事実を選ぶときは、事実ごと・答えごとに全制度を判定し直す（/api/step 1 回で 40 回ほど）。
+    状態だけでよいので、葉を作らず、all・any は決まったところで残りを見ない（T-047）。
+    evaluate と同じになることは tests/test_engine.py で確かめる。
+    """
+    facts = with_implied(rules, facts)
+    out: dict[str, str] = {}
+    for pid in rules.order:
+        program = rules.programs[pid]
+        if program.done_when is not None and _state(program.done_when, facts, out) == T:
+            out[pid] = "done"
+        elif program.pending_when is not None and _state(program.pending_when, facts, out) == T:
+            out[pid] = "pending"
+        else:
+            out[pid] = STATUS_OF_STATE[_state(program.eligibility, facts, out)]
+    return out
+
+
+def _state(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str]) -> str:
+    """_eval と同じ状態を返す（葉は作らない）。"""
+    if "all" in node:
+        worst = T  # F > U > P > T
+        for c in node["all"]:
+            s = _state(c, facts, statuses)
+            if s == F:
+                return F
+            if s == U or (s == P and worst == T):
+                worst = s
+        return worst
+    if "any" in node:
+        best = F  # T > P > U > F
+        for c in node["any"]:
+            s = _state(c, facts, statuses)
+            if s == T:
+                return T
+            if s == P or (s == U and best == F):
+                best = s
+        return best
+    if "not" in node:
+        s = _state(node["not"], facts, statuses)
+        return {T: F, F: T}.get(s, s)
+    if "step" in node:
+        return P
+    if "ask_at" in node:
+        return U
+    if "prereq" in node:
+        return STATE_OF_PREREQ[statuses[node["prereq"]]]
+    value = facts.get(node["fact"])
+    if not known(value):
+        return U
+    if "in" in node:
+        # unsure は区分の分からない認定のような値（_eval と同じ。T-070 で fix/gold-rules の直しに合わせた）
+        s = T if value in node["in"] else U if value in node.get("unsure", ()) else F
+    elif "eq" in node:
+        s = T if value == node["eq"] else F
+    else:
+        s = T if value is node["is"] else F
+    if s == F and "via" in node:
+        return STATE_OF_VIA[statuses[node["via"]]]
+    return s
 
 
 def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], leaves: list[Leaf]) -> str:
@@ -173,7 +236,8 @@ def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], lea
     if not known(value):
         s = U
     elif "in" in node:
-        s = T if value in node["in"] else F
+        # unsure は、区分の分からない認定のように「どれかは分からない」値（rules.py が means から書く）
+        s = T if value in node["in"] else U if value in node.get("unsure", ()) else F
     elif "eq" in node:
         s = T if value == node["eq"] else F
     else:

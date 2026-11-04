@@ -8,8 +8,13 @@ weight: 2
 eligibility:
   all:
     - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
-    - {fact: residence, in: [home], label: 自宅で暮らしている（入院中・入所中に買ったものは対象外）}
-    - {fact: plans_equipment_purchase, is: true, label: 福祉用具を買うことを考えている}
+    - any:
+        - {fact: residence, in: [home], label: 自宅で暮らしている（入院中・入所中に買ったものは対象外）}
+        # 入院中でも、戻る家があれば当たりうる（裁定、11/4）
+        - all:
+            - {fact: residence, in: [hospital], label: 入院中}
+            - {ask_at: 申請のとき（市区町村の介護保険の窓口）, label: 退院したら自宅に戻る（窓口で確かめる）}
+    # 使う予定は条件にしない。○ は「公式の条件に当たりうる（本人が望むかは問わない）」（裁定 p-plan、11/4）
 at_application:
   - 買うものが対象の種目（腰掛便座、入浴補助用具、簡易浴槽、移動用リフトのつり具など）に当たるか
   - 都道府県の指定を受けた店で買うこと
@@ -23,6 +28,10 @@ amount:
   - 毎年4月〜翌年3月の1年で10万円まで。その9割（所得により8割・7割）が支給される
 timing:
   - 買ったあとに申請する
+cost:
+  self_pay: partial
+  share: "1〜3割。1年10万円を超えた分は全額"
+  source: https://www.mhlw.go.jp/content/12300000/001668164.pdf
 sources:
   - url: https://www.mhlw.go.jp/content/12300000/001668164.pdf
     publisher: 厚生労働省

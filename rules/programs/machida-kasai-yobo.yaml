@@ -21,6 +21,10 @@ apply:
 amount:
   - 煙感知器は1台8,000円まで（2台まで）、電磁調理器は15,000円まで
   - 住民税が課税の人は上限までの1割と上限を超えた分、非課税の人は上限を超えた分だけを負担する
+cost:
+  self_pay: partial
+  share: "課税の人は1割と上限を超えた分、非課税の人は上限を超えた分"
+  source: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kasaianzenshisutemu.html
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kasaianzenshisutemu.html
     publisher: 町田市

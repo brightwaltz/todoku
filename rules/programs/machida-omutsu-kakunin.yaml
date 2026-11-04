@@ -24,6 +24,9 @@ bring:
   - 郵送のときは書類の写しと、切手を貼った返信用封筒
 timing:
   - その年の分は、翌年の1月1日以降に申請する
+# 出典の原文で費用を言えないので、窓口で確かめる（T-073）
+cost:
+  self_pay: ask
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zeikojo/omutsukoujyo.html
     publisher: 町田市

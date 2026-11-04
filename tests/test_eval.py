@@ -15,9 +15,10 @@ CASE = {
     "text": "町田市に住む母（82歳）が退院してから家で転びやすくなりました。要介護の認定は受けていません。",
     "answers": {**{f: DONT_KNOW for f in RS.facts},
                 "lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none",
-                "household": "alone_daytime", "plans_home_modification": True, "caregiver_employee": True},
+                "household": "alone_daytime", "needs_daily_help": True, "caregiver_employee": True,
+                "caregiver_insured": True, "constant_care_2w": True, "high_medical_costs": True},
 }
-GOLD = {"t1": {"kaigo-nintei": "yes", "jutaku-kaishu": "yes", "kaigo-kyugyo-kyufu": "yes", "machida-gps": "no"}}
+GOLD = {"t1": {"kaigo-nintei": "yes", "jutaku-kaishu": "yes", "kogaku-ryoyohi": "yes", "machida-gps": "no"}}
 
 
 def test_rules_mode_scores():
@@ -33,7 +34,7 @@ def test_pipeline_variants_without_api():
     assert set(res["variants"]) == {f"{o}-{k}" for o in ("value", "fixed") for k in range(4)}
     assert res["variants"]["value-0"]["asked"] == []
     assert len(res["variants"]["value-3"]["asked"]) <= 3
-    # 値打ち順は、決まった順よりも少ない問いで多くを拾う（この例では 3 問目で介護休業給付金に届き、決まった順は届かない）
+    # 値打ち順は、決まった順よりも少ない問いで多くを拾う（この例では 2 問目で高額療養費に届き、決まった順は 3 問では届かない）
     s_value = run_eval.score({"t1": res["variants"]["value-3"]}, GOLD)
     s_fixed = run_eval.score({"t1": res["variants"]["fixed-3"]}, GOLD)
     assert s_value["recall_recommended"] > s_fixed["recall_recommended"]

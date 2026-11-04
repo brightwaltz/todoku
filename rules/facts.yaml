@@ -6,6 +6,8 @@
 # - place は住所の事実。値は画面で選んだ市区町村（団体コード）から決まる（city は市の団体コード、pref は都道府県の番号）。
 #   住所の問いは最初の place の事実（lives_in_machida）で聞き、市区町村を選ぶ欄を出す。ほかの place の事実はそこから決まる。
 # - read: false の事実は、Claude に相談文から読ませない（読み取りの一覧に入れない）。
+# - 選択肢の means は「このどれか（どれかは分からない）」を表す。条件の in が means を全部含めば満たし、1 つも含まなければ満たさず、
+#   一部だけなら「わからない」にする（例：認定は受けているが区分は分からない）。
 
 lives_in_machida:
   name: 町田市に住んでいる
@@ -46,7 +48,7 @@ age_band:
 care_level:
   name: 要介護・要支援の認定
   type: enum
-  question: 要介護・要支援の認定は受けていますか？
+  question: ご本人は、要介護・要支援の認定を受けていますか？
   options:
     - {value: none, label: 受けていない}
     - {value: applying, label: 申請中}
@@ -58,7 +60,14 @@ care_level:
     - {value: care3, label: 要介護3}
     - {value: care4, label: 要介護4}
     - {value: care5, label: 要介護5}
+    - {value: certified_unknown, label: 受けている（区分は分からない）, means: [support1, support2, care1, care2, care3, care4, care5]}
   check: 介護保険の被保険者証の「要介護状態区分等」の欄か、市区町村から届いた認定の通知に書かれています。
+
+needs_daily_help:
+  name: 日々の暮らしで介助や手助けが要る
+  type: bool
+  question: ご本人は、日々の暮らしの中で、介助や手助けが要る場面がありますか？
+  check: 立ち上がる・歩く・入浴・トイレ・着替え・食事・薬・買い物などで、家族が手を貸したり見守ったりしている場面があれば「はい」です。
 
 residence:
   name: いま暮らしている所
@@ -79,7 +88,7 @@ household:
     - {value: elderly_only, label: 高齢者だけの世帯（夫婦など）}
     - {value: alone_daytime, label: 家族と同居だが、日中はひとり}
     - {value: with_family, label: 家族と同居で、日中も誰かいる}
-  check: 「日中はひとり」の目安は制度によって違います。町田市の救急通報システムでは、同居の家族が仕事などで、週に3日以上、1日に6時間以上、家をあける場合です。
+  check: 「日中はひとり」の目安は制度によって違います。申し込む窓口で確かめてください。
 
 tax_status:
   name: 住民税
@@ -100,34 +109,46 @@ on_welfare:
 uses_care_services:
   name: 介護保険のサービスの利用
   type: bool
-  question: 介護保険のサービス（デイサービス、ヘルパーなど）を使っていますか？使う予定でもかまいません。
+  question: ご本人は、介護保険のサービス（デイサービス、ヘルパーなど）を使っていますか？使う予定でもかまいません。
   check: 担当のケアマネジャーが作る「サービス利用票」に、使っているサービスが書かれています。
-  false_when: {fact: care_level, in: [none, applying, jiritsu]}
-
-shortstay_or_facility:
-  name: 施設やショートステイの利用
-  type: bool
-  question: 特養・老健などの施設への入所や、ショートステイを使っていますか？使う予定でもかまいません。
-  check: 担当のケアマネジャーに確かめてください。
   false_when: {fact: care_level, in: [none, applying, jiritsu]}
 
 high_medical_costs:
   name: 医療費の自己負担が多い
   type: bool
-  question: 入院や通院で、1か月の医療費の自己負担が高くなった（なりそう）ですか？
+  question: ご本人は、入院や通院で、1か月の医療費の自己負担が高くなった（なりそう）ですか？
   check: 病院の領収書の「負担額」の欄を月ごとに足すと分かります。
 
 caregiver_employee:
-  name: 介護する家族が会社などで働いている
+  name: 介護する家族の中に雇われて働いている人がいる
   type: bool
-  question: 介護をするご家族は、会社などに雇われて働いていますか？
-  check: 介護休暇は雇われて働いていれば使えます（日々雇われる人を除く）。介護休業給付金は雇用保険に入っていることが要り、給与明細に「雇用保険料」が引かれていれば入っています。
+  question: 介護をするご家族の中に、会社などに雇われて働いている人はいますか？
+  check: 主に介護している人でなくてもかまいません。パートやアルバイトも雇われて働く人です（日々雇われる人を除く）。
+
+caregiver_insured:
+  name: 働いている家族が雇用保険に入っている
+  type: bool
+  question: 雇われて働いているご家族は、雇用保険に入っていますか？
+  check: 給与明細に「雇用保険料」が引かれていれば入っています。週20時間以上働いていれば、たいてい入っています。
+  false_when: {fact: caregiver_employee, in: [false]}
+
+constant_care_2w:
+  name: 2週間以上、いつも介護が要る
+  type: bool
+  question: ご本人は、2週間以上にわたって、いつも介護が要る状態ですか？
+  check: 介護休業・介護休暇の「常時介護」は、要介護2以上か、歩く・排せつ・食事・物忘れなどの項目の表で一定以上に当たる状態です。勤め先の人事に確かめられます。
 
 money_management_difficulty:
   name: お金の管理や手続きを一人でするのが難しい
   type: bool
   question: ご本人は、お金の管理や、福祉サービス・役所の手続きを一人でするのが難しくなっていますか？
   check: 日常生活自立支援事業では、診断の有無ではなく、手続きやお金の管理を一人で適切にするのが難しいかどうかを、社会福祉協議会が判断します。
+
+mental_outpatient:
+  name: てんかんや精神の病気で通院している
+  type: bool
+  question: ご本人は、てんかんや、うつ病などの精神の病気で、通院して治療を続けていますか？（認知症は別に聞きます）
+  check: 通院している医療機関の診察券や、お薬手帳の処方で分かります。
 
 dementia_diagnosis:
   name: 認知症の診断
@@ -156,7 +177,7 @@ chronic_attack_risk:
 incontinence_bedding:
   name: 失禁で布団を干せない
   type: bool
-  question: 失禁で布団を清潔に保てず、干すこともできない状態ですか？
+  question: ご本人は、失禁で布団を清潔に保てず、干すこともできない状態ですか？
   check: ご家族が見ている様子でかまいません。
 
 uses_diapers:
@@ -186,23 +207,5 @@ hearing_difficulty:
 hearing_certifiable:
   name: 聴力が身体障害者手帳の基準に当たると言われた
   type: bool
-  question: 耳鼻咽喉科の聴力検査で、身体障害者手帳の聴覚障害の基準に当たる（両耳とも70デシベル以上など）と言われたことがありますか？
+  question: ご本人は、耳鼻咽喉科の聴力検査で、身体障害者手帳の聴覚障害の基準に当たる（両耳とも70デシベル以上など）と言われたことがありますか？
   check: 基準は、両耳とも70デシベル以上、片耳90デシベル以上でもう片耳50デシベル以上、言葉の聞き取り（最良の語音明瞭度）が50%以下のどれかです。耳鼻咽喉科で聴力を測ると分かり、手帳の診断書は都道府県知事の定める医師が書きます。
-
-plans_home_modification:
-  name: 手すり・段差の工事を考えている
-  type: bool
-  question: 手すりを付ける・段差をなくすなど、家の工事を考えていますか？
-  check: 工事の前に申請が要る制度があります。工事を始める前に確かめてください。
-
-plans_fixture_replacement:
-  name: 浴槽・流し・便器の取り替えを考えている
-  type: bool
-  question: 浴槽や流し・洗面台の取り替え、和式から洋式トイレへの取り替えを考えていますか？
-  check: 工事の前に申請が要ります。工事を始める前に確かめてください。
-
-plans_equipment_purchase:
-  name: 福祉用具を買うことを考えている
-  type: bool
-  question: ポータブルトイレや入浴用のいすなど、福祉用具を買うことを考えていますか？
-  check: 買う前に、担当のケアマネジャーか、地域包括支援センター（町田市では「高齢者支援センター」）に相談してください。

@@ -4,30 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>とどく｜尋ねなかった制度まで</title>
-<meta name="description" content="高齢の方と介護する家族のための相談窓口（試作）。困りごとを書くと、尋ねていない公的制度まで、理由・申請先・持ち物・出典つきで示します。国の制度は全国どこでも、市区町村の制度は町田市と横浜市を詳しく判定します。">
+<meta name="description" content="高齢の方と介護する家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも、困りごとを書くと、尋ねていない公的制度まで、理由・申請先・持ち物・出典つきで示します。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示し、東京都・横浜市・町田市は都・市の制度まで詳しく判定します。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <h1>とどく <span>尋ねなかった制度まで</span></h1>
-    <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。国の制度は全国どこでも、市区町村の制度は町田市と横浜市を詳しく判定します。</p>
+    <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも使えます。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。東京都・横浜市・町田市にお住まいなら、都や市の制度まで詳しく判定します。</p>
   </div>
 </header>
 
 <main class="wrap">
-  <section id="gate" class="card" hidden>
-    <label for="aikotoba">合言葉</label>
-    <p class="note" id="gate-msg">いまは試しに動かしているため、ご自分の相談を送るには合言葉が要ります。下の見本は、合言葉なしで最後まで試せます。</p>
-    <input id="aikotoba" type="password" autocomplete="off">
-    <button class="primary" id="gate-ok">はじめる</button>
-  </section>
+  <!-- 読み上げに知らせる領域。hidden を外すのと同時に出す領域は読まれないことがあるので、いつも置いておく（T-030） -->
+  <p id="status" class="sr-only" role="status"></p>
 
   <section id="input" class="card">
     <h2>困っていることを教えてください</h2>
+    <!-- 暮らしの出来事から入る（T-071）。押すと出来事の文を下書きにして、すぐ最初の問いへ。Claude を呼ばず、合言葉も要らない -->
+    <div id="events" hidden>
+      <p class="note">最近あった出来事から始める（1 つ押すと、すぐ最初の質問が出ます。文字は打たなくてかまいません）</p>
+      <div class="examples" id="event-list"></div>
+    </div>
     <div id="samples" hidden>
       <p class="note">見本で試す（合言葉なしで、最後まで動きます）</p>
       <div class="examples" id="sample-list"></div>
@@ -54,6 +56,15 @@
       <div class="chips" id="pick-worry"></div>
     </fieldset>
 
+    <!-- 合言葉の欄は、見本より下・自分で書く欄の前に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044） -->
+    <div id="gate" class="gate" hidden>
+      <label for="aikotoba">合言葉</label>
+      <p class="note" id="gate-msg">いまは試しに動かしているため、ご自分の相談を送るには合言葉が要ります。上の見本は、合言葉なしで最後まで試せます。</p>
+      <div class="gate-row">
+        <input id="aikotoba" type="password" autocomplete="off">
+        <button type="button" class="gate-ok" id="gate-ok">合言葉を使う</button>
+      </div>
+    </div>
     <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
     <textarea id="text" rows="5" maxlength="2000" placeholder="例：町田市に住む母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
     <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
@@ -62,7 +73,7 @@
     <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
   </section>
 
-  <section id="reading" class="card" hidden aria-live="polite">
+  <section id="reading" class="card" hidden>
     <p>読み取っています…</p>
   </section>
 
@@ -79,8 +90,9 @@
     <p class="note">点は制度 1 つずつです。答えるたびに、規則のプログラムが判定し直します（AI は使いません）。</p>
   </section>
 
-  <section id="ask" class="card ask" hidden aria-live="polite">
+  <section id="ask" class="card ask" hidden>
     <p class="ask-count" id="ask-count"></p>
+    <p class="one-only" id="one-box" hidden><button type="button" class="link" id="one" aria-pressed="false">1 問だけ答える</button><span id="one-note"></span></p>
     <h2 id="ask-text" tabindex="-1"></h2>
     <p class="hint" id="ask-hint"></p>
     <div id="ask-options" class="options"></div>
@@ -89,10 +101,21 @@
     <button class="link" id="skip">聞き返しをやめて、結果を見る</button>
   </section>
 
+  <section id="pause" class="card ask" hidden>
+    <h2 id="pause-title" tabindex="-1">1 問答えました。ここまでの見立てです</h2>
+    <p id="pause-counts"></p>
+    <div class="options">
+      <button type="button" class="option" id="pause-more">もう 1 問答える</button>
+      <button type="button" class="option" id="pause-stop">ここでやめて、結果を見る</button>
+    </div>
+    <p class="why" id="pause-msg"></p>
+    <p class="note">やめても、結果の画面の「まだ確かめていないこと」で、残りにあとから答えられます。結果を残すリンクも作れます。</p>
+  </section>
+
   <section id="result" hidden>
     <div class="card ask" id="later" hidden>
       <h2>まだ確かめていないこと</h2>
-      <p class="note lead-note">相談の文からは、はっきり読み取れなかったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
+      <p class="note lead-note">相談の文からは、はっきり読み取れなかったこと・書かれていなかったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
       <div id="later-list"></div>
     </div>
     <p class="change" id="later-change" aria-live="polite"></p>
@@ -108,15 +131,27 @@
       <summary id="ineligible-title"></summary>
       <ul id="ineligible-list" class="plain"></ul>
     </details>
+    <div class="card soft keep" id="keep" hidden>
+      <h2>この結果を残す</h2>
+      <p class="note">答えをこのリンクの中に入れました。あとで開くと、同じ結果が出ます。リンクの中身はとどくのサーバに送られず、どこにも残りません。リンクには答え（認定の区分・年齢など）が入っているので、人に送るときは気をつけてください。</p>
+      <p class="note strong" id="keep-nintei" hidden>認定が出たら、このリンクを開くと次の手続きが出ます。</p>
+      <button class="option" id="keep-reask" hidden>認定が出た（認定の区分を答える）</button>
+      <div class="keep-row">
+        <input type="text" id="keep-url" readonly aria-label="この結果のリンク">
+        <button class="option" id="keep-copy">リンクを写す</button>
+      </div>
+      <p class="change" id="keep-msg" aria-live="polite"></p>
+    </div>
     <button class="secondary" id="again">別の相談をする</button>
   </section>
 </main>
 
 <footer class="wrap foot">
-  <p>判定は公式ページの条件を書き写した規則で行います（確認日を各制度に表示）。申請できるかの最終的な判断は、申請先で行われます。困ったときは、お住まいの地域の地域包括支援センター（町田市では「高齢者支援センター」）に相談してください。</p>
+  <p>判定は、公式ページの条件をもとに書いた規則で行います（確認日を各制度に表示）。申請できるかの最終的な判断は、申請先で行われます。困ったときは、お住まいの地域の地域包括支援センター（町田市では「高齢者支援センター」）に相談してください。</p>
   <p><a id="center-link" href="https://www.kaigokensaku.mhlw.go.jp/" target="_blank" rel="noopener">地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）</a></p>
   <p>Built with Claude: Japan 2026 の期間中に作った試作です。</p>
 </footer>
+<script src="/static/keep.js"></script>
 <script src="/static/app.js"></script>
 </body>
 </html>

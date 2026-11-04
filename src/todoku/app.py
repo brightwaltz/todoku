@@ -6,29 +6,48 @@
 
 from __future__ import annotations
 
+import hmac
+import ipaddress
 import json
 import os
+import threading
 import time
 from collections import defaultdict, deque
 from pathlib import Path
 from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, Field
+from starlette.middleware.gzip import GZipMiddleware
+from pydantic import BaseModel, Field, model_validator
 
+from . import events as events_mod
 from . import rules as rules_mod
 import anthropic
 
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
 from .engine import DONT_KNOW, T, U, Result, evaluate, known, statuses, with_implied
-from .questions import MAX_QUESTIONS, Question, next_question, place_fact, score_fact
+from .questions import MAX_QUESTIONS, Question, candidates, next_question, place_fact, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
 # Claude を呼ぶ API の回数制限（IP ごと、10 分あたり）
 RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
+# アプリ全体の回数制限（10 分あたり、合言葉が通った回だけ）。接続元を偽って IP ごとの制限を外しても、Claude を呼ぶ回数はこれを超えない。
+# 数えるのはプロセスの中なので、マシン 1 台（uvicorn を 1 つで動かしている）ごとの上限。マシンが N 台なら N 倍になる
+RATE_LIMIT_ALL = int(os.environ.get("TODOKU_RATE_LIMIT_ALL", "60"))
+# 聞き返し（/api/step）の回数制限（IP ごと、STEP_WINDOW 秒あたり）。費用はかからないが合言葉なしで CPU を使うので、
+# 1 人が送り続けて、ほかの人の画面を遅くしないための上限（手間を増やすだけの対策。接続元を変えながら送れば外せる）。
+# 審査の人が同じ Wi-Fi（同じ IP）から何人も同時に問いに答えても届かないよう、大きめにする（1 回の判定は約 2〜4ms。T-047）
+STEP_LIMIT = int(os.environ.get("TODOKU_STEP_LIMIT", "300"))
+STEP_WINDOW = 60
+# Fly.io の上で動いているか（Fly はマシンに FLY_APP_NAME を入れる。fly.toml には書いていない）。起動時に 1 回だけ決める。
+# Fly の中継が付ける Fly-Client-IP は Fly の上でだけ信じる。ほかの置き場ではだれでも付けられるので、接続そのものの相手で数える
+# （手間を増やすだけの対策。Fly の上でも、中継がヘッダを上書きしなければ偽れる）
+ON_FLY = bool(os.environ.get("FLY_APP_NAME", "").strip())
+WINDOW = 600
 # 本文の大きさの上限。相談文は 2000 字まで、事実は 20 ほどなので、ふつうの要求は数 KB
 MAX_BODY = 64 * 1024
 # 事実と読み取りの鍵の数の上限（定義にある事実の数より十分大きく）
@@ -61,6 +80,13 @@ app = FastAPI(title="todoku", docs_url=None, redoc_url=None)
 RULES = rules_mod.load()
 CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
+_hits_all: deque = deque()
+_swept = 0.0  # 最後に forget_idle で _hits を見回した時刻
+_step_hits: dict[str, deque] = defaultdict(deque)  # 聞き返しの回数（接続元ごと）。Claude を呼ぶ口の _hits・_hits_all とは別に数える
+_step_swept = 0.0  # 最後に forget_idle で _step_hits を見回した時刻
+# 回数制限の表（_hits・_hits_all・_swept・_step_hits・_step_swept）を読み書きするときに持つ鍵。口は同期の関数でスレッドで動くので、
+# 鍵なしだと recent() の popleft が IndexError（500）になり、ほかのスレッドが積んだ記録を消して数え漏らしていた（T-039）
+_lock = threading.Lock()
 
 
 def load_places() -> dict[str, tuple[str, str]]:
@@ -76,12 +102,47 @@ RULES_CITY = {level: fid for level, fid in rules_mod.LEVEL_PLACE.items() if "cit
 SAMPLES: list[dict] = json.loads((WEB_DIR / "samples.json").read_text(encoding="utf-8"))
 
 
-class ConsultIn(BaseModel):
+def has_broken_text(data: Any) -> bool:
+    """対になっていないサロゲート（JSON の \\ud800 や生の ED A0 80）を含む文字列が、鍵か値のどこかにあるか。
+
+    入れ子が深くても止まらないよう、再帰せずに辿る。
+    """
+    stack = [data]
+    while stack:
+        x = stack.pop()
+        if isinstance(x, str):
+            try:
+                x.encode("utf-8")
+            except UnicodeEncodeError:
+                return True
+        elif isinstance(x, dict):
+            stack.extend(x.keys())
+            stack.extend(x.values())
+        elif isinstance(x, list):
+            stack.extend(x)
+    return False
+
+
+class In(BaseModel):
+    """画面から来る本文の型の土台。壊れた文字は、形を確かめる前に断る。
+
+    通すと、応答を UTF-8 に直すところで 500 になり、uvicorn のトレースバックに相談文の全文が出ていた（T-002）。
+    """
+
+    @model_validator(mode="before")
+    @classmethod
+    def no_broken_text(cls, data: Any) -> Any:
+        if has_broken_text(data):
+            raise ValueError("broken text")
+        return data
+
+
+class ConsultIn(In):
     text: str = Field(max_length=2000)
     municipality: str = Field("", max_length=6)
 
 
-class StepIn(BaseModel):
+class StepIn(In):
     facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     suggestions: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     subject: str = "ご本人"
@@ -89,30 +150,128 @@ class StepIn(BaseModel):
     municipality: str = Field("", max_length=6)
 
 
-class SummaryIn(BaseModel):
+class SummaryIn(In):
     facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
     subject: str = "ご本人"
     municipality: str = Field("", max_length=6)
 
 
-class SampleIn(BaseModel):
+class SampleIn(In):
     id: str = Field(max_length=40)
 
 
+class EventIn(In):
+    id: str = Field(max_length=40)
+    municipality: str = Field("", max_length=6)
+
+
 def guard(request: Request, costly: bool) -> None:
-    # 合言葉と回数制限は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通す
+    # 合言葉は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通し、
+    # 接続元ごとのゆるい回数制限（STEP_LIMIT）だけを掛ける。Claude を呼ぶ口の回数（_hits・_hits_all）は減らさない
+    if not costly:
+        with _lock:
+            now = time.time()
+            forget_idle(now)
+            hits = recent(_step_hits[source(request)], now, STEP_WINDOW)
+            if len(hits) >= STEP_LIMIT:
+                raise HTTPException(429, "しばらく時間をおいてから試してください")
+            hits.append(now)
+        return
     if costly:
-        if PASSPHRASE and request.headers.get("x-aikotoba") != PASSPHRASE:
-            raise HTTPException(401, "合言葉が違います")
-        # Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える（回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限）
-        ip = request.headers.get("fly-client-ip") or (request.client.host if request.client else "?")
-        now = time.time()
-        hits = _hits[ip]
-        while hits and now - hits[0] > 600:
-            hits.popleft()
-        if len(hits) >= RATE_LIMIT:
-            raise HTTPException(429, "しばらく時間をおいてから試してください")
-        hits.append(now)
+        # 本物の Claude を呼ぶのに合言葉がない（fly secrets の設定し忘れなど）ときは、Claude を呼ぶ口を閉じる。
+        # 黙って合言葉なしで開くと、だれでも費用を使える。起動で止めると見本と判定し直しまで止まるので、ここで断る。
+        # 数える前に断る（設定の誤りで、利用者の回数を減らさない）
+        if CLAUDE.name == "claude" and not PASSPHRASE:
+            raise HTTPException(503, "この窓口は合言葉が設定されていないため、相談の読み取りを止めています。見本は試せます")
+        # 回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限
+        # 見回し・数え・積むまでを鍵 1 本で囲む。数えてから積むまでの間に別のスレッドが入ると、上限を超えて通る
+        with _lock:
+            now = time.time()
+            forget_idle(now)
+            # 先にアプリ全体を見る。上限に届いていれば、接続元ごとの数も増やさない
+            if len(recent(_hits_all, now)) >= RATE_LIMIT_ALL:
+                raise HTTPException(429, "しばらく時間をおいてから試してください")
+            # 接続元の決め方は source()。Fly-Client-IP の値を変えれば外せるので、アプリ全体の上限も置く
+            hits = recent(_hits[source(request)], now)
+            if len(hits) >= RATE_LIMIT:
+                raise HTTPException(429, "しばらく時間をおいてから試してください")
+            # 合言葉を確かめる前に数える。間違えた回も数えないと、合言葉を何度でも試せる
+            hits.append(now)
+            if PASSPHRASE and not same_word(request.headers.get("x-aikotoba", ""), PASSPHRASE):
+                raise HTTPException(401, "合言葉が違います")
+            # アプリ全体は、合言葉が通った回（Claude を呼ぶ回）だけ数える。間違えた回も数えると、
+            # 合言葉を知らない人が接続元を変えながら送るだけで、ほかの全員を止められる
+            _hits_all.append(now)
+
+
+def source(request: Request) -> str:
+    """回数制限で数える接続元の鍵。
+
+    Fly.io では接続元が Fly の中継になるので、中継が付ける Fly-Client-IP で数える。
+    Fly の外（ON_FLY が偽）ではヘッダを見ない。付けて送るだけで、接続元ごとの上限を外せるため。
+    """
+    forwarded = request.headers.get("fly-client-ip") if ON_FLY else None
+    return client_key(forwarded or (request.client.host if request.client else "?"))
+
+
+def client_key(ip: str) -> str:
+    """回数制限で数える接続元の鍵。IPv6 は /64 ごとにまとめる（手間を増やすだけの対策）。
+
+    IPv6 は 1 つの契約に /64（またはそれより広い範囲）が割り当てられることが多く、
+    アドレスを変えながら送るだけで接続元ごとの上限を外せるため。IPv4 と、アドレスと読めない値は今のまま数える。
+    IPv4 を IPv6 の形で書いたもの（::ffff:203.0.113.1）は、/64 にすると IPv4 の全員が 1 つにまとまるので IPv4 として数える。
+    """
+    try:
+        addr = ipaddress.ip_address(ip)
+    except ValueError:
+        return ip
+    if addr.version == 4:
+        return ip
+    if addr.ipv4_mapped:
+        return str(addr.ipv4_mapped)
+    # 文字列でなく数で渡す（fe80::1%eth0 のような範囲の印つきは、文字列に /64 を付けると読めずに 500 になる）
+    return str(ipaddress.IPv6Network((int(addr), 64), strict=False))
+
+
+def recent(hits: deque, now: float, window: float = WINDOW) -> deque:
+    """window 秒より前の記録を捨てて、同じ deque を返す。_lock を持って呼ぶ（見てから popleft するので）。"""
+    while hits and now - hits[0] > window:
+        hits.popleft()
+    return hits
+
+
+def forget_idle(now: float) -> None:
+    """窓から外れて記録が空になった接続元を _hits と _step_hits から消す。
+
+    消さないと、接続元を変えながら送るだけで、来なくなった接続元の行が表に残り続ける。
+    全部の行を見るので、見回すのはそれぞれの窓（WINDOW・STEP_WINDOW）の秒数に 1 回だけ（来なくなった行は、遅くとも窓の 2 倍の秒数で消える）。
+    同じ窓の中で接続元を変えて送られた分は残る（合言葉を間違えた回も数えるため）。
+    _step_hits は合言葉なしで行が増えるので、窓を短くして早めに消す。
+    """
+    global _swept, _step_swept
+    # 呼ぶのは guard の _lock の中だけ（recent() と同じく、鍵の外から呼ぶと競合する）
+    if now - _swept >= WINDOW:
+        _swept = now
+        forget_empty(_hits, now, WINDOW)
+    if now - _step_swept >= STEP_WINDOW:
+        _step_swept = now
+        forget_empty(_step_hits, now, STEP_WINDOW)
+
+
+def forget_empty(table: dict[str, deque], now: float, window: float) -> None:
+    for ip, hits in list(table.items()):
+        if not recent(hits, now, window):
+            table.pop(ip, None)
+
+
+def same_word(sent: str, word: str) -> bool:
+    """合言葉を、かかる時間が中身によらない比べ方で比べる（手間を増やすだけの対策の一つ）。
+
+    Starlette はヘッダを latin-1 で文字にするので、latin-1 で送られたバイトに戻し、合言葉の UTF-8 と比べる。
+    文字のまま compare_digest に渡すと、ASCII でない文字で TypeError（500）になる。
+    環境変数の読めないバイトは os.environ が surrogateescape で文字にするので、同じ方法でバイトに戻す。
+    """
+    return hmac.compare_digest(sent.encode("latin-1"), word.encode("utf-8", "surrogateescape"))
 
 
 def clean_facts(raw: dict[str, Any]) -> dict[str, Any]:
@@ -150,9 +309,11 @@ def place_view(code: str) -> dict | None:
 
 
 def fact_view(fid: str, value: Any) -> dict:
+    # 問いの文は返さない。画面は名前と値だけを使い、問いの文は相談文の呼び方に置き換えずに「ご本人は、…」のまま出ていたため（T-027）。
+    # 問いは ask_view・result_view の missing で、置き換えてから返す
     fact = RULES.facts[fid]
     return {"fact": fid, "name": fact.name, "value": value,
-            "label": "わからない" if value == DONT_KNOW else fact.label_of(value), "question": fact.question}
+            "label": "わからない" if value == DONT_KNOW else fact.label_of(value)}
 
 
 def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: str = "",
@@ -197,6 +358,9 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
         "apply": apply,
         "bring": other.get("bring", p.bring),
         "amount": p.amount,
+        # 費用の負担。札に 1 行で出す（出典で言えないものは「窓口で確かめる」）
+        "cost": {"self_pay": p.cost.self_pay, "label": rules_mod.SELF_PAY[p.cost.self_pay],
+                 "share": p.cost.share, "who_can_apply": list(p.cost.who_can_apply)},
         "timing": other.get("timing", p.timing),
         "sources": [
             {"url": s.url, "publisher": s.publisher, "title": s.title, "license": s.license,
@@ -213,12 +377,14 @@ def personalize(text: str, subject: str) -> str:
     return text.replace("ご本人", subject) if subject and subject != "ご本人" else text
 
 
-def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int) -> dict | None:
+def question_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, asked: int,
+                  visible: frozenset[str] | None = None) -> dict | None:
     q = next_question(RULES, facts, suggestions, asked=asked)
-    return None if q is None else ask_view(q, subject)
+    return None if q is None else ask_view(q, subject, visible)
 
 
-def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str) -> list[dict]:
+def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str,
+                     visible: frozenset[str] | None = None) -> list[dict]:
     """聞き返しが終わっても確かめていない読み取り（確信の低いもの）。結果の画面で、同じ形の問いで確かめられるようにする。
 
     住所の問いを受け持つ事実がまだあれば（3 問の枠で聞けなかったとき）、市区町村を選ぶ欄も先頭に出す。
@@ -229,18 +395,39 @@ def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject
         if fid in facts:
             continue
         _, affects = score_fact(RULES, facts, fid, base)
-        out.append(ask_view(Question(fid, 0.0, suggestions[fid], affects), subject))
+        out.append(ask_view(Question(fid, 0.0, suggestions[fid], affects), subject, visible))
     place = place_fact(RULES, facts)
     if place and place not in suggestions:  # 確信の低い読み取り（lives_in_machida）なら、上のループがもう出している
         score, affects = score_fact(RULES, facts, place, base)
         if score > 0:
-            out.insert(0, ask_view(Question(place, score, None, affects), subject))
+            out.insert(0, ask_view(Question(place, score, None, affects), subject, visible))
     return out
 
 
-def ask_view(q: Question, subject: str) -> dict:
+def unread_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, visible: frozenset[str]) -> list[dict]:
+    """聞き返しが終わっても分かっていない事実のうち、答えると結果の画面の制度の判定が変わるもの（T-014）。
+
+    相談の文から読み取れなかった事実（生活保護など）にも、結果の画面で答えられるようにする。
+    並びは次の問いの選び方と同じ値打ちの高い順。「わからない」と答えた事実と、確信の低い読み取り（unconfirmed で聞く）は入れない
+    """
+    base = statuses(RULES, facts)
+    ranked = []
+    for fid in candidates(RULES, facts):
+        if fid in suggestions or fid in RULES.places:  # 住所の問いは unconfirmed_view が市区町村を選ぶ欄として出す（T-070 で合わせた）
+            continue
+        score, affects = score_fact(RULES, facts, fid, base)
+        if score > 0 and any(p in visible for p in affects):
+            ranked.append((-score, RULES.facts[fid].order, Question(fid, score, None, affects)))
+    ranked.sort(key=lambda t: t[:2])
+    return [ask_view(q, subject, visible) for _, _, q in ranked]
+
+
+def ask_view(q: Question, subject: str, visible: frozenset[str] | None = None) -> dict:
     fact = RULES.facts[q.fact]
-    affects = [RULES.programs[p].name for p in q.affects]
+    # 「この答えで判定が決まる制度」には、結果の画面に出す制度（visible）だけを挙げる。step_view が外した型の名前が
+    # 問いにだけ出ると食い違うため（T-007）。問いの値打ちには外した制度も入れたまま（判定は変えない）
+    ids = [p for p in q.affects if visible is None or p in visible]
+    affects = [RULES.programs[p].name for p in ids]
     if q.suggested in ALWAYS_CONFIRM.get(q.fact, ()):
         # 取り違えやすい値（認定の区分）は「合っていますか？」と聞かない。思い違いのままでも「はい」を押せてしまうため。
         # 読んだ値は文で知らせるだけにして、全部の選択肢から書類を見て選んでもらう。確かめられなければ読んだ値で進める
@@ -251,7 +438,7 @@ def ask_view(q: Question, subject: str) -> dict:
             "hint": f"相談の文からは「{read}」と読みました。取り違えやすいので、確かめています。{fact.check}",
             "options": [{"value": v, "label": label} for v, label in fact.options],
             "keep": {"value": q.suggested, "label": f"いま確かめられない（「{read}」として進める）"},
-            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+            "check": fact.check, "affects": affects, "affects_ids": ids,
         }
     if q.fact in RULES.places:
         # 町田市かどうかだけを聞くと、町田市以外の人は「いいえ」しか押せない。画面は市区町村を選ぶ欄を出す（選んだ所は apply_place が扱う）。
@@ -263,20 +450,20 @@ def ask_view(q: Question, subject: str) -> dict:
             "place": {"text": personalize("ご本人はどちらにお住まいですか？", subject)},
             # 町田市ではないと分かった後の聞き直し（横浜市・東京都の事実）では、はい・いいえを clean_facts が使わないので控えを出さない
             "options": [{"value": v, "label": label} for v, label in fact.options] if first else [],
-            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+            "check": fact.check, "affects": affects, "affects_ids": ids,
         }
     if q.suggested is not None and fact.type == "enum":
         return {
             "fact": q.fact, "confirm": True,
             "text": f"{subject}は「{fact.label_of(q.suggested)}」で合っていますか？",
             "options": [{"value": q.suggested, "label": "はい"}, {"value": NOT_THIS, "label": "いいえ"}],
-            "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+            "check": fact.check, "affects": affects, "affects_ids": ids,
         }
     return {
         "fact": q.fact, "confirm": False,
         "text": personalize(fact.question, subject),
         "options": [{"value": v, "label": label} for v, label in fact.options],
-        "check": fact.check, "affects": affects, "affects_ids": list(q.affects),
+        "check": fact.check, "affects": affects, "affects_ids": ids,
     }
 
 
@@ -310,11 +497,14 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         return (order[r.status], unknown, -met, -RULES.weight(r.program.id), r.program.number)
 
     ranked = sorted(results.values(), key=rank)
-    question = question_view(facts, suggestions, subject, asked)
+    visible = frozenset(results)  # 上の 2 つの絞り込みの後に残った、結果の画面に出す制度
+    question = question_view(facts, suggestions, subject, asked, visible)
     return {
         "question": question,
         # 聞き返しが終わったら、確かめていない読み取りを結果の画面に出す（答えても Claude は呼ばない）
-        "unconfirmed": unconfirmed_view(facts, suggestions, subject) if question is None else [],
+        "unconfirmed": unconfirmed_view(facts, suggestions, subject, visible) if question is None else [],
+        # 読み取れなかった事実も、結果の画面で答えられるようにする（答えても Claude は呼ばない。画面は先頭の数件だけを先に出す）
+        "unread": unread_view(facts, suggestions, subject, visible) if question is None else [],
         "max_questions": MAX_QUESTIONS,
         # 住所は、問いを受け持つ事実（町田市に住んでいる）だけを出す。東京都・横浜市などはそこから決まる
         "known": [fact_view(f, v) for f, v in implied.items()
@@ -402,6 +592,25 @@ def sample(body: SampleIn) -> dict:
             **consult_view(extraction, s.get("municipality", ""))}
 
 
+@app.get("/api/events")
+def events() -> list[dict]:
+    return [{"id": e["id"], "label": e["label"], "text": e["text"]} for e in events_mod.EVENTS[:events_mod.MAX_EVENTS]]
+
+
+@app.post("/api/event")
+def event(body: EventIn, request: Request) -> dict:
+    """入口の出来事のボタン（T-071）。出来事の文から言える事実だけを置いて、最初の問いを返す。
+
+    Claude を呼ばないので合言葉は求めず、聞き返しと同じゆるい回数制限だけを掛ける。
+    """
+    guard(request, costly=False)
+    e = events_mod.find(body.id)
+    if e is None:
+        raise HTTPException(404, "この出来事は用意していません")
+    extraction = check_extraction(RULES, e["text"], events_mod.reading(e))
+    return {"engine": "event", "event": True, "text": e["text"], **consult_view(extraction, body.municipality)}
+
+
 class BodyLimit:
     """本文が MAX_BODY を超える要求を 413 で断る。
 
@@ -448,20 +657,78 @@ class BodyLimit:
 app.add_middleware(BodyLimit)
 
 
+class GZipButIndex:
+    """応答を gzip で縮めて返す（受け手が Accept-Encoding: gzip のとき）。ただし「/」は縮めない。
+
+    /api/sample と、答えるたびの /api/step は 1 回 約 84KB（40 制度の申請先・持ち物・出典を毎回返す）で、
+    縮めないまま送っていた（T-061）。level 1 で 84KB → 23KB、手元で 0.42ms（/api/step の往復は 3.6ms）。
+    level 6 でも 18KB にしかならず 1.2ms かかるので、CPU の少ない 1 にした。app.js・municipalities.json も 3 分の 1 になる。
+    「/」を外すのは、HEAD / と GET / のヘッダを同じに保つため（T-056。HEAD は本文がなく縮まらない）。index.html は 7KB。
+    応答に秘密（合言葉・鍵）は入らないので、縮めた長さから秘密を探る攻撃（BREACH）の的はない。
+    """
+
+    def __init__(self, app):
+        self.app = app
+        self.gzip = GZipMiddleware(app, minimum_size=500, compresslevel=1)
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] == "http" and scope["path"] != "/":
+            return await self.gzip(scope, receive, send)
+        return await self.app(scope, receive, send)
+
+
+app.add_middleware(GZipButIndex)
+
+
+@app.exception_handler(RequestValidationError)
+async def invalid_body(request: Request, exc: RequestValidationError) -> JSONResponse:
+    # FastAPI の既定の 422 は、送られた文（input）をそのまま返す。文が壊れていると、それを UTF-8 に直すところで 500 になり、
+    # トレースバックに相談文の全文が出ていた（T-002）。送られた文は返さず、画面（app.js）がそのまま出せる 1 文だけにする
+    return JSONResponse({"detail": "送られた内容を読めませんでした。文を書き直して、もう一度試してください"}, status_code=422)
+
+
+# 守りを重ねるためのヘッダ（11/3 の安全点検の 5）。画面に文を差し込む道は見つかっていないが、今後できても
+# よその出どころのスクリプト・インラインのスクリプトと style 属性を動かせなくし、ほかのサイトの枠に入れさせない。
+# style 属性は web/app.js の el() が CSSOM（style.cssText）で付けるので 'unsafe-inline' は要らない。
+# HSTS は deploy した後にブラウザに残って戻せないので付けない（http→https は fly.toml の force_https が回す）。
+CONTENT_SECURITY_POLICY = "; ".join([
+    "default-src 'self'",
+    "script-src 'self'",
+    "style-src 'self' https://fonts.googleapis.com",
+    "font-src https://fonts.gstatic.com",
+    "img-src 'self' data:",
+    "connect-src 'self'",
+    "object-src 'none'",
+    "base-uri 'none'",
+    "form-action 'none'",
+    "frame-ancestors 'none'",
+])
+SECURITY_HEADERS = {
+    "Content-Security-Policy": CONTENT_SECURITY_POLICY,
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+    "X-Frame-Options": "DENY",
+}
+
+
 @app.middleware("http")
 async def revalidate_pages(request: Request, call_next):
     response = await call_next(request)
+    for k, v in SECURITY_HEADERS.items():
+        response.headers[k] = v
     if request.url.path == "/" or request.url.path.startswith("/static/"):
         response.headers["Cache-Control"] = "no-cache"  # 直した後に古い画面が残らないよう、毎回 ETag で確かめ直させる
     return response
 
 
-@app.get("/api/health")
+# 「/」と /api/health は HEAD にも答える（T-056）。@app.get だけだと HEAD は 405 になり、`curl -I` や
+# 死活の見張り（HEAD で聞くものがある）が「落ちている」と読む。FileResponse は HEAD では本文を送らない
+@app.api_route("/api/health", methods=["GET", "HEAD"])
 def health() -> dict:
     return {"ok": True, "programs": len(RULES.programs), "engine": CLAUDE.name, "passphrase": bool(PASSPHRASE)}
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def index() -> FileResponse:
     return FileResponse(WEB_DIR / "index.html")
 

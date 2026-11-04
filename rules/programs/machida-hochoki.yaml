@@ -29,6 +29,10 @@ amount:
 timing:
   - 補聴器を買うのは、市の交付決定のあと。前に買ったものは対象外
   - 2026年度の受付は2027年2月上旬ごろまでの予定。予算がなくなりしだい終わる
+cost:
+  self_pay: partial
+  share: "30,000円を超えた分と、受診・検査の費用"
+  source: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/hocyouki.html
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/hocyouki.html
     publisher: 町田市

@@ -16,6 +16,9 @@ at_application:
   - 登録のときに、写真や印鑑が要ることがある
 apply:
   where: お住まいの区の区役所 高齢・障害支援課、または地域を担当する地域ケアプラザ（地域包括支援センター）
+# 出典の原文で費用を言えないので、窓口で確かめる（T-073）
+cost:
+  self_pay: ask
 sources:
   - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/ninchisyo/ninchisyo-sodan/sos.html
     publisher: 横浜市 健康福祉局

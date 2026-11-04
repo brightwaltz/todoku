@@ -22,19 +22,32 @@ const WORRIES = [
   ["介護サービス", "介護保険のサービスを使っています。"],
 ];
 
+// 合言葉はヘッダ（X-Aikotoba）で送る。ブラウザはヘッダに日本語を入れられず、fetch が送る前に失敗する（見本も動かなくなる）。
+// 全角の英数字は半角に直し、それでも半角の英数字・記号でない文字が残れば null を返す。
+// サーバは合言葉を UTF-8 のバイトで比べるので、ASCII でない文字の合言葉は、ここで断らなくても画面からは通らない
+function aikotobaWord(raw) {
+  const word = raw.normalize("NFKC").trim();
+  return /^[\x20-\x7e]*$/.test(word) ? word : null;
+}
+
 const $ = (id) => document.getElementById(id);
 let state = fresh();
 let aikotoba = "";
-try { aikotoba = sessionStorage.getItem("aikotoba") || ""; } catch (e) { /* 保存できない環境でも動く */ }
+try {
+  aikotoba = aikotobaWord(sessionStorage.getItem("aikotoba") || "") ?? "";
+  if (!aikotoba) sessionStorage.removeItem("aikotoba");  // 前の版で保存した、送れない合言葉を残さない
+} catch (e) { /* 保存できない環境でも動く */ }
 let pick = freshPick();
 let lastDraft = "";     // 最後に作った下書き。欄がこれと違えば、本人が書き換えたとみなして上書きしない
 let prefs = [];         // municipalities.json の都道府県（市区町村つき）
-let resendAfterGate = false;  // 合言葉で止まった相談を、合言葉のあとで送り直す
+let resendAfterGate = false;
+let needGate = false;   // この置き場は Claude を呼ぶ口に合言葉を求めるか（/api/health）  // 合言葉で止まった相談を、合言葉のあとで送り直す
 class GateError extends Error {}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
-    municipality: "", sample: false, resultShown: false, summaryKey: "" };
+    municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
+    oneOnly: false, held: null };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
 }
 
 function freshPick() {
@@ -45,6 +58,7 @@ function el(tag, attrs = {}, ...children) {
   const node = document.createElement(tag);
   for (const [k, v] of Object.entries(attrs)) {
     if (k === "class") node.className = v;
+    else if (k === "style") node.style.cssText = v;  // style 属性は CSP（'unsafe-inline' なし）で止まるので CSSOM で付ける
     else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
     else node.setAttribute(k, v);
   }
@@ -56,11 +70,25 @@ function el(tag, attrs = {}, ...children) {
 }
 
 function show(id, on = true) { $(id).hidden = !on; }
+// 読み上げに知らせる（#status はいつもある領域。空にしておくと、次に同じ文を入れても読まれる）
+function say(text) { $("status").textContent = text; }
+// 押したボタンが消えると、フォーカスが body に落ちて読み上げ・キーボードの人が先頭から辿り直すことになるので、次に読む所へ移す（T-030）
+const seen = (node) => Boolean(node) && node.getClientRects().length > 0;
+function focusOn(node) {
+  if (!node) return;
+  if (!node.matches("a[href], button, summary, input, select, textarea") && !node.hasAttribute("tabindex")) node.setAttribute("tabindex", "-1");
+  node.focus({ preventScroll: true });
+}
+// 送る間に止めたボタンからは、フォーカスが body に落ちる。送るのに失敗してボタンを戻したら、押したボタンへ戻す
+// （合言葉の欄など、ほかへ移したときはそのまま。T-062）
+function backTo(node) {
+  if (node !== document.body && seen(node) && document.activeElement === document.body) focusOn(node);
+}
 
 function askGate(wrong) {
   $("gate-msg").textContent = wrong
     ? "合言葉が違います。入れ直してください。"
-    : "ご自分の相談を送るには合言葉が要ります。下の見本は合言葉なしで見られます。";
+    : "ご自分の相談を送るには合言葉が要ります。上の見本は合言葉なしで見られます。";
   show("gate");
   $("gate").scrollIntoView({ block: "start" });
   $("aikotoba").focus();
@@ -69,10 +97,12 @@ function askGate(wrong) {
 
 async function api(path, body) {
   let res;
+  const headers = { "Content-Type": "application/json" };
+  if (aikotoba) headers["X-Aikotoba"] = aikotoba;  // aikotobaWord を通した値だけが入る
   try {
     res = await fetch(path, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "X-Aikotoba": aikotoba },
+      headers,
       body: JSON.stringify(body),
     });
   } catch (e) {
@@ -165,34 +195,53 @@ async function openSample(s) {
   await consultWith(s.text, () => api("/api/sample", { id: s.id }));
 }
 
+// 入口の出来事（T-071）。出来事の文を下書きとして欄に入れ、その文から言える事実だけで最初の問いへ進む（Claude を呼ばない）
+async function openEvent(e) {
+  $("text").value = e.text;
+  lastDraft = e.text;  // 選ぶだけの下書きと同じ扱い（本人が書き換えるまでは、選び直すと作り直す）
+  show("redraft", false);
+  await consultWith(e.text, () => api("/api/event", { id: e.id, municipality: pick.city }));
+}
+
 async function consultWith(text, call) {
   state = fresh();
+  forgetKeep();  // 前に開いた・残した結果のリンクを、アドレス欄から外す
   state.startedAt = Date.now();
+  const pressed = document.activeElement;
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
-  show("reading"); show("extracted", false); show("ask", false); show("result", false);
+  say("読み取っています…");
+  show("reading"); show("extracted", false); show("ask", false); show("pause", false); show("result", false);
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
+    // 読み取ったことの欄へ送る前に消す。送った後に消すと、その高さぶん中身が上へずれ、見出しが画面の上に切れる（T-023）
+    show("reading", false);
+    say("");
     state.subject = data.subject;
     state.facts = data.facts;
     state.suggestions = data.suggestions;
     state.engine = data.engine;
     state.sample = Boolean(data.sample);
+    state.event = Boolean(data.event);
     state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
     render(data, true);
   } catch (e) {
     resendAfterGate = e instanceof GateError;
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
+    say(e.message);
+    show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
     $("send").disabled = false;
+    backTo(pressed);
     return;
   }
   $("send").disabled = false;
-  show("reading", false);
 }
 
 function renderExtracted(data, text) {
+  // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
+  $("extracted").querySelector("h2").textContent = data.event ? "選んだ出来事から分かったこと" : "相談の文章から読み取ったこと";
   $("said").replaceChildren(...markEvidence(text, data.extracted));
   const list = $("extracted-list");
   list.replaceChildren();
@@ -202,9 +251,13 @@ function renderExtracted(data, text) {
       f.confidence === "low" ? el("span", { class: "tentative" }, "（あとで確かめます）") : null,
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
   }
-  if (!data.extracted.length) list.append(el("li", {}, "読み取れた事実はありませんでした。いくつか質問します。"));
+  if (!data.extracted.length) {
+    list.append(el("li", {}, data.event ? "この出来事だけで決まることはありません。いくつか質問します。" : "読み取れた事実はありませんでした。いくつか質問します。"));
+  }
   const made = data.made && data.made.model && data.made.date ? `（${data.made.model}、${data.made.date}）` : "";
-  $("engine-note").textContent = data.sample
+  $("engine-note").textContent = data.event
+    ? "選んだ出来事の文から、言えることだけをプログラムが置きました。Claude は使っていません。"
+    : data.sample
     ? `見本：前もって Claude${made}が読み取った結果です。この見本では Claude を呼びません。`
     : data.engine === "fake"
       ? "試験モード：Claude を使わず、キーワードで読み取っています。"
@@ -262,17 +315,20 @@ function markEvidence(text, extracted) {
 
 // ---- いまの見立て ----
 // 制度ごとの札を 4 つの列に置き、答えのたびに列が変わった札だけを動かす（FLIP）
+// 4 つ目は列の名前の折り返してよい所。スマホの 4 列（名前の幅 65px・14px で 4 字）で「当てはま／る」と切れないように
 const BOARD = [
-  ["eligible", "当てはまる", "当てはまる見込み"],
-  ["after_prereq", "先に手続き", "先に手続きをすると使える制度"],
-  ["unknown", "確かめる", "確かめると使えるかもしれない制度"],
-  ["no", "当てはまらない", "当てはまらない制度"],
+  ["eligible", "当てはまる", "当てはまる見込み", ["当ては", "まる"]],
+  ["after_prereq", "先に手続き", "先に手続きをすると使える制度", ["先に", "手続き"]],
+  ["unknown", "確かめる", "確かめると使えるかもしれない制度", ["確かめる"]],
+  ["no", "当てはまらない", "当てはまらない制度", ["当ては", "まらない"]],
 ];
-// 済んでいる・申請済み（結果待ち）の制度は、いま手を打たなくてよいので「当てはまらない」の列にたたむ（結果の画面では別に出す）
-const colOf = (status) => (["ineligible", "done", "pending"].includes(status) ? "no" : status);
+// 済んでいる・申請済み（結果待ち）の制度は、いま手を打たなくてよく、当てはまらないのでもないので、帯に札を置かない
+// （列の数にも入れない）。動いたことは変化の文で言い、結果の画面では別に出す（T-022）
+const OFF_BOARD = [["done", "済んでいる制度"], ["pending", "申請済み・結果待ちの制度"]];
+const colOf = (status) => (status === "ineligible" ? "no" : status);
 const calm = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 let tiles = new Map();  // 制度の id → 札。同じ札を動かすので作り直さない
-let boardPrev = null;   // 前回の { 制度の id: 列 }
+let boardPrev = null;   // 前回の { 制度の id: 列（帯に置かない制度は状態） }
 
 function clearBoard() {
   tiles = new Map();
@@ -291,8 +347,9 @@ function restart(node, cls) {
 function renderBoard(data) {
   const box = $("board-cols");
   if (!box.children.length) {
-    box.append(...BOARD.map(([key, label]) => el("div", { class: `col ${key}`, "data-col": key },
-      el("div", { class: "col-head" }, el("span", { class: "label" }, label), el("span", { class: "count" }, "0")),
+    box.append(...BOARD.map(([key, label, , parts]) => el("div", { class: `col ${key}`, "data-col": key },
+      el("div", { class: "col-head" }, el("span", { class: "label" }, ...parts.map((t) => el("span", { class: "ph" }, t))),
+        el("span", { class: "count" }, "0")),
       el("ul", { class: "tiles", "aria-label": label }))));
   }
   show("board");  // 隠れていると位置が測れない
@@ -301,14 +358,19 @@ function renderBoard(data) {
   // 2. 札を今の列に並べ直す（順は判定の並び）
   const now = {};
   for (const r of data.results) {
+    now[r.id] = colOf(r.status);
+    const list = box.querySelector(`[data-col="${now[r.id]}"] .tiles`);
     let t = tiles.get(r.id);
+    if (!list) {  // 済んでいる・結果待ち：札を置かない（前に置いていたら外す）
+      if (t) { t.remove(); tiles.delete(r.id); }
+      continue;
+    }
     if (!t) {
       t = el("li", { class: "tile", title: r.name, "aria-label": r.name });
       tiles.set(r.id, t);
     }
     t.className = `tile ${r.status}`;
-    now[r.id] = colOf(r.status);
-    box.querySelector(`[data-col="${now[r.id]}"] .tiles`).append(t);
+    list.append(t);
   }
   // 途中で町田市と分かると、型の制度が結果から外れる。外れた札は残さない（数にも入れない）
   let removed = 0;
@@ -319,6 +381,7 @@ function renderBoard(data) {
     for (const r of moved) {
       const t = tiles.get(r.id);
       const a = first.get(r.id);
+      if (!t || !a) continue;  // 帯から外した札と、帯に戻って作り直した札は滑らせない
       const b = t.getBoundingClientRect();
       t.style.transition = "none";
       t.style.transform = `translate(${a.left - b.left}px, ${a.top - b.top}px)`;
@@ -350,7 +413,7 @@ function renderBoard(data) {
 
 function changeText(moved, now, removed = 0) {
   const parts = [];
-  for (const [key, , say] of BOARD) {
+  for (const [key, say] of [...BOARD.map(([k, , s]) => [k, s]), ...OFF_BOARD]) {
     const names = moved.filter((r) => now[r.id] === key).map((r) => r.name);
     if (!names.length) continue;
     // 上に留まる帯を低く保つため、名前を添えるのは「当てはまる見込み」に入った制度だけ（2 件まで）
@@ -366,7 +429,10 @@ function changeText(moved, now, removed = 0) {
 function render(data, first = false) {
   renderBoard(data);
   $("center-link").href = data.center_search;  // ページ下の相談先も、お住まいの都道府県の検索にする
-  if (data.question) { show("ask"); show("result", false); renderQuestion(data.question, data.max_questions, first); }
+  show("pause", false);
+  // 1 問だけ答える道では、答えたら次の問いを出さずに止め、ここまでの見立て（上の帯）と「もう 1 問／ここでやめる」を出す
+  if (data.question && state.oneOnly && state.asked > 0) { show("ask", false); show("result", false); renderPause(data); }
+  else if (data.question) { show("ask"); show("result", false); renderQuestion(data.question, data.max_questions, first); }
   else { show("ask", false); renderResult(data); }
 }
 
@@ -381,15 +447,59 @@ function revealThenAsk() {
 
 function renderQuestion(q, max, first = false) {
   $("ask-count").textContent = `質問 ${state.asked + 1}（多くて ${max} つ）`;
+  show("one-box", state.asked === 0);  // 「1 問だけ答える」は最初の問いでだけ選べる
+  syncOne();
   $("ask-text").textContent = askText(q);
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
   fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code));
-  $("ask-why").textContent = `この答えで判定が決まる制度：${affectNames(q.affects)}`;
+  // 結果に出す制度だけを挙げるので、空になりうる（「確かめていないこと」の欄と同じく、そのときは出さない）
+  $("ask-why").textContent = q.affects.length ? `この答えで判定が決まる制度：${affectNames(q.affects)}` : "";
   $("ask-check").textContent = q.check;
   // 選択肢ではなく問いの文に移る（1 つ目の選択肢に色が付くと、先に選んであるように見えるため）
+  // #ask の aria-live はやめ、問いの文へのフォーカスの移動で伝える。もう問いの文にあると focus() では読み直されないので、いったん外す
+  if (document.activeElement === $("ask-text")) $("ask-text").blur();
   $("ask-text").focus({ preventScroll: true });
   if (first) revealThenAsk();
   else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ---- 1 問だけ答える（T-072b）----
+// 最初の問いで選ぶと、答えるたびに止まり、その時点の札を見てから「もう 1 問答える」か「ここでやめる」を選べる。
+// 押しても問いと判定は変わらない（止まるかどうかだけ）。もう一度押すと、いつもどおり続けて聞く
+function syncOne() {
+  $("one").setAttribute("aria-pressed", String(state.oneOnly));
+  $("one-note").textContent = state.oneOnly ? "答えたら、ここまでの見立てを出して止まります。続けるかはそこで選べます。" : "";
+}
+
+function toggleOne() {
+  state.oneOnly = !state.oneOnly;
+  syncOne();
+}
+
+function renderPause(data) {
+  state.held = data;
+  $("pause-title").textContent = `${state.asked} 問答えました。ここまでの見立てです`;
+  // 数は結果の画面の見出し（GROUPS）と同じ名前・並びで出す
+  const parts = GROUPS.map(([st, title]) => [title, data.results.filter((r) => r.status === st).length])
+    .filter(([, n]) => n).map(([title, n]) => `${title} ${n} 件`);
+  const next = data.question.affects.length ? `次の問いで判定が決まる制度：${affectNames(data.question.affects)}` : "";
+  $("pause-counts").textContent = [parts.join("・"), next].filter(Boolean).join("。");
+  $("pause-msg").textContent = "";
+  const left = data.max_questions - state.asked;
+  $("pause-more").textContent = `もう 1 問答える（あと ${left} 問まで）`;
+  show("pause");
+  $("pause").scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" });
+  focusOn($("pause-title"));
+}
+
+// 止めておいた次の問いを出す（サーバには送り直さない。答えると、また止まる）
+function pauseMore() {
+  const data = state.held;
+  if (!data || busy) return;
+  state.held = null;
+  show("pause", false);
+  show("ask");
+  renderQuestion(data.question, data.max_questions);
 }
 
 // お住まいは、町田市かどうかではなく市区町村で聞く（市区町村の一覧が取れなかったときは、はい・いいえで聞く）
@@ -450,6 +560,8 @@ async function step(change = {}, stop = false) {
   if (busy) return;
   const mine = state;  // 待つ間に別の相談を始めたら、古い応答は描かない
   const next = { ...state, ...change };
+  const pressed = document.activeElement;
+  let failed = false;
   setBusy(true);
   try {
     const data = await api("/api/step", {
@@ -460,16 +572,21 @@ async function step(change = {}, stop = false) {
     Object.assign(state, change);
     render(data);
   } catch (e) {
-    if (mine === state) (state.resultShown ? $("later-change") : $("ask-why")).textContent = e.message;
+    failed = mine === state;
+    if (mine === state) {
+      (state.resultShown ? $("later-change") : seen($("pause")) ? $("pause-msg") : $("ask-why")).textContent = e.message;
+      if (!state.resultShown) say(e.message);  // #later-change は読み上げの領域。問いの欄はそうでないので知らせる
+    }
   } finally {
     setBusy(false);
+    if (failed) backTo(pressed);  // 止めたボタンを戻してから（止まったままの所へはフォーカスが移らない）
   }
 }
 
 function setBusy(on) {
   busy = on;
   // 元から止まっている欄（都道府県を選ぶ前の市区町村など）は、送り終えても止めたままにする
-  for (const node of document.querySelectorAll("#ask-options :is(button, select), #later-list :is(button, select), #skip")) {
+  for (const node of document.querySelectorAll("#ask-options :is(button, select), #later-list :is(button, select), #skip, #pause button")) {
     if (on && !node.disabled) { node.disabled = true; node.dataset.busy = "1"; }
     else if (!on && node.dataset.busy) { node.disabled = false; delete node.dataset.busy; }
   }
@@ -484,27 +601,53 @@ const GROUPS = [
   ["unknown", "確かめると使えるかもしれない", "分からない点があり、まだ決められない制度です。確かめ方を添えています。"],
 ];
 
-// 聞き返しのあとも確かめていない読み取り。答えると規則だけで判定し直す（Claude は呼ばない）
-function renderLater(items) {
-  $("later-list").replaceChildren(...items.map((q) => {
+// 読み取れなかった事実（unread）は、値打ちの高い順にこの数だけ先に出し、残りはボタンに畳む（T-014）。
+// 0 にして全部を畳んでいる：結果の画面の先頭が問いで埋まり、「当てはまる見込み」が下へ押し出されるため（D-0011 で確認中。3 なら先に 3 問出す）
+const UNREAD_FIRST = 0;
+
+// 聞き返しのあとも確かめていない読み取り（unconfirmed）と、読み取れなかった事実（unread）。
+// 答えると規則だけで判定し直す（Claude は呼ばない）
+function renderLater(unconfirmed, unread = []) {
+  const item = (q) => {
     const box = el("div");
-    fillAnswers(box, q, (v) => answer(q, v, true), (code) => answerPlace(code, true));
-    return el("div", { class: "later-item" },
+    const node = el("div", { class: "later-item" },
       el("h3", {}, askText(q)),
       q.hint ? el("p", { class: "hint" }, q.hint) : null,
       box,
       q.affects.length ? el("p", { class: "why" }, `この答えで判定が決まる制度：${affectNames(q.affects)}`) : null);
-  }));
-  show("later", items.length > 0);
+    // 答えた問いは出し直すと消えるので、何番目だったかを覚えておき、同じ位置に来た問いへフォーカスを移す
+    const mark = () => { state.laterAt = laterSpots().indexOf(node.querySelector("h3")); };
+    fillAnswers(box, q, (v) => { mark(); answer(q, v, true); }, (code) => { mark(); answerPlace(code, true); });
+    return node;
+  };
+  // 一度「ほか N 件を見る」を押したら、答えて出し直しても開いたままにする
+  const first = state.laterOpen ? unread.length : UNREAD_FIRST;
+  const nodes = [...unconfirmed.map(item), ...unread.slice(0, first).map(item)];
+  if (unread.length > first) {
+    const rest = el("div", { hidden: "" }, unread.slice(first).map(item));
+    const more = el("button", { class: "link", onclick: () => {
+      rest.hidden = false; more.remove(); state.laterOpen = true; focusOn(rest.querySelector("h3"));
+    } },
+      first ? `ほか ${unread.length - first} 件を見る` : `読み取れなかったことにも答える（${unread.length} 件）`);
+    nodes.push(more, rest);
+  }
+  $("later-list").replaceChildren(...nodes);
+  show("later", unconfirmed.length + unread.length > 0);
 }
+
+// 「まだ確かめていないこと」の欄で、フォーカスを移せる所（見えている問いの見出しと、畳んだ問いを開くボタン）
+const laterSpots = () => [...$("later-list").querySelectorAll(".later-item h3, #later-list > button")].filter(seen);
+// 結果の画面の先頭の見出し（「まだ確かめていないこと」、無ければ「当てはまる見込み」など）
+const resultHeading = () => [...$("result").querySelectorAll("h2")].find(seen);
 
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
   state.resultShown = true;
-  renderLater(data.unconfirmed);
+  renderLater(data.unconfirmed, data.unread);
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
-  $("stats").textContent = `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
+  $("stats").textContent = state.restored ? "残したリンクから開いた結果です"
+    : `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
   const groups = $("groups");
   groups.replaceChildren();
   for (const [status, title, hint] of GROUPS) {
@@ -517,7 +660,7 @@ function renderResult(data) {
     for (const r of first) groups.append(programCard(r));
     if (first.length < items.length) {
       const rest = el("div", { hidden: "" }, items.slice(first.length).map(programCard));
-      const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); } },
+      const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); focusOn(rest.querySelector("summary")); } },
         `ほか ${items.length - first.length} 件を見る`);
       groups.append(more, rest);
     }
@@ -534,21 +677,122 @@ function renderResult(data) {
     `${h.name}にお住まいなら${hidden.length > 1 ? "" : "、"}${h.name.slice(-1)}の制度 ${h.n} 件`).join("、") + "も判定します。" : "";
   show("other-city", hidden.length > 0);
   show("result");
-  if (!again) $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!again) {
+    $("result").scrollIntoView({ behavior: "smooth", block: "start" });
+    focusOn(resultHeading());
+  } else if (state.laterAt !== undefined) {
+    // 答えた問いの位置に来た問い（最後の問いなら 1 つ前、欄が空になったら結果の先頭の見出し）へ
+    const spots = laterSpots();
+    focusOn(spots[Math.min(state.laterAt, spots.length - 1)] || resultHeading());
+    state.laterAt = undefined;
+  }
   // まとめが扱う制度が変わったときだけ書き直す（確かめても判定が同じなら、Claude を呼ばない）
   const key = data.results.filter((r) => SUMMARIZED.includes(r.status)).map((r) => r.id).join(",");
   if (state.sample) {
     // まとめは答えによって変わり Claude が書くので、見本では出さない（見出しだけの空のカードも出さない）
     show("summary", false);
     $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
+  } else if ((state.event || state.restored) && needGate && !aikotoba) {
+    // 出来事から始めた道と、残したリンクから開いた結果は、合言葉なしで結果まで来る。
+    // まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
+    show("summary", false);
+    $("stats").textContent += "。合言葉がないので、Claude が書くまとめを省いています";
   } else if (key !== state.summaryKey) summarize();
   state.summaryKey = key;
+  showKeep(data);
+}
+
+// ---- 結果を残す（T-072）----
+// 答えを URL の # より後ろに入れたリンクを出し、アドレス欄もそれにする（ブックマークや再読み込みでも開き直せる）。
+// # より後ろはサーバに送られない。開き直すと /api/step に同じ答えを送り、規則だけで同じ結果を出す（Claude は呼ばない）
+const NINTEI = "kaigo-nintei";
+const NINTEI_FACT = "care_level";
+const KEEP_PREFIX = "#r=";
+
+function forgetKeep() {
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  show("keep", false);
+}
+
+async function showKeep(data) {
+  const mine = state;
+  let code;
+  try {
+    code = await encodeKeep({ s: state.subject, f: state.facts, g: state.suggestions, m: state.municipality });
+  } catch (e) { show("keep", false); return; }  // 作れなければ欄を出さない（結果は読める）
+  if (mine !== state) return;
+  const url = location.origin + location.pathname + location.search + KEEP_PREFIX + code;
+  history.replaceState(null, "", url);
+  $("keep-url").value = url;
+  $("keep-msg").textContent = "";
+  // 認定の申請が当てはまる（申請して結果待ちも）人には、認定が出た後にこのリンクで次の手続きを見られると添える
+  const nintei = data.results.find((r) => r.id === NINTEI);
+  const waiting = Boolean(nintei && (nintei.status === "eligible" || nintei.status === "pending"));
+  show("keep-nintei", waiting);
+  // リンクから開いた人には、認定の区分を答え直す道を出す（答えると、先に手続きが要った制度を判定し直す）
+  show("keep-reask", waiting && state.restored);
+  show("keep");
+}
+
+async function copyKeep() {
+  const url = $("keep-url").value;
+  try {
+    await navigator.clipboard.writeText(url);
+    $("keep-msg").textContent = "リンクを写しました。メモやメールに貼って残してください。";
+  } catch (e) {
+    // 写せないブラウザでは、欄を選んだ状態にして、自分で写してもらう
+    $("keep-url").focus();
+    $("keep-url").select();
+    $("keep-msg").textContent = "リンクを選びました。長押しやコピーの操作で写してください。";
+  }
+}
+
+// 認定が出たら：認定の区分を「分からない」に戻し、結果の画面の「まだ確かめていないこと」で答え直せるようにする
+function reaskNintei() {
+  const facts = { ...state.facts };
+  delete facts[NINTEI_FACT];
+  state.laterOpen = true;  // 読み取れなかったことの問いは畳んであるので開く。値打ちの順で認定の区分が先頭に来る
+  state.laterAt = 0;
+  return step({ facts, presses: state.presses + 1 }, true);
+}
+
+async function restoreFrom(code) {
+  let saved;
+  try {
+    saved = await decodeKeep(code);
+  } catch (e) {
+    say("残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください");
+    $("reading").replaceChildren(el("p", { class: "error" }, "残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください。"));
+    show("reading");
+    return;
+  }
+  state = fresh();
+  Object.assign(state, { startedAt: Date.now(), restored: true, subject: saved.s.slice(0, 12) || "ご本人",
+    facts: saved.f, suggestions: saved.g, municipality: saved.m });
+  const mine = state;
+  try {
+    const data = await api("/api/step", { facts: state.facts, suggestions: state.suggestions, subject: state.subject,
+      asked: 99, municipality: state.municipality });
+    if (mine !== state) return;
+    show("extracted", false); show("ask", false);
+    render(data);
+  } catch (e) {
+    $("reading").replaceChildren(el("p", { class: "error" }, e.message));
+    say(e.message);
+    show("reading");
+  }
 }
 
 function reasonText(r) {
   const f = r.reasons.find((x) => x.state === "F");
   // 「町田市以外にお住まい に当たらない」は二重の否定に読めるので、満たしていない条件として名指す
   return f ? `条件「${f.label}」を満たしていない${f.value ? `（${f.value}）` : ""}` : "満たしていない条件がある";
+}
+
+// 費用の負担の 1 行（規則の cost から。Claude は使わない）
+function costText(c) {
+  const who = c.who_can_apply.length ? `。申請できる人：${c.who_can_apply.join("・")}` : "";
+  return `費用：${c.label}${c.share ? `（${c.share}）` : ""}${who}`;
 }
 
 function programCard(r) {
@@ -561,6 +805,7 @@ function programCard(r) {
       ...r.waiting_on.map((w, i) => [i ? "、" : "", el("a", { href: `#p-${w.id}`, onclick: (ev) => openCard(ev, w.id) }, w.name),
         w.pending ? "（申請済み・結果待ち）" : ""])));
   }
+  if (r.cost) sumParts.push(el("p", { class: "cost" }, costText(r.cost)));
   if (r.status === "unknown" && r.missing.length) {
     sumParts.push(el("p", { class: "chain" }, "分からない点：", r.missing.map((m) => m.name).join("、")));
   }
@@ -573,7 +818,7 @@ function programCard(r) {
   if (r.at_application.length) body.append(el("h3", {}, "申請のときに確かめられること"), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
   body.append(el("h3", {}, "申請先"), el("p", {}, r.apply.where));
   if (r.apply.how) body.append(el("p", {}, r.apply.how));
-  if (r.apply.phone) body.append(el("p", {}, "電話：", telLinks(r.apply.phone)));
+  if (r.apply.phone) body.append(...phoneViews(r.apply.phone));
   if (r.apply.center_search) body.append(el("p", {}, centerLink(r.apply.center_search)));
   if (r.procedures.length) body.append(el("h3", {}, "根拠の法令"), procedureView(r));
   if (r.bring.length) body.append(el("h3", {}, "持ち物・書類"), el("ul", { class: "plain" }, r.bring.map((t) => el("li", {}, t))));
@@ -594,6 +839,12 @@ function procedureView(r) {
 // 申請先に挙げた地域包括支援センターを探すページ（厚生労働省。お住まいの都道府県が分かれば、その県の検索）
 function centerLink(url) {
   return el("a", { href: url, target: "_blank", rel: "noopener" }, "地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）");
+}
+
+// 電話番号が「／」で並ぶときは 1 件ずつ段落に分ける。1 つの段落で続く行に番号が並ぶと、行の間隔（約 30px）が
+// 押せる範囲（.tel::after の上下 14px）より狭く、上の番号の少し下を押すと下の番号にかかるため（T-032）
+function phoneViews(phone) {
+  return phone.split("／").map((part) => el("p", {}, "電話：", telLinks(part)));
 }
 
 function telLinks(text) {
@@ -652,6 +903,12 @@ fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
   prefs = data.prefectures;
   $("pref").append(...prefs.map((p) => el("option", { value: p.code }, p.name)));
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
+// 出来事のボタンも、取れたときだけ出す（T-071）
+fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
+  if (!list.length) return;
+  $("event-list").replaceChildren(...list.map((e) => el("button", { type: "button", class: "chip", onclick: () => openEvent(e) }, e.label)));
+  show("events");
+}).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す
 fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
@@ -660,24 +917,62 @@ fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
 }).catch(() => { /* 見本の行は出さない */ });
 $("send").addEventListener("click", send);
 $("skip").addEventListener("click", () => step({}, true));
+$("one").addEventListener("click", toggleOne);
+$("pause-more").addEventListener("click", pauseMore);
+$("pause-stop").addEventListener("click", () => step({}, true));  // 聞き返しをやめたのと同じ。結果の画面に残すリンクも出る
+$("keep-copy").addEventListener("click", copyKeep);
+$("keep-reask").addEventListener("click", reaskNintei);
+// 開いているページに別の残した結果のリンクを貼ったとき（# より後ろだけが変わると、ページは読み直されない）
+window.addEventListener("hashchange", () => { if (location.hash.startsWith(KEEP_PREFIX)) restoreFrom(location.hash.slice(KEEP_PREFIX.length)); });
 $("again").addEventListener("click", () => {
   state = fresh();
+  forgetKeep();
   $("text").value = "";
   resetPick();
-  show("extracted", false); show("ask", false); show("result", false);
+  show("extracted", false); show("ask", false); show("pause", false); show("result", false);
   clearBoard();
   window.scrollTo({ top: 0, behavior: "smooth" });
   $("text").focus();
 });
 $("gate-ok").addEventListener("click", () => {
-  if (!$("aikotoba").value.trim()) { $("aikotoba").focus(); return; }
-  aikotoba = $("aikotoba").value;
+  const word = aikotobaWord($("aikotoba").value);
+  if (word === null) {
+    $("gate-msg").textContent = "合言葉は半角の英数字で入れてください。日本語の文字は使えません。";
+    $("aikotoba").focus();
+    $("aikotoba").select();
+    return;
+  }
+  if (!word) { $("aikotoba").focus(); return; }
+  aikotoba = word;
   try { sessionStorage.setItem("aikotoba", aikotoba); } catch (e) { /* 保存できなくても続ける */ }
   show("gate", false);
-  if (resendAfterGate) { resendAfterGate = false; send(); }
+  // 欄ごと隠すので、押したボタン・合言葉の欄からフォーカスが body に落ちる。送り直すなら送るボタンへ
+  // （consultWith がそれを押したボタンとして覚え、失敗したらそこへ戻す）、書く前なら相談の欄へ移す（T-063）
+  if (resendAfterGate) { resendAfterGate = false; $("send").focus(); send(); }
+  else $("text").focus();
 });
-$("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") $("gate-ok").click(); });
+// Enter の既定の動きを止める。止めないと、keydown の中で相談の欄へ移したフォーカスの先に改行が入る（T-063）
+$("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") { ev.preventDefault(); $("gate-ok").click(); } });
+// 印刷するときは、結果の札（details）を開いて申請先・持ち物・出典まで紙に出し、終わったら開く前に戻す（T-066）。
+// 結果の画面のときだけ html に print-result を付け、入力・問い・帯・ボタンを紙から外す（style.css の @media print）
+let printOpened = [];
+window.addEventListener("beforeprint", () => {
+  const onResult = !$("result").hidden;
+  document.documentElement.classList.toggle("print-result", onResult);
+  printOpened = onResult ? [...$("result").querySelectorAll("details:not([open])")] : [];
+  for (const d of printOpened) d.open = true;
+});
+window.addEventListener("afterprint", () => {
+  for (const d of printOpened) d.open = false;
+  printOpened = [];
+  document.documentElement.classList.remove("print-result");
+});
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
-fetch("/api/health").then((r) => r.json()).then((h) => {
-  if (h.passphrase && !aikotoba) show("gate");
+// 残した結果のリンクから開いたときは聞かない（結果は合言葉なしで出る。相談を送るときに聞く）
+const keptAtLoad = location.hash.startsWith(KEEP_PREFIX);
+const healthReady = fetch("/api/health").then((r) => r.json()).then((h) => {
+  needGate = Boolean(h.passphrase);
+  if (h.passphrase && !aikotoba && !keptAtLoad) show("gate");
 }).catch(() => { /* 分からなければ、送ったときに聞く */ });
+// 合言葉が要る置き場かを知ってから開く（知る前に結果を出すと、まとめを送って合言葉の欄へ飛ばされる）
+if (keptAtLoad) healthReady.then(() => restoreFrom(location.hash.slice(KEEP_PREFIX.length)));

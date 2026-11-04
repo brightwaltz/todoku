@@ -8,9 +8,7 @@ weight: 2
 eligibility:
   all:
     - {fact: care_level, in: [support1, support2, care1, care2, care3, care4, care5], label: 要介護・要支援の認定を受けている, via: kaigo-nintei}
-    - any:
-        - {fact: residence, in: [facility], label: 施設に入所している}
-        - {fact: shortstay_or_facility, is: true, label: 施設への入所かショートステイを使う（予定を含む）, via: kaigo-nintei}
+    # 施設やショートステイを使うときの軽減。使う予定は条件にしない（裁定 p-plan、11/4）
     - {fact: tax_status, in: [household_exempt], label: 世帯の全員が住民税非課税}
 at_application:
   - 配偶者（別の世帯でも）も住民税非課税であること
@@ -29,6 +27,10 @@ amount:
 timing:
   - 申請した月の1日から翌年7月31日まで有効。さかのぼれるのは申請した月の1日まで
   - 決定まではおよそ2週間
+cost:
+  self_pay: partial
+  share: "食費・居住費を、所得と資産の段階ごとの額まで払う"
+  source: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
 sources:
   - url: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
     publisher: 厚生労働省（介護サービス情報公表システム）

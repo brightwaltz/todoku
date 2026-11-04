@@ -23,6 +23,10 @@ apply:
 amount:
   - 要介護4・5は月8,000円分まで（2,000円が1単位で、毎月変えられる）
   - 自己負担は1割（1単位200円）。生活保護の世帯などは無料
+cost:
+  self_pay: partial
+  share: "1割（1単位200円）。生活保護の世帯などは無料"
+  source: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/kourei-omutsu.html
 sources:
   - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/kourei-omutsu.html
     publisher: 横浜市 健康福祉局

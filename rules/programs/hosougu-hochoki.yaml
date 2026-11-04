@@ -19,6 +19,10 @@ apply:
 amount:
   - 原則1割負担
   - 月の上限は、生活保護と市町村民税非課税の世帯は0円、課税の世帯は37,200円
+cost:
+  self_pay: partial
+  share: "原則1割。月の上限は0円か37,200円"
+  source: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/yogu/hosouguhisikyuuseido.html
 sources:
   - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/yogu/hosouguhisikyuuseido.html
     publisher: 厚生労働省

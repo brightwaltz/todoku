@@ -35,7 +35,7 @@ h2 { font-size: 21px; line-height: 1.5; margin: 0 0 12px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; }
 .card.soft { background: var(--soft); }
 label.big { display: block; font-weight: 700; margin-bottom: 8px; }
-textarea, input[type=password] {
+textarea, input[type=password], .keep-row input {
   width: 100%; font: inherit; padding: 12px; border: 2px solid var(--line); border-radius: 10px; background: #fff;
 }
 textarea:focus, input:focus { outline: 3px solid #9fd3c7; border-color: var(--accent); }
@@ -47,7 +47,8 @@ button { font: inherit; cursor: pointer; }
 .primary:disabled { opacity: .5; }
 .secondary { background: #fff; color: var(--accent); border: 2px solid var(--accent); margin: 20px 0; }
 .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-.chip { border: 1px solid var(--accent); color: var(--accent); background: #fff; border-radius: 999px; padding: 6px 14px; font-size: 15px; }
+/* 押す所は高さ 44px 以上にする（高齢の方がスマホで押し違えないよう。WCAG 2.5.5・Apple HIG の数） */
+.chip { border: 1px solid var(--accent); color: var(--accent); background: #fff; border-radius: 999px; padding: 6px 14px; font-size: 15px; min-height: 44px; }
 /* 選ぶだけの入口。選んだ札は塗りつぶす（色だけに頼らず ✓ も付ける） */
 .lead-note { margin: -6px 0 6px; }
 .pick { border: none; padding: 0; margin: 14px 0 0; min-width: 0; }
@@ -56,16 +57,34 @@ button { font: inherit; cursor: pointer; }
 .chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
 .chip[aria-pressed="true"]::before { content: "✓ "; }
 .places { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+/* Safari（WebKit）は既定の見た目の select に min-height・枠・角丸を効かせず、高さ 23px で描く（T-064）。
+   appearance: none で自分で描き、右の矢印は線形グラデーション 2 枚で引く（画像を使わない） */
 select {
-  width: 100%; min-width: 0; min-height: 48px; font: inherit; font-size: 16px; padding: 8px 10px;
-  border: 2px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink);
+  -webkit-appearance: none; appearance: none;
+  width: 100%; min-width: 0; min-height: 48px; font: inherit; font-size: 16px; padding: 8px 32px 8px 10px;
+  border: 2px solid var(--line); border-radius: 10px; background-color: #fff; color: var(--ink);
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+  background-position: calc(100% - 19px) 50%, calc(100% - 13px) 50%;
+  background-size: 6px 6px; background-repeat: no-repeat;
 }
 select:focus { outline: 3px solid #9fd3c7; border-color: var(--accent); }
-select:disabled { color: var(--muted); background: var(--soft); }
+select:disabled { color: var(--muted); background-color: var(--soft); }
 #input label.big { margin-top: 18px; }
+#events .examples { margin-top: 6px; }
+#events .chip { font-size: 16px; }
 #samples { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--line); }
 #samples .note { margin-top: 8px; }
 #samples .examples { margin-top: 6px; }
+/* 合言葉の欄（T-044）。見本より下・相談の文の前に置き、塗りのボタンにしない（審査などで合言葉を持たない人の目を見本へ向ける） */
+.gate { margin-top: 18px; padding: 12px 14px; background: var(--soft); border-radius: 10px; }
+.gate label { display: block; font-weight: 700; font-size: 16px; }
+.gate .note { margin: 2px 0 8px; }
+.gate-row { display: flex; gap: 8px; align-items: stretch; }
+.gate-row input { flex: 1 1 auto; min-width: 0; }
+.gate-ok {
+  flex: 0 0 auto; min-height: 48px; padding: 6px 14px; border: 2px solid var(--accent); border-radius: 10px;
+  background: #fff; color: var(--accent); font-size: 16px; font-weight: 700;
+}
 .note { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
 .facts { list-style: none; padding: 0; margin: 0; }
 .facts li { padding: 6px 0; border-bottom: 1px dashed var(--line); }
@@ -86,10 +105,12 @@ select:disabled { color: var(--muted); background: var(--soft); }
 /* いまの見立て：質問に答えている間は画面の上に留まる細い帯。点は制度 1 つずつ */
 .board-card { padding: 10px 12px; }
 .board-card.live { position: sticky; top: 0; z-index: 5; box-shadow: 0 3px 10px rgba(0, 0, 0, .08); }
-.board-card .note { font-size: 12px; margin: 6px 0 0; }
+.board-card .note { font-size: 14px; margin: 6px 0 0; }
 .board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
 .col { border: 1px solid var(--line); border-radius: 10px; padding: 6px; background: var(--soft); }
-.col-head { display: flex; flex-direction: column; font-size: 11px; line-height: 1.25; margin-bottom: 5px; }
+/* 列の名前は 14px（T-031・D-0012 の B。A なら 11px に戻し、下の .ph の行は残してよい） */
+.col-head { display: flex; flex-direction: column; font-size: 14px; line-height: 1.25; margin-bottom: 5px; }
+.col-head .ph { display: inline-block; }
 .col-head .label { color: var(--muted); font-weight: 700; }
 .col-head .count { font-size: 18px; font-weight: 700; line-height: 1.2; align-self: flex-start; }
 .col-head .count.bump { animation: bump .6s ease-out; }
@@ -108,13 +129,20 @@ select:disabled { color: var(--muted); background: var(--soft); }
 .change { margin: 6px 0 0; font-weight: 700; color: var(--accent); font-size: 14px; }
 .change:empty { margin: 0; }  /* 読み上げの領域は消さずに残す */
 .change:not(:empty) + .note { display: none; }  /* 1 問答えたら、説明の代わりに変わったことを出す */
-#ask { scroll-margin-top: var(--board-h, 0px); }
+#ask, #pause { scroll-margin-top: var(--board-h, 0px); }
+/* 1 問だけ答える（T-072b）。最初の問いの数の行の下に、押すと切り替わるリンクを 1 行 */
+.one-only { margin: 0 0 4px; font-size: 15px; color: var(--muted); }
+.one-only .link { margin-right: 8px; }
+.one-only .link[aria-pressed="true"] { color: var(--ink); text-decoration: none; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   .said mark, .facts li, .col-head .count.bump, .tile.pulse::after { animation: none; }
 }
 .ask { border: 3px solid var(--accent); }
 .ask-count { color: var(--accent); font-weight: 700; margin: 0 0 4px; font-size: 15px; }
-#ask-text:focus { outline: none; }
+/* 画面が変わったときにフォーカスを移す見出し（押す所ではないので輪郭を出さない） */
+[tabindex="-1"]:focus { outline: none; }
+/* 目には見せず、読み上げには読ませる（display:none や visibility:hidden では読まれない） */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .hint { margin: 0 0 4px; }
 .hint:empty { display: none; }
 .options { display: grid; gap: 10px; margin: 8px 0 12px; }
@@ -130,10 +158,19 @@ select:disabled { color: var(--muted); background: var(--soft); }
 .later-item:first-child { border-top: none; padding-top: 4px; }
 .later-item h3 { font-size: 18px; line-height: 1.5; margin: 0 0 6px; }
 #later-change:not(:empty) { margin: -6px 0 14px; }
-.link { background: none; border: none; color: var(--accent); text-decoration: underline; padding: 8px 0; font-size: 15px; }
-details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
+.link { background: none; border: none; color: var(--accent); text-decoration: underline; padding: 8px 0; font-size: 15px; min-height: 44px; }
+details summary { cursor: pointer; color: var(--accent); font-size: 15px; padding: 9px 0; }
 .summary { border-left: 6px solid var(--accent); }
 .summary ul { margin: 0; padding-left: 1.2em; }
+/* 結果を残すリンク（T-072）。リンクの欄と写すボタンを横に並べ、狭い画面では縦に積む */
+.keep h2 { margin: 0; font-size: 19px; }
+.keep .strong { color: var(--ink); font-weight: 700; }
+.keep .option { width: auto; margin-top: 12px; }
+.keep [hidden] { display: none; }  /* .option の display: block が hidden に勝つため */
+.keep-row { display: flex; gap: 8px; align-items: stretch; margin-top: 12px; }
+.keep-row input { flex: 1; min-width: 0; min-height: 56px; font-size: 15px; color: var(--muted); }
+.keep-row .option { margin-top: 0; flex: none; }
+@media (max-width: 520px) { .keep-row { flex-direction: column; } .keep .option { width: 100%; } }
 .stats { font-size: 15px; color: var(--muted); margin: 0 0 12px; text-align: right; }
 .group-title { font-size: 20px; margin: 24px 0 10px; display: flex; align-items: center; gap: 8px; }
 .group-title .n { font-size: 15px; color: var(--muted); font-weight: 400; }
@@ -142,8 +179,8 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
 .prog > summary::-webkit-details-marker { display: none; }
 .prog .head { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .prog .name { font-weight: 700; font-size: 19px; }
-.tag { font-size: 13px; border-radius: 6px; padding: 1px 7px; border: 1px solid var(--line); color: var(--muted); }
-.pill { font-size: 13px; font-weight: 700; border-radius: 999px; padding: 2px 10px; }
+.tag { font-size: 14px; border-radius: 6px; padding: 1px 7px; border: 1px solid var(--line); color: var(--muted); }
+.pill { font-size: 14px; font-weight: 700; border-radius: 999px; padding: 2px 10px; }
 .pill.eligible { background: var(--ok-bg); color: var(--ok); }
 .pill.after_prereq { background: var(--pre-bg); color: var(--pre); }
 .pill.pending { background: var(--unk-bg); color: var(--ink); }
@@ -151,6 +188,7 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
 .prog .sum { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
 .prog .chain { margin: 8px 0 0; font-size: 15px; color: var(--pre); font-weight: 700; }
 .prog .chain a { color: var(--pre); }
+.prog .cost { margin: 6px 0 0; font-size: 15px; color: var(--ink); }
 .prog .body { padding: 0 18px 18px; border-top: 1px solid var(--line); }
 .prog h3 { font-size: 16px; margin: 16px 0 6px; color: var(--accent); }
 .reasons { list-style: none; padding: 0; margin: 0; font-size: 16px; }
@@ -165,12 +203,39 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; }
 .src { font-size: 14px; color: var(--muted); }
 .src a { color: var(--accent); word-break: break-all; }
 blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line); background: var(--soft); font-size: 15px; }
-.tel { color: var(--accent); font-weight: 700; white-space: nowrap; }
+/* 文の中の電話番号は行の高さを変えず、押せる範囲だけを上下に広げる（1 行に収まるので効く）。
+   となりの行の番号と範囲が重ならないよう、番号は 1 つの段落に 1 つだけにする（app.js の phoneViews） */
+.tel { color: var(--accent); font-weight: 700; white-space: nowrap; position: relative; }
+.tel::after { content: ""; position: absolute; inset: -14px 0; }
 .foot { color: var(--muted); font-size: 14px; padding-bottom: 40px; }
-.foot a { color: var(--accent); }
+.foot a { color: var(--accent); display: inline-block; min-height: 44px; padding: 3px 0; }
 .error { color: var(--no); font-weight: 700; }
 @media (max-width: 420px) {
   body { font-size: 17px; }
   .top h1 { font-size: 26px; }
   .top h1 span { display: block; margin: 0; }
+}
+/* 印刷：結果の画面を、申請先・持ち物・出典ごと紙に出す（T-066）。窓口へ持っていけるように。
+   札（details）は app.js の beforeprint で開き、afterprint で閉じ直す。入力・問い・帯・ボタンは紙では使えないので出さない。
+   隠すのは結果の画面を出しているときだけ（html.print-result。app.js が beforeprint で付ける） */
+@media print {
+  @page { margin: 14mm; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  body { background: #fff; }
+  .wrap { max-width: none; padding: 0; }
+  .top { background: none; color: var(--ink); padding: 0 0 8px; margin-bottom: 14px; border-bottom: 2px solid var(--accent); }
+  .card { box-shadow: none; }
+  .board-card.live { position: static; box-shadow: none; }
+  .print-result #input, .print-result #reading, .print-result #board, .print-result #ask, .print-result #pause,
+  .print-result #later, .print-result #later-change, .print-result #stats, .print-result #again,
+  .print-result #keep { display: none; }
+  .print-result #result button:not(.link) { display: none; }
+  .print-result #result .link { color: var(--muted); text-decoration: none; padding: 0; min-height: 0; }
+  .prog { overflow: visible; }
+  .prog > summary, .prog h3, .group-title { break-after: avoid; }
+  .prog > summary { break-inside: avoid; }
+  .prog .head, .reasons li, .plain li, .src { break-inside: avoid; }
+  .tel::after { content: none; }
+  .foot { padding-bottom: 0; }
+  .foot a { min-height: 0; }
 }

@@ -25,6 +25,10 @@ amount:
   - 本人が課税なら、合計所得金額で7,000円〜20,500円
 timing:
   - 使えるのは10月1日から翌年の9月30日まで（申し込んだ日からの1年ではない）
+cost:
+  self_pay: partial
+  share: "年3,200円〜20,500円（所得による）"
+  source: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigoyobo-kenkoudukuri-ikigai/ikigai-shakaisanka/keirou.html
 sources:
   - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigoyobo-kenkoudukuri-ikigai/ikigai-shakaisanka/keirou.html
     publisher: 横浜市 健康福祉局

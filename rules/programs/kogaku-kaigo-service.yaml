@@ -20,6 +20,10 @@ bring:
   - 市から届いた申請書
 amount:
   - 月の上限は、世帯の全員が住民税非課税なら世帯で24,600円（年金などの収入が少ない人は個人で15,000円）、課税の世帯は44,400円（所得の多い世帯は93,000円か140,100円）、生活保護の人は15,000円
+cost:
+  self_pay: receive
+  share: "月の上限を超えた分が戻る"
+  source: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
 sources:
   - url: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
     publisher: 厚生労働省（介護サービス情報公表システム）

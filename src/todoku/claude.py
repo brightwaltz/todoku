@@ -85,8 +85,16 @@ ALWAYS_CONFIRM: dict[str, frozenset[str]] = {
 }
 
 
+# 画面に返す根拠の長さの上限。見本 4 件の根拠は長くて 27 字
+EVIDENCE_MAX = 200
+
+
 def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
-    """形・値・根拠を確かめる。根拠が相談文にない事実と、ALWAYS_CONFIRM の値は確信を low に落とす。"""
+    """形・値・根拠を確かめる。根拠が相談文にない事実と、ALWAYS_CONFIRM の値は確信を low に落とす。
+
+    根拠は相談文に見つかったときだけ返し、EVIDENCE_MAX 字で切る。見つからない根拠は空にする
+    （Claude が相談文にない文、たとえば指示文を根拠に写しても、画面に出さない。11/3 の安全点検の 4）。
+    """
     out = Extraction(subject=(raw.get("subject") or "ご本人").strip()[:12] or "ご本人")
     seen: set[str] = set()
     norm_text = normalize(text)
@@ -104,6 +112,9 @@ def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
         confidence = "high" if item.get("confidence") == "high" else "low"
         if not evidence or normalize(evidence) not in norm_text:
             confidence = "low"
+            evidence = ""
+        # 相談文の中にあると確かめてから切る（前の方だけでも相談文の一部なので、画面の印はそのまま付く）
+        evidence = evidence[:EVIDENCE_MAX]
         if value in ALWAYS_CONFIRM.get(fid, ()):
             confidence = "low"
         seen.add(fid)
@@ -115,12 +126,31 @@ def check_extraction(rules: RuleSet, text: str, raw: dict) -> Extraction:
 KANJI_AMOUNT = re.compile(r"[一二三四五六七八九十百千万億]+(割|円|日|か月|ヶ月|カ月|か年|年|回|歳|時間|週|パーセント|％|%)")
 
 
-def check_summary(shown: list[Result], raw: dict) -> list[SummaryLine]:
-    """まとめの文を確かめる。画面に出ていない制度を指す行、数字を含む行、町田市の制度が出ていないのに「町田」を含む行は捨てる。"""
+# まとめの行に書かせない言い切り。判定は規則が決め、結果は「見込み」なので、Claude が「必ず受けられます」と請け合わない
+OVERCLAIM = re.compile(r"必ず|確実に|絶対|間違いなく")
+# URL・メールアドレス（NFKC で全角を半角にしてから見る）。出典は規則ファイルから出し、まとめの文にはリンク先を書かせない
+LINK = re.compile(r"https?:|://|www\.|@|[a-z0-9-]+\.[a-z]{2,}", re.IGNORECASE)
+
+
+def check_summary(rules: RuleSet, shown: list[Result], raw: dict) -> list[SummaryLine]:
+    """まとめの文を確かめる。捨てる行：画面に出ていない制度を指す行、数字を含む行、町田市の制度が出ていないのに「町田」を含む行、
+    言い切り（「必ず」など）・URL・メールアドレスを含む行、まとめに渡していない規則の制度名を含む行（11/3 の安全点検の 4）。
+
+    文字列の照合は、書き間違いや指示された行を「捨てやすくする」だけの守りで、別の言い方は止められない
+    （制度名は規則の正式名だけを見ていて、「障害者控除」のような略し方は見ない）。まとめの文に入れられるのは
+    構造化出力の lines だけで、program_ids は画面の制度に限り、出典・金額・申請先は規則ファイルから出す。
+    """
     allowed = {r.program.id for r in shown}
     shown_levels = {r.program.level for r in shown}
     # 市・都・県の名前（「町田」「横浜」「東京」「神奈川」）。その段の制度が出ていないのに名前を含む行は捨てる
     places = {LEVELS[level][:-1]: level for level in LEVEL_PLACE}
+    # まとめに渡した制度の名前：画面の制度と、その前提の制度（RealClaude.summarize が waiting_on として名前を渡し、
+    # 「まず〜を申請すると」と書かせている）。それ以外の規則の制度の正式名を含む行は捨てる。
+    # 渡した名前の一部になっている名前は見ない（今の規則にはないが、足した制度の名前が別の名前の中に入っても正しい行を捨てない）
+    told = {r.program.id for r in shown} | {pid for r in shown for pid in r.waiting_on}
+    told_names = [normalize(rules.programs[pid].name) for pid in told if pid in rules.programs]
+    others = [n for pid, p in rules.programs.items() if pid not in told
+              for n in [normalize(p.name)] if not any(n in t for t in told_names)]
     lines = []
     for item in raw.get("lines", []):
         ids = [i for i in item.get("program_ids", []) if isinstance(i, str)]
@@ -132,6 +162,9 @@ def check_summary(shown: list[Result], raw: dict) -> list[SummaryLine]:
             continue
         # 町田市以外の人に「町田市の窓口で」と書かない（町田市の制度が画面に出ているときだけ通す。横浜市・都・県も同じ）
         if any(name in text and level not in shown_levels for name, level in places.items()):
+            continue
+        norm = normalize(text)
+        if OVERCLAIM.search(norm) or LINK.search(norm) or any(n in norm for n in others):
             continue
         lines.append(SummaryLine(ids, text))
     return lines[:4]
@@ -162,7 +195,23 @@ SUMMARY_SYSTEM = """あなたは、高齢者と介護する家族のための公
 - 1 行は 60 字以内の、やさしい日本語の文。前提の手続きがあれば「まず〜を申請すると、〜も使えるようになります」のように順番を伝える。
 - 「申請済み・結果待ち」の制度は、もう申請してある。「申請すると」とは書かず、「〜の結果が出ると、〜も使えるようになります」のように伝える。
 - 金額・日数・電話番号などの数字は書かない（画面の別の場所に、出典つきで出る）。
+- 「必ず」「確実に」のような言い切りはしない（判定は見込み）。URL・メールアドレスと、結果にない制度（waiting_on の前提の制度は除く）の名前は書かない。
 - 2〜4 行。"""
+
+
+# 相談文を包むタグと同じ形（半角・全角の括弧と斜線、間の空白も）。相談文の中にあれば、送る前に消す。
+# 斜線を任意の組の中に入れ、空白の並びを 2 つの \s* で取り合わない形にしている（取り合うと長い空白で手間が 2 乗になる）
+WRAPPER_TAG = re.compile(r"[<＜](?:\s*[/／])?\s*相談文\s*[>＞]")
+
+
+def strip_wrapper_tags(text: str) -> str:
+    """相談文の中の <相談文>・</相談文> を消す。タグを閉じたように見せて、後ろの文を指示に見せる手を防ぐ。
+
+    これは手間を増やすだけの守りで、「相談文はここまで」のような別の言い方は止められない。
+    判定を守っているのは、構造化出力と check_extraction（読める事実と値を決まった一覧に限る）の方。
+    根拠を確かめるのは、利用者が書いたままの相談文（画面が印を付けるのと同じ文）。
+    """
+    return WRAPPER_TAG.sub("", text)
 
 
 def _catalog(rules: RuleSet) -> str:
@@ -235,7 +284,7 @@ class ClaudeRefused(ClaudeFailed):
 class RealClaude:
     name = "claude"
 
-    def __init__(self, model: str | None = None, effort: str | None = None) -> None:
+    def __init__(self, model: str | None = None, effort: str | None = None, keep_calls: bool = True) -> None:
         import anthropic
 
         # SDK の既定（読み取りの待ち 600 秒・再試行 2 回）のままだと、API が応答しないとき画面が最長で約 30 分止まる。
@@ -243,7 +292,10 @@ class RealClaude:
         self._client = anthropic.Anthropic(timeout=60.0, max_retries=1)
         self.model = model or MODEL
         self.effort = effort or EFFORT
-        self.calls: list[dict] = []  # 呼び出しごとの答えたモデルとトークン数（評価の費用を数えるため）
+        # 呼び出しごとの答えたモデルとトークン数（評価の費用を数えるため）。評価は len と切り出し（calls[start:]）で数えるので、
+        # 上限で古いものを捨てる形にはしない。何日も動くサーバーは誰も読まないので、keep_calls=False で貯めない
+        self.keep_calls = keep_calls
+        self.calls: list[dict] = []
 
     def _fallback(self) -> dict:
         # 拒否されたときの代わりのモデル（サーバー側）は Opus と Sonnet だけ。Haiku 5.5 には付けられない
@@ -261,9 +313,10 @@ class RealClaude:
             messages=[{"role": "user", "content": user}],
             **self._fallback(),
         )
-        self.calls.append({"model": response.model, "stop": response.stop_reason,
-                           "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens,
-                           "seconds": round(time.monotonic() - started, 2)})
+        if self.keep_calls:
+            self.calls.append({"model": response.model, "stop": response.stop_reason,
+                               "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens,
+                               "seconds": round(time.monotonic() - started, 2)})
         if response.stop_reason == "refusal":
             raise ClaudeRefused(getattr(response.stop_details, "category", None))
         if response.stop_reason == "max_tokens":
@@ -279,7 +332,7 @@ class RealClaude:
     def extract(self, rules: RuleSet, text: str) -> Extraction:
         raw = self._json(
             EXTRACT_SYSTEM.format(catalog=_catalog(rules)),
-            f"<相談文>\n{text}\n</相談文>",
+            f"<相談文>\n{strip_wrapper_tags(text)}\n</相談文>",
             _extract_schema(rules),
             max_tokens=8000,
         )
@@ -304,7 +357,7 @@ class RealClaude:
             SUMMARY_SCHEMA,
             max_tokens=4000,
         )
-        return check_summary(shown, raw)
+        return check_summary(rules, shown, raw)
 
 
 # ---- 鍵がないときの試験用 -----------------------------------------------------
@@ -326,7 +379,6 @@ FAKE_PATTERNS: list[tuple[str, str, Any, str]] = [
     (r"退院(して|した|しま)|自宅で|家で", "residence", "home", "high"),
     (r"入院中", "residence", "hospital", "high"),
     (r"(施設|特養|老健)に入所", "residence", "facility", "high"),
-    (r"手すり|段差", "plans_home_modification", True, "low"),
     (r"認知症", "dementia_diagnosis", True, "low"),
     (r"道に迷|徘徊|帰れなく", "wandering_risk", True, "high"),
     (r"火の(消し忘れ|始末)", "fire_risk", True, "high"),
@@ -384,10 +436,11 @@ class FakeClaude:
                     f"{first.program.name}の結果が出ると、{names}も使えるようになります。" if first.status == "pending"
                     else f"まず{first.program.name}をすると、{names}も使えるようになります。",
                 ))
-        return check_summary(shown, {"lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]})
+        return check_summary(rules, shown, {"lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines]})
 
 
 def make_client() -> ClaudeLike:
+    # サーバー（app.py）の呼び先。評価と見本の台本は RealClaude() を直に作り、calls を貯める
     if os.environ.get("ANTHROPIC_API_KEY") and os.environ.get("TODOKU_FAKE_CLAUDE") != "1":
-        return RealClaude()
+        return RealClaude(keep_calls=False)
     return FakeClaude()

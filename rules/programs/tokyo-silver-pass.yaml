@@ -26,6 +26,11 @@ timing:
   - いつでも買える。70歳になる月の2か月前の1日から申し込める
   - 使い始める日は、申し込んだ日・翌月1日・翌々月1日から選べる（2026年10月から）
   - 使い始める月の初日から1年間使える（東京都福祉局のページ）
+cost:
+  self_pay: partial
+  share: "年12,000円。住民税が非課税なら1,000円"
+  who_can_apply: [本人, 代理人]
+  source: https://www.silver-pass.tokyo/
 sources:
   # 都の福祉局のサイトは、トップページ以外へのリンクに事前の許諾が要る（サイトポリシー、2023-11-07）。トップページを示す
   - url: https://www.fukushi.metro.tokyo.lg.jp/

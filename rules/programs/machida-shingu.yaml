@@ -21,6 +21,10 @@ amount:
   - 敷き布団・掛け布団・毛布を各1枚。乾燥・消毒は年6回で1回300円、丸洗いは年1回で400円（生活保護の人は負担なし）
 timing:
   - 締切はない。実施月の前の月末までに承認されれば、その月から始まる
+cost:
+  self_pay: partial
+  share: "1回300円か400円。生活保護の人は負担なし"
+  source: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/shingushodoku.html
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/shingushodoku.html
     publisher: 町田市

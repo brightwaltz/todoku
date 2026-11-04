@@ -21,6 +21,18 @@ KINDS = {"review": "審査", "condition": "条件"}
 # 原文の引用を画面に出してよい利用条件。町田市は独自の規約で無断転載が禁じられているので入らない
 QUOTABLE_LICENSES = {"PDL1.0"}
 BOOL_OPTIONS = ((True, "はい"), (False, "いいえ"))
+# 費用の負担（札に 1 行で出す）。出典で言えないものは ask（窓口で確かめる）にする
+SELF_PAY = {
+    "none": "かからない",
+    "partial": "一部を負担",
+    "loan": "借りる（返す）",
+    "varies": "人や勤め先・事業所で変わる",
+    "receive": "お金を受け取る制度",
+    "tax": "税が軽くなる制度",
+    "ask": "窓口で確かめる",
+}
+APPLICANTS = ("本人", "家族", "親族", "代理人", "法定代理人")
+COST_SHARE_MAX = 40  # 札の 1 行に収める。出典の文は写さず、自分の言葉で短く書く
 
 
 class RuleError(ValueError):
@@ -42,6 +54,8 @@ class Fact:
     place: dict | None = None
     # False なら Claude に相談文から読ませない
     read: bool = True
+    # 選択肢の means：「このどれか（どれかは分からない）」を表す値と、その中身（例：認定は受けているが区分は分からない）
+    means: tuple[tuple[Any, tuple[Any, ...]], ...] = ()
 
     def values(self) -> list[Any]:
         return [v for v, _ in self.options]
@@ -82,6 +96,16 @@ class Procedure:
     note: str = ""
 
 
+@dataclass(frozen=True)
+class Cost:
+    self_pay: str = "ask"
+    # 割合・額などの一言（自分の言葉で）
+    share: str = ""
+    who_can_apply: tuple[str, ...] = ()
+    # どの出典で言えるか（その制度の sources の URL）
+    source: str = ""
+
+
 @dataclass
 class Program:
     id: str
@@ -111,6 +135,7 @@ class Program:
     depends_on: set[str] = field(default_factory=set)
     # 市区町村の型だけ：市の制度を一つずつ判定している市（段の名前）でも、型のまま出す市
     shown_in: tuple[str, ...] = ()
+    cost: Cost = field(default_factory=Cost)
 
 
 @dataclass
@@ -175,6 +200,10 @@ def _load_facts(path: Path) -> dict[str, Fact]:
             options = tuple((o["value"], o["label"]) for o in spec["options"])
             if len({v for v, _ in options}) != len(options):
                 raise RuleError(f"facts.yaml: {fid} の選択肢が重複している")
+            means = tuple((o["value"], tuple(o["means"])) for o in spec["options"] if "means" in o)
+            for value, inner in means:
+                if not inner or any(v not in {x for x, _ in options} or v == value for v in inner):
+                    raise RuleError(f"facts.yaml: {fid} の {value} の means は、ほかの選択肢を並べて書く")
         else:
             raise RuleError(f"facts.yaml: {fid} の type が bool でも enum でもない")
         for key in ("name", "question", "check"):
@@ -192,7 +221,7 @@ def _load_facts(path: Path) -> dict[str, Fact]:
                 raise RuleError(f"facts.yaml: {fid} の place は bool の事実に {{city: 6 桁}} か {{pref: 2 桁}} で書く")
             place = {k: str(v) for k, v in place.items()}
         facts[fid] = Fact(fid, ftype, spec["question"], spec["check"], options, order, spec["name"], false_when,
-                          place, bool(spec.get("read", True)))
+                          place, bool(spec.get("read", True)), means if ftype == "enum" else ())
     for fact in facts.values():
         if fact.false_when is not None:
             ref = facts.get(fact.false_when.get("fact"))
@@ -259,6 +288,8 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
     if shown_in and (level != "local" or set(shown_in) - set(LEVEL_PLACE)):
         raise RuleError(f"{where}: shown_in は市区町村の型だけに、段の名前（{'・'.join(LEVEL_PLACE)}）で書く")
 
+    cost = _load_cost(raw.get("cost"), sources, where)
+
     return Program(
         id=pid,
         number=int(need("number")),
@@ -281,7 +312,34 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         elsewhere=elsewhere,
         depends_on=depends_on,
         shown_in=shown_in,
+        cost=cost,
     )
+
+
+def _load_cost(raw: Any, sources: list[Source], where: str) -> Cost:
+    if raw is None:
+        return Cost()
+    if not isinstance(raw, dict):
+        raise RuleError(f"{where}: cost は辞書で書く")
+    if set(raw) - {"self_pay", "share", "who_can_apply", "source"}:
+        raise RuleError(f"{where}: cost に書けるのは self_pay・share・who_can_apply・source だけ")
+    self_pay = raw.get("self_pay", "ask")
+    if self_pay not in SELF_PAY:
+        raise RuleError(f"{where}: cost の self_pay は {sorted(SELF_PAY)} のどれか")
+    share = str(raw.get("share") or "").strip()
+    who = tuple(raw.get("who_can_apply") or ())
+    source = str(raw.get("source") or "").strip()
+    if set(who) - set(APPLICANTS):
+        raise RuleError(f"{where}: cost の who_can_apply は {'・'.join(APPLICANTS)} から選ぶ")
+    if self_pay == "ask" and share:
+        raise RuleError(f"{where}: 窓口で確かめる（ask）ときは share を書かない")
+    if len(share) > COST_SHARE_MAX:
+        raise RuleError(f"{where}: cost の share は {COST_SHARE_MAX} 字まで（札の 1 行に収める）")
+    if (self_pay != "ask" or who) and not source:
+        raise RuleError(f"{where}: cost を埋めるときは、どの出典で言えるかを source（URL）に書く")
+    if source and source not in {s.url for s in sources}:
+        raise RuleError(f"{where}: cost の source が sources の URL のどれでもない: {source}")
+    return Cost(self_pay=self_pay, share=share, who_can_apply=who, source=source)
 
 
 def _load_procedure(raw: dict, where: str) -> Procedure:
@@ -387,6 +445,16 @@ def _check_node(node: Any, facts: dict[str, Fact], depends_on: set[str], where: 
     for v in values:
         if v not in fact.values():
             raise RuleError(f"{where}: {fid} に値 {v!r} はない")
+    if op == "in":
+        # means の値（例：区分の分からない認定）は、中身が全部 in にあれば満たし、一部だけなら「わからない」（unsure）にする
+        for value, inner in fact.means:
+            if value in node["in"]:
+                continue
+            hits = [v for v in inner if v in node["in"]]
+            if len(hits) == len(inner):
+                node["in"] = [*node["in"], value]
+            elif hits and value not in node.get("unsure", []):
+                node["unsure"] = [*node.get("unsure", []), value]
     if "via" in node:
         if inside_not:
             raise RuleError(f"{where}: not の中で via は使えない")

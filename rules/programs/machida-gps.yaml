@@ -19,6 +19,10 @@ apply:
   phone: 問い合わせは高齢者支援課 042-724-2141
 amount:
   - 月440円（生活保護の世帯は無料）。通話料などは利用者が払う
+cost:
+  self_pay: partial
+  share: "月440円。生活保護の世帯は無料"
+  source: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/gps.html
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/gps.html
     publisher: 町田市

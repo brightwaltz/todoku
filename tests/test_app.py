@@ -1,7 +1,9 @@
+import json
 import os
 
 os.environ["TODOKU_FAKE_CLAUDE"] = "1"
 
+import pytest  # noqa: E402
 from fastapi.testclient import TestClient  # noqa: E402
 
 from todoku.app import app  # noqa: E402
@@ -75,7 +77,9 @@ def test_fake_reads_the_draft_made_by_taps():
 
 
 def test_step_until_done_and_no_text_needed():
-    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none"}
+    # 介助の要る場面がある人（認定の申請が当てはまる。裁定 p-prereq、11/4）
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none",
+             "needs_daily_help": True}
     asked = 0
     while True:
         data = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": asked}).json()
@@ -101,7 +105,7 @@ def test_step_drops_unknown_facts_and_values():
 
 def test_summary_only_points_at_shown_programs():
     facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "none",
-             "plans_home_modification": True}
+             "needs_daily_help": True}
     data = client.post("/api/summary", json={"facts": facts, "subject": "お母さま"}).json()
     assert data["lines"]
     assert all("kaigo-nintei" in line["program_ids"] for line in data["lines"])
@@ -123,13 +127,14 @@ def test_check_extraction_downgrades_missing_evidence():
 
 def test_check_summary_rejects_numbers_and_foreign_ids():
     rs = rules_mod.load()
-    shown = [r for r in evaluate(rs, {"caregiver_employee": True}).values() if r.status == "eligible"]
+    shown = [r for r in evaluate(rs, {"caregiver_employee": True, "caregiver_insured": True, "care_level": "care2"}).values()
+             if r.status == "eligible"]
     raw = {"lines": [
         {"program_ids": ["kaigo-kyugyo-kyufu"], "text": "仕事を休むときは介護休業給付金があります。"},
         {"program_ids": ["kaigo-kyugyo-kyufu"], "text": "賃金の67%が出ます。"},
         {"program_ids": ["machida-gps"], "text": "GPS も使えます。"},
     ]}
-    lines = check_summary(shown, raw)
+    lines = check_summary(rs, shown, raw)
     assert [l.text for l in lines] == ["仕事を休むときは介護休業給付金があります。"]
 
 
@@ -141,6 +146,119 @@ def test_index_and_health():
     assert h["programs"] == 40  # 33〜40 は東京都 1 件と横浜市 7 件（11/3 に足した）
 
 
+def test_index_and_health_answer_head_like_get():
+    """「/」と /api/health は HEAD に 200 で答え、本文は送らず、ヘッダは GET と同じ（T-056）。@app.get だけだと 405 だった。"""
+    for path in ["/", "/api/health"]:
+        g, h = client.get(path), client.head(path)
+        assert h.status_code == 200, path
+        assert h.content == b"", path
+        for k in ["content-type", "content-length", "content-security-policy", "x-frame-options"]:
+            assert h.headers.get(k) == g.headers.get(k), (path, k)
+    assert client.head("/").headers["cache-control"] == "no-cache"
+
+
+def test_large_responses_are_gzipped_but_index_is_not():
+    """/api/sample・/api/step と画面のファイルは、Accept-Encoding: gzip なら縮めて返す（T-061。1 回 約 84KB を縮めずに送っていた）。
+    「/」は HEAD と GET のヘッダを同じに保つため縮めない（T-056）。小さい /api/health も縮めない。"""
+    gz, plain = {"accept-encoding": "gzip"}, {"accept-encoding": "identity"}
+    a = client.post("/api/sample", json={"id": "taiin-haha"}, headers=gz)
+    b = client.post("/api/sample", json={"id": "taiin-haha"}, headers=plain)
+    assert a.headers.get("content-encoding") == "gzip" and "content-encoding" not in b.headers
+    assert int(a.headers["content-length"]) * 3 < int(b.headers["content-length"])
+    assert a.json() == b.json()  # httpx が解いた中身は、縮めないときと同じ
+    assert "content-security-policy" in a.headers and a.headers.get("x-frame-options") == "DENY"
+    body = {k: a.json()[k] for k in ("facts", "suggestions", "subject")} | {"asked": 0, "municipality": ""}
+    assert client.post("/api/step", json=body, headers=gz).headers.get("content-encoding") == "gzip"
+    for path in ["/static/app.js", "/static/municipalities.json"]:
+        r = client.get(path, headers=gz)
+        assert r.headers.get("content-encoding") == "gzip" and r.headers["cache-control"] == "no-cache", path
+    for path in ["/", "/api/health"]:
+        assert "content-encoding" not in client.get(path, headers=gz).headers, path
+
+
+def test_security_headers_on_every_response():
+    """全部の応答に CSP・nosniff・Referrer-Policy・枠に入れさせないヘッダが付く（T-033）。CSP は 'unsafe-inline' を許さず、
+    画面の el() は style 属性を setAttribute でなく CSSOM で付ける（属性のままだと CSP で止まり、段階の動きが消える）。"""
+    import re
+    from pathlib import Path
+    for path in ["/", "/static/app.js", "/static/style.css", "/api/samples", "/api/health"]:
+        h = client.get(path).headers
+        csp = h["content-security-policy"]
+        assert "script-src 'self'" in csp and "frame-ancestors 'none'" in csp and "unsafe-inline" not in csp, path
+        assert h["x-content-type-options"] == "nosniff", path
+        assert h["referrer-policy"] == "no-referrer", path
+        assert h["x-frame-options"] == "DENY", path
+        assert "strict-transport-security" not in h, path  # deploy 後に戻せないので付けない
+    html = client.get("/").text
+    assert "<style" not in html and " style=" not in html and "<script>" not in html  # インラインは CSP で止まる
+    for host in re.findall(r'<link [^>]*href="https://([^/"]+)', html):
+        assert host in ("fonts.googleapis.com", "fonts.gstatic.com"), host  # 読み込むのは CSP の style-src・font-src に入れた所だけ（<a> の行き先は CSP の外）
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    assert 'k === "style") node.style.cssText = v' in js
+    assert not re.search(r'setAttribute\(\s*["\']style', js)
+
+
+def test_page_names_its_icon_so_browsers_do_not_ask_for_favicon_ico():
+    """画面がアイコンを名指しする（T-048）。名指しがないとブラウザが /favicon.ico を取りに行き、最初の読み込みで
+    404 が console.error に出ていた（T-043 の気づき 7）。アイコンは CSP の img-src 'self' で読める自前の SVG で、
+    直に開かれても動くもの（スクリプト・イベントの属性）とよその参照を持たない。"""
+    import re
+    html = client.get("/").text
+    links = re.findall(r'<link rel="icon" href="([^"]+)" type="image/svg\+xml">', html)
+    assert links == ["/static/favicon.svg"]
+    r = client.get(links[0])
+    assert r.status_code == 200
+    assert r.headers["content-type"].startswith("image/svg+xml")
+    assert r.headers["x-content-type-options"] == "nosniff"
+    svg = r.text
+    assert svg.lstrip().startswith("<svg") and "<script" not in svg.lower()
+    assert not re.search(r"\son\w+\s*=", svg, re.I)  # onload= など
+    assert not re.search(r"(href|src)\s*=", svg, re.I) and "url(" not in svg  # よその出どころを引かない
+    assert "#0d6b5b" in svg  # 画面の上の帯（style.css の --accent）と同じ色
+
+
+def test_entry_text_names_every_place_with_rules():
+    """最初の画面の lead と meta の description は、制度を判定する都・市を全部挙げる（「町田市だけ」と狭く書かない）。"""
+    import re
+    html = client.get("/").text
+    lead = re.search(r'<p class="lead">(.*?)</p>', html).group(1)
+    desc = re.search(r'<meta name="description" content="([^"]*)"', html).group(1)
+    places = {rules_mod.LEVELS[p.level] for p in rules_mod.load().programs.values()
+              if p.level not in ("national", "local")}
+    assert places, "都・市の制度が規則にない"
+    for where, text in (("lead", lead), ("description", desc)):
+        missing = [place for place in sorted(places) if place not in text]
+        assert not missing, f"{where} に {missing} がない"
+        assert "だけ" not in text, f"{where} が範囲を狭く書いている：{text}"
+
+
+def test_entry_text_counts_match_rules_and_municipalities():
+    """入口・README の冒頭の「全国の市区町村（1,741）」「市区町村の事業 5 種類」が、
+    web/municipalities.json と規則から数えた数と合うか（11/4 T-080a）。
+
+    総務省のコード表には北方領土の 6 村（01695〜01700）も載っているので、それを除いて数える。
+    """
+    import re
+    from pathlib import Path
+    from todoku.app import WEB_DIR
+
+    data = json.loads((WEB_DIR / "municipalities.json").read_text(encoding="utf-8"))
+    northern = {"016951", "016969", "016977", "016985", "016993", "017001"}
+    codes = [code for pref in data["prefectures"] for code, _ in pref["cities"]]
+    assert northern <= set(codes)
+    n_cities = len(set(codes) - northern)
+    n_types = sum(1 for p in rules_mod.load().programs.values() if p.level == "local")
+    html = client.get("/").text
+    lead = re.search(r'<p class="lead">(.*?)</p>', html).group(1)
+    desc = re.search(r'<meta name="description" content="([^"]*)"', html).group(1)
+    readme_first = (Path(__file__).resolve().parents[1] / "README.md").read_text(encoding="utf-8").split("\n\n", 2)[1]
+    for where, text in (("lead", lead), ("description", desc), ("README", readme_first)):
+        assert f"全国の市区町村（{n_cities:,}）" in text, where
+        assert f"市区町村の事業 {n_types} 種類" in text, where
+        assert "全国の実施率" in text, where
+
+
+@pytest.mark.usefixtures("on_fly")
 def test_rate_limit_counts_each_client_ip(monkeypatch):
     from todoku import app as app_mod
 
@@ -150,6 +268,317 @@ def test_rate_limit_counts_each_client_ip(monkeypatch):
     assert send("203.0.113.1") == 200
     assert send("203.0.113.1") == 429
     assert send("203.0.113.2") == 200  # 中継が同じでも、別の人は別に数える
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_rate_limit_counts_ipv6_per_64(monkeypatch):
+    from todoku import app as app_mod
+
+    # IPv6 は 1 人で /64 を持てるので、アドレスを変えながら送ると接続元ごとの上限を外せていた（T-041）。/64 ごとに数える
+    monkeypatch.setattr(app_mod, "RATE_LIMIT", 1)
+    send = lambda ip: client.post("/api/consult", json={"text": DEMO}, headers={"fly-client-ip": ip}).status_code
+    assert send("2001:db8:1:2::1") == 200
+    assert send("2001:db8:1:2:ffff::9") == 429  # 同じ /64 の別のアドレス
+    assert send("2001:db8:1:3::1") == 200  # 隣の /64 は別に数える
+    assert send("::ffff:203.0.113.1") == 200  # IPv4 を IPv6 の形で書いたものは IPv4 として数え、::/64 にまとめない
+    assert send("::ffff:203.0.113.2") == 200
+    assert send("203.0.113.1") == 429  # 同じ IPv4 を普通の形で書いても同じ接続元
+    assert send("fe80::1%eth0") == 200  # 範囲の印つきでも 500 にならない
+    assert sorted(app_mod._hits) == ["2001:db8:1:2::/64", "2001:db8:1:3::/64", "203.0.113.1", "203.0.113.2", "fe80::/64"]
+
+
+def test_rate_limit_ignores_fly_client_ip_off_fly(monkeypatch):
+    from todoku import app as app_mod
+
+    # Fly の外（FLY_APP_NAME がない）では、Fly-Client-IP を付けて送るだけで接続元ごとの上限を外せていた（T-042）。
+    # ヘッダを見ず、接続そのものの相手（TestClient では testclient）で数える
+    monkeypatch.setattr(app_mod, "ON_FLY", False)  # Fly の外の形。FLY_APP_NAME がある所で流しても同じに試す（Fly の上の形は on_fly の fixture）
+    monkeypatch.setattr(app_mod, "RATE_LIMIT", 1)
+    send = lambda headers: client.post("/api/consult", json={"text": DEMO}, headers=headers).status_code
+    assert send({"fly-client-ip": "203.0.113.1"}) == 200
+    assert send({"fly-client-ip": "203.0.113.2"}) == 429  # ヘッダを変えても同じ接続元
+    assert send({"fly-client-ip": "2001:db8:1:2::1"}) == 429
+    assert send({}) == 429
+    assert sorted(app_mod._hits) == ["testclient"]
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_rate_limit_caps_the_whole_app(monkeypatch):
+    from todoku import app as app_mod
+
+    # Fly-Client-IP を変えながら送ると、接続元ごとの制限は外せる（T-012）。アプリ全体の上限で止める
+    monkeypatch.setattr(app_mod, "RATE_LIMIT_ALL", 2)
+    send = lambda ip, path="/api/consult", body={"text": DEMO}: client.post(
+        path, json=body, headers={"fly-client-ip": ip}).status_code
+    assert [send("203.0.113.1"), send("203.0.113.2"), send("203.0.113.3")] == [200, 200, 429]
+    assert send("203.0.113.4", "/api/summary", {"facts": {}}) == 429  # まとめも Claude を呼ぶので同じ上限
+    assert send("203.0.113.5", "/api/step", {"facts": {}}) == 200  # 規則だけの判定し直しは数えない
+    assert len(app_mod._hits["203.0.113.3"]) == 0  # 全体で断った回は、接続元ごとの数を増やさない
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_rate_limit_forgets_idle_client_ips():
+    import time
+
+    from todoku import app as app_mod
+
+    # 接続元を変えながら送ると、来なくなった接続元の行が _hits に残り続けていた（T-037）。窓から外れて空になった行は消す
+    old = time.time() - app_mod.WINDOW - 1
+    for i in range(50):
+        app_mod._hits[f"198.51.100.{i}"].append(old)
+    app_mod._hits["203.0.113.8"].append(time.time())  # 窓の中に記録がある接続元は残す
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"fly-client-ip": "203.0.113.9"}).status_code == 200
+    assert sorted(app_mod._hits) == ["203.0.113.8", "203.0.113.9"]
+    assert len(app_mod._hits["203.0.113.8"]) == 1  # 消さなかった行の数は変えない
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_step_limit_counts_each_client_ip_apart_from_claude(monkeypatch):
+    from todoku import app as app_mod
+
+    # 聞き返し（/api/step）は合言葉なしで CPU を使うので、送り続けるとほかの人の画面が遅くなっていた（11/3 の安全点検の 7、T-051）。
+    # 接続元ごとのゆるい上限を掛ける。Claude を呼ぶ口の回数とは別に数え、互いに減らさない
+    monkeypatch.setattr(app_mod, "STEP_LIMIT", 2)
+    step = lambda ip: client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": ip}).status_code
+    assert [step("203.0.113.1"), step("203.0.113.1"), step("203.0.113.1")] == [200, 200, 429]
+    r = client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": "203.0.113.1"})
+    assert r.json()["detail"] == "しばらく時間をおいてから試してください"  # 画面は detail を問いの欄に出す
+    assert step("2001:db8:1:2::1") == 200  # 別の人は別に数える。IPv6 は /64 ごと（Claude を呼ぶ口と同じ決め方）
+    assert step("2001:db8:1:2::ffff") == 200
+    assert step("2001:db8:1:2::2") == 429
+    assert len(app_mod._hits) == 0 and len(app_mod._hits_all) == 0  # Claude を呼ぶ口の回数は減らさない
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"fly-client-ip": "203.0.113.1"}).status_code == 200
+    assert len(app_mod._step_hits["203.0.113.1"]) == 2  # 読み取りは聞き返しの数に入れない（断った回も積まない）
+
+
+def test_step_limit_ignores_fly_client_ip_off_fly(monkeypatch):
+    from todoku import app as app_mod
+
+    # Fly の外ではヘッダを見ない（T-042 と同じ決め方）。付けて送るだけで上限を外せないこと
+    monkeypatch.setattr(app_mod, "ON_FLY", False)
+    monkeypatch.setattr(app_mod, "STEP_LIMIT", 1)
+    step = lambda ip: client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": ip}).status_code
+    assert [step("203.0.113.1"), step("203.0.113.2")] == [200, 429]
+    assert sorted(app_mod._step_hits) == ["testclient"]
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_step_limit_window_and_idle_rows(monkeypatch):
+    import time
+
+    from todoku import app as app_mod
+
+    # 窓（STEP_WINDOW 秒）より前の回は数えない。来なくなった接続元の行は、窓ごとの見回しで消す
+    monkeypatch.setattr(app_mod, "STEP_LIMIT", 1)
+    old = time.time() - app_mod.STEP_WINDOW - 1
+    app_mod._step_hits["203.0.113.1"].append(old)
+    for i in range(50):
+        app_mod._step_hits[f"198.51.100.{i}"].append(old)
+    app_mod._step_hits["203.0.113.8"].append(time.time())  # 窓の中に記録がある接続元は残す
+    step = lambda ip: client.post("/api/step", json={"facts": {}}, headers={"fly-client-ip": ip}).status_code
+    assert step("203.0.113.1") == 200  # 窓の外の 1 回は数えないので、上限 1 でも通る
+    assert sorted(app_mod._step_hits) == ["203.0.113.1", "203.0.113.8"]
+    assert list(app_mod._step_hits["203.0.113.1"]) != [old] and len(app_mod._step_hits["203.0.113.1"]) == 1
+    assert step("203.0.113.8") == 429  # 窓の中の 1 回は数える
+    # 見回しのすぐ後（見回さない間）でも、窓の外の回は数えない（Claude を呼ぶ口の 10 分の窓で数えない）
+    monkeypatch.setattr(app_mod, "_step_swept", time.time())
+    app_mod._step_hits["203.0.113.2"].append(old)
+    assert step("203.0.113.2") == 200
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_rate_limit_survives_concurrent_requests(monkeypatch):
+    import threading
+    import time
+
+    from starlette.requests import Request
+
+    from todoku import app as app_mod
+
+    # 口は同期の関数でスレッドで動く。2 つが同時に recent() に入ると、両方が同じ古い記録を見て popleft し、
+    # 2 つ目が IndexError（500）になるか、1 つ目が積んだ記録を消して数え漏らしていた（T-039）
+    class SlowDeque(app_mod.deque):
+        def __getitem__(self, i):
+            v = super().__getitem__(i)
+            time.sleep(0.05)  # 読んだ後に止まり、別のスレッドを先に進ませる（読む前に止まると、鍵がなくても当たらない）
+            return v
+
+    monkeypatch.setattr(app_mod, "_hits_all", SlowDeque([time.time() - app_mod.WINDOW - 1]))
+    barrier = threading.Barrier(2)
+    errors = []
+
+    def send(ip):
+        req = Request({"type": "http", "method": "POST", "path": "/api/consult",
+                       "headers": [(b"fly-client-ip", ip.encode())], "client": ("127.0.0.1", 1)})
+        barrier.wait()
+        try:
+            app_mod.guard(req, costly=True)
+        except Exception as e:  # noqa: BLE001
+            errors.append(repr(e))
+
+    threads = [threading.Thread(target=send, args=(f"203.0.113.{n}",)) for n in (1, 2)]
+    for t in threads:
+        t.start()
+    for t in threads:
+        t.join(timeout=5)
+    assert errors == []
+    assert len(app_mod._hits_all) == 2  # 古い記録は消え、通った 2 回はどちらも残る
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_wrong_passphrase_does_not_use_up_the_whole_app(monkeypatch):
+    from todoku import app as app_mod
+
+    # 合言葉を間違えた回はアプリ全体に数えない。数えると、合言葉を知らない人が接続元を変えて送るだけで全員を止められる
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    monkeypatch.setattr(app_mod, "RATE_LIMIT_ALL", 1)
+    send = lambda word, ip: client.post(
+        "/api/consult", json={"text": DEMO}, headers={"fly-client-ip": ip, "x-aikotoba": word}).status_code
+    assert [send("himitsy", "203.0.113.1"), send("", "203.0.113.2")] == [401, 401]
+    assert send("himitsu", "203.0.113.3") == 200
+    assert send("himitsu", "203.0.113.4") == 429
+
+
+@pytest.mark.usefixtures("on_fly")
+def test_wrong_passphrase_counts_toward_rate_limit(monkeypatch):
+    from todoku import app as app_mod
+
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    monkeypatch.setattr(app_mod, "RATE_LIMIT", 3)
+    monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
+    send = lambda word, ip="203.0.113.1": client.post(
+        "/api/consult", json={"text": DEMO}, headers={"fly-client-ip": ip, "x-aikotoba": word}).status_code
+    # 間違えた回も数える。数えないと、合言葉を何度でも試せる（回数制限は手間を増やすだけの対策）
+    assert [send("himitsy"), send("himits"), send("")] == [401, 401, 401]
+    assert send("himitsu") == 429  # 上限に届いたら、合っていても断る
+    assert send("himitsu", ip="203.0.113.2") == 200  # 別の人は別に数える
+
+
+def test_passphrase_compare_takes_any_bytes(monkeypatch):
+    from todoku import app as app_mod
+
+    monkeypatch.setattr(app_mod, "_hits", app_mod.defaultdict(app_mod.deque))
+    # 中継は送られたバイトをそのまま渡し、Starlette は latin-1 で文字にする。ASCII でない文字でも 500 にしない
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": "ひみつ".encode()}).status_code == 401
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": b"himitsu"}).status_code == 200
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "ひみつ")  # 合言葉が日本語でも、UTF-8 のバイトで送れば通る
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": "ひみつ".encode()}).status_code == 200
+    assert client.post("/api/consult", json={"text": DEMO}, headers={"x-aikotoba": "ひみ".encode()}).status_code == 401
+
+
+def test_screen_keeps_aikotoba_header_safe():
+    # 画面（web/app.js）は合言葉をヘッダで送る。fetch は ISO-8859-1 にない文字をヘッダに入れられず、送る前に失敗する。
+    # 日本語を入れると「通信できませんでした」になり、保存した値のせいで、そのタブでは見本も動かなくなっていた（T-015）
+    import json
+    import re
+    import shutil
+    import subprocess
+    from pathlib import Path
+
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("node が無い")
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    func = re.search(r"^function aikotobaWord\(raw\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
+    cases = ["todoku-test", "  todoku-test ", "ｔｏｄｏｋｕ－ｔｅｓｔ", "あいことば", "café", "todoku　test", "", "　"]
+    run = f"{func}\nconsole.log(JSON.stringify({json.dumps(cases)}.map(aikotobaWord)))"
+    got = json.loads(subprocess.run([node, "-e", run], capture_output=True, text=True, check=True).stdout)
+    # 全角の英数字と全角の空白は半角に直して通す。日本語・ASCII でない文字は null（画面で断る）
+    assert got == ["todoku-test", "todoku-test", "todoku-test", None, None, "todoku test", "", ""]
+    # 送れない値を送らない：合言葉を入れる所（保存した値・欄）は aikotobaWord を通し、ヘッダはその値だけを付ける
+    assert 'aikotobaWord(sessionStorage.getItem("aikotoba") || "")' in js
+    assert 'aikotobaWord($("aikotoba").value)' in js
+    assert '"X-Aikotoba": aikotoba' not in js
+    assert len(re.findall(r"^\s+aikotoba = ", js, re.M)) == 2  # 宣言の後に入れる所は、上の 2 か所だけ
+
+
+def test_board_does_not_count_settled_programs_as_not_eligible():
+    # 見立ての帯：済んでいる・申請済み（結果待ち）の制度は「当てはまらない」の列にも、その増減にも数えない（T-022）。
+    # 祖母の見本で「要介護4」と答えると要介護認定が済んでいるになり、「当てはまらない制度 +1」と出て、駄目になった制度があるように読めた
+    import json
+    import re
+    import shutil
+    import subprocess
+    from pathlib import Path
+
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("node が無い")
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    consts = re.search(r"^// ---- いまの見立て ----\n(.*?)^const calm = ", js, re.S | re.M).group(1)  # 帯の列と置き場（DOM を使わない）
+    func = re.search(r"^function changeText\([^)]*\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
+    cases = [["ineligible", "done", "pending"], ["done"], ["pending"], ["ineligible", "ineligible"]]
+    run = f"""{consts}
+{func}
+const keys = BOARD.map(([key]) => key);
+const out = {json.dumps(cases)}.map((sts) => {{
+  const moved = sts.map((status, i) => ({{ id: `p${{i}}`, name: `制度${{i}}`, status }}));
+  const now = Object.fromEntries(moved.map((r) => [r.id, colOf(r.status)]));
+  return changeText(moved, now);
+}});
+console.log(JSON.stringify({{ out, cols: ["ineligible", "done", "pending"].map((s) => keys.includes(colOf(s)) ? colOf(s) : null) }}))"""
+    got = json.loads(subprocess.run([node, "-e", run], capture_output=True, text=True, check=True).stdout)
+    # 当てはまらないの列に置くのは ineligible だけ。済んでいる・結果待ちは列に置かない（列の数に入らない）
+    assert got["cols"] == ["no", None, None]
+    mixed, done, pending, two_no = got["out"]
+    assert mixed.count("当てはまらない制度") == 1 and "当てはまらない制度 +1" in mixed
+    assert "済んでいる制度 +1" in mixed and "申請済み・結果待ちの制度 +1" in mixed
+    assert done == "済んでいる制度 +1"
+    assert pending == "申請済み・結果待ちの制度 +1"
+    assert two_no == "当てはまらない制度 +2"
+
+
+def test_reading_card_is_gone_before_scrolling_to_what_was_read():
+    # 読み取った直後に、読み取ったことの欄へ送る（render → renderQuestion → revealThenAsk）。読み取り中の札を消すのがその後だと、
+    # 送った後に札の高さ（約 118px）ぶん中身が上へずれ、「相談の文章から読み取ったこと」の見出しが画面の上に切れた（T-023）
+    import json
+    import re
+    import shutil
+    import subprocess
+    from pathlib import Path
+
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("node が無い")
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    func = re.search(r"^async function consultWith\(text, call\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
+    run = f"""
+const hidden = {{}}, nodes = {{}}, seen = [];
+const $ = (id) => (nodes[id] ||= {{ disabled: false, kids: [], replaceChildren(...k) {{ this.kids = k; }} }});
+const show = (id, on = true) => {{ hidden[id] = !on; }};
+const said = [], say = (t) => {{ said.push(t); }};  // いつもある読み上げの領域 #status（T-030）
+const el = (tag, attrs, text) => text;
+const fresh = () => ({{}});
+const clearBoard = () => {{}};
+const forgetKeep = () => {{}};  // 結果を残すリンクをアドレス欄から外す（T-072）。動きは test_keep とブラウザで見る
+const document = {{ activeElement: null, body: {{}} }};  // 失敗したら押したボタンへ戻す（T-062）。動きは test_focus_returns_… とブラウザで見る
+const backTo = () => {{}};
+class GateError extends Error {{}}
+let state, resendAfterGate, renderFails = false;
+const renderExtracted = () => {{ seen.push(["extracted", hidden.reading]); }};
+const render = () => {{ seen.push(["render", hidden.reading]); if (renderFails) throw new Error("落ちた"); }};
+{func}
+(async () => {{
+  const data = {{ subject: "母", facts: {{}}, suggestions: [], engine: "fake", place: null }};
+  await consultWith("t", async () => data);
+  const ok = {{ seen: [...seen], reading: hidden.reading }};
+  await consultWith("t", async () => {{ throw new Error("通信できませんでした"); }});
+  const failed = {{ reading: hidden.reading, msg: $("reading").kids }};
+  renderFails = true;
+  await consultWith("t", async () => data);
+  const broke = {{ reading: hidden.reading, msg: $("reading").kids }};
+  console.log(JSON.stringify({{ ok, failed, broke, said }}));
+}})();
+"""
+    got = json.loads(subprocess.run([node, "-e", run], capture_output=True, text=True, check=True).stdout)
+    # 読み取ったことの欄を出す時も、送る時（render）も、読み取り中の札はもう消えている
+    assert got["ok"] == {"seen": [["extracted", True], ["render", True]], "reading": True}
+    # 読み取りに失敗したときは、札に知らせを出して見せる（受け取った後に落ちたときも）
+    assert got["failed"] == {"reading": False, "msg": ["通信できませんでした"]}
+    assert got["broke"] == {"reading": False, "msg": ["落ちた"]}
+    # 読み上げには #status で、読み取りの間は「読み取っています…」、読み取れたら空、失敗したらその知らせを伝える（T-030）
+    assert got["said"] == ["読み取っています…", "", "読み取っています…", "通信できませんでした", "読み取っています…", "", "落ちた"]
 
 
 def test_claude_failure_becomes_a_message(monkeypatch):
@@ -192,6 +621,33 @@ def test_passphrase_only_for_claude(monkeypatch):
     assert client.post("/api/consult", json={"text": DEMO}).status_code == 401
     assert client.post("/api/step", json={"facts": {}}).status_code == 200
     assert client.get("/api/samples").status_code == 200
+
+
+def test_real_claude_without_passphrase_closes_claude_routes(monkeypatch):
+    # 鍵があるのに合言葉がない（設定し忘れ）ときは、Claude を呼ぶ口を 503 で閉じ、見本と判定し直しは動かす
+    from todoku import app as app_mod
+
+    class RealLike:
+        name = "claude"
+
+        def extract(self, rules, text):
+            raise AssertionError("合言葉なしで Claude を呼んだ")
+
+        def summarize(self, rules, subject, shown):
+            raise AssertionError("合言葉なしで Claude を呼んだ")
+
+    monkeypatch.setattr(app_mod, "CLAUDE", RealLike())
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "")
+    res = client.post("/api/consult", json={"text": DEMO})
+    assert res.status_code == 503 and "合言葉" in res.json()["detail"]
+    assert client.post("/api/summary", json={"facts": {}}).status_code == 503
+    assert len(app_mod._hits_all) == 0 and not any(app_mod._hits.values())  # 断った回は数えない
+    assert client.post("/api/step", json={"facts": {}}).status_code == 200
+    sample_id = client.get("/api/samples").json()[0]["id"]
+    assert client.post("/api/sample", json={"id": sample_id}).status_code == 200
+    # 合言葉を設定すれば、いつもどおり合言葉を求める
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    assert client.post("/api/consult", json={"text": DEMO}).status_code == 401
 
 
 def test_samples_without_claude(monkeypatch):
@@ -239,6 +695,49 @@ def test_other_cities_see_their_own_offices():
     assert "町田" not in yokohama["apply"]["where"] and "phone" not in yokohama["apply"]
     assert all("city.machida.tokyo.jp" not in s["url"] for s in yokohama["sources"])
     assert "町田市" in machida["apply"]["where"]
+
+
+def test_household_check_shows_no_machida_rule_elsewhere():
+    # 「日中はひとり」の町田市の目安（週3日以上・1日6時間以上）は、町田市の救急通報システムの札にだけ書く。
+    # 事実の確かめ方に書くと、横浜市の見守り機器補助の札や、横浜市の人への問いにも出てしまったため（T-005）
+    facts = {"age_band": "age_75_plus", "residence": "home"}
+    def step(code, **extra):
+        return client.post("/api/step", json={"facts": facts, "municipality": code, "asked": 99, **extra}).json()
+    yokohama = step("141003")
+    mimamori = next(r for r in yokohama["results"] if r["id"] == "yokohama-mimamori")
+    checks = [m["check"] for m in mimamori["missing"] if m["fact"] == "household"]
+    assert checks and all("町田" not in c for c in checks)
+    unconfirmed = step("141003", suggestions={"household": "alone"})["unconfirmed"]
+    assert [u["fact"] for u in unconfirmed] == ["household"] and "町田" not in unconfirmed[0]["check"]
+    # 町田市では、救急通報システムの札に目安が残る
+    tsuho = next(r for r in step("132098")["results"] if r["id"] == "machida-kyukyu-tsuho")
+    assert any("週に3日以上" in t and "6時間以上" in t for t in tsuho["at_application"])
+
+
+def test_affects_name_only_programs_on_the_result_screen():
+    # 「この答えで判定が決まる制度」には、結果の画面に出る制度だけを挙げる（T-007）。
+    # 横浜市では型（配食・見守りなど）を判定はしたまま結果から外すので、問いの一覧に名前だけ出ると食い違う
+    def visible(q: dict, shown: set[str]) -> None:
+        assert set(q["affects_ids"]) <= shown, (q["fact"], set(q["affects_ids"]) - shown)
+        assert len(q["affects"]) == len(q["affects_ids"])
+
+    for start in ({}, {"age_band": "age_75_plus", "residence": "home"}):
+        body = {"facts": dict(start), "suggestions": {"household": "alone"}, "municipality": "141003", "asked": 0}
+        for _ in range(5):
+            data = client.post("/api/step", json=body).json()
+            shown = {r["id"] for r in data["results"]}
+            if data["question"] is None:
+                assert data["unconfirmed"]
+                for u in data["unconfirmed"]:
+                    visible(u, shown)
+                break
+            q = data["question"]
+            visible(q, shown)
+            body["facts"][q["fact"]] = DONT_KNOW
+            body["suggestions"].pop(q["fact"], None)
+            body["asked"] += 1
+        else:
+            pytest.fail("聞き返しが終わらない")
 
 
 def test_yes_no_reasons_carry_no_value():
@@ -300,8 +799,7 @@ def test_unconfirmed_reads_are_offered_on_the_result():
 
 
 def test_pending_certification_is_marked_on_dependents():
-    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "applying",
-             "plans_home_modification": True}
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "applying"}
     data = client.post("/api/step", json={"facts": facts, "asked": 99}).json()
     nintei = next(r for r in data["results"] if r["id"] == "kaigo-nintei")
     assert nintei["status"] == "pending" and nintei["status_label"] == "申請済み・結果待ち"
@@ -324,6 +822,39 @@ def test_large_bodies_are_refused():
     many = {"facts": {f"k{i}": True for i in range(65)}}
     assert client.post("/api/step", json=many).status_code == 422
     assert client.post("/api/step", json={"facts": {"age_band": "age_75_plus"}}).status_code == 200
+
+
+SECRET = "ひみつの相談"
+BROKEN = [  # 対になっていないサロゲート（JSON の \ud800 と、生のバイト）。subject は 12 字で切られる前に残る短さにする
+    ("/api/consult", b'{"text": "' + SECRET.encode() + b'\\ud800"}'),
+    ("/api/consult", b'{"text": "' + SECRET.encode() + b'\xed\xa0\x80"}'),
+    ("/api/consult", b'{"text": "' + SECRET.encode() + b'", "municipality": "13\\ud800"}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'\\ud800", "facts": {"care_level": "care2"}, "asked": 1}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'", "municipality": "13\\ud800"}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'", "facts": {"care_level": "\\ud800"}}'),
+    ("/api/step", b'{"subject": "' + SECRET.encode() + b'", "suggestions": {"\\ud800": true}}'),
+    ("/api/summary", b'{"subject": "' + SECRET.encode() + b'\\ud800", "facts": {"care_level": "care2"}}'),
+    ("/api/sample", b'{"id": "' + SECRET.encode() + b'\\ud800"}'),
+]
+
+
+@pytest.mark.parametrize("path,raw", BROKEN)
+def test_broken_characters_are_refused_without_echo(path, raw):
+    # 壊れた文字で 500 になると、uvicorn のトレースバックに相談文の全文が出て fly logs に残った（Managed Agent の指摘、T-002）。
+    # トレースバックが出るのは例外がアプリの外に出たときだけ。client は例外をそのまま投げるので、ここで 4xx が返れば出ていない
+    res = client.post(path, content=raw, headers={"content-type": "application/json"})
+    assert res.status_code == 422
+    assert SECRET not in res.text
+    assert isinstance(res.json()["detail"], str)  # 画面（app.js）は detail をそのまま文として出す
+
+
+def test_validation_errors_do_not_echo_the_text():
+    # 長すぎる相談文も、送った文を返さない。detail は画面にそのまま出せる 1 文にする
+    res = client.post("/api/consult", json={"text": SECRET * 400})
+    assert res.status_code == 422 and SECRET not in res.text and isinstance(res.json()["detail"], str)
+    # 壊れていない文字（絵文字・サロゲートの対）はふつうに通る
+    ok = client.post("/api/step", json={"subject": "母😀", "facts": {"age_band": "age_75_plus"}})
+    assert ok.status_code == 200
 
 
 def test_machida_hides_the_types():
@@ -394,6 +925,25 @@ def test_yokohama_shows_its_programs_and_one_type():
     sos = next(r for r in data["results"] if r["id"] == "yokohama-sos")
     assert all("city.yokohama.lg.jp" in s["url"] for s in sos["sources"])
     assert "町田" not in next(r for r in data["results"] if r["id"] == "kaigo-nintei")["apply"]["where"]
+
+
+def test_type_place_reason_matches_the_cities_listed_one_by_one():
+    # 型の住所の条件の文は、市の制度を一つずつ示している市（RULES_CITY）を全部名指す。横浜市でも出す型は、出す訳も書く（指摘 R-6）
+    from todoku.app import RULES, RULES_CITY
+    from todoku.engine import evaluate
+    names = [rules_mod.LEVELS[level] for level in RULES_CITY]
+    for r in evaluate(RULES, {}).values():
+        if r.program.level != "local":
+            continue
+        label = next(leaf.label for leaf in r.leaves if leaf.fact == "lives_in_machida")
+        assert all(n in label for n in names), f"{r.program.id}: {label}"
+        assert all(f"{rules_mod.LEVELS[c]}の" in label.split("。", 1)[-1] for c in r.program.shown_in), f"{r.program.id}: {label}"
+    # 横浜市の人に出る成年後見の型の理由（画面に出る文）
+    facts = {"age_band": "age_75_plus", "residence": "home", "dementia_diagnosis": True}
+    data = client.post("/api/step", json={"facts": facts, "municipality": "141003"}).json()
+    koken = next(r for r in data["results"] if r["id"] == "local-koken")
+    place = next(x for x in koken["reasons"] if x["label"].startswith("町田市以外にお住まい"))
+    assert place["state"] == "T" and "横浜市" in place["label"] and "この型で示します" in place["label"]
 
 
 def test_place_question_counts_every_city():
@@ -494,3 +1044,307 @@ def test_place_is_offered_on_the_result_when_not_asked():
     data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
                                           "asked": 99}).json()
     assert not [u for u in data["unconfirmed"] if u["fact"] in places]
+def test_care_level_question_names_the_person():
+    # 認定の問いにも主語を書き、相談文の呼び方に置き換える（指摘 P-6。見本「退院した母」では最初の問いになる）
+    start = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    q = start["question"]
+    assert start["subject"] == "お母さま" and q["fact"] == "care_level" and q["confirm"] is False
+    assert q["text"].startswith("お母さまは、") and "ご本人" not in q["text"]
+    # 「わからない」と答えた後の「まだ確かめていないこと」の問いも同じ呼び方
+    after = client.post("/api/step", json={"facts": {**start["facts"], "care_level": DONT_KNOW},
+                                           "suggestions": start["suggestions"], "subject": start["subject"],
+                                           "asked": 1}).json()
+    missing = [m["question"] for r in after["results"] for m in r["missing"] if m["fact"] == "care_level"]
+    assert missing and all(m.startswith("お母さまは、") for m in missing)
+
+
+# ご本人のことを聞くのに主語が無かった問い（T-025）。介護をする家族に聞く問い（caregiver_employee・fire_risk）と、
+# 家の工事や福祉用具を考えているかの問いは、聞く相手が家族なので主語を書かない
+# shortstay_or_facility は fix/gold-rules が「予定の事実」として外したので、T-070 で一覧から外した
+PERSON_FACTS = ("uses_care_services", "high_medical_costs",
+                "hearing_certifiable", "incontinence_bedding")
+
+
+def test_person_questions_name_the_person():
+    for fid in PERSON_FACTS:
+        assert rules_mod.load().facts[fid].question.startswith("ご本人は、"), fid
+    # 見本「退院した母」のデモの道：認定を「受けていない」と答えると、2 問目は介助の要る場面の問い（fix/gold-rules の裁定 p-prereq の後。
+    # T-070 までは医療費の問いだった）で、相談文の呼び方で出る
+    start = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    assert start["subject"] == "お母さま" and start["question"]["fact"] == "care_level"
+    second = client.post("/api/step", json={"facts": {**start["facts"], "care_level": "none"},
+                                            "suggestions": start["suggestions"], "subject": start["subject"],
+                                            "asked": 1}).json()["question"]
+    assert second["fact"] == "needs_daily_help"
+    assert second["text"].startswith("お母さまは、") and "ご本人" not in second["text"]
+    # 「わからない」と答え続けた後の「まだ確かめていないこと」にも、5 問とも同じ呼び方で出る
+    facts = {**start["facts"], "care_level": DONT_KNOW}
+    data = client.post("/api/step", json={"facts": facts, "suggestions": start["suggestions"],
+                                          "subject": start["subject"], "asked": 1}).json()
+    asked = 1
+    while data.get("question") and asked < 30:
+        asked += 1
+        facts = {**facts, data["question"]["fact"]: DONT_KNOW}
+        data = client.post("/api/step", json={"facts": facts, "suggestions": start["suggestions"],
+                                              "subject": start["subject"], "asked": asked}).json()
+    assert not data.get("question")
+    missing = {m["fact"]: m["question"] for r in data["results"] for m in r["missing"] if m["fact"] in PERSON_FACTS}
+    assert set(missing) == set(PERSON_FACTS)
+    assert all(t.startswith("お母さまは、") and "ご本人" not in t for t in missing.values()), missing
+
+
+def test_read_facts_do_not_carry_unpersonalized_questions():
+    # 読み取ったこと（extracted）と分かっていること（known）は名前と値だけを返す。問いの文を持たせると、
+    # 相談文の呼び方に置き換えないまま「ご本人は、…」が API に出ていたため（T-027。画面はこの欄を使っていなかった）
+    for s in client.get("/api/samples").json():
+        data = client.post("/api/sample", json={"id": s["id"]}).json()
+        assert data["subject"] != "ご本人" and data["extracted"] and data["known"], s["id"]
+        for f in data["extracted"]:
+            assert set(f) == {"fact", "name", "value", "label", "confidence", "evidence"}, (s["id"], f)
+        for f in data["known"]:
+            assert set(f) == {"fact", "name", "value", "label"}, (s["id"], f)
+        assert "ご本人" not in json.dumps(data["extracted"] + data["known"], ensure_ascii=False), s["id"]
+
+
+def test_unread_facts_can_be_answered_on_the_result():
+    # 相談の文から読み取れなかった事実（生活保護など）にも、結果の画面で答えられる（T-014）
+    facts = {"lives_in_machida": True, "age_band": "age_75_plus", "residence": "home", "care_level": "care4",
+             "uses_diapers": DONT_KNOW}
+    suggestions = {"household": "alone"}
+    asking = client.post("/api/step", json={"facts": facts, "suggestions": suggestions}).json()
+    assert asking["question"] is not None and asking["unread"] == []  # 聞き返しの間は出さない
+    body = {"facts": facts, "suggestions": suggestions, "subject": "おばあさま", "asked": 99}
+    done = client.post("/api/step", json=body).json()
+    assert done["question"] is None
+    unread = [q["fact"] for q in done["unread"]]
+    assert "on_welfare" in unread
+    # 分かっている事実・「わからない」と答えた事実・確信の低い読み取り（unconfirmed で聞く）は入れない
+    assert not set(unread) & (set(facts) | set(suggestions)) and len(unread) == len(set(unread))
+    assert [q["fact"] for q in done["unconfirmed"]] == ["household"]
+    shown = {r["id"] for r in done["results"]}
+    for q in done["unread"]:
+        assert q["affects_ids"] and set(q["affects_ids"]) <= shown
+        assert "ご本人" not in q["text"]
+    welfare = next(q for q in done["unread"] if q["fact"] == "on_welfare")
+    assert welfare["text"] == "おばあさまは生活保護を受けていますか？"
+    # 答えても聞き返しの数は増えず、答えた事実は一覧から消える
+    again = client.post("/api/step", json={**body, "facts": {**facts, "on_welfare": False}}).json()
+    assert again["question"] is None
+    assert "on_welfare" not in [q["fact"] for q in again["unread"]]
+
+
+def test_tap_targets_are_at_least_44px():
+    # 高齢の方がスマホで押し違えないよう、押す所は高さ 44px 以上にする（T-029。実際の大きさはブラウザで測った）。
+    # 選ぶ札・文字のボタン・畳む見出し・ページ下のリンクは min-height か上下の余白で、文の中の電話番号は
+    # 行の高さを変えずに ::after で押せる範囲だけを上下に広げる。大きいボタン（.primary など）は元から 56px。
+    import re
+    from pathlib import Path
+
+    css = (Path(__file__).resolve().parents[1] / "web" / "style.css").read_text(encoding="utf-8")
+
+    def rule(selector):
+        m = re.search(r"^" + re.escape(selector) + r" \{([^}]*)\}", css, re.M)
+        assert m, selector
+        return m.group(1)
+
+    for sel in (".chip", ".link", ".foot a", ".primary, .secondary, .option", "select"):
+        h = re.search(r"min-height: (\d+)px", rule(sel))
+        assert h and int(h.group(1)) >= 44, sel
+    # 「確かめ方」などの畳む見出し：文字 15px × 行の高さ 1.75 ＋ 上下の余白 9px で 44px
+    assert "padding: 9px 0" in rule("details summary")
+    assert "position: relative" in rule(".tel")
+    assert "inset: -14px 0" in rule(".tel::after")
+
+
+def test_select_draws_its_own_look_so_safari_keeps_48px():
+    # 上の min-height の検査は CSS の文を読むだけ。Safari（WebKit）は既定の見た目の select に min-height を効かせず、
+    # 高さ 23px で描いていた（T-064。Playwright の WebKit で測った）。appearance: none で自分で描き、
+    # 都道府県を選ぶまで押せない #city（disabled）でも矢印が消えないよう、背景は background-color で塗る。
+    import re
+    from pathlib import Path
+
+    css = (Path(__file__).resolve().parents[1] / "web" / "style.css").read_text(encoding="utf-8")
+    body = re.search(r"^select \{([^}]*)\}", css, re.M).group(1)
+    assert "-webkit-appearance: none" in body and " appearance: none" in body
+    assert "background-image: linear-gradient" in body
+    disabled = re.search(r"^select:disabled \{([^}]*)\}", css, re.M).group(1)
+    assert "background:" not in disabled and "background-color:" in disabled
+
+
+def test_small_text_is_at_least_14px():
+    # 帯の注と結果の札（pill・tag）は 14px 以上（T-031。ブラウザで測ると、結果のカードの高さは 390 で 8 枚の合計 +6px、
+    # 1280 で 0px）。帯の列の名前は D-0012 で聞いている（B が 14px。A なら下の .col-head の 1 行を 11 に戻す）。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    css = (root / "style.css").read_text(encoding="utf-8")
+
+    def size(selector):
+        m = re.search(r"^" + re.escape(selector) + r" \{[^}]*font-size: (\d+)px", css, re.M)
+        assert m, selector
+        return int(m.group(1))
+
+    for sel in (".board-card .note", ".tag", ".pill"):
+        assert size(sel) >= 14, sel
+    assert size(".col-head") >= 14
+    # 14px では 390 の 4 列で 4 字までしか並ばないので、列の名前は言葉の切れ目でだけ折り返す
+    assert "display: inline-block" in re.search(r"^\.col-head \.ph \{([^}]*)\}", css, re.M).group(1)
+    js = (root / "app.js").read_text(encoding="utf-8")
+    board = re.search(r"const BOARD = \[(.*?)\n\];", js, re.S).group(1)
+    rows = re.findall(r'\["(\w+)", "([^"]+)", "[^"]+", \[([^\]]*)\]\]', board)
+    assert len(rows) == 4
+    for key, label, parts in rows:
+        assert "".join(re.findall(r'"([^"]+)"', parts)) == label, key
+    assert 'parts.map((t) => el("span", { class: "ph" }, t))' in js
+
+
+def test_screen_reader_status_and_focus_after_buttons_vanish():
+    # 読み上げとキーボード（T-030。動きはブラウザで確かめた。VoiceOver の実機では確かめていない）。
+    # (1) 押したボタンが消える所（結果の画面が出たとき・「まだ確かめていないこと」に答えたとき・「ほか N 件」）で
+    #     フォーカスを body に落とさず、次に読む所へ移す。
+    # (2) 問いが変わるたびに選択肢まで読み上げないよう、#ask は aria-live にせず、問いの文へのフォーカスの移動で伝える。
+    # (3) 「読み取っています…」は、hidden を外すのと同時に出す領域ではなく、いつもある role=status の領域で伝える。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    html = (root / "index.html").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+    css = (root / "style.css").read_text(encoding="utf-8")
+
+    def tag(id_):
+        m = re.search(r'<[a-z]+ id="' + id_ + r'"[^>]*>', html)
+        assert m, id_
+        return m.group(0)
+
+    assert "aria-live" not in tag("ask") and "aria-live" not in tag("reading")
+    status = tag("status")
+    assert 'role="status"' in status and "hidden" not in status
+    # どの section の中でもなく main の直下に置く（section ごと hidden になると、読み上げの領域として働かない）
+    assert re.search(r'<main class="wrap">\s*(<!--[^>]*-->\s*)?<p id="status"', html)
+    sr = re.search(r"^\.sr-only \{([^}]*)\}", css, re.M)
+    assert sr and "display: none" not in sr.group(1) and "visibility" not in sr.group(1)
+    assert 'say("読み取っています…")' in js and "say(e.message)" in js
+    # 結果の画面が出たら先頭の見出しへ、答えたら同じ位置に来た問いへ、「ほか N 件」は開いた中身へ
+    assert "focusOn(resultHeading())" in js
+    assert "state.laterAt = laterSpots().indexOf(" in js
+    assert 'focusOn(rest.querySelector("h3"))' in js and 'focusOn(rest.querySelector("summary"))' in js
+    assert "more.remove(); }" not in js  # 消すだけで、フォーカスを移さないボタンを残さない
+
+
+def test_focus_returns_to_pressed_button_after_failed_send():
+    # 送る間は押したボタンを止めるので、Chrome ではフォーカスが body に落ちる。成功すれば次の問い・結果の見出しへ移すが、
+    # 失敗してボタンを戻したときは body のままで、キーボード・読み上げの人は先頭から辿り直していた（T-062。動きはブラウザで確かめた）。
+    # 失敗したら、止めたボタンを戻した後で押したボタンへ戻す。合言葉の欄へ移したときなど、body でなければ動かさない。
+    import re
+    from pathlib import Path
+
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+
+    def body(name):
+        m = re.search(r"^(?:async )?function " + name + r"\(.*?^\}", js, re.M | re.S)
+        assert m, name
+        return m.group(0)
+
+    back = body("backTo")
+    assert "document.activeElement === document.body" in back and "node !== document.body" in back
+    # 問いの欄・結果の画面（step）：押したボタンを覚えてから止め、失敗なら止めたボタンを戻した後で戻す
+    step = body("step")
+    assert step.index("const pressed = document.activeElement") < step.index("setBusy(true)")
+    fin = step[step.index("} finally {"):]
+    assert fin.index("setBusy(false)") < fin.index("backTo(pressed)")
+    # 相談を送るボタン（consultWith）
+    consult = body("consultWith")
+    assert consult.index("const pressed = document.activeElement") < consult.index('$("send").disabled = true')
+    err = consult[consult.index("} catch (e) {"):]
+    assert err.index('$("send").disabled = false') < err.index("backTo(pressed)") < err.index("return;")
+
+
+def test_focus_moves_on_after_aikotoba_is_used():
+    # 「合言葉を使う」（Enter も同じ）は合言葉の欄ごと隠すので、押したボタン・欄からフォーカスが body に落ちていた（T-063。動きはブラウザで確かめた）。
+    # 送り直すなら送るボタンへ移してから送る（consultWith がそれを押したボタンとして覚え、失敗したらそこへ戻す）。書く前なら相談の欄へ。
+    import re
+    from pathlib import Path
+
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    handler = re.search(r'^\$\("gate-ok"\)\.addEventListener\("click", \(\) => \{\n.*?^\}\);', js, re.M | re.S).group(0)
+    after = handler[handler.index('show("gate", false);'):]
+    resend = after.index("if (resendAfterGate)")
+    assert resend < after.index('$("send").focus();') < after.index("send();")
+    assert after.index("send();") < after.index('else $("text").focus();')
+    # 合言葉の欄の Enter は既定の動きを止めてから押す。止めないと、keydown の中で移した相談の欄に改行が 1 つ入っていた
+    enter = re.search(r'^\$\("aikotoba"\)\.addEventListener\("keydown", .*$', js, re.M).group(0)
+    assert enter.index("ev.preventDefault();") < enter.index('$("gate-ok").click();')
+
+
+def test_one_phone_number_per_paragraph():
+    # 電話番号の押せる範囲は ::after で上下 14px 広げている（T-029）。1 つの段落で続く行に番号が並ぶと、行の間隔（約 30px）
+    # より範囲が広く、上の番号の少し下を押すと下の番号に電話がかかった（390px の高額療養費・高額介護合算療養費。T-032）。
+    # 画面は「／」で区切って 1 件ずつ段落に分けるので、規則の phone は「／」で区切った 1 件に番号が 1 つまでにする。
+    import re
+    from pathlib import Path
+
+    import yaml
+
+    root = Path(__file__).resolve().parents[1]
+    js = (root / "web" / "app.js").read_text(encoding="utf-8")
+    pattern = re.search(r"text\.matchAll\(/(.+?)/g\)", js).group(1)  # telLinks が番号と見なす形
+    phones = {}
+    for f in sorted((root / "rules" / "programs").glob("*.yaml")):
+        phone = (yaml.safe_load(f.read_text(encoding="utf-8")).get("apply") or {}).get("phone")
+        if phone:
+            phones[f.stem] = phone
+    split = {k: v.split("／") for k, v in phones.items()}
+    assert all(len(re.findall(pattern, part)) <= 1 for parts in split.values() for part in parts), split
+    assert len(split["kogaku-gassan"]) == 3 and len(split["kogaku-ryoyohi"]) == 2  # 分けた後も 1 件ずつに番号が残る
+    assert all(re.search(pattern, part) for k in ("kogaku-gassan", "kogaku-ryoyohi") for part in split[k])
+    # カードは phoneViews で「／」ごとに段落を作り、番号の並ぶ文字列をそのまま 1 つの段落に入れない
+    assert re.search(r'^function phoneViews\(phone\) \{\n\s+return phone\.split\("／"\)\.map\(\(part\) => el\("p", \{\}, "電話：", telLinks\(part\)\)\);', js, re.M)
+    assert "...phoneViews(r.apply.phone)" in js
+    assert "telLinks(r.apply.phone)" not in js
+
+
+def test_gate_sits_below_samples_and_is_not_the_loudest_button():
+    # 最初の画面で、合言葉の欄を見本より上の、いちばん目立つ所に出さない（T-044）。
+    # 審査などで合言葉を持たない人は見本しか通れないので、見本のボタンを合言葉の欄より上に置き、
+    # 塗りの大きいボタン（.primary）を見本より上に置かない。欄は相談の文の前に残す（書き始める前に要ると分かるように）。
+    # 位置は 1280・390 の画面でも測った（$OPS/shots/T-044-*）。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    html = (root / "index.html").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+
+    at = {k: html.index(f'id="{k}"') for k in ("input", "samples", "sample-list", "gate", "text", "send")}
+    assert at["input"] < at["samples"] < at["sample-list"] < at["gate"] < at["text"] < at["send"]
+    gate_ok = re.search(r'<button[^>]*id="gate-ok"[^>]*>', html).group(0)
+    assert "primary" not in gate_ok
+    assert 'class="primary"' not in html[: at["samples"]]
+    # 見本は合言葉の欄より上にあるので、「下の見本」と書かない
+    assert "下の見本" not in html and "下の見本" not in js
+
+
+def test_print_puts_cards_on_paper_and_leaves_controls_out():
+    # 結果の画面を印刷すると、畳んだ札（details）の中身が紙に出ず、入力の欄・見本・合言葉の欄が 4 ページ刷られていた
+    # （T-066。Chrome の page.pdf で、申請先・持ち物・出典の見出しが 0 件）。beforeprint で札を開き、afterprint で
+    # 開く前に戻す。入力・問い・帯・ボタンは結果の画面のときだけ（html.print-result）紙から外す。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    css = (root / "style.css").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+    m = re.search(r"^@media print \{\n(.*?)^\}", css, re.M | re.S)
+    assert m, "@media print"
+    block = m.group(1)
+    for sel in ("#input", "#board", "#ask", "#later", "#again"):
+        assert f".print-result {sel}" in block, sel
+    assert ".print-result #result button:not(.link) { display: none; }" in block
+    assert ".prog > summary { break-inside: avoid; }" in block
+    before = re.search(r'addEventListener\("beforeprint", \(\) => \{(.*?)\n\}\);', js, re.S).group(1)
+    after = re.search(r'addEventListener\("afterprint", \(\) => \{(.*?)\n\}\);', js, re.S).group(1)
+    assert 'classList.toggle("print-result"' in before and 'querySelectorAll("details:not([open])")' in before
+    assert "d.open = true" in before
+    assert "d.open = false" in after and 'classList.remove("print-result")' in after
