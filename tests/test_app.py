@@ -232,6 +232,32 @@ def test_entry_text_names_every_place_with_rules():
         assert "だけ" not in text, f"{where} が範囲を狭く書いている：{text}"
 
 
+def test_entry_text_counts_match_rules_and_municipalities():
+    """入口・README の冒頭の「全国の市区町村（1,741）」「市区町村の事業 5 種類」が、
+    web/municipalities.json と規則から数えた数と合うか（11/4 T-080a）。
+
+    総務省のコード表には北方領土の 6 村（01695〜01700）も載っているので、それを除いて数える。
+    """
+    import re
+    from pathlib import Path
+    from todoku.app import WEB_DIR
+
+    data = json.loads((WEB_DIR / "municipalities.json").read_text(encoding="utf-8"))
+    northern = {"016951", "016969", "016977", "016985", "016993", "017001"}
+    codes = [code for pref in data["prefectures"] for code, _ in pref["cities"]]
+    assert northern <= set(codes)
+    n_cities = len(set(codes) - northern)
+    n_types = sum(1 for p in rules_mod.load().programs.values() if p.level == "local")
+    html = client.get("/").text
+    lead = re.search(r'<p class="lead">(.*?)</p>', html).group(1)
+    desc = re.search(r'<meta name="description" content="([^"]*)"', html).group(1)
+    readme_first = (Path(__file__).resolve().parents[1] / "README.md").read_text(encoding="utf-8").split("\n\n", 2)[1]
+    for where, text in (("lead", lead), ("description", desc), ("README", readme_first)):
+        assert f"全国の市区町村（{n_cities:,}）" in text, where
+        assert f"市区町村の事業 {n_types} 種類" in text, where
+        assert "全国の実施率" in text, where
+
+
 @pytest.mark.usefixtures("on_fly")
 def test_rate_limit_counts_each_client_ip(monkeypatch):
     from todoku import app as app_mod
