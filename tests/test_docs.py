@@ -202,6 +202,16 @@ def test_readme_staff_use_section():
     assert "確かめたことは、まだありません" in section
 
 
+def test_readme_staff_copy_points_to_the_centers_privacy_rules():
+    """「印刷を職員の控えにする」が、控えを残してよいと言い切らず、センターの個人情報の決まりに任せるか（11/5 T-099、T-089 の心配）。
+
+    紙の控えも「この結果を残す」のリンク（認定の区分などの答えが入る）もご本人の情報。とどくは包括での記録の扱いを確かめていない。
+    """
+    section = README.split("\n## 包括の職員が相談を受けながら使うとき\n", 1)[1].split("\n## ", 1)[0]
+    item = next(line for line in section.splitlines() if line.startswith("- **印刷を職員の控えにする**："))
+    assert "ご本人の情報" in item
+    assert "個人情報の取り扱いの決まりに従って" in item
+
 def test_readme_says_ai_answers_need_not_be_taken_on_trust():
     """「判定は規則、言葉は Claude」の節が、AI の答えをそのまま信じなくてよい作りを 1 文でまとめるか（11/5 T-090、T-078 の候補 #5）。
 
