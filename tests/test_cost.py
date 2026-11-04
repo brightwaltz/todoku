@@ -197,6 +197,23 @@ def test_silver_pass_bring_warns_about_the_provisional_notice_and_livelihood_aid
     assert "生活扶助" in welfare
 
 
+def test_silver_pass_bring_lists_the_id_documents_on_the_official_page():
+    """本人確認の書類（T-098、2026-11-05 に silver-pass.tokyo/obtaining/ の❶で照らした）。
+
+    頁の書類はマイナンバーカード・運転免許証（運転経歴証明書でもよい）で、介護保険被保険者証や
+    資格確認証なども使える（詳細は専用電話）。1,000円パスは生活扶助の受給証明書でもよい。
+    運転免許もマイナンバーカードも無い人が多いので、介護保険の被保険者証が書いてあること。
+    代理人は自分の本人確認の書類も持っていく（頁の冒頭）。
+    """
+    bring = RULES.programs["tokyo-silver-pass"].bring
+    ident = next(b for b in bring if b.startswith("本人確認の書類"))
+    for word in ("マイナンバーカード", "運転免許証", "運転経歴証明書", "介護保険の被保険者証", "専用電話"):
+        assert word in ident, word
+    assert "1,000円で買う人" in ident and "生活扶助" in ident
+    proxy = next(b for b in bring if b.startswith("代理人"))
+    assert "代理人の本人確認の書類" in proxy
+
+
 def test_silver_pass_notes_the_145_man_yen_case_for_salary_income():
     """申請のときの注（T-094、2026-11-05 に東京都福祉局の「シルバーパスについて」の頁で照らした）。
 
