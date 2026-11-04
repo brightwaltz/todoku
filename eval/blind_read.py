@@ -10,6 +10,7 @@
 
 使い方（鍵は先生が `!` で渡す。費用がかかる）：
   uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py facts --max-usd 1
+  uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py facts --facts needs_daily_help --max-usd 1   （11/4：裁定のあとに足す事実）
   uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py read --model claude-fable-5-1 --programs 1,11 --label pilot --max-usd 3
   uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py read --model claude-sonnet-5-5 --programs all --label main --max-usd 8
 結果は eval/out/blind/（.gitignore 済み。町田市の引用を含むのでリポジトリに入れない）。
@@ -117,10 +118,10 @@ def read_schema(case_ids: list[str]) -> dict:
             "required": ["judgments"], "additionalProperties": False}
 
 
-def facts_schema(case_ids: list[str]) -> dict:
+def facts_schema(case_ids: list[str], facts: list[str] = FACTS) -> dict:
     ans = {"type": "string", "enum": list(FACT_ANSWERS)}
-    props = {"case": {"type": "string", "enum": case_ids}, **{f: ans for f in FACTS},
-             **{f"{f}_evidence": {"type": "string"} for f in FACTS}}
+    props = {"case": {"type": "string", "enum": case_ids}, **{f: ans for f in facts},
+             **{f"{f}_evidence": {"type": "string"} for f in facts}}
     item = {"type": "object", "properties": props, "required": list(props), "additionalProperties": False}
     return {"type": "object", "properties": {"answers": {"type": "array", "items": item}},
             "required": ["answers"], "additionalProperties": False}
@@ -162,18 +163,25 @@ def cmd_facts(args) -> None:
     cases = load_cases()
     defs = yaml.safe_load((ROOT / "rules" / "facts.yaml").read_text(encoding="utf-8"))
     defs = defs.get("facts", defs)
-    qs = "\n".join(f"- {f}：{defs[f]['question']}（参考：{defs[f].get('check', '')}）" for f in FACTS)
+    facts = args.facts.split(",") if args.facts else FACTS
+    unknown = [f for f in facts if f not in defs]
+    if unknown:
+        sys.exit(f"rules/facts.yaml にない事実：{'・'.join(unknown)}")
+    already = [c["id"] for c in cases for f in facts if f in c["answers"]]
+    if already:
+        sys.exit(f"もう答えのある事例があります（上書きしない）：{sorted(set(already))}")
+    qs = "\n".join(f"- {f}：{defs[f]['question']}（参考：{defs[f].get('check', '')}）" for f in facts)
     content = [{"type": "text", "text": f"問い\n{qs}\n\n{cases_block(cases)}"}]
     ids = [c["id"] for c in cases]
     client = make_client()
-    data, msg = call(client, model, FACTS_SYSTEM, content, facts_schema(ids), 32000)
+    data, msg = call(client, model, FACTS_SYSTEM, content, facts_schema(ids, facts), 32000)
     usd = cost_of(model, msg.usage)
     if usd > args.max_usd:
         print(f"  上限 {args.max_usd} ドルを超えた（{usd:.3f} ドル）", file=sys.stderr)
     got = {a["case"] for a in data["answers"]}
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f"facts-{datetime.now():%Y%m%d-%H%M}.json"
-    path.write_text(json.dumps({"model": model, "system_sha256": sha(FACTS_SYSTEM), "usd": usd,
+    path.write_text(json.dumps({"model": model, "system_sha256": sha(FACTS_SYSTEM), "facts": facts, "usd": usd,
                                 "usage": msg.usage.model_dump(), "answers": data["answers"]},
                                ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"事実の書き足し：{len(got)}/{len(ids)} 件、{usd:.3f} ドル → {path.relative_to(ROOT)}")
@@ -264,6 +272,7 @@ def main() -> None:
     sub = ap.add_subparsers(dest="cmd", required=True)
     f = sub.add_parser("facts")
     f.add_argument("--max-usd", type=float, required=True)
+    f.add_argument("--facts", default="", help="書き足す事実の id（カンマ区切り）。省くと最初の 3 つ")
     r = sub.add_parser("read")
     r.add_argument("--model", required=True)
     r.add_argument("--programs", required=True, help="all か 1,11 のような番号")
