@@ -182,3 +182,15 @@ def test_silver_pass_bring_names_the_tax_certificate_for_the_135_man_yen_case():
     assert "課税証明書" in line.replace("非課税証明書", "")
     assert "135万円以下" in line and "コピー" in line
     assert "通知書" in bring and "生活保護の受給証明書" in bring
+
+
+def test_silver_pass_notes_the_145_man_yen_case_for_salary_income():
+    """申請のときの注（T-094、2026-11-05 に東京都福祉局の「シルバーパスについて」の頁で照らした）。
+
+    令和8年度は、給与所得控除がある人は通知書の合計所得金額が 135 万円超 145 万円以下でも
+    1,000円で買える場合がある。「場合がある」なので、言い切らずに窓口で確かめると書く。
+    """
+    notes = RULES.programs["tokyo-silver-pass"].at_application
+    line = next(n for n in notes if "145万円" in n)
+    assert "令和8年度" in line and "給与" in line and "135万円" in line
+    assert "場合がある" in line and "窓口" in line
