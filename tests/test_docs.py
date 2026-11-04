@@ -200,3 +200,19 @@ def test_readme_staff_use_section():
     assert "別の画面は作っておらず" in section
     assert "ブラウザで印刷" in section and "職員の控え" in section
     assert "確かめたことは、まだありません" in section
+
+
+def test_readme_says_ai_answers_need_not_be_taken_on_trust():
+    """「判定は規則、言葉は Claude」の節が、AI の答えをそのまま信じなくてよい作りを 1 文でまとめるか（11/5 T-090、T-078 の候補 #5）。
+
+    どれも実装済みの 3 つ（判定は規則・出典と確認日・読み取りの根拠の確かめ）だけを言い、新しい主張や記事の数字は書かない。
+    """
+    section = README.split("\n## 判定は規則、言葉は Claude\n", 1)[1].split("\n## ", 1)[0]
+    paras = [p for p in section.split("\n\n") if p.startswith("**AI の答えをそのまま信じなくてよいように**：")]
+    assert len(paras) == 1
+    para = paras[0]
+    assert para.count("。") == 1
+    assert "規則のプログラム" in para
+    assert "出典" in para and "確認日" in para
+    assert "根拠" in para and "問いに回します" in para
+    assert not re.search(r"\d", para)
