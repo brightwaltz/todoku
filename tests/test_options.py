@@ -49,3 +49,12 @@ def test_bad_options_are_rejected(tmp_path, bad):
 def test_cost_needs_its_source(tmp_path):
     opts = options_mod.load(write(tmp_path, [item(cost="1時間 800円", cost_source=SRC[0]["url"])]), RULES.facts)
     assert options_mod.ranked(opts, {})[0]["cost"] == "1時間 800円"
+
+
+def test_real_options_file_loads_with_national_sources_only():
+    path = Path(__file__).resolve().parents[1] / "rules" / "options.yaml"
+    opts = options_mod.load(path, RULES.facts)
+    assert len(opts) >= 2
+    for o in opts:
+        assert o.sources and all(s.url.startswith(("https://www.mhlw.go.jp/", "https://www.mlit.go.jp/")) for s in o.sources)
+        assert not o.cost  # 出典に数字が無いので書かない

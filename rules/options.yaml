@@ -1,0 +1,39 @@
+# 有料・民間の支え（行政の制度ではない候補。T-084）。判定はせず、hints が当てはまる数で並べ替えるだけ。
+# 会社の名前は出さない。出典は国の資料だけ。費用の目安は出典に数字があるときだけ（今の 2 件は無いので書かない）。
+# シルバー人材センターの家事援助・住民参加型在宅福祉サービス・民間の見守りは、全国向けの公的な出典を
+# 11/5 に確かめられなかったので入れていない（BACKLOG の S3）。
+options:
+  - id: meal_delivery
+    name: 配食（食事を家に届ける）
+    summary: 民間の事業者が、食事を家まで届ける。国は、高齢者に配食をする事業者向けに栄養管理の指針を出している。
+    where: 地域の配食の事業者に直接申し込む。探し方は、ケアマネジャーや地域包括支援センターに相談できる。
+    hints:
+      - fact: household
+        in: [alone, elderly_only, alone_daytime]
+        label: 一人暮らし・高齢の世帯・日中ひとり
+      - fact: residence
+        in: [hospital]
+        label: 退院して家に戻る
+    sources:
+      - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000158814.html
+        publisher: 厚生労働省
+        title: 地域高齢者等の健康支援を推進する配食事業の栄養管理
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+  - id: welfare_taxi
+    name: 福祉タクシー（介護タクシー）
+    summary: タクシー会社が福祉車両を使って運ぶ。通院や退院の移動に使える。国の区分では、一般のタクシー会社が福祉車両で運ぶものと、障害のある人などの運送に限った許可を受けた会社が運ぶものがある。
+    where: 地域のタクシー会社に直接申し込む。探し方は、ケアマネジャーや地域包括支援センターに相談できる。
+    hints:
+      - fact: care_level
+        in: [care1, care2, care3, care4, care5]
+        label: 要介護の認定がある
+      - fact: residence
+        in: [hospital]
+        label: 退院して家に戻る
+    sources:
+      - url: https://www.mlit.go.jp/jidosha/jidosha_tk3_000007.html
+        publisher: 国土交通省
+        title: 自動車：福祉タクシー
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
