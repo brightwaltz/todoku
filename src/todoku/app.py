@@ -31,7 +31,7 @@ from . import options as options_mod
 from . import rules as rules_mod
 import anthropic
 
-from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
+from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, check_summary, make_client
 from .engine import DONT_KNOW, SHOWN, T, U, Result, evaluate, known, prereq_edges, statuses, with_implied
 from .questions import MAX_QUESTIONS, Question, candidates, next_question, place_fact, score_fact
 
@@ -166,6 +166,12 @@ class SummaryIn(In):
 
 class SampleIn(In):
     id: str = Field(max_length=40)
+
+
+class SampleSummaryIn(In):
+    id: str = Field(max_length=40)
+    facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
+    municipality: str = Field("", max_length=6)
 
 
 class EventIn(In):
@@ -575,14 +581,22 @@ def step(body: StepIn, request: Request) -> dict:
     return step_view(facts, suggestions, body.subject[:12] or "ご本人", body.asked, body.municipality)
 
 
+def summarized(facts: dict[str, Any], municipality: str) -> list[Result]:
+    """まとめ（Claude が書く）に渡す制度。facts は書き換える（住所を置く）。"""
+    apply_place(facts, {}, municipality)
+    # 申請済み・結果待ちの制度も渡す（前提にしている制度について「申請すると」と書かせないため）
+    return [r for r in evaluate(RULES, facts).values() if r.status in SUMMARIZED]
+
+
+def summary_key(shown: list[Result]) -> str:
+    """まとめに渡す制度・状態・待っている前提の組。見本の保存したまとめは、この組が作ったときと同じときだけ出す（T-045）。"""
+    return ",".join(sorted(f"{r.program.id}:{r.status}:{'+'.join(sorted(r.waiting_on))}" for r in shown))
+
+
 @app.post("/api/summary")
 def summary(body: SummaryIn, request: Request) -> dict:
     guard(request, costly=True)
-    facts = clean_facts(body.facts)
-    apply_place(facts, {}, body.municipality)
-    results = evaluate(RULES, facts)
-    # 申請済み・結果待ちの制度も渡す（前提にしている制度について「申請すると」と書かせないため）
-    shown = [r for r in results.values() if r.status in SUMMARIZED]
+    shown = summarized(clean_facts(body.facts), body.municipality)
     try:
         lines = CLAUDE.summarize(RULES, body.subject[:12] or "ご本人", shown)
     except (ClaudeFailed, anthropic.APIError):
@@ -603,8 +617,27 @@ def sample(body: SampleIn) -> dict:
     if s is None or s.get("reading") is None:
         raise HTTPException(404, "この見本はまだ用意できていません")
     extraction = check_extraction(RULES, s["text"], s["reading"])  # 置いてある結果も、毎回同じ検査を通す
-    return {"engine": "sample", "sample": True, "made": s.get("made"),
+    return {"engine": "sample", "sample": True, "sample_id": s["id"], "made": s.get("made"),
             **consult_view(extraction, s.get("municipality", ""))}
+
+
+@app.post("/api/sample/summary")
+def sample_summary(body: SampleSummaryIn, request: Request) -> dict:
+    """見本の道のまとめ（T-045、D-0013 の A）。台本の答えで結果まで来たとき（まとめに渡す制度の組が、作ったときと同じとき）だけ、
+    前もって Claude が書いて samples.json に置いたまとめを返す（scripts/make_sample_summaries.py で書く）。組が違えば空で返し、
+    画面は今までどおり「まとめを省いています」と書く。Claude を呼ばないので合言葉は求めず、聞き返しと同じゆるい回数制限だけを掛ける。
+    """
+    guard(request, costly=False)
+    s = next((s for s in SAMPLES if s["id"] == body.id), None)
+    if s is None:
+        raise HTTPException(404, "この見本はまだ用意できていません")
+    saved = s.get("summary")
+    shown = summarized(clean_facts(body.facts), body.municipality)
+    if not saved or saved.get("key") != summary_key(shown):
+        return {"engine": "sample", "lines": [], "made": None}
+    lines = check_summary(RULES, shown, {"lines": saved["lines"]})  # 置いてあるまとめも、毎回同じ検査を通す
+    return {"engine": "sample", "lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines],
+            "made": saved.get("made")}
 
 
 @app.get("/api/events")

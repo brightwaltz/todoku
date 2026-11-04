@@ -226,6 +226,8 @@ async function consultWith(text, call) {
     state.suggestions = data.suggestions;
     state.engine = data.engine;
     state.sample = Boolean(data.sample);
+    state.sampleId = data.sample_id || "";
+    state.sampleSummary = null;
     state.event = Boolean(data.event);
     state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
@@ -714,11 +716,12 @@ function renderResult(data) {
     state.laterAt = undefined;
   }
   // まとめが扱う制度が変わったときだけ書き直す（確かめても判定が同じなら、Claude を呼ばない）
-  const key = data.results.filter((r) => SUMMARIZED.includes(r.status)).map((r) => r.id).join(",");
+  // 見本では状態も鍵に入れる（保存したまとめは、制度と状態の組が作ったときと同じときだけ出すため）
+  const key = data.results.filter((r) => SUMMARIZED.includes(r.status))
+    .map((r) => (state.sample ? `${r.id}:${r.status}` : r.id)).join(",");
   if (state.sample) {
-    // まとめは答えによって変わり Claude が書くので、見本では出さない（見出しだけの空のカードも出さない）
-    show("summary", false);
-    $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
+    // まとめは答えによって変わり Claude が書く。見本では、台本の答えで結果まで来たときだけ、前もって Claude が書いて置いた文を出す（T-045）
+    if (key !== state.summaryKey || !state.sampleSummary) sampleSummary(key); else showSampleSummary();
   } else if ((state.event || state.restored) && needGate && !aikotoba) {
     // 出来事から始めた道と、残したリンクから開いた結果は、合言葉なしで結果まで来る。
     // まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
@@ -1141,6 +1144,31 @@ async function summarize() {
       : "このまとめは Claude が判定の結果から書きました。判定そのものは規則のプログラムが決めています。";
     show("summary");
   } catch (e) { /* まとめが出なくても結果は読める */ }
+}
+
+async function sampleSummary(key) {
+  show("summary", false);
+  let data = { lines: [], made: null };
+  try {
+    data = await api("/api/sample/summary", { id: state.sampleId, facts: state.facts, municipality: state.municipality });
+  } catch (e) { /* まとめが出なくても結果は読める */ }
+  if (key !== state.summaryKey) return;  // 待つ間に答えが変わった
+  state.sampleSummary = data;
+  showSampleSummary();
+}
+
+function showSampleSummary() {
+  const data = state.sampleSummary;
+  if (!data || !data.lines.length) {
+    // 台本と違う答えか、まとめをまだ作っていない見本（見出しだけの空のカードも出さない）
+    show("summary", false);
+    $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
+    return;
+  }
+  $("summary-lines").replaceChildren(...data.lines.map((l) => el("li", {}, l.text)));
+  const made = data.made ? `（${data.made.date}・${data.made.model}）` : "";
+  $("summary-note").textContent = `見本の台本の答えのときだけ出す、前もって Claude が判定の結果から書いたまとめです${made}。判定そのものは規則のプログラムが決めています。`;
+  show("summary");
 }
 
 // ---- 始める ----
