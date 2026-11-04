@@ -34,6 +34,8 @@ PREF_NONE_FOUND = {
     "神奈川県": ("神奈川県の制度は、2026-11-03 に県の「介護・高齢者」の案内を全部見ましたが、個人で申し込めるものが見つかりませんでした"
                "（補聴器の補助などは市町が申し込み先で、県は費用を出すだけです）。"),
 }
+# T-096：先頭の帯の内訳だけを見ても、上の都道府県の 0 件が「まだ書けていない」と区別がつくように、帯にも 1 行出す。文言はここだけで差し替える
+SUMMARY_NONE_FOUND = "{pref}の 0 件は、県の制度を調べて、個人で申し込めるものが見つからなかった数です。"
 
 # T-089：地域包括支援センターの職員が相談を受けながら使うとき（T-078 の候補 #2。判断は integration-1105.md の「T-078」、既定は A）。
 # 相談先の枠に 1 文だけ出す。職員向けの別の画面は作らない。README の「包括の職員が相談を受けながら使うとき」と同じ趣旨。文言はここだけで差し替える
@@ -146,9 +148,11 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
     firsts = {p.id: first_steps(p, rules, values, shown) for p in rules.programs.values() if p.id in shown}
     marked = sum(1 for t in firsts.values() if t)
     parts = "".join(f"<li>{e(label)} <b>{n}</b> 件</li>" for label, n in summary_parts(groups))
+    none_found = pref in PREF_NONE_FOUND and any(g.key == "pref" and not g.programs for g in groups)
     summary = (f'<div class="city-summary" data-level="summary">'
                f'<p class="city-total"><b>{len(shown)}</b> 件<span>{e(SUMMARY_TITLE)}</span></p>'
                f'<ul class="city-break">{parts}</ul>'
+               + (f'<p class="city-none-found">{e(SUMMARY_NONE_FOUND.format(pref=pref))}</p>' if none_found else "")
                + (f'<p class="city-first-n">{e(SUMMARY_FIRST.format(mark=FIRST_MARK))} <b>{marked}</b> 件</p>' if marked else "")
                + f'<p class="city-caveat">{e(SUMMARY_NOTE.format(name=name))}</p></div>')
     body = []

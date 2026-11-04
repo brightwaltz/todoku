@@ -85,3 +85,16 @@ def test_says_it_is_not_all_of_the_city_support_and_counts_the_first_marks(code)
 def test_summary_sits_in_the_header_before_the_lists():
     html, _ = summary(MACHIDA)
     assert html.index('class="city-summary"') < html.index("</header>") < html.index('class="city-item')
+
+
+def test_band_says_the_kanagawa_zero_was_checked_and_none_found():
+    """T-096：帯の内訳だけでも、神奈川県の 0 件が調べて見つからなかった数だと分かる。ほかの 0 件の県（青森県・大阪府）には出さない。"""
+    from todoku.city import PREF_NONE_FOUND, SUMMARY_NONE_FOUND
+
+    _, block = summary(YOKOHAMA)
+    assert parts(block)["神奈川県"] == 0
+    assert SUMMARY_NONE_FOUND.format(pref="神奈川県") in block and "見つからなかった" in SUMMARY_NONE_FOUND
+    for code in (VILLAGE, OSAKA, MACHIDA):
+        pref = PLACES[code][0]
+        assert pref not in PREF_NONE_FOUND
+        assert 'class="city-none-found"' not in summary(code)[1], code
