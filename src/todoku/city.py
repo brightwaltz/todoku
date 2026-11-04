@@ -28,6 +28,11 @@ SUMMARY_TYPES = "市区町村の事業（型）"
 SUMMARY_FIRST = "うち「{mark}」"
 SUMMARY_NOTE = "とどくが規則にできている数で、{name}の支えの全部ではありません。"
 
+# T-089：地域包括支援センターの職員が相談を受けながら使うとき（T-078 の候補 #2。判断は integration-1105.md の「T-078」、既定は A）。
+# 相談先の枠に 1 文だけ出す。職員向けの別の画面は作らない。README の「包括の職員が相談を受けながら使うとき」と同じ趣旨。文言はここだけで差し替える
+STAFF_NOTE = ("地域包括支援センターの職員の方は、相談を受けながらこの頁やとどくの結果の画面をご本人と一緒に見て、"
+              "印刷した結果を控えにできます。判定は規則から出した目安で、窓口の扱いに合うかは職員の方が確かめてください。")
+
 
 @dataclass(frozen=True)
 class Group:
@@ -199,6 +204,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
 <h2>相談先</h2>
 <p>介護や福祉のことは、お住まいの地域の地域包括支援センターでまとめて相談できます。</p>
 <p><a href="{e(center_url, quote=True)}" target="_blank" rel="noopener">{e(pref)}の地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）</a></p>
+<p class="note city-staff">{e(STAFF_NOTE)}</p>
 </section>
 <p class="note">この頁は、公式ページの条件をもとに書いた規則ファイルから作っています（AI は使っていません）。市区町村の事業（型）は全国調査の実施率つきの候補で、{e(name)}がしているかは窓口で確かめてください。{local_note}</p>
 </main>

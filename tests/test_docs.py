@@ -186,3 +186,17 @@ def test_readme_claude_uses_say_agent_sdk_is_not_used():
     head = section.split("\n### ", 1)[0]
     assert "- **Claude Managed Agents**" in head
     assert "Claude Agent SDK は使っていません" in head
+
+
+def test_readme_staff_use_section():
+    """包括の職員が相談を受けながら使うときの段落があるか（11/5 T-089、T-078 の候補 #2）。
+
+    応募文の「地域包括支援センターの職員も使う」と提出物を合わせる。職員向けの別の画面は作らず、今の画面の使い方として書く。
+    職員と確かめていないことも書く（評価の実験はしていないので、使えると言い切らない）。
+    """
+    section = README.split("\n## 包括の職員が相談を受けながら使うとき\n", 1)[1].split("\n## ", 1)[0]
+    heads = re.findall(r"^- \*\*(.+?)\*\*：", section, flags=re.M)
+    assert heads == ["相談の場で画面を一緒に見る", "印刷を職員の控えにする", "判定は規則、確かめは職員"]
+    assert "別の画面は作っておらず" in section
+    assert "ブラウザで印刷" in section and "職員の控え" in section
+    assert "確かめたことは、まだありません" in section

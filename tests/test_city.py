@@ -107,3 +107,16 @@ def test_entry_has_link_to_city_page():
     js = (WEB / "app.js").read_text(encoding="utf-8")
     assert 'id="city-link"' in index and 'id="city-link-box"' in index
     assert "`/city/${encodeURIComponent(city[0])}`" in js
+
+
+@pytest.mark.parametrize("code", [MACHIDA, VILLAGE])
+def test_center_card_says_how_staff_can_use_it(code):
+    """相談先の枠に、包括の職員が相談を受けながら使うときの 1 文があるか（T-089）。文言は city.STAFF_NOTE だけで差し替える。"""
+    from html import escape
+
+    from todoku.city import STAFF_NOTE
+
+    html = client.get(f"/city/{code}").text
+    center = re.search(r'data-level="center">(.*?)</section>', html, re.S).group(1)
+    assert f'<p class="note city-staff">{escape(STAFF_NOTE)}</p>' in center
+    assert html.count("city-staff") == 1
