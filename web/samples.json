@@ -38,16 +38,22 @@
           "evidence": "私は会社勤めで"
         },
         {
-          "fact": "uses_care_services",
-          "value": "false",
-          "confidence": "high",
+          "fact": "care_level",
+          "value": "none",
+          "confidence": "low",
           "evidence": "介護保険は使ったことがありません"
+        },
+        {
+          "fact": "needs_daily_help",
+          "value": "true",
+          "confidence": "low",
+          "evidence": "家の中で転びやすくなりました"
         }
       ]
     },
     "made": {
       "model": "claude-opus-5-5",
-      "date": "2026-11-03"
+      "date": "2026-11-04"
     }
   },
   {
@@ -77,16 +83,28 @@
           "evidence": "町田市で父と母の二人暮らしです。"
         },
         {
+          "fact": "residence",
+          "value": "home",
+          "confidence": "high",
+          "evidence": "町田市で父と母の二人暮らしです。"
+        },
+        {
           "fact": "household",
           "value": "elderly_only",
           "confidence": "low",
           "evidence": "町田市で父と母の二人暮らしです。"
+        },
+        {
+          "fact": "needs_daily_help",
+          "value": "true",
+          "confidence": "low",
+          "evidence": "最近、散歩に出て帰り道が分からなくなることがあります。"
         }
       ]
     },
     "made": {
       "model": "claude-opus-5-5",
-      "date": "2026-11-03"
+      "date": "2026-11-04"
     }
   },
   {
@@ -110,9 +128,15 @@
           "evidence": "ひとり暮らしの祖母"
         },
         {
+          "fact": "residence",
+          "value": "home",
+          "confidence": "high",
+          "evidence": "ひとり暮らしの祖母"
+        },
+        {
           "fact": "care_level",
           "value": "care4",
-          "confidence": "high",
+          "confidence": "low",
           "evidence": "要介護4になり"
         },
         {
@@ -128,16 +152,16 @@
           "evidence": "世帯は住民税非課税です"
         },
         {
-          "fact": "residence",
-          "value": "home",
+          "fact": "needs_daily_help",
+          "value": "true",
           "confidence": "low",
-          "evidence": "町田市でひとり暮らしの祖母"
+          "evidence": "要介護4になり"
         }
       ]
     },
     "made": {
       "model": "claude-opus-5-5",
-      "date": "2026-11-03"
+      "date": "2026-11-04"
     }
   },
   {
@@ -152,7 +176,7 @@
           "fact": "lives_in_machida",
           "value": "false",
           "confidence": "high",
-          "evidence": "横浜市に住む父（78歳）"
+          "evidence": "横浜市に住む父"
         },
         {
           "fact": "age_band",
@@ -182,19 +206,25 @@
           "fact": "residence",
           "value": "home",
           "confidence": "low",
-          "evidence": "母と二人暮らしで"
+          "evidence": "母と二人暮らし"
         },
         {
           "fact": "household",
           "value": "elderly_only",
           "confidence": "low",
-          "evidence": "母と二人暮らしで"
+          "evidence": "母と二人暮らし"
+        },
+        {
+          "fact": "needs_daily_help",
+          "value": "true",
+          "confidence": "low",
+          "evidence": "お金の管理も一人では難しくなってきました"
         }
       ]
     },
     "made": {
       "model": "claude-opus-5-5",
-      "date": "2026-11-03"
+      "date": "2026-11-04"
     }
   }
 ]
