@@ -48,7 +48,8 @@ def test_reopening_the_link_gives_the_same_result(municipality):
 
 def test_after_nintei_the_care_level_can_be_answered_again():
     """認定の申請が当てはまる人がリンクから開き、「認定が出た」を押すと、認定の区分を結果の画面で答え直せる。"""
-    facts = {"age_band": "age_75_plus", "care_level": "none", "residence": "home"}
+    # needs_daily_help は、規則が「いまの様子」も見る版（fix/gold-rules）のため。その事実の無い版では clean_facts が落とす
+    facts = {"age_band": "age_75_plus", "care_level": "none", "residence": "home", "needs_daily_help": True}
     before = client.post("/api/step", json={"facts": facts, "asked": 99}).json()
     nintei = next(r for r in before["results"] if r["id"] == "kaigo-nintei")
     assert nintei["status"] == "eligible"
