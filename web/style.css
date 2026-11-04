@@ -252,7 +252,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .city-group .note, .wrap > .note { overflow-wrap: anywhere; }
 .city-link { margin: 8px 0 0; font-size: 16px; }
 .city-link a { display: inline-flex; align-items: center; min-height: 44px; }
-/* 全国の見取り図（T-080c）。3 段の色は明るさで分け、白黒でも区別できる（文字との比：濃 6.4・中 7.6・淡 14） */
+/* 全国の見取り図（T-080c）。3 段の色は明るさで分け、白黒でも区別できる（文字との比：濃 6.4・中 7.4・淡 12.9。WCAG の式で計算） */
 .japan-map { margin: 0; }
 .japan-map svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
 .japan-map rect { stroke: transparent; stroke-width: 3; }
