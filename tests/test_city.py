@@ -70,6 +70,16 @@ def test_yokohama_has_city_programs_but_no_kanagawa_programs():
     assert got["local"] == ids_of("local", lambda p: "yokohama" in p.shown_in)
 
 
+def test_kanagawa_says_it_was_checked_and_none_found_not_that_it_is_not_written_yet():
+    """T-095：README の冒頭どおり、神奈川県は調べて個人で申し込める県の制度が無かった。頁が「まだ規則にしていません」と言わない。"""
+    html = client.get(f"/city/{YOKOHAMA}").text
+    pref = re.search(r'<section class="card[^"]*" data-level="pref">(.*?)</section>', html, re.S).group(1)
+    assert "神奈川県の制度は、まだ規則にしていません" not in html
+    assert "2026-11-03" in pref and "見つかりませんでした" in pref
+    readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
+    assert "神奈川県は、個人で申し込める県の制度が見つかりませんでした（2026-11-03" in readme  # 頁と README が同じ事実を言う
+
+
 def test_every_program_shows_where_to_apply_and_a_source():
     html = client.get(f"/city/{OSAKA}").text
     items = re.findall(r'<li class="city-item".*?</details></li>', html, re.S)

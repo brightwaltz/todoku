@@ -28,6 +28,13 @@ SUMMARY_TYPES = "市区町村の事業（型）"
 SUMMARY_FIRST = "うち「{mark}」"
 SUMMARY_NOTE = "とどくが規則にできている数で、{name}の支えの全部ではありません。"
 
+# T-095：県の制度を調べて、個人で申し込めるものが見つからなかった都道府県（rules.py の LEVEL_PLACE の注・README の冒頭と同じ事実）。
+# 0 件の段の 1 行を「まだ規則にしていません」から替える（そのままだと調べていないように読める）。文言はここだけで差し替える
+PREF_NONE_FOUND = {
+    "神奈川県": ("神奈川県の制度は、2026-11-03 に県の「介護・高齢者」の案内を全部見ましたが、個人で申し込めるものが見つかりませんでした"
+               "（補聴器の補助などは市町が申し込み先で、県は費用を出すだけです）。"),
+}
+
 # T-089：地域包括支援センターの職員が相談を受けながら使うとき（T-078 の候補 #2。判断は integration-1105.md の「T-078」、既定は A）。
 # 相談先の枠に 1 文だけ出す。職員向けの別の画面は作らない。README の「包括の職員が相談を受けながら使うとき」と同じ趣旨。文言はここだけで差し替える
 STAFF_NOTE = ("地域包括支援センターの職員の方は、相談を受けながらこの頁やとどくの結果の画面をご本人と一緒に見て、"
@@ -57,7 +64,7 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
     groups = [Group("national", "国の制度", of("national"))]
     groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in pref_levels]
     if not pref_levels:
-        groups.append(Group("pref", f"{pref}の制度", [], f"{pref}の制度は、まだ規則にしていません。"))
+        groups.append(Group("pref", f"{pref}の制度", [], PREF_NONE_FOUND.get(pref, f"{pref}の制度は、まだ規則にしていません。")))
     groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in city_levels]
     if not city_levels:
         groups.append(Group("city", f"{name}の制度", [], f"{name}の事業は、下の「市区町村の事業（型）」で示します。"))
@@ -70,7 +77,7 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
 def summary_parts(groups: list[Group]) -> list[tuple[str, int]]:
     """頁の先頭の内訳：段の短い名前（国・都道府県の名前・市区町村の名前・型）と件数。
 
-    0 件の都道府県・市も出す（まだ書けていないことが分かるように）。型の 0 件は、市の制度を一つずつ書いた市（町田市）で
+    0 件の都道府県・市も出す（まだ書けていないか、調べて見つからなかったことが分かるように。段の 1 行で言い分ける）。型の 0 件は、市の制度を一つずつ書いた市（町田市）で
     型を出さないときだけなので、内訳から外す。
     """
     return [(SUMMARY_TYPES if g.key == "local" else g.title.removesuffix("の制度"), len(g.programs))
