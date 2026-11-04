@@ -22,6 +22,12 @@ FIRST_NOTE = ("「{mark}」の印の {n} 件は、規則の上で、ほかの手
               "最初の相談から一歩遠いので、住民から尋ねられにくい制度の候補として示しています"
               "（規則から機械的に選んだもので、実際に尋ねられにくいかは確かめていません）。")
 
+# T-088：頁の先頭に出す数と内訳（T-078 の候補 #1。判断は integration-1105.md の「T-078」、既定は A）。文言はここだけで差し替える
+SUMMARY_TITLE = "とどくが書けている支え"
+SUMMARY_TYPES = "市区町村の事業（型）"
+SUMMARY_FIRST = "うち「{mark}」"
+SUMMARY_NOTE = "とどくが規則にできている数で、{name}の支えの全部ではありません。"
+
 
 @dataclass(frozen=True)
 class Group:
@@ -54,6 +60,16 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
     groups.append(Group("local", "市区町村の事業（型）", local,
                         f"{name}の事業は、上の「{name}の制度」で一つずつ示しています。"))
     return groups
+
+
+def summary_parts(groups: list[Group]) -> list[tuple[str, int]]:
+    """頁の先頭の内訳：段の短い名前（国・都道府県の名前・市区町村の名前・型）と件数。
+
+    0 件の都道府県・市も出す（まだ書けていないことが分かるように）。型の 0 件は、市の制度を一つずつ書いた市（町田市）で
+    型を出さないときだけなので、内訳から外す。
+    """
+    return [(SUMMARY_TYPES if g.key == "local" else g.title.removesuffix("の制度"), len(g.programs))
+            for g in groups if g.programs or g.key != "local"]
 
 
 def first_steps(p: Program, rules: RuleSet, values: dict[str, bool], shown: set[str]) -> str:
@@ -114,10 +130,15 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
     values = rules.place_values(code)
     here_machida = values.get(rules.place_question) is True
     e = escape
-    counts = "・".join(f"{g.title} {len(g.programs)} 件" for g in groups if g.programs)
     shown = {p.id for g in groups for p in g.programs}
     firsts = {p.id: first_steps(p, rules, values, shown) for p in rules.programs.values() if p.id in shown}
     marked = sum(1 for t in firsts.values() if t)
+    parts = "".join(f"<li>{e(label)} <b>{n}</b> 件</li>" for label, n in summary_parts(groups))
+    summary = (f'<div class="city-summary" data-level="summary">'
+               f'<p class="city-total"><b>{len(shown)}</b> 件<span>{e(SUMMARY_TITLE)}</span></p>'
+               f'<ul class="city-break">{parts}</ul>'
+               + (f'<p class="city-first-n">{e(SUMMARY_FIRST.format(mark=FIRST_MARK))} <b>{marked}</b> 件</p>' if marked else "")
+               + f'<p class="city-caveat">{e(SUMMARY_NOTE.format(name=name))}</p></div>')
     body = []
     for g in groups:
         body.append(f'<section class="card city-group" data-level="{e(g.key)}">'
@@ -166,7 +187,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
 <body>
 <header class="top"><div class="wrap">
 <h1>とどく<span>{e(pref)}{e(name)}で使える制度</span></h1>
-<p class="lead">{e(counts)}</p>
+{summary}
 </div></header>
 <main class="wrap">
 <p class="note">住所で決まる段（国・都道府県・市区町村）ごとに、規則にした制度を並べています。当てはまるかどうかは、ご本人の状況で変わります。
