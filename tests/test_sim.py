@@ -18,14 +18,14 @@ population = run_sim.population
 RS = rules_mod.load()
 
 
-def test_residents_use_every_non_place_fact_with_valid_values():
-    # facts.yaml に事実が増えたら、作り方（population.draw）も足す
+def test_residents_have_every_non_place_fact_with_valid_values():
+    # facts.yaml に事実が増えたら、作り方（population.draw）も足す。規則に無い事実（dev と dev-merge の差）は値を見ない
     people = population.generate(300, seed=3)
     want = {fid for fid in RS.facts if fid not in RS.places}
     for f in people:
-        assert set(f) == want
-        for fid, value in f.items():
-            assert value in RS.facts[fid].values(), (fid, value)
+        assert want <= set(f)
+        for fid in want:
+            assert f[fid] in RS.facts[fid].values(), (fid, f[fid])
 
 
 def test_same_seed_same_residents_and_false_when_holds():
@@ -33,6 +33,8 @@ def test_same_seed_same_residents_and_false_when_holds():
     for f in population.generate(500, seed=2):
         if f["care_level"] in ("none", "applying", "jiritsu"):
             assert f["uses_care_services"] is False and f["shortstay_or_facility"] is False
+        if not f["caregiver_employee"]:
+            assert f["caregiver_insured"] is False
         if f["on_welfare"]:
             assert f["tax_status"] == "household_exempt"
         assert f["age_band"] in population.AGE_BANDS  # 65 歳以上だけ
@@ -45,8 +47,9 @@ def test_every_source_is_labelled():
 def test_theme_tables_cover_the_entry_events():
     ids = {e["id"] for e in events_mod.EVENTS[:events_mod.MAX_EVENTS]}
     assert set(run_sim.THEME_FITS) == ids == set(run_sim.THEME_FACTS)
+    latent = set(population.generate(1)[0])
     for facts in run_sim.THEME_FACTS.values():
-        assert set(facts) <= set(RS.facts)
+        assert set(facts) <= latent  # 書き間違いを止める（規則に無い事実は direct_programs で何にも当たらない）
 
 
 def test_visible_matches_the_result_screen():

@@ -56,7 +56,12 @@ def _yes(rng: random.Random, p: float) -> bool:
 
 
 def draw(rng: random.Random) -> dict[str, Any]:
-    """1 人分の事実（住所の事実は入れない。住所は run_sim が市区町村コードで決める）。"""
+    """1 人分の事実（住所の事実は入れない。住所は run_sim が市区町村コードで決める）。
+
+    dev と dev-merge（本番の規則）で facts.yaml の事実が少し違うので、両方の事実を引く。規則に無い事実は
+    判定に使われず、入口の出来事を選ぶとき（run_sim.THEME_FITS）にだけ使う。
+    認定の区分の certified_unknown（区分が分からない、という答え）は引かない。住民は自分の区分を知っているとみなす
+    """
     f: dict[str, Any] = {}
     age = f["age_band"] = _pick(rng, AGE_BANDS)
     if _yes(rng, CERTIFIED_RATE[age]):
@@ -78,6 +83,10 @@ def draw(rng: random.Random) -> dict[str, Any]:
                                                 or _yes(rng, 0.3 if care in HEAVY else 0.1))
     f["high_medical_costs"] = _yes(rng, 0.8 if f["residence"] == "hospital" else 0.1)
     f["caregiver_employee"] = _yes(rng, 0.45)
+    f["caregiver_insured"] = f["caregiver_employee"] and _yes(rng, 0.85)  # dev-merge の事実。雇われていなければ False
+    f["needs_daily_help"] = _yes(rng, 0.9 if certified else 0.1)  # dev-merge の事実
+    f["constant_care_2w"] = _yes(rng, 0.8 if care in HEAVY else 0.4 if care in MIDDLE else 0.1 if certified else 0.02)
+    f["mental_outpatient"] = _yes(rng, 0.03)  # dev-merge の事実
     dementia = f["dementia_diagnosis"] = _yes(rng, 0.5 if care in HEAVY else DEMENTIA_RATE[age])
     f["money_management_difficulty"] = _yes(rng, 0.5 if dementia else 0.03)
     f["wandering_risk"] = _yes(rng, 0.25 if dementia else 0.01)
