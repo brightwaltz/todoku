@@ -1045,17 +1045,25 @@ def test_place_is_offered_on_the_result_when_not_asked():
                                           "asked": 99}).json()
     assert not [u for u in data["unconfirmed"] if u["fact"] in places]
 def test_care_level_question_names_the_person():
-    # 認定の問いにも主語を書き、相談文の呼び方に置き換える（指摘 P-6。見本「退院した母」では最初の問いになる）
-    start = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    # 認定の問いにも主語を書き、相談文の呼び方に置き換える（指摘 P-6。見本「道に迷う父」では最初の問いになる）
+    # T-117：見本の読み直し（0533d97）で「退院した母」は care_level=none を確かさ低で読むようになり、
+    # 最初の問いが確かめの問いに変わったので、選ぶ問いを見る見本を「道に迷う父」に替えた
+    start = client.post("/api/sample", json={"id": "mayou-chichi"}).json()
     q = start["question"]
-    assert start["subject"] == "お母さま" and q["fact"] == "care_level" and q["confirm"] is False
-    assert q["text"].startswith("お母さまは、") and "ご本人" not in q["text"]
+    assert start["subject"] == "お父さま" and q["fact"] == "care_level" and q["confirm"] is False
+    assert q["text"].startswith("お父さまは、") and "ご本人" not in q["text"]
     # 「わからない」と答えた後の「まだ確かめていないこと」の問いも同じ呼び方
     after = client.post("/api/step", json={"facts": {**start["facts"], "care_level": DONT_KNOW},
                                            "suggestions": start["suggestions"], "subject": start["subject"],
                                            "asked": 1}).json()
     missing = [m["question"] for r in after["results"] for m in r["missing"] if m["fact"] == "care_level"]
-    assert missing and all(m.startswith("お母さまは、") for m in missing)
+    assert missing and all(m.startswith("お父さまは、") for m in missing)
+    # 確かめの問いも相談文の呼び方で出る（「退院した母」の最初の問い。「はい」で受けていない、「いいえ」で選び直す）
+    haha = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    hq = haha["question"]
+    assert haha["subject"] == "お母さま" and hq["fact"] == "care_level" and hq["confirm"] is True
+    assert hq["text"].startswith("お母さまは") and "ご本人" not in hq["text"]
+    assert [o["value"] for o in hq["options"]] == ["none", "__not__"]
 
 
 # ご本人のことを聞くのに主語が無かった問い（T-025）。介護をする家族に聞く問い（caregiver_employee・fire_risk）と、
