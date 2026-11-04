@@ -18,12 +18,13 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field, model_validator
 
 from . import events as events_mod
+from .city import city_page
 from . import rules as rules_mod
 import anthropic
 
@@ -716,7 +717,7 @@ async def revalidate_pages(request: Request, call_next):
     response = await call_next(request)
     for k, v in SECURITY_HEADERS.items():
         response.headers[k] = v
-    if request.url.path == "/" or request.url.path.startswith("/static/"):
+    if request.url.path == "/" or request.url.path.startswith(("/static/", "/city/")):
         response.headers["Cache-Control"] = "no-cache"  # 直した後に古い画面が残らないよう、毎回 ETag で確かめ直させる
     return response
 
@@ -731,6 +732,15 @@ def health() -> dict:
 @app.api_route("/", methods=["GET", "HEAD"])
 def index() -> FileResponse:
     return FileResponse(WEB_DIR / "index.html")
+
+
+@app.get("/city/{code}", response_class=HTMLResponse)
+def city(code: str) -> HTMLResponse:
+    """その市区町村の人が使える制度の一覧（T-080b）。規則から作り、Claude は呼ばないので合言葉も回数制限もかけない。"""
+    if code not in PLACES:
+        raise HTTPException(404, "その団体コードの市区町村は一覧にありません")
+    pref, name = PLACES[code]
+    return HTMLResponse(city_page(RULES, code, pref, name, center_search(code)))
 
 
 app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")

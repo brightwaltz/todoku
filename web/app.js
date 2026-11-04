@@ -180,6 +180,7 @@ function resetPick() {
   $("pref").value = "";
   fillCities();
   show("redraft", false);
+  show("city-link-box", false);
 }
 
 // ---- 相談を送る ----
@@ -891,8 +892,18 @@ async function summarize() {
 chipGroup("pick-who", WHO, false);
 chipGroup("pick-age", AGES, false);
 chipGroup("pick-worry", WORRIES.map(([label]) => label), true);
-$("pref").addEventListener("change", () => { pick.pref = $("pref").value; pick.city = ""; fillCities(); redraft(); });
-$("city").addEventListener("change", () => { pick.city = $("city").value; redraft(); });
+// 市区町村を選んだら、その市区町村で使える制度の一覧（/city/<団体コード>。規則から作る頁）へ 1 タップで開けるようにする（T-080b）
+function showCityLink() {
+  const pref = prefs.find((p) => p.code === pick.pref);
+  const city = pref && pref.cities.find(([code]) => code === pick.city);
+  if (city) {
+    $("city-link").href = `/city/${encodeURIComponent(city[0])}`;
+    $("city-link").textContent = `${pref.name}${city[1]}で使える制度の一覧`;
+  }
+  show("city-link-box", Boolean(city));
+}
+$("pref").addEventListener("change", () => { pick.pref = $("pref").value; pick.city = ""; fillCities(); redraft(); showCityLink(); });
+$("city").addEventListener("change", () => { pick.city = $("city").value; redraft(); showCityLink(); });
 $("redraft").addEventListener("click", () => redraft(true));
 $("text").addEventListener("input", () => {
   const draft = buildDraft();

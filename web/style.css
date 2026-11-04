@@ -239,3 +239,16 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .foot { padding-bottom: 0; }
   .foot a { min-height: 0; }
 }
+/* /city/<団体コード> の頁（T-080b） */
+.city-n { font-size: 15px; font-weight: 400; color: var(--muted); margin-left: .6em; }
+.city-list { list-style: none; margin: 0; padding: 0; }
+.city-item { border-top: 1px solid var(--line); padding: 12px 0; overflow-wrap: anywhere; }
+.city-item:first-child { border-top: 0; padding-top: 0; }
+.city-item h3 { font-size: 18px; margin: 0 0 4px; }
+.city-item p { margin: 0 0 4px; font-size: 16px; }
+.city-where b { font-size: 14px; color: var(--accent); margin-right: .4em; }
+.city-item details summary { font-size: 15px; color: var(--muted); cursor: pointer; padding: 9px 0; }
+.city-src { margin: 0; padding-left: 1.2em; font-size: 14px; }
+.city-group .note, .wrap > .note { overflow-wrap: anywhere; }
+.city-link { margin: 8px 0 0; font-size: 16px; }
+.city-link a { display: inline-flex; align-items: center; min-height: 44px; }
