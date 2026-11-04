@@ -199,3 +199,26 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .top h1 { font-size: 26px; }
   .top h1 span { display: block; margin: 0; }
 }
+/* 印刷：結果の画面を、申請先・持ち物・出典ごと紙に出す（T-066）。窓口へ持っていけるように。
+   札（details）は app.js の beforeprint で開き、afterprint で閉じ直す。入力・問い・帯・ボタンは紙では使えないので出さない。
+   隠すのは結果の画面を出しているときだけ（html.print-result。app.js が beforeprint で付ける） */
+@media print {
+  @page { margin: 14mm; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  body { background: #fff; }
+  .wrap { max-width: none; padding: 0; }
+  .top { background: none; color: var(--ink); padding: 0 0 8px; margin-bottom: 14px; border-bottom: 2px solid var(--accent); }
+  .card { box-shadow: none; }
+  .board-card.live { position: static; box-shadow: none; }
+  .print-result #input, .print-result #reading, .print-result #board, .print-result #ask,
+  .print-result #later, .print-result #later-change, .print-result #stats, .print-result #again { display: none; }
+  .print-result #result button:not(.link) { display: none; }
+  .print-result #result .link { color: var(--muted); text-decoration: none; padding: 0; min-height: 0; }
+  .prog { overflow: visible; }
+  .prog > summary, .prog h3, .group-title { break-after: avoid; }
+  .prog > summary { break-inside: avoid; }
+  .prog .head, .reasons li, .plain li, .src { break-inside: avoid; }
+  .tel::after { content: none; }
+  .foot { padding-bottom: 0; }
+  .foot a { min-height: 0; }
+}

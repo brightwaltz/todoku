@@ -1295,3 +1295,27 @@ def test_gate_sits_below_samples_and_is_not_the_loudest_button():
     assert 'class="primary"' not in html[: at["samples"]]
     # 見本は合言葉の欄より上にあるので、「下の見本」と書かない
     assert "下の見本" not in html and "下の見本" not in js
+
+
+def test_print_puts_cards_on_paper_and_leaves_controls_out():
+    # 結果の画面を印刷すると、畳んだ札（details）の中身が紙に出ず、入力の欄・見本・合言葉の欄が 4 ページ刷られていた
+    # （T-066。Chrome の page.pdf で、申請先・持ち物・出典の見出しが 0 件）。beforeprint で札を開き、afterprint で
+    # 開く前に戻す。入力・問い・帯・ボタンは結果の画面のときだけ（html.print-result）紙から外す。
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    css = (root / "style.css").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+    m = re.search(r"^@media print \{\n(.*?)^\}", css, re.M | re.S)
+    assert m, "@media print"
+    block = m.group(1)
+    for sel in ("#input", "#board", "#ask", "#later", "#again"):
+        assert f".print-result {sel}" in block, sel
+    assert ".print-result #result button:not(.link) { display: none; }" in block
+    assert ".prog > summary { break-inside: avoid; }" in block
+    before = re.search(r'addEventListener\("beforeprint", \(\) => \{(.*?)\n\}\);', js, re.S).group(1)
+    after = re.search(r'addEventListener\("afterprint", \(\) => \{(.*?)\n\}\);', js, re.S).group(1)
+    assert 'classList.toggle("print-result"' in before and 'querySelectorAll("details:not([open])")' in before
+    assert "d.open = true" in before
+    assert "d.open = false" in after and 'classList.remove("print-result")' in after

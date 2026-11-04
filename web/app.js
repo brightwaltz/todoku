@@ -782,6 +782,20 @@ $("gate-ok").addEventListener("click", () => {
 });
 // Enter の既定の動きを止める。止めないと、keydown の中で相談の欄へ移したフォーカスの先に改行が入る（T-063）
 $("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") { ev.preventDefault(); $("gate-ok").click(); } });
+// 印刷するときは、結果の札（details）を開いて申請先・持ち物・出典まで紙に出し、終わったら開く前に戻す（T-066）。
+// 結果の画面のときだけ html に print-result を付け、入力・問い・帯・ボタンを紙から外す（style.css の @media print）
+let printOpened = [];
+window.addEventListener("beforeprint", () => {
+  const onResult = !$("result").hidden;
+  document.documentElement.classList.toggle("print-result", onResult);
+  printOpened = onResult ? [...$("result").querySelectorAll("details:not([open])")] : [];
+  for (const d of printOpened) d.open = true;
+});
+window.addEventListener("afterprint", () => {
+  for (const d of printOpened) d.open = false;
+  printOpened = [];
+  document.documentElement.classList.remove("print-result");
+});
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 fetch("/api/health").then((r) => r.json()).then((h) => {
   if (h.passphrase && !aikotoba) show("gate");
