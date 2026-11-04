@@ -481,7 +481,7 @@ def test_board_does_not_count_settled_programs_as_not_eligible():
         pytest.skip("node が無い")
     js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
     consts = re.search(r"^// ---- いまの見立て ----\n(.*?)^const calm = ", js, re.S | re.M).group(1)  # 帯の列と置き場（DOM を使わない）
-    func = re.search(r"^function changeText\(moved, now\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
+    func = re.search(r"^function changeText\([^)]*\) \{\n.*?^\}\n", js, re.S | re.M).group(0)
     cases = [["ineligible", "done", "pending"], ["done"], ["pending"], ["ineligible", "ineligible"]]
     run = f"""{consts}
 {func}
@@ -1033,20 +1033,22 @@ def test_care_level_question_names_the_person():
 
 # ご本人のことを聞くのに主語が無かった問い（T-025）。介護をする家族に聞く問い（caregiver_employee・fire_risk）と、
 # 家の工事や福祉用具を考えているかの問いは、聞く相手が家族なので主語を書かない
-PERSON_FACTS = ("uses_care_services", "shortstay_or_facility", "high_medical_costs",
+# shortstay_or_facility は fix/gold-rules が「予定の事実」として外したので、T-070 で一覧から外した
+PERSON_FACTS = ("uses_care_services", "high_medical_costs",
                 "hearing_certifiable", "incontinence_bedding")
 
 
 def test_person_questions_name_the_person():
     for fid in PERSON_FACTS:
         assert rules_mod.load().facts[fid].question.startswith("ご本人は、"), fid
-    # 見本「退院した母」のデモの道：認定を「受けていない」と答えると、2 問目は医療費の問いで、相談文の呼び方で出る
+    # 見本「退院した母」のデモの道：認定を「受けていない」と答えると、2 問目は介助の要る場面の問い（fix/gold-rules の裁定 p-prereq の後。
+    # T-070 までは医療費の問いだった）で、相談文の呼び方で出る
     start = client.post("/api/sample", json={"id": "taiin-haha"}).json()
     assert start["subject"] == "お母さま" and start["question"]["fact"] == "care_level"
     second = client.post("/api/step", json={"facts": {**start["facts"], "care_level": "none"},
                                             "suggestions": start["suggestions"], "subject": start["subject"],
                                             "asked": 1}).json()["question"]
-    assert second["fact"] == "high_medical_costs"
+    assert second["fact"] == "needs_daily_help"
     assert second["text"].startswith("お母さまは、") and "ご本人" not in second["text"]
     # 「わからない」と答え続けた後の「まだ確かめていないこと」にも、5 問とも同じ呼び方で出る
     facts = {**start["facts"], "care_level": DONT_KNOW}

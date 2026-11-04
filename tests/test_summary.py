@@ -69,7 +69,9 @@ def test_review_lines_are_dropped():
 def test_names_of_programs_not_given_are_dropped():
     # まとめに渡していない規則の制度の正式名を含む行は捨てる。渡した制度の名前は通す。
     # /api/summary が渡すのは当てはまる見込み・申請済み・先に手続きの制度だけ（確かめるの制度は渡さない）
-    shown = [r for r in evaluate(RS, MACHIDA).values() if r.status in ("eligible", "pending", "after_prereq")]
+    # 介護休業給付は、雇用保険と常時介護まで分かって「当てはまる見込み」になる（fix/gold-rules の規則。T-070 で事実を足した）
+    facts = {**MACHIDA, "caregiver_insured": True, "constant_care_2w": True}
+    shown = [r for r in evaluate(RS, facts).values() if r.status in ("eligible", "pending", "after_prereq")]
     given = {r.program.id for r in shown}
     assert "kaigo-kyugyo-kyufu" in given and "tokubetsu-shogaisha-teate" not in given and "kogaku-ryoyohi" not in given
     assert texts(shown, "介護休業給付金に加えて、特別障害者手当も使えます。", "介護休業給付金と一緒に、高額療養費も申請しましょう。",
@@ -79,7 +81,8 @@ def test_names_of_programs_not_given_are_dropped():
 def test_prerequisite_names_are_kept():
     # 前提の制度（waiting_on）は、画面の制度でなくても名前を Claude に渡している（「まず〜を申請すると」と書かせる）ので通す
     results = evaluate(RS, {**MACHIDA, "care_level": "none", "uses_care_services": False, "residence": "home",
-                            "age_band": "age_75_plus", "plans_home_modification": True})
+                            "age_band": "age_75_plus", "plans_home_modification": True,
+                            "needs_daily_help": True})  # 認定の申請が当たりうるのは介助の要る場面があるとき（裁定 p-prereq。T-070 で足した）
     after = next(r for r in results.values() if r.status == "after_prereq" and r.waiting_on)
     first = RS.programs[after.waiting_on[0]]
     line = f"まず{first.name}をすると、{after.program.name}も使えるようになります。"
@@ -109,4 +112,4 @@ def test_fake_summaries_for_the_cases_are_unchanged(monkeypatch):
     for shown, raw in given:
         assert [l.text for l in check_summary(RS, shown, raw)] == [l["text"] for l in raw["lines"]][:4]
         n += len(raw["lines"])
-    assert n >= 20  # 11/4 の規則で 22 行
+    assert n >= 15  # 11/4 の規則で 22 行、fix/gold-rules の規則（雇用保険・常時介護・介助の事実を足した後）で 19 行（T-070）
