@@ -250,6 +250,8 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .city-item details summary { font-size: 15px; color: var(--muted); cursor: pointer; padding: 9px 0; }
 .city-src { margin: 0; padding-left: 1.2em; font-size: 14px; }
 .city-cond { margin: 0 0 4px; padding-left: 1.2em; font-size: 16px; }
+.city-first { font-size: 15px; }
+.city-first b { display: inline-block; font-size: 14px; color: #6b4200; background: #fff1d6; border-radius: 4px; padding: 0 .5em; margin-right: .5em; }
 /* その市の事業に替えた型の印（T-075b）。色だけに頼らず、文で「Claude が書いた」と言う */
 .local-mark { display: inline-block; margin: 4px 0; padding: 2px 8px; border: 1px solid var(--accent); border-radius: 4px;
   font-size: 14px; color: var(--accent); }

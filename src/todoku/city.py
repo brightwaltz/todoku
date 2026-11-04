@@ -15,6 +15,14 @@ from .local_rules import MARK, CityRules
 from .rules import Program, RuleSet
 
 
+# T-076：尋ねられにくい制度の候補の印。決め方は判断待ち（integration-1105.md の下書き、既定は A）。
+# A＝その市に住む人で見て、規則の上でほかの手続き（prereq・via・step）をいつも先に済ませる制度。文言はここだけで差し替える
+FIRST_MARK = "先に別の手続きが要る"
+FIRST_NOTE = ("「{mark}」の印の {n} 件は、規則の上で、ほかの手続きを済ませてからでないと使えない制度です。"
+              "最初の相談から一歩遠いので、住民から尋ねられにくい制度の候補として示しています"
+              "（規則から機械的に選んだもので、実際に尋ねられにくいかは確かめていません）。")
+
+
 @dataclass(frozen=True)
 class Group:
     key: str  # national・都道府県や市の段の名前・local
@@ -48,6 +56,44 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
     return groups
 
 
+def first_steps(p: Program, rules: RuleSet, values: dict[str, bool], shown: set[str]) -> str:
+    """その市の人がこの制度を使う前に、いつも済ませる手続き（規則の prereq・via・step）を 1 行で返す。無ければ空。
+
+    住所の事実が合わない枝（例：町田市以外にお住まい）と、この頁に無い制度を前提にした枝は、通れないので見ない。
+    any は、通れる枝のどれもが手続きを要るときだけ「または」でつなぐ。all は、いつも要る子の手続きを「、」でつなぐ。
+    """
+
+    def walk(node: dict) -> tuple[str, bool] | None:  # (手続きの文, いつも要るか)。None は通れない枝
+        if "all" in node or "any" in node:
+            parts = [walk(c) for c in node.get("all") or node["any"]]
+            if "all" in node:
+                if any(x is None for x in parts):
+                    return None
+                need = list(dict.fromkeys(t for t, always in parts if always))
+                return "、".join(need), bool(need)
+            open_ = [x for x in parts if x is not None]
+            if not open_:
+                return None
+            if all(always for _, always in open_):
+                return " または ".join(dict.fromkeys(t for t, _ in open_)), True
+            return "", False
+        if "not" in node:
+            return "", False
+        if "step" in node:
+            return node["label"], True
+        if "prereq" in node:
+            return (rules.programs[node["prereq"]].name, True) if node["prereq"] in shown else None
+        fid = node.get("fact")
+        if fid in values and "is" in node and values[fid] != node["is"]:
+            return None
+        if node.get("via") in shown:
+            return rules.programs[node["via"]].name, True
+        return "", False
+
+    got = walk(p.eligibility)
+    return got[0] if got and got[1] else ""
+
+
 def _apply_where(p: Program, here_machida: bool) -> str:
     # 国の制度の申請先は町田市で書いてあるので、町田市の外の人には elsewhere の申請先を出す（result_view と同じ）
     apply = p.apply if here_machida else p.elsewhere.get("apply", p.apply)
@@ -69,6 +115,9 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
     here_machida = values.get(rules.place_question) is True
     e = escape
     counts = "・".join(f"{g.title} {len(g.programs)} 件" for g in groups if g.programs)
+    shown = {p.id for g in groups for p in g.programs}
+    firsts = {p.id: first_steps(p, rules, values, shown) for p in rules.programs.values() if p.id in shown}
+    marked = sum(1 for t in firsts.values() if t)
     body = []
     for g in groups:
         body.append(f'<section class="card city-group" data-level="{e(g.key)}">'
@@ -89,8 +138,12 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
                 conds = "".join(f"<li>{e(c)}</li>" for c in mine.conditions)
                 extra = (f'<p class="local-mark">{e(MARK.format(date=mine.review.date.isoformat()))}</p>'
                          f'<p class="city-where"><b>主な条件</b></p><ul class="city-cond">{conds}</ul>')
+            first = firsts.get(p.id, "")
+            mark = f'<p class="city-first"><b>{e(FIRST_MARK)}</b>{e(first)}</p>' if first else ""
+            first_attr = ' data-first="1"' if first else ""
             body.append(
-                f'<li class="city-item{" local" if mine else ""}" data-id="{e(p.id)}"><h3>{e(mine.name if mine else p.name)}</h3>'
+                f'<li class="city-item{" local" if mine else ""}" data-id="{e(p.id)}"{first_attr}>'
+                f'<h3>{e(mine.name if mine else p.name)}</h3>{mark}'
                 f'<p>{e(p.summary)}</p>{extra}'
                 + (f'<p class="city-where"><b>申請先</b> {e(where)}</p>' if where else "")
                 + f'<details><summary>出典</summary><ul class="city-src">{links}</ul></details></li>')
@@ -118,6 +171,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
 <main class="wrap">
 <p class="note">住所で決まる段（国・都道府県・市区町村）ごとに、規則にした制度を並べています。当てはまるかどうかは、ご本人の状況で変わります。
 <a href="/">とどくで相談する</a>と、状況に合わせて判定します。</p>
+{f'<p class="note city-first-note">{e(FIRST_NOTE.format(mark=FIRST_MARK, n=marked))}</p>' if marked else ""}
 {"".join(body)}
 {f'<section class="card soft city-group map-card" data-level="map"><h2>ほかの都道府県</h2>{map_html}</section>' if map_html else ""}
 <section class="card soft city-group" data-level="center">
