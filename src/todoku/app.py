@@ -23,6 +23,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field, model_validator
 
+from . import events as events_mod
 from . import rules as rules_mod
 import anthropic
 
@@ -157,6 +158,11 @@ class SummaryIn(In):
 
 class SampleIn(In):
     id: str = Field(max_length=40)
+
+
+class EventIn(In):
+    id: str = Field(max_length=40)
+    municipality: str = Field("", max_length=6)
 
 
 def guard(request: Request, costly: bool) -> None:
@@ -581,6 +587,25 @@ def sample(body: SampleIn) -> dict:
     extraction = check_extraction(RULES, s["text"], s["reading"])  # 置いてある結果も、毎回同じ検査を通す
     return {"engine": "sample", "sample": True, "made": s.get("made"),
             **consult_view(extraction, s.get("municipality", ""))}
+
+
+@app.get("/api/events")
+def events() -> list[dict]:
+    return [{"id": e["id"], "label": e["label"], "text": e["text"]} for e in events_mod.EVENTS[:events_mod.MAX_EVENTS]]
+
+
+@app.post("/api/event")
+def event(body: EventIn, request: Request) -> dict:
+    """入口の出来事のボタン（T-071）。出来事の文から言える事実だけを置いて、最初の問いを返す。
+
+    Claude を呼ばないので合言葉は求めず、聞き返しと同じゆるい回数制限だけを掛ける。
+    """
+    guard(request, costly=False)
+    e = events_mod.find(body.id)
+    if e is None:
+        raise HTTPException(404, "この出来事は用意していません")
+    extraction = check_extraction(RULES, e["text"], events_mod.reading(e))
+    return {"engine": "event", "event": True, "text": e["text"], **consult_view(extraction, body.municipality)}
 
 
 class BodyLimit:

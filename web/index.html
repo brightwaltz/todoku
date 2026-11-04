@@ -25,6 +25,11 @@
 
   <section id="input" class="card">
     <h2>困っていることを教えてください</h2>
+    <!-- 暮らしの出来事から入る（T-071）。押すと出来事の文を下書きにして、すぐ最初の問いへ。Claude を呼ばず、合言葉も要らない -->
+    <div id="events" hidden>
+      <p class="note">最近あった出来事から始める（1 つ押すと、すぐ最初の質問が出ます。文字は打たなくてかまいません）</p>
+      <div class="examples" id="event-list"></div>
+    </div>
     <div id="samples" hidden>
       <p class="note">見本で試す（合言葉なしで、最後まで動きます）</p>
       <div class="examples" id="sample-list"></div>

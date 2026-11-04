@@ -40,12 +40,13 @@ try {
 let pick = freshPick();
 let lastDraft = "";     // 最後に作った下書き。欄がこれと違えば、本人が書き換えたとみなして上書きしない
 let prefs = [];         // municipalities.json の都道府県（市区町村つき）
-let resendAfterGate = false;  // 合言葉で止まった相談を、合言葉のあとで送り直す
+let resendAfterGate = false;
+let needGate = false;   // この置き場は Claude を呼ぶ口に合言葉を求めるか（/api/health）  // 合言葉で止まった相談を、合言葉のあとで送り直す
 class GateError extends Error {}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
-    municipality: "", sample: false, resultShown: false, summaryKey: "", laterOpen: false };
+    municipality: "", sample: false, event: false, resultShown: false, summaryKey: "", laterOpen: false };
 }
 
 function freshPick() {
@@ -193,6 +194,14 @@ async function openSample(s) {
   await consultWith(s.text, () => api("/api/sample", { id: s.id }));
 }
 
+// 入口の出来事（T-071）。出来事の文を下書きとして欄に入れ、その文から言える事実だけで最初の問いへ進む（Claude を呼ばない）
+async function openEvent(e) {
+  $("text").value = e.text;
+  lastDraft = e.text;  // 選ぶだけの下書きと同じ扱い（本人が書き換えるまでは、選び直すと作り直す）
+  show("redraft", false);
+  await consultWith(e.text, () => api("/api/event", { id: e.id, municipality: pick.city }));
+}
+
 async function consultWith(text, call) {
   state = fresh();
   state.startedAt = Date.now();
@@ -212,6 +221,7 @@ async function consultWith(text, call) {
     state.suggestions = data.suggestions;
     state.engine = data.engine;
     state.sample = Boolean(data.sample);
+    state.event = Boolean(data.event);
     state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
     render(data, true);
@@ -228,6 +238,8 @@ async function consultWith(text, call) {
 }
 
 function renderExtracted(data, text) {
+  // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
+  $("extracted").querySelector("h2").textContent = data.event ? "選んだ出来事から分かったこと" : "相談の文章から読み取ったこと";
   $("said").replaceChildren(...markEvidence(text, data.extracted));
   const list = $("extracted-list");
   list.replaceChildren();
@@ -237,9 +249,13 @@ function renderExtracted(data, text) {
       f.confidence === "low" ? el("span", { class: "tentative" }, "（あとで確かめます）") : null,
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
   }
-  if (!data.extracted.length) list.append(el("li", {}, "読み取れた事実はありませんでした。いくつか質問します。"));
+  if (!data.extracted.length) {
+    list.append(el("li", {}, data.event ? "この出来事だけで決まることはありません。いくつか質問します。" : "読み取れた事実はありませんでした。いくつか質問します。"));
+  }
   const made = data.made && data.made.model && data.made.date ? `（${data.made.model}、${data.made.date}）` : "";
-  $("engine-note").textContent = data.sample
+  $("engine-note").textContent = data.event
+    ? "選んだ出来事の文から、言えることだけをプログラムが置きました。Claude は使っていません。"
+    : data.sample
     ? `見本：前もって Claude${made}が読み取った結果です。この見本では Claude を呼びません。`
     : data.engine === "fake"
       ? "試験モード：Claude を使わず、キーワードで読み取っています。"
@@ -629,6 +645,10 @@ function renderResult(data) {
     // まとめは答えによって変わり Claude が書くので、見本では出さない（見出しだけの空のカードも出さない）
     show("summary", false);
     $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
+  } else if (state.event && needGate && !aikotoba) {
+    // 出来事から始めた道は合言葉なしで結果まで来る。まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
+    show("summary", false);
+    $("stats").textContent += "。合言葉がないので、Claude が書くまとめを省いています";
   } else if (key !== state.summaryKey) summarize();
   state.summaryKey = key;
 }
@@ -746,6 +766,12 @@ fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
   prefs = data.prefectures;
   $("pref").append(...prefs.map((p) => el("option", { value: p.code }, p.name)));
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
+// 出来事のボタンも、取れたときだけ出す（T-071）
+fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
+  if (!list.length) return;
+  $("event-list").replaceChildren(...list.map((e) => el("button", { type: "button", class: "chip", onclick: () => openEvent(e) }, e.label)));
+  show("events");
+}).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す
 fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
@@ -798,5 +824,6 @@ window.addEventListener("afterprint", () => {
 });
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 fetch("/api/health").then((r) => r.json()).then((h) => {
+  needGate = Boolean(h.passphrase);
   if (h.passphrase && !aikotoba) show("gate");
 }).catch(() => { /* 分からなければ、送ったときに聞く */ });
