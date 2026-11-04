@@ -20,6 +20,8 @@ from .rules import RuleError, RuleSet, Source, _load_source
 STATUSES = {"found": "その市の事業が見つかった", "not_found": "見つからなかった（型のまま出す）"}
 # 照らし直し（別の読み手が出典の原文の行と見比べた結果）。合わなかったもの（mismatch）は置かない
 RECHECKS = {"match": "原文の行と合っていた", "fixed": "照らし直しで直した"}
+# 札と /city/ の頁で、その市の事業に替えたものに付ける印（文言は判断要求で確かめる。T-075b）
+MARK = "Claude が公式頁から書き、照らし直したもの（{date}）"
 CONDITION_MAX = 60  # 札の 1 行に収める。出典の文は写さず、自分の言葉で短く書く
 CONDITIONS_MAX = 5
 
@@ -53,6 +55,19 @@ class CityRules:
     def found(self) -> dict[str, CityProgram]:
         """置き換えに使えるもの（その市の事業が見つかったものだけ）。"""
         return {t: p for t, p in self.programs.items() if p.status == "found"}
+
+
+def found_in(local: dict[str, CityRules], code: str, template: str) -> CityProgram | None:
+    """その団体コードの人に、型 template の代わりに出すその市の事業（無ければ None で、型のまま出す）。"""
+    city = local.get(code)
+    return city.found().get(template) if city else None
+
+
+def view(p: CityProgram, city_name: str) -> dict:
+    """札に添える、その市の事業の中身と印。判定の条件・状態は型のものなので、ここには入れない。"""
+    return {"city": city_name, "name": p.name, "where": p.where, "conditions": list(p.conditions),
+            "mark": MARK.format(date=p.review.date.isoformat()), "date": p.review.date.isoformat(), "read_by": p.review.read_by,
+            "recheck": RECHECKS[p.review.recheck], "note": p.review.note}
 
 
 def load(directory: Path, rules: RuleSet, places: dict[str, tuple[str, str]]) -> dict[str, CityRules]:

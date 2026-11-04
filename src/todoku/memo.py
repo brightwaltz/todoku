@@ -47,10 +47,11 @@ def fill_lines(r: Result, facts: dict[str, Any], rules: RuleSet, place: dict | N
     return lines
 
 
-def say_line(r: Result, subject: str, rules: RuleSet, pending: frozenset[str] = frozenset()) -> str:
-    """窓口で最初に言う一言。制度の名前・分からない点・前提の制度は規則から入れる。"""
+def say_line(r: Result, subject: str, rules: RuleSet, pending: frozenset[str] = frozenset(), name: str = "") -> str:
+    """窓口で最初に言う一言。制度の名前・分からない点・前提の制度は規則から入れる。
+    name は札に出す名前（その市の事業に替えたとき。T-075b）。無ければ規則の名前。"""
     who = SPOKEN.get(subject.strip(), "")
-    name = r.program.name
+    name = name or r.program.name
     # 「要介護・要支援認定の申請」のように名前が申請で終わるときは「の申請」を重ねない
     what = name if name.endswith("申請") else f"{name}の申請"
     text = f"{who + 'の' if who else ''}{what}について相談に来ました。"
@@ -70,16 +71,16 @@ def say_line(r: Result, subject: str, rules: RuleSet, pending: frozenset[str] = 
 
 
 def memo_view(r: Result, facts: dict[str, Any], subject: str, rules: RuleSet, place: dict | None,
-              apply: dict, bring: list[str], pending: frozenset[str] = frozenset()) -> dict | None:
-    """申請先・持ち物は札と同じもの（町田市の外なら elsewhere に置き換えた後）を受け取る。"""
+              apply: dict, bring: list[str], pending: frozenset[str] = frozenset(), name: str = "") -> dict | None:
+    """申請先・持ち物・名前は札と同じもの（町田市の外なら elsewhere に、その市の事業ならその名前に置き換えた後）を受け取る。"""
     if r.status not in MEMO_STATUSES:
         return None
     return {
-        "title": f"申請メモ：{r.program.name}",
+        "title": f"申請メモ：{name or r.program.name}",
         "where": apply.get("where", ""),
         "phone": apply.get("phone", ""),
         "bring": list(bring),
         "fill": fill_lines(r, facts, rules, place),
-        "say": say_line(r, subject, rules, pending),
+        "say": say_line(r, subject, rules, pending, name),
         "note": NOTE,
     }

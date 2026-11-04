@@ -26,6 +26,7 @@ from pydantic import BaseModel, Field, model_validator
 from . import events as events_mod
 from .city import city_page
 from .japan_map import japan_map
+from . import local_rules as local_mod
 from . import memo as memo_mod
 from . import options as options_mod
 from . import rules as rules_mod
@@ -102,6 +103,8 @@ def load_places() -> dict[str, tuple[str, str]]:
 
 
 PLACES = load_places()
+# その市の事業（rules/local/<団体コード>.yaml。T-075）。その市の人には、型の札の名前・申請先・主な条件・出典をこれに替える（判定は型のまま）
+LOCAL = local_mod.load(rules_mod.rules_dir() / "local", RULES, PLACES)
 # 都道府県コード → 名前（全国の見取り図のタイルに使う。T-080c）
 PREFS = {code[:2]: pref for code, (pref, _) in PLACES.items()}
 # 市の制度を一つずつ判定している市（段 → 住所の事実）。そこに住んでいる人には、市区町村の型を出さない
@@ -346,13 +349,21 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
     away = [site for level, site in rules_mod.LEVEL_SITE.items() if facts.get(rules_mod.LEVEL_PLACE[level]) is not True]
     sources = [s for s in p.sources if not any(site in s.url for site in away)] or p.sources
     apply = dict(other.get("apply", p.apply))
+    # その市の事業が見つかった型は、名前・申請先・出典をその市のものにする（T-075b）。判定の条件・状態は型のまま。
+    # 型の出典（全国調査）は、札の説明の数字の出典なので後ろに残す
+    local = local_mod.found_in(LOCAL, municipality, p.id) if p.level == "local" else None
+    if local:
+        apply = {"where": local.where}
+        sources = list(local.sources) + list(sources)
     if CENTER in apply.get("where", "") + apply.get("how", ""):
         apply["center_search"] = center_search(municipality)  # 申請先に挙げたセンターを、その場で探せるように
     return {
         "id": p.id,
         "number": p.number,
-        "name": p.name,
+        "name": local.name if local else p.name,
         "level": rules_mod.LEVELS[p.level],
+        # その市の事業に替えたときの中身と印（無ければ None で、型のまま）
+        "local": local_mod.view(local, PLACES[municipality][1]) if local else None,
         "kind": rules_mod.KINDS[p.kind],
         "status": r.status,
         "status_label": STATUS_LABEL[r.status],
@@ -386,7 +397,7 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
         "procedures_source": rules_mod.PROCEDURES_DATASET if p.procedures else "",
         # 申請メモ（T-074）：窓口へ持っていく記入の下書き。規則と相談の答えからだけ作り、Claude は使わない
         "memo": memo_mod.memo_view(r, facts, subject, RULES, place_view(municipality), apply,
-                                   other.get("bring", p.bring), pending),
+                                   other.get("bring", p.bring), pending, local.name if local else ""),
     }
 
 
@@ -787,7 +798,8 @@ def city(code: str) -> HTMLResponse:
     if code not in PLACES:
         raise HTTPException(404, "その団体コードの市区町村は一覧にありません")
     pref, name = PLACES[code]
-    return HTMLResponse(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2])))
+    return HTMLResponse(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2]),
+                                  LOCAL.get(code)))
 
 
 @app.get("/japan-map", response_class=HTMLResponse)

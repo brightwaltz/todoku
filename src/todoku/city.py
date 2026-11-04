@@ -11,6 +11,7 @@ from dataclasses import dataclass
 from html import escape
 
 from . import rules as rules_mod
+from .local_rules import MARK, CityRules
 from .rules import Program, RuleSet
 
 
@@ -59,8 +60,11 @@ def _sources(p: Program, values: dict[str, bool]) -> list:
     return [s for s in p.sources if not any(site in s.url for site in away)] or p.sources
 
 
-def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, map_html: str = "") -> str:
+def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, map_html: str = "",
+              local: CityRules | None = None) -> str:
+    """local はその市の事業（rules/local。T-075b）。見つかった型は、名前・申請先・主な条件・出典をその市のものにして印を付ける。"""
     groups = city_groups(rules, code, pref, name)
+    found = local.found() if local else {}
     values = rules.place_values(code)
     here_machida = values.get(rules.place_question) is True
     e = escape
@@ -74,15 +78,25 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
             continue
         body.append('<ul class="city-list">')
         for p in g.programs:
-            where = _apply_where(p, here_machida)
+            mine = found.get(p.id) if g.key == "local" else None
+            where = mine.where if mine else _apply_where(p, here_machida)
+            # 型の出典（全国調査）は説明の数字の出典なので、その市の頁の後ろに残す（結果の札と同じ）
+            sources = (list(mine.sources) if mine else []) + list(_sources(p, values))
             links = "".join(f'<li><a href="{e(s.url, quote=True)}" target="_blank" rel="noopener">{e(s.publisher)}「{e(s.title)}」</a></li>'
-                            for s in _sources(p, values))
+                            for s in sources)
+            extra = ""
+            if mine:
+                conds = "".join(f"<li>{e(c)}</li>" for c in mine.conditions)
+                extra = (f'<p class="local-mark">{e(MARK.format(date=mine.review.date.isoformat()))}</p>'
+                         f'<p class="city-where"><b>主な条件</b></p><ul class="city-cond">{conds}</ul>')
             body.append(
-                f'<li class="city-item" data-id="{e(p.id)}"><h3>{e(p.name)}</h3>'
-                f'<p>{e(p.summary)}</p>'
+                f'<li class="city-item{" local" if mine else ""}" data-id="{e(p.id)}"><h3>{e(mine.name if mine else p.name)}</h3>'
+                f'<p>{e(p.summary)}</p>{extra}'
                 + (f'<p class="city-where"><b>申請先</b> {e(where)}</p>' if where else "")
                 + f'<details><summary>出典</summary><ul class="city-src">{links}</ul></details></li>')
         body.append("</ul></section>")
+    local_note = (f"印の付いた事業は、Claude が{e(name)}の公式頁を読んで名前・申請先・主な条件を書き、別の読み手が原文と照らし直したものです。"
+                  "当てはまるかの目安は型のままです。") if found else ""
     return f"""<!doctype html>
 <html lang="ja">
 <head>
@@ -111,7 +125,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
 <p>介護や福祉のことは、お住まいの地域の地域包括支援センターでまとめて相談できます。</p>
 <p><a href="{e(center_url, quote=True)}" target="_blank" rel="noopener">{e(pref)}の地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）</a></p>
 </section>
-<p class="note">この頁は、公式ページの条件をもとに書いた規則ファイルから作っています（AI は使っていません）。市区町村の事業（型）は全国調査の実施率つきの候補で、{e(name)}がしているかは窓口で確かめてください。</p>
+<p class="note">この頁は、公式ページの条件をもとに書いた規則ファイルから作っています（AI は使っていません）。市区町村の事業（型）は全国調査の実施率つきの候補で、{e(name)}がしているかは窓口で確かめてください。{local_note}</p>
 </main>
 </body>
 </html>

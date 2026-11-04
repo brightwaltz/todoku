@@ -1033,6 +1033,8 @@ function programCard(r) {
     el("span", { class: "tag" }, r.level), el("span", { class: "name" }, r.name),
     el("span", { class: `pill ${r.status}` }, r.status_label));
   const sumParts = [head, el("p", { class: "sum" }, r.summary)];
+  // その市の事業に替えた型（rules/local。T-075b）には印を付ける。判定の条件・状態は型のまま
+  if (r.local) sumParts.push(el("p", { class: "local-mark" }, r.local.mark));
   if (r.waiting_on.length) {
     sumParts.push(el("p", { class: "chain" }, "先に：",
       ...r.waiting_on.map((w, i) => [i ? "、" : "", el("a", { href: `#p-${w.id}`, onclick: (ev) => openCard(ev, w.id) }, w.name),
@@ -1051,6 +1053,12 @@ function programCard(r) {
     body.append(el("h3", {}, "確かめ方"), el("ul", { class: "plain" }, r.missing.map((m) => el("li", {}, m.check))));
   }
   if (r.at_application.length) body.append(el("h3", {}, "申請のときに確かめられること"), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
+  if (r.local) {
+    body.append(el("h3", {}, `${r.local.city}の主な条件（公式頁の言い換え）`),
+      el("ul", { class: "plain" }, r.local.conditions.map((t) => el("li", {}, t))),
+      el("p", { class: "note" }, `${r.local.read_by}が読んで書き、${r.local.recheck}（${r.local.date}）。`,
+        r.local.note ? `直したこと：${r.local.note}` : ""));
+  }
   body.append(el("h3", {}, "申請先"), el("p", {}, r.apply.where));
   if (r.apply.how) body.append(el("p", {}, r.apply.how));
   if (r.apply.phone) body.append(...phoneViews(r.apply.phone));
