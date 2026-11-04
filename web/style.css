@@ -35,7 +35,7 @@ h2 { font-size: 21px; line-height: 1.5; margin: 0 0 12px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; }
 .card.soft { background: var(--soft); }
 label.big { display: block; font-weight: 700; margin-bottom: 8px; }
-textarea, input[type=password] {
+textarea, input[type=password], .keep-row input {
   width: 100%; font: inherit; padding: 12px; border: 2px solid var(--line); border-radius: 10px; background: #fff;
 }
 textarea:focus, input:focus { outline: 3px solid #9fd3c7; border-color: var(--accent); }
@@ -158,6 +158,15 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 details summary { cursor: pointer; color: var(--accent); font-size: 15px; padding: 9px 0; }
 .summary { border-left: 6px solid var(--accent); }
 .summary ul { margin: 0; padding-left: 1.2em; }
+/* 結果を残すリンク（T-072）。リンクの欄と写すボタンを横に並べ、狭い画面では縦に積む */
+.keep h2 { margin: 0; font-size: 19px; }
+.keep .strong { color: var(--ink); font-weight: 700; }
+.keep .option { width: auto; margin-top: 12px; }
+.keep [hidden] { display: none; }  /* .option の display: block が hidden に勝つため */
+.keep-row { display: flex; gap: 8px; align-items: stretch; margin-top: 12px; }
+.keep-row input { flex: 1; min-width: 0; min-height: 56px; font-size: 15px; color: var(--muted); }
+.keep-row .option { margin-top: 0; flex: none; }
+@media (max-width: 520px) { .keep-row { flex-direction: column; } .keep .option { width: 100%; } }
 .stats { font-size: 15px; color: var(--muted); margin: 0 0 12px; text-align: right; }
 .group-title { font-size: 20px; margin: 24px 0 10px; display: flex; align-items: center; gap: 8px; }
 .group-title .n { font-size: 15px; color: var(--muted); font-weight: 400; }
@@ -213,7 +222,8 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .card { box-shadow: none; }
   .board-card.live { position: static; box-shadow: none; }
   .print-result #input, .print-result #reading, .print-result #board, .print-result #ask,
-  .print-result #later, .print-result #later-change, .print-result #stats, .print-result #again { display: none; }
+  .print-result #later, .print-result #later-change, .print-result #stats, .print-result #again,
+  .print-result #keep { display: none; }
   .print-result #result button:not(.link) { display: none; }
   .print-result #result .link { color: var(--muted); text-decoration: none; padding: 0; min-height: 0; }
   .prog { overflow: visible; }

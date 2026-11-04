@@ -119,6 +119,17 @@
       <summary id="ineligible-title"></summary>
       <ul id="ineligible-list" class="plain"></ul>
     </details>
+    <div class="card soft keep" id="keep" hidden>
+      <h2>この結果を残す</h2>
+      <p class="note">答えをこのリンクの中に入れました。あとで開くと、同じ結果が出ます。リンクの中身はとどくのサーバに送られず、どこにも残りません。リンクには答え（認定の区分・年齢など）が入っているので、人に送るときは気をつけてください。</p>
+      <p class="note strong" id="keep-nintei" hidden>認定が出たら、このリンクを開くと次の手続きが出ます。</p>
+      <button class="option" id="keep-reask" hidden>認定が出た（認定の区分を答える）</button>
+      <div class="keep-row">
+        <input type="text" id="keep-url" readonly aria-label="この結果のリンク">
+        <button class="option" id="keep-copy">リンクを写す</button>
+      </div>
+      <p class="change" id="keep-msg" aria-live="polite"></p>
+    </div>
     <button class="secondary" id="again">別の相談をする</button>
   </section>
 </main>
@@ -128,6 +139,7 @@
   <p><a id="center-link" href="https://www.kaigokensaku.mhlw.go.jp/" target="_blank" rel="noopener">地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）</a></p>
   <p>Built with Claude: Japan 2026 の期間中に作った試作です。</p>
 </footer>
+<script src="/static/keep.js"></script>
 <script src="/static/app.js"></script>
 </body>
 </html>

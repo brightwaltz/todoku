@@ -46,7 +46,7 @@ class GateError extends Error {}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
-    municipality: "", sample: false, event: false, resultShown: false, summaryKey: "", laterOpen: false };
+    municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false };
 }
 
 function freshPick() {
@@ -204,6 +204,7 @@ async function openEvent(e) {
 
 async function consultWith(text, call) {
   state = fresh();
+  forgetKeep();  // 前に開いた・残した結果のリンクを、アドレス欄から外す
   state.startedAt = Date.now();
   const pressed = document.activeElement;
   $("send").disabled = true;
@@ -600,7 +601,8 @@ function renderResult(data) {
   renderLater(data.unconfirmed, data.unread);
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
-  $("stats").textContent = `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
+  $("stats").textContent = state.restored ? "残したリンクから開いた結果です"
+    : `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
   const groups = $("groups");
   groups.replaceChildren();
   for (const [status, title, hint] of GROUPS) {
@@ -645,12 +647,95 @@ function renderResult(data) {
     // まとめは答えによって変わり Claude が書くので、見本では出さない（見出しだけの空のカードも出さない）
     show("summary", false);
     $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
-  } else if (state.event && needGate && !aikotoba) {
-    // 出来事から始めた道は合言葉なしで結果まで来る。まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
+  } else if ((state.event || state.restored) && needGate && !aikotoba) {
+    // 出来事から始めた道と、残したリンクから開いた結果は、合言葉なしで結果まで来る。
+    // まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
     show("summary", false);
     $("stats").textContent += "。合言葉がないので、Claude が書くまとめを省いています";
   } else if (key !== state.summaryKey) summarize();
   state.summaryKey = key;
+  showKeep(data);
+}
+
+// ---- 結果を残す（T-072）----
+// 答えを URL の # より後ろに入れたリンクを出し、アドレス欄もそれにする（ブックマークや再読み込みでも開き直せる）。
+// # より後ろはサーバに送られない。開き直すと /api/step に同じ答えを送り、規則だけで同じ結果を出す（Claude は呼ばない）
+const NINTEI = "kaigo-nintei";
+const NINTEI_FACT = "care_level";
+const KEEP_PREFIX = "#r=";
+
+function forgetKeep() {
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  show("keep", false);
+}
+
+async function showKeep(data) {
+  const mine = state;
+  let code;
+  try {
+    code = await encodeKeep({ s: state.subject, f: state.facts, g: state.suggestions, m: state.municipality });
+  } catch (e) { show("keep", false); return; }  // 作れなければ欄を出さない（結果は読める）
+  if (mine !== state) return;
+  const url = location.origin + location.pathname + location.search + KEEP_PREFIX + code;
+  history.replaceState(null, "", url);
+  $("keep-url").value = url;
+  $("keep-msg").textContent = "";
+  // 認定の申請が当てはまる（申請して結果待ちも）人には、認定が出た後にこのリンクで次の手続きを見られると添える
+  const nintei = data.results.find((r) => r.id === NINTEI);
+  const waiting = Boolean(nintei && (nintei.status === "eligible" || nintei.status === "pending"));
+  show("keep-nintei", waiting);
+  // リンクから開いた人には、認定の区分を答え直す道を出す（答えると、先に手続きが要った制度を判定し直す）
+  show("keep-reask", waiting && state.restored);
+  show("keep");
+}
+
+async function copyKeep() {
+  const url = $("keep-url").value;
+  try {
+    await navigator.clipboard.writeText(url);
+    $("keep-msg").textContent = "リンクを写しました。メモやメールに貼って残してください。";
+  } catch (e) {
+    // 写せないブラウザでは、欄を選んだ状態にして、自分で写してもらう
+    $("keep-url").focus();
+    $("keep-url").select();
+    $("keep-msg").textContent = "リンクを選びました。長押しやコピーの操作で写してください。";
+  }
+}
+
+// 認定が出たら：認定の区分を「分からない」に戻し、結果の画面の「まだ確かめていないこと」で答え直せるようにする
+function reaskNintei() {
+  const facts = { ...state.facts };
+  delete facts[NINTEI_FACT];
+  state.laterOpen = true;  // 読み取れなかったことの問いは畳んであるので開く。値打ちの順で認定の区分が先頭に来る
+  state.laterAt = 0;
+  return step({ facts, presses: state.presses + 1 }, true);
+}
+
+async function restoreFrom(code) {
+  let saved;
+  try {
+    saved = await decodeKeep(code);
+  } catch (e) {
+    say("残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください");
+    $("reading").replaceChildren(el("p", { class: "error" }, "残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください。"));
+    show("reading");
+    return;
+  }
+  state = fresh();
+  Object.assign(state, { startedAt: Date.now(), restored: true, subject: saved.s.slice(0, 12) || "ご本人",
+    facts: saved.f, suggestions: saved.g, municipality: saved.m });
+  const mine = state;
+  try {
+    const data = await api("/api/step", { facts: state.facts, suggestions: state.suggestions, subject: state.subject,
+      asked: 99, municipality: state.municipality });
+    if (mine !== state) return;
+    show("extracted", false); show("ask", false);
+    render(data);
+  } catch (e) {
+    $("reading").replaceChildren(el("p", { class: "error" }, e.message));
+    say(e.message);
+    show("reading");
+  }
 }
 
 function reasonText(r) {
@@ -780,8 +865,13 @@ fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
 }).catch(() => { /* 見本の行は出さない */ });
 $("send").addEventListener("click", send);
 $("skip").addEventListener("click", () => step({}, true));
+$("keep-copy").addEventListener("click", copyKeep);
+$("keep-reask").addEventListener("click", reaskNintei);
+// 開いているページに別の残した結果のリンクを貼ったとき（# より後ろだけが変わると、ページは読み直されない）
+window.addEventListener("hashchange", () => { if (location.hash.startsWith(KEEP_PREFIX)) restoreFrom(location.hash.slice(KEEP_PREFIX.length)); });
 $("again").addEventListener("click", () => {
   state = fresh();
+  forgetKeep();
   $("text").value = "";
   resetPick();
   show("extracted", false); show("ask", false); show("result", false);
@@ -823,7 +913,11 @@ window.addEventListener("afterprint", () => {
   document.documentElement.classList.remove("print-result");
 });
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
-fetch("/api/health").then((r) => r.json()).then((h) => {
+// 残した結果のリンクから開いたときは聞かない（結果は合言葉なしで出る。相談を送るときに聞く）
+const keptAtLoad = location.hash.startsWith(KEEP_PREFIX);
+const healthReady = fetch("/api/health").then((r) => r.json()).then((h) => {
   needGate = Boolean(h.passphrase);
-  if (h.passphrase && !aikotoba) show("gate");
+  if (h.passphrase && !aikotoba && !keptAtLoad) show("gate");
 }).catch(() => { /* 分からなければ、送ったときに聞く */ });
+// 合言葉が要る置き場かを知ってから開く（知る前に結果を出すと、まとめを送って合言葉の欄へ飛ばされる）
+if (keptAtLoad) healthReady.then(() => restoreFrom(location.hash.slice(KEEP_PREFIX.length)));

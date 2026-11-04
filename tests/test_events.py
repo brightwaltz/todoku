@@ -86,4 +86,4 @@ def test_page_has_event_buttons_slot():
     assert 'id="events"' in html and 'id="event-list"' in html
     assert '"/api/events"' in js and '"/api/event"' in js
     # 出来事の道は合言葉なしで結果まで来るので、合言葉が要る置き場ではまとめ（/api/summary）を送らない
-    assert "state.event && needGate && !aikotoba" in js
+    assert "(state.event || state.restored) && needGate && !aikotoba" in js

@@ -525,6 +525,7 @@ const said = [], say = (t) => {{ said.push(t); }};  // いつもある読み上�
 const el = (tag, attrs, text) => text;
 const fresh = () => ({{}});
 const clearBoard = () => {{}};
+const forgetKeep = () => {{}};  // 結果を残すリンクをアドレス欄から外す（T-072）。動きは test_keep とブラウザで見る
 const document = {{ activeElement: null, body: {{}} }};  // 失敗したら押したボタンへ戻す（T-062）。動きは test_focus_returns_… とブラウザで見る
 const backTo = () => {{}};
 class GateError extends Error {{}}
