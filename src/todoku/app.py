@@ -26,6 +26,7 @@ from pydantic import BaseModel, Field, model_validator
 from . import events as events_mod
 from .city import city_page
 from .japan_map import japan_map
+from . import options as options_mod
 from . import rules as rules_mod
 import anthropic
 
@@ -80,6 +81,8 @@ SUMMARIZED = ("eligible", "pending", "after_prereq")
 
 app = FastAPI(title="todoku", docs_url=None, redoc_url=None)
 RULES = rules_mod.load()
+# 有料・民間の支え（行政の制度ではない候補。判定はせず、並べ替えるだけ。T-084）
+OPTIONS = options_mod.load(rules_mod.rules_dir() / "options.yaml", RULES.facts)
 CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
 _hits_all: deque = deque()
@@ -521,6 +524,8 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "hidden_places": hidden_places if city is None else [],
         "place": place_view(municipality),
         "center_search": center_search(municipality),
+        # 結果の画面の下に出す、有料・民間の支え（判定はしない。関係しそうな事実が当てはまる数で並べ替える）
+        "options": options_mod.ranked(OPTIONS, implied) if question is None else [],
     }
 
 

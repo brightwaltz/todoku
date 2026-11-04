@@ -645,6 +645,25 @@ const laterSpots = () => [...$("later-list").querySelectorAll(".later-item h3, #
 // 結果の画面の先頭の見出し（「まだ確かめていないこと」、無ければ「当てはまる見込み」など）
 const resultHeading = () => [...$("result").querySelectorAll("h2")].find(seen);
 
+// 有料・民間の支え（T-084）。判定はしないので状態の印は付けず、関係しそうな理由だけを添える
+function optionCard(o) {
+  const src = o.sources.map((s) => el("li", {}, el("a", { href: s.url, target: "_blank", rel: "noopener" }, s.title || s.publisher),
+    `（${s.publisher}、${s.checked} 確認）`));
+  return el("details", { class: "card option" },
+    el("summary", {}, el("span", { class: "tag" }, o.tag), " ", o.name),
+    el("p", {}, o.summary),
+    o.why.length ? el("p", { class: "note" }, "関係しそうな理由：", o.why.join("・")) : "",
+    el("p", {}, "申し込み先：", o.where),
+    el("p", {}, "費用の目安：", o.cost || "申し込み先で確かめる"),
+    el("ul", { class: "plain note" }, src));
+}
+
+function renderOptions(options) {
+  $("options-n").textContent = `${options.length} 件`;
+  $("options-list").replaceChildren(...options.map(optionCard));
+  show("options-box", options.length > 0);
+}
+
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
   state.resultShown = true;
@@ -683,6 +702,7 @@ function renderResult(data) {
   $("other-city").textContent = hidden.length ? hidden.map((h) =>
     `${h.name}にお住まいなら${hidden.length > 1 ? "" : "、"}${h.name.slice(-1)}の制度 ${h.n} 件`).join("、") + "も判定します。" : "";
   show("other-city", hidden.length > 0);
+  renderOptions(data.options || []);
   show("result");
   if (!again) {
     $("result").scrollIntoView({ behavior: "smooth", block: "start" });
