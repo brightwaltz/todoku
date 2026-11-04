@@ -151,3 +151,21 @@ def test_filled_cost_was_rechecked_on_its_source_page():
     """埋めた cost は、照らし直した頁を指したまま。source を替えたり新しく埋めたりしたら、頁を開いて照らしてからここに足す。"""
     filled = {p.id: p.cost.source for p in RULES.programs.values() if p.cost.self_pay != "ask"}
     assert filled == COST_RECHECKED_20261105
+
+
+def test_share_amounts_also_appear_in_summary_or_amount():
+    """札の費用の行（cost.share）に書いた金額は、同じ制度の summary か amount にも書く。
+
+    T-073b で share だけを頁に合わせると、札を開いた中の「金額」と見出しの文が狭いまま残る
+    （tokyo-silver-pass の「所得135万円以下なら1,000円」。T-092 でそろえた）。
+    """
+    yen = re.compile(r"[0-9][0-9,]*(?:万)?円")
+    missing = {}
+    for f in sorted(PROGRAMS.glob("*.yaml")):
+        y = yaml.safe_load(f.read_text(encoding="utf-8"))
+        share = (y.get("cost") or {}).get("share") or ""
+        text = y["summary"] + " ".join(y.get("amount") or [])
+        lost = [m for m in yen.findall(share) if m not in text]
+        if lost:
+            missing[y["id"]] = lost
+    assert missing == {}
