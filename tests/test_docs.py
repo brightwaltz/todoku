@@ -142,6 +142,44 @@ def test_readme_two_layers_and_effort_figure():
         assert (ROOT / img).stat().st_size <= 300_000, img
 
 
+def _walk_taiin_haha_first_options():
+    """見本「退院した母」を、どの問いにも先頭の選択肢で答えて進め、0 回と最後の数と押した数を返す。"""
+    from fastapi.testclient import TestClient
+
+    from todoku.app import app
+
+    client = TestClient(app)
+    d = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    first = dict(d["counts"])
+    s = {"facts": dict(d["facts"]), "suggestions": dict(d["suggestions"]), "subject": d["subject"],
+         "asked": 0, "municipality": d["place"]["code"] if d.get("place") else ""}
+    while d["question"]:
+        q = d["question"]
+        s["facts"][q["fact"]] = q["options"][0]["value"]
+        s["suggestions"].pop(q["fact"], None)
+        s["asked"] += 1
+        d = client.post("/api/step", json=s).json()
+    return first, dict(d["counts"]), s["asked"]
+
+
+def test_readme_effort_numbers_match_the_sample_walk():
+    """「手間と、分かること」に書いた数が、見本「退院した母」を先頭の選択肢で通した今の数と合うか（11/5 T-083c）。
+
+    規則を直すと見本の道が変わり、README の数だけが古いまま残った（dev-merge で 3・23 → 6・5・15 のまま）。
+    """
+    effort = README.split("\n## 手間と、分かること\n", 1)[1].split("\n## ", 1)[0]
+    m = re.search(r"0 回では(.+?)、(\d+) 回押した後は(.+?)でした", effort)
+    assert m, "0 回と、押した後の数の文が見つからない"
+    first, last, asked = _walk_taiin_haha_first_options()
+    assert int(m.group(2)) == asked
+    keys = {"当てはまる": "eligible", "先に手続き": "after_prereq", "確かめる": "unknown", "当てはまらない": "ineligible"}
+    for text, counts in ((m.group(1), first), (m.group(3), last)):
+        written = dict(re.findall(r"(当てはまる|先に手続き|確かめる|当てはまらない) (\d+) 件", text))
+        assert "当てはまる" in written and "確かめる" in written, text
+        for label, n in written.items():
+            assert int(n) == counts.get(keys[label], 0), (label, n, counts)
+
+
 def test_readme_claude_uses_say_agent_sdk_is_not_used():
     """使った Claude の製品の欄に Managed Agents があり、使っていない Agent SDK を使っていないと書くか（11/5 T-083a）。"""
     section = README.split("\n## Claude の使い方\n", 1)[1].split("\n## ", 1)[0]
