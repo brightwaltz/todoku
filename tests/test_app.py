@@ -1127,6 +1127,21 @@ def test_tap_targets_are_at_least_44px():
     assert "inset: -14px 0" in rule(".tel::after")
 
 
+def test_select_draws_its_own_look_so_safari_keeps_48px():
+    # 上の min-height の検査は CSS の文を読むだけ。Safari（WebKit）は既定の見た目の select に min-height を効かせず、
+    # 高さ 23px で描いていた（T-064。Playwright の WebKit で測った）。appearance: none で自分で描き、
+    # 都道府県を選ぶまで押せない #city（disabled）でも矢印が消えないよう、背景は background-color で塗る。
+    import re
+    from pathlib import Path
+
+    css = (Path(__file__).resolve().parents[1] / "web" / "style.css").read_text(encoding="utf-8")
+    body = re.search(r"^select \{([^}]*)\}", css, re.M).group(1)
+    assert "-webkit-appearance: none" in body and " appearance: none" in body
+    assert "background-image: linear-gradient" in body
+    disabled = re.search(r"^select:disabled \{([^}]*)\}", css, re.M).group(1)
+    assert "background:" not in disabled and "background-color:" in disabled
+
+
 def test_small_text_is_at_least_14px():
     # 帯の注と結果の札（pill・tag）は 14px 以上（T-031。ブラウザで測ると、結果のカードの高さは 390 で 8 枚の合計 +6px、
     # 1280 で 0px）。帯の列の名前は D-0012 で聞いている（B が 14px。A なら下の .col-head の 1 行を 11 に戻す）。
