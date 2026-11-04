@@ -12,7 +12,7 @@
 
 知らない制度は、尋ねることもできません。たとえば「母が退院してから家で転びやすくなった」という相談には、要介護認定の申請に加えて、認定を受けたあとで使える税の障害者控除（町田市の認定書が先に要る）まで、前提の手続きの順番つきで出てきます。住宅改修や福祉用具も、工事や購入の予定を確かめる候補として出ます。
 
-働く家族の側の制度は、あまり使われていません。介護をしながら雇われて働く人のうち、介護休業を使ったのは 3.2% でした（総務省「平成24年就業構造基本調査」、[厚生労働省の資料](https://www.mhlw.go.jp/file/05-Shingikai-12602000-Seisakutoukatsukan-Sanjikanshitsu_Roudouseisakutantou/0000103635.pdf)）。介護・看護のために仕事を辞めた人は、1 年で約 11 万人います（[令和4年就業構造基本調査](https://www.stat.go.jp/data/shugyou/2022/pdf/kgaiyou.pdf)）。
+働く家族の側の制度は、あまり使われていません。介護をしながら雇われて働く人のうち、介護休業を使ったのは 3.2% でした（総務省「平成24年就業構造基本調査」、[厚生労働省の資料](https://www.mhlw.go.jp/file/05-Shingikai-12602000-Seisakutoukatsukan-Sanjikanshitsu_Roudouseisakutantou/0000103635.pdf)）。介護・看護のために仕事を辞めた人は、1 年で 10.6 万人います（[令和4年就業構造基本調査](https://www.stat.go.jp/data/shugyou/2022/pdf/kgaiyou.pdf)）。
 
 > Built with Claude: Japan 2026（2026-11-02〜11-08）の期間中に新しく作りました。下の「期間中に作ったもの」を参照してください。
 
