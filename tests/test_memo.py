@@ -6,7 +6,9 @@ from todoku import memo as memo_mod
 
 MACHIDA = "132098"
 BASE = {"care_level": "care2", "residence": "home", "plans_equipment_purchase": True, "age_band": "age_75_plus"}
-AFTER = {**BASE, "care_level": "none"}
+# 認定をまだ受けていない人。dev-merge の規則では要介護認定に「日々の暮らしで介助が要る」も要るので、その事実があれば答えておく
+AFTER = {**BASE, "care_level": "none",
+         **({"needs_daily_help": True} if "needs_daily_help" in app_mod.RULES.facts else {})}
 
 
 def card(view: dict, pid: str) -> dict:
