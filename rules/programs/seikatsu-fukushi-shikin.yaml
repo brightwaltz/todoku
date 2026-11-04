@@ -28,6 +28,10 @@ apply:
 amount:
   - 福祉費の限度額は580万円以内（用途ごとに目安がある）
   - 据置期間は6か月以内、返済は据置のあと20年以内
+cost:
+  self_pay: loan
+  share: "保証人がいれば無利子、いなければ低い利子"
+  source: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/index.html
 sources:
   - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/index.html
     publisher: 厚生労働省

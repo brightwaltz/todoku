@@ -30,6 +30,10 @@ amount:
   - 市に登録した業者なら、自己負担分だけを払えばよい（受領委任払い）
 timing:
   - 事前申請の審査は、書類がそろっていれば10日〜2週間ほど
+cost:
+  self_pay: partial
+  share: "1〜3割。生涯20万円を超えた分は全額"
+  source: https://www.mhlw.go.jp/content/12300000/001668164.pdf
 sources:
   - url: https://www.mhlw.go.jp/content/12300000/001668164.pdf
     publisher: 厚生労働省

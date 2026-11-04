@@ -26,6 +26,9 @@ amount:
   - 所得控除の額は、障害者27万円、特別障害者40万円、いつも同居している特別障害者75万円
 timing:
   - その年の12月31日の状態で決まる。過去の年の分も、翌年1月1日から5年間は還付申告ができる
+cost:
+  self_pay: tax
+  source: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1160.htm
 sources:
   - url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1160.htm
     publisher: 国税庁

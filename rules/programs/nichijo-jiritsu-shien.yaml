@@ -19,6 +19,10 @@ amount:
   - 福祉サービスを使う手続き、住宅の改造や日常の買い物などの契約、住民票の届け出などの行政手続きの手伝い
   - 預金の出し入れなど日々のお金の管理と、定期的な訪問
   - 利用料の例：訪問1回あたり平均1,200円（厚生労働省のページ）
+cost:
+  self_pay: partial
+  share: "利用料がかかる（例：訪問1回あたり平均1,200円）"
+  source: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/chiiki-fukusi-yougo
 sources:
   - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/chiiki-fukusi-yougo
     publisher: 厚生労働省

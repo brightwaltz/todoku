@@ -24,6 +24,10 @@ amount:
   - 休んだ日を有給にするか無給にするかは、会社の規定による
 timing:
   - 「1年間」は、会社が決めていなければ4月1日から翌年3月31日まで
+cost:
+  self_pay: varies
+  share: "休んだ日の給与は会社の規定による"
+  source: https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/kaigo/shorttime-leave/
 sources:
   - url: https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/kaigo/shorttime-leave/
     publisher: 厚生労働省

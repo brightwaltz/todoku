@@ -30,6 +30,10 @@ amount:
   - 要介護1〜3は週3食まで、要介護4・5は週5食まで。費用は事業所ごとに違い、事業所に直接払う
 timing:
   - 市が受け付けてからおよそ1週間で使えるようになる
+cost:
+  self_pay: varies
+  share: "食事の費用は事業所ごとに違う"
+  source: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/jiritsushienhaishoku.html
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/jiritsushienhaishoku.html
     publisher: 町田市

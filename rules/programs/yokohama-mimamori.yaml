@@ -18,6 +18,10 @@ apply:
   phone: 事業の問い合わせは健康福祉局 高齢在宅支援課 045-671-2405
 amount:
   - 見守り機器の月の利用料を、1,000円まで補助する
+cost:
+  self_pay: partial
+  share: "月の利用料のうち1,000円を超えた分"
+  source: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/mimamori.html
 sources:
   - url: https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/mimamori.html
     publisher: 横浜市 健康福祉局

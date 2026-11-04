@@ -188,6 +188,7 @@ details summary { cursor: pointer; color: var(--accent); font-size: 15px; paddin
 .prog .sum { margin: 6px 0 0; font-size: 16px; color: var(--muted); }
 .prog .chain { margin: 8px 0 0; font-size: 15px; color: var(--pre); font-weight: 700; }
 .prog .chain a { color: var(--pre); }
+.prog .cost { margin: 6px 0 0; font-size: 15px; color: var(--ink); }
 .prog .body { padding: 0 18px 18px; border-top: 1px solid var(--line); }
 .prog h3 { font-size: 16px; margin: 16px 0 6px; color: var(--accent); }
 .reasons { list-style: none; padding: 0; margin: 0; font-size: 16px; }

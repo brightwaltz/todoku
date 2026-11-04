@@ -37,6 +37,10 @@ amount:
   - 申請にお金はかからない。主治医意見書の作成料を本人が払うこともない
 timing:
   - 結果は原則として申請から30日以内に届く（厚生労働省）
+cost:
+  self_pay: none
+  share: "主治医意見書の作成料も本人は払わない"
+  source: https://www.city.machida.tokyo.jp/iryo/kaigo/nagare/the-step-of-service.html
 sources:
   - url: https://www.kaigokensaku.mhlw.go.jp/commentary/flow.html
     publisher: 厚生労働省（介護サービス情報公表システム）

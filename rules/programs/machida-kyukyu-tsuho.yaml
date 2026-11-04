@@ -19,6 +19,10 @@ apply:
   phone: 問い合わせは高齢者支援課 042-724-2141
 amount:
   - 住民税が課税の人は、初めに8,943円（年度で変わることがある）。非課税の人は負担なし
+cost:
+  self_pay: partial
+  share: "課税の人は初めに8,943円。非課税の人は負担なし"
+  source: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kinkyutuhoshisutemu.html
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kinkyutuhoshisutemu.html
     publisher: 町田市

@@ -23,6 +23,10 @@ bring:
   - 郵送のときは本人確認書類の写しと、切手を貼った返信用封筒
 timing:
   - 前の年より前の分も申請できる
+cost:
+  self_pay: ask
+  who_can_apply: [本人, 家族]
+  source: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zeikojo/syogaikoujyo.html
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zeikojo/syogaikoujyo.html
     publisher: 町田市

@@ -21,6 +21,18 @@ KINDS = {"review": "審査", "condition": "条件"}
 # 原文の引用を画面に出してよい利用条件。町田市は独自の規約で無断転載が禁じられているので入らない
 QUOTABLE_LICENSES = {"PDL1.0"}
 BOOL_OPTIONS = ((True, "はい"), (False, "いいえ"))
+# 費用の負担（札に 1 行で出す）。出典で言えないものは ask（窓口で確かめる）にする
+SELF_PAY = {
+    "none": "かからない",
+    "partial": "一部を負担",
+    "loan": "借りる（返す）",
+    "varies": "人や勤め先・事業所で変わる",
+    "receive": "お金を受け取る制度",
+    "tax": "税が軽くなる制度",
+    "ask": "窓口で確かめる",
+}
+APPLICANTS = ("本人", "家族", "親族", "代理人", "法定代理人")
+COST_SHARE_MAX = 40  # 札の 1 行に収める。出典の文は写さず、自分の言葉で短く書く
 
 
 class RuleError(ValueError):
@@ -84,6 +96,16 @@ class Procedure:
     note: str = ""
 
 
+@dataclass(frozen=True)
+class Cost:
+    self_pay: str = "ask"
+    # 割合・額などの一言（自分の言葉で）
+    share: str = ""
+    who_can_apply: tuple[str, ...] = ()
+    # どの出典で言えるか（その制度の sources の URL）
+    source: str = ""
+
+
 @dataclass
 class Program:
     id: str
@@ -113,6 +135,7 @@ class Program:
     depends_on: set[str] = field(default_factory=set)
     # 市区町村の型だけ：市の制度を一つずつ判定している市（段の名前）でも、型のまま出す市
     shown_in: tuple[str, ...] = ()
+    cost: Cost = field(default_factory=Cost)
 
 
 @dataclass
@@ -265,6 +288,8 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
     if shown_in and (level != "local" or set(shown_in) - set(LEVEL_PLACE)):
         raise RuleError(f"{where}: shown_in は市区町村の型だけに、段の名前（{'・'.join(LEVEL_PLACE)}）で書く")
 
+    cost = _load_cost(raw.get("cost"), sources, where)
+
     return Program(
         id=pid,
         number=int(need("number")),
@@ -287,7 +312,34 @@ def _load_program(path: Path, facts: dict[str, Fact]) -> Program:
         elsewhere=elsewhere,
         depends_on=depends_on,
         shown_in=shown_in,
+        cost=cost,
     )
+
+
+def _load_cost(raw: Any, sources: list[Source], where: str) -> Cost:
+    if raw is None:
+        return Cost()
+    if not isinstance(raw, dict):
+        raise RuleError(f"{where}: cost は辞書で書く")
+    if set(raw) - {"self_pay", "share", "who_can_apply", "source"}:
+        raise RuleError(f"{where}: cost に書けるのは self_pay・share・who_can_apply・source だけ")
+    self_pay = raw.get("self_pay", "ask")
+    if self_pay not in SELF_PAY:
+        raise RuleError(f"{where}: cost の self_pay は {sorted(SELF_PAY)} のどれか")
+    share = str(raw.get("share") or "").strip()
+    who = tuple(raw.get("who_can_apply") or ())
+    source = str(raw.get("source") or "").strip()
+    if set(who) - set(APPLICANTS):
+        raise RuleError(f"{where}: cost の who_can_apply は {'・'.join(APPLICANTS)} から選ぶ")
+    if self_pay == "ask" and share:
+        raise RuleError(f"{where}: 窓口で確かめる（ask）ときは share を書かない")
+    if len(share) > COST_SHARE_MAX:
+        raise RuleError(f"{where}: cost の share は {COST_SHARE_MAX} 字まで（札の 1 行に収める）")
+    if (self_pay != "ask" or who) and not source:
+        raise RuleError(f"{where}: cost を埋めるときは、どの出典で言えるかを source（URL）に書く")
+    if source and source not in {s.url for s in sources}:
+        raise RuleError(f"{where}: cost の source が sources の URL のどれでもない: {source}")
+    return Cost(self_pay=self_pay, share=share, who_can_apply=who, source=source)
 
 
 def _load_procedure(raw: dict, where: str) -> Procedure:

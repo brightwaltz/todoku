@@ -27,6 +27,10 @@ amount:
 timing:
   - 申請した月の1日から翌年7月31日まで有効。さかのぼれるのは申請した月の1日まで
   - 決定まではおよそ2週間
+cost:
+  self_pay: partial
+  share: "食費・居住費を、所得と資産の段階ごとの額まで払う"
+  source: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
 sources:
   - url: https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html
     publisher: 厚生労働省（介護サービス情報公表システム）

@@ -27,6 +27,9 @@ amount:
   - 年4回（6・9・12・3月）、上限額の範囲で選んだ紙おむつが届く
 timing:
   - 申請からおよそ1週間〜10日で結果が届く。条件を満たしている間は毎年続く
+# 出典の原文で費用を言えないので、窓口で確かめる（T-073）
+cost:
+  self_pay: ask
 sources:
   - url: https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/kamiomutushikyu.html
     publisher: 町田市

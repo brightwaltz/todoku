@@ -28,6 +28,10 @@ amount:
   - 毎年4月〜翌年3月の1年で10万円まで。その9割（所得により8割・7割）が支給される
 timing:
   - 買ったあとに申請する
+cost:
+  self_pay: partial
+  share: "1〜3割。1年10万円を超えた分は全額"
+  source: https://www.mhlw.go.jp/content/12300000/001668164.pdf
 sources:
   - url: https://www.mhlw.go.jp/content/12300000/001668164.pdf
     publisher: 厚生労働省

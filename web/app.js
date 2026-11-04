@@ -789,6 +789,12 @@ function reasonText(r) {
   return f ? `条件「${f.label}」を満たしていない${f.value ? `（${f.value}）` : ""}` : "満たしていない条件がある";
 }
 
+// 費用の負担の 1 行（規則の cost から。Claude は使わない）
+function costText(c) {
+  const who = c.who_can_apply.length ? `。申請できる人：${c.who_can_apply.join("・")}` : "";
+  return `費用：${c.label}${c.share ? `（${c.share}）` : ""}${who}`;
+}
+
 function programCard(r) {
   const head = el("div", { class: "head" },
     el("span", { class: "tag" }, r.level), el("span", { class: "name" }, r.name),
@@ -799,6 +805,7 @@ function programCard(r) {
       ...r.waiting_on.map((w, i) => [i ? "、" : "", el("a", { href: `#p-${w.id}`, onclick: (ev) => openCard(ev, w.id) }, w.name),
         w.pending ? "（申請済み・結果待ち）" : ""])));
   }
+  if (r.cost) sumParts.push(el("p", { class: "cost" }, costText(r.cost)));
   if (r.status === "unknown" && r.missing.length) {
     sumParts.push(el("p", { class: "chain" }, "分からない点：", r.missing.map((m) => m.name).join("、")));
   }

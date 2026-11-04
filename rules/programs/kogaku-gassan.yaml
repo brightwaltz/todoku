@@ -28,6 +28,10 @@ amount:
   - 70歳以上の1年の限度額は、一般の区分で56万円、住民税非課税の世帯で31万円（一定の所得以下なら19万円）
 timing:
   - 町田市の国民健康保険では、対象になる人に3月下旬ごろ案内が届く。時効は7月31日の翌日から2年
+cost:
+  self_pay: receive
+  share: "1年の限度額を超えた分が戻る"
+  source: https://www.kyoukaikenpo.or.jp/benefit/high_cost_medical_expenses/003/index.html
 sources:
   - url: https://www.kyoukaikenpo.or.jp/benefit/high_cost_medical_expenses/003/index.html
     publisher: 全国健康保険協会（協会けんぽ）

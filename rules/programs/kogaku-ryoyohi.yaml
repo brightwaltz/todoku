@@ -24,6 +24,10 @@ amount:
 timing:
   - 町田市の国民健康保険は受診月から最短3か月後、後期高齢者医療は約4か月後に申請書が届く
   - 後期高齢者医療は、一度申請すれば次からは自動で振り込まれる
+cost:
+  self_pay: receive
+  share: "月の上限を超えた分が戻る"
+  source: https://www.mhlw.go.jp/content/001725284.pdf
 sources:
   - url: https://www.mhlw.go.jp/content/001725284.pdf
     publisher: 厚生労働省

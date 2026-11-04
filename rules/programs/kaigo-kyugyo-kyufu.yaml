@@ -30,6 +30,10 @@ amount:
   - 同じ家族について通算93日・3回まで
 timing:
   - 休業が終わった日（3か月を超えるときは始めた日から3か月たった日）の翌日から2か月たつ日が属する月の末日まで
+cost:
+  self_pay: receive
+  share: "休業前の賃金の67%"
+  source: https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html
 sources:
   - url: https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html
     publisher: 厚生労働省（ハローワークインターネットサービス）

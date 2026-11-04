@@ -358,6 +358,9 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
         "apply": apply,
         "bring": other.get("bring", p.bring),
         "amount": p.amount,
+        # 費用の負担。札に 1 行で出す（出典で言えないものは「窓口で確かめる」）
+        "cost": {"self_pay": p.cost.self_pay, "label": rules_mod.SELF_PAY[p.cost.self_pay],
+                 "share": p.cost.share, "who_can_apply": list(p.cost.who_can_apply)},
         "timing": other.get("timing", p.timing),
         "sources": [
             {"url": s.url, "publisher": s.publisher, "title": s.title, "license": s.license,

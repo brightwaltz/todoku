@@ -28,6 +28,10 @@ amount:
   - 2月・5月・8月・11月に、それぞれ前の月の分までがまとめて支払われる
 timing:
   - 請求した月の翌月分から支給される（さかのぼっては出ない）
+cost:
+  self_pay: receive
+  share: "月30,450円"
+  source: https://www.mhlw.go.jp/bunya/shougaihoken/jidou/tokubetsu.html
 sources:
   - url: https://www.mhlw.go.jp/bunya/shougaihoken/jidou/tokubetsu.html
     publisher: 厚生労働省

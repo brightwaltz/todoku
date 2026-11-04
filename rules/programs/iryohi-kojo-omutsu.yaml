@@ -25,6 +25,9 @@ amount:
   - 控除の上限は200万円
 timing:
   - その年の1〜12月に払った分が対象。翌年1月1日から5年間は還付申告ができる
+cost:
+  self_pay: tax
+  source: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1122.htm
 sources:
   - url: https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1122.htm
     publisher: 国税庁

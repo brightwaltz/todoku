@@ -17,6 +17,9 @@ at_application:
   - ここでの条件は、この事業に関係しそうかの目安で、市区町村の要件ではない
 apply:
   where: お住まいの市区町村の高齢者福祉・介護保険の担当窓口、または地域包括支援センター
+# 出典の原文で費用を言えないので、窓口で確かめる（T-073）
+cost:
+  self_pay: ask
 sources:
   - url: https://www.pref.saitama.lg.jp/documents/149759/739.pdf
     publisher: 厚生労働省 老健局（介護保険最新情報 Vol.739 の参考資料。埼玉県のサイトに載った写し）
