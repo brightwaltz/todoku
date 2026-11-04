@@ -1041,6 +1041,7 @@ function programCard(r) {
     sumParts.push(el("p", { class: "chain" }, "分からない点：", r.missing.map((m) => m.name).join("、")));
   }
   const body = el("div", { class: "body" });
+  if (r.memo) body.append(memoView(r.memo));
   body.append(el("h3", {}, "判定の理由"), el("ul", { class: "reasons" },
     r.reasons.map((x) => el("li", { class: x.state }, x.label, x.value ? el("span", { class: "val" }, `（${x.value}）`) : null))));
   if (r.missing.length) {
@@ -1057,6 +1058,30 @@ function programCard(r) {
   if (r.timing.length) body.append(el("h3", {}, "時期・期限"), el("ul", { class: "plain" }, r.timing.map((t) => el("li", {}, t))));
   body.append(el("h3", {}, "出典"), ...r.sources.map(sourceView));
   return el("details", { class: "card prog", id: `p-${r.id}` }, el("summary", {}, sumParts), body);
+}
+
+// 申請メモ（T-074）：窓口へ持っていく記入の下書き。中身は規則と相談の答えから（サーバの memo.py。Claude は使わない）
+function memoView(m) {
+  const sheet = el("div", { class: "memo-sheet" },
+    el("p", { class: "memo-title" }, m.title),
+    el("p", { class: "note" }, m.note),
+    el("h4", {}, "申請先"), el("p", {}, m.where),
+    m.phone ? el("p", {}, `電話：${m.phone}`) : null,
+    m.bring.length ? [el("h4", {}, "持ち物（済んだら印を）"), el("ul", { class: "check" }, m.bring.map((t) => el("li", {}, t)))] : null,
+    m.fill.length ? [el("h4", {}, "相談の答えから書けること"),
+      el("dl", { class: "fill" }, m.fill.flatMap((f) => [el("dt", {}, f.name), el("dd", {}, f.value)]))] : null,
+    el("h4", {}, "窓口で最初に言う一言"), el("p", { class: "say" }, m.say));
+  return el("details", { class: "memo" }, el("summary", {}, "申請メモを開く（窓口に持っていく下書き）"), sheet,
+    el("button", { type: "button", onclick: () => printMemo(sheet) }, "このメモだけ印刷する"));
+}
+
+// メモ 1 枚だけを刷る：body の直下の #print-sheet に写し、ほかを紙から外す（style.css の html.print-memo）
+function printMemo(sheet) {
+  let box = document.getElementById("print-sheet");
+  if (!box) { box = el("div", { id: "print-sheet" }); document.body.append(box); }
+  box.replaceChildren(sheet.cloneNode(true));
+  document.documentElement.classList.add("print-memo");
+  window.print();
 }
 
 // 行政手続データの手続。税の控除のように、この制度だけの手続がないときは「使う手続」と書き、控除の根拠に見せない
@@ -1242,6 +1267,8 @@ window.addEventListener("afterprint", () => {
   for (const d of printOpened) d.open = false;
   printOpened = [];
   document.documentElement.classList.remove("print-result");
+  document.documentElement.classList.remove("print-memo");
+  document.getElementById("print-sheet")?.replaceChildren();
 });
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 // 残した結果のリンクから開いたときは聞かない（結果は合言葉なしで出る。相談を送るときに聞く）

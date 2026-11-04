@@ -334,3 +334,21 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .effort-swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line); }
 .effort-swatch.unknown { border-color: var(--unk); }
 @media print { .effort-bar .seg { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+/* 申請メモ（T-074）。画面では札の中で開く。紙では「このメモだけ印刷する」で 1 枚に刷る（app.js の printMemo）。
+   結果の画面ぜんぶを刷るとき（print-result）は、札と重なるのでメモを出さない */
+.memo { border: 1px dashed var(--line, #bbb); border-radius: 8px; padding: 6px 10px; margin: 0 0 12px; }
+.memo > summary { cursor: pointer; font-weight: 600; }
+.memo-sheet .memo-title { font-weight: 700; margin: 8px 0 2px; }
+.memo-sheet h4 { margin: 10px 0 2px; font-size: 1em; }
+.memo-sheet ul.check { list-style: none; padding-left: 0; margin: 0; }
+.memo-sheet ul.check li::before { content: "□ "; }
+.memo-sheet dl.fill { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin: 0; }
+.memo-sheet dl.fill dd { margin: 0; }
+.memo-sheet .say { border-left: 3px solid var(--line, #bbb); padding-left: 8px; }
+#print-sheet { display: none; }
+@media print {
+  .print-result .memo { display: none; }
+  html.print-memo body > :not(#print-sheet) { display: none !important; }
+  html.print-memo #print-sheet { display: block; font-size: 12pt; color: #000; }
+}

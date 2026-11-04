@@ -26,6 +26,7 @@ from pydantic import BaseModel, Field, model_validator
 from . import events as events_mod
 from .city import city_page
 from .japan_map import japan_map
+from . import memo as memo_mod
 from . import options as options_mod
 from . import rules as rules_mod
 import anthropic
@@ -377,6 +378,9 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
         # 行政手続データの手続（根拠法令・条項）。画面では出典の名前を添える
         "procedures": [{"name": d.name, "law": d.law, "article": d.article, "match": d.match} for d in p.procedures],
         "procedures_source": rules_mod.PROCEDURES_DATASET if p.procedures else "",
+        # 申請メモ（T-074）：窓口へ持っていく記入の下書き。規則と相談の答えからだけ作り、Claude は使わない
+        "memo": memo_mod.memo_view(r, facts, subject, RULES, place_view(municipality), apply,
+                                   other.get("bring", p.bring), pending),
     }
 
 
