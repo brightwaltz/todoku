@@ -129,7 +129,11 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .change { margin: 6px 0 0; font-weight: 700; color: var(--accent); font-size: 14px; }
 .change:empty { margin: 0; }  /* 読み上げの領域は消さずに残す */
 .change:not(:empty) + .note { display: none; }  /* 1 問答えたら、説明の代わりに変わったことを出す */
-#ask { scroll-margin-top: var(--board-h, 0px); }
+#ask, #pause { scroll-margin-top: var(--board-h, 0px); }
+/* 1 問だけ答える（T-072b）。最初の問いの数の行の下に、押すと切り替わるリンクを 1 行 */
+.one-only { margin: 0 0 4px; font-size: 15px; color: var(--muted); }
+.one-only .link { margin-right: 8px; }
+.one-only .link[aria-pressed="true"] { color: var(--ink); text-decoration: none; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
   .said mark, .facts li, .col-head .count.bump, .tile.pulse::after { animation: none; }
 }
@@ -221,7 +225,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .top { background: none; color: var(--ink); padding: 0 0 8px; margin-bottom: 14px; border-bottom: 2px solid var(--accent); }
   .card { box-shadow: none; }
   .board-card.live { position: static; box-shadow: none; }
-  .print-result #input, .print-result #reading, .print-result #board, .print-result #ask,
+  .print-result #input, .print-result #reading, .print-result #board, .print-result #ask, .print-result #pause,
   .print-result #later, .print-result #later-change, .print-result #stats, .print-result #again,
   .print-result #keep { display: none; }
   .print-result #result button:not(.link) { display: none; }

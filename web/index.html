@@ -92,12 +92,24 @@
 
   <section id="ask" class="card ask" hidden>
     <p class="ask-count" id="ask-count"></p>
+    <p class="one-only" id="one-box" hidden><button type="button" class="link" id="one" aria-pressed="false">1 問だけ答える</button><span id="one-note"></span></p>
     <h2 id="ask-text" tabindex="-1"></h2>
     <p class="hint" id="ask-hint"></p>
     <div id="ask-options" class="options"></div>
     <p class="why" id="ask-why"></p>
     <details><summary>確かめ方</summary><p id="ask-check"></p></details>
     <button class="link" id="skip">聞き返しをやめて、結果を見る</button>
+  </section>
+
+  <section id="pause" class="card ask" hidden>
+    <h2 id="pause-title" tabindex="-1">1 問答えました。ここまでの見立てです</h2>
+    <p id="pause-counts"></p>
+    <div class="options">
+      <button type="button" class="option" id="pause-more">もう 1 問答える</button>
+      <button type="button" class="option" id="pause-stop">ここでやめて、結果を見る</button>
+    </div>
+    <p class="why" id="pause-msg"></p>
+    <p class="note">やめても、結果の画面の「まだ確かめていないこと」で、残りにあとから答えられます。結果を残すリンクも作れます。</p>
   </section>
 
   <section id="result" hidden>

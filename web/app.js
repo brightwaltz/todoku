@@ -46,7 +46,8 @@ class GateError extends Error {}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
-    municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false };
+    municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
+    oneOnly: false, held: null };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
 }
 
 function freshPick() {
@@ -210,7 +211,7 @@ async function consultWith(text, call) {
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
   say("読み取っています…");
-  show("reading"); show("extracted", false); show("ask", false); show("result", false);
+  show("reading"); show("extracted", false); show("ask", false); show("pause", false); show("result", false);
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
@@ -428,7 +429,10 @@ function changeText(moved, now, removed = 0) {
 function render(data, first = false) {
   renderBoard(data);
   $("center-link").href = data.center_search;  // ページ下の相談先も、お住まいの都道府県の検索にする
-  if (data.question) { show("ask"); show("result", false); renderQuestion(data.question, data.max_questions, first); }
+  show("pause", false);
+  // 1 問だけ答える道では、答えたら次の問いを出さずに止め、ここまでの見立て（上の帯）と「もう 1 問／ここでやめる」を出す
+  if (data.question && state.oneOnly && state.asked > 0) { show("ask", false); show("result", false); renderPause(data); }
+  else if (data.question) { show("ask"); show("result", false); renderQuestion(data.question, data.max_questions, first); }
   else { show("ask", false); renderResult(data); }
 }
 
@@ -443,6 +447,8 @@ function revealThenAsk() {
 
 function renderQuestion(q, max, first = false) {
   $("ask-count").textContent = `質問 ${state.asked + 1}（多くて ${max} つ）`;
+  show("one-box", state.asked === 0);  // 「1 問だけ答える」は最初の問いでだけ選べる
+  syncOne();
   $("ask-text").textContent = askText(q);
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
   fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code));
@@ -455,6 +461,45 @@ function renderQuestion(q, max, first = false) {
   $("ask-text").focus({ preventScroll: true });
   if (first) revealThenAsk();
   else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// ---- 1 問だけ答える（T-072b）----
+// 最初の問いで選ぶと、答えるたびに止まり、その時点の札を見てから「もう 1 問答える」か「ここでやめる」を選べる。
+// 押しても問いと判定は変わらない（止まるかどうかだけ）。もう一度押すと、いつもどおり続けて聞く
+function syncOne() {
+  $("one").setAttribute("aria-pressed", String(state.oneOnly));
+  $("one-note").textContent = state.oneOnly ? "答えたら、ここまでの見立てを出して止まります。続けるかはそこで選べます。" : "";
+}
+
+function toggleOne() {
+  state.oneOnly = !state.oneOnly;
+  syncOne();
+}
+
+function renderPause(data) {
+  state.held = data;
+  $("pause-title").textContent = `${state.asked} 問答えました。ここまでの見立てです`;
+  // 数は結果の画面の見出し（GROUPS）と同じ名前・並びで出す
+  const parts = GROUPS.map(([st, title]) => [title, data.results.filter((r) => r.status === st).length])
+    .filter(([, n]) => n).map(([title, n]) => `${title} ${n} 件`);
+  const next = data.question.affects.length ? `次の問いで判定が決まる制度：${affectNames(data.question.affects)}` : "";
+  $("pause-counts").textContent = [parts.join("・"), next].filter(Boolean).join("。");
+  $("pause-msg").textContent = "";
+  const left = data.max_questions - state.asked;
+  $("pause-more").textContent = `もう 1 問答える（あと ${left} 問まで）`;
+  show("pause");
+  $("pause").scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" });
+  focusOn($("pause-title"));
+}
+
+// 止めておいた次の問いを出す（サーバには送り直さない。答えると、また止まる）
+function pauseMore() {
+  const data = state.held;
+  if (!data || busy) return;
+  state.held = null;
+  show("pause", false);
+  show("ask");
+  renderQuestion(data.question, data.max_questions);
 }
 
 // お住まいは、町田市かどうかではなく市区町村で聞く（市区町村の一覧が取れなかったときは、はい・いいえで聞く）
@@ -529,7 +574,7 @@ async function step(change = {}, stop = false) {
   } catch (e) {
     failed = mine === state;
     if (mine === state) {
-      (state.resultShown ? $("later-change") : $("ask-why")).textContent = e.message;
+      (state.resultShown ? $("later-change") : seen($("pause")) ? $("pause-msg") : $("ask-why")).textContent = e.message;
       if (!state.resultShown) say(e.message);  // #later-change は読み上げの領域。問いの欄はそうでないので知らせる
     }
   } finally {
@@ -541,7 +586,7 @@ async function step(change = {}, stop = false) {
 function setBusy(on) {
   busy = on;
   // 元から止まっている欄（都道府県を選ぶ前の市区町村など）は、送り終えても止めたままにする
-  for (const node of document.querySelectorAll("#ask-options :is(button, select), #later-list :is(button, select), #skip")) {
+  for (const node of document.querySelectorAll("#ask-options :is(button, select), #later-list :is(button, select), #skip, #pause button")) {
     if (on && !node.disabled) { node.disabled = true; node.dataset.busy = "1"; }
     else if (!on && node.dataset.busy) { node.disabled = false; delete node.dataset.busy; }
   }
@@ -865,6 +910,9 @@ fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
 }).catch(() => { /* 見本の行は出さない */ });
 $("send").addEventListener("click", send);
 $("skip").addEventListener("click", () => step({}, true));
+$("one").addEventListener("click", toggleOne);
+$("pause-more").addEventListener("click", pauseMore);
+$("pause-stop").addEventListener("click", () => step({}, true));  // 聞き返しをやめたのと同じ。結果の画面に残すリンクも出る
 $("keep-copy").addEventListener("click", copyKeep);
 $("keep-reask").addEventListener("click", reaskNintei);
 // 開いているページに別の残した結果のリンクを貼ったとき（# より後ろだけが変わると、ページは読み直されない）
@@ -874,7 +922,7 @@ $("again").addEventListener("click", () => {
   forgetKeep();
   $("text").value = "";
   resetPick();
-  show("extracted", false); show("ask", false); show("result", false);
+  show("extracted", false); show("ask", false); show("pause", false); show("result", false);
   clearBoard();
   window.scrollTo({ top: 0, behavior: "smooth" });
   $("text").focus();
