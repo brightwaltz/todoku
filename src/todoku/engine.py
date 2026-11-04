@@ -17,7 +17,7 @@ all は F > U > P > T、any は T > P > U > F の順に強い（any は、前提
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Mapping
+from typing import Any, Iterable, Mapping
 
 from .rules import Program, RuleSet
 
@@ -248,3 +248,14 @@ def _eval(node: dict, facts: Mapping[str, Any], statuses: Mapping[str, str], lea
         prereq = node["via"]
     leaves.append(Leaf(node["label"], s, fact=fid, value=value, prereq=prereq))
     return s
+
+
+def prereq_edges(rules: RuleSet, shown: Iterable[str]) -> list[tuple[str, str]]:
+    """制度の地図の矢印（前提の制度 → それを前提にする制度）。両方が shown にあるものだけを、rules.order の順で返す。
+
+    規則の via と prereq（Program.depends_on）から作る。判定の状態は見ない（矢印は「先に済ませる手続き」のつながりを示すだけ）。
+    前提の制度が地図にない（済んでいる・当てはまらない・住所で外した）ときは、その矢印を描かない（T-081）
+    """
+    on_map = set(shown)
+    return [(dep, pid) for pid in rules.order if pid in on_map
+            for dep in sorted(rules.programs[pid].depends_on, key=rules.order.index) if dep in on_map]

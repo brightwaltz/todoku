@@ -269,3 +269,51 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .map-swatch { flex: none; display: inline-block; width: 16px; height: 16px; border-radius: 4px; border: 1px solid var(--line); transform: translateY(2px); }
 /* 390px でタイルの一辺を 24px 以上にする（WCAG 2.2 の 2.5.8 の下限。44px には届かない。お住まいの select が本筋の道） */
 @media (max-width: 420px) { .map-card { padding: 14px 8px; } .map-card h2, .map-card figcaption { padding: 0 8px; } }
+
+/* 制度の地図（T-081）。点の色は帯の札と同じ、縁の色は費用の 3 区分（札の 1 行の頭の印と同じ） */
+:root { --cost-free: #2b5fa6; --cost-pay: #a33b7a; --cost-ask: #7a8088; }
+.pmap { margin: 0 0 16px; }
+.pmap svg { display: block; width: 100%; max-width: 480px; height: auto; margin: 4px auto 0; overflow: visible; }
+.pmap .ring { fill: none; stroke: var(--line); stroke-width: 1.5; }
+.pmap .ring.eligible { stroke: var(--ok); stroke-opacity: .35; }
+.pmap .ring.after_prereq { stroke: var(--pre); stroke-opacity: .35; }
+.pmap .ring-label { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: central; paint-order: stroke; stroke: var(--card); stroke-width: 4px; }
+.pmap .ring-label.eligible { fill: var(--ok); }
+.pmap .ring-label.after_prereq { fill: var(--pre); }
+.pmap .ring-label.unknown { fill: var(--unk); }
+.pmap .me { fill: var(--accent); }
+.pmap .me-label { fill: var(--accent-ink); font-size: 15px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+.pmap .edge { stroke: var(--pre); stroke-width: 1.6; }
+.pmap .edge.to-unknown { stroke: var(--unk); stroke-opacity: .55; stroke-dasharray: 4 3; }
+.pmap .arrow-head { fill: var(--pre); }
+.pmap .edges.late { animation: pmap-late 700ms ease-out; }
+@keyframes pmap-late { 0%, 60% { opacity: 0; } 100% { opacity: 1; } }
+.pmap .pt { transition: transform 450ms cubic-bezier(.2, .7, .3, 1); cursor: pointer; }
+.pmap .pt .hit { fill: transparent; }
+.pmap .pt .dot { stroke: var(--card); stroke-width: 1.5; }
+.pmap .pt.eligible .dot { fill: var(--ok); }
+.pmap .pt.after_prereq .dot { fill: var(--pre); }
+.pmap .pt.unknown .dot { fill: var(--unk-bg); stroke: var(--unk); }
+.pmap .pt .cost-ring { fill: none; stroke-width: 3; }
+.pmap .pt.cost-free .cost-ring { stroke: var(--cost-free); }
+.pmap .pt.cost-pay .cost-ring { stroke: var(--cost-pay); }
+.pmap .pt.cost-ask .cost-ring { stroke: var(--cost-ask); stroke-dasharray: 3 2.4; }
+.pmap .pt:hover .hit, .pmap .pt:focus-visible .hit { fill: #9fd3c7; }
+.pmap .pt:focus { outline: none; }
+.pmap-pick { min-height: 1.6em; margin: 6px 0 0; font-weight: 700; text-align: center; }
+.pmap-legend { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; }
+.pmap-legend li { display: flex; gap: 6px; align-items: center; }
+.pmap-legend.cost { margin-top: 4px; font-size: 14px; }
+.pmap-swatch { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+.pmap-swatch.eligible { background: var(--ok); }
+.pmap-swatch.after_prereq { background: var(--pre); }
+.pmap-swatch.unknown { background: var(--unk-bg); border: 1.5px solid var(--unk); }
+.cost-mark { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 3px solid; flex: none; margin-right: 6px; vertical-align: -1px; }
+.cost-mark.cost-free { border-color: var(--cost-free); }
+.cost-mark.cost-pay { border-color: var(--cost-pay); }
+.cost-mark.cost-ask { border-color: var(--cost-ask); border-style: dashed; }
+@media (prefers-reduced-motion: reduce) {
+  .pmap .pt { transition: none; }
+  .pmap .edges.late { animation: none; }
+}
+@media print { .pmap .pt { transition: none; } }

@@ -30,7 +30,7 @@ from . import rules as rules_mod
 import anthropic
 
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
-from .engine import DONT_KNOW, T, U, Result, evaluate, known, statuses, with_implied
+from .engine import DONT_KNOW, SHOWN, T, U, Result, evaluate, known, prereq_edges, statuses, with_implied
 from .questions import MAX_QUESTIONS, Question, candidates, next_question, place_fact, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
@@ -515,6 +515,8 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
                   if f in RULES.facts and (f not in RULES.places or f == RULES.place_question)],
         "results": [result_view(r, implied, subject, municipality, pending) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
+        # 結果の画面の「制度の地図」の矢印（規則の前提から。地図に置く 3 つの状態の制度どうしだけ。Claude は使わない）
+        "edges": [list(e) for e in prereq_edges(RULES, (pid for pid, r in results.items() if r.status in SHOWN))],
         # 1 行で知らせるのは、市の制度を一つずつ判定している市（町田市・横浜市）の外に住む人にだけ
         "hidden_places": hidden_places if city is None else [],
         "place": place_view(municipality),
