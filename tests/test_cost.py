@@ -169,3 +169,16 @@ def test_share_amounts_also_appear_in_summary_or_amount():
         if lost:
             missing[y["id"]] = lost
     assert missing == {}
+
+
+def test_silver_pass_bring_names_the_tax_certificate_for_the_135_man_yen_case():
+    """1,000円で買う人の持ち物（T-093、2026-11-05 に silver-pass.tokyo/obtaining/ で照らした）。
+
+    所得135万円以下で 1,000円になる人は住民税が課税なので、非課税証明書は取れない。頁の書類は
+    「介護保険料納入（決定）通知書・課税証明書・生活保護受給証明書」のどれか 1 つで、コピーは不可。
+    """
+    bring = " ".join(RULES.programs["tokyo-silver-pass"].bring)
+    line = next(b for b in RULES.programs["tokyo-silver-pass"].bring if b.startswith("1,000円で買う人"))
+    assert "課税証明書" in line.replace("非課税証明書", "")
+    assert "135万円以下" in line and "コピー" in line
+    assert "通知書" in bring and "生活保護の受給証明書" in bring
