@@ -340,7 +340,7 @@ function renderBoard(data) {
   // 4. 質問の答えで判定が決まりうる制度の札に、輪を 2 回
   for (const t of tiles.values()) t.classList.remove("pulse");
   if (data.question) for (const id of data.question.affects_ids) { const t = tiles.get(id); if (t) restart(t, "pulse"); }
-  // 住所で外れた制度を数えないと、結果の画面で住所を選んだときに「判定は変わりませんでした」と出るため
+  // 住所で外した制度（その市・都の外と分かったときも、町田市・横浜市と分かって型を外したときも）を数えないと、結果の画面で住所を選んだときに「判定は変わりませんでした」と出るため
   $("board-change").textContent = changeText(moved, now, removed);
   boardPrev = now;
   // 質問へ移るとき、上に留まる見立ての帯の下に問いが来るように
@@ -358,7 +358,7 @@ function changeText(moved, now, removed = 0) {
       ? `（${names.slice(0, 2).join("、")}${names.length > 2 ? ` ほか ${names.length - 2} 件` : ""}）` : "";
     parts.push(`${say} +${names.length}${named}`);
   }
-  if (removed > 0) parts.push(`お住まいの地域の外の制度 −${removed}`);
+  if (removed > 0) parts.push(`住所で外した制度 −${removed}`);
   return parts.join("・");
 }
 
