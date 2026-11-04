@@ -525,6 +525,8 @@ const said = [], say = (t) => {{ said.push(t); }};  // いつもある読み上�
 const el = (tag, attrs, text) => text;
 const fresh = () => ({{}});
 const clearBoard = () => {{}};
+const document = {{ activeElement: null, body: {{}} }};  // 失敗したら押したボタンへ戻す（T-062）。動きは test_focus_returns_… とブラウザで見る
+const backTo = () => {{}};
 class GateError extends Error {{}}
 let state, resendAfterGate, renderFails = false;
 const renderExtracted = () => {{ seen.push(["extracted", hidden.reading]); }};
@@ -1185,6 +1187,34 @@ def test_screen_reader_status_and_focus_after_buttons_vanish():
     assert "state.laterAt = laterSpots().indexOf(" in js
     assert 'focusOn(rest.querySelector("h3"))' in js and 'focusOn(rest.querySelector("summary"))' in js
     assert "more.remove(); }" not in js  # 消すだけで、フォーカスを移さないボタンを残さない
+
+
+def test_focus_returns_to_pressed_button_after_failed_send():
+    # 送る間は押したボタンを止めるので、Chrome ではフォーカスが body に落ちる。成功すれば次の問い・結果の見出しへ移すが、
+    # 失敗してボタンを戻したときは body のままで、キーボード・読み上げの人は先頭から辿り直していた（T-062。動きはブラウザで確かめた）。
+    # 失敗したら、止めたボタンを戻した後で押したボタンへ戻す。合言葉の欄へ移したときなど、body でなければ動かさない。
+    import re
+    from pathlib import Path
+
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+
+    def body(name):
+        m = re.search(r"^(?:async )?function " + name + r"\(.*?^\}", js, re.M | re.S)
+        assert m, name
+        return m.group(0)
+
+    back = body("backTo")
+    assert "document.activeElement === document.body" in back and "node !== document.body" in back
+    # 問いの欄・結果の画面（step）：押したボタンを覚えてから止め、失敗なら止めたボタンを戻した後で戻す
+    step = body("step")
+    assert step.index("const pressed = document.activeElement") < step.index("setBusy(true)")
+    fin = step[step.index("} finally {"):]
+    assert fin.index("setBusy(false)") < fin.index("backTo(pressed)")
+    # 相談を送るボタン（consultWith）
+    consult = body("consultWith")
+    assert consult.index("const pressed = document.activeElement") < consult.index('$("send").disabled = true')
+    err = consult[consult.index("} catch (e) {"):]
+    assert err.index('$("send").disabled = false') < err.index("backTo(pressed)") < err.index("return;")
 
 
 def test_one_phone_number_per_paragraph():

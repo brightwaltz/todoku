@@ -77,6 +77,11 @@ function focusOn(node) {
   if (!node.matches("a[href], button, summary, input, select, textarea") && !node.hasAttribute("tabindex")) node.setAttribute("tabindex", "-1");
   node.focus({ preventScroll: true });
 }
+// 送る間に止めたボタンからは、フォーカスが body に落ちる。送るのに失敗してボタンを戻したら、押したボタンへ戻す
+// （合言葉の欄など、ほかへ移したときはそのまま。T-062）
+function backTo(node) {
+  if (node !== document.body && seen(node) && document.activeElement === document.body) focusOn(node);
+}
 
 function askGate(wrong) {
   $("gate-msg").textContent = wrong
@@ -191,6 +196,7 @@ async function openSample(s) {
 async function consultWith(text, call) {
   state = fresh();
   state.startedAt = Date.now();
+  const pressed = document.activeElement;
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
   say("読み取っています…");
@@ -215,6 +221,7 @@ async function consultWith(text, call) {
     say(e.message);
     show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
     $("send").disabled = false;
+    backTo(pressed);
     return;
   }
   $("send").disabled = false;
@@ -491,6 +498,8 @@ async function step(change = {}, stop = false) {
   if (busy) return;
   const mine = state;  // 待つ間に別の相談を始めたら、古い応答は描かない
   const next = { ...state, ...change };
+  const pressed = document.activeElement;
+  let failed = false;
   setBusy(true);
   try {
     const data = await api("/api/step", {
@@ -501,12 +510,14 @@ async function step(change = {}, stop = false) {
     Object.assign(state, change);
     render(data);
   } catch (e) {
+    failed = mine === state;
     if (mine === state) {
       (state.resultShown ? $("later-change") : $("ask-why")).textContent = e.message;
       if (!state.resultShown) say(e.message);  // #later-change は読み上げの領域。問いの欄はそうでないので知らせる
     }
   } finally {
     setBusy(false);
+    if (failed) backTo(pressed);  // 止めたボタンを戻してから（止まったままの所へはフォーカスが移らない）
   }
 }
 
