@@ -52,7 +52,7 @@
 |---|---|
 | LLM が対話で受給資格まで決めると、外れが多い。NYC の 82 制度で、GPT-4o の F1 は 35.7。判定をプログラムに移すと 56.2 に上がり、往復は 13.9% 減った（[Toles ほか、IJCNLP-AACL 2025](https://arxiv.org/abs/2502.19610)）。チャットボットの誤った提案は、易しい問いでケースワーカーの正答を 3 分の 2 減らした（[Gosciak ほか 2026、プレプリント](https://arxiv.org/abs/2603.11213)） | 判定は規則のプログラム。Claude は相談文から事実を取り出すだけ |
 | LLM の聞き方で多い失敗は、細かすぎる問いと、要らない追加の問い（[Toles ほか](https://arxiv.org/abs/2502.19610)、[Steenhuis・Westermann 2024](https://arxiv.org/abs/2410.03762)） | 次の問いは、答え次第で判定が変わる制度の数 × 重みで選ぶ |
-| 短い検査をいつ打ち切るかに、筋の通った決まりはまだない（[Krantsevich ほか、Annals of Applied Statistics 2023](https://arxiv.org/abs/2106.10364)） | 最大 3 問の枠も、理論から決めた数ではない |
+| 木で問いを選ぶ短い検査には、いつ打ち切るかの筋の通った決まりが無かった。同じ論文が、短さと正しさの釣り合いで決める方法を出した（[Krantsevich ほか、Annals of Applied Statistics 2023](https://arxiv.org/abs/2106.10364)） | 最大 3 問の枠も、理論から決めた数ではない |
 | 知らせる相手を広げると、対象でない人の申請も増える。英国の招待状の試行では、選び方を直すと、申請のうち資格のあった割合が 37.4% から 75.3% に上がった（[英国 DWP 2024](https://www.gov.uk/government/publications/pension-credit-invitation-to-claim-trial/executive-summary)、[ベルギー Van Gestel ほか 2023](https://doi.org/10.1017/S004727942100088X)） | 「当てはまる見込み」と「確かめると使えるかもしれない」を分けて示す |
 | 申請した人は、対象外にされた理由が分からず戸惑う（[Urban Institute 2023](https://digitalgovernmenthub.org/wp-content/uploads/2023/02/urbaninstitute_improvements.pdf)） | 当てはまらない制度にも、満たしていない条件を理由として付ける |
 | 英国の介護者は、介護している相手の給付の手続きを通して、自分の手当を知ることが多い（[英国 DWP 2024](https://www.gov.uk/government/publications/experience-of-claiming-and-receiving-carers-allowance/893f05bd-6e8f-4bcd-b9e3-4e8c3790e2b8)）。ある制度で外れた人は次の制度へ回し、本人が知っていると当てにしない（[USDR](https://usdr.gitbook.io/benefits-resource-hub/ui-journey-map/the-claimant-journey/know-what-im-eligible-for)） | 「先に手続きをすると使える」制度を、前提の手続きの順番つきで示す |
