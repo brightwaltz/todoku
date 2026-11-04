@@ -105,3 +105,15 @@ def test_readme_lists_claude_api_with_the_other_claude_uses():
     assert "- **Claude Code**" in head
     assert "- **MCP**" in head
     assert "- **Claude API" in head
+
+
+def test_readme_after_hackathon_names_the_operating_partners():
+    """「ハッカソンの後」に、行政と組んで専門のスタッフが確かめる実運用の道があるか（11/4 T-054、D-0014 の答え）。
+
+    説明の文（T-083）でも同じ言い方にそろえるので、言い回しを変えたらここも直す。
+    """
+    section = README.split("\n## ハッカソンの後\n", 1)[1].split("\n## ", 1)[0]
+    items = [line for line in section.splitlines() if line.startswith("- ")]
+    assert 3 <= len(items) <= 5
+    assert "行政（市の窓口・地域包括支援センター）と組み" in section
+    assert "専門のスタッフが規則と判定を確かめる" in section
