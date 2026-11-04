@@ -1,4 +1,4 @@
-"""T-075：市ごとの事業（rules/local/<団体コード>.yaml）の読み込みと形の検査。画面にはまだ出さない。"""
+"""T-075：市ごとの事業（rules/local/<団体コード>.yaml）の読み込みと形の検査。画面に出すところは tests/test_local_view.py（T-075b）。"""
 import json
 from pathlib import Path
 
