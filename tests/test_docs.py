@@ -73,7 +73,11 @@ def test_docs_and_page_do_not_say_rules_copy_official_pages():
     条件は自分の言葉で書いた、としている。役割の表と画面の下の注が「書き写した」と言うと食い違う。
     """
     page = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
-    for name, doc in (("README.md", README), ("docs/spec.md", SPEC), ("web/index.html", page)):
+    # 11/5 T-083a：結果の「押した数」の図の注（app.js）と /city/ の頁の注（city.py）も「書き写した」と言っていた
+    script = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+    city = (ROOT / "src" / "todoku" / "city.py").read_text(encoding="utf-8")
+    for name, doc in (("README.md", README), ("docs/spec.md", SPEC), ("web/index.html", page),
+                      ("web/app.js", script), ("src/todoku/city.py", city)):
         assert "書き写" not in doc, name
     row = next(line for line in README.splitlines() if line.startswith("| 申請先・持ち物・金額・出典 |"))
     assert "自分の言葉で書き" in row and "確認日" in row and "出典" in row.split("|")[2]
@@ -117,3 +121,30 @@ def test_readme_after_hackathon_names_the_operating_partners():
     assert 3 <= len(items) <= 5
     assert "行政（市の窓口・地域包括支援センター）と組み" in section
     assert "専門のスタッフが規則と判定を確かめる" in section
+
+
+def test_readme_two_layers_and_effort_figure():
+    """「2 つの層」の数が規則と合い、「手間と、分かること」の図がリポジトリにあるか（11/5 T-083a）。
+
+    型は一般の条件では判定するので、「判定しない」とは書かず「お住まいの市区町村がしているか」は判定しない、と書く。
+    """
+    rs = rules.load()
+    n = Counter(p.level for p in rs.programs.values())
+    layers = README.split("\n## 2 つの層", 1)[1].split("\n## ", 1)[0]
+    assert f"国・都・市の制度 {len(rs.programs) - n['local']} 件" in layers
+    assert f"市区町村の事業の型 {n['local']} 件" in layers
+    assert "判定していません" in layers and "判定しない" not in layers
+    effort = README.split("\n## 手間と、分かること\n", 1)[1].split("\n## ", 1)[0]
+    images = re.findall(r"!\[[^\]]+\]\(([^)]+)\)", effort)
+    assert images
+    for img in images:
+        assert (ROOT / img).is_file(), img
+        assert (ROOT / img).stat().st_size <= 300_000, img
+
+
+def test_readme_claude_uses_say_agent_sdk_is_not_used():
+    """使った Claude の製品の欄に Managed Agents があり、使っていない Agent SDK を使っていないと書くか（11/5 T-083a）。"""
+    section = README.split("\n## Claude の使い方\n", 1)[1].split("\n## ", 1)[0]
+    head = section.split("\n### ", 1)[0]
+    assert "- **Claude Managed Agents**" in head
+    assert "Claude Agent SDK は使っていません" in head

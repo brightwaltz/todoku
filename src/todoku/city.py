@@ -111,7 +111,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
 <p>介護や福祉のことは、お住まいの地域の地域包括支援センターでまとめて相談できます。</p>
 <p><a href="{e(center_url, quote=True)}" target="_blank" rel="noopener">{e(pref)}の地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）</a></p>
 </section>
-<p class="note">この頁は、公式ページの条件を書き写した規則ファイルから作っています（AI は使っていません）。市区町村の事業（型）は全国調査の実施率つきの候補で、{e(name)}がしているかは窓口で確かめてください。</p>
+<p class="note">この頁は、公式ページの条件をもとに書いた規則ファイルから作っています（AI は使っていません）。市区町村の事業（型）は全国調査の実施率つきの候補で、{e(name)}がしているかは窓口で確かめてください。</p>
 </main>
 </body>
 </html>

@@ -712,7 +712,7 @@ function renderResult(data) {
 // ---- 手間と分かること（T-082）----
 // 押した数ごとに、その人の道で返った results（/api/step と、最初の読み取り）を見立ての帯と同じ 4 つの列で数えてためる。
 // 済んでいる・結果待ちは帯と同じく数えない。同じ押した数の応答（聞き返しをやめた・ここでやめる）は置き換える。
-// 層：型（app.py の LEVELS["local"]）はプラスアルファの層、ほかは公式ページの条件を書き写した規則で判定した確かな層。
+// 層：型（app.py の LEVELS["local"]）はプラスアルファの層、ほかは公式ページの条件から書いた規則で判定した確かな層。
 // 層の数は、当てはまらないを除いた 3 つの列で数える（当てはまらない型を「候補」と数えないため）
 const TYPE_LEVEL = "市区町村（型）";
 const LIVE_COLS = ["eligible", "after_prereq", "unknown"];
@@ -752,7 +752,7 @@ function renderEffort() {
     el("li", {}, el("span", { class: `effort-swatch ${key}`, "aria-hidden": "true" }), short)));
   const last = trail[trail.length - 1];
   $("effort-layers").textContent = `${last.presses} 回押した後の、当てはまらないを除く ${last.sure + last.extra} 件のうち、`
-    + `確かな層（公式ページの条件を書き写した規則で判定した国・都・市の制度）が ${last.sure} 件`
+    + `確かな層（公式ページの条件から書いた規則で判定した国・都・市の制度）が ${last.sure} 件`
     + (last.extra ? `、プラスアルファの層（どこの市区町村にもある事業の型。お住まいの市の条件では判定していない候補）が ${last.extra} 件です。` : "です。");
 }
 
