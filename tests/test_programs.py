@@ -174,7 +174,10 @@ def test_outside_machida_shows_local_types_to_check(rs):
     s = statuses(rs, YOKOHAMA_DEMENTIA)
     assert s["local-haikai"] == "unknown" and s["local-koken"] == "unknown"  # あるかを窓口で確かめる
     assert s["machida-gps"] == "ineligible"
-    assert s["nichijo-jiritsu-shien"] == "eligible" and s["jiritsu-shien-iryo"] == "eligible"  # 国の制度は全国で判定
+    assert s["jiritsu-shien-iryo"] == "eligible"  # 国の制度は全国で判定
+    # 日常生活自立支援事業は、認知症の診断だけでは決めない（D-0009 の B）。お金の管理が難しいと分かれば全国で判定する
+    assert s["nichijo-jiritsu-shien"] == "unknown"
+    assert statuses(rs, {**YOKOHAMA_DEMENTIA, "money_management_difficulty": True})["nichijo-jiritsu-shien"] == "eligible"
 
 
 def test_machida_shows_city_programs_not_types(rs):
