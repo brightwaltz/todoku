@@ -101,6 +101,19 @@ def test_osaka_shows_its_own_programs_in_place_of_the_five_types():
     assert "介護用品の給付" in local and "家族介護慰労金" in local
 
 
+
+def test_hachioji_shows_three_found_programs_and_keeps_two_types():
+    """T-128：中核市の八王子市（rules/local/132012.yaml）は、2 回の読みが合った 3 件（おむつ・探索機器・成年後見）を
+    八王子市の名前と出典で出し、見つからなかった配食・慰労金（慰労金は R8.3.31 で廃止）は型のまま残す。"""
+    html = client.get("/city/132012").text
+    local = re.search(r'<section class="card[^"]*" data-level="local">(.*?)</section>', html, re.S).group(1)
+    own = re.findall(r'<li class="city-item local" data-id="([^"]+)"', local)
+    assert own == ["local-kaigo-yohin", "local-haikai", "local-koken"]
+    assert set(re.findall(r'data-id="([^"]+)"', local)) == ids_of("local")
+    assert local.count("Claude が公式頁から書き、照らし直したもの（2026-11-06）") == 3
+    assert local.count('href="https://www.city.hachioji.tokyo.jp/') == 3
+    assert "在宅高齢者おむつの給付" in local and "認知症高齢者探索機器の貸与" in local
+
 def test_outside_machida_no_machida_window_or_page():
     """国の制度の申請先は町田市で書いてあるので、大阪市の頁には町田市の窓口も町田市のページも出さない。"""
     html = client.get(f"/city/{OSAKA}").text
