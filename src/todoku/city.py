@@ -10,6 +10,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from html import escape
 
+from . import contacts as contacts_mod
 from . import rules as rules_mod
 from .local_rules import MARK, CityRules
 from .rules import Program, RuleSet
@@ -46,6 +47,8 @@ SUMMARY_TYPES_N = ("市区町村の事業", "種類（全国の実施率つき�
 STAFF_NOTE = ("地域包括支援センターの職員の方は、相談を受けながらこの頁やとどくの結果の画面をご本人と一緒に見て、"
               "印刷した結果を控えにできます。控えはご本人の情報なので、保管や受け渡しはセンターの個人情報の取り扱いの決まりに従ってください。"
               "判定は規則から出した目安で、窓口の扱いに合うかは職員の方が確かめてください。")
+# T-123：都道府県の段の下に出す相談先（rules/contacts/prefectures.yaml）の見出し。文言はここだけで差し替える
+CONTACTS_TITLE = "{pref}の相談先"
 
 
 @dataclass(frozen=True)
@@ -54,6 +57,7 @@ class Group:
     title: str
     programs: list[Program]
     empty: str = ""  # 制度が 0 件のときに出す 1 行
+    contacts: tuple = ()  # 都道府県の段に出す相談先（T-123）
 
 
 def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
@@ -69,9 +73,11 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
         return [p for p in programs if p.level == level]
 
     groups = [Group("national", "国の制度", of("national"))]
-    groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in pref_levels]
+    contacts = contacts_mod.for_place(code)
+    groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level), contacts=contacts) for level in pref_levels]
     if not pref_levels:
-        groups.append(Group("pref", f"{pref}の制度", [], PREF_NONE_FOUND.get(pref, f"{pref}の制度は、まだ規則にしていません。")))
+        groups.append(Group("pref", f"{pref}の制度", [], PREF_NONE_FOUND.get(pref, f"{pref}の制度は、まだ規則にしていません。"),
+                            contacts))
     groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in city_levels]
     if not city_levels:
         groups.append(Group("city", f"{name}の制度", [], f"{name}の事業は、下の「市区町村の事業（型）」で示します。"))
@@ -158,6 +164,19 @@ def _sources(p: Program, values: dict[str, bool]) -> list:
     return [s for s in p.sources if not any(site in s.url for site in away)] or p.sources
 
 
+def _contacts_html(g: Group, pref: str) -> str:
+    """都道府県の段の下に出す相談先（T-123）。名前は相談先の頁へのリンク、電話は tel: のリンクにする。"""
+    if not g.contacts:
+        return ""
+    e = escape
+    items = "".join(
+        f'<li><a href="{e(c.url, quote=True)}" target="_blank" rel="noopener">{e(c.name(pref))}</a>'
+        + (f' 電話 <a href="tel:{e(c.tel, quote=True)}">{e(c.tel)}</a>' if c.tel else "")
+        + f'<br><span class="note">{e(c.note)}（{c.checked.isoformat()} に確かめた）</span></li>'
+        for c in g.contacts)
+    return f'<div class="city-contacts"><h3>{e(CONTACTS_TITLE.format(pref=pref))}</h3><ul>{items}</ul></div>'
+
+
 def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, map_html: str = "",
               local: CityRules | None = None) -> str:
     """local はその市の事業（rules/local。T-075b）。見つかった型は、名前・申請先・主な条件・出典をその市のものにして印を付ける。"""
@@ -181,7 +200,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
                     # T-113：書けていない段の見出しにも 0 件を出さない（すぐ下の 1 行が、なぜ無いかを言う）
                     f'<h2>{e(g.title)}' + (f'<span class="city-n">{len(g.programs)} 件</span>' if g.programs else "") + '</h2>')
         if not g.programs:
-            body.append(f'<p class="note">{e(g.empty)}</p></section>')
+            body.append(f'<p class="note">{e(g.empty)}</p>{_contacts_html(g, pref)}</section>')
             continue
         body.append('<ul class="city-list">')
         for p in g.programs:
@@ -205,7 +224,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
                 f'<p>{e(p.summary)}</p>{extra}'
                 + (f'<p class="city-where"><b>申請先</b> {e(where)}</p>' if where else "")
                 + f'<details><summary>出典</summary><ul class="city-src">{links}</ul></details></li>')
-        body.append("</ul></section>")
+        body.append(f"</ul>{_contacts_html(g, pref)}</section>")
     local_note = (f"印の付いた事業は、Claude が{e(name)}の公式頁を読んで名前・申請先・主な条件を書き、別の読み手が原文と照らし直したものです。"
                   "当てはまるかの目安は型のままです。") if found else ""
     return f"""<!doctype html>
