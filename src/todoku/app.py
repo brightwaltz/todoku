@@ -448,9 +448,9 @@ def unconfirmed_view(facts: dict[str, Any], suggestions: dict[str, Any], subject
         out.append(ask_view(Question(fid, 0.0, suggestions[fid], affects), subject, visible))
     place = place_fact(RULES, facts)
     if place and place not in suggestions:  # 確信の低い読み取り（lives_in_machida）なら、上のループがもう出している
+        # 住所は判定が変わらなくても出す（聞き返しの最初に値打ちによらず聞くのと同じ。窓口や県の候補も住所で決まるため。11/6）
         score, affects = score_fact(RULES, facts, place, base)
-        if score > 0:
-            out.insert(0, ask_view(Question(place, score, None, affects), subject, visible))
+        out.insert(0, ask_view(Question(place, score, None, affects, counted=False), subject, visible))
     return out
 
 
