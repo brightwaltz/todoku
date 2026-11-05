@@ -60,10 +60,11 @@ def test_entrance_loads_the_map_part():
     r = client.get("/japan-map")
     assert r.status_code == 200 and r.headers["cache-control"] == "no-cache"
     assert len(tiers(r.text)) == 47 and 'aria-current' not in r.text
-    index = (WEB / "index.html").read_text(encoding="utf-8")
-    assert 'id="japan"' in index and 'id="japan-box"' in index
-    js = (WEB / "app.js").read_text(encoding="utf-8")
-    assert 'fetch("/japan-map")' in js and 'get("pref")' in js
+    # T-134b で入口から外し、別の頁（web/japan.html と japan.js）が読み込む。タイルの /?pref= は入口の app.js が受ける
+    page = (WEB / "japan.html").read_text(encoding="utf-8")
+    assert 'id="japan"' in page and 'id="japan-box"' in page
+    assert 'fetch("/japan-map")' in (WEB / "japan.js").read_text(encoding="utf-8")
+    assert 'get("pref")' in (WEB / "app.js").read_text(encoding="utf-8")
 
 
 def test_city_page_shows_the_map_with_its_prefecture_marked():
