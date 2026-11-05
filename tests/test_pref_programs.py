@@ -104,3 +104,20 @@ def test_checked_prefectures_in_the_record_show_on_their_city_pages(code):
     sec = pref_section(html)
     assert PREF_CHECKED_NONE.format(pref=pref, date=ALL[code].checked.isoformat()) in sec
     assert "まだ規則にしていません" not in sec and "まだ調べていません" not in html
+
+
+@pytest.mark.parametrize("code", sorted(ALL))
+def test_every_prefecture_in_the_record_shows_what_was_found_on_its_capital_page(code):
+    """記録にある県はどれも、県庁所在地の頁の都道府県の段で「まだ」と出ず、見つかった数か「見つからなかった」が出る。"""
+    pref, (city_code, name) = PREFS[code][0], PREFS[code][1][:2]
+    rec = ALL[code]
+    sec = pref_section(city_page(RULES, city_code, pref, name, "https://example.jp/center"))
+    date = rec.checked.isoformat()
+    if rec.found:
+        assert PREF_FOUND_NOTE.format(pref=pref, date=date, n=len(rec.found)) in sec
+        assert sec.count('class="city-item pref-candidate"') == len(rec.found)
+    else:
+        assert PREF_CHECKED_NONE.format(pref=pref, date=date) in sec
+    assert "まだ規則にしていません" not in sec
+    for u in rec.looked:
+        assert f'href="{u}"' in sec
