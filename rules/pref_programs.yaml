@@ -19,6 +19,18 @@ prefectures:
       - https://www.pref.hokkaido.lg.jp/hf/khf/tiikisien/syakaisanka/
       - https://www.pref.hokkaido.lg.jp/hf/khf/ninchisyo/224633.html
     found: []
+  "08":  # 茨城県。長寿福祉課の頁の一覧で、県の制度として本人が受け取って使うのはいばらきシニアカードだけだった。身障者等用駐車場利用証（要介護 1 以上も対象、申請は市町村の窓口）は、済みの県で駐車場の利用証を調べていないので、揃えるまで入れていない（D-0102）。介護マークは県福祉サービス振興会の事業
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.ibaraki.jp/soshiki/hokenfukushi/chofuku/index.html
+      - https://www.pref.ibaraki.jp/hokenfukushi/chofuku/choju/kofuku.html
+      - https://senior.pref.ibaraki.jp/senior/about/
+      - https://www.pref.ibaraki.jp/hokenfukushi/chofuku/chiiki/ud/parking/parking.html
+    found:
+      - name: いばらき高齢者優待制度（いばらきシニアカード）
+        who: 茨城県に住む 65 歳以上の本人。協賛店でカードを見せると割引などが受けられる（家族の代わりの利用はできない）
+        where: 住んでいる市町村の窓口（本人が、住所と生年月日の分かる身分証を持って受け取りに行く）
+        url: https://senior.pref.ibaraki.jp/senior/about/
   "11":  # 埼玉県。高齢者福祉課の頁に、県に直接申し込める手当や割引は無かった（大学の開放授業講座は申し込み先が各大学）
     checked: 2026-11-06
     looked:
