@@ -143,6 +143,25 @@ prefectures:
       - https://www.pref.ishikawa.lg.jp/ansin/ishikawachoujudaigaku.html
       - https://www.pref.ishikawa.lg.jp/ansin/mimamori.html
     found: []
+  "18":  # 福井県。長寿福祉課の頁の記事の一覧（約 100 件の題名）と高齢者・利用者向けの頁は、計画、事業者向けの補助や研修・届出、介護予防とフレイル予防、認知症の啓発と相談先、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。住まい環境整備支援事業（要介護の人の住宅改修の助成）は申し込み先が市町。シニアチャレンジ応援事業は 5 人以上のグループが申し込むもの。外出付添サポート事業は市町・社会福祉協議会・ボランティア団体への支援。高齢免許返納者サポート制度は運転経歴証明書を店などで見せるもので、県に申し込むものではない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.fukui.lg.jp/doc/kourei/
+      - https://www.pref.fukui.lg.jp/doc/kourei/riyousya.html
+      - https://www.pref.fukui.lg.jp/doc/kourei/sumaikannkyou.html
+      - https://www.pref.fukui.lg.jp/doc/kourei/seniorchallenge.html
+      - https://www.pref.fukui.lg.jp/doc/kourei/gaisyututukisoi.html
+      - https://www.pref.fukui.lg.jp/doc/kenan/koutuu/menkyohennoutirasi.html
+    found: []
+  "19":  # 山梨県。健康長寿推進課の頁の記事は、計画、事業者向けの補助や研修・届出、認知症の施策と相談先、虐待の防止、介護予防、催しで、県に個人で申し込む給付や割引は無かった。補聴器の購入の助成は市が行い、県は市に補助するだけ。ことぶきマスターは市町村長か県社会福祉協議会長の推薦で知事が認定するもの。長寿やまなし振興事業は催しと研修。シニアの入場優待施設の頁はリンク先が見つからず（404）、確かめていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.yamanashi.jp/chouju/
+      - https://www.pref.yamanashi.jp/chouju/koureisyano-ikigaitaisaku.html
+      - https://www.pref.yamanashi.jp/chouju/kotobukimaster.html
+      - https://www.pref.yamanashi.jp/chouju/26141892452.html
+      - https://www.pref.yamanashi.jp/chouju/hochouki.html
+    found: []
   "21":  # 岐阜県。県の「高齢者」の分類の頁と、高齢福祉課の「高齢者の活躍」（働く・つながる・学ぶ・運動の 4 つのリンク集）と認知症対策の頁は、事業者向けの補助や研修、団体（老人クラブ・シルバー人材センター・社会福祉協議会など）の紹介、催し、相談先で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
     checked: 2026-11-06
     looked:
@@ -205,6 +224,22 @@ prefectures:
       - https://web.pref.hyogo.lg.jp/life/cate3_113.html
       - https://web.pref.hyogo.lg.jp/ks18/wd20_000000115.html
       - https://web.pref.hyogo.lg.jp/kf05/teisyotokusya.html
+    found: []
+  "30":  # 和歌山県。長寿社会課の頁の記事は、計画、事業者向けの補助や研修、介護の仕事に就く人の研修の補助、認知症の啓発と相談先、見守り、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。わかやま元気シニア生きがいバンクは県社会福祉協議会のサイトで運営し、高齢者の登録は令和 7 年 12 月末で終わっている。MCI 高齢者の居場所づくりの補助は居場所を開く人や団体が申し込むもの。いきいき長寿社会センターの事業（催しと講座）は県社会福祉協議会が行う。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.wakayama.lg.jp/prefg/040300/
+      - https://www.pref.wakayama.lg.jp/prefg/040300/ikigaibank/shiniaikigaibank.html
+      - https://www.pref.wakayama.lg.jp/prefg/040300/ikiikityoujusyakaicenter.html
+      - https://www.pref.wakayama.lg.jp/prefg/040300/d00212003.html
+    found: []
+  "31":  # 鳥取県。長寿社会課の頁の記事は、事業者向けの補助や研修・届出、介護予防とフレイル予防の案内、認知症の施策と相談先、催しで、県に個人で申し込む給付や割引は無かった。ことぶき起業支援補助金は団体が申し込むもので、今の年度は県社会福祉協議会が行う。とっとり元気シニア応援ページは事例の紹介と催しの暦。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.tottori.lg.jp/chouju/
+      - https://www.pref.tottori.lg.jp/250224.htm
+      - https://www.pref.tottori.lg.jp/33670.htm
+      - https://www.pref.tottori.lg.jp/senior/
     found: []
   "33":  # 岡山県。長寿社会課の記事の一覧（約 110 件の題名）は、計画、事業者向けの補助や研修、介護支援専門員の手続、国保と後期高齢者医療の案内、認知症の啓発と相談先、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。通所付添サポート事業は住民の付添の仕組みづくりとサポーターの養成（市町村の事業向け）。介護マークは給付や割引ではなく、栃木県などと揃えて入れていない。駐車場の利用証は調べていない
     checked: 2026-11-06
