@@ -277,8 +277,9 @@ def test_entry_shows_little_text_and_folds_the_rest():
     assert "<h1>" in header and "<p" not in header  # 上の帯は名前だけ。説明の文を置かない
     about = re.search(r'<details id="about"[^>]*>(.*?)</details>', html, re.S).group(1)
     assert "<summary>このサイトについて</summary>" in about and " open" not in html[html.index('id="about"') - 9:][:40]
-    for inner in ('<p class="lead">', 'id="japan"', 'こちらには残しません', 'マイクの印'):
+    for inner in ('<p class="lead">', 'こちらには残しません', 'マイクの印'):
         assert inner in about, inner
+    assert 'id="japan"' not in html  # 全国の見取り図は T-134b で別の頁（web/japan.html）へ（tests/test_entry_t134.py）
     # T-134 で最初は隠す（hidden）。出来事を 1 つ押すと開く（tests/test_entry_t134.py）
     picks = re.search(r'<details class="pick-more" id="pick-more" hidden>(.*?)</details>', html, re.S).group(1)
     for box in ("pick-who", "pick-age", "pref", "city", "pick-worry"):

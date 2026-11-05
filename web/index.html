@@ -116,11 +116,7 @@
     <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも使えます。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。お住まいの市区町村を選ぶと、その地域で確かめられる支えの数もお知らせします。</p>
     <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
     <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
-    <!-- 全国の見取り図（T-080c）。中身は /japan-map（規則から作る SVG）を app.js が差し込む。取れなければ出さない -->
-    <section id="japan" class="map-card" hidden aria-labelledby="japan-title">
-      <h2 id="japan-title">全国どこでも使えます</h2>
-      <div id="japan-box"></div>
-    </section>
+    <!-- 全国の見取り図は T-134b で別の頁（web/japan.html）へ移した。結果の節の最後の 1 行から開く -->
   </details>
 
   <section id="reading" class="card" hidden>
@@ -234,6 +230,7 @@
       <p class="change" id="keep-msg" aria-live="polite"></p>
     </div>
     <button class="secondary" id="again">別の相談をする</button>
+    <p class="map-link"><a href="/static/japan.html">全国どこでも使えます</a></p>
   </section>
 </main>
 

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>とどく｜尋ねなかった制度まで</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<!-- 全国の見取り図の頁（T-134b）。入口の流れから外し、結果の節の最後の 1 行から開く。文は前に入口にあったものだけ -->
+<header class="top">
+  <div class="wrap">
+    <h1>とどく <span>尋ねなかった制度まで</span></h1>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- 中身は /japan-map（規則から作る SVG）を japan.js が差し込む。取れなければ出さない -->
+  <section id="japan" class="card map-card" hidden aria-labelledby="japan-title">
+    <h2 id="japan-title">全国どこでも使えます</h2>
+    <div id="japan-box"></div>
+  </section>
+</main>
+<script src="/static/japan.js"></script>
+</body>
+</html>

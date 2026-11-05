@@ -59,3 +59,24 @@ def test_pick_fields_open_only_after_an_event():
     # /city/ の頁から ?pref= で来たときは、隠してある欄を出してから開く
     from_map = re.search(r"^function pickFromMap\(.*?^\}", js, re.S | re.M).group(0)
     assert from_map.index('show("pick-more")') < from_map.index('$("pick-more").open = true;')
+
+
+def test_japan_map_moved_off_the_entrance_to_its_own_page():
+    """T-134b：47 都道府県のタイル地図は入口（「このサイトについて」）から外し、別の頁へ。結果の節の最後に 1 行のリンクだけ。"""
+    html = client.get("/").text
+    js = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+    assert 'id="japan"' not in html and "japan-box" not in html and 'fetch("/japan-map")' not in js
+    # 結果の節の最後の 1 行。文は前に入口にあった見出しと同じで、言葉は増やさない
+    result = re.search(r'<section id="result" hidden>(.*?)</section>\s*</main>', html, re.S).group(1)
+    last = result.strip().splitlines()[-1].strip()
+    assert last == '<p class="map-link"><a href="/static/japan.html">全国どこでも使えます</a></p>'
+    assert result.count("japan.html") == 1
+    # 別の頁はサーバの /static/ が配る。CSP（script-src 'self'）に合うよう、スクリプトはファイルで読む
+    page = client.get("/static/japan.html")
+    assert page.status_code == 200 and page.headers["cache-control"] == "no-cache"
+    assert '<script src="/static/japan.js"></script>' in page.text and "<script>" not in page.text
+    assert '<h2 id="japan-title">全国どこでも使えます</h2>' in page.text
+    assert client.get("/static/japan.js").status_code == 200
+    # タイルは /?pref=NN へ戻り、入口の pickFromMap が選ぶ欄を開く（T-134a）
+    assert 'href="/?pref=14"' in client.get("/japan-map").text
+    assert "pickFromMap(asked, false);" in js

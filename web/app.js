@@ -1372,18 +1372,7 @@ fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
     history.replaceState(null, "", location.pathname + location.hash);  // 結果を残すリンクに ?pref= を混ぜない
   }
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
-// 全国の見取り図（T-080c）。サーバが規則から作った SVG の断片を差し込む（よそのデータは入らない）。取れなければ出さない
-fetch("/japan-map").then((r) => (r.ok ? r.text() : "")).then((html) => {
-  const fig = new DOMParser().parseFromString(html, "text/html").querySelector("figure.japan-map");
-  if (!fig) return;
-  $("japan-box").replaceChildren(document.importNode(fig, true));
-  $("japan-box").addEventListener("click", (ev) => {
-    const a = ev.target.closest("a[data-pref]");
-    if (a && pickFromMap(a.dataset.pref, true)) ev.preventDefault();
-  });
-  markPref();
-  show("japan");
-}).catch(() => { /* 見取り図は出さない */ });
+// 全国の見取り図は T-134b で別の頁（web/japan.html・web/japan.js）へ移した。タイルは /?pref=NN で戻り、上の pickFromMap が選ぶ
 // 出来事のボタンも、取れたときだけ出す（T-071）
 fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
