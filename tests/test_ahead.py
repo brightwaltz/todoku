@@ -66,6 +66,11 @@ def test_program_waiting_on_two_is_listed_once():
     assert sum(len(s[2]) for s in got) == 3
 
 
+def test_now_puts_procedures_others_wait_on_first():
+    got = run_ahead({"results": [r("a", "eligible"), r("p", "eligible"), r("y", "after_prereq", waiting=["p"])]})
+    assert got[0] == ["いま", "", [["p", ""], ["a", ""]]]
+
+
 def test_ahead_sits_after_map_and_before_later_and_is_rendered_from_result():
     result = HTML.split('<section id="result" hidden>', 1)[1].split("</section>", 1)[0]
     assert result.index('id="pmap-fold"') < result.index('id="ahead"') < result.index('id="later"')

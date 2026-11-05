@@ -806,8 +806,6 @@ function aheadSteps(data) {
   const tax = (r) => r.cost?.self_pay === "tax";
   const first = (r) => (r && r.timing && r.timing[0]) || "";
   const steps = [];
-  const now = shown.filter((r) => r.status === "eligible" && !tax(r));
-  if (now.length) steps.push({ when: AHEAD_NOW, note: "", items: now.map((r) => ({ r, note: "" })) });
   const after = new Map();  // 先に要る手続きの id → その結果を待つ制度（2 つ待つ制度は 1 つ目の下にだけ置く）
   for (const r of shown) {
     if (r.status !== "after_prereq" || tax(r) || !r.waiting_on.length) continue;
@@ -815,6 +813,9 @@ function aheadSteps(data) {
     if (!after.has(w.id)) after.set(w.id, { w, items: [] });
     after.get(w.id).items.push({ r, note: first(r) });
   }
+  // いまは、ほかの制度が結果を待っている手続きを先に置く（並びはそのほかサーバの順のまま）
+  const now = shown.filter((r) => r.status === "eligible" && !tax(r)).sort((a, b) => after.has(b.id) - after.has(a.id));
+  if (now.length) steps.push({ when: AHEAD_NOW, note: "", items: now.map((r) => ({ r, note: "" })) });
   for (const { w, items } of after.values()) {
     steps.push({ when: AHEAD_AFTER.replace("{name}", w.name), note: first(byId.get(w.id)), items });
   }
