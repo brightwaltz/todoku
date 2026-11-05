@@ -123,6 +123,16 @@ prefectures:
       - https://www.pref.mie.lg.jp/CHOJUS/HP/all.htm
       - https://www.pref.mie.lg.jp/s_kenko/fukushi/index.htm
     found: []
+  "25":  # 滋賀県。「高齢者を支える」「高齢者福祉施設・サービスを利用される方」「認知症」「介護予防」「仕事と介護の両立支援」の頁の記事は、計画、虐待の防止と権利擁護、事業者向けの情報、認知症の啓発と相談先、聞こえの啓発で、県に個人で申し込む給付や割引は無かった。老人福祉医療費の助成（65〜74 歳で所得の条件あり）は実施するのが市町で、県は補助金を出すだけ。仕事と介護の両立支援アドバイザーの派遣は企業や団体が県に申し込むもの。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.shiga.lg.jp/menu/26545.html
+      - https://www.pref.shiga.lg.jp/menu/26558.html
+      - https://www.pref.shiga.lg.jp/menu/26550.html
+      - https://www.pref.shiga.lg.jp/menu/26546.html
+      - https://www.pref.shiga.lg.jp/ee00/4359.html
+      - https://www.pref.shiga.lg.jp/ed00/4483.html
+    found: []
   "26":  # 京都府。「高齢者のための府政ガイド」の生きがい・住宅・敬老の頁に、府に個人で申し込む給付や割引は無かった。生きがい活動は市町村の事業（府は助成するだけ）、府営住宅の優先入居は公営住宅の入居の型、満百歳のお祝い品は申し込み無し。住宅の頁にあるバリアフリー工事の融資は、案内の頁が見当たらず今も受け付けているか確かめられなかったので入れていない。京都おもいやり駐車場利用証（要介護・要支援の人も対象）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
     checked: 2026-11-06
     looked:
@@ -160,6 +170,11 @@ prefectures:
       - https://www.pref.hiroshima.lg.jp/site/ninntisyoutaisaku/kaigomark.html
       - https://www.pref.hiroshima.lg.jp/soshiki/263/1307322029078.html
     found: []
+  "38":  # 愛媛県。長寿介護課の頁の記事の一覧（約 110 件の題名）は、事業者向けの補助や指定・届出・研修、介護人材、計画、虐待の防止、認知症の啓発と相談先、援護の行事で、県に個人で申し込む給付や割引は無かった。補助金はどれも事業所向け。在宅介護研修センター（愛ケア）の講座は無料の講座、高齢者相談センターは相談先。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.ehime.jp/soshiki/52/
+    found: []
   "40":  # 福岡県。県の「高齢者の福祉」（令和 7 年度版）の事業概要と課の頁に、県に個人で申し込む給付や割引は無かった。住宅改造の助成（住みよか事業）は申込先が市町村、介護保険の利用者負担の軽減も市町村に申請、生活福祉資金は市町村の社会福祉協議会、ねんりんスポーツ・文化祭は催し
     checked: 2026-11-06
     looked:
@@ -176,4 +191,19 @@ prefectures:
       - https://www.pref.kumamoto.jp/soshiki/33/
       - https://www.pref.kumamoto.jp/soshiki/33/906.html
       - https://www.pref.kumamoto.jp/soshiki/33/276354.html
+    found: []
+  "46":  # 鹿児島県。「高齢者・介護保険」の頁と、その下の「生きがいづくり」「在宅福祉」の頁は、事業者向けの指導や補助・研修、介護人材、計画、虐待の防止、催し、相談先で、県に個人で申し込む給付や割引は無かった。シニア応援情報は活動事例と催しの案内。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kagoshima.jp/kenko-fukushi/koreisya/index.html
+      - https://www.pref.kagoshima.jp/kenko-fukushi/koreisya/ikigai/index.html
+      - https://www.pref.kagoshima.jp/kenko-fukushi/koreisya/zaitaku/index.html
+    found: []
+  "47":  # 沖縄県。「高齢者福祉」の分類の頁と、その下の「高齢者の健康と生きがいづくり」「高齢者の生活支援情報・相談」の記事は、計画、見守りの仕組み、老人クラブ、催し、相談先で、県に個人で申し込む給付や割引は無かった。かりゆし長寿大学校（学びの場）とねんりんピックは県社会福祉協議会に委託した事業。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/index.html
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/1007237/index.html
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/1007237/1007239.html
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/1007252/index.html
     found: []
