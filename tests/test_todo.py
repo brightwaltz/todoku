@@ -21,17 +21,27 @@ HTML = (app_mod.WEB_DIR / "index.html").read_text(encoding="utf-8")
 
 
 def test_result_starts_with_todo_and_folds_long_parts():
-    """結果の画面の並び：いま先にすること → まとめ → 制度の一覧 → 問い → 閉じた欄（地図・有料と民間・押した数の図）。"""
-    result = HTML.split('<section id="result" hidden>', 1)[1].split("</section>\n</main>", 1)[0]
-    at = {k: result.index(f'id="{k}"') for k in ("todo", "summary", "groups", "later", "pmap-fold", "options-box", "effort-fold", "keep")}
+    """結果の画面の並び（T-133 で T-121 の並びから替えた）：いま先にすること（1 行）→ 当てはまる見込みの札 → 制度の地図（開）
+    → まだ確かめていないこと → まとめ → ほかの札の一覧 → 閉じた欄（有料と民間）。押した数の図は結果の頁の外の別の頁。"""
+    result = HTML.split('<section id="result" hidden>', 1)[1].split("</section>", 1)[0]
+    at = {k: result.index(f'id="{k}"') for k in ("todo", "groups-top", "pmap-fold", "later", "summary", "groups", "options-box", "keep")}
     assert list(at) == sorted(at, key=at.get), at
-    for fold in ("pmap-fold", "options-box", "effort-fold"):
-        tag = re.search(rf'<(\w+)[^>]*id="{fold}"[^>]*>', result)
-        assert tag.group(1) == "details" and " open" not in tag.group(0), tag.group(0)
-    # 地図と図は閉じた欄の中にある（欄ごと出し入れする）
-    assert result.index('id="pmap-fold"') < result.index('id="pmap"') < result.index('id="options-box"')
-    assert result.index('id="effort-fold"') < result.index('id="effort"')
-    assert 'show("pmap-fold"' in JS and 'show("effort-fold"' in JS
+    tag = re.search(r'<(\w+)[^>]*id="pmap-fold"[^>]*>', result)
+    assert tag.group(1) == "details" and " open" in tag.group(0), tag.group(0)
+    tag = re.search(r'<(\w+)[^>]*id="options-box"[^>]*>', result)
+    assert tag.group(1) == "details" and " open" not in tag.group(0), tag.group(0)
+    assert result.index('id="pmap-fold"') < result.index('id="pmap"') < result.index('id="later"')
+    # 押した数の図は別の頁。結果の頁には入口のボタンだけ
+    assert 'id="effort"' not in result and 'id="effort-open"' in result
+    page = HTML.split('<section id="effort-page"', 1)[1].split("</section>", 1)[0]
+    assert 'id="effort"' in page and 'id="effort-back"' in page
+    assert 'show("effort-open"' in JS and 'show("pmap-fold"' in JS
+    # 先頭に出すのは 1 行だけ。確かめるの札の一覧は畳んだ欄。件数は札の一覧の見出しだけ（地図の凡例・結果の頁の帯には出さない）
+    assert "const TODO_SHOWN = 1;" in JS and "todoItems(data).slice(0, TODO_SHOWN)" in JS
+    assert 'id: "unknown-fold"' in JS
+    legend = JS.split('$("pmap-legend").replaceChildren(', 1)[1].split("\n", 1)[0]
+    assert "件" not in legend, legend
+    assert 'show("board", false);  // T-133' in JS
 
 
 def run_todo(data: dict) -> list:

@@ -266,7 +266,7 @@ async function consultWith(text, call) {
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
   say("読み取っています…");
-  show("reading"); show("extracted", false); show("ask", false); show("pause", false); show("result", false);
+  show("reading"); show("extracted", false); show("ask", false); show("pause", false); show("result", false); show("effort-page", false);
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
@@ -756,6 +756,8 @@ function renderOptions(options) {
 // 順：(1) 当てはまる見込みのうち、「先に手続き」の制度が待っている手続き（待っている数の多い順）
 // (2) ほかの当てはまる見込み（サーバの並び順） (3) 読み取りを確かめる問いが残っていれば、その欄へ
 // (4) ここまでで 0 件なら、確かめると使えるかもしれない制度（あと少し確かめれば決まる順）
+// T-133：選ぶのは 3 件まで、結果の頁の先頭に出すのは要点の 1 行だけ（当てはまる見込みの札がすぐ下に並ぶので、2 回並べない）
+const TODO_SHOWN = 1;
 const TODO_MAX = 3;
 function todoItems(data) {
   const byId = new Map(data.results.map((r) => [r.id, r]));
@@ -782,7 +784,7 @@ function todoItems(data) {
 }
 
 function renderTodo(data) {
-  const items = todoItems(data);
+  const items = todoItems(data).slice(0, TODO_SHOWN);
   $("todo-list").replaceChildren(...items.map((t) => el("li", {},
     t.later ? el("a", { href: "#later", onclick: (ev) => { ev.preventDefault(); $("later").scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" }); focusOn(laterSpots()[0] || $("later").querySelector("h2")); } }, t.name)
       : el("a", { href: `#p-${t.r.id}`, onclick: (ev) => openCard(ev, t.r.id) }, t.r.name),
@@ -797,25 +799,33 @@ function renderResult(data) {
   renderTodo(data);
   renderMap(data, again);
   renderEffort();
+  show("effort-page", false);
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
   $("stats").textContent = state.restored ? "残したリンクから開いた結果です"
     : `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
+  // T-133：当てはまる見込みは先頭（地図の上）、ほかは「まだ確かめていないこと」の下。確かめるの札の一覧は畳む（地図の束「＋N」を押すと開く）。
+  // 件数を出すのはこの見出しだけ
+  const top = $("groups-top");
+  top.replaceChildren();
   const groups = $("groups");
   groups.replaceChildren();
   for (const [status, title, hint] of GROUPS) {
     const items = data.results.filter((r) => r.status === status);
     if (!items.length) continue;
-    groups.append(el("h2", { class: "group-title" }, title, el("span", { class: "n" }, `${items.length} 件`)));
-    groups.append(el("p", { class: "note" }, hint));
+    const titleNode = el("h2", { class: "group-title" }, title, el("span", { class: "n" }, `${items.length} 件`));
+    const box = status === "unknown" ? el("details", { class: "card soft fold group-unknown", id: "unknown-fold" }, el("summary", {}, titleNode))
+      : el("div", { class: `group group-${status}` }, titleNode);
+    (status === "eligible" ? top : groups).append(box);
+    box.append(el("p", { class: "note" }, hint));
     // 確かめると使えるかもしれない制度は多くなりやすいので、あと少し確かめれば決まる順に 5 件だけ先に出す（順は step_view）
     const first = status === "unknown" ? items.slice(0, 5) : items;
-    for (const r of first) groups.append(programCard(r));
+    for (const r of first) box.append(programCard(r));
     if (first.length < items.length) {
       const rest = el("div", { hidden: "" }, items.slice(first.length).map(programCard));
       const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); focusOn(rest.querySelector("summary")); } },
         `ほか ${items.length - first.length} 件を見る`);
-      groups.append(more, rest);
+      box.append(more, rest);
     }
   }
   const no = data.results.filter((r) => r.status === "ineligible" || r.status === "done");
@@ -826,6 +836,7 @@ function renderResult(data) {
   renderRegion(data.region);
   renderOptions(data.options || []);
   show("result");
+  show("board", false);  // T-133：結果の頁では見立ての帯を出さない（件数は札の一覧の見出しだけ。帯の動きは問いの間だけ）
   if (!again) {
     $("result").scrollIntoView({ behavior: "smooth", block: "start" });
     focusOn(resultHeading());
@@ -901,7 +912,7 @@ function tally(trail, presses, results) {
 // 棒 1 本が押した数 1 つ。棒の長さは制度の数、区切りは列。数が細くて入らない区切りは字を出さない（読み上げの文には全部入れる）
 function renderEffort() {
   const trail = state.trail;
-  show("effort-fold", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
+  show("effort-open", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
   if (trail.length < 2) return;
   const total = (t) => BOARD.reduce((sum, [key]) => sum + t.n[key], 0);
   const most = Math.max(...trail.map(total), 1);
@@ -1145,7 +1156,7 @@ function renderMap(data, again) {
   box.setAttribute("viewBox", [x0 - 4 - grow, y0 - 4, x1 - x0 + 8 + grow * 2, y1 - y0 + 8].map((v) => Math.round(v)).join(" "));
   // 数の凡例
   $("pmap-legend").replaceChildren(...MAP_RINGS.map(([status, , label]) =>
-    el("li", {}, el("span", { class: `pmap-swatch ${status}`, "aria-hidden": "true" }), `${label} ${results.filter((r) => r.status === status).length} 件`)));
+    el("li", {}, el("span", { class: `pmap-swatch ${status}`, "aria-hidden": "true" }), label)));  // 件数は札の一覧の見出しだけ（T-133）
   $("pmap-pick").textContent = "札を押すと、その制度の説明へ移ります。";
   show("pmap-fold", results.length > 0);
 }
@@ -1287,7 +1298,7 @@ function programCard(r) {
   if (r.amount.length) body.append(el("h3", {}, "受けられる内容"), el("ul", { class: "plain" }, r.amount.map((t) => el("li", {}, t))));
   if (r.timing.length) body.append(el("h3", {}, "時期・期限"), el("ul", { class: "plain" }, r.timing.map((t) => el("li", {}, t))));
   body.append(el("h3", {}, "出典"), ...r.sources.map(sourceView));
-  return el("details", { class: "card prog", id: `p-${r.id}` }, el("summary", {}, sumParts), body);
+  return el("details", { class: "card prog", id: `p-${r.id}`, "data-status": r.status }, el("summary", {}, sumParts), body);
 }
 
 // 申請メモ（T-074）：窓口へ持っていく記入の下書き。中身は規則と相談の答えから（サーバの memo.py。Claude は使わない）
@@ -1355,7 +1366,11 @@ function openCard(ev, id) {
   ev.preventDefault();
   const card = $(`p-${id}`);
   if (!card) return;
-  if (card.parentElement.hidden) card.parentElement.hidden = false;
+  // 畳んだ欄（確かめるの一覧・ほか N 件）の中の札なら、外側から開く
+  for (let up = card.parentElement; up && up !== $("result"); up = up.parentElement) {
+    if (up.hidden) up.hidden = false;
+    if (up.tagName === "DETAILS") up.open = true;
+  }
   card.open = true;
   card.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -1483,6 +1498,20 @@ $("keep-copy").addEventListener("click", copyKeep);
 $("keep-reask").addEventListener("click", reaskNintei);
 // 開いているページに別の残した結果のリンクを貼ったとき（# より後ろだけが変わると、ページは読み直されない）
 window.addEventListener("hashchange", () => { if (location.hash.startsWith(KEEP_PREFIX)) restoreFrom(location.hash.slice(KEEP_PREFIX.length)); });
+// ---- 押した数の図は別の頁（T-133）。結果の頁を隠して出し、戻ると押した入口へ ----
+$("effort-open").addEventListener("click", () => {
+  show("result", false);
+  show("effort-page");
+  $("effort-page").scrollIntoView({ block: "start" });
+  focusOn($("effort-title"));
+});
+$("effort-back").addEventListener("click", () => {
+  show("effort-page", false);
+  show("result");
+  $("effort-open").scrollIntoView({ block: "center" });
+  focusOn($("effort-open"));
+});
+
 $("again").addEventListener("click", () => {
   state = fresh();
   forgetKeep();

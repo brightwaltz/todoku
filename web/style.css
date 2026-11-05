@@ -269,7 +269,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .board-card.live { position: static; box-shadow: none; }
   .print-result #input, .print-result #reading, .print-result #board, .print-result #ask, .print-result #pause,
   .print-result #later, .print-result #later-change, .print-result #stats, .print-result #again,
-  .print-result #keep, .print-result #about { display: none; }
+  .print-result #keep, .print-result #about, .print-result #effort-open, .print-result #effort-page { display: none; }
   .print-result #result button:not(.link) { display: none; }
   .print-result #result .link { color: var(--muted); text-decoration: none; padding: 0; min-height: 0; }
   .prog { overflow: visible; }
@@ -400,7 +400,9 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 }
 
 /* T-121：結果の画面の段階的な開示。強調（色の枠）は先頭の「いま先にすること」の 1 か所だけにし、
-   まとめ・問いの欄は線を細くする。制度の地図・有料と民間・押した数の図は、閉じた欄（.fold）に入れて下に置く */
+   まとめ・問いの欄は線を細くする。有料と民間・確かめるの札の一覧は、閉じた欄（.fold）に入れて下に置く。
+   T-133：制度の地図は当てはまる見込みの札のすぐ下に開いて置く。押した数の図は別の頁（#effort-page） */
+#effort-open { display: block; margin: 8px 0 16px; }
 .todo { border: 3px solid var(--accent); }
 .todo h2 { margin: 0 0 4px; }
 .todo-list { margin: 0; padding-left: 1.5em; }
