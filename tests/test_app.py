@@ -279,7 +279,8 @@ def test_entry_shows_little_text_and_folds_the_rest():
     assert "<summary>このサイトについて</summary>" in about and " open" not in html[html.index('id="about"') - 9:][:40]
     for inner in ('<p class="lead">', 'id="japan"', 'こちらには残しません', 'マイクの印'):
         assert inner in about, inner
-    picks = re.search(r'<details class="pick-more" id="pick-more">(.*?)</details>', html, re.S).group(1)
+    # T-134 で最初は隠す（hidden）。出来事を 1 つ押すと開く（tests/test_entry_t134.py）
+    picks = re.search(r'<details class="pick-more" id="pick-more" hidden>(.*?)</details>', html, re.S).group(1)
     for box in ("pick-who", "pick-age", "pref", "city", "pick-worry"):
         assert f'id="{box}"' in picks, box
     # 合言葉の欄は最初は出さず、小さな入口だけ（押すか、合言葉なしで送ると欄が出る）

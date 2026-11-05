@@ -1,0 +1,17 @@
+{
+ "退院した母": [
+  "care_level",
+  "needs_daily_help",
+  "high_medical_costs"
+ ],
+ "要介護4の祖母": [
+  "care_level",
+  "age_band",
+  "high_medical_costs"
+ ],
+ "横浜市の父（認知症）": [
+  "care_level",
+  "needs_daily_help",
+  "residence"
+ ]
+}
