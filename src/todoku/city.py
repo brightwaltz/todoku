@@ -34,8 +34,12 @@ PREF_NONE_FOUND = {
     "神奈川県": ("神奈川県の制度は、2026-11-03 に県の「介護・高齢者」の案内を全部見ましたが、個人で申し込めるものが見つかりませんでした"
                "（補聴器の補助などは市町が申し込み先で、県は費用を出すだけです）。"),
 }
-# T-096：先頭の帯の内訳だけを見ても、上の都道府県の 0 件が「まだ書けていない」と区別がつくように、帯にも 1 行出す。文言はここだけで差し替える
-SUMMARY_NONE_FOUND = "{pref}の 0 件は、県の制度を調べて、個人で申し込めるものが見つからなかった数です。"
+# T-113：帯の内訳で、制度を書けていない段を「0 件」と出さない（町田市・横浜市以外の頁で「その市・県に支えが無い」と読めたため）。
+# 都道府県は、調べた県（PREF_NONE_FOUND）と調べていない県を言い分ける。市の制度を書けていない市は市の段を出さず、型の数で示す。
+# T-096 の帯の 1 行（「神奈川県の 0 件は…」）は、0 件を出さなくなったのでやめた。文言はここだけで差し替える
+SUMMARY_PREF_UNSEEN = "{pref}の制度は、まだ調べていません"
+SUMMARY_PREF_NONE = "{pref}の制度は、調べて、個人で申し込めるものが見つかりませんでした"
+SUMMARY_TYPES_N = ("市区町村の事業", "種類（全国の実施率つき、窓口で確かめる候補）")
 
 # T-089：地域包括支援センターの職員が相談を受けながら使うとき（T-078 の候補 #2。判断は integration-1105.md の「T-078」、既定は A）。
 # 相談先の枠に 1 文だけ出す。職員向けの別の画面は作らない。README の「包括の職員が相談を受けながら使うとき」と同じ趣旨。文言はここだけで差し替える
@@ -77,14 +81,31 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
     return groups
 
 
-def summary_parts(groups: list[Group]) -> list[tuple[str, int]]:
+def summary_parts(groups: list[Group]) -> list[tuple[str, int | None]]:
     """頁の先頭の内訳：段の短い名前（国・都道府県の名前・市区町村の名前・型）と件数。
 
-    0 件の都道府県・市も出す（まだ書けていないか、調べて見つからなかったことが分かるように。段の 1 行で言い分ける）。型の 0 件は、市の制度を一つずつ書いた市（町田市）で
-    型を出さないときだけなので、内訳から外す。
+    制度を書けていない段は 0 件と出さない（T-113）。都道府県は件数を None にして、名前の代わりに
+    「まだ調べていません」か「調べて見つかりませんでした」の文を返す。市の制度を書けていない市の段は外す
+    （型の段が数を受け持つ）。型の 0 件は、市の制度を一つずつ書いた市（町田市）で型を出さないときだけなので、外す。
     """
-    return [(SUMMARY_TYPES if g.key == "local" else g.title.removesuffix("の制度"), len(g.programs))
-            for g in groups if g.programs or g.key != "local"]
+    out: list[tuple[str, int | None]] = []
+    for g in groups:
+        if g.programs:
+            out.append((SUMMARY_TYPES if g.key == "local" else g.title.removesuffix("の制度"), len(g.programs)))
+        elif g.key == "pref":
+            pref = g.title.removesuffix("の制度")
+            out.append(((SUMMARY_PREF_NONE if pref in PREF_NONE_FOUND else SUMMARY_PREF_UNSEEN).format(pref=pref), None))
+    return out
+
+
+def _summary_item(label: str, n: int | None) -> str:
+    e = escape
+    if n is None:
+        return f'<li class="city-break-note">{e(label)}</li>'
+    if label == SUMMARY_TYPES:
+        head, tail = SUMMARY_TYPES_N
+        return f'<li class="city-break-types">{e(head)} <b>{n}</b> {e(tail)}</li>'
+    return f"<li>{e(label)} <b>{n}</b> 件</li>"
 
 
 def first_steps(p: Program, rules: RuleSet, values: dict[str, bool], shown: set[str]) -> str:
@@ -148,18 +169,17 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
     shown = {p.id for g in groups for p in g.programs}
     firsts = {p.id: first_steps(p, rules, values, shown) for p in rules.programs.values() if p.id in shown}
     marked = sum(1 for t in firsts.values() if t)
-    parts = "".join(f"<li>{e(label)} <b>{n}</b> 件</li>" for label, n in summary_parts(groups))
-    none_found = pref in PREF_NONE_FOUND and any(g.key == "pref" and not g.programs for g in groups)
+    parts = "".join(_summary_item(label, n) for label, n in summary_parts(groups))
     summary = (f'<div class="city-summary" data-level="summary">'
                f'<p class="city-total"><b>{len(shown)}</b> 件<span>{e(SUMMARY_TITLE)}</span></p>'
                f'<ul class="city-break">{parts}</ul>'
-               + (f'<p class="city-none-found">{e(SUMMARY_NONE_FOUND.format(pref=pref))}</p>' if none_found else "")
                + (f'<p class="city-first-n">{e(SUMMARY_FIRST.format(mark=FIRST_MARK))} <b>{marked}</b> 件</p>' if marked else "")
                + f'<p class="city-caveat">{e(SUMMARY_NOTE.format(name=name))}</p></div>')
     body = []
     for g in groups:
         body.append(f'<section class="card city-group" data-level="{e(g.key)}">'
-                    f'<h2>{e(g.title)}<span class="city-n">{len(g.programs)} 件</span></h2>')
+                    # T-113：書けていない段の見出しにも 0 件を出さない（すぐ下の 1 行が、なぜ無いかを言う）
+                    f'<h2>{e(g.title)}' + (f'<span class="city-n">{len(g.programs)} 件</span>' if g.programs else "") + '</h2>')
         if not g.programs:
             body.append(f'<p class="note">{e(g.empty)}</p></section>')
             continue
