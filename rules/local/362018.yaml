@@ -1,0 +1,55 @@
+city: "362018"
+name: 徳島市
+site: city.tokushima.tokushima.jp
+# T-131：読む1 と読む2 が kaigo-yohin・haishoku・iro の 3 型で同じ頁・同じ条件と数字で合った。
+# haikai（見守りあんしんシール）は読む1 が頁を開いていないので入れない。koken は両方とも成年後見の案内の頁だけで、
+# 助成の頁を誰も見ておらず「市に無い」とは言えないので型ごと入れない。どちらも読みはスマホ版、出典は PC 版（curl で題名を確かめた）。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品支給事業
+    where: 近くの在宅介護支援センターか地域包括支援センターに相談する。頁の問い合わせ先は健康長寿課 地域ケア推進担当
+    conditions:
+      - 市の介護保険の被保険者で、家で暮らしている要介護4・5の人
+      - 本人も、介護している世帯も、前年度の市町村民税が非課税
+      - 施設のサービスやグループホームを使っていない
+      - 紙おむつ・尿取りパッド・使い捨て手袋・清拭剤・ドライシャンプーを月1回、無料で届ける
+      - 上限の量や金額は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/kaigo_shikyu.html
+        publisher: 徳島市
+        title: 家族介護用品支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス事業
+    where: 地域包括支援センターか、担当のケアマネジャー。頁の問い合わせ先は健康長寿課 地域ケア推進担当
+    conditions:
+      - 市内の65歳以上で要支援・要介護の認定があり、ひとり暮らしなどで食事の用意が難しく、見守りも要る人
+      - 届ける回数は要支援1・2が週2食、要介護1〜3が週3食、要介護4・5が週5食
+      - 自己負担は1食あたり、非課税の世帯が370円、課税の世帯が500円
+    sources:
+      - url: https://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/haishoku.html
+        publisher: 徳島市
+        title: 配食サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給事業
+    where: 高齢介護課 高齢者いきがい係（頁の問い合わせ先。申請先は頁に無いので問い合わせて確かめる）
+    conditions:
+      - 本人が市の被保険者で、本人も介護している世帯も市町村民税が非課税
+      - この1年ずっと要介護4・5で、介護保険のサービスを使っていない（7日以内のショートステイは除く）
+      - この1年の入院が90日未満
+      - 年10万円
+    sources:
+      - url: https://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/iroukin.html
+        publisher: 徳島市
+        title: 家族介護慰労金支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
