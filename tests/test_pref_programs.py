@@ -94,3 +94,13 @@ def test_found_candidates_are_listed_and_not_counted_as_rules(monkeypatch):
     assert "県の例の事業" in sec and "65 歳以上の県民" in sec and "県の福祉事務所" in sec
     assert 'href="https://www.pref.aomori.lg.jp/b.html"' in sec
     assert 'data-id=' not in sec  # 規則の制度としては数えない（頁の先頭の件数にも入らない）
+
+
+@pytest.mark.parametrize("code", ["11", "23"])
+def test_checked_prefectures_in_the_record_show_on_their_city_pages(code):
+    """埼玉県・愛知県（2026-11-06、見つからなかった）：県庁所在地の頁で「まだ規則にしていません」と出ない。"""
+    pref, (city_code, name) = PREFS[code][0], PREFS[code][1][:2]
+    html = city_page(RULES, city_code, pref, name, "https://example.jp/center")
+    sec = pref_section(html)
+    assert PREF_CHECKED_NONE.format(pref=pref, date=ALL[code].checked.isoformat()) in sec
+    assert "まだ規則にしていません" not in sec and "まだ調べていません" not in html

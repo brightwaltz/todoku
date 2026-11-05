@@ -9,4 +9,16 @@
 #   found：見つかった制度（確かめる候補）。空なら「調べて、個人で申し込めるものが見つからなかった」と出す。
 #     name：制度の名前／who：対象の主な条件の言い換え（頁の文は写さない）／where：申請先／url：出典
 # 市町村が申し込み先で県は費用を出すだけの事業、事業者や団体が申し込むもの、全国一律の国の制度の窓口は入れない。
-prefectures: {}
+prefectures:
+  "11":  # 埼玉県。高齢者福祉課の頁に、県に直接申し込める手当や割引は無かった（大学の開放授業講座は申し込み先が各大学）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.saitama.lg.jp/soshiki/a0603/index.html
+      - https://www.pref.saitama.lg.jp/a0603/4-rikarento.html
+    found: []
+  "23":  # 愛知県。県の認知症電話相談は相談先で、申し込む制度ではない（利用者負担の軽減は市町村が窓口）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.aichi.jp/soshiki/korei/
+      - https://www.pref.aichi.jp/soshiki/korei/ninchisho-sodan.html
+    found: []
