@@ -1,6 +1,6 @@
 """合成住民での試算（1 版目）：入口の出来事から始めて、気づかなかった制度が 1 人あたりいくつ出るか。
 
-  uv run python eval/sim/run_sim.py [--n 2000] [--seed 1] [--city 132098 --city 023043 …] [--rule facts|none] [--json out.json]
+  uv run python eval/sim/run_sim.py [--n 2000] [--seed 1] [--city 132098 --city 023043 …] [--rule facts|extra|none] [--json out.json]
 
 1 人ずつ次のように通す（API は呼ばない）：
   1. 住民の事実から、その人に当てはまる入口の出来事（THEME_FITS）を 1 つ選ぶ。どれも当てはまらない人は数えない
@@ -8,8 +8,9 @@
   3. 問いに住民の値で最大 3 問答える（eval/run_eval.py の simulate と同じ）
   4. その市で画面に出る制度のうち、「当てはまる見込み」と「先に手続きをすると使える」を数える。
      そのうち相談の主題に直接つながる制度（--rule）を除いた数を「主題の外」とする
-主題の決め方（--rule）は判断待ち（integration-1105.md の下書き）。既定の facts は、出来事ごとの事実（THEME_FACTS）を
-判定の条件に使う制度を「直接つながる」とみなす。none は除かない。
+主題の決め方（--rule）は判断待ち（D-0027）。既定の facts（A）は、出来事ごとの事実（THEME_FACTS）を
+判定の条件に使う制度を「直接つながる」とみなす。extra（B）は facts に、主題の事実を使わない主題の制度（THEME_EXTRA）を足す。
+none は除かない。B と決まったら main の --rule の既定を extra に替える。
 割合の出どころは population.py の SOURCES と README.md。stat（統計の頁で照らした）と assumed（仮定）が混ざるので、外に言うときは assumed の仮定に左右されると書く。
 """
 
@@ -57,7 +58,18 @@ THEME_FACTS: dict[str, tuple[str, ...]] = {
     "work": ("caregiver_employee",),
     "diapers": ("uses_diapers", "incontinence_bedding"),
 }
-RULES = ("facts", "none")
+# 主題の事実を判定に使わないが、主題に直接つながる制度（--rule extra で facts に足す）。全部を eval/sim/README.md に書く
+THEME_EXTRA: dict[str, tuple[str, ...]] = {
+    "discharged": (),
+    "forgetful": (),
+    "alone": (),
+    # 住宅改修・福祉用具購入・町田市の住宅設備改修は、dev-merge の規則では認定の区分と暮らしている所だけで判定される
+    "falls": ("jutaku-kaishu", "fukushi-yogu-konyu", "machida-jutaku-setsubi"),
+    "work": (),
+    # 市の紙おむつの事業は、紙おむつを使っているかを聞かずに認定の区分・住民税などで判定される
+    "diapers": ("machida-kami-omutsu", "yokohama-kami-omutsu"),
+}
+RULES = ("facts", "extra", "none")
 
 
 def eligibility_facts(node: dict) -> set[str]:
@@ -77,7 +89,10 @@ def direct_programs(rs: rules_mod.RuleSet, event_id: str, rule: str) -> set[str]
     if rule == "none":
         return set()
     theme = set(THEME_FACTS[event_id])
-    return {pid for pid, p in rs.programs.items() if eligibility_facts(p.eligibility) & theme}
+    direct = {pid for pid, p in rs.programs.items() if eligibility_facts(p.eligibility) & theme}
+    if rule == "extra":
+        direct |= set(THEME_EXTRA[event_id]) & set(rs.programs)
+    return direct
 
 
 def visible(rs: rules_mod.RuleSet, code: str) -> set[str]:

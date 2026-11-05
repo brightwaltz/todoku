@@ -60,7 +60,9 @@ def test_population_matches_the_checked_statistics():
 
 def test_theme_tables_cover_the_entry_events():
     ids = {e["id"] for e in events_mod.EVENTS[:events_mod.MAX_EVENTS]}
-    assert set(run_sim.THEME_FITS) == ids == set(run_sim.THEME_FACTS)
+    assert set(run_sim.THEME_FITS) == ids == set(run_sim.THEME_FACTS) == set(run_sim.THEME_EXTRA)
+    for extra in run_sim.THEME_EXTRA.values():
+        assert set(extra) <= set(RS.programs)  # 書き間違いを止める（無い ID は direct_programs で黙って落ちる）
     latent = set(population.generate(1)[0])
     for facts in run_sim.THEME_FACTS.values():
         assert set(facts) <= latent  # 書き間違いを止める（規則に無い事実は direct_programs で何にも当たらない）
@@ -83,6 +85,15 @@ def test_direct_programs_follow_the_rule():
         assert run_sim.eligibility_facts(RS.programs[pid].eligibility) & {"uses_diapers", "incontinence_bedding"}
 
 
+def test_extra_rule_adds_the_listed_programs_to_facts():
+    # --rule extra（D-0027 の B）は facts（A）に THEME_EXTRA を足すだけ。転倒は住宅改修などが直接つながる
+    for event_id, extra in run_sim.THEME_EXTRA.items():
+        facts = run_sim.direct_programs(RS, event_id, "facts")
+        assert run_sim.direct_programs(RS, event_id, "extra") == facts | set(extra), event_id
+    assert {"jutaku-kaishu", "fukushi-yogu-konyu"} <= run_sim.direct_programs(RS, "falls", "extra")
+    assert "machida-kami-omutsu" in run_sim.direct_programs(RS, "diapers", "extra")
+
+
 def test_run_counts_outside_within_found(tmp_path):
     out = tmp_path / "sim.json"
     report = run_sim.main(["--n", "60", "--seed", "4", "--city", "132098", "--city", "023043", "--json", str(out)])
@@ -93,3 +104,6 @@ def test_run_counts_outside_within_found(tmp_path):
         assert sum(s["outside_histogram"].values()) == s["counted"]
     none = run_sim.main(["--n", "60", "--seed", "4", "--city", "132098", "--rule", "none"])["cities"]["132098"]
     assert none["mean_outside"] == none["mean_found"]
+    facts = report["cities"]["132098"]
+    extra = run_sim.main(["--n", "60", "--seed", "4", "--city", "132098", "--rule", "extra"])["cities"]["132098"]
+    assert extra["mean_found"] == facts["mean_found"] and extra["mean_outside"] <= facts["mean_outside"]
