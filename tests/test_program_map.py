@@ -81,11 +81,12 @@ def test_map_has_no_arrows_or_cost_rings():
     assert "`＋${unknown.length}`" in JS
 
 
-# 見本 3 本の問いの順と数（T-132〜T-134 は web/ だけを直すので、ここは変わらない）
+# 見本 3 本の問いの順と数（T-132〜T-134 は web/ だけを直すので、ここは変わらない）。
+# dev-merge は見本の読み直し（T-117 など）が入っているので、dev と順が違う。T-132 の前の dev-merge 449a8bf で数えた
 SAMPLE_QUESTIONS = {
-    "taiin-haha": ["care_level", "high_medical_costs", "plans_home_modification"],
-    "kaigo4-sobo": ["care_level", "age_band", "caregiver_employee"],
-    "yokohama-chichi": ["care_level", "residence", "high_medical_costs"],
+    "taiin-haha": ["care_level", "needs_daily_help", "high_medical_costs"],
+    "kaigo4-sobo": ["care_level", "age_band", "high_medical_costs"],
+    "yokohama-chichi": ["care_level", "needs_daily_help", "residence"],
 }
 
 
