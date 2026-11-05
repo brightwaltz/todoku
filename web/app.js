@@ -463,6 +463,7 @@ function renderBoard(data) {
   if (data.question) for (const id of data.question.affects_ids) { const t = tiles.get(id); if (t) restart(t, "pulse"); }
   // 住所で外した制度（その市・都の外と分かったときも、町田市・横浜市と分かって型を外したときも）を数えないと、結果の画面で住所を選んだときに「判定は変わりませんでした」と出るため
   $("board-change").textContent = changeText(moved, now, removed);
+  $("board-change").title = $("board-change").textContent;  // T-136：帯では 1 行で切るので、全文を title にも
   boardPrev = now;
   // 質問へ移るとき、上に留まる見立ての帯の下に問いが来るように
   $("board").classList.toggle("live", Boolean(data.question));

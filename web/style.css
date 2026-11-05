@@ -143,7 +143,7 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .facts li { animation: fade-in .45s ease-out both; animation-delay: calc(var(--i, 0) * 150ms); }
 @keyframes mark-in { from { background-size: 0 100%; border-bottom-color: transparent; } }
 @keyframes fade-in { from { opacity: 0; transform: translateY(4px); } }
-/* いまの見立て：質問に答えている間は画面の上に留まる細い帯。点は制度 1 つずつ */
+/* いまの見立て：質問に答えている間は画面の上に留まる細い帯（T-136 で 4 つの数の 1 行に。下の .live の段）。点は制度 1 つずつ */
 .board-card { padding: 10px 12px; }
 .board-card.live { position: sticky; top: 0; z-index: 5; box-shadow: 0 3px 10px rgba(0, 0, 0, .08); }
 .board-card .note { font-size: 14px; margin: 6px 0 0; }
@@ -171,6 +171,24 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .change:empty { margin: 0; }  /* 読み上げの領域は消さずに残す */
 .change:not(:empty) + .note { display: none; }  /* 1 問答えたら、説明の代わりに変わったことを出す */
 #ask, #pause { scroll-margin-top: var(--board-h, 0px); }
+/* T-136：問いに答えている間（.live）は帯を低くする。4 つの数を 1 行に並べ、注は 1 行（はみ出す分は … で切る。
+   全文は読み上げと title にある）。点は出さず、数の色で列を見分ける（点は数え方と読み上げのため DOM に残す）。
+   結果の頁では帯を出さない（T-133）ので、点の列の見せ方は .live でない帯にだけ残る */
+.board-card.live { padding: 6px 10px; }
+/* 4 列を 1 行に並べ、名前は言葉の切れ目でだけ折る（390 で幅 317px 前後）。370px より狭い画面では 2 段に折り返す */
+.board-card.live .board { display: flex; justify-content: space-between; gap: 4px; }
+@media (max-width: 370px) { .board-card.live .board { flex-wrap: wrap; } }
+.board-card.live .col { display: flex; align-items: center; padding: 2px 5px; border: 0; border-radius: 8px; }
+.board-card.live .col-head .ph { white-space: nowrap; }
+.board-card.live .col-head { flex-direction: row; align-items: center; gap: 4px; margin: 0; line-height: 1.2; }
+.board-card.live .col-head .count { align-self: center; }
+.board-card.live .col.eligible .count { color: var(--ok); }
+.board-card.live .col.after_prereq .count { color: var(--pre); }
+.board-card.live .col.unknown .count { color: var(--unk); }
+.board-card.live .col.no .count { color: var(--no); }
+.board-card.live .tiles { display: none; }
+.board-card.live .change, .board-card.live .note { margin-top: 4px; line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.board-card.live .change:empty { margin: 0; }
 /* 1 問だけ答える（T-072b）。最初の問いの数の行の下に、押すと切り替わるリンクを 1 行 */
 .one-only { margin: 0 0 4px; font-size: 15px; color: var(--muted); }
 .one-only .link { margin-right: 8px; }

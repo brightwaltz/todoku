@@ -1432,3 +1432,31 @@ def test_print_puts_cards_on_paper_and_leaves_controls_out():
     assert 'classList.toggle("print-result"' in before and 'querySelectorAll("details:not([open])")' in before
     assert "d.open = true" in before
     assert "d.open = false" in after and 'classList.remove("print-result")' in after
+
+
+def test_board_while_answering_is_one_row_of_counts_and_one_line_note():
+    # T-136：問いに答えている間（.live）の帯は、4 つの数の 1 行＋注 1 行。点は出さない（DOM には残す）。
+    # 390 で 209px（画面の 25%）を占め、前の問いを隠していた。高さ・行数・点の見え方はブラウザで確かめた（ops の shot_t136.py）
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    css = (root / "style.css").read_text(encoding="utf-8")
+
+    def rule(selector):
+        m = re.search(r"^" + re.escape(selector) + r" \{([^}]*)\}", css, re.M)
+        assert m, selector
+        return m.group(1)
+
+    assert "display: none" in rule(".board-card.live .tiles")
+    assert "display: flex" in rule(".board-card.live .board")
+    assert "flex-wrap: wrap" not in rule(".board-card.live .board")  # 折り返すのは 370px より狭い画面だけ
+    assert "white-space: nowrap" in rule(".board-card.live .col-head .ph")  # 名前は言葉の切れ目でだけ折る
+    one_line = rule(".board-card.live .change, .board-card.live .note")
+    for decl in ("white-space: nowrap", "overflow: hidden", "text-overflow: ellipsis"):
+        assert decl in one_line, decl
+    html = (root / "index.html").read_text(encoding="utf-8")
+    note = re.search(r'<p class="note"[^>]*>([^<]*)</p>\n  </section>\n\n  <section id="ask"', html).group(1)
+    assert note == "答えるたびに、規則のプログラムが判定し直します（AI は使いません）。"  # 点を出さないので「点は制度 1 つずつ」は消した
+    js = (root / "app.js").read_text(encoding="utf-8")
+    assert '$("board-change").title = $("board-change").textContent;' in js  # 切った全文は title にも
