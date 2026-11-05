@@ -81,6 +81,19 @@ def test_map_has_no_arrows_or_cost_rings():
     assert "`＋${unknown.length}`" in JS
 
 
+def test_map_chips_slide_only_without_reduced_motion():
+    # T-132b：答えて増える札は束の位置から滑り、前からある札は新しい位置へ滑る。reduced-motion と印刷では動かさない
+    # （ブラウザでの確かめは ops の motion_t132b.py。ここは T-133 で頁を組み替えても仕組みが残ることだけを見る）
+    css = (WEB / "style.css").read_text(encoding="utf-8")
+    assert re.search(r"\.pmap \.pt \{ transition: transform \d+ms", css)
+    calm = css[css.index("@media (prefers-reduced-motion: reduce) {\n  .pmap .pt"):]
+    assert calm.index(".pmap .pt { transition: none; }") < calm.index("}")
+    assert "@media print { .pmap .pt { transition: none; } }" in css
+    body = JS[JS.index("function renderMap("):JS.index("function pickPoint(")]
+    assert "const from = again && !calm() ? mapBundleAt : null;" in body
+    assert body.index("translate(${from.x}px, ${from.y}px)") < body.index("translate(${p.x}px, ${p.y}px)")
+
+
 # 見本 3 本の問いの順と数（T-132〜T-134 は web/ だけを直すので、ここは変わらない）。
 # dev-merge は見本の読み直し（T-117 など）が入っているので、dev と順が違う。T-132 の前の dev-merge 449a8bf で数えた
 SAMPLE_QUESTIONS = {
