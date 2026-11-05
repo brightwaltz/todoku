@@ -51,12 +51,29 @@ def test_kokuho_complaint_is_on_the_prefecture_federation_site():
     """T-130：国保連の苦情相談は都道府県に 1 件まで。頁は国保連のサイト（岐阜県だけ名前に kokuho を含まない gkren.jp）。"""
     found = {code: [c for c in cs if c.kind == "kokuho_complaint"] for code, cs in ALL.items()}
     assert all(len(cs) <= 1 for cs in found.values())
-    assert sum(len(cs) for cs in found.values()) >= 36
+    assert sum(len(cs) for cs in found.values()) >= 40
     for code, cs in found.items():
         for c in cs:
             host = re.match(r"https://([^/]+)/", c.url).group(1)
             assert "kokuho" in host or host == "www.gkren.jp", c.url
             assert c.name(PREFS[code][0]) == f"{PREFS[code][0]}国民健康保険団体連合会（介護サービスの苦情相談）"
+
+
+def test_young_onset_is_one_per_prefecture_and_not_on_the_list_site():
+    """T-130：若年性認知症の相談窓口は都道府県に 1 件まで。一覧のサイト（リンクはトップ頁にと決めている）へはリンクしない。"""
+    found = {code: [c for c in cs if c.kind == "young_onset"] for code, cs in ALL.items()}
+    assert all(len(cs) <= 1 for cs in found.values())
+    for code, cs in found.items():
+        for c in cs:
+            assert "y-ninchisyotel.net" not in c.url
+            assert c.tel, c.url
+            assert c.name(PREFS[code][0]) == f"{PREFS[code][0]}の若年性認知症の相談窓口"
+
+
+def test_every_prefecture_has_two_kinds_of_contact():
+    """T-130 の完了条件：どの都道府県にも 2 種類以上の相談先がある。"""
+    short = [code for code, cs in ALL.items() if len({c.kind for c in cs}) < 2]
+    assert short == []
 
 
 @pytest.mark.parametrize("item, message", [
