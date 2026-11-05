@@ -169,3 +169,11 @@ prefectures:
       - https://www.pref.fukuoka.lg.jp/contents/koureisya-sumiyoka.html
       - https://www.pref.fukuoka.lg.jp/contents/kaigohoken-riyousyafutankeigen.html
     found: []
+  "43":  # 熊本県。高齢者支援課と認知症施策・地域ケア推進課の記事の一覧は、介護人材の確保、計画、事業者向けの事務連絡や研修、団体向けの補助、在宅医療の啓発で、県に個人で申し込む給付や割引は無かった。社会福祉法人等の利用者負担軽減は市町村が確認証を出す。令和 8 年熊本地震の被災者の介護保険の利用料（事業所の窓口で申告すれば支払い不要、令和 9 年 2 月末のサービス分まで）は国の取り扱いで、県に申し込むものではない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kumamoto.jp/soshiki/32/
+      - https://www.pref.kumamoto.jp/soshiki/33/
+      - https://www.pref.kumamoto.jp/soshiki/33/906.html
+      - https://www.pref.kumamoto.jp/soshiki/33/276354.html
+    found: []
