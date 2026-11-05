@@ -290,6 +290,33 @@ def test_entry_shows_little_text_and_folds_the_rest():
     assert pick_from_map.index('$("pick-more").open = true;') < pick_from_map.index('$("city").scrollIntoView')
 
 
+def test_flow_after_sending_reads_as_a_thread_of_bubbles():
+    """送った後の流れ（読み取り → 問い → 答え）を、吹き出しのやりとりで見せる（T-126b。11/5 の柴田の気づき「タイムライン式」）。
+    あなたの文と答え＝右、とどくが読んだこと・問い＝左。答えた問いと押した答えを、今の問いの上に積む。
+    問いの中身・順・判定は変えない（積むのは画面だけで、/api/step には送らない）。見本 4 件の通しは $OPS/tools/shot_t126b.py。
+    """
+    import re
+    from pathlib import Path
+    html = client.get("/").text
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    assert 'class="said bubble you" id="said"' in html
+    assert '<div class="bubble bot"><ul id="extracted-list"' in html
+    ask = re.search(r'<section id="ask"[^>]*>(.*?)</section>', html, re.S).group(1)
+    # 積んだやりとりは今の問いより上。押せる選択肢（#ask-options）とは別の欄にする（台本の通しは #ask-options の中を押す）
+    assert ask.index('id="thread"') < ask.index('id="ask-text"') < ask.index('id="ask-options"')
+    assert re.search(r'<ol id="thread"[^>]*hidden', ask)
+    assert "thread: []" in re.search(r"^function fresh\(\).*?^\}", js, re.S | re.M).group(0)  # 相談ごとに空から
+    # 積むのは聞き返しの問いだけ（結果の画面で後から答えた分は積まない）。押した答えの文字は選択肢の値から引く
+    assert "(later ? state.thread : [...state.thread, { q: askText(q), a }])" in js
+    assert re.search(r"thread: withSaid\(q, answerLabel\(q, value\), later\)", js)
+    assert "answerPlace(code, false, q)" in js and "answerPlace(code, true)" in js
+    step = re.search(r"^async function step\(.*?^\}", js, re.S | re.M).group(0)
+    assert "thread" not in step.split("api(\"/api/step\"")[1].split("});")[0]  # サーバへは送らない
+    # 読み上げでは、吹き出しの左右の代わりに「質問：」「あなたの答え：」を添える
+    render = re.search(r"^function renderThread\(\).*?^\}", js, re.S | re.M).group(0)
+    assert '"質問："' in render and '"あなたの答え："' in render
+
+
 @pytest.mark.usefixtures("on_fly")
 def test_rate_limit_counts_each_client_ip(monkeypatch):
     from todoku import app as app_mod

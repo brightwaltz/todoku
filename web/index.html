@@ -126,10 +126,12 @@
     <p>読み取っています…</p>
   </section>
 
-  <section id="extracted" class="card soft" hidden>
+  <!-- 送った後の流れは、吹き出しのやりとりで見せる（T-126b）。あなたの文＝右、とどくが読んだこと・問い＝左。
+       問いの中身・順と判定は変えない。読み取りの確かめの問いも、ほかの問いと同じく押せる選択肢で出る -->
+  <section id="extracted" class="card soft talk" hidden>
     <h2>相談の文章から読み取ったこと</h2>
-    <p class="said" id="said"></p>
-    <ul id="extracted-list" class="facts"></ul>
+    <p class="said bubble you" id="said"></p>
+    <div class="bubble bot"><ul id="extracted-list" class="facts"></ul></div>
     <p class="note" id="engine-note"></p>
   </section>
 
@@ -139,11 +141,14 @@
     <p class="note">点は制度 1 つずつです。答えるたびに、規則のプログラムが判定し直します（AI は使いません）。</p>
   </section>
 
-  <section id="ask" class="card ask" hidden>
+  <section id="ask" class="card ask talk" hidden>
+    <ol id="thread" class="thread" aria-label="ここまでの問いと答え" hidden></ol>
     <p class="ask-count" id="ask-count"></p>
     <p class="one-only" id="one-box" hidden><button type="button" class="link" id="one" aria-pressed="false">1 問だけ答える</button><span id="one-note"></span></p>
-    <h2 id="ask-text" tabindex="-1"></h2>
-    <p class="hint" id="ask-hint"></p>
+    <div class="bubble bot now">
+      <h2 id="ask-text" tabindex="-1"></h2>
+      <p class="hint" id="ask-hint"></p>
+    </div>
     <div id="ask-options" class="options"></div>
     <p class="why" id="ask-why"></p>
     <details><summary>確かめ方</summary><p id="ask-check"></p></details>

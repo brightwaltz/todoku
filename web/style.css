@@ -431,3 +431,21 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 
 /* T-122：結果の画面の「あなたの地域で確かめられる支え」の 1 行。一覧へのリンクはほかのリンクと同じ色にする */
 #region-line a { color: var(--accent); }
+/* 送った後の流れを吹き出しのやりとりで見せる（T-126b）。とどく＝左（白・左上の角を詰める）、あなた＝右（薄い緑・右上の角を詰める）。
+   色だけに頼らず、左右の位置と角の形でも分け、読み上げには「質問：」「あなたの答え：」を添える */
+.bubble { max-width: 88%; margin: 0 0 10px; padding: 10px 14px; border-radius: 18px; overflow-wrap: anywhere; }
+.bubble.bot { background: var(--card); border: 1px solid var(--line); border-top-left-radius: 4px; margin-right: auto; }
+.bubble.you { background: #dcefe9; border: 1px solid #b9ddd3; border-top-right-radius: 4px; margin-left: auto; width: fit-content; }
+.talk .said.bubble { margin: 0 0 12px auto; padding: 10px 14px; background: #dcefe9; border-radius: 18px; border-top-right-radius: 4px; }
+.talk .bubble.bot .facts li:last-child { padding-bottom: 0; }
+.thread { list-style: none; padding: 0; margin: 0 0 8px; }
+.thread li { margin: 0 0 4px; }
+.thread .past { width: fit-content; color: var(--muted); font-size: 15px; line-height: 1.6; padding: 8px 12px; }
+.thread .you { font-weight: 700; font-size: 17px; scroll-margin-top: calc(var(--board-h, 0px) + 12px); }
+/* 今の問いは塗りの吹き出し（枠なし）。枠の丸い選択肢と形を変え、問いを押せる札と取り違えないように */
+.ask .bubble.now { max-width: 100%; background: var(--soft); border: none; border-top-left-radius: 4px; margin-bottom: 4px; }
+.ask .bubble.now h2 { margin: 0; }
+/* 選択肢は押せるチップ（丸い札）。押す所の大きさ（高さ 56px・幅いっぱい）は変えない */
+#ask-options .option { border-radius: 999px; padding-inline: 22px; }
+#ask-options .places select { border-radius: 999px; }
+@media print { .bubble { max-width: none; } }

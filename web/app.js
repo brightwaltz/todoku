@@ -47,8 +47,9 @@ class GateError extends Error {}
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
     municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
-    oneOnly: false, held: null, trail: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
+    oneOnly: false, held: null, trail: [], thread: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
     // trail：押した数ごとの見立ての数（T-082。手間と分かることの図）
+    // thread：答えた問いと選んだ答えの並び（T-126b。吹き出しのやりとりで見せる。サーバには送らない）
 }
 
 function freshPick() {
@@ -509,7 +510,7 @@ function renderQuestion(q, max, first = false) {
   syncOne();
   $("ask-text").textContent = askText(q);
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
-  fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code));
+  fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code, false, q));
   // 結果に出す制度だけを挙げるので、空になりうる（「確かめていないこと」の欄と同じく、そのときは出さない）
   $("ask-why").textContent = q.affects.length ? `この答えで判定が決まる制度：${affectNames(q.affects)}` : "";
   $("ask-check").textContent = q.check;
@@ -517,9 +518,41 @@ function renderQuestion(q, max, first = false) {
   // #ask の aria-live はやめ、問いの文へのフォーカスの移動で伝える。もう問いの文にあると focus() では読み直されないので、いったん外す
   if (document.activeElement === $("ask-text")) $("ask-text").blur();
   $("ask-text").focus({ preventScroll: true });
+  const lastSaid = renderThread();
   if (first) revealThenAsk();
-  else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
+  // 答えが積もったら、いま選んだ答えの吹き出しから見せる（その下に次の問い。上の古いやりとりは画面の外へ流れる）
+  else (lastSaid || $("ask")).scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+// ---- 吹き出しのやりとり（T-126b）----
+// 答えた問い（左・とどく）と選んだ答え（右・あなた）を、今の問いの上に積む。問いの中身・順・判定は変えない
+function renderThread() {
+  const list = $("thread");
+  list.replaceChildren(...state.thread.map((t) => el("li", {},
+    el("p", { class: "bubble bot past" }, el("span", { class: "sr-only" }, "質問："), t.q),
+    el("p", { class: "bubble you" }, el("span", { class: "sr-only" }, "あなたの答え："), t.a))));
+  show("thread", state.thread.length > 0);
+  const said = list.querySelectorAll(".you");
+  return said.length ? said[said.length - 1] : null;
+}
+
+// 押した選択肢の文字。値から引くので、選択肢の並びを変えても合う
+function answerLabel(q, value) {
+  if (value === DONT_KNOW) return "わからない";
+  if (q.keep && value === q.keep.value) return q.keep.label;
+  const o = (q.options || []).find((x) => x.value === value);
+  return o ? o.label : String(value);
+}
+
+function placeLabel(code) {
+  for (const p of prefs) {
+    const c = (p.cities || []).find(([cc]) => cc === code);
+    if (c) return `${p.name}${c[1]}`;
+  }
+  return code;
+}
+
+const withSaid = (q, a, later) => (later ? state.thread : [...state.thread, { q: askText(q), a }]);
 
 // ---- 1 問だけ答える（T-072b）----
 // 最初の問いで選ぶと、答えるたびに止まり、その時点の札を見てから「もう 1 問答える」か「ここでやめる」を選べる。
@@ -601,14 +634,16 @@ function answer(q, value, later = false) {
   const suggestions = { ...state.suggestions };
   if (!(q.confirm && value === NOT_THIS)) facts[q.fact] = value;
   delete suggestions[q.fact];
-  return step({ facts, suggestions, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1 }, later);
+  return step({ facts, suggestions, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1,
+    thread: withSaid(q, answerLabel(q, value), later) }, later);
 }
 
 // お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める
-function answerPlace(code, later = false) {
+function answerPlace(code, later = false, q = null) {
   const suggestions = { ...state.suggestions };
   delete suggestions.lives_in_machida;
-  return step({ suggestions, municipality: code, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1 }, later);
+  return step({ suggestions, municipality: code, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1,
+    thread: q ? withSaid(q, placeLabel(code), later) : state.thread }, later);
 }
 
 // 送っている間は選択肢を止める（2 度押しで問いが 1 つ飛ばないように）。答えは応答が届いてから state に入れる
