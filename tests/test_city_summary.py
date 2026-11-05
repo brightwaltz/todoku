@@ -38,6 +38,12 @@ def notes(block: str) -> list[str]:
     return re.findall(r'<li class="city-break-note">([^<]+)</li>', block)
 
 
+def types_listed(html: str) -> int:
+    """下の「市区町村の事業（型）」の段に並んだ型の数。"""
+    sec = re.search(r'<section class="card city-group" data-level="local">(.*?)</section>', html, re.S)
+    return sec.group(1).count('<li class="city-item') if sec else 0
+
+
 def section_counts(html: str) -> dict[str, int]:
     """段（data-level）ごとの見出しの件数を、見出しの順に。"""
     return {title: int(n) for title, n in
@@ -49,9 +55,10 @@ def test_total_and_breakdown_match_the_programs_listed_below(code):
     html, block = summary(code)
     total = int(re.search(r'<p class="city-total"><b>(\d+)</b> 件', block).group(1))
     assert SUMMARY_TITLE in block
-    assert total == html.count('<li class="city-item')
+    # T-118：合計は制度の件数だけ。型（市区町村の事業）は種類で数えるので、合計に足さず内訳にだけ出す
+    assert total == html.count('<li class="city-item') - types_listed(html)
     got = parts(block)
-    assert sum(got.values()) == total
+    assert sum(n for label, n in got.items() if label != SUMMARY_TYPES) == total
     # 内訳は下の段の見出しと同じ数・同じ順（段の名前から「の制度」を落としたもの）
     # 型が 0 件の段（町田市）だけは内訳に出さない
     want = {(SUMMARY_TYPES if t == "市区町村の事業（型）" else t.removesuffix("の制度")): n for t, n in section_counts(html).items()
@@ -124,3 +131,23 @@ def test_band_says_kanagawa_was_checked_and_other_prefectures_were_not():
         assert pref not in PREF_NONE_FOUND
         assert notes(summary(code)[1]) == [SUMMARY_PREF_UNSEEN.format(pref=pref)], code
     assert notes(summary(MACHIDA)[1]) == []  # 東京都は 1 件書けている
+
+
+@pytest.mark.parametrize("code, total, types", [(MACHIDA, 28, None), (YOKOHAMA, 24, 1), (VILLAGE, 17, 5), (OSAKA, 17, 5)])
+def test_total_counts_programs_only_and_types_stay_in_the_breakdown(code, total, types):
+    """T-118：帯の合計に型の種類を足さない（件と種類で単位が違うため）。型は内訳の「市区町村の事業 n 種類」のまま出す。"""
+    html, block = summary(code)
+    assert int(re.search(r'<p class="city-total"><b>(\d+)</b> 件', block).group(1)) == total
+    assert parts(block).get(SUMMARY_TYPES) == types
+    assert types_listed(html) == (types or 0)
+
+
+@pytest.mark.parametrize("code", [VILLAGE, OSAKA])
+def test_prefecture_section_says_the_same_as_the_band(code):
+    """T-118：書けていない県の段の 1 行は、帯と同じ「まだ調べていません」。「まだ規則にしていません」と言い分けない。"""
+    html, block = summary(code)
+    pref = PLACES[code][0]
+    sec = re.search(r'<section class="card city-group" data-level="pref">(.*?)</section>', html, re.S).group(1)
+    assert f'<p class="note">{SUMMARY_PREF_UNSEEN.format(pref=pref)}。</p>' in sec
+    assert notes(block) == [SUMMARY_PREF_UNSEEN.format(pref=pref)]
+    assert "まだ規則にしていません" not in html

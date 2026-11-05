@@ -27,6 +27,9 @@ SUMMARY_TITLE = "とどくが書けている支え"
 SUMMARY_TYPES = "市区町村の事業（型）"
 SUMMARY_FIRST = "うち「{mark}」"
 SUMMARY_NOTE = "とどくが規則にできている数で、{name}の支えの全部ではありません。"
+# T-118：帯の合計は制度の件数だけ。型は「種類」で数えるので足さず、内訳の「市区町村の事業 n 種類」にだけ出す（D-0037、既定は A）。
+# 合計に型を並べる案（B）にするなら、ここに "＋型 {n} 種類" を入れる（型が 0 のときは出さない）
+SUMMARY_TOTAL_TYPES = ""
 
 # T-095：県の制度を調べて、個人で申し込めるものが見つからなかった都道府県（rules.py の LEVEL_PLACE の注・README の冒頭と同じ事実）。
 # 0 件の段の 1 行を「まだ規則にしていません」から替える（そのままだと調べていないように読める）。文言はここだけで差し替える
@@ -71,7 +74,8 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
     groups = [Group("national", "国の制度", of("national"))]
     groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in pref_levels]
     if not pref_levels:
-        groups.append(Group("pref", f"{pref}の制度", [], PREF_NONE_FOUND.get(pref, f"{pref}の制度は、まだ規則にしていません。")))
+        # T-118：調べていない県の 1 行は、帯（SUMMARY_PREF_UNSEEN）と同じ言い方にする
+        groups.append(Group("pref", f"{pref}の制度", [], PREF_NONE_FOUND.get(pref, SUMMARY_PREF_UNSEEN.format(pref=pref) + "。")))
     groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in city_levels]
     if not city_levels:
         groups.append(Group("city", f"{name}の制度", [], f"{name}の事業は、下の「市区町村の事業（型）」で示します。"))
@@ -168,10 +172,13 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
     e = escape
     shown = {p.id for g in groups for p in g.programs}
     firsts = {p.id: first_steps(p, rules, values, shown) for p in rules.programs.values() if p.id in shown}
-    marked = sum(1 for t in firsts.values() if t)
+    counted = {p.id for g in groups if g.key != "local" for p in g.programs}  # T-118：合計は制度だけ（型は種類で数える）
+    n_types = len(shown) - len(counted)
+    marked = sum(1 for pid, t in firsts.items() if t and pid in counted)
     parts = "".join(_summary_item(label, n) for label, n in summary_parts(groups))
+    total_types = e(SUMMARY_TOTAL_TYPES.format(n=n_types)) if SUMMARY_TOTAL_TYPES and n_types else ""
     summary = (f'<div class="city-summary" data-level="summary">'
-               f'<p class="city-total"><b>{len(shown)}</b> 件<span>{e(SUMMARY_TITLE)}</span></p>'
+               f'<p class="city-total"><b>{len(counted)}</b> 件{total_types}<span>{e(SUMMARY_TITLE)}</span></p>'
                f'<ul class="city-break">{parts}</ul>'
                + (f'<p class="city-first-n">{e(SUMMARY_FIRST.format(mark=FIRST_MARK))} <b>{marked}</b> 件</p>' if marked else "")
                + f'<p class="city-caveat">{e(SUMMARY_NOTE.format(name=name))}</p></div>')

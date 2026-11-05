@@ -59,7 +59,8 @@ def test_places_without_their_own_rules_get_national_and_all_five_types(code):
     assert got["pref"] == set() and got["city"] == set()  # 都道府県と市の制度はまだ無い、と 1 行で出す
     assert not {"tokyo", "machida", "yokohama"} & set(got)
     pref, name = PLACES[code]
-    assert f"{pref}の制度は、まだ規則にしていません" in r.text
+    assert f"{pref}の制度は、まだ調べていません。" in r.text  # T-118：帯と同じ言い方
+    assert "まだ規則にしていません" not in r.text
     assert f"{pref}{name}で使える制度" in r.text
 
 
