@@ -40,6 +40,16 @@ prefectures:
         who: 茨城県に住む 65 歳以上の本人。協賛店でカードを見せると割引などが受けられる（家族の代わりの利用はできない）
         where: 住んでいる市町村の窓口（本人が、住所と生年月日の分かる身分証を持って受け取りに行く）
         url: https://senior.pref.ibaraki.jp/senior/about/
+  "09":  # 栃木県。高齢対策課の頁と「高齢者福祉について」の一覧は、計画、虐待の防止、事業者向けの通知、相談先で、県に個人で申し込む給付や割引は無かった。運転免許の自主返納の支援と高齢者の外出支援は市町の制度の一覧、シルバー大学校（60 歳以上の学びの場）の申し込みは大学校の事務局。介護マークは県の高齢対策課の窓口で介護する人に無償で渡しているが、給付や割引ではなく、静岡県・新潟県（配るのが市町村など）と揃えて入れていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.tochigi.lg.jp/e03/
+      - https://www.pref.tochigi.lg.jp/e03/koureisayhks.html
+      - https://www.pref.tochigi.lg.jp/e03/syakaisanka.html
+      - https://www.pref.tochigi.lg.jp/e03/question/fukushi/koureisha/qa0403073.html
+      - https://www.pref.tochigi.lg.jp/e03/kaigomark.html
+      - https://www.pref.tochigi.lg.jp/c03/jisyuhennou.html
+    found: []
   "11":  # 埼玉県。高齢者福祉課の頁に、県に直接申し込める手当や割引は無かった（大学の開放授業講座は申し込み先が各大学）
     checked: 2026-11-06
     looked:
@@ -52,6 +62,30 @@ prefectures:
       - https://www.pref.chiba.lg.jp/koufuku/service/nyuujouyuutai.html
       - https://www.pref.chiba.lg.jp/koufuku/seikatusienn/idoushien.html
       - https://www.pref.chiba.lg.jp/kenshidou/shien/book/kourei.html
+    found: []
+  "15":  # 新潟県。高齢福祉保健課の頁と、在宅支援（見守り・認知症と権利擁護・介護予防）・生きがいづくりの頁、補助・助成・融資の一覧（高齢者・障害者・福祉）は、事業者向けの補助や研修、啓発、相談先で、県に個人で申し込む給付や割引は無かった。シニアカレッジ新潟（おおむね 60 歳以上の学びの場）の申し込み先は県社会福祉協議会、県民介護知識・技術習得講座は介護実習・普及センターの無料の講座、介護マークは市町村や地域包括支援センターで受け取る。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.niigata.lg.jp/sec/kourei/
+      - https://www.pref.niigata.lg.jp/sec/kourei/1318284056216.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1211302895778.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1239825713285.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1329253320248.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1326315653909.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1207242082879.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1347397239462.html
+      - https://www.pref.niigata.lg.jp/life/sub/5/3/
+    found: []
+  "21":  # 岐阜県。県の「高齢者」の分類の頁と、高齢福祉課の「高齢者の活躍」（働く・つながる・学ぶ・運動の 4 つのリンク集）と認知症対策の頁は、事業者向けの補助や研修、団体（老人クラブ・シルバー人材センター・社会福祉協議会など）の紹介、催し、相談先で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.gifu.lg.jp/life/2/16/
+      - https://www.pref.gifu.lg.jp/page/56602.html
+      - https://www.pref.gifu.lg.jp/page/206700.html
+      - https://www.pref.gifu.lg.jp/page/206703.html
+      - https://www.pref.gifu.lg.jp/page/206706.html
+      - https://www.pref.gifu.lg.jp/page/206707.html
+      - https://www.pref.gifu.lg.jp/page/13264.html
     found: []
   "22":  # 静岡県。「高齢者福祉」の課の頁・介護保険・認知症・生きがいづくりの頁に、県に個人で申し込む給付や割引は無かった。介護マークは配るのが市区町村や団体、敬老の日の祝状と記念品は満百歳の人に申し込み無しで贈るもの
     checked: 2026-11-06
