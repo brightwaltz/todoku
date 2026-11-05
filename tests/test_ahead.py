@@ -74,7 +74,8 @@ def test_now_puts_procedures_others_wait_on_first():
 def test_ahead_sits_after_map_and_before_later_and_is_rendered_from_result():
     result = HTML.split('<section id="result" hidden>', 1)[1].split("</section>", 1)[0]
     assert result.index('id="pmap-fold"') < result.index('id="ahead"') < result.index('id="later"')
-    assert re.search(r'<div class="card ahead" id="ahead" hidden>', result)
+    # T-120b：結果の頁の文を増やさないよう、見出し 1 行だけ出して畳む（open を付けない）
+    assert re.search(r'<details class="card soft fold ahead" id="ahead" hidden>\s*<summary><h2>これからの流れ', result)
     body = JS.split("function renderResult(data) {", 1)[1].split("\n}\n", 1)[0]
     assert "renderAhead(data);" in body
     # 先回りの提案は外へ送らない：aheadSteps と renderAhead は api() も fetch も使わない
