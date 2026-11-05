@@ -10,6 +10,15 @@
 #     name：制度の名前／who：対象の主な条件の言い換え（頁の文は写さない）／where：申請先／url：出典
 # 市町村が申し込み先で県は費用を出すだけの事業、事業者や団体が申し込むもの、全国一律の国の制度の窓口は入れない。
 prefectures:
+  "01":  # 北海道。高齢者保健福祉課の施策の一覧（5 頁分の題名）と「生きがい・社会参加」の 2 頁は、事業者・市町村向けの補助や研修、啓発、催し、相談先で、道に個人で申し込む給付や割引は無かった
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.hokkaido.lg.jp/hf/khf/
+      - https://www.pref.hokkaido.lg.jp/category/d009/c060/s278/
+      - https://www.pref.hokkaido.lg.jp/hf/khf/kaigounnei/syakaisanka/
+      - https://www.pref.hokkaido.lg.jp/hf/khf/tiikisien/syakaisanka/
+      - https://www.pref.hokkaido.lg.jp/hf/khf/ninchisyo/224633.html
+    found: []
   "11":  # 埼玉県。高齢者福祉課の頁に、県に直接申し込める手当や割引は無かった（大学の開放授業講座は申し込み先が各大学）
     checked: 2026-11-06
     looked:
@@ -28,4 +37,13 @@ prefectures:
     looked:
       - https://www.pref.aichi.jp/soshiki/korei/
       - https://www.pref.aichi.jp/soshiki/korei/ninchisho-sodan.html
+    found: []
+  "28":  # 兵庫県。住宅のバリアフリー改造の助成（人生いきいき住宅助成事業）・無年金の外国籍高齢者の給付金・社会福祉法人の利用者負担の軽減は、どれも申請を受けて決めるのが市町だった（前の 2 つは県が市町と費用を分ける形）
+    checked: 2026-11-06
+    looked:
+      - https://web.pref.hyogo.lg.jp/org/koreitaisakuka/index.html
+      - https://web.pref.hyogo.lg.jp/kf05/information.html
+      - https://web.pref.hyogo.lg.jp/life/cate3_113.html
+      - https://web.pref.hyogo.lg.jp/ks18/wd20_000000115.html
+      - https://web.pref.hyogo.lg.jp/kf05/teisyotokusya.html
     found: []
