@@ -1,0 +1,76 @@
+city: "242021"
+name: 四日市市
+site: city.yokkaichi.lg.jp
+# T-131：読む1 と読む2 が kaigo-yohin・haikai・haishoku・iro の 4 型で、同じ頁・同じ数字で合った。
+# koken は両方とも not_found だが、どちらの読みも社協・例規集を開いておらず、読む2 の検索の要約では事業がありそうなので「市に無い」とは言えない。型ごと入れない（佐賀市の iro と同じ）。
+# 高齢福祉課の電話は頁により 354-8455 と 354-8170 に分かれるが、ほかの市と同じく電話は書かず課の名前だけにする。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: おむつ等支援事業
+    where: 健康福祉部 高齢福祉課
+    conditions:
+      - 家で暮らし、いつもおむつなどを使う要介護3以上の人で、本人が市民税非課税
+      - 毎月の引換券の上限は、世帯も非課税なら月6,500円、世帯が課税なら月5,000円
+      - 施設やサービス付き高齢者向け住宅に入ったときや、1か月以上入院したときは止まる
+      - 申し込みの窓口・持ち物・期限は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+        publisher: 四日市市
+        title: 在宅福祉サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等みまもり支援事業
+    where: 健康福祉部 高齢福祉課（本人・親族・後見人・支援者が申し込める）
+    conditions:
+      - 65歳以上の認知症の人か、40〜64歳で要介護・要支援の人で、道に迷うおそれがあり家で暮らす人
+      - おかえりシール（QR）・GPS 機器の支給・個人賠償責任保険の3つから、希望するものを選べる
+      - 認知症高齢者等SOSメールに前もって登録しておく（無料、同時に申し込むこともできる）
+      - GPS の自己負担や通信料は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.yokkaichi.lg.jp/www/contents/1600249207682/index.html
+        publisher: 四日市市
+        title: 認知症高齢者等みまもり支援事業（認知症総合支援事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+      - url: https://www.city.yokkaichi.lg.jp/www/contents/1001000003687/index.html
+        publisher: 四日市市
+        title: 認知症高齢者等SOSメール
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 訪問給食事業
+    where: 最寄りの在宅介護支援センター。事業の問い合わせ先は健康福祉部 高齢福祉課
+    conditions:
+      - 65歳以上か、40〜64歳で要介護・要支援の人で、自分で食事を作るのが難しい人
+      - ひとり暮らしか、同居の家族が皆調理できず、見守りが要る世帯
+      - 月曜から土曜の昼と夕に届く。1食688円のうち本人の負担は500円
+      - 所得の条件は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+        publisher: 四日市市
+        title: 在宅福祉サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労事業
+    where: 健康福祉部 高齢福祉課
+    conditions:
+      - 要介護4以上の高齢者を家で介護している家族で、世帯が市民税非課税
+      - 1年間、介護保険のサービスを使わず、入院や施設への入所も無かった（1週間ほどの短期入所や入院は除く）
+      - 慰労金は10万円
+      - 申し込みの時期と持ち物は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+        publisher: 四日市市
+        title: 在宅福祉サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
