@@ -67,7 +67,8 @@ def test_japan_map_moved_off_the_entrance_to_its_own_page():
     js = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
     assert 'id="japan"' not in html and "japan-box" not in html and 'fetch("/japan-map")' not in js
     # 結果の節の最後の 1 行。文は前に入口にあった見出しと同じで、言葉は増やさない
-    result = re.search(r'<section id="result" hidden>(.*?)</section>\s*</main>', html, re.S).group(1)
+    # 結果の節だけを切り出す（後ろに別の節〔手間と分かることの頁、T-133〕が続いても巻き込まない。11/6 の統合で 3rd が直した）
+    result = re.search(r'<section id="result" hidden>((?:(?!<section).)*?)</section>', html, re.S).group(1)
     last = result.strip().splitlines()[-1].strip()
     assert last == '<p class="map-link"><a href="/static/japan.html">全国どこでも使えます</a></p>'
     assert result.count("japan.html") == 1
