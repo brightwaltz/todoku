@@ -129,3 +129,53 @@ def test_every_event_has_a_picture_and_a_place_in_the_scene():
     assert "prefers-reduced-motion: reduce) { .scene-item { transition: none" in css
     # 相談の欄が最初で、絵はその下（11/5 21 時半の柴田の気づき）
     assert html.index('id="text"') < html.index('id="send"') < html.index('id="events"') < html.index('id="samples"')
+
+
+def _drawn_bounds(symbol_markup):
+    """symbol の中の図形（rect・circle・ellipse・line・path の絶対座標）が描く範囲。viewBox 0 0 100 100 の座標"""
+    import re
+
+    xs, ys = [], []
+    for tag, attrs in re.findall(r"<(rect|circle|ellipse|line|path)\b([^>]*)/>", symbol_markup):
+        a = dict(re.findall(r'([\w-]+)="([^"]*)"', attrs))
+        f = {k: float(v) for k, v in a.items() if re.fullmatch(r"[\d.]+", v)}
+        if tag == "rect":
+            xs += [f["x"], f["x"] + f["width"]]; ys += [f["y"], f["y"] + f["height"]]
+        elif tag == "circle":
+            xs += [f["cx"] - f["r"], f["cx"] + f["r"]]; ys += [f["cy"] - f["r"], f["cy"] + f["r"]]
+        elif tag == "ellipse":
+            xs += [f["cx"] - f["rx"], f["cx"] + f["rx"]]; ys += [f["cy"] - f["ry"], f["cy"] + f["ry"]]
+        elif tag == "line":
+            xs += [f["x1"], f["x2"]]; ys += [f["y1"], f["y2"]]
+        else:  # path は大文字（絶対座標）の命令の点だけを見る。小文字の短い線は範囲をほとんど変えない
+            for cmd, nums in re.findall(r"([MLQ])\s*([\d.\s]+)", a["d"]):
+                v = [float(n) for n in nums.split()]
+                xs += v[0::2]; ys += v[1::2]
+    return min(xs), min(ys), max(xs), max(ys)
+
+
+def test_scene_items_fit_in_the_house_without_overlapping():
+    # 家の絵の要素は家の中（x 20〜460）に収まり、床に置く物は床の線 y=210 に立ち、描いた範囲が互いに重ならない（T-124b）。
+    # 壁に掛ける物（暦と時計）だけは床に立たない。ブラウザでの同じ検査は $OPS/tools/shot_t124.py（getBBox）
+    import re
+
+    html = (app_mod.WEB_DIR / "index.html").read_text(encoding="utf-8")
+    symbols = dict(re.findall(r'<symbol id="art-(\w+)" viewBox="0 0 100 100">(.*?)</symbol>', html))
+    boxes = {}
+    for ev, x, y, w, h in re.findall(
+            r'data-ev="(\w+)"><use href="#art-\w+" x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)"', html):
+        x, y, k = float(x), float(y), float(w) / 100
+        assert float(w) == float(h), ev
+        x0, y0, x1, y1 = _drawn_bounds(symbols[ev])
+        boxes[ev] = (x + x0 * k, y + y0 * k, x + x1 * k, y + y1 * k)
+    assert len(boxes) == len(client.get("/api/events").json())
+    for ev, (x0, y0, x1, y1) in boxes.items():
+        assert 20 <= x0 and x1 <= 460 and 76 <= y0, (ev, boxes[ev])
+        if ev != "forgetful":
+            assert 206 <= y1 <= 211, (ev, y1)  # 床に立つ
+    items = list(boxes.items())
+    for i, (a, p) in enumerate(items):
+        for b, q in items[i + 1:]:
+            ox = min(p[2], q[2]) - max(p[0], q[0])
+            oy = min(p[3], q[3]) - max(p[1], q[1])
+            assert not (ox > 0 and oy > 0), (a, b, round(ox, 1), round(oy, 1))

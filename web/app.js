@@ -204,6 +204,18 @@ let eventList = [];
 const eventPicked = new Set();
 const SCENE_EMPTY = "出来事を選ぶと、家の絵に足されていきます。";
 
+// 札の名前は文節の切れ目（が・に・く の後）でだけ折り返す。CSS の word-break: keep-all と組にして、
+// 「一人暮 / らしになった」のような語の途中の折り返しを防ぐ（T-124b。決まった 6 枚の名前に合わせた簡単な決まりで、
+// 名前を足したら札の写真で確かめる。収まらない長い句は overflow-wrap: anywhere で札の中で折れる）
+function phraseLabel(label) {
+  const span = el("span", {});
+  label.split(/(?<=[がにく])(?=.)/).forEach((part, i) => {
+    if (i) span.append(document.createElement("wbr"));
+    span.append(part);
+  });
+  return span;
+}
+
 function eventCard(e) {
   const card = el("button", { type: "button", class: "ev-card", "aria-pressed": "false", "data-ev": e.id });
   if (document.getElementById(`art-${e.id}`)) {
@@ -215,7 +227,7 @@ function eventCard(e) {
     svg.append(use);
     card.append(svg);
   }
-  card.append(el("span", {}, e.label));
+  card.append(phraseLabel(e.label));
   card.addEventListener("click", () => toggleEvent(e.id));
   return card;
 }
