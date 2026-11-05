@@ -50,6 +50,19 @@ prefectures:
       - https://www.pref.tochigi.lg.jp/e03/kaigomark.html
       - https://www.pref.tochigi.lg.jp/c03/jisyuhennou.html
     found: []
+  "10":  # 群馬県。介護高齢課の記事の一覧（約 90 件の題名）とトップの導線で、県の制度として本人が受け取って使うのはぐんまちょい得シニアパスポートだけだった。住宅改造費の助成・介護用品の支給・介護保険とは別のサービスは市町村の事業、長寿者の慶祝訪問は申し込み無し、ねんりんピックは催し。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.gunma.jp/soshiki/60/
+      - https://www.pref.gunma.jp/page/2151.html
+      - https://www.pref.gunma.jp/page/1762.html
+      - https://www.pref.gunma.jp/page/1755.html
+      - https://www.pref.gunma.jp/page/1749.html
+    found:
+      - name: ぐんまちょい得シニアパスポート（ぐーちょきシニアパスポート）
+        who: 群馬県に住む 65 歳以上で、受け取りを希望する本人。協賛店で見せると割引などが受けられる
+        where: 住んでいる市町村の高齢福祉の窓口（本人が、住所・氏名・生年月日の分かるものを見せる）。県の介護高齢課へ郵送でも受け取れる
+        url: https://www.pref.gunma.jp/page/2151.html
   "11":  # 埼玉県。高齢者福祉課の頁に、県に直接申し込める手当や割引は無かった（大学の開放授業講座は申し込み先が各大学）
     checked: 2026-11-06
     looked:
@@ -103,6 +116,13 @@ prefectures:
       - https://www.pref.aichi.jp/soshiki/korei/
       - https://www.pref.aichi.jp/soshiki/korei/ninchisho-sodan.html
     found: []
+  "24":  # 三重県。長寿介護課の「高齢者福祉・介護保険」の頁と更新情報の一覧（約 290 件）は、事業者向けの補助や指定・研修、介護人材、認知症の啓発と催し、計画、県民向けの冊子で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.mie.lg.jp/CHOJUS/HP/index.htm
+      - https://www.pref.mie.lg.jp/CHOJUS/HP/all.htm
+      - https://www.pref.mie.lg.jp/s_kenko/fukushi/index.htm
+    found: []
   "26":  # 京都府。「高齢者のための府政ガイド」の生きがい・住宅・敬老の頁に、府に個人で申し込む給付や割引は無かった。生きがい活動は市町村の事業（府は助成するだけ）、府営住宅の優先入居は公営住宅の入居の型、満百歳のお祝い品は申し込み無し。住宅の頁にあるバリアフリー工事の融資は、案内の頁が見当たらず今も受け付けているか確かめられなかったので入れていない。京都おもいやり駐車場利用証（要介護・要支援の人も対象）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
     checked: 2026-11-06
     looked:
@@ -121,6 +141,14 @@ prefectures:
       - https://web.pref.hyogo.lg.jp/life/cate3_113.html
       - https://web.pref.hyogo.lg.jp/ks18/wd20_000000115.html
       - https://web.pref.hyogo.lg.jp/kf05/teisyotokusya.html
+    found: []
+  "33":  # 岡山県。長寿社会課の記事の一覧（約 110 件の題名）は、計画、事業者向けの補助や研修、介護支援専門員の手続、国保と後期高齢者医療の案内、認知症の啓発と相談先、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。通所付添サポート事業は住民の付添の仕組みづくりとサポーターの養成（市町村の事業向け）。介護マークは給付や割引ではなく、栃木県などと揃えて入れていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.okayama.jp/soshiki/35/
+      - https://www.pref.okayama.jp/page/597217.html
+      - https://www.pref.okayama.jp/page/859794.html
+      - https://www.pref.okayama.jp/page/281259.html
     found: []
   "34":  # 広島県。地域共生社会推進課の頁の記事と「ひろしま高齢者ガイドブック」（令和 8 年度）の「高齢者の福祉施策」「生きがい」の章に、県に個人で申し込む給付や割引は無かった。医療費の助成は市町の窓口に申請、被爆者の介護保険の公費負担は国の制度、生活福祉資金は社会福祉協議会、健康ポイントは市町の事業、介護マークは印刷して使う啓発。思いやり駐車場の利用証（高齢・けがなどで歩くのが難しい人、個人で窓口か郵送で申請）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
     checked: 2026-11-06
