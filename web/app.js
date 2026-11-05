@@ -793,12 +793,55 @@ function renderTodo(data) {
   show("todo", items.length > 0);
 }
 
+// ---- これからの流れ（T-120、先回りの提案の最小版）----
+// 相談で分かったことと規則だけから、これから来る区切りと、そのときに使える制度を時の順に並べる。判定はしない（状態は判定の結果のまま）。
+// 区切りは規則の「先に要る手続き」（waiting_on）と費用の形（cost.self_pay が tax）だけで決め、目安の文は規則の timing の 1 行目をそのまま出す。
+// 本人の暮らしの情報は集めず、通知も保存もしない（README の「今後」）。区切りが「いま」だけなら出さない。文言はここだけで差し替える
+const AHEAD_NOW = "いま";
+const AHEAD_AFTER = "{name}の結果が出たら";
+const AHEAD_TAX = "次の確定申告の時期（2〜3月）";
+function aheadSteps(data) {
+  const shown = data.results.filter((r) => r.status === "eligible" || r.status === "after_prereq");
+  const byId = new Map(data.results.map((r) => [r.id, r]));
+  const tax = (r) => r.cost?.self_pay === "tax";
+  const first = (r) => (r && r.timing && r.timing[0]) || "";
+  const steps = [];
+  const now = shown.filter((r) => r.status === "eligible" && !tax(r));
+  if (now.length) steps.push({ when: AHEAD_NOW, note: "", items: now.map((r) => ({ r, note: "" })) });
+  const after = new Map();  // 先に要る手続きの id → その結果を待つ制度（2 つ待つ制度は 1 つ目の下にだけ置く）
+  for (const r of shown) {
+    if (r.status !== "after_prereq" || tax(r) || !r.waiting_on.length) continue;
+    const w = r.waiting_on[0];
+    if (!after.has(w.id)) after.set(w.id, { w, items: [] });
+    after.get(w.id).items.push({ r, note: first(r) });
+  }
+  for (const { w, items } of after.values()) {
+    steps.push({ when: AHEAD_AFTER.replace("{name}", w.name), note: first(byId.get(w.id)), items });
+  }
+  const taxes = shown.filter(tax).map((r) => ({ r, note: r.status === "after_prereq" && r.waiting_on.length
+    ? `先に${r.waiting_on.map((w) => w.name).join("・")}が要ります` : first(r) }));
+  if (taxes.length) steps.push({ when: AHEAD_TAX, note: "", items: taxes });
+  return steps.some((s) => s.when !== AHEAD_NOW) ? steps : [];
+}
+
+function renderAhead(data) {
+  const steps = aheadSteps(data);
+  $("ahead-list").replaceChildren(...steps.map((s) => el("li", { class: s.when === AHEAD_NOW ? "now" : "" },
+    el("h3", {}, s.when),
+    s.note ? el("p", { class: "ahead-note" }, `目安：${s.note}`) : null,
+    el("ul", { class: "plain" }, s.items.map((t) => el("li", {},
+      el("a", { href: `#p-${t.r.id}`, onclick: (ev) => openCard(ev, t.r.id) }, t.r.name),
+      t.note ? el("span", { class: "ahead-why" }, t.note) : null))))));
+  show("ahead", steps.length > 0);
+}
+
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
   state.resultShown = true;
   renderLater(data.unconfirmed, data.unread);
   renderTodo(data);
   renderMap(data, again);
+  renderAhead(data);
   renderEffort();
   show("effort-page", false);
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";

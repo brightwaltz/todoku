@@ -428,6 +428,17 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .todo-list li::marker { font-weight: 700; color: var(--accent); }
 .todo-list a { font-size: 18px; font-weight: 700; color: var(--accent); display: inline-block; min-height: 32px; }
 .todo-why { display: block; font-size: 15px; color: var(--muted); line-height: 1.5; }
+/* T-120：これからの流れ。左の線と丸で時の順を見せる（色だけに頼らず、区切りの名前を見出しで書く） */
+.ahead h2 { margin: 0 0 8px; }
+.ahead-list { list-style: none; margin: 0; padding: 0 0 0 22px; border-left: 3px solid var(--line); }
+.ahead-list > li { position: relative; margin: 0 0 16px; }
+.ahead-list > li::before { content: ""; position: absolute; left: -32px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--card); border: 3px solid var(--pre); }
+.ahead-list > li.now::before { background: var(--accent); border-color: var(--accent); }
+.ahead-list h3 { margin: 0 0 4px; font-size: 17px; }
+.ahead-note { margin: 0 0 6px; font-size: 15px; color: var(--muted); line-height: 1.5; }
+.ahead-list ul li { margin: 6px 0; }
+.ahead-list a { font-weight: 700; color: var(--accent); display: inline-block; min-height: 32px; }
+.ahead-why { display: block; font-size: 15px; color: var(--muted); line-height: 1.5; }
 #result .summary { border-left-width: 1px; }
 #result .ask { border: 1px solid var(--line); }
 .fold > summary { color: var(--ink); padding: 4px 0; }
