@@ -69,6 +69,16 @@ prefectures:
       - https://web.pref.hyogo.lg.jp/ks18/wd20_000000115.html
       - https://web.pref.hyogo.lg.jp/kf05/teisyotokusya.html
     found: []
+  "34":  # 広島県。地域共生社会推進課の頁の記事と「ひろしま高齢者ガイドブック」（令和 8 年度）の「高齢者の福祉施策」「生きがい」の章に、県に個人で申し込む給付や割引は無かった。医療費の助成は市町の窓口に申請、被爆者の介護保険の公費負担は国の制度、生活福祉資金は社会福祉協議会、健康ポイントは市町の事業、介護マークは印刷して使う啓発。思いやり駐車場の利用証（高齢・けがなどで歩くのが難しい人、個人で窓口か郵送で申請）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.hiroshima.lg.jp/soshiki/263/
+      - https://www.pref.hiroshima.lg.jp/soshiki/263/koureisya-guidebook.html
+      - https://www.pref.hiroshima.lg.jp/uploaded/life/1151948_9835816_misc.pdf
+      - https://www.pref.hiroshima.lg.jp/soshiki/55/health-point-plus.html
+      - https://www.pref.hiroshima.lg.jp/site/ninntisyoutaisaku/kaigomark.html
+      - https://www.pref.hiroshima.lg.jp/soshiki/263/1307322029078.html
+    found: []
   "40":  # 福岡県。県の「高齢者の福祉」（令和 7 年度版）の事業概要と課の頁に、県に個人で申し込む給付や割引は無かった。住宅改造の助成（住みよか事業）は申込先が市町村、介護保険の利用者負担の軽減も市町村に申請、生活福祉資金は市町村の社会福祉協議会、ねんりんスポーツ・文化祭は催し
     checked: 2026-11-06
     looked:
