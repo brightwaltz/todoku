@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>とどく｜尋ねなかった制度まで</title>
-<meta name="description" content="高齢の方と介護する家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも、困りごとを書くと、尋ねていない公的制度まで、理由・申請先・持ち物・出典つきで示します。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示し、東京都・横浜市・町田市は都・市の制度まで詳しく判定します。">
+<meta name="description" content="高齢の方と介護する家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも、困りごとを書くと、尋ねていない公的制度まで、理由・申請先・持ち物・出典つきで示します。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。都道府県・市区町村の制度は、調べられた地域から順に規則にしています。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
@@ -15,7 +15,6 @@
 <header class="top">
   <div class="wrap">
     <h1>とどく <span>尋ねなかった制度まで</span></h1>
-    <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも使えます。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。東京都・横浜市・町田市にお住まいなら、都や市の制度まで詳しく判定します。</p>
   </div>
 </header>
 
@@ -25,17 +24,55 @@
 
   <section id="input" class="card">
     <h2>困っていることを教えてください</h2>
-    <!-- 暮らしの出来事から入る（T-071）。押すと出来事の文を下書きにして、すぐ最初の問いへ。Claude を呼ばず、合言葉も要らない -->
-    <div id="events" hidden>
-      <p class="note">最近あった出来事から始める（1 つ押すと、すぐ最初の質問が出ます。文字は打たなくてかまいません）</p>
-      <div class="examples" id="event-list"></div>
+    <!-- 最初の画面に見せるのは、見出し・相談の欄・絵から選ぶ・見本・合言葉の小さな入口だけ（T-126。11/5 の柴田の気づき
+         「最初の画面が文字ばかりだと、読まずに閉じる」）。説明は下の「このサイトについて」（開くと出る）に置く -->
+    <label for="text" class="sr-only">相談の文（直したり、書き足したりできます）</label>
+    <textarea id="text" rows="4" maxlength="2000" placeholder="例：一人で暮らす母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
+    <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
+    <button class="primary" id="send">相談する</button>
+
+    <!-- 絵から選ぶ（T-124。11/5 の柴田の感想「文字だけだとイメージが湧かない」）。相談の欄の下に置く。札は /api/events から作り、
+         絵は下の art-defs の symbol（id は art-<出来事の id>）。選ぶたびに家の絵に同じ絵が足される。Claude を呼ばず、合言葉も要らない（T-071） -->
+    <div id="events" class="pictures" hidden>
+      <h3 class="pictures-title">書くのが難しい方は、絵から選ぶ<span class="pictures-sub">（いくつでも）</span></h3>
+      <div class="pictures-row">
+        <div class="event-cards" id="event-list" role="group" aria-label="暮らしの出来事"></div>
+        <figure class="scene" aria-hidden="true">
+          <svg viewBox="0 0 480 230" id="scene">
+            <polyline class="n" points="6,76 240,16 474,76"/>
+            <rect class="n" x="20" y="76" width="440" height="134"/>
+            <line x1="6" y1="210" x2="474" y2="210"/>
+            <!-- 左から寝る所（ベッド・紙おむつ・壁の暦と時計）、食卓（窓の下）、玄関（段差と手すり・かばんの家族・戸）。足は床の線 y=210 にそろえる（T-124b） -->
+            <rect class="w" x="186" y="88" width="44" height="32" rx="2"/><line x1="208" y1="88" x2="208" y2="120"/>
+            <rect class="w" x="412" y="112" width="40" height="98" rx="2"/><circle class="f" cx="420" cy="164" r="3"/>
+            <g class="scene-item" data-ev="discharged"><use href="#art-discharged" x="24" y="96" width="120" height="120"/></g>
+            <g class="scene-item" data-ev="diapers"><use href="#art-diapers" x="134" y="174" width="40" height="40"/></g>
+            <g class="scene-item" data-ev="forgetful"><use href="#art-forgetful" x="40" y="78" width="72" height="72"/></g>
+            <g class="scene-item" data-ev="alone"><use href="#art-alone" x="166" y="127" width="92" height="92"/></g>
+            <g class="scene-item" data-ev="falls"><use href="#art-falls" x="262" y="131" width="84" height="84"/></g>
+            <g class="scene-item" data-ev="work"><use href="#art-work" x="330" y="131" width="92" height="92"/></g>
+          </svg>
+        </figure>
+      </div>
+      <p class="scene-caption" id="scene-caption" aria-live="polite">出来事を選ぶと、家の絵に足されていきます。</p>
+      <button type="button" class="secondary" id="event-start" disabled>選んだ出来事で始める</button>
     </div>
+    <svg id="art-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="art-discharged" viewBox="0 0 100 100"><rect fill="#cfe6df" x="8" y="30" width="10" height="55" rx="3"/><rect fill="#fff" x="18" y="54" width="76" height="16" rx="4"/><rect fill="#cfe6df" x="44" y="47" width="50" height="11" rx="4"/><ellipse fill="#fff" cx="31" cy="49" rx="10" ry="6"/><line x1="24" y1="70" x2="24" y2="95"/><line x1="88" y1="70" x2="88" y2="95"/></symbol>
+      <symbol id="art-forgetful" viewBox="0 0 100 100"><rect fill="#fff" x="8" y="14" width="46" height="52" rx="3"/><rect fill="#cfe6df" x="8" y="14" width="46" height="12" rx="3"/><line x1="17" y1="38" x2="45" y2="38"/><line x1="17" y1="48" x2="45" y2="48"/><line x1="17" y1="58" x2="34" y2="58"/><circle fill="#fff" cx="76" cy="32" r="16"/><line x1="76" y1="32" x2="76" y2="22"/><line x1="76" y1="32" x2="84" y2="36"/></symbol>
+      <symbol id="art-alone" viewBox="0 0 100 100"><rect fill="#cfe6df" x="6" y="50" width="62" height="7" rx="2"/><line x1="14" y1="57" x2="14" y2="90"/><line x1="60" y1="57" x2="60" y2="90"/><rect fill="#fff" x="28" y="37" width="13" height="13" rx="2"/><path fill="none" d="M41 41 q6 2 0 7"/><rect fill="#fff" x="72" y="62" width="22" height="6" rx="2"/><line x1="92" y1="30" x2="92" y2="90"/><line x1="75" y1="68" x2="75" y2="90"/></symbol>
+      <symbol id="art-falls" viewBox="0 0 100 100"><line x1="6" y1="22" x2="94" y2="22"/><line x1="20" y1="22" x2="20" y2="10"/><line x1="80" y1="22" x2="80" y2="10"/><rect fill="#cfe6df" x="8" y="74" width="42" height="20" rx="2"/><rect fill="#cfe6df" x="50" y="56" width="44" height="38" rx="2"/></symbol>
+      <symbol id="art-work" viewBox="0 0 100 100"><circle fill="#fff" cx="40" cy="18" r="11"/><path fill="#cfe6df" d="M24 86 L27 44 Q40 32 53 44 L56 86 Z"/><line x1="53" y1="48" x2="64" y2="62"/><rect fill="#fff" x="60" y="60" width="26" height="20" rx="3"/><path fill="none" d="M67 60 v-5 h12 v5"/></symbol>
+      <symbol id="art-diapers" viewBox="0 0 100 100"><rect fill="#fff" x="12" y="18" width="76" height="72" rx="8"/><rect fill="#cfe6df" x="12" y="42" width="76" height="22"/><circle fill="#fff" cx="50" cy="53" r="7"/></symbol>
+    </svg>
     <div id="samples" hidden>
-      <p class="note">見本で試す（合言葉なしで、最後まで動きます）</p>
+      <p class="note">見本で試す（合言葉なしで動きます）</p>
       <div class="examples" id="sample-list"></div>
     </div>
-    <p class="note lead-note">書くのが難しければ、下の項目を選んでいくだけで、相談の文を作ります。</p>
-
+    <!-- どなた・年齢・お住まい・気になることを選んで下書きを作る欄は、畳んでおく（T-126）。全国の見取り図や /city/ の頁から
+         都道府県を選んだときは、app.js の pickFromMap が開く -->
+    <details class="pick-more" id="pick-more">
+    <summary>どなたのことか・お住まいを選んで、文を作る</summary>
     <fieldset class="pick">
       <legend>どなたのことですか（1 つ）</legend>
       <div class="chips" id="pick-who"></div>
@@ -56,8 +93,11 @@
       <legend>気になっていること（いくつでも）</legend>
       <div class="chips" id="pick-worry"></div>
     </fieldset>
+    </details>
 
-    <!-- 合言葉の欄は、見本より下・自分で書く欄の前に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044） -->
+    <!-- 合言葉の欄は見本より下に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044）。T-124 で相談の欄が
+         いちばん上に移り、T-126 で最初は小さな入口（#gate-open）だけにした。合言葉なしで送ったときは askGate が欄を出す -->
+    <button type="button" class="link gate-open" id="gate-open" hidden>合言葉をお持ちの方</button>
     <div id="gate" class="gate" hidden>
       <label for="aikotoba">合言葉</label>
       <p class="note" id="gate-msg">いまは試しに動かしているため、ご自分の相談を送るには合言葉が要ります。上の見本は、合言葉なしで最後まで試せます。</p>
@@ -66,42 +106,49 @@
         <button type="button" class="gate-ok" id="gate-ok">合言葉を使う</button>
       </div>
     </div>
-    <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
-    <textarea id="text" rows="5" maxlength="2000" placeholder="例：町田市に住む母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
-    <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
-    <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
-    <button class="primary" id="send">相談する</button>
-    <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
   </section>
 
-  <!-- 全国の見取り図（T-080c）。中身は /japan-map（規則から作る SVG）を app.js が差し込む。取れなければ出さない -->
-  <section id="japan" class="card soft map-card" hidden aria-labelledby="japan-title">
-    <h2 id="japan-title">全国どこでも使えます</h2>
-    <div id="japan-box"></div>
-  </section>
+  <!-- このサイトについて（T-126）。最初の画面にあった説明（全国 1,741・型 5 種類・判定の仕組み・注）と全国の見取り図をここへ移した。
+         閉じておき、開いた人にだけ見せる。lead の数は tests/test_app.py が規則と市区町村の表から数え直す -->
+  <details id="about" class="card soft about">
+    <summary>このサイトについて</summary>
+    <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも使えます。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。お住まいの市区町村を選ぶと、その地域で確かめられる支えの数もお知らせします。</p>
+    <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
+    <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
+    <!-- 全国の見取り図（T-080c）。中身は /japan-map（規則から作る SVG）を app.js が差し込む。取れなければ出さない -->
+    <section id="japan" class="map-card" hidden aria-labelledby="japan-title">
+      <h2 id="japan-title">全国どこでも使えます</h2>
+      <div id="japan-box"></div>
+    </section>
+  </details>
 
   <section id="reading" class="card" hidden>
     <p>読み取っています…</p>
   </section>
 
-  <section id="extracted" class="card soft" hidden>
+  <!-- 送った後の流れは、吹き出しのやりとりで見せる（T-126b）。あなたの文＝右、とどくが読んだこと・問い＝左。
+       問いの中身・順と判定は変えない。読み取りの確かめの問いも、ほかの問いと同じく押せる選択肢で出る -->
+  <section id="extracted" class="card soft talk" hidden>
     <h2>相談の文章から読み取ったこと</h2>
-    <p class="said" id="said"></p>
-    <ul id="extracted-list" class="facts"></ul>
+    <p class="said bubble you" id="said"></p>
+    <div class="bubble bot"><ul id="extracted-list" class="facts"></ul></div>
     <p class="note" id="engine-note"></p>
   </section>
 
   <section id="board" class="card board-card" hidden aria-label="いまの見立て">
     <div class="board" id="board-cols"></div>
     <p class="change" id="board-change" aria-live="polite"></p>
-    <p class="note">点は制度 1 つずつです。答えるたびに、規則のプログラムが判定し直します（AI は使いません）。</p>
+    <p class="note" title="答えるたびに、規則のプログラムが判定し直します（AI は使いません）。">答えるたびに、規則のプログラムが判定し直します（AI は使いません）。</p>
   </section>
 
-  <section id="ask" class="card ask" hidden>
+  <section id="ask" class="card ask talk" hidden>
+    <ol id="thread" class="thread" aria-label="ここまでの問いと答え" hidden></ol>
     <p class="ask-count" id="ask-count"></p>
     <p class="one-only" id="one-box" hidden><button type="button" class="link" id="one" aria-pressed="false">1 問だけ答える</button><span id="one-note"></span></p>
-    <h2 id="ask-text" tabindex="-1"></h2>
-    <p class="hint" id="ask-hint"></p>
+    <div class="bubble bot now">
+      <h2 id="ask-text" tabindex="-1"></h2>
+      <p class="hint" id="ask-hint"></p>
+    </div>
     <div id="ask-options" class="options"></div>
     <p class="why" id="ask-why"></p>
     <details><summary>確かめ方</summary><p id="ask-check"></p></details>
@@ -120,18 +167,32 @@
   </section>
 
   <section id="result" hidden>
-    <figure class="card pmap" id="pmap" hidden>
-      <h2>制度の地図</h2>
+    <!-- T-133：上から、いま先にすること（1 行）と当てはまる見込みの札、制度の地図、まだ確かめていないこと。
+         件数は札の一覧の見出しだけに出す（見立ての帯は結果の頁では隠し、地図の凡例は色だけ）。確かめるの札の一覧は畳む。押した数の図は別の頁（#effort-page） -->
+    <div class="card todo" id="todo" hidden>
+      <h2>いま先にすること</h2>
+      <ol class="todo-list" id="todo-list"></ol>
+      <p class="note">判定の結果から規則のプログラムが選びました（AI は使いません）。名前を押すと、申請先と持ち物が開きます。</p>
+    </div>
+    <div id="groups-top"></div>
+    <details class="card soft fold" id="pmap-fold" open hidden>
+      <summary><h2>制度の地図（どの手続きが先か、図で見る）</h2></summary>
+    <figure class="pmap" id="pmap">
       <p class="note lead-note">真ん中がご本人です。内側の輪ほど、いま手を打ちやすい制度です。判定は規則のプログラムが行い、図にも AI は使いません。</p>
-      <svg id="pmap-svg" viewBox="0 0 360 360" role="group" aria-label="制度の地図。点を押すと、その制度の説明へ移ります"></svg>
+      <svg id="pmap-svg" viewBox="0 0 360 360" role="group" aria-label="制度の地図。札を押すと、その制度の説明へ移ります"></svg>
       <p class="pmap-pick" id="pmap-pick" aria-live="polite"></p>
       <figcaption>
         <ul class="pmap-legend" id="pmap-legend"></ul>
-        <p class="note" id="pmap-chain"></p>
-        <p class="note">点の縁の色は費用です。</p>
-        <ul class="pmap-legend cost" id="pmap-cost"></ul>
       </figcaption>
     </figure>
+    </details>
+    <!-- T-120：これからの流れ（先回りの提案の最小版）。規則の「先に要る手続き」と時期だけから並べる。判定・通知・保存はしない。
+         T-120b：結果の頁の文を増やさないよう、見出し 1 行だけ出して畳む（押すと開く。印刷では beforeprint が開く） -->
+    <details class="card soft fold ahead" id="ahead" hidden>
+      <summary><h2>これからの流れ<span class="n">次に来る手続き</span></h2></summary>
+      <ol class="ahead-list" id="ahead-list"></ol>
+      <p class="note">規則に書いてある「先に要る手続き」と時期から、規則のプログラムが並べました（AI は使いません）。</p>
+    </details>
     <div class="card ask" id="later" hidden>
       <h2>まだ確かめていないこと</h2>
       <p class="note lead-note">相談の文からは、はっきり読み取れなかったこと・書かれていなかったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
@@ -143,27 +204,19 @@
       <ul id="summary-lines"></ul>
       <p class="note" id="summary-note"></p>
     </div>
-    <div class="stats" id="stats"></div>
     <div id="groups"></div>
-    <p class="note" id="other-city" hidden></p>
+    <p class="note" id="region-line" hidden></p>
     <details class="card soft" id="ineligible-box">
       <summary id="ineligible-title"></summary>
       <ul id="ineligible-list" class="plain"></ul>
     </details>
-    <section id="options-box" hidden>
-      <h2 class="group-title">有料・民間の支え<span class="n" id="options-n"></span></h2>
+    <details class="card soft fold" id="options-box" hidden>
+      <summary><h2>有料・民間の支え<span class="n" id="options-n"></span></h2></summary>
       <p class="note">行政の制度ではなく、お金を払って使う支えの種類です。使えるかは判定していません。お住まいの地域にあるか、料金は申し込み先で確かめてください。会社の名前は出していません。</p>
       <div id="options-list"></div>
-    </section>
-    <figure class="card soft effort" id="effort" hidden>
-      <h2>押した数と、分かった制度の数</h2>
-      <p class="note lead-note">棒 1 本が、答えを 1 つ押したときの見立てです。0&nbsp;回は、相談の文（とお住まい）だけで出した見立てです。</p>
-      <ol class="effort-bars" id="effort-bars" aria-label="押した数ごとの見立て"></ol>
-      <figcaption>
-        <ul class="pmap-legend" id="effort-legend"></ul>
-        <p class="note" id="effort-layers"></p>
-      </figcaption>
-    </figure>
+    </details>
+    <p class="stats" id="stats"></p>
+    <button type="button" class="link" id="effort-open" hidden>押した数と、分かった制度の数</button>
     <div class="card soft keep" id="keep" hidden>
       <h2>この結果を残す</h2>
       <p class="note">答えをこのリンクの中に入れました。あとで開くと、同じ結果が出ます。リンクの中身はとどくのサーバに送られず、どこにも残りません。リンクには答え（認定の区分・年齢など）が入っているので、人に送るときは気をつけてください。</p>
@@ -176,6 +229,19 @@
       <p class="change" id="keep-msg" aria-live="polite"></p>
     </div>
     <button class="secondary" id="again">別の相談をする</button>
+  </section>
+
+  <section id="effort-page" class="card" hidden>
+    <h2 id="effort-title" tabindex="-1">押した数と、分かった制度の数</h2>
+    <figure class="effort" id="effort">
+      <p class="note lead-note">棒 1 本が、答えを 1 つ押したときの見立てです。0&nbsp;回は、相談の文（とお住まい）だけで出した見立てです。</p>
+      <ol class="effort-bars" id="effort-bars" aria-label="押した数ごとの見立て"></ol>
+      <figcaption>
+        <ul class="pmap-legend" id="effort-legend"></ul>
+        <p class="note" id="effort-layers"></p>
+      </figcaption>
+    </figure>
+    <button type="button" class="secondary" id="effort-back">戻る</button>
   </section>
 </main>
 

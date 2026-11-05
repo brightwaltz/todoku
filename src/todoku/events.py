@@ -53,6 +53,21 @@ def find(event_id: str) -> dict[str, Any] | None:
     return next((e for e in EVENTS if e["id"] == event_id), None)
 
 
+def combine(events: list[dict[str, Any]]) -> dict[str, Any]:
+    """絵で選んだいくつかの出来事（T-124）を 1 つの出来事にする。文は選んだ順につなぎ、同じ事実は最初のものだけ残す。
+
+    根拠の言葉はどれも元の文の一部なので、つないだ文の一部でもある（check_extraction の検査はそのまま通る）。
+    """
+    facts, seen = [], set()
+    for e in events:
+        for f in e["facts"]:
+            if f[0] not in seen:
+                seen.add(f[0])
+                facts.append(f)
+    return {"id": "+".join(e["id"] for e in events), "label": "・".join(e["label"] for e in events),
+            "text": "".join(e["text"] for e in events), "facts": facts}
+
+
 def reading(event: dict[str, Any]) -> dict[str, Any]:
     """check_extraction に渡す形（Claude の読み取りと同じ形）にする。"""
     return {

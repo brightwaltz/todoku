@@ -14,7 +14,7 @@ import threading
 import time
 from collections import defaultdict, deque
 from pathlib import Path
-from typing import Any
+from typing import Annotated, Any
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
@@ -24,7 +24,7 @@ from starlette.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field, model_validator
 
 from . import events as events_mod
-from .city import city_page
+from .city import city_groups, city_page
 from .japan_map import japan_map
 from . import local_rules as local_mod
 from . import memo as memo_mod
@@ -178,7 +178,8 @@ class SampleSummaryIn(In):
 
 
 class EventIn(In):
-    id: str = Field(max_length=40)
+    id: str = Field("", max_length=40)
+    ids: list[Annotated[str, Field(max_length=40)]] = Field(default_factory=list, max_length=events_mod.MAX_EVENTS)  # 絵で選んだ出来事（T-124）
     municipality: str = Field("", max_length=6)
 
 
@@ -323,6 +324,27 @@ def place_view(code: str) -> dict | None:
         return None
     pref, name = PLACES[code]
     return {"code": code, "pref": pref, "name": name}
+
+
+def region_view(code: str) -> dict | None:
+    """結果の画面の「あなたの地域で確かめられる支え」（T-122）。住所が無ければ None。
+
+    数は /city/ の頁の帯と同じ数え方（city_groups の、制度のある段だけ）で、規則だけから数える。Claude は使わない。
+    住んでいない地域の制度の数は返さない（前の hidden_places は「町田市にお住まいなら…も判定します」と読め、
+    ほかの地域の人が「自分は対象外だ」と受け取ったため。11/5 の柴田の感想）。
+    detailed は、国と型のほかに一つずつ書けている段（例：["都の制度", "市の制度"]）。文言は web/app.js の REGION_* で組む
+    """
+    if code not in PLACES:
+        return None
+    pref, name = PLACES[code]
+    groups = [g for g in city_groups(RULES, code, pref, name) if g.programs]
+    parts = [{"label": "市区町村の事業" if g.key == "local" else g.title, "n": len(g.programs),
+              "unit": "種類" if g.key == "local" else "件"} for g in groups]
+    detailed = [f"{rules_mod.LEVELS[g.key][-1]}の制度" for g in groups if g.key in rules_mod.LEVEL_PLACE]
+    local = next((g for g in groups if g.key == "local"), None)
+    if local and any(local_mod.found_in(LOCAL, code, p.id) for p in local.programs):
+        detailed.append(f"{name[-1]}の事業")  # その市の公式頁から名前・申請先まで書けた型（T-075b）
+    return {"code": code, "total": sum(x["n"] for x in parts), "parts": parts, "detailed": detailed}
 
 
 def fact_view(fid: str, value: Any) -> dict:
@@ -504,13 +526,11 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         # 「当てはまらない」に並ぶと、町田市の紙おむつ支給が「確かめる」にあるのに「紙おむつは駄目」と読めてしまうため。
         # その市で書けていない型（規則の shown_in）だけは出す
         results = {pid: r for pid, r in results.items() if r.program.level != "local" or city in r.program.shown_in}
-    hidden_places = []
     for level, fid in rules_mod.LEVEL_PLACE.items():
         # その市・都・県以外と分かったら、そこの制度は出さない（町田市で型を出さないのと同じ扱い。判定は変えない）。
-        # 「当てはまらない」に住所だけで外れた制度が並ぶため（11/3 の判断 2）。住所が分からない間は出す
-        n = sum(1 for r in results.values() if r.program.level == level)
-        if implied.get(fid) is False and n:
-            hidden_places.append({"name": rules_mod.LEVELS[level], "n": n})
+        # 「当てはまらない」に住所だけで外れた制度が並ぶため（11/3 の判断 2）。住所が分からない間は出す。
+        # 外した数も画面に返さない（T-122：「〜にお住まいなら…も判定します」の 1 行をやめ、region で自分の地域の数を出す）
+        if implied.get(fid) is False:
             results = {pid: r for pid, r in results.items() if r.program.level != level}
     order = {"eligible": 0, "pending": 1, "after_prereq": 2, "unknown": 3, "ineligible": 4, "done": 5}
     pending = frozenset(pid for pid, r in results.items() if r.status == "pending")
@@ -541,8 +561,8 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
         # 結果の画面の「制度の地図」の矢印（規則の前提から。地図に置く 3 つの状態の制度どうしだけ。Claude は使わない）
         "edges": [list(e) for e in prereq_edges(RULES, (pid for pid, r in results.items() if r.status in SHOWN))],
-        # 1 行で知らせるのは、市の制度を一つずつ判定している市（町田市・横浜市）の外に住む人にだけ
-        "hidden_places": hidden_places if city is None else [],
+        # 選んだ地域で確かめられる支えの数（T-122。住所が無ければ None）
+        "region": region_view(municipality),
         "place": place_view(municipality),
         "center_search": center_search(municipality),
         # 結果の画面の下に出す、有料・民間の支え（判定はしない。関係しそうな事実が当てはまる数で並べ替える）
@@ -663,9 +683,11 @@ def event(body: EventIn, request: Request) -> dict:
     Claude を呼ばないので合言葉は求めず、聞き返しと同じゆるい回数制限だけを掛ける。
     """
     guard(request, costly=False)
-    e = events_mod.find(body.id)
-    if e is None:
+    ids = list(dict.fromkeys(body.ids or ([body.id] if body.id else [])))  # 同じ出来事を 2 度送っても 1 度に数える
+    picked = [events_mod.find(i) for i in ids]
+    if not picked or any(e is None for e in picked):
         raise HTTPException(404, "この出来事は用意していません")
+    e = events_mod.combine(picked)
     extraction = check_extraction(RULES, e["text"], events_mod.reading(e))
     return {"engine": "event", "event": True, "text": e["text"], **consult_view(extraction, body.municipality)}
 

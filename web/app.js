@@ -47,8 +47,9 @@ class GateError extends Error {}
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
     municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
-    oneOnly: false, held: null, trail: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
+    oneOnly: false, held: null, trail: [], thread: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
     // trail：押した数ごとの見立ての数（T-082。手間と分かることの図）
+    // thread：答えた問いと選んだ答えの並び（T-126b。吹き出しのやりとりで見せる。サーバには送らない）
 }
 
 function freshPick() {
@@ -90,6 +91,7 @@ function askGate(wrong) {
   $("gate-msg").textContent = wrong
     ? "合言葉が違います。入れ直してください。"
     : "ご自分の相談を送るには合言葉が要ります。上の見本は合言葉なしで見られます。";
+  show("gate-open", false);
   show("gate");
   $("gate").scrollIntoView({ block: "start" });
   $("aikotoba").focus();
@@ -198,12 +200,62 @@ async function openSample(s) {
   await consultWith(s.text, () => api("/api/sample", { id: s.id }));
 }
 
-// 入口の出来事（T-071）。出来事の文を下書きとして欄に入れ、その文から言える事実だけで最初の問いへ進む（Claude を呼ばない）
-async function openEvent(e) {
-  $("text").value = e.text;
-  lastDraft = e.text;  // 選ぶだけの下書きと同じ扱い（本人が書き換えるまでは、選び直すと作り直す）
-  show("redraft", false);
-  await consultWith(e.text, () => api("/api/event", { id: e.id, municipality: pick.city }));
+// 入口の出来事（T-071）を絵で選ぶ（T-124）。押すたびに選ぶ・外すを切り替え、家の絵に同じ絵を足し、
+// 選んだ出来事の文をつないで下書きにする。「選んだ出来事で始める」で、その文から言える事実だけで最初の問いへ進む（Claude を呼ばない）
+let eventList = [];
+const eventPicked = new Set();
+const SCENE_EMPTY = "出来事を選ぶと、家の絵に足されていきます。";
+
+// 札の名前は文節の切れ目（が・に・く の後）でだけ折り返す。CSS の word-break: keep-all と組にして、
+// 「一人暮 / らしになった」のような語の途中の折り返しを防ぐ（T-124b。決まった 6 枚の名前に合わせた簡単な決まりで、
+// 名前を足したら札の写真で確かめる。収まらない長い句は overflow-wrap: anywhere で札の中で折れる）
+function phraseLabel(label) {
+  const span = el("span", {});
+  label.split(/(?<=[がにく])(?=.)/).forEach((part, i) => {
+    if (i) span.append(document.createElement("wbr"));
+    span.append(part);
+  });
+  return span;
+}
+
+function eventCard(e) {
+  const card = el("button", { type: "button", class: "ev-card", "aria-pressed": "false", "data-ev": e.id });
+  if (document.getElementById(`art-${e.id}`)) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 100 100");
+    svg.setAttribute("aria-hidden", "true");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", `#art-${e.id}`);
+    svg.append(use);
+    card.append(svg);
+  }
+  card.append(phraseLabel(e.label));
+  card.addEventListener("click", () => toggleEvent(e.id));
+  return card;
+}
+
+function toggleEvent(id) {
+  if (eventPicked.has(id)) eventPicked.delete(id); else eventPicked.add(id);
+  const picked = eventList.filter((e) => eventPicked.has(e.id));  // 札の並びの順で文をつなぐ
+  document.querySelectorAll("#event-list .ev-card").forEach((c) => c.setAttribute("aria-pressed", String(eventPicked.has(c.dataset.ev))));
+  document.querySelectorAll("#scene .scene-item").forEach((g) => g.classList.toggle("on", eventPicked.has(g.dataset.ev)));
+  $("scene-caption").textContent = picked.length ? `選んだ出来事：${picked.map((e) => e.label).join("・")}` : SCENE_EMPTY;
+  $("event-start").disabled = !picked.length;
+  const box = $("text");
+  const edited = box.value !== lastDraft && box.value.trim() !== "";
+  if (!edited) {  // 本人が書き換えるまでは、選び直すと下書きを作り直す（選ぶだけの下書きと同じ扱い）
+    const draft = picked.map((e) => e.text).join("");
+    box.value = draft;
+    lastDraft = draft;
+    show("redraft", false);
+  }
+}
+
+async function openEvents() {
+  const ids = eventList.filter((e) => eventPicked.has(e.id)).map((e) => e.id);
+  if (!ids.length) return;
+  const text = eventList.filter((e) => eventPicked.has(e.id)).map((e) => e.text).join("");
+  await consultWith(text, () => api("/api/event", { ids, municipality: pick.city }));
 }
 
 async function consultWith(text, call) {
@@ -214,7 +266,7 @@ async function consultWith(text, call) {
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
   say("読み取っています…");
-  show("reading"); show("extracted", false); show("ask", false); show("pause", false); show("result", false);
+  show("reading"); show("extracted", false); show("ask", false); show("pause", false); show("result", false); show("effort-page", false);
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
@@ -411,6 +463,7 @@ function renderBoard(data) {
   if (data.question) for (const id of data.question.affects_ids) { const t = tiles.get(id); if (t) restart(t, "pulse"); }
   // 住所で外した制度（その市・都の外と分かったときも、町田市・横浜市と分かって型を外したときも）を数えないと、結果の画面で住所を選んだときに「判定は変わりませんでした」と出るため
   $("board-change").textContent = changeText(moved, now, removed);
+  $("board-change").title = $("board-change").textContent;  // T-136：帯では 1 行で切るので、全文を title にも
   boardPrev = now;
   // 質問へ移るとき、上に留まる見立ての帯の下に問いが来るように
   $("board").classList.toggle("live", Boolean(data.question));
@@ -458,7 +511,7 @@ function renderQuestion(q, max, first = false) {
   syncOne();
   $("ask-text").textContent = askText(q);
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
-  fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code));
+  fillAnswers($("ask-options"), q, (v) => answer(q, v), (code) => answerPlace(code, false, q));
   // 結果に出す制度だけを挙げるので、空になりうる（「確かめていないこと」の欄と同じく、そのときは出さない）
   $("ask-why").textContent = q.affects.length ? `この答えで判定が決まる制度：${affectNames(q.affects)}` : "";
   $("ask-check").textContent = q.check;
@@ -466,9 +519,41 @@ function renderQuestion(q, max, first = false) {
   // #ask の aria-live はやめ、問いの文へのフォーカスの移動で伝える。もう問いの文にあると focus() では読み直されないので、いったん外す
   if (document.activeElement === $("ask-text")) $("ask-text").blur();
   $("ask-text").focus({ preventScroll: true });
+  const lastSaid = renderThread();
   if (first) revealThenAsk();
-  else $("ask").scrollIntoView({ behavior: "smooth", block: "start" });
+  // 答えが積もったら、いま選んだ答えの吹き出しから見せる（その下に次の問い。上の古いやりとりは画面の外へ流れる）
+  else (lastSaid || $("ask")).scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+// ---- 吹き出しのやりとり（T-126b）----
+// 答えた問い（左・とどく）と選んだ答え（右・あなた）を、今の問いの上に積む。問いの中身・順・判定は変えない
+function renderThread() {
+  const list = $("thread");
+  list.replaceChildren(...state.thread.map((t) => el("li", {},
+    el("p", { class: "bubble bot past" }, el("span", { class: "sr-only" }, "質問："), t.q),
+    el("p", { class: "bubble you" }, el("span", { class: "sr-only" }, "あなたの答え："), t.a))));
+  show("thread", state.thread.length > 0);
+  const said = list.querySelectorAll(".you");
+  return said.length ? said[said.length - 1] : null;
+}
+
+// 押した選択肢の文字。値から引くので、選択肢の並びを変えても合う
+function answerLabel(q, value) {
+  if (value === DONT_KNOW) return "わからない";
+  if (q.keep && value === q.keep.value) return q.keep.label;
+  const o = (q.options || []).find((x) => x.value === value);
+  return o ? o.label : String(value);
+}
+
+function placeLabel(code) {
+  for (const p of prefs) {
+    const c = (p.cities || []).find(([cc]) => cc === code);
+    if (c) return `${p.name}${c[1]}`;
+  }
+  return code;
+}
+
+const withSaid = (q, a, later) => (later ? state.thread : [...state.thread, { q: askText(q), a }]);
 
 // ---- 1 問だけ答える（T-072b）----
 // 最初の問いで選ぶと、答えるたびに止まり、その時点の札を見てから「もう 1 問答える」か「ここでやめる」を選べる。
@@ -550,14 +635,16 @@ function answer(q, value, later = false) {
   const suggestions = { ...state.suggestions };
   if (!(q.confirm && value === NOT_THIS)) facts[q.fact] = value;
   delete suggestions[q.fact];
-  return step({ facts, suggestions, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1 }, later);
+  return step({ facts, suggestions, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1,
+    thread: withSaid(q, answerLabel(q, value), later) }, later);
 }
 
 // お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める
-function answerPlace(code, later = false) {
+function answerPlace(code, later = false, q = null) {
   const suggestions = { ...state.suggestions };
   delete suggestions.lives_in_machida;
-  return step({ suggestions, municipality: code, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1 }, later);
+  return step({ suggestions, municipality: code, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1,
+    thread: q ? withSaid(q, placeLabel(code), later) : state.thread }, later);
 }
 
 // 送っている間は選択肢を止める（2 度押しで問いが 1 つ飛ばないように）。答えは応答が届いてから state に入れる
@@ -666,31 +753,124 @@ function renderOptions(options) {
   show("options-box", options.length > 0);
 }
 
+// いま先にすること（T-121）：結果の画面の先頭に、判定の結果だけから 1〜TODO_MAX 件を選ぶ（Claude は使わない）。
+// 順：(1) 当てはまる見込みのうち、「先に手続き」の制度が待っている手続き（待っている数の多い順）
+// (2) ほかの当てはまる見込み（サーバの並び順） (3) 読み取りを確かめる問いが残っていれば、その欄へ
+// (4) ここまでで 0 件なら、確かめると使えるかもしれない制度（あと少し確かめれば決まる順）
+// T-133：選ぶのは 3 件まで、結果の頁の先頭に出すのは要点の 1 行だけ（当てはまる見込みの札がすぐ下に並ぶので、2 回並べない）
+const TODO_SHOWN = 1;
+const TODO_MAX = 3;
+function todoItems(data) {
+  const byId = new Map(data.results.map((r) => [r.id, r]));
+  const waits = new Map();
+  for (const r of data.results) {
+    if (r.status !== "after_prereq") continue;
+    for (const w of r.waiting_on) if (!w.pending) waits.set(w.id, (waits.get(w.id) || 0) + 1);
+  }
+  const met = (r) => r.reasons.filter((x) => x.state === "T").map((x) => x.label).join("・");
+  const items = [...waits].filter(([id]) => byId.get(id)?.status === "eligible").sort((a, b) => b[1] - a[1])
+    .map(([id, n]) => ({ r: byId.get(id), why: `済ませると、先に手続きが要る制度 ${n} 件が使えるようになります` }));
+  for (const r of data.results) {
+    if (r.status === "eligible" && !waits.has(r.id)) items.push({ r, why: met(r) ? `当てはまる理由：${met(r)}` : "当てはまる見込みです" });
+  }
+  if (items.length < TODO_MAX && data.unconfirmed.length) {
+    items.push({ later: true, name: "読み取りを確かめる問いに答える", why: `相談の文から読んだことのうち、確かめたいことが ${data.unconfirmed.length} 件あります。答えると判定し直します` });
+  }
+  if (!items.length) {
+    for (const r of data.results.filter((x) => x.status === "unknown")) {
+      items.push({ r, why: r.missing.length ? `分からない点：${r.missing.map((m) => m.name).join("、")}` : "確かめると使えるかもしれません" });
+    }
+  }
+  return items.slice(0, TODO_MAX);
+}
+
+function renderTodo(data) {
+  const items = todoItems(data).slice(0, TODO_SHOWN);
+  $("todo-list").replaceChildren(...items.map((t) => el("li", {},
+    t.later ? el("a", { href: "#later", onclick: (ev) => { ev.preventDefault(); $("later").scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" }); focusOn(laterSpots()[0] || $("later").querySelector("h2")); } }, t.name)
+      : el("a", { href: `#p-${t.r.id}`, onclick: (ev) => openCard(ev, t.r.id) }, t.r.name),
+    el("span", { class: "todo-why" }, t.why))));
+  show("todo", items.length > 0);
+}
+
+// ---- これからの流れ（T-120、先回りの提案の最小版）----
+// 相談で分かったことと規則だけから、これから来る区切りと、そのときに使える制度を時の順に並べる。判定はしない（状態は判定の結果のまま）。
+// 区切りは規則の「先に要る手続き」（waiting_on）と費用の形（cost.self_pay が tax）だけで決め、目安の文は規則の timing の 1 行目をそのまま出す。
+// 本人の暮らしの情報は集めず、通知も保存もしない（README の「今後」）。区切りが「いま」だけなら出さない。文言はここだけで差し替える
+const AHEAD_NOW = "いま";
+const AHEAD_AFTER = "{name}の結果が出たら";
+const AHEAD_TAX = "次の確定申告の時期（2〜3月）";
+function aheadSteps(data) {
+  const shown = data.results.filter((r) => r.status === "eligible" || r.status === "after_prereq");
+  const byId = new Map(data.results.map((r) => [r.id, r]));
+  const tax = (r) => r.cost?.self_pay === "tax";
+  const first = (r) => (r && r.timing && r.timing[0]) || "";
+  const steps = [];
+  const after = new Map();  // 先に要る手続きの id → その結果を待つ制度（2 つ待つ制度は 1 つ目の下にだけ置く）
+  for (const r of shown) {
+    if (r.status !== "after_prereq" || tax(r) || !r.waiting_on.length) continue;
+    const w = r.waiting_on[0];
+    if (!after.has(w.id)) after.set(w.id, { w, items: [] });
+    after.get(w.id).items.push({ r, note: first(r) });
+  }
+  // いまは、ほかの制度が結果を待っている手続きを先に置く（並びはそのほかサーバの順のまま）
+  const now = shown.filter((r) => r.status === "eligible" && !tax(r)).sort((a, b) => after.has(b.id) - after.has(a.id));
+  if (now.length) steps.push({ when: AHEAD_NOW, note: "", items: now.map((r) => ({ r, note: "" })) });
+  for (const { w, items } of after.values()) {
+    steps.push({ when: AHEAD_AFTER.replace("{name}", w.name), note: first(byId.get(w.id)), items });
+  }
+  const taxes = shown.filter(tax).map((r) => ({ r, note: r.status === "after_prereq" && r.waiting_on.length
+    ? `先に${r.waiting_on.map((w) => w.name).join("・")}が要ります` : first(r) }));
+  if (taxes.length) steps.push({ when: AHEAD_TAX, note: "", items: taxes });
+  return steps.some((s) => s.when !== AHEAD_NOW) ? steps : [];
+}
+
+function renderAhead(data) {
+  const steps = aheadSteps(data);
+  $("ahead-list").replaceChildren(...steps.map((s) => el("li", { class: s.when === AHEAD_NOW ? "now" : "" },
+    el("h3", {}, s.when),
+    s.note ? el("p", { class: "ahead-note" }, `目安：${s.note}`) : null,
+    el("ul", { class: "plain" }, s.items.map((t) => el("li", {},
+      el("a", { href: `#p-${t.r.id}`, onclick: (ev) => openCard(ev, t.r.id) }, t.r.name),
+      t.note ? el("span", { class: "ahead-why" }, t.note) : null))))));
+  show("ahead", steps.length > 0);
+}
+
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
   state.resultShown = true;
   renderLater(data.unconfirmed, data.unread);
+  renderTodo(data);
   renderMap(data, again);
+  renderAhead(data);
   renderEffort();
+  show("effort-page", false);
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
   $("stats").textContent = state.restored ? "残したリンクから開いた結果です"
     : `聞き返し ${state.asked} 問・押した数 ${state.presses} 回・${seconds} 秒`;
+  // T-133：当てはまる見込みは先頭（地図の上）、ほかは「まだ確かめていないこと」の下。確かめるの札の一覧は畳む（地図の束「＋N」を押すと開く）。
+  // 件数を出すのはこの見出しだけ
+  const top = $("groups-top");
+  top.replaceChildren();
   const groups = $("groups");
   groups.replaceChildren();
   for (const [status, title, hint] of GROUPS) {
     const items = data.results.filter((r) => r.status === status);
     if (!items.length) continue;
-    groups.append(el("h2", { class: "group-title" }, title, el("span", { class: "n" }, `${items.length} 件`)));
-    groups.append(el("p", { class: "note" }, hint));
+    const titleNode = el("h2", { class: "group-title" }, title, el("span", { class: "n" }, `${items.length} 件`));
+    const box = status === "unknown" ? el("details", { class: "card soft fold group-unknown", id: "unknown-fold" }, el("summary", {}, titleNode))
+      : el("div", { class: `group group-${status}` }, titleNode);
+    (status === "eligible" ? top : groups).append(box);
+    box.append(el("p", { class: "note" }, hint));
     // 確かめると使えるかもしれない制度は多くなりやすいので、あと少し確かめれば決まる順に 5 件だけ先に出す（順は step_view）
     const first = status === "unknown" ? items.slice(0, 5) : items;
-    for (const r of first) groups.append(programCard(r));
+    for (const r of first) box.append(programCard(r));
     if (first.length < items.length) {
       const rest = el("div", { hidden: "" }, items.slice(first.length).map(programCard));
       const more = el("button", { class: "link", onclick: () => { rest.hidden = false; more.remove(); focusOn(rest.querySelector("summary")); } },
         `ほか ${items.length - first.length} 件を見る`);
-      groups.append(more, rest);
+      box.append(more, rest);
     }
   }
   const no = data.results.filter((r) => r.status === "ineligible" || r.status === "done");
@@ -698,14 +878,10 @@ function renderResult(data) {
   $("ineligible-list").replaceChildren(...no.map((r) => el("li", {},
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
-  // 住所で外れる市・都の制度は出さないので、そこに住んでいれば判定することだけを 1 行で伝える
-  // 例：「町田市にお住まいなら、市の制度 10 件も判定します。」（市・都は名前の最後の字）
-  const hidden = data.hidden_places || [];
-  $("other-city").textContent = hidden.length ? hidden.map((h) =>
-    `${h.name}にお住まいなら${hidden.length > 1 ? "" : "、"}${h.name.slice(-1)}の制度 ${h.n} 件`).join("、") + "も判定します。" : "";
-  show("other-city", hidden.length > 0);
+  renderRegion(data.region);
   renderOptions(data.options || []);
   show("result");
+  show("board", false);  // T-133：結果の頁では見立ての帯を出さない（件数は札の一覧の見出しだけ。帯の動きは問いの間だけ）
   if (!again) {
     $("result").scrollIntoView({ behavior: "smooth", block: "start" });
     focusOn(resultHeading());
@@ -732,6 +908,31 @@ function renderResult(data) {
   showKeep(data);
 }
 
+// ---- あなたの地域で確かめられる支え（T-122）----
+// 住んでいない地域の制度は数も名前も出さず、選んだ地域で確かめられる支えの数だけを肯定の形で出す。
+// 前は住んでいない市の制度の数を「（市の名前）なら、市の制度 10 件も判定します」と出し、ほかの地域の人が「自分は対象外」と読んだ（11/5 の柴田の感想）。
+// 数は step_view の region（/city/ の頁の帯と同じ数え方、規則だけから）。文言はここだけで差し替える
+const REGION_HEAD = "あなたの地域で確かめられる支え";
+const REGION_DETAILED = "この地域は、{what}まで一つずつ書けています。";
+const REGION_LINK = "地域の支えの一覧を見る";
+
+function renderRegion(rg) {
+  const line = $("region-line");
+  if (!rg) { line.replaceChildren(); show("region-line", false); return; }
+  const parts = rg.parts.map((x) => `${x.label} ${x.n} ${x.unit}`).join("・");
+  // ["都の制度", "市の制度", "市の事業"] → 「都・市の制度・市の事業」（同じ後ろの語はまとめる）
+  const kinds = new Map();
+  for (const d of rg.detailed) {
+    const i = d.indexOf("の");
+    kinds.set(d.slice(i), [...(kinds.get(d.slice(i)) || []), d.slice(0, i)]);
+  }
+  const what = [...kinds].map(([tail, heads]) => heads.join("・") + tail).join("・");
+  line.replaceChildren(`${REGION_HEAD} `, el("b", {}, `${rg.total}`), ` 件（${parts}）。`,
+    what ? REGION_DETAILED.replace("{what}", what) : "",
+    el("a", { href: `/city/${rg.code}` }, REGION_LINK));
+  show("region-line", true);
+}
+
 // ---- 手間と分かること（T-082）----
 // 押した数ごとに、その人の道で返った results（/api/step と、最初の読み取り）を見立ての帯と同じ 4 つの列で数えてためる。
 // 済んでいる・結果待ちは帯と同じく数えない。同じ押した数の応答（聞き返しをやめた・ここでやめる）は置き換える。
@@ -756,7 +957,7 @@ function tally(trail, presses, results) {
 // 棒 1 本が押した数 1 つ。棒の長さは制度の数、区切りは列。数が細くて入らない区切りは字を出さない（読み上げの文には全部入れる）
 function renderEffort() {
   const trail = state.trail;
-  show("effort", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
+  show("effort-open", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
   if (trail.length < 2) return;
   const total = (t) => BOARD.reduce((sum, [key]) => sum + t.n[key], 0);
   const most = Math.max(...trail.map(total), 1);
@@ -779,21 +980,41 @@ function renderEffort() {
     + (last.extra ? `、プラスアルファの層（どこの市区町村にもある事業の型。お住まいの市の条件では判定していない候補）が ${last.extra} 件です。` : "です。");
 }
 
-// ---- 制度の地図（T-081）----
-// 結果の画面の上に、真ん中に本人、まわりに制度の点を 3 つの輪（内から 当てはまる見込み・先に手続き・確かめる）で置き、
-// 前提の手続きを矢印で結ぶ。描くのは /api/step の results と edges（規則の前提）だけで、Claude は使わない。
-// 答えるたびに同じ点を新しい輪へ滑らせる（prefers-reduced-motion では動かさない）
+// ---- 制度の地図（T-081・T-132）----
+// 結果の画面に、真ん中に本人、まわりに制度の名前の札を置く。内側に当てはまる見込み（大きい札）、その外に先に手続きが要る制度（小さい札）。
+// 先に手続きが要る制度は、前の手続きの札のすぐ外側に寄せて並べ、並び方で順番を示す（矢印は引かない）。
+// 確かめる制度は 1 つの束「＋N」にまとめ、押すと札の一覧の確かめるの先頭が開く。描くのは /api/step の results と edges（規則の前提）だけで、Claude は使わない。
+// 動きは 1 か所だけ：答えて内側へ移る札が滑る（束から出る札は束の位置から。prefers-reduced-motion では動かさない）
 const SVG_NS = "http://www.w3.org/2000/svg";
-const MAP_RINGS = [["eligible", 64, "当てはまる"], ["after_prereq", 108, "先に手続き"], ["unknown", 152, "確かめる"]];
-const MAP_C = 180;     // 図の真ん中（viewBox は 360 × 360）
-const MAP_DOT = 8;     // 点の半径
-const MAP_HIT = 14;    // 押せる円の半径（390px の画面で径 24px 以上。WCAG 2.2 の 2.5.8）
-// 輪の名前を置くため真上に空ける、片側の角度（ラジアン）。名前の幅の半分（14px の字 × 字数 ÷ 2）と点の半径と余白から
-const mapGap = (radius, label) => Math.asin(Math.min(1, (label.length * 7 + MAP_DOT + 6) / radius));
-// 点の縁の色：費用の札（規則の cost.self_pay）を 3 つにまとめる。札の 1 行の頭の印と同じ色
+const MAP_RINGS = [["eligible", 76, "当てはまる"], ["after_prereq", 128, "先に手続き"], ["unknown", 150, "確かめる"]];
+const MAP_C = 180;     // 図の真ん中（中身に合わせて viewBox を広げる）
+const MAP_ME = 32;     // 真ん中の円の半径
+// 札の大きさ：大事なものほど大きい。[字の大きさ, 高さ]。高さは 390px の画面で 24px 以上（WCAG 2.2 の 2.5.8）
+const CHIP = { eligible: [15, 32], after_prereq: [13, 26], unknown: [13, 26] };
+const MAP_PAD = 4;     // 札どうしの間
+const MAP_MIN_W = 320; // 図の枠のいちばん狭い幅（前の 360 の図と同じくらいの字の大きさに見える）
+// 札の名前（6 字ほど）。無い制度は名前の括弧の前を 7 字まで
+const MAP_SHORT = {
+  "fukushi-yogu-konyu": "福祉用具購入", "futan-gendogaku": "負担限度額", "hosougu-hochoki": "補聴器の補装具",
+  "iryohi-kojo-omutsu": "おむつ代控除", "jiritsu-shien-iryo": "自立支援医療", "jutaku-kaishu": "住宅改修",
+  "kaigo-kyugyo-kyufu": "介護休業給付", "kaigo-kyuka": "介護休暇", "kaigo-nintei": "要介護認定",
+  "kogaku-gassan": "高額合算", "kogaku-kaigo-service": "高額介護費", "kogaku-ryoyohi": "高額療養費",
+  "local-haikai": "探索・見守り", "local-haishoku": "配食・見守り", "local-iro": "介護慰労金",
+  "local-kaigo-yohin": "介護用品", "local-koken": "成年後見", "machida-gps": "探索GPS",
+  "machida-haishoku": "配食", "machida-hochoki": "補聴器助成", "machida-jutaku-setsubi": "住宅設備改修",
+  "machida-kami-omutsu": "紙おむつ", "machida-kasai-yobo": "火災予防機器", "machida-kyukyu-tsuho": "救急通報",
+  "machida-omutsu-kakunin": "おむつ確認書", "machida-shingu": "寝具乾燥", "machida-shogaisha-nintei": "障害者認定書",
+  "nichijo-jiritsu-shien": "日常生活支援", "seikatsu-fukushi-shikin": "福祉資金貸付", "shintai-techo-chokaku": "障害者手帳",
+  "shogaisha-kojo": "障害者控除", "tokubetsu-shogaisha-teate": "特別障害者手当", "tokyo-silver-pass": "シルバーパス",
+  "yokohama-hochoki": "補聴器助成", "yokohama-kami-omutsu": "紙おむつ", "yokohama-keiro-pass": "敬老パス",
+  "yokohama-mimamori": "見守り機器", "yokohama-ribiyo": "訪問理美容", "yokohama-shika-kenshin": "訪問歯科健診",
+  "yokohama-sos": "SOSネット",
+};
+const shortName = (r) => MAP_SHORT[r.id] || r.name.split("（")[0].slice(0, 7);
+// 費用の札（規則の cost.self_pay）を 3 つにまとめる。札の一覧の 1 行の頭の印の色（地図には使わない）
 const COST_GROUP = { none: "free", receive: "free", tax: "free", partial: "pay", loan: "pay", varies: "ask", ask: "ask" };
-const COST_GROUPS = [["free", "費用の負担なし（かからない・受け取る・税が軽くなる）"], ["pay", "一部を負担・借りる"], ["ask", "人で変わる・窓口で確かめる"]];
-let mapPts = new Map();  // 制度の id → 点の <g>。同じ点を動かすので作り直さない
+let mapPts = new Map();  // 制度の id → 札の <a>。同じ札を動かすので作り直さない
+let mapBundleAt = null;  // 前に描いた束の位置（束から出る札の動き始め）
 
 function svg(tag, attrs = {}, ...children) {
   const n = document.createElementNS(SVG_NS, tag);
@@ -802,7 +1023,10 @@ function svg(tag, attrs = {}, ...children) {
   return n;
 }
 
-// 前提の矢印でつながる家族が、どの輪でも同じ向きに寄るように並べる：results の順に、前提のない制度から、その後ろに前提にしている制度を深さ優先で
+// 札の幅：全角は字の大きさ、半角は 0.6 倍、左右に余白
+const chipWidth = (text, size) => [...text].reduce((w, ch) => w + (ch.charCodeAt(0) < 0x2000 ? size * 0.6 : size), 0) + size * 1.2;
+
+// 前提の家族が続くように並べる：results の順に、前提のない制度から、その後ろに前提にしている制度を深さ優先で
 function mapOrder(results, edges) {
   const on = new Set(results.map((r) => r.id));
   const kids = new Map();
@@ -823,48 +1047,73 @@ function mapOrder(results, edges) {
   };
   for (const r of results) if (!hasParent.has(r.id)) visit(r.id);
   for (const r of results) visit(r.id);  // 念のため（輪になった前提はない。rules.py が検査する）
-  return new Map(out.map((id, i) => [id, i]));
+  return out;
 }
 
-// 点の位置：輪ごとに、mapOrder の順で真上の空き（輪の名前）を除いた円周に等しく並べる
+// 札の位置：決めた順に、望む角度から左右へ少しずつずらして、置いた札と重ならない所に置く。
+// 1 周しても空きが無ければ半径を広げる。先に手続きが要る札は、前の手続きの札の角度を望み、その札より外の半径に置く
 function mapLayout(results, edges) {
-  const rank = mapOrder(results, edges);
+  const byId = new Map(results.map((r) => [r.id, r]));
+  const parents = new Map();
+  for (const [a, b] of edges) if (byId.has(a) && byId.has(b)) parents.set(b, [...(parents.get(b) || []), a]);
+  const placed = [];  // [x, y, w, h]
   const pos = new Map();
-  for (const [status, radius, label] of MAP_RINGS) {
-    const ring = results.filter((r) => r.status === status).sort((a, b) => rank.get(a.id) - rank.get(b.id));
-    const gap = mapGap(radius, label);
-    const span = 2 * Math.PI - 2 * gap;
-    ring.forEach((r, i) => {
-      // 両端も間隔の半分を空ける（2 件のとき、2 つとも輪の名前の脇に寄らないように）
-      const t = -Math.PI / 2 + gap + (span * (i + 0.5)) / ring.length;
-      pos.set(r.id, [MAP_C + radius * Math.cos(t), MAP_C + radius * Math.sin(t)]);
-    });
+  const free = (x, y, w, h) => Math.hypot(x - MAP_C, y - MAP_C) - Math.max(w, h) / 2 >= 0
+    && placed.every(([px, py, pw, ph]) => Math.abs(px - x) * 2 >= pw + w + MAP_PAD * 2 || Math.abs(py - y) * 2 >= ph + h + MAP_PAD * 2);
+  const put = (key, want, radius, w, h) => {
+    for (let r = radius; ; r += 10) {
+      for (let k = 0; k <= 90; k++) {
+        const t = want + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * (Math.PI / 90);
+        const x = MAP_C + r * Math.cos(t), y = MAP_C + r * Math.sin(t);
+        if (free(x, y, w, h)) {
+          placed.push([x, y, w, h]);
+          pos.set(key, { x, y, w, h, t, r });
+          return;
+        }
+      }
+    }
+  };
+  placed.push([MAP_C, MAP_C, MAP_ME * 2, MAP_ME * 2]);
+  const order = mapOrder(results, edges);
+  const [, r1] = MAP_RINGS[0], [, r2] = MAP_RINGS[1], [, r3] = MAP_RINGS[2];
+  const inner = order.filter((id) => byId.get(id).status === "eligible");
+  inner.forEach((id, i) => {
+    const [size, h] = CHIP.eligible;
+    put(id, -Math.PI / 2 + (2 * Math.PI * i) / inner.length, r1, chipWidth(shortName(byId.get(id)), size), h);
+  });
+  const outer = order.filter((id) => byId.get(id).status === "after_prereq");
+  outer.forEach((id, i) => {
+    const [size, h] = CHIP.after_prereq;
+    const up = (parents.get(id) || []).map((a) => pos.get(a)).filter(Boolean);
+    const want = up.length ? up[0].t : -Math.PI / 2 + (2 * Math.PI * (i + 0.5)) / outer.length;
+    const radius = Math.max(r2, ...up.map((p) => p.r + 40));
+    put(id, want, radius, chipWidth(shortName(byId.get(id)), size), h);
+  });
+  const unknown = results.filter((r) => r.status === "unknown").length;
+  if (unknown) {
+    const [size, h] = CHIP.unknown;
+    put("bundle", Math.PI / 2, r3, chipWidth(`＋${unknown}`, size), h);
   }
   return pos;
 }
 
-// いちばん長い前提のつながり（例：要介護認定 → 障害者控除対象者認定書 → 障害者控除）。2 段以上のときだけ名前の列を返す
-function longestChain(results, edges) {
-  const name = new Map(results.map((r) => [r.id, r.name]));
-  const kids = new Map();
-  for (const [a, b] of edges) if (name.has(a) && name.has(b)) kids.set(a, [...(kids.get(a) || []), b]);
-  const memo = new Map();
-  const walk = (id) => {
-    if (memo.has(id)) return memo.get(id);
-    let best = [id];
-    for (const k of kids.get(id) || []) { const c = walk(k); if (c.length + 1 > best.length) best = [id, ...c]; }
-    memo.set(id, best);
-    return best;
-  };
-  let best = [];
-  for (const r of results) { const c = walk(r.id); if (c.length > best.length) best = c; }
-  return best.length >= 3 ? best.map((id) => name.get(id)) : [];
-}
-
 function clearMap() {
   mapPts = new Map();
+  mapBundleAt = null;
   const box = $("pmap-svg");
   if (box) box.replaceChildren();
+}
+
+function chip(size, h) {
+  return [svg("rect", { class: "chip-bg", height: h, rx: h / 2 }), svg("text", { class: "chip-text", "font-size": size }, "")];
+}
+
+function setChip(g, text, w, h) {
+  const bg = g.querySelector(".chip-bg");
+  bg.setAttribute("x", -w / 2);
+  bg.setAttribute("y", -h / 2);
+  bg.setAttribute("width", w);
+  g.querySelector(".chip-text").textContent = text;
 }
 
 function renderMap(data, again) {
@@ -875,60 +1124,86 @@ function renderMap(data, again) {
   const pos = mapLayout(results, edges);
   if (!box.children.length) {
     box.append(
-      svg("defs", {}, svg("marker", { id: "pmap-arrow", viewBox: "0 0 10 10", refX: "9", refY: "5", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" },
-        svg("path", { d: "M0 0 L10 5 L0 10 z", class: "arrow-head" }))),
-      ...MAP_RINGS.map(([status, radius]) => svg("circle", { class: `ring ${status}`, cx: MAP_C, cy: MAP_C, r: radius })),
-      ...MAP_RINGS.map(([status, radius, label]) => svg("text", { class: `ring-label ${status}`, x: MAP_C, y: MAP_C - radius + 4 }, label)),
-      svg("g", { class: "edges" }),
+      ...MAP_RINGS.slice(0, 2).map(([status, radius]) => svg("circle", { class: `ring ${status}`, cx: MAP_C, cy: MAP_C, r: radius })),
       svg("g", { class: "pts" }),
-      svg("circle", { class: "me", cx: MAP_C, cy: MAP_C, r: 34 }),
+      svg("circle", { class: "me", cx: MAP_C, cy: MAP_C, r: MAP_ME }),
       svg("text", { class: "me-label", x: MAP_C, y: MAP_C }, ""));
   }
   box.querySelector(".me-label").textContent = state.subject;
-  // 矢印：点の縁から縁まで（動いた後の位置で引き直し、点が着いてから見せる）
-  const lines = box.querySelector(".edges");
-  lines.replaceChildren(...edges.map(([a, b]) => {
-    const [x1, y1] = pos.get(a);
-    const [x2, y2] = pos.get(b);
-    const d = Math.hypot(x2 - x1, y2 - y1) || 1;
-    const k1 = (MAP_DOT + 2) / d, k2 = (MAP_DOT + 4) / d;
-    const to = results.find((r) => r.id === b);
-    return svg("line", { class: `edge to-${to.status}`, x1: x1 + (x2 - x1) * k1, y1: y1 + (y2 - y1) * k1,
-      x2: x2 - (x2 - x1) * k2, y2: y2 - (y2 - y1) * k2, "marker-end": "url(#pmap-arrow)" });
-  }));
-  if (again && !calm()) restart(lines, "late");
   const layer = box.querySelector(".pts");
-  for (const r of results) {
+  const from = again && !calm() ? mapBundleAt : null;
+  const parents = new Map();
+  for (const [a, b] of edges) parents.set(b, [...(parents.get(b) || []), a]);
+  for (const r of results.filter((x) => x.status !== "unknown")) {
+    const [size, h] = CHIP[r.status];
+    const p = pos.get(r.id);
     let g = mapPts.get(r.id);
     if (!g) {
-      g = svg("a", { href: `#p-${r.id}`, class: "pt" },
-        svg("title", {}, ""),
-        svg("circle", { class: "hit", r: MAP_HIT }), svg("circle", { class: "cost-ring", r: MAP_DOT + 3 }), svg("circle", { class: "dot", r: MAP_DOT }));
+      g = svg("a", { href: `#p-${r.id}`, class: "pt" }, svg("title", {}, ""), ...chip(size, h));
       g.addEventListener("click", (ev) => openCard(ev, r.id));
       g.addEventListener("mouseenter", () => pickPoint(g));
       g.addEventListener("focus", () => pickPoint(g));
       mapPts.set(r.id, g);
       layer.append(g);
+      if (from) {  // 確かめるの束から出てくる
+        g.style.transform = `translate(${from.x}px, ${from.y}px) scale(.6)`;
+        g.getBoundingClientRect();
+      }
     }
-    const [x, y] = pos.get(r.id);
-    g.style.transform = `translate(${x}px, ${y}px)`;
-    const cost = COST_GROUP[r.cost?.self_pay] || "ask";
-    g.setAttribute("class", `pt ${r.status} cost-${cost}`);
+    g.querySelector(".chip-bg").setAttribute("height", h);
+    g.querySelector(".chip-bg").setAttribute("rx", h / 2);
+    g.querySelector(".chip-text").setAttribute("font-size", size);
+    setChip(g, shortName(r), p.w, h);
+    g.style.transform = `translate(${p.x}px, ${p.y}px)`;
+    g.setAttribute("class", `pt ${r.status}`);
+    g.dataset.id = r.id;
+    if (parents.has(r.id)) g.dataset.after = parents.get(r.id).join(" ");
+    else delete g.dataset.after;
     const say = `${r.name}（${r.status_label}・費用：${r.cost ? r.cost.label : "窓口で確かめる"}）`;
     g.setAttribute("aria-label", say);
     g.dataset.say = say;
     g.querySelector("title").textContent = say;
   }
-  for (const [id, g] of mapPts) if (!results.some((r) => r.id === id)) { g.remove(); mapPts.delete(id); }
-  // 数の凡例と、つながりの例
+  for (const [id, g] of mapPts) if (!results.some((r) => r.id === id && r.status !== "unknown")) { g.remove(); mapPts.delete(id); }
+  // 確かめるの束
+  let bundle = box.querySelector(".bundle");
+  const unknown = results.filter((r) => r.status === "unknown");
+  if (unknown.length) {
+    const [size, h] = CHIP.unknown;
+    const p = pos.get("bundle");
+    if (!bundle) {
+      bundle = svg("a", { href: `#p-${unknown[0].id}`, class: "pt bundle unknown" }, svg("title", {}, ""), ...chip(size, h));
+      bundle.addEventListener("click", (ev) => openCard(ev, bundle.dataset.first));
+      bundle.addEventListener("mouseenter", () => pickPoint(bundle));
+      bundle.addEventListener("focus", () => pickPoint(bundle));
+      layer.append(bundle);
+    }
+    setChip(bundle, `＋${unknown.length}`, p.w, h);
+    bundle.style.transform = `translate(${p.x}px, ${p.y}px)`;
+    bundle.setAttribute("href", `#p-${unknown[0].id}`);
+    bundle.dataset.first = unknown[0].id;
+    const say = `確かめる ${unknown.length} 件`;
+    bundle.setAttribute("aria-label", say);
+    bundle.dataset.say = say;
+    bundle.querySelector("title").textContent = say;
+    mapBundleAt = p;
+  } else if (bundle) {
+    bundle.remove();
+    mapBundleAt = null;
+  }
+  // 図の枠は中身にぴったり合わせる（余白が減るぶん、390px の画面でも札の字が大きく見える）
+  let [x0, y0, x1, y1] = [MAP_C - MAP_ME, MAP_C - MAP_ME, MAP_C + MAP_ME, MAP_C + MAP_ME];
+  for (const { x, y, w, h } of pos.values()) {
+    x0 = Math.min(x0, x - w / 2); x1 = Math.max(x1, x + w / 2);
+    y0 = Math.min(y0, y - h / 2); y1 = Math.max(y1, y + h / 2);
+  }
+  const grow = Math.max(0, MAP_MIN_W - (x1 - x0)) / 2;  // 札が少ないときに字が大きくなりすぎないよう、幅は MAP_MIN_W まで広げる
+  box.setAttribute("viewBox", [x0 - 4 - grow, y0 - 4, x1 - x0 + 8 + grow * 2, y1 - y0 + 8].map((v) => Math.round(v)).join(" "));
+  // 数の凡例
   $("pmap-legend").replaceChildren(...MAP_RINGS.map(([status, , label]) =>
-    el("li", {}, el("span", { class: `pmap-swatch ${status}`, "aria-hidden": "true" }), `${label} ${results.filter((r) => r.status === status).length} 件`)));
-  $("pmap-cost").replaceChildren(...COST_GROUPS.map(([key, label]) =>
-    el("li", {}, el("span", { class: `cost-mark cost-${key}`, "aria-hidden": "true" }), label)));
-  const chain = longestChain(results, edges);
-  $("pmap-chain").textContent = chain.length ? `矢印は先に済ませる手続きです。例：${chain.join(" → ")}` : (edges.length ? "矢印は先に済ませる手続きです。" : "");
-  $("pmap-pick").textContent = "点を押すと、その制度の説明へ移ります。";
-  show("pmap", results.length > 0);
+    el("li", {}, el("span", { class: `pmap-swatch ${status}`, "aria-hidden": "true" }), label)));  // 件数は札の一覧の見出しだけ（T-133）
+  $("pmap-pick").textContent = "札を押すと、その制度の説明へ移ります。";
+  show("pmap-fold", results.length > 0);
 }
 
 function pickPoint(g) {
@@ -1068,7 +1343,7 @@ function programCard(r) {
   if (r.amount.length) body.append(el("h3", {}, "受けられる内容"), el("ul", { class: "plain" }, r.amount.map((t) => el("li", {}, t))));
   if (r.timing.length) body.append(el("h3", {}, "時期・期限"), el("ul", { class: "plain" }, r.timing.map((t) => el("li", {}, t))));
   body.append(el("h3", {}, "出典"), ...r.sources.map(sourceView));
-  return el("details", { class: "card prog", id: `p-${r.id}` }, el("summary", {}, sumParts), body);
+  return el("details", { class: "card prog", id: `p-${r.id}`, "data-status": r.status }, el("summary", {}, sumParts), body);
 }
 
 // 申請メモ（T-074）：窓口へ持っていく記入の下書き。中身は規則と相談の答えから（サーバの memo.py。Claude は使わない）
@@ -1136,7 +1411,11 @@ function openCard(ev, id) {
   ev.preventDefault();
   const card = $(`p-${id}`);
   if (!card) return;
-  if (card.parentElement.hidden) card.parentElement.hidden = false;
+  // 畳んだ欄（確かめるの一覧・ほか N 件）の中の札なら、外側から開く
+  for (let up = card.parentElement; up && up !== $("result"); up = up.parentElement) {
+    if (up.hidden) up.hidden = false;
+    if (up.tagName === "DETAILS") up.open = true;
+  }
   card.open = true;
   card.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -1206,6 +1485,7 @@ function markPref() {
 // タイルを押すと、その都道府県を選んで市区町村の欄へ移る（/city/ の頁からは /?pref=NN で来る）
 function pickFromMap(code, smooth) {
   if (!prefs.some((p) => p.code === code)) return false;
+  $("pick-more").open = true;  // 選ぶ項目は畳んであるので、開いてから市区町村の欄へ移る（T-126）
   $("pref").value = code;
   choosePref(code);
   $("city").scrollIntoView({ behavior: smooth && !calm() ? "smooth" : "auto", block: "center" });
@@ -1243,7 +1523,9 @@ fetch("/japan-map").then((r) => (r.ok ? r.text() : "")).then((html) => {
 // 出来事のボタンも、取れたときだけ出す（T-071）
 fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
-  $("event-list").replaceChildren(...list.map((e) => el("button", { type: "button", class: "chip", onclick: () => openEvent(e) }, e.label)));
+  eventList = list;
+  $("event-list").replaceChildren(...list.map(eventCard));
+  $("event-start").addEventListener("click", openEvents);
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す
@@ -1261,6 +1543,20 @@ $("keep-copy").addEventListener("click", copyKeep);
 $("keep-reask").addEventListener("click", reaskNintei);
 // 開いているページに別の残した結果のリンクを貼ったとき（# より後ろだけが変わると、ページは読み直されない）
 window.addEventListener("hashchange", () => { if (location.hash.startsWith(KEEP_PREFIX)) restoreFrom(location.hash.slice(KEEP_PREFIX.length)); });
+// ---- 押した数の図は別の頁（T-133）。結果の頁を隠して出し、戻ると押した入口へ ----
+$("effort-open").addEventListener("click", () => {
+  show("result", false);
+  show("effort-page");
+  $("effort-page").scrollIntoView({ block: "start" });
+  focusOn($("effort-title"));
+});
+$("effort-back").addEventListener("click", () => {
+  show("effort-page", false);
+  show("result");
+  $("effort-open").scrollIntoView({ block: "center" });
+  focusOn($("effort-open"));
+});
+
 $("again").addEventListener("click", () => {
   state = fresh();
   forgetKeep();
@@ -1289,6 +1585,11 @@ $("gate-ok").addEventListener("click", () => {
   else $("text").focus();
 });
 // Enter の既定の動きを止める。止めないと、keydown の中で相談の欄へ移したフォーカスの先に改行が入る（T-063）
+$("gate-open").addEventListener("click", () => {
+  show("gate-open", false);
+  show("gate");
+  $("aikotoba").focus();
+});
 $("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") { ev.preventDefault(); $("gate-ok").click(); } });
 // 印刷するときは、結果の札（details）を開いて申請先・持ち物・出典まで紙に出し、終わったら開く前に戻す（T-066）。
 // 結果の画面のときだけ html に print-result を付け、入力・問い・帯・ボタンを紙から外す（style.css の @media print）
@@ -1311,7 +1612,8 @@ window.addEventListener("afterprint", () => {
 const keptAtLoad = location.hash.startsWith(KEEP_PREFIX);
 const healthReady = fetch("/api/health").then((r) => r.json()).then((h) => {
   needGate = Boolean(h.passphrase);
-  if (h.passphrase && !aikotoba && !keptAtLoad) show("gate");
+  // 最初は小さな入口だけを出す（T-126。最初の画面の文字を減らす）。押すか、合言葉なしで送ると欄を出す
+  if (h.passphrase && !aikotoba && !keptAtLoad) show("gate-open");
 }).catch(() => { /* 分からなければ、送ったときに聞く */ });
 // 合言葉が要る置き場かを知ってから開く（知る前に結果を出すと、まとめを送って合言葉の欄へ飛ばされる）
 if (keptAtLoad) healthReady.then(() => restoreFrom(location.hash.slice(KEEP_PREFIX.length)));

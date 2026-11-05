@@ -217,8 +217,12 @@ def test_page_names_its_icon_so_browsers_do_not_ask_for_favicon_ico():
     assert "#0d6b5b" in svg  # 画面の上の帯（style.css の --accent）と同じ色
 
 
-def test_entry_text_names_every_place_with_rules():
-    """最初の画面の lead と meta の description は、制度を判定する都・市を全部挙げる（「町田市だけ」と狭く書かない）。"""
+def test_entry_text_does_not_single_out_places():
+    """最初の画面の lead と meta の description は、制度を一つずつ書けている都・市の名前を挙げない（T-122）。
+
+    前は全部挙げる決まりだった（「町田市だけ」と狭く書かないため）。それでも「東京都・横浜市・町田市にお住まいなら…」は、
+    ほかの地域の人に「自分は対象外」と読まれた（11/5 の柴田の感想）。範囲を狭く書かない決まり（「だけ」）は残す。
+    """
     import re
     html = client.get("/").text
     lead = re.search(r'<p class="lead">(.*?)</p>', html).group(1)
@@ -227,8 +231,9 @@ def test_entry_text_names_every_place_with_rules():
               if p.level not in ("national", "local")}
     assert places, "都・市の制度が規則にない"
     for where, text in (("lead", lead), ("description", desc)):
-        missing = [place for place in sorted(places) if place not in text]
-        assert not missing, f"{where} に {missing} がない"
+        named = [place for place in sorted(places) if place in text]
+        assert not named, f"{where} が {named} を名指している：{text}"
+        assert "全国" in text and "お住まいなら" not in text, text
         assert "だけ" not in text, f"{where} が範囲を狭く書いている：{text}"
 
 
@@ -256,6 +261,60 @@ def test_entry_text_counts_match_rules_and_municipalities():
         assert f"全国の市区町村（{n_cities:,}）" in text, where
         assert f"市区町村の事業 {n_types} 種類" in text, where
         assert "全国の実施率" in text, where
+
+
+
+def test_entry_shows_little_text_and_folds_the_rest():
+    """最初の画面に見せるのは、見出し・相談の欄・絵から選ぶ・見本・合言葉の小さな入口だけ（T-126。11/5 の柴田の気づき
+    「最初の画面が文字ばかりだと『難しそう』と読まずに閉じる」）。説明・全国の見取り図は「このサイトについて」、
+    どなた・お住まいを選ぶ欄は畳んだ details に入れる。数え方と前後の数は $OPS/submission/t126-critique.md。
+    """
+    import re
+    from pathlib import Path
+    html = client.get("/").text
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    header = re.search(r'<header class="top">(.*?)</header>', html, re.S).group(1)
+    assert "<h1>" in header and "<p" not in header  # 上の帯は名前だけ。説明の文を置かない
+    about = re.search(r'<details id="about"[^>]*>(.*?)</details>', html, re.S).group(1)
+    assert "<summary>このサイトについて</summary>" in about and " open" not in html[html.index('id="about"') - 9:][:40]
+    for inner in ('<p class="lead">', 'id="japan"', 'こちらには残しません', 'マイクの印'):
+        assert inner in about, inner
+    picks = re.search(r'<details class="pick-more" id="pick-more">(.*?)</details>', html, re.S).group(1)
+    for box in ("pick-who", "pick-age", "pref", "city", "pick-worry"):
+        assert f'id="{box}"' in picks, box
+    # 合言葉の欄は最初は出さず、小さな入口だけ（押すか、合言葉なしで送ると欄が出る）
+    assert re.search(r'<button[^>]*id="gate-open"[^>]*hidden', html)
+    assert 'show("gate-open");' in js and 'if (h.passphrase && !aikotoba && !keptAtLoad) show("gate");' not in js
+    # 見取り図や /city/ の頁から都道府県を選んだときは、畳んだ欄を開いてから市区町村の欄へ移る
+    pick_from_map = re.search(r"^function pickFromMap\(.*?^\}", js, re.S | re.M).group(0)
+    assert pick_from_map.index('$("pick-more").open = true;') < pick_from_map.index('$("city").scrollIntoView')
+
+
+def test_flow_after_sending_reads_as_a_thread_of_bubbles():
+    """送った後の流れ（読み取り → 問い → 答え）を、吹き出しのやりとりで見せる（T-126b。11/5 の柴田の気づき「タイムライン式」）。
+    あなたの文と答え＝右、とどくが読んだこと・問い＝左。答えた問いと押した答えを、今の問いの上に積む。
+    問いの中身・順・判定は変えない（積むのは画面だけで、/api/step には送らない）。見本 4 件の通しは $OPS/tools/shot_t126b.py。
+    """
+    import re
+    from pathlib import Path
+    html = client.get("/").text
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    assert 'class="said bubble you" id="said"' in html
+    assert '<div class="bubble bot"><ul id="extracted-list"' in html
+    ask = re.search(r'<section id="ask"[^>]*>(.*?)</section>', html, re.S).group(1)
+    # 積んだやりとりは今の問いより上。押せる選択肢（#ask-options）とは別の欄にする（台本の通しは #ask-options の中を押す）
+    assert ask.index('id="thread"') < ask.index('id="ask-text"') < ask.index('id="ask-options"')
+    assert re.search(r'<ol id="thread"[^>]*hidden', ask)
+    assert "thread: []" in re.search(r"^function fresh\(\).*?^\}", js, re.S | re.M).group(0)  # 相談ごとに空から
+    # 積むのは聞き返しの問いだけ（結果の画面で後から答えた分は積まない）。押した答えの文字は選択肢の値から引く
+    assert "(later ? state.thread : [...state.thread, { q: askText(q), a }])" in js
+    assert re.search(r"thread: withSaid\(q, answerLabel\(q, value\), later\)", js)
+    assert "answerPlace(code, false, q)" in js and "answerPlace(code, true)" in js
+    step = re.search(r"^async function step\(.*?^\}", js, re.S | re.M).group(0)
+    assert "thread" not in step.split("api(\"/api/step\"")[1].split("});")[0]  # サーバへは送らない
+    # 読み上げでは、吹き出しの左右の代わりに「質問：」「あなたの答え：」を添える
+    render = re.search(r"^function renderThread\(\).*?^\}", js, re.S | re.M).group(0)
+    assert '"質問："' in render and '"あなたの答え："' in render
 
 
 @pytest.mark.usefixtures("on_fly")
@@ -872,23 +931,38 @@ def test_machida_hides_the_types():
 
 
 def test_other_cities_hide_machida_programs():
-    # その市・都以外と分かったら、住所だけで外れる制度を「当てはまらない」に並べず、そこなら判定すると 1 行で伝える
+    # その市・都以外と分かったら、住所だけで外れる制度を「当てはまらない」に並べない。
+    # T-122：外した地域の名前と数は返さず（「町田市にお住まいなら…も判定します」をやめた）、自分の地域で確かめられる支えの数を返す
     facts = {"age_band": "age_75_plus", "residence": "home", "uses_diapers": True, "care_level": "care4"}
     def step(code):
         return client.post("/api/step", json={"facts": facts, "municipality": code}).json()
     yokohama, machida, osaka, nowhere = step("141003"), step("132098"), step("271004"), step("")
+    village = step("013048")  # 北海道新篠津村
     assert not [r for r in yokohama["results"] if r["id"].startswith(("machida-", "tokyo-"))]
     assert not [r for r in machida["results"] if r["id"].startswith("yokohama-")]
     assert sum(yokohama["counts"].values()) == len(yokohama["results"])
-    assert osaka["hidden_places"] == [{"name": "町田市", "n": 10}, {"name": "横浜市", "n": 7}, {"name": "東京都", "n": 1}]
-    # 町田市・横浜市に住む人には、ほかの市の件数を知らせない（自分の市の制度を一つずつ見ているため）
-    assert machida["hidden_places"] == [] and any(r["id"].startswith("machida-") for r in machida["results"])
-    assert yokohama["hidden_places"] == [] and any(r["id"].startswith("yokohama-") for r in yokohama["results"])
-    # 住所が分からない間は今までどおり、市・都の制度も型も出す
-    assert nowhere["hidden_places"] == [] and len(nowhere["results"]) == 40
+    for d in (yokohama, machida, osaka, nowhere, village):
+        assert "hidden_places" not in d
+    # 数は /city/ の頁の帯と同じ数え方で、結果の札の数とそろう
+    for d in (yokohama, machida, osaka, village):
+        assert d["region"]["total"] == len(d["results"]) == sum(x["n"] for x in d["region"]["parts"])
+    assert osaka["region"]["parts"] == [{"label": "国の制度", "n": 17, "unit": "件"},
+                                        {"label": "市区町村の事業", "n": 5, "unit": "種類"}]
+    # その市・村の公式頁から型が書けたら（lane-b の T-131 など）、自分の「市の事業」「村の事業」だけは入ってよい
+    assert osaka["region"]["detailed"] in ([], ["市の事業"]) and village["region"]["detailed"] in ([], ["村の事業"])
+    # 住んでいない地域の名前は、どの欄にも出さない（0 件の段も出さない）
+    assert not any(w in str(osaka["region"]) for w in ("町田", "横浜", "東京", "0 件"))
+    assert machida["region"]["detailed"] == ["都の制度", "市の制度"] and any(r["id"].startswith("machida-") for r in machida["results"])
+    assert yokohama["region"]["detailed"] == ["市の制度"] and any(r["id"].startswith("yokohama-") for r in yokohama["results"])
+    # 住所が分からない間は今までどおり、市・都の制度も型も出す（地域の数は出さない）
+    assert nowhere["region"] is None and len(nowhere["results"]) == 40
     from pathlib import Path
-    script = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
-    assert "data.hidden_places" in script
+    root = Path(__file__).resolve().parents[1] / "web"
+    script = (root / "app.js").read_text(encoding="utf-8")
+    page = (root / "index.html").read_text(encoding="utf-8")
+    assert "data.region" in script and "hidden_places" not in script and "お住まいなら" not in script
+    # 最初の画面にも、特定の地域なら詳しいと読める 1 行を出さない
+    assert "お住まいなら" not in page and "東京都・横浜市・町田市" not in page
 
 
 def test_unknown_results_are_closest_first():
@@ -1008,12 +1082,13 @@ def test_place_question_comes_back_for_not_machida():
     assert q is not None and q["fact"] == "lives_in_yokohama"
     assert q["text"] == q["place"]["text"] == "お母さまはどちらにお住まいですか？"
     assert q["options"] == []  # 横浜市・東京都の事実の はい・いいえ は使わないので、控えの選択肢は出さない
-    # 市区町村を選べば、もう聞かない。住所だけで外れる横浜市・東京都の制度は 1 行にまとめる
+    # 市区町村を選べば、もう聞かない。住所だけで外れる横浜市・東京都の制度は出さず、名前も数も返さない（T-122）
     data = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": asked + 1,
                                           "municipality": "271004"}).json()
     assert data["question"] is None or data["question"]["fact"] not in places
     assert not [r for r in data["results"] if r["id"].startswith("yokohama-") or r["id"] == "tokyo-silver-pass"]
-    assert {"横浜市", "東京都"} <= {h["name"] for h in data["hidden_places"]}
+    assert "hidden_places" not in data and not any(w in str(data["region"]) for w in ("横浜", "東京", "町田"))
+    assert data["region"]["total"] == len(data["results"])
     # 「わからない」と答えれば、もう聞かない。横浜市の制度は住所が分からないまま残す（要介護2で外れるものは、住所でなく区分で外れる）
     data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
                                           "asked": asked + 1}).json()
@@ -1045,17 +1120,25 @@ def test_place_is_offered_on_the_result_when_not_asked():
                                           "asked": 99}).json()
     assert not [u for u in data["unconfirmed"] if u["fact"] in places]
 def test_care_level_question_names_the_person():
-    # 認定の問いにも主語を書き、相談文の呼び方に置き換える（指摘 P-6。見本「退院した母」では最初の問いになる）
-    start = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    # 認定の問いにも主語を書き、相談文の呼び方に置き換える（指摘 P-6。見本「道に迷う父」では最初の問いになる）
+    # T-117：見本の読み直し（0533d97）で「退院した母」は care_level=none を確かさ低で読むようになり、
+    # 最初の問いが確かめの問いに変わったので、選ぶ問いを見る見本を「道に迷う父」に替えた
+    start = client.post("/api/sample", json={"id": "mayou-chichi"}).json()
     q = start["question"]
-    assert start["subject"] == "お母さま" and q["fact"] == "care_level" and q["confirm"] is False
-    assert q["text"].startswith("お母さまは、") and "ご本人" not in q["text"]
+    assert start["subject"] == "お父さま" and q["fact"] == "care_level" and q["confirm"] is False
+    assert q["text"].startswith("お父さまは、") and "ご本人" not in q["text"]
     # 「わからない」と答えた後の「まだ確かめていないこと」の問いも同じ呼び方
     after = client.post("/api/step", json={"facts": {**start["facts"], "care_level": DONT_KNOW},
                                            "suggestions": start["suggestions"], "subject": start["subject"],
                                            "asked": 1}).json()
     missing = [m["question"] for r in after["results"] for m in r["missing"] if m["fact"] == "care_level"]
-    assert missing and all(m.startswith("お母さまは、") for m in missing)
+    assert missing and all(m.startswith("お父さまは、") for m in missing)
+    # 確かめの問いも相談文の呼び方で出る（「退院した母」の最初の問い。「はい」で受けていない、「いいえ」で選び直す）
+    haha = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    hq = haha["question"]
+    assert haha["subject"] == "お母さま" and hq["fact"] == "care_level" and hq["confirm"] is True
+    assert hq["text"].startswith("お母さまは") and "ご本人" not in hq["text"]
+    assert [o["value"] for o in hq["options"]] == ["none", "__not__"]
 
 
 # ご本人のことを聞くのに主語が無かった問い（T-025）。介護をする家族に聞く問い（caregiver_employee・fire_risk）と、
@@ -1317,11 +1400,13 @@ def test_gate_sits_below_samples_and_is_not_the_loudest_button():
     html = (root / "index.html").read_text(encoding="utf-8")
     js = (root / "app.js").read_text(encoding="utf-8")
 
-    at = {k: html.index(f'id="{k}"') for k in ("input", "samples", "sample-list", "gate", "text", "send")}
-    assert at["input"] < at["samples"] < at["sample-list"] < at["gate"] < at["text"] < at["send"]
+    # T-124（11/5 21 時半の柴田の気づき「相談の文をいちばん上に置く」）で、相談の欄と「相談する」を見本より上に移した。
+    # 見本より上の塗りのボタンは「相談する」の 1 つだけ。合言葉の欄は見本より下に残す（最初の画面でいちばん目立たせない）
+    at = {k: html.index(f'id="{k}"') for k in ("input", "text", "send", "events", "samples", "sample-list", "gate")}
+    assert at["input"] < at["text"] < at["send"] < at["events"] < at["samples"] < at["sample-list"] < at["gate"]
     gate_ok = re.search(r'<button[^>]*id="gate-ok"[^>]*>', html).group(0)
     assert "primary" not in gate_ok
-    assert 'class="primary"' not in html[: at["samples"]]
+    assert html[: at["samples"]].count('class="primary"') == 1
     # 見本は合言葉の欄より上にあるので、「下の見本」と書かない
     assert "下の見本" not in html and "下の見本" not in js
 
@@ -1348,3 +1433,31 @@ def test_print_puts_cards_on_paper_and_leaves_controls_out():
     assert 'classList.toggle("print-result"' in before and 'querySelectorAll("details:not([open])")' in before
     assert "d.open = true" in before
     assert "d.open = false" in after and 'classList.remove("print-result")' in after
+
+
+def test_board_while_answering_is_one_row_of_counts_and_one_line_note():
+    # T-136：問いに答えている間（.live）の帯は、4 つの数の 1 行＋注 1 行。点は出さない（DOM には残す）。
+    # 390 で 209px（画面の 25%）を占め、前の問いを隠していた。高さ・行数・点の見え方はブラウザで確かめた（ops の shot_t136.py）
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    css = (root / "style.css").read_text(encoding="utf-8")
+
+    def rule(selector):
+        m = re.search(r"^" + re.escape(selector) + r" \{([^}]*)\}", css, re.M)
+        assert m, selector
+        return m.group(1)
+
+    assert "display: none" in rule(".board-card.live .tiles")
+    assert "display: flex" in rule(".board-card.live .board")
+    assert "flex-wrap: wrap" not in rule(".board-card.live .board")  # 折り返すのは 370px より狭い画面だけ
+    assert "white-space: nowrap" in rule(".board-card.live .col-head .ph")  # 名前は言葉の切れ目でだけ折る
+    one_line = rule(".board-card.live .change, .board-card.live .note")
+    for decl in ("white-space: nowrap", "overflow: hidden", "text-overflow: ellipsis"):
+        assert decl in one_line, decl
+    html = (root / "index.html").read_text(encoding="utf-8")
+    note = re.search(r'<p class="note"[^>]*>([^<]*)</p>\n  </section>\n\n  <section id="ask"', html).group(1)
+    assert note == "答えるたびに、規則のプログラムが判定し直します（AI は使いません）。"  # 点を出さないので「点は制度 1 つずつ」は消した
+    js = (root / "app.js").read_text(encoding="utf-8")
+    assert '$("board-change").title = $("board-change").textContent;' in js  # 切った全文は title にも
