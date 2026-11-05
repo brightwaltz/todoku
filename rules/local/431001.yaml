@@ -1,0 +1,46 @@
+city: "431001"
+name: 熊本市
+site: city.kumamoto.jp
+programs:
+  - template: local-kaigo-yohin
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05, note: "見落としの候補：https://higomaru-call.jp/faq/CCFaqDetail.asp?id=5055（熊本市コールセンターの FAQ。city.kumamoto.jp の頁ではない）"}
+  - template: local-haikai
+    status: found
+    name: 熊本市認知症高齢者等見守りSOSネットワーク事業
+    where: お住まいの区役所の福祉課（前もって電話で相談する）
+    conditions:
+      - 行方不明になるおそれがあり、在宅で暮らす認知症の高齢者などが対象
+      - 認知症の診断がある人（65歳未満も含む）、または認知症が疑われる症状のある人
+      - 名前・特徴・写真などを前もって市に登録し、行方不明のときは関係機関に知らせる
+      - 登録した人は、希望すればQRコードの見守りシール（どこシル伝言板）ももらえる
+      - 登録もシールも無料（シールを追加で頼むときは費用がかかる）
+    sources:
+      - url: https://www.city.kumamoto.jp/kiji00346015/index.html
+        publisher: 熊本市
+        title: 熊本市認知症高齢者等見守りSOSネットワーク事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 熊本市成年後見制度利用支援事業
+    where: 高齢者は高齢福祉課、障がいのある人は障がい福祉課（まず電話で相談する）
+    conditions:
+      - お金の事情などで成年後見制度を使うのが難しい人が対象
+      - 本人や親族による申立てが見込めず、放っておけないときは市長が申し立てる
+      - 市長が申し立てた人のうち、生活保護を受けている人などは申立ての費用を市が負担する
+      - 後見人などへの報酬を払うのが難しい人には、報酬の全部か一部を助成する
+    sources:
+      - url: https://www.city.kumamoto.jp/kiji003183/index.html
+        publisher: 熊本市
+        title: 成年後見制度について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

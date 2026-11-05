@@ -1,0 +1,83 @@
+city: "261009"
+name: 京都市
+site: city.kyoto.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品給付事業（家族介護用品給付券の交付）
+    where: 介護保険被保険者証の住所地の区役所・支所の健康長寿推進課（高齢介護保険担当）、または右京区京北出張所（保健福祉第一担当）
+    conditions:
+      - 市内に住み実際に暮らす65歳以上で、要介護4か5の人を介護する家族など
+      - 自宅で介護されていること（軽費・有料老人ホーム、サ高住も自宅に含む）
+      - 世帯が市民税非課税であること
+      - 紙おむつなどと交換できる給付券（1枚5千円相当）。申請が早い月ほど多い
+      - 毎年度の申請が必要
+    sources:
+      - url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000324770.html
+        publisher: 京都市
+        title: 令和8年度京都市家族介護用品給付券の交付について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 高齢者あんしんお出かけサービス事業（小型GPS端末機の貸出）
+    where: 区役所・支所の健康長寿推進課 高齢介護保険担当、または京北出張所 保健福祉第一担当
+    conditions:
+      - 要介護か要支援の認定を受け、認知症で外出時に戻れなくなるおそれがある人
+      - その人を自宅で介護している家族などが利用する
+      - 居場所を調べられる小型GPS端末機を貸し出す
+      - 利用料は月1,500円。生活保護世帯などは無料
+    sources:
+      - url: https://www.city.kyoto.lg.jp/sogo/page/0000246806.html
+        publisher: 京都市
+        title: 介護に関する支援
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000181895.html
+        publisher: 京都市
+        title: 認知症の人や家族を支えるサービス・制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "where の「高齢サポートでも相談できる」は出典の 2 頁に無いので消した"}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 京都市社会福祉協議会、または保健福祉局 介護ケア推進課に相談（担当のケアマネジャーがいれば、まずケアマネジャーに相談）
+    conditions:
+      - 60歳以上で、ひとり暮らしか高齢者だけの世帯の人
+      - 要支援か要介護の認定を受け、体の状態などで買物や調理が難しい人など
+      - 昼食を届け、あわせて安否を確かめる
+      - 利用料は1食500円まで（事業者により異なる）
+    sources:
+      - url: https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+        publisher: 京都市
+        title: 令和8年度版「すこやか進行中!!～高齢者のためのガイドブック～」（配食サービスの頁）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（申立費用・報酬支給）
+    where: 65歳以上の人の費用支給は保健福祉局 介護ケア推進課（持参か郵送）。身寄りのない人の市長申立ては同課か区役所・支所の健康長寿推進課に相談
+    conditions:
+      - 市長申立て：判断力が不十分で、申し立てる2親等内の親族などがいない人
+      - 費用支給は本人や親族の申立ても対象。申立費用と後見人等の報酬を支給
+      - 本人（申立費用は申立人も）が生活保護等か非課税世帯で、預貯金が基準以下・他の資産なし
+      - 報酬の上限は月2.8万円（在宅）、月1.8万円（施設）
+      - 後見人等が本人の4親等内の親族なら、報酬は支給の対象外
+    sources:
+      - url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000296370.html
+        publisher: 京都市
+        title: 成年後見制度利用支援事業（申立費用・報酬支給）について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000296/296370/koken2.pdf
+        publisher: 京都市
+        title: 後見人等報酬の支給申請をされる方へ
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "生活保護等でも預貯金の基準と資産の要件が要ることと、申立費用は申立人も要件に当たることを条件3行目に入れた"}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

@@ -1,0 +1,87 @@
+city: "221007"
+name: 静岡市
+site: city.shizuoka.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 高齢者紙おむつ支給制度
+    where: 各区の高齢介護課（葵区・駿河区・清水区）、蒲原出張所（電子申請も可）
+    conditions:
+      - 65歳以上で月の半分以上を自宅で暮らし、紙おむつが要る人
+      - 要介護4以上の人。要介護1〜3は認定調査票の要件に合えば対象（窓口で判定）
+      - 生活保護世帯か、世帯全員が市民税非課税の世帯の人
+      - 有料老人ホーム・グループホーム・サ高住などに入所中の人は対象外
+      - 要介護度に応じ月1,500〜6,500円分の券を支給し、加盟の薬局などで引き換える
+    sources:
+      - url: https://www.city.shizuoka.lg.jp/s2837/s002726.html
+        publisher: 静岡市
+        title: 高齢者紙おむつ支給制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者見守り事業（認知症しずメール・認知症見守りシール）
+    where: 住まいの地域を担当する地域包括支援センター
+    conditions:
+      - 認知症などで行方不明になるおそれがある人の家族が、事前登録を申し込める
+      - 登録すると、靴や杖に貼る登録番号付きの反射シールを無料でもらえる
+      - 行方不明時は、登録した市民（見守り協力者）に特徴などをメールやLINEで配信
+    sources:
+      - url: https://www.city.shizuoka.lg.jp/s4523/s002772.html
+        publisher: 静岡市
+        title: 認知症高齢者見守り事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 配食型見守りサービス
+    where: 地域包括支援センターかケアマネジャーに相談し、各区の高齢介護課・蒲原出張所へ申請
+    conditions:
+      - 一人暮らし、または同居の人が緊急時に対応しにくい世帯で、食事の用意が難しい人
+      - 要支援・要介護の認定か、基本チェックリストに当たる人（施設入所の人は対象外）
+      - 買い物や調理が自分でできる人、サ高住など見守りのある住まいの人は対象外
+      - 平日に週5回まで、昼か夕の食事を届けて安否を確かめる
+      - 食事代は事業者に直接払う（市の割引はない）
+    sources:
+      - url: https://www.city.shizuoka.lg.jp/s2837/s002730.html
+        publisher: 静岡市
+        title: 配食型見守りサービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業「報酬助成の申請」
+    where: 本人65歳以上は各区福祉事務所の高齢介護課、65歳未満は各区福祉事務所の障害者支援課
+    conditions:
+      - 後見人などへの報酬を本人が払いにくいときに市が助成する
+      - 生活保護を受けている人など、または世帯全員が市民税非課税で預貯金などが基準内の人
+      - 後見人などが親族（6親等内の血族・配偶者・3親等内の姻族）なら対象外
+      - 上限は月額で在宅28,000円、施設入所18,000円（2025年4月以降の分）
+      - 報酬付与の審判があった翌日から3か月以内に申請する
+    sources:
+      - url: https://www.city.shizuoka.lg.jp/s3865/s003078.html
+        publisher: 静岡市
+        title: 成年後見制度利用支援事業「報酬助成の申請」
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給
+    where: 各区の高齢介護課（葵区・駿河区・清水区）、蒲原出張所（2回目以降は電子申請も可）
+    conditions:
+      - 要介護4か5の認定から1年以上たつ65歳以上の人を、在宅で介護する同居の家族
+      - 生活保護世帯か、世帯全員が市民税非課税の世帯
+      - 1年以上介護保険サービスを使っていない（年1週間ほどの短期入所などは除く）
+      - 市に住民登録があり、住んでいること
+      - 年間10万円を支給
+    sources:
+      - url: https://www.city.shizuoka.lg.jp/s2837/s002725.html
+        publisher: 静岡市
+        title: 家族介護慰労金支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

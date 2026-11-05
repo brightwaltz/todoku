@@ -1,0 +1,65 @@
+city: "141305"
+name: 川崎市
+site: city.kawasaki.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ等介護用品の給付
+    where: 各区役所の高齢・障害課（高齢者支援係。川崎区は高齢者支援担当）
+    conditions:
+      - 65歳以上で在宅、要介護3〜5の認定があり、紙おむつが必要な人
+      - 40〜64歳は要介護3〜5で、初老期の認知症（若年性認知症）に当たり、紙おむつが要る人
+      - 施設に入っている人、1か月に及ぶ入院中の人は対象にならない
+      - 有料老人ホームなど介護や食事の提供を受ける住まいは施設とみなす
+      - 月6,000円まで注文でき負担は課税状況で0〜20%。生活保護の人は月3,000円で紙おむつ類は対象外
+    sources:
+      - url: https://www.city.kawasaki.jp/350/page/0000022608.html
+        publisher: 川崎市
+        title: 紙おむつ等介護用品の給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "40〜64歳の条件に頁にある「紙おむつが必要」を足し、生活保護の人は上限が月3,000円で紙おむつ類が対象外という頁の記載を限度額の行に足した。"}
+  - template: local-haikai
+    status: found
+    name: 認知症等行方不明SOSネットワーク
+    where: 各区役所の高齢・障害課、または担当地区の地域包括支援センター
+    conditions:
+      - 市内に住み、認知症などで行方不明になるおそれがある人（若年性認知症も含む）
+      - 写真を添えて事前に登録すると、貼って使うSOSネームプリントを無料で作ってもらえる
+      - 行方不明になったら家族がSOS届を出し、区役所が関係機関に情報を伝える
+      - 登録などの費用はかからない
+    sources:
+      - url: https://www.city.kawasaki.jp/350/page/0000022701.html
+        publisher: 川崎市
+        title: 認知症等行方不明SOSネットワーク
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（審判請求費用・後見人等報酬助成）
+    where: 本人65歳以上は健康福祉局地域包括ケア推進室、65歳未満は障害計画課（郵送・持参・オンライン）
+    conditions:
+      - 後見等の申立ての鑑定費用と、後見人などへの報酬を負担しにくい人への助成
+      - 生活保護を受けている人など、または世帯全員が市民税非課税で収入・資産が基準内の人
+      - 報酬の助成は月額上限があり、施設入所なら18,000円、在宅などは28,000円
+      - 後見人が配偶者・直系血族（親・子・孫など）・兄弟姉妹か、市の市民後見人なら報酬助成は対象外
+      - 鑑定費用は予納通知から、報酬は報酬付与の審判から3か月以内に申請
+    sources:
+      - url: https://www.city.kawasaki.jp/350/page/0000066653.html
+        publisher: 川崎市
+        title: 成年後見制度利用支援事業（審判請求費用・後見人等報酬助成）について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.kawasaki.jp/350/cmsfiles/contents/0000066/66653/annaiR8.11.2.pdf
+        publisher: 川崎市
+        title: 川崎市成年後見制度利用支援事業の御案内（令和8年11月2日）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "対象外の親族を「親子」から、案内 PDF のとおり「直系血族（祖父母・孫も含む）」に広げた。"}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

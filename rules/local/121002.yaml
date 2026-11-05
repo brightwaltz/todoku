@@ -1,0 +1,90 @@
+city: "121002"
+name: 千葉市
+site: city.chiba.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: おむつ給付等事業（高齢者）
+    where: 各区保健福祉センターの高齢障害支援課高齢支援班
+    conditions:
+      - 要介護1〜5の認定を受けていつも失禁の状態にあり、市内に住所があって市内の自宅で介護を受けている人
+      - 本人と、同じ住所に住む親族の全員が市民税非課税であること
+      - 生活保護・中国残留邦人等の支援給付や、在宅重度心身障害者おむつ給付を受けている人は対象外
+      - 基準額は月4,000円（要介護1〜3）・月8,000円（要介護4・5）で、その9割を市が出す
+      - 業者が月1回おむつを届け、自己負担は1割。新規申請は本人・家族・ケアマネジャー
+    sources:
+      - url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/diaper.html
+        publisher: 千葉市
+        title: おむつ給付等事業（高齢者）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, note: "頁の要件のうち「在宅重度心身障害者おむつ給付を受けていないこと」が落ちていたので足し、市民税非課税の要件に本人も入ると分かるように書き直した（要介護・失禁・在宅の行は1行にまとめた）", date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 千葉市高齢者保護情報共有サービス（どこシル伝言板）
+    where: 本人が住む区の保健福祉センター高齢障害支援課
+    conditions:
+      - 市内在住の高齢者か若年性認知症の人で、在宅で暮らし、行方不明になる心配がある人
+      - 申請するのは、同居などで本人をいつも介護している人（家族以外でもよい場合がある）
+      - QRコード付きのラベル・シール40枚が交付され、服や杖などに貼っておく
+      - 発見者がQRコードを読むと家族に通知が届き、ネット上の伝言板で安否をやりとりする
+      - 申請書は千葉市認知症あんしん保険の申請も兼ねる
+    sources:
+      - url: https://www.city.chiba.jp/hokenfukushi/kenkofukushi/hokatsucare/hogo-joho.html
+        publisher: 千葉市
+        title: 高齢者保護情報共有サービス（どこシル伝言板）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 千葉市役所 地域包括ケア推進課（65歳以上の人の申請窓口。事前の手続きが要る）
+    conditions:
+      - 市内に住み、認知症などで判断能力が十分でない人が対象
+      - 生活保護・中国残留邦人等の支援給付の人、または世帯全員が市民税非課税で収入・資産の基準を満たす人
+      - 家庭裁判所への申立て費用と後見人などへの報酬を助成（配偶者・4親等内の親族の後見人などの報酬は対象外）
+      - 報酬助成の上限は、在宅で月28,000円、入所・入院中で月18,000円
+      - 助成の申請は、審判の確定日の翌日から1年以内
+    sources:
+      - url: https://www.city.chiba.jp/hokenfukushi/koreishogai/jiritsu/seinenkoukensienseidojisshiyoukou.html
+        publisher: 千葉市
+        title: 千葉市成年後見制度利用支援事業実施要綱
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.chiba.jp/hokenfukushi/koreishogai/jiritsu/kontentu2.html
+        publisher: 千葉市
+        title: 2.障害者向けサービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.chiba.jp/hokenfukushi/koreishogai/jiritsu/documents/seinenkoukenjissiyoukou.pdf
+        publisher: 千葉市
+        title: 千葉市成年後見制度利用支援事業実施要綱（令和7年4月1日）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, note: "要綱にある、親族（配偶者・4親等内）が後見人などのときは報酬が助成の対象外であることと、中国残留邦人等の支援給付の人も対象になることを足した", date: 2026-11-05}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金
+    where: 千葉市役所 高齢福祉課（申請に要る書類も高齢福祉課に問い合わせる）
+    conditions:
+      - 市内に住む、要介護4か5の65歳以上の人を在宅で介護している家族
+      - 任意の1年間、介護保険サービスを使っていない（1週間程度のショートステイは除く）
+      - 本人が市民税非課税の世帯に属している（生活保護の世帯は除く）
+      - ねたきり老人福祉手当・認知症老人福祉手当を受けておらず、介護保険料の滞納がない
+      - 支給額は高齢者1人あたり年10万円
+    sources:
+      - url: https://www.city.chiba.jp/faq/hokenfukushi/koreishogai/korei/580.html
+        publisher: 千葉市
+        title: よくあるご質問（FAQ）：重度の要介護高齢者を介護している家族への家族介護慰労金について知りたいのですが。
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.chiba.jp/kenko/koresha/jose/index.html
+        publisher: 千葉市
+        title: 高齢者への助成・支援制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

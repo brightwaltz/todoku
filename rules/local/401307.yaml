@@ -1,0 +1,59 @@
+city: "401307"
+name: 福岡市
+site: city.fukuoka.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: おむつサービス
+    where: 住民票のある区の保健福祉センター 福祉・介護保険課
+    conditions:
+      - 福岡市の介護保険の被保険者で、要介護3〜5の認定を受け、おむつが要る人
+      - 在宅の人が対象。入院中やショートステイ中は使えない
+      - 自分で選んだ登録業者が、おむつを毎月自宅に届ける
+      - 助成の割合と月の上限額は介護保険料の所得段階で決まる（上限6,000円〜助成なし）
+    sources:
+      - url: https://www.city.fukuoka.lg.jp/fukushi/oldage-welfare/health/00/03/3-020105.html
+        publisher: 福岡市
+        title: おむつサービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 認知症の人の見守りネットワーク事業
+    where: 各区保健福祉センターの地域保健福祉課、または担当のいきいきセンターふくおか（地域包括支援センター）
+    conditions:
+      - 市内に住む認知症の人を前もって登録し、行方不明のときは協力者にメールで知らせる（無料）
+      - 登録は本人・親族・介護者が、メール配信は親族・介護者が申し込む
+      - GPS端末の貸与は、市の介護保険の被保険者で在宅の人（40〜64歳は要介護認定が必要）
+      - GPS端末は原則として登録した人が使える。介護している人が申し込む
+      - GPS端末の初期費用は市が助成。月1,375円と通話料・通信料は自分で払う
+    sources:
+      - url: https://www.city.fukuoka.lg.jp/fukushi/dementia/health/00/03/3-040103.html
+        publisher: 福岡市
+        title: 認知症の人の見守りネットワーク事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 市長申立ては区役所（65歳以上は地域保健福祉課、知的障がいは福祉・介護保険課、精神障がいは健康課）、報酬の助成は福岡市成年後見推進センター
+    conditions:
+      - 判断能力が十分でない高齢者や障がいのある人で、申立てできる親族がいない人は市長が申し立てる
+      - 市長申立ての費用は原則本人に求めるが、生活保護を受けている人などには求めない
+      - 報酬の助成は、市長申立ての人と、本人・親族申立てで親族でない第三者が後見人等になった人
+      - 報酬の助成は、生活保護を受けているなど報酬を払うのが難しい人に限る
+    sources:
+      - url: https://www.city.fukuoka.lg.jp/fukushi/chiikihoken/health/00/04/4-02010-2.html
+        publisher: 福岡市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "where が本人65歳以上の窓口だけだったので、頁にある知的障がい（区の福祉・介護保険課）と精神障がい（区の健康課）の窓口を足した。"}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

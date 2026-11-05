@@ -1,0 +1,73 @@
+city: "231002"
+name: 名古屋市
+site: city.nagoya.jp
+programs:
+  - template: local-kaigo-yohin
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: はいかい高齢者捜索システム事業
+    where: 認知症の人の住まいを担当するいきいき支援センター
+    conditions:
+      - 市内に住み、徘徊のおそれがある認知症の人の親族や成年後見人等が使える
+      - 市に登録した事業者のGPS機器を使うとき、費用の一部を市が助成する
+      - 初期費用は限度額まで無料。月額利用料は限度額までの1割を負担する
+      - 市民税非課税世帯・生活保護世帯などは、月額利用料も無料になる
+    sources:
+      - url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016506/1016510/1016519.html
+        publisher: 名古屋市
+        title: はいかい高齢者捜索システム事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 生活援助型配食サービス
+    where: 区役所福祉課（指定事業者と契約したあとに利用開始を申請。電子申請も可）
+    conditions:
+      - 介護保険で要介護の認定を受け、自宅で暮らしている人が対象
+      - 1日1食、週7回まで。届けるときに手渡しで安否を確かめる
+      - 食事代は全額自己負担。配食経費200円のうち1〜3割を負担する
+      - 要支援や事業対象者の人は、別の自立支援型配食サービスの対象
+    sources:
+      - url: https://www.kaigo-wel.city.nagoya.jp/view/kaigo/company/shitei/haishoku/
+        publisher: 名古屋市
+        title: 配食サービスの概要
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "where の「住んでいる区の」は頁に無いので消し、頁の書き方（区役所福祉課）に合わせた"}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 住所地の区の区役所福祉課（電子申請も可）
+    conditions:
+      - 本人が市内に住み、生活保護や中国残留邦人等支援給付を受けている人
+      - または住民税非課税世帯で、収入・預貯金が基準以下、ほかの資産がない人
+      - 申立費用（申立人も同じ要件に当たるとき）と、後見人等の報酬（月2.8万円まで）・経費を助成
+      - 後見・保佐・補助が対象で、任意後見は対象外
+      - 後見人等が本人の配偶者・直系血族・兄弟姉妹のときは助成の対象外
+    sources:
+      - url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016506/1016510/1016515.html
+        publisher: 名古屋市
+        title: 成年後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "申立費用の助成は申立人も要件に当たることが要るという条件が抜けていたので、条件3行目に足した"}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金の支給
+    where: 住んでいる区の福祉課福祉係（支所の管内は支所区民福祉課福祉係）。電子申請も可
+    conditions:
+      - 要介護4か5の高齢者を介護している同居の親族が対象
+      - 要介護4・5の認定を、申請の1年以上前から受けていること
+      - 介護する人・される人とも、世帯全員が住民税非課税であること
+      - 過去1年、介護保険サービスを使わずに在宅で過ごしたこと（短期入所は年7日まで可）
+      - 支給は年額10万円
+    sources:
+      - url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016429.html
+        publisher: 名古屋市
+        title: 高齢者の家族の方への支援
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

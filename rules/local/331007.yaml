@@ -1,0 +1,69 @@
+city: "331007"
+name: 岡山市
+site: city.okayama.jp
+programs:
+  - template: local-kaigo-yohin
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: not_found
+    review:
+      read_by: "Managed Agent（Opus 5.5）"
+      recheck: match
+      note: 見落としの候補：https://www.city.okayama.jp/kurashi/0000014939.html
+      date: 2026-11-05
+  - template: local-haishoku
+    status: found
+    name: まごころ給食サービス（民間業者による配食）
+    where: 高齢者福祉課、またはもよりの地域包括支援センター（頁の問い合わせ先）
+    conditions:
+      - 65歳以上の虚弱な人などで、自分で調理できない、または援助を受けられない人
+      - ひとり暮らしや高齢者だけの世帯などが対象。利用前に関係者が会って調査する
+      - 平日の昼食を1日1食、民間業者が自宅へ届ける。利用料は1食400円
+      - ひまわり給食サービス（地域ボランティアの配食）を使えない地区の人が対象
+    sources:
+      - url: https://www.city.okayama.jp/kurashi/0000018629.html
+        publisher: 岡山市
+        title: 在宅福祉サービス／給食・配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 岡山市成年後見制度利用助成金支給事業（後見人等の報酬の助成）
+    where: 福祉援護課
+    conditions:
+      - 岡山市から生活保護または中国残留邦人等の支援給付を受けている人
+      - 市内に住み、世帯の年間収入見込みが150万円以下（世帯員1人ごとに50万円加算）
+      - 世帯の預貯金等も同じ基準以下で、負担能力のある人に扶養されていないこと
+      - 配偶者や4親等内の親族が後見人等なら対象外。報酬付与の審判から3か月以内に申請
+      - 助成の上限は在宅で月2万8千円、施設入所で月1万8千円
+    sources:
+      - url: https://www.city.okayama.jp/kurashi/0000012394.html
+        publisher: 岡山市
+        title: 成年後見制度とは
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.okayama.jp/kurashi/cmsfiles/contents/0000012/12394/youkou20260401.pdf
+        publisher: 岡山市
+        title: 岡山市成年後見制度利用助成金支給事業実施要綱
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: found
+    name: 家族介護者慰労金
+    where: もよりの福祉事務所、または御津・灘崎・建部・瀬戸の各支所の総務民生課
+    conditions:
+      - 65歳以上で要介護3以上の認定が1年以上続いている人を、在宅で介護する人
+      - 要介護者と同居し、年度内（4月〜3月）に通算6か月以上介護していること
+      - 要介護者が前の1年間、市内に住み、介護保険サービスを使っていないこと
+      - 介護者と要介護者が市内に住み、同居する人全員が市民税非課税であること
+      - 年額10万円。要件を満たした年度の10月1日〜3月31日に申請する
+    sources:
+      - url: https://www.city.okayama.jp/kurashi/0000013271.html
+        publisher: 岡山市
+        title: 在宅福祉サービス／家族介護者慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
