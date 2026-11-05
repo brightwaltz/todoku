@@ -4,8 +4,8 @@
 架空の住民は facts.yaml の事実の値の組だけで作る。LLM も API も使わない。
 
 ```
-uv run python eval/sim/run_sim.py                     # 2000 人、町田市・横浜市・青森県蓬田村（市区町村の型だけの例）
-uv run python eval/sim/run_sim.py --rule extra        # 主題の事実を使わない主題の制度（下の一覧）も「直接つながる」に入れる
+uv run python eval/sim/run_sim.py                     # 2000 人、町田市・横浜市・青森県蓬田村（市区町村の型だけの例）。--rule extra（下の一覧も「直接つながる」に入れる）
+uv run python eval/sim/run_sim.py --rule facts        # 主題の事実を判定に使う制度だけを「直接つながる」とする
 uv run python eval/sim/run_sim.py --rule none         # 主題に直接つながる制度も数える
 uv run python eval/sim/run_sim.py --n 500 --seed 2 --city 132098 --json /tmp/sim.json
 ```
@@ -18,10 +18,10 @@ uv run python eval/sim/run_sim.py --n 500 --seed 2 --city 132098 --json /tmp/sim
 4. 問いに住民の値で最大 3 問答える（`eval/run_eval.py` の `simulate` と同じ）。
 5. その市で結果の画面に出る制度（`visible`。`app.step_view` と同じになることを `tests/test_sim.py` で確かめる）のうち、「当てはまる見込み」と「先に手続きをすると使える」を数え、主題に直接つながる制度を除く。
 
-## 主題に直接つながる制度（判断待ち）
+## 主題に直接つながる制度
 
-既定の `--rule facts` は、出来事ごとに主題の事実（`THEME_FACTS`。例：おむつ → 紙おむつを使っている・失禁で布団を干せない）を決め、その事実を判定の条件に使う制度を「直接つながる」とみなす。前提の制度（prereq・via）の中の事実は見ない。
-`--rule extra` は `facts` に、主題の事実を判定に使わないが主題に直接つながる制度（`run_sim.py` の `THEME_EXTRA`）を足す。足すのは次の 5 件だけ。
+D-0027 で B と決まり、既定は `--rule extra`。`--rule facts` は、出来事ごとに主題の事実（`THEME_FACTS`。例：おむつ → 紙おむつを使っている・失禁で布団を干せない）を決め、その事実を判定の条件に使う制度を「直接つながる」とみなす。前提の制度（prereq・via）の中の事実は見ない。
+`--rule extra`（既定）は `facts` に、主題の事実を判定に使わないが主題に直接つながる制度（`run_sim.py` の `THEME_EXTRA`）を足す。足すのは次の 5 件だけ。
 
 | 出来事 | 足す制度 | 足す理由 |
 |---|---|---|

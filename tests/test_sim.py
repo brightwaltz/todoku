@@ -102,8 +102,9 @@ def test_run_counts_outside_within_found(tmp_path):
         assert 0 < s["counted"] <= s["residents"] == 60
         assert s["mean_outside_eligible"] <= s["mean_outside"] <= s["mean_found"]
         assert sum(s["outside_histogram"].values()) == s["counted"]
+    assert report["rule"] == "extra"  # D-0027 の B が既定
     none = run_sim.main(["--n", "60", "--seed", "4", "--city", "132098", "--rule", "none"])["cities"]["132098"]
     assert none["mean_outside"] == none["mean_found"]
-    facts = report["cities"]["132098"]
-    extra = run_sim.main(["--n", "60", "--seed", "4", "--city", "132098", "--rule", "extra"])["cities"]["132098"]
+    facts = run_sim.main(["--n", "60", "--seed", "4", "--city", "132098", "--rule", "facts"])["cities"]["132098"]
+    extra = report["cities"]["132098"]
     assert extra["mean_found"] == facts["mean_found"] and extra["mean_outside"] <= facts["mean_outside"]
