@@ -263,6 +263,33 @@ def test_entry_text_counts_match_rules_and_municipalities():
         assert "全国の実施率" in text, where
 
 
+
+def test_entry_shows_little_text_and_folds_the_rest():
+    """最初の画面に見せるのは、見出し・相談の欄・絵から選ぶ・見本・合言葉の小さな入口だけ（T-126。11/5 の柴田の気づき
+    「最初の画面が文字ばかりだと『難しそう』と読まずに閉じる」）。説明・全国の見取り図は「このサイトについて」、
+    どなた・お住まいを選ぶ欄は畳んだ details に入れる。数え方と前後の数は $OPS/submission/t126-critique.md。
+    """
+    import re
+    from pathlib import Path
+    html = client.get("/").text
+    js = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
+    header = re.search(r'<header class="top">(.*?)</header>', html, re.S).group(1)
+    assert "<h1>" in header and "<p" not in header  # 上の帯は名前だけ。説明の文を置かない
+    about = re.search(r'<details id="about"[^>]*>(.*?)</details>', html, re.S).group(1)
+    assert "<summary>このサイトについて</summary>" in about and " open" not in html[html.index('id="about"') - 9:][:40]
+    for inner in ('<p class="lead">', 'id="japan"', 'こちらには残しません', 'マイクの印'):
+        assert inner in about, inner
+    picks = re.search(r'<details class="pick-more" id="pick-more">(.*?)</details>', html, re.S).group(1)
+    for box in ("pick-who", "pick-age", "pref", "city", "pick-worry"):
+        assert f'id="{box}"' in picks, box
+    # 合言葉の欄は最初は出さず、小さな入口だけ（押すか、合言葉なしで送ると欄が出る）
+    assert re.search(r'<button[^>]*id="gate-open"[^>]*hidden', html)
+    assert 'show("gate-open");' in js and 'if (h.passphrase && !aikotoba && !keptAtLoad) show("gate");' not in js
+    # 見取り図や /city/ の頁から都道府県を選んだときは、畳んだ欄を開いてから市区町村の欄へ移る
+    pick_from_map = re.search(r"^function pickFromMap\(.*?^\}", js, re.S | re.M).group(0)
+    assert pick_from_map.index('$("pick-more").open = true;') < pick_from_map.index('$("city").scrollIntoView')
+
+
 @pytest.mark.usefixtures("on_fly")
 def test_rate_limit_counts_each_client_ip(monkeypatch):
     from todoku import app as app_mod

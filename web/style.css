@@ -31,6 +31,18 @@ body {
 .top h1 { margin: 0; font-size: 30px; letter-spacing: .04em; }
 .top h1 span { font-size: 17px; font-weight: 400; margin-left: .5em; }
 .top .lead { margin: 4px 0 0; font-size: 15px; opacity: .92; }
+/* このサイトについて（T-126）。最初の画面から移した説明と全国の見取り図。閉じておく */
+.about > summary { padding: 11px 0; }
+.about .lead { margin: 6px 0 0; font-size: 16px; }
+.about .map-card { margin-top: 16px; padding: 0; }
+.about .map-card h2 { font-size: 18px; padding: 0; }
+.about .map-card figcaption { padding: 0; }
+/* 選んで文を作る欄（T-126）と合言葉の小さな入口。どちらも最初は畳む */
+.pick-more { margin-top: 14px; }
+.pick-more > summary { padding: 11px 0; }
+.gate-open { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); }
+.gate-open[hidden] { display: none; }
+.pictures-sub { font-weight: 400; font-size: 15px; color: var(--muted); display: inline-block; white-space: nowrap; }
 h2 { font-size: 21px; line-height: 1.5; margin: 0 0 12px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; }
 .card.soft { background: var(--soft); }
@@ -257,7 +269,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .board-card.live { position: static; box-shadow: none; }
   .print-result #input, .print-result #reading, .print-result #board, .print-result #ask, .print-result #pause,
   .print-result #later, .print-result #later-change, .print-result #stats, .print-result #again,
-  .print-result #keep { display: none; }
+  .print-result #keep, .print-result #about { display: none; }
   .print-result #result button:not(.link) { display: none; }
   .print-result #result .link { color: var(--muted); text-decoration: none; padding: 0; min-height: 0; }
   .prog { overflow: visible; }

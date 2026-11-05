@@ -90,6 +90,7 @@ function askGate(wrong) {
   $("gate-msg").textContent = wrong
     ? "合言葉が違います。入れ直してください。"
     : "ご自分の相談を送るには合言葉が要ります。上の見本は合言葉なしで見られます。";
+  show("gate-open", false);
   show("gate");
   $("gate").scrollIntoView({ block: "start" });
   $("aikotoba").focus();
@@ -1315,6 +1316,7 @@ function markPref() {
 // タイルを押すと、その都道府県を選んで市区町村の欄へ移る（/city/ の頁からは /?pref=NN で来る）
 function pickFromMap(code, smooth) {
   if (!prefs.some((p) => p.code === code)) return false;
+  $("pick-more").open = true;  // 選ぶ項目は畳んであるので、開いてから市区町村の欄へ移る（T-126）
   $("pref").value = code;
   choosePref(code);
   $("city").scrollIntoView({ behavior: smooth && !calm() ? "smooth" : "auto", block: "center" });
@@ -1400,6 +1402,11 @@ $("gate-ok").addEventListener("click", () => {
   else $("text").focus();
 });
 // Enter の既定の動きを止める。止めないと、keydown の中で相談の欄へ移したフォーカスの先に改行が入る（T-063）
+$("gate-open").addEventListener("click", () => {
+  show("gate-open", false);
+  show("gate");
+  $("aikotoba").focus();
+});
 $("aikotoba").addEventListener("keydown", (ev) => { if (ev.key === "Enter") { ev.preventDefault(); $("gate-ok").click(); } });
 // 印刷するときは、結果の札（details）を開いて申請先・持ち物・出典まで紙に出し、終わったら開く前に戻す（T-066）。
 // 結果の画面のときだけ html に print-result を付け、入力・問い・帯・ボタンを紙から外す（style.css の @media print）
@@ -1422,7 +1429,8 @@ window.addEventListener("afterprint", () => {
 const keptAtLoad = location.hash.startsWith(KEEP_PREFIX);
 const healthReady = fetch("/api/health").then((r) => r.json()).then((h) => {
   needGate = Boolean(h.passphrase);
-  if (h.passphrase && !aikotoba && !keptAtLoad) show("gate");
+  // 最初は小さな入口だけを出す（T-126。最初の画面の文字を減らす）。押すか、合言葉なしで送ると欄を出す
+  if (h.passphrase && !aikotoba && !keptAtLoad) show("gate-open");
 }).catch(() => { /* 分からなければ、送ったときに聞く */ });
 // 合言葉が要る置き場かを知ってから開く（知る前に結果を出すと、まとめを送って合言葉の欄へ飛ばされる）
 if (keptAtLoad) healthReady.then(() => restoreFrom(location.hash.slice(KEEP_PREFIX.length)));
