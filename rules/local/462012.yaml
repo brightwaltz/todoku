@@ -1,0 +1,69 @@
+city: "462012"
+name: 鹿児島市
+site: city.kagoshima.lg.jp
+programs:
+  - template: local-haikai
+    status: found
+    name: 高齢者見守り支援事業（GPS の助成）
+    where: 健康福祉局すこやか長寿部 認知症支援室。端末を買う前に承認の申請をする
+    conditions:
+      - 行方不明になるおそれのある認知症の人を介護している家族が申請する
+      - GPS の初期費用・端末・付属品を合わせて1万円まで助成する
+      - 月々の通信料と、スマホなどの GPS 機能は対象外
+      - 買う前に承認を受け、買った後に交付の申請をする
+    sources:
+      - url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/tiikihoukatu/kenko/fukushi/choju/ninchi/koureisyamimamorisien.html
+        publisher: 鹿児島市
+        title: 高齢者見守り支援事業（GPS位置情報サービスの助成）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 心をつなぐ訪問給食
+    where: 長寿支援課 在宅支援係（問い合わせ先）。地域包括支援センターの職員の調査がある
+    conditions:
+      - 安否の確認が要る65歳以上のひとり暮らしや高齢者だけの世帯など（区分が3つ）
+      - 要支援2以上は昼食を週6回まで
+      - 要支援1以下は昼食を週3回まで
+      - 1食の自己負担は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/hitori.html
+        publisher: 鹿児島市
+        title: ひとり暮らしの高齢者の方へ
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 健康福祉局すこやか長寿部 認知症支援室
+    conditions:
+      - 生活保護か、それに準ずる人で、費用を払うのが難しい人
+      - 申立ての印紙・切手・診断書は1万円まで、鑑定は5万円まで助成する
+      - 申立ての費用は、令和8年4月以降に審判が確定したものが対象
+      - 後見人などが親族のときは、報酬の助成はない
+      - 報酬の助成の上限は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/seinenkoukenseidoriyousien.html
+        publisher: 鹿児島市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金
+    where: 長寿支援課 在宅支援係
+    conditions:
+      - 家で暮らす要介護4以上の高齢者を介護している家族
+      - 過去1年に介護保険サービスを使っていない（年7日以内のショートステイは可）
+      - 本人の世帯と介護する人の世帯が、どちらも住民税非課税
+      - 年額10万円
+    sources:
+      - url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/jiritsu.html
+        publisher: 鹿児島市
+        title: 介護する家族の講習会・手当等
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
