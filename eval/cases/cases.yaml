@@ -4,6 +4,9 @@
 # - answers: 窓口に聞かれたら相談した人が答える内容（rules/facts.yaml の 25 の事実）。
 #   severe_constant_care・money_management_difficulty・hearing_certifiable の 3 つは 2026-11-03 に書き足した
 #   （道具なしの claude-opus-5-5 に相談文と人物の説明だけを渡した答えを、手を加えずに入れた。eval/PROTOCOL.md）
+#   needs_daily_help・constant_care_2w・caregiver_insured・mental_outpatient の 4 つは 2026-11-05 に同じやり方で書き足した
+#   （eval/out/blind/facts-20261104-1509.json、1 回目の結果）。c16・c30 の caregiver_employee と c25 の care_level は、
+#   事実の意味と選択肢が変わったのに合わせて直した。plans_* の 4 つは規則から外れたが、事例の答えとして残してある
 # - municipality: 本人が住む市区町村の団体コード（人物の説明の市名から。町田市 132098・相模原市 141500・八王子市 132012）。
 #   住所の問いに答えるとき、画面で市区町村を選んだのと同じく place_values で住所の事実を全部決める（2026-11-03 夜）
 
@@ -39,6 +42,10 @@
     severe_constant_care: false
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c02
   municipality: "132098"
@@ -72,6 +79,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: "__dont_know__"
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c03
   municipality: "132098"
@@ -105,6 +116,10 @@
     severe_constant_care: true
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c04
   municipality: "132098"
@@ -138,6 +153,10 @@
     severe_constant_care: "__dont_know__"
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c05
   municipality: "132098"
@@ -171,6 +190,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c06
   municipality: "132098"
@@ -204,6 +227,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c07
   municipality: "132098"
@@ -237,6 +264,10 @@
     severe_constant_care: "__dont_know__"
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c08
   municipality: "132098"
@@ -270,6 +301,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c09
   municipality: "132098"
@@ -303,6 +338,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c10
   municipality: "132098"
@@ -336,6 +375,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c11
   municipality: "132098"
@@ -369,6 +412,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c12
   municipality: "132098"
@@ -402,6 +449,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c13
   municipality: "132098"
@@ -435,6 +486,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c14
   municipality: "132098"
@@ -468,6 +523,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c15
   municipality: "132098"
@@ -501,6 +560,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c16
   municipality: "141500"
@@ -519,7 +582,7 @@
     uses_care_services: true
     shortstay_or_facility: true
     high_medical_costs: false
-    caregiver_employee: false
+    caregiver_employee: true
     dementia_diagnosis: false
     wandering_risk: false
     fire_risk: false
@@ -534,6 +597,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c17
   municipality: "132012"
@@ -567,6 +634,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c18
   municipality: "132098"
@@ -600,6 +671,10 @@
     severe_constant_care: "__dont_know__"
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c19
   municipality: "132098"
@@ -633,6 +708,10 @@
     severe_constant_care: true
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c20
   municipality: "132098"
@@ -666,6 +745,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: "__dont_know__"
 
 - id: c21
   municipality: "132098"
@@ -699,6 +782,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c22
   municipality: "132098"
@@ -732,6 +819,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: "__dont_know__"
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c23
   municipality: "132098"
@@ -765,6 +856,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c24
   municipality: "132098"
@@ -798,6 +893,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c25
   municipality: "132098"
@@ -808,7 +907,7 @@
   answers:
     lives_in_machida: true
     age_band: age_75_plus
-    care_level: "__dont_know__"
+    care_level: certified_unknown
     residence: home
     household: alone
     tax_status: "__dont_know__"
@@ -831,6 +930,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c26
   municipality: "132098"
@@ -864,6 +967,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c27
   municipality: "132098"
@@ -897,6 +1004,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c28
   municipality: "132098"
@@ -930,6 +1041,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c29
   municipality: "132098"
@@ -963,6 +1078,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c30
   municipality: "132098"
@@ -981,7 +1100,7 @@
     uses_care_services: true
     shortstay_or_facility: false
     high_medical_costs: false
-    caregiver_employee: false
+    caregiver_employee: true
     dementia_diagnosis: false
     wandering_risk: false
     fire_risk: false
@@ -996,3 +1115,7 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false

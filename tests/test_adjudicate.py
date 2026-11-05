@@ -45,7 +45,11 @@ def test_a_reading_marks_match_protocol():
         marks[c["answers"]["care_level"]] = adjudicate.a_reading(res)[0]
     assert marks.get("applying") == "申"     # 申請中は「申」で論点に回る
     assert marks.get("care1") == "×"         # 認定を受けている人の「認定の申請」は済んでいる＝×
-    assert marks.get("none") in ("○", "？")
+    # 認定のない人：介助の事実（needs_daily_help、11/5 に事例へ書き足し）が「いいえ」なら ×、それ以外は ○ か ？
+    for c in cases:
+        if c["answers"]["care_level"] == "none":
+            m = adjudicate.a_reading(evaluate(rs, dict(c["answers"]))[nintei.id])[0]
+            assert m in (("×",) if c["answers"].get("needs_daily_help") is False else ("○", "？")), c["id"]
 
 
 def test_local_types_only_for_people_outside_machida():
