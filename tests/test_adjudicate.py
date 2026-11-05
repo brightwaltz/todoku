@@ -134,7 +134,8 @@ def test_prepare_groups_disagreements_and_samples_audit(tmp_path, monkeypatch):
     # 印が全部そろっても、引用が原文にないマスは論点に回る
     assert kinds.get((11, "引用が原文に見つからない")) == 1
     s = data["stats"]
-    assert s["cells"] == 2 * len(cases)
+    # 制度 1 は全員、制度 11（町田市の制度）は 11/6 に足したほかの地域の事例（c31〜）を除く
+    assert s["cells"] == len(cases) + len([c for c in cases if not blind_read.is_added(c)])
     assert s["agreed"] + s["issue_cells"] == s["cells"]
     # 抜き取りは一致したマスからだけ、同じ種なら同じ結果
     agreed_keys = {(c["case"], c["num"]) for c in data["audit"]}
