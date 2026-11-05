@@ -42,7 +42,7 @@ def test_reopening_the_link_gives_the_same_result(municipality):
         reopened = client.post("/api/step", json={"facts": saved["f"], "suggestions": saved["g"], "subject": saved["s"],
                                                   "asked": 99, "municipality": saved["m"]}).json()
         assert reopened["question"] is None
-        for key in ["results", "unconfirmed", "unread", "known", "hidden_places", "place", "counts"]:
+        for key in ["results", "unconfirmed", "unread", "known", "region", "place", "counts"]:
             assert reopened[key] == shown[key], (e["id"], key)
 
 

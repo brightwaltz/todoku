@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>とどく｜尋ねなかった制度まで</title>
-<meta name="description" content="高齢の方と介護する家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも、困りごとを書くと、尋ねていない公的制度まで、理由・申請先・持ち物・出典つきで示します。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示し、東京都・横浜市・町田市は都・市の制度まで詳しく判定します。">
+<meta name="description" content="高齢の方と介護する家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも、困りごとを書くと、尋ねていない公的制度まで、理由・申請先・持ち物・出典つきで示します。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。都道府県・市区町村の制度は、調べられた地域から順に規則にしています。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 <header class="top">
   <div class="wrap">
     <h1>とどく <span>尋ねなかった制度まで</span></h1>
-    <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも使えます。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。東京都・横浜市・町田市にお住まいなら、都や市の制度まで詳しく判定します。</p>
+    <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも使えます。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。お住まいの市区町村を選ぶと、その地域で確かめられる支えの数もお知らせします。</p>
   </div>
 </header>
 
@@ -67,7 +67,7 @@
       </div>
     </div>
     <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
-    <textarea id="text" rows="5" maxlength="2000" placeholder="例：町田市に住む母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
+    <textarea id="text" rows="5" maxlength="2000" placeholder="例：一人で暮らす母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
     <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
     <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
     <button class="primary" id="send">相談する</button>
@@ -139,7 +139,7 @@
       <div id="later-list"></div>
     </div>
     <p class="change" id="later-change" aria-live="polite"></p>
-    <p class="note" id="other-city" hidden></p>
+    <p class="note" id="region-line" hidden></p>
     <details class="card soft" id="ineligible-box">
       <summary id="ineligible-title"></summary>
       <ul id="ineligible-list" class="plain"></ul>

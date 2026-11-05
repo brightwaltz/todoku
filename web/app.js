@@ -737,12 +737,7 @@ function renderResult(data) {
   $("ineligible-list").replaceChildren(...no.map((r) => el("li", {},
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
-  // 住所で外れる市・都の制度は出さないので、そこに住んでいれば判定することだけを 1 行で伝える
-  // 例：「町田市にお住まいなら、市の制度 10 件も判定します。」（市・都は名前の最後の字）
-  const hidden = data.hidden_places || [];
-  $("other-city").textContent = hidden.length ? hidden.map((h) =>
-    `${h.name}にお住まいなら${hidden.length > 1 ? "" : "、"}${h.name.slice(-1)}の制度 ${h.n} 件`).join("、") + "も判定します。" : "";
-  show("other-city", hidden.length > 0);
+  renderRegion(data.region);
   renderOptions(data.options || []);
   show("result");
   if (!again) {
@@ -769,6 +764,31 @@ function renderResult(data) {
   } else if (key !== state.summaryKey) summarize();
   state.summaryKey = key;
   showKeep(data);
+}
+
+// ---- あなたの地域で確かめられる支え（T-122）----
+// 住んでいない地域の制度は数も名前も出さず、選んだ地域で確かめられる支えの数だけを肯定の形で出す。
+// 前は住んでいない市の制度の数を「（市の名前）なら、市の制度 10 件も判定します」と出し、ほかの地域の人が「自分は対象外」と読んだ（11/5 の柴田の感想）。
+// 数は step_view の region（/city/ の頁の帯と同じ数え方、規則だけから）。文言はここだけで差し替える
+const REGION_HEAD = "あなたの地域で確かめられる支え";
+const REGION_DETAILED = "この地域は、{what}まで一つずつ書けています。";
+const REGION_LINK = "地域の支えの一覧を見る";
+
+function renderRegion(rg) {
+  const line = $("region-line");
+  if (!rg) { line.replaceChildren(); show("region-line", false); return; }
+  const parts = rg.parts.map((x) => `${x.label} ${x.n} ${x.unit}`).join("・");
+  // ["都の制度", "市の制度", "市の事業"] → 「都・市の制度・市の事業」（同じ後ろの語はまとめる）
+  const kinds = new Map();
+  for (const d of rg.detailed) {
+    const i = d.indexOf("の");
+    kinds.set(d.slice(i), [...(kinds.get(d.slice(i)) || []), d.slice(0, i)]);
+  }
+  const what = [...kinds].map(([tail, heads]) => heads.join("・") + tail).join("・");
+  line.replaceChildren(`${REGION_HEAD} `, el("b", {}, `${rg.total}`), ` 件（${parts}）。`,
+    what ? REGION_DETAILED.replace("{what}", what) : "",
+    el("a", { href: `/city/${rg.code}` }, REGION_LINK));
+  show("region-line", true);
 }
 
 // ---- 手間と分かること（T-082）----

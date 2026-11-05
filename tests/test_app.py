@@ -217,8 +217,12 @@ def test_page_names_its_icon_so_browsers_do_not_ask_for_favicon_ico():
     assert "#0d6b5b" in svg  # 画面の上の帯（style.css の --accent）と同じ色
 
 
-def test_entry_text_names_every_place_with_rules():
-    """最初の画面の lead と meta の description は、制度を判定する都・市を全部挙げる（「町田市だけ」と狭く書かない）。"""
+def test_entry_text_does_not_single_out_places():
+    """最初の画面の lead と meta の description は、制度を一つずつ書けている都・市の名前を挙げない（T-122）。
+
+    前は全部挙げる決まりだった（「町田市だけ」と狭く書かないため）。それでも「東京都・横浜市・町田市にお住まいなら…」は、
+    ほかの地域の人に「自分は対象外」と読まれた（11/5 の柴田の感想）。範囲を狭く書かない決まり（「だけ」）は残す。
+    """
     import re
     html = client.get("/").text
     lead = re.search(r'<p class="lead">(.*?)</p>', html).group(1)
@@ -227,8 +231,9 @@ def test_entry_text_names_every_place_with_rules():
               if p.level not in ("national", "local")}
     assert places, "都・市の制度が規則にない"
     for where, text in (("lead", lead), ("description", desc)):
-        missing = [place for place in sorted(places) if place not in text]
-        assert not missing, f"{where} に {missing} がない"
+        named = [place for place in sorted(places) if place in text]
+        assert not named, f"{where} が {named} を名指している：{text}"
+        assert "全国" in text and "お住まいなら" not in text, text
         assert "だけ" not in text, f"{where} が範囲を狭く書いている：{text}"
 
 
@@ -872,23 +877,37 @@ def test_machida_hides_the_types():
 
 
 def test_other_cities_hide_machida_programs():
-    # その市・都以外と分かったら、住所だけで外れる制度を「当てはまらない」に並べず、そこなら判定すると 1 行で伝える
+    # その市・都以外と分かったら、住所だけで外れる制度を「当てはまらない」に並べない。
+    # T-122：外した地域の名前と数は返さず（「町田市にお住まいなら…も判定します」をやめた）、自分の地域で確かめられる支えの数を返す
     facts = {"age_band": "age_75_plus", "residence": "home", "uses_diapers": True, "care_level": "care4"}
     def step(code):
         return client.post("/api/step", json={"facts": facts, "municipality": code}).json()
     yokohama, machida, osaka, nowhere = step("141003"), step("132098"), step("271004"), step("")
+    village = step("013048")  # 北海道新篠津村
     assert not [r for r in yokohama["results"] if r["id"].startswith(("machida-", "tokyo-"))]
     assert not [r for r in machida["results"] if r["id"].startswith("yokohama-")]
     assert sum(yokohama["counts"].values()) == len(yokohama["results"])
-    assert osaka["hidden_places"] == [{"name": "町田市", "n": 10}, {"name": "横浜市", "n": 7}, {"name": "東京都", "n": 1}]
-    # 町田市・横浜市に住む人には、ほかの市の件数を知らせない（自分の市の制度を一つずつ見ているため）
-    assert machida["hidden_places"] == [] and any(r["id"].startswith("machida-") for r in machida["results"])
-    assert yokohama["hidden_places"] == [] and any(r["id"].startswith("yokohama-") for r in yokohama["results"])
-    # 住所が分からない間は今までどおり、市・都の制度も型も出す
-    assert nowhere["hidden_places"] == [] and len(nowhere["results"]) == 40
+    for d in (yokohama, machida, osaka, nowhere, village):
+        assert "hidden_places" not in d
+    # 数は /city/ の頁の帯と同じ数え方で、結果の札の数とそろう
+    for d in (yokohama, machida, osaka, village):
+        assert d["region"]["total"] == len(d["results"]) == sum(x["n"] for x in d["region"]["parts"])
+    assert osaka["region"]["parts"] == [{"label": "国の制度", "n": 17, "unit": "件"},
+                                        {"label": "市区町村の事業", "n": 5, "unit": "種類"}]
+    assert osaka["region"]["detailed"] == [] and village["region"]["detailed"] == []
+    # 住んでいない地域の名前は、どの欄にも出さない（0 件の段も出さない）
+    assert not any(w in str(osaka["region"]) for w in ("町田", "横浜", "東京", "0 件"))
+    assert machida["region"]["detailed"] == ["都の制度", "市の制度"] and any(r["id"].startswith("machida-") for r in machida["results"])
+    assert yokohama["region"]["detailed"] == ["市の制度"] and any(r["id"].startswith("yokohama-") for r in yokohama["results"])
+    # 住所が分からない間は今までどおり、市・都の制度も型も出す（地域の数は出さない）
+    assert nowhere["region"] is None and len(nowhere["results"]) == 40
     from pathlib import Path
-    script = (Path(__file__).resolve().parents[1] / "web" / "app.js").read_text(encoding="utf-8")
-    assert "data.hidden_places" in script
+    root = Path(__file__).resolve().parents[1] / "web"
+    script = (root / "app.js").read_text(encoding="utf-8")
+    page = (root / "index.html").read_text(encoding="utf-8")
+    assert "data.region" in script and "hidden_places" not in script and "お住まいなら" not in script
+    # 最初の画面にも、特定の地域なら詳しいと読める 1 行を出さない
+    assert "お住まいなら" not in page and "東京都・横浜市・町田市" not in page
 
 
 def test_unknown_results_are_closest_first():
