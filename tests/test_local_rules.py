@@ -21,6 +21,8 @@ DESIGNATED = {
 }
 # T-128：中核市（総務省 令和5年4月1日現在 62市）のうち、2 回の読みが合って rules/local に入れた市。入れるたびに足す
 CORE = {"132012": "八王子市", "112038": "川口市", "122041": "船橋市"}
+# T-131：施行時特例市と、政令市・中核市でない県庁所在地のうち、2 回の読みが合って入れた市。入れるたびに足す
+OTHER = {"352039": "山口市"}
 REVIEW = {"read_by": "Managed Agent（試験）", "recheck": "match", "date": "2026-11-05"}
 SRC = [{"url": "https://www.city.sapporo.jp/example.html", "publisher": "札幌市", "license": "未確認",
         "checked": "2026-11-05"}]
@@ -49,6 +51,7 @@ def test_designated_city_codes_are_in_the_municipality_list():
     assert len(DESIGNATED) == 20
     assert {code: PLACES[code][1] for code in DESIGNATED} == DESIGNATED
     assert {code: PLACES[code][1] for code in CORE} == CORE
+    assert {code: PLACES[code][1] for code in OTHER} == OTHER
 
 
 def test_no_directory_means_no_city_programs(tmp_path):
@@ -123,5 +126,5 @@ def test_real_local_files_load():
     """rules/local に置いたファイル（まだ無くてもよい）が、規則と市区町村の一覧に合っている。"""
     cities = load(ROOT / "rules" / "local")
     for code, city in cities.items():
-        allowed = DESIGNATED | CORE
+        allowed = DESIGNATED | CORE | OTHER
         assert code in allowed and city.name == allowed[code]
