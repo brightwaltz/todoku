@@ -13,7 +13,7 @@ from todoku.city import (FIRST_MARK, PREF_NONE_FOUND, SUMMARY_FIRST, SUMMARY_NOT
                          SUMMARY_PREF_UNSEEN, SUMMARY_TITLE, SUMMARY_TYPES, SUMMARY_TYPES_N)
 
 client = TestClient(app)
-MACHIDA, YOKOHAMA, VILLAGE, OSAKA = "132098", "141003", "023043", "271004"  # 大阪市は国の制度と型だけの市
+MACHIDA, YOKOHAMA, VILLAGE, OSAKA = "132098", "141003", "023043", "271004"  # 大阪市は国の制度と型（型は rules/local の大阪市の事業で出す。T-075e）。大阪府の制度はまだ無い
 
 
 def summary(code: str) -> tuple[str, str]:

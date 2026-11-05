@@ -17,6 +17,7 @@ WEB = Path(__file__).resolve().parents[1] / "web"
 
 MACHIDA, OSAKA, YOKOHAMA = "132098", "271004", "141003"
 VILLAGE = "023043"  # 青森県 蓬田村
+NO_RULES = "272035"  # 大阪府 豊中市（市の規則も rules/local も無い。大阪市は T-075e で rules/local に入ったので替えた）
 
 
 def ids_of(level: str, keep=lambda p: True) -> set[str]:
@@ -27,7 +28,7 @@ def page_ids(html: str) -> dict[str, set[str]]:
     """頁の段（data-level）ごとに、並んだ制度の id を拾う。"""
     out = {}
     for level, section in re.findall(r'<section class="card[^"]*" data-level="([^"]+)">(.*?)</section>', html, re.S):
-        out[level] = set(re.findall(r'class="city-item" data-id="([^"]+)"', section))
+        out[level] = set(re.findall(r'class="city-item[^"]*" data-id="([^"]+)"', section))
     return out
 
 
@@ -35,6 +36,7 @@ def test_codes_used_here_are_the_places_named():
     assert PLACES[MACHIDA] == ("東京都", "町田市")
     assert PLACES[OSAKA] == ("大阪府", "大阪市")
     assert PLACES[VILLAGE] == ("青森県", "蓬田村")
+    assert PLACES[NO_RULES] == ("大阪府", "豊中市")
 
 
 def test_machida_lists_national_tokyo_machida_and_only_shown_in_types():
@@ -49,7 +51,7 @@ def test_machida_lists_national_tokyo_machida_and_only_shown_in_types():
     assert f'{len(ids_of("machida"))} 件' in r.text
 
 
-@pytest.mark.parametrize("code", [OSAKA, VILLAGE])
+@pytest.mark.parametrize("code", [NO_RULES, VILLAGE])
 def test_places_without_their_own_rules_get_national_and_all_five_types(code):
     r = client.get(f"/city/{code}")
     assert r.status_code == 200
@@ -82,10 +84,21 @@ def test_kanagawa_says_it_was_checked_and_none_found_not_that_it_is_not_written_
 
 def test_every_program_shows_where_to_apply_and_a_source():
     html = client.get(f"/city/{OSAKA}").text
-    items = re.findall(r'<li class="city-item".*?</details></li>', html, re.S)
+    items = re.findall(r'<li class="city-item[^"]*".*?</details></li>', html, re.S)  # 大阪市の事業（local）の項目も
     assert len(items) == len(ids_of("national")) + 5
     for item in items:
         assert "申請先" in item and 'href="https://' in item, item[:200]
+
+
+def test_osaka_shows_its_own_programs_in_place_of_the_five_types():
+    """T-075e：大阪市は rules/local/271004.yaml の 5 件が、型の段で名前・申請先・主な条件・出典を大阪市のものにして出る。"""
+    html = client.get(f"/city/{OSAKA}").text
+    local = re.search(r'<section class="card[^"]*" data-level="local">(.*?)</section>', html, re.S).group(1)
+    items = re.findall(r'<li class="city-item local" data-id="([^"]+)".*?</details></li>', local, re.S)
+    assert set(items) == ids_of("local") and len(items) == 5
+    assert local.count("Claude が公式頁から書き、照らし直したもの（2026-11-05）") == 5
+    assert local.count('href="https://www.city.osaka.lg.jp/fukushi/page/') == 6  # 見守りは 2 頁
+    assert "介護用品の給付" in local and "家族介護慰労金" in local
 
 
 def test_outside_machida_no_machida_window_or_page():
