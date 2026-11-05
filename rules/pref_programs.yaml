@@ -19,6 +19,15 @@ prefectures:
       - https://www.pref.hokkaido.lg.jp/hf/khf/tiikisien/syakaisanka/
       - https://www.pref.hokkaido.lg.jp/hf/khf/ninchisyo/224633.html
     found: []
+  "02":  # 青森県。高齢福祉保険課の頁の記事の一覧と「介護・高齢福祉」の分類の頁、「認知症施策」の頁は、計画、事業者向けの補助や指定・届出・研修、介護人材、つどいの場、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。つながる、あおもり高齢者生活支援サイトは民間の高齢者向けサービスを紹介するもの。あおもり医療・介護手帳（認知症の情報連携の手帳）は疾患医療センターと市町村が配るもので、県への申し込みではない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/index.html
+      - https://www.pref.aomori.lg.jp/welfare/welfare/
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/ninchisyou_top.html
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/seikatushien_pf.html
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/ninchisyou_techou.html
+    found: []
   "03":  # 岩手県。「高齢者福祉」の分類の頁と、その下の「高齢者福祉の推進」「生きがいづくりと社会参加の推進」「認知症施策」の頁、「介護福祉」の頁の記事は、計画、百歳の長寿者への知事のメッセージ、事業者向けの補助や届出・研修、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。高齢者及び障がい者にやさしい住まいづくり推進事業（住宅改善の助成）は実施するのが市町村で、県は市町村に補助するだけ。ご近所支え合い活動助成金は団体や法人が申し込むもの。駐車場の利用証は調べていない
     checked: 2026-11-06
     looked:
@@ -215,6 +224,16 @@ prefectures:
       - https://www.pref.kyoto.jp/kourei-engo/13900008.html
       - https://www.pref.kyoto.jp/kourei-engo/news/press/2026/09/keirou8.html
       - https://www.pref.kyoto.jp/omoiyari-pp/index.html
+    found: []
+  "27":  # 大阪府。介護支援課の事業一覧と、その下の「利用者支援」「高齢者の介護予防や生活支援等の取組み」「認知症施策」「高齢者の生きがいづくり」の頁は、計画、事業者向けの研修や指定、介護予防、認知症の啓発と相談先、苦情と相談の窓口、老人クラブなどの紹介で、府に個人で申し込む給付や割引は無かった。大阪府高齢者大学校は NPO 法人が運営し申し込み先も同じ。認知症の人の社会参加支援事業は介護サービス事業所の取り組みを広げるもの。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/ichiran.html
+      - https://www.pref.osaka.lg.jp/kenkoufukushi/koureishafukushi/kaigohoken/riyoushashien/index.html
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/tiikishienjigyou/index.html
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/ninnshishou-gyakutai/index.html
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/ikigai/index.html
+      - https://www.pref.osaka.lg.jp/o090090/syakaisanakashienjigyou.html
     found: []
   "28":  # 兵庫県。住宅のバリアフリー改造の助成（人生いきいき住宅助成事業）・無年金の外国籍高齢者の給付金・社会福祉法人の利用者負担の軽減は、どれも申請を受けて決めるのが市町だった（前の 2 つは県が市町と費用を分ける形）
     checked: 2026-11-06

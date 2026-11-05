@@ -52,7 +52,11 @@ def test_machida_lists_national_tokyo_machida_and_only_shown_in_types():
 
 
 @pytest.mark.parametrize("code", [NO_RULES, VILLAGE])
-def test_places_without_their_own_rules_get_national_and_all_five_types(code):
+def test_places_without_their_own_rules_get_national_and_all_five_types(code, monkeypatch):
+    # T-129 で大阪府・青森県も調べた記録（rules/pref_programs.yaml）に入るので、記録が無いときの頁をここで作って確かめる
+    from todoku import pref_programs
+
+    monkeypatch.setattr(pref_programs, "_all", lambda: {})
     r = client.get(f"/city/{code}")
     assert r.status_code == 200
     got = page_ids(r.text)
