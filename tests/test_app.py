@@ -1027,12 +1027,13 @@ def test_place_question_comes_back_for_not_machida():
     assert q is not None and q["fact"] == "lives_in_yokohama"
     assert q["text"] == q["place"]["text"] == "お母さまはどちらにお住まいですか？"
     assert q["options"] == []  # 横浜市・東京都の事実の はい・いいえ は使わないので、控えの選択肢は出さない
-    # 市区町村を選べば、もう聞かない。住所だけで外れる横浜市・東京都の制度は 1 行にまとめる
+    # 市区町村を選べば、もう聞かない。住所だけで外れる横浜市・東京都の制度は出さず、名前も数も返さない（T-122）
     data = client.post("/api/step", json={"facts": facts, "subject": "お母さま", "asked": asked + 1,
                                           "municipality": "271004"}).json()
     assert data["question"] is None or data["question"]["fact"] not in places
     assert not [r for r in data["results"] if r["id"].startswith("yokohama-") or r["id"] == "tokyo-silver-pass"]
-    assert {"横浜市", "東京都"} <= {h["name"] for h in data["hidden_places"]}
+    assert "hidden_places" not in data and not any(w in str(data["region"]) for w in ("横浜", "東京", "町田"))
+    assert data["region"]["total"] == len(data["results"])
     # 「わからない」と答えれば、もう聞かない。横浜市の制度は住所が分からないまま残す（要介護2で外れるものは、住所でなく区分で外れる）
     data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
                                           "asked": asked + 1}).json()
