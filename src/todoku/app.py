@@ -330,6 +330,7 @@ def region_view(code: str) -> dict | None:
     """結果の画面の「あなたの地域で確かめられる支え」（T-122）。住所が無ければ None。
 
     数は /city/ の頁の帯と同じ数え方（city_groups の、制度のある段だけ）で、規則だけから数える。Claude は使わない。
+    total は制度の件数だけ（市区町村の事業の型は parts に「種類」で残し、足さない）。/city/ の帯の合計（T-118・D-0037）とそろえるため
     住んでいない地域の制度の数は返さない（前の hidden_places は「町田市にお住まいなら…も判定します」と読め、
     ほかの地域の人が「自分は対象外だ」と受け取ったため。11/5 の柴田の感想）。
     detailed は、国と型のほかに一つずつ書けている段（例：["都の制度", "市の制度"]）。文言は web/app.js の REGION_* で組む
@@ -344,7 +345,7 @@ def region_view(code: str) -> dict | None:
     local = next((g for g in groups if g.key == "local"), None)
     if local and any(local_mod.found_in(LOCAL, code, p.id) for p in local.programs):
         detailed.append(f"{name[-1]}の事業")  # その市の公式頁から名前・申請先まで書けた型（T-075b）
-    return {"code": code, "total": sum(x["n"] for x in parts), "parts": parts, "detailed": detailed}
+    return {"code": code, "total": sum(x["n"] for x in parts if x["unit"] == "件"), "parts": parts, "detailed": detailed}
 
 
 def fact_view(fid: str, value: Any) -> dict:

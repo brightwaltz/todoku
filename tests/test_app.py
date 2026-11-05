@@ -943,9 +943,16 @@ def test_other_cities_hide_machida_programs():
     assert sum(yokohama["counts"].values()) == len(yokohama["results"])
     for d in (yokohama, machida, osaka, nowhere, village):
         assert "hidden_places" not in d
-    # 数は /city/ の頁の帯と同じ数え方で、結果の札の数とそろう
-    for d in (yokohama, machida, osaka, village):
-        assert d["region"]["total"] == len(d["results"]) == sum(x["n"] for x in d["region"]["parts"])
+    # 数は /city/ の頁の帯と同じ数え方：合計は制度の件数だけで、市区町村の事業の型は内訳に「種類」で出す（T-118・D-0037）
+    from todoku import app as app_mod
+    from todoku.city import city_page
+    for d, code in ((yokohama, "141003"), (machida, "132098"), (osaka, "271004"), (village, "013048")):
+        parts = d["region"]["parts"]
+        assert len(d["results"]) == sum(x["n"] for x in parts)  # 札は型も含めて全部出る
+        assert d["region"]["total"] == sum(x["n"] for x in parts if x["unit"] == "件")
+        band = city_page(app_mod.RULES, code, *app_mod.PLACES[code], "")
+        assert f'<p class="city-total"><b>{d["region"]["total"]}</b> 件' in band, code
+    assert osaka["region"]["total"] == 17
     assert osaka["region"]["parts"] == [{"label": "国の制度", "n": 17, "unit": "件"},
                                         {"label": "市区町村の事業", "n": 5, "unit": "種類"}]
     # その市・村の公式頁から型が書けたら（lane-b の T-131 など）、自分の「市の事業」「村の事業」だけは入ってよい
