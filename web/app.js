@@ -924,21 +924,41 @@ function renderEffort() {
     + (last.extra ? `、プラスアルファの層（どこの市区町村にもある事業の型。お住まいの市の条件では判定していない候補）が ${last.extra} 件です。` : "です。");
 }
 
-// ---- 制度の地図（T-081）----
-// 結果の画面の上に、真ん中に本人、まわりに制度の点を 3 つの輪（内から 当てはまる見込み・先に手続き・確かめる）で置き、
-// 前提の手続きを矢印で結ぶ。描くのは /api/step の results と edges（規則の前提）だけで、Claude は使わない。
-// 答えるたびに同じ点を新しい輪へ滑らせる（prefers-reduced-motion では動かさない）
+// ---- 制度の地図（T-081・T-132）----
+// 結果の画面に、真ん中に本人、まわりに制度の名前の札を置く。内側に当てはまる見込み（大きい札）、その外に先に手続きが要る制度（小さい札）。
+// 先に手続きが要る制度は、前の手続きの札のすぐ外側に寄せて並べ、並び方で順番を示す（矢印は引かない）。
+// 確かめる制度は 1 つの束「＋N」にまとめ、押すと札の一覧の確かめるの先頭が開く。描くのは /api/step の results と edges（規則の前提）だけで、Claude は使わない。
+// 動きは 1 か所だけ：答えて内側へ移る札が滑る（束から出る札は束の位置から。prefers-reduced-motion では動かさない）
 const SVG_NS = "http://www.w3.org/2000/svg";
-const MAP_RINGS = [["eligible", 64, "当てはまる"], ["after_prereq", 108, "先に手続き"], ["unknown", 152, "確かめる"]];
-const MAP_C = 180;     // 図の真ん中（viewBox は 360 × 360）
-const MAP_DOT = 8;     // 点の半径
-const MAP_HIT = 14;    // 押せる円の半径（390px の画面で径 24px 以上。WCAG 2.2 の 2.5.8）
-// 輪の名前を置くため真上に空ける、片側の角度（ラジアン）。名前の幅の半分（14px の字 × 字数 ÷ 2）と点の半径と余白から
-const mapGap = (radius, label) => Math.asin(Math.min(1, (label.length * 7 + MAP_DOT + 6) / radius));
-// 点の縁の色：費用の札（規則の cost.self_pay）を 3 つにまとめる。札の 1 行の頭の印と同じ色
+const MAP_RINGS = [["eligible", 76, "当てはまる"], ["after_prereq", 128, "先に手続き"], ["unknown", 150, "確かめる"]];
+const MAP_C = 180;     // 図の真ん中（中身に合わせて viewBox を広げる）
+const MAP_ME = 32;     // 真ん中の円の半径
+// 札の大きさ：大事なものほど大きい。[字の大きさ, 高さ]。高さは 390px の画面で 24px 以上（WCAG 2.2 の 2.5.8）
+const CHIP = { eligible: [15, 32], after_prereq: [13, 26], unknown: [13, 26] };
+const MAP_PAD = 4;     // 札どうしの間
+const MAP_MIN_W = 320; // 図の枠のいちばん狭い幅（前の 360 の図と同じくらいの字の大きさに見える）
+// 札の名前（6 字ほど）。無い制度は名前の括弧の前を 7 字まで
+const MAP_SHORT = {
+  "fukushi-yogu-konyu": "福祉用具購入", "futan-gendogaku": "負担限度額", "hosougu-hochoki": "補聴器の補装具",
+  "iryohi-kojo-omutsu": "おむつ代控除", "jiritsu-shien-iryo": "自立支援医療", "jutaku-kaishu": "住宅改修",
+  "kaigo-kyugyo-kyufu": "介護休業給付", "kaigo-kyuka": "介護休暇", "kaigo-nintei": "要介護認定",
+  "kogaku-gassan": "高額合算", "kogaku-kaigo-service": "高額介護費", "kogaku-ryoyohi": "高額療養費",
+  "local-haikai": "探索・見守り", "local-haishoku": "配食・見守り", "local-iro": "介護慰労金",
+  "local-kaigo-yohin": "介護用品", "local-koken": "成年後見", "machida-gps": "探索GPS",
+  "machida-haishoku": "配食", "machida-hochoki": "補聴器助成", "machida-jutaku-setsubi": "住宅設備改修",
+  "machida-kami-omutsu": "紙おむつ", "machida-kasai-yobo": "火災予防機器", "machida-kyukyu-tsuho": "救急通報",
+  "machida-omutsu-kakunin": "おむつ確認書", "machida-shingu": "寝具乾燥", "machida-shogaisha-nintei": "障害者認定書",
+  "nichijo-jiritsu-shien": "日常生活支援", "seikatsu-fukushi-shikin": "福祉資金貸付", "shintai-techo-chokaku": "障害者手帳",
+  "shogaisha-kojo": "障害者控除", "tokubetsu-shogaisha-teate": "特別障害者手当", "tokyo-silver-pass": "シルバーパス",
+  "yokohama-hochoki": "補聴器助成", "yokohama-kami-omutsu": "紙おむつ", "yokohama-keiro-pass": "敬老パス",
+  "yokohama-mimamori": "見守り機器", "yokohama-ribiyo": "訪問理美容", "yokohama-shika-kenshin": "訪問歯科健診",
+  "yokohama-sos": "SOSネット",
+};
+const shortName = (r) => MAP_SHORT[r.id] || r.name.split("（")[0].slice(0, 7);
+// 費用の札（規則の cost.self_pay）を 3 つにまとめる。札の一覧の 1 行の頭の印の色（地図には使わない）
 const COST_GROUP = { none: "free", receive: "free", tax: "free", partial: "pay", loan: "pay", varies: "ask", ask: "ask" };
-const COST_GROUPS = [["free", "費用の負担なし（かからない・受け取る・税が軽くなる）"], ["pay", "一部を負担・借りる"], ["ask", "人で変わる・窓口で確かめる"]];
-let mapPts = new Map();  // 制度の id → 点の <g>。同じ点を動かすので作り直さない
+let mapPts = new Map();  // 制度の id → 札の <a>。同じ札を動かすので作り直さない
+let mapBundleAt = null;  // 前に描いた束の位置（束から出る札の動き始め）
 
 function svg(tag, attrs = {}, ...children) {
   const n = document.createElementNS(SVG_NS, tag);
@@ -947,7 +967,10 @@ function svg(tag, attrs = {}, ...children) {
   return n;
 }
 
-// 前提の矢印でつながる家族が、どの輪でも同じ向きに寄るように並べる：results の順に、前提のない制度から、その後ろに前提にしている制度を深さ優先で
+// 札の幅：全角は字の大きさ、半角は 0.6 倍、左右に余白
+const chipWidth = (text, size) => [...text].reduce((w, ch) => w + (ch.charCodeAt(0) < 0x2000 ? size * 0.6 : size), 0) + size * 1.2;
+
+// 前提の家族が続くように並べる：results の順に、前提のない制度から、その後ろに前提にしている制度を深さ優先で
 function mapOrder(results, edges) {
   const on = new Set(results.map((r) => r.id));
   const kids = new Map();
@@ -968,48 +991,73 @@ function mapOrder(results, edges) {
   };
   for (const r of results) if (!hasParent.has(r.id)) visit(r.id);
   for (const r of results) visit(r.id);  // 念のため（輪になった前提はない。rules.py が検査する）
-  return new Map(out.map((id, i) => [id, i]));
+  return out;
 }
 
-// 点の位置：輪ごとに、mapOrder の順で真上の空き（輪の名前）を除いた円周に等しく並べる
+// 札の位置：決めた順に、望む角度から左右へ少しずつずらして、置いた札と重ならない所に置く。
+// 1 周しても空きが無ければ半径を広げる。先に手続きが要る札は、前の手続きの札の角度を望み、その札より外の半径に置く
 function mapLayout(results, edges) {
-  const rank = mapOrder(results, edges);
+  const byId = new Map(results.map((r) => [r.id, r]));
+  const parents = new Map();
+  for (const [a, b] of edges) if (byId.has(a) && byId.has(b)) parents.set(b, [...(parents.get(b) || []), a]);
+  const placed = [];  // [x, y, w, h]
   const pos = new Map();
-  for (const [status, radius, label] of MAP_RINGS) {
-    const ring = results.filter((r) => r.status === status).sort((a, b) => rank.get(a.id) - rank.get(b.id));
-    const gap = mapGap(radius, label);
-    const span = 2 * Math.PI - 2 * gap;
-    ring.forEach((r, i) => {
-      // 両端も間隔の半分を空ける（2 件のとき、2 つとも輪の名前の脇に寄らないように）
-      const t = -Math.PI / 2 + gap + (span * (i + 0.5)) / ring.length;
-      pos.set(r.id, [MAP_C + radius * Math.cos(t), MAP_C + radius * Math.sin(t)]);
-    });
+  const free = (x, y, w, h) => Math.hypot(x - MAP_C, y - MAP_C) - Math.max(w, h) / 2 >= 0
+    && placed.every(([px, py, pw, ph]) => Math.abs(px - x) * 2 >= pw + w + MAP_PAD * 2 || Math.abs(py - y) * 2 >= ph + h + MAP_PAD * 2);
+  const put = (key, want, radius, w, h) => {
+    for (let r = radius; ; r += 10) {
+      for (let k = 0; k <= 90; k++) {
+        const t = want + (k % 2 ? 1 : -1) * Math.ceil(k / 2) * (Math.PI / 90);
+        const x = MAP_C + r * Math.cos(t), y = MAP_C + r * Math.sin(t);
+        if (free(x, y, w, h)) {
+          placed.push([x, y, w, h]);
+          pos.set(key, { x, y, w, h, t, r });
+          return;
+        }
+      }
+    }
+  };
+  placed.push([MAP_C, MAP_C, MAP_ME * 2, MAP_ME * 2]);
+  const order = mapOrder(results, edges);
+  const [, r1] = MAP_RINGS[0], [, r2] = MAP_RINGS[1], [, r3] = MAP_RINGS[2];
+  const inner = order.filter((id) => byId.get(id).status === "eligible");
+  inner.forEach((id, i) => {
+    const [size, h] = CHIP.eligible;
+    put(id, -Math.PI / 2 + (2 * Math.PI * i) / inner.length, r1, chipWidth(shortName(byId.get(id)), size), h);
+  });
+  const outer = order.filter((id) => byId.get(id).status === "after_prereq");
+  outer.forEach((id, i) => {
+    const [size, h] = CHIP.after_prereq;
+    const up = (parents.get(id) || []).map((a) => pos.get(a)).filter(Boolean);
+    const want = up.length ? up[0].t : -Math.PI / 2 + (2 * Math.PI * (i + 0.5)) / outer.length;
+    const radius = Math.max(r2, ...up.map((p) => p.r + 40));
+    put(id, want, radius, chipWidth(shortName(byId.get(id)), size), h);
+  });
+  const unknown = results.filter((r) => r.status === "unknown").length;
+  if (unknown) {
+    const [size, h] = CHIP.unknown;
+    put("bundle", Math.PI / 2, r3, chipWidth(`＋${unknown}`, size), h);
   }
   return pos;
 }
 
-// いちばん長い前提のつながり（例：要介護認定 → 障害者控除対象者認定書 → 障害者控除）。2 段以上のときだけ名前の列を返す
-function longestChain(results, edges) {
-  const name = new Map(results.map((r) => [r.id, r.name]));
-  const kids = new Map();
-  for (const [a, b] of edges) if (name.has(a) && name.has(b)) kids.set(a, [...(kids.get(a) || []), b]);
-  const memo = new Map();
-  const walk = (id) => {
-    if (memo.has(id)) return memo.get(id);
-    let best = [id];
-    for (const k of kids.get(id) || []) { const c = walk(k); if (c.length + 1 > best.length) best = [id, ...c]; }
-    memo.set(id, best);
-    return best;
-  };
-  let best = [];
-  for (const r of results) { const c = walk(r.id); if (c.length > best.length) best = c; }
-  return best.length >= 3 ? best.map((id) => name.get(id)) : [];
-}
-
 function clearMap() {
   mapPts = new Map();
+  mapBundleAt = null;
   const box = $("pmap-svg");
   if (box) box.replaceChildren();
+}
+
+function chip(size, h) {
+  return [svg("rect", { class: "chip-bg", height: h, rx: h / 2 }), svg("text", { class: "chip-text", "font-size": size }, "")];
+}
+
+function setChip(g, text, w, h) {
+  const bg = g.querySelector(".chip-bg");
+  bg.setAttribute("x", -w / 2);
+  bg.setAttribute("y", -h / 2);
+  bg.setAttribute("width", w);
+  g.querySelector(".chip-text").textContent = text;
 }
 
 function renderMap(data, again) {
@@ -1020,59 +1068,85 @@ function renderMap(data, again) {
   const pos = mapLayout(results, edges);
   if (!box.children.length) {
     box.append(
-      svg("defs", {}, svg("marker", { id: "pmap-arrow", viewBox: "0 0 10 10", refX: "9", refY: "5", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" },
-        svg("path", { d: "M0 0 L10 5 L0 10 z", class: "arrow-head" }))),
-      ...MAP_RINGS.map(([status, radius]) => svg("circle", { class: `ring ${status}`, cx: MAP_C, cy: MAP_C, r: radius })),
-      ...MAP_RINGS.map(([status, radius, label]) => svg("text", { class: `ring-label ${status}`, x: MAP_C, y: MAP_C - radius + 4 }, label)),
-      svg("g", { class: "edges" }),
+      ...MAP_RINGS.slice(0, 2).map(([status, radius]) => svg("circle", { class: `ring ${status}`, cx: MAP_C, cy: MAP_C, r: radius })),
       svg("g", { class: "pts" }),
-      svg("circle", { class: "me", cx: MAP_C, cy: MAP_C, r: 34 }),
+      svg("circle", { class: "me", cx: MAP_C, cy: MAP_C, r: MAP_ME }),
       svg("text", { class: "me-label", x: MAP_C, y: MAP_C }, ""));
   }
   box.querySelector(".me-label").textContent = state.subject;
-  // 矢印：点の縁から縁まで（動いた後の位置で引き直し、点が着いてから見せる）
-  const lines = box.querySelector(".edges");
-  lines.replaceChildren(...edges.map(([a, b]) => {
-    const [x1, y1] = pos.get(a);
-    const [x2, y2] = pos.get(b);
-    const d = Math.hypot(x2 - x1, y2 - y1) || 1;
-    const k1 = (MAP_DOT + 2) / d, k2 = (MAP_DOT + 4) / d;
-    const to = results.find((r) => r.id === b);
-    return svg("line", { class: `edge to-${to.status}`, x1: x1 + (x2 - x1) * k1, y1: y1 + (y2 - y1) * k1,
-      x2: x2 - (x2 - x1) * k2, y2: y2 - (y2 - y1) * k2, "marker-end": "url(#pmap-arrow)" });
-  }));
-  if (again && !calm()) restart(lines, "late");
   const layer = box.querySelector(".pts");
-  for (const r of results) {
+  const from = again && !calm() ? mapBundleAt : null;
+  const parents = new Map();
+  for (const [a, b] of edges) parents.set(b, [...(parents.get(b) || []), a]);
+  for (const r of results.filter((x) => x.status !== "unknown")) {
+    const [size, h] = CHIP[r.status];
+    const p = pos.get(r.id);
     let g = mapPts.get(r.id);
     if (!g) {
-      g = svg("a", { href: `#p-${r.id}`, class: "pt" },
-        svg("title", {}, ""),
-        svg("circle", { class: "hit", r: MAP_HIT }), svg("circle", { class: "cost-ring", r: MAP_DOT + 3 }), svg("circle", { class: "dot", r: MAP_DOT }));
+      g = svg("a", { href: `#p-${r.id}`, class: "pt" }, svg("title", {}, ""), ...chip(size, h));
       g.addEventListener("click", (ev) => openCard(ev, r.id));
       g.addEventListener("mouseenter", () => pickPoint(g));
       g.addEventListener("focus", () => pickPoint(g));
       mapPts.set(r.id, g);
       layer.append(g);
+      if (from) {  // 確かめるの束から出てくる
+        g.style.transform = `translate(${from.x}px, ${from.y}px) scale(.6)`;
+        g.getBoundingClientRect();
+      }
     }
-    const [x, y] = pos.get(r.id);
-    g.style.transform = `translate(${x}px, ${y}px)`;
-    const cost = COST_GROUP[r.cost?.self_pay] || "ask";
-    g.setAttribute("class", `pt ${r.status} cost-${cost}`);
+    g.querySelector(".chip-bg").setAttribute("height", h);
+    g.querySelector(".chip-bg").setAttribute("rx", h / 2);
+    g.querySelector(".chip-text").setAttribute("font-size", size);
+    setChip(g, shortName(r), p.w, h);
+    g.style.transform = `translate(${p.x}px, ${p.y}px)`;
+    g.setAttribute("class", `pt ${r.status}`);
+    g.dataset.id = r.id;
+    if (parents.has(r.id)) g.dataset.after = parents.get(r.id).join(" ");
+    else delete g.dataset.after;
     const say = `${r.name}（${r.status_label}・費用：${r.cost ? r.cost.label : "窓口で確かめる"}）`;
     g.setAttribute("aria-label", say);
     g.dataset.say = say;
     g.querySelector("title").textContent = say;
   }
-  for (const [id, g] of mapPts) if (!results.some((r) => r.id === id)) { g.remove(); mapPts.delete(id); }
-  // 数の凡例と、つながりの例
+  for (const [id, g] of mapPts) if (!results.some((r) => r.id === id && r.status !== "unknown")) { g.remove(); mapPts.delete(id); }
+  // 確かめるの束
+  let bundle = box.querySelector(".bundle");
+  const unknown = results.filter((r) => r.status === "unknown");
+  if (unknown.length) {
+    const [size, h] = CHIP.unknown;
+    const p = pos.get("bundle");
+    if (!bundle) {
+      bundle = svg("a", { href: `#p-${unknown[0].id}`, class: "pt bundle unknown" }, svg("title", {}, ""), ...chip(size, h));
+      bundle.addEventListener("click", (ev) => openCard(ev, bundle.dataset.first));
+      bundle.addEventListener("mouseenter", () => pickPoint(bundle));
+      bundle.addEventListener("focus", () => pickPoint(bundle));
+      layer.append(bundle);
+    }
+    setChip(bundle, `＋${unknown.length}`, p.w, h);
+    bundle.style.transform = `translate(${p.x}px, ${p.y}px)`;
+    bundle.setAttribute("href", `#p-${unknown[0].id}`);
+    bundle.dataset.first = unknown[0].id;
+    const say = `確かめる ${unknown.length} 件`;
+    bundle.setAttribute("aria-label", say);
+    bundle.dataset.say = say;
+    bundle.querySelector("title").textContent = say;
+    mapBundleAt = p;
+  } else if (bundle) {
+    bundle.remove();
+    mapBundleAt = null;
+  }
+  // 図の枠は中身にぴったり合わせる（余白が減るぶん、390px の画面でも札の字が大きく見える）
+  let [x0, y0, x1, y1] = [MAP_C - MAP_ME, MAP_C - MAP_ME, MAP_C + MAP_ME, MAP_C + MAP_ME];
+  for (const { x, y, w, h } of pos.values()) {
+    x0 = Math.min(x0, x - w / 2); x1 = Math.max(x1, x + w / 2);
+    y0 = Math.min(y0, y - h / 2); y1 = Math.max(y1, y + h / 2);
+  }
+  const grow = Math.max(0, MAP_MIN_W - (x1 - x0)) / 2;  // 札が少ないときに字が大きくなりすぎないよう、幅は MAP_MIN_W まで広げる
+  box.setAttribute("viewBox", [x0 - 4 - grow, y0 - 4, x1 - x0 + 8 + grow * 2, y1 - y0 + 8].map((v) => Math.round(v)).join(" "));
+  // 数の凡例
   $("pmap-legend").replaceChildren(...MAP_RINGS.map(([status, , label]) =>
     el("li", {}, el("span", { class: `pmap-swatch ${status}`, "aria-hidden": "true" }), `${label} ${results.filter((r) => r.status === status).length} 件`)));
-  $("pmap-cost").replaceChildren(...COST_GROUPS.map(([key, label]) =>
-    el("li", {}, el("span", { class: `cost-mark cost-${key}`, "aria-hidden": "true" }), label)));
-  const chain = longestChain(results, edges);
-  $("pmap-chain").textContent = chain.length ? `矢印は先に済ませる手続きです。例：${chain.join(" → ")}` : (edges.length ? "矢印は先に済ませる手続きです。" : "");
-  $("pmap-pick").textContent = "点を押すと、その制度の説明へ移ります。";
+  $("pmap-pick").textContent = "札を押すと、その制度の説明へ移ります。";
   show("pmap-fold", results.length > 0);
 }
 

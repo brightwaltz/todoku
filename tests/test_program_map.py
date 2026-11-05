@@ -1,5 +1,7 @@
 """結果の画面の「制度の地図」の矢印（T-081）。規則の前提（via・prereq）から作り、地図に置く制度どうしだけを結ぶ。"""
 import os
+import re
+from pathlib import Path
 
 os.environ["TODOKU_FAKE_CLAUDE"] = "1"
 
@@ -51,3 +53,51 @@ def test_step_returns_edges_between_programs_on_the_map():
     for a, b in data["edges"]:
         assert a in on_map and b in on_map
     assert ["kaigo-nintei", "machida-shogaisha-nintei"] in data["edges"]
+
+
+# ---- T-132：地図は名前の札で描く（点・矢印・費用の縁をやめた）----
+WEB = Path(__file__).resolve().parents[1] / "web"
+JS = (WEB / "app.js").read_text(encoding="utf-8")
+HTML = (WEB / "index.html").read_text(encoding="utf-8")
+
+
+def test_every_program_has_a_short_chip_name(rs):
+    # 地図の札の名前（web/app.js の MAP_SHORT）が全部の制度にあり、7 字まで
+    block = JS[JS.index("const MAP_SHORT = {"):JS.index("};", JS.index("const MAP_SHORT = {"))]
+    short = dict(re.findall(r'"([a-z0-9-]+)": "([^"]+)"', block))
+    ids = set(rs.programs)
+    assert ids <= set(short), sorted(ids - set(short))
+    assert all(0 < len(v) <= 7 for v in short.values()), {k: v for k, v in short.items() if len(v) > 7}
+
+
+def test_map_has_no_arrows_or_cost_rings():
+    # 先に要る手続きは並び方で示し、費用は札の一覧にだけ出す。凡例は状態の 1 つだけ
+    for gone in ("pmap-arrow", "cost-ring", "pmap-chain", "pmap-cost", "longestChain"):
+        assert gone not in JS and gone not in HTML, gone
+    assert "点の縁の色は費用" not in HTML
+    fig = HTML[HTML.index('<figure class="pmap"'):HTML.index("</figure>", HTML.index('<figure class="pmap"'))]
+    assert fig.count("<ul") == 1 and "<p class=\"note\"" not in fig.split("<figcaption>")[1]
+    # 確かめる制度は 1 つの束「＋N」
+    assert "`＋${unknown.length}`" in JS
+
+
+# 見本 3 本の問いの順と数（T-132〜T-134 は web/ だけを直すので、ここは変わらない）
+SAMPLE_QUESTIONS = {
+    "taiin-haha": ["care_level", "high_medical_costs", "plans_home_modification"],
+    "kaigo4-sobo": ["care_level", "age_band", "caregiver_employee"],
+    "yokohama-chichi": ["care_level", "residence", "high_medical_costs"],
+}
+
+
+@pytest.mark.parametrize("sample_id", SAMPLE_QUESTIONS)
+def test_sample_questions_keep_their_order(sample_id):
+    from test_e2e_demo import pick_demo, walk  # 画面と同じ送り方で結果までたどる
+    start = client.post("/api/sample", json={"id": sample_id}).json()
+    asked = []
+
+    def choose(q):
+        asked.append(q["fact"])
+        return pick_demo(q)
+
+    walk(start, choose)
+    assert asked == SAMPLE_QUESTIONS[sample_id]
