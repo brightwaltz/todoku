@@ -18,17 +18,22 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field, model_validator
 
 from . import events as events_mod
+from .city import city_page
+from .japan_map import japan_map
+from . import local_rules as local_mod
+from . import memo as memo_mod
+from . import options as options_mod
 from . import rules as rules_mod
 import anthropic
 
-from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, make_client
-from .engine import DONT_KNOW, T, U, Result, evaluate, known, statuses, with_implied
+from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, check_summary, make_client
+from .engine import DONT_KNOW, SHOWN, T, U, Result, evaluate, known, prereq_edges, statuses, with_implied
 from .questions import MAX_QUESTIONS, Question, candidates, next_question, place_fact, score_fact
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
@@ -78,6 +83,8 @@ SUMMARIZED = ("eligible", "pending", "after_prereq")
 
 app = FastAPI(title="todoku", docs_url=None, redoc_url=None)
 RULES = rules_mod.load()
+# 有料・民間の支え（行政の制度ではない候補。判定はせず、並べ替えるだけ。T-084）
+OPTIONS = options_mod.load(rules_mod.rules_dir() / "options.yaml", RULES.facts)
 CLAUDE = make_client()
 _hits: dict[str, deque] = defaultdict(deque)
 _hits_all: deque = deque()
@@ -96,6 +103,10 @@ def load_places() -> dict[str, tuple[str, str]]:
 
 
 PLACES = load_places()
+# その市の事業（rules/local/<団体コード>.yaml。T-075）。その市の人には、型の札の名前・申請先・主な条件・出典をこれに替える（判定は型のまま）
+LOCAL = local_mod.load(rules_mod.rules_dir() / "local", RULES, PLACES)
+# 都道府県コード → 名前（全国の見取り図のタイルに使う。T-080c）
+PREFS = {code[:2]: pref for code, (pref, _) in PLACES.items()}
 # 市の制度を一つずつ判定している市（段 → 住所の事実）。そこに住んでいる人には、市区町村の型を出さない
 RULES_CITY = {level: fid for level, fid in rules_mod.LEVEL_PLACE.items() if "city" in (RULES.places.get(fid) or {})}
 # 合言葉なしで見られる見本。reading は前もって本物の Claude が読み取った結果（scripts/make_samples.py で書く）
@@ -158,6 +169,12 @@ class SummaryIn(In):
 
 class SampleIn(In):
     id: str = Field(max_length=40)
+
+
+class SampleSummaryIn(In):
+    id: str = Field(max_length=40)
+    facts: dict[str, Any] = Field(default_factory=dict, max_length=MAX_KEYS)
+    municipality: str = Field("", max_length=6)
 
 
 class EventIn(In):
@@ -332,13 +349,21 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
     away = [site for level, site in rules_mod.LEVEL_SITE.items() if facts.get(rules_mod.LEVEL_PLACE[level]) is not True]
     sources = [s for s in p.sources if not any(site in s.url for site in away)] or p.sources
     apply = dict(other.get("apply", p.apply))
+    # その市の事業が見つかった型は、名前・申請先・出典をその市のものにする（T-075b）。判定の条件・状態は型のまま。
+    # 型の出典（全国調査）は、札の説明の数字の出典なので後ろに残す
+    local = local_mod.found_in(LOCAL, municipality, p.id) if p.level == "local" else None
+    if local:
+        apply = {"where": local.where}
+        sources = list(local.sources) + list(sources)
     if CENTER in apply.get("where", "") + apply.get("how", ""):
         apply["center_search"] = center_search(municipality)  # 申請先に挙げたセンターを、その場で探せるように
     return {
         "id": p.id,
         "number": p.number,
-        "name": p.name,
+        "name": local.name if local else p.name,
         "level": rules_mod.LEVELS[p.level],
+        # その市の事業に替えたときの中身と印（無ければ None で、型のまま）
+        "local": local_mod.view(local, PLACES[municipality][1]) if local else None,
         "kind": rules_mod.KINDS[p.kind],
         "status": r.status,
         "status_label": STATUS_LABEL[r.status],
@@ -370,6 +395,9 @@ def result_view(r: Result, facts: dict[str, Any], subject: str, municipality: st
         # 行政手続データの手続（根拠法令・条項）。画面では出典の名前を添える
         "procedures": [{"name": d.name, "law": d.law, "article": d.article, "match": d.match} for d in p.procedures],
         "procedures_source": rules_mod.PROCEDURES_DATASET if p.procedures else "",
+        # 申請メモ（T-074）：窓口へ持っていく記入の下書き。規則と相談の答えからだけ作り、Claude は使わない
+        "memo": memo_mod.memo_view(r, facts, subject, RULES, place_view(municipality), apply,
+                                   other.get("bring", p.bring), pending, local.name if local else ""),
     }
 
 
@@ -511,10 +539,14 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
                   if f in RULES.facts and (f not in RULES.places or f == RULES.place_question)],
         "results": [result_view(r, implied, subject, municipality, pending) for r in ranked],
         "counts": {s: sum(1 for r in results.values() if r.status == s) for s in order},
+        # 結果の画面の「制度の地図」の矢印（規則の前提から。地図に置く 3 つの状態の制度どうしだけ。Claude は使わない）
+        "edges": [list(e) for e in prereq_edges(RULES, (pid for pid, r in results.items() if r.status in SHOWN))],
         # 1 行で知らせるのは、市の制度を一つずつ判定している市（町田市・横浜市）の外に住む人にだけ
         "hidden_places": hidden_places if city is None else [],
         "place": place_view(municipality),
         "center_search": center_search(municipality),
+        # 結果の画面の下に出す、有料・民間の支え（判定はしない。関係しそうな事実が当てはまる数で並べ替える）
+        "options": options_mod.ranked(OPTIONS, implied) if question is None else [],
     }
 
 
@@ -560,14 +592,22 @@ def step(body: StepIn, request: Request) -> dict:
     return step_view(facts, suggestions, body.subject[:12] or "ご本人", body.asked, body.municipality)
 
 
+def summarized(facts: dict[str, Any], municipality: str) -> list[Result]:
+    """まとめ（Claude が書く）に渡す制度。facts は書き換える（住所を置く）。"""
+    apply_place(facts, {}, municipality)
+    # 申請済み・結果待ちの制度も渡す（前提にしている制度について「申請すると」と書かせないため）
+    return [r for r in evaluate(RULES, facts).values() if r.status in SUMMARIZED]
+
+
+def summary_key(shown: list[Result]) -> str:
+    """まとめに渡す制度・状態・待っている前提の組。見本の保存したまとめは、この組が作ったときと同じときだけ出す（T-045）。"""
+    return ",".join(sorted(f"{r.program.id}:{r.status}:{'+'.join(sorted(r.waiting_on))}" for r in shown))
+
+
 @app.post("/api/summary")
 def summary(body: SummaryIn, request: Request) -> dict:
     guard(request, costly=True)
-    facts = clean_facts(body.facts)
-    apply_place(facts, {}, body.municipality)
-    results = evaluate(RULES, facts)
-    # 申請済み・結果待ちの制度も渡す（前提にしている制度について「申請すると」と書かせないため）
-    shown = [r for r in results.values() if r.status in SUMMARIZED]
+    shown = summarized(clean_facts(body.facts), body.municipality)
     try:
         lines = CLAUDE.summarize(RULES, body.subject[:12] or "ご本人", shown)
     except (ClaudeFailed, anthropic.APIError):
@@ -588,8 +628,27 @@ def sample(body: SampleIn) -> dict:
     if s is None or s.get("reading") is None:
         raise HTTPException(404, "この見本はまだ用意できていません")
     extraction = check_extraction(RULES, s["text"], s["reading"])  # 置いてある結果も、毎回同じ検査を通す
-    return {"engine": "sample", "sample": True, "made": s.get("made"),
+    return {"engine": "sample", "sample": True, "sample_id": s["id"], "made": s.get("made"),
             **consult_view(extraction, s.get("municipality", ""))}
+
+
+@app.post("/api/sample/summary")
+def sample_summary(body: SampleSummaryIn, request: Request) -> dict:
+    """見本の道のまとめ（T-045、D-0013 の A）。台本の答えで結果まで来たとき（まとめに渡す制度の組が、作ったときと同じとき）だけ、
+    前もって Claude が書いて samples.json に置いたまとめを返す（scripts/make_sample_summaries.py で書く）。組が違えば空で返し、
+    画面は今までどおり「まとめを省いています」と書く。Claude を呼ばないので合言葉は求めず、聞き返しと同じゆるい回数制限だけを掛ける。
+    """
+    guard(request, costly=False)
+    s = next((s for s in SAMPLES if s["id"] == body.id), None)
+    if s is None:
+        raise HTTPException(404, "この見本はまだ用意できていません")
+    saved = s.get("summary")
+    shown = summarized(clean_facts(body.facts), body.municipality)
+    if not saved or saved.get("key") != summary_key(shown):
+        return {"engine": "sample", "lines": [], "made": None}
+    lines = check_summary(RULES, shown, {"lines": saved["lines"]})  # 置いてあるまとめも、毎回同じ検査を通す
+    return {"engine": "sample", "lines": [{"program_ids": l.program_ids, "text": l.text} for l in lines],
+            "made": saved.get("made")}
 
 
 @app.get("/api/events")
@@ -716,7 +775,7 @@ async def revalidate_pages(request: Request, call_next):
     response = await call_next(request)
     for k, v in SECURITY_HEADERS.items():
         response.headers[k] = v
-    if request.url.path == "/" or request.url.path.startswith("/static/"):
+    if request.url.path == "/" or request.url.path.startswith(("/static/", "/city/", "/japan-map")):
         response.headers["Cache-Control"] = "no-cache"  # 直した後に古い画面が残らないよう、毎回 ETag で確かめ直させる
     return response
 
@@ -731,6 +790,22 @@ def health() -> dict:
 @app.api_route("/", methods=["GET", "HEAD"])
 def index() -> FileResponse:
     return FileResponse(WEB_DIR / "index.html")
+
+
+@app.get("/city/{code}", response_class=HTMLResponse)
+def city(code: str) -> HTMLResponse:
+    """その市区町村の人が使える制度の一覧（T-080b）。規則から作り、Claude は呼ばないので合言葉も回数制限もかけない。"""
+    if code not in PLACES:
+        raise HTTPException(404, "その団体コードの市区町村は一覧にありません")
+    pref, name = PLACES[code]
+    return HTMLResponse(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2]),
+                                  LOCAL.get(code)))
+
+
+@app.get("/japan-map", response_class=HTMLResponse)
+def japan_map_part() -> HTMLResponse:
+    """全国の見取り図の HTML の断片（T-080c）。入口の app.js が読み込んで差し込む。規則だけから作り、Claude は呼ばない。"""
+    return HTMLResponse(japan_map(RULES, PREFS))
 
 
 app.mount("/static", StaticFiles(directory=WEB_DIR), name="static")

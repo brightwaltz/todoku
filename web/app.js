@@ -47,7 +47,8 @@ class GateError extends Error {}
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
     municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
-    oneOnly: false, held: null };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
+    oneOnly: false, held: null, trail: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
+    // trail：押した数ごとの見立ての数（T-082。手間と分かることの図）
 }
 
 function freshPick() {
@@ -180,6 +181,8 @@ function resetPick() {
   $("pref").value = "";
   fillCities();
   show("redraft", false);
+  show("city-link-box", false);
+  markPref();
 }
 
 // ---- 相談を送る ----
@@ -223,6 +226,8 @@ async function consultWith(text, call) {
     state.suggestions = data.suggestions;
     state.engine = data.engine;
     state.sample = Boolean(data.sample);
+    state.sampleId = data.sample_id || "";
+    state.sampleSummary = null;
     state.event = Boolean(data.event);
     state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
@@ -334,6 +339,7 @@ function clearBoard() {
   tiles = new Map();
   boardPrev = null;
   $("board-cols").replaceChildren();
+  clearMap();
   $("board-change").textContent = "";
   show("board", false);
 }
@@ -427,6 +433,7 @@ function changeText(moved, now, removed = 0) {
 
 // ---- 聞き返し ----
 function render(data, first = false) {
+  state.trail = tally(state.trail, state.presses, data.results);
   renderBoard(data);
   $("center-link").href = data.center_search;  // ページ下の相談先も、お住まいの都道府県の検索にする
   show("pause", false);
@@ -640,10 +647,31 @@ const laterSpots = () => [...$("later-list").querySelectorAll(".later-item h3, #
 // 結果の画面の先頭の見出し（「まだ確かめていないこと」、無ければ「当てはまる見込み」など）
 const resultHeading = () => [...$("result").querySelectorAll("h2")].find(seen);
 
+// 有料・民間の支え（T-084）。判定はしないので状態の印は付けず、関係しそうな理由だけを添える
+function optionCard(o) {
+  const src = o.sources.map((s) => el("li", {}, el("a", { href: s.url, target: "_blank", rel: "noopener" }, s.title || s.publisher),
+    `（${s.publisher}、${s.checked} 確認）`));
+  return el("details", { class: "card option" },
+    el("summary", {}, el("span", { class: "tag" }, o.tag), " ", o.name),
+    el("p", {}, o.summary),
+    o.why.length ? el("p", { class: "note" }, "関係しそうな理由：", o.why.join("・")) : "",
+    el("p", {}, "申し込み先：", o.where),
+    el("p", {}, "費用の目安：", o.cost || "申し込み先で確かめる"),
+    el("ul", { class: "plain note" }, src));
+}
+
+function renderOptions(options) {
+  $("options-n").textContent = `${options.length} 件`;
+  $("options-list").replaceChildren(...options.map(optionCard));
+  show("options-box", options.length > 0);
+}
+
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
   state.resultShown = true;
   renderLater(data.unconfirmed, data.unread);
+  renderMap(data, again);
+  renderEffort();
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
   const seconds = Math.round((Date.now() - state.startedAt) / 1000);
   $("stats").textContent = state.restored ? "残したリンクから開いた結果です"
@@ -676,6 +704,7 @@ function renderResult(data) {
   $("other-city").textContent = hidden.length ? hidden.map((h) =>
     `${h.name}にお住まいなら${hidden.length > 1 ? "" : "、"}${h.name.slice(-1)}の制度 ${h.n} 件`).join("、") + "も判定します。" : "";
   show("other-city", hidden.length > 0);
+  renderOptions(data.options || []);
   show("result");
   if (!again) {
     $("result").scrollIntoView({ behavior: "smooth", block: "start" });
@@ -687,11 +716,12 @@ function renderResult(data) {
     state.laterAt = undefined;
   }
   // まとめが扱う制度が変わったときだけ書き直す（確かめても判定が同じなら、Claude を呼ばない）
-  const key = data.results.filter((r) => SUMMARIZED.includes(r.status)).map((r) => r.id).join(",");
+  // 見本では状態も鍵に入れる（保存したまとめは、制度と状態の組が作ったときと同じときだけ出すため）
+  const key = data.results.filter((r) => SUMMARIZED.includes(r.status))
+    .map((r) => (state.sample ? `${r.id}:${r.status}` : r.id)).join(",");
   if (state.sample) {
-    // まとめは答えによって変わり Claude が書くので、見本では出さない（見出しだけの空のカードも出さない）
-    show("summary", false);
-    $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
+    // まとめは答えによって変わり Claude が書く。見本では、台本の答えで結果まで来たときだけ、前もって Claude が書いて置いた文を出す（T-045）
+    if (key !== state.summaryKey || !state.sampleSummary) sampleSummary(key); else showSampleSummary();
   } else if ((state.event || state.restored) && needGate && !aikotoba) {
     // 出来事から始めた道と、残したリンクから開いた結果は、合言葉なしで結果まで来る。
     // まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
@@ -700,6 +730,209 @@ function renderResult(data) {
   } else if (key !== state.summaryKey) summarize();
   state.summaryKey = key;
   showKeep(data);
+}
+
+// ---- 手間と分かること（T-082）----
+// 押した数ごとに、その人の道で返った results（/api/step と、最初の読み取り）を見立ての帯と同じ 4 つの列で数えてためる。
+// 済んでいる・結果待ちは帯と同じく数えない。同じ押した数の応答（聞き返しをやめた・ここでやめる）は置き換える。
+// 層：型（app.py の LEVELS["local"]）はプラスアルファの層、ほかは公式ページの条件から書いた規則で判定した確かな層。
+// 層の数は、当てはまらないを除いた 3 つの列で数える（当てはまらない型を「候補」と数えないため）
+const TYPE_LEVEL = "市区町村（型）";
+const LIVE_COLS = ["eligible", "after_prereq", "unknown"];
+function tally(trail, presses, results) {
+  const n = Object.fromEntries(BOARD.map(([key]) => [key, 0]));
+  let sure = 0, extra = 0;
+  for (const r of results || []) {
+    const col = colOf(r.status);
+    if (!(col in n)) continue;
+    n[col] += 1;
+    if (LIVE_COLS.includes(col)) { if (r.level === TYPE_LEVEL) extra += 1; else sure += 1; }
+  }
+  const entry = { presses, n, sure, extra };
+  const last = trail[trail.length - 1];
+  return last && last.presses === presses ? [...trail.slice(0, -1), entry] : [...trail, entry];
+}
+
+// 棒 1 本が押した数 1 つ。棒の長さは制度の数、区切りは列。数が細くて入らない区切りは字を出さない（読み上げの文には全部入れる）
+function renderEffort() {
+  const trail = state.trail;
+  show("effort", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
+  if (trail.length < 2) return;
+  const total = (t) => BOARD.reduce((sum, [key]) => sum + t.n[key], 0);
+  const most = Math.max(...trail.map(total), 1);
+  $("effort-bars").replaceChildren(...trail.map((t) => {
+    const label = `${t.presses} 回`;
+    const bar = el("span", { class: "effort-bar", "aria-hidden": "true" }, ...BOARD.filter(([key]) => t.n[key]).map(([key]) => {
+      const seg = el("span", { class: `seg ${key}` }, t.n[key] / most >= 0.07 ? String(t.n[key]) : "");
+      seg.style.flexGrow = String(t.n[key]);
+      return seg;
+    }));
+    bar.style.width = `${(total(t) / most) * 100}%`;
+    return el("li", { "aria-label": `押した数 ${label}：` + BOARD.map(([key, short]) => `${short} ${t.n[key]} 件`).join("・") },
+      el("span", { class: "effort-label", "aria-hidden": "true" }, label), el("span", { class: "effort-track" }, bar));
+  }));
+  $("effort-legend").replaceChildren(...BOARD.map(([key, short]) =>
+    el("li", {}, el("span", { class: `effort-swatch ${key}`, "aria-hidden": "true" }), short)));
+  const last = trail[trail.length - 1];
+  $("effort-layers").textContent = `${last.presses} 回押した後の、当てはまらないを除く ${last.sure + last.extra} 件のうち、`
+    + `確かな層（公式ページの条件から書いた規則で判定した国・都・市の制度）が ${last.sure} 件`
+    + (last.extra ? `、プラスアルファの層（どこの市区町村にもある事業の型。お住まいの市の条件では判定していない候補）が ${last.extra} 件です。` : "です。");
+}
+
+// ---- 制度の地図（T-081）----
+// 結果の画面の上に、真ん中に本人、まわりに制度の点を 3 つの輪（内から 当てはまる見込み・先に手続き・確かめる）で置き、
+// 前提の手続きを矢印で結ぶ。描くのは /api/step の results と edges（規則の前提）だけで、Claude は使わない。
+// 答えるたびに同じ点を新しい輪へ滑らせる（prefers-reduced-motion では動かさない）
+const SVG_NS = "http://www.w3.org/2000/svg";
+const MAP_RINGS = [["eligible", 64, "当てはまる"], ["after_prereq", 108, "先に手続き"], ["unknown", 152, "確かめる"]];
+const MAP_C = 180;     // 図の真ん中（viewBox は 360 × 360）
+const MAP_DOT = 8;     // 点の半径
+const MAP_HIT = 14;    // 押せる円の半径（390px の画面で径 24px 以上。WCAG 2.2 の 2.5.8）
+// 輪の名前を置くため真上に空ける、片側の角度（ラジアン）。名前の幅の半分（14px の字 × 字数 ÷ 2）と点の半径と余白から
+const mapGap = (radius, label) => Math.asin(Math.min(1, (label.length * 7 + MAP_DOT + 6) / radius));
+// 点の縁の色：費用の札（規則の cost.self_pay）を 3 つにまとめる。札の 1 行の頭の印と同じ色
+const COST_GROUP = { none: "free", receive: "free", tax: "free", partial: "pay", loan: "pay", varies: "ask", ask: "ask" };
+const COST_GROUPS = [["free", "費用の負担なし（かからない・受け取る・税が軽くなる）"], ["pay", "一部を負担・借りる"], ["ask", "人で変わる・窓口で確かめる"]];
+let mapPts = new Map();  // 制度の id → 点の <g>。同じ点を動かすので作り直さない
+
+function svg(tag, attrs = {}, ...children) {
+  const n = document.createElementNS(SVG_NS, tag);
+  for (const [k, v] of Object.entries(attrs)) if (v !== null && v !== undefined) n.setAttribute(k, v);
+  for (const c of children.flat()) if (c !== null && c !== undefined) n.append(typeof c === "string" ? document.createTextNode(c) : c);
+  return n;
+}
+
+// 前提の矢印でつながる家族が、どの輪でも同じ向きに寄るように並べる：results の順に、前提のない制度から、その後ろに前提にしている制度を深さ優先で
+function mapOrder(results, edges) {
+  const on = new Set(results.map((r) => r.id));
+  const kids = new Map();
+  const hasParent = new Set();
+  for (const [a, b] of edges) {
+    if (!on.has(a) || !on.has(b)) continue;
+    if (!kids.has(a)) kids.set(a, []);
+    kids.get(a).push(b);
+    hasParent.add(b);
+  }
+  const seen = new Set();
+  const out = [];
+  const visit = (id) => {
+    if (seen.has(id)) return;
+    seen.add(id);
+    out.push(id);
+    for (const k of kids.get(id) || []) visit(k);
+  };
+  for (const r of results) if (!hasParent.has(r.id)) visit(r.id);
+  for (const r of results) visit(r.id);  // 念のため（輪になった前提はない。rules.py が検査する）
+  return new Map(out.map((id, i) => [id, i]));
+}
+
+// 点の位置：輪ごとに、mapOrder の順で真上の空き（輪の名前）を除いた円周に等しく並べる
+function mapLayout(results, edges) {
+  const rank = mapOrder(results, edges);
+  const pos = new Map();
+  for (const [status, radius, label] of MAP_RINGS) {
+    const ring = results.filter((r) => r.status === status).sort((a, b) => rank.get(a.id) - rank.get(b.id));
+    const gap = mapGap(radius, label);
+    const span = 2 * Math.PI - 2 * gap;
+    ring.forEach((r, i) => {
+      // 両端も間隔の半分を空ける（2 件のとき、2 つとも輪の名前の脇に寄らないように）
+      const t = -Math.PI / 2 + gap + (span * (i + 0.5)) / ring.length;
+      pos.set(r.id, [MAP_C + radius * Math.cos(t), MAP_C + radius * Math.sin(t)]);
+    });
+  }
+  return pos;
+}
+
+// いちばん長い前提のつながり（例：要介護認定 → 障害者控除対象者認定書 → 障害者控除）。2 段以上のときだけ名前の列を返す
+function longestChain(results, edges) {
+  const name = new Map(results.map((r) => [r.id, r.name]));
+  const kids = new Map();
+  for (const [a, b] of edges) if (name.has(a) && name.has(b)) kids.set(a, [...(kids.get(a) || []), b]);
+  const memo = new Map();
+  const walk = (id) => {
+    if (memo.has(id)) return memo.get(id);
+    let best = [id];
+    for (const k of kids.get(id) || []) { const c = walk(k); if (c.length + 1 > best.length) best = [id, ...c]; }
+    memo.set(id, best);
+    return best;
+  };
+  let best = [];
+  for (const r of results) { const c = walk(r.id); if (c.length > best.length) best = c; }
+  return best.length >= 3 ? best.map((id) => name.get(id)) : [];
+}
+
+function clearMap() {
+  mapPts = new Map();
+  const box = $("pmap-svg");
+  if (box) box.replaceChildren();
+}
+
+function renderMap(data, again) {
+  const box = $("pmap-svg");
+  if (!again) clearMap();
+  const results = data.results.filter((r) => MAP_RINGS.some(([s]) => s === r.status));
+  const edges = (data.edges || []).filter(([a, b]) => results.some((r) => r.id === a) && results.some((r) => r.id === b));
+  const pos = mapLayout(results, edges);
+  if (!box.children.length) {
+    box.append(
+      svg("defs", {}, svg("marker", { id: "pmap-arrow", viewBox: "0 0 10 10", refX: "9", refY: "5", markerWidth: "7", markerHeight: "7", orient: "auto-start-reverse" },
+        svg("path", { d: "M0 0 L10 5 L0 10 z", class: "arrow-head" }))),
+      ...MAP_RINGS.map(([status, radius]) => svg("circle", { class: `ring ${status}`, cx: MAP_C, cy: MAP_C, r: radius })),
+      ...MAP_RINGS.map(([status, radius, label]) => svg("text", { class: `ring-label ${status}`, x: MAP_C, y: MAP_C - radius + 4 }, label)),
+      svg("g", { class: "edges" }),
+      svg("g", { class: "pts" }),
+      svg("circle", { class: "me", cx: MAP_C, cy: MAP_C, r: 34 }),
+      svg("text", { class: "me-label", x: MAP_C, y: MAP_C }, ""));
+  }
+  box.querySelector(".me-label").textContent = state.subject;
+  // 矢印：点の縁から縁まで（動いた後の位置で引き直し、点が着いてから見せる）
+  const lines = box.querySelector(".edges");
+  lines.replaceChildren(...edges.map(([a, b]) => {
+    const [x1, y1] = pos.get(a);
+    const [x2, y2] = pos.get(b);
+    const d = Math.hypot(x2 - x1, y2 - y1) || 1;
+    const k1 = (MAP_DOT + 2) / d, k2 = (MAP_DOT + 4) / d;
+    const to = results.find((r) => r.id === b);
+    return svg("line", { class: `edge to-${to.status}`, x1: x1 + (x2 - x1) * k1, y1: y1 + (y2 - y1) * k1,
+      x2: x2 - (x2 - x1) * k2, y2: y2 - (y2 - y1) * k2, "marker-end": "url(#pmap-arrow)" });
+  }));
+  if (again && !calm()) restart(lines, "late");
+  const layer = box.querySelector(".pts");
+  for (const r of results) {
+    let g = mapPts.get(r.id);
+    if (!g) {
+      g = svg("a", { href: `#p-${r.id}`, class: "pt" },
+        svg("title", {}, ""),
+        svg("circle", { class: "hit", r: MAP_HIT }), svg("circle", { class: "cost-ring", r: MAP_DOT + 3 }), svg("circle", { class: "dot", r: MAP_DOT }));
+      g.addEventListener("click", (ev) => openCard(ev, r.id));
+      g.addEventListener("mouseenter", () => pickPoint(g));
+      g.addEventListener("focus", () => pickPoint(g));
+      mapPts.set(r.id, g);
+      layer.append(g);
+    }
+    const [x, y] = pos.get(r.id);
+    g.style.transform = `translate(${x}px, ${y}px)`;
+    const cost = COST_GROUP[r.cost?.self_pay] || "ask";
+    g.setAttribute("class", `pt ${r.status} cost-${cost}`);
+    const say = `${r.name}（${r.status_label}・費用：${r.cost ? r.cost.label : "窓口で確かめる"}）`;
+    g.setAttribute("aria-label", say);
+    g.dataset.say = say;
+    g.querySelector("title").textContent = say;
+  }
+  for (const [id, g] of mapPts) if (!results.some((r) => r.id === id)) { g.remove(); mapPts.delete(id); }
+  // 数の凡例と、つながりの例
+  $("pmap-legend").replaceChildren(...MAP_RINGS.map(([status, , label]) =>
+    el("li", {}, el("span", { class: `pmap-swatch ${status}`, "aria-hidden": "true" }), `${label} ${results.filter((r) => r.status === status).length} 件`)));
+  $("pmap-cost").replaceChildren(...COST_GROUPS.map(([key, label]) =>
+    el("li", {}, el("span", { class: `cost-mark cost-${key}`, "aria-hidden": "true" }), label)));
+  const chain = longestChain(results, edges);
+  $("pmap-chain").textContent = chain.length ? `矢印は先に済ませる手続きです。例：${chain.join(" → ")}` : (edges.length ? "矢印は先に済ませる手続きです。" : "");
+  $("pmap-pick").textContent = "点を押すと、その制度の説明へ移ります。";
+  show("pmap", results.length > 0);
+}
+
+function pickPoint(g) {
+  $("pmap-pick").textContent = g.dataset.say;
 }
 
 // ---- 結果を残す（T-072）----
@@ -800,22 +1033,32 @@ function programCard(r) {
     el("span", { class: "tag" }, r.level), el("span", { class: "name" }, r.name),
     el("span", { class: `pill ${r.status}` }, r.status_label));
   const sumParts = [head, el("p", { class: "sum" }, r.summary)];
+  // その市の事業に替えた型（rules/local。T-075b）には印を付ける。判定の条件・状態は型のまま
+  if (r.local) sumParts.push(el("p", { class: "local-mark" }, r.local.mark));
   if (r.waiting_on.length) {
     sumParts.push(el("p", { class: "chain" }, "先に：",
       ...r.waiting_on.map((w, i) => [i ? "、" : "", el("a", { href: `#p-${w.id}`, onclick: (ev) => openCard(ev, w.id) }, w.name),
         w.pending ? "（申請済み・結果待ち）" : ""])));
   }
-  if (r.cost) sumParts.push(el("p", { class: "cost" }, costText(r.cost)));
+  if (r.cost) sumParts.push(el("p", { class: "cost" },
+    el("span", { class: `cost-mark cost-${COST_GROUP[r.cost.self_pay] || "ask"}`, "aria-hidden": "true" }), costText(r.cost)));
   if (r.status === "unknown" && r.missing.length) {
     sumParts.push(el("p", { class: "chain" }, "分からない点：", r.missing.map((m) => m.name).join("、")));
   }
   const body = el("div", { class: "body" });
+  if (r.memo) body.append(memoView(r.memo));
   body.append(el("h3", {}, "判定の理由"), el("ul", { class: "reasons" },
     r.reasons.map((x) => el("li", { class: x.state }, x.label, x.value ? el("span", { class: "val" }, `（${x.value}）`) : null))));
   if (r.missing.length) {
     body.append(el("h3", {}, "確かめ方"), el("ul", { class: "plain" }, r.missing.map((m) => el("li", {}, m.check))));
   }
   if (r.at_application.length) body.append(el("h3", {}, "申請のときに確かめられること"), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
+  if (r.local) {
+    body.append(el("h3", {}, `${r.local.city}の主な条件（公式頁の言い換え）`),
+      el("ul", { class: "plain" }, r.local.conditions.map((t) => el("li", {}, t))),
+      el("p", { class: "note" }, `${r.local.read_by}が読んで書き、${r.local.recheck}（${r.local.date}）。`,
+        r.local.note ? `直したこと：${r.local.note}` : ""));
+  }
   body.append(el("h3", {}, "申請先"), el("p", {}, r.apply.where));
   if (r.apply.how) body.append(el("p", {}, r.apply.how));
   if (r.apply.phone) body.append(...phoneViews(r.apply.phone));
@@ -826,6 +1069,30 @@ function programCard(r) {
   if (r.timing.length) body.append(el("h3", {}, "時期・期限"), el("ul", { class: "plain" }, r.timing.map((t) => el("li", {}, t))));
   body.append(el("h3", {}, "出典"), ...r.sources.map(sourceView));
   return el("details", { class: "card prog", id: `p-${r.id}` }, el("summary", {}, sumParts), body);
+}
+
+// 申請メモ（T-074）：窓口へ持っていく記入の下書き。中身は規則と相談の答えから（サーバの memo.py。Claude は使わない）
+function memoView(m) {
+  const sheet = el("div", { class: "memo-sheet" },
+    el("p", { class: "memo-title" }, m.title),
+    el("p", { class: "note" }, m.note),
+    el("h4", {}, "申請先"), el("p", {}, m.where),
+    m.phone ? el("p", {}, `電話：${m.phone}`) : null,
+    m.bring.length ? [el("h4", {}, "持ち物（済んだら印を）"), el("ul", { class: "check" }, m.bring.map((t) => el("li", {}, t)))] : null,
+    m.fill.length ? [el("h4", {}, "相談の答えから書けること"),
+      el("dl", { class: "fill" }, m.fill.flatMap((f) => [el("dt", {}, f.name), el("dd", {}, f.value)]))] : null,
+    el("h4", {}, "窓口で最初に言う一言"), el("p", { class: "say" }, m.say));
+  return el("details", { class: "memo" }, el("summary", {}, "申請メモを開く（窓口に持っていく下書き）"), sheet,
+    el("button", { type: "button", onclick: () => printMemo(sheet) }, "このメモだけ印刷する"));
+}
+
+// メモ 1 枚だけを刷る：body の直下の #print-sheet に写し、ほかを紙から外す（style.css の html.print-memo）
+function printMemo(sheet) {
+  let box = document.getElementById("print-sheet");
+  if (!box) { box = el("div", { id: "print-sheet" }); document.body.append(box); }
+  box.replaceChildren(sheet.cloneNode(true));
+  document.documentElement.classList.add("print-memo");
+  window.print();
 }
 
 // 行政手続データの手続。税の控除のように、この制度だけの手続がないときは「使う手続」と書き、控除の根拠に見せない
@@ -887,12 +1154,65 @@ async function summarize() {
   } catch (e) { /* まとめが出なくても結果は読める */ }
 }
 
+async function sampleSummary(key) {
+  show("summary", false);
+  let data = { lines: [], made: null };
+  try {
+    data = await api("/api/sample/summary", { id: state.sampleId, facts: state.facts, municipality: state.municipality });
+  } catch (e) { /* まとめが出なくても結果は読める */ }
+  if (key !== state.summaryKey) return;  // 待つ間に答えが変わった
+  state.sampleSummary = data;
+  showSampleSummary();
+}
+
+function showSampleSummary() {
+  const data = state.sampleSummary;
+  if (!data || !data.lines.length) {
+    // 台本と違う答えか、まとめをまだ作っていない見本（見出しだけの空のカードも出さない）
+    show("summary", false);
+    $("stats").textContent += "。見本では、Claude が書くまとめを省いています";
+    return;
+  }
+  $("summary-lines").replaceChildren(...data.lines.map((l) => el("li", {}, l.text)));
+  const made = data.made ? `（${data.made.date}・${data.made.model}）` : "";
+  $("summary-note").textContent = `見本の台本の答えのときだけ出す、前もって Claude が判定の結果から書いたまとめです${made}。判定そのものは規則のプログラムが決めています。`;
+  show("summary");
+}
+
 // ---- 始める ----
 chipGroup("pick-who", WHO, false);
 chipGroup("pick-age", AGES, false);
 chipGroup("pick-worry", WORRIES.map(([label]) => label), true);
-$("pref").addEventListener("change", () => { pick.pref = $("pref").value; pick.city = ""; fillCities(); redraft(); });
-$("city").addEventListener("change", () => { pick.city = $("city").value; redraft(); });
+// 市区町村を選んだら、その市区町村で使える制度の一覧（/city/<団体コード>。規則から作る頁）へ 1 タップで開けるようにする（T-080b）
+function showCityLink() {
+  const pref = prefs.find((p) => p.code === pick.pref);
+  const city = pref && pref.cities.find(([code]) => code === pick.city);
+  if (city) {
+    $("city-link").href = `/city/${encodeURIComponent(city[0])}`;
+    $("city-link").textContent = `${pref.name}${city[1]}で使える制度の一覧`;
+  }
+  show("city-link-box", Boolean(city));
+}
+function choosePref(code) {
+  pick.pref = code; pick.city = ""; fillCities(); redraft(); showCityLink(); markPref();
+}
+$("pref").addEventListener("change", () => choosePref($("pref").value));
+// 全国の見取り図で、選んでいる都道府県のタイルに印を付ける（T-080c）
+function markPref() {
+  for (const a of document.querySelectorAll("#japan-box a[data-pref]")) {
+    if (a.dataset.pref === pick.pref) a.setAttribute("aria-current", "true"); else a.removeAttribute("aria-current");
+  }
+}
+// タイルを押すと、その都道府県を選んで市区町村の欄へ移る（/city/ の頁からは /?pref=NN で来る）
+function pickFromMap(code, smooth) {
+  if (!prefs.some((p) => p.code === code)) return false;
+  $("pref").value = code;
+  choosePref(code);
+  $("city").scrollIntoView({ behavior: smooth && !calm() ? "smooth" : "auto", block: "center" });
+  $("city").focus({ preventScroll: true });
+  return true;
+}
+$("city").addEventListener("change", () => { pick.city = $("city").value; redraft(); showCityLink(); });
 $("redraft").addEventListener("click", () => redraft(true));
 $("text").addEventListener("input", () => {
   const draft = buildDraft();
@@ -902,7 +1222,24 @@ $("text").addEventListener("input", () => {
 fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
   prefs = data.prefectures;
   $("pref").append(...prefs.map((p) => el("option", { value: p.code }, p.name)));
+  const asked = new URLSearchParams(location.search).get("pref");
+  if (asked) {
+    pickFromMap(asked, false);
+    history.replaceState(null, "", location.pathname + location.hash);  // 結果を残すリンクに ?pref= を混ぜない
+  }
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
+// 全国の見取り図（T-080c）。サーバが規則から作った SVG の断片を差し込む（よそのデータは入らない）。取れなければ出さない
+fetch("/japan-map").then((r) => (r.ok ? r.text() : "")).then((html) => {
+  const fig = new DOMParser().parseFromString(html, "text/html").querySelector("figure.japan-map");
+  if (!fig) return;
+  $("japan-box").replaceChildren(document.importNode(fig, true));
+  $("japan-box").addEventListener("click", (ev) => {
+    const a = ev.target.closest("a[data-pref]");
+    if (a && pickFromMap(a.dataset.pref, true)) ev.preventDefault();
+  });
+  markPref();
+  show("japan");
+}).catch(() => { /* 見取り図は出さない */ });
 // 出来事のボタンも、取れたときだけ出す（T-071）
 fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
@@ -966,6 +1303,8 @@ window.addEventListener("afterprint", () => {
   for (const d of printOpened) d.open = false;
   printOpened = [];
   document.documentElement.classList.remove("print-result");
+  document.documentElement.classList.remove("print-memo");
+  document.getElementById("print-sheet")?.replaceChildren();
 });
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 // 残した結果のリンクから開いたときは聞かない（結果は合言葉なしで出る。相談を送るときに聞く）

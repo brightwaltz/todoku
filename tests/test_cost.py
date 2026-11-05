@@ -108,3 +108,119 @@ console.log(JSON.stringify([
     card = re.search(r"^function programCard\(.*?^\}\n", JS, re.S | re.M).group(0)
     # 札を閉じたままでも見える所（summary の中）に出す
     assert card.index('class: "cost"') < card.index('const body = el("div"')
+
+
+# T-073b（2026-11-05）：埋めた cost を、source の頁を開いて照らし直した。照らした頁の URL を制度ごとに残す。
+# 30 件中 25 件はそのまま言え、3 件は出典を言える頁に替え（kaigo-nintei・jiritsu-shien-iryo・kogaku-ryoyohi）、
+# 2 件は share を頁に合わせた（yokohama-keiro-pass・tokyo-silver-pass）。ask にしたものはない。
+COST_RECHECKED_20261105 = {
+    "fukushi-yogu-konyu": "https://www.mhlw.go.jp/content/12300000/001668164.pdf",
+    "futan-gendogaku": "https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html",
+    "hosougu-hochoki": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/yogu/hosouguhisikyuuseido.html",
+    "iryohi-kojo-omutsu": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1122.htm",
+    "jiritsu-shien-iryo": "https://www.mhlw.go.jp/bunya/shougaihoken/jiritsu/dl/03.pdf",
+    "jutaku-kaishu": "https://www.mhlw.go.jp/content/12300000/001668164.pdf",
+    "kaigo-kyugyo-kyufu": "https://www.hellowork.mhlw.go.jp/insurance/insurance_continue.html",
+    "kaigo-kyuka": "https://www.mhlw.go.jp/seisakunitsuite/bunya/koyou_roudou/koyoukintou/ryouritsu/kaigo/shorttime-leave/",
+    "kaigo-nintei": "https://www.kaigokensaku.mhlw.go.jp/commentary/flow.html",
+    "kogaku-gassan": "https://www.kyoukaikenpo.or.jp/benefit/high_cost_medical_expenses/003/index.html",
+    "kogaku-kaigo-service": "https://www.kaigokensaku.mhlw.go.jp/commentary/fee.html",
+    "kogaku-ryoyohi": "https://www.city.machida.tokyo.jp/iryo/old_iryo/koukikoureisyairyou/koukikoureikyuuhu.html",
+    "local-iro": "https://www.pref.saitama.lg.jp/documents/149759/739.pdf",
+    "machida-gps": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/gps.html",
+    "machida-haishoku": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/jiritsushienhaishoku.html",
+    "machida-hochoki": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/hocyouki.html",
+    "machida-jutaku-setsubi": "https://www.city.machida.tokyo.jp/iryo/kaigo/business/jutakukaisyu/jukai.html",
+    "machida-kasai-yobo": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kasaianzenshisutemu.html",
+    "machida-kyukyu-tsuho": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/moshimo/kinkyutuhoshisutemu.html",
+    "machida-shingu": "https://www.city.machida.tokyo.jp/iryo/old/shiminnokatae/seikatsukurashi/zaitaku/shingushodoku.html",
+    "nichijo-jiritsu-shien": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/chiiki-fukusi-yougo",
+    "seikatsu-fukushi-shikin": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/seikatsuhogo/seikatsu-fukushi-shikin1/index.html",
+    "shogaisha-kojo": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1160.htm",
+    "tokubetsu-shogaisha-teate": "https://www.mhlw.go.jp/bunya/shougaihoken/jidou/tokubetsu.html",
+    "tokyo-silver-pass": "https://www.silver-pass.tokyo/",
+    "yokohama-hochoki": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/kenko-iryo/iryo/seisaku/hochokijosei.html",
+    "yokohama-kami-omutsu": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/kourei-omutsu.html",
+    "yokohama-keiro-pass": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigoyobo-kenkoudukuri-ikigai/ikigai-shakaisanka/keirou.html",
+    "yokohama-mimamori": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/mimamori.html",
+    "yokohama-shika-kenshin": "https://www.city.yokohama.lg.jp/kenko-iryo-fukushi/fukushi-kaigo/koreisha-kaigo/kaigohoken-igai-service/zaitaku-yoengo-shien/houmonsikakensin.html",
+}
+
+
+def test_filled_cost_was_rechecked_on_its_source_page():
+    """埋めた cost は、照らし直した頁を指したまま。source を替えたり新しく埋めたりしたら、頁を開いて照らしてからここに足す。"""
+    filled = {p.id: p.cost.source for p in RULES.programs.values() if p.cost.self_pay != "ask"}
+    assert filled == COST_RECHECKED_20261105
+
+
+def test_share_amounts_also_appear_in_summary_or_amount():
+    """札の費用の行（cost.share）に書いた金額は、同じ制度の summary か amount にも書く。
+
+    T-073b で share だけを頁に合わせると、札を開いた中の「金額」と見出しの文が狭いまま残る
+    （tokyo-silver-pass の「所得135万円以下なら1,000円」。T-092 でそろえた）。
+    """
+    yen = re.compile(r"[0-9][0-9,]*(?:万)?円")
+    missing = {}
+    for f in sorted(PROGRAMS.glob("*.yaml")):
+        y = yaml.safe_load(f.read_text(encoding="utf-8"))
+        share = (y.get("cost") or {}).get("share") or ""
+        text = y["summary"] + " ".join(y.get("amount") or [])
+        lost = [m for m in yen.findall(share) if m not in text]
+        if lost:
+            missing[y["id"]] = lost
+    assert missing == {}
+
+
+def test_silver_pass_bring_names_the_tax_certificate_for_the_135_man_yen_case():
+    """1,000円で買う人の持ち物（T-093、2026-11-05 に silver-pass.tokyo/obtaining/ で照らした）。
+
+    所得135万円以下で 1,000円になる人は住民税が課税なので、非課税証明書は取れない。頁の書類は
+    「介護保険料納入（決定）通知書・課税証明書・生活保護受給証明書」のどれか 1 つで、コピーは不可。
+    """
+    bring = " ".join(RULES.programs["tokyo-silver-pass"].bring)
+    line = next(b for b in RULES.programs["tokyo-silver-pass"].bring if b.startswith("1,000円で買う人"))
+    assert "課税証明書" in line.replace("非課税証明書", "")
+    assert "135万円以下" in line and "コピー" in line
+    assert "通知書" in bring and "生活保護の受給証明書" in bring
+
+
+def test_silver_pass_bring_warns_about_the_provisional_notice_and_livelihood_aid():
+    """持ち物の書類の注（T-097、2026-11-05 に東京都福祉局の「シルバーパスについて」の頁の注2・注4で照らした）。
+
+    介護保険料の通知書は 4月ごろに届く仮決定の通知書は使えず、出し直しもできないので、無ければ
+    住民税の課税（非課税）証明書を取る。生活保護の受給証明書は「生活扶助」の記載があるものだけ。
+    """
+    bring = RULES.programs["tokyo-silver-pass"].bring
+    notice = next(b for b in bring if "仮決定" in b)
+    assert "使えない" in notice and "出し直" in notice and "課税（非課税）証明書" in notice
+    welfare = next(b for b in bring if "生活保護の受給証明書" in b)
+    assert "生活扶助" in welfare
+
+
+def test_silver_pass_bring_lists_the_id_documents_on_the_official_page():
+    """本人確認の書類（T-098、2026-11-05 に silver-pass.tokyo/obtaining/ の❶で照らした）。
+
+    頁の書類はマイナンバーカード・運転免許証（運転経歴証明書でもよい）で、介護保険被保険者証や
+    資格確認証なども使える（詳細は専用電話）。1,000円パスは生活扶助の受給証明書でもよい。
+    運転免許もマイナンバーカードも無い人が多いので、介護保険の被保険者証が書いてあること。
+    代理人は自分の本人確認の書類も持っていく（頁の冒頭）。
+    """
+    bring = RULES.programs["tokyo-silver-pass"].bring
+    ident = next(b for b in bring if b.startswith("本人確認の書類"))
+    for word in ("マイナンバーカード", "運転免許証", "運転経歴証明書", "介護保険の被保険者証", "専用電話"):
+        assert word in ident, word
+    assert "1,000円で買う人" in ident and "生活扶助" in ident
+    proxy = next(b for b in bring if b.startswith("代理人"))
+    assert "代理人の本人確認の書類" in proxy
+
+
+def test_silver_pass_notes_the_145_man_yen_case_for_salary_income():
+    """申請のときの注（T-094、2026-11-05 に東京都福祉局の「シルバーパスについて」の頁で照らした）。
+
+    令和8年度は、給与所得控除がある人は通知書の合計所得金額が 135 万円超 145 万円以下でも
+    1,000円で買える場合がある。「場合がある」なので、言い切らずに窓口で確かめると書く。
+    """
+    notes = RULES.programs["tokyo-silver-pass"].at_application
+    line = next(n for n in notes if "145万円" in n)
+    assert "令和8年度" in line and "給与" in line and "135万円" in line
+    assert "場合がある" in line and "窓口" in line

@@ -239,3 +239,134 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .foot { padding-bottom: 0; }
   .foot a { min-height: 0; }
 }
+/* /city/<団体コード> の頁（T-080b） */
+.city-n { font-size: 15px; font-weight: 400; color: var(--muted); margin-left: .6em; }
+/* 頁の先頭の数と内訳（T-088）。緑の帯の上なので、内訳は地の色を変えずに白の枠だけで分ける（文字と地の比は帯と同じ） */
+.city-summary { margin-top: 10px; }
+.city-total { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .3em; font-size: 17px; }
+.city-total b { font-size: 40px; line-height: 1.1; }
+.city-total span { margin-left: .4em; font-weight: 700; }
+.city-break { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.city-break li { border: 1px solid rgba(255, 255, 255, .6); border-radius: 999px; padding: 2px 12px; font-size: 15px; }
+.city-break b { font-size: 17px; }
+.city-first-n { margin: 8px 0 0; font-size: 15px; }
+.city-caveat { margin: 6px 0 0; font-size: 14px; opacity: .92; overflow-wrap: anywhere; }
+/* T-113：数の無い県の文と型の数の行は長いので、折り返しても丸が崩れないよう角を小さくする */
+.city-break li.city-break-note, .city-break li.city-break-types { border-radius: 12px; overflow-wrap: anywhere; }
+.city-list { list-style: none; margin: 0; padding: 0; }
+.city-item { border-top: 1px solid var(--line); padding: 12px 0; overflow-wrap: anywhere; }
+.city-item:first-child { border-top: 0; padding-top: 0; }
+.city-item h3 { font-size: 18px; margin: 0 0 4px; }
+.city-item p { margin: 0 0 4px; font-size: 16px; }
+.city-where b { font-size: 14px; color: var(--accent); margin-right: .4em; }
+.city-item details summary { font-size: 15px; color: var(--muted); cursor: pointer; padding: 9px 0; }
+.city-src { margin: 0; padding-left: 1.2em; font-size: 14px; }
+.city-cond { margin: 0 0 4px; padding-left: 1.2em; font-size: 16px; }
+.city-first { font-size: 15px; }
+.city-first b { display: inline-block; font-size: 14px; color: #6b4200; background: #fff1d6; border-radius: 4px; padding: 0 .5em; margin-right: .5em; }
+/* その市の事業に替えた型の印（T-075b）。色だけに頼らず、文で「Claude が書いた」と言う */
+.local-mark { display: inline-block; margin: 4px 0; padding: 2px 8px; border: 1px solid var(--accent); border-radius: 4px;
+  font-size: 14px; color: var(--accent); }
+.city-group .note, .wrap > .note { overflow-wrap: anywhere; }
+.city-link { margin: 8px 0 0; font-size: 16px; }
+.city-link a { display: inline-flex; align-items: center; min-height: 44px; }
+/* 全国の見取り図（T-080c）。3 段の色は明るさで分け、白黒でも区別できる（文字との比：濃 6.4・中 7.4・淡 12.9。WCAG の式で計算） */
+.japan-map { margin: 0; }
+.japan-map svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
+.japan-map rect { stroke: transparent; stroke-width: 3; }
+.japan-map text { font-size: 16px; fill: var(--ink); text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+.japan-map .tier-0 rect, .map-swatch.tier-0 { fill: #d5eae3; background: #d5eae3; }
+.japan-map .tier-1 rect, .map-swatch.tier-1 { fill: #7cbcad; background: #7cbcad; }
+.japan-map .tier-2 rect, .map-swatch.tier-2 { fill: #0d6b5b; background: #0d6b5b; }
+.japan-map .tier-2 text { fill: #ffffff; }
+.japan-map a:hover rect { stroke: var(--muted); }
+.japan-map a:focus { outline: none; }
+.japan-map a:focus-visible rect, .japan-map a[aria-current] rect { stroke: var(--ink); }
+.map-legend { list-style: none; padding: 0; margin: 12px 0 4px; font-size: 16px; }
+.map-legend li { display: flex; gap: 8px; align-items: baseline; margin: 4px 0; }
+.map-swatch { flex: none; display: inline-block; width: 16px; height: 16px; border-radius: 4px; border: 1px solid var(--line); transform: translateY(2px); }
+/* 390px でタイルの一辺を 24px 以上にする（WCAG 2.2 の 2.5.8 の下限。44px には届かない。お住まいの select が本筋の道） */
+@media (max-width: 420px) { .map-card { padding: 14px 8px; } .map-card h2, .map-card figcaption { padding: 0 8px; } }
+
+/* 制度の地図（T-081）。点の色は帯の札と同じ、縁の色は費用の 3 区分（札の 1 行の頭の印と同じ） */
+:root { --cost-free: #2b5fa6; --cost-pay: #a33b7a; --cost-ask: #7a8088; }
+.pmap { margin: 0 0 16px; }
+.pmap svg { display: block; width: 100%; max-width: 480px; height: auto; margin: 4px auto 0; overflow: visible; }
+.pmap .ring { fill: none; stroke: var(--line); stroke-width: 1.5; }
+.pmap .ring.eligible { stroke: var(--ok); stroke-opacity: .35; }
+.pmap .ring.after_prereq { stroke: var(--pre); stroke-opacity: .35; }
+.pmap .ring-label { font-size: 14px; font-weight: 700; text-anchor: middle; dominant-baseline: central; paint-order: stroke; stroke: var(--card); stroke-width: 4px; }
+.pmap .ring-label.eligible { fill: var(--ok); }
+.pmap .ring-label.after_prereq { fill: var(--pre); }
+.pmap .ring-label.unknown { fill: var(--unk); }
+.pmap .me { fill: var(--accent); }
+.pmap .me-label { fill: var(--accent-ink); font-size: 15px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+.pmap .edge { stroke: var(--pre); stroke-width: 1.6; }
+.pmap .edge.to-unknown { stroke: var(--unk); stroke-opacity: .55; stroke-dasharray: 4 3; }
+.pmap .arrow-head { fill: var(--pre); }
+.pmap .edges.late { animation: pmap-late 700ms ease-out; }
+@keyframes pmap-late { 0%, 60% { opacity: 0; } 100% { opacity: 1; } }
+.pmap .pt { transition: transform 450ms cubic-bezier(.2, .7, .3, 1); cursor: pointer; }
+.pmap .pt .hit { fill: transparent; }
+.pmap .pt .dot { stroke: var(--card); stroke-width: 1.5; }
+.pmap .pt.eligible .dot { fill: var(--ok); }
+.pmap .pt.after_prereq .dot { fill: var(--pre); }
+.pmap .pt.unknown .dot { fill: var(--unk-bg); stroke: var(--unk); }
+.pmap .pt .cost-ring { fill: none; stroke-width: 3; }
+.pmap .pt.cost-free .cost-ring { stroke: var(--cost-free); }
+.pmap .pt.cost-pay .cost-ring { stroke: var(--cost-pay); }
+.pmap .pt.cost-ask .cost-ring { stroke: var(--cost-ask); stroke-dasharray: 3 2.4; }
+.pmap .pt:hover .hit, .pmap .pt:focus-visible .hit { fill: #9fd3c7; }
+.pmap .pt:focus { outline: none; }
+.pmap-pick { min-height: 1.6em; margin: 6px 0 0; font-weight: 700; text-align: center; }
+.pmap-legend { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; }
+.pmap-legend li { display: flex; gap: 6px; align-items: center; }
+.pmap-legend.cost { margin-top: 4px; font-size: 14px; }
+.pmap-swatch { width: 14px; height: 14px; border-radius: 50%; flex: none; }
+.pmap-swatch.eligible { background: var(--ok); }
+.pmap-swatch.after_prereq { background: var(--pre); }
+.pmap-swatch.unknown { background: var(--unk-bg); border: 1.5px solid var(--unk); }
+.cost-mark { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 3px solid; flex: none; margin-right: 6px; vertical-align: -1px; }
+.cost-mark.cost-free { border-color: var(--cost-free); }
+.cost-mark.cost-pay { border-color: var(--cost-pay); }
+.cost-mark.cost-ask { border-color: var(--cost-ask); border-style: dashed; }
+@media (prefers-reduced-motion: reduce) {
+  .pmap .pt { transition: none; }
+  .pmap .edges.late { animation: none; }
+}
+@media print { .pmap .pt { transition: none; } }
+/* 手間と分かること（T-082）。色は見立ての帯の札と同じ */
+.effort { margin: 0 0 16px; }
+.effort-bars { list-style: none; padding: 0; margin: 10px 0 0; }
+.effort-bars li { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+.effort-label { flex: 0 0 3.2em; text-align: right; font-size: 15px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.effort-track { flex: 1 1 auto; min-width: 0; }
+.effort-bar { display: flex; height: 28px; border-radius: 6px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+.effort-bar .seg { display: flex; align-items: center; justify-content: center; min-width: 0; font-size: 13px; font-weight: 700;
+  font-variant-numeric: tabular-nums; overflow: hidden; white-space: nowrap; }
+.effort-bar .seg + .seg { border-left: 1px solid var(--card); }
+.seg.eligible, .effort-swatch.eligible { background: var(--ok); color: #fff; }
+.seg.after_prereq, .effort-swatch.after_prereq { background: var(--pre); color: #fff; }
+.seg.unknown, .effort-swatch.unknown { background: var(--unk-bg); color: var(--ink); }
+.seg.no, .effort-swatch.no { background: var(--card); color: var(--ink); }
+.effort-swatch { display: inline-block; width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line); }
+.effort-swatch.unknown { border-color: var(--unk); }
+@media print { .effort-bar .seg { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+
+/* 申請メモ（T-074）。画面では札の中で開く。紙では「このメモだけ印刷する」で 1 枚に刷る（app.js の printMemo）。
+   結果の画面ぜんぶを刷るとき（print-result）は、札と重なるのでメモを出さない */
+.memo { border: 1px dashed var(--line, #bbb); border-radius: 8px; padding: 6px 10px; margin: 0 0 12px; }
+.memo > summary { cursor: pointer; font-weight: 600; }
+.memo-sheet .memo-title { font-weight: 700; margin: 8px 0 2px; }
+.memo-sheet h4 { margin: 10px 0 2px; font-size: 1em; }
+.memo-sheet ul.check { list-style: none; padding-left: 0; margin: 0; }
+.memo-sheet ul.check li::before { content: "□ "; }
+.memo-sheet dl.fill { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin: 0; }
+.memo-sheet dl.fill dd { margin: 0; }
+.memo-sheet .say { border-left: 3px solid var(--line, #bbb); padding-left: 8px; }
+#print-sheet { display: none; }
+@media print {
+  .print-result .memo { display: none; }
+  html.print-memo body > :not(#print-sheet) { display: none !important; }
+  html.print-memo #print-sheet { display: block; font-size: 12pt; color: #000; }
+}

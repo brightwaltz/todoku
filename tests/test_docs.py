@@ -73,7 +73,11 @@ def test_docs_and_page_do_not_say_rules_copy_official_pages():
     条件は自分の言葉で書いた、としている。役割の表と画面の下の注が「書き写した」と言うと食い違う。
     """
     page = (ROOT / "web" / "index.html").read_text(encoding="utf-8")
-    for name, doc in (("README.md", README), ("docs/spec.md", SPEC), ("web/index.html", page)):
+    # 11/5 T-083a：結果の「押した数」の図の注（app.js）と /city/ の頁の注（city.py）も「書き写した」と言っていた
+    script = (ROOT / "web" / "app.js").read_text(encoding="utf-8")
+    city = (ROOT / "src" / "todoku" / "city.py").read_text(encoding="utf-8")
+    for name, doc in (("README.md", README), ("docs/spec.md", SPEC), ("web/index.html", page),
+                      ("web/app.js", script), ("src/todoku/city.py", city)):
         assert "書き写" not in doc, name
     row = next(line for line in README.splitlines() if line.startswith("| 申請先・持ち物・金額・出典 |"))
     assert "自分の言葉で書き" in row and "確認日" in row and "出典" in row.split("|")[2]
@@ -117,3 +121,108 @@ def test_readme_after_hackathon_names_the_operating_partners():
     assert 3 <= len(items) <= 5
     assert "行政（市の窓口・地域包括支援センター）と組み" in section
     assert "専門のスタッフが規則と判定を確かめる" in section
+
+
+def test_readme_two_layers_and_effort_figure():
+    """「2 つの層」の数が規則と合い、「手間と、分かること」の図がリポジトリにあるか（11/5 T-083a）。
+
+    型は一般の条件では判定するので、「判定しない」とは書かず「お住まいの市区町村がしているか」は判定しない、と書く。
+    """
+    rs = rules.load()
+    n = Counter(p.level for p in rs.programs.values())
+    layers = README.split("\n## 2 つの層", 1)[1].split("\n## ", 1)[0]
+    assert f"国・都・市の制度 {len(rs.programs) - n['local']} 件" in layers
+    assert f"市区町村の事業の型 {n['local']} 件" in layers
+    assert "判定していません" in layers and "判定しない" not in layers
+    effort = README.split("\n## 手間と、分かること\n", 1)[1].split("\n## ", 1)[0]
+    images = re.findall(r"!\[[^\]]+\]\(([^)]+)\)", effort)
+    assert images
+    for img in images:
+        assert (ROOT / img).is_file(), img
+        assert (ROOT / img).stat().st_size <= 300_000, img
+
+
+def _walk_taiin_haha_first_options():
+    """見本「退院した母」を、どの問いにも先頭の選択肢で答えて進め、0 回と最後の数と押した数を返す。"""
+    from fastapi.testclient import TestClient
+
+    from todoku.app import app
+
+    client = TestClient(app)
+    d = client.post("/api/sample", json={"id": "taiin-haha"}).json()
+    first = dict(d["counts"])
+    s = {"facts": dict(d["facts"]), "suggestions": dict(d["suggestions"]), "subject": d["subject"],
+         "asked": 0, "municipality": d["place"]["code"] if d.get("place") else ""}
+    while d["question"]:
+        q = d["question"]
+        s["facts"][q["fact"]] = q["options"][0]["value"]
+        s["suggestions"].pop(q["fact"], None)
+        s["asked"] += 1
+        d = client.post("/api/step", json=s).json()
+    return first, dict(d["counts"]), s["asked"]
+
+
+def test_readme_effort_numbers_match_the_sample_walk():
+    """「手間と、分かること」に書いた数が、見本「退院した母」を先頭の選択肢で通した今の数と合うか（11/5 T-083c）。
+
+    規則を直すと見本の道が変わり、README の数だけが古いまま残った（dev-merge で 3・23 → 6・5・15 のまま）。
+    """
+    effort = README.split("\n## 手間と、分かること\n", 1)[1].split("\n## ", 1)[0]
+    m = re.search(r"0 回では(.+?)、(\d+) 回押した後は(.+?)でした", effort)
+    assert m, "0 回と、押した後の数の文が見つからない"
+    first, last, asked = _walk_taiin_haha_first_options()
+    assert int(m.group(2)) == asked
+    keys = {"当てはまる": "eligible", "先に手続き": "after_prereq", "確かめる": "unknown", "当てはまらない": "ineligible"}
+    for text, counts in ((m.group(1), first), (m.group(3), last)):
+        written = dict(re.findall(r"(当てはまる|先に手続き|確かめる|当てはまらない) (\d+) 件", text))
+        assert "当てはまる" in written and "確かめる" in written, text
+        for label, n in written.items():
+            assert int(n) == counts.get(keys[label], 0), (label, n, counts)
+
+
+def test_readme_claude_uses_say_agent_sdk_is_not_used():
+    """使った Claude の製品の欄に Managed Agents があり、使っていない Agent SDK を使っていないと書くか（11/5 T-083a）。"""
+    section = README.split("\n## Claude の使い方\n", 1)[1].split("\n## ", 1)[0]
+    head = section.split("\n### ", 1)[0]
+    assert "- **Claude Managed Agents**" in head
+    assert "Claude Agent SDK は使っていません" in head
+
+
+def test_readme_staff_use_section():
+    """包括の職員が相談を受けながら使うときの段落があるか（11/5 T-089、T-078 の候補 #2）。
+
+    応募文の「地域包括支援センターの職員も使う」と提出物を合わせる。職員向けの別の画面は作らず、今の画面の使い方として書く。
+    職員と確かめていないことも書く（評価の実験はしていないので、使えると言い切らない）。
+    """
+    section = README.split("\n## 包括の職員が相談を受けながら使うとき\n", 1)[1].split("\n## ", 1)[0]
+    heads = re.findall(r"^- \*\*(.+?)\*\*：", section, flags=re.M)
+    assert heads == ["相談の場で画面を一緒に見る", "印刷を職員の控えにする", "判定は規則、確かめは職員"]
+    assert "別の画面は作っておらず" in section
+    assert "ブラウザで印刷" in section and "職員の控え" in section
+    assert "確かめたことは、まだありません" in section
+
+
+def test_readme_staff_copy_points_to_the_centers_privacy_rules():
+    """「印刷を職員の控えにする」が、控えを残してよいと言い切らず、センターの個人情報の決まりに任せるか（11/5 T-099、T-089 の心配）。
+
+    紙の控えも「この結果を残す」のリンク（認定の区分などの答えが入る）もご本人の情報。とどくは包括での記録の扱いを確かめていない。
+    """
+    section = README.split("\n## 包括の職員が相談を受けながら使うとき\n", 1)[1].split("\n## ", 1)[0]
+    item = next(line for line in section.splitlines() if line.startswith("- **印刷を職員の控えにする**："))
+    assert "ご本人の情報" in item
+    assert "個人情報の取り扱いの決まりに従って" in item
+
+def test_readme_says_ai_answers_need_not_be_taken_on_trust():
+    """「判定は規則、言葉は Claude」の節が、AI の答えをそのまま信じなくてよい作りを 1 文でまとめるか（11/5 T-090、T-078 の候補 #5）。
+
+    どれも実装済みの 3 つ（判定は規則・出典と確認日・読み取りの根拠の確かめ）だけを言い、新しい主張や記事の数字は書かない。
+    """
+    section = README.split("\n## 判定は規則、言葉は Claude\n", 1)[1].split("\n## ", 1)[0]
+    paras = [p for p in section.split("\n\n") if p.startswith("**AI の答えをそのまま信じなくてよいように**：")]
+    assert len(paras) == 1
+    para = paras[0]
+    assert para.count("。") == 1
+    assert "規則のプログラム" in para
+    assert "出典" in para and "確認日" in para
+    assert "根拠" in para and "問いに回します" in para
+    assert not re.search(r"\d", para)

@@ -48,6 +48,12 @@
     "made": {
       "model": "claude-opus-5-5",
       "date": "2026-11-03"
+    },
+    "script": {
+      "care_level": "none",
+      "needs_daily_help": true,
+      "high_medical_costs": true,
+      "dementia_diagnosis": false
     }
   },
   {
@@ -87,6 +93,9 @@
     "made": {
       "model": "claude-opus-5-5",
       "date": "2026-11-03"
+    },
+    "script": {
+      "age_band": "age_75_plus"
     }
   },
   {
@@ -138,6 +147,9 @@
     "made": {
       "model": "claude-opus-5-5",
       "date": "2026-11-03"
+    },
+    "script": {
+      "age_band": "age_75_plus"
     }
   },
   {

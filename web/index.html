@@ -50,6 +50,7 @@
         <select id="pref" aria-label="都道府県"><option value="">都道府県</option></select>
         <select id="city" aria-label="市区町村" disabled><option value="">市区町村</option></select>
       </div>
+      <p class="city-link" id="city-link-box" hidden><a id="city-link" href="/city/" target="_blank" rel="noopener">この市区町村で使える制度の一覧</a></p>
     </fieldset>
     <fieldset class="pick">
       <legend>気になっていること（いくつでも）</legend>
@@ -71,6 +72,12 @@
     <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
     <button class="primary" id="send">相談する</button>
     <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
+  </section>
+
+  <!-- 全国の見取り図（T-080c）。中身は /japan-map（規則から作る SVG）を app.js が差し込む。取れなければ出さない -->
+  <section id="japan" class="card soft map-card" hidden aria-labelledby="japan-title">
+    <h2 id="japan-title">全国どこでも使えます</h2>
+    <div id="japan-box"></div>
   </section>
 
   <section id="reading" class="card" hidden>
@@ -113,6 +120,18 @@
   </section>
 
   <section id="result" hidden>
+    <figure class="card pmap" id="pmap" hidden>
+      <h2>制度の地図</h2>
+      <p class="note lead-note">真ん中がご本人です。内側の輪ほど、いま手を打ちやすい制度です。判定は規則のプログラムが行い、図にも AI は使いません。</p>
+      <svg id="pmap-svg" viewBox="0 0 360 360" role="group" aria-label="制度の地図。点を押すと、その制度の説明へ移ります"></svg>
+      <p class="pmap-pick" id="pmap-pick" aria-live="polite"></p>
+      <figcaption>
+        <ul class="pmap-legend" id="pmap-legend"></ul>
+        <p class="note" id="pmap-chain"></p>
+        <p class="note">点の縁の色は費用です。</p>
+        <ul class="pmap-legend cost" id="pmap-cost"></ul>
+      </figcaption>
+    </figure>
     <div class="card ask" id="later" hidden>
       <h2>まだ確かめていないこと</h2>
       <p class="note lead-note">相談の文からは、はっきり読み取れなかったこと・書かれていなかったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
@@ -131,6 +150,20 @@
       <summary id="ineligible-title"></summary>
       <ul id="ineligible-list" class="plain"></ul>
     </details>
+    <section id="options-box" hidden>
+      <h2 class="group-title">有料・民間の支え<span class="n" id="options-n"></span></h2>
+      <p class="note">行政の制度ではなく、お金を払って使う支えの種類です。使えるかは判定していません。お住まいの地域にあるか、料金は申し込み先で確かめてください。会社の名前は出していません。</p>
+      <div id="options-list"></div>
+    </section>
+    <figure class="card soft effort" id="effort" hidden>
+      <h2>押した数と、分かった制度の数</h2>
+      <p class="note lead-note">棒 1 本が、答えを 1 つ押したときの見立てです。0&nbsp;回は、相談の文（とお住まい）だけで出した見立てです。</p>
+      <ol class="effort-bars" id="effort-bars" aria-label="押した数ごとの見立て"></ol>
+      <figcaption>
+        <ul class="pmap-legend" id="effort-legend"></ul>
+        <p class="note" id="effort-layers"></p>
+      </figcaption>
+    </figure>
     <div class="card soft keep" id="keep" hidden>
       <h2>この結果を残す</h2>
       <p class="note">答えをこのリンクの中に入れました。あとで開くと、同じ結果が出ます。リンクの中身はとどくのサーバに送られず、どこにも残りません。リンクには答え（認定の区分・年齢など）が入っているので、人に送るときは気をつけてください。</p>

@@ -30,7 +30,8 @@ amount:
 cost:
   self_pay: partial
   share: "原則1割。月の上限は世帯の所得で決まる"
-  source: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/jiritsu/gaiyo.html
+  # 2026-11-05 に照らし直し、1割と月の上限を書いている精神通院医療の説明（PDF）に替えた（概要の頁には「1割」が無い）
+  source: https://www.mhlw.go.jp/bunya/shougaihoken/jiritsu/dl/03.pdf
 sources:
   - url: https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/jiritsu/gaiyo.html
     publisher: 厚生労働省

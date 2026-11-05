@@ -62,6 +62,7 @@ const hidden = {{}}, nodes = {{}}, seen = [];
 const $ = (id) => (nodes[id] ||= {{ id, textContent: "", attrs: {{}}, setAttribute(k, v) {{ this.attrs[k] = v; }}, scrollIntoView() {{}} }});
 const show = (id, on = true) => {{ hidden[id] = !on; }};
 const renderBoard = () => {{}};
+const tally = (trail) => trail;  // 押した数ごとの見立ての数（T-082）。数え方は test_effort で見る
 const renderQuestion = (q, max) => {{ seen.push(["question", q.fact, max]); }};
 const renderResult = () => {{ seen.push(["result"]); }};
 let focused = null;

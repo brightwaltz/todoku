@@ -40,7 +40,8 @@ timing:
 cost:
   self_pay: none
   share: "主治医意見書の作成料も本人は払わない"
-  source: https://www.city.machida.tokyo.jp/iryo/kaigo/nagare/the-step-of-service.html
+  # 2026-11-05 に照らし直し、意見書の作成料を書いている厚生労働省の頁に替えた（町田市の頁には費用の記述がない）
+  source: https://www.kaigokensaku.mhlw.go.jp/commentary/flow.html
 sources:
   - url: https://www.kaigokensaku.mhlw.go.jp/commentary/flow.html
     publisher: 厚生労働省（介護サービス情報公表システム）
