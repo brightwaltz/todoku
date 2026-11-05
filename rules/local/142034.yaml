@@ -1,0 +1,40 @@
+city: "142034"
+name: 平塚市
+site: city.hiratsuka.kanagawa.jp
+# T-131：読む1 と読む2 が haikai・koken の 2 型で、同じ頁で合った。
+# koken は頁・名前・相談先は合うが、利用支援事業の対象・助成の範囲・金額はどちらの読みも頁に無い（要綱の PDF は未読）。津市（242012）・茨木市（272116）と同じく「問い合わせて確かめる」と書いて入れる。
+# 読む2 の要約に「第1期の促進計画では申立て費用の助成をしていなかった」とあるので、何を助成するかは書かない。
+# kaigo-yohin は読む1 が not_found（一覧の頁だけ）、読む2 が found（page-c_01696）で合わないので入れない。
+# haishoku・iro は両方 not_found だが、社協・要綱集・例規集は誰も開いていないので型ごと入れない。
+programs:
+  - template: local-haikai
+    status: found
+    name: 認知症等行方不明SOS平塚（見守りGPSの貸与・みまもりシール）
+    where: 高齢福祉課（市役所1階120番窓口）か高齢者よろず相談センター（地域包括支援センター）
+    conditions:
+      - 市内に住み、認知症によるひとり歩きで行方不明になるおそれがあるか、行方不明になったことがある高齢者等
+      - 前もって登録する。申請書と本人の顔写真1枚が要り、登録の費用はかからない
+      - 登録した人の家族等は見守りGPSを借りられる。月額は課税世帯1,200円・非課税世帯900円・生活保護世帯600円
+      - 付き添いが要る施設の入居者と、療養病床に入院中の人は GPS を借りられない
+      - 登録した人の家族等に二次元コードのシール30枚（耐洗20・蓄光10）を配る。追加は実費
+    sources:
+      - url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01700.html
+        publisher: 平塚市
+        title: 認知症等行方不明SOS平塚
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 福祉総務課（保健福祉総合相談担当、128番窓口）。相談は平塚市成年後見利用支援センター（平塚後見センターよりそい）、高齢福祉課（120番窓口）でもできる
+    conditions:
+      - 市は成年後見制度利用支援事業の要綱を置き、身寄りのない人には市長が申立てをする
+      - 助成の対象・範囲・金額は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_00285.html
+        publisher: 平塚市
+        title: 成年後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
