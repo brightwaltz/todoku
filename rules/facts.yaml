@@ -13,7 +13,8 @@ lives_in_machida:
   name: 町田市に住んでいる
   type: bool
   question: ご本人は町田市にお住まいですか？
-  check: 住民票のある市区町村です。町田市の制度は町田市に住所がある方が対象です。
+  # check は画面だけに出し、読み取りの指示には入れない（question は Claude に渡るので変えない。11/6、町田市前提の文を外した）
+  check: 住民票のある市区町村です。都道府県と市区町村の制度は、そこに住所がある方が対象です。
   place: {city: "132098"}
 
 lives_in_yokohama:

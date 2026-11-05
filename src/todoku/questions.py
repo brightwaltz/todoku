@@ -7,6 +7,10 @@
 （ふつうは町田市。町田市ではないとだけ分かったときは横浜市・東京都の事実が受け持ち、同じ欄をもう一度出す）。
 住所の問いに「わからない」と答えたら、住所はもう聞かない。
 選択肢の代わりに「規則が使う市・都道府県ごとに 1 つと、そのほか」で値打ちを数える。
+
+住所は、3 問の枠の外で最初に聞く（11/6、柴田「町田市前提はやめてほしい。ユーザは全国どの人の可能性もある」）。
+使う人は全国のどこにも住みうるので、住所が分からないまま値打ちで選ぶと、3 問のうち 1 問が住所に使われていた
+（11/6 07:36 の採点で 30 件中 24 件）。住所の問いは数えない（Question.counted が False）。place_first=False は前の流れで、評価で並べるために残す。
 """
 
 from __future__ import annotations
@@ -28,6 +32,8 @@ class Question:
     suggested: Any = None
     # この答えで状態が変わりうる制度
     affects: tuple[str, ...] = ()
+    # 3 問の枠に数えるか。住所の問い（place_first で最初に聞くもの）は数えない
+    counted: bool = True
 
 
 def referenced_facts(rules: RuleSet) -> set[str]:
@@ -124,16 +130,24 @@ def next_question(
     suggestions: Mapping[str, Any] | None = None,
     asked: int = 0,
     max_questions: int = MAX_QUESTIONS,
+    place_first: bool = True,
 ) -> Question | None:
     """聞く事実を 1 つ返す。聞く必要がなければ None。
 
     facts に DONT_KNOW が入っている事実（「わからない」と答えたもの）は 2 度聞かない。
     suggestions は Claude が確信の低いまま読み取った値で、判定には使わず、確かめる問いにする。
+    place_first なら、住所が分からない間は住所の問いを先に返す（枠に数えない。asked は増やさずに次を呼ぶ）。
+    asked が枠に届いていれば（聞き返しをやめたときも）住所も聞かない。住所は結果の画面の欄で選べる（app.unconfirmed_view）。
     """
     if asked >= max_questions:
         return None
     suggestions = suggestions or {}
     base = statuses(rules, facts)
+    if place_first:
+        place = place_fact(rules, facts)
+        if place is not None:
+            score, affects = score_fact(rules, facts, place, base)
+            return Question(place, score, suggestions.get(place), affects, counted=False)
     best: Question | None = None
     for fid in candidates(rules, facts):
         score, affects = score_fact(rules, facts, fid, base)
