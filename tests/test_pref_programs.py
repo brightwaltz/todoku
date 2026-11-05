@@ -36,6 +36,11 @@ def test_the_record_loads_and_is_well_formed():
     assert "13" not in ALL and "14" not in ALL  # 東京都は規則（level tokyo）、神奈川県は PREF_NONE_FOUND にある
 
 
+def test_every_prefecture_is_checked():
+    """T-129 の完了条件：47 都道府県のどれも、都道府県の段が「まだ調べていない」にならない（東京都・神奈川県は記録の外で扱う）。"""
+    assert set(ALL) | {"13", "14"} == set(PREFS)
+
+
 @pytest.mark.parametrize("item, message", [
     ("{looked: [https://www.pref.example.jp/]}", "checked"),
     ("{checked: 2026-11-06}", "looked"),

@@ -171,6 +171,18 @@ prefectures:
       - https://www.pref.yamanashi.jp/chouju/26141892452.html
       - https://www.pref.yamanashi.jp/chouju/hochouki.html
     found: []
+  "20":  # 長野県。「高齢者福祉」の分類の頁と、その下の「シニア世代の活躍」「介護保険」「介護サービス」「施策・計画」の頁（「相談窓口」の頁は記事が無かった）、県の「家族の福祉・看護等に関する相談」の頁は、計画と実態調査、事業者向けの指定や基準、シニアの活躍の県民会議、相談先の紹介で、県に個人で申し込む給付や割引は無かった。社会福祉法人等による利用者負担軽減制度は国の制度で、県の頁は申し出た法人の一覧と様式。シニア活動推進コーディネーターは公益財団法人の長野県長寿社会開発センターが置く相談とつなぎの役。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/ikigai/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/kaigo/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/service/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/shisaku/index.html
+      - https://www.pref.nagano.lg.jp/kaigo-shien/kenko/koureisha/kaigo/hojin.html
+      - https://www.pref.nagano.lg.jp/kenko-choju/kenko/koureisha/coordinator/coordinator.html
+      - https://www.pref.nagano.lg.jp/kenko-fukushi/kazoku-sodan.html
+    found: []
   "21":  # 岐阜県。県の「高齢者」の分類の頁と、高齢福祉課の「高齢者の活躍」（働く・つながる・学ぶ・運動の 4 つのリンク集）と認知症対策の頁は、事業者向けの補助や研修、団体（老人クラブ・シルバー人材センター・社会福祉協議会など）の紹介、催し、相談先で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
     checked: 2026-11-06
     looked:
@@ -243,6 +255,14 @@ prefectures:
       - https://web.pref.hyogo.lg.jp/life/cate3_113.html
       - https://web.pref.hyogo.lg.jp/ks18/wd20_000000115.html
       - https://web.pref.hyogo.lg.jp/kf05/teisyotokusya.html
+    found: []
+  "29":  # 奈良県。「高齢者福祉」の分類の頁の記事と、県が毎年まとめる「高齢者福祉対策の概要」（令和 8 年度版）の目次にある主な福祉施策 38 件の題名は、施設の整備、市町村への支援、認知症の施策と相談先、権利擁護、老人クラブと催し、介護人材、介護保険の運営で、県に個人で申し込む給付や割引は無かった。施策の本文の PDF は画像で、題名の他は読んでいない。すこやか長寿センターの事業（情報誌・大会・美術展など）は県社会福祉協議会が行う。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.nara.lg.jp/kenkou/koureifukushi/index.html
+      - https://www.pref.nara.lg.jp/n066/20704.html
+      - https://www.pref.nara.lg.jp/documents/4969/mokuji.pdf
+      - https://www.pref.nara.lg.jp/n067/30257.html
     found: []
   "30":  # 和歌山県。長寿社会課の頁の記事は、計画、事業者向けの補助や研修、介護の仕事に就く人の研修の補助、認知症の啓発と相談先、見守り、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。わかやま元気シニア生きがいバンクは県社会福祉協議会のサイトで運営し、高齢者の登録は令和 7 年 12 月末で終わっている。MCI 高齢者の居場所づくりの補助は居場所を開く人や団体が申し込むもの。いきいき長寿社会センターの事業（催しと講座）は県社会福祉協議会が行う。駐車場の利用証は調べていない
     checked: 2026-11-06
