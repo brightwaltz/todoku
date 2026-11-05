@@ -114,6 +114,22 @@ def test_hachioji_shows_three_found_programs_and_keeps_two_types():
     assert local.count('href="https://www.city.hachioji.tokyo.jp/') == 3
     assert "在宅高齢者おむつの給付" in local and "認知症高齢者探索機器の貸与" in local
 
+
+@pytest.mark.parametrize("code, host, own, pages", [
+    ("112038", "www.city.kawaguchi.lg.jp", ["local-kaigo-yohin", "local-haikai", "local-haishoku", "local-koken"], 4),
+    ("122041", "www.city.funabashi.lg.jp",
+     ["local-kaigo-yohin", "local-haikai", "local-haishoku", "local-koken", "local-iro"], 5),
+])
+def test_kawaguchi_and_funabashi_show_their_own_programs(code, host, own, pages):
+    """T-128：中核市の川口市・船橋市は、2 回の読みが合った事業を市の名前と出典で出し、見つからなかった型は型のまま残す。
+    川口市の見守りシールと配食は同じ頁（生活支援事業）が出典。"""
+    html = client.get(f"/city/{code}").text
+    local = re.search(r'<section class="card[^"]*" data-level="local">(.*?)</section>', html, re.S).group(1)
+    assert re.findall(r'<li class="city-item local" data-id="([^"]+)"', local) == own
+    assert set(re.findall(r'data-id="([^"]+)"', local)) == ids_of("local")
+    assert local.count("Claude が公式頁から書き、照らし直したもの（2026-11-06）") == len(own)
+    assert local.count(f'href="https://{host}/') == pages
+
 def test_outside_machida_no_machida_window_or_page():
     """国の制度の申請先は町田市で書いてあるので、大阪市の頁には町田市の窓口も町田市のページも出さない。"""
     html = client.get(f"/city/{OSAKA}").text

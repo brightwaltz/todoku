@@ -1,0 +1,83 @@
+city: "122041"
+name: 船橋市
+site: city.funabashi.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 在宅重度要介護者介護用品支給（紙おむつなどの宅配）
+    where: 高齢者福祉課 在宅支援係。郵送・オンラインでも申請できる
+    conditions:
+      - 市内の自宅で暮らす要介護3〜5の人（入院中・入所中は対象外）
+      - 市県民税の合計の賦課額が65,000円以下で、生活保護を受けていない
+      - 月8,900円分までをカタログから選び、毎月家に届く（令和6年4月の配送分から）
+    sources:
+      - url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001786.html
+        publisher: 船橋市
+        title: 介護用品（紙おむつ等）を支給します
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 認知症見守りGPSサポート事業
+    where: 地域包括ケア推進課（窓口か郵送。郵送は先に連絡する）
+    conditions:
+      - 行方不明のおそれがある認知症の人を、自宅で介護している家族が申し込む
+      - 本人は65歳以上、または特定疾病による認知症の40〜64歳
+      - 月額（税込）は非課税世帯250円・課税世帯500円
+      - なくしたり壊したりしたときは、別に10,000円（税別）
+    sources:
+      - url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p004492.html
+        publisher: 船橋市
+        title: 認知症見守りGPSサポート事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス（食の自立支援事業）
+    where: 高齢者福祉課 在宅支援係。郵送・オンラインでも申請できる
+    conditions:
+      - おおむね65歳以上のひとり暮らしか高齢者だけの世帯で、食事を作るのが難しい人
+      - 月〜金の昼と夕から選んで届く（祝休日・年末年始は休み）。届けるときに安否を確かめる
+      - 食事代は本人が払う（額は頁に無い）。栄養の相談は無料
+    sources:
+      - url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001789.html
+        publisher: 船橋市
+        title: 配食サービス（食の自立支援事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 認知症の高齢者は地域包括ケア推進課（先に問い合わせる）。知的障害は障害福祉課、精神障害は保健所保健総務課
+    conditions:
+      - 申し立てる身寄りがいない人は、市長が必要と認めたときに市長が申し立てる
+      - 後見人などへの報酬の助成は、生活保護の世帯か、それに準ずる人が対象
+      - 報酬の上限は月28,000円（在宅）・月18,000円（施設や長期の入院）
+      - 診断書の費用は5,000円まで助成する
+    sources:
+      - url: https://www.city.funabashi.lg.jp/kenkou/iryou/001/03/p091567.html
+        publisher: 船橋市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労事業（家族介護慰労金）
+    where: 高齢者福祉課 在宅支援係（郵送もできる。先に連絡する）
+    conditions:
+      - 要介護4・5の認定から1年以上たった人を、自宅で介護している家族
+      - 世帯が市民税非課税で、生活保護を受けていない
+      - 直近1年に介護保険のサービスを使っていない（ショートステイ年7日までは除く）
+      - 直近1年の入院が通算90日以内
+      - 金額は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001776.html
+        publisher: 船橋市
+        title: 家族介護慰労事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
