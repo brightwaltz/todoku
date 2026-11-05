@@ -1,0 +1,57 @@
+city: "112216"
+name: 草加市
+site: city.soka.saitama.jp
+# T-131：読む1 と読む2 が kaigo-yohin・haikai・haishoku の 3 型で、同じ頁・同じ条件で合った。
+# koken・iro は両方 not_found だが、どちらの読みも例規集・社協・PDF を開いていないので型ごと入れない。
+# kaigo-yohin は本人へのおむつの配達だが、型は kaigo-yohin にする（富士市と同じ扱い）。
+# haikai は GPS の貸与だけ。事前登録やシールはどちらの読みも頁に無いので書かない。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: おむつ支給
+    where: 長寿支援課（長寿推進係 048-922-1342）。申請書を窓口か郵送で出す
+    conditions:
+      - 65歳以上で要介護3〜5の認定を受け、いつも寝たきりか、重い認知症でいつも排せつに介助が要る人
+      - 住民税が非課税か、介護保険料の所得段階が第6段階か、第7段階で前年の合計所得金額が135万円以下
+      - 特別養護老人ホームやグループホームなどに入っている人と、申請のときに入院している人は除く
+      - 月1回、決まった枚数のおむつを家に届ける。利用料は無料
+      - 申請した月の翌月から始まる
+    sources:
+      - url: https://www.city.soka.saitama.jp/cont/s1502/020/010/050/PAGE000000000000073049.html
+        publisher: 草加市
+        title: おむつ支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 認知症高年者位置情報探索事業（GPS の貸与）
+    where: 長寿支援課。申請書と同意書を窓口か郵送で出す
+    conditions:
+      - 65歳以上の人を家で介護している家族が使える
+      - 本人が草加市の介護保険料を払っていて、道に迷って帰れなくなったことがある
+      - 施設やサービス付き高齢者向け住宅などに入っている人は除く
+      - 利用料は月額340円で、6月・9月・12月・3月に口座から引き落とす
+    sources:
+      - url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/13.html
+        publisher: 草加市
+        title: 認知症高年者位置情報探索事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 長寿支援課。申請書を窓口か郵送で出す
+    conditions:
+      - 65歳以上のひとり暮らしか高齢者だけの世帯などで、自分で食事を用意できず、ほかに用意する人もいない
+      - 施設に入っている人は除く
+      - 1日1回、昼食か夕食を届け、そのときに安否と体の具合を確かめる（年末年始は休み）
+      - 利用料は配食業者ごとに違い頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/PAGE000000000000072912.html
+        publisher: 草加市
+        title: 配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
