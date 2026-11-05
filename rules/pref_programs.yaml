@@ -19,6 +19,15 @@ prefectures:
       - https://www.pref.hokkaido.lg.jp/hf/khf/tiikisien/syakaisanka/
       - https://www.pref.hokkaido.lg.jp/hf/khf/ninchisyo/224633.html
     found: []
+  "04":  # 宮城県。長寿社会政策課の企画推進班・地域包括ケア推進班の業務の一覧と「高齢者福祉制度・各種支援」の分類の記事は、計画、虐待の防止、事業者向けの補助や研修、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。宮城いきいき学園（おおむね 55 歳以上の学びの場）は、運営と申し込み先が県社会福祉協議会。駐車場の利用証は高齢者の頁からは見当たらず、調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.miyagi.jp/soshiki/chouju/
+      - https://www.pref.miyagi.jp/soshiki/chouju/choujup.html
+      - https://www.pref.miyagi.jp/soshiki/chouju/chikihoukatsu.html
+      - https://www.pref.miyagi.jp/life/5/73/65/index.html
+      - https://www.pref.miyagi.jp/soshiki/chouju/miyagi-elderly.html
+    found: []
   "08":  # 茨城県。長寿福祉課の頁の一覧で、県の制度として本人が受け取って使うのはいばらきシニアカードだけだった。身障者等用駐車場利用証（要介護 1 以上も対象、申請は市町村の窓口）は、済みの県で駐車場の利用証を調べていないので、揃えるまで入れていない（D-0102）。介護マークは県福祉サービス振興会の事業
     checked: 2026-11-06
     looked:
