@@ -71,7 +71,34 @@ select:focus { outline: 3px solid #9fd3c7; border-color: var(--accent); }
 select:disabled { color: var(--muted); background-color: var(--soft); }
 #input label.big { margin-top: 18px; }
 #events .examples { margin-top: 6px; }
-#events .chip { font-size: 16px; }
+/* 絵から選ぶ（T-124）。線は 1 色（--accent）、塗りは白と薄い緑の 2 つだけ。絵の札にも家の絵にも同じ symbol を使う */
+.pictures { margin-top: 22px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.pictures-title { font-size: 18px; margin: 0 0 4px; }
+.pictures-row { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 10px; }
+@media (min-width: 760px) { .pictures-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } }
+.event-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ev-card {
+  display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 104px; padding: 8px 4px;
+  border: 2px solid var(--line); border-radius: 12px; background: #fff; color: var(--ink); font: inherit; font-size: 15px;
+  line-height: 1.3; cursor: pointer; text-wrap: balance;
+}
+.ev-card svg { width: 56px; height: 56px; }
+.ev-card:hover { border-color: var(--accent); }
+.ev-card:focus-visible { outline: 3px solid #9fd3c7; border-color: var(--accent); }
+.ev-card[aria-pressed="true"] { border-color: var(--accent); background: #e3f1ec; font-weight: 700; }
+.ev-card[aria-pressed="true"] span::before { content: "✓ "; color: var(--accent); }
+.scene { margin: 0; padding: 8px; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.scene svg { display: block; width: 100%; height: auto; }
+.scene-caption { margin: 8px 0 0; font-size: 15px; color: var(--muted); }
+#event-start { margin: 12px 0 0; }
+#event-start:disabled { opacity: .45; cursor: not-allowed; }
+/* use の中身には頁の CSS が届かないので、線は受け継ぐ形で入れ物に置き、塗りは symbol の属性に書く */
+.ev-card svg, #scene { stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: #fff; }
+#scene .n { fill: none; }
+#scene .f { fill: #cfe6df; }
+.scene-item { opacity: 0; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease; }
+.scene-item.on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .scene-item { transition: none; transform: none; } }
 #samples { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--line); }
 #samples .note { margin-top: 8px; }
 #samples .examples { margin-top: 6px; }

@@ -87,3 +87,45 @@ def test_page_has_event_buttons_slot():
     assert '"/api/events"' in js and '"/api/event"' in js
     # 出来事の道は合言葉なしで結果まで来るので、合言葉が要る置き場ではまとめ（/api/summary）を送らない
     assert "(state.event || state.restored) && needGate && !aikotoba" in js
+
+
+def test_picked_events_are_combined_without_claude(monkeypatch):
+    # 絵で選んだいくつかの出来事（T-124）。文は札の順につなぎ、同じ事実（residence）は 1 つにし、Claude は呼ばない
+    def no_claude(*args, **kwargs):
+        raise AssertionError("出来事の絵で Claude を呼んだ")
+
+    monkeypatch.setattr(app_mod.CLAUDE, "extract", no_claude)
+    monkeypatch.setattr(app_mod, "PASSPHRASE", "himitsu")
+    data = client.post("/api/event", json={"ids": ["discharged", "falls", "alone", "falls"]}).json()
+    assert data["text"] == "病院から退院して、家に戻りました。家の中で転びやすくなりました。一人暮らしになりました。"
+    assert data["facts"] == {"residence": "home", "household": "alone"}
+    assert [x["evidence"] for x in data["extracted"]] == ["家に戻りました", "一人暮らし"]
+    assert data["question"] is not None and data["results"]
+    # 1 件だけなら、id で送ったときと同じ答え
+    one = client.post("/api/event", json={"ids": ["alone"]}).json()
+    assert one == client.post("/api/event", json={"id": "alone"}).json()
+    # 知らない出来事が 1 つでも混じれば断る。何も選んでいなければ断る。数の上限を超えれば 422
+    assert client.post("/api/event", json={"ids": ["alone", "nope"]}).status_code == 404
+    assert client.post("/api/event", json={"ids": []}).status_code == 404
+    assert client.post("/api/event", json={"ids": ["alone"] * 7}).status_code == 422
+
+
+def test_every_event_has_a_picture_and_a_place_in_the_scene():
+    # 札の絵と家の絵は同じ symbol（art-<id>）を使う（T-124）。絵には文字のラベル（札の名前）が付き、
+    # 札はボタン（キーボードで選べる・aria-pressed）で、家の絵は読み上げから外し、選んだ名前は文字の行で知らせる
+    import re
+
+    html = (app_mod.WEB_DIR / "index.html").read_text(encoding="utf-8")
+    js = (app_mod.WEB_DIR / "app.js").read_text(encoding="utf-8")
+    css = (app_mod.WEB_DIR / "style.css").read_text(encoding="utf-8")
+    ids = [e["id"] for e in client.get("/api/events").json()]
+    assert len(ids) <= 8  # 家の絵に足す要素は 8 個まで
+    for i in ids:
+        assert f'<symbol id="art-{i}"' in html, i
+        assert f'data-ev="{i}"><use href="#art-{i}"' in html, i
+    assert not re.search(r'<(image|img)\b', html.split('id="events"')[1].split("</svg>\n    <svg")[0])  # 外の画像は使わない
+    assert '<figure class="scene" aria-hidden="true">' in html and 'aria-live="polite"' in html
+    assert 'el("button", { type: "button", class: "ev-card", "aria-pressed": "false"' in js
+    assert "prefers-reduced-motion: reduce) { .scene-item { transition: none" in css
+    # 相談の欄が最初で、絵はその下（11/5 21 時半の柴田の気づき）
+    assert html.index('id="text"') < html.index('id="send"') < html.index('id="events"') < html.index('id="samples"')

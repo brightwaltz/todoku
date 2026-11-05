@@ -198,12 +198,50 @@ async function openSample(s) {
   await consultWith(s.text, () => api("/api/sample", { id: s.id }));
 }
 
-// 入口の出来事（T-071）。出来事の文を下書きとして欄に入れ、その文から言える事実だけで最初の問いへ進む（Claude を呼ばない）
-async function openEvent(e) {
-  $("text").value = e.text;
-  lastDraft = e.text;  // 選ぶだけの下書きと同じ扱い（本人が書き換えるまでは、選び直すと作り直す）
-  show("redraft", false);
-  await consultWith(e.text, () => api("/api/event", { id: e.id, municipality: pick.city }));
+// 入口の出来事（T-071）を絵で選ぶ（T-124）。押すたびに選ぶ・外すを切り替え、家の絵に同じ絵を足し、
+// 選んだ出来事の文をつないで下書きにする。「選んだ出来事で始める」で、その文から言える事実だけで最初の問いへ進む（Claude を呼ばない）
+let eventList = [];
+const eventPicked = new Set();
+const SCENE_EMPTY = "出来事を選ぶと、家の絵に足されていきます。";
+
+function eventCard(e) {
+  const card = el("button", { type: "button", class: "ev-card", "aria-pressed": "false", "data-ev": e.id });
+  if (document.getElementById(`art-${e.id}`)) {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 100 100");
+    svg.setAttribute("aria-hidden", "true");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute("href", `#art-${e.id}`);
+    svg.append(use);
+    card.append(svg);
+  }
+  card.append(el("span", {}, e.label));
+  card.addEventListener("click", () => toggleEvent(e.id));
+  return card;
+}
+
+function toggleEvent(id) {
+  if (eventPicked.has(id)) eventPicked.delete(id); else eventPicked.add(id);
+  const picked = eventList.filter((e) => eventPicked.has(e.id));  // 札の並びの順で文をつなぐ
+  document.querySelectorAll("#event-list .ev-card").forEach((c) => c.setAttribute("aria-pressed", String(eventPicked.has(c.dataset.ev))));
+  document.querySelectorAll("#scene .scene-item").forEach((g) => g.classList.toggle("on", eventPicked.has(g.dataset.ev)));
+  $("scene-caption").textContent = picked.length ? `選んだ出来事：${picked.map((e) => e.label).join("・")}` : SCENE_EMPTY;
+  $("event-start").disabled = !picked.length;
+  const box = $("text");
+  const edited = box.value !== lastDraft && box.value.trim() !== "";
+  if (!edited) {  // 本人が書き換えるまでは、選び直すと下書きを作り直す（選ぶだけの下書きと同じ扱い）
+    const draft = picked.map((e) => e.text).join("");
+    box.value = draft;
+    lastDraft = draft;
+    show("redraft", false);
+  }
+}
+
+async function openEvents() {
+  const ids = eventList.filter((e) => eventPicked.has(e.id)).map((e) => e.id);
+  if (!ids.length) return;
+  const text = eventList.filter((e) => eventPicked.has(e.id)).map((e) => e.text).join("");
+  await consultWith(text, () => api("/api/event", { ids, municipality: pick.city }));
 }
 
 async function consultWith(text, call) {
@@ -1302,7 +1340,9 @@ fetch("/japan-map").then((r) => (r.ok ? r.text() : "")).then((html) => {
 // 出来事のボタンも、取れたときだけ出す（T-071）
 fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
-  $("event-list").replaceChildren(...list.map((e) => el("button", { type: "button", class: "chip", onclick: () => openEvent(e) }, e.label)));
+  eventList = list;
+  $("event-list").replaceChildren(...list.map(eventCard));
+  $("event-start").addEventListener("click", openEvents);
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す

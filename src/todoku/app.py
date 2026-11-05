@@ -14,7 +14,7 @@ import threading
 import time
 from collections import defaultdict, deque
 from pathlib import Path
-from typing import Any
+from typing import Annotated, Any
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
@@ -178,7 +178,8 @@ class SampleSummaryIn(In):
 
 
 class EventIn(In):
-    id: str = Field(max_length=40)
+    id: str = Field("", max_length=40)
+    ids: list[Annotated[str, Field(max_length=40)]] = Field(default_factory=list, max_length=events_mod.MAX_EVENTS)  # 絵で選んだ出来事（T-124）
     municipality: str = Field("", max_length=6)
 
 
@@ -682,9 +683,11 @@ def event(body: EventIn, request: Request) -> dict:
     Claude を呼ばないので合言葉は求めず、聞き返しと同じゆるい回数制限だけを掛ける。
     """
     guard(request, costly=False)
-    e = events_mod.find(body.id)
-    if e is None:
+    ids = list(dict.fromkeys(body.ids or ([body.id] if body.id else [])))  # 同じ出来事を 2 度送っても 1 度に数える
+    picked = [events_mod.find(i) for i in ids]
+    if not picked or any(e is None for e in picked):
         raise HTTPException(404, "この出来事は用意していません")
+    e = events_mod.combine(picked)
     extraction = check_extraction(RULES, e["text"], events_mod.reading(e))
     return {"engine": "event", "event": True, "text": e["text"], **consult_view(extraction, body.municipality)}
 

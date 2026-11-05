@@ -25,11 +25,46 @@
 
   <section id="input" class="card">
     <h2>困っていることを教えてください</h2>
-    <!-- 暮らしの出来事から入る（T-071）。押すと出来事の文を下書きにして、すぐ最初の問いへ。Claude を呼ばず、合言葉も要らない -->
-    <div id="events" hidden>
-      <p class="note">最近あった出来事から始める（1 つ押すと、すぐ最初の質問が出ます。文字は打たなくてかまいません）</p>
-      <div class="examples" id="event-list"></div>
+    <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
+    <textarea id="text" rows="5" maxlength="2000" placeholder="例：一人で暮らす母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
+    <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
+    <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
+    <button class="primary" id="send">相談する</button>
+
+    <!-- 絵から選ぶ（T-124。11/5 の柴田の感想「文字だけだとイメージが湧かない」）。相談の欄の下に置く。札は /api/events から作り、
+         絵は下の art-defs の symbol（id は art-<出来事の id>）。選ぶたびに家の絵に同じ絵が足される。Claude を呼ばず、合言葉も要らない（T-071） -->
+    <div id="events" class="pictures" hidden>
+      <h3 class="pictures-title">書くのが難しい方は、絵から選ぶ</h3>
+      <p class="note">当てはまる出来事を押してください（いくつでも）。選んだ出来事から相談の文を作ります。</p>
+      <div class="pictures-row">
+        <div class="event-cards" id="event-list" role="group" aria-label="暮らしの出来事"></div>
+        <figure class="scene" aria-hidden="true">
+          <svg viewBox="0 0 480 230" id="scene">
+            <polyline class="n" points="6,76 240,16 474,76"/>
+            <rect class="n" x="20" y="76" width="440" height="134"/>
+            <line x1="6" y1="210" x2="474" y2="210"/>
+            <rect class="w" x="34" y="112" width="40" height="98" rx="2"/><circle class="f" cx="66" cy="164" r="3"/>
+            <rect class="w" x="140" y="88" width="44" height="32" rx="2"/><line x1="162" y1="88" x2="162" y2="120"/>
+            <g class="scene-item" data-ev="work"><use href="#art-work" x="34" y="142" width="80" height="80"/></g>
+            <g class="scene-item" data-ev="discharged"><use href="#art-discharged" x="106" y="116" width="100" height="100"/></g>
+            <g class="scene-item" data-ev="diapers"><use href="#art-diapers" x="204" y="172" width="42" height="42"/></g>
+            <g class="scene-item" data-ev="forgetful"><use href="#art-forgetful" x="250" y="80" width="80" height="80"/></g>
+            <g class="scene-item" data-ev="alone"><use href="#art-alone" x="252" y="130" width="90" height="90"/></g>
+            <g class="scene-item" data-ev="falls"><use href="#art-falls" x="362" y="134" width="84" height="84"/></g>
+          </svg>
+        </figure>
+      </div>
+      <p class="scene-caption" id="scene-caption" aria-live="polite">出来事を選ぶと、家の絵に足されていきます。</p>
+      <button type="button" class="secondary" id="event-start" disabled>選んだ出来事で始める</button>
     </div>
+    <svg id="art-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="art-discharged" viewBox="0 0 100 100"><rect fill="#cfe6df" x="8" y="30" width="10" height="55" rx="3"/><rect fill="#fff" x="18" y="54" width="76" height="16" rx="4"/><rect fill="#cfe6df" x="44" y="47" width="50" height="11" rx="4"/><ellipse fill="#fff" cx="31" cy="49" rx="10" ry="6"/><line x1="24" y1="70" x2="24" y2="95"/><line x1="88" y1="70" x2="88" y2="95"/></symbol>
+      <symbol id="art-forgetful" viewBox="0 0 100 100"><rect fill="#fff" x="8" y="14" width="46" height="52" rx="3"/><rect fill="#cfe6df" x="8" y="14" width="46" height="12" rx="3"/><line x1="17" y1="38" x2="45" y2="38"/><line x1="17" y1="48" x2="45" y2="48"/><line x1="17" y1="58" x2="34" y2="58"/><circle fill="#fff" cx="76" cy="32" r="16"/><line x1="76" y1="32" x2="76" y2="22"/><line x1="76" y1="32" x2="84" y2="36"/></symbol>
+      <symbol id="art-alone" viewBox="0 0 100 100"><rect fill="#cfe6df" x="6" y="50" width="62" height="7" rx="2"/><line x1="14" y1="57" x2="14" y2="90"/><line x1="60" y1="57" x2="60" y2="90"/><rect fill="#fff" x="28" y="37" width="13" height="13" rx="2"/><path fill="none" d="M41 41 q6 2 0 7"/><rect fill="#fff" x="72" y="62" width="22" height="6" rx="2"/><line x1="92" y1="30" x2="92" y2="90"/><line x1="75" y1="68" x2="75" y2="90"/></symbol>
+      <symbol id="art-falls" viewBox="0 0 100 100"><line x1="6" y1="22" x2="94" y2="22"/><line x1="20" y1="22" x2="20" y2="10"/><line x1="80" y1="22" x2="80" y2="10"/><rect fill="#cfe6df" x="8" y="74" width="42" height="20" rx="2"/><rect fill="#cfe6df" x="50" y="56" width="44" height="38" rx="2"/></symbol>
+      <symbol id="art-work" viewBox="0 0 100 100"><circle fill="#fff" cx="40" cy="18" r="11"/><path fill="#cfe6df" d="M24 86 L27 44 Q40 32 53 44 L56 86 Z"/><line x1="53" y1="48" x2="64" y2="62"/><rect fill="#fff" x="60" y="60" width="26" height="20" rx="3"/><path fill="none" d="M67 60 v-5 h12 v5"/></symbol>
+      <symbol id="art-diapers" viewBox="0 0 100 100"><rect fill="#fff" x="12" y="18" width="76" height="72" rx="8"/><rect fill="#cfe6df" x="12" y="42" width="76" height="22"/><circle fill="#fff" cx="50" cy="53" r="7"/></symbol>
+    </svg>
     <div id="samples" hidden>
       <p class="note">見本で試す（合言葉なしで、最後まで動きます）</p>
       <div class="examples" id="sample-list"></div>
@@ -66,11 +101,6 @@
         <button type="button" class="gate-ok" id="gate-ok">合言葉を使う</button>
       </div>
     </div>
-    <label for="text" class="big">相談の文（直したり、書き足したりできます）</label>
-    <textarea id="text" rows="5" maxlength="2000" placeholder="例：一人で暮らす母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
-    <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
-    <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
-    <button class="primary" id="send">相談する</button>
     <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
   </section>
 

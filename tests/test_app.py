@@ -1345,11 +1345,13 @@ def test_gate_sits_below_samples_and_is_not_the_loudest_button():
     html = (root / "index.html").read_text(encoding="utf-8")
     js = (root / "app.js").read_text(encoding="utf-8")
 
-    at = {k: html.index(f'id="{k}"') for k in ("input", "samples", "sample-list", "gate", "text", "send")}
-    assert at["input"] < at["samples"] < at["sample-list"] < at["gate"] < at["text"] < at["send"]
+    # T-124（11/5 21 時半の柴田の気づき「相談の文をいちばん上に置く」）で、相談の欄と「相談する」を見本より上に移した。
+    # 見本より上の塗りのボタンは「相談する」の 1 つだけ。合言葉の欄は見本より下に残す（最初の画面でいちばん目立たせない）
+    at = {k: html.index(f'id="{k}"') for k in ("input", "text", "send", "events", "samples", "sample-list", "gate")}
+    assert at["input"] < at["text"] < at["send"] < at["events"] < at["samples"] < at["sample-list"] < at["gate"]
     gate_ok = re.search(r'<button[^>]*id="gate-ok"[^>]*>', html).group(0)
     assert "primary" not in gate_ok
-    assert 'class="primary"' not in html[: at["samples"]]
+    assert html[: at["samples"]].count('class="primary"') == 1
     # 見本は合言葉の欄より上にあるので、「下の見本」と書かない
     assert "下の見本" not in html and "下の見本" not in js
 
