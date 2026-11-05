@@ -1,0 +1,68 @@
+city: "282049"
+name: 西宮市
+site: nishi.or.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品の支給（紙おむつ）
+    where: 高齢介護課 管理チーム（窓口・郵送・にしのみやスマート申請）
+    conditions:
+      - 市内に住む要介護4か5の人で、いつも失禁がある
+      - 本人と介護する家族の世帯が、どちらも市民税非課税で生活保護でない
+      - 障害の日常生活用具でおむつを受けていない。入院中・施設に入っている人は対象外
+      - 月1回届け、市の助成は月6,500円まで（超えた分は自己負担）
+    sources:
+      - url: https://www.nishi.or.jp/kenko/koreishafukushi/zaitaku/kaigoyohin.html
+        publisher: 西宮市
+        title: 介護用品の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等位置探索サービス事業（GPS 端末の貸与）
+    where: 地域共生推進課（郵送でも申し込める）
+    conditions:
+      - 市内に住む65歳以上の認知症の人など（40〜64歳で要介護などの認定を受けた人を含む）を介護する家族
+      - 市が支援が要ると認めた人
+      - GPS 端末を貸し出し、始めるときの費用は市が出す
+      - 月々の費用は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.nishi.or.jp/kenko/koreishafukushi/zaitaku/haikai.html
+        publisher: 西宮市
+        title: 認知症高齢者等位置探索サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 65歳以上か介護保険の40〜64歳の人はくらし支援課、それ以外は障害福祉課
+    conditions:
+      - 生活保護などで資産が少なく、助成が無いと後見人の報酬を払えない人（親族の後見人は対象外）
+      - 報酬の助成は月に施設18,000円・在宅28,000円まで。報酬の審判から3か月以内に申請
+      - 申立ての費用は、生活保護などを受けて法テラスを使えない人に実費を助成（鑑定は10万円まで）
+      - 令和8年10月に要綱が変わったので、細かい基準は窓口で確かめる
+    sources:
+      - url: https://www.nishi.or.jp/kenko/koreishafukushi/shienjigyo/kokenseido.html
+        publisher: 西宮市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族慰労金の支給
+    where: 高齢介護課 管理チームに問い合わせる
+    conditions:
+      - 家で暮らす要介護4か5の人を介護する家族（主に介護する配偶者か、生活を支える扶養義務者）
+      - 直近1年、介護保険サービスを使っていない（ショートステイは年7日まで可）
+      - 本人と家族の世帯が、どちらも市民税非課税
+      - 年額12万円。頁の更新が2024年なので、今の内容は窓口で確かめる
+    sources:
+      - url: https://www.nishi.or.jp/kenko/koreishafukushi/zaitaku/irokin.html
+        publisher: 西宮市
+        title: 家族慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
