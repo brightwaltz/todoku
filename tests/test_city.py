@@ -130,3 +130,17 @@ def test_center_card_says_how_staff_can_use_it(code):
     center = re.search(r'data-level="center">(.*?)</section>', html, re.S).group(1)
     assert f'<p class="note city-staff">{escape(STAFF_NOTE)}</p>' in center
     assert html.count("city-staff") == 1
+
+
+def test_staff_note_points_to_the_centers_privacy_rules():
+    """相談先の枠の「控えにできます」に、控えはご本人の情報で、センターの個人情報の決まりに従う 1 文があるか（T-102。README の T-099 と同じ言い分）。"""
+    from html import escape
+
+    from todoku.city import STAFF_NOTE
+
+    assert "控えにできます" in STAFF_NOTE
+    assert "ご本人の情報" in STAFF_NOTE
+    assert "個人情報の取り扱いの決まりに従って" in STAFF_NOTE
+    assert STAFF_NOTE.index("控えにできます") < STAFF_NOTE.index("ご本人の情報")
+    html = client.get(f"/city/{MACHIDA}").text
+    assert escape("個人情報の取り扱いの決まりに従って") in html
