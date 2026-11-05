@@ -321,6 +321,16 @@ prefectures:
       - https://www.pref.fukuoka.lg.jp/contents/koureisya-sumiyoka.html
       - https://www.pref.fukuoka.lg.jp/contents/kaigohoken-riyousyafutankeigen.html
     found: []
+  "41":  # 佐賀県。「高齢者福祉・介護保険」の分類の記事（4 頁分の題名）と、その下の「支援・補助」「施設・団体」「認知症」の頁は、計画、事業者向けの補助や指定・届出・研修、認知症の啓発と相談先、施設の一覧で、県に個人で申し込む給付や割引は無かった。介護員養成研修受講支援補助金は介護職として県内で働いている人向けで、高齢者・家族の制度ではない。在宅生活サポートセンターの住宅相談（建築士の無料相談）は相談先。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.saga.lg.jp/list00571.html
+      - https://www.pref.saga.lg.jp/list00575.html
+      - https://www.pref.saga.lg.jp/list00574.html
+      - https://www.pref.saga.lg.jp/list00572.html
+      - https://www.pref.saga.lg.jp/kiji00362316/index.html
+      - https://www.pref.saga.lg.jp/kiji00388781/index.html
+    found: []
   "42":  # 長崎県。長寿社会課の頁の記事の一覧と、「シニア世代の社会参加応援サイト」「ケアラー支援に関する長崎県の取組」「認知症施策」「高齢者相談窓口」の頁は、計画、事業者向けの補助や研修、催しと表彰、ケアラーと認知症の啓発、相談先で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
     checked: 2026-11-06
     looked:
@@ -337,6 +347,24 @@ prefectures:
       - https://www.pref.kumamoto.jp/soshiki/33/
       - https://www.pref.kumamoto.jp/soshiki/33/906.html
       - https://www.pref.kumamoto.jp/soshiki/33/276354.html
+    found: []
+  "44":  # 大分県。高齢者福祉課の頁の記事（約 160 件の題名）と「県民のみなさまへ」「高齢者の生きがいづくり」の頁は、計画、事業者向けの補助や指定・届出・研修、介護人材、介護予防と通いの場、認知症の啓発と相談先、老人クラブ、催し、戦没者の遺族の援護で、県に個人で申し込む給付や割引は無かった。「ふるさとの達人」は地域で活動する高齢者を登録して紹介するもので、給付や割引ではない。社会福祉法人等による利用者負担額軽減制度は全国の制度。第十二回特別弔慰金は国の制度。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.oita.jp/soshiki/12300/
+      - https://www.pref.oita.jp/site/790/
+      - https://www.pref.oita.jp/soshiki/12300/koureikaigo.html
+      - https://www.pref.oita.jp/site/ikigai/
+      - https://www.pref.oita.jp/site/ikigai/tatujin9.html
+    found: []
+  "45":  # 宮崎県。長寿介護課の頁と、「高齢者福祉」「高齢化対策」の分類の記事は、計画、事業者向けの補助や指定・届出・研修、虐待の防止、認知症の啓発と相談先、催しで、県に個人で申し込む給付や割引は無かった。シニアサークル活動モデル構築事業は一般財団法人が受け付け、募集は終わっている。介護の担い手体験事業（60 歳以上が介護助手を体験）は県社会福祉協議会が行う。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.miyazaki.lg.jp/choju/index.html
+      - https://www.pref.miyazaki.lg.jp/kurashi/koresha/koresha/index.html
+      - https://www.pref.miyazaki.lg.jp/kurashi/koresha/taisaku/index.html
+      - https://www.pref.miyazaki.lg.jp/choju/kurashi/koresha/20260728142200.html
+      - https://www.pref.miyazaki.lg.jp/choju/kurashi/koresha/20260520ninaite.html
     found: []
   "46":  # 鹿児島県。「高齢者・介護保険」の頁と、その下の「生きがいづくり」「在宅福祉」の頁は、事業者向けの指導や補助・研修、介護人材、計画、虐待の防止、催し、相談先で、県に個人で申し込む給付や割引は無かった。シニア応援情報は活動事例と催しの案内。駐車場の利用証は調べていない
     checked: 2026-11-06
