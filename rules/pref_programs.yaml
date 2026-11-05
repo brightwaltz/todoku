@@ -19,6 +19,17 @@ prefectures:
       - https://www.pref.hokkaido.lg.jp/hf/khf/tiikisien/syakaisanka/
       - https://www.pref.hokkaido.lg.jp/hf/khf/ninchisyo/224633.html
     found: []
+  "03":  # 岩手県。「高齢者福祉」の分類の頁と、その下の「高齢者福祉の推進」「生きがいづくりと社会参加の推進」「認知症施策」の頁、「介護福祉」の頁の記事は、計画、百歳の長寿者への知事のメッセージ、事業者向けの補助や届出・研修、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。高齢者及び障がい者にやさしい住まいづくり推進事業（住宅改善の助成）は実施するのが市町村で、県は市町村に補助するだけ。ご近所支え合い活動助成金は団体や法人が申し込むもの。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/torikumi/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/shakaisanka/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/shakaisanka/1003664.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/ninchishou/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/kaigo/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/kaigo/1003679.html
+    found: []
   "04":  # 宮城県。長寿社会政策課の企画推進班・地域包括ケア推進班の業務の一覧と「高齢者福祉制度・各種支援」の分類の記事は、計画、虐待の防止、事業者向けの補助や研修、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。宮城いきいき学園（おおむね 55 歳以上の学びの場）は、運営と申し込み先が県社会福祉協議会。駐車場の利用証は高齢者の頁からは見当たらず、調べていない
     checked: 2026-11-06
     looked:
@@ -27,6 +38,12 @@ prefectures:
       - https://www.pref.miyagi.jp/soshiki/chouju/chikihoukatsu.html
       - https://www.pref.miyagi.jp/life/5/73/65/index.html
       - https://www.pref.miyagi.jp/soshiki/chouju/miyagi-elderly.html
+    found: []
+  "05":  # 秋田県。「高齢者・介護・国保」の分類の頁と「高齢者施策情報」の記事の一覧は、計画、事業者向けの補助や説明会・研修、老人クラブの催しと表彰、相談先、後期高齢者医療の案内で、県に個人で申し込む給付や割引は無かった。介護マークは給付や割引ではなく、栃木県などと揃えて入れていない。秋田県老連大学校は老人クラブ連合会の学びの場。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.akita.lg.jp/pages/genre/11668
+      - https://www.pref.akita.lg.jp/pages/genre/11895
     found: []
   "08":  # 茨城県。長寿福祉課の頁の一覧で、県の制度として本人が受け取って使うのはいばらきシニアカードだけだった。身障者等用駐車場利用証（要介護 1 以上も対象、申請は市町村の窓口）は、済みの県で駐車場の利用証を調べていないので、揃えるまで入れていない（D-0102）。介護マークは県福祉サービス振興会の事業
     checked: 2026-11-06
@@ -170,6 +187,13 @@ prefectures:
       - https://www.pref.hiroshima.lg.jp/site/ninntisyoutaisaku/kaigomark.html
       - https://www.pref.hiroshima.lg.jp/soshiki/263/1307322029078.html
     found: []
+  "35":  # 山口県。長寿社会課の頁の記事の一覧（約 60 件の題名）は、計画、事業者向けの補助や届出・研修、介護予防の体操と手帳（PDF を配るだけ）、認知症の啓発と相談先、戦没者の遺族の援護で、県に個人で申し込む給付や割引は無かった。第十二回特別弔慰金は国の制度。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.yamaguchi.lg.jp/life/2/
+      - https://www.pref.yamaguchi.lg.jp/soshiki/49/
+      - https://www.pref.yamaguchi.lg.jp/soshiki/49/18515.html
+    found: []
   "38":  # 愛媛県。長寿介護課の頁の記事の一覧（約 110 件の題名）は、事業者向けの補助や指定・届出・研修、介護人材、計画、虐待の防止、認知症の啓発と相談先、援護の行事で、県に個人で申し込む給付や割引は無かった。補助金はどれも事業所向け。在宅介護研修センター（愛ケア）の講座は無料の講座、高齢者相談センターは相談先。駐車場の利用証は調べていない
     checked: 2026-11-06
     looked:
@@ -183,6 +207,15 @@ prefectures:
       - https://www.pref.fukuoka.lg.jp/uploaded/life/832909_62995711_misc.pdf
       - https://www.pref.fukuoka.lg.jp/contents/koureisya-sumiyoka.html
       - https://www.pref.fukuoka.lg.jp/contents/kaigohoken-riyousyafutankeigen.html
+    found: []
+  "42":  # 長崎県。長寿社会課の頁の記事の一覧と、「シニア世代の社会参加応援サイト」「ケアラー支援に関する長崎県の取組」「認知症施策」「高齢者相談窓口」の頁は、計画、事業者向けの補助や研修、催しと表彰、ケアラーと認知症の啓発、相談先で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.nagasaki.jp/organization/fukushihokenbu/choju/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/syakaisanka/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/carers/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/ninchisyou/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/madoguchi/
     found: []
   "43":  # 熊本県。高齢者支援課と認知症施策・地域ケア推進課の記事の一覧は、介護人材の確保、計画、事業者向けの事務連絡や研修、団体向けの補助、在宅医療の啓発で、県に個人で申し込む給付や割引は無かった。社会福祉法人等の利用者負担軽減は市町村が確認証を出す。令和 8 年熊本地震の被災者の介護保険の利用料（事業所の窓口で申告すれば支払い不要、令和 9 年 2 月末のサービス分まで）は国の取り扱いで、県に申し込むものではない。駐車場の利用証は調べていない
     checked: 2026-11-06
