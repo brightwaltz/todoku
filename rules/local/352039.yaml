@@ -1,0 +1,68 @@
+city: "352039"
+name: 山口市
+site: city.yamaguchi.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品の支給
+    where: 高齢福祉課（本庁舎1階）か各総合支所の総合サービス課。申請書にケアマネジャーが書く欄がある
+    conditions:
+      - 市の介護保険の被保険者で、家で暮らしている要介護1〜5の人
+      - いつも失禁などがあり、介護用品が要る
+      - 介護保険料が第1〜第3段階（市民税非課税）で、生活保護を受けていない
+      - 月の上限は要介護1〜3が2,500円、4〜5が5,000円（超えた分は自分で払う）
+      - 紙おむつ・紙パンツ・尿取りパッド。申請した翌月の分から
+    sources:
+      - url: https://www.city.yamaguchi.lg.jp/site/korei/4719.html
+        publisher: 山口市
+        title: 介護用品の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 生活支援型給食サービス
+    where: 住んでいる地域の地域包括支援センター
+    conditions:
+      - 昼か夕の1食を届け、そのときに安否を確かめる
+      - 要支援1・2の人や、自分で調理できないおおむね65歳以上の人など（区分が3つある）
+      - 自己負担は1食310〜510円
+    sources:
+      - url: https://www.city.yamaguchi.lg.jp/site/korei/4715.html
+        publisher: 山口市
+        title: 生活支援型給食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（報酬の助成）
+    where: 高齢福祉課 成年後見センター（山口総合支所1階）
+    conditions:
+      - 家庭裁判所で後見人などが選ばれている人
+      - 生活保護を受けているか、すぐ現金にできる資産が合わせて50万円以下
+      - 月の上限は在宅28,000円・施設18,000円（家庭裁判所が決めた報酬の範囲）
+      - 報酬を決める審判の日から6か月以内に、本人か後見人などが申請する
+    sources:
+      - url: https://www.city.yamaguchi.lg.jp/site/korei/33509.html
+        publisher: 山口市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金
+    where: 介護保険課 介護給付担当（山口総合支所1階）
+    conditions:
+      - 本人と介護する家族が市に住み、本人が要介護3以上
+      - 同居の家族が家で介護し、介護保険サービスの利用が合わせて10日以内
+      - 両方の世帯の全員が市民税非課税で、保険料の滞納が無い
+      - 年10万円。対象の期間が終わった次の日から1年以内に申請する
+    sources:
+      - url: https://www.city.yamaguchi.lg.jp/site/korei/3958.html
+        publisher: 山口市
+        title: 家族介護慰労金
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

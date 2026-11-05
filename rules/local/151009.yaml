@@ -1,0 +1,72 @@
+city: "151009"
+name: 新潟市
+site: city.niigata.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ支給事業
+    where: 各区役所の健康福祉課（高齢介護担当）
+    conditions:
+      - 40歳以上で在宅、要介護1〜5の認定があり、いつもおむつが要る人
+      - 寝たきり度がB以上か、認知症の自立度がIII以上と認定調査で判定された人
+      - 本人が市民税非課税の人（介護保険料の段階が1〜5）
+      - 紙おむつ券を毎月支給し、枚数は世帯の課税状況と要介護度で変わる
+      - 券は指定業者で紙おむつや尿とりパッドと引き換える
+    sources:
+      - url: https://www.city.niigata.lg.jp/iryo/korei/zaitakukaigo/kamiomutsu.html
+        publisher: 新潟市
+        title: 紙おむつ支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 徘徊高齢者の家族支援（位置検索用端末の貸与）
+    where: 各区役所の健康福祉課（高齢介護担当）、地域保健福祉センター、地域包括支援センター
+    conditions:
+      - 認知症などで徘徊が見られる65歳以上の人を在宅で介護する家族
+      - 65歳未満は、要介護・要支援の認定があり徘徊が見られる人を介護する家族
+      - GPS付きの小さな端末を貸し出し、家族のスマートフォンなどで24時間居場所を探せる
+      - 費用は月額で、世帯全員が市民税非課税なら0円、課税の人がいれば1,100円
+    sources:
+      - url: https://www.city.niigata.lg.jp/iryo/korei/anshinseikatsu/haikai.html
+        publisher: 新潟市
+        title: 徘徊高齢者の家族支援（位置検索用端末の貸与）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 各区役所の健康福祉課（高齢介護担当）
+    conditions:
+      - 高齢者の一人暮らしか高齢者だけの世帯で、食事を作るのが難しい人
+      - 栄養に配慮した食事を届け、あわせて安否を確かめる
+      - 区ごとに内容が違い、東区と中央区では行っていない
+    sources:
+      - url: https://www.city.niigata.lg.jp/iryo/korei/anshinseikatsu/haishoku.html
+        publisher: 新潟市
+        title: 配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 各区役所の健康福祉課（助成を申し込む人の住民票がある区。オンライン・郵送も可）
+    conditions:
+      - 市内に住む、判断能力が十分でない認知症高齢者や知的・精神障がいのある人
+      - 本人か申立人が生活保護を受けているか、それに準じる人
+      - 申立ての登記手数料や鑑定などの費用を助成する
+      - 後見人などへの報酬も月額上限まで助成（在宅28,000円、施設入所18,000円）
+      - 後見人などが配偶者・直系の血族・兄弟姉妹の場合は助成の対象外
+    sources:
+      - url: https://www.city.niigata.lg.jp/iryo/korei/anshinseikatsu/koreisha-seinenkoken.html
+        publisher: 新潟市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

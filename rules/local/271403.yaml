@@ -1,0 +1,83 @@
+city: "271403"
+name: 堺市
+site: city.sakai.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 高齢者紙おむつ給付事業
+    where: お住まいの区役所の地域福祉課（堺市電子申請システムでも申請できる）
+    conditions:
+      - 堺市に住み住民票がある65歳以上で、要介護4または5の人
+      - 寝たきりや認知症で、いつも紙おむつを使う必要がある人
+      - 市民税非課税世帯に属すること（生活保護世帯は対象外）
+      - 介護保険施設に入所中の人、医療機関に入院中の人は対象外
+      - 月1枚（上限6,500円）の給付券を、登録事業者で紙おむつと引き換える
+    sources:
+      - url: https://www.city.sakai.lg.jp/kenko/fukushikaigo/koreishafukushi/life_support/kamiomutsu.html
+        publisher: 堺市
+        title: 高齢者紙おむつ給付事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 堺市みまもりあい事業
+    where: 各区の地域福祉課または長寿支援課の窓口（郵送・オンライン申請もできる）
+    conditions:
+      - 堺市に住所があり、自宅で暮らす65歳以上の人（若年性認知症の人も含む）
+      - 認知症などで一人で歩き回り、行方不明になるおそれがある人
+      - 特養・老健・介護医療院・グループホームで暮らす人は対象外
+      - 要介護認定を受けていない人は、認知症などの診断書等が必要
+      - 衣類に貼る連絡用ステッカーを配り、専用アプリで捜索の協力を頼める
+    sources:
+      - url: https://www.city.sakai.lg.jp/kenko/fukushikaigo/koreishafukushi/dementia/sakaimimamoriai.html
+        publisher: 堺市
+        title: 堺市みまもりあい事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（堺市成年後見制度利用支援給付金）
+    where: 被後見人等が住む区の区役所地域福祉課（精神障害者は各区の保健センター）
+    conditions:
+      - 堺市に住所があり、生活保護か中国残留邦人等支援給付を受けている人
+      - 世帯の収入と預貯金が基準以下で、認められた住まい以外の土地家屋を持たない人も対象
+      - 後見人等が配偶者や4親等内の親族のとき、また任意後見は対象外
+      - 家庭裁判所の報酬付与の審判から6か月以内に申請する
+      - 後見人等の報酬を助成し、上限は在宅で月2万8千円、施設で月1万8千円
+    sources:
+      - url: https://www.city.sakai.lg.jp/kenko/fukushikaigo/chiikifukushi/kenriwomamoru/seinenkoukenkyufukin.html
+        publisher: 堺市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review:
+      read_by: "Managed Agent（Opus 5.5）"
+      recheck: fixed
+      note: 頁では土地家屋は「基準以下」ではなく「所有していない」ことが要件なので、2行目をそのように直した。
+      date: 2026-11-05
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給事業
+    where: 住所地を管轄する区役所の地域福祉課
+    conditions:
+      - 堺市に住民登録がある同居の家族が、要介護者を1年以上在宅で介護している
+      - 要介護者は堺市の介護保険の被保険者で、市に1年以上住み、要介護4か5が1年以上続く
+      - 要介護者は1年間介護保険サービスを使っていない（7日以内の短期入所等は可、福祉用具レンタルは不可）
+      - 介護者も要介護者も市民税非課税世帯。保険料の完納も要る（介護者は40歳以上の場合）
+      - 支給額は要介護者1人につき10万円
+    sources:
+      - url: https://www.city.sakai.lg.jp/kenko/fukushikaigo/kaigo/kaigoshashien/kazokukaigoiroukin.html
+        publisher: 堺市
+        title: 家族介護慰労金支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review:
+      read_by: "Managed Agent（Opus 5.5）"
+      recheck: fixed
+      note: 介護者・要介護者とも堺市に住民登録があること（要介護者は市の介護保険被保険者で1年以上の登録）という主な条件が抜けていたので足し、例外の2行を1行にまとめた。
+      date: 2026-11-05

@@ -1,0 +1,83 @@
+city: "242012"
+name: 津市
+site: info.city.tsu.mie.jp
+# T-131：読む1 と読む2 が 5 型とも名前と骨組みで合った。金額・自己負担・要介護度・所得の基準は、どちらの読みでも頁に無かった（申請書の PDF 側）。
+# そのため条件は両方の読みが合った骨組みだけにし、細部は「問い合わせて確かめる」と書く。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ等給付事業
+    where: 高齢福祉課 高齢福祉担当（頁の問い合わせ先）
+    conditions:
+      - 65歳以上で家で暮らし、寝たきりや認知症などで失禁があって、いつも紙おむつが要る人
+      - 令和6年度から、本人が課税されている人（介護保険料の第6段階以上）は対象外
+      - 品目・金額・自己負担は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+        publisher: 津市
+        title: 高齢福祉サービスのご案内
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+      - url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003164.html
+        publisher: 津市
+        title: 紙おむつ等給付事業の見直し
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 徘徊SOSネットワーク津・津市高齢者徘徊探知機購入費等補助事業
+    where: 高齢福祉課 高齢福祉担当（頁の問い合わせ先）
+    conditions:
+      - 前もって登録しておくと、行方が分からなくなったときに、家族の依頼で協力する機関へメールで知らせる
+      - 位置を探す機器の購入費などの補助もある。補助の額と要件は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+        publisher: 津市
+        title: 高齢福祉サービスのご案内
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス事業
+    where: 高齢福祉課 高齢福祉担当（頁の問い合わせ先）
+    conditions:
+      - 自分で調理するのが難しい、家で暮らす高齢者に食事を届け、そのときに安否を確かめる
+      - 年齢・所得の基準・自己負担は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+        publisher: 津市
+        title: 高齢福祉サービスのご案内
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 津市成年後見サポートセンター（中核機関）。頁の問い合わせ先は高齢福祉課 高齢福祉担当
+    conditions:
+      - 身寄りが無いなど、親族が申し立てられない人は、市長が申し立てる
+      - 費用を払うのが難しい人に、経費を助成する
+      - 助成の上限や、所得と資産の基準は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+        publisher: 津市
+        title: 高齢福祉サービスのご案内
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労事業
+    where: 高齢福祉課 高齢福祉担当（頁の問い合わせ先）
+    conditions:
+      - 介護保険のサービスを使わずに、家で高齢者を介護している家族に慰労金を出す
+      - 要介護度・期間・所得の基準・金額は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+        publisher: 津市
+        title: 高齢福祉サービスのご案内
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

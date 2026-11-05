@@ -13,7 +13,14 @@ from todoku.city import (FIRST_MARK, PREF_NONE_FOUND, SUMMARY_FIRST, SUMMARY_NOT
                          SUMMARY_PREF_UNSEEN, SUMMARY_TITLE, SUMMARY_TYPES, SUMMARY_TYPES_N)
 
 client = TestClient(app)
-MACHIDA, YOKOHAMA, VILLAGE, OSAKA = "132098", "141003", "023043", "271004"  # 大阪市は国の制度と型だけの市
+MACHIDA, YOKOHAMA, VILLAGE, OSAKA = "132098", "141003", "023043", "271004"  # 大阪市は国の制度と型（型は rules/local の大阪市の事業で出す。T-075e）。大阪府の制度はまだ無い
+
+
+def no_pref_record(monkeypatch):
+    """T-129 で青森県・大阪府も調べた記録（rules/pref_programs.yaml）に入ったので、記録が無いときの帯をここで作って確かめる。"""
+    from todoku import pref_programs
+
+    monkeypatch.setattr(pref_programs, "_all", lambda: {})
 
 
 def summary(code: str) -> tuple[str, str]:
@@ -79,8 +86,9 @@ def test_breakdown_names_the_country_the_prefecture_and_the_city(code, labels):
 
 
 @pytest.mark.parametrize("code", [VILLAGE, OSAKA])
-def test_places_without_their_own_rules_do_not_show_zero(code):
+def test_places_without_their_own_rules_do_not_show_zero(code, monkeypatch):
     """T-113：市・県の制度を書けていない頁で、帯に「<県> 0 件」「<市> 0 件」を出さない。県はまだ調べていないと書き、市は型の数で示す。"""
+    no_pref_record(monkeypatch)
     pref, name = PLACES[code]
     block = summary(code)[1]
     got = parts(block)
@@ -121,8 +129,9 @@ def test_summary_sits_in_the_header_before_the_lists():
     assert html.index('class="city-summary"') < html.index("</header>") < html.index('class="city-item')
 
 
-def test_band_says_kanagawa_was_checked_and_other_prefectures_were_not():
+def test_band_says_kanagawa_was_checked_and_other_prefectures_were_not(monkeypatch):
     """T-096 → T-113：神奈川県は調べて見つからなかったと書き、ほかの書けていない県（青森県・大阪府）はまだ調べていないと書く。0 件の注の行はもう無い。"""
+    no_pref_record(monkeypatch)
     block = summary(YOKOHAMA)[1]
     assert notes(block) == [SUMMARY_PREF_NONE.format(pref="神奈川県")] and "見つかりませんでした" in SUMMARY_PREF_NONE
     assert "city-none-found" not in block

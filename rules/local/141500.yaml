@@ -1,0 +1,56 @@
+city: "141500"
+name: 相模原市
+site: city.sagamihara.kanagawa.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ等の支給
+    where: 各地域包括支援センター、または緑・中央・南・津久井の各高齢・障害者相談課、城山・相模湖・藤野の各福祉相談センター
+    conditions:
+      - 市内に住み在宅で、ねたきり（要介護4・5）か認知症で紙おむつが要る高齢者
+      - 本人と世帯が市民税非課税か均等割だけの課税で、生活保護を使っていない人
+      - 介護保険施設・有料老人ホームなどに入所中や長期入院中の人は対象外
+      - 年6回、紙おむつや尿とりパッドを無料で支給（希望月の前月末までに申請）
+      - 身体障害者手帳（下肢・体幹1・2級）か療育手帳A1・A2の在宅の人も対象
+    sources:
+      - url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006388.html
+        publisher: 相模原市
+        title: 紙おむつ等の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "申請先に、頁にあって抜けていた津久井高齢・障害者相談課を足し、窓口の並べ方を頁に合わせた。"}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者・障害者等SOSネットワークシステム（見守りシール事業含む）
+    where: 各地域包括支援センター、または緑・中央・南・津久井の各高齢・障害者相談課、城山・相模湖・藤野の各福祉相談センター
+    conditions:
+      - 認知症や障害のある人の情報を写真とともに事前に登録しておく仕組み
+      - 行方不明時は警察署に電話すると、警察や交通機関などの協力で探してもらえる
+      - 在宅で行方不明のおそれがあり、迎えに行ける家族などがいれば見守りシールも配布
+      - シールの二次元コードを読むと24時間のコールセンターにつながる
+      - 登録もシールも無料（シールの追加発行は自己負担）
+    sources:
+      - url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006384.html
+        publisher: 相模原市
+        title: 認知症高齢者・障害者等SOSネットワークシステム（見守りシール事業含む）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "申請先に、頁にあって抜けていた津久井高齢・障害者相談課を足し、障害のある人の窓口（高齢福祉班ではない）も含むよう「（高齢福祉班）」を外した。"}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（高齢者等）
+    where: 各地域包括支援センター、または緑・中央・南・津久井の各高齢・障害者相談課、城山・相模湖・藤野の各福祉相談センター
+    conditions:
+      - 申立てをする親族がいないなど、制度が必要な認知症高齢者等は市長が申し立てる
+      - 生活保護を受けている人や、費用を払うのが難しいと認められる人が助成の対象
+      - 助成するのは審判の請求にかかる費用と、後見人などへの報酬
+    sources:
+      - url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006406.html
+        publisher: 相模原市
+        title: 成年後見制度利用支援事業（高齢者等）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "申請先に、頁にあって抜けていた津久井高齢・障害者相談課を足し、窓口の並べ方を頁に合わせた。"}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

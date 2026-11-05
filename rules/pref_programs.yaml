@@ -1,0 +1,422 @@
+# 47 都道府県の、本人か家族が個人で申し込める高齢者・介護の制度を調べた記録（T-129）。/city/ の頁の都道府県の段に出す。
+# 読み込みと形の検査は src/todoku/pref_programs.py、テストは tests/test_pref_programs.py。判定には使わない。
+# 規則にできた都の制度（東京都シルバーパスなど）は rules/programs に level 付きで書き、ここには書かない。
+# 神奈川県（2026-11-03、見つからなかった）は src/todoku/city.py の PREF_NONE_FOUND にある。
+#
+# キーは都道府県コード 2 桁（団体コードの頭 2 桁。引用符で囲む）。
+#   checked：確かめた日
+#   looked：見た頁の URL（県の高齢者・介護の案内の頁など）
+#   found：見つかった制度（確かめる候補）。空なら「調べて、個人で申し込めるものが見つからなかった」と出す。
+#     name：制度の名前／who：対象の主な条件の言い換え（頁の文は写さない）／where：申請先／url：出典
+# 市町村が申し込み先で県は費用を出すだけの事業、事業者や団体が申し込むもの、全国一律の国の制度の窓口は入れない。
+prefectures:
+  "01":  # 北海道。高齢者保健福祉課の施策の一覧（5 頁分の題名）と「生きがい・社会参加」の 2 頁は、事業者・市町村向けの補助や研修、啓発、催し、相談先で、道に個人で申し込む給付や割引は無かった
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.hokkaido.lg.jp/hf/khf/
+      - https://www.pref.hokkaido.lg.jp/category/d009/c060/s278/
+      - https://www.pref.hokkaido.lg.jp/hf/khf/kaigounnei/syakaisanka/
+      - https://www.pref.hokkaido.lg.jp/hf/khf/tiikisien/syakaisanka/
+      - https://www.pref.hokkaido.lg.jp/hf/khf/ninchisyo/224633.html
+    found: []
+  "02":  # 青森県。高齢福祉保険課の頁の記事の一覧と「介護・高齢福祉」の分類の頁、「認知症施策」の頁は、計画、事業者向けの補助や指定・届出・研修、介護人材、つどいの場、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。つながる、あおもり高齢者生活支援サイトは民間の高齢者向けサービスを紹介するもの。あおもり医療・介護手帳（認知症の情報連携の手帳）は疾患医療センターと市町村が配るもので、県への申し込みではない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/index.html
+      - https://www.pref.aomori.lg.jp/welfare/welfare/
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/ninchisyou_top.html
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/seikatushien_pf.html
+      - https://www.pref.aomori.lg.jp/soshiki/kenko/koreihoken/ninchisyou_techou.html
+    found: []
+  "03":  # 岩手県。「高齢者福祉」の分類の頁と、その下の「高齢者福祉の推進」「生きがいづくりと社会参加の推進」「認知症施策」の頁、「介護福祉」の頁の記事は、計画、百歳の長寿者への知事のメッセージ、事業者向けの補助や届出・研修、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。高齢者及び障がい者にやさしい住まいづくり推進事業（住宅改善の助成）は実施するのが市町村で、県は市町村に補助するだけ。ご近所支え合い活動助成金は団体や法人が申し込むもの。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/torikumi/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/shakaisanka/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/shakaisanka/1003664.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/koureisha/ninchishou/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/kaigo/index.html
+      - https://www.pref.iwate.jp/kurashikankyou/fukushi/kaigo/1003679.html
+    found: []
+  "04":  # 宮城県。長寿社会政策課の企画推進班・地域包括ケア推進班の業務の一覧と「高齢者福祉制度・各種支援」の分類の記事は、計画、虐待の防止、事業者向けの補助や研修、認知症の啓発と相談先で、県に個人で申し込む給付や割引は無かった。宮城いきいき学園（おおむね 55 歳以上の学びの場）は、運営と申し込み先が県社会福祉協議会。駐車場の利用証は高齢者の頁からは見当たらず、調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.miyagi.jp/soshiki/chouju/
+      - https://www.pref.miyagi.jp/soshiki/chouju/choujup.html
+      - https://www.pref.miyagi.jp/soshiki/chouju/chikihoukatsu.html
+      - https://www.pref.miyagi.jp/life/5/73/65/index.html
+      - https://www.pref.miyagi.jp/soshiki/chouju/miyagi-elderly.html
+    found: []
+  "05":  # 秋田県。「高齢者・介護・国保」の分類の頁と「高齢者施策情報」の記事の一覧は、計画、事業者向けの補助や説明会・研修、老人クラブの催しと表彰、相談先、後期高齢者医療の案内で、県に個人で申し込む給付や割引は無かった。介護マークは給付や割引ではなく、栃木県などと揃えて入れていない。秋田県老連大学校は老人クラブ連合会の学びの場。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.akita.lg.jp/pages/genre/11668
+      - https://www.pref.akita.lg.jp/pages/genre/11895
+    found: []
+  "06":  # 山形県。「高齢者福祉」の分類の頁（介護一般・介護保険・事業者向け・資格・施設・認知症・虐待防止・住宅・社会参画・高齢者医療・お知らせの小分類）は、事業者向けの補助や研修・届出、施設とサービスの一覧、認知症の啓発と相談先、計画で、県に個人で申し込む給付や割引は無かった。社会参画・高齢者医療・お知らせの小分類は「情報はありません」。社会福祉法人等の利用者負担軽減は市町村が確認する制度。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.yamagata.jp/kenfuku/koreisha/index.html
+      - https://www.pref.yamagata.jp/090002/kenfuku/koreisha/kaigo/careservice.html
+      - https://www.pref.yamagata.jp/kenfuku/koreisha/sankaku/index.html
+      - https://www.pref.yamagata.jp/kenfuku/koreisha/iryo.html
+    found: []
+  "07":  # 福島県。「高齢者福祉」の分類の頁と、その下の「長寿社会対策」「介護・保険制度」の一覧、長寿社会対策のページ、高齢者社会参加活動支援事業の頁は、事業者向けの補助や研修、計画、催しと表彰、相談先で、県に個人で申し込む給付や割引は無かった。多世代同居・近居推進事業（住宅取得の補助）は 18 歳未満の子がいる子育て世帯が対象で、高齢者や介護の制度ではないので入れていない。やさしさマークは施設に交付するもの、県民介護講座は講座。おもいやり駐車場の利用証は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.fukushima.lg.jp/life/4/15/
+      - https://www.pref.fukushima.lg.jp/life/4/15/53/
+      - https://www.pref.fukushima.lg.jp/life/4/15/55/
+      - https://www.pref.fukushima.lg.jp/sec/21045a/tyoujushakaitaisaku.html
+      - https://www.pref.fukushima.lg.jp/sec/21045a/koureisya-syakaisannkakatudousien.html
+      - https://www.pref.fukushima.lg.jp/sec/41065b/tasedaidoukyokinnkyo.html
+      - https://www.pref.fukushima.lg.jp/sec/21035c/omoiyarityuushajou-sedo.html
+    found: []
+  "08":  # 茨城県。長寿福祉課の頁の一覧で、県の制度として本人が受け取って使うのはいばらきシニアカードだけだった。身障者等用駐車場利用証（要介護 1 以上も対象、申請は市町村の窓口）は、済みの県で駐車場の利用証を調べていないので、揃えるまで入れていない（D-0102）。介護マークは県福祉サービス振興会の事業
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.ibaraki.jp/soshiki/hokenfukushi/chofuku/index.html
+      - https://www.pref.ibaraki.jp/hokenfukushi/chofuku/choju/kofuku.html
+      - https://senior.pref.ibaraki.jp/senior/about/
+      - https://www.pref.ibaraki.jp/hokenfukushi/chofuku/chiiki/ud/parking/parking.html
+    found:
+      - name: いばらき高齢者優待制度（いばらきシニアカード）
+        who: 茨城県に住む 65 歳以上の本人。協賛店でカードを見せると割引などが受けられる（家族の代わりの利用はできない）
+        where: 住んでいる市町村の窓口（本人が、住所と生年月日の分かる身分証を持って受け取りに行く）
+        url: https://senior.pref.ibaraki.jp/senior/about/
+  "09":  # 栃木県。高齢対策課の頁と「高齢者福祉について」の一覧は、計画、虐待の防止、事業者向けの通知、相談先で、県に個人で申し込む給付や割引は無かった。運転免許の自主返納の支援と高齢者の外出支援は市町の制度の一覧、シルバー大学校（60 歳以上の学びの場）の申し込みは大学校の事務局。介護マークは県の高齢対策課の窓口で介護する人に無償で渡しているが、給付や割引ではなく、静岡県・新潟県（配るのが市町村など）と揃えて入れていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.tochigi.lg.jp/e03/
+      - https://www.pref.tochigi.lg.jp/e03/koureisayhks.html
+      - https://www.pref.tochigi.lg.jp/e03/syakaisanka.html
+      - https://www.pref.tochigi.lg.jp/e03/question/fukushi/koureisha/qa0403073.html
+      - https://www.pref.tochigi.lg.jp/e03/kaigomark.html
+      - https://www.pref.tochigi.lg.jp/c03/jisyuhennou.html
+    found: []
+  "10":  # 群馬県。介護高齢課の記事の一覧（約 90 件の題名）とトップの導線で、県の制度として本人が受け取って使うのはぐんまちょい得シニアパスポートだけだった。住宅改造費の助成・介護用品の支給・介護保険とは別のサービスは市町村の事業、長寿者の慶祝訪問は申し込み無し、ねんりんピックは催し。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.gunma.jp/soshiki/60/
+      - https://www.pref.gunma.jp/page/2151.html
+      - https://www.pref.gunma.jp/page/1762.html
+      - https://www.pref.gunma.jp/page/1755.html
+      - https://www.pref.gunma.jp/page/1749.html
+    found:
+      - name: ぐんまちょい得シニアパスポート（ぐーちょきシニアパスポート）
+        who: 群馬県に住む 65 歳以上で、受け取りを希望する本人。協賛店で見せると割引などが受けられる
+        where: 住んでいる市町村の高齢福祉の窓口（本人が、住所・氏名・生年月日の分かるものを見せる）。県の介護高齢課へ郵送でも受け取れる
+        url: https://www.pref.gunma.jp/page/2151.html
+  "11":  # 埼玉県。高齢者福祉課の頁に、県に直接申し込める手当や割引は無かった（大学の開放授業講座は申し込み先が各大学）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.saitama.lg.jp/soshiki/a0603/index.html
+      - https://www.pref.saitama.lg.jp/a0603/4-rikarento.html
+    found: []
+  "12":  # 千葉県。65 歳以上の入場優待は施設の窓口で年齢を見せるだけ、移動支援（タクシー・バスの割引）は市町村の制度の一覧で、県に申し込むものではなかった
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.chiba.lg.jp/koufuku/service/nyuujouyuutai.html
+      - https://www.pref.chiba.lg.jp/koufuku/seikatusienn/idoushien.html
+      - https://www.pref.chiba.lg.jp/kenshidou/shien/book/kourei.html
+    found: []
+  "15":  # 新潟県。高齢福祉保健課の頁と、在宅支援（見守り・認知症と権利擁護・介護予防）・生きがいづくりの頁、補助・助成・融資の一覧（高齢者・障害者・福祉）は、事業者向けの補助や研修、啓発、相談先で、県に個人で申し込む給付や割引は無かった。シニアカレッジ新潟（おおむね 60 歳以上の学びの場）の申し込み先は県社会福祉協議会、県民介護知識・技術習得講座は介護実習・普及センターの無料の講座、介護マークは市町村や地域包括支援センターで受け取る。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.niigata.lg.jp/sec/kourei/
+      - https://www.pref.niigata.lg.jp/sec/kourei/1318284056216.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1211302895778.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1239825713285.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1329253320248.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1326315653909.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1207242082879.html
+      - https://www.pref.niigata.lg.jp/sec/kourei/1347397239462.html
+      - https://www.pref.niigata.lg.jp/life/sub/5/3/
+    found: []
+  "16":  # 富山県。高齢福祉課の「高齢者福祉」の頁と、補助金・助成・高齢者支援・生きがいづくりの小分類、高齢福祉対策関係資料（令和 7 年度版）の住まい・介護予防と生活支援・生きがいの章は、事業者向けの補助や研修、計画と統計、団体（老人クラブ・いきいき長寿センター）の紹介で、県に個人で申し込む給付や割引は無かった。補助金・助成の 7 件はどれも事業所や施設向け。とやまシニア専門人材バンクは就業の仲介。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.toyama.jp/kurashi/kenkou/koureisha/index.html
+      - https://www.pref.toyama.jp/kurashi/kenkou/koureisha/hojokin/index.html
+      - https://www.pref.toyama.jp/kurashi/kenkou/koureisha/koreishashien/index.html
+      - https://www.pref.toyama.jp/kurashi/kenkou/koureisha/ikigai/index.html
+      - https://www.pref.toyama.jp/1211/kurashi/kenkou/koureisha/kj00021785/kj00021785-005-01.html
+      - https://www.pref.toyama.jp/1211/kurashi/kenkou/koureisha/kj00003341.html
+    found: []
+  "17":  # 石川県。「高齢者福祉」の分類の頁と長寿社会課の頁の記事の一覧は、事業者向けの補助や研修・届出、能登半島地震と大雨の施設の災害復旧の補助、計画、見守りの協定、認知症の啓発と相談先、催しで、県に個人で申し込む給付や割引は無かった。いしかわ長寿大学（60 歳以上の学びの場）の主催と申し込み先は県社会福祉協議会。元気シニアスタンプラリーは PDF が画像で文字を取れず、題名から催しとみて入れていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.ishikawa.lg.jp/iryo_fukushi/koreisha/fukushi/index.html
+      - https://www.pref.ishikawa.lg.jp/ansin/index.html
+      - https://www.pref.ishikawa.lg.jp/ansin/ishikawachoujudaigaku.html
+      - https://www.pref.ishikawa.lg.jp/ansin/mimamori.html
+    found: []
+  "18":  # 福井県。長寿福祉課の頁の記事の一覧（約 100 件の題名）と高齢者・利用者向けの頁は、計画、事業者向けの補助や研修・届出、介護予防とフレイル予防、認知症の啓発と相談先、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。住まい環境整備支援事業（要介護の人の住宅改修の助成）は申し込み先が市町。シニアチャレンジ応援事業は 5 人以上のグループが申し込むもの。外出付添サポート事業は市町・社会福祉協議会・ボランティア団体への支援。高齢免許返納者サポート制度は運転経歴証明書を店などで見せるもので、県に申し込むものではない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.fukui.lg.jp/doc/kourei/
+      - https://www.pref.fukui.lg.jp/doc/kourei/riyousya.html
+      - https://www.pref.fukui.lg.jp/doc/kourei/sumaikannkyou.html
+      - https://www.pref.fukui.lg.jp/doc/kourei/seniorchallenge.html
+      - https://www.pref.fukui.lg.jp/doc/kourei/gaisyututukisoi.html
+      - https://www.pref.fukui.lg.jp/doc/kenan/koutuu/menkyohennoutirasi.html
+    found: []
+  "19":  # 山梨県。健康長寿推進課の頁の記事は、計画、事業者向けの補助や研修・届出、認知症の施策と相談先、虐待の防止、介護予防、催しで、県に個人で申し込む給付や割引は無かった。補聴器の購入の助成は市が行い、県は市に補助するだけ。ことぶきマスターは市町村長か県社会福祉協議会長の推薦で知事が認定するもの。長寿やまなし振興事業は催しと研修。シニアの入場優待施設の頁はリンク先が見つからず（404）、確かめていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.yamanashi.jp/chouju/
+      - https://www.pref.yamanashi.jp/chouju/koureisyano-ikigaitaisaku.html
+      - https://www.pref.yamanashi.jp/chouju/kotobukimaster.html
+      - https://www.pref.yamanashi.jp/chouju/26141892452.html
+      - https://www.pref.yamanashi.jp/chouju/hochouki.html
+    found: []
+  "20":  # 長野県。「高齢者福祉」の分類の頁と、その下の「シニア世代の活躍」「介護保険」「介護サービス」「施策・計画」の頁（「相談窓口」の頁は記事が無かった）、県の「家族の福祉・看護等に関する相談」の頁は、計画と実態調査、事業者向けの指定や基準、シニアの活躍の県民会議、相談先の紹介で、県に個人で申し込む給付や割引は無かった。社会福祉法人等による利用者負担軽減制度は国の制度で、県の頁は申し出た法人の一覧と様式。シニア活動推進コーディネーターは公益財団法人の長野県長寿社会開発センターが置く相談とつなぎの役。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/ikigai/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/kaigo/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/service/index.html
+      - https://www.pref.nagano.lg.jp/kenko/koureisha/shisaku/index.html
+      - https://www.pref.nagano.lg.jp/kaigo-shien/kenko/koureisha/kaigo/hojin.html
+      - https://www.pref.nagano.lg.jp/kenko-choju/kenko/koureisha/coordinator/coordinator.html
+      - https://www.pref.nagano.lg.jp/kenko-fukushi/kazoku-sodan.html
+    found: []
+  "21":  # 岐阜県。県の「高齢者」の分類の頁と、高齢福祉課の「高齢者の活躍」（働く・つながる・学ぶ・運動の 4 つのリンク集）と認知症対策の頁は、事業者向けの補助や研修、団体（老人クラブ・シルバー人材センター・社会福祉協議会など）の紹介、催し、相談先で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.gifu.lg.jp/life/2/16/
+      - https://www.pref.gifu.lg.jp/page/56602.html
+      - https://www.pref.gifu.lg.jp/page/206700.html
+      - https://www.pref.gifu.lg.jp/page/206703.html
+      - https://www.pref.gifu.lg.jp/page/206706.html
+      - https://www.pref.gifu.lg.jp/page/206707.html
+      - https://www.pref.gifu.lg.jp/page/13264.html
+    found: []
+  "22":  # 静岡県。「高齢者福祉」の課の頁・介護保険・認知症・生きがいづくりの頁に、県に個人で申し込む給付や割引は無かった。介護マークは配るのが市区町村や団体、敬老の日の祝状と記念品は満百歳の人に申し込み無しで贈るもの
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.shizuoka.jp/kenkofukushi/koreifukushi/index.html
+      - https://www.pref.shizuoka.jp/kenkofukushi/koreifukushi/kaigohoken/index.html
+      - https://www.pref.shizuoka.jp/kenkofukushi/koreifukushi/1040582/index.html
+      - https://www.pref.shizuoka.jp/kenkofukushi/koreifukushi/ninchisho/1040562/index.html
+      - https://www.pref.shizuoka.jp/kenkofukushi/koreifukushi/ikigai/1002917/1022521.html
+      - https://www.pref.shizuoka.jp/kenkofukushi/koreifukushi/ikigai/1002911/1002912/1022636.html
+    found: []
+  "23":  # 愛知県。県の認知症電話相談は相談先で、申し込む制度ではない（利用者負担の軽減は市町村が窓口）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.aichi.jp/soshiki/korei/
+      - https://www.pref.aichi.jp/soshiki/korei/ninchisho-sodan.html
+    found: []
+  "24":  # 三重県。長寿介護課の「高齢者福祉・介護保険」の頁と更新情報の一覧（約 290 件）は、事業者向けの補助や指定・研修、介護人材、認知症の啓発と催し、計画、県民向けの冊子で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.mie.lg.jp/CHOJUS/HP/index.htm
+      - https://www.pref.mie.lg.jp/CHOJUS/HP/all.htm
+      - https://www.pref.mie.lg.jp/s_kenko/fukushi/index.htm
+    found: []
+  "25":  # 滋賀県。「高齢者を支える」「高齢者福祉施設・サービスを利用される方」「認知症」「介護予防」「仕事と介護の両立支援」の頁の記事は、計画、虐待の防止と権利擁護、事業者向けの情報、認知症の啓発と相談先、聞こえの啓発で、県に個人で申し込む給付や割引は無かった。老人福祉医療費の助成（65〜74 歳で所得の条件あり）は実施するのが市町で、県は補助金を出すだけ。仕事と介護の両立支援アドバイザーの派遣は企業や団体が県に申し込むもの。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.shiga.lg.jp/menu/26545.html
+      - https://www.pref.shiga.lg.jp/menu/26558.html
+      - https://www.pref.shiga.lg.jp/menu/26550.html
+      - https://www.pref.shiga.lg.jp/menu/26546.html
+      - https://www.pref.shiga.lg.jp/ee00/4359.html
+      - https://www.pref.shiga.lg.jp/ed00/4483.html
+    found: []
+  "26":  # 京都府。「高齢者のための府政ガイド」の生きがい・住宅・敬老の頁に、府に個人で申し込む給付や割引は無かった。生きがい活動は市町村の事業（府は助成するだけ）、府営住宅の優先入居は公営住宅の入居の型、満百歳のお祝い品は申し込み無し。住宅の頁にあるバリアフリー工事の融資は、案内の頁が見当たらず今も受け付けているか確かめられなかったので入れていない。京都おもいやり駐車場利用証（要介護・要支援の人も対象）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kyoto.jp/kenko/korei/index.html
+      - https://www.pref.kyoto.jp/kourei-engo/index.html
+      - https://www.pref.kyoto.jp/kourei-engo/13900006.html
+      - https://www.pref.kyoto.jp/kourei-engo/13900008.html
+      - https://www.pref.kyoto.jp/kourei-engo/news/press/2026/09/keirou8.html
+      - https://www.pref.kyoto.jp/omoiyari-pp/index.html
+    found: []
+  "27":  # 大阪府。介護支援課の事業一覧と、その下の「利用者支援」「高齢者の介護予防や生活支援等の取組み」「認知症施策」「高齢者の生きがいづくり」の頁は、計画、事業者向けの研修や指定、介護予防、認知症の啓発と相談先、苦情と相談の窓口、老人クラブなどの紹介で、府に個人で申し込む給付や割引は無かった。大阪府高齢者大学校は NPO 法人が運営し申し込み先も同じ。認知症の人の社会参加支援事業は介護サービス事業所の取り組みを広げるもの。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/ichiran.html
+      - https://www.pref.osaka.lg.jp/kenkoufukushi/koureishafukushi/kaigohoken/riyoushashien/index.html
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/tiikishienjigyou/index.html
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/ninnshishou-gyakutai/index.html
+      - https://www.pref.osaka.lg.jp/o090090/kaigoshien/ikigai/index.html
+      - https://www.pref.osaka.lg.jp/o090090/syakaisanakashienjigyou.html
+    found: []
+  "28":  # 兵庫県。住宅のバリアフリー改造の助成（人生いきいき住宅助成事業）・無年金の外国籍高齢者の給付金・社会福祉法人の利用者負担の軽減は、どれも申請を受けて決めるのが市町だった（前の 2 つは県が市町と費用を分ける形）
+    checked: 2026-11-06
+    looked:
+      - https://web.pref.hyogo.lg.jp/org/koreitaisakuka/index.html
+      - https://web.pref.hyogo.lg.jp/kf05/information.html
+      - https://web.pref.hyogo.lg.jp/life/cate3_113.html
+      - https://web.pref.hyogo.lg.jp/ks18/wd20_000000115.html
+      - https://web.pref.hyogo.lg.jp/kf05/teisyotokusya.html
+    found: []
+  "29":  # 奈良県。「高齢者福祉」の分類の頁の記事と、県が毎年まとめる「高齢者福祉対策の概要」（令和 8 年度版）の目次にある主な福祉施策 38 件の題名は、施設の整備、市町村への支援、認知症の施策と相談先、権利擁護、老人クラブと催し、介護人材、介護保険の運営で、県に個人で申し込む給付や割引は無かった。施策の本文の PDF は画像で、題名の他は読んでいない。すこやか長寿センターの事業（情報誌・大会・美術展など）は県社会福祉協議会が行う。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.nara.lg.jp/kenkou/koureifukushi/index.html
+      - https://www.pref.nara.lg.jp/n066/20704.html
+      - https://www.pref.nara.lg.jp/documents/4969/mokuji.pdf
+      - https://www.pref.nara.lg.jp/n067/30257.html
+    found: []
+  "30":  # 和歌山県。長寿社会課の頁の記事は、計画、事業者向けの補助や研修、介護の仕事に就く人の研修の補助、認知症の啓発と相談先、見守り、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。わかやま元気シニア生きがいバンクは県社会福祉協議会のサイトで運営し、高齢者の登録は令和 7 年 12 月末で終わっている。MCI 高齢者の居場所づくりの補助は居場所を開く人や団体が申し込むもの。いきいき長寿社会センターの事業（催しと講座）は県社会福祉協議会が行う。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.wakayama.lg.jp/prefg/040300/
+      - https://www.pref.wakayama.lg.jp/prefg/040300/ikigaibank/shiniaikigaibank.html
+      - https://www.pref.wakayama.lg.jp/prefg/040300/ikiikityoujusyakaicenter.html
+      - https://www.pref.wakayama.lg.jp/prefg/040300/d00212003.html
+    found: []
+  "31":  # 鳥取県。長寿社会課の頁の記事は、事業者向けの補助や研修・届出、介護予防とフレイル予防の案内、認知症の施策と相談先、催しで、県に個人で申し込む給付や割引は無かった。ことぶき起業支援補助金は団体が申し込むもので、今の年度は県社会福祉協議会が行う。とっとり元気シニア応援ページは事例の紹介と催しの暦。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.tottori.lg.jp/chouju/
+      - https://www.pref.tottori.lg.jp/250224.htm
+      - https://www.pref.tottori.lg.jp/33670.htm
+      - https://www.pref.tottori.lg.jp/senior/
+    found: []
+  "32":  # 島根県。「高齢者福祉」の頁と「高齢者の介護や支援【一般向け】」「生涯現役・生きがいづくり」の頁で、県に個人で申し込めるのは 75 生涯現役証だけだった。補聴器と聞こえの頁は購入の注意と相談先の案内で、助成ではない。くにびき学園（60 歳以上の学びの場）は県社会福祉協議会が運営する。65 歳以上高齢者応援サービスは事業者の情報を集めて知らせるもので、申し込みは無い。介護マークは給付や割引ではなく、ほかの県と揃えて入れていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.shimane.lg.jp/medical/fukushi/kourei/
+      - https://www.pref.shimane.lg.jp/medical/fukushi/kourei/kourei_sien/
+      - https://www.pref.shimane.lg.jp/medical/fukushi/kourei/shogai_geneki/
+      - https://www.pref.shimane.lg.jp/medical/fukushi/kourei/shogai_geneki/kanren/75shougai.html
+      - https://www.pref.shimane.lg.jp/medical/fukushi/kourei/shogai_geneki/kanren/koureisha_ouen_service.html
+      - https://www.pref.shimane.lg.jp/medical/fukushi/kourei/shogai_geneki/ikigai/kunibiki.html
+      - https://www.pref.shimane.lg.jp/medical/fukushi/kourei/kourei_sien/hotyouki.html
+    found:
+      - name: 75 生涯現役証
+        who: 島根県に住む 75 歳以上で、仕事・ボランティア・スポーツ・文化などの活動を今も続けている人。知事から証と携帯カードが贈られ、カードを協賛店で見せると割引などが受けられる
+        where: 島根県の高齢者福祉課（申請書を郵送か FAX で出す。本人のほか、本人の同意を得た家族なども出せる。申請書は市町村の高齢者福祉の窓口にもある）
+        url: https://www.pref.shimane.lg.jp/medical/fukushi/kourei/shogai_geneki/kanren/75shougai.html
+  "33":  # 岡山県。長寿社会課の記事の一覧（約 110 件の題名）は、計画、事業者向けの補助や研修、介護支援専門員の手続、国保と後期高齢者医療の案内、認知症の啓発と相談先、老人クラブ、催しで、県に個人で申し込む給付や割引は無かった。通所付添サポート事業は住民の付添の仕組みづくりとサポーターの養成（市町村の事業向け）。介護マークは給付や割引ではなく、栃木県などと揃えて入れていない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.okayama.jp/soshiki/35/
+      - https://www.pref.okayama.jp/page/597217.html
+      - https://www.pref.okayama.jp/page/859794.html
+      - https://www.pref.okayama.jp/page/281259.html
+    found: []
+  "34":  # 広島県。地域共生社会推進課の頁の記事と「ひろしま高齢者ガイドブック」（令和 8 年度）の「高齢者の福祉施策」「生きがい」の章に、県に個人で申し込む給付や割引は無かった。医療費の助成は市町の窓口に申請、被爆者の介護保険の公費負担は国の制度、生活福祉資金は社会福祉協議会、健康ポイントは市町の事業、介護マークは印刷して使う啓発。思いやり駐車場の利用証（高齢・けがなどで歩くのが難しい人、個人で窓口か郵送で申請）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.hiroshima.lg.jp/soshiki/263/
+      - https://www.pref.hiroshima.lg.jp/soshiki/263/koureisya-guidebook.html
+      - https://www.pref.hiroshima.lg.jp/uploaded/life/1151948_9835816_misc.pdf
+      - https://www.pref.hiroshima.lg.jp/soshiki/55/health-point-plus.html
+      - https://www.pref.hiroshima.lg.jp/site/ninntisyoutaisaku/kaigomark.html
+      - https://www.pref.hiroshima.lg.jp/soshiki/263/1307322029078.html
+    found: []
+  "35":  # 山口県。長寿社会課の頁の記事の一覧（約 60 件の題名）は、計画、事業者向けの補助や届出・研修、介護予防の体操と手帳（PDF を配るだけ）、認知症の啓発と相談先、戦没者の遺族の援護で、県に個人で申し込む給付や割引は無かった。第十二回特別弔慰金は国の制度。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.yamaguchi.lg.jp/life/2/
+      - https://www.pref.yamaguchi.lg.jp/soshiki/49/
+      - https://www.pref.yamaguchi.lg.jp/soshiki/49/18515.html
+    found: []
+  "36":  # 徳島県。長寿いきがい課の頁と、県の「高齢者福祉・介護」の分類の記事の一覧（その他の約 30 件と、分類ごとの新着）は、計画、事業者向けの補助や研修・届出、介護の仕事の案内、認知症の啓発と相談先、フレイル予防と通いの場、見守りの情報で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.tokushima.lg.jp/kenseijoho/soshiki/hokenfukushibu/choujuikigaika/
+      - https://www.pref.tokushima.lg.jp/ippannokata/kenko/koreishafukushi/
+      - https://www.pref.tokushima.lg.jp/ippannokata/kenko/koreishafukushi/sonota
+    found: []
+  "37":  # 香川県。長寿社会対策課の頁で、県の制度として本人が受け取って使うのは長寿手帳だけだった。かがわ長寿大学（60 歳以上の学びの場）は公益財団法人かがわ健康福祉機構が募集し、申し込み先も機構。第十二回特別弔慰金は国の制度。成年後見制度と日常生活自立支援事業は案内の頁。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kagawa.lg.jp/choju/index.html
+      - https://www.pref.kagawa.lg.jp/choju/techo-daigaku/wfssqo160912152905.html
+      - https://www.pref.kagawa.lg.jp/choju/techo-daigaku/r8chojudaigakuboshu.html
+    found:
+      - name: 長寿手帳
+        who: 香川県に住む 65 歳以上の人。栗林公園など県内の一部の公営施設などで手帳を見せると、料金の優遇が受けられる
+        where: 住んでいる市町の窓口（マイナンバーカードや運転免許証などの公的な身分証を見せて受け取る）
+        url: https://www.pref.kagawa.lg.jp/choju/techo-daigaku/wfssqo160912152905.html
+  "38":  # 愛媛県。長寿介護課の頁の記事の一覧（約 110 件の題名）は、事業者向けの補助や指定・届出・研修、介護人材、計画、虐待の防止、認知症の啓発と相談先、援護の行事で、県に個人で申し込む給付や割引は無かった。補助金はどれも事業所向け。在宅介護研修センター（愛ケア）の講座は無料の講座、高齢者相談センターは相談先。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.ehime.jp/soshiki/52/
+    found: []
+  "39":  # 高知県。長寿社会課の頁の記事は、計画、事業者向けの補助や研修・届出、介護の仕事に就く人の貸付、相談先、認知症とフレイル予防の案内で、県に個人で申し込む給付や割引は無かった。こうちあったかパーキング制度の利用証（要介護認定を受けた高齢者も対象。障害福祉課）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kochi.lg.jp/soshiki/060201/
+      - https://www.pref.kochi.lg.jp/doc/2017012500013/
+      - https://www.pref.kochi.lg.jp/doc/2017012700055/
+      - https://www.pref.kochi.lg.jp/doc/2018032900357/
+    found: []
+  "40":  # 福岡県。県の「高齢者の福祉」（令和 7 年度版）の事業概要と課の頁に、県に個人で申し込む給付や割引は無かった。住宅改造の助成（住みよか事業）は申込先が市町村、介護保険の利用者負担の軽減も市町村に申請、生活福祉資金は市町村の社会福祉協議会、ねんりんスポーツ・文化祭は催し
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.fukuoka.lg.jp/soshiki/4400703/
+      - https://www.pref.fukuoka.lg.jp/contents/koureisyanofukusi6.html
+      - https://www.pref.fukuoka.lg.jp/uploaded/life/832909_62995711_misc.pdf
+      - https://www.pref.fukuoka.lg.jp/contents/koureisya-sumiyoka.html
+      - https://www.pref.fukuoka.lg.jp/contents/kaigohoken-riyousyafutankeigen.html
+    found: []
+  "41":  # 佐賀県。「高齢者福祉・介護保険」の分類の記事（4 頁分の題名）と、その下の「支援・補助」「施設・団体」「認知症」の頁は、計画、事業者向けの補助や指定・届出・研修、認知症の啓発と相談先、施設の一覧で、県に個人で申し込む給付や割引は無かった。介護員養成研修受講支援補助金は介護職として県内で働いている人向けで、高齢者・家族の制度ではない。在宅生活サポートセンターの住宅相談（建築士の無料相談）は相談先。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.saga.lg.jp/list00571.html
+      - https://www.pref.saga.lg.jp/list00575.html
+      - https://www.pref.saga.lg.jp/list00574.html
+      - https://www.pref.saga.lg.jp/list00572.html
+      - https://www.pref.saga.lg.jp/kiji00362316/index.html
+      - https://www.pref.saga.lg.jp/kiji00388781/index.html
+    found: []
+  "42":  # 長崎県。長寿社会課の頁の記事の一覧と、「シニア世代の社会参加応援サイト」「ケアラー支援に関する長崎県の取組」「認知症施策」「高齢者相談窓口」の頁は、計画、事業者向けの補助や研修、催しと表彰、ケアラーと認知症の啓発、相談先で、県に個人で申し込む給付や割引は無かった。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.nagasaki.jp/organization/fukushihokenbu/choju/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/syakaisanka/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/carers/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/ninchisyou/
+      - https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/fukushi/korei-kaigohoken/madoguchi/
+    found: []
+  "43":  # 熊本県。高齢者支援課と認知症施策・地域ケア推進課の記事の一覧は、介護人材の確保、計画、事業者向けの事務連絡や研修、団体向けの補助、在宅医療の啓発で、県に個人で申し込む給付や割引は無かった。社会福祉法人等の利用者負担軽減は市町村が確認証を出す。令和 8 年熊本地震の被災者の介護保険の利用料（事業所の窓口で申告すれば支払い不要、令和 9 年 2 月末のサービス分まで）は国の取り扱いで、県に申し込むものではない。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kumamoto.jp/soshiki/32/
+      - https://www.pref.kumamoto.jp/soshiki/33/
+      - https://www.pref.kumamoto.jp/soshiki/33/906.html
+      - https://www.pref.kumamoto.jp/soshiki/33/276354.html
+    found: []
+  "44":  # 大分県。高齢者福祉課の頁の記事（約 160 件の題名）と「県民のみなさまへ」「高齢者の生きがいづくり」の頁は、計画、事業者向けの補助や指定・届出・研修、介護人材、介護予防と通いの場、認知症の啓発と相談先、老人クラブ、催し、戦没者の遺族の援護で、県に個人で申し込む給付や割引は無かった。「ふるさとの達人」は地域で活動する高齢者を登録して紹介するもので、給付や割引ではない。社会福祉法人等による利用者負担額軽減制度は全国の制度。第十二回特別弔慰金は国の制度。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.oita.jp/soshiki/12300/
+      - https://www.pref.oita.jp/site/790/
+      - https://www.pref.oita.jp/soshiki/12300/koureikaigo.html
+      - https://www.pref.oita.jp/site/ikigai/
+      - https://www.pref.oita.jp/site/ikigai/tatujin9.html
+    found: []
+  "45":  # 宮崎県。長寿介護課の頁と、「高齢者福祉」「高齢化対策」の分類の記事は、計画、事業者向けの補助や指定・届出・研修、虐待の防止、認知症の啓発と相談先、催しで、県に個人で申し込む給付や割引は無かった。シニアサークル活動モデル構築事業は一般財団法人が受け付け、募集は終わっている。介護の担い手体験事業（60 歳以上が介護助手を体験）は県社会福祉協議会が行う。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.miyazaki.lg.jp/choju/index.html
+      - https://www.pref.miyazaki.lg.jp/kurashi/koresha/koresha/index.html
+      - https://www.pref.miyazaki.lg.jp/kurashi/koresha/taisaku/index.html
+      - https://www.pref.miyazaki.lg.jp/choju/kurashi/koresha/20260728142200.html
+      - https://www.pref.miyazaki.lg.jp/choju/kurashi/koresha/20260520ninaite.html
+    found: []
+  "46":  # 鹿児島県。「高齢者・介護保険」の頁と、その下の「生きがいづくり」「在宅福祉」の頁は、事業者向けの指導や補助・研修、介護人材、計画、虐待の防止、催し、相談先で、県に個人で申し込む給付や割引は無かった。シニア応援情報は活動事例と催しの案内。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kagoshima.jp/kenko-fukushi/koreisya/index.html
+      - https://www.pref.kagoshima.jp/kenko-fukushi/koreisya/ikigai/index.html
+      - https://www.pref.kagoshima.jp/kenko-fukushi/koreisya/zaitaku/index.html
+    found: []
+  "47":  # 沖縄県。「高齢者福祉」の分類の頁と、その下の「高齢者の健康と生きがいづくり」「高齢者の生活支援情報・相談」の記事は、計画、見守りの仕組み、老人クラブ、催し、相談先で、県に個人で申し込む給付や割引は無かった。かりゆし長寿大学校（学びの場）とねんりんピックは県社会福祉協議会に委託した事業。駐車場の利用証は調べていない
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/index.html
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/1007237/index.html
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/1007237/1007239.html
+      - https://www.pref.okinawa.lg.jp/kyoiku/koreifukushi/1007252/index.html
+    found: []

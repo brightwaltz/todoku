@@ -1,0 +1,71 @@
+city: "112038"
+name: 川口市
+site: city.kawaguchi.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: ねたきり高齢者等紙おむつ支給事業
+    where: 長寿支援課 支援係（第一本庁舎2階）。郵送・FAX・電子申請（LoGoフォーム）でも申請できる
+    conditions:
+      - 市に住民登録のある、おおむね65歳以上の人
+      - 寝たきり、または認知症などで失禁が続いている
+      - 本人が市県民税非課税であること
+      - 特別養護老人ホームや老人保健施設などに入っている人は対象外
+      - 自己負担は月1,300円（品物によらず同じ額で、配達する業者に払う）
+    sources:
+      - url: https://www.city.kawaguchi.lg.jp/soshiki/01070/040/4/1835.html
+        publisher: 川口市
+        title: ねたきり高齢者等紙おむつ支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 見守りシール「おかえりQR」（日常生活用具の給付）
+    where: 長寿支援課 支援係。地域包括支援センターが申請を代わりに出せる。電子申請もある
+    conditions:
+      - おおむね65歳以上の高齢者の世帯か、高齢者と同居している世帯
+      - 要支援1以上で、認知症などで道に迷うおそれがある人
+      - 費用の3割（市県民税非課税）か5割（課税）を本人が払う
+      - 4〜6月の申請は前年度の課税で判定する
+    sources:
+      - url: https://www.city.kawaguchi.lg.jp/soshiki/01070/040/4/3909.html
+        publisher: 川口市
+        title: 生活支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 長寿支援課 支援係
+    conditions:
+      - おおむね65歳以上のひとり暮らしか、虚弱な高齢者だけの世帯
+      - 自分で食事を作るのが難しい人
+      - 夕食を毎日1食届け、そのときに安否を確かめる
+      - 1食400円（チケットを先に買う）
+    sources:
+      - url: https://www.city.kawaguchi.lg.jp/soshiki/01070/040/4/3909.html
+        publisher: 川口市
+        title: 生活支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見人等の報酬助成
+    where: 長寿支援課 支援係（問い合わせ先）。相談は川口市成年後見センターや地域包括支援センターでもできる
+    conditions:
+      - 成年後見制度を使っていて、資産などの状況から報酬を払うのが難しいと市が認める人
+      - 後見人などへの報酬を助成する（申立ての費用の助成は頁に無い）
+      - 上限の額や所得の基準は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.kawaguchi.lg.jp/soshiki/01070/040/kenriyougo/3372.html
+        publisher: 川口市
+        title: 成年後見制度について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

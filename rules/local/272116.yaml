@@ -1,0 +1,57 @@
+city: "272116"
+name: 茨木市
+site: city.ibaraki.osaka.jp
+# T-131：読む1 と読む2 が kaigo-yohin・haikai・koken の 3 型で、同じ頁で合った。
+# koken は頁・課・名前は合うが、金額・上限・所得の基準はどちらの読みも頁に無い。津市（242012）と同じく「問い合わせて確かめる」と書いて入れる。
+# haishoku は配食の頁が 404（旧事業は令和6年3月末で終了と要約だけ）で、栄養改善型配食の頁は誰も開いていない。iro は長寿介護課の要綱一覧と例規集が未読。どちらも型ごと入れない。
+# 見守りシールと SOS の事業は、どちらの読みも頁を開いていないので書かない。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ等支給サービス（家族介護用品支給）
+    where: 福祉部 長寿政策課（南館2階16番窓口）。郵送とオンラインでも申請できる
+    conditions:
+      - おおむね65歳以上で、家で介護を受け、紙おむつなどを使っている人
+      - 要介護3〜5（要介護3の新規の申請は、認定調査の排尿か排便が「介助」か「見守り等」）
+      - 市民税が非課税の世帯。生活保護・入院中・入所中は除く（市内のサ高住などは対象）
+      - 月5,000円までの給付券を出し、市内の契約薬局で紙おむつ・紙パンツ・尿とりパッドに換える
+      - 申請書の同意書欄に署名すれば、認定の写しと課税の証明は要らない
+    sources:
+      - url: https://www.city.ibaraki.osaka.jp/kikou/kenkof/soudanshien/menu/sabisu/anshin_support/kazokuyohinshikyu.html
+        publisher: 茨木市
+        title: 紙おむつ等支給サービス（家族介護用品支給）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等GPS利用支援事業
+    where: 福祉部 長寿政策課（16番窓口）。郵送とオンラインでも申請できる
+    conditions:
+      - 40歳以上で、ひとり歩きで行方不明になるおそれがあり、施設に入らず家で暮らす人か家族等
+      - 要介護・要支援の認定か、認知症の確定診断を受けている
+      - GPS 機器の購入・貸与と初期費用を1万円まで補助する。月額料や送料は対象外
+      - 機器を入れる前に申請し、決定通知が届いてから入れる。先に入れると対象にならない
+      - 今年度の申請は令和9年2月26日まで（予算で早まることがある）
+    sources:
+      - url: https://www.city.ibaraki.osaka.jp/kikou/kenkof/soudanshien/menu/ninchishokoureishashien/68965.html
+        publisher: 茨木市
+        title: 認知症高齢者等GPS利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 福祉部 地域福祉課（南館2階15番窓口）
+    conditions:
+      - 申立ての費用や後見人等への報酬を払うのが、お金の面で難しい人
+      - これらの費用を市が公費で助成する
+      - 助成の上限や、所得と資産の基準は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.ibaraki.osaka.jp/kikou/kenkof/fukushiseisakuka/menu/seinennkoukenn/seinenshien.html
+        publisher: 茨木市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

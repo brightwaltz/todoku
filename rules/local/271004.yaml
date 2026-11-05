@@ -1,0 +1,94 @@
+city: "271004"
+name: 大阪市
+site: city.osaka.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品の給付
+    where: 要介護高齢者の住民登録がある区の保健福祉センター福祉業務担当（高齢者福祉）。一部は行政オンラインシステムでも可
+    conditions:
+      - 要介護4か5、または要介護3で排尿・排便のどちらかが全介助の高齢者が対象
+      - その人を家で介護している、市内に住む家族が申請する（1人だけ）
+      - 介護される人の世帯も、介護する人の世帯も市民税非課税であること
+      - 月6,500円分の給付券を、申請月に応じて年最大12枚。7月〜翌6月で毎年更新
+      - 券はカタログの品と交換し、配達時に在宅かどうかを確かめられる
+    sources:
+      - url: https://www.city.osaka.lg.jp/fukushi/page/0000683299.html
+        publisher: 大阪市
+        title: 介護用品の給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等見守りネットワーク事業
+    where: 住まいの地域を担当する見守り相談室
+    conditions:
+      - 認知症で行方不明になるおそれのある人の氏名・特徴・顔写真などを事前に登録
+      - 登録した人には、服や靴に貼れる見守りシール・アイロンシールを渡す
+      - 行方不明時は、見守り相談室が地域の協力者にメールで情報を流す
+      - あわせてGPS端末の貸与（位置情報探索事業）がある。月1,320円
+      - GPSの月額は、申請者と本人の世帯がどちらも市民税非課税なら減免
+    sources:
+      - url: https://www.city.osaka.lg.jp/fukushi/page/0000581171.html
+        publisher: 大阪市
+        title: 認知症高齢者等見守りネットワーク事業を実施します
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.osaka.lg.jp/fukushi/page/0000059513.html
+        publisher: 大阪市
+        title: 認知症高齢者位置情報探索事業を実施します
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 生活支援型食事サービス事業
+    where: 住まいの地域に配達できる市の委託配食事業者を1か所選んで電話で申し込み、申請書を出す（市が審査）
+    conditions:
+      - 要支援1・2か要介護1〜5で、ひとり暮らしや要介護者などだけの世帯
+      - 買い物や調理ができず食事の確保が難しく、配食での安否確認が必要なこと
+      - ケアマネジャーなどがケアプランなどにこのサービスを載せていること
+      - 昼食か夕食を届けて安否を確かめる。食事代は自己負担
+      - 低所得で支払いが難しい世帯は、1食あたりの負担の軽減がある
+    sources:
+      - url: https://www.city.osaka.lg.jp/fukushi/page/0000006603.html
+        publisher: 大阪市
+        title: 生活支援型食事サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（市長申立て・後見人等の報酬の助成）
+    where: 住まいの区の保健福祉センター（高齢者福祉の担当）。市長申立ての案件は申立てをした区の保健福祉センター
+    conditions:
+      - 市長申立ては、判断能力が不十分で、身寄りがないなどで親族が申し立てられない人
+      - 市長申立ての費用は、市が一部または全部を負担する
+      - 報酬助成は、生活保護を受けている人やそれに準じる人で、報酬を払うのが難しい人
+      - 本人・親族の申立ての場合も対象。報酬付与の審判から3か月以内に申請
+      - 上限は月額で在宅2万8千円、施設入所1万8千円
+    sources:
+      - url: https://www.city.osaka.lg.jp/fukushi/page/0000369915.html
+        publisher: 大阪市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金
+    where: 大阪市福祉局 高齢者施策部 地域包括ケア推進課（問い合わせると申請書類が自宅に届く）
+    conditions:
+      - 介護する人も介護される人も、1年以上続けて市内に住んでいること
+      - 同居か同じ敷地・隣地に住んで介護している家族など
+      - 1年以上要介護4か5で、その間介護保険サービスを使っていないこと（年7日以内のショートステイは可）
+      - サービスを使っていない期間、両方の世帯が市民税非課税であること
+      - 年10万円。申請は代表者1人で、地域包括支援センターが家を訪ねて確かめる
+    sources:
+      - url: https://www.city.osaka.lg.jp/fukushi/page/0000682148.html
+        publisher: 大阪市
+        title: 家族介護慰労金
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

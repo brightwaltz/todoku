@@ -1,0 +1,88 @@
+city: "222101"
+name: 富士市
+site: city.fuji.shizuoka.jp
+# T-131：読む1 と読む2 が 5 型とも同じ頁・同じ骨組みで合った。
+# kaigo-yohin の「一定額」の金額と枚数は、どちらの読みも頁に無いので「問い合わせて確かめる」と書く。
+# haikai は事前登録と QR シールだけ。GPS の貸与はどちらの読みも検索の要約だけで頁を開いていないので書かない。
+# koken は頁の中身が薄い（津市・茨木市・平塚市と同じ扱い）。基準・上限・申請先は「問い合わせて確かめる」と書く。
+# iro は読む1 が p003154、読む2 が kenkou/c0402/rn2ola000000ewj7.html だったが、後者を curl で開くと p003154 に転送された。同じ頁なので p003154 を出典にする。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 富士市在宅寝たきり高齢者等紙おむつ支給事業
+    where: 福祉部 高齢者支援課 在宅支援担当（市庁舎4階北側、0545-55-2741）。申請書を出す
+    conditions:
+      - 市内に住む65歳以上で、家で暮らし、寝たきりか認知症でおむつが要る人
+      - 入院中の人と、サービス付き高齢者向け住宅・グループホームを含む施設に入っている人は除く
+      - 要介護（要支援を含む）の認定があり、世帯の全員が市県民税非課税なら、一定額まで負担なし
+      - 課税の人がいる世帯で要介護4か5なら一定額まで半額、ほかは全額を自分で払う
+      - 「一定額」の金額と枚数は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.fuji.shizuoka.jp/1020030000/p003152.html
+        publisher: 富士市
+        title: 富士市在宅寝たきり高齢者等紙おむつ支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 富士市安心おかえり事業
+    where: 福祉部 高齢者支援課 地域支援担当（市庁舎4階北側、0545-55-2951）
+    conditions:
+      - 道に迷うおそれのある人の情報と写真を前もって登録する
+      - 登録した人のうち希望する人に、QR コードのついた安心おかえりシールを30枚無料で渡す
+      - 見つけた人が QR コードを読み取ると、呼び名や接し方の注意が出て、登録した家族にメールが届く
+    sources:
+      - url: https://www.city.fuji.shizuoka.jp/1020030000/p003207.html
+        publisher: 富士市
+        title: 富士市安心おかえり事業（行方不明になる可能性がある方へ）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 富士市「食」の自立支援事業
+    where: 福祉部 高齢者支援課 在宅支援担当。申請の前に担当のケアマネジャーに相談する
+    conditions:
+      - 65歳以上のひとり暮らしか、全員が65歳以上の世帯（同じ敷地や隣に65歳未満の親族が住んでいない）
+      - 要支援・要介護か、事業対象者の認定を受けている
+      - 食事の確保に支えが要り、安否を確かめる必要がある
+      - 1食380円を自分で払う。週1〜5回で、回数は体の状態で決まる
+    sources:
+      - url: https://www.city.fuji.shizuoka.jp/1020030000/p003146.html
+        publisher: 富士市
+        title: 富士市「食」の自立支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 頁に事業の窓口は書かれていない。成年後見の相談は地域包括支援センターか、高齢者支援課 地域支援担当（0545-55-2951）で受けている
+    conditions:
+      - 収入や資産の事情で、申立ての費用（鑑定費用）や後見人などへの報酬を払うのが難しい人に助成する
+      - 助成の基準・上限・申請の手順は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.fuji.shizuoka.jp/kenko/sonota/seinenkokennin/index.html
+        publisher: 富士市
+        title: 権利擁護
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 富士市要介護高齢者介護者慰労金の支給
+    where: 福祉部 高齢者支援課 在宅支援担当
+    conditions:
+      - 65歳以上で要介護3〜5の人と暮らして介護する人に年額10万円（この1年に要介護3の時期があれば5万円）
+      - 介護を受ける人が、申請月を除くこの1年に3か月以上入院していない
+      - 同じ1年に介護保険のサービスを使っていない（1週間以内のショートステイは除く）
+      - 今入院している人と、生活保護を受けている人は除く
+      - 持ち物は申請書・介護保険被保険者証・介護する人の名義の通帳（ゆうちょ銀行は除く）・介護する人の印鑑
+    sources:
+      - url: https://www.city.fuji.shizuoka.jp/1020030000/p003154.html
+        publisher: 富士市
+        title: 富士市要介護高齢者介護者慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

@@ -1,0 +1,78 @@
+city: "112089"
+name: 所沢市
+site: city.tokorozawa.saitama.jp
+# T-131：読む1 と読む2 が kaigo-yohin・haikai・haishoku・koken の 4 型で合った。
+# haishoku は市の補助が頁に無く、市の指定業者と直接契約する形。配達のときに安否確認があるので型に当たるとし、補助が無いことを条件に書く。
+# koken は読む1 が申請書の頁、読む2 が案内の頁を開いた。同じ事業・同じ窓口で食い違いが無いので、出典に 2 頁とも書く。
+# iro は読む1 が not_found、読む2 が特定在宅高齢者介護手当を見つけて合わないので入れない（もう一度読めば入れられる候補）。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ購入費支給事業
+    where: 福祉部 介護保険課（窓口・郵送・電子申請）
+    conditions:
+      - 市の介護保険に入っていて、家で暮らす要介護2〜5の人（他の市の保険証は対象外）
+      - 要支援1・2と要介護1でも、医師がおむつが要ると判断すれば相談できる
+      - 上限は月5,600円。負担割合証の割合が自己負担で、上限を超えた分は全額自己負担
+      - 市の指定事業者から選ぶ。月の最終営業日までの申し込みで翌月に届く
+      - 所得の条件と持ち物は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.tokorozawa.saitama.jp/kenko/kaigohoken/kaigo4/kyuufu_kamiomutu.html
+        publisher: 所沢市
+        title: 介護保険 紙おむつ購入費の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: トコろんおかえりQR（みまもり支え合い事業）
+    where: 福祉部 高齢者支援課。無料の分は最寄りの地域包括支援センターで受け取る（前もって問い合わせる）
+    conditions:
+      - 道に迷うおそれのある高齢者の持ち物に貼る QR シール。読んだ人から家族へ連絡が届く
+      - 家族などのメールを3件まで登録でき、有効は1年
+      - 1シート990円。認知症で道に迷ったことのある人は無料になる場合がある
+      - 無料になる細かい条件は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/zaitaku/mimamori/oka-eri-qr.html
+        publisher: 所沢市
+        title: トコろんおかえりQR（みまもり支え合い事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 高齢者配食サービス
+    where: まず地域の地域包括支援センターに電話で相談する。事業の問い合わせ先は福祉部 高齢者支援課
+    conditions:
+      - 市に住む65歳以上の人
+      - 市に申し込むのでなく、市の指定業者から選んで直接契約する。配達のときに安否も確かめる
+      - 市の補助は頁に無く、料金は業者ごとに違う
+      - 回数や世帯・所得の条件は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/zaitaku/mimamori/haishoku.html
+        publisher: 所沢市
+        title: 高齢者配食サービスのお知らせ
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 本人が65歳以上なら福祉部 高齢者支援課（前もって相談し、持参か郵送）
+    conditions:
+      - 後見人などへの報酬を払うのが難しい人に、報酬の全部か一部を助成する。申し立ての費用の助成もある
+      - 助成は家庭裁判所が決めた額の範囲で、市の要綱の範囲内
+      - 申し立ての費用は開始の審判の日から、報酬は付与の審判の日から、2か月以内に申請する
+      - 上限額・所得の基準・市長の申し立ては頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.tokorozawa.saitama.jp/dl/fukushi/chiiki20240328134843373.html
+        publisher: 所沢市
+        title: 所沢市成年後見制度利用支援事業にかかる各種助成金申請書
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+      - url: https://www.city.tokorozawa.saitama.jp/kenko/chiikifukushi/seinenkonenninseido.html
+        publisher: 所沢市
+        title: 成年後見制度をご存知ですか
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

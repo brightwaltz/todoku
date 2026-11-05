@@ -10,6 +10,8 @@ from __future__ import annotations
 from dataclasses import dataclass
 from html import escape
 
+from . import contacts as contacts_mod
+from . import pref_programs as pref_mod
 from . import rules as rules_mod
 from .local_rules import MARK, CityRules
 from .rules import Program, RuleSet
@@ -42,6 +44,12 @@ PREF_NONE_FOUND = {
 # T-096 の帯の 1 行（「神奈川県の 0 件は…」）は、0 件を出さなくなったのでやめた。文言はここだけで差し替える
 SUMMARY_PREF_UNSEEN = "{pref}の制度は、まだ調べていません"
 SUMMARY_PREF_NONE = "{pref}の制度は、調べて、個人で申し込めるものが見つかりませんでした"
+# T-129：47 都道府県を調べた記録（rules/pref_programs.yaml）。神奈川県は上の PREF_NONE_FOUND の文のまま。文言はここだけで差し替える
+PREF_CHECKED_NONE = "{pref}の制度は、{date} に県の高齢者・介護の案内を見ましたが、個人で申し込めるものが見つかりませんでした。"
+PREF_FOUND_NOTE = ("{pref}の制度で、個人で申し込めそうなものを {date} に県の公式頁で {n} 件見つけました。"
+                   "とどくの規則にはまだしていないので、当てはまるかは申請先で確かめてください。")
+SUMMARY_PREF_FOUND = "{pref}の制度は、確かめる候補が {n} 件あります"
+PREF_LOOKED = "見た県の頁"
 SUMMARY_TYPES_N = ("市区町村の事業", "種類（全国の実施率つき、窓口で確かめる候補）")
 
 # T-089：地域包括支援センターの職員が相談を受けながら使うとき（T-078 の候補 #2。判断は integration-1105.md の「T-078」、既定は A）。
@@ -49,6 +57,8 @@ SUMMARY_TYPES_N = ("市区町村の事業", "種類（全国の実施率つき�
 STAFF_NOTE = ("地域包括支援センターの職員の方は、相談を受けながらこの頁やとどくの結果の画面をご本人と一緒に見て、"
               "印刷した結果を控えにできます。控えはご本人の情報なので、保管や受け渡しはセンターの個人情報の取り扱いの決まりに従ってください。"
               "判定は規則から出した目安で、窓口の扱いに合うかは職員の方が確かめてください。")
+# T-123：都道府県の段の下に出す相談先（rules/contacts/prefectures.yaml）の見出し。文言はここだけで差し替える
+CONTACTS_TITLE = "{pref}の相談先"
 
 
 @dataclass(frozen=True)
@@ -57,6 +67,8 @@ class Group:
     title: str
     programs: list[Program]
     empty: str = ""  # 制度が 0 件のときに出す 1 行
+    contacts: tuple = ()  # 都道府県の段に出す相談先（T-123）
+    checked: pref_mod.PrefCheck | None = None  # 都道府県の段：調べた記録（T-129）。None は調べていない
 
 
 def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
@@ -72,10 +84,18 @@ def city_groups(rules: RuleSet, code: str, pref: str, name: str) -> list[Group]:
         return [p for p in programs if p.level == level]
 
     groups = [Group("national", "国の制度", of("national"))]
-    groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in pref_levels]
+    contacts = contacts_mod.for_place(code)
+    groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level), contacts=contacts) for level in pref_levels]
     if not pref_levels:
-        # T-118：調べていない県の 1 行は、帯（SUMMARY_PREF_UNSEEN）と同じ言い方にする
-        groups.append(Group("pref", f"{pref}の制度", [], PREF_NONE_FOUND.get(pref, SUMMARY_PREF_UNSEEN.format(pref=pref) + "。")))
+        # T-118（画面のレーン）：調べていない県の 1 行は、帯（SUMMARY_PREF_UNSEEN）と同じ言い方にする。
+        # T-129（データのレーン）：調べた県は、その記録から「見つかった」「調べて見つからなかった」を出す
+        checked = pref_mod.for_place(code)
+        empty = PREF_NONE_FOUND.get(pref, SUMMARY_PREF_UNSEEN.format(pref=pref) + "。")
+        if checked and pref not in PREF_NONE_FOUND:
+            date = checked.checked.isoformat()
+            empty = (PREF_FOUND_NOTE.format(pref=pref, date=date, n=len(checked.found)) if checked.found
+                     else PREF_CHECKED_NONE.format(pref=pref, date=date))
+        groups.append(Group("pref", f"{pref}の制度", [], empty, contacts, checked))
     groups += [Group(level, f"{rules_mod.LEVELS[level]}の制度", of(level)) for level in city_levels]
     if not city_levels:
         groups.append(Group("city", f"{name}の制度", [], f"{name}の事業は、下の「市区町村の事業（型）」で示します。"))
@@ -98,7 +118,11 @@ def summary_parts(groups: list[Group]) -> list[tuple[str, int | None]]:
             out.append((SUMMARY_TYPES if g.key == "local" else g.title.removesuffix("の制度"), len(g.programs)))
         elif g.key == "pref":
             pref = g.title.removesuffix("の制度")
-            out.append(((SUMMARY_PREF_NONE if pref in PREF_NONE_FOUND else SUMMARY_PREF_UNSEEN).format(pref=pref), None))
+            if g.checked and g.checked.found and pref not in PREF_NONE_FOUND:
+                out.append((SUMMARY_PREF_FOUND.format(pref=pref, n=len(g.checked.found)), None))
+                continue
+            none = pref in PREF_NONE_FOUND or g.checked is not None
+            out.append(((SUMMARY_PREF_NONE if none else SUMMARY_PREF_UNSEEN).format(pref=pref), None))
     return out
 
 
@@ -162,6 +186,37 @@ def _sources(p: Program, values: dict[str, bool]) -> list:
     return [s for s in p.sources if not any(site in s.url for site in away)] or p.sources
 
 
+def _checked_html(g: Group) -> str:
+    """都道府県の段：調べた記録（T-129）。見つかった制度は確かめる候補として並べ、見た頁を出典の欄に出す。"""
+    if not g.checked:
+        return ""
+    e = escape
+    items = "".join(
+        f'<li class="city-item pref-candidate"><h3>{e(c.name)}</h3>'
+        f'<p class="city-where"><b>主な条件</b> {e(c.who)}</p>'
+        f'<p class="city-where"><b>申請先</b> {e(c.where)}</p>'
+        f'<details><summary>出典</summary><ul class="city-src"><li><a href="{e(c.url, quote=True)}" target="_blank" '
+        f'rel="noopener">{e(c.url)}</a></li></ul></details></li>'
+        for c in g.checked.found)
+    looked = "".join(f'<li><a href="{e(u, quote=True)}" target="_blank" rel="noopener">{e(u)}</a></li>' for u in g.checked.looked)
+    return ((f'<ul class="city-list">{items}</ul>' if items else "")
+            + f'<details class="pref-looked"><summary>{e(PREF_LOOKED)}（{g.checked.checked.isoformat()}）</summary>'
+            f'<ul class="city-src">{looked}</ul></details>')
+
+
+def _contacts_html(g: Group, pref: str) -> str:
+    """都道府県の段の下に出す相談先（T-123）。名前は相談先の頁へのリンク、電話は tel: のリンクにする。"""
+    if not g.contacts:
+        return ""
+    e = escape
+    items = "".join(
+        f'<li><a href="{e(c.url, quote=True)}" target="_blank" rel="noopener">{e(c.name(pref))}</a>'
+        + (f' 電話 <a href="tel:{e(c.tel, quote=True)}">{e(c.tel)}</a>' if c.tel else "")
+        + f'<br><span class="note">{e(c.note)}（{c.checked.isoformat()} に確かめた）</span></li>'
+        for c in g.contacts)
+    return f'<div class="city-contacts"><h3>{e(CONTACTS_TITLE.format(pref=pref))}</h3><ul>{items}</ul></div>'
+
+
 def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, map_html: str = "",
               local: CityRules | None = None) -> str:
     """local はその市の事業（rules/local。T-075b）。見つかった型は、名前・申請先・主な条件・出典をその市のものにして印を付ける。"""
@@ -188,7 +243,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
                     # T-113：書けていない段の見出しにも 0 件を出さない（すぐ下の 1 行が、なぜ無いかを言う）
                     f'<h2>{e(g.title)}' + (f'<span class="city-n">{len(g.programs)} 件</span>' if g.programs else "") + '</h2>')
         if not g.programs:
-            body.append(f'<p class="note">{e(g.empty)}</p></section>')
+            body.append(f'<p class="note">{e(g.empty)}</p>{_checked_html(g)}{_contacts_html(g, pref)}</section>')
             continue
         body.append('<ul class="city-list">')
         for p in g.programs:
@@ -212,7 +267,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
                 f'<p>{e(p.summary)}</p>{extra}'
                 + (f'<p class="city-where"><b>申請先</b> {e(where)}</p>' if where else "")
                 + f'<details><summary>出典</summary><ul class="city-src">{links}</ul></details></li>')
-        body.append("</ul></section>")
+        body.append(f"</ul>{_contacts_html(g, pref)}</section>")
     local_note = (f"印の付いた事業は、Claude が{e(name)}の公式頁を読んで名前・申請先・主な条件を書き、別の読み手が原文と照らし直したものです。"
                   "当てはまるかの目安は型のままです。") if found else ""
     return f"""<!doctype html>

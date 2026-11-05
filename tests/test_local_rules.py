@@ -19,6 +19,12 @@ DESIGNATED = {
     "231002": "名古屋市", "261009": "京都市", "271004": "大阪市", "271403": "堺市", "281000": "神戸市",
     "331007": "岡山市", "341002": "広島市", "401005": "北九州市", "401307": "福岡市", "431001": "熊本市",
 }
+# T-128：中核市（総務省 令和5年4月1日現在 62市）のうち、2 回の読みが合って rules/local に入れた市。入れるたびに足す
+CORE = {"132012": "八王子市", "112038": "川口市", "122041": "船橋市"}
+# T-131：施行時特例市と、政令市・中核市でない県庁所在地のうち、2 回の読みが合って入れた市。入れるたびに足す
+OTHER = {"352039": "山口市", "242012": "津市", "362018": "徳島市", "412015": "佐賀市", "112089": "所沢市", "242021": "四日市市",
+         "152021": "長岡市", "232068": "春日井市", "282103": "加古川市", "272116": "茨木市",
+         "142034": "平塚市", "112143": "春日部市", "222101": "富士市", "112216": "草加市"}
 REVIEW = {"read_by": "Managed Agent（試験）", "recheck": "match", "date": "2026-11-05"}
 SRC = [{"url": "https://www.city.sapporo.jp/example.html", "publisher": "札幌市", "license": "未確認",
         "checked": "2026-11-05"}]
@@ -46,6 +52,8 @@ def load(d: Path):
 def test_designated_city_codes_are_in_the_municipality_list():
     assert len(DESIGNATED) == 20
     assert {code: PLACES[code][1] for code in DESIGNATED} == DESIGNATED
+    assert {code: PLACES[code][1] for code in CORE} == CORE
+    assert {code: PLACES[code][1] for code in OTHER} == OTHER
 
 
 def test_no_directory_means_no_city_programs(tmp_path):
@@ -120,4 +128,5 @@ def test_real_local_files_load():
     """rules/local に置いたファイル（まだ無くてもよい）が、規則と市区町村の一覧に合っている。"""
     cities = load(ROOT / "rules" / "local")
     for code, city in cities.items():
-        assert code in DESIGNATED and city.name == DESIGNATED[code]
+        allowed = DESIGNATED | CORE | OTHER
+        assert code in allowed and city.name == allowed[code]

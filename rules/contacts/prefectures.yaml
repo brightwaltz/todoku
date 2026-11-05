@@ -1,0 +1,441 @@
+# 47 都道府県の相談先（T-123）。/city/ の頁の都道府県の段に出す。読み込みと形の検査は src/todoku/contacts.py、テストは tests/test_contacts.py。
+# 判定には使わない。書くのは URL・電話・確認日だけで、頁の文は写さない。名前と説明は contacts.py の KINDS で種類ごとに作る。
+# キーは都道府県コード 2 桁（団体コードの頭 2 桁。引用符で囲む）。1 つの都道府県に何件でも置ける。
+#
+# family_branch：公益社団法人 認知症の人と家族の会の都道府県支部（47 都道府県に 1 つずつ）。
+#   2026-11-05 に、本部のトップ頁（https://alzheimer.or.jp/）の支部の一覧から 47 支部の頁を開き、頁の題名が「<都道府県名>支部」であることを確かめて書いた。
+#   tel は支部の頁の【電話番号】の最初の番号。香川県だけは、頁に「(変更）→」と書かれた新しい番号にした。
+#   相談の曜日と時間、相談専用の番号は支部の頁にある（支部ごとに違うので、ここには書かない）。
+#   利用条件：本部のトップ頁のリンクを全部見たが、サイトの利用やリンクの決まりの頁は無かった。支部の頁へのリンクと電話番号だけを置く。
+#
+# kokuho_complaint：都道府県の国民健康保険団体連合会（国保連）の、介護サービスの苦情相談の頁（T-130）。
+#   2026-11-06 に、国民健康保険中央会のリンクの頁（https://www.kokuho.or.jp/link/）にある 47 の国保連のサイトを https で開き、
+#   「苦情」を含むリンクを辿って、頁の題名か本文に介護サービスの苦情相談の案内があり、200 で返ることを確かめた。
+#   tel は、頁に苦情相談の窓口の番号（「苦情相談窓口専用」「直通」「介護保険課」など）があればそれ、無ければ頁にある国保連の番号。
+#   頁に番号が書かれていない所（埼玉・新潟・富山・愛知・島根・広島・鹿児島）は tel を空にした。
+#   2 回目（同日）に、サイトの中の頁を 45 まで開いて青森・三重・岡山・山口の頁を見つけた（山口は頁に苦情相談の番号が無く、国保連の番号）。
+#   まだ入れていない 7（秋田・石川・香川・福岡・佐賀・大分・沖縄）：苦情相談の頁が見つからない（秋田・石川・大分）、https で開けない（香川）、
+#   503 を返す（佐賀・沖縄）、案内が PDF だけ（福岡）。この 7 県は young_onset を 2 種類目にした。素の記録は ops-b の research/t130/。
+#   利用条件：中央会のトップ頁には情報セキュリティポリシーの PDF だけで、サイトの利用やリンクの決まりの頁は無かった。頁へのリンクと電話番号だけを置く。
+#
+# young_onset：都道府県の若年性認知症の相談窓口（若年性認知症支援コーディネーターを置く窓口。T-130）。今は国保連の頁が無い 7 県だけ。
+#   窓口と電話は、全国若年性認知症支援センターの「全国各地の専門相談窓口」の一覧（令和8年9月現在。2026-11-06 に見た）で選んだ。
+#   その一覧のサイトは、リンクは原則トップ頁にし連絡を求める決まりなので、一覧へはリンクしない。url は窓口か県の頁で、
+#   200 で返り、若年性認知症の窓口の案内があり、一覧と同じ電話が載ることを確かめた（香川県は頁から辿る県の PDF に電話が載る）。
+prefectures:
+  "01":  # 北海道
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=316
+      tel: 011-204-6006
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.hokkaido-kokuhoren.or.jp/hihokensha/kaigokujo.html
+      tel: 011-231-5161
+      checked: 2026-11-06
+  "02":  # 青森県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=349
+      tel: 0178-35-0930
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.aomoriken-kokuhoren.or.jp/nursingcare.html
+      tel: 017-723-1301
+      checked: 2026-11-06
+  "03":  # 岩手県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=351
+      tel: 0197-61-5070
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.iwate-kokuho.or.jp/kaigo/soudan_kujyou.html
+      tel: 019-623-4322
+      checked: 2026-11-06
+  "04":  # 宮城県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=353
+      tel: 022-263-5091
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.miyagi-kokuho.or.jp/kaigo/sodan.html
+      tel: 022-222-7700
+      checked: 2026-11-06
+  "05":  # 秋田県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=355
+      tel: 018-866-0391
+      checked: 2026-11-05
+    - kind: young_onset
+      url: https://yod.akita-rehacen.jp/
+      tel: 018-892-3751
+      checked: 2026-11-06
+  "06":  # 山形県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=358
+      tel: 023-687-0387
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.ymgt-kokuho.org/kaigo/complaint.html
+      tel: 0237-87-8000
+      checked: 2026-11-06
+  "07":  # 福島県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=360
+      tel: 024-521-4664
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.fukushima-kokuho.jp/ippan/ka-kujyo.html
+      tel: 024-528-0040
+      checked: 2026-11-06
+  "08":  # 茨城県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=362
+      tel: 029-828-8099
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.ibaraki-kokuhoren.or.jp/hihokenshanokata/kujyosodan/
+      tel: 029-301-1565
+      checked: 2026-11-06
+  "09":  # 栃木県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=366
+      tel: 028-666-5166
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.tochigi-kokuho.jp/ippan/care-complaint/
+      tel: 028-622-7242
+      checked: 2026-11-06
+  "10":  # 群馬県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=761
+      tel: 027-289-2740
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.gunmakokuho.or.jp/general/complaint/
+      tel: 027-290-1323
+      checked: 2026-11-06
+  "11":  # 埼玉県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=371
+      tel: 048-814-1210
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://saikokuhoren.or.jp/general-public/complaint-consultation/
+      checked: 2026-11-06
+  "12":  # 千葉県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=373
+      tel: 043-204-8228
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuhoren-chiba.or.jp/care/08.html
+      tel: 043-254-7428
+      checked: 2026-11-06
+  "13":  # 東京都
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=375
+      tel: 03-5367-8853
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.tokyo-kokuhoren.or.jp/nursing_office/nursing_consultations/index.html
+      tel: 03-6238-0173
+      checked: 2026-11-06
+  "14":  # 神奈川県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=377
+      tel: 045-548-8061
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kanagawa-kokuho.or.jp/kaigo/kujo.html
+      tel: 045-329-3447
+      checked: 2026-11-06
+  "15":  # 新潟県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=383
+      tel: 025-550-6640
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://niigata-kokuho.or.jp/list00155.html
+      checked: 2026-11-06
+  "16":  # 富山県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=385
+      tel: 076-441-8998
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.toyama-kokuhoren.or.jp/nursing/complaint/index.html
+      checked: 2026-11-06
+  "17":  # 石川県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=387
+      tel: 070-5146-1025
+      checked: 2026-11-05
+    - kind: young_onset
+      url: https://www.pref.ishikawa.lg.jp/ansin/jyakunenn.html
+      tel: 076-281-2600
+      checked: 2026-11-06
+  "18":  # 福井県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=389
+      tel: 0776-28-2929
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.fukui-kokuhoren.or.jp/kaigo/kujou/
+      tel: 0776-57-1611
+      checked: 2026-11-06
+  "19":  # 山梨県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=379
+      tel: 055-244-2771
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.ymnkokuho.or.jp/kaigoservice/page.php?mid=10149&drc=1
+      tel: 055-233-9201
+      checked: 2026-11-06
+  "20":  # 長野県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=381
+      tel: 0263-50-8332
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuho-nagano.or.jp/ippan/kujou.html
+      tel: 026-238-1580
+      checked: 2026-11-06
+  "21":  # 岐阜県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=391
+      tel: 058-214-8690
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.gkren.jp/common_html/nursing_care_complaint.html
+      tel: 058-275-9826
+      checked: 2026-11-06
+  "22":  # 静岡県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=393
+      tel: 070-4492-9487
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.shizukokuhoren.or.jp/care/kujyou/
+      tel: 054-253-5590
+      checked: 2026-11-06
+  "23":  # 愛知県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=395
+      tel: 0562-33-7048
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://aichi-kokuho.or.jp/nursing/kujyou/gyoumu/index.html
+      checked: 2026-11-06
+  "24":  # 三重県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=397
+      tel: 059-227-8787
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://kokuhoren-mie.or.jp/ippan/kujou/
+      tel: 059-222-4165
+      checked: 2026-11-06
+  "25":  # 滋賀県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=399
+      tel: 077-567-4565
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.shigakokuho.or.jp/category/18-3-0-0-0-0-0-0-0-0.html
+      tel: 077-522-2651
+      checked: 2026-11-06
+  "26":  # 京都府
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=401
+      tel: 050-5358-6577
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kyoto-kokuhoren.or.jp/insured/complaint/
+      tel: 075-354-9090
+      checked: 2026-11-06
+  "27":  # 大阪府
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=403
+      tel: 06-6626-4936
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.osakakokuhoren.jp/index_kh/kuzyo/
+      tel: 06-6949-5309
+      checked: 2026-11-06
+  "28":  # 兵庫県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=405
+      tel: 078-577-6262
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuhoren-hyogo.or.jp/general/consult/
+      tel: 078-332-5601
+      checked: 2026-11-06
+  "29":  # 奈良県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=407
+      tel: 0742-41-1026
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuhoren-nara.jp/kaigo_kujosyori_madoguchi.html
+      tel: 0120-21-6899
+      checked: 2026-11-06
+  "30":  # 和歌山県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=409
+      tel: 073-432-7660
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuhoren-wakayama.or.jp/general/nursing-insurance/complaint/
+      tel: 073-427-4662
+      checked: 2026-11-06
+  "31":  # 鳥取県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=411
+      tel: 0859-37-6611
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuho-tottori.or.jp/item/1829.htm
+      tel: 0857-20-2100
+      checked: 2026-11-06
+  "32":  # 島根県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=413
+      tel: 0853-25-0717
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.shimane-kokuho.or.jp/care-help/
+      checked: 2026-11-06
+  "33":  # 岡山県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=415
+      tel: 086-232-6627
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.okayama-kokuhoren.com/kaigo110/
+      tel: 086-223-8811
+      checked: 2026-11-06
+  "34":  # 広島県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=417
+      tel: 082-254-2740
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.hiroshima-kokuhoren.or.jp/insured/index.html#cp4
+      checked: 2026-11-06
+  "35":  # 山口県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=419
+      tel: 083-925-3731
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuhoren-yamaguchi.or.jp/kaigo/
+      tel: 083-925-2003
+      checked: 2026-11-06
+  "36":  # 徳島県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=422
+      tel: 088-678-8020
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.tokushima-kokuhoren.or.jp/care#care_4
+      tel: 088-666-0117
+      checked: 2026-11-06
+  "37":  # 香川県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=424
+      tel: 070-1305-7028
+      checked: 2026-11-05
+    - kind: young_onset
+      url: https://www.pref.kagawa.lg.jp/kenkouseisaku/support/support/madoguti.html
+      tel: 080-4719-5073
+      checked: 2026-11-06
+  "38":  # 愛媛県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=426
+      tel: 089-923-3760
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuhoren-ehime.jp/contents/?p=86
+      tel: 089-968-8800
+      checked: 2026-11-06
+  "39":  # 高知県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=428
+      tel: 088-821-2694
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kochi-kokuhoren.or.jp/pages/page063.php
+      tel: 088-820-8410
+      checked: 2026-11-06
+  "40":  # 福岡県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=430
+      tel: 092-771-8595
+      checked: 2026-11-05
+    - kind: young_onset
+      url: https://www.jakunenfukuoka.com/
+      tel: 0930-26-2370
+      checked: 2026-11-06
+  "41":  # 佐賀県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=432
+      tel: 090-2717-9955
+      checked: 2026-11-05
+    - kind: young_onset
+      url: https://www.pref.saga.lg.jp/kiji0031517/index.html
+      tel: 0952-37-8545
+      checked: 2026-11-06
+  "42":  # 長崎県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=435
+      tel: 095-842-3590
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.nagasaki-kokuho.or.jp/publics/index/185/
+      tel: 095-826-7291
+      checked: 2026-11-06
+  "43":  # 熊本県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=437
+      tel: 096-223-5164
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuho-kumamoto.or.jp/list00028.html
+      tel: 096-365-0811
+      checked: 2026-11-06
+  "44":  # 大分県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=439
+      tel: 097-552-6897
+      checked: 2026-11-05
+    - kind: young_onset
+      url: https://orange-oita.jp/special/zyakunenn.html
+      tel: 097-529-7588
+      checked: 2026-11-06
+  "45":  # 宮崎県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=441
+      tel: 0985-22-3803
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://www.kokuhoren-miyazaki.or.jp/care/post.html
+      tel: 0985-35-5301
+      checked: 2026-11-06
+  "46":  # 鹿児島県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=443
+      tel: 099-251-3928
+      checked: 2026-11-05
+    - kind: kokuho_complaint
+      url: https://kokuhoren-kagoshima.or.jp/ip10000/ip17000/ip17500
+      checked: 2026-11-06
+  "47":  # 沖縄県
+    - kind: family_branch
+      url: https://alzheimer.or.jp/?page_id=445
+      tel: 070-3164-7992
+      checked: 2026-11-05
+    - kind: young_onset
+      url: https://www.agape-wakamatsu.or.jp/jakunen_dementia/
+      tel: 098-943-4085
+      checked: 2026-11-06

@@ -1,0 +1,72 @@
+city: "111007"
+name: さいたま市
+site: city.saitama.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 重度要介護高齢者紙おむつ等支給事業
+    where: お住まいの区の区役所高齢介護課高齢福祉係（電子申請もできる）
+    conditions:
+      - 市内に住む65歳以上で、いつもおむつを使っている、市の介護保険の被保険者
+      - 要介護3〜5。要介護3は認定調査の排尿か排便が「介助」か「見守り等」の人
+      - 介護保険料の段階が第1〜第5段階で、保険料の滞納がない人
+      - 生活保護等を受けていない、介護保険施設に入所していない、入院が3か月以内
+      - 月6,000円（税込）までの利用券で受け取る。超えた分は自己負担
+    sources:
+      - url: https://www.city.saitama.lg.jp/002/003/003/002/005/p064031.html
+        publisher: さいたま市
+        title: 重度要介護高齢者紙おむつ等支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: さいたま市徘徊見守りSOSネットワーク
+    where: 本人が住む区の区役所高齢介護課（事前登録）
+    conditions:
+      - 認知症などで徘徊する、またはそのおそれのある高齢者など
+      - 家族などが申請し、氏名・特徴・写真などを前もって登録しておく
+      - 行方不明になったら、市が登録情報を協力機関に送り、発見への協力を頼む
+    sources:
+      - url: https://www.city.saitama.lg.jp/002/003/003/002/005/p017652.html
+        publisher: さいたま市
+        title: さいたま市徘徊見守りSOSネットワーク
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: さいたま市在宅高齢者等宅配食事サービス事業
+    where: お住まいの区の社会福祉協議会事務所（市がさいたま市社会福祉協議会に委託）
+    conditions:
+      - 市内に住む、おおむね65歳以上のひとり暮らしや高齢者だけの世帯など
+      - 自分で調理や買い物をするのが難しく、家族などから食事を受けられない人
+      - 夕食を届け、あわせて安否を確かめる。月〜金の週5回まで（祝日・年末年始を除く）
+      - 費用は1食400円
+    sources:
+      - url: https://www.city.saitama.lg.jp/002/003/003/002/005/p018419.html
+        publisher: さいたま市
+        title: さいたま市在宅高齢者等宅配食事サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: お住まいの区の区役所高齢介護課
+    conditions:
+      - 65歳以上で、2親等内の親族がいない・音信不通などで親族が申し立てられない人は、市長が申し立てる
+      - 市長申立ての費用（申立手数料・鑑定料など）は市が先に負担し、払える人には後で請求
+      - 報酬助成は、市長申立てか、本人・親族申立てで親族でない第三者が後見人等になった人
+      - 生活保護を受けているなど報酬の負担が難しい人。上限は在宅月28,000円、施設月18,000円
+      - 報酬助成は、報酬付与の審判が確定した翌日から2か月以内に申請
+    sources:
+      - url: https://www.city.saitama.lg.jp/002/003/003/002/005/p020247.html
+        publisher: さいたま市
+        title: 成年後見制度利用支援事業について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
