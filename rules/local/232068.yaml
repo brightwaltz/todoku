@@ -1,0 +1,39 @@
+city: "232068"
+name: 春日井市
+site: city.kasugai.lg.jp
+# T-131：読む1 と読む2 が haikai・haishoku の 2 型で、同じ頁・同じ数字で合った。
+# koken は読む1 の頁が 404、読む2 は障がい者向けの頁だけで、高齢者向けの条件と金額をどちらの読みも頁で確かめられないので入れない。
+# kaigo-yohin・iro は両方とも not_found だが、サービスガイドの PDF・社協・例規集を誰も開いていないので「市に無い」とは言えない。型ごと入れない。
+programs:
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等見守り支援事業
+    where: 健康福祉部 地域共生推進課（ケアマネジャーか地域包括支援センターに提出を頼める）
+    conditions:
+      - 市内に住み、要介護認定などを受けて家で暮らす高齢者か、その人を介護する家族
+      - GPS 端末を入れる費用を、高齢者1人につき1回、1万円まで助成する
+      - 対象は市に登録された事業者の機器（頁では7機種）だけ
+      - 機器の利用の申し込みは助成を申請した後にする。先に申し込むと対象にならない
+    sources:
+      - url: https://www.city.kasugai.lg.jp/kenko/1011073/kaigo/1017275.html
+        publisher: 春日井市
+        title: 春日井市認知症高齢者等見守り支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス利用助成
+    where: 健康福祉部 介護・高齢福祉課（申し込みは担当のケアマネジャーか地域包括支援センターに相談する）
+    conditions:
+      - 安否確認が要り、自分で食事を用意するのが難しい人
+      - おおむね65歳以上の要支援・要介護認定者や事業対象者だけの世帯（重度障がい者との世帯なども）
+      - 1食300円を助成し、弁当の代金との差額は本人が払う。月〜金曜（祝日も可）の1日1食まで
+      - 留守やキャンセルの費用は助成しない。所得の条件は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.kasugai.lg.jp/kenko/1011073/kaigo/1035526.html
+        publisher: 春日井市
+        title: 高齢者福祉サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
