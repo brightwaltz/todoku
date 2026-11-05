@@ -370,3 +370,20 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   html.print-memo body > :not(#print-sheet) { display: none !important; }
   html.print-memo #print-sheet { display: block; font-size: 12pt; color: #000; }
 }
+
+/* T-121：結果の画面の段階的な開示。強調（色の枠）は先頭の「いま先にすること」の 1 か所だけにし、
+   まとめ・問いの欄は線を細くする。制度の地図・有料と民間・押した数の図は、閉じた欄（.fold）に入れて下に置く */
+.todo { border: 3px solid var(--accent); }
+.todo h2 { margin: 0 0 4px; }
+.todo-list { margin: 0; padding-left: 1.5em; }
+.todo-list li { margin: 12px 0; }
+.todo-list li::marker { font-weight: 700; color: var(--accent); }
+.todo-list a { font-size: 18px; font-weight: 700; color: var(--accent); display: inline-block; min-height: 32px; }
+.todo-why { display: block; font-size: 15px; color: var(--muted); line-height: 1.5; }
+#result .summary { border-left-width: 1px; }
+#result .ask { border: 1px solid var(--line); }
+.fold > summary { color: var(--ink); padding: 4px 0; }
+.fold > summary h2 { display: inline; font-size: 17px; margin: 0; }
+.fold > summary h2 .n { font-size: 15px; color: var(--muted); font-weight: 400; margin-left: 8px; }
+.fold[open] > summary { margin-bottom: 10px; }
+.fold .pmap, .fold .effort { margin: 0; }

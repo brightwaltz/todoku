@@ -120,8 +120,33 @@
   </section>
 
   <section id="result" hidden>
-    <figure class="card pmap" id="pmap" hidden>
-      <h2>制度の地図</h2>
+    <!-- T-121：最初の 1 画面は「いま先にすること」だけ。強調（色の枠）はここ 1 か所。長い図と一覧は下に閉じて置く -->
+    <div class="card todo" id="todo" hidden>
+      <h2>いま先にすること</h2>
+      <ol class="todo-list" id="todo-list"></ol>
+      <p class="note">判定の結果から規則のプログラムが選びました（AI は使いません）。名前を押すと、申請先と持ち物が開きます。</p>
+    </div>
+    <div class="card summary" id="summary" hidden>
+      <h2>まず知っておきたいこと</h2>
+      <ul id="summary-lines"></ul>
+      <p class="note" id="summary-note"></p>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div id="groups"></div>
+    <div class="card ask" id="later" hidden>
+      <h2>まだ確かめていないこと</h2>
+      <p class="note lead-note">相談の文からは、はっきり読み取れなかったこと・書かれていなかったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
+      <div id="later-list"></div>
+    </div>
+    <p class="change" id="later-change" aria-live="polite"></p>
+    <p class="note" id="other-city" hidden></p>
+    <details class="card soft" id="ineligible-box">
+      <summary id="ineligible-title"></summary>
+      <ul id="ineligible-list" class="plain"></ul>
+    </details>
+    <details class="card soft fold" id="pmap-fold" hidden>
+      <summary><h2>制度の地図（どの手続きが先か、図で見る）</h2></summary>
+    <figure class="pmap" id="pmap">
       <p class="note lead-note">真ん中がご本人です。内側の輪ほど、いま手を打ちやすい制度です。判定は規則のプログラムが行い、図にも AI は使いません。</p>
       <svg id="pmap-svg" viewBox="0 0 360 360" role="group" aria-label="制度の地図。点を押すと、その制度の説明へ移ります"></svg>
       <p class="pmap-pick" id="pmap-pick" aria-live="polite"></p>
@@ -132,31 +157,15 @@
         <ul class="pmap-legend cost" id="pmap-cost"></ul>
       </figcaption>
     </figure>
-    <div class="card ask" id="later" hidden>
-      <h2>まだ確かめていないこと</h2>
-      <p class="note lead-note">相談の文からは、はっきり読み取れなかったこと・書かれていなかったことです。答えると、規則のプログラムが判定し直します（判定に AI は使いません）。</p>
-      <div id="later-list"></div>
-    </div>
-    <p class="change" id="later-change" aria-live="polite"></p>
-    <div class="card summary" id="summary" hidden>
-      <h2>まず知っておきたいこと</h2>
-      <ul id="summary-lines"></ul>
-      <p class="note" id="summary-note"></p>
-    </div>
-    <div class="stats" id="stats"></div>
-    <div id="groups"></div>
-    <p class="note" id="other-city" hidden></p>
-    <details class="card soft" id="ineligible-box">
-      <summary id="ineligible-title"></summary>
-      <ul id="ineligible-list" class="plain"></ul>
     </details>
-    <section id="options-box" hidden>
-      <h2 class="group-title">有料・民間の支え<span class="n" id="options-n"></span></h2>
+    <details class="card soft fold" id="options-box" hidden>
+      <summary><h2>有料・民間の支え<span class="n" id="options-n"></span></h2></summary>
       <p class="note">行政の制度ではなく、お金を払って使う支えの種類です。使えるかは判定していません。お住まいの地域にあるか、料金は申し込み先で確かめてください。会社の名前は出していません。</p>
       <div id="options-list"></div>
-    </section>
-    <figure class="card soft effort" id="effort" hidden>
-      <h2>押した数と、分かった制度の数</h2>
+    </details>
+    <details class="card soft fold" id="effort-fold" hidden>
+      <summary><h2>押した数と、分かった制度の数</h2></summary>
+    <figure class="effort" id="effort">
       <p class="note lead-note">棒 1 本が、答えを 1 つ押したときの見立てです。0&nbsp;回は、相談の文（とお住まい）だけで出した見立てです。</p>
       <ol class="effort-bars" id="effort-bars" aria-label="押した数ごとの見立て"></ol>
       <figcaption>
@@ -164,6 +173,7 @@
         <p class="note" id="effort-layers"></p>
       </figcaption>
     </figure>
+    </details>
     <div class="card soft keep" id="keep" hidden>
       <h2>この結果を残す</h2>
       <p class="note">答えをこのリンクの中に入れました。あとで開くと、同じ結果が出ます。リンクの中身はとどくのサーバに送られず、どこにも残りません。リンクには答え（認定の区分・年齢など）が入っているので、人に送るときは気をつけてください。</p>

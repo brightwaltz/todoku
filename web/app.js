@@ -666,10 +666,49 @@ function renderOptions(options) {
   show("options-box", options.length > 0);
 }
 
+// いま先にすること（T-121）：結果の画面の先頭に、判定の結果だけから 1〜TODO_MAX 件を選ぶ（Claude は使わない）。
+// 順：(1) 当てはまる見込みのうち、「先に手続き」の制度が待っている手続き（待っている数の多い順）
+// (2) ほかの当てはまる見込み（サーバの並び順） (3) 読み取りを確かめる問いが残っていれば、その欄へ
+// (4) ここまでで 0 件なら、確かめると使えるかもしれない制度（あと少し確かめれば決まる順）
+const TODO_MAX = 3;
+function todoItems(data) {
+  const byId = new Map(data.results.map((r) => [r.id, r]));
+  const waits = new Map();
+  for (const r of data.results) {
+    if (r.status !== "after_prereq") continue;
+    for (const w of r.waiting_on) if (!w.pending) waits.set(w.id, (waits.get(w.id) || 0) + 1);
+  }
+  const met = (r) => r.reasons.filter((x) => x.state === "T").map((x) => x.label).join("・");
+  const items = [...waits].filter(([id]) => byId.get(id)?.status === "eligible").sort((a, b) => b[1] - a[1])
+    .map(([id, n]) => ({ r: byId.get(id), why: `済ませると、先に手続きが要る制度 ${n} 件が使えるようになります` }));
+  for (const r of data.results) {
+    if (r.status === "eligible" && !waits.has(r.id)) items.push({ r, why: met(r) ? `当てはまる理由：${met(r)}` : "当てはまる見込みです" });
+  }
+  if (items.length < TODO_MAX && data.unconfirmed.length) {
+    items.push({ later: true, name: "読み取りを確かめる問いに答える", why: `相談の文から読んだことのうち、確かめたいことが ${data.unconfirmed.length} 件あります。答えると判定し直します` });
+  }
+  if (!items.length) {
+    for (const r of data.results.filter((x) => x.status === "unknown")) {
+      items.push({ r, why: r.missing.length ? `分からない点：${r.missing.map((m) => m.name).join("、")}` : "確かめると使えるかもしれません" });
+    }
+  }
+  return items.slice(0, TODO_MAX);
+}
+
+function renderTodo(data) {
+  const items = todoItems(data);
+  $("todo-list").replaceChildren(...items.map((t) => el("li", {},
+    t.later ? el("a", { href: "#later", onclick: (ev) => { ev.preventDefault(); $("later").scrollIntoView({ behavior: calm() ? "auto" : "smooth", block: "start" }); focusOn(laterSpots()[0] || $("later").querySelector("h2")); } }, t.name)
+      : el("a", { href: `#p-${t.r.id}`, onclick: (ev) => openCard(ev, t.r.id) }, t.r.name),
+    el("span", { class: "todo-why" }, t.why))));
+  show("todo", items.length > 0);
+}
+
 function renderResult(data) {
   const again = state.resultShown;  // 結果の画面で答えて、出し直すとき
   state.resultShown = true;
   renderLater(data.unconfirmed, data.unread);
+  renderTodo(data);
   renderMap(data, again);
   renderEffort();
   $("later-change").textContent = again ? ($("board-change").textContent || "判定は変わりませんでした") : "";
@@ -756,7 +795,7 @@ function tally(trail, presses, results) {
 // 棒 1 本が押した数 1 つ。棒の長さは制度の数、区切りは列。数が細くて入らない区切りは字を出さない（読み上げの文には全部入れる）
 function renderEffort() {
   const trail = state.trail;
-  show("effort", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
+  show("effort-fold", trail.length > 1);  // 残したリンクから開いた結果は 1 本だけなので出さない
   if (trail.length < 2) return;
   const total = (t) => BOARD.reduce((sum, [key]) => sum + t.n[key], 0);
   const most = Math.max(...trail.map(total), 1);
@@ -928,7 +967,7 @@ function renderMap(data, again) {
   const chain = longestChain(results, edges);
   $("pmap-chain").textContent = chain.length ? `矢印は先に済ませる手続きです。例：${chain.join(" → ")}` : (edges.length ? "矢印は先に済ませる手続きです。" : "");
   $("pmap-pick").textContent = "点を押すと、その制度の説明へ移ります。";
-  show("pmap", results.length > 0);
+  show("pmap-fold", results.length > 0);
 }
 
 function pickPoint(g) {
