@@ -60,6 +60,16 @@ prefectures:
       - https://www.pref.aichi.jp/soshiki/korei/
       - https://www.pref.aichi.jp/soshiki/korei/ninchisho-sodan.html
     found: []
+  "26":  # 京都府。「高齢者のための府政ガイド」の生きがい・住宅・敬老の頁に、府に個人で申し込む給付や割引は無かった。生きがい活動は市町村の事業（府は助成するだけ）、府営住宅の優先入居は公営住宅の入居の型、満百歳のお祝い品は申し込み無し。住宅の頁にあるバリアフリー工事の融資は、案内の頁が見当たらず今も受け付けているか確かめられなかったので入れていない。京都おもいやり駐車場利用証（要介護・要支援の人も対象）は、駐車場の利用証を済みの県と揃えるまで入れていない（D-0102）
+    checked: 2026-11-06
+    looked:
+      - https://www.pref.kyoto.jp/kenko/korei/index.html
+      - https://www.pref.kyoto.jp/kourei-engo/index.html
+      - https://www.pref.kyoto.jp/kourei-engo/13900006.html
+      - https://www.pref.kyoto.jp/kourei-engo/13900008.html
+      - https://www.pref.kyoto.jp/kourei-engo/news/press/2026/09/keirou8.html
+      - https://www.pref.kyoto.jp/omoiyari-pp/index.html
+    found: []
   "28":  # 兵庫県。住宅のバリアフリー改造の助成（人生いきいき住宅助成事業）・無年金の外国籍高齢者の給付金・社会福祉法人の利用者負担の軽減は、どれも申請を受けて決めるのが市町だった（前の 2 つは県が市町と費用を分ける形）
     checked: 2026-11-06
     looked:
