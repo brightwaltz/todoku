@@ -148,6 +148,12 @@ def test_prefecture_section_says_the_same_as_the_band(code):
     html, block = summary(code)
     pref = PLACES[code][0]
     sec = re.search(r'<section class="card city-group" data-level="pref">(.*?)</section>', html, re.S).group(1)
-    assert f'<p class="note">{SUMMARY_PREF_UNSEEN.format(pref=pref)}。</p>' in sec
-    assert notes(block) == [SUMMARY_PREF_UNSEEN.format(pref=pref)]
+    note = re.search(r'<p class="note">(.*?)</p>', sec).group(1)
+    band = [n for n in notes(block) if n.startswith(f"{pref}の制度")]
+    assert len(band) == 1
+    if band[0] == SUMMARY_PREF_UNSEEN.format(pref=pref):
+        assert note == band[0] + "。"
+    else:  # 県を調べた記録がある木（T-129）：段と帯は「見つからなかった」か「候補がある」でそろう
+        assert "まだ調べていません" not in note
+        assert ("見つかりませんでした" in note) == ("見つかりませんでした" in band[0])
     assert "まだ規則にしていません" not in html

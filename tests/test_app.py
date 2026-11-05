@@ -948,7 +948,8 @@ def test_other_cities_hide_machida_programs():
         assert d["region"]["total"] == len(d["results"]) == sum(x["n"] for x in d["region"]["parts"])
     assert osaka["region"]["parts"] == [{"label": "国の制度", "n": 17, "unit": "件"},
                                         {"label": "市区町村の事業", "n": 5, "unit": "種類"}]
-    assert osaka["region"]["detailed"] == [] and village["region"]["detailed"] == []
+    # その市・村の公式頁から型が書けたら（lane-b の T-131 など）、自分の「市の事業」「村の事業」だけは入ってよい
+    assert osaka["region"]["detailed"] in ([], ["市の事業"]) and village["region"]["detailed"] in ([], ["村の事業"])
     # 住んでいない地域の名前は、どの欄にも出さない（0 件の段も出さない）
     assert not any(w in str(osaka["region"]) for w in ("町田", "横浜", "東京", "0 件"))
     assert machida["region"]["detailed"] == ["都の制度", "市の制度"] and any(r["id"].startswith("machida-") for r in machida["results"])
