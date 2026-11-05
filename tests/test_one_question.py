@@ -115,7 +115,8 @@ console.log(JSON.stringify(out));
 def test_page_has_one_question_path():
     # 「1 問だけ答える」は押すと切り替わるボタン（aria-pressed）。最初の問いでだけ出す
     assert 'id="one" aria-pressed="false"' in HTML and 'id="one-box" hidden' in HTML
-    assert 'show("one-box", state.asked === 0)' in JS
+    # お住まいの問いは数えないので、その問いでは出さず、次の（数える）最初の問いで出す（11/6、P1）
+    assert 'show("one-box", state.asked === 0 && !q.place)' in JS
     # 止まる欄：その時点の数と「もう 1 問答える」「ここでやめて、結果を見る」
     assert HTML.index('id="ask"') < HTML.index('id="pause"') < HTML.index('id="result"')
     for part in ['id="pause-title" tabindex="-1"', 'id="pause-counts"', 'id="pause-more"', 'id="pause-stop"', 'id="pause-msg"']:
