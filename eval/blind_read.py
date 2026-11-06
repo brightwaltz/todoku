@@ -13,6 +13,7 @@
   uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py facts --facts needs_daily_help --max-usd 1   （11/4：裁定のあとに足す事実）
   uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py read --model claude-fable-5-1 --programs 1,11 --label pilot --max-usd 3
   uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py read --model claude-sonnet-5-5 --programs all --label main --max-usd 8
+  （11/6：ほかの地域の事例だけ）… read --model claude-fable-5-1 --programs all --cases c31-c42 --label add --max-usd 10
 結果は eval/out/blind/（.gitignore 済み。町田市の引用を含むのでリポジトリに入れない）。
 """
 
@@ -47,6 +48,13 @@ PRICES = {
 SCORED = range(1, 33)
 # 28〜32（町田市以外の人に出す市区町村の型）は、町田市以外に住む事例だけで採点する（先生の判断、2026-11-03）
 LOCAL_TYPES = range(28, 33)
+# 11/6 に足したほかの地域の事例（c31〜）では、町田市の制度（11〜20）を採点しない（PROTOCOL 11/6）
+MACHIDA_ONLY = range(11, 21)
+ADDED_FROM = 31
+
+
+def is_added(case: dict) -> bool:
+    return int(case["id"][1:]) >= ADDED_FROM
 
 STATES = ["当たりうる", "当たらない", "済んでいる", "申請済み・結果待ち", "決められない"]
 
@@ -90,7 +98,26 @@ def load_cases() -> list[dict]:
 def cases_in_scope(num: int, cases: list[dict]) -> list[dict]:
     if num in LOCAL_TYPES:
         return [c for c in cases if c["answers"].get("lives_in_machida") is False]
+    if num in MACHIDA_ONLY:
+        return [c for c in cases if not is_added(c)]
     return cases
+
+
+def pick_cases(spec: str, cases: list[dict]) -> list[dict]:
+    """--cases の指定（"c31-c42" か "c31,c35"）で事例を絞る。空なら全部。"""
+    if not spec:
+        return cases
+    want = set()
+    for part in spec.split(","):
+        if "-" in part:
+            a, b = (int(x.strip()[1:]) for x in part.split("-"))
+            want |= {f"c{i:02d}" for i in range(a, b + 1)}
+        else:
+            want.add(part.strip())
+    got = [c for c in cases if c["id"] in want]
+    if len(got) != len(want):
+        sys.exit(f"事例が見つからない：{sorted(want - {c['id'] for c in got})}")
+    return got
 
 
 def cases_block(cases: list[dict]) -> str:
@@ -216,7 +243,7 @@ def cmd_read(args) -> None:
         sys.exit(f"知らないモデル：{model}")
     progs = program_sources()
     nums = [n for n in progs if n in SCORED] if args.programs == "all" else [int(x) for x in args.programs.split(",")]
-    cases = load_cases()
+    cases = pick_cases(args.cases, load_cases())
     index = load_index()
     if args.dry_run:
         dry_run(model, nums, progs, cases, index)
@@ -279,6 +306,7 @@ def main() -> None:
     r.add_argument("--label", required=True)
     r.add_argument("--max-usd", type=float, required=True)
     r.add_argument("--dry-run", action="store_true", help="API を呼ばずに大きさと費用の目安だけ出す")
+    r.add_argument("--cases", default="", help="読ませる事例（c31-c42 や c31,c35）。省くと全部")
     args = ap.parse_args()
     {"facts": cmd_facts, "read": cmd_read}[args.cmd](args)
 

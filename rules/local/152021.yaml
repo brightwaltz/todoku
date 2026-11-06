@@ -1,0 +1,41 @@
+city: "152021"
+name: 長岡市
+site: city.nagaoka.niigata.jp
+# T-131：読む1 と読む2 が haikai・koken の 2 型で、同じ頁・同じ中身で合った。
+# kaigo-yohin・haishoku は両方とも not_found だが、どちらの読みもツカオーレの冊子の PDF・社協・例規集を開いておらず「市に無い」とは言えない。型ごと入れない。
+# iro は両方とも在宅介護者支援金（月3,000円／5,000円の継続の手当）を見つけ、慰労金の型に当たらないと見た。zaitaku.pdf と要綱を誰も開いていないので not_found とも書かず、型ごと入れない。
+# haikai の名前は頁の見出し「長岡市認知症高齢者等見守りシール配布事業」から市の名を除いた（11/6 03:1x に curl で頁の本文を確かめた）。
+programs:
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等見守りシール配布事業
+    where: 長寿はつらつ課（さいわいプラザ6階）か各支所の地域振興・市民生活課。アオーレ長岡・西サービスセンターでは受け付けない
+    conditions:
+      - 認知症などで行方不明になるおそれのある高齢者を、前もって市に登録する
+      - 登録した情報は支所・警察・地域包括支援センターなどと共有し、登録番号入りの見守りシールが配られる（無料）
+      - 窓口に紙で出すか、オンラインで申し込める
+      - 年齢などの細かい条件は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.nagaoka.niigata.jp/fukushi/cate06/service.html
+        publisher: 長岡市
+        title: 利用できるサービスを知りたい
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 法定後見制度利用支援事業
+    where: 65歳以上か40〜64歳で要介護認定のある人は長寿はつらつ課 高齢者基幹包括支援センター、ほかは福祉課 障害者基幹相談支援センター
+    conditions:
+      - 頼れる親族がいない人には、市長が申し立てをする（費用は市が立て替え、払える人には後で請求）
+      - 自分で申し立てた費用（手数料・登記・鑑定など）は、審判の確定から1年以内に申請すると助成される
+      - 後見人などの報酬は、家で暮らす人は月28,000円、施設の人は月18,000円まで助成（家庭裁判所が決めた額の範囲）
+      - 報酬の助成は1回の申請で最大24か月分
+      - 生活保護か、非課税世帯で年収が単身150万円以下・資産が単身350万円以下（世帯の人数で上がる）などの基準がある
+    sources:
+      - url: https://www.city.nagaoka.niigata.jp/fukushi/cate07/shien-jigyo.html
+        publisher: 長岡市
+        title: 法定後見制度利用支援事業（成年後見制度利用支援事業）について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

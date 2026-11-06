@@ -152,6 +152,9 @@ def prepare(paths: list[str]) -> dict:
     cases = load_cases()
     runs = load_runs(paths)
     nums = sorted({int(n) for r in runs for n, p in r["programs"].items() if "judgments" in p})
+    # 読み B が読んだ事例だけを突き合わせる（11/6：ほかの地域の事例だけを足した回）
+    read_ids = {j["case"] for r in runs for p in r["programs"].values() for j in p.get("judgments", [])}
+    cases = [c for c in cases if c["id"] in read_ids]
     cells, agreed, issues, policies = [], [], defaultdict(list), defaultdict(list)
     for case in cases:
         results = evaluate(rs, dict(case["answers"]))

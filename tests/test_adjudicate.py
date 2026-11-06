@@ -45,7 +45,11 @@ def test_a_reading_marks_match_protocol():
         marks[c["answers"]["care_level"]] = adjudicate.a_reading(res)[0]
     assert marks.get("applying") == "申"     # 申請中は「申」で論点に回る
     assert marks.get("care1") == "×"         # 認定を受けている人の「認定の申請」は済んでいる＝×
-    assert marks.get("none") in ("○", "？")
+    # 認定のない人：介助の事実（needs_daily_help、11/5 に事例へ書き足し）が「いいえ」なら ×、それ以外は ○ か ？
+    for c in cases:
+        if c["answers"]["care_level"] == "none":
+            m = adjudicate.a_reading(evaluate(rs, dict(c["answers"]))[nintei.id])[0]
+            assert m in (("×",) if c["answers"].get("needs_daily_help") is False else ("○", "？")), c["id"]
 
 
 def test_local_types_only_for_people_outside_machida():
@@ -130,7 +134,8 @@ def test_prepare_groups_disagreements_and_samples_audit(tmp_path, monkeypatch):
     # 印が全部そろっても、引用が原文にないマスは論点に回る
     assert kinds.get((11, "引用が原文に見つからない")) == 1
     s = data["stats"]
-    assert s["cells"] == 2 * len(cases)
+    # 制度 1 は全員、制度 11（町田市の制度）は 11/6 に足したほかの地域の事例（c31〜）を除く
+    assert s["cells"] == len(cases) + len([c for c in cases if not blind_read.is_added(c)])
     assert s["agreed"] + s["issue_cells"] == s["cells"]
     # 抜き取りは一致したマスからだけ、同じ種なら同じ結果
     agreed_keys = {(c["case"], c["num"]) for c in data["audit"]}

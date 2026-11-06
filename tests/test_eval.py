@@ -31,7 +31,8 @@ def test_rules_mode_scores():
 
 def test_pipeline_variants_without_api():
     res = run_eval.run_pipeline(RS, CASE, FakeClaude())
-    assert set(res["variants"]) == {f"{o}-{k}" for o in ("value", "fixed") for k in range(4)}
+    # legacy-… は 11/6 07:36 の採点までの流れ（お住まいも 3 問の枠の中）。改善の前後を同じ読み取りで並べるために残す（11/6、P1）
+    assert set(res["variants"]) == {f"{o}-{k}" for o in ("value", "fixed") for k in range(4)} | {"legacy-value-3", "legacy-fixed-3", "legacy-value-4"}
     assert res["variants"]["value-0"]["asked"] == []
     assert len(res["variants"]["value-3"]["asked"]) <= 3
     # 値打ち順は、決まった順よりも少ない問いで多くを拾う（この例では 2 問目で高額療養費に届き、決まった順は 3 問では届かない）

@@ -1,0 +1,77 @@
+city: "011002"
+name: 札幌市
+site: city.sapporo.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: おむつサービス
+    where: お住まいの区の区役所保健福祉課（電子申請もできる）
+    conditions:
+      - 在宅で要介護認定を受けた40歳以上の人で、市内に住み住民票がある人
+      - 要介護4・5で、認定調査の「排尿」か「排便」が全介助の人
+      - 要介護3なら、認知症の日常生活自立度がIII以上で、排尿か排便が全介助の人
+      - 月1回、上限6,500円の範囲でおむつを自宅に届ける
+      - 自己負担は費用の1割（生活保護を受けている人は無料）
+    sources:
+      - url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+        publisher: 札幌市
+        title: 介護保険サービス以外に札幌市が行っている高齢者支援（地域支援事業など）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 徘徊認知症高齢者SOSネットワーク事業
+    where: 近くの警察署（行方が分からなくなったとき）
+    conditions:
+      - 認知症の高齢者の行方が分からなくなったときに使う
+      - 事前の登録は要らない。警察署で行方不明者届とSOSネットワーク連絡票を出す
+      - 消防署・交通機関・郵便局・ラジオ局などが協力して捜して保護する
+    sources:
+      - url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+        publisher: 札幌市
+        title: 介護保険サービス以外に札幌市が行っている高齢者支援（地域支援事業など）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.sapporo.jp/kaigo/ninchisyoshien/sapporohitoriaruki.html
+        publisher: 札幌市
+        title: 認知症による行方不明への備えと対応
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: お住まいの区の区役所保健福祉課（電子申請もできる）
+    conditions:
+      - 原則65歳以上のひとり暮らしの人
+      - 病気などで体が弱く、ふだんの調理が難しい人
+      - 月〜土曜の週6日まで夕食を届け、届けるときに声をかけて安否を確かめる
+      - 利用料は1食500円
+    sources:
+      - url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+        publisher: 札幌市
+        title: 介護保険サービス以外に札幌市が行っている高齢者支援（地域支援事業など）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 札幌市社会福祉協議会 自立支援課 成年後見推進係（市長申立て・費用助成の相談と手続き）
+    conditions:
+      - 判断能力が不十分になった認知症の高齢者が対象
+      - 申立てをする4親等内の親族がいないとき、市長が家庭裁判所に申し立てる
+      - 収入や資産から負担が難しい人に、申立ての費用（鑑定費用）を助成する
+      - 収入や資産から負担が難しい人に、成年後見人などへの報酬を助成する
+      - 報酬と申立て費用の助成は、申請できる期間が決まっている
+    sources:
+      - url: https://www.city.sapporo.jp/kaigo/k100citizen/seinenkouken-riyoushienzigyou-kourei.html
+        publisher: 札幌市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

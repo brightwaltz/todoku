@@ -1,0 +1,60 @@
+city: "132012"
+name: 八王子市
+site: city.hachioji.tokyo.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 在宅高齢者おむつの給付
+    where: 高齢者福祉課（本庁舎1階20番窓口）。各事務所・高齢者あんしん相談センター・オンラインでも申請できる
+    conditions:
+      - 市内の自宅で暮らす65歳以上で、要介護1以上の人
+      - 世帯全員が住民税非課税であること（毎年7月の利用分から新しい年度の課税で判定）
+      - 市の委託業者が月1回、紙おむつなどを家に届ける
+      - 費用の2割を本人が払う。税込4,400円を超えた分は全額本人の負担
+      - 3か月以上払わないと給付が止まる
+    sources:
+      - url: https://www.city.hachioji.tokyo.jp/kurashi/welfare/004/004/001/p003862.html
+        publisher: 八王子市
+        title: 在宅高齢者おむつの給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Opus 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者探索機器の貸与
+    where: 最寄りの高齢者あんしん相談センター
+    conditions:
+      - 認知症で道に迷うことがある人（65歳以上、または若年性認知症）を家で介護している親族が申請する
+      - GPS端末を貸し出す。日常生活の賠償の補償が付く
+      - 月額330円（令和8年4月から、税込）。申請する親族が市民でない場合は3,300円
+      - 生活保護を受けている場合は月額の免除がある
+    sources:
+      - url: https://www.city.hachioji.tokyo.jp/kurashi/welfare/ninntisho/ninntishoujigyou/p003849.html
+        publisher: 八王子市
+        title: 認知症高齢者探索機器の貸与
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Opus 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "rule-reader（Opus 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（八王子市高齢者に係る成年後見制度利用支援事業）
+    where: 高齢者福祉課（本庁舎1階20番窓口）
+    conditions:
+      - 市に住む65歳以上の人が対象（市外の施設に移っても、介護保険が八王子市の人は対象）
+      - 成年後見などの申立ての費用と、後見人などへの報酬を助成する
+      - 助成額を引いた後の資産（現金・預貯金など）が50万円以下で、ほかに使える財産が無いこと
+      - 後見人などが配偶者や4親等内の親族でないこと
+      - 上限は診断書6,000円・鑑定100,000円・報酬月20,000円（報酬は原則1年分までずつ）
+    sources:
+      - url: https://www.city.hachioji.tokyo.jp/kurashi/welfare/004/004/003/p004432.html
+        publisher: 八王子市
+        title: 成年後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Opus 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "rule-reader（Opus 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

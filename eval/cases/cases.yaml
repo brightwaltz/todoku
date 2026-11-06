@@ -4,6 +4,9 @@
 # - answers: 窓口に聞かれたら相談した人が答える内容（rules/facts.yaml の 25 の事実）。
 #   severe_constant_care・money_management_difficulty・hearing_certifiable の 3 つは 2026-11-03 に書き足した
 #   （道具なしの claude-opus-5-5 に相談文と人物の説明だけを渡した答えを、手を加えずに入れた。eval/PROTOCOL.md）
+#   needs_daily_help・constant_care_2w・caregiver_insured・mental_outpatient の 4 つは 2026-11-05 に同じやり方で書き足した
+#   （eval/out/blind/facts-20261104-1509.json、1 回目の結果）。c16・c30 の caregiver_employee と c25 の care_level は、
+#   事実の意味と選択肢が変わったのに合わせて直した。plans_* の 4 つは規則から外れたが、事例の答えとして残してある
 # - municipality: 本人が住む市区町村の団体コード（人物の説明の市名から。町田市 132098・相模原市 141500・八王子市 132012）。
 #   住所の問いに答えるとき、画面で市区町村を選んだのと同じく place_values で住所の事実を全部決める（2026-11-03 夜）
 
@@ -39,6 +42,10 @@
     severe_constant_care: false
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c02
   municipality: "132098"
@@ -72,6 +79,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: "__dont_know__"
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c03
   municipality: "132098"
@@ -105,6 +116,10 @@
     severe_constant_care: true
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c04
   municipality: "132098"
@@ -138,6 +153,10 @@
     severe_constant_care: "__dont_know__"
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c05
   municipality: "132098"
@@ -171,6 +190,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c06
   municipality: "132098"
@@ -204,6 +227,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c07
   municipality: "132098"
@@ -237,6 +264,10 @@
     severe_constant_care: "__dont_know__"
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c08
   municipality: "132098"
@@ -270,6 +301,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c09
   municipality: "132098"
@@ -303,6 +338,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c10
   municipality: "132098"
@@ -336,6 +375,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c11
   municipality: "132098"
@@ -369,6 +412,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c12
   municipality: "132098"
@@ -402,6 +449,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c13
   municipality: "132098"
@@ -435,6 +486,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c14
   municipality: "132098"
@@ -468,6 +523,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c15
   municipality: "132098"
@@ -501,6 +560,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c16
   municipality: "141500"
@@ -519,7 +582,7 @@
     uses_care_services: true
     shortstay_or_facility: true
     high_medical_costs: false
-    caregiver_employee: false
+    caregiver_employee: true
     dementia_diagnosis: false
     wandering_risk: false
     fire_risk: false
@@ -534,6 +597,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: false
 
 - id: c17
   municipality: "132012"
@@ -567,6 +634,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c18
   municipality: "132098"
@@ -600,6 +671,10 @@
     severe_constant_care: "__dont_know__"
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c19
   municipality: "132098"
@@ -633,6 +708,10 @@
     severe_constant_care: true
     money_management_difficulty: true
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c20
   municipality: "132098"
@@ -666,6 +745,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: "__dont_know__"
+    mental_outpatient: "__dont_know__"
 
 - id: c21
   municipality: "132098"
@@ -699,6 +782,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c22
   municipality: "132098"
@@ -732,6 +819,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: "__dont_know__"
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c23
   municipality: "132098"
@@ -765,6 +856,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: false
+    constant_care_2w: false
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c24
   municipality: "132098"
@@ -798,6 +893,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c25
   municipality: "132098"
@@ -808,7 +907,7 @@
   answers:
     lives_in_machida: true
     age_band: age_75_plus
-    care_level: "__dont_know__"
+    care_level: certified_unknown
     residence: home
     household: alone
     tax_status: "__dont_know__"
@@ -831,6 +930,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c26
   municipality: "132098"
@@ -864,6 +967,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c27
   municipality: "132098"
@@ -897,6 +1004,10 @@
     severe_constant_care: false
     money_management_difficulty: false
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: false
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c28
   municipality: "132098"
@@ -930,6 +1041,10 @@
     severe_constant_care: false
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: true
+    mental_outpatient: false
 
 - id: c29
   municipality: "132098"
@@ -963,6 +1078,10 @@
     severe_constant_care: true
     money_management_difficulty: "__dont_know__"
     hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: true
+    caregiver_insured: false
+    mental_outpatient: false
 
 - id: c30
   municipality: "132098"
@@ -981,7 +1100,7 @@
     uses_care_services: true
     shortstay_or_facility: false
     high_medical_costs: false
-    caregiver_employee: false
+    caregiver_employee: true
     dementia_diagnosis: false
     wandering_risk: false
     fire_risk: false
@@ -995,4 +1114,431 @@
     plans_equipment_purchase: false
     severe_constant_care: false
     money_management_difficulty: false
+    hearing_certifiable: false
+    needs_daily_help: true
+    constant_care_2w: "__dont_know__"
+    caregiver_insured: true
+    mental_outpatient: false
+
+# ---- 2026-11-06 に足したほかの地域の事例（c31〜c42）。規則を読ませない別の Claude が、人物と困りごとから書いた（eval/PROTOCOL.md 11/6）。
+#      answers は rules/facts.yaml の今の事実の組（c01〜c30 とはキーの組が少し違う）
+
+- id: c31
+  municipality: "271004"
+  text: |
+    耳が遠なって、ヘルパーさんの話もよう聞き取られへんのです。病院で両方の耳がだいぶ悪いと言われました。生活保護を受けてるので、補聴器なんかとても買えません。
+  profile: |
+    相談したのは本人（82歳の女性）。大阪市の古い文化住宅にひとりで暮らし、夫とは死別、子どもはおらず、介護をする家族はいない。生活保護を受けていて、世帯（本人ひとり）は住民税非課税。要支援1で、週1回ヘルパーに買い物と掃除を手伝ってもらっているが、ショートステイや施設は考えていない。数年前から耳が遠くなり、先月耳鼻咽喉科で聴力を測ったところ、両耳とも70デシベルを超えていて、手帳の基準に当たると言われた。補聴器を考えている。高血圧で通院しているが発作の心配は言われておらず、医療費は生活保護でまかなわれ自己負担はない。物忘れや火の消し忘れ、道に迷うこと、失禁や紙おむつの心配はなく、寝たきりでもない。お金の管理は自分でしている。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_75_plus
+    care_level: support1
+    needs_daily_help: true
+    residence: home
+    household: alone
+    tax_status: household_exempt
+    on_welfare: true
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: false
+    caregiver_insured: false
+    constant_care_2w: false
+    money_management_difficulty: false
+    mental_outpatient: false
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: true
+    hearing_certifiable: true
+
+- id: c32
+  municipality: "011002"
+  text: |
+    札幌でひとり暮らしをしている父が、冬になってからストーブをつけたまま出かけるようになりました。通帳や印鑑もどこにしまったか分からなくなります。私は東京にいて、すぐには行けません。
+  profile: |
+    相談したのは東京に住む長男（50歳、会社の正社員で雇用保険に入っている）で、2か月に1回ほど帰省している。本人は87歳の男性で、札幌市のマンションにひとりで暮らしている。2年前にアルツハイマー型認知症と診断され、要介護1で、週2回デイサービスに通っているが、ショートステイや施設は使っていない。灯油ストーブをつけたまま外出することが続き、去年の冬は雪の日に近所のスーパーから帰れなくなって、管理人に連れ帰ってもらったことがある。通帳や印鑑の置き場所が分からなくなり、公共料金の支払いも滞りがちで、お金の管理や手続きをひとりでするのは難しい。本人の住民税の区分は長男は知らず、生活保護は受けていない。長男は介護のために仕事を休むことも考えているが、父の状態がそれに当たるかは分からない。失禁や紙おむつ、聞こえ、心臓などの発作の心配はなく、寝たきりでもない。医療費の負担は大きくない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_75_plus
+    care_level: care1
+    needs_daily_help: true
+    residence: home
+    household: alone
+    tax_status: "__dont_know__"
+    on_welfare: false
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: true
+    caregiver_insured: true
+    constant_care_2w: "__dont_know__"
+    money_management_difficulty: true
+    mental_outpatient: false
+    dementia_diagnosis: true
+    wandering_risk: true
+    fire_risk: true
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c33
+  municipality: "401307"
+  text: |
+    精神科に通っています。お金の管理がうまくできなくて、月末には食べるものもなくなります。役所から来る書類も、何をしたらいいのか分からないままたまっていきます。誰かに手伝ってほしいです。
+  profile: |
+    相談したのは本人（48歳の男性）。福岡市のアパートにひとりで暮らし、両親は亡くなっていて、兄弟とも行き来がなく、介護や世話をする家族はいない。20代で統合失調症と診断され、今も月2回精神科に通院して薬を飲んでいる。障害年金と短時間の作業所の工賃で暮らしており、世帯（本人ひとり）は住民税非課税で、生活保護は受けていない。年金が入るとすぐに使ってしまい、公共料金の支払いや役所の手続きをひとりでするのが難しい。食事や入浴、着替えなど身の回りのことは自分でできる。要介護・要支援の認定は受けておらず、介護保険のサービスも使っていない。認知症の診断はなく、道に迷うことや火の消し忘れ、失禁や紙おむつ、聞こえ、心臓などの発作の心配もなく、寝たきりでもない。通院の自己負担は小さい。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_40_64
+    care_level: none
+    needs_daily_help: false
+    residence: home
+    household: alone
+    tax_status: household_exempt
+    on_welfare: false
+    uses_care_services: false
+    high_medical_costs: false
+    caregiver_employee: false
+    caregiver_insured: false
+    constant_care_2w: false
+    money_management_difficulty: true
+    mental_outpatient: true
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c34
+  municipality: "231002"
+  text: |
+    主人はもう半年以上寝たきりで、夜は何度もおむつを替えています。それでも漏れて布団がぬれてしまい、私は腰が悪いので重い布団を干すこともできません。名古屋の夏は暑くて、部屋のにおいも気になります。子どもたちは遠くにいて、頼れる人がいません。夜まとめて眠れる日がほとんどなく、私のほうが先に倒れそうです。
+  profile: |
+    相談したのは妻（72歳、無職）。本人は75歳の男性で、名古屋市の自宅に妻と二人で暮らしている。子どもは県外に住んでいて、介護は妻ひとりでしている。去年の春に脳梗塞を起こし、要介護3で、週2回のデイサービスと訪問看護を使っている。ショートステイはまだ使っていない。相談文では「半年以上寝たきり」と書いているが、実際にほとんどベッドから起きられなくなったのは4か月ほど前からで、それまでは車いすで過ごしていた。食事・排せつ・着替えのほとんどに妻の手が要り、紙おむつを使っているが、夜に漏れて布団がぬれ、腰痛のある妻は布団を干すことができない。会社の年金があって本人に住民税がかかっており、生活保護は受けていない。認知症の診断はなく、心臓などの発作のおそれや聞こえの問題もなく、寝たきりに近いので出歩くことや火を使うことはない。医療費は月数千円で負担は大きくない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_75_plus
+    care_level: care3
+    needs_daily_help: true
+    residence: home
+    household: elderly_only
+    tax_status: self_taxed
+    on_welfare: false
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: false
+    caregiver_insured: false
+    constant_care_2w: true
+    money_management_difficulty: "__dont_know__"
+    mental_outpatient: false
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: true
+    uses_diapers: true
+    bedridden_6m: false
+    severe_constant_care: true
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c35
+  municipality: "131121"
+  text: |
+    母が家で転んで入院しています。退院したら、しばらく仕事を休んでそばにいないといけないかもしれません。休んでいる間のお給料がどうなるのか、入院費もいくらかかるのか、両方心配です。
+  profile: |
+    相談したのは同居する娘（44歳、会社の正社員で雇用保険に入っている）。本人は79歳の女性で、世田谷区の自宅で娘と二人で暮らし、平日の日中はひとりになる。3週間前に家の中で転んで大腿骨を骨折し、手術を受けて今も入院中。病院の相談員に勧められて要介護認定を申請したところで、結果はまだ出ていない。介護のサービスは退院後に使う予定。本人は遺族年金だけで住民税非課税、娘は課税されており、生活保護は受けていない。手術と入院で今月の医療費の自己負担は高くなりそう。退院後しばらくは歩くのに付き添いが要ると言われているが、どのくらい続くかは分からない。物忘れや火の消し忘れ、道に迷うこと、失禁や紙おむつ、聞こえ、心臓などの発作の心配はなく、寝たきりでもない。お金の管理は自分でしている。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: true
+    age_band: age_75_plus
+    care_level: applying
+    needs_daily_help: true
+    residence: hospital
+    household: alone_daytime
+    tax_status: self_exempt
+    on_welfare: false
+    uses_care_services: false
+    high_medical_costs: true
+    caregiver_employee: true
+    caregiver_insured: true
+    constant_care_2w: "__dont_know__"
+    money_management_difficulty: false
+    mental_outpatient: false
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c36
+  municipality: "132063"
+  text: |
+    姉が府中の老健に入っています。姉は独身で、身寄りは私しかいません。姉の年金や通帳を、この先どうやって管理していけばいいのでしょうか。私も年なので、いつまで面倒をみられるか分かりません。
+  profile: |
+    相談したのは弟（70歳、年金暮らしで働いていない）で、隣の市に住んでいる。本人は76歳の女性で、ずっと府中市でひとり暮らしをしてきたが、半年前から市内の介護老人保健施設に入所している。住民票は府中市のアパートのままで、世帯は本人ひとり。要介護の認定を受けているが、区分は弟は覚えていない。3年前に認知症と診断され、通帳の置き場所や年金の入金が分からなくなり、施設の支払いも弟が代わりにしている。お金の管理や手続きをひとりでするのは難しい。本人の住民税の区分は弟は知らず、生活保護は受けていない。施設にいるので火の消し忘れや道に迷う心配はない。紙おむつを使っているかどうか、どのくらい介護が要るかは、弟は施設に聞かないと分からない。心臓などの発作のおそれや聞こえの問題はなく、寝たきりではない。医療費の負担は大きくない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: true
+    age_band: age_75_plus
+    care_level: certified_unknown
+    needs_daily_help: true
+    residence: facility
+    household: alone
+    tax_status: "__dont_know__"
+    on_welfare: false
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: false
+    caregiver_insured: false
+    constant_care_2w: "__dont_know__"
+    money_management_difficulty: true
+    mental_outpatient: false
+    dementia_diagnosis: true
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: "__dont_know__"
+    bedridden_6m: false
+    severe_constant_care: "__dont_know__"
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c37
+  municipality: "141003"
+  text: |
+    夫が59歳で脳梗塞になり、言葉がうまく出なくなりました。右足も不自由で、うちは坂の上の団地なので、ひとりではほとんど外に出られません。私はパートに出ていて、昼間は夫ひとりです。役所の書類も夫は読めなくなってしまい、全部私がやっています。会社も辞めることになり、これからの暮らしが不安です。
+  profile: |
+    相談したのは妻（56歳、スーパーのパートとして雇われ、週25時間働いていて雇用保険に入っている）。本人は59歳の男性で、横浜市の坂の上の団地に妻と大学生の娘と暮らし、平日の日中はひとりになる。8か月前に脳梗塞を起こし、失語症と右半身の麻痺が残った。要介護2で、週2回デイサービスに通っているが、ショートステイや施設は考えていない。発症後に休職し、先月会社を退職したが、去年は会社員として働いていたので本人に住民税がかかっており、生活保護は受けていない。言葉が出にくく字も読みにくいので、書類や支払い、手続きはひとりではできない。リハビリの通院が月数回あるが、医療費の負担は高いとは感じていない。認知症の診断はなく、道に迷うことや火の消し忘れの心配もない（火は使わせていない）。失禁や紙おむつ、聞こえ、心臓などの発作の心配はなく、寝たきりでもない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: true
+    lives_in_tokyo: false
+    age_band: age_40_64
+    care_level: care2
+    needs_daily_help: true
+    residence: home
+    household: alone_daytime
+    tax_status: self_taxed
+    on_welfare: false
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: true
+    caregiver_insured: true
+    constant_care_2w: true
+    money_management_difficulty: true
+    mental_outpatient: false
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c38
+  municipality: "172014"
+  text: |
+    寝たきりの父を家でみていますが、おむつ代がかさむのと、介護している家族に何か手当のようなものはないのか知りたいです。
+  profile: |
+    相談したのは同居する長男（58歳、会社員）。本人は89歳の男性で、金沢市の自宅で長男夫婦と暮らしている。長男の妻は専業主婦で、日中も家にいて介護を主に担っている。1年半前に肺炎で入院したあとから寝たきりになり、要介護5。食事・排せつ・着替えのすべてに介護が要り、紙おむつを使っている。介護用ベッドと防水シーツを借りているので、布団は清潔に保てている。訪問入浴と訪問看護を使い、月に数日ショートステイも使っている。本人は年金だけで住民税非課税、長男は課税されており、生活保護は受けていない。認知症と診断されていて、お金の管理は長男がしている。寝たきりなので出歩くことや火を使うことはない。医療費は訪問診療で月数千円、心臓などの発作のおそれや聞こえの問題はない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_75_plus
+    care_level: care5
+    needs_daily_help: true
+    residence: home
+    household: with_family
+    tax_status: self_exempt
+    on_welfare: false
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: true
+    caregiver_insured: true
+    constant_care_2w: true
+    money_management_difficulty: true
+    mental_outpatient: false
+    dementia_diagnosis: true
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: true
+    bedridden_6m: true
+    severe_constant_care: true
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c39
+  municipality: "012041"
+  text: |
+    去年、介護の認定を受けたら非該当でした。心臓に持病があって、冬の雪かきが本当にこたえます。何か頼めることはないでしょうか。
+  profile: |
+    相談したのは本人（73歳の男性）。旭川市の一戸建てに妻（70歳、無職）と二人で暮らし、子どもは札幌と東京にいる。3年前に心筋梗塞を起こし、今も狭心症の発作に注意するよう医師に言われていて、ニトログリセリンを持ち歩いている。去年要介護認定を申請したが非該当（自立）で、介護保険のサービスは使っていない。身の回りのことは自分でできるが、冬の除雪や重い買い物がつらい。会社の年金があって本人に住民税がかかっており、生活保護は受けていない。通院は月1回で医療費の負担は大きくない。物忘れや火の消し忘れ、道に迷うこと、失禁や紙おむつ、聞こえの問題はなく、寝たきりでもない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_70_74
+    care_level: jiritsu
+    needs_daily_help: false
+    residence: home
+    household: elderly_only
+    tax_status: self_taxed
+    on_welfare: false
+    uses_care_services: false
+    high_medical_costs: false
+    caregiver_employee: false
+    caregiver_insured: false
+    constant_care_2w: false
+    money_management_difficulty: false
+    mental_outpatient: false
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: true
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c40
+  municipality: "462012"
+  text: |
+    主人の耳がずいぶん遠くなって、話しかけても返事がちぐはぐです。介護の認定はまだ受けていないので、まず何をすればいいのか教えてください。
+  profile: |
+    相談したのは妻（84歳、無職）。本人は88歳の男性で、鹿児島市の坂の多い住宅地の自宅に妻と二人で暮らしている。相談文では「認定はまだ受けていない」と書いているが、実際は去年、市内に住む息子が手続きをして要支援2の認定を受けており、妻は忘れていた。窓口に聞かれて引き出しの被保険者証を見れば正しく答えられる。今は介護保険のサービスは使っていないが、週1回の体操のデイサービスを使うことを考えている。耳が遠く補聴器を考えているが、耳鼻咽喉科で検査をしたことはない。返事がちぐはぐなのは聞こえのせいだと妻は思っており、物忘れで受診したことはなく、認知症の診断はない。夫婦とも年金だけで、通知で世帯全員が住民税非課税と知っており、生活保護は受けていない。坂道のせいで、買い物は市内に住む息子（会社員、雇用保険に入っているかは妻は知らない）が週末に車で連れて行っている。火の消し忘れや道に迷うこと、失禁や紙おむつ、心臓などの発作の心配はなく、寝たきりでもない。医療費の負担も大きくない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_75_plus
+    care_level: support2
+    needs_daily_help: true
+    residence: home
+    household: elderly_only
+    tax_status: household_exempt
+    on_welfare: false
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: true
+    caregiver_insured: "__dont_know__"
+    constant_care_2w: false
+    money_management_difficulty: false
+    mental_outpatient: false
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: true
+    hearing_certifiable: "__dont_know__"
+
+- id: c41
+  municipality: "013951"
+  text: |
+    冬はホテルの仕事が忙しくて、母を朝から夜までひとりにしてしまいます。母はうつで通院していて、最近は物忘れも増え、ストーブを消し忘れたこともありました。仕事を減らすべきか悩んでいます。
+  profile: |
+    相談したのは同居する娘（43歳、ニセコ町のホテルで正社員として雇われ、雇用保険に入っている）。本人は70歳の女性で、ニセコ町の自宅で娘と二人で暮らし、冬のシーズン中は日中ずっとひとりになる。10年ほど前からうつ病で、月1回隣町の心療内科に通院している。最近物忘れが増え、灯油ストーブを消し忘れたことがあるが、物忘れで受診したことはなく、認知症の診断はない。道に迷ったことはない。要介護・要支援の認定は受けておらず、介護のサービスも使っていない。本人の住民税の区分は娘は知らず、生活保護は受けていない。身の回りのことは自分でできるが、薬の飲み忘れが多く、娘が薬を分けて置いている。お金の管理はまだ自分でしている。失禁や紙おむつ、聞こえ、心臓などの発作の心配はなく、寝たきりでもない。医療費の負担は大きくない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_70_74
+    care_level: none
+    needs_daily_help: true
+    residence: home
+    household: alone_daytime
+    tax_status: "__dont_know__"
+    on_welfare: false
+    uses_care_services: false
+    high_medical_costs: false
+    caregiver_employee: true
+    caregiver_insured: true
+    constant_care_2w: false
+    money_management_difficulty: false
+    mental_outpatient: true
+    dementia_diagnosis: false
+    wandering_risk: false
+    fire_risk: true
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: false
+    bedridden_6m: false
+    severe_constant_care: false
+    hearing_difficulty: false
+    hearing_certifiable: false
+
+- id: c42
+  municipality: "205419"
+  text: |
+    94歳の母のことで相談です。
+  profile: |
+    相談したのは同居する長男（66歳、りんごと栗の果樹園を営む自営業）。本人は94歳の女性で、小布施町の自宅で長男夫婦と暮らし、長男の妻も農作業の合間に家にいるので、日中も誰かが家にいる。要介護4で、週3回デイサービスに通い、収穫期にはショートステイも使っている。5年前に認知症と診断され、夜中に起き出すことがあるが、足が弱って自分で外に出ることはなく、火も使わない。食事は自分で食べられるが、排せつや着替え、入浴には介護が要り、紙おむつを使っている。布団は防水シーツで清潔に保てている。寝たきりではない。本人は年金だけで住民税非課税、長男は課税されており、生活保護は受けていない。お金の管理は長男がしている。医療費の負担は大きくなく、心臓などの発作のおそれもない。耳は少し遠いが、本人も家族も補聴器は考えていない。
+  answers:
+    lives_in_machida: false
+    lives_in_yokohama: false
+    lives_in_tokyo: false
+    age_band: age_75_plus
+    care_level: care4
+    needs_daily_help: true
+    residence: home
+    household: with_family
+    tax_status: self_exempt
+    on_welfare: false
+    uses_care_services: true
+    high_medical_costs: false
+    caregiver_employee: false
+    caregiver_insured: false
+    constant_care_2w: true
+    money_management_difficulty: true
+    mental_outpatient: false
+    dementia_diagnosis: true
+    wandering_risk: false
+    fire_risk: false
+    chronic_attack_risk: false
+    incontinence_bedding: false
+    uses_diapers: true
+    bedridden_6m: false
+    severe_constant_care: "__dont_know__"
+    hearing_difficulty: false
     hearing_certifiable: false

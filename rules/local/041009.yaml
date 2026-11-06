@@ -1,0 +1,90 @@
+city: "041009"
+name: 仙台市
+site: city.sendai.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品の給付（介護用品支給事業）
+    where: お住まいの区の区役所・総合支所の担当課窓口
+    conditions:
+      - 介護保険で要介護4か5の認定を受けた人（2号被保険者も含む）
+      - 市民税非課税の世帯であること
+      - 入院中の人、生活保護や中国残留邦人等の支援給付を受けている人は対象外
+      - 使い捨ておむつ・尿とりパッド・失禁シーツなどを業者が自宅に届ける。年7万5千円まで
+      - 自己負担は利用額の1割と、限度額を超えた分
+    sources:
+      - url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/zaitaku/fukushi/kaigoyohin.html
+        publisher: 仙台市
+        title: 介護用品の給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.sendai.jp/hokatsushien/download/bunyabetsu/kore/kore/kaigoyohin.html
+        publisher: 仙台市
+        title: 介護用品支給申請書
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 認知症の人の見守りネットワーク事業
+    where: 仙台市役所 地域包括ケア推進課（利用届を郵送か持参で出す）
+    conditions:
+      - 市内に住み、行方不明になるおそれがある認知症（またはその可能性がある）の人
+      - 65歳未満の若年性認知症の人も使える
+      - 本人・親族・同居人・後見人などが、前もって利用届を出しておく
+      - いなくなったら警察に連絡し、見守りネットワークダイヤルへ電話する
+      - 市が協力者に本人の特徴などをメールで送り、発見につなげる
+    sources:
+      - url: https://www.city.sendai.jp/kaigo-suishin/kurashi/kenkotofukushi/korenokata/ninchisho/torikumi/mimamori.html
+        publisher: 仙台市
+        title: 認知症の人の見守りネットワーク事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 食の自立支援サービス
+    where: お住まいの区の区役所・総合支所の担当課窓口（地域包括支援センターや居宅介護支援事業者を通しても申請できる）
+    conditions:
+      - 要支援・要介護の人か事業対象者で、低栄養の改善が必要な人のうち、次のどちらかに当たる人
+      - 65歳以上のひとり暮らしで、体が弱いなどで食事の用意が難しい人
+      - または、65歳以上だけの世帯で、同居の人が入院・病気などで、体が弱く食事の用意が難しい人
+      - 昼か夕の1日1食、週7回まで届ける。安否確認のため原則手渡し
+      - 利用者負担は1食544円（税込）
+    sources:
+      - url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/hitorigurashi/jiritsushien.html
+        publisher: 仙台市
+        title: 食の自立支援サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.sendai.jp/hokatsushien/download/bunyabetsu/kore/kore/kezoku.html
+        publisher: 仙台市
+        title: 高齢者食の自立支援サービス利用申請書・継続利用申請書
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, note: "原文では2つの世帯の条件が「どちらか」なのに、条件がすべて必要と読める書き方で、高齢者のみ世帯の条件から本人の虚弱も落ちていたので、頁に合わせて書き直した", date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 本人が住む区の区役所・宮城総合支所の障害高齢課
+    conditions:
+      - 生活保護の人、市民税非課税の人、報酬を払う収入や財産がない人が対象になりうる
+      - 申立ての費用（印紙・切手・鑑定料・診断書料など）を助成。申立て前の申請が要る
+      - 後見人などへの報酬を助成。上限は在宅で月28,000円、施設で月18,000円
+      - 本人・親族の申立てでは、成年後見総合センターに親族以外の後見人候補の推薦を頼んでいること
+      - 申立てできる4親等内の親族がいないときなどは、必要に応じて市長が申し立てる
+    sources:
+      - url: https://www.city.sendai.jp/chiikifukushi/koukenn-riyousienn2021.html
+        publisher: 仙台市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+      - url: https://www.city.sendai.jp/chiikifukushi/koukenn-miyori2021.html
+        publisher: 仙台市
+        title: 法定後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, note: "推薦を頼む後見人候補が「親族以外」であることが落ちていたので、頁に合わせて足した", date: 2026-11-05}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

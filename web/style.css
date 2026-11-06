@@ -30,13 +30,17 @@ body {
 .top { background: var(--accent); color: var(--accent-ink); padding: 20px 0 16px; margin-bottom: 20px; }
 .top h1 { margin: 0; font-size: 30px; letter-spacing: .04em; }
 .top h1 span { font-size: 17px; font-weight: 400; margin-left: .5em; }
+/* 見出しはトップ（/）へのリンク（T-135）。見た目は今の見出しのまま。?pref= や #k= を持たない / へ戻る */
+.top h1 a.home { display: inline-block; vertical-align: top; color: inherit; text-decoration: none; }
+.top h1 a.home:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; border-radius: 4px; }
 .top .lead { margin: 4px 0 0; font-size: 15px; opacity: .92; }
-/* このサイトについて（T-126）。最初の画面から移した説明と全国の見取り図。閉じておく */
+/* このサイトについて（T-126）。最初の画面から移した説明。閉じておく（全国の見取り図は T-134b で web/japan.html へ） */
 .about > summary { padding: 11px 0; }
 .about .lead { margin: 6px 0 0; font-size: 16px; }
-.about .map-card { margin-top: 16px; padding: 0; }
-.about .map-card h2 { font-size: 18px; padding: 0; }
-.about .map-card figcaption { padding: 0; }
+/* 全国の見取り図への 1 行（結果の節の最後、T-134b）と、その頁。押せる高さは 44px */
+.map-link { margin: 0 0 8px; font-size: 16px; }
+.map-link a { color: var(--accent); display: inline-flex; align-items: center; min-height: 44px; }
+.map-card figcaption { padding: 0; }
 /* 選んで文を作る欄（T-126）と合言葉の小さな入口。どちらも最初は畳む */
 .pick-more { margin-top: 14px; }
 .pick-more > summary { padding: 11px 0; }

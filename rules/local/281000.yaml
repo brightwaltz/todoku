@@ -1,0 +1,82 @@
+city: "281000"
+name: 神戸市
+site: city.kobe.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ支給事業
+    where: 神戸市福祉局高齢福祉課へ郵送（申請書はケアマネジャー・あんしんすこやかセンター等にある）
+    conditions:
+      - 神戸市内の自宅で介護を受ける人で、神戸市の介護保険被保険者（入院・入所中は対象外）
+      - 要介護4以上の認定を受けていること
+      - 世帯全員が市民税非課税で、生活保護・中国残留邦人等支援給付を受けていない
+      - 申請は原則、介護している市内在住の家族（その家族がいなければ本人）
+      - 紙おむつ・尿とりパッドを年2.5万〜10万円分支給（支給決定日で額が変わる）
+    sources:
+      - url: https://www.city.kobe.lg.jp/a39067/kurashi/registration/shinsei/koureisha/wh1306008.html
+        publisher: 神戸市
+        title: 紙おむつ支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者などを対象としたGPSサービス
+    where: 申込書を神戸市行政事務センター（認知症神戸モデル事故救済制度の係）へ郵送
+    conditions:
+      - 認知症と診断された人（神戸モデルの診断助成を使わずに診断された人も対象）
+      - 診断助成を使っていない人は、医療機関に申込書裏の診断書を書いてもらう（費用は自己負担）
+      - GPS端末を貸し出し、初期費用は全額、月額利用料は半額を市が負担する
+      - 残る月額利用料（事業者により825円か1,650円）とオプションは自己負担
+    sources:
+      - url: https://www.city.kobe.lg.jp/a39067/kenko/fukushi/carenet/ninchisyou/ninchishogpssa-bisu.html
+        publisher: 神戸市
+        title: 認知症高齢者などを対象としたGPSサービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（後見人等の報酬助成・審判請求費用助成）
+    where: 神戸市福祉局くらし支援課
+    conditions:
+      - 市長が申し立てた人、または原則市内に住む人（他の市区町村長を除く）が申し立てた人
+      - 生活保護を受けているなど、後見人等の報酬を払うのが本当に難しいと市長が認めた人
+      - 助成額は財産や生活費で審査。上限は施設入所で月1万8千円、居宅で月2万8千円
+      - 家庭裁判所の報酬付与の審判の後、おおむね3か月以内に申請する
+      - 市長が申し立てた人で費用の負担が本当に難しいと認められれば、申立ての費用も助成
+    sources:
+      - url: https://www.city.kobe.lg.jp/a38463/housyuzyosei.html
+        publisher: 神戸市
+        title: 後見報酬助成（成年後見制度利用支援事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review:
+      read_by: "Managed Agent（Opus 5.5）"
+      recheck: fixed
+      note: 審判請求費用の助成は市長申立てなら誰でも受けられるように読めたので、頁のとおり負担が真に困難と市長が認める人に限ることを5行目に足した。
+      date: 2026-11-05
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金
+    where: 居住地の区役所の保健福祉課
+    conditions:
+      - 65歳以上で要介護4以上の人を、家庭で介護している人
+      - 要介護3でも、認知症の症状が目立つ人は対象になることがある
+      - 過去1年間、介護保険サービスを使わずに在宅で介護を続けてきたこと
+      - 所得が老齢福祉年金の制限額以下であること（介護する家族にも制限がかかる場合あり）
+      - 支給額は年額12万円
+    sources:
+      - url: https://www.city.kobe.lg.jp/a39067/kenko/fukushi/koreshafukushi/am04/zaitaku/a0375.html
+        publisher: 神戸市
+        title: 家族介護慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review:
+      read_by: "Managed Agent（Opus 5.5）"
+      recheck: fixed
+      note: 4行目が頁の文と20字続けて同じだったので、意味を変えずに言い換えた。
+      date: 2026-11-05

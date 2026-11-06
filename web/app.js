@@ -143,7 +143,9 @@ function choose(boxId, label, multi, button) {
 }
 
 function buildDraft() {
-  if (!pick.who && !pick.worries.size) return "";
+  // 選んだ出来事の文も後ろにつなぐ（T-134。出来事を押した後にどなた・お住まいを選んでも、出来事の文を消さない）
+  const events = eventList.filter((e) => eventPicked.has(e.id)).map((e) => e.text).join("");
+  if (!pick.who && !pick.worries.size && !events) return "";
   const parts = [];
   const age = pick.age ? `（${pick.age}）` : "";
   if (pick.who === "ご自分") parts.push(`私自身${age}のことです。`);
@@ -155,7 +157,7 @@ function buildDraft() {
     parts.push(`${pref.name}${city ? city[1] : ""}に住んでいます。`);
   }
   for (const [label, sentence] of WORRIES) if (pick.worries.has(label)) parts.push(sentence);
-  return parts.join("");
+  return parts.join("") + events;
 }
 
 // 選ぶたびに作り直す。ただし本人が欄を書き換えていたら上書きせず、作り直すボタンを出す
@@ -241,14 +243,9 @@ function toggleEvent(id) {
   document.querySelectorAll("#scene .scene-item").forEach((g) => g.classList.toggle("on", eventPicked.has(g.dataset.ev)));
   $("scene-caption").textContent = picked.length ? `選んだ出来事：${picked.map((e) => e.label).join("・")}` : SCENE_EMPTY;
   $("event-start").disabled = !picked.length;
-  const box = $("text");
-  const edited = box.value !== lastDraft && box.value.trim() !== "";
-  if (!edited) {  // 本人が書き換えるまでは、選び直すと下書きを作り直す（選ぶだけの下書きと同じ扱い）
-    const draft = picked.map((e) => e.text).join("");
-    box.value = draft;
-    lastDraft = draft;
-    show("redraft", false);
-  }
+  // 出来事を 1 つ押したら、どなた・年齢・お住まいを選ぶ欄を開く（T-134。最初は書く欄と出来事の札だけ）。開くのは最初の 1 回だけ
+  if (picked.length && $("pick-more").hidden) { show("pick-more"); $("pick-more").open = true; }
+  redraft();  // 本人が書き換えるまでは、選び直すと下書きを作り直す（選ぶだけの下書きと同じ扱い）
 }
 
 async function openEvents() {
@@ -506,8 +503,9 @@ function revealThenAsk() {
 }
 
 function renderQuestion(q, max, first = false) {
-  $("ask-count").textContent = `質問 ${state.asked + 1}（多くて ${max} つ）`;
-  show("one-box", state.asked === 0);  // 「1 問だけ答える」は最初の問いでだけ選べる
+  // お住まいは 3 問の枠の外で最初に聞く（11/6、全国のどこに住む人でも使うため。questions.next_question の place_first）
+  $("ask-count").textContent = q.place ? "はじめに、お住まい（質問の数には入れません）" : `質問 ${state.asked + 1}（多くて ${max} つ）`;
+  show("one-box", state.asked === 0 && !q.place);  // 「1 問だけ答える」は最初の問いでだけ選べる（お住まいの問いは数えないので、その次）
   syncOne();
   $("ask-text").textContent = askText(q);
   $("ask-hint").textContent = q.hint || "";  // 書類で確かめる問いは、どこを見るかを選択肢の前に出す
@@ -630,20 +628,21 @@ function fillAnswers(box, q, pick, pickPlace) {
 }
 
 // later：結果の画面で、確かめていない読み取りに答えたとき。聞き返しの数に入れず、新しい問いも出さない
+// お住まいの問い（q.place）も数に入れない（3 問の枠の外。「わからない」と答えたときも同じ）
 function answer(q, value, later = false) {
   const facts = { ...state.facts };
   const suggestions = { ...state.suggestions };
   if (!(q.confirm && value === NOT_THIS)) facts[q.fact] = value;
   delete suggestions[q.fact];
-  return step({ facts, suggestions, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1,
+  return step({ facts, suggestions, asked: state.asked + (later || q.place ? 0 : 1), presses: state.presses + 1,
     thread: withSaid(q, answerLabel(q, value), later) }, later);
 }
 
-// お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める
+// お住まいの問いで市区町村を選んだとき。町田市かどうかはサーバが市区町村から決める。聞き返しの数には入れない（3 問の枠の外）
 function answerPlace(code, later = false, q = null) {
   const suggestions = { ...state.suggestions };
   delete suggestions.lives_in_machida;
-  return step({ suggestions, municipality: code, asked: state.asked + (later ? 0 : 1), presses: state.presses + 1,
+  return step({ suggestions, municipality: code, asked: state.asked, presses: state.presses + 1,
     thread: q ? withSaid(q, placeLabel(code), later) : state.thread }, later);
 }
 
@@ -1485,6 +1484,7 @@ function markPref() {
 // タイルを押すと、その都道府県を選んで市区町村の欄へ移る（/city/ の頁からは /?pref=NN で来る）
 function pickFromMap(code, smooth) {
   if (!prefs.some((p) => p.code === code)) return false;
+  show("events"); show("pick-more");  // 選ぶ欄は出来事の枠の中で、最初は出していない（T-134）
   $("pick-more").open = true;  // 選ぶ項目は畳んであるので、開いてから市区町村の欄へ移る（T-126）
   $("pref").value = code;
   choosePref(code);
@@ -1508,18 +1508,7 @@ fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
     history.replaceState(null, "", location.pathname + location.hash);  // 結果を残すリンクに ?pref= を混ぜない
   }
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
-// 全国の見取り図（T-080c）。サーバが規則から作った SVG の断片を差し込む（よそのデータは入らない）。取れなければ出さない
-fetch("/japan-map").then((r) => (r.ok ? r.text() : "")).then((html) => {
-  const fig = new DOMParser().parseFromString(html, "text/html").querySelector("figure.japan-map");
-  if (!fig) return;
-  $("japan-box").replaceChildren(document.importNode(fig, true));
-  $("japan-box").addEventListener("click", (ev) => {
-    const a = ev.target.closest("a[data-pref]");
-    if (a && pickFromMap(a.dataset.pref, true)) ev.preventDefault();
-  });
-  markPref();
-  show("japan");
-}).catch(() => { /* 見取り図は出さない */ });
+// 全国の見取り図は T-134b で別の頁（web/japan.html・web/japan.js）へ移した。タイルは /?pref=NN で戻り、上の pickFromMap が選ぶ
 // 出来事のボタンも、取れたときだけ出す（T-071）
 fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;

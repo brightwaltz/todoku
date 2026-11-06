@@ -2,8 +2,9 @@
 
 3 つの比べ方：
   rules        規則だけ。事例の答え（事実）をすべて与えて判定する。規則の正しさを見る。Claude は使わない
-  pipeline     窓口全体。相談文 → Claude が事実を取り出す → 最大 3 問を事例の答えで返す → 判定。
-               入口でお住まいの市区町村を選んだ場合（place）も、追加の API 呼び出しなしで出す
+  pipeline     窓口全体。相談文 → Claude が事実を取り出す → お住まいが分からなければ最初に聞く（3 問の枠の外）
+               → 最大 3 問を事例の答えで返す → 判定。入口でお住まいの市区町村を選んだ場合（place）と、
+               お住まいも 3 問の枠の中で値打ちの順に聞いていた 11/6 07:36 までの流れ（legacy-…）も、追加の API 呼び出しなしで出す
   claude_only  Claude だけ。同じ相談文と、正解表にある制度（1〜32）の名前と説明を渡し、案内すべき制度を選ばせる（問いは返さない）
 
 正解（eval/gold.csv）は、規則の読みと目隠しの Claude の読みを突き合わせ、食い違ったマスだけを柴田が裁いて作った
@@ -17,6 +18,7 @@
   uv run python eval/run_eval.py rules
   uv run python eval/run_eval.py rules --gold eval/gold_no_policy.csv
   uv run python eval/run_eval.py --rescore eval/out/pipeline-….json --gold eval/gold_no_policy.csv   保存した結果を別の正解表で数え直す（API は呼ばない）
+  uv run python eval/run_eval.py --replay eval/out/pipeline-….json   保存した読み取り（read）で、今の問いの選び方を流し直す（API は呼ばない）
   ANTHROPIC_API_KEY=... uv run python eval/run_eval.py pipeline claude_only   （API の料金がかかる）
 """
 
@@ -36,7 +38,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 from todoku import rules as rules_mod  # noqa: E402
 from todoku.claude import ALWAYS_CONFIRM  # noqa: E402
 from todoku.engine import DONT_KNOW, statuses  # noqa: E402
-from todoku.questions import MAX_QUESTIONS, Question, next_question, referenced_facts  # noqa: E402
+from todoku.questions import MAX_QUESTIONS, Question, next_question, place_fact, referenced_facts  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "out"
@@ -120,10 +122,15 @@ def run_rules(rs, case: dict) -> dict:
     return {"statuses": statuses(rs, {**case["answers"], **place_answers(rs, case)}), "asked": []}
 
 
-def fixed_order_question(rs, facts: dict, suggestions: dict, asked: int, max_questions: int):
-    """比べる相手：値打ちを数えず、facts.yaml の順に、まだ分からない事実を聞く（決まった順の問診票）。"""
+def fixed_order_question(rs, facts: dict, suggestions: dict, asked: int, max_questions: int, place_first: bool = True):
+    """比べる相手：値打ちを数えず、facts.yaml の順に、まだ分からない事実を聞く（決まった順の問診票）。
+    place_first なら、窓口と同じくお住まいを枠の外で先に聞く。"""
     if asked >= max_questions:
         return None
+    if place_first:
+        place = place_fact(rs, facts)
+        if place is not None:
+            return Question(place, 0.0, suggestions.get(place), counted=False)
     for fid in sorted(referenced_facts(rs), key=lambda f: rs.facts[f].order):
         value = facts.get(fid)
         if value is None:
@@ -131,17 +138,21 @@ def fixed_order_question(rs, facts: dict, suggestions: dict, asked: int, max_que
     return None
 
 
-def simulate(rs, case: dict, facts: dict, suggestions: dict, max_questions: int, order: str) -> dict:
-    """読み取った事実から始めて、最大 max_questions 問を事例の答えで返す。"""
+def simulate(rs, case: dict, facts: dict, suggestions: dict, max_questions: int, order: str,
+             place_first: bool = True) -> dict:
+    """読み取った事実から始めて、最大 max_questions 問を事例の答えで返す。
+
+    place_first なら、お住まいの問いは枠に数えない（画面と同じ。asked に入れず place_asked に入れる）。
+    """
     facts, suggestions = dict(facts), dict(suggestions)
     pick = next_question if order == "value" else fixed_order_question
-    asked = []
-    for i in range(max_questions):
-        q = pick(rs, facts, suggestions, asked=i, max_questions=max_questions)
+    asked, place_asked = [], []
+    for _ in range(max_questions + len(rs.places) + 1):  # 数えない住所の問いは、住所の事実の数より多くはならない
+        q = pick(rs, facts, suggestions, asked=len(asked), max_questions=max_questions, place_first=place_first)
         if q is None:
             break
         truth = answer_of(case, q.fact)
-        asked.append(q.fact)
+        (asked if q.counted else place_asked).append(q.fact)
         if q.fact in rs.places:
             apply_place(rs, case, facts, suggestions, q.fact)
             continue
@@ -156,16 +167,21 @@ def simulate(rs, case: dict, facts: dict, suggestions: dict, max_questions: int,
         # 「はい」はその値、「わからない」は DONT_KNOW を入れる（画面と同じく、二度と聞かない。app.js の answer）
         facts[q.fact] = truth
         suggestions.pop(q.fact, None)
-    return {"statuses": statuses(rs, facts), "asked": asked}
+    return {"statuses": statuses(rs, facts), "asked": asked, "place_asked": place_asked}
 
 
 def run_pipeline(rs, case: dict, claude) -> dict:
     extraction = claude.extract(rs, case["text"])
-    facts = extraction.confirmed()
-    suggestions = extraction.suggestions()
+    return from_read(rs, case, {e.fact: [e.value, e.confidence] for e in extraction.facts})
+
+
+def from_read(rs, case: dict, read: dict[str, list]) -> dict:
+    """読み取り（事実 → [値, 確信]）から、問いを事例の答えで返して判定する。--replay は保存した read をここに渡す。"""
+    facts = {f: v for f, (v, conf) in read.items() if conf == "high"}
+    suggestions = {f: v for f, (v, conf) in read.items() if conf == "low"}
     wrong_reads = [
-        {"fact": e.fact, "read": e.value, "truth": answer_of(case, e.fact), "confidence": e.confidence}
-        for e in extraction.facts if answer_of(case, e.fact) not in (e.value, DONT_KNOW)
+        {"fact": f, "read": v, "truth": answer_of(case, f), "confidence": conf}
+        for f, (v, conf) in read.items() if answer_of(case, f) not in (v, DONT_KNOW)
     ]
     main_run = simulate(rs, case, facts, suggestions, MAX_QUESTIONS, "value")
     # 読み取りは 1 回だけ。聞く数と順番を変えた結果は、追加の API 呼び出しなしで出せる
@@ -173,13 +189,19 @@ def run_pipeline(rs, case: dict, claude) -> dict:
         f"{order}-{k}": simulate(rs, case, facts, suggestions, k, order)
         for order in ("value", "fixed") for k in range(0, MAX_QUESTIONS + 1)
     }
+    # 11/6 07:36 の採点までの流れ（お住まいも 3 問の枠の中で、値打ちの順に聞く）。改善の前後を同じ読み取りで並べるために残す。
+    # legacy-value-4 は、答える数をそろえた比べ（新しい流れは住所＋3 問で、最大 4 つ答える）。上がった分が「答えが 1 つ増えた」ためかを見る
+    variants.update({
+        f"legacy-{order}-{k}": simulate(rs, case, facts, suggestions, k, order, place_first=False)
+        for order, k in (("value", MAX_QUESTIONS), ("fixed", MAX_QUESTIONS), ("value", MAX_QUESTIONS + 1))
+    })
     # 入口でお住まいの市区町村を選んだ場合（画面の apply_place と同じく、読み取りより優先する）。選ぶかは利用者しだいなので、両方を出す
     place_facts, place_suggestions = dict(facts), dict(suggestions)
-    if place_answers(rs, case) or answer_of(case, "lives_in_machida") != DONT_KNOW:
-        apply_place(rs, case, place_facts, place_suggestions, rs.place_question or "lives_in_machida")
+    first_place = next(iter(rs.places))
+    if place_answers(rs, case) or answer_of(case, first_place) != DONT_KNOW:
+        apply_place(rs, case, place_facts, place_suggestions, rs.place_question or first_place)
     place_run = simulate(rs, case, place_facts, place_suggestions, MAX_QUESTIONS, "value")
-    return {**main_run, "wrong_reads": wrong_reads, "variants": variants, "place": place_run,
-            "read": {e.fact: [e.value, e.confidence] for e in extraction.facts}}
+    return {**main_run, "wrong_reads": wrong_reads, "variants": variants, "place": place_run, "read": read}
 
 
 CLAUDE_ONLY_SYSTEM = """あなたは、高齢者と介護する家族のための公的制度の相談窓口の職員です。相談する人は町田市の人とは限りません。
@@ -270,6 +292,8 @@ def print_summary(mode: str, summary: dict) -> None:
           f"／×なのに示した数（確かめると使えるかもしれないを含む）{c['no_shown']}")
     if "asked_mean" in summary:
         print(f"  返した問いの数 1 件あたり {summary['asked_mean']:.2f}（上限 3）。問いの数ごとの率は上の value-0〜3")
+    if "place_asked_mean" in summary:
+        print(f"  お住まいの問い（3 問の枠の外）1 件あたり {summary['place_asked_mean']:.2f}。前の流れ（枠の中）は上の legacy-value-3")
     if c["pending_yes"] + c["pending_no"] + c["pending_unsure"]:
         print(f"  申請済み・結果待ちとして出さなかったマス：○ {c['pending_yes']}・× {c['pending_no']}・？ {c['pending_unsure']}")
     if summary.get("failed"):
@@ -277,6 +301,42 @@ def print_summary(mode: str, summary: dict) -> None:
     if "api" in summary:
         a = summary["api"]
         print(f"  API 呼び出し {a['calls']} 回（{'・'.join(a['models'])}）入力 {a['input_tokens']}・出力 {a['output_tokens']} トークン")
+
+
+def pipeline_summary(summary: dict, ok: dict, gold: dict) -> None:
+    summary["asked_mean"] = sum(len(r["asked"]) for r in ok.values()) / len(ok)
+    summary["place_asked_mean"] = sum(len(r.get("place_asked", [])) for r in ok.values()) / len(ok)
+    summary["wrong_reads"] = sum(len(r["wrong_reads"]) for r in ok.values())
+    summary["by_questions"] = by_questions(ok, gold)
+
+
+def replay(path: Path, gold_path: Path | None) -> None:
+    """保存した pipeline の結果の読み取り（read）で、今の問いの選び方を流し直す。API は呼ばない。
+
+    読み取りは同じなので、問いの選び方を変えた前後を同じ条件で比べられる（Claude の読み取りの揺れが入らない）。
+    """
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if data["mode"] != "pipeline":
+        sys.exit("--replay は pipeline の結果だけに使えます")
+    rs = rules_mod.load()
+    gold = load_gold(rs, gold_path)
+    cases = {c["id"]: c for c in load_cases()}
+    results = {}
+    for cid, r in data["results"].items():
+        results[cid] = r if "error" in r else from_read(rs, cases[cid], r["read"])
+    ok = {cid: r for cid, r in results.items() if "error" not in r}
+    summary = score(results, gold)
+    summary["failed"] = sorted(set(results) - set(ok))
+    summary["gold"] = (gold_path or HERE / "gold.csv").name
+    summary["replayed_from"] = path.name
+    if ok:
+        pipeline_summary(summary, ok, gold)
+    print_summary("pipeline（保存した読み取りで流し直し）", summary)
+    tag = "" if gold_path is None else f"-{gold_path.stem}"
+    stamp = dt.datetime.now().strftime("%Y%m%d-%H%M")
+    (OUT / f"{path.stem}-replay-{stamp}{tag}.json").write_text(
+        json.dumps({"mode": "pipeline", "summary": summary, "results": results}, ensure_ascii=False, indent=1),
+        encoding="utf-8")
 
 
 def rescore(path: Path, gold_path: Path | None) -> None:
@@ -312,6 +372,12 @@ def main(args: list[str]) -> None:
         if i + 1 >= len(args):
             sys.exit("--rescore のあとに、保存した結果のパスを書いてください")
         rescore(Path(args[i + 1]), gold_path)
+        return
+    if "--replay" in args:
+        i = args.index("--replay")
+        if i + 1 >= len(args):
+            sys.exit("--replay のあとに、保存した pipeline の結果のパスを書いてください")
+        replay(Path(args[i + 1]), gold_path)
         return
     modes = args or ["rules"]
     unknown = [m for m in modes if m not in MODES]
@@ -355,9 +421,7 @@ def main(args: list[str]) -> None:
                               "input_tokens": sum(c["input_tokens"] for c in used),
                               "output_tokens": sum(c["output_tokens"] for c in used)}
         if mode == "pipeline" and ok:
-            summary["asked_mean"] = sum(len(r["asked"]) for r in ok.values()) / len(ok)
-            summary["wrong_reads"] = sum(len(r["wrong_reads"]) for r in ok.values())
-            summary["by_questions"] = by_questions(ok, gold)
+            pipeline_summary(summary, ok, gold)
         summary["gold"] = (gold_path or HERE / "gold.csv").name
         summaries[mode] = summary
         tag = "" if gold_path is None else f"-{gold_path.stem}"

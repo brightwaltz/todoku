@@ -1,0 +1,87 @@
+city: "341002"
+name: 広島市
+site: city.hiroshima.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 高齢者在宅介護用品の支給
+    where: 各区厚生部福祉課高齢介護係
+    conditions:
+      - 市内に住所があり市内で生活する、要介護4か5の人（その人を介護する市内の家族も可）
+      - 市民税が非課税の世帯であること（生活保護などを受ける世帯は対象外）
+      - 同居していれば、原則として同じ世帯とみなす
+      - 紙おむつ・尿とりパッド・シーツ・おしりふき・手袋を月6,500円分まで現物で渡す
+      - 選んだ事業者が自宅に届ける
+    sources:
+      - url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1015439.html
+        publisher: 広島市
+        title: 高齢者在宅介護用品の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 広島市認知症高齢者等SOSネットワーク
+    where: 住んでいる区の区役所地域支えあい課や地域包括支援センターなど
+    conditions:
+      - 市内に住む65歳以上で、認知症などで道に迷うおそれのある人
+      - 40歳以上で、初老期の認知症などで道に迷うおそれのある人も対象
+      - 家族などが、早く見つけるための情報や写真を前もって登録する
+      - 区役所で登録すると、QRコードの見守りシールのサービスも同時に申し込める
+    sources:
+      - url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1021245/1006041/1025806/1012788.html
+        publisher: 広島市
+        title: 広島市認知症高齢者等SOSネットワーク
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 高齢者配食サービス
+    where: 各区福祉課高齢介護係
+    conditions:
+      - おおむね65歳以上で、弱っていて調理が難しい人
+      - ひとり暮らしか高齢者だけの世帯（長時間高齢者だけになる世帯なども含む）
+      - 原則週5日以上の利用（通所介護・訪問介護などを使う人は週3日以上でも可）
+      - 食事を届けるときに安否を確かめる。費用は1食514円程度
+    sources:
+      - url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1003211.html
+        publisher: 広島市
+        title: 高齢者配食サービスのご案内
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見人等への報酬支払助成（広島市成年後見制度利用支援事業）
+    where: 各区厚生部地域支えあい課（地域包括支援係）
+    conditions:
+      - 市内に住む、後見などを受けている人
+      - 生活保護や中国残留邦人等の支援給付を受けている人
+      - または市民税非課税世帯で、年収150万円以下・預貯金等350万円以下などの人
+      - 後見人などが本人の親族のときは対象外
+      - 上限は在宅の期間で月2.8万円、入院・入所の期間で月1.8万円
+    sources:
+      - url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1029760/1015449.html
+        publisher: 広島市
+        title: 成年後見人等への報酬支払助成
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金
+    where: 各区厚生部福祉課
+    conditions:
+      - 在宅で主に介護している家族に支給する
+      - 介護される人が市民税非課税の世帯であること
+      - 1年続けて要介護4・5（またはそれに相当すると認められる）であること
+      - 1年間介護保険のサービスを使っていない（7日以内のショートステイは除く）
+      - 1年のうち入院・入所が通算で半分を超えないこと。支給は10万円
+    sources:
+      - url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1015395.html
+        publisher: 広島市
+        title: 家族介護慰労金
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

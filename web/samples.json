@@ -60,6 +60,52 @@
       "needs_daily_help": true,
       "high_medical_costs": true,
       "dementia_diagnosis": false
+    },
+    "summary": {
+      "answers": {
+        "care_level": "none",
+        "needs_daily_help": true,
+        "high_medical_costs": true
+      },
+      "key": "fukushi-yogu-konyu:after_prereq:kaigo-nintei,jutaku-kaishu:after_prereq:kaigo-nintei,kaigo-nintei:eligible:,kogaku-gassan:after_prereq:kaigo-nintei,kogaku-kaigo-service:after_prereq:kaigo-nintei,kogaku-ryoyohi:eligible:,machida-jutaku-setsubi:after_prereq:kaigo-nintei,machida-shogaisha-nintei:after_prereq:kaigo-nintei,seikatsu-fukushi-shikin:eligible:,shogaisha-kojo:after_prereq:machida-shogaisha-nintei,tokyo-silver-pass:eligible:",
+      "lines": [
+        {
+          "program_ids": [
+            "kaigo-nintei",
+            "jutaku-kaishu",
+            "fukushi-yogu-konyu",
+            "kogaku-kaigo-service"
+          ],
+          "text": "まずお母さまの要介護認定を申請すると、住宅改修や福祉用具などの支給も使えるようになります。"
+        },
+        {
+          "program_ids": [
+            "kaigo-nintei",
+            "kogaku-gassan",
+            "machida-jutaku-setsubi"
+          ],
+          "text": "認定のあとは、医療と介護の合算の払い戻しや、町田市の住宅設備の給付も使えるようになります。"
+        },
+        {
+          "program_ids": [
+            "machida-shogaisha-nintei",
+            "shogaisha-kojo"
+          ],
+          "text": "認定のあと障害者控除対象者認定書を申請すると、税の障害者控除も受けられる見込みです。"
+        },
+        {
+          "program_ids": [
+            "kogaku-ryoyohi",
+            "seikatsu-fukushi-shikin",
+            "tokyo-silver-pass"
+          ],
+          "text": "高額療養費、生活福祉資金の貸付、シルバーパスは、今すぐ使える見込みです。"
+        }
+      ],
+      "made": {
+        "model": "claude-opus-5-5",
+        "date": "2026-11-06"
+      }
     }
   },
   {
@@ -114,6 +160,51 @@
     },
     "script": {
       "age_band": "age_75_plus"
+    },
+    "summary": {
+      "answers": {
+        "care_level": "none",
+        "needs_daily_help": true,
+        "age_band": "age_75_plus"
+      },
+      "key": "fukushi-yogu-konyu:after_prereq:kaigo-nintei,jiritsu-shien-iryo:eligible:,jutaku-kaishu:after_prereq:kaigo-nintei,kaigo-nintei:eligible:,kogaku-kaigo-service:after_prereq:kaigo-nintei,machida-gps:eligible:,machida-jutaku-setsubi:after_prereq:kaigo-nintei,machida-shogaisha-nintei:after_prereq:kaigo-nintei,seikatsu-fukushi-shikin:eligible:,shogaisha-kojo:after_prereq:machida-shogaisha-nintei,tokyo-silver-pass:eligible:",
+      "lines": [
+        {
+          "program_ids": [
+            "kaigo-nintei",
+            "jutaku-kaishu",
+            "fukushi-yogu-konyu",
+            "kogaku-kaigo-service",
+            "machida-jutaku-setsubi"
+          ],
+          "text": "まずお父さまの要介護認定を申請すると、住宅改修や福祉用具などの制度も使えるようになります。"
+        },
+        {
+          "program_ids": [
+            "machida-shogaisha-nintei",
+            "shogaisha-kojo"
+          ],
+          "text": "認定のあとに障害者控除対象者認定書を申請すると、税の障害者控除も使えるようになります。"
+        },
+        {
+          "program_ids": [
+            "machida-gps",
+            "jiritsu-shien-iryo"
+          ],
+          "text": "GPSの探索サービスや、通院の医療費が軽くなる自立支援医療も当てはまる見込みです。"
+        },
+        {
+          "program_ids": [
+            "seikatsu-fukushi-shikin",
+            "tokyo-silver-pass"
+          ],
+          "text": "介護の費用を借りられる生活福祉資金や、東京都シルバーパスも使える見込みです。"
+        }
+      ],
+      "made": {
+        "model": "claude-opus-5-5",
+        "date": "2026-11-06"
+      }
     }
   },
   {
@@ -174,6 +265,50 @@
     },
     "script": {
       "age_band": "age_75_plus"
+    },
+    "summary": {
+      "answers": {
+        "care_level": "care4",
+        "age_band": "age_75_plus",
+        "high_medical_costs": true
+      },
+      "key": "fukushi-yogu-konyu:eligible:,futan-gendogaku:eligible:,jutaku-kaishu:eligible:,kogaku-ryoyohi:eligible:,machida-haishoku:eligible:,machida-jutaku-setsubi:eligible:,machida-shogaisha-nintei:eligible:,seikatsu-fukushi-shikin:eligible:,shogaisha-kojo:after_prereq:machida-shogaisha-nintei,tokyo-silver-pass:eligible:",
+      "lines": [
+        {
+          "program_ids": [
+            "machida-shogaisha-nintei",
+            "shogaisha-kojo"
+          ],
+          "text": "まず障害者控除対象者認定書を申請すると、おばあさまも税の障害者控除が使えるようになります。"
+        },
+        {
+          "program_ids": [
+            "jutaku-kaishu",
+            "fukushi-yogu-konyu",
+            "machida-jutaku-setsubi"
+          ],
+          "text": "手すりの工事や福祉用具の購入、浴槽やトイレの取り替えの費用に支給を受けられる見込みです。"
+        },
+        {
+          "program_ids": [
+            "kogaku-ryoyohi",
+            "futan-gendogaku",
+            "seikatsu-fukushi-shikin"
+          ],
+          "text": "医療費や施設の食費・居住費の負担が軽くなり、必要なら費用を借りられる見込みです。"
+        },
+        {
+          "program_ids": [
+            "machida-haishoku",
+            "tokyo-silver-pass"
+          ],
+          "text": "食事を届けながらの見守りや、都内のバスに乗れるシルバーパスも使える見込みです。"
+        }
+      ],
+      "made": {
+        "model": "claude-opus-5-5",
+        "date": "2026-11-06"
+      }
     }
   },
   {
@@ -237,6 +372,51 @@
     "made": {
       "model": "claude-opus-5-5",
       "date": "2026-11-04"
+    },
+    "summary": {
+      "answers": {
+        "care_level": "none",
+        "needs_daily_help": true,
+        "residence": "home"
+      },
+      "key": "fukushi-yogu-konyu:after_prereq:kaigo-nintei,jiritsu-shien-iryo:eligible:,jutaku-kaishu:after_prereq:kaigo-nintei,kaigo-nintei:eligible:,kogaku-kaigo-service:after_prereq:kaigo-nintei,nichijo-jiritsu-shien:eligible:,seikatsu-fukushi-shikin:eligible:,shogaisha-kojo:after_prereq:,yokohama-keiro-pass:eligible:,yokohama-ribiyo:after_prereq:kaigo-nintei,yokohama-sos:eligible:",
+      "lines": [
+        {
+          "program_ids": [
+            "kaigo-nintei",
+            "jutaku-kaishu",
+            "fukushi-yogu-konyu",
+            "kogaku-kaigo-service"
+          ],
+          "text": "まず要介護認定を申請すると、住宅改修や福祉用具購入、高額介護サービス費も使えるようになります。"
+        },
+        {
+          "program_ids": [
+            "shogaisha-kojo",
+            "yokohama-ribiyo"
+          ],
+          "text": "手続きが済むと、税の障害者控除や、要介護度によっては訪問理美容も使える見込みです。"
+        },
+        {
+          "program_ids": [
+            "jiritsu-shien-iryo",
+            "nichijo-jiritsu-shien",
+            "yokohama-sos"
+          ],
+          "text": "お父さまは通院医療費の軽減、お金の管理の手伝い、道に迷ったときの事前登録も使える見込みです。"
+        },
+        {
+          "program_ids": [
+            "yokohama-keiro-pass",
+            "seikatsu-fukushi-shikin"
+          ],
+          "text": "敬老パスや、改修・介護の費用を借りられる貸付も当てはまる見込みです。"
+        }
+      ],
+      "made": {
+        "model": "claude-opus-5-5",
+        "date": "2026-11-06"
+      }
     }
   }
 ]

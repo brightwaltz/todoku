@@ -1,0 +1,73 @@
+city: "112143"
+name: 春日部市
+site: city.kasukabe.lg.jp
+# T-131：読む1 と読む2 が kaigo-yohin・haikai・haishoku・iro の 4 型で、同じ頁・同じ数字で合った。
+# koken は両方 not_found だが、どちらの読みも成年後見センターの頁・要綱・例規集・社協を開いていないので型ごと入れない。
+# haikai は本人確認シールだけ。GPS の貸与や助成はどちらの読みも頁に無いので書かない。
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品支給
+    where: 高齢者支援課 高齢者支援担当（市役所本庁舎2階）。申請書と介護用品支給品目一覧表を出す
+    conditions:
+      - 市内に住む、おおむね65歳以上の家で暮らす人
+      - 要介護4か要介護5
+      - 市県民税が非課税の世帯
+      - 紙おむつ・尿とりパッド・ドライシャンプー・清拭剤などを一覧から選ぶ
+      - 上限は月6,000円に消費税等を足した額で、その1割を自分で払う
+    sources:
+      - url: https://www.city.kasukabe.lg.jp/soshikikarasagasu/koreishashienka/gyomuannai/1/1/4605.html
+        publisher: 春日部市
+        title: 家族介護用品支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: 春日部市ひとり歩き高齢者保護対策事業（本人確認シール）
+    where: 高齢者支援課 高齢者支援担当（市役所本庁舎2階）。家族か介護者が、要件の分かるものを添えて申請する
+    conditions:
+      - 市内に住み、家で暮らしていて、行方不明になるおそれがある人
+      - 65歳以上か、40〜64歳で要介護・要支援の認定を受けている
+      - 二次元コードの本人確認シール（耐洗ラベル20枚・蓄光シール10枚）を渡す。読み取られると登録した家族にメールが届く
+      - 数を超える追加と再交付は実費
+    sources:
+      - url: https://www.city.kasukabe.lg.jp/soshikikarasagasu/koreishashienka/gyomuannai/1/4/4607.html
+        publisher: 春日部市
+        title: 春日部市ひとり歩き高齢者保護対策事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 高齢者支援課 高齢者支援担当（市役所本庁舎2階）。申請書と状況調査票を出す
+    conditions:
+      - おおむね65歳以上のひとり暮らしか、全員がおおむね65歳以上の世帯で、食事を作るのが難しい人
+      - 1食400円を自分で払い、超える分は市が助成する
+      - 月〜土の昼食・夕食から、週6食まで選べる
+      - 安否を確かめるため必ず手渡しで、置き配はできない
+    sources:
+      - url: https://www.city.kasukabe.lg.jp/soshikikarasagasu/koreishashienka/gyomuannai/1/3/4609.html
+        publisher: 春日部市
+        title: 配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給制度
+    where: 介護保険課 介護保険担当。窓口か郵送で申請し、後日に職員が訪問して調べることがある
+    conditions:
+      - 主に介護している人に年額10万円を支給する
+      - 介護を受ける人が要介護4か5
+      - 申請の前の1年、介護保険のサービスを使わずに家で暮らした（1週間以内のショートステイと3か月未満の入院は除く）
+      - 申請の時点で、介護する人も受ける人も市民税が非課税の世帯
+      - 2人とも介護保険料の滞納がなく、給付制限を受けていない
+    sources:
+      - url: https://www.city.kasukabe.lg.jp/soshikikarasagasu/kaigohokenka/gyomuannai/1/2/1/3567.html
+        publisher: 春日部市
+        title: 家族介護慰労金支給制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

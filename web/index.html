@@ -14,7 +14,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <h1>とどく <span>尋ねなかった制度まで</span></h1>
+    <h1><a class="home" href="/">とどく <span>尋ねなかった制度まで</span></a></h1>
   </div>
 </header>
 
@@ -55,23 +55,10 @@
         </figure>
       </div>
       <p class="scene-caption" id="scene-caption" aria-live="polite">出来事を選ぶと、家の絵に足されていきます。</p>
-      <button type="button" class="secondary" id="event-start" disabled>選んだ出来事で始める</button>
-    </div>
-    <svg id="art-defs" width="0" height="0" aria-hidden="true" focusable="false">
-      <symbol id="art-discharged" viewBox="0 0 100 100"><rect fill="#cfe6df" x="8" y="30" width="10" height="55" rx="3"/><rect fill="#fff" x="18" y="54" width="76" height="16" rx="4"/><rect fill="#cfe6df" x="44" y="47" width="50" height="11" rx="4"/><ellipse fill="#fff" cx="31" cy="49" rx="10" ry="6"/><line x1="24" y1="70" x2="24" y2="95"/><line x1="88" y1="70" x2="88" y2="95"/></symbol>
-      <symbol id="art-forgetful" viewBox="0 0 100 100"><rect fill="#fff" x="8" y="14" width="46" height="52" rx="3"/><rect fill="#cfe6df" x="8" y="14" width="46" height="12" rx="3"/><line x1="17" y1="38" x2="45" y2="38"/><line x1="17" y1="48" x2="45" y2="48"/><line x1="17" y1="58" x2="34" y2="58"/><circle fill="#fff" cx="76" cy="32" r="16"/><line x1="76" y1="32" x2="76" y2="22"/><line x1="76" y1="32" x2="84" y2="36"/></symbol>
-      <symbol id="art-alone" viewBox="0 0 100 100"><rect fill="#cfe6df" x="6" y="50" width="62" height="7" rx="2"/><line x1="14" y1="57" x2="14" y2="90"/><line x1="60" y1="57" x2="60" y2="90"/><rect fill="#fff" x="28" y="37" width="13" height="13" rx="2"/><path fill="none" d="M41 41 q6 2 0 7"/><rect fill="#fff" x="72" y="62" width="22" height="6" rx="2"/><line x1="92" y1="30" x2="92" y2="90"/><line x1="75" y1="68" x2="75" y2="90"/></symbol>
-      <symbol id="art-falls" viewBox="0 0 100 100"><line x1="6" y1="22" x2="94" y2="22"/><line x1="20" y1="22" x2="20" y2="10"/><line x1="80" y1="22" x2="80" y2="10"/><rect fill="#cfe6df" x="8" y="74" width="42" height="20" rx="2"/><rect fill="#cfe6df" x="50" y="56" width="44" height="38" rx="2"/></symbol>
-      <symbol id="art-work" viewBox="0 0 100 100"><circle fill="#fff" cx="40" cy="18" r="11"/><path fill="#cfe6df" d="M24 86 L27 44 Q40 32 53 44 L56 86 Z"/><line x1="53" y1="48" x2="64" y2="62"/><rect fill="#fff" x="60" y="60" width="26" height="20" rx="3"/><path fill="none" d="M67 60 v-5 h12 v5"/></symbol>
-      <symbol id="art-diapers" viewBox="0 0 100 100"><rect fill="#fff" x="12" y="18" width="76" height="72" rx="8"/><rect fill="#cfe6df" x="12" y="42" width="76" height="22"/><circle fill="#fff" cx="50" cy="53" r="7"/></symbol>
-    </svg>
-    <div id="samples" hidden>
-      <p class="note">見本で試す（合言葉なしで動きます）</p>
-      <div class="examples" id="sample-list"></div>
-    </div>
-    <!-- どなた・年齢・お住まい・気になることを選んで下書きを作る欄は、畳んでおく（T-126）。全国の見取り図や /city/ の頁から
-         都道府県を選んだときは、app.js の pickFromMap が開く -->
-    <details class="pick-more" id="pick-more">
+    <!-- どなた・年齢・お住まい・気になることを選んで下書きを作る欄は、最初は出さない（T-134。最初は書く欄と出来事の札だけ）。
+         出来事を 1 つ押すと、app.js の toggleEvent が「選んだ出来事で始める」の上に開く。/city/ の頁から都道府県を選んで
+         来たときは pickFromMap が開く -->
+    <details class="pick-more" id="pick-more" hidden>
     <summary>どなたのことか・お住まいを選んで、文を作る</summary>
     <fieldset class="pick">
       <legend>どなたのことですか（1 つ）</legend>
@@ -94,6 +81,20 @@
       <div class="chips" id="pick-worry"></div>
     </fieldset>
     </details>
+      <button type="button" class="secondary" id="event-start" disabled>選んだ出来事で始める</button>
+    </div>
+    <svg id="art-defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <symbol id="art-discharged" viewBox="0 0 100 100"><rect fill="#cfe6df" x="8" y="30" width="10" height="55" rx="3"/><rect fill="#fff" x="18" y="54" width="76" height="16" rx="4"/><rect fill="#cfe6df" x="44" y="47" width="50" height="11" rx="4"/><ellipse fill="#fff" cx="31" cy="49" rx="10" ry="6"/><line x1="24" y1="70" x2="24" y2="95"/><line x1="88" y1="70" x2="88" y2="95"/></symbol>
+      <symbol id="art-forgetful" viewBox="0 0 100 100"><rect fill="#fff" x="8" y="14" width="46" height="52" rx="3"/><rect fill="#cfe6df" x="8" y="14" width="46" height="12" rx="3"/><line x1="17" y1="38" x2="45" y2="38"/><line x1="17" y1="48" x2="45" y2="48"/><line x1="17" y1="58" x2="34" y2="58"/><circle fill="#fff" cx="76" cy="32" r="16"/><line x1="76" y1="32" x2="76" y2="22"/><line x1="76" y1="32" x2="84" y2="36"/></symbol>
+      <symbol id="art-alone" viewBox="0 0 100 100"><rect fill="#cfe6df" x="6" y="50" width="62" height="7" rx="2"/><line x1="14" y1="57" x2="14" y2="90"/><line x1="60" y1="57" x2="60" y2="90"/><rect fill="#fff" x="28" y="37" width="13" height="13" rx="2"/><path fill="none" d="M41 41 q6 2 0 7"/><rect fill="#fff" x="72" y="62" width="22" height="6" rx="2"/><line x1="92" y1="30" x2="92" y2="90"/><line x1="75" y1="68" x2="75" y2="90"/></symbol>
+      <symbol id="art-falls" viewBox="0 0 100 100"><line x1="6" y1="22" x2="94" y2="22"/><line x1="20" y1="22" x2="20" y2="10"/><line x1="80" y1="22" x2="80" y2="10"/><rect fill="#cfe6df" x="8" y="74" width="42" height="20" rx="2"/><rect fill="#cfe6df" x="50" y="56" width="44" height="38" rx="2"/></symbol>
+      <symbol id="art-work" viewBox="0 0 100 100"><circle fill="#fff" cx="40" cy="18" r="11"/><path fill="#cfe6df" d="M24 86 L27 44 Q40 32 53 44 L56 86 Z"/><line x1="53" y1="48" x2="64" y2="62"/><rect fill="#fff" x="60" y="60" width="26" height="20" rx="3"/><path fill="none" d="M67 60 v-5 h12 v5"/></symbol>
+      <symbol id="art-diapers" viewBox="0 0 100 100"><rect fill="#fff" x="12" y="18" width="76" height="72" rx="8"/><rect fill="#cfe6df" x="12" y="42" width="76" height="22"/><circle fill="#fff" cx="50" cy="53" r="7"/></symbol>
+    </svg>
+    <div id="samples" hidden>
+      <p class="note">見本で試す（合言葉なしで動きます）</p>
+      <div class="examples" id="sample-list"></div>
+    </div>
 
     <!-- 合言葉の欄は見本より下に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044）。T-124 で相談の欄が
          いちばん上に移り、T-126 で最初は小さな入口（#gate-open）だけにした。合言葉なしで送ったときは askGate が欄を出す -->
@@ -115,11 +116,7 @@
     <p class="lead">高齢の方と、介護するご家族のための相談窓口（試作）。全国の市区町村（1,741）のどこでも使えます。国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示します。お住まいの市区町村を選ぶと、その地域で確かめられる支えの数もお知らせします。</p>
     <p class="note">相談の文章は、こちらには残しません。病気や体の状態の判断、治療の助言はしません。お伝えするのは、使える公的な制度と、その申請先・持ち物です。</p>
     <p class="note">キーボードのマイクの印を押すと、話して入力できます。</p>
-    <!-- 全国の見取り図（T-080c）。中身は /japan-map（規則から作る SVG）を app.js が差し込む。取れなければ出さない -->
-    <section id="japan" class="map-card" hidden aria-labelledby="japan-title">
-      <h2 id="japan-title">全国どこでも使えます</h2>
-      <div id="japan-box"></div>
-    </section>
+    <!-- 全国の見取り図は T-134b で別の頁（web/japan.html）へ移した。結果の節の最後の 1 行から開く -->
   </details>
 
   <section id="reading" class="card" hidden>
@@ -229,6 +226,7 @@
       <p class="change" id="keep-msg" aria-live="polite"></p>
     </div>
     <button class="secondary" id="again">別の相談をする</button>
+    <p class="map-link"><a href="/static/japan.html">全国どこでも使えます</a></p>
   </section>
 
   <section id="effort-page" class="card" hidden>
@@ -246,7 +244,7 @@
 </main>
 
 <footer class="wrap foot">
-  <p>判定は、公式ページの条件をもとに書いた規則で行います（確認日を各制度に表示）。申請できるかの最終的な判断は、申請先で行われます。困ったときは、お住まいの地域の地域包括支援センター（町田市では「高齢者支援センター」）に相談してください。</p>
+  <p>判定は、公式ページの条件をもとに書いた規則で行います（確認日を各制度に表示）。申請できるかの最終的な判断は、申請先で行われます。困ったときは、お住まいの市区町村の地域包括支援センター（呼び名は市区町村によって違います）に相談してください。</p>
   <p><a id="center-link" href="https://www.kaigokensaku.mhlw.go.jp/" target="_blank" rel="noopener">地域包括支援センターを探す（厚生労働省 介護サービス情報公表システム）</a></p>
   <p>Built with Claude: Japan 2026 の期間中に作った試作です。</p>
 </footer>

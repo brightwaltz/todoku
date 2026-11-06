@@ -1,0 +1,71 @@
+city: "221309"
+name: 浜松市
+site: city.hamamatsu.shizuoka.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ等の支給
+    where: 各福祉事業所の高齢者福祉担当窓口（区役所・行政センター内の長寿支援課／長寿保険課）。ケアマネジャーを通しても申請できる
+    conditions:
+      - 65歳以上で要介護4か5の人を、自宅で介護している人が対象
+      - 世帯が市民税非課税で、介護を受ける本人も非課税であること
+      - ほかの制度で同じようなサービスを受けていないこと
+      - 紙おむつなどを無料で支給。年度ごとに6万円分まで
+    sources:
+      - url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/zaitaku/omutsu.html
+        publisher: 浜松市
+        title: 紙おむつ等の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: オレンジシール・オレンジメール（認知症高齢者見守り事業）
+    where: お住まいの地区の地域包括支援センター（高齢者相談センター）
+    conditions:
+      - 認知症で一人歩きをして行方不明になる心配がある高齢者などが対象
+      - 家族などが届け出て事前に登録すると、番号入りの反射シールを交付
+      - 行方不明時は、メール登録した見守り協力者へ情報を一斉に送る
+    sources:
+      - url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/nintisyou/hitoriaruki.html
+        publisher: 浜松市
+        title: オレンジシール・オレンジメール（認知症高齢者見守り事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "条件1行目が原文と20字続けて同じだったので言い換えた"}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 地域包括支援センター（高齢者相談センター）または各福祉事業所（頁では問い合わせ先として案内）
+    conditions:
+      - 原則65歳以上で、ひとり暮らしや高齢者だけの世帯など
+      - 世帯が市民税非課税であること
+      - 心身の状態や暮らしの事情で、食事を作るのが難しいこと
+      - 週1〜3食まで、1食300円。届けるときに安否も確かめる
+    sources:
+      - url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/zaitaku/haishoku.html
+        publisher: 浜松市
+        title: 配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 市長申立ては地域包括支援センター（高齢者相談センター）か各区役所長寿保険課、報酬助成は浜松市役所高齢者福祉課
+    conditions:
+      - 市長申立て：65歳以上で、認知症などで判断する力が十分でない人
+      - 市長申立て：申し立てる配偶者や4親等内の親族がいないなどの事情
+      - 報酬助成：市長か親族の申立てで後見人等が決まり、払う力が乏しい人
+      - 報酬助成の上限は月2.8万円（在宅）、月1.8万円（施設・入院）
+      - 65歳未満や知的・精神障がいのある人は、障がい福祉の窓口が担当
+    sources:
+      - url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/seinenkouken/20140312.html
+        publisher: 浜松市
+        title: 成年後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}

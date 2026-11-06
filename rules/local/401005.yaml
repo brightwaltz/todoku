@@ -1,0 +1,87 @@
+city: "401005"
+name: 北九州市
+site: city.kitakyushu.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: おむつ給付サービス
+    where: 各区役所の保健福祉課 高齢者・障害者相談係
+    conditions:
+      - 北九州市の介護保険の被保険者で、市内に住んでいる人
+      - 原則として要介護3以上（要介護3で新たに使うときは排尿・排便の調査の条件あり）
+      - 世帯の全員が市民税を課されていないこと
+      - 失禁などでいつも自宅でおむつが要る人。施設に入所中・入院中の人は使えない
+      - 市が決めた月の限度額の中で、使った額の1割を自分で払う（生活保護の世帯は負担なし）
+    sources:
+      - url: https://www.city.kitakyushu.lg.jp/contents/924_11183.html
+        publisher: 北九州市
+        title: おむつ給付サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等位置探索サービス
+    where: 各区役所の高齢者・障害者相談係、または各地域包括支援センター
+    conditions:
+      - 行方不明になるおそれのある認知症の高齢者を介護している家族が使う
+      - 介護される人が市内に住み、市の要介護認定で要支援か要介護と認められていること
+      - 介護保険施設などに入所中の人、入院中の人は使えない
+      - GPS端末の借り賃（月550円）と探索の実費がかかる。住民税非課税などの世帯は探索の実費だけ
+    sources:
+      - url: https://www.city.kitakyushu.lg.jp/contents/924_11192.html
+        publisher: 北九州市
+        title: 認知症高齢者等位置探索サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
+  - template: local-haishoku
+    status: found
+    name: 訪問給食サービス
+    where: 高齢者は地域包括支援センター（障害のある人は各区役所の高齢者・障害者相談係）
+    conditions:
+      - 市内に住み、栄養の管理や改善が必要な人
+      - 65歳以上のひとり暮らし、ひとり暮らしの重度障害のある人、またはそれらに準じる世帯（高齢者だけの世帯など）
+      - 弁当は自宅で手渡しして安否も確かめる。手渡しで受け取れない場合は対象外
+      - 週5日まで・1日1食（昼か夕）。1食550円以内を自分で払う
+    sources:
+      - url: https://www.city.kitakyushu.lg.jp/contents/924_11174.html
+        publisher: 北九州市
+        title: 訪問給食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "頁の対象世帯にある「ひとり暮らしの重度障害のある人の世帯」が conditions から落ちていた（where は障害のある人の窓口を挙げている）ので、2行目に足した。"}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 市長申立ては申立てをした区の保健福祉課（高齢者は地域包括支援センター）、本人・親族申立ては北九州市成年後見支援センター
+    conditions:
+      - 判断する力が十分でない高齢者や障害のある人で、成年後見制度を使う必要がある人
+      - 申立てをする親族がいないなどのときは、市長が代わりに申立てをする
+      - 申立ての費用と後見人などの報酬の助成は、生活保護を受けている人など生活に困っている人が対象
+      - 本人・親族・市長のどの申立てでも助成の対象になる
+      - 報酬の助成は月の上限あり（施設入所中1万8千円・在宅など2万8千円）。親族や市民後見人が選ばれたときは対象外
+    sources:
+      - url: https://www.city.kitakyushu.lg.jp/contents/29800171.html
+        publisher: 北九州市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: fixed, date: 2026-11-05, note: "頁にある報酬助成の例外（配偶者・四親等内の親族や市民後見人候補者名簿の人が後見人等に選ばれた場合は対象外）が抜けていたので、5行目に足した。"}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給
+    where: お住まいの小学校区の地域包括支援センター
+    conditions:
+      - 市内に住み、在宅で介護している家族（別居の家族も含む）に年10万円
+      - 介護される人が市内に1年以上住民登録していること
+      - 介護される人が要介護4か5で、その状態が1年以上続いていること
+      - その1年間、7日以内のショートステイのほかは介護保険のサービスを使っていないこと
+      - その1年間、介護される人が市民税非課税の世帯にいたこと
+    sources:
+      - url: https://www.city.kitakyushu.lg.jp/contents/924_11193.html
+        publisher: 北九州市
+        title: 家族介護慰労金支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-05
+    review: {read_by: "Managed Agent（Opus 5.5）", recheck: match, date: 2026-11-05}
