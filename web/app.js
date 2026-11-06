@@ -272,6 +272,7 @@ async function openEvents() {
 
 async function consultWith(text, call) {
   state = fresh();
+  const mine = state;  // 読み取りを待つ間に見本・出来事・別の相談を始めたら、遅れて返った前の答えは描かない（T-162。step と同じ）
   forgetKeep();  // 前に開いた・残した結果のリンクを、アドレス欄から外す
   state.startedAt = Date.now();
   const pressed = document.activeElement;
@@ -282,6 +283,7 @@ async function consultWith(text, call) {
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
+    if (mine !== state) return;
     // 読み取ったことの欄へ送る前に消す。送った後に消すと、その高さぶん中身が上へずれ、見出しが画面の上に切れる（T-023）
     show("reading", false);
     say("");
@@ -297,12 +299,14 @@ async function consultWith(text, call) {
     renderExtracted(data, text);
     render(data, true);
   } catch (e) {
-    resendAfterGate = e instanceof GateError;
-    $("reading").replaceChildren(el("p", { class: "error" }, e.message));
-    say(e.message);
-    show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
-    $("send").disabled = false;
-    backTo(pressed);
+    if (mine === state) {  // 前の相談の失敗の知らせを、後の相談の上に出さない
+      resendAfterGate = e instanceof GateError;
+      $("reading").replaceChildren(el("p", { class: "error" }, e.message));
+      say(e.message);
+      show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
+      $("send").disabled = false;
+      backTo(pressed);
+    }
     return;
   }
   $("send").disabled = false;
