@@ -122,7 +122,11 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .ev-card svg, #scene { stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: #fff; }
 #scene .n { fill: none; }
 #scene .f { fill: #cfe6df; }
-.scene-item { opacity: 0; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease; }
+/* 家の場所の区画（T-139b）。押した場所の区画を薄く塗る。隠れた絵が区画を押す邪魔をしないよう、絵は押せなくする */
+#scene .room { fill: transparent; stroke: none; cursor: pointer; transition: fill .25s ease; }
+#scene .room:hover { fill: #f2f8f6; }
+#scene .room.current { fill: #e3f1ec; }
+.scene-item { pointer-events: none; opacity: 0; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease; }
 .scene-item.on { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .scene-item { transition: none; transform: none; } }
 #samples { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--line); }

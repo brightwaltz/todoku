@@ -220,9 +220,11 @@ function phraseLabel(label) {
   return span;
 }
 
-// 大項目の家の場所（T-139）。押した場所の小項目の札だけを出す。ほかの場所で選んだ札は、隠れても選んだまま
+// 大項目の家の場所（T-139）。押した場所の小項目の札だけを出す。ほかの場所で選んだ札は、隠れても選んだまま。
+// 家の絵の同じ場所の区画を薄く塗る（T-139b）
 function showPlace(id) {
   document.querySelectorAll("#event-places .place-tab").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.place === id)));
+  document.querySelectorAll("#scene .room").forEach((r) => r.classList.toggle("current", r.dataset.place === id));
   document.querySelectorAll("#event-list .ev-card").forEach((c) => { c.hidden = Boolean(c.dataset.place) && c.dataset.place !== id; });
 }
 
@@ -1526,6 +1528,11 @@ fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
     $("event-places").replaceChildren(...places.map(([id, label]) =>
       el("button", { type: "button", class: "place-tab", "aria-pressed": "false", "data-place": id, onclick: () => showPlace(id) }, label)));
     show("event-places");
+    // 家の絵の区画を押しても、その場所に切り替わる（T-139b。絵は読み上げから外しているので、キーボードは上の札で選ぶ）
+    const known = new Set(places.map(([id]) => id));
+    document.querySelectorAll("#scene .room").forEach((r) => {
+      if (known.has(r.dataset.place)) r.addEventListener("click", () => showPlace(r.dataset.place));
+    });
     showPlace(places[0][0]);
   }
   $("event-start").addEventListener("click", openEvents);

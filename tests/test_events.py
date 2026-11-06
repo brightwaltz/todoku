@@ -121,9 +121,10 @@ def test_every_event_has_a_picture_and_a_place_in_the_scene():
     ids = [e["id"] for e in client.get("/api/events").json()]
     for i in ids:
         assert f'<symbol id="art-{i}"' in html, i
-    # 家の絵に置く要素は、どれも出来事の絵。T-139 で足した小項目を家の絵に置くのは T-139b（家を場所 7 つに描き直す）
+    # 家の絵には、出来事の全部を 1 回ずつ置く（T-139b で 16 個に戻した）
     placed = re.findall(r'data-ev="(\w+)"><use href="#art-(\w+)"', html)
-    assert placed and all(a == b and a in ids for a, b in placed), placed
+    assert all(a == b for a, b in placed), placed
+    assert sorted(a for a, _ in placed) == sorted(ids)
     assert not re.search(r'<(image|img)\b', html.split('id="events"')[1].split("</svg>\n    <svg")[0])  # 外の画像は使わない
     assert '<figure class="scene" aria-hidden="true">' in html and 'aria-live="polite"' in html
     assert 'el("button", { type: "button", class: "ev-card", "aria-pressed": "false"' in js
@@ -156,12 +157,17 @@ def _drawn_bounds(symbol_markup):
 
 
 def test_scene_items_fit_in_the_house_without_overlapping():
-    # 家の絵の要素は家の中（x 20〜460）に収まり、床に置く物は床の線 y=210 に立ち、描いた範囲が互いに重ならない（T-124b）。
-    # 壁に掛ける物（暦と時計）だけは床に立たない。ブラウザでの同じ検査は $OPS/tools/shot_t124.py（getBBox）
+    # 家の絵は場所 7 つの区画に分かれ（T-139b）、出来事の絵はどれも自分の場所の区画に収まり、床に置く物は区画の床
+    # （区画の下の辺）に立ち、描いた範囲が互いに重ならない（T-124b）。壁に掛ける物（暦と時計・耳）だけは床に立たない。
+    # ブラウザでの写真と動きの検査は $OPS/tools/shot_t139b.py
     import re
 
     html = (app_mod.WEB_DIR / "index.html").read_text(encoding="utf-8")
     symbols = dict(re.findall(r'<symbol id="art-(\w+)" viewBox="0 0 100 100">(.*?)</symbol>', html))
+    rooms = {p: tuple(float(v) for v in xywh) for p, *xywh in re.findall(
+        r'<rect class="room" data-place="(\w+)" x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)"/>', html)}
+    assert sorted(rooms) == sorted(p for p, _ in events_mod.PLACES)
+    place_of = {e["id"]: e["place"] for e in client.get("/api/events").json()}
     boxes = {}
     for ev, x, y, w, h in re.findall(
             r'data-ev="(\w+)"><use href="#art-\w+" x="([\d.]+)" y="([\d.]+)" width="([\d.]+)" height="([\d.]+)"', html):
@@ -169,11 +175,12 @@ def test_scene_items_fit_in_the_house_without_overlapping():
         assert float(w) == float(h), ev
         x0, y0, x1, y1 = _drawn_bounds(symbols[ev])
         boxes[ev] = (x + x0 * k, y + y0 * k, x + x1 * k, y + y1 * k)
-    assert boxes and set(boxes) <= {e["id"] for e in client.get("/api/events").json()}  # 全部を置くのは T-139b
+    assert set(boxes) == set(place_of)  # 全部を置く
     for ev, (x0, y0, x1, y1) in boxes.items():
-        assert 20 <= x0 and x1 <= 460 and 76 <= y0, (ev, boxes[ev])
-        if ev != "forgetful":
-            assert 206 <= y1 <= 211, (ev, y1)  # 床に立つ
+        rx, ry, rw, rh = rooms[place_of[ev]]
+        assert rx <= x0 and x1 <= rx + rw and ry <= y0 and y1 <= ry + rh + 1, (ev, place_of[ev], boxes[ev])
+        if ev not in ("forgetful", "hearing"):
+            assert ry + rh - 4 <= y1, (ev, y1)  # 床に立つ
     items = list(boxes.items())
     for i, (a, p) in enumerate(items):
         for b, q in items[i + 1:]:

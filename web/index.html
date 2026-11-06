@@ -40,19 +40,41 @@
       <div class="pictures-row">
         <div class="event-cards" id="event-list" role="group" aria-label="暮らしの出来事"></div>
         <figure class="scene" aria-hidden="true">
-          <svg viewBox="0 0 480 230" id="scene">
-            <polyline class="n" points="6,76 240,16 474,76"/>
-            <rect class="n" x="20" y="76" width="440" height="134"/>
-            <line x1="6" y1="210" x2="474" y2="210"/>
-            <!-- 左から寝る所（ベッド・紙おむつ・壁の暦と時計）、食卓（窓の下）、玄関（段差と手すり・かばんの家族・戸）。足は床の線 y=210 にそろえる（T-124b） -->
-            <rect class="w" x="186" y="88" width="44" height="32" rx="2"/><line x1="208" y1="88" x2="208" y2="120"/>
-            <rect class="w" x="412" y="112" width="40" height="98" rx="2"/><circle class="f" cx="420" cy="164" r="3"/>
-            <g class="scene-item" data-ev="discharged"><use href="#art-discharged" x="24" y="96" width="120" height="120"/></g>
-            <g class="scene-item" data-ev="diapers"><use href="#art-diapers" x="134" y="174" width="40" height="40"/></g>
-            <g class="scene-item" data-ev="forgetful"><use href="#art-forgetful" x="40" y="78" width="72" height="72"/></g>
-            <g class="scene-item" data-ev="alone"><use href="#art-alone" x="166" y="127" width="92" height="92"/></g>
-            <g class="scene-item" data-ev="falls"><use href="#art-falls" x="262" y="131" width="84" height="84"/></g>
-            <g class="scene-item" data-ev="work"><use href="#art-work" x="330" y="131" width="92" height="92"/></g>
+          <svg viewBox="0 0 480 280" id="scene">
+            <!-- 家の場所 7 つの区画（T-139b）。2 階建ての断面で、上が寝室・浴室とトイレ・家族、下が居間・台所・階段と玄関、右が外。
+                 区画（class="room"）は場所の札と同じ data-place を持ち、押した場所の区画を薄く塗る。区画を押しても同じ場所に切り替わる
+                 （app.js の showPlace）。文字は置かない。足は区画の床（区画の下の辺）にそろえる。壁に掛ける物（暦と時計・耳）だけは床に立たない -->
+            <rect class="room" data-place="bedroom" x="16" y="70" width="150" height="100"/>
+            <rect class="room" data-place="bath" x="166" y="70" width="106" height="100"/>
+            <rect class="room" data-place="family" x="272" y="70" width="108" height="100"/>
+            <rect class="room" data-place="living" x="16" y="170" width="120" height="100"/>
+            <rect class="room" data-place="kitchen" x="136" y="170" width="114" height="100"/>
+            <rect class="room" data-place="entrance" x="250" y="170" width="130" height="100"/>
+            <rect class="room" data-place="outside" x="392" y="120" width="82" height="150"/>
+            <polyline class="n" points="6,70 198,14 390,70"/>
+            <rect class="n" x="16" y="70" width="364" height="200"/>
+            <line x1="16" y1="170" x2="380" y2="170"/>
+            <line x1="166" y1="70" x2="166" y2="170"/><line x1="272" y1="70" x2="272" y2="170"/>
+            <line x1="136" y1="170" x2="136" y2="270"/><line x1="250" y1="170" x2="250" y2="270"/>
+            <line x1="4" y1="270" x2="476" y2="270"/>
+            <rect class="w" x="364" y="216" width="14" height="54" rx="2"/>
+            <circle class="f" cx="438" cy="44" r="13"/>
+            <g class="scene-item" data-ev="discharged"><use href="#art-discharged" x="14" y="107.3" width="66" height="66"/></g>
+            <g class="scene-item" data-ev="bedridden"><use href="#art-bedridden" x="74" y="113" width="62" height="62"/></g>
+            <g class="scene-item" data-ev="diapers"><use href="#art-diapers" x="132" y="143" width="30" height="30"/></g>
+            <g class="scene-item" data-ev="bathing"><use href="#art-bathing" x="168" y="116.8" width="56" height="56"/></g>
+            <g class="scene-item" data-ev="toilet"><use href="#art-toilet" x="222" y="124" width="50" height="50"/></g>
+            <g class="scene-item" data-ev="alone"><use href="#art-alone" x="274" y="117.8" width="58" height="58"/></g>
+            <g class="scene-item" data-ev="work"><use href="#art-work" x="318" y="118.4" width="60" height="60"/></g>
+            <g class="scene-item" data-ev="forgetful"><use href="#art-forgetful" x="16" y="176" width="56" height="56"/></g>
+            <g class="scene-item" data-ev="money"><use href="#art-money" x="40" y="228.6" width="46" height="46"/></g>
+            <g class="scene-item" data-ev="hearing"><use href="#art-hearing" x="86" y="176" width="44" height="44"/></g>
+            <g class="scene-item" data-ev="fire"><use href="#art-fire" x="138" y="211.1" width="64" height="64"/></g>
+            <g class="scene-item" data-ev="meals"><use href="#art-meals" x="200" y="230.4" width="44" height="44"/></g>
+            <g class="scene-item" data-ev="steps"><use href="#art-steps" x="250" y="213" width="62" height="62"/></g>
+            <g class="scene-item" data-ev="falls"><use href="#art-falls" x="308" y="217.4" width="56" height="56"/></g>
+            <g class="scene-item" data-ev="lost"><use href="#art-lost" x="392" y="224" width="50" height="50"/></g>
+            <g class="scene-item" data-ev="outing"><use href="#art-outing" x="420" y="217.4" width="56" height="56"/></g>
           </svg>
         </figure>
       </div>
