@@ -1273,9 +1273,10 @@ def test_small_text_is_at_least_14px():
     css = (root / "style.css").read_text(encoding="utf-8")
 
     def size(selector):
-        m = re.search(r"^" + re.escape(selector) + r" \{[^}]*font-size: (\d+)px", css, re.M)
+        # T-164 で rem（16px が 1rem）に書き換えた。ブラウザの文字の大きさが既定のときの px に直して比べる
+        m = re.search(r"^" + re.escape(selector) + r" \{[^}]*font-size: (\d*\.?\d+)(px|rem)", css, re.M)
         assert m, selector
-        return int(m.group(1))
+        return float(m.group(1)) * (16 if m.group(2) == "rem" else 1)
 
     for sel in (".board-card .note", ".tag", ".pill"):
         assert size(sel) >= 14, sel
