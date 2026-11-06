@@ -102,7 +102,7 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .ev-card svg { width: 56px; height: 56px; }
 /* 家の場所（T-139）。押した場所は塗り、選んだ札がある場所には小さな点を付ける（文字は増やさない） */
 .place-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-.place-tab { position: relative; font: inherit; font-size: 15px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); cursor: pointer; }
+.place-tab { position: relative; font: inherit; font-size: 15px; padding: 6px 12px; min-height: 44px; min-width: 44px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--ink); cursor: pointer; }  /* 押す所 44px 以上（T-146。「外」は幅も 41px だった） */
 .place-tab:hover { border-color: var(--accent); }
 .place-tab:focus-visible { outline: 3px solid #9fd3c7; border-color: var(--accent); }
 .place-tab[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }

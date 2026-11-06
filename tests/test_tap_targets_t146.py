@@ -36,3 +36,9 @@ def test_folded_section_headings_are_44px():
 def test_memo_print_button_is_44px():
     # 申請メモの「このメモだけ印刷する」。ブラウザの既定のボタンのままで 36〜38px だった
     assert min_height(".memo > button") >= 44
+
+
+def test_place_tabs_are_44px_both_ways():
+    # 入口の家の場所の札（T-139）。40px で、1 文字の「外」は幅も 41px だった
+    assert min_height(".place-tab") >= 44
+    assert "min-width: 44px" in rule(".place-tab")
