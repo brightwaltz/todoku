@@ -1097,7 +1097,7 @@ def test_place_question_comes_back_for_not_machida():
     assert data["question"] is None or data["question"]["fact"] not in places
     assert not [r for r in data["results"] if r["id"].startswith("yokohama-") or r["id"] == "tokyo-silver-pass"]
     assert "hidden_places" not in data and not any(w in str(data["region"]) for w in ("横浜", "東京", "町田"))
-    assert data["region"]["total"] == len(data["results"])
+    assert data["region"]["total"] == sum(x["n"] for x in data["region"]["parts"] if x["unit"] == "件")  # T-137：合計は制度の件数だけ
     # 「わからない」と答えれば、もう聞かない。横浜市の制度は住所が分からないまま残す（要介護2で外れるものは、住所でなく区分で外れる）
     data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
                                           "asked": asked + 1}).json()
