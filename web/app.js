@@ -1561,17 +1561,35 @@ $("keep-reask").addEventListener("click", reaskNintei);
 // 開いているページに別の残した結果のリンクを貼ったとき（# より後ろだけが変わると、ページは読み直されない）
 window.addEventListener("hashchange", () => { if (location.hash.startsWith(KEEP_PREFIX)) restoreFrom(location.hash.slice(KEEP_PREFIX.length)); });
 // ---- 押した数の図は別の頁（T-133）。結果の頁を隠して出し、戻ると押した入口へ ----
-$("effort-open").addEventListener("click", () => {
+// 別の頁に見えるので、ブラウザの戻る（スマホの戻る・横に払う）でも結果へ戻す。開くときに同じ URL の履歴を 1 つ積み、
+// 頁の「戻る」はその 1 つを戻して積んだ分を残さない（T-157）。印は開くたびに変え、読み直した後に残った古い印では閉じ損ねない
+let effortMark = 0;
+function openEffort() {
   show("result", false);
   show("effort-page");
   $("effort-page").scrollIntoView({ block: "start" });
   focusOn($("effort-title"));
-});
-$("effort-back").addEventListener("click", () => {
+}
+function closeEffort() {
   show("effort-page", false);
   show("result");
   $("effort-open").scrollIntoView({ block: "center" });
   focusOn($("effort-open"));
+}
+$("effort-open").addEventListener("click", () => {
+  effortMark = Date.now();
+  history.pushState({ effort: effortMark }, "", location.href);
+  openEffort();
+});
+$("effort-back").addEventListener("click", () => {
+  if (effortMark && history.state && history.state.effort === effortMark) history.back();  // 閉じるのは popstate
+  else closeEffort();
+});
+window.addEventListener("popstate", (ev) => {
+  const mark = ev.state && ev.state.effort;
+  const open = !$("effort-page").hidden;
+  if (open && mark !== effortMark) closeEffort();
+  else if (!open && mark && !$("result").hidden && !$("effort-open").hidden) { effortMark = mark; openEffort(); }  // 進む
 });
 
 $("again").addEventListener("click", () => {
