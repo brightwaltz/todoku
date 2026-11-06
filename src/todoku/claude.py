@@ -25,7 +25,6 @@ PRICES = {
     "claude-fable-5-1": {"in": 10.0, "out": 50.0},
     "claude-sonnet-5-5": {"in": 2.0, "out": 10.0},
     "claude-opus-5-5": {"in": 4.0, "out": 20.0},
-    "claude-haiku-5-5": {"in": 1.0, "out": 5.0},
 }
 
 
