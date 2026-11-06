@@ -180,7 +180,7 @@ uv run pytest                      # 判定器・規則・API のテスト（公
 TODOKU_FAKE_CLAUDE=1 uv run uvicorn todoku.app:app --port 8000   # 鍵なしの試験モード（キーワードで読み取る）
 ANTHROPIC_API_KEY=... TODOKU_PASSPHRASE=... uv run uvicorn todoku.app:app --port 8000  # Claude で読み取る（合言葉も要る）
 ANTHROPIC_API_KEY=... uv run python scripts/first_call.py           # デモの相談文を Claude で 1 回だけ読み取る（トークン数も出す）
-python3 -I scripts/check_live.py https://todoku-machida.fly.dev    # deploy の後に外から確かめる（Claude は呼ばない。手元の試験モードには --allow-fake）
+python3 -I scripts/check_live.py https://todoku.fly.dev --expect-open   # deploy の後に外から確かめる（Claude は呼ばない。TODOKU_OPEN=1 の置き場では --expect-open、手元の試験モードには --allow-fake）
 ```
 
 行政手続データの MCP サーバーを Claude Code から使うとき（開発用。窓口の実行には要りません）：
