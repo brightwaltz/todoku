@@ -375,6 +375,43 @@ def build_gold(adj: dict, decisions: dict, recs: dict | None = None, ver: str | 
     return gold, report
 
 
+def recs_for(adj_path: Path) -> tuple[dict | None, str | None]:
+    """その裁定の材料に付けた推しのファイル（eval/recommendations*.json の adjudication が同じもの）と版。"""
+    for f in sorted((ROOT / "eval").glob("recommendations*.json")):
+        r = json.loads(f.read_text(encoding="utf-8"))
+        if r.get("adjudication") == adj_path.name:
+            return r, rec_version(f)
+    return None, None
+
+
+def merged_gold(pairs: list[tuple[Path, Path]]) -> tuple[dict, dict]:
+    """裁定の回ごとに build_gold して合わせる。同じマスが 2 回出たら止める。"""
+    gold: dict = defaultdict(dict)
+    total: dict = {}
+    for adj_path, dec_path in pairs:
+        adj = json.loads(adj_path.read_text(encoding="utf-8"))
+        decisions = json.loads(dec_path.read_text(encoding="utf-8"))
+        recs, ver = recs_for(adj_path)
+        g, rep = build_gold(adj, decisions, recs, ver)
+        for cid, marks in g.items():
+            for num, m in marks.items():
+                if num in gold[cid]:
+                    sys.exit(f"同じマスが 2 つの裁定に出た：{cid}-{num}")
+                gold[cid][num] = m
+        for k, v in rep.items():
+            if isinstance(v, dict):
+                t = total.setdefault(k, {})
+                for kk, vv in v.items():
+                    t[kk] = t.get(kk, 0) + vv if isinstance(vv, int) else vv
+            elif isinstance(v, list):
+                total.setdefault(k, []).extend(v)
+            elif isinstance(v, int) and k != "audit_upper":
+                total[k] = total.get(k, 0) + v
+    k, n = len(total.get("audit_wrong", [])), total.get("audit_n", 0)
+    total["audit_upper"] = round(upper_bound(k, n), 3) if n else None
+    return gold, total
+
+
 def write_gold(gold: dict, path: Path, blank: set[str] = frozenset()) -> None:
     """正解表を書く。blank に入れたマス（"c01-5" の形）は空欄にする。"""
     import csv
@@ -389,11 +426,9 @@ def write_gold(gold: dict, path: Path, blank: set[str] = frozenset()) -> None:
 
 
 def main() -> None:
-    if len(sys.argv) == 4 and sys.argv[1] == "gold":
-        adj = json.loads(Path(sys.argv[2]).read_text(encoding="utf-8"))
-        decisions = json.loads(Path(sys.argv[3]).read_text(encoding="utf-8"))
-        recs = json.loads(RECS.read_text(encoding="utf-8")) if RECS.exists() else None
-        gold, rep = build_gold(adj, decisions, recs, rec_version() if recs else None)
+    if len(sys.argv) >= 4 and sys.argv[1] == "gold" and len(sys.argv) % 2 == 0:
+        # gold adj1 dec1 [adj2 dec2 ...]：裁定の回ごとに正解を作って合わせる（11/6：ほかの地域の事例を足した回）
+        gold, rep = merged_gold([(Path(a), Path(d)) for a, d in zip(sys.argv[2::2], sys.argv[3::2])])
         write_gold(gold, ROOT / "eval" / "gold.csv")
         write_gold(gold, ROOT / "eval" / "gold_no_policy.csv", set(rep["policy_cells"]))
         # いちばん控えめな版：2 つの読みが一致したマスだけ（裁いたマス・別に見たマスを空欄）。抜き取りで直したマスは残す

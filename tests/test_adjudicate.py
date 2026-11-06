@@ -324,3 +324,20 @@ def test_chat_cells_are_reported_separately():
     assert rep["source"] == {"c16-6": "別に見た（チャットで推しどおり）", "c01-5": "推しどおり",
                              "c02-5": "チャットで推しどおり", "c03-9": "チャットで推しどおり"}
     assert set(rep["decided_cells"]) == {"c01-5", "c02-5", "c03-9", "c16-6"} and rep["rec_changed"] == []
+
+
+def test_merged_gold_combines_rounds_and_rejects_overlap(tmp_path, monkeypatch):
+    """裁定の回（11/4 の 30 件と 11/6 の 12 件）を合わせる。同じマスが 2 回出たら止める。"""
+    a1 = {"agreed": [{"case": "c01", "num": 2, "mark": "×"}], "audit": [], "issues": [],
+          "policies": [{"id": "p-plan", "cells": [_c("c01", 5, "×", "○", "○")]}]}
+    a2 = {"agreed": [{"case": "c31", "num": 2, "mark": "○"}], "audit": [], "policies": [],
+          "issues": [{"id": "i01", "cells": [_c("c31", 3, "○", "×", "×")]}]}
+    for name, obj in (("adj1.json", a1), ("adj2.json", a2), ("d1.json", {"p-plan": {"choice": "○"}}),
+                      ("d2.json", {"i01": {"mark": "×"}})):
+        (tmp_path / name).write_text(json.dumps(obj, ensure_ascii=False), encoding="utf-8")
+    monkeypatch.setattr(adjudicate, "recs_for", lambda p: (None, None))
+    gold, rep = adjudicate.merged_gold([(tmp_path / "adj1.json", tmp_path / "d1.json"), (tmp_path / "adj2.json", tmp_path / "d2.json")])
+    assert gold["c01"] == {2: "×", 5: "○"} and gold["c31"] == {2: "○", 3: "×"}
+    assert rep["agreed"] == {"×": 1, "○": 1} and set(rep["decided_cells"]) == {"c01-5", "c31-3"}
+    with pytest.raises(SystemExit):
+        adjudicate.merged_gold([(tmp_path / "adj1.json", tmp_path / "d1.json"), (tmp_path / "adj1.json", tmp_path / "d1.json")])
