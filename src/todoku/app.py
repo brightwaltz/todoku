@@ -889,14 +889,18 @@ def index(request: Request) -> Response:
     return HTMLResponse(body)
 
 
-@app.get("/city/{code}", response_class=HTMLResponse)
-def city(code: str, request: Request) -> HTMLResponse:
+# /city/ も HEAD に答える（T-159）。リンクを貼る頁なので、下見や死活の見張りが HEAD で聞いても 405 にしない。形は「/」と同じ（T-056）
+@app.api_route("/city/{code}", methods=["GET", "HEAD"], response_class=HTMLResponse)
+def city(code: str, request: Request) -> Response:
     """その市区町村の人が使える制度の一覧（T-080b）。規則から作り、Claude は呼ばないので合言葉も回数制限もかけない。"""
     if code not in PLACES:
         raise HTTPException(404, "その団体コードの市区町村は一覧にありません")
     pref, name = PLACES[code]
-    return HTMLResponse(with_og_image(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2]),
-                                                LOCAL.get(code)), request))
+    html = with_og_image(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2]),
+                                   LOCAL.get(code)), request)
+    if request.method == "HEAD":  # 本文は送らず、長さは縮めない GET と同じにする
+        return Response(b"", media_type="text/html", headers={"content-length": str(len(html.encode("utf-8")))})
+    return HTMLResponse(html)
 
 
 @app.get("/japan-map", response_class=HTMLResponse)

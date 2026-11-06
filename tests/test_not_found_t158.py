@@ -27,7 +27,7 @@ def test_other_unknown_path_in_browser_says_the_address_may_be_cut():
 
 
 def test_head_from_a_browser_gets_the_same_status():
-    # /city/ はもともと GET だけ（HEAD は 405）なので、道の無い頁で確かめる
+    # 一覧に無い団体コードの HEAD は tests/test_city_head_t159.py で確かめる（/city/ は T-159 まで HEAD が 405 だった）
     assert client.head("/no-such-page", headers=BROWSER).status_code == 404
 
 
