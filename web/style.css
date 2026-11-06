@@ -447,7 +447,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .memo { border: 1px dashed var(--line, #bbb); border-radius: 8px; padding: 6px 10px; margin: 0 0 12px; }
 .memo > summary { cursor: pointer; font-weight: 600; }
 .memo-sheet .memo-title { font-weight: 700; margin: 8px 0 2px; font-size: 1em; color: inherit; }  /* h3 にしたが、見た目は前の p のまま（.prog h3 の 16px・色を打ち消す。T-150） */
-.memo-sheet .memo-name { display: inline-block; word-break: auto-phrase; text-wrap: balance; }  /* T-169：名前は 1 かたまり。行に入らなければ名前ごと次の行へ。1 行より長い名前は釣り合わせて折る */
+.memo-sheet .memo-name { display: inline-block; word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; }  /* T-169：名前は 1 かたまり。行に入らなければ名前ごと次の行へ。1 行より長い名前は釣り合わせて折る。T-181：文字を特大にした 320 で 1 文節が 1 行に入らないときも折る（inline-block の幅は最小の幅より縮まないので、break-word では枠を越える） */
 .memo-sheet h4 { margin: 10px 0 2px; font-size: 1em; }
 .memo-sheet ul.check { list-style: none; padding-left: 0; margin: 0; }
 .memo-sheet ul.check li::before { content: "□ "; }
