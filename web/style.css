@@ -344,6 +344,16 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .city-where b { font-size: .875rem; color: var(--accent); margin-right: .4em; }
 .city-item details summary { font-size: .9375rem; color: var(--muted); cursor: pointer; padding: 9px 0; }
 .city-src { margin: 0; padding-left: 1.2em; font-size: .875rem; }
+/* T-178：/city/ を紙に刷るとき、畳んだ「出典」の中身（公式ページの名前）も刷る。閉じたままだと紙には「▶ 出典」の 1 行だけが
+   制度の数だけ並んだ（町田市で 28 行）。/city/ は script を持たない頁なので、JS（結果の画面の beforeprint）でなく ::details-content で開く。
+   制度 1 件は頁の境で割らない（見出しだけ前の頁の下に残らない） */
+@media print {
+  .city-item { break-inside: avoid; }
+  .city-item h3 { break-after: avoid; }
+  details:has(> .city-src)::details-content { content-visibility: visible; display: block; }
+  details:has(> .city-src) > summary { list-style: none; }
+  details:has(> .city-src) > summary::-webkit-details-marker { display: none; }
+}
 .city-cond { margin: 0 0 4px; padding-left: 1.2em; font-size: 1rem; }
 .city-first { font-size: .9375rem; }
 .city-first b { display: inline-block; font-size: .875rem; color: #6b4200; background: #fff1d6; border-radius: 4px; padding: 0 .5em; margin-right: .5em; }
