@@ -430,6 +430,12 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .memo-sheet ul.check li::before { content: "□ "; }
 .memo-sheet dl.fill { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; margin: 0; }
 .memo-sheet dl.fill dd { margin: 0; }
+/* 370px 以下では、項目名の列を半分までにして値の列を広げる。前は項目名が 164px を取り、値が 17〜27px（1 行 1 字）に潰れ、
+   字の間を広げると値が札の右で切れた（T-152）。390 より広い画面は前のまま */
+@media (max-width: 370px) {
+  .memo-sheet dl.fill { grid-template-columns: fit-content(50%) minmax(0, 1fr); }
+  .memo-sheet dl.fill dd { overflow-wrap: anywhere; }
+}
 .memo-sheet .say { border-left: 3px solid var(--line, #bbb); padding-left: 8px; }
 .memo > button { min-height: 44px; }  /* 「このメモだけ印刷する」も押す所 44px 以上（T-146） */
 #print-sheet { display: none; }
