@@ -1324,6 +1324,7 @@ async function restoreFrom(code) {
     show("extracted", false); show("ask", false);
     render(data);
   } catch (e) {
+    if (mine !== state) return;  // 待つ間に見本・出来事・相談を始めたら、開き直しの失敗をその上に出さない（T-173）
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
     say(e.message);
     show("reading");
