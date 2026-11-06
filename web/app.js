@@ -1364,7 +1364,7 @@ function programCard(r) {
 // 申請メモ（T-074）：窓口へ持っていく記入の下書き。中身は規則と相談の答えから（サーバの memo.py。Claude は使わない）
 function memoView(m) {
   const sheet = el("div", { class: "memo-sheet" },
-    el("p", { class: "memo-title" }, m.title),
+    el("h3", { class: "memo-title" }, m.title),  // 札の中の見出しは h3。メモの中の項目（h4）はこの下に入る（T-150）
     el("p", { class: "note" }, m.note),
     el("h4", {}, "申請先"), el("p", {}, m.where),
     m.phone ? el("p", {}, `電話：${m.phone}`) : null,

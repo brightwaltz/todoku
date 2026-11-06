@@ -423,7 +423,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
    結果の画面ぜんぶを刷るとき（print-result）は、札と重なるのでメモを出さない */
 .memo { border: 1px dashed var(--line, #bbb); border-radius: 8px; padding: 6px 10px; margin: 0 0 12px; }
 .memo > summary { cursor: pointer; font-weight: 600; }
-.memo-sheet .memo-title { font-weight: 700; margin: 8px 0 2px; }
+.memo-sheet .memo-title { font-weight: 700; margin: 8px 0 2px; font-size: 1em; color: inherit; }  /* h3 にしたが、見た目は前の p のまま（.prog h3 の 16px・色を打ち消す。T-150） */
 .memo-sheet h4 { margin: 10px 0 2px; font-size: 1em; }
 .memo-sheet ul.check { list-style: none; padding-left: 0; margin: 0; }
 .memo-sheet ul.check li::before { content: "□ "; }
