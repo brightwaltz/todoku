@@ -107,7 +107,8 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .place-tab:focus-visible { outline: 3px solid #9fd3c7; border-color: var(--accent); }
 .place-tab[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
 .place-tab.picked::after { content: ""; position: absolute; top: 2px; right: 4px; width: 7px; height: 7px; border-radius: 50%; background: #e0a030; }
-.ev-card span { word-break: keep-all; overflow-wrap: anywhere; }
+/* break-word にする（T-139c）。anywhere だと text-wrap: balance が語の途中の折り目まで使い「食事の用意 / が難しい」になる */
+.ev-card span { word-break: keep-all; overflow-wrap: break-word; }
 .ev-card:hover { border-color: var(--accent); }
 .ev-card:focus-visible { outline: 3px solid #9fd3c7; border-color: var(--accent); }
 .ev-card[aria-pressed="true"] { border-color: var(--accent); background: #e3f1ec; font-weight: 700; }

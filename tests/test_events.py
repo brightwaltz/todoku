@@ -219,3 +219,26 @@ def test_events_are_grouped_by_the_seven_places_of_the_house():
     html = (app_mod.WEB_DIR / "index.html").read_text(encoding="utf-8")
     assert 'id="event-places" role="group" aria-label="家の場所" hidden' in html
     assert "showPlace(places[0][0]);" in js  # 最初は 1 つ目の場所（寝室。動画の台本が押す「退院した」がある）
+
+
+def test_card_labels_break_only_between_phrases():
+    # 札の名前は文節の切れ目でだけ折る（T-139c）。app.js の PHRASE_BREAK で切った 1 つの文節が札の 1 行（360〜1280 で
+    # 7 文字は入る）を超えず、行の頭が助詞にならない。「間に / 合わない」「聞こえに / くい」のような切れ目を作らない。
+    # 実際の折り目は ops の shot_t139c.py で 360・390・1280 を測った（16 枚とも文節の途中で折れない）
+    import re
+
+    js = (app_mod.WEB_DIR / "app.js").read_text(encoding="utf-8")
+    rule = re.compile(re.search(r"const PHRASE_BREAK = /(.+)/;", js).group(1))
+    assert "label.split(PHRASE_BREAK)" in js
+    css = (app_mod.WEB_DIR / "style.css").read_text(encoding="utf-8")
+    assert ".ev-card span { word-break: keep-all; overflow-wrap: break-word; }" in css
+    for e in events_mod.EVENTS:
+        parts = re.split(rule, e["label"])
+        assert "".join(parts) == e["label"], e["id"]
+        for part in parts:
+            assert 0 < len(part) <= 7, (e["id"], parts)
+        for part in parts[1:]:
+            assert part[0] not in "がにはでをとのもくい", (e["id"], parts)
+    assert re.split(rule, "トイレが間に合わない") == ["トイレが", "間に合わない"]
+    assert re.split(rule, "聞こえにくい") == ["聞こえにくい"]
+    assert re.split(rule, "お風呂が一人では難しい") == ["お風呂が", "一人では", "難しい"]

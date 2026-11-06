@@ -208,12 +208,15 @@ let eventList = [];
 const eventPicked = new Set();
 const SCENE_EMPTY = "出来事を選ぶと、家の絵に足されていきます。";
 
-// 札の名前は文節の切れ目（が・に・く の後）でだけ折り返す。CSS の word-break: keep-all と組にして、
-// 「一人暮 / らしになった」のような語の途中の折り返しを防ぐ（T-124b。決まった 6 枚の名前に合わせた簡単な決まりで、
-// 名前を足したら札の写真で確かめる。収まらない長い句は overflow-wrap: anywhere で札の中で折れる）
+// 札の名前は文節の切れ目でだけ折り返す。CSS の word-break: keep-all と組にして、
+// 「一人暮 / らしになった」のような語の途中の折り返しを防ぐ（T-124b）。切れ目は (1) 助詞 が・に・は・で の後で、
+// 次が漢字かカタカナのとき（「お風呂が / 一人では / 難しい」。「聞こえにくい」は折らない。「間に合う」の に は除く）
+// (2)「〜に / なった」「〜く / なった」（T-139c。16 枚の名前に合わせた簡単な決まりで、名前を足したら
+// ops の shot_t139c.py で札の折り目を確かめる。収まらない長い句は overflow-wrap: break-word で札の中で折れる）
+const PHRASE_BREAK = /(?<=[がはで]|(?<!間)に)(?=[\u4E00-\u9FFF\u30A0-\u30FF])|(?<=[にく])(?=な)/;
 function phraseLabel(label) {
   const span = el("span", {});
-  label.split(/(?<=[がにく])(?=.)/).forEach((part, i) => {
+  label.split(PHRASE_BREAK).forEach((part, i) => {
     if (i) span.append(document.createElement("wbr"));
     span.append(part);
   });
