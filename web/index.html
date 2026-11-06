@@ -47,6 +47,12 @@
     <!-- 1 日の費用の上限に届いた日（T-180b）。合言葉の欄は出さず、短い断りと見本への案内だけ。/api/health の today.closed か、
          /api/consult の 429（x-todoku-closed: 1）で app.js の showClosed が出す。送るボタンのすぐ下なので、送った人の目の先に出る -->
     <p class="closed" id="closed" hidden role="status"><span>今日の受付は終わりました。</span><button type="button" class="link" id="closed-go">見本で試す</button></p>
+    <!-- 見本は「相談する」のすぐ下、絵から選ぶの上に置く（T-182、RSI-002）。見本は合言葉なしで最後まで動くので、家の絵と紹介の動画の
+         下だと 390・1280 とも最初の 1 画面に出なかった。見本の札は文字だけで低いので、ここなら書く欄・相談する・見本が 1 画面に入る -->
+    <div id="samples" hidden>
+      <p class="note">見本で試す（合言葉なしで動きます）</p>
+      <div class="examples" id="sample-list"></div>
+    </div>
 
     <!-- 絵から選ぶ（T-124。11/5 の柴田の感想「文字だけだとイメージが湧かない」）。相談の欄の下に置く。札は /api/events から作り、
          絵は下の art-defs の symbol（id は art-<出来事の id>）。選ぶたびに家の絵に同じ絵が足される。Claude を呼ばず、合言葉も要らない（T-071） -->
@@ -152,10 +158,6 @@
       </video>
       <p id="intro-desc" class="sr-only">音声のない動画です。相談の欄に困りごとを一度書く。絵からも選べる。答えると、制度の地図に尋ねていなかった制度が見えてくる。札を開くと、判定の理由と出典。申請先と持ち物を1枚の申請メモに。</p>
     </figure>
-    <div id="samples" hidden>
-      <p class="note">見本で試す（合言葉なしで動きます）</p>
-      <div class="examples" id="sample-list"></div>
-    </div>
 
     <!-- 合言葉の欄は見本より下に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044）。T-124 で相談の欄が
          いちばん上に移り、T-126 で最初は小さな入口（#gate-open）だけにした。合言葉なしで送ったときは askGate が欄を出す -->

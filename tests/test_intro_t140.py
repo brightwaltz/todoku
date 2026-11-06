@@ -44,11 +44,12 @@ def _boxes(data: bytes, start: int = 0, end: int | None = None):
         i += size
 
 
-def test_intro_sits_after_the_pictures_and_before_the_samples():
+def test_intro_sits_after_the_pictures_and_below_the_samples():
+    # T-140 では絵と見本の間に置いた。T-182（RSI-002）で見本が「相談する」のすぐ下に移ったので、動画は絵の下・合言葉の欄の上
     i = HTML.index('id="intro"')
-    assert HTML.index('id="events"') < i < HTML.index('id="samples"')
-    # 相談を書く欄・相談する・絵から選ぶ・見本の順は前と同じ（test_app の順の検査と同じ並び）
-    order = [HTML.index(k) for k in ('id="input"', 'id="text"', 'id="send"', 'id="events"', 'id="samples"', 'id="sample-list"', 'id="gate"')]
+    assert HTML.index('id="samples"') < HTML.index('id="events"') < i < HTML.index('id="gate"')
+    # 相談を書く欄・相談する・見本・絵から選ぶの順（test_app の順の検査と同じ並び）
+    order = [HTML.index(k) for k in ('id="input"', 'id="text"', 'id="send"', 'id="samples"', 'id="sample-list"', 'id="events"', 'id="gate"')]
     assert order == sorted(order)
 
 
