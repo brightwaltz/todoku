@@ -111,7 +111,8 @@ def visible(rs: rules_mod.RuleSet, code: str) -> set[str]:
 
 
 def themes_of(facts: dict[str, Any]) -> list[str]:
-    return [e["id"] for e in events_mod.EVENTS[:events_mod.MAX_EVENTS] if THEME_FITS[e["id"]](facts)]
+    # 試すのは THEME_FITS に表のある出来事だけ（T-139 で小項目が 16 個になったが、試しの数を動かさないため元の 6 つのまま）
+    return [e["id"] for e in events_mod.EVENTS[:events_mod.MAX_EVENTS] if e["id"] in THEME_FITS and THEME_FITS[e["id"]](facts)]
 
 
 def run_one(rs: rules_mod.RuleSet, facts: dict[str, Any], event_id: str, code: str) -> dict:

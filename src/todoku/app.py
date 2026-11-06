@@ -674,7 +674,10 @@ def sample_summary(body: SampleSummaryIn, request: Request) -> dict:
 
 @app.get("/api/events")
 def events() -> list[dict]:
-    return [{"id": e["id"], "label": e["label"], "text": e["text"]} for e in events_mod.EVENTS[:events_mod.MAX_EVENTS]]
+    # 場所（T-139）は id と名前だけ渡す。裏の分類（icf）は画面に出さないので渡さない
+    return [{"id": e["id"], "label": e["label"], "text": e["text"],
+             "place": e["place"], "place_label": events_mod.PLACE_LABEL[e["place"]]}
+            for e in events_mod.EVENTS[:events_mod.MAX_EVENTS]]
 
 
 @app.post("/api/event")

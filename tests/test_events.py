@@ -16,8 +16,8 @@ client = TestClient(app)
 
 def test_events_are_few_and_their_facts_are_in_the_text():
     listed = client.get("/api/events").json()
-    assert 1 <= len(listed) <= 6
-    assert all(set(e) == {"id", "label", "text"} for e in listed)
+    assert len(listed) == len(events_mod.EVENTS) == events_mod.MAX_EVENTS  # 小項目は全部出す（T-139。上限は小項目の数）
+    assert all(set(e) == {"id", "label", "text", "place", "place_label"} for e in listed)  # 裏の分類（icf）は渡さない
     assert len({e["id"] for e in listed}) == len(listed)
     # 先生の挙げた出来事（11/4）は入っている
     labels = {e["label"] for e in listed}
@@ -107,7 +107,7 @@ def test_picked_events_are_combined_without_claude(monkeypatch):
     # 知らない出来事が 1 つでも混じれば断る。何も選んでいなければ断る。数の上限を超えれば 422
     assert client.post("/api/event", json={"ids": ["alone", "nope"]}).status_code == 404
     assert client.post("/api/event", json={"ids": []}).status_code == 404
-    assert client.post("/api/event", json={"ids": ["alone"] * 7}).status_code == 422
+    assert client.post("/api/event", json={"ids": ["alone"] * (events_mod.MAX_EVENTS + 1)}).status_code == 422
 
 
 def test_every_event_has_a_picture_and_a_place_in_the_scene():
@@ -119,10 +119,11 @@ def test_every_event_has_a_picture_and_a_place_in_the_scene():
     js = (app_mod.WEB_DIR / "app.js").read_text(encoding="utf-8")
     css = (app_mod.WEB_DIR / "style.css").read_text(encoding="utf-8")
     ids = [e["id"] for e in client.get("/api/events").json()]
-    assert len(ids) <= 8  # 家の絵に足す要素は 8 個まで
     for i in ids:
         assert f'<symbol id="art-{i}"' in html, i
-        assert f'data-ev="{i}"><use href="#art-{i}"' in html, i
+    # 家の絵に置く要素は、どれも出来事の絵。T-139 で足した小項目を家の絵に置くのは T-139b（家を場所 7 つに描き直す）
+    placed = re.findall(r'data-ev="(\w+)"><use href="#art-(\w+)"', html)
+    assert placed and all(a == b and a in ids for a, b in placed), placed
     assert not re.search(r'<(image|img)\b', html.split('id="events"')[1].split("</svg>\n    <svg")[0])  # 外の画像は使わない
     assert '<figure class="scene" aria-hidden="true">' in html and 'aria-live="polite"' in html
     assert 'el("button", { type: "button", class: "ev-card", "aria-pressed": "false"' in js
@@ -168,7 +169,7 @@ def test_scene_items_fit_in_the_house_without_overlapping():
         assert float(w) == float(h), ev
         x0, y0, x1, y1 = _drawn_bounds(symbols[ev])
         boxes[ev] = (x + x0 * k, y + y0 * k, x + x1 * k, y + y1 * k)
-    assert len(boxes) == len(client.get("/api/events").json())
+    assert boxes and set(boxes) <= {e["id"] for e in client.get("/api/events").json()}  # 全部を置くのは T-139b
     for ev, (x0, y0, x1, y1) in boxes.items():
         assert 20 <= x0 and x1 <= 460 and 76 <= y0, (ev, boxes[ev])
         if ev != "forgetful":
@@ -179,3 +180,35 @@ def test_scene_items_fit_in_the_house_without_overlapping():
             ox = min(p[2], q[2]) - max(p[0], q[0])
             oy = min(p[3], q[3]) - max(p[1], q[1])
             assert not (ox > 0 and oy > 0), (a, b, round(ox, 1), round(oy, 1))
+
+
+def test_events_are_grouped_by_the_seven_places_of_the_house():
+    # 大項目は家の場所 7 つ、小項目は場所ごとに 2〜4 個（T-139）。並びは場所の順。画面に出すのは場所と小項目の名前だけで、
+    # 裏の分類（ICF を下敷き）は全部に付ける。事実は facts.yaml にあるものだけで、値は選択肢にある
+    import yaml
+
+    facts = yaml.safe_load((app_mod.WEB_DIR.parent / "rules" / "facts.yaml").read_text(encoding="utf-8"))
+    facts = facts.get("facts", facts)
+    assert [p for p, _ in events_mod.PLACES] == ["bedroom", "entrance", "bath", "kitchen", "living", "outside", "family"]
+    assert [l for _, l in events_mod.PLACES] == ["寝室", "階段と玄関", "浴室とトイレ", "台所", "居間", "外", "家族"]
+    order = [p for p, _ in events_mod.PLACES]
+    seen = [e["place"] for e in events_mod.EVENTS]
+    assert seen == sorted(seen, key=order.index)  # 場所の順に並ぶ
+    for p in order:
+        assert 2 <= seen.count(p) <= 4, p
+    for e in events_mod.EVENTS:
+        assert e["icf"] and e["label"] and len(e["label"]) <= 12, e["id"]
+        for fid, value, confidence, evidence in e["facts"]:
+            assert fid in facts, (e["id"], fid)
+            spec = facts[fid]
+            if spec["type"] == "bool":
+                assert isinstance(value, bool), (e["id"], fid)
+            else:
+                assert value in [o["value"] for o in spec["options"]], (e["id"], fid, value)
+            assert confidence in ("high", "low") and evidence in e["text"], (e["id"], fid)
+    listed = client.get("/api/events").json()
+    assert [(e["place"], e["place_label"]) for e in listed] == [(e["place"], events_mod.PLACE_LABEL[e["place"]]) for e in events_mod.EVENTS]
+    js = (app_mod.WEB_DIR / "app.js").read_text(encoding="utf-8")
+    html = (app_mod.WEB_DIR / "index.html").read_text(encoding="utf-8")
+    assert 'id="event-places" role="group" aria-label="家の場所" hidden' in html
+    assert "showPlace(places[0][0]);" in js  # 最初は 1 つ目の場所（寝室。動画の台本が押す「退院した」がある）

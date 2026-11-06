@@ -60,7 +60,9 @@ def test_population_matches_the_checked_statistics():
 
 def test_theme_tables_cover_the_entry_events():
     ids = {e["id"] for e in events_mod.EVENTS[:events_mod.MAX_EVENTS]}
-    assert set(run_sim.THEME_FITS) == ids == set(run_sim.THEME_FACTS) == set(run_sim.THEME_EXTRA)
+    # T-139 で小項目は 16 個になった。試しは元の 6 つのまま（表のある出来事は、どれも入口にある）
+    assert set(run_sim.THEME_FITS) <= ids and set(run_sim.THEME_FITS) == set(run_sim.THEME_FACTS) == set(run_sim.THEME_EXTRA)
+    assert set(run_sim.THEME_FITS) == {"discharged", "forgetful", "alone", "falls", "work", "diapers"}
     for extra in run_sim.THEME_EXTRA.values():
         assert set(extra) <= set(RS.programs)  # 書き間違いを止める（無い ID は direct_programs で黙って落ちる）
     latent = set(population.generate(1)[0])

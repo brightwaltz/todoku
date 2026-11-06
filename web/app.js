@@ -220,8 +220,14 @@ function phraseLabel(label) {
   return span;
 }
 
+// 大項目の家の場所（T-139）。押した場所の小項目の札だけを出す。ほかの場所で選んだ札は、隠れても選んだまま
+function showPlace(id) {
+  document.querySelectorAll("#event-places .place-tab").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.place === id)));
+  document.querySelectorAll("#event-list .ev-card").forEach((c) => { c.hidden = Boolean(c.dataset.place) && c.dataset.place !== id; });
+}
+
 function eventCard(e) {
-  const card = el("button", { type: "button", class: "ev-card", "aria-pressed": "false", "data-ev": e.id });
+  const card = el("button", { type: "button", class: "ev-card", "aria-pressed": "false", "data-ev": e.id, "data-place": e.place || "" });
   if (document.getElementById(`art-${e.id}`)) {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("viewBox", "0 0 100 100");
@@ -241,6 +247,7 @@ function toggleEvent(id) {
   const picked = eventList.filter((e) => eventPicked.has(e.id));  // 札の並びの順で文をつなぐ
   document.querySelectorAll("#event-list .ev-card").forEach((c) => c.setAttribute("aria-pressed", String(eventPicked.has(c.dataset.ev))));
   document.querySelectorAll("#scene .scene-item").forEach((g) => g.classList.toggle("on", eventPicked.has(g.dataset.ev)));
+  document.querySelectorAll("#event-places .place-tab").forEach((b) => b.classList.toggle("picked", picked.some((e) => e.place === b.dataset.place)));
   $("scene-caption").textContent = picked.length ? `選んだ出来事：${picked.map((e) => e.label).join("・")}` : SCENE_EMPTY;
   $("event-start").disabled = !picked.length;
   // 出来事を 1 つ押したら、どなた・年齢・お住まいを選ぶ欄を開く（T-134。最初は書く欄と出来事の札だけ）。開くのは最初の 1 回だけ
@@ -1514,6 +1521,13 @@ fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
   eventList = list;
   $("event-list").replaceChildren(...list.map(eventCard));
+  const places = [...new Map(list.filter((e) => e.place).map((e) => [e.place, e.place_label])).entries()];  // 並びは札の順
+  if (places.length) {
+    $("event-places").replaceChildren(...places.map(([id, label]) =>
+      el("button", { type: "button", class: "place-tab", "aria-pressed": "false", "data-place": id, onclick: () => showPlace(id) }, label)));
+    show("event-places");
+    showPlace(places[0][0]);
+  }
   $("event-start").addEventListener("click", openEvents);
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
