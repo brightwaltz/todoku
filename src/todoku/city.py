@@ -51,6 +51,8 @@ PREF_FOUND_NOTE = ("{pref}の制度で、個人で申し込めそうなものを
 SUMMARY_PREF_FOUND = "{pref}の制度は、確かめる候補が {n} 件あります"
 PREF_LOOKED = "見た県の頁"
 SUMMARY_TYPES_N = ("市区町村の事業", "種類（全国の実施率つき、窓口で確かめる候補）")
+# T-143：下の段の見出しの数の単位。型の段は帯の内訳（SUMMARY_TYPES_N）と同じく「種類」、制度の段は「件」
+SECTION_UNIT = {"local": "種類"}
 
 # T-089：地域包括支援センターの職員が相談を受けながら使うとき（T-078 の候補 #2。判断は integration-1105.md の「T-078」、既定は A）。
 # 相談先の枠に 1 文だけ出す。職員向けの別の画面は作らない。README の「包括の職員が相談を受けながら使うとき」と同じ趣旨。文言はここだけで差し替える
@@ -211,7 +213,8 @@ def _contacts_html(g: Group, pref: str) -> str:
     e = escape
     items = "".join(
         f'<li><a href="{e(c.url, quote=True)}" target="_blank" rel="noopener">{e(c.name(pref))}</a>'
-        + (f' 電話 <a href="tel:{e(c.tel, quote=True)}">{e(c.tel)}</a>' if c.tel else "")
+        # 電話は結果の画面の番号と同じ .tel（太字・番号の途中で折らない・上下 14px まで押せる。T-029）にする（T-176）
+        + (f' 電話 <a class="tel" href="tel:{e(c.tel, quote=True)}">{e(c.tel)}</a>' if c.tel else "")
         + f'<br><span class="note">{e(c.note)}（{c.checked.isoformat()} に確かめた）</span></li>'
         for c in g.contacts)
     return f'<div class="city-contacts"><h3>{e(CONTACTS_TITLE.format(pref=pref))}</h3><ul>{items}</ul></div>'
@@ -241,7 +244,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
     for g in groups:
         body.append(f'<section class="card city-group" data-level="{e(g.key)}">'
                     # T-113：書けていない段の見出しにも 0 件を出さない（すぐ下の 1 行が、なぜ無いかを言う）
-                    f'<h2>{e(g.title)}' + (f'<span class="city-n">{len(g.programs)} 件</span>' if g.programs else "") + '</h2>')
+                    f'<h2>{e(g.title)}' + (f'<span class="city-n">{len(g.programs)} {SECTION_UNIT.get(g.key, "件")}</span>' if g.programs else "") + '</h2>')
         if not g.programs:
             body.append(f'<p class="note">{e(g.empty)}</p>{_checked_html(g)}{_contacts_html(g, pref)}</section>')
             continue
@@ -277,6 +280,15 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(pref)}{e(name)}で使える制度 — とどく</title>
 <meta name="description" content="{e(pref)}{e(name)}に住む人が使える介護・福祉の制度を、国・都道府県・市区町村の段に分けて、申請先と出典つきで並べた一覧です。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="とどく">
+<meta property="og:title" content="{e(pref)}{e(name)}で使える制度 — とどく">
+<meta property="og:description" content="{e(pref)}{e(name)}に住む人が使える介護・福祉の制度を、国・都道府県・市区町村の段に分けて、申請先と出典つきで並べた一覧です。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="/static/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">

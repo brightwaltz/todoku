@@ -54,7 +54,7 @@ def types_listed(html: str) -> int:
 def section_counts(html: str) -> dict[str, int]:
     """段（data-level）ごとの見出しの件数を、見出しの順に。"""
     return {title: int(n) for title, n in
-            re.findall(r'<section class="card city-group" data-level="[^"]+"><h2>([^<]+)<span class="city-n">(\d+) 件', html)}
+            re.findall(r'<section class="card city-group" data-level="[^"]+"><h2>([^<]+)<span class="city-n">(\d+) (?:件|種類)</span>', html)}
 
 
 @pytest.mark.parametrize("code", [MACHIDA, YOKOHAMA, VILLAGE, OSAKA])
@@ -97,6 +97,20 @@ def test_places_without_their_own_rules_do_not_show_zero(code, monkeypatch):
     assert "0</b> 件" not in block and " 0 件" not in block
     head, tail = SUMMARY_TYPES_N
     assert f"{head} <b>5</b> {tail}" in block and "窓口で確かめる候補" in tail
+
+
+@pytest.mark.parametrize("code", [MACHIDA, YOKOHAMA, VILLAGE, OSAKA])
+def test_section_heading_units_match_the_summary(code):
+    """T-143：型の段の見出しは、帯の内訳（「市区町村の事業 n 種類」）と同じく「種類」で数える。制度の段は「件」のまま。
+    前は型の段の見出しも「5 件」で、帯の「5 種類」と単位が違った。"""
+    html, block = summary(code)
+    units = {level: (int(n), unit) for level, n, unit in re.findall(
+        r'<section class="card city-group" data-level="([^"]+)"><h2>[^<]+<span class="city-n">(\d+) ([^<]+)</span>', html)}
+    assert units, code
+    for level, (n, unit) in units.items():
+        assert unit == ("種類" if level == "local" else "件"), (code, level, unit)
+    if code != MACHIDA:  # 町田市は市の制度を一つずつ書いているので型の段に数が無い
+        assert units["local"][0] == parts(block)[SUMMARY_TYPES]
 
 
 @pytest.mark.parametrize("code", [VILLAGE, OSAKA, YOKOHAMA])

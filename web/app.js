@@ -71,6 +71,9 @@ function el(tag, attrs = {}, ...children) {
   return node;
 }
 
+// T-149：狭い幅で、数と単位（「25 / 件」）や最後の語（「確かめられるこ / と」）だけが次の行に落ちないよう、末尾をひとかたまりにする
+const keepTail = (head, tail) => [head, el("span", { class: "nowrap" }, tail)];
+
 function show(id, on = true) { $(id).hidden = !on; }
 // 読み上げに知らせる（#status はいつもある領域。空にしておくと、次に同じ文を入れても読まれる）
 function say(text) { $("status").textContent = text; }
@@ -193,7 +196,21 @@ function resetPick() {
 async function send() {
   const text = $("text").value.trim();
   if (!text) { $("text").focus(); return; }
-  await consultWith(text, () => api("/api/consult", { text, municipality: pick.city }));
+  await consultWith(text, () => withClock(api("/api/consult", { text, municipality: pick.city })));
+}
+
+// 本物の Claude の読み取りは十数秒かかることがある。止まって見えないよう、3 秒を過ぎたら読み取り中の札に経過の秒を足す（T-165）。
+// 読み上げ（#status）は consultWith の最初の 1 回だけで、毎秒は読まない。札の文が替わったら（失敗の知らせ・別の相談）書かない
+function withClock(promise) {
+  const p = $("reading").firstElementChild;
+  const base = p ? p.textContent : "";
+  const t0 = Date.now();
+  const timer = setInterval(() => {
+    if (!p || $("reading").firstElementChild !== p) { clearInterval(timer); return; }
+    const sec = Math.floor((Date.now() - t0) / 1000);
+    if (sec >= 3) p.textContent = `${base}（${sec} 秒）`;
+  }, 1000);
+  return promise.finally(() => clearInterval(timer));
 }
 
 // 見本は、前もって Claude が読み取った結果をサーバから受け取る（Claude を呼ばない）
@@ -208,20 +225,31 @@ let eventList = [];
 const eventPicked = new Set();
 const SCENE_EMPTY = "出来事を選ぶと、家の絵に足されていきます。";
 
-// 札の名前は文節の切れ目（が・に・く の後）でだけ折り返す。CSS の word-break: keep-all と組にして、
-// 「一人暮 / らしになった」のような語の途中の折り返しを防ぐ（T-124b。決まった 6 枚の名前に合わせた簡単な決まりで、
-// 名前を足したら札の写真で確かめる。収まらない長い句は overflow-wrap: anywhere で札の中で折れる）
+// 札の名前は文節の切れ目でだけ折り返す。CSS の word-break: keep-all と組にして、
+// 「一人暮 / らしになった」のような語の途中の折り返しを防ぐ（T-124b）。切れ目は (1) 助詞 が・に・は・で の後で、
+// 次が漢字かカタカナのとき（「お風呂が / 一人では / 難しい」。「聞こえにくい」は折らない。「間に合う」の に は除く）
+// (2)「〜に / なった」「〜く / なった」（T-139c。16 枚の名前に合わせた簡単な決まりで、名前を足したら
+// ops の shot_t139c.py で札の折り目を確かめる。収まらない長い句は overflow-wrap: break-word で札の中で折れる）
+const PHRASE_BREAK = /(?<=[がはで]|(?<!間)に)(?=[\u4E00-\u9FFF\u30A0-\u30FF])|(?<=[にく])(?=な)/;
 function phraseLabel(label) {
   const span = el("span", {});
-  label.split(/(?<=[がにく])(?=.)/).forEach((part, i) => {
+  label.split(PHRASE_BREAK).forEach((part, i) => {
     if (i) span.append(document.createElement("wbr"));
     span.append(part);
   });
   return span;
 }
 
+// 大項目の家の場所（T-139）。押した場所の小項目の札だけを出す。ほかの場所で選んだ札は、隠れても選んだまま。
+// 家の絵の同じ場所の区画を薄く塗る（T-139b）
+function showPlace(id) {
+  document.querySelectorAll("#event-places .place-tab").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.place === id)));
+  document.querySelectorAll("#scene .room").forEach((r) => r.classList.toggle("current", r.dataset.place === id));
+  document.querySelectorAll("#event-list .ev-card").forEach((c) => { c.hidden = Boolean(c.dataset.place) && c.dataset.place !== id; });
+}
+
 function eventCard(e) {
-  const card = el("button", { type: "button", class: "ev-card", "aria-pressed": "false", "data-ev": e.id });
+  const card = el("button", { type: "button", class: "ev-card", "aria-pressed": "false", "data-ev": e.id, "data-place": e.place || "" });
   if (document.getElementById(`art-${e.id}`)) {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("viewBox", "0 0 100 100");
@@ -241,6 +269,7 @@ function toggleEvent(id) {
   const picked = eventList.filter((e) => eventPicked.has(e.id));  // 札の並びの順で文をつなぐ
   document.querySelectorAll("#event-list .ev-card").forEach((c) => c.setAttribute("aria-pressed", String(eventPicked.has(c.dataset.ev))));
   document.querySelectorAll("#scene .scene-item").forEach((g) => g.classList.toggle("on", eventPicked.has(g.dataset.ev)));
+  document.querySelectorAll("#event-places .place-tab").forEach((b) => b.classList.toggle("picked", picked.some((e) => e.place === b.dataset.place)));
   $("scene-caption").textContent = picked.length ? `選んだ出来事：${picked.map((e) => e.label).join("・")}` : SCENE_EMPTY;
   $("event-start").disabled = !picked.length;
   // 出来事を 1 つ押したら、どなた・年齢・お住まいを選ぶ欄を開く（T-134。最初は書く欄と出来事の札だけ）。開くのは最初の 1 回だけ
@@ -257,6 +286,7 @@ async function openEvents() {
 
 async function consultWith(text, call) {
   state = fresh();
+  const mine = state;  // 読み取りを待つ間に見本・出来事・別の相談を始めたら、遅れて返った前の答えは描かない（T-162。step と同じ）
   forgetKeep();  // 前に開いた・残した結果のリンクを、アドレス欄から外す
   state.startedAt = Date.now();
   const pressed = document.activeElement;
@@ -267,6 +297,7 @@ async function consultWith(text, call) {
   clearBoard();  // 前の相談の見立てから動かさない
   try {
     const data = await call();
+    if (mine !== state) return;
     // 読み取ったことの欄へ送る前に消す。送った後に消すと、その高さぶん中身が上へずれ、見出しが画面の上に切れる（T-023）
     show("reading", false);
     say("");
@@ -282,12 +313,14 @@ async function consultWith(text, call) {
     renderExtracted(data, text);
     render(data, true);
   } catch (e) {
-    resendAfterGate = e instanceof GateError;
-    $("reading").replaceChildren(el("p", { class: "error" }, e.message));
-    say(e.message);
-    show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
-    $("send").disabled = false;
-    backTo(pressed);
+    if (mine === state) {  // 前の相談の失敗の知らせを、後の相談の上に出さない
+      resendAfterGate = e instanceof GateError;
+      $("reading").replaceChildren(el("p", { class: "error" }, e.message));
+      say(e.message);
+      show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
+      $("send").disabled = false;
+      backTo(pressed);
+    }
     return;
   }
   $("send").disabled = false;
@@ -295,7 +328,7 @@ async function consultWith(text, call) {
 
 function renderExtracted(data, text) {
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
-  $("extracted").querySelector("h2").textContent = data.event ? "選んだ出来事から分かったこと" : "相談の文章から読み取ったこと";
+  $("extracted").querySelector("h2").replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
   $("said").replaceChildren(...markEvidence(text, data.extracted));
   const list = $("extracted-list");
   list.replaceChildren();
@@ -721,7 +754,7 @@ function renderLater(unconfirmed, unread = []) {
     const more = el("button", { class: "link", onclick: () => {
       rest.hidden = false; more.remove(); state.laterOpen = true; focusOn(rest.querySelector("h3"));
     } },
-      first ? `ほか ${unread.length - first} 件を見る` : `読み取れなかったことにも答える（${unread.length} 件）`);
+      first ? `ほか ${unread.length - first} 件を見る` : keepTail("読み取れなかったことにも答える", `（${unread.length} 件）`));
     nodes.push(more, rest);
   }
   $("later-list").replaceChildren(...nodes);
@@ -799,6 +832,7 @@ function renderTodo(data) {
 const AHEAD_NOW = "いま";
 const AHEAD_AFTER = "{name}の結果が出たら";
 const AHEAD_TAX = "次の確定申告の時期（2〜3月）";
+const aheadWhen = (w) => { const m = w.match(/^(.+?)(（[^（）]{1,8}）)$/); return m ? keepTail(m[1], m[2]) : w; };  // T-149：短い括弧書きを離さない
 function aheadSteps(data) {
   const shown = data.results.filter((r) => r.status === "eligible" || r.status === "after_prereq");
   const byId = new Map(data.results.map((r) => [r.id, r]));
@@ -827,7 +861,7 @@ function aheadSteps(data) {
 function renderAhead(data) {
   const steps = aheadSteps(data);
   $("ahead-list").replaceChildren(...steps.map((s) => el("li", { class: s.when === AHEAD_NOW ? "now" : "" },
-    el("h3", {}, s.when),
+    el("h3", {}, aheadWhen(s.when)),
     s.note ? el("p", { class: "ahead-note" }, `目安：${s.note}`) : null,
     el("ul", { class: "plain" }, s.items.map((t) => el("li", {},
       el("a", { href: `#p-${t.r.id}`, onclick: (ev) => openCard(ev, t.r.id) }, t.r.name),
@@ -873,7 +907,7 @@ function renderResult(data) {
     }
   }
   const no = data.results.filter((r) => r.status === "ineligible" || r.status === "done");
-  $("ineligible-title").textContent = `当てはまらない・済んでいる制度（${no.length} 件）`;
+  $("ineligible-title").replaceChildren(...keepTail("当てはまらない・済んでいる制度", `（${no.length} 件）`));
   $("ineligible-list").replaceChildren(...no.map((r) => el("li", {},
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
@@ -902,7 +936,7 @@ function renderResult(data) {
     // まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
     show("summary", false);
     $("stats").textContent += "。合言葉がないので、Claude が書くまとめを省いています";
-  } else if (key !== state.summaryKey) summarize();
+  } else if (key !== state.summaryKey) summarize(key);
   state.summaryKey = key;
   showKeep(data);
 }
@@ -928,7 +962,9 @@ function renderRegion(rg) {
   const what = [...kinds].map(([tail, heads]) => heads.join("・") + tail).join("・");
   line.replaceChildren(`${REGION_HEAD} `, el("b", {}, `${rg.total}`), ` 件（${parts}）。`,
     what ? REGION_DETAILED.replace("{what}", what) : "",
-    el("a", { href: `/city/${rg.code}` }, REGION_LINK));
+    // 入口の一覧のリンク（city-link）と同じく新しいタブで開く。同じタブで移ると、戻る・進むのキャッシュが効かない端末では
+    // 戻ったときに残した結果から作り直しになり、まとめの文・押した数の図の入口・開いた札・画面の位置が変わる（T-174）
+    el("a", { href: `/city/${rg.code}`, target: "_blank", rel: "noopener" }, REGION_LINK));
   show("region-line", true);
 }
 
@@ -1268,9 +1304,15 @@ async function restoreFrom(code) {
   try {
     saved = await decodeKeep(code);
   } catch (e) {
-    say("残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください");
-    $("reading").replaceChildren(el("p", { class: "error" }, "残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください。"));
+    // 縮めた符号（版 1）は DecompressionStream で戻す。無いブラウザ（iOS 16.3 以前の Safari など）では、
+    // リンクは正しいので「途中で切れていないか」ではなく、ブラウザのことだと知らせる（T-172）
+    const msg = code.startsWith("1.") && typeof DecompressionStream === "undefined"
+      ? "このブラウザでは、残した結果のリンクを開けません。ブラウザを新しくするか、別のブラウザで開いてください。"
+      : "残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください。";
+    say(msg.replace(/。$/, ""));
+    $("reading").replaceChildren(el("p", { class: "error" }, msg));
     show("reading");
+    $("reading").scrollIntoView({ block: "center" });  // 知らせは入口の絵より下にあり、開いた最初の画面では見えないので送る（T-172）
     return;
   }
   state = fresh();
@@ -1284,9 +1326,11 @@ async function restoreFrom(code) {
     show("extracted", false); show("ask", false);
     render(data);
   } catch (e) {
+    if (mine !== state) return;  // 待つ間に見本・出来事・相談を始めたら、開き直しの失敗をその上に出さない（T-173）
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
     say(e.message);
     show("reading");
+    $("reading").scrollIntoView({ block: "center" });
   }
 }
 
@@ -1326,7 +1370,7 @@ function programCard(r) {
   if (r.missing.length) {
     body.append(el("h3", {}, "確かめ方"), el("ul", { class: "plain" }, r.missing.map((m) => el("li", {}, m.check))));
   }
-  if (r.at_application.length) body.append(el("h3", {}, "申請のときに確かめられること"), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
+  if (r.at_application.length) body.append(el("h3", {}, keepTail("申請のときに", "確かめられること")), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
   if (r.local) {
     body.append(el("h3", {}, `${r.local.city}の主な条件（公式頁の言い換え）`),
       el("ul", { class: "plain" }, r.local.conditions.map((t) => el("li", {}, t))),
@@ -1346,14 +1390,21 @@ function programCard(r) {
 }
 
 // 申請メモ（T-074）：窓口へ持っていく記入の下書き。中身は規則と相談の答えから（サーバの memo.py。Claude は使わない）
+// 申請メモの題「申請メモ：制度の名前」を、頭書きと名前に分ける。名前は 1 かたまり（.memo-name）にして、
+// 行に入らなければ名前ごと次の行へ送る（390px で「…認定 / 書」のように 1〜2 字だけ落ちていた。T-169）
+function memoTitleParts(title) {
+  const head = "申請メモ：";
+  return title.startsWith(head) ? [head, el("span", { class: "memo-name" }, title.slice(head.length))] : [title];
+}
+
 function memoView(m) {
   const sheet = el("div", { class: "memo-sheet" },
-    el("p", { class: "memo-title" }, m.title),
+    el("h3", { class: "memo-title" }, ...memoTitleParts(m.title)),  // 札の中の見出しは h3。メモの中の項目（h4）はこの下に入る（T-150）
     el("p", { class: "note" }, m.note),
     el("h4", {}, "申請先"), el("p", {}, m.where),
     m.phone ? el("p", {}, `電話：${m.phone}`) : null,
     m.bring.length ? [el("h4", {}, "持ち物（済んだら印を）"), el("ul", { class: "check" }, m.bring.map((t) => el("li", {}, t)))] : null,
-    m.fill.length ? [el("h4", {}, "相談の答えから書けること"),
+    m.fill.length ? [el("h4", {}, keepTail("相談の答えから", "書けること")),
       el("dl", { class: "fill" }, m.fill.flatMap((f) => [el("dt", {}, f.name), el("dd", {}, f.value)]))] : null,
     el("h4", {}, "窓口で最初に言う一言"), el("p", { class: "say" }, m.say));
   return el("details", { class: "memo" }, el("summary", {}, "申請メモを開く（窓口に持っていく下書き）"), sheet,
@@ -1419,10 +1470,13 @@ function openCard(ev, id) {
   card.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-async function summarize() {
+async function summarize(key) {
+  const mine = state;
   show("summary", false);
   try {
     const data = await api("/api/summary", { facts: state.facts, subject: state.subject, municipality: state.municipality });
+    // Claude のまとめは数秒かかる。待つ間に別の相談を始めたか答えが変わったら、前のまとめを出さない（T-163）
+    if (mine !== state || key !== state.summaryKey) return;
     if (!data.lines.length) return;
     $("summary-lines").replaceChildren(...data.lines.map((l) => el("li", {}, l.text)));
     $("summary-note").textContent = data.engine === "fake"
@@ -1433,12 +1487,13 @@ async function summarize() {
 }
 
 async function sampleSummary(key) {
+  const mine = state;
   show("summary", false);
   let data = { lines: [], made: null };
   try {
     data = await api("/api/sample/summary", { id: state.sampleId, facts: state.facts, municipality: state.municipality });
   } catch (e) { /* まとめが出なくても結果は読める */ }
-  if (key !== state.summaryKey) return;  // 待つ間に答えが変わった
+  if (mine !== state || key !== state.summaryKey) return;  // 待つ間に別の相談を始めたか、答えが変わった
   state.sampleSummary = data;
   showSampleSummary();
 }
@@ -1499,7 +1554,15 @@ $("text").addEventListener("input", () => {
   const edited = $("text").value !== lastDraft && $("text").value.trim() !== "";
   show("redraft", edited && draft !== "" && draft !== $("text").value);
 });
-fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
+// 最初の画面のデータは web/early.js が先に取り始めている（T-177）。無ければ（early.js が遅れた・読めない）ここで取る。
+// 応答の本文は 1 回しか読めないので、受け取ったら消す。先に {} を置き、後から届いた early.js が二重に取らないようにする
+const earlyFetches = window.todokuEarly || (window.todokuEarly = {});
+function earlyFetch(url) {
+  const p = earlyFetches[url];
+  delete earlyFetches[url];
+  return p || fetch(url);
+}
+earlyFetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
   prefs = data.prefectures;
   $("pref").append(...prefs.map((p) => el("option", { value: p.code }, p.name)));
   const asked = new URLSearchParams(location.search).get("pref");
@@ -1510,15 +1573,27 @@ fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
 // 全国の見取り図は T-134b で別の頁（web/japan.html・web/japan.js）へ移した。タイルは /?pref=NN で戻り、上の pickFromMap が選ぶ
 // 出来事のボタンも、取れたときだけ出す（T-071）
-fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
+earlyFetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
   eventList = list;
   $("event-list").replaceChildren(...list.map(eventCard));
+  const places = [...new Map(list.filter((e) => e.place).map((e) => [e.place, e.place_label])).entries()];  // 並びは札の順
+  if (places.length) {
+    $("event-places").replaceChildren(...places.map(([id, label]) =>
+      el("button", { type: "button", class: "place-tab", "aria-pressed": "false", "data-place": id, onclick: () => showPlace(id) }, label)));
+    show("event-places");
+    // 家の絵の区画を押しても、その場所に切り替わる（T-139b。絵は読み上げから外しているので、キーボードは上の札で選ぶ）
+    const known = new Set(places.map(([id]) => id));
+    document.querySelectorAll("#scene .room").forEach((r) => {
+      if (known.has(r.dataset.place)) r.addEventListener("click", () => showPlace(r.dataset.place));
+    });
+    showPlace(places[0][0]);
+  }
   $("event-start").addEventListener("click", openEvents);
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す
-fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
+earlyFetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
   $("sample-list").replaceChildren(...list.map((s) => el("button", { type: "button", class: "chip", onclick: () => openSample(s) }, s.label)));
   show("samples");
@@ -1533,17 +1608,35 @@ $("keep-reask").addEventListener("click", reaskNintei);
 // 開いているページに別の残した結果のリンクを貼ったとき（# より後ろだけが変わると、ページは読み直されない）
 window.addEventListener("hashchange", () => { if (location.hash.startsWith(KEEP_PREFIX)) restoreFrom(location.hash.slice(KEEP_PREFIX.length)); });
 // ---- 押した数の図は別の頁（T-133）。結果の頁を隠して出し、戻ると押した入口へ ----
-$("effort-open").addEventListener("click", () => {
+// 別の頁に見えるので、ブラウザの戻る（スマホの戻る・横に払う）でも結果へ戻す。開くときに同じ URL の履歴を 1 つ積み、
+// 頁の「戻る」はその 1 つを戻して積んだ分を残さない（T-157）。印は開くたびに変え、読み直した後に残った古い印では閉じ損ねない
+let effortMark = 0;
+function openEffort() {
   show("result", false);
   show("effort-page");
   $("effort-page").scrollIntoView({ block: "start" });
   focusOn($("effort-title"));
-});
-$("effort-back").addEventListener("click", () => {
+}
+function closeEffort() {
   show("effort-page", false);
   show("result");
   $("effort-open").scrollIntoView({ block: "center" });
   focusOn($("effort-open"));
+}
+$("effort-open").addEventListener("click", () => {
+  effortMark = Date.now();
+  history.pushState({ effort: effortMark }, "", location.href);
+  openEffort();
+});
+$("effort-back").addEventListener("click", () => {
+  if (effortMark && history.state && history.state.effort === effortMark) history.back();  // 閉じるのは popstate
+  else closeEffort();
+});
+window.addEventListener("popstate", (ev) => {
+  const mark = ev.state && ev.state.effort;
+  const open = !$("effort-page").hidden;
+  if (open && mark !== effortMark) closeEffort();
+  else if (!open && mark && !$("result").hidden && !$("effort-open").hidden) { effortMark = mark; openEffort(); }  // 進む
 });
 
 $("again").addEventListener("click", () => {
@@ -1599,7 +1692,7 @@ window.addEventListener("afterprint", () => {
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 // 残した結果のリンクから開いたときは聞かない（結果は合言葉なしで出る。相談を送るときに聞く）
 const keptAtLoad = location.hash.startsWith(KEEP_PREFIX);
-const healthReady = fetch("/api/health").then((r) => r.json()).then((h) => {
+const healthReady = earlyFetch("/api/health").then((r) => r.json()).then((h) => {
   needGate = Boolean(h.passphrase);
   // 最初は小さな入口だけを出す（T-126。最初の画面の文字を減らす）。押すか、合言葉なしで送ると欄を出す
   if (h.passphrase && !aikotoba && !keptAtLoad) show("gate-open");

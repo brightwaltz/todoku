@@ -945,9 +945,16 @@ def test_other_cities_hide_machida_programs():
     assert sum(yokohama["counts"].values()) == len(yokohama["results"])
     for d in (yokohama, machida, osaka, nowhere, village):
         assert "hidden_places" not in d
-    # 数は /city/ の頁の帯と同じ数え方で、結果の札の数とそろう
-    for d in (yokohama, machida, osaka, village):
-        assert d["region"]["total"] == len(d["results"]) == sum(x["n"] for x in d["region"]["parts"])
+    # 数は /city/ の頁の帯と同じ数え方：合計は制度の件数だけで、市区町村の事業の型は内訳に「種類」で出す（T-118・D-0037）
+    from todoku import app as app_mod
+    from todoku.city import city_page
+    for d, code in ((yokohama, "141003"), (machida, "132098"), (osaka, "271004"), (village, "013048")):
+        parts = d["region"]["parts"]
+        assert len(d["results"]) == sum(x["n"] for x in parts)  # 札は型も含めて全部出る
+        assert d["region"]["total"] == sum(x["n"] for x in parts if x["unit"] == "件")
+        band = city_page(app_mod.RULES, code, *app_mod.PLACES[code], "")
+        assert f'<p class="city-total"><b>{d["region"]["total"]}</b> 件' in band, code
+    assert osaka["region"]["total"] == 17
     assert osaka["region"]["parts"] == [{"label": "国の制度", "n": 17, "unit": "件"},
                                         {"label": "市区町村の事業", "n": 5, "unit": "種類"}]
     # その市・村の公式頁から型が書けたら（lane-b の T-131 など）、自分の「市の事業」「村の事業」だけは入ってよい
@@ -1090,7 +1097,7 @@ def test_place_question_comes_back_for_not_machida():
     assert data["question"] is None or data["question"]["fact"] not in places
     assert not [r for r in data["results"] if r["id"].startswith("yokohama-") or r["id"] == "tokyo-silver-pass"]
     assert "hidden_places" not in data and not any(w in str(data["region"]) for w in ("横浜", "東京", "町田"))
-    assert data["region"]["total"] == len(data["results"])
+    assert data["region"]["total"] == sum(x["n"] for x in data["region"]["parts"] if x["unit"] == "件")  # T-137：合計は制度の件数だけ
     # 「わからない」と答えれば、もう聞かない。横浜市の制度は住所が分からないまま残す（要介護2で外れるものは、住所でなく区分で外れる）
     data = client.post("/api/step", json={"facts": {**facts, "lives_in_yokohama": DONT_KNOW}, "subject": "お母さま",
                                           "asked": asked + 1}).json()
@@ -1266,9 +1273,10 @@ def test_small_text_is_at_least_14px():
     css = (root / "style.css").read_text(encoding="utf-8")
 
     def size(selector):
-        m = re.search(r"^" + re.escape(selector) + r" \{[^}]*font-size: (\d+)px", css, re.M)
+        # T-164 で rem（16px が 1rem）に書き換えた。ブラウザの文字の大きさが既定のときの px に直して比べる
+        m = re.search(r"^" + re.escape(selector) + r" \{[^}]*font-size: (\d*\.?\d+)(px|rem)", css, re.M)
         assert m, selector
-        return int(m.group(1))
+        return float(m.group(1)) * (16 if m.group(2) == "rem" else 1)
 
     for sel in (".board-card .note", ".tag", ".pill"):
         assert size(sel) >= 14, sel
@@ -1437,6 +1445,22 @@ def test_print_puts_cards_on_paper_and_leaves_controls_out():
     assert "d.open = false" in after and 'classList.remove("print-result")' in after
 
 
+def test_folded_unknown_list_is_opened_by_print():
+    # T-144：T-133 で畳んだ「確かめると使えるかもしれない」の欄（#unknown-fold）は、#result の中の details なので、
+    # 上の beforeprint が開いて紙に出る（ops の print_t144.py で、見本 2 本の PDF に欄の札の本文が入ることを確かめた）。
+    # 欄を details でなくしたり #result の外に出したりすると、印刷で閉じたままになる
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    html = (root / "index.html").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+    assert re.search(r'el\("details", \{[^}]*id: "unknown-fold"', js)
+    assert 'const groups = $("groups");' in js
+    result = re.search(r'<section id="result" hidden>(.*?)</section>\s*(?:<section id="effort-page"|</main>)', html, re.S).group(1)
+    assert '<div id="groups"></div>' in result
+
+
 def test_board_while_answering_is_one_row_of_counts_and_one_line_note():
     # T-136：問いに答えている間（.live）の帯は、4 つの数の 1 行＋注 1 行。点は出さない（DOM には残す）。
     # 390 で 209px（画面の 25%）を占め、前の問いを隠していた。高さ・行数・点の見え方はブラウザで確かめた（ops の shot_t136.py）
@@ -1459,7 +1483,12 @@ def test_board_while_answering_is_one_row_of_counts_and_one_line_note():
     for decl in ("white-space: nowrap", "overflow: hidden", "text-overflow: ellipsis"):
         assert decl in one_line, decl
     html = (root / "index.html").read_text(encoding="utf-8")
-    note = re.search(r'<p class="note"[^>]*>([^<]*)</p>\n  </section>\n\n  <section id="ask"', html).group(1)
+    note_html = re.search(r'<p class="note"[^>]*>(.*?)</p>\n  </section>\n\n  <section id="ask"', html).group(1)
+    note = re.sub(r"<[^>]+>", "", note_html)
     assert note == "答えるたびに、規則のプログラムが判定し直します（AI は使いません）。"  # 点を出さないので「点は制度 1 つずつ」は消した
+    # T-142：狭い画面では「、規則のプログラムが」だけ隠し、… で切っても「（AI は使いません）」が残るようにする
+    narrow = re.sub(r'<span class="wide-words">[^<]*</span>', "", note_html)
+    assert narrow == "答えるたびに判定し直します（AI は使いません）。"
+    assert re.search(r"@media \(max-width: 32\.5em\) \{ \.board-card\.live \.note \.wide-words \{ display: none; \} \}", css)
     js = (root / "app.js").read_text(encoding="utf-8")
     assert '$("board-change").title = $("board-change").textContent;' in js  # 切った全文は title にも
