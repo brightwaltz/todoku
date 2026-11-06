@@ -18,9 +18,11 @@ from pathlib import Path
 from typing import Annotated, Any
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.exception_handlers import http_exception_handler
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field, model_validator
 
@@ -777,6 +779,53 @@ async def invalid_body(request: Request, exc: RequestValidationError) -> JSONRes
     # FastAPI の既定の 422 は、送られた文（input）をそのまま返す。文が壊れていると、それを UTF-8 に直すところで 500 になり、
     # トレースバックに相談文の全文が出ていた（T-002）。送られた文は返さず、画面（app.js）がそのまま出せる 1 文だけにする
     return JSONResponse({"detail": "送られた内容を読めませんでした。文を書き直して、もう一度試してください"}, status_code=422)
+
+
+# 頁が見つからないとき（T-158）。ブラウザで /city/ の団体コードを打ち違えたり、貼られたリンクが途中で切れたりすると、
+# 既定では {"detail":"Not Found"} の生の文字が出ていた。ブラウザが頁として開いたとき（GET・HEAD で Accept に text/html）
+# だけ、入口へ戻れる短い頁にする。/api/（app.js が detail を読む）と /static/（絵と CSS）は今までどおり JSON のまま
+NOT_FOUND_CITY = "その団体コードは一覧にありません。最初の画面でお住まいを選ぶと、その市区町村の制度の一覧を開けます。"
+NOT_FOUND_OTHER = "アドレスが変わったか、途中で切れているかもしれません。"
+NOT_FOUND_LINK = "とどくの最初の画面へ"
+
+
+def not_found_page(city: bool) -> str:
+    return f"""<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>頁が見つかりません — とどく</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="top"><div class="wrap">
+<h1>とどく <span>尋ねなかった制度まで</span></h1>
+</div></header>
+<main class="wrap">
+<section class="card not-found">
+<h2>この頁は<wbr>見つかりませんでした</h2>
+<p>{NOT_FOUND_CITY if city else NOT_FOUND_OTHER}</p>
+<a class="primary" href="/">{NOT_FOUND_LINK}</a>
+</section>
+</main>
+</body>
+</html>
+"""
+
+
+@app.exception_handler(StarletteHTTPException)
+async def not_found_html(request: Request, exc: StarletteHTTPException) -> Response:
+    path = request.url.path
+    if (exc.status_code == 404 and request.method in ("GET", "HEAD") and not path.startswith(("/api/", "/static/"))
+            and "text/html" in request.headers.get("accept", "")):
+        return HTMLResponse(not_found_page(path.startswith("/city/")), status_code=404)
+    return await http_exception_handler(request, exc)
 
 
 # 守りを重ねるためのヘッダ（11/3 の安全点検の 5）。画面に文を差し込む道は見つかっていないが、今後できても

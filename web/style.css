@@ -61,6 +61,10 @@ button { font: inherit; cursor: pointer; }
 }
 .primary { background: var(--accent); color: var(--accent-ink); border: none; margin-top: 14px; }
 .primary:disabled { opacity: .5; }
+/* 頁が見つからないときの「最初の画面へ」は a なので、ボタンと同じ見た目に字を真ん中へ寄せ、下線を消す（T-158） */
+a.primary { display: flex; align-items: center; justify-content: center; text-align: center; text-decoration: none; }
+.not-found h2 { word-break: keep-all; overflow-wrap: break-word; }  /* 320px で「した」だけが次の行に落ちないよう、<wbr> の所でだけ折る */
+.not-found p { text-wrap: pretty; }
 .secondary { background: #fff; color: var(--accent); border: 2px solid var(--accent); margin: 20px 0; }
 .examples { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 /* 押す所は高さ 44px 以上にする（高齢の方がスマホで押し違えないよう。WCAG 2.5.5・Apple HIG の数） */
