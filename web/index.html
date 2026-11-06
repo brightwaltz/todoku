@@ -44,6 +44,9 @@
     <textarea id="text" rows="4" maxlength="2000" placeholder="例：一人で暮らす母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
     <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
     <button class="primary" id="send">相談する</button>
+    <!-- 1 日の費用の上限に届いた日（T-180b）。合言葉の欄は出さず、短い断りと見本への案内だけ。/api/health の today.closed か、
+         /api/consult の 429（x-todoku-closed: 1）で app.js の showClosed が出す。送るボタンのすぐ下なので、送った人の目の先に出る -->
+    <p class="closed" id="closed" hidden role="status"><span>今日の受付は終わりました。</span><button type="button" class="link" id="closed-go">見本で試す</button></p>
 
     <!-- 絵から選ぶ（T-124。11/5 の柴田の感想「文字だけだとイメージが湧かない」）。相談の欄の下に置く。札は /api/events から作り、
          絵は下の art-defs の symbol（id は art-<出来事の id>）。選ぶたびに家の絵に同じ絵が足される。Claude を呼ばず、合言葉も要らない（T-071） -->

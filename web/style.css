@@ -46,6 +46,10 @@ body {
 .pick-more > summary { padding: 11px 0; }
 .gate-open { display: block; margin-top: 6px; font-size: .875rem; color: var(--muted); }
 .gate-open[hidden] { display: none; }
+/* 今日の受付が終わった日の断り（T-180b）。強い色にせず、見本への案内を同じ行に置く */
+.closed { margin: 10px 0 0; padding: 4px 14px; background: var(--soft); border-radius: 10px; font-weight: 700; display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; }
+.closed[hidden] { display: none; }
+.closed .link { font-weight: 700; }
 .pictures-sub { font-weight: 400; font-size: .9375rem; color: var(--muted); display: inline-block; white-space: nowrap; }
 h2 { font-size: 1.3125rem; line-height: 1.5; margin: 0 0 12px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; }

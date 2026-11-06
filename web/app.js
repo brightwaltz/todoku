@@ -41,8 +41,16 @@ let pick = freshPick();
 let lastDraft = "";     // 最後に作った下書き。欄がこれと違えば、本人が書き換えたとみなして上書きしない
 let prefs = [];         // municipalities.json の都道府県（市区町村つき）
 let resendAfterGate = false;
-let needGate = false;   // この置き場は Claude を呼ぶ口に合言葉を求めるか（/api/health）  // 合言葉で止まった相談を、合言葉のあとで送り直す
+let needGate = false;   // この置き場は Claude を呼ぶ口に合言葉を求めるか（/api/health。open の置き場では求めない）
+let closedToday = false;  // 今日の受付（1 日の費用の上限）が終わったか（T-180b。/api/health の today.closed か、429 の x-todoku-closed）
 class GateError extends Error {}
+
+// 受付が終わった日は、合言葉の欄を出さずに、送るボタンの下に短い断りと見本への案内だけを出す（T-180b）
+function showClosed() {
+  closedToday = true;
+  show("gate", false); show("gate-open", false);
+  show("closed");
+}
 
 function fresh() {
   return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
@@ -116,6 +124,12 @@ async function api(path, body) {
     throw new Error("通信できませんでした。電波の届く所で、もう一度試してください");
   }
   if (res.status === 401) { askGate(aikotoba !== ""); throw new GateError("合言葉を入れると、続けて読み取ります"); }
+  if (res.status === 429 && res.headers.get("x-todoku-closed") === "1") {
+    let msg = "今日の受付は終わりました。見本で試せます";
+    try { msg = (await res.json()).detail || msg; } catch (e) { /* 本文なし */ }
+    showClosed();
+    throw Object.assign(new Error(msg), { closed: true });
+  }
   if (!res.ok) {
     let msg = "うまくいきませんでした";
     try { msg = (await res.json()).detail || msg; } catch (e) { /* 本文なし */ }
@@ -317,9 +331,11 @@ async function consultWith(text, call) {
       resendAfterGate = e instanceof GateError;
       $("reading").replaceChildren(el("p", { class: "error" }, e.message));
       say(e.message);
-      show("reading");  // 受け取った後に落ちたときも、知らせが見えるように
+      // 受け取った後に落ちたときも、知らせが見えるように。受付終了（e.closed、T-180b）の断りは送るボタンの下に出したので、
+      // 読み取りの札には重ねて出さず、フォーカスは見本への案内へ移す
+      if (e.closed) show("reading", false); else show("reading");
       $("send").disabled = false;
-      backTo(pressed);
+      if (e.closed) focusOn($("closed-go")); else backTo(pressed);
     }
     return;
   }
@@ -936,6 +952,9 @@ function renderResult(data) {
     // まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
     show("summary", false);
     $("stats").textContent += "。合言葉がないので、Claude が書くまとめを省いています";
+  } else if (closedToday && !aikotoba) {
+    // 今日の受付が終わった日は、まとめ（Claude を呼ぶ口）も断られるので送らない（T-180b）
+    show("summary", false);
   } else if (key !== state.summaryKey) summarize(key);
   state.summaryKey = key;
   showKeep(data);
@@ -1661,12 +1680,20 @@ $("gate-ok").addEventListener("click", () => {
   aikotoba = word;
   try { sessionStorage.setItem("aikotoba", aikotoba); } catch (e) { /* 保存できなくても続ける */ }
   show("gate", false);
+  show("closed", false);  // 管理者の合言葉は 1 日の上限に数えないので、受付終了の断りも外す（T-180b）
   // 欄ごと隠すので、押したボタン・合言葉の欄からフォーカスが body に落ちる。送り直すなら送るボタンへ
   // （consultWith がそれを押したボタンとして覚え、失敗したらそこへ戻す）、書く前なら相談の欄へ移す（T-063）
   if (resendAfterGate) { resendAfterGate = false; $("send").focus(); send(); }
   else $("text").focus();
 });
 // Enter の既定の動きを止める。止めないと、keydown の中で相談の欄へ移したフォーカスの先に改行が入る（T-063）
+// 見本への案内（T-180b）。見本の並びへ移り、最初の見本にフォーカスを置く
+$("closed-go").addEventListener("click", () => {
+  const first = $("sample-list").querySelector("button");
+  if ($("samples").hidden || !first) return;
+  $("samples").scrollIntoView({ behavior: "smooth", block: "center" });
+  focusOn(first);
+});
 $("gate-open").addEventListener("click", () => {
   show("gate-open", false);
   show("gate");
@@ -1692,10 +1719,27 @@ window.addEventListener("afterprint", () => {
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 // 残した結果のリンクから開いたときは聞かない（結果は合言葉なしで出る。相談を送るときに聞く）
 const keptAtLoad = location.hash.startsWith(KEEP_PREFIX);
+// 合言葉なしで相談を送れる置き場（/api/health の open、T-180b）では、合言葉の欄も小さな入口も出さない。
+// 合言葉は管理者が 1 日の上限に数えずに送るためだけに残り、URL の #admin で欄を開く
+const ADMIN_HASH = "#admin";
+let openSite = false;
+function openAdminGate() {
+  $("gate-msg").textContent = "";
+  show("gate-open", false);
+  show("gate");
+  $("aikotoba").focus();
+}
 const healthReady = earlyFetch("/api/health").then((r) => r.json()).then((h) => {
-  needGate = Boolean(h.passphrase);
+  openSite = Boolean(h.open);
+  needGate = Boolean(h.passphrase) && !openSite;
+  if (openSite) {
+    $("samples").querySelector(".note").textContent = "見本で試す";  // 「合言葉なしで動きます」は、ほかも合言葉が要らないので言わない
+    if (h.passphrase && location.hash === ADMIN_HASH) openAdminGate();
   // 最初は小さな入口だけを出す（T-126。最初の画面の文字を減らす）。押すか、合言葉なしで送ると欄を出す
-  if (h.passphrase && !aikotoba && !keptAtLoad) show("gate-open");
+  } else if (h.passphrase && !aikotoba && !keptAtLoad) show("gate-open");
+  // 今日の受付が終わっていれば、最初から断りと見本への案内の形にする（合言葉を入れた管理者には出さない）
+  if (h.today && h.today.closed && !aikotoba) showClosed();
 }).catch(() => { /* 分からなければ、送ったときに聞く */ });
+window.addEventListener("hashchange", () => { if (openSite && location.hash === ADMIN_HASH) openAdminGate(); });
 // 合言葉が要る置き場かを知ってから開く（知る前に結果を出すと、まとめを送って合言葉の欄へ飛ばされる）
 if (keptAtLoad) healthReady.then(() => restoreFrom(location.hash.slice(KEEP_PREFIX.length)));
