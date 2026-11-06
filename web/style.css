@@ -50,6 +50,9 @@ body {
 .closed { margin: 10px 0 0; padding: 4px 14px; background: var(--soft); border-radius: 10px; font-weight: 700; display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; }
 .closed[hidden] { display: none; }
 .closed .link { font-weight: 700; }
+/* T-185：文字を特大（24）にした 320・360・390 で「今日の受付は終わ / りました。」「…終わりまし / た。」と語の途中で折れていた。
+   問いの見出し（#ask-text）と同じく、Chrome は文節で折って行をそろえ、1 文節が 1 行に入らないときだけ文節の中で折る。ふつうの文字では 1 行のまま。Safari は今のまま */
+@supports (word-break: auto-phrase) { .closed span { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; } }
 .pictures-sub { font-weight: 400; font-size: .9375rem; color: var(--muted); display: inline-block; white-space: nowrap; }
 h2 { font-size: 1.3125rem; line-height: 1.5; margin: 0 0 12px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; }
