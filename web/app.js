@@ -1380,9 +1380,16 @@ function programCard(r) {
 }
 
 // 申請メモ（T-074）：窓口へ持っていく記入の下書き。中身は規則と相談の答えから（サーバの memo.py。Claude は使わない）
+// 申請メモの題「申請メモ：制度の名前」を、頭書きと名前に分ける。名前は 1 かたまり（.memo-name）にして、
+// 行に入らなければ名前ごと次の行へ送る（390px で「…認定 / 書」のように 1〜2 字だけ落ちていた。T-169）
+function memoTitleParts(title) {
+  const head = "申請メモ：";
+  return title.startsWith(head) ? [head, el("span", { class: "memo-name" }, title.slice(head.length))] : [title];
+}
+
 function memoView(m) {
   const sheet = el("div", { class: "memo-sheet" },
-    el("h3", { class: "memo-title" }, m.title),  // 札の中の見出しは h3。メモの中の項目（h4）はこの下に入る（T-150）
+    el("h3", { class: "memo-title" }, ...memoTitleParts(m.title)),  // 札の中の見出しは h3。メモの中の項目（h4）はこの下に入る（T-150）
     el("p", { class: "note" }, m.note),
     el("h4", {}, "申請先"), el("p", {}, m.where),
     m.phone ? el("p", {}, `電話：${m.phone}`) : null,

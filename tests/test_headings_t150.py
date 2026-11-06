@@ -21,7 +21,8 @@ def memo_view():
 
 def test_memo_title_is_a_heading_above_its_items():
     body = memo_view()
-    assert 'el("h3", { class: "memo-title" }, m.title)' in body
+    # T-169：題は頭書きと名前に分けて渡す（中身は m.title のまま）
+    assert 'el("h3", { class: "memo-title" }, ...memoTitleParts(m.title))' in body
     assert body.index('class: "memo-title"') < body.index('el("h4"')
     # メモの中の項目は h4 のまま（題の h3 の下）
     assert body.count('el("h4"') == 4
