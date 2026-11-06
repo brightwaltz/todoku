@@ -361,6 +361,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .japan-map a:hover rect { stroke: var(--muted); }
 .japan-map a:focus { outline: none; }
 .japan-map a:focus-visible rect, .japan-map a[aria-current] rect { stroke: var(--ink); }
+.japan-map a:focus-visible rect { stroke-width: 6; }  /* T-151：今いる県（aria-current）の枠と同じだと、そこにフォーカスしても見た目が変わらない。フォーカスは太くして分ける */
 .map-legend { list-style: none; padding: 0; margin: 12px 0 4px; font-size: 16px; }
 .map-legend li { display: flex; gap: 8px; align-items: baseline; margin: 4px 0; }
 .map-swatch { flex: none; display: inline-block; width: 16px; height: 16px; border-radius: 4px; border: 1px solid var(--line); transform: translateY(2px); }
