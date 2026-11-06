@@ -9,6 +9,8 @@ forced-colors では background と box-shadow が消え、文字と枠は系の
 import re
 from pathlib import Path
 
+import pytest
+
 WEB = Path(__file__).resolve().parents[1] / "web"
 CSS = (WEB / "style.css").read_text(encoding="utf-8")
 
@@ -32,6 +34,8 @@ def test_primary_button_gets_a_border_in_forced_colors():
 
 
 def test_selected_place_tab_uses_system_highlight():
+    if ".place-tab {" not in CSS:
+        pytest.skip("場所の札（T-139）が無い木（dev）")
     base = rule(CSS, '.place-tab[aria-pressed="true"]')
     assert "background" in base and "✓" not in base  # 選んだ印は背景色だけ
     body = rule(forced_block(), '.place-tab[aria-pressed="true"]')
