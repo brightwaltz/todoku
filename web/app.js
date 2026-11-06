@@ -343,9 +343,17 @@ async function consultWith(text, call) {
 }
 
 function renderExtracted(data, text) {
+  const head = $("extracted").querySelector("h2");
+  const marked = markEvidence(text, data.extracted);
+  // 見本は、見本の相談の文そのものを大きな見出しにし、右の「あなた」の吹き出しは出さない（T-180c。11/7 の試用で、自分の文を
+  // 書いた後に町田市の見本を押した人が「設定が町田市にされた」としか見えなかった。見本はその人の言葉ではない）。説明の文は足さず、
+  // 見本の並びの見出し（見本で試す）と同じ「見本」の一語だけを添える。根拠の印は見出しの文に付ける
+  head.classList.toggle("sample-head", Boolean(data.sample));
+  if (data.sample) head.replaceChildren(el("span", { class: "kicker" }, "見本"), ...marked);
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
-  $("extracted").querySelector("h2").replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
-  $("said").replaceChildren(...markEvidence(text, data.extracted));
+  else head.replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
+  $("said").replaceChildren(...(data.sample ? [] : marked));
+  show("said", !data.sample);
   const list = $("extracted-list");
   list.replaceChildren();
   for (const [i, f] of data.extracted.entries()) {

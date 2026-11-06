@@ -159,12 +159,12 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .facts .tentative { color: var(--pre); font-size: .875rem; font-weight: 700; margin-left: .4em; }
 /* 相談の文章の印と事実の行は、--i 番目ごとに 150ms ずつ遅れて現れる */
 .said { white-space: pre-wrap; margin: 0 0 12px; padding: 10px 12px; background: var(--card); border-radius: 10px; font-size: 1rem; }
-.said mark {
+.said mark, .sample-head mark {
   color: inherit; background: linear-gradient(var(--pre-bg), var(--pre-bg)) no-repeat; background-size: 100% 100%;
   border-bottom: 2px solid var(--pre); -webkit-box-decoration-break: clone; box-decoration-break: clone;
   animation: mark-in .45s ease-out both; animation-delay: calc(var(--i) * 150ms);
 }
-.said mark.low { background: none; border-bottom: 2px dotted var(--pre); animation-name: fade-in; }
+.said mark.low, .sample-head mark.low { background: none; border-bottom: 2px dotted var(--pre); animation-name: fade-in; }
 .facts li { animation: fade-in .45s ease-out both; animation-delay: calc(var(--i, 0) * 150ms); }
 @keyframes mark-in { from { background-size: 0 100%; border-bottom-color: transparent; } }
 @keyframes fade-in { from { opacity: 0; transform: translateY(4px); } }
@@ -222,7 +222,7 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .one-only .link { margin-right: 8px; }
 .one-only .link[aria-pressed="true"] { color: var(--ink); text-decoration: none; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
-  .said mark, .facts li, .col-head .count.bump, .tile.pulse::after { animation: none; }
+  .said mark, .sample-head mark, .facts li, .col-head .count.bump, .tile.pulse::after { animation: none; }
 }
 .ask { border: 3px solid var(--accent); }
 .ask-count { color: var(--accent); font-weight: 700; margin: 0 0 4px; font-size: .9375rem; }
@@ -533,6 +533,14 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
    （「介 / 助」）で釣り合わせるので、最後の行だけを整える pretty にする。ops の wrap_t179.py で、Chrome・WebKit とも 0 にした */
 #ask-text { text-wrap: pretty; }
 @supports (word-break: auto-phrase) { #ask-text { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; } }
+/* T-180c：見本を開いたときは、見本の相談の文そのものを「読み取ったこと」の欄の見出しにする（右の吹き出しは出さない）。
+   問いの見出しと同じく、Chrome は文節で折って行をそろえ、auto-phrase の無い Safari は pretty だけにする。上の小さな札は「見本」の一語 */
+.sample-head { font-size: 1.375rem; line-height: 1.6; white-space: pre-wrap; text-wrap: pretty; }
+@supports (word-break: auto-phrase) { .sample-head { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; } }
+.sample-head .kicker {
+  display: block; width: fit-content; margin: 0 0 6px; padding: 1px 10px; border: 1px solid var(--accent); border-radius: 999px;
+  color: var(--accent); background: #fff; font-size: .8125rem; line-height: 1.6; white-space: nowrap;
+}
 /* T-171：JavaScript を切ったブラウザでは、相談の欄と「相談する」は押しても何も起きないので隠し、noscript の知らせだけを見せる */
 .noscript { margin: 12px 0 0; padding: 12px 14px; border: 2px solid var(--accent); border-radius: 10px; }
 .noscript span { display: inline-block; }  /* 文節のかたまりごとに折る。「くださ / い。」「してか / ら」にしない */
