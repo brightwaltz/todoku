@@ -513,3 +513,12 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
    「いま先にすること」の制度の名前は、/city/ の事業の名前（T-148）と同じく Chrome の文節で折る（「介護保険の住宅改修費の支 / 給」）。ops の shot_t148.py で測った */
 .nowrap, .group-title .n, .fold > summary h2 .n { white-space: nowrap; }
 .todo-list a { word-break: auto-phrase; text-wrap: balance; }
+/* T-160：Windows のハイコントラスト（forced-colors: active）では背景色と影が消え、文字と枠は系の色になる。
+   (1)「相談する」は枠が無く、ただの字に見えた → 枠を付ける (2) 選んだ場所の札は太字だけになった → 系の「選んだ」色で塗る
+   (3) 押した数の図の帯・図の凡例の色の印が消えた（地図の札の SVG は色が残る）→ 色で数を表す所だけ色を残す。ふつうの画面は変わらない。ops の fc_t160.py で測った */
+@media (forced-colors: active) {
+  .primary { border: 2px solid ButtonText; }
+  .primary:disabled { border-color: GrayText; }
+  .place-tab[aria-pressed="true"] { forced-color-adjust: none; background: Highlight; border-color: Highlight; color: HighlightText; }
+  .seg, .effort-swatch, .pmap-swatch, .map-swatch { forced-color-adjust: none; }
+}
