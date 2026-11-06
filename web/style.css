@@ -496,3 +496,9 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
    ops の shot_t148.py で、390 の折れ残り 6 種類（入口の札「寝たきりに / 近い」は文節どおりなので数えない）を 0 にした */
 #pmap-fold > summary h2, details.memo > summary, .option { word-break: keep-all; overflow-wrap: anywhere; text-wrap: balance; }
 #ask-options.two .option { padding-inline: 14px; }
+
+/* T-149：320・360 で、数と単位（「確かめると使えるかもしれない25 / 件」「（15 / 件）」）・見出しの最後の語（「申請のときに確かめられるこ / と」）・
+   括弧書き（「（2〜3 / 月）」）が 1〜2 字だけ次の行に落ちる折れ残りを減らす。末尾は app.js の keepTail で .nowrap の 1 かたまりにする。
+   「いま先にすること」の制度の名前は、/city/ の事業の名前（T-148）と同じく Chrome の文節で折る（「介護保険の住宅改修費の支 / 給」）。ops の shot_t148.py で測った */
+.nowrap, .group-title .n, .fold > summary h2 .n { white-space: nowrap; }
+.todo-list a { word-break: auto-phrase; text-wrap: balance; }

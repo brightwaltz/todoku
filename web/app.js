@@ -71,6 +71,9 @@ function el(tag, attrs = {}, ...children) {
   return node;
 }
 
+// T-149：狭い幅で、数と単位（「25 / 件」）や最後の語（「確かめられるこ / と」）だけが次の行に落ちないよう、末尾をひとかたまりにする
+const keepTail = (head, tail) => [head, el("span", { class: "nowrap" }, tail)];
+
 function show(id, on = true) { $(id).hidden = !on; }
 // 読み上げに知らせる（#status はいつもある領域。空にしておくと、次に同じ文を入れても読まれる）
 function say(text) { $("status").textContent = text; }
@@ -307,7 +310,7 @@ async function consultWith(text, call) {
 
 function renderExtracted(data, text) {
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
-  $("extracted").querySelector("h2").textContent = data.event ? "選んだ出来事から分かったこと" : "相談の文章から読み取ったこと";
+  $("extracted").querySelector("h2").replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
   $("said").replaceChildren(...markEvidence(text, data.extracted));
   const list = $("extracted-list");
   list.replaceChildren();
@@ -733,7 +736,7 @@ function renderLater(unconfirmed, unread = []) {
     const more = el("button", { class: "link", onclick: () => {
       rest.hidden = false; more.remove(); state.laterOpen = true; focusOn(rest.querySelector("h3"));
     } },
-      first ? `ほか ${unread.length - first} 件を見る` : `読み取れなかったことにも答える（${unread.length} 件）`);
+      first ? `ほか ${unread.length - first} 件を見る` : keepTail("読み取れなかったことにも答える", `（${unread.length} 件）`));
     nodes.push(more, rest);
   }
   $("later-list").replaceChildren(...nodes);
@@ -811,6 +814,7 @@ function renderTodo(data) {
 const AHEAD_NOW = "いま";
 const AHEAD_AFTER = "{name}の結果が出たら";
 const AHEAD_TAX = "次の確定申告の時期（2〜3月）";
+const aheadWhen = (w) => { const m = w.match(/^(.+?)(（[^（）]{1,8}）)$/); return m ? keepTail(m[1], m[2]) : w; };  // T-149：短い括弧書きを離さない
 function aheadSteps(data) {
   const shown = data.results.filter((r) => r.status === "eligible" || r.status === "after_prereq");
   const byId = new Map(data.results.map((r) => [r.id, r]));
@@ -839,7 +843,7 @@ function aheadSteps(data) {
 function renderAhead(data) {
   const steps = aheadSteps(data);
   $("ahead-list").replaceChildren(...steps.map((s) => el("li", { class: s.when === AHEAD_NOW ? "now" : "" },
-    el("h3", {}, s.when),
+    el("h3", {}, aheadWhen(s.when)),
     s.note ? el("p", { class: "ahead-note" }, `目安：${s.note}`) : null,
     el("ul", { class: "plain" }, s.items.map((t) => el("li", {},
       el("a", { href: `#p-${t.r.id}`, onclick: (ev) => openCard(ev, t.r.id) }, t.r.name),
@@ -885,7 +889,7 @@ function renderResult(data) {
     }
   }
   const no = data.results.filter((r) => r.status === "ineligible" || r.status === "done");
-  $("ineligible-title").textContent = `当てはまらない・済んでいる制度（${no.length} 件）`;
+  $("ineligible-title").replaceChildren(...keepTail("当てはまらない・済んでいる制度", `（${no.length} 件）`));
   $("ineligible-list").replaceChildren(...no.map((r) => el("li", {},
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
@@ -1338,7 +1342,7 @@ function programCard(r) {
   if (r.missing.length) {
     body.append(el("h3", {}, "確かめ方"), el("ul", { class: "plain" }, r.missing.map((m) => el("li", {}, m.check))));
   }
-  if (r.at_application.length) body.append(el("h3", {}, "申請のときに確かめられること"), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
+  if (r.at_application.length) body.append(el("h3", {}, keepTail("申請のときに", "確かめられること")), el("ul", { class: "plain" }, r.at_application.map((t) => el("li", {}, t))));
   if (r.local) {
     body.append(el("h3", {}, `${r.local.city}の主な条件（公式頁の言い換え）`),
       el("ul", { class: "plain" }, r.local.conditions.map((t) => el("li", {}, t))),
@@ -1365,7 +1369,7 @@ function memoView(m) {
     el("h4", {}, "申請先"), el("p", {}, m.where),
     m.phone ? el("p", {}, `電話：${m.phone}`) : null,
     m.bring.length ? [el("h4", {}, "持ち物（済んだら印を）"), el("ul", { class: "check" }, m.bring.map((t) => el("li", {}, t)))] : null,
-    m.fill.length ? [el("h4", {}, "相談の答えから書けること"),
+    m.fill.length ? [el("h4", {}, keepTail("相談の答えから", "書けること")),
       el("dl", { class: "fill" }, m.fill.flatMap((f) => [el("dt", {}, f.name), el("dd", {}, f.value)]))] : null,
     el("h4", {}, "窓口で最初に言う一言"), el("p", { class: "say" }, m.say));
   return el("details", { class: "memo" }, el("summary", {}, "申請メモを開く（窓口に持っていく下書き）"), sheet,
