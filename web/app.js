@@ -962,7 +962,9 @@ function renderRegion(rg) {
   const what = [...kinds].map(([tail, heads]) => heads.join("・") + tail).join("・");
   line.replaceChildren(`${REGION_HEAD} `, el("b", {}, `${rg.total}`), ` 件（${parts}）。`,
     what ? REGION_DETAILED.replace("{what}", what) : "",
-    el("a", { href: `/city/${rg.code}` }, REGION_LINK));
+    // 入口の一覧のリンク（city-link）と同じく新しいタブで開く。同じタブで移ると、戻る・進むのキャッシュが効かない端末では
+    // 戻ったときに残した結果から作り直しになり、まとめの文・押した数の図の入口・開いた札・画面の位置が変わる（T-174）
+    el("a", { href: `/city/${rg.code}`, target: "_blank", rel: "noopener" }, REGION_LINK));
   show("region-line", true);
 }
 
