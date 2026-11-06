@@ -33,6 +33,10 @@
 
   <section id="input" class="card">
     <h2>困っていることを教えてください</h2>
+    <!-- JavaScript を切ったブラウザでは、相談の欄も絵も見本も動かない。押しても黙って何も起きないのを避け、理由を伝える（T-171）。
+         動かない欄と「相談する」は style.css の @media (scripting: none) で隠す。JS が動くときは noscript の中は出ない。
+         文は文節のかたまり（span）に分け、語の途中で折らない（T-169 の申請メモの題と同じ考え） -->
+    <noscript><p class="noscript"><span>この窓口は JavaScript で動きます。</span><span>ブラウザの設定で JavaScript を</span><span>有効にしてから、</span><span>もう一度開いてください。</span></p></noscript>
     <!-- 最初の画面に見せるのは、見出し・相談の欄・絵から選ぶ・見本・合言葉の小さな入口だけ（T-126。11/5 の柴田の気づき
          「最初の画面が文字ばかりだと、読まずに閉じる」）。説明は下の「このサイトについて」（開くと出る）に置く -->
     <label for="text" class="sr-only">相談の文（直したり、書き足したりできます）</label>
