@@ -922,7 +922,7 @@ function renderResult(data) {
     // まとめ（Claude を呼ぶ口）を送ると、結果の画面で合言葉の欄へ飛ばされるので送らない
     show("summary", false);
     $("stats").textContent += "。合言葉がないので、Claude が書くまとめを省いています";
-  } else if (key !== state.summaryKey) summarize();
+  } else if (key !== state.summaryKey) summarize(key);
   state.summaryKey = key;
   showKeep(data);
 }
@@ -1439,10 +1439,13 @@ function openCard(ev, id) {
   card.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-async function summarize() {
+async function summarize(key) {
+  const mine = state;
   show("summary", false);
   try {
     const data = await api("/api/summary", { facts: state.facts, subject: state.subject, municipality: state.municipality });
+    // Claude のまとめは数秒かかる。待つ間に別の相談を始めたか答えが変わったら、前のまとめを出さない（T-163）
+    if (mine !== state || key !== state.summaryKey) return;
     if (!data.lines.length) return;
     $("summary-lines").replaceChildren(...data.lines.map((l) => el("li", {}, l.text)));
     $("summary-note").textContent = data.engine === "fake"
@@ -1453,12 +1456,13 @@ async function summarize() {
 }
 
 async function sampleSummary(key) {
+  const mine = state;
   show("summary", false);
   let data = { lines: [], made: null };
   try {
     data = await api("/api/sample/summary", { id: state.sampleId, facts: state.facts, municipality: state.municipality });
   } catch (e) { /* まとめが出なくても結果は読める */ }
-  if (key !== state.summaryKey) return;  // 待つ間に答えが変わった
+  if (mine !== state || key !== state.summaryKey) return;  // 待つ間に別の相談を始めたか、答えが変わった
   state.sampleSummary = data;
   showSampleSummary();
 }
