@@ -213,7 +213,8 @@ def _contacts_html(g: Group, pref: str) -> str:
     e = escape
     items = "".join(
         f'<li><a href="{e(c.url, quote=True)}" target="_blank" rel="noopener">{e(c.name(pref))}</a>'
-        + (f' 電話 <a href="tel:{e(c.tel, quote=True)}">{e(c.tel)}</a>' if c.tel else "")
+        # 電話は結果の画面の番号と同じ .tel（太字・番号の途中で折らない・上下 14px まで押せる。T-029）にする（T-176）
+        + (f' 電話 <a class="tel" href="tel:{e(c.tel, quote=True)}">{e(c.tel)}</a>' if c.tel else "")
         + f'<br><span class="note">{e(c.note)}（{c.checked.isoformat()} に確かめた）</span></li>'
         for c in g.contacts)
     return f'<div class="city-contacts"><h3>{e(CONTACTS_TITLE.format(pref=pref))}</h3><ul>{items}</ul></div>'
