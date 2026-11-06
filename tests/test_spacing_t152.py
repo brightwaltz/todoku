@@ -14,7 +14,7 @@ def test_memo_table_columns_unchanged_on_wide_screens():
 
 
 def test_memo_table_value_column_can_shrink_on_narrow_screens():
-    m = re.search(r"@media \(max-width: 370px\) \{\s*\.memo-sheet dl\.fill \{([^}]*)\}\s*\.memo-sheet dl\.fill dd \{([^}]*)\}\s*\}", CSS)
+    m = re.search(r"@media \(max-width: 23\.125em\) \{\s*\.memo-sheet dl\.fill \{([^}]*)\}\s*\.memo-sheet dl\.fill dd \{([^}]*)\}\s*\}", CSS)
     assert m, "370px 以下の申請メモの表の規則"
     assert "grid-template-columns: fit-content(50%) minmax(0, 1fr)" in m.group(1)
     assert "overflow-wrap: anywhere" in m.group(2)

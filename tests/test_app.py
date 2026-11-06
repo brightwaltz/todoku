@@ -1489,6 +1489,6 @@ def test_board_while_answering_is_one_row_of_counts_and_one_line_note():
     # T-142：狭い画面では「、規則のプログラムが」だけ隠し、… で切っても「（AI は使いません）」が残るようにする
     narrow = re.sub(r'<span class="wide-words">[^<]*</span>', "", note_html)
     assert narrow == "答えるたびに判定し直します（AI は使いません）。"
-    assert re.search(r"@media \(max-width: 520px\) \{ \.board-card\.live \.note \.wide-words \{ display: none; \} \}", css)
+    assert re.search(r"@media \(max-width: 32\.5em\) \{ \.board-card\.live \.note \.wide-words \{ display: none; \} \}", css)
     js = (root / "app.js").read_text(encoding="utf-8")
     assert '$("board-change").title = $("board-change").textContent;' in js  # 切った全文は title にも
