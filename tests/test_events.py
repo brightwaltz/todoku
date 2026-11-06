@@ -129,6 +129,9 @@ def test_every_event_has_a_picture_and_a_place_in_the_scene():
     assert '<figure class="scene" aria-hidden="true">' in html and 'aria-live="polite"' in html
     assert 'el("button", { type: "button", class: "ev-card", "aria-pressed": "false"' in js
     assert "prefers-reduced-motion: reduce) { .scene-item { transition: none" in css
+    # 家の絵は札の下に全幅で置く（T-141）。広い画面でも 2 列にしない（2 列だと 1280 でも家の絵が 302px にとどまった）
+    rows = re.findall(r"\.pictures-row\s*\{([^}]*)\}", css)
+    assert rows and all("grid-template-columns: 1fr;" in r for r in rows), rows
     # 相談の欄が最初で、絵はその下（11/5 21 時半の柴田の気づき）
     assert html.index('id="text"') < html.index('id="send"') < html.index('id="events"') < html.index('id="samples"')
 

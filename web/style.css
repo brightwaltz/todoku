@@ -90,8 +90,8 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 /* 絵から選ぶ（T-124）。線は 1 色（--accent）、塗りは白と薄い緑の 2 つだけ。絵の札にも家の絵にも同じ symbol を使う */
 .pictures { margin-top: 22px; padding-top: 14px; border-top: 1px dashed var(--line); }
 .pictures-title { font-size: 18px; margin: 0 0 4px; }
+/* 札の下に家の絵を全幅で置く（T-141）。前は 760px 以上で 2 列にしていたが、家の絵が 390 と同じ 302px にとどまり、札は縦に伸びていた */
 .pictures-row { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 10px; }
-@media (min-width: 760px) { .pictures-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: stretch; } }
 .event-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 .ev-card {
   position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; min-height: 104px; padding: 8px 4px;
