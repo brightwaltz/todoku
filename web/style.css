@@ -544,6 +544,10 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
    問いの見出しと同じく、Chrome は文節で折って行をそろえ、auto-phrase の無い Safari は pretty だけにする。上の小さな札は「見本」の一語 */
 .sample-head { font-size: 1.375rem; line-height: 1.6; white-space: pre-wrap; text-wrap: pretty; }
 @supports (word-break: auto-phrase) { .sample-head { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; } }
+/* T-186：Safari（WebKit）は、行をまたぐ印に box-decoration-break: clone があると text-wrap: pretty を効かせず、
+   「…住民税非課税で / す。」のように最後の行が 1〜2 字になる。auto-phrase の無いブラウザでだけ印を slice にして pretty を効かせる。
+   印の色と下線の見た目は同じ（左右の枠と余白が無いので）。Chrome は今のまま */
+@supports not (word-break: auto-phrase) { .sample-head mark { -webkit-box-decoration-break: slice; box-decoration-break: slice; } }
 .sample-head .kicker {
   display: block; width: fit-content; margin: 0 0 6px; padding: 1px 10px; border: 1px solid var(--accent); border-radius: 999px;
   color: var(--accent); background: #fff; font-size: .8125rem; line-height: 1.6; white-space: nowrap;
