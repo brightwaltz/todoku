@@ -138,6 +138,9 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .scene-item { pointer-events: none; opacity: 0; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease; }
 .scene-item.on { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .scene-item { transition: none; transform: none; } }
+/* 紹介の動画（T-140）。札の内側の幅いっぱい、広い画面では 480px まで。width・height の属性と aspect-ratio で、静止画が届く前から場所を取る */
+.intro { margin: 18px 0 0; }
+.intro video { display: block; width: 100%; max-width: 480px; height: auto; aspect-ratio: 1 / 1; border-radius: 10px; background: var(--soft); }
 #samples { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--line); }
 #samples .note { margin-top: 8px; }
 #samples .examples { margin-top: 6px; }
@@ -325,6 +328,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .tel::after { content: none; }
   .foot { padding-bottom: 0; }
   .foot a { min-height: 0; }
+  .intro { display: none; }
 }
 /* /city/<団体コード> の頁（T-080b） */
 .city-n { font-size: .9375rem; font-weight: 400; color: var(--muted); margin-left: .6em; }

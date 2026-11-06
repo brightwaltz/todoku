@@ -143,6 +143,15 @@
       <symbol id="art-lost" viewBox="0 0 100 100"><line x1="40" y1="20" x2="40" y2="92"/><path fill="#cfe6df" d="M40 22 L74 22 L84 30 L74 38 L40 38 Z"/><path fill="#fff" d="M40 46 L16 46 L6 54 L16 62 L40 62 Z"/><path fill="none" d="M62 66 q0 -9 9 -9 q9 0 9 9 q0 7 -9 9 v6"/><circle fill="#cfe6df" cx="71" cy="90" r="2"/></symbol>
       <symbol id="art-outing" viewBox="0 0 100 100"><circle fill="#fff" cx="42" cy="18" r="10"/><path fill="#cfe6df" d="M28 86 L30 40 Q42 30 54 40 L56 86 Z"/><line x1="54" y1="46" x2="68" y2="58"/><line x1="70" y1="56" x2="76" y2="94"/><path fill="none" d="M64 58 q4 -6 8 -2"/></symbol>
     </svg>
+    <!-- 紹介の動画（T-140。bwc-intro の仕様どおり）。押すまで動かさず、押すまで動画を取りに行かない（preload="none"）。音の道は無い。
+         字幕は画に焼き込み、読み上げには同じ中身を #intro-desc で渡す。素材を差し替えるときは同じ名前で web/ に置く -->
+    <figure class="intro" id="intro">
+      <video id="intro-video" controls playsinline preload="none" disablepictureinpicture controlslist="nodownload noremoteplayback noplaybackrate"
+        width="720" height="720" poster="/static/intro-poster.jpg" aria-label="とどくの紹介の動画（21秒・音声なし）" aria-describedby="intro-desc">
+        <source src="/static/intro.mp4" type="video/mp4">
+      </video>
+      <p id="intro-desc" class="sr-only">音声のない動画です。相談の欄に困りごとを一度書く。絵からも選べる。答えると、制度の地図に尋ねていなかった制度が見えてくる。札を開くと、判定の理由と出典。申請先と持ち物を1枚の申請メモに。</p>
+    </figure>
     <div id="samples" hidden>
       <p class="note">見本で試す（合言葉なしで動きます）</p>
       <div class="examples" id="sample-list"></div>
