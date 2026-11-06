@@ -1,0 +1,83 @@
+city: "272272"
+name: 東大阪市
+site: city.higashiosaka.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品支給事業（紙おむつ）
+    where: 住所を受け持つ福祉事務所（東・中・西）の高齢・障害福祉係。問い合わせは高齢介護課
+    conditions:
+      - 65歳以上で家で暮らす要介護3〜5の人（要介護3は排せつに介助などが要る人）
+      - 住民税非課税の世帯で、生活保護を受けていない
+      - 保険料の長い滞納がなく、障害の制度の紙おむつを受けていない
+      - 紙おむつを月4,000円分まで現物で届ける（自己負担なし）
+      - 毎月5日までに申請すると、その月から
+    sources:
+      - url: https://www.city.higashiosaka.lg.jp/0000005397.html
+        publisher: 東大阪市
+        title: 介護用品支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haikai
+    status: found
+    name: SOSオレンジネットワーク（見守りシール）
+    where: 事務局は東大阪市社会福祉協議会（角田総合老人センター）。市の担当は地域包括ケア推進課
+    conditions:
+      - 行方不明になるおそれのある認知症の高齢者を登録する
+      - 登録した人に、読み取ると事務局の連絡先が出る見守りシールを配る
+      - 対象の条件・費用は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.higashiosaka.lg.jp/0000013790.html
+        publisher: 東大阪市
+        title: SOSオレンジネットワーク
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-haishoku
+    status: found
+    name: 高齢者配食サービス見守り支援事業
+    where: ケアマネジャーなどに相談して、市が登録した協力事業者に直接申し込む
+    conditions:
+      - 見守りのできる民間の配食事業者を市が登録して紹介する
+      - 市の補助はなく、料金は全額自分で払う（事業者ごとに違う）
+      - 頁の更新が2022年なので、今の協力事業者は高齢介護課に確かめる
+    sources:
+      - url: https://www.city.higashiosaka.lg.jp/0000021792.html
+        publisher: 東大阪市
+        title: 高齢者配食サービス見守り支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 福祉部 地域福祉課
+    conditions:
+      - 申立ての費用や後見人などの報酬を、収入や資産から払えない人
+      - 費用・報酬の全部か一部を給付する
+      - 令和5年10月から、本人や親族が申し立てた人も対象
+      - 上限の額や基準は頁に無いので、問い合わせて確かめる
+    sources:
+      - url: https://www.city.higashiosaka.lg.jp/0000037073.html
+        publisher: 東大阪市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給事業
+    where: 住所を受け持つ福祉事務所（東・中・西）の高齢・障害福祉係
+    conditions:
+      - 直近1年ずっと要介護4か5で、介護保険サービスを使っていない（年7日以内のショートステイは可）
+      - 家で暮らし、市内に1年以上住み、1年の入院が91日未満
+      - 本人と介護する家族の世帯が、どちらも住民税非課税
+      - 年額10万円。頁の更新が2022年なので、今も続いているか窓口で確かめる
+    sources:
+      - url: https://www.city.higashiosaka.lg.jp/0000004757.html
+        publisher: 東大阪市
+        title: 家族介護慰労金支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

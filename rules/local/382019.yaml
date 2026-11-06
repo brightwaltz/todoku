@@ -1,0 +1,37 @@
+city: "382019"
+name: 松山市
+site: city.matsuyama.ehime.jp
+programs:
+  - template: local-haikai
+    status: found
+    name: 徘徊高齢者家族支援サービス事業（小型の電波発信機の貸与）
+    where: 長寿福祉課 基幹型地域包括支援センター
+    conditions:
+      - 市内に住み、おおむね65歳以上の認知症の高齢者を自宅で介護している家族
+      - 行方が分からないとき、家族の依頼で受信センターが位置を調べて知らせる（捜しには行かない）
+      - 月の利用料は生活保護の世帯は0円、世帯に市民税所得割の課税者がいなければ500円、いれば1,000円
+      - 申請の書類と手順は頁から読み取れないので、窓口で確かめる
+    sources:
+      - url: https://www.city.matsuyama.ehime.jp/kurashi/kaigohoken/koureisyashien/ninchisho/haikai.html
+        publisher: 松山市
+        title: 徘徊高齢者家族支援サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（後見人等の報酬の助成）
+    where: 長寿福祉課 基幹型地域包括支援センター（知的・精神の障がいのある人は障がい福祉課）
+    conditions:
+      - 市長の申立てか本人などの申立てで後見人等が決まり、資力が乏しく報酬を払うのが難しい人
+      - 後見人等が本人の配偶者・直系の血族・兄弟姉妹のときは対象外
+      - 家庭裁判所が決めた報酬のうち月3万円まで（12か月で36万円まで）
+      - 報酬付与の審判の日の翌日から60日以内に、窓口か郵送で申請する
+      - 申立ての費用の助成は頁に書かれていないので、窓口で確かめる
+    sources:
+      - url: https://www.city.matsuyama.ehime.jp/kurashi/kaigohoken/koureisyashien/ninchisho/koukenseidoryousien.html
+        publisher: 松山市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}

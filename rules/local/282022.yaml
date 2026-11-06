@@ -1,0 +1,53 @@
+city: "282022"
+name: 尼崎市
+site: city.amagasaki.hyogo.jp
+programs:
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等GPS利用支援サービス（GPS 端末の貸与）
+    where: 高齢介護課 包括支援担当（北部・南部の福祉相談支援課、各地区の保健福祉申請受付窓口でも受け付ける）
+    conditions:
+      - 市内の自宅で暮らし、一人で出歩くおそれがある認知症の人などを介護する家族
+      - 本人は65歳以上か、40〜64歳で要介護・要支援の認定を受けた人
+      - 補聴器・植込み型のペースメーカーや除細動器を使っている人は対象外
+      - 始めるときの費用は市が出す。月々の基本料は自己負担（本人と申請者の世帯がどちらも市民税非課税か生活保護なら市が出す）
+      - 申請の後、職員が家を訪ねて様子を確かめる
+    sources:
+      - url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/nintisyou/041haikai.html
+        publisher: 尼崎市
+        title: 認知症高齢者等GPS利用支援サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 福祉局 福祉部 重層的支援推進担当（令和8年4月から。申立ての相談は成年後見等支援センター）
+    conditions:
+      - 市内に住所があるなどで、使える資産や貯蓄が無く、助成が無いと後見人の報酬を払えない人
+      - 助成の期間の終わりの残高が56万円以上なら対象外
+      - 報酬の助成は月に在宅28,000円・施設18,000円まで
+      - 申立ての費用の助成の条件は頁から読み取れないので、窓口で確かめる
+    sources:
+      - url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sumai/seinennkouken.html
+        publisher: 尼崎市
+        title: 成年後見制度の利用支援
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金の支給
+    where: 介護保険事業担当（南北の福祉相談支援課、各地区の保健・福祉申請受付窓口でも受け付ける）
+    conditions:
+      - 家で暮らす要介護4か5の高齢者と同居（隣に住むなどを含む）し、報酬を受けずに介護している家族
+      - 申請日から1年さかのぼって市内に住み、その間は介護保険サービスを使っていない（ショートステイだけなら年7日まで可）
+      - 本人と介護する家族の世帯全員が市民税非課税
+      - 年額10万円。申請の後に家の様子を確かめる調査がある。頁の更新が2024年なので、今の内容は窓口で確かめる
+    sources:
+      - url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sien/041iroukin.html
+        publisher: 尼崎市
+        title: 家族介護慰労金の支給について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
