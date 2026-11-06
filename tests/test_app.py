@@ -1444,6 +1444,22 @@ def test_print_puts_cards_on_paper_and_leaves_controls_out():
     assert "d.open = false" in after and 'classList.remove("print-result")' in after
 
 
+def test_folded_unknown_list_is_opened_by_print():
+    # T-144：T-133 で畳んだ「確かめると使えるかもしれない」の欄（#unknown-fold）は、#result の中の details なので、
+    # 上の beforeprint が開いて紙に出る（ops の print_t144.py で、見本 2 本の PDF に欄の札の本文が入ることを確かめた）。
+    # 欄を details でなくしたり #result の外に出したりすると、印刷で閉じたままになる
+    import re
+    from pathlib import Path
+
+    root = Path(__file__).resolve().parents[1] / "web"
+    html = (root / "index.html").read_text(encoding="utf-8")
+    js = (root / "app.js").read_text(encoding="utf-8")
+    assert re.search(r'el\("details", \{[^}]*id: "unknown-fold"', js)
+    assert 'const groups = $("groups");' in js
+    result = re.search(r'<section id="result" hidden>(.*?)</section>\s*(?:<section id="effort-page"|</main>)', html, re.S).group(1)
+    assert '<div id="groups"></div>' in result
+
+
 def test_board_while_answering_is_one_row_of_counts_and_one_line_note():
     # T-136：問いに答えている間（.live）の帯は、4 つの数の 1 行＋注 1 行。点は出さない（DOM には残す）。
     # 390 で 209px（画面の 25%）を占め、前の問いを隠していた。高さ・行数・点の見え方はブラウザで確かめた（ops の shot_t136.py）
