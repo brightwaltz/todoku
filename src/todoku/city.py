@@ -51,6 +51,8 @@ PREF_FOUND_NOTE = ("{pref}の制度で、個人で申し込めそうなものを
 SUMMARY_PREF_FOUND = "{pref}の制度は、確かめる候補が {n} 件あります"
 PREF_LOOKED = "見た県の頁"
 SUMMARY_TYPES_N = ("市区町村の事業", "種類（全国の実施率つき、窓口で確かめる候補）")
+# T-143：下の段の見出しの数の単位。型の段は帯の内訳（SUMMARY_TYPES_N）と同じく「種類」、制度の段は「件」
+SECTION_UNIT = {"local": "種類"}
 
 # T-089：地域包括支援センターの職員が相談を受けながら使うとき（T-078 の候補 #2。判断は integration-1105.md の「T-078」、既定は A）。
 # 相談先の枠に 1 文だけ出す。職員向けの別の画面は作らない。README の「包括の職員が相談を受けながら使うとき」と同じ趣旨。文言はここだけで差し替える
@@ -241,7 +243,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
     for g in groups:
         body.append(f'<section class="card city-group" data-level="{e(g.key)}">'
                     # T-113：書けていない段の見出しにも 0 件を出さない（すぐ下の 1 行が、なぜ無いかを言う）
-                    f'<h2>{e(g.title)}' + (f'<span class="city-n">{len(g.programs)} 件</span>' if g.programs else "") + '</h2>')
+                    f'<h2>{e(g.title)}' + (f'<span class="city-n">{len(g.programs)} {SECTION_UNIT.get(g.key, "件")}</span>' if g.programs else "") + '</h2>')
         if not g.programs:
             body.append(f'<p class="note">{e(g.empty)}</p>{_checked_html(g)}{_contacts_html(g, pref)}</section>')
             continue
