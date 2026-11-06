@@ -9,6 +9,7 @@ from __future__ import annotations
 import hmac
 import ipaddress
 import json
+import mimetypes
 import os
 import threading
 import time
@@ -35,6 +36,12 @@ import anthropic
 from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, check_summary, make_client
 from .engine import DONT_KNOW, SHOWN, T, U, Result, evaluate, known, prereq_edges, statuses, with_implied
 from .questions import MAX_QUESTIONS, Question, candidates, next_question, place_fact, score_fact
+
+# Python 3.12 の組み込みの表には .webp が無い（3.13 で入った）。Docker の素の Python で /etc/mime.types が無いと、
+# /static/ の webp が text/plain で出る。紹介動画の静止画（T-140）に webp を使えるよう、ここで足しておく
+EXTRA_MIME_TYPES = {".webp": "image/webp"}
+for _ext, _type in EXTRA_MIME_TYPES.items():
+    mimetypes.add_type(_type, _ext)
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
