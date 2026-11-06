@@ -19,7 +19,7 @@ from typing import Annotated, Any
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.gzip import GZipMiddleware
 from pydantic import BaseModel, Field, model_validator
@@ -814,25 +814,40 @@ async def revalidate_pages(request: Request, call_next):
 
 
 # 「/」と /api/health は HEAD にも答える（T-056）。@app.get だけだと HEAD は 405 になり、`curl -I` や
-# 死活の見張り（HEAD で聞くものがある）が「落ちている」と読む。FileResponse は HEAD では本文を送らない
+# 死活の見張り（HEAD で聞くものがある）が「落ちている」と読む。「/」は HEAD では本文を送らない（index が長さだけ返す）
 @app.api_route("/api/health", methods=["GET", "HEAD"])
 def health() -> dict:
     return {"ok": True, "programs": len(RULES.programs), "engine": CLAUDE.name, "passphrase": bool(PASSPHRASE)}
 
 
+# リンクを貼ったときの絵（og:image、T-155）は絶対 URL が要る。本番は 2 つの名前で同じ版が動くので、要求の host が
+# そのどちらかならその host を、ほかの host（手元・試験・偽の Host ヘッダ）なら 1 つ目を指す。Host ヘッダの値は頁に書かない
+# （よその URL を指す og:image を作らせない）。頁の中の og:image は "/static/og.png" と書いておき、ここで絶対 URL に置き換える
+OG_HOSTS = ("todoku.fly.dev", "todoku-machida.fly.dev")
+OG_IMAGE_REL = 'property="og:image" content="/static/og.png"'
+
+
+def with_og_image(html: str, request: Request) -> str:
+    host = request.headers.get("host", "").lower()
+    return html.replace(OG_IMAGE_REL, f'property="og:image" content="https://{host if host in OG_HOSTS else OG_HOSTS[0]}/static/og.png"', 1)
+
+
 @app.api_route("/", methods=["GET", "HEAD"])
-def index() -> FileResponse:
-    return FileResponse(WEB_DIR / "index.html")
+def index(request: Request) -> Response:
+    body = with_og_image((WEB_DIR / "index.html").read_text(encoding="utf-8"), request).encode("utf-8")
+    if request.method == "HEAD":  # 本文は送らず、長さは GET と同じにする（T-056）
+        return Response(b"", media_type="text/html", headers={"content-length": str(len(body))})
+    return HTMLResponse(body)
 
 
 @app.get("/city/{code}", response_class=HTMLResponse)
-def city(code: str) -> HTMLResponse:
+def city(code: str, request: Request) -> HTMLResponse:
     """その市区町村の人が使える制度の一覧（T-080b）。規則から作り、Claude は呼ばないので合言葉も回数制限もかけない。"""
     if code not in PLACES:
         raise HTTPException(404, "その団体コードの市区町村は一覧にありません")
     pref, name = PLACES[code]
-    return HTMLResponse(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2]),
-                                  LOCAL.get(code)))
+    return HTMLResponse(with_og_image(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2]),
+                                                LOCAL.get(code)), request))
 
 
 @app.get("/japan-map", response_class=HTMLResponse)

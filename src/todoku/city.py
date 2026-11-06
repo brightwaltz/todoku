@@ -284,7 +284,10 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
 <meta property="og:title" content="{e(pref)}{e(name)}で使える制度 — とどく">
 <meta property="og:description" content="{e(pref)}{e(name)}に住む人が使える介護・福祉の制度を、国・都道府県・市区町村の段に分けて、申請先と出典つきで並べた一覧です。">
 <meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="/static/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">

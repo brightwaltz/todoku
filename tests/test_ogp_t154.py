@@ -32,5 +32,5 @@ def test_ogp_copies_title_and_description(path):
     assert _meta(html, "property", "og:site_name") == "とどく"
     assert _meta(html, "property", "og:type") == "website"
     assert _meta(html, "property", "og:locale") == "ja_JP"
-    assert _meta(html, "name", "twitter:card") == "summary"
+    assert _meta(html, "name", "twitter:card") == "summary_large_image"  # T-155 で絵を付けて大きい札に
     assert html.index("og:title") < html.index("</head>")
