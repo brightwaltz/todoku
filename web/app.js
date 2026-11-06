@@ -1302,9 +1302,15 @@ async function restoreFrom(code) {
   try {
     saved = await decodeKeep(code);
   } catch (e) {
-    say("残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください");
-    $("reading").replaceChildren(el("p", { class: "error" }, "残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください。"));
+    // 縮めた符号（版 1）は DecompressionStream で戻す。無いブラウザ（iOS 16.3 以前の Safari など）では、
+    // リンクは正しいので「途中で切れていないか」ではなく、ブラウザのことだと知らせる（T-172）
+    const msg = code.startsWith("1.") && typeof DecompressionStream === "undefined"
+      ? "このブラウザでは、残した結果のリンクを開けません。ブラウザを新しくするか、別のブラウザで開いてください。"
+      : "残した結果のリンクを読めませんでした。リンクが途中で切れていないか確かめてください。";
+    say(msg.replace(/。$/, ""));
+    $("reading").replaceChildren(el("p", { class: "error" }, msg));
     show("reading");
+    $("reading").scrollIntoView({ block: "center" });  // 知らせは入口の絵より下にあり、開いた最初の画面では見えないので送る（T-172）
     return;
   }
   state = fresh();
@@ -1321,6 +1327,7 @@ async function restoreFrom(code) {
     $("reading").replaceChildren(el("p", { class: "error" }, e.message));
     say(e.message);
     show("reading");
+    $("reading").scrollIntoView({ block: "center" });
   }
 }
 
