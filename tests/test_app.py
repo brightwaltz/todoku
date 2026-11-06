@@ -1466,7 +1466,12 @@ def test_board_while_answering_is_one_row_of_counts_and_one_line_note():
     for decl in ("white-space: nowrap", "overflow: hidden", "text-overflow: ellipsis"):
         assert decl in one_line, decl
     html = (root / "index.html").read_text(encoding="utf-8")
-    note = re.search(r'<p class="note"[^>]*>([^<]*)</p>\n  </section>\n\n  <section id="ask"', html).group(1)
+    note_html = re.search(r'<p class="note"[^>]*>(.*?)</p>\n  </section>\n\n  <section id="ask"', html).group(1)
+    note = re.sub(r"<[^>]+>", "", note_html)
     assert note == "答えるたびに、規則のプログラムが判定し直します（AI は使いません）。"  # 点を出さないので「点は制度 1 つずつ」は消した
+    # T-142：狭い画面では「、規則のプログラムが」だけ隠し、… で切っても「（AI は使いません）」が残るようにする
+    narrow = re.sub(r'<span class="wide-words">[^<]*</span>', "", note_html)
+    assert narrow == "答えるたびに判定し直します（AI は使いません）。"
+    assert re.search(r"@media \(max-width: 520px\) \{ \.board-card\.live \.note \.wide-words \{ display: none; \} \}", css)
     js = (root / "app.js").read_text(encoding="utf-8")
     assert '$("board-change").title = $("board-change").textContent;' in js  # 切った全文は title にも

@@ -206,6 +206,9 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .board-card.live .tiles { display: none; }
 .board-card.live .change, .board-card.live .note { margin-top: 4px; line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .board-card.live .change:empty { margin: 0; }
+/* T-142：狭い画面では帯の注の「、規則のプログラムが」を隠し、「答えるたびに判定し直します（AI は使いません）。」にする。
+   全文（430px）は 390 の幅 336px に入らず、… で切ると肝心の「AI は使いません」が消えていた。広い画面の文は台本どおり */
+@media (max-width: 520px) { .board-card.live .note .wide-words { display: none; } }
 /* 1 問だけ答える（T-072b）。最初の問いの数の行の下に、押すと切り替わるリンクを 1 行 */
 .one-only { margin: 0 0 4px; font-size: 15px; color: var(--muted); }
 .one-only .link { margin-right: 8px; }
