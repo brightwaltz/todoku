@@ -196,7 +196,21 @@ function resetPick() {
 async function send() {
   const text = $("text").value.trim();
   if (!text) { $("text").focus(); return; }
-  await consultWith(text, () => api("/api/consult", { text, municipality: pick.city }));
+  await consultWith(text, () => withClock(api("/api/consult", { text, municipality: pick.city })));
+}
+
+// 本物の Claude の読み取りは十数秒かかることがある。止まって見えないよう、3 秒を過ぎたら読み取り中の札に経過の秒を足す（T-165）。
+// 読み上げ（#status）は consultWith の最初の 1 回だけで、毎秒は読まない。札の文が替わったら（失敗の知らせ・別の相談）書かない
+function withClock(promise) {
+  const p = $("reading").firstElementChild;
+  const base = p ? p.textContent : "";
+  const t0 = Date.now();
+  const timer = setInterval(() => {
+    if (!p || $("reading").firstElementChild !== p) { clearInterval(timer); return; }
+    const sec = Math.floor((Date.now() - t0) / 1000);
+    if (sec >= 3) p.textContent = `${base}（${sec} 秒）`;
+  }, 1000);
+  return promise.finally(() => clearInterval(timer));
 }
 
 // 見本は、前もって Claude が読み取った結果をサーバから受け取る（Claude を呼ばない）
