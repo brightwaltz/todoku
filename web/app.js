@@ -1554,7 +1554,15 @@ $("text").addEventListener("input", () => {
   const edited = $("text").value !== lastDraft && $("text").value.trim() !== "";
   show("redraft", edited && draft !== "" && draft !== $("text").value);
 });
-fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
+// 最初の画面のデータは web/early.js が先に取り始めている（T-177）。無ければ（early.js が遅れた・読めない）ここで取る。
+// 応答の本文は 1 回しか読めないので、受け取ったら消す。先に {} を置き、後から届いた early.js が二重に取らないようにする
+const earlyFetches = window.todokuEarly || (window.todokuEarly = {});
+function earlyFetch(url) {
+  const p = earlyFetches[url];
+  delete earlyFetches[url];
+  return p || fetch(url);
+}
+earlyFetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
   prefs = data.prefectures;
   $("pref").append(...prefs.map((p) => el("option", { value: p.code }, p.name)));
   const asked = new URLSearchParams(location.search).get("pref");
@@ -1565,7 +1573,7 @@ fetch("/static/municipalities.json").then((r) => r.json()).then((data) => {
 }).catch(() => { /* 取れなければ、お住まいは文に書いてもらう */ });
 // 全国の見取り図は T-134b で別の頁（web/japan.html・web/japan.js）へ移した。タイルは /?pref=NN で戻り、上の pickFromMap が選ぶ
 // 出来事のボタンも、取れたときだけ出す（T-071）
-fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
+earlyFetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
   eventList = list;
   $("event-list").replaceChildren(...list.map(eventCard));
@@ -1585,7 +1593,7 @@ fetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す
-fetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
+earlyFetch("/api/samples").then((r) => (r.ok ? r.json() : [])).then((list) => {
   if (!list.length) return;
   $("sample-list").replaceChildren(...list.map((s) => el("button", { type: "button", class: "chip", onclick: () => openSample(s) }, s.label)));
   show("samples");
@@ -1684,7 +1692,7 @@ window.addEventListener("afterprint", () => {
 // 合言葉が要る置き場では、書き始める前に聞く（書いて送ってから止められないように）
 // 残した結果のリンクから開いたときは聞かない（結果は合言葉なしで出る。相談を送るときに聞く）
 const keptAtLoad = location.hash.startsWith(KEEP_PREFIX);
-const healthReady = fetch("/api/health").then((r) => r.json()).then((h) => {
+const healthReady = earlyFetch("/api/health").then((r) => r.json()).then((h) => {
   needGate = Boolean(h.passphrase);
   // 最初は小さな入口だけを出す（T-126。最初の画面の文字を減らす）。押すか、合言葉なしで送ると欄を出す
   if (h.passphrase && !aikotoba && !keptAtLoad) show("gate-open");
