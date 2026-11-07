@@ -1,0 +1,60 @@
+city: "272159"
+name: 寝屋川市
+site: www.city.neyagawa.osaka.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品の支給（家族介護支援事業）
+    where: 高齢介護室（総務・地域支援担当）。郵送でも申請できる
+    conditions:
+      - 要介護 3・4・5 の人を介護している家族。本人も介護者も市内に住所がある
+      - 本人の世帯と介護者の世帯が、どちらも市民税非課税。生活保護を受けている人は対象外
+      - 紙おむつ・尿取りパッド・使い捨て手袋などを、月 1 回家に届ける
+      - 毎月 8 日（土日祝はその前日）までに申請すると、その月から届く
+      - 品物ごとの金額の決まりと、宅配のときに払う額は窓口で確かめる
+    sources:
+      - url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/chiiki/ninni/1378345563425.html
+        publisher: 寝屋川市
+        title: 家族介護支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 徘徊高齢者家族支援サービス事業・徘徊高齢者等発見支援メール事業
+    where: 高齢介護室（総務・地域支援担当）
+    conditions:
+      - 市内に住所があり要介護 1 以上で、介護保険で GPS 付きの徘徊感知機器を借りている人
+      - その GPS の利用料（介護保険の外の分）に当たる額を、月 550 円まで市が給付する
+      - 徘徊のおそれのある 40 歳以上の市民は、家族などが前もってメール事業に登録できる
+      - 行方が分からなくなり警察に捜索願を出したら、市が協力者にメールで特徴を送る
+    sources:
+      - url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/chiiki/ninni/1378345563425.html
+        publisher: 寝屋川市
+        title: 家族介護支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: not_found
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: not_found
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（申立て費用と報酬の助成）
+    where: 高齢介護室（64 歳以下の人は障害福祉課）
+    conditions:
+      - 市内に住み、生活保護を受けているか、費用を払うとそれに準じる状態になる人
+      - 預貯金が 50 万円未満で、使える資産が無い。親族や市民後見人が後見人になる場合は対象外
+      - 申立ての印紙・切手・鑑定料を 10 万円まで。本人が払い、審判の確定から 1 年以内に申請
+      - 後見人などの報酬を、在宅は月 28,000 円・施設などは月 18,000 円に月数を掛けた額まで
+      - 報酬の助成は、報酬が決まった日から 1 年以内に申請する
+    sources:
+      - url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/chiiki/ninni/1544660783192.html
+        publisher: 寝屋川市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
