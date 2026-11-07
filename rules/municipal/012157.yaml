@@ -1,0 +1,111 @@
+city: '012157'
+name: 美唄市
+site: www.city.bibai.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で常時おむつ等を使う要介護4・5の方を介護する家族に、介護用品と引き換えできる給付券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 本人と介護する家族がともに市民税非課税世帯
+  - 申請するのは介護している家族
+  where: 地域包括ケア推進課 地域包括ケア推進係
+  url: https://www.city.bibai.hokkaido.jp/soshiki/10/1673.html
+  confidence: high
+  amount: 月額 5,500 円以内の給付券（市内の指定取扱店で引き換え）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 美唄市緊急通報システム事業
+  summary: 自宅に緊急通報の本機・ガスセンサー・熱センサー・ペンダント型ボタン一式を貸し出す。
+  who: {}
+  at_application:
+  - 市内在住で固定電話回線を契約している
+  - 65歳以上のひとり暮らし、または重度身体障がい者と75歳以上の者のみの世帯
+  - 重度身体障がい者のひとり暮らし、または同者と75歳以上の者の同居世帯
+  - 家族と同居でも日中独居になる75歳以上を含む世帯
+  where: 地域包括ケア推進課 地域包括ケア推進係
+  url: https://www.city.bibai.hokkaido.jp/soshiki/10/1682.html
+  confidence: high
+  amount: 設置手数料は非課税世帯 10,000 円、課税世帯 18,800 円。電話料金は自己負担
+- category: sonota
+  name: 福祉灯油券の支給
+  name_on_page: 福祉灯油事業
+  summary: 在宅の高齢者のみ世帯などに、冬の暖房用灯油にあてる福祉灯油券を支給する（令和8年度分）。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 70歳以上のみの世帯、障害者手帳1・2級等のある世帯、ひとり親世帯のいずれか
+  - 年金収入等の合計が世帯人数別の基準額以下
+  - 生活保護世帯は対象外
+  where: 地域包括ケア推進課 地域包括ケア推進係（令和8年は10月5日〜12月18日受付）
+  url: https://www.city.bibai.hokkaido.jp/soshiki/10/1683.html
+  confidence: high
+  amount: 1世帯あたり 6,900 円（50リットル相当）の灯油券
+  more_urls:
+  - https://www.city.bibai.hokkaido.jp/uploaded/attachment/22145.pdf
+- category: sonota
+  name: 福祉除雪（屋根の雪下ろし・窓回り）
+  name_on_page: 福祉除雪事業
+  summary: 雪で家が危険で除雪が難しい非課税世帯の屋根の雪下ろしと窓回りの除雪を、無料で行う。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 世帯全員65歳以上など、頁の3区分のいずれかに当たる世帯
+  - 積雪で家屋が危険で、体力的・経済的に除雪が困難
+  - 実際に居住していること（無落雪住宅は対象外）
+  where: 地域包括ケア推進課 地域包括ケア推進係
+  url: https://www.city.bibai.hokkaido.jp/soshiki/10/1675.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 間口除雪（玄関前の除雪）
+  name_on_page: 間口除雪について
+  summary: 高齢者や重度障がい者のみの世帯の玄関前の残雪を、有料で除雪する。
+  who: {}
+  at_application:
+  - 市道除雪路線沿いの戸建て住宅に住む世帯（国道・道道・私道は対象外）
+  - 70歳以上のみ、身障手帳1・2級のみ、またはその組合せの世帯
+  - 現地確認で対象外になる場合あり
+  where: 地域包括ケア推進課 地域包括ケア推進係（令和8年は10月5日〜10月30日受付）
+  url: https://www.city.bibai.hokkaido.jp/soshiki/10/1684.html
+  confidence: high
+  amount: 1シーズンの負担額は生活保護世帯が無料、非課税世帯 1万〜1万2千円、課税世帯 2万4千円（排雪が加わる場合は別途）
+  more_urls:
+  - https://www.city.bibai.hokkaido.jp/uploaded/attachment/22146.pdf
+- category: sonota
+  name: 養護老人ホームでの短期宿泊
+  name_on_page: 生活支援短期宿泊事業
+  summary: 一時的に養護が必要な高齢者を、養護老人ホーム美唄市恵風園で短期間預かる。
+  who: {}
+  at_application:
+  - 一時的に養護を必要とする高齢者
+  - 利用は原則7日まで（事情により延長できる場合あり）
+  where: 地域包括ケア推進課 地域包括ケア推進係
+  url: https://www.city.bibai.hokkaido.jp/soshiki/10/1677.html
+  confidence: high
+  amount: 1日 1,730 円の利用負担
+not_found:
+- haishoku
+- haikai
+- hochoki
+- shingu
+- ribiyo
+- mimamori

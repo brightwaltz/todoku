@@ -1,0 +1,76 @@
+city: '012301'
+name: 登別市
+site: www.city.noboribetsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 高齢者等緊急通報機器の貸与
+  name_on_page: 高齢者等緊急通報機器の貸し出し
+  summary: 急病時に通報できる機器を貸し出し、警備員が合い鍵で駆けつける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市内に住民票がある
+  - 慢性疾患等で常時注意を要する
+  - サ高住・有料老人ホームなどの施設入居者は対象外
+  - 家族等の緊急連絡先の登録と合い鍵の預け入れが必要
+  where: 高齢・介護グループ（高齢福祉担当）、または民生委員・児童委員に相談
+  url: https://www.city.noboribetsu.lg.jp/docs/2021031500022/
+  confidence: high
+  amount: 利用料は月額605円（生活保護世帯は無料）
+- category: kaigo-yohin
+  name: 高齢者等への紙おむつ等の給付
+  name_on_page: 高齢者等介護用品（紙おむつ等）の給付
+  summary: 紙おむつ等の購入費の一部を給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 高齢・介護グループ（高齢福祉担当）
+  url: https://www.city.noboribetsu.lg.jp/docs/2023031600030/file_contents/file_2026324215337_1.pdf
+  confidence: low
+- category: koken
+  name: 成年後見の市長申立てと後見人報酬の助成
+  name_on_page: 成年後見制度について
+  summary: 申立てる親族がいない場合は市が申立て、後見人報酬の負担が難しい人に助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分な方（認知症・知的障がい・精神障がいなど）
+  - 報酬助成は後見人等への報酬の負担が困難な方
+  where: 高齢・介護グループ（高齢福祉担当）、障がい福祉グループ
+  url: https://www.city.noboribetsu.lg.jp/docs/2023031600030/file_contents/file_2026324215337_1.pdf
+  confidence: low
+- category: sonota
+  name: 外国人高齢者の福祉給付金
+  name_on_page: 外国人高齢者・障害者福祉給付金支給について
+  summary: 国民年金で無年金となった在日外国人の高齢者に福祉給付金を支給する。
+  who: {}
+  at_application:
+  - 国民年金制度上、無年金となった在日外国人の高齢者
+  - そのほか市の定める一定の要件を満たすこと
+  where: 高齢・介護グループ（高齢福祉担当）
+  url: https://www.city.noboribetsu.lg.jp/docs/2013030500790/
+  confidence: low
+  amount: 高齢者は月額10,000円
+not_found:
+- haishoku
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu

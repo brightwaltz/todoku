@@ -1,0 +1,123 @@
+city: '012211'
+name: 名寄市
+site: www.city.nayoro.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ用ごみ袋の支給
+  name_on_page: 要介護高齢者等紙おむつ用ごみ袋支給事業
+  summary: 在宅で紙おむつを使う要介護3〜5の人に、指定のごみ袋を毎月支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application: []
+  where: 高齢者支援課 高齢福祉係（風連庁舎は地域住民課 福祉係でも可）
+  url: http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048t4.html
+  confidence: high
+  amount: 1か月あたり指定の炭化ごみ袋（20リットル）10枚
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5で住民税非課税世帯の在宅高齢者の介護に必要な用品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 高齢者支援課 高齢福祉係（風連庁舎は地域住民課 福祉係でも可）
+  url: http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048t4.html
+  confidence: high
+  amount: 1か月あたり 9,000 円の助成
+  more_urls:
+  - http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048ps.html
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい人に栄養バランスのよい食事を定期的に届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯かそれに準じる世帯、または身体障害者
+  - 高齢や障がいで調理が困難で、自立支援の観点から適当と認められる
+  where: 高齢者支援課 高齢福祉係（風連庁舎は地域住民課 福祉係でも可）
+  url: http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048t4.html
+  confidence: high
+  amount: 1食 470 円の自己負担
+  more_urls:
+  - http://www.city.nayoro.lg.jp/section/soumu/prkeql0000041uf1-att/prkeql0000042cb0.pdf
+  - http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048ps.html
+- category: gaishutsu
+  name: 外出支援（リフト車の送迎）
+  name_on_page: 外出支援サービス事業
+  summary: ハイヤー等が使えない寝たきりや車椅子の人の通院・入退院をリフト車で送迎する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、臥床または車椅子利用の人
+  - 一般の交通機関の利用が困難な人
+  where: 高齢者支援課 高齢福祉係（風連庁舎は地域住民課 福祉係でも可）
+  url: http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048t4.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - http://www.city.nayoro.lg.jp/section/soumu/prkeql0000041uf1-att/prkeql0000042cb0.pdf
+  - http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048ps.html
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 1日の大半をベッドで過ごす人のふとんを、年2回洗濯・乾燥・消毒する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で身体の障害や傷病で臥床している人、または重度身体障害者
+  - 寝具の衛生管理が自分では難しい
+  where: 高齢者支援課 高齢福祉係（風連庁舎は地域住民課 福祉係でも可）
+  url: http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048t4.html
+  confidence: high
+  amount: 年2回。利用料は洗濯料金の1割
+  more_urls:
+  - http://www.city.nayoro.lg.jp/section/soumu/prkeql0000041uf1-att/prkeql0000042cb0.pdf
+  - http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048ps.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム設置事業
+  summary: 重い持病のある人に、緊急通報装置を貸し出し、地域の協力員を登録する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯で、重度の疾病により生活に支障がある人
+  - または、単身世帯の重度障害者
+  where: 高齢者支援課 高齢福祉係（風連庁舎は地域住民課 福祉係でも可）
+  url: http://www.city.nayoro.lg.jp/section/kourei/vdh2d100000048t4.html
+  confidence: high
+  more_urls:
+  - http://www.city.nayoro.lg.jp/section/soumu/prkeql0000041uf1-att/prkeql0000042cb0.pdf
+- category: sonota
+  name: 除雪助成券・屋根雪おろし助成券の交付
+  name_on_page: 除雪助成券・屋根雪おろし助成券の交付申請
+  summary: 除雪が難しい低収入の世帯に、門口除雪や屋根の雪おろし費用の助成券を交付する。
+  who: {}
+  at_application:
+  - 世帯全員が70歳以上、障害者手帳等あり、または要介護認定ありのいずれか
+  - 除雪や雪おろしが困難で、家族の援助が受けられない
+  - 世帯の総収入が基準額以下（独居120.4万円、2人189.4万円）
+  - 屋根雪おろし券は認知症自立度2以上の人も対象
+  where: 高齢者支援課 高齢福祉係
+  url: http://www.city.nayoro.lg.jp/section/kourei/prkeql000001cvzc.html
+  confidence: high
+  amount: 除雪助成券 2万6,000円分、屋根雪おろし助成券 1世帯1万円分
+not_found:
+- haikai
+- iro
+- hochoki
+- ribiyo
+- jutaku

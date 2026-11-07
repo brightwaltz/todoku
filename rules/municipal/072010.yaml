@@ -1,0 +1,191 @@
+city: '072010'
+name: 福島市
+site: www.city.fukushima.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食事サービス（昼食の配食と安否確認）
+  name_on_page: 食事サービス
+  summary: ひとり暮らしなどの高齢者に、昼食を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で、市内に住所がある
+  - 高齢者世帯に準じる世帯も対象
+  - 心身の障がい等で食の確保が困難（外出困難・調理困難など）
+  where: 長寿福祉課 長寿支援係
+  url: https://www.city.fukushima.fukushima.jp/kenko-fukushi/fukushi-kaigo/3/1/9680.html
+  confidence: high
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置支援
+  name_on_page: 緊急通報装置設置支援事業
+  summary: ボタンを押すと受信室につながる緊急通報装置を、月額無料で設置する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 一人暮らし、または重度身体障害者（手帳1・2級）。日中独居は対象外
+  - 次のどれか：心疾患・脳疾患・喘息等で発作のおそれ
+  - 要介護2以上で適切な対応が困難
+  - 不安神経症等の精神疾患で不安緩和が必要
+  where: 長寿福祉課 長寿支援係
+  url: https://www.city.fukushima.fukushima.jp/kenko-fukushi/fukushi-kaigo/3/1/9676.html
+  confidence: high
+  amount: 月額利用料は無料（市が負担）。
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容利用助成事業
+  summary: 寝たきりの在宅高齢者が訪問理美容を使うとき、出張費を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある高齢者
+  - 寝たきり度（障害高齢者の日常生活自立度）がランクBまたはC
+  where: 長寿福祉課 長寿支援係（利用時は指定理美容所へ直接申込）
+  url: https://www.city.fukushima.fukushima.jp/kenko-fukushi/fukushi-kaigo/3/1/9674.html
+  confidence: high
+  amount: 出張料1回1,000円を年4回まで助成（年間最大4,000円分）。カット代は自己負担。
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: iro
+  name: 在宅介護慰労手当
+  name_on_page: 在宅介護慰労手当
+  summary: 寝たきりや重度認知症の方を在宅で介護する家族に、年額の手当を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護者が20歳以上で、8月1日時点で市に6か月以上住所がある
+  - 要介護4・5の認定、または相当の身体状況が6か月以上続く
+  - 介護者と同居（別居は生計同一の申立書が必要）
+  where: 長寿福祉課（要介護者が65歳以上）、障がい福祉課（20〜64歳）、各支所・出張所
+  url: https://www.city.fukushima.fukushima.jp/soshiki/9/1044/1/2407.html
+  confidence: high
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: kaigo-yohin
+  name: 治療材料（紙おむつ等）の給付券
+  name_on_page: 治療材料給付券
+  summary: 在宅の重度の寝たきりの方や重度認知症の方に、紙おむつ等の購入券を出す。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれか：重度の認知症（ランク4またはM）
+  - 寝たきりで失禁状態等にある
+  - 下肢・体幹機能障害の個別等級1・2級で失禁状態等にある
+  where: 障がい福祉課 障がい給付係
+  url: https://www.city.fukushima.fukushima.jp/soshiki/9/1043/3/619.html
+  confidence: high
+  amount: 月額4,000円分の購入券。
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: gaishutsu
+  name: シルバーパスポート（バス・飯坂線・タクシーの運賃助成）
+  name_on_page: シルバーパスポート
+  summary: 75歳以上の方が、路線バス・飯坂線・タクシーを使うときの運賃を助成する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住民登録がある（震災の広域避難者も対象）
+  - 申請書は75歳の誕生日の約2か月前に郵送される
+  where: 福島市シルバーパスポートコールセンター（申請書は郵送）
+  url: https://www.city.fukushima.fukushima.jp/soshiki/12/1060/1/3436.html
+  confidence: high
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: haikai
+  name: 認知症高齢者等お帰り見守り事業（身元確認QRコード）
+  name_on_page: 福島市認知症高齢者等お帰り見守り事業
+  summary: 道に迷うおそれのある方に身元確認QRシールを渡し、警察等へ事前に情報提供する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民登録がある
+  - 若年性認知症の方も含む
+  where: 長寿福祉課、各支所・茂庭出張所
+  url: https://www.city.fukushima.fukushima.jp/soshiki/9/1044/3/2/4558.html
+  confidence: high
+  amount: 無料（QRシール1シート）。追加やアイロンシールは1シート1,100円の自己負担。
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ等の施術費助成
+  name_on_page: はり・きゅう・マッサージ等施術費の助成
+  summary: ひとり暮らしの高齢者や寝たきりの方を介護する人に、施術の助成券を出す。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のどれか：65歳以上のひとり暮らし
+  - 6か月以上寝たきりの20歳以上の方を介護している
+  - 寝たきり同程度の重度認知症高齢者を介護している
+  - 介護している場合、在宅介護慰労手当の受給世帯は除く
+  where: 地区の地域包括支援センター、長寿福祉課、各支所
+  url: https://www.city.fukushima.fukushima.jp/kenko-fukushi/fukushi-kaigo/3/1/9679.html
+  confidence: high
+  amount: 1枚1,000円の助成券を年間12枚まで（年間最大12,000円）。
+  more_urls:
+  - https://www.city.fukushima.fukushima.jp/material/files/group/46/sukoyakaraihu8nenndo.pdf
+- category: sonota
+  name: 生活支援型短期入所（養護老人ホームでの短期宿泊）
+  name_on_page: 生活支援型短期入所事業
+  summary: 介護保険に該当しない高齢者を、家族が支援できない間、養護老人ホームで一時的に預かる。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険に該当しない（自立）で、家族等の軽い支援で在宅生活ができる
+  - 家族が病気・冠婚葬祭・出張等で支援できない、または単身者の一時的な体調不良
+  - 共同生活に支障がないと認められる
+  where: 長寿福祉課
+  url: https://www.city.fukushima.fukushima.jp/kenko-fukushi/fukushi-kaigo/3/1/9682.html
+  confidence: high
+  amount: 1日1,500円。1回7日以内、年2回まで。
+- category: sonota
+  name: ふれあい訪問収集（ごみの戸別収集と安否確認）
+  name_on_page: ふれあい訪問収集
+  summary: ごみを集積所に出せない高齢者・障がい者の世帯のごみを戸別に収集し、声かけで安否確認もする。
+  who: {}
+  at_application:
+  - 高齢者または障がい者の単身世帯、またはそれらのみの世帯
+  - ごみを集積所まで持ち出すことが困難
+  - 申込み後に面談があり、可否が決まる
+  where: ごみ政策課、各支所
+  url: https://www.city.fukushima.fukushima.jp/kenko-fukushi/fukushi-kaigo/3/1/9683.html
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援事業（申立費用・後見人報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい方に、審判の申立費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度を使う費用の負担が困難な方
+  - 対象の詳細は実施要綱（PDF）に記載。未確認
+  where: 長寿福祉課 長寿支援係
+  url: https://www.city.fukushima.fukushima.jp/soshiki/9/1044/2/4490.html
+  confidence: low
+not_found:
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu
+- mimamori
+- chusha

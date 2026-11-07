@@ -1,0 +1,109 @@
+city: '012165'
+name: 芦別市
+site: www.city.ashibetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物支給
+  name_on_page: 紙おむつ支給
+  summary: 在宅でおむつが常に必要な人を介護する家庭に、紙おむつを現物で支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 1か月以上おむつを使い、今後も必要な人
+  - 常時寝たきりで要介護3〜5の高齢者か特定疾患の人
+  - または常時介護が必要な重度の身体・知的障害のある人
+  - または身体1・2級か重度知的の3歳以上の児童
+  - 入院・入所中の分は支給されない
+  where: 介護高齢課 地域包括支援係
+  url: https://www.city.ashibetsu.hokkaido.jp/docs/5270.html
+  confidence: high
+  amount: 1日あたり3枚（1か月分をまとめて支給）
+- category: haishoku
+  name: 夕食の配食（給食サービス）
+  name_on_page: 給食サービス事業
+  summary: 食事づくりが難しい高齢者に夕食を届け、あわせて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の用意が困難な人
+  - 上記のほか、市長が特に認める人も対象
+  where: 介護高齢課 地域包括支援係
+  url: https://www.city.ashibetsu.hokkaido.jp/docs/5811.html
+  confidence: high
+  amount: 1食500円。週6回、または週3回（月水金／火木土）から選ぶ
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: ひとり暮らしで緊急時に動きにくい人に、緊急通報装置を設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 虚弱な高齢者か重度身体障がい者で、緊急時に動きにくい人
+  - または突発的に命に関わる症状が出る持病がある人
+  - 緊急時に動く通報事業協力員を指定する
+  where: 介護高齢課 地域包括支援係
+  url: https://www.city.ashibetsu.hokkaido.jp/docs/5784.html
+  confidence: high
+  amount: 設置費と電池交換は市が負担。装置のレンタル料は月380円（税抜）
+- category: koken
+  name: 成年後見の市長申立てと後見人報酬の助成
+  name_on_page: 芦別市成年後見制度利用支援事業
+  summary: 親族の申立てが望めない人の後見申立てを市長が行い、費用を市が負担する。
+  who: {}
+  at_application:
+  - 成年後見が必要で、申立てをする親族（4親等内）がいない人
+  - 負担能力があれば、後日本人に費用を求償する
+  - 後見人報酬の助成は、報酬の負担が困難で一定の条件の人
+  where: 介護高齢課 地域包括支援係
+  url: https://www.city.ashibetsu.hokkaido.jp/docs/5975.html
+  confidence: high
+- category: sonota
+  name: 高齢者の温泉入浴券・バス乗車券の交付
+  name_on_page: 高齢者のための温泉・バス入浴利用券の交付について
+  summary: 市内の入浴施設で使う入浴券と、芦別温泉線のバス乗車券を交付する。
+  who: {}
+  at_application:
+  - 市内に居住している
+  - 満70歳以上、または70歳未満で身体障がい者手帳1〜4級
+  - 窓口で本人確認書類を見せて受け取る
+  where: 市窓口（介護高齢課 地域包括支援係）
+  url: https://www.city.ashibetsu.hokkaido.jp/docs/1541535.html
+  confidence: high
+  amount: 年度ごとに入浴券10枚、バス乗車券20枚（往復10回分）
+- category: sonota
+  name: 生活支援おもいやりサポーター（有償の困りごと手伝い）
+  name_on_page: 生活支援おもいやりサポーターの活動について
+  summary: 有償ボランティアが話し相手やゴミ出しなど日常の困りごとを手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 利用の希望は芦別市社会福祉協議会に問い合わせる
+  where: 芦別市社会福祉協議会
+  url: https://www.city.ashibetsu.hokkaido.jp/docs/7257.html
+  confidence: high
+  amount: 30分ごとに200円（利用者負担）
+not_found:
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

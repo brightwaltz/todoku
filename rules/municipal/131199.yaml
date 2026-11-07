@@ -1,0 +1,182 @@
+city: '131199'
+name: 板橋区
+site: www.city.itabashi.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 高齢者紙おむつ等の支給
+  summary: 常時失禁状態の要介護者に、区の支給品から選んだ紙おむつ等を無料で配送する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 板橋区に住民登録がある（40〜64歳で要介護認定中の人も可）
+  - 常時失禁の状態である
+  - 世帯で最も所得の多い人の所得が基準額以下
+  - 生活保護世帯、介護保険施設の入所者などは対象外
+  - 病院・施設指定のおむつを使う人は現金助成
+  where: 高齢政策課 高齢者相談・給付係、おとしより相談センター、福祉事務所、郵送、電子申請
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/josei/1044737/index.html
+  confidence: high
+  amount: 区の支給品を無料配送（23区外は送料実費）。入院・入所中は購入費の一部を助成
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システムの貸与
+  name_on_page: 板橋区高齢者緊急通報システム
+  summary: 急病時に通報機やペンダントで24時間のコールセンターにつながる装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 固定電話か携帯電話を持っている
+  - 緊急連絡先の登録と自宅の合鍵1本の預け入れが必要
+  - 日中独居は同居者全員の就労証明書が必要
+  where: 高齢政策課 高齢者相談・給付係、おとしより相談センター、郵送、電子申請
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/josei/1003556.html
+  confidence: high
+  amount: 月額400円（住民税非課税世帯）、1,400円（課税世帯）、生活保護世帯は無料
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 高齢者理・美容サービス
+  summary: 理美容室に行けない要介護3以上の人に、自宅で調髪を受けられる券を年6枚まで出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 板橋区内に住所があり、区内で介護を受けている
+  - 理美容室に出向けない
+  - 調髪のとき介助してくれる人が必要
+  where: 高齢政策課 高齢者相談・給付係、おとしより相談センター、郵送、電子申請
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/josei/1003563.html
+  confidence: high
+  amount: 年6枚まで。1回500円（非課税世帯）、1,500円（課税世帯）、生活保護世帯は無料
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 手帳の対象外で中等度以上の難聴の非課税世帯の高齢者に、補聴器購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 板橋区内に住所がある
+  - 聴覚障害で身体障害者手帳の対象にならない
+  - 耳鼻咽喉科医が中等度以上の難聴と判定し、補聴器が望ましいとした
+  - 交付決定前に買った補聴器は対象外、助成は1人1回
+  where: 高齢政策課 高齢者相談・給付係、おとしより相談センター
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/josei/1031785.html
+  confidence: high
+  amount: 購入費のうち上限5万円
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付
+  summary: シルバーカー、空気清浄機、電磁調理器または電子レンジを、条件に合う高齢者に給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 用具ごとに条件が違う
+  - シルバーカー：歩行に補助が必要（要介護2〜5は対象外）
+  - 空気清浄機：要介護1以上でおむつか簡易トイレを常時使用
+  - 電磁調理器・電子レンジ：防火の配慮が必要な一人暮らしなど
+  - 施設入所中・入院中は原則対象外
+  where: 高齢政策課 高齢者相談・給付係、おとしより相談センター、郵送、電子申請
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/josei/1003564.html
+  confidence: high
+  amount: 自己負担は用具価格の1割（非課税世帯）か3割（課税世帯）。生活保護世帯は無料
+- category: jutaku
+  name: 高齢者住宅設備改修費の助成
+  name_on_page: 板橋区高齢者住宅設備改修費助成事業
+  summary: 手すり取付け、浴槽や流し・洗面台の取替えの費用を、介護保険の住宅改修とは別に助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 板橋区に住民票があり、住民票と同じ住宅に住んでいる
+  - 介護保険の認定結果が出ている、または介護予防が必要と認められた
+  - 着工前に事前申請が必要。リフォーム目的は対象外
+  where: 担当ケアマネジャー、おとしより相談センター（問合せは生涯活躍推進課）
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/josei/1003554.html
+  confidence: high
+- category: haikai
+  name: 認知症の人の GPS 位置探索サービス利用料の補助
+  name_on_page: 認知症の方の位置情報探索サービス「探せるナビ」
+  summary: 道に迷うおそれのある認知症の人が持つ GPS 機器の貸出費用を補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内に住所があり、認知症または疑いがある
+  - 埋込型ペースメーカーを装着していない
+  - 施設入所中・入院中は対象外
+  where: 高齢政策課 高齢者相談・給付係、おとしより相談センター、郵送
+  url: https://www.city.itabashi.tokyo.jp/kenko/ninchisho/shien/1003777.html
+  confidence: high
+- category: mimamori
+  name: 高齢者見守りキーホルダー
+  name_on_page: 高齢者見守りキーホルダー
+  summary: 緊急連絡先を区に登録し、識別番号入りのキーホルダーを無料でもらえる。
+  who: {}
+  at_application:
+  - 板橋区内に住所がある65歳以上
+  - 65歳未満でも若年性認知症で心配な人は対象
+  - 緊急連絡先の人の同意を事前に得る
+  where: 住所地を担当するおとしより相談センター
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/anshin/1003571.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 高齢者安否確認コール
+  name_on_page: 高齢者安否確認コール
+  summary: ひとり暮らしの高齢者に、週2回以内の定期電話で安否確認を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 板橋区内に住所がある
+  - 電話に応答でき、自分の状況を説明できる
+  - 駆けつけられる緊急連絡先の登録が必須
+  where: 高齢政策課 高齢者相談・給付係、おとしより相談センター、郵送
+  url: https://www.city.itabashi.tokyo.jp/kenko/kourei/anshin/1003568.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等の報酬助成
+  summary: 成年後見が始まった低所得の人に、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 区民など。親族が後見人の場合は対象外
+  - 世帯全員非課税で預貯金130万円以下、または生活保護
+  - 報酬付与審判の翌日から原則180日以内に申請
+  - 65歳以上は高齢政策課特別援護係が窓口
+  where: 高齢政策課 特別援護係（65歳以上の場合）
+  url: https://www.city.itabashi.tokyo.jp/kenko/fukushi/seinen/1003815.html
+  confidence: high
+  amount: 報酬付与審判額と月額2万8千円×対象月数の低い方
+not_found:
+- iro
+- shingu
+- gaishutsu

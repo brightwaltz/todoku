@@ -1,0 +1,174 @@
+city: '012076'
+name: 帯広市
+site: www.city.obihiro.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: ボタンで 24 時間コールセンターにつながる通報装置を設置し、月 1 回の安否確認の電話もある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らしで、身体上日常生活に注意を要する人
+  - または高齢者のみの世帯で、要介護3以上で寝たきり・認知症状のある人を同居で介護する病弱な人
+  where: ひとり暮らしは地域包括支援センター、高齢者のみの世帯は介護高齢福祉課
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004977.html
+  confidence: high
+  amount: 設置費用と通話料は無料（固定型の移設は利用者負担 1 回 1 万 3 千円程度）
+- category: gaishutsu
+  name: 高齢者バス無料乗車証
+  name_on_page: 高齢者おでかけサポートバス事業
+  summary: 70歳以上の市民に、市内の路線バスが無料になる乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 帯広市民（年度内に70歳になる人を含む）
+  - バスを利用できる身体状況である
+  where: 市役所 1 階 介護高齢福祉課（本人が窓口で申請）
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004976.html
+  confidence: high
+  amount: 乗車証の交付料 500 円（再交付も 500 円）。市内分のバス運賃が無料
+- category: ribiyo
+  name: ねたきり高齢者等の訪問理美容
+  name_on_page: 理美容サービス
+  summary: 理容師・美容師が自宅を訪問する年 6 回分の利用券を郵送する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 寝たきりの状態、または一定の認知症状がある
+  - 入院中の人と特養・老健・グループホーム等の入所者は対象外
+  where: 介護高齢福祉課（申請は初年度のみ）
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004978.html
+  confidence: high
+  amount: 無料（理容は刈込・顔剃り、美容はカットのみ）
+- category: shingu
+  name: 寝具類のクリーニング
+  name_on_page: 寝具類クリーニングサービス
+  summary: 事業者が寝具を受け取りクリーニングして届ける年 2 回分の利用券を郵送する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 寝たきりの状態、または一定の認知症状がある
+  - 入院中の人と特養・老健・グループホーム等の入所者は対象外
+  where: 介護高齢福祉課（申請は初年度のみ）
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004979.html
+  confidence: high
+  amount: 無料（掛布団・敷布団は各 1 点、そのほか最大 5 点まで）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 夕食を週 6 日まで届け、安否も確認する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住んでいる
+  where: 地域包括支援センターまたは担当のケアマネジャー経由、介護高齢福祉課
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004981.html
+  confidence: high
+  amount: 弁当代は利用者が事業者に支払う（市の助成なし）
+- category: mimamori
+  name: ひとり暮らし高齢者の訪問安否確認
+  name_on_page: ひとり暮らし高齢者訪問活動事業（安否確認）
+  summary: ひとり暮らしの高齢者宅へ週 3 回訪問して安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 健康上不安があり安否確認が必要と認められる
+  - 近隣に親族がいる等で支障がないと判断されると対象外
+  where: 介護高齢福祉課（地域包括支援センターが登録を手伝う）
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004982.html
+  confidence: high
+  amount: 無料
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の要介護者を在宅で介護する低所得世帯に、紙おむつ等と引換えの給付券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と介護者が帯広市民
+  - 認定調査票の排尿・排便が一部介助・全介助・見守り等
+  - 世帯員全員が非課税、または市民税の全部が免除されている
+  - 介護保険施設等に入所しておらず、長期入院もしていない
+  where: 介護高齢福祉課（申請書を郵送または提出。毎年 6 月に更新申請）
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004986.html
+  confidence: high
+  amount: 月 6,250 円（年 7 万 5 千円）まで。紙おむつ・紙パンツ・尿取りパッド・清拭綿
+- category: haikai
+  name: 認知症高齢者等 SOS ネットワークの事前登録
+  name_on_page: 帯広市認知症高齢者等SOSネットワーク事業
+  summary: 行方不明に備えて情報を事前登録し、登録番号と二次元コード入りのシールを受け取る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 帯広市に住む、行方不明になるおそれのある高齢者等
+  - 認知症の人・若年性認知症・認知症の疑いのある人
+  where: 介護高齢福祉課（ケアマネジャー・地域包括支援センターにも相談可）
+  url: https://www.city.obihiro.hokkaido.jp/kenko/fukushi/kourei/1004990.html
+  confidence: high
+- category: jutaku
+  name: あんしん住宅改修補助金
+  name_on_page: あんしん住宅改修補助金
+  summary: 身体状況に合わせた住宅の段差解消などの改修工事費の一部を補助する。
+  who: {}
+  at_application:
+  - 要介護（要支援）認定者、または身体障害者手帳 1・2 級の人
+  - 市内に住民票があり、改修する住宅に居住（予定）
+  - 世帯の所得合計が 550 万円以下、市税等の滞納がない
+  - 工事費 10 万円以上、交付決定前の着工は対象外
+  where: 建築開発課（市役所 6 階）
+  url: https://www.city.obihiro.hokkaido.jp/kurashi/sumai/hojo/1016889.html
+  confidence: high
+  amount: 対象工事費の 80%、上限 30 万円
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族以外の第三者後見人等への報酬を支払うことが難しい人に、助成を行う。
+  who: {}
+  at_application:
+  - 親族以外の第三者後見人等への報酬の支払いが困難な人
+  where: 地域福祉課（成年後見支援センター「みまもーる」でも相談可）
+  url: https://www.city.obihiro.hokkaido.jp/kenko/shien/fukushi/1005048.html
+  confidence: low
+not_found:
+- iro
+- hochoki
+- nichijo-yogu

@@ -1,0 +1,348 @@
+city: '131181'
+name: 荒川区
+site: www.city.arakawa.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成
+  name_on_page: 紙おむつ購入費の助成
+  summary: 寝たきりや認知症などで紙おむつが必要な方に、購入券または現金で助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上、または40〜64歳の介護保険第2号被保険者
+  - 要介護4・5、または要介護1〜3で認知症がある
+  - 入院中で上記に準ずる方、身体障害者手帳1・2級、愛の手帳1・2度も可
+  - 介護保険施設入所中・生活保護の方は対象外
+  - 第2号被保険者は要介護認定の条件のみ対象
+  where: 高齢者福祉課（区役所2階5番）
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/hokenfukushi.html
+  confidence: high
+  amount: 購入券：住民税非課税は月7,800円分、課税は月3,900円分（1割は自己負担）
+- category: shingu
+  name: 寝具の乾燥消毒・水洗いサービス
+  name_on_page: 寝具乾燥消毒水洗いサービス
+  summary: 業者が自宅で寝具を預かり、月1回乾燥消毒し、年1回水洗いもする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護4・5、または要介護1〜3で認知症がある
+  - 寝具を干す場所や干す人がいない等の事情がある
+  - 申請後に聴き取り調査がある
+  where: 高齢者福祉課（区役所2階5番）
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/hokenfukushi.html
+  confidence: high
+  amount: 費用の10％負担（生活保護は無料）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 理美容サービス
+  summary: ねたきりの在宅高齢者が、自宅で理美容を受けられるサービス券をもらえる。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理容は調髪のみ
+  where: 高齢者福祉課（区役所2階5番）
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/hokenfukushi.html
+  confidence: high
+  amount: サービス券は年6枚。1回の自己負担は2,000円
+- category: sonota
+  name: 在宅介護者のマッサージ利用券
+  name_on_page: 在宅介護者元気回復マッサージサービス
+  summary: 重度の要介護者を自宅で介護する家族に、マッサージの利用券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者を在宅で介護する区内在住の家族（1介護者につき1名）
+  - 要介護者が老人保健施設等に入所している場合は対象外
+  where: 高齢者福祉課高齢者福祉係
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/hokenfukushi.html
+  confidence: low
+- category: haishoku
+  name: 配食見守りサービス
+  name_on_page: 配食見守りサービス
+  summary: 昼食を届けながら安否を確認する。利用にはみまもりネットワークへの登録が必要。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 自立生活に不安がある
+  - 日中の安否確認の手段がなく、食事の仕度が困難
+  - 介護サービス利用の曜日は利用不可
+  where: 各地域の高齢者みまもりステーション（問合せは高齢者福祉課）
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/shien.html
+  confidence: high
+  amount: 自己負担あり（事業者・食事内容による）。週1〜7食
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: ボタンやセンサーで異常を知らせる機器を設置し、警備員が駆けつける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - alone_daytime
+    - elderly_only
+  at_application:
+  - 日常生活に不安を感じている
+  - 日中独居は1日4時間以上ひとりになる場合
+  - 鍵を事業者に預け、緊急連絡先を指定する
+  where: 高齢者福祉課高齢者福祉係
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/shien.html
+  confidence: high
+  amount: 住民税課税は月200円または300円、非課税は0円
+- category: mimamori
+  name: 銭湯みまもり隊
+  name_on_page: 銭湯みまもり隊（見守り支援員銭湯派遣事業）
+  summary: 銭湯に見守り支援員を派遣し、入浴が不安な高齢者を見守る。
+  who: {}
+  at_application:
+  - 区内在住でおおむね65歳以上
+  - ひとりで入浴できるが不安がある、要支援2までの方
+  - 事前申込みが必要（定員あり）
+  where: 地域包括支援センター、高齢者福祉課
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/sento-mimamori.html
+  confidence: high
+  amount: 見守りは無料（銭湯の入浴料は自己負担）
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: 行方不明のおそれがある認知症の方に、二次元コード付きの見守りシールを無料で交付する。
+  who:
+    age_min: 40
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内に住民登録がある
+  - 認知症で外出中に行方不明になるおそれがある
+  where: 高齢者福祉課介護予防事業係、地域包括支援センター
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/ninchishou/ninshisyou-mimamoriseal.html
+  confidence: high
+  amount: 無料。アイロンシール20枚と蓄光シール10枚
+- category: koken
+  name: 成年後見制度の申立費用の助成
+  name_on_page: 成年後見制度申立費用助成
+  summary: 申立ての経費を負担しにくい方に、費用を助成する。
+  who: {}
+  at_application:
+  - 申立ての経費の負担が困難
+  - 細かい要件は社会福祉協議会に確認
+  where: 荒川区社会福祉協議会（成年後見・権利擁護センター あんしんサポートあらかわ）
+  url: https://www.city.arakawa.tokyo.jp/a026/fukushisuishin/seinenkouken.html
+  confidence: low
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見人等に対する報酬助成
+  summary: 後見人等の報酬を負担しにくい方に、費用を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度を利用中で報酬の負担が困難
+  - 細かい要件は社会福祉協議会に確認
+  where: 荒川区社会福祉協議会（成年後見・権利擁護センター あんしんサポートあらかわ）
+  url: https://www.city.arakawa.tokyo.jp/a026/fukushisuishin/seinenkouken.html
+  confidence: low
+- category: jutaku
+  name: 住宅設備改修給付（区の上乗せ）
+  name_on_page: 住宅設備改修給付
+  summary: 介護保険の住宅改修の対象外の浴槽・流し・便器の取替え費を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 住宅改修が必要と認められる
+  - 工事前の申請が必要
+  - 流し・洗面台は要介護4・5で車椅子利用の方のみ
+  where: 介護保険課介護給付係
+  url: https://www.city.arakawa.tokyo.jp/a029/koureishairyou/sumai/koureijuukai.html
+  confidence: high
+  amount: 浴槽37.9万円、流し・洗面台15.6万円、便器10.6万円まで。費用の1〜3割は自己負担
+- category: jutaku
+  name: 住宅改修予防給付（要介護非該当の方）
+  name_on_page: 住宅改修予防給付
+  summary: 要介護認定で非該当になった方に、手すり・段差解消などの工事費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護認定が非該当で、結果から申請まで6か月以内
+  - 住宅改修が必要と認められる
+  - 工事前の申請が必要
+  where: 介護保険課介護給付係
+  url: https://www.city.arakawa.tokyo.jp/a029/koureishairyou/sumai/koureijuukai.html
+  confidence: high
+  amount: 上限20万円。費用の1〜3割は自己負担
+- category: jutaku
+  name: 住宅設備等新設給付
+  name_on_page: 住宅設備等新設給付
+  summary: 1階に居室がない住宅で、床や浴槽などを新設する費用を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 1階が元は工場・店舗等で居室がない住宅
+  - 住宅改修が必要と認められる
+  - 工事前の申請が必要
+  where: 介護保険課介護給付係
+  url: https://www.city.arakawa.tokyo.jp/a029/koureishairyou/sumai/koureijuukai.html
+  confidence: high
+  amount: 1階の床35万円、浴槽37.9万円、流し15.6万円、便器10.6万円まで
+- category: jutaku
+  name: 転倒防止用手すりの設置給付
+  name_on_page: 転倒防止給付
+  summary: 介護認定を受けたことがない方の、手すり設置費用を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - これまで要介護・要支援認定を受けたことがない
+  where: 介護保険課介護給付係
+  url: https://www.city.arakawa.tokyo.jp/a029/koureishairyou/sumai/koureijuukai.html
+  confidence: high
+  amount: 手すり6万円まで。費用の1〜3割は自己負担
+- category: gaishutsu
+  name: シルバーパス購入費の助成
+  name_on_page: シルバーパスの購入費を助成します
+  summary: 東京都シルバーパスを12,000円か13,000円で買った方に購入費の一部を助成する。
+  who:
+    age_min: 70
+    tax:
+    - self_taxed
+  at_application:
+  - 令和8年度分は有効期限が令和9年9月30日のパスが対象
+  - 前年の合計所得金額が135万円超
+  - 1,000円・2,000円で購入した方、払戻し済みの方は対象外
+  where: 高齢者福祉課シルバーパス購入費助成担当（郵送・オンライン申請）
+  url: https://www.city.arakawa.tokyo.jp/a028/silverpass/kokuti.html
+  confidence: high
+  amount: 11,000円（有効期間内1回限り）
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 荒川区高齢者補聴器購入費助成事業
+  summary: 老人性難聴の方が補聴器を買うとき、費用の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻咽喉科医が補聴器の必要性を認める
+  - 補装具費の支給を受けられない方
+  - 購入前に申請して決定通知を受ける
+  where: 高齢者福祉課高齢者福祉係
+  url: https://www.city.arakawa.tokyo.jp/a028/koureisya-sabisu/hotyouki.html
+  confidence: high
+  amount: 上限72,450円。5年に1台（片耳分を1台）
+- category: nichijo-yogu
+  name: 自立支援用具の給付
+  name_on_page: 自立支援用具の給付
+  summary: 歩行や入浴に支障のある方に、シルバーカー・手すり・シャワーベンチ等を給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 歩行・入浴に支障がある
+  - 品目ごとに要介護度の条件あり（シルバーカー等は要介護1〜5を除く）
+  - 事業者に相談後、事業者または地域包括支援センターで申請
+  where: 指定の事業者、地域包括支援センター
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/nitijosien.html
+  confidence: high
+  amount: 費用の1割負担（例：シルバーカーA 2,720円）。生活保護は無料
+- category: sonota
+  name: 交通安全杖の支給
+  name_on_page: 交通安全杖の支給
+  summary: 杖がないと歩きにくい方に、杖を支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住
+  - 杖を使わないと歩行が困難
+  - 再申請は前回から3年経過後
+  where: 高齢者福祉課高齢者福祉係
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/nitijosien.html
+  confidence: high
+- category: sonota
+  name: 老人性白内障の特殊眼鏡等の費用助成
+  name_on_page: 老人性白内障特殊眼鏡等費用の助成
+  summary: 白内障の手術後に特殊眼鏡やコンタクトが必要な方に、費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 老人性白内障で開眼手術を受け、人工水晶体が難しい
+  - 所得制限あり（基準は頁に無し）
+  where: 高齢者福祉課高齢者福祉係
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/nitijosien.html
+  confidence: low
+- category: sonota
+  name: 高齢者入浴カード「ふろわり200」
+  name_on_page: 高齢者入浴カード「ふろわり200」
+  summary: 区内の公衆浴場を1回200円で使える入浴カードを交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 区内在住
+  where: 高齢者福祉課（区民事務所・地域包括支援センターでは受付のみ）
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/shien/nitijosien.html
+  confidence: high
+  amount: 1回200円で入浴。年度内最大52回
+- category: sonota
+  name: 高齢者スマホ購入費の助成
+  name_on_page: 高齢者スマホ購入費助成金交付事業
+  summary: 対象のスマホを初めて買う方に、購入費用の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 区の協力店舗で対象機種を購入
+  - 店のスマホ教室等でアプリ設定を行う
+  - 申請は電子申請、令和9年3月31日まで
+  where: 高齢者福祉課高齢者福祉係（電子申請）
+  url: https://www.city.arakawa.tokyo.jp/a028/koureisya-sabisu/sumahojosei.html
+  confidence: high
+  amount: 上限30,000円（1人1回限り）
+- category: sonota
+  name: 高齢者住み替え家賃等の助成
+  name_on_page: 高齢者住み替え家賃等助成事業
+  summary: 立ち退き等で区内の別の民間賃貸へ転居する高齢者世帯に、家賃等の一部を助成する。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+  at_application:
+  - 70歳以上のひとり暮らし、または配偶者・兄弟姉妹との世帯
+  - 区内に2年以上居住し、区内の民間賃貸間で転居
+  - 要介護認定者は要支援1・2、要介護1のみ
+  - 契約前に必ず相談する
+  where: 高齢者福祉課高齢者福祉係
+  url: https://www.city.arakawa.tokyo.jp/a028/koureishairyou/sumai/yachinjosei.html
+  confidence: high
+  amount: 家賃差額月4万円まで。礼金・仲介手数料・転居費用等も一部助成
+  more_urls:
+  - https://www.city.arakawa.tokyo.jp/a028/koureishairyou/sumai/yachinjosei.html
+not_found:
+- iro
+- chusha
+- yutai

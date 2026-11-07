@@ -1,0 +1,278 @@
+city: '131083'
+name: 江東区
+site: www.city.koto.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給・購入費助成
+  name_on_page: 高齢者紙おむつ支給及びおむつ購入費助成
+  summary: 紙おむつを毎月自宅へ配送。持込できない病院に入院中なら購入費を助成。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護3〜5、または診断書で常時おむつ要、または入院1か月以上
+  - 介護保険料段階が第1〜8段階であること
+  - 特養・老健などの施設に入所中の人は対象外
+  - 生活保護を受けている人は対象外
+  where: 介護保険課 在宅支援係（区役所3階4番）
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6590.html
+  confidence: high
+  amount: 現物は75点まで無料（超過は1点100円）。入院中の購入費助成は月7,500円まで
+- category: haishoku
+  name: 高齢者の食事サービス（配食）
+  name_on_page: 高齢者食事サービス
+  summary: 昼食か夕食を届け、安否も確認する。1日1食、週7食まで。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 病気などで調理や買物が難しい
+  - 同居者がいる場合、同居者も病気か就労で調理や買物が難しい
+  - アセスメント票が必要（長寿サポートセンターかケアマネに依頼）
+  where: 介護保険課 在宅支援係、長寿サポートセンター
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6589.html
+  confidence: high
+  amount: 費用は配食業者が定める金額
+  more_urls:
+  - http://www.city.koto.lg.jp/210105/fukushi/koresha/madoguchi/documents/koreihb2024_04.pdf
+- category: kinkyu-tsuho
+  name: 高齢者の救急通報システム
+  name_on_page: 高齢者救急通報システムの設置
+  summary: ペンダントを押すと警備会社に通報され、警備員がかけつける装置を設置。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 慢性疾患などで日常生活に常時注意が必要
+  - 自宅の鍵を警備会社に預ける
+  where: 長寿応援課 シニア活躍支援係（区役所3階8番）
+  url: https://www.city.koto.lg.jp/211102/fukushi/koresha/service/jisshi/6592.html
+  confidence: high
+  amount: 自己負担は月1,500円（住民税非課税は750円、生活保護などは免除）
+  more_urls:
+  - http://www.city.koto.lg.jp/210105/fukushi/koresha/madoguchi/documents/koreihb2024_04.pdf
+- category: shingu
+  name: 高齢者の寝具乾燥・消毒
+  name_on_page: 高齢者寝具乾燥サービス
+  summary: 業者が自宅で寝具を乾燥・消毒・水洗いする。利用者負担なし。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 65歳以上だけの世帯、または65歳以上と身障1・2級か愛の手帳1・2度の人の世帯
+  where: 介護保険課 在宅支援係（区役所3階4番）
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6585.html
+  confidence: high
+  amount: 利用者負担なし。乾燥消毒は年10回、汚れ落とし・水洗いは年1回
+- category: ribiyo
+  name: 高齢者の出張調髪
+  name_on_page: 高齢者出張調髪サービス
+  summary: 理容師・美容師が自宅に来て調髪する（顔そりは理容のみ）。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 病気などで自分では理美容店に行けない
+  - 病院や施設に入っている人は使えない
+  where: 介護保険課 在宅支援係（区役所3階4番）
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6586.html
+  confidence: high
+  amount: 利用者負担なし。年6回まで
+- category: sonota
+  name: 高齢者の出張三療（はり・灸・マッサージ）
+  name_on_page: 高齢者出張三療サービス
+  summary: 施術師が自宅を訪問し、はり・灸・マッサージのどれか1つを行う。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 自分では施術所へ行けない（冊子の記載）
+  - 入院・入所していない
+  where: 介護保険課 在宅支援係
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6587.html
+  confidence: low
+  amount: 本人は負担なし（家族介護の高齢者は470円）。年6回まで
+  more_urls:
+  - http://www.city.koto.lg.jp/210105/fukushi/koresha/madoguchi/documents/koreihb2024_04.pdf
+- category: hochoki
+  name: 高齢者の補聴器の支給・購入費助成
+  name_on_page: 高齢者補聴器の現物支給及び購入費助成
+  summary: 耳鼻科で必要と認められた人に補聴器を支給、または購入費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 耳鼻咽喉科の医師の証明と聴力検査表を付けて申請
+  - 障害者総合支援法の補聴器支給を受けていない
+  - 再支給は前回の決定から5年たっている
+  where: 介護保険課（区役所3階4番）、長寿サポートセンター
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6597.html
+  confidence: high
+  amount: 購入費助成は上限72,450円（これ未満は実費）。現物は区指定の補聴器1台
+- category: jutaku
+  name: 高齢者の住宅設備改修給付（介護保険外）
+  name_on_page: 高齢者住宅設備改修給付（介護保険外）
+  summary: 手すり・浴槽・トイレなどの改修費を、介護保険とは別に給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 予防給付は認定が非該当でも、要支援・要介護のおそれがあればよい
+  - 浴槽・洗面台・トイレ・階段昇降機は要支援・要介護の認定が必要
+  - 同一種目につき1世帯1回限り。着工前に申請
+  - 老朽化の改修・新築・建替えは対象外
+  where: 介護保険課 在宅支援係（区役所3階4番）
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6602.html
+  confidence: high
+  amount: 基準額内は原則1割負担。基準額は予防給付20万円、浴槽37.9万円、洗面台等15.6万円、トイレ10.6万円、階段昇降機80万円
+  more_urls:
+  - https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/documents/koureisyajuutakusetubigoannnai211.pdf
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 高齢者日常生活用具の給付（介護保険外）
+  summary: シルバーカー・マットレス・入浴補助具・電磁調理器を1割負担で給付。
+  who:
+    age_min: 65
+  at_application:
+  - マットレスは要介護1以下で社協のリサイクルベッドを使う人
+  - 入浴補助具は認定が非該当（自立）で入浴に困難がある人
+  - 電磁調理器は認知機能が低下し防火配慮が必要なひとり暮らしの人
+  - シルバーカーは取扱店で試乗が必要
+  where: 介護保険課（区役所3階4番）、長寿サポートセンター
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/82595.html
+  confidence: high
+  amount: 基準額内は1割負担（入浴補助具は所得により2〜3割）。各用具1人1回
+- category: nichijo-yogu
+  name: 高齢者の自動消火器の設置
+  name_on_page: 高齢者自動消火器の設置
+  summary: 自動消火器を設置して、火災に備える。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 65歳以上のみ、または65歳以上と身障1・2級か愛の手帳1・2度の人だけの世帯（日中のみも可）
+  where: 介護保険課 在宅支援係
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6593.html
+  confidence: low
+  amount: 無料（撤去後の原状回復の費用は利用者負担）
+  more_urls:
+  - http://www.city.koto.lg.jp/210105/fukushi/koresha/madoguchi/documents/koreihb2024_04.pdf
+- category: sonota
+  name: 高齢者の家具転倒防止器具の取付
+  name_on_page: 高齢者家具転倒防止器具の取付
+  summary: 業者が訪問し、家具3点まで転倒防止器具を無料で取り付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 器具は6種類から選び、1世帯3か所まで
+  where: 介護保険課 在宅支援係
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6594.html
+  confidence: low
+  amount: 家具3点まで無料
+  more_urls:
+  - http://www.city.koto.lg.jp/210105/fukushi/koresha/madoguchi/documents/koreihb2024_04.pdf
+- category: gaishutsu
+  name: 高齢者のリフト付福祉タクシー
+  name_on_page: 高齢者リフト付福祉タクシー
+  summary: 車いすのまま乗れるタクシーを、普通車と同じメーター料金で使える。
+  who:
+    age_min: 65
+  at_application:
+  - 車いす使用か寝たきりの人（冊子の記載）
+  - 初回に利用登録をして認定番号を得る
+  where: 介護保険課 在宅支援係（区役所3階4番）
+  url: https://www.city.koto.lg.jp/212106/fukushi/koresha/service/jisshi/6600.html
+  confidence: low
+  amount: メーター料金（普通車タクシーと同額）
+  more_urls:
+  - http://www.city.koto.lg.jp/210105/fukushi/koresha/madoguchi/documents/koreihb2024_04.pdf
+- category: gaishutsu
+  name: 東京都シルバーパス購入費の助成
+  name_on_page: 【10月1日受付開始】東京都シルバーパスの購入費を助成します
+  summary: 12,000円でシルバーパスを買った人に10,000円を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 令和8年度住民税が課税で、令和7年の合計所得が135万円超
+  - 令和8年10月以降有効のシルバーパスを12,000円で購入
+  - 購入後に申請。有効期間内に1回限り
+  where: 長寿応援課 長寿応援係（区役所3階9番）
+  url: https://www.city.koto.lg.jp/211100/silverpassjyosei.html
+  confidence: high
+  amount: 10,000円（有効期間内1回）
+- category: mimamori
+  name: 声かけ訪問
+  name_on_page: 声かけ訪問
+  summary: 週1〜3回、乳酸菌飲料を手渡しして声をかけ、安否を確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 安否の確認が必要なひとり暮らし
+  - シルバーピアや老人ホームなどに入居していない
+  - 電話訪問・食事サービスを受けていない
+  - ヘルパー・デイサービスを利用していない
+  - 手渡しで対応できる
+  where: 長寿応援課 シニア活躍支援係、長寿サポートセンター
+  url: https://www.city.koto.lg.jp/211102/fukushi/koresha/service/jisshi/6588.html
+  confidence: high
+  amount: 費用はかからない
+- category: mimamori
+  name: 電話訪問
+  name_on_page: 電話訪問
+  summary: 週1回ほど、社協のボランティアが電話で安否を確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 安否の確認が必要なひとり暮らし
+  - シルバーピアや老人ホームなどに入居していない
+  - 声かけ訪問・食事サービスなどを受けていない
+  - ヘルパー・デイサービスなどを利用していない
+  - 電話で対応できる
+  where: 長寿サポートセンター、長寿応援課 シニア活躍支援係（区役所3階8番）
+  url: https://www.city.koto.lg.jp/211102/fukushi/koresha/service/jisshi/21176.html
+  confidence: high
+  amount: 費用はかからない
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用と、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 区内在住の高齢者・知的障害者・精神障害者
+  - 生活保護か、それに準ずる低所得で費用の負担が困難
+  where: 地域ケア推進課 権利擁護係（区役所3階7番）
+  url: https://www.city.koto.lg.jp/211503/fukushi/koresha/madoguchi/6797.html
+  confidence: high
+  amount: 申立て費用は実費。報酬は在宅月28,000円、入院・入所中は月18,000円が上限
+  more_urls:
+  - http://www.city.koto.lg.jp/210105/fukushi/koresha/madoguchi/documents/koreihb2024_04.pdf
+not_found: []

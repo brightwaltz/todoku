@@ -1,0 +1,64 @@
+city: 012092
+name: 夕張市
+site: www.city.yubari.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置
+  summary: ボタンや火災・生活リズムの異常で警備会社に通報する装置を、市の負担で自宅に設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上、または1・2級の重度身体障害者
+  - または突発的に命に関わる持病があり緊急時に不安がある人
+  where: 生活福祉課 生活福祉係
+  url: https://www.city.yubari.lg.jp/soshiki/11/1619.html
+  confidence: high
+  amount: 設置工事・取外し・故障修理・電池交換は市が負担。合鍵作製料などは本人負担
+- category: gaishutsu
+  name: 敬老乗車証（バス等の乗車証）
+  name_on_page: 敬老乗車証
+  summary: 70歳以上の市民に、夕鉄バスやデマンドバス等を1回100円で使える乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 夕張市内に居住している
+  where: 生活福祉課 生活福祉係、南支所、各ふれあいサロン
+  url: https://www.city.yubari.lg.jp/soshiki/11/1618.html
+  confidence: high
+  amount: 乗降1回ごとに100円
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、成年後見の申立費用や後見人等への報酬の一部または全部を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、住民票がある
+  - 市の介護保険の被保険者でサービス利用中、または障害福祉サービス利用中
+  - 生活保護受給中、または収入・資産から費用負担が困難と認められる
+  - 報酬助成は、後見人等が親族の場合は対象外
+  where: 65歳以上は包括支援係（地域包括支援センター）、65歳未満の障がい者は生活福祉係
+  url: https://www.city.yubari.lg.jp/soshiki/10/1530.html
+  confidence: high
+  amount: 報酬助成は月額上限 28,000円（施設入所・長期入院者は 18,000円）
+  more_urls:
+  - https://www.city.yubari.lg.jp/uploaded/attachment/6542.pdf
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- chusha
+- yutai

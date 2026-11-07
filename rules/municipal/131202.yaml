@@ -1,0 +1,247 @@
+city: '131202'
+name: 練馬区
+site: www.city.nerima.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム
+  summary: ボタン通報や異変時に警備員が駆けつける通報機を貸してもらえる。
+  who:
+    age_min: 65
+  at_application:
+  - 慢性疾患等で常時注意が必要、または要支援・要介護認定等がある
+  - ひとり暮らし・高齢者のみ・日中か夜間独居、または同居者全員が要介護や障害者手帳等
+  - 見守りのある施設・住宅に入所していない
+  where: 地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/hitori/zaitakuseikatusien.html
+  confidence: high
+  amount: 月額 課税世帯400円、非課税世帯300円、生活保護世帯は無料
+- category: mimamori
+  name: 生活リズムセンサー
+  name_on_page: 生活リズムセンサー
+  summary: 自宅での動きが少ないとき、警備員が状況確認に駆けつける。
+  who:
+    age_min: 65
+  at_application:
+  - 慢性疾患等で常時注意が必要、または要支援・要介護認定等がある
+  - ひとり暮らし・高齢者のみ・日中か夜間独居、または同居者全員が要介護や障害者手帳等
+  - 緊急通報システムを利用していること
+  - 見守りのある施設・住宅に入所していない
+  where: 地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/hitori/zaitakuseikatusien.html
+  confidence: high
+  amount: 月額 課税世帯600円、非課税世帯200円、生活保護世帯は無料
+- category: mimamori
+  name: 見守り訪問
+  name_on_page: 見守り訪問
+  summary: 区民ボランティアが週1回ほど自宅を訪ねて安否を確かめる。
+  who:
+    age_min: 65
+  at_application:
+  - 慢性疾患等で常時注意が必要、または要支援・要介護認定等がある
+  - ひとり暮らし・高齢者のみ・日中か夜間独居、または同居者全員が要介護や障害者手帳等
+  - 週1回以上の訪問・通所サービスを利用していない
+  - 見守り電話とは併用できない
+  where: 地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/hitori/zaitakuseikatusien.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 見守り電話
+  name_on_page: 見守り電話
+  summary: コールセンターが週1回、安否確認の電話をかけてくれる。
+  who:
+    age_min: 65
+  at_application:
+  - 慢性疾患等で常時注意が必要、または要支援・要介護認定等がある
+  - ひとり暮らし・高齢者のみ・日中か夜間独居、または同居者全員が要介護や障害者手帳等
+  - 週1回以上の訪問・通所サービスを利用していない
+  - 見守り訪問とは併用できない
+  where: 地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/hitori/zaitakuseikatusien.html
+  confidence: high
+  amount: 無料
+- category: haishoku
+  name: 見守り配食
+  name_on_page: 見守り配食
+  summary: 区登録の事業者が食事を届け、異変のおそれがあれば緊急連絡先へ連絡する。
+  who: {}
+  at_application:
+  - 単独で利用する場合は対象要件なし
+  - 緊急通報システムと併用する場合は、そのシステムの対象要件に当たること
+  - 利用者と配食事業者との民間契約になる
+  where: 地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/hitori/zaitakuseikatusien.html
+  confidence: low
+  amount: 弁当代は実費（事業者により異なる）
+- category: mimamori
+  name: 見守りICT機器の導入費用助成
+  name_on_page: 見守りICT
+  summary: 区が指定する見守り機器を導入したとき、費用の一部を助成する。
+  who: {}
+  at_application:
+  - 区が指定した機器の導入費用だけが対象
+  - 年齢などの条件は頁に書かれていない
+  where: 高齢者支援課（詳細は助成の個別頁）
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/hitori/zaitakuseikatusien.html
+  confidence: low
+- category: nichijo-yogu
+  name: 自動消火器の給付
+  name_on_page: 高齢者の居宅の火災予防（自動消火器）
+  summary: 火災時に自動で消火液を散布する固定型の消火器を無料で設置してもらえる。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護3以上、認知症診断のある要介護1・2、またはひとり暮らし
+  - 居住環境等から防火の配慮が必要
+  - 同種の火災予防設備が設置済みの人は対象外
+  where: 管轄の地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/hitori/kasai_yobo.html
+  confidence: high
+  amount: 利用者負担なし
+- category: shingu
+  name: 布団乾燥消毒サービス
+  name_on_page: 布団乾燥消毒サービス
+  summary: 寝具の熱風乾燥消毒などを、委託業者が行う。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 同一敷地内に65歳未満の親族がいる場合は対象外
+  where: 地域包括支援センター（電子申請もあり）
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/nichijo/futon.html
+  confidence: high
+  amount: 乾燥消毒は年10回無料。薬品消毒は100円、水洗いは300円
+- category: shingu
+  name: 寝具クリーニング利用券
+  name_on_page: 寝具クリーニング
+  summary: 寝具のクリーニング利用券を月2枚分交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 特別養護老人ホーム入所中・入院中の人は対象外
+  where: 地域包括支援センター（電子申請もあり）
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/nichijo/futon.html
+  confidence: high
+  amount: 利用券1枚につき100円の負担（集配は別に200円）
+- category: ribiyo
+  name: 出張調髪サービス
+  name_on_page: 高齢者の出張調髪サービス
+  summary: 理容師・美容師が自宅や区内の入院先へ出張して調髪する（年5回まで）。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 外出が困難な人
+  - 特別養護老人ホーム入所者は対象外
+  where: 地域包括支援センター（電子申請もあり）
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/nichijo/shucchochohatsu.html
+  confidence: high
+  amount: 年5回まで、利用券1枚につき500円の負担
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 高齢者聞こえのコミュニケーション支援事業（補聴器購入費用助成）
+  summary: 中等度難聴の高齢者に、補聴器の購入費用の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻咽喉科医の意見書（両耳40dB以上70dB未満）が得られる
+  - 身体障害者手帳（聴覚）の対象でない
+  - 過去5年以内に補聴器の助成を受けていない
+  - 購入前に申請する
+  where: 高齢者支援課（西庁舎3階）、地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/nichijo/20210419134246065.html
+  confidence: high
+  amount: 上限は住民税非課税の人72,000円、課税の人36,000円
+- category: haikai
+  name: 認知症の方のGPS位置情報サービス利用料助成
+  name_on_page: 位置情報提供サービス利用料助成事業
+  summary: 外出して戻れなくなる認知症の人の家族に、GPS端末の費用を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内に住所があり、認知症の人を介護する家族が申請する
+  - 若年性認知症の人と家族も対象
+  where: 地域包括支援センター、高齢者支援課在宅介護支援係（郵送・窓口・オンライン）
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/yukuefumei.html
+  confidence: high
+  amount: 申込金7,700円は全額助成。月額3,300円のうち1,650円を助成
+- category: gaishutsu
+  name: リフト付福祉タクシーの迎車料等の負担
+  name_on_page: 高齢者リフト付福祉タクシー
+  summary: 車いす・寝台のまま乗れる契約タクシーの迎車料と予約料を区が負担する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 外出時に車いすまたは寝台車を利用する
+  where: 区契約のタクシー事業者へ電話予約（問合せは高齢者支援課高齢給付係）
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/nichijo/lift_taxi.html
+  confidence: high
+  amount: 運賃は自己負担。迎車料・予約料相当額を区が負担
+- category: koken
+  name: 成年後見の申立費用助成
+  name_on_page: 成年後見制度における申立費用助成のご案内
+  summary: 費用の負担が難しい人の成年後見申立てにかかる諸費用を助成する。
+  who: {}
+  at_application:
+  - 生活保護等の受給、または住民税非課税で預貯金等50万円以下
+  - 申立人が区長以外で、本人が区に住所を有する（例外あり）
+  - 他の区市町村から同様の助成を受けていない
+  - 審判日から120日以内に申請する
+  where: 福祉部管理課地域福祉係（オンライン・郵送可）
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/chiikifukushi/kenriyougo/moushitatehiyou_2025.html
+  confidence: high
+  amount: 申立手数料・登記手数料・切手代・鑑定費用・診断書作成料が対象
+- category: jutaku
+  name: 自立支援住宅改修給付（設備改修）
+  name_on_page: 自立支援住宅改修給付　設備改修
+  summary: 浴槽・便器・昇降機などの改修費用を、区独自に給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 身体機能の低下や障害で既存の設備が使いにくい
+  - 工事前に申請し、区協定事業者を選ぶ
+  where: 管轄の地域包括支援センター
+  url: https://www.city.nerima.tokyo.jp/hokenfukushi/koreisha/jutaku/setsubi_kaishu.html
+  confidence: high
+  amount: 限度額は浴槽25万円、流し・洗面15.6万円、便器10.6万円、昇降機等100万円。自己負担は1割
+not_found:
+- iro

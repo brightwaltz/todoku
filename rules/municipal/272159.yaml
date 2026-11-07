@@ -1,0 +1,153 @@
+city: '272159'
+name: 寝屋川市
+site: www.city.neyagawa.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 要介護3〜5の方を在宅で介護する非課税世帯の家族に、紙おむつや介護用品を月1回宅配する。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 本人・介護者とも市内に住所がある
+  - 本人世帯と介護者世帯がともに市民税非課税
+  - 要介護3は別に認定調査票上の要件がある
+  - 生活保護受給中の人・入院中の人は対象外
+  where: 高齢介護室（電子申請も可）
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/chiiki/ninni/1378345563425.html
+  confidence: high
+  amount: 一覧から選び、自己負担額がおむつ500円以内・介護用品125円以内の範囲。受け取り時に支払う
+  more_urls:
+  - https://www.city.neyagawa.osaka.jp/material/files/group/49/80326.pdf
+- category: haikai
+  name: 徘徊高齢者のGPS利用料の給付
+  name_on_page: 徘徊高齢者家族支援サービス事業
+  summary: 徘徊感知機器（GPS付き）を介護保険で借りている人に、GPS分の利用料相当額を給付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 介護保険の福祉用具貸与で、GPS付きの徘徊感知機器を利用している
+  where: 高齢介護室
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/chiiki/ninni/1378345563425.html
+  confidence: high
+  amount: GPS機能にかかる利用料（介護保険適用外）相当額、月額上限550円
+- category: haikai
+  name: 徘徊高齢者等発見支援メール事業
+  name_on_page: 徘徊高齢者等発見支援メール事業
+  summary: 徘徊のおそれがある人を事前登録し、行方不明時に特徴をメールで協力者へ配信して早期発見をはかる。
+  who:
+    age_min: 40
+    flags:
+    - wandering_risk
+  at_application:
+  - 市民であること
+  - 申請するのは対象者の家族等
+  where: 高齢介護室
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/chiiki/ninni/1378345563425.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らし等の病弱な高齢者に、消防署や相談センターにつながる緊急通報装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 病弱な高齢者であること
+  - 家族が就労で日中不在の場合も対象
+  where: 高齢介護室（総務・地域支援担当）
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/koureifukusi/1378345224231.html
+  confidence: high
+  amount: 設置料2,000円、通話料は自己負担。市民税所得割87,001円以上かつ所得税70,001円以上は全額自己負担
+- category: gaishutsu
+  name: 外出援助サービス
+  name_on_page: 外出援助サービス
+  summary: 外出が難しい在宅高齢者に、ボランティアの協力で外出の援助を行う（社会福祉協議会）。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市に住民登録があり、一般交通機関の利用が単独では困難
+  - 要支援1以上、身体障害者手帳等、一時的な歩行困難のどれか
+  - 一時的な歩行困難は診断書が必要
+  where: 寝屋川市社会福祉協議会
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/koureifukusi/1378345224231.html
+  confidence: high
+  amount: 市内は片道300円・往復600円、北河内地域は片道400円・往復800円。週2回まで
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の人が他人にけがをさせるなどした際の賠償に備え、市が保険に加入する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 徘徊高齢者等発見支援メール事業の登録者
+  - 認知症高齢者の日常生活自立度が2a以上
+  - 要介護認定がなければ医師の診断書が必要
+  where: 高齢介護室
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/koureifukusi/1378346314946.html
+  confidence: high
+  amount: 賠償責任は最大3億円、死亡50万円・後遺症最大50万円、見舞費用15万円
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キット普及事業
+  summary: 医療情報を入れて冷蔵庫に保管する「命のカプセルあんしん」を無料で配る。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のどれかに当たる人
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - 障害者手帳をもつ人（窓口は障害福祉室など）
+  where: 高齢介護室、地域包括支援センター
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/koureifukusi/1378346314946.html
+  confidence: high
+  amount: 無料（1世帯1本）
+- category: sonota
+  name: 身寄りのない高齢者の情報登録（家族のような安心サポート）
+  name_on_page: 家族のような安心サポート事業
+  summary: 身寄りのない高齢者の連絡先などを市に登録し、緊急時や死後の手続きに使う。事業者の情報提供もある。
+  who:
+    age_min: 65
+  at_application:
+  - 身寄りがない、または身寄りに頼れない
+  - 判断能力や契約能力がある
+  - 生活保護を受けていない
+  where: 高齢介護室（医療・介護連携担当）
+  url: https://www.city.neyagawa.osaka.jp/organization_list/fukushi/koreikaigoka/koureifukusi/27131.html
+  confidence: high
+  amount: 登録は無料
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

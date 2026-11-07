@@ -1,0 +1,71 @@
+city: '012173'
+name: 江別市
+site: www.city.ebetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報サービス利用料の一部助成
+  name_on_page: 緊急通報サービス事業
+  summary: 民間の駆けつけ・健康相談つき緊急通報サービスの月額利用料を市が一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で65歳以上の人だけの世帯、または重度の障がいの人だけの世帯
+  - 心身の障がい・傷病などで家庭内事故への迅速な対応が難しい
+  where: 介護保険課 高齢福祉係
+  url: https://www.city.ebetsu.hokkaido.jp/soshiki/kaigo/127813.html
+  confidence: high
+  amount: 一般世帯は月額2,000円まで、生活保護世帯は月額2,750円まで助成
+- category: haikai
+  name: 行方不明時の位置検索サービス初期費用助成
+  name_on_page: 認知症高齢者等行方不明時位置検索サービス
+  summary: GPS 端末で居場所を検索できるサービスの初期費用を市が助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、在宅で本人を介護している家族などが申請する
+  where: 介護保険課 地域支援事業担当
+  url: https://www.city.ebetsu.hokkaido.jp/soshiki/kaigo/199.html
+  confidence: high
+  amount: 初期費用7,700円（加入料金と標準充電器料金）を助成。月額利用料1,320円は自己負担
+- category: haikai
+  name: みまもりあいステッカーの購入費・利用料の助成
+  name_on_page: みまもりあいステッカー
+  summary: 行方不明時に発見者と家族が連絡できるステッカーの費用を、市が全額助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症などで外出時に行方不明になるおそれのある人
+  - または、その人を在宅で介護している家族など
+  where: 介護保険課 地域支援事業担当
+  url: https://www.city.ebetsu.hokkaido.jp/soshiki/kaigo/96475.html
+  confidence: high
+  amount: ステッカー購入費と年額の利用料を全額助成（令和7年度からの試行）
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 江別市成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、成年後見の申立費用と後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている人など、費用負担が困難と認められる人
+  where: 65歳以上は介護保険課、65歳未満は障がい福祉課
+  url: https://www.city.ebetsu.hokkaido.jp/soshiki/kaigo/105982.html
+  confidence: high
+  amount: 申立費用は実費の合計額。報酬は月額上限が在宅28,000円、施設入所18,000円
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori

@@ -1,0 +1,142 @@
+city: '012050'
+name: 室蘭市
+site: www.city.muroran.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の購入券交付
+  name_on_page: 家族介護用品助成
+  summary: 重度の要介護者を介護する非課税世帯に、紙おむつ等の購入券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者と介護者が同一世帯、または同住所の別世帯
+  - 高齢者と介護者の両方が市民税非課税世帯
+  - 生活保護世帯は除く
+  where: 高齢福祉課介護認定係、または担当ケアマネジャー
+  url: https://www.city.muroran.lg.jp/welfare/?content=710
+  confidence: high
+  amount: 月 8,400 円（紙おむつ・尿取りパッド・使い捨て手袋・清拭剤・ドライシャンプー）
+- category: jutaku
+  name: 高齢者住宅改修補助（市独自・要介護認定者がいない世帯向け）
+  name_on_page: 室蘭市高齢者住宅改修補助事業
+  summary: 手すり設置や段差解消などのバリアフリー改修費の一部を、所得に応じて助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 工事の前に高齢福祉課福祉総務係へ連絡する
+  where: 高齢福祉課福祉総務係
+  url: https://www.city.muroran.lg.jp/welfare/?content=11127
+  confidence: high
+  amount: 改修費（上限15万円）の7割〜9割を、所得に応じて助成
+  more_urls:
+  - https://www.city.muroran.lg.jp/welfare/?content=5836
+- category: gaishutsu
+  name: 高齢者外出支援（バスのパス購入助成）
+  name_on_page: 高齢者外出支援事業
+  summary: ふれあいパスの購入費を助成し、ワンコインパスで市内路線バスを 1 回 100 円にする。
+  who:
+    age_min: 70
+  at_application:
+  - 室蘭市内に住んでいる
+  - 運転免許を自主返納した人は初回分が助成される
+  - 身体・知的障害者割引とは併用できない
+  where: 高齢福祉課福祉総務係（パスの購入は道南バス東町ターミナル等）
+  url: https://www.city.muroran.lg.jp/welfare/?content=92
+  confidence: high
+  amount: ふれあいパスは購入費から 500 円助成。ワンコインパスは購入代金 3,000 円（期間は頁により 3〜4 か月と表記が異なる）
+  more_urls:
+  - https://www.city.muroran.lg.jp/welfare/?content=5836
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム設置
+  summary: 緊急時に通報が難しい人の自宅に、通報・相談ボタンとセンサーの装置を設置する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯で、
+  - 疾患のため緊急時の通報が困難な人
+  - または身体障害者手帳 1・2 級の人
+  where: お住まいの地区の民生委員に相談（問い合わせは高齢福祉課介護認定係）
+  url: https://www.city.muroran.lg.jp/welfare/?content=712
+  confidence: high
+  amount: 月額 340 円（生活保護世帯は 170 円）
+- category: gaishutsu
+  name: 寝たきり高齢者のストレッチャー移送
+  name_on_page: あったか移送サービス
+  summary: 寝たきりで家族の搬送が難しい人を、ストレッチャー付きの車で病院へ移送する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 寝たきりで、ストレッチャーでの移送が必要
+  - 入退院・通院で、ほかに搬送手段がない
+  - 移送区域は室蘭市・登別市・伊達市
+  where: 高齢福祉課介護認定係、または担当ケアマネジャー
+  url: https://www.city.muroran.lg.jp/welfare/?content=714
+  confidence: high
+- category: mimamori
+  name: 鍵の預かり先の事前登録
+  name_on_page: 鍵の預かり先登録
+  summary: 鍵を預けた人を事前に登録し、安否確認が必要なときに対応してもらう。
+  who: {}
+  at_application:
+  - 原則 65 歳以上
+  where: 高齢福祉課福祉総務係（頁全体の問い合わせ先）
+  url: https://www.city.muroran.lg.jp/welfare/?content=5836
+  confidence: low
+- category: sonota
+  name: 緊急情報記録票の交付
+  name_on_page: 緊急情報記録票
+  summary: かかりつけ医や緊急連絡先を書く用紙を渡す。冷蔵庫に貼り、救急隊が使う。
+  who: {}
+  at_application:
+  - 原則 65 歳以上
+  where: 高齢福祉課福祉総務係（交付申込書を提出）
+  url: https://www.city.muroran.lg.jp/welfare/?content=5836
+  confidence: low
+- category: sonota
+  name: ごみの戸別収集
+  name_on_page: ごみ等の戸別収集
+  summary: ごみステーションへ出せない高齢者・障がい者の自宅玄関先でごみを収集する。
+  who: {}
+  at_application:
+  - 市内在住で、ごみステーションへの搬出が困難
+  - 総合事業対象者、要介護認定、障害支援区分認定のいずれか
+  - ひとり暮らし、または家族などの搬出支援が難しい人
+  where: 高齢福祉課福祉総務係（頁全体の問い合わせ先）
+  url: https://www.city.muroran.lg.jp/welfare/?content=5836
+  confidence: low
+- category: sonota
+  name: 介護マークの貸出
+  name_on_page: 介護マーク
+  summary: 外出先で介護するとき、「介護中」のベストとプレートを貸し出す。
+  who: {}
+  at_application: []
+  where: 高齢福祉課福祉総務係（頁全体の問い合わせ先）
+  url: https://www.city.muroran.lg.jp/welfare/?content=5836
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu

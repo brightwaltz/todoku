@@ -1,0 +1,234 @@
+city: '342025'
+name: 呉市
+site: www.city.kure.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の給付
+  name_on_page: 緊急通報装置の給付
+  summary: ボタンを押すと消防局へ直接つながる緊急通報装置を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 緊急時に不安のあるひとり暮らしの高齢者など
+  - 近隣の協力員を2名程度確保できる
+  - 設置には固定電話が必要
+  - 申請時に民生委員の意見が必要
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-hukushi.html
+  confidence: high
+  amount: 利用者負担 6,600円（生活保護世帯は無料）
+- category: nichijo-yogu
+  name: 火災警報器・電磁調理器の給付
+  name_on_page: 軽度生活援助　日常生活用具
+  summary: 火の取扱いに不安がある高齢者に火災警報器や電磁調理器を給付する。
+  who:
+    age_min: 65
+    flags:
+    - fire_risk
+  at_application:
+  - 火の取扱いに不安があるひとり暮らしの高齢者など
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-hukushi.html
+  confidence: high
+  amount: 負担は生計中心者の市民税で変わる（生活保護0円、非課税3割、均等割のみ5割、所得割課税は全額）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食の確保が難しい高齢者に昼か夜の食事を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 認知症・閉じこもり・身体状況などで食の確保が困難
+  - 川尻町・安浦町地域は提供地域外
+  - 申請後に地域相談センターが訪問調査をする
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-hukushi.html
+  confidence: high
+  amount: 1食450円（週2〜6食、1日1食）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 介護保険サービスを使わず在宅で介護する家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 1年以上市内に住民票がある65歳以上の人を介護している家族
+  - 過去1年、1週間のショートステイ以外の介護保険サービスを未利用
+  - 過去1年引き続き要介護4または5
+  - 介護する家族も市民税非課税。同居か同居に近い形で介護
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-hukushi.html
+  confidence: high
+  amount: 年1回 10万円
+- category: kaigo-yohin
+  name: 高齢者紙おむつ購入助成券の支給
+  name_on_page: 高齢者紙おむつ購入助成券の支給
+  summary: 常時おむつが必要な要介護3以上の在宅高齢者に、紙おむつ購入の助成券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 本人またはその介護者（親族等）が申請する
+  - バス優待（敬老・障害）や福祉タクシー券の受給者は対象外
+  - 介護保険施設・養護老人ホーム入所者、長期入院中の人は対象外
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-kamiomutu.html
+  confidence: high
+  amount: 要介護4・5は月4,000円、要介護3は月2,000円（年4回に分けて助成券を支給）
+- category: gaishutsu
+  name: バス優待制度（敬老優待）
+  name_on_page: バス優待制度（敬老優待）
+  summary: 70歳以上の人が市内の対象バスを1乗車100円で利用できる。
+  who:
+    age_min: 70
+  at_application:
+  - 高齢者紙おむつ助成券・福祉タクシー券・障害優待の受給者は対象外
+  - 広島電鉄のモビリーデイズの登録が必要
+  - 70歳の誕生月の2か月前から申請できる
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-ikiikipas.html
+  confidence: high
+  amount: 1乗車100円。資格確認カードで文化施設などの割引もある
+- category: hochoki
+  name: 高齢者補聴器等購入補助
+  name_on_page: 呉市聴こえる楽しみ事業（高齢者補聴器等購入補助）
+  summary: 聴力が低下した65歳以上の人の補聴器等の購入費を一部補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 呉市に住民票があり、現に居住している
+  - 両耳の聴力レベルが40デシベル以上
+  - 耳鼻咽喉科の補聴器相談医が使用の必要を認めている
+  - 過去5年以内に補助を受けていない
+  - 聴覚障害の身体障害者手帳の交付対象者は対象外
+  where: 高齢者支援課
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-hotyouki.html
+  confidence: high
+  amount: 購入費の3分の2（上限4万4千円）
+- category: haikai
+  name: 認知症高齢者のGPS端末機等購入費助成
+  name_on_page: 呉市認知症高齢者家族等支援事業（GPS端末機等購入等助成）
+  summary: 徘徊のある認知症の人を介護する人に、GPS端末機等の初期費用を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 呉市に住民票がある（入院・施設入所の人は対象外）
+  - 認知症による徘徊行動が見られる人を介護している
+  - 過去2年以内に助成を受けていない
+  - 機器の契約前に事前申請が必要
+  where: 高齢者支援課（地域包括ケアグループ）
+  url: https://www.city.kure.lg.jp/soshiki/150/gps.html
+  confidence: high
+  amount: 初期費用の4分の3（上限2万円）。月々の費用は自己負担
+- category: haikai
+  name: 見守りSOSメールの事前登録
+  name_on_page: 見守りSOSメール高齢者等事前登録
+  summary: 行方不明のおそれがある人の情報を事前に登録し、緊急時に協力事業者へメールで知らせる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になる可能性がある人
+  where: 重層的支援推進室、地域包括支援センター
+  url: https://www.city.kure.lg.jp/soshiki/59/sos-jizentouroku.html
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援事業（申立て・報酬助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族がいない人の後見申立てを市が行い、資力の乏しい人の後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 申立て：65歳以上か知的・精神障がい者で、申立てできる親族がいない
+  - 報酬助成：生活保護受給者、または収入が基準額を下回る人
+  - 後見人が親族の場合は報酬助成の対象外
+  where: 高齢者支援課（高齢者の場合）
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-sonota.html
+  confidence: high
+  amount: 報酬助成は月額上限 28,000円（在宅）、18,000円（入院・入所中）
+- category: sonota
+  name: 迷惑電話防止機能付き電話機等の購入補助
+  name_on_page: 迷惑電話防止機能付き電話機等の購入補助
+  summary: 高齢者のみの世帯が迷惑電話防止機能付きの電話機等を買う費用を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 呉市内に住所があり居住している
+  - 世帯全員が市税を滞納していない
+  - 市内の店舗で購入し、購入から1年以内に申請する
+  - 1世帯1回限り、先着順
+  where: 呉市消費生活センター（市役所1階）
+  url: https://www.city.kure.lg.jp/soshiki/54/meiwakudennwa8.html
+  confidence: high
+  amount: 購入費の2分の1（上限1万円）
+- category: sonota
+  name: ごみ出し支援（すこやかサポート）
+  name_on_page: すこやかサポート事業
+  summary: ごみ出しが難しい世帯の玄関先から職員が声かけをしてごみを回収する。
+  who: {}
+  at_application:
+  - 要介護2以上で65歳以上の人だけの世帯、または障がい者のみの世帯
+  - 上記に準じる事由で環境業務課長が認めた世帯
+  - 民生委員やケアマネ等を通じて電話で申し込む
+  where: 環境業務課（民生委員・ケアマネ等を通じて電話）
+  url: https://www.city.kure.lg.jp/soshiki/19/sukoyaka.html
+  confidence: high
+- category: sonota
+  name: 高齢者の短期入所（ショートステイ）
+  name_on_page: 軽度生活援助　短期入所（ショートステイ）
+  summary: 世話ができない時などに、養護老人ホームや特養へ短期間入所できる。
+  who:
+    age_min: 65
+  at_application:
+  - 日常生活を営むのに支障がある
+  - 介護保険給付の対象者は除く
+  - 3か月以内の期間で7日間が限度
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kure.lg.jp/soshiki/150/kourei-hukushi.html
+  confidence: high
+  amount: 1日1,750円（生活保護世帯は無料）
+not_found:
+- ribiyo
+- shingu
+- jutaku
+- mimamori

@@ -1,0 +1,167 @@
+city: 012084
+name: 北見市
+site: www.city.kitami.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置
+  summary: 民間の受信センターにつながる緊急通報装置を自宅に設置し、緊急時の救助体制を整える。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 通院か服薬中で既往歴があり、緊急時に動くのが難しい虚弱の方
+  - 要介護・要支援認定を受けている、または身体障害者手帳1・2級
+  - 緊急協力員か緊急連絡先の登録と、電話回線が必要
+  where: 介護福祉課 高齢者支援係、地域包括支援センター（高齢者相談支援センター）
+  url: https://www.city.kitami.lg.jp/common/img/content/content_20260331_092212.pdf
+  confidence: high
+  amount: 利用者負担は原則無料
+  more_urls:
+  - https://www.city.kitami.lg.jp/administration/welfare/detail.php?content=8981
+- category: kaigo-yohin
+  name: 介護用品の給付券
+  name_on_page: 介護用品給付券支給
+  summary: 要介護4・5の方を在宅で介護する家族に、紙おむつなどと交換できる給付券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住み、介護保険の被保険者であること
+  - 市内に住む親族から在宅で介護を受けている
+  - 施設入所者、保険料の滞納者、給付制限を受けている方は対象外
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.kitami.lg.jp/common/img/content/content_20260331_092212.pdf
+  confidence: high
+  amount: 6,250円相当の給付券を年間最大12枚まで。紙おむつ、使い捨てシーツ、尿取りパッドなどと交換できる
+- category: haishoku
+  name: 食の自立支援・配食サービス
+  name_on_page: 食の自立支援・配食サービス
+  summary: 食事の支度が難しい高齢者などに、配食の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯・高齢者のみの世帯、身体障がい者のみの世帯など
+  - 食事の支度などが困難であること
+  - 心身と食事の状況を調査したうえで決める
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.kitami.lg.jp/common/img/content/content_20260331_092212.pdf
+  confidence: high
+  amount: 1週間の昼食・夕食のうち最大5食まで助成。1食500円以上の配食につき市が200円を助成
+  more_urls:
+  - https://www.city.kitami.lg.jp/administration/welfare/detail.php?content=8981
+- category: hochoki
+  name: 高齢者補聴器の交付
+  name_on_page: 高齢者補聴器交付
+  summary: 補聴器の購入が経済的に難しい高齢者に、指定の補聴器と交換できる券を渡す。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力損失が40デシベル以上
+  - 交換できる補聴器は高度難聴用のポケット型
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.kitami.lg.jp/common/img/content/content_20260331_092212.pdf
+  confidence: low
+- category: haikai
+  name: 認知症高齢者位置検索サービスの加入料助成
+  name_on_page: 認知症高齢者位置検索サービス
+  summary: 認知症の高齢者が行方不明になったときに居場所を調べる端末について、加入料金を助成する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 65歳以上の認知症の方を在宅で介護している家族が対象
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.kitami.lg.jp/common/img/content/content_20260331_092212.pdf
+  confidence: high
+  amount: 加入料金のみ助成。月額基本料金や利用料は自己負担
+  more_urls:
+  - https://www.city.kitami.lg.jp/administration/welfare/detail.php?content=8981
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給
+  summary: 介護保険サービスを使わず寝たきりの方を介護した家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用していない
+  - 過去1年間の入院が3か月未満
+  - 介護保険料を滞納していない
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.kitami.lg.jp/common/img/content/content_20260331_092212.pdf
+  confidence: high
+  amount: 年10万円
+  more_urls:
+  - https://www.city.kitami.lg.jp/administration/welfare/detail.php?content=8981
+- category: gaishutsu
+  name: バス乗車証（バス料金助成）
+  name_on_page: 北見市バス乗車証
+  summary: 70歳以上などの市民が、決まった区間の路線バスに乗れる乗車証を受け取れる。
+  who: {}
+  at_application:
+  - 市内に住み、70歳以上（年度中に70歳になる方を含む）
+  - または身体障害者手帳1〜4級・療育手帳・精神障害者保健福祉手帳をお持ちの方
+  - 本人確認書類が必要
+  where: 介護福祉課 いきがい支援係、各総合支所窓口課、支所・出張所
+  url: https://www.city.kitami.lg.jp/administration/welfare/detail.php?content=10044
+  confidence: high
+  amount: 高齢者は交付料が年3,000円（有効期間は2026年4月1日〜2027年3月31日）
+- category: sonota
+  name: 高齢者等ごみ出し支援
+  name_on_page: 高齢者等ごみ出し支援
+  summary: ごみ出しが難しい世帯に、職員が週1回訪問してごみを収集し、希望すれば声かけで安否確認もする。
+  who: {}
+  at_application:
+  - 世帯全員が要支援・要介護認定、身障手帳、療育手帳A、精神手帳1級などのいずれか
+  - 自分でごみステーションまで出すのが難しい
+  - ごみを出せる同居人や、親族・近隣の支援がある方、施設入居者は対象外
+  where: 廃棄物対策課（市役所3階）
+  url: https://www.city.kitami.lg.jp/administration/life/detail.php?content=8186
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 入浴サービス
+  name_on_page: 入浴サービス
+  summary: 自宅で入浴が難しい寝たきりの方が、市内施設の特殊浴槽を週1回利用できる。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険サービスによる入浴が難しい方
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.kitami.lg.jp/common/img/content/content_20260331_092212.pdf
+  confidence: low
+  amount: 利用者負担は1回1,500円
+not_found:
+- ribiyo
+- shingu
+- nichijo-yogu
+- yutai

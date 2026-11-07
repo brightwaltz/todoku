@@ -1,0 +1,165 @@
+city: '012203'
+name: 士別市
+site: www.city.shibetsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 安否確認を兼ねて、昼食・夕食を自宅へ届けるサービス。
+  who: {}
+  at_application:
+  - 安否確認が必要、または低栄養状態が認められる
+  - 高齢者のみ・障がい者のみの世帯、または買い物や調理が難しい人だけの世帯
+  where: 高齢者福祉課高齢者係、地域福祉課地域福祉係、朝日支所地域生活課（電子申請もあり）
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2752.html
+  confidence: high
+  amount: 利用料は昼食 600 円、夕食 600 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報サービス
+  summary: 緊急時に通報できる装置を貸し出し、救急対応を早める。
+  who: {}
+  at_application:
+  - ひとり暮らしで身体虚弱のため緊急時に動きにくい高齢者
+  - 寝たきりの人と同居する高齢者のみの世帯
+  - 85 歳以上の高齢者のみの世帯、など（いずれかに該当）
+  - 審査のうえ利用が決まる
+  where: 高齢者福祉課高齢者係（電子申請もあり）
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2658.html
+  confidence: high
+  amount: 無料（所得税課税世帯は費用がかかる）
+- category: haikai
+  name: SOSネットワークの事前登録
+  name_on_page: 士別市SOSネットワーク
+  summary: 行方不明になるおそれのある人を事前登録し、捜索の情報配信を早める。
+  who: {}
+  at_application:
+  - 児童・障がい者・高齢者が対象
+  - 行方不明になるおそれのある人が事前登録できる
+  - 胸から上の写真が必要
+  where: 高齢者福祉課 地域包括支援センター
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2312.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 徘徊高齢者の GPS 機器導入費の助成
+  name_on_page: 徘徊高齢者位置情報検索システム助成事業
+  summary: 徘徊のおそれのある認知症の人を在宅で介護する家族に、GPS 機器の初期費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 主治医意見書で認知症高齢者の自立度がⅡ以上、または認知症の診断がある人
+  - 40〜64 歳の初老期認知症の人も対象
+  - SOSネットワークの事前登録が必要
+  where: 高齢者福祉課高齢者係（電子申請もあり）
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2312.html
+  confidence: high
+  amount: 1 人 1 万円まで（初期導入費用と機器購入費。月額料金は対象外）
+- category: jutaku
+  name: 自立支援の住宅改修・入浴用具購入の助成
+  name_on_page: 自立支援在宅生活支援助成事業
+  summary: 要介護認定を受けていない高齢者の手すり設置などの住宅改修と入浴補助用具の購入費を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要支援・要介護の認定を受けていない、または認定の結果が非該当
+  - 介護保険料を滞納していない
+  - 下肢筋力が低下し、転倒の危険が高いと認められる
+  where: 高齢者福祉課高齢者係（電子申請もあり）
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/7124.html
+  confidence: high
+  amount: 費用の 7〜9 割を助成。住宅改修は 10 万円、福祉用具購入は 5 万円まで
+- category: gaishutsu
+  name: 通院タクシー交通費の助成
+  name_on_page: 要援護者等通院交通費助成事業
+  summary: バス等が使いにくい人が通院にタクシーを使うとき、交通費の一部を助成する。
+  who: {}
+  at_application:
+  - ヘルパーの介助なしに通院できず公共交通の利用も困難
+  - 要介護認定で訪問介護の院内介助が必要な人
+  - または 2 級以上の身体障害者手帳（視覚・肢体）で通院等介助が必要な人
+  where: 高齢者福祉課高齢者係
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2688.html
+  confidence: high
+  amount: 年 48 回まで。自己負担は 1 回 720 円（手帳所持者は 640 円）
+- category: gaishutsu
+  name: 敬老バス乗車証の交付
+  name_on_page: 敬老バス乗車証交付事業
+  summary: 70 歳以上の市民に、市内の路線バスにワンコインで乗れる乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - バスを利用できる市民
+  - 顔写真と緊急連絡先が必要
+  where: 高齢者福祉課、朝日支所地域生活課、温根別・上士別・多寄出張所
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2942.html
+  confidence: high
+  amount: 1 乗車 100 円（障がい者手帳等の所持者は 50 円）
+- category: sonota
+  name: 高齢者等への除雪サービス
+  name_on_page: 除雪サービス
+  summary: 除雪が難しい高齢者等の世帯の通路や屋根・軒下の除雪を市が行う。
+  who: {}
+  at_application:
+  - 世帯の年間収入が 299 万 4 千円以下で、他に除雪の援助を受けにくい
+  - 65 歳以上の高齢者世帯、障がい者手帳のある世帯などが対象
+  - 自力や親族で除雪できる場合は対象外
+  where: 高齢者福祉課高齢者係、地域福祉課地域福祉係、朝日支所地域生活課（電子申請もあり）
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2770.html
+  confidence: high
+  amount: 世帯収入に応じ、無料〜月額 2,640 円。屋根・軒下は 30 分ごとの料金
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ
+  summary: 冠婚葬祭などで家族が不在のとき、施設での短期入所を利用できる。
+  who: {}
+  at_application:
+  - 要介護認定が非該当、または社会的支援が必要な人
+  - 市の「自立者支援サービス利用基準」に該当すること
+  where: 高齢者福祉課高齢者係（電子申請もあり）
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2614.html
+  confidence: low
+  amount: 利用料は施設・部屋で異なり、食費・滞在費は実費
+- category: sonota
+  name: 施設入浴サービス（送迎つき）
+  name_on_page: 施設入浴サービス
+  summary: 自宅で入浴できない要介護者を、機械浴のある施設へ送迎して入浴介助をする。
+  who:
+    at_home: true
+  at_application:
+  - 心身の障害や傷病で在宅での入浴が困難な要介護者
+  - 訪問入浴・通所介護・通所リハの利用が難しい人
+  where: 高齢者福祉課高齢者係
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/2524.html
+  confidence: low
+  amount: 1 回 1,500 円（週 2 回まで）
+- category: sonota
+  name: 高齢者等の入浴料助成
+  name_on_page: 高齢者等入浴料助成事業
+  summary: 認定証を示すと、市の入浴施設の入浴料が安くなる。
+  who: {}
+  at_application:
+  - 70 歳以上で前年の世帯収入が 175 万 3 千円以下の世帯
+  - 70 歳以上で手帳所持者と同世帯、かつ世帯収入 205 万 3 千円以下
+  - または障害者手帳の所持者、ひとり親世帯、生活保護の人
+  where: 高齢者福祉課（高齢者は 0165-26-7752）、朝日支所地域生活課
+  url: https://www.city.shibetsu.lg.jp/gyoseisaito/iryo_kenko_fukushi/kaigo_korei/2/5015.html
+  confidence: high
+  amount: 助成後の大人料金は 1 回 120〜130 円
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

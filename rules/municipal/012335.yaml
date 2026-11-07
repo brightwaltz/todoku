@@ -1,0 +1,133 @@
+city: '012335'
+name: 伊達市
+site: www.city.date.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 認知症の方の見守り用品（GPS等）の導入費助成
+  name_on_page: 認知症高齢者見守り事業（GPS機器）
+  summary: 認知症の方を在宅で介護する家族に、GPS機器などの初期導入費用を1人1回助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市に住民登録があり、認知症高齢者の日常生活自立度Ⅱ以上
+  - 65歳以上で行方不明のおそれ、または40歳以上の若年性認知症
+  - 申請年度に市民税非課税世帯
+  - 在宅で介護する家族等が申請する
+  where: 担当窓口（高齢福祉課高齢者福祉係）
+  url: https://www.city.date.hokkaido.jp/hotnews/detail/00000951.html
+  confidence: high
+  amount: 1人あたり上限8,000円（定員3人）
+- category: haikai
+  name: 認知症の方の見守りシール給付
+  name_on_page: 認知症高齢者見守り事業（シール）
+  summary: 認知症の方に、衣類用のアイロンラベルシールと靴・杖用の反射シールを給付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で認知症高齢者の日常生活自立度2以上
+  - 65歳以上で行方不明のおそれ、または40歳以上の若年性認知症
+  where: 担当窓口（高齢福祉課高齢者福祉係）
+  url: https://www.city.date.hokkaido.jp/hotnews/detail/00000951.html
+  confidence: high
+  amount: アイロンラベルシール10枚と反射シール5足分（先着100人）
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具（火災予防の調理器等）の購入助成
+  name_on_page: 日常生活用具給付事業
+  summary: ガス消し忘れ消火機能付き調理器・自動消火器・電磁調理器の購入費を1回限り助成する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 生活保護世帯、または世帯全員が市民税非課税か均等割のみ課税
+  - 在宅のひとり暮らしの高齢者などが対象
+  - すでに機器を持っている場合の買い替えは不可
+  where: 担当窓口（高齢福祉課高齢者福祉係）
+  url: https://www.city.date.hokkaido.jp/hotnews/detail/00000951.html
+  confidence: high
+  amount: 限度額10,000円（1回限り）
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の利用券支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5の在宅高齢者を介護する家族に、紙おむつ等の購入に使える利用券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上の在宅高齢者を介護する家族
+  - 生活保護世帯か市民税非課税世帯
+  - 施設入所者や市民税課税世帯は対象外
+  where: 担当窓口（高齢福祉課高齢者福祉係）
+  url: https://www.city.date.hokkaido.jp/hotnews/detail/00000951.html
+  confidence: high
+  amount: 月額8,000円分の利用券（紙おむつ・尿取りパッド等5品目）
+- category: kinkyu-tsuho
+  name: 緊急通報サービス（装置の貸出）
+  name_on_page: 緊急通報サービス事業
+  summary: 緊急ボタンで警備会社につながる通報装置を、安い利用料で貸し出す。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯で健康や動作に不安がある人
+  - または、ひとり暮らしの重度身体障がい者
+  - 緊急時の通報手段の確保が難しい
+  where: 市の担当窓口（高齢福祉課高齢者福祉係）
+  url: https://www.city.date.hokkaido.jp/hotnews/detail/00000950.html
+  confidence: high
+  amount: 月額700円（生活保護受給者は免除）
+- category: sonota
+  name: 救急医療情報キット（安心キット）の配付
+  name_on_page: 救急医療情報キット（安心キット）配付事業
+  summary: 持病や連絡先を書いて冷蔵庫に保管する救急医療情報キットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または健康に不安のある高齢者世帯
+  - または、障がいのあるひとり暮らしの方
+  where: 市の担当窓口（高齢福祉課高齢者福祉係）
+  url: https://www.city.date.hokkaido.jp/hotnews/detail/00000950.html
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 大滝区の高齢者向け路線バス無料乗車証
+  name_on_page: 大滝区高齢者シルバーパス
+  summary: 大滝区の70歳以上に、大滝区と伊達紋別駅間の路線バスに無料で乗れる乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 伊達市大滝区に住んでいる
+  - 乗車か降車のどちらかが大滝区内の場合に無料
+  where: 大滝総合支所 地域振興課地域住民係
+  url: https://www.city.date.hokkaido.jp/hotnews/detail/00001236.html
+  confidence: high
+  amount: 対象区間のバス運賃が無料
+- category: sonota
+  name: 生活管理指導等の短期宿泊
+  name_on_page: 生活管理指導等短期宿泊事業
+  summary: 要支援・要介護に当たらない高齢者が、施設に短期宿泊して生活習慣の指導や体調管理を受ける。
+  who: {}
+  at_application:
+  - 市内在住でおおむね65歳以上
+  - 要支援・要介護の状態に当たらない人
+  - 閉じこもりがち、または虚弱で自立生活に支障がある
+  where: 市の担当窓口（高齢福祉課高齢者福祉係）
+  url: http://www.city.date.hokkaido.jp/hotnews/detail/00001216.html
+  confidence: high
+  amount: 1日1,130円〜1,400円の自己負担（食費・滞在費・送迎費は別）、年14日以内
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo

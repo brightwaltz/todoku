@@ -1,0 +1,140 @@
+city: '322016'
+name: 松江市
+site: www.city.matsue.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 「食」の自立支援事業（配食）
+  name_on_page: 「食」の自立支援事業
+  summary: 栄養のとれた食事を届け、あわせて安否を確認する配食サービス。
+  who: {}
+  at_application:
+  - 65歳以上、または要支援以上の認定を受けた40〜64歳
+  - 高齢者のみの世帯かそれに準ずる世帯
+  - 調理や栄養バランスの確保が難しく、安否確認が必要
+  - 市長が配食の必要性を認めること
+  where: 要介護認定者はケアマネジャー経由、未認定者は地域包括支援センター
+  url: https://www.city.matsue.lg.jp/soshikikarasagasu/kenkofukushibu_kaigohokenka/koreishafukushi_kaigo/2/koreishafukushi/260.html
+  confidence: high
+  amount: 1食450円（副食のみは400円）の自己負担
+- category: sonota
+  name: 安心ライフ援助事業（家事援助）
+  name_on_page: 安心ライフ援助事業
+  summary: 介護保険の対象外となる家事の手伝いを、安い自己負担で受けられる。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 要支援以上の認定、または総合事業の事業対象者
+  - 65歳以上のみの世帯かそれに準ずる世帯
+  where: 介護保険課（介護予防係）
+  url: https://www.city.matsue.lg.jp/soshikikarasagasu/kenkofukushibu_kaigohokenka/koreishafukushi_kaigo/2/koreishafukushi/488.html
+  confidence: high
+  amount: 30分あたり50円、年8時間まで
+- category: gaishutsu
+  name: 高齢者移送タクシー事業（タクシー券）
+  name_on_page: 高齢者移送タクシー事業
+  summary: 通院などでタクシーを使う要介護の方に、タクシー利用券を支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 松江市に住所がある（対象施設の入所・入居者は除く）
+  - 車椅子や歩行補助具を使い、外出に付き添いが必要
+  - 通院などでタクシーを使っている、または使う予定
+  - 障がい者福祉課の福祉タクシー事業を使っていない
+  where: 介護保険課窓口
+  url: https://www.city.matsue.lg.jp/soshikikarasagasu/kenkofukushibu_kaigohokenka/koreishafukushi_kaigo/2/koreishafukushi/983.html
+  confidence: high
+  amount: 500円のタクシー利用券を月6枚
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の在宅高齢者を介護する家族に、指定の介護用品を毎月自宅へ届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同じ世帯の家族が申請する
+  where: 介護保険課（電子申請もあり）
+  url: https://www.city.matsue.lg.jp/soshikikarasagasu/kenkofukushibu_kaigohokenka/koreishafukushi_kaigo/2/koreishafukushi/491.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置費助成
+  name_on_page: 緊急通報装置設置費助成事業
+  summary: 在宅のひとり暮らしなどの高齢者に、緊急通報装置の設置費の一部を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 松江市内に住所がある
+  - 同じ世帯で過去に同事業の助成を受けていない
+  - 設置前に申請する（警備会社の見積書が必要）
+  where: 健康福祉総務課福祉係
+  url: https://www.city.matsue.lg.jp/soshikikarasagasu/kenkofukushibu_kenkofukushisomuka/koreishafukushi_kaigo/1/978.html
+  confidence: high
+  amount: 設置費用の上限2万円（千円未満切捨て）
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 障害者手帳の対象でない軽度・中等度難聴の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚の身体障害者手帳の交付対象でない
+  - 市民税非課税世帯、または生活保護受給世帯
+  - 聴力30dB以上で、医師が補聴器の使用を必要と認めた
+  - 要介護認定なしから要支援2まで
+  - 介護予防事業等に参加できる
+  where: 介護保険課（耳鼻咽喉科の意見書を添えて申請）
+  url: https://www.city.matsue.lg.jp/kenko_fukushi/koreishafukushi_kaigo/koreishamukenosapoto/22133.html
+  confidence: high
+  amount: 25,000円（5万円以上の補聴器を購入した場合）
+- category: haikai
+  name: 見守りシールの交付
+  name_on_page: 松江市見守りシール
+  summary: 道に迷うおそれのある認知症の方の身元確認用に、QRコード付きシールを無料で交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症、若年性認知症、または障害等で行方不明のおそれ
+  - 松江市見守りSOSネットワークへの登録が必要
+  - 申請できるのは介護する家族か、その支援者
+  where: 松江市社会福祉協議会、または各地域包括支援センター
+  url: https://www.city.matsue.lg.jp/kenko_fukushi/koreishafukushi_kaigo/koreishamukenosapoto/8274.html
+  confidence: high
+  amount: シール10枚を無料交付（追加は1回のみ10枚）
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

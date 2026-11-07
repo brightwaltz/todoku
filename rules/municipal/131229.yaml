@@ -1,0 +1,283 @@
+city: '131229'
+name: 葛飾区
+site: www.city.katsushika.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給・入院時の使用料助成
+  name_on_page: おむつの支給・使用料の助成
+  summary: 対象の人に紙おむつを毎月自宅へ配送し、入院中は紙おむつ代を助成する。
+  who: {}
+  at_application:
+  - 住民税非課税で常時失禁状態（申請年度の課税状況で判断）
+  - 要介護2以上（65歳未満は特定疾病の認定者も含む）
+  - または65歳以上で身体障害者手帳1・2級か愛の手帳1・2度
+  - または65歳以上で脳性まひか進行性筋萎縮症
+  - 障害福祉サービス等で支給を受けられる人は対象外
+  where: 高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002160.html
+  confidence: high
+  amount: 自己負担なし。要介護度ごとのポイント内で商品を選べる。入院時は月額 5,000〜10,000 円を上限に助成（令和7年4月以降の使用分）。
+- category: haishoku
+  name: 見守り配食サービス
+  name_on_page: 見守り配食サービス
+  summary: 外出が難しく食事の用意が困難な人に、昼食・夕食の弁当を届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 65歳以上（要支援・要介護認定を受けている65歳未満も含む）
+  - 外出が困難で食事の準備が難しい
+  - 家族や友人などが緊急連絡先になること
+  where: 高齢者総合相談センター、高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002165.html
+  confidence: high
+  amount: 週14食（昼・夕）まで。弁当代は事業者ごとに異なる。
+- category: kinkyu-tsuho
+  name: 見守り型緊急通報システムの設置
+  name_on_page: 見守り型緊急通報システムの設置
+  summary: 通報機や火災・ガス感知器などを自宅に設置し、緊急時は警備会社が対応する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 慢性疾患などで日常生活に常時注意が必要な状態
+  - 緊急連絡先を指定できること、電話があること
+  where: 高齢者総合相談センター、高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002166.html
+  confidence: high
+  amount: 月額 370 円の自己負担（口座引落）
+- category: shingu
+  name: 寝具の乾燥消毒サービス
+  name_on_page: 高齢者寝具乾燥消毒サービス
+  summary: 月1回、事業者が自宅で寝具を預かり、乾燥消毒して返す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 区内在住
+  - 加齢による体力低下で寝具の乾燥が難しい
+  - 家族などの援助が受けられない
+  where: 高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002162.html
+  confidence: high
+  amount: 乾燥消毒は1回 550 円、7月の水洗い乾燥消毒は 1,150 円（自己負担）
+- category: ribiyo
+  name: 訪問理美容（出張理美容）
+  name_on_page: 高齢者出張理美容サービス
+  summary: 理容師・美容師が自宅を訪れてカットする。年6回まで。
+  who:
+    at_home: true
+  at_application:
+  - 区内在住で外出が困難
+  - 要介護3以上（65歳未満は特定疾病の認定者も含む）
+  - または65歳以上で身体障害者手帳1・2級か愛の手帳1・2度
+  - 利用時は家族か介助者の立ち会いが必要
+  where: 高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1026235.html
+  confidence: high
+  amount: カット1回 500 円（自己負担）、年6回
+- category: haikai
+  name: 徘徊高齢者の位置探索（GPS）サービス助成
+  name_on_page: 徘徊高齢者位置探索サービス助成
+  summary: 徘徊のある人の家族が民間のGPS位置探索サービスを使う初期費用などを助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請者は区内在住の、徘徊のある人を介護している人
+  - 対象はおおむね65歳以上、または要支援・要介護認定の65歳未満
+  - 携帯電話のGPS機能を使うサービスは対象外
+  - 1人につき1回限り
+  where: 高齢者支援課相談係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002164.html
+  confidence: high
+- category: haikai
+  name: おでかけあんしんシールの配付（身元照会）
+  name_on_page: おでかけあんしん事業
+  summary: 徘徊で保護された際に身元を照会できるシールを登録して配付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内在住で、認知症の症状があり徘徊に困っている
+  - 医師の認知症診断、またはチェックリストで該当項目あり
+  - 施設入所者は対象外
+  where: 葛飾区（申込方法は頁を参照。高齢者支援課の頁）
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002144/1016400.html
+  confidence: low
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 耳鼻科で補聴器が必要と認められた65歳以上の人に購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区民で、耳鼻咽喉科医が補聴器の装用が必要と認めた人
+  - 補装具（障害者総合支援法）の対象者は対象外
+  - 過去5年以内にこの助成を受けていない
+  - 助成の決定後に購入すること（決定前の購入は対象外）
+  where: 高齢者支援課
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002144/1038848.html
+  confidence: high
+  amount: 上限は住民税非課税の人 144,900 円、課税の人 72,450 円
+- category: nichijo-yogu
+  name: 家庭用卓上電磁調理器の購入費助成
+  name_on_page: 家庭用卓上電磁調理器の購入費助成について
+  summary: 電磁調理器と専用調理器具の購入費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 区の見守り型緊急通報システムを利用している
+  - 介護認定が要支援2まで（要介護1以上は対象外）
+  - 区の配食サービスを利用していない
+  - 専用調理器具だけの購入は不可
+  where: 高齢者総合相談センター、高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002154.html
+  confidence: high
+  amount: 購入費2万円以内は1割負担。2万円超は1万8千円を超えた分が自己負担
+- category: jutaku
+  name: 住宅設備改修費の助成（介護保険の対象外工事）
+  name_on_page: 住宅設備改修費助成
+  summary: 浴槽や流し台の取替え、階段昇降機の設置費を区が独自に助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 区に住民登録がある65歳以上（40〜64歳の特定疾病の人も含む）
+  - 改修で動作の向上や介護負担の軽減が見込める
+  - 階段昇降機は住宅内で歩行器か車椅子を使っている人
+  - 工事の着工前に相談すること
+  where: 高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002163.html
+  confidence: high
+  amount: 限度額は浴槽 379,000 円、流し台等 156,000 円、階段昇降機は本体 979,000 円＋設置 353,000 円。自己負担は1〜3割。
+- category: jutaku
+  name: 自立支援住宅改修費の助成（要介護認定のない人向け）
+  name_on_page: 自立支援住宅改修費助成
+  summary: 要支援・要介護の認定がない人の、手すり取付けや段差解消などの改修費を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 区に住民登録があり、介護の認定（要支援・要介護）を受けていない
+  - 事業対象者のうち運動機能が低下している人とそれに準ずる人
+  - 工事の着工前に相談すること
+  where: 高齢者総合相談センター、高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002158.html
+  confidence: high
+  amount: 限度額 20 万円、自己負担は1割（生活保護の人は負担なし）
+- category: mimamori
+  name: ひとりぐらし高齢者の毎日訪問（乳酸菌飲料の配達）
+  name_on_page: ひとりぐらし高齢者毎日訪問事業
+  summary: 乳酸菌飲料を毎日配達しながら、ひとり暮らしの高齢者の安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 安否確認が必要な人
+  - 仕事をしている人、生活協力員のいる高齢者集合住宅の人は対象外
+  where: 葛飾区社会福祉協議会（福祉サービス課）
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002174.html
+  confidence: high
+  amount: 飲料1本10円（月ごとに集金）
+  more_urls:
+  - https://www.city.katsushika.lg.jp/faq/1030271/1007659/1008497/1008518.html
+- category: mimamori
+  name: 見守り機器などの初期費用助成
+  name_on_page: 高齢者見守りサービス助成
+  summary: 家族がスマホなどで見守れるサービスの初期設置費用などを助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 区内在住で、日常生活に不安がある
+  - 緊急通報システムの使用料助成を受けている人は対象外
+  - 徘徊高齢者位置探索サービスの助成を受けた人は対象外
+  where: 高齢者支援課在宅サービス係
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1014681.html
+  confidence: low
+  amount: 初期設置費用（なければ初月の利用料相当）の9割、上限 15,000 円。1回限り。
+- category: gaishutsu
+  name: 東京都シルバーパス購入費の助成
+  name_on_page: シルバーパス購入費助成
+  summary: 12,000 円で都のシルバーパスを買った課税の70歳以上に購入費の一部を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 区内に住所があり、前年の合計所得金額が135万円を超える
+  - 令和8年10月1日以降有効のパスを12,000円で購入した
+  - 1,000円で購入できる人や払い戻しを受けた人は対象外
+  where: 葛飾区シルバーパスコールセンター（令和8年12月28日まで）
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002144/1042582.html
+  confidence: high
+  amount: 11,000 円（パスの有効期間内に1回限り）
+- category: yutai
+  name: くつろぎ入浴証（公衆浴場の割引）
+  name_on_page: くつろぎ入浴事業
+  summary: 区内の公衆浴場を割引料金で使える入浴証を発行する。
+  who:
+    age_min: 70
+  at_application:
+  - 区内在住
+  where: 高齢者支援課窓口、区内の公衆浴場
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002144/1002196.html
+  confidence: high
+  amount: 入浴料は1回 300 円（令和8年8月1日から）
+- category: sonota
+  name: シルバーカー購入費の給付
+  name_on_page: シルバーカーの給付
+  summary: 区指定のシルバーカーを買うとき、購入費の3分の2を区が負担する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住で歩行に支障がある
+  - 運動機能低下（元気度チェック）の人、または要支援の人
+  - 本人が住民税非課税、または生活保護を受給している
+  - 1回限り
+  where: 葛飾区高齢者支援課（詳細は頁を参照）
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1002157.html
+  confidence: high
+  amount: 限度額 20,000 円の3分の2を区が負担（1回限り）
+- category: sonota
+  name: 家族の休息のための一時預かり（日中・宿泊）
+  name_on_page: 家族等介護支援事業
+  summary: 介護する家族の休息のため、特養などで高齢者を日中・宿泊で預かる。
+  who: {}
+  at_application:
+  - 区内で家族等の介護を受けている65歳以上（40〜64歳の認定者も含む）
+  - 医療的ケアが不要で、介護施設での介護が可能な状態
+  where: 葛飾区高齢者支援課（詳細は頁を参照）
+  url: https://www.city.katsushika.lg.jp/kenkou/1000052/1030186/1002141/1017015.html
+  confidence: high
+  amount: 利用料は無料（食事代などは実費）。年間42ポイントまで。
+not_found:
+- iro
+- koken

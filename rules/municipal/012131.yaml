@@ -1,0 +1,170 @@
+city: '012131'
+name: 苫小牧市
+site: www.city.tomakomai.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅の重度要介護者への紙おむつ給付
+  name_on_page: 在宅寝たきり高齢者等紙おむつ給付
+  summary: 在宅で重度の要介護の人を介護する世帯に、紙おむつを現物で給付する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、常時紙おむつが必要
+  - 要介護4・5、または要介護2・3で重度認知症か寝たきり
+  - 要介護2・3は別の要件があるため窓口に確認
+  where: 介護福祉課（本庁舎 1 階）
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: high
+  amount: 月 6,750 円分まで。費用の 1 割が自己負担で、住民税非課税世帯・生活保護世帯は自己負担なし。
+  more_urls:
+  - https://www.city.tomakomai.hokkaido.jp/files/00005200/00005206/%E3%81%8A%E3%82%80%E3%81%A4%E3%81%97%E3%81%8A%E3%82%8A.pdf
+- category: shingu
+  name: 寝たきり高齢者等の寝具クリーニング
+  name_on_page: 在宅寝たきり高齢者等寝具クリーニングサービス
+  summary: 寝たきり高齢者などの寝具を、業者が訪問して年 2 回までクリーニングする。
+  who:
+    at_home: true
+  at_application:
+  - 対象者の細かい条件は頁に無いため窓口に確認
+  where: 介護福祉課
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: low
+  amount: 年 2 回まで。利用料金の 1 割が自己負担で、生活保護世帯は自己負担なし。
+- category: ribiyo
+  name: 寝たきり高齢者等の訪問理美容の助成
+  name_on_page: 在宅寝たきり高齢者等訪問理美容サービス助成事業
+  summary: 外出が難しい在宅の重度要介護者の訪問理美容の料金を助成する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護4・5、または要介護2・3で常時寝たきりか認知症状あり
+  - 要介護2・3は別の要件があるため窓口に確認
+  where: 総合福祉課
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: high
+  amount: 訪問料金とカット料金のうち 2,000 円を助成。差額やパーマ等は自己負担。
+- category: kinkyu-tsuho
+  name: 緊急通報システムの機器貸与
+  name_on_page: 緊急通報システム
+  summary: 非常ボタンや各種センサーの付いた緊急通報装置を貸し出し、24 時間の健康相談もある。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯で
+  - 心疾患・脳血管疾患・慢性疾患などがあるか、寝たきり・認知症の人を介護
+  - または身体障害者手帳1〜3級の人のみの世帯
+  - 緊急連絡先を原則 3 名登録する
+  where: 総合福祉課（市役所 1 階 13 番窓口）
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: high
+  amount: 機器の設置・撤去は無料。通話料は自己負担。
+  more_urls:
+  - https://www.city.tomakomai.hokkaido.jp/files/00005200/00005206/annai.pdf
+- category: haishoku
+  name: 高齢者への夕食の配食
+  name_on_page: 在宅高齢者給食サービス
+  summary: 調理が難しい高齢者に、日曜を除く毎夕食を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の調理が困難なひとり暮らしの高齢者か高齢者夫婦のみの世帯
+  where: 苫小牧市社会福祉協議会
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: high
+  amount: 1 食 400 円（自己負担）
+- category: nichijo-yogu
+  name: 卓上電磁調理器などの給付
+  name_on_page: 日常生活用具の給付
+  summary: 防火の配慮が必要なひとり暮らし等の高齢者に、卓上電磁調理器と調理器具を給付する。
+  who:
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能の低下で防火等の配慮が必要なひとり暮らし等の高齢者
+  where: 総合福祉課
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: low
+- category: mimamori
+  name: ひとり暮らし高齢者への安否確認の電話
+  name_on_page: ふれあいコール
+  summary: 相談員が電話をかけ、安否の確認や声かけをする。
+  who:
+    household:
+    - alone
+  at_application:
+  - 日常の安否が気遣われる高齢者
+  where: 総合福祉課
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: かかりつけ医や持病、緊急連絡先を保管するキットを配る。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 総合福祉課
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: high
+- category: sonota
+  name: ごみ出しが難しい人への戸別収集
+  name_on_page: ふれあい収集
+  summary: ごみ出しに困る人の家を訪ね、声かけをしながらごみを回収する。
+  who: {}
+  at_application:
+  - ごみ出しに困るひとり暮らしの高齢者や障害者等
+  where: ゼロごみ推進課
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/zaitaku-seikatsushien.html
+  confidence: low
+- category: gaishutsu
+  name: 高齢者のバス運賃割引（優待乗車証）
+  name_on_page: 高齢者優待乗車証
+  summary: 証を見せると、道南バスの対象路線に 1 乗車 100 円で乗れる。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住民登録がある
+  where: 総合福祉課、のぞみ・勇払・沼ノ端の各出張所、証明取扱所
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/igai/kenko-ikigaizukuri.html
+  confidence: high
+  amount: 対象路線のバス 1 乗車 100 円。証の交付は無料。
+- category: haikai
+  name: 認知症高齢者等の見守りSOSネットワークの事前登録
+  name_on_page: 見守りＳＯＳネットワーク事業
+  summary: 行方不明のおそれがある人を事前登録し、捜索を早める。登録者に靴用の反射板を配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人や家族の同意を得て登録する
+  where: 介護福祉課（地域包括係）
+  url: https://www.city.tomakomai.hokkaido.jp/kenko/kaigo/nintishou/sosnet.html
+  confidence: high
+  amount: 見守り反射板 1 人 2 足分（4 枚）を配布
+not_found:
+- iro
+- hochoki
+- koken
+- jutaku

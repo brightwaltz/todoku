@@ -1,0 +1,343 @@
+city: '131113'
+name: 大田区
+site: www.city.ota.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 要介護で失禁のある人に、紙おむつ代を区が負担する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 区内に住所があり実際に居住している
+  - 要介護3〜5で失禁によりおむつが必要、または要介護1・2で医師が必要と認めた人
+  - 認定なしでも65歳以上の入院中でおむつが必要な人は対象の場合あり
+  - 生活保護・介護保険施設入所者などは対象外
+  where: 65歳以上は高齢者の相談窓口、40〜64歳は地域福祉課
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 毎月500点（1点10円）まで区が負担。病院入院で持込不可の場合は月5,000円まで助成
+- category: ribiyo
+  name: 出張理・美容サービス
+  name_on_page: 高齢者出張理・美容サービス
+  summary: ねたきりの高齢者の自宅に理・美容師が出張する無料券を渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護3相当以上で常時ねたきりか、それに準ずる状態
+  - 理・美容店に行くことが困難
+  - 10月1日以降の申請は年2枚
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 出張理・美容利用券 年4枚（無料）
+- category: ribiyo
+  name: ひとり暮らし登録者の理美容補助券
+  name_on_page: 理髪・美容サービス
+  summary: ひとり暮らしの登録をした70歳以上に、福祉理美容店の補助券を渡す。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - ひとり暮らし高齢者の登録をしていること
+  - 同一敷地内か隣地に3親等以内の親族・配偶者がいない
+  where: 高齢者の相談窓口（登録申請）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 理美容補助券 年2枚（普通調髪の自己負担1,200円）
+- category: mimamori
+  name: ひとり暮らし高齢者の登録
+  name_on_page: ひとり暮らし高齢者の登録
+  summary: 緊急連絡先を登録し、民生委員等の訪問調査を受けて見守りにつなぐ。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 同一敷地内か隣地に3親等以内の親族・配偶者がいない
+  where: 高齢者の相談窓口
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+- category: gaishutsu
+  name: 寝台自動車利用の助成
+  name_on_page: 高齢者寝台自動車利用助成事業
+  summary: ねたきりの人が寝台自動車を使うとき料金の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護3相当以上で常時ねたきりか、それに準ずる状態
+  - 寝台車以外に移動手段がない（車いす利用は不可）
+  - 10月1日以降の申請は年3枚
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 寝台自動車利用券5,000円分 年6枚
+- category: sonota
+  name: 家族介護者支援ホームヘルプ
+  name_on_page: 家族介護者支援ホームヘルプサービス
+  summary: 在宅で介護する家族を支えるため、ヘルパー派遣費を補助する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 区内に住所があり実際に居住している
+  - 家族により居宅で介護を受けている
+  where: 65歳以上は高齢者の相談窓口、40〜64歳は各地域福祉課
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 年24時間以内、利用料は1時間400円〜8時間1,600円
+- category: sonota
+  name: 高齢者健康回復事業
+  name_on_page: 高齢者健康回復事業
+  summary: ねたきり高齢者の自宅等でのはり・きゅう・マッサージの無料券。
+  who: {}
+  at_application:
+  - 65歳以上で要介護3相当以上かつ常時ねたきり等の本人、またはその在宅介護の家族
+  - 10月1日以降の申請は年2枚
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 健康回復利用券 年4枚（無料）
+- category: kinkyu-tsuho
+  name: 高齢者救急代理通報システム
+  name_on_page: 高齢者救急代理通報システム
+  summary: ペンダント型の発報器を押すと受信センターへ通報し、警備員が駆けつける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 区内に住所がある
+  - 慢性疾患などで日常生活に常時注意が必要
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報サービス紹介
+  name_on_page: 緊急通報サービス紹介事業
+  summary: ボタン通報で24時間対応する民間の緊急通報サービスを紹介し、利用料を割引く。
+  who: {}
+  at_application:
+  - 区内在住の65歳以上、または障がいのある人
+  where: 大田区社会福祉協議会
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 利用料は月額3,498円（税込）から
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区内に住所があり実際に居住している
+  - 耳鼻咽喉科医師が補聴器の使用を必要と認めること
+  - 聴覚障害の身体障害者手帳を持つ人は対象外
+  - 事前相談が必要
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 50,000円まで（故障・紛失・メンテナンスは対象外）
+- category: mimamori
+  name: 見守りキーホルダー登録
+  name_on_page: 見守りキーホルダー登録
+  summary: 緊急連絡先や医療情報を区に登録し、番号入りキーホルダー等を受け取る。
+  who:
+    age_min: 65
+  at_application:
+  - 区内に住んでいる
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+- category: haikai
+  name: 見守りシール
+  name_on_page: 見守りアイロンシール・見守りシール
+  summary: 登録番号入りのアイロンシール等で、保護時に身元確認を早める。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住
+  - 見守りキーホルダー登録をしていること
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+- category: haikai
+  name: 行方不明の捜索・見守りメール
+  name_on_page: 行方不明認知症高齢者等の捜索・高齢者見守りメールの配信
+  summary: 行方不明時に区や都を通じ情報を周知し、協力員へメール配信する。
+  who: {}
+  at_application:
+  - 区内在住で行方不明になった人の家族等が届け出る
+  - メール配信は協力員の事前登録が必要
+  where: 65歳以上は高齢者の相談窓口、64歳以下は各地域福祉課
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+- category: mimamori
+  name: ほほえみ訪問事業
+  name_on_page: ほほえみ訪問事業
+  summary: 地域の絆サポーターが月2回ほど玄関先で訪問し安否確認をする。
+  who: {}
+  at_application:
+  - 65歳以上、または心身に障がいのある人
+  - 登録制で本人の了承が必要
+  where: 大田区社会福祉協議会
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 自動通話録音機の無料貸与
+  name_on_page: 自動通話録音機の無料貸与
+  summary: 詐欺電話対策の自動通話録音機を無料で貸し出す。
+  who: {}
+  at_application:
+  - 区内在住のおおむね65歳以上
+  where: 防災危機管理課、消費者生活センター、各地域包括支援センター等
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 無料貸与
+- category: jutaku
+  name: 高齢者住宅改修費の助成
+  name_on_page: 高齢者住宅改修費の助成
+  summary: 浴槽・流し・便器の改修を介護保険とは別に区が助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 区内に住所があり、身体状況から改修が必要と認められる
+  - 浴槽・便器は介護保険の限度額で実施できない人が対象
+  - 事前相談と見積り・工事計画書が必要
+  where: 高齢者の相談窓口（地域包括支援センター）
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 浴槽379,000円・流し156,000円・便器106,000円まで（自己負担1〜3割）
+- category: sonota
+  name: 家具転倒防止器具の支給・取付
+  name_on_page: 家具転倒防止器具の支給・取付
+  summary: 家具転倒防止器具を業者が各家庭で無料で取り付ける。
+  who: {}
+  at_application:
+  - 住民税非課税、または課税所得80万円以下の世帯
+  - 65歳以上のひとり暮らし・高齢者のみ世帯、要介護3〜5の人がいる世帯、障害者手帳のある人がいる世帯のいずれか
+  where: 防災危機管理課 管理担当
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 住民税非課税世帯はタンス2棹まで、課税所得80万円以下はタンス1棹まで無料
+- category: sonota
+  name: 感震ブレーカーの設置
+  name_on_page: 感震ブレーカーの設置
+  summary: 簡易タイプの感震ブレーカーを業者が各家庭で無料で設置する。
+  who: {}
+  at_application:
+  - 住民税非課税、または課税所得80万円以下の世帯
+  - 65歳以上のひとり暮らし・高齢者のみ世帯、要介護3〜5の人がいる世帯、障害者手帳のある人がいる世帯のいずれか
+  where: 防災危機管理課 管理担当
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: はり・きゅう等の施術割引券
+  name_on_page: はり・きゅう・マッサージ・指圧施術割引券
+  summary: 指定施術所で使える割引券を1人3枚送る。
+  who: {}
+  at_application:
+  - 区の国保加入の70〜74歳、または後期高齢者医療の加入者
+  - 保険料を完納している
+  - 申込は毎年7月1日〜31日
+  where: 国保年金課
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 1回1,000円の自己負担で施術
+- category: sonota
+  name: いきいき高齢者入浴事業
+  name_on_page: いきいき高齢者入浴事業
+  summary: 入浴証を発行し、公衆浴場の料金の一部を区が負担する。
+  who:
+    age_min: 70
+  at_application:
+  - 区内に住民登録があり実際に居住している
+  where: 高齢福祉課 高齢者支援担当
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 1回200円で2か月6回（年36回）、ほか無料1回
+- category: sonota
+  name: ごみの戸別訪問収集
+  name_on_page: ごみの戸別訪問収集
+  summary: ごみ出しが難しい世帯の家まで職員がごみを取りに来る。
+  who: {}
+  at_application:
+  - 要介護2以上、身体障害者1・2級、または区長が認める人のみの世帯
+  - 身近な人の協力が得られない
+  - 事前審査あり
+  where: 大森清掃事務所、蒲田清掃事務所
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+- category: sonota
+  name: 高齢者緊急ショートステイ
+  name_on_page: 高齢者緊急ショートステイ事業
+  summary: 介護者の急病などの緊急時に、短期入所で生活支援を受けられる。
+  who: {}
+  at_application:
+  - 要介護・要支援の人で区の緊急要件に当たる、または認定のない65歳以上等
+  - 原則7日以内
+  - ケアマネジャー経由で申請
+  where: 各地域福祉課 高齢者地域支援担当
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 介護保険の自己負担等と食費・滞在費
+- category: sonota
+  name: 助っ人サービス
+  name_on_page: 助っ人サービス
+  summary: 電球交換など単発の困りごとを地域の絆サポーターが手伝う。
+  who: {}
+  at_application:
+  - 家族等にサポートできる人がいない
+  - 初回は登録手続が必要
+  where: 大田区社会福祉協議会
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 20分以内300円
+- category: sonota
+  name: 車いすの貸出
+  name_on_page: 車いすの貸出
+  summary: 短期間または緊急に車いすが必要な人に無料で貸す。
+  who: {}
+  at_application:
+  - 区内在住
+  - 貸与は2か月以内
+  where: 大田区社会福祉協議会
+  url: https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/handbook.files/R8handbook.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- haishoku
+- iro
+- koken
+- shingu
+- nichijo-yogu
+- chusha
+- yutai

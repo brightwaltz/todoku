@@ -1,0 +1,193 @@
+city: 012181
+name: 赤平市
+site: www.city.akabira.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ支給事業
+  summary: 市民税非課税で要介護4・5の常時おむつ使用者に、紙おむつやパッドを支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 本人が市民税非課税
+  where: 社会福祉課 地域福祉係
+  url: https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+  confidence: high
+  amount: 月 5,000 円以内の紙おむつ等。1 日あたりおむつ 3 枚・パッド 6 枚まで
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: haishoku
+  name: 平日昼食の配食と安否確認
+  name_on_page: 食の自立支援事業
+  summary: 食事の支度が難しい人に、平日の昼食弁当を届けて安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしか高齢者のみ世帯等
+  - または寝たきり・認知症の高齢者の世帯
+  - または身体障がい者などで食事の支度が困難な人
+  where: 社会福祉課 地域福祉係（食券は赤平市社会福祉協議会）
+  url: https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+  confidence: high
+  amount: 1 食 400 円の自己負担（食券 10 枚綴りを社会福祉協議会で購入）
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: mimamori
+  name: 電話による定期の安否確認
+  name_on_page: 電話サービス事業
+  summary: 高齢のひとり暮らし等に、電話で定期的に安否を確かめ相談にも応じる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし（頁では夫婦世帯も対象と記載）
+  - 手引ではおおむね65歳以上のひとり暮らし世帯
+  where: 社会福祉課 地域福祉係
+  url: https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: kinkyu-tsuho
+  name: モバイル型緊急通報装置の貸与
+  name_on_page: モバイル型緊急通報システム事業
+  summary: 急病や事故に備え、携帯できる緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - 在宅でおおむね65歳以上のひとり暮らし
+  - または高齢者のみの世帯
+  - または重度身体障がい者
+  - または要介護・要支援認定者のみの世帯
+  where: 社会福祉課 地域福祉係
+  url: https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+  confidence: high
+  amount: 月額 1,000 円の自己負担
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: 救急時に必要な情報を入れておくキットを、1 世帯 1 セット無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上、または65歳未満で健康に不安がある
+  where: 社会福祉課 地域福祉係
+  url: https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+  confidence: high
+  amount: 無料（1 世帯 1 セット）
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: sonota
+  name: ヘルパー派遣による生活支援（認定非該当の人向け）
+  name_on_page: 生活管理指導員派遣事業
+  summary: 介護認定が非該当で生活に支障がある人に、ヘルパーを派遣して支援や指導をする。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 介護認定で非該当と判定され、日常生活に支障がある
+  where: 社会福祉課 地域福祉係
+  url: https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+  confidence: high
+  amount: 利用料は介護報酬単位に準ずる
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: hochoki
+  name: 高齢者補聴器の購入費助成
+  name_on_page: 赤平市高齢者補聴器購入費用助成制度
+  summary: 手帳に当たらない程度の難聴で市民税非課税の高齢者の、補聴器購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録があり居住している
+  - 身体障害者手帳に当たらない程度の難聴
+  - 耳鼻咽喉科医師が補聴器を必要と認めた
+  - 市民税均等割が課されていない
+  where: 社会福祉課
+  url: https://www.city.akabira.hokkaido.jp/docs/4466.html
+  confidence: high
+  amount: 上限 50,000 円。再申請は交付から 5 年経過後
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+- category: sonota
+  name: 高齢者世帯等の除雪費助成
+  name_on_page: 高齢者世帯等除雪費助成事業
+  summary: 自力で除雪できず頼れる親族もない高齢者世帯等に、除雪費の半額を助成する。
+  who: {}
+  at_application:
+  - 75歳以上、要介護認定者、障がい者、ひとり親世帯などのみで構成
+  - 自力で除雪が困難で、親族から労力・経済援助がない
+  - 市税等の滞納がない
+  - 事前に対象世帯の登録が必要（11月1日〜3月12日）
+  where: 赤平市社会福祉協議会（事前登録・交付申請）
+  url: https://www.city.akabira.hokkaido.jp/docs/2013103000011.html
+  confidence: high
+  amount: 支払った除雪費の 2 分の 1。1 世帯 2 万円まで
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/docs/2015030500015.html
+- category: gaishutsu
+  name: 乗合タクシー
+  name_on_page: 乗合タクシー
+  summary: 登録した人が電話予約で、自宅と市内の連絡施設を乗り合いで移動できる。
+  who: {}
+  at_application:
+  - 65歳以上または要介護認定者
+  - 65歳未満は交通空白区域に住んでいる人
+  - 事前の利用者登録が必要（電話）
+  - 介助なしで乗降できる人に限る
+  where: 企画課（電話で利用者登録）
+  url: https://www.city.akabira.hokkaido.jp/docs/7163.html
+  confidence: high
+  amount: 片道 大人 400 円（小学生以下 200 円）
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: sonota
+  name: 温泉利用回数券の交付
+  name_on_page: 保養サービス事業
+  summary: 高齢者の健康増進のため、ゆったり温泉の利用回数券を年 12 枚交付する。
+  who:
+    age_min: 65
+  at_application: []
+  where: 社会福祉課 地域福祉係
+  url: https://www.city.akabira.hokkaido.jp/fs/5/6/3/2/9/_/R2___________________.pdf
+  confidence: low
+  amount: 年 12 枚
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+- category: sonota
+  name: 指定ごみ袋の交付（ごみ処理手数料の福祉減免）
+  name_on_page: ごみ処理手数料の福祉減免
+  summary: 生活保護世帯や非課税の70歳以上単身世帯に、年1回指定ごみ袋を交付する。
+  who: {}
+  at_application:
+  - 生活保護世帯、または70歳以上の単身で当年度の市民税が非課税
+  - し尿処理手数料等の滞納がない
+  where: 市民生活課 生活環境交通係
+  url: https://www.city.akabira.hokkaido.jp/fs/5/6/3/2/9/_/R2___________________.pdf
+  confidence: low
+  amount: 年 1 回、指定ごみ袋を交付（枚数は頁に無し）
+  more_urls:
+  - https://www.city.akabira.hokkaido.jp/fs/1/1/7/6/0/8/_/________________.pdf
+not_found:
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai
