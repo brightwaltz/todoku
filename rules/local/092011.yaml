@@ -1,0 +1,94 @@
+city: "092011"
+name: 宇都宮市
+site: www.city.utsunomiya.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ購入費の支給（介護保険の市独自のサービス）
+    where: 保健福祉部 高齢福祉課。振込の申請は保健と福祉の総合相談窓口・地区市民センター・出張所でも出せる
+    conditions:
+      - 市の介護保険の被保険者で要介護 1〜5 の人。施設・病院・ショートステイに入っている間は除く
+      - 大人用紙おむつ・尿取りパッドなどの購入額 月 5,500 円まで。負担割合に応じてその 9〜7 割
+      - 市に登録した事業者の宅配か、店で買って領収証で申請する振込かを選ぶ（両方使っても月 5,500 円まで）
+      - 振込は申請の翌月。要支援の期間に買った分と、2 年を過ぎた領収証は対象外
+    sources:
+      - url: https://www.city.utsunomiya.lg.jp/kurashi/hokennenkin/kaigo/shinsei/1003842.html
+        publisher: 宇都宮市
+        title: 紙おむつ購入費支給認定申請
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 食の自立支援事業（配食サービス）
+    where: 保健福祉部 高齢福祉課（相談支援グループ）
+    conditions:
+      - 在宅のひとり暮らしか高齢者だけの世帯で、低栄養のおそれがある 65 歳以上の人
+      - おおむね 65 歳以上で、要支援・要介護や病気などで調理が難しい人も
+      - 食事を届ける。状況の調査で週 1〜5 食を決める
+      - 1 食 450 円（生活保護の世帯は 400 円）
+    sources:
+      - url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004321.html
+        publisher: 宇都宮市
+        title: 食の自立支援事業（配食サービス）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者地域生活安心サポート事業・はいかい高齢者等の位置探索システム利用助成・認知症事故救済事業
+    where: 保健福祉部 高齢福祉課
+    conditions:
+      - 認知症で行方不明のおそれがある市民に、二次元コード付きの見守りグッズを無料で配る
+      - 捜索支援アプリ「オレンジセーフティネット」は、家族などが前もって市に登録すると無料で使える
+      - GPS：在宅の 65 歳以上（若年性認知症を含む）か知的障がいの人を介護する、市税の滞納のない家族
+      - GPS は協定事業者との契約で、初回の登録料と月の利用料の半額を助成（上限 6,000 円・月 4,000 円）
+      - 要件にあう要介護の人とグッズの申請者は、市が保険料を払う認知症の事故の保険に入る（賠償は 2 億円まで）
+    sources:
+      - url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/ninchisho/1032728.html
+        publisher: 宇都宮市
+        title: 認知症高齢者地域生活安心サポート事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004273.html
+        publisher: 宇都宮市
+        title: はいかい高齢者等の位置探索システム利用助成
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/ninchisho/1032727.html
+        publisher: 宇都宮市
+        title: 認知症事故に対する保険制度を開始します
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金
+    where: 保健福祉部 高齢福祉課（福祉サービスグループ）
+    conditions:
+      - 65 歳以上で要介護 4・5 の人を、家で日常的に介護している家族
+      - 申請の前月までの 1 年間、入院がなく、介護サービスを使った日が合わせて 10 日以内
+      - 年額 12 万円
+    sources:
+      - url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004272.html
+        publisher: 宇都宮市
+        title: 家族介護慰労金
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（市長による申立て・費用の助成）
+    where: 高齢者は高齢福祉課（相談支援グループ）。知的障がいは障がい福祉課、精神障がいは保健所保健予防課
+    conditions:
+      - 身寄りがないなど申し立てる人がいないとき、市長が申し立てることがある
+      - 助成：生活保護か、市民税非課税で年収 150 万円以下・預貯金など 50 万円以下の人など
+      - 申立ての費用（印紙・切手・診断書・鑑定など）は、審判の日の翌日から 60 日以内に申請
+      - 後見人などの報酬は月 28,000 円まで（施設は 18,000 円）。報酬の審判の翌日から 1 年以内に申請
+    sources:
+      - url: https://www.city.utsunomiya.lg.jp/kenko/seikatsushien/soudan/1026717.html
+        publisher: 宇都宮市
+        title: 成年後見制度利用支援
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
