@@ -1,0 +1,124 @@
+city: '032140'
+name: 八幡平市
+site: www.city.hachimantai.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者等緊急通報体制整備事業
+  summary: ひとり暮らしの身体虚弱な高齢者などに、緊急連絡用の機器を無料で貸す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 高齢者、または身体障害者手帳1・2級の人
+  - 身体虚弱や病気で継続した安否確認が必要と認められる
+  - 市民税の所得割が非課税
+  where: 地域福祉課
+  url: https://www.city.hachimantai.lg.jp/soshiki/chifukuka/1405.html
+  confidence: high
+  amount: 利用料は無料
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 寝たきりの人の布団を預かり、洗濯・乾燥・消毒して届ける。
+  who:
+    flags:
+    - bedridden_6m
+  at_application:
+  - 重度身体障がい等で寝具の衛生管理が難しい寝たきりの人
+  where: 地域福祉課
+  url: https://www.city.hachimantai.lg.jp/soshiki/chifukuka/1405.html
+  confidence: high
+  amount: 無料、年2回まで、1回につき布団4点まで
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容院へ行けない人の自宅へ、市内の理美容店が出向く。
+  who: {}
+  at_application:
+  - おおむね65歳以上で要介護認定を受けている人、または重度身体障がい者
+  - 理美容院に出向くことが難しい
+  where: 八幡平市社会福祉協議会（電話 0195-74-4400）
+  url: https://www.city.hachimantai.lg.jp/soshiki/chifukuka/1405.html
+  confidence: high
+  amount: 無料、年4回まで
+- category: haishoku
+  name: 配食見守りサービス
+  name_on_page: 配食見守りサービス事業
+  summary: 栄養を考えた弁当を届け、あわせて安否確認をする。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしか高齢者世帯、または身体障がい者
+  - 調理が難しく、継続した見守りが必要と認められる
+  where: 地域福祉課
+  url: https://www.city.hachimantai.lg.jp/soshiki/chifukuka/1405.html
+  confidence: high
+  amount: 1食371円（税抜）、週3回まで
+- category: kaigo-yohin
+  name: 紙おむつ給付券の交付
+  name_on_page: 在宅要介護者等紙おむつ給付事業
+  summary: 市内の販売店で使える紙おむつの給付券を、月1回交付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護2〜5、または身体障害者手帳1・2級（下肢・体幹）
+  - 市民税非課税世帯、または均等割のみ課税の世帯
+  where: 地域福祉課
+  url: https://www.city.hachimantai.lg.jp/soshiki/chifukuka/1405.html
+  confidence: high
+  amount: 無料、月1回
+- category: nichijo-yogu
+  name: 電磁調理器・自動消火器の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: ひとり暮らしの高齢者に、電磁調理器や自動消火器を無料で給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 市民税の所得割が非課税
+  where: 地域福祉課
+  url: https://www.city.hachimantai.lg.jp/soshiki/chifukuka/1405.html
+  confidence: high
+  amount: 無料
+- category: yutai
+  name: 高齢者等温泉館の入浴利用証
+  name_on_page: 高齢者等温泉館入浴利用証
+  summary: 利用証を見せると、対象の温泉館に安い料金で入浴できる。
+  who: {}
+  at_application:
+  - 市内に住所がある65歳以上の人、または障がい者
+  where: 地域福祉課、各総合支所、田山支所
+  url: https://www.city.hachimantai.lg.jp/soshiki/chifukuka/1405.html
+  confidence: high
+  amount: 入浴料が200円（通常600円）
+- category: gaishutsu
+  name: 運転免許を自主返納した人へのバス券・タクシー券
+  name_on_page: 運転免許を自主返納された方への支援があります
+  summary: 免許を全て返納した75歳以上に、バス回数券かタクシー券を1回だけ渡す。
+  who:
+    age_min: 75
+  at_application:
+  - 令和5年4月1日以降にすべての運転免許を自主返納した市民
+  - バス券かタクシー券のどちらか1つ、1人1回限り
+  where: 防災安全課、西根・安代総合支所、田山支所
+  url: https://www.city.hachimantai.lg.jp/soshiki/bouan/17879.html
+  confidence: high
+  amount: バス回数乗車券10,200円分、またはタクシー券10,000円分
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku

@@ -1,0 +1,183 @@
+city: '042021'
+name: 石巻市
+site: www.city.ishinomaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付（電磁調理器・老人用電話）
+  name_on_page: 老人日常生活用具給付等事業
+  summary: 電磁調理器の購入費や老人用電話の費用を、上限額まで助成する（電話は貸与）。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 電磁調理器は要支援・要介護の認定を受けていること
+  - 老人用電話は一人暮らしであること
+  - 購入前の申請が必要
+  where: 地域包括支援センター、居宅介護支援事業者、介護福祉課 高齢福祉係、各総合支所市民福祉課
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/4745/4745.html
+  confidence: high
+  amount: 電磁調理器は上限45,000円、老人用電話は上限83,300円
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 寝具の洗濯・乾燥・消毒の利用券を年2枚まで交付し、費用の大半を市が助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上の一人暮らしか高齢者のみの世帯等
+  - 老衰や心身の障害・傷病で寝具の衛生管理が難しい
+  where: 地域包括支援センター、居宅介護支援事業者、介護福祉課 高齢福祉係、各総合支所市民福祉課
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/1481/1481.html
+  confidence: high
+  amount: 1枚あたり市の助成額は洗濯・乾燥・消毒4,920円、乾燥・消毒3,125円。年2枚まで
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理容師・美容師が自宅を訪問する際の利用券を年4枚まで交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上の一人暮らしか高齢者のみの世帯等
+  - 本人が市民税非課税
+  where: 地域包括支援センター、居宅介護支援事業者、介護福祉課 高齢福祉係、各総合支所市民福祉課
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/456/456.html
+  confidence: high
+  amount: 1回につき利用券1枚で1,500円相当、年4枚まで
+- category: gaishutsu
+  name: 寝台車・リフト付タクシー等の外出支援助成
+  name_on_page: 外出支援サービス事業
+  summary: 通院などで寝台車・リフト付タクシーを使うとき、料金の9割を助成券で助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上で公共交通機関の利用が困難
+  - 在宅障害者等社会参加促進助成券とは併用できない
+  where: 地域包括支援センター、居宅介護支援事業者、介護福祉課 高齢福祉係、各総合支所市民福祉課
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/1485/1485.html
+  confidence: high
+  amount: 月1枚交付。1枚の限度額は寝台車8,980円、リフト付タクシー7,950円、軽自動車等3,930円
+- category: kinkyu-tsuho
+  name: ひとりぐらし老人等の緊急通報装置の貸与
+  name_on_page: ひとりぐらし老人等緊急通報システム事業
+  summary: ひとりぐらしの方などに緊急通報装置（固定型・モバイル型）を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で慢性疾患あり、80歳以上、または重度身体障害者
+  - ひとりぐらし、同居人が重度要介護、または同居人が長期不在
+  - 緊急通報協力員の確保が必要
+  - 設置時の負担金は所得に応じて0〜11,000円
+  where: 地域包括支援センター、居宅介護支援事業者、介護福祉課 高齢福祉係、各総合支所市民福祉課
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/458/20140530133229.html
+  confidence: high
+  amount: 設置負担金は0円・3,000円・6,000円・11,000円（所得状況による）
+- category: haishoku
+  name: 高齢者配食サービス（安否確認付き）
+  name_on_page: 「食」の自立支援事業（高齢者配食サービス事業）
+  summary: 登録事業所が週7回まで昼食か夕食を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 心身の障害等で日常の食生活に支援が必要
+  where: 地域包括支援センター、居宅介護支援事業所（担当ケアマネジャー経由）
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/1484/1484.html
+  confidence: high
+  amount: 1食810円の弁当のうち市が410円を助成、利用者負担は400円
+- category: haikai
+  name: 徘徊高齢者等SOSネットワーク（QRコードラベル等）
+  name_on_page: 石巻市徘徊高齢者等SOSネットワーク事業
+  summary: 徘徊のある方を事前登録し、QRコードラベル（20枚無料）などを交付して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 事前の登録申請が必要
+  - 本人の写真の提出を求められる
+  where: 担当ケアマネジャー、地域包括支援センター、介護福祉課 高齢福祉係
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/1585/20170627200345.html
+  confidence: high
+  amount: QRコードラベル20枚は無料。追加分は自己負担
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）支給券の交付
+  name_on_page: 介護用品支給事業
+  summary: 在宅で介護する家族に、紙おむつ等と交換できる支給券を毎月交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上の要介護者を在宅で介護する家族が申請する
+  where: 介護福祉課、各総合支所市民福祉課（民生委員・地域包括支援センター・居宅介護支援事業者経由も可）
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/1568/1568.html
+  confidence: high
+  amount: 要介護4・5は月5,000円、要支援1・2と要介護1〜3は月2,000円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護者を介護保険サービスなしで介護した家族に年額の慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険サービスを受けなかった期間が1年を超える
+  - 年7日以内の短期入所の利用は除く
+  where: 介護福祉課（対象の方には課からお知らせ）
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/1568/1568.html
+  confidence: high
+  amount: 高齢者1人につき年額100,000円
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見人等への報酬に対する助成
+  summary: 成年後見人等への報酬を払うのが難しい方に、市が報酬を助成する。
+  who: {}
+  at_application:
+  - 成年後見人等への報酬を支払うことが困難な方
+  where: 地域包括支援センター（相談窓口）、介護福祉課
+  url: https://www.city.ishinomaki.lg.jp/cont/10354000/20240201140451.html
+  confidence: low
+not_found:
+- hochoki
+- mimamori
+- chusha
+- yutai
+- sonota

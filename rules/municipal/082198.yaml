@@ -1,0 +1,149 @@
+city: 082198
+name: 牛久市
+site: www.city.ushiku.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅介護者おむつ等給付金
+  name_on_page: 在宅介護者おむつ等給付金支給事業
+  summary: ねたきりや認知症で在宅でおむつを常に使う非課税の方に、おむつ代の一部を給付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上、または65歳未満で要支援・要介護認定を受けている
+  - ねたきりか認知症で、常時おむつを使っている
+  - 当該年度分の市民税が非課税
+  - 生活保護・介護保険料滞納・入院中・施設入所の方は除く
+  where: 高齢福祉課
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000878.html
+  confidence: high
+  amount: 月 5,000 円の範囲内でおむつ等の購入費の一部
+- category: kaigo-yohin
+  name: 外出用の杖・シルバーカー購入費助成
+  name_on_page: 外出支援用具購入費助成事業
+  summary: 外出に使う杖やシルバーカーの購入費の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 歩行に支障があり外出支援用具が必要
+  where: 高齢福祉課
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000895.html
+  confidence: high
+  amount: 同じ年度内に一人 5,000 円まで
+- category: haikai
+  name: 徘徊高齢者の位置情報端末の貸与
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 徘徊のある高齢者を介護する家族に、位置情報を調べる携帯端末を貸し出す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 概ね65歳以上で徘徊行動のある高齢者を介護する家庭
+  - 特別養護老人ホームなど市長が認めた場合も対象
+  where: 高齢福祉課
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000873.html
+  confidence: high
+  amount: 業者に位置検索を依頼する場合は所得に応じた利用料がかかる
+- category: haikai
+  name: SOSネットワークの事前登録
+  name_on_page: 牛久市SOSネットワーク事業
+  summary: 行方不明のおそれがある方を事前登録し、いなくなった際に協力機関へ一斉連絡して捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者のほか、障がい者や児童も登録できる
+  - 最近の写真と申請者の印鑑が必要
+  - 事前登録がなくてもシステムは利用できる
+  where: 牛久市地域包括支援センター
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000876.html
+  confidence: high
+- category: iro
+  name: 在宅介護慰労金
+  name_on_page: 介護慰労金の支給
+  summary: 介護保険サービスを使わず在宅で重度の高齢者を介護する家族に慰労金を支給する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の認定、またはそれに相当する高齢者を介護している
+  - 高齢者と介護者がともに基準日7月31日に市内在住
+  - 期間内に介護保険サービスを利用していない
+  - 過去1年に概ね3か月以上の入院・施設入所がない
+  - 基準日の翌1か月以内に申請
+  where: 高齢福祉課
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000901.html
+  confidence: high
+- category: koken
+  name: 成年後見の市長申立てと費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立てで後見人が付いた場合、費用負担が難しければ申立費用と報酬を助成する。
+  who: {}
+  at_application:
+  - 認知症等で判断能力が十分でなく、申立てできる親族がいない
+  - 市長申立てで後見人等が選任された
+  - 費用負担が困難と認められる
+  where: 高齢福祉課、成年後見サポートセンター（市社会福祉協議会）
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000900.html
+  confidence: high
+- category: ribiyo
+  name: ねたきり高齢者等の訪問理美容
+  name_on_page: ねたきり高齢者等訪問理美容サービス事業
+  summary: 在宅のねたきり高齢者等の自宅に理容師・美容師が訪問し、調髪などを行う。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、介護の認定を受けている
+  - 食事・排便・着替えなどで他の人の介護が必要
+  where: 高齢福祉課
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000897.html
+  confidence: high
+  amount: 1回の利用者負担1,000円（年6回まで）、市負担3,000円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置
+  summary: ボタン操作で消防本部に通報できる緊急通報装置を貸し出し、設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住の65歳以上で在宅の、ひとり暮らしか高齢者世帯の病弱な方
+  - または、ひとり暮らしの重度身体障害者
+  - NTT回線を使い、ほかにインターネット回線等がない
+  where: 高齢福祉課
+  url: https://www.city.ushiku.lg.jp/kenko-fukushi/fukushi-shakaihosho/koireisha-shien-yobo-hoken/koreishashien/page000898.html
+  confidence: high
+- category: gaishutsu
+  name: 75歳以上のタクシー利用券（令和8年度）
+  name_on_page: 令和8年度牛久市物価高騰対応公共交通利用券
+  summary: 75歳以上の市民に、市内で使えるタクシー利用券を配る（今年度のみの事業）。
+  who:
+    age_min: 75
+  at_application:
+  - 牛久市に住民登録がある
+  - 令和9年3月31日までに75歳以上になる
+  - 申請期限は令和8年12月28日
+  - 市内の乗降で、市内に営業所のあるタクシー会社で使える
+  where: 政策企画課（郵送・FAX・いばらき電子申請も可）
+  url: https://www.city.ushiku.lg.jp/kurashi-tetsuduki/seikatsu/kokyokotsu/page014850.html
+  confidence: high
+  amount: 500円券を32枚（合計16,000円分）。1乗車で2枚まで使える
+  more_urls:
+  - https://www.city.ushiku.lg.jp/data/doc/1784014429_doc_272_0.pdf
+not_found:
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu

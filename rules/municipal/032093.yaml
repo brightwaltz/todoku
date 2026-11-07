@@ -1,0 +1,88 @@
+city: 032093
+name: 一関市
+site: www.city.ichinoseki.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者福祉乗車券の交付
+  name_on_page: 高齢者福祉乗車券交付事業
+  summary: 市内のバス・タクシーで使える乗車券が、非課税世帯の高齢者に交付される。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 70歳以上のひとり暮らし、または70歳以上のみの世帯の人
+  - 障がい者用乗車券の対象者のみと同居する70歳以上の人も可
+  - 市内に住民として1年以上住んでいる
+  - 70歳未満の人と同居していない
+  - 障がい者用福祉乗車券の対象になる人は対象外
+  where: 長寿社会課（本庁）または各支所の市民福祉課
+  url: https://www.city.ichinoseki.iwate.jp/archive/contents-28758
+  confidence: high
+  amount: 月1,000円分（年12,000円まで）の乗車券を申請月分から交付
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等の緊急通報・見守り（安心ホットライン）
+  name_on_page: ひとり暮らし高齢者等安心ホットライン事業
+  summary: 緊急通報の端末機や火災センサーを設置し、月1回の安否確認電話もある。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上、40〜64歳で要介護認定、または身障1・2級・療育A
+  - 上記の人だけで構成される世帯で暮らしている
+  - 命に関わる持病、または緊急時に自分で動くのが難しい
+  - 生活保護世帯は利用料が免除
+  where: 長寿社会課（本庁）または各支所の市民福祉課
+  url: https://www.city.ichinoseki.iwate.jp/archive/contents-28758
+  confidence: high
+  amount: 利用料は1世帯月250円（口座振替）
+- category: jutaku
+  name: 住宅改修への市独自の補助
+  name_on_page: 高齢者および障がい者にやさしい住まいづくり推進事業
+  summary: 手すり・段差解消・トイレ洋式化などの住宅改修費を、募集期間内に申請すると一部補助される。
+  who:
+    at_home: true
+  at_application:
+  - 要支援・要介護認定、または下肢・体幹障がいの身障1〜3級
+  - 所得限度額あり。賃貸、新築・増築、平成14年度以降の新築は対象外
+  - 以前にこの補助を受けた住宅は対象外
+  - 通年ではなく、広報などで募集する期間内に事前申請する
+  where: 長寿社会課（本庁）または各支所の市民福祉課
+  url: https://www.city.ichinoseki.iwate.jp/archive/contents-28758
+  confidence: high
+  amount: 工事費から20万円を引いた額の3分の2、上限40万円
+  more_urls:
+  - https://www.city.ichinoseki.iwate.jp/archive/p20260612092256
+- category: sonota
+  name: 高齢者世帯のごみ戸別収集
+  name_on_page: 高齢者ごみ出し支援事業
+  summary: ごみ出しが難しい高齢者のみの世帯に、市職員が週1回ごみを戸別に収集する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護・要支援認定や総合事業対象者の認定を受けていない
+  - 障害支援区分の認定を受けていない
+  - 近親者などの支援を受けることが難しい
+  - ごみ集積所へ徒歩以外の移動手段がなく、心身の状態で出せない
+  where: 生活環境課または各支所の市民福祉課
+  url: https://www.city.ichinoseki.iwate.jp/archive/contents-158142
+  confidence: high
+  amount: 1回250円、週1回（月最大4回）
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- haikai

@@ -1,0 +1,99 @@
+city: 082261
+name: 那珂市
+site: www.city.naka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入助成券
+  name_on_page: 那珂市紙おむつ等購入費助成事業
+  summary: 要介護4・5で市民税非課税のかたを在宅で介護する家族に、紙おむつ等の助成券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 申請するのは介護している家族
+  - 介護を受けるかたが入院中・入所中の場合は対象外
+  where: 介護長寿課 高齢者支援グループ、瓜連支所
+  url: https://www.city.naka.lg.jp/kenkou-iryou-fukushi/fukushi/koureisha-fukushi/shienjigyou/page000154.html
+  confidence: high
+  amount: 1期（4か月）あたり、本人のみ非課税は 12,000 円分、非課税世帯は 24,000 円分の助成券
+- category: haishoku
+  name: ひとり暮らし高齢者等の配食（利用料補助）
+  name_on_page: ひとり暮らし高齢者等配食サービス
+  summary: 食事作りが難しい高齢者等に、配食の利用料の一部を市が補助する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または虚弱な高齢者のみの世帯
+  - ひとり暮らしの障がい者も対象
+  - 食事を作ることが困難と認められる（介護認定相当）
+  - 同居家族がいる人、近隣に家族等がいる人は対象外
+  - 市の高齢者台帳への登録をお願いしている
+  where: 介護長寿課 高齢者支援グループ（本庁1階2番窓口）
+  url: https://www.city.naka.lg.jp/kenkou-iryou-fukushi/fukushi/koureisha-fukushi/shienjigyou/page000128.html
+  confidence: high
+  amount: 1食1,160円のうち、利用者負担は非課税世帯590円・課税世帯690円。1日1食、週2日以上
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 緊急ボタンで消防本部に通報できる装置を、ひとり暮らしの高齢者などの家に設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上のひとり暮らし高齢者世帯
+  - または65歳以上で要支援・要介護認定（かそれに準ずる）の高齢者のみの世帯
+  - 近隣のかた2〜3名の協力員が必要
+  where: 担当地区の民生委員・児童委員を通して申請（介護長寿課）
+  url: https://www.city.naka.lg.jp/kenkou-iryou-fukushi/fukushi/koureisha-fukushi/shienjigyou/page000155.html
+  confidence: high
+  amount: 設置費は世帯の市民税所得割額で 0〜39,600 円（火災警報器連動工事は別料金）。保守点検は市が負担
+- category: haikai
+  name: 徘徊高齢者のGPS端末の初期費用助成
+  name_on_page: 徘徊高齢者家族支援サービス事業
+  summary: 徘徊のある高齢者を介護する家族に、GPS 位置情報サービスの初期費用の一部を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 対象の高齢者はおおむね65歳以上で、市内に住所がある
+  - 申請するのは介護している市内在住の家族
+  - 領収書や端末の仕様が分かる書類が必要
+  where: 介護長寿課 高齢者支援グループ
+  url: https://www.city.naka.lg.jp/kenkou-iryou-fukushi/fukushi/koureisha-fukushi/shienjigyou/page002127.html
+  confidence: high
+  amount: 対象経費の助成で上限1万円
+- category: gaishutsu
+  name: タクシー利用券（通院等の助成）
+  name_on_page: タクシー利用券
+  summary: 要介護認定などのあるかたに、タクシー料金の一部を助成する利用券を交付する。
+  who: {}
+  at_application:
+  - 要介護認定、各種障害者手帳、難病認定のいずれかに当たる人
+  - 障がいを理由に軽自動車税の減免を受けている人は原則対象外
+  where: 社会福祉課（3番窓口）、瓜連支所
+  url: https://www.city.naka.lg.jp/kenkou-iryou-fukushi/fukushi/shougai-fukushi/teate/page000428.html
+  confidence: high
+  amount: 1枚600円、1回の乗車で最大2枚（1,200円分）まで
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

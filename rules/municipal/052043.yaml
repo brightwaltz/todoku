@@ -1,0 +1,149 @@
+city: '052043'
+name: 大館市
+site: www.city.odate.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給券
+  name_on_page: 家族介護用品支給券
+  summary: 要介護4・5の方を介護する同世帯の家族に、介護用品を買えるクーポン券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護4・5の高齢者と同一世帯で、その方を介護している家族
+  - 世帯全員が市民税非課税
+  where: 長寿課（地域包括支援センターでも代行申請できる）
+  url: https://www.city.odate.lg.jp/city/handbook/handbook4/page20/p97
+  confidence: high
+  amount: 月5,000円分（年6万円）。4月と10月に半年分ずつ交付。紙おむつ・尿取りパッドなどに使える。
+  more_urls:
+  - https://www.city.odate.lg.jp/uploads/public/pages_0000000461_00/%E3%82%8F%E3%81%8C%E3%81%BE%E3%81%A1%E3%81%AE%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置・ふれあい安心電話の貸与
+  name_on_page: 緊急通報装置・ふれあい安心電話
+  summary: 急病や事故のとき外部へ通報できる専用の通報端末を貸してくれる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしの高齢者、または高齢者のみで病弱な世帯
+  - ひとり暮らしの重度身体障害（1・2級）の方も対象
+  - 大館地域の方は市民税非課税世帯が条件
+  where: 長寿課高齢者福祉係、地域包括支援センター
+  url: https://www.city.odate.lg.jp/city/handbook/handbook4/page20/p95
+  confidence: high
+  amount: 利用者負担は月400円または月300円（地域で異なる）。
+  more_urls:
+  - https://www.city.odate.lg.jp/uploads/public/pages_0000000461_00/%E3%82%8F%E3%81%8C%E3%81%BE%E3%81%A1%E3%81%AE%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF.pdf
+- category: gaishutsu
+  name: 福祉タクシーの移送サービス利用券
+  name_on_page: 移送サービス利用券
+  summary: 通院や福祉の手続きで福祉タクシーに乗るとき使える利用券を、月2枚渡す。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護4・5の認定、または車イスを常時使っている
+  - 一般の交通機関を使うのが難しい
+  where: 長寿課高齢者福祉係
+  url: https://www.city.odate.lg.jp/city/handbook/handbook4/page20/p86
+  confidence: high
+  amount: 片道30分以内1,500円、1時間以内2,000円、1時間超2,500円まで助成。
+  more_urls:
+  - https://www.city.odate.lg.jp/uploads/public/pages_0000000461_00/%E3%82%8F%E3%81%8C%E3%81%BE%E3%81%A1%E3%81%AE%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF.pdf
+- category: gaishutsu
+  name: 運転免許返納者へのタクシー利用助成券・得とく定期券購入費助成
+  name_on_page: タクシー利用助成券
+  summary: 免許を返納した65歳以上に、タクシー助成券と得とく定期券の購入費助成を各1回出す。
+  who:
+    age_min: 65
+  at_application:
+  - 令和6年9月1日以降に自動車運転免許を返納した
+  - 令和8年度分の申請は令和8年12月10日で締切
+  where: 申請書を申請窓口へ提出（問い合わせは都市計画課交通政策係）
+  url: https://www.city.odate.lg.jp/city/soshiki/koutsu/p11895
+  confidence: high
+  amount: タクシー利用助成券は700円×32枚（1回限り）。得とく定期券6か月券の購入費も助成（1回限り）。
+- category: ribiyo
+  name: 訪問理美容サービス利用券
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきりなどで店に行けない高齢者が、自宅で理美容を受けられる利用券を出す。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 寝たきり等のため理髪店・美容院に出向くことが困難
+  where: 長寿課高齢者福祉係、地域包括支援センター
+  url: https://www.city.odate.lg.jp/uploads/public/pages_0000000461_00/%E3%82%8F%E3%81%8C%E3%81%BE%E3%81%A1%E3%81%AE%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF.pdf
+  confidence: high
+  amount: 利用券を年4枚。技術料などは自己負担。
+- category: sonota
+  name: はり・きゅう・マッサージ施術券
+  name_on_page: はり、きゅう、マッサージ施術費
+  summary: 市内の65歳以上に、はり・きゅう・マッサージで使える施術券を年6枚出す。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に居住している
+  - 施術券は市はり・きゅう・マッサージ師会会員の施術所で使う
+  where: 保険課医療給付係、比内・田代総合支所の市民生活係
+  url: https://www.city.odate.lg.jp/city/handbook/handbook4/page20/p4614
+  confidence: high
+  amount: 年度で6,000円分（1,000円券を6枚）。
+- category: sonota
+  name: 高齢者の屋根の雪下ろし費用助成
+  name_on_page: 高齢者の屋根の雪下ろし費用の一部を助成します
+  summary: 自力で雪下ろしできない高齢者世帯が業者に頼んだ屋根の雪下ろし費用の半分を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 持ち家に住んでいる
+  - 市税を滞納していない
+  - 施設入所や入院で住居にいない場合は対象外
+  - 雪下ろし後に領収書と作業前後の写真を付けて申請
+  where: 長寿課高齢者福祉係
+  url: https://www.city.odate.lg.jp/city/handbook/handbook4/page20/p107
+  confidence: high
+  amount: 対象経費の2分の1（上限3万円）。
+- category: sonota
+  name: 車イスの短期貸出し
+  name_on_page: 車イスの短期貸出し
+  summary: 一時的に車イスが必要な方に、3か月以内で車イスを貸し出す。
+  who: {}
+  at_application:
+  - 一時的に車イスが必要な方
+  where: 長寿課高齢者福祉係
+  url: https://www.city.odate.lg.jp/city/handbook/handbook4/page20/p95
+  confidence: high
+  amount: 貸出しは無料。貸出し中に壊れた場合の修理費は利用者負担。
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- mimamori
+- nichijo-yogu

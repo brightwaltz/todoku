@@ -1,0 +1,142 @@
+city: '062120'
+name: 尾花沢市
+site: www.city.obanazawa.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の券の支給
+  name_on_page: 介護用品支給サービス
+  summary: 常におむつが必要な要介護2以上の方に、介護用品の引換券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護2は生計中心者の市県民税が非課税か均等割のみ
+  - 要介護3〜5は生計中心者の市県民税が5万円以下
+  - 一覧表では本人の市民税が非課税と記載
+  where: 福祉課 高齢者福祉係
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/639
+  confidence: high
+  amount: 介護用品券の交付（金額は頁に無し）
+  more_urls:
+  - https://www.city.obanazawa.yamagata.jp/files/original/20260407091741111aa5a5020.pdf
+- category: haishoku
+  name: 配食（夕食の弁当と安否確認）
+  name_on_page: 食の自立支援サービス
+  summary: 調理が難しい高齢者世帯に、夕食を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の調理が困難であること
+  - 一覧表では老人と心身障がい者の同居世帯も対象
+  where: 高齢者福祉係（地区の民生委員へ申請）
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/639
+  confidence: high
+  amount: 月・木の夕食配達、自己負担350円
+  more_urls:
+  - https://www.city.obanazawa.yamagata.jp/files/original/20260407091741111aa5a5020.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報サービス
+  summary: 火災報知器と押しボタン式の通報装置を取り付ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 高齢者福祉係（地区の民生委員へ申請）
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/639
+  confidence: high
+- category: gaishutsu
+  name: 高齢者のタクシー券
+  name_on_page: 高齢者おもいやりタクシー券
+  summary: 運転免許のない65歳以上に、タクシー利用券を地区ごとの枚数で渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 普通自動車免許を持っていない
+  - 市内に住所があり居住している
+  - 障害者向けの福祉タクシー券を受けている人は対象外
+  where: 福祉課 高齢者福祉係
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/639
+  confidence: high
+  amount: 1枚500円の券を年12・24・36・48枚（地区で異なる）
+  more_urls:
+  - https://www.city.obanazawa.yamagata.jp/files/original/20260407091741111aa5a5020.pdf
+- category: gaishutsu
+  name: リフト付タクシー利用券
+  name_on_page: リフト付タクシー券
+  summary: 要介護4・5の方のリフト付タクシー料金の7割を助成する券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 車イスやストレッチャー以外での移動が困難
+  where: 福祉課 高齢者福祉係
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/639
+  confidence: high
+  amount: 1回の利用料金の70％、年24枚
+  more_urls:
+  - https://www.city.obanazawa.yamagata.jp/files/original/20260407091741111aa5a5020.pdf
+- category: sonota
+  name: 高齢者世帯などへの除雪券
+  name_on_page: 除雪サービス
+  summary: 市民税非課税等で自力除雪できない高齢者世帯などに除雪券を渡す。
+  who: {}
+  at_application:
+  - 市民税が非課税または均等割のみの世帯
+  - 自力で除雪できず近親者の援助も得られない
+  - 65歳以上のみの世帯、または重度心身障がい者のいる世帯
+  where: 高齢者福祉係（地区の民生委員へ申請）
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/639
+  confidence: high
+  amount: 除雪券の交付（金額は頁に無し）
+  more_urls:
+  - https://www.city.obanazawa.yamagata.jp/files/original/20260407091741111aa5a5020.pdf
+- category: mimamori
+  name: 集落の福祉協力員による見守り・支援
+  name_on_page: 尾花沢市福祉ネットワーク（福祉隣組）事業
+  summary: 支援が必要な高齢者に、集落の福祉協力員が見守りや家事・除雪の手伝いをする。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者などで支援が必要な方
+  where: 社会福祉協議会（各集落の民生委員に相談）
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/642
+  confidence: high
+- category: sonota
+  name: ホームヘルパーの派遣（社協）
+  name_on_page: ささえあいホームヘルプサービス事業
+  summary: 介護保険や障がい福祉サービスを使えない方に、ヘルパーを派遣する。
+  who:
+    at_home: true
+  at_application:
+  - 介護保険・障がい福祉サービスが使えず在宅生活が困難
+  where: 社会福祉協議会
+  url: https://www.city.obanazawa.yamagata.jp/fukushi/hoken/639
+  confidence: high
+  amount: 8〜18時は30分900円、早朝・夜間は30分1,125円、交通費は1回200円
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

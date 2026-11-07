@@ -1,0 +1,254 @@
+city: 082121
+name: 常陸太田市
+site: www.city.hitachiota.ibaraki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成券
+  name_on_page: 介護用品（紙おむつ等）購入費助成
+  summary: 在宅の要介護者に、紙おむつ等に使える助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住民票があり、市の介護保険の被保険者
+  - グループホーム・有料老人ホーム・サ高住は対象
+  - 申請時に市税等の滞納がない
+  where: 高齢福祉課 高齢福祉係、各支所地域振興課
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page009601.html
+  confidence: high
+  amount: 月 5,000 円分（1,000 円券 5 枚）、年額 6 万円まで
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: haishoku
+  name: 夕食の配食と安否確認
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい方に、栄養バランスのよい夕食を届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 調理をすることが困難な方
+  - 上記に準ずる世帯も対象
+  - 敷地内同居は対象外
+  - ふれあい給食サービスと重複利用不可
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page010658.html
+  confidence: low
+  amount: 月〜金のうち週 4 日まで、1 食 350 円の自己負担
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1751416603_doc_64_0.pdf
+- category: haikai
+  name: おかえりSOSネットワーク事前登録
+  name_on_page: 常陸太田市おかえりSOSネットワーク
+  summary: 行方不明のおそれがある方を事前登録し、衣服に付けるおかえりマークを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住
+  - 認知症等で行方不明になるおそれがある
+  where: 高齢福祉課（申請書に写真を添えて提出、郵送可）
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/page005944.html
+  confidence: high
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: iro
+  name: 介護慰労金
+  name_on_page: 介護慰労金の支給
+  summary: 重度の要介護高齢者と同居して在宅で介護する人に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 支給は介護者に対して。介護される方が 65 歳以上
+  - 主として介護にあたっている方
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page000562.html
+  confidence: high
+  amount: 月額：要介護 3 は 5,000 円、要介護 4・5 は 7,000 円
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: ribiyo
+  name: 訪問理美容の助成券
+  name_on_page: 訪問理美容サービス助成事業
+  summary: 理美容店へ行くのが難しい方が、市指定店の訪問理美容に使える助成券。
+  who: {}
+  at_application:
+  - 身体・交通等の理由で理美容店へ行くのが困難
+  - ひとり暮らしの 65 歳以上
+  - 高齢者のみ世帯の 65 歳以上
+  - 身体障害者の 65 歳以上
+  - 要介護 3〜5 の方（以上のいずれか）
+  where: 高齢福祉課
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page007923.html
+  confidence: high
+  amount: 1 回 2,000 円の助成券を年 4 枚
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（高齢者見守りサポート事業）
+  name_on_page: 緊急通報装置の貸与サービス
+  summary: 24 時間対応のオペレーターにつながる通報装置を無料で設置・貸与する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 敷地内同居は対象外
+  - 申請書と利用同意書の提出が必要
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page000549.html
+  confidence: high
+  amount: 設置無料。月額：固定電話型 200 円、携帯電話型 300 円
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: jutaku
+  name: 高齢者住宅リフォーム助成
+  name_on_page: 高齢者住宅リフォーム助成
+  summary: 介護保険の住宅改修の上限を超える工事費の 4 分の 3 を市が上乗せ助成する。
+  who: {}
+  at_application:
+  - 介護保険を使って住宅改修を行う方
+  - 生計中心者の前年所得税額が 64 万円以下
+  where: 高齢福祉課 介護保険係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page000557.html
+  confidence: high
+  amount: 介護保険の住宅改修費を除いた額の 3/4、助成限度額 30 万円
+- category: gaishutsu
+  name: 通院タクシー代の助成
+  name_on_page: 高齢者通院支援助成事業（医療機関送迎）
+  summary: 自宅と市内等の医療機関を行き来するタクシー代の一部を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 自力で医療機関に行くことが困難
+  - 車を使う同居者（敷地内含む）がいる場合は対象外
+  - 市外は市長指定の医療機関（認知症外来のみ）
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page000558.html
+  confidence: high
+  amount: 自己負担：認定者は 2 割、未認定は 5 割。片道 1 回、原則月 4 回まで
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: gaishutsu
+  name: 運転免許自主返納の支援（バスIC・タクシー券）
+  name_on_page: 運転免許証自主返納支援事業
+  summary: 運転免許をすべて返納した市民に、バスICカードかタクシー券を渡す。
+  who: {}
+  at_application:
+  - 平成 28 年 10 月 1 日以降にすべての運転免許を自主返納した市民
+  - 年齢の下限は記載なし
+  where: 企画課 企画係
+  url: https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+  confidence: low
+  amount: 路線バスIC 1 万円分（75 歳以上は 5 千円分）か、タクシー券 1 万円分
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1751416603_doc_64_0.pdf
+- category: gaishutsu
+  name: 75歳以上のバス運賃半額
+  name_on_page: 高齢者バス利用促進助成事業
+  summary: 75 歳以上の市民が、市内路線バスを半額運賃で利用できる。
+  who:
+    age_min: 75
+  at_application:
+  - 茨城交通の記名式ICカード（いばっピ）の購入が必要
+  - 手持ちのICカードは営業所で手続き
+  - 高速バスは除く
+  where: 企画課 企画係
+  url: https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+  confidence: low
+  amount: 市内路線バスの運賃が半額
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1751416603_doc_64_0.pdf
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付・貸与
+  name_on_page: 高齢者日常生活用具の給付・貸与サービス
+  summary: 電磁調理器・火災警報器・ガスコンロ・老人福祉車等の給付、老人用電話の貸与。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者（要援護高齢者を含む）
+  - 老人福祉車は杖を必要とする高齢者も対象
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page000548.html
+  confidence: high
+  amount: 自己負担は 0 円〜全額（生計中心者の前年所得税額による）
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり・きゅう・マッサージ施術費の助成
+  summary: 市登録の施術所で使える、はり・きゅう・マッサージの助成券を交付する。
+  who: {}
+  at_application:
+  - 70 歳以上の高齢者
+  - または 65〜69 歳の身体障害者（1・2 級）
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page000554.html
+  confidence: low
+  amount: 1 回 1,000 円の助成券を年 6 枚
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+- category: sonota
+  name: 軽度生活援助（庭の除草・家事援助等）
+  name_on_page: 軽度生活援助サービス
+  summary: 庭の除草等の助成や、家事援助・ヘルパー派遣を安い自己負担で受けられる。
+  who: {}
+  at_application:
+  - 除草：ひとり暮らし・高齢者のみ世帯（敷地内同居は対象外）
+  - 除草は 40〜64 歳で要介護認定のひとり暮らしの方も対象
+  - 家事援助：ひとり暮らし・高齢者のみ世帯。要介護(支援)認定者は不可
+  - ヘルパー派遣：日常生活に援助が必要な高齢者
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/kurashi/fukushi-kaigo/senior-service/page000550.html
+  confidence: low
+  amount: 除草は 1 時間 900 円を月 8 時間まで助成。家事援助は 1 時間 100 円、ヘルパー派遣は 190 円
+  more_urls:
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+  - https://www.city.hitachiota.ibaraki.jp/data/doc/1751416603_doc_64_0.pdf
+- category: sonota
+  name: 宅配買物代行サービス
+  name_on_page: 宅配買物代行サービス
+  summary: 登録商店から、注文した品物を自宅へ宅配してもらえる。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上の高齢者
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.hitachiota.ibaraki.jp/data/doc/1744690201_doc_64_0.pdf
+  confidence: low
+  amount: 週 3 回まで。品物代金と配送料は自己負担
+not_found:
+- koken
+- hochoki
+- shingu
+- mimamori
+- chusha

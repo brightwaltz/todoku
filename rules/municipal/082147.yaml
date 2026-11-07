@@ -1,0 +1,122 @@
+city: 082147
+name: 高萩市
+site: www.city.takahagi.ibaraki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸出し
+  name_on_page: 緊急通報装置の設置
+  summary: 急病時にボタンで消防署へ通報できる装置（固定電話型・携帯型）を借りられる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの高齢者等が対象（詳しい条件は頁に無い）
+  where: 高齢福祉課 地域包括支援グループ
+  url: https://www.city.takahagi.ibaraki.jp/kurashi/fukushi/koureisha/page007460.html
+  confidence: high
+  amount: 所得に応じた自己負担あり
+- category: haishoku
+  name: フレイル予防弁当の配食
+  name_on_page: 配食サービス(フレイル予防弁当)
+  summary: 社協ボランティアが月1回（8月を除く）お弁当を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 安否確認が必要な人
+  where: 高齢福祉課 地域包括支援グループ（運営は社会福祉協議会）
+  url: https://www.city.takahagi.ibaraki.jp/kurashi/fukushi/koureisha/page007460.html
+  confidence: high
+  amount: 自己負担あり（額は頁に無い）
+- category: sonota
+  name: 庭の除草の援助
+  name_on_page: 軽度生活援助事業
+  summary: 庭の除草が必要なひとり暮らしの高齢者等に、シルバー人材センター会員が手伝う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 庭の除草の援助が必要な人
+  - 先着順で、予定人数に達すると受付終了
+  where: 高齢福祉課 地域包括支援グループ
+  url: https://www.city.takahagi.ibaraki.jp/kurashi/fukushi/koureisha/page007460.html
+  confidence: high
+  amount: 自己負担あり（額は頁に無い）
+- category: iro
+  name: 在宅介護の家族への慰労金
+  name_on_page: 在宅介護慰労金支給事業
+  summary: 要介護3以上で介護保険を使わない高齢者を在宅で介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険を使っていない（一部例外あり）
+  - 6か月以上続けて在宅で介護している
+  - 介護される人も介護する家族も住民税非課税世帯
+  - 毎年8月に申請
+  where: 高齢福祉課 地域包括支援グループ
+  url: https://www.city.takahagi.ibaraki.jp/kurashi/fukushi/koureisha/page007460.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用や後見人報酬の全部または一部を助成できる場合がある。
+  who: {}
+  at_application:
+  - 対象の細かい条件は頁に無く、窓口で相談
+  - 親族がいない場合は市長申立の制度もある
+  where: 高齢福祉課（65歳未満の知的・精神障がい者は社会福祉課）
+  url: https://www.city.takahagi.ibaraki.jp/kurashi/fukushi/page006832.html
+  confidence: low
+  amount: 上限あり（額は頁に無い）
+- category: haikai
+  name: 行方不明者SOSネットワークの事前登録
+  name_on_page: 行方不明者SOSネットワーク
+  summary: 行方不明のおそれがある人を市に事前登録し、発生時に市・警察・協力機関が捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる可能性がある人
+  - 利用登録申請書で申請
+  where: 高齢福祉課 地域包括支援グループ
+  url: https://www.city.takahagi.ibaraki.jp/kurashi/fukushi/ninchishou/page007495.html
+  confidence: high
+- category: gaishutsu
+  name: 運転免許自主返納への交通利用券
+  name_on_page: 高齢者の運転免許自主返納を支援
+  summary: 運転免許をすべて返納した65歳以上に、タクシー券か交通系ICカード3万円分を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 平成29年4月1日以降に運転免許をすべて自主返納した
+  - 市内に住民登録がある
+  - 市税等の滞納がない
+  - 1人1回限り
+  where: 総務課
+  url: https://www.city.takahagi.ibaraki.jp/kurashi/koutsu/page005658.html
+  confidence: high
+  amount: 交通利用券3万円分
+not_found:
+- kaigo-yohin
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

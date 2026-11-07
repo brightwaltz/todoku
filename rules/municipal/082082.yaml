@@ -1,0 +1,192 @@
+city: 082082
+name: 龍ケ崎市
+site: www.city.ryugasaki.ibaraki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 見守りサポート事業（緊急通報装置の貸与）
+  name_on_page: 龍ケ崎市高齢者等見守りサポート事業
+  summary: ボタン一つで24時間通報できる機器を貸し出し、月1回の安否確認もある。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または病弱な高齢者2人の世帯
+  - ひとり暮らしで自力通報が困難な重度身体障がい者も対象
+  - 日中独居の高齢者は状況に応じて対象
+  where: 福祉総務課窓口（高齢者）、障がい福祉課窓口（障がい者）
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/mimamori.html
+  confidence: high
+  amount: 固定型は基本料金「―」、携帯型は基本料金652円または1,100円（税込）、人感センサー2個550円
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者の補聴器購入費を助成しています！
+  summary: 医師が必要と認めた65歳以上に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録がある
+  - 耳鼻咽喉科専門医が補聴器の使用を必要と認めた
+  - 聴覚障がいの身体障害者手帳を交付されていない
+  where: 福祉総務課
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/hotyouki.html
+  confidence: high
+  amount: 購入費の2分の1、上限3万円
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 夕食を週1〜3回届け、訪問で安否も確認する配食サービス。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 虚弱な方、または要介護等認定を受けている方
+  where: 福祉総務課窓口
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/sixyokunojiritu.html
+  confidence: high
+  amount: 1食500円（利用者負担）、月〜土の間で1日おきに配達
+- category: gaishutsu
+  name: 移送サービス利用料の助成
+  name_on_page: 高齢者外出支援利用料助成事業
+  summary: NPO等の移送サービスで通院や買物をする際の利用料を一部助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で要介護等認定を受けている
+  - 申請書に移送サービス実施団体の登録書の写しを添付
+  where: 福祉総務課窓口
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/koureisixyagaisixyut.html
+  confidence: high
+  amount: 1回の最低利用料金の3分の2、月6回まで
+- category: ribiyo
+  name: 訪問理美容（出張理容）
+  name_on_page: さわやか理髪推進事業
+  summary: 外出が難しい方の自宅へ理容師が来て、整髪や顔そりをする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護1以上、または認知症・老衰・疾病等で外出が困難
+  - または1・2級の身体障害者手帳があり外出が困難
+  - 頁には65歳以上のひとり暮らし・高齢者のみ世帯に限るとある
+  where: 福祉総務課窓口（高齢者）、障がい福祉課窓口（障がい者）
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/sawayakarihatu.html
+  confidence: high
+  amount: 1回1,950円（利用者負担）、年6回まで
+- category: iro
+  name: 在宅介護慰労金
+  name_on_page: 在宅介護慰労金支給
+  summary: 重度の要介護の高齢者を在宅で介護する家族に、年1回慰労金を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同居して1年以上介護している
+  - 要介護者・介護者とも市民税が非課税
+  - 介護保険サービスを使っていない（年1週間程度のショートは可）
+  - 介護保険料の未納がない
+  - 基準日は10月1日、申請は10月2日から31日
+  where: 福祉総務課窓口
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/zaitakukaigoiroukinn.html
+  confidence: high
+  amount: 年額10万円
+- category: kaigo-yohin
+  name: 介護用品購入費の助成（助成券）
+  name_on_page: 高齢者等介護用品購入費助成事業
+  summary: 重度の要介護者を介護する非課税世帯に、紙おむつ等の助成券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者が同居または同居に準ずる状態で介護している
+  - 要介護者・介護者とも介護保険料の未納がない
+  - 月15日以上の入院・入所・ショート利用は対象外
+  - 生活保護で同様の扶助を受けている場合は対象外
+  where: 福祉総務課窓口
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/koureisixyakaigoyouh.html
+  confidence: high
+  amount: 1人あたり月額5,000円分の助成券
+- category: haikai
+  name: 徘徊高齢者のQRコード見守り
+  name_on_page: 徘徊高齢者等二次元コード活用見守り事業
+  summary: 衣服や杖に貼るQRコードを配り、保護時に身元を早く確認できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 徘徊のおそれのある認知症高齢者等
+  - 申請は本人・配偶者・親族・支援者等ができる
+  where: 福祉総務課窓口
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/haikaikoureisixyatou.html
+  confidence: high
+  amount: 登録料は無料
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与事業
+  summary: 電話のない非課税の方に福祉電話を無料で貸し出す。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または外出困難な重度身体障がい者
+  - 電話（携帯電話等を含む）を持っていない
+  where: 福祉総務課窓口
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/fukushidenwa.html
+  confidence: high
+  amount: 機器は無料。基本料金と架設費用は市負担、通話料・電気料金は利用者負担
+- category: sonota
+  name: 救急医療情報安心キットの配付
+  name_on_page: 救急医療情報安心キット配付事業
+  summary: 救急時に必要な情報を自宅に保管する安心キットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または重度身体障がい者
+  - 健康上の不安がある方も相談により無料で配付
+  where: 福祉総務課窓口（高齢者）、障がい福祉課窓口（障がい者）
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/kixyuukixyuuirixyou.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: ごみ出しの訪問収集
+  name_on_page: 家庭ごみのおはようSUN訪問収集
+  summary: ごみを集積所へ出せない世帯の家庭ごみを、市が訪問して収集する。
+  who: {}
+  at_application:
+  - 要介護1以上のひとり暮らし、または1・2級手帳のひとり暮らし
+  - または上記の認定・交付を受けた人だけの世帯
+  - 世帯でごみを出せず、他の人の協力も得られない
+  where: 福祉総務課、障がい福祉課、生活環境課のいずれかの窓口
+  url: https://www.city.ryugasaki.ibaraki.jp/fukushi/fukushi/service/kateigomino.html
+  confidence: high
+  amount: 無料（粗大ごみ等は所定の手数料）
+not_found:
+- koken
+- jutaku
+- shingu
+- nichijo-yogu
+- mimamori

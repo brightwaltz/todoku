@@ -1,0 +1,192 @@
+city: 082210
+name: ひたちなか市
+site: www.city.hitachinaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食の配達と安否確認）
+  name_on_page: 配食サービス
+  summary: 見守りと安否確認を兼ねて、夕食を週3日以上、希望の曜日に届ける。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 同一敷地内・両隣・真向かいなど近隣に親族がいると不可
+  - 愛の定期便事業との同時利用は不可
+  where: 高齢福祉課
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 1食あたり普通食400円、塩分制限食500円（自己負担）
+- category: kaigo-yohin
+  name: おむつ助成券の交付
+  name_on_page: おむつ券の助成
+  summary: 在宅で介護する家族に、おむつ等の取扱店で使える助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または要介護3でおむつが必要と認められた方を介護する家族
+  - 市民税非課税であること（世帯か本人かは頁に明記なし）
+  where: 高齢福祉課
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 1枚1,000円の券を月2枚、最大24枚
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 在宅の要介護3〜5の方の寝具を、3品目まで年1回洗濯・乾燥・消毒する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 高齢福祉課
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 3品目以内、年1回（費用は頁に記載なし）
+- category: haikai
+  name: おかえりマークの配布
+  name_on_page: おかえりマーク
+  summary: 警察に保護された際に家族へ連絡できるよう、登録番号入りのシールを無料で配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症または疑いがあり、徘徊行動またはおそれがある
+  - 本人・家族・ケアマネジャーなどが申請できる
+  where: 高齢福祉課
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 無料。反射シール20枚とアイロンシール10枚
+- category: haikai
+  name: 位置探索器（GPS）の貸し出し
+  name_on_page: 位置探索器の貸し出し
+  summary: 徘徊のある高齢者を介護する人に、位置を検索できる機器（ココセコム等）を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で徘徊行動のある高齢者等を在宅で介護する人
+  - 機器と位置情報サービスは民間企業のものを利用
+  where: 高齢福祉課
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+- category: iro
+  name: 在宅ねたきり高齢者等の介護慰労金
+  name_on_page: 在宅ねたきり高齢者等介護慰労金
+  summary: 要介護3〜5の方を在宅で介護する非課税世帯の主たる介護者に慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する人・される人とも市内に住民登録があり居住
+  - 要介護認定は7月31日時点のもの
+  - 前年8/1〜7/31に入院・ショートステイ等で在宅を離れた日が通算90日以内
+  - 申請は毎年8月1日〜8月31日
+  where: 高齢福祉課
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 24,000円
+- category: jutaku
+  name: 高齢者の住宅改修補助
+  name_on_page: 高齢者住宅改修補助事業
+  summary: 転倒予防の手すり取付けや段差解消などの改修費の一部を、市が補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 基本チェックリストで事業対象者と判定された方
+  - 市税の滞納がなく、過去にこの補助を受けていない
+  - 工事着工前に高齢福祉課へ相談が必要
+  where: 高齢福祉課、地域包括支援センター（おとしより相談センター）
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 対象経費（限度額10万円）の4分の3、3分の2または2分の1
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸し出し
+  name_on_page: 緊急通報システムの貸し出し
+  summary: ボタン一つでコールセンターにつながるペンダント付き端末を貸し出す。
+  who: {}
+  at_application:
+  - 70歳以上のひとり暮らしで転倒歴や持病治療中などの方
+  - または、ひとり暮らしで障害者手帳1・2級の方
+  - または、上記の方が重度要介護者・重度障害者と同居する世帯
+  - 近隣に親族が住んでいると利用できないことがある
+  - 申請書に親族等の緊急連絡先1名以上が原則必要
+  where: 高齢福祉課
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 月額330円（税込）、生活保護の方は0円。オプションは別料金
+- category: mimamori
+  name: 愛の定期便（乳製品の定期配布）
+  name_on_page: 愛の定期便
+  summary: ひとり暮らしの方に乳製品を定期的に配り、安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 満60歳以上で心身機能に障害のある方
+  - または、満70歳以上で健康保持・安否確認が必要な方
+  - 配食サービスとは同時利用不可
+  where: 担当の民生委員に相談（高齢福祉課）
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1007162/1008541.html
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 運転免許返納者へのバス無料乗車パス
+  name_on_page: ひたちなか市高齢者運転免許自主返納支援事業
+  summary: 免許を自主返納した65歳以上に、スマイルあおぞらバスの1年間無料パスを渡す。
+  who:
+    age_min: 65
+  at_application:
+  - すべての運転免許を自主返納した市民
+  - 返納日から6か月以内に申請
+  - 運転免許取消通知書が必要。一人一回限り
+  where: 生活安全課、那珂湊支所市民生活担当窓口
+  url: https://www.city.hitachinaka.lg.jp/kurashi/bohan/1003878/1003885.html
+  confidence: high
+  amount: スマイルあおぞらバス1年間無料乗車パスと夜光反射用品
+- category: koken
+  name: 成年後見の申立費用の助成
+  name_on_page: 申立費用助成
+  summary: 財産が少ない方の後見等の申立てにかかった印紙代・切手代・診断書等の費用を助成する。
+  who: {}
+  at_application:
+  - 市に住民登録がある成年被後見人等
+  - 生活保護等を受けているか、財産目録の資産合計が30万円以下
+  - 令和7年4月1日以降に開始の審判が出た方が対象
+  - 審判確定日から2か月以内に申請
+  where: 生活支援課（生活支援係）
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1005080/1015215/1015123.html
+  confidence: high
+  amount: 申立てに要した収入印紙代・郵便切手代・診断書及び鑑定書作成費用
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等の報酬助成
+  summary: 財産が少ない方の成年後見人等への報酬を、全部または一部助成する。
+  who: {}
+  at_application:
+  - 市に住民登録がある成年被後見人等
+  - 生活保護等を受けているか、資産が報酬額＋30万円に満たない
+  - 報酬付与審判の謄本の写しなどが必要
+  where: 生活支援課（生活支援係）
+  url: https://www.city.hitachinaka.lg.jp/fukushi/koureisha/1005080/1015215/1015123.html
+  confidence: high
+  amount: 月額上限は成年後見人が施設入所18,000円・在宅28,000円、監督人等10,000円
+not_found:
+- hochoki
+- ribiyo

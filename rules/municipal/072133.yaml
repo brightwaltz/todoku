@@ -1,0 +1,174 @@
+city: '072133'
+name: 伊達市
+site: www.city.fukushima-date.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の給付券（おむつ券など）
+  name_on_page: 家族介護用品給付券（おむつ券）
+  summary: 在宅の要介護4・5の人を介護する非課税世帯の介護者に、介護用品と引き換える券を給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と介護者が市内に住所があり家族・親族
+  - 要介護者と介護者の世帯員全員が非課税
+  - 月の半分以上は在宅で過ごしていること
+  where: 高齢福祉課、各総合支所（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/14498.html
+  confidence: high
+  amount: 要介護者1人につき月5,000円まで（紙おむつ等12品目と引き換え）
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 高齢者配食サービス事業
+  summary: 昼食の弁当を自宅に届け、手渡しで安否と健康も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 日中ひとりになる人は、自分で調理が困難なこと
+  - 申込後に地域包括支援センターが訪問して面接する
+  where: 高齢福祉課、各総合支所（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/14675.html
+  confidence: high
+  amount: 1食400円（利用者負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 急病や災害時に通報できる固定型または携帯型の装置を貸し出す。
+  who:
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または日中6時間以上ひとり
+  - ひとり暮らしの重度身体障がい者も対象
+  - 先に対象要件確認依頼書を出して確認を受ける
+  where: 高齢福祉課、各総合支所（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/79167.html
+  confidence: high
+  amount: 非課税世帯は基本料金を市が負担。課税世帯は固定型で月2,695円（税込）
+- category: ribiyo
+  name: 訪問理美容の利用助成
+  name_on_page: 訪問理美容利用助成事業
+  summary: 外出が難しい在宅高齢者の訪問理美容に使える助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で寝たきりまたは座位保持が困難
+  - ケアマネ等が記入した身体状況チェック票を添える
+  - 助成は自宅での利用のみ（施設内は対象外）
+  where: 高齢福祉課、各総合支所（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/14481.html
+  confidence: high
+  amount: 1回につき助成券1枚（1,000円）。年度内最大4枚で、申請月により枚数が減る
+- category: haikai
+  name: 見守りQRコードシールの交付
+  name_on_page: 高齢者等見守りＱＲコード活用事業
+  summary: 行方不明のおそれがある認知症高齢者の持ち物に貼るQRコードシールを交付し、保護時に身元を確認できるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある認知症高齢者等（若年性認知症を含む）
+  - 緊急時の連絡先を2名以上登録する
+  where: 各総合支所（保原は高齢福祉課）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/36558.html
+  confidence: high
+  amount: 1シート/年度は無料。追加は1シート1,100円（税込）
+  more_urls:
+  - https://www.city.fukushima-date.lg.jp/uploaded/attachment/70788.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 手帳の対象でない低所得の高齢者が補聴器を買うとき、費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障がいの身体障害者手帳を持っていない
+  - 両耳40〜70デシベル未満で、耳鼻科医が装用必要と認める
+  - 世帯全員に市民税等の滞納がない
+  - 決定前に買った補聴器は対象外
+  where: 高齢福祉課（介護保険係）、各総合支所（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/84396.html
+  confidence: high
+  amount: 購入費の2分の1（上限3万円）。耐用年数5年後に再申請できる
+- category: gaishutsu
+  name: 運転免許返納者へのタクシー割引券
+  name_on_page: 運転免許返納支援事業
+  summary: 免許を返納した65歳以上に、デマンドタクシーの乗車料金が割引になる券と優待証を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 免許を自主返納した、または失効から5年未満
+  - 運転経歴証明書や取消通知書などを持っている
+  where: 生活環境課、各総合支所業務防災係（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/86/26015.html
+  confidence: high
+  amount: 200円割引券100枚綴（2万円分）。申請から1年ごとに再申請できる
+- category: sonota
+  name: 高齢者エアコン購入設置の補助
+  name_on_page: 高齢者エアコン購入設置補助金交付事業
+  summary: エアコンがない非課税の高齢者世帯に、購入と設置費用の一部を補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の人を含む世帯で、市内に居住している
+  - 世帯全員に市税等の滞納がない
+  - エアコンが1台もない、または故障で使えない
+  - 賃貸の場合は所有者の同意が要る
+  where: 高齢福祉課、各総合支所（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/84391.html
+  confidence: high
+  amount: 対象経費の4分の3（上限10万円）、1世帯1台まで
+- category: sonota
+  name: 高齢者ライフサポート（終活情報の登録）
+  name_on_page: 伊達市高齢者ライフサポート事業
+  summary: 緊急連絡先などを市に登録し、警察・消防・医療機関の照会に本人に代わって伝える。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - エンディングノートを書いたうえで登録申請する
+  where: 高齢福祉課
+  url: https://www.city.fukushima-date.lg.jp/soshiki/15/14681.html
+  confidence: high
+  amount: 登録は無料
+- category: sonota
+  name: 高齢者の自立支援ショートステイ
+  name_on_page: 高齢者自立支援ショートステイ（短期入所）サービス事業
+  summary: 家族が不在などで自宅生活が難しいとき、養護老人ホームに短期宿泊できる。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護認定が非該当（自立）、または同程度と見込まれる
+  - 1回7日以内
+  where: 高齢福祉課、各総合支所（保原を除く）
+  url: https://www.city.fukushima-date.lg.jp/uploaded/attachment/70788.pdf
+  confidence: low
+  amount: 1日1,220円（施設利用料450円、食事料770円）
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- nichijo-yogu
+- yutai

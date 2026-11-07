@@ -1,0 +1,218 @@
+city: '072117'
+name: 田村市
+site: www.city.tamura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム事業
+  summary: ボタンで緊急連絡できる通報装置を貸与し、週1回の安否確認の電話もある。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし高齢者
+  - または寝たきり高齢者を抱える高齢者のみの世帯
+  - またはひとり暮らしの重度身体障害者
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 利用料は前年の所得税額による。所得税非課税世帯は無料、1万円以下なら年16,300円。
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が困難な高齢者に、食事を届けて安否も確認する。週3回まで。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上の単身世帯・高齢者のみの世帯
+  - またはこれに準ずる世帯の高齢者・身体障害者で調理が困難な人
+  where: 高齢福祉課、各行政局市民係（地域包括支援センター経由も可）
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 1回につき食材費350円を事業者に支払う。
+- category: sonota
+  name: 軽度生活援助（草刈り・除雪などの手伝い）
+  name_on_page: 軽度生活援助事業
+  summary: シルバー人材センターが草刈り、除雪、簡単な修繕、買い物などを手伝う。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし高齢者
+  - または高齢者のみの世帯、これらに準ずる世帯の高齢者
+  where: 高齢福祉課、各行政局市民係（シルバー人材センター・地域包括支援センター経由も可）
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 事業費の1割（200〜500円程度）を後日市に支払う。
+- category: jutaku
+  name: 高齢者住宅改修助成（介護認定のない人向け）
+  name_on_page: 高齢者住宅改修助成事業
+  summary: 手すり取付けや段差解消などの小規模な改修費を補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険の要支援・要介護認定を受けていない人
+  - 着工前に申請が必要。一住宅につき1回のみ
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 費用の9割、上限18万円。
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 寝具のクリーニング（洗濯・乾燥・消毒）を年2回、無料で行う。
+  who: {}
+  at_application:
+  - 在宅で要介護4・5の人、またはこれに相当する人
+  - または65歳以上のひとり暮らしで近親者（子）が市内にいない人
+  - または在宅の寝たきり重度身体障害者
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 1回の限度額12,000円（1品目2枚まで）、利用料は無料。
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報機・自動消火器）
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: ひとり暮らし高齢者などに、電磁調理器・火災警報機・自動消火器を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 電磁調理器は、防火の配慮が必要なひとり暮らし高齢者等
+  - 火災警報機・自動消火器は、低所得のねたきり・ひとり暮らし等
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 基準価格は電磁調理器41,000円、火災警報機15,500円（2台まで）、自動消火器28,700円。所得税非課税世帯は利用料無料。
+- category: kaigo-yohin
+  name: 介護用品給付券（紙おむつ等）
+  name_on_page: 介護用品給付券交付事業
+  summary: 在宅で介護する家族に、紙おむつ等と引き換えられる給付券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護している家族が申請する
+  - 要介護3は日常的におむつを使い、使用証明が必要
+  - 要介護4・5は証明不要
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/kaigoyouhin.html
+  confidence: high
+  amount: 給付券1枚で月5,000円分までの介護用品と引き換えられる。
+- category: iro
+  name: 介護者手当
+  name_on_page: 要介護高齢者等介護者手当支給事業
+  summary: 在宅の要介護者を同居または毎日通いで介護する家族に、手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護している家族が申請する
+  - 要介護3は日常的におむつを使い、使用証明が必要
+  - 要介護4・5は証明不要
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/kaigosyateate.html
+  confidence: high
+  amount: 月額5,000円。1年以上介護サービスを使わない場合は月額10,000円。
+- category: ribiyo
+  name: 訪問理髪（利用券）
+  name_on_page: 在宅寝たきり高齢者等訪問理髪事業
+  summary: 寝たきりの人の自宅に理美容師が訪問して理髪する際の利用券を送る。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4以上の人、またはこれに相当する人
+  - または在宅の寝たきり重度身体障害者
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/houmonrihatsu.html
+  confidence: high
+  amount: 利用券は年度内に2枚、1枚の限度額は3,800円。
+- category: koken
+  name: 成年後見制度の申立費用・報酬の助成
+  name_on_page: 田村市成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、後見の申立費用や後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に住所か居所がある人など
+  - 生活保護を受けている、または報酬負担で生活保護になるおそれがある人
+  where: 高齢福祉課
+  url: https://www.city.tamura.lg.jp/soshiki/15/seinenkouken.html
+  confidence: high
+  amount: 申立費用（印紙・切手・診断書・鑑定料）と報酬を助成。報酬の上限は在宅月28,000円、施設入所月18,000円。
+- category: haikai
+  name: 高齢者おかえり支援（事前登録・見守りグッズ配布）
+  name_on_page: 高齢者おかえり支援事業
+  summary: 行方不明の恐れがある人の情報を事前登録し、名前入りの見守りグッズを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症などで行方不明になる恐れがある人
+  where: 高齢福祉課、各行政局市民係（登録後に地域包括支援センター職員が訪問）
+  url: https://www.city.tamura.lg.jp/soshiki/15/okaerisiennjigyou.html
+  confidence: high
+  amount: 名刺・ネームプレート、アイロンシール、靴用シール、反射シールなどを配布（費用の記載なし）。
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: おかえり支援の登録者が加入できる、賠償責任や傷害の保険。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者おかえり支援事業に登録している人
+  - 加入申請が必要
+  where: 地域包括支援センター、高齢福祉課地域ケア推進係
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+- category: gaishutsu
+  name: 高齢者健康長寿サポート利用券（入浴・タクシー等）
+  name_on_page: 高齢者健康長寿サポート事業
+  summary: 入浴施設・運動施設・タクシー運賃などに使える利用券を交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり昭和32年4月1日までに生まれた人
+  - 今年度内に70歳になる人は誕生日前でも申請できる
+  - 申請は年度内に1人1回まで
+  where: 高齢福祉課、最寄りの行政局・出張所
+  url: https://www.city.tamura.lg.jp/soshiki/15/kenkotyouju2026.html
+  confidence: high
+  amount: 令和8年10月以降の申請は2,500円分（9月末までは5,000円分）。
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ事業
+  summary: 家族が援助できないときなどに、養護老人ホーム等へ原則7日以内で短期入所できる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護認定が自立、または明らかに自立相当の人
+  - 家族が援助できない、単身で体調不良など一時的に援助が必要
+  where: 高齢福祉課、各行政局市民係
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 1日の利用料は生活保護世帯が無料、その他は1,000円または2,000円（施設による）。食費・滞在費は別。
+- category: gaishutsu
+  name: 車椅子同乗軽自動車の貸出
+  name_on_page: 車椅子同乗軽自動車貸出事業
+  summary: 歩行が困難な人の通院などのため、車椅子ごと乗れる軽自動車を無料で貸し出す。
+  who: {}
+  at_application:
+  - 歩行が困難な高齢者や重度の障害者
+  - 運転は家族・知人・ボランティア（21歳以上で運転歴3年以上）
+  - 原則1日以内、月2回まで
+  where: 高齢福祉課、田村市社会福祉協議会本所・常葉支所
+  url: https://www.city.tamura.lg.jp/soshiki/15/assets/%E4%BB%A4%E5%92%8C8%E5%B9%B4%E5%BA%A6%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E4%B8%BB%E8%A6%81%E4%BA%8B%E6%A5%AD%E5%88%B6%E5%BA%A6.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- hochoki
+- chusha
+- yutai

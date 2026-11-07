@@ -1,0 +1,196 @@
+city: 072109
+name: 二本松市
+site: www.city.nihonmatsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 高齢者介護用品給付
+  summary: 要介護1以上の在宅高齢者を介護する人に、紙おむつなどの給付券を年2回渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時、介護用品が必要な高齢者を介護している人が対象
+  - 入院中・施設入所中は利用できない
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 給付券は月額3,000円を上限とし、4月と10月に給付
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 食の自立支援配食サービス
+  summary: ひとり暮らしなどの高齢者に、安否確認を兼ねて栄養バランスのよい昼食を届ける。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者や高齢者のみの世帯等が対象
+  - 食事制限のある人やキザミ食にも対応
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 1食550円（月〜金の昼食のみ）
+- category: haikai
+  name: 認知症高齢者等の見守りQRコード
+  name_on_page: 認知症高齢者等見守りQRコード活用事業
+  summary: 外出して保護されたときに身元が分かるよう、衣類や杖に貼るQRコードシールを配る。
+  who:
+    at_home: true
+  at_application:
+  - 市内の自宅で暮らす認知症高齢者等を介護する親族や支援者が申請
+  - 事前に利用登録（氏名・緊急連絡先など）が必要
+  where: 担当ケアマネジャーまたは地域包括支援センターに相談、高齢福祉課
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/kaigo_hoken/page004640.html
+  confidence: high
+  amount: 無料（追加分は自己負担）
+- category: iro
+  name: 寝たきり高齢者の介護者への激励金
+  name_on_page: ねたきり高齢者等介護者激励金
+  summary: 要介護4・5の寝たきり高齢者を在宅で長く介護する人に、激励金を毎年3月に交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきり高齢者等を在宅で6か月以上続けて日常介護している人が対象
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 月額5,000円分を毎年3月に交付
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 二本松市高齢者補聴器購入費助成事業
+  summary: 聞こえに困る高齢者に、補聴器本体の購入費の一部を1人1回助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市に住所があり1年以上住んでいる
+  - 身体障害者手帳の交付を受けていない
+  - 両耳55dB以上70dB未満で治療で改善が見込めない
+  - 世帯全員に市税等の滞納がない
+  - 医師意見書が必要。購入前に相談する
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page010595.html
+  confidence: high
+  amount: 購入費の2分の1、上限3万円（1人1回）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: ボタンを押すと緊急通報センターにつながる装置を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - あらかじめ協力員3名程度の登録が必要
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 利用料は無料
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス
+  summary: 寝たきりなどの在宅の人に、寝具の洗濯・乾燥・消毒を年2回無料で行う。
+  who: {}
+  at_application:
+  - 要介護3以上で65歳以上の寝たきり等の在宅高齢者、または重度の身体障害者
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 年2回、無料
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 店に行けない在宅の人に、理美容師が訪問するサービスを年2回無料で行う。
+  who: {}
+  at_application:
+  - 要介護3以上で65歳以上の寝たきり等の在宅高齢者、または重度の身体障害者
+  - 自力で店まで行けない人が対象
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 年2回、無料
+- category: gaishutsu
+  name: 75歳以上の公共交通運賃無料の乗車証
+  name_on_page: 高齢者無料乗車証
+  summary: 75歳以上の市民が、市内のバスやデマンドタクシー等を無料で使える乗車証を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 二本松市民であること
+  - デマンドタクシー・ようたすカーは別に利用登録が必要
+  where: 高齢福祉課長寿福祉係、各支所地域振興課
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page003725.html
+  confidence: high
+  amount: 市内区間の運賃が無料（再交付はカード代1,000円）
+- category: gaishutsu
+  name: 乗合型タクシー「ようたすカー」
+  name_on_page: 巡回福祉車両「ようたすカー」
+  summary: 旧二本松市内で通院や買い物に使える乗合型タクシー。事前に利用登録する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者や障害者等が対象
+  - 合併前の旧二本松市に住所がある人で、同区域内のみ運行
+  - 平日のみ運行。予約電話 0243-23-3551
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 1回300円（75歳以上で無料乗車証を登録すれば無料）
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器など）
+  name_on_page: 日常生活用具等給付
+  summary: 支援が必要な高齢者やひとり暮らし等の人に、電磁調理器などを給付する。
+  who: {}
+  at_application:
+  - 要援護高齢者、またはひとり暮らし等で日常生活に支障がある人
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: high
+  amount: 生計中心者の前年所得税額に応じて負担（非課税世帯は無料、140,001円以上は全額負担）
+- category: sonota
+  name: ひとり暮らし高齢者への福祉電話の貸出
+  name_on_page: 老人福祉電話
+  summary: ひとり暮らしの低所得の高齢者に福祉電話を貸し出し、取り付けと取り外しは市が行う。
+  who:
+    household:
+    - alone
+  at_application:
+  - 低所得者が対象（所得の基準は頁に無い）
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: low
+- category: sonota
+  name: 温泉等の利用券の送付
+  name_on_page: 高齢者温泉等利用健康増進事業
+  summary: 年度内に70歳以上になる人に、温泉等施設で使える利用券2枚を送る。
+  who:
+    age_min: 70
+  at_application:
+  - 自立・要支援の人が主な対象
+  - 要介護の人も、付き添い等があり希望すれば交付
+  - 利用券は本人のみ使える
+  where: 高齢福祉課長寿福祉係
+  url: https://www.city.nihonmatsu.lg.jp/kenkou_fukushi/koureisya/page001196.html
+  confidence: low
+  amount: 1枚2,500円の利用券を2枚（計5,000円分）
+not_found:
+- koken
+- jutaku
+- mimamori
+- yutai

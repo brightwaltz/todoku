@@ -1,0 +1,211 @@
+city: '052027'
+name: 能代市
+site: www.city.noshiro.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品のおむつ券
+  name_on_page: 家族介護用品支給事業（おむつ券）
+  summary: 在宅でおむつ使用の高齢者を介護する家族に、購入費相当のおむつ券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 申請は介護している家族等
+  - おむつ使用者が市民税非課税であること
+  - 助成額は要介護度の区分ごとに決まっている
+  where: 長寿いきがい課長寿社会係、地域包括支援センター
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/488
+  confidence: high
+  amount: 月額 要介護1・2は2,500円、要介護3は5,000円、要介護4・5は6,250円相当
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（ふれあい安心電話）
+  name_on_page: 緊急通報装置貸与（ふれあい安心電話）
+  summary: 緊急通報装置を無料で貸与し、週1回の安否確認の電話も行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯
+  - 非常時に対応できる協力員が3人必要
+  where: 長寿いきがい課長寿社会係、地域包括支援センター
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/493
+  confidence: high
+  amount: 装置の貸与と取付工事は無料。電話機の用意と通話料は利用者負担
+- category: ribiyo
+  name: 寝たきり高齢者等への訪問理美容
+  name_on_page: 訪問理容サービス
+  summary: 在宅の寝たきり等の高齢者に、理容師・美容師が訪問して調髪する無料券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護4以上、または要介護1〜3で寝たきり度B1以上
+  - 市民税非課税であること
+  where: 長寿いきがい課長寿社会係、二ツ井地域局市民福祉課市民福祉係
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/494
+  confidence: high
+  amount: 調髪のサービス券を年4回まで利用でき、費用は無料
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 調理が困難な高齢者に、安否確認を兼ねて週3回夕食を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 調理が困難であること
+  - 申請時に要支援1・2または事業対象者と判定されている
+  where: 長寿いきがい課長寿社会係、地域包括支援センター
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/482
+  confidence: high
+  amount: 1食400円（週3回、月水金か火木土）
+- category: gaishutsu
+  name: 高齢者の外出支援（送迎）
+  name_on_page: 高齢者外出支援サービス
+  summary: 寝たきり等で交通機関を使えない高齢者を、車両で福祉施設などへ無料で送迎する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 身体的に一般の交通機関の利用が困難
+  - 現在は二ツ井地域のみが対象
+  where: 二ツ井地域局市民福祉課
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/495
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 高齢者の路線バス運賃を上限200円にする制度
+  name_on_page: 元気・交流２００円バス
+  summary: 市内の路線バスとコミュニティバス「ではるん」の運賃が、1乗車あたり上限200円になる。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 乗車時に介護保険被保険者証（緑色）を提示する
+  where: 申請の記載なし（乗務員に介護保険被保険者証を見せる）
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/514
+  confidence: high
+  amount: 1乗車につき運賃の上限200円
+- category: mimamori
+  name: 見守り対応機器の購入・レンタル支援金
+  name_on_page: 見守り対応機器購入等支援事業
+  summary: ひとり暮らしの方の見守り機器を購入・レンタルしたとき、支援金を交付する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内に住所がある在宅のひとり暮らし
+  - 安否確認をする別居の家族・親族がいる
+  - 65歳以上、または40〜64歳で特定疾病、または障害者手帳あり
+  - 申請は本人か別居の家族・親族。1回限り
+  where: 長寿いきがい課、二ツ井地域局市民福祉課
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/22254
+  confidence: high
+  amount: 支援金5,000円
+- category: jutaku
+  name: 高齢者住宅改修の上乗せ助成
+  name_on_page: 高齢者住宅改修助成
+  summary: 介護保険の支給限度額20万円を超える改修費の一部を、市が助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 着工前の事前申請が必要
+  - 対象工事は介護保険の住宅改修の対象になるもの
+  where: 長寿いきがい課介護保険係
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/etc/518
+  confidence: high
+  amount: 20万円を超える部分の2分の1、上限30万円
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 認知症高齢者等見守りシール活用事業
+  summary: 行方不明のおそれがある方の持ち物に貼るQRコード付きシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になるおそれがある方
+  where: 地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/chiiki-care/20810
+  confidence: high
+  amount: シール50枚を初回無料で交付（追加は実費）
+- category: koken
+  name: 成年後見人等への報酬の一部助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 本人に資力がなく後見人等の報酬を払えない場合、その一部を市が助成する。
+  who: {}
+  at_application:
+  - 被後見人等に資力がなく報酬を払えないと判断される
+  - 助成を考える後見人等は事前に相談する
+  where: 長寿いきがい課（高齢者の後見人等の場合）
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/seinen_kouken/19794
+  confidence: low
+- category: sonota
+  name: 高齢者の日常生活の軽い手伝い（利用券）
+  name_on_page: 軽度生活援助事業
+  summary: 外出の付添い、買い物、庭の手入れ、除雪などの手伝いを利用券で受けられる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯、これに準ずる世帯
+  - 65歳未満の方と同居している場合は交付されない
+  where: 長寿社会係、地域包括支援センター
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/497
+  confidence: high
+  amount: 1冊16枚綴り（4枚は除雪専用）。自己負担は1時間100円（同居者全員非課税）か300円
+- category: sonota
+  name: はり・きゅう・マッサージの施術費助成
+  name_on_page: はり・きゅう・マッサージ施術費助成
+  summary: はり・きゅう・マッサージの施術1回につき助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application: []
+  where: 長寿いきがい課長寿社会係、地域包括支援センター
+  url: https://www.city.noshiro.lg.jp/kurashi/fukushi/korei/zaitaku/499
+  confidence: high
+  amount: 1回800円、年10回まで
+not_found:
+- iro
+- hochoki
+- shingu
+- nichijo-yogu
+- chusha

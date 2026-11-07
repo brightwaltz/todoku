@@ -1,0 +1,185 @@
+city: 012068
+name: 釧路市
+site: www.city.kushiro.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の利用券支給
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の要介護者を在宅で介護する家族に、おむつ等の介護用品の利用券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 同居の家族が現に介護している
+  - 介護者・被介護者ともに市民税非課税世帯
+  where: 介護高齢課、各行政センター保健福祉課
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004919.html
+  confidence: high
+  amount: 月額6,250円分の利用券
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 調理が難しい高齢者のみの世帯に、配達時の安否確認つきで食事を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食材の調達や調理が難しく、栄養バランスのよい食事が必要
+  where: 介護高齢課高齢福祉係、阿寒・音別の各行政センター保健福祉課
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004925.html
+  confidence: high
+  amount: 1食500円（市民税非課税世帯は375円）の自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム設置事業
+  summary: 緊急時に簡単な操作で消防本部へ通報できる機器を自宅に設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 病弱で緊急時に動くのが難しい高齢者
+  - または生命にかかわる発作の持病がある高齢者
+  - または重度の身体障害（肢体1・2級で車いす常用など）の方
+  - この事業がないと緊急時の連絡が難しい
+  where: 介護高齢課高齢福祉係、阿寒・音別の各行政センター保健福祉課
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004917.html
+  confidence: high
+  amount: 設置時の電池代2,600円＋税が自己負担
+- category: gaishutsu
+  name: 寝たきりの方などの通院用の送迎
+  name_on_page: 寝たきり高齢者等移送サービス
+  summary: 普通の車での外出が難しい方を、リフト付き等の車両で自宅と病院の間送迎する。
+  who: {}
+  at_application:
+  - 移送用車両でなければ通院が困難
+  where: 介護高齢課高齢福祉係、阿寒・音別の各行政センター保健福祉課
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004921.html
+  confidence: high
+  amount: 釧路地区は片道260円（介助者同乗430円）、月1回往復。阿寒・音別は片道200円、年48回往復
+- category: gaishutsu
+  name: 高齢者のバス乗車証・定期券助成
+  name_on_page: 高齢者外出促進バス事業
+  summary: 70歳以上が、おでパスで路線バスを1乗車100円で使えるか、定期券を値引きで買える。
+  who:
+    age_min: 70
+  at_application:
+  - 釧路市に住民登録がある
+  where: 市内の郵便局窓口（おでパス）、バス会社窓口（定期券）
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004906/1004909.html
+  confidence: high
+  amount: おでパス（負担金500円）で1乗車100円。定期券は1か月1,000円引き
+- category: haikai
+  name: 認知症の方のGPS端末購入費の助成
+  name_on_page: 行方不明高齢者等早期発見システム事業
+  summary: 認知症で行方不明になるおそれのある方を介護する家族に、GPS機器の加入料等の一部を助成する。
+  who: {}
+  at_application:
+  - 認知症の高齢者などを介護している家族
+  where: 介護高齢課高齢福祉係
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004919.html
+  confidence: high
+  amount: 限度額7,000円＋税（月額基本料などは自己負担）
+- category: mimamori
+  name: ひとり暮らし高齢者への声かけ訪問
+  name_on_page: 単身高齢者声かけ運動事業
+  summary: 週2回、ヤクルト販売員が自宅を訪ねて声かけし、安否を確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 閉じこもりがちで親族や近所との交流が少ない
+  - 週1回以上の介護保険サービス等を使っていない
+  - 安否確認が必要と認められる
+  - 一部実施できない区域がある
+  where: 介護高齢課高齢福祉係
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004923.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 認知症の方の見守りボランティア訪問
+  name_on_page: 認知症高齢者家族やすらぎ支援事業
+  summary: ボランティアが認知症の方宅を訪問して見守りや話し相手をし、家族の負担を減らす。
+  who: {}
+  at_application:
+  - 認知症の高齢者などを介護している家族
+  where: 介護高齢課高齢福祉係
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004919.html
+  confidence: high
+  amount: 30分200円、1時間300円、以降30分ごとに100円加算
+- category: sonota
+  name: ひとり暮らし高齢者等の除雪
+  name_on_page: 単身高齢者等除雪事業
+  summary: 玄関から生活道路までの避難経路に必要な最小限の除雪を巡回して行う。
+  who: {}
+  at_application:
+  - 高齢者のみの世帯、または身体障害1・2級手帳の方のみの世帯
+  - 自力での除雪が難しく、近隣の援助も受けられない
+  - 集合住宅・住宅密集地は対象外の場合あり
+  where: 介護高齢課高齢福祉係、阿寒・音別の各行政センター保健福祉課
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004924.html
+  confidence: high
+  amount: 1回130円の自己負担
+- category: sonota
+  name: 軽易な日常生活の手伝い
+  name_on_page: 軽度生活援助事業
+  summary: 家の中の整理、草取り、電球交換、灯油の運搬など軽い手伝いをしてもらえる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - この事業がないと自立した生活の継続が困難
+  where: 介護高齢課高齢福祉係（釧路地区）、阿寒町行政センター保健福祉課（阿寒地区）
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004918.html
+  confidence: high
+  amount: 釧路地区は1回280円、阿寒地区は1回100円（材料費は実費）。月1回1時間程度
+- category: sonota
+  name: 養護老人ホーム等での短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホーム等に一時的に泊まり、生活習慣の指導や体調調整を受けられる。
+  who: {}
+  at_application:
+  - 家族が短期間不在でひとり暮らしに不安がある
+  - または病気ではないが体調不良で調整が必要
+  where: 介護高齢課高齢福祉係、阿寒・音別の各行政センター保健福祉課
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004913/1004922.html
+  confidence: high
+  amount: 1日381円＋給食費、1回おおむね1週間程度
+- category: yutai
+  name: 65歳以上の市内施設の料金減免
+  name_on_page: 高齢者の優待制度
+  summary: 65歳以上の市民は、博物館・美術館・温水プールなど市の施設を減免料金で使える。
+  who:
+    age_min: 65
+  at_application:
+  - 市民であること
+  - 住所・氏名・年齢のわかる保険証や免許証を提示する
+  where: 各施設の受付（事前の申請は不要）
+  url: https://www.city.kushiro.lg.jp/kenfuku/fukushi/1004905/1004906/1004908.html
+  confidence: high
+  amount: 施設により無料または半額
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- jutaku
+- koken

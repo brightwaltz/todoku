@@ -1,0 +1,145 @@
+city: '052132'
+name: 北秋田市
+site: www.city.kitaakita.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 家族介護用品支給（おむつ等の支給）
+  summary: 要介護4・5の在宅の高齢者本人か介護家族に、紙おむつ等の介護用品を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険料の滞納がない
+  where: 高齢福祉課、各総合窓口センター市民生活係
+  url: https://www.city.kitaakita.akita.jp/archive/contents-5645
+  confidence: high
+  amount: 年 75,000 円まで（年度途中は月割り）
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援（配食サービス）
+  summary: 調理が困難な高齢者や障がい者に食事を届ける。1日1食まで。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯か準ずる世帯
+  - 障がい者も対象
+  - 心身の障がいや傷病で調理が困難
+  where: 高齢福祉課、各総合窓口センター市民生活係
+  url: https://www.city.kitaakita.akita.jp/archive/contents-5645
+  confidence: high
+  amount: 利用者負担は 1 食 430 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置（あんしん電話）の貸与
+  name_on_page: あんしん電話（緊急通報システム）
+  summary: 緊急通報装置を無料で貸し出す。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯
+  - または障害者手帳1・2級の方のいる世帯など
+  - 固定電話が必要
+  - 鍵を預かる緊急通報協力員の登録が必要
+  where: 高齢福祉課、各総合窓口センター市民生活係
+  url: https://www.city.kitaakita.akita.jp/archive/contents-5645
+  confidence: high
+  amount: 利用料は無料
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給
+  summary: 重い要介護の方を在宅で介護する家族に慰労金を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 介護される方が要介護4・5、または認知症が重い要介護3
+  - 同等の状態と認められる方も対象
+  - 月15日以上在宅で介護している家族
+  - 対象月に訪問看護などの特定サービスを受けていない
+  where: 高齢福祉課、各総合窓口センター市民生活係
+  url: https://www.city.kitaakita.akita.jp/archive/contents-5645
+  confidence: high
+  amount: 1 か月あたり 3,000 円（4・7・10・1 月末に支払い）
+  more_urls:
+  - https://www.city.kitaakita.akita.jp/kurashi/koureifukushi/zaitakufukushi.html
+- category: hochoki
+  name: 高齢者補聴器購入費の補助
+  name_on_page: 北秋田市高齢者補聴器購入支援事業
+  summary: 手帳対象外の中等度難聴の高齢者に、補聴器の購入費を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 両耳の聴力が40dB以上70dB未満で手帳の対象外
+  - 補聴器で効果が見込めると医師が判断
+  - 購入前に申請して決定を受ける
+  where: 高齢福祉課、各総合窓口センター市民生活係
+  url: https://www.city.kitaakita.akita.jp/archive/contents-5645
+  confidence: high
+  amount: 片耳 上限 50,000 円（費用が下回る場合はその額）
+- category: gaishutsu
+  name: 外出支援サービス（送迎）
+  name_on_page: 高齢者障害者等外出支援サービス（外出支援サービス）
+  summary: 車いす等が常に必要で公共交通が使えない方の通院・外出の送迎を支援する。
+  who: {}
+  at_application:
+  - 市内に住所があるおおむね65歳以上の方、または障がい者（児）
+  - 歩行困難でストレッチャーか車いすが常時必要
+  - 公共交通機関の利用が困難
+  - けがでの一時的な入退院は対象外
+  where: 高齢福祉課、各総合窓口センター市民生活係
+  url: https://www.city.kitaakita.akita.jp/archive/contents-5645
+  confidence: low
+- category: sonota
+  name: 福祉の雪事業（除排雪費用の助成）
+  name_on_page: 福祉の雪事業
+  summary: 雪よせが自力でできない非課税世帯の除雪・雪下ろし費用の8割を市が支給する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の高齢者のみの世帯など（子どもだけと同居の世帯を含む）
+  - 親族や近隣の支援が受けられない
+  - 市が定める期日までに利用者登録が必要
+  where: 高齢福祉課、総合窓口センター市民生活係（事前の利用者登録が必要）
+  url: https://www.city.kitaakita.akita.jp/archive/contents-5645
+  confidence: high
+  amount: 作業額の8割、支給限度額 60,000 円
+- category: sonota
+  name: 高齢者世帯等のエアコン設置の補助
+  name_on_page: 北秋田市高齢者世帯等エアコン設置支援事業
+  summary: エアコンがない非課税の高齢者世帯等に、エアコンの購入・設置費を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のひとり暮らし、高齢者のみ、または高齢者と障がい者の世帯
+  - 使えるエアコンが1台もない
+  - 持ち家でない場合は所有者の同意が必要
+  where: 高齢福祉課、総合窓口センター市民生活係（購入前に申請）
+  url: https://www.city.kitaakita.akita.jp/archive/p17235
+  confidence: low
+  amount: 上限 50,000 円（費用が下回る場合はその額）
+  more_urls:
+  - https://www.city.kitaakita.akita.jp/archive/contents-5645
+not_found:
+- haikai
+- ribiyo
+- shingu
+- jutaku
+- mimamori
+- nichijo-yogu
+- koken

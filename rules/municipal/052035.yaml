@@ -1,0 +1,128 @@
+city: '052035'
+name: 横手市
+site: www.city.yokote.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品支給券の支給
+  name_on_page: 介護用品支給券支給事業
+  summary: 在宅で要介護3〜5の方を介護する家族に、介護用品の購入に使う券を月ごとに支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、本人を現に介護している人が申請
+  - ショートステイの利用が月21日を超えない
+  - 施設・有料老人ホーム等に入所・入居していない、入院中でない
+  - 介護保険料の滞納（1年6か月超）がない
+  where: まるごと福祉課 認定給付係
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1012688/1003174.html
+  confidence: high
+  amount: 月額 5,500円（非課税世帯）／4,000円（均等割のみ課税）／2,500円（所得割課税）
+- category: haishoku
+  name: 見守りを兼ねた夕食の配食
+  name_on_page: 配食サービス事業
+  summary: 自宅へ夕食を届け、手渡しで安否も確かめる。週3回まで使える。
+  who: {}
+  at_application:
+  - 市内に住所があり、概ね65歳以上
+  - 要支援1・2、または総合事業の利用が適当と判断された人
+  where: まるごと福祉課 地域福祉係
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1012688/1003102.html
+  confidence: high
+  amount: 1食 500円（課税世帯）／250円（非課税世帯）、週3回まで
+- category: mimamori
+  name: トイレのセンサー付き電球による見守り
+  name_on_page: 見守り安心事業
+  summary: トイレにセンサー付き電球を付け、24時間動きがないと登録先に知らせる。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  where: まるごと福祉課 地域福祉係（電話・窓口・申請フォーム）
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1012688/1003102.html
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 市内の交通機関で使える交通助成券
+  name_on_page: 交通助成券交付事業
+  summary: タクシー・バス・デマンドタクシー等に使える助成券を郵送で交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 4月1日時点で75歳以上
+  - 自家用車を持たない
+  where: まるごと福祉課 地域福祉係（電話・窓口・申請フォーム）
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1012688/1003102.html
+  confidence: high
+  amount: 年間 3,000円分（100円券30枚つづり）
+- category: gaishutsu
+  name: 寝たきりの方の通院などの移送サービス
+  name_on_page: 移送サービス事業
+  summary: 座位を保てない方を、介護タクシー事業所の車両で自宅から医療機関へ送迎する。
+  who: {}
+  at_application:
+  - 市内に住所があり、主に要介護4・5、または身体障害者手帳1・2級
+  - 座ったままの姿勢を保つのが難しい
+  - 介護タクシー等の一般の交通機関の利用が難しい
+  where: まるごと福祉課 地域福祉係
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1012688/1003099.html
+  confidence: high
+  amount: 片道 3,200円（市民税課税世帯）／2,100円（非課税世帯）
+- category: sonota
+  name: はり・きゅう・マッサージ施術券
+  name_on_page: はり・きゅう・マッサージ施術券
+  summary: 市内の指定施術所で使える施術券を郵送で交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 4月1日時点で75歳以上
+  where: まるごと福祉課 地域福祉係（電話・窓口・申請フォーム）
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1012688/1003102.html
+  confidence: high
+  amount: 1,000円券を年12枚（計12,000円分）、施術1回につき1枚
+- category: haikai
+  name: 行方不明に備えるあんしん見守りシール
+  name_on_page: あんしん見守りシール交付事業
+  summary: 衣類に貼るQRコード付きシールを交付し、発見者から家族へ連絡が届くようにする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内の満65歳以上で徘徊行動がある
+  - または満40歳以上で認知症と診断され徘徊行動がある
+  where: 地域包括支援センター、各地域局の窓口
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1010054/1005593.html
+  confidence: high
+  amount: 初回無料（耐洗ラベル40枚・蓄光シール10枚）、追加は自己負担
+- category: sonota
+  name: 緊急時あんしんバトン（情報保管容器）の無料配布
+  name_on_page: 緊急時あんしんバトン
+  summary: 緊急連絡先などを入れて冷蔵庫に置く容器を無料で渡す。申請書は不要。
+  who: {}
+  at_application:
+  - 高齢や障がいなどで緊急時の対応に不安がある
+  where: まるごと福祉課、各地域局の市民サービス課
+  url: https://www.city.yokote.lg.jp/fukushi/1001153/1012688/1003125.html
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- shingu
+- ribiyo
+- koken
+- jutaku
+- kinkyu-tsuho
+- nichijo-yogu

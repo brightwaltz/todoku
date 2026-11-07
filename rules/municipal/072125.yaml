@@ -1,0 +1,232 @@
+city: '072125'
+name: 南相馬市
+site: www.city.minamisoma.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しいひとり暮らし高齢者等に、昼食を届けて安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 概ね65歳以上のひとり暮らし・高齢者のみ世帯等、または身体障がい者
+  - 心身の障がい等で食事の調理が困難な人
+  - 昼食のみ、平日週5回以内
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  amount: 1食300円の自己負担
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: haikai
+  name: 徘徊高齢者のGPS端末の貸与
+  name_on_page: 徘徊高齢者位置情報探索機器貸与事業について
+  summary: 行方不明のおそれがある高齢者用に、位置が分かるGPS端末を無料で貸す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方が分からなくなる恐れのある高齢者
+  - GPSアプリのインストールが必要
+  where: 長寿福祉係、各区役所の市民総合サービス課（包括・ケアマネの代行も可）
+  url: https://www.city.minamisoma.lg.jp/portal/health/fukushi_kaigo/3/21689.html
+  confidence: high
+  amount: 無料（紛失・破損の場合を除く）
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: haikai
+  name: 徘徊高齢者の見守りQRコードシール交付
+  name_on_page: 徘徊高齢者等早期身元特定事業
+  summary: 登録情報つきのQRコードシールを無料で交付し、保護時に身元を早く確認する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊の恐れのある高齢者等
+  - 申請者の印鑑が必要
+  where: 長寿福祉係、各区役所の福祉係（包括・ケアマネの代行も可）
+  url: https://www.city.minamisoma.lg.jp/portal/health/fukushi_kaigo/3/5021.html
+  confidence: high
+  amount: 無料（シール台紙とアイロンシールを交付）
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 難聴の65歳以上に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 両耳の聴力レベルが40dB以上70dB未満
+  - 耳鼻咽喉科医の補聴器必要の証明がある
+  - 前回の助成から5年を経過している
+  - 購入前に長寿福祉課へ事前相談が必要
+  where: 長寿福祉課、各区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/health/fukushi_kaigo/3/22159.html
+  confidence: high
+  amount: 課税世帯は1/2・上限75,000円、非課税・生活保護世帯は2/3・上限100,000円（1台あたり）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: ボタン一つで通報できる装置（または携帯電話）を貸し出す。
+  who: {}
+  at_application:
+  - 概ね65歳以上の一人暮らし高齢者等
+  - 安全確保が必要な方
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり助成（簡易な住宅改修）
+  name_on_page: 高齢者にやさしい住まいづくり助成事業
+  summary: 手すり取付や段差解消などの簡易な住宅改修費の9割を助成する。
+  who:
+    age_min: 60
+  at_application:
+  - 市内に住所がある
+  - 要介護・要支援の認定を受けていない
+  - 生計中心者の所得が児童手当の所得制限限度額以下
+  - 工事前の申請が必要（原則1回限り）
+  where: 地域包括支援センターが代行申請（相談は長寿福祉課、各区福祉係）
+  url: https://www.city.minamisoma.lg.jp/portal/health/fukushi_kaigo/3/4757.html
+  confidence: high
+  amount: 工事費の9割、限度額18万円
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+- category: nichijo-yogu
+  name: 電磁調理器・自動消火器の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 防火の配慮が必要な高齢者のみの世帯に、電磁調理器・自動消火器を無料で給付する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能の低下で防火の配慮が必要
+  - 同一敷地内に親族が住む場合は対象外
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: nichijo-yogu
+  name: 火災警報器の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 自己所有の住宅に住む高齢者のみの世帯に、火災警報器を無料で給付する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 現に住む住宅が自己所有
+  - 同一敷地内に親族が住む場合は対象外
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: gaishutsu
+  name: 通院などの送迎（外出支援）
+  name_on_page: 外出支援サービス事業
+  summary: 一般の交通機関が使いにくい高齢者を、移送用車両で医療機関等へ送迎する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 概ね65歳以上
+  - 一般の交通機関の利用が困難
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  amount: 無料（通院等月2回）
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: gaishutsu
+  name: 車いす同乗軽自動車の貸出
+  name_on_page: 車いす同乗軽自動車貸出事業
+  summary: 寝たきり等で外出が難しい人に、車いす同乗の軽自動車を貸し出す。
+  who: {}
+  at_application:
+  - 寝たきり又は重度の障がいにより外出困難
+  - 運転は家族が行う（月4回）
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: sonota
+  name: 軽度生活援助（家事援助）
+  name_on_page: 軽度生活援助事業
+  summary: ひとり暮らし高齢者等の家事などを援助する。
+  who: {}
+  at_application:
+  - 概ね65歳以上の一人暮らし高齢者等
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  amount: 1時間200円の自己負担（生活保護受給者は無料）
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ事業
+  summary: 介護家族の病気等で支援が要るとき、老人ホームに短期間泊まれる。
+  who: {}
+  at_application:
+  - 概ね65歳以上の要援護高齢者等
+  - 介護認定を受けていない
+  - 介護家族の疾病等で宿泊を伴う援助が必要
+  where: 長寿福祉課長寿福祉係、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/sections/14/1420/14201/4/1573.html
+  confidence: high
+  amount: 飲食費相当額の自己負担
+  more_urls:
+  - https://www.city.minamisoma.lg.jp/material/files/group/17/guidobook.pdf
+- category: sonota
+  name: 要配慮者の家庭ごみ戸別収集
+  name_on_page: 南相馬市要配慮者家庭ごみ戸別収集事業
+  summary: ごみ集積所へ出せない人の家を訪問して、家庭ごみを収集する。
+  who: {}
+  at_application:
+  - 市内に住み、集積所へ持ち出せず同居人・近隣等の協力も得られない
+  - 要介護認定、または障害者手帳（身障1・2級等）のいずれか
+  - 申請後に職員が訪問して聞き取りをする
+  where: 長寿福祉課長寿福祉係（原町区）、小高区・鹿島区市民総合サービス課
+  url: https://www.city.minamisoma.lg.jp/portal/health/fukushi_kaigo/3/11744.html
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 医療情報を入れる容器を配り、緊急時の救急活動に役立てる。
+  who: {}
+  at_application:
+  - 市に住民登録がある概ね65歳以上の単身世帯・高齢者のみ世帯
+  - 見守りが必要と判断される世帯
+  where: 地区の民生委員、長寿福祉課
+  url: https://www.city.minamisoma.lg.jp/portal/health/fukushi_kaigo/3/18130.html
+  confidence: high
+not_found:
+- iro
+- koken
+- ribiyo
+- shingu

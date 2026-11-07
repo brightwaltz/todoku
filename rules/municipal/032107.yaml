@@ -1,0 +1,169 @@
+city: '032107'
+name: 陸前高田市
+site: www.city.rikuzentakata.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給券の交付
+  name_on_page: 家族介護用品支給事業（介護保険以外の事業）
+  summary: 要介護3〜5の在宅の方で、おむつが必要な非課税世帯に、指定店で使える介護用品の支給券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 申請は毎年度必要
+  - 入院・施設入所中の人は対象外
+  where: 福祉課 介護係（申請書または電子フォーム）
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/kaigokakari/1_1/2/4826.html
+  confidence: high
+  amount: 月 1 枚、5,000 円分の支給券（おつりは出ない）
+- category: haishoku
+  name: 要配慮高齢者への配食（栄養管理弁当）
+  name_on_page: 要配慮高齢者世帯への配食サービス事業
+  summary: 調理や買い物が難しく低栄養の改善が必要な高齢者に、栄養士管理の夕食弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 老衰・疾病などで調理や調達が難しく低栄養改善が適切な人
+  - 要支援・要介護認定者、またはそのおそれがある人
+  where: 担当ケアマネジャーに相談のうえ申請（地域包括支援センター）
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/chiikihokatsushiencenter/koreishasien/9513.html
+  confidence: high
+  amount: 月〜金の夕食のみ、1 食 400 円の自己負担
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入補助金
+  summary: 65歳以上で一定の難聴の人が補聴器を買うとき、費用の半額を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻科の検査で聴力が基準の範囲内（50dB以上70dB未満など）
+  - 聴覚の身体障害者手帳の対象とならない人
+  - 市税などの滞納がない・過去5年以内に交付を受けていない
+  - 購入前に申請が必要（購入済みは対象外）
+  where: 地域包括支援センター
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/chiikihokatsushiencenter/koreishasien/9509.html
+  confidence: high
+  amount: 費用の 1/2。上限は所得割非課税の人 4 万円、課税の人 2 万円
+- category: kinkyu-tsuho
+  name: 緊急通報携帯機器の貸与
+  name_on_page: 緊急通報装置の貸し出し（ひとり暮らし高齢者等）
+  summary: ボタン一つでコールセンターにつながる通報機器を無料で貸し出す。月 2 回ほど近況確認の連絡がある。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上、要支援・要介護認定者、または障がいのある人
+  - 同一敷地・建物内に通報できる親族がいない、または日中独居
+  - 協力員 2〜3 人の登録と、固定電話か携帯電話が必要
+  where: 地域包括支援センター
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/chiikihokatsushiencenter/koreishasien/9510.html
+  confidence: high
+  amount: 使用料無料（破損・紛失時は機器代が自己負担）
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: 電磁調理器・火災警報器・自動消火器・サウンドモニターの費用を非課税世帯に助成または給付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある市民税非課税世帯の人
+  - 品目ごとに対象者が異なる（原則65歳以上の単身者など）
+  - 購入前の申請が必要
+  where: 市（地域包括支援センター）
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/chiikihokatsushiencenter/koreishasien/9503.html
+  confidence: high
+  amount: 品目ごとの基準額まで（5,000〜41,000 円。超過分は自己負担）
+- category: gaishutsu
+  name: 寝たきり高齢者などの通院送迎
+  name_on_page: 寝たきり高齢者等への外出支援サービス事業
+  summary: 公共交通を使えない在宅高齢者を、通院などのため専用車で送迎する。
+  who:
+    at_home: true
+  at_application:
+  - 著しく歩行が困難で公共交通を使えない、おおむね65歳以上の人
+  - または身体障害者手帳1・2級で著しく歩行が困難な人
+  - 目的は在宅サービス利用・施設入退所・通院・入退院のいずれか
+  - 介護者の付き添いが必要
+  where: 担当ケアマネジャーに相談のうえ申請（地域包括支援センター）
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/chiikihokatsushiencenter/koreishasien/9502.html
+  confidence: high
+- category: koken
+  name: 成年後見の市長申立てと報酬等の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族による申立てが難しい場合の市長申立てと、後見人への報酬・申立て費用の助成がある。
+  who: {}
+  at_application:
+  - 市内に住民登録があり、後見開始などの審判を受けた人
+  - 生活保護受給者、または報酬の支払いで受給のおそれがある人
+  - または助成がないと利用が難しいと市長が認める人
+  - 認知症高齢者・障がい者で判断能力が不十分な人が対象
+  where: 地域包括支援センター
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/chiikihokatsushiencenter/9511.html
+  confidence: high
+  amount: 報酬の上限は月額 28,000 円（在宅）・18,000 円（施設入所・長期入院）。申立て費用も助成
+- category: haikai
+  name: 高齢者等SOSネットワークへの登録
+  name_on_page: 高齢者等SOSネットワークシステム
+  summary: 認知症高齢者などが行方不明になったときに備え、情報を登録し、早期発見ステッカーを受け取る。
+  who: {}
+  at_application:
+  - 徘徊などで行方不明になるおそれのある認知症高齢者等
+  - 利用登録届出書・実態把握票・写真（顔と全身）が必要
+  where: 地域包括支援センター（市役所2階）
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/chiikihokatsushiencenter/ninchisho/9501.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 陸前高田市家族介護慰労金支給事業（介護保険以外の補助事業）
+  summary: 要介護4・5の人を在宅で介護し、半年以上介護保険サービスを使っていない家族に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者が市内に住所があり、介護保険料の滞納がない
+  - 申請前6か月以上、介護保険サービスを使っていない
+  - 支給は同居または近隣で介護している家族
+  where: 福祉課 介護係（市役所 2 階）
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/kaigokakari/1_1/2/2811.html
+  confidence: high
+  amount: 要介護者 1 人につき 5 万円
+- category: jutaku
+  name: 住まいづくり推進事業（住宅改修の上乗せ助成）
+  name_on_page: 高齢者及び障がい者にやさしい住まいづくり推進事業（介護保険以外の補助事業）
+  summary: 手すり設置や段差解消などの住宅改修費を、介護保険の20万円分を引いた額の2/3まで助成する。
+  who: {}
+  at_application:
+  - 要支援1・2、要介護1〜5の人、または身体障害者手帳1〜3級の人
+  - 所得制限あり（基準額は頁に記載なし）
+  - 賃貸住宅・新築・増築は対象外。工事前の申請が必要
+  where: 福祉課 介護係
+  url: https://www.city.rikuzentakata.iwate.jp/soshiki/hukushika/kaigokakari/1_1/2/4828.html
+  confidence: high
+  amount: （工事費−20万円）の2/3、上限30万円
+not_found:
+- shingu
+- ribiyo
+- mimamori
+- chusha
+- yutai

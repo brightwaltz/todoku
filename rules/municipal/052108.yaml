@@ -1,0 +1,266 @@
+city: 052108
+name: 由利本荘市
+site: www.city.yurihonjo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4以上相当の高齢者を在宅で介護する家族に、紙おむつなどの介護用品を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護認定がなくても同程度の状態と認められる方を含む
+  - 申請日前30日間に15日以上の入院・入所がない
+  - ほかにも支給要件がある（窓口で確認）
+  where: 長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1011388/1011392/1011556.html
+  confidence: high
+  amount: 月額5,000円まで（年額6万円まで）。超えた分は自己負担
+  more_urls:
+  - https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+- category: iro
+  name: 家族介護手当（介護手当）の支給
+  name_on_page: 家族介護手当支給事業
+  summary: 寝たきりや重度の認知症の高齢者を6カ月以上家庭で介護している家族に、介護手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきりまたは重度の認知症の高齢者を6カ月以上家庭で介護している
+  - ほかにも支給要件がある（窓口で確認）
+  where: 長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1011388/1011392/1011556.html
+  confidence: high
+  amount: 1回2万円、年2回（9月・3月）
+  more_urls:
+  - https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+- category: sonota
+  name: 要介護者のいる在宅世帯への指定ごみ袋の支給
+  name_on_page: 市指定ごみ袋の支給（在宅介護世帯向け）
+  summary: 在宅で要介護4・5の方がいる世帯に、市指定の可燃ごみ袋（45リットル）を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 4月1日現在で要介護4・5の認定を受けた方がいる世帯
+  - 市内に住所がある
+  - 申請日前30日間に15日以上の入所・入院がない
+  where: 長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1011388/1011392/1011557.html
+  confidence: high
+  amount: 年度内100枚（令和8年度は50枚ずつ2回に分けて受け取れる）
+- category: hochoki
+  name: 軽度・中度難聴者の補聴器購入費の助成
+  name_on_page: 補聴器購入費用の助成
+  summary: 身体障害者手帳の対象にならない軽度・中度の難聴の方に、補聴器購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録のある18歳以上（福祉ガイドは65歳以上と記載）
+  - 両耳の聴力30デシベル以上で手帳の交付対象でない
+  - 5年以内に市の補助で補聴器を買っていない
+  - 市税等の滞納がない
+  - 購入前に申請し、医師の意見書が必要
+  where: 長寿生きがい課
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1002077/1009657.html
+  confidence: high
+  amount: 購入費の2分の1。上限は生活保護・住民税非課税世帯が5万円、それ以外は2万5千円
+  more_urls:
+  - https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ボタン1つで警備会社に通報できる緊急通報装置を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし、高齢者のみ世帯（これに準ずる世帯を含む）
+  - 持病などで日常生活に注意が必要な方
+  where: 長寿生きがい課、地域包括支援センター、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1002077/1002087/1002955.html
+  confidence: high
+  amount: 利用者負担は月500円（生活保護世帯は無料）。設置中は使わなくても発生する
+  more_urls:
+  - https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+- category: nichijo-yogu
+  name: 日常生活用具（電磁調理器・火災警報器）の給付
+  name_on_page: 日常生活用具給付事業
+  summary: 高齢者の単身世帯や高齢者のみの世帯に、電磁調理器か火災警報器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 生活保護世帯または市民税非課税世帯のみ
+  - 電磁調理器は、認知症状のある単身の方
+  - 火災警報器は、要介護4・5相当の方がいる世帯の世帯主
+  where: 長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1002077/1002087/1002955.html
+  confidence: high
+  more_urls:
+  - https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 食生活に支障があり安否確認が必要な高齢者に、夕食を届けて様子も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしなどの家庭
+  - 買い物・火の管理・調理などに支障があり、安否確認が必要
+  where: 地域包括支援センター、長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: high
+  amount: 1食400円（市民税非課税世帯は300円）。週3回（月・水・金）の夕食
+- category: shingu
+  name: 寝具類の洗濯サービス
+  name_on_page: 寝具類洗濯サービス事業
+  summary: 寝具の衛生管理が難しい高齢者などの寝具を、年2回洗濯する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯（準ずる世帯を含む）、または身体障がい者
+  - 身体・精神の状況で寝具の衛生管理が難しい
+  - 生活保護世帯または市民税非課税世帯のみ
+  where: 地域包括支援センター、長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: high
+  amount: 年2回。料金の1割を自己負担
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容院に行きにくい要介護の高齢者の自宅へ、理美容業者が出張する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の要介護高齢者等
+  - 理美容院に出向くことが難しい
+  where: 地域包括支援センター、長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: high
+  amount: 理美容代は実費負担。出張費は市が負担
+- category: gaishutsu
+  name: 通院の送迎（外出支援サービス・本荘地域以外）
+  name_on_page: 外出支援サービス事業（本荘地域以外）
+  summary: 公共交通機関を使えない高齢者を、自宅と医療機関の間で送迎する（本荘地域以外）。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 要介護4・5程度、または精神状況により公共交通機関の利用が難しい
+  - 通院が目的。介護タクシーなど他の移動手段がある場合は使えない
+  where: 由利本荘市社会福祉協議会（申込は長寿生きがい課・地域包括支援センターなどに確認）
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: high
+  amount: 無料。月2回まで
+- category: gaishutsu
+  name: 免許自主返納者へのコミュニティバス半額利用者証
+  name_on_page: 65歳以上の運転免許証自主返納者を支援します
+  summary: 運転免許を自主返納した65歳以上の方に、市コミュニティバスが半額になる利用者証を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市の住民基本台帳に登載されている
+  - 運転免許証を自主返納した
+  - 取消通知書と年齢確認書類、または運転経歴証明書が必要
+  where: 生活環境課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1002077/1006821.html
+  confidence: high
+  amount: コミュニティバスの利用料金が半額
+- category: haikai
+  name: 認知症高齢者等の見守りSOSネットワークへの事前登録
+  name_on_page: 認知症高齢者等見守りＳＯＳネットワーク事業への登録について
+  summary: 行方不明のおそれがある方を事前に登録し、行方不明時に地域の協力で早く見つける。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる可能性がある方
+  - 申請書と本人の顔写真が必要
+  where: 長寿生きがい課、お近くの地域包括支援センター
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: high
+- category: haikai
+  name: QRコード付きおでかけ見守りシール
+  name_on_page: おでかけ見守りシール
+  summary: 行方不明になるおそれが特に高い方に、QRコード付きの見守りシールを案内する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - SOSネットワーク登録者のうち、行方不明の可能性がより高い方
+  where: 長寿生きがい課、地域包括支援センター（詳細は相談）
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: low
+- category: yutai
+  name: 入浴施設の入湯料割引券の交付
+  name_on_page: 入浴施設入湯料等割引事業
+  summary: 高齢者に、市内の温泉などの入浴施設で使える割引券を交付する。
+  who: {}
+  at_application:
+  - 4月1日現在で70歳以上（身体障害者手帳の所持者は65歳以上）
+  - 年度内1回のみ。本人確認書類が必要
+  where: 長寿生きがい課（各総合支所市民サービス課も確認）
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1002077/1002087/1002955.html
+  confidence: high
+  amount: 100円割引券10枚（75歳以上は20枚）
+  more_urls:
+  - https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+- category: sonota
+  name: はり・きゅう・マッサージの施術費助成券
+  name_on_page: はり、きゅう、マッサージ施術費助成事業
+  summary: 65歳以上の方に、はり・きゅう・マッサージの施術費の一部を助成する券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 4月1日現在の年齢が65歳以上
+  - 年度内1回のみ。本人確認書類が必要
+  where: 長寿生きがい課（各総合支所市民サービス課も確認）
+  url: https://www.city.yurihonjo.lg.jp/1000007/1002052/1002077/1002087/1002955.html
+  confidence: high
+  amount: 1,000円の助成券3枚
+  more_urls:
+  - https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+- category: sonota
+  name: 軽度生活援助（日常生活の支援・除雪支援）
+  name_on_page: 軽度生活援助事業
+  summary: 高齢者世帯に、家屋内の整理や草刈り、簡単な修繕、冬囲い、除雪などの軽い支援をする。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯（準ずる世帯を含む）
+  - 日常生活の支援は、身体・精神の状況で援助が必要な方
+  - 除雪は、自力で除雪できない世帯（身体に障がいのある方も対象）
+  - 日常生活の支援は4月1日から、除雪は9月頃から申請受付。毎年申請
+  where: 長寿生きがい課、地域包括支援センター、各総合支所市民サービス課（実施はシルバー人材センター）
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: high
+  amount: 利用料は1時間100円（非課税）・200円・300円（課税区分で異なる）。生活保護世帯は無料
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホームや特養に一時的に泊まり、生活習慣の指導を受けられる。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 入所期間は原則7日以内
+  where: 地域包括支援センター、長寿生きがい課、各総合支所市民サービス課
+  url: https://www.city.yurihonjo.lg.jp/_res/projects/default_project/_page_/001/002/954/r8guide.pdf
+  confidence: low
+  amount: 1日380円（生活保護世帯は無料）に加え、食材費1食300円
+not_found:
+- jutaku
+- koken
+- mimamori

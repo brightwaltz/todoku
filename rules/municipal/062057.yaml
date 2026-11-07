@@ -1,0 +1,85 @@
+city: '062057'
+name: 新庄市
+site: www.city.shinjo.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつの支給
+  summary: 低所得で、寝たきりや認知症により常時失禁状態の人に、紙おむつを宅配する。
+  who: {}
+  at_application:
+  - 本人と生計中心者に納めるべき所得税がない
+  - 要介護3〜5の認定、または同程度の状態
+  - 寝たきりや認知症で常時失禁状態
+  where: 成人福祉課
+  url: https://www.city.shinjo.yamagata.jp/s006/040/030/20150224205401.html
+  confidence: high
+  more_urls:
+  - https://www.city.shinjo.yamagata.jp/s006/040/010/R8kaigopamphlet.pdf
+  - https://www.city.shinjo.yamagata.jp/s002/060/040/hashira_3.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置（やすらぎ電話）の貸与
+  name_on_page: 生活支援緊急通報事業（やすらぎ電話）
+  summary: 急病や災害時に受信センターへ通報できる電話を使え、健康相談や月1回の伺い電話もある。
+  who: {}
+  at_application:
+  - 市内在住のおおむね65歳以上のひとり暮らし
+  - または65歳以上で同居者が緊急時に対応しにくい人
+  - 固定電話か携帯電話を持っている
+  where: 成人福祉課1番窓口（家族・ケアマネジャーの代理申請も可）
+  url: https://www.city.shinjo.yamagata.jp/s006/20160316185043.html
+  confidence: high
+  amount: 利用料は月額で、固定型209円、携帯型286円（税込）
+  more_urls:
+  - https://www.city.shinjo.yamagata.jp/s006/040/030/20150224205401.html
+- category: haikai
+  name: 徘徊のおそれがある高齢者の事前登録
+  name_on_page: 安心見守り事前登録
+  summary: 認知症で道に迷うおそれのある人の情報を事前に登録し、行方不明時の早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application: []
+  where: 成人福祉課、地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.shinjo.yamagata.jp/s006/010/100/20151127124729.html
+  confidence: high
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度利用の支援
+  summary: 身寄りがなく申立てが難しい認知症高齢者などに、審判請求の補完や経費の助成をする。
+  who: {}
+  at_application:
+  - 判断能力が不十分な認知症高齢者など
+  - 本人・配偶者・二親等内の親族が申立てを行う見込みがない
+  - 市長が必要と認めた人
+  where: 成人福祉課、地域包括支援センター
+  url: https://www.city.shinjo.yamagata.jp/s006/040/030/20150224205401.html
+  confidence: low
+- category: sonota
+  name: 高齢者世帯の除雪サービス
+  name_on_page: 除雪サービス（冬季生活支援）
+  summary: 自力で除雪できない高齢者のみの世帯に、屋根の雪下ろしと玄関前通路の雪払いを行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 自力で除雪が困難で、近隣や親戚の協力も得られない
+  - 本人と生計中心者に納めるべき所得税がない
+  where: 窓口で相談（成人福祉課）
+  url: https://www.city.shinjo.yamagata.jp/s006/040/030/20150224205401.html
+  confidence: low
+  amount: 雪下ろしは年3回まで、通路の雪払いは月8時間まで。自己負担は費用の1割程度
+not_found:
+- iro
+- haishoku
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu

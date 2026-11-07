@@ -1,0 +1,269 @@
+city: 082295
+name: 稲敷市
+site: www.city.inashiki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ支給事業
+  summary: 紙おむつを使う在宅の高齢者に、紙おむつ等を2か月に1回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護2・3の人は排泄が全介助であること
+  - 介護保険料の所得段階が第1〜5段階
+  - 介護保険料の未納がない
+  - 市内に住所がある
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page007469.html
+  confidence: high
+  amount: 無料（2か月に1回、紙おむつ等を支給）
+  more_urls:
+  - https://www.city.inashiki.lg.jp/page/page000483.html
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい在宅のひとり暮らし高齢者等に食事を届け、安否も確認する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 対象は在宅のひとり暮らし高齢者等
+  - 身体的な理由で調理が困難なこと
+  - 訪問調査で利用の可否を決める
+  - 買い物に行ける人・家族の支援がある人は対象外
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page000483.html
+  confidence: low
+  amount: 昼食・夕食とも1食500円
+- category: haishoku
+  name: 給食サービス（月1回の食事提供）
+  name_on_page: 給食サービス
+  summary: 移動手段のない在宅のひとり暮らしの人に、月1回食事を届ける。
+  who:
+    age_min: 70
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 自動車・自転車・シニアカー等の移動手段がない
+  - 6〜9月は提供を中止する
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page000483.html
+  confidence: low
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 高齢者見守りサポート事業（緊急通報装置と人感センサー）
+  name_on_page: 高齢者見守りサポート事業
+  summary: 緊急通報装置と人感センサーを貸与し、24時間の緊急対応と見守りを行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らしで、近隣に親族がいない
+  - または世帯全員75歳以上で、近隣に親族がいない
+  - または65歳以上で週4日以上、1日8時間以上ひとりになる
+  - 固定電話か携帯電話を持っている
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page011420.html
+  confidence: high
+  amount: 月300円（生活保護は無料。通話料・電気代は自己負担）
+- category: mimamori
+  name: ふれあい電話（月2回の安否確認電話）
+  name_on_page: ふれあい電話
+  summary: ひとり暮らしの高齢者に月2回ほど電話をかけ、安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 配食サービスを受けている人は対象外
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page000483.html
+  confidence: low
+  amount: 無料
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の高齢者を在宅で介護している家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護される人が65歳以上で、常時在宅で介護している
+  - 介護保険サービスを利用していない（住宅改修等は除く）
+  - 介護期間4か月ごとに申請が必要
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page000483.html
+  confidence: low
+  amount: 1回6万円
+- category: haikai
+  name: 徘徊高齢者の位置情報端末の貸与
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 徘徊のある認知症高齢者に位置情報端末を貸与し、保護を支援する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある徘徊高齢者の介護者が申し込む
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page000483.html
+  confidence: low
+  amount: 基本料金月1,320円（非課税世帯は無料）
+- category: haikai
+  name: 高齢者の見守りシール交付
+  name_on_page: 高齢者の見守りシールの交付
+  summary: QRコード付きの見守りシールを無料で交付し、行方不明時の早期発見に役立てる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、認知症などで行方不明のおそれがある高齢者等
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page007649.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 徘徊高齢者等SOSネットワークの事前登録
+  name_on_page: 徘徊高齢者等SOSネットワーク事業
+  summary: 徘徊のおそれがある人を事前登録し、行方不明時に協力機関と探す。おかえりマークも配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊のおそれがある人が事前登録届を出す
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page004245.html
+  confidence: high
+- category: ribiyo
+  name: ねたきり高齢者の訪問理美容料助成
+  name_on_page: ねたきり高齢者理美容料助成
+  summary: ねたきりの高齢者が自宅で受ける理容・美容の料金の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護4・5、または常時臥床の状態にある
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page000483.html
+  confidence: low
+  amount: 1回2,000円（同一年度に最大4回）
+- category: hochoki
+  name: 高齢者補聴器の購入費助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 補聴器本体（片耳分）の購入費の2分の1を、上限2万円まで助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 申請日と購入日に市内に住所がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 市税等の滞納がない
+  - 医療機器認証番号のある補聴器が対象
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page009786.html
+  confidence: high
+  amount: 購入額の2分の1、上限2万円（一人一回限り）
+  more_urls:
+  - https://www.city.inashiki.lg.jp/page/page000483.html
+- category: gaishutsu
+  name: 介護タクシー利用券
+  name_on_page: 稲敷市高齢者等移送支援サービス事業（介護タクシー利用券）
+  summary: 車いす等が必要な人が介護タクシーを使うとき、1乗車最大3,000円を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、車いす・ストレッチャーが必要
+  - 要介護で歩行不可、または手帳1〜3級で歩行不可
+  - 通常のタクシー券の対象者・移動支援の利用者は不可
+  - 申請は年度ごと
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page009789.html
+  confidence: high
+  amount: 1乗車最大3,000円助成（利用券は月4枚×年度末までの月数）
+  more_urls:
+  - https://www.city.inashiki.lg.jp/data/doc/1743554339_doc_151_0.pdf
+- category: gaishutsu
+  name: タクシー利用券（地域交通利用料金補助）
+  name_on_page: タクシー利用券（地域交通利用料金補助事業）
+  summary: 車を使えない人が指定タクシーに乗るとき、1乗車最大3,000円を助成する。
+  who: {}
+  at_application:
+  - 運転免許証がない、または自動車を所有していない
+  - 65歳以上、手帳等の所持者、妊産婦などのいずれか
+  - 年度ごとに申請（家族・ケアマネによる代理申請も可）
+  where: 産業振興課（東支所・新利根公民館・桜川公民館でも受付）
+  url: https://www.city.inashiki.lg.jp/page/page010473.html
+  confidence: high
+  amount: 1乗車最大3,000円助成（月4枚×年度末までの月数）
+- category: sonota
+  name: シルバーカー購入費の助成
+  name_on_page: 稲敷市シルバーカー購入費助成事業
+  summary: 手押し型シルバーカーの購入費の2分の1を、上限5,000円まで助成する。
+  who: {}
+  at_application:
+  - 65歳以上で歩行に支障がある、または手帳所持で歩行に支障がある
+  - 過去5年間に同じ補助を受けていない
+  - 本人と同居世帯員に市税等の滞納がない
+  - シニアカーは対象外
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page006919.html
+  confidence: high
+  amount: 購入額の2分の1、上限5,000円（1人1台）
+  more_urls:
+  - https://www.city.inashiki.lg.jp/page/page000483.html
+- category: sonota
+  name: 老人性白内障の補助眼鏡等の購入費助成
+  name_on_page: 老人性白内障補助眼鏡等購入費助成事業
+  summary: 白内障手術後に使う補助眼鏡等の購入費の2分の1以内を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 手術日に市内に住所があり、手術した月から1年以内の申請
+  - 補助眼鏡等の使用が必要と医師が認めた
+  - 市税等の滞納がない
+  - 過去にこの補助を受けていない
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page006022.html
+  confidence: high
+  amount: 購入額の2分の1以内（補助眼鏡1万円、特殊眼鏡3万円、コンタクト2.5万円が上限）
+  more_urls:
+  - https://www.city.inashiki.lg.jp/page/page000483.html
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布
+  summary: かかりつけ医や持病を書いて冷蔵庫に保管する救急用キットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし
+  - または手帳所持の重度視覚障害・聴覚障害のある人
+  - または日中独居で健康上不安のある人
+  where: 高齢福祉課
+  url: https://www.city.inashiki.lg.jp/page/page000483.html
+  confidence: low
+  amount: 無料
+not_found:
+- koken
+- jutaku
+- shingu
+- nichijo-yogu

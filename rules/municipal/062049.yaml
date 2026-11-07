@@ -1,0 +1,222 @@
+city: 062049
+name: 酒田市
+site: www.city.sakata.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅紙おむつ券の交付
+  name_on_page: 在宅紙おむつ券事業
+  summary: 常時失禁の在宅の要介護者に、紙おむつ等の購入に使える券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 前年度の介護保険料段階が第1～第5段階（生活保護は除く）
+  - 障がい高齢者自立度B以上、または認知症自立度3以上
+  - 介護保険料の滞納がない
+  - 過去に交付を受けた人は要介護度等の要件に特例あり
+  where: 高齢者支援課高齢者支援係、各総合支所市民福祉係（地域包括支援センター・ケアマネ等の代理申請、オンライン申請も可）
+  url: https://www.city.sakata.lg.jp/kenko/kaigohoken/kaigohoken/omutsu.html
+  confidence: high
+  amount: 月額7,000円（世帯全員非課税）または月額3,000円（本人非課税）。申請月から年度末まで
+- category: gaishutsu
+  name: ほっとふくし券（一般用）
+  name_on_page: ほっとふくし券（一般用）
+  summary: バス回数券・タクシー運賃・配食・紙おむつ購入などに使える券を交付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 前年度の介護保険料段階が3段階以下
+  - 市税等の滞納者と生活保護受給者は対象外
+  where: 高齢者支援課高齢者支援係、各総合支所市民福祉係（代理申請・オンライン申請も可）
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/hottofukushiken.html
+  confidence: high
+  amount: 要介護度により年10,000円～30,000円分（10月以降の申込は半額）
+- category: gaishutsu
+  name: ほっとふくし券（ストレッチャー車専用券）
+  name_on_page: ほっとふくし券（ストレッチャー車専用券）
+  summary: 通院・入退院でストレッチャー車が要る人に、加算分の助成券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 座位を保てない
+  - 前年度の介護保険料段階が5段階以下
+  - 生活保護を受けていない・市税等の滞納がない
+  where: 高齢者支援課高齢者支援係、各総合支所市民福祉係（オンライン申請も可）
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/hottofukushiken.html
+  confidence: high
+  amount: 24,000円分（10月以降の申込は12,000円分）。片道の上限は2,000円
+- category: ribiyo
+  name: 訪問理容・美容の出張費助成券
+  name_on_page: ほっとふくし券（訪問理容・美容サービス専用券）
+  summary: 自宅で理美容を受ける際の出張費用に使える助成券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 前年度の介護保険料段階が5段階以下
+  - 生活保護を受けていない・市税等の滞納がない
+  where: 高齢者支援課高齢者支援係、各総合支所市民福祉係（オンライン申請も可）
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/hottofukushiken.html
+  confidence: high
+  amount: 出張費用分として5,000円分（理美容代は自己負担）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒の助成券
+  name_on_page: ほっとふくし券（寝具洗濯乾燥消毒サービス専用券）
+  summary: 寝具の洗濯・乾燥・消毒の費用に使える助成券を交付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 前年度の介護保険料段階が5段階以下
+  - 生活保護を受けていない・市税等の滞納がない
+  where: 高齢者支援課高齢者支援係、各総合支所市民福祉係（オンライン申請も可）
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/hottofukushiken.html
+  confidence: high
+  amount: 5,000円分
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 在宅安心相談コール事業
+  summary: ひとり暮らしの高齢者宅に緊急通報・健康相談ができる装置を貸与・設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 急に命に関わる病気がある、身体虚弱で緊急対応が難しい、または市長が認める人
+  - 親族1名と協力員2名の確保が必要
+  where: 高齢者支援課（利用申請書と同意書を提出）
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/kaigozaitaku2023.html
+  confidence: high
+  amount: 利用者負担は月350円～1,400円（機器の種類と住民税の課税状況による）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を介護保険サービスなしで介護した家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の状態が1年あり、その間ほぼ介護保険サービス未利用
+  - 対象期間に継続して90日以上の入院がない
+  - 介護保険料・国保税の滞納がない
+  - 介護者が生活保護を受けていない
+  where: 高齢者支援課の窓口
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/katei-kaigo.html
+  confidence: high
+  amount: 年額10万円
+- category: sonota
+  name: 鍼・灸・マッサージ等の利用助成券
+  name_on_page: 鍼・灸・マッサージ等利用助成券事業
+  summary: 72歳以上の市民に、鍼・灸・マッサージ等の施術に使える助成券を交付する。
+  who:
+    age_min: 72
+  at_application:
+  - 市内に住所がある
+  - 令和8年度は昭和30年3月31日以前に生まれた人
+  where: 高齢者支援課、各総合支所市民福祉係
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/kourei-kaigoyobou.html
+  confidence: high
+  amount: 1回1,000円の券。4～9月申請は6回分、10月以降は3回分
+- category: haikai
+  name: 徘徊高齢者の事前登録
+  name_on_page: 徘徊高齢者事前登録「安心おかえり登録」
+  summary: 徘徊のおそれがある人を事前登録し、警察等と共有して早期発見につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊のおそれがある高齢者等
+  where: 高齢者支援課、お住まいの地域包括支援センター
+  url: https://www.city.sakata.lg.jp/kenko/kaigohoken/ninchisho.html
+  confidence: high
+  amount: 登録料は無料
+- category: haikai
+  name: 見守りシールの交付
+  name_on_page: 徘徊高齢者等見守り事業「見守りシール」
+  summary: 行方不明のおそれがある人向けの見守りシールを交付する。
+  who: {}
+  at_application:
+  - 安心おかえり登録の利用者で、シールの交付を希望する人
+  where: 高齢者支援課、お住まいの地域包括支援センター
+  url: https://www.city.sakata.lg.jp/kenko/kaigohoken/ninchisho.html
+  confidence: high
+  amount: 登録料と初回のシール20枚は無料（追加分は実費）
+- category: sonota
+  name: 飛島の高齢者への生活援助員派遣
+  name_on_page: 飛島高齢者支援事業
+  summary: 飛島の高齢者宅へ生活援助員を派遣し、買い物やごみ出し等を手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 飛島に居住している
+  - 単身・高齢者のみ世帯またはこれに準ずる世帯
+  - 日常生活上の援助が必要
+  where: 高齢者支援課（利用登録申請書を提出）
+  url: https://www.city.sakata.lg.jp/kenko/kourei/koureisyafukushi/tobishima_koureisya.html
+  confidence: high
+  amount: 週2回まで（灯油つめを除く）。利用者負担は30分以内140円、1時間以内280円
+not_found:
+- haishoku
+- hochoki
+- jutaku
+- mimamori

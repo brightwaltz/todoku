@@ -1,0 +1,112 @@
+city: '022071'
+name: 三沢市
+site: www.city.misawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 介護タクシー移送サービス利用券
+  name_on_page: 移送サービス事業
+  summary: 通院や施設への移送に使える介護タクシーの利用券を、年度ごとに交付する。
+  who: {}
+  at_application:
+  - 在宅の要介護4・5、重度の認知症の診断、またははまなす医療療育センター通所
+  - 利用券は本人のみ使える
+  where: 介護福祉課
+  url: https://www.city.misawa.lg.jp/index.cfm/20,63781,110,118,html
+  confidence: high
+  amount: 利用券は年度で最大24枚。片道1回につき1枚で、基本運賃分が対象。
+- category: sonota
+  name: 高齢者用車椅子の無料貸与
+  name_on_page: 高齢者用車椅子貸与事業
+  summary: 歩行が難しい高齢者に、車椅子を無料で最長 1 か月貸す。
+  who:
+    age_min: 65
+  at_application:
+  - 車椅子なしでは歩行が難しい市民
+  - 一時的な必要、自分の車椅子の修理中、または市長が認めた場合
+  - 介護保険で車椅子を借りている人は対象外
+  where: 介護福祉課
+  url: https://www.city.misawa.lg.jp/index.cfm/20,45625,110,118,html
+  confidence: high
+  amount: 利用料は無料。貸与期間は 1 か月まで。輸送費は自己負担。
+- category: sonota
+  name: 軽度生活援助サービス（除草・除雪など）
+  name_on_page: 軽度生活援助サービス事業
+  summary: 在宅の高齢者の除草や除雪などの生活援助を、シルバー人材センターが行う。
+  who:
+    at_home: true
+  at_application:
+  - 要支援1・2または総合事業対象者
+  - 要支援等で利用していて要介護1・2になった人が、継続を希望する場合も可
+  where: 担当ケアマネジャー、介護福祉課高齢福祉係
+  url: https://www.city.misawa.lg.jp/index.cfm/20,43041,110,118,html
+  confidence: high
+- category: sonota
+  name: 軽度生活援助（除草・除雪など）
+  name_on_page: 軽度生活援助事業
+  summary: 在宅の高齢者世帯の除草や除雪などの生活援助を、シルバー人材センターが行う。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯で、要介護1以上の人が在宅している
+  - または、世帯員全員が要支援1・2か総合事業対象者
+  - 後者で生活援助を望む場合は、軽度生活援助サービス事業を優先
+  where: 担当ケアマネジャー、介護福祉課高齢福祉係
+  url: https://www.city.misawa.lg.jp/index.cfm/20,1275,110,118,html
+  confidence: high
+- category: haishoku
+  name: 昼食の宅配（配食）
+  name_on_page: 配食サービス
+  summary: 調理が難しい人に、月〜金曜に昼食を届ける。
+  who: {}
+  at_application:
+  - ひとり暮らしでおおむね65歳以上、調理が難しい人
+  - または、要支援1・2か総合事業対象者
+  where: 三沢市社会福祉協議会（総合社会福祉センター内）
+  url: https://www.city.misawa.lg.jp/index.cfm/20,1285,110,118,html
+  confidence: high
+  amount: 自己負担は 1 食 500 円。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の給付（福祉安心電話）
+  name_on_page: 緊急通報装置（福祉安心電話）設置
+  summary: ひとり暮らしの人に緊急通報装置を給付し、週 1 回の電話訪問もある。
+  who:
+    household:
+    - alone
+  at_application:
+  - 健康に不安がある、または介護認定などで生活に不安がある
+  - 緊急時に対応できる近隣の方を 3 名ほど登録できる
+  - 一定以上の所得がある人は自己負担あり
+  where: 三沢市社会福祉協議会、介護福祉課高齢福祉係
+  url: https://www.city.misawa.lg.jp/index.cfm/20,1281,110,118,html
+  confidence: high
+- category: haikai
+  name: 徘徊SOSネットワークへの事前登録
+  name_on_page: 徘徊SOSネットワーク「あんしんねっと」
+  summary: 行方不明のおそれがある人の情報を登録し、協力事業者と早期発見を目指す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になるおそれがある人
+  - 新規登録は窓口へ直接提出し、上半身と全身の写真が必要
+  where: 介護福祉課（窓口に直接提出）
+  url: https://www.city.misawa.lg.jp/index.cfm/20,14046,110,118,html
+  confidence: high
+  amount: 登録者は、市が保険料を負担する個人賠償責任保険に自動で入る。
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

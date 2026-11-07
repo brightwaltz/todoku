@@ -1,0 +1,376 @@
+city: '072052'
+name: 白河市
+site: www.city.shirakawa.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅の要介護者の家族への介護用品券
+  name_on_page: 在宅高齢者介護用品支給事業
+  summary: 紙おむつ等と引き換えできる介護用品券を、在宅で介護する家族に交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請者は要介護者を在宅で介護している家族
+  - 要介護者が属する世帯が市民税非課税
+  where: 高齢福祉課、各庁舎地域振興課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 月1回、5,000円まで（紙おむつ・尿取りパッド等の5品目）
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: haishoku
+  name: 昼食の配食と安否確認
+  name_on_page: あったかランチお届けサービス
+  summary: 調理が難しい一人暮らし等の高齢者に、昼食を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体の障害や疾病等で食事の用意が困難
+  where: 高齢福祉課、各庁舎地域振興課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 週3回まで、1食350円の自己負担
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: haikai
+  name: 見守りQRコードシールの交付
+  name_on_page: 白河市認知症高齢者等見守りQRコード事業
+  summary: 行方不明のおそれがある方の衣服等に貼る、身元確認用QRシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の高齢者等で、認知症等により行方不明のおそれ
+  - 認知症の方を介護する家族等が申請
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page010073.html
+  confidence: high
+  amount: 利用料は市負担。登録後にシール1シート（36枚）を送付
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: iro
+  name: 要介護高齢者の介護激励金
+  name_on_page: 要介護高齢者介護激励金支給事業
+  summary: 要介護3〜5の高齢者を在宅で長く介護した人に、激励金を年1回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 前年10/1〜当年9/30に在宅で180日以上介護した人
+  where: 高齢福祉課、各庁舎地域振興課、担当の介護支援専門員
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 3万円
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立費用や後見人等への報酬を、困窮する人に助成する。
+  who: {}
+  at_application:
+  - 後見・保佐・補助の開始審判を受けている
+  - 生活保護、または世帯全員が住民税非課税で資産60万円以下
+  - 配偶者がいる場合は預貯金を合算して120万円以下
+  - 申請は本人または成年後見人等
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page009838.html
+  confidence: high
+  amount: 申立費用は実費分。報酬は月額上限が在宅28,000円、施設18,000円
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1756114483_doc_57_0.pdf
+- category: hochoki
+  name: 補聴器の購入費助成
+  name_on_page: 高齢者いきいき応援事業（補聴器・外出支援器具助成事業）
+  summary: 住民税非課税の高齢者が補聴器を買うときに、費用の一部を助成する。
+  who:
+    tax:
+    - self_exempt
+  at_application:
+  - 市内在住の高齢者等
+  - 購入前に事前申請が必要
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 購入費の2分の1、上限3万円
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: sonota
+  name: 杖・シルバーカー等の外出支援器具の購入費助成
+  name_on_page: 高齢者いきいき応援事業（補聴器・外出支援器具助成事業）
+  summary: 住民税非課税世帯の高齢者が杖やシルバーカーを買う費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内在住の高齢者等
+  - 購入前に事前申請が必要
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 購入費の2分の1、上限5,000円
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者あんしん見守り事業（緊急通報事業）
+  summary: 緊急時に通報できる装置を貸与し、オペレーターが対応する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の一人暮らし
+  - 65歳以上の寝たきりまたは認知症の人を抱える高齢者世帯
+  - 所得税非課税世帯の一人暮らし重度身体障がい者等
+  where: 高齢福祉課、各庁舎地域振興課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: jutaku
+  name: 手すり取付け等の住まいづくり助成（市独自）
+  name_on_page: 高齢者にやさしい住まいづくり助成事業
+  summary: 手すり設置や段差解消、洋式便器への取替え等の工事費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要支援・要介護の認定を受けていない
+  - 1世帯1回限り、工事前の申請が必要
+  - 同じ家屋・敷地の配偶者や親族は同一世帯とみなす
+  - 申請受付は11月末日まで
+  where: 高齢福祉課、各庁舎地域振興課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 工事費の9割、上限15万円
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: sonota
+  name: エアコン設置費の助成
+  name_on_page: 高齢者にやさしい住まいづくり助成事業（エアコン設置整備費助成）
+  summary: エアコンが未設置の非課税世帯の高齢者に、設置費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 住宅にエアコンが未設置の世帯
+  - 工事前の申請が必要
+  - 申請受付は11月末日まで
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 設置費の2分の1、上限3万円
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: nichijo-yogu
+  name: 火災警報器の設置費助成
+  name_on_page: 高齢者にやさしい住まいづくり助成事業（火災警報器設置設備費助成）
+  summary: 非課税世帯の高齢者のみの世帯に、火災警報器の設置費を助成する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 申請受付は11月末日まで
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 3台までを上限に9,000円限度
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: shingu
+  name: 寝具の丸洗い・乾燥
+  name_on_page: 寝具乾燥事業
+  summary: 布団を干せない高齢者の寝具を預かり、丸洗い・乾燥して届ける。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らしで自力で布団を干すことが困難、または要介護3〜5で寝たきり
+  where: 高齢福祉課、各庁舎地域振興課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 年3回、1回3枚以内。費用の1割が自己負担
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: ribiyo
+  name: 訪問理・美容券の交付
+  name_on_page: 要介護高齢者巡回理・美容券交付事業
+  summary: 自宅で理・美容師に散髪してもらう際に使える助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 高齢福祉課、各庁舎地域振興課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 1回2,500円分の券を年5枚
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: gaishutsu
+  name: 要介護者の介護タクシー乗降介助（低額）
+  name_on_page: 白河市要介護者移動支援事業
+  summary: 介護保険外の介護タクシーで、通院等の乗降介助を低額で受けられる。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内在住で白河市の介護保険被保険者
+  - 身体的理由で一般のタクシーの利用が困難
+  - 介護保険の通院等乗降介助が事業所の事情で使えない
+  - 行き先は病院・金融機関・市役所の手続きに限る
+  where: 高齢福祉課 介護給付係
+  url: https://www.city.shirakawa.fukushima.jp/page/page010629.html
+  confidence: high
+  amount: 1回200円の自己負担（別途タクシー運賃）
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1776645273_doc_58_0.pdf
+- category: gaishutsu
+  name: バス運賃の助成券（75歳以上で免許なし等）
+  name_on_page: バス移動支援
+  summary: 路線バスや市の循環バス等の運賃の半額に使える助成券を交付する。
+  who: {}
+  at_application:
+  - 市内に住民登録がある
+  - 運転免許なしで令和9年3月末までに75歳以上になる人、
+  - または運転免許なしの障害者手帳所持者、妊産婦
+  where: 地域生活課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page009781.html
+  confidence: high
+  amount: 100円券を120枚（年度内1人1回交付）
+- category: gaishutsu
+  name: タクシー運賃の半額助成（定率タクシー利用登録証）
+  name_on_page: 定率タクシー移動支援
+  summary: 対象のタクシー運賃の2分の1を助成する登録証を交付する。
+  who: {}
+  at_application:
+  - 市内に住民登録がある
+  - 令和9年3月末までに65歳以上になる人、
+  - または障害者手帳所持者、妊産婦
+  where: 地域生活課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page009781.html
+  confidence: high
+  amount: 運賃の2分の1、1回の助成上限5,000円。利用回数の制限なし
+- category: gaishutsu
+  name: 車いす同乗軽自動車の貸出
+  name_on_page: 車いす同乗軽自動車貸出事業
+  summary: 車いすのまま乗れる軽自動車を、付き添う人に貸し出す。
+  who: {}
+  at_application:
+  - 自力歩行が困難な高齢者や障害者に付き添う人
+  - 運転する人の運転免許証が必要
+  - 病院・公的機関等への外出が目的
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: sonota
+  name: 車いすの貸出
+  name_on_page: 車いす貸出事業
+  summary: 歩行が困難な人に、市所有の車いすを短期間貸し出す。
+  who: {}
+  at_application:
+  - 市内に住所があり、歩行が困難
+  - 貸出は3日以内、1週間に1回まで
+  where: 高齢福祉課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: mimamori
+  name: 電話による安否確認
+  name_on_page: お元気コール
+  summary: 高齢者相談員が定期的に自宅へ電話をかけて安否を確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: mimamori
+  name: ごみの訪問収集と安否確認
+  name_on_page: あったか訪問収集事業
+  summary: 自力でごみ出しが難しい一人暮らしの人宅でごみを訪問収集し、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 自力でごみ出しが困難で、身近な人の協力が得られない
+  - 65歳以上の一人暮らし、または手帳所持の40歳以上の一人暮らし
+  - 同居者が高齢者・虚弱者・年少者なら利用可
+  where: 高齢福祉課、各庁舎地域振興課、地域包括支援センター
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: sonota
+  name: 認知症の方の個人賠償責任保険への加入
+  name_on_page: 白河市認知症高齢者保険事業
+  summary: 徘徊中などに他人へ損害を与えた場合に備える保険に、市の負担で加入できる。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 白河市在住の認知症の方
+  - 施設入所・入院中でない
+  where: 高齢福祉課
+  url: https://www.city.shirakawa.fukushima.jp/page/page005201.html
+  confidence: high
+  amount: 保険料は市が負担。賠償補償は上限1億円
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ施術の助成券
+  name_on_page: はり、きゅう、マッサージ等施術費助成事業
+  summary: 市の指定施術所で使える施術費の助成券を年4枚交付する。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定を受けていない70歳以上、または
+  - 身体障害者手帳1・2級を持つ65歳以上
+  - 年度ごとに申請が必要
+  where: 高齢福祉課、各庁舎地域振興課
+  url: https://www.city.shirakawa.fukushima.jp/page/page001296.html
+  confidence: high
+  amount: 1回1,000円分の券を年間4枚
+  more_urls:
+  - https://www.city.shirakawa.fukushima.jp/data/doc/1746679831_doc_57_0.pdf
+not_found:
+- yutai

@@ -1,0 +1,189 @@
+city: '052141'
+name: にかほ市
+site: www.city.nikaho.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護者オムツ代助成
+  name_on_page: 要介護者オムツ代助成事業
+  summary: 寝たきりの要介護者を在宅で介護する世帯に、オムツ代の半額を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 寝たきり状態の要介護者を在宅で介護している世帯
+  - 世帯全員が介護保険料・市税を滞納していない
+  - 在宅介護後の入院は3か月未満なら対象
+  where: 長寿支援課、地域包括支援センター、金浦・象潟市民サービスセンター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: high
+  amount: 月のオムツ代の半額。在宅15日以上は上限5,000円、7〜14日は上限2,500円
+- category: kaigo-yohin
+  name: 家族介護用品の支給券
+  name_on_page: 家族介護用品 支給事業
+  summary: 要介護4・5の人を介護する非課税世帯などに、介護消耗品を買う支給券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市民税非課税の世帯または本人
+  - 要介護4・5の人を介護している
+  - 3か月以内の入院は在宅とみなす
+  where: 長寿支援課、地域包括支援センター、金浦・象潟市民サービスセンター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: high
+  amount: 月の在宅介護日数が15日以上で6,250円分、7〜14日で3,000円分の支給券
+- category: iro
+  name: 家族介護援助金
+  name_on_page: 家族介護援助金助成事業
+  summary: 寝たきりの要介護者を在宅で介護している家族に、年額の援助金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 認定開始日から1年間、介護保険サービスを受けていない
+  - 福祉用具の購入・貸与と住宅改修は利用してもよい
+  - 入院期間を除いて1年以上の在宅が必要
+  - 世帯分離している人・生活保護世帯は対象外
+  - 家族全員が介護保険料・市税を滞納していない
+  where: 長寿支援課、地域包括支援センター、金浦・象潟市民サービスセンター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: high
+  amount: 年額12万円
+- category: haishoku
+  name: 配食サービス（見守りを兼ねる）
+  name_on_page: 見守りネットワーク形成事業（配食サービス事業）
+  summary: 安否確認を兼ねて、月3回、買い物が難しい人に食事を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 見守りが必要で、食事や食材の確保が困難
+  where: 長寿支援課、地域包括支援センター、金浦・象潟市民サービスセンター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: high
+  amount: 利用料は1食あたり200〜300円
+- category: mimamori
+  name: 定期訪問による見守り
+  name_on_page: 安心生活見守り支援事業
+  summary: もの忘れが気になる人を月3回ほど訪問し、体調や生活の相談に応じる。
+  who:
+    age_min: 65
+  at_application:
+  - もの忘れが気になるなど、見守りが必要な人
+  - 認知症の頁ではひとり暮らし・高齢者世帯等と記載
+  where: 長寿支援課、地域包括支援センター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: high
+  amount: 自己負担なし
+  more_urls:
+  - https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochiikihokatsushiencenter/gyomuannai/1/3/1820.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報体制等整備事業
+  summary: 独り暮らしの高齢者宅に緊急通報装置を付け、消防署や親族につなぐ。
+  who:
+    age_min: 65
+  at_application:
+  - 独り暮らしの高齢者など（「等」の範囲は頁に記載なし）
+  where: 長寿支援課、地域包括支援センター、金浦・象潟市民サービスセンター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: low
+  amount: 負担額は世帯の所得課税の状況による
+- category: haikai
+  name: 認知症等高齢者SOSネットワーク（事前登録）
+  name_on_page: 認知症等高齢者SOSネットワーク事業
+  summary: 徘徊で行方不明になったとき、防災あんしんメールで情報を配信して早期発見を図る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊の心配がある認知症等の高齢者（家族が事前登録）
+  where: 地域包括支援センター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochiikihokatsushiencenter/gyomuannai/1/3/1820.html
+  confidence: low
+- category: gaishutsu
+  name: 通院時の外出支援（送迎）
+  name_on_page: 外出支援サービス
+  summary: 要介護の高齢者を医療機関へ送迎する。市内は年12回まで。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 高齢者世帯等の要介護高齢者で所得の低い人
+  - 所得の基準額は頁に記載なし
+  where: 長寿支援課、地域包括支援センター、金浦・象潟市民サービスセンター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: low
+  amount: 利用者負担なし。年度内に市内12回まで、由利本荘市内は5回まで
+- category: gaishutsu
+  name: コミュニティバス無料パス
+  name_on_page: にかほ市コミュニティバス無料パス
+  summary: 対象の市民はコミュニティバスに無料で乗れ、申請すれば無料パスをもらえる。
+  who: {}
+  at_application:
+  - 市内在住で、75歳以上・障がい者・免許返納者などが対象
+  - パスがなくても保険証等の提示で無料乗車できる
+  where: 頁に申請先の記載なし（連携推進課 0184-43-7510 に問い合わせ）
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/renkei/gyomuannai/1_1/1477.html
+  confidence: high
+  amount: 1回乗車200円が無料
+- category: jutaku
+  name: 高齢者住宅バリアフリー改修費の補助
+  name_on_page: 高齢者住宅バリアフリー改修事業補助金
+  summary: 要介護・要支援認定のない高齢者の手すり設置や段差解消などの改修費を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護・要支援の認定を受けていない第1号被保険者
+  - 市内の住宅に住民登録して居住している
+  - 同一世帯で市税等の滞納がなく、過去に同補助を受けていない
+  - 着工前に申請。市内業者の施工で年度内完了の工事
+  where: 長寿支援課 長寿支援班（象潟・金浦の市民サービス班でも取次ぎ）
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/hojokin_joseikin/1004.html
+  confidence: high
+  amount: 工事費の10分の8、上限10万円
+- category: sonota
+  name: はり・灸・マッサージ施術費の助成
+  name_on_page: はり・灸・マッサージ施術費助成
+  summary: 75歳以上の人に、はり・灸・マッサージの施術費を助成する。
+  who:
+    age_min: 75
+  at_application: []
+  where: 長寿支援課、地域包括支援センター、金浦・象潟市民サービスセンター
+  url: https://www.city.nikaho.akita.jp/soshikikarasagasu/fukushijimushochojushienka/gyomuannai/2/3486.html
+  confidence: low
+  amount: 1回の施術につき1,000円、年4回まで
+not_found:
+- koken
+- shingu
+- ribiyo
+- nichijo-yogu

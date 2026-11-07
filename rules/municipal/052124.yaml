@@ -1,0 +1,176 @@
+city: '052124'
+name: 大仙市
+site: www.city.daisen.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品券の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を在宅で介護する低所得世帯に、紙おむつ等に使える介護用品券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市民税非課税世帯、または均等割のみ課税の世帯
+  - 介護者と要介護者が同居し、在宅で介護している
+  - 特別障害者手当を受給している場合は対象外
+  - 入院やショートステイの日数で支給されない場合がある
+  where: 高齢者包括支援センター（市の窓口）
+  url: https://www.city.daisen.lg.jp/archive/contents-10810
+  confidence: high
+  amount: 1枚1,250円相当の券を年間最大40枚（5万円相当）。6か月ごとに20枚
+- category: sonota
+  name: 在宅サービス費の自己負担の一部助成
+  name_on_page: 在宅サービス費等利用負担額の一部助成
+  summary: 要介護4・5の方を在宅で介護する低所得世帯に、介護保険の在宅サービスの自己負担の一部を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市民税非課税世帯、または均等割のみ課税の世帯
+  - 介護者と要介護者が同居し、在宅で介護している
+  - 特別障害者手当を受給している場合は対象外
+  - 入院やショートステイの日数で支給されない場合がある
+  where: 高齢者包括支援センター（市の窓口）
+  url: https://www.city.daisen.lg.jp/archive/contents-10810
+  confidence: high
+  amount: 非課税世帯は月7,500円まで（年90,000円）、均等割のみ課税世帯は月1,250円まで（年15,000円）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理や買い物が難しい高齢者世帯に、食事を届けながら安否を確認する。
+  who: {}
+  at_application:
+  - 調理や買い物が困難な、おおむね65歳以上の高齢者世帯
+  - 配食は週2回以内（地域により異なる）
+  where: 高齢者包括支援センター（市の窓口）
+  url: https://www.city.daisen.lg.jp/archive/contents-10810
+  confidence: high
+  amount: 1回の自己負担は市民税非課税世帯200円、課税世帯400円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 高齢者等あんしん見守りサービス支援事業
+  summary: 日常生活に不安のある高齢者世帯に、急病や災害時に使う緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - 日常生活に不安があると認められる、おおむね66歳以上の高齢者世帯
+  where: 高齢者包括支援センター（市の窓口）
+  url: https://www.city.daisen.lg.jp/archive/contents-10810
+  confidence: high
+  amount: 設置費は無料。月額負担は事業により異なり、非課税世帯・生活保護世帯は無料、課税世帯は100〜400円
+- category: gaishutsu
+  name: 交通助成券「のりのりきっぷ」
+  name_on_page: のりのりきっぷ
+  summary: 75歳以上の方か免許返納者に、バスやタクシーで使える交通助成券を交付する。
+  who: {}
+  at_application:
+  - 市内在住の75歳以上、または運転免許を返納した方
+  - 免許返納者は1人3年度まで（75歳未満は75歳到達まで）
+  - 申請は年度内1回。代理申請もできる
+  where: 地域活動応援課、各支所市民サービス課、市公式LINE
+  url: https://www.city.daisen.lg.jp/archive/p20250327102755
+  confidence: high
+  amount: 年間5,000円分（75歳以上かつ免許返納者は10,000円分）。1枚100円で利用
+- category: gaishutsu
+  name: 要介護者の退院時移送サービス
+  name_on_page: 要介護者移送サービス事業
+  summary: 要介護4・5の方が退院するとき、リフト・ストレッチャー付き車両で自宅へ送る。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 退院時に普通自動車での移送が困難な方
+  - 申請前に一度連絡する
+  where: 高齢者包括支援センター（市の窓口）
+  url: https://www.city.daisen.lg.jp/archive/contents-10810
+  confidence: low
+- category: sonota
+  name: 軽度生活援助（付き添い・庭の手入れ等）
+  name_on_page: 軽度生活援助事業
+  summary: 高齢者世帯に、外出の付き添いや庭の手入れなどの利用券を交付する。
+  who: {}
+  at_application:
+  - おおむね66歳以上の高齢者世帯
+  - 原材料費やガソリン代は別に利用者負担
+  where: 高齢者包括支援センター（市の窓口）。サービスはシルバー人材センターに委託
+  url: https://www.city.daisen.lg.jp/archive/contents-10810
+  confidence: high
+  amount: 年間36枚（1枚1時間）まで。1枚の負担は課税世帯350円、均等割のみ300円、非課税250円、生活保護は無料
+- category: sonota
+  name: シニア健康共通券（はり・きゅう・温泉入浴）
+  name_on_page: シニア健康共通券
+  summary: はり・きゅう・マッサージの施術や市関連温泉の入浴に使える共通助成券を交付する。
+  who: {}
+  at_application:
+  - はり・きゅう・マッサージは70歳以上
+  - 温泉の半額券は70〜79歳、または60〜69歳で障害者手帳の方
+  - 温泉の無料券は80歳以上
+  where: 高齢者包括支援センター（市の窓口）
+  url: https://www.city.daisen.lg.jp/archive/contents-10810
+  confidence: high
+  amount: 年間20枚。はり・きゅう等は1回800円の助成券
+- category: sonota
+  name: 高齢者等の除雪費用の助成
+  name_on_page: 高齢者等雪対策総合支援事業
+  summary: 自力で除雪できない高齢者世帯等に、除雪費用に使える利用券を交付する。
+  who: {}
+  at_application:
+  - 世帯の構成員が満70歳以上、障がい者・介護認定者、または児童扶養手当受給者
+  - 2親等以内の親族から除雪の援助を受けられない
+  - 生活保護世帯は対象外
+  - 間口除雪・業者割当の受付は9月16日まで。利用券のみは随時
+  where: 大曲地域は高齢者包括支援センター、他は各支所市民サービス課
+  url: https://www.city.daisen.lg.jp/archive/contents-12964
+  confidence: high
+  amount: 利用券1枚が1,000円分。課税世帯7枚、均等割のみ30枚、非課税52枚
+  more_urls:
+  - https://www.city.daisen.lg.jp/archive/contents-10810
+- category: koken
+  name: 成年後見の市長申立・費用や報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族のいない認知症高齢者等に市長が申し立て、費用や後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 住民税非課税世帯の方、または生活保護を受けている方
+  - 費用や報酬の支払いが困難な状況にある
+  - 親族や資産の調査をして決定する
+  where: 高齢者包括支援センター（障がい者は社会福祉課 障がい者支援班）
+  url: https://www.city.daisen.lg.jp/archive/contents-10570
+  confidence: high
+  amount: 助成額は個別に決定
+- category: haikai
+  name: 認知症行方不明者SOSネットワーク登録
+  name_on_page: 大仙市認知症行方不明者SOSネットワーク
+  summary: 行方不明の恐れのある認知症の方の情報を事前登録し、警察等と連携して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明の恐れのある認知症高齢者等（若年性認知症を含む）
+  - 利用登録申請書を提出して登録する
+  where: 高齢者包括支援センター
+  url: https://www.city.daisen.lg.jp/archive/contents-12303
+  confidence: high
+not_found:
+- iro
+- shingu
+- ribiyo
+- jutaku

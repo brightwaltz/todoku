@@ -1,0 +1,194 @@
+city: 032158
+name: 奥州市
+site: www.city.oshu.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅介護用品の給付券
+  name_on_page: 在宅寝たきり老人等介護用品給付事業
+  summary: 重い要介護の方を在宅で介護する非課税世帯に、紙おむつ等と交換できる給付券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者・要介護者の両方が市内に住所がある
+  - 介護者・要介護者の両方が市町村民税非課税世帯
+  - 申請するのは要介護者を介護している親族
+  - 要介護3は一部要件あり（内容は頁に記載なし）
+  where: 長寿社会課高齢者福祉係、各総合支所の長寿社会担当
+  url: https://www.city.oshu.iwate.jp/kaigo/shienjigyo/2/2257.html
+  confidence: high
+  amount: 要介護者 1 人につき月 6,000 円まで
+- category: haishoku
+  name: 配食見守りサービス
+  name_on_page: 配食見守りサービス事業
+  summary: 調理や買い物が難しい方に昼食か夕食を届け、安否確認も行う。
+  who: {}
+  at_application:
+  - 市内に住所があり、調理や買い物が困難
+  - 65歳以上のひとり暮らしか高齢者のみ世帯
+  - または障がい者のみ、障がい者と高齢者のみの世帯
+  - 障がい者は手帳の写しが必要
+  - 申請後に訪問調査で可否を決める
+  where: 長寿社会課高齢者福祉係、各総合支所の長寿社会担当
+  url: https://www.city.oshu.iwate.jp/kaigo/shienjigyo/2/2536.html
+  confidence: high
+  amount: 週 3 回まで（月〜土）。見守り費用は市負担、食事代は自己負担
+- category: haikai
+  name: はいかいSOSネットワーク登録
+  name_on_page: 奥州市はいかいSOSネットワーク事業
+  summary: 徘徊のおそれがある方を事前登録し、捜索や身元確認に役立て、ステッカーももらえる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住むおおむね65歳以上の方（要綱）
+  - 本人・家族・介護者が申請できる
+  - 登録情報を市と警察署が管理することに同意する
+  where: 地域共生社会課、各地域包括支援センター
+  url: https://www.city.oshu.iwate.jp/soshiki/8/tiikikyousei/ikikilife/15714.html
+  confidence: high
+  more_urls:
+  - https://www.city.oshu.iwate.jp/section/reiki_int/reiki_honbun/r204RG00000628.html
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護保険サービスを使わず要介護4・5の同世帯の方を在宅で介護する非課税世帯に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 過去1年間、介護保険サービスを使っていない
+  - ただし年1週間までの短期入所は可
+  - 同世帯の高齢者を在宅で介護している家族が対象
+  where: 長寿社会課高齢者福祉係、各総合支所の長寿社会担当
+  url: https://www.city.oshu.iwate.jp/kaigo/shienjigyo/2/4050.html
+  confidence: high
+  amount: 10 万円
+- category: kinkyu-tsuho
+  name: 高齢者向け緊急通報装置の貸与
+  name_on_page: 高齢者地域生活サポート事業（緊急通報装置の貸与）
+  summary: 急変のおそれがある在宅の高齢者世帯に、あんしんセンターへ通報できる装置を無料で貸す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 市内に住所がある
+  - 心疾患や脳血管疾患など急変リスクで見守りが必要
+  - 安否確認できる近隣協力者がいる（緊急連絡先）
+  - 申請後に訪問調査で可否を決める
+  where: 長寿社会課高齢者福祉係、各総合支所の長寿社会担当
+  url: https://www.city.oshu.iwate.jp/kaigo/shienjigyo/2/4038.html
+  confidence: high
+  amount: 装置・利用は無料（電気代は自己負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（非課税世帯・重度身体障がい者世帯向け）
+  name_on_page: 緊急通報装置貸与事業（主に重度身体障がい者）
+  summary: 通報手段が乏しい非課税世帯の方に、あんしんセンターへ通報できる装置を無料で貸す。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり居住している
+  - 緊急時の通報手段の確保が困難
+  - 重度身体障害者（1〜3級）のみの世帯、または
+  - 高齢者のみで急変の見守りが必要な世帯（おおむね65歳以上）
+  - 65歳以上のみの世帯は、別のサポート事業の利用を案内
+  where: 長寿社会課高齢者福祉係、各総合支所の長寿社会担当
+  url: https://www.city.oshu.iwate.jp/kaigo/shienjigyo/2/479.html
+  confidence: high
+  amount: 装置・利用は無料（電気代は自己負担）
+- category: nichijo-yogu
+  name: 高齢者の自動消火器等の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 防火の配慮が必要なひとり暮らし等の高齢者世帯に、自動消火器・火災警報器・電磁調理器を給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 市内に住所がある
+  - 自動消火器・火災警報器は所得税非課税世帯
+  - 電磁調理器は所得税課税年額3万円以下の世帯
+  - 用具を買う前に申請。訪問調査で決める
+  where: 長寿社会課高齢者福祉係、各総合支所の長寿社会担当
+  url: https://www.city.oshu.iwate.jp/kaigo/shienjigyo/2/4039.html
+  confidence: high
+  amount: 基準単価：自動消火器28,700円、火災警報器15,500円、電磁調理器41,000円（超過は自己負担）
+- category: jutaku
+  name: 住まいづくり推進事業の住宅改善補助
+  name_on_page: 高齢者及び障がい者にやさしい住まいづくり推進事業費補助
+  summary: 要介護・要支援の方などが住宅を改善する工事費の一部を、市と県が補助する。
+  who:
+    at_home: true
+  at_application:
+  - 要支援・要介護認定、または身体障害者手帳1〜3級
+  - 3級は下肢・体幹機能障がい等に限る
+  - 所得制限あり（世帯の前年所得）
+  - 着工前に申請。原則1住宅につき1回
+  - 平成14年度以降の新築住宅は原則対象外
+  where: 長寿社会課介護給付係、各総合支所の福祉担当
+  url: https://www.city.oshu.iwate.jp/kaigo/shienjigyo/2/4702.html
+  confidence: high
+  amount: 工事費（上限80万円）から世帯ごとの控除額を引いた額の3分の2
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立てで後見が始まった方の後見人報酬を、困窮などの場合に助成する。
+  who: {}
+  at_application:
+  - 市長が行った審判請求で後見等が始まった方
+  - 市内に住所がある
+  - 生活保護、または報酬負担で要保護となる等と市長が認める
+  - 申請者は被後見人等か後見人等。審判の翌日から60日以内
+  where: 市（市長宛に申請。担当課は頁に記載なし）
+  url: https://www.city.oshu.iwate.jp/section/reiki_int/reiki_honbun/r204RG00000555.html
+  confidence: low
+  amount: 報酬の全部または一部（予算の範囲内）
+- category: gaishutsu
+  name: リフトタクシー乗車券（寝たきりの要介護認定者）
+  name_on_page: リフトタクシー乗車券
+  summary: 要介護認定を受けた寝たきりの方に、リフトタクシーの乗車券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護認定者のうち寝たきり老人に該当する方
+  - 自動車税・軽自動車税の減免を受ける方は対象外
+  - 施設入所者は対象外
+  where: 福祉課、各総合支所の福祉担当グループ
+  url: https://www.city.oshu.iwate.jp/soshiki/8/1060/1/11838.html
+  confidence: low
+  amount: 月12枚（年度末まで）。1枚あたり200円の助成
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- mimamori

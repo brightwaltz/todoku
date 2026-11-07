@@ -1,0 +1,185 @@
+city: 082368
+name: 小美玉市
+site: www.city.omitama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 補聴器本体の購入費の一部を、1人1回に限り助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住み、住民基本台帳に登録されている
+  - 聴覚障害による身体障害者手帳の交付対象でない
+  - 耳鼻科医師が補聴器の装用が必要と認めた
+  - 購入前に申請が必要（購入済みの機器は対象外）
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 購入費の2分の1、上限30,000円（1人1回限り）
+- category: gaishutsu
+  name: 高齢者のタクシー券（外出支援）
+  name_on_page: 外出支援サービス（タクシー券）
+  summary: 運転免許のない高齢者に、協定タクシーで使える助成券を交付する。
+  who: {}
+  at_application:
+  - 運転免許証を持っていない（返納した人を含む）
+  - 70歳以上、または60歳以上で下肢か視力の障害の手帳所持
+  - 初回のみ申請が必要
+  - 介護タクシー券・出前理美容との併用不可
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 1枚500円の助成券を年56枚まで（1回4枚まで）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 【安否確認事業】配食サービス事業
+  summary: 弁当を自宅に届け、安否確認も行う。週3回まで。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体虚弱などで安否確認が必要
+  - 同一住所での世帯分離は対象外
+  - 介護保険料の未納者は対象外
+  - 申請前チェックリストに該当すること
+  - 愛の定期便との併用不可
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 1食400円の自己負担。火〜金の昼食、週3回まで
+- category: mimamori
+  name: 愛の定期便（乳製品の手渡しで見守り）
+  name_on_page: 【安否確認事業】愛の定期便
+  summary: 週2回、乳製品を手渡しで届け、安否を確かめる。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 急変のおそれがある持病がある
+  - 70歳以上で閉じこもり傾向か孤立、または65歳以上で孤立し虚弱
+  - 同一住所での世帯分離は対象外
+  - 申請前チェックリストに該当すること
+  - 配食サービスとの併用不可
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 無料（週2回）
+- category: ribiyo
+  name: 出前理美容サービス
+  name_on_page: さわやか出前理美容サービス
+  summary: 登録した理美容事業者が自宅に来て散髪などをする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 自力での外出が困難
+  - 同一住所での世帯分離は対象外
+  - 利用希望日の2週間前までに申請
+  - 外出支援（タクシー券）との併用不可
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 利用者負担は1回1,000円。2か月に1回、年6回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム装置の設置
+  summary: 急病時に消防本部へつながる装置を貸与または給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心疾患や脳疾患などの持病がある、または緊急時に機敏に動けない
+  - 同一住所での世帯分離は対象外
+  - 電話回線がNTTであること
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 負担金は市県民税の課税額に応じて決まる
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成
+  name_on_page: 介護保険特別給付紙おむつ等支給サービス
+  summary: 紙おむつや補助パッドの購入費の一部を、利用券で助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 入院・施設入所中は対象外
+  - 月15日以上のショートステイ利用中は対象外
+  - 年度ごとに1回申請（4月〜翌3月）
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 月5,000円の購入分の9割（4,500円）まで助成
+- category: gaishutsu
+  name: 介護タクシー券（移送支援）
+  name_on_page: 高齢者移送支援サービス助成事業
+  summary: 車いす等が必要な方の介護タクシー乗車運賃を助成券で補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 車いすかストレッチャーがないと外出が困難
+  - 歩行が困難
+  - 外出支援（タクシー券）を利用していない
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000006798-0.html
+  confidence: high
+  amount: 1枚500円の助成券を年56枚まで（1回8枚まで）
+- category: haikai
+  name: おかえりマーク（徘徊時の身元確認シール）
+  name_on_page: おかえりマーク
+  summary: 行方不明時に備え、持ち物や衣類に付けるシールを無料で配る。
+  who: {}
+  at_application:
+  - 市内在住で、徘徊のある（おそれのある）65歳以上の方を介護している人
+  - または、市長が特に必要と認めた人
+  - 申請書・情報確認表・個別調書を提出
+  where: 介護福祉課（玉里総合支所内）、小川支所、美野里支所（市役所内）
+  url: https://www.city.omitama.lg.jp/0555/info-0000005080-0.html
+  confidence: high
+  amount: 無料（防水反射シール20枚、アイロン接着シール10枚）
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立てや、申立て費用・後見人報酬の負担が難しい人への助成。
+  who: {}
+  at_application:
+  - 判断能力が不十分な認知症高齢者・障害者など
+  - 市長申立ては、親族がいない・音信不通などで申立てできない人
+  - 費用助成は、生活保護など費用負担が困難な人
+  where: 介護福祉課 高齢福祉係
+  url: https://www.city.omitama.lg.jp/0555/info-0000008818-0.html
+  confidence: high
+  amount: 報酬助成の上限は、施設入所・長期入院で18,000円、その他は28,000円
+not_found:
+- iro
+- jutaku
+- shingu
+- nichijo-yogu
+- chusha
+- yutai
+- sonota

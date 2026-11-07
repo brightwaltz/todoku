@@ -1,0 +1,103 @@
+city: '032115'
+name: 釜石市
+site: www.city.kamaishi.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等への昼食配食
+  name_on_page: 高齢者等配食サービス事業
+  summary: 安否確認を兼ねて、昼食を自宅に届けてもらえる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしか高齢者夫婦世帯、またはこれに準ずる方
+  - 身体的な理由などで調理が困難
+  - 市内に住んでいる
+  where: 地域包括支援センター（一覧の頁に申込先の明記なし）
+  url: https://www.city.kamaishi.iwate.jp/docs/2018060800094/
+  confidence: high
+  amount: 1 食 700 円の自己負担。回数は週 1 回〜月 1 回
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: ボタン 1 つで 24 時間対応の管理センターに通報できる装置を設置する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯
+  - または、ひとり暮らしで緊急対応を要する持病のある重度身体障がい者
+  - 市民税非課税の方（頁の書き方では誰の非課税か不明）
+  where: 市の高齢福祉担当窓口（頁に申込先の明記なし）
+  url: https://www.city.kamaishi.iwate.jp/docs/2018060800094/
+  confidence: high
+  amount: 利用料は無料
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護 4・5 の方を介護する家族に、紙おむつなどの介護用品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 市内に住む要介護者を介護している家族
+  - 要介護者と介護する人の両方が市民税非課税の世帯
+  where: 市の高齢福祉担当窓口（頁に申込先の明記なし）
+  url: https://www.city.kamaishi.iwate.jp/docs/2018060800094/
+  confidence: high
+  amount: 1 期 18,750 円まで（年 4 期）。品目は紙おむつ、尿とりパット等
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 寝具の洗濯・乾燥・消毒を年 1 回してもらえる。
+  who: {}
+  at_application:
+  - おおむね65歳以上の寝たきりの方、または重度の身体障がい者等
+  where: 市の高齢福祉担当窓口（頁に申込先の明記なし）
+  url: https://www.city.kamaishi.iwate.jp/docs/2018060800094/
+  confidence: high
+  amount: 3 点セット 700 円、マットレス込みの 4 点セット 900 円（自己負担）
+- category: haikai
+  name: 認知症高齢者の徘徊 SOS ネットワーク登録
+  name_on_page: 認知症高齢者徘徊SOSネットワーク事業
+  summary: 事前登録で警察と情報を共有し、希望者には早期発見ステッカーが交付される。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む高齢者
+  - 認知症等で徘徊が心配される
+  where: 地域包括支援センター
+  url: https://www.city.kamaishi.iwate.jp/docs/2020011700124/
+  confidence: high
+  more_urls:
+  - https://www.city.kamaishi.iwate.jp/docs/2018060800094/
+- category: hochoki
+  name: 高齢難聴者の補聴器購入費の助成
+  name_on_page: 高齢難聴者の補聴器購入費用を一部助成します
+  summary: 手帳の対象でない高齢の難聴者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 60
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、身体障害者手帳の交付対象でない
+  - 両耳 40dB 以上 70dB 未満など、医師の測定で改善が見込めない
+  - 世帯に市民税所得割 46 万円以上の人がいない
+  - 購入前に申請し、販売店の見積書を添える
+  where: 地域包括支援センター
+  url: https://www.city.kamaishi.iwate.jp/docs/2023050100078/
+  confidence: high
+  amount: 非課税世帯は購入費の 9 割（最大 5 万円）、課税世帯は 5 割（最大 3 万円）
+not_found:
+- iro
+- koken
+- ribiyo
+- jutaku
+- gaishutsu
+- mimamori
+- nichijo-yogu

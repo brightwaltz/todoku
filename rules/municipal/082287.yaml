@@ -1,0 +1,243 @@
+city: 082287
+name: 坂東市
+site: www.city.bando.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり高齢者等の紙おむつ購入助成券
+  name_on_page: ねたきり高齢者等紙おむつ購入費助成事業
+  summary: 在宅で常時おむつを使うねたきり・重度認知症の人に、紙おむつ購入助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - ねたきりまたは重度の認知症の高齢者等
+  - 市民税非課税の人
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 1,250円の助成券を月 2 枚まで（年 24 枚）
+- category: ribiyo
+  name: 訪問理髪サービス利用券
+  name_on_page: 訪問理髪サービス事業
+  summary: 外出が難しいねたきり・重度認知症の人に、訪問理髪の利用券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきりまたは重度の認知症の高齢者等
+  - 市民税非課税の人
+  - 利用は市内の理美容室に限る
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 2,000円の利用券を年 6 枚
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス事業
+  summary: 調理が難しいひとり暮らし等の高齢者に昼食を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ケアプランか介護予防プランで提供が適切と認められた人
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 1 食 400 円程度、週 3 回まで（昼食のみ）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らし高齢者に、消防署へ通報できる緊急通報システムを貸与する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 緊急時に協力する近隣協力員の署名が必要
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 設置料は所得状況により一部負担あり（詳細は頁の PDF）
+- category: nichijo-yogu
+  name: 住宅用火災警報器の取付
+  name_on_page: 火災警報器の設置事業
+  summary: 65 歳以上のひとり暮らしの家に、住宅用火災警報器を無料で取り付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 1 台、無料
+- category: mimamori
+  name: 愛の定期便（乳製品の配布による安否確認）
+  name_on_page: ひとり暮らし高齢者「愛の定期便」事業
+  summary: ひとり暮らし高齢者に、週 2 回乳製品を手渡しして安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 安否確認が必要な人
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 無料（週 2 回）
+- category: mimamori
+  name: ひとり暮らし高齢者の見守りサービス利用料助成
+  name_on_page: ひとり暮らし高齢者見守りサービス助成金交付事業
+  summary: 民間の見守りサービスの月額利用料の一部を、年額の上限つきで助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内在住で、ひとり暮らし高齢者登録が必要
+  - 緊急通報システム・愛の定期便とは併用不可
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page011246.html
+  confidence: high
+  amount: 月額利用料が対象（初期費用は除く）、上限は年 10,000 円
+  more_urls:
+  - https://www.city.bando.lg.jp/page/page011286.html
+- category: gaishutsu
+  name: 公共交通利用券の交付（通院等の外出支援）
+  name_on_page: 公共交通利用料金助成事業
+  summary: ひとり暮らし等の高齢者に、タクシーやバスで使える利用券を交付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65 歳以上のひとり暮らし、または交通手段のない 75 歳以上のみの世帯
+  - 75 歳以上のみの世帯は地区担当の民生委員の証明が必要
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006628.html
+  confidence: high
+  amount: 100 円券を年 150 枚（15,000 円分）。75 歳以上のみで非課税の世帯は 2 人分
+  more_urls:
+  - https://www.city.bando.lg.jp/page/page006031.html
+- category: haikai
+  name: おかえりマーク（徘徊高齢者の保護支援）
+  name_on_page: おかえりマーク
+  summary: 徘徊のおそれがある人の靴や衣服に貼るマークを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請に写真 2 枚が必要
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 徘徊高齢者等見守りシール（どこシル伝言板）
+  name_on_page: 徘徊高齢者等見守りシール交付事業（どこシル伝言板）
+  summary: 徘徊のおそれがある人の靴や衣服に貼る QR コード付きシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application: []
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 無料
+- category: iro
+  name: 在宅ねたきり高齢者等の介護慰労金
+  name_on_page: 在宅ねたきり高齢者等介護慰労金支給事業
+  summary: 在宅で要介護 3 以上のねたきり・認知症の高齢者を長く介護した人に慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 6 月 1 日時点で、在宅で既に 180 日以上介護している
+  - ねたきりまたは認知症の高齢者を介護している
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 20,000 円（申請は 8〜10 月頃）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護 4・5 の人を介護保険サービスを使わず介護した、市民税非課税世帯の介護者に支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 介護者が市民税非課税の世帯に属する
+  - 8 月 1 日から翌年 7 月 31 日に介護保険サービスを使っていない
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 100,000 円（申請は 9〜11 月頃）
+- category: kaigo-yohin
+  name: 高齢者歩行補助車（シルバーカー）の購入費補助
+  name_on_page: 高齢者歩行補助車(シルバーカー)購入費補助事業
+  summary: 常時杖などが必要な 70 歳以上の人に、シルバーカー購入費の一部を補助する。
+  who:
+    age_min: 70
+  at_application:
+  - 常時杖などが必要
+  - 市税等の滞納がない
+  - 一度受けると 5 年間は対象外
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 購入費の 2 分の 1、上限 6,000 円
+- category: sonota
+  name: 通話録音装置等の購入費補助
+  name_on_page: 坂東市通話録音装置等購入費補助金制度
+  summary: 特殊詐欺の防止のため、通話録音装置や対応電話機の購入費の一部を補助する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 当該年度内に 75 歳以上になる人のみの世帯
+  - 過去にこの補助を受けていない
+  - 市税等の滞納がない
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page005856.html
+  confidence: high
+  amount: 購入費の 2 分の 1、上限 4,000 円（1 世帯 1 回 1 台）
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: 緊急時に必要な情報を保管するキットを、対象の高齢者や障がい者等に無料で配る。
+  who: {}
+  at_application:
+  - 65 歳以上のひとり暮らし
+  - 65 歳以上の身体が虚弱な高齢者のみの世帯
+  - 身体障がい者手帳 1・2 級の人 等（いずれかに該当）
+  where: 介護福祉課（高齢福祉係）
+  url: https://www.city.bando.lg.jp/page/page006031.html
+  confidence: high
+  amount: 無料
+not_found:
+- hochoki
+- koken
+- jutaku
+- shingu

@@ -1,0 +1,128 @@
+city: '032166'
+name: 滝沢市
+site: www.city.takizawa.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護の紙おむつ等の支給
+  name_on_page: 家族介護の介護用品の支給
+  summary: 要介護4・5の方を在宅で介護する非課税世帯の家族に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 滝沢市に居住している
+  - 高齢者を在宅で介護している家族介護者が対象
+  where: 高齢者福祉課
+  url: https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/genki-service/contents-10446
+  confidence: high
+  amount: 紙おむつ・尿取りパッドを年度 75,000 円まで（月 10,000 円以内）
+- category: nichijo-yogu
+  name: 日常生活用具の購入費補助
+  name_on_page: 日常生活用具の購入費補助
+  summary: 老人用電話、電磁調理器、自動消火器の購入費を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 申請日現在で 65 歳以上の市民税非課税のひとり暮らし
+  - 電磁調理器等は防火などの配慮が必要な方が対象と読める
+  - 補助は品目ごとに 1 人 1 回限り
+  where: 高齢者福祉課
+  url: https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/genki-service/contents-10447
+  confidence: high
+  amount: 品目ごとに上限 10,000 円（購入額が下回るときはその額）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ボタンを押すと関係機関や協力員に連絡できる緊急通報装置を無料で貸す。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね 65 歳以上のひとり暮らし・高齢者のみ・障がい者のみの世帯
+  - 慢性的な疾患などで日常生活に常に注意が必要
+  - 同一敷地・建物内に親族が住んでいない
+  - 近隣の協力員の承諾が要る
+  where: 高齢者福祉課
+  url: https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/genki-service/tsuhosouti-taiyo
+  confidence: high
+  amount: 利用者負担は無料（機器の貸与）
+  more_urls:
+  - https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/genki-service/tsuhosouti-taiyo/contents-10439
+- category: jutaku
+  name: 高齢者・障がい者向け住宅改修の上乗せ助成
+  name_on_page: 高齢者及び障がい者にやさしい住まいづくり推進事業
+  summary: 手すり設置や段差解消などの改修費のうち、介護保険等の対象額を除いた分を助成する。
+  who: {}
+  at_application:
+  - 介護認定を受けている方、または身体障害者手帳 1〜3 級（一部）の方
+  - 世帯が一定の所得以下であること
+  - 事前の申請が必要
+  - 原則 1 世帯（住宅）1 回のみ
+  where: 高齢者福祉課
+  url: https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/genki-service/contents-10450
+  confidence: high
+  amount: 介護保険等の対象額（1 人 20 万円）を除いた額の 3 分の 2、上限 40 万円
+- category: koken
+  name: 成年後見の市長申立て費用負担と後見人報酬の助成
+  name_on_page: 成年後見利用支援事業
+  summary: 市長申立ての経費を市が負担し、生活保護等の方の後見人報酬を月額で助成する。
+  who: {}
+  at_application:
+  - 市長申立ては身寄りがない等で制度を使えない場合
+  - 報酬助成は生活保護受給者またはこれに準じる方で支払いが困難な場合
+  - 対象要件・申請方法は事前に問い合わせが必要
+  where: 地域包括支援センター
+  url: https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/genki-service/seinenkouken/contents-12617
+  confidence: high
+  amount: 報酬助成は在宅で月額 28,000 円まで、施設入所は月額 18,000 円まで
+- category: haikai
+  name: 認知症高齢者の行方不明 SOS ネットワーク事前登録
+  name_on_page: 盛岡広域シルバーケアSOSネットワーク
+  summary: 行方不明の可能性がある認知症の方を事前登録し、登録番号付きステッカーを配る。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 認知症の方で、行方不明になったことがある、またはそのおそれが高い
+  - 登録は盛岡西警察署生活安全課でも受け付けている
+  where: 滝沢市地域包括支援センター（盛岡西警察署生活安全課でも登録可）
+  url: https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/p20250919150140/p20251003145531
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの無料配付
+  name_on_page: 救急医療情報キット配付事業
+  summary: かかりつけ医や緊急連絡先を入れたキットを希望者に無料で配る。
+  who:
+    age_min: 65
+  at_application:
+  - 滝沢市に居住する 65 歳以上
+  - ひとり暮らし、高齢者のみ、日中高齢者のみの世帯等
+  where: 高齢者福祉課窓口、地域包括支援センター（訪問での配付あり）
+  url: https://www.city.takizawa.iwate.jp/kurashi/fukushi/koureisha-fukushi/tikihoukatsusien/contents-10449
+  confidence: high
+  amount: 無料
+not_found:
+- haishoku
+- iro
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori

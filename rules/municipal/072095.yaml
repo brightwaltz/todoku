@@ -1,0 +1,158 @@
+city: 072095
+name: 相馬市
+site: www.city.soma.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報体制整備事業
+  summary: 緊急時に迅速に救助や援助が受けられるよう、緊急通報システムを貸与する。
+  who: {}
+  at_application:
+  - 高齢者のみ、障がい者のみ、または要援護の世帯など
+  - 緊急通報システムが必要な人
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+  amount: 費用は生計中心者や世帯の収入に応じて負担
+- category: kaigo-yohin
+  name: 紙おむつ代の助成
+  name_on_page: 紙おむつ給付事業
+  summary: 寝たきりや認知症の高齢者を在宅で介護する世帯に、紙おむつ代を助成する。
+  who:
+    age_min: 65
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 寝たきりまたは認知症の高齢者を介護している世帯
+  - 常時失禁の状態が3か月以上続いている
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+  amount: 月額4,000円分
+- category: shingu
+  name: 布団の丸洗い乾燥
+  name_on_page: 布団丸洗い乾燥サービス事業
+  summary: 寝具の衛生管理が難しい世帯の布団上下一組を、無料で丸洗い乾燥する。
+  who:
+    at_home: true
+  at_application:
+  - 老衰や心身の障がいで寝具の衛生管理が困難
+  - 高齢者のみ世帯かそれに準ずる世帯、または身体障害者の世帯
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+  amount: 無料（年1回程度）
+- category: jutaku
+  name: 自立高齢者の小規模住宅改修の助成
+  name_on_page: 自立高齢者の住宅改修費助成事業
+  summary: 要支援・要介護でない高齢者の手すり取付けなど小規模改修費を助成する。
+  who:
+    age_min: 60
+  at_application:
+  - 要支援・要介護状態でない
+  - 生計中心者の所得が一定限度以内の世帯
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+  amount: 工事費の9割、最高18万円
+- category: ribiyo
+  name: 訪問理美容の利用助成
+  name_on_page: 訪問理美容サービス事業
+  summary: 外出が難しい人が訪問理美容を使うとき、1回1,000円を助成する。
+  who: {}
+  at_application:
+  - 要介護3以上、または身体障害者手帳1級
+  - 寝たきりや認知症などで理美容院に行くのが困難
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+  amount: 1回1,000円、年2回まで
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4以上の人を在宅で介護し、条件を満たす家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 1年間、介護サービスを利用しなかった
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+  amount: 年10万円
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事を定期的に届け、あわせて安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 生活環境・身体・経済的な理由で日常の食事の確保に支援が必要
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+  amount: 1食150円
+- category: mimamori
+  name: 声かけ訪問
+  name_on_page: 声かけ訪問サービス
+  summary: 日々の安否確認が難しい高齢者のみの世帯に、地域で声かけ訪問を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 生活環境や家族環境で日常の安否確認が困難
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1088.html
+  confidence: high
+- category: gaishutsu
+  name: おでかけミニバス（無料）
+  name_on_page: 相馬市おでかけ応援事業「おでかけミニバス」
+  summary: 事前登録と予約で、自宅前とまちなかの停車場所を結ぶミニバスに無料で乗れる。
+  who: {}
+  at_application:
+  - 65歳以上、または65歳未満で要介護・要支援認定、免許返納などに該当
+  - 事前の利用登録と乗車予約が必要
+  where: 企画政策課 企画政策係（市役所3階）
+  url: https://www.city.soma.fukushima.jp/shinososhiki/kikakuseisakuka/seikatsu/1/18850.html
+  confidence: high
+  amount: 運賃無料
+- category: sonota
+  name: エアコン購入費の助成（非課税の高齢者世帯）
+  name_on_page: 市民税非課税の高齢者世帯へエアコン購入費用を助成します
+  summary: エアコンが未設置の非課税世帯に、購入と設置の費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 市に住民票があり、世帯に65歳以上の人がいる
+  - 住宅にエアコンが1台もない（買い替えは対象外）
+  - 市税などを滞納していない
+  - 購入から6か月以内に申請
+  where: 高齢福祉課
+  url: https://www.city.soma.fukushima.jp/shinososhiki/koureifukushika/koureifukushikakari/2/1101.html
+  confidence: high
+  amount: 本体・設置費の70％、上限51,000円（1世帯1回）
+not_found:
+- haikai
+- koken
+- hochoki
+- nichijo-yogu
+- chusha
+- yutai

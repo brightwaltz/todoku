@@ -1,0 +1,97 @@
+city: 072079
+name: 須賀川市
+site: www.city.sukagawa.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らしの高齢者に、急病や災害時に自動で通報できる機器を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね70歳以上
+  where: 地域包括支援センター、担当のケアマネジャー
+  url: https://www.city.sukagawa.fukushima.jp/kenko/koureisya_fukushi/1012742/1012723/1012724.html
+  confidence: high
+  amount: 月額は生活保護世帯が無料、住民税非課税・均等割課税世帯が455円、所得割課税世帯が909円（税抜）。携帯電話型は別途携帯電話料金。
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）支給券の交付
+  name_on_page: 介護用品支給事業
+  summary: 重度の要介護の方を在宅で介護する非課税世帯に、紙おむつ等を買える支給券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 長寿福祉課（頁に申請先の記載なし、問い合わせ先として）
+  url: https://www.city.sukagawa.fukushima.jp/kenko/koureisya_fukushi/1012742/1012729/9530.html
+  confidence: high
+  amount: 支給券の限度額は月 6,250 円。超えた分は自己負担。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護保険サービスを使わず在宅の高齢者を介護した非課税世帯の家族に、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用していない
+  where: 長寿福祉課（頁に申請先の記載なし、問い合わせ先として）
+  url: https://www.city.sukagawa.fukushima.jp/kenko/koureisya_fukushi/1012742/1012729/9530.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者のGPS機器の貸与
+  name_on_page: 認知症高齢者GPS機器貸与事業
+  summary: 道に迷うおそれのある認知症の方を介護する家族に、居場所を探せるGPS機器を貸す。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内在住の認知症高齢者を在宅で介護する家族等
+  - 地域包括支援センターが訪問調査し、可否を審査
+  where: 地域包括支援センター
+  url: https://www.city.sukagawa.fukushima.jp/kenko/koureisya_fukushi/ninchisho/1008924.html
+  confidence: high
+  amount: 位置情報の提供と賠償保険の付帯は無料。月額基本料金は 1,000 円（税込）で、生活保護世帯は自己負担なし。
+- category: jutaku
+  name: 介護予防の住宅改修費の助成
+  name_on_page: 介護予防住宅改修事業
+  summary: 要介護認定が非該当の非課税世帯の高齢者の住宅改修費を、市が独自に助成する。
+  who:
+    age_min: 60
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護認定が非該当または非該当相当
+  - 転倒などの危険があり、改修が必要と認められる
+  where: 長寿福祉課（頁に申請先の記載なし、問い合わせ先として）
+  url: https://www.city.sukagawa.fukushima.jp/kenko/koureisya_fukushi/1012742/1012723/index.html
+  confidence: high
+  amount: 改修費の9割を助成し、上限は18万円。
+not_found:
+- haishoku
+- shingu
+- ribiyo
+- nichijo-yogu
+- hochoki
+- koken
+- gaishutsu
+- mimamori

@@ -1,0 +1,148 @@
+city: '052116'
+name: 潟上市
+site: www.city.katagami.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の支給
+  name_on_page: 介護用品の支給
+  summary: 高齢者を介護する家族に、紙おむつなどの介護用品を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 介護を受ける高齢者が要介護4か5
+  - 高齢者を居宅で介護している家族がいる
+  where: 社会福祉協議会 ふくし総合相談窓口
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/661.html
+  confidence: high
+  amount: 年間 60,000 円を上限とする
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業
+  summary: 調理が難しい人に、食事を定期的に届けて安否も確認する。
+  who: {}
+  at_application:
+  - 市内在住で、おおむね65歳以上の単身世帯か高齢者のみの世帯
+  - これに準ずる世帯、身体障害者世帯も対象
+  - 家族が食事を準備できる場合や一時不在は対象外
+  - 申請後の事前評価で必要性を判定する
+  where: 健康長寿課 地域包括支援センター、在宅介護支援センター
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/661.html
+  confidence: high
+  amount: 1 食 350〜400 円の負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重度の要介護の人を在宅で介護する家族に、慰労金を贈る。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人が過去1年間、介護保険サービスを使っていない
+  where: 健康長寿課 地域包括支援センター
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/661.html
+  confidence: high
+  amount: 年額 10 万円
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具類等洗濯乾燥消毒サービス
+  summary: 寝具の衛生管理が難しい要援護の高齢者に、寝具の洗濯・乾燥・消毒をする。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 75歳以上の世帯、または要援護高齢者等だけの世帯などが対象
+  - 要援護高齢者等は要介護1以上、または障害者手帳などで寝たきりの人
+  - 本人と同居家族では寝具の衛生管理が難しい
+  - 施設入所中・入院中の人は対象外
+  where: 社会福祉協議会 ふくし総合相談窓口
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/661.html
+  confidence: high
+  amount: サービス利用の 1 割を負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置
+  summary: 緊急通報装置を設置し、急病や災害時に 24 時間の支援体制をとる。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らしの要援護者、または75歳以上のひとり暮らし
+  - 75歳以上と要援護者だけの世帯、世帯全員が要援護者の世帯なども対象
+  - 要援護者は要支援・要介護認定、障害者手帳、発作を伴う病気のある人
+  where: 健康長寿課
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/661.html
+  confidence: high
+  amount: 装置は無料（電話・電気料金は自己負担）
+- category: sonota
+  name: 軽度生活援助事業（除雪・草取りの費用助成）
+  name_on_page: 軽度生活援助事業
+  summary: 高齢者世帯がシルバー人材センターに除雪や草取りを頼む費用の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で市内に住所がある
+  - 日常生活の援助が必要と認められる
+  - 排雪の費用は対象外
+  where: 健康長寿課、市役所各出張所、シルバー人材センター、社会福祉協議会各センター
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/3949.html
+  confidence: high
+  amount: 利用者負担は 1 時間 300 円（生活保護世帯は無料）、1 回 2 時間・年 24 時間まで
+  more_urls:
+  - https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/661.html
+- category: koken
+  name: 成年後見制度の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用や後見人等への報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている、または市民税が非課税
+  - その他、収入や財産の状況で制度の利用が難しい人
+  where: 地域包括支援センター（65歳以上の相談）
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chiikihokatsucenter/koken/6186.html
+  confidence: high
+- category: haikai
+  name: 助け合いひろがるネットワーク事業（行方不明時のSOS・事前登録）
+  name_on_page: 潟上市助け合いひろがるネットワーク事業（SOSネットワーク）
+  summary: 行方不明の心配がある人を事前登録し、警察や協力機関と早期発見に備える。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上の認知症の人、または若年性認知症と診断された人
+  - 行方不明のおそれのある障がい者や、特に必要と認められた人も対象
+  where: 地域包括支援センター（登録票を提出）
+  url: https://www.city.katagami.lg.jp/gyosei/lifescene/kaigo/chiikihokatsucenter/2996.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージの療養費助成
+  name_on_page: はり・きゅう・マッサージ療養助成事業
+  summary: 75歳以上の高齢者が指定治療所で受けるはり・きゅう・マッサージ代を助成する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住所がある
+  where: 健康長寿課
+  url: https://www.city.katagami.lg.jp/soshiki/fukushihoken/kenkouchoujuka/chojushien/koreishafukushi/661.html
+  confidence: high
+  amount: 1 回 1,000 円、年 12 回まで
+not_found:
+- hochoki
+- jutaku
+- gaishutsu
+- ribiyo

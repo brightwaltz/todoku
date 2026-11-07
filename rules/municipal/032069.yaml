@@ -1,0 +1,120 @@
+city: 032069
+name: 北上市
+site: www.city.kitakami.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（あんしんホットライン）
+  name_on_page: あんしんホットライン（緊急通報装置）事業のご案内
+  summary: 緊急時に通報できる装置（本体・ペンダント型発信器・火災センサー）を自宅に設置する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、次のいずれかに当たる人
+  - 65歳以上のひとり暮らし、または高齢者のみで病弱な人がいる世帯
+  - 65歳以上の寝たきりの人、ひとり暮らしの重度身体障害者
+  - 日中だけ高齢者になる世帯は原則対象外
+  - 病弱で見守りが必要な人を優先
+  where: 各地区の民生委員に相談し、民生委員が長寿介護課へ申請書を提出
+  url: https://www.city.kitakami.iwate.jp/life/kenko_fukushi_kaigo/koreishafukushi/8046.html
+  confidence: high
+  amount: 装置の設置は市の事業。維持費（電気代）・通話料・固定電話がない場合の回線使用料は本人負担。
+- category: haishoku
+  name: 在宅高齢者向け配食サービス（安否確認つき）
+  name_on_page: 在宅高齢者を対象とした配食サービス御利用の案内
+  summary: 調理が困難な高齢者に週5回まで弁当を届け、安否確認も行う。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住のおおむね65歳以上のひとり暮らし・高齢者のみ世帯など
+  - 心身の障害や疾病で調理が困難な人（調理できないだけでは不可）
+  - 申請時に調理・買い物・栄養状態などを聞き取る
+  where: 長寿介護課 包括支援係（本庁舎1階17番窓口）。家族・民生委員・ケアマネジャーの代理申請も可
+  url: https://www.city.kitakami.iwate.jp/life/kenko_fukushi_kaigo/kaigohoken/chiikihokatsushien/27269.html
+  confidence: high
+  amount: 1食580円（利用者負担）。週5回まで。年末年始は休み。
+  more_urls:
+  - https://www.city.kitakami.iwate.jp/material/files/group/18/haisyoku.pdf
+- category: kaigo-yohin
+  name: 家族介護用品支給券の交付
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で要介護3〜5の高齢者を介護する家族に、おむつ等の介護用品の支給券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3は排尿または排便が「介助」「見守り等」に当たることも要件
+  - 高齢者の世帯と常時介護する家族の世帯がどちらも市町村民税非課税
+  where: 長寿介護課（本庁舎16番窓口）。年度ごとに申請
+  url: https://www.city.kitakami.iwate.jp/life/soshikikarasagasu/chojukaigoka/kaigoshinsagakari/1_1/6221.html
+  confidence: high
+  amount: 要介護3は月3,000円分、要介護4・5は月6,000円分の支給券
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 生活保護の人などの成年後見の申立費用と後見人への報酬を市が助成する。
+  who: {}
+  at_application:
+  - 本人と申立人が生活保護受給者、または市長が助成なしでは利用困難と認める人
+  - 後見人報酬は、後見人が民法上の親族の場合は対象外
+  - 身寄りがない人や虐待被害者は市長申立もある
+  where: 長寿介護課 高齢福祉係
+  url: https://www.city.kitakami.iwate.jp/life/kenko_fukushi_kaigo/koreishafukushi/22058.html
+  confidence: high
+- category: haikai
+  name: オレンジセーフティネット（行方不明時の捜索協力）の登録
+  name_on_page: 高齢者見守り安心システム「オレンジセーフティネット」登録の御案内
+  summary: 行方不明の恐れのある高齢者を事前登録し、いなくなった時に協力事業者などと捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になったことがある高齢者、またはその恐れがある高齢者
+  - 家族のほかケアマネジャー等も申込可
+  - 登録申込書・同意書、顔写真と全身写真が必要
+  where: 長寿介護課または各地域包括支援センター
+  url: https://www.city.kitakami.iwate.jp/life/kenko_fukushi_kaigo/kaigohoken/chiikihokatsushien/22201.html
+  confidence: high
+  amount: 登録料は無料
+- category: gaishutsu
+  name: 高齢者公共交通利用助成券（バス・タクシー）
+  name_on_page: 高齢者公共交通利用助成券を使ってお出かけください
+  summary: 70歳以上の市民にバス・タクシー共通券とバス専用券を郵送で交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所があり、その年度の4月1日現在で70歳以上
+  - 対象者には6月中に郵送（頁に申請手続きの記載なし）
+  where: 都市再生推進課 交通政策係（江釣子庁舎2階）
+  url: https://www.city.kitakami.iwate.jp/life/soshikikarasagasu/toshisaiseisuishin/koutsuuseisaku/1_1/23369.html
+  confidence: high
+  amount: 共通券4,000円分（100円×40枚）とバス専用券2,000円分（100円×20枚）。有効期間は7月〜翌年6月（令和8年度分で確認）
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キットを無料配布します
+  summary: 持病や連絡先を入れる容器とマグネットシールを無料でもらえる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし高齢者などが対象
+  - 申請書兼救急医療情報用紙を記入して申請
+  where: 長寿介護課（本庁舎1階17番窓口）または担当地区の地域包括支援センター
+  url: https://www.city.kitakami.iwate.jp/life/kenko_fukushi_kaigo/koreishafukushi/9628.html
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

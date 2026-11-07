@@ -1,0 +1,147 @@
+city: 032085
+name: 遠野市
+site: www.city.tono.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 市民税非課税で在宅の要介護者を介護する家庭に、介護用品を支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護4・5、または排尿・排便に介助や見守りが必要な方
+  where: 健康福祉の里 健康長寿課 包括支援係（申請は7月と12月の年2回）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44539,273,590,html
+  confidence: high
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 「食」の自立支援事業
+  summary: 調理が困難な高齢者などに、栄養バランスのよい食事を届け、安否も確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住の単身世帯・高齢者のみ世帯、またはこれに準ずる世帯
+  - 調理が困難、または栄養改善が必要で、支援が必要と認められた方
+  - 要介護・要支援認定がある方は、閉じこもり等で栄養改善が必要な場合
+  where: 健康福祉の里 健康長寿課 包括支援係（在宅介護支援センター相談員、ケアマネに相談のうえ申請）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44593,273,590,html
+  confidence: high
+  amount: 1食500円、週3回まで
+- category: haikai
+  name: 認知症の方の徘徊SOSネットワーク登録
+  name_on_page: 認知症高齢者等徘徊ＳＯＳネットワーク事業
+  summary: 徘徊のおそれがある方を事前登録し、行方不明時に警察・消防などと協力して探す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で、認知症により徘徊するおそれがある方
+  - または若年性認知症などで徘徊するおそれがある方
+  where: 健康福祉の里 地域支え合いセンター 包括支援係（地区センターの丸ごと相談員、ケアマネ経由も可）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44545,273,590,html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: ひとり暮らし高齢者等地域生活サポート事業
+  summary: 心疾患などを抱えるひとり暮らし高齢者等に、緊急通報装置を無料で貸与する。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者、または高齢者世帯の病弱な方
+  - または、ひとり暮らしの重度身体障害者、突然危険な症状が出る持病のある一人暮らしの方など
+  - 親族等の緊急連絡先と近隣協力員を各1人以上登録する
+  where: 健康福祉の里 地域支え合いセンター 包括支援係（丸ごと相談員、ケアマネに相談のうえ申請）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,60876,273,590,html
+  confidence: high
+  amount: 貸与は無料（通報時の通信料は自己負担）
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付・貸与
+  name_on_page: 老人日常生活用具給付・貸与
+  summary: 電磁調理器・火災警報器・自動消火器の給付と、老人用電話の貸与。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住でおおむね65歳以上
+  - 電磁調理器：心身機能の低下で防火の配慮が必要な一人暮らし等
+  - 火災警報器・自動消火器：低所得の寝たきり、一人暮らし等
+  - 老人用電話：低所得の一人暮らし等
+  where: 健康福祉の里 福祉課 高齢福祉係（在宅介護支援センター相談員、ケアマネに相談のうえ申請）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44478,273,588,html
+  confidence: high
+  amount: 自己負担は世帯の前年所得税額で0円〜全額（生活保護・所得税非課税世帯は0円）
+- category: mimamori
+  name: 見守り機能つき服薬支援装置の貸与
+  name_on_page: 見守り機能付き服薬支援装置貸与事業
+  summary: 服薬管理が心配な在宅高齢者に、見守り機能つきの服薬支援装置を無料で貸与する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 服薬管理が心配で、支援者がいる
+  - 医師の指示で一包化された薬の処方を受けられる
+  - NTT固定電話に加入している
+  - 施設入所者は対象外
+  where: 健康福祉の里 福祉課 高齢福祉係（在宅介護支援センター相談員、ケアマネに相談のうえ申請）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44602,273,590,html
+  confidence: high
+  amount: 貸与は無料（電気代・通信料は自己負担）、貸与期間は3年
+- category: gaishutsu
+  name: 外出支援（通院などの送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 公共交通を使いにくい高齢者等を、リフト付車両などで自宅と医療機関等の間を送迎する。
+  who: {}
+  at_application:
+  - 市内在住で公共交通機関の利用が困難な方
+  - 要介護・要支援認定を受けた方、身体障害者、肢体不自由などで単独移動が困難な方
+  - 移送車両の利用が必要と認められた方
+  where: 健康福祉の里 福祉課 高齢福祉係（在宅介護支援センター相談員、ケアマネに相談のうえ申請）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44475,273,588,html
+  confidence: high
+  amount: 片道610円
+- category: koken
+  name: 成年後見の市長申立て・費用と報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りのない方の申立てを市長が行って費用を負担し、生活保護の方などには後見人報酬も助成する。
+  who: {}
+  at_application:
+  - 市内在住で判断能力が不十分、申立てをする親族がいない方
+  - 報酬助成は、生活保護受給者またはそれに準ずる方で支払いが困難な場合
+  where: 健康福祉の里 健康長寿課 包括支援係
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44571,273,590,html
+  confidence: high
+  amount: 申立て費用は市が負担（本人に負担能力があれば後日求償）。報酬助成には上限あり
+- category: sonota
+  name: 軽度の生活援助（買い物・除雪など）
+  name_on_page: 軽度生活援助事業
+  summary: ひとり暮らし高齢者等の食材購入、除雪、家周りの手入れなどの軽い援助。
+  who: {}
+  at_application:
+  - 市内在住でおおむね65歳以上の一人暮らし・高齢者のみ世帯等
+  - 日常生活上の援助が必要と認められた方
+  - 同等の介護保険サービスを受けられる場合は、そちらが優先
+  where: 健康福祉の里 福祉課 高齢福祉係（在宅介護支援センター相談員、ケアマネに相談のうえ申請）
+  url: https://www.city.tono.iwate.jp/index.cfm/51,44477,273,588,html
+  confidence: high
+  amount: 1時間210円。週2回まで、1回2時間まで
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- jutaku

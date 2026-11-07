@@ -1,0 +1,124 @@
+city: 082163
+name: 笠間市
+site: www.city.kasama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の購入券の支給
+  name_on_page: 笠間市介護用品支給事業
+  summary: 在宅で介護を受ける重度の方の家族に、おむつ等を買える購入券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市民税非課税、または生活保護を受給している
+  - 笠間市の被保険者で、世帯全員が保険料を完納している
+  - ケアハウス・グループホーム等の入所者も対象に含む
+  - 介護保険施設の入所者・入院中の方は対象外
+  where: 高齢福祉課、各支所の保険福祉課
+  url: https://www.city.kasama.lg.jp/page/page012971.html
+  confidence: high
+  amount: 月額 4,000 円まで（上期・下期ごとに購入券を交付）
+- category: haikai
+  name: 認知症高齢者等の位置情報端末（GPS）の貸与
+  name_on_page: 認知症高齢者等支援事業(GPS貸与)について
+  summary: 行方不明のおそれがある認知症の方の家族に、GPS 端末を貸与する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申込みは、すぐに身元を引き受けられる家族
+  - GPS を身につける人が笠間市在住で在宅
+  - ペースメーカー・除細動器を植え込んでいない
+  - 40〜64 歳で要介護認定を受けた初老期認知症の方も対象
+  where: 高齢福祉課
+  url: https://www.city.kasama.lg.jp/page/page010070.html
+  confidence: high
+  amount: 初期費用は市が負担。月額基本料 1,320 円（非課税世帯・生活保護世帯は市負担）。
+- category: kinkyu-tsuho
+  name: 高齢者見守りあんしんシステム（緊急通報装置の貸与）
+  name_on_page: 「高齢者見守りあんしんシステム」をご利用ください
+  summary: 固定型・携帯型の緊急通報装置を貸与し、相談や月 1 回の安否確認も行う。
+  who: {}
+  at_application:
+  - ひとり暮らし・高齢者のみ・日中ひとりの高齢者で要介護等認定者
+  - または突発的に危険な持病がある方（世帯要件あり）
+  - 重度身体障がい者等のみの世帯の方も対象
+  - 上記に当たらなくても、基準額の全額負担で利用できる
+  - 固定型は自宅に固定電話が必要
+  where: 高齢福祉課、各支所の保険福祉課（電子申請もあり）
+  url: https://www.city.kasama.lg.jp/page/page006667.html
+  confidence: high
+  amount: 月額 0〜1,650 円（固定型）、0〜2,530 円（携帯型）。介護保険料の所得段階で決まる。
+- category: sonota
+  name: かさま安心サポート（身元保証・見守り・死後事務の支援）
+  name_on_page: かさま安心サポート事業を開始しました。
+  summary: 頼れる親族がいないひとり暮らしの方に、見守り・入院時の身元保証・死後事務などを支援する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 頼れる親族等がいない
+  - 生活保護を受給していない
+  - 公正証書遺言で遺言執行者を定めている
+  - 預託金（身元保証分は 15 万円）を納められる
+  where: かさま安心サポートセンター（笠間市社会福祉協議会）
+  url: https://www.city.kasama.lg.jp/page/page016254.html
+  confidence: high
+  amount: 見守り等支援は月 2,000 円、入退院時の生活支援は 1 日 1,000 円（月上限 5,000 円）。ほかに預託金が必要。
+- category: gaishutsu
+  name: 在宅福祉サービスの移送サービス（医療機関への送迎）
+  name_on_page: 在宅福祉サービス事業
+  summary: 会員制の有償サービスで、医療機関への送迎を行う。
+  who: {}
+  at_application:
+  - 笠間市内在住で、社協の在宅福祉サービスセンターに会員登録する
+  - 要支援・要介護認定者、基本チェックリスト該当者、障害者手帳所持者
+  where: 笠間市社会福祉協議会 在宅福祉サービスセンター
+  url: https://www.city.kasama.lg.jp/page/page009016.html
+  confidence: high
+  amount: 1 時間 700 円に加え、ガソリン代（市内片道 200 円、市外片道 400 円）。
+- category: sonota
+  name: 在宅福祉サービスの家事支援サービス
+  name_on_page: 在宅福祉サービス事業
+  summary: 会員制の有償サービスで、食事づくり・洗濯・掃除・買い物・通院の付き添いを行う。
+  who: {}
+  at_application:
+  - 笠間市内在住で、社協の在宅福祉サービスセンターに会員登録する
+  - 日常生活で支援が必要な高齢者または障がいのある方
+  where: 笠間市社会福祉協議会 在宅福祉サービスセンター
+  url: https://www.city.kasama.lg.jp/page/page009016.html
+  confidence: high
+  amount: 1 時間 700 円（利用券 5 枚綴り 3,500 円を購入）。
+- category: sonota
+  name: 短期宿泊による生活習慣の指導支援
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 生活習慣が乱れた高齢者が、委託施設に原則 7 日以内で泊まり、生活の指導を受ける。
+  who:
+    at_home: true
+  at_application:
+  - おおむね 65 歳以上
+  - 要介護認定を受けていない
+  - 基本的生活習慣の欠如などで介護予防・生活支援が必要
+  where: 高齢福祉課
+  url: https://www.city.kasama.lg.jp/page/page009017.html
+  confidence: high
+  amount: 利用料 1 日 520 円に、居住費・食費・日常生活費が別にかかる。
+not_found:
+- haishoku
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

@@ -1,0 +1,193 @@
+city: 012297
+name: 富良野市
+site: www.city.furano.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品券の支給
+  name_on_page: 介護用品券
+  summary: 要介護4・5の在宅の高齢者または介護する家族に、介護用品の購入助成券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内の住民基本台帳に登録がある
+  - 施設入所中・入院中の人は対象外
+  where: 高齢者福祉課（複合庁舎2階）、各支所
+  url: https://www.city.furano.hokkaido.jp/life/docs/2018020900024.html
+  confidence: high
+  amount: 年額。市民税非課税世帯などは 90,000 円、課税世帯などは 42,000 円。5月以降の申請は月割り。
+- category: kaigo-yohin
+  name: 紙おむつ券の支給
+  name_on_page: 紙おむつ券
+  summary: 要支援1〜要介護3で毎日紙おむつを使う在宅の高齢者に、紙おむつの購入助成券を渡す。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内の住民基本台帳に登録がある
+  - 施設入所中・入院中の人は対象外
+  where: 高齢者福祉課（複合庁舎2階）、各支所
+  url: https://www.city.furano.hokkaido.jp/life/docs/2018020900024.html
+  confidence: high
+  amount: 年額。市民税非課税世帯などは 30,000 円、課税世帯などは 12,000 円。5月以降の申請は月割り。
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しく援助する人がいない高齢者に、夕食を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 概ね65歳以上のひとり暮らしの高齢者等
+  - 身体的・精神的に調理が困難で援助する人がいない
+  where: 高齢者福祉課（電話 0167-39-2255）
+  url: https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+  confidence: high
+  amount: 1食 400 円（利用者負担）。週1回から毎日まで希望に応じて利用できる。
+  more_urls:
+  - https://www.city.furano.hokkaido.jp/fs/7/3/7/0/4/_/202607_serviceguide.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 高齢者等緊急通報システム事業
+  summary: 65歳以上のひとり暮らしか高齢者のみの世帯に、緊急通報の機器を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 高齢者福祉課（電話 0167-39-2255）
+  url: https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+  confidence: high
+  amount: 利用料は月額。固定型 240 円、モバイル型 1,100 円。
+  more_urls:
+  - https://www.city.furano.hokkaido.jp/fs/7/3/7/0/4/_/202607_serviceguide.pdf
+- category: gaishutsu
+  name: 外出支援（タクシー券）
+  name_on_page: 外出支援サービス助成事業
+  summary: バスやJRを使いにくい要援護の高齢者に、タクシー料金の一部を助成する乗車券を渡す。
+  who:
+    at_home: true
+  at_application:
+  - 要支援・要介護の認定を受けている、または同等の状態
+  - バスやJRなど一般の交通機関の利用が困難
+  - 施設入所中・入院中の人は対象外
+  where: 高齢者福祉課（複合庁舎2階）、各支所
+  url: https://www.city.furano.hokkaido.jp/life/docs/2018020900031.html
+  confidence: high
+  amount: タクシー料金の概ね半額。年24枚、1枚の額は居住地区で 400〜5,000 円。
+  more_urls:
+  - https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク
+  name_on_page: 富良野市認知症高齢者等SOSネットワーク
+  summary: 行方不明のおそれのある高齢者を家族が事前登録し、警察や協力機関と情報を共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 原則として家族が登録を届け出る
+  - 顔写真などが必要
+  where: 高齢者福祉課（市役所2階 5番窓口）
+  url: https://www.city.furano.hokkaido.jp/life/docs/2021033000094.html
+  confidence: high
+- category: jutaku
+  name: 住宅改修費の市の上乗せ助成
+  name_on_page: 富良野市住宅改修費助成事業
+  summary: 介護保険の住宅改修費の限度額 20 万円を超える分に、市が 10 万円を上乗せして助成する。
+  who: {}
+  at_application:
+  - 介護保険の住宅改修費の 20 万円を超える工事が対象
+  - 負担割合は介護保険の住宅改修と同じ
+  where: 高齢者福祉課、ケアマネジャー、地域包括支援センター
+  url: https://www.city.furano.hokkaido.jp/fs/7/3/7/0/4/_/202607_serviceguide.pdf
+  confidence: low
+  amount: 介護保険分 20 万円を超える部分に 10 万円を上乗せ。
+- category: sonota
+  name: 除雪ヘルパーの派遣
+  name_on_page: 除雪ヘルパー委託事業
+  summary: 除雪が難しいひとり暮らしの高齢者等の玄関前などの避難通路を、ヘルパーが除雪する。
+  who: {}
+  at_application:
+  - 病弱等で除雪が困難なひとり暮らしの高齢者等
+  where: 高齢者福祉課（電話 0167-39-2255）
+  url: https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+  confidence: high
+  amount: 1シーズン（11月〜3月）で概ね 2,500 円（利用者負担）。
+  more_urls:
+  - https://www.city.furano.hokkaido.jp/fs/7/3/7/0/4/_/202607_serviceguide.pdf
+- category: sonota
+  name: 自立支援ホームヘルプサービス
+  name_on_page: 自立支援ホームヘルプサービス事業
+  summary: 介護認定で自立と判定された一人暮らしの高齢者等に、ヘルパーを派遣して日常生活を支援する。
+  who: {}
+  at_application:
+  - 介護認定で自立（非該当）と判定された
+  - 概ね65歳以上の一人暮らしの高齢者等
+  - 日常生活の支援が必要
+  where: 高齢者福祉課（電話 0167-39-2255）
+  url: https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+  confidence: high
+  amount: 1時間程度 208 円、1時間30分程度 291 円、2時間程度 374 円。原則週1回。
+  more_urls:
+  - https://www.city.furano.hokkaido.jp/fs/7/3/7/0/4/_/202607_serviceguide.pdf
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ事業
+  summary: 自立と判定された高齢者が、支援が必要なとき一時的に養護老人ホームに入所して支援を受ける。
+  who: {}
+  at_application:
+  - 介護認定で自立と判定された高齢者
+  - 生活上の指導・支援が必要
+  - 利用は6か月に1回、1週間程度
+  where: 高齢者福祉課（電話 0167-39-2255）
+  url: https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+  confidence: high
+  amount: 利用料は1日 842 円、食費は1日 1,000 円。
+  more_urls:
+  - https://www.city.furano.hokkaido.jp/fs/7/3/7/0/4/_/202607_serviceguide.pdf
+- category: sonota
+  name: 高齢者の入湯料助成
+  name_on_page: 入湯料助成事業
+  summary: 65歳以上の市民が農村環境改善センター（ハイランドふらの）を使うとき、入湯料の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住み住民基本台帳に記載がある
+  - ハイランドふらのの利用が対象
+  where: 高齢者福祉課
+  url: https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+  confidence: low
+  amount: 1回の利用につき入湯料 200 円を助成。
+- category: sonota
+  name: 無年金の外国人高齢者への給付金
+  name_on_page: 外国人高齢者福祉給付金支給事業
+  summary: 無年金の外国人高齢者の生活を支えるため、給付金を支給する。
+  who: {}
+  at_application:
+  - 無年金の外国人高齢者
+  where: 高齢者福祉課
+  url: https://www.city.furano.hokkaido.jp/life/docs/2015020300106.html
+  confidence: low
+  amount: 月額 10,000 円。
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- koken

@@ -1,0 +1,189 @@
+city: 082171
+name: 取手市
+site: www.city.toride.ibaraki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅要介護者への紙おむつ支給
+  name_on_page: 紙おむつ支給
+  summary: 在宅の要介護認定者に紙おむつを自宅へ届ける。
+  who:
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5、または要介護1〜3で認定調査の排泄に見守り等以上
+  - 要介護認定の人は40歳以上
+  - 身体障害者手帳1・2級、療育手帳Ⓐ・Aの人（18歳以上）も対象
+  where: 高齢福祉課 高齢者福祉係
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/jitaku.html
+  confidence: high
+  amount: 年4回（7・10・1・4月）現物支給。品目と数量は頁のPDFの表に記載
+  more_urls:
+  - http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/documents/mutuannnai.pdf
+- category: haishoku
+  name: 夕食の配食（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 夕食の弁当を届けながら安否を確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の状況で毎日の調理や買物が困難
+  - 見守りの必要性が高い（自宅調査で決定）
+  where: 高齢福祉課 高齢者福祉係
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/hitorigurashi.html
+  confidence: high
+  amount: 1食430円（食材費）。週5回（月〜金）まで、必要と認めた日数
+- category: mimamori
+  name: 乳酸飲料を届ける安否確認
+  name_on_page: 愛の定期便
+  summary: ひとり暮らしの家を週3回まで訪問し、乳酸飲料を渡して安否を確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 他の事業やサービスを受けていない
+  - 閉じこもりがち、または近隣に家族がおらず孤立した虚弱な人
+  where: 高齢福祉課
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/hitorigurashi.html
+  confidence: high
+  amount: 無料。訪問は最大週3回
+- category: mimamori
+  name: 電話での安否確認
+  name_on_page: あんしんコール
+  summary: 外出の機会が少ない人に、週1〜2回電話で様子を聞く。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 外出の機会が少ない
+  where: 高齢福祉課
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/hitorigurashi.html
+  confidence: high
+  amount: 無料。電話は週1〜2回
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: 自宅に緊急通報装置と安否センサー等を設置し、警備会社が駆けつける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の病弱なひとり暮らし、または病弱な高齢者のみの世帯
+  - ひとり暮らしで身体障害者手帳1・2級の重度障害者なども対象
+  where: 高齢福祉課
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/hitorigurashi.html
+  confidence: high
+  amount: 設置時のみ自己負担。介護保険料の所得段階で0〜112,280円
+  more_urls:
+  - http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/documents/kinnkyuutuuhousisutemupanhu.pdf
+- category: haikai
+  name: 見守りキーホルダー・ステッカーの配布
+  name_on_page: 見守りキーホルダー・ステッカー
+  summary: 登録番号入りのキーホルダーと靴用ステッカーを配り、保護時の身元確認に使う。
+  who: {}
+  at_application:
+  - 認知症などで、ひとりで帰宅できないなど見守りが必要
+  - 緊急連絡先や主治医などの情報が必要
+  where: 高齢福祉課、藤代総合窓口課
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/jitaku.html
+  confidence: high
+  amount: キーホルダー1個、ステッカー1シート（5足分）を配布
+  more_urls:
+  - http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/documents/annaimimamori.pdf
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス事業
+  summary: 外出が難しい人の自宅へ理美容師が来る際の出張費の助成券を出す。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 寝たきり等や認知症で常時介護が必要で、外出が困難
+  - 身体障害者手帳1・2級で外出困難な高齢者も対象
+  where: 高齢福祉課 高齢者福祉係
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/jitaku.html
+  confidence: high
+  amount: 1回2,000円の出張費を助成。年最大4回。カット代は自己負担
+  more_urls:
+  - http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/documents/ribiyouannnai.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護4以上の人を介護サービスなしで在宅介護した家族に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 基準日（7月31日）から遡って1年、介護サービスを使わず常時介護
+  - ショートステイのみ7日までは可。90日超の入院がない
+  - 介護者は3親等以内の親族
+  - 介護される人・介護者とも市内に住民登録がある
+  where: 高齢福祉課
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/jitaku.html
+  confidence: high
+  amount: 年額100,000円
+- category: gaishutsu
+  name: 移送サービス・タクシーの利用料助成券
+  name_on_page: 移送サービス利用料金助成事業
+  summary: 市内の移送団体の利用料の一部を助成する券を交付する。
+  who:
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内の移送団体に利用者登録している移動制約者
+  - 要支援・要介護認定者、身体障害者手帳所持者、または公共交通の利用が困難な人
+  where: 高齢福祉課
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/jitaku.html
+  confidence: high
+  amount: 月5枚。移送団体は1枚700円、タクシーは初乗り料金分
+- category: gaishutsu
+  name: コミュニティバスの70歳以上向け割引定期券
+  name_on_page: シルバー割引（定期券）
+  summary: 市内在住70歳以上が、3か月3,000円の定期券を買える。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住んでいる（購入時に証明となるものを提示）
+  where: 取手駅ビルセンター、さくら荘、あけぼの、かたらいの郷など販売所10か所
+  url: https://www.city.toride.ibaraki.jp/toshikeikaku/kurashi/sumai/bus/riyo.html
+  confidence: high
+  amount: 3か月で3,000円
+- category: sonota
+  name: ステッキカー購入費の助成
+  name_on_page: ステッキカー購入費助成事業
+  summary: 歩行に支障がある人のステッキカー購入費の半額を助成する。
+  who:
+    tax:
+    - self_exempt
+  at_application:
+  - 歩行に支障がある65歳以上の高齢者、または歩行に支障がある障害者
+  where: 高齢福祉課
+  url: http://www.city.toride.ibaraki.jp/koreifukushi/kurashi/kenko/fukushi/koresha/jitaku.html
+  confidence: high
+  amount: 購入費の2分の1（上限5,000円）、1回限り
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu
