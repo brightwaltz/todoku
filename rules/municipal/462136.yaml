@@ -1,0 +1,117 @@
+city: '462136'
+name: 西之表市
+site: www.city.nishinoomote.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等配食サービス
+  name_on_page: 高齢者等配食サービス
+  summary: 調理が難しい高齢者や障害者の世帯に、昼食・夕食を届けて安否を確かめる。
+  who: {}
+  at_application:
+  - 市内に住所があり、障害や病気等で調理が困難な人
+  - おおむね65歳以上の高齢者のみの世帯、または障害者のみの世帯
+  where: 高齢者支援課 高齢者支援係（市役所）に申し込む
+  url: https://www.city.nishinoomote.lg.jp/admin/kenko_fukushi/koureisyahukusi/1240.html
+  confidence: high
+  amount: 1食400円（昼食・夕食）。口座振替ができる
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 地域自立生活支援通報システム設置事業
+  summary: 一人暮らしの高齢者宅に、ボタンで家族へ通報できる緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者が対象と書かれている（対象者の節は無い）
+  - 固定電話があること
+  - 設置を希望するときは事前に高齢者支援係へ相談する
+  where: 高齢者支援課 高齢者支援係（市役所）（申請書あり）
+  url: https://www.city.nishinoomote.lg.jp/admin/kenko_fukushi/koureisyahukusi/6693.html
+  confidence: high
+  amount: 購入・設置費用は不要。通報時の電話料金（1回数十円）と月100円程度の電気代は自己負担
+- category: gaishutsu
+  name: 高齢者おでかけ券
+  name_on_page: 高齢者おでかけ券交付事業
+  summary: 75歳以上の方に、温泉入浴料とタクシー運賃に使えるおでかけ券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住所があり、令和8年4月1日現在で75歳以上
+  - 4月2日以降に75歳になった人は今年度は対象外
+  - 対象者への個別通知はなく、窓口で身分証が必要
+  where: 高齢者支援課 高齢者支援係（市役所）（市役所1階）。令和9年3月31日まで交付
+  url: https://www.city.nishinoomote.lg.jp/admin/kenko_fukushi/koureisyahukusi/8709.html
+  confidence: high
+  amount: 5,000円分（500円券×10枚）
+- category: sonota
+  name: シニアカー購入費の補助
+  name_on_page: 西之表市シニアカー購入費補助
+  summary: 条件に合う65歳以上の方が市内の店でシニアカーを買うと、購入費を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - シニアカーを購入し、自分で使う人
+  - 要介護2〜5の認定を受けていない人
+  - 運転免許証を持たない、または自主返納した人
+  - 本人と世帯員が市税等を滞納していない
+  - ほかにシニアカー購入の補助を受けていない
+  where: 高齢者支援課 高齢者支援係（市役所）に見積書などを添えて申請
+  url: https://www.city.nishinoomote.lg.jp/admin/kenko_fukushi/koureisyahukusi/8701.html
+  confidence: high
+  amount: 上限15万円（1世帯1台まで）
+- category: sonota
+  name: 老人用福祉電話
+  name_on_page: 老人用福祉電話
+  summary: ひとり暮らしの高齢者などの安否確認のため、電話を設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 在宅のおおむね65歳以上で、ひとり暮らし、または高齢者世帯で所得税が非課税の人
+  where: 福祉事務所 社会福祉係（福祉事務所に申し込む）
+  url: https://www.city.nishinoomote.lg.jp/admin/kenko_fukushi/koureisyahukusi/1049.html
+  confidence: high
+  amount: 取り付け工事・毎月の基本料金・通話料は自己負担
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 家庭介護を支援するサービスとして、紙おむつ等を支給する。
+  who: {}
+  at_application: []
+  where: 高齢者支援課 介護保険係（市役所）
+  url: https://www.city.nishinoomote.lg.jp/admin/soshiki/koureisyasien/kaigohokenka/kaigohoken/649.html
+  confidence: low
+- category: iro
+  name: 家族介護手当
+  name_on_page: 家族介護手当の支給
+  summary: 家庭介護を支援するサービスとして、家族介護手当を支給する。
+  who: {}
+  at_application: []
+  where: 高齢者支援課 介護保険係（市役所）
+  url: https://www.city.nishinoomote.lg.jp/admin/soshiki/koureisyasien/kaigohokenka/kaigohoken/649.html
+  confidence: low
+- category: sonota
+  name: 生活指導型ショートステイ
+  name_on_page: 生活指導型ショートステイ事業
+  summary: ねたきりにならないためのサービスとして、短期の宿泊を提供する。
+  who: {}
+  at_application: []
+  where: 高齢者支援課 高齢者支援係（市役所）
+  url: https://www.city.nishinoomote.lg.jp/admin/soshiki/koureisyasien/kaigohokenka/kaigohoken/649.html
+  confidence: low
+not_found:
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

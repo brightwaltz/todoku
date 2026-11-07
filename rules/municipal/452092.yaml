@@ -1,0 +1,104 @@
+city: '452092'
+name: えびの市
+site: www.city.ebino.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 福祉タクシー料金の助成（高齢者）
+  name_on_page: 福祉タクシー料金助成
+  summary: 75歳以上で条件に合う人に、タクシーの基本料金を年間最大48回まで助成する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 市内に住所がある満75歳以上の人
+  - 住民税の所得割が課税されていない
+  - 本人も同一世帯員も車両を持たず、本人は運転できない
+  - 同一世帯員には同じ敷地に住む人も含む
+  - 施設等に入所していない
+  where: 福祉課地域福祉係、または住んでいる地区の民生委員に相談
+  url: https://www.city.ebino.lg.jp/kenko_fukushi/koreishafukushi/koreishajigyo/2294.html
+  confidence: high
+  amount: タクシー1回の基本料金を助成。年間最大48回まで（年度途中の対象者は申請の翌月から月割）
+- category: sonota
+  name: 短期宿泊での生活管理指導
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 短期間の宿泊で日常生活の指導・支援を行い、要介護状態への進行を防ぐ。
+  who: {}
+  at_application:
+  - 概ね65歳以上で、社会的適応が困難な人
+  - 要介護1・2の認定を受けた人は介護保険のショートステイが優先
+  where: 福祉課地域福祉係、または在宅介護支援センター
+  url: https://www.city.ebino.lg.jp/kenko_fukushi/koreishafukushi/koreishajigyo/2294.html
+  confidence: high
+  amount: 利用料は1日1,600円。宿泊は原則14日以内
+- category: iro
+  name: 在宅高齢者等介護手当
+  name_on_page: 在宅高齢者等介護手当支給事業
+  summary: 重い要介護の高齢者を在宅で支える家族に、月額の手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で暮らす65歳以上の高齢者を支援している家族
+  - 高齢者が要介護4以上、または認知症で要介護3以上かつ自立度3以上
+  where: 頁に申請先の記載なし（高齢者福祉は福祉課地域福祉係の担当）
+  url: https://www.city.ebino.lg.jp/material/files/group/12/keikaku.pdf
+  confidence: low
+  amount: 月額8,300円
+  more_urls:
+  - https://www.city.ebino.lg.jp/soshiki/somu/6/649.html
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス事業
+  summary: 調理が難しい高齢者に、食事を届けて食生活の改善と安否確認をする。
+  who: {}
+  at_application:
+  - 調理が困難な高齢者（年齢などの細かい条件は頁に無い）
+  where: 頁に申請先の記載なし（高齢者福祉は福祉課地域福祉係の担当）
+  url: https://www.city.ebino.lg.jp/material/files/group/12/keikaku.pdf
+  confidence: low
+  more_urls:
+  - https://www.city.ebino.lg.jp/soshiki/somu/6/649.html
+- category: kinkyu-tsuho
+  name: 緊急通報システム機器の貸与
+  name_on_page: 高齢者等見守り体制整備事業（緊急通報システム）
+  summary: ひとり暮らしの高齢者などに、緊急時に連絡できる通報システム機器を貸与する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上で常時の見守りが必要な一人暮らしの人
+  - または、重度身体障がい者で一人暮らしの人
+  - または、寝たきり高齢者を抱える75歳以上の高齢者のみの世帯
+  - 申請後、在宅介護支援センターと必要性を協議する
+  where: 頁に申請先の記載なし（高齢者福祉は福祉課地域福祉係の担当）
+  url: https://www.city.ebino.lg.jp/material/files/group/12/keikaku.pdf
+  confidence: low
+  more_urls:
+  - https://www.city.ebino.lg.jp/soshiki/somu/6/649.html
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、成年後見の申立て費用や後見人の報酬を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度を利用する費用の負担が困難な人
+  - 親族の支援が得られない人は市長が申立てをする
+  where: 頁に申請先の記載なし
+  url: https://www.city.ebino.lg.jp/material/files/group/12/keikaku.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haikai
+- hochoki
+- jutaku
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

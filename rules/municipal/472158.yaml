@@ -1,0 +1,161 @@
+city: '472158'
+name: 南城市
+site: www.city.nanjo.okinawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援サービス（配食）
+  name_on_page: 食の自立支援サービス事業
+  summary: 調理が困難な高齢者に食事を届け、栄養を整えるとともに安否も確かめる。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上のひとり暮らし、高齢者のみの世帯、またはこれに準じる世帯
+  - 調理等が困難な要援護高齢者
+  where: 生きがい推進課 介護長寿係
+  url: https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2020/03/1585148461.pdf
+  confidence: low
+  amount: 1食あたり課税世帯400円、非課税世帯300円。昼・夕食のうち週5食まで
+- category: gaishutsu
+  name: 外出支援サービス（通院の送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 一般の交通機関を使いにくい方を、自宅と医療機関の間で送迎する。
+  who:
+    age_min: 65
+  at_application:
+  - 一般の交通機関を利用することが困難
+  - 要介護2以上で車イス等を使う方、または身体障害者手帳（肢体不自由2級以上）の所持者
+  where: 生きがい推進課 介護長寿係
+  url: https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2020/03/1585148461.pdf
+  confidence: low
+  amount: 行き先で異なる。市内などは片道400円（非課税世帯）・800円（課税世帯）。月に片道4回まで
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報システムの機器を自宅に設置し、通報センターなどが連携して対応する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体上の慢性疾患などで、日常生活に常時注意を要する
+  - 光回線の利用者はシステムを設置できない
+  where: 生きがい推進課 介護長寿係
+  url: https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2020/03/1585148461.pdf
+  confidence: low
+  amount: 設置料金は利用者負担なし
+  more_urls:
+  - https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2024/06/1718419127.pdf
+- category: kaigo-yohin
+  name: 家族介護用品の支給（紙おむつ等）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の在宅の方を介護する家族に、紙おむつなどを買える支給券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり居住している在宅の方
+  - 介護する方が要介護者と同じ住所か隣地に住み、同居に近い形で介護している
+  - 別世帯のときは、両世帯とも市民税非課税
+  - 入院中や施設入所の方は対象外
+  where: 生きがい推進課 介護長寿係
+  url: https://www.city.nanjo.okinawa.jp/kurashi/zei_hoken_nenkin/kaigohoken/1773013266/
+  confidence: high
+  amount: 月額5,000円分の支給券（紙おむつ、尿取りパット、使い捨て手袋など）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護4・5の方を、介護保険サービスを使わず在宅で介護する家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間以上、介護保険等のサービスを使わずに在宅で介護している
+  where: 生きがい推進課 介護長寿係
+  url: https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2020/03/1585148461.pdf
+  confidence: low
+  amount: 年額10万円
+  more_urls:
+  - https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2024/06/1718419127.pdf
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見人制度利用支援事業
+  summary: 認知症高齢者・知的障害者等の成年後見制度の利用にかかる費用の助成や相談の支援。
+  who: {}
+  at_application:
+  - 認知症高齢者・知的障害者等が対象
+  - 課税状況等に応じて利用者負担がある
+  where: 生きがい推進課 介護長寿係
+  url: https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2020/03/1585148461.pdf
+  confidence: low
+  more_urls:
+  - https://www.city.nanjo.okinawa.jp/userfiles/files/autoupload/page/2024/06/1718419127.pdf
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キットの無料配布
+  summary: 医療情報を書いた用紙を入れるキットを配り、救急時に役立てる。
+  who: {}
+  at_application:
+  - 65歳以上で健康上の不安がある方、重度障がい者、慢性的な疾患等で日常生活に常に注意を要する方のいずれか
+  where: 生きがい推進課（市役所1階5番窓口）
+  url: https://www.city.nanjo.okinawa.jp/kurashi/kenkou_fukushi/1579016372/1763611851/
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 見守りシール交付事業
+  name_on_page: 見守りシール交付事業
+  summary: QRコード付きのシールを交付し、行方不明のときに家族へ発見の通知が届く。
+  who: {}
+  at_application:
+  - 認知症等で見守りが必要な方
+  - 連絡用にスマホのメールアドレスが必要
+  where: 生きがい推進課 地域包括係（役所に申請）
+  url: https://www.city.nanjo.okinawa.jp/kurashi/zei_hoken_nenkin/kaigohoken/1683781539/1646871144/
+  confidence: high
+  more_urls:
+  - https://www.city.nanjo.okinawa.jp/userfiles/files/mimamori_reaflet.pdf
+- category: mimamori
+  name: 地域支え合い支援事業
+  name_on_page: 地域支え合い支援事業
+  summary: 事前に登録すると、地域支援員が自宅を訪問して安否確認などをする。
+  who: {}
+  at_application:
+  - 利用するには事前登録が必要
+  where: 生きがい推進課 地域包括係（問い合わせ先）
+  url: https://www.city.nanjo.okinawa.jp/kurashi/zei_hoken_nenkin/kaigohoken/1683781539/1646871144/
+  confidence: low
+- category: gaishutsu
+  name: Nバス運賃支援（半額）
+  name_on_page: Nバスの運賃支援事業
+  summary: 市内線のNバスの運賃の半額を市が負担する（令和8年4月〜11年3月の実証事業）。
+  who: {}
+  at_application:
+  - 65歳以上の市民、または障害者手帳をお持ちの市民
+  - 専用の「NバスOKICA」が必要で、事前にチャージする
+  - 新たに対象になった方やOKICA未所持の方は、事前に生きがい推進課で手続き
+  where: 生きがい推進課（市役所1階）
+  url: https://www.city.nanjo.okinawa.jp/kurashi/koutsu/1770340041/
+  confidence: high
+  amount: 運賃の半額を市が負担。65歳以上は大人運賃160円が80円
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

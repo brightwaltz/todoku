@@ -1,0 +1,130 @@
+city: '462225'
+name: 奄美市
+site: www.city.amami.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 非常ボタンで消防につながる緊急通報装置を無償で貸与する。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上で、突発的に生命が危うくなる病気がある
+  - 重度心疾患、重度高血圧症、重度喘息など
+  where: 高齢者福祉課（名瀬）、住用総合支所 市民福祉課、笠利総合支所 いきいき健康課
+  url: https://www.city.amami.lg.jp/korei/machi/fukushi/koresha/sedo.html
+  confidence: high
+  amount: 装置は無償貸与。課税世帯は配線工事費相当分が自己負担
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の在宅の人を介護する家族に、毎月1回、紙おむつ等を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3〜5に相当する在宅の高齢者を、現に介護している家族
+  - または身体障害者手帳2級程度以上・療育手帳A2程度以上の在宅の人を介護している家族
+  - 介護される人と介護する家族の両方が市民税非課税世帯
+  where: 高齢者福祉課（名瀬）、住用総合支所 市民福祉課、笠利総合支所 いきいき健康課
+  url: https://www.city.amami.lg.jp/korei/machi/fukushi/koresha/sedo.html
+  confidence: high
+  amount: 毎月1回、紙おむつ等を支給（費用は無料）
+  more_urls:
+  - https://www.city.amami.lg.jp/korei/documents/r7_pannfu_web_v3.pdf
+- category: haishoku
+  name: 「食」の自立支援事業（配食）
+  name_on_page: 「食」の自立支援事業
+  summary: ひとり暮らしの高齢者等に、配食と食の利用調整を行い、安否も確かめる。
+  who: {}
+  at_application:
+  - 要介護・要支援の認定を受けている人（手引きは事業対象者・基本チェックリスト該当も）
+  - おおむね65歳以上の単身世帯か高齢者だけの世帯、またはこれに準ずる世帯
+  - または市長が特に必要と認める人
+  where: 高齢者福祉課（名瀬）、住用総合支所 市民福祉課、笠利総合支所 いきいき健康課
+  url: https://www.city.amami.lg.jp/korei/machi/fukushi/koresha/sedo.html
+  confidence: high
+  amount: 1食500円（市民税非課税世帯は450円）
+  more_urls:
+  - https://www.city.amami.lg.jp/korei/documents/r7_pannfu_web_v3.pdf
+- category: gaishutsu
+  name: お達者ご長寿応援事業（ご長寿応援券）
+  name_on_page: お達者ご長寿応援事業
+  summary: バス・タクシーや運動・入浴施設などで使える補助券を年1回発行する。
+  who: {}
+  at_application:
+  - 当該年度の4月1日現在で75歳以上
+  - または70〜74歳で運転免許を自主返納した人
+  where: 高齢者福祉課（名瀬）、住用総合支所 市民福祉課、笠利総合支所 いきいき健康課
+  url: https://www.city.amami.lg.jp/korei/machi/fukushi/koresha/sedo.html
+  confidence: high
+  amount: 5千円分の補助券（ご長寿応援券）を年1回
+- category: nichijo-yogu
+  name: 高齢者等日常生活用具の給付・貸与
+  name_on_page: 高齢者等日常生活用具給付等事業
+  summary: 火災報知器や電磁調理器などの日常生活用具を給付または貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の低所得の寝たきり高齢者
+  - またはひとり暮らしの高齢者
+  - または心身の機能低下で防火等の配慮が必要なひとり暮らし高齢者等
+  where: 高齢者福祉課（名瀬）、住用総合支所 市民福祉課、笠利総合支所 いきいき健康課
+  url: https://www.city.amami.lg.jp/korei/machi/fukushi/koresha/sedo.html
+  confidence: high
+- category: jutaku
+  name: 在宅高齢者転倒予防住宅改修費の助成
+  name_on_page: 奄美市在宅高齢者転倒予防住宅改修費助成事業
+  summary: 転倒を防ぐ手すり・踏み台・スロープの設置などの改修費用の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所があり、介護保険料と市税を滞納していない
+  - 基本チェックリストで運動機能の3項目以上が該当
+  - 要介護・要支援の認定を受けておらず、改修時に受ける予定もない
+  - 着工前の事前申請が必要
+  where: 各地域包括支援センター（名瀬・住用・笠利）
+  url: https://www.city.amami.lg.jp/korei/kyotakukourei.html
+  confidence: high
+  amount: 対象経費の9割か5万円のいずれか低い額。1人あたり累計5万円まで
+- category: iro
+  name: 介護人手当給付事業
+  name_on_page: 介護人手当
+  summary: 寝たきり高齢者や重度の障がいのある人を常時介護する人に、手当を支給する。
+  who: {}
+  at_application:
+  - 寝たきり高齢者、または障がい1・2級の重度心身障がい児・者等を介護している
+  - 常時介護を受ける状態が6か月以上続いている
+  - 市に6か月以上住所があり、介護保険のサービスを1年間受けていない
+  where: 福祉政策課の窓口
+  url: https://www.city.amami.lg.jp/korei/documents/r7_pannfu_web_v3.pdf
+  confidence: high
+  amount: 年額45,000円
+- category: sonota
+  name: はり・きゅう施術料助成
+  name_on_page: はり・きゅう施術料助成事業
+  summary: 末梢神経疾患や運動機能疾患へのはり・きゅうの施術費用の一部を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり70歳以上
+  - または70歳未満で後期高齢者医療（長寿医療）保険に加入している
+  where: 高齢者福祉課（名瀬）、住用総合支所 市民福祉課、笠利総合支所 いきいき健康課
+  url: https://www.city.amami.lg.jp/korei/machi/fukushi/koresha/sedo.html
+  confidence: high
+  amount: 1回600円を助成（1日1回、月15回、年60回以内）
+  more_urls:
+  - https://www.city.amami.lg.jp/korei/documents/r7_pannfu_web_v3.pdf
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- haikai
+- mimamori

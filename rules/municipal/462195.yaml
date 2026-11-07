@@ -1,0 +1,179 @@
+city: '462195'
+name: いちき串木野市
+site: www.city.ichikikushikino.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: jutaku
+  name: 高齢者等住宅改造の助成
+  name_on_page: 高齢者等住宅改造推進事業
+  summary: 段差解消や床の改修など、住宅改造にかかる費用の一部を助成する。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定を受けた人がいる世帯、または身体障害者1・2級の人がいる世帯
+  - 所得制限がある
+  - 着手前の申請が必要
+  - 世帯で1回限り
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 対象経費の30%を助成（対象経費の上限50万円）。一部自己負担あり
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 寝具の衛生管理が難しい人に、洗濯・乾燥・消毒のサービスを提供する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ひとり暮らし高齢者等で、衛生管理の援助が必要
+  - 要支援・要介護の認定を受けている
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 敷布団・掛布団・毛布を1組、1人年2回まで
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理容所などに出向けない人に、出張の理美容サービスの費用を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ひとり暮らし高齢者等で、一般の理美容を利用できない
+  - 要支援・要介護の認定を受けている
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 年4回、1回につき2,000円を助成。一部自己負担あり
+- category: haishoku
+  name: 訪問給食サービス
+  name_on_page: 訪問給食サービス事業
+  summary: 自宅に昼と夕の食事を届け、自立した生活と安否確認を支える。
+  who: {}
+  at_application:
+  - ひとり暮らしの虚弱な高齢者
+  - または障がい者でひとり暮らしの人
+  - または高齢者と障がい者のみで構成される世帯の人
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 1食400円（日曜・祝日・年末年始を除き毎日1日2食）
+- category: kaigo-yohin
+  name: 紙おむつ等の利用券
+  name_on_page: 紙おむつ等支給事業
+  summary: 寝たきりや重度認知症の高齢者のいる家庭に、紙おむつ等の購入に使える利用券を出す。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で3か月以上、寝たきりか重度認知症で常時介護が必要な高齢者
+  - 所得制限と居住要件がある
+  - 特別障害者手当・福祉手当を受けていない
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 月3,000円分の金券（購入価格との差額は自己負担）
+- category: iro
+  name: 在宅寝たきり者等介護手当
+  name_on_page: 在宅寝たきり者等介護手当支給事業
+  summary: 寝たきりか重度認知症の高齢者を在宅で介護する人に、手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきりか重度認知症の高齢者を、在宅で3か月以上続けて介護している
+  - 居住要件がある
+  - 特別障害者手当・福祉手当を受けていない
+  - 四半期ごとに現況届を出す
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 月額10,000円（四半期ごとに前月分までをまとめて支給）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業（体制整備、普及・啓発等事業）
+  summary: 急病や災害のときに通報できる緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの虚弱高齢者、及び突発的に危険な症状の発生する疾病を有する人
+  - NTTの固定電話回線を利用する
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 1か月400円
+- category: haikai
+  name: 認知症高齢者等見守り事業（みまもりタグ）
+  name_on_page: 認知症高齢者等見守り事業
+  summary: 徘徊のおそれがある人に小型の見守りタグを貸与し、早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊・見守りSOSネットワークに登録している（登録は長寿介護課に相談）
+  where: 長寿介護課（地域包括支援センター）
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: みまもりタグは無償貸与。タグ専用靴は購入費の2分の1を助成（初回のみ）
+  more_urls:
+  - https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/documents/mimamoritag.pdf
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 電磁調理器か電子レンジのどちらかを給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で市内に住み、防火などの配慮が必要
+  - 所得制限がある
+  - 世帯で1回限り
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 電磁調理器か電子レンジ（オーブン機能なし）のいずれか
+- category: sonota
+  name: はり・きゅう・マッサージの施術料助成
+  name_on_page: はり・きゅう及びマッサージ施術料の助成
+  summary: 市指定のはり・きゅう・マッサージ師の施術を受けたときに、施術料の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住む在宅の高齢者（入院・通院等を除く）
+  - 末しょう神経疾患・運動器疾患への施術が対象
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 1回600円を助成（1日1回、月5回以内、年60回以内）。超える分は自己負担
+- category: sonota
+  name: 生活指導型ショートステイ
+  name_on_page: 生活指導型ショートステイ事業
+  summary: 養護老人ホームに一時的に泊まり、生活習慣の指導と体調調整を受ける。
+  who: {}
+  at_application:
+  - 要介護認定非該当か介護保険の対象外のひとり暮らし高齢者等
+  - 基本的な生活習慣が欠けている、または在宅生活が一時的に難しい
+  - 期間は原則1週間以内（6か月に1回）
+  where: 長寿介護課 高齢者支援係（串木野庁舎）、市来庁舎 市民生活課 市民総合窓口係
+  url: https://www.city.ichikikushikino.lg.jp/kaigo1/kenko/fukushi/koresha/service.html
+  confidence: high
+  amount: 1日381円（養護老人ホーム）。食事代等は実費
+not_found:
+- koken
+- hochoki
+- gaishutsu
+- mimamori
+- yutai

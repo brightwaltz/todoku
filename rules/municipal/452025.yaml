@@ -1,0 +1,127 @@
+city: '452025'
+name: 都城市
+site: www.city.miyakonojo.miyazaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品給付券の交付
+  name_on_page: 介護用品給付券
+  summary: 重度の要介護者を在宅で介護する家族に、おむつ等と交換できる給付券を渡す。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5、または認定なしで同様の状態と市が認めた人
+  - 介護保険料の所得段階が5以下（要介護者が非課税）
+  - 市内に住民登録と居住があり、介護保険料の滞納がない
+  - 申請月の前月に半数以上在宅で介護している
+  where: いきいき長寿課（本庁舎地下1階）、山之口・高城・山田・高崎の各総合支所市民生活課
+  url: https://www.city.miyakonojo.miyazaki.jp/soshiki/110/2012.html
+  confidence: high
+  amount: 月5,000〜7,000円分の給付券を年2回交付（所得段階1〜3は7,000円、4〜5は5,000円）
+- category: iro
+  name: 家族介護慰労金の支給
+  name_on_page: 家族介護慰労金
+  summary: 介護保険サービスを使わず在宅で介護した家族に、慰労金を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5、または認定なしで同様の状態と市が認めた人
+  - 申請日の1年前から市内に居住し、介護保険サービスを使っていない
+  - 要介護者と同一世帯の主たる介護者が申請する
+  - 過去1年に通算8日以上の短期入所・福祉用具貸与・入院がない
+  where: いきいき長寿課（本庁舎地下1階）。マイナンバーカードでオンライン申請もできる
+  url: https://www.city.miyakonojo.miyazaki.jp/soshiki/110/68520.html
+  confidence: high
+  amount: 10万円
+- category: haikai
+  name: 認知症高齢者等見守りシールの交付（どこシル伝言板）
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: 行方不明のおそれがある在宅の方に、二次元バーコードの見守りシールを配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上、認知症と診断された人、または市長が必要と認めた人
+  - 申請は同居親族・市内の別居親族・ケアマネや包括職員など
+  where: いきいき長寿課（本庁舎地下1階）
+  url: https://www.city.miyakonojo.miyazaki.jp/soshiki/110/56597.html
+  confidence: high
+  amount: 1人50枚（耐洗シール40枚・蓄光シール10枚）を配布
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報機器
+  summary: ひとり暮らしの高齢者などに、急病時にオペレーターへつながる通報機器を貸す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上の一人暮らし、または世帯全員が高齢で市長が認めた
+  - 日常生活に常時注意を要する人
+  - 市内に住所があり、緊急通報協力員の登録が必要
+  where: 各地区の地域包括支援センターに問い合わせる
+  url: https://www.city.miyakonojo.miyazaki.jp/soshiki/34/1947.html
+  confidence: high
+  amount: 利用料は月額160円（生活保護受給者は無料）
+- category: jutaku
+  name: 在宅高齢者転倒予防住宅改修費の助成
+  name_on_page: 在宅高齢者転倒予防住宅改修費助成事業
+  summary: 要介護認定のない高齢者が手すり・踏み台・スロープを付ける費用を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定を受けておらず、当面受ける予定もない
+  - 介護保険料や市税の滞納がない
+  - 身体的理由で改修が必要と認められる（チェックリスト該当）
+  - 市に登録した施工業者が工事をする
+  where: 地域包括支援センターに相談のうえ、いきいき長寿課に事前申請
+  url: https://www.city.miyakonojo.miyazaki.jp/soshiki/110/63158.html
+  confidence: high
+  amount: 改修費（上限7万円）の9割を助成
+- category: gaishutsu
+  name: 敬老特別乗車券（バス券）の交付
+  name_on_page: 敬老特別乗車券(バス券)
+  summary: 市内の路線バスに1回100円で乗れる乗車券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 70歳以上、または65〜69歳で運転免許がない・返納した人
+  - 市内に住んでいる
+  - 代理申請はできない
+  where: 福祉課（本庁1階 紺色5番窓口）、各総合支所地域生活課、各地区市民センター
+  url: https://www.city.miyakonojo.miyazaki.jp/soshiki/34/2232.html
+  confidence: high
+  amount: 1回の乗車につき100円。交付手数料は年1回1,000円（生活保護受給者は免除）
+- category: yutai
+  name: 健康増進施設利用助成券（温泉券）の交付
+  name_on_page: 健康増進施設利用助成券（温泉券）
+  summary: 対象の温泉・パークゴルフ場で年20回まで使える割引券を無料で渡す。
+  who: {}
+  at_application:
+  - 満65歳以上、または年度内に65歳になる市民
+  - 住民登録が市内にある
+  where: 福祉課（本庁1階 紺色5番窓口）、総合支所地域生活課、市民センター。マイナポータルでも申請可
+  url: https://www.city.miyakonojo.miyazaki.jp/soshiki/34/71423.html
+  confidence: high
+  amount: 年20回まで割引（すべて使うと最大6,000円分以上）。券は無料
+not_found:
+- haishoku
+- ribiyo
+- shingu
+- hochoki

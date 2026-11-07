@@ -1,0 +1,145 @@
+city: '472115'
+name: 沖縄市
+site: www.city.okinawa.okinawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者通院支援サービス（リフト付き車両の送迎）
+  name_on_page: 高齢者通院支援サービス事業
+  summary: 車椅子が必要な方を、リフト付き車両で自宅から医療機関まで送迎する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上の高齢者
+  - 外出時に車椅子を必要とする
+  - 一般の公共交通機関を使うことが難しい
+  where: 介護保険課 地域支援担当（頁の問い合わせ先）
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigo/32431.html
+  confidence: high
+  amount: 利用料は市内片道300円、市外片道500円。月に往復2回、または片道4回まで
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 調理が難しい一人暮らしなどの高齢者に、お弁当を自宅へ届け、安否も確かめる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上
+  - 心身の障がいや病気で調理が困難
+  - 近隣に扶養義務者がいない、または支援を受けられない
+  where: 介護保険課 地域支援担当（頁の問い合わせ先）
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigo/32431.html
+  confidence: high
+  amount: 1食400円。週5回まで（月〜土曜の昼食か夕食）
+- category: jutaku
+  name: 高齢者住宅改修費助成
+  name_on_page: 高齢者住宅改修費助成事業
+  summary: 手すりや踏み台、簡易な洋式便器の設置など、住宅改修の費用を助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 介護保険で「自立」の認定、または障がい老人の日常生活自立度がランクJかA
+  where: 介護保険課 地域支援担当（頁の問い合わせ先）
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigo/32431.html
+  confidence: high
+  amount: 助成限度額5万円。自己負担は工事費の1割（生活保護世帯は負担なし）
+- category: sonota
+  name: 高齢者見守り体制整備事業（救急医療情報キット）
+  name_on_page: 高齢者見守り体制整備事業
+  summary: 医療情報を入れた容器（キット）を配り、緊急時に救急医療へつなげる。
+  who: {}
+  at_application:
+  - 65歳以上の在宅高齢者、または40〜64歳で介護保険の認定を受けた方
+  - 健康上の不安がある
+  - 世帯に1セット
+  where: 介護保険課 地域支援担当（頁の問い合わせ先）
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigo/32431.html
+  confidence: high
+  amount: 無料
+- category: kaigo-yohin
+  name: 家族介護用品支給事業
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を在宅で介護する家族に、紙おむつや尿取りパッドを給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 沖縄市に住民票があり居住している
+  - 世帯員全員が市県民税非課税（生活保護世帯を除く）
+  - 入院中は給付券を受け取れない
+  where: 介護保険課 地域支援担当（頁の問い合わせ先）
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigo/32431.html
+  confidence: high
+  amount: 月額1人当たり6,250円（消費税込）
+- category: hochoki
+  name: 加齢性難聴者の補聴器購入費助成
+  name_on_page: 沖縄市加齢性難聴者補聴器購入費助成事業
+  summary: 聴力が下がり補聴器が必要な65歳以上の方に、購入費の一部または全部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 沖縄市に住民票があり居住している
+  - 耳鼻咽喉科医の意見書（指定様式、費用は自己負担）を出せる
+  - 障害者総合支援法など他制度で助成を受けられる方、過去に助成を受けた方は対象外
+  - 市の助成決定前に買った補聴器は対象外
+  where: 介護保険課 地域支援担当（頁の問い合わせ先）
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigo/32431.html
+  confidence: high
+  amount: 1人1回、上限2万5千円（予算の範囲内、先着順）
+- category: haikai
+  name: 認知症高齢者等あんしん登録事業
+  name_on_page: 沖縄市認知症高齢者等あんしん登録事業
+  summary: 登録すると見守りグッズが配られ、行方不明のときに協力団体へ情報が伝わる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 沖縄市内に住む認知症の高齢者等（若年性認知症の方も含む）
+  - 原則は家族等が申請する。本人の顔写真・全身写真が必要
+  where: 地域型の地域包括支援センター（市内7か所）、介護保険課
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigohoken/seidonitsuite/7218.html
+  confidence: high
+  amount: 無料。反射ステッカー、アイロンプリントネーム、登録証を配布
+  more_urls:
+  - https://www.city.okinawa.okinawa.jp/documents/847/r83.pdf
+  - https://www.city.okinawa.okinawa.jp/documents/847/mimamori.pdf
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等報酬費用の助成
+  summary: 成年後見人等への報酬の全部または一部を、費用の補助が必要な方に助成する。
+  who: {}
+  at_application:
+  - 成年後見制度の利用が必要と認められる認知症高齢者等
+  - 補助がないと制度の利用が難しいと認められる
+  where: 介護保険課 地域支援担当（頁の問い合わせ先）
+  url: https://www.city.okinawa.okinawa.jp/k020-005/kenkou/koureisha/kaigohoken/seidonitsuite/p00003.html
+  confidence: high
+not_found:
+- kinkyu-tsuho
+- iro
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

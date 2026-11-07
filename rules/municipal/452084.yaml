@@ -1,0 +1,139 @@
+city: '452084'
+name: 西都市
+site: www.city.saito.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報機器貸与事業
+  summary: ひとり暮らしの高齢者に緊急通報機器を貸し、受信センターが安否確認や救急通報をする。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上で、日常生活で常時注意を要する人
+  - すぐ駆けつけられる協力員が2名必要
+  where: 健康ほけん課（高齢者支援係）
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/fukushi/post_111
+  confidence: high
+  amount: 本人負担なし。月1回、受信センターから安否確認の電話がある
+- category: sonota
+  name: 介護機器（特殊ベッド・車椅子等）の無料貸与
+  name_on_page: 介護機器リサイクル支援事業
+  summary: 修理・消毒した特殊ベッドや車椅子を、必要な高齢者に貸す。
+  who: {}
+  at_application:
+  - おおむね65歳以上の虚弱な高齢者
+  where: 在宅介護支援センター（幸楽荘、並木の里、中央）に問い合わせる
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/fukushi/post_111
+  confidence: high
+  amount: 本人負担なし
+- category: iro
+  name: 高齢者介護福祉手当
+  name_on_page: 高齢者介護福祉手当支給事業
+  summary: 常時介護が必要な65歳以上の方を在宅で介護する家族に、手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきりや認知症で常時介護が必要な状態が6か月以上続いている
+  - その方を在宅で6か月以上介護している人が対象
+  - 特別障害者手当を受けている人は対象外
+  where: 健康ほけん課（高齢者支援係）
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/fukushi/post_112
+  confidence: high
+  amount: 月額6,000円（9月と3月に分けて支給）
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 社会適応が難しい在宅の高齢者が短期間宿泊し、生活指導や体調管理を受ける。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、心身機能の低下で社会適応が困難
+  - 原則として要介護認定が「非該当」の人
+  - 宿泊は原則7日以内
+  where: 健康ほけん課（高齢者支援係）。頁に申請先の記載なし
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/fukushi/post_112
+  confidence: high
+  amount: 利用料は1日1,930円
+- category: gaishutsu
+  name: 敬老バスカード
+  name_on_page: 西都市敬老バスカード事業
+  summary: 市内のコミュニティバス・路線バスに1乗車200円で乗れるカードを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある満65歳以上
+  - 本人が窓口で申請する（代理は印鑑や身分証が必要）
+  where: 健康ほけん課高齢者支援係（本庁舎1階10番窓口）
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/fukushi/post_2002
+  confidence: high
+  amount: 西都市内で1乗車200円（デマンド型を含む）
+- category: gaishutsu
+  name: 高齢者用バス定期券の購入費補助
+  name_on_page: 高齢者用バス定期券購入費補助
+  summary: バスの1年定期券または半年定期券の購入に、5,000円を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある満65歳以上
+  - 本人が窓口で申請する
+  - 1年定期は年度1人1回、半年定期は年度1人2回まで
+  where: 宮崎交通西都営業所窓口（1年定期券）、三和交通西都本社窓口（半年定期券）
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/fukushi/post_2002
+  confidence: high
+  amount: 定期券の購入1回につき5,000円
+- category: haishoku
+  name: 高齢者見守り配食サービス
+  name_on_page: 西都市高齢者見守り配食サービス事業
+  summary: 調理や買い出しが難しい高齢者に、食事を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    - with_family
+  at_application:
+  - 65歳以上のひとり暮らし、65歳以上のみの世帯、またはこれに準ずる世帯
+  - 調理や買い出しが困難、または医師に栄養改善を指導された人
+  - 準ずる世帯は、同居の家族が勤務などで食事の提供ができない世帯
+  where: 各地区の在宅介護支援センター・地域包括支援センターに電話で申込む（問合せは健康ほけん課高齢者支援係）
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/kaigo/post_1552
+  confidence: high
+  amount: 弁当代から市の補助420円（東米良地区は650円）を引いた額。昼食か夕食の1日1食
+- category: haikai
+  name: 認知症高齢者等見守りシールの交付
+  name_on_page: 西都市認知症高齢者等見守りシール交付事業
+  summary: 行方不明のおそれがある認知症の方に、QRコード付きの見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で行方不明になる可能性がある（診断は必須でない）
+  - 地域包括支援センター経由で「認知症SOSネットワーク事前登録」を申請
+  where: 西都市地域包括支援センター（北地区・南地区）を通して市（健康ほけん課）へ申請
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/kaigo/post_1234
+  confidence: high
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 財産管理が難しい高齢者の、成年後見の申立てと必要な費用を支援する。
+  who: {}
+  at_application:
+  - 認知症などで自分の財産を管理できない高齢者
+  where: 健康ほけん課（高齢者支援係）
+  url: https://www.city.saito.lg.jp/kenko_kyoiku/kaigo/0211_1703310000000005
+  confidence: low
+not_found:
+- kaigo-yohin
+- hochoki
+- jutaku
+- shingu
+- ribiyo

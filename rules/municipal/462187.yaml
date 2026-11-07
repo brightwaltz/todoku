@@ -1,0 +1,116 @@
+city: '462187'
+name: 霧島市
+site: www.city-kirishima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（地域生活配食事業・自立支援配食事業）
+  name_on_page: 配食サービス活用事業（地域生活配食事業・自立支援配食事業）
+  summary: 見守りが必要で買い物・調理が難しい人に、食事を届けて安否も確かめる。
+  who: {}
+  at_application:
+  - 65歳以上（65歳未満は手帳所持者や自立支援医療利用者で要介護認定がある人）
+  - 独居か高齢者（障がい者）のみの世帯、またはこれに準ずる状況（日中独居等を含む）
+  - 定期的な見守りが必要（緊急通報装置の利用者を除く）
+  - 身体・精神の状態で買い物・調理ができず、栄養状態の改善・維持が必要
+  - 経済的な事情などで民間の配食を使えない
+  where: 長寿介護課、障害福祉課、地域包括支援センター
+  url: https://www.city-kirishima.jp/kou-shou/kosodate/koresha/koreshashien/haishoku.html
+  confidence: high
+  amount: 1食250円・400円・550円（所得による3段階）
+  more_urls:
+  - https://www.city-kirishima.jp/kou-shou/documents/koureisyahukusinosiori.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置整備事業
+  summary: ボタンを押すとコールセンターにつながる緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしで、脳疾患・心疾患などの疾患か既往歴がある
+  - 65歳以上で日中か夜間に独居状態になり、同じく疾患か既往歴がある
+  - または、緊急時に助けを求めにくい身体・知的・精神障害のある人
+  - 介護認定の有無は問わない
+  - 不安軽減だけを理由とする申請は対象外
+  where: 長寿介護課、隼人市民福祉課、各総合支所市民生活課
+  url: https://www.city-kirishima.jp/kou-shou/20240627.html
+  confidence: high
+  amount: 月額500円・700円・1,100円（収入による）。機器設置の費用は市が負担
+- category: iro
+  name: 高齢者福祉手当
+  name_on_page: 高齢者福祉手当支給事業
+  summary: 寝たきりか重度認知症の高齢者を長く在宅で介護する家族に手当を支給する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護3以上の寝たきりの人、または要介護2以上の重度認知症の人と起居を共にする
+  - 6か月以上続けて介護している家族
+  - 申請の6か月前までに1か月以上入院等していない
+  - ショートステイを月の半分以上使った月は対象外
+  where: 長寿介護課
+  url: https://www.city-kirishima.jp/kou-shou/documents/koureisyahukusinosiori.pdf
+  confidence: high
+  amount: 月額3,000円（10月と翌年度4月に支給）
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の人を在宅で介護する家族に、紙おむつなどを買える給付券を出す。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、介護される人と介護する家族の両方が市町村民税非課税
+  - 要介護4・5相当の在宅の高齢者を介護している
+  - または要介護3相当で排尿か排便が全介助の人を介護している
+  - または身体障害者手帳2級程度以上・療育手帳A2程度以上の人を介護している
+  - または膀胱直腸障害などのある在宅の障害者（児）を介護している
+  where: 長寿介護課、隼人市民福祉課、各総合支所市民生活課
+  url: https://www.city-kirishima.jp/kou-shou/kazokukaigoyouhin.html
+  confidence: high
+  amount: 月額6,000円分（要介護4・5相当）。それ以外は月額4,000円分。3か月ごとに交付
+- category: gaishutsu
+  name: いきいきチケット（温泉・バス・タクシー利用券など）
+  name_on_page: 霧島市いきいきチケット
+  summary: 温泉・市営運動施設・バス・タクシーに使える利用券と、はり・きゅう等の利用券を交付する。
+  who: {}
+  at_application:
+  - 市に住民票があり満70歳以上
+  - または身体障害者手帳・療育手帳・精神障害者保健福祉手帳をお持ちの人
+  - 受け取りには本人の印鑑が必要
+  where: 長寿介護課、隼人市民福祉課、各総合支所市民生活課
+  url: https://www.city-kirishima.jp/kou-shou/kosodate/koresha/koreshashien/ikiki-ticket.html
+  confidence: high
+  amount: 温泉・運動施設・バス・タクシー券4,000円分（50円×80枚）、はり・きゅう・あん摩券5,000円分（500円×10枚）
+- category: sonota
+  name: 高齢者等ごみ戸別収集
+  name_on_page: 高齢者等ごみ戸別収集事業
+  summary: ごみを収集所まで出せず協力者もいない世帯のごみを、自宅前で収集する。
+  who: {}
+  at_application:
+  - 要介護1以上の人だけの世帯、または障害者手帳等をもつ人だけの世帯
+  - 身体障害者手帳1・2級、療育手帳A1・A2、精神障害者保健福祉手帳1級
+  - 介護保険か障害者総合支援法の居宅サービスを利用している
+  - 収集所までのごみ出しが難しく、他に協力を得られない
+  where: 環境衛生課
+  url: https://www.city-kirishima.jp/kou-shou/documents/koureisyahukusinosiori.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

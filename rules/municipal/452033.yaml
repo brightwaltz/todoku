@@ -1,0 +1,129 @@
+city: '452033'
+name: 延岡市
+site: www.city.nobeoka.miyazaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の現物支給
+  name_on_page: 紙おむつ等の支給事業
+  summary: 要介護4・5相当の在宅高齢者を介護する家族に、紙おむつ等を毎月届ける。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5に相当する状態の在宅高齢者を介護する家族が対象
+  - 40歳以上で特定疾病に当たる人も含まれる
+  - 市民税非課税の世帯であること
+  where: 健康長寿課（地域包括ケア推進係）
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/33/1880.html
+  confidence: high
+  amount: 月1回、8,000円分まで（うち1割が自己負担）の現物支給
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 高齢者のみの世帯などに、緊急通報装置を付けて受信センターにつなぐ。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみの世帯、またはこれに準ずる世帯の高齢者
+  - 急に命に関わる病気がある、または身体が弱く素早く動けない人
+  where: お住まいの地区担当の地域包括支援センター
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/33/2046.html
+  confidence: high
+  amount: 利用料の1割（300円程度、月額）。生活保護世帯は0円
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: 認知機能が低下した在宅高齢者に、火災報知器・自動消火器・電磁調理器を給付する。
+  who:
+    at_home: true
+  at_application:
+  - 認知機能が低下した一人暮らし等の在宅高齢者
+  where: お住まいの地区担当の地域包括支援センター
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/33/2047.html
+  confidence: high
+  amount: 自己負担は世帯の課税状況で0〜10割（生活保護0円、非課税・均等割のみ1割、所得割7万円以下3割、超は10割）
+- category: koken
+  name: 成年後見制度の利用支援（申立て・報酬・審判費用の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長による申立てと、後見人の報酬や審判費用の助成をする。
+  who:
+    age_min: 65
+  at_application:
+  - 市長申立て：判断能力が低下し、申立てを頼める親族がいない
+  - 報酬助成：後見人が親族以外で、本人の預貯金等が55万円以下
+  - 審判費用助成：市民税非課税で、預貯金等が31万円以下
+  where: 健康長寿課（地域福祉係）
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/33/2044.html
+  confidence: high
+  amount: 市長申立ての費用は市が負担。報酬と審判費用は条件により全部または一部を助成
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 延岡市認知症高齢者等見守り支援（見守りシール）事業
+  summary: 徘徊行動のある方の親族などに、QRコード付きの見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊行動が見られる高齢者の親族・支援者が申請
+  - 申請者の細かい要件は実施要綱に定められている
+  where: 健康長寿課（本庁舎1階）
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/33/7791.html
+  confidence: high
+  amount: シール50枚入りを1セット交付（初回は無料、2セット目以降は有料）
+- category: sonota
+  name: 認知症の方の個人賠償責任保険への市の加入
+  name_on_page: 延岡市認知症高齢者等見守り支援(総合生活保険)事業
+  summary: 在宅の認知症の方を被保険者に、市が賠償責任保険へ加入する。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 認知症の診断書または主治医意見書を申請に添える
+  - 対象者・申請者の細かい要件は実施要綱に定められている
+  where: 健康長寿課（本庁舎1階）
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/33/1851.html
+  confidence: high
+  amount: 賠償責任は1事故上限1億円、死亡見舞費用15万円、交通事故の死亡50万円など
+- category: gaishutsu
+  name: 高齢者バス乗車券・定期券購入の助成
+  name_on_page: 高齢者バス利用助成事業
+  summary: 高齢者バス乗車券、または悠々パス6か月定期券の購入助成券を交付する。
+  who: {}
+  at_application:
+  - 市内に住民票があり居住し、年度内に70歳以上になる人
+  - 介護保険料の段階が第1〜第5段階
+  where: 総合福祉課、各総合支所市民サービス課。年度当初（4月）は各地区公民館等でも受付
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/27/2038.html
+  confidence: high
+  amount: バス乗車券は年4,000円分、または定期券（15,000円）に年2回3,500円を助成
+- category: sonota
+  name: 介護予防福祉用具の購入補助
+  name_on_page: 介護予防福祉用具購入補助事業
+  summary: 要支援の方が借りている福祉用具と同じ新品を買う費用を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    at_home: true
+  at_application:
+  - 福祉用具貸与を1年以上続けて利用している
+  - 借用中と同じ製品の新品（歩行器・つえ・スロープ・手すり）に限る
+  - 購入前に申請が必要
+  where: 健康長寿課（地域包括ケア推進係）
+  url: https://www.city.nobeoka.miyazaki.jp/soshiki/33/1843.html
+  confidence: high
+  amount: 購入費の原則9割を補助。メンテナンスは1回1,500円（事業所が申請）
+not_found:
+- haishoku
+- ribiyo
+- shingu
+- hochoki
+- iro
+- mimamori

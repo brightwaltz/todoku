@@ -1,0 +1,141 @@
+city: '462233'
+name: 南九州市
+site: www.city.minamikyushu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等訪問給食サービス
+  name_on_page: 高齢者等訪問給食サービス事業
+  summary: 買い物や調理が難しい人の自宅に、昼・夕の食事を届けて安否も確かめる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしや夫婦暮らし等の高齢者、または身体障害者等
+  - 買い物や調理をすることが困難
+  - 原則として1週間に6食以上を取ることが可能
+  where: 長寿介護課 高齢者福祉係、頴娃支所 福祉係、知覧支所 福祉係
+  url: https://www.city.minamikyushu.lg.jp/kenko_fukushi/koreishafukushi_kaigo/1/2706.html
+  confidence: high
+  amount: 1食500円（原則、日曜日と12月29日〜1月3日を除く1日2食）
+- category: kinkyu-tsuho
+  name: 在宅高齢者緊急通報システムの給付
+  name_on_page: 在宅高齢者緊急通報システム給付
+  summary: ボタンを押すと消防の通報センターにつながる緊急通報機器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 市内に住所がある
+  - 突発的に生命に危険な症状が出る疾患がある
+  - 設置の調査のとき家族の立ち会いが必要
+  - 電話機がダイヤル式・子機・ひかり電話の場合は取り付け不可
+  where: 長寿介護課 高齢者福祉係、頴娃支所 福祉係、知覧支所 福祉係
+  url: https://www.city.minamikyushu.lg.jp/kenko_fukushi/koreishafukushi_kaigo/1/2707.html
+  confidence: high
+  amount: 機器と設置の費用は住民税の課税状況で負担あり。通話料と修理費は自己負担
+- category: iro
+  name: 在宅高齢者介護慰労金
+  name_on_page: 在宅高齢者介護慰労金
+  summary: 在宅で寝たきりか重度認知症の要介護4・5の高齢者を介護する人に、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりか重度認知症で、常時の介護が必要な状態が3か月以上続いている
+  - 介護する人は市内に引き続き3か月以上住所がある
+  - 特別障害者手当・福祉手当が支給されるときは対象外
+  - 現況届の提出が必要
+  where: 長寿介護課 高齢者福祉係、頴娃支所 福祉係、知覧支所 福祉係
+  url: https://www.city.minamikyushu.lg.jp/kenko_fukushi/koreishafukushi_kaigo/1/3865.html
+  confidence: high
+  amount: 対象者1人につき月額10,000円（10月と翌年4月にまとめて支給）
+- category: kaigo-yohin
+  name: 在宅要介護高齢者等の介護用品支給
+  name_on_page: 在宅要介護高齢者等介護用品支給
+  summary: 在宅の要介護3以上の高齢者や重度の障害のある人に、紙おむつ等の購入費を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で在宅の要介護3以上
+  - または身体障害者手帳2級以上・療育手帳A2以上の在宅の人
+  - 日常生活で介護用品の使用が必要
+  where: 長寿介護課 高齢者福祉係
+  url: https://www.city.minamikyushu.lg.jp/kenko_fukushi/koreishafukushi_kaigo/1/5048.html
+  confidence: high
+  amount: 1人につき月額3,000円を限度
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、介護用品の引換券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する人・される人ともに市に住民登録がある
+  - ともに市町村民税非課税世帯
+  - 介護される人は施設入所・入院していない
+  where: 長寿介護課 介護保険係、頴娃支所 福祉係、川辺支所 福祉係
+  url: https://www.city.minamikyushu.lg.jp/kenko_fukushi/koreishafukushi_kaigo/1/3863.html
+  confidence: high
+  amount: 月額6,250円以内の引換券（繰り越し・返金なし）
+- category: koken
+  name: 成年後見人等報酬助成
+  name_on_page: 成年後見人等報酬助成
+  summary: 成年後見人等への報酬を払うのが難しい人に、報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 成年後見人等が親族ではない
+  - 生活保護か中国残留邦人等の支援給付を受けている、または報酬の負担が困難と市長が認めた
+  - 市の住民基本台帳に記録されている
+  - 家庭裁判所の報酬付与の決定の翌日から60日以内に申請
+  where: 長寿介護課 介護予防支援係（高齢者の場合。地域包括支援センター・成年後見ステーション）
+  url: https://www.city.minamikyushu.lg.jp/kenko_fukushi/koreishafukushi_kaigo/4/4964.html
+  confidence: high
+  amount: 家庭裁判所が決めた報酬額のうち、月額の上限は在宅28,000円、施設入所・長期入院18,000円
+- category: sonota
+  name: はり・きゅう等施術料の助成
+  name_on_page: はり・きゅう等施術料の助成
+  summary: 市の指定施術所ではり・きゅう等の施術を受けたとき、施術料の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 施術受診券（20枚綴り）を申請して交付を受ける
+  where: 長寿介護課 高齢者福祉係、頴娃支所 福祉係、知覧支所 福祉係
+  url: https://www.city.minamikyushu.lg.jp/soshikikarasagasu/chojukaigoka/koreishafukushi/480.html
+  confidence: high
+  amount: 1回1,000円、年間20回まで
+- category: sonota
+  name: ひまわり安心カプセルの配布
+  name_on_page: ひまわり安心カプセル
+  summary: 緊急時に必要な情報を入れて冷蔵庫に保管するカプセルを配布する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、在宅で生活している世帯
+  - 65歳以上の人、障害者、特定疾病・難病や心身に不安のある人のいる世帯
+  where: 市役所または社会福祉協議会（民生委員にも相談できる）
+  url: https://www.city.minamikyushu.lg.jp/kenko_fukushi/koreishafukushi_kaigo/1/2708.html
+  confidence: high
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori
+- gaishutsu
