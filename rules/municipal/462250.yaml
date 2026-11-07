@@ -1,0 +1,118 @@
+city: '462250'
+name: 姶良市
+site: www.city.aira.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事を届けながら安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 買い物や食事の準備が困難と認められる
+  - 申請後に市の調査員が状況を確認する
+  where: お住まいの地区の各支所
+  url: https://www.city.aira.lg.jp/choju/kurashi/fukushi/koresha/zaitaku.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システム（早助）
+  name_on_page: 緊急通報システム早助（さすけ）
+  summary: ボタンで 24 時間のコールセンターにつながる通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上のひとり暮らしか高齢者のみの世帯で、緊急時の対応が困難
+  - または障害者のみの世帯
+  - 複数人の世帯は生計中心者の所得等で負担額を決める
+  where: 長寿・障害福祉課 長寿福祉係
+  url: https://www.city.aira.lg.jp/choju/kurashi/fukushi/koresha/zaitaku.html
+  confidence: high
+  amount: 月額の利用者負担。生活保護 500 円、非課税世帯 800 円か 1,000 円、課税世帯 1,500 円
+- category: kaigo-yohin
+  name: 紙おむつ等給付券
+  name_on_page: 紙おむつ等給付券の交付
+  summary: 紙おむつ等に使える 3,000 円券を月 1 枚交付する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護 4 以上、または要介護 3 以下で認定調査の排尿・排便が介助か見守り等
+  - 半年ごとの更新が必要
+  where: 長寿・障害福祉課 長寿福祉係
+  url: https://www.city.aira.lg.jp/choju/kurashi/fukushi/koresha/zaitaku.html
+  confidence: high
+  amount: 1 か月につき 1 枚（3,000 円券）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 自宅での散髪・洗髪などを受けられる（年 1〜4 回）。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上
+  - 障害高齢者の自立度が B1〜C2、または認知症高齢者の自立度がⅢa〜M
+  where: 長寿・障害福祉課 長寿福祉係
+  url: https://www.city.aira.lg.jp/choju/kurashi/fukushi/koresha/zaitaku.html
+  confidence: high
+  amount: 年 1〜4 回（申請月により異なる）
+- category: iro
+  name: 在宅高齢者等介護慰労金
+  name_on_page: 在宅高齢者等介護慰労金支給事業
+  summary: 寝たきり等の高齢者を長期に在宅で介護する家族に慰労金を支給する。
+  who:
+    age_min: 65
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 高齢者は要介護 4・5、または認知症自立度がⅢ以上
+  - 介護する家族は高齢者と同居し、3 か月以上継続して介護している親族
+  - 特別障害者手当・福祉手当を受けている高齢者は対象外
+  - 申請日時点で市に 3 か月以上住所がある（高齢者）
+  where: 長寿・障害福祉課 長寿福祉係（本庁）、加治木・蒲生の各支所の市民福祉係
+  url: https://www.city.aira.lg.jp/choju/kurashi/fukushi/koresha/zaitakukaigo.html
+  confidence: high
+  amount: 月額 3,000 円。4〜9 月分は 10 月、10〜3 月分は翌 4 月に支給
+- category: sonota
+  name: 健康チケットあいあい
+  name_on_page: 姶良市健康・長寿支援チケット
+  summary: 高齢者に 100 円券 60 枚を年度内 1 回交付する（社会参加・健康・移動の支援）。
+  who:
+    age_min: 70
+  at_application:
+  - 交付は年度内 1 回限り
+  - 本人確認書類が必要（代理人は双方の確認書類）
+  where: 長寿・障害福祉課の窓口（本庁）、加治木・蒲生の各支所、各出張所
+  url: https://www.city.aira.lg.jp/choju/kurashi/fukushi/koresha/onsenhoyo.html
+  confidence: high
+  amount: 100 円券 60 枚。不足分は現金
+- category: koken
+  name: 成年後見の市長申立てと申立て経費の助成
+  name_on_page: 成年後見制度
+  summary: 親族の申立てや費用負担が難しい人に、市長申立てと申立て経費の助成を行う。
+  who: {}
+  at_application:
+  - 成年後見制度の利用が有効と認められる
+  - 親族などによる申立てや費用の負担が困難
+  where: 本庁または各総合支所（長寿福祉係に問い合わせ）
+  url: https://www.city.aira.lg.jp/choju/kurashi/fukushi/koresha/kokeisedo.html
+  confidence: low
+  amount: 申立てに要する経費の全部または一部（金額は頁に無い）
+not_found:
+- haikai
+- hochoki
+- jutaku
+- shingu
