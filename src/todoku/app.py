@@ -1028,8 +1028,13 @@ def city(code: str, request: Request) -> Response:
     if code not in PLACES:
         raise HTTPException(404, "その団体コードの市区町村は一覧にありません")
     pref, name = PLACES[code]
+    # 第 3 の層（T-199 の頼み）：ご本人の状況を知らない頁なので、事実なしで判定した形を渡す（頁の側は status を出さない）。
+    # 都道府県の分はこの頁の都道府県の段（pref_programs.yaml）と重なるので渡さない（T-201 の頁の側の絞り込みと同じ。main にまだ無い木でも同じに出す）
+    muni = municipal_view(code, {}, {}, "")
+    if muni:
+        muni = {**muni, "programs": [p for p in muni["programs"] if p["by"] == name]}
     html = with_og_image(city_page(RULES, code, pref, name, center_search(code), japan_map(RULES, PREFS, code[:2]),
-                                   LOCAL.get(code)), request)
+                                   LOCAL.get(code), municipal=muni), request)
     if request.method == "HEAD":  # 本文は送らず、長さは縮めない GET と同じにする
         return Response(b"", media_type="text/html", headers={"content-length": str(len(html.encode("utf-8")))})
     return HTMLResponse(html)

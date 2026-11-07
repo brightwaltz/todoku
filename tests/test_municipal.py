@@ -81,3 +81,20 @@ def test_real_files_load_and_stay_out_of_the_scored_set():
         for p in city.programs:
             assert p.number == 0 and p.weight == 0 and p.level == "municipal"
             assert p.id not in RULES.programs
+
+
+def test_city_page_shows_the_city_layer_only():
+    """/city/ の頁（T-199 の頼み）：その市区町村の分を出し、判定の印と都道府県の分は出さない。ファイルの無い所は段を出さない。"""
+    from fastapi.testclient import TestClient
+
+    from todoku.app import app
+    client = TestClient(app)
+    city = municipal.load_city(ROOT / "rules" / "municipal" / "092011.yaml", NAMES)
+    html = client.get("/city/092011").text
+    assert html.count('class="city-item muni-item"') == len(city.programs) > 0
+    assert city.programs[0].id in html
+    tochigi = municipal.load_city(ROOT / "rules" / "municipal" / "09.yaml", NAMES)
+    assert all(p.id not in html for p in tochigi.programs)  # 都道府県の分は pref_programs.yaml の段に任せる
+    no_file = next(c for c in NAMES if len(c) == 6 and not (ROOT / "rules" / "municipal" / f"{c}.yaml").exists()
+                   and c not in ("132098", "141003"))
+    assert "muni-item" not in client.get(f"/city/{no_file}").text

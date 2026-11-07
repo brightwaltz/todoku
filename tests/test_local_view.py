@@ -1,4 +1,5 @@
 """T-075b：その市の事業（rules/local）を、結果の札と /city/ の頁で型の札の代わりに出す。データは tmp に書く。"""
+import re
 import os
 
 os.environ["TODOKU_FAKE_CLAUDE"] = "1"
@@ -21,6 +22,11 @@ HAISHOKU = {"template": "local-haishoku", "status": "found", "name": "札幌市�
             "where": "お住まいの区の保健福祉課（試験）", "conditions": ["65歳以上でひとり暮らしなど（試験）", "食事の用意が難しい（試験）"],
             "sources": [CITY_SRC], "review": REVIEW}
 IRO = {"template": "local-iro", "status": "not_found", "review": REVIEW}
+
+
+def strip_muni(html: str) -> str:
+    """第 3 の層の段（data-level="municipal"、T-199）を除く。この試験は確かな層と rules/local の段を数えるため。"""
+    return re.sub(r'<section class="card soft city-group" data-level="municipal">.*?</section>', "", html, flags=re.S)
 
 
 @pytest.fixture
@@ -87,12 +93,12 @@ def test_city_page_shows_the_city_program_with_the_mark(sapporo):
     assert all(c in html for c in HAISHOKU["conditions"])
     assert "Claude が公式頁から書き、照らし直したもの（2026-11-05）" in html
     assert CITY_SRC["url"] in html
-    assert html.count('class="local-mark"') == 1  # 見つからなかった型（local-iro）には付けない
+    assert strip_muni(html).count('class="local-mark"') == 1  # 見つからなかった型（local-iro）には付けない
     assert app_mod.RULES.programs["local-iro"].name in html
     assert "別の読み手が原文と照らし直したもの" in html
 
 
 def test_city_page_without_data_is_unchanged(sapporo):
-    html = client.get(f"/city/{SENDAI}").text
+    html = strip_muni(client.get(f"/city/{SENDAI}").text)
     assert "local-mark" not in html and "別の読み手が原文と照らし直したもの" not in html
     assert app_mod.RULES.programs["local-haishoku"].name in html

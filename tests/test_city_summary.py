@@ -16,6 +16,11 @@ client = TestClient(app)
 MACHIDA, YOKOHAMA, VILLAGE, OSAKA = "132098", "141003", "023043", "271004"  # 大阪市は国の制度と型（型は rules/local の大阪市の事業で出す。T-075e）。大阪府の制度はまだ無い
 
 
+
+def strip_muni(html: str) -> str:
+    """第 3 の層の段（data-level="municipal"、T-199）を除く。この試験は確かな層と rules/local の段を数えるため。"""
+    return re.sub(r'<section class="card soft city-group" data-level="municipal">.*?</section>', "", html, flags=re.S)
+
 def no_pref_record(monkeypatch):
     """T-129 で青森県・大阪府も調べた記録（rules/pref_programs.yaml）に入ったので、記録が無いときの帯をここで作って確かめる。"""
     from todoku import pref_programs
@@ -63,7 +68,7 @@ def test_total_and_breakdown_match_the_programs_listed_below(code):
     total = int(re.search(r'<p class="city-total"><b>(\d+)</b> 件', block).group(1))
     assert SUMMARY_TITLE in block
     # T-118：合計は制度の件数だけ。型（市区町村の事業）は種類で数えるので、合計に足さず内訳にだけ出す
-    assert total == html.count('<li class="city-item') - types_listed(html)
+    assert total == strip_muni(html).count('<li class="city-item') - types_listed(html)
     got = parts(block)
     assert sum(n for label, n in got.items() if label != SUMMARY_TYPES) == total
     # 内訳は下の段の見出しと同じ数・同じ順（段の名前から「の制度」を落としたもの）
