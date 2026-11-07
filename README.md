@@ -313,9 +313,9 @@ Claude Agent SDK は使っていません。
 ## ライセンス
 
 - このリポジトリのコード・規則ファイル・テスト・架空事例・画面は MIT ライセンスです（`LICENSE`）。
+- 入口の紹介の動画（`web/intro.mp4`・`web/intro-poster.jpg`）は、このサイトの画面を撮って作りました。字は BIZ UDPGothic（SIL Open Font License）で、曲と声は使っていません。
 - 外部の出典の内容は、それぞれの利用条件に従います（上の「出典と利用条件」）。規則ファイルの中の原文の引用と、`tests/fixtures/procedures_r7.json`（デジタル庁のデータの抜き出し）は PDL1.0 の出典表示つきです。
 - 町田市のページの文章は、このリポジトリに入れていません。条件は作者の言葉で書き、リンクを示しています。
-- 入口の紹介の動画（`web/intro.mp4`・`web/intro-poster.jpg`）は、このサイトの画面を撮って作りました。字は BIZ UDPGothic（SIL Open Font License）で、曲と声は使っていません。
 
 ## 今後
 
