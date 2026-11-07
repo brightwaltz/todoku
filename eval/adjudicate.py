@@ -310,6 +310,9 @@ def source_of(it: dict, cell: dict, kind: str, decisions: dict) -> str:
     """マスの正解がどこから来たか（報告用）。"""
     d = decisions.get(it["id"], {})
     key = f"{cell['case']}-{cell['num']}"
+    if key in (d.get("changed_cells") or []):
+        # 推しを裁いたあとで、先生がチャットで推しから変えたマス（changed_via に先生の文と理由。11/7 の 3 番・4 番の基準のそろえ直し）
+        return "チャットで推しから変えた"
     if key in (d.get("chat_cells") or []):
         return "チャットで推しどおり"   # 先生がチャットで一括して答え、Claude が db に書いたマス（via に先生の文）
     if (d.get("overrides") or {}).get(key):

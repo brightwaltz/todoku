@@ -326,6 +326,16 @@ def test_chat_cells_are_reported_separately():
     assert set(rep["decided_cells"]) == {"c01-5", "c02-5", "c03-9", "c16-6"} and rep["rec_changed"] == []
 
 
+def test_changed_cells_override_rec_and_are_reported():
+    """先生がチャットで推しから変えたマス（11/7）は、overrides の印が正解になり、出所と「推しと違う印」に出る。"""
+    adj, recs = _adj_rec(), _recs()
+    d = {"p-plan": {"choice": "rec", "rec": {"c01-5": "○"}, "overrides": {"c02-5": "○"}, "changed_cells": ["c02-5"]},
+         "i01": {"choice": "rec", "rec": {"c03-9": "○"}}}
+    gold, rep = adjudicate.build_gold(adj, d, recs)
+    assert gold["c02"][5] == "○" and rep["source"]["c02-5"] == "チャットで推しから変えた"
+    assert rep["rec_changed"] == [{"cell": "c02-5", "rec": "×", "final": "○"}]
+
+
 def test_merged_gold_combines_rounds_and_rejects_overlap(tmp_path, monkeypatch):
     """裁定の回（11/4 の 30 件と 11/6 の 12 件）を合わせる。同じマスが 2 回出たら止める。"""
     a1 = {"agreed": [{"case": "c01", "num": 2, "mark": "×"}], "audit": [], "issues": [],
