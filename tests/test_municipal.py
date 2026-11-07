@@ -89,10 +89,14 @@ def test_city_page_shows_the_city_layer_only():
 
     from todoku.app import app
     client = TestClient(app)
+    from todoku import app as app_mod
     city = municipal.load_city(ROOT / "rules" / "municipal" / "092011.yaml", NAMES)
     html = client.get("/city/092011").text
-    assert html.count('class="city-item muni-item"') == len(city.programs) > 0
-    assert city.programs[0].id in html
+    # 出すのは画面と同じく、rules/local にその市の同じ型の事業がある型を除いた分（11/7 夜、3rd。データのレーンが宇都宮市を
+    # rules/local に足すと、ファイルの全件〔21〕ではなくなるため。足す前も後も、この数え方なら同じ検査になる）
+    shown = [r for r in app_mod.municipal_view("092011", {}, {}, "")["programs"] if r["by"] == city.name]
+    assert html.count('class="city-item muni-item"') == len(shown) > 0
+    assert shown[0]["id"] in html
     tochigi = municipal.load_city(ROOT / "rules" / "municipal" / "09.yaml", NAMES)
     assert all(p.id not in html for p in tochigi.programs)  # 都道府県の分は pref_programs.yaml の段に任せる
     no_file = next(c for c in NAMES if len(c) == 6 and not (ROOT / "rules" / "municipal" / f"{c}.yaml").exists()
