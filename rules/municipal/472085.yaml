@@ -1,0 +1,119 @@
+city: '472085'
+name: 浦添市
+site: www.city.urasoe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 夕食を届けて食生活の改善と安否確認を行う（週 6 回、月〜土）。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の調理または食材の確保が困難で、安否確認が必要
+  - 利用回数は訪問調査を踏まえて決まる
+  where: 福祉健康部 いきいき高齢支援課 高齢福祉係（本庁 1 階）
+  url: https://www.city.urasoe.lg.jp/doc/609e7d843d59ae2434bfede8/
+  confidence: high
+  amount: 1 食あたり 健康食 300 円か 400 円、制限食 375 円か 500 円（市民税の課税状況で変わる）
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: 急病・事故のとき通報できる機器と動きセンサーを設置し、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 虚弱な人（高齢者のみの世帯はいずれかが虚弱）
+  - 申請書にかかりつけ医の診断書が必要
+  - 申請後に訪問調査がある
+  - 65 歳未満の家族と同居する場合は原則対象外
+  where: 福祉健康部 いきいき高齢支援課 高齢福祉係（本庁 1 階）
+  url: https://www.city.urasoe.lg.jp/doc/609e86233d59ae2434c000a3/
+  confidence: high
+  amount: 無料
+- category: hochoki
+  name: 加齢性難聴者補聴器助成
+  name_on_page: 加齢性難聴者補聴器助成
+  summary: 住民税非課税世帯の難聴の高齢者に補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 四分法で両耳 50 dB 以上、または一側 40 dB 以上かつ他側 80 dB 以上
+  - 耳鼻咽喉科の医師が補聴器の使用を必要と認めた
+  - 補装具の支給で補聴器の交付が受けられない
+  - 過去にこの事業の助成を受けていない
+  - 助成決定の通知後に購入する。先着順で上限 10 名
+  where: 福祉健康部 いきいき高齢支援課 高齢福祉係（本庁 1 階）
+  url: https://www.city.urasoe.lg.jp/doc/2026080400088/
+  confidence: high
+  amount: 上限 25,000 円（1 人 1 回限り。購入価格が 25,000 円未満ならその額）
+- category: iro
+  name: 高齢者在宅介護手当
+  name_on_page: 高齢者在宅介護手当支給事業
+  summary: 寝たきりや認知症の高齢者を在宅で介護する人に手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護 3〜5 の認定（またはこれに準ずる）
+  - 6 か月以上継続して寝たきり状態（自立度 B〜C）または認知症状態（Ⅲ〜M）
+  - 世帯の最多所得者の所得が 1,000 万円未満
+  - 介護する人も市内に住所がある
+  - 診断書・意見書が必要
+  where: 福祉健康部 いきいき高齢支援課 高齢福祉係（本庁 1 階）
+  url: https://www.city.urasoe.lg.jp/doc/60d1a4e73d59ae1ac00c6ba7/
+  confidence: high
+  amount: 月額 5,000 円（年 2 回、4 月と 10 月に支給）
+- category: kaigo-yohin
+  name: 介護用品支給事業
+  name_on_page: 介護用品支給事業
+  summary: 紙おむつと尿取りパッドに引き換えられる支給証（月額分）を交付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護 4・5 の認定（またはこれに準ずる）
+  - 介護する人も市民税非課税世帯
+  - 要介護認定を受けていない人は診断書・意見書が必要
+  where: 福祉健康部 いきいき高齢支援課 高齢福祉係（本庁 1 階）
+  url: https://www.city.urasoe.lg.jp/doc/609e855d3d59ae2434bfff03/
+  confidence: high
+  amount: 月額 6,250 円分の支給証。市指定の販売事業所で引き換える
+- category: haikai
+  name: 浦添市認知症高齢者等見守りSOSネットワーク
+  name_on_page: 浦添市認知症高齢者等見守りSOSネットワーク
+  summary: 事前に登録し、行方不明のとき協力機関や協力者へ情報を発信して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住のおおむね 65 歳以上で、認知症等により外出後に帰れなくなるおそれ
+  - 65 歳未満でも若年性認知症等で同様の心配がある人も可
+  - その他、市長が特に必要と認める人
+  - 登録していても行方不明のときは警察への届出が必要
+  where: いきいき高齢支援課（本庁 1 階）、浦添市地域包括支援センター
+  url: https://www.city.urasoe.lg.jp/doc/62d114ee925c280d837e3d64/
+  confidence: high
+  amount: 無料
+not_found:
+- koken
+- shingu
+- ribiyo
+- jutaku

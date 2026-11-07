@@ -1,0 +1,248 @@
+city: '472077'
+name: 石垣市
+site: www.city.ishigaki.okinawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 石垣市高齢者配食サービス
+  name_on_page: 石垣市高齢者配食サービス
+  summary: 食事を届けて安否も確認する（昼食または夕食、月〜金）。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住
+  - 一人暮らし、または高齢者のみの非課税世帯
+  - 自ら買い物・調理など食事の用意が困難
+  - 訪問調査のあとで利用が決まる
+  where: 介護長寿課がんじゅう係（配達は社協・まごころ・花いち膳に委託）
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 1 食 500 円
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: ひとり暮らしの急病・事故のとき、すばやく援助を受けられる装置を使う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 慢性疾患など日常生活上、常に注意を要する
+  - 電話回線を使う
+  - 訪問調査のあとで利用が決まる
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 福祉電話の設置
+  name_on_page: 福祉電話の設置
+  summary: 固定電話（福祉電話）を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 電話、携帯電話を持っていない
+  - 訪問調査のあとで利用が決まる
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 利用料金のうち 900 円を超える額は自己負担
+- category: nichijo-yogu
+  name: 老人日常生活用具給付等事業
+  name_on_page: 老人日常生活用具給付等事業
+  summary: 電磁調理器・火災報知器・自動消火器の給付を受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 訪問調査のあとで利用が決まる
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 無料
+- category: kaigo-yohin
+  name: 介護用品支給事業（紙おむつ等）
+  name_on_page: 介護用品支給事業
+  summary: 紙おむつ・尿取りパッドなどの介護用品を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 主な介護者も市民税非課税世帯に属する
+  - 訪問調査のあとで利用が決まる
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 対象用品の購入額で月額 6,250 円まで（上限額）
+- category: sonota
+  name: 有料指定ごみ袋の無料配布
+  name_on_page: 石垣市有料指定ごみ袋の無料配布助成制度
+  summary: おむつが多く出る世帯に指定ごみ袋（20 リットル）を無料で配る。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅で、常時紙おむつを使っている
+  - 申請に介護保険被保険者証（写し可）が必要
+  where: 環境課（受取）、介護長寿課（申請）
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 無料。月 15 枚、1 回の申請で 1 年分（年 1 回のみ）
+- category: hochoki
+  name: 加齢性難聴者補聴器購入費助成事業
+  name_on_page: 加齢性難聴者補聴器購入費助成事業
+  summary: 補聴器が必要な難聴の高齢者に購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 中等度難聴と確認できる
+  - 申請時に所定の診断書が必要
+  - 購入前の申請が必要（事前に買った分は対象外）
+  - ほかにいくつか条件がある（頁は窓口に確認と案内）
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 助成額は上限 25,000 円
+- category: gaishutsu
+  name: 外出支援サービス事業
+  name_on_page: 外出支援サービス事業
+  summary: リフト付きワゴン車で自宅から病院・公共機関へ送迎する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 一般の交通機関を利用することが困難
+  - 外出時に車椅子・ストレッチャーなどが必要
+  - 介助が必要な場合は同乗者（家族など）が必要
+  - 訪問調査のあとで利用が決まる
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 往復 500 円（片道 250 円）。1 週間に 2 回まで
+- category: gaishutsu
+  name: 高齢者バスチケット
+  name_on_page: バスチケット事業
+  summary: 石垣市の路線バスが自由に乗り降りできるバスチケットを交付する。
+  who: {}
+  at_application:
+  - 65 歳以上の非課税世帯の人、または 75 歳以上の全ての人
+  - 市内在住
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: おでかけタクシー券
+  name_on_page: おでかけタクシー事業
+  summary: 初乗り運賃分のタクシー券を交付する。
+  who: {}
+  at_application:
+  - 75 歳以上の高齢者世帯等で市民税非課税世帯の人
+  - および車を持たず使わない人、家族の送迎が困難な人
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 初乗り分のタクシー券を月 2 枚、最大 6 か月分（更新あり）
+- category: sonota
+  name: 軽度生活援助事業
+  name_on_page: 軽度生活援助事業
+  summary: 家の中の掃除・布団干し・家の外の掃き掃除など軽い生活支援を受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護認定で給付の対象外
+  - 介護保険サービスと併用できない
+  - 訪問調査のあとで利用が決まる
+  where: 介護長寿課がんじゅう係
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 1 時間 100 円。1 週間に 1 回 2 時間まで
+  more_urls:
+  - https://www.city.ishigaki.okinawa.jp/material/files/group/20/ganjyuchirashi.pdf
+- category: haikai
+  name: 石垣市認知症SOSネットワーク
+  name_on_page: 石垣市認知症SOSネットワーク
+  summary: 事前に登録し、所在不明のとき警察・消防などに捜索を依頼してもらう。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで独り歩きの心配がある
+  where: 地域包括支援センター（窓口で申請・相談）
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 高齢者等GPS機器等購入費等助成事業
+  name_on_page: 高齢者等GPS機器等購入費等助成事業
+  summary: GPS 機器等の購入費の一部または全部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり在宅
+  - 認知症高齢者等見守りSOSネットワークに登録している
+  - 携帯電話・スマホ・タブレット・腕時計型端末などは対象外
+  where: 地域包括支援センター
+  url: https://www.city.ishigaki.okinawa.jp/material/files/group/20/siniaoyakudati26.pdf
+  confidence: high
+  amount: 上限 10,000 円（満たない場合は実費）
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 本人が介護保険サービス等を使っている、または使うと認められる
+  - 本人が生活保護か、資産・収入がそれに準ずる、または市長が認める
+  - 申立費用は申立人（親族）が生活保護か市民税非課税
+  - 報酬は後見人等が配偶者・4 親等内の親族でない
+  where: 石垣市長に申請（実施要綱の申請書を提出）
+  url: https://www.city.ishigaki.okinawa.jp/kurashi_gyosei/iryo_kenko_fukushi/kaigo/4785.html
+  confidence: high
+  amount: 申立費用は実費（印紙・切手・診断書・鑑定など）。報酬は月額上限 在宅 28,000 円、施設 18,000 円
+  more_urls:
+  - https://www.city.ishigaki.okinawa.jp/material/files/group/20/3333-1.pdf
+not_found:
+- shingu
+- ribiyo
+- jutaku
+- mimamori
