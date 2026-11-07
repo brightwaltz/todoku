@@ -1,0 +1,38 @@
+city: "282014"
+name: 姫路市
+site: city.himeji.lg.jp
+programs:
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者等家族等支援事業（GPS 端末の購入・貸与費の助成）
+    where: 高齢者支援課（提出の窓口は頁から読み取れないので、問い合わせて確かめる）
+    conditions:
+      - 家で認知症の人などを介護している家族で、本人と家族のどちらも市内に住んでいる
+      - 位置を調べられ通話の機能が無い GPS 端末を買う・借りる初めの費用が対象
+      - 月々の通信料と、Bluetooth だけの機器は対象外
+      - 1 人 1 回、税込 1 万円まで（ポイントで払った分は引く）
+      - 買った年度の 3 月末までに書類を出す
+    sources:
+      - url: https://www.city.himeji.lg.jp/kurashi/0000006320.html
+        publisher: 姫路市
+        title: 認知症高齢者等の見守り・SOSネットワーク
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 65歳以上は高齢者支援課、65歳未満は障害福祉課（窓口か郵送。市長の申立ての相談は成年後見支援センター）
+    conditions:
+      - 資産や預貯金が少なく、生活保護・措置・市の介護保険の被保険者・障害の手帳・障害福祉サービスのどれかに当たる人
+      - 申立ての費用は全部か一部を助成（鑑定は10万円まで）。審判が確定してから6か月以内に申請
+      - 後見人の報酬は月に在宅28,000円・施設や入院18,000円まで。報酬の審判の翌日から2か月以内に申請
+      - 後見人が親族か市民後見人なら、報酬の助成は対象外
+      - 資産の基準と持ち物は頁から読み取れないので、窓口で確かめる
+    sources:
+      - url: https://www.city.himeji.lg.jp/kurashi/0000020709.html
+        publisher: 姫路市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-06
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-06}
