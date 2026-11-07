@@ -1,0 +1,177 @@
+city: '202177'
+name: 佐久市
+site: www.city.saku.nagano.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護者を介護する家族への紙おむつ等の給付
+  name_on_page: 要介護認定者介護用品給付事業
+  summary: 在宅で要介護者を介護する非課税世帯の家族に、紙おむつ等を現物給付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、市民税非課税世帯に属する介護者が申請
+  - 要介護者が独居で市内に介護者がいない場合は対象外
+  - 施設入所や長期入院中の場合は対象外
+  where: 高齢者福祉課、各支所健康福祉係
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/kaigo/kyufu.html
+  confidence: high
+  amount: 要介護1は月700円、要介護2・3は月2,300円、要介護4・5は月4,200円分まで
+- category: haikai
+  name: 認知症高齢者のGPS端末の購入費・利用料の補助
+  name_on_page: 佐久市高齢者見守り支援サービス（GPS端末補助）事業
+  summary: 行方不明のおそれがある高齢者のGPS機器代と月額基本料の一部を親族等に補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の診断、または認知症高齢者等情報票がある等の方
+  - 高齢者と申請者が市内在住で、市税等の滞納がない
+  - 衛星と携帯回線のGPS機器を利用（携帯・スマホ等は対象外）
+  - 申請者は高齢者の親族等
+  where: 高齢者福祉課、各支所健康福祉係
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/ninijigyo_sonota/gps_mimamorishien.html
+  confidence: high
+  amount: 機器購入は2分の1以内で上限25,000円、利用料は月2,000円まで（12か月分）
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立ての費用と後見人報酬を、必要な方に市が負担・助成する。
+  who: {}
+  at_application:
+  - 市内在住で、認知症・知的・精神障害で判断能力が不十分
+  - 2親等内の親族がいない、または親族の申立てが見込めない
+  - 助成なしでは制度利用が難しい方に限る
+  where: 高齢者福祉課、各支所
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/ninijigyo_sonota/seinenkoken.html
+  confidence: high
+  amount: 申立て費用を助成。後見人報酬は本人の収入・財産を見て決める
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者の緊急通報装置の設置
+  name_on_page: ひとり暮らし高齢者緊急通報システム事業
+  summary: 自宅に緊急通報機器を設置し、通報時の救援や月1回の電話確認を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 体調に不安がある方
+  - 協力員として近所の方2名以上の登録が必要
+  where: 高齢者福祉課、各支所健康福祉係（民生委員経由の申請も可）
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/sodan/seikatsushien/hitorigurashi.html
+  confidence: high
+  amount: 月額500円（固定電話型）または1,000円（携帯型）。設置・撤去費は自己負担なし
+- category: ribiyo
+  name: 訪問理美容の利用券交付
+  name_on_page: 高齢者訪問理美容サービスのご案内
+  summary: 外出が難しい要介護3以上の方に、自宅へ来る理美容の利用券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある、おおむね65歳以上の方
+  - 理美容店に出向くことが困難な方
+  where: 高齢者福祉課高齢者事業係、各支所健康福祉係
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/sodan/seikatsushien/ribiyou.html
+  confidence: high
+  amount: 利用券は年度内に最大4枚（申請月で枚数が変わる）。市が業者に出張経費1,500円を助成。理美容代は自己負担
+- category: gaishutsu
+  name: 高齢者外出支援サービス（車での送迎）
+  name_on_page: 高齢者外出支援サービス事業
+  summary: 公共交通が使いにくい方の通院・買物・手続きを、車で送迎する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上の独り暮らし・高齢者のみ・高齢者と障害者のみの世帯
+  - 障害者手帳、要支援・要介護認定、肢体不自由等のいずれかがある
+  - 公共交通機関の利用が困難で、家族等の支援を受けられない
+  where: 高齢者福祉課、各支所健康福祉係
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/sodan/seikatsushien/gaishutsushien.html
+  confidence: high
+  amount: 1回500円（片道を1回と数え、月4回まで）
+- category: nichijo-yogu
+  name: 車いす・福祉電話などの無料貸与
+  name_on_page: 日常生活用具貸与事業
+  summary: 在宅の高齢者等に、車いすや福祉電話などを無料で貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - 車いす：おおむね65歳以上で必要な方。市民税の所得割が非課税
+  - 福祉電話：おおむね65歳以上の独り暮らしで必要性がある方
+  - 原則として低所得世帯等が要件
+  - 特殊寝台エアマットは新規受付を停止中
+  where: 高齢者福祉課、各支所健康福祉係
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/sodan/seikatsushien/taiyo.html
+  confidence: high
+  amount: 貸与は無料（電池・通話料などの維持費は自己負担）。車いすは年度内90日以内
+- category: jutaku
+  name: ひとり暮らし高齢者等の住宅の簡易補修
+  name_on_page: ひとり暮らし高齢者等住宅補修等整備事業
+  summary: ボランティアが雨漏りや戸の建付けなどを補修し、材料費は市が負担する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 近隣に援助できる家族がいる方は対象外
+  - 介護保険の住宅改修を受けられる方は対象外
+  - 申請は民生委員を通じて行う。実施は毎年6月頃
+  where: 高齢者福祉課（民生委員経由で申請）
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/sodan/seikatsushien/hoshu.html
+  confidence: high
+  amount: 材料費は市負担。高額な修理は行えない場合がある
+- category: jutaku
+  name: 高齢者向け住宅改良の補助
+  name_on_page: 高齢者にやさしい住宅改良促進事業
+  summary: 要援護高齢者が居室・浴室・トイレ等を改良するときに補助する。
+  who: {}
+  at_application:
+  - 要援護高齢者が在宅で自立した生活を続けるための改良
+  - 詳しい条件は高齢者福祉課で確認が必要
+  where: 高齢者福祉課
+  url: https://www.city.saku.nagano.jp/kurashi/tochi_jutaku/jutakutou/reformshien.html
+  confidence: low
+  more_urls:
+  - https://www.city.saku.nagano.jp/kenko/ikiiki/R8shien_menu.html
+- category: sonota
+  name: 家庭ごみ・粗大ごみの収集支援（安否確認つき）
+  name_on_page: 家庭ごみ等収集支援事業
+  summary: ごみ出しが難しい高齢世帯の家庭ごみを回収し、安否確認も行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の独り暮らし・高齢者のみ・高齢者と障害者のみの世帯
+  - 世帯全員が要介護3以上、または指定の疾病・認知症等の状態
+  - 家族等の支援が受けられない
+  where: 高齢者福祉課、各支所健康福祉係
+  url: https://www.city.saku.nagano.jp/kenko/ikiiki/sodan/seikatsushien/gomishushu.html
+  confidence: high
+  amount: 家庭ごみは1回100円。粗大ごみは運搬料10,000円（税込）まで市が負担
+not_found:
+- haishoku
+- iro
+- hochoki
+- shingu
+- chusha
+- yutai

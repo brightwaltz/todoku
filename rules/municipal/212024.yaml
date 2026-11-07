@@ -1,0 +1,232 @@
+city: '212024'
+name: 大垣市
+site: www.city.ogaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス
+  summary: 調理が難しい高齢者に昼食か夕食を届け、安否も確認する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの高齢者などが対象
+  - 心身の虚弱や疾病で調理が困難
+  - 申請書とアセスメントシートが必要
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000000109.html
+  confidence: high
+  amount: 1食500円の自己負担。元日を除き毎日届ける。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: gaishutsu
+  name: 高齢者おでかけバス助成（バスチケット交付）
+  name_on_page: 高齢者おでかけバス助成事業
+  summary: 車を運転できない高齢者に、市内の路線バス用のチケットを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 運転免許がない、または持っていても運転できない
+  - 一時的に運転できない人や時々運転する人は対象外
+  where: 高齢福祉課（市民サービスセンター・地域事務所は申請書の受取のみ）
+  url: https://www.city.ogaki.lg.jp/0000010022.html
+  confidence: high
+  amount: 1万円分のバスチケットを年度に1回交付。
+- category: kaigo-yohin
+  name: 家族介護慰労（紙おむつ等の給付）
+  name_on_page: 家族介護慰労事業
+  summary: 要介護3〜5の高齢者を在宅で介護する人に、紙おむつか尿とりパッドを届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同居者全員が市民税非課税
+  - 入院・入所中でない
+  - 特別障害者手当を受けていない
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000049274.html
+  confidence: high
+  amount: 紙おむつか尿とりパッドのどちらか。偶数月に配送。枚数は要介護度で異なる。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: haikai
+  name: 高齢者等位置情報提供サービス（GPS端末の貸与）
+  name_on_page: 大垣市高齢者等位置情報提供サービス事業
+  summary: 認知症の人を在宅で介護する家族にGPS端末を貸し、ひとり歩きを見守る。
+  who: {}
+  at_application:
+  - 要支援・要介護の人を在宅で介護する人が申請
+  - または認知症の疑いで警察に保護された人の介護者
+  - 冊子では認知症の自立度などの基準もある
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000025740.html
+  confidence: high
+  amount: 利用年度ごとに3万円分まで無料。超えた分は自己負担。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: haikai
+  name: 認知症高齢者見守りシール交付
+  name_on_page: 認知症高齢者見守りシール交付事業
+  summary: 二次元コード付きシールを衣類などに貼り、行方不明時に家族へ通知が届く。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在宅で、認知症により行方不明になるおそれがある
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等見守りほっとライン（緊急通報装置の貸与）
+  name_on_page: 大垣市ひとり暮らし高齢者等見守りほっとライン事業
+  summary: 在宅のひとり暮らし高齢者などに緊急通報装置を貸し、緊急時の連絡体制を整える。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし高齢者などが対象
+  - 一部の電話回線は利用できない。電話料金は本人負担
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000000110.html
+  confidence: high
+  amount: 所得税非課税世帯は月0円、課税世帯は月520円（冊子の記載）。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: mimamori
+  name: IoT活用の見守りサービス利用料の助成
+  name_on_page: 大垣市IoT活用ひとり暮らし高齢者等見守り事業
+  summary: ひとり暮らし高齢者の見守り機器の初期費用と月額料金を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住のひとり暮らし高齢者など。見守る家族の申請も可（市外在住でも可）
+  - 契約前に利用計画書の提出が必要
+  - 他の補助を受けている場合は対象外
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000053370.html
+  confidence: high
+  amount: 初期費用と月額料金を最長6か月、上限1万5千円。1人1回限り。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 寝具の衛生管理が難しい高齢者の布団・毛布を洗濯・乾燥・消毒する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし高齢者などが対象
+  - 心身の障がいなどで寝具の衛生管理が困難
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000000101.html
+  confidence: high
+  amount: 1回600円の自己負担（生活保護世帯は無料）。実施は5月と10月。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理容院に行けない高齢者の自宅へ理容業者が訪問し、散髪をする。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ひとり暮らし高齢者などが対象
+  - 心身の障がいや傷病で理容院に行くことが困難
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000000104.html
+  confidence: high
+  amount: 出張費は市が負担し年6回まで。理容料金は実費。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: nichijo-yogu
+  name: 福祉用具給付（消火器・ガス漏れ警報器・火災警報器）
+  name_on_page: 福祉用具給付事業
+  summary: ひとり暮らし高齢者に、小型消火器・ガス漏れ警報器・火災警報器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - ひとり暮らし高齢者台帳に登録している
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000048103.html
+  confidence: high
+  amount: 生活保護・市民税非課税世帯は無料。それ以外は費用負担あり。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: koken
+  name: 成年後見の市長申立てと報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りがない人の後見申立てを市長が行い、報酬の支払いが難しい人には報酬を助成する。
+  who: {}
+  at_application:
+  - 申立て支援は身寄りがなく親族が申立てできない人
+  - 報酬助成は生活保護受給者またはそれに準ずる人
+  - 助成の前に担当課の承認が必要。冊子では65歳以上の高齢者が対象
+  where: 高齢福祉課（大垣市成年後見支援センター）、障がい福祉課
+  url: https://www.city.ogaki.lg.jp/0000000116.html
+  confidence: high
+  amount: 申立て費用は市が負担（本人に負担能力があれば後日請求）。報酬は一部または全部を助成。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: sonota
+  name: 軽度生活援助（草取り・ガラス拭きなど）
+  name_on_page: 軽度生活援助事業
+  summary: 虚弱な高齢者の、家周りの草取りやガラス拭き、家具の転倒防止の取付などを手伝う。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし高齢者などが対象
+  - 虚弱などの理由で援助が必要
+  - 申請後に市職員が自宅の状況を確認する
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/0000000102.html
+  confidence: high
+  amount: 1時間200円と材料費などの実費。
+  more_urls:
+  - https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+- category: gaishutsu
+  name: 外出支援サービス（上石津地域・医療機関への送迎）
+  name_on_page: 外出支援サービス事業（上石津地域）
+  summary: 上石津地域の在宅高齢者を、通院のため医療機関へ送迎する。
+  who:
+    age_min: 60
+    at_home: true
+  at_application:
+  - 上石津地域に住所がある
+  - 介護保険の給付を受けられる人
+  - 一般の交通機関の利用が困難
+  where: 高齢福祉課
+  url: https://www.city.ogaki.lg.jp/cmsfiles/contents/0000062/62628/R0803koreisyafukushi.pdf
+  confidence: high
+  amount: 1kmあたり30円の自己負担。月に往復15回まで。
+not_found:
+- hochoki
+- jutaku
+- yutai

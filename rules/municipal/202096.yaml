@@ -1,0 +1,185 @@
+city: '202096'
+name: 伊那市
+site: www.inacity.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: あじさい弁当（配食サービス）の助成
+  name_on_page: あじさい弁当をお届けします（配食サービス）
+  summary: 食事の用意が難しい高齢者に、昼食の弁当を届けて費用を一部助成し、配達時に安否も確認する。
+  who: {}
+  at_application:
+  - 高齢者のみの世帯の高齢者など（障害者との世帯を含む）
+  - 介護保険料を滞納していない
+  - 食事の確保が難しい（車がない、近所に店がない等）
+  - 家族の支援が得られない、または家族の負担が大きい
+  - 身体・生活状況の審査で必要と認められる
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/iryo_kenko_fukushi/josei_koreisha/zaitakuseikatsu/azisaibento.html
+  confidence: high
+  amount: 弁当 1 食につき 200 円を補助（週 5 日まで、1 日 1 食）
+- category: ribiyo
+  name: 訪問理容・美容サービス利用料の助成
+  name_on_page: 訪問理容、美容サービス利用料の助成
+  summary: 理美容院に行けない在宅の方が、訪問か送迎で理美容を受ける費用の一部を助成する応援券をもらえる。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきりの高齢者、または下肢・体幹・移動機能障害 2 級以上の身体障害者
+  - 理容・美容店に出向くことが困難
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/kaigo_hojo_enjo/houmonriyoubiyou.html
+  confidence: high
+  amount: 年 8,000 円分（月割り）
+- category: kaigo-yohin
+  name: 紙おむつ等購入券の交付
+  name_on_page: 紙おむつ等購入券の交付
+  summary: 在宅の要介護者に、紙おむつ・尿取りパッド・とろみ剤を買える 1,000 円の購入券を交付する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4・5で市民税非課税世帯、または
+  - 要介護2以上か認定調査票の排尿・排便が介助・見守りで市民税非課税
+  - 初回は常時おむつ使用の証明をケアマネジャーから受ける
+  - 毎年申請が必要
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/kaigo_hojo_enjo/kamiomutukounyu.html
+  confidence: high
+  amount: 1 枚 1,000 円の券。年の上限は要介護4・5で 72,000 円、その他は 24,000 円
+- category: gaishutsu
+  name: タクシー利用助成（応援券）
+  name_on_page: タクシー利用助成
+  summary: 通院などでタクシーが要る高齢者に、タクシー料金に使える応援券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 交付年度の末日までに 65 歳になる人を含む
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/kaigo_hojo_enjo/hukusitaxi.html
+  confidence: high
+  amount: 年 12,000 円分（月割り）。条件により追加交付あり
+- category: gaishutsu
+  name: 福祉タクシー利用助成（応援券）
+  name_on_page: 福祉タクシー利用助成
+  summary: 車椅子などでないと外出できない方に、福祉タクシー等の料金に使える応援券を交付する。
+  who: {}
+  at_application:
+  - 車椅子かストレッチャーが必要で外出が困難
+  - 要介護2以上、または下肢・体幹・移動機能障害 2 級以上の手帳
+  - 対象世帯全員の合計所得が 500 万円未満
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/kaigo_hojo_enjo/hukusitaxi.html
+  confidence: high
+  amount: 年 24,000 円分（月割り）。条件により追加交付あり
+- category: sonota
+  name: 高齢者等暮らしいきいき応援券
+  name_on_page: 高齢者等暮らしいきいき応援券の交付
+  summary: 75歳以上の在宅の方に、入浴・バス・タクシー・紙おむつ・寝具洗濯などに使える券を郵送で交付する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 4 月 1 日時点で市内に住所がある
+  - 利用できるのは原則本人のみ
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/koreisha_hojo_enjo/ikiikikenkouken.html
+  confidence: high
+  amount: 市民税課税世帯は年 2,400 円分、非課税世帯は年 7,200 円分
+- category: iro
+  name: 高齢者介護慰労金
+  name_on_page: 高齢者介護慰労金の支給
+  summary: 要介護3〜5の方を在宅で介護する家族などに、介護度に応じた慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある要介護者を介護する介護者が申請
+  - 15 日以上の入院・施設入所の月は支給なし
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/kaigo_hojo_enjo/kaigoiroukin.html
+  confidence: high
+  amount: 月額 要介護3 は 3,000 円、要介護4 は 4,200 円、要介護5 は 6,000 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置を希望する方へ
+  summary: ひとり暮らしなどの高齢者宅に、登録先と消防署へ通報できる緊急通報装置を設置・貸与する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 設置には固定電話の回線が必要
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/koreisha_hojo_enjo/tsuchisochisecchi.html
+  confidence: high
+  amount: 非課税世帯は月 418 円。課税世帯は設置費 6,050 円と月 418 円
+- category: jutaku
+  name: 高齢者の住宅改修補助
+  name_on_page: 高齢者の住宅改修に関する補助
+  summary: 居室・便所・浴室などの住宅改修費に市が補助する。介護保険で改修できる場合は介護保険が優先。
+  who: {}
+  at_application:
+  - 65歳以上の要介護（支援）認定者か身体障害者1〜3級の人、またはその生計同一者
+  - 前年の世帯全員の所得税額の合計が 8 万円以下
+  - 工事前の申請が必要。申請期間はおおむね 6 月〜翌年 1 月
+  where: 福祉相談課（地域包括支援センター）。ケアマネジャーにも相談できる
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/koreisha_hojo_enjo/koreisha_kaishu.html
+  confidence: high
+  amount: 対象経費の 10 分の 9 以内、生涯で 63 万円まで
+- category: koken
+  name: 成年後見制度利用支援（後見人等の報酬助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見人等への報酬を負担するのが難しい人に、報酬の全部または一部を市が助成する。
+  who: {}
+  at_application:
+  - 生活保護の被保護者、またはそれに準ずると認められる人
+  - 詳しい条件は要綱を参照
+  where: 福祉相談課 相談支援係
+  url: https://www.inacity.jp/kurashi/sodan/sodan_koreisha/seinenkokenseido.html
+  confidence: high
+  amount: 月額上限は施設入所の場合 18,000 円、その他の場合 28,000 円
+  more_urls:
+  - https://www.inacity.jp/kurashi/sodan/sodan_koreisha/seinenkokenseido.files/riyoushien2.pdf
+- category: sonota
+  name: おたすけ券（軽作業の費用助成）
+  name_on_page: おたすけ券（軽作業助成券）の交付
+  summary: ひとり暮らしなどの高齢者に、ごみ出し・除雪・小修理などの軽作業の費用を助成する券を交付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市民税非課税か均等割のみ課税の世帯（ごみ出しは所得制限なし）
+  where: 社会福祉課 高齢者サービス係（高遠・長谷は各総合支所 市民福祉課）
+  url: https://www.inacity.jp/kurashi/hojo_enjo/hojo_koreisha/koreisha_hojo_enjo/otasuke_ken.html
+  confidence: high
+  amount: 個人負担 1 作業 1 時間 100 円で、100 円券は年 24 枚（50 円券は年 48 枚）まで
+not_found:
+- haikai
+- hochoki
+- shingu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

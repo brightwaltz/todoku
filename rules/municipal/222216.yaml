@@ -1,0 +1,226 @@
+city: '222216'
+name: 湖西市
+site: www.city.kosai.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成（引換券）
+  name_on_page: 高齢者等の紙おむつ購入費助成
+  summary: 寝たきり等の高齢者に、市内指定店で使える紙おむつ引換券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時紙おむつを使い、使い始めて3か月たっている
+  - 申請後に市の担当者が訪問して状況を確認する
+  where: 高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/1208.html
+  confidence: high
+  amount: 月 2,000 円分の引換券を 6 か月分まとめて郵送
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: haishoku
+  name: 高齢者への配食と安否確認
+  name_on_page: 高齢者等食事サービス（「食」の自立支援）
+  summary: 食事の用意が難しい高齢者宅へ昼食の弁当を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の調達が困難
+  - 市の担当者が訪問して状況を確認して決定
+  where: 高齢者福祉課（申請書に地域包括支援センター等の意見欄あり）
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/1208.html
+  confidence: high
+  amount: 1 食 400 円の自己負担。申込日の昼食を最大 3 日間届ける
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: kinkyu-tsuho
+  name: ひとりぐらし高齢者の緊急通報装置の設置
+  name_on_page: ひとりぐらし高齢者緊急通報装置設置事業
+  summary: ひとりぐらしの高齢者の自宅電話に緊急通報装置を付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 安否確認が必要な人
+  - 固定電話の回線が必要
+  - 市の担当者が訪問して状況を確認して決定
+  where: 高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/1208.html
+  confidence: high
+  amount: 月 500 円（1 年分をまとめて納付）。電話料金は自己負担
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 寝具の衛生管理が難しい高齢者の布団・毛布を預かり、洗濯・乾燥・消毒する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 寝具の衛生管理が困難
+  - 3 点以内、年 4 回まで（6・9・12・3 月）
+  - 市の担当者が訪問して状況を確認して決定
+  where: 高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/1208.html
+  confidence: high
+  amount: 毛布 1 枚 300 円、掛・敷布団 1 枚 1,000 円（自己負担）
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護 4・5 の高齢者を介護サービスなしで介護する同居家族に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去 1 年間、介護保険サービスを使っていない
+  - 同居の家族が現在も介護している
+  where: 高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/1208.html
+  confidence: high
+  amount: 10 万円（決定日から 1 か月以内に支給）
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 軽度・中等度の難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 身体障害者手帳（聴覚）の対象でない
+  - 両耳の聴力が 30dB 以上 70dB 未満で、耳鼻科医が必要と認める
+  - 滞納がない
+  - 申請前に購入したものは対象外
+  where: 高齢者福祉課、湖西市老人福祉センター
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/14608.html
+  confidence: high
+  amount: 費用の 2 分の 1 以内、上限 3 万円、1 人 1 回限り
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: gaishutsu
+  name: 高齢者バス・タクシー利用料金の助成
+  name_on_page: 高齢者バス・タクシー助成事業
+  summary: 75 歳以上の在宅の人に、バス・タクシーで使える乗車券を毎年度配る。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 令和 8 年度分は対象者へ乗車券を郵送済み
+  where: 高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/13080.html
+  confidence: high
+  amount: 年度ごとに 2,000 円分（100 円券 20 枚）
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: haikai
+  name: 認知症高齢者等の見守りオレンジネットワーク（事前登録）
+  name_on_page: 湖西市認知症高齢者等見守りオレンジネットワーク
+  summary: 行方不明のおそれがある人を事前登録し、持ち物にオレンジシールを貼って捜索に備える。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症等により道に迷うおそれがある高齢者等
+  - 診断の有無は問わない
+  - 顔写真と全身写真が必要
+  where: 地域包括支援センター、高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/8180.html
+  confidence: high
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族以外の後見人等への報酬を、困難な人に対して全部または一部助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、親族でない後見人等が選任されている
+  - 生活扶助を受けている、市民税非課税、または市長が認める
+  - 申請は後見人等が行う
+  where: 高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/9557.html
+  confidence: high
+  amount: 月額上限は在宅 28,000 円、施設入所 18,000 円
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/koukennyoukou.pdf
+- category: sonota
+  name: 生活管理指導短期宿泊（ショートステイ）
+  name_on_page: ショートステイ（生活管理指導短期宿泊）
+  summary: 介護認定のない虚弱な高齢者が、一時的に施設に短期宿泊して生活指導を受ける。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の認定を受けていない虚弱な人
+  - 日常生活を一人で営むのに支障がある
+  - 診断書（所定の用紙）が必要
+  - 6か月につき7日以内
+  where: 高齢者福祉課
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/1208.html
+  confidence: high
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+- category: sonota
+  name: ごみの訪問回収（ふれあい収集）
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しい人の玄関先からごみを回収し、安否も確認する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 自分でごみを出せず、親族や身近な人の支援も受けられない
+  - 可燃・不燃ごみと資源物のみ回収
+  where: 高齢者福祉課（高齢者の申込み）、廃棄物対策課（収集）
+  url: https://www.city.kosai.shizuoka.jp/soshikiichiran/koureisha/4/1208.html
+  confidence: high
+  more_urls:
+  - https://www.city.kosai.shizuoka.jp/material/files/group/18/zaitakuhukusi8.pdf
+not_found:
+- ribiyo
+- jutaku
+- nichijo-yogu
+- mimamori

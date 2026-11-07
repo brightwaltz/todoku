@@ -1,0 +1,169 @@
+city: '172073'
+name: 羽咋市
+site: www.city.hakui.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（昼食の配達）
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しい高齢者に、安否確認を兼ねて昼食を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事を作ることが困難であること
+  - 市の判断基準に基づき利用が決まる
+  where: 地域包括ケア推進室（要介護・要支援でケアマネジャーがいる方はケアマネジャー）
+  url: https://www.city.hakui.lg.jp/soshiki/shiminfukushibu/chiikihoukatsu/2/3_1/2434.html
+  confidence: high
+  amount: 1食 500円（生活保護の方は 300円）を事業所に直接支払う
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 羽咋市緊急通報機器設置事業
+  summary: 24時間対応の通報装置・人感センサー・月1回の安否電話を設置する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ・日中高齢者のみの世帯
+  - または身体障害者1・2級のみの世帯
+  - 別に固定電話回線が必要
+  where: 地域包括ケア推進室 介護高齢者係
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/4/4061.html
+  confidence: high
+  amount: 利用料は月額 800円（固定電話の回線料は別）
+- category: kaigo-yohin
+  name: 介護用品購入クーポン券
+  name_on_page: 羽咋市介護用品購入クーポン券
+  summary: 紙おむつなどの介護用品に使えるクーポン券を毎月分交付する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 入院・入所中の方は対象外
+  where: 市役所1階 8番窓口（地域包括ケア推進室 介護高齢者係）
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/4/4097.html
+  confidence: high
+  amount: 要介護2は月 3,000円分（課税世帯は 2,000円分）、要介護3〜5は月 5,000円分（課税世帯は 3,000円分）。未就学児と同一世帯なら商品券5万円分も加算
+- category: gaishutsu
+  name: 高齢者福祉タクシー助成券
+  name_on_page: 高齢者福祉タクシー利用料金助成事業
+  summary: 外出が難しい高齢者に、タクシー助成券 40 枚を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護予防の総合事業対象者、または介護認定を受けている方
+  - 身体障害者福祉タクシーの利用者は対象外
+  - 介護保険被保険者証が必要
+  where: 市役所1階 8番窓口
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/4/4204.html
+  confidence: high
+  amount: 20,000円分（500円券×40枚）。一度に複数枚使える
+- category: gaishutsu
+  name: 運転免許自主返納の支援（バス無料券・タクシー券等）
+  name_on_page: 高齢ドライバーの皆さんへ(高齢者運転免許証自主返納支援事業)
+  summary: 免許を自主返納した高齢者に、るんるんバス無料券と1万円分の券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、免許の有効期間内に自主返納（全部取消）した人
+  - 返納から6か月以内に申請
+  - 運転免許の取消通知書が必要
+  where: 生活安全課
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/3/9059.html
+  confidence: high
+  amount: るんるんバス2年間無料乗車券、およびタクシー共通クーポンか商工会の地域商品券のどちらか1万円分
+- category: sonota
+  name: 高齢者の温泉施設入浴券
+  name_on_page: 羽咋市高齢者温泉施設利用料金助成事業
+  summary: 在宅の高齢者に、ユーフォリア千里浜の平日入浴無料券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 羽咋市民であること
+  - 土日祝日と毎週水曜の休館日は使えない
+  where: 市役所1階 7番窓口
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/4/4207.html
+  confidence: high
+  amount: 1人年間10枚（利用期限は3月31日）
+- category: jutaku
+  name: 在宅支援型住宅リフォーム助成
+  name_on_page: 在宅支援型住宅リフォーム
+  summary: 手すり設置や段差解消などの住宅改修費を、市が一部助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護・要支援認定者のいる世帯
+  - または肢体不自由1〜3級・視覚1〜2級の方、生活保護の介助扶助の世帯
+  - 前年度住民税課税世帯は対象外
+  - 工事着手前の申請が必要、新築・建替えは対象外
+  where: 地域包括ケア推進室 介護高齢者係
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/4/4210.html
+  confidence: high
+  amount: 助成率は生活保護世帯 100%、住民税非課税世帯 90%、上限 100万円（介護保険住宅改修等の20万円を含む）
+- category: ribiyo
+  name: 訪問理髪クーポン（理髪・寝具乾燥消毒の共通クーポン）
+  name_on_page: 訪問理髪・寝具乾燥消毒サービス
+  summary: 要介護者を介護する家族に、訪問理髪にも使える共通クーポンを交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者を自宅で介護している家族が申請する
+  - 入院・入所や要介護2以下になったら未使用分は返す
+  where: 地域包括ケア推進室 介護高齢者係
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/4/5095.html
+  confidence: high
+  amount: 1枚 1,000円、年間10枚（寝具乾燥消毒と共通）
+- category: shingu
+  name: 寝具乾燥消毒クーポン（理髪・寝具乾燥消毒の共通クーポン）
+  name_on_page: 訪問理髪・寝具乾燥消毒サービス
+  summary: 要介護者を介護する家族に、寝具の丸洗い・乾燥・消毒に使えるクーポンを交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者を自宅で介護している家族が申請する
+  - 寝具は取扱店に自分で持ち込む（集配なし）
+  where: 地域包括ケア推進室 介護高齢者係
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/4/5095.html
+  confidence: high
+  amount: 1枚 1,000円、年間10枚（訪問理髪と共通）
+- category: haikai
+  name: 見守りSOSネットワーク・あんしん見守りシール
+  name_on_page: 羽咋市高齢者見守りSOSネットワーク事業・羽咋市あんしん見守りシール交付事業
+  summary: 行方不明の心配がある方を事前登録し、QRコード付き見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - SOSネットワークへの事前登録が必要
+  - 発見通知を受けるメールアドレスが必要
+  where: 地域包括ケア推進室（8番窓口）。郵送・メールでも受付
+  url: https://www.city.hakui.lg.jp/kenkou_fukushi_kosodate/fukushi_kaigo/6/11448.html
+  confidence: high
+  amount: 登録後、シール 30枚を無料交付（追加分は自己負担）
+not_found:
+- iro
+- hochoki
+- koken
+- nichijo-yogu
+- mimamori
+- yutai

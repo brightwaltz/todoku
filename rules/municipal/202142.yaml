@@ -1,0 +1,199 @@
+city: '202142'
+name: 茅野市
+site: www.city.chino.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の購入費助成
+  name_on_page: 介護用品支給事業
+  summary: 要介護3〜5の方を在宅で介護する非課税世帯に、紙おむつ等の費用を一部助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3〜5の方を在宅で介護している市民税非課税世帯
+  where: お住まいの地区の保健福祉サービスセンター
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 1月あたり6,300円まで（紙おむつ・尿取りパッド・使い捨て手袋・清拭剤・ドライシャンプー）
+  more_urls:
+  - https://www.city.chino.lg.jp/uploaded/attachment/40850.pdf
+- category: haishoku
+  name: 高齢者への配食と安否確認
+  name_on_page: 配食サービス事業
+  summary: ひとり暮らしや高齢者夫婦のみの世帯に昼か夕の弁当を届け、配達時に安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らし高齢者・高齢者夫婦のみ世帯等の基準を満たす方
+  where: 茅野市社会福祉協議会（本部、または各保健福祉サービスセンター内）
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 自己負担あり（金額は頁に無し）
+  more_urls:
+  - https://www.city.chino.lg.jp/uploaded/attachment/40850.pdf
+- category: haikai
+  name: 徘徊時の居場所検索端末の貸与
+  name_on_page: 徘徊高齢者家族支援サービス事業
+  summary: 認知症で徘徊のある高齢者に、行方不明時に居場所を探せる端末を貸す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症状により徘徊行動がある高齢者（介護者が申込）
+  where: お住まいの地区の保健福祉サービスセンター
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 利用料などは自己負担（金額は頁に無し）
+  more_urls:
+  - https://www.city.chino.lg.jp/uploaded/attachment/40850.pdf
+- category: iro
+  name: 在宅介護者への介護福祉金
+  name_on_page: 介護福祉金支給事業
+  summary: 要介護3〜5の方を在宅で介護する人に、慰労として介護福祉金を贈る。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 基準日から1年以内に在宅で180日以上介護している
+  where: お住まいの地区の保健福祉サービスセンター
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  more_urls:
+  - https://www.city.chino.lg.jp/uploaded/attachment/40850.pdf
+- category: koken
+  name: 成年後見の申立てと報酬費用の助成
+  name_on_page: 成年後見支援事業
+  summary: 本人が審判請求できない場合に市が申立てを行い、後見人等の報酬費用も助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分で、審判の請求を自分で行うことが困難
+  where: お住まいの地区の保健福祉サービスセンター（地域包括支援センター）
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  more_urls:
+  - https://www.city.chino.lg.jp/uploaded/attachment/40850.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 緊急度の高い不安を抱えるひとり暮らし等の高齢者に、電話に接続する通報装置を貸す。
+  who: {}
+  at_application:
+  - 疾病などで日常的に緊急度の高い不安があるひとり暮らし等の高齢者
+  where: お住まいの地区の保健福祉サービスセンター
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 通話料などは自己負担
+- category: ribiyo
+  name: 訪問理美容の料金助成
+  name_on_page: 訪問理美容助成事業
+  summary: 在宅の寝たきり高齢者等が訪問理美容を使うとき、料金の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の寝たきり高齢者等
+  - 市の対応店舗を利用する
+  where: お住まいの地区の保健福祉サービスセンター
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 1回1,500円、年4回まで
+- category: gaishutsu
+  name: 移送サービス（外出支援）
+  name_on_page: 外出支援事業
+  summary: 公共交通機関の利用が難しい方の移送を支援する（運行日時・区域は限定）。
+  who: {}
+  at_application:
+  - 身体の状況などで公共交通機関の利用が困難な方
+  where: 茅野市社会福祉協議会（本部、または各保健福祉サービスセンター内）
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 運行距離に応じた自己負担あり（金額は頁に無し）
+- category: gaishutsu
+  name: 路線バス運賃割引の利用者証
+  name_on_page: 公共交通（路線バス）利用者証
+  summary: 対象の路線バスで運賃が1回上限300円になる割引証を交付する。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上、または障害者手帳を持つ方
+  - 別荘所有者の親族で65歳以上の方も対象
+  where: 市役所1階 社会福祉課 高齢福祉係（11番窓口）
+  url: https://www.city.chino.lg.jp/soshiki/chiikifukushi/fukushibus.html
+  confidence: high
+  amount: 対象路線（メルヘン街道バス、穴山・原村線の市内区間）で1回上限300円
+- category: gaishutsu
+  name: 観光路線バス沿線の高齢者向け割引チケット
+  name_on_page: 観光路線バス区域にお住まいの高齢者等に路線バスの割引チケットを提供します
+  summary: 白樺湖・車山高原線等の沿線に住む65歳以上に、最寄りから茅野駅まで上限300円のチケットを出す。
+  who:
+    age_min: 65
+  at_application:
+  - 公共交通（路線バス）利用者証を持っている
+  - 対象路線の区域に住む市民または別荘所有者とその親族
+  where: 市役所1階 社会福祉課 高齢福祉係（11番窓口）
+  url: https://www.city.chino.lg.jp/soshiki/chiikifukushi/bus-tickets.html
+  confidence: high
+  amount: 最寄りバス停から茅野駅まで上限300円（記名式・有効期限あり）
+  more_urls:
+  - https://www.city.chino.lg.jp/soshiki/chiikifukushi/fukushibus.html
+- category: sonota
+  name: 介護者の急病時の緊急宿泊費の助成
+  name_on_page: 在宅介護者緊急時支援事業
+  summary: 介護者が急病等で介護できないとき、通所事業所への緊急宿泊の費用を一部助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅で介護する人が急病等の特別な事由で介護できない
+  - 日頃利用中の指定通所事業所に宿泊する
+  where: お住まいの地区の保健福祉サービスセンター
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 1泊あたりの経費の8割（4,000円まで）、1月4泊まで
+- category: sonota
+  name: 介護者への温泉入浴券・マッサージ助成
+  name_on_page: 介護者入浴・マッサージ等助成事業
+  summary: 要介護3〜5の方を介護する主な介護者に、温泉入浴券とマッサージ料の助成を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりや認知症の高齢者を在宅で介護している主たる介護者
+  where: お住まいの地区の保健福祉サービスセンター
+  url: https://www.city.chino.lg.jp/soshiki/hokenfukushi/fureaihoken-2021.html
+  confidence: high
+  amount: 入浴券は年12回分、マッサージ券は年6回分まで
+  more_urls:
+  - https://www.city.chino.lg.jp/uploaded/attachment/40850.pdf
+not_found:
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu
+- mimamori
+- chusha
+- yutai

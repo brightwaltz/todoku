@@ -1,0 +1,218 @@
+city: '192023'
+name: 富士吉田市
+site: www.city.fujiyoshida.yamanashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成
+  name_on_page: 紙おむつ購入費助成事業
+  summary: 在宅で紙おむつを使う重度の要介護の非課税の方に、年4回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市民税が非課税
+  - 要介護3は認定調査票の排尿か排便が一部介助以上
+  - 施設入所中、月15日超のショートステイ利用は対象外
+  where: 健康長寿課（申請時期は広報でお知らせ）
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+  confidence: high
+- category: haishoku
+  name: 見守り配食サービス
+  name_on_page: 見守り配食サービス
+  summary: 調理が難しい方へ、安否確認を兼ねて弁当を届ける。
+  who: {}
+  at_application:
+  - 自分で調理できず安否確認が必要
+  - 65歳以上のひとり暮らし
+  - または65歳以上で同居家族が疾病等で援助できない
+  - または身障手帳1〜3級でひとり暮らし等
+  - その他の条件あり、要相談
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+  confidence: high
+  amount: 週3食まで市が補助。自己負担は1食350円（おかずのみ270円）
+  more_urls:
+  - https://www.city.fujiyoshida.yamanashi.jp/page/1757.html
+- category: ribiyo
+  name: 訪問理美容の助成
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい方の自宅での散髪代を、利用券で一部助成する。
+  who: {}
+  at_application:
+  - 65歳以上で心身の障害・傷病等により理美容室に行けない
+  - または40〜64歳で要支援・要介護認定を受け、同様に行けない
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+  confidence: high
+  amount: 利用券1枚2,000円分、年4枚まで（申請時期で枚数が変わる）
+- category: shingu
+  name: 寝具の丸洗い・乾燥消毒
+  name_on_page: 寝具類の洗濯・乾燥サービス
+  summary: 布団や毛布の丸洗い・乾燥消毒を、少ない負担で受けられる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしか高齢者世帯で、足腰が弱く日干しできない
+  - または65歳以上か身障者で、寝たきり等で衛生管理が必要
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+  confidence: high
+  amount: 1回3枚まで、年3回まで。負担は丸洗い100〜300円、乾燥消毒30〜100円
+- category: jutaku
+  name: 転倒予防の住環境整備・歩行補助具の助成
+  name_on_page: 高齢者転倒予防対策費助成金事業
+  summary: 手すりの取付けや杖・シルバーカーの購入費の半額を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護・要支援の認定を受けていない
+  - 身体機能の低下で転倒の危険がある
+  - 整備や購入が必要と認められる
+  - 世帯全員に市税等の滞納がない
+  - 一人1回限り
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+  confidence: high
+  amount: 費用の2分の1、上限10,000円
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 耳鼻科医が必要と認めた高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、実施年度に65歳以上になる
+  - 聴覚障害の身体障害者手帳の対象でない
+  - 耳鼻咽喉科医が補聴器の装用を認めた
+  - 購入前に申請が必要
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/page/11980.html
+  confidence: high
+  amount: 購入費の2分の1。上限は5万円・3万2千円・3万円（所得段階と販売店で決まる）
+  more_urls:
+  - https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ふれあいペンダント）
+  name_on_page: ふれあいペンダント
+  summary: ボタン一つで通報でき、月2回の安否確認電話も受けられる機器を無料で貸す。
+  who: {}
+  at_application:
+  - 緊急通報や家族の支援が受けられず見守りが必要、携帯電話を持たない
+  - 65歳以上のひとり暮らしか高齢者世帯
+  - または18〜64歳でひとり暮らしの重度身体障害者
+  - 緊急連絡の協力員を最大3名登録
+  where: 健康長寿課 高齢者担当、地域包括支援センター
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+  confidence: high
+  amount: 機器の貸与・設置は無料。通話料は自己負担
+  more_urls:
+  - https://www.city.fujiyoshida.yamanashi.jp/page/1757.html
+- category: mimamori
+  name: 月2回の電話での安否確認
+  name_on_page: ふれあいコール
+  summary: ブランチ職員が月2回電話で様子を確認し、必要時は訪問する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 居宅生活に不安があり安否確認が必要と認められる
+  - 介護保険でケアマネが決まった方は対象外
+  where: 地域包括支援センターブランチ
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7940.pdf
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.fujiyoshida.yamanashi.jp/page/1757.html
+- category: gaishutsu
+  name: 高齢者のタクシー利用料の助成
+  name_on_page: 高齢者等外出支援事業
+  summary: タクシー利用券を毎月6枚交付し、初乗り運賃を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 75歳以上で運転免許証を持たない
+  - または74歳以下でバス・電車が使えず、要支援・要介護認定を受けている
+  - または65歳以上で基本チェックリストの事業対象者
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7941.pdf
+  confidence: high
+  amount: 利用券を月6枚、初乗り運賃分を助成
+- category: gaishutsu
+  name: 市内循環バスの回数券の交付
+  name_on_page: 富士吉田市内循環バス特別乗車回数券交付事業
+  summary: 70歳以上の市民に、市内循環バスの回数券100枚を渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住民登録がある
+  - 本人確認書類が必要（オンライン申請可）
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7941.pdf
+  confidence: high
+  amount: 回数券100枚（有効期限なし）
+- category: haikai
+  name: 徘徊高齢者の見守りネットワーク
+  name_on_page: 高齢者見守りネットワーク
+  summary: 特徴を事前登録し、行方不明時に関係機関が連携して捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊する、または徘徊のおそれのある高齢者
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7944.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 見守りGPS端末の購入費助成
+  name_on_page: 高齢者見守りGPS機器購入費一部助成
+  summary: 徘徊のある方のGPS端末の購入や契約の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 認知症による徘徊がある65歳以上の方
+  - または40〜64歳で介護保険の対象の病気による認知症の方を介護している方
+  where: 健康長寿課 高齢者担当
+  url: https://www.city.fujiyoshida.yamanashi.jp/uploaded/attachment/7944.pdf
+  confidence: high
+  amount: 上限15,000円
+- category: sonota
+  name: 介護者の鍼灸・マッサージ施術費の助成券
+  name_on_page: 介護者疲労回復事業
+  summary: 在宅で重度の方を介護する家族に、施術費の助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3〜5の方を在宅で介護している（要介護度は介護される側）
+  - 介護者・要介護者とも市内在住
+  - 要介護者1人につき介護者1人まで
+  where: 地域包括支援センター（健康長寿課 高齢者支援担当）
+  url: https://www.city.fujiyoshida.yamanashi.jp/page/1774.html
+  confidence: high
+  amount: 1,000円の助成券を6枚交付
+not_found:
+- iro
+- koken
+- nichijo-yogu
+- chusha
+- yutai

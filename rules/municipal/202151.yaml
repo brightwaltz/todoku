@@ -1,0 +1,213 @@
+city: '202151'
+name: 塩尻市
+site: www.city.shiojiri.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品券の支給（おむつ等）
+  name_on_page: 介護用品券の支給
+  summary: 重度の要介護者を在宅で介護する非課税世帯に、おむつ等を買える券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の方を在宅で介護している家族が対象
+  where: 介護保険課介護相談係（保健福祉センター1階）
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 2,500円の券を月3枚（月7,500円分）
+- category: haishoku
+  name: 配食見守りサービス（楢川地区以外）
+  name_on_page: 配食見守りサービス
+  summary: 栄養改善が必要な高齢者世帯に、安否確認を兼ねて弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の高齢者世帯で栄養改善が必要な方
+  - 楢川地区以外にお住まいの方（楢川は別の仕組み）
+  where: 介護保険課介護相談係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 市の補助は1食200円まで。超えた分は自己負担
+- category: haishoku
+  name: 楢川地区の配食見守りサービス
+  name_on_page: 楢川地区配食見守りサービス
+  summary: 楢川地区で週2回、昼に弁当を届け、安否を確認する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 楢川地区在住で栄養改善が必要な65歳以上の世帯
+  - 課税状況は問わない
+  where: 介護保険課介護相談係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 1食600円（全額自己負担）
+- category: haikai
+  name: はいかい探索機器の貸与
+  name_on_page: はいかい探索機器の貸与
+  summary: 徘徊のある方の介護者に、携帯型・靴型の探索機器を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 在宅で徘徊のあるおおむね65歳以上の方を介護する、市内在住の介護者
+  where: 介護保険課介護相談係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 利用料の10分の3が自己負担。初期整備費は市の負担上限1万円
+- category: iro
+  name: 家庭介護者慰労金
+  name_on_page: 家庭介護者慰労金の支給
+  summary: 重度の要介護者を在宅で長く介護した家族に慰労金を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市内在住で、要介護3〜5の方または重度心身障がい者と同居して介護
+  - 対象期間中に180日以上在宅で介護（死亡時は90日以上）
+  where: 介護保険課介護相談係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/45975.html
+  confidence: high
+  amount: 要介護3は年4万円、要介護4・5は年8万円（要介護者1人につき）
+  more_urls:
+  - https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置のレンタル料等の助成
+  name_on_page: 緊急通報体制整備事業
+  summary: 委託事業者の緊急通報装置を借りる費用の半額を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のひとり暮らし、または要介護高齢者がいる65歳以上の世帯の世帯員
+  where: 地域共生推進課高齢支援係（保健福祉センター1階）
+  url: https://www.city.shiojiri.lg.jp/site/koureisyamimamori/47837.html
+  confidence: high
+  amount: 月額レンタル料の半額（上限2,000円）、設置・撤去費の半額（上限6,000円）
+  more_urls:
+  - https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+- category: jutaku
+  name: 高齢者にやさしい住宅改良促進事業
+  name_on_page: 高齢者にやさしい住宅改良促進事業
+  summary: 65歳以上の方の住宅改良費を助成する（介護保険の改修に準じた工事）。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 世帯全員の市民税所得割が非課税
+  - 要支援・要介護認定、身体障害者手帳1〜3級、または支援が必要と認められる方
+  - 着工前の手続きが必須（ケアマネか介護相談係へ相談）
+  where: 介護保険課介護相談係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 対象経費の1割が自己負担。補助限度額63万円
+- category: gaishutsu
+  name: タクシー利用料金助成券の支給
+  name_on_page: タクシー利用料金助成券の支給
+  summary: 車を持たない非課税の高齢者世帯に、通院・買い物用のタクシー助成券を渡す。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 自動車等の交通手段を持たない世帯
+  - 75歳以上のみの世帯、または70歳以上のみで要介護1以上の方がいる世帯
+  - 楢川地区は対象外（別の移送サービスを利用）
+  where: 地域共生推進課高齢支援係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 500円券を月2.5枚（年間最大30枚）
+- category: gaishutsu
+  name: 寝台タクシー利用料金の助成
+  name_on_page: 寝台タクシー利用料金の助成
+  summary: 在宅の重度要介護者の自宅と医療機関の送迎に使う寝台タクシー代を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 事前の利用者登録が必要
+  - 発着地のどちらかが自宅であること
+  - 楢川地区は別の移送サービスを利用（相談可）
+  where: 地域共生推進課高齢支援係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 片道料金の半額（上限8,000円）、年最大24回
+- category: ribiyo
+  name: 訪問理美容サービス助成
+  name_on_page: 訪問理美容サービス助成
+  summary: 外出が難しい在宅の重度要介護者の訪問理美容費を一部助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理美容院に出向くのが困難な方
+  - 2号被保険者（65歳未満）も対象
+  where: 介護保険課介護相談係
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 1回2,000円、年6回まで
+- category: sonota
+  name: あんしんセット（緊急時の情報シート・カード）
+  name_on_page: あんしんセット
+  summary: 緊急時の救助に役立つ、情報を書くシートとカードを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に居住している
+  where: 地域共生推進課または介護保険課
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+- category: sonota
+  name: やすらぎ支援員派遣事業
+  name_on_page: やすらぎ支援員派遣事業
+  summary: 認知症の方を介護する家族が外出・休息する間、支援員が見守りに来る。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で認知症状のある高齢者を介護している家族
+  where: 地域共生推進課または介護保険課
+  url: https://www.city.shiojiri.lg.jp/soshiki/27/2746.html
+  confidence: high
+  amount: 無料。原則週1回、1〜1.5時間程度
+not_found:
+- koken
+- shingu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

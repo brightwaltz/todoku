@@ -1,0 +1,14 @@
+city: '232254'
+name: 知立市
+site: www.city.chiryu.aichi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs: []
+not_found:
+- mimamori
+- chusha
+- yutai

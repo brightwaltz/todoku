@@ -1,0 +1,88 @@
+city: '212199'
+name: 郡上市
+site: www.city.gujo.gifu.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 要介護の在宅高齢者への介護タクシー等の交通費助成
+  name_on_page: 要介護在宅高齢者交通費助成
+  summary: 送迎が難しい要介護の方が市内の介護タクシー等を使うとき、料金の半額が助成される。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険料の所得段階が第1〜3段階
+  - 介護保険料の滞納がない
+  - 自動車税（軽自動車税含む）の減免を受けていない
+  - 市内に住所があり居住している
+  where: 担当ケアマネジャー経由、または高齢福祉課・各振興事務所
+  url: https://www.city.gujo.gifu.jp/life/detail/post-901.html
+  confidence: high
+  amount: 利用料金の半額、1か月4万円まで（有料道路・駐車場代は自己負担）
+  more_urls:
+  - https://www.city.gujo.gifu.jp/life/docs/70e0c3e328da9d20f294e5398cef6559671e2968.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム設置
+  summary: 通報装置・ペンダント・火災センサー（火災報知器）を貸与し、緊急時に消防署や市役所へつなぐ。
+  who: {}
+  at_application:
+  - 概ね65歳以上の虚弱なひとり暮らし高齢者等
+  - 歩行に不安がある、緊急時に電話をかけられないなど
+  - 日中ひとりの高齢者は要相談
+  where: 高齢福祉課、各振興事務所の高齢福祉担当（民生委員経由も可）
+  url: https://www.city.gujo.gifu.jp/life/detail/post-901.html
+  confidence: high
+  amount: 取付・撤去費は市が負担。通話料・電気代などは自己負担
+  more_urls:
+  - https://www.city.gujo.gifu.jp/life/docs/70e0c3e328da9d20f294e5398cef6559671e2968.pdf
+- category: haishoku
+  name: 配食と安否確認の費用助成
+  name_on_page: 配食見守りサービス（介護保険事業）
+  summary: 栄養バランスのよい食事の配達と訪問時の安否確認にかかる費用を、1食あたり助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上（概ね）の単身世帯または高齢者のみの世帯
+  - 要支援・要介護認定、または基本チェックリストで機能低下
+  - 自力での調理が難しく、家族の支援が十分でない
+  where: 担当ケアマネジャー、認定が無い方は高齢福祉課・各振興事務所
+  url: https://www.city.gujo.gifu.jp/life/detail/post-901.html
+  confidence: high
+  amount: 1食270円を助成（1日1食まで）
+  more_urls:
+  - https://www.city.gujo.gifu.jp/life/docs/70e0c3e328da9d20f294e5398cef6559671e2968.pdf
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 郡上市成年後見制度利用支援事業
+  summary: 判断能力が十分でなく費用の支払いが難しい方の、申立て費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 認知症等で判断能力が十分でない
+  - 市内に住所がある（または市が支援している方）
+  - 生活保護等の受給、または市長が費用負担困難と認めた
+  - 後見人等が選任されている
+  where: 高齢福祉課
+  url: https://www.city.gujo.gifu.jp/life/detail/post-1069.html
+  confidence: high
+  amount: 申立て費用（収入印紙・切手・診断書料・鑑定費）と、裁判所決定の範囲内の報酬
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

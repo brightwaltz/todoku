@@ -1,0 +1,136 @@
+city: '242152'
+name: 志摩市
+site: www.city.shima.mie.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 寝たきり等の人の送迎（外出支援）
+  name_on_page: 外出支援サービス事業
+  summary: 車いすやストレッチャーで乗れる特殊車両で、自宅から医療機関などへ送迎する。
+  who: {}
+  at_application:
+  - おおむね60歳以上
+  - 下肢が不自由で一般の交通機関が使えない（座位保持できない人）
+  - 家族等の付き添いが必要
+  - 定期的に利用する人
+  where: 地域福祉課（本庁1階6番窓口）または各支所
+  url: https://www.city.shima.mie.jp/kakuka/kenkofukushibu/chiikifukushika/fukushi/koureisha/1635221857240.html
+  confidence: high
+  amount: 利用料は5kmまで300円、以降1kmごとに100円加算
+- category: kinkyu-tsuho
+  name: 緊急通報サービス加入の設置費助成
+  name_on_page: 緊急通報体制整備事業
+  summary: 緊急通報サービスに加入する際の設置工事費などを市が助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - ひとり暮らし、またはそれに準ずる人
+  - NTTの電話回線がある
+  - 緊急時に通報する協力員を2人以上登録できる
+  where: 地域福祉課（本庁1階6番窓口）または各支所
+  url: https://www.city.shima.mie.jp/kakuka/kenkofukushibu/chiikifukushika/fukushi/koureisha/1635301985503.html
+  confidence: high
+  amount: 個人負担は月額380円＋消費税の基本料金と維持管理費
+- category: haishoku
+  name: 見守り付き夕食の配食
+  name_on_page: 配食サービス事業
+  summary: 見守りを兼ね、週3回まで夕食を手渡しで届ける。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住んでいる
+  - 栄養改善が必要な人
+  - 申請時に担当者との面談がある
+  where: 地域福祉課（本庁1階6番窓口）または各支所
+  url: https://www.city.shima.mie.jp/kakuka/kenkofukushibu/chiikifukushika/fukushi/koureisha/1635237113987.html
+  confidence: high
+  amount: 1食470円～500円の自己負担。配食は月・水・金の最大週3回
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の設置費助成
+  name_on_page: 高齢者世帯防火対策事業
+  summary: 高齢者世帯が火災予防機器を設置する費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者のみの世帯、またはそれに準ずる世帯
+  - 機器の購入前に申請し、決定通知後に購入する
+  where: 地域福祉課（本庁1階6番窓口）または各支所
+  url: https://www.city.shima.mie.jp/kakuka/kenkofukushibu/chiikifukushika/fukushi/koureisha/1635318239438.html
+  confidence: high
+  amount: 設置費の3分の2。上限は警報器7,800円、自動消火器28,700円、電磁調理器24,000円（1台あたり）
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品券の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5の在宅の人に、紙おむつ等と交換できる券を毎月配る。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 志摩市に住民票がある
+  - 月14日以上在宅している
+  - 介護保険施設に入所している人は対象外
+  where: 地域福祉課（本庁1階6番窓口）または各支所
+  url: https://www.city.shima.mie.jp/kakuka/kenkofukushibu/chiikifukushika/fukushi/koureisha/1635292146288.html
+  confidence: high
+  amount: 毎月5,000円分の介護用品券
+- category: haikai
+  name: GPS（位置検索サービス）加入の初期費用助成
+  name_on_page: 徘徊高齢者家族支援事業
+  summary: 認知症で徘徊のある高齢者を在宅で介護する人に、GPS加入の初期費用を助成する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 申請するのは本人を在宅で介護する家族等
+  where: 地域福祉課（本庁1階6番窓口）または各支所
+  url: https://www.city.shima.mie.jp/kakuka/kenkofukushibu/chiikifukushika/fukushi/koureisha/1635378417366.html
+  confidence: high
+  amount: 初期費用を助成（金額は頁に無し）。月額1,200円＋消費税などは自己負担
+- category: koken
+  name: 成年後見制度の利用にかかる費用の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見制度を使うときの費用負担を軽くする事業。条件や金額は要綱に定める。
+  who: {}
+  at_application: []
+  where: 地域包括支援センター（介護・総合相談支援課内、大王支所内、浜島地域福祉センター内）
+  url: https://www.city.shima.mie.jp/kakuka/kenkofukushibu/kaigosogosoudanshienka/chiikihokatushiensenter/kenriyougo/seinenkouken/7953.html
+  confidence: low
+- category: sonota
+  name: 特殊詐欺対策の電話機等の購入補助
+  name_on_page: 特殊詐欺等被害防止機器購入補助金
+  summary: 自動録音機能付き電話機などの購入・設置費の半額を補助する。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上の人、またはその人と同じ世帯の人
+  - 市税を滞納していない
+  - 1世帯1台まで。令和8年4月1日以降の購入分が対象
+  where: 防災危機管理課（本庁舎5階）。郵送でも申請できる
+  url: https://www.city.shima.mie.jp/kakuka/bousakiki/bohankotsuanzen/bohan/7125.html
+  confidence: high
+  amount: 対象経費の2分の1、上限8,000円
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

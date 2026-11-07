@@ -1,0 +1,238 @@
+city: '202118'
+name: 中野市
+site: www.city.nakano.nagano.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 介護用品(紙おむつ、尿とりパット、使い捨て手袋、清拭剤、ドライシャンプー)の助成(所得制限あり)
+  summary: 要介護3以上で市民税非課税の人に、介護用品の給付券とごみ袋を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 入院中・施設入所中は対象外（グループホーム等は在宅扱い）
+  - 要介護3、または4・5で世帯課税の人は本人が非課税であること
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2022041500057/
+  confidence: high
+  amount: 給付券1枚6,000円まで。年12枚（要介護4・5で世帯非課税）か年6枚
+  more_urls:
+  - https://www.city.nakano.nagano.jp/docs/2022041500057/file_contents/zaitakusienn.pdf
+- category: ribiyo
+  name: 訪問理容・美容料の助成
+  name_on_page: 訪問理容美容料の助成(所得制限あり)
+  summary: 要介護3以上の人が自宅で訪問理美容を受けたときの料金の一部を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 本人が市民税非課税であること
+  - 施設での利用は対象外
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2022041500057/
+  confidence: high
+  amount: 助成券1枚1,000円まで、年6枚
+  more_urls:
+  - https://www.city.nakano.nagano.jp/docs/2022041500057/file_contents/zaitakusienn.pdf
+- category: gaishutsu
+  name: 要介護3以上のタクシー料金助成
+  name_on_page: タクシー料金の助成(所得制限あり)
+  summary: 要介護3以上の人が指定のタクシーを使うとき、料金の一部を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 本人が市民税非課税であること
+  - 自動車税・軽自動車税の減免を受けていない
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2022041500057/
+  confidence: high
+  amount: 1回あたり片道料金の2分の1か900円の少ない額。年24枚（世帯非課税の要介護4・5は年48枚）
+  more_urls:
+  - https://www.city.nakano.nagano.jp/docs/2022041500057/file_contents/zaitakusienn.pdf
+- category: gaishutsu
+  name: 高齢者のみ世帯の通院等タクシー助成
+  name_on_page: 通院等のタクシー料金の助成(所得制限あり)
+  summary: 70歳以上だけで暮らす市民税非課税の世帯に、タクシー料金の一部を助成する。
+  who:
+    age_min: 70
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある
+  - 入院中・施設入所中は対象外（2人以上の世帯は誰かが在宅ならよい）
+  - 自動車税・軽自動車税の減免を受けていない
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2022041500057/
+  confidence: high
+  amount: 1回あたり片道料金の2分の1か900円の少ない額。年48枚（1世帯1冊）
+  more_urls:
+  - https://www.city.nakano.nagano.jp/docs/2022041500057/file_contents/file_202610294132052_1.pdf
+- category: iro
+  name: 要介護者の在宅介護慰労金
+  name_on_page: 中野市要介護者在宅介護慰労金
+  summary: 要介護者と同居して介護している家族に、年額の慰労金を支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 要介護2は認知症高齢者の日常生活自立度が2以上
+  - 要介護2〜5の状態が1年以上続き、基準日(11/1)前1年間同居して常時介護
+  - 介護サービス未利用か、福祉用具・住宅改修のみ、または利用10日以内
+  - 入院は30日以内。重度心身障がい児(者)介護慰労金の対象者は除く
+  where: 高齢者支援課 介護保険係
+  url: https://www.city.nakano.nagano.jp/docs/2021102000017/
+  confidence: high
+  amount: 年額30,000円（要介護者1人につき）
+- category: haikai
+  name: 高齢者見守り・徘徊SOSネットワークと見守りシール
+  name_on_page: 高齢者見守り・徘徊SOSネットワーク事業について
+  summary: 行方不明が心配な認知症の人を登録し、捜索の配信とQRコード付きシールの交付を受けられる。
+  who:
+    age_min: 65
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内に住んでいる
+  - 家族が利用登録申請書を提出する
+  where: 高齢者支援課（介護予防包括支援係）
+  url: https://www.city.nakano.nagano.jp/docs/2014011601116/
+  confidence: high
+  amount: 登録・利用は無料。シール30枚（耐洗ラベル20枚・蓄光10枚）を交付
+  more_urls:
+  - https://www.city.nakano.nagano.jp/docs/2020070300051/
+- category: jutaku
+  name: 高齢者にやさしい住宅改良の補助
+  name_on_page: 高齢者にやさしい住宅改良促進事業補助金
+  summary: 要支援・要介護の人が居室・浴室・トイレ等を改良する費用の一部を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護認定された低所得者（所得制限あり、基準は頁に記載なし）
+  - 工事の前に申請する
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2025061100023/
+  confidence: high
+- category: nichijo-yogu
+  name: ひとり暮らし高齢者への日常生活用具の給付・貸与
+  name_on_page: 日常生活用具の給付・貸与(所得制限あり)
+  summary: ひとり暮らしの低所得の高齢者に、火災警報器などを給付・貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 低所得であること（所得制限あり。基準は頁に記載なし）
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2022041500057/
+  confidence: low
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者への緊急通報装置の貸与
+  name_on_page: 日常生活用具の給付・貸与(所得制限あり)
+  summary: ひとり暮らしの低所得の高齢者に、緊急通報装置などを給付・貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 低所得であること（所得制限あり。基準は頁に記載なし）
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2022041500057/
+  confidence: low
+- category: sonota
+  name: シルバーいきいき応援券の給付
+  name_on_page: シルバーいきいき応援券給付事業について
+  summary: 70歳以上の市民に、交通・温泉・理美容などで使える共通の助成券を交付する。
+  who: {}
+  at_application:
+  - 70歳以上（令和8年度末までに70歳になる人を含む）
+  - 利用は本人のみ。お釣りは出ない
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2025062600058/
+  confidence: high
+  amount: 7,000円分（100円券60枚・50円券20枚）。10月以降の転入は3,500円分
+  more_urls:
+  - https://www.city.nakano.nagano.jp/docs/2022041500057/
+- category: sonota
+  name: 高齢者安心らいふエアコン補助金
+  name_on_page: 高齢者安心らいふエアコン補助金
+  summary: エアコンのない高齢者世帯が新たに購入・設置する費用の一部を補助する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 所得制限あり（基準は頁に記載なし）
+  - 購入・設置の前に申請する
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2025030600035/
+  confidence: high
+  amount: 経費の2分の1以内。限度額は市内事業者7万円、市外事業者5万円
+- category: haishoku
+  name: 配食サービス（食事提供と安否確認）
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者のみの世帯に、食事の提供と安否確認を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 傷病などで自分で食事の調理が困難
+  - 年齢の下限や料金は頁に記載なし
+  where: 高齢者支援課 長寿福祉係
+  url: https://www.city.nakano.nagano.jp/docs/2022041500057/
+  confidence: low
+not_found:
+- koken
+- hochoki
+- shingu
+- mimamori
+- yutai

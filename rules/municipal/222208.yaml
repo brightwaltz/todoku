@@ -1,0 +1,211 @@
+city: '222208'
+name: 裾野市
+site: www.city.susono.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成
+  name_on_page: 紙おむつ等購入費助成
+  summary: 在宅で紙おむつ等を使う要介護1以上の人の購入費の一部を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 対象品は紙おむつ・尿とりパッド・防水シーツ・使い捨て手袋
+  - 店舗精算は購入後1年以内に領収書を出す
+  where: 総合福祉課高齢者福祉係
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+  confidence: high
+  amount: 月額の上限は、要介護3〜5で所得税非課税または被保護世帯が6,600円、課税世帯が3,600円。要介護2は1,200円、要介護1は800円。
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/mokuteki/kaigo_korei/4/9798.html
+- category: iro
+  name: 寝たきり老人等の介護者手当
+  name_on_page: 寝たきり老人等介護者手当支給
+  summary: 要介護4以上で寝たきりか認知症の高齢者を在宅で介護する人に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりまたは認知症の高齢者を3か月以上在宅で介護している
+  - 支給されるのは介護している人
+  where: 総合福祉課高齢者福祉係
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+  confidence: high
+  amount: 高齢者1人につき月5,300円
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/mokuteki/kaigo_korei/4/9798.html
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成（令和8年度～）
+  summary: 難聴の高齢者が補聴器を買ったとき、費用の一部を助成する（1人1回）。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 介護保険の被保険者
+  - 両耳の聴力が40dB以上（耳鼻科医の証明書）
+  - 他制度の補聴器助成の対象でない
+  - 介護保険料の滞納がない
+  - 令和8年4月1日以降に購入し、購入から90日以内に申請
+  where: 介護保険課
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/1/ninchisho/21196.html
+  confidence: high
+  amount: 購入費の2分の1と3万円のうち少ないほうの額
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/material/files/group/15/0807chirashi.pdf
+- category: haikai
+  name: 認知症高齢者等のGPS機器購入費助成
+  name_on_page: 認知症高齢者等おかえりサポート事業(GPS機器等購入費用助成)
+  summary: 行方不明のおそれがある認知症高齢者等を介護する家族に、GPS機器の初期費用を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請者は本人を同居または通いで介護する人
+  - 本人は市内に住民票があり、ひとりで外出できる
+  - 月々の通信費や賃借料は対象外
+  - スマホ・スマートウォッチ・スマートタグは対象外
+  where: 介護保険課
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/1/ninchisho/20533.html
+  confidence: high
+  amount: 最大1万円
+- category: haikai
+  name: 徘徊高齢者等の見守りネットワーク登録
+  name_on_page: 徘徊高齢者等見守りネットワーク事業
+  summary: 徘徊のおそれがある人の情報を市に登録し、行方不明時に警察・消防と共有して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住んでいる
+  - 年齢の制限なし
+  - 本人・配偶者などの家族・後見人が申請する
+  - 申請時に顔と全身の写真が必要
+  where: 総合福祉課（高齢者福祉係）窓口
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/1594.html
+  confidence: high
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ボタンを押すと消防に通報が入り救急車が出動する装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしの人、または介護が必要な人と同居する高齢者のみの世帯
+  - NTT回線が条件
+  where: 総合福祉課高齢者福祉係
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+  confidence: high
+  amount: 装置の設置。使用時の電話料金は自己負担。
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/mokuteki/kaigo_korei/4/9796.html
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきりなどで理美容院に行けない人の自宅へ、市と契約した理美容院が出張する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone
+  at_application:
+  - 寝たきりなどで理美容院に行くのが難しい
+  where: 総合福祉課高齢者福祉係
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+  confidence: high
+  amount: 年6回まで。理美容代金は自己負担。
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/mokuteki/kaigo_korei/4/9796.html
+- category: mimamori
+  name: ひとりぐらし高齢者訪問（乳酸飲料の配達）
+  name_on_page: ひとりぐらし高齢者訪問
+  summary: 乳酸飲料を自宅に届け、あわせて安否を確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application: []
+  where: 総合福祉課高齢者福祉係
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+  confidence: high
+  amount: 週3回（月・水・金）配達。利用者の負担なし。
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/mokuteki/kaigo_korei/4/9796.html
+- category: sonota
+  name: 軽度生活援助（食材確保・清掃の派遣）
+  name_on_page: 軽度生活援助
+  summary: 食材確保や清掃のため、シルバー人材センターの会員を自宅に派遣する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone
+  at_application:
+  - 要支援・要介護の認定を受けていない人が対象
+  where: 総合福祉課高齢者福祉係
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+  confidence: high
+  amount: 週3回まで、1回2時間程度。利用料は1時間124円（令和8年度）と派遣者の交通費。
+  more_urls:
+  - https://www.city.susono.shizuoka.jp/mokuteki/kaigo_korei/4/9796.html
+- category: sonota
+  name: はり灸マッサージ治療費の助成
+  name_on_page: はり灸マッサージ治療費の助成
+  summary: 登録された治療院などで使える助成券を、75歳以上の人に交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 4月1日時点で市内に住民登録がある
+  where: 総合福祉課高齢者福祉係
+  url: https://www.city.susono.shizuoka.jp/soshiki/5/6/4/18970.html
+  confidence: high
+  amount: 1,000円の助成券を5枚。治療費との差額は自己負担。
+- category: gaishutsu
+  name: 高齢者バス・タクシー利用助成券
+  name_on_page: 高齢者バス・タクシー利用助成事業
+  summary: 市内の路線バスとタクシーで使える助成券を、70歳以上の市民に交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 前年度の3月31日時点で満70歳以上
+  - 乗降のどちらかが市内であること
+  - 現金払いのときだけ使える
+  where: 都市計画課または各支所
+  url: https://www.city.susono.shizuoka.jp/soshiki/6/1/5_1/1599.html
+  confidence: high
+  amount: 100円券を同一年度に20枚まで。1回あたりの使用枚数に上限はない。
+not_found:
+- haishoku
+- shingu
+- jutaku

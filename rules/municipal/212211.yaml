@@ -1,0 +1,144 @@
+city: '212211'
+name: 海津市
+site: www.city.kaizu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 重度の要介護者を在宅で介護する家族に、介護用品の購入券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の人を在宅で介護している家族が対象
+  - 事前に申請して購入券の発行を受ける
+  where: 海津市社会福祉協議会
+  url: https://www.city.kaizu.lg.jp/kurashi/0000001072.html
+  confidence: high
+  amount: 月 4,000 円まで（自己負担は上限額の 1 割）。紙おむつ、使い捨て手袋、清拭タオルなど
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を在宅で介護する非課税世帯の家族に、年 1 回助成金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護している家族も市民税非課税世帯であること
+  - 5月31日までの1年間に介護保険サービスを使っていない
+  - 入院が1年間で1週間を超える場合は対象外
+  - 申請は毎年8月1日～8月31日
+  where: 高齢介護課（頁に申請先の記載はなく、問い合わせ先の課）
+  url: https://www.city.kaizu.lg.jp/kurashi/0000001072.html
+  confidence: high
+  amount: 年額 30,000 円
+- category: mimamori
+  name: 見守りメッセージ訪問
+  name_on_page: 見守りメッセージ訪問事業
+  summary: ひとり暮らしなどの高齢者宅を訪ね、カードを届けて安否を確認する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 75歳以上のひとり暮らし、または75歳以上だけの世帯
+  where: 高齢介護課（頁に申請先の記載はなく、問い合わせ先の課）
+  url: https://www.city.kaizu.lg.jp/kurashi/0000001072.html
+  confidence: high
+- category: haikai
+  name: 徘徊高齢者等SOSネットワーク（靴用ステッカー・みまもりシール）
+  name_on_page: 徘徊高齢者等SOSネットワーク事業
+  summary: 事前登録すると、靴用ステッカーとみまもりシールがもらえ、行方不明時に連携して捜す。
+  who: {}
+  at_application:
+  - 認知症等で見守りが必要な高齢者などが事前に登録する
+  - 申請書・登録シート・本人の写真が必要
+  where: 高齢介護課（市役所東館1階5番窓口）
+  url: https://www.city.kaizu.lg.jp/kurashi/0000001065.html
+  confidence: high
+  amount: 無料。靴用ステッカー5足分、みまもりシール30枚（追加分は自己負担）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者の補聴器助成
+  summary: 手帳の対象でない軽・中等度難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 購入時に海津市に住所がある
+  - 両耳の聴力が40dB以上70dB未満で身体障害者手帳の対象外
+  - 市税等の滞納がない
+  - 購入前に事前申請が必要
+  where: 高齢介護課
+  url: https://www.city.kaizu.lg.jp/kurashi/0000002921.html
+  confidence: high
+  amount: 購入費 8 万円以上は 4 万円、8 万円未満は購入費の 2 分の 1
+- category: sonota
+  name: シニアカー購入費助成
+  name_on_page: 高齢者のシニアカー購入費助成金
+  summary: 運転免許のない（返納予定の）高齢者が市内でシニアカーを買う費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険でシニアカーのレンタルを受けられない人
+  - 運転免許がない、または返納を予定している
+  - 市税等の滞納がない
+  - 損害賠償保険への加入が必須、1人1台まで
+  - 購入前に事前申請が必要
+  where: 高齢介護課
+  url: https://www.city.kaizu.lg.jp/kurashi/0000003165.html
+  confidence: high
+  amount: 購入費の 2 分の 1 以内、上限 10 万円
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（市が保険料負担）
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の高齢者等が他人に損害を与えた場合に備える保険に、市の負担で加入できる。
+  who:
+    at_home: true
+  at_application:
+  - 徘徊高齢者等SOSネットワークの登録者（未登録なら同時申請可）
+  - 同様の保険に加入している人は対象外
+  where: 高齢介護課／地域包括支援センター（市役所東館1階5番窓口）
+  url: https://www.city.kaizu.lg.jp/kurashi/0000004094.html
+  confidence: high
+  amount: 保険料は市が全額負担。補償は上限 1 億円
+- category: sonota
+  name: 防犯機能付き固定電話等の購入補助
+  name_on_page: 防犯機能付き固定電話等購入補助金
+  summary: 詐欺電話を防ぐ通話録音・着信拒否の機器を買った高齢者世帯に、費用の一部を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 高齢者だけの世帯、または日中に週3日以上、1日6時間以上高齢者だけになる世帯
+  - 令和8年4月1日～令和9年3月31日に購入した対象機器
+  - 市税の滞納がない、過去に同様の補助を受けていない
+  - 1世帯1台まで
+  where: 商工振興・企業誘致課（窓口提出、原則郵送不可）
+  url: https://www.city.kaizu.lg.jp/shisei/0000004640.html
+  confidence: high
+  amount: 購入費の 2 分の 1、上限 1 万円（設置費・送料などは除く）
+not_found:
+- haishoku
+- kinkyu-tsuho
+- shingu
+- ribiyo
+- gaishutsu

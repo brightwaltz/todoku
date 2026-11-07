@@ -1,0 +1,149 @@
+city: '242071'
+name: 鈴鹿市
+site: www.city.suzuka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: shingu
+  name: ふとんの丸洗い
+  name_on_page: ふとんの丸洗い
+  summary: 寝たきりなどの方が使うふとんを市が丸洗いしてくれる。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 在宅で3カ月以上寝たきり等で寝具の衛生管理が困難
+  where: 担当のケアマネジャーまたは地域包括支援センター
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003215/1003216.html
+  confidence: high
+  amount: 無料。1人2枚まで（毛布は対象外）
+- category: ribiyo
+  name: 訪問理美容の出張経費の援助
+  name_on_page: 訪問理美容
+  summary: 自宅に来てもらう理美容の出張経費を市が援助する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり市内の居宅で生活している
+  - 要介護3〜5、または40歳以上の身体障害者1・2級（下肢・体幹）
+  - 年度ごとに申請が必要
+  where: 長寿社会課または地区市民センター
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003215/1003217.html
+  confidence: high
+  amount: 出張経費を1回2,000円まで、年4回まで（調髪代は自己負担）
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 日常生活用具の給付
+  summary: 防火の配慮が必要な高齢の方に電磁調理器を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能の低下で防火などの配慮が必要
+  - 65歳以上のみの世帯は市民税非課税世帯か生活保護世帯
+  - お一人様1回限り
+  where: 担当のケアマネジャーまたは地域包括支援センター
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003215/1003218.html
+  confidence: high
+  amount: 電磁調理器の現物給付（1回限り）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの初期導入経費の支援
+  name_on_page: 緊急通報システム
+  summary: 押すと通報できる装置を入れるときの初期費用を市が支援する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 65歳以上のひとり暮らしか65歳以上のみの世帯、またはそれに準ずる世帯
+  - お一人様1回限り
+  where: 担当のケアマネジャーまたは地域包括支援センター
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003215/1003219.html
+  confidence: high
+  amount: 初期導入経費を支援（修理代・月額利用料は自己負担）
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: おむつの支給
+  summary: 常時失禁でおむつを使う方に紙おむつ等を支給する。
+  who: {}
+  at_application:
+  - 対象の条件は頁の抜き出しに無く、窓口で確かめる
+  where: 担当ケアマネジャーまたは地域包括支援センター経由で長寿社会課
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003215/1012638/1003220.html
+  confidence: high
+- category: haikai
+  name: 行方不明高齢者家族支援（位置探索端末の導入費支援）
+  name_on_page: 行方不明高齢者家族支援サービス
+  summary: 位置を探せる小型端末を導入するときの初期費用を市が支援する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症で行方不明になる可能性がある
+  where: 担当のケアマネジャーまたは地域包括支援センター
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003215/1003221.html
+  confidence: high
+  amount: 初期導入経費を支援（利用料・位置情報料は自己負担）
+- category: haishoku
+  name: 配食時の見守りサービス
+  name_on_page: 配食時見守りサービス
+  summary: お弁当を自宅へ届け、そのとき安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で生活する市内の高齢者（年齢の細目は頁に無い）
+  where: 長寿社会課
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003215/1003222.html
+  confidence: low
+  amount: お弁当代は自己負担
+- category: haikai
+  name: 認知症高齢者等安心見守りシール
+  name_on_page: 認知症高齢者等安心見守りシール
+  summary: 二次元コード付きシールで、行方不明時に家族へ連絡が届く。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 鈴鹿市に住民票がある
+  - 原則40歳以上で認知症の診断またはその疑い
+  - 歩行が可能で行方不明になる可能性がある
+  where: 長寿社会課
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003206/1003209.html
+  confidence: high
+  amount: 無料（耐洗ラベル30枚・蓄光シール10枚）。追加分は実費
+- category: sonota
+  name: 認知症高齢者等安心見守り保険
+  name_on_page: 認知症高齢者等安心見守り保険
+  summary: 見守りシール交付者の賠償責任を、市が保険料を負担して補償する。
+  who: {}
+  at_application:
+  - 安心見守りシールの交付を受けている
+  - 保険のみの加入はできない
+  - 加入申請ができるのは親族のみ
+  where: 長寿社会課（シール交付後に加入申請）
+  url: https://www.city.suzuka.lg.jp/fukushi/korei/1003206/1003209.html
+  confidence: high
+  amount: 無料。1事故あたり補償上限3億円
+not_found:
+- iro
+- koken
+- jutaku
+- gaishutsu
+- mimamori

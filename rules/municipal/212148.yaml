@@ -1,0 +1,117 @@
+city: '212148'
+name: 可児市
+site: www.city.kani.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）購入費の支給券
+  name_on_page: 特別給付介護用品購入費支給
+  summary: 在宅の要介護者に、おむつや防水シーツ等の購入に使える支給券を毎月交付する。
+  who: {}
+  at_application:
+  - 対象の要件・支給額は窓口で確認
+  where: 高齢福祉課 福祉政策係（ケアマネジャー経由の相談も可）
+  url: https://www.city.kani.lg.jp/2810.htm
+  confidence: high
+- category: haishoku
+  name: 安否確認つき配食サービスの利用助成
+  name_on_page: 安否確認・配食サービス利用助成事業
+  summary: 安否確認を兼ねた食事の配達を使うとき、1食ごとに費用の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上の高齢者世帯
+  - 調理・買い物が困難で、他の支援でも食事がとれない
+  - 毎年度、申請が必要
+  where: 高齢福祉課（手帳の人は福祉支援課）
+  url: https://www.city.kani.lg.jp/4466.htm
+  confidence: high
+  amount: 1食あたり200円を助成（食事代は1食500円以上で業者が設定）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 緊急通報装置を貸し出し、24時間体制で通報や相談に対応する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし
+  - または65歳以上のみの世帯で、同居者全員が身体虚弱等
+  - または65歳未満のひとり暮らしで身体虚弱等
+  - 駆けつけられる協力員が1名以上必要
+  where: 高齢福祉課（市役所東館2階）
+  url: https://www.city.kani.lg.jp/2874.htm
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 認知症高齢者等見守りシール
+  summary: 行方不明時に身元が分かる二次元コードのシールを無料で交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症で行方不明のおそれがある65歳以上
+  - または医師が初老期認知症と診断した40〜64歳で同じおそれがある人
+  - 緊急連絡先を2名以上登録する
+  where: 高齢福祉課
+  url: https://www.city.kani.lg.jp/22181.htm
+  confidence: high
+  amount: 無料。年度ごとにシール1セットを交付（追加分は自己負担）。賠償保険にも無料で加入できる。
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費助成
+  name_on_page: 補聴器の購入費用をサポートします
+  summary: 住民税非課税世帯の中等度難聴の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 中等度難聴（両耳とも40dB以上）で、身体障害者手帳の対象外
+  - 労災保険法等の補聴器助成の対象外
+  - 市内の補聴器販売店で購入し、市税の滞納がない
+  - 前回の助成から5年以上たっている
+  - 購入前に申請し、耳鼻科の医師意見書が必要
+  where: 高齢福祉課 福祉政策係
+  url: https://www.city.kani.lg.jp/27073.htm
+  confidence: high
+  amount: 購入費の2分の1（上限4万円）。補聴器本体・電池・充電器・イヤモールドが対象。
+- category: mimamori
+  name: 一人暮らし高齢者の見守り通知（LINE）
+  name_on_page: 一人暮らし高齢者の見守り通知サービス
+  summary: 毎朝の通知に答えないと、2日目に家族へアラートが届く無料サービス。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者などが対象
+  - 市公式LINEで利用登録する（見守る家族も登録）
+  where: 市公式LINEから登録（問い合わせは高齢福祉課）
+  url: https://www.city.kani.lg.jp/27170.htm
+  confidence: high
+  amount: 利用料は無料（通信費は自己負担）
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 持病や服薬の情報を入れて冷蔵庫に保管する容器を配り、救急時に役立てる。
+  who: {}
+  at_application:
+  - 市内在住で、健康に不安のあるひとり暮らしの高齢者など
+  - 消防署への個人情報提供に同意する
+  - 窓口に持参して申請（郵送・メール不可）
+  where: 高齢福祉課 福祉政策係
+  url: https://www.city.kani.lg.jp/2948.htm
+  confidence: high
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu

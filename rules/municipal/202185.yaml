@@ -1,0 +1,131 @@
+city: '202185'
+name: 千曲市
+site: www.city.chikuma.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の購入費助成
+  name_on_page: 介護用品等支給事業
+  summary: 紙おむつ等を買った費用を、領収書を添えて申請すると市が補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護4・5以外の人は、必要性が認められること
+  - 入院・入所中に使った分は対象外
+  where: 高齢福祉課
+  url: https://www.city.chikuma.lg.jp/soshiki/koreifukushi/koreishafukushi_kaigo/2/1292.html
+  confidence: high
+  amount: 年額 75,000 円まで（要介護4・5は全額、それ以外は購入費の半額）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事の支度が難しい人の自宅へ、月〜土曜の昼・夜にお弁当を届ける。
+  who: {}
+  at_application:
+  - 独り暮らしの高齢者、高齢者世帯、身体障害者等のいずれか
+  - そのうち食事の支度が困難な人
+  where: 高齢福祉課（地域包括支援センター）
+  url: https://www.city.chikuma.lg.jp/soshiki/koreifukushi/koreishafukushi_kaigo/2/1292.html
+  confidence: low
+  amount: 利用者負担は 1 食 350〜440 円
+- category: iro
+  name: 重度要介護高齢者の家庭介護者への慰労金
+  name_on_page: 重度要介護高齢者等家庭介護者慰労金支給事業
+  summary: 要介護3以上の人を在宅で介護した家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 基準日（11月1日）前の1年間に在宅で介護した期間が183日以上の介護者
+  where: 高齢福祉課
+  url: https://www.city.chikuma.lg.jp/soshiki/koreifukushi/koreishafukushi_kaigo/2/1292.html
+  confidence: low
+  amount: 年額 80,000 円
+- category: kinkyu-tsuho
+  name: 緊急通報システム装置の設置
+  name_on_page: 緊急通報システム装置設置事業
+  summary: 急病や災害のときに通報できる装置を自宅に設置する。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 概ね65歳以上の独り暮らしの高齢者等
+  - 脳血管・心疾患等で緊急搬送の可能性が高い人
+  where: 高齢福祉課（地域包括支援センター）
+  url: https://www.city.chikuma.lg.jp/soshiki/koreifukushi/koreishafukushi_kaigo/2/1292.html
+  confidence: low
+  amount: システム利用料は月 500 円（通話料は自己負担）
+- category: mimamori
+  name: 安心コール（電話での安否確認）
+  name_on_page: 安心コール事業
+  summary: 週 2 回、電話で安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 概ね65歳以上の独り暮らしの高齢者
+  - 近隣との交流が少ない人
+  where: 高齢福祉課（地域包括支援センター）
+  url: https://www.city.chikuma.lg.jp/soshiki/koreifukushi/koreishafukushi_kaigo/2/1292.html
+  confidence: low
+  amount: 無料
+- category: ribiyo
+  name: 重度要介護高齢者等の訪問理美容
+  name_on_page: 重度要介護高齢者等訪問理美容サービス事業
+  summary: 理美容院へ行けない人の自宅へ、理美容師が訪問する。利用券で料金の一部を助成する。
+  who: {}
+  at_application:
+  - 理美容院へ出向けない寝たきりの重度要介護高齢者
+  - または重度身体障害者
+  where: 高齢福祉課
+  url: https://www.city.chikuma.lg.jp/soshiki/koreifukushi/koreishafukushi_kaigo/2/1292.html
+  confidence: low
+  amount: 1枚 1,000 円の利用券を年 12 枚まで交付
+- category: jutaku
+  name: 高齢者向け住宅改良の補助（介護保険外）
+  name_on_page: 高齢者にやさしい住宅改良促進事業
+  summary: 居室・浴室・便所の改良工事の費用を、介護保険の住宅改修とは別に補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 所得税額が 8 万円以下の世帯に属する人
+  - 予算の範囲内で交付
+  where: 高齢福祉課
+  url: https://www.city.chikuma.lg.jp/soshiki/koreifukushi/koreishafukushi_kaigo/2/1292.html
+  confidence: low
+  amount: 上限 700,000 円（自己負担あり）
+  more_urls:
+  - https://www.city.chikuma.lg.jp/soshiki/koreifukushi/hoken_nenkin/1/9759.html
+- category: haikai
+  name: 認知症高齢者などの行方不明に備える事前登録
+  name_on_page: 認知症高齢者などの事前登録を受け付けています
+  summary: 本人情報を事前に登録して地域包括支援センターと警察で共有し、行方不明時の捜索や情報発信に使う。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で概ね65歳以上
+  - 65歳未満でも若年性認知症などで心配があれば可
+  - 登録は1年ごとに更新
+  where: 千曲市地域包括支援センター（基幹・更埴川東・戸倉上山田）
+  url: https://www.city.chikuma.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamuke_support/11387.html
+  confidence: high
+not_found:
+- hochoki

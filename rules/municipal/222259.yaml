@@ -1,0 +1,244 @@
+city: '222259'
+name: 伊豆の国市
+site: www.city.izunokuni.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援（昼食の配食）
+  name_on_page: 食の自立支援
+  summary: 調理が難しい高齢者に、昼食を最大週6回届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 疾病等で調理が困難で、栄養管理の支援が必要と認められる
+  - 申請後に聞き取り調査がある
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: high
+  amount: 月曜から土曜の昼食を最大週6回。1食500円は自己負担
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ）購入費助成券
+  name_on_page: 家族介護用品購入費助成
+  summary: 常時紙おむつを使う市民税非課税の人に、購入費助成券を出す。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で要介護2以上、または重度障がい者
+  - 排せつ動作に介助が必要
+  - 対象者本人が市民税非課税
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: high
+  amount: 要介護2は1,000円分、要介護3〜5・障がい者1・2級は1,500円分、要介護4・5で市民税非課税世帯は2,500円分。各々に利用決定月数を掛ける
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ボタンを押すと警備会社に通報できる機器を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 頁には「ひとり暮らしまたは高齢者だけの世帯等」とある
+  - 固定電話がないと利用できない
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: high
+  amount: 自己負担は月最大800円。通信料等は別に自己負担
+- category: mimamori
+  name: おはようサービス（乳酸飲料の配達による安否確認）
+  name_on_page: おはようサービス
+  summary: 3日に1本、乳酸飲料を届けて安否を確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 定期的な外出や家族等の訪問がなく、安否確認が必要と認められる
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: high
+  amount: 3日に1本の配達。自己負担なし
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス
+  summary: 衛生管理が難しい高齢者の寝具をクリーニングする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 疾病等の理由で衛生管理が困難
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: high
+  amount: 1人2枚まで年1回。自己負担なし
+- category: haikai
+  name: はいかい者探索（GPS端末）
+  name_on_page: はいかい者探索（GPS)
+  summary: GPS端末を持たせ、はいかい時の居場所探しに使う。
+  who: {}
+  at_application:
+  - 65歳以上の在宅の認知症高齢者、在宅の若年性認知症の人、またはその他のはいかいのおそれのある人
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: high
+  amount: 月額1,320円は自己負担。情報料・人件費・危機管理費は全額自己負担
+- category: haikai
+  name: はいかい者探索事業（QR見守りシール）
+  name_on_page: はいかい者探索事業「どこシル伝言板」
+  summary: QRコード付きの見守りシールを衣類などに貼り、発見時に家族へ連絡が届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症高齢者、または在宅の若年性認知症の人
+  - 申請は本人か家族。通知用メールアドレスが要る
+  where: 長寿介護課（大仁庁舎）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/dokoshiru.html
+  confidence: high
+  amount: シール40枚1セットが380円。2セット目以降は自己負担
+  more_urls:
+  - https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+- category: iro
+  name: 在宅要介護者の介護手当
+  name_on_page: 在宅要介護者介護手当支給事業
+  summary: 要介護3〜5の人を在宅で介護する家族に、年2回手当を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 基準日（7/1・1/1）前6か月以上、要介護3〜5の認定
+  - 介護者は市の住民登録があり、要介護者と同居し生計が同じ
+  - 短期入所や入院が基準日前6か月で合計45日以上だと対象外
+  - 特別障害者手当を受けている、生活保護の介護者が介護、は対象外
+  - 申請は基準日から1か月以内
+  where: 長寿介護課（大仁庁舎）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kaigosyateate.html
+  confidence: high
+  amount: 要介護者1人につき3万円。要介護4・5でサービス未利用なら3万円を加算
+- category: koken
+  name: 成年後見制度利用支援事業（申立費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用と後見人等の報酬を、困難な人に助成する。
+  who: {}
+  at_application:
+  - 生活保護受給者、またはそれに準ずる人
+  - 準ずる人は、関係者が市民税非課税で預貯金等が基準未満、ほか活用できる資産なし
+  - 審判（または報酬付与の審判）から3か月以内に申請
+  where: 社会福祉課
+  url: https://www.city.izunokuni.shizuoka.jp/fukusi/koken/sien.html
+  confidence: high
+  amount: 申立費用は実費の合計額。報酬は月額上限が在宅28,000円、施設・入院18,000円（最長12か月分）
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成金
+  summary: 加齢で聞こえにくい高齢者の補聴器購入費を、1回に限り助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、市税を滞納していない
+  - 両耳40デシベル以上で、医師の証明がある
+  - 障害者総合支援法・労災法等の補聴器助成を受けられない
+  - 購入から90日以内か、その年度末までに申請
+  where: 長寿介護課（大仁庁舎）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/koureisya_hochoki.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限30,000円（1回限り）
+- category: gaishutsu
+  name: タクシー・バス・鉄道利用券の交付
+  name_on_page: タクシー・バス・鉄道利用券交付
+  summary: 75歳以上の高齢者らに、タクシー・バス・鉄道に使える共通券を渡す。
+  who: {}
+  at_application:
+  - 令和8年度は昭和26年4月1日以前生まれの人（年度途中で75歳になる人は対象外）
+  - または身体障害者手帳1・2級、療育手帳A、精神障害者保健福祉手帳1・2級
+  - 市の住民基本台帳に記録され、施設入所していない
+  where: 長寿介護課（大仁庁舎）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/takushiken.html
+  confidence: high
+  amount: 高齢者は10,000円分（100円券100枚）。障がい者は14,000円分
+- category: gaishutsu
+  name: 運転免許証自主返納に伴う利用券の交付
+  name_on_page: 運転免許証自主返納支援事業
+  summary: 運転免許を自主返納した人に、タクシー・バス・鉄道の利用券を渡す。
+  who: {}
+  at_application:
+  - 市に住民登録がある
+  - 有効期間内に免許を自主返納して6か月以内（失効後は対象外）
+  - 頁に年齢の条件は書かれていない
+  where: 長寿介護課（大仁庁舎）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/jisyuhen.html
+  confidence: high
+  amount: 100円券100枚（1万円分）
+- category: gaishutsu
+  name: 福祉車両（車いす対応）の貸出
+  name_on_page: 福祉車両（車いす対応）貸出事業
+  summary: 車いすが必要な人に、車いす対応の軽自動車を貸し出す。
+  who: {}
+  at_application:
+  - 市内在住で、日常生活に常時車いすが必要
+  - 通院や冠婚葬祭などの用途で、原則月2回まで
+  - 運転手（取得後1年以上・21歳以上75歳未満）を自分で確保
+  - 高齢者のほか障がい者も対象
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/hukushisyaryou.html
+  confidence: high
+  amount: 10kmにつき100円（駐車料・通行料は利用者負担）
+- category: sonota
+  name: ご用聞きサービス（軽易な日常生活の援助）
+  name_on_page: ご用聞きサービス
+  summary: 電球交換や野外作業など、ヘルパーでは対応できない軽い手伝いをする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体の障がいや疾病等で日常生活の支援が必要
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: high
+  amount: 1時間あたり、市民税課税世帯は500円、非課税世帯は200円（交通費は別）
+- category: sonota
+  name: 在宅高齢者短期保護（一時的な施設保護）
+  name_on_page: 在宅高齢者短期保護
+  summary: 介護する家族が疾病等で介護できないとき、特養等で一時的に高齢者を預かる。
+  who: {}
+  at_application:
+  - 介護している家族が疾病等の理由で介護できない
+  - 年齢などの細かい条件は一覧の説明に書かれていない
+  where: 長寿介護課（包括ケア推進室）
+  url: https://www.city.izunokuni.shizuoka.jp/sien_koureisha/kenko/koureisha/zaitaku.html
+  confidence: low
+  amount: 1か月7日以内。自己負担あり（金額は頁に無い）
+not_found:
+- jutaku
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

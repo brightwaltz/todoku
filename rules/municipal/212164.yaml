@@ -1,0 +1,134 @@
+city: '212164'
+name: 瑞穂市
+site: www.city.mizuho.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成
+  name_on_page: 高齢者日常生活用品購入費助成事業
+  summary: 在宅で紙おむつ等を使い排泄に介助が必要な高齢者に、購入費を助成する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅で6か月以上、紙おむつ等を使っている
+  - 日常的に排泄に介助が必要
+  where: 地域福祉高齢課
+  url: https://www.city.mizuho.lg.jp/4074.htm
+  confidence: low
+  amount: 月 4,000 円を上限に助成
+- category: sonota
+  name: 要介護者を介護する家族向けの短期入所費助成
+  name_on_page: 居宅介護者慰労事業
+  summary: 要介護3以上の人を同じ世帯で在宅介護している人に、短期入所の自己負担を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 同じ世帯の人を6か月以上自宅で介護している
+  where: 地域福祉高齢課
+  url: https://www.city.mizuho.lg.jp/4074.htm
+  confidence: low
+  amount: 短期入所の介護保険対象分の自己負担の 9 割を助成
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報体制支援事業
+  summary: 急病や事故に備え、通報装置を設置し、月 1 回の安否確認電話もある。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし
+  - ねたきり高齢者を含む高齢者のみ世帯の世帯主
+  - 身体障害者手帳1〜4級の単身世帯の人も対象
+  where: 地域福祉高齢課
+  url: https://www.city.mizuho.lg.jp/4072.htm
+  confidence: high
+  more_urls:
+  - https://www.city.mizuho.lg.jp/4074.htm
+- category: haishoku
+  name: 見守り配食の利用料補助
+  name_on_page: ダイニングサポート事業
+  summary: 見守りが必要な高齢者宅へ食事を届け、安否確認をし、利用料の一部を補助する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+  at_application:
+  - 買い物や調理ができず、週2日以上の支援がない
+  - 申請時に対象者チェックリストを実施
+  where: 地域福祉高齢課
+  url: https://www.city.mizuho.lg.jp/4072.htm
+  confidence: high
+  amount: 利用料の一部を補助（額は頁に記載なし）
+  more_urls:
+  - https://www.city.mizuho.lg.jp/secure/3762/dainingu.pdf
+- category: gaishutsu
+  name: 高齢者のタクシー乗車券の交付
+  name_on_page: 高齢者タクシー利用助成
+  summary: 車を運転しない75歳以上に、タクシー乗車券と通院用乗車券を交付する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 今後一切、自動車を運転しない
+  - 世帯全員が住民税・国保税・後期高齢者医療保険料・介護保険料を滞納していない
+  - 重度障害者社会参加助成（障がい者タクシーチケット）を受けていない
+  where: 地域福祉高齢課、市民窓口課（巣南庁舎）
+  url: https://www.city.mizuho.lg.jp/10240.htm
+  confidence: high
+  amount: 590 円券を最大 24 枚。通院用は 1,000 円券を最大 48 枚（申請月で枚数が変わる）
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 瑞穂市高齢者補聴器購入費助成事業
+  summary: 中等度難聴の高齢者が補聴器を買ったとき、費用の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力レベルが40dB以上70dB未満
+  - 身体障害者手帳（聴覚障害）の交付を受けていない
+  - 世帯に住民税・国保税・後期高齢者医療保険料・介護保険料の滞納がない
+  - 過去に交付を受けた人は支給決定から5年以上たっている
+  - 購入の翌日から6か月以内に申請する
+  where: 地域福祉高齢課
+  url: https://www.city.mizuho.lg.jp/13570.htm
+  confidence: high
+  amount: 購入費の 2 分の 1（上限 4 万円）
+- category: haikai
+  name: 認知症の行方不明対策（事前登録と賠償保険）
+  name_on_page: 認知症高齢者等見守り補償事業
+  summary: 行方不明に備えて本人情報を事前登録し、希望者は市負担の賠償責任保険に入れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明のおそれがある65歳以上で、市に住民票があり在宅
+  - 上記以外でも特に必要と認められる人は対象
+  - 保険に入るには事前登録が必要
+  where: 地域福祉高齢課
+  url: https://www.city.mizuho.lg.jp/4074.htm
+  confidence: high
+  amount: 保険料は全額市が負担
+  more_urls:
+  - https://www.city.mizuho.lg.jp/secure/3763/R020401ninntisyoumimamorihosyoutirasi.pdf
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori

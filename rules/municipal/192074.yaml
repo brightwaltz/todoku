@@ -1,0 +1,178 @@
+city: '192074'
+name: 韮崎市
+site: www.city.nirasaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品クーポン券の支給
+  name_on_page: 介護用品支給事業
+  summary: 要件を満たす方を自宅で介護する家族等に、介護用品のクーポン券を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 市内に住所があり、市民税非課税
+  - 要介護4・5で常時おむつ、または要介護3で認定調査の排泄に介助等
+  - 重度心身障がい者（1・2級相当）で常時おむつの人も対象
+  - 同じ世帯の家族等が自宅で介護している
+  - 生活保護の一時扶助や障がい者地域生活支援事業の支給は対象外
+  where: 長寿介護課 長寿社会担当（保健福祉センター内）
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/6098.html
+  confidence: high
+  amount: 1 か月あたり 3,000 円分のクーポン券（申請翌月から年度末分を一括）
+- category: haishoku
+  name: 配食サービス（見守りと昼食の配達）
+  name_on_page: 配食サービス
+  summary: 調理が難しい在宅の高齢者に、平日の昼食を見守りを兼ねて届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者世帯で、調理が困難な人
+  where: 長寿介護課 長寿社会担当
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/1320.html
+  confidence: low
+  amount: 1 食 400 円の自己負担（月〜金、祝日と 12/29〜1/3 を除く）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置とお元気コール
+  name_on_page: 緊急通報システム事業「ふれあいペンダント」
+  summary: 緊急時にコールセンターへ通報・相談できる装置を設け、月 1 回の安否確認電話もある。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 身体上等の理由で緊急時の通報手段の確保が難しい
+  - 固定電話か携帯電話を持っている
+  - 申請には地域協力員の選出が必要
+  - ひとり暮らしは民生委員のひとり暮らし高齢者台帳の提出が必要
+  where: 長寿介護課 長寿社会担当
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/9078.html
+  confidence: high
+- category: ribiyo
+  name: ねたきり等高齢者の訪問理美容助成券
+  name_on_page: ねたきり等高齢者訪問理容・美容サービス事業
+  summary: 外出が難しい高齢者の自宅での散髪に使える利用補助券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 次のいずれか：要介護4・5、ねたきり度B2以上、認知症度IIb以上
+  - または要介護認定と同等と市が判断した人
+  - 入院中・施設入所中は利用できない
+  where: 長寿介護課 窓口（保健福祉センター内）
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/6938.html
+  confidence: high
+  amount: 3,500 円の補助券を申請月に応じ 1〜4 枚交付、利用時の自己負担は 1 回 1,000 円
+- category: gaishutsu
+  name: 在宅高齢者のタクシー利用券
+  name_on_page: 在宅高齢者外出支援サービス事業（タクシー利用券）
+  summary: 外出が難しい在宅の高齢者に、タクシー利用券を毎月交付する。
+  who:
+    at_home: true
+  at_application:
+  - 台帳提出済みの 75 歳以上ひとり暮らし、または世帯全員 80 歳以上の非課税世帯の世帯主
+  - 同一敷地内や隣近所に家族がいる場合は対象外
+  - 高齢者タクシー利用助成・障がい者タクシー助成・生活保護の受給者は対象外
+  - 1 か月以上の入院や施設入所中は使えない
+  where: 長寿介護課 窓口（保健福祉センター）
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/6937.html
+  confidence: high
+  amount: 月 2 枚（年最大 24 枚）、1 枚 600・1,000・1,500 円（地区で異なる）
+- category: gaishutsu
+  name: 高齢者タクシー利用助成（公共交通空白地域）
+  name_on_page: 高齢者タクシー利用助成事業
+  summary: 公共交通のない指定地区に住む 70 歳以上の方のタクシー料金の一部を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 対象は穂坂町・穴山町・藤井町・円野町・上ノ山の指定地区に住む人
+  - 外出支援サービス（タクシー利用券）とは併用できない
+  where: 財務政策課 政策調整担当
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/zaimuseisakuka/seisakutyouseitanto/2/6852.html
+  confidence: high
+  amount: 片道 700 円まで助成、1 世帯で年間最大 48 回
+  more_urls:
+  - https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/1320.html
+- category: gaishutsu
+  name: 高齢者の民営バス利用助成
+  name_on_page: 高齢者民営バス利用助成事業
+  summary: 民営バスのゴールド定期券の購入助成券か、100 円乗車券のどちらかを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民票があり、市内の民営バスを利用する
+  - 市民税等の滞納がない（世帯員も含む）
+  where: 財務政策課 政策調整担当（市役所 3 階）
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/zaimuseisakuka/seisakutyouseitanto/2/5810.html
+  confidence: high
+  amount: 定期券は月 3,000 円を引いた額で購入、または月 10 枚まで 1 乗車 100 円
+- category: gaishutsu
+  name: 運転免許自主返納の移動手段支援
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 免許をすべて返納した高齢者に、バス無料券・タクシー券・交通 IC カードのどれかを渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 市に住民登録があり、有効な免許をすべて自主返納した
+  - 返納した日から 1 年以内に申請する
+  - 支援は 1 人 1 回限り
+  where: 総務課 危機管理担当（市役所）
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/somuka/kikikanritanto/1/2157.html
+  confidence: high
+  amount: 市民バス無料乗車券 1 年分、またはタクシー券 1 万円分、または PASMO・Suica 1 万円分のいずれか 1 つ
+- category: mimamori
+  name: 民生委員の定期訪問（ヤクルト配布）
+  name_on_page: 地域住民の定期訪問（ヤクルト）
+  summary: 民生委員が月 1 回訪問し、ヤクルトを渡しながら見守る。
+  who:
+    at_home: true
+  at_application:
+  - 65 歳以上のひとり暮らし、65 歳以上のねたきり等、または 88 歳以上
+  where: 長寿介護課 長寿社会担当
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/1320.html
+  confidence: low
+- category: mimamori
+  name: 絵手紙と郵便局員による安否確認
+  name_on_page: 高齢者生活状況確認
+  summary: 月 1 回絵手紙を送り、郵便局員が訪問時に安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 長寿介護課 長寿社会担当
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/1320.html
+  confidence: low
+- category: sonota
+  name: 救急時安心情報キットの配付
+  name_on_page: 救急時安心情報キット
+  summary: 医療情報などを入れる容器とステッカーを冷蔵庫に備え、救急時に役立てる。
+  who: {}
+  at_application:
+  - 一覧頁の対象：65 歳以上のひとり暮らし、または災害・救急時の対応が難しい人
+  - 初めて使うときは申請書が必要
+  where: 長寿介護課 介護支援担当
+  url: https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/kaigoshientanto/2/9290.html
+  confidence: low
+  more_urls:
+  - https://www.city.nirasaki.lg.jp/soshikiichiran/chojukaigoka/choujushakaitantou/2/1320.html
+not_found:
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- nichijo-yogu

@@ -1,0 +1,177 @@
+city: '192121'
+name: 上野原市
+site: www.city.uenohara.yamanashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者等の補聴器購入費の助成
+  name_on_page: 上野原市高齢者等補聴器購入費助成事業
+  summary: 手帳の対象にならない中等度難聴の人の補聴器購入費を一部補助する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 障害者総合支援法などの補聴器助成の対象でない人
+  - 両耳の聴力40dB以上、または医師が装用が必要と認める
+  - 市内に住民登録があり、市税などの滞納がない
+  - 補聴器の購入前に交付申請が必要
+  where: 長寿介護課（65歳以上）、福祉課（64歳以下）
+  url: https://www.city.uenohara.yamanashi.jp/page/1017907.html
+  confidence: high
+  amount: 補聴器本体の購入費の2分の1（上限3万円）
+- category: gaishutsu
+  name: 高齢者のバス定期券購入補助
+  name_on_page: 上野原市高齢者外出支援事業
+  summary: 富士急バスのシルバー定期券（1年用）の購入に補助が出る。
+  who: {}
+  at_application:
+  - 市内在住の70歳以上、または運転免許を返納した65〜69歳
+  - 申請日現在で市税等を滞納していない
+  where: 長寿介護課（総合福祉センターふじみ1番窓口）
+  url: https://www.city.uenohara.yamanashi.jp/page/1017573.html
+  confidence: high
+  amount: 2万円の補助（助成券を富士急バス窓口で使う）
+- category: gaishutsu
+  name: リフト付き車両による移送サービス
+  name_on_page: 移送サービス事業
+  summary: 在宅の要介護の人が、通院や施設の入退所にリフト付き車で移動できる。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険の被保険者で要介護認定を受けている
+  - 市内の通院・入退院・施設の入退所が対象
+  - 家族がいる場合は原則、家族の同乗が必要
+  where: 長寿介護課
+  url: https://www.city.uenohara.yamanashi.jp/page/1910.html
+  confidence: high
+  amount: 無料。年間最大で片道48回まで
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業(配食サービス)
+  summary: 低所得の高齢者宅に栄養バランスのよい食事を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者世帯の場合は、いずれかが虚弱であること
+  where: 長寿介護課（地域包括支援担当）
+  url: https://www.city.uenohara.yamanashi.jp/page/2375.html
+  confidence: high
+  amount: 利用料は1食400円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金事業
+  summary: 寝たきり等の要介護者を在宅で介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市内に1年以上住民登録があり、生活の本拠である
+  - 介護者と同居または同一敷地内に住んでいる
+  - 対象の1年間、要介護4か5で、入院が通算90日未満
+  - 同期間の介護サービス利用が通算10日以内（用具・改修除く）
+  where: 長寿介護課（地域包括支援担当）
+  url: https://www.city.uenohara.yamanashi.jp/page/1963.html
+  confidence: high
+  amount: 年額6万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ふれあいペンダント）の設置
+  name_on_page: 緊急通報システム事業(ふれあいペンダント)
+  summary: 緊急ボタンで通報でき、近所の協力員等が安否を確認する機器を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - ひとり暮らし、または高齢者世帯でいずれかが虚弱
+  - 近所の協力員2名が必要（いなければ有料の駆けつけ員）
+  - 屋内のみで使えるシステム
+  where: 長寿介護課、秋山支所、各出張所
+  url: https://www.city.uenohara.yamanashi.jp/page/1896.html
+  confidence: high
+  amount: 機器の電話・電気代は自己負担。駆けつけ員オプションは月330円
+- category: haikai
+  name: ひとり歩きSOSネットワークの事前登録
+  name_on_page: ひとり歩きSOSネットワーク事業
+  summary: 行方不明の心配がある人の情報を事前登録し、事業所の協力で捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の65歳以上で、認知症等で行方不明の心配がある人
+  - 若年性認知症などで同様の心配があれば65歳未満も可
+  - 家族などの同意のもとで情報や写真を登録する
+  where: 長寿介護課（地域包括支援センター）
+  url: https://www.city.uenohara.yamanashi.jp/page/1879.html
+  confidence: high
+  amount: 登録は無料
+- category: haikai
+  name: 見守りステッカー
+  name_on_page: 上野原市見守りステッカー事業
+  summary: 衣服などに貼るステッカーで、発見者が登録済みの家族に連絡できる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、認知症で徘徊のおそれがある人など
+  - その他、市長が必要と認める人
+  - 入院中や各種施設に入所中の人は利用できない
+  where: 長寿介護課（地域包括支援担当）
+  url: https://www.city.uenohara.yamanashi.jp/page/1106.html
+  confidence: high
+  amount: 初期費用2,000円は初回のみ市が負担。年間利用料は月300円
+- category: mimamori
+  name: 高齢者宅へのボランティア訪問
+  name_on_page: 高齢者等見守りネットワーク事業
+  summary: 市が依頼したサポーターが月1回訪問し、話し相手や安否確認をする。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある65歳以上の人
+  where: 長寿介護課、各出張所
+  url: https://www.city.uenohara.yamanashi.jp/page/2060.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 健康管理ふれあいキットの配布
+  name_on_page: 健康管理ふれあいキット
+  summary: 医療情報を入れた容器を冷蔵庫に保管し、救急時に使ってもらう。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または全世帯員が75歳以上
+  where: 長寿介護課、秋山支所、各出張所
+  url: https://www.city.uenohara.yamanashi.jp/page/109056.html
+  confidence: high
+  amount: 無料
+not_found:
+- kaigo-yohin
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

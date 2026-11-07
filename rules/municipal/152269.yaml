@@ -1,0 +1,157 @@
+city: '152269'
+name: 南魚沼市
+site: www.city.minamiuonuma.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物支給
+  name_on_page: 高齢者への紙おむつ支給
+  summary: 在宅で介護を受ける高齢者に、紙おむつを毎月自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、実際に住んでいる
+  - 世帯全員が市県民税の非課税、または均等割のみ課税
+  where: 介護高齢課 長寿いきいき係、大和市民センター、塩沢市民センター
+  url: https://www.city.minamiuonuma.niigata.jp/docs/2326.html
+  confidence: high
+  amount: 市県民税非課税の世帯は月8,000円まで、均等割のみ課税の世帯は月4,000円まで
+- category: iro
+  name: 在宅で介護する家族への手当
+  name_on_page: 在宅要介護高齢者家族手当
+  summary: 要介護4以上の高齢者を在宅で介護する家族に、年1回手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 家族が対象者を3か月以上（1〜12月）在宅で常時介護している
+  - 介護を受ける人が特別障がい者手当・福祉手当を受けていない
+  - 令和8年度の提出期限は令和8年12月28日
+  where: 介護高齢課 長寿いきいき係、大和市民センター、塩沢市民センター
+  url: https://www.city.minamiuonuma.niigata.jp/docs/62892.html
+  confidence: high
+  amount: 年1回、3月に30,000円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸出
+  name_on_page: 高齢者への緊急通報装置貸出
+  summary: 救急ボタンや火災センサーなどがセットの緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - 世帯：おおむね65歳以上の一人暮らし、重度介護者のいる高齢者のみ世帯など
+  - 心身・生活状況：発作の疾病、物忘れで火災の心配、連絡手段なし等のいずれか
+  - 市内在住の協力員3人の登録が必要（やむを得ない場合1人は市外可）
+  - 認知症などで装置操作が難しい人は貸与できない場合がある
+  where: 介護高齢課 長寿いきいき係
+  url: https://www.city.minamiuonuma.niigata.jp/docs/2327.html
+  confidence: high
+  amount: 費用負担は月600円
+- category: jutaku
+  name: 高齢者・障がい者の住宅改造費の補助
+  name_on_page: 高齢者・障がい者向け住宅整備費補助
+  summary: 自宅を改造する工事費の一部を市が補助する（介護保険の住宅改修とは別枠）。
+  who: {}
+  at_application:
+  - おおむね65歳以上で要介護・要支援認定を受けた人（または身障手帳1・2級等）
+  - 世帯全員の前年収入の合計が600万円未満
+  - 世帯全員が市税を滞納しておらず、過去にこの補助を受けていない
+  - 対象者かその親族が所有する住宅に本人が住む（新築・建替えは対象外）
+  - 年度の予定額に達すると受付できない場合がある
+  where: 介護高齢課 長寿いきいき係
+  url: https://www.city.minamiuonuma.niigata.jp/docs/2329.html
+  confidence: high
+  amount: 対象工事費の上限は30万円（介護保険等の対象者）か50万円。補助率は生活保護世帯100%、所得税非課税世帯75%、課税世帯50%
+- category: hochoki
+  name: 難聴者の補聴器購入費の助成
+  name_on_page: 難聴者補聴器購入費助成事業
+  summary: 手帳の対象でない難聴の人の補聴器購入費を、購入前の申請で助成する。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 身体障害者手帳の交付対象とならない人
+  - 両耳40dB以上、または医師が装用を必要と認めた人
+  - 医師が装用の効果を期待できると判断した人
+  - 5年以内に本事業の助成を受けていない
+  where: 介護高齢課、大和市民センター、塩沢市民センター
+  url: https://www.city.minamiuonuma.niigata.jp/docs/43974.html
+  confidence: high
+  amount: 生活保護・住民税非課税世帯は購入費の全額、課税世帯は2分の1。いずれも上限25,000円
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 認知症高齢者等見守りシール
+  summary: 行方不明のおそれがある高齢者の持ち物に貼るQRコード付きシールを無料で交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある在宅の高齢者
+  where: 最寄りの地域包括支援センターまたは担当のケアマネジャー
+  url: https://www.city.minamiuonuma.niigata.jp/docs/3512.html
+  confidence: high
+  amount: 無料。耐洗ラベル20枚と蓄光シール10枚の計30枚
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見人選任の申立て費用や後見人への報酬の支払いを助成する。
+  who: {}
+  at_application:
+  - 生活保護の被保護者、または次のすべてに当てはまる人
+  - 世帯が市町村民税所得割非課税で、預貯金の合計が100万円以下
+  - 家屋など以外に利用できる資産がなく、親族の扶養になっていない
+  - 後見人等が本人の親族の場合は対象外
+  - 審判の翌日から6か月以内に申請
+  where: 成年後見制度中核機関（介護高齢課 長寿いきいき係）
+  url: https://www.city.minamiuonuma.niigata.jp/docs/31615.html
+  confidence: high
+  amount: 申立て費用は実費。報酬は月額上限28,000円（在宅）、18,000円（施設入所・入院）
+- category: gaishutsu
+  name: 運転免許を返納した高齢者へのタクシー券
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 免許を自主返納した65歳以上にタクシー利用券などを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 有効期間内にすべての運転免許証を返納した人（失効後は対象外）
+  - 免許返納日から6か月以内に申請
+  - 令和8年12月1日の申請からはタクシー券のみに変わる
+  where: 市役所本庁舎の総合窓口（交通政策室）
+  url: https://www.city.minamiuonuma.niigata.jp/docs/5949.html
+  confidence: high
+  amount: 令和8年11月30日までの申請は5,000円分の券を2つ選択。12月1日以降の申請はタクシー券10,000円分
+- category: sonota
+  name: 高齢者世帯などの除雪費用の助成
+  name_on_page: 高齢者や要配慮者世帯などへの住宅除雪事業
+  summary: 自力で除雪できない高齢者のみ世帯などの屋根雪・生活路の除雪費を一部助成する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみの世帯、障がい者のみの世帯、ひとり親世帯等のいずれか
+  - 市・県民税（所得割）の課税世帯、生活保護世帯は対象外
+  - 親族などの支援が受けられると認められる世帯は対象外
+  - 事前に利用申請書の提出が必要
+  where: 地域の民生委員・児童委員、福祉課
+  url: https://www.city.minamiuonuma.niigata.jp/docs/2328.html
+  confidence: high
+  amount: 屋根雪は実費か基準単価×作業時間（一冬24時間まで）の低い方。生活路は一冬3万円まで
+not_found:
+- haishoku
+- shingu
+- ribiyo

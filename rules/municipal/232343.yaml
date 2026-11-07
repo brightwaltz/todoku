@@ -1,0 +1,166 @@
+city: '232343'
+name: 北名古屋市
+site: www.city.kitanagoya.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費助成
+  name_on_page: 難聴高齢者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象にならない難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市民税非課税世帯または生活保護世帯に属する
+  - 両耳とも30デシベル以上で、聴覚の障害者手帳の対象外
+  - 認定補聴器相談医などが補聴器の装用が必要と判断
+  - 購入前に申請が必要。過去5年以内に同事業の助成を受けていない
+  where: 高齢福祉課（東庁舎1階窓口）
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003970/1007245.html
+  confidence: high
+  amount: 購入費の2分の1（上限3万円）
+- category: gaishutsu
+  name: 高齢者タクシー料金助成
+  name_on_page: 高齢者タクシー料金助成事業
+  summary: 85歳以上の在宅の方に、タクシー料金の一部に使える利用券を支給する。
+  who:
+    age_min: 85
+    at_home: true
+  at_application:
+  - 市内に住所があり実際に住んでいる（年度末までに85歳になる方を含む）
+  - 障害者タクシー利用補助券の交付を受けていない
+  - 特養・老健・介護医療院に入所していない
+  where: 高齢福祉課窓口
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003970/1003971.html
+  confidence: high
+  amount: 利用券1枚500円（1乗車2枚まで）。年度ごとに10枚綴り、10月以降の申請は5枚綴り
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置
+  summary: 自宅の固定電話に通報装置を設置し、緊急時に警備会社へ通報できるようにする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 原則、近隣に親族がいない方
+  - おおむね65歳以上のひとり暮らし
+  - おおむね65歳以上のみの世帯で寝たきりの方がいる
+  - 身体障害者手帳1〜3級のひとり暮らしの方も対象
+  - 固定電話と電話回線が必要。協力員3人の登録が必要
+  where: 高齢福祉課
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003970/1003972.html
+  confidence: high
+  amount: 設置・撤去・保守・管理費は市が負担（NTT基本料金と通話料は自己負担）
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 寝具の衛生管理が難しいひとり暮らしの高齢者などの寝具を乾燥する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または重度の身体障害者
+  where: 高齢福祉課 高齢者福祉担当
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003970/1003973.html
+  confidence: high
+  amount: 利用者負担は1回550円（月1回実施）
+- category: ribiyo
+  name: 出張理髪の料金助成
+  name_on_page: 出張理髪料金助成事業
+  summary: 外出が難しい在宅の要介護者などが自宅で受ける出張理髪の料金を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3〜5の認定を受けている方
+  - または身体障害者手帳1・2級の方
+  - 市内に住所があり実際に住んでいる。年度ごとに申請
+  where: 高齢福祉課（介護保険証または障害者手帳を持参）
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003970/1003974.html
+  confidence: high
+  amount: 1回3,000円（年4回まで。10月以降の申請は年2回まで）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 見守りが必要な高齢者世帯などに、昼食か夕食のどちらか1食の弁当を届ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯（外出できる方を除く）
+  - または障害者総合支援法の対象の障害者
+  - 近隣に親族がおらず、他に食事支援を受けられない
+  - 地域包括支援センターが状況を確認して判断する
+  where: 高齢福祉課 地域包括ケア推進室、担当地区の地域包括支援センター
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003970/1003975.html
+  confidence: high
+  amount: 利用者負担は、1食の料金から200円を引いた額
+- category: kaigo-yohin
+  name: 介護用品の支給
+  name_on_page: 介護用品支給事業
+  summary: 重度の要介護者を在宅で介護する非課税世帯の家族に、紙おむつなどを支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する家族が市民税非課税世帯
+  where: 高齢福祉課 地域包括ケア推進室
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003965/1003969.html
+  confidence: high
+  amount: 年額45,000円（月15,000円まで）
+- category: haikai
+  name: 徘徊のある方への発信機の貸与
+  name_on_page: 高齢者など見守りサービス
+  summary: 徘徊のある認知症高齢者などの家族介護者に、発信機を貸し出す。
+  who: {}
+  at_application:
+  - 徘徊行動のあるおおむね65歳以上の認知症高齢者
+  - または所在不明のおそれがある障害者・障害児
+  where: 高齢福祉課 地域包括ケア推進室
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003965/1003966.html
+  confidence: high
+  amount: 利用料は月額500円。専用靴の購入は上限5,000円まで一部補助
+- category: haikai
+  name: 徘徊のおそれのある方の事前登録
+  name_on_page: 徘徊高齢者等事前登録制度
+  summary: 行方不明のおそれがある方の写真や連絡先を、警察と包括支援センターに共有しておく。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で、認知症などにより徘徊のおそれがある
+  where: 高齢福祉課 地域包括ケア推進室（申請書を提出）
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003965/1003967.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 判断能力が不十分な認知症高齢者などの、後見の審判請求費用や後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 後見開始の審判請求が必要と市が認める方
+  - 助成がないと成年後見制度の利用が難しいと認められる方
+  where: 高齢福祉課 地域包括ケア推進室、地域包括支援センター、権利擁護センター、社会福祉課
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1007380.html
+  confidence: high
+  amount: 審判請求費用や後見人報酬の全部または一部（市長が必要と認める額）
+- category: sonota
+  name: 認知症高齢者などの個人賠償責任保険の加入助成
+  name_on_page: 認知症高齢者など個人賠償責任保険の加入助成
+  summary: 徘徊の事前登録をした方のうち要件を満たす方の、賠償責任保険への加入を助成する。
+  who: {}
+  at_application:
+  - 徘徊高齢者等事前登録を済ませ、一定の要件を満たす方
+  where: 高齢福祉課 地域包括ケア推進室
+  url: https://www.city.kitanagoya.lg.jp/kenko/korei/1003965/1003968.html
+  confidence: low
+not_found:
+- iro
+- mimamori

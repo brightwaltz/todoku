@@ -1,0 +1,137 @@
+city: '192091'
+name: 北杜市
+site: www.city.hokuto.yamanashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の支給
+  name_on_page: 介護用品支給事業
+  summary: 在宅の要介護高齢者を介護する家族に、指定事業者の介護用品を限度額内で支給する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり居住している
+  - 介護認定を受けている
+  - 要介護4・5、または排尿・排便に介助が必要
+  - 介護保険施設等の入所者は対象外
+  - 申請者は市内在住で介護している家族
+  where: 介護支援課 包括支援担当（地域包括支援センター）、郵送可
+  url: https://www.city.hokuto.yamanashi.jp/docs/4148.html
+  confidence: high
+  amount: 月額上限 2,000円・4,000円・6,000円（介助の程度で異なる）、補助率 9/10
+- category: gaishutsu
+  name: 外出支援サービス（タクシー券）
+  name_on_page: 外出支援サービス
+  summary: 自宅と医療機関の間で使う初乗り運賃分のタクシー券を月 2 枚支給する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 一般の交通機関の利用が困難で、乗降に介助が必要
+  - 市内に住所がある
+  - 利用はサービス調整会議で決定
+  where: 福祉課
+  url: https://www.city.hokuto.yamanashi.jp/docs/1171.html
+  confidence: high
+  amount: 初乗り運賃分のタクシー券を月 2 枚（差額は自己負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ふれあいペンダント）の貸与
+  name_on_page: ふれあいペンダント
+  summary: 急病などに備え、緊急通報装置を無料で貸与し設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 虚弱な方
+  - 市内に住所がある
+  - 固定電話が必要（NTT 回線を推奨）
+  - 利用はサービス調整会議で決定
+  where: 福祉課
+  url: https://www.city.hokuto.yamanashi.jp/docs/1171.html
+  confidence: high
+  amount: 貸与は無料（通話料・電気料は自己負担）
+- category: hochoki
+  name: 介護予防のための補聴器購入費補助
+  name_on_page: 補聴器購入補助金
+  summary: 手帳の対象でない難聴の 65 歳以上に、補聴器購入費の半額を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴力が身体障害者手帳の交付対象でない
+  - 医師が装用で一定の効果を期待できると判断
+  - 介護保険料が 1〜4 段階
+  - 本人と世帯員に市への納入金の滞納がない
+  - 購入前に申請すること
+  where: 介護支援課（窓口は本庁・総合支所・地域包括支援センター）
+  url: https://www.city.hokuto.yamanashi.jp/docs/32543.html
+  confidence: high
+  amount: 購入費の 1/2。上限は保険料 1〜3 段階で 50,000 円、4 段階で 32,000 円
+- category: jutaku
+  name: 高齢者在宅生活支援の住宅改修・福祉用具購入助成（市独自）
+  name_on_page: 高齢者在宅生活支援住宅改修等助成事業
+  summary: 要支援・要介護認定を受けていない高齢者の手すり設置などの改修費や福祉用具購入費を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険の認定（要支援・要介護）を受けていない
+  - 生活動作確認表に該当する（在宅の場合）
+  - 過去に介護保険法による助成を受けていない世帯
+  - 工事・購入の前に申請すること
+  where: 介護支援課（地域包括支援センター）
+  url: https://www.city.hokuto.yamanashi.jp/docs/6100.html
+  confidence: high
+  amount: 助成限度額 10 万円（対象金額の 7〜9 割を支給）
+- category: haikai
+  name: ほくとおかえりネット（事前登録・伝言板シール）
+  name_on_page: ほくとおかえりネット
+  summary: 道に迷うおそれのある認知症の方を事前登録し、伝言板シールを配布して捜索協力につなぐ。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の 65 歳以上で認知症、または若年性認知症
+  - 行方不明になるおそれがある
+  - その他、市長が必要と認めた方も対象
+  - 顔と全身の写真 2 枚と申出書が必要
+  where: 北杜市地域包括支援センター（高根総合支所内）
+  url: https://www.city.hokuto.yamanashi.jp/docs/24921.html
+  confidence: high
+- category: gaishutsu
+  name: 運転免許自主返納者への乗り物チケット
+  name_on_page: 運転免許証自主返納者への支援について（乗り物チケット）
+  summary: 免許を自主返納した 65 歳以上に、バス・タクシー共通の乗り物チケットを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市の住民基本台帳に記載されている
+  - 運転免許証を自主返納している
+  - 初回のみ交付。2 回目以降は半額で購入できる
+  where: 企画課または各総合支所
+  url: https://www.city.hokuto.yamanashi.jp/docs/1483938797-84.html
+  confidence: high
+  amount: 初回 12,000 円分（100 円券）。2 回目以降は半額で購入
+  more_urls:
+  - https://www.city.hokuto.yamanashi.jp/genki100/shien/
+not_found:
+- koken
+- iro
+- haishoku
+- shingu
+- ribiyo

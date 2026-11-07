@@ -1,0 +1,299 @@
+city: '202061'
+name: 諏訪市
+site: www.city.suwa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: ぬくもり配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業（ぬくもり配食サービス）
+  summary: 在宅の高齢者に、安否の見守りを兼ねた配食（昼か夕の1食）を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住んでいる
+  - 同居する全員が市町村民税の所得割非課税
+  - 自立支援の観点で利用が適切と判断される
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: high
+  amount: 1食300円程度の自己負担。週1日から利用でき、1日1食まで
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: hochoki
+  name: 高齢者等補聴器購入助成
+  name_on_page: 高齢者等補聴器購入助成事業
+  summary: 加齢で聞こえにくい人が補聴器を買うとき、費用の一部を助成する。
+  who:
+    age_min: 60
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚の身体障害者手帳を持っていない
+  - 両耳40デシベル以上で、耳鼻科医が装用必要と診断
+  - 世帯員全員の市民税所得割額が3万円以下
+  - 世帯員全員が市民税・固定資産税・軽自動車税を滞納なし
+  where: 生活相談課（高齢者福祉係）。購入前に申請
+  url: https://www.city.suwa.lg.jp/soshiki/12/63653.html
+  confidence: high
+  amount: 購入費の3分の1（世帯全員非課税は2分の1）以内、上限3万円
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: gaishutsu
+  name: 高齢者タクシー利用料金の助成
+  name_on_page: 高齢者タクシー利用助成事業
+  summary: 通院でバスの利用が極めて難しい高齢者に、タクシー料金の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 70歳以上（65歳以上で市長が認めた人の扱いあり）
+  - 同居する全員が市町村民税の所得割非課税
+  - 通院時にバス利用が極めて困難と判断される
+  - 障害者タクシー助成を受けている人は除く
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: high
+  amount: 1回900円、年24回まで
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム事業
+  summary: 緊急時に24時間体制のセンターへ通報できる装置を設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住のおおむね65歳以上
+  - 近隣に住む協力員3名の登録が必要
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: high
+  amount: 利用料は月額310円
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: nichijo-yogu
+  name: 日常生活用具の購入支援
+  name_on_page: 日常生活用具の購入支援
+  summary: 火災警報器・自動消火器・電磁調理器の購入費を給付する。
+  who: {}
+  at_application:
+  - 市内在住のひとり暮らし高齢者等
+  - 所得税額による要件がある（基準は頁に無い）
+  - 購入前の申請が必要
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: low
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: sonota
+  name: 福祉電話の設置
+  name_on_page: 福祉電話の設置
+  summary: 低所得でひとり暮らしの高齢者に電話を貸与し、基本料を市が負担する。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 貸与が必要と認められる
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: high
+  amount: 基本使用料を市が負担。通話料・オプション料金は自己負担
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: ribiyo
+  name: 寝たきり高齢者等の訪問理美容
+  name_on_page: 寝たきり高齢者等理美容サービス
+  summary: 出張理美容を受けたとき、出張料の援助券を年5回まで支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市の要援護者台帳に寝たきりで登録、または要介護4・5
+  - 障害や傷病で理美容院へ出向くのが困難
+  - 事前の申請が必要
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: high
+  amount: 年5回まで。出張料のうち1,500円超は自己負担、理美容料金も自己負担
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: kaigo-yohin
+  name: 介護用品の購入援助
+  name_on_page: 介護用品の購入補助
+  summary: 要介護4・5の人を在宅で介護する非課税世帯に、紙おむつ等の援助券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内在住の高齢者を在宅で介護している世帯
+  - 事前の申請が必要
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: high
+  amount: 年間75,000円まで（1回の申請につき18,750円まで）
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: sonota
+  name: 燃やすごみ指定袋の支給
+  name_on_page: 燃やすごみ指定袋の支給
+  summary: 在宅で紙おむつを使う要介護・要支援の人に、燃やすごみ袋を支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  where: 環境課
+  url: https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+  confidence: high
+  amount: 22リットル袋を月5枚（年60枚まで）
+- category: iro
+  name: 介護者慰労金の支給
+  name_on_page: 介護慰労金の支給
+  summary: 寝たきりや重度認知症の高齢者を同居で長く介護する人に慰労金を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 寝たきりまたは重度認知症の高齢者を長期に同居で介護
+  - 支給要件あり（詳細は頁に無い）
+  where: 生活相談課（高齢者福祉係）。支給は12月頃
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: low
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: haikai
+  name: 認知症高齢者等見守りシール（QRコード）の交付
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: 行方不明の心配がある認知症の人に、QRコード付きシールを無料で交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、概ね65歳以上、または40〜64歳の若年性認知症
+  - 見守りネットワーク事業への事前登録が必要
+  where: 生活相談課（高齢者福祉係・地域包括支援センター）
+  url: https://www.city.suwa.lg.jp/soshiki/12/41251.html
+  confidence: high
+  amount: シール30枚を無料交付（追加分は実費）
+  more_urls:
+  - https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+- category: haikai
+  name: 高齢者等見守りネットワークへの登録（行方不明時の捜索）
+  name_on_page: 高齢者等見守りネットワーク事業
+  summary: 家族が事前に情報を登録し、行方不明時に市・警察・協力事業所で捜索する。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上、または40歳以上の若年性認知症の人
+  - 氏名・身体的特徴・写真などを家族が事前登録
+  where: 生活相談課（高齢者福祉係・地域包括支援センター）
+  url: https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.suwa.lg.jp/soshiki/12/41251.html
+- category: haikai
+  name: 徘徊高齢者の位置情報検索システム加入費の助成
+  name_on_page: 徘徊高齢者位置情報検索システム
+  summary: 認知症高齢者の位置情報検索システムに加入する費用の一部を助成する。
+  who: {}
+  at_application:
+  - 認知症高齢者を介護している人（詳細条件は頁に無い）
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/soshiki/12/4091.html
+  confidence: low
+- category: sonota
+  name: 認知症高齢者等個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の人が事故で他人に損害を与えたとき、市契約の保険で補償を受けられる。
+  who: {}
+  at_application:
+  - 見守りネットワーク事業に登録した認知症等の高齢者
+  - または40歳以上の若年性認知症の人
+  - 事故の前にあらかじめ申請が必要
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.suwa.lg.jp/soshiki/12/4091.html
+- category: jutaku
+  name: 寝たきり高齢者等の住宅改修補助
+  name_on_page: 寝たきり高齢者等の住宅改修に対する補助
+  summary: 寝たきり高齢者等を在宅で介護する家庭の居室・浴室などの改修費を補助する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定を受けた寝たきり高齢者等を在宅で介護している
+  - 世帯の所得税額の合計が8万円以下
+  - 事前に相談が必要
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+  confidence: high
+  amount: 工事費の上限70万円（1割は自己負担）
+  more_urls:
+  - https://www.city.suwa.lg.jp/soshiki/12/4091.html
+- category: jutaku
+  name: 自立支援のための住宅改修補助
+  name_on_page: 自立支援のための住宅改修に対する補助
+  summary: 要介護認定で非該当の高齢者の、手すり取付や段差解消の改修費を補助する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定で非該当（自立）と判定された人
+  - 世帯の所得税額の合計が8万円以下
+  - 事前に相談が必要
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+  confidence: high
+  amount: 工事費の上限10万円（1割は自己負担）
+  more_urls:
+  - https://www.city.suwa.lg.jp/soshiki/12/4091.html
+- category: sonota
+  name: 住宅改良アドバイザーの派遣
+  name_on_page: 住宅改良アドバイザーの派遣
+  summary: 住宅改修を考える人へ、登録アドバイザーを無料で派遣して助言する。
+  who: {}
+  at_application:
+  - 65歳以上、要介護認定のある人、身体障害者等
+  - 介護・介護予防のための住宅改修を検討している
+  where: 生活相談課（高齢者福祉係）
+  url: https://www.city.suwa.lg.jp/uploaded/attachment/50367.pdf
+  confidence: high
+  amount: 利用料は無料
+  more_urls:
+  - https://www.city.suwa.lg.jp/soshiki/12/4091.html
+not_found:
+- koken
+- shingu
+- mimamori
+- chusha
+- yutai

@@ -1,0 +1,198 @@
+city: '162094'
+name: 小矢部市
+site: www.city.oyabe.toyama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 見守り配食
+  name_on_page: 小矢部市見守り配食事業
+  summary: 指定業者の配食時に見守りも行い、異常があれば緊急連絡先へ知らせる。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 配食での見守りが必要な人（心身の状態等に不安）
+  - 市指定の配食事業者から配食を受けている
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1004122/1002496.html
+  confidence: high
+  amount: 見守りは無料。食事代は自己負担。
+- category: kinkyu-tsuho
+  name: 高齢者等見守り支援（相談・緊急通報装置）
+  name_on_page: 高齢者等見守り支援事業
+  summary: 装置で日常の相談に助言し、緊急通報時は協力員へ確認依頼などを行う。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - これに準ずる世帯も対象
+  - 日常生活の見守りが必要な人
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1004122/1002496.html
+  confidence: high
+  amount: 利用料は月額 400 円。
+- category: jutaku
+  name: 高齢者住宅改善費の助成
+  name_on_page: 高齢者住宅改善費の助成（所得制限あり）
+  summary: 高齢者のための住宅改善工事の費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の高齢者、またはその人と同居する人
+  - 頁では要介護者・要支援者は除くとある
+  - 工事を始める前に申請が必要
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1004122/1002496.html
+  confidence: high
+  amount: 助成限度額は 30 万円。
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 聴力が下がった 65 歳以上の人の補聴器購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市に引き続き1年以上住んでいる
+  - 耳鼻咽喉科医が一耳40dB以上の低下で必要と認めた
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 世帯員全員が市税等を完納している
+  - 過去にこの助成を受けていない
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1004122/1004827.html
+  confidence: high
+  amount: 購入費の2分の1、上限 30,000 円。
+- category: haikai
+  name: おでかけあんしんシールの配付
+  name_on_page: 小矢部市おでかけあんしんシール配付事業
+  summary: QRコード付きシールを配付し、道に迷った高齢者の早期発見につなげる。
+  who: {}
+  at_application:
+  - 対象者は頁の抜き出しで確認できない。健康福祉課に確認
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1004122/1002497.html
+  confidence: high
+- category: kaigo-yohin
+  name: おむつ引換券の支給
+  name_on_page: おむつ引換券支給
+  summary: 常時おむつを使う在宅の要介護者に、おむつ引換券を支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 高齢者
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1002500.html
+  confidence: high
+  amount: 1か月 2,000 円分の引換券。
+- category: gaishutsu
+  name: 外出支援サービス（送迎費の一部助成）
+  name_on_page: 外出支援サービス
+  summary: 移送用車両での在宅福祉サービスや通院の送迎費の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 移乗・歩行ができず常時車いす使用
+  - 一般の交通機関の利用が困難
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1002500.html
+  confidence: high
+- category: shingu
+  name: 寝具の洗濯・消毒・乾燥
+  name_on_page: 寝具洗濯消毒乾燥事業
+  summary: 敷布団・掛布団・毛布を年1回まで無料で洗濯消毒乾燥する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3以上の在宅高齢者
+  - または、要支援1以上の在宅のひとり暮らしの後期高齢者
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1002500.html
+  confidence: high
+  amount: 無料。年1回、敷布団・掛布団・毛布各1枚まで。
+- category: iro
+  name: 介護人手当
+  name_on_page: 介護人手当支給事業
+  summary: 同じ世帯の在宅の要介護3以上の高齢者を介護する人に手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護する人が市に引き続き1年以上住んでいる
+  - 介護対象者が月の半分より多く在宅
+  - 特別障害者手当・福祉金を受ける人の介護人は除く
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1004122/1002495.html
+  confidence: high
+  amount: 1か月 3,000 円。
+- category: sonota
+  name: 在宅要介護高齢者への福祉金
+  name_on_page: 在宅要介護高齢者福祉金支給
+  summary: 在宅の要介護4以上の高齢者に福祉金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 所得要件などがある（詳しい基準は頁に無し）
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1002500.html
+  confidence: high
+  amount: 年間最大 60,000 円（月額 5,000 円）。
+- category: sonota
+  name: 高齢者等の除排雪費の助成
+  name_on_page: 高齢者等除排雪支援事業
+  summary: 屋根や住宅周辺の除排雪にかかった費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者のみの世帯
+  - または高齢者と小学生以下の子どもだけの世帯
+  - またはひとり暮らしの身体障害者のみの世帯
+  where: 健康福祉課（電話 0766-67-8605）
+  url: https://www.city.oyabe.toyama.jp/fukushikenkou/1002492/1004122/1002496.html
+  confidence: high
+  amount: 年度の助成額は 20,000 円まで（1回 10,000 円まで、年2回まで）。
+not_found:
+- koken
+- nichijo-yogu
+- ribiyo
+- yutai

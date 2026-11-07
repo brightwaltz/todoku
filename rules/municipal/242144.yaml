@@ -1,0 +1,95 @@
+city: '242144'
+name: いなべ市
+site: www.city.inabe.mie.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 支援が必要な在宅の高齢者宅に緊急通報装置を貸し出して設置する。
+  who: {}
+  at_application:
+  - 市内に住所がある在宅の高齢者で支援が必要な方
+  - 詳しい要件は社会福祉協議会の案内で確認
+  where: いなべ市社会福祉協議会（市長寿福祉課が案内）
+  url: https://www.city.inabe.mie.jp/kenko/kaigo/service/1014525.html
+  confidence: low
+  amount: 対象者の費用負担なし（警備会社等との契約費用）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具の洗濯サービス
+  summary: 掛布団・敷布団・毛布の一式を洗濯・乾燥・消毒してくれる。
+  who: {}
+  at_application:
+  - 市内に住所がある在宅の高齢者で支援が必要な方
+  - 詳しい要件は社会福祉協議会の案内で確認
+  where: いなべ市社会福祉協議会（市長寿福祉課が案内）
+  url: https://www.city.inabe.mie.jp/kenko/kaigo/service/1014525.html
+  confidence: low
+  amount: 掛布団1・敷布団1・毛布2を一式として1人年2回まで
+- category: ribiyo
+  name: 訪問による理容
+  name_on_page: 訪問による理容サービス
+  summary: 理容協力店が自宅を訪ねて散髪などをしてくれる。
+  who: {}
+  at_application:
+  - 市内に住所がある在宅の高齢者で支援が必要な方
+  - 詳しい要件は社会福祉協議会の案内で確認
+  where: いなべ市社会福祉協議会（市長寿福祉課が案内）
+  url: https://www.city.inabe.mie.jp/kenko/kaigo/service/1014525.html
+  confidence: low
+  amount: 1人年6回まで（理美容の費用は本人負担）
+- category: haishoku
+  name: ふれあい弁当（安否確認の配食）
+  name_on_page: ふれあい弁当サービス
+  summary: 心身に不安のある一人暮らし等の方に、安否確認を兼ねて手作り弁当を配る。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし、または85歳以上の高齢者夫婦世帯など
+  - 心身に不安を感じている方
+  - 7〜9月は休み
+  where: いなべ市社会福祉協議会 地域福祉課
+  url: https://www.city.inabe.mie.jp/kenko/kaigo/service/1001563.html
+  confidence: high
+  amount: 無料、月2回
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク登録
+  name_on_page: いなべ市認知症高齢者等SOSネットワーク
+  summary: 行方不明の心配がある方の情報を事前登録し、バッジ等の配布と賠償保険の加入がある。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、認知症などで行方不明のおそれがある
+  - 賠償保険は在宅で住民基本台帳に記録された登録者が対象
+  where: 長寿福祉課、地域包括支援センター
+  url: https://www.city.inabe.mie.jp/kenko/kaigo/1012346/1001548.html
+  confidence: high
+  amount: 登録でバッジ等2種を配布。市が保険料を全額負担（賠償最大1億円）
+- category: haikai
+  name: GPS機器の購入・レンタル費の補助
+  name_on_page: GPSによる見守り支援への費用補助
+  summary: 道に迷う認知症の方を探すGPS機器の購入・レンタル費の一部を家族に補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 在宅で暮らす認知症の方の家族等で、GPS機器の購入者かレンタル契約者
+  where: 長寿福祉課（相談は地域包括支援センターでも可）
+  url: https://www.city.inabe.mie.jp/kenko/kaigo/1012346/1012527.html
+  confidence: high
+  amount: 購入額の90％、上限9,000円、1人1回限り（月々の利用料は対象外）
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- nichijo-yogu
+- gaishutsu
+- mimamori

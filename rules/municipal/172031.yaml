@@ -1,0 +1,170 @@
+city: '172031'
+name: 小松市
+site: www.city.komatsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 安心通報システム（緊急通報装置の設置）
+  name_on_page: 安心通報システム
+  summary: ボタンを押すと相談センターにつながる緊急通報装置を設置してもらえる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、高齢者のみ世帯、または重度身体障害者(1・2級)のみの世帯
+  - 急に生命に危険な症状が出る持病、または日常生活動作に支障がある
+  - 申請後に状態を調査して決める
+  where: 高齢者総合相談センター、長寿介護課
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/2/2768.html
+  confidence: high
+  amount: 利用者負担は月額400円
+- category: haishoku
+  name: 配食サービス（食事の提供と安否確認）
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に、栄養バランスのよい食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、高齢者のみ世帯、または障がい者のみの世帯
+  - 上の方で、介護保険負担限度額認定の第3段階以下
+  - 短期集中介護予防サービス対象者で栄養改善が必要な方も対象
+  - その他、市長が特に必要と認める方も対象
+  where: 高齢者総合相談センター、長寿介護課
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/2/2771.html
+  confidence: high
+  amount: 1食につき普通食200円・療養食400円を助成（昼・夜の2食まで）
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の購入費助成
+  name_on_page: 日常生活用具の給付
+  summary: 火災警報器・自動消火器・電磁調理器の購入費を、限度額まで助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 寝たきりに近い、または火の始末に配慮が必要な要援護高齢者
+  - 火災警報器・自動消火器は前年度所得税が非課税の世帯か生活保護世帯
+  - 電磁調理器は所得税額に応じて助成額が変わる
+  where: 長寿介護課（地域包括ケア）
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/2/2779.html
+  confidence: high
+  amount: 限度額は火災警報器15,500円、自動消火器28,700円、電磁調理器41,000円
+- category: haikai
+  name: 認知症高齢者のGPS端末の貸与
+  name_on_page: 位置情報提供サービス
+  summary: 徘徊のある高齢者と暮らす家族に、GPS端末を貸し出して居場所を知らせる。
+  who:
+    age_min: 65
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で認知症による徘徊がある高齢者と、同居または同一敷地の家族
+  - 独居の方、施設やグループホーム等の入居者は対象外
+  - 位置が分かったときに迎えに行ける家族がいる
+  where: 長寿介護課
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/5/1582.html
+  confidence: high
+  amount: 利用料はGPS端末1台につき月500円
+- category: kaigo-yohin
+  name: 家族介護用品助成券（おむつ等）
+  name_on_page: 家族介護用品助成券の支給
+  summary: 要介護3以上の在宅の方の介護用品に使える助成券を、家族に支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護用品が必要な方
+  - 入院・施設入所中は対象外（グループホーム等は除く）
+  - 登録店舗のみで使える
+  where: 長寿介護課、南支所
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/5/2776.html
+  confidence: high
+  amount: 月額4,500円分（900円券を5枚）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容室へ行けない要介護3以上の在宅の方の自宅へ、理美容師が来る。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理美容室へ行くことが困難な方
+  - 入院・施設入所中は対象外（グループホーム等は除く）
+  where: 長寿介護課、南支所
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/5/2782.html
+  confidence: high
+  amount: 年3回まで、1回1,000円の自己負担
+- category: shingu
+  name: 寝具乾燥消毒サービス
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 要介護3以上の在宅の方の寝具の丸洗い・乾燥消毒を年2回受けられる。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 入院・施設入所中は対象外（グループホーム等は除く）
+  - 対象は掛け布団・敷き布団・毛布各1枚（羽毛・羊毛は対象外）
+  where: 長寿介護課、南支所
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/5/2784.html
+  confidence: high
+  amount: 1回1,500円の自己負担
+- category: jutaku
+  name: 高齢者向け住宅リフォームの助成（市独自）
+  name_on_page: 高齢者自立支援型住宅リフォーム
+  summary: 手すり・段差解消などの住宅改修費を、非課税世帯などに助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 世帯分離しても、同居者全員が非課税であること
+  - 訪問調査の前に着工した工事は対象外
+  - 過去にこの助成を受けた方は原則対象外
+  where: 長寿介護課（指定・給付担当）
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/6/2781.html
+  confidence: high
+  amount: 補助率は非課税世帯90%（生活保護世帯100%）、限度額100万円
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり・きゅう・マッサージ施術費の助成
+  summary: 3,000円の施術を1,000円で受けられる助成券を年間最大18枚交付する。
+  who: {}
+  at_application:
+  - 70歳以上、または65歳以上で身体障害者手帳1～3級か療育手帳A・B
+  - 申請の月によって交付枚数が変わる（4月18枚～3月2枚）
+  - 市の指定施術所のみ利用可
+  where: 長寿介護課、南支所
+  url: https://www.city.komatsu.lg.jp/soshiki/1039/koureishafukushi/2/1/2772.html
+  confidence: high
+  amount: 助成券は1回1枚、自己負担1,000円（3,000円超は全額自己負担）
+not_found:
+- iro
+- koken
+- hochoki
+- mimamori
+- chusha
+- yutai

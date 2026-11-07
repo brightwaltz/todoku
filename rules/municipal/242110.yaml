@@ -1,0 +1,123 @@
+city: '242110'
+name: 鳥羽市
+site: www.city.toba.mie.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）の利用券支給
+  name_on_page: 介護用品支給事業
+  summary: 常時おむつが必要な要介護2以上で本人が非課税の人に、おむつ等と交換できる利用券を配る。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住民票がある
+  - 生活保護世帯でない
+  - 介護保険の給付制限を受けていない
+  - 介護保険施設に入所していない（入院・グループホームは可）
+  where: 健康福祉課 介護保険係、各連絡所
+  url: https://www.city.toba.mie.jp/soshiki/choju_kaigo/gyomu/kourei_fukushi_kaigo/kaigo_hoken/2912.html
+  confidence: high
+  amount: 利用券は月額で、要介護2・3が3,000円、要介護4・5が6,000円。超えた分は自己負担。
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 昼・夕の食事を自宅へ届け、手渡しで安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住民票があり市内に住んでいる
+  - おおむね65歳以上
+  - 心身の状態で調理が難しく、外出も難しい
+  - 利用規約を守れる
+  - 対象地区は鳥羽本土・坂手・菅島・桃取
+  where: 健康福祉課 長寿介護係
+  url: https://www.city.toba.mie.jp/soshiki/choju_kaigo/gyomu/kourei_fukushi_kaigo/support_koreisha/2046.html
+  confidence: high
+  amount: 1食650円のうち本人負担は430円。昼・夕の1日2食、月曜から土曜。
+- category: haikai
+  name: 見守りシール（QRコード）の交付
+  name_on_page: 鳥羽市見守りシール交付事業
+  summary: 行方不明時に発見者が読み取って家族と連絡できるQRシールを30枚無料で交付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上、または65歳未満で介護認定を受けている人
+  - ほか市長が認める人も対象
+  - 申請後に地域包括支援センターが聞き取り・審査する
+  where: 地域包括支援センター、市民課、各連絡所
+  url: https://www.city.toba.mie.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/chiikihokatsu_center/3621.html
+  confidence: high
+  amount: 無料（通信費は自己負担）。衣服用20枚・物品用10枚。
+- category: koken
+  name: 成年後見の市長申立て費用などの助成
+  name_on_page: 成年後見制度利用支援事業(地域包括支援センター）
+  summary: 市長が後見開始の審判請求をする場合の費用などを助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分である
+  - 4親等以内の親族がいない、または審判請求を期待できない
+  - 費用の助成がないと後見制度を使いにくい
+  where: 地域包括支援センター（健康福祉課）
+  url: https://www.city.toba.mie.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/4154.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者外出支援（福祉車両の移動支援）
+  name_on_page: 高齢者外出支援事業（移動支援）
+  summary: バス停が遠い地区で、福祉車両が最寄りの停留所などへ運ぶ。医療機関以外への外出用。
+  who: {}
+  at_application:
+  - 対象は白木町・松尾町川合、河内町・若杉町に住む人
+  - 65歳以上、または肢体に障がいがある人
+  - 運行は火・水・金曜
+  where: 健康福祉課 長寿介護係
+  url: https://www.city.toba.mie.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/3840.html
+  confidence: high
+  amount: 利用料は無料。
+- category: gaishutsu
+  name: 移送サービス（自宅と施設・医療機関の送迎）
+  name_on_page: 移送サービス
+  summary: 歩行が難しい人や要介護の人を、自宅と保健福祉施設・医療機関の間で送迎する。
+  who: {}
+  at_application:
+  - 身体障害者手帳があり歩行が難しい人
+  - または要介護認定を受けた人（同程度の人も可）
+  - 利用は週1回または2週間に1回
+  where: 健康福祉課（申請書の受付・予約は電話 0599-25-1186）
+  url: https://www.city.toba.mie.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/4157.html
+  confidence: high
+- category: sonota
+  name: 離島の高齢者の介護サービス利用に係る船賃助成
+  name_on_page: 船賃の助成
+  summary: 離島に住む高齢者が介護保険サービスなどで使う定期船の船賃を助成する。
+  who: {}
+  at_application:
+  - 離島に住む高齢者
+  - 本土側で介護保険サービス等を受けた
+  - 利用事業所から申請書兼請求書を受け取り提出する
+  where: 健康福祉課 長寿介護係、各連絡所
+  url: https://www.city.toba.mie.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/4153.html
+  confidence: high
+  amount: 訪問系は市営定期船の船賃の4分の3、通所系は全額（介助員1名分を含む）。
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori
+- kinkyu-tsuho

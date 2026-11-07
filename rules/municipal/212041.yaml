@@ -1,0 +1,151 @@
+city: '212041'
+name: 多治見市
+site: www.city.tajimi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品購入助成
+  name_on_page: 寝たきり高齢者等介護用品購入助成事業
+  summary: 紙おむつや防水シーツ等に使える購入券を、半年分ずつ交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 寝たきりまたは重度認知症で、常時排泄の介護が必要
+  - 多治見市の住民基本台帳に記載されている
+  - 有料老人ホーム等に住む場合も在宅として扱う
+  where: 高齢福祉課（駅北庁舎2階）
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009052/1006624.html
+  confidence: high
+  amount: 月5,000円分の購入券を前期(4〜9月)・後期(10〜3月)に分けて交付
+- category: haishoku
+  name: 配食型見守りサービス
+  name_on_page: 配食型見守りサービス事業
+  summary: 食事を届けるときに安否確認もしてくれる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で安否確認が必要な方
+  - または重度障害のある65歳未満の身体障害者手帳所持者
+  - その他、市長が特に必要と認めた方
+  where: 高齢福祉課
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009052/1006624.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無料貸与
+  name_on_page: 緊急通報電話（機器）の貸与
+  summary: 消防署直通の緊急通報装置を無料で貸与・設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上で在宅のひとり暮らしの高齢者
+  - または1〜3級の身体障害者でひとり暮らしの方
+  - または寝たきり高齢者を抱える高齢者のみ世帯等
+  - 緊急時の連絡協力員が3人必要
+  - 固定電話があること
+  where: 高齢福祉課
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009052/1006624.html
+  confidence: high
+  amount: 設置は無料。3年に1度の電池交換代4,500円は自己負担
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キットの配付
+  summary: 持病や緊急連絡先を入れて冷蔵庫に保管するキットを配る。
+  who: {}
+  at_application:
+  - 災害時要援護者登録台帳に登録されている方
+  - または65歳以上で在宅のひとり暮らしの方
+  - その他必要と認められる方
+  - 申込書に地区の民生委員の署名が必要
+  where: 高齢福祉課
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009052/1006624.html
+  confidence: high
+- category: shingu
+  name: 寝具の洗濯・乾燥の助成
+  name_on_page: 寝具の洗濯・乾燥
+  summary: 布団やシーツの洗濯・乾燥費用の一部を助成し、利用券を出す。
+  who: {}
+  at_application:
+  - 住民税非課税世帯で要介護4か5の認定がある
+  - かつ65歳以上のひとり暮らしか高齢者のみの世帯
+  - または1〜3級の身体障害者手帳を持つひとり暮らしの方
+  - 事前に申請して利用券の交付を受ける
+  where: 高齢福祉課（頁の問い合わせ先。申請窓口の明記なし）
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009052/1006624.html
+  confidence: high
+  amount: 費用の9割を助成（自己負担1割）
+- category: haikai
+  name: 認知症高齢者等みまもりシール
+  name_on_page: 認知症高齢者等みまもりシール交付事業
+  summary: QRコード付きの衣服用シールを交付し、行方不明時の早期発見につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - おおむね65歳以上、または医師に認知症と診断された方
+  - その他市長が認める方も対象
+  where: 高齢福祉課、各地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009051/1006626.html
+  confidence: high
+  amount: 初回交付500円（追加のシールは全額自己負担）。耐洗ラベル30枚と蓄光シール10枚
+- category: koken
+  name: 成年後見制度の費用助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立て費用と後見人等の報酬を、支払いが難しい人に助成する。
+  who: {}
+  at_application:
+  - 市内に住所があるか、市が支援・保護している要支援者
+  - 生活保護受給者、または報酬負担で収入が最低生活費以下の方
+  - 中国残留邦人等支援給付の受給者も対象
+  - 資産がなく利用が難しいと市長が認める方も対象
+  where: 高齢福祉課、福祉課、各地域包括支援センター
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009052/1006639.html
+  confidence: high
+  amount: 申立て費用（書類代・印紙代・切手代等）と、報酬は月額2万円まで
+- category: gaishutsu
+  name: 高齢者のバスチケット
+  name_on_page: バスチケット65（高齢者公共交通機関利用促進助成事業）
+  summary: 65歳以上の市民に、市内のバスで使える100円券を1年分支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 令和8年4月1日時点で65歳以上の多治見市民
+  - 受け取りは1年度につき1回のみ
+  where: 都市政策課、市民課、各地区事務所、指定の郵便局など
+  url: https://www.city.tajimi.lg.jp/kurashi_tetsuduzuki/machizukuri/1005719/1005780/1005791.html
+  confidence: high
+  amount: 6,000円分（100円券60枚）。平日は1乗車1枚、土日祝は2枚使える
+- category: sonota
+  name: 高齢者世帯の粗大ごみ戸別収集
+  name_on_page: 高齢者世帯の粗大ごみ戸別収集
+  summary: ごみステーションまで運べない高齢者世帯の粗大ごみを、自宅まで取りに来る。
+  who:
+    age_min: 75
+    household:
+    - elderly_only
+  at_application:
+  - 対象は長さ1m以下・重さ50kg以下の粗大ごみ
+  - 粗大ごみを屋外へ出す必要がある
+  - 収集日は指定できない
+  where: 高齢福祉課
+  url: https://www.city.tajimi.lg.jp/kenko_iryo_fukushi/koureishafukushi/1009052/1006624.html
+  confidence: high
+  amount: 粗大ごみ1つにつきシール520円
+not_found:
+- iro
+- hochoki
+- jutaku
+- ribiyo

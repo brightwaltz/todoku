@@ -1,0 +1,124 @@
+city: '172090'
+name: かほく市
+site: www.city.kahoku.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等支給事業
+  summary: 失禁があり常時おむつを使う在宅の要介護者に、薬局が毎月おむつ等を配達する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 失禁があり、常時紙おむつ等を使用している
+  where: 長寿介護課、または高松・七塚サービスセンター
+  url: https://www.city.kahoku.lg.jp/003/341/345/d010355.html
+  confidence: high
+  amount: 月の限度額は、住民税非課税世帯が9,000円、課税世帯が5,500円。
+- category: gaishutsu
+  name: 高齢者福祉タクシー助成券
+  name_on_page: 高齢者福祉タクシー助成券
+  summary: 在宅高齢者の外出支援として、タクシーの基本料金相当の助成券を年12枚交付する。
+  who:
+    at_home: true
+  at_application:
+  - 75歳以上の高齢者のみ世帯、または80歳以上の方
+  - 車の運転をしていない
+  - 障害者用タクシー券や自動車税減免を受けていない
+  where: 長寿介護課、または高松・七塚サービスセンター
+  url: https://www.city.kahoku.lg.jp/003/341/345/d010349.html
+  confidence: high
+  amount: 小型車の基本料金相当額の券を年間12枚。
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 契約した理美容事業者が自宅を訪問して散髪等を行い、費用の1割を負担する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 自立歩行ができず、家族等が理美容店に連れて行くのが難しい
+  where: 長寿介護課
+  url: https://www.city.kahoku.lg.jp/003/341/345/d010629.html
+  confidence: high
+  amount: 利用料は理容440円、美容410円（費用の1割相当）。
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 契約業者が寝具を自宅で集配し、洗濯・乾燥・消毒をする。年4回利用できる。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきり等で寝具の衛生管理が難しい
+  where: 長寿介護課
+  url: https://www.city.kahoku.lg.jp/003/341/345/d010629.html
+  confidence: high
+  amount: 年4回（5月・8月・11月・2月）。費用の1割を業者に支払う。
+- category: haikai
+  name: 認知症高齢者の見守りシール
+  name_on_page: 見守りシール
+  summary: 行方不明の心配がある高齢者に、2次元コード付きの見守りシールを無料で交付する。
+  who: {}
+  at_application:
+  - 行方不明の心配がある高齢者等（詳しい条件は窓口で確認）
+  where: 長寿介護課内の高齢者支援センターに相談
+  url: https://www.city.kahoku.lg.jp/003/341/342/d011572.html
+  confidence: high
+- category: jutaku
+  name: 在宅支援型住宅リフォーム資金助成
+  name_on_page: 在宅支援型住宅リフォーム資金助成制度
+  summary: 介護を要する高齢者等の自宅の改造費を市が助成する。介護保険の住宅改修とは別の制度。
+  who: {}
+  at_application:
+  - 介護を要する高齢者等、または身体に障がいのある方
+  - 着工前にケアマネジャーか長寿介護課に相談が必要
+  where: 長寿介護課、または担当のケアマネジャーに相談
+  url: https://www.city.kahoku.lg.jp/003/331/336/d000268.html
+  confidence: low
+- category: gaishutsu
+  name: 福祉車両の利用料助成（要介護4・5向け）
+  name_on_page: 重度障害者等福祉車両利用助成金
+  summary: ストレッチャー等のまま乗れる車両で通院した際の利用料を助成する。要介護4・5の方は長寿介護課で受け付ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 通院等の送迎が必要（施設入所者を除く）
+  - 1日中ベッド上で過ごし、排泄・食事・着替えに介助が必要
+  - 身体障害者手帳1・2級の方は別窓口（健康福祉課）
+  where: 長寿介護課（高齢者支援センター）
+  url: https://www.city.kahoku.lg.jp/003/360/d010527.html
+  confidence: high
+  amount: 1回3,000円まで、月2回まで（償還払い）。
+  more_urls:
+  - https://www.city.kahoku.lg.jp/003/360/d010527_d/fil/20221201.pdf
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho

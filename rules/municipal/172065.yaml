@@ -1,0 +1,112 @@
+city: '172065'
+name: 加賀市
+site: www.city.kaga.ishikawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 家族介護支援 介護用品の給付
+  summary: 在宅で介護を受ける非課税の要介護者に、紙おむつ等を自宅へ配達して支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 在宅で家族の介護を受けている
+  - 要介護1〜3は尿失禁の可能性が高いことが必要
+  - 要介護1〜3は寝たきり度B1〜C2か認知症自立度3a〜Mが必要
+  where: 介護福祉課 長寿介護グループ
+  url: https://www.city.kaga.ishikawa.jp/kenko_fukushi/koreisha_fukushi/service_shurui/2/2499.html
+  confidence: high
+  amount: 1か月につき 6,000 円相当分まで
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容
+  summary: 外出が難しい要介護の高齢者の自宅へ理美容師が来て散髪し、出張費を市が負担する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 外出が困難である
+  - 利用は担当のケアマネジャーに相談する
+  where: 担当ケアマネジャー、介護福祉課 長寿介護グループ
+  url: https://www.city.kaga.ishikawa.jp/kenko_fukushi/koreisha_fukushi/service_shurui/2/2500.html
+  confidence: high
+  amount: 調髪代は実費。訪問の交通費・出張費は市が負担。年度内 4 回まで
+- category: jutaku
+  name: 住宅リフォームの助成（手すり・段差解消など）
+  name_on_page: 住宅リフォームの助成
+  summary: 非課税世帯の要支援・要介護の方の自宅の手すり・段差解消などの工事費を助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要支援・要介護認定の人がいる世帯、または介護扶助を受ける人がいる世帯
+  - 工事の前に住宅改修・福祉用具の相談を受ける
+  where: 介護福祉課 長寿介護グループ
+  url: https://www.city.kaga.ishikawa.jp/kenko_fukushi/koreisha_fukushi/service_shurui/2/2501.html
+  confidence: high
+  amount: 工事費の 90%（介護扶助の世帯は 100%）、限度額 100 万円
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具の洗濯・乾燥・消毒
+  summary: 寝たきりなどで寝具を清潔に保てない要介護の方のふとんを、洗濯・乾燥・消毒する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりなどで寝具の衛生管理ができない
+  - 利用は担当のケアマネジャーに相談する
+  where: 担当ケアマネジャー、介護福祉課 長寿介護グループ
+  url: https://www.city.kaga.ishikawa.jp/kenko_fukushi/koreisha_fukushi/service_shurui/2/2502.html
+  confidence: high
+  amount: 自己負担は敷布団・掛布団 各 400 円、毛布 150 円。年度内 3 回まで
+- category: nichijo-yogu
+  name: 自動消火器の給付
+  name_on_page: 自動消火器の給付
+  summary: 火の管理が難しい非課税の高齢者のひとり暮らし・高齢者世帯に、自動消火器を給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 火災の感知と避難が著しく困難である
+  - 三つの条件をすべて満たすことが必要
+  where: 介護福祉課 長寿介護グループ
+  url: https://www.city.kaga.ishikawa.jp/kenko_fukushi/koreisha_fukushi/service_shurui/2/2503.html
+  confidence: high
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- gaishutsu
+- mimamori

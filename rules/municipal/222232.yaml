@@ -1,0 +1,146 @@
+city: '222232'
+name: 御前崎市
+site: www.city.omaezaki.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置事業
+  summary: ひとり暮らしの高齢者の固定電話に通報機器を貸与し、緊急時に事業者が確認・通報する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内に住所があり、安否確認が必要な人
+  - 市税等の滞納がない
+  - 自宅に固定電話がある
+  where: 高齢者支援課（担当地区の民生委員を経由して申込み）
+  url: https://www.city.omaezaki.shizuoka.jp/soshiki/koreishashien/fukushi_kaigo/iryo_fukushi/7415.html
+  confidence: high
+  amount: 利用料は月500円（電話代は別）
+  more_urls:
+  - https://www.city.omaezaki.shizuoka.jp/material/files/group/14/2025kinkyuustuhou.pdf
+- category: mimamori
+  name: ひとり暮らし高齢者の見守り（飲料配達）
+  name_on_page: ひとり暮らし高齢者見守り事業
+  summary: 週3回ほど乳酸菌飲料を届けながら、ひとり暮らしの方の安否を確認する。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 市内に住所があり、この事業による安否確認が必要な人
+  - 市税等の滞納がない
+  where: 高齢者支援課（担当地区の民生委員を通じて申請）
+  url: https://www.city.omaezaki.shizuoka.jp/soshiki/koreishashien/fukushi_kaigo/iryo_fukushi/7415.html
+  confidence: high
+  amount: 無料（配達地域によっては週1回）
+  more_urls:
+  - https://www.city.omaezaki.shizuoka.jp/material/files/group/14/yakuruto.pdf
+- category: gaishutsu
+  name: 車いす対応車両での送迎（移送サービス）
+  name_on_page: 移送サービス事業
+  summary: 外出が難しい在宅の方を、専用車両で市内の医療機関や市役所などへ送迎する。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 常時車いす、1日の大半を床で過ごす、要介護3以上のいずれか
+  - 65歳未満は要介護3以上が条件
+  - 市税等の滞納がない
+  where: 高齢者支援課（申請）、東海清風園ヘルパーステーション（予約）
+  url: https://www.city.omaezaki.shizuoka.jp/soshiki/koreishashien/fukushi_kaigo/iryo_fukushi/7415.html
+  confidence: high
+  amount: 自己負担は1回400円〜630円（ヘルパー人数による）、月4回まで
+  more_urls:
+  - https://www.city.omaezaki.shizuoka.jp/material/files/group/14/R8isousa-bisu.pdf
+- category: gaishutsu
+  name: 福祉タクシー助成券の交付
+  name_on_page: 福祉タクシー助成券
+  summary: 1枚500円のタクシー割引券を年度ごとに交付する（申請月で枚数が変わる）。
+  who: {}
+  at_application:
+  - 75歳以上、要支援・要介護認定、または障害者手帳のいずれか
+  - 運転免許証を持っている人は対象外
+  - 市税等に滞納がある人・施設入所者は対象外
+  where: 福祉課（御前崎・白羽地区は御前崎支所でも可）
+  url: https://www.city.omaezaki.shizuoka.jp/soshiki/fukushi/fukushi/fukushijigyo/taxi.html
+  confidence: high
+  amount: 1枚500円とお迎え料金140円を助成、1乗車3枚まで、4〜6月申請は20枚
+- category: gaishutsu
+  name: 小型リフト車の貸与
+  name_on_page: 小型リフト車貸与事業
+  summary: 車いすのまま乗れる小型リフト車を貸し出す（運転は家族など）。
+  who: {}
+  at_application:
+  - 市内に住所があり、車いすなしでは移動が難しい人、または寝たきりの人
+  - 利用時は家族等が運転する
+  where: 高齢者支援課（電子申請もあり）
+  url: https://www.city.omaezaki.shizuoka.jp/soshiki/koreishashien/fukushi_kaigo/iryo_fukushi/7415.html
+  confidence: low
+  amount: 走行80km未満は無料、80km以上は走行距離分を負担
+  more_urls:
+  - https://www.city.omaezaki.shizuoka.jp/material/files/group/14/2025kogatarihutosha.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 高齢者補聴器購入費補助金
+  summary: 65歳以上の方が補聴器を買うとき、費用の半額（上限3万円）を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 各耳の聴力が30デシベル以上で補聴器が必要（医師の証明書）
+  - 身体障害者の対象とならない人
+  - 本人・世帯員に市税等の滞納がない
+  - 過去にこの助成を受けておらず、他の補聴器助成もない
+  where: 高齢者支援課
+  url: https://www.city.omaezaki.shizuoka.jp/kurashi/kenko_iryo_kaigo/fukushi_kaigo/iryo_fukushi/10856.html
+  confidence: high
+  amount: 対象経費の2分の1、上限30,000円（1,000円未満切り捨て）
+  more_urls:
+  - https://www.city.omaezaki.shizuoka.jp/soshiki/koreishashien/fukushi_kaigo/iryo_fukushi/7415.html
+- category: iro
+  name: ねたきり者を在宅で介護する家族への扶助費
+  name_on_page: ねたきり者（児）介護扶助費
+  summary: 要介護3以上などの方を在宅で6か月以上介護している人に、年額の扶助費を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 介護される方は要介護3以上、または身障手帳1級のねたきり者
+  - 在宅で6か月以上介護している人が申請
+  - 手帳1級・要介護3は寝たきり状態判定表で20点以下
+  - 生活保護を受けている人は申請不可
+  where: 福祉課
+  url: https://www.city.omaezaki.shizuoka.jp/material/files/group/12/R8guidebook.pdf
+  confidence: high
+  amount: 年額60,000円（9月・3月に2回に分けて振込）
+  more_urls:
+  - https://www.city.omaezaki.shizuoka.jp/soshiki/fukushi/fukushi/fukushijigyo/fujo.html
+- category: sonota
+  name: 介助用自動車の購入・改造費の助成
+  name_on_page: 介助用自動車購入等の助成
+  summary: 車いす利用者のためのリフト付き車両の購入や改造の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 要介護3〜5で車いす等を使う人、または下肢・体幹機能障害1・2級で車いす等を使う人
+  - 主たる生計維持者の前年所得が特別障害者手当の制限額以下
+  - 購入・改造の前に申請が必要
+  where: 福祉課（西館1階）
+  url: https://www.city.omaezaki.shizuoka.jp/soshiki/fukushi/fukushi/fukushijigyo/6666.html
+  confidence: high
+  amount: 対象経費の3分の2、上限20万円
+not_found:
+- kaigo-yohin
+- haishoku
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu

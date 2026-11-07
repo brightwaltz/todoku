@@ -1,0 +1,209 @@
+city: '222038'
+name: 沼津市
+site: www.city.numazu.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 紙おむつ等介護用品支給サービス
+  summary: 排泄に介助が必要な在宅の人に、紙おむつ等を自宅へ届ける。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 沼津市内に居住している
+  - 紙おむつが必要と認められる
+  - 利用者負担は生計中心者の前年の所得税額で変わる
+  where: 担当ケアマネジャー経由、または本人が介護保険課へ申請
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/kamiomutsu.htm
+  confidence: high
+  amount: 年間の限度額は、要介護2・3が6万円、要介護4・5が7万5千円。自己負担は1〜10割。
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理が困難な人に、安否確認を兼ねて食事を届ける。
+  who: {}
+  at_application:
+  - 要介護認定ありは、本人と世帯員全員が調理困難な人
+  - 認定なしは、ひとり暮らしか高齢者のみの世帯で調理困難な人
+  - 栄養改善と安否確認が必要と認められる
+  - 40〜64歳の生活保護受給中の人は対象外
+  where: 担当ケアマネジャー経由、または地区の地域包括支援センター
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/haishoku.htm
+  confidence: high
+  amount: 1食250〜670円（所得税額による）。昼か夕を1日1食（週7食）まで。
+- category: haikai
+  name: 徘徊高齢者探索用GPS端末の貸与
+  name_on_page: 徘徊高齢者探索用機器の貸与
+  summary: GPS端末を貸し出し、行方不明時の捜索を助ける。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊行動に悩む介護者が申し込む
+  - 有料老人ホーム・グループホーム等の入居者は対象外
+  where: 長寿福祉課（電話055-934-4866）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/mimamorijigyo.htm
+  confidence: high
+  amount: 登録料3,300円（所得税年額3.5万円以下の世帯）または16,500円。月額396円または1,980円。
+  more_urls:
+  - https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/igai.htm
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 認知症高齢者等見守りシール交付
+  summary: QRコード入りシールを交付し、保護時の身元確認を早める。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 沼津市内に住所がある
+  - 認知症等で徘徊行動がみられる高齢者等
+  - 施設（有料老人ホーム・グループホーム含む）入居者は対象外
+  where: 長寿福祉課（電話055-934-4866）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/mimamorijigyo.htm
+  confidence: high
+  amount: 無料。1人につき耐洗ラベル20枚と蓄光シール10枚。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず在宅で介護した家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請日前1年間、介護保険サービスを使っていない（ショートステイ年7日以内は可）
+  - 3か月以上続けて入院していない
+  - 介護者・要介護者とも沼津市に住民登録がある
+  - ほかにも要件あり（要問い合わせ）
+  where: 介護保険課（電話055-934-4874）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/igai.htm
+  confidence: high
+  amount: 年額10万円
+  more_urls:
+  - https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/oshirase/guide.pdf
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費助成
+  name_on_page: 難聴高齢者補聴器購入費助成事業
+  summary: 手帳の対象でない軽中等度難聴の65歳以上に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 沼津市に住民票がある
+  - 身体障害者手帳（難聴・平衡機能障害）の対象にならない
+  - 両耳40dB以上70dB未満で、耳鼻科医が補聴器を必要と判断
+  where: 長寿福祉課窓口（電話055-934-4866）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/hochoki.htm
+  confidence: high
+  amount: 費用の2分の1、上限3万円。新規購入1回と更新1回。
+- category: kinkyu-tsuho
+  name: 緊急通報サービスの初期費用の助成
+  name_on_page: 緊急通報装置設置費用の助成
+  summary: 民間の緊急通報サービスを導入する際の初期費用の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 心臓疾患や脳血管疾患で、緊急時の通報が困難
+  where: 介護保険課（電話055-934-4874）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/igai.htm
+  confidence: high
+  amount: 市民税課税世帯は5,000円、非課税世帯は10,000円が限度。月額利用料は対象外。
+  more_urls:
+  - https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/oshirase/guide.pdf
+- category: nichijo-yogu
+  name: 電磁調理器の購入費助成
+  name_on_page: 電磁調理器
+  summary: 火の扱いに不安のあるひとり暮らし高齢者に、電磁調理器の購入費を助成する。
+  who:
+    household:
+    - alone
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上
+  - 前年の所得税額が非課税
+  - 認知症により火の取り扱いに不安がある
+  where: 介護保険課（電話055-934-4874）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/igai.htm
+  confidence: high
+  amount: 購入金額の半額、上限41,000円
+- category: nichijo-yogu
+  name: 火災警報器の購入費助成
+  name_on_page: 火災警報器
+  summary: 高齢者世帯の火災警報器の購入費を助成する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、高齢者のみの世帯、またはこれに準ずる世帯
+  - 世帯全員の前年の所得税額が非課税
+  - 申請できるのは世帯主
+  where: 介護保険課（電話055-934-4874）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/igai.htm
+  confidence: high
+  amount: 購入金額の9割、上限9,000円。1世帯2台まで。工事費は含まない。
+- category: gaishutsu
+  name: 重度要介護者の通院送迎
+  name_on_page: 重度要介護者通院支援
+  summary: ストレッチャーが必要な重度の人を、専用車両で自宅と病院の間送迎する。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - ストレッチャー用車両での移送が必要
+  where: 介護保険課（電話055-934-4874）
+  url: https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/shimin/igai.htm
+  confidence: high
+  amount: 利用料なし（全額公費負担）
+  more_urls:
+  - https://www.city.numazu.shizuoka.jp/kurashi/fukushi/kaigo/oshirase/guide.pdf
+- category: gaishutsu
+  name: 運転免許自主返納者へのバス・タクシー利用券
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 運転免許を自主返納した65歳以上に、バス・タクシー利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 有効期間内の免許を自主返納した市民（失効は対象外）
+  - 返納後6か月以内に申請、交付は1回限り
+  where: 生活安心課、各市民窓口事務所、沼津警察署
+  url: https://www.city.numazu.shizuoka.jp/kurashi/anshin/safety/sonota/jisyuhennou.htm
+  confidence: high
+  amount: 5,000円分（100円券50枚）。市内協力事業者で使える。
+- category: koken
+  name: 成年後見の報酬助成
+  name_on_page: 沼津市成年後見制度利用支援事業「報酬助成の申請」
+  summary: 報酬の支払いが難しい人の後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護受給者、中国残留邦人等支援給付の受給者
+  - または、資産・収入から報酬の支払いが困難と認められる人
+  - 審判確定の翌日から1年以内に申請
+  where: 長寿福祉課高齢者支援係（本人が65歳以上の場合）
+  url: https://city.numazu.shizuoka.jp/kurashi/fukushi/shogaifukushi/sonota/seinenkoken.htm
+  confidence: high
+  amount: 月額上限は、在宅で20,000円、施設入所・長期入院で12,000円。
+not_found:
+- ribiyo
+- shingu

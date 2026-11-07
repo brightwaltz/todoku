@@ -1,0 +1,120 @@
+city: '182079'
+name: 鯖江市
+site: www.city.sabae.fukui.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入の助成券
+  name_on_page: 介護用品助成事業
+  summary: 在宅で介護を受け紙おむつが必要な要介護者に、購入費の助成券を出す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4・5、または要介護1〜3で常時おむつが必要
+  - 要介護1〜3は本人が住民税非課税であること
+  - 介護保険の被保険者で、市内に住所がある
+  where: 長寿福祉課（高齢福祉グループ）
+  url: https://www.city.sabae.fukui.jp/kenko_fukushi/koreishafukushi/koreishanoseido/ChojuFuku0120170519.html
+  confidence: high
+  amount: 月額1,600〜4,800円（要介護度と住民税の課税状況で異なる）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ボタンで警備員が駆け付ける緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしまたは高齢者のみの世帯
+  - または身体障害者手帳1・2級の人だけの世帯、市長が認める世帯
+  - 近隣協力員を2名登録できること
+  where: 長寿福祉課（高齢福祉グループ）
+  url: https://www.city.sabae.fukui.jp/kenko_fukushi/koreishafukushi/koreishanoseido/ChojuFuku2024kintuu.html
+  confidence: high
+  amount: 月額使用料2,310円（有線）・3,850円（無線）。世帯全員非課税なら市が負担
+- category: jutaku
+  name: 要介護高齢者の住宅改造費の助成
+  name_on_page: 要介護高齢者住宅等改造助成事業
+  summary: 介護保険の住宅改修の対象外となる住宅改造の費用を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3〜5の在宅の人
+  - 要介護1・2は、車いす利用や自立度が一定以下などの要件が必要
+  - 入院・入所中は近く退院・退所の見込みがあること
+  where: 長寿福祉課（ケアマネジャーに事前相談）
+  url: https://www.city.sabae.fukui.jp/kenko_fukushi/koreishafukushi/koreishanoseido/ChojuFuku0120170517.html
+  confidence: high
+  amount: 対象経費の9割（所得により8割・7割）、上限80万円、1人1回限り
+- category: haishoku
+  name: 週1回の配食（昼食）
+  name_on_page: 「食」の自立支援事業(配食サービス)
+  summary: 調理が難しい高齢者に、ボランティアが週1回昼食を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で、調理が困難
+  - 要介護認定を受けた人、総合事業の対象者、または市長が認める人
+  - 市の実態把握で必要と認められた場合のみ
+  where: 長寿福祉課
+  url: https://www.city.sabae.fukui.jp/kenko_fukushi/koreishafukushi/shien_josei/seido-shinsei2/Jiritu-Shien.html
+  confidence: high
+  amount: 金曜日の昼食、1食250円の自己負担
+- category: gaishutsu
+  name: 外出支援（タクシー乗車券）
+  name_on_page: 外出支援サービス
+  summary: 通院や介護施設への送迎のタクシー代の一部を乗車券で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内在住で、現に居住して介護を受けている
+  - 福祉タクシー乗車券の交付を受けている人は対象外
+  where: 長寿福祉課
+  url: https://www.city.sabae.fukui.jp/kenko_fukushi/koreishafukushi/shien_josei/shien-josei2/Gaisyutu-Service.html
+  confidence: high
+  amount: 年額18,000円（500円券36枚）。年度途中の認定は月割り
+- category: ribiyo
+  name: 訪問理美容の助成券
+  name_on_page: 在宅理容・美容出張サービス利用助成事業
+  summary: 登録業者の出張理美容の費用を助成する券を年度内に1枚出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 長寿福祉課（LOGOフォームでも申請可）
+  url: https://www.city.sabae.fukui.jp/kenko_fukushi/koreishafukushi/shien_josei/shien-josei2/ChojuFukuriyoubiyou.html
+  confidence: high
+  amount: 1回の出張費用に上限5,000円、年度内1回のみ
+not_found:
+- iro
+- hochoki
+- chusha
+- yutai

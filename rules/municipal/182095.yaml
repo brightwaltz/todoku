@@ -1,0 +1,244 @@
+city: '182095'
+name: 越前市
+site: www.city.echizen.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 「食」の自立支援事業（弁当の配達と安否確認）
+  name_on_page: 「食」の自立支援事業
+  summary: 週1回、弁当を自宅に届け、あわせて安否や体調を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 親族等の援助が得られない人
+  - 安否確認が必要な人
+  - 介護保険・介護予防サービスを利用していない人
+  - 市税を滞納していない
+  - 毎年度の申請が必要
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/haisyoku.html
+  confidence: high
+  amount: 1食あたり300円〜400円（利用者負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 緊急ボタンと人感センサーなどの通報装置を自宅に貸与する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内のおおむね65歳以上の在宅ひとり暮らし
+  - または身体障害者手帳1級・2級のひとり暮らし
+  - 上記以外でも希望者は長寿福祉課に相談できる
+  - 申請書に担当地区の民生委員の署名が必要
+  - 緊急連絡先2名の承諾書が必要
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/kinnkyuutuuhousouti.html
+  confidence: high
+  amount: 機器貸与料：住民税課税世帯は月1,000円、非課税・均等割のみ課税は無料。通話料は本人負担
+  more_urls:
+  - https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+- category: kaigo-yohin
+  name: 在宅介護の紙おむつ購入費助成（助成券）
+  name_on_page: 在宅介護用品（紙おむつ）費支援事業
+  summary: 在宅の要介護2〜5の人に、紙おむつ購入に使える月ごとの助成券を交付する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 越前市の介護保険被保険者
+  - 介護保険料の滞納がない
+  - ショートステイを月の半数以上利用する場合は対象外
+  - 要介護2・3はおむつ使用の必要性の確認が必要
+  - 毎年申請が必要
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/zaitakukaigoyouhinnhisienn.html
+  confidence: high
+  amount: 月額：要介護2・3は1,500円、要介護4・5は3,000円（助成券）
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 理容・美容出張サービス助成事業
+  summary: 在宅の要介護3〜5の人が自宅で理美容を受けたときの出張費を助成券で補助する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理容所・美容所での理髪・整髪が困難な人
+  - 施設等で受ける場合は対象外
+  - 本人・家族・ケアマネジャーが申請できる
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/riyoubiyou.html
+  confidence: high
+  amount: 1回2,000円、年3回まで（同日に同じ住所で3人目からは1,000円）
+- category: jutaku
+  name: 住環境整備事業（介護保険外の住宅改造費補助）
+  name_on_page: 住環境整備事業（住宅改修の助成）
+  summary: 介護保険の住宅改修の対象外となる廊下の拡幅や昇降機設置などの工事費を補助する。
+  who: {}
+  at_application:
+  - 市内在住で、要介護3〜5の人
+  - または要介護1・2で、車いす利用や自立度A〜C等の条件に当たる人
+  - 市税の滞納がない
+  - 賃貸・新築・増築や工事費10万円未満は対象外
+  - 工事前に申請が必要
+  where: 長寿福祉課（8番窓口）
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/jyuukannkyouseibi.html
+  confidence: high
+  amount: 対象経費の9割（所得により8割または7割）、上限40万円
+  more_urls:
+  - https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+- category: gaishutsu
+  name: 外出支援サービス（車いす利用者の移送費補助）
+  name_on_page: 外出支援サービス（車椅子利用者の移送サービス費補助）
+  summary: 車いすの人がリフト付き車両で医療機関等へ行くときの移送料の一部を市が補助する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定を受け、移動全般に車いすを使う人
+  - 寝たきり度（自立度）がランクA〜Cと認められた人
+  - 市税の滞納がない
+  - 毎年度の申請が必要
+  - 月の利用回数に上限あり（非課税世帯は片道4回など）
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaisyutusienn.html
+  confidence: high
+  amount: 自己負担は片道：市内800円、丹南地区1,200円、その他県内1,500円。市の補助は月8万円まで
+  more_urls:
+  - https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+- category: gaishutsu
+  name: 福祉バス（路線バス1回100円）
+  name_on_page: 福祉バス
+  summary: 決まった曜日に、路線バスの市内区間を1回100円で利用できる利用券を交付する。
+  who: {}
+  at_application:
+  - 市内在住で、65歳以上の人
+  - または身体・精神の障害者手帳か療育手帳を持つ人
+  - 上記の人を介助する人も対象
+  - 市外で乗降する場合は市外区間の通常運賃が別途必要
+  where: 長寿福祉課、社会福祉課、今立総合支所、各地区公民館、出張所など
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/fukusibus.html
+  confidence: high
+  amount: 市内区間1回100円（火・木・土曜。白山線は火・木・金曜）
+  more_urls:
+  - https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+- category: mimamori
+  name: 家族やすらぎ支援事業（ボランティアの訪問見守り）
+  name_on_page: 家族やすらぎ支援事業
+  summary: 研修を受けたボランティアが認知症の人の家を訪ね、見守りや話し相手をする。
+  who:
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 市内に住むおおむね60歳以上
+  - 要支援1・2か要介護1・2、または同程度と認められる人
+  - 本人または家族が申請できる
+  - ケアマネジャーによる申請代行も可
+  where: 長寿福祉課（8番窓口）
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/ninntisyoukazokuyasuragisienn.html
+  confidence: high
+  amount: 利用料は30分100円（週4時間以内）
+  more_urls:
+  - https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+- category: haikai
+  name: 徘徊高齢者等SOSネットワーク事業（事前登録・QRシール）
+  name_on_page: 徘徊高齢者等SOSネットワーク事業
+  summary: ひとり歩きが心配な人を事前登録し、捜索協力体制とQRコード付き見守りシールを使えるようにする。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内の認知症高齢者等で、ひとり歩きの心配がある人
+  - 申請書と上半身の写真が必要
+  - QRシールは登録者のうち希望者に配布
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/sos.html
+  confidence: high
+  more_urls:
+  - https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+- category: haikai
+  name: 徘徊高齢者等家族支援サービス（探知システム費用の補助）
+  name_on_page: 徘徊高齢者等家族支援サービス
+  summary: GPS等の探知システムの加入料金と充電器の購入費を補助する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護認定を受けたひとり歩きのある認知症高齢者等を介護する同居の家族
+  - 探知システムの利用契約をした人
+  - 契約書と領収書の写しが必要
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+  confidence: high
+  amount: 加入料金と標準充電器の購入費を、7,700円を上限に補助
+- category: haikai
+  name: あんしん見守りキーホルダー登録
+  name_on_page: 越前市あんしん見守りキーホルダー登録事業
+  summary: 番号入りキーホルダーを携帯し、外出先で倒れたときに氏名と連絡先を確認できるようにする。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、1人での外出に不安がある人
+  - 緊急時の連絡先2か所が必要
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+  confidence: high
+- category: sonota
+  name: 軽度生活援助（日常生活の軽い手伝い）
+  name_on_page: 軽度生活援助事業（生活支援サービス）
+  summary: 寝具の日干し、庭木の枝打ち、草刈り、軽い修繕、玄関前の除雪の費用を市が援助する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住むおおむね65歳以上
+  - 在宅のひとり暮らし、高齢者のみの世帯などで、老衰や傷病などで一時的に援助が必要な人
+  - 年間の利用は40時間まで（庭木の枝打ちは8時間まで）
+  - 本人または家族が申請できる
+  where: 長寿福祉課（8番窓口）、今立総合支所
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/keidoseikatuennjyo.html
+  confidence: high
+  amount: 1時間あたり600円を市が援助（事業者へは差額を支払う）
+  more_urls:
+  - https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見申し立て支援
+  summary: 申立てに要する費用と、家庭裁判所が選任した後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分で成年後見制度の利用が必要な人
+  - 費用や報酬の負担で保護が必要な状態になる等の収入条件がある
+  where: 長寿福祉課、お住まいの地区の地域包括支援センター
+  url: https://www.city.echizen.lg.jp/office/050/060/koureisyafukusi/gaidobukku_d/fil/gaidobukku.pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- nichijo-yogu
+- chusha
+- yutai

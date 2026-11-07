@@ -1,0 +1,155 @@
+city: '182061'
+name: 勝山市
+site: www.city.katsuyama.fukui.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 介護用品(紙おむつ)支給事業
+  summary: 在宅で紙おむつが必要な市民税非課税の要介護の方に、紙おむつを支給する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4以上（要介護1以上も該当する場合あり）
+  - 紙おむつが必要と認められる
+  where: 健康体育課（福祉健康センター「すこやか」）
+  url: https://www.city.katsuyama.fukui.jp/site/shinsei-navi/1662.html
+  confidence: high
+  amount: 月額5,000円まで（世帯全員非課税）、3,000円まで（本人のみ非課税）。所得に応じ自己負担あり
+- category: jutaku
+  name: 住まい環境整備支援事業
+  name_on_page: 住まい環境整備支援事業
+  summary: 介護保険の住宅改修以外の改造工事費を、市が一部助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 健康体育課（福祉健康センター「すこやか」）
+  url: https://www.city.katsuyama.fukui.jp/site/shinsei-navi/1662.html
+  confidence: high
+  amount: 工事費の10分の7〜9を助成。限度額は80万円
+- category: gaishutsu
+  name: リフト付きタクシー利用券の交付
+  name_on_page: 高齢者移送サービス事業
+  summary: 車椅子でないと移動が難しい高齢者に、リフト付きタクシーの利用券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 車椅子を利用しないと移動が困難
+  where: 健康体育課（福祉健康センター「すこやか」）
+  url: https://www.city.katsuyama.fukui.jp/site/shinsei-navi/1662.html
+  confidence: high
+  amount: 年36枚まで。タクシーの初乗り料金を助成
+- category: gaishutsu
+  name: 運転免許返納でバス無料乗車券
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 運転免許を自主返納した65歳以上の市民に、市内バスの無料乗車券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 有効期間内に運転免許を自主返納した市民
+  where: 未来創造課 脱炭素・地域交通係（返納時に警察署などでも手続き可）
+  url: https://www.city.katsuyama.fukui.jp/site/shinsei-navi/563.html
+  confidence: high
+  amount: コミュニティバスと市内バスの無料乗車券（住民票が市内にある間有効）
+  more_urls:
+  - https://www.city.katsuyama.fukui.jp/uploaded/attachment/30251.pdf
+- category: haikai
+  name: 徘徊のおそれがある方の事前登録
+  name_on_page: 地域見守り事前登録制度
+  summary: 徘徊のおそれがある方の情報と写真を事前登録し、行方不明時の早期発見につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊するおそれがある高齢者等
+  - 顔写真・全身写真が必要
+  where: 地域包括支援センター「やすらぎ」（担当ケアマネジャーにも連絡可）
+  url: https://www.city.katsuyama.fukui.jp/soshiki/8/560.html
+  confidence: high
+- category: haikai
+  name: QRコード付き見守りシールの配付
+  name_on_page: 勝山市見守り事業
+  summary: 行方不明の心配がある方に、QRコード付きの見守りシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になる心配がある
+  - 保護者のメールアドレスが必要
+  where: 地域包括支援センター「やすらぎ」
+  url: https://www.city.katsuyama.fukui.jp/soshiki/8/560.html
+  confidence: high
+  amount: 耐洗ラベル30枚と蓄光シール10枚を配付
+  more_urls:
+  - https://www.city.katsuyama.fukui.jp/uploaded/attachment/25544.pdf
+- category: haishoku
+  name: 食事の配達と安否確認
+  name_on_page: 給食サービス事業
+  summary: 調理が難しい高齢者に食事を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または65歳以上と身体障がい者のみの世帯など
+  - 市の名簿（福祉票）に登載されている
+  - 調理などが困難
+  where: 地区の民生委員、健康体育課
+  url: https://www.city.katsuyama.fukui.jp/uploaded/attachment/30251.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置（シルバーコール）の設置
+  name_on_page: 緊急通報システム設置事業
+  summary: 病弱で緊急時の対応が難しい高齢者世帯に、緊急通報装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市の名簿（福祉票）に登載されている
+  - 病弱で緊急時の対応が困難
+  where: 地区の民生委員、健康体育課
+  url: https://www.city.katsuyama.fukui.jp/uploaded/attachment/30251.pdf
+  confidence: low
+- category: sonota
+  name: 通所介護事業所での宿泊サービス
+  name_on_page: 在宅介護ほっとひといき支援事業
+  summary: 在宅の要介護認定者が、市の委託先の通所介護事業所で宿泊できる。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定を受けている
+  where: 健康体育課（福祉健康センター「すこやか」）
+  url: https://www.city.katsuyama.fukui.jp/site/shinsei-navi/1662.html
+  confidence: high
+  amount: 年12回まで。食費や利用料の一部は自己負担（条件により市が負担）
+- category: sonota
+  name: 高齢者の緊急短期入所
+  name_on_page: 高齢者緊急短期入所事業
+  summary: 社会適応が難しい高齢者が、特養の空き部屋に一時的に泊まり、生活の指導や支援を受ける。
+  who:
+    age_min: 65
+  at_application:
+  - 基本的生活習慣が欠けるなど社会適応が困難
+  where: 健康体育課（福祉健康センター「すこやか」）
+  url: https://www.city.katsuyama.fukui.jp/site/shinsei-navi/1662.html
+  confidence: high
+not_found:
+- iro
+- hochoki
+- ribiyo
+- shingu

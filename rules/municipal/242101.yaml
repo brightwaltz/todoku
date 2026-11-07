@@ -1,0 +1,245 @@
+city: '242101'
+name: 亀山市
+site: www.city.kameyama.mie.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: 緊急時にボタンを押すと通報センターにつながる装置を借りられる。
+  who:
+    age_min: 65
+  at_application:
+  - 身体・精神・生活環境の理由で緊急時の連絡が難しい
+  - 単身、高齢者のみ2人以上、または同居者が支援できない世帯
+  - 固定電話か携帯電話が必要
+  - 近隣の協力員がおおむね3人必要
+  - 市内に住所がある
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033000212/kinkyu_tsuuhou.html
+  confidence: high
+  amount: 装置は無料で貸与
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 重度の要介護高齢者を在宅で介護した家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同一世帯で介護していた市民税非課税世帯の人
+  - 前年度に介護サービスを受けていない（短期入所は約1週間まで可）
+  - 前年度に入院していない（約1週間の入院は可）
+  - 65歳は要介護者本人の年齢、市内に住所がある
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033100042/20090601_iroukin.html
+  confidence: high
+  amount: 被介護者1人につき年額10万円
+- category: koken
+  name: 成年後見の申立費用・報酬の助成
+  name_on_page: 成年後見制度の利用支援
+  summary: 後見の申立費用や後見人への報酬を、一定の人に助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分な認知症高齢者・障がい者などが対象
+  - 生活保護の人、要保護の人、市長が認める人など
+  - 報酬助成は親族（配偶者・直系血族・兄弟姉妹）が後見人だと対象外
+  - 市内に住所がある、または亀山市が援護の実施者
+  where: 健康推進課 地域包括連携グループ、地域福祉課 障がい者支援グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033000182/seinen_kouken_shien.html
+  confidence: high
+  amount: 申立費用は10万円以内。報酬は在宅月2.8万円以内、施設月1.8万円以内
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 介護用品の支給
+  summary: 常時おむつが必要な市民税非課税の在宅の人に、介護用品を現物で配達する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時おむつが必要な65歳以上、または介護認定のある40〜64歳
+  - 市内に住所がある
+  - 有料老人ホーム・サ高住の入所者は対象外
+  - 施設入所・入院の期間は対象外
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033000052/kaigo_youhin.html
+  confidence: high
+- category: nichijo-yogu
+  name: 電磁調理器・火災警報器・自動消火器の給付
+  name_on_page: 日常生活用具の給付
+  summary: 防火に配慮が必要な高齢者世帯に、電磁調理器などを無料で給付する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上、または要支援・要介護の40〜64歳などの在宅の人
+  - ひとり暮らしか高齢者のみの世帯（火災警報器等は寝たきりも）
+  - 市民税所得割が非課税の世帯、または生活保護世帯
+  - 電磁調理器は防火の配慮が必要な人
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033000175/seikatsu_yougu.html
+  confidence: high
+  amount: 無料。電磁調理器1台、火災警報器2台、自動消火器1台（1世帯1回）
+- category: haikai
+  name: 徘徊探索装置の給付
+  name_on_page: 徘徊探索装置
+  summary: 徘徊のある認知症の人を介護する人に、探索装置を無料で給付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊が見られる認知症の状態の人を介護している人
+  - 市内に住所がある在宅の人が対象
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033000175/seikatsu_yougu.html
+  confidence: high
+  amount: 無料。1人につき1回1台
+- category: haikai
+  name: 認知症の人の見守りシール
+  name_on_page: 認知症等高齢者見守りシールの交付
+  summary: 発見者が二次元コードで家族に連絡できる見守りシールを交付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 自力で外出できるが、認知症等で帰宅が難しくなるおそれ
+  - 要介護・要支援の認定、または医師の認知症の診断がある
+  - 介護する人や家族が申請する
+  - 市内に住所がある
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2018012300054/
+  confidence: high
+  amount: 無料。追加交付は実費
+- category: sonota
+  name: 認知症の人の個人賠償責任保険（市が保険料負担）
+  name_on_page: 認知症等高齢者等個人賠償責任保険事業
+  summary: 市が保険料を払い、認知症の人の賠償責任を最大3億円まで補償する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 見守りシールの交付対象になった認知症等の高齢者
+  - 要介護・要支援の認定、または医師の認知症の診断がある
+  - 親族が加入を希望して申請する（保険のみの加入は不可）
+  - 年度ごとに継続の手続きが必要
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2021072900256/
+  confidence: high
+  amount: 保険料は市が負担。補償は1事故あたり最大3億円
+- category: jutaku
+  name: ひとり暮らし高齢者宅の小規模修繕
+  name_on_page: 独居老人宅の修繕
+  summary: 手すり設置や段差解消などの小さな修繕を無料で行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 無職の人
+  - 親族等から援助を受けられない人
+  - 介護保険の住宅改修費の支給を受けられない人
+  - 市内に住所がある
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033000168/20090601_syuzen.html
+  confidence: high
+  amount: 無料。材料費おおむね5万円以内・半日程度の工事、年度1回まで
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 配食サービス
+  summary: 食事の自己管理が難しい高齢者に、食事を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - 老衰・心身の障がい・傷病で食生活の自己管理が困難
+  - 栄養改善が必要な人
+  - 市内に住所がある
+  where: 健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033100035/kyushoku.html
+  confidence: high
+  amount: 1日2回（昼・夕）まで。食費は実費負担
+- category: gaishutsu
+  name: 福祉移送サービス
+  name_on_page: 福祉移送サービス
+  summary: 通院や公的手続きなどの送迎を行う。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で寝たきりの人
+  - または身体障害者手帳1〜3級で歩行機能障がい、補助具が必要な人
+  - 施設入所者等は除く
+  - 市内に住所がある
+  where: 地域福祉課 障がい者支援グループ、健康推進課 地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033000069/fukushi_isou.html
+  confidence: high
+  amount: 年会費1,000円。運賃は市内一律200円
+- category: gaishutsu
+  name: 75歳以上のタクシー券
+  name_on_page: タクシー料金の助成
+  summary: 乗合タクシーに乗れない75歳以上の人にタクシー券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 心身の事情で乗合タクシーに乗ることが困難な人
+  - 例：車椅子・寝たきり、認知症で介助者が必要
+  - 審査あり（ケアマネ確認や訪問の場合あり）。即日交付はしない
+  where: 総合保健福祉センター 健康推進課 地域包括連携グループ、関支所 地域サービス室
+  url: https://www.city.kameyama.mie.jp/docs/2016033100202/taxi.html
+  confidence: high
+  amount: 10,000円分（年度1回）。1回の乗車2,000円まで
+- category: sonota
+  name: 家具転倒防止器具の支給・取り付け
+  name_on_page: 家具転倒防止器具の支給・取り付け
+  summary: 高齢者のみの世帯などに、転倒防止器具を無料で支給・取り付けする。
+  who: {}
+  at_application:
+  - 次のいずれかの世帯（過去に支給を受けた世帯は除く）
+  - 世帯員全員が65歳以上の世帯
+  - 在宅で要介護3〜5の人がいる世帯
+  - 在宅で重度の障害者手帳を持つ人がいる世帯
+  where: 建築住宅課 住まい推進グループ、地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2016033100066/tentou_boushi.html
+  confidence: high
+  amount: 無料（支給は年中、取り付けは6〜7月頃）
+- category: sonota
+  name: 高齢者等世帯の粗大ごみ訪問収集
+  name_on_page: 高齢者等世帯粗大ごみ軒先収集制度
+  summary: ごみ置き場へ運べない高齢者等の世帯の粗大ごみを、自宅で無料収集する。
+  who:
+    at_home: true
+  at_application:
+  - 世帯員全員が70歳以上・障害者手帳所持者・要介護(要支援)認定者
+  - 市内に2親等以内の親族がいない世帯
+  - 入院中・施設入居者は除く
+  - 1回350kg以内かつ10品目以内
+  where: 環境課 廃棄物対策グループ、地域包括連携グループ
+  url: https://www.city.kameyama.mie.jp/docs/2014112304947/nokisaki.html
+  confidence: high
+  amount: 無料
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- mimamori
