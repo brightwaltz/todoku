@@ -1,0 +1,194 @@
+city: '382019'
+name: 松山市
+site: www.city.matsuyama.ehime.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報体制整備事業
+  summary: ひとり暮らしの高齢者等に緊急通報装置を設置し、受信センターが緊急時の対応や安否確認をする。
+  who: {}
+  at_application:
+  - 市内在住でおおむね65歳以上のひとり暮らし高齢者等
+  - 固定電話・携帯電話などの連絡手段がある
+  - 要介護・要支援認定、心疾患等の疾患、認知症の診断のいずれか
+  - または通常の電話では外部連絡が難しい状況
+  where: 長寿福祉課
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/kinkyuutuuhou.html
+  confidence: high
+  amount: 利用料は月額500円（所得割課税者のいない世帯）または1,000円（いる世帯）。生活保護世帯は無料。
+- category: mimamori
+  name: 独居高齢者みまもり員の訪問
+  name_on_page: 独居高齢者みまもり員設置事業
+  summary: みまもり員が独居高齢者宅を定期的に訪問・声掛け・電話して安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に住所がある
+  - 日常生活に不安がある
+  where: 長寿福祉課（問い合わせ先）
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/mimamori.html
+  confidence: high
+- category: mimamori
+  name: ひとり暮らし高齢者への飲料配布と安否確認
+  name_on_page: 愛の一声訪問事業
+  summary: ひとり暮らしの人に乳酸菌飲料を原則週2回訪問して配り、安否を確認する。
+  who:
+    age_min: 77
+    household:
+    - alone
+  at_application:
+  - 市内に居住している
+  - 緊急通報体制整備事業・福祉電話の利用者は対象外
+  where: 担当の民生児童委員に相談（実施は松山市社会福祉協議会）
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/ainohitokoe.html
+  confidence: high
+  amount: 無料
+- category: ribiyo
+  name: 在宅ねたきり高齢者の出張理容
+  name_on_page: 在宅ねたきり高齢者理容サービス事業
+  summary: ねたきりの高齢者に、利用券で年4回以内の出張理容サービスを行う。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - おおむね6か月以上臥床し、日常生活のほとんどに介護が必要
+  where: 松山市社会福祉協議会 調査支援課 桑原支所
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/zaitakunetakiri.html
+  confidence: high
+  amount: 年4回以内。非課税世帯は無料、課税世帯は通常料金。
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 電磁調理器（給付）
+  summary: 火の扱いに不安のある低所得の高齢者世帯に電磁調理器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 市内に住民登録がある
+  - 生活保護世帯、または前年分の市民税所得割が非課税の世帯
+  where: 長寿福祉課
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/nitijyouyougu.html
+  confidence: high
+- category: nichijo-yogu
+  name: 自動消火器の給付
+  name_on_page: 自動消火器（給付）
+  summary: 火の扱いに不安のある低所得の高齢者世帯に自動消火器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 市内に住民登録がある
+  - 生活保護世帯、または前年分の市民税所得割が非課税の世帯
+  - 借家等の場合は家主の同意書が必要
+  where: 長寿福祉課
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/nitijyouyougu.html
+  confidence: high
+- category: nichijo-yogu
+  name: 火災警報器の給付
+  name_on_page: 火災警報器（給付）
+  summary: ねたきり高齢者のいる低所得世帯に火災警報器を給付する。
+  who:
+    age_min: 65
+    flags:
+    - bedridden_6m
+  at_application:
+  - 市内に住民登録がある、ねたきり高齢者のいる世帯
+  - 借家・借間ではない
+  - 生活保護世帯、または前年分の市民税所得割が非課税の世帯
+  where: 長寿福祉課
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/nitijyouyougu.html
+  confidence: high
+- category: mimamori
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話（貸与）
+  summary: 他に連絡手段のないひとり暮らしの人に電話を貸し、定期的に安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に住民登録がある
+  - 常時の安否確認が必要で、他に連絡手段がない
+  - 生活保護世帯、または前年分の市民税所得割が非課税の世帯
+  - 通話料は本人負担
+  where: 長寿福祉課
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/nitijyouyougu.html
+  confidence: high
+- category: haikai
+  name: 徘徊高齢者の小型発信機の貸与
+  name_on_page: 徘徊高齢者家族支援サービス事業
+  summary: 徘徊のある認知症高齢者に小型の電波発信機を貸し、行方不明時に家族へ居場所を知らせる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住でおおむね65歳以上の認知症高齢者を自宅で介護する家族が申請
+  where: 長寿福祉課 基幹型地域包括支援センター
+  url: https://www.city.matsuyama.ehime.jp/kurashi/kaigohoken/koureisyashien/ninchisho/haikai.html
+  confidence: high
+  amount: 利用料は月500円（所得割課税者のいない世帯）または月1,000円（いる世帯）。生活保護世帯は無料。
+  more_urls:
+  - https://www.city.matsuyama.ehime.jp/kurashi/download/fukushi/kaigo/shien/haikai.html
+- category: haikai
+  name: 認知症高齢者SOSネットワークの利用登録
+  name_on_page: 松山市認知症高齢者SOSネットワーク（通称「おまもりネット」）
+  summary: 徘徊のおそれのある認知症高齢者を事前登録でき、行方不明時に協力者へ捜索依頼が届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊が心配な認知症高齢者の家族が届出書を出す
+  where: 長寿福祉課、松山市社会福祉協議会 地域支援課、地域包括支援センター
+  url: https://www.city.matsuyama.ehime.jp/kurashi/kaigohoken/koureisyashien/ninchisho/sosnetwork.html
+  confidence: high
+  amount: 登録者にお守りキーホルダーを無料で配布。
+- category: sonota
+  name: 70歳以上のあん摩・マッサージ補助券
+  name_on_page: 敬老マッサージ補助事業
+  summary: 保険外のあん摩・マッサージ施術1回ごとに1,000円割引になる補助券を出す。
+  who:
+    age_min: 70
+  at_application:
+  - 松山市に住民登録がある
+  - 登録施術者で使う。補助券は年度に1人1回の発行
+  where: 長寿福祉課、総合窓口センター福祉届出コーナー、支所、またはネット申請
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/keiroumassa-ji.html
+  confidence: high
+  amount: 施術1回につき1,000円割引、6枚綴りを年度に1回発行。
+- category: sonota
+  name: 公衆浴場の入浴料助成（優待割引入浴証）
+  name_on_page: 入浴料助成制度（優待割引入浴証）の申し込みを受け付けています
+  summary: 市内の一般公衆浴場7か所の入浴料が、年度50回まで割引になる入浴証を出す。
+  who: {}
+  at_application:
+  - 市内に住民登録があり、65歳以上、または障害者手帳をお持ちの方
+  - 入浴証は年度に1人1枚（50回分）で、本人のみ使える
+  where: 長寿福祉課、障がい福祉課、道後温泉椿の湯、支所、またはネット申請
+  url: https://www.city.matsuyama.ehime.jp/kurashi/fukushi/korei/koureishakazoku/nyuyokuryojosei.html
+  confidence: high
+  amount: 1回あたり大人250円割引（年度50回まで）。
+not_found:
+- kaigo-yohin
+- iro
+- jutaku
+- shingu
+- haishoku

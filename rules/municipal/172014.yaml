@@ -1,0 +1,141 @@
+city: '172014'
+name: 金沢市
+site: www4.city.kanazawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 栄養バランスのとれた食事を定期的に自宅へ届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 見守りが必要な方
+  where: 最寄りの金沢市地域包括支援センター（問い合わせは福祉政策課）
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/fukushiseisakuka/gyomuannai/3/2/1/9267.html
+  confidence: high
+  amount: 1食510円（弁当の内容で料金が変わる場合あり）
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付
+  summary: 在宅でねたきり、または重度認知症の方に、紙おむつ現物を無料で給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅で3か月以上ねたきり、または重度の認知症
+  - 重度認知症は要介護3でも支給する場合がある
+  - 本人・配偶者・扶養義務者の市民税所得割額が各69,000円以下
+  where: 福祉政策課（福祉健康センターでも受付）
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/fukushiseisakuka/gyomuannai/3/2/1/4461.html
+  confidence: high
+  amount: 無料。1日あたりの枚数は市民税所得割額で異なる（平型5枚または3枚など）
+- category: iro
+  name: 在宅介護の手当金
+  name_on_page: 介護手当金の支給
+  summary: ねたきりや重度認知症の高齢者を在宅で介護する家族に手当を年3回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護される方は65歳以上で在宅3か月以上のねたきり等
+  - 重度認知症は要介護3でも支給する場合がある
+  - 介護者は配偶者か3親等以内の親族
+  - 介護者が無職、または週6時間以内の内職・自営等
+  where: 福祉政策課
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/fukushiseisakuka/gyomuannai/3/2/1/4465.html
+  confidence: high
+  amount: 月額5,000円（4月・8月・12月に分けて支給）
+- category: shingu
+  name: 寝具の乾燥消毒
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 業者が訪問して寝具を洗濯・乾燥消毒し、無料で届ける。
+  who: {}
+  at_application:
+  - 在宅3か月以上のねたきりか重度認知症の、おおむね65歳以上の方
+  - または、ヘルパーを利用する65歳以上のひとり暮らしの方
+  where: 福祉政策課（福祉健康センターでも受付）
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/fukushiseisakuka/gyomuannai/3/2/1/4464.html
+  confidence: high
+  amount: 無料（乾燥消毒は年9回、水洗いは年3回）
+- category: ribiyo
+  name: 訪問の理美容カット
+  name_on_page: 理髪・美容カットサービス
+  summary: 理容師・美容師が自宅を訪問してカットする。利用券が配布される。
+  who:
+    at_home: true
+  at_application:
+  - 在宅3か月以上のねたきりか重度認知症の方
+  - おおむね65歳以上
+  where: 福祉政策課（福祉健康センターでも受付）
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/fukushiseisakuka/gyomuannai/3/2/1/4467.html
+  confidence: high
+  amount: 無料（年2回まで）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: ひとり暮らし高齢者緊急通報システム(緊急通報装置の貸与)
+  summary: ボタンで24時間のコールセンターにつながる装置と人感センサー等を貸す。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上のひとり暮らし世帯
+  - または75歳以上のみの世帯で、要介護4・5のねたきりの方がいる
+  where: 担当の金沢市地域包括支援センター
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/fukushiseisakuka/gyomuannai/3/2/1/9269.html
+  confidence: high
+  amount: 月額300円（固定電話）／620円（携帯電話）。生活保護世帯は無料
+- category: nichijo-yogu
+  name: ガス漏れ警報器等の支給
+  name_on_page: ガス漏れ警報器・自動消火器・電磁調理器の支給
+  summary: 台所にガス漏れ警報器・自動消火器・電磁調理器を無料で設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 生活保護世帯、または生計維持者の市民税所得割額が9,000円以下
+  where: 福祉政策課（福祉健康センターでも受付）
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/fukushiseisakuka/gyomuannai/3/2/1/4459.html
+  confidence: high
+  amount: 無料
+- category: jutaku
+  name: 住まいづくり助成（住宅改造の別枠助成）
+  name_on_page: 要介護高齢者等の生活自立のための住まいづくりに関する助成
+  summary: 浴室・トイレ等の改修費を、介護保険の住宅改修とは別に助成する。
+  who: {}
+  at_application:
+  - 要介護・要支援の認定、または身体障害者手帳1・2級（下肢・体幹）等
+  - 市税を完納し、市内に居住している
+  - 過去に同制度の助成を受けていない
+  - 生計中心者の年間所得税額が5万円以下
+  - 着工前に事前申請する
+  where: 介護保険課
+  url: https://www4.city.kanazawa.lg.jp/soshikikarasagasu/kaigohokenka/shinseishodownload/8306.html
+  confidence: high
+  amount: 対象経費の70〜100％、限度額50万〜100万円（介護保険等の給付額は差し引く）
+  more_urls:
+  - https://www4.city.kanazawa.lg.jp/material/files/group/51/sumai.pdf
+not_found:
+- koken
+- hochoki

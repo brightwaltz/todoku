@@ -1,0 +1,222 @@
+city: '272051'
+name: 吹田市
+site: www.city.suita.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 日常生活用具の給付など
+  summary: 防火の配慮が必要なひとり暮らし等の高齢者に、電磁調理器・火災警報器・自動消火器を給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上
+  - 火災警報器・自動消火器は低所得の世帯が対象
+  - 購入前に申請し、給付券対応業者の見積書が必要
+  - 自己負担額は生計中心者の市町村民税額で変わる
+  where: 高齢福祉室支援グループ（郵送も可）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014565.html
+  confidence: high
+  amount: 上限は電磁調理器28,000円、火災警報器15,500円、自動消火器45,000円
+- category: sonota
+  name: 高齢者用電話の貸与
+  name_on_page: 高齢者用電話の設置
+  summary: 電話のない低所得の高齢者世帯に電話機を貸し出し、設置費や基本料は市が負担する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で、携帯を含め電話を持っていない
+  - 低所得のひとり暮らし、または寝たきり等の人がいる高齢者のみ世帯
+  - 月々の通話料は自己負担
+  where: 高齢福祉室支援グループ（郵送も可）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014562.html
+  confidence: high
+  amount: 設置費・貸与費・基本使用料は市が負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: ボタンを押すと受信センターに通報でき、必要時は救急車や緊急要員が出動する装置を設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - おおむね65歳以上で市内に居住
+  - ひとり暮らし、寝たきり等の人がいる高齢者のみ世帯、または日中長時間高齢者だけの世帯
+  - 固定電話の回線が必要
+  - 自己負担額は生計中心者の市町村民税額で変わる
+  where: 高齢福祉室支援グループ（郵送も可）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014564.html
+  confidence: high
+  amount: 限度額29,810円（壁付型を併設する場合は88,000円）。自己負担は税額による
+  more_urls:
+  - https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014565.html
+- category: mimamori
+  name: 人感センサーの設置
+  name_on_page: 人感センサー
+  summary: 24時間動きがないと受信センターへ自動通報され、電話で状況を確認するセンサーを給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 緊急通報システムの利用者であること
+  - 心疾患などで意識消失のおそれがあるひとり暮らし、または片方が寝たきりの高齢者世帯
+  - 合鍵を委託業者に預ける必要がある
+  where: 高齢福祉室支援グループ（郵送も可）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014564.html
+  confidence: high
+  amount: 限度額22,000円。自己負担は生計中心者の市町村民税額で変わる
+  more_urls:
+  - https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014565.html
+- category: kaigo-yohin
+  name: 家族介護用品の給付
+  name_on_page: 家族介護用品の給付
+  summary: おむつを使う重度の要介護者を在宅で介護する非課税世帯の家族に、介護用品の引換券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護者と家族全員が市町村民税非課税の世帯
+  - 生活保護を受けている世帯は対象外
+  - 2号被保険者も対象
+  where: 高齢福祉室支援グループ（郵送も可）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014559.html
+  confidence: high
+  amount: 給付券 上限6,250円分
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 生活保護の人など費用を出せない高齢者の、後見の申立て費用や後見人の報酬を一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民票があり居住している
+  - 生活保護受給者、または預貯金50万円未満で資産のない人
+  - 判断能力が十分でなく後見人等が必要な人
+  where: 高齢福祉室支援グループ（郵送も可）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014558.html
+  confidence: high
+  amount: 申立ての鑑定料は10万円まで。後見人報酬は月額28,000円（在宅）か18,000円まで
+- category: ribiyo
+  name: 高齢者訪問理美容サービス
+  name_on_page: 高齢者理美容サービス
+  summary: 理美容店に行くのが難しい要介護3以上の人の自宅へ、理美容師が訪問する際の出張費を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上で市内に居住
+  - 自力または介助でも理美容店の利用が難しい
+  - 理美容の実費は自己負担
+  where: 高齢福祉室支援グループ（郵送も可）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014557.html
+  confidence: high
+  amount: 利用券は年4枚まで。出張費2,000円/回を助成
+- category: gaishutsu
+  name: 通院困難者タクシークーポン券
+  name_on_page: 通院困難者タクシークーポン券
+  summary: 通院でタクシーに乗るとき運賃を一部助成するクーポン券を、在宅の非課税の要介護者に交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 生活保護を受けている人は対象外
+  - 重度障がい者福祉タクシー利用券の交付者は対象外
+  - 特養などに入所中の人は対象外
+  - 使えるのは通院のときだけ
+  where: 高齢福祉室、各地域包括支援センター
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014552.html
+  confidence: high
+  amount: 1枚660円助成。申請月で交付枚数が変わる（3〜4月は24枚、2月は4枚）
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成クーポン券
+  name_on_page: はり・きゅう・マッサージクーポン券
+  summary: 75歳以上の非課税世帯の人に、登録施術所の施術費を助成するクーポン券を交付する。
+  who:
+    age_min: 75
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住民登録がある
+  - 健康保険や医療扶助が使える施術費は対象外
+  where: 高齢福祉室、各地域包括支援センター
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014554.html
+  confidence: high
+  amount: 1回1,000円助成。年度6枚まで（申請月で枚数が変わる）
+- category: sonota
+  name: 家具等の転倒防止器具の設置助成
+  name_on_page: 家具等転倒防止器具の設置助成
+  summary: 自力で設置できない高齢者世帯などに、家具の転倒防止器具の設置費と材料費を助成する。
+  who: {}
+  at_application:
+  - 市町村民税非課税世帯、または生活保護受給世帯
+  - 65歳以上のみで、要支援・要介護認定者を含む世帯
+  - または重度障がい者のみ、重度障がい者と65歳以上の世帯
+  - 重度障がい者は手帳1・2級等の在宅の人
+  where: 高齢福祉室、地域包括支援センター（障がい者世帯は障がい福祉室）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014555.html
+  confidence: high
+  amount: 非課税世帯は設置費15,500円・材料費3,000円まで。生活保護世帯は材料費5,000円まで
+- category: haikai
+  name: みまもりあいステッカー（徘徊高齢者SOSネットワーク）
+  name_on_page: 徘徊高齢者SOSネットワーク（みまもりあいステッカー）
+  summary: 徘徊のおそれがある認知症等の人の持ち物に貼るステッカーを配り、発見時に家族へ連絡が届く。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上（介護保険2号被保険者を含む）で市内在住
+  - 認知症の確定診断、自立度2a以上、受診検討中のいずれか
+  where: 高齢福祉室支援グループ（電子申込または郵送）
+  url: https://www.city.suita.osaka.jp/kenko/1018656/1018663/1014256.html
+  confidence: high
+  amount: ステッカー48枚と初年度の利用料は市が負担。2年目以降の年間利用料も無料
+- category: sonota
+  name: 防犯機能付電話機等の購入補助
+  name_on_page: 防犯機能付電話機等購入補助
+  summary: 65歳以上の市民が防犯機能付電話機等を買うときの費用を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録があり居住している
+  - 令和9年3月31日時点で65歳以上
+  - 購入後に領収書を添えて申請
+  where: 吹田市（申請書を直接または郵送で提出。担当課は未確認）
+  url: https://www.city.suita.osaka.jp/kurashi/1018593/1017975/1029114.html
+  confidence: low
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku

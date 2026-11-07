@@ -1,0 +1,67 @@
+pref: '37'
+name: 香川県
+site: www.pref.kagawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: かがわ思いやり駐車場利用証の交付
+  name_on_page: かがわ思いやり駐車場制度
+  summary: 要介護 1〜5 の高齢者や障害のある人などに、障害者等用駐車場を使える利用証を県が無料で交付する。
+  who: {}
+  at_application:
+  - 次のどれか 1 つに当たる人。高齢者は要介護 1〜5 の認定を受けている人
+  - 障害者手帳（身体・療育・精神）の種類と等級が県の基準に当たる人
+  - 難病の医療受給者、妊産婦（産後 2 年まで）、けがで一時的に歩行が困難な人
+  - 自動車を運転しない人も申請できる
+  - 区分ごとの確認書類が要る（高齢者は介護保険被保険者証）。手数料は無料
+  where: 県の保健福祉総務課（県庁）と、小豆総合事務所・東讃・中讃・西讃の保健福祉事務所の窓口（郵送・電子申請も可）
+  url: https://www.pref.kagawa.lg.jp/hokenhukushi/hukushi/parking/kfvn.html
+  confidence: high
+  more_urls:
+  - https://www.pref.kagawa.lg.jp/kenkosomu/hukushi/parking/kijun.html
+  - https://www.pref.kagawa.lg.jp/kenkosomu/hukushi/parking/sinsei.html
+- category: yutai
+  name: 長寿手帳の交付（県内の一部の公営施設などで優遇）
+  name_on_page: 長寿手帳
+  summary: 県内に住む 65 歳以上の人に長寿手帳を交付し、県内の一部の公営施設などで料金の優遇が受けられる。
+  who:
+    age_min: 65
+  at_application:
+  - 香川県内に住んでいる
+  - 窓口でマイナンバーカードや運転免許証などの公的な身分証明書を見せる
+  where: 住んでいる市町の窓口（交付窓口の一覧は県の頁の PDF にある）
+  url: https://www.pref.kagawa.lg.jp/choju/techo-daigaku/wfssqo160912152905.html
+  confidence: high
+  amount: 優遇は施設ごとに違う（例：栗林公園は入園料無料）。施設の一覧では手帳のほか公的な身分証明書の提示でも優遇を受けられる。手帳の代金は頁に記載なし
+  more_urls:
+  - https://www.pref.kagawa.lg.jp/documents/354/koureisyayuuguuitiran.pdf
+- category: hochoki
+  name: 加齢性難聴の補聴器購入費の助成
+  name_on_page: 香川県加齢性難聴対策推進事業補聴器購入費助成金
+  summary: 65 歳以上で講座の受講と医師意見書を経て補聴器を買う人に、購入費の半分（上限 3 万円）を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 香川県内に住んでいる（その年度に 65 歳になる人も含む）
+  - 住んでいる市町で開く対象講座（難聴と補聴器の講座）を受けた
+  - 耳鼻科で補聴器の使用が必要と認められ、医師意見書をもらった
+  - 身体障害者手帳（聴覚障害）の交付対象にならない
+  - 県の交付決定の後に購入する。申請は令和 9 年 2 月 5 日まで
+  where: 住んでいる市町の担当課（市町ごとに違う）に出し、市町を経由して県の健康政策課が決める
+  url: https://www.pref.kagawa.lg.jp/kenkouseisaku/support/hochoukijosei.html
+  confidence: high
+  amount: 購入費の 2 分の 1（上限 3 万円、1 人 1 回）。認定補聴器専門店などで買った補聴器が対象
+  more_urls:
+  - https://www.pref.kagawa.lg.jp/documents/61443/youkou.pdf
+not_found:
+- koken
+- mimamori
+- haikai
+- jutaku

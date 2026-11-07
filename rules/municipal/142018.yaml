@@ -1,0 +1,201 @@
+city: '142018'
+name: 横須賀市
+site: www.city.yokosuka.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつの支給
+  summary: ねたきり等の在宅高齢者に、希望の紙おむつを毎月 1 回自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住で、施設・有料老人ホーム等の入所者ではない
+  - 要介護3は認定調査票か状態確認票の排尿・排便の基準を満たす
+  - 介護保険料を滞納しておらず、給付制限がない
+  where: 介護保険課福祉サービス係、地域包括支援センター（電子申請・郵送も可）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000526.html
+  confidence: high
+  amount: 月 3,000 円（配送料等込み）まで市が負担し、超えた分は自己負担
+- category: ribiyo
+  name: 出張理容等サービス
+  name_on_page: 出張理容等サービス
+  summary: ねたきり等の在宅高齢者の自宅へ理容師・美容師が出向いて散髪する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内在住で、介護保険料を滞納しておらず給付制限がない
+  - 入院中は申請できない
+  where: 介護保険課、地域包括支援センター（電子申請・郵送も可）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000690.html
+  confidence: high
+  amount: 年 4 月〜3 月に最大 6 回、1 回 1,000 円の自己負担
+- category: shingu
+  name: 寝具丸洗いサービス
+  name_on_page: 寝具丸洗いサービス
+  summary: 排泄介助が必要な在宅高齢者の掛布団・敷布団・毛布を事業者が水洗いする。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護 2・1 は、排泄介助が必要との医師の証明（身体状態証明書）が要る
+  - 介護保険料を滞納しておらず給付制限がない
+  - 入院中は申請できない
+  where: 介護保険課、地域包括支援センター（電子申請・郵送も可）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000525.html
+  confidence: high
+  amount: 年最大 3 回、1 回 500 円の自己負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護 4・5 の高齢者を自宅で介護する家族に、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される方が過去 1 年間、介護保険サービスを使っていない
+  - ただし年内の 1 週間程度のショートステイは除く
+  - 支給対象は介護している家族（同性パートナーを含む）
+  where: 介護保険課福祉サービス係（頁に申請先の明記なし。問い合わせ先として記載）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000529.html
+  confidence: high
+  amount: 年 100,000 円
+- category: hochoki
+  name: 高齢難聴者の補聴器購入助成
+  name_on_page: 高齢難聴者補聴器購入助成事業
+  summary: 加齢性難聴の高齢者が補聴器を初めて買うとき、購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 令和 8 年 6 月 1 日以降に初めて補聴器を購入する方（1 人 1 回限り）
+  - 障害者総合支援法の補装具（補聴器）の支給対象ではない
+  - 補聴器相談医の診断と適合確認証明書が必要
+  - 認定補聴器専門店・認定補聴器技能者のいる販売店で購入する
+  where: 介護保険課福祉施設整備係（窓口持参または郵送）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/sisetuseibi.html
+  confidence: high
+  amount: 上限 50,000 円（県の 4 分の 1・上限 3 万円と、市の 4 分の 1・上限 2 万円の合計）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置
+  summary: ボタンやセンサーで受信センターに自動通報できる装置を自宅に設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしの高齢者（ひとり暮らし登録が必要）
+  - または、ひとり暮らしに準ずる高齢者のみの世帯
+  - 固定電話か携帯電話がある
+  - 民生委員を通して申請する
+  where: 民生委員を通じて申請（問い合わせは介護保険課福祉サービス係）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000549.html
+  confidence: high
+  amount: 利用者負担は月額 365 円（固定型）、無線型は事業者により月額 1,700 円または 4,535 円
+- category: sonota
+  name: ふれあいサポート券の交付
+  name_on_page: ふれあいサポート券（旧入浴利用券）の交付
+  summary: ひとり暮らしの高齢者に、銭湯や一部の市施設の利用料を補う券を渡す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - ひとり暮らし登録が必要
+  - 初回は民生委員を通して手続きする（本人が市役所へ直接申請はできない）
+  where: 民生委員を通じて申請（問い合わせは介護保険課福祉サービス係）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000552.html
+  confidence: high
+  amount: 年間最大 48 枚（申請日により枚数が異なる）。施設により一部自己負担あり
+- category: sonota
+  name: シニアリフレッシュ事業（施術費の助成）
+  name_on_page: シニアリフレッシュ事業
+  summary: あん摩・マッサージ等の施術費の一部を助成する受療券を交付する。
+  who: {}
+  at_application:
+  - 市内在住の 75 歳以上
+  - または、高齢者のみの世帯で要介護 3〜5 の高齢者を介護する 65〜74 歳
+  - 健康保険との併用はできない
+  where: 介護保険課福祉サービス係、地域包括支援センター（電子申請・郵送も可）
+  url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100050623.html
+  confidence: high
+  amount: 受療券は年最大 4 枚。3,000 円の施術を自己負担 1,500 円で受けられる
+- category: haikai
+  name: にこっとSOSネットワークの事前登録
+  name_on_page: 横須賀にこっとSOSネットワーク
+  summary: 行方不明になるおそれのある認知症の方の情報を事前登録し、捜索に役立てる。
+  who:
+    flags:
+    - wandering_risk
+    - dementia_diagnosis
+  at_application:
+  - 市内在住の認知症の方で、行方不明になる可能性がある
+  - 本人・家族の同意のもと、顔写真と申請書で登録する
+  where: 地域福祉課総合相談担当、地域包括支援センター
+  url: https://www.city.yokosuka.kanagawa.jp/2610/haikaisos20160905.html
+  confidence: low
+- category: haikai
+  name: GPS 位置情報検索システムの導入費等の助成
+  name_on_page: GPS機器を用いた位置情報検索システムの導入費などの助成
+  summary: SOS ネットワーク登録者を介護する人に、GPS 端末の導入費や月額利用料を助成する。
+  who: {}
+  at_application:
+  - 市内に住民登録があり、SOS ネットワークに登録済みの方を介護している
+  - 位置情報検索システムの利用契約を結んでいる
+  - 導入費助成は令和 8 年 4 月 1 日以降の契約で、登録後に契約したもの
+  where: 地域福祉課の窓口（郵送も可）
+  url: https://www.city.yokosuka.kanagawa.jp/2610/gps.html
+  confidence: low
+  amount: 導入費は上限 10,000 円（1 人 1 回）、月額利用料は上限 月 1,000 円（年 12,000 円）
+- category: koken
+  name: 成年後見制度利用支援事業（報酬助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 資力が乏しい被後見人等の、後見人への報酬の一部または全部を助成する。
+  who: {}
+  at_application:
+  - 市長申立てで選任された方など、報酬の負担が困難な方
+  - 生活保護世帯、または活用できる資産が少ないと市長が認める方
+  where: 地域福祉課重層支援担当
+  url: https://www.city.yokosuka.kanagawa.jp/2610/g_info/l100050224.html
+  confidence: low
+  amount: 月額上限 28,000 円（在宅）、18,000 円（施設等）
+not_found:
+- haishoku
+- nichijo-yogu

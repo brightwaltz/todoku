@@ -1,0 +1,184 @@
+city: '272078'
+name: 高槻市
+site: www.city.takatsuki.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の在宅高齢者を介護する家族に、紙おむつ等を月1回届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住民登録がある
+  - 主な介護者が在宅で介護し、生計を一にしている
+  - 要介護者と介護者の市町村民税が非課税
+  where: 長寿介護課
+  url: https://www.city.takatsuki.osaka.jp/site/koreisha-ikiiki/5757.html
+  confidence: high
+  amount: 市が決めた組み合わせから1つ選び、月1回の現物支給
+- category: kinkyu-tsuho
+  name: 緊急通報装置等の設置
+  name_on_page: 緊急通報装置等の設置のご案内
+  summary: 緊急通報装置を借りて取り付け、押すと警備会社に通報される。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 健康不安があり、緊急時に連絡しにくい在宅の高齢者
+  - 熱感知センサーはひとり暮らしの人のみ
+  - モバイル型は固定電話回線を置けない人のみ
+  - 玄関の合鍵を警備会社に預ける
+  where: 長寿介護課
+  url: https://www.city.takatsuki.osaka.jp/site/koreisha-ikiiki/5759.html
+  confidence: high
+  amount: 月907円（センサー付き1,688円、モバイル型1,089円）。市民税非課税世帯は無料か半額
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者宅へ夕食を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - 老衰や心身の障がい・傷病で調理が困難
+  - 65歳以上のひとり暮らし、高齢者のみの世帯、重度障がい者のみの世帯
+  - 申請は地域包括支援センターかケアマネ経由の代理申請
+  where: 福祉相談支援課、地域包括支援センター
+  url: https://www.city.takatsuki.osaka.jp/soshiki/35/147262.html
+  confidence: high
+  amount: 週6回（月〜土）まで。1食550円の自己負担
+- category: haikai
+  name: 行方不明高齢者SOSネットワークへの事前登録
+  name_on_page: 行方不明高齢者sosネットワーク
+  summary: 行方不明になるおそれのある人を事前登録し、いなくなったら協力機関に捜索を依頼する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になる恐れのある高齢者等を事前に登録する
+  where: 福祉相談支援課、地域包括支援センター
+  url: https://www.city.takatsuki.osaka.jp/soshiki/35/2467.html
+  confidence: low
+  amount: 無料
+- category: haikai
+  name: 行方不明高齢者家族支援サービス（GPS端末の貸出）
+  name_on_page: 行方不明高齢者家族支援サービス
+  summary: 認知症の高齢者にGPS端末を貸し、家族が居場所を探せるようにする。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護認定を受けている
+  - 認知症高齢者の日常生活自立度が3以上
+  where: 福祉相談支援課、地域包括支援センター
+  url: https://www.city.takatsuki.osaka.jp/soshiki/35/2465.html
+  confidence: high
+  amount: 端末の貸出料は無料。通信費などは実費
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者の補聴器購入費用を助成します
+  summary: 補聴器の購入費の2分の1を助成する。購入前に申請する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 40デシベル以上の中等度難聴で、耳鼻科医が使用を認める
+  - 聴力障がいによる障がい者手帳を持っていない
+  - 当該年度の健幸パスポートを取得している
+  - 助成決定の通知前に購入した分は対象外。1人1回限り
+  where: 長寿介護課
+  url: https://www.city.takatsuki.osaka.jp/site/koreisha-ikiiki/176791.html
+  confidence: high
+  amount: 購入費の2分の1、上限3万円（片側・両側とも1台分）
+- category: gaishutsu
+  name: 市営バス高齢者割引・無料乗車券（ICカード）
+  name_on_page: 市営バス高齢者割引乗車券・無料乗車券（ICカード）のご案内
+  summary: 市営バス全路線が、70〜74歳は1乗車100円、75歳以上は無料になる。
+  who:
+    age_min: 70
+  at_application:
+  - 70〜74歳は割引乗車券、75歳以上は無料乗車券
+  - 対象年齢の1週間ほど前に申請書が自宅に届く
+  - 障がい者手帳がある人は障がい福祉課で交付
+  where: 市内の郵便局（樫田簡易郵便局を除く）、長寿介護課
+  url: https://www.city.takatsuki.osaka.jp/site/koreisha-ikiiki/5764.html
+  confidence: high
+  amount: 70〜74歳は1乗車100円、75歳以上は無料。再交付は500円
+- category: mimamori
+  name: 高齢者地域支えあい事業（見守り・声かけ訪問）
+  name_on_page: 高齢者地域支えあい事業のご案内
+  summary: 地区福祉委員会がひとり暮らし等の高齢者宅へ見守りの声かけ訪問をする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 詳しい条件は社会福祉協議会に確認する
+  where: 高槻市社会福祉協議会
+  url: https://www.city.takatsuki.osaka.jp/site/koreisha-ikiiki/5761.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キットのご案内
+  summary: 持病や緊急連絡先を書く用紙と筒を、冷蔵庫保管用に無料で配る。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内に住所がある
+  where: 長寿介護課の窓口、民生委員児童委員
+  url: https://www.city.takatsuki.osaka.jp/site/koreisha-ikiiki/5762.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 生活支援サポーター（日常の困りごとの手伝い）
+  name_on_page: 高槻市生活支援サポーターのご案内
+  summary: 買い物や外出の付き添いなどを、ボランティアが手伝う。
+  who: {}
+  at_application:
+  - 高齢者の困りごとが対象。年齢の定めは頁に無い
+  - 社会福祉協議会に連絡する
+  where: 高槻市社会福祉協議会 地域共生推進課
+  url: https://www.city.takatsuki.osaka.jp/site/koreisha-ikiiki/5705.html
+  confidence: high
+- category: sonota
+  name: 高齢者等ごみ出し支援（戸別収集）
+  name_on_page: 高齢者等のごみ出しを支援します
+  summary: ごみを集積場に出せない世帯の玄関先から、週1回ごみを収集する。
+  who: {}
+  at_application:
+  - 市内に居住し、世帯員全員が次のどれかに当たる
+  - 要介護2以上、身体障がい者手帳1・2級、精神手帳1級、療育手帳A、妊産婦
+  - 本人や同居家族がごみ出しできる場合、施設入所中は対象外
+  where: 長寿介護課（要介護2以上の場合）
+  url: https://www.city.takatsuki.osaka.jp/site/waiwai/166846.html
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

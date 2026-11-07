@@ -1,0 +1,170 @@
+city: '202029'
+name: 松本市
+site: www.city.matsumoto.nagano.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家庭介護用品の支給
+  name_on_page: 家庭介護用品の支給
+  summary: 要介護4・5の方を在宅で介護する人に、紙おむつ等の消耗品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 毎年申請が必要
+  - 支給の対象は要介護者を介護している人
+  where: 高齢福祉課（電子申請も可）
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/50253.html
+  confidence: high
+  amount: 年額 1 人あたり上限 48,000 円（申請月で上限が変わる）
+- category: iro
+  name: 高齢者介護手当
+  name_on_page: 高齢者介護手当
+  summary: 要介護3以上の高齢者を在宅で180日以上介護した家族に、年1回手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護者は同居か同居に準ずる親族・事実婚の配偶者・成年後見人
+  - 基準日に市内に6か月以上住民登録がある
+  - 基準日前1年に要介護3以上で在宅の期間が通算180日以上
+  where: 高齢福祉課 福祉担当
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/1784.html
+  confidence: high
+  amount: 年額 60,000 円（年度内 1 回）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置
+  summary: ひとり暮らしの高齢者等に、緊急通報と安否確認ができる装置を貸し出す。
+  who: {}
+  at_application:
+  - 市内の一人暮らしで、65歳以上・身体障がい1,2級・心疾患等のいずれか
+  - 寝たきり老人夫婦等も対象
+  - 同一・隣接敷地に親族がいると原則対象外
+  - 協力員 3 名と親族 2 名を確保できる
+  where: 高齢福祉課
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/81294.html
+  confidence: high
+  amount: 月額 600 円（LTE 機種は 1,200 円）。非課税世帯などは免除の場合あり
+- category: haishoku
+  name: 訪問給食サービス
+  name_on_page: 訪問給食サービス
+  summary: 自宅へ昼食の弁当を届け、見守りも行う。対象は四賀・安曇・奈川地区。
+  who: {}
+  at_application:
+  - 四賀・安曇・奈川地区に住所がある
+  - おおむね65歳以上の方や障がい者のみの世帯が対象
+  - 同一・隣接敷地に親族がいると原則対象外
+  where: 高齢福祉課福祉担当、西部福祉課、障がい福祉課
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/79410.html
+  confidence: high
+  amount: 1食500円の自己負担、週最大6回（月〜土の昼食）
+- category: haikai
+  name: 徘徊GPS端末機の貸与
+  name_on_page: 徘徊GPS端末機の貸与
+  summary: 徘徊のおそれがある要介護認定の高齢者を介護する家族に、GPS端末機を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で要介護認定を受けた人を在宅で介護する家族
+  - 申請者は介護する家族
+  where: 高齢福祉課、西部福祉課（Web 申込も可）
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/56549.html
+  confidence: high
+  amount: 月額 500 円（住民税非課税世帯は 150 円）
+- category: ribiyo
+  name: 訪問理美容料金の助成
+  name_on_page: 訪問理美容料金の助成
+  summary: 寝たきり等で理美容室に行けない在宅の方に、訪問理美容の助成券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきり等で理美容室へ行けない
+  - 毎年申請が必要
+  where: 高齢福祉課（電子申請も可）
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/56497.html
+  confidence: high
+  amount: 1,000円分の助成券を年間18枚まで
+- category: gaishutsu
+  name: 寝台タクシー利用料金の助成
+  name_on_page: 寝台タクシー利用料金の助成
+  summary: 重度の寝たきりの方の寝台タクシー料金の半額を助成券で助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 重度の寝たきりで通常の車両に乗れない
+  - 自動車税等の減免や重度心身障がい者タクシー助成を受けていない
+  - 毎年申請が必要
+  where: 高齢福祉課（電子申請も可）
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/57084.html
+  confidence: high
+  amount: 料金の2分の1（上限4,000円）、年6枚まで
+- category: gaishutsu
+  name: 福祉100円バス助成
+  name_on_page: 松本市福祉100円バス助成事業
+  summary: 対象者が市内の路線バス・地域バス・上高地線電車を1乗車100円で利用できる。
+  who: {}
+  at_application:
+  - 市内に住民登録があり、70歳以上、または障害者手帳をお持ちの方
+  - 障害者総合支援法の対象となる難病の方も対象
+  - 特急・観光地路線・高速バスは対象外
+  where: 高齢福祉課（70歳以上）、西部福祉課、障がい福祉課（70歳未満）
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/1778.html
+  confidence: high
+  amount: 1乗車100円
+- category: jutaku
+  name: 高齢者住宅等整備事業
+  name_on_page: 高齢者住宅等整備事業
+  summary: 65歳以上の自立や介護の負担軽減のための住宅改修費を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 前年所得税が非課税の世帯
+  - 着工前に高齢福祉課へ相談する
+  where: 高齢福祉課
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/1782.html
+  confidence: low
+  amount: 1世帯 63 万円まで補助（自己負担は対象経費の1割）
+- category: sonota
+  name: ナイトケア事業の助成
+  name_on_page: ナイトケア事業の助成
+  summary: 介護者の休息のため、デイサービス等での夜間宿泊の利用料を一部助成する。
+  who: {}
+  at_application:
+  - 要介護・要支援認定者、または事業対象者
+  - 毎年申請が必要
+  where: 高齢福祉課（電子申請も可）
+  url: https://www.city.matsumoto.nagano.jp/site/kourei/1790.html
+  confidence: high
+  amount: 7割助成（1泊上限7,000円）、年24泊まで（月6泊まで）
+not_found:
+- shingu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,127 @@
+city: '392014'
+name: 高知市
+site: www.city.kochi.kochi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 昼食や夕食を自宅へ届け、訪問時に安否も確認する。週 7 食まで。
+  who:
+    at_home: true
+  at_application:
+  - 生活保護世帯等、または市民税非課税世帯の人
+  - 65歳以上のみの世帯か、それに準ずる世帯
+  - 買物と調理が困難で、寝たきり度A1以上か認知症度2a以上
+  - 近くに支援できる親族がおらず、安否確認が必要
+  where: 担当ケアマネジャーまたは地域包括支援センター（代行申請）、高齢者支援課
+  url: https://www.city.kochi.kochi.jp/soshiki/130/haishoku20260401.html
+  confidence: high
+  amount: 週 7 食まで助成。自己負担は事業所や弁当の種類で異なる
+  more_urls:
+  - https://www.city.kochi.kochi.jp/uploaded/attachment/174373.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の利用料助成
+  name_on_page: 緊急通報装置利用助成金交付事業
+  summary: 民間の緊急通報装置を契約した場合に、月々の利用料を助成する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内に住む、生活上不安のあるひとり暮らしの人
+  - おおむね65歳以上、または重度身体障がい者等
+  - 協力員を 1 名以上確保する
+  where: 担当ケアマネジャーまたは地域包括支援センター（代行申請）、高齢者支援課
+  url: https://www.city.kochi.kochi.jp/soshiki/130/kinkyutuuhoujosei.html
+  confidence: high
+  amount: 月 418 円（税込）まで助成。生活保護等は設置費 11,000 円（税込）まで
+  more_urls:
+  - https://www.city.kochi.kochi.jp/uploaded/attachment/174373.pdf
+- category: nichijo-yogu
+  name: 入浴補助用具（滑り止めマット）の給付
+  name_on_page: 入浴補助用具の給付について
+  summary: 入浴時に見守りや介助が必要な人に、滑り止めマットの購入費を一部負担する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住むおおむね65歳以上
+  - 主治医意見書等で入浴動作に見守りか介助が必要
+  - 身体障害者手帳が無いか、障害の制度の対象外の人
+  - 購入前の事前申請が必要
+  where: 担当ケアマネジャーまたは地域包括支援センター・出張所（代行申請）、高齢者支援課
+  url: https://www.city.kochi.kochi.jp/soshiki/130/nichijouseikatsuyougu.html
+  confidence: high
+  amount: 年度内 2 万円を基準額とし、1 割が自己負担
+  more_urls:
+  - https://www.city.kochi.kochi.jp/uploaded/attachment/174373.pdf
+- category: nichijo-yogu
+  name: 防火用品（電磁調理器・火災警報器・自動消火器）の給付
+  name_on_page: 防火用品の給付について
+  summary: 防火に配慮が必要なひとり暮らしの人に、防火用品の購入費を一部負担する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - 市内に住むおおむね65歳以上
+  - 認知機能の低下で防火等の配慮が必要
+  - 一部の障害者手帳の人は障害福祉の制度になる
+  - 購入前の事前申請が必要
+  where: 担当ケアマネジャーまたは地域包括支援センター・出張所（代行申請）、高齢者支援課
+  url: https://www.city.kochi.kochi.jp/soshiki/130/boukayouhin.html
+  confidence: high
+  amount: 基準額は電磁調理器 21,000 円・火災警報器 15,500 円・自動消火器 28,700 円。1 割が自己負担
+  more_urls:
+  - https://www.city.kochi.kochi.jp/uploaded/attachment/174373.pdf
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 高齢者等訪問理美容サービス事業
+  summary: 理美容院に行けない人が自宅で理美容を受ける際の出張費を、利用券で助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3〜5、または移動機能の障害で身体障害者手帳1・2級
+  - 要介護3は座位保持と移動の調査項目に条件あり
+  - 理美容院でのサービスが困難な人
+  where: 高齢者支援課（本人・家族が直接申請可）、または担当ケアマネジャー・地域包括支援センターの代行
+  url: https://www.city.kochi.kochi.jp/soshiki/130/houmon-ribiyou20260401.html
+  confidence: high
+  amount: 出張費として利用券を年度内 2 枚。理美容料金は自己負担
+  more_urls:
+  - https://www.city.kochi.kochi.jp/uploaded/attachment/174373.pdf
+not_found:
+- iro
+- koken
+- hochoki
+- gaishutsu
+- mimamori
+- kaigo-yohin
+- jutaku
+- shingu

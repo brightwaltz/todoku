@@ -1,0 +1,170 @@
+city: '252018'
+name: 大津市
+site: www.city.otsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: jutaku
+  name: 小規模住宅改造費助成
+  name_on_page: 小規模住宅改造費助成（介護保険を優先利用）
+  summary: 寝たきり等の高齢者の手すり設置や段差解消などの工事費の半額を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所と住民票がある
+  - 寝たきりまたはこれに準じる状態（ランクA〜C）
+  - 入院中でない
+  - 本人と配偶者・扶養義務者の所得が老齢福祉年金の制限内
+  - 工事の前に申請が必要
+  where: 最寄りのあんしん長寿相談所（地域包括支援センター）または介護支援専門員
+  url: https://www.city.otsu.lg.jp/fukushi/k/kf/s/0951.html
+  confidence: high
+  amount: 工事費の2分の1、1世帯あたり25万円まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の取付け
+  name_on_page: 緊急通報装置
+  summary: ひとり暮らし等の高齢者宅に、ボタンでコールセンターにつながる通報装置を付ける。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - ひとり暮らしまたはそれに準ずる世帯
+  - 身体上・精神上の障害で緊急時に自分で119番できない（おそれ）
+  - 原則、近隣の協力員2名が必要（1名なら誓約書）
+  where: 最寄りのあんしん長寿相談所（地域包括支援センター）または担当の民生委員
+  url: https://www.city.otsu.lg.jp/fukushi/k/kf/s/0951.html
+  confidence: high
+  amount: 生活保護・所得税非課税世帯は無料。課税世帯は税額に応じ17,820〜83,160円の負担
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に昼食を届け、配達時に安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所と住民票がある
+  - ひとり暮らしまたは高齢者世帯（これらに準ずる世帯を含む）
+  - 心身の障害で調理や買物が難しく、食事確保や見守りが必要
+  - 介護サービス利用者は昼食の確保が難しい日に限る
+  where: 介護認定のある人は介護支援専門員、ない人はあんしん長寿相談所
+  url: https://www.city.otsu.lg.jp/fukushi/k/kf/s/0951.html
+  confidence: high
+  amount: 利用者負担は1食あたり、普通食500円以下、特別食720円以下（業者により異なる）
+- category: kaigo-yohin
+  name: 紙おむつ券の支給
+  name_on_page: 紙おむつサービス
+  summary: 在宅で紙おむつを常用する要介護の高齢者に、紙おむつ券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所と住民票がある
+  - 寝たきりか認知症で、常時のおむつ使用が3か月以上続いている
+  - 介護保険料の所得段階が第1〜5段階
+  - 在宅重度障害者施策のおむつ給付を受けていない
+  - 申請は毎月25日が締切
+  where: 介護支援専門員、最寄りのあんしん長寿相談所、または担当の民生委員
+  url: https://www.city.otsu.lg.jp/fukushi/k/kf/s/0951.html
+  confidence: high
+  amount: 月4,500円分（1,125円券×4枚）、利用料は無料
+- category: shingu
+  name: 寝具の丸洗い
+  name_on_page: 寝具丸洗いサービス
+  summary: 寝たきりの高齢者の布団を訪問回収し、丸洗い乾燥して届ける（年1回）。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内に住所と住民票がある
+  - 寝たきりまたはこれに準ずる状態
+  - 介護保険料の所得段階が第1〜5段階
+  where: 最寄りのあんしん長寿相談所（地域包括支援センター）または担当の民生委員
+  url: https://www.city.otsu.lg.jp/fukushi/k/kf/s/0951.html
+  confidence: high
+  amount: 自己負担は布団1枚あたり、敷・掛布団400円、羽毛・羽根の掛布団600円。2枚まで
+- category: haikai
+  name: 行方不明高齢者等のGPS端末の貸与
+  name_on_page: 行方不明高齢者等GPS位置情報探知システム利用支援事業
+  summary: 認知症等で行方不明になるおそれのある人に、位置が分かるGPS端末を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+    - dementia_diagnosis
+  at_application:
+  - 原則として市内に住所がある
+  - 要介護・要支援の認定を受けているか、それに準ずる状態
+  - 入院中、または介護保険施設・有料老人ホーム・グループホーム等に入所中でない
+  where: 認知症施策推進室または最寄りのあんしん長寿相談所
+  url: https://www.city.otsu.lg.jp/soshiki/020/1456/g/s/t/7.html
+  confidence: high
+  more_urls:
+  - https://www.city.otsu.lg.jp/material/files/group/322/R8_youkou.pdf
+- category: haikai
+  name: 行方不明高齢者等早期発見ダイヤルの事前登録
+  name_on_page: 大津市行方不明高齢者等早期発見ダイヤル事業
+  summary: 行方不明になるおそれのある人を事前登録し、いなくなった時に協力機関へメール配信する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になる可能性のある高齢者等（細かな要件は頁に無い）
+  where: あんしん長寿相談所または長寿福祉課認知症施策推進室
+  url: https://www.city.otsu.lg.jp/soshiki/020/1456/g/s/t/1388118590316.html
+  confidence: high
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等報酬助成金
+  summary: 後見人等への報酬を払うのが難しい人に、報酬の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 後見・保佐・補助開始の審判を受けている
+  - 生活保護を受けている、または預貯金等が報酬額＋50万円未満で他に資産がない
+  - 報酬付与の審判から60日以内に申請
+  - 本人または後見人等が申請
+  where: 福祉政策課（成年後見の相談は権利擁護サポートセンター）
+  url: https://www.city.otsu.lg.jp/soshiki/020/1405/g/sk/92759.html
+  confidence: high
+  amount: 上限は月額で、在宅28,000円、施設入所18,000円
+  more_urls:
+  - https://www.city.otsu.lg.jp/material/files/group/110/seinennkoukennninn.pdf
+- category: gaishutsu
+  name: 運転免許自主返納の高齢者への交通費等の助成
+  name_on_page: 高齢者運転免許証自主返納等促進助成事業
+  summary: 免許を自主返納した高齢者に、ICOCA等またはバス・タクシー券、ヘルメットのどれかを支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 令和8年度に免許証を自主返納した（失効は対象外）
+  - 市内に住所があり、市税の滞納がない
+  - 過去にこの事業の助成を受けていない
+  - ICOCA・乗車券は令和8年度中に75歳以上になる人のみ。65〜74歳はヘルメットのみ
+  where: 自治協働課窓口
+  url: https://www.city.otsu.lg.jp/soshiki/010/1130/g/kotuanzen/t/62309.html
+  confidence: high
+  amount: 75歳以上はICOCA等のチャージ6,000円分、共通乗車券6,000円分、ヘルメットから1つ選ぶ
+not_found:
+- iro
+- ribiyo
+- hochoki
+- mimamori

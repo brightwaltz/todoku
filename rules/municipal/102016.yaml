@@ -1,0 +1,410 @@
+city: '102016'
+name: 前橋市
+site: www.city.maebashi.gunma.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護高齢者おむつサービス
+  name_on_page: おむつサービス
+  summary: 紙おむつを業者が年4回に分けて自宅へ配送する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市民税が非課税であること
+  - 入院やショートステイ等の日数に条件がある
+  where: 長寿包括ケア課（電子申請も可）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4219.html
+  confidence: high
+  amount: 月 3,000 円分まで（無料）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  - https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/shinseisho/6829.html
+- category: ribiyo
+  name: 出張理・美容サービス
+  name_on_page: 出張理・美容サービス
+  summary: 理・美容店へ行けない人に、出張理美容の利用券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりや歩行困難などで理・美容店へ行くのが難しい
+  - 入院やショートステイ等の日数に条件がある
+  where: 長寿包括ケア課（電子申請も可）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4219.html
+  confidence: high
+  amount: 利用券を年 4 枚（無料）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: haishoku
+  name: 高齢者支援見守り配食事業
+  name_on_page: 高齢者支援見守り配食事業
+  summary: 調理が難しい人などに、見守りを兼ねた食事の費用を一部補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 事業対象者、または要支援・要介護の認定を受けている
+  - 低栄養のおそれ、または買物・調理が難しく見守りが必要
+  - 介護保険料の滞納がない
+  - ケアマネジメントで配食が必要と判断された
+  where: ケアマネジャー・地域包括支援センター経由／長寿包括ケア課・各支所
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/32580.html
+  confidence: high
+  amount: 1 食 500 円以上の食事に 250 円または 350 円を補助
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  - https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4220.html
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: 緊急ボタンの装置を貸与し、通報への対応と月1回の安否確認を行う。
+  who: {}
+  at_application:
+  - 電話番号を1つ以上持つ
+  - 75歳以上のひとり暮らし世帯
+  - または65歳以上のみの世帯で、要支援・要介護認定者か障害者手帳所持者がいる
+  - 見守りライト設置推進事業を利用していない
+  where: 長寿包括ケア課 地域支援係（郵送・電子申請も可）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/25612.html
+  confidence: high
+  amount: 介護保険料の所得段階 1〜3 は無料、4〜15 は月 1,000 円
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: mimamori
+  name: 見守りライト設置推進事業
+  name_on_page: 見守りライト設置推進事業
+  summary: 通信機能付き電球を設置し、動きが無いと登録先に知らせる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 通知先の関係者がメールアドレスを持っている（SMS は不可）
+  - 緊急通報システム事業を利用していない
+  where: 長寿包括ケア課 地域支援係
+  url: https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  confidence: high
+  amount: 初回6か月は無料。7か月目からは個人契約で全額自己負担
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4220.html
+- category: shingu
+  name: 布団丸洗いサービス
+  name_on_page: 布団丸洗いサービス
+  summary: 介護が必要な人の布団・毛布を年3回、業者が回収して丸洗いする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 失禁等で汚れた寝具の衛生管理が難しい
+  - サービスが必要と認められる（訪問調査あり）
+  where: 長寿包括ケア課 長寿計画係（電子申請も可）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4220.html
+  confidence: high
+  amount: 無料（年3回）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: shingu
+  name: 布団乾燥サービス
+  name_on_page: 布団乾燥サービス
+  summary: 布団・毛布を月1回、業者が回収して乾燥する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 布団を干すことが難しく、サービスが必要と認められる
+  - 訪問調査がある
+  where: 長寿包括ケア課 長寿計画係（電子申請も可）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4220.html
+  confidence: high
+  amount: 無料（月1回）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: koken
+  name: 認知症高齢者等の成年後見制度利用助成
+  name_on_page: 認知症高齢者等成年後見制度利用支援
+  summary: 成年後見人等の報酬など経費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 成年後見制度の利用が必要
+  - 生活保護または市民税非課税世帯で、助成がないと利用が難しい
+  where: 長寿包括ケア課 地域支援係
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4221.html
+  confidence: high
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: iro
+  name: 高齢者介護慰労金
+  name_on_page: 高齢者介護慰労金
+  summary: 在宅で要介護4・5の人を主に介護する家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護を受ける人が申請前6か月以上、要介護4か5で在宅
+  - 申請前6か月の入院・入所が10日以内
+  - 申請前6か月のショートステイ等が合計7日以内
+  where: 長寿包括ケア課 長寿計画係
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4218.html
+  confidence: high
+  amount: 年額 80,000 円
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 手帳の対象外の中等度難聴の人に、補聴器の購入費を一部助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻科医の意見書（両耳40dB以上で手帳の対象外）が要る
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 過去5年に日常生活用具の補聴器給付を受けていない
+  - 過去に本助成を受けていない。購入前に申請する
+  where: 長寿包括ケア課 長寿計画係
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/shinseisho/32274.html
+  confidence: high
+  amount: 購入費と 25,000 円のいずれか低い額（1 人 1 台）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: haikai
+  name: 認知症高齢者等探索システム導入補助金
+  name_on_page: 認知症高齢者等探索システム導入補助金
+  summary: 行方不明のおそれがある人の GPS 端末の購入費を家族に補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 対象者は65歳以上、または40〜64歳で認知機能低下の疾患がある
+  - 申請者は対象者を介護する家族・親族で、端末代を払った人
+  - 市税・介護保険料（65歳以上の場合）の滞納がない
+  - 1 人 1 回限り
+  where: 長寿包括ケア課
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/48650.html
+  confidence: high
+  amount: 上限 20,000 円（10 分の 10）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: haikai
+  name: 見守りキーホルダー登録事業
+  name_on_page: 見守りキーホルダー登録事業
+  summary: 身元情報を事前登録し、キーホルダーを配布して早期発見に備える。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で行方不明のおそれがある
+  - または40〜64歳で認知機能低下の疾患があり、おそれがある
+  - 申請は本人・親族・同居人・後見人等ができる
+  where: 長寿包括ケア課 地域支援係（2階35番窓口）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/23890.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: gaishutsu
+  name: マイタク（タクシー運賃の一部支援）
+  name_on_page: マイタク（でまんど相乗りタクシー）
+  summary: 登録するとタクシー運賃の一部を市が支援する。
+  who: {}
+  at_application:
+  - 75歳以上
+  - または65歳以上で運転免許を持っていない
+  - または障害者、要支援・要介護認定者、難病患者、妊産婦等
+  - または運転免許を自主返納・失効した人
+  where: 市役所1階マイタク登録窓口、各支所
+  url: https://www.city.maebashi.gunma.jp/soshiki/toshikeikakubu/kotsuseisaku/gyomu/5/2/2941.html
+  confidence: high
+  amount: 1 人乗車は運賃の半額（上限 1,000 円）。年 70 回（紙の券は 40 回）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: gaishutsu
+  name: 路線バス運賃の割引
+  name_on_page: 路線バス割引（GunMaaS）
+  summary: ICカードとマイナンバーカードを登録すると、市内の路線バスが1割引になる。
+  who:
+    age_min: 70
+  at_application:
+  - マイナンバーカードと交通系ICカードが要る
+  - スマートフォンが無い人は市役所で手続きできる
+  where: GunMaaS のサイト（スマホ）／市役所（交通政策課）
+  url: https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  confidence: high
+  amount: 市内の路線バス運賃が10%引き
+- category: sonota
+  name: ひとり暮らし高齢者の公衆浴場無料入浴券
+  name_on_page: ひとり暮らし高齢者公衆浴場無料入浴券
+  summary: ひとり暮らしの高齢者に、公衆浴場の無料入浴券を渡す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内の組合加入の公衆浴場（2 か所）で使える
+  where: 長寿包括ケア課 長寿計画係（窓口・電話・電子申請）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4220.html
+  confidence: high
+  amount: 年 24 枚（無料）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ施術料助成
+  name_on_page: はり・きゅう・マッサージ施術料助成
+  summary: 市と契約した施術所で使える施術料の割引券を年5枚渡す。
+  who:
+    age_min: 70
+    at_home: true
+  at_application:
+  - 市と契約した施術所のみで使える
+  where: 長寿包括ケア課 長寿計画係（電子申請も可）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4222.html
+  confidence: high
+  amount: 割引券1枚につき 1,000 円助成（自己負担 1,500 円）
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊
+  summary: 生活習慣の維持が難しい人を養護老人ホーム等で一時的に預かる。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護の認定を受けていない
+  - 生活管理指導が必要と認められる
+  where: 長寿包括ケア課 地域支援係
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4220.html
+  confidence: high
+  amount: 1 日 460 円と食費
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: sonota
+  name: 敬老祝金
+  name_on_page: 敬老祝金贈与
+  summary: 満88歳と満100歳の人に祝金を贈る。
+  who: {}
+  at_application:
+  - その年度の3月31日に満88歳または満100歳になる
+  - 9月1日に市内に住民登録があり、在住している
+  - 対象と思われる人に申請書が郵送される
+  where: 長寿包括ケア課 長寿計画係
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/4222.html
+  confidence: high
+  amount: 満88歳 10,000 円、満100歳 100,000 円
+  more_urls:
+  - https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+- category: sonota
+  name: 高齢者世帯エアコン購入費等の助成
+  name_on_page: 令和8年度前橋市高齢者世帯エアコン購入費等助成事業
+  summary: 高齢者のみの非課税世帯のエアコン購入・設置費を一部助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - エアコンが1台も無い、または1台のみで買い替える
+  - 施設への設置や追加の設置は対象外
+  - 過去に本助成を受けていない。購入前に申請する
+  - 申請期間は令和8年12月25日まで
+  where: 長寿包括ケア課（問い合わせ先）
+  url: https://www.city.maebashi.gunma.jp/soshiki/fukushibu/chojuhokatsukea/gyomu/2/4/50852.html
+  confidence: high
+  amount: 購入・設置費の10分の7（上限 84,000 円）
+- category: sonota
+  name: 特殊詐欺電話対策装置の無料貸出
+  name_on_page: 特殊詐欺電話対策装置の無料貸出
+  summary: 詐欺被害防止機能のある装置を固定電話用に無料で貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 先着順で、貸出台数に達すると終了する
+  - 電話で仮申請する
+  where: 消費生活センター
+  url: https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 詐欺被害等防止機能付き電話機等の購入補助
+  name_on_page: 詐欺被害等防止機能付き電話機等の購入補助
+  summary: 通話録音などの機能付き電話機の購入費の一部を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 購入前に電話で仮申請する
+  - 先着順で、予算額に達すると終了する
+  where: 消費生活センター
+  url: https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  confidence: high
+  amount: 購入費の2分の1（上限 5,000 円）
+- category: mimamori
+  name: 高齢者等避難情報コールサービス
+  name_on_page: 前橋市高齢者避難情報コールサービス
+  summary: 携帯電話を持たない高齢者世帯の固定電話に、避難情報を音声で知らせる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 洪水・土砂災害の想定区域がある町に住んでいる
+  - 世帯員が全員携帯電話を持たず、プッシュ式固定電話がある
+  - 世帯員は原則全員75歳以上
+  where: 防災危機管理課、長寿包括ケア課、介護保険課、各支所
+  url: https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 高齢者等ごみ出し支援事業
+  name_on_page: 高齢者等ごみ出し支援事業（こんにちは収集事業）
+  summary: ごみ出しが難しい人の家庭ごみを戸別に収集し、声がけで安否も確認する。
+  who: {}
+  at_application:
+  - 要支援・要介護認定者、事業対象者、または重度の障害者手帳所持者
+  - ごみ出しが難しく、親族・近所の協力も得られない
+  - ひとり暮らし（同居者がいる場合は全員が上記に該当）
+  where: ごみ収集課、ごみ政策課、長寿包括ケア課、介護保険課、障害福祉課、各支所
+  url: https://www.city.maebashi.gunma.jp/material/files/group/37/R8shiori.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

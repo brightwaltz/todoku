@@ -1,0 +1,29 @@
+pref: '35'
+name: 山口県
+site: www.pref.yamaguchi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 障害者等専用駐車場の利用証
+  name_on_page: やまぐち障害者等専用駐車場利用証制度
+  summary: 歩行や乗降が困難な人（要介護1〜5の高齢者など）に専用駐車場の利用証を交付する。
+  who: {}
+  at_application:
+  - 歩行や車の乗降が困難な人が対象（下の区分のどれかに当たること）
+  - 高齢者は介護保険の要介護1〜5（被保険者証で確認）
+  - 障害者は手帳で確認：身体は等級表、知的はA、精神は1級
+  - 難病は特定疾患医療受給者証、けが人は車いす・杖等の使用者、ほかに診断書で認められた人
+  - 妊産婦は妊娠7か月から産後1年まで（産後は乳児同乗のときだけ）
+  where: 県庁厚政課・各健康福祉センター・市役所や町役場（一部は市町社協）の窓口。郵送・電子申請もある
+  url: https://www.pref.yamaguchi.lg.jp/soshiki/44/18223.html
+  confidence: high
+  amount: 交付手数料の記載は無い。郵送で申請するときは返信用切手140円が必要
+  more_urls:
+  - https://www.pref.yamaguchi.lg.jp/soshiki/44/18229.html
+not_found:
+- yutai

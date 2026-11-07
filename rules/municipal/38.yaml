@@ -1,0 +1,31 @@
+pref: '38'
+name: 愛媛県
+site: www.pref.ehime.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: パーキングパーミット（駐車場利用証）の交付
+  name_on_page: 愛媛県パーキングパーミット制度（身体障がい者等用駐車場利用証制度）
+  summary: 歩行が困難な要介護1以上の高齢者などに、県が駐車場の利用証を無料で交付する。
+  who: {}
+  at_application:
+  - 歩行が困難と認められ、次のどれか 1 つに当たる人
+  - 高齢者は要介護度 1 以上の認定を受けている（介護保険被保険者証を見せる）
+  - 障害の手帳があり、種類ごとの等級の基準に当たる。ほか、特に配慮が必要と認められる人
+  - 難病の特定医療費（指定難病）か特定疾患医療の受給者
+  - 妊産婦（産前 7 か月から産後 1 年）、けが人（車いす・杖などの使用期間）も対象
+  where: 県障がい福祉課、県の地方局の地域福祉課など県の窓口、市町の窓口（窓口一覧に 68 か所）。郵送・ファクス・メールは県障がい福祉課のみ。えひめ電子申請システムでも申請できる
+  url: https://www.pref.ehime.jp/page/6003.html
+  confidence: high
+  amount: 交付手数料は無料。歩行困難者の有効期間は 5 年間（更新は期限までに申請）
+  more_urls:
+  - https://www.pref.ehime.jp/uploaded/attachment/28850.pdf
+  - https://www.pref.ehime.jp/uploaded/attachment/174163.pdf
+  - https://www.pref.ehime.jp/uploaded/attachment/191425.pdf
+not_found:
+- yutai

@@ -1,0 +1,267 @@
+city: '422011'
+name: 長崎市
+site: www.city.nagasaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給
+  summary: 在宅の重い要介護者を介護する家族に、紙おむつなどの介護用品を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 寝たきりの高齢者等を在宅で介護している家族
+  - 要介護3以上など。詳しくは窓口で確認
+  where: 各総合事務所の地域福祉課
+  url: https://www.city.nagasaki.lg.jp/page/1426.html
+  confidence: high
+  amount: 月額 5,000 円まで（利用料は無料）
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: iro
+  name: 介護者慰労金
+  name_on_page: 介護者慰労金支給
+  summary: 寝たきりの高齢者を介護保険サービスなしで在宅介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 寝たきりの高齢者を在宅で介護している家族
+  - 申請前6か月に介護保険サービスを使っていない
+  - 1か月程度のショートステイは除く
+  where: 各総合事務所の地域福祉課
+  url: https://www.city.nagasaki.lg.jp/page/1426.html
+  confidence: high
+  amount: 年額 10 万円
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: haishoku
+  name: 要介護者の配食サービス
+  name_on_page: 要介護者配食サービス
+  summary: 調理が難しい要介護の高齢者に、安否確認をしながら食事を届ける。
+  who: {}
+  at_application:
+  - ひとり暮らし等で調理が困難な高齢者
+  where: 各総合事務所の地域福祉課、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: high
+  amount: 利用者負担は 1 食 270〜620 円
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業（旧緊急時訪問介護事業）
+  summary: 緊急を要する持病のあるひとり暮らし等の高齢者に、緊急通報装置を設置する。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - ひとり暮らし等で、緊急を要する疾患がある高齢者
+  where: 各総合事務所、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: high
+  amount: 利用料は月 514 円。緊急時は係員が自宅へ駆けつける
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 日常生活用具給付
+  summary: 防火の配慮が必要なひとり暮らし等の高齢者に、電磁調理器などを給付する。
+  who:
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - ひとり暮らしの高齢者で、防火等の配慮が必要
+  where: 各総合事務所、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: high
+  amount: 電磁調理器・火災警報器・自動消火器を給付
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: nichijo-yogu
+  name: 高齢者安心火災警報器の給付
+  name_on_page: 高齢者安心火災警報器給付
+  summary: ひとりで避難できないひとり暮らし高齢者等に、室内の火災警報器と屋外ブザーを給付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 火災時に1人では屋外に避難できないひとり暮らし高齢者等
+  where: 各総合事務所、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: high
+  amount: 室内の火災警報器と屋外警報ランプ付ブザーを給付
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理容店や美容院に行けない人に利用券を交付し、自宅で理美容を受けられる。
+  who: {}
+  at_application:
+  - 理容店・美容院に出向くことが困難な高齢者
+  where: 各総合事務所、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: low
+  amount: 理美容代は自己負担（店により異なる）
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: gaishutsu
+  name: 高齢者の交通費助成
+  name_on_page: 高齢者交通費助成
+  summary: 年度内に70歳になる人以上に、バス・電車のIC還元かタクシー券等で交通費を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 身体障害者手帳・療育手帳の人は障害者の交通費助成の対象
+  where: 高齢者すこやか支援課（対象者へ毎年4月に案内を送付）
+  url: https://www.city.nagasaki.lg.jp/page/1430.html
+  confidence: high
+  amount: 5,000 円相当の交通費助成
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: gaishutsu
+  name: 移送支援サービス
+  name_on_page: 移送支援サービス
+  summary: 斜面地などで外出が難しい高齢者に、自宅から自力で動ける場所まで移送する。
+  who: {}
+  at_application:
+  - 斜面地等に住み外出が困難な高齢者
+  - 事業対象者で運動機能低下に該当する人に限る
+  where: 各総合事務所、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: high
+  amount: 1 回 100 円（片道 30 分未満を 1 回とする）
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: haikai
+  name: 徘徊高齢者等家族支援事業（居場所を家族に伝える発信機）
+  name_on_page: 徘徊高齢者等家族支援事業
+  summary: 認知症で行方不明になったとき、位置情報を家族に伝え、賠償は保険で補償する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症により行方不明になる心配がある人。詳しくは窓口で確認
+  where: 各総合事務所の地域福祉課
+  url: https://www.city.nagasaki.lg.jp/page/5951.html
+  confidence: high
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: haikai
+  name: 徘徊高齢者等SOSネットワーク事業
+  name_on_page: 長崎市徘徊高齢者等SOSネットワーク事業
+  summary: 事前登録した人が行方不明になったとき、事業所へ一斉メールして捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊し、行方不明になる心配がある高齢者
+  where: 各総合事務所、高齢者すこやか支援課、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/5951.html
+  confidence: high
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: mimamori
+  name: 友愛訪問
+  name_on_page: 友愛訪問
+  summary: 民生委員が月1回ほど訪問して、安否確認や日常の相談に応じる。
+  who: {}
+  at_application:
+  - 市内在住で、虚弱などで訪問が必要と認められるおおむね65歳以上の一人暮らし高齢者等
+  where: 高齢者すこやか支援課
+  url: https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+  confidence: high
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等の報酬助成
+  summary: 報酬を払えない低所得の被後見人に、後見人等への報酬を市が助成する。
+  who: {}
+  at_application:
+  - 親族以外の後見人・保佐人・補助人が選任されている
+  - 本人が生活保護、または世帯全員非課税で資産が少ない
+  - 申請は本人か後見人等。報酬決定から1年以内
+  where: 高齢者すこやか支援課（本人が65歳以上の場合）
+  url: https://www.city.nagasaki.lg.jp/page/58658.html
+  confidence: high
+  amount: 家裁決定の報酬額まで。月額上限は在宅 28,000 円、施設 18,000 円
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/48477.pdf
+- category: yutai
+  name: いきいきカード（老人福祉カード）
+  name_on_page: いきいきカード（老人福祉カード）
+  summary: 60歳以上に交付し、提示すると市内の観光・文化施設が無料や半額になる。
+  who:
+    age_min: 60
+  at_application:
+  - 市内在住
+  - 本人確認書類を持って地域センターへ行く
+  where: 地域センター
+  url: https://www.city.nagasaki.lg.jp/page/1430.html
+  confidence: high
+  amount: 対象施設は入場無料または半額（頁の期限表記は令和8年3月31日まで）
+- category: sonota
+  name: 99歳への長寿祝金
+  name_on_page: 長寿祝金
+  summary: 市内に1年以上住む99歳の人に祝金を支給する。
+  who: {}
+  at_application:
+  - 99歳になる人
+  - 市内に1年以上住んでいる
+  where: 地域センター、地区事務所
+  url: https://www.city.nagasaki.lg.jp/page/1430.html
+  confidence: high
+  amount: 50,000 円
+- category: sonota
+  name: ふれあい訪問収集（ごみの戸別収集と声かけ）
+  name_on_page: ふれあい訪問収集
+  summary: ごみ出しが難しい高齢者の家からごみを個別収集し、安否の声かけをする。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 斜面地・路地奥・エレベーターのない中高層住宅に住むひとり暮らし高齢者等
+  - ごみ出しが困難な人
+  where: 各総合事務所、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+- category: sonota
+  name: 安心カードの配布
+  name_on_page: 安心カード
+  summary: 緊急連絡先や健康情報を書いたカードを冷蔵庫に保管し、救急搬送に備える。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし、または避難行動要支援者
+  where: 地域センター、総合事務所、地域包括支援センター
+  url: https://www.city.nagasaki.lg.jp/page/20026.html
+  confidence: high
+  more_urls:
+  - https://www.city.nagasaki.lg.jp/uploaded/attachment/49308.pdf
+not_found:
+- hochoki
+- jutaku
+- shingu

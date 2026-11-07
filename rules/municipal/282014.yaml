@@ -1,0 +1,75 @@
+city: '282014'
+name: 姫路市
+site: www.city.himeji.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 在宅高齢者介護手当
+  name_on_page: 在宅高齢者介護手当の支給
+  summary: 要介護3〜5の在宅高齢者を家で介護している人に、月額の手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 6か月以上ねたきり、または問題行動のある認知症の方
+  - 重度障害者（児）介護手当の対象になっていない
+  - 通所系サービスが月平均16日以上だと対象外
+  - 所得制限なし。申請者は介護している人
+  where: 高齢者支援課（支所・家島事務所・駅前市役所・サービスセンター等でも受付）
+  url: https://www.city.himeji.lg.jp/kurashi/0000002831.html
+  confidence: high
+  amount: 月額 10,500 円
+- category: haishoku
+  name: ふれあい食事サービス
+  name_on_page: ふれあい食事サービス
+  summary: 校区ごとにボランティアが、公民館等での昼食会や自宅への食事の配達を行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、またはこれに準ずる方
+  where: 姫路市社会福祉協議会 地域福祉課
+  url: https://www.city.himeji.lg.jp/kurashi/0000002827.html
+  confidence: high
+  amount: 利用料は 1 回 100〜200 円、実施は月 1〜6 回（地域で異なる）
+- category: kinkyu-tsuho
+  name: 安心コール（緊急通報機器）の貸与
+  name_on_page: 見守り安心サポート事業（安心コールの貸与）
+  summary: 緊急ボタンで看護師のコールセンターにつながる通報機器を貸し出し、月1回の健康確認もある。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、ひとり暮らしか同居者が寝たきり等
+  - 自宅に固定電話、または連絡できる携帯電話がある
+  - 協力員を2名確保できる（鍵預かり利用なら1名可）
+  where: 高齢者支援課（家島事務所・各保健福祉サービスセンターでも受付）
+  url: https://www.city.himeji.lg.jp/kurashi/0000002824.html
+  confidence: high
+  amount: 住民税非課税（世帯）は無料。課税は設置時 8,800 円、携帯型は月 1,000 円
+- category: gaishutsu
+  name: 高齢者バス等優待乗車助成
+  name_on_page: 高齢者バス等優待乗車助成制度
+  summary: 75歳以上の人に、バス・船舶・タクシーのうち1つを選んで優待乗車証等を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 障害者の優待乗車助成を受けている方は除く
+  - バス・船舶・タクシーから年度内は1つ選択
+  where: 高齢者支援課、支所、駅前市役所、地域事務所、サービスセンター、保健福祉サービスセンター
+  url: https://www.city.himeji.lg.jp/kurashi/0000002864.html
+  confidence: high
+  amount: バスは市内 1 回 150 円、タクシーは年 7,000 円分、船は年 7 回乗船
+not_found:
+- kaigo-yohin
+- haikai
+- koken
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu

@@ -1,0 +1,184 @@
+city: '352012'
+name: 下関市
+site: www.city.shimonoseki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の支給
+  name_on_page: 介護用品支給
+  summary: 要介護3以上の高齢者を介護する非課税世帯の家族に、紙おむつ等を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人と同居か同一敷地に住み、常時介護している人
+  - 市内に住所がある
+  - 生活保護を受けていない
+  - 入院中や施設入所中の人は対象外
+  where: 長寿支援課（郵送可）
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/116224.html
+  confidence: high
+  amount: 2か月を1期として1期1万円まで。そのうち1割が自己負担
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 食事の調達が難しい高齢者等に、食事を届けて安否も確認する費用を一部助成する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者または重度身体障害者のみの世帯
+  - 近隣に支援できる親族がいない
+  - 食事の調達が困難で安否確認が必要
+  where: 地域包括支援センター
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/3500.html
+  confidence: low
+  amount: 1食520円の自己負担（住民税非課税世帯は410円）。1日1食まで、原則週3回まで
+  more_urls:
+  - https://www.city.shimonoseki.lg.jp/uploaded/attachment/97796.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置助成
+  name_on_page: 緊急通報システム
+  summary: 在宅のひとり暮らし高齢者等に、緊急通報装置の設置を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 緊急時の対策が必要
+  - しおりでは単身の重度身体障害者も対象と記載
+  where: 地域包括支援センター
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/3500.html
+  confidence: low
+  amount: 利用者負担は住民税課税世帯が月550円、非課税世帯は無料
+  more_urls:
+  - https://www.city.shimonoseki.lg.jp/uploaded/attachment/97796.pdf
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具の給付
+  summary: 火の扱いに不安のある非課税の高齢者世帯に、火災警報器等を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 認知症または寝たきり等で、火気の取り扱いに支障があると認められる
+  where: 地域包括支援センター
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/3500.html
+  confidence: low
+  amount: 自動消火器は上限25,000円、電磁調理器は上限20,000円、火災警報器は合計15,000円まで（無料、超過分は自己負担）
+  more_urls:
+  - https://www.city.shimonoseki.lg.jp/uploaded/attachment/97796.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 下関市高齢者補聴器購入費助成事業
+  summary: 中等度難聴で補聴器が必要な非課税の高齢者に、購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 耳鼻咽喉科の医師が中等度難聴で補聴器が必要と認めた
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 過去5年以内にこの助成を受けていない
+  where: 長寿支援課、各総合支所市民生活課
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/111806.html
+  confidence: high
+  amount: 補聴器本体の購入費の2分の1、上限3万円（先着順、予算の範囲内）
+- category: haikai
+  name: 見守り支援機器（GPS）の購入・レンタル費の助成
+  name_on_page: 見守り支援機器（GPS機器）の購入またはレンタルに要する費用の助成
+  summary: 徘徊のおそれがある認知症高齢者等の家族が使うGPS機器の費用を一部補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - GPS機器の購入やレンタルの費用を負担した家族等が申請する
+  - 購入またはレンタル開始後6か月以内に申請
+  - 補助は購入かレンタルのどちらか1回のみ
+  where: 長寿支援課（支援係）
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/3533.html
+  confidence: high
+  amount: 購入は費用の5割（上限13,000円）、レンタルは全額（上限5,500円）
+- category: gaishutsu
+  name: 高齢者バス・渡船の運賃助成（いきいきシルバー100）
+  name_on_page: いきいきシルバー100
+  summary: 70歳以上は利用者証で、市内の路線バスや市渡船に毎週火曜日に1回100円で乗れる。
+  who:
+    age_min: 70
+  at_application:
+  - 下関市の住民基本台帳に登録がある
+  - 利用できるのは毎週火曜日のみ
+  where: 長寿支援課、各総合支所市民生活課、各支所、公民館など（電子申請・郵送・ファクスも可）
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/3494.html
+  confidence: high
+  amount: 1回の乗車・乗船が現金100円
+- category: gaishutsu
+  name: 外出支援サービス（総合支所管内の移送）
+  name_on_page: 外出支援サービス
+  summary: 車いす等が必要で公共交通を使いにくい人を、専用車で医療機関等へ送る。
+  who: {}
+  at_application:
+  - 菊川・豊田・豊浦・豊北の各総合支所管内に住んでいる
+  - 車いすやストレッチャーが必要で、公共交通の利用が難しい
+  where: 各総合支所市民生活課
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/3500.html
+  confidence: low
+  amount: 利用者負担は基本額200円/30分、待機料200円/30分、燃料費100円/10km。週1回まで
+  more_urls:
+  - https://www.city.shimonoseki.lg.jp/uploaded/attachment/97796.pdf
+- category: yutai
+  name: 高齢者の銭湯割引（いきいきシルバー銭湯デー）
+  name_on_page: いきいきシルバー銭湯デー
+  summary: 70歳以上は毎週火曜日に、対象の銭湯を割引料金で利用できる。
+  who:
+    age_min: 70
+  at_application:
+  - 下関市の住民基本台帳に登録がある
+  - 利用者証または年齢が分かる公的なものを提示する
+  where: 長寿支援課、各総合支所市民生活課（利用者証の申請）
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/102263.html
+  confidence: high
+  amount: 令和8年10月以降は蛍街道西ノ市440円、その他の対象施設250円（令和9年1月から260円）
+- category: sonota
+  name: 生活支援短期宿泊（ショートステイ）
+  name_on_page: 生活支援短期宿泊（ショートステイ）
+  summary: 在宅生活が一時的に難しい高齢者を、養護老人ホーム等で短期間受け入れる。
+  who: {}
+  at_application:
+  - 介護保険の対象とならない、おおむね65歳以上の人
+  - 利用は7日以内
+  where: 地域包括支援センター
+  url: https://www.city.shimonoseki.lg.jp/soshiki/40/3500.html
+  confidence: low
+  amount: 食事代など利用者負担は施設により異なる
+not_found:
+- iro
+- koken
+- shingu
+- ribiyo
+- mimamori
+- chusha

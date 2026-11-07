@@ -1,0 +1,96 @@
+city: 032018
+name: 盛岡市
+site: www.city.morioka.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅要介護高齢者への紙おむつ助成券の交付
+  name_on_page: 在宅要介護高齢者紙おむつ助成事業
+  summary: 在宅の要介護3〜5の非課税世帯の高齢者に、紙おむつ購入用の助成券を毎月交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3は認定調査の排尿または排便が介助か見守り等の人のみ
+  - 6か月以上のねたきり、または失禁が続く（見込み含む）
+  - 生活保護や中国残留邦人等の支援給付を受けていない
+  - 介護保険料を滞納していない
+  - 他制度で紙おむつの給付を受けていない
+  where: 長寿社会課（郵送可。毎月15日締切）
+  url: https://www.city.morioka.iwate.jp/kenko_fukushi/koreifukushi/kaigoyobo/1006435.html
+  confidence: high
+  amount: 助成券1枚3,000円分を月1枚交付（年度ごとに申請）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 調理が困難な在宅の高齢者に、食事を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者世帯のどちらか
+  - 食事の調理が困難
+  - 家族が食事を用意できる場合は利用できない
+  - 家族の外出・旅行で一時的に不在の場合は利用できない
+  where: 地域包括支援センターまたは介護支援センター
+  url: https://www.city.morioka.iwate.jp/kenko_fukushi/koreifukushi/kaigoyobo/1006435.html
+  confidence: high
+  amount: 1食450円の自己負担。週4回まで（昼食か夕食を1日1回）
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者への緊急通報装置の設置
+  name_on_page: ひとり暮らし高齢者等地域生活サポート事業
+  summary: ひとり暮らしの高齢者宅に緊急通報装置を付け、ボタンで受信センターに通報できる。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 急変のおそれのある疾患等がある人など
+  - 固定電話回線または携帯電話回線が必要（無い場合は相談）
+  where: 地域包括支援センターまたは介護支援センター
+  url: https://www.city.morioka.iwate.jp/kenko_fukushi/koreifukushi/kaigoyobo/1006435.html
+  confidence: high
+  amount: 市町村民税非課税の人は無料、課税の人は自己負担あり（金額は頁に無し）
+- category: haikai
+  name: SOSネットワークの事前登録・履物用ステッカー
+  name_on_page: 盛岡広域シルバーケアSOSネットワークシステム
+  summary: 事前に登録すると、行方不明時に協力機関へ情報が共有される。希望者は履物用ステッカーももらえる。
+  who: {}
+  at_application:
+  - 認知症高齢者等の所在不明に備えるもの
+  - 顔写真つきの登録依頼書と情報発信確認書を提出する
+  where: 各警察署、高齢者福祉担当、地域包括支援センター
+  url: https://www.city.morioka.iwate.jp/kenko_fukushi/koreifukushi/ninchisho/1054984/1054985.html
+  confidence: high
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見等の審判を受け、報酬の支払いが難しい人に、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 後見・保佐・補助の開始の審判を受けている
+  - 生活保護の人、または非課税で資産50万円以下など市長が認める人
+  - 後見人等が配偶者・4親等内の親族の場合は対象外
+  where: 長寿社会課（郵送または持参）
+  url: https://www.city.morioka.iwate.jp/kenko_fukushi/koreifukushi/seinen_koukennin/1006415.html
+  confidence: high
+  amount: 月額の上限は、在宅28,000円、施設入所・入院中18,000円
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu

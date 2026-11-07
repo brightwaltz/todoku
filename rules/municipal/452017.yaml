@@ -1,0 +1,140 @@
+city: '452017'
+name: 宮崎市
+site: www.city.miyazaki.miyazaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 生活支援配食サービス
+  name_on_page: 生活支援配食サービス
+  summary: 夕食を週6日まで自宅に届け、あわせて安否確認をする。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上、またはそれに準ずる方
+  - 食の支援に加え見守りや声かけが必要な方
+  - 家族等の支援や他のサービスで対応できない方
+  where: 地域包括支援センター、居宅介護支援事業所（問い合わせは地域包括ケア推進課）
+  url: https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/services/14732.html
+  confidence: high
+  amount: 1食あたり410〜590円の自己負担（配達事業所により異なる）
+- category: nichijo-yogu
+  name: 防火支援用具の購入費助成
+  name_on_page: 防火支援用具の購入費助成
+  summary: 電磁調理器・自動消火器・火災警報器などの購入費の一部を助成する。
+  who:
+    flags:
+    - fire_risk
+  at_application:
+  - 市内在住の65歳以上のひとり暮らし、またはこれに準ずる方
+  - 防火の必要がある認知症高齢者等
+  where: 地域包括支援センター、居宅介護支援事業所
+  url: https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/services/7683.html
+  confidence: high
+  amount: 自己負担は生活保護世帯なし、非課税世帯1割、所得割14万円以下の世帯3割
+- category: kaigo-yohin
+  name: 介護用品の支給
+  name_on_page: 宮崎市介護用品支給
+  summary: 要介護者を在宅で介護する家族に、紙おむつ等の購入費を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者と介護者の世帯全員の住民税所得割額の合計が14万円以下
+  - 重度障がい者介護金を受けていない
+  - 入院中・施設入所中の方は対象外
+  where: 担当ケアマネジャー経由で地域包括ケア推進課、または地域包括支援センター
+  url: https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/other/7647.html
+  confidence: high
+  amount: 年間限度額 2万5千〜10万円（要介護度と課税状況で異なる）
+  more_urls:
+  - https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/services/7683.html
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 民間の緊急通報サービスの利用料の一部または全部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 概ね65歳以上の独居高齢者等
+  - 傷病等で急病や事故の恐れがある
+  - 緊急時に電話での連絡が難しい
+  where: 地域包括支援センター、居宅介護支援事業所
+  url: https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/services/7683.html
+  confidence: high
+  amount: 自己負担は生活保護世帯なし、非課税世帯1割、所得割14万円以下3割、他は全額
+- category: haikai
+  name: 高齢者位置検索システム（GPS貸与・見守りシール）
+  name_on_page: 高齢者位置検索システム
+  summary: 認知症高齢者のGPS装置の費用助成と、見守りシールの交付を行う。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 外出中に道に迷い帰宅できなくなる認知症高齢者
+  where: 地域包括支援センター、居宅介護支援事業所
+  url: https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/services/7683.html
+  confidence: high
+  amount: GPS初期費用は上限9,800円で助成、靴は上限19,500円、シールは50枚交付
+- category: jutaku
+  name: 住宅改修の上乗せ補助
+  name_on_page: 住宅改修補助事業（宮崎市高齢者等居宅介護住宅改修補助事業）
+  summary: 介護保険住宅改修の超過分や対象外工事の費用の一部を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 生計を一にする親族等の所得税額の合計が7万円以下
+  - 介護保険対象工事は支給限度基準額20万円を使い切った方
+  - 要支援1は一部の工事種目が対象外
+  - 工事着工前に事前申請が必要
+  where: ケアマネジャー等を通じて宮崎市へ申請
+  url: https://www.city.miyazaki.miyazaki.jp/health/long_term_care_insurance/procedure/12333.html
+  confidence: high
+  amount: 対象額は上限20万円、補助率は課税状況により4〜10割
+- category: gaishutsu
+  name: 敬老バスカ（高齢者のバス料金助成）
+  name_on_page: 敬老バスカ
+  summary: 70歳以上の方が宮崎交通のバスに1回100円で乗れるカードを交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 宮崎市に引き続き3か月以上住所がある
+  where: 資格証は福祉総務課・総合支所、カード交付は宮崎交通の窓口
+  url: https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/vivid/705.html
+  confidence: high
+  amount: 1乗車100円、カード預かり料500円
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用や後見人等への報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 助成がないと成年後見制度の利用が難しい方
+  - 報酬助成は生活保護受給者またはそれに準ずる方
+  - 詳しい要件は担当課に確認が必要
+  where: 地域包括ケア推進課（宮崎市成年後見支援センター）
+  url: https://www.city.miyazaki.miyazaki.jp/health/elderly_welfare/property_management/7615.html
+  confidence: high
+  amount: 報酬助成は月額上限 在宅28,000円、施設・病院18,000円
+not_found:
+- iro
+- ribiyo
+- shingu
+- mimamori

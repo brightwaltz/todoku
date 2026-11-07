@@ -1,0 +1,30 @@
+pref: '33'
+name: 岡山県
+site: www.pref.okayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ほっとパーキングおかやま駐車場利用証
+  name_on_page: 「ほっとパーキングおかやま」駐車場利用証
+  summary: 要介護1〜5の人などに、車いすマーク駐車場を使える利用証を無料で交付する。
+  who: {}
+  at_application:
+  - 次のいずれかで歩行が困難な人が対象。高齢者は要介護1〜5
+  - 要介護は介護保険被保険者証で確認する（要支援は表に載っていない）
+  - ほか、身体障害者手帳（障害ごとの等級）・療育手帳Ａ・精神1級の人も対象
+  - ほか、難病の受給者証の人、妊産婦、けが人など一時的に困難な人も対象
+  - 車いすマーク駐車場で、外から見える所に利用証を掲げて使う
+  where: 県庁障害福祉課、県民局健康福祉部、県保健所、各市町村（郵送は県庁障害福祉課のみ）
+  url: https://www.pref.okayama.jp/page/detail-83640.html
+  confidence: high
+  amount: 申請・交付の手数料は無料。確認書類の取得費は自己負担。郵送は返信用に180円切手が必要
+  more_urls:
+  - https://www.pref.okayama.jp/page/detail-85383.html
+  - https://www.pref.okayama.jp/uploaded/attachment/365968.pdf
+not_found:
+- yutai
