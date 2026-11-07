@@ -1,0 +1,208 @@
+city: '142042'
+name: 鎌倉市
+site: www.city.kamakura.kanagawa.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつの支給について（介護保険外のサービス）
+  summary: 在宅で非課税世帯の要介護者に、紙おむつ等を2か月に1回自宅へ届ける。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住民登録がある
+  - 要介護1〜3は、認定調査票で尿失禁が確認できること
+  - 介護保険料を滞納していない
+  - 給付制限を受けていない
+  where: 介護保険課（本庁舎1階）。e-kanagawaからも申請できる
+  url: https://www.city.kamakura.kanagawa.jp/kaigo/kamiomutu.html
+  confidence: high
+  amount: 定められた品目から4点まで。5・6・8・10・12・2月に配送。金額の記載なし
+- category: haishoku
+  name: 配食サービスの費用助成
+  name_on_page: 配食サービスに対する助成
+  summary: 市指定業者の昼食か夕食の配食を、1食220円引きで利用できる。
+  who:
+    age_min: 65
+  at_application:
+  - 次のどちらか。(1)要介護4・5の認定を受けている
+  - (2)世帯全員が65歳以上で調理が困難、所得が160万円未満
+  - (2)の所得は、利用対象者の合計所得金額
+  - 介護保険料を滞納していない
+  where: ケアプランがある人は担当ケアマネジャー、ない人は担当の地域包括支援センター
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/hitorigurashi_setaishien.html
+  confidence: high
+  amount: 1食につき220円（200円と消費税相当）を業者の提供価格から差し引く
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸出し
+  name_on_page: 緊急通報装置の貸出し
+  summary: ボタンで24時間のコールセンターにつながる緊急通報装置を貸し出す。
+  who:
+    age_min: 40
+  at_application:
+  - 65歳以上、または40〜64歳で要支援・要介護の認定がある
+  - 65歳以上は、原則として高齢者見守り登録が必要
+  - 協力員が原則2人必要（うち1人は民生委員）
+  - 警備会社・電話会社の類似サービス利用中は申込みを遠慮
+  where: 地域を担当する民生委員（不明なら高齢者支援課）
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/hitorigurashi_setaishien.html
+  confidence: high
+  amount: 設置料1,100円と月額575〜2,090円（介護保険料の段階等で異なる）。生活保護世帯は無料
+- category: haikai
+  name: 徘徊高齢者SOSネットワーク
+  name_on_page: 鎌倉市徘徊高齢者SOSネットワークシステム
+  summary: 行方不明時に、タクシー・バス・鉄道などの協力機関へ捜索協力を依頼する仕組み。
+  who: {}
+  at_application:
+  - 対象者の条件は頁に明記なし（徘徊高齢者の早期発見が目的）
+  - 事前登録をすすめている（行方不明になった後の登録も可）
+  where: 高齢者支援課（本庁舎1階8番窓口）か、最寄りの地域包括支援センター
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/zaitaku_yukuefumeihakken.html
+  confidence: low
+- category: haikai
+  name: 認知症高齢者等のGPS端末の貸出し
+  name_on_page: 鎌倉市認知症高齢者等早期発見支援事業
+  summary: GPS小型端末を貸し出し、行方不明時に介護者が居場所を検索できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 概ね65歳以上（年齢は目安）
+  - 鎌倉市に住民登録があり、介護保険料を滞納していない
+  - 認知症等により徘徊行動がみられる
+  where: 高齢者支援課8番窓口（郵送可）
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/zaitaku_yukuefumeihakken.html
+  confidence: high
+  amount: 月額550〜2,750円（介護保険料の段階で異なる）。生活保護は無料。賠償補償3億円付き
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 鎌倉市認知症高齢者等見守りシール利用事業
+  summary: 二次元コードの見守りシールを無料で交付し、行方不明時に家族と連絡できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の高齢者等で、鎌倉市に住民登録がある
+  - 認知症等により徘徊行動がみられる
+  - SOSネットワーク未登録なら、同時の登録をお願いされる
+  where: 高齢者支援課8番窓口（郵送可）
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/zaitaku_yukuefumeihakken.html
+  confidence: high
+  amount: 耐洗ラベル20枚と蓄光シール10枚が無料。追加の交付は利用者負担
+- category: ribiyo
+  name: 訪問理美容サービス助成券
+  name_on_page: 訪問理美容サービス助成券
+  summary: 在宅で要介護4・5の方が、自宅に来る理美容を技術料のみで利用できる助成券。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理容店・美容院へ行くことが困難な方
+  where: 高齢者支援課（本庁舎1階8番窓口）へ持参または郵送
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/documents/houmonribiyouannnair8.pdf
+  confidence: high
+  amount: 助成券を1人年間最大6枚（同月に複数回は不可）。利用者は技術料金のみ負担
+- category: koken
+  name: 成年後見の費用助成
+  name_on_page: 成年後見制度利用に係る費用助成
+  summary: 法定後見の精神鑑定費用と、親族以外の後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 法定後見制度を利用した場合に限る
+  - 被後見人等が鎌倉市内に住んでいる
+  - 生活保護、または中国残留邦人等の支援給付を受けている
+  - または世帯全員が住民税非課税、年収100万円以下、預貯金等100万円以下
+  - 報酬の助成は、後見人が親族以外の場合
+  where: 高齢者支援課活動支援担当（申請先の記載は頁になく、問い合わせ先）
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/zaitaku_seinen.html
+  confidence: high
+  amount: 精神鑑定費用は上限5万円。後見人等の報酬は月額上限2.8万円（入所・入院中は2万円）
+- category: gaishutsu
+  name: 運転免許返納者へのバス・タクシー割引助成券
+  name_on_page: 運転免許証を自主返納した方への割引助成券
+  summary: 免許を返納・失効した65歳以上に、バス・タクシーで使える500円券を4枚交付する。
+  who: {}
+  at_application:
+  - 満65歳以上で、運転免許証を自主返納または失効した
+  - 満64歳でも、65歳の誕生日の1か月前から前日までに返納すれば対象
+  - 返納・失効の6か月後の月末営業日までに申請する
+  - 失効の場合は運転経歴に係る証明書が必要
+  where: 高齢者支援課（郵送可。返納した人は警察署で申請書を受け取る）
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/waribiki_josei.html
+  confidence: high
+  amount: 500円券4枚（2,000円分）。申請年度と翌年度の2年間が交付対象
+- category: gaishutsu
+  name: 高齢者バス割引乗車証の購入費助成
+  name_on_page: 高齢者バス割引乗車証購入費の助成
+  summary: 70歳以上の市民税非課税世帯に、バス割引乗車証の購入で使える3,000円分の助成券。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 鎌倉市に住民登録がある
+  - 70歳以上。年度内に70歳になる人も含む
+  where: 高齢者支援課8番窓口、郵送、またはe-kanagawa
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/waribiki_josei.html
+  confidence: high
+  amount: 1人1年度につき3,000円分。申請期間は毎年7月1日から3月10日
+- category: mimamori
+  name: 高齢者見守り登録
+  name_on_page: 高齢者見守り登録制度
+  summary: 一人暮らしの高齢者を登録し、地域の見守りや災害時の連絡に活用する。
+  who: {}
+  at_application:
+  - 概ね70歳以上で、一人暮らしまたは一人暮らしと同じ状態
+  - 個人情報の利用・提供に同意して申し込む
+  - 任意の登録制度
+  where: 地域を担当する民生委員（不明なら高齢者支援課）
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/hitorigurashi_setaishien.html
+  confidence: high
+- category: sonota
+  name: 公衆浴場の入浴助成券
+  name_on_page: 公衆浴場の入浴助成
+  summary: 65歳以上に銭湯の利用助成券を渡し、1回300円で入浴できる。
+  who:
+    age_min: 65
+  at_application:
+  - 市民であること
+  where: 高齢者支援課（本庁舎1階8番窓口・支所、または郵送）
+  url: https://www.city.kamakura.kanagawa.jp/koureisya/waribiki_josei.html
+  confidence: high
+  amount: 1回300円で入浴できる。1人年1冊（72枚綴り）
+- category: sonota
+  name: 声かけふれあい収集
+  name_on_page: 声かけふれあい収集
+  summary: ごみ出しが難しい高齢者のみの世帯へ、週1回の声かけと戸別のごみ収集を行う。
+  who: {}
+  at_application:
+  - 高齢者・障害者のみの世帯で、ごみ出しの協力を得ることが困難
+  - 高齢者のみの世帯は、介護保険の居宅サービスを日常的に利用
+  - 障害者のみ・高齢者との混合世帯は、手帳等の別の要件がある
+  - 市長が同等の状態と認めた世帯も対象
+  - 本人以外（親族・ケアマネ）の申請は、本人の承諾が必要
+  where: 環境センター収集担当、またはごみ対策課（本庁舎1階27番窓口）
+  url: https://www.city.kamakura.kanagawa.jp/imacs/koekake.html
+  confidence: high
+not_found:
+- iro
+- shingu
+- hochoki
+- nichijo-yogu
+- jutaku

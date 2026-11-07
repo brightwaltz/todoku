@@ -1,0 +1,201 @@
+city: '205419'
+name: 小布施町
+site: www.town.obuse.nagano.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ給付サービス事業
+  name_on_page: おむつ給付サービス事業
+  summary: 在宅で介護している家庭に、おむつの購入に使える給付券を渡す
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 住民税非課税であること（本人か世帯かは頁に明記なし）
+  - おおむね月の半分以上、在宅で介護を受けている
+  - 要介護3以上、または常時おむつが必要と認められる人
+  - 重度の身体障がい者（児）で常時おむつが必要な人も対象
+  - 入院・入所中、予防的な使用、失禁状態にない人は対象外
+  where: 地域包括支援センター、高齢者福祉係（頁は問い合わせ先として記載）
+  url: https://www.town.obuse.nagano.jp/docs/64277.html
+  confidence: high
+  amount: 申請月から月 4,500 円分のおむつ給付券（紙おむつ、尿取りパッド、防水シーツなど）
+- category: haishoku
+  name: 配食サービス（ふれあい給食）
+  name_on_page: 配食サービス「ふれあい給食」
+  summary: 昼食と夕食を届け、安否確認も兼ねる配食サービス
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 食の支援が必要と認められる住民税非課税の人
+  - おおむね65歳以上の在宅のひとり暮らしの人
+  - 70歳以上の高齢者だけで暮らす人
+  - 身体・療育手帳、精神手帳1級の人だけの世帯の人
+  - 上の人と同居し、介護のため調理が困難な人
+  where: 地域包括支援センター
+  url: https://www.town.obuse.nagano.jp/docs/2631.html
+  confidence: high
+  amount: 1食 450 円（刻み食・おかゆへの変更は無料。土日祝や年末年始などは配食なし）
+- category: haikai
+  name: 見守り・徘徊SOSネットワーク事業
+  name_on_page: おぶせ見守り・徘徊SOSネットワーク事業
+  summary: 行方不明のおそれのある人を登録し、町・警察・地域で捜索する
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になる心配があり、事業に登録した人
+  - 利用登録申請書を出して事前に登録する（登録カードが交付される）
+  where: 地域包括支援センター（頁の問い合わせ先。登録申請書の提出先は頁に明記なし）
+  url: https://www.town.obuse.nagano.jp/docs/335218.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の初期設置費の補助
+  name_on_page: 緊急通報装置の初期設置費用に対する補助のご案内
+  summary: 緊急通報装置の初期設置費用の一部を補助する
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住所がある
+  - 先に町へ申請し、交付決定後に設置工事をする
+  - 申請は1世帯につき1回限り
+  - 月額料金とオプションの設置費は自己負担
+  where: 地域包括支援センター、高齢者福祉係
+  url: https://www.town.obuse.nagano.jp/docs/298927.html
+  confidence: high
+  amount: 初期設置費用（消費税込み）の補助、上限 30,000 円
+- category: jutaku
+  name: 高齢者等にやさしい住宅改良促進事業
+  name_on_page: 高齢者等にやさしい住宅改良促進事業
+  summary: 要介護認定者などの住宅改良の工事費を給付する
+  who: {}
+  at_application:
+  - 要介護認定を受けているか、重度心身障がい者である
+  - 世帯の所得税の合算額が8万円以下
+  where: 地域包括支援センターまたは福祉係
+  url: https://www.town.obuse.nagano.jp/docs/2910.html
+  confidence: high
+  amount: 介護保険の住宅改修分を除く工事費のうち 70 万円までが対象。1割は自己負担
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい在宅の人の、訪問理美容の出張費用を補助する
+  who:
+    at_home: true
+  at_application:
+  - 理美容院に行くことが困難な人
+  - 要介護3以上、身体障害者手帳1・2級、または町長が特に必要と認めた人
+  - 利用前に申請が必要（利用後の申請は不可）
+  where: 地域包括支援センター、高齢者福祉係
+  url: https://www.town.obuse.nagano.jp/docs/2628.html
+  confidence: high
+  amount: 年6枚まで、1回 700 円分の利用券
+- category: gaishutsu
+  name: タクシー利用助成
+  name_on_page: タクシー利用助成について
+  summary: 75歳以上などで住民税が課税されていない人に、タクシーの助成券を渡す
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 町に住民登録がある
+  - 75歳以上、または身体手帳1・2級・療育手帳B1以上・精神手帳1級の人
+  - 住民税課税、施設入所中、福祉バス利用中、生活保護は対象外
+  - 税や料金に滞納がある人は対象外
+  where: 高齢者福祉係（オンライン申請も可）
+  url: https://www.town.obuse.nagano.jp/docs/2682.html
+  confidence: high
+  amount: 月 2,100 円分の助成券（年3回、4か月分ずつ交付）
+- category: sonota
+  name: 介護保険在宅サービス利用料の助成
+  name_on_page: 介護保険在宅サービス利用料の助成（町福祉基金事業）
+  summary: 住民税非課税世帯の介護保険在宅サービス利用料の半額を助成する
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険の在宅サービスを利用している
+  - 先に申請して確認証の交付を受ける
+  - 利用後、3か月ごとに社会福祉協議会へ給付申請する
+  where: 高齢者福祉係または地域包括支援センター（給付申請は社会福祉協議会）
+  url: https://www.town.obuse.nagano.jp/docs/2853.html
+  confidence: high
+  amount: 在宅サービスの自己負担額の半額（上限の記載なし）
+- category: sonota
+  name: 福祉用具（車椅子・歩行器）の貸与費用の補助
+  name_on_page: 福祉用具貸与費用に係る補助事業を実施しています
+  summary: 車椅子・歩行器を自費で借りた費用の一部を補助する
+  who: {}
+  at_application:
+  - 町内に住所がある
+  - 入院・入所中で、外泊時に自宅で介護が必要な人
+  - 病気やけがで一時的に福祉用具が必要な人
+  - 補助は4月〜翌年3月で4か月まで
+  where: 地域包括支援センター（頁の問い合わせ先。提出先は頁に明記なし）
+  url: https://www.town.obuse.nagano.jp/docs/307445.html
+  confidence: high
+  amount: 車椅子・歩行器とも月額上限 1,700 円（利用料が低いときは利用料から 300 円引いた額）
+- category: sonota
+  name: 高齢者世帯等除雪援助サービス
+  name_on_page: 高齢者世帯等除雪援助サービス
+  summary: 除雪が難しい高齢者世帯に、援助員が除雪を手伝う
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らし（おおむね65歳以上）か、高齢者のみの世帯
+  - 要支援・要介護の認定を受けているか、疾病などで援助が必要
+  - 玄関先から道路までの必要最低限の範囲を除雪する
+  where: 地域包括支援センター（頁の問い合わせ先。提出先は頁に明記なし）
+  url: https://www.town.obuse.nagano.jp/docs/297360.html
+  confidence: high
+  amount: 1回 100 円
+- category: gaishutsu
+  name: 福祉バス運行サービス
+  name_on_page: 福祉バス運行サービス
+  summary: 車椅子でないと移動が難しい在宅の人を、通院などへ送迎する
+  who:
+    at_home: true
+  at_application:
+  - 車椅子でないと移動が難しく、一般車両も難しい人など
+  - 付き添い人が必要（ストレッチャーは不可）
+  - 送迎は隣接市町村までで、おおむね片道30分以内
+  - 施設に送迎サービスがある場合の通院等は対象外
+  where: 地域包括支援センター、高齢者福祉係
+  url: https://www.town.obuse.nagano.jp/docs/2625.html
+  confidence: high
+  amount: 町内 1回 100 円（本人が住民税課税なら 500 円加算）。町外は距離に応じた額
+- category: gaishutsu
+  name: 福祉車両貸出サービス
+  name_on_page: 福祉車両貸出サービス
+  summary: 車イスが必要な人の外出に、社会福祉協議会が福祉車両を貸す
+  who: {}
+  at_application:
+  - 寝たきりや認知症の高齢者など、車イスが必要な人
+  - 運転は家族等で、3年以上の運転経験が必要
+  - 利用日の2か月前から7日前までに申請する
+  - 貸出は半日単位で、1泊2日まで
+  where: 小布施町社会福祉協議会
+  url: https://www.town.obuse.nagano.jp/docs/2629.html
+  confidence: high
+  amount: 利用料は無料（燃料代・駐車場代・有料道路料などは利用者負担）
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- mimamori
+- nichijo-yogu

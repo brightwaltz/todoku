@@ -32,6 +32,7 @@ from . import events as events_mod
 from .city import city_groups, city_page
 from .japan_map import japan_map
 from . import local_rules as local_mod
+from . import municipal as municipal_mod
 from . import memo as memo_mod
 from . import options as options_mod
 from . import rules as rules_mod
@@ -157,6 +158,9 @@ def load_places() -> dict[str, tuple[str, str]]:
 PLACES = load_places()
 # その市の事業（rules/local/<団体コード>.yaml。T-075）。その市の人には、型の札の名前・申請先・主な条件・出典をこれに替える（判定は型のまま）
 LOCAL = local_mod.load(rules_mod.rules_dir() / "local", RULES, PLACES)
+# 市区町村の公式サイトから自動で集めた制度（rules/municipal/<団体コード>.yaml、第 3 の層）。問いの選び方と採点には使わない
+MUNI = municipal_mod.load(rules_mod.rules_dir() / "municipal",
+                          {**{code: name for code, (_, name) in PLACES.items()}, **{code[:2]: pref for code, (pref, _) in PLACES.items()}})
 # 都道府県コード → 名前（全国の見取り図のタイルに使う。T-080c）
 PREFS = {code[:2]: pref for code, (pref, _) in PLACES.items()}
 # 市の制度を一つずつ判定している市（段 → 住所の事実）。そこに住んでいる人には、市区町村の型を出さない
@@ -622,10 +626,58 @@ def step_view(facts: dict[str, Any], suggestions: dict[str, Any], subject: str, 
         "edges": [list(e) for e in prereq_edges(RULES, (pid for pid, r in results.items() if r.status in SHOWN))],
         # 選んだ地域で確かめられる支えの数（T-122。住所が無ければ None）
         "region": region_view(municipality),
+        # 市区町村の公式サイトから自動で集めた制度（第 3 の層。人は照らしていない。無ければ None）
+        "municipal": municipal_view(municipality, implied, results, subject),
         "place": place_view(municipality),
         "center_search": center_search(municipality),
         # 結果の画面の下に出す、有料・民間の支え（判定はしない。関係しそうな事実が当てはまる数で並べ替える）
         "options": options_mod.ranked(OPTIONS, implied) if question is None else [],
+    }
+
+
+def municipal_view(municipality: str, implied: dict[str, Any], results: dict[str, Result], subject: str) -> dict | None:
+    """その市区町村の、公式サイトから自動で集めた制度（rules/municipal）の判定。確かな層と分けて返す。
+
+    判定は規則（条件の値を事実に置き換えたもの）。前提の手続き（要介護認定）は確かな層の判定を引く。
+    rules/local で 2 回読んで照らした型は、そちらを出すので、ここでは出さない。
+    """
+    if municipality not in PLACES:
+        return None
+    # 都道府県の分（2 桁）と市区町村の分（6 桁）を、この順に合わせて出す
+    layers = [c for c in (MUNI.get(municipality[:2]), MUNI.get(municipality)) if c is not None]
+    if not layers:
+        return None
+    statuses = {pid: r.status for pid, r in results.items()}
+    for pid, p in RULES.programs.items():
+        statuses.setdefault(pid, "unknown")
+    skip = {cat for cat, tid in municipal_mod.LOCAL_TEMPLATE.items() if local_mod.found_in(LOCAL, municipality, tid)}
+    order = {"eligible": 0, "pending": 1, "after_prereq": 2, "unknown": 3, "ineligible": 4, "done": 5}
+    rows = sorted(((c, r) for c in layers for r in municipal_mod.evaluate_city(RULES, c, implied, statuses,
+                                                                         skip if len(c.code) == 6 else set())),
+                  key=lambda cr: (order[cr[1].status], sum(1 for leaf in cr[1].leaves if leaf.state == U)))
+    city = layers[-1]
+    return {
+        "code": municipality, "name": PLACES[municipality][1], "site": city.site,
+        "mark": municipal_mod.MARK.format(date=max(c.date for c in layers).isoformat()),
+        "programs": [{
+            "by": c.name,  # 申し込む先の自治体（都道府県か市区町村）
+            "id": r.program.id,
+            "category": c.extra[r.program.id]["category"],
+            "category_label": municipal_mod.CATEGORIES[c.extra[r.program.id]["category"]],
+            "name": r.program.name,
+            "name_on_page": c.extra[r.program.id]["name_on_page"],
+            "summary": r.program.summary,
+            "status": r.status, "status_label": STATUS_LABEL[r.status],
+            "reasons": [{"label": leaf.label, "state": leaf.state,
+                         "value": None if leaf.fact is None or not known(leaf.value) or RULES.facts[leaf.fact].type == "bool"
+                         else RULES.facts[leaf.fact].label_of(leaf.value),
+                         "prereq": RULES.programs[leaf.prereq].name if leaf.prereq else None} for leaf in r.leaves],
+            "at_application": r.program.at_application,
+            "where": r.program.apply.get("where", ""),
+            "amount": r.program.amount,
+            "url": c.extra[r.program.id]["url"],
+            "confidence": c.extra[r.program.id]["confidence"],
+        } for c, r in rows],
     }
 
 

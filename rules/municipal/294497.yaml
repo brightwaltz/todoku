@@ -1,0 +1,62 @@
+city: '294497'
+name: 十津川村
+site: www.vill.totsukawa.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等支給事業
+  summary: 在宅で要介護3以上の寝たきり等の人に、紙おむつと尿取りパッドを支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 寝たきりまたは常時失禁の状態にある
+  where: 十津川村福祉事務所
+  url: https://www.vill.totsukawa.lg.jp/life/support/kourei/
+  confidence: high
+- category: iro
+  name: 家族介護慰労の激励金
+  name_on_page: 家族介護慰労事業
+  summary: 要介護3以上の高齢者と同居し半年以上介護している家族に、激励金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+  at_application:
+  - 要介護3以上の高齢者と同居し、半年以上介護している
+  - 介護する家族は配偶者か三親等内の親族
+  - 基準日は4月1日と10月1日
+  - 基準日前の半年に訪問介護・訪問看護・短期入所・通所介護を使うと対象外
+  - 施設や病院に3か月を超えて入所・入院していると対象外
+  where: 十津川村福祉事務所
+  url: https://www.vill.totsukawa.lg.jp/life/support/kourei/
+  confidence: high
+  amount: 激励金 10万円
+not_found:
+- haishoku
+- haikai
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

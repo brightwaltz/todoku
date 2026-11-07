@@ -1,0 +1,185 @@
+city: '012033'
+name: 小樽市
+site: www.city.otaru.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品助成（紙おむつ等の助成券）
+  name_on_page: 介護用品助成
+  summary: 在宅で要介護3〜5の市民税非課税の人に、紙おむつ等の購入助成券を交付する
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護3の人は、認定調査で排尿・排便に介助が必要とされた人に限る
+  - 市に住民登録があり、市内に住んでいる
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ
+  url: https://www.city.otaru.lg.jp/docs/2020110200488/
+  confidence: high
+  amount: 助成券の上限は、要介護3が月 4,000 円、要介護4が月 5,000 円（要介護5の額は頁の表で読み取れず）
+- category: haishoku
+  name: 独居高齢者等の給食サービス（配食）
+  name_on_page: 独居高齢者等給食サービス
+  summary: 65歳以上のひとり暮らし等に、週1回、安否確認を兼ねて弁当を届け費用を助成する
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 週1回（昼食か夕食）の普通食のみで、治療食・刻み食は不可
+  - 異常時の連絡先として緊急連絡先を事前に登録する
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ
+  url: https://www.city.otaru.lg.jp/docs/2020110200525/
+  confidence: high
+  amount: 利用者の自己負担は 1 食 300 円（市が弁当費用の一部を助成。助成額は頁に無し）
+- category: haikai
+  name: はいかい高齢者の位置情報検索システム導入経費の助成
+  name_on_page: はいかい高齢者位置情報検索システム導入経費助成
+  summary: はいかいが心配な高齢者を介護する家族に、位置情報検索システムの導入経費を助成する
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 高齢者と家族の両方が、市に住民登録があり市内に住んでいる
+  - 購入前に市へ相談し、交付決定後に機器を購入する
+  where: 福祉保険部 福祉総合相談室
+  url: https://www.city.otaru.lg.jp/docs/2020110200464/
+  confidence: high
+  amount: 導入経費（登録手数料など）の一部を上限 10,000 円まで（月額料金は自己負担）
+- category: iro
+  name: 家族介護慰労金の支給
+  name_on_page: 家族介護慰労金支給
+  summary: 要介護4・5の人を同居で介護し、介護保険サービスを使わない家族に年10万円を支給する
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+  at_application:
+  - 過去1年間、要介護4か5で、介護保険サービスを使っていない
+  - 年7日以内のショートステイは利用してもよい
+  - 介護者が過去1年間、本人と同居して介護している
+  - 介護者と本人の両方が過去1年間、市に住民登録している
+  - 介護者世帯と本人の世帯の両方が市民税非課税である
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ
+  url: https://www.city.otaru.lg.jp/docs/2023061200033/
+  confidence: high
+  amount: 年額 10 万円（一括で、介護者名義の口座へ振込）
+- category: kinkyu-tsuho
+  name: 在宅虚弱高齢者の緊急通報システム設置助成
+  name_on_page: 在宅虚弱高齢者緊急通報システム助成
+  summary: 慢性疾患のある65歳以上のひとり暮らし等に、緊急通報機器の設置経費を助成する
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 心臓疾患・高血圧などの慢性疾患で、日常生活に常に注意が必要
+  - 市に住民登録があり、市内に住んでいる
+  - 申請前に依頼する事業者を決め、基本情報シートはケアマネが記入
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ
+  url: https://www.city.otaru.lg.jp/docs/2020110200501/
+  confidence: high
+  amount: 設置経費など上限 10,000 円の助成券（月額利用料は自己負担、有効期限は決定から 90 日）
+- category: ribiyo
+  name: 在宅寝たきり高齢者等の訪問理美容サービス
+  name_on_page: 在宅寝たきり高齢者等理美容サービス
+  summary: 寝たきりの人の自宅へ理容師・美容師が出張する費用の一部を市が助成する
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 市内の居宅に住む、65歳以上の寝たきりの人
+  - または、市内の居宅に住む、身体障害があって寝たきりの人
+  - 利用申請書と、ケアマネ記入の基本情報シートが必要
+  - ケアマネがいない場合は市役所に直接相談する
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ
+  url: https://www.city.otaru.lg.jp/docs/2020110200532/
+  confidence: high
+  amount: 正規料金 4,500 円のうち 3,000 円を市が助成（自己負担は 1 回 1,500 円。券は年度 6 枚）
+- category: gaishutsu
+  name: ふれあいパス（バス回数券・鉄道乗車券の助成）
+  name_on_page: ふれあいパス
+  summary: 70歳以上の市民に、バス回数券の購入チケットか鉄道乗車券のどれか1つを交付する
+  who:
+    age_min: 70
+  at_application:
+  - 70歳の誕生日を迎えた日以降に交付を受けられる
+  - 本人確認ができる書類（マイナンバーカードなど）が必要
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ（市役所で手続き）
+  url: https://www.city.otaru.lg.jp/docs/2020110200563/
+  confidence: high
+  amount: バスは購入チケット12枚（1冊 1,200 円で額面 2,400 円の回数券を年12冊まで）。鉄道は乗車券20枚か30枚
+- category: koken
+  name: 成年後見制度利用支援事業（申立費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立費用と後見人等への報酬を負担しにくい人に助成する
+  who: {}
+  at_application:
+  - 収入や資産などから、申立費用や報酬を負担することが困難
+  - 後見・保佐・補助の申立費用（鑑定費用）と後見人等の報酬が対象
+  - 所得・資産の具体的な基準は頁に無い（窓口で確かめる）
+  where: 福祉保険部 福祉総合相談室 福祉総務グループ（問い合わせ先。申請書の提出先は頁に明記なし）
+  url: https://www.city.otaru.lg.jp/docs/2025070400022/
+  confidence: low
+- category: sonota
+  name: 在宅復帰支援型ヘルパー派遣
+  name_on_page: 在宅復帰支援型ヘルパー派遣
+  summary: 要介護認定のない65歳以上のひとり暮らし等に、一時的な生活援助のヘルパーを派遣する
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 介護保険の要介護認定を受けていない
+  - 疾病などで一時的に生活援助（掃除・洗濯・買い物など）が必要
+  - 高齢者のみの世帯に準ずる世帯も対象
+  - 退院直後の在宅生活を支える事業（頁の説明）
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ
+  url: https://www.city.otaru.lg.jp/docs/2020110200549/
+  confidence: high
+  amount: 週2回以内・最長6週間。利用料は 1 回 183 円（20〜45分未満）か 225 円（45分〜1時間未満）、生活保護は無料
+- category: sonota
+  name: 緊急対応型ショートステイ
+  name_on_page: 緊急対応型ショートステイ
+  summary: 要介護認定のない65歳以上が、養護老人ホーム等の空きベッドに短期宿泊できる
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険の要介護認定を受けていない（認定申請中を含む）
+  - 生活習慣が身についておらず社会生活への適応が難しい人
+  - または、疾病・出産・冠婚葬祭などで一時的に家族の養護を受けられない人
+  - 利用は年度14日・月7日が上限。基本情報シートはケアマネ等が記入
+  where: 福祉保険部 福祉総合相談室 地域包括ケアグループ
+  url: https://www.city.otaru.lg.jp/docs/2020110200495/
+  confidence: high
+  amount: 利用料の目安は 1 日 450 円から、送迎は片道 180 円から（食費などは実費）
+not_found:
+- hochoki
+- shingu
+- mimamori
+- nichijo-yogu
+- jutaku
