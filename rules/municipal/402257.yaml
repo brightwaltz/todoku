@@ -1,0 +1,86 @@
+city: '402257'
+name: うきは市
+site: www.city.ukiha.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅介護の紙おむつ支給
+  name_on_page: （在宅介護）紙おむつの支給事業について
+  summary: 在宅で介護を受ける非課税の要介護者に、紙おむつ代として月額の助成をする
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護1〜5の認定者で家族の介護を受ける人、またはこれに準ずる障がい者
+  - 要支援1・2の人は対象外
+  - 施設（グループホーム等）入所、ショートステイ月20日以上は対象外
+  - 支給開始は申請した月の翌月から
+  where: 保健課 介護・高齢者支援係、うきは市民センター 浮羽市民課
+  url: https://www.city.ukiha.fukuoka.jp/kiji0033778/index.html
+  confidence: high
+  amount: 月 1,000 円・3,000 円・5,000 円（要介護度と排尿・排便の状況で決まる）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: うきは市配食サービス事業について
+  summary: 買い物や調理が難しく見守りが必要な高齢者に、昼食・夕食の弁当を届ける
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 自力で買い物・調理が困難、家族の支援が困難、見守りが必要（すべて）
+  - 実質的な同居や敷地内・隣地に家族がいる場合は対象外
+  - 本人との面談のうえ決定
+  where: 保健課 介護・高齢者支援係（西別館）
+  url: https://www.city.ukiha.fukuoka.jp/kiji0033793/index.html
+  confidence: high
+- category: mimamori
+  name: 家族介護等認知症見守り事業（ファミリー見守り隊）
+  name_on_page: 家族介護等認知症見守り事業（ファミリー見守り隊）
+  summary: 在宅の要介護者を、短時間の家事や見守りで定期的に支える（シルバー人材センター委託）
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - サービス利用者本人が市町村民税非課税
+  - 担当ケアマネジャーとシルバー人材センターが事前訪問
+  - 利用を考える人は事前に介護・高齢者支援係へ相談
+  where: 保健課 介護・高齢者支援係（申請書を提出）
+  url: https://www.city.ukiha.fukuoka.jp/kiji0038002/index.html
+  confidence: high
+  amount: 1回（30分）100 円。最大60分まで
+- category: haikai
+  name: 高齢者等SOSネットワークの事前登録
+  name_on_page: 高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれがある認知症高齢者等を家族の申請で事前登録し、早期発見につなげる
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明の不安や心配がある高齢者等
+  - 家族等の申請に基づき氏名等を登録（市と警察署が管理）
+  where: 保健課 介護・高齢者支援係
+  url: https://www.city.ukiha.fukuoka.jp/kiji0033770/index.html
+  confidence: high
+not_found:
+- iro
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

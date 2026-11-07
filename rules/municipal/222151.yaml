@@ -1,0 +1,188 @@
+city: '222151'
+name: 御殿場市
+site: www.city.gotemba.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給（紙おむつ）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護3以上で在宅で介護を受けている65歳以上に、紙おむつを年1回現物で支給する
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅で介護を受けている人
+  where: 福祉事務所 長寿福祉課、地域包括支援センター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/536.html
+  confidence: high
+  amount: 紙おむつを12,000円以内で現物支給（年1回。数種類から選べる）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サ-ビス
+  summary: 店に出向くのが難しい要介護の人の自宅へ、理容師・美容師が訪問して散髪などをする
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理髪店や美容院に出向くことが困難な人
+  - 在宅で介護を受けている人
+  where: 福祉事務所 長寿福祉課、各地域包括支援センター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/536.html
+  confidence: high
+  amount: 派遣料は無料（年4回まで）。理容・美容の費用は実費
+- category: gaishutsu
+  name: 福祉車両の貸し出し
+  name_on_page: 福祉車両の貸し出し
+  summary: 車いすの人や歩行が困難な人の外出に、福祉車両を貸し出す（運転ボランティアの紹介もある）
+  who: {}
+  at_application:
+  - 日頃車いすを使う人や歩行が困難な人
+  where: 社会福祉協議会（TEL 0550-70-6801）
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/536.html
+  confidence: high
+  amount: ガソリン代は実費負担（市外の場合）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: ひとり暮らしの高齢者などに、昼食か夕食を宅配し安否も確認する
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市が委託した民間業者が宅配し、安否確認まで行う
+  - 福祉事務所が状況を調査して決定する
+  where: 福祉事務所 長寿福祉課、各地域包括支援センター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/533.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 在宅生活安心システム
+  name_on_page: 在宅生活安心システム推進事業
+  summary: 身体機能が低下した高齢者の自宅に、緊急用の発信器と火災・ガス漏れ感知器を付ける
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 身体機能等の低下が著しく、システムの設置が必要な人
+  - 福祉事務所が状況を調査して、利用できるか決める
+  where: 福祉事務所 長寿福祉課、各地域包括支援センター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/533.html
+  confidence: high
+  amount: 利用料は月500円〜1,000円。通話確認料は1日10円
+- category: shingu
+  name: 高齢者寝具洗濯乾燥等サービス
+  name_on_page: 高齢者寝具洗濯乾燥等サービス事業
+  summary: 寝具の衛生管理が難しい在宅の人に、洗濯・乾燥・消毒の集配費用を助成する
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 老衰・心身の障害・傷病などで寝具の衛生管理が困難な人
+  where: 長寿福祉課、各地域包括支援センター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/533.html
+  confidence: high
+  amount: 集配費用を助成。限度額1,000円（洗濯・乾燥・消毒の費用は利用者負担）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者の補聴器購入費を助成します
+  summary: 65歳以上で、障害者手帳の対象でない難聴の人に、補聴器の購入費の一部を助成する
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の手帳を持っていない
+  - 両耳の聴力が70デシベル未満で、医師が補聴器を必要と認めた
+  - 他の法令などの助成対象でない
+  - 市税等の滞納がない
+  where: 長寿福祉課（市役所）。申請書は各支所・駅前サービスセンターでも配布
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/12071.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限30,000円（1回限り）
+- category: gaishutsu
+  name: 高齢者等タクシー及びバス利用料金助成
+  name_on_page: 高齢者等タクシー及びバス利用料金助成事業
+  summary: 移動手段に支障がある70歳以上に、タクシー・バスで使える助成券を年度ごとに交付する
+  who:
+    at_home: true
+  at_application:
+  - 70歳以上（やむを得ない事情なら対象になることがある）
+  - 市税などの滞納がない
+  - 同じ世帯に、自動車を持ち運転免許のある人がいない（同上）
+  - 生活保護の被保護世帯に属していない
+  - 申請は毎年度必要
+  where: 長寿福祉課、市役所各支所、駅前サービスセンター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/1647.html
+  confidence: high
+  amount: 100円券200枚（20,000円分）を年度中1回交付。年度途中の申請は月割り
+  more_urls:
+  - https://www.city.gotemba.lg.jp/kenkou/kanri/assets/uploads/2018/04/R8-jigyougaiyou.pdf
+- category: haikai
+  name: みくりや安心だねっと
+  name_on_page: みくりや安心だねっと
+  summary: 行方不明になるおそれのある認知症などの高齢者を、介護する人が事前登録して見守りを受ける
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護している人が、担当ケアマネか地域包括支援センターに相談して事前登録する
+  where: 担当のケアマネージャー、地域包括支援センター（問い合わせは長寿福祉課）
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/518.html
+  confidence: high
+- category: sonota
+  name: 軽度生活援助事業
+  name_on_page: 軽度生活援助事業
+  summary: 65歳以上のひとり暮らし等に、買い物や付き添いなどの生活援助を1割負担で行う
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 日常生活を営むのに支障がある人
+  - 介護保険の認定を受けた人は対象外
+  - 1回2時間以内、週2回まで（シルバー人材センターへ委託）
+  where: 福祉事務所 長寿福祉課、各地域包括支援センター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/533.html
+  confidence: high
+  amount: 利用料は1時間110円（費用の1割）
+- category: sonota
+  name: 生活管理指導
+  name_on_page: 生活管理指導
+  summary: 社会生活が難しい高齢者に、指導員の訪問や短期宿泊で生活習慣の指導をする
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、社会適応が困難な人
+  - 福祉事務所が状況を調査して決定する
+  where: 福祉事務所 長寿福祉課、各地域包括支援センター
+  url: https://www.city.gotemba.lg.jp/kenkou/c-3/c-3-2/533.html
+  confidence: high
+  amount: 指導員派遣は1時間300円。短期宿泊は1日650円と食費相当分
+not_found:
+- iro
+- koken
+- jutaku
+- nichijo-yogu
+- mimamori

@@ -1,0 +1,132 @@
+city: '412023'
+name: 唐津市
+site: www.city.karatsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり高齢者への紙おむつ支給
+  name_on_page: ねたきり高齢者紙おむつ支給事業
+  summary: 在宅の高齢者を介護する家族に、紙おむつを支給する。市民税非課税が条件。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5に相当する人、または常時失禁状態の人を介護している
+  - 使用者・同居世帯・扶養している人の市民税が、すべて非課税
+  - 在宅介護支援センターの職員が自宅を訪ねて条件を確かめる
+  where: お住まいの地域担当の在宅介護支援センター
+  url: https://www.city.karatsu.lg.jp/page/4051.html
+  confidence: high
+- category: haishoku
+  name: 要介護高齢者配食サービス
+  name_on_page: 要介護高齢者配食サービス
+  summary: 食事の用意が難しい高齢者に、昼食・夕食を届けて安否を確認する。
+  who: {}
+  at_application:
+  - 65歳以上（申請年度内に65歳になる人を含む）で、食事の用意が難しい
+  - 65歳未満の同居者・近隣の扶養義務者がいない
+  - いても全員が要支援・要介護か障害者手帳等の所持者なら利用できる
+  - 週の食数は状態により週3〜14食以内
+  where: お住まいの地域担当の在宅介護支援センター
+  url: https://www.city.karatsu.lg.jp/site/navi/2413.html
+  confidence: high
+  amount: 1食550円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしの虚弱な人に、緊急時に受信センターへつながる装置を貸す。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上のひとり暮らしで、虚弱な人
+  - 自宅に一般の固定電話か携帯電話がつながる
+  - 近くに住む知人・親戚などの協力員を2人以上登録できる
+  where: お住まいの地域担当の在宅介護支援センター
+  url: https://www.city.karatsu.lg.jp/page/4052.html
+  confidence: high
+  amount: 機器・設置費用と毎月の基本料金は市が負担（通報時の通話料は自己負担）
+- category: ribiyo
+  name: 高齢者訪問理美容サービス
+  name_on_page: 高齢者訪問理美容サービス
+  summary: 理容店・美容室へ行けない高齢者の自宅へ理美容師が出向く費用を、市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 高齢・心身の障がい・病気などで、理容店や美容室へ出向くことが難しい
+  - 利用券4枚を交付。利用前に店へ予約する
+  - 在宅介護支援センターの職員が自宅を訪ねて条件を確かめる
+  where: お住まいの地域担当の在宅介護支援センター
+  url: https://www.city.karatsu.lg.jp/page/5023.html
+  confidence: high
+  amount: 出張費は市が負担。散髪などの料金は本人負担
+- category: gaishutsu
+  name: 寝たきり高齢者の通院移送
+  name_on_page: 寝たきり高齢者移送サービス
+  summary: 要介護4・5の在宅の人を、ストレッチャーや車いす対応の車で通院に送迎する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 唐津市内に住民登録がある
+  where: 在宅介護支援センター、高齢者支援課（電話0955-72-9230）
+  url: https://www.city.karatsu.lg.jp/page/5024.html
+  confidence: high
+  amount: 利用者の負担は経費の1割
+- category: sonota
+  name: 高齢者の軽度生活援助（庭の手入れなど）
+  name_on_page: 高齢者軽度生活援助事業
+  summary: 庭の枝落とし・除草・窓拭きなど、日常の簡単な作業を手伝ってもらえる。
+  who:
+    age_min: 60
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 在宅生活に支障のある人など
+  - 在宅介護支援センターの職員が自宅を訪ねて対象か確かめる
+  where: お住まいの地域担当の在宅介護支援センター
+  url: https://www.city.karatsu.lg.jp/page/3952.html
+  confidence: high
+  amount: 1時間110円（支援は1か月16時間まで）
+- category: gaishutsu
+  name: 運転免許証の自主返納の支援（タクシー券かニモカ）
+  name_on_page: 運転免許証を自主返納した人への支援
+  summary: 65歳以上で免許を自主返納した人に、タクシー利用券か交通系ICカードを最大3年間渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 有効期限前に運転免許証を自主返納した（返納から1年以内に初回申請）
+  - 唐津市の住民基本台帳に登録されている
+  - 寝たきり高齢者移送サービスとはタクシー券を併用できない
+  where: 高齢者支援課、各市民センターの地域支援グループ
+  url: https://www.city.karatsu.lg.jp/page/1255.html
+  confidence: high
+  amount: タクシー券は3割引で月4枚・年48枚（1回1,500円まで）、またはニモカ（9,500円チャージ済）
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu
+- chusha
+- yutai

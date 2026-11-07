@@ -1,0 +1,101 @@
+city: '402231'
+name: 古賀市
+site: www.city.koga.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ給付サービス
+  summary: 在宅で紙おむつが必要な要介護4以上の非課税の人に、紙おむつを現物で給付する
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 古賀市の住民基本台帳に記録され、3か月以上市内に居住
+  - 介護保険料に滞納がない
+  - 生活保護法に基づく同様の給付を受けていない
+  where: 健康介護課 介護保険係
+  url: https://www.city.koga.fukuoka.jp/cityhall/work/yobou/kaigo_service/001.php
+  confidence: high
+  amount: 月額 3,000 円または 5,000 円を上限に、紙おむつを現物で給付
+- category: kinkyu-tsuho
+  name: 安否確認緊急対応コール（緊急通報機器）
+  name_on_page: 安否確認緊急対応コール事業
+  summary: ひとり暮らしの人が、機器で緊急通報センターに連絡して相談や救助を受けられる
+  who:
+    household:
+    - alone
+  at_application:
+  - 70歳以上、または身体障害者手帳1・2級（どちらもひとり暮らし）
+  - 固定電話はNTT回線が必要（無い人には携帯型端末を貸与）
+  - 緊急時の協力員が2名必要
+  where: 福祉課 福祉相談係（基幹型地域包括支援センター、ページの問い合わせ先）
+  url: https://www.city.koga.fukuoka.jp/cityhall/work/fukushi/fukushi_service/002.php
+  confidence: high
+  amount: 利用料は月額 660 円
+- category: haikai
+  name: 認知症高齢者等行方不明SOSネットワーク（捜してメール）
+  name_on_page: 認知症高齢者等行方不明SOSネットワーク事業
+  summary: 認知症の人の事前登録で、行方不明時に捜索協力のメールが配信される
+  who:
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 古賀市内に在住する認知症の人（施設入所者も含む）
+  - 申請は本人、親族、同居またはそれに準じて介護する人
+  - ひとり歩きで行方不明になるおそれがある場合の事前登録
+  where: 福祉課 福祉相談係（基幹型地域包括支援センター）
+  url: https://www.city.koga.fukuoka.jp/cityhall/work/fukushi/031.php
+  confidence: high
+  amount: 登録は無料
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 古賀市認知症高齢者等見守りシール交付事業
+  summary: 持ち物に貼る二次元バーコードのシールで、発見者から家族にメールが届く
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - SOSネットワーク事業に登録済みの高齢者を介護する家族など
+  - 施設入所中・入院中の高齢者は対象外
+  where: 福祉課 福祉相談係（基幹型地域包括支援センター）
+  url: https://www.city.koga.fukuoka.jp/cityhall/work/fukushi/031.php
+  confidence: high
+- category: sonota
+  name: はりきゅう施術料の助成
+  name_on_page: はりきゅう施術料助成内容・指定施術業者
+  summary: 65歳以上の人に、市の指定業者で使えるはりきゅう施術の補助券を交付する
+  who:
+    age_min: 65
+  at_application:
+  - 補助券は市の指定施術業者でのみ使える（1回1枚）
+  where: 健康介護課（サンコスモ古賀）
+  url: https://www.city.koga.fukuoka.jp/cityhall/work/yobou/kaigo_service/002.php
+  confidence: high
+  amount: 上限 8,000 円（1回 500〜1,000 円の補助券、施術料総額に応じる）
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- yutai

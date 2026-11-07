@@ -1,0 +1,139 @@
+city: '402214'
+name: 太宰府市
+site: www.city.dazaifu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ給付（現物給付）
+  name_on_page: 紙おむつ給付サービス事業
+  summary: 在宅で紙おむつが必要な要介護1〜5の非課税の人に、紙おむつを毎月自宅へ配達する
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 太宰府市内に住所があり、65歳以上、または認知症の人
+  - 住民税非課税（介護保険料の所得段階が第1〜5段階）
+  - 生活保護法の同種の給付を受けている人は対象外の場合あり
+  - 入院中・施設入所中の人は対象外の場合あり
+  - 要介護1〜3は、紙おむつの必要性が確認できないと対象外
+  where: 高齢者支援課 高齢者支援係（申請書の提出先）
+  url: https://www.city.dazaifu.lg.jp/site/navi/3120.html
+  confidence: high
+  amount: 給付の限度額は月 6,000 円（所得段階1〜3）、月 3,000 円（4〜5）。超えた分は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置設置事業
+  summary: ひとり暮らしの高齢者に、ボタン一つで受信センターへつながる緊急通報装置を貸す
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 65歳以上のひとり暮らしの高齢者
+  - センターから定期的に本人へ連絡して状況を確かめる
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.dazaifu.lg.jp/site/navi/3133.html
+  confidence: high
+  amount: 月額は所得段階1〜3が自己負担なし、4〜5が 297 円、6〜7が 445 円、8〜12が 594 円
+- category: haishoku
+  name: 配食サービス（夕食・安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 買い物や調理が難しい高齢者に、夕食の弁当を毎日手渡しで届け、安否確認をする
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 加齢等の理由で買い物・調理が困難
+  - 安否確認が必要
+  - 障がい者のみの世帯も対象となる場合がある
+  - 利用前に担当職員が自宅を訪問して調べる
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.dazaifu.lg.jp/site/navi/3353.html
+  confidence: high
+  amount: 1食 450 円（令和5年4月1日現在）。配達は1月1〜3日を除く毎日
+- category: jutaku
+  name: 住みよか事業（住宅改造費の助成）
+  name_on_page: 住みよか事業
+  summary: 介護保険の住宅改修を使い切った非課税世帯の住宅改造費を30万円まで助成する
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護・要支援の認定を受けた高齢者等（手帳をお持ちの人も対象の場合あり）
+  - 介護保険の住宅改修（限度額20万円）を使い切っている。同時申請も可
+  - 工事をする建物に住む世帯全員の当年度住民税が非課税
+  - 申請日が4〜6月末は前年度分で判定する
+  - 見積書・平面図・着工前写真を付けて申請する
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.dazaifu.lg.jp/site/navi/1633.html
+  confidence: high
+  amount: 上限 30 万円
+- category: haikai
+  name: 認知症高齢者等の事前登録
+  name_on_page: 認知症高齢者等事前登録制度
+  summary: 行方不明の恐れがある高齢者の情報を事前に市へ登録し、早期の捜索につなげる
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等により行方不明となる可能性がある
+  - 申請書と顔・全身の写真を、窓口・郵送・メールで出す
+  where: 地域包括支援センター（市内2か所）。郵送・メールは高齢者支援課
+  url: https://www.city.dazaifu.lg.jp/soshiki/15/21681.html
+  confidence: high
+  amount: 無料
+- category: hochoki
+  name: 難聴者の補聴器購入費の助成
+  name_on_page: 障害者手帳の対象にならない難聴者にも補聴器購入の助成をしています
+  summary: 手帳の対象にならない軽度・中等度難聴の非課税世帯の人に、補聴器購入費の3分の2まで助成する
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある18歳以上（18歳到達年度の3月末までの人は除く）
+  - 両耳の聴力が30デシベル以上70デシベル未満で、聴覚の手帳の対象外
+  - 住民税非課税世帯、または生活保護を受けている
+  - 指定医の処方医師意見書と業者の見積書が必要。助成は原則片耳
+  where: 福祉課 障がい福祉係
+  url: https://www.city.dazaifu.lg.jp/soshiki/13/41537.html
+  confidence: high
+  amount: 見積額と種類ごとの基準額（44,000〜71,200円）の少ない方の3分の2が上限
+- category: sonota
+  name: あんしん情報キットの無料配布
+  name_on_page: あんしん情報キット
+  summary: 持病や薬の情報を入れて冷蔵庫に置く救急医療情報キットを、無料で配る
+  who: {}
+  at_application:
+  - 高齢者などで健康に不安がある人
+  - 本人の写真・保険証や診察券の写し等を入れて使う
+  where: 市役所 福祉課 福祉政策係（配布場所）
+  url: https://www.city.dazaifu.lg.jp/soshiki/13/27760.html
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- shingu
+- ribiyo
+- gaishutsu
+- koken
+- mimamori
+- nichijo-yogu
+- yutai

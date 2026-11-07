@@ -1,0 +1,172 @@
+city: '132021'
+name: 立川市
+site: www.city.tachikawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者おむつ給付助成
+  name_on_page: 高齢者おむつ給付助成事業
+  summary: 要介護認定を受けた、寝たきりや認知症の症状がある在宅の人に、紙おむつを月1回配達する
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住民登録がある
+  - 65歳以上、または40〜64歳の第2号被保険者
+  - 寝たきり（主治医意見書B1以上）か認知症（3a以上）
+  - 入院中や特養・老健に入所中の人は対象外
+  where: 高齢政策課業務係（市役所1階）、各地域包括支援センター、各福祉相談センター
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003507.html
+  confidence: high
+  amount: 費用の1割が自己負担。月の限度額5,000円で、超えた分は全額自己負担
+- category: haishoku
+  name: 高齢者等配食サービス
+  name_on_page: 高齢者等配食サービス事業
+  summary: 買い物や調理が難しい高齢者世帯に、安否確認を兼ねて昼食か夕食の弁当を届ける
+  who: {}
+  at_application:
+  - 買い物・調理が難しい人だけの世帯で、安否確認が必要
+  - 65歳以上、第2号被保険者で要支援・要介護、または身障手帳2級以上
+  - 同居者が日中不在で8時間以上の場合は家族の勤務等状況届が必要
+  - 配達時に在宅していること
+  where: 高齢政策課業務係（市役所1階）、各地域包括支援センター、各福祉相談センター
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003516.html
+  confidence: high
+- category: haikai
+  name: 高齢者等位置情報確認サービス
+  name_on_page: 高齢者等位置情報確認サービス事業
+  summary: ひとり歩きの兆候がある認知症の人を介護する家族に、位置情報の端末を貸し出す
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症の人、または若年性認知症の第2号被保険者
+  - 介護する家族は同居か隣地居住で、ともに市内に住所がある
+  - 高齢者等見守りシール事業とは同時に利用できない
+  where: 高齢政策課業務係（市役所1階）、各地域包括支援センター、各福祉相談センター
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003521.html
+  confidence: high
+  amount: 新規設置料の1割（1,100円、税込）が自己負担。住民税非課税世帯は無料；月額利用料も市が助成
+- category: iro
+  name: 家族介護慰労金支給
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護4・5の人を同居で介護し、介護保険サービスを使わない家族に慰労金を支給する
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5（65歳以上。第2号被保険者を含む）、または市長が同程度と認めた人
+  - 介護者は同居か隣地居住で、無報酬で介護している
+  - 認定日以後1年間、介護保険サービスを使わず介護している
+  - 短期入所は通算7日以内なら使ってもよい
+  - 申請者は介護者
+  where: 高齢政策課業務係（市役所1階）
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003505.html
+  confidence: high
+  amount: 年額100,000円
+- category: hochoki
+  name: 補聴器購入費助成
+  name_on_page: 補聴器購入費助成
+  summary: 聞こえに課題のある18歳以上に、補聴器の購入費の一部として4万円を助成する
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 18歳以上で、立川市に住民票がある
+  - 聴覚障害の補装具の助成対象とならない人
+  - 両側40デシベル以上の難聴、または補聴器相談医が必要と認める
+  - 前年の合計所得金額が210万円未満
+  - 購入前に申請が必要。助成決定前の購入は対象外
+  where: 高齢政策課（市役所1階、郵送可）
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1021649.html
+  confidence: high
+  amount: 補聴器購入費の一部として4万円（購入額が4万円未満ならその額）
+- category: shingu
+  name: 高齢者等寝具乾燥消毒
+  name_on_page: 高齢者等寝具乾燥消毒事業
+  summary: 寝たきりや虚弱で寝具を干せない人の自宅へ、月1回業者が来て寝具を乾燥消毒する
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で要介護1以上かつ寝たきり等、または身障2級以上で寝たきり等
+  - ひとり暮らし、または認定や手帳のある人だけで構成される世帯
+  - 世帯全員が市民税非課税、または生活保護等を受けている世帯
+  - 市内に住所がある
+  where: 高齢政策課業務係（市役所1階）、各地域包括支援センター、各福祉相談センター
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003515.html
+  confidence: high
+  amount: 無料。月1回、敷布団1枚・掛け布団1枚・毛布1枚を乾燥消毒
+- category: ribiyo
+  name: 在宅高齢者訪問理美容サービス
+  name_on_page: 在宅高齢者訪問理美容サービス事業
+  summary: 寝たきりや認知症で店に行けない人の自宅へ、理美容師が出張する費用の券を配る
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住民登録がある。施設入所中の人は対象外
+  - 寝たきり（主治医意見書B2以上）か認知症（3a以上）
+  - 施術時に立会人が必要
+  where: 高齢政策課業務係（市役所1階）、各地域包括支援センター、各福祉相談センター
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003517.html
+  confidence: high
+  amount: 出張費の理美容券を年に最大4枚（申請月で1〜4枚）。カット代などは実費
+- category: jutaku
+  name: 高齢者自立支援住宅改修給付
+  name_on_page: 高齢者自立支援住宅改修給付事業
+  summary: 介護保険の住宅改修とは別に、浴槽や洗面台などの改修費を所得に応じ7〜9割助成する
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 事前に介護認定を受けている（非該当・要支援・要介護いずれも可）
+  - 住宅改修アドバイザー事業で改修が必要と判断されている
+  - 要介護・要支援の人の手すり等は先に介護保険を使う
+  - 自己所有でない家屋は所有者の承諾書が必要
+  where: 高齢政策課業務係（市役所1階）、各地域包括支援センター、各福祉相談センター
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003512.html
+  confidence: high
+  amount: 給付限度額：浴槽37.9万円、流し・洗面台15.6万円、便器洋式化10.6万円、手すり等20万円（非該当の人）。助成は所得により7〜9割
+- category: kinkyu-tsuho
+  name: 高齢者あんしん見守り支援
+  name_on_page: 高齢者あんしん見守り支援事業
+  summary: 高齢者が緊急時に家族等へ知らせる見守り機器を契約するとき、設置費の一部を助成する
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 70歳以上のひとり暮らし
+  - または70歳以上の高齢者のみ世帯で、要支援・要介護の人かその介護者
+  - または同居者の就労等で日中（1日6時間以上、週3日以上）上記の状態
+  - 機器は利用者が業者と契約する。毎月の利用料は自己負担
+  where: 高齢政策課（市役所）、各地域包括支援センター、各福祉相談センター
+  url: https://www.city.tachikawa.lg.jp/kenko/korei/1003482/1003506.html
+  confidence: high
+  amount: 設置費の一部：救急代理通報型は13,000円、その他は8,000円まで。課税世帯は自己負担1割、非課税・生活保護世帯は自己負担なし
+not_found:
+- mimamori
+- yutai

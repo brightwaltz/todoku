@@ -1,0 +1,174 @@
+city: '402265'
+name: 宮若市
+site: www.city.miyawaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）の給付
+  name_on_page: 介護用品給付事業
+  summary: 在宅の65歳以上の要介護・要支援の人に、紙おむつや尿取りパッドを月1回配達する
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定を受けている人、またはそれに相当する状態の人
+  - 施設入所中・入院中・生活保護受給中の人は利用できない
+  - 利用には要件があり、在宅介護支援センターへ相談する
+  where: 在宅介護支援センター（職員が訪問して代行申請）
+  url: https://www.city.miyawaka.lg.jp/kiji003445777/index.html
+  confidence: low
+- category: haishoku
+  name: 「食」の自立支援（配食サービス）
+  name_on_page: 「食」の自立支援事業（配食サービス）
+  summary: 調理が難しい65歳以上のひとり暮らし等に、安否確認を兼ねた夕食の弁当を届ける
+  who: {}
+  at_application:
+  - 市内在住で、老衰・心身障害・疾病等で調理が困難
+  - 65歳以上の一人暮らし、または高齢者のみの世帯
+  - 身体障がい者（65歳未満で同居家族なし、または一人暮らし）も対象
+  - 夕食のみ、週5日（月〜金）のうち希望の曜日
+  where: 在宅介護支援センター（職員が訪問して代行申請）
+  url: https://www.city.miyawaka.lg.jp/kiji003444601/index.html
+  confidence: high
+  amount: 1食につき、ごはん付き 380 円、おかずのみ 270 円
+- category: kinkyu-tsuho
+  name: 福祉緊急通報システム
+  name_on_page: 福祉緊急通報システム
+  summary: 緊急通報装置とペンダント型発信器を貸与し、急病時に通報センターへつなぐ
+  who:
+    household:
+    - alone
+  at_application:
+  - 一人暮らしの65歳以上、または一人暮らしの重度身体障がい者等
+  - 協力員が1名必要
+  - 民生委員の意見が必要
+  where: 在宅介護支援センター（職員が訪問して代行申請）
+  url: https://www.city.miyawaka.lg.jp/kiji003444596/index.html
+  confidence: high
+  amount: 月額：生活保護世帯 0 円、市民税非課税・均等割のみ課税 500 円、所得割課税 1,000 円
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付・貸与
+  name_on_page: 老人日常生活用具給付等事業
+  summary: 火災報知器・自動消火器・電磁調理器を給付し、老人用電話を貸与する
+  who: {}
+  at_application:
+  - 火災報知器・自動消火器：おおむね65歳以上の低所得の寝たきり、または一人暮らし等
+  - 電磁調理器：おおむね65歳以上で防火の配慮が必要な一人暮らし等
+  - 老人用電話：おおむね65歳以上の住民税非課税世帯、生活保護世帯
+  - 借家の場合は承諾の有無を確認する
+  where: 在宅介護支援センター（職員が訪問して代行申請）
+  url: https://www.city.miyawaka.lg.jp/kiji003444592/index.html
+  confidence: high
+  amount: 利用料は所得の状況により異なる（老人用電話の通話料は全額自己負担）
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 宮若市高齢者補聴器購入費助成事業
+  summary: 手帳の対象でない難聴の高齢者に、補聴器本体の購入費の一部を助成する
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり居住。市税・使用料等の滞納がない（同一世帯も）
+  - 聴覚障害の身体障害者手帳がなく、補装具の支給対象でもない
+  - 医師の意見書で聴力低下と補聴器の必要が認められる
+  - 他の公的な補聴器助成や、過去の本事業の助成を受けていない
+  - 購入前に申請が必要
+  where: 健康福祉課 高齢者福祉係（本庁舎1階9番窓口）
+  url: https://www.city.miyawaka.lg.jp/kiji003448965/index.html
+  confidence: high
+  amount: 補聴器本体1台分の購入費の2分の1、上限 30,000 円（診察料・付属品は対象外）
+- category: haikai
+  name: 高齢者等SOSネットワークの事前登録
+  name_on_page: 宮若市高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれがある認知症高齢者等を事前登録し、登録番号つきステッカーを交付する
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に居住し、自宅に戻れないおそれのある人
+  - 65歳以上の高齢者、若年性認知症者、障がい者（児）のいずれか
+  - 認印と本人の写真が必要
+  where: 健康福祉課 地域包括支援センター（障がい者は障がい者福祉係）
+  url: https://www.city.miyawaka.lg.jp/kiji003445862/index.html
+  confidence: high
+- category: jutaku
+  name: 高齢者住みよか事業（住宅改造費の助成）
+  name_on_page: 高齢者住みよか事業
+  summary: 要介護・要支援の人が使う部分の住宅改造工事に、介護保険の住宅改修とは別に助成する
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり在宅。世帯全員の市民税・所得税が非課税
+  - 税金・介護保険料の滞納がない
+  - 介護保険の住宅改修の支給限度額を超えている
+  - 申請前に着工・完了した工事、新築・増築・全面改装は対象外
+  where: 在宅介護支援センター（職員が訪問して代行申請）
+  url: https://www.city.miyawaka.lg.jp/kiji003445420/index.html
+  confidence: high
+  amount: 上限 30 万円
+- category: gaishutsu
+  name: 高齢者運転免許自主返納の支援
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 免許を自主返納した70歳以上に、タクシー券・バス回数券・nimocaのどれかを1回交付する
+  who:
+    age_min: 70
+  at_application:
+  - 令和5年4月1日以降に全ての運転免許を自主返納した（返納時に70歳以上）
+  - 返納から申請日まで1年以内
+  - 返納時と申請時に宮若市に住民登録がある
+  - 取消通知書（原本）が必要（再発行不可）
+  where: 高齢者福祉係（本庁の9番窓口。総合支所・郵送は不可）
+  url: https://www.city.miyawaka.lg.jp/kiji003448403/index.html
+  confidence: high
+  amount: タクシー利用券、乗合バス回数券、nimocaのいずれか（各 5,000 円分、1回限り）
+- category: sonota
+  name: 高齢者安全運転支援装置の設置補助
+  name_on_page: 高齢者安全運転支援装置設置促進事業
+  summary: 65歳以上が自分の車にペダル踏み間違いの装置を付ける費用の一部を補助する
+  who:
+    age_min: 65
+  at_application:
+  - 非営利で自ら運転する車を所有し、有効な運転免許証がある
+  - 車検証の使用者で、市内を使用の本拠とする自家用車
+  - 市税等の滞納がない
+  - 国のサポカー補助金や市の別の補助を受けていない
+  - 購入・設置の前に事前チェックが必要
+  where: 高齢者福祉係
+  url: https://www.city.miyawaka.lg.jp/kiji003447507/index.html
+  confidence: high
+  amount: 購入・取付費用の2分の1、上限 3 万円（1人1台）
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 緊急連絡先などを書いて冷蔵庫に貼る、救急医療情報キットを配布する
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の一人暮らし、65歳以上の高齢者世帯のどちらか
+  - 障害者手帳を持つ人や、市長が必要と認めた人も対象
+  - 在宅生活をしている人
+  where: 健康福祉課（本庁）、若宮総合支所
+  url: https://www.city.miyawaka.lg.jp/kiji003445194/index.html
+  confidence: high
+not_found:
+- shingu
+- ribiyo
+- yutai

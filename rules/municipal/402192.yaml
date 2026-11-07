@@ -1,0 +1,195 @@
+city: '402192'
+name: 大野城市
+site: www.city.onojo.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: あんしんまどか（人感センサーと見守りケータイの貸与）
+  name_on_page: あんしんまどか（高齢者ICT見守り）事業
+  summary: 人感センサーと緊急通報用の見守りケータイを貸与し、異常時に安否確認をする
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 自宅で生活する高齢者
+  - 同居家族の仕事等で長時間ひとりになる人も対象
+  where: すこやか長寿課（課の頁に掲載。頁に課名の明記はない）。オンライン申請あり
+  url: https://www.city.onojo.fukuoka.jp/kiji0035528/index.html
+  confidence: high
+  amount: 取付・撤去費は無料。月額は保険料段階1〜3が無料、4・5が250円、6以上が500円
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/list00017.html
+- category: haikai
+  name: ここだよまどか（GPS機器の無料貸与）
+  name_on_page: ここだよまどか（高齢者等捜索位置検索）事業
+  summary: 行方不明の恐れのある高齢者等の家族に、GPS機器を無料で貸す。専用靴は半額助成
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、認知症等で行方不明の恐れがある高齢者・障がい者を介護する家族など
+  - 専用の介護用シューズは市の指定品で、事前に相談する
+  where: すこやか長寿課（課の頁に掲載。頁に課名の明記はない）。オンライン申請あり
+  url: https://www.city.onojo.fukuoka.jp/kiji0035528/index.html
+  confidence: high
+  amount: GPS機器は無料。専用の介護用シューズは購入費の半額相当を助成
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/list00017.html
+- category: haikai
+  name: みつけてまどか（二次元コード付きシールの配付）
+  name_on_page: みつけてまどか（高齢者捜索身元確認）事業
+  summary: 行方不明の恐れのある高齢者の家族に、二次元コード付きシールを30枚配る
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、認知症で行方不明の恐れがある高齢者を介護する家族など
+  where: すこやか長寿課（課の頁に掲載。頁に課名の明記はない）。オンライン申請あり
+  url: https://www.city.onojo.fukuoka.jp/kiji0035528/index.html
+  confidence: high
+  amount: 費用なし。シール30枚（蓄光性10枚、耐洗性20枚）
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/list00017.html
+- category: sonota
+  name: 高齢者等の不燃ごみ等の戸別収集（安否確認つき）
+  name_on_page: 高齢者等不燃ごみ等戸別収集事業
+  summary: ごみ出しが困難な高齢者の不燃ごみ等を月2回戸別収集し、出ていなければ安否確認する
+  who: {}
+  at_application:
+  - 市内に住所がある高齢者など
+  - 自分で不燃ごみ等を集積所まで出すことが困難
+  where: すこやか長寿課（課の頁に掲載。頁に課名の明記はない）。オンライン申請あり
+  url: https://www.city.onojo.fukuoka.jp/kiji0035528/index.html
+  confidence: high
+  amount: 費用なし
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/list00017.html
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 自分で調理・買い物が困難な人に、昼食か夕食の弁当を手渡しで届ける
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 食生活に関して支援が必要と認められる
+  where: すこやか長寿課（課の頁に掲載。頁に課名の明記はない）。申請書は頁から入手
+  url: https://www.city.onojo.fukuoka.jp/kiji0035528/index.html
+  confidence: high
+  amount: 1食 450 円（利用者負担）
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/list00017.html
+- category: kaigo-yohin
+  name: 紙おむつの給付（現物支給）
+  name_on_page: 介護用品（紙おむつ）給付サービス
+  summary: 在宅で常時紙おむつが必要な65歳以上の非課税の人に、紙おむつを自宅へ届ける
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護保険の認定を受けている
+  - 在宅でなくなったときは担当課へ連絡する
+  where: すこやか長寿課（課の頁に掲載。頁に課名の明記はない）。申請書は頁から入手
+  url: https://www.city.onojo.fukuoka.jp/kiji0035528/index.html
+  confidence: high
+  amount: 月の上限は、市民税世帯非課税が 6,000 円、本人非課税が 3,000 円（超えた分は自己負担）
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/list00017.html
+- category: iro
+  name: 在宅ねたきり高齢者等の介護手当
+  name_on_page: 在宅ねたきり高齢者等介護手当
+  summary: 寝たきりや認知症の65歳以上の人を自宅で半年超介護している人に月14,000円を支給する
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 同一敷地内の自宅で6カ月超、常時介護している
+  - 要介護4〜5、または未認定等で重度の要介護・極めて重度の認知症
+  - 高齢者・介護者とも市民税所得割が非課税の世帯
+  - 申請前6カ月以内の施設入所・長期入院、生活保護受給中は対象外
+  - 要介護3以下から4以上に更新して6カ月未満の人は対象外（例外あり）
+  where: すこやか長寿課（課の頁に掲載。頁に課名の明記はない）。申請書は窓口か郵送で出す
+  url: https://www.city.onojo.fukuoka.jp/kiji0035528/index.html
+  confidence: high
+  amount: 月額 14,000 円
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/list00017.html
+- category: hochoki
+  name: 難聴者の補聴器購入費の助成
+  name_on_page: 難聴者補聴器購入費助成事業
+  summary: 手帳の対象にならない軽度・中等度の難聴で市民税非課税の人に、補聴器購入費を助成する
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある18歳以上
+  - 原則、両耳の聴力が30デシベル以上70デシベル未満で手帳の対象外
+  - 購入前に申請し、指定医の意見書と見積書が必要
+  - 助成の対象は原則1個（片耳）
+  where: 福祉サービス課（市役所）
+  url: https://www.city.onojo.fukuoka.jp/kiji0035745/index.html
+  confidence: high
+  amount: 種類ごとの基準額（44,000〜71,200円）の3分の2が上限
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 報酬を払うのが困難な被後見人等に、後見人等への報酬を月額上限まで助成する
+  who: {}
+  at_application:
+  - 被後見人・被保佐人・被補助人で、生活保護を受給している人
+  - または、報酬を払うと生活保護を受給しなければならない人
+  - 申請は被後見人等か後見人等。家庭裁判所へ報酬付与を申し立てる前に行う
+  where: 市の担当課（頁に提出先の課名なし）。申立ての相談は地域包括支援センター
+  url: https://www.city.onojo.fukuoka.jp/kiji0035589/index.html
+  confidence: high
+  amount: 月額の上限 28,000 円（入院・入所中は 18,000 円になる場合あり）
+- category: jutaku
+  name: 住みよか事業（介護保険の住宅改修の上乗せ助成）
+  name_on_page: 住みよか事業（住宅改造費の助成）
+  summary: 介護保険の住宅改修でも足りない住宅改造の費用の一部を、非課税世帯に助成する
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 65歳以上の在宅の認定者、またはその人と同居しようとする介護者の世帯
+  - 生計中心者が市民税非課税の世帯
+  - 介護保険の住宅改修費用の残額がない人
+  - 対象工事は介護保険の住宅改修と同じ
+  where: 介護支援課 介護サービス担当
+  url: https://www.city.onojo.fukuoka.jp/kiji0035540/index.html
+  confidence: high
+  more_urls:
+  - https://www.city.onojo.fukuoka.jp/kiji0035562/index.html
+not_found:
+- ribiyo
+- gaishutsu
+- shingu
+- nichijo-yogu
+- mimamori
+- yutai

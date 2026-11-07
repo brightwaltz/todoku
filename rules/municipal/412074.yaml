@@ -1,0 +1,123 @@
+city: '412074'
+name: 鹿島市
+site: www.city.saga-kashima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（夕食の配達と安否確認）
+  name_on_page: 食の自立支援事業
+  summary: 食事の準備が困難な人に、月〜土曜に夕食を自宅へ届け、安否も毎日確認する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者のみ世帯等で、身体的に調理が困難な人
+  where: 保険健康課 長寿社会係
+  url: https://www.city.saga-kashima.lg.jp/main/160.html
+  confidence: high
+  amount: 1食500円（月曜〜土曜、祝日も実施）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 緊急ボタンを押すと、依頼した近隣の方や家族へ自動で通報される。
+  who: {}
+  at_application:
+  - 65歳以上の独居世帯、または身体障がい者の方
+  where: 保険健康課 長寿社会係
+  url: https://www.city.saga-kashima.lg.jp/main/160.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 在宅で常時失禁状態にある寝たきりなどの高齢者に、紙おむつ等を支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時失禁状態にある寝たきりなどの高齢者
+  - 所得税非課税の世帯に限る
+  where: 保険健康課 長寿社会係
+  url: https://www.city.saga-kashima.lg.jp/main/160.html
+  confidence: high
+- category: haikai
+  name: 見守りシール（QRコード付き）の交付
+  name_on_page: 鹿島市見守りシール交付事業
+  summary: 認知症等で一人歩き（徘徊）をする高齢者に、QRコード付きの見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で一人歩き（徘徊）をする高齢者
+  - 準備に、メールアドレスと登録シートの記入が必要
+  where: 地域包括支援センター
+  url: https://www.city.saga-kashima.lg.jp/main/27730.html
+  confidence: high
+  more_urls:
+  - https://www.city.saga-kashima.lg.jp/site_files/file/kaigo/dokoshiru.pdf
+- category: gaishutsu
+  name: のりあいタクシーの割引（1回100円引き）
+  name_on_page: 高齢者等を対象にのりあいタクシーの割引制度を実施しています
+  summary: 高津原線・北鹿島線・能古見線・古枝線ののりあいタクシーの運賃が、1回100円安くなる。
+  who: {}
+  at_application:
+  - 当該年度に満75歳以上になる後期高齢者、運転免許自主返納者、障がい者のどれか
+  - 乗車時に後期高齢者被保険証・運転経歴証明書・障がい者手帳等を提示する
+  where: 広報企画課（問い合わせ先）。乗車時に証明を提示
+  url: https://www.city.saga-kashima.lg.jp/main/15225.html
+  confidence: high
+  amount: 1回100円（運賃から差し引く）
+- category: gaishutsu
+  name: 運転免許証の自主返納・失効者へのバス・タクシー券
+  name_on_page: 運転免許証を自主返納された方、失効した方を支援します
+  summary: 免許を返納・失効した75歳以上に、バス・タクシー券を交付し、共通利用券も安く買える。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住んでいる
+  - 令和6年4月1日以降に免許を自主返納または失効した（失効は1年以内）
+  - 8,000円分の券は、これまで交付を受けたことがない人に1回のみ
+  where: 総務課
+  url: https://www.city.saga-kashima.lg.jp/main/16049.html
+  confidence: high
+  amount: バス・タクシー券8,000円分（1回のみ）。4,000円分の共通利用券を3,000円で販売（年2冊まで）
+- category: sonota
+  name: 軽度生活援助事業（ホームヘルプ）
+  name_on_page: 軽度生活援助事業
+  summary: 心身の状況に応じて、必要なホームヘルプサービスを行う。
+  who: {}
+  at_application:
+  - 65歳以上の独居・高齢者のみの世帯等で、ホームヘルプサービスを必要とする人
+  where: 保険健康課 長寿社会係
+  url: https://www.city.saga-kashima.lg.jp/main/160.html
+  confidence: low
+- category: sonota
+  name: グループリビングショートステイ（短期入所）事業
+  name_on_page: グループリビングショートステイ（短期入所）事業
+  summary: 一時的に施設でのサービスが必要な人が、グループリビングの空き部屋に短期入所できる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、身の回りのことが自分でできる人
+  where: 保険健康課 長寿社会係
+  url: https://www.city.saga-kashima.lg.jp/main/160.html
+  confidence: low
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りのない人の後見の申立てを市長が行い、必要な人に経費や後見人報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 身寄りのない認知症高齢者、知的障がい者、精神障がい者（市長申立て）
+  where: 地域包括支援センター
+  url: https://www.city.saga-kashima.lg.jp/main/160.html
+  confidence: low
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
