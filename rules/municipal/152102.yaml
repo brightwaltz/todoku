@@ -1,0 +1,178 @@
+city: '152102'
+name: 十日町市
+site: www.city.tokamachi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 寝たきり・認知症の高齢者を介護する家族への介護手当
+  name_on_page: 寝たきり老人などの介護手当の支給
+  summary: 要介護3以上で寝たきりか認知症の65歳以上の人と同居し、自宅で介護する家族に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される人が寝たきりまたは認知症で常時介護が必要
+  - 介護される人と同居し、申請者が自ら介護している
+  - 月15日以上自宅で介護しない月は支給されない
+  where: 福祉課高齢者支援係（川西・中里・松代・松之山は各支所地域振興課市民係）
+  url: https://www.city.tokamachi.lg.jp/soshiki/shiminfukushibu/fukushika/1/gyomu/1450417908200.html
+  confidence: high
+  amount: 月額 4,000 円（市民税均等割のみの世帯）、月額 6,000 円（市民税非課税世帯）
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費の支給
+  name_on_page: 紙おむつなどの購入費の支給
+  summary: 在宅で紙おむつ等が必要な要介護の人に、購入費の一部を給付券で支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 排泄障がいがあり常時紙おむつ等が必要
+  - 介護保険施設に入所していない
+  - 他の制度で紙おむつ等の支給を受けていない
+  - 市民税の申告が済んでいる
+  where: 福祉課高齢者支援係（川西・中里・松代・松之山は各支所地域振興課市民係）
+  url: https://www.city.tokamachi.lg.jp/soshiki/shiminfukushibu/fukushika/1/gyomu/1450417908200.html
+  confidence: high
+  amount: 月額 2,000 円まで（市民税均等割のみの世帯）、月額 4,000 円まで（市民税非課税世帯）
+- category: gaishutsu
+  name: 高齢者外出支援のタクシー利用券
+  name_on_page: 高齢者の外出の支援サービス
+  summary: 歩行が困難で要介護3以上の高齢者に、タクシー利用券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 一般の交通機関の利用が困難
+  - 特別養護老人ホームの入所者は対象外
+  where: 福祉課高齢者支援係（川西・中里・松代・松之山は各支所地域振興課市民係）
+  url: https://www.city.tokamachi.lg.jp/soshiki/shiminfukushibu/fukushika/1/gyomu/1450417908200.html
+  confidence: high
+  amount: 700 円の利用券を 12 か月分（年度途中の決定は決定月から年度末分まで）
+- category: jutaku
+  name: 高齢者・障がい者向け住宅改造の補助
+  name_on_page: 高齢者・障がい者向け安心住まいる整備
+  summary: バリアフリー等の住宅改造の費用の一部を市が補助する。
+  who: {}
+  at_application:
+  - 世帯全員の収入が 600 万円未満
+  - 概ね65歳以上で要介護・要支援認定を受けている人、または障害者手帳等の対象者
+  - 身体障害者手帳1・2級、または療育手帳Aの人も対象
+  - 要介護認定者は介護保険の住宅改修が優先
+  - 工事着手前に申請し、1世帯1回のみ
+  where: 福祉課高齢者支援係（要介護認定者はケアマネージャー経由）
+  url: https://www.city.tokamachi.lg.jp/soshiki/shiminfukushibu/fukushika/1/gyomu/1450417908200.html
+  confidence: high
+  amount: 基準額は要介護認定者 30 万円・身体障がい者等 50 万円。補助率は生活保護世帯 100%、所得税非課税 75%、課税 50%
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者緊急通報体制などの整備の支援
+  summary: ひとり暮らし等の高齢者に、簡単な操作で通報できる緊急通報装置を貸与する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上のひとり暮らしか高齢者のみ世帯
+  - 要介護・要支援認定、身体障害者手帳1・2級、または市長が認める人
+  - 安否確認に協力する協力員（原則3名）の登録が必要
+  where: 福祉課高齢者支援係（川西・中里・松代・松之山は各支所地域振興課市民係）
+  url: https://www.city.tokamachi.lg.jp/kenko_fukushi/fukushi_kaigo/koreisha/3571.html
+  confidence: high
+  amount: 利用料は市民税非課税世帯が無料、均等割のみ課税が月 400 円、所得割課税が月 800 円
+- category: koken
+  name: 成年後見制度の申立費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、後見の申立費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている人、または申立費用等の負担で要保護になる人
+  - 世帯全員が市民税非課税で、世帯の預貯金が100万円以下などの要件を満たす人
+  - 後見人等が親族の場合は報酬助成の対象外
+  where: 地域ケア推進課 地域包括支援係（医療福祉総合センター内）
+  url: https://www.city.tokamachi.lg.jp/kenko_fukushi/fukushi_kaigo/koreisha/7046.html
+  confidence: high
+  amount: 申立費用は市長が適当と認める額。報酬は家庭裁判所が決めた額の範囲内で月額上限 28,000 円
+- category: haikai
+  name: 徘徊高齢者の事前登録ネットワーク「さがしてネット」
+  name_on_page: 十日町市徘徊高齢者情報提供ネットワーク「さがしてネット」
+  summary: 行方不明になるおそれのある認知症の人を事前に市へ登録し、情報を警察等と共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症の人、または40〜64歳で認知症の診断を受けた人
+  - 登録を申し込めるのは本人・親族・成年後見人
+  where: 地域ケア推進課（福祉課・各支所・地域包括支援センターでも申込書を配布）
+  url: https://www.city.tokamachi.lg.jp/kenko_fukushi/fukushi_kaigo/koreisha/2204.html
+  confidence: high
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 調理や買い物が難しい高齢者に、昼食の弁当を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 概ね65歳以上で安否確認が必要、調理・買い物が困難か栄養改善が必要
+  - ひとり暮らし、高齢者のみ世帯、または手帳所持者のみと同居の高齢者
+  - 地域包括支援センターか担当ケアマネ経由で申込み
+  where: 地区の地域包括支援センター、または担当ケアマネージャー
+  url: https://www.city.tokamachi.lg.jp/kenko_fukushi/fukushi_kaigo/7337.html
+  confidence: high
+  amount: 利用料は 1 食 400 円（昼食のみ）
+- category: sonota
+  name: 生活管理指導のための短期宿泊
+  name_on_page: 生活管理指導のための短期宿泊
+  summary: 老人ホームに3日間ほど泊まり、生活習慣の指導を受けて体調を整える。
+  who:
+    age_min: 65
+  at_application:
+  - ひとりで用の足りる人
+  - 要介護・要支援認定がない人、または総合事業の事業対象者
+  - 感染症がない（診断書が必要）
+  where: 地域ケア推進課 地域包括支援係（医療福祉総合センター）
+  url: https://www.city.tokamachi.lg.jp/kenko_fukushi/fukushi_kaigo/7335.html
+  confidence: high
+  amount: 1 日 1,830 円
+- category: sonota
+  name: 要援護世帯の除排雪援助（雪処理券・補助）
+  name_on_page: 要援護世帯除排雪援助事業
+  summary: 自力で雪処理ができない在宅の70歳以上のみ世帯などに、屋根雪や避難路の除雪費用を援助する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 70歳以上のみの世帯、身体障がい1〜4級の世帯、母子世帯などが対象
+  - 自力で雪処理ができず、援助する親族がいない
+  - 他世帯の扶養親族がおらず、生活保護を受けていない
+  - 民生委員の調査で申請書が配られる
+  where: 福祉課高齢者支援係（民生委員経由で申請）
+  url: https://www.city.tokamachi.lg.jp/soshiki/shiminfukushibu/fukushika/1/gyomu/1567986077003.html
+  confidence: high
+  amount: 雪下ろし等は年 40,000 円（多雪区域）か 35,000 円（その他）。融雪屋根は積雪に応じ最大 20,000 円
+not_found:
+- ribiyo
+- shingu
+- mimamori

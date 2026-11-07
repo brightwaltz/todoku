@@ -1,0 +1,72 @@
+city: '422096'
+name: 対馬市
+site: www.city.tsushima.nagasaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者移動費助成（利用券）
+  name_on_page: 高齢者移動費助成事業
+  summary: 75歳以上の在宅の高齢者に、市が指定した交通機関で使える利用券を交付する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 申請日時点で75歳以上の在宅の人
+  - 障害者移動支援・通院等移送サービスの利用者は対象外
+  - 施設入所者（一部の施設を除く）・生活保護の受給者は対象外
+  where: 市民課、各振興部住民生活課、各行政サービスセンター、各窓口センター
+  url: https://www.city.tsushima.nagasaki.jp/gyousei/soshiki/hoken/tyozyu/koureisyahukushi/866.html
+  confidence: high
+  amount: 利用券（1枚500円の12枚つづり）を1人1冊。年度中に75歳になる人は枚数が少なくなる
+- category: kaigo-yohin
+  name: 高齢者紙おむつ費の助成
+  name_on_page: 高齢者紙おむつ費助成事業
+  summary: 要介護4・5で住民税非課税世帯の在宅の高齢者の、紙おむつ等の購入費を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 常時紙おむつを使用している
+  - 生活保護の被保護者は対象外
+  - 購入月から6か月を過ぎた分は対象外
+  where: 市民課、各振興部住民生活課、各行政サービスセンター、各窓口センター
+  url: https://www.city.tsushima.nagasaki.jp/gyousei/soshiki/hoken/tyozyu/koureisyahukushi/6106.html
+  confidence: high
+  amount: 紙おむつ・尿取りパッドの購入費を月額5,000円まで
+- category: haishoku
+  name: 食の自立支援（配食サービス）費の助成
+  name_on_page: 食の自立支援（配食サービス）費助成事業
+  summary: 一人暮らしの高齢者などが配食サービスを使うときの利用料の一部を助成する。
+  who: {}
+  at_application:
+  - 70歳以上の一人暮らし世帯
+  - 70歳以上の夫婦世帯で、一方が要介護1以上
+  - 65歳以上で食生活の自立が難しく、安否確認が必要な世帯
+  - 上の3つのどれかに当たること
+  where: 市民課、各振興部住民生活課、各行政サービスセンター、各窓口センター
+  url: https://www.city.tsushima.nagasaki.jp/gyousei/soshiki/hoken/tyozyu/koureisyahukushi/6496.html
+  confidence: high
+  amount: 利用料の一部を助成（1人1日1食、週4食まで、事業所へ直接支給）
+not_found:
+- kinkyu-tsuho
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

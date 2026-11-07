@@ -1,0 +1,186 @@
+city: '252077'
+name: 守山市
+site: www.city.moriyama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ費用助成券の交付
+  name_on_page: 紙おむつ費用助成事業
+  summary: 在宅で要介護の人を介護する家族に、紙おむつ購入用の助成券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 在宅で生活している（入院・入所中は不可）
+  - グループホーム・有料老人ホームの入居者は対象
+  where: 長寿政策課（窓口でその場で交付。民生委員・ケアマネジャーによる代行申請も可）
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  amount: 月 4,000 円分（2,000 円券を 2 枚）
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 昼食・夕食を自宅に届け、配達のときに安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 食生活の改善と安否確認が必要な人
+  - デイサービスで安否確認できる日は対象外
+  - ケアマネ等に相談し、ケアマネ等が長寿政策課へ申請
+  where: 長寿政策課（ケアマネジャーまたは地域包括支援センター経由）
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  amount: 自己負担は実費のみ（1 食 400〜556 円。業者・食種で異なる）。週 1〜5 回
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: ボタン一つで看護師などのいる受信センターにつながる屋内用の装置を設置する。
+  who: {}
+  at_application:
+  - 無料は、65歳以上・市民税非課税・虚弱でひとり暮らし等の人
+  - 上の条件に当たらなくても、実費負担で設置できる
+  - 状況確認のための協力員を2人以上確保する
+  where: 長寿政策課（民生委員・地域包括支援センター・ケアマネジャーにも相談可）
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  amount: 対象者は自己負担なし。対象外の人は固定型で月 500〜1,320 円、携帯型で月 1,000〜2,310 円
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 中等度難聴の高齢者に、補聴器本体の購入費の 2 分の 1 を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 障害者総合支援法の補装具費の対象にならない聴力低下の高齢者
+  - 医師意見書が必要。購入後に請求書を提出する
+  where: 長寿政策課
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1011439.html
+  confidence: high
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: jutaku
+  name: 高齢者の住宅小規模改造への助成
+  name_on_page: 高齢者住宅小規模改造助成事業
+  summary: 段差解消・手すり・トイレ洋式化など小規模な改造費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 障害高齢者の日常生活自立度が準寝たきり以上
+  - 本人・配偶者・扶養義務者の課税所得が基準以下
+  - 市税等の滞納がない
+  - 工事着工前の申請が必要
+  where: 介護保険課（ケアマネジャーまたは地域包括支援センター経由で申請）
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  amount: 対象工事費（上限 50 万円）の 1/2。助成は最大 25 万円
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: haikai
+  name: 行方不明高齢者等 SOS ネットワークの事前登録
+  name_on_page: 行方不明高齢者等SOSネットワーク事前登録
+  summary: 行方不明の心配がある人の情報を事前に登録し、警察などと共有して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明の心配がある人
+  where: 長寿政策課
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: haikai
+  name: GPS 機器の初期費用の補助
+  name_on_page: GPS機器購入費等補助
+  summary: 位置情報を検索できる GPS 機器の購入・賃借の初期費用を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明の心配がある高齢者等
+  where: 長寿政策課
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: gaishutsu
+  name: 高齢者おでかけパス（市内バス乗り放題）
+  name_on_page: 高齢者おでかけパス
+  summary: 市内の定期バス路線に乗り放題になる定期券（ICOCA）を割安で販売する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  where: 近江トラベル守山支店、速野会館・中洲会館（申込・受取）
+  url: https://www.city.moriyama.lg.jp/machikankyobousai/1002048/1010272.html
+  confidence: high
+  amount: 月 2,200 円、3 か月 6,600 円、6 か月 11,000 円
+- category: koken
+  name: 成年後見制度の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援
+  summary: 経済的に利用が難しい認知症高齢者等に、申立費用と後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 申請書を市長へ提出。弁護士・後見人等の代理申請も可
+  - 対象者の要件は要綱の助成対象者の条文による
+  where: 市（高齢福祉担当。要綱に課名の記載なし）。弁護士・後見人による代理申請も可
+  url: https://www2.city.moriyama.lg.jp/reiki_int/reiki_honbun/i400RG00002034.html
+  confidence: high
+- category: sonota
+  name: 高齢者等の前日ごみ出し支援
+  name_on_page: 高齢者等前日ごみ出し支援
+  summary: ごみ出しが難しい世帯に、前日の午後 4 時から出せるシールを交付する。
+  who: {}
+  at_application:
+  - ごみ集積所まで自分で運ぶのが難しい人
+  - 要介護・要支援・総合事業対象の65歳以上のみの世帯
+  - または障害者手帳をもつ人のみの世帯（両者のみも可）
+  where: 長寿政策課
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+- category: sonota
+  name: お話し相手ボランティアの派遣
+  name_on_page: お話相手ボランティア派遣事業
+  summary: 話し相手を希望する高齢者のもとへボランティアを派遣する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - おおむね週 1 回、1 時間程度。日時はボランティアと調整
+  where: 守山市社会福祉協議会（市ボランティアセンター）
+  url: https://www.city.moriyama.lg.jp/kenkoufukushi/koureihukushi/1002580/1002598.html
+  confidence: high
+  more_urls:
+  - https://www.city.moriyama.lg.jp/_res/projects/default_project/_page_/001/002/598/koureihukusisa-bisu.pdf
+not_found:
+- iro
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori
+- yutai

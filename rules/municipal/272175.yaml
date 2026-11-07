@@ -1,0 +1,166 @@
+city: '272175'
+name: 松原市
+site: www.city.matsubara.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置のレンタル
+  name_on_page: 緊急通報装置レンタル事業
+  summary: ボタン一つで看護師のいる受信センターにつながる緊急通報装置を借りられる。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし（日中独居を含む）
+  - または、おおむね65歳以上だけで病弱な人のいる世帯
+  - または、身体障害者のひとり暮らし・身体障害者だけの世帯
+  - 利用目的は身体状況に関わる場合のみ（防犯は対象外）
+  where: 高齢介護課
+  url: https://www.city.matsubara.lg.jp/docs/page4172.html
+  confidence: low
+  amount: 月額負担は世帯の所得で変わる（非課税は0円〜全額1,430円）。付加サービスは別料金。
+  more_urls:
+  - https://www.city.matsubara.lg.jp/fs/2/7/9/3/2/8/_/R7____________R7.4___.pdf
+- category: gaishutsu
+  name: 福祉タクシー料金の助成券
+  name_on_page: 福祉タクシー料金助成事業
+  summary: 要支援2以上の在宅の人に、協力タクシーで使える助成券を月2枚交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市と契約した協力機関のタクシーのみ利用できる
+  where: 高齢介護課
+  url: https://www.city.matsubara.lg.jp/docs/page4172.html
+  confidence: high
+  amount: 1乗車500円まで。リフト付きは1,400円まで（要介護4・5の人、選択制）。
+- category: iro
+  name: 高齢者在宅福祉金
+  name_on_page: 高齢者在宅福祉金支給事業
+  summary: 要介護4・5で在宅生活が続く65歳以上の人に、福祉金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 認定後、在宅生活が3か月以上たっている
+  - 特別障害者手当などの受給者は対象外
+  where: 高齢介護課
+  url: https://www.city.matsubara.lg.jp/docs/page4172.html
+  confidence: high
+  amount: 月額7,000円
+- category: haishoku
+  name: 給食サービス（昼食の配食と安否確認）
+  name_on_page: 給食サービス事業
+  summary: 調理が難しい高齢者などに、週5回までの昼食を届け、安否確認もする。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし（日中独居を含む）
+  - または、おおむね65歳以上だけで病弱な人のいる世帯
+  - または、重度障害の人のひとり暮らし・重度障害の人だけの世帯
+  - 安否確認が必要で、調理が難しい人
+  where: 松原市社会福祉協議会
+  url: https://www.city.matsubara.lg.jp/docs/page4172.html
+  confidence: low
+  amount: 1食370円の自己負担（食材費と調理費相当）
+  more_urls:
+  - https://www.city.matsubara.lg.jp/fs/2/7/9/3/2/8/_/R7____________R7.4___.pdf
+- category: haikai
+  name: 行方不明高齢者SOSネットワークへの登録
+  name_on_page: 南河内圏域行方不明高齢者SOSネットワーク事業
+  summary: 行方不明の高齢者の特徴を協力機関に知らせ、早期発見につなげる。家族が登録を申請する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になる危険のある高齢者が対象
+  - 申請時に本人の写真（3か月以内）が必要
+  where: 高齢介護課
+  url: https://www.city.matsubara.lg.jp/docs/page11968.html
+  confidence: high
+- category: haikai
+  name: 見守り用QRコード付きシール
+  name_on_page: QRコード付きシール
+  summary: SOSネットワーク登録者に、衣類や靴に貼れるQRシールを1人10枚渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - SOSネットワークに登録済みか、同時に申請する人
+  - QRシールだけの申請はできない
+  where: 高齢介護課
+  url: https://www.city.matsubara.lg.jp/docs/page11968.html
+  confidence: high
+- category: hochoki
+  name: 補聴器の購入費助成
+  name_on_page: 補聴器購入費支援事業
+  summary: 聞こえにくい50歳以上の人に、補聴器1台分（片耳）の購入費の一部を助成する。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 両耳とも40デシベル以上で、医師が補聴器を必要と認める
+  - 助成は1人1回限り。購入前に申請が必要
+  where: 高齢介護課
+  url: https://www.city.matsubara.lg.jp/docs/1307073.html
+  confidence: high
+  amount: 費用の1/2。上限は非課税・生活保護世帯25,000円、課税世帯10,000円。
+- category: sonota
+  name: 高齢者ショートステイ
+  name_on_page: ショートステイ事業
+  summary: 介護保険非該当の高齢者が、老人ホームに原則7日間ほど一時的に泊まれる。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険で非該当と認定された人
+  - ひとり暮らしなどで、基本的な生活習慣が欠けている
+  where: 高齢介護課
+  url: https://www.city.matsubara.lg.jp/docs/page4172.html
+  confidence: high
+- category: sonota
+  name: ふれあい収集（家庭ごみの玄関先収集）
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しく協力者もいない世帯の、門前や玄関先まで家庭ごみを収集しに来る。
+  who: {}
+  at_application:
+  - 高齢者や身体の不自由な人の世帯で、ごみ出しが困難
+  - 身近な人の協力を得られない
+  where: 環境業務課
+  url: https://www.city.matsubara.lg.jp/docs/1654605.html
+  confidence: high
+- category: sonota
+  name: 高齢者の自転車用ヘルメット購入費助成
+  name_on_page: 松原市高齢者自転車用ヘルメット購入費助成金交付
+  summary: 65歳以上の市民に、自転車用ヘルメットの購入費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 購入から申請まで市内に住所があり居住している
+  - 購入から6か月以内、1人1個まで
+  where: 市民協働課
+  url: https://www.city.matsubara.lg.jp/docs/page16916.html
+  confidence: high
+  amount: 購入費の1/2、上限2,000円
+not_found:
+- kaigo-yohin
+- ribiyo
+- shingu
+- jutaku
+- koken

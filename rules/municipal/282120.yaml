@@ -1,0 +1,106 @@
+city: '282120'
+name: 赤穂市
+site: www.city.ako.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 居宅ねたきり老人への紙おむつ給付
+  name_on_page: 居宅ねたきり老人紙おむつの給付
+  summary: 在宅で長期にねたきりの人に、指定業者が紙おむつを配布する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+    - bedridden_6m
+  at_application:
+  - ねたきり老人台帳に6カ月以上登録されている
+  - 常時紙おむつの使用が必要と判断される
+  - ねたきり老人の属する世帯が低所得世帯
+  where: 社会福祉課いきがい福祉総務係
+  url: https://www.city.ako.lg.jp/kenkou/ikigai_fukushi/omutsu.html
+  confidence: high
+  amount: 1日4組まで給付。自己負担なし
+- category: haishoku
+  name: 自立支援の夕食配食
+  name_on_page: 自立支援配食サービス
+  summary: 調理が難しい高齢者に夕食を届け、安否確認も行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 70歳以上のひとり暮らし、または75歳以上の高齢者のみ世帯
+  - 心身の障害や傷病で日常の食事の調理が困難
+  where: 社会福祉課いきがい福祉総務係
+  url: https://www.city.ako.lg.jp/kenkou/ikigai_fukushi/haisyoku.html
+  confidence: high
+  amount: 自己負担は1食450円
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者の緊急通報装置（ペンダント型）
+  name_on_page: ひとり暮らし老人等緊急通報システム（安心見守りコール）
+  summary: ペンダント型の通報機で、急病や事故のとき受信センターに通報できる。
+  who:
+    age_min: 65
+  at_application:
+  - 援護を要するひとり暮らしの高齢者など
+  where: 社会福祉課いきがい福祉総務係
+  url: https://www.city.ako.lg.jp/kenkou/ikigai_fukushi/ansin-call.html
+  confidence: high
+  amount: 所得税課税世帯は設置時に12,600円を負担
+- category: haikai
+  name: あんしん見守りキーホルダーの無料配布
+  name_on_page: あんしん見守りキーホルダー
+  summary: 登録番号入りのキーホルダーとシールを配り、外出先で倒れたときなどに身元を確認できる。
+  who: {}
+  at_application:
+  - 市内に住所があり、施設入所の人ではない
+  - 65歳以上、または認知症の症状がある人
+  - 緊急連絡先2か所が必要
+  where: 地域包括支援センター、医療介護課介護保険係
+  url: https://www.city.ako.lg.jp/kenkou/tiikihoukatsu/ki-horuda-.html
+  confidence: high
+  amount: 無料
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の給付
+  summary: 重度の要介護者を1年以上サービスを使わず在宅で介護した家族に慰労金が出る。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 被介護者・介護者とも市内に住所がある
+  - 介護保険料を滞納していない
+  - 1年以上介護保険サービス未利用（ショートステイは年7日以内可）
+  where: 医療介護課介護保険係
+  url: https://www.city.ako.lg.jp/kenkou/kaigo/kazoku-kaigo.html
+  confidence: high
+  amount: 被介護者1人につき年額10万円（所得制限あり）
+- category: gaishutsu
+  name: 高齢者のバス運賃助成券
+  name_on_page: 高齢者に対するバス運賃を助成します
+  summary: 75歳以上の人にバス運賃の助成券（1枚100円）を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市に住民登録がある
+  - 各種障害者手帳・運転経歴証明書の所持者は除く
+  where: 社会福祉課、各公民館（中央公民館を除く）
+  url: https://www.city.ako.lg.jp/kenkou/ikigai_fukushi/koureishabaujosei.html
+  confidence: high
+  amount: 年間5千円分（100円券50枚つづり）。市内路線バス等で使える
+not_found:
+- koken
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori

@@ -1,0 +1,211 @@
+city: '152226'
+name: 上越市
+site: www.city.joetsu.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付
+  summary: 在宅で介護を受け、常に紙おむつが必要な人に、紙おむつを支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市民税所得割が非課税の世帯に属する人
+  - 要支援や認定なしでも、排尿障害で通院・服薬中なら審査あり
+  - 入院中の人の新規申請は不可
+  where: 高齢者支援課 支援係（郵送でも提出可）
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-229.html
+  confidence: high
+  amount: 月額の上限は要介護1・2が3,500円、要介護3が4,000円、要介護4・5が5,000円
+- category: iro
+  name: 在宅介護手当
+  name_on_page: 在宅介護手当給付事業
+  summary: 要介護3〜5の人を同居して在宅で介護する家族に、手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護3〜5の人を在宅で介護している家族（同居が条件）
+  - ケアマネジャー経由で申請する
+  where: 高齢者支援課 支援係（ケアマネジャー経由）
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-227.html
+  confidence: high
+  amount: 月額3,000円（年2回、6か月分ずつ振込）
+- category: gaishutsu
+  name: 高齢者のタクシー・バス利用券の交付
+  name_on_page: 高齢者外出支援助成事業
+  summary: 条件を満たす高齢者に、タクシー・バスに使える150円券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 75歳以上のひとり暮らし、または65歳以上の高齢者世帯の75歳以上の人
+  - 障害のある人と65歳以上の人の世帯の75歳以上も対象
+  - 要介護認定者（要支援は可）、障害のある人本人は対象外
+  - 市民税所得割課税世帯、車を所有する世帯は対象外
+  - 同一敷地・隣接地に65歳未満の親族がいると対象外
+  where: 民生委員を経由して高齢者支援課へ（郵送可）
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-246.html
+  confidence: high
+  amount: 150円券を年66枚（9,900円分）。申請月で枚数を調整
+- category: haikai
+  name: 徘徊高齢者のGPS貸与
+  name_on_page: GPS貸与事業
+  summary: 徘徊のある認知症高齢者等の介護者にGPS機器を貸し、専用靴も給付できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で認知症の診断あり、または40〜64歳で要介護・要支援認定あり
+  - 介護者・被介護者とも市内在住で市民税所得割非課税の世帯
+  - 課税世帯は費用負担で利用可
+  - 令和8年度の試行事業（貸与は令和9年3月31日まで）
+  where: 地域包括支援センターまたはケアマネジャー経由で高齢者支援課へ
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-247.html
+  confidence: high
+  amount: 非課税世帯は無料
+- category: jutaku
+  name: 高齢者向け住宅リフォームの助成
+  name_on_page: 高齢者向け住宅リフォーム助成制度
+  summary: 要支援・要介護の高齢者の住宅改造費の一部を、介護保険の住宅改修とは別に助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - おおむね65歳以上
+  - 世帯全員の前年の収入合計が600万円未満
+  - 過去に高齢者・障害者向けリフォーム助成を使った世帯は不可
+  - 着工前に申請する
+  where: 高齢者支援課 賦課給付係
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/koureisyajuutaku.html
+  confidence: high
+  amount: 30万円に補助率を掛けた額。生活保護世帯10/10、所得税非課税世帯3/4（最大22.5万円）、その他1/2（最大15万円）
+- category: haishoku
+  name: 昼食弁当の配達と安否確認
+  name_on_page: ふれあいランチサービス
+  summary: ひとり暮らし高齢者等に昼食の弁当を手渡しで届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者のみ世帯等で虚弱な人
+  - 聞き取り（アセスメント）で利用が適当と認められること
+  where: 地域包括支援センターまたはケアマネジャー経由で高齢者支援課へ
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-233.html
+  confidence: high
+  amount: 自己負担は1食あたり、ごはん・おかずセット451円、おかずのみ340円
+- category: ribiyo
+  name: 訪問理・美容の出張費助成
+  name_on_page: 訪問理・美容サービス出張費助成
+  summary: 理美容店に行けない要介護の人が自宅で散髪を受けるときの、出張費を市が負担する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 理髪店・美容院へ行くことが困難な人
+  - 身体障害者手帳・療育手帳の人も、申請書に記入すれば審査あり
+  - 事前に申請が必要
+  where: ケアマネジャー経由で高齢者支援課へ（郵送可）
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-240.html
+  confidence: high
+  amount: 出張費は市が負担（年6回まで）。理美容料金は全額自己負担
+- category: shingu
+  name: 寝具の丸洗い・乾燥
+  name_on_page: 寝具丸洗い乾燥サービス
+  summary: 寝具の丸洗いや乾燥のサービスを、非課税世帯は無料で受けられる。
+  who: {}
+  at_application:
+  - 要支援以上の認定を受けている人
+  - または、おおむね65歳以上のひとり暮らしの人
+  - または、おおむね65歳以上のみの世帯で身体が虚弱な人
+  - いずれも寝具の衛生管理が困難な人
+  where: 地域包括支援センター・民生委員・ケアマネジャー経由で高齢者支援課へ
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-228.html
+  confidence: high
+  amount: 市民税所得割非課税世帯は無料。課税世帯は丸洗い480円または960円、乾燥300円または600円（1回あたり）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置
+  summary: ひとり暮らしの高齢者に緊急通報装置を無料で貸し出す。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者「等」
+  - 急病・災害時に適切な対応が困難と認められる人
+  - 市民税所得割非課税の世帯
+  where: 地域包括支援センター・ケアマネジャー・民生委員経由で高齢者支援課へ
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-231.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用助成事業
+  summary: 費用を負担できない人の、後見開始の申立て費用や後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護・中国残留邦人等の支援給付を受けている人
+  - または、市内在住で世帯全員の市民税均等割が非課税の人
+  - 上の非課税の場合、現金・預貯金が100万円以下で非扶養であること
+  - 申請時65歳以上の人の申請先は高齢者支援課
+  where: 福祉課 福祉第一係（65歳以上は高齢者支援課）
+  url: https://www.city.joetsu.niigata.jp/soshiki/fukusi/seinenkouken-josei.html
+  confidence: high
+  amount: 申立てにかかった費用の合計額、後見人報酬は12か月分相当額
+- category: hochoki
+  name: 軽・中等度難聴者の補聴器購入費助成
+  name_on_page: 軽・中等度難聴者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象にならない軽・中等度難聴の人の、補聴器購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 身体障害者手帳（聴覚障害）の対象外の人
+  - 両耳の聴力30dB以上、または医師が装用を必要と認めた人
+  - 世帯の市民税所得割の最多納税者の納税額が46万円未満
+  - 購入前に申請し、医師の意見書が必要
+  where: 福祉課、福祉交流プラザ、各総合事務所
+  url: https://www.city.joetsu.niigata.jp/soshiki/fukusi/nanntyousha-hotyouki.html
+  confidence: high
+  amount: 18歳以上は1台あたり基準価格52,900円まで。助成率は非課税・生活保護世帯10/10、課税世帯1/2
+- category: yutai
+  name: シニアパスポート
+  name_on_page: シニアパスポート
+  summary: 70歳以上の市民に、市内の公共施設等を半額程度で使えるパスポートを発行する。
+  who:
+    age_min: 70
+  at_application:
+  - 70歳に到達する人には高齢者支援課から郵送される
+  - 協賛事業者の独自サービスも使える
+  where: 高齢者支援課（70歳到達時に郵送）
+  url: https://www.city.joetsu.niigata.jp/soshiki/koureisya/lifeguide-244.html
+  confidence: high
+  amount: 公共施設等を半額程度で利用できる
+not_found:
+- nichijo-yogu

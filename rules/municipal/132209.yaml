@@ -1,0 +1,172 @@
+city: '132209'
+name: 東大和市
+site: www.city.higashiyamato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 救急代理通報システムの貸与
+  name_on_page: 救急代理通報システム
+  summary: 緊急ボタンと生活リズムセンサーを借りられ、通報時は警備員が駆けつける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 年齢はおおむね65歳以上
+  - 所得制限はない
+  where: 担当地域の高齢者見守りぼっくす
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002903/1002908.html
+  confidence: high
+  amount: 利用者負担は月額500円（生活保護）・750円（住民税非課税）・1,250円（課税）、いずれも税別
+  more_urls:
+  - https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002929/1002930.html
+- category: shingu
+  name: 寝具の乾燥・水洗い
+  name_on_page: 寝具の乾燥・水洗い
+  summary: 寝具の管理が難しい在宅の方に、寝具の乾燥か水洗いをしてくれる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上の人だけで構成された世帯
+  - 寝たきり、または認知機能が下がり寝具の管理が難しい
+  - 所得制限はない
+  where: 担当地域の高齢者ほっと支援センター、高齢者支援係
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002903/1002908.html
+  confidence: high
+  amount: 無料。乾燥か水洗いのどちらかを月1回、水洗いは年2回まで
+  more_urls:
+  - https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/011/927/koureishaservice2026.pdf
+- category: kaigo-yohin
+  name: 紙おむつ・尿取りパッドの支給
+  name_on_page: 紙おむつ・尿取りパッドの支給
+  summary: 在宅で常時失禁のある寝たきりの方などに、紙おむつやパッドを支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住民登録があり常時失禁状態
+  - 要介護3〜5で寝たきり相当、認知症で3a以上、末期がん等のいずれか
+  - 生活保護受給対象者は利用できない
+  - 所得制限はない
+  where: 担当地域の高齢者ほっと支援センター、高齢者支援係
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002903/1002908.html
+  confidence: high
+  amount: 月額6,500円以内の紙おむつ・尿取りパッド。費用負担なし
+  more_urls:
+  - https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/011/927/koureishaservice2026.pdf
+- category: ribiyo
+  name: 理・美容券の支給
+  name_on_page: 理・美容券の支給
+  summary: 在宅で寝たきりの方に、協力店での利用や出張で使える理・美容券を渡す。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住民登録がある
+  - 要介護4・5で寝たきり相当、認知症で自立度4以上、末期がん等のいずれか
+  - 施術時に付き添いが要る
+  - 所得制限はない
+  where: 担当地域の高齢者ほっと支援センター、高齢者支援係
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002903/1002908.html
+  confidence: high
+  amount: 年4枚。申請時期により1〜3枚。無料
+  more_urls:
+  - https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/011/927/koureishaservice2026.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 手帳の対象外で聞こえにくい非課税の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 住民税が非課税（4〜6月の申請は前年度分）
+  - 耳鼻咽喉科医が補聴器が必要と認めた（意見書）
+  - 聴覚障害の身体障害者手帳の対象でない
+  - 過去5年間にこの助成を受けていない
+  where: 地域福祉課（市役所2階）
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002903/1012267.html
+  confidence: high
+  amount: 補聴器1台の本体費用に対し上限4万円
+- category: haikai
+  name: 認知症高齢者等みまもりシール（ただいまオレンジ）
+  name_on_page: 認知症高齢者等みまもりシール交付事業（ただいまオレンジ）
+  summary: 二次元コード付きシールを衣服に貼り、発見時に家族へメールで知らせる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で認知症またはその疑いがある
+  - または40〜64歳で若年性認知症の診断を受けた
+  - 市内に住民登録があり自宅で生活（施設入居者を除く）
+  where: 介護保険課 地域包括ケア推進係（市役所2階1番窓口）
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002935/1002937.html
+  confidence: high
+  amount: 無料。追加シールの購入と通信料は自己負担
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい方の、審判請求費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 後見人等の住所が市内（一部の施設入所者は例外）
+  - 非課税で資産50万円以下、または生活保護等を受給
+  - 審判確定日から180日以内に申請
+  where: 地域福祉課福祉総務係
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002935/1012303.html
+  confidence: high
+  amount: 報酬は月額上限2万円（在宅）・1万8千円（施設入所）。鑑定費用は上限10万円
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ
+  summary: 家族の病気などで在宅の世話が難しいとき、施設に7日以内で短期入所できる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護・要支援に該当しない
+  - 養護する家族の病気等、または一人暮らしで一時的に単身生活が困難
+  - 所得制限はない
+  where: 担当地域の高齢者ほっと支援センター、高齢者支援係
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002903/1002908.html
+  confidence: high
+  amount: 1日2,200円。生活保護・市民税非課税世帯は負担軽減あり。最長7日以内
+  more_urls:
+  - https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/011/927/koureishaservice2026.pdf
+- category: sonota
+  name: 高齢者スマートフォン購入補助
+  name_on_page: 高齢者スマートフォン活用支援事業
+  summary: スマホを初めて買う65歳以上に、購入費などを指定店舗で補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 自分用のスマホを初めて購入する
+  - 指定店舗で購入当日に購入から申請まで行う
+  - 東京都公式アプリ等の登録が必要
+  where: 市指定の協力店舗（電子申請）。問合せは地域福祉課高齢者支援係
+  url: https://www.city.higashiyamato.lg.jp/kenkofukushi/koureisha/1002903/1012052.html
+  confidence: high
+  amount: 対象経費に対し上限3万円。1人1回1台まで。予算がなくなり次第終了
+  more_urls:
+  - https://www.city.higashiyamato.lg.jp/_res/projects/default_project/_page_/001/011/927/koureishaservice2026.pdf
+not_found:
+- haishoku
+- iro
+- jutaku
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

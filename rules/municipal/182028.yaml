@@ -1,0 +1,146 @@
+city: '182028'
+name: 敦賀市
+site: www.city.tsuruga.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用の紙おむつ支給券
+  name_on_page: 家族介護継続介護用品支給事業
+  summary: 在宅で介護を受ける要介護の方に、紙おむつを買える支給券を毎月出す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住民票がある介護保険の被保険者
+  - 排泄で「介助」か「見守り等」が必要と認められる
+  - 施設入所・入院中・生活保護の方、保険料滞納の方は対象外
+  where: 長寿健康課（高齢者福祉係）
+  url: https://www.city.tsuruga.lg.jp/page/1422.html
+  confidence: high
+  amount: 非課税世帯は月 3,000 円、課税世帯は月 1,500 円の支給券
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム整備事業（緊急通報装置貸与）
+  summary: ひとり暮らしの方に、急病時に押すと 24 時間対応の受信センターにつながる装置を貸す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内在住で 65 歳以上のひとり暮らし
+  - または身体障害者手帳 1・2 級のひとり暮らし（障がい福祉課）
+  - 緊急時に備えて装置が必要な方
+  where: 長寿健康課 高齢者福祉係（手帳 1・2 級の方は障がい福祉課）
+  url: https://www.city.tsuruga.lg.jp/page/1059.html
+  confidence: high
+  amount: 利用料は無料（通話料は自己負担）
+- category: jutaku
+  name: 住環境整備事業（住宅改造費の助成）
+  name_on_page: 住環境整備事業
+  summary: 洗面所の改造や昇降機の取付など、身体状況に合わせた住宅改修費を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護 3〜5、または車いす利用の要介護 1 以上の方
+  - 市民税所得割 9 万円超は全額自己負担で対象外
+  - 工事の前に長寿健康課へ相談する
+  - 新築・増築時の工事は対象外
+  where: 長寿健康課 高齢者福祉係
+  url: https://www.city.tsuruga.lg.jp/page/1425.html
+  confidence: high
+  amount: 上限 80 万円。自己負担は所得割非課税で 1/5、9 万円以下で 1/3、生活保護は 0
+- category: gaishutsu
+  name: 高齢者外出支援券の交付
+  name_on_page: 高齢者外出支援券
+  summary: 80 歳以上の在宅の方に、バス・タクシー等に使える券を郵送する。
+  who:
+    age_min: 80
+    at_home: true
+  at_application:
+  - 令和8年1月1日以前から市内に住所がある
+  - 施設入所・入居の方、重度障がい者タクシー乗車券の交付を受けている方は対象外
+  - 申請は不要（令和8年度は 4 月に郵送済み）
+  where: 長寿健康課 高齢者福祉係（11番窓口）
+  url: https://www.city.tsuruga.lg.jp/page/2547.html
+  confidence: high
+  amount: 令和8年度は 2,400 円分（利用期限は令和9年3月31日）
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス助成事業
+  summary: 外出が困難な在宅の要介護者らに、理美容師の訪問にかかる出張費の助成券を出す。
+  who:
+    at_home: true
+  at_application:
+  - 要介護 3〜5 の方
+  - または身体障害者手帳 1・2 級（視覚・下肢・体幹・移動機能）の方
+  - または療育手帳 A1・A2 の方
+  - 市に登録した理美容店のみ利用できる
+  where: 長寿健康課 高齢者福祉係（手帳をお持ちの方は障がい福祉課）
+  url: https://www.city.tsuruga.lg.jp/page/2549.html
+  confidence: high
+  amount: 1 回 2,000 円分の助成券。申請月により 4〜1 枚
+- category: sonota
+  name: 介護やすらぎ訪問（家族介護者の負担軽減）
+  name_on_page: 介護やすらぎ訪問
+  summary: 同居で介護する家族に、家事援助などの訪問を 1 時間単位の助成券で使えるようにする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、介護が必要な方と同居している
+  - 同居で 2 人以上を介護している多重介護者
+  - または高齢者 2 人暮らしで介護している老老介護者
+  - 利用には事業者との契約が必要
+  where: 長寿健康課
+  url: https://www.city.tsuruga.lg.jp/page/22387.html
+  confidence: high
+  amount: 1 枚 1 時間分の助成券。多重介護者は 24 枚、老老介護者は 12 枚（令和9年3月末まで）
+- category: koken
+  name: 成年後見の申立費用・報酬の助成
+  name_on_page: 審判申立費用・報酬費用助成制度
+  summary: 成年後見の申立てにかかった費用や、後見人等への報酬の一部を市が助成する。
+  who: {}
+  at_application:
+  - 原則として生活保護を受けている方
+  - または費用を負担すると生活保護の方に準ずる状態になる方
+  - 令和5年4月1日以降の申立て・報酬決定分が対象
+  where: 長寿健康課（11番窓口）包括支援係
+  url: https://www.city.tsuruga.lg.jp/uploaded/attachment/9590.pdf
+  confidence: high
+  amount: 報酬は上限あり（在宅は月 28,000 円、施設入所は月 18,000 円）。申立ては実費の一部
+  more_urls:
+  - https://www.city.tsuruga.lg.jp/page/2508.html
+- category: haikai
+  name: 敦賀みまもりネットワークへの事前登録
+  name_on_page: 敦賀みまもりネットワーク
+  summary: 行方不明のおそれがある方の情報を事前に登録し、行方不明時に協力機関へメールで知らせる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者や障がい者など行方不明になる可能性のある方
+  - 「情報登録届」を提出して登録する
+  - メール配信は 2026 年 10 月 21 日から停止中（復旧日未定）
+  where: 長寿健康課（障がい者は障がい福祉課でも可）
+  url: https://www.city.tsuruga.lg.jp/page/2605.html
+  confidence: high
+  more_urls:
+  - https://www.city.tsuruga.lg.jp/page/27362.html
+not_found:
+- haishoku
+- hochoki
+- shingu
+- iro
+- mimamori
+- nichijo-yogu

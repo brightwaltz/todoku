@@ -1,0 +1,162 @@
+city: '302023'
+name: 海南市
+site: www.city.kainan.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用具（紙おむつ等）給付
+  name_on_page: 家族介護用具（紙おむつ等）給付
+  summary: 在宅で要介護者を介護する家族に、紙おむつなどをカタログから選んで年4回配達する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護者が市民税非課税
+  - 要介護者と介護する家族がともに市内に住所がある
+  - 要介護4・5、または要介護1〜3で常時失禁状態と確認できる
+  - 要介護者1人につき申請できる家族は1人
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/kakubusho/kurashibu/koreinenkinka/koreikaigokatorikumi/koreisyahukushiservice/kazokukaigoyogu.html
+  confidence: high
+  amount: 月6,000円相当まで（世帯非課税の場合）。それ以外は月3,000円相当まで
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が困難な高齢者世帯などに、昼食を週3回まで自宅へ届ける。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、食事の調理が困難
+  - 高齢者のみの世帯、またはひとり暮らしの重度身体障害者（1・2級）
+  - 市内に住所がある
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/kakubusho/kurashibu/koreinenkinka/koreikaigokatorikumi/koreisyahukushiservice/haisyoku.html
+  confidence: high
+  amount: 週3回まで。自己負担は普通食1食400円（メニューにより異なる）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与
+  summary: ペンダントで警備会社に通報でき、動きがない場合も対応する装置を貸す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 身体に疾患があるなど注意を要する状態
+  - 申請者と扶養義務者の世帯全員が前年度所得税非課税
+  - 固定電話がある、または設置できる
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/kakubusho/kurashibu/koreinenkinka/koreikaigokatorikumi/koreisyahukushiservice/kinkyutsuho.html
+  confidence: high
+  amount: 貸与は無料（通信費は月数十円程度）
+  more_urls:
+  - https://www.city.kainan.lg.jp/material/files/group/17/13.pdf
+- category: jutaku
+  name: 高齢者住宅改造補助
+  name_on_page: 住宅改造補助
+  summary: 介護保険の住宅改修の対象工事費に対し、市が20万円まで補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 生活保護世帯または市民税非課税世帯（資産要件あり）
+  - 障害等で住宅の改造が必要と市長が認めた
+  - 重度身体障害者住宅改造助成を受けていない
+  - 申請は毎年度2月末まで（予算超過で終了）
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/kakubusho/kurashibu/koreinenkinka/koreikaigokatorikumi/koreisyahukushiservice/jyutakukaizo.html
+  confidence: high
+  amount: 20万円まで
+  more_urls:
+  - https://www.city.kainan.lg.jp/material/files/group/17/13.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 手帳の対象でない難聴の高齢者に、補聴器購入費を一部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市民税非課税世帯または生活保護世帯
+  - 聴覚障害の身体障害者手帳の対象でない
+  - 両耳40dB以上70dB未満、または片耳40dB以上で医師が必要と認めた
+  - 過去5年以内に本助成を受けていない
+  - 購入前に申請する（集音器は対象外）
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/kakubusho/kurashibu/koreinenkinka/koreikaigokatorikumi/koreisyahukushiservice/koreisyahotyoki.html
+  confidence: high
+  amount: 上限30,000円（片耳・両耳とも）
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付
+  name_on_page: 日常生活用具給付
+  summary: ひとり暮らしの要援護の高齢者に、電磁調理器などの給付や電話の貸与を行う。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上の要援護の方
+  - 生活保護受給、またはこれに準じる低所得
+  - 品目によりその他の条件あり
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/kakubusho/kurashibu/koreinenkinka/koreikaigokatorikumi/koreisyahukushiservice/nitijyoseikatsuyogu.html
+  confidence: high
+  amount: 無料（電話貸与は通話料・基本料が自己負担）
+  more_urls:
+  - https://www.city.kainan.lg.jp/material/files/group/17/13.pdf
+- category: ribiyo
+  name: 高齢者等訪問理髪サービス
+  name_on_page: 高齢者等訪問理髪サービス
+  summary: 寝たきりなどで理髪が難しい方の自宅へ理容師が来て散髪する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - おおむね65歳以上で寝たきり等のため理髪が困難
+  - または手帳所持で特別障害者手当等の受給者かつ外出困難
+  - 利用は年6回まで
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/material/files/group/17/13.pdf
+  confidence: high
+  amount: 自己負担1回1,300円
+- category: koken
+  name: 成年後見制度の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用と後見人等への報酬を、要件に合う方に助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 判断能力が不十分な認知症高齢者、または知的・精神障害者
+  - 助成がないと成年後見の利用が困難と認められる
+  - 申請は本人か後見人等。報酬は所得・資産を見て決定
+  where: 高齢介護課 高齢者班
+  url: https://www.city.kainan.lg.jp/case_guide/koreisha_kaigo/koreishafukushi/8043.html
+  confidence: high
+  amount: 申立て費用の実費。報酬は月額上限が在宅28,000円、施設等18,000円
+  more_urls:
+  - https://www.city.kainan.lg.jp/material/files/group/17/riyoushienn.pdf
+not_found:
+- iro
+- shingu
+- gaishutsu
+- mimamori

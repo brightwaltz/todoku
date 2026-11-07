@@ -1,0 +1,260 @@
+city: '362042'
+name: 阿南市
+site: www.city.anan.tokushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の現物支給
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の要介護高齢者を介護する家族に、紙おむつなどの介護用品を現物で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する家族は要介護者と同じ住所に住んでいる
+  - 要介護者の世帯と介護者の世帯の両方が市民税非課税
+  where: 地域共生推進課（高齢福祉係）
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい方の自宅へ栄養バランスのよい食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね70歳以上の単身世帯・高齢者のみの世帯など
+  - または身体障がい者で、食事の調理が困難な方
+  where: 地域共生推進課（高齢福祉係）
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者の GPS 端末（ココセコム）貸与
+  name_on_page: ひとり暮らし高齢者支援サービス事業（ココセコム）
+  summary: 位置検索と緊急通報ができる GPS 端末を貸与し、初期費用を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 近隣の協力員を確保する
+  where: 地域共生推進課（高齢福祉係）
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  amount: 初期費用のみ全額助成
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: haikai
+  name: 徘徊高齢者の家族向け GPS 端末貸与
+  name_on_page: 徘徊高齢者家族支援サービス事業
+  summary: 徘徊のある認知症の高齢者を介護する家族に GPS 端末を貸与し、初期費用を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のみられる認知症高齢者を在宅で介護している
+  - 介護する家族は同一世帯
+  where: 地域共生推進課（高齢福祉係）
+  url: https://www.city.anan.tokushima.jp/docs/2019010700037/
+  confidence: high
+  amount: 初期費用は市が全額負担。利用者は月額 1,200 円（税別）などを負担
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: haikai
+  name: 高齢者見守りキーホルダーの交付
+  name_on_page: 阿南市見守りキーホルダー交付事業
+  summary: 登録番号入りのキーホルダーを持ち、行方不明のとき身元確認と早期発見につなげる。
+  who: {}
+  at_application:
+  - 認知症の方
+  where: 地域共生推進課、各高齢者お世話センター
+  url: https://www.city.anan.tokushima.jp/docs/2018083100089/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: haikai
+  name: 徘徊高齢者等 SOS ネットワークの事前登録
+  name_on_page: 阿南市徘徊高齢者等SOSネットワーク事業
+  summary: 徘徊のおそれのある方を事前登録し、行方不明時に関係機関へメールで知らせて探す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のおそれのある方の事前登録
+  where: 地域共生推進課、各高齢者お世話センター
+  url: https://www.city.anan.tokushima.jp/docs/2013121800112/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: jutaku
+  name: 高齢者等住宅改造費の助成
+  name_on_page: 高齢者等住宅改造促進事業
+  summary: 手すり設置や和式から洋式トイレへの変更など、高齢者向けの住宅改造費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体の虚弱で日常生活に介助が必要な高齢者がいる
+  - 前年度の所得税が非課税の世帯
+  - 住宅 1 戸につき 1 回限り
+  - 県の補助金がなくなると受付終了
+  where: 地域共生推進課
+  url: https://www.city.anan.tokushima.jp/docs/2018122600099/
+  confidence: high
+  amount: 工事費 30 万円までの 3 分の 2（最高 20 万円）。介護保険の住宅改修費は差し引く
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: nichijo-yogu
+  name: 電磁調理器（IH 調理器）の給付
+  name_on_page: 日常生活用具給付等事業
+  summary: ひとり暮らしで市民税非課税の高齢者に、IH 調理器を現物で給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - self_exempt
+  at_application:
+  - 1 人につき 1 回限り
+  where: 地域共生推進課（高齢福祉係）
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: gaishutsu
+  name: 高齢者バス乗車券の交付
+  name_on_page: 阿南市高齢者・障がい者バス乗車券等交付事業
+  summary: 市内の路線バスに無料で乗れる乗車券を交付する（高齢者は 70 歳以上）。
+  who:
+    age_min: 70
+  at_application:
+  - 申請日時点で引き続き3か月以上市内に住所がある
+  where: 地域共生推進課、各支所・住民センター・連絡所、電子申請
+  url: https://www.city.anan.tokushima.jp/docs/2024022800071/
+  confidence: high
+  amount: 乗車券 1 冊（72 枚綴り）。54 枚以上使うと追加の申請ができる
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: gaishutsu
+  name: 高齢者いきいきタクシー券
+  name_on_page: 高齢者いきいきタクシー券
+  summary: 500 円のタクシー券を半額で購入できる。年間の交付上限額は地区ごとに決まっている。
+  who:
+    age_min: 70
+  at_application:
+  - 申請日時点で引き続き3か月以上市内に住所がある
+  - 世帯員が免許証・自家用車を持たず自家用車で外出できない
+  - 前年度の市町村民税所得割額が5万円以下
+  - または収入が著しく減り市長が認めた方（理由書が必要）
+  where: 地域共生推進課、各支所・住民センター（地区ごとの窓口）
+  url: https://www.city.anan.tokushima.jp/docs/2024010500013/
+  confidence: high
+  amount: 1 枚 500 円を 250 円で購入。年間交付上限は地区により 24,000〜96,000 円
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: gaishutsu
+  name: 伊島地区の高齢者向け船券の交付
+  name_on_page: 高齢者福祉特定回数乗船券交付事業
+  summary: 伊島町に住む高齢者に、市内の連絡船で使える無料の乗船券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 申請日時点で引き続き3か月以上伊島町内に住所がある
+  - 前年度市民税所得割額が5万円以下、または収入が著しく減り市長が認めた方
+  where: 伊島連絡所、地域共生推進課
+  url: https://www.city.anan.tokushima.jp/docs/2023022700046/
+  confidence: low
+  amount: 1 年間に最高 36 枚まで
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: sonota
+  name: 寝たきり高齢者への見舞金
+  name_on_page: 寝たきり高齢者見舞金支給事業
+  summary: 在宅で寝たきりの高齢者に、年 1 回見舞金を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 9月1日時点で1年以上市内に住所がある
+  - 申請時に3か月以上寝たきりで、その状態が続く見込み
+  - 要介護3〜5またはこれに相当すると認められる方
+  where: 地域共生推進課
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ施術費助成
+  name_on_page: はり・きゅう・マッサージ施術費助成事業
+  summary: 市指定の施術所で、はり・きゅう・マッサージの費用の一部を助成券で助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 医療保険が使えない施術に限る
+  where: 地域共生推進課
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  amount: 券1枚につき500円の助成
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホームの空き部屋に短期間泊まり、生活習慣の支援を受ける。虐待や災害時の避難にも使える。
+  who:
+    age_min: 65
+  at_application:
+  - 入院治療を要しない方
+  - 生活習慣が欠け体調不良のひとり暮らし、虐待被害、災害避難者のいずれか
+  where: 地域共生推進課（高齢福祉係）
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット配付事業
+  summary: かかりつけ医や薬などの情報を入れる容器を配り、冷蔵庫に保管して救急時に備える。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 配布は 1 世帯に 1 セット
+  where: 地域共生推進課（高齢福祉係）
+  url: https://www.city.anan.tokushima.jp/docs/2024120200025/
+  confidence: high
+  more_urls:
+  - https://www.city.anan.tokushima.jp/docs/2024120200025/file_contents/8tebiki.pdf
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- yutai

@@ -1,0 +1,117 @@
+city: '432156'
+name: 天草市
+site: www.city.amakusa.kumamoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者の補聴器購入を助成します
+  summary: 耳鼻咽喉科医が必要と認めた在宅の65歳以上の非課税の人に、補聴器購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり現に居住している
+  - 両耳の聴力レベル30dB以上で、耳鼻咽喉科医が補聴器の使用を必要と認める
+  - 聴覚障がいの身体障害者手帳を交付されていない
+  - 購入日の翌日から1年以内に申請。1人1回限り（5年後は再申請可）
+  - 今年度予算の範囲内で受け付ける
+  where: 高齢者支援課、各支所
+  url: https://www.city.amakusa.kumamoto.jp/kiji00312982/index.html
+  confidence: high
+  amount: 購入費用の半額（1台分）。上限30,000円
+- category: kaigo-yohin
+  name: 家族介護用品の支給（引換券）
+  name_on_page: 家族介護用品引換券交付申請書
+  summary: 要介護4・5の人を在宅で介護する非課税世帯に、紙おむつ等の介護用品の引換券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者の住所が市内にある
+  - 要介護者と介護する家族等がともに市民税非課税世帯
+  - 入院・入所が月15日を超える月は支給できない
+  where: 高齢者支援課（電話0969-24-8864）
+  url: https://www.city.amakusa.kumamoto.jp/kiji003953/index.html
+  confidence: high
+  amount: 要介護者1人あたり月額6,250円を限度。紙おむつ・尿とりパット・使い捨て手袋・清拭剤・ドライシャンプー等
+  more_urls:
+  - https://www2.city.amakusa.kumamoto.jp/reiki/reiki_honbun/r351RG00000463.html
+- category: iro
+  name: 在宅寝たきり老人等介護者手当
+  name_on_page: 在宅寝たきり老人等介護者手当
+  summary: 要介護4・5等の人を1年以上在宅で介護している人に、手当を年1回（12月）支給する。
+  who:
+    at_home: true
+  at_application:
+  - 介護される人が次のどれか。要介護4・5、または認知症が中度以上の要介護3
+  - または身体障害者手帳1種1級で寝たきり、療育手帳A1
+  - または精神障害者保健福祉手帳1級で寝たきり、市長が準ずると認める人
+  - 前年10月1日〜9月30日、市内に住所がある人を1年以上在宅で介護
+  - 入院・入所や介護者の不在が90日を超える人は除く。申請は毎年10月1〜31日
+  where: 天草市（市長に申請。担当窓口は規則に記載なし）
+  url: https://www2.city.amakusa.kumamoto.jp/reiki/reiki_honbun/r351RG00000360.html
+  confidence: high
+  amount: 年額10万円（毎年12月に支給）
+- category: gaishutsu
+  name: 福祉タクシー料金助成
+  name_on_page: 福祉タクシー料金助成事業
+  summary: バス停等から遠い地区の在宅の70歳以上の人などに、タクシーの初乗り料金を助成する。
+  who:
+    at_home: true
+  at_application:
+  - バス停留所か定期船発着所から1km以上離れた地区に住む
+  - 次のどれか。70歳以上の高齢者、身体障害者手帳1・2級、療育手帳A1・A2、精神障害者保健福祉手帳など
+  - 本人・家族の自家用車で移動できる人は対象外
+  - 下肢不自由か視覚障がいで身体障害者手帳1級の人は、距離に関係なく対象
+  where: 高齢者支援課または各支所担当課
+  url: https://www.city.amakusa.kumamoto.jp/kiji003975/index.html
+  confidence: high
+  amount: タクシーの乗車料金の基本料金（初乗り料金）を助成
+- category: gaishutsu
+  name: 介護タクシー料金助成
+  name_on_page: 介護タクシー料金助成事業
+  summary: 寝たきり等で一般の交通手段が使えない非課税世帯の人に、介護タクシー料金の8割以内を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 寝たきりなどのため一般の交通手段の利用が困難
+  - 次のどれか。著しく歩行が困難なおおむね65歳以上の人
+  - または著しく歩行が困難な身体障害者手帳1・2級の人
+  - どちらも市町村民税が非課税の世帯に属する人
+  where: 高齢者支援課または各支所担当課
+  url: https://www.city.amakusa.kumamoto.jp/kiji003975/index.html
+  confidence: high
+  amount: 利用料金の8割以内（上限4,000円）
+- category: koken
+  name: 成年後見制度利用支援事業（申立て費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用や後見人等への報酬を支払うと生計維持が困難になる人に、費用を助成する。
+  who: {}
+  at_application:
+  - 生活保護の被保護者、または支払うと生計維持が困難と認められる人
+  - 申請は、申立て費用は審判確定の翌日から、報酬は報酬付与の審判の翌日から60日以内
+  - 申請者は申立人、または成年被後見人等（その代理人の後見人等）
+  where: 65歳以上は高齢者支援課 高齢者福祉係、65歳未満は福祉課 障がい福祉係
+  url: https://www.city.amakusa.kumamoto.jp/kiji0038564/index.html
+  confidence: high
+  amount: 申立て費用は実費の範囲内。報酬は上限が在宅月額28,000円・施設入所月額18,000円
+not_found:
+- haikai
+- shingu
+- ribiyo

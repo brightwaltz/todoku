@@ -1,0 +1,257 @@
+city: '062103'
+name: 天童市
+site: www.city.tendo.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者介護用紙おむつの支給・助成
+  name_on_page: 紙おむつの支給
+  summary: おむつが必要な方に、購入できる助成券か紙おむつの現物を毎月届ける。
+  who: {}
+  at_application:
+  - 市内に住所がある介護保険の被保険者
+  - 要介護4・5、排尿排便に介助が必要など4要件のどれか
+  - 介護保険料の段階が第10段階以上の人は対象外
+  - 特養・老健に入所中の人は対象外
+  where: 保険給付課 介護支援係
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 助成券は月5,000円（保険料第1〜5段階）または月2,500円（第6〜9段階）。現物支給も選べる。
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/kamiomutusikyuujoseijigyouannnai.pdf
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の方を介護保険サービスなしで1年介護した家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用していない
+  - 申請は年2回（7月・12月）、介護者1人につき年1回まで
+  - 介護者激励金とは重複して受け取れない
+  where: 保険給付課 介護支援係
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 10万円
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: iro
+  name: ねたきり高齢者介護者激励金
+  name_on_page: 介護者激励金の支給
+  summary: 在宅で寝たきりの高齢者を6か月以上介護している方に、激励金を支給する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 市県民税額が24万円未満の方・世帯（一覧PDFの記載）
+  - 申請は年2回（7月・12月）、介護者1人につき年1回まで
+  - 家族介護慰労金とは重複して受け取れない
+  where: 保険給付課 介護支援係
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 年額7万円
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置
+  name_on_page: 緊急通報装置の設置
+  summary: ボタンでコールセンターにつながる緊急通報装置を貸与・設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 一覧頁には、病気があり一人暮らしに不安がある方とある
+  where: 保険給付課 介護支援係
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 固定型・携帯型は自己負担なし。回線不要の固定型は月1,100円、安否センサーは月550円（税込）。
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/kinkyutuhotaiseitouseibijigyo_annai.pdf
+- category: haishoku
+  name: 見守り配食
+  name_on_page: 見守り配食
+  summary: 週1〜3回、安否確認をしながら栄養バランスのよい昼食の弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 安否確認や食事の確保が必要な方
+  - 二世帯住宅や同じ敷地に親族がいる場合は原則利用不可
+  - 原則手渡しで受け取る
+  where: 保険給付課、地域包括支援センター中央・めいこうえん
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 1食360円（ご飯とおかず）または260円（おかずのみ）を自己負担
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/haishokutirasiR8.pdf
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: mimamori
+  name: 乳酸飲料サービス（安否確認）
+  name_on_page: 乳酸飲料サービス
+  summary: 週1〜3回、乳酸飲料を手渡しで届けて安否を確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+    - with_family
+  at_application:
+  - 70歳以上のひとり暮らし、または要介護者と同居の70歳以上
+  - 安否確認が必要な方。就労や通院で確認できる方は除く
+  where: 保険給付課、地域包括支援センター
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 利用者負担なし
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: sonota
+  name: 鍼灸マッサージ施術費の助成券
+  name_on_page: 鍼灸マッサージ利用の助成
+  summary: 鍼・灸・マッサージの料金の一部に使える助成券を交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 保険給付課 介護支援係
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 1枚1,000円の利用券を年5枚
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: ribiyo
+  name: 訪問理美容サービスの出張費助成
+  name_on_page: 訪問理美容サービス
+  summary: 理容店・美容室に来てもらう出張費を助成する（散髪代は対象外）。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らしか高齢者のみの世帯で外出が困難な方
+  - または身体・精神上の障がいがある方
+  where: 保険給付課、地域包括支援センター
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 1枚1,000円の利用券を年4枚。施術代は全額自己負担
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: gaishutsu
+  name: 高齢者移動サービス利用券
+  name_on_page: 高齢者移動サービス
+  summary: リフト付き車両などで医療機関や介護事業所へ行く際の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 要介護3〜5で車いす移動が必要な方、またはねたきりの方
+  - それ以外の要介護認定者は調査票・意見書で市が判断
+  - 福祉タクシー券・福祉給油券の交付を受けた方は対象外
+  where: 保険給付課、地域包括支援センター
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 1枚1,000円の利用券を年72枚（田麦野地域は84枚）。1回6枚まで
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: sonota
+  name: 高齢者軽度生活援助（ごみ出し・除雪など）
+  name_on_page: 高齢者軽度生活援助サービス
+  summary: ごみ出しや除雪など軽い日常の作業を、低料金で手伝ってもらえる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 日常生活上の援助が必要な方
+  - 作業はシルバー人材センターの会員が行う
+  where: 保険給付課、地域包括支援センター（作業はシルバー人材センター）
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/koureisyahukusi_zaitakusien.html
+  confidence: high
+  amount: 料金の2割を自己負担
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: haikai
+  name: 認知症事前登録者支援事業「うまく見守る」
+  name_on_page: 天童市認知症事前登録者支援事業「うまく見守る」
+  summary: 行方不明になるおそれのある方を事前登録し、ネームカードやQRシールで早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある、おおよそ65歳以上の方
+  - 外出時に行方不明になった、またはそのおそれがある方
+  where: 保険給付課（登録申請書を提出）、地域包括支援センター
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/attakafe_00.html
+  confidence: high
+  amount: 利用者負担なし
+  more_urls:
+  - https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/seikatusientirasiR8.pdf
+- category: sonota
+  name: 高齢者等世帯雪下ろし補助金
+  name_on_page: 高齢者等世帯雪下ろし補助金
+  summary: 業者に頼んだ屋根の雪下ろしなどの費用の一部を補助する。
+  who: {}
+  at_application:
+  - 生計中心者の市民税が非課税の世帯
+  - 65歳以上のみの世帯、身障1・2級のみの世帯、ひとり親世帯など
+  - 借家・アパートは対象外
+  - 12月1日〜翌3月31日の作業が対象
+  where: 社会福祉課
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/bousai/yukiorosi.html
+  confidence: high
+  amount: 経費の2分の1、上限5万円。1世帯1回（田麦野地域は2回）
+- category: gaishutsu
+  name: 高齢者運転免許自主返納支援（利用券交付）
+  name_on_page: 天童市高齢者運転免許自主返納支援事業
+  summary: 免許を自主返納した高齢者に、タクシー券・乗合タクシー券・バスIC引換券のいずれか2万円分を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、平成28年4月1日以降に免許を自主返納した方
+  - 返納時に65歳以上。1人1回限り
+  where: 生活環境課
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/shisetsu/jisyuhennoushien.html
+  confidence: high
+  amount: 2万円分（タクシー券、乗合タクシー券、バスIC引換券から選ぶ）
+- category: sonota
+  name: 車いすの無料貸出し
+  name_on_page: 車いすの貸出し
+  summary: 一時的に車いすが必要な高齢者などに、無料で貸し出す。
+  who: {}
+  at_application:
+  - 高齢者または身体障がい者（児）で一時的に車いすが必要な方
+  - 貸出期間はおおむね2週間まで
+  where: 社会福祉課
+  url: https://www.city.tendo.yamagata.jp/lifeinfo/fukushi/shakaisannka.html
+  confidence: high
+  amount: 無料
+- category: hochoki
+  name: 高齢者補聴器購入助成事業
+  name_on_page: 高齢者補聴器購入助成事業
+  summary: 加齢による難聴などで補聴器が必要な高齢者に、購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 対象年齢・所得・申請条件は、確認できた頁に記載なし
+  where: 保険給付課
+  url: https://www.city.tendo.yamagata.jp/cityreport/shiho/20260401.pdf
+  confidence: low
+not_found:
+- koken
+- jutaku
+- shingu
+- nichijo-yogu
+- chusha
+- yutai

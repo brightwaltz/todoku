@@ -1,0 +1,145 @@
+city: 072028
+name: 会津若松市
+site: www.city.aizuwakamatsu.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 訪問給食（昼食・夕食の配達と安否確認）
+  name_on_page: 訪問給食サービス
+  summary: ひとり暮らしなどの高齢者に昼食・夕食を届け、安否も確かめる。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、またはこれに準ずる世帯
+  - 老衰・心身の障がい・病気で買い物や調理が難しい
+  - 申請前にケアマネジャーか高齢福祉課に相談する
+  where: 高齢福祉課（高齢者福祉グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+  amount: 弁当1食450円、おかずのみ1食400円（自己負担）。月〜土、1日最大2食
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 急病や事故のときに通報できる装置を貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしの高齢者等、またはひとり暮らしの重度身体障がい者
+  where: 高齢福祉課（高齢者福祉グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+  amount: 住民税の課税額に応じた利用者負担あり（金額は頁に無し）
+- category: nichijo-yogu
+  name: 火災警報器などの日常生活用具の給付
+  name_on_page: 日常生活用具給付
+  summary: 火災警報器・自動消火器・電磁調理器のどれか1品を給付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - ひとり暮らし高齢者等で、防火への配慮が必要
+  where: 高齢福祉課（高齢者福祉グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+  amount: 用具1品（金額は頁に無し）
+- category: kaigo-yohin
+  name: 寝たきり高齢者等の紙おむつ等の購入費助成
+  name_on_page: 寝たきり高齢者等紙おむつ等給付事業
+  summary: 寝たきりや重度認知症で常時失禁のある人の紙おむつ等の購入費を一部助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 寝たきり・重度認知症による常時失禁が3か月以上続く
+  - 在宅重度障がい者対策事業の給付を受けていない
+  - ケアマネジャー等が調査票を記入する
+  where: 高齢福祉課（高齢者福祉グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+  amount: 月4,000円（介護保険料の所得段階が第1〜3段階）、月2,000円（第4〜5段階）
+- category: sonota
+  name: はり・きゅう・マッサージの施術費助成券
+  name_on_page: はり、きゅう、マッサージ利用助成券
+  summary: 市に登録した施術所で使える助成券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市に登録している施術所を利用する
+  where: 高齢福祉課、各支所・市民センター
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+  amount: 1回1,000円の券を年間最大6枚
+- category: jutaku
+  name: 高齢者の自立支援住宅改修の助成（市独自）
+  name_on_page: 高齢者自立支援住宅改修助成金
+  summary: 要介護になるのを防ぐための住宅改修費を一部助成する。着工前の申請が必要。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護認定を受けていない
+  - 世帯の生計中心者の前年分の市町村民税が非課税
+  where: 高齢福祉課（高齢者福祉グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+  amount: 対象工事費20万円を上限に、その9割
+- category: gaishutsu
+  name: 高齢者の車いすタクシー利用助成
+  name_on_page: 高齢者車いすタクシー利用助成事業
+  summary: 車いすタクシー（介護タクシー）の料金の一部を助成券で助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 身体・精神障害者手帳、療育手帳のいずれも持っていない
+  - 常時車いす利用、または歩行が困難
+  - ケアマネジャー等が調査票を記入する
+  where: 高齢福祉課（高齢者福祉グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+  amount: 500円券を月8枚。1回の乗車で2,000円分（4枚）まで
+- category: haikai
+  name: 認知症の外出見守り（QRコードシール給付）
+  name_on_page: 認知症外出見守り事業
+  summary: 外出先で保護されたときの身元確認に役立つQRコードシールを給付する。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで帰宅困難になるおそれがある
+  - 調査票を添えて申請する
+  where: 高齢福祉課（地域支援グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: high
+- category: sonota
+  name: 自立支援ショートステイ（市内の老人ホームで短期の預かり）
+  name_on_page: 自立支援ショートステイ
+  summary: 家族の不在時や体調不良時に、市内の老人ホームで一時的に世話をする。
+  who: {}
+  at_application:
+  - 介護保険で非該当、または身体的に自立している高齢者
+  - 家族の冠婚葬祭などで留守、または一人暮らしで体調不良
+  where: 高齢福祉課（地域支援グループ）
+  url: https://www.city.aizuwakamatsu.fukushima.jp/docs/2007080301018/
+  confidence: low
+  amount: 要支援1と同じ費用負担。食費・滞在費は自己負担
+not_found:
+- iro
+- koken
+- shingu
+- ribiyo
+- mimamori
+- chusha
+- yutai

@@ -1,0 +1,217 @@
+city: '132039'
+name: 武蔵野市
+site: www.city.musashino.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給
+  summary: 重度の要介護高齢者を在宅で介護する家族に、紙おむつ等の介護用品を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 失禁状態で常時おむつの着用が必要
+  - 介護保険施設の入所者は対象外
+  - 対象者が一人ぐらしなら本人に支給できる
+  where: 高齢者支援課、各地域の在宅介護・地域包括支援センター
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006269.html
+  confidence: high
+  amount: 月額 税抜9,000円以内の介護用品
+- category: iro
+  name: 家族介護慰労金の支給
+  name_on_page: 家族介護慰労金支給
+  summary: 重度の要介護高齢者を在宅で1年以上介護した主な介護者に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内在住で、過去1年以上要介護4・5かつ非課税世帯
+  - 過去1年間、介護保険サービスを使っていない
+  - ショートステイは年7日までなら可
+  - 過去1年に病院へ90日以上の入院がない
+  - 支給対象は主に介護した家族
+  where: 高齢者支援課、各地域の在宅介護・地域包括支援センター
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006274.html
+  confidence: high
+  amount: 年額10万円
+- category: hochoki
+  name: 高齢者補聴器購入費の補助
+  name_on_page: 高齢者補聴器購入費用の補助
+  summary: 加齢で聞こえにくい65歳以上の人に、補聴器の購入費の半額を補助する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、申請年度に65歳以上になる
+  - 障害者総合支援法の補聴器支給対象ではない
+  - 耳鼻咽喉科医が所定の基準を満たすと証明（中等度難聴など）
+  - 過去5年度以内に本補助を受けていない
+  where: 高齢者支援課相談支援係、各在宅介護・地域包括支援センター
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1046469.html
+  confidence: high
+  amount: 購入費の半額（千円未満切り捨て）、上限5万円。1人1回、5年経過で再申請可
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 自宅に通報機とペンダント式ボタンを置き、緊急時に通報センターが対応する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 心疾患やぜん息の発作など慢性疾患で日常生活に注意が必要
+  - 申込後に地区担当職員の訪問調査がある
+  where: 各地域の在宅介護・地域包括支援センター、高齢者支援課
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006268.html
+  confidence: high
+  amount: 月額205円（通報のみ）、286円（火災センサー付き）。住民税非課税世帯は無料
+- category: haikai
+  name: はいかい高齢者探索サービス（GPS端末の貸与）
+  name_on_page: はいかい高齢者探索サービス
+  summary: はいかいのある人やその介護者に専用端末を貸し、位置の探索や保護依頼ができる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上、介護保険の第2号被保険者、またはその介護者など
+  - 申込後に地区担当職員の訪問調査がある
+  where: 各地域の在宅介護・地域包括支援センター、高齢者支援課
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006264.html
+  confidence: high
+  amount: 月額500円。保護の実費は自己負担で、1回5,000円超の分は市が5,000円を補助
+- category: haikai
+  name: ただいまシール（見守りシール）の配布
+  name_on_page: ただいまシール（高齢者等見守りシール）
+  summary: 行方不明時に発見者が緊急連絡先へ連絡できるシールを配布する。
+  who:
+    age_min: 65
+  at_application:
+  - 武蔵野市民で、認知症等で行方不明のおそれがある
+  - または1人での外出に不安がある
+  - 緊急連絡先（本人の同意済み）が必要
+  where: 高齢者支援課、各在宅介護・地域包括支援センター
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1050919.html
+  confidence: high
+  amount: 無料。シール48枚を郵送
+- category: shingu
+  name: 寝具の乾燥・消毒
+  name_on_page: 寝具の乾燥・消毒
+  summary: 自宅を訪問して寝具を回収し、乾燥・消毒を月1回行う。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の状況により寝具の衛生管理が困難
+  - 市の書類審査があり、不承認の場合もある
+  where: 各地域の在宅介護・地域包括支援センター、高齢者支援課
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006265.html
+  confidence: high
+  amount: 無料。1世帯あたり月1回
+- category: ribiyo
+  name: 外出困難な高齢者の訪問理美容
+  name_on_page: 外出困難高齢者訪問理容・美容サービス
+  summary: 理容店・美容店に依頼して、自宅で年5回まで調髪を受けられる。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内在住
+  - 寝たきりかそれに準じた状態で、店に行けない
+  - 年度ごとに申請が必要
+  where: 武蔵野市民社会福祉協議会（介護保険被保険者証の写しを持参）
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006259.html
+  confidence: high
+  amount: 無料。年5回まで
+- category: jutaku
+  name: 住宅改善の給付（市独自）
+  name_on_page: 住宅改善の給付
+  summary: 手すり・段差解消のほか便器洋式化や浴槽取替えなどの工事費を給付する。
+  who:
+    age_min: 60
+  at_application:
+  - 60歳以上で要支援・要介護認定、または60〜64歳で要支援相当と認められた人
+  - 日常生活動作に困難があり、工事で在宅生活が楽になると認められる
+  - 訪問調査があり、介護保険サービスが優先
+  where: 各地域の在宅介護・地域包括支援センター、住宅改修・福祉用具相談支援センター、高齢者支援課
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006279.html
+  confidence: high
+  amount: 利用者負担は工事費の1〜3割。給付に上限があり、超えた分は自己負担
+- category: nichijo-yogu
+  name: 防火用品（電磁調理器・自動消火装置）の給付
+  name_on_page: 防火用品の給付
+  summary: 火災に備え、電磁調理器や自動消火装置を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 認知機能の低下や住宅事情で防火の配慮が必要
+  - 地区担当職員の訪問調査がある
+  where: 各地域の在宅介護・地域包括支援センター、高齢者支援課
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006277.html
+  confidence: high
+  amount: 新規設置費用の1割を自己負担。住民税非課税のかたは無料
+- category: mimamori
+  name: 高齢者安心コール（週1回の安否確認電話）
+  name_on_page: 高齢者安心コール
+  summary: ひとり暮らしの高齢者に、毎週決まった曜日・時間帯に電話で様子を尋ねる。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内でひとり暮らしの高齢者
+  where: 高齢者支援課相談支援係、各在宅介護・地域包括支援センター
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/1006255.html
+  confidence: low
+  more_urls:
+  - https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/index.html
+- category: mimamori
+  name: 高齢者見守りライト
+  name_on_page: 高齢者見守りライト（デジタル技術を活用した高齢者見守り事業）
+  summary: 通信機能付きLED電球で、ひとり暮らしの高齢者を見守る。
+  who:
+    household:
+    - alone
+  at_application:
+  - 通知先（連絡を受ける人）が必要
+  where: 高齢者支援課
+  url: https://www.city.musashino.lg.jp/kenko_fukushi/koureisha_fukushi/koreishafukushi_service/zaitakuservice/index.html
+  confidence: low
+not_found:
+- haishoku
+- koken

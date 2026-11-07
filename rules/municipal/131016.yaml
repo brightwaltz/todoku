@@ -1,0 +1,187 @@
+city: '131016'
+name: 千代田区
+site: www.city.chiyoda.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物支給・入院中の現金助成
+  name_on_page: 紙おむつ
+  summary: 紙おむつの現物支給と、おむつ代の現金助成がある。
+  who: {}
+  at_application:
+  - 対象の条件は窓口に確認
+  where: 保健福祉部在宅支援課在宅支援係（オンライン申請もあり）
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/dokuji-kaigo/kami.html
+  confidence: high
+  amount: 入院中のおむつ代現金助成は月額上限13,200円
+- category: shingu
+  name: 寝具の乾燥消毒・丸洗い・水洗い
+  name_on_page: 寝具乾燥サービス
+  summary: 寝たきりや病弱な人の寝具を、乾燥消毒したり洗ったりしてくれる。
+  who: {}
+  at_application:
+  - 区内に住所がある
+  - 要介護3以上、または65歳以上のひとり暮らし・高齢者のみ世帯で病弱
+  - 丸洗い・水洗いは要介護3以上の人のみ
+  where: 相談センター、高齢者あんしんセンター麹町・神田
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/dokuji-kaigo/shingu.html
+  confidence: high
+  amount: 自己負担は乾燥消毒630円、丸洗い1,100円、水洗い1,430円（生活保護は無料）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理容師・美容師が自宅に来て調髪やカットをする。利用券は年8回まで。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 区内に住所がある
+  - 理容店・美容店に行くことが困難
+  - 病院・福祉施設に入所中の人や、同様のサービスを受けている心身障害者は対象外
+  where: 在宅支援課在宅支援係（オンライン申請もあり）
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/dokuji-kaigo/ribiyo.html
+  confidence: high
+  amount: 1回710円の自己負担。年8回まで（申請時期で交付枚数が変わる）
+- category: jutaku
+  name: 介護予防住宅改修等給付（要介護認定を受けていない人向け）
+  name_on_page: 介護予防住宅改修等給付
+  summary: 介護認定のない65歳以上が、手すり設置や段差解消などの小規模改修の費用を一部給付してもらえる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護認定を受けていない人、または非該当の人
+  - 区の調査で介護予防・自立支援のために改修が必要と認められる
+  - 工事前の申請が必要
+  where: 高齢介護課介護事業指定係、高齢者あんしんセンター麹町・神田（まず電話相談）
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/dokuji-kaigo/sebi.html
+  confidence: high
+  amount: 給付対象の工事費は同一住宅で上限20万円。自己負担は1割
+- category: jutaku
+  name: 自立支援設備改修等給付（要支援・要介護の人向け）
+  name_on_page: 自立支援設備改修等給付
+  summary: 要支援・要介護の人が、浴槽や便器の取り替え、昇降機、IH 設置などの費用の一部を給付してもらえる。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 区の調査で介護予防・自立支援のために改修が必要と認められる
+  - IH クッキングヒーターは認知症等で火災予防が必要な人が対象
+  - 各設備は同一住宅で1回限り。工事前の申請が必要
+  where: 高齢介護課介護事業指定係、高齢者あんしんセンター麹町・神田（まず電話相談）
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/dokuji-kaigo/sebi.html
+  confidence: high
+  amount: 工事費の給付限度額は浴槽379,000円、階段昇降機100万円など。自己負担は10〜60%（介護保険料の段階と工事内容で変わる）
+- category: haishoku
+  name: 高齢者食事支援サービス（お弁当の配達）
+  name_on_page: 高齢者食事支援サービス
+  summary: 食事の準備が難しい高齢者に、昼食・夕食のお弁当を手渡しで届ける。
+  who:
+    age_min: 65
+  at_application:
+  - 区内に住所がある
+  - ひとり暮らしまたは高齢者のみ世帯など
+  - 食事の準備・調理・購入が困難
+  - 職員の調査で食事支援が必要と判断される
+  where: 高齢者あんしんセンターまたは相談センター
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/sasaeai/shokujishien.html
+  confidence: high
+  amount: お弁当代の実費410〜690円（1食350円を区が補助した後の額）。週1回から利用でき、1日2食まで
+- category: kinkyu-tsuho
+  name: 救急通報システムの設置
+  name_on_page: 救急通報システム
+  summary: ボタンを押すと民間の受信センターにつながり、現場派遣員が駆けつける装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 区内に住所がある
+  - 慢性疾患などで日常生活に常時注意が必要
+  - 緊急連絡先の記入が必要
+  - 区営・都営住宅や賃貸住宅は別の手続きが必要
+  where: 相談センター、高齢者あんしんセンター麹町・神田（オンライン申請もあり）
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/sasaeai/tsuho.html
+  confidence: high
+  amount: 無料
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費の助成
+  summary: 中等度難聴と診断された60歳以上が、補聴器を買うときの費用の一部を助成してもらえる。
+  who:
+    age_min: 60
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区内に住所がある
+  - 医師に中等度難聴と診断された
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 購入前の申請が必要。過去にこの助成を受けていない
+  where: 在宅支援課在宅支援係（オンライン申請もあり）
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/sasaeai/hochoki-konyuhi.html
+  confidence: high
+  amount: 助成上限は住民税課税世帯72,450円、非課税世帯144,900円
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人の、成年後見の申立費用や後見人への報酬を区が助成する。
+  who: {}
+  at_application:
+  - 対象の条件は窓口に確認
+  where: 保健福祉部福祉総務課事業調整担当
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/shogaisha/johoteikyo/seido-sodanmadoguchi/seinenkoken/shienjigyo.html
+  confidence: high
+- category: mimamori
+  name: 電話訪問による安否確認
+  name_on_page: 高齢者いきいき相談事業（電話訪問）
+  summary: 高齢者あんしんセンターが定期的に電話をかけ、安否確認や相談を受ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 週1回または週2回の電話。曜日は地区で決まっている
+  - 状況によってはセンター職員が訪問する
+  where: 高齢者あんしんセンター麹町（麹町地区）・神田（神田地区）
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/sasaeai/ikiki.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 自動通話録音機の無料設置
+  name_on_page: 特殊詐欺被害防止のため自動通話録音機を設置します
+  summary: 特殊詐欺を防ぐため、警告メッセージを流して通話を録音する機器を無料で付ける。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住で65歳以上の人がいる世帯
+  - 救急通報システム設置世帯は申請できない
+  - 障害者福祉課から録音機の配付を受けた世帯は申請できない
+  where: 在宅支援課在宅支援係（郵送可）、相談センター、区役所3階、高齢者あんしんセンター、各出張所
+  url: https://www.city.chiyoda.lg.jp/koho/kenko/koresha/sasaeai/jidotsuuwa.html
+  confidence: high
+  amount: 設置は無料。劣化による再設置は自己負担あり
+not_found:
+- iro
+- haikai
+- gaishutsu
+- chusha

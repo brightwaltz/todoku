@@ -1,0 +1,254 @@
+city: '162116'
+name: 射水市
+site: www.city.imizu.toyama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきり高齢者等のおむつ引換券
+  name_on_page: 射水市寝たきり高齢者等おむつ支給事業
+  summary: 在宅で要介護3以上の人に、おむつの購入費を助成する引換券を郵送する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、実際に住んでいる
+  - 介護保険の利用者負担割合が1割
+  - 介護保険施設への入所中や入院中は対象外
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=20312
+  confidence: high
+  amount: 月6,000円まで。非課税世帯は全額、課税世帯は3分の2を助成
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: haishoku
+  name: 配食みまもりサービス
+  name_on_page: 配食みまもりサービス
+  summary: 配食事業所が食事を届け、あわせて安否を確認する。市は安否確認の費用を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 自力で調理することが困難
+  - 高齢者のみの世帯に準ずる世帯も対象
+  where: 地域福祉課（ケアマネジャーまたは地域包括支援センターが申請を支援）
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=35906
+  confidence: high
+  amount: 弁当代は実費負担（事業所ごとに価格が異なる）
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: haikai
+  name: どこシルプラス事業（みまもりシール）
+  name_on_page: どこシルプラス事業（みまもり事業）
+  summary: 衣服などに貼るQRコードのシールで、行方不明時に発見者と家族が連絡できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、認知症で行方不明になる可能性がある
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=50441
+  confidence: high
+  amount: 初回のシール代は無料
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: iro
+  name: 在宅福祉介護手当
+  name_on_page: 在宅福祉介護手当
+  summary: 要介護4・5の人と同じ世帯で在宅介護をしている人に、手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護4・5の人と住民票が同じ世帯（世帯分離は対象外）
+  - 被介護者が施設入所中や3か月を超える入院中は対象外
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=7689
+  confidence: high
+  amount: 月額5,000円（9月末と3月末に支給）
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の状態が1年以上続き、介護保険サービスを使わず在宅介護する家族に支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の状態が1年以上続いている
+  - 介護保険サービスを利用せず在宅で介護している家族
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 24時間対応の通報装置と人感・火災センサーを貸与し、月2回の安否確認電話もある。
+  who:
+    at_home: true
+  at_application:
+  - 援護を必要とするひとり暮らし高齢者等
+  - 所得要件あり
+  where: 地域福祉課または各地区センター
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+  - https://www.city.imizu.toyama.jp/download/svDLAplDtl.aspx?servno=3235
+- category: jutaku
+  name: 高齢者住宅改善費の補助（介護保険非該当の人向け）
+  name_on_page: 高齢者が住みよい住宅改善（射水市高齢者住宅改善費補助金交付事業）
+  summary: 要介護認定が非該当の人の手すり設置・段差解消・洋式トイレ化の工事費を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定が非該当（事前の認定調査が必要）
+  - 所得税非課税世帯（同居の全員の所得を確認）
+  - 着工前に申請する。新築・増築は対象外
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=25856
+  confidence: high
+  amount: 上限45万円の経費のうち、手すり・段差は3分の2、洋式トイレ化は3分の1を助成
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: shingu
+  name: 寝具の丸洗い・乾燥
+  name_on_page: 寝具丸洗い乾燥事業
+  summary: 寝たきりなどで寝具の衛生管理が難しい人に、洗濯と乾燥を年2回まで行う。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきり高齢者等のいる世帯、またはこれに準ずる世帯
+  - 所得要件あり
+  - 対象と思われる人には市から案内が届く
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=25844
+  confidence: high
+  amount: 寝具1セットまで無料（羽毛など特殊なものは一部自己負担）
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 訪問理容サービス
+  summary: 理容店へ行けない人の自宅へ理容師が訪問し、調髪と顔そりをする。
+  who: {}
+  at_application:
+  - 要介護4・5に認定された高齢者、または寝たきりの重度身体障がい者
+  - 自分で理容店へ行くのが困難
+  - 所得要件あり
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: gaishutsu
+  name: 車いす対応タクシー券
+  name_on_page: 車いす対応タクシー券交付事業
+  summary: 車いすやストレッチャーを使う在宅の要介護者に、対応タクシーで使える券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 車いす等を利用している在宅の要介護高齢者等
+  - 所得要件あり
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: gaishutsu
+  name: 移送サービス（通院などの送迎）
+  name_on_page: 移送サービス
+  summary: 公共交通を使えず家族の送迎も難しい人に、通院などの送迎をする。
+  who: {}
+  at_application:
+  - 公共交通機関等の利用が著しく困難なひとり暮らし要介護高齢者等
+  - 所得要件あり
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: mimamori
+  name: 高齢福祉推進員による見守り
+  name_on_page: 高齢福祉推進員設置事業
+  summary: ひとり暮らし高齢者に、声かけ・見守り・安否確認をする推進員を委嘱する。
+  who:
+    household:
+    - alone
+  at_application: []
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: sonota
+  name: ひとり暮らし高齢者等の除雪費助成
+  name_on_page: ひとり暮らし高齢者等除雪助成
+  summary: ひとり暮らしなどの高齢者の除雪にかかった費用の一部を助成する。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者等
+  - 所得税非課税世帯
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: sonota
+  name: 高齢者の軽度生活援助（清掃・草むしり・除雪）
+  name_on_page: 高齢者軽度生活援助事業
+  summary: 介護保険のヘルプで対象外の清掃・草むしり・除雪などを手伝う。
+  who: {}
+  at_application:
+  - 高齢者が対象
+  - 所得要件あり
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: high
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+- category: sonota
+  name: いのちのバトン（緊急時の情報容器）
+  name_on_page: いのちのバトン
+  summary: 医療情報や緊急連絡先を専用容器に入れ、冷蔵庫に保管して緊急時や見守りに使う。
+  who: {}
+  at_application:
+  - 対象者は問い合わせて確かめる
+  where: 地域福祉課
+  url: https://www.city.imizu.toyama.jp/guide/svGuideDtl.aspx?servno=26053
+  confidence: low
+  more_urls:
+  - https://www.city.imizu.toyama.jp/appupload/EDIT/142/142671.pdf
+not_found:
+- koken
+- hochoki
+- nichijo-yogu
+- chusha
+- yutai

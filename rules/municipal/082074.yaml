@@ -1,0 +1,143 @@
+city: 082074
+name: 結城市
+site: www.city.yuki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品購入助成
+  name_on_page: 介護用品購入助成事業
+  summary: 紙おむつなどの介護用品を買うための助成券がもらえる。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 対象は紙おむつ、尿取りパッド、使い捨て手袋、清拭剤、ドライシャンプー
+  where: 介護福祉課 長寿支援係
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page004119.html
+  confidence: high
+  amount: 月 5,000 円分の購入助成券
+- category: haishoku
+  name: ふれあい配食サービス
+  name_on_page: ふれあい配食サービス事業
+  summary: 調理が難しい高齢者に昼食を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 調理が困難な人が対象
+  - 市が配食を適切と認めた人
+  - 日中に調理する人がいない人も対象
+  where: 介護福祉課 長寿支援係（本人・家族・ケアマネジャーが申請）
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page006804.html
+  confidence: high
+  amount: 1 食 450 円、または 300 円を超えた実費分（配達事業者で異なる）
+  more_urls:
+  - https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page003112.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: ひとり暮らし高齢者等緊急通報システム事業
+  summary: コールセンターにつながる緊急通報装置とペンダントを借りられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上のひとり暮らし、または65〜74歳で持病・要支援・障害のある人
+  - または要介護4・5の人と同居する65歳以上の高齢者のみ世帯
+  - 同一敷地や隣接地に親族がいる人、施設入所者は対象外
+  - 固定電話回線が必要
+  where: 介護福祉課（民生委員を通して申請）
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page001379.html
+  confidence: high
+  amount: 利用者負担は月 200〜400 円（生活保護世帯は無料）
+- category: iro
+  name: 家族介護助成金
+  name_on_page: 家族介護助成金支給事業
+  summary: 70歳以上で重い介護が必要な人を同居で介護する家族に助成金が出る。
+  who:
+    age_min: 70
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される人が70歳以上で、同居の家族が介護する
+  - 要介護4・5、または要介護1〜3で認知症自立度3a以上相当
+  - 市内に6か月以上住民登録がある
+  - ねたきりや認知症の状態が3か月以上続き、今後も続くと認められる
+  - 民生委員を通して登録が必要
+  where: 介護福祉課 長寿支援係（民生委員を通して登録）
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page003112.html
+  confidence: high
+  amount: 月額 3,000 円
+- category: koken
+  name: 成年後見の利用費用の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見制度を使うのに必要な費用を市が助成する。
+  who: {}
+  at_application:
+  - 身寄りのない重度の認知症高齢者などが対象
+  - 費用の補助がないと制度を使いにくいと認められる人
+  where: 介護福祉課 長寿支援係
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page003112.html
+  confidence: low
+- category: gaishutsu
+  name: 高齢者タクシー
+  name_on_page: 高齢者タクシー
+  summary: 自宅と指定の行き先の間を、片道定額でタクシー移動できる。
+  who:
+    age_min: 65
+  at_application:
+  - 結城市に住んでいる
+  - 事前予約制（利用日2日前の午前9時〜当日午後2時30分）
+  - 運行は平日の午前9時〜午後3時
+  where: 結城合同タクシー（有）または城南タクシー（株）に電話予約。問い合わせは介護福祉課 長寿支援係
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page008133.html
+  confidence: high
+  amount: 片道 1,000 円（現金払い）
+- category: haikai
+  name: 徘徊高齢者等 SOS ネットワーク
+  name_on_page: 結城市徘徊高齢者等SOSネットワーク
+  summary: 事前登録をしておくと、行方不明時に市や警察などが連携して捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、日常的に徘徊するおそれのある認知症高齢者など
+  - 名前・特徴・写真などの事前登録が必要
+  where: 介護福祉課（事前登録票を提出）
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/houkatsu/sesaku/page005787.html
+  confidence: high
+- category: mimamori
+  name: 乳酸飲料の配達による見守り
+  name_on_page: 愛の定期便事業
+  summary: 乳酸飲料を届けて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 民生委員を通して登録が必要
+  where: 介護福祉課（民生委員を通して登録）
+  url: https://www.city.yuki.lg.jp/kenkou-iryou-fukushi/koureishafukushi/service/page003112.html
+  confidence: low
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- jutaku

@@ -1,0 +1,147 @@
+city: '442046'
+name: 日田市
+site: www.city.hita.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 要介護1〜5の人を在宅で介護する非課税世帯の家族に、紙おむつ等が買える支給券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護1・2は日常生活自立度が一定以上であることが必要
+  - 介護される人を在宅で介護している同居の家族等（冊子）
+  where: 長寿福祉課 長寿福祉係（市役所1階、電話0973-22-8299）
+  url: https://www.city.hita.oita.jp/soshiki/26/1923.html
+  confidence: high
+  amount: 要介護1・2は月3,500円分、要介護3〜5は月7,500円分の支給券（紙おむつ・尿取りパット等）
+  more_urls:
+  - https://www.city.hita.oita.jp/uploaded/attachment/1161.pdf
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 要介護者・要支援者等のみの世帯で、食事の確保が困難な人に夕食を届け、安否確認もする。
+  who: {}
+  at_application:
+  - 市内に住所があり、要介護者（65歳以上）・居宅要支援被保険者等のみの世帯
+  - 世帯員のいずれもが食事の確保が困難
+  - 要介護者は、食・栄養状態が不十分で配食が必要と認められる
+  - 要支援者等は、体力低下や低栄養のおそれで配食が必要と認められる
+  - 親族による生活上の支援を受けることが困難
+  where: 長寿福祉課 長寿福祉係（市役所1階、電話0973-22-8299）
+  url: https://www.city.hita.oita.jp/soshiki/26/2954.html
+  confidence: high
+  amount: 夕食のみ。1食350円（特別食等は別途の負担がある場合あり）
+  more_urls:
+  - https://www.city.hita.oita.jp/uploaded/attachment/1161.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸し出し
+  name_on_page: 緊急通報装置の貸し出し
+  summary: ボタン一つでコールセンターにつながる携帯型の緊急通報装置を貸し出す。24時間365日対応。
+  who: {}
+  at_application:
+  - 原則、一人暮らしの高齢者や高齢者のみの世帯
+  - 病気などで不安のある方
+  - 電波状況の悪い地域では据置型になる場合がある
+  where: 担当のケアマネジャー。いなければ各地区の地域包括支援センターが申請を代行
+  url: https://www.city.hita.oita.jp/soshiki/26/2737.html
+  confidence: high
+  amount: コールセンター利用料は月額990円（生活保護世帯は無料）。機器の設置費用は市が負担
+  more_urls:
+  - https://www.city.hita.oita.jp/uploaded/attachment/1161.pdf
+- category: haikai
+  name: 緊急連絡票（見守りキーホルダー）の登録
+  name_on_page: 緊急連絡票（見守りキーホルダー）
+  summary: 行方不明の可能性がある認知症の人の連絡先等を事前に市に登録し、見守りキーホルダーを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症によって行方不明の可能性がある人
+  - 個人では申請できず、担当のケアマネジャーか地域包括支援センターに相談
+  - 登録用紙と写真貼付用紙（上半身・全身）を提出。登録内容は日田警察署と共有
+  where: 担当のケアマネジャー、圏域の地域包括支援センター
+  url: https://www.city.hita.oita.jp/soshiki/26/2806.html
+  confidence: high
+  more_urls:
+  - https://www.city.hita.oita.jp/soshiki/26/2804.html
+- category: sonota
+  name: 認知症高齢者等個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険
+  summary: 認知症の人が事故で他人に損害を与えた賠償に備える保険に、市が契約者となって加入できる。
+  who:
+    at_home: true
+  at_application:
+  - 日田市緊急連絡票（見守りキーホルダー）の登録者
+  - 要介護認定の認知症高齢者の日常生活自立度2a以上、または行方不明になる可能性がある
+  - 施設・病院等で生活している人は加入できない
+  where: 担当のケアマネジャー、圏域の地域包括支援センター
+  url: https://www.city.hita.oita.jp/soshiki/26/2806.html
+  confidence: high
+  amount: 契約者は日田市。被保険者の自己負担なし
+- category: sonota
+  name: 緊急医療情報キットの配備
+  name_on_page: 緊急医療情報キットの配備
+  summary: 緊急連絡先・かかりつけ医等を書いた用紙を入れた容器（キット）を、冷蔵庫に保管するために無料で配備する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし高齢者世帯や高齢者のみの世帯の方など
+  where: お住まいの地区の担当民生委員・児童委員、または頁に書かれた問い合わせ先
+  url: https://www.city.hita.oita.jp/soshiki/26/2736.html
+  confidence: high
+  amount: 配備にかかる費用は無料
+- category: sonota
+  name: 高齢者エアコン設置支援事業費補助金
+  name_on_page: 日田市高齢者エアコン設置支援事業費補助金
+  summary: エアコンが1台もない非課税世帯の高齢者に、エアコンの購入・設置・撤去の費用を補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 申請年度の末日までに65歳以上になる高齢者がいる世帯
+  - 市税の滞納がない
+  - 自宅にエアコンが1台もない、または故障で使えるものが1台もない
+  - 賃貸は家主の承諾が必要。施設入所・長期入院の人は対象外
+  - 申請期間は令和9年2月1日まで。購入前に申請
+  where: 長寿福祉課、各振興局の窓口
+  url: https://www.city.hita.oita.jp/soshiki/26/2449.html
+  confidence: high
+  amount: 補助率10分の9、上限9万円。1世帯1台
+- category: jutaku
+  name: 在宅高齢者住宅改造助成事業
+  name_on_page: 在宅高齢者住宅改造助成事業
+  summary: 住宅改造が必要な在宅高齢者のいる住宅の改造費の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれか。要介護・要支援の認定を受けている高齢者の世帯
+  - または75歳以上の高齢者のいる世帯
+  - または65歳以上の高齢者のみの世帯
+  - 所得要件がある（冊子に金額なし）
+  - 募集時期は5月（広報）
+  where: 長寿福祉課 長寿福祉係（市役所1階、電話0973-22-8299）
+  url: https://www.city.hita.oita.jp/uploaded/attachment/1161.pdf
+  confidence: low
+  amount: 基準額の3分の2以内（基準額の上限は60万円。要介護認定を受けている人は介護保険の住宅改修を含む）
+not_found:
+- gaishutsu
+- iro
+- hochoki

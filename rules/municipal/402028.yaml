@@ -1,0 +1,105 @@
+city: '402028'
+name: 大牟田市
+site: www.city.omuta.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 介護用品（紙おむつ）給付事業
+  summary: 在宅で常に失禁状態の人に、一定量の紙おむつを自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 概ね3か月以上の寝たきり、または認知症で常に失禁状態
+  - 書類・訪問審査で事業該当者と認められる
+  where: 福祉課総合相談担当
+  url: https://www.city.omuta.lg.jp/kiji00316547/5_16547_84942_up_LU7OZR54.pdf
+  confidence: high
+  amount: 毎月、一定量の紙おむつが低料金で届く（料金は年度で変わる）
+  more_urls:
+  - https://www.city.omuta.lg.jp/dynamic/faq2/pub/list.aspx?c_id=44&mst=139
+  - https://www.city.omuta.lg.jp/kiji00319586/index.html
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 常時注意が必要な人に通報機器を貸し出し、月1回、電話で安否を確認する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしで常時注意が必要、または身体障害者手帳1・2級の人
+  - 高血圧・心疾患・脳血管疾患などの健康不安が条件
+  where: 福祉課健康対策担当
+  url: https://www.city.omuta.lg.jp/kiji00316547/5_16547_84942_up_LU7OZR54.pdf
+  confidence: high
+  amount: 設置費5,000円、毎月の利用料は所得に応じた額
+  more_urls:
+  - https://www.city.omuta.lg.jp/dynamic/faq2/pub/list.aspx?c_id=44&mst=139
+- category: haikai
+  name: 認知症高齢者等の行方不明に備えた事前登録
+  name_on_page: 行方不明のおそれのある認知症高齢者等の事前登録制度
+  summary: 行方不明のリスクが高い人の情報を前もって登録し、捜索の初動を早める。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明のリスクが高い人（本人・家族が相談）
+  where: 福祉課地域支援担当、各地区地域包括支援センター
+  url: https://www.city.omuta.lg.jp/kiji00314169/index.html
+  confidence: high
+  more_urls:
+  - https://www.city.omuta.lg.jp/kiji00316547/5_16547_84942_up_LU7OZR54.pdf
+- category: sonota
+  name: ごみの玄関先収集
+  name_on_page: 福祉収集
+  summary: ごみを出し場所へ持ち出せない人の、ごみ・資源物を玄関先で収集する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者または障害者のみの世帯で、地域や親族の協力がない
+  - 要支援・要介護・事業対象者でホームヘルプ利用、または手帳1・2級等
+  - 訪問面談の審査あり。電子申請は不可
+  where: 環境業務課、環境業務課第一清掃事務所
+  url: https://www.city.omuta.lg.jp/kiji003771/index.html
+  confidence: high
+- category: sonota
+  name: 火災警報器の取付け支援
+  name_on_page: 住宅用火災警報器の取付け支援
+  summary: 高齢者のみの世帯などの自宅へ消防職員が行き、火災警報器を無料で取り付ける。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、障害者手帳所持者のみの世帯など
+  - 取付けが自分では難しい世帯
+  - 警報器本体は自分で用意する
+  where: 消防本部予防課
+  url: https://www.city.omuta.lg.jp/kiji00316768/index.html
+  confidence: high
+  amount: 取付け費用は無料（本体代は自己負担）
+- category: sonota
+  name: はり・きゅう施術料金の助成
+  name_on_page: 後期高齢者医療はり・きゅう施術料金の助成
+  summary: 後期高齢者医療の加入者が、指定の施術師で受ける施術に助成がある。
+  who: {}
+  at_application:
+  - 市内在住の福岡県後期高齢者医療の被保険者
+  - はり・きゅう受療証の申請が必要
+  where: 保険年金課後期高齢者医療担当
+  url: https://www.city.omuta.lg.jp/kiji0032061/index.html
+  confidence: high
+  amount: 1回1,000円を助成（1日1回、月5回まで）
+not_found:
+- haishoku
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu

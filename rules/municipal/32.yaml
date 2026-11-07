@@ -1,0 +1,54 @@
+pref: '32'
+name: 島根県
+site: www.pref.shimane.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 思いやり駐車場の利用証（身体障がい者等用駐車場利用証）
+  name_on_page: 思いやり駐車場制度（島根県身体障がい者等用駐車場利用証制度）
+  summary: 歩くのが難しい高齢者（要支援1以上）などに、県が駐車場の利用証を交付する。
+  who: {}
+  at_application:
+  - 島根県民で、歩行が困難な人
+  - 高齢者は要支援1以上（介護保険被保険者証の写しで確認）
+  - ほか、障害者手帳（種類・等級の基準あり）・難病・妊産婦・けがも対象
+  - 窓口か郵送で、申請書と手帳や被保険者証などの写しを出す
+  where: 県の障がい福祉課・各保健所の窓口か郵送（返信用封筒に180円分の切手を貼る）。住民票のある市町村の窓口でも申請できる
+  url: https://www.pref.shimane.lg.jp/medical/fukushi/syougai/barrier_free/parking/parking.html
+  confidence: high
+  more_urls:
+  - https://www.pref.shimane.lg.jp/medical/fukushi/syougai/barrier_free/parking/parking.data/riyoutaisyousyaitiran.pdf
+- category: yutai
+  name: 75 生涯現役証（協賛店での割引カード）
+  name_on_page: ７５生涯現役証交付事業
+  summary: 75歳以上で今も活動を続けている人に、知事から証と携帯カードを贈り、協賛店で割引などが受けられる。
+  who:
+    age_min: 75
+  at_application:
+  - 島根県内に住んでいる（75歳以上かは交付申請日の時点で見る）
+  - 農林業・商工業、ボランティア・スポーツ・文化活動などを今も続けている
+  - 本人のほか、本人の同意を得た家族・親戚・友人も申請できる
+  - 申請書を郵送かFAXで出す（随時受付）
+  where: 島根県健康福祉部高齢者福祉課（郵送かFAX）。申請書は市町村の高齢者福祉担当課にもある
+  url: https://www.pref.shimane.lg.jp/medical/fukushi/kourei/shogai_geneki/kanren/75shougai.html
+  confidence: high
+  amount: 協賛店で携帯カードを提示すると、料金割引などの特典がある
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

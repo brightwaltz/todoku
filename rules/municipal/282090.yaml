@@ -1,0 +1,151 @@
+city: '282090'
+name: 豊岡市
+site: www.city.toyooka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の引換券の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で介護する家族に、紙おむつなどと引き換えられる券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3以上の人と同居して在宅で介護している家族
+  - 世帯の判断は住民票でなく実際の居住実態による
+  where: 高齢者支援課、各振興局市民福祉課（オンライン申請もあり）
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001929.html
+  confidence: high
+  amount: 月 6,000 円分の引換券（紙おむつ、尿取りパッド、使い捨て手袋、清拭材料、ドライシャンプー）
+- category: haishoku
+  name: 配食（昼食弁当）
+  name_on_page: 食の自立支援事業
+  summary: 調理が難しいひとり暮らしなどの高齢者に、週3回昼食の弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の障害や病気で調理が困難
+  - 要介護1〜5以外で支え合い生活支援の実施地区の人は、そちらの配食を使う
+  - 申請にケアマネジャー等が書くアセスメント票が必要
+  where: 高齢者支援課、各振興局市民福祉課
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001912.html
+  confidence: high
+  amount: 1食の自己負担は、市民税課税世帯 450 円、非課税世帯 350 円
+- category: koken
+  name: 成年後見の申立て・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長が申し立てた場合に、後見人等への報酬の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある高齢者、知的障害者、精神障害者
+  - 配偶者と2親等内の親族がいない
+  - 市長が本人保護のため申立てが必要と認めた人
+  - 報酬の負担が困難な場合に助成
+  where: 高齢者支援課、地域包括支援センター
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001913.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報装置・ペンダント・火災警報器を貸し、消防本部に通報できるようにする。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または緊急時に対応できない身体障害者
+  - 固定電話の回線が必要
+  - 5分程度で駆け付けられる近隣協力者3人が必要
+  where: 高齢者支援課、各振興局市民福祉課
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001921.html
+  confidence: high
+  amount: 機器の貸与料は無料。設置費用の半額が自己負担
+- category: ribiyo
+  name: 訪問理美容の利用券
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容院へ行けない在宅の人に、訪問理美容の利用券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、理美容院へ出向くのが困難
+  - 要介護2以上、または肢体不自由1・2級の手帳、または療育手帳Aのいずれか
+  where: 高齢者支援課、各振興局市民福祉課（オンライン申請もあり）
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001918.html
+  confidence: high
+  amount: 1回 2,000 円の助成。年3枚（10月以降の申請は2枚）
+- category: gaishutsu
+  name: 福祉タクシー等の運賃助成
+  name_on_page: 外出支援サービス助成事業
+  summary: 公共交通が使いにくい人が介護・福祉タクシーに乗るとき、運賃の一部を助成する。
+  who: {}
+  at_application:
+  - 身体的な理由で公共交通機関の利用が困難
+  - 区分は人工透析、車いす・ストレッチャー、その他の3つ
+  - 区分により65歳以上、要介護認定、手帳などの条件が異なる
+  - 入院中・施設入所中は申請できない
+  where: 高齢者支援課、各振興局市民福祉課
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001914.html
+  confidence: high
+  amount: 月4枚（人工透析は月13枚）の利用券。区分3は3km未満900円など
+- category: sonota
+  name: 雪下ろし費用の補助
+  name_on_page: 要援護世帯雪下ろし援助事業
+  summary: 自力で雪下ろしできない世帯が業者に頼んだ費用の半額を補助する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上のみの世帯、重度障害者のみの世帯、母子世帯のいずれか
+  - 現に住んでいる持ち家が対象（借家は除く）
+  where: 高齢者支援課、各振興局市民福祉課（オンライン申請もあり）
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001920.html
+  confidence: high
+  amount: 費用の2分の1、1回3万円まで。年度内1世帯3回まで
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: 緊急時の医療情報を入れる保管容器などを無料で配る。
+  who: {}
+  at_application:
+  - 市内に居住
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - そのほか市長が必要と認める人（日中独居など）
+  where: 高齢者支援課、各振興局市民福祉課
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1001922.html
+  confidence: high
+  amount: 無料（容器1世帯1個、マグネットシール、記録用紙）
+- category: sonota
+  name: おむつ使用者のごみ袋無料交付
+  name_on_page: 「おむつ」を長期間使用している人への家庭系廃棄物処理手数料の免除
+  summary: おむつを長期間使う人に、処理手数料を免除して指定ごみ袋を無料で渡す。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 加齢・病気・障害で長期間おむつなどを使っている
+  - 申請書にケアマネジャーや民生委員などの確認印が必要
+  where: 生活環境課、健康福祉施設の各課、各振興局市民福祉課
+  url: https://www.city.toyooka.lg.jp/koreisha/koreifukushi/1009212.html
+  confidence: high
+  amount: 指定ごみ袋の無料交付（枚数は頁に記載なし）
+not_found:
+- iro
+- haikai
+- shingu
+- mimamori
+- yutai

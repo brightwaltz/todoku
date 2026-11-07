@@ -1,0 +1,162 @@
+city: '402290'
+name: みやま市
+site: www.city.miyama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（食事を届け安否確認）
+  name_on_page: 配食サービス
+  summary: 食事の調理が難しい人の自宅を訪ね、栄養バランスのとれた食事を届けて安否も確かめる。
+  who: {}
+  at_application:
+  - 1人暮らしの高齢者や高齢者世帯など
+  - 虚弱・障がいなどで食事の調理が困難
+  where: 介護支援課 高齢者支援係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/060/20200107120000.html
+  confidence: high
+  amount: 1食あたり390円（利用料）
+- category: kaigo-yohin
+  name: 介護用品の給付（家族への支給）
+  name_on_page: 介護用品の給付
+  summary: 在宅で介護する家族等に、介護用品を支給する。世帯の所得で月額が変わる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住み、市町村民税が非課税
+  - 要介護4以上、または調査票の排尿・排便が見守り以上
+  - 対象の人を居宅で介護している家族等が申請
+  - 生活保護の同様の給付、施設入所・入院中は対象外
+  where: 介護支援課 高齢者支援係（申請書は頁に掲載）
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/060/20200107120000.html
+  confidence: high
+  amount: 世帯の所得要件により月額3,000円または5,000円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与（安心生活見守り支援事業）
+  summary: 24時間対応の受信センターにつながる緊急通報装置を貸し、月1回の安否確認もする。
+  who: {}
+  at_application:
+  - 1人暮らしの高齢者など
+  where: 介護支援課 高齢者支援係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/060/20200107120000.html
+  confidence: high
+  amount: 本人負担なし
+- category: shingu
+  name: 寝具洗濯サービス
+  name_on_page: 寝具洗濯サービス
+  summary: 寝具の洗濯・乾燥・消毒の費用を、年額の助成券で助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護1〜5の認定を受けた1人暮らし・高齢者世帯、寝たきり、障がい者など
+  - 入院・入所中など在宅でないときは使えない
+  - 身体状況や世帯状況を見て利用を決定
+  where: 介護支援課 高齢者支援係、または支所の市民サービス係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/060/20200107120000.html
+  confidence: high
+  amount: 年額7千円の助成券（1千円券7枚）
+- category: jutaku
+  name: 住みよか事業（住宅改造費の助成）
+  name_on_page: 住みよか事業
+  summary: 高齢者向けに住宅を改造する費用の一部を助成する。介護保険の住宅改修が先。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険の住宅改修を優先する
+  where: 介護支援課 高齢者支援係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/060/20200107120000.html
+  confidence: high
+  amount: 30万円を限度
+- category: haikai
+  name: 行方不明高齢者捜索システム（GPS端末）
+  name_on_page: 行方不明高齢者捜索システム
+  summary: 行方不明のおそれがある認知症の人に端末を持たせ、位置を家族に知らせる。開始費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、行方不明のおそれのある認知症の高齢者などを居宅で介護する家族
+  where: 介護支援課 高齢者支援係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/060/20200107120000.html
+  confidence: high
+  amount: 利用開始時の費用を助成。利用料は月1,200円（税別）と探索時の実費
+- category: haikai
+  name: 高齢者等見守り支援SOSネットワーク
+  name_on_page: みやま市高齢者等見守り支援SOSネットワーク
+  summary: 行方不明の高齢者等の特徴を協力者へメールで知らせる仕組み。事前登録もできる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 事前登録は認知症等で行方不明のリスクが高い人
+  - 行方不明のときは、家族が警察に届け出てから利用申請
+  where: 介護支援課 高齢者支援係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/100/20211105111837.html
+  confidence: high
+- category: gaishutsu
+  name: 運転免許証の自主返納への支援（タクシー券等）
+  name_on_page: 高齢者等運転免許証自主返納支援事業
+  summary: 運転免許証を自主返納した人に、タクシー利用券などを交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、有効な運転免許証を自主返納した人
+  - 返納時に満70歳以上、または健康上の理由で運転に不安がある
+  - 自主返納日から3年以内に申請
+  - 運転免許の取消通知書が必要
+  where: 介護支援課 高齢者支援係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/050/20200107121000.html
+  confidence: high
+  amount: 6万円相当：タクシー利用券、タクシー券＋バス回数券、シニアカー購入補助のいずれか
+- category: sonota
+  name: 高齢者世帯エアコン設置助成
+  name_on_page: 高齢者世帯エアコン設置助成事業
+  summary: エアコンのない高齢者のみの世帯に、エアコンの購入・設置費用を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯全員が65歳以上（令和9年3月末時点）
+  - 世帯全員が住民税非課税、または生活保護を受給
+  - 自宅にエアコンが1台もない（故障中のみも可）
+  - 別世帯と同居していない（条件を満たす場合を除く）
+  - 購入前に申請。申請期間は令和8年12月28日まで
+  where: 介護支援課 高齢者支援係
+  url: https://www.city.miyama.lg.jp/s024/kenko/070/230/20260622112200.html
+  confidence: high
+  amount: 1世帯1台、上限10万円
+- category: koken
+  name: 成年後見制度利用支援事業助成金
+  name_on_page: 成年後見制度利用支援事業助成金
+  summary: 成年後見等の審判を受けた人のうち生活が苦しい人に、後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 成年後見等の審判を受けた人
+  - 生活保護受給者、またはそれに準じると認められた人
+  where: 地域包括支援センター（頁の問い合わせ先）
+  url: https://www.city.miyama.lg.jp/s025/kenko/20250625095211.html
+  confidence: high
+not_found:
+- hochoki
+- ribiyo
+- iro
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,162 @@
+city: '372013'
+name: 高松市
+site: www.city.takamatsu.kagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきり・認知症などの方への紙おむつ給付
+  name_on_page: 高松市寝たきり高齢者等紙おむつ給付事業
+  summary: 身体の状況に応じて、紙おむつや尿取りパッドを自宅へ配達して給付する。
+  who: {}
+  at_application:
+  - 寝たきり又は認知症の65歳以上、または過活動膀胱の80歳以上（医師の証明）
+  - どちらの型も世帯の生計中心者が市民税非課税
+  - 寝たきり・認知症の型は原則要介護3〜5（特例あり）
+  - 介護保険施設に入所していない
+  - 短期入所を月16日以上使っていない
+  where: 長寿福祉課 在宅福祉係
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/zaitaku_service/kamiomutsu.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: あんしん通報サービス（緊急通報装置の設置）
+  name_on_page: 高松市あんしん通報サービス事業（在宅型）
+  summary: 緊急通報装置を設置し、24時間の緊急対応・相談と月1回の見守り電話を受けられる。
+  who:
+    at_home: true
+  at_application:
+  - 原則、協力者1人以上の登録承諾が必要（一部事業者は不要）
+  - 詳しい対象要件は長寿福祉課に確認
+  where: 長寿福祉課 在宅福祉係
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/mimamori/tsuho.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者福祉タクシー助成券
+  name_on_page: 高齢者福祉タクシー助成券の交付
+  summary: タクシー料金の一部に使える助成券を年度ごとに交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 本人と配偶者の市民税が非課税
+  - 毎年度申請が必要
+  where: 長寿福祉課、総合センター（支所などでも申請可）
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/zaitaku_service/taxi_josei.html
+  confidence: high
+  amount: 年度内有効の助成券15枚。1枚750円（各種手帳所持者は670円）
+- category: iro
+  name: 介護見舞金
+  name_on_page: 寝たきり高齢者などを介護している方への介護見舞金
+  summary: 要介護4・5の高齢者を家庭で常時介護している家族に、月額の見舞金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護される人・介護者とも市内に1年以上住所がある
+  - 民生委員や地域包括支援センター等の証明が必要
+  - 所得要件はない
+  - 毎年度申請が必要
+  where: 長寿福祉課
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/zaitaku_service/mimaikin.html
+  confidence: high
+  amount: 月額6,000円
+- category: haikai
+  name: 認知症等の行方不明に備える位置情報サービスの費用助成
+  name_on_page: 認知症等行方不明高齢者家族支援サービス
+  summary: 認知症等で行方不明になったとき居場所を家族に伝える衛星測位サービスの費用の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の高齢者が対象（詳しい要件は頁に書かれていない）
+  where: 長寿福祉課
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/zaitaku_service/haikai.html
+  confidence: low
+- category: haishoku
+  name: 配食見守りサービス（民間事業者）
+  name_on_page: 配食見守りサービス事業（民間事業者）
+  summary: 昼食か夕食を自宅へ届け、安否確認も行う。市民税非課税の人は1食ごとに助成がある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  - 調理や買い物が困難な世帯
+  - 定期的な安否確認が必要
+  - ケアマネジャー等の証明が必要
+  where: 長寿福祉課
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/mimamori/hashoku_mimamori.html
+  confidence: high
+  amount: 弁当代は実費。市民税非課税の人は1食200円助成（週2回まで）
+- category: haishoku
+  name: 配食見守りサービス（社会福祉法人等）
+  name_on_page: 配食見守りサービス事業（社会福祉法人等）
+  summary: 社会福祉法人等が昼食か夕食を自宅へ届け、安否確認も行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  - 調理や買い物が困難な世帯
+  - 定期的な安否確認が必要
+  - ケアマネジャー等の証明が必要
+  where: 長寿福祉課（施設経由でも提出可）
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/mimamori/haisyoku-syahuku.html
+  confidence: high
+  amount: 弁当代は実費。市民税非課税の人は1食200円助成（週2回まで）
+- category: mimamori
+  name: 高齢者特別あんしん見守り訪問
+  name_on_page: 高松市高齢者特別あんしん見守り事業
+  summary: 訪問員が週1回ほど自宅を訪ね、困りごとや体調を聞き取る見守りを行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 地域で孤立するおそれがある（要介護でサービス未利用、認知症等、セルフネグレクト、近隣と疎遠のいずれか）
+  - ケアマネジャー等の証明が必要
+  where: 長寿福祉課
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/mimamori/tokuetsu_mimamori.html
+  confidence: high
+- category: sonota
+  name: 一人暮らし高齢者の軽度生活援助
+  name_on_page: 一人暮らし高齢者などへの軽度生活援助
+  summary: シルバー人材センターの援助員が、家周りの清掃や整理整頓などを手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 日常生活上の援助が必要
+  - 高齢者のみの世帯に準ずる世帯も対象
+  - 毎年、現況届の提出が必要
+  where: 長寿福祉課
+  url: https://www.city.takamatsu.kagawa.jp/smph/kurashi/kenkou/koreisha_shien/zaitaku_service/keidoenjo.html
+  confidence: high
+  amount: 利用者負担は1時間350円（生活保護世帯は無料）。月2回（各3時間まで）または月3回（各2時間まで）
+not_found: []

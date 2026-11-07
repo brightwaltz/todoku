@@ -1,0 +1,137 @@
+city: '342114'
+name: 大竹市
+site: www.city.otake.hiroshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 家族介護用品支給
+  summary: 要介護4・5の在宅高齢者を介護する家族に、紙おむつとおむつカバーを支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人はおおむね65歳以上
+  - 介護している家族などが対象
+  where: 地域介護課地域支援係
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/2/1453510868980.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 緊急ボタンを押すと24時間対応のコールセンターが対応する装置を利用できる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で日常生活に注意を要するひとり暮らし
+  - または後期高齢者のみの夫婦で、どちらかが不安を感じる世帯
+  - または64歳以下のひとり暮らしの障害者
+  where: 地域介護課地域支援係
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/2/1453510868980.html
+  confidence: high
+  amount: 利用料は月400円
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・老人用電話）
+  name_on_page: 日常生活用具の給付など
+  summary: 電磁調理器を給付し、老人用電話を貸与する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者など
+  - 心身機能の低下で防火などの配慮が必要
+  where: 地域介護課地域支援係
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/2/1453510868980.html
+  confidence: high
+- category: sonota
+  name: 生活管理指導ショートステイ
+  name_on_page: 生活管理指導ショートステイ
+  summary: 体調を崩したときに養護老人ホームへ短期間泊まり、生活指導や体調調整を受ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 原則として要介護（要支援）認定を受けていない
+  where: 地域介護課地域支援係
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/2/1453510868980.html
+  confidence: high
+  amount: 1日1,200円、年間原則14日まで
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聞こえにくい65歳以上の人の補聴器購入費を助成する。事前に市の承認が必要。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 要介護認定を受けていない介護保険被保険者
+  - 両耳30デシベル以上で聴覚障害の手帳が未交付
+  - 医師が補聴器の使用を必要と判断
+  - 過去5年以内にこの助成を受けていない
+  where: 地域介護課地域支援係（市役所2階）
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/2/8114.html
+  confidence: high
+  amount: 上限30,000円（補聴器1台の本体費用）
+  more_urls:
+  - https://www.city.otake.hiroshima.jp/material/files/group/24/pannfuretto.pdf
+- category: mimamori
+  name: 生活見守りサービス利用料の支援
+  name_on_page: 生活見守りサービス事業
+  summary: ちゅピCOMの見守りサービス（テレビ電源で家族へ自動通知）の利用料等を市が支援する。
+  who: {}
+  at_application:
+  - 1月1日現在65歳以上のひとり暮らし
+  - または、おおむね65歳以上の二人暮らしで要介護3以上の人と介護者
+  - または市長が特に必要と認める人
+  - 市内に住所があり、リモコン操作ができる
+  where: 地域介護課地域支援係（ちゅピCOMが代行して申請）
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/2/6804.html
+  confidence: high
+- category: haikai
+  name: みまもりタグの無償貸与
+  name_on_page: みまもりタグ
+  summary: みまもりタグで、高齢者の位置情報を家族などが確認できる。
+  who: {}
+  at_application:
+  - 対象者・申請者の条件は問い合わせて確かめる
+  where: 地域介護課地域支援係
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/ninnchisyosesaku/1526605994506.html
+  confidence: high
+- category: gaishutsu
+  name: 阿多田島の高齢者のフェリー利用支援
+  name_on_page: 高齢者離島対策事業
+  summary: 阿多田島に住む70歳以上にフェリー利用券を交付し、介護サービス利用時のフェリー代も助成する。
+  who: {}
+  at_application:
+  - 阿多田島に住所があり現に居住している
+  - フェリー利用券は4月1日時点で満70歳以上の人
+  - フェリー代助成は要介護（要支援）認定者・総合事業の対象者と介添人
+  where: 地域介護課地域支援係（介護サービス利用支援は介護保険係）
+  url: https://www.city.otake.hiroshima.jp/soshiki/kenkofukushi/chiikikaigo/gyomu/2/1551678348385.html
+  confidence: high
+  amount: フェリー利用券を年間最大48枚
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申し立て費用や後見人報酬を払うのが難しい人に、市が助成する。
+  who: {}
+  at_application:
+  - 申し立て費用や後見人報酬の支払いが困難な人
+  where: 地域包括支援センター、地域介護課地域支援係
+  url: https://www.city.otake.hiroshima.jp/kenko/kourei/9446.html
+  confidence: low
+not_found:
+- haishoku
+- iro
+- shingu
+- ribiyo
+- jutaku

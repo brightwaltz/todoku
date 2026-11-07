@@ -1,0 +1,188 @@
+city: '012271'
+name: 歌志内市
+site: www.city.utashinai.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 歌志内市高齢者補聴器購入費助成事業
+  summary: 聴力が落ちた高齢者に、補聴器を買う費用の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所・住居がある
+  - 身体障害者手帳の交付対象にならない
+  - 補聴器が必要という医師の証明がある
+  where: 保健介護課 保健介護グループ
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00003335.html
+  confidence: high
+  amount: 上限 30,000 円
+- category: sonota
+  name: 草刈りヘルパーの派遣
+  name_on_page: 高齢者草刈り支援事業
+  summary: 草刈りが難しい高齢者世帯に、敷地内の草刈りをする人を派遣する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者世帯
+  - 6月1日から9月30日の間、年2回まで
+  where: 各地域の民生委員
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00003334.html
+  confidence: high
+  amount: 1回の派遣につき 1,000 円（利用者負担）
+- category: haishoku
+  name: 高齢者への給食宅配
+  name_on_page: 給食宅配サービス
+  summary: 日常生活に支障のある高齢者に食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 日常生活に支障のある高齢者
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 1食 300 円（利用者負担。1食 844 円のうち市が 544 円負担）
+- category: mimamori
+  name: ひとり暮らしの見守り訪問
+  name_on_page: 在宅高齢者支援事業
+  summary: 見守り委員が月2回ほど訪問し、ひとり暮らしの方の安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね70歳以上のひとり暮らしの方
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+- category: mimamori
+  name: 電話による安否確認
+  name_on_page: 電話訪問サービス
+  summary: ひとり暮らしの方に、電話で安否確認と相談を行う。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らしの方
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: 消防署と自宅を電話回線で直接つなぐ緊急通報装置を設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らし世帯
+  - 身体虚弱、または重度の身体障がいなどで機敏に動けない
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 設置・撤去費と消耗品は無料。通話料などは利用者負担
+- category: gaishutsu
+  name: 要介護3以上の方のタクシー利用券
+  name_on_page: 外出支援サービス
+  summary: 一般の交通機関を使いにくい在宅の重度の方に、タクシー利用券を交付する。
+  who: {}
+  at_application:
+  - 要介護3〜5相当の在宅高齢者、または重度の身体障がい者
+  - 一般の交通機関の利用が困難
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 1人あたり年 15,000〜25,000 円を限度
+- category: gaishutsu
+  name: 75歳以上のタクシー券・バス券
+  name_on_page: 高齢者外出支援交通機関利用助成事業
+  summary: 75歳以上の方に、タクシー券かバス券のどちらかを交付する。
+  who:
+    age_min: 75
+  at_application: []
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 1人あたり年 6,000 円分（タクシー券かバス券を選ぶ）
+- category: gaishutsu
+  name: 65歳以上の市内お出かけ用乗車券
+  name_on_page: 高齢者市内お出かけ支援事業
+  summary: 65歳以上の方に、市内移動用のタクシー乗車券・バス乗車券を交付する。
+  who:
+    age_min: 65
+  at_application: []
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: タクシーは市内移動で1枚につき 500 円分、バスは1枚につき 100 円分
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 判断能力が落ちた低所得の方の、申立て費用と後見人報酬を市が助成する。
+  who: {}
+  at_application:
+  - 判断能力が低下し成年後見制度を使う方
+  - 低所得者（基準は頁に無い）
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+- category: sonota
+  name: 高齢者世帯などの除雪ヘルパー派遣
+  name_on_page: 高齢者世帯等除雪サービス事業
+  summary: 除雪が難しい世帯に、玄関先から公道までの除雪をするヘルパーを派遣する。
+  who: {}
+  at_application:
+  - 70歳以上の高齢者、または要介護（支援）認定を受けている世帯等
+  - 除雪を頼める親族等が市内にいない
+  where: 地域の民生委員
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 利用者負担は1世帯年 10,000 円（市民税非課税、または均等割のみ課税の世帯は無料）
+- category: sonota
+  name: 屋根の雪下ろし費用の助成
+  name_on_page: 高齢者世帯等除雪助成事業
+  summary: 雪下ろしが難しい低所得世帯に、業者へ委託した除雪費用の一部を助成する。
+  who: {}
+  at_application:
+  - 70歳以上の高齢者や体の不自由な方などの世帯
+  - 屋根の雪下ろしが困難な低所得世帯
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 対象経費の3分の2、上限 5 万円
+- category: yutai
+  name: 温泉などの共通利用優待券
+  name_on_page: 高齢者健康センター・雲海の里かもい岳共通利用優待券交付事業
+  summary: 高齢者などに、温泉の利用優待券を年5枚交付する。
+  who: {}
+  at_application:
+  - 65歳以上、または身体障がい者1・2級、療育手帳A判定、精神障害者保健福祉手帳1級の方等
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 年5枚
+- category: sonota
+  name: 80歳の敬老祝金
+  name_on_page: 敬老祝金支給
+  summary: その年に満80歳になる市民に、長寿祝いの祝金を支給する。
+  who: {}
+  at_application:
+  - 当年に満80歳になる方
+  - 9月15日時点で市内に1年以上住所がある
+  where: 保健介護課 保健介護グループ（地域包括支援センター）または福祉事業課（頁の問い合わせ先）
+  url: https://www.city.utashinai.hokkaido.jp/hotnews/detail/00004203.html
+  confidence: low
+  amount: 10,000 円
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha

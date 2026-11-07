@@ -1,0 +1,137 @@
+city: '322091'
+name: 雲南市
+site: www.city.unnan.shimane.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 介護用品支給事業
+  summary: 在宅の高齢者を介護する非課税世帯の家族に、紙おむつなどの介護用品を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3〜5の人を介護している家族が申請する
+  - 生活保護法による用品支給を受けられる人は対象外
+  - 負担能力のある親族に扶養されている被介護者は対象外
+  where: 長寿障がい福祉課、各総合センター市民福祉課（吉田・掛合は市民サポート課）
+  url: https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/kaigo/support03.html
+  confidence: high
+  amount: 月額 6,540 円まで（紙おむつ、尿とりパッド、使い捨て手袋、清拭剤、ドライシャンプー）
+  more_urls:
+  - https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/files/R8handbook.pdf
+- category: sonota
+  name: たん吸引器の支給
+  name_on_page: たん吸引器支給事業
+  summary: 在宅の高齢者を介護する非課税世帯の家族に、たん吸引器を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3〜5の人を介護している家族が申請する
+  - 吸引器の使用で在宅生活が可能と医師が判断した人
+  - 診断書が必要。一度支給を受けると5年間は再申請できない
+  where: 長寿障がい福祉課、各総合センター市民福祉課（吉田・掛合は市民サポート課）
+  url: https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/kaigo/support01.html
+  confidence: high
+  amount: 1台につき 58,010 円まで
+- category: haikai
+  name: 見守り QR シールの交付（SOS ネットワーク）
+  name_on_page: 高齢者等見守りSOSネットワーク事業　QRシール
+  summary: 行方不明になるおそれのある高齢者を事前登録し、連絡先入りの QR シールを渡す。
+  who: {}
+  at_application:
+  - 高齢者等見守りSOSネットワーク事業への事前登録が必要
+  where: 保健医療政策課
+  url: https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/kaigo/dementia02.html
+  confidence: low
+  more_urls:
+  - https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/files/R8handbook.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報サービスの費用助成
+  name_on_page: 緊急通報サービス助成事業
+  summary: 緊急通報サービスの加入費用や月額使用料の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - ひとり暮らし高齢者、高齢者のみ、高齢者と障がい者のみの世帯
+  - または、ひとり暮らしの障がい者世帯
+  - 月額費用・身につける装置は別の要件あり（要件早見表）
+  where: 各総合センター市民福祉課（吉田・掛合は市民サポート課）
+  url: https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/service02.html
+  confidence: high
+  amount: 設置費 22,000 円（世帯）、身につける装置 36,000 円（個人）、月額 1,320 円まで
+  more_urls:
+  - https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/files/R8handbook.pdf
+- category: gaishutsu
+  name: バス・タクシー優待乗車券
+  name_on_page: 優待乗車券
+  summary: 免許のない高齢者などに、市民バス・タクシーで使える回数券を半額で交付する。
+  who: {}
+  at_application:
+  - 市民で普通自動車免許を持たない人
+  - 65歳以上、または各種障害者手帳・特定疾患受給者証などの所持者
+  - 先に資格認定の申請をして資格証を受ける
+  where: 長寿障がい福祉課、各総合センター市民福祉課（吉田・掛合は市民サポート課）
+  url: https://www.city.unnan.shimane.jp/unnan/kurashi/seikatsu/koutsuu/traffic02.html
+  confidence: high
+  amount: 券面額の半額で購入。年度内は券面 40,000 円分（負担 20,000 円）まで
+  more_urls:
+  - https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/files/R8handbook.pdf
+- category: gaishutsu
+  name: 福祉タクシー利用券の交付
+  name_on_page: 福祉タクシー利用料金助成事業
+  summary: 車いすやストレッチャーが必要な在宅の人に、福祉タクシーの利用券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 移動に車いす・ストレッチャーが必要で、市内に住所がある人
+  - 要介護2〜5、または車いす貸与を受ける要支援1・要介護1
+  - または身体障害者手帳の一定の級、特別障害者手当等の受給者
+  - 施設入所中の受診・一時帰宅などの利用は対象外
+  where: 長寿障がい福祉課、各総合センター市民福祉課（吉田・掛合は市民サポート課）
+  url: https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/aid01.html
+  confidence: high
+  amount: 500円券を年 60 枚（3 万円分）
+  more_urls:
+  - https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/files/R8handbook.pdf
+- category: gaishutsu
+  name: 運転免許自主返納の支援（乗車券・入浴券）
+  name_on_page: 高齢者等運転免許証自主返納支援事業
+  summary: 運転免許を全部返納した人に、優待乗車券と温浴施設の入浴券を交付する。
+  who: {}
+  at_application:
+  - 有効な免許をすべて返納し、取消しから2年以内の市民
+  - 65歳以上、または各種障害者手帳などの所持者
+  - 1人1回限り
+  where: 防災部くらし安全室、各総合センター窓口
+  url: https://www.city.unnan.shimane.jp/unnan/kurashi/seikatsu/koutsuu/license-retur-.html
+  confidence: high
+  amount: 総額 20,000 円以内（優待乗車券 8,000 円以上を含む）
+  more_urls:
+  - https://www.city.unnan.shimane.jp/unnan/kenkou/koureisya/files/R8handbook.pdf
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

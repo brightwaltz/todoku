@@ -1,0 +1,194 @@
+city: '242047'
+name: 松阪市
+site: www.city.matsusaka.mie.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙オムツ等の給付
+  name_on_page: 寝たきり高齢者等紙オムツ給付事業
+  summary: 常にオムツが必要な在宅の高齢者に、紙オムツ等を毎月自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 本人と世帯に市民税が課税されていないこと
+  - 要介護1・2は主治医意見書等で自立度が一定以上の基準
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/omutsu.html
+  confidence: high
+  amount: 要介護度で内容が違う。1〜3は紙オムツか紙パンツ、4・5は尿取りパッドも付く。
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 見守りと栄養改善が必要な高齢者に、安否確認をしながら弁当を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 疾病等で見守りと栄養改善が必要
+  - 65歳未満は窓口か電話で相談
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/haishoku.html
+  confidence: high
+  amount: 週3食まで。費用は実費相当額で、事業所により回数・費用が違う。
+- category: haikai
+  name: 認知症等高齢者のGPS端末貸与
+  name_on_page: 認知症等高齢者GPS端末貸与事業
+  summary: 行方不明の恐れがある認知症等の高齢者のGPS端末の加入料等を市が負担する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住のおおむね65歳以上
+  - 認知症か疑いで行方不明の恐れがある
+  - 申請者は同一世帯か同一敷地内で介護する人
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/gps.html
+  confidence: high
+  amount: 加入料金と充電機器等は市が負担。月額基本料金1,200円（税抜）などは利用者負担。
+- category: haikai
+  name: おかえりSOSネットワーク（事前登録）
+  name_on_page: おかえりSOSネットワークまつさか
+  summary: 行方不明の心配がある高齢者を登録し、反射材シール配付と協力者へのメール配信で捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 松阪市在住
+  - 認知症で行方不明になる心配がある高齢者
+  - 登録票に本人の顔写真が必要
+  where: 健康福祉総務課、各地域振興局地域住民課、各地域包括支援センター
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/sosnet.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 寝たきり高齢者等を在宅で介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の認定から1年以上たっている
+  - 過去1年間、介護保険サービスを使っていない（短期入所約1週間は可）
+  - 過去1年間に90日以上の長期入院がない
+  - 本人の世帯（別世帯なら介護者の世帯）の市民税が非課税
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/irokin.html
+  confidence: high
+  amount: 寝たきり高齢者1人につき年額10万円。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 緊急時に対応しにくい在宅のひとり暮らしの方に、24時間対応の通報装置を貸す。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 同一敷地内や付近に家族がいないこと
+  - 心身の障がいや疾病で緊急時に対応しにくい
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/tuhosouchi.html
+  confidence: high
+  amount: 設置費と機器の貸与は無料。通話も無料。
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災報知器）
+  name_on_page: 日常生活用具給付事業
+  summary: 火の元が心配な在宅の高齢者に、電磁調理器か火災報知器を給付する。
+  who:
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯
+  - 心身機能の低下で防火に特に配慮が必要
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/seikatsuyogu.html
+  confidence: high
+  amount: 電磁調理器か火災報知器（熱感知式）のどちらか原則1品を給付。
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 外出が難しい要介護4・5の在宅高齢者宅への理美容師の訪問出張費を、利用券で市が負担する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 老衰・心身の障がい・疾病で理髪店に行くのが難しい
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/ribiyo.html
+  confidence: high
+  amount: 利用券は申請月により年度内4〜1枚。技術料・材料費は本人負担。
+- category: sonota
+  name: 高齢者の在宅生活支援（庭の草取り・整理・軽微な修繕）
+  name_on_page: 高齢者在宅生活支援事業
+  summary: 高齢者のみの世帯に、草取り・屋内の整理・軽微な修繕の支援を有料で行う。
+  who:
+    household:
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯で、親族の協力が得られない
+  - 要支援・要介護の認定、または基本チェックリストで事業対象
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/zaitakushien.html
+  confidence: high
+  amount: 月1回・年度中3回まで。利用料は1時間230円。
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（市が保険料負担）
+  name_on_page: 認知症高齢者等個人賠償責任保険
+  summary: 認知症の人が他人に損害を与えた場合に備え、市が保険料を全額負担して加入する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - おかえりSOSネットワークまつさかに登録している
+  - 松阪市に住民登録があり自宅で生活している
+  - 主治医意見書に認知症の診断名がある
+  where: 健康福祉総務課
+  url: https://www.city.matsusaka.mie.jp/site/koureisya-wel/kojinnbaisyouhoken.html
+  confidence: high
+  amount: 個人負担なし。補償は1事故あたり最大1億円。
+  more_urls:
+  - https://www.city.matsusaka.mie.jp/site/koureisya-wel/sosnet.html
+not_found:
+- koken
+- hochoki
+- jutaku
+- gaishutsu
+- mimamori
+- chusha
+- yutai

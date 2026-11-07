@@ -1,0 +1,147 @@
+city: '422070'
+name: 平戸市
+site: www.city.hirado.nagasaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 「食」の自立支援事業（配食）
+  name_on_page: 「食」の自立支援事業
+  summary: ひとり暮らしの高齢者などに、夕食を1日1食届けて安否も確かめる。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の単身・高齢者のみ世帯など、または障がい者
+  - 自立支援の観点で利用が適切と認められる人
+  - 調査のうえ「食」の自立支援会議で利用を決める
+  where: 長寿介護課 高齢者支援班
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/files/tebiki7.pdf
+  confidence: high
+  amount: 1食500円（利用者負担）、夕食を1日1食
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報機器貸与事業
+  summary: 緊急通報装置（希望者は人感センサーも）を貸し出し、緊急時に対応する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者、または重度身体障がい者
+  - 高齢者のみの世帯等で、慢性的疾患等により常時注意が必要
+  - 緊急時の対応が困難な人
+  - 固定電話が必要、協力員の同意書が要る
+  where: 長寿介護課 高齢者支援班
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/files/tebiki7.pdf
+  confidence: high
+  amount: 装置は月500円（住民税非課税世帯は無料）、人感センサーは月220円
+- category: iro
+  name: 在宅寝たきり高齢者等の介護見舞金
+  name_on_page: 在宅寝たきり高齢者等介護見舞金支給事業
+  summary: 要介護3以上の寝たきり高齢者を居宅で介護している人に、見舞金を年1回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 基準日（10月1日）に市内在住で、市内に1年以上住所がある
+  - 基準日前1年のうち180日以上、居宅で介護している人
+  - 基準日前1年の入院（短期入所を含む）は90日以内
+  - 民生委員の介護証明書が必要、毎年10月末までに申請
+  where: 長寿介護課 高齢者支援班
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/files/tebiki7.pdf
+  confidence: high
+  amount: 年額60,000円（12月25日までに支給）
+- category: haikai
+  name: 徘徊高齢者の位置探知システム助成
+  name_on_page: 徘徊高齢者位置探知システム助成事業
+  summary: 徘徊のおそれのある高齢者の位置探知サービスの初期設定費を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護者が、位置探知サービスの事業者と契約した人
+  - おおむね65歳以上で、認知症による徘徊のおそれがある
+  - 要介護・要支援の認定、またはこれと同等と市長が認めた人
+  - 毎月の利用料は自己負担
+  where: 長寿介護課 高齢者支援班
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/files/tebiki7.pdf
+  confidence: high
+  amount: 初期設定費用を助成（1万円を超えるときは1万円まで）
+- category: haikai
+  name: 高齢者のQRコード見守り
+  name_on_page: 高齢者 QR コード活用見守り事業
+  summary: 衣服や杖に貼るQRコードを配り、迷った高齢者の身元を早く確認できるようにする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 外出時に戻れなくなる可能性がある在宅の高齢者の家族・支援者等
+  - 認知症などの高齢者が対象（若年性認知症に相当する人も含む）
+  - 利用申請書と利用者台帳を出す
+  where: 長寿介護課 高齢者支援班
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/files/tebiki7.pdf
+  confidence: high
+- category: ribiyo
+  name: 高齢者等の訪問理美容
+  name_on_page: 高齢者等訪問理美容サービス事業
+  summary: 外出が難しい在宅の高齢者などの自宅や施設へ、理美容師が出張する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身・高齢者のみ世帯で、寝たきり等により外出が困難
+  - 身体障がい者手帳があり、日常的に外出が困難な人
+  - 市内の老人福祉施設・介護保険施設等に入所している人
+  - 上のほか、外出が困難で市長が必要と認める人
+  - 利用は原則年6回以内
+  where: 長寿介護課 高齢者支援班（委託先の理美容店が訪問）
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/files/tebiki7.pdf
+  confidence: high
+  amount: 理美容料金は全額自己負担（出張の移動経費は市が受託者に支払う）
+- category: gaishutsu
+  name: 高齢者いきいきおでかけ券
+  name_on_page: 平戸市高齢者いきいきおでかけ券
+  summary: バス・タクシー・フェリーや施設で使えるおでかけ券を年1回交付する。
+  who: {}
+  at_application:
+  - 4月1日現在75歳以上、または70〜74歳で運転免許を自主返納した人
+  - 4月1日以降も引き続き市に住民登録している
+  - 介護・障がい者支援施設の入所者、福祉タクシー助成の利用者は対象外
+  - 原付免許のみ返納した人は対象外
+  where: 長寿介護課高齢者支援班（1階13番窓口）、各支所・出張所、度島連絡所、公式LINE
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/2026-0915-1007-100.html
+  confidence: high
+  amount: 基本券9,000円分（100円券90枚）。離島在住等は加算券1,000円分（免許返納者は除く）
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 平戸市高齢者補聴器購入費助成事業
+  summary: 難聴で手帳の対象でない市民税非課税の高齢者に、補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 平戸市に在住している
+  - 両耳の聴力レベルが50デシベル以上
+  - 身体障害者手帳（聴覚障害）の交付対象でない
+  - 耳鼻咽喉科医が、補聴器の効果が期待できると判断した
+  - 交付決定の前に買った補聴器は対象外
+  where: 長寿介護課高齢者支援班（1階13番窓口）
+  url: https://www.city.hirado.nagasaki.jp/kurashi/health/kaigo/2018-0731-1001-100.html
+  confidence: high
+  amount: 購入費の3分の2（千円未満切り捨て）、上限40,000円、1人1回
+not_found:
+- kaigo-yohin
+- koken
+- shingu
+- jutaku
+- nichijo-yogu
+- yutai

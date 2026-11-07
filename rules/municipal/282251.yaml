@@ -1,0 +1,150 @@
+city: '282251'
+name: 朝来市
+site: www.city.asago.hyogo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 補聴器購入費助成
+  summary: 聴力が下がった65歳以上の人に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 両耳40dB以上70dB未満、または片耳70dB以上で他耳70dB未満
+  - 耳鼻咽喉科医が補聴器の装用を有用と判断（医師意見書）
+  - 申請前に購入したものは対象外
+  where: 高年福祉課
+  url: https://www.city.asago.hyogo.jp/soshiki/20/25030.html
+  confidence: high
+  amount: 上限3万円、1人1回限り（片耳・両耳とも同額）
+  more_urls:
+  - https://www.city.asago.hyogo.jp/uploaded/attachment/18401.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 緊急ボタンで通報でき、火災感知と健康相談も付く装置を設置する。
+  who: {}
+  at_application:
+  - 市内在住で、おおむね65歳以上の援護を要するひとり暮らし
+  - または全員おおむね65歳以上の世帯で常時注意を要する人
+  - または重度身体障害者のひとり暮らし
+  - または重度障害者がいて常時注意を要する世帯の対象者
+  where: 高年福祉課、各支所
+  url: https://www.city.asago.hyogo.jp/soshiki/20/1339.html
+  confidence: high
+  amount: 自己負担は月300円。生活保護世帯等は負担なし
+- category: gaishutsu
+  name: 外出支援サービス（福祉タクシー運賃割引）
+  name_on_page: 外出支援サービス事業
+  summary: 通院や機能訓練のための福祉車両タクシー運賃を割り引く。
+  who:
+    at_home: true
+  at_application:
+  - 一般の交通機関を使うのが難しい人
+  - 要介護・要支援認定で、寝たきり・車いす・歩行に介助が必要
+  - または下肢・体幹障害やじん臓障害の身体障害者手帳の人
+  - または療育手帳A・B1、精神手帳1・2級で歩行に介助が必要
+  - 行き先は医療機関・機能訓練施設のみ、福祉車両に限る
+  where: 高年福祉課、各支所地域振興課
+  url: https://www.city.asago.hyogo.jp/soshiki/20/1346.html
+  confidence: high
+  amount: 運賃の10〜50%を自己負担（区分で異なる）、生活保護等は無料。年間上限あり
+  more_urls:
+  - https://www.city.asago.hyogo.jp/uploaded/attachment/18401.pdf
+- category: jutaku
+  name: 人生いきいき住宅助成（バリアフリー・窓断熱改修の助成）
+  name_on_page: 人生いきいき住宅助成事業
+  summary: 高齢者や障害者のいる世帯の住宅改造と窓断熱の費用を助成する。
+  who: {}
+  at_application:
+  - 市内の世帯で、65歳以上がいる（一般型）
+  - または要支援・要介護認定、身体・療育手帳の人がいる（特別型）
+  - 所得制限あり（給与のみ年収800万円超などは対象外）
+  - 交付決定前に着工した工事は対象外
+  - 予算に達し次第受付終了
+  where: 高年福祉課、高齢者相談センター
+  url: https://www.city.asago.hyogo.jp/soshiki/20/1957.html
+  confidence: high
+  amount: 一般型は工事費に応じ2万〜15万円。特別型は助成率1/3〜9/10。断熱は20%（上限5万円）
+  more_urls:
+  - https://www.city.asago.hyogo.jp/uploaded/attachment/18339.pdf
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク事業
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれがある人を事前登録し、協力機関へのメールで早期発見につなげる。
+  who: {}
+  at_application:
+  - 認知症の疑い、または認知症と診断された人とその家族
+  - または行方不明のおそれがある障害のある人・障害児とその家族
+  - 事前に氏名・身体的特徴・写真などの登録申請が必要
+  where: 地域包括支援センター
+  url: https://www.city.asago.hyogo.jp/site/shinsei/2065.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等のGPS端末費用助成
+  name_on_page: ＧＰＳ機能付端末費用の助成
+  summary: 家に戻れなくなるおそれのある認知症高齢者のGPS端末の利用料を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある認知症高齢者など
+  - 認知症高齢者等SOSネットワークに登録している
+  where: 地域包括支援センター
+  url: https://www.city.asago.hyogo.jp/soshiki/20/9786.html
+  confidence: high
+  amount: 端末利用料のうち月300円まで
+  more_urls:
+  - https://www.city.asago.hyogo.jp/uploaded/attachment/18401.pdf
+- category: koken
+  name: 成年後見制度利用支援事業（市長申立て・後見人報酬の助成）
+  name_on_page: 朝来市成年後見制度利用支援事業
+  summary: 身寄りのない人の市長申立てと、後見人報酬の支払いの助成を行う。
+  who: {}
+  at_application:
+  - 認知症・知的障害・精神障害などで判断能力が不十分
+  - 報酬助成は、後見人等への報酬の支払いが困難な人
+  - 報酬助成は家裁の報酬付与の審判から3か月以内に申請
+  - 市長申立ては、身寄りがなく親族が申し立てられない場合
+  where: 65歳以上は地域包括支援センター、障害者手帳の人は基幹相談支援センター
+  url: https://www.city.asago.hyogo.jp/soshiki/19/26845.html
+  confidence: high
+  amount: 報酬助成の上限は在宅で月2.8万円、施設入所で月1.8万円
+- category: kaigo-yohin
+  name: 紙おむつ用ごみ袋の支給
+  name_on_page: 紙おむつ用ごみ袋支給事業
+  summary: 常時紙おむつが必要な在宅の人に、市指定のごみ袋（大）を支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4・5の65歳以上で常時紙おむつが必要
+  - または障害者等日常生活給付事業で紙おむつ等の給付対象の人
+  where: 高年福祉課
+  url: https://www.city.asago.hyogo.jp/uploaded/attachment/18401.pdf
+  confidence: low
+  amount: 1人につき年度あたり最大50枚（申請月で枚数が変わる）
+not_found:
+- haishoku
+- iro
+- shingu
+- ribiyo
+- yutai

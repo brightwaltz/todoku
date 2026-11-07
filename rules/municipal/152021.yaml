@@ -1,0 +1,195 @@
+city: '152021'
+name: 長岡市
+site: www.city.nagaoka.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 安心連絡システム（緊急通報・見守り）
+  name_on_page: 安心連絡システムの利用
+  summary: 自宅に通報機器と安否センサーを置き、24時間体制で緊急通報と見守りを受けられる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしが基本
+  - 高齢者夫婦などは相談で利用できる場合がある
+  where: 長寿はつらつ課、アオーレ長岡福祉窓口、各支所地域振興・市民生活課、地域包括支援センター
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate02/zaitaku_survice.html
+  confidence: high
+  amount: 月額 500 円（市町村民税非課税世帯）、1,500 円（課税世帯）。生活保護世帯は無料
+  more_urls:
+  - https://www.city.nagaoka.niigata.jp/fukushi/cate02/file/zaitaku-02a.pdf
+- category: iro
+  name: 在宅介護者支援金
+  name_on_page: 在宅介護者支援金の支給
+  summary: 要介護の高齢者を同居で在宅介護している家族に、支援金を支給する。
+  who:
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される人が 65 歳以上で市内に住民登録がある
+  - 認知症（自立度Ⅲ以上）か常時おむつ使用
+  - ケアマネか地域包括の職員が判定する
+  - 介護をする人が同居し常時介護している
+  where: 担当ケアマネジャーか地区担当の地域包括支援センター。問合せは長寿はつらつ課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate02/zaitaku_survice.html
+  confidence: high
+  amount: 月額 3,000 円（要支援2〜要介護2）、5,000 円（要介護3〜5）。介護 20 日以上の月が対象
+  more_urls:
+  - https://www.city.nagaoka.niigata.jp/fukushi/cate02/file/zaitaku-01b.pdf
+- category: jutaku
+  name: 住宅改造費補助（介護保険の住宅改修に上乗せ）
+  name_on_page: 住宅改造費補助
+  summary: 介護保険の住宅改修と併せて使える、住宅改造費の市独自の補助。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯全員の前年の収入合計が 600 万円未満
+  where: 介護保険課、各支所地域振興・市民生活課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate02/zaitaku_survice.html
+  confidence: high
+  amount: 限度額 30 万円に対し、所得税非課税世帯は 3/4、課税世帯は 1/2 を上限に補助
+- category: mimamori
+  name: 認知症高齢者家族やすらぎ支援事業（支援員の派遣）
+  name_on_page: 認知症高齢者家族やすらぎ支援事業
+  summary: 家族の外出や休息のとき、研修を受けた支援員が認知症の人の見守りや話し相手に来る。
+  who: {}
+  at_application:
+  - おおむね 60 歳以上の認知症の人を介護する家族
+  - 事業対象者、または要支援1〜要介護2で認知機能の症状判定あり
+  - 介護する人と見守り対象者の両方が市内に住民登録
+  - 同居でなくても、頻繁に通って介護していればよい
+  where: 長寿はつらつ課、各支所地域振興・市民生活課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate06/service.html
+  confidence: high
+  amount: 2 時間以内 200 円、超えると 1 時間ごとに 100 円加算。生活保護は無料
+  more_urls:
+  - https://www.city.nagaoka.niigata.jp/fukushi/cate09/file/service-19a.pdf
+- category: haikai
+  name: 認知症高齢者等見守りシール配布
+  name_on_page: 長岡市認知症高齢者等見守りシール配布事業
+  summary: 行方不明のおそれがある高齢者を事前登録し、登録番号入りの見守りシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる可能性がある高齢者
+  where: 長寿はつらつ課、各支所地域振興・市民生活課。電子申請もある
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate06/service.html
+  confidence: high
+  amount: 無料。原則 10 枚（1 シート）配布
+- category: koken
+  name: 法定後見制度利用支援事業（申立費用・報酬の助成）
+  name_on_page: 法定後見制度利用支援事業
+  summary: 費用の負担が難しい人に、後見の申立費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受給中、または収入・資産が基準以下で市民税非課税世帯
+  - 報酬の助成は家庭裁判所の報酬決定を受けていること
+  - 申立費用は審判確定から 1 年以内に申請
+  where: 長寿はつらつ課 高齢者基幹包括支援センター（65 歳以上など）
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate07/shien-jigyo.html
+  confidence: high
+  amount: 報酬は在宅で月額上限 28,000 円、施設で 18,000 円。1 回の申請で 24 か月分まで
+- category: hochoki
+  name: 難聴者補聴器購入費助成
+  name_on_page: 難聴者補聴器購入費助成事業
+  summary: 手帳の対象にならない難聴の人に、補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 申請時に 50 歳以上 74 歳以下で市内に住所がある
+  - 両耳とも 40 デシベル以上（医師が必要と認めれば例外あり）
+  - 聴覚障害の身体障害者手帳の対象にならない程度
+  - 医師意見書が必要。購入前に申請する
+  - 前回の助成から 5 年あける
+  where: 長寿はつらつ課、アオーレ長岡福祉窓口、各支所地域振興・市民生活課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate06/hearing-aid.html
+  confidence: high
+  amount: 購入費の 1/2、上限 25,000 円
+- category: sonota
+  name: はり・きゅう・マッサージ施術費助成
+  name_on_page: はり、きゅう、マッサージ施術費助成
+  summary: 75 歳以上に、指定の施術所で使える施術費の助成券を交付する。
+  who:
+    age_min: 75
+  at_application: []
+  where: 長寿はつらつ課、各支所地域振興・市民生活課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate02/zaitaku_survice.html
+  confidence: high
+  amount: 1 回 1,000 円の助成券を年 4 枚
+  more_urls:
+  - https://www.city.nagaoka.niigata.jp/fukushi/cate02/file/zaitaku-05.pdf
+- category: sonota
+  name: 生活用具（吸引器）の貸与
+  name_on_page: 生活用具（吸引器）の貸与
+  summary: 寝たきりの高齢者等に吸引器を貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきり高齢者等（指示書が必要）
+  where: 長寿はつらつ課、各支所地域振興・市民生活課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate02/zaitaku_survice.html
+  confidence: high
+  amount: 利用料は無料〜全額負担（生計中心者の市民税額で決まる）
+- category: sonota
+  name: 車いす貸与
+  name_on_page: 車いす貸与
+  summary: 歩行が難しい高齢者等に、短期間、車いすを無料で貸す。
+  who: {}
+  at_application:
+  - 車いすに乗る人が市内に住所がある
+  - 短期間だけ車いすが必要
+  - 事前予約はできず、在庫がなければ借りられない
+  where: 長寿はつらつ課、各支所地域振興・市民生活課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate02/zaitaku_survice.html
+  confidence: high
+  amount: 無料。原則 1 か月、事情により年度内 4 か月まで
+  more_urls:
+  - https://www.city.nagaoka.niigata.jp/fukushi/cate09/file/service-19a.pdf
+- category: sonota
+  name: 要援護世帯除雪費助成
+  name_on_page: 要援護世帯除雪費助成事業
+  summary: 自力で除雪できない高齢者世帯などに、屋根の雪下ろし等の費用を助成する。
+  who: {}
+  at_application:
+  - 高齢者・母子・障害者世帯などの要援護世帯
+  - 自力で除雪が困難で、親族から労力・金銭の援助がない
+  - 世帯全員が市民税の均等割のみ課税か非課税
+  - 生活保護世帯は対象外。事前登録が必要
+  where: 各地区の民生委員・児童委員。問合せは福祉総務課
+  url: https://www.city.nagaoka.niigata.jp/fukushi/cate04/y-jyosetu.html
+  confidence: high
+  amount: 屋根の除雪は 1 回上限 24,300 円（令和 8 年度）。回数は地域で 3〜4 回
+not_found:
+- kaigo-yohin
+- haishoku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- chusha
+- yutai

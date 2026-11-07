@@ -1,0 +1,121 @@
+city: '042153'
+name: 大崎市
+site: www.city.osaki.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者タクシー利用助成券
+  name_on_page: タクシー利用助成券
+  summary: 在宅の高齢者がタクシーに乗るときの費用の一部を、助成券で助ける。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の高齢者世帯か、それと同等と認められる世帯の人
+  - 要支援・要介護認定を受けた人、または事業対象者
+  - 高齢者と同居家族が住民税非課税、または生活保護を受けている
+  - 18〜64歳の家族がいる場合は、運転できない事情が必要
+  - 3か月以上の入院中・施設入所中の人は対象外
+  where: 高齢障がい福祉課、各総合支所市民福祉課
+  url: https://www.city.osaki.miyagi.jp/shisei/kurashinojoho/iryo_kenko_fukushi/3/1/4104.html
+  confidence: high
+  amount: 月 2 枚（1 枚 600 円）
+- category: gaishutsu
+  name: 福祉有償運送の利用助成券
+  name_on_page: 福祉有償運送（リフト付カーなど）の利用助成
+  summary: NPO のリフト付き車両などで外出するときの料金の一部を、助成券で助ける。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、65歳以上で要介護3〜5の人
+  - または原則65歳未満で、下肢・体幹の身体障害者手帳1・2級の人
+  - NPO 法人への会員登録と利用予約が必要
+  - タクシー助成券などを受けている人は対象外
+  where: 高齢障がい福祉課、各総合支所市民福祉課
+  url: https://www.city.osaki.miyagi.jp/shisei/kurashinojoho/iryo_kenko_fukushi/3/1/5744.html
+  confidence: high
+  amount: 月 2 枚（最大 24 枚）。迎車料金は全額、乗車・待機料金は一部を助成
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品助成券
+  name_on_page: 高齢者家族等介護用品助成券
+  summary: 紙おむつなどを使う高齢者を介護する家族に、購入費の助成券を交付する。
+  who:
+    age_min: 60
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 対象は常時失禁状態の高齢者を介護している家族（ひとり暮らしは本人）
+  - 生活保護の人、特養・老健・介護医療院の入所者は対象外
+  where: 高齢障がい福祉課高齢福祉担当、各総合支所市民福祉課
+  url: https://www.city.osaki.miyagi.jp/shisei/kurashinojoho/iryo_kenko_fukushi/3/1/4255.html
+  confidence: high
+  amount: 1 か月あたり 1,500 円分
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 配食サービス
+  summary: 食事の用意が難しい高齢者に、昼食か夕食を 1 日 1 回届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の障害・傷病・加齢などで食事の用意が困難な人
+  - 古川地域は食数の上限のため、新規受付を当面停止中
+  - 地域により配達できない曜日や地域がある
+  where: 高齢障がい福祉課、各総合支所市民福祉課
+  url: https://www.city.osaki.miyagi.jp/shisei/kurashinojoho/iryo_kenko_fukushi/3/1/5713.html
+  confidence: high
+  amount: 利用者負担は 1 食 400 円、最大で週 7 回
+- category: kinkyu-tsuho
+  name: 高齢者安心見守り事業（緊急通報・安否確認）
+  name_on_page: 高齢者安心見守り事業
+  summary: 専用の通信機器を設置し、急病や事故のときの駆け付けや安否確認をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要支援・要介護認定を受けている、または脳疾患・心臓病の既往がある
+  - 固定電話がないと安否確認センサは付けられない
+  where: 高齢障がい福祉課高齢福祉担当、各総合支所市民福祉課
+  url: https://www.city.osaki.miyagi.jp/shisei/kurashinojoho/iryo_kenko_fukushi/3/1/4176.html
+  confidence: high
+  amount: 利用者負担は月額 600 円
+- category: sonota
+  name: 軽度生活援助
+  name_on_page: 軽度生活援助
+  summary: 洗濯・掃除・買物・外出の付き添いや雪かきなどの手伝いを、有料で受けられる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしか高齢者のみの世帯などで、軽度な援助が必要な人
+  - 要支援・要介護認定の人は基本サービスを使えない
+  - 世帯分離していても、同居の家族がいれば審査の対象
+  where: 高齢障がい福祉課、各総合支所市民福祉課
+  url: https://www.city.osaki.miyagi.jp/shisei/kurashinojoho/iryo_kenko_fukushi/3/1/4375.html
+  confidence: high
+  amount: 基本・付加サービスとも月 12 時間まで。負担は非課税世帯が 1 時間 200 円、課税世帯が 400 円
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

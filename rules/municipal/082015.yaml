@@ -1,0 +1,214 @@
+city: 082015
+name: 水戸市
+site: www.city.mito.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の給付
+  name_on_page: 家族介護用品給付事業
+  summary: 尿失禁のある在宅高齢者に、紙おむつや尿取りパッドを月1回配達で給付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 水戸市内に住民票がある
+  - 要介護3の人は排泄に見守りか介助が必要な場合に限る
+  where: 高齢福祉課（高齢者支援センターで代行申請も可）
+  url: https://www.city.mito.lg.jp/page/2309.html
+  confidence: high
+  amount: 月6,000円まで給付。利用者負担は月100〜500円
+- category: haishoku
+  name: 生活支援配食（夕食の配達）
+  name_on_page: 生活支援配食サービス
+  summary: 調理が困難な高齢者に、調理済みの夕食を週2〜5日配達する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体の障害や病気で調理が困難
+  - 要介護・要支援認定を受けている、または介護予防事業で栄養改善が必要と認められた
+  where: 高齢福祉課
+  url: https://www.city.mito.lg.jp/page/4498.html
+  confidence: high
+  amount: 1食500円（利用者負担）
+- category: haikai
+  name: 認知症高齢者等の位置探索（GPS）サービス
+  name_on_page: 認知症高齢者等家族支援位置探索サービス
+  summary: 帰宅困難のおそれがある高齢者の所在を、GPS端末で探索して家族に知らせる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上の高齢者の家族が申し込む
+  where: 高齢福祉課地域支援センター
+  url: https://www.city.mito.lg.jp/page/5157.html
+  confidence: high
+  amount: 申込料1,100円、月額利用料380円（利用者負担）
+- category: haikai
+  name: 行方不明高齢者等のSOSネットワーク事前登録
+  name_on_page: 行方不明高齢者等SOSネットワーク
+  summary: 行方不明のおそれがある人を事前登録すると、行方不明時に市が協力機関へ情報提供する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人の写真を添えて登録届を出す
+  where: 高齢福祉課、または最寄りの地域包括支援センター
+  url: https://www.city.mito.lg.jp/page/4095.html
+  confidence: high
+  more_urls:
+  - https://www.city.mito.lg.jp/page/67453.html
+- category: koken
+  name: 成年後見制度の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が困難な人に、後見の申立て費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 市の住民基本台帳に記録されている被後見人等
+  - 生活保護世帯、中国残留邦人等支援給付受給者、またはこれに準ずる状態
+  - 申請は審判確定日から3か月以内
+  where: 高齢福祉課地域支援センター（権利擁護係）
+  url: https://www.city.mito.lg.jp/page/4483.html
+  confidence: high
+  amount: 報酬助成は在宅で月28,000円まで。施設入所や3か月超の入院は月18,000円まで
+- category: kinkyu-tsuho
+  name: 緊急通報機器の設置（在宅見守り安心システム）
+  name_on_page: 在宅見守り安心システム
+  summary: ボタンで受信センターに通報でき、月1回の安否確認電話もある。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 75歳以上のひとり暮らし
+  - または、おおむね65歳以上の病弱なひとり暮らし・高齢者のみ世帯
+  - または、重度の身体障害のあるひとり暮らし
+  - 緊急時に駆けつける近隣の協力者1名以上が必要
+  where: 高齢福祉課、または高齢者支援センター
+  url: https://www.city.mito.lg.jp/page/3104.html
+  confidence: high
+  amount: 月額200円（利用者負担）
+- category: jutaku
+  name: 介護予防のための住宅改善費の助成
+  name_on_page: 介護予防のための住宅改善費助成事業
+  summary: 介護認定のない人の手すり設置や段差解消などの工事費を一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の認定を受けていない
+  - 高齢者支援センターの介護予防プランで住宅改善が必要とされた
+  where: 高齢福祉課（問合せ先。申請先は頁に明記なし）
+  url: https://www.city.mito.lg.jp/page/2361.html
+  confidence: high
+  amount: 工事費の9割、上限90,000円
+- category: shingu
+  name: 訪問ふとん乾燥
+  name_on_page: 訪問ふとん乾燥サービス
+  summary: 乾燥車が自宅を訪問し、約1時間でふとんの乾燥・除菌を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 自分でふとん干しをするのが困難
+  where: 高齢福祉課
+  url: https://www.city.mito.lg.jp/page/5569.html
+  confidence: high
+  amount: 年6回まで、1回300円（利用者負担）
+- category: ribiyo
+  name: 訪問理美容（さわやか理美容）
+  name_on_page: さわやか理美容
+  summary: 外出が困難な在宅高齢者の自宅へ、理容師・美容師が訪問する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請時に介護保険証が必要
+  where: 高齢福祉課
+  url: https://www.city.mito.lg.jp/page/1814.html
+  confidence: high
+  amount: 1回1,000円（利用者負担）。利用券は年3枚
+- category: gaishutsu
+  name: リフト付きタクシー利用券（通院等支援）
+  name_on_page: 通院等支援サービス事業
+  summary: リフト付きタクシーで病院等へ送迎するサービス。利用券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 申請時に介護保険証が必要
+  - 利用先の医療機関等を8か所まで記入する
+  where: 高齢福祉課
+  url: https://www.city.mito.lg.jp/page/4917.html
+  confidence: high
+  amount: 初乗り30分以内の運賃の1割を自己負担。利用券は年48枚まで
+- category: mimamori
+  name: 愛の定期便（乳製品を届ける見守り）
+  name_on_page: 愛の定期便
+  summary: 訪問員が乳製品を届けながら、ひとり暮らしの高齢者を定期訪問して安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 身体的・精神的な不安があり見守りが必要
+  - 親族が居住している人は対象外
+  where: 水戸市社会福祉協議会（地域福祉推進係。頁の問合せ先）
+  url: https://www.city.mito.lg.jp/page/2036.html
+  confidence: high
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・自動消火器など）
+  name_on_page: 日常生活用具給付事業
+  summary: 電磁調理器、自動消火器、食事介助用具一式、空気清浄器、安全杖などを給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 心身機能の低下や認知症などで用具が必要
+  - 事前に申請が必要
+  where: 高齢福祉課（問合せ先。申請先は頁に明記なし）
+  url: https://www.city.mito.lg.jp/page/5118.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり，きゅう，マッサージ施術費助成
+  summary: 医療保険対象外のはり・きゅう・マッサージの施術費に使える助成券を交付する。
+  who: {}
+  at_application:
+  - 70歳以上、または身体障害者手帳1・2級
+  - 年齢確認ができるものを持参する
+  where: 高齢福祉課
+  url: https://www.city.mito.lg.jp/page/1880.html
+  confidence: high
+  amount: 1回1,000円の助成券を年5枚交付
+not_found:
+- iro
+- hochoki

@@ -1,0 +1,247 @@
+city: '122041'
+name: 船橋市
+site: www.city.funabashi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: nichijo-yogu
+  name: 日常生活用具（自動消火装置・電磁調理器・シルバーカー）の給付
+  name_on_page: 日常生活用具の給付
+  summary: 在宅の高齢者に、自動消火装置・電磁調理器・シルバーカーのいずれかを給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市県民税所得割が非課税の世帯
+  - 自動消火装置・電磁調理器は、ひとり暮らしか高齢者のみ
+  - 電磁調理器は心身機能低下で防火の配慮が必要
+  - シルバーカーは歩行が困難な人
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001784.html
+  confidence: high
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 補聴器購入費用助成事業
+  summary: 聞こえに困る高齢者の補聴器購入費を一部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 購入日時点で市内に住民登録がある
+  - 市県民税所得割が非課税の世帯に属する
+  - 医師が補聴器の使用が必要と証明する
+  - 聴覚障害の身体障害者手帳を交付されていない
+  - 過去に市の補聴器の支給・助成を受けていない
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001774.html
+  confidence: high
+  amount: 購入費が3万円未満ならその額、3万円以上なら3万円を助成
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 要介護4・5の在宅の人の自宅へ理容師・美容師が来てカットなどをする。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送・オンライン可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001787.html
+  confidence: high
+  amount: 出張費は市が負担。カット代は理容3,900円・美容3,880円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を在宅で介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の認定を受けて1年以上たっている
+  - 過去1年、介護保険サービスを使っていない
+  - （年7日以内のショートステイは除く）
+  - 過去1年の入院が通算90日以内
+  - 生活保護を受けていない
+  where: 高齢者福祉課（郵送可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001776.html
+  confidence: high
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の支給
+  name_on_page: 介護用品（紙おむつ等）を支給します
+  summary: 在宅の重度要介護者に、紙おむつ等を毎月宅配で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市民税・県民税の合計賦課額が65,000円以下
+  - 生活保護を受けていない
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送・オンライン可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001786.html
+  confidence: high
+  amount: 月8,900円分までカタログから選べる
+- category: gaishutsu
+  name: 福祉タクシー乗車券（要介護者等）
+  name_on_page: 福祉タクシー乗車券(要介護者等)を交付します
+  summary: 要支援2・要介護の人に、タクシー運賃の半額を助成する乗車券を交付する。
+  who:
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内在住
+  - 重い障害者手帳（身体1・2級等）の人は障害福祉課が窓口
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001792.html
+  confidence: high
+  amount: 運賃の半額（1回上限1,200円）。要支援2・要介護1・2は年12枚、要介護3〜5は枚数制限なし
+- category: shingu
+  name: 寝具乾燥消毒車の派遣
+  name_on_page: 寝具乾燥消毒車の派遣
+  summary: 寝具を自然に乾かしにくい高齢者の家へ、乾燥消毒車を月1回派遣する。
+  who:
+    age_min: 65
+  at_application:
+  - ねたきり、またはひとり暮らしの人
+  - 寝具の自然乾燥が困難
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送・オンライン可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001779.html
+  confidence: high
+- category: mimamori
+  name: 声の電話訪問
+  name_on_page: 声の電話訪問
+  summary: ひとり暮らしの高齢者へ、相談員が定期的に電話して安否を確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 安否の確認が必要な人
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所（郵送・オンライン可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001783.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 急病などの時に通報できる装置を貸し、警備員が駆け付ける。
+  who: {}
+  at_application:
+  - (1)常に安否確認が必要な65歳以上のひとり暮らし等
+  - （日中独居や同居家族が対応できない場合も含む）
+  - (2)緊急時に不安がある75歳以上のひとり暮らし
+  - 合鍵を事前に預ける必要がある
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所（郵送可）
+  url: https://www.city.funabashi.lg.jp/senior/service/0002/p001782.html
+  confidence: high
+  amount: (1)は無料。(2)は月1,100円（非課税）、月2,200円（課税）
+- category: haishoku
+  name: 配食サービス（食の自立支援事業）
+  name_on_page: 配食サービス（食の自立支援事業）
+  summary: 食事づくりが難しい人に、平日の昼・夕食を届け、安否も確かめる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事づくりが困難
+  - おおむね65歳以上
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送・オンライン可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001789.html
+  confidence: high
+- category: jutaku
+  name: 高齢者住宅改造資金の助成
+  name_on_page: 高齢者住宅改造資金の助成
+  summary: 要支援・要介護の人の住宅の手すりや段差解消などの改造費を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内に1年以上住所がある
+  - 生計中心者の市民税・県民税額が32万円以下の世帯
+  - 介護保険の住宅改修が優先。着工前に申請
+  - 要支援1・2、要介護1・2は総工事費150万円まで
+  where: 高齢者福祉課
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001777.html
+  confidence: high
+  amount: 対象工事費の50％（非課税世帯は100％）、上限50万円
+- category: haikai
+  name: 認知症見守りGPSサポート事業
+  name_on_page: 認知症見守りGPSサポート事業
+  summary: 行方不明のおそれのある認知症の人にGPS機器を貸し、家族が居場所を確認できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、在宅で介護している家族が申請する
+  - 65歳以上の認知症の人、または
+  - 特定疾病による認知症の40〜64歳の人が対象
+  where: 地域包括ケア推進課、地域包括支援センター、在宅介護支援センター
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p004492.html
+  confidence: high
+  amount: 月250円（非課税世帯）、月500円（課税世帯）
+- category: sonota
+  name: はり・きゅう・マッサージ等の施術費助成券
+  name_on_page: はり・きゅう・マッサージ等費用の助成
+  summary: 施術1回につき使える助成券を高齢者や介護する家族に交付する。
+  who: {}
+  at_application:
+  - (1)70歳以上で市県民税非課税の人（年12枚）
+  - (2)65歳以上のみ世帯で要介護2以上の人を在宅で介護する家族（年24枚）
+  - 保険適用の施術には使えない
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー
+  url: https://www.city.funabashi.lg.jp/senior/service/0001/p001773.html
+  confidence: high
+  amount: 助成券1枚（施術1回）につき800円
+- category: sonota
+  name: 杖の支給
+  name_on_page: 杖の支給
+  summary: 杖がないと歩きにくい高齢者に杖を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 杖がないと日常の歩行が困難
+  - 過去に市から杖の支給を受けていない
+  - 平衡機能・下肢・体幹障害の手帳がない
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送・オンライン可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001793.html
+  confidence: high
+- category: sonota
+  name: 軽度生活援助員派遣事業
+  name_on_page: 軽度生活援助員派遣事業
+  summary: ひとり暮らし等の高齢者宅へ援助員が来て、掃除や買い物などを手伝う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしか高齢者のみの世帯
+  - 介護認定のある40〜64歳も対象
+  - 64歳以下の認定のない人と同居なら対象外
+  where: 高齢者福祉課、船橋駅前総合窓口センター、各出張所・連絡所の福祉ガイドコーナー（郵送可）
+  url: https://www.city.funabashi.lg.jp/kenkou/koureisha/002/p001780.html
+  confidence: high
+  amount: 1回（1時間）400円。市民税非課税世帯は無料
+not_found:
+- koken
+- yutai

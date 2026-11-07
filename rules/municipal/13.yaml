@@ -1,0 +1,16 @@
+pref: '13'
+name: 東京都
+site: www.metro.tokyo.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs: []
+not_found:
+- chusha
+- yutai
+- jutaku
+- koken
+- mimamori

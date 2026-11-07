@@ -1,0 +1,177 @@
+city: '372021'
+name: 丸亀市
+site: www.city.marugame.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅寝たきり高齢者の介護者への介護用品購入補助
+  name_on_page: 介護用品等購入補助
+  summary: 在宅で寝たきりの高齢者を介護する同居の家族に、介護用品の購入費を補助する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 要介護認定を受けている65歳以上の在宅高齢者が対象
+  - 市内に引き続き1年以上住んでいる
+  - 介護者は高齢者と同居し生計が同じ
+  - 所得制限なし。入院中などは支給できない場合あり
+  where: 高齢者支援課（高齢者福祉担当）
+  url: https://www.city.marugame.lg.jp/site/life-stage/2510.html
+  confidence: high
+  amount: 月額15,000円
+- category: kaigo-yohin
+  name: おむつ購入補助
+  name_on_page: おむつ購入補助
+  summary: 常時おむつが必要な在宅の要支援・要介護の人に、購入費を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に6か月以上住所がある
+  - 生活保護を受けていない
+  - 介護用品等購入補助の対象の寝たきり高齢者でない
+  - 購入額が補助額を超える人が目安。入院中などは不可
+  where: 高齢者支援課（高齢者福祉担当）
+  url: https://www.city.marugame.lg.jp/site/life-stage/2529.html
+  confidence: high
+  amount: 月額5,000円
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 老人日常生活用具の給付（電磁調理器）
+  summary: 住民税非課税のひとり暮らし高齢者に電磁調理器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 市内に住所がある
+  - 鍋は付かない。火災警報器の給付は消防本部の扱い
+  where: 高齢者支援課（高齢者福祉担当）
+  url: https://www.city.marugame.lg.jp/site/life-stage/2511.html
+  confidence: high
+  amount: 自己負担なし
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具類洗濯・乾燥・消毒サービス
+  summary: 寝具の洗濯・乾燥・消毒を年4回まで行う。自己負担あり。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし高齢者や虚弱高齢者などが対象
+  where: 高齢者支援課（高齢者福祉担当）
+  url: https://www.city.marugame.lg.jp/site/life-stage/2565.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 老人日常生活用具の貸与（緊急通報装置）
+  summary: ひとり暮らし高齢者に緊急通報装置（本体とペンダント）を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に住所がある
+  - 固定電話がない人向けに携帯電話を使う型もある
+  where: 高齢者支援課（高齢者福祉担当）
+  url: https://www.city.marugame.lg.jp/site/life-stage/2539.html
+  confidence: high
+  amount: 機器の貸出料・設置料は無料（通話料は自己負担）
+- category: gaishutsu
+  name: 高齢者タクシー運賃助成（実証実験）
+  name_on_page: 高齢者タクシー運賃助成事業（実証実験）
+  summary: 対象の高齢者に、タクシー運賃の一部に使える500円券を交付する。
+  who:
+    age_min: 75
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 運転免許証を持っていない（原付は除く）
+  - 令和8年度に免許自主返納支援・福祉タクシー助成を受けていない
+  - 申請期間は令和8年7月1日から令和9年3月31日まで
+  where: 高齢者支援課、綾歌・飯山市民総合センター、本島・広島市民センター
+  url: https://www.city.marugame.lg.jp/page/44552.html
+  confidence: high
+  amount: 500円券を月2枚（9か月分で18枚＝9,000円分の例）
+- category: haikai
+  name: 高齢者位置情報検索端末の初期費用助成
+  name_on_page: 高齢者位置情報検索端末を利用する際の初期費用を助成
+  summary: 認知症等の高齢者を介護する家族に、位置情報端末の初期費用を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある家族等が対象
+  - おおむね65歳以上の認知症等の高齢者を在宅で介護している
+  - 事前申請が必要。高齢者1人につき1回限り
+  where: 地域包括支援センター（高齢者支援課）
+  url: https://www.city.marugame.lg.jp/page/2580.html
+  confidence: high
+  amount: 初期費用を上限12,000円まで助成
+- category: sonota
+  name: 老人入浴サービス（無料入浴券）
+  name_on_page: 老人入浴サービス
+  summary: 自宅に入浴設備がない人に、市内の温泉施設の無料入浴券を支給する。
+  who:
+    age_min: 68
+  at_application:
+  - 自宅に当初から入浴設備がない
+  - 入浴サービスが本当に必要な人
+  - 利用できる施設は丸亀ぽかぽか温泉のみ
+  where: 高齢者支援課（高齢者福祉担当）
+  url: https://www.city.marugame.lg.jp/site/life-stage/2513.html
+  confidence: high
+  amount: 年間最大48枚の無料入浴券
+- category: sonota
+  name: 老人交通安全づえの給付
+  name_on_page: 老人交通安全づえの給付
+  summary: つえが必要な70歳以上の人に、つえを無料で支給する。
+  who:
+    age_min: 70
+  at_application:
+  - つえが必要であること
+  - 支給後3年間は再支給なし
+  where: 高齢者支援課、綾歌市民総合センター、飯山市民総合センター
+  url: https://www.city.marugame.lg.jp/site/life-stage/2563.html
+  confidence: high
+  amount: つえを無料で支給
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- ribiyo
+- mimamori
+- koken

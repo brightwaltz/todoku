@@ -1,0 +1,139 @@
+city: '442101'
+name: 杵築市
+site: www.city.kitsuki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 配食サービス事業
+  summary: ひとり暮らしの高齢者等に、食事を届けながら安否を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等
+  - 申請時に栄養状態などを確認し、利用の可否と回数を決める
+  - 1日1回、最大週6日（委託事業所の店休日は配達できない）
+  where: 医療介護連携課
+  url: https://www.city.kitsuki.lg.jp/konnatokiniha/06/3950.html
+  confidence: high
+  amount: 利用者負担は1食400円以内
+- category: jutaku
+  name: 在宅高齢者住宅改造助成
+  name_on_page: 在宅高齢者住宅改造助成事業
+  summary: 介護が必要な在宅高齢者のいる世帯の住宅改造費の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 次のいずれか：介護認定を受けた在宅高齢者がいる世帯・75歳以上の在宅高齢者がいる世帯・在宅の高齢者のみの世帯
+  - 世帯の生計中心者の前年の所得金額が200万円未満
+  - 介護保険など他の助成額は、上限額から差し引く
+  where: 医療介護連携課
+  url: https://www.city.kitsuki.lg.jp/konnatokiniha/06/3950.html
+  confidence: high
+  amount: 対象となる工事費の3分の2を助成（工事費の上限60万円）
+- category: kinkyu-tsuho
+  name: 緊急通報システム推進事業
+  name_on_page: 緊急通報システム推進事業
+  summary: ひとり暮らしの高齢者などに、24時間の受信センターにつながる緊急通報装置を無償で貸す。
+  who: {}
+  at_application:
+  - 次のいずれか：65歳以上で持病のあるひとり暮らし、65歳以上の重度身体障がい者
+  - または75歳以上のひとり暮らし、75歳以上のみの世帯（支援制度一覧）
+  - 電話回線使用料と電池交換費用は自己負担
+  where: 医療介護連携課
+  url: https://www.city.kitsuki.lg.jp/konnatokiniha/06/3950.html
+  confidence: high
+  amount: 装置の貸与は無償
+  more_urls:
+  - https://www.city.kitsuki.lg.jp/material/files/group/42/seido081030.pdf
+- category: iro
+  name: 老人介護手当
+  name_on_page: 老人介護手当
+  summary: 寝たきりや認知症で常時介護が必要な高齢者を在宅で介護している人に、手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきりまたは認知症で常時介護が必要な状態が6月以上続く高齢者を介護している
+  - 1月を超える入院や老人ホーム等への入居をしたときは支給できない
+  where: 医療介護連携課
+  url: https://www.city.kitsuki.lg.jp/konnatokiniha/06/3950.html
+  confidence: high
+  amount: 月額5,000円（毎年9月と3月の2期に分けて支給）
+- category: sonota
+  name: はり・きゅう・あんま施術料の助成
+  name_on_page: あんまの施術料の助成
+  summary: 70歳以上などの人に、施術料の助成になる施設利用証を交付する。
+  who: {}
+  at_application:
+  - 市内に居住する満70歳以上の人、または身体障害者手帳を持つ人
+  - 施設利用証の交付申請が必要。市指定の診療所で提示する
+  - 施設利用証の使用は原則1か月に3枚まで
+  where: 福祉事務所
+  url: https://www.city.kitsuki.lg.jp/konnatokiniha/06/3950.html
+  confidence: high
+  amount: 1回の施術につき利用証1枚で、施術料から600円を割引
+- category: kaigo-yohin
+  name: 介護用品支給事業
+  name_on_page: 介護用品支給事業
+  summary: 重度の要介護の在宅高齢者を介護する非課税世帯に、紙おむつ等を給付券で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同居またはこれに準ずる状態で、現に主として介護している
+  - 要介護者・介護者・同居の世帯員の全員が市民税非課税
+  - 申請が必要（2か月分を1回）。入院・施設入所中は対象外
+  where: 医療介護連携課
+  url: https://www.city.kitsuki.lg.jp/konnatokiniha/06/3950.html
+  confidence: high
+  amount: 年額1人当たり10万円を上限に給付券で支給（紙おむつ・尿取りパット等）
+- category: gaishutsu
+  name: 運転免許自主返納者へのバス回数券
+  name_on_page: バス料金
+  summary: 70歳以上で運転免許を自主返納した人に、バスの回数券を渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所があり、運転免許を自主返納した人
+  - 民間路線バスの回数券かコミュニティバスの回数券のどちらか
+  where: 危機管理課
+  url: https://www.city.kitsuki.lg.jp/material/files/group/42/seido081030.pdf
+  confidence: low
+  amount: 民間路線バスの回数券（購入価格9千円分）またはコミュニティバスの回数券（購入価格1万円分）
+- category: sonota
+  name: 特殊詐欺被害防止機能付き電話機の購入補助
+  name_on_page: 特殊詐欺被害防止機能付き電話機
+  summary: 特殊詐欺を防ぐ機能のある電話機の購入費の一部を補助する。
+  who: {}
+  at_application:
+  - 市内に住所があり居住する満65歳以上の人、または同一世帯の人
+  where: 危機管理課
+  url: https://www.city.kitsuki.lg.jp/material/files/group/42/seido081030.pdf
+  confidence: low
+  amount: 購入費用の3分の2（上限10,000円）
+- category: haikai
+  name: 高齢者等SOSネットワークの事前登録
+  name_on_page: 高齢者等SOSネットワーク
+  summary: 行方不明になる可能性のある人の情報を事前に登録し、協力機関と共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる可能性のある人（名前・特徴・写真を登録）
+  where: 医療介護連携課
+  url: https://www.city.kitsuki.lg.jp/material/files/group/20/keapasu.pdf
+  confidence: low
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- koken
+- nichijo-yogu

@@ -1,0 +1,176 @@
+city: '412082'
+name: 小城市
+site: www.city.ogi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等のクーポン券支給
+  name_on_page: 紙おむつ等支給事業
+  summary: 要介護3〜5で常時失禁の在宅の方に、紙おむつ等のクーポン券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時失禁状態で排泄のたびにおむつ交換が必要（尿もれ・夜のみは除く）
+  - 介護保険施設・居住系施設の入所者は対象外
+  - 生活保護受給中の方は対象外
+  - 月15日以上入院・入所した月はクーポンを出さない
+  where: 高齢障がい支援課（西館1階）
+  url: https://www.city.ogi.lg.jp/main/1696.html
+  confidence: high
+  amount: 月 6,000 円分（要介護4・5で住民税非課税世帯は月 8,000 円分）
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: haishoku
+  name: 安否確認を兼ねた配食
+  name_on_page: 安否確認配食サービス事業
+  summary: 高齢者のみの世帯で安否確認と食事の確保が要る方に、自宅へ弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 同一世帯の全員が障害や傷病で安否確認と配食が必要
+  - 同居者の支援や自分の運転で食事を確保できる人は対象外
+  - 緊急連絡先が無い、または対応できない場合は対象外
+  - 介護・福祉サービスで安否確認できる日は対象外
+  where: 高齢障がい支援課 高齢者支援係
+  url: https://www.city.ogi.lg.jp/main/1673.html
+  confidence: high
+  amount: 利用料は 1 食 500 円（普通食ごはんセットの場合）。1日1回
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報用機器の設置
+  name_on_page: 緊急通報システム事業
+  summary: ボタンを押すと警備会社につながる緊急通報用機器を自宅に設置する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 高齢者のみの世帯（頁は重度身体障害者 1・2 級も可と書く）
+  - 心疾患・脳血管疾患で意識を失う可能性（3か月内の診断書）
+  - 3か月に1回以上の定期通院が分かる書類か診断書
+  where: 高齢障がい支援課 高齢者支援係
+  url: https://www.city.ogi.lg.jp/main/1690.html
+  confidence: high
+  amount: 設置工事費 8,000 円（税抜）。生活保護世帯は無料。設置後は電話代
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: gaishutsu
+  name: 車いす対応車両での移送
+  name_on_page: 移送サービス（障がい者・高齢者）
+  summary: 車いすのまま乗れる車両で、病院などへの移送を受けられる。
+  who:
+    at_home: true
+  at_application:
+  - 障害者手帳の所持者（程度の要件あり）、または要介護認定を受け下肢が不自由な方
+  where: 高齢障がい支援課 障がい者支援係
+  url: https://www.city.ogi.lg.jp/main/1698.html
+  confidence: high
+  amount: 距離制の利用料（令和8年度の冊子は 1.5km まで 400 円、以後 400m ごと 60 円。頁は 280 円・40 円）
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: haikai
+  name: 見守りキーホルダーの交付
+  name_on_page: 見守りキーホルダー
+  summary: 医療情報などを登録し、外出先で保護されたとき警察等に連絡先を伝える。
+  who: {}
+  at_application:
+  - 65歳以上、または若年性認知症の方
+  - 緊急連絡先2名分などを事前登録する
+  where: お住まいの地区のおたっしゃ本舗（地域包括支援センター）
+  url: https://www.city.ogi.lg.jp/main/37653.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: haikai
+  name: 見守りQRコードシールの交付
+  name_on_page: 見守りQRコード
+  summary: 行方不明時の早期発見のため、市と警察の連絡先が出るシールを渡す。
+  who: {}
+  at_application:
+  - 小城市在住
+  - おおむね65歳以上で医師から認知症と診断された人
+  - または若年性認知症と診断された人、市長が特に必要と認める人
+  - 交付には見守りキーホルダーの登録が必要
+  where: お住まいの地区のおたっしゃ本舗（地域包括支援センター）
+  url: https://www.city.ogi.lg.jp/main/37653.html
+  confidence: high
+  amount: 無料（20枚まで）
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: sonota
+  name: あん摩・はり・きゅうの施術券
+  name_on_page: あん摩、はり、きゅう等施術券
+  summary: 65歳以上の方に、あん摩・はり・きゅうの施術費の助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 年度途中から対象になった人は月に応じた枚数
+  where: 高齢障がい支援課、小城・牛津・芦刈の各出張所
+  url: https://www.city.ogi.lg.jp/main/1683.html
+  confidence: high
+  amount: 年18枚まで（1枚1,000円の補助）
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: sonota
+  name: 短期宿泊（ショートステイ）
+  name_on_page: 短期宿泊事業
+  summary: 家族の旅行・病気などで在宅が一時的に難しいとき、施設に短期入所できる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要支援・要介護の認定を受けていない方
+  - 同居者の疾病・旅行・虐待等で一時的に在宅生活が困難
+  - 年間の利用は14日以内
+  where: 高齢障がい支援課 高齢者支援係
+  url: https://www.city.ogi.lg.jp/main/1677.html
+  confidence: high
+  amount: 1日 3,500 円（食事代込み、送迎なし）。令和8年度の冊子の額（頁は 3,300 円）。生活保護世帯は無料
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+- category: sonota
+  name: ゴミ出し・買い物・付き添いの支えあい
+  name_on_page: 地域の支えあい活動（ゴミ出し支援・買い物支援・付き添い支援）
+  summary: 一人暮らしなどの高齢者のゴミ出し・買い物・付き添いをボランティアが手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 事前の利用登録が必要（小城市支えあいセンター）
+  where: 小城市支えあいセンター（小城市社会福祉協議会 牛津支所）
+  url: https://www.city.ogi.lg.jp/main/36363.html
+  confidence: high
+  amount: 有償で 10 分ごとに 100 円。活動時間は 9 時から 16 時
+  more_urls:
+  - https://www.city.ogi.lg.jp/site_files/file/2026/202605/p1jp1il2tbioi18cm1un6174g1vlq4.pdf
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

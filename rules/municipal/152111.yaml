@@ -1,0 +1,273 @@
+city: '152111'
+name: 見附市
+site: www.city.mitsuke.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ）購入費の助成
+  name_on_page: 介護用品購入費助成（旧紙おむつ券給付）
+  summary: 在宅で紙おむつを常に使う要介護の方に、購入費を年2回に分けて助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 4月1日・10月1日の時点で市内に住所がある
+  - 施設入所者は対象外
+  where: 健康福祉課（高齢福祉係）
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 年額 要介護1・2は1万円、要介護3は2.4万円、要介護4・5は3.6万円（前期・後期に半額ずつ）
+- category: iro
+  name: 在宅介護見舞金
+  name_on_page: 介護見舞金
+  summary: 要介護3〜5の高齢者を在宅で介護している家族などに、年1回見舞金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護される方は4月1日現在で市民の65歳以上
+  - 寝たきりまたは認知症状がある方を前年度6か月以上在宅介護
+  - 今後も在宅介護を続ける予定
+  - 申請は毎年4月1日〜5月末ごろ
+  where: 健康福祉課（高齢福祉係）
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 年額 4万円（6月に支給）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 昼食か夕食の弁当を週1〜3回まで自宅に届ける。
+  who: {}
+  at_application:
+  - 次のいずれか：要介護認定なしの65歳以上のひとり暮らし
+  - 要介護認定なしの80歳以上の高齢者のみ世帯
+  - 要支援認定か事業対象者で栄養状態の低下に該当
+  - 要介護1〜5の方は対象外
+  where: 健康福祉課（高齢福祉係）
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 1食 500〜570円（おかずのみ 390〜470円）。業者により異なる
+  more_urls:
+  - https://www.city.mitsuke.niigata.jp/uploaded/attachment/26219.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: 緊急通報装置と安否確認センサーを貸与し、月1回の元気確認電話もある。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 申請時に親戚・近所の方・民生委員の協力員3名が必要
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 月額 500円（固定回線型）／2,040円（無線型）
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 補聴器購入費の助成
+  summary: 補聴器の購入費の半額を助成する。購入前の申請と耳鼻科の意見書が必要。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 片耳の聴力レベルが40デシベル以上
+  - 補聴器で意思疎通の向上が見込めると医師が判断
+  - 購入前に申請し、補聴器購入意見書が必要
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 購入費の半額（上限 25,000円）
+  more_urls:
+  - https://www.city.mitsuke.niigata.jp/uploaded/attachment/26219.pdf
+- category: jutaku
+  name: 住宅改修費の市上乗せ助成
+  name_on_page: 住宅改修費助成
+  summary: 介護保険の住宅改修とは別に、市が上限30万円まで改修費を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯全体の前年収入が600万円未満
+  - 新築は対象外
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 上限30万円（課税状況で助成割合が決まる）
+  more_urls:
+  - https://www.city.mitsuke.niigata.jp/uploaded/attachment/26219.pdf
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス助成事業
+  summary: 理美容店に自宅へ来てもらう際の出張費相当を、利用券で助成する。
+  who:
+    at_home: true
+  at_application:
+  - 次のいずれか：要介護3以上
+  - 身体障害者手帳1・2級、または療育手帳A
+  - 心身の状態から理美容店へ行くのが難しい方
+  - 指定店舗のみ利用可
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 1人年度上限 6,000円（2,000円券を3枚）
+- category: nichijo-yogu
+  name: 自動消火器の給付
+  name_on_page: 自動消火器の給付
+  summary: 火の元が心配な方の台所に、熱で作動する自動消火器を無料で設置する。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 市民税非課税世帯の一人暮らしの高齢者
+  - 火の元の心配な方の台所に設置
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 無料
+- category: nichijo-yogu
+  name: 火災報知器の給付
+  name_on_page: 火災報知器の給付
+  summary: 火災報知器がない家の寝室などに、煙感知式の報知器を1か所設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 火災報知器が未設置の住宅
+  - 市民税非課税世帯の一人暮らしか高齢者のみ世帯
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 無料（電池交換は自己負担）
+- category: sonota
+  name: あんしん情報キットの給付
+  name_on_page: あんしん情報キットの給付
+  summary: 救急時用の情報記入用紙、保管容器、ステッカーを無料で配る。
+  who: {}
+  at_application:
+  - 対象は「高齢者」とのみ記載（年齢の下限は無し）
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 車いすの貸与
+  name_on_page: 車いすの貸与
+  summary: 一時的に車いすが要る虚弱な高齢者などに、年度90日まで無料で貸す。
+  who: {}
+  at_application:
+  - 虚弱な高齢者または障害者で、一時的に必要な方
+  - 介護保険でレンタルできる方は対象外
+  - 台数に限りあり
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 無料（年度あたり通算90日まで）
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ
+  summary: 冠婚葬祭などの緊急時に、特別養護老人ホーム等で原則7日まで高齢者を預かる。
+  who: {}
+  at_application:
+  - 冠婚葬祭などの緊急時に一時保護が必要な場合
+  - 要支援以上で利用限度額を使い切った方、または認定なし・非該当の方
+  - 施設に空きがある場合のみ
+  where: 健康福祉課
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 利用料は介護保険法等に準じる（詳細は問い合わせ）
+- category: haikai
+  name: 認知症高齢者等の見守りワッペン交付
+  name_on_page: 認知症高齢者見守りワッペン交付事業
+  summary: 見守りが必要な方の情報を登録し、ワッペン・ステッカー・キーホルダーを無料で受け取る。
+  who: {}
+  at_application:
+  - 認知症の高齢者など、見守りが必要な方
+  - 申請は本人か家族などが保健福祉センターで行う
+  where: 保健福祉センター（健康福祉課 高齢福祉係）
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/1154.html
+  confidence: high
+  amount: 無料（ワッペン1枚・キーホルダー1個・ステッカー1セット）
+- category: yutai
+  name: ほっとぴあの高齢者優待券
+  name_on_page: コミュニティ銭湯「ほっとぴあ」高齢者割引について
+  summary: 65歳以上の市民に、入浴施設の大浴場が割引になる優待券を郵送する。
+  who:
+    age_min: 65
+  at_application:
+  - 見附市民
+  - 優待券は65歳の誕生月に郵送。再発行は市民税務課か健康福祉課
+  - 平日のみ利用可、大浴場の入浴料のみ対象
+  where: 健康福祉課（再発行は市民税務課も可）
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/1234.html
+  confidence: high
+  amount: 入浴料650円が500円（150円引き）
+- category: sonota
+  name: 要援護世帯の除雪費助成（社会福祉協議会）
+  name_on_page: 要援護世帯除雪費助成事業
+  summary: 70歳以上のひとり暮らしや高齢者のみの要援護世帯に、除雪経費を年2回助成する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要援護世帯で、課税収入の制限あり
+  - 地区の民生委員へ申し込む
+  where: 見附市社会福祉協議会（民生委員経由）
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 1回 10,000円（年2回）
+- category: gaishutsu
+  name: 小型リフト付バスの貸出（社会福祉協議会）
+  name_on_page: 小型リフト付バス貸出事業
+  summary: 車いすを日常的に使う方の通院などの外出用に、リフト付きバスを貸し出す。
+  who: {}
+  at_application:
+  - 車いすを日常的に利用している方
+  where: 見附市社会福祉協議会
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 初回登録料 3,000円
+- category: sonota
+  name: 生活支援サービス（社会福祉協議会）
+  name_on_page: 生活支援サービス
+  summary: 暮らしの小さな困りごとを、研修を受けた地域のサポーターが手伝う。
+  who:
+    age_min: 65
+  at_application: []
+  where: 見附市社会福祉協議会
+  url: https://www.city.mitsuke.niigata.jp/soshiki/6/2992.html
+  confidence: high
+  amount: 20分 200円（原則1時間）
+not_found:
+- koken
+- shingu

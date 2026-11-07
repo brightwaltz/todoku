@@ -1,0 +1,182 @@
+city: '221007'
+name: 静岡市
+site: www.city.shizuoka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給
+  summary: 重度の要介護の高齢者を在宅で介護する家族に、年10万円の慰労金が支給される
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 生活保護世帯、または世帯員全員が市民税非課税の世帯
+  - 要介護4・5の認定から1年以上たつ人を、同居の家族が介護している
+  - 介護保険サービスを1年以上使っていない
+  - ただし年1週間程度の短期入所と居宅療養管理指導は除く
+  - 静岡市に住民登録して住んでいる
+  where: 各区の高齢介護課、蒲原出張所
+  url: https://www.city.shizuoka.lg.jp/s2837/s002725.html
+  confidence: high
+  amount: 年間10万円
+- category: kaigo-yohin
+  name: 高齢者の紙おむつ引換券
+  name_on_page: 高齢者紙おむつ支給制度
+  summary: 在宅で紙おむつが必要な高齢者に、要介護度に応じて月1,500〜6,500円分の引換券が出る
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 生活保護世帯、または世帯員全員が市民税非課税の世帯
+  - 要介護4以上。要介護1〜3は調査票の要件を満たす場合（窓口で判定）
+  - 各区の障害者支援課で紙おむつ券を受けていない
+  - 月の半分以上を自宅で暮らし、施設には入所していない
+  where: 各区の高齢介護課、蒲原出張所（電子申請も可）
+  url: https://www.city.shizuoka.lg.jp/s2837/s002726.html
+  confidence: high
+  amount: 月額で要介護1・2は1,500円分、3は5,500円分、4は6,000円分、5は6,500円分
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸し出し
+  name_on_page: ひとり暮らし高齢者等緊急通報システムの貸し出し
+  summary: ボタンで受信センターに通報でき、火災・ガス漏れ警報器もつく機器を無料で貸し出す
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 生活保護世帯、または世帯員全員が市民税非課税の世帯
+  - 二人暮らしは、一方が寝たきりなどの場合が対象（二世帯住宅は除く）
+  - 固定電話（アナログ回線かひかり電話）を使っている
+  - 緊急連絡先を2件（できれば親族2人）届け出られる
+  - 山間地は、近所の協力員2人の登録が必要
+  where: 各区の高齢介護課、蒲原出張所（電子申請も可）
+  url: https://www.city.shizuoka.lg.jp/s2837/s002727.html
+  confidence: high
+  amount: 設置・撤去・月々の利用料は無料（動作確認の通話料 1日10円程度は自己負担）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 在宅の高齢者を対象とした理容・美容サービス
+  summary: 理容師・美容師が自宅に来て頭髪カットをしてくれる（年2回まで、1回1,000円）
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 外出して頭髪カットを受けるのが困難な人
+  - 介護サービス施設に居住の人、長期入院中の人は対象外
+  where: 各区の高齢介護課、蒲原出張所（電子申請も可）
+  url: https://www.city.shizuoka.lg.jp/s2837/s002729.html
+  confidence: high
+  amount: 利用券で1回1,000円（カットのみ、年度内2回まで。ほかの施術は別料金）
+- category: haishoku
+  name: 配食型見守りサービス
+  name_on_page: 配食型見守りサービス
+  summary: 食事の準備が難しい人に、食事を届けながら安否を確認する（食事代は自己負担）
+  who:
+    at_home: true
+  at_application:
+  - 食事の準備に支障がある一人暮らし、または同居者が緊急時に動きにくい高齢者世帯など
+  - 要支援・要介護の認定（第2号を含む）か、基本チェックリストに該当する
+  - 買い物や調理が自分でできる人は対象外
+  - サービス付き高齢者向け住宅など見守りのある住まいの人は対象外
+  - 申請は地域包括支援センター職員かケアマネジャーが取り次ぐ
+  where: 各区の高齢介護課、蒲原出張所（地域包括支援センターかケアマネジャーに相談して申請）
+  url: https://www.city.shizuoka.lg.jp/s2837/s002730.html
+  confidence: high
+  amount: 週5回（月〜金）まで、1日1食。食事代は事業者に直接支払い、市の割引はない
+- category: sonota
+  name: S救セットの配付
+  name_on_page: S救（エスキュー）セットの配付
+  summary: 緊急連絡先やかかりつけ医などを書いて冷蔵庫に入れる容器のセットを無料で配る
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - with_family
+    - alone_daytime
+  at_application:
+  - その年度中に65歳になる人を含む
+  - 一人暮らし、高齢者のみ、高齢者と18歳未満の同居人のみの世帯
+  - 同居人に障害があり生活に不安がある世帯も対象
+  - 日中か夜間に高齢者だけになり生活に不安がある世帯も対象
+  where: 各区の高齢介護課、蒲原出張所
+  url: https://www.city.shizuoka.lg.jp/s7259/s002732.html
+  confidence: high
+  amount: 無料（容器1個、マグネットとシール各1枚、世帯の人数分の緊急連絡カード）
+- category: hochoki
+  name: 補聴器購入費の補助
+  name_on_page: 補聴器購入費補助金
+  summary: 補聴器の購入費を上限3万円まで助成する。受付は2027年1月29日まで
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、補聴器相談医から装用が必要と診断された
+  - 聴覚の身体障害者手帳の交付対象外である
+  - 聞こえのアンケートと動画視聴（または聞こえの相談会への参加）を済ませる
+  - 過去にこの補助金を受けていない（1回限り）
+  - 購入後、介護予防・社会参加・健康づくりの取組ができる
+  where: 高齢者福祉課いきいき長寿係（窓口・郵送・電子申請）
+  url: https://www.city.shizuoka.lg.jp/s2837/s012997.html
+  confidence: high
+  amount: 補聴器の購入費を上限3万円まで（1回限り）
+- category: haikai
+  name: 認知症見守りシールと行方不明時のメール配信
+  name_on_page: 認知症高齢者見守り事業
+  summary: 家族が事前登録すると反射の見守りシールがもらえ、行方不明時はメールで捜索協力を募る
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護している家族が、地域包括支援センターで事前登録する
+  - 登録後に、登録番号つきの見守りシールが配られる
+  where: 住まいの地域を担当する地域包括支援センター
+  url: https://www.city.shizuoka.lg.jp/s4523/s002772.html
+  confidence: high
+  amount: 見守りシールは無料
+- category: yutai
+  name: シルバーカード
+  name_on_page: シルバーカード
+  summary: 70歳以上の市民に出す年齢証明カード。市の動物園や博物館などで無料・割引になる
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住んでいる
+  where: 各区の高齢介護課、井川支所、長田支所、蒲原出張所（その場で発行）
+  url: https://www.city.shizuoka.lg.jp/s2837/s002763.html
+  confidence: high
+  amount: 動物園・博物館・美術館など市の施設8か所で入場が無料または割引
+not_found:
+- koken
+- jutaku
+- gaishutsu
+- shingu
+- nichijo-yogu
+- mimamori

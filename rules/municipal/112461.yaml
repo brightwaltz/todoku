@@ -1,0 +1,155 @@
+city: '112461'
+name: 白岡市
+site: www.city.shiraoka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への夕食配食と安否確認
+  name_on_page: 配食サービス事業
+  summary: ひとり暮らし等で調理が難しい高齢者に、夕食を届けて安否も確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 傷病等で食事の調理が困難
+  - 同居人から食事の提供を受けることが困難
+  - 要支援・要介護・事業対象者の認定、または各種手帳の交付
+  - 介護保険料の滞納がある人などは利用できない
+  where: 高齢介護課
+  url: https://www.city.shiraoka.lg.jp/material/files/group/17/R8gaido.pdf
+  confidence: high
+  amount: 夕食のみ週 1〜4 回。自己負担は 1 食 420 円（目安）
+- category: haishoku
+  name: 社会福祉協議会の手作り弁当の配達
+  name_on_page: 配食サービス
+  summary: 社協会員で要支援・要介護の 75 歳以上のひとり暮らしの人に、月 2 回の昼食弁当を届ける。
+  who:
+    age_min: 75
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+  at_application:
+  - 白岡市社会福祉協議会の会員であること
+  where: 白岡市社会福祉協議会
+  url: https://www.city.shiraoka.lg.jp/material/files/group/17/R8gaido.pdf
+  confidence: high
+  amount: 毎月第 1・第 3 木曜日（8 月除く）。自己負担は 1 食 300 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急時通報システム事業
+  summary: ボタン 1 つで受信センター経由で消防署につながる専用装置を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 日中ひとりは、1 日 8 時間以上不在の日が月 20 日以上
+  - 介護保険料の滞納がある人などは利用できない
+  where: 高齢介護課
+  url: https://www.city.shiraoka.lg.jp/material/files/group/17/R8gaido.pdf
+  confidence: high
+  amount: 固定型は、ひとり暮らし・高齢者のみ世帯は負担なし。日中ひとりの人と携帯型は月 980 円+税（目安）
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等給付事業
+  summary: 在宅で紙おむつを使う要介護の人に、紙おむつや尿取りパッド等を給付する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市に住民票がある介護保険被保険者
+  - 市民税が非課税
+  - 要介護認定を受け、排せつ等の介護が必要
+  - 介護保険料の滞納がある人などは利用できない
+  where: 高齢介護課
+  url: https://www.city.shiraoka.lg.jp/material/files/group/17/R8gaido.pdf
+  confidence: high
+  amount: A コースは品目を選べて負担は利用額の 1 割（500 円まで）等。B コースは 500 円
+- category: mimamori
+  name: 電球型センサーによる見守り（新白岡地区限定の実証実験）
+  name_on_page: ICT見守りサービス事業
+  summary: 電球の点灯がない日は、登録した家族にメールで知らせ、必要なら代理訪問する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 新白岡 1〜9 丁目に住所がある
+  - 緊急通報システム利用中の人は対象外
+  - 同じ敷地に親族がいる人・緊急連絡先が無い人は対象外
+  - 市税・介護保険料の滞納がある人は対象外
+  - 令和 7〜8 年度の実証実験
+  where: 高齢介護課地域支援担当
+  url: https://www.city.shiraoka.lg.jp/soshiki/kenkofukushibu/koreikaigoka/shinseisho/8538.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット給付事業「命のバトン」
+  summary: 既往歴や服用薬などを入れる救急医療情報キットを給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住
+  - 次のいずれか：ひとり暮らし、疾病等で日常生活に不安がある
+  - または日中ひとり（1 日 8 時間かつ週 5 日以上）
+  - または障害者手帳 1・2 級か要介護 1〜5 の人、その同居者
+  where: 高齢介護課
+  url: https://www.city.shiraoka.lg.jp/material/files/group/17/R8gaido.pdf
+  confidence: high
+  amount: キット一式（救急情報シート・マークシール等）を給付
+- category: sonota
+  name: ごみの戸別収集（高齢者・障害者のみの世帯）
+  name_on_page: ふれあい収集
+  summary: ごみを集積所まで出せず協力者もいない世帯のごみを、玄関先等で戸別に収集する。
+  who: {}
+  at_application:
+  - 障がいのある方のみの世帯、または要介護・要支援認定の方のみの世帯
+  - 自分でごみを集積所まで出すことが困難
+  - 身近な人の協力を得られない
+  where: 環境課、または蓮田白岡衛生組合（蓮田白岡環境センター）廃棄物対策課
+  url: https://www.city.shiraoka.lg.jp/material/files/group/17/R8gaido.pdf
+  confidence: high
+- category: sonota
+  name: 社協の会員制の家事手伝い（掃除・ごみ捨て等）
+  name_on_page: しらおか支えあいサービス
+  summary: 地域の協力会員が、掃除やごみ捨てなど日常の簡単な手伝いをする有料の支えあい事業。
+  who: {}
+  at_application:
+  - 65 歳以上のひとり暮らし、または 65 歳以上のみの世帯
+  - または 65 歳以上で日中ひとり暮らしの人
+  - または障害者・病気や産前産後で日中ひとりの人
+  - 利用には会員登録が必要
+  where: 白岡市社会福祉協議会
+  url: https://www.city.shiraoka.lg.jp/material/files/group/17/R8gaido.pdf
+  confidence: high
+  amount: 平日 9〜17 時は 30 分 300 円・60 分 600 円
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

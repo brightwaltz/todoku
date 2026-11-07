@@ -1,0 +1,165 @@
+city: 092151
+name: 那須烏山市
+site: www.city.nasukarasuyama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきり等の方への紙おむつ券の給付
+  name_on_page: 寝たきり高齢者等紙おむつ等給付サービス
+  summary: 常に失禁がある在宅の要介護の方に、紙おむつ等に使える券を毎月配る。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきり度B以上、または認知度3以上
+  - 入院していない
+  - グループホームやサ高住に入居していない
+  where: 健康福祉課（保健福祉センター内）
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004947.html
+  confidence: high
+  amount: 月 5,000 円分の紙おむつ券（超えた分は自己負担）
+- category: iro
+  name: 在宅で介護する家族への介護手当
+  name_on_page: ねたきり老人等介護手当支給事業
+  summary: 寝たきりか認知症の高齢者を在宅で介護する家族に、毎月手当を支給する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される人が6か月以上寝たきり（寝たきり度C以上）、または認知症（自立度3a以上）
+  - 要介護認定を受けている
+  - 特定疾患者福祉手当を受けていない
+  where: 健康福祉課（保健福祉センター内）
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004945.html
+  confidence: high
+  amount: 月 4,000 円（年 3 回に分けて口座振込）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 在宅の独居や高齢者世帯に、週 2 回まで昼のお弁当を届け見守る。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね 65 歳以上
+  - 自立生活支援の観点から適切と認められる
+  where: 健康福祉課（保健福祉センター内）
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004900.html
+  confidence: high
+  amount: 1 食あたり、課税世帯 400 円・非課税世帯 300 円の自己負担（火・木）
+  more_urls:
+  - https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004898.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置設置事業
+  summary: 在宅の対象者に緊急通報装置を貸し出し、協力員等の駆け付けや 24 時間相談を受けられる。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者枠：65 歳以上の独居か高齢者世帯
+  - 重度の心疾患か呼吸器疾患で定期的に治療中
+  - 日中、親族等と接する機会が少ない
+  - 障がい者枠：身障手帳 1・2 級で、一人暮らしか障がい者のみの世帯
+  where: 健康福祉課（保健福祉センター内）
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004875.html
+  confidence: high
+  amount: 非課税世帯は無料、課税世帯は月額 1,000 円
+- category: gaishutsu
+  name: 福祉タクシー券の交付
+  name_on_page: 福祉タクシー事業（障がい者・高齢者）
+  summary: 条件に当たる在宅の高齢者・障がい者に、タクシー運賃を助成する券を渡す。
+  who:
+    at_home: true
+  at_application:
+  - 市税の滞納がない
+  - 高齢者枠：75 歳以上の独居か高齢者のみの世帯で市県民税非課税
+  - 高齢者枠：近くに移動を支援できる家族がいない
+  - 高齢者枠：世帯で自家用車を持たず、他の外出サービスも未利用
+  - 障がい者枠：身障手帳 1・2 級、療育手帳 A、精神手帳 1 級のいずれか
+  where: 健康福祉課（保健福祉センター内）、烏山庁舎市民課
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004874.html
+  confidence: high
+  amount: 1 枚 500 円助成、月 6 枚（年 72 枚。透析の障がい者は月 12 枚）
+- category: gaishutsu
+  name: 通院のタクシー代助成
+  name_on_page: 通院支援サービス事業
+  summary: 寝たきりの要介護の方の、自宅と市内医療機関の送迎タクシー代を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 寝たきり度B以上
+  - 市税等の滞納がない世帯に属する
+  where: 健康福祉課 高齢いきがいグループ
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004877.html
+  confidence: high
+  amount: 月 2 往復まで全額助成（介助料・迎車料・待機料などは自己負担）
+- category: haikai
+  name: 認知症の方の見守りシール（どこシル伝言板）
+  name_on_page: 見守りシール交付事業（どこシル伝言板）
+  summary: ひとり歩きのある認知症の方に QR 付きシールを渡し、行方不明時の早期発見につなげる。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 若年性認知症も対象
+  where: 健康福祉課 高齢いきがいグループ
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/dementia/page004946.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004898.html
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット配付事業
+  summary: 持病や緊急連絡先を入れて自宅に備える救急医療情報キットを無料で配る。
+  who: {}
+  at_application:
+  - 65 歳以上の独居か高齢者世帯、または手帳所持者のみの世帯
+  where: 健康福祉課（保健福祉センター内）、烏山庁舎窓口
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page004902.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 地域の協力者による訪問見守り・お助け（助っ人からす）
+  name_on_page: 生活支援サービス事業「助っ人からす」
+  summary: 月 1 回の安否確認の訪問と、電球交換など軽い困りごとの手伝いを受けられる。
+  who: {}
+  at_application:
+  - 高齢者や障がい者のみの世帯等
+  - 事前に登録し、相談してから対応
+  where: 那須烏山市社会福祉協議会（本所）
+  url: https://www.city.nasukarasuyama.lg.jp/childcare-health-welfare/welfare-care/elderly-welfare/page006570.html
+  confidence: high
+  amount: 無料（資材等の実費は自己負担）
+not_found:
+- hochoki
+- jutaku
+- koken
+- shingu
+- ribiyo
+- nichijo-yogu

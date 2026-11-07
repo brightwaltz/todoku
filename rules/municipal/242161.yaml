@@ -1,0 +1,146 @@
+city: '242161'
+name: 伊賀市
+site: www.city.iga.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費給付（高齢者）
+  name_on_page: 伊賀市介護用品購入費給付事業（高齢者）
+  summary: 在宅で失禁があり要介護1〜5の人に、紙おむつ等の購入費を月ごとに給付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、昼夜おむつの使用が必要
+  - 要介護1・2は認知症自立度IIa以上かつ65歳以上
+  - 入院中・施設入所中の期間は対象外
+  where: 介護高齢福祉課、各支所（上野支所を除く）
+  url: https://www.city.iga.lg.jp/0000000174.html
+  confidence: high
+  amount: 月額上限は要介護1〜2が5,000円、3〜5が6,000円。その7〜9割を給付（負担割合による）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 伊賀市緊急通報システム事業
+  summary: 緊急ボタンで受信センターにつながる通報装置を設置し、安否確認や健康相談も行う。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所があり、緊急時に不安がある
+  - 一人暮らし、または同居者が緊急時に対応できない世帯
+  - 世帯分離や日中のみ独居は対象外
+  - 固定電話か携帯電話が必要
+  where: 介護高齢福祉課、各支所（上野支所を除く）
+  url: https://www.city.iga.lg.jp/0000000002.html
+  confidence: high
+  amount: 市民税非課税世帯などは無料。市民税課税世帯は月1,000円（通話料は別）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい高齢者に昼食・夕食を届け、あわせて安否確認をする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、調理が困難
+  - 定期的な安否確認が必要
+  - おおむね65歳以上の単身世帯・高齢者世帯など
+  - 65歳未満の同居人がいると原則対象外
+  where: 介護高齢福祉課、各支所（上野支所を除く）
+  url: https://www.city.iga.lg.jp/0000000506.html
+  confidence: high
+  more_urls:
+  - https://www.city.iga.lg.jp/cmsfiles/contents/0000012/12835/koureishahukushiguidebook.pdf
+- category: ribiyo
+  name: 訪問理美容の出張料金助成
+  name_on_page: 訪問理美容サービス
+  summary: 店に行けない要介護3〜5の在宅の人に、訪問理美容の出張料金を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 理容院・美容院に出向くことが困難
+  where: 介護高齢福祉課、各支所（上野支所を除く）
+  url: https://www.city.iga.lg.jp/0000000087.html
+  confidence: high
+  amount: 出張料金1回1,000円を助成、月1回まで（理美容の料金は自己負担）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 高齢者等寝具洗濯サービス事業
+  summary: 寝具（掛・敷布団、毛布）を年2回、洗濯・乾燥・消毒する。
+  who:
+    at_home: true
+  at_application:
+  - 所得税非課税世帯の在宅の人
+  - 寝具の管理が困難なおおむね65歳以上の一人暮らし
+  - または寝たきり等の65歳以上の高齢者世帯など
+  where: 介護高齢福祉課、各支所（上野支所を除く）
+  url: https://www.city.iga.lg.jp/0000000547.html
+  confidence: high
+  amount: 利用料は無料（代替布団の貸与は1枚500円）。年2回まで
+- category: haikai
+  name: ひとり歩き高齢者のGPS助成・見守りシール
+  name_on_page: ひとり歩き高齢者等見守り支援事業
+  summary: 行方不明のおそれがある高齢者の家族に、GPS端末の費用助成と見守りシールの交付を行う。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請は介護する家族等
+  - 市内在住でおおむね65歳以上の本人
+  - 認知症で行方不明になるおそれがある
+  where: 介護高齢福祉課、各支所（上野支所を除く）
+  url: https://www.city.iga.lg.jp/0000000540.html
+  confidence: high
+  more_urls:
+  - https://www.city.iga.lg.jp/cmsfiles/contents/0000012/12835/koureishahukushiguidebook.pdf
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 伊賀市成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、後見の申立費用と後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 本人は市内に住所がある人（一部は住所地特例）
+  - 生活保護等を受けているか、費用負担が困難
+  - 報酬助成は後見人が親族の場合は対象外
+  where: 介護高齢福祉課 高齢福祉係
+  url: https://www.city.iga.lg.jp/0000000360.html
+  confidence: high
+- category: sonota
+  name: 軽度生活援助（家事などの手助け）
+  name_on_page: 軽度生活援助事業
+  summary: 在宅の高齢者に、外出の付き添いや整理整頓、軽い修繕など軽易な援助をする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、軽易な援助が必要
+  - 65歳以上の単身か65歳以上のみの世帯など
+  - 65歳未満の同居人がいると原則対象外
+  where: 介護高齢福祉課、各支所（上野支所を除く）
+  url: https://www.city.iga.lg.jp/0000000034.html
+  confidence: high
+  amount: 1時間300円の自己負担。月4回まで（剪定・修繕は年2回）
+  more_urls:
+  - https://www.city.iga.lg.jp/cmsfiles/contents/0000012/12835/koureishahukushiguidebook.pdf
+not_found:
+- iro
+- hochoki
+- jutaku
+- gaishutsu
+- mimamori
+- nichijo-yogu

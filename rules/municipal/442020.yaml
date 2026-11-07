@@ -1,0 +1,245 @@
+city: '442020'
+name: 別府市
+site: www.city.beppu.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: ひとまもり・おでかけ支援事業（バス・タクシー回数乗車券）
+  name_on_page: ひとまもり・おでかけ支援事業
+  summary: 70歳以上の人が、路線バス等とタクシー迎車回送料金に使える回数乗車券を1冊1,000円で買える。
+  who: {}
+  at_application:
+  - 令和8年度末（2027年3月31日）時点で満70歳以上
+  - 別府市の住民基本台帳に記載されている
+  - バスの利用（乗車）が可能
+  - 購入時に本人確認書類と印鑑が必要
+  where: 高齢者福祉課（市役所1階）、亀川・朝日・南部出張所
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/odekake_bus.html
+  confidence: high
+  amount: 1冊1,000円（額面2,100円分）。1人12冊まで。2026年7月1日〜2027年3月31日に販売
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: iro
+  name: 在宅高齢者介護者見舞金
+  name_on_page: 在宅高齢者介護者見舞金
+  summary: 要介護4・5の70歳以上の人を1年以上同居して在宅で介護している人に、見舞金を年1回支給する。
+  who:
+    age_min: 70
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 別府市に引き続いて1年以上住所がある（基準日10月1日）
+  - 介護される人と1年以上継続して同居し、現在も居宅で介護している
+  - 申請は10月から1か月間
+  - そのほかにも条件がある（頁に詳細なし）
+  where: 高齢者福祉課、各出張所（申請書を用意）
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/mimaikin.html
+  confidence: high
+  amount: 年額30,000円
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: kaigo-yohin
+  name: 家族介護用品の給付
+  name_on_page: 家族介護用品の給付事業
+  summary: 要介護4・5の65歳以上の人を在宅で介護する非課税世帯の家族に、介護用品を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護されるのは65歳以上で要介護4・5の人
+  - 毎年度の申請と、認定の有効期間切れに伴う申請が必要
+  where: 高齢者福祉課、ケアマネージャーに相談
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/kaigoyouhin.html
+  confidence: high
+  amount: 月額10,000円以内。紙おむつ・尿取りパット・清拭剤・使い捨て手袋・ドライシャンプー等
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: haishoku
+  name: 高齢者配食サービス事業
+  name_on_page: 高齢者配食サービス事業
+  summary: 調理が困難なひとり暮らし等の高齢者に昼食の弁当を届け、安否確認もする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らしの方等
+  - 単身の場合、年金収入等を合算した所得が200万円未満
+  - 利用審査表で、在宅での食事の調理が困難と認められる
+  where: 高齢者福祉課、地域包括支援センター
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/haisyoku.html
+  confidence: high
+  amount: 一般食（昼食）は1食350円、特別食は500円（PDFの事業一覧）。月〜土
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等緊急通報システム
+  name_on_page: 別府市ひとり暮らし高齢者等緊急通報システム
+  summary: ボタンでコールセンターにつながる緊急通報機器を貸し出す。据え置き型2種と携帯型（GPS付）がある。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 別府市に引き続き1年以上住所がある
+  - 年金収入等を合算した所得が200万円未満（同居者1人増ごとに60万円上乗せ）
+  - ひとり暮らし。ほかの世帯員全員が重度障がい・要介護4・5等の場合も可
+  - 駆けつけの協力員が市内在住2名以上必要（据え置き型Ⅰを除く）
+  where: 高齢者福祉課 高齢者福祉係（電話0977-21-1442）
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/kinkyuutuuhou.html
+  confidence: high
+  amount: 初回設置料は無料。通話料・電池代等は自己負担（PDFの事業一覧）
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: shingu
+  name: 寝具類洗濯サービス事業
+  name_on_page: 寝具類洗濯サービス事業
+  summary: 寝具の洗濯乾燥を、非課税世帯の在宅の高齢者等に1回810円で行う。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 寝具類の衛生管理が困難な状態の方
+  - 次のどれか。65歳以上で介護認定を受けたひとり暮らし
+  - 65歳以上で、要介護4・5の在宅寝たきり高齢者がいる世帯
+  - 75歳以上の高齢者のみの世帯
+  - 65歳以上で、同居者全員が重度の障害で日常生活に支障がある世帯
+  where: 高齢者福祉課、地域包括支援センター、居宅介護支援事業所
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/detail12.html
+  confidence: high
+  amount: 1回810円。同一年度に2回まで。掛け布団・敷き布団・毛布のうち3点1式
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: jutaku
+  name: 在宅高齢者住宅改造助成事業
+  name_on_page: 在宅高齢者住宅改造助成事業
+  summary: 介護保険の住宅改修とは別に、在宅高齢者のバリアフリー工事費の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれか。要支援・要介護1〜5で65歳以上の在宅高齢者がいる世帯
+  - または未認定で、改造が必要と認められる75歳以上の人がいる世帯
+  - または未認定で、改造が必要と認められる65歳以上のみの世帯
+  - 世帯員が市に1年以上住所があり、生計中心者の所得が200万円未満
+  - 市税完納。着工前の申請のみ。予算の上限に達し次第締め切り
+  where: 高齢者福祉課（申請書を用意）
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/jyuutakukaizou.html
+  confidence: high
+  amount: 一般改造は工事費60万円まで（介護認定ありは40万円まで）の2/3。小規模改造は30万円までの2/3。1世帯1回
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: jutaku
+  name: 高齢者世帯リフォーム支援事業
+  name_on_page: 高齢者世帯リフォーム支援事業
+  summary: 65歳以上の高齢者がいる世帯のバリアフリー改修工事費の一部を補助する。
+  who: {}
+  at_application:
+  - 別府市に住所があり居住。65歳以上の高齢者がいる世帯
+  - 市税完納。世帯員全員の直近の年間所得総額が350万円未満
+  - 公営住宅など国・県・市所有の住宅の居住者でない
+  - 過去に本事業や住宅改造助成の補助を受けていない
+  - 受付は令和8年7月14日〜12月4日。予算の上限に達し次第締め切り
+  where: 高齢者福祉課
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/rifoomusien.html
+  confidence: high
+  amount: 補助対象工事費の20％（上限30万円）。工事費30万円未満は対象外。在宅高齢者住宅改造助成との併用不可
+- category: sonota
+  name: 家具転倒防止器具の取付
+  name_on_page: 家具転倒防止器具取付
+  summary: 70歳以上の高齢者のみの世帯に、タンス・食器棚などへの家具転倒防止器具を取り付ける。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 70歳以上の高齢者のみの世帯
+  - 借家等の場合は家主の承諾書が必要
+  - 取付対象はタンス・食器棚等。1世帯3点以内
+  where: 高齢者福祉課（申請書を用意）
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/kagutentoubousi.html
+  confidence: high
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: haikai
+  name: オレンジステッカー交付事業
+  name_on_page: 別府市オレンジステッカー交付事業
+  summary: ひとり歩きのおそれのある在宅高齢者に、靴等に貼る登録番号入りステッカーを交付する。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれか。市内居住のおおむね65歳以上でひとり歩きのおそれがある
+  - または要介護・要支援で認知症高齢者の自立度ランクⅡ以上
+  - またはその他、市長が特に認める方
+  - 情報・写真・緊急連絡先を事前登録（別府警察署と共有）
+  where: 高齢者福祉課 高齢者福祉係、地域包括支援センター、ケアマネジャー
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/detail10.html
+  confidence: high
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: haikai
+  name: 認知症高齢者GPS機器購入費等助成事業
+  name_on_page: 認知症高齢者GPS機器購入費等助成事業
+  summary: 認知症高齢者のGPS機器の購入費などを、介護する家族・親族に助成する。
+  who:
+    at_home: true
+  at_application:
+  - 対象は、次のどちらかの高齢者を介護する家族・親族で、市内に住所がある
+  - (1)ひとり歩きのおそれのある概ね65歳以上の方
+  - (2)65歳以上の要介護・要支援で認知症高齢者の自立度Ⅱ以上
+  - 施設で生活している人、GPSを管理できる介護者がいない人は対象外
+  where: 介護保険課（申請書類の提出先。問い合わせは高齢者福祉課）
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/ninchisyo1.html
+  confidence: high
+  amount: 上限2万円（予算の範囲内）。月々の使用料・通信費は除く。対象高齢者1人につき1回のみ
+- category: sonota
+  name: 認知症高齢者個人賠償責任保険事業
+  name_on_page: 認知症高齢者個人賠償責任保険事業
+  summary: 認知症の人が他人にけがをさせた等の賠償に備える保険に、保険料を市が全額負担して加入できる。
+  who:
+    at_home: true
+  at_application:
+  - 別府市オレンジステッカー交付事業に登録している
+  - 認知症高齢者の日常生活自立度Ⅱ以上が確認できる
+  - 施設等で生活している人は加入できない
+  where: 高齢者福祉課（申請書を用意）
+  url: https://www.city.beppu.oita.jp/seikatu/fukusi/koureisyafukusi/detail10.html
+  confidence: high
+  amount: 保険料は全額市負担（自己負担なし）
+  more_urls:
+  - https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りがない等で申立てが難しい人の法定後見の申立てを市が行い、申立費用等が負担できなければ補助する。
+  who: {}
+  at_application:
+  - 市内居住者で四親等内の親族がない人、または市長が認めた人
+  - 申立費用等が負担できない場合に、その費用を補助
+  where: 高齢者福祉課、地域包括支援センター、別府市成年後見支援センター
+  url: https://www.city.beppu.oita.jp/doc/seikatu/fukusi/fukusi_sougou/gyoumu/04.pdf
+  confidence: low
+not_found:
+- hochoki
+- ribiyo
+- nichijo-yogu
+- mimamori

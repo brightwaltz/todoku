@@ -1,0 +1,109 @@
+city: '012220'
+name: 三笠市
+site: www.city.mikasa.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者の外出支援（共通回数券）
+  name_on_page: 高齢者外出支援助成事業
+  summary: バス・タクシーに使える共通回数券を交付し、通院や買い物の運賃を助ける。
+  who:
+    age_min: 70
+  at_application:
+  - 市民であること
+  - 利用は市内の発着に限る
+  where: 福祉事務所 福祉係
+  url: https://www.city.mikasa.hokkaido.jp/hotnews/detail/00015288.html
+  confidence: high
+  amount: 7,200円分（200円券36枚綴り）
+- category: gaishutsu
+  name: 高齢者のバス・タクシー回数券（遠方の人向け）
+  name_on_page: 高齢者バス利用助成事業
+  summary: 最寄りバス停から市立病院前までの運賃が200円超の地域の人に、超過分の回数券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 最寄りバス停から市立病院前まで片道200円超の地域に住む
+  where: 保健福祉課 福祉係（福祉事務所福祉係）
+  url: https://www.city.mikasa.hokkaido.jp/hotnews/files/00014600/00014668/20241028153925.pdf
+  confidence: low
+  amount: 片道運賃のうち200円を超える額分の回数券
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: ひとり暮らしの高齢者などにペンダント式の緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者など（詳しい条件は頁に無い）
+  - 実費負担での設置も相談できる
+  where: 生活安全センター、保健福祉課 福祉係
+  url: https://www.city.mikasa.hokkaido.jp/hotnews/files/00014600/00014668/20241028153925.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品給付事業
+  summary: 要介護4・5の在宅の人を介護する世帯に、紙おむつ等の給付券を毎月支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市民税非課税の世帯が対象
+  - 在宅の高齢者を介護している世帯
+  where: 保健福祉課 福祉係
+  url: https://www.city.mikasa.hokkaido.jp/hotnews/files/00014600/00014668/20241028153925.pdf
+  confidence: low
+  amount: 月額6,250円分（市内指定店で使える紙おむつ・尿とりパット券）
+- category: sonota
+  name: 高齢者の車の安全運転支援装置の後付け助成
+  name_on_page: 高齢者安全運転支援装置助成
+  summary: ペダル踏み間違い防止などの後付け装置の設置費を、商品券で助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 申請年度末に65歳以上で、市内に住所がある
+  - 運転免許があり、自家用の車の使用者が本人と同じ
+  - 市税などの滞納がない
+  - 1人1回限り
+  where: 福祉事務所 福祉係
+  url: https://www.city.mikasa.hokkaido.jp/hotnews/detail/00009763.html
+  confidence: high
+  amount: 上限30,000円（みかさ共通商品券で交付）
+- category: sonota
+  name: ぬくもり除雪サービス
+  name_on_page: ぬくもり除雪サービス
+  summary: 高齢者世帯などの玄関から公道までの除雪や、屋根・窓の緊急除雪をする。
+  who: {}
+  at_application:
+  - 世帯全員が70歳以上、または手帳1・2級の人だけの世帯
+  - 契約期間は11月15日から翌年3月15日
+  - 料金の負担がある
+  where: 福祉事務所 福祉係、社会福祉協議会
+  url: https://www.city.mikasa.hokkaido.jp/hotnews/detail/00017775.html
+  confidence: high
+  amount: 間口除雪は1冬1万〜2万円（年齢で異なる）、屋根・窓の除雪は費用の3割
+  more_urls:
+  - https://www.city.mikasa.hokkaido.jp/hotnews/detail/00002620.html
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

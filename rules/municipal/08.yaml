@@ -1,0 +1,49 @@
+pref: 08
+name: 茨城県
+site: www.pref.ibaraki.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 身障者等用駐車場利用証
+  name_on_page: いばらき身障者等用駐車場利用証制度
+  summary: 身障者等用駐車場を使える利用証を、障害者・要介護者・難病患者・妊産婦・けが人などに交付する。
+  who: {}
+  at_application:
+  - 県の交付基準（別紙 PDF）のいずれかに当たる人
+  - 対象は障害者、要介護者、難病患者、妊産婦、けが人等
+  - 手帳・介護保険被保険者証・受給者証・母子手帳・診断書などを提示する
+  where: お住まいの市町村の障害福祉・社会福祉担当課等（県外在住の人は県長寿福祉課へ郵送）
+  url: https://www.pref.ibaraki.jp/hokenfukushi/chofuku/chiiki/ud/parking/parking.html
+  confidence: high
+- category: yutai
+  name: いばらきシニアカード（高齢者優待カード）
+  name_on_page: いばらき高齢者優待制度
+  summary: 65歳以上の本人にカードを渡し、協賛店での割引などの特典が受けられる。
+  who:
+    age_min: 65
+  at_application:
+  - 茨城県内に住む65歳以上の本人
+  - 本人が住所・氏名・生年月日の分かる物を持って窓口へ行く
+  - 家族など代理の利用はできない
+  where: お住まいの市町村の窓口
+  url: https://senior.pref.ibaraki.jp/senior/about/
+  confidence: high
+  amount: 割引・ポイント加算などの内容は協賛店ごとに異なる
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

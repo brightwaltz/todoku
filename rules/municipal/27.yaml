@@ -1,0 +1,27 @@
+pref: '27'
+name: 大阪府
+site: www.pref.osaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 障がい者等用駐車区画の利用証
+  name_on_page: 大阪府障がい者等用駐車区画利用証制度
+  summary: 要介護1〜5の人などに、府が駐車区画の利用証を郵送で交付する。
+  who: {}
+  at_application:
+  - 大阪府内に住み、移動に配慮が必要な人のうち、頁の表の交付要件に当たる人
+  - 要介護の人は、要介護状態区分が「要介護1〜5」
+  - ほか、障がい者手帳の一定の等級以上の人・難病患者・妊産婦・けが人等も対象
+  - 介護保険被保険者証の写し（氏名・住所・要介護度の部分）を添える
+  where: 大阪府福祉部障がい福祉室障がい福祉企画課（権利擁護グループ）へ郵送。返送用に180円分の切手を同封（返信用封筒は不要）
+  url: https://www.pref.osaka.lg.jp/keikakusuishin/riyousyouseido/index.html
+  confidence: high
+  more_urls:
+  - https://www.pref.osaka.lg.jp/o090050/keikakusuishin/riyousyouseido/riyousyo_kofushinsei.html
+not_found:
+- yutai

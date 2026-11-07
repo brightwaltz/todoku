@@ -1,0 +1,147 @@
+city: 052078
+name: 湯沢市
+site: www.city-yuzawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ費支給券の交付
+  name_on_page: 紙おむつ費の支給
+  summary: 要介護・要支援の認定を受けた非課税世帯の方に、紙おむつ購入に使える支給券を交付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 湯沢市の介護保険の被保険者である
+  - 介護保険料に滞納がない
+  - 介護保険施設（特養・老健・介護医療院）に入所していない
+  where: 長寿福祉課、各総合支所
+  url: https://www.city-yuzawa.jp/soshiki/35/5556.html
+  confidence: high
+  amount: 要介護は年額最大 6 万円、要支援は年額最大 3.6 万円（1 枚 1,000 円分）
+- category: kinkyu-tsuho
+  name: ふれあい安心電話の設置
+  name_on_page: ふれあい安心電話の設置
+  summary: 緊急ボタンで救急を呼べる電話を設置し、月 1 回の安否確認の電話もある。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者（おおむね65歳以上）または高齢者世帯
+  - 障がい者等と同居する高齢者世帯も対象
+  - 協力員（近所の人や親族）がおおむね3名以上必要
+  where: 長寿福祉課高齢福祉班、市社会福祉協議会、各地区福祉サポートセンター
+  url: https://www.city-yuzawa.jp/soshiki/33/295.html
+  confidence: high
+  amount: 利用料は無料（通話料は自己負担）
+- category: haikai
+  name: あんしん見守りシール交付
+  name_on_page: 湯沢市あんしん見守りシール交付事業
+  summary: 道に迷うおそれのある方に、QRコード付きのシールを配り、発見時に家族へ連絡が届くようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者等見守りネットワーク事業に登録している
+  - 登録は自宅で生活する認知症高齢者等か市長が認める方
+  where: 長寿福祉課地域包括支援センター
+  url: https://www.city-yuzawa.jp/soshiki/34/5639.html
+  confidence: high
+  amount: 無料。1 人につき耐洗シール 20 枚と蓄光シール 10 枚
+- category: gaishutsu
+  name: 寝たきり高齢者等の移動費用助成
+  name_on_page: 寝たきり高齢者等移動費用助成事業
+  summary: 在宅の寝たきりや車いす常用の方の、福祉車両での通院などの移動費を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3以上の寝たきり・車いす常用の方が対象
+  - 障がい支援区分4以上の同様の方も対象
+  - 福祉有償運送の車両を使う場合は世帯が市民税非課税
+  - 利用前に登録が必要
+  where: 長寿福祉課 高齢福祉班
+  url: https://www.city-yuzawa.jp/soshiki/33/299.html
+  confidence: high
+  amount: 運賃の 2 分の 1（非課税世帯のタクシー利用は 4 分の 3）
+- category: sonota
+  name: 雪下ろし費用の助成
+  name_on_page: 雪下ろし費用助成
+  summary: 雪下ろしにかかる費用を助成する。事前の利用登録が必要。
+  who: {}
+  at_application:
+  - 雪下ろしの前に利用登録が必要（窓口は2月26日まで）
+  - 対象の世帯・所得などの条件は市に確かめる
+  where: 長寿福祉課、各総合支所
+  url: https://www.city-yuzawa.jp/soshiki/33/301.html
+  confidence: high
+- category: sonota
+  name: 湯っこ券（入浴料助成）
+  name_on_page: 湯沢市まめで長生き湯っこ事業について
+  summary: 75歳以上の方に、市内の指定入浴施設で使える入浴料の助成券を発行する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内在住（年度内に75歳になる人を含む）
+  where: 長寿福祉課 高齢福祉班、各総合支所地域応援班
+  url: https://www.city-yuzawa.jp/soshiki/34/3397.html
+  confidence: high
+  amount: 1 回 200 円分、湯っこ券 12 枚
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり・きゅう・マッサージ等の施術費助成
+  summary: 在宅の75歳以上の方に、はり・きゅう・マッサージの施術で使える助成券を交付する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 市民で、年度内に75歳になる人を含む
+  where: 長寿福祉課、各総合支所
+  url: https://www.city-yuzawa.jp/soshiki/33/294.html
+  confidence: high
+  amount: 1 回 1,000 円分の助成券を年 6 枚
+- category: sonota
+  name: 認知症グループホームの家賃等の助成
+  name_on_page: 湯沢市グループホーム家賃等助成事業
+  summary: 認知症対応型グループホームに入居する低所得の方の家賃等の負担を軽くする。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 湯沢市の介護保険の被保険者
+  - 市内の助成承認を受けたグループホームに入居している
+  - 本人の所得と課税年金収入の合計が約82万6,500円以下
+  - 課税者の扶養親族や被扶養者になっていない
+  - 介護保険料の滞納がなく、生活保護を受けていない
+  where: 長寿福祉課 介護保険班
+  url: https://www.city-yuzawa.jp/soshiki/35/3274.html
+  confidence: high
+  amount: 日額上限 600 円の負担軽減
+- category: sonota
+  name: 安心キット（救急医療情報キット）の配布
+  name_on_page: 「安心キット（救急医療情報キット）」を配布しています
+  summary: 救急時に備え、医療情報を入れて冷蔵庫に保管するキットを無料で配る。
+  who: {}
+  at_application:
+  - 原則65歳以上の高齢者のみの世帯
+  - 65歳未満でも病気や障がいがあり希望する方は対象
+  where: 長寿福祉課、または民生児童委員に連絡
+  url: https://www.city-yuzawa.jp/soshiki/33/1298.html
+  confidence: high
+  amount: 無料
+not_found:
+- haishoku
+- iro
+- koken
+- shingu
+- ribiyo
+- jutaku

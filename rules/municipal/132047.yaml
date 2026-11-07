@@ -1,0 +1,293 @@
+city: '132047'
+name: 三鷹市
+site: www.city.mitaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの宅配支給
+  name_on_page: 高齢者等紙おむつ支給事業
+  summary: 要介護4・5の住民税非課税世帯に、紙おむつ等を月1回宅配する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 特養・老健・介護医療院の入所者は対象外
+  - 生活保護世帯は対象外
+  where: 高齢者支援課 高齢者支援係（市役所1階12番窓口）
+  url: https://www.city.mitaka.lg.jp/c_service/000/000917.html
+  confidence: high
+  amount: 指定カタログから支給限度内で選べる（限度額は頁に記載なし）
+  more_urls:
+  - https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_6.pdf
+- category: kaigo-yohin
+  name: 入院中の紙おむつ代の助成
+  name_on_page: 入院中の紙おむつ代の助成
+  summary: おむつ持ち込み不可の病院に入院中の、病院へ払った紙おむつ代を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 紙おむつ持ち込み不可の病院に入院し、おむつ代を支払っている
+  - 介護保険適用の病院等の入院者・生活保護世帯は対象外
+  - 事前に対象者認定の申込みが必要
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_6.pdf
+  confidence: high
+  amount: 上限月額6,000円
+- category: haishoku
+  name: 毎日型の配食（昼・夕）
+  name_on_page: 毎日型給食サービス
+  summary: 昼食・夕食を週14回まで届け、安否確認や服薬の声かけも行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上
+  - 要支援1以上、または重度の障がい者の世帯
+  - 買い物や炊事が心身の状態から困難
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.mitaka.lg.jp/c_service/089/089591.html
+  confidence: high
+  amount: 1食400円
+- category: haishoku
+  name: ふれあい型の配食
+  name_on_page: ふれあい型給食サービス
+  summary: 週2回、昼食か夕食を届ける配食サービス。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯か重度障がい者世帯
+  - 買い物や炊事が心身の状態から困難
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.mitaka.lg.jp/c_categories/index02001001004.html
+  confidence: low
+  amount: 1食400円
+  more_urls:
+  - https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+- category: haikai
+  name: 居場所確認用端末機の貸出
+  name_on_page: 高齢者等位置情報確認システム
+  summary: 認知症の人の居場所を検索できる端末機を、介護する家族等に貸し出す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で居場所が分からなくなったことがある人を介護する家族等
+  - 植込み型ペースメーカー装着者は利用不可
+  where: 高齢者支援課（市役所1階12番窓口）
+  url: https://www.city.mitaka.lg.jp/c_service/000/000894.html
+  confidence: high
+  amount: 月額220円（生活保護受給者は無料）
+- category: haikai
+  name: ただいまシール（見守りシール）の配布
+  name_on_page: 認知症ひとり歩き高齢者等見守りシール事業
+  summary: 二次元コード入りシールを配り、発見者と家族が匿名で連絡できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の症状でひとり歩きにより帰宅が困難になるおそれがある市民
+  - 本人・家族・支援者が申請できる
+  where: 高齢者支援課 介護予防係（市役所1階12番窓口）
+  url: https://www.city.mitaka.lg.jp/c_service/115/115442.html
+  confidence: high
+  amount: 無料（追加購入分と通信料は自己負担）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重度の要介護者を介護保険サービスなしで介護する同居家族に年額を贈る。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人と介護する同居家族がともに住民税非課税世帯
+  - 過去1年の入院が延べ90日以内
+  - 過去1年に介護保険サービス未利用（短期入所は年7日程度可）
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_6.pdf
+  confidence: high
+  amount: 年額10万円
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 補聴器購入費助成事業
+  summary: 補聴器本体の購入費の半額（上限4万円）を、購入前の申請で助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 満18歳以上の市民（65歳以上用の申請書あり）
+  - 本人の合計所得金額が210万円未満
+  - 障害者の補聴器（補装具）支給の対象でない
+  - 補聴器相談医が必要と認める
+  - 購入前申請・認定補聴器専門店での購入が必要
+  where: 高齢者支援課 高齢者支援係（市役所1階12番窓口）
+  url: https://www.city.mitaka.lg.jp/c_service/099/099672.html
+  confidence: high
+  amount: 購入費の2分の1、上限4万円（1人1台）
+  more_urls:
+  - https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_6.pdf
+- category: jutaku
+  name: 市独自の住宅改修給付（予防給付・設備改修）
+  name_on_page: 高齢者自立支援住宅改修給付事業
+  summary: 介護保険の枠外で手すり・浴槽・便器などの改修費を市が助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定結果通知を受けている（非該当も予防給付の対象）
+  - 日常生活動作に困難があり改修が必要と認められる
+  - 設備改修は介護保険住宅改修費を使った上での上乗せ
+  - 工事前の相談・訪問調査が必要
+  where: 介護保険課 介護給付係
+  url: https://www.city.mitaka.lg.jp/c_service/000/000910.html
+  confidence: high
+  amount: 課税世帯7割・非課税世帯9割。予防給付は上限20万円、設備改修は浴槽37.9万円・流し15.6万円・便器10.6万円まで
+  more_urls:
+  - https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_6.pdf
+- category: ribiyo
+  name: 訪問理美容券（年4枚）
+  name_on_page: 訪問理美容サービス
+  summary: 要介護3以上で理美容店に行けない人の自宅へ出張調髪（カットのみ）。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 自ら理美容店に行くことが困難
+  - 有料老人ホーム・介護施設入所中や入院中は対象外
+  where: 高齢者支援課 高齢者支援係（市役所1階12番窓口）
+  url: https://www.city.mitaka.lg.jp/c_service/000/000895.html
+  confidence: high
+  amount: 1回600円、年度4枚
+  more_urls:
+  - https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+- category: mimamori
+  name: ボランティアによる電話訪問
+  name_on_page: ひとり暮らし高齢者電話訪問
+  summary: ひとり暮らしの人に週1回ボランティアが電話し、安否確認や会話をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - 原則として市内在住
+  where: みたかボランティセンター（電話 0422-76-1271）、高齢者支援課
+  url: https://www.city.mitaka.lg.jp/c_service/000/000902.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+- category: mimamori
+  name: あんしんキーホルダーの交付
+  name_on_page: あんしんキーホルダー（見守りキーホルダー）
+  summary: 登録番号入りのキーホルダーを渡し、外出先の緊急時の身元確認に使う。
+  who: {}
+  at_application:
+  - 市内在住のおおむね65歳以上、または40〜64歳で要支援・要介護認定を受けている
+  where: 担当地区の高齢者なんでも相談センター（地域包括支援センター）
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+  confidence: high
+- category: mimamori
+  name: ごみ出し支援と安否確認
+  name_on_page: ふれあいサポート事業（ごみ出し支援と安否確認）
+  summary: ごみ出しが難しい世帯のごみを排出場所へ運び、希望者には声がけで安否確認する。
+  who: {}
+  at_application:
+  - 要介護2以上の人のみの世帯、または身体障害者手帳1・2級の人のみの世帯
+  - 上記に準ずると市長が認める世帯も可
+  - 審査と現地調査がある
+  where: 高齢者支援課または障がい者支援課（所管はごみ対策課）
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+  confidence: high
+- category: sonota
+  name: 公衆浴場の無料入浴券
+  name_on_page: 高齢者公衆浴場無料入浴事業
+  summary: 市内の公衆浴場3か所で使える入浴券30枚を配付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application: []
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.mitaka.lg.jp/c_categories/index02001001001.html
+  confidence: high
+  amount: 入浴券30枚
+  more_urls:
+  - https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 救急に必要な情報をシートにまとめ、冷蔵庫に保管するキットを渡す。
+  who: {}
+  at_application:
+  - 65歳以上の人
+  - または65歳未満で障害者手帳等・指定難病患者のみの世帯（障がい者支援課）
+  where: 高齢者支援課（市役所1階12番窓口）、地域包括支援センター
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+  confidence: high
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険制度
+  summary: 他人にけがをさせた等の賠償責任を補償する保険に、市の負担で加入できる。
+  who: {}
+  at_application:
+  - 市内在住で、ただいまシールか位置情報確認システムに登録している
+  where: 高齢者支援課（市役所1階12番窓口）
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+  confidence: high
+  amount: 無料（市が保険加入費用を負担）
+- category: sonota
+  name: 傾聴ボランティアの派遣
+  name_on_page: 傾聴ボランティアの派遣
+  summary: 月1回、自宅や施設をボランティアが訪ねて60分以内の話し相手になる。
+  who: {}
+  at_application:
+  - 市内在住のおおむね65歳以上
+  - 介護サービス利用中、または市内の特養等に入所している
+  where: 地域福祉課 地域ケア推進係
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 車いすの短期貸出し
+  name_on_page: 車いすの貸出し
+  summary: 一時的に車いすが必要な人に、1か月更新で3か月まで貸し出す。
+  who: {}
+  at_application:
+  - 一時的に車いすを必要とする高齢者や身体障がい者等
+  where: 三鷹市社会福祉協議会 総務課 在宅サービス係
+  url: https://www.city.mitaka.lg.jp/c_service/083/attached/attach_83519_5.pdf
+  confidence: high
+not_found:
+- koken
+- shingu
+- nichijo-yogu
+- yutai

@@ -1,0 +1,167 @@
+city: '342076'
+name: 福山市
+site: www.city.fukuyama.hiroshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品券の支給
+  name_on_page: 家族介護用品の支給
+  summary: 重度の要介護者を在宅で介護する同居家族に、登録店で使える介護用品券を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、要介護者と同居の家族が介護している
+  - 要介護4・5、またはこれに相当する人
+  - 要介護者・介護者ともに市民税非課税
+  where: 介護保険課、各保健福祉課、新市支所・沼隈支所（保健福祉担当）
+  url: https://www.city.fukuyama.hiroshima.jp/soshiki/kaigo/57510.html
+  confidence: high
+  amount: 要介護者1人につき年間最大75,000円分（月換算6,250円）の用品券
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず重度の要介護者を在宅で介護する同居家族に慰労金を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、要介護者と同居の家族が介護している
+  - 要介護4・5、またはこれに相当する人
+  - 要介護者・介護者ともに市民税非課税
+  - 介護期間1年以上で、介護保険サービスを使っていない
+  - ショートステイは通算7日以内なら可
+  where: 介護保険課、高齢者支援課、各保健福祉課、新市支所・沼隈支所（保健福祉担当）
+  url: https://www.city.fukuyama.hiroshima.jp/soshiki/kaigo/57513.html
+  confidence: high
+  amount: 要介護者1人あたり年額100,000円
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 補聴器購入に係る費用を助成します
+  summary: 難聴で生活に支障のある高齢者に、補聴器の購入費を一部または全部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 福山市に住民登録がある
+  - 聴覚障がいの身体障害者手帳の交付対象でない
+  - 補聴器相談医が必要と認めた（申請書の医師意見欄）
+  where: 高齢者支援課、各保健福祉課、新市支所、沼隈支所
+  url: https://www.city.fukuyama.hiroshima.jp/site/koureisha-shien/378919.html
+  confidence: high
+  amount: 上限25,000円（税込）、1人1回限り
+- category: gaishutsu
+  name: おでかけ乗車券（バス・タクシー）
+  name_on_page: 高齢者の交通費を助成します（おでかけ乗車券）
+  summary: 75歳以上の人に、バス・タクシーで使える乗車券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 10月1日現在、市内に住所がある
+  - 例年7月上旬に申請はがきが届く。窓口申請も可
+  where: 高齢者支援課、各保健福祉課、各支所・分室・分所
+  url: https://www.city.fukuyama.hiroshima.jp/site/koureisha-shien/413863.html
+  confidence: high
+  amount: 1人年間7,000円分（バス・タクシー共通券5,000円、バス専用券2,000円）
+- category: sonota
+  name: あん摩・マッサージ・はり・きゅう等の施術助成
+  name_on_page: あん摩・マッサージ・指圧、はり、きゅう等施術受療助成
+  summary: 医療保険の対象外の施術を受けるとき、費用の一部に使える助成券を交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、満75歳以上または後期高齢者医療の被保険者
+  where: 高齢者支援課、各保健福祉課、各支所・分室・分所
+  url: https://www.city.fukuyama.hiroshima.jp/site/koureisha-shien/378924.html
+  confidence: high
+  amount: 助成券は年6枚、1枚1,000円（1回の施術で2枚まで使用可）
+- category: haishoku
+  name: 「食」の自立支援事業（配食サービス）
+  name_on_page: 福山市「食」の自立支援事業
+  summary: 栄養改善が必要な高齢者に、安否確認を兼ねた配食を行う。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らしまたは高齢者のみの世帯等
+  - 事業対象者、要支援認定者または要介護認定者
+  - 栄養改善と安否確認の必要性が認められる
+  - 担当ケアマネジャーを通して申し込む
+  where: 高齢者支援課または各支所（保健福祉担当）。ケアマネジャー経由
+  url: https://www.city.fukuyama.hiroshima.jp/site/koureisha-shien/378917.html
+  confidence: high
+  amount: 1日1食（昼または夕）、週5日まで。自己負担額は頁に記載なし
+- category: shingu
+  name: 寝具類の乾燥消毒サービス
+  name_on_page: 寝具類乾燥消毒サービス
+  summary: 失禁などで寝具の衛生管理が難しい高齢者の寝具を乾燥消毒する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしや高齢者のみの世帯の人など
+  - 心身の障がいや傷病等で失禁があり、寝具の衛生管理が困難
+  where: 高齢者支援課、各保健福祉課、沼隈支所、新市支所、各地域包括支援センター
+  url: https://www.city.fukuyama.hiroshima.jp/site/koureisha-shien/378014.html
+  confidence: high
+  amount: 年6回以内、1回あたり550円（自己負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（見守りセンサー付き）
+  name_on_page: 一人暮らしの高齢者を２４時間見守ります（緊急通報装置について）
+  summary: ひとり暮らし高齢者等の自宅に緊急通報装置を設置し、24時間見守る。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - with_family
+  at_application:
+  - 市内に住所があり、安否確認の必要がある
+  - 緊急時に駆け付けられる協力員を2人確保できる
+  - 同居人が寝たきりや障がい等で緊急時に動けない世帯も対象
+  where: 地域包括支援センターまたは居宅介護支援事業所を通して市（高齢者支援課）へ申請
+  url: https://www.city.fukuyama.hiroshima.jp/soshiki/koreisha/147.html
+  confidence: high
+  amount: 利用者負担は月額0円〜2,494円（課税状況と機器による）。見守りセンサーは無料〜月280円
+- category: haikai
+  name: 認知症ひとり歩きSOSネットワークの事前登録
+  name_on_page: 福山市認知症ひとり歩きＳＯＳネットワーク
+  summary: 行方不明のおそれがある高齢者を事前登録し、行方不明時にラジオやLINEで情報を配信する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になることが心配される高齢者
+  where: 福山市社会福祉協議会（事前登録）。市の問い合わせ先は高齢者支援課
+  url: https://www.city.fukuyama.hiroshima.jp/soshiki/koreisha/112984.html
+  confidence: low
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見開始の申立て費用や後見人の報酬を、家庭裁判所が決めた額の範囲で助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分な認知症高齢者等
+  - 申立てをする人がいない、または費用負担が困難
+  - 費用負担が困難な場合は生活保護受給者か市長が認めた人
+  - 親族が後見人の場合、報酬は対象外
+  where: 高齢者支援課（問い合わせ先）
+  url: https://www.city.fukuyama.hiroshima.jp/uploaded/attachment/341315.pdf
+  confidence: low
+  amount: 家庭裁判所が決定した金額の範囲で、全部または一部を助成
+not_found:
+- ribiyo
+- jutaku
+- nichijo-yogu

@@ -1,0 +1,123 @@
+city: '332151'
+name: 美作市
+site: www.city.mimasaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に困難な人の成年後見の申立て費用と後見人への報酬を市が助成する。
+  who: {}
+  at_application:
+  - 単身は収入見込・資産とも各120万円以下
+  - 2人以上の世帯は収入見込・資産とも各170万円以下
+  - 後見人等が親族の場合は対象外
+  where: 健康政策課 長寿支援係（認知症高齢者の場合）
+  url: https://www.city.mimasaka.lg.jp/kenkofukushi/koreishashien/koreishamukeservice/1468399348685.html
+  confidence: high
+- category: nichijo-yogu
+  name: 杖・老人手押車の給付
+  name_on_page: 老人日常生活用具給付事業
+  summary: 在宅のひとり暮らしの高齢者などに、杖や老人手押車を給付する。
+  who: {}
+  at_application:
+  - 65歳以上で、在宅のひとり暮らし高齢者や支援が必要な要援護高齢者など
+  - 用具の購入前に申請書と事業者の見積書・カタログが必要
+  where: 健康政策課
+  url: https://www.city.mimasaka.lg.jp/kenkofukushi/koreishashien/koreishamukeservice/4630.html
+  confidence: high
+  amount: 給付限度額は杖1,900円、老人手押車8,300円。
+- category: mimamori
+  name: 高齢者見守りICT機器の設置補助
+  name_on_page: 美作市高齢者見守りICT機器設置事業補助金
+  summary: 緊急通報やセンターなどの機能がある見守り機器の購入・設置費を補助する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住所があり、市内の住居で生活している
+  - 市税を滞納していない
+  - 過去にこの補助金の交付を受けていない
+  - 据え置き型で所定の機能を備えた機器が対象
+  where: 健康政策課
+  url: https://www.city.mimasaka.lg.jp/kenkofukushi/koreishashien/koreishamukeservice/4628.html
+  confidence: high
+  amount: 購入・設置費の上限3万円まで。
+- category: sonota
+  name: 自動車急発進防止装置の整備補助
+  name_on_page: 美作市自動車急発進防止装置整備費補助金
+  summary: 高齢者の踏み間違い事故を防ぐ急発進防止装置の取付費を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 車検証に使用者として記載され、運転免許を持っている
+  - 市税を滞納していない
+  - 非営利目的のAT車が対象。取付前に申請する
+  where: 健康政策課
+  url: https://www.city.mimasaka.lg.jp/kenkofukushi/koreishashien/koreishamukeservice/4624.html
+  confidence: high
+  amount: 装置と取付費の3分の2以内、上限10万円。
+- category: gaishutsu
+  name: タクシー利用料金の補助
+  name_on_page: 美作市タクシー利用補助「てごタク」
+  summary: 免許のない高齢者や要介護者などのタクシー料金の一部を市が負担する。
+  who: {}
+  at_application:
+  - 運転免許がなく、65歳以上か要介護1以上か各種手帳等をもつ人
+  - 障害者手帳・難病受給者証の人、妊産婦なども対象
+  - 市に事前申請し、指定のタクシー会社を利用する
+  where: 総合政策課
+  url: https://www.city.mimasaka.lg.jp/soshiki/seisaku/sogoseisaku/koukyokotsu/1498789947383.html
+  confidence: high
+  amount: 料金の半額を補助。自己負担は上限1,500円（料金1万円分まで）。
+- category: jutaku
+  name: 高齢者住宅改造費の上乗せ補助
+  name_on_page: 高齢者住宅改造費支給申請
+  summary: 手すり・段差解消などの住宅改造費を、介護保険に上乗せして補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市民税非課税が対象で、課税の場合は対象外
+  - 40〜64歳の第2号被保険者は対象外
+  - 着工前に申請が必要
+  where: 市民保険課（介護保険担当）
+  url: https://www.city.mimasaka.lg.jp/soshiki/shimin/shiminhoken/kaigo/shinsei/kyufu/1453794502348.html
+  confidence: high
+  amount: 基準額50万円の3分の2、上限333,000円。
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の現物支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5で非課税世帯の在宅の人を介護する家族に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある在宅の要介護高齢者を介護している家族等が申請
+  - 7月1日時点で本人が市町村民税非課税世帯に属する
+  where: 市（要綱上は市長宛に申請。担当課は頁に記載なし）
+  url: https://www.city.mimasaka.lg.jp/section/reiki/reiki_honbun/r140RG00000841.html
+  confidence: high
+  amount: 月額8,000円以内相当の用品を現物で支給。
+not_found:
+- haishoku
+- iro
+- hochoki
+- kinkyu-tsuho

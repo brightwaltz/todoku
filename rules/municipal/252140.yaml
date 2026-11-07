@@ -1,0 +1,157 @@
+city: '252140'
+name: 米原市
+site: www.city.maibara.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）の助成券交付
+  name_on_page: 介護用品支給助成事業
+  summary: 常時おむつ等が必要な方に、要介護度に応じて購入時に使える助成券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 米原市の被保険者である
+  - 介護保険料の所得段階が第1〜3段階（第2号は市民税非課税世帯）
+  - 排尿・排便が介助か見守り等（要介護4・5は不要）
+  - 介護保険料の滞納がない
+  where: 高齢福祉課
+  url: https://www.city.maibara.lg.jp/kenko/kourei/korei_service/18583.html
+  confidence: high
+- category: haishoku
+  name: 配食サービス（食事提供と安否確認）
+  name_on_page: 配食サービス事業
+  summary: 見守りが必要な高齢者世帯に、食事の提供と安否確認を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 日頃の調理を行うことが難しい
+  - 申請後に聞き取りと審査で可否を決める
+  where: 高齢福祉課
+  url: https://www.city.maibara.lg.jp/soshiki/kenko_fukushi/koureifukusi/service/1503.html
+  confidence: high
+  amount: 利用料はお弁当代金
+  more_urls:
+  - https://www.city.maibara.lg.jp/kenko/kourei/korei_service/18588.html
+- category: kinkyu-tsuho
+  name: 緊急通報端末の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 日常生活に不安がある方に緊急通報の端末装置を貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしか高齢者世帯で、疾病等で不安がある方
+  - またはひとり暮らしの重度心身障がい者
+  - または65歳以上で日中ひとりになり不安がある方
+  - 近隣の緊急時協力員をあらかじめ申請する
+  where: 高齢福祉課
+  url: https://www.city.maibara.lg.jp/soshiki/kenko_fukushi/koureifukusi/service/1503.html
+  confidence: high
+  amount: 利用料は電話代など。日中ひとりの方は月額基本料あり
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理容サービス事業
+  summary: 理美容店に行けない方の自宅へ理美容師が訪問し、理髪を行う。
+  who: {}
+  at_application:
+  - 寝たきりか車いす利用で理美容店の利用が難しい
+  - 高齢者または障がい者が対象
+  where: 高齢福祉課
+  url: https://www.city.maibara.lg.jp/soshiki/kenko_fukushi/koureifukusi/service/1503.html
+  confidence: high
+  amount: 利用料は理髪にかかる費用
+- category: jutaku
+  name: 自立支援のための住宅改修の助成
+  name_on_page: 高齢者自立支援住宅改修助成事業
+  summary: 介護認定を受けていない方の、介護保険の住宅改修に準じた工事費を一部助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市民税所得割が課せられていない世帯に属する
+  - 介護認定を受けていない
+  - 過去に類似の住宅改造助成を受けていない
+  - 今の住居に1年以上住んでいる
+  where: 高齢福祉課
+  url: https://www.city.maibara.lg.jp/soshiki/kenko_fukushi/koureifukusi/service/1506.html
+  confidence: high
+  amount: 市民税非課税世帯は 4 分の 3 以内で上限 15 万円、均等割課税世帯は 2 分の 1 以内で上限 10 万円
+- category: gaishutsu
+  name: 高齢者用バス定期券（小判手形）の購入費助成
+  name_on_page: 公共交通乗車券購入費助成事業
+  summary: 湖国バスの高齢者用定期券「小判手形」の購入費の半額を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に居住している
+  - 購入予約のうえ、後日の来庁時に助成後の額で購入する
+  - 購入時に身分証明書が必要
+  where: 社会福祉課、山東支所、各市民自治センター・行政サービスセンター
+  url: https://www.city.maibara.lg.jp/kenko/kourei/korei_service/22652.html
+  confidence: high
+  amount: 定期券代の 2 分の 1。1か月券 1,250 円、3か月券 2,950 円、6か月券 5,300 円
+- category: haikai
+  name: 認知症高齢者等の行方不明時の事前登録と見守りシール
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 事前登録すると行方不明時に協力機関へ情報を配信し、希望者には見守りシールを配る。
+  who: {}
+  at_application:
+  - 市内に住所があるか、市内事業所で介護保険サービスを利用している
+  - 65歳以上の認知症高齢者か若年性認知症と診断された方
+  - または徘徊で行方不明になるおそれのある障がい者
+  where: 高齢福祉課（地域包括支援センター）
+  url: https://www.city.maibara.lg.jp/soshiki/kenko_fukushi/chiikihokatsu_center/nintisyou/11238.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援助成事業
+  summary: 費用の負担が難しい方に、審判の請求費用や後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 判断能力が十分でない高齢者、知的・精神障がい者
+  - 成年後見制度を利用する費用の負担が困難
+  - 詳しい条件は交付要綱による（未確認）
+  where: 高齢福祉課（地域包括支援センター）
+  url: https://www.city.maibara.lg.jp/soshiki/kenko_fukushi/chiikihokatsu_center/koureisyagyakutai/18043.html
+  confidence: high
+  amount: 審判請求費用や後見人等報酬の全部または一部
+- category: sonota
+  name: 生活管理指導員の派遣（家事援助中心）
+  name_on_page: 生活管理指導員派遣事業
+  summary: 週 1 日 1 時間程度、家事援助を中心としたサービスの提供や指導を行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者世帯等
+  - 身体的・精神的理由で社会適応が難しい
+  - 日常的な援助が必要
+  - 介護認定の申請で自立（非該当）と判断された
+  where: 高齢福祉課
+  url: https://www.city.maibara.lg.jp/soshiki/kenko_fukushi/koureifukusi/service/1506.html
+  confidence: high
+  amount: 利用料の例：45分以上の生活援助で 1 回 235 円（状況で変わる）
+not_found:
+- iro
+- hochoki
+- shingu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

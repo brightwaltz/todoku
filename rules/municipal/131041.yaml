@@ -1,0 +1,341 @@
+city: '131041'
+name: 新宿区
+site: www.city.shinjuku.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ費用の助成
+  name_on_page: おむつ費用助成
+  summary: 日常的におむつが必要な方に、おむつ費用を助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 新宿区に住所がある
+  - 要介護1以上（2号被保険者可）、または65歳以上で入院中
+  - 介護保険料段階が第1〜8段階
+  - 心身障害者おむつ費用助成を受けていない
+  - 特養・老健等の入所者は対象外
+  where: 高齢者支援課、高齢者総合相談センター
+  url: https://www.city.shinjuku.lg.jp/fukushi/file05_02_00006.html
+  confidence: high
+  amount: 月額10,000円まで助成。自己負担は費用の約1割（住民税非課税などは0）
+  more_urls:
+  - https://www.city.shinjuku.lg.jp/content/000258750.pdf
+- category: haishoku
+  name: 配食サービス（昼食）
+  name_on_page: 配食サービス
+  summary: 食事の支度が困難な方に、安否確認を兼ねて昼食弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 食事の支度が困難な方
+  - 日中に同様の状態となる世帯も可
+  where: 高齢者支援課、高齢者総合相談センター、特別出張所
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 1食500円（自己負担）。月〜金の希望曜日に配達
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 緊急ボタンやセンサーで警備会社に通じる通報装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 慢性疾患などで日常的に常時の注意が必要
+  - シルバーピア等の緊急通報装置付き住宅の入居者は対象外
+  - 日中・夜間に同様の状態となる世帯も可
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 設置費用の1割が自己負担（住民税非課税・生活保護等は0）
+- category: nichijo-yogu
+  name: 火災安全システム（電磁調理器等の支給）
+  name_on_page: 火災安全システム
+  summary: 電磁調理器・火災警報器・ガス安全システムから1つを支給する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 防火の配慮が必要な方
+  - 日中・夜間に同様の状態となる世帯も可
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 機器の設置費用等の1割が自己負担（住民税非課税・生活保護等は0）
+- category: shingu
+  name: 寝具の乾燥消毒・水洗い
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 安否確認を兼ね、委託業者が寝具を預かり乾燥消毒と水洗いをする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 次のいずれか：ひとり暮らし・65歳以上のみの世帯
+  - または身体障害者手帳1・2級、愛の手帳1・2度
+  - または寝たきりの方等
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 乾燥消毒は年11回、水洗いは年1回。費用の1割が自己負担
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 理美容サービス
+  summary: 自宅に理容師・美容師が出張して調髪・カットをする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 次のいずれか：要介護4・5
+  - または身体障害者手帳1・2級、愛の手帳1・2度
+  - または寝たきりと同様で外出が困難
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 年6回まで（申請月で変わる）。1回2,000円の自己負担
+- category: hochoki
+  name: 補聴器の支給・購入費助成
+  name_on_page: 補聴器の支給等
+  summary: 聴力が低下した方に補聴器を支給するか、購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 障害者の制度で補聴器が支給されていない
+  - 先に耳鼻科で聴力検査（区指定の書類）が必要
+  - 前回の支給日から5年間は再支給等を受けられない
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 支給は片耳2,000円・両耳4,000円の自己負担。購入費助成は上限72,450円
+- category: haikai
+  name: 徘徊高齢者探索サービス（GPS端末の貸出）
+  name_on_page: 徘徊高齢者探索サービス
+  summary: 徘徊のある方を介護する家族に、位置情報の GPS 端末を貸し出す。
+  who:
+    age_min: 60
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症による徘徊のある60歳以上の方を在宅で介護している方
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 月額930円（探索依頼料は無料。住民税非課税・生活保護等は0）
+- category: mimamori
+  name: 高齢者見守りキーホルダー・シール
+  name_on_page: 高齢者見守りキーホルダー事業
+  summary: 登録番号入りのキーホルダーとシールを配り、保護時の身元確認につなげる。
+  who:
+    age_min: 65
+  at_application: []
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 地域見守り協力員の訪問
+  name_on_page: 地域見守り協力員事業
+  summary: ボランティアの協力員が月2回ほど自宅を訪ね、声かけして見守る。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application: []
+  where: 新宿区社会福祉協議会 地域活動支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 情報紙「ぬくもりだより」の訪問配布
+  name_on_page: 情報紙「ぬくもりだより」の訪問配布
+  summary: 月2回、情報紙を自宅に届けながら元気な様子を確かめる。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 事前に民生委員が一人暮らしの状況を伺う
+  where: 高齢者支援課 高齢者相談第二係
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 介護者リフレッシュ支援（ヘルパー派遣）
+  name_on_page: 介護者リフレッシュ支援事業
+  summary: 介護者を休ませるため、介護している高齢者の所へヘルパーを派遣する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 区内在住で、65歳以上の在宅高齢者を日常的に介護している方
+  - 介護される方が要介護1以上、または認知症自立度Ⅱ以上
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 年24時間まで。1時間300円（負担割合により600円・900円）
+- category: sonota
+  name: 高齢者緊急ショートステイ
+  name_on_page: 高齢者緊急ショートステイ
+  summary: 介護する家族の急病等で介護が受けられないとき、ショートステイを7日間使える。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護保険のショートステイに空きがない
+  - 介護する家族の急病・けが、または親族の葬儀参加
+  - 原則ケアマネジャーから申請
+  where: 高齢者支援課 高齢者相談第一係・第二係
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 利用期間7日間。一般は1日3,000円
+- category: sonota
+  name: 一人暮らし認知症高齢者へのヘルパー派遣
+  name_on_page: 一人暮し認知症高齢者への生活支援サービス
+  summary: 一人暮らしの認知症の方に、家事援助や身体介護のヘルパーを派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 認知症高齢者の日常生活自立度Ⅱ以上
+  - 区内在住の介護者がいない
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 年24時間まで。1時間300円（負担割合により600円・900円）
+- category: sonota
+  name: 回復期生活支援サービス（ヘルパー派遣）
+  name_on_page: 回復期生活支援サービス
+  summary: 退院直後など一時的に体が弱った方に、3か月以内ヘルパーを派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 退院または通院開始から1か月以内で、約3か月内に回復見込み
+  - 要支援・要介護認定を受けている（申請中含む）方は対象外
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 週6時間以内。1時間300円（負担割合により600円・900円）
+- category: sonota
+  name: 敬老杖の支給
+  name_on_page: 敬老杖の支給
+  summary: 歩行に不安のある方に T 字型の杖を 1 本支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 歩行に不安のある方
+  where: 高齢者総合相談センター、高齢者支援課
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 無料
+- category: jutaku
+  name: 住宅設備改修（浴槽・流し・洋式便器の助成）
+  name_on_page: 住宅設備改修
+  summary: 浴槽の取替えや和式から洋式便器への取替え等の費用を一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護保険の同種類の給付を受けていない
+  - 既存の設備の使用が困難
+  - 工事の前に申請が必要
+  where: 介護保険課 給付係
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 限度額内で費用の一部を助成（1〜3割負担。限度額は改修内容で異なる）
+- category: jutaku
+  name: 自立支援住宅改修（手すり・段差解消等の助成）
+  name_on_page: 自立支援住宅改修
+  summary: 要介護認定が非該当の方の手すり取付けや段差解消などの費用を一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護認定が「非該当」で、身体機能の低下で改修が必要
+  - 工事の前に申請が必要
+  where: 介護保険課 給付係
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 限度額20万円まで。費用の1〜3割が自己負担
+- category: nichijo-yogu
+  name: 自立支援日常生活用具の支給（腰掛便座・入浴補助用具等）
+  name_on_page: 自立支援日常生活用具の支給
+  summary: 要介護認定が非該当の方の腰掛便座・スロープ・歩行支援用具等の購入費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護認定が「非該当」で、福祉用具が必要
+  - 購入の前に申請が必要
+  where: 介護保険課 給付係
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 用具ごとの限度額内で、費用の1〜3割が自己負担
+- category: sonota
+  name: 資源・ごみの訪問収集
+  name_on_page: 資源・ごみの訪問収集
+  summary: ごみを集積所に出せない世帯の玄関先まで職員が収集に来る。
+  who: {}
+  at_application:
+  - 次のいずれか：65歳以上で介護が必要な方や障害者のみの世帯
+  - （集積所まで出すのが困難で、身近な人の協力も得られない）
+  - または85歳以上の一人世帯で、親族等から定期連絡・訪問がない
+  where: 新宿清掃事務所、新宿東清掃センター、歌舞伎町清掃センター
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 無料
+- category: yutai
+  name: ふれあいクーポン（公衆浴場・スポーツ施設の無料利用）
+  name_on_page: ふれあいクーポン
+  summary: 区内の公衆浴場と区立スポーツ施設を無料で使えるクーポンを発行する。
+  who: {}
+  at_application:
+  - 次のいずれか：60歳以上
+  - または身体障害者手帳・愛の手帳・精神障害者保健福祉手帳
+  - または未就学児を扶養し児童育成手当を受給
+  where: 地域包括ケア推進課 高齢いきがい係
+  url: https://www.city.shinjuku.lg.jp/content/000258750.pdf
+  confidence: high
+  amount: 月4回まで無料（浴場専用3回＋共通1回）
+not_found:
+- iro
+- koken
+- gaishutsu
+- chusha

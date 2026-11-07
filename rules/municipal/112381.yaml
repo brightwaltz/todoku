@@ -1,0 +1,276 @@
+city: '112381'
+name: 蓮田市
+site: www.city.hasuda.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（昼食の手渡しと安否確認）
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に平日の昼食弁当を手渡しし、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体的・精神的な理由で食事づくりができない
+  - 経験不足だけが理由の場合は対象外
+  - 訪問調査で現状を確認する
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/korehukusiservice.html
+  confidence: high
+  amount: 1食400円（食券を事前に購入）
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 急病時にボタンで受信センターへつながる通報装置を貸与する。
+  who:
+    age_min: 65
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 65歳以上のひとり暮らし、または世帯員全員が慢性疾患の高齢者世帯
+  - 世帯員の就労等で長時間同じ状態になるかたも対象
+  - 発作時に自分で119番通報するのが難しいかた
+  - 訪問調査がある
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/korehukusiservice.html
+  confidence: high
+  amount: 通話料のみ（希望者のオプション月550円）
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付、福祉電話の貸与
+  name_on_page: 日常生活用具の給付・貸与
+  summary: 介護保険の対象外の防火用具などを、条件に合う高齢者に給付・貸与する。
+  who:
+    age_min: 65
+  at_application:
+  - 火災警報器・自動消火器：ひとり暮らしで住民税非課税、または要介護4・5で世帯全員非課税
+  - 電磁調理器：ひとり暮らしで住民税非課税、防火の配慮が必要なかた
+  - 高齢者福祉電話（貸与）：ひとり暮らしで住民税非課税
+  - 訪問調査がある
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/korehukusiservice.html
+  confidence: high
+  amount: 警報器1台6,000円、自動消火器25,000円、電磁調理器10,000円まで
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: gaishutsu
+  name: 介護タクシー利用券（移送サービス）
+  name_on_page: 移送サービス
+  summary: 車いすやねたきりで一般交通機関を使えない人に介護タクシー利用券を出す。
+  who:
+    age_min: 65
+  at_application:
+  - 常時車いす、またはねたきりの状態
+  - 市と契約した事業者のみ利用可（月10回まで）
+  - 訪問調査がある
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/korehukusiservice.html
+  confidence: high
+  amount: 移送1時間まで1,000円、30分ごとに250円加算（本人負担）
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: haikai
+  name: 徘徊探索の端末機器の貸出
+  name_on_page: 徘徊高齢者等家族支援事業
+  summary: 徘徊のおそれがある人の位置を探す端末を、介護する家族に貸し出す。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 認知症で要支援・要介護認定を受けている人を在宅で介護する家族等
+  - 冊子では、同居して介護していることが条件
+  - 訪問調査がある
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/korehukusiservice.html
+  confidence: high
+  amount: 利用料月1,320円。加入料・充電器代は市が負担
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: haikai
+  name: 見守りシール・キーホルダーの配布
+  name_on_page: 見守りシール等配布事業
+  summary: 所在不明になるおそれのある人に、身元がわかる登録番号入りのシール等を無料で配る。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 要介護・要支援認定、認知症の診断、所在不明のおそれのいずれかに当たる
+  - 市内に住み、在宅で生活している
+  where: 地域包括支援センター
+  url: https://www.city.hasuda.saitama.jp/hokatsu/kenko/koresha/zaitaku/documents/gaidobook1.pdf
+  confidence: high
+  amount: 無料（シール各10枚、キーホルダー2個）
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: iro
+  name: ねたきり・重度認知症の高齢者を介護する人への手当
+  name_on_page: ねたきり老人等介護者手当
+  summary: ねたきりか重度認知症の高齢者を在宅で介護する人に月額の手当を出す。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 年齢は介護される人のもの
+  - ねたきりまたは重度認知症の状態が6か月以上続いている
+  - 6か月以上常時介護している（おおむね要介護4以上、別途要件あり）
+  - 冊子では、介護される人と同居していることが条件
+  - 訪問調査がある
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/korehukusiservice.html
+  confidence: high
+  amount: 月額6,000円
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成金交付事業
+  summary: 手帳の対象外の難聴高齢者に、補聴器の購入費を1回限り助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力が40デシベル以上で、医師が補聴器を必要と認める
+  - 障害者手帳による補聴器補助の対象にならない
+  - 市税・介護保険料・後期高齢者医療保険料を完納している
+  - 購入前に申請し、決定後に購入する
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/fukushisenta_r603hurox.html
+  confidence: high
+  amount: 上限2万円（1人1回限り）
+- category: koken
+  name: 成年後見人等への報酬の助成（市長申立ての場合）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立ての後見人等（第三者）の報酬を、支払いが難しい人に助成する。
+  who: {}
+  at_application:
+  - 市長が申立てを行った成年被後見人等が対象
+  - 生活保護を受けている、またはそれに準ずる人で報酬の支払いが困難
+  - 後見人等は第三者に限る
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/seinenkouken.html
+  confidence: high
+  amount: 在宅は月額28,000円、施設は月額20,000円まで
+- category: sonota
+  name: 介護サービス利用料の助成
+  name_on_page: 介護保険利用料助成制度
+  summary: 世帯収入が基準以下の人に、介護サービスの自己負担の一部を助成する。
+  who: {}
+  at_application:
+  - 世帯収入が基準生活費以下、1.2倍以下などの区分がある
+  - 不動産や預貯金の額によっては対象外になることがある
+  - 先に対象確認の申請をし、その後に助成を申請する
+  where: 長寿支援課介護保険担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/kaigo/zaitakuriyo.html
+  confidence: high
+  amount: 自己負担の3分の2、2分の1、または3分の1以内
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットを配布しています
+  summary: かかりつけ医などを記入して冷蔵庫に置く救急情報の容器を、民生委員が無料で届ける。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - そのほか市長が適当と認めるかたも対象
+  where: 各地区の民生委員、長寿支援課
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/kyukyuiryokit.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: sonota
+  name: 敬老祝金
+  name_on_page: 敬老祝金
+  summary: 決まった節目の年齢の高齢者に、祝金を口座振込で贈る。
+  who: {}
+  at_application:
+  - 8月31日時点で77・88・90・100歳のかた
+  - 引き続き1年以上市内に住み、住民基本台帳に記録されている
+  - 8月中旬の通知を受け、郵送で申し込む
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/iwaikin.html
+  confidence: high
+  amount: 77歳5,000円、88歳8,000円、90歳10,000円、100歳20,000円
+- category: sonota
+  name: 車いすの短期貸出（市）
+  name_on_page: 車いすの貸し出し
+  summary: 車いすが一時的に必要な市内在住のかたに、1か月を限度に無料で貸し出す。
+  who: {}
+  at_application:
+  - 市内に住んでいる
+  - 住所を確認できるものを持参する
+  where: 長寿支援課高齢福祉担当
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/korehukusiservice.html
+  confidence: high
+  amount: 無料（1か月限度、延長不可）
+  more_urls:
+  - https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+- category: kaigo-yohin
+  name: 紙おむつの支給（社協）
+  name_on_page: 紙おむつ支給事業
+  summary: 在宅の重度の要介護の高齢者等に、社協が紙おむつを支給する。
+  who:
+    at_home: true
+  at_application:
+  - 社会福祉協議会の会員世帯が対象
+  - 在宅で、介護度の重い高齢者等がいる
+  where: 蓮田市社会福祉協議会
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+  confidence: low
+- category: mimamori
+  name: ひとり暮らし高齢者等の見守り訪問（社協）
+  name_on_page: ひとり暮らし高齢者等見守り事業
+  summary: 民生委員と見守り協力員が、ひとり暮らし高齢者等の家を訪問して見守る。
+  who: {}
+  at_application:
+  - 社会福祉協議会の会員世帯が対象
+  - 詳しい条件は冊子に書かれていない
+  where: 蓮田市社会福祉協議会
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+  confidence: low
+- category: sonota
+  name: ごみの戸別収集（ふれあい収集）
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しい高齢者や障がい者の家へ、ごみの戸別収集に伺う。
+  who: {}
+  at_application:
+  - 要介護・要支援認定、または障害者手帳等のいずれかがある
+  - 本人か同居人がごみを集積所へ出せない
+  - 親族や近所の協力を得られない
+  where: みどり環境課（申請受付）
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+  confidence: low
+- category: sonota
+  name: 介護マークの貸出
+  name_on_page: 介護マーク貸出事業
+  summary: 介護中であることを周囲に知らせるマーク（ネックストラップ付）を貸し出す。
+  who: {}
+  at_application:
+  - 詳しい条件は冊子に書かれていない
+  where: 地域包括支援センター
+  url: https://www.city.hasuda.saitama.jp/choju/kenko/koresha/fukushi/documents/r8-4.pdf
+  confidence: low
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- yutai

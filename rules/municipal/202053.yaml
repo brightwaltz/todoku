@@ -1,0 +1,308 @@
+city: '202053'
+name: 飯田市
+site: www.city.iida.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品処理負担軽減（ごみ袋の支給）
+  name_on_page: 介護用品処理負担軽減事業
+  summary: 紙おむつ等を日常的に使う在宅の重度要介護者に、市指定のごみ袋を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application: []
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  amount: 市指定ごみ袋（燃やすごみ用・小）を支給
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の購入券支給
+  name_on_page: 介護用品購入券支給事業
+  summary: 非課税世帯で要介護4・5の在宅高齢者の介護者に、紙おむつ等の購入券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 生活保護を受給、または社会福祉法人の利用者負担減免基準に該当
+  - または中国残留邦人等の支援給付を受給している
+  where: 長寿支援課
+  url: https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+  confidence: high
+  amount: 5,000円の購入券を年3回、4枚ずつ
+- category: haishoku
+  name: 高齢者等の配食見守り
+  name_on_page: 高齢者等配食見守り事業
+  summary: 調理が難しい高齢者に食事を届け、あわせて見守り・安否確認をする。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者世帯の総合事業対象者
+  - または要支援・要介護認定者
+  - 自分で調理が難しく栄養改善が必要な人
+  where: 長寿支援課（詳細は冊子のみで、申請先の明記なし）
+  url: https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+  confidence: low
+  amount: 食費の実費（600〜700円）
+- category: haikai
+  name: 認知症高齢者等の見守りシール（QRコード）
+  name_on_page: 飯田市認知症高齢者等身元確認QRコードシール活用事業
+  summary: ひとり歩きのおそれがある人に、QRコード付き見守りシールを交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、在宅またはサービス付き高齢者住宅に住む
+  - 認知症高齢者等、または市長が認める人
+  - 申請者は親族等で予約制、事前に相談が必要
+  where: 長寿支援課（A11窓口）
+  url: https://www.city.iida.lg.jp/soshiki/14/nitisyo-mimamori-qr.html
+  confidence: high
+  amount: 1人40枚を無料で交付（2回目以降の交付は自己負担）
+- category: haikai
+  name: GPS端末の初期費用の補助
+  name_on_page: 飯田市GPS機能付端末利用補助事業
+  summary: ひとりで外出して戻れないおそれのある認知症高齢者の介護者に、GPS端末の初期費用を補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民票があり、要介護・要支援認定者か事業対象者
+  - ケアプラン等に外出時に帰宅できないおそれの記載がある
+  - 市税・介護保険料・後期高齢者医療保険料の滞納がない
+  - 新規の購入・レンタルの初期費用で、1人1回限り
+  where: 長寿支援課（基幹包括支援センター係）
+  url: https://www.city.iida.lg.jp/soshiki/14/ninntishou.html
+  confidence: high
+  amount: 初期費用の実費、上限10,000円（月額の使用料は対象外）
+- category: iro
+  name: 在宅介護支援金
+  name_on_page: 在宅介護支援金支給事業
+  summary: 前年度の市民税が非課税の世帯で、要介護3〜5の人を在宅で介護した家族に支援金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 基準日（9月1日）前の1年間に180日以上、在宅で介護した
+  - 6か月以上市内に住所がある
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  amount: 9万円
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+- category: iro
+  name: 介護者慰労短期入所助成
+  name_on_page: 介護者慰労短期入所事業
+  summary: 要介護3〜5の人が短期入所したとき、在宅で介護している家族に助成金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 1回7日以内の短期入所が対象
+  where: 長寿支援課（利用後に入所証明を添えて請求）
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+- category: sonota
+  name: 介護者疲労回復（施療券・入浴券）
+  name_on_page: 介護者疲労回復事業
+  summary: 要介護3〜5の人を介護する家族に、マッサージ等の助成券か入浴券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application: []
+  where: 長寿支援課（申請書は頁に掲載）
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  amount: はり・灸・マッサージは1回1,500円を年2回、または入浴施設は1回500円を年5回助成
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+- category: sonota
+  name: 緊急宿泊支援（介護者の急病時の宿泊費助成）
+  name_on_page: 緊急宿泊支援事業
+  summary: 介護者が急病などで介護できないとき、通所施設等への宿泊費の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 日ごろ利用している通所介護施設等に宿泊した場合が対象
+  - 事前に利用登録が必要
+  where: 長寿支援課
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム運営事業
+  summary: 急病や災害時にボタンを押すと受信センターにつながり、協力員へ通報される装置を設置する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者、身障1・2級のひとり暮らし
+  - または要支援・要介護者のいる高齢者世帯
+  - 対象者は地区の民生委員協議会が選定
+  where: 長寿支援課
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  amount: 利用者負担は月額：課税世帯500円、非課税世帯300円、生活保護世帯0円
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+- category: nichijo-yogu
+  name: 住宅用火災警報器の設置
+  name_on_page: 火災警報器設置事業
+  summary: ひとり暮らし高齢者等の家に、住宅用防災警報器と警報ブザーを取り付ける。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者世帯で、ひとり暮らしか要支援・要介護者のいる世帯等
+  - 対象者は地区の民生委員協議会が選定
+  where: 長寿支援課（冊子に申請先の明記なし）
+  url: https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+  confidence: low
+  amount: 利用者負担なし
+- category: mimamori
+  name: 認知症高齢者の見守りヘルパー利用料の補助
+  name_on_page: 認知症高齢者見守り事業
+  summary: 家族不在時やひとり暮らしの認知症高齢者の見守りに使う有償ヘルパーの利用料を一部補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 認知症の高齢者本人、または同居している家族が対象
+  - 介護保険の訪問介護では対応できない見守りが対象
+  where: 長寿支援課（冊子に申請先の明記なし）
+  url: https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+  confidence: high
+  amount: 有償ヘルパー利用料の一部補助（家族不在時1時間1,280円、独居45分未満1,647円）
+- category: shingu
+  name: 寝具の洗濯乾燥
+  name_on_page: 寝具洗濯乾燥事業
+  summary: 要介護3〜5の人の敷布団を洗濯・乾燥消毒する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application: []
+  where: 長寿支援課（申請書は頁に掲載）
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  amount: 敷布団の洗濯乾燥を年2枚まで
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+- category: ribiyo
+  name: 訪問理美容の費用助成
+  name_on_page: 訪問理美容サービス
+  summary: 要介護3〜5の人が自宅で理美容を受けたとき、出張にかかる費用を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application: []
+  where: 長寿支援課（申請書は頁に掲載）
+  url: https://www.city.iida.lg.jp/soshiki/14/4zaitakufukushi2024.html
+  confidence: high
+  amount: 出張にかかる費用を1回1,000円、年6回分助成
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+- category: jutaku
+  name: 高年齢者等の住宅リフォーム補助
+  name_on_page: 高年齢者等住宅リフォーム補助事業
+  summary: 介護認定を受けていない非課税世帯の高齢者に、バリアフリー等の改修費の一部を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険の認定を受けていない
+  - 1年以上市内に住んでいる
+  - 市税等を滞納していない
+  - 市内の業者による工事で、着工前に申請する
+  where: 長寿支援課、各地区自治振興センター
+  url: https://www.city.iida.lg.jp/soshiki/14/iidashireformr6.html
+  confidence: high
+  amount: 工事費の30％、上限10万円
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者の補聴器購入費用を助成します
+  summary: 手帳の対象でない難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、現に居住している
+  - 聴力が70デシベル未満で、耳鼻咽喉科医が補聴器の装用を必要と認めた
+  - 身体障害者手帳の交付を受けていない
+  - 購入前に申請する
+  where: 長寿支援課
+  url: https://www.city.iida.lg.jp/soshiki/14/kaigohotyouki.html
+  confidence: high
+  amount: 購入費の3分の1、上限3万円
+- category: sonota
+  name: 通所系サービスの食事代負担軽減
+  name_on_page: 介護保険通所系サービス食事代負担軽減事業
+  summary: 非課税世帯で通所介護・通所リハを使う人に、食事代を1日100円扶助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 老齢福祉年金を受給、または年金等の合計が80万円以下
+  - 生活保護の受給者は除く
+  - 通所介護・通所リハビリを利用している
+  where: 長寿支援課、自治振興センター
+  url: https://www.city.iida.lg.jp/soshiki/14/tuushokei.html
+  confidence: high
+  amount: 食事の提供があった日1日につき100円
+  more_urls:
+  - https://www.city.iida.lg.jp/uploaded/attachment/80562.pdf
+not_found:
+- koken
+- gaishutsu

@@ -1,0 +1,187 @@
+city: '402184'
+name: 春日市
+site: www.city.kasuga.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付（月額上限あり）
+  name_on_page: 介護用品（紙おむつ）給付サービス
+  summary: 在宅で常時紙おむつが必要な要介護の人に、紙おむつを配達し費用の9割を給付する
+  who:
+    age_min: 40
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 春日市の介護保険被保険者（40歳以上）で要介護認定を受けている
+  - 介護保険料の滞納がなく、生活保護を受けていない
+  - 入院中や介護保険施設に入所中の人は対象外
+  - 担当ケアマネジャーに相談し、ケアプランに位置づける
+  - 65歳未満の人は申請前に高齢課へ確認する
+  where: 高齢課 高齢者支援担当（紙おむつ給付サービス担当）。郵送・Eメール可
+  url: https://www.city.kasuga.fukuoka.jp/kosodate/kourei/kaigo/1001970.html
+  confidence: high
+  amount: 給付対象の上限は月 8,000 円（保険料段階1〜3）か月 4,000 円（段階4〜13）。利用額の1割は自己負担
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 一人暮らし等で調理が難しい要支援・要介護の人に、1食465円で食事を届ける
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 一人暮らし、またはこれに準ずる世帯
+  - 介護保険料段階が1〜3段階で、保険料の滞納がない
+  - 心身の障害や傷病で食材の買物・調理が困難
+  - 治療食には対応していない
+  - 65歳未満の人は申請前に高齢課へ問い合わせる
+  where: 高齢課 高齢者支援担当。担当ケアマネジャーに相談して申請
+  url: https://www.city.kasuga.fukuoka.jp/kosodate/kourei/kaigo/1001966.html
+  confidence: high
+  amount: 1食 465 円（利用者負担）。冊子では最大1日2回（昼・夜）
+  more_urls:
+  - https://www.city.kasuga.fukuoka.jp/_res/projects/default_project/_page_/001/000/944/r8magokoro.pdf
+- category: kinkyu-tsuho
+  name: あんしんコール（緊急通報機器・人感センサーの貸与）
+  name_on_page: あんしんコール事業
+  summary: 緊急時に通報できる見守りケータイと人感センサーを貸与し、安否確認をする
+  who: {}
+  at_application:
+  - 次の A か B。A：在宅で一人暮らし世帯などの高齢者
+  - A は、発作や転倒で緊急対応の必要性が高く外出が困難
+  - A は、携帯電話を持たないか操作が困難
+  - B：85歳以上で、一人暮らしか、これに準ずる見守り要の世帯
+  - 介護保険料の滞納などがあると申請できない
+  where: 担当の地域包括支援センターまたは居宅介護支援事業所
+  url: https://www.city.kasuga.fukuoka.jp/kosodate/kourei/kaigo/1001967.html
+  confidence: high
+  amount: 月額 350 円（保険料段階1〜3）・700 円（段階4〜13）。通信料と再設置費は自己負担
+- category: nichijo-yogu
+  name: 自動消火器の給付
+  name_on_page: 自動消火器給付
+  summary: 防火の配慮が必要な在宅の65歳以上の人に、自動消火器の費用を段階に応じて給付する
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 心身の障がいなどで防火の配慮が必要
+  - 春日市の介護保険被保険者で要介護・要支援の認定を受けている
+  where: 春日市内の地域包括支援センター
+  url: https://www.city.kasuga.fukuoka.jp/kosodate/kourei/kaigo/1001968.html
+  confidence: high
+  amount: 保険料段階1〜3は全額給付、6〜7は上限 15,000 円、8〜13は全額自己負担（4〜5は頁に記載なし）
+  more_urls:
+  - https://www.city.kasuga.fukuoka.jp/_res/projects/default_project/_page_/001/000/944/r8magokoro.pdf
+- category: shingu
+  name: 寝具洗濯サービス
+  name_on_page: 寝具洗濯サービス
+  summary: 寝具を預かって洗濯する（同一年度に2回まで）。市民税非課税世帯の65歳以上が対象
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 次のどちらか。寝具の衛生管理が困難な単身世帯
+  - または、病気などで常時寝たきり状態かそれに準ずる状態
+  - 春日市内に住所がある
+  where: 春日市内の地域包括支援センター
+  url: https://www.city.kasuga.fukuoka.jp/kosodate/kourei/kaigo/1001969.html
+  confidence: high
+  amount: 利用者負担は、掛け・敷き布団・毛布一組で 1,300 円程度、マットレス等の組で 1,600 円程度
+- category: jutaku
+  name: 住宅改造費助成（福岡住みよか事業）
+  name_on_page: 住宅改造費助成（福岡住みよか事業）
+  summary: 要介護・要支援で住民税非課税などの在宅の高齢者の住宅改造費を30万円まで助成する
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 生活保護世帯、または生計中心者の住民税・所得税が非課税の世帯
+  - 春日市の介護保険被保険者
+  - 介護保険の住宅改修に当たる20万円以内の部分は対象外
+  - 改造工事の前に相談・申請する（工事後は不可）
+  where: 高齢課 高齢者支援担当（頁の問い合わせ先）
+  url: https://www.city.kasuga.fukuoka.jp/kosodate/kourei/kaigo/1001971.html
+  confidence: high
+  amount: 改造費と助成基準額（30万円）の低い方を助成
+- category: haikai
+  name: 認知症高齢者等の事前登録と見守りオレンジシール
+  name_on_page: 認知症高齢者等事前登録制度
+  summary: 行方不明の恐れがある人を事前登録し、反射の見守りオレンジシールを20枚渡す
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明となる恐れがある
+  - 申請書と本人と分かる顔写真を、郵送・Eメール・窓口で出す
+  where: 高齢課 高齢者支援担当
+  url: https://www.city.kasuga.fukuoka.jp/kosodate/kourei/kaigo/1001972.html
+  confidence: high
+  amount: 費用の負担なし。見守りオレンジシールは1人20枚を1回だけ交付
+- category: koken
+  name: 成年後見制度の審判費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が困難な人に、成年後見の審判費用と後見人などの報酬を助成する
+  who: {}
+  at_application:
+  - 審判の費用と後見人などへの報酬の負担が困難（要件あり）
+  where: 冊子に窓口の記載なし（関連頁は未確認）
+  url: https://www.city.kasuga.fukuoka.jp/_res/projects/default_project/_page_/001/000/944/r8magokoro.pdf
+  confidence: low
+- category: sonota
+  name: 介護保険の利用者負担額の助成（低所得者）
+  name_on_page: 利用者負担額助成金の交付
+  summary: 介護保険サービスを使う低所得の人に、利用者負担の一部を助成金で返す
+  who: {}
+  at_application:
+  - 介護保険サービスを利用している低所得者
+  - 収入・生活費・財産の書類が必要。詳しい条件は高齢課へ
+  where: 高齢課（冊子の問い合わせ先）。先に市へ助成対象の確認申請をする
+  url: https://www.city.kasuga.fukuoka.jp/_res/projects/default_project/_page_/001/000/944/r8magokoro.pdf
+  confidence: low
+  amount: 利用者負担額の一部（額は冊子に記載なし）
+not_found:
+- iro
+- ribiyo
+- hochoki
+- gaishutsu
+- mimamori
+- yutai

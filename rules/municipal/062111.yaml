@@ -1,0 +1,196 @@
+city: '062111'
+name: 東根市
+site: www.city.higashine.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の助成券
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護の人を介護する家族に、紙おむつ等を買える助成券を毎月出す。
+  who: {}
+  at_application:
+  - 要介護4・5の人を介護する家族
+  - または要介護1〜3で常時寝たきり・失禁状態・中程度以上の認知症の人を介護する家族
+  - 認定なしでも市長が相当と認めた人の場合あり
+  where: 福祉課 長寿支援係
+  url: https://www.city.higashine.yamagata.jp/section_list/section010/kourei-fukushi/336
+  confidence: high
+  amount: 月4,000円（市民税課税世帯）、月7,500円（非課税世帯）
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+- category: haishoku
+  name: ふれあい配食サービス
+  name_on_page: ふれあい配食サービス
+  summary: 栄養に配慮した弁当を月2回自宅に届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の一人暮らし、または75歳以上の高齢者のみの世帯
+  where: 担当地区の民生委員・児童委員、または東根市社会福祉協議会
+  url: https://www.city.higashine.yamagata.jp/section_list/section010/kourei-fukushi/339
+  confidence: high
+  amount: 1食150円、月2回
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報システム
+  summary: 通報機・ペンダント型発信機・センサーを貸し、月2回ほど電話で安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 病弱などで緊急通報システムが必要な人
+  - 固定電話回線が必要（回線により設置できない場合あり）
+  - 協力員2名・親族1名の登録が必要（令和6年度ガイドブック）
+  where: 福祉課 長寿支援係（市役所1階14番窓口）
+  url: https://www.city.higashine.yamagata.jp/section_list/section010/kourei-fukushi/344
+  confidence: high
+  amount: 月300円（鍵を協力員・親族が管理）、月800円（鍵を緊急センターに預ける）
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+- category: haikai
+  name: 徘徊高齢者のGPS端末の費用助成
+  name_on_page: はいかい高齢者家族等支援事業
+  summary: 徘徊のある高齢者向けに、民間のGPS機器・サービスの利用費を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、在宅で暮らす徘徊のある高齢者、またはその介護家族
+  - 明細のわかる請求書・領収書を添えて申請
+  where: 福祉課 長寿支援係
+  url: https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+  confidence: high
+  amount: 初期費用は上限10,000円（1回のみ）、基本料金は上限月700円
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202512041355326591f7c83a9.pdf
+- category: haikai
+  name: 徘徊SOSネットワークへの登録
+  name_on_page: SOS ネットワーク事業
+  summary: 徘徊のおそれのある人の情報を事前に登録し、行方不明時に警察等へ提供して早期発見につなげる。
+  who: {}
+  at_application:
+  - 徘徊・行方不明のおそれのある高齢者、または若年性認知症の人
+  where: 担当地区の民生委員・児童委員、または地域包括支援センター（中央／しろみず）
+  url: https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202512041355326591f7c83a9.pdf
+- category: gaishutsu
+  name: 高齢者向けタクシー券の交付
+  name_on_page: おでかけさぽーとタクシー事業
+  summary: 70歳以上で免許のない人に、タクシー料金に使える500円券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 本人も配偶者も普通自動車の運転免許証がない
+  - 要介護・要支援の申請中または認定を受けていない
+  - 福祉タクシー券の交付を受けていない
+  where: 福祉課 長寿支援係
+  url: https://www.city.higashine.yamagata.jp/section_list/section010/kourei-fukushi/340
+  confidence: high
+  amount: 1枚500円分の券。年間最大30枚（中心部から5km圏外の加算区は45枚）
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202512041355326591f7c83a9.pdf
+- category: gaishutsu
+  name: リフト付きタクシー等の移送費助成
+  name_on_page: 高齢者移動サービス事業
+  summary: リフト付きタクシー等が必要な要介護の人に、利用料の一部を助成券で支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内に住所があり、リフト付き・ストレッチャー車以外での移動が困難
+  - 特別養護老人ホーム入所者、福祉タクシー券の交付を受けている人は対象外
+  - 介護保険証と印鑑を持参
+  where: 福祉課 長寿支援係
+  url: https://www.city.higashine.yamagata.jp/section_list/section010/kourei-fukushi/337
+  confidence: high
+  amount: 1枚3,000円分の助成券
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202512041355326591f7c83a9.pdf
+  - https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+- category: gaishutsu
+  name: 免許返納者へのタクシー利用券
+  name_on_page: 運転リリーフ事業
+  summary: 満65歳以上で運転免許を自主返納した人に、市内タクシー会社の利用券を1回限り贈る。
+  who:
+    age_min: 65
+  at_application:
+  - 運転免許を自主返納して2年以内
+  - 運転免許証の取消通知書と年齢のわかるものを持参
+  where: 生活環境課 市民生活係（市役所1階5番窓口）
+  url: https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+  confidence: high
+  amount: 2万円分（500円券40枚）、返納時1回限り
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/section_list/section008/kotuanzen/201
+- category: mimamori
+  name: 高齢者見守りネットワークへの登録
+  name_on_page: 高齢者見守りネットワーク事業
+  summary: 本人情報を事前に登録し、必要に応じて見守り訪問を受け、在宅カードも配られる。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住の65歳以上の人
+  where: 担当地区の民生委員・児童委員、または地域包括支援センター
+  url: https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+  confidence: low
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202512041355326591f7c83a9.pdf
+- category: sonota
+  name: 高齢者世帯等の雪下ろし費用の補助
+  name_on_page: 高齢者世帯等の雪下ろし等支援補助金事業
+  summary: 雪下ろしや敷地内の除排雪に業者へ払った費用の一部を、高齢者世帯等に補助する。
+  who: {}
+  at_application:
+  - 市内に住所があり、生活保護を受けていない世帯
+  - 65歳以上のみ、または65歳以上と障がい者のみの世帯
+  - 障がい者のみの世帯、これらに準ずる世帯も対象
+  where: 福祉課 長寿支援係
+  url: https://www.city.higashine.yamagata.jp/section_list/section010/kourei-fukushi/341
+  confidence: high
+  amount: 費用の5割（課税）上限25,000円／8割（非課税）上限40,000円、年度内
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+  - https://www.city.higashine.yamagata.jp/files/original/202512041355326591f7c83a9.pdf
+- category: sonota
+  name: 在宅の要介護者を介護する家族への介護保険外サービス
+  name_on_page: 在宅家族介護者支援事業
+  summary: 通院介助・見守り・話し相手・調理などの保険外サービスを、月8時間まで事業所が提供する。
+  who: {}
+  at_application:
+  - 要介護1〜5または身体障害者手帳1・2級の人を自宅で介護する家族
+  - または一人暮らしの要介護高齢者
+  - 1回最大2時間、月8時間まで
+  where: 福祉課 介護保険係
+  url: https://www.city.higashine.yamagata.jp/files/original/202405241328399747b06ab17.pdf
+  confidence: high
+  amount: 利用料は実施事業所ごとに異なる
+  more_urls:
+  - https://www.city.higashine.yamagata.jp/files/original/202512041355326591f7c83a9.pdf
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

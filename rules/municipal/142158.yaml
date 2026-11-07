@@ -1,0 +1,239 @@
+city: '142158'
+name: 海老名市
+site: www.city.ebina.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 介護用品の給付（紙おむつの給付）
+  summary: 在宅で介護が必要な要介護3以上の人に紙おむつや尿とりパッドを給付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 月の半分以上を在宅で生活している
+  where: 地区担当の地域包括支援センター、担当ケアマネジャー、地域包括ケア推進課
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1010518.html
+  confidence: high
+  amount: 非課税世帯は無料、課税世帯は月500円。市の給付分を超えると追加料金あり
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 安否確認が必要で調理が難しい人に、昼食か夕食を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上
+  - 安否確認が必要で食事の支度が困難
+  where: 地区担当の地域包括支援センター、地域包括ケア推進課
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1010518.html
+  confidence: high
+  amount: 費用は事業所と食事の内容により異なる
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム（貸与）
+  summary: ボタン一つで通報センターにつながる緊急通報機器を貸与する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 概ね65歳以上
+  - 疾病などで日常生活に不安がある
+  where: 地区担当の地域包括支援センター、地域包括ケア推進課
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1010518.html
+  confidence: high
+  amount: 設置費は無料。利用料は非課税世帯と一定以下の課税世帯は無料、ほかは月200～680円
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: haikai
+  name: はいかい高齢者位置探索システム
+  name_on_page: はいかい高齢者位置探索システム（貸与）
+  summary: 小型発信機を持ち歩くと、24時間位置を調べられる端末を貸与する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上（ガイドブックは概ね65歳以上）
+  where: 地区担当の地域包括支援センター、地域包括ケア推進課
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1010518.html
+  confidence: high
+  amount: 月額960円（課税状況により異なる。無料の場合もある）
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: haikai
+  name: 認知症等行方不明SOSネットワーク登録
+  name_on_page: 認知症等行方不明SOSネットワーク
+  summary: ひとり歩きのおそれがある人を登録し、警察と情報共有する。登録者にQRコード付きシールを配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上（ガイドブックは概ね65歳以上）
+  - 顔写真と全身写真を添付して登録申込書を出す
+  where: 地区担当の地域包括支援センター、地域包括ケア推進課
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1010518.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1012961.html
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: sonota
+  name: 高齢者あんしん補償（個人賠償責任保険）
+  name_on_page: 「高齢者あんしん補償」（個人賠償責任保険）の加入
+  summary: 徘徊などで他人に損害を与えた場合の賠償を、保険で補償する。
+  who: {}
+  at_application:
+  - 認知症等行方不明SOSネットワークへの登録が必要
+  where: 地区担当の地域包括支援センター、地域包括ケア推進課
+  url: https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+  confidence: high
+  amount: 保険料の負担なし。補償は最大3億円
+- category: iro
+  name: 在宅介護者等リフレッシュ助成券
+  name_on_page: 令和8年度海老名市在宅介護者等リフレッシュ助成券
+  summary: 在宅の要介護3～5の人と介護者に、温泉・施術・食事・理美容に使える助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内在住
+  - 申出前6か月で合計90日以上の入所・入院は対象外
+  where: 市役所1階9番窓口（地域包括ケア推進課）。郵送、オンライン申請も可
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1012198.html
+  confidence: high
+  amount: 8月末までの申出は24,000円分、9月以降の申出は12,000円分。年度内1回
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: gaishutsu
+  name: You Busぬくもり乗車証
+  name_on_page: You Busぬくもり乗車証
+  summary: 乗車証を見せると、コミュニティバスやYou Busの運賃が割引になる。
+  who: {}
+  at_application:
+  - 市内在住で、65歳以上または障害者手帳（療育手帳含む）所持
+  where: 市役所2階 福祉政策課。郵送、LINE、ホームページからも申請可
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1015721.html
+  confidence: high
+  amount: 令和7年6月以降は、通常300円が200円になる
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: gaishutsu
+  name: えび～くるの運賃減額（住民税非課税世帯）
+  name_on_page: 住民税非課税世帯の高齢者に対する運賃減額（えび～くる）
+  summary: 住民税非課税世帯の高齢者は、デマンド型交通「えび～くる」の運賃が減額される。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 75歳以上、または65～74歳で要支援・要介護認定
+  - えび～くるの利用登録が前提
+  - 事前の申込みが必要
+  where: 市役所2階 福祉政策課。郵送、オンライン申込も可
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1016642.html
+  confidence: high
+  amount: 1人1乗車300円（一定条件で同乗者と2人で300円）
+- category: gaishutsu
+  name: 社協の移送サービス
+  name_on_page: 移送サービス
+  summary: 公共交通を使いにくい人を、運転ボランティアが病院や施設へ送迎する。
+  who: {}
+  at_application:
+  - 交通機関を一人で利用できず、乗降に見守りが必要
+  - 事前登録と予約が必要
+  where: 海老名市社会福祉協議会（046-232-1600）
+  url: https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+  confidence: high
+  amount: 年会費1,200円。片道は市内が最大1,300円、市外が1,600～2,000円
+- category: sonota
+  name: ひとり暮らし高齢者の安全点検
+  name_on_page: ひとり暮らし高齢者安全点検
+  summary: 消防職員と市職員が自宅を訪ね、火の元や消火器を点検する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application: []
+  where: 地域包括ケア推進課（ガイドブックの相談窓口）
+  url: https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 家具転倒防止の家具安定板設置
+  name_on_page: 地震対策援助事業（家具転倒防止）
+  summary: タンス等の下に家具安定板を設置し、地震での転倒を防ぐ。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - これまで実施していない人を優先
+  where: 地域包括ケア推進課（ガイドブックの相談窓口）
+  url: https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: えびな安心キットの配付
+  name_on_page: えびな安心キット
+  summary: 救急時に医療情報を救急隊へ伝えるための保管ボトルなどを配る。
+  who: {}
+  at_application:
+  - 概ね65歳以上の方がいる世帯（未配布の方）
+  where: 市役所1階9番窓口、地域包括支援センター、ケアマネジャー、民生委員
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1003228.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: sonota
+  name: 救急安心カードの配付
+  name_on_page: 救急安心カード
+  summary: 外出先の急変に備え、医療情報や連絡先を書いて携帯するカードを配る。
+  who: {}
+  at_application:
+  - 概ね65歳以上（希望により65歳未満や障がい者にも配付）
+  where: 市役所1階9番窓口、地域包括支援センター、ケアマネジャー、民生委員
+  url: https://www.city.ebina.kanagawa.jp/guide/shogaisha/koureisha/1003228.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+- category: sonota
+  name: 車いすの貸し出し
+  name_on_page: 車いすの貸し出し
+  summary: 一時的に車いすが必要な人に、社協が車いすを無料で貸し出す。
+  who: {}
+  at_application:
+  - 市内在住
+  - 介護保険の介護認定者は対象外
+  where: 海老名市社会福祉協議会（046-232-1600）
+  url: https://www.city.ebina.kanagawa.jp/_res/projects/default_project/_page_/001/003/225/08guide.pdf
+  confidence: high
+  amount: 無料。貸出しは原則1か月（延長は相談）
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori

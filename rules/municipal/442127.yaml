@@ -1,0 +1,169 @@
+city: '442127'
+name: 豊後大野市
+site: www.bungo-ohno.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 居宅介護用品券の交付
+  name_on_page: 居宅介護用品券交付事業について
+  summary: 要介護4以上の非課税世帯の方を在宅で介護する家族に、おむつ等と交換できる券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護保険の被保険者で、おむつ等の介護用品が必要
+  - 家族介護者は市内に住所のある4親等内の親族
+  - 家族介護者に市税の滞納がない
+  where: 高齢者福祉課（いきいき高齢者係）
+  url: https://www.bungo-ohno.jp/docs/2015010800227/
+  confidence: high
+  amount: 月7,000円分の介護用品券（おむつ・尿取りパッド・介護用手袋・おしりふき・清拭剤・ドライシャンプー・吸水シーツ・防水シーツ）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービスについて
+  summary: 食事の確保が難しい方に、栄養のとれた食事を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 概ね65歳以上の一人暮らし、または概ね65歳以上のみの世帯・それに準ずる世帯
+  - 65歳未満で障がい者手帳をもつ一人暮らし等も対象
+  - 食事の確保が難しく、同居家族から食事を受けることも難しい
+  - 市長が必要と認める方も対象。利用前に実態把握調査がある
+  where: 高齢者福祉課（いきいき高齢者係）。申請書の提出先は頁に明記なし
+  url: https://www.bungo-ohno.jp/docs/2015012300053/
+  confidence: high
+  amount: 1食360円〜560円（週7食まで）
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報装置の貸与
+  name_on_page: 高齢者緊急通報装置サービスについて
+  summary: ひとり暮らしの高齢者等に緊急通報装置を貸し、コールセンターが見守りと生活相談をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 高齢者世帯で、安否確認が必要な65歳以上の方
+  where: 高齢者福祉課（いきいき高齢者係）
+  url: https://www.bungo-ohno.jp/docs/2015011300054/
+  confidence: high
+- category: jutaku
+  name: 在宅高齢者住宅改造助成
+  name_on_page: 在宅高齢者住宅改造助成事業
+  summary: 在宅の高齢者のいる世帯が住宅を改造する費用の一部を、市が助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要支援・要介護認定の在宅高齢者、在宅の75歳以上で必要と認められる人、高齢者のみ世帯のどれか
+  - 生計中心者の前年の所得が200万円未満
+  - 工事の着工前に申請する。同じ住宅につき1回のみ
+  - 介護保険の住宅改修の対象工事は、その給付を先に受ける
+  where: 高齢者福祉課（いきいき高齢者係）。相談は担当ケアマネか地域包括支援センター
+  url: https://www.bungo-ohno.jp/docs/2015010900019/
+  confidence: high
+  amount: 工事費の3分の2を助成。対象工事費の限度は一般60万円（介護保険の対象世帯は40万円）、自立支援小規模改造は30万円
+- category: jutaku
+  name: 高齢者・子育て世帯リフォーム支援
+  name_on_page: 豊後大野市高齢者・子育て世帯リフォーム支援事業について
+  summary: 高齢者世帯が行う手すり設置や段差解消などのバリアフリー改修の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 高齢者世帯が市内で住む住宅の工事（高齢者の年齢は頁に記載なし）
+  - 世帯員全員の前年の所得総額が350万円未満
+  - 対象工事費が30万円以上で、バリアフリー改修などを行う
+  - 施工者は市内に本店のある法人か、市内に住民票のある個人
+  where: 高齢者福祉課（いきいき高齢者係）
+  url: https://www.bungo-ohno.jp/docs/2015010900064/
+  confidence: high
+  amount: 対象経費の10分の2以内、1戸あたり30万円まで
+- category: sonota
+  name: はり・きゅう施設利用費の助成
+  name_on_page: はり、きゅう施設利用費の助成について
+  summary: 70歳以上の方が、はり・きゅう・マッサージの施設を使うときの費用の一部を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所があり、実際に居住している
+  - 生活保護受給者等は対象外
+  - 健康保険等の療養費が支給される施術は対象外
+  where: 高齢者福祉課（いきいき高齢者係）
+  url: https://www.bungo-ohno.jp/docs/2015012200384/
+  confidence: high
+  amount: 1回1,000円を年6回分まで
+- category: haikai
+  name: 徘徊高齢者位置情報提供サービス
+  name_on_page: 徘徊高齢者位置情報提供サービスについて
+  summary: 徘徊のある高齢者を介護する家族等にGPS機器を貸し、行方不明時に位置情報を知らせる。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 対象は家族等。認知症の在宅高齢者等で、要支援・要介護の認定を受けている
+  - 市の徘徊高齢者等SOSネットワーク事業に登録している
+  where: 高齢者福祉課または各支所市民係
+  url: https://www.bungo-ohno.jp/docs/2015113000081/
+  confidence: high
+  amount: GPS機器を貸出。月額1,100円（税込）、修繕費などは別途かかることがある
+- category: haikai
+  name: あんしんネットワーク（徘徊高齢者等SOSネットワーク）
+  name_on_page: 豊後大野市あんしんネットワーク（徘徊高齢者等SOSネットワーク事業）について
+  summary: 徘徊のおそれのある方の情報を事前に市に登録し、有事に警察や協力機関と共有する。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 家族等が、徘徊が心配される高齢者の登録を申請する
+  - 警察署にも情報を渡すには個人情報提供同意書も出す
+  where: 高齢者福祉課または各支所市民係
+  url: https://www.bungo-ohno.jp/docs/2015010800050/
+  confidence: high
+- category: sonota
+  name: 認知症高齢者等個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業について
+  summary: 他人にけがをさせた・物を壊したときの賠償に備える保険に、市の事業として加入できる。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 市の徘徊高齢者等SOSネットワーク事業に登録している
+  - 要介護認定で認知症高齢者の日常生活自立度がⅡa以上
+  - 施設入所者や長期入院中の方は対象外
+  where: 高齢者福祉課（地域包括ケア推進係）
+  url: https://www.bungo-ohno.jp/docs/2020120300031/
+  confidence: high
+  amount: 1事故につき1億円まで補償（保険料の負担は頁に記載なし）
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業（市長申立て・申立て費用・報酬助成）
+  summary: 市長申立てのほか、後見の申立て費用や後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 市長申立て：身寄りがなく、2親等内の親族の申立てが期待できない
+  - 費用・報酬の助成：住民税が世帯全員非課税で、預貯金が単身50万円・複数世帯100万円以下
+  - 助成の申請は、申立て書類の提出日・報酬の審判日の翌日から180日以内
+  where: 高齢者福祉課（いきいき高齢者係）
+  url: https://www.bungo-ohno.jp/docs/2024121200055/
+  confidence: high
+  amount: 鑑定料は上限10万円。後見人等の報酬は在宅月28,000円、施設月18,000円まで
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

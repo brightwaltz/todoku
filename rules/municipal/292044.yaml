@@ -1,0 +1,143 @@
+city: '292044'
+name: 天理市
+site: www.city.tenri.nara.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護高齢者への紙おむつ等の支給
+  name_on_page: 要介護高齢者紙おむつ等支給事業
+  summary: 在宅で介護されている要介護3以上の非課税世帯の方に、紙おむつ等を無料で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上、または40〜64歳で特定疾病の方
+  - 寝たきり、または常時失禁状態にある
+  - 要介護3は調査票から使用の必要を判断する
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.tenri.nara.jp/kakuka/kenkoufukushibu/kaigofukushika/koureishasien/13060.html
+  confidence: high
+  amount: 無料。月ごとの上限は、フラット120枚、テープ止めパンツ60枚、リハビリパンツ30枚、尿取りパッド180枚。
+- category: ribiyo
+  name: 訪問理美容サービス（要介護1〜3等・非課税世帯）
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容店へ行けない非課税世帯の方に、自宅で理髪を受けられる利用券を出す。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護1〜3の方、または重度身体障害者
+  - 介護保険証か身体障害者手帳の写しが必要
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.tenri.nara.jp/kakuka/kenkoufukushibu/kaigofukushika/koureishasien/13060.html
+  confidence: high
+  amount: 利用料は1回2,000円。利用は年4回まで。
+- category: ribiyo
+  name: 訪問理美容サービス（要介護4・5）
+  name_on_page: 介護保険特別給付訪問理美容サービス費支給事業
+  summary: 在宅で要介護4・5の方に、所得にかかわらず自宅での理美容の利用券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 65歳以上、または40〜64歳で特定疾病の方
+  - 介護保険証とケアプランの写しが必要
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.tenri.nara.jp/kakuka/kenkoufukushibu/kaigofukushika/koureishasien/13060.html
+  confidence: high
+  amount: 利用料は1回2,000円。利用は年4回まで。
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 寝具の衛生管理が難しい非課税世帯の方に、洗濯・乾燥・消毒の利用券を出す。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護1〜5の方、または重度身体障害者
+  - 寝具の衛生管理ができる家族と同居の場合は対象外
+  - 介護保険証か身体障害者手帳の写しが必要
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.tenri.nara.jp/kakuka/kenkoufukushibu/kaigofukushika/koureishasien/13060.html
+  confidence: high
+  amount: 無料。利用は年2回まで。
+- category: haishoku
+  name: 高齢者への配食と安否確認
+  name_on_page: 高齢者「食」の自立支援事業
+  summary: 調理が難しい高齢者に、昼食を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 老衰や心身の障害、傷病などで調理や調達が難しい
+  - 同居者が日中不在、障害のある方と同居、同居者が18歳以下の場合も対象
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.tenri.nara.jp/kakuka/kenkoufukushibu/kaigofukushika/koureishasien/13060.html
+  confidence: high
+  amount: 1食あたり本人負担420円。週1〜3回、月〜金の昼食のみ。
+  more_urls:
+  - https://www.city.tenri.nara.jp/material/files/group/23/haisyoku_youkou2024.pdf
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者への緊急通報装置の貸与
+  name_on_page: ひとり暮らし高齢者緊急通報装置貸与事業
+  summary: ひとり暮らしの非課税世帯の方に、緊急通報装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 緊急時に駆けつける協力員が2名必要
+  - 固定電話回線が必要
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.tenri.nara.jp/kakuka/kenkoufukushibu/kaigofukushika/koureishasien/13060.html
+  confidence: high
+  amount: 設置料は無料。追加工事費と通話料は自己負担。
+  more_urls:
+  - https://www.city.tenri.nara.jp/material/files/group/23/tuuhou_youkou2024.pdf
+- category: sonota
+  name: 草引き・草刈りなどの軽度生活援助
+  name_on_page: 軽度生活援助事業
+  summary: ひとり暮らしや高齢者のみの非課税世帯に、草引きや草刈りなどの援助を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 年間3回まで。毎回申請が必要
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.tenri.nara.jp/kakuka/kenkoufukushibu/kaigofukushika/koureishasien/13060.html
+  confidence: high
+  amount: 草引きなどは1時間240円、草刈り機を使う草刈りは1時間370円。
+not_found:
+- haikai
+- hochoki
+- jutaku
+- gaishutsu
+- mimamori

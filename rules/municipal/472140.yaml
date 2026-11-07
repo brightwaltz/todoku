@@ -1,0 +1,165 @@
+city: '472140'
+name: 宮古島市
+site: www.city.miyakojima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 軽度生活援助
+  name_on_page: 軽度生活援助事業
+  summary: 屋内外の清掃、買い物、外出の付き添い、調理など、簡単な日常生活の手伝いをする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application: []
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 1時間につき80円（生活保護世帯は無料）
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業
+  summary: 栄養士の献立のお弁当を自宅へ届け、安否も確かめる。週2日、昼食。
+  who:
+    age_min: 65
+  at_application:
+  - 食事作りが困難
+  - 近隣に、食事を提供してくれる親族等がいない
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 週2回（月〜金のうち2日を選べる）、1食300円〜400円。10枚つづりのチケットを買って使う
+- category: kaigo-yohin
+  name: ねたきり老人等日常生活用品（おむつ）の給付
+  name_on_page: ねたきり老人等日常生活用品給付事業
+  summary: 在宅で、おむつの使用が長く続いている方に、おむつを宅配する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりや認知症などの理由で、おむつの使用が6か月以上続いている
+  - 施設に入所したときや、90日を超える長期入院のときは給付できない
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 無料。おむつを原則月200枚（板おむつの場合）宅配
+- category: gaishutsu
+  name: 高齢者外出支援タクシー利用助成
+  name_on_page: 高齢者外出支援タクシー利用助成事業
+  summary: 高齢者が外出でタクシーを使うとき、利用券を配って料金の一部を援助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 協力的な親族がいない
+  - 要介護認定を受けていない方（要支援1・2は利用できる）
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 年に36枚から72枚のタクシー利用券（初乗り分相当）を配布。券を超えた料金は全額自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 急病や事故のときに備え、緊急通報システムを自宅に設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 虚弱な一人暮らし、またはどちらかが虚弱な高齢者の夫婦世帯
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 無料
+- category: ribiyo
+  name: 訪問理・美容サービス
+  name_on_page: 訪問理・美容サービス事業
+  summary: 理容院や美容院に行くことが難しい高齢者に、出張の理容・美容サービスを提供する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の寝たきりの方、または重度の身体上の障害で理容院・美容院に行くことが困難な方
+  - 原則として年に6回以内
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 出張・移動費（1件2,000円）は市が負担。カットなどの料金は自己負担
+- category: sonota
+  name: 老人日常生活用具の給付（老人用電話）
+  name_on_page: 老人日常生活用具給付等事業
+  summary: 日常生活用具として、老人用電話（福祉電話）の給付や貸与を行う。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきりの高齢者、または一人暮らしの高齢者
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 工事費・回線使用料・電話機のリース料は市が負担。利用者が払うのは毎月の通話料のみ
+- category: sonota
+  name: 生活管理指導短期宿泊（ショートステイ）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 日常生活を営むのが難しい高齢者に、ショートステイを提供する。
+  who:
+    age_min: 60
+  at_application:
+  - 要介護・要支援の認定を受けていない
+  - 基本的に生活習慣が欠如していると認められる
+  - 利用は6か月間に7日以内
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 自己負担は1日380円と送迎費1回60円（生活保護受給者は無料）。食費は全額自己負担
+- category: iro
+  name: 介護慰労金
+  name_on_page: 介護慰労支給事業
+  summary: 要介護4・5の方を在宅で介護している家族等に、年間で慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険サービスを過去1年以上使っていない
+  - 過去1年間に90日以上の長期入院がない
+  - 介護している家族等が市民税非課税
+  where: 高齢者支援課、各支所
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/roujinhukushi.html
+  confidence: high
+  amount: 年間10万円
+- category: mimamori
+  name: 高齢者やさしいみまもり事業
+  name_on_page: 宮古島市高齢者やさしいみまもり事業
+  summary: 自宅にセンサーを置き、活動の異変を家族等へ知らせて、日常の見守りをする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある在宅の高齢者
+  - 65歳以上の一人暮らし、または高齢者のみの世帯で、支援が必要と認められる
+  - そのほか市長が必要と認める方
+  where: 高齢者支援課（申請）。サービス内容はおきでん結ライフ
+  url: https://www.city.miyakojima.lg.jp/kurashi/kenkou/kaigo/2026-1027-1529-72.html
+  confidence: high
+not_found:
+- hochoki
+- koken
+- haikai
+- jutaku
+- shingu
+- nichijo-yogu

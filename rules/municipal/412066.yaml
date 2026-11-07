@@ -1,0 +1,175 @@
+city: '412066'
+name: 武雄市
+site: www.city.takeo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等見守り配食サービス
+  name_on_page: 高齢者等見守り配食サービス事業
+  summary: 安否確認を兼ねて、バランスのとれた夕食を手渡しで届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 介護保険サービスを利用する日以外が配達日
+  where: 健康課 たっしゃか係、または市内の在宅介護支援センター
+  url: https://www.city.takeo.lg.jp/benri/uploads/20260501tokuteikenshin05.pdf
+  confidence: high
+  amount: 普通食・きざみ食は1食500円、おかずのみは1食450円
+  more_urls:
+  - https://www.city.takeo.lg.jp/benri/kenko/fukushi/000117.html
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム貸与事業
+  summary: 急病などのときボタンで警備会社につながる機器を無料で貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 携帯電話をお持ちの世帯は利用できない
+  - 機器の操作などを理解できない人は利用できない
+  - 通報後の連絡先の協力員が原則3名（うち1名は民生委員）必要
+  where: 健康課 たっしゃか係、または市内の在宅介護支援センター
+  url: https://www.city.takeo.lg.jp/benri/uploads/20260501tokuteikenshin05.pdf
+  confidence: high
+  amount: 機器は無料。設置費用は住民税課税世帯4,400円、非課税世帯2,200円。通話料は本人負担
+  more_urls:
+  - https://www.city.takeo.lg.jp/benri/kenko/fukushi/000117.html
+- category: mimamori
+  name: 小地域ネットワーク活動（地域の協力者による見守り・訪問）
+  name_on_page: 小地域ネットワーク活動推進事業
+  summary: 事前に了解した人を地域の協力者が見守り・訪問し、異変があれば市や民生委員へ連絡する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - または、65歳以上の人と障害者手帳をお持ちの方のみの世帯
+  - または、その他見守りが必要と認められる人
+  where: 地区民生委員、または武雄市社会福祉協議会（福祉課も担当）
+  url: https://www.city.takeo.lg.jp/benri/uploads/20260501tokuteikenshin05.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.takeo.lg.jp/benri/kenko/fukushi/000117.html
+- category: kaigo-yohin
+  name: 紙おむつの助成券の交付
+  name_on_page: 紙おむつ支給事業
+  summary: 在宅で常時おむつを使う高齢者に、紙おむつ・尿とりパットの購入に使える助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護1〜3の人は、医師の証明書の提出が必要
+  where: 健康課 たっしゃか係、または市内の在宅介護支援センター
+  url: https://www.city.takeo.lg.jp/benri/uploads/20260501tokuteikenshin05.pdf
+  confidence: high
+  amount: 1枚1,000円の助成券を、1か月あたり4枚まで
+- category: sonota
+  name: 軽度生活援助事業（家の周りの手入れ・整理整頓の援助）
+  name_on_page: 軽度生活援助事業
+  summary: 家の周りの手入れや室内の整理整頓などの援助を、シルバー人材センターが行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 1か月8時間まで
+  where: 健康課 たっしゃか係、または市内の在宅介護支援センター（委託先は武雄市シルバー人材センター）
+  url: https://www.city.takeo.lg.jp/benri/uploads/20260501tokuteikenshin05.pdf
+  confidence: high
+  amount: 1時間あたり120〜190円、または240〜360円（所得に応じて異なる）
+  more_urls:
+  - https://www.city.takeo.lg.jp/benri/kenko/fukushi/000117.html
+- category: sonota
+  name: 生活管理指導事業（施設への短期入所）
+  name_on_page: 生活管理指導事業
+  summary: 社会適応が困難な在宅の高齢者が、施設に短期入所して生活の支援や指導を受ける。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、在宅の社会適応が困難な高齢者
+  - 介護保険の要支援・要介護認定を受けていない
+  where: 健康課 たっしゃか係
+  url: https://www.city.takeo.lg.jp/benri/kenko/fukushi/000117.html
+  confidence: low
+- category: sonota
+  name: はり・きゅう券の交付
+  name_on_page: はり・きゅう券を交付しています
+  summary: 登録施術所のはり・きゅうの料金の一部に使える助成券を交付する。
+  who:
+    age_min: 50
+  at_application:
+  - 市内に住所がある
+  - 別世帯の人が申請・受け取りする場合は委任状が必要
+  where: 健康課 たっしゃか係
+  url: https://www.city.takeo.lg.jp/benri/kenko/kenkou/013925.html
+  confidence: high
+  amount: 1枚900円の助成券を年間20枚まで（施術1回につき1枚）
+  more_urls:
+  - https://www.city.takeo.lg.jp/benri/uploads/20260501tokuteikenshin05.pdf
+- category: haikai
+  name: 認知症高齢者・障がい児者あんしん登録制度
+  name_on_page: 武雄市認知症高齢者・障がい児者あんしん登録制度
+  summary: 行方不明のおそれがある人を市と警察署で情報共有しておき、行方不明時の捜索につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 武雄市に住民票があり居住している
+  - 認知症高齢者（若年性を含む）、または療育手帳・精神保健福祉手帳をお持ちの障がい児者
+  - 事前の登録申請が必要
+  where: 福祉課、健康課 たっしゃか係
+  url: https://www.city.takeo.lg.jp/benri/kenko/fukushi/010539.html
+  confidence: high
+- category: sonota
+  name: 認知症高齢者・障がい児者個人賠償責任保険事業
+  name_on_page: 武雄市認知症高齢者・障がい児者個人賠償責任保険事業
+  summary: 他人にけがや損害を与えた場合に備える保険に、市が保険契約者となって加入できる。
+  who: {}
+  at_application:
+  - あんしん登録制度に事前登録している
+  - 認知症高齢者は、聞き取り等で一定の基準を満たす人
+  where: 福祉課、健康課 たっしゃか係
+  url: https://www.city.takeo.lg.jp/benri/kenko/fukushi/010539.html
+  confidence: high
+  amount: 賠償保険金額は3億円まで。保険料は加入者負担（被保護世帯及び住民税非課税世帯を除く）
+- category: koken
+  name: 高齢者成年後見制度利用支援事業
+  name_on_page: 高齢者成年後見制度利用支援事業
+  summary: 認知症高齢者等の後見・保佐・補助開始の審判申立てなどを支援する。
+  who: {}
+  at_application:
+  - 判断能力が不十分で日常生活に支障のある認知症高齢者等
+  where: 健康課 たっしゃか係
+  url: https://www.city.takeo.lg.jp/benri/kenko/fukushi/000117.html
+  confidence: low
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- yutai

@@ -1,0 +1,97 @@
+city: '462209'
+name: 南さつま市
+site: www.city.minamisatsuma.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 在宅高齢者等介護用品支給事業
+  summary: 在宅で常に紙おむつを使う要介護者などに、紙おむつ等の介護用品を支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市に住民登録がある
+  - 要介護1〜5の人、または身体障害者手帳2級以上・療育手帳A2以上で3歳以上の人
+  where: 介護支援課 地域ケア推進係（問い合わせ先として記載）
+  url: https://www.city.minamisatsuma.lg.jp/living/kenko-iryo-fukushi/koreisha/fukushiservice/zaitaku/e027590.html
+  confidence: high
+  amount: 年間 60,000 円（月 5,000 円）・36,000 円（月 3,000 円）・24,000 円（月 2,000 円）の 3 区分で、要介護度により異なる
+- category: iro
+  name: 在宅の要介護者を介護する人への介護手当
+  name_on_page: 在宅高齢者介護手当支給事業
+  summary: 要介護3〜5の高齢者を在宅で介護している人に、介護手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護者が、同居かそれに準ずる状態で90日以上在宅で介護している
+  - 基準日（7月31日か1月31日）に市内に6か月以上住所がある
+  - 入院・入所・ショートステイの期間は在宅日数に入らない
+  where: 介護支援課 地域ケア推進係（問い合わせ先として記載）。申請月は 8 月・2 月
+  url: https://www.city.minamisatsuma.lg.jp/living/kenko-iryo-fukushi/koreisha/fukushiservice/zaitaku/e027589.html
+  confidence: high
+  amount: 年間 10 万円（9 月と 3 月に 5 万円ずつ）
+- category: haishoku
+  name: 訪問による配食（安否確認つき）
+  name_on_page: 高齢者等訪問給食サービス事業
+  summary: 調理や食の確保が難しい虚弱な高齢者などに、食事を届け安否も確かめる。
+  who: {}
+  at_application:
+  - 市内に住む
+  - おおむね65歳以上の虚弱か寝たきり等の人、または重度身体障害者等
+  - 調理が困難、または食の確保が困難
+  - 申請書に民生委員の意見書欄がある
+  where: 介護支援課 地域ケア推進係（問い合わせ先として記載）
+  url: https://www.city.minamisatsuma.lg.jp/living/kenko-iryo-fukushi/koreisha/fukushiservice/zaitaku/e027588.html
+  confidence: high
+  amount: 1 食 500 円の自己負担。1 日 2 食（昼・夕）、原則週 7 日以内
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 在宅高齢者緊急通報システム事業
+  summary: ボタンを押すと消防署の通報センターにつながる通報システムを貸与する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしか寝たきりの高齢者
+  - または、70歳以上の夫婦世帯で双方とも虚弱
+  where: 福祉課 社会係（問い合わせ先として記載）
+  url: https://www.city.minamisatsuma.lg.jp/living/kenko-iryo-fukushi/koreisha/fukushiservice/zaitaku/e027586.html
+  confidence: high
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: 防火の配慮が必要な高齢者のみの世帯に、火災警報器などを給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能の低下で、防火等の配慮が必要
+  where: 福祉課 社会係（問い合わせ先として記載）
+  url: https://www.city.minamisatsuma.lg.jp/living/kenko-iryo-fukushi/koreisha/fukushiservice/zaitaku/e027587.html
+  confidence: high
+not_found:
+- haikai
+- hochoki
+- ribiyo
+- gaishutsu
+- jutaku

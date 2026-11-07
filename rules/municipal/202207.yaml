@@ -1,0 +1,209 @@
+city: '202207'
+name: 安曇野市
+site: www.city.azumino.nagano.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の購入助成券
+  name_on_page: 家族介護用品購入助成券の交付
+  summary: 重度の要介護者を在宅で介護する家族に、紙おむつ等に使える助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請するのは在宅で介護している人
+  - 65歳以上・要介護4か5・保険料段階1〜3なら額が高い
+  - 上記以外は要介護3〜5が対象（額が低い）
+  where: 高齢者介護課 包括支援担当
+  url: https://www.city.azumino.nagano.jp/soshiki/27/969.html
+  confidence: high
+  amount: 月5,000円券（年6万円まで）、または月1,000円券（年1.2万円まで）
+- category: iro
+  name: 重度要介護者の家庭介護慰労金
+  name_on_page: 重度要介護者の家庭介護慰労金の支給
+  summary: 重度の要介護の高齢者を自宅で介護した家族に、年1回慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 基準日は9月1日で、市内に住所がある
+  - 前年1年間、180日以上自宅で介護していた
+  - 要介護3以上が1年間続いていた人は年5万円
+  - 介護保険サービス未利用・要介護4以上・市民税非課税世帯は10万円
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/969.html
+  confidence: high
+  amount: 年5万円、または年10万円（条件による）
+- category: kinkyu-tsuho
+  name: 緊急通報機器の設置
+  name_on_page: 緊急通報サービス
+  summary: 緊急ボタンとトイレ等のセンサーによる安否確認の機器を設置する。
+  who: {}
+  at_application:
+  - 65歳以上、または障害者手帳等の人のみで構成する世帯
+  - 機器の設置には固定電話が必要
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/973.html
+  confidence: high
+  amount: 利用料は月500円
+- category: gaishutsu
+  name: 高齢者の通院等タクシー券
+  name_on_page: 高齢者通院等支援サービス
+  summary: 通院や福祉施設への送迎で使えるタクシー券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 対象者には市から申請書が郵送される
+  - 寝たきり高齢者等通院等支援サービスとは併用できない
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/973.html
+  confidence: high
+  amount: 500円分の券を年間最大30枚（申請時期で減る）
+- category: gaishutsu
+  name: 車いす等の人の福祉タクシー料金補助
+  name_on_page: 寝たきり高齢者等通院等支援サービス
+  summary: 福祉タクシーの料金の半額を補助する。事前の利用登録が必要。
+  who: {}
+  at_application:
+  - 車いすかストレッチャーで移動する高齢者
+  - または身体障害者手帳1・2級の人
+  - 補助を受ける前に利用登録申請書を出す
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/973.html
+  confidence: high
+  amount: 料金の半額、月5,000円まで
+- category: sonota
+  name: 軽度生活援助（ごみ出し・除雪など）
+  name_on_page: 軽度生活援助サービス
+  summary: ごみ出し、家周りの手入れ、軽い修繕、除雪、暖房の給油を有料で手伝う。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone
+  at_application:
+  - 日常生活の援助が必要な人
+  - 作業はシルバー人材センターに委託
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/973.html
+  confidence: high
+  amount: ごみ出し・給油は100円、手入れ・修繕は200円、除雪は500円
+- category: ribiyo
+  name: 訪問理美容の料金補助
+  name_on_page: 訪問理美容サービス
+  summary: 理容師・美容師が自宅へ来る際の料金の一部を市が補助する。
+  who: {}
+  at_application:
+  - 65歳以上で要介護3以上の寝たきりの人
+  - または身体障害者手帳1・2級、療育手帳A1・A2の人
+  - 利用できる店は申請後に案内される
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/973.html
+  confidence: high
+  amount: 1回2,000円を補助、年6回まで（申請時期で減る）
+- category: jutaku
+  name: 住宅改良の上乗せ補助
+  name_on_page: 住宅改良に対する補助
+  summary: 手すりや段差解消などの工事費を、介護保険の住宅改修と併せて補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 同居の家族全員が前年の住民税所得割非課税
+  - 着工後は補助できないので工事前に相談する
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/973.html
+  confidence: high
+  amount: 工事費の9割、上限63万円
+- category: hochoki
+  name: 高齢者の補聴器購入補助
+  name_on_page: 安曇野市高齢者補聴器購入補助金
+  summary: 世帯全員非課税の高齢者の補聴器本体の購入費を一部補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻咽喉科の医師意見書が必要（聴力レベルの基準あり）
+  - 市税の滞納がなく、過去に申請していない
+  - 購入前に申請し、交付決定を受ける
+  where: 高齢者介護課（本庁舎1階12番窓口）
+  url: https://www.city.azumino.nagano.jp/soshiki/27/128451.html
+  confidence: high
+  amount: 費用の3分の2、上限3万円（一人一回）
+- category: haikai
+  name: 認知症の人の見守りシール交付
+  name_on_page: 安曇野市見守りシール交付事業
+  summary: QRコード付きのシールを無料で交付し、行方不明時に家族へ連絡が届く。
+  who: {}
+  at_application:
+  - 65歳以上で認知症症状があり行方不明のおそれがある人
+  - または40〜64歳で主治医意見書により認知症と診断された人
+  - 申請者は介護者等の代表者。事前に個人情報の登録が必要
+  where: 高齢者介護課 包括支援担当
+  url: https://www.city.azumino.nagano.jp/soshiki/27/100150.html
+  confidence: high
+  amount: 耐洗ラベル20枚と蓄光シール10枚を無料交付（追加は実費）
+- category: sonota
+  name: 介護者の緊急時の宿泊費助成
+  name_on_page: 緊急宿泊支援（緊急時のショートステイ）サービス
+  summary: 介護者に急用があり宅老所等に泊まった場合、宿泊費の一部を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 対象は要介護の高齢者を介護する人
+  - 葬儀、事故、出産などの緊急時に一時的な宿泊が必要
+  - 普段通うデイサービス先の宅老所等の宿泊が対象
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/969.html
+  confidence: high
+  amount: 宿泊費の8割、1泊4,000円まで、連続3泊まで
+- category: sonota
+  name: 養護老人ホームでの短期宿泊
+  name_on_page: 生活管理指導短期宿泊（ショートステイ）事業
+  summary: 養護老人ホームに短期間泊まり、生活上の支援や指導を受けられる。
+  who:
+    at_home: true
+  at_application:
+  - 社会適応（生活習慣等）が困難な、概ね65歳以上の人
+  - 要支援・要介護の認定を受けている人は利用できない
+  - 原則7日以内
+  where: 高齢者介護課 長寿福祉係
+  url: https://www.city.azumino.nagano.jp/soshiki/27/973.html
+  confidence: high
+  amount: 1日1,380円
+not_found:
+- haishoku
+- koken
+- shingu

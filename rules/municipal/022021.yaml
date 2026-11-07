@@ -1,0 +1,196 @@
+city: '022021'
+name: 弘前市
+site: www.city.hirosaki.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり高齢者等の紙おむつ支給
+  name_on_page: ねたきり高齢者等紙おむつ支給事業
+  summary: 在宅で寝たきりなどの人に、紙おむつを年3回自宅へ届ける。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上の寝たきり、または要介護4・5相当で常時失禁
+  - または身体障害者手帳1・2級か療育手帳Aで寝たきり
+  - 生活保護受給世帯は対象外
+  where: 介護福祉課 高齢福祉係、岩木・相馬総合支所 民生課
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 年3回（4・8・12月）配達。テープ型134枚か尿とりパッド320枚のどちらか
+- category: kaigo-yohin
+  name: 歩行用の杖の支給
+  name_on_page: 歩行安全杖支給事業
+  summary: 歩行に杖が必要な高齢の市民に、歩行安全杖を支給する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の市民で、歩行に杖が必要
+  where: 介護福祉課 高齢福祉係、岩木・相馬総合支所 民生課
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 弘前市高齢者補聴器購入費助成事業
+  summary: 手帳の対象にならない軽度・中等度難聴の高齢者の補聴器購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 両耳30dB以上70dB未満で、聴覚障害の身体障害者手帳の対象外
+  - 補聴器相談医が装用を必要と判断している
+  - 過去5年間にこの助成を受けていない
+  - 購入前に申請する
+  where: 介護福祉課 自立・包括支援係
+  url: https://www.city.hirosaki.aomori.jp/fukushi/fukushi/kourei-hotyouki-kounyuujyosei.html
+  confidence: high
+  amount: 実際の支出額か3万円のうち、少ない方
+- category: koken
+  name: 成年後見の申立費用・報酬の助成
+  name_on_page: 弘前市成年後見制度利用支援事業実施要綱
+  summary: 所得や資産が少ない人の、後見の申立費用や後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり居住している
+  - 生活保護の被保護者・要保護者、またはこれに準ずる所得・資産の人
+  - 本人、配偶者、4親等内の親族、後見人等が申請できる
+  - 報酬助成は審判の日から90日以内に申請する
+  where: 福祉総務課 総務係
+  url: https://www.city.hirosaki.aomori.jp/fukushi/fukushi/seinenkouken-josei.html
+  confidence: high
+  amount: 報酬助成は月額18,000円（施設入所・入院中）か28,000円（その他）。助成は最大12か月分
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 在宅で中重度の要介護者を介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人は市内に住所がある
+  - 過去1年間、介護保険サービスを使っていない
+  - 年1週間程度のショートステイ、福祉用具、住宅改修は除く
+  where: 介護福祉課 介護給付係
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 年額100,000円
+- category: shingu
+  name: 寝たきり高齢者の寝具丸洗い
+  name_on_page: ねたきり高齢者寝具丸洗いサービス事業
+  summary: 在宅の寝たきり高齢者の寝具を、年1回無料で洗濯・乾燥・消毒する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - おおむね65歳以上
+  - 申込は6〜7月頃、実施は9月上旬〜10月末
+  where: 介護福祉課 高齢福祉係、岩木・相馬総合支所 民生課
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 無料（年1回）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: 緊急時に通報できるシステムとペンダントを設置し、貸与する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の高齢者がいる世帯で、緊急通報が必要
+  where: 介護福祉課 高齢福祉係
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 月額の利用料は、世帯全員非課税で1,100円、課税者がいると1,650円、生活保護世帯は無料
+- category: haikai
+  name: 認知症等の高齢者の事前登録（ただいまサポート）
+  name_on_page: 弘前市ただいまサポート事業
+  summary: 帰宅に不安がある人を事前登録し、登録番号入りのキーホルダーやシールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、認知症やその疑いで外出時の帰宅に不安がある
+  - 65歳以上。若年性認知症などで同様の不安がある65歳未満も可
+  - 本人・家族・成年後見人等が申請できる
+  where: 介護福祉課 自立・包括支援係（地域包括支援センター経由でも可）
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 無料。キーホルダー、反射シール、アイロンシール、爪Qシールを配布
+- category: gaishutsu
+  name: 外出支援サービス（岩木地区）
+  name_on_page: 外出支援サービス事業
+  summary: 岩木地区の人の、通院や福祉事業への送迎を行う。
+  who: {}
+  at_application:
+  - 岩木地区に住所がある
+  - 65歳以上で要介護認定を受け、一般の交通機関の利用が困難
+  - または60歳以上で身体障害者手帳があり下肢が不自由
+  - または上記と同程度と認められる人
+  where: 弘前市社会福祉協議会 岩木・相馬支部
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 通院送迎は片道250〜510円。福祉事業への送迎は片道50円（生活保護世帯は無料）
+- category: mimamori
+  name: ボランティアによる見守り訪問（ほのぼのコミュニティ21）
+  name_on_page: ほのぼのコミュニティ２１推進事業
+  summary: 市民ボランティアが、ひとり暮らし高齢者などの家を週1回程度訪ねて交流する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅のひとり暮らし高齢者、寝たきり高齢者、障がい者等のいる世帯
+  where: 弘前市社会福祉協議会 地域福祉課
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: low
+- category: sonota
+  name: 高齢者はり・きゅう・マッサージ施術料の助成
+  name_on_page: 高齢者はり・きゅう・マッサージ施術料助成事業
+  summary: 指定施術所で使える、1枚500円割引の受療券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市民であること
+  where: 介護福祉課 高齢福祉係、岩木・相馬総合支所 民生課
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 1枚につき500円割引。1人5枚（年度内1回のみ）
+- category: sonota
+  name: 在宅高齢者の短期入所
+  name_on_page: 在宅高齢者短期入所事業
+  summary: 同居家族の病気や冠婚葬祭などの間、短期間施設に泊まれる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、短期入所が必要
+  - 介護保険サービスが使える人は、そちらを優先
+  - 原則7日以内
+  where: 介護福祉課 高齢福祉係
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+  amount: 利用者負担は1日1,730円（生活保護世帯は原則無料）
+- category: yutai
+  name: 高齢者の公共施設の無料・割引利用
+  name_on_page: 高齢者の公共施設利用制度
+  summary: 65歳以上の市民が、対象の公共施設を無料または低額で使える。
+  who:
+    age_min: 65
+  at_application:
+  - 弘前市民
+  - 氏名・年齢・住所が分かる物を施設窓口で見せる
+  where: 各対象施設の窓口（問い合わせは介護福祉課 高齢福祉係）
+  url: https://city.hirosaki.aomori.jp/fukushi/fukushi/R8.6gaidobook.pdf
+  confidence: high
+not_found:
+- ribiyo
+- nichijo-yogu
+- jutaku

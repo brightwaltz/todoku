@@ -1,0 +1,173 @@
+city: '122343'
+name: 南房総市
+site: www.city.minamiboso.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の現物支給
+  name_on_page: 高齢者介護用品支給事業
+  summary: 在宅で要介護4・5の方に、紙おむつ・尿とりパッド・紙パンツを現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり住民基本台帳に記載されている
+  where: 南房総市社会福祉協議会（本所・内房支所・朝夷支所）
+  url: https://www.city.minamiboso.chiba.jp/0000024924.html
+  confidence: high
+  amount: 1人年10万円まで（1回あたり2万5,000円以内）。年4回（5・8・11・2月）に現物支給
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 「食」の自立支援事業（配食サービス）
+  summary: 委託業者が安否確認を兼ねて食事を自宅まで届ける。
+  who: {}
+  at_application:
+  - 対象の条件は頁に無いので問い合わせて確かめる
+  where: 高齢者支援課（三芳分庁舎）に問い合わせ
+  url: https://www.city.minamiboso.chiba.jp/0000024847.html
+  confidence: low
+  amount: 原則週5食まで（介護保険認定者等は2食まで）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: 家庭用端末とペンダント型発信機を貸与し、緊急時に専門スタッフが対応する。
+  who: {}
+  at_application:
+  - 次のいずれか：65歳以上のひとり暮らし
+  - 在宅で要介護4または5と認定された方
+  - ひとり暮らしの1・2級の身体障害者手帳所持者
+  - 市内に住所がある
+  where: 高齢者支援課（三芳分庁舎）、市民課、朝夷行政センター、各地域センター（三芳を除く）
+  url: https://www.city.minamiboso.chiba.jp/0000002043.html
+  confidence: high
+  amount: 新規設置料は課税世帯6,300円・非課税0円。月額は課税1,500円・非課税300円・生活保護0円
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 非課税世帯の65歳以上で医師が必要と認めた方に、補聴器本体の購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻咽喉科医が補聴器の使用が必要と証明している
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 購入前に市へ事前相談が必要。申請は購入から1年以内
+  where: 高齢者支援課、朝夷行政センター、各地域センター
+  url: https://www.city.minamiboso.chiba.jp/0000020503.html
+  confidence: high
+  amount: 補聴器本体の購入費の半額（上限2万円）。1人1台限り
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 高齢者家族介護慰労事業
+  summary: 重度の要介護高齢者を自宅で常時介護する同一世帯の方に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 年齢・要介護度は介護を受ける高齢者の条件
+  - 要介護4・5の認定が申請日から過去1年以上続いている
+  - 過去1年以上市内に居住している
+  - 過去1年間介護保険等のサービスを受けていない
+  - 短期入所の利用が年7日以内なら可
+  where: 高齢者支援課（三芳分庁舎）、市民課、朝夷行政センター、各地域センター
+  url: https://www.city.minamiboso.chiba.jp/0000002042.html
+  confidence: high
+  amount: 介護高齢者1人につき年額10万円
+- category: gaishutsu
+  name: 高齢者のバス利用助成券
+  name_on_page: 高齢者外出支援バス利用助成事業
+  summary: 65歳以上で要件を満たす方に、路線バスで使える助成券（1枚100円）を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 生活保護を受けている方、または次の全てに当てはまる方
+  - 前年度住民税非課税、または免許を持たない・失効・返納した
+  - 自力でバスに乗降でき、介添えなしで乗車できる
+  - 要介護認定を受けていない。申請時に入院・入所していない
+  - 福祉タクシーの助成を受けている方は対象外
+  where: 高齢者支援課（三芳分庁舎）、市民課、朝夷行政センター、各地域センター
+  url: https://www.city.minamiboso.chiba.jp/0000000703.html
+  confidence: high
+  amount: 助成券1枚100円、年度100枚まで（途中決定は時期により70枚か30枚）。1回4枚まで使用可
+- category: gaishutsu
+  name: 高齢者の福祉タクシー助成券
+  name_on_page: 福祉タクシー利用助成事業（高齢）
+  summary: 65歳以上で要件を満たす方に、タクシー料金の助成券（1枚700円）を交付する。
+  who: {}
+  at_application:
+  - 対象の条件は頁に無いので問い合わせて確かめる
+  where: 高齢者支援課（三芳分庁舎）に問い合わせ
+  url: https://www.city.minamiboso.chiba.jp/0000024847.html
+  confidence: low
+  amount: 1枚700円の助成券を30枚まで。1回の乗車で4枚まで使用可
+- category: koken
+  name: 成年後見の申立費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 収入や資産が少なく負担が難しい方に、申立費用や後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 収入や資産の状況から申立費用・報酬の負担が難しい
+  - 65歳以上は高齢者支援課、65歳未満の障害者は社会福祉課
+  where: 高齢者支援課（65歳以上の場合）
+  url: https://www.city.minamiboso.chiba.jp/0000009614.html
+  confidence: low
+- category: haikai
+  name: 見守りシール（どこシル伝言板）
+  name_on_page: 見守りシール配布事業（どこシル伝言板）
+  summary: QRコード入りシールを衣服などに貼り、行方不明時の早期発見・保護につなげる。
+  who: {}
+  at_application: []
+  where: 高齢者支援課（三芳分庁舎）に問い合わせ
+  url: https://www.city.minamiboso.chiba.jp/0000024847.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報カプセルの無料配布
+  name_on_page: 救急医療情報カプセル配布事業
+  summary: 医療情報や緊急連絡先を入れて冷蔵庫に保管するカプセルを無料で配る。
+  who: {}
+  at_application:
+  - 対象の条件は頁に無いので問い合わせて確かめる
+  where: 高齢者支援課（三芳分庁舎）に問い合わせ
+  url: https://www.city.minamiboso.chiba.jp/0000024847.html
+  confidence: low
+  amount: カプセル配布は無料
+- category: sonota
+  name: 生活管理指導短期宿泊（ショートステイ）
+  name_on_page: 生活管理指導短期宿泊事業（ショートステイ）
+  summary: 養護老人ホーム等に一時的に泊まり、生活習慣の指導などを受ける。
+  who: {}
+  at_application:
+  - 利用には診断書等が必要
+  - 対象の詳しい条件は頁に無いので問い合わせて確かめる
+  where: 高齢者支援課（三芳分庁舎）に問い合わせ
+  url: https://www.city.minamiboso.chiba.jp/0000024847.html
+  confidence: low
+  amount: 1年間 原則14日間まで
+not_found:
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

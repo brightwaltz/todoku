@@ -1,0 +1,173 @@
+city: '122360'
+name: 香取市
+site: www.city.katori.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅の要支援・要介護者への紙おむつ給付
+  name_on_page: 紙おむつ特別給付
+  summary: 在宅の要支援・要介護認定者に、市の特別給付として紙おむつ等を支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請が必要
+  - 利用者負担は介護保険負担割合証の割合
+  where: 高齢者福祉課 給付管理班
+  url: https://www.city.katori.lg.jp/kenko_fukushi/kaigohoken/kyufu.html
+  confidence: high
+  amount: 1日あたり紙おむつ1枚・尿とりパッド3枚まで
+- category: kaigo-yohin
+  name: 入院中のおむつ代の助成
+  name_on_page: 高齢者及び障害者入院時おむつ代助成事業
+  summary: 入院中におむつを使う高齢者・障害者に、おむつ代の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上、または身体・療育・精神の障害者手帳を持つ人
+  - 医療機関に入院している
+  - 家族による代理申請も可
+  where: 高齢者福祉課、小見川支所
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/service.html
+  confidence: high
+  amount: おむつ代の2分の1、月額3,000円まで
+- category: iro
+  name: 重度要介護者を介護する家族への慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護4・5の在宅の高齢者を1年以上介護している家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の期間が1年以上ある
+  - その期間に介護保険サービスを使っていない（短期入所7日まで除く）
+  - その期間に継続90日以上の入院がない
+  - 申請は要件を満たした翌日から1年以内
+  where: 高齢者福祉課 高齢者支援班
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/service.html
+  confidence: high
+  amount: 年額10万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置
+  name_on_page: 緊急通報装置の設置
+  summary: 異常時にセンターへ通報され、協力員やガードマンが対応する装置を設置（貸与）する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の人だけの世帯、または身体障害者だけの世帯
+  - 市内に住んでいる
+  - プランによっては固定電話回線が必要
+  where: 高齢者福祉課、各支所
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/tsuho.html
+  confidence: high
+  amount: 設置・撤去は無料。生活保護世帯と市民税非課税世帯は無料、課税世帯は段階に応じた負担あり
+- category: gaishutsu
+  name: 高齢者のタクシー券の交付
+  name_on_page: 福祉タクシー事業(高齢者)
+  summary: 世帯全員が交通手段を持たない65歳以上の人に、タクシー券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 本人を含む世帯全員が交通手段を持たない
+  - 運転免許を返納・失効・未取得などを書類で示す
+  where: 本庁または各支所
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/service.html
+  confidence: high
+  amount: 500円券を月数×2枚交付（年間最大24枚）、1回の利用は2枚まで
+- category: gaishutsu
+  name: 車椅子・ストレッチャー利用者の移送サービス運賃助成
+  name_on_page: 高齢者等移送支援サービス助成事業
+  summary: 車椅子やストレッチャーでないと移動できない人の移送サービス運賃を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の要介護認定者、または身体障害1〜3級で下肢不自由の人
+  - ストレッチャーか車椅子でないと移動できない
+  - 市内に住所がある
+  - 福祉タクシー事業（高齢者）とは併用不可
+  where: 高齢者福祉課
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/service.html
+  confidence: high
+  amount: 運賃の半額（片道4,000円、往復8,000円まで）
+- category: nichijo-yogu
+  name: 火災警報器等の給付・老人用電話の貸与
+  name_on_page: 日常生活用具給付・貸与事業
+  summary: 寝たきりやひとり暮らしで低所得の高齢者に、火災警報器などを給付し老人用電話を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で低所得世帯
+  - ひとり暮らし、または寝たきり
+  - 電磁調理器と老人用電話はひとり暮らしのみ
+  where: 高齢者福祉課（申請先は頁に明記なし）
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/service.html
+  confidence: low
+  amount: 給付は火災警報器・自動消火器・電磁調理器。自己負担は前年所得税額で変わり、生活保護・市民税非課税世帯は無料
+- category: haikai
+  name: 徘徊のおそれがある人への見守りシール交付
+  name_on_page: 徘徊高齢者等見守りシール交付事業(どこシル伝言板)
+  summary: 連絡先を登録したQRコード付きシールを交付し、発見者が読み取ると家族等に連絡が届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上、初老期認知症の診断、または市長が認めた人
+  - 市内に住所がある
+  where: 高齢者福祉課（申請先は頁に明記なし）
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/service.html
+  confidence: low
+  amount: 無料（通信費は利用者・発見者の負担、追加シールは自費）
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 香取市成年後見制度利用支援事業
+  summary: 身寄りがない人の申立てを市長が行い費用を負担し、後見人等の報酬も助成する。
+  who: {}
+  at_application:
+  - 報酬助成は生活保護受給者など3区分のいずれか
+  - 市長申立ては親族による申立てが期待できない人
+  where: 高齢者福祉課 高齢者支援班
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/koukenriyousien.html
+  confidence: high
+  amount: 報酬助成の上限は月額で施設入所者18,000円、その他28,000円
+- category: sonota
+  name: 虚弱高齢者の短期入所（養護老人ホーム等で預かり）
+  name_on_page: 高齢者短期入所事業
+  summary: 家族が一時的に介護できない時などに、養護老人ホーム等で虚弱高齢者を預かる。
+  who: {}
+  at_application:
+  - 要支援・要介護に該当しない虚弱高齢者
+  - 同居家族が一時的に介護できない、またはひとり暮らしで一時的に養護が必要
+  where: 高齢者福祉課（申請先は頁に明記なし）
+  url: https://www.city.katori.lg.jp/kenko_fukushi/koreisha/service.html
+  confidence: low
+not_found:
+- haishoku
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

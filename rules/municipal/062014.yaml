@@ -1,0 +1,173 @@
+city: '062014'
+name: 山形市
+site: www.city.yamagata-yamagata.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ペンダント型）の設置
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らしの高齢者に緊急通報装置を設置し、緊急対応と定期的な安否確認を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 疾病等で日常生活に注意が必要（歩行困難や心疾患等の発作の危険など）
+  - 申請には原則 2 名以上の協力員が必要
+  where: 住所地の地域包括支援センター
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1007266/1005064.html
+  confidence: high
+  amount: 利用料は無料
+- category: kaigo-yohin
+  name: 紙おむつの現物支給
+  name_on_page: 紙おむつ支給事業
+  summary: 寝たきりや重度認知症の高齢者を介護する家族等に、紙おむつを現物で支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護4・5相当、または認知症で常時失禁が1か月以上続く
+  - 施設入所者・生活保護世帯は除く
+  - 在宅は世帯員全員の住民税額が年14万円未満
+  - 入院は世帯員全員が住民税非課税
+  - 介護する人と使う人の双方が市内在住
+  where: 長寿支援課
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1007266/1005031.html
+  confidence: high
+  amount: 月7,000円を限度に現物支給
+- category: ribiyo
+  name: 訪問理美容の利用券
+  name_on_page: 訪問理美容サービス
+  summary: 理美容所へ行けない在宅高齢者に、訪問理美容の利用券を年1枚交付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5、またはこれに相当する心身状態
+  - 要介護3以下でも該当する場合があるので窓口に相談
+  where: 長寿支援課（市役所2階28番窓口）。郵送や、ケアマネ・地域包括支援センター経由も可
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1007266/1005068.html
+  confidence: high
+  amount: 利用券 1,018円分を年1枚
+- category: iro
+  name: 寝たきり等の高齢者を介護する人への激励金
+  name_on_page: ねたきり高齢者等介護者激励金支給事業
+  summary: 寝たきりや進んだ認知症の高齢者を在宅で長く介護している人に激励金を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきりまたは症状の進んだ認知症の人を6か月超、在宅で常時介護している
+  - 入院・入所・ショートステイ中の期間は除く
+  - 令和8年度の受付は10月15日〜12月4日
+  where: 長寿支援課（市役所2階28番窓口）。郵送可
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1007266/1005030.html
+  confidence: high
+  amount: 5万円（予算超過時は5万円以内）
+- category: gaishutsu
+  name: 運転免許自主返納者へのタクシー券
+  name_on_page: 山形市運転免許証自主返納者タクシー券交付事業
+  summary: 運転免許を自主返納した70歳以上にタクシー券を1回交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 運転免許を自主返納して1年以内の申請
+  - 過去にこの事業のタクシー券や返納者用定期券の交付を受けていない
+  where: 長寿支援課（市役所2階28番窓口）
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1006643/1005069.html
+  confidence: high
+  amount: 2万円分（500円券×40枚、1回のみ、交付から2年間有効）
+- category: gaishutsu
+  name: 寝たきり高齢者の通院用移送券
+  name_on_page: 高齢者移送サービス
+  summary: 在宅で介護されている寝たきりの高齢者に、介護タクシー等の利用券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきり状態（ベッド上の生活が主体で、介助なしでは車いすに移れない等）
+  - 自宅と医療機関の間の移送に使う
+  - 福祉タクシー券・福祉給油券とは併用不可
+  where: 長寿支援課
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1006640/1005071.html
+  confidence: high
+  amount: 12枚綴りの利用券。自己負担は費用の2割（身障手帳1・2級の下肢等）または3割
+- category: haikai
+  name: 徘徊のおそれのある高齢者の事前登録
+  name_on_page: おかえり・見守り事前登録
+  summary: 徘徊のおそれのある人を市に登録し、行方不明時に警察等と情報を共有して早期発見につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊のおそれがある在宅の高齢者
+  where: 担当の地域包括支援センター、長寿支援課、担当ケアマネジャー
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1006642/1005048.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 認知症の人のGPS機器の導入費補助
+  name_on_page: 山形市認知症高齢者等位置情報検索サービス（GPS)導入支援事業
+  summary: 行方不明になるおそれのある認知症の人のGPS機器を導入する際の初期費用を補助する。
+  who: {}
+  at_application:
+  - おかえり・見守り事前登録の登録者の家族など
+  - 機器は市の定める基準（電話機能なし、連続200時間以上など）を満たす
+  where: 長寿支援課
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1006642/1013848.html
+  confidence: high
+  amount: 上限8,360円（1回限り）
+- category: hochoki
+  name: 補聴器購入費の一部助成（聴こえくっきり事業）
+  name_on_page: 山形市聴こえくっきり事業
+  summary: 住民税非課税の65歳以上が初めて補聴器を買うとき、費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 補聴器相談医（耳鼻科医）が装用必要と診断
+  - 聴こえくっきり事業への参加・協力に同意
+  - 初めての購入で、補助は1人1回。購入前に手続きが必要
+  - 補装具費（障害者総合支援法）の対象にならない人
+  - 市内の認定補聴器専門店で購入
+  where: 長寿支援課（市役所2階28番窓口）。聴こえのチェック参加者は認定店が手続きを支援
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1006643/1010290.html
+  confidence: high
+  amount: 両耳4万円（片耳2万円）か本体価格の1/2の低いほう
+  more_urls:
+  - https://www.city.yamagata-yamagata.lg.jp/_res/projects/default_project/_page_/001/005/018/r8kikoekukkirizigyounoosirase.pdf
+- category: sonota
+  name: 雪下ろし・間口処理の費用補助
+  name_on_page: 高齢者・障がい者及びひとり親世帯雪下ろし等補助事業
+  summary: 豪雪時に、自力で雪下ろしができない住民税非課税の高齢者世帯等へ作業費を補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のみ、要介護3以上のみ、障害者手帳所持者のみ、ひとり親と18歳以下の子のみ等の世帯
+  - 家族・親族の援助が受けられない
+  - 自己または家族所有の居住住宅（アパート等は対象外）
+  - 豪雪対策本部の設置期間中。民生委員の確認が必要
+  where: 長寿支援課（民生委員児童委員を通じて申請書が届く）
+  url: https://www.city.yamagata-yamagata.lg.jp/kenkofukushi/koureisha/1007266/1005072.html
+  confidence: high
+  amount: 雪下ろしは作業員1人1日18,000円（3人まで）、間口処理は1回6,000円（年3回まで）
+not_found:
+- haishoku
+- shingu
+- mimamori

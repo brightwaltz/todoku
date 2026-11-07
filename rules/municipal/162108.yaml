@@ -1,0 +1,188 @@
+city: '162108'
+name: 南砺市
+site: www.city.nanto.toyama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給（おむつ券）
+  name_on_page: 家族介護用品支給サービス(おむつ券)について
+  summary: 常時おむつが必要な在宅の方に、おむつの利用券を助成する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3以上で排泄に介助か見守りが必要な方
+  - または身体障害者手帳1・2級の肢体不自由の方
+  - または療育手帳Aで常時おむつが必要な方
+  - 1日4枚以上のおむつが常時必要
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/1399.html
+  confidence: high
+  amount: 月 2,500 円分（年 4 回に分けて支給）。要介護4以上で世帯全員が市民税非課税なら月 5,000 円分
+- category: haishoku
+  name: 見守り配食サービス
+  name_on_page: 南砺市見守り配食サービス事業について
+  summary: 定期的に食事を届けて、高齢者の安否も確かめる。
+  who: {}
+  at_application:
+  - 自分で外出できず買い物と調理が難しく、安否確認が必要な方
+  - 65歳以上のみ世帯で要介護認定を受けている方
+  - 食事支援のある介護サービスの利用日は対象外
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/751.html
+  confidence: high
+  amount: 1日1食まで。要支援は週3食、要介護は週5食が限度。食代は事業所ごとの自己負担
+- category: haikai
+  name: 徘徊SOS緊急ダイヤル
+  name_on_page: 認知症高齢者等見守り支援事業(徘徊SOS緊急ダイヤル)について
+  summary: 行方不明時に家族が連絡すると、市内の協力団体へ情報が流れ、捜索に協力してもらえる。
+  who:
+    age_min: 40
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症等による徘徊のおそれがある方
+  - 事前の登録が必要
+  where: 地域包括ケア課長寿介護係、最寄りの市民センター、在宅介護支援センター
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsushiencenter/1/1/1952.html
+  confidence: high
+  amount: 登録料・利用料は無料
+- category: haikai
+  name: 徘徊高齢者家族支援（GPS 貸与）
+  name_on_page: 徘徊高齢者家族支援事業について(GPS貸与サービス)
+  summary: 徘徊のおそれのある方を介護する家族に、GPS 端末を貸し出す。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で徘徊のおそれがある方を介護する世帯
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/741.html
+  confidence: high
+  amount: 機器代は市が負担。月額基本料 500 円（税抜）などは利用者負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者等緊急通報体制整備事業について
+  summary: 24 時間通報できる機器を貸し出し、緊急時の連絡に備える。
+  who: {}
+  at_application:
+  - 健康や身体の状況で日常生活に支障がある方
+  - 65歳以上のひとり暮らし、または70歳以上のみ世帯
+  - または身体障害者手帳1・2級の障がい者のみ世帯
+  - 申請後に調査員が訪問し、設置の可否を決める
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）。オンライン申請も可
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/740.html
+  confidence: high
+  amount: 月 410 円の利用者負担
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用と後見人への報酬を、負担が難しい高齢者に市が助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている方
+  - または成年後見の利用が必要で、市が助成を必要と認める高齢者
+  where: 地域包括支援センター
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsushiencenter/2/723.html
+  confidence: high
+  amount: 申立て費用は全額、報酬は費用の一部を助成
+- category: gaishutsu
+  name: 外出支援（福祉タクシーで通院）
+  name_on_page: 外出支援サービスについて
+  summary: 福祉タクシーで医療機関へ通院する費用を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護3以上の在宅高齢者
+  - または身体障害者手帳1・2級（上肢・下肢・体幹）の在宅の方
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）。オンライン申請も可
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/1126.html
+  confidence: high
+  amount: 月 2 回（1 回 1 往復）まで。助成額との差額は自己負担
+- category: gaishutsu
+  name: 高齢者お出かけ支援券
+  name_on_page: 南砺市高齢者お出かけ支援扶助事業について
+  summary: 市内の対象入浴施設やタクシーなどで使える支援券を配る。
+  who: {}
+  at_application:
+  - 4月1日に南砺市に住所がある方
+  - 65歳以上のひとり暮らし、または70歳以上のみ世帯
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/737.html
+  confidence: high
+  amount: 300 円の支援券を 5 枚支給。差額は自己負担
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒の助成
+  name_on_page: 寝具類等洗濯乾燥消毒サービスについて
+  summary: 寝具のクリーニング費用を利用券で助成する。
+  who: {}
+  at_application:
+  - 65歳以上の在宅で、要介護3以上の寝たきりか認知症の方
+  - または要支援以上の在宅で、70歳以上ひとり暮らし・75歳以上のみ世帯
+  - または身体障害者手帳1・2級の肢体不自由の方
+  where: 地域包括ケア課、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）。オンライン申請も可
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/1127.html
+  confidence: high
+  amount: 年 2 枚（6 か月ごとに 1 枚、3,000 円分）。差額は自己負担
+- category: ribiyo
+  name: 訪問理美容の助成
+  name_on_page: 訪問理美容サービスについて
+  summary: 理美容院へ行けない方の自宅へ理容師・美容師が訪問する費用を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の在宅で要介護4以上の方
+  - または身体障害者手帳1・2級（下肢・体幹）の方
+  - または療育手帳Aの方
+  where: 地域包括ケア課、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）。オンライン申請も可
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/4/1398.html
+  confidence: high
+  amount: 年 2 枚（6 か月ごとに 1 枚、2,000 円分）。差額は自己負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 南砺市家族介護慰労金支給事業について
+  summary: 介護保険サービスを使わず在宅で介護する家族に、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上で要介護4以上の方を介護している家族
+  - 過去1年に介護給付を受けておらず、30日以上の入院がない
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/6/744.html
+  confidence: high
+  amount: 要介護高齢者 1 人につき年額 10 万円
+- category: sonota
+  name: 在宅要介護高齢者福祉金
+  name_on_page: 在宅要介護高齢者福祉金支給事業について
+  summary: 在宅の重度要介護の高齢者に福祉金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 所得要件などがある（詳細は頁に記載なし）
+  where: 地域包括ケア課長寿介護係、ふくし総合窓口、最寄りの市民センター（福光市民センターを除く）。オンライン申請も可
+  url: https://www.city.nanto.toyama.jp/soshiki/chiikihokatsucare/1/6/746.html
+  confidence: high
+  amount: 月額 5,000 円を年 2 回に分けて支給
+not_found:
+- hochoki
+- nichijo-yogu
+- chusha
+- yutai
+- mimamori

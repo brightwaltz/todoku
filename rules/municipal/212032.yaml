@@ -1,0 +1,250 @@
+city: '212032'
+name: 高山市
+site: www.city.takayama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費助成
+  name_on_page: 難聴高齢者補聴器購入助成
+  summary: 身体障害者手帳の対象外の中等度難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 難聴の高齢者が対象（年齢・聴力の条件は市に確認）
+  - 認定補聴器技能者のいる販売店で購入
+  - 購入前に相談・申請が必要
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000549/1018054.html
+  confidence: high
+  amount: 購入費10万円以上は5万円、10万円未満は購入費の2分の1
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス
+  summary: 親族の食事支援が受けられない在宅の高齢者に、弁当を届けて安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 親族などから調理や食材調達の支援が受けられない
+  - 特別食：心身の状態できざみ食や制限食が必要
+  - 普通食：栄養改善が必要で、ひとり暮らしか高齢者のみ世帯
+  - 普通食：市民税非課税世帯で、要支援・要介護または事業該当者
+  where: 高年介護課、地域包括支援センター、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000549/1000550.html
+  confidence: high
+  amount: 利用者負担は1食450円（特別食）、400円（普通食）
+- category: shingu
+  name: 寝具の洗濯・乾燥サービス
+  name_on_page: 寝具洗濯乾燥サービス
+  summary: 寝具の管理が難しいひとり暮らしの高齢者などの布団・毛布を洗濯・乾燥する。
+  who: {}
+  at_application:
+  - 市民税非課税世帯または生活保護世帯
+  - 65歳以上のひとり暮らしか高齢者世帯、これに準ずる人、身体障がい者
+  - 家族や親族からの支援が受けられない
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000549/1000551.html
+  confidence: high
+  amount: 利用者負担は1割程度、年2回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システムの貸与
+  summary: 自宅に緊急通報装置を設置し、月1回の安否確認と緊急時の通報に対応する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみ世帯
+  - またはひとり暮らしの重度身体障がい者で緊急時対応が必要
+  - 固定電話回線が必要
+  - 緊急時の協力員が原則3人必要
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000549/1000554.html
+  confidence: high
+  amount: 年額0円（生活保護）、520円（市民税非課税）、1,040円（その他）
+- category: gaishutsu
+  name: 支所地域の外出支援（送迎）
+  name_on_page: 外出支援事業
+  summary: 支所地域で、公共交通を使えない人の通院などの外出を送迎車で支援する。
+  who: {}
+  at_application:
+  - 支所地域に住所がある（高山地域の人は利用不可）
+  - 他人の介助なしに移動が難しく、公共交通の利用も難しい
+  - 要介護（支援）認定者、または手帳所持者などで一定の条件
+  - 平日午前9時〜午後5時の利用
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000549/1000556.html
+  confidence: high
+  amount: 支所地域内は310円から（待機料金別）。市民税額で自己負担が変わる
+- category: gaishutsu
+  name: 高齢者バス優待乗車証の購入費助成
+  name_on_page: 乗合バス利用助成
+  summary: 高齢者バス優待乗車証（悠々手形）の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+  at_application:
+  - 購入前に市への申請が必要
+  - 優待乗車証の有効期限は2か月
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000549/1000557.html
+  confidence: high
+  amount: 購入費4,190円のうち2,000円を助成
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付・貸与
+  name_on_page: 日常生活用具の給付・貸付
+  summary: 電磁調理器・火災警報器・自動消火器・玄関チャイムの給付と、老人用電話・シルバーカーの貸与。
+  who: {}
+  at_application:
+  - 品目ごとに条件が違う。おおむね65歳以上が基本
+  - ひとり暮らしか高齢者のみ世帯などが中心
+  - 火災警報器・自動消火器・玄関チャイム・老人用電話は低所得
+  - 購入前の申請が必要
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000549/1000553.html
+  confidence: high
+  amount: 給付限度額は電磁調理器41,000円、火災警報器6,000円など。負担は市民税額で変わる
+- category: kaigo-yohin
+  name: 家族への介護用品購入助成
+  name_on_page: 介護用品の購入助成
+  summary: 常時おむつが必要な人を在宅で介護する家族に、介護用品の購入クーポンを支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護2・3は非課税世帯で、おむつの必要性が認められた人
+  - 要介護4・5は本人非課税（世帯に課税者がいれば額が下がる）
+  - 施設・病院に入所・入院中の人は対象外
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000562.html
+  confidence: high
+  amount: 年額4万円・6万円・19.5万円分（介護度と課税状況で決まる）
+- category: iro
+  name: 介護者慰労金
+  name_on_page: 介護者慰労金の給付
+  summary: 介護保険サービスを使わず在宅で介護している家族に、慰労金を給付する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護3以上、または重度認知症の要介護2の人を介護している
+  - 過去1年間、介護保険サービスを利用していない
+  - 年10日以内の利用、福祉用具、住宅改修は利用可
+  - 入所・入院期間は除く
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000562.html
+  confidence: high
+  amount: 1か月10,000円
+- category: haikai
+  name: 徘徊高齢者の探索システム（GPS端末貸与）
+  name_on_page: 徘徊高齢者探索システム
+  summary: 徘徊のある高齢者を在宅で介護する家族に、現在地がわかる端末機を貸与する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊行動のある高齢者等を在宅で介護している
+  - 委託会社への別途登録の申請書が必要
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000562.html
+  confidence: high
+  amount: 月額0円（非課税など）〜520円。現場急行は1時間11,000円（税込）
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク登録
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 徘徊のおそれがある認知症の方を事前登録し、行方不明時の捜索に使う。希望者にみまもりシールも配る。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症の症状があり、徘徊のおそれがある
+  - 本人・家族・親族・成年後見人が申請できる
+  - 毎年度、登録の更新が必要
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1015186/1015472.html
+  confidence: high
+- category: sonota
+  name: 紙おむつ使用世帯への可燃ごみ処理券の追加配付
+  name_on_page: 無料可燃ごみ処理券の配付
+  summary: 紙おむつを常時使う高齢者を介護する世帯に、可燃ごみ処理券を追加で配る。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    flags:
+    - uses_diapers
+  at_application:
+  - 紙おむつを常時使用している高齢者を介護している世帯
+  - 民生委員・ケアマネジャー等の使用証明が必要
+  - 年度初めの処理券を使いきった後に申請
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1000098/1000562.html
+  confidence: high
+  amount: おむつ使用者1人につき年2回、1回20枚まで
+- category: jutaku
+  name: 高齢者住宅改造費の市独自の上乗せ助成
+  name_on_page: 高山市高齢者住宅改造助成事業補助金
+  summary: 介護保険の住宅改修の上限を超える改造費などを、所得に応じて最高75万円まで助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 原則、一住宅につき1回限り
+  - 工事前の事前申請が必要
+  - 生計中心者の所得税額で限度額が変わり、高いと対象外
+  where: 高年介護課、各支所地域振興課
+  url: https://www.city.takayama.lg.jp/kurashi/1006064/1006071/1006073.html
+  confidence: high
+  amount: 最高75万円（介護保険の給付分を含む）
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度の利用支援
+  summary: 費用を負担できない人に、成年後見の申立て費用と後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 生活保護受給者、または収入・資産が乏しい人
+  - 生保以外は世帯全員が市民税非課税で、資産120万円以下など
+  - 申立費用は申立てから60日以内、報酬は審判の翌日から180日以内に申請
+  where: 高年介護課（成年後見支援センター：0577-35-3359）
+  url: https://www.city.takayama.lg.jp/kurashi/1000017/1016671/1016676.html
+  confidence: high
+  amount: 資産100万円以下は全額、100万円超120万円以下は2分の1
+not_found:
+- ribiyo
+- mimamori

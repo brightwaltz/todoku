@@ -1,0 +1,28 @@
+pref: '39'
+name: 高知県
+site: www.pref.kochi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: こうちあったかパーキング利用証の交付
+  name_on_page: こうちあったかパーキング制度
+  summary: 移動に配慮が必要な人（要介護 1〜5 の高齢者など）に、県内共通の駐車場の利用証を県が交付する。
+  who: {}
+  at_application:
+  - 次のどれか 1 つに当たる、移動に配慮が必要な人（年齢の制限なし）
+  - 要介護 1〜5 の認定を受けている（介護保険被保険者証で確認）
+  - 障害者手帳の等級が別表の基準に当たる（療育手帳は A、精神は 1 級など）
+  - 指定難病などの医療受給者／妊産婦／けが人等で一時的に歩行が困難
+  where: 障害福祉課、または各福祉保健所。電子申請も可。協力する市町村でも申し出られる
+  url: https://www.pref.kochi.lg.jp/doc/2018032900357/
+  confidence: high
+  more_urls:
+  - https://www.pref.kochi.lg.jp/doc/2018032900357/file_contents/file_2025612491752_1.pdf
+  - https://www.pref.kochi.lg.jp/doc/2018032900357/file_contents/file_20264282115048_1.pdf
+not_found:
+- yutai

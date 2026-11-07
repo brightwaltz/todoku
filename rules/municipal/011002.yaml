@@ -1,0 +1,162 @@
+city: '011002'
+name: 札幌市
+site: www.city.sapporo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつの宅配（要介護の在宅の方）
+  name_on_page: おむつサービス
+  summary: 要介護度の高い在宅の方に、月1回、おむつを自宅へ届ける。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 札幌市内に居住し、住民票がある40歳以上の要介護認定者
+  - 要介護4〜5：認定調査票の排尿か排便が「全介助」
+  - 要介護3：認知症自立度III以上で、排尿か排便が全介助
+  where: お住まいの区の区役所保健福祉課（電子申請も可）
+  url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+  confidence: high
+  amount: 月1回、上限6,500円の範囲でおむつを宅配。自己負担は費用の1割（生活保護は無料）
+- category: haishoku
+  name: 夕食の配食と安否確認
+  name_on_page: 配食サービス
+  summary: ひとり暮らしで調理が難しい方に、夕食を届けて安否も確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 原則65歳以上
+  - 病気などで体力が落ち、ふだんの調理が難しい
+  where: お住まいの区の区役所保健福祉課（電子申請も可）
+  url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+  confidence: high
+  amount: 1食500円。月〜土曜の週6日までの夕食（祝日と12/29〜1/3を除く）
+- category: koken
+  name: 成年後見の市長申立てと費用助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の市長申立てのほか、申立費用や後見人報酬の助成が受けられる。
+  who: {}
+  at_application:
+  - 市長申立て：判断能力が不十分な認知症高齢者で、4親等内に申立てする親族がいない
+  - 費用助成：収入や資産等から、申立費用（鑑定費用）や報酬を負担することが困難
+  - 助成には申請期間がある
+  where: 札幌市社会福祉協議会 自立支援課 成年後見推進係（相談窓口）
+  url: https://www.city.sapporo.jp/kaigo/k100citizen/seinenkouken-riyoushienzigyou-kourei.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（あんしんコール）
+  name_on_page: 高齢者あんしんコール事業
+  summary: ボタンで24時間つながる通報機器を貸与し、月1回程度の電話もある。
+  who:
+    age_min: 60
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - A：65歳以上のひとり暮らしか世帯全員65歳以上で、ア〜ウのいずれか
+  - ア慢性疾患（心臓病・高血圧等）で注意を要する／イ要支援・要介護認定／ウ事業対象者
+  - B：60〜64歳のひとり暮らしで、イ（要支援・要介護認定）に該当
+  - C：85歳以上のひとり暮らし（身体状況は問わない）
+  - 24時間の緊急通報がある老人ホーム・サ高住の方は対象外。原則、緊急連絡先を登録
+  where: お住まいの区の区役所保健福祉課（福祉事務係。電子申請も可）
+  url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+  confidence: high
+  amount: 通報機器の貸与。月額900円（市町村民税非課税世帯は300円、生活保護は無料）
+- category: ribiyo
+  name: 訪問理美容（ねたきりの方）
+  name_on_page: 理美容サービス
+  summary: 在宅のねたきりの高齢者の自宅へ、理容師・美容師が訪問する。
+  who:
+    age_min: 60
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 65歳以上。60〜64歳は要介護認定者か同程度の身体状況の方も可
+  - 札幌市に住所がある在宅のねたきりの方
+  where: お住まいの区の区役所保健福祉課（電子申請も可）
+  url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+  confidence: high
+  amount: 年4回まで訪問。1回2,000円（生活保護は無料）
+- category: gaishutsu
+  name: 敬老パス（市電・地下鉄・バスのICカード）
+  name_on_page: 敬老優待乗車証（敬老パス）
+  summary: 市内の公共交通を、チャージ額の半分の負担で使えるICカードを交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 札幌市内に住民登録があり、引き続き居住している
+  - 令和8年3月末までに所持・申請済の方は、75歳未満でも引き続き利用可
+  where: 札幌市 保健福祉局 高齢福祉課（頁の問い合わせ先、011-211-2976）。申請の窓口は頁に書かれていない
+  url: https://www.city.sapporo.jp/koreifukushi/korei_riyou.html
+  confidence: high
+  amount: 負担金5,000円で1万円分をチャージ（新規は年4万円分まで）。初年度は申請月で上限が変わる
+- category: mimamori
+  name: 民生委員の巡回相談（安否確認）
+  name_on_page: 巡回相談
+  summary: 民生委員が定期的に自宅を訪ね、安否確認や相談に応じる。
+  who: {}
+  at_application:
+  - 継続的に訪問が必要と判断される方
+  - 原則、介護保険サービスを利用していない65歳以上のひとり暮らし等
+  where: 区役所保健福祉課活動推進担当、または地区の民生委員に伝える
+  url: https://www.city.sapporo.jp/koreifukushi/sodan/sodan3.html
+  confidence: high
+- category: sonota
+  name: 養護老人ホームへの短期宿泊（生活支援型ショートステイ）
+  name_on_page: 生活支援型ショートステイ
+  summary: 家族の介護を一時的に受けられないとき、養護老人ホームに短期間泊まれる。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護の認定を受けていない
+  - 傷病等により虚弱
+  where: お住まいの区の区役所保健福祉課
+  url: https://www.city.sapporo.jp/kaigo/k100citizen/k160dokuji.html
+  confidence: high
+  amount: 1日440円と食事代。原則年14日、必要に応じ最大30日（生活保護は食事代のみ）
+- category: sonota
+  name: ごみ出し支援（さわやか収集）
+  name_on_page: さわやか収集
+  summary: 介護・障害福祉サービスを使い、ごみ出しが難しい方の自宅へ、清掃事務所が収集に訪れる。
+  who: {}
+  at_application:
+  - ごみを自分で出せず、親族・近隣・ボランティアの支援も受けられない
+  - 次のいずれか：①要介護2以上か障害支援区分3以上
+  - ②事業対象者・要支援1・2・要介護1（または障害支援区分1・2）で、世帯の誰かがホームヘルプ利用
+  - ③障害福祉サービスの同行援護を利用している
+  - 2人以上の世帯は、18歳到達後最初の3月31日までの者を除く全員が要件に該当
+  where: 生活ごみは区の清掃事務所、大型ごみは大型ごみ収集センター
+  url: https://www.city.sapporo.jp/seiso/gomi/sawayaka/index.html
+  confidence: high
+- category: sonota
+  name: 外国人高齢者福祉手当
+  name_on_page: 外国人高齢者福祉手当
+  summary: 公的年金を受けられない在日外国人の高齢の方に、手当を支給する。
+  who: {}
+  at_application:
+  - 札幌市に外国人登録・住民登録がある（または市の被措置者）
+  - 公的年金の受給要件を制度上満たせない在日外国人
+  - 1926年4月1日以前の生まれで、永住・特別永住の許可を受けている
+  - 前年所得が一定額超、公的年金の受給権者、生活保護の間は支給停止
+  where: 居住地の区役所保健福祉課（地域福祉係など）
+  url: https://www.city.sapporo.jp/koreifukushi/keizai/keizai2.html
+  confidence: high
+  amount: 月額10,000円
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu

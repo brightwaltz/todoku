@@ -1,0 +1,303 @@
+city: '122114'
+name: 成田市
+site: www.city.narita.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付
+  summary: 在宅でおむつを常時使う寝たきり・認知症の方に、おむつを宅配する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上（申請日から1年以内に65歳になる方を含む）
+  - 寝たきり度B1以上、または認知症の自立度が一定以上
+  - 入院中・施設入所中の方は対象外
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page125100.html
+  confidence: high
+  amount: 無料。偶数月に2か月分を配達
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 昼食を届けて安否も確認する。週1回以上の継続利用が条件。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - おおむね65歳以上で、自力での調理が困難
+  - 週1回以上、継続して配食を希望する
+  - 同じ世帯の人や市内の扶養義務者から食事の提供を受けられる方は除く
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page124200.html
+  confidence: high
+  amount: 1食300円（1月1〜3日を除く毎日の昼）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: ボタン一つで受信センターに通報でき、月1回の安否確認電話もある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 協力員を1〜3人登録する
+  - 高齢者世帯には、他の世帯員が日中3時間以上不在の世帯を含む
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page124300.html
+  confidence: high
+  amount: 設置料は無料。月額は所得割非課税世帯が無料、課税世帯が1,988〜2,195円
+- category: jutaku
+  name: 住宅改造費の助成（介護保険の上乗せ）
+  name_on_page: 住宅改造費の助成
+  summary: 介護保険の住宅改修に準ずる工事の費用を、市が別に助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市税を完納している
+  - 工事前の事前申請が必要
+  - 介護保険の住宅改修費が優先される
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page125200.html
+  confidence: high
+  amount: 非課税世帯は50万円まで。課税世帯は26.6万円まで（工事額の3分の2）
+- category: sonota
+  name: ねたきり高齢者への福祉手当
+  name_on_page: ねたきり高齢者福祉手当
+  summary: 在宅で6か月以上ねたきりの65歳以上の方に、月額の手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 日常生活に介助が必要な状態がおおむね6か月以上続いている
+  - 本人の住民税所得割が年16万円以上だと対象外
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page125400.html
+  confidence: high
+  amount: 月額13,000円
+  more_urls:
+  - https://www.city.narita.chiba.jp/content/000215483.pdf
+- category: iro
+  name: 重度認知症高齢者の介護者への手当
+  name_on_page: 重度認知症高齢者介護手当
+  summary: 在宅の重度認知症の65歳以上の方を介護している人に、月額の手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 常時の介護が必要な重度認知症の状態が6か月以上続いている
+  - 支給されるのは介護している人
+  - 本人の住民税所得割が年16万円以上だと対象外
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page125400.html
+  confidence: high
+  amount: 月額13,000円
+  more_urls:
+  - https://www.city.narita.chiba.jp/content/000215483.pdf
+- category: iro
+  name: 高齢者・障害者の介護者手当
+  name_on_page: 高齢者及び障害者介護者手当
+  summary: 在宅で家族等に介護されているねたきり・重度認知症の65歳以上の方に手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 3年以上市内に居住している
+  - おおむね6か月以上のねたきり、または重度の認知症
+  - 本人の住民税所得割が年16万円以上だと対象外
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page125400.html
+  confidence: high
+  amount: 月額12,000円
+  more_urls:
+  - https://www.city.narita.chiba.jp/content/000215483.pdf
+- category: haikai
+  name: 徘徊高齢者のGPS探索機器の貸与
+  name_on_page: 徘徊高齢者等位置探索（家族支援）サービス事業
+  summary: 徘徊のおそれがある方にGPS端末を貸し出し、家族が居場所を確認できる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 探索機器が必要と認められる認知症高齢者等の介護者が利用する
+  - 冊子では「在宅で著しい徘徊行動がある方」とされている
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page125500.html
+  confidence: high
+  amount: 基本料金は月額1,200円、情報料は電話1回200円・インターネット無料（別途消費税）
+  more_urls:
+  - https://www.city.narita.chiba.jp/content/000215483.pdf
+- category: haikai
+  name: 徘徊高齢者の早期発見ステッカー
+  name_on_page: 成田市徘徊高齢者早期発見ステッカー
+  summary: 履物に貼る反射ステッカーを無料で交付し、行方不明時の発見に役立てる。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住
+  - 認知症などで行方不明になるおそれがある
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/content/000215483.pdf
+  confidence: low
+  amount: 無料
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 寝具を干しにくい方の自宅へ業者が出向き、寝具を乾燥する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、寝具の自然乾燥が困難
+  - ねたきり、同居人のいない一人暮らし、または認知症のいずれか
+  - 居宅で生活している
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page124400.html
+  confidence: high
+  amount: 月1回、無料
+- category: mimamori
+  name: 独居高齢者の見守り支援（乳酸菌飲料の配達・見守り電話）
+  name_on_page: 独居高齢者見守り支援事業
+  summary: 乳酸菌飲料の配達か毎日の自動音声電話のどちらかを選んで利用できる。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 市内在住で、同じ敷地内に親族がいない
+  - 継続して見守りを希望する
+  - 配食・介護保険サービスなどを週1回以上使っていない
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page127300.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 独居高齢者ふれあい訪問等サービス
+  name_on_page: 独居高齢者ふれあい訪問等サービス
+  summary: 地区社会福祉協議会が月1回、給食などを通じて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 地区の社会福祉協議会か民生委員に申し出る
+  where: 地区の社会福祉協議会または民生委員（成田市社会福祉協議会）
+  url: https://www.city.narita.chiba.jp/content/000215483.pdf
+  confidence: high
+  amount: 無料
+- category: nichijo-yogu
+  name: 火災報知器の設置
+  name_on_page: 火災報知器の設置
+  summary: 高齢者の住まいに火災報知器を取り付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 取り付ける住宅の所有者
+  - 火災報知器をまだ設置していない住宅（冊子の記載）
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/kenko_fukushi/page124600.html
+  confidence: high
+  amount: 非課税・均等割のみ課税の世帯は無料。所得割課税世帯は3,850円（税込）
+  more_urls:
+  - https://www.city.narita.chiba.jp/content/000215483.pdf
+- category: gaishutsu
+  name: 移送サービス（社会福祉協議会）
+  name_on_page: 移送サービス
+  summary: 一人で外出できない方を、自宅から医療機関などへ車で送迎する。
+  who: {}
+  at_application:
+  - 介護保険の認定を受けている方、または障害者手帳があり単独外出が困難な方
+  - 社会福祉協議会への会員登録が必要
+  where: 成田市社会福祉協議会ボランティアセンター
+  url: https://www.city.narita.chiba.jp/content/000215483.pdf
+  confidence: low
+  amount: 会費は年2,400円。往復の利用料は市内500円、近隣市町村700円など
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立てをする親族がいない場合に市長が申立てし、後見人の報酬も助成する。
+  who: {}
+  at_application:
+  - 法定後見の利用が必要と思われる方
+  - 市長による申立ては、申立てを行う親族がいない場合
+  - 報酬の助成は、収入・財産の状況に応じて全部または一部
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/content/000215483.pdf
+  confidence: low
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の貸与
+  summary: 電話の設置が難しい世帯に、安否確認のため福祉電話を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 近隣に扶養義務者がいない
+  - 市民税所得割が非課税の世帯
+  - 経済的に電話の設置が困難で、携帯電話を持っていない
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/content/000215483.pdf
+  confidence: low
+- category: sonota
+  name: はり・きゅう・マッサージ等の施術費助成券
+  name_on_page: はり・きゅう・マッサージ等施設利用券
+  summary: 指定の施術所で使える施術費の助成券を、年度末までの月数分まとめて交付する。
+  who:
+    age_min: 60
+  at_application:
+  - 市税の滞納がない
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/content/000215483.pdf
+  confidence: low
+  amount: 1回1,000円の券を月2枚ずつ、最大24枚
+- category: sonota
+  name: 敬老祝い金
+  name_on_page: 敬老祝い金の贈呈
+  summary: 88歳と100歳の節目に祝い金を口座に振り込む。
+  who: {}
+  at_application:
+  - 9月15日時点で88歳または100歳
+  - 引き続き1年以上市内に居住し、住民基本台帳に記録されている
+  - 対象者に書面で通知され、口座振込依頼書を出す
+  where: 高齢者福祉課
+  url: https://www.city.narita.chiba.jp/content/000215483.pdf
+  confidence: low
+  amount: 88歳は30,000円、100歳は80,000円（2021年冊子）
+not_found:
+- hochoki
+- ribiyo
+- yutai

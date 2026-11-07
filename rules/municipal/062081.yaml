@@ -1,0 +1,245 @@
+city: 062081
+name: 村山市
+site: www.city.murayama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品助成券
+  name_on_page: 介護用品助成事業
+  summary: 紙おむつなどの購入に使える助成券を郵送で受け取れる。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 要介護2〜5の認定（保険者が村山市）、または重度心身障がい者
+  - 介護保険施設に入所中の人、生活保護等の受給者は除く
+  - 要介護1・要支援の人は主治医の診断書で対象になる場合あり
+  where: 福祉課地域福祉係
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaigo_saport/kaigoyohinjosei.html
+  confidence: high
+  amount: 月 4,000 円まで（市民税課税世帯）、月 8,000 円まで（非課税世帯）
+- category: haishoku
+  name: 高齢者への配食と安否確認
+  name_on_page: 高齢者配食サービス事業
+  summary: お弁当を週1〜2回届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 調理などが困難である
+  - 一人暮らし、高齢者世帯、障がい者等と同居する高齢者のいずれか
+  where: 福祉課介護保険係
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kourei_saport/haishokusabisu.html
+  confidence: high
+  amount: 1食300円（週1〜2回、火・木が基本）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報等体制整備事業
+  summary: 緊急通報機器とペンダント型発信器を設置・貸与し、安否確認もする。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要支援・要介護の認定を受けた一人暮らし、またはその人を含む高齢者世帯
+  - 緊急通報協力員を3人依頼する必要がある
+  where: 福祉課地域福祉係
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kourei_saport/kinkyutsuho.html
+  confidence: high
+  amount: 利用料は年 2,000 円（生活保護世帯は無料）
+- category: haikai
+  name: 認知症の位置情報端末（GPS）利用費の助成
+  name_on_page: 村山市認知症高齢者等位置情報システム利用推進事業
+  summary: 徘徊のある人の位置情報端末サービスの加入・利用料の一部を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症で徘徊のある高齢者等を在宅で介護する家族・親族が申請
+  - 有料老人ホーム・グループホーム等の入所者は対象外
+  where: 福祉課
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaigo_saport/gpsriyou.html
+  confidence: low
+  amount: 初期費用は上限 10,000 円、月額利用料は上限 500 円
+- category: haikai
+  name: 徘徊が心配な人の事前登録
+  name_on_page: 安心おかえり登録事業のお知らせ
+  summary: 徘徊が心配な人の情報を市に登録し、警察などと共有して捜索に使う。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症等で徘徊のおそれがある高齢者、または40〜64歳の若年性認知症の人
+  - 申請は本人・家族・成年後見人等
+  where: 福祉課（地域包括支援センター・ケアマネに相談可）
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaigo_saport/anshinokaeri.html
+  confidence: high
+- category: iro
+  name: 重度の要介護者を介護する同居家族への激励金
+  name_on_page: 介護者激励金支給事業
+  summary: 要介護4・5の人を在宅で介護する同居家族に年1回支給される。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 基準日（7/31か1/31）に在宅で介護している同居家族
+  - 過去1年のうち6か月超、要介護4・5の認定が続いている
+  - 要介護者・介護者とも市内に住民登録がある
+  - 6か月中に90日以上入院・入所等の場合は除く
+  - 生活保護を受けている場合、慰労金の受給者は除く
+  where: 福祉課地域福祉係
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaigo_saport/gekirekinshikyu.html
+  confidence: high
+  amount: 年度あたり 30,000 円（年1回）
+- category: iro
+  name: 介護サービスを使わず介護する家族への慰労金
+  name_on_page: 家族介護者慰労金支給事業
+  summary: 要介護3〜5の人を在宅で介護する非課税世帯の同居家族に支給される。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3〜5の認定から1年を超えている
+  - 過去1年、介護サービスを受けていない（住宅改修・用具貸与は除く）
+  - 過去1年に、おおむね3か月以上の長期入院をしていない
+  - 介護者激励金の受給者は除く
+  where: 福祉課介護保険係
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaigo_saport/irokinshikyu.html
+  confidence: high
+  amount: 年額 50,000 円（年1回）
+- category: koken
+  name: 成年後見の利用費用の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 利用が経済的に難しい人に、申立て費用や後見人の報酬を助成する場合がある。
+  who: {}
+  at_application:
+  - 成年後見の利用が必要だが、周りの援助を受けられない
+  - 利用が経済的に困難と認められる人（頁に基準の記載なし）
+  where: 福祉課地域福祉係、地域包括支援センター
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaigo_sonota/senenkokenriyoshien.html
+  confidence: low
+  more_urls:
+  - https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/otagaisama.html
+- category: gaishutsu
+  name: 下肢が不自由な高齢者の移送サービス券
+  name_on_page: 高齢者移送サービス事業
+  summary: リフト付き車両などで通院する際に使えるサービス券を月1枚相当で交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所があり、下肢が不自由である
+  - 福祉タクシー・福祉給油の利用者証の交付を受けている人は対象外
+  where: 福祉課地域福祉係
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaigo_saport/koreshaisosabisu.html
+  confidence: high
+  amount: 券1枚で 2,700 円を助成、1回の移送で2枚まで利用可
+- category: gaishutsu
+  name: 通院の送迎（外出支援）
+  name_on_page: 外出支援サービス事業
+  summary: 公共交通が使いにくい人の通院の送迎を、契約して利用できる。
+  who: {}
+  at_application:
+  - 市内に住み、周囲から送迎の援助を受けられない
+  - 介護保険の認定、または障害者手帳の交付を受けている
+  - 事前に契約の手続きが必要
+  where: 社会福祉協議会
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/gaisyutsushien.html
+  confidence: high
+  amount: 入会金 2,000 円。片道 2km まで 300 円、以降 1km ごとに 100 円
+- category: gaishutsu
+  name: 買い物の送迎と付き添い
+  name_on_page: 買い物支援サービス事業
+  summary: 「かーうー号」で店まで送迎し、スタッフが買い物に付き添う。
+  who:
+    age_min: 65
+  at_application:
+  - 買い物が困難である
+  - 事前登録が必要で、開始には要件がある（社協に確認）
+  where: 社会福祉協議会
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kaimonoshien.html
+  confidence: low
+  amount: 1回あたり 300 円
+- category: gaishutsu
+  name: 運転免許返納者へのバス・タクシー券等の交付
+  name_on_page: 村山市高齢者運転免許証自主返納支援事業
+  summary: 免許を全て返納した高齢者に、バス・タクシー等の利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 運転免許証を全て自主返納した（返納時に65歳以上）
+  - 市内に住所がある
+  - 返納から1年以内に申請する
+  where: 市民環境課
+  url: https://www.city.murayama.lg.jp/kurashi/anzen_anshin/koutuanzen/menkyosyo-jisyuhenno.html
+  confidence: high
+  amount: 1回目は 30,000 円分、5年以上たつと2回目に 20,000 円分
+- category: sonota
+  name: 一人暮らし高齢者宅の火災予防点検
+  name_on_page: 一人暮らし高齢者の火災予防安全点検事業
+  summary: 消防署員らが年1回訪問し、火災予防の点検と指導をする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 80歳以上の一人暮らし高齢者等の世帯が主な対象
+  - 高齢者夫婦世帯、80歳未満の一人暮らしも実施する
+  - 民生委員が実施の意向を確認する
+  where: 福祉課
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kourei_saport/kasaiyoboanzentenken.html
+  confidence: high
+- category: sonota
+  name: 高齢者世帯の除雪費の支給
+  name_on_page: 高齢者等除雪費支給事業
+  summary: 雪下ろしや通路の除雪に払った費用の一部を支給する。
+  who: {}
+  at_application:
+  - 市民税が非課税、または均等割のみ課税の人だけの世帯
+  - 65歳以上のみ、重度障がい者のみ等の世帯（頁に4区分）
+  - 生活保護受給者は除く
+  - 同居・二親等以内の親族による除雪は対象外
+  where: 福祉課地域福祉係
+  url: https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/kourei_saport/josetsuhishikyu.html
+  confidence: high
+  amount: 除雪費用の8割（一覧では上限 30,000 円、豪雪時は 70,000 円）
+  more_urls:
+  - https://www.city.murayama.lg.jp/kurashi/koreisha_fukushi/otagaisama.html
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai
+- jutaku

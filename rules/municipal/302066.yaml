@@ -1,0 +1,169 @@
+city: '302066'
+name: 田辺市
+site: www.city.tanabe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品購入費の支給
+  name_on_page: 介護用品購入費支給事業
+  summary: 重い要介護の在宅高齢者を介護する家族に、紙おむつ等の購入費を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住民票があり、在住している
+  - 生活保護世帯か市民税非課税世帯のどちらか
+  - 施設入所中・入院中の人は対象外
+  - 対象品は紙おむつ、尿取りパッド、清拭剤など
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: high
+  amount: 年額 70,000 円まで
+  more_urls:
+  - https://www.city.tanabe.lg.jp/material/files/group/23/kamiomutu-H28.pdf
+- category: kaigo-yohin
+  name: 紙おむつ等購入費の支給
+  name_on_page: 紙おむつ等購入費支給事業
+  summary: 常に失禁がある在宅高齢者を介護する家族に、紙おむつ代を支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住民票があり、在住している
+  - 常時失禁状態と認められる人
+  - 生活保護世帯か市民税非課税世帯のどちらか
+  - 施設入所中・入院中の人は対象外
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: high
+  amount: 年額 25,000 円まで
+  more_urls:
+  - https://www.city.tanabe.lg.jp/material/files/group/23/kamiomutu-H28.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護保険サービスを使わず重度の高齢者を在宅で介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 過去1年、介護保険サービスを使っていない
+  - ショートステイは年7日程度なら可
+  - 過去1年に90日以上入院していない
+  - 市内に住民票がある
+  - 生活保護世帯か市民税非課税世帯のどちらか
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: high
+  amount: 要介護者1人につき年額 100,000 円
+  more_urls:
+  - https://www.city.tanabe.lg.jp/material/files/group/23/kazokuiroukin-H28.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置（安心安全コールサービス）
+  name_on_page: 田辺市安心安全コールサービス
+  summary: ボタン通報の装置と定期の電話安否確認で、急病やけがの緊急時に対応する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または重度身体障害のひとり暮らし
+  - 上記以外も、全額自己負担の希望者や市長が認めた人は可
+  - 扶養義務者が安否確認や駆けつけをできない
+  - 固定電話が必要
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: high
+  amount: 装置の月額負担は無料〜1,000円（所得による）。全額負担で設置は2,475円
+  more_urls:
+  - https://www.city.tanabe.lg.jp/material/files/group/23/anshinanzenyoukou.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい高齢者に夕食等を届ける（一部地域のみ）。
+  who: {}
+  at_application:
+  - ひとり暮らしや高齢者のみの世帯など
+  - 調理が困難な人
+  - 実施は一部地域のみ
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: low
+- category: haikai
+  name: 徘徊高齢者の位置探索端末の貸与
+  name_on_page: 徘徊高齢者家族支援事業
+  summary: 徘徊のある認知症高齢者を介護する家族に、位置探索用の端末機を貸す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のある認知症の高齢者を介護している家族
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: low
+- category: haikai
+  name: 高齢者等見守りサポートシステム（行方不明時のメール配信）
+  name_on_page: 認知症高齢者等見守りサポートシステム
+  summary: 行方不明時に、登録したサポーターへ情報メールを一斉配信する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊などの行動がある高齢者を介護している家族
+  - 事前の登録が必要
+  where: やすらぎ対策課（登録の方法は頁のシステムの案内を参照）
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: low
+- category: mimamori
+  name: 認知症高齢者の見守り支援員の訪問
+  name_on_page: 認知症高齢者見守り支援事業
+  summary: 見守り支援員が認知症高齢者の自宅を訪ね、見守りをする。
+  who: {}
+  at_application:
+  - 認知症高齢者を介護する家族など
+  - 利用料が必要
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: low
+- category: sonota
+  name: 軽度生活援助（衣替え・片付け・草刈りなど）
+  name_on_page: 軽度生活援助事業
+  summary: 日常生活で援助が要る高齢者に、衣替えや整理整頓、草刈りなどの軽い手伝いをする。
+  who: {}
+  at_application:
+  - ひとり暮らしや高齢者のみの世帯など
+  - 日常生活上の援助が必要な人
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: low
+  amount: 利用料は 1 時間 100 円
+- category: gaishutsu
+  name: 外出支援（医療機関への送迎）
+  name_on_page: 外出支援事業
+  summary: 一般の交通機関が使いにくい高齢者を、行政局管内の医療機関へ送迎する（一部地域）。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 一般の交通機関を使うのが困難な人
+  - 行政局管内の一部地域のみ
+  where: やすらぎ対策課、各行政局の住民福祉課
+  url: https://www.city.tanabe.lg.jp/soshiki/hokenfukushi/4/2/1076.html
+  confidence: low
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

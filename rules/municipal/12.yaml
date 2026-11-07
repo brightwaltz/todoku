@@ -1,0 +1,25 @@
+pref: '12'
+name: 千葉県
+site: www.pref.chiba.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ちばの障害者等用駐車区画の利用証（思いやり駐車場の利用証）
+  name_on_page: ちば障害者等用駐車区画利用証制度
+  summary: 要介護1以上の人などに、県か市町村が障害者等用駐車区画の利用証を交付する。
+  who: {}
+  at_application:
+  - 高齢者の欄は、要介護1以上の認定を受けた人（介護保険被保険者証を添える）
+  - ほか、身体・知的・精神の手帳（等級あり）、難病の受給者証、妊産婦、けが人も対象
+  - 利用証は、対象の人が運転か同乗する車の駐車にだけ使える
+  - 県は郵送のみ、市町村は窓口のみの受付。区分によっては市町村に窓口が無い
+  where: 千葉県健康福祉指導課 地域福祉推進班（郵送のみ。返信用封筒に180円切手）、またはお住まいの市町村の交付担当窓口（窓口のみ・原則即日交付）
+  url: https://www.pref.chiba.lg.jp/kenshidou/machizukuri/chiba_parking_parmit_shinsei.html
+  confidence: high
+not_found:
+- yutai

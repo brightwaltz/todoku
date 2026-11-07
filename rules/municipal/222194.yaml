@@ -1,0 +1,150 @@
+city: '222194'
+name: 下田市
+site: www.city.shimoda.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等給食サービス（夕食弁当の配達）
+  name_on_page: 高齢者等給食サービス事業
+  summary: 食事の準備が難しい人に、夕食のお弁当を有料で届ける。
+  who: {}
+  at_application:
+  - 市内に居住している
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - 上記のほか、身体障害者等で市長が認めた人も対象
+  where: 地域福祉課（福祉事務所）、利用券は下田市社会福祉協議会
+  url: https://www.city.shimoda.shizuoka.jp/category/040100koureisya/148521.html
+  confidence: high
+  amount: 夕食のみ 1食500円（利用券を社会福祉協議会で購入）
+  more_urls:
+  - https://www.city.shimoda.shizuoka.jp/file/%E2%98%85%20%E9%AB%98%E9%BD%A2%E8%80%85%E3%83%BB%E9%9A%9C%E5%AE%B3%E8%80%85%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置
+  summary: ペンダント型の発信機付き緊急通報装置と火災報知器を設置し、押すと消防署が安否確認する。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者、またはねたきり高齢者
+  - これらの人がいる高齢者のみの世帯も対象
+  - 要介護認定の有無は問わない
+  where: 地域福祉課（福祉事務所）
+  url: https://www.city.shimoda.shizuoka.jp/category/040100koureisya/148521.html
+  confidence: high
+  amount: 設置費は所得により一部負担。電話料金は自己負担、維持管理費は無料
+  more_urls:
+  - https://www.city.shimoda.shizuoka.jp/file/%E2%98%85%20%E9%AB%98%E9%BD%A2%E8%80%85%E3%83%BB%E9%9A%9C%E5%AE%B3%E8%80%85%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85.pdf
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成
+  name_on_page: 紙おむつ等の購入費を助成します
+  summary: 在宅で重度の要介護者を介護する家族に、紙おむつ・尿取りパッド等の購入費の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者が市の住民基本台帳に記録され、住民税非課税世帯に属する
+  - 要介護4・5の判定、またはそれ相当と認められる
+  - 他の制度で介護用品の助成を受けていない
+  - 毎年度の申請が必要
+  where: 地域福祉課 地域包括支援センター
+  url: https://www.city.shimoda.shizuoka.jp/category/040100koureisya/158862.html
+  confidence: high
+  amount: 1人あたり月額上限5,000円（紙おむつ・尿取りパッド・使い捨て手袋・おしり拭き）
+- category: iro
+  name: 在宅ねたきり高齢者等介護手当
+  name_on_page: 下田市在宅ねたきり高齢者等介護手当の支給
+  summary: 在宅のねたきり・認知症高齢者を常時介護する同居の家族に、手当を年3回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護者は市内に住所があり、生計を同じくして同居している
+  - 申請の3か月以上前から介護している
+  - 介護者が生活保護を受給していない
+  - 要介護4以上の認定は申請の3か月以上前から
+  where: 地域福祉課 地域包括支援センター
+  url: https://www.city.shimoda.shizuoka.jp/category/040100koureisya/121432.html
+  confidence: high
+  amount: 月額3,000円（住民税非課税世帯で過去1年介護保険サービス未利用なら5,000円）。支給月は4・8・12月
+  more_urls:
+  - https://www.city.shimoda.shizuoka.jp/file/%E2%98%85%20%E9%AB%98%E9%BD%A2%E8%80%85%E3%83%BB%E9%9A%9C%E5%AE%B3%E8%80%85%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85.pdf
+- category: haikai
+  name: 高齢者等見守り事前登録（行方不明に備える）
+  name_on_page: 下田市高齢者等見守り事前登録事業
+  summary: 徘徊で行方不明になるおそれのある人の情報と写真を事前登録し、警察署と共有する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市に住所があり現に居住している
+  - 認知症等で行方不明になるおそれがある
+  - 申請は本人または家族。顔写真と全身写真が必要
+  where: 地域福祉課 地域包括支援センター
+  url: https://www.city.shimoda.shizuoka.jp/category/040100koureisya/143135.html
+  confidence: high
+- category: sonota
+  name: ごみの特別在宅収集
+  name_on_page: ごみの特別在宅収集
+  summary: ごみ出しが難しい人の自宅へ清掃職員が出向き、月2回ごみを収集する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者や高齢者世帯で、ごみ出しが困難
+  - 身体障害者等でごみ出しが困難な世帯も対象
+  - 民生委員またはケアマネジャーの意見が必要
+  where: 地域福祉課（福祉事務所）、環境対策課 清掃センター
+  url: https://www.city.shimoda.shizuoka.jp/category/040100koureisya/148521.html
+  confidence: high
+  amount: 無料（可燃ごみ・リサイクル分別ごみ、月2回）
+  more_urls:
+  - https://www.city.shimoda.shizuoka.jp/file/%E2%98%85%20%E9%AB%98%E9%BD%A2%E8%80%85%E3%83%BB%E9%9A%9C%E5%AE%B3%E8%80%85%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85.pdf
+- category: sonota
+  name: 生活管理指導ショートステイ
+  name_on_page: 生活管理指導ショートステイ
+  summary: 養護老人ホームに2泊3日程度泊まり、介護・食事・入浴を受けられる。
+  who: {}
+  at_application:
+  - 介護認定に該当しないが生活習慣や対人関係に課題のある高齢者
+  - 介護者の病気・事故・冠婚葬祭等で介護を受けにくくなった高齢者
+  where: 地域福祉課
+  url: https://www.city.shimoda.shizuoka.jp/file/%E2%98%85%20%E9%AB%98%E9%BD%A2%E8%80%85%E3%83%BB%E9%9A%9C%E5%AE%B3%E8%80%85%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%81%94%E6%A1%88%E5%86%85.pdf
+  confidence: high
+- category: sonota
+  name: 運転免許返納者への運転経歴証明書の手数料助成
+  name_on_page: 運転免許の返納について
+  summary: 運転免許を返納した65歳以上に、運転経歴証明書の交付手数料を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 下田市に住民登録がある
+  - 運転免許証を返納し、運転経歴証明書の発行を受けた
+  - 証明書の交付から3か月以内に申請する
+  where: 防災安全課
+  url: https://www.city.shimoda.shizuoka.jp/category/010100koutsuu_anzen/122342.html
+  confidence: high
+  amount: 運転経歴証明書の交付手数料分
+  more_urls:
+  - https://www.city.shimoda.shizuoka.jp/category/kurashi_tetsuduki/157638.html
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- mimamori
+- yutai

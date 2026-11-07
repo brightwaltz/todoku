@@ -1,0 +1,201 @@
+city: '272248'
+name: 摂津市
+site: www.city.settsu.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の給付
+  name_on_page: 家族介護用品の給付（紙おむつ等）
+  summary: 在宅で紙おむつ等を使う非課税世帯の方に、引換用の給付券を支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3〜5は40歳以上、要支援1〜要介護2はおおむね65歳以上
+  - 要介護3は認定調査の排尿・排便に介助等の該当が必要
+  - 要支援1・2、要介護1・2も排尿・排便に介助等の該当が必要
+  - 同住所の分離世帯は非課税世帯の扱いから除く
+  - 入院中や施設・高齢者住宅に入所中は対象外
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/9987.html
+  confidence: high
+  amount: 要介護3〜5の区分は36,000円分、要支援〜要介護2の区分は12,000円分の給付券。前者で非課税の同居家族が介護する場合は年75,000円分
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ボタンを押すと係員が駆けつける通報機器を貸し出す。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし、または高齢者のみ世帯
+  - 重度の障害がある方も対象（障害福祉課へ相談）
+  - 家族と同居でも昼間などに不在なら対象に含む
+  - 携帯型は固定電話を持たない場合のみ
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/9988.html
+  confidence: high
+  amount: 生計中心者の所得に応じた費用負担あり（金額は問い合わせ）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しい方に食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし、または65歳以上のみの世帯
+  - 重度の障害がある方も対象（障害福祉課へ相談）
+  - 食事づくりが困難で栄養状態に問題がある方向け
+  - 申請はケアマネジャー経由（いない場合は相談）
+  where: 高齢介護課 高齢福祉係（ケアマネジャー経由）
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/17633.html
+  confidence: high
+  amount: 月〜金（祝日除く）に配達。昼食1食400円、夕食1食500円。食数に限りあり
+- category: gaishutsu
+  name: 高齢者移送サービス（福祉車両）
+  name_on_page: 高齢者移送サービス
+  summary: 車いすの高齢者が通院などで外出する際に、福祉車両で送迎する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 外出時の移動が車いすによらなければならない方
+  - 施設入所中・ショートステイ中・入院中は利用不可
+  - 市内と近隣市の通院や公的機関への移動が対象
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/9989.html
+  confidence: high
+  amount: 無料。月〜金の9時〜17時、月4回まで
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス
+  summary: 理美容店に行けない要介護3〜5の在宅の方に、出張費の助成券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 年度内に65歳になる方も対象
+  - 自力や介助で理美容店を使うのが難しい方
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/7101.html
+  confidence: high
+  amount: 出張費1回2,000円の助成券。申請月で4・3・2回分。調髪などの費用は自己負担
+- category: shingu
+  name: 高齢者布団乾燥機の給付
+  name_on_page: 高齢者布団乾燥機給付事業
+  summary: 家族の支援がなく布団を干せない要支援・要介護の高齢者に、布団乾燥機を給付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - おおむね65歳以上で市内に住民登録がある方
+  - 家族の支援が受けられず自分で布団を乾燥できない方
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/section/reiki/reiki_honbun/v100RG00000777.html
+  confidence: high
+  amount: 自己負担は世帯の市民税所得割額で決まる。生活保護・非課税などは0円、所得割が高い世帯は全額負担
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付等
+  name_on_page: 日常生活用具の給付等（介護保険の対象外品目）
+  summary: 火災警報器・自動消火器・電磁調理器・福祉電話の給付等を申請できる。
+  who: {}
+  at_application:
+  - 対象者・条件は頁で確認できないため、窓口で確かめる
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/index.html
+  confidence: low
+  more_urls:
+  - https://www.city.settsu.osaka.jp/material/files/group/63/R6dai1kai_siryou1.pdf
+  - https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/download/1050.html
+- category: mimamori
+  name: ひとり暮らし・高齢者のみ世帯の登録と見守り
+  name_on_page: ひとり暮らし・高齢者のみ世帯の登録
+  summary: 民生児童委員を通じて登録した方に、見守りやライフサポーターの訪問を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 高齢者のみ世帯は、介護保険など公的サービスを使っていない世帯
+  - 見守りが必要な世帯であること
+  - 民生児童委員を通じて登録する
+  where: 民生児童委員、高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/9975.html
+  confidence: high
+- category: mimamori
+  name: 愛の一声訪問（乳酸菌飲料の配達と安否確認）
+  name_on_page: 愛の一声訪問
+  summary: 毎週水曜に乳酸菌飲料を届け、ひとり暮らしの方の安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - ひとり暮らし登録をした方
+  - 週1回以上の安否確認が必要と認められる方
+  where: 民生児童委員、高齢介護課 高齢福祉係
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/9975.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり・きゅう・マッサージ施術費の助成
+  summary: 市指定の施術所で、保険や扶助が使えない施術の本人負担を軽くする。
+  who:
+    age_min: 65
+  at_application:
+  - 年度内に65歳になる方も対象
+  - 医療保険などの療養費や医療扶助が使えない施術が対象
+  where: 高齢介護課 高齢福祉係（助成証明書の交付申請）
+  url: https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/koureisyamukefukusizyosei/705.html
+  confidence: high
+  amount: 本人負担を基本額の約3分の1に軽減（年15回）
+  more_urls:
+  - https://www.city.settsu.osaka.jp/soshiki/hokenfukushibu/koureikaigoka/koureifukushi/keirouikigaikennkou/699.html
+- category: sonota
+  name: ふれあい収集（ごみ出し支援と声かけ）
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しい世帯の家庭ごみを、職員が回収して声かけもする。
+  who: {}
+  at_application:
+  - 対象者・条件は読める頁で確認できないため、窓口で確かめる
+  where: 環境業務課
+  url: https://www.city.settsu.osaka.jp/soshiki/seikatukannkyou/kannkyougyoumuka/gomi_2/riyouseido_1/26462.html
+  confidence: low
+not_found:
+- iro
+- hochoki
+- koken
+- jutaku
+- chusha
+- yutai

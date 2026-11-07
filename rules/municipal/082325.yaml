@@ -1,0 +1,134 @@
+city: 082325
+name: 神栖市
+site: www.city.kamisu.ibaraki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護の高齢者などに、紙おむつ等の介護用品を月額の上限内で配達または薬局渡しで支給する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、市内の居宅で生活している
+  - 要介護1〜5の高齢者、または肢体不自由1〜3級の手帳のある成人
+  - 身体障害者手帳は3級の場合は1種のみ対象
+  - 施設入所中・入院中の人は対象外
+  where: 長寿介護課、市民生活課（波崎総合支所）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002144/1003930.html
+  confidence: high
+  amount: 月額上限：要介護1〜3は3,000円、要介護4・5は5,000円（要介護4・5の市民税非課税世帯は6,250円）。価格の1割が自己負担
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者の補聴器購入費助成金
+  summary: 難聴の65歳以上の人が補聴器を買うとき、費用の2分の1を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 申請年度内に65歳以上になる市内在住の人
+  - 聴覚障害の身体障害者手帳の対象にならない
+  - 両耳40デシベル以上で、耳鼻科医が補聴器の使用を必要と認める
+  - 市税等の滞納がない
+  - 購入前に申請が必要
+  where: 長寿介護課、市民生活課（波崎総合支所）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002144/1013724.html
+  confidence: high
+  amount: 購入費の2分の1、上限20,000円
+- category: mimamori
+  name: ひとり暮らし高齢者への乳製品配達による安否確認
+  name_on_page: 愛の定期便事業
+  summary: ひとり暮らしの高齢者宅へ乳製品を無料で届け、あわせて安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上で、市内に住所がある
+  - 人と接する機会が少ない
+  - 安否確認が必要な疾病等がある
+  - 緊急時に安否確認できる近隣協力者がいる
+  where: 地区の民生委員（担当は社会福祉課に問い合わせ）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002144/1002149/1002150.html
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: ひとり暮らし高齢者等見守り支援事業(緊急通報装置貸与)
+  summary: ボタン1つでコールセンターにつながる緊急通報装置を貸し出す。月1回の安否確認もある。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65歳以上のひとり暮らしで、疾病などで119番通報が困難
+  - または、ひとり暮らしの重度身体障害者などで119番通報が困難
+  - 携帯電話型は固定電話がない人が対象
+  where: 長寿介護課 地域包括支援グループ（問い合わせ先）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002144/1002149/1002151.html
+  confidence: high
+  amount: 装置の貸与は無料。電気代・電話基本料は利用者負担
+- category: gaishutsu
+  name: 福祉タクシー券の交付（高齢者の通院などの外出）
+  name_on_page: 高齢者の外出支援(福祉タクシー)
+  summary: 通院などの外出に困る人へ、料金の一部を市が負担するタクシー券を交付する。
+  who: {}
+  at_application:
+  - 市に住民票があり、1年以上市内に居住している
+  - タクシー以外の交通機関の利用が困難、または下肢が不自由
+  - 障害者手帳による自動車税等の減免を受けていない
+  - 要介護・要支援認定を受けている、またはおおむね65歳以上
+  - 障害者手帳・人工透析・指定難病の人も別枠で対象
+  where: 長寿介護課（高齢者）、市民生活課（波崎総合支所）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002144/1002145/1002147.html
+  confidence: high
+  amount: 原則月4枚（片道1枚）。料金から利用者負担200円〜900円超を引いた額を助成
+- category: gaishutsu
+  name: 路線バスの市内乗降が無料になる福祉パス
+  name_on_page: 路線バス福祉パス
+  summary: 神栖市内で乗り降りする路線バスが無料になる福祉パスを当日発行する。
+  who: {}
+  at_application:
+  - 市内に1年以上居住している
+  - 60歳以上、または障害者手帳・生活保護などの該当者
+  - 本人確認書類が必要（代理申請も可）
+  where: 社会福祉課、市民生活課（波崎総合支所）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002144/1002145/1003931.html
+  confidence: high
+  amount: 市内で乗車または下車する区間の路線バスが無料
+- category: haikai
+  name: 認知症高齢者等の徘徊SOSネットワーク事前登録
+  name_on_page: 認知症高齢者等徘徊SOSネットワーク
+  summary: 行方不明になるおそれのある人を事前登録し、市と警察で情報を共有して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の65歳以上で、認知症などで行方不明の心配がある
+  - 若年性認知症などは65歳未満でも可
+  - 写真を持って事前登録票を提出する
+  where: 長寿介護課（頁に申請先の窓口名なし。問い合わせ先）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002175/1002176.html
+  confidence: high
+- category: mimamori
+  name: 認知症の人を介護する家族への訪問見守り（やすらぎさん）
+  name_on_page: 認知症高齢者やすらぎ支援事業
+  summary: 研修を受けた人が認知症高齢者宅を訪ね、見守りや話し相手をする。身体介護はしない。
+  who: {}
+  at_application:
+  - 市内に住む認知症高齢者を介護している家族
+  where: 長寿介護課（頁に申請方法の記載なし。問い合わせ先）
+  url: https://www.city.kamisu.ibaraki.jp/iryo_fks/korei/1002169/1002171.html
+  confidence: high
+  amount: 無料
+not_found:
+- haishoku
+- iro
+- koken
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha

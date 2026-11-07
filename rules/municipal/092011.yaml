@@ -1,0 +1,348 @@
+city: 092011
+name: 宇都宮市
+site: www.city.utsunomiya.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の支給
+  name_on_page: 紙おむつ購入費支給認定申請
+  summary: 在宅で要介護1〜5の方が使う紙おむつの購入費の一部を、市が支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 宇都宮市の介護保険の被保険者である
+  - 大人用紙おむつ・尿取りパッド等の購入が対象
+  - 施設や病院に入所・入院している間の購入は対象外
+  where: 高齢福祉課（市役所2階）。振込方式は市役所1階の窓口・地区市民センター・出張所でも可
+  url: https://www.city.utsunomiya.lg.jp/kurashi/hokennenkin/kaigo/shinsei/1003842.html
+  confidence: high
+  amount: 月の購入額5,500円まで、介護保険の負担割合に応じて9割・8割・7割を支給
+- category: haishoku
+  name: 食の自立支援事業（配食サービス）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 食事づくりが難しい、または低栄養のおそれがある方に、食事を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上で、要介護（支援）認定がなく低栄養のおそれがある方
+  - または、おおむね65歳以上で要介護状態・障がい・疾病等により調理が困難
+  - 食の支援が必要な方。食数は地域包括支援センターの状況調査で決める
+  where: お近くの地域包括支援センター（問い合わせは高齢福祉課 相談支援グループ）
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004321.html
+  confidence: high
+  amount: 1食450円（生活保護世帯は400円）、週1食から最大週5食まで
+- category: haikai
+  name: 認知症高齢者地域生活安心サポート事業
+  name_on_page: 認知症高齢者地域生活安心サポート事業
+  summary: 行方不明のおそれがある認知症の方に、見守りグッズを配り、捜索支援アプリを使えるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 見守りグッズは5種類から2種類を選べる
+  - アプリを使うには家族と協力者の両方が事前に申請する
+  where: 高齢福祉課（市役所2階）、各地区市民センター・出張所。電子申請もできる
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/ninchisho/1032728.html
+  confidence: high
+  amount: 無料（アプリの通信費は自己負担）
+- category: haikai
+  name: はいかい高齢者等の位置探索システム助成
+  name_on_page: はいかい高齢者等の位置探索システム利用助成
+  summary: GPS端末の位置探索サービスの登録料と毎月の利用料の一部を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上（初老期認知症や知的障がいの方は65歳未満も可）
+  - 市内に住所があり、認知症等で行方不明のおそれがある
+  - 申請できるのは、その方を介護する市税滞納のない方
+  - 市の協定事業者（セコム等）と契約して使う場合が対象
+  where: 高齢福祉課 福祉サービスグループ（市役所2階D-8窓口）、保健福祉総務課、地区市民センター、地域包括支援センター
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004273.html
+  confidence: high
+  amount: 初回の登録料の2分の1（上限6,000円）、毎月の利用料の2分の1（上限4,000円）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重い要介護の高齢者を在宅で介護している家族に、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請月の前月から1年間に、介護される方の入院歴がない
+  - 同じ1年間の介護サービス利用日数が合計10日以内
+  - 年齢と要介護度は介護される方の条件。申請者は介護する家族
+  where: 高齢福祉課 福祉サービスグループ（市役所2階D-8窓口）、保健福祉総務課、地区市民センター・出張所、地域包括支援センター
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004272.html
+  confidence: high
+  amount: 年額12万円
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援
+  summary: 成年後見の申立て費用と、後見人等への報酬の一部を、費用が払いにくい方に助成する。
+  who: {}
+  at_application:
+  - 申立て費用の助成は、審判請求時に市内に住民票がある方
+  - 生活保護、または市民税非課税で年収150万円・預貯金50万円以下
+  - 上記以外でも、助成がないと利用が難しいと市長が認める方
+  - 申立て費用は審判の翌日から60日以内、報酬は1年以内に申請
+  where: 高齢福祉課 相談支援グループ（認知症の高齢者の場合）。窓口が分からないときは宇都宮市成年後見支援センター
+  url: https://www.city.utsunomiya.lg.jp/kenko/seikatsushien/soudan/1026717.html
+  confidence: high
+  amount: 申立て費用は全部または一部。報酬は月額上限：後見人等は施設入所18,000円・その他28,000円、監督人は9,000円・14,000円
+- category: hochoki
+  name: 高齢者福祉補聴器の交付
+  name_on_page: 高齢者福祉補聴器交付事業
+  summary: 聞こえにくい高齢者に、片耳分の高度難聴用補聴器を市が交付する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - おおむね65歳以上で、市内に住所がある
+  - 両耳とも聴力レベルが50デシベル以上
+  - 専門医に補聴器の使用が必要と認められる（医師の意見書）
+  - 身体障がい（聴覚）に当たる場合は障がい福祉課へ
+  - 既に補聴器を持つ方は対象外。購入費の補助ではなく現物交付
+  where: 高齢福祉課 福祉サービスグループ（市役所2階D-8窓口）、保健福祉総務課、地区市民センター、地域包括支援センター
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004276.html
+  confidence: high
+  amount: 自己負担は前年の所得税額で段階的（非課税は0円、課税15,001円以上は全額で上限33,900円）
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: 急病などの際にボタンで受信センターに通報できる装置を設置する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の虚弱なひとり暮らし等の高齢者と認められる方
+  - 重度身体障がい者（手帳1・2級）のひとり暮らし等も対象
+  - 状況調査で対象にならない場合がある
+  - 申請前に、駆けつける協力員の同意を得る
+  where: 高齢福祉課 福祉サービスグループ、保健福祉総務課（市役所1階A18窓口）、地区市民センター、地域包括支援センター
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004275.html
+  confidence: high
+  amount: 月の自己負担は前年の所得税額により0円〜500円
+- category: jutaku
+  name: 高齢者にやさしい住環境整備事業
+  name_on_page: 高齢者にやさしい住環境整備事業
+  summary: 段差解消や手すり取付けなど、自宅の改修費の一部を市が補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 生計中心者の前年の所得税が非課税、または世帯合計16,200円以下
+  - 市税の滞納がない
+  - 改修の前に相談し、訪問調査を受ける（着工後の申請は不可）
+  - 新築・増築・老朽化に伴う改修は対象外
+  where: 高齢福祉課 福祉サービスグループ（市役所2階D-8窓口）
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004278.html
+  confidence: high
+  amount: 工事費の4分の3、上限90万円（介護保険の対象部分は介護保険が優先）
+- category: ribiyo
+  name: 福祉理美容サービス
+  name_on_page: 福祉理美容サービス
+  summary: 寝たきりの方が自宅で理美容を受けるときの出張費を、補助券で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 在宅の方（住宅型有料老人ホーム、サービス付き高齢者住宅を含む）
+  - 補助券の交付後、指定の理容店に直接連絡する
+  where: 市社会福祉協議会 福祉サービス課
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+  amount: 出張経費として1,500円分の補助券を年間最大6枚（理美容料金は自己負担）
+- category: gaishutsu
+  name: 高齢者外出支援事業
+  name_on_page: 高齢者外出支援事業
+  summary: 70歳以上の方に、バス等で使える福祉ポイントや乗車券を年度に1回交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住民登録があり、年度末時点で70歳以上
+  - 1年度に1回、選択肢のうち1つを交付
+  - 上河内・清原の路線は、それぞれの地区市民センターのみ取扱い
+  where: 高齢福祉課（市役所2階D8窓口）、保健福祉総務課（市役所1階A18窓口）、各地区市民センター・出張所
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004277.html
+  confidence: high
+  amount: 交通系ICカードtotraに1万円相当の福祉ポイント、または回数乗車券・定期券（さきがけ号は本人負担1,000円）
+- category: mimamori
+  name: ひとり暮らし高齢者ふれあい訪問事業
+  name_on_page: ひとり暮らし高齢者ふれあい訪問事業
+  summary: ひとり暮らしの方へ乳酸菌飲料を定期的に届け、安否を確認する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね70歳以上
+  - 近隣に近親者がなく、安否確認が必要な方
+  where: 地区の担当民生委員に申し出る（問い合わせは市社会福祉協議会 福祉サービス課）
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+  amount: 無料
+- category: nichijo-yogu
+  name: 電磁調理器・シルバーカーの給付
+  name_on_page: ひとり暮らし高齢者等日常生活用具の給付・貸与
+  summary: ひとり暮らしの高齢者等に、電磁調理器やシルバーカーを現物で給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の高齢者
+  - 電磁調理器は、心身機能の低下で防火等の配慮が必要な方
+  - シルバーカーは、生活保護世帯か所得税非課税の世帯
+  - 自己負担は前年の所得税額で段階がある
+  where: 高齢福祉課 福祉サービスグループ（市役所2階D-8窓口）、保健福祉総務課、地区市民センター、地域包括支援センター
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004274.html
+  confidence: high
+  amount: 自己負担は所得税非課税世帯で0円、課税世帯は16,300円・28,400円・全額の段階
+- category: sonota
+  name: 高齢者等ホームサポート事業
+  name_on_page: 高齢者等ホームサポート事業
+  summary: 寝具などの大物洗濯、家まわりの手入れ、軽い修理、整理整頓を手伝ってもらえる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上の原則ひとり暮らしの高齢者や障がい者等
+  - 前年の所得税が非課税の世帯
+  - 要介護・要支援の認定を受けた高齢者、障がい者のみの世帯など
+  - 先に利用登録をし、その後シルバー人材センターへ利用を申し込む
+  where: 利用登録は高齢福祉課 福祉サービスグループ・地域包括支援センター等、利用申込はシルバー人材センター事務局
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+  amount: 週2時間以内。料金の1割と材料費等の実費を負担
+- category: sonota
+  name: 高齢者無料入浴券の交付
+  name_on_page: 高齢者無料入浴券の交付
+  summary: 自宅に入浴設備がない方に、公衆浴場の入浴券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 自宅に入浴設備がない
+  - 地区担当の民生委員の「入浴設備がない」証明が必要
+  where: 高齢福祉課 福祉サービスグループ
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+  amount: 年間最大60枚の入浴券
+- category: sonota
+  name: 高齢者短期宿泊事業
+  name_on_page: 高齢者短期宿泊事業
+  summary: 要介護認定のない高齢者が、施設の空床を短期間利用できる。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 要介護（支援）認定を受けていない方
+  - 体調の調整や生活習慣の指導、または家族の見守りが一時的に難しい
+  - 1回7日以内・年14日以内。空床がないと使えないことがある
+  where: 高齢福祉課 相談支援グループ（市役所2階D-7窓口）
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004270.html
+  confidence: high
+  amount: 1日490円（養護老人ホーム）または763円（短期入所施設）。送迎・居住費・食材料費は別
+- category: sonota
+  name: はり・きゅう・マッサージ施術料の助成
+  name_on_page: はり，きゅう，マッサージ施術料の助成（保険適用外）
+  summary: 保険がきかないはり・きゅう・マッサージの施術に使える助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 満70歳以上、または身体障がい者手帳1・2級の方
+  - 市に登録している施術所でのみ使える
+  - 1回の施術（1,000円以上）につき助成券1枚のみ有効
+  where: 高齢福祉課 福祉サービスグループ、保健福祉総務課（市役所1階A18窓口）、地区市民センター
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+  amount: 1枚1,000円の助成券を年度に最大18枚（申請月が遅いほど枚数は減る）
+- category: sonota
+  name: 敬老祝金
+  name_on_page: 敬老祝金
+  summary: 満80歳・90歳・100歳の方に祝金を贈る。
+  who: {}
+  at_application:
+  - 満80歳・90歳・100歳に達する方が対象
+  - 市内に引き続き3か月以上住所がある
+  - 申請書は対象の方に郵送される
+  where: 高齢福祉課 福祉サービスグループ、保健福祉総務課（市役所1階A18窓口）、地区市民センター・出張所
+  url: https://www.city.utsunomiya.lg.jp/kenko/koureisha/service/1004285.html
+  confidence: high
+  amount: 満80歳は1万円、満90歳は3万円、満100歳は10万円
+- category: sonota
+  name: ふれあい収集
+  name_on_page: ふれあい収集（戸別訪問収集）
+  summary: ごみ出しが難しいひとり暮らしの方の玄関先などから、ごみを収集する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね、介護認定を受けている65歳以上のひとり暮らしの方
+  - 身体障がい者手帳を持つひとり暮らしの方も対象
+  - 親族や近所の支援が受けられず、自力でごみを出せない
+  - 事前に電話で問い合わせ、介護保険被保険者証の写し等を添えて申請
+  where: ごみ減量課 収集指導グループ（市役所12階）
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+  amount: 週1回の戸別収集
+- category: sonota
+  name: 図書などの郵送貸出サービス
+  name_on_page: 図書などの郵送貸出サービス
+  summary: 来館が難しい要支援・要介護の方に、図書館の本やCDを郵送で貸し出す。
+  who: {}
+  at_application:
+  - 市内在住で、要支援・要介護の認定を受け来館が困難な方
+  - または身体障がい者手帳（肢体不自由1〜6級）の方
+  - 市立図書館の利用者登録が必要。本人が使う資料に限る
+  where: 市立中央図書館 館外奉仕グループ
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+  amount: 無料。図書・雑誌15冊、CD等5点、DVD等5点まで、貸出は1か月以内
+- category: sonota
+  name: 災害時要援護者支援事業
+  name_on_page: 災害時要援護者支援事業
+  summary: 自力で避難できない方を事前に登録し、市と地域が避難誘導や安否確認を行う。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の高齢者や障がい者などで、自力での避難が困難
+  - 要介護3以上、見守り対象者、手帳所持者などのいずれか
+  - 登録した情報は市と地域の支援者で共有される
+  where: 地区により高齢福祉課 相談支援グループ、保健福祉総務課 企画グループ、障がい福祉課 企画グループ
+  url: https://www.city.utsunomiya.lg.jp/_res/projects/default_project/_page_/001/013/824/2026zenpen2.pdf
+  confidence: high
+not_found:
+- shingu

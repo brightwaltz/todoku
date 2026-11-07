@@ -1,0 +1,198 @@
+city: '282022'
+name: 尼崎市
+site: www.city.amagasaki.hyogo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 尼崎市家族介護用品の支給
+  summary: 要介護4・5で常時失禁の在宅高齢者の家族に、紙おむつや尿取りパッドを支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、常時失禁の状態にある
+  - 要介護者と介護者の世帯が市民税非課税、または生活保護世帯
+  - 介護者は要介護者を介護する家族（原則同居）
+  where: 介護保険事業担当課、北部・南部福祉相談支援課、各地区の保健福祉申請受付窓口
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/zaitaku/044kaigoyohin.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給について
+  summary: 介護保険サービスを使わず要介護4・5の人を介護する家族に、慰労金を年1回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、市内在住で介護保険サービスを使っていない
+  - ショートステイのみ年7日以内の利用は対象
+  - 同居または隣地などで無報酬で介護している
+  - 要介護者と介護者の世帯全員が市民税非課税
+  where: 介護保険事業担当課、南北保健福祉センターの福祉相談支援課、各地区の保健・福祉申請受付窓口
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sien/041iroukin.html
+  confidence: high
+  amount: 年額 10 万円
+- category: ribiyo
+  name: 寝たきり高齢者の訪問理美容
+  name_on_page: ねたきり老人理美容サービス
+  summary: 自宅を訪問して整髪・洗髪をする理美容の出張料を補助する利用券を送る。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請日からの過去1年間、介護保険サービスを使っていない
+  - その1年間ずっと要介護4または5である
+  where: 介護保険事業担当課、南北保健福祉センターの福祉相談支援課、各地区の保健・福祉申請受付窓口
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/zaitaku/041ribiyou.html
+  confidence: high
+  amount: 出張料の補助（理美容の料金は自己負担）
+- category: gaishutsu
+  name: 高齢者バス運賃の助成
+  name_on_page: 高齢者バス運賃の助成
+  summary: 70歳以上の人が、バス定期券の購入または乗車ごとの運賃で市の助成を受けられる。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に引き続き1年以上住んでいる（住民票がある）
+  - 定期方式か乗車払方式のどちらか一方を選ぶ
+  - 障害者等バス特別乗車証や高齢者移送サービス等との併用は不可
+  where: 福祉課、南北保健福祉センター福祉相談支援課、各保健福祉申請受付窓口
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sien/040_basu70ijou.html
+  confidence: high
+  amount: 定期は保険料区分で助成額が違う（1年定期で 35,700〜53,550 円）。乗車払は1乗車130円（阪神）または120円（阪急）
+- category: gaishutsu
+  name: 高齢者移送サービス（介護タクシーチケット）
+  name_on_page: 高齢者移送サービス・チケットの交付
+  summary: 要介護4・5の在宅高齢者に、介護タクシーで使えるチケットを交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - バス特別乗車証・バス運賃助成・福祉タクシー等とは併用できない
+  where: 北部・南部福祉相談支援課（即時交付）、各地区の保健福祉申請受付窓口（後日郵送）
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/zaitaku/041isou.html
+  confidence: high
+  amount: 月4枚（年48枚）。1枚600円で1回最大4枚まで使える
+- category: haikai
+  name: 認知症高齢者等GPS利用支援サービス
+  name_on_page: 認知症高齢者等GPS利用支援サービス
+  summary: ひとり歩きのおそれがある認知症の人のGPS端末の初期費用を市が負担する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上、または40〜64歳で要介護（要支援）認定を受けている
+  - 認知症またはその疑いがある
+  - 補聴器やペースメーカー等を利用していない
+  - 申請者は介護している家族等
+  where: 包括支援担当課、北部・南部福祉相談支援課、各地区の保健福祉申請受付窓口
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/nintisyou/041haikai.html
+  confidence: high
+  amount: システム登録料は市が負担。月額は自己負担だが、世帯とも非課税または生活保護なら市が負担
+- category: haikai
+  name: 認知症みんなで支えるSOSネットワークの事前登録
+  name_on_page: 認知症みんなで支えるSOSネットワーク
+  summary: 行方不明の心配がある認知症の人の情報を事前登録し、警察や協力機関と早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で行方不明になる心配がある
+  - 顔と全身の写真2種類と介護保険証が必要
+  where: 市内12か所の地域包括支援センター
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/nintisyou/1021549.html
+  confidence: high
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険
+  summary: SOSネットワーク登録者が他人にけがや損害を与えた場合の賠償を、市負担の保険で補償する。
+  who:
+    at_home: true
+  at_application:
+  - 市に住民票があり、SOSネットワークに登録している
+  - 日常生活に支障が出る認知症状があり、ひとりで外出できる
+  where: 市内12か所の地域包括支援センター（SOSネットワークと同時に申請）
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/nintisyou/1021549.html
+  confidence: high
+  amount: 保険料は市が負担。補償は上限1億円
+- category: kinkyu-tsuho
+  name: 在宅高齢者等あんしん通報システム
+  name_on_page: 在宅高齢者等あんしん通報システム事業
+  summary: 緊急通報機器を設置し、24時間の通報受信と月1回の安否確認電話（お元気コール）を行う。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、または65歳以上の虚弱な高齢者のみの世帯
+  - 65歳以上と身体障害者手帳1・2級か療育手帳Aの人のみの世帯
+  - 身体障害者手帳1・2級の65歳未満の単身世帯などの障害者世帯も対象
+  - 上記以外でも、市長が特に必要と認めれば利用できる場合がある
+  where: 尼崎市社会福祉協議会（各地区のむすぶグループ）
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sumai/041kintuu.html
+  confidence: high
+  amount: 前年度の市県民税が非課税・生活保護は無料。課税は固定電話型が月1,100円、携帯電話型が月1,980円
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: ねたきりやひとり暮らしの高齢者に、火災警報器・自動消火器・電磁調理器を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 火災警報器・自動消火器は、寝たきりで防火の配慮が必要な人
+  - 電磁調理器は、防火の配慮が必要なひとり暮らし高齢者
+  - 用具ごとに世帯の市民税の条件がある（要綱参照）
+  where: 介護保険事業担当課、南北保健福祉センターの福祉相談支援課、各地区の保健・福祉申請受付窓口
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sumai/041yougu.html
+  confidence: low
+  more_urls:
+  - https://www.city.amagasaki.hyogo.jp/_res/projects/default_project/_page_/001/004/070/amagasakishinitijouseikatuyouguyoukou.pdf
+- category: jutaku
+  name: 住宅改造費の助成
+  name_on_page: 住宅改造費の助成について
+  summary: 介護が必要な高齢者や障害者の住宅改造費の一部を助成する（社協に委託）。
+  who: {}
+  at_application:
+  - 市内に居住している
+  - 要介護・要支援認定を受けた人、身体障害者手帳か療育手帳の所持者、またはその世帯
+  - 暴力団排除条例に該当しない
+  where: 尼崎市社会福祉協議会（本部安心サポートグループ）
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sumai/041juutaku.html
+  confidence: low
+- category: koken
+  name: 成年後見制度利用支援事業（申立て費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の補助がないと成年後見制度を使いにくい人に、申立て費用と後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 本市に住所があり、費用の助成がないと制度の利用が困難
+  - 報酬助成は、助成対象期間の期末残高が56万円未満
+  - 市の介護保険被保険者、生活保護の人、障害福祉の給付を受けている人など
+  where: 重層的支援推進担当（本庁北館3階）
+  url: https://www.city.amagasaki.hyogo.jp/kurashi/koreisya/sumai/seinennkouken.html
+  confidence: low
+  amount: 報酬助成は月額上限 28,000 円（在宅）・18,000 円（施設入所）
+not_found:
+- haishoku
+- shingu

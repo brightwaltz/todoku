@@ -1,0 +1,209 @@
+city: '162078'
+name: 黒部市
+site: www.city.kurobe.toyama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: ribiyo
+  name: 調髪サービス（訪問）
+  name_on_page: 調髪サービス
+  summary: 寝たきりや認知症の高齢者の自宅へ訪問して調髪する。無料。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 寝たきりまたは認知症
+  - 要介護3は自立度B2以上か認知症IIIa以上
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+  amount: 年4回まで無料
+- category: gaishutsu
+  name: 在宅高齢者の介護タクシー利用料助成
+  name_on_page: 在宅高齢者等介護タクシー事業
+  summary: 車椅子を常用する在宅の要介護者に、介護タクシーの料金の一部を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 所得税非課税
+  - 日常的に車椅子を利用している
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+  amount: 1枚500円の利用券を月5枚交付
+- category: haikai
+  name: 徘徊高齢者等家族支援サービス（GPS端末の貸与）
+  name_on_page: 徘徊高齢者等家族支援サービス事業
+  summary: 徘徊のある認知症高齢者を在宅で介護する家族に、位置情報端末を貸す。
+  who:
+    age_min: 65
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 徘徊行動のある認知症高齢者を在宅で介護する家族等
+  - 市内に住所
+  where: 地域包括支援センター、居宅介護支援事業所
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=34361
+  confidence: high
+  amount: 無料（端末の貸与）
+  more_urls:
+  - https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+- category: iro
+  name: 在宅要介護高齢者への福祉金
+  name_on_page: 在宅要介護高齢者福祉金
+  summary: 在宅で要介護4・5の65歳以上の人に福祉金を年2回に分けて支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 所得制限あり
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+  amount: 月額5,000円（年額60,000円）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に昼食を届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしや高齢者のみの世帯など
+  - 食事の調理が困難
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+  amount: 週3回まで。1食500円（住民税非課税世帯は300円）
+- category: sonota
+  name: 除雪支援（屋根・家屋周辺の除雪費の助成）
+  name_on_page: 除雪支援事業
+  summary: 所得税非課税の高齢者世帯に、自宅の屋根と周辺の除雪費用を助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし、高齢者のみの世帯など
+  - 所得税非課税
+  - 1戸建て住宅に居住
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+  amount: 屋根は1回25,000円まで、周辺は1回10,000円まで。1冬2回まで
+- category: nichijo-yogu
+  name: 自動消火器・電磁調理器の設置
+  name_on_page: 日常生活用具給付事業
+  summary: ひとり暮らしの高齢者宅に、自動消火器と電磁調理器を設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: 日常的に見守りが必要なひとり暮らし高齢者宅に、緊急通報装置を設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  - 日常的に見守りが必要
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+- category: sonota
+  name: 福祉電話の設置
+  name_on_page: 福祉電話
+  summary: 経済的に電話を設置できないひとり暮らし高齢者に、電話を設置し基本料金も市が負担する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  - 経済的理由で電話を設置できない
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+  amount: 設置費用と基本料金は市が負担（通話料は自己負担）
+- category: gaishutsu
+  name: 高齢者向け定期券の購入費助成
+  name_on_page: 高齢者向け割安全線定期券購入費助成
+  summary: 富山地方鉄道の高齢者向け定期券を買った70歳以上に、購入費の一部を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 富山地方鉄道のゴールドパス、夫婦deゴールド、いきいきパスの購入者
+  where: 福祉課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38
+  confidence: low
+  amount: 1人年10,000円まで
+- category: gaishutsu
+  name: 運転免許自主返納の支援（バスのフリーパスなど）
+  name_on_page: 高齢者を対象とした運転免許自主返納支援事業について
+  summary: 免許を全て返納した65歳以上に、市内バスのフリーパスと選べる交通支援を出す。
+  who:
+    age_min: 65
+  at_application:
+  - 黒部市民
+  - 有効期間内の運転免許を全部自主返納した（失効は対象外）
+  where: 市民環境課
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=9810
+  confidence: high
+  amount: フリーパスに加え、タクシー券など1万5千円分相当のいずれか1つ
+- category: sonota
+  name: 通話録音装置などの購入費補助（特殊詐欺対策）
+  name_on_page: 通話録音装置等購入費補助金について
+  summary: 通話録音装置や着信拒否装置などの購入費の一部を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 本人か同一世帯の人が過去に交付を受けていない
+  where: 黒部市消費生活センター（市民環境課内）
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=18686
+  confidence: high
+  amount: 購入費の4分の3（上限10,000円）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 聞こえに支障がある65歳以上に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に1年以上住んでいる
+  - 聴覚障害の手帳対象外（両耳70dB未満）
+  - 検査で両耳の聴力が40dBを超える
+  - 補装具費の支給を受けていない
+  - 税の滞納がない、過去5年に助成を受けていない
+  where: 福祉課 高齢福祉係
+  url: https://www.city.kurobe.toyama.jp/category/page.aspx?servno=38570
+  confidence: high
+  amount: 購入費の2分の1。上限は非課税世帯50,000円、課税世帯25,000円
+not_found:
+- koken
+- chusha
+- yutai

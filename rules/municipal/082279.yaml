@@ -1,0 +1,260 @@
+city: 082279
+name: 筑西市
+site: www.city.chikusei.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつの支給事業
+  summary: 在宅で紙おむつを使う非課税の高齢者に、紙おむつを現物で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3の人は、排泄に介助か見守りが必要なことが条件
+  where: 高齢福祉課、各支所
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page003719.html
+  confidence: high
+  amount: 偶数月に2か月分（2袋）を無料で支給。種類は1つ選べる
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス事業
+  summary: 調理や買い物が難しい高齢者のみの世帯に、昼食か夕食を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上、または要支援・要介護の認定を受けている
+  - 心身の障害や傷病で調理と買い物が困難
+  - 見守りが必要
+  - 調査の結果、利用が適当と認められること
+  where: 高齢福祉課、各支所。地域包括支援センターやケアマネジャーにも相談できる
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page003719.html
+  confidence: high
+  amount: 1食400円を助成。週3回（月〜土）まで、年末年始を除く
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報等サービス提供事業
+  summary: 緊急通報装置を貸し出し、24時間の健康相談と定期の安否確認電話を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上のひとり暮らしで、病弱などで装置が必要な人
+  - または65歳以上のひとり暮らしで要支援・要介護の認定を受けている人
+  - または65歳以上の認定者のいる高齢者世帯で、1人が要介護4・5の人
+  where: 高齢福祉課、各支所。民生委員にも相談できる
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page003719.html
+  confidence: high
+  amount: 月額300円（人為的な破損や紛失の費用は自己負担）
+- category: mimamori
+  name: 愛の定期便（乳酸飲料の配達による安否確認）
+  name_on_page: 愛の定期便事業
+  summary: ひとり暮らしの高齢者に、週1回乳酸飲料を届けて安否を確認する。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 家に閉じこもりがちで見守りが必要
+  - 外出などで配達を休むとき連絡ができる
+  where: 高齢福祉課、各支所。民生委員にも相談できる
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page003719.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: LINEによる高齢者見守り機能
+  name_on_page: LINE窓口高齢者見守り機能
+  summary: 毎朝のLINEに高齢者が応答しないと、家族などの見守り者に通知が届く。
+  who: {}
+  at_application:
+  - 高齢者本人が先に登録し、そのあと見守り者が登録する
+  - しおりでは「見守りが必要な高齢者」が対象
+  where: 市公式LINEの申請メニュー（問い合わせは高齢福祉課）
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page012832.html
+  confidence: high
+  amount: 無料。通知だけで、異変時の対応は市では行わない
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: nichijo-yogu
+  name: シルバーカー購入費の助成
+  name_on_page: シルバーカー購入費助成事業
+  summary: 歩行にいつもつえが必要な高齢者のシルバーカー購入費を助成する。
+  who:
+    age_min: 75
+  at_application:
+  - 歩くときにつえなどをいつも必要とする
+  - 購入する前に申請が必要
+  where: 高齢福祉課、各支所。民生委員にも相談できる
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page003719.html
+  confidence: high
+  amount: 上限5,000円。再申請ができるのは3年後
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: hochoki
+  name: 高齢者補聴器の購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聞こえにくい高齢者の補聴器購入費の一部を、購入後の申請で助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 購入日と申請日に市に住民登録がある
+  - 市税を滞納していない
+  - 聴覚障害による身体障害者手帳の交付を受けていない
+  - これまでにこの助成を受けていない
+  where: 高齢福祉課（本庁舎2階）、各支所
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page013533.html
+  confidence: high
+  amount: 購入費の1/2、上限2万円（1人1回1台）。管理医療機器の補聴器のみで、集音器は対象外
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: haikai
+  name: 高齢者等SOSネットワーク（おかえりマーク）
+  name_on_page: 筑西市高齢者等SOSネットワーク
+  summary: 行方不明のおそれがある人を事前登録し、おかえりマークのシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、認知症により行方不明のおそれがある
+  - 見守りが必要。申込書に写真2枚を添える
+  where: 高齢福祉課（窓口か郵送）
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page009510.html
+  confidence: high
+  amount: 無料。おかえりマーク（防水シールとアイロンシールのセット）を配付
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: koken
+  name: 成年後見の申立費用と後見人報酬の助成
+  name_on_page: 成年後見制度利用に係る助成の拡大について
+  summary: 費用の負担が難しい人の、審判請求の費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護の受給中か要保護状態、または費用負担が困難と市長が認める人
+  - 報酬は、後見人等が親族の場合は対象外
+  - 市に住民登録がある。登録がなくても保険者が市などの場合は可
+  - 申立日や報酬付与の審判が令和8年4月1日以降のものが対象
+  where: 高齢福祉課 地域包括係
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page014197.html
+  confidence: high
+  amount: 審判請求費用は必要と認める額。報酬は上限2万8千円（在宅）、1万8千円（施設等）
+- category: sonota
+  name: 高齢者世帯のエアコン新規購入費の助成
+  name_on_page: 【新規購入】高齢者世帯エアコン助成金
+  summary: エアコンが1台もない高齢者のみの世帯に、購入と設置の費用を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯全員が65歳以上（令和8年度中に65歳になる人を含む）
+  - 生活保護を受けていない。世帯全員が市税を滞納していない
+  - 借家は家主の承諾が必要。施設入居者は対象外
+  - 受付は令和9年2月26日まで。予算がなくなり次第終了
+  where: 高齢福祉課（窓口か郵送）
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page013495.html
+  confidence: high
+  amount: 上限5万円（1世帯1回。実費が5万円未満なら実費分）
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: sonota
+  name: 高齢者世帯のエアコン買換え購入費の助成
+  name_on_page: 【買換え購入】高齢者世帯エアコン助成金
+  summary: エアコンを買い換えた高齢者のみの世帯に、一律の額を上乗せして助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯全員が65歳以上（令和8年度中に65歳になる人を含む）
+  - 先に環境課の省エネ家電買換え促進助成金の交付決定を受ける
+  - 世帯全員が市税を滞納していない
+  - 受付は令和9年2月26日まで。予算がなくなり次第終了
+  where: 高齢福祉課（窓口か郵送）。先に環境課への申請が必要
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page013496.html
+  confidence: high
+  amount: 一律3万円（1世帯1回）
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急情報医療キット普及事業
+  summary: かかりつけ医などの情報を入れる容器を配り、冷蔵庫に保管して緊急時に備える。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし
+  - または65歳以上の高齢者世帯で、病弱などで配布を希望する人
+  - または障がい・病弱などで配布を希望する人
+  where: 高齢福祉課、各支所。民生委員にも相談できる
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page003719.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 施設に短期間泊まり、体調の調整や生活習慣の改善を行う。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 基本的な日常生活に支障があるが、介護保険の給付を受けられない
+  where: 高齢福祉課
+  url: https://www.city.chikusei.lg.jp/kenkou-fukushi/koureisha-fukushi/page003719.html
+  confidence: high
+  amount: 1日380円と食費の実費
+- category: sonota
+  name: ひとり暮らし高齢者の登録
+  name_on_page: ひとり暮らし高齢者登録事業
+  summary: 親族の連絡先などを事前に登録し、緊急時の連絡や関係機関の連携を円滑にする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application: []
+  where: 高齢福祉課、各支所。民生委員にも相談できる
+  url: https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+  confidence: high
+- category: sonota
+  name: 高齢者等のごみ出し支援（戸別収集）
+  name_on_page: 高齢者等ごみ出し支援戸別収集
+  summary: ごみ出しの協力が得られない世帯の玄関先などへ、週1回ごみを収集に伺う。
+  who: {}
+  at_application:
+  - 親族や近所からごみ出しの協力を受けられない世帯
+  - 65歳以上の要支援・要介護認定者で、計画にごみ出し支援がある人のみの世帯
+  - または障害者でごみ出し支援が必要な人のみの世帯
+  - 上記に準じる世帯も要相談
+  where: 環境課（本庁2階10番窓口）
+  url: https://www.city.chikusei.lg.jp/data/doc/1776213337_doc_120_0.pdf
+  confidence: high
+not_found:
+- iro
+- shingu
+- ribiyo
+- gaishutsu
+- jutaku

@@ -1,0 +1,171 @@
+city: '112259'
+name: 入間市
+site: www.city.iruma.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: おむつの給付・貸与
+  summary: 常時失禁のある在宅の要支援以上の人が、指定業者から紙おむつを1割負担で買える。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、常時失禁の状態にある
+  - 介護保険施設の入所者・入院中の人・生活保護の人は除く
+  where: 高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/6953.html
+  confidence: high
+  amount: 月5,000円を上限に、1割の自己負担で購入できる
+- category: gaishutsu
+  name: 要援護高齢者等のタクシー利用券
+  name_on_page: 要援護高齢者等タクシー利用料金助成事業
+  summary: 通院や通所でのタクシー代の一部を、利用券で助成する。令和8年度末で終了予定。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内に住所がある
+  - 身体障害者手帳1・2級、療育手帳A・マルAの人は原則対象外
+  - 使い道は通院・介護施設への通所などに限る
+  where: 高齢者支援課（原則は電子申請）
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/6954.html
+  confidence: high
+  amount: 500円の利用券を年12枚まで。1回に2枚まで使える
+- category: kinkyu-tsuho
+  name: 緊急通報システム装置の貸与
+  name_on_page: ひとり暮らし高齢者等緊急通報システム
+  summary: ひとり暮らしなどの在宅の人に、緊急通報装置を貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - ケアハウス等に住む人は除く
+  - 次のいずれか：身障手帳1・2級でひとり暮らしか日中独居
+  - 65歳以上で常時注意が必要なひとり暮らしか日中独居
+  - 75歳以上でひとり暮らしか日中独居（75歳以上の世帯含む）
+  - 同居者全員が75歳以上
+  where: 高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/6958.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等の位置情報端末の貸与
+  name_on_page: 認知症高齢者等支援事業（位置情報サービス）
+  summary: 外出中に行方不明になるおそれのある人に、位置を調べられる端末を貸す。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、次のいずれか：
+  - 65歳以上で認知症により行方不明になるおそれがある
+  - 40歳以上の要介護認定者で認知症により行方不明のおそれ
+  - 療育手帳所持者や器質性精神障害の人は障害者支援課が窓口
+  - 心臓ペースメーカーを使う人は利用できない
+  where: 地域包括支援センター（代行申請）、高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/6960.html
+  confidence: high
+  amount: 自己負担は月696〜2,090円（収入・課税で区分）。生活保護は0円
+- category: haikai
+  name: 身元確認シール等の交付
+  name_on_page: 認知症高齢者等支援事業（身元確認支援サービス）
+  summary: 爪に貼るQRシール、かかとステッカー、キーホルダーを無料で受け取れる。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、次のいずれか：
+  - 65歳以上で認知症により行方不明になるおそれがある
+  - 40歳以上の要介護認定者で認知症により行方不明のおそれ
+  - 療育手帳所持者や器質性精神障害の人は障害者支援課が窓口
+  where: 地域包括支援センター（代行申請）、高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/6961.html
+  confidence: high
+  amount: 無料
+- category: iro
+  name: ねたきり高齢者等の介護手当
+  name_on_page: ねたきり高齢者等介護手当
+  summary: ねたきり高齢者等を常時介護している人に、手当を年3回振り込む。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 年齢・要介護・ねたきりは介護を受ける人の条件
+  - 介護者も市内に住所がある
+  - 介護を受ける人が入院・入所（ショートステイ含む）中は除く
+  where: 高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/242/6955.html
+  confidence: high
+  amount: 月5,000円。介護を受ける人と介護者が市民税非課税世帯なら月10,000円
+- category: ribiyo
+  name: ねたきり高齢者等の訪問理容・美容
+  name_on_page: ねたきり高齢者等訪問理容・美容サービス事業
+  summary: 自宅で散髪・洗髪などを受ける費用の一部を、利用券で助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 病気等で常時臥床かそれに準ずる状態が3か月以上続く
+  - 入院・入所中の人は除く
+  where: 高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/242/6956.html
+  confidence: high
+  amount: 2,500円の利用券を年4枚まで。料金との差額は自己負担
+- category: shingu
+  name: 寝具乾燥車の派遣
+  name_on_page: ねたきり高齢者等寝具乾燥車派遣
+  summary: 自宅に寝具乾燥車が来て、月1回、寝具を乾燥してくれる。
+  who: {}
+  at_application:
+  - 市内在住で、次のいずれか：
+  - 6か月以上常時臥床の65歳以上で、家族が乾燥しにくい
+  - 身体障害者手帳1・2級で、家族が乾燥しにくい
+  - 全員が75歳以上の世帯の人
+  where: 高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/242/6957.html
+  confidence: high
+  amount: 無料（月1回）
+- category: koken
+  name: 成年後見人等への報酬助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族が申立てできない人のうち一定の人に、成年後見人等の報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 重度の認知症・知的・精神障害等で判断能力が不十分
+  - 2親等内の親族がいない等で申立てができない
+  - 市町村民税非課税、生活保護、中国残留邦人等の支援給付のいずれか
+  where: 高齢者支援課
+  url: https://www.city.iruma.saitama.jp/fukushi/kourei_fukushi_kaigo/support_koreisha/6963.html
+  confidence: low
+not_found:
+- hochoki
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

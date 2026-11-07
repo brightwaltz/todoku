@@ -1,0 +1,126 @@
+city: '442119'
+name: 宇佐市
+site: www.city.usa.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給（引換券）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を在宅で介護する非課税世帯に、紙おむつ等を買える引換券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、実際に居住している
+  - 要介護4・5の高齢者を在宅で介護している家族等が対象
+  - 毎月1回申請する（印鑑が必要）
+  where: 介護保険課 高齢者支援係（本庁舎1階）
+  url: https://www.city.usa.oita.jp/sougo/iryo_kenko_fukushi/kaigo_fukushi/1/6370.html
+  confidence: high
+  amount: 月1回1万円まで無料、年10回まで。紙おむつ・尿取りパッド・使い捨て手袋・清拭剤・ドライシャンプーが対象
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を在宅で介護する非課税世帯の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、実際に居住している
+  - 要介護4・5の認定から1年以上たった高齢者を在宅で介護している
+  - 過去1年の介護保険サービス利用が10日以内（福祉用具を除く）
+  - 過去1年の入院日数が90日以内
+  where: 介護保険課 高齢者支援係（申請に印鑑と口座がわかるものが必要）
+  url: https://www.city.usa.oita.jp/sougo/iryo_kenko_fukushi/kaigo_fukushi/1/6370.html
+  confidence: high
+  amount: 年額10万円
+- category: haishoku
+  name: 高齢者配食サービス（食の自立支援事業）
+  name_on_page: 高齢者配食サービス事業
+  summary: 栄養改善と見守りが必要な高齢者に、委託業者がお弁当を届け、安否確認を兼ねる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住のおおむね65歳以上（原則）
+  - 栄養改善と定期的な見守りが必要
+  - ケアマネか地域包括支援センターに相談して申請する
+  - 利用は週7日以内・1日1食、利用できる事業所は1つだけ
+  where: 担当ケアマネまたは地域包括支援センター（問い合わせは介護保険課 高齢者支援係）
+  url: https://www.city.usa.oita.jp/sougo/soshiki/12/kaigohokenka/3/1/17197.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置（サスケ）
+  name_on_page: 緊急通報装置（サスケ）について
+  summary: 緊急ボタンで24時間受信センターにつながる装置を設置し、相談や定期連絡も受けられる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内に居住するおおむね65歳以上
+  - 高齢者のみの世帯、または高齢者のみで過ごす時間が多い世帯
+  - 緊急時に機敏に動けない、命に関わる持病がある、または特に必要と認められる
+  where: 介護保険課（本庁）、安心院・院内支所の市民サービス課
+  url: https://www.city.usa.oita.jp/sougo/iryo_kenko_fukushi/kaigo_fukushi/2/1/6366.html
+  confidence: high
+- category: haikai
+  name: 高齢者等外出時見守りサービス（どこ・どこサービス）
+  name_on_page: 宇佐市高齢者等外出時見守りサービス事業
+  summary: 家族等にGPS機器を貸し出し、行方不明時にコールセンターが居場所を探して知らせる。
+  who: {}
+  at_application:
+  - 市内に住所があり、対象の高齢者等を介護している家族等
+  - 対象は要支援・要介護の認定を受けた人、または認知症等で所在不明のおそれがある人
+  where: 介護保険課（本庁）、安心院・院内支所の市民サービス課
+  url: https://www.city.usa.oita.jp/sougo/iryo_kenko_fukushi/kaigo_fukushi/2/4/19654.html
+  confidence: high
+  amount: 初期費用は無料、月額990円（税込）。市民税非課税世帯の利用者は月額無料
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用や後見人等への報酬の全部または一部を助成し、市長申立ても行う。
+  who: {}
+  at_application:
+  - 市長申立て：2親等内の親族がいない、または音信不通で申立てできない
+  - 報酬助成：第三者の後見人等が確定し、助成がないと制度の利用が難しい
+  where: 相談は宇佐市成年後見支援センター（市社会福祉協議会内）。助成の申請先は頁に記載なし
+  url: https://www.city.usa.oita.jp/sougo/iryo_kenko_fukushi/kaigo_fukushi/2/1/6357.html
+  confidence: high
+- category: sonota
+  name: 安心生活お守りキットの配布
+  name_on_page: 宇佐市安心生活お守りキット
+  summary: 緊急連絡シートの保管容器・携帯カード・冷蔵庫に貼るステッカーのキットを配る。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - まちづくり協議会などから配布を受けた人は対象外
+  where: 介護保険課（本庁）、安心院・院内支所の市民サービス課
+  url: https://www.city.usa.oita.jp/sougo/iryo_kenko_fukushi/kaigo_fukushi/2/1/6378.html
+  confidence: high
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

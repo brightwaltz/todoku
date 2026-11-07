@@ -1,0 +1,183 @@
+city: 082031
+name: 土浦市
+site: www.city.tsuchiura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者の緊急通報装置の設置
+  name_on_page: ひとり暮らし高齢者等緊急通報システム
+  summary: 急病などのときに通報できる装置を、ひとり暮らしの高齢者の家に設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 健康に不安がある（要介護認定は不要）
+  - 近所の協力員を 2〜3 名選ぶ必要がある
+  where: 高齢福祉課（申請後、地区の在宅介護支援センター職員が調査に訪問）
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/mimamori-kinkyutsuho/page000233.html
+  confidence: high
+  amount: 所得に応じて費用の一部を自己負担
+- category: haishoku
+  name: 高齢者等の配食サービス（安否確認つき）
+  name_on_page: 高齢者等在宅生活支援配食サービス
+  summary: 食事づくりが難しい高齢者に、栄養に配慮した食事を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 高齢者のみの世帯で、食事の調理・調達が難しい
+  - 社協の愛の定期便・配食とは同時に使えない
+  where: 高齢福祉課 地域支援係
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/homongata-service/page013182.html
+  confidence: low
+  amount: 1 食 400 円（案内 PDF の記載）
+  more_urls:
+  - https://www.city.tsuchiura.lg.jp/data/doc/1662711339_doc_23_0.pdf
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯・乾燥・消毒サービス
+  summary: 寝たきり等の在宅高齢者の寝具を、業者が回収して洗い、届ける。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ねたきりまたは認知症で、家族などの介護が必要
+  - 目安は要介護 3 以上程度
+  where: 高齢福祉課 高齢福祉係（支所・出張所、郵送、電子申請も可）
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/homongata-service/page000228.html
+  confidence: high
+  amount: 無料。利用券を年 4 枚交付
+- category: ribiyo
+  name: ねたきり高齢者の訪問理美容の助成
+  name_on_page: ねたきり老人等訪問理美容サービス費助成
+  summary: 自宅で理容・美容を受ける費用の一部を、助成券で助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 在宅でねたきりで、家族などの介護が必要
+  - 目安は要介護 3 以上程度
+  - 市の協力店でのみ使える
+  where: 高齢福祉課 高齢福祉係（支所・出張所、郵送、電子申請も可）
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/homongata-service/page000234.html
+  confidence: high
+  amount: 1 回 3,000 円の助成券を年 2 枚
+- category: haikai
+  name: 徘徊高齢者の GPS 探索機の貸与
+  name_on_page: 高齢者家族支援探索サービス
+  summary: 徘徊する高齢者の居場所を家族が探せるよう、GPS 探索機を貸す。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請するのは、徘徊する高齢者を介護する同居の家族
+  - 高齢者は要介護認定を受けている
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/mimamori-kinkyutsuho/page000235.html
+  confidence: high
+  amount: 月 0〜2,600 円（税別、徘徊の頻度で 3 種類）。電話での位置検索は 1 回 200 円
+  more_urls:
+  - https://www.city.tsuchiura.lg.jp/data/doc/1662711339_doc_23_0.pdf
+- category: haikai
+  name: 高齢者等見守りキーホルダーの配布
+  name_on_page: 土浦市高齢者等見守りキーホルダー
+  summary: 登録番号つきのキーホルダーを配り、外出先で緊急時に身元を確認できるようにする。
+  who: {}
+  at_application:
+  - 市内在住で、65 歳以上のひとり暮らし、または認知症状がある
+  - 緊急連絡先を原則 2 か所登録する
+  where: 高齢福祉課（地域支援係）
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/mimamori-kinkyutsuho/page004296.html
+  confidence: high
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 土浦市高齢者補聴器購入費用助成事業
+  summary: 聴力低下で日常生活に支障がある高齢者の、補聴器本体の購入費の半額を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 過去にこの助成を受けていない
+  - 先着順で、予算に達すると締め切り
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/kyufu-hojo/page018378.html
+  confidence: high
+  amount: 補聴器本体 1 台（片耳）の半額、上限 2 万円。1 人 1 回限り
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付（補助券）
+  name_on_page: 日常生活用具給付
+  summary: シルバーカー・電磁調理器・火災警報器・自動消火器の購入に使える給付券を出す。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 用具ごとの条件は高齢福祉課に確認
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/kyufu-hojo/page000232.html
+  confidence: high
+  amount: 上限額：シルバーカー 5,000 円、電磁調理器 8,000 円、火災警報器 6,800 円、自動消火器 28,700 円
+- category: sonota
+  name: ねたきり・認知症の在宅高齢者への福祉手当
+  name_on_page: ねたきり老人等福祉手当
+  summary: ねたきりまたは認知症の状態にある在宅の高齢者に、毎月の手当を年 2 回に分けて支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護 4・5、または医師が認めたねたきり・認知症の状態
+  - 心身障害者福祉手当・特別障害者手当を受けていない
+  - 福祉施設に入所していない
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/kyufu-hojo/page001827.html
+  confidence: high
+  amount: 月 2,500 円（課税世帯）、月 5,000 円（非課税世帯・生活保護世帯）。9 月と 3 月にまとめて支給
+- category: gaishutsu
+  name: のりあいタクシー土浦の年会費助成
+  name_on_page: 「のりあいタクシー土浦」会費助成
+  summary: 市内を走るのりあいタクシーの年会費のうち、大部分を市が助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 65 歳以上の高齢者とその介助者
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/kyufu-hojo/page000236.html
+  confidence: low
+  amount: 年会費 17,000 円のうち 15,000 円を助成（自己負担 2,000 円）。乗車は片道 600 円（地区により 1,200 円）
+  more_urls:
+  - https://www.city.tsuchiura.lg.jp/data/doc/1662711339_doc_23_0.pdf
+- category: sonota
+  name: はり・きゅう・マッサージの施術費補助
+  name_on_page: はり・きゅう・マッサージ
+  summary: 市内の協力施術所で使える、はり・きゅう・マッサージの補助券を交付する。
+  who: {}
+  at_application:
+  - 70 歳以上の高齢者、または 65 歳以上のねたきり等の方を介護する家族
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.tsuchiura.lg.jp/kenko-fukushi-iryo/fukushi/koreishafukushi/kakushujigyo-service/zaitakufukushiservice/kyufu-hojo/page000230.html
+  confidence: low
+  amount: 1 回 1,000 円、年 8 回まで
+  more_urls:
+  - https://www.city.tsuchiura.lg.jp/data/doc/1662711339_doc_23_0.pdf
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- jutaku

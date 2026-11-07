@@ -1,0 +1,161 @@
+city: '442143'
+name: 国東市
+site: www.city.kunisaki.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システム（サスケ）
+  name_on_page: 高齢者緊急通報システムのご利用方法
+  summary: 緊急ボタンでセンターにつながる装置を設置し、健康相談や毎月の安否確認も受けられる。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者か障がい者で、慢性疾患や後遺症により常に注意が必要
+  - ひとり暮らし、日中か夜間に独居、同居家族の支援が期待できない等
+  - その他、市長が必要と認めた方も対象
+  - 固定電話回線が必要。取り付けに民生委員の立ち会いが必要
+  where: 福祉課、または各総合支所の地域振興課
+  url: https://www.city.kunisaki.oita.jp/soshiki/fukushi/kinkyu-tsu-ho-.html
+  confidence: high
+  amount: 設置工事費と月額使用料は無料（固定電話の通話料は利用者負担）
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 国東市配食サービス事業のお知らせ
+  summary: 調理や買い物が難しい在宅の高齢者に、夕食の弁当を届け、安否確認もする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある介護保険の被保険者
+  - ケアプランに配食の必要性がある、または利用基準表で必要と認められる
+  - 自力での調理や買い物が困難で、市が必要と認めた方
+  - 基準を満たさない場合も、業者と合意すれば自費で利用できる
+  where: ケアマネジャー。ケアプランがない方は福祉課高齢者支援係か各総合支所の地域振興課
+  url: https://www.city.kunisaki.oita.jp/soshiki/fukushi/kourei-haisyoku.html
+  confidence: high
+  amount: 夕食を週7食以内。利用料は1食370円（おかずのみ300円）。費用の一部を市が助成
+- category: haikai
+  name: 行方不明高齢者等位置情報提供事業（どこ・どこサービス）
+  name_on_page: 令和7年度国東市行方不明高齢者等位置情報提供事業
+  summary: 行方不明のおそれがある方にGPS機器を貸し、家族の連絡でコールセンターが居場所を探す。
+  who: {}
+  at_application:
+  - 市内に住所があり、見守り・あんしんネットワーク事業に事前登録している
+  - 認知症等で行方不明となるおそれのある高齢者等
+  where: 地域包括支援センター（本庁・国見）、各総合支所の地域振興課
+  url: https://www.city.kunisaki.oita.jp/soshiki/hokatsu/itijyouhou.html
+  confidence: high
+  amount: 初期費用は無料、月額使用料1,200円（税別）。使用料の一部を市が助成（助成額は頁に記載なし）
+- category: haikai
+  name: 認知症高齢者等見守りキーホルダー
+  name_on_page: 令和7年度もしもの時の安心に！認知症高齢者等見守りキーホルダー
+  summary: 行方不明のおそれのある方に、登録番号入りのキーホルダーとステッカーを交付する。
+  who: {}
+  at_application:
+  - 市に住民票がある
+  - 見守り・あんしんネットワーク事業に事前登録している、または認知症等で行方不明のおそれがある
+  where: 国東市地域包括支援センター（本庁・国見支所）
+  url: https://www.city.kunisaki.oita.jp/soshiki/hokatsu/kihoruda.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等見守り・あんしんネットワーク
+  name_on_page: 認知症高齢者等見守り・あんしんネットワークのご案内
+  summary: 行方不明のおそれのある方を事前に登録し、警察や地域と連携して早期発見につなげる。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 行方不明となるおそれのある認知症高齢者等（年齢や居住の条件は頁に記載なし）
+  where: 国東市地域包括支援センター（本庁・国見支所）
+  url: https://www.city.kunisaki.oita.jp/soshiki/hokatsu/mimamoriannsin.html
+  confidence: high
+- category: iro
+  name: 介護者手当
+  name_on_page: 介護者手当支給事業のお知らせ
+  summary: 要介護の方を同居して自宅で介護している家族に、月額の手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護者と申請者の両方が市内に住所がある
+  - 要介護4以上を介護、または要介護3の方を2人以上介護している
+  - 要介護者と同居し、月に20日以上在宅で介護している
+  - 要介護者世帯と介護者世帯の全員が市税や公共料金を滞納していない
+  where: 福祉課 高齢者支援係、または各総合支所の地域振興課
+  url: https://www.city.kunisaki.oita.jp/soshiki/fukushi/kaigosyateate.html
+  confidence: high
+  amount: 月額7,000円（4月と10月に半年分ずつ振込）
+- category: kaigo-yohin
+  name: 家族介護用品の支給（引換券）
+  name_on_page: 家族介護用品支給事業のお知らせ
+  summary: 非課税世帯で在宅介護をしている家族に、紙おむつ等と引き換えられる券を支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、介護する人とされる人が同一世帯
+  - 要介護3以下は認定調査票の排尿・排便が「介助」「一部介助」「見守り等」
+  - 月の半数以上の入院・入所、ショートステイ利用の場合は対象外
+  where: 福祉課 高齢者支援係、または各総合支所の地域振興課
+  url: https://www.city.kunisaki.oita.jp/soshiki/fukushi/kaigo-youhin.html
+  confidence: high
+  amount: 要介護者1人あたり月5,000円分（紙おむつ・尿取りパッド・使い捨て手袋・清拭剤）。4・7・10・12月に3か月分ずつ
+- category: sonota
+  name: 軽度生活援助事業
+  name_on_page: 軽度生活援助事業のお知らせ
+  summary: 買い物代行や草取り・草刈りなどを市の委託事業所に頼むとき、利用料を軽くする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし、または高齢者のみの世帯
+  - 同居の65歳未満の家族が障がいや病弱で日常生活に支障がある場合も対象
+  - 申請は年度ごと。申請前の利用は対象外
+  where: 福祉課 高齢者支援係、または各総合支所（委託先は国東市シルバー人材センター）
+  url: https://www.city.kunisaki.oita.jp/soshiki/fukushi/keido-seikatu.html
+  confidence: high
+  amount: 買物代行は0円、草刈り・草取り・清掃は1時間690円、剪定960円など（サービスごとに年間の利用上限あり）
+- category: jutaku
+  name: 高齢者世帯リフォーム支援（高齢者バリアフリー型）
+  name_on_page: 子育て・高齢者世帯リフォーム支援事業
+  summary: 高齢者世帯が行う段差解消や手すり設置などのバリアフリー改修の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 高齢者世帯（高齢者の年齢や定義は頁に記載なし）
+  - 世帯員全員の直近の所得総額が350万円未満
+  - 対象工事費が30万円以上で、市内に本店のある建設業者が施工
+  - 工事前に申請と審査が必要。予算の範囲内で交付
+  where: 福祉課 高齢者支援係
+  url: https://www.city.kunisaki.oita.jp/site/kosodate/renovation2020.html
+  confidence: high
+  amount: 補助対象経費の20％以内、上限30万円
+not_found:
+- koken
+- ribiyo
+- shingu
+- nichijo-yogu
+- mimamori

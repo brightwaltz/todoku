@@ -1,0 +1,258 @@
+city: '462012'
+name: 鹿児島市
+site: www.city.kagoshima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の助成
+  name_on_page: 紙おむつ等助成事業
+  summary: 住民税非課税の65歳以上で紙おむつを使う人に、おむつの現物を支給するか、入院中は現金を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護1〜5の認定を受けている
+  - または要支援1・2か認定なしで、医師が常時使用と証明
+  - 生活保護の人・介護保険施設に入所している人は除く
+  - 在宅は民生委員か地域包括支援センターの状況確認が要る
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kamiomutsu-henkou.html
+  confidence: high
+  amount: 在宅は現物支給で、要介護4・5は年7万5千円相当、要介護3以下は年5万円相当まで。入院中は月4,000円まで現金。
+- category: haishoku
+  name: 訪問給食（安否確認つき）
+  name_on_page: 心をつなぐ訪問給食
+  summary: 定期的な安否確認が要る高齢のひとり暮らし等の人に、食事を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしは、食生活の手助けが必要な人
+  - 世帯全員65歳以上で要支援以上の世帯
+  - 要介護3以上の人がいる65歳以上のみの世帯で、要支援以上の人
+  - 地域包括支援センター職員の調査がある
+  where: 長寿支援課（在宅支援係）、地域包括支援センターが調査
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/hitori.html
+  confidence: high
+  amount: 要支援2以上は昼食週6回以内・夕食週6回。要支援1以下は昼食週3回以内。自己負担額は頁に無い。
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等の安心通報装置
+  name_on_page: ひとり暮らし高齢者等安心通報システム
+  summary: ひとり暮らしの高齢者等の家に、緊急通報の機器を設置する。携帯型も選べる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の世帯で、世帯全員が病弱で常時注意が要る
+  - または65歳以上のみの世帯で、同居の1人が重度の要介護
+  - または80歳以上のひとり暮らし
+  - 合鍵を警備会社に預ける必要がある
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/hitori.html
+  confidence: high
+  amount: 市民税所得割の課税者がいる世帯は月1,000円か800円、ほかは無料。通信料は別。
+- category: sonota
+  name: 福祉電話の設置
+  name_on_page: 福祉電話の設置
+  summary: 電話のない住民税非課税の高齢者世帯に、安否確認のための福祉電話を設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または寝たきりの人がいる高齢者のみの世帯
+  - 常に生命の安全の確保が懸念される世帯
+  - 電話（携帯含む）が設置されていない世帯
+  - 民生委員の状況確認が必要
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/hitori.html
+  confidence: high
+  amount: 取付工事費と基本通話料は市が負担。ダイヤル通話料・移転料・廃止手数料は自己負担。
+- category: nichijo-yogu
+  name: 虚弱高齢者等の福祉用具の給付
+  name_on_page: 福祉用具の給付
+  summary: 介護保険の対象外の手押し車・電磁調理器・吸引器を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 手押し車は下肢が不自由な人
+  - 電磁調理器は防火の配慮が要るひとり暮らし高齢者等
+  - 吸引器は要介護3以上で必要性が認められる人
+  - 生計中心者の市町村民税のわかる書類が要る（市で課税済みは不要）
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/hitori.html
+  confidence: high
+- category: ribiyo
+  name: 寝たきり高齢者の理髪・美容サービス
+  name_on_page: 理髪・美容サービス
+  summary: 寝たきりの高齢者の家へ、理容・美容業者が訪問して散髪などをする。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 生計中心者の市町村民税のわかる書類が要る（市で課税済みは不要）
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/netakiri.html
+  confidence: high
+  amount: 年2回まで（4〜1月の申請は2回、2〜3月の申請は1回）。
+  more_urls:
+  - https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/rihatsubiyou-shingu-henkou.html
+- category: shingu
+  name: 寝たきり高齢者の寝具洗濯サービス
+  name_on_page: 寝具洗濯サービス
+  summary: 寝たきりの高齢者の寝具を、洗濯・消毒・乾燥する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 生計中心者の市町村民税のわかる書類が要る（市で課税済みは不要）
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/netakiri.html
+  confidence: high
+  amount: 年1回（申請時期にかかわらず）。
+  more_urls:
+  - https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/rihatsubiyou-shingu-henkou.html
+- category: iro
+  name: 介護手当
+  name_on_page: 介護手当の支給
+  summary: 要介護3以上の在宅高齢者を介護する家族に、介護手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 基準日（8月1日か2月1日）時点の状況で判断する
+  - 同居かそれに準じる状態で、6か月以上介護している
+  - 高齢者・介護者とも1年以上市内に住所がある
+  - 在宅でない期間が31日を超えると対象外
+  - 民生委員（または地域包括支援センター）の状況確認が要る
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/jiritsu.html
+  confidence: high
+  amount: 高齢者1人につき年9万円（特別障害者手当を受給中は年4万5千円）。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず在宅の要介護4以上の人を介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを使っていない
+  - （年7日以内のショートステイは除く）
+  - 介護している家族も市町村民税非課税世帯
+  - 民生委員（または地域包括支援センター）の状況確認が要る
+  where: 長寿支援課（在宅支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/jiritsu.html
+  confidence: high
+  amount: 年10万円。
+- category: haikai
+  name: 高齢者見守り支援事業（GPS加入費用等の助成）
+  name_on_page: 高齢者見守り支援事業（GPS位置情報サービスの助成）
+  summary: 行方不明のおそれがある認知症高齢者の家族に、GPSの加入費用や端末代の一部を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で認知症（またはその疑い）の人を介護する家族等
+  - 若年性認知症と診断された60歳以上の人も対象
+  - 同居かそれに準ずる状態で、市内に住所がある家族
+  - 端末を買う前に事前の承認申請が必要
+  - 民生委員か地域包括支援センター職員の状況確認が要る
+  where: 認知症支援室
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/tiikihoukatu/kenko/fukushi/choju/ninchi/koureisyamimamorisien.html
+  confidence: high
+  amount: 初期登録経費・端末購入費・付属品（アダプターのみ）の合計で1万円まで。通信費やリース料は対象外。
+- category: jutaku
+  name: 高齢者住宅改造費の助成
+  name_on_page: 高齢者住宅改造費の助成
+  summary: 要支援以上の人がいる世帯の住宅改造費を、市が一部助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要支援以上の認定を受けた人、またはその人が属する世帯
+  - 同居者全員の前年の課税所得の合計が330万円以下
+  - 市税（市県民税など）の滞納がない
+  where: 長寿支援課（生きがい支援係）
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/ikigaishien/chouju-jutakukaizou.html
+  confidence: high
+  amount: 対象経費の2分の1。上限50万円（浴室改造は30万円、便器交換は10万円まで）。
+- category: gaishutsu
+  name: 敬老パス（市電・バス・フェリー割引）
+  name_on_page: 敬老パス
+  summary: 70歳以上の市民に、市電・バス・桜島フェリーなどが割引になる入浴機能つきのパスを交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内在住で、本人が身分証明書を持って窓口で申請する（代理不可）
+  - 障害者手帳等の友愛パス・友愛タクシー券とは重複して受けられない
+  where: 長寿支援課、各支所の福祉課または保健福祉課
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/ikigaishien/kenko/fukushi/choju/kero/pass.html
+  confidence: high
+  amount: 運賃の3分の1を負担（令和9年2月から3分の2相当に変更予定）。入浴は100円で年最高30回。
+- category: koken
+  name: 成年後見の審判請求費用の助成
+  name_on_page: 後見開始等の審判請求に係る費用の助成
+  summary: 後見開始の申立て費用を負担しにくい人に、収入印紙代や診断書料などを助成する。
+  who: {}
+  at_application:
+  - 本人が生活保護受給者またはそれに準ずる人
+  - 本人または親族等が申し立てた場合で、審判確定日が令和8年4月1日以降
+  where: 認知症支援室
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/seinenkoukenseidoriyousien.html
+  confidence: high
+  amount: 印紙代・切手代・診断書料は合計と1万円の少ない方まで。鑑定費用は5万円まで。
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見人等に対する報酬の助成
+  summary: 報酬を負担しにくい人に、家庭裁判所が決めた成年後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 本人が生活保護受給者またはそれに準ずる人
+  - 後見人等が親族の場合は対象外
+  where: 認知症支援室
+  url: https://www.city.kagoshima.lg.jp/kenkofukushi/chouju/zaitakushien/kenko/fukushi/choju/service/seinenkoukenseidoriyousien.html
+  confidence: high
+not_found:
+- hochoki

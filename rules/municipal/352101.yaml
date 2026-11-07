@@ -1,0 +1,166 @@
+city: '352101'
+name: 光市
+site: www.city.hikari.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置（貸与）
+  summary: 急な体調悪化時にボタンで受信センターへつながる装置を無料で貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の虚弱なひとり暮らし高齢者
+  - ひとり暮らしの重度心身障害者等
+  - 上の2つの人だけの世帯、またはその他特に必要と認めた人
+  where: 高齢者支援課 高齢福祉係（申請書は地区の担当民生委員に問い合わせ）
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/2584.html
+  confidence: high
+  amount: 利用料は無料
+- category: kaigo-yohin
+  name: 介護用品引換券の給付
+  name_on_page: 介護用品引換券の給付
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、紙おむつなどの引換券を毎月給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 対象は要介護4・5の高齢者を介護している家族
+  where: 光市社会福祉協議会
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/2584.html
+  confidence: high
+  amount: 市町村民税課税世帯は月3,000円、非課税世帯は月6,000円
+- category: shingu
+  name: 寝具類の乾燥消毒
+  name_on_page: 寝具類乾燥サービス
+  summary: 寝具の衛生管理が難しい在宅世帯の寝具を、無料で消毒・乾燥する。
+  who: {}
+  at_application:
+  - 在宅の寝たきり高齢者または重度障害者のいる世帯
+  - 老衰・障害・疾病などで寝具の衛生管理が難しい
+  where: 光市社会福祉協議会
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/2584.html
+  confidence: high
+  amount: 無料。年2回、掛布団・敷布団・毛布は各2枚、枕は1個まで
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院に行くのが難しい人の自宅へ理・美容師が来て、散髪などをする。
+  who: {}
+  at_application:
+  - 在宅の寝たきり高齢者、認知症で移動が難しい高齢者、重度障害者等
+  - 理美容店で理髪を受けることが難しい人
+  where: 高齢者支援課 高齢福祉係（事前に利用券の交付を受ける）
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/2584.html
+  confidence: high
+  amount: 利用料は実費負担。利用券は年6回まで
+- category: gaishutsu
+  name: 寝たきり高齢者のリフト付タクシー券
+  name_on_page: 寝たきり老人に対するリフト付タクシー券の利用助成
+  summary: 寝たきり高齢者がリフト付タクシーを使うとき、運賃の一部を助成する利用券を交付する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 市内に住所がある、おおむね65歳以上
+  - 車での通院などの移動が難しい人
+  where: 高齢者支援課 高齢福祉係
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/2584.html
+  confidence: high
+  amount: 1回につき基本料金分。利用券は年24枚
+- category: gaishutsu
+  name: 高齢者バス・タクシー等運賃助成
+  name_on_page: 光市高齢者バス・タクシー等運賃助成事業
+  summary: 運転免許のない65歳以上に、バス・タクシー・離島航路で使える助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 自動車運転免許証（原付・バイク含む）を持っていない
+  - 福祉タクシー券・リフト付きタクシー券等の交付を受けた人は不可
+  where: 公共交通政策課（専用ダイヤル 0833-72-8980）
+  url: https://www.city.hikari.lg.jp/soshiki/11/kokyokotsu/1/1/12957.html
+  confidence: high
+  amount: 令和8年度は48枚（200円券）で9,600円分。10月以降の新規は24枚
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者の補聴器購入費を助成します
+  summary: 軽度・中等度難聴の高齢者の補聴器購入費の2分の1を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付対象ではない
+  - 医師が補聴器の使用を必要と認めた
+  - 介護保険料を完納している
+  - 購入前に申請が必要（先着順）
+  where: あいぱーく光 高齢者支援課 高齢福祉係（窓口へ持参）
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/15425.html
+  confidence: high
+  amount: 購入費の2分の1、上限30,000円
+- category: koken
+  name: 成年後見の申立費用・報酬の助成
+  name_on_page: 成年後見制度の申立費用・報酬の助成について
+  summary: 費用を負担できない人に、申立費用や後見人報酬の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 一定の要件に当たる人（要件の詳細は頁に無い）
+  - 高齢者の窓口は高齢者支援課 高齢福祉係
+  where: 高齢者支援課 高齢福祉係
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/12276.html
+  confidence: low
+- category: haikai
+  name: ひかり見守りネット（事前登録・見守りシール）
+  name_on_page: ひかり見守りネット
+  summary: 帰れなくなるおそれのある認知症高齢者を事前登録し、キーホルダーや見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で自宅に帰れなくなるおそれのある高齢者
+  - 顔写真つきの登録申請書が必要
+  where: 光市基幹型地域包括支援センター
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/houkatsu/ninchisyo/mimamorinetto.html
+  confidence: high
+  amount: キーホルダーを配布。見守りシール（耐洗40枚・蓄光10枚）は初回のみ無料
+- category: sonota
+  name: 在日外国人等への給付金
+  name_on_page: 在日外国人等給付金の支給
+  summary: 年金を受けられなかった外国人等に、月10,000円の給付金を年4回に分けて支給する。
+  who: {}
+  at_application:
+  - 大正15年4月1日以前の生まれ
+  - 昭和57年1月1日以前から日本で外国人登録をしている
+  - 現在光市で登録し、永住許可を受けている人等
+  where: 高齢者支援課 高齢福祉係
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/2584.html
+  confidence: high
+  amount: 月額10,000円（年4回に分けて給付）
+- category: sonota
+  name: 短期宿泊事業
+  name_on_page: 短期宿泊事業
+  summary: 一時的に在宅生活が難しい人を養護老人ホーム等に短期宿泊させ、生活指導や体調管理をする。
+  who: {}
+  at_application:
+  - 市内在住のおおむね65歳以上で要支援・要介護認定を受けていない
+  - 身体・精神上の理由、または家庭環境などの社会的理由で一時的に支障がある
+  where: 高齢者支援課 高齢福祉係
+  url: https://www.city.hikari.lg.jp/soshiki/6/koreisha/kenko/2/2584.html
+  confidence: high
+not_found:
+- haishoku
+- iro
+- jutaku
+- nichijo-yogu
+- yutai

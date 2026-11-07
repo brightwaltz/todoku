@@ -1,0 +1,198 @@
+city: '302015'
+name: 和歌山市
+site: www.city.wakayama.wakayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者紙おむつ給付
+  name_on_page: 高齢者紙おむつ給付事業
+  summary: 寝たきりや認知症で常時失禁のある在宅の高齢者に、紙おむつを無料で給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 居宅で3か月以上寝たきり、または認知症で常時失禁状態
+  - 生活保護世帯または市民税非課税世帯に属する
+  - 新規で要介護1〜3は排尿・排便の介助等の追加要件あり
+  where: 地域包括支援センター（職員が代行申請）
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001100/1005328.html
+  confidence: high
+  amount: 紙おむつを給付（利用料は無料）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に、安否確認を兼ねて栄養バランスのよい食事を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 高齢者かそれに準ずる人だけの世帯
+  - 生活機能の低下で自分で調理するのが難しい
+  - 同居者等から食事の十分な援助を受けにくい
+  where: お住まいの地区の地域包括支援センター（職員が代行申請）
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001100/1001597.html
+  confidence: high
+  amount: 利用者負担は弁当代の実費
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付（電磁調理器・火災警報器）
+  name_on_page: 老人日常生活用具給付事業
+  summary: 在宅の高齢者に、電磁調理器や火災警報器を給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内在住のひとり暮らし高齢者など
+  - 心身の機能低下で防火等の配慮が必要
+  - 生活保護世帯または市民税非課税世帯に属する（所得制限あり）
+  where: 地域包括支援センター（代行申請）
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001096/1006029.html
+  confidence: high
+- category: jutaku
+  name: 高齢者住宅改造費の上乗せ助成
+  name_on_page: 高齢者住宅改造助成事業
+  summary: 介護保険の住宅改修を補い、手すりや段差解消などの改造費を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内在住
+  - 市町村民税非課税世帯または生活保護世帯
+  - 過去に高齢者・身体障害者住宅改造助成を受けていない
+  - 工事着工前に申請が必要
+  where: 地域包括支援センター（代行申請）。窓口は高齢者・地域福祉課
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001096/1006023.html
+  confidence: high
+  amount: 60万円か実費の低い方から介護保険分（上限20万円）を除いた額。給付率は生活保護世帯10分の10、非課税世帯3分の2
+- category: kinkyu-tsuho
+  name: 見守りシステム（緊急通報ペンダント）
+  name_on_page: 見守りシステム事業
+  summary: ペンダントで緊急通報でき、警備会社が駆けつける装置を設置する。条件を満たせば無料。
+  who: {}
+  at_application:
+  - 無料は、65歳以上で病弱なひとり暮らし、または重度の障害手帳所持者
+  - 無料の人は所得税が非課税で、電話を持っている
+  - 上記以外でも60歳以上などで電話があれば有料で設置できる
+  where: 和歌山市社会福祉協議会
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001096/1056480.html
+  confidence: high
+  amount: 無料設置あり。有料は月1,700〜2,200円（税別）、撤去料7,000円
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 住民税非課税世帯の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内在住
+  - 医師が補聴器の使用を必要と認めた（聴力の基準あり）
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 過去にこの助成を受けていない
+  where: 高齢者・地域福祉課（郵送相談可）
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001096/1049637.html
+  confidence: high
+  amount: 2万円か実費の低い方（1人1回まで）
+- category: ribiyo
+  name: 在宅理美容サービス（訪問理髪）
+  name_on_page: 在宅理美容サービス
+  summary: 寝たきり等で外出が難しい高齢者に、訪問理髪の利用券を年2枚渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内在住で、寝たきりまたは外出が困難
+  - 市町村民税非課税世帯または生活保護世帯
+  where: 地域包括支援センター（代行申請）
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001096/1006034.html
+  confidence: high
+  amount: 利用券は年2枚。1回の本人負担は1,000円（頭髪カットのみ）
+- category: gaishutsu
+  name: 元気70パス（バスカードか駐車場利用券、公衆浴場回数券）
+  name_on_page: 元気70パス
+  summary: 70歳以上に、バスカードか駐車場利用券のどちらかと、公衆浴場回数券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 和歌山市に住民登録がある
+  - 年度中に70歳になる人は誕生月以降
+  where: 高齢者・地域福祉課、または支所・連絡所
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001096/1006021.html
+  confidence: high
+  amount: 路線バスは1回100円。浴場は1回200円（月4回と年6回）。駐車場は利用ごとに100〜300円分を助成
+- category: yutai
+  name: 老人優待利用券
+  name_on_page: 老人優待利用券
+  summary: 市内の一部公共施設が無料、協力民間施設が割引になる優待券を配る。
+  who:
+    age_min: 65
+  at_application:
+  - 和歌山市に住民登録がある
+  - 年度中に65歳になる人は誕生月以降
+  where: 高齢者・地域福祉課、または支所・連絡所
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001096/1009155.html
+  confidence: high
+  amount: 和歌山城天守閣などが無料。養翠園などが100円引き
+- category: haikai
+  name: 認知症の方向け見守り端末「otta」の貸与
+  name_on_page: 認知症要配慮者見守り端末貸与事業
+  summary: 認知症で外出に不安がある人を介護する家族に、見守り端末を3か月無料で貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で外出に不安がある人を介護している
+  - 位置確認用のスマートフォンが必要（通信料は自己負担）
+  - 4か月目以降は事業者と有料契約
+  where: 地域包括支援課
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001100/1017311/1049597.html
+  confidence: high
+  amount: 3か月間無料で貸与
+- category: koken
+  name: 成年後見の後見人等報酬助成
+  name_on_page: 後見人等報酬助成
+  summary: 後見制度の利用者で、本人の資産から報酬を払いにくい場合に、報酬の一部か全部を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度を利用している
+  - 和歌山市に住所・居所があるなど（生活保護や介護保険の保険者が市の人など）
+  - 本人の預貯金等から報酬の負担が難しい
+  - 親族後見人・任意後見人の報酬は対象外
+  - 審判確定から1年以内に申請
+  where: 高齢者・地域福祉課 高齢者・障害者成年後見センター
+  url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1034195.html
+  confidence: high
+  amount: 報酬の一部または全部
+not_found:
+- iro
+- shingu
+- mimamori

@@ -1,0 +1,153 @@
+city: '131237'
+name: 江戸川区
+site: www.city.edogawa.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ・防水シーツの支給
+  name_on_page: 紙おむつ・防水シーツの支給（高齢者等）
+  summary: 紙おむつが常時必要な在宅の方に、紙おむつと防水シーツを1割負担で支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 40歳以上で要介護4・5、または下記で医師の意見書あり
+  - 意見書の対象：40歳以上の要支援1〜要介護3、または65歳以上
+  - 区外に生活の場を移していない・介護保険施設に入所していない
+  - 生活保護を受けていない
+  where: 介護保険課相談係、健康サポートセンター、熟年相談室
+  url: https://www.city.edogawa.tokyo.jp/e040/kenko/fukushikaigo/jukunen/kaigo/kamiomutsu.html
+  confidence: high
+  amount: 紙おむつは1人900点（9,000円分相当）まで1割負担。防水シーツは年度内1回2枚。
+- category: kaigo-yohin
+  name: 入院中のおむつ使用料の助成
+  name_on_page: おむつ使用料の助成（高齢者等)
+  summary: 区の紙おむつを持ち込めない病院に入院した方の、おむつ代の一部を助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 40歳以上で要介護4・5、または下記で医師の意見書あり
+  - 意見書の対象：40歳以上の要支援1〜要介護3、または65歳以上
+  - 病院に入院中でおむつ代を支払った方
+  - 生活保護を受けていない・介護保険施設の入所中でない
+  where: 介護保険課相談係
+  url: https://www.city.edogawa.tokyo.jp/e040/kenko/fukushikaigo/jukunen/kaigo/omutsujose.html
+  confidence: high
+  amount: 月額おむつ代の9割を助成。上限は月8,100円。
+- category: haishoku
+  name: 配食サービス（一般食）
+  name_on_page: 配食サービス
+  summary: 食事作りが難しい高齢者に、安否確認を兼ねて昼食・夕食を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 65歳以上で食事作りや買い物が困難、見守りが必要
+  - 食事作りが難しい障害のある方だけの世帯も対象
+  where: 介護保険課相談係、健康サポートセンター、熟年相談室
+  url: https://www.city.edogawa.tokyo.jp/e040/kenko/fukushikaigo/jukunen/kaigo/haishokuservice.html
+  confidence: high
+  amount: 1食500円（配食業者に支払う）。週3食以上の利用が必要。
+- category: haikai
+  name: 徘徊探索サービス（GPS端末の利用料助成）
+  name_on_page: 高齢者等徘徊探索サービス
+  summary: 徘徊のある方を介護する親族に、GPS位置情報サービス料の一部を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請者は在宅で介護する親族
+  - 本人は区内在住の65歳以上、または40〜64歳の2号被保険者
+  - 徘徊行動を日常的に把握でき、迎えに行ける
+  - 申請書の同意書に介護者の署名が必要
+  where: 介護保険課相談係、健康サポートセンター、熟年相談室
+  url: https://www.city.edogawa.tokyo.jp/e040/kenko/fukushikaigo/jukunen/kaigo/haikaitansaku.html
+  confidence: high
+  amount: 月額3,000円のうち2,000円を区が助成（利用者は月1,000円）。
+- category: iro
+  name: 介護者激励手当
+  name_on_page: 介護者激励手当
+  summary: 重度の要介護の方を在宅で介護する同居の親族に、年1回手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請者と被介護者の双方が1年以上区に住民登録・居住
+  - 被介護者は40歳以上で、1年間介護保険サービス未利用（短期入所等を除く）
+  - 介護保険料の滞納がない・生活保護を受けていない
+  - 対象期間に90日以上の入院がない
+  - 重度心身障害者手当を受けていない
+  where: 介護保険課相談係、熟年相談室、健康サポートセンター
+  url: https://www.city.edogawa.tokyo.jp/e040/kenko/fukushikaigo/jukunen/kaigo/kaigosyateate.html
+  confidence: high
+  amount: 被介護者1人につき年間10万円。
+- category: ribiyo
+  name: 福祉理美容の出張サービス
+  name_on_page: 福祉理美容出張サービス（高齢者等）
+  summary: 要介護4・5の在宅の方の自宅へ理容師・美容師が出張し、カットをする。
+  who:
+    age_min: 40
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 介護保険課相談係（電子申請・郵送も可）
+  url: https://www.city.edogawa.tokyo.jp/e040/kenko/fukushikaigo/jukunen/kaigo/ribiyou/index.html
+  confidence: high
+  amount: 福祉理美容券は年度内6枚まで（10月以降の申請は3枚）。1回800円の自己負担。
+- category: shingu
+  name: 寝具の乾燥消毒・水洗いクリーニング
+  name_on_page: 寝具乾燥消毒・水洗いクリーニングサービス（高齢者等）
+  summary: 要介護4・5の在宅の方の寝具を、業者が回収して乾燥消毒か水洗いする。
+  who:
+    age_min: 40
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 介護保険課相談係（電子申請・郵送も可）
+  url: https://www.city.edogawa.tokyo.jp/e040/kenko/fukushikaigo/jukunen/kaigo/sinngu.html
+  confidence: high
+  amount: 1割負担。乾燥消毒は月1回590円、水洗いは年2回で1回780円。
+- category: kinkyu-tsuho
+  name: 民間緊急通報システム「マモルくん」
+  name_on_page: 民間緊急通報システム「マモルくん」（熟年者）
+  summary: ボタンで受信センターに通報でき、警備員が駆けつける装置を設置する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・熟年世帯、または65歳以上のいる世帯
+  where: 介護保険課窓口、健康サポートセンター、熟年相談室
+  url: https://www.city.edogawa.tokyo.jp/e039/kenko/fukushikaigo/jukunen/kurashi/network.html
+  confidence: high
+  amount: 区の契約料金は月額2,200円。状況により区の助成あり。
+- category: mimamori
+  name: 目配り訪問（定期の電話・訪問）
+  name_on_page: 目配り訪問
+  summary: 配慮が必要な熟年者に、民生委員や熟年相談室が定期の電話連絡や訪問をする。
+  who: {}
+  at_application:
+  - 配慮が必要と思われる熟年者
+  where: 地区担当の民生・児童委員、熟年相談室（地域包括支援センター）
+  url: https://www.city.edogawa.tokyo.jp/e039/kenko/fukushikaigo/jukunen/kurashi/network.html
+  confidence: low
+not_found: []

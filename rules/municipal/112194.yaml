@@ -1,0 +1,295 @@
+city: '112194'
+name: 上尾市
+site: www.city.ageo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護4・5の人への紙おむつ給付
+  name_on_page: 紙おむつ給付
+  summary: 在宅の要介護4・5で非課税世帯の人に、紙おむつ券の交付か購入費の払い戻しをする。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 施設入所や入院をしていない
+  where: 高齢介護課（市役所2階6番窓口）、支所・出張所
+  url: https://www.city.ageo.lg.jp/page/02912004171.html
+  confidence: high
+  amount: 月1枚（1枚4,690円相当）。券を使わない場合は月4,690円まで払い戻し
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: iro
+  name: 要介護高齢者の介護者への慰労金
+  name_on_page: 要介護高齢者介護者慰労金
+  summary: 要介護4・5の高齢者と同居して常時介護している家族に、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 年齢と要介護度は介護を受ける高齢者の要件
+  - 介護を受ける人が要介護高齢者手当を受けていない
+  - 市内に住所がある
+  - 施設入所や入院をしていない
+  where: 高齢介護課（市役所2階6番窓口）、支所・出張所。マイナポータルの電子申請もある
+  url: https://www.city.ageo.lg.jp/page/02912004171.html
+  confidence: high
+  amount: 月額1万円（年間最大12万円）、年3回に分けて支給
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: sonota
+  name: 要介護高齢者手当
+  name_on_page: 要介護高齢者手当
+  summary: 在宅の要介護4・5で非課税世帯の高齢者本人に、手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 施設入所や入院をしていない
+  - 家族が介護者慰労金を受けていない
+  where: 高齢介護課（市役所2階6番窓口）、支所・出張所。マイナポータルの電子申請もある
+  url: https://www.city.ageo.lg.jp/page/02912004171.html
+  confidence: high
+  amount: 月額1万円（年間最大12万円）、年3回に分けて支給
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成金交付事業
+  summary: 障害者手帳の対象にならない難聴の高齢者に、補聴器の購入費を1回限り助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 耳鼻科医の受診で聴力レベル40dB以上かつ医師が必要と認める
+  - 障害者手帳による補聴器補助の対象外
+  - この助成を過去に受けていない
+  where: 高齢介護課（市役所2階6番窓口）
+  url: https://www.city.ageo.lg.jp/page/419727.html
+  confidence: high
+  amount: 上限2万円（1人1回限り）
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム
+  summary: ボタンを押すと緊急通報センターにつながる端末機を貸し出す。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - おおむね65歳以上で常時注意が必要な人、または外出困難な在宅の重度身体障害者
+  where: 地域包括支援センター
+  url: https://www.city.ageo.lg.jp/page/029119121602.html
+  confidence: high
+  amount: 月605円（駆けつけ付き1,650円）。世帯全員が住民税非課税なら無料
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: haikai
+  name: 徘徊高齢者の居場所探索端末の貸与
+  name_on_page: 徘徊高齢者等探索サービス
+  summary: 徘徊のある高齢者等を在宅で介護する人に、居場所を確認できる端末機を貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 65歳以上で徘徊のある人、または機器が必要な初老期認知症の人を介護している
+  where: 地域包括支援センター
+  url: https://www.city.ageo.lg.jp/page/029119121602.html
+  confidence: high
+  amount: 月額121円（電話で位置を問い合わせると1回220円）
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: haikai
+  name: 徘徊高齢者等への見守りシール交付
+  name_on_page: 徘徊高齢者等見守りシール
+  summary: 二次元コード付きの見守りシールを交付し、発見時に家族へ通知が届くようにする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 65歳以上で認知症による徘徊のある人、初老期認知症で必要と認められる人など
+  - 令和8年度は50名
+  - 申請は同居・介護する家族など
+  where: 高齢介護課（市役所2階6番窓口）
+  url: https://www.city.ageo.lg.jp/page/424154.html
+  confidence: high
+  amount: 初回は無料（40枚）。2回目以降は有料
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付
+  name_on_page: 日常生活用具給付
+  summary: 火災警報器・自動消火器・電磁調理器を、種目ごとに1個まで給付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がありおおむね65歳以上
+  - 火災警報器・自動消火器は在宅の要介護4・5またはひとり暮らし
+  - 電磁調理器は防火の配慮が要るひとり暮らし
+  where: 高齢介護課（市役所2階6番窓口）
+  url: https://www.city.ageo.lg.jp/page/029119121602.html
+  confidence: high
+  amount: 基準額（火災警報器15,500円・自動消火器30,900円・電磁調理器45,400円）を超えた分は自己負担
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: gaishutsu
+  name: ぐるっとくん高齢者特別乗車証
+  name_on_page: ぐるっとくん高齢者特別乗車証
+  summary: 提示すると、市内循環バス「ぐるっとくん」に100円で乗れる乗車証を交付する。
+  who: {}
+  at_application:
+  - 75歳以上、または75歳になる日まで3か月以内の人
+  where: 交通防犯課
+  url: https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+  confidence: high
+  amount: 1回100円（通常200円）
+  more_urls:
+  - https://www.city.ageo.lg.jp/page/385066.html
+- category: gaishutsu
+  name: 運転免許証自主返納者への支援
+  name_on_page: 運転免許証自主返納者支援事業
+  summary: 免許を自主返納した75歳以上の人に、バス回数券と運転経歴証明書の手数料補助を行う。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 返納時に満75歳以上
+  - 令和2年4月1日以降にすべての免許を自主返納した
+  where: 交通防犯課
+  url: https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+  confidence: high
+  amount: ぐるっとくん乗車回数券24回分。運転経歴証明書の交付手数料の補助
+  more_urls:
+  - https://www.city.ageo.lg.jp/page/385066.html
+- category: yutai
+  name: アッピー元気カード
+  name_on_page: アッピー元気カード
+  summary: 協力店でカードを見せると、割引やサービスが受けられる。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  where: 高齢介護課（市役所2階6番窓口）、支所・出張所
+  url: https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+  confidence: high
+  amount: 店ごとに異なる（例：5%割引、飲食10%割引、ドリンクのサービス）
+  more_urls:
+  - https://www.city.ageo.lg.jp/page/385066.html
+- category: yutai
+  name: 上尾市あんしん証
+  name_on_page: 上尾市あんしん証
+  summary: シニア料金の施設や緊急連絡用に使える本人確認証を無料で発行する。
+  who:
+    age_min: 60
+  at_application:
+  - 市内に住所がある
+  - 銀行などの証明には使えない
+  where: 高齢介護課の窓口（支所・出張所では不可）
+  url: https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+  confidence: high
+  amount: 発行は無料
+  more_urls:
+  - https://www.city.ageo.lg.jp/page/385066.html
+- category: sonota
+  name: 緊急医療情報キットの配布
+  name_on_page: 緊急医療情報キット
+  summary: 医療情報を入れて冷蔵庫に保管する緊急時用のキットを配る。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 1世帯につき1個
+  where: 高齢介護課（市役所2階6番窓口）、消防署・分署、支所・出張所
+  url: https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.ageo.lg.jp/page/385066.html
+- category: sonota
+  name: ふれあい収集（ごみの戸別収集）
+  name_on_page: ふれあい収集事業
+  summary: ごみ出しが困難な世帯に、週1回の戸別収集を行い、希望があれば安否確認もする。
+  who: {}
+  at_application:
+  - ごみを集積所へ自力で出すのが著しく困難
+  - 近隣や親族の協力を得にくい
+  - 介護や支援が必要な、おおむね65歳以上または障害者手帳の所持者
+  - 同居人がいる場合は全員が条件を満たす
+  where: 西貝塚環境センター
+  url: https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.ageo.lg.jp/page/385066.html
+- category: sonota
+  name: 家具転倒防止器具等の設置補助
+  name_on_page: 家具転倒防止器具等設置補助金制度
+  summary: 高齢者のみの世帯などが、市内業者に家具の固定を頼んだ工事費を補助する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 65歳以上のみの世帯、または障害者手帳1・2級等や要介護3以上の人がいる世帯
+  - 市税の未納がない
+  - 市内業者による工事で、1世帯1回まで
+  where: 建築安全課
+  url: https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+  confidence: high
+  amount: 工事費と1万円のうち少ないほうの額
+  more_urls:
+  - https://www.city.ageo.lg.jp/page/385066.html
+- category: koken
+  name: 成年後見制度利用支援（後見人等報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族による申立てが難しい場合に市長が申立てを行い、報酬を払えない人には費用の一部を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度の利用が必要な人
+  - 2親等以内の親族がいない、または申立てをする人がいない
+  - 財産状況から後見人等の報酬を払うのが困難
+  where: 上尾市成年後見センター、地域支援室
+  url: https://www.city.ageo.lg.jp/uploaded/attachment/104425.pdf
+  confidence: low
+  more_urls:
+  - https://www.city.ageo.lg.jp/uploaded/life/417867_1193326_misc.pdf
+- category: sonota
+  name: 介護サービス利用者負担助成
+  name_on_page: 上尾市介護サービス利用者負担助成費
+  summary: 非課税世帯の人が在宅系の介護サービスで払った自己負担の一部を、市が助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 保険料区分が第1〜3段階の人
+  - 市から申請書が届く（介護保険料の未納は除く）
+  - 入居系サービス・食費・居住費は対象外
+  where: 高齢介護課（郵送または窓口）
+  url: https://www.city.ageo.lg.jp/uploaded/attachment/104425.pdf
+  confidence: low
+  amount: 自己負担額の2分の1（老齢福祉年金受給者）または4分の1
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- mimamori

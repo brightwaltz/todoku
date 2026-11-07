@@ -1,0 +1,172 @@
+city: '112151'
+name: 狭山市
+site: www.city.sayama.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報サービスの利用料助成
+  name_on_page: 緊急通報サービス事業
+  summary: 緊急通報装置の月額利用料の一部を市が助成し、事業者が通報に対応する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 65歳以上で持病があり常に注意が必要、かつ一人暮らし等
+  - 上の「一人暮らし等」は高齢者のみ世帯や日中独居も含む
+  - または75歳以上の人だけで構成される世帯
+  where: 地域包括支援センターまたはケアマネジャー経由で高齢者支援課
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/emergency_call.html
+  confidence: high
+  amount: 月額利用料のうち市が1,600〜2,000円を助成（課税状況で異なる）
+  more_urls:
+  - https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/emergency_call.files/20260401kinntuu.pdf
+- category: gaishutsu
+  name: 市内循環バス75歳以上の乗車証
+  name_on_page: 市内循環バス「茶の花号」75歳以上特別乗車証
+  summary: 75歳以上は茶の花号に1回100円で乗れ、申請すれば特別乗車証も出る。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住民登録がある
+  where: 高齢者支援課窓口または電子申請
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/chanohanagou.html
+  confidence: high
+  amount: 1回の乗車につき100円
+- category: iro
+  name: 在宅要介護高齢者の介護手当
+  name_on_page: 在宅要介護高齢者介護手当支給事業
+  summary: 在宅で要介護4・5の高齢者を介護する家族に月額の手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、要介護者と家族介護者がともに市民税非課税
+  - 在宅心身障害者福祉手当を受けていない
+  - 3か月以上続けて入院していない
+  - グループホーム・有料老人ホーム等や介護保険施設に入っていない
+  where: 高齢者支援課（直接持参）
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/kaigoteate.html
+  confidence: high
+  amount: 月額5,000円
+- category: mimamori
+  name: 見守り機器導入費の補助
+  name_on_page: 高齢者おうちで安心見守り事業補助金
+  summary: 家電や照明などのICT見守り機器を入れた費用を一部補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所があり、安否確認が必要な離れた家族等がいる
+  - 概要では一人暮らしや高齢者のみの世帯が対象
+  - ICT機器を続けて使う意思があり、市税の滞納がない
+  - 2024年4月1日以降に設置した機器が対象、1人1回限り
+  where: 高齢者支援課（オンライン手続による電子申請）
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/20600020240417093724.html
+  confidence: high
+  amount: 上限7,000円（初期費用、無い場合は利用料1か月分）
+- category: haikai
+  name: 徘徊高齢者GPS位置情報サービスの初期費用助成
+  name_on_page: 狭山市徘徊高齢者位置情報サービス利用助成
+  summary: 徘徊のある高齢者を介護する家族に、GPS端末サービスの初期費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症などで徘徊癖がある概ね65歳以上の人を在宅で介護している
+  where: ケアマネジャーまたは地域包括支援センターに相談のうえ高齢者支援課
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/haikai_service.html
+  confidence: high
+  amount: 初期費用として7,000円を助成（月額利用料などは自己負担）
+- category: haikai
+  name: ひとり歩き高齢者の安心シール
+  name_on_page: ひとり歩き高齢者安心シール交付事業
+  summary: QRコード付きの安心シールを家族に配付し、行方不明時の発見と連絡に使う。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 要支援・要介護認定、または認知症の診断を受けた市内在住の高齢者を介護する家族
+  - 対象の高齢者にひとり歩き行動がある
+  - 家族はスマートフォンが必要（家族の市内居住は不問）
+  where: 高齢者支援課（地域包括支援センターまたはケアマネジャーに相談）
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/ansin_seal.html
+  confidence: high
+  amount: 耐洗ラベル30枚・蓄光シール10枚を配付（追加分は実費）
+- category: shingu
+  name: 寝具の乾燥消毒・水洗い
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 業者が自宅を訪問し、月2回の寝具乾燥消毒と年1回の水洗いをする。
+  who: {}
+  at_application:
+  - 市内に住所があり、概ね65歳以上
+  - 一人暮らしで寝具乾燥等が難しい人
+  - または常時寝たきりの人がいる世帯で、家族では難しい場合
+  where: 地域包括支援センターまたはケアマネジャーに相談、申請は高齢者支援課
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/singukansou.html
+  confidence: high
+  amount: 利用者負担は乾燥消毒0〜1,100円/回、水洗い0〜2,200円/回（所得税額で変わる）
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつ給付事業
+  summary: 在宅で常時失禁のある要支援・要介護の高齢者に紙おむつを給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 狭山市の介護保険被保険者で市内に居住している
+  - 常時失禁の状態にある
+  - 認定調査票の排尿・排便が見守り以上、または主治医意見書に尿失禁の記載
+  where: ケアマネジャー等が介護保険課へ申請
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/omutu_kaisei.html
+  confidence: high
+  amount: 月7,000円を上限に9割を助成
+- category: sonota
+  name: 高齢者の生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ
+  summary: 自宅で一時的に暮らせない時、軽費・養護老人ホームに7日程度泊まれる。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護認定を受けていない
+  - 入院治療の必要がない
+  - 必要に応じて健康診断書の提出がある
+  where: 高齢者支援課または地域包括支援センター
+  url: https://www.city.sayama.saitama.jp/fukushi/koreifukushi/service/shoutosutei.html
+  confidence: high
+  amount: 1日1,780円から（光熱水費等は別途負担）
+- category: sonota
+  name: 特殊詐欺対策の電話機等の購入補助
+  name_on_page: 特殊詐欺対策機器購入費補助金
+  summary: 通話録音機能のある電話機や装置の購入費の半額を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市に住民登録があり、市税の滞納がない
+  - 同一世帯で補助を受けていない（1世帯1台）
+  - 市内の店で新品を買い、購入から1年以内の機器
+  - 申請期間は2027年2月26日まで
+  where: 交通防犯課（市役所2階、地区センターでは申請不可）
+  url: https://www.city.sayama.saitama.jp/kurashi/anshin/bohan/sagitaisakukikihojo.html
+  confidence: high
+  amount: 購入費の2分の1（上限5,000円）
+not_found:
+- hochoki
+- jutaku

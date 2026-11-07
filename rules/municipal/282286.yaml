@@ -1,0 +1,214 @@
+city: '282286'
+name: 加東市
+site: www.city.kato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 介護用品の給付事業
+  summary: 重度の要介護者などを在宅で介護する家族に、紙おむつや尿とりパッドを給付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5の人、または身体障害者手帳1・2級の人を介護する家族
+  - 在宅で介護していること
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/16133.html
+  confidence: high
+  amount: 前年の市町村民税が非課税の世帯は月 5,000 円分、それ以外は月 2,500 円分
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: iro
+  name: 家族介護手当
+  name_on_page: 家族介護手当支給事業
+  summary: 在宅で要介護4・5の高齢者を介護する非課税世帯の家族に、介護手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される高齢者を介護している家族が申請する
+  - 過去1年間に介護保険サービスを受けていないこと
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/16133.html
+  confidence: high
+  amount: 年額 100,000 円
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム貸与事業
+  summary: ボタンでコールセンターにつながる緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの人や高齢者のみの世帯など
+  - ひとり暮らしの重度身体障害者も対象
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/16133.html
+  confidence: high
+  amount: 設置後の利用料は市が負担
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: nichijo-yogu
+  name: 火災警報器などの日常生活用具の給付・貸与
+  name_on_page: 老人日常生活用具給付・貸与事業
+  summary: 火災警報器・自動消火器・電磁調理器などを給付または貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で低所得のひとり暮らし高齢者など
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/16133.html
+  confidence: high
+  amount: 前年所得税が非課税の世帯は無料。課税世帯は所得に応じて一部負担
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: jutaku
+  name: 住宅改修への市の助成（県補助金を活用）
+  name_on_page: 人生いきいき住宅助成事業
+  summary: 既存の住宅を高齢者らに配慮した形に改造する費用の一部を助成する。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定を受けた人、または身体・知的障害者
+  - 助成決定前に着工・契約したものは対象外
+  - 原則1世帯1回
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/16133.html
+  confidence: high
+  amount: 上限 80 万円
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: haikai
+  name: GPS 位置検索機器の購入費助成
+  name_on_page: おでかけ安心GPS事業
+  summary: ひとり外出のおそれがある認知症の人を介護する家族に、GPS 機器の初期費用の一部を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護する家族が申請。家族は40歳以上で市内に住所がある
+  - 生計中心者の市民税所得割が98,400円超だと対象外
+  - 事前に高齢介護課へ相談が必要
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/1469499072119.html
+  confidence: high
+  amount: 上限 71,000 円に消費税を加えた額（所得で助成額が変わる。1人1回）
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: haikai
+  name: QR コード付き見守りシールの交付
+  name_on_page: どこシル伝言板
+  summary: ひとり外出が心配な認知症の人に、QR コード付き見守りシールを無料で渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで、ひとり外出の心配がある人
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+  confidence: high
+  amount: 1人につきシール 30 枚を無料で交付
+- category: haikai
+  name: ひとり外出の見守り・SOS ネットワーク登録
+  name_on_page: ひとり外出見守り・SOS ネットワーク事業
+  summary: 認知症の人の特徴や連絡先を事前登録し、行方不明時の早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症（かもしれない）で、場所や外出の目的を忘れるおそれがある人
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+  confidence: high
+- category: mimamori
+  name: 見守り機器の購入費助成（ひとり暮らし向け）
+  name_on_page: おうちで安心見守り事業
+  summary: 人感センサーなど見守り機能のある機器の初期費用の一部を助成する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 概ね65歳以上で市内に住所がある
+  - 別居の家族等がいること
+  - 市民税の所得割が非課税
+  - 市の緊急通報装置を使っていないこと
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/1469499072119.html
+  confidence: high
+  amount: 上限 5,000 円に消費税を加えた額（1人1回）
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: gaishutsu
+  name: 福祉タクシー利用券の交付
+  name_on_page: 福祉タクシー利用券助成事業
+  summary: 在宅の要介護者らに、指定タクシーで使える利用券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護1以上の認定を受けた人
+  - または身体障害者手帳1・2級、療育手帳A、精神障害者保健福祉手帳1級の人
+  - 施設入所者は除く。毎年申請が必要
+  - デマンド型交通との併用不可
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/idousien/16078.html
+  confidence: high
+  amount: 年間 15,000 円分（500 円券 30 枚）
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: gaishutsu
+  name: デマンド型交通（タクシー利用の移動支援）
+  name_on_page: デマンド型交通
+  summary: 登録した高齢者らが、運賃に応じた自己負担額でタクシーを利用できる。
+  who: {}
+  at_application:
+  - 市が定める利用対象者に当たり、利用者登録が必要
+  - 資格を示す書類は運転経歴証明書や障害者手帳など
+  - 福祉タクシー利用券との併用不可
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/idousien/16079.html
+  confidence: high
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: sonota
+  name: はり・きゅう等の施術費助成
+  name_on_page: はり・きゅう・あんま・マッサージ・指圧施術費助成事業
+  summary: 指定の施術所で使える、施術費の一部を助成する利用券を交付する。
+  who: {}
+  at_application:
+  - 市に住民登録があり、市民税の所得割が非課税
+  - かつ65歳以上、または身体障害者手帳1〜6級の人
+  where: 高齢介護課
+  url: https://www.city.kato.lg.jp/kakukanogoannai/kenkoufukushibu/kourei/kourei/16133.html
+  confidence: high
+  amount: 1枚 500 円の利用券。月1枚、年 12 枚まで
+  more_urls:
+  - https://www.city.kato.lg.jp/material/files/group/45/R8panfu.pdf
+- category: koken
+  name: 成年後見の後見人報酬の助成
+  name_on_page: 成年後見制度利用助成事業
+  summary: 市長申立ての後見で、財産がなく報酬を払えない人の後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 市長が後見開始の審判を請求した人
+  - 親族（配偶者・4親等内）以外が後見人等に選ばれている
+  - 生活保護などで報酬を払える財産がない
+  where: 加東市（市長に申請）
+  url: https://www.city.kato.lg.jp/section/reiki/reiki_honbun/r315RG00000252.html
+  confidence: high
+  amount: 月額上限：在宅 28,000 円、施設等入所中 18,000 円
+not_found:
+- haishoku
+- hochoki
+- shingu
+- ribiyo
+- chusha
+- yutai

@@ -1,0 +1,199 @@
+city: '112020'
+name: 熊谷市
+site: www.city.kumagaya.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 要介護高齢者の福祉タクシー券
+  name_on_page: 熊谷市要介護高齢者福祉タクシー利用料金助成事業
+  summary: 要介護1以上で非課税世帯の高齢者に、タクシーの初乗り運賃相当の利用券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある
+  - 介護保険料の段階が第1〜第3段階（非課税世帯）
+  - 障害者福祉タクシー等の給付を受けていない
+  where: 長寿いきがい課（市役所1階7番窓口）、大里・妻沼・江南行政センター
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/20240601takusi.html
+  confidence: high
+  amount: 利用券1枚が500円相当で、1年あたり最大36枚
+- category: kinkyu-tsuho
+  name: あんしんコール（緊急通報装置の設置）
+  name_on_page: あんしんコール事業
+  summary: 緊急時に通報できる携帯型ボタンと本体を設置し、月1回ほど安否確認の電話もある。
+  who: {}
+  at_application:
+  - 市内に住所があり、慢性疾患などで常時注意が必要
+  - 65歳以上でひとり暮らし、または寝たきり
+  - またはひとり暮らしの重度身体障害者
+  where: 長寿いきがい課、障害福祉課、各行政センター福祉担当
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/syougaisya/kinkyuujitsuuhou.html
+  confidence: high
+  amount: 基本使用料は無料（通信料・電気料などは自己負担）
+- category: iro
+  name: ねたきり高齢者等の介護者への手当
+  name_on_page: ねたきり老人介護者手当
+  summary: 在宅でねたきりの高齢者や重度の認知症高齢者を介護している人に手当が出る。
+  who: {}
+  at_application:
+  - 65歳以上で在宅のねたきりが6か月以上続く人を介護している
+  - または重度の在宅認知症高齢者と同居して介護している
+  where: 長寿いきがい課高齢福祉係
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/kaigosyateate.html
+  confidence: high
+  amount: 月額5,000円（9月・3月の年2回支給）
+- category: shingu
+  name: ふとん乾燥・消毒サービス
+  name_on_page: ふとん乾燥サービス
+  summary: 業者が自宅を訪問し、掛けふとんや毛布、敷ふとんなどを消毒乾燥する。
+  who: {}
+  at_application:
+  - ねたきり高齢者
+  - または要支援以上のひとり暮らし高齢者
+  where: 長寿いきがい課高齢福祉係
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/futonkansousabisu.html
+  confidence: high
+  amount: 無料、月1回
+- category: haishoku
+  name: 高齢者等の配食サービス
+  name_on_page: 高齢者等配食サービス
+  summary: 週4回の昼食を自宅に届け、手渡しで安否確認も行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - または重度心身障害者
+  - その他、市長が認める世帯
+  where: 長寿いきがい課、障害福祉課、大里・妻沼行政センター
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/haisyoku.html
+  confidence: high
+  amount: 利用者負担は1食400円
+- category: haikai
+  name: 徘徊高齢者のGPS探索サービス
+  name_on_page: 徘徊高齢者探索サービス
+  summary: GPS端末を持ってもらい、行方不明時に家族の依頼で位置を探して知らせる。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で徘徊行動がある
+  where: 長寿いきがい課高齢福祉係
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/ninchishou/haikai01232014.html
+  confidence: high
+  amount: 位置照会は電話1回200円、現場急行は1回10,000円（別途消費税）
+- category: haikai
+  name: あんしん見守りシール（徘徊時の反射シール）
+  name_on_page: あんしん見守りシール
+  summary: 持ち物に貼る二次元バーコード付きの反射シールを無料で配る。
+  who:
+    at_home: true
+  at_application:
+  - 要介護・要支援認定者で徘徊のおそれがある
+  - または医師に認知症と診断された
+  - その他必要と認められる人
+  where: 長寿いきがい課
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/ninchishou/mimamorishi-ru.html
+  confidence: high
+  amount: 無料（1人につき1シート18枚）
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつ給付事業
+  summary: 常時おむつが必要な在宅の人に、紙おむつや尿とりパッドを無料で給付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住
+  - 要介護4・5の認定を受けている
+  - または身体障害者手帳1・2級（満3歳以上）
+  - または療育手帳マルAかA（満3歳以上）
+  where: 熊谷市社会福祉協議会、長寿いきがい課、各行政センター福祉担当係
+  url: https://www.city.kumagaya.lg.jp/faq/7/153/faq6.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.kumagaya.lg.jp/faq/7/153/faq7.html
+- category: koken
+  name: 成年後見制度利用支援（申立て・費用助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立てができない人のために市長が申立てをし、経済状況により費用を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、精神・知的障害か重度認知症（65歳以上）で判断能力が不十分
+  - 2親等以内の親族がいない、または申立ての見込みがない
+  - 後見人等がいないためサービス利用に支障がある
+  where: 長寿いきがい課（相談は市成年後見センター）
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/seinenkoukenseido.html
+  confidence: high
+  amount: 経済状況により費用の一部または全部を助成
+- category: sonota
+  name: 軽度生活援助（付き添い・買い物・掃除など）
+  name_on_page: 軽度生活援助
+  summary: 外出の付き添い、買い物、調理、洗濯、掃除、家具の転倒防止器具の取り付けなどを支援する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者のみの世帯
+  - その他、市長が認める世帯
+  - 介護保険の訪問介護で受けられる内容は対象外
+  where: 長寿いきがい課、大里・妻沼・江南行政センター
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/keidoseikatuennjo.html
+  confidence: high
+  amount: 利用者負担は1時間300円（実費は別）
+- category: sonota
+  name: 社協の家事援助サービス（低額有料）
+  name_on_page: 家事援助サービス
+  summary: 市民の協力で、食事の世話、洗濯、掃除などを低額の有料で行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者
+  - または重度の障害児（者）、父子・母子家庭など
+  where: 熊谷市社会福祉協議会 熊谷介護事業所
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/kajienjyosabisu.html
+  confidence: high
+- category: sonota
+  name: 敬老マッサージ・鍼灸の利用券
+  name_on_page: 敬老マッサージ・鍼灸サービス事業
+  summary: 鍼灸院などでマッサージや鍼灸を受けるときに使える利用券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住んでいる
+  where: 長寿いきがい課、大里・妻沼・江南行政センター
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/keiroumassage.html
+  confidence: high
+  amount: 利用券1枚で2,000円まで（超えた分は自己負担）
+- category: sonota
+  name: 公衆浴場の健康入浴券
+  name_on_page: 健康入浴サービス
+  summary: 市内の公衆浴場で使える入浴券を交付し、入浴料を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  where: 長寿いきがい課、大里・妻沼・江南行政センター
+  url: https://www.city.kumagaya.lg.jp/kenkouhukushi/koureisya/shien/kenkonyuyoku.html
+  confidence: high
+  amount: 月4枚（自宅に風呂なし）か月1枚。利用料は65〜76歳が100円、4月1日現在77歳以上は無料
+not_found:
+- hochoki
+- jutaku
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai
+- mimamori

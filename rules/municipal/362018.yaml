@@ -1,0 +1,205 @@
+city: '362018'
+name: 徳島市
+site: www.city.tokushima.tokushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（見守り付き）
+  name_on_page: 配食サービス事業
+  summary: 自宅を訪ねて安否を確かめながら、栄養に配慮した食事を届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ひとり暮らし等で、病気などで食事の用意が難しい
+  - 見守りなどの支援が必要な人
+  where: 地域包括支援センターまたは担当ケアマネジャー
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/haishoku.html
+  confidence: high
+  amount: 1食あたり非課税世帯370円・課税世帯500円。週の回数は要支援2食、要介護1〜3は3食、要介護4・5は5食
+- category: sonota
+  name: 軽度生活援助（シルバー人材センターによる家事等の手伝い）
+  name_on_page: 軽度生活援助事業
+  summary: 外出の付き添い、買い物、寝具の洗濯・日干し、庭の手入れ、軽い修繕などの援助を受けられる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 日常生活に軽易な援助が必要だが、援助が得られない
+  where: 在宅介護支援センターまたは地域包括支援センター
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/keido_enjo.html
+  confidence: high
+  amount: 1人月1回（1〜2時間）。1時間以内150円、1時間超300円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: ペンダントのボタンで協力者に助けを求められる緊急通報装置を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  - 第1・第2協力者（身内や近所の人）を指定する
+  - 受付は5月初旬〜翌年1月末。台数に達したら終了
+  where: 高齢介護課（高齢者いきがい係）
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/kinkyu_taisei.html
+  confidence: high
+  amount: 装置は貸与。電話料金・電池代・修理代は自己負担
+- category: sonota
+  name: 福祉電話の電話加入権の貸与
+  name_on_page: 福祉電話設置事業
+  summary: 電話のないひとり暮らし高齢者に、市所有の電話加入権を貸す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  - 所得税が非課税
+  - 電話を持っていない（電話機は自分で用意）
+  where: 高齢介護課（高齢者いきがい係）
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/tel_set.html
+  confidence: high
+  amount: 加入権は貸与。電話料金・修理代は自己負担
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 日常生活用具給付事業
+  summary: 介護保険の対象外の電磁調理器、火災警報器、自動消火器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で所得税非課税
+  - 電磁調理器は防火の配慮が必要なひとり暮らし
+  - 火災警報器・自動消火器は寝たきり・ひとり暮らし
+  where: 高齢介護課（高齢者いきがい係）
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/nichijo_kyufu.html
+  confidence: high
+  amount: 品目により自己負担あり（金額は頁に無し）
+- category: kaigo-yohin
+  name: 家族介護用品の支給（紙おむつ等）
+  name_on_page: 家族介護用品支給事業
+  summary: 紙おむつ、尿パッド、使い捨て手袋などを月1回自宅へ無料で届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険の施設サービスやグループホームを利用していない
+  - 長期にわたり常時介護が必要
+  where: 在宅介護支援センターまたは地域包括支援センター
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/kaigo_shikyu.html
+  confidence: high
+  amount: 無料（月1回配達）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護サービスを使わず在宅で介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを使っていない（7日以内の短期入所を除く）
+  - 過去1年間に90日以上入院していない
+  - 過去1年間ずっと要介護4・5だった
+  where: 高齢介護課（高齢者いきがい係）
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/iroukin.html
+  confidence: high
+  amount: 年額10万円
+- category: jutaku
+  name: 高齢者の住宅改造費の助成
+  name_on_page: 高齢者住宅改造費助成事業
+  summary: 手すりやすべりどめの設置など高齢者のための住宅改造費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体が虚弱な65歳以上の人がいる所得税非課税世帯
+  - 着工前に申請する
+  - 要支援・要介護の人は介護保険の住宅改修を先に相談
+  where: 高齢介護課（高齢者いきがい係）
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/kourei_house/kaizouhi.html
+  confidence: high
+  amount: 上限15万円
+- category: sonota
+  name: 生活管理指導短期宿泊（養護老人ホームへの一時宿泊）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホームに短期間泊まり、生活習慣の指導や体調の調整を受ける。
+  who:
+    age_min: 65
+  at_application:
+  - 自立しているが、生活習慣の欠如や対人関係で社会適応が難しい
+  where: 在宅介護支援センターまたは地域包括支援センター
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/zaitaku_shien/tanki_shukuhaku.html
+  confidence: high
+  amount: 1日890円、1人1か月7日以内
+- category: gaishutsu
+  name: 市バス無料乗車証
+  name_on_page: 市バス無料乗車証の交付
+  summary: 70歳になる年度から、徳島市営バスなどに無料で乗れる乗車証が交付される。
+  who:
+    age_min: 70
+  at_application:
+  - 市に住民登録がある
+  - 前年度の市町村民税所得割額が6万円以下
+  - 毎年3月末頃に郵送で交付
+  where: 高齢介護課（高齢者いきがい係）
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/ikigai/shibus_muryo.html
+  confidence: high
+  amount: 乗車は無料
+- category: gaishutsu
+  name: 高齢者特定回数乗車券（徳島バス）
+  name_on_page: 高齢者特定回数乗車券の交付
+  summary: 市営バスのない地区の高齢者に、徳島バスの指定区間で使える無料の回数乗車券を渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 市営バスの路線がない地区に住んでいる
+  - 前年度の市町村民税所得割額が6万円以下
+  - 国府地域の一部は令和7年4月から交付終了
+  where: 高齢介護課（高齢者いきがい係）
+  url: https://www.city.tokushima.tokushima.jp/smph/kenko_fukushi/kourei_fukushi/ikigai/tokubus_muryo.html
+  confidence: low
+  amount: 指定区間で1枚につき1回無料
+  more_urls:
+  - https://www.city.tokushima.tokushima.jp/smph/kenko_fukushi/kourei_fukushi/ikigai/sibasumuryoujyousya.html
+- category: sonota
+  name: 高齢者はり・きゅう・マッサージ割引券
+  name_on_page: 高齢者はり・きゅう・マッサージ券の交付
+  summary: はり・きゅう・マッサージの施術費が1枚分割引になる券を、月1枚交付する。
+  who: {}
+  at_application:
+  - 75歳以上、または65歳以上で後期高齢者医療制度に加入
+  - 医療保険適用の施術には使えない
+  where: 高齢介護課（窓口で本人確認書類を持参）
+  url: http://www.city.tokushima.tokushima.jp/kenko_fukushi/kourei_fukushi/ikigai/massage.html
+  confidence: high
+  amount: 1枚800円分の割引、年12枚まで
+  more_urls:
+  - https://www.city.tokushima.tokushima.jp/smph/kenko_fukushi/kourei_fukushi/ikigai/massage.html
+not_found:
+- shingu
+- ribiyo
+- mimamori
+- yutai
+- chusha

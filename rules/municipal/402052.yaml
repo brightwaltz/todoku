@@ -1,0 +1,255 @@
+city: '402052'
+name: 飯塚市
+site: www.city.iizuka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 行方不明認知症高齢者等SOSネットワーク登録
+  name_on_page: 行方不明認知症高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれがある認知症の人を事前登録し、行方不明時にメール等で情報を配信して早期発見につなげる。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内に住民登録がある
+  - 65歳以上の認知症、または若年性認知症と診断された人
+  - 登録申請書と本人の写真を出す
+  where: 高齢者支援課（高齢者支援2係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/1325.html
+  confidence: high
+  amount: 登録料・利用料は無料
+- category: haikai
+  name: 位置情報探索機の購入・レンタル費の助成
+  name_on_page: 認知症高齢者等位置検索システム事業
+  summary: 徘徊のおそれがある認知症の人を介護する親族に、位置情報の探索機の購入やレンタル費の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請者は対象の人を介護する3親等内の親族
+  - 対象は在宅で徘徊のある65歳以上の人（初老期認知症は40歳以上）
+  - 領収書の写しを付ける（領収日は申請月の2か月前まで）
+  where: 高齢者支援課（高齢者支援2係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2145.html
+  confidence: high
+  amount: 基準額7,000円まで。非課税世帯は10割、その他の世帯は5割を助成。1人1台限り
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 配食サービス（「食」の自立支援事業）
+  summary: 安否確認を兼ねて、栄養バランスのとれた夕食を週7日以内で1日1回届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上の人のみの世帯、またはこれに準ずる世帯
+  - 市長が必要と認めた人
+  - 事業所の食数上限で希望日に添えない場合がある
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/1430.html
+  confidence: high
+  amount: 利用者負担は1食500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 健康上の不安があるひとり暮らしの高齢者宅に、緊急時に通報できる機器を設置する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし、またはこれに準ずる世帯
+  - 急な発作が予見され加療中、または75歳以上で寝たきり度B・C
+  - 医師から終末期と診断され在宅療養する人でもよい
+  - 電話回線があること。協力員を2名程度確保する
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2594.html
+  confidence: high
+  amount: 非課税世帯・生活保護は機器を貸与。均等割のみ課税の世帯は購入費の5割、その他は10割を負担。利用料は無料
+- category: iro
+  name: 要介護3以上の人を介護する家族への介護手当
+  name_on_page: 介護手当給付事業
+  summary: 介護保険サービスをほぼ使わず要介護3以上の人を在宅で介護する同一世帯の家族に、月額の手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護者はおおむね65歳以上
+  - 事業実施前の1年に介護保険サービス（福祉用具・住宅改修除く）を使わないか、利用10日以内
+  - 在宅での介護が月15日以上ある月が対象
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2593.html
+  confidence: high
+  amount: 対象高齢者1人につき月額10,000円
+- category: kaigo-yohin
+  name: 紙おむつ・尿とりパッドの給付
+  name_on_page: 介護用品(紙おむつ・尿とりパッド)給付事業
+  summary: 要介護3以上で常時おむつ等が必要な人を在宅で介護する非課税世帯に、紙おむつ等を現物で給付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 対象の人はおおむね65歳以上
+  - 市長が必要と認めた人
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2592.html
+  confidence: high
+  amount: 月額6,000円を上限とする現物給付
+- category: nichijo-yogu
+  name: 電磁調理器・火災警報器の購入費助成
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 防火への配慮が必要な要支援・要介護の高齢者に、電磁調理器や火災警報器の購入費の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上の市民
+  - 心身機能の低下で防火への配慮が必要と市長が認めた人
+  - 領収書の写しを付ける（領収日は申請月の2か月前まで）
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2591.html
+  confidence: high
+  amount: 購入額の9割。基準額は電磁調理器10,000円、火災警報器3,000円。各1世帯1台限り
+- category: ribiyo
+  name: 訪問理美容の料金助成
+  name_on_page: 高齢者訪問理美容サービス事業
+  summary: 外出が難しい要介護3以上の人の自宅に理美容師が訪問する際の、訪問サービス料を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上の市民
+  - 重度の寝たきり等で外出が困難と市長が認めた人
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2590.html
+  confidence: high
+  amount: 訪問サービス料1,700円/回を助成。2か月に1回、年6回まで
+- category: jutaku
+  name: 高齢者の住宅改造費の助成（介護保険の対象外工事）
+  name_on_page: 高齢者住宅改造助成事業
+  summary: 介護保険の住宅改修で対象外の工事（昇降機・水栓交換・流し台の取替など）の費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上の市民
+  - 身体機能の低下で住宅改造が必要と認められる
+  - 同じ住宅で助成を受けたことがない
+  - 申請・決定前に着工した工事は対象外
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2587.html
+  confidence: high
+  amount: 基準額10万円まで、助成率9割（生活保護世帯は10割）。1住宅1回限り
+- category: sonota
+  name: 家屋内の大掃除・庭の除草の援助
+  name_on_page: 軽度生活援助事業
+  summary: ひとり暮らしなどの非課税世帯の高齢者に、家屋内の大掃除や庭の除草・草刈りの援助を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住民登録のあるおおむね65歳以上の人
+  - ひとり暮らし、高齢者のみ、またはこれに準ずる世帯
+  - 市長が必要と認めた人
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/1841.html
+  confidence: high
+  amount: 利用者負担は1時間200円（生活保護世帯100円）と実費。大掃除は年1回8時間まで、除草は年2回4時間まで
+- category: gaishutsu
+  name: 運転免許の自主返納への支援（交通券など）
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 免許を自主返納した65歳以上に、コミュニティ交通回数券、タクシー券、nimocaのいずれか1つを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 申請時に飯塚市に住民登録がある
+  - 運転免許を有効期限内に自主返納した
+  - 返納した日から3か月以内に申請する
+  where: 高齢者支援課（本庁1階14番窓口）、各支所の市民窓口課
+  url: https://www.city.iizuka.lg.jp/soshiki/33/1992.html
+  confidence: high
+  amount: 交通回数券7,000円分、タクシー券5,000円分、nimoca5,000円分から1つ選ぶ。1人1回限り
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 制度の利用費用を負担しにくい人に、成年後見人等への報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 制度の利用に必要な費用を負担することが困難な人
+  - 報酬付与の審判の通知日の翌日から1か月以内に申請する
+  where: 高齢者支援課（高齢者支援1係）
+  url: https://www.city.iizuka.lg.jp/soshiki/33/2531.html
+  confidence: high
+  amount: 報酬助成の基準額は後見人等が月額10,000円、監督人等が月額5,000円。基準額と裁判所決定報酬の月額換算との差額を助成
+- category: sonota
+  name: 認知症の人の個人賠償責任保険（市が加入）
+  name_on_page: 飯塚市認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の人が他人にけがをさせたり物を壊したりした場合に備え、市が契約者となって保険に加入する。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 市内に住み、SOSネットワーク事業に登録している
+  - 認知症高齢者の日常生活自立度が2a以上、またはこれに準ずる
+  - 要介護認定がない等の場合は医師の診断書が必要
+  where: 高齢者支援課（本庁舎1階14番窓口）
+  url: https://www.city.iizuka.lg.jp/site/shinsei/2598.html
+  confidence: high
+  amount: 保険料は市が負担。1事故あたり最大3億円まで補償
+not_found:
+- hochoki
+- shingu
+- mimamori
+- chusha
+- yutai

@@ -1,0 +1,108 @@
+city: '392022'
+name: 室戸市
+site: www.city.muroto.kochi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（見守り兼）
+  name_on_page: 室戸市配食サービス事業
+  summary: 調理が難しい高齢者の自宅へ夕食を届け、安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 概ね65歳以上の単身・高齢者のみ世帯かこれに準ずる世帯
+  - 身体障害者も対象（高齢者でなくてもよい）
+  - 老衰や傷病などで食事の調理が困難
+  - 市内に住所がある
+  where: 保健介護課 高齢者介護班
+  url: https://www.city.muroto.kochi.jp/pages/page1029.php
+  confidence: high
+  amount: 夕食 1 食あたり、お弁当 400 円・おかずのみ 250 円の自己負担。原則週 3 日
+  more_urls:
+  - https://www.city.muroto.kochi.jp/pbfile/m001029/pbf20250701092440_NjQSwQY549Kf.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 室戸市訪問理美容サービス事業
+  summary: 理美容院に行けない人の自宅へ理美容師が出張する。
+  who: {}
+  at_application: []
+  where: 保健介護課（利用登録申請書を市長へ提出）
+  url: https://www.city.muroto.kochi.jp/pages/page1032.php
+  confidence: high
+- category: gaishutsu
+  name: 中山間地域のタクシー利用助成券
+  name_on_page: 室戸市中山間地域高齢者等タクシー利用助成事業
+  summary: 公共交通のない中山間の地区に住む人へ、タクシー料金の助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要綱の別表にある中山間地区に住所がある
+  - 75歳以上のみの世帯、または免許返納した65歳以上
+  - または障害者手帳（身体1・2級等、精神、療育）の所持者
+  - 施設入所・入院中の人は対象外
+  where: 保健介護課（申請書を市長へ提出。家族・地域包括支援センター等の代理申請も可）
+  url: https://www.city.muroto.kochi.jp/pages/page1028.php
+  confidence: high
+  amount: 助成券を 1 か月 4 枚分交付。地区により 1 か月 1,600〜7,800 円分
+  more_urls:
+  - https://www.city.muroto.kochi.jp/pbfile/m001028/pbf20200131104811.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 室戸市高齢者補聴器購入費補助金
+  summary: 中等度難聴の高齢者に、補聴器購入費の一部を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳がなく、補装具費の補聴器も受けられない
+  - 片耳 40dB 以上 70dB 未満で、耳鼻科医が必要と証明
+  - 過去にこの補助を使ったことがない
+  - 交付決定前に買った補聴器は対象外
+  where: 保健介護課 高齢者介護班
+  url: https://www.city.muroto.kochi.jp/pages/page3166.php
+  confidence: high
+  amount: 補聴器本体 1 台分の購入費の 2 分の 1（上限 3 万円）
+  more_urls:
+  - https://www.city.muroto.kochi.jp/pbfile/m003166/pbf20250423163813_JcYMTKokoN6A.pdf
+- category: jutaku
+  name: 住宅改造費の支援（介護保険に上乗せ・別枠）
+  name_on_page: 室戸市住宅改造支援事業実施要綱
+  summary: 要介護者等や高齢者のみの世帯の住宅改造費を一部補助する。
+  who: {}
+  at_application:
+  - 要介護・要支援認定を受けた人がいる世帯
+  - または認定なしで 65 歳以上のみで暮らす世帯
+  - または身体障害者手帳（1・2 級等）の人がいる世帯
+  - 生計中心者の前年の所得税額が 30 万円未満
+  - 1 住宅につき 1 回限り。介護保険の住宅改修を優先
+  where: 市長宛てに申請（担当は保健介護課）
+  url: https://www.city.muroto.kochi.jp/reiki_int/reiki_honbun/o303RG00000615.html
+  confidence: high
+  amount: 補助率 2/3（生活保護世帯は全額）。上限は要介護者等 100 万円、一般高齢者 30 万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置・利用費補助（あんしん見守りサービス）
+  name_on_page: 室戸市あんしん見守りサービス事業費補助金
+  summary: 緊急通報装置を新しく設置する費用などを補助する。
+  who: {}
+  at_application:
+  - 要綱第3条の要件を満たす人（詳細は問い合わせ）
+  - 同じ人につき 1 回限り
+  where: 市長宛てに申請（担当は保健介護課）。本人・親族が申請
+  url: https://www.city.muroto.kochi.jp/reiki_int/reiki_honbun/o303RG00001217.html
+  confidence: high
+  amount: 設置費は 11,000 円まで。生活保護世帯等は利用料も月 418 円まで
+not_found:
+- kaigo-yohin
+- iro
+- haikai
+- shingu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

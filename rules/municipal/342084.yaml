@@ -1,0 +1,118 @@
+city: '342084'
+name: 府中市
+site: www.city.fuchu.hiroshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の現物給付
+  name_on_page: 介護用品給付事業
+  summary: 在宅で要介護4・5の非課税世帯の高齢者に、紙おむつ等の介護用品を現物で給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険施設に入所していない
+  where: 福祉課 高齢・障害サポート係、上下支所 市民生活係
+  url: https://www.city.fuchu.hiroshima.jp/fukushi_kenko/koureisha_fukushi/koresya_seikatu_kazoku_sien/10505.html
+  confidence: high
+  amount: 年間 75,000 円を上限とする現物給付
+  more_urls:
+  - https://www.city.fuchu.hiroshima.jp/material/files/group/9/R8_2_koureisya_servicelist.pdf
+- category: haikai
+  name: 徘徊高齢者の位置情報端末（GPS）
+  name_on_page: 徘徊高齢者家族支援サービス（GPS）
+  summary: 徘徊のある認知症高齢者の位置を調べられる端末を貸し出し、賠償保険と介護者の相談窓口も付く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊が見られる認知症の高齢者を介護している家族が申請
+  where: 福祉課 高齢・障害サポート係、上下支所 市民生活係
+  url: https://www.city.fuchu.hiroshima.jp/fukushi_kenko/koureisha_fukushi/nintisyou/9412.html
+  confidence: high
+  amount: 機器レンタル料は月 500 円（取替・修理等は別途自己負担）
+- category: haikai
+  name: 見守りシール（QR 伝言板）の交付
+  name_on_page: 認知症高齢者等見守りシール交付事業（どこシル伝言板）
+  summary: 行方不明の恐れがある認知症の人の衣服等に貼る QR シールを無料で交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民票がある
+  - 年齢は概ね65歳以上（若年性認知症などは例外）
+  - 申請は同居などで介護している家族
+  where: 福祉課 高齢・障害サポート係、上下支所 市民生活係
+  url: https://www.city.fuchu.hiroshima.jp/fukushi_kenko/koureisha_fukushi/nintisyou/9421.html
+  confidence: high
+  amount: 耐洗ラベル20枚と蓄光ラベル10枚のセットが無料（追加分は自己負担）
+- category: haikai
+  name: 行方不明者情報のメール配信（SOS ネットワーク）
+  name_on_page: 行方不明者情報配信サービス（SOSネットワーク）
+  summary: 徘徊の心配がある高齢者を事前登録すると、行方不明時に警察と連携して登録者へメールで知らせる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊・行方不明の心配がある高齢者
+  - 窓口で申請書を提出（遠方の家族は郵送可、要問合せ）
+  where: 福祉課（高齢・障害サポート係）
+  url: https://www.city.fuchu.hiroshima.jp/fukushi_kenko/koureisha_fukushi/nintisyou/9414.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 安心ネットワーク事業（緊急通報装置）
+  summary: ひとり暮らし等の高齢者宅に通報装置を設置し、24時間対応と定期的な安否確認を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 概ね65歳以上
+  - ひとり暮らし、高齢者のみ世帯、または同居家族の就労等で日中ひとりになる人
+  where: 福祉課 高齢・障害サポート係、上下支所 市民生活係
+  url: https://www.city.fuchu.hiroshima.jp/fukushi_kenko/koureisha_fukushi/koresya_seikatu_kazoku_sien/10499.html
+  confidence: high
+  amount: 保守管理費は月 500 円。設置費は前年の所得税額により負担が出る場合がある
+  more_urls:
+  - https://www.city.fuchu.hiroshima.jp/material/files/group/9/R8_2_koureisya_servicelist.pdf
+- category: gaishutsu
+  name: おでかけタクシー券
+  name_on_page: おでかけタクシー券
+  summary: 通院や在宅福祉サービスへの送迎に使うタクシー料金を、チケットで助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 概ね65歳以上
+  - 地域的・心身の障害や疾病等で交通機関の利用が困難
+  - 月1回程度、定期的に医療機関等へ通院している
+  - 福祉タクシー券など他制度で支給される人は対象外
+  where: 福祉課 高齢・障害サポート係、上下支所 市民生活係
+  url: https://www.city.fuchu.hiroshima.jp/fukushi_kenko/koureisha_fukushi/koresya_seikatu_kazoku_sien/10506.html
+  confidence: high
+  amount: 年間最大18枚（1枚あたり上限500円）のチケット
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

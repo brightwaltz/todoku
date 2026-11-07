@@ -1,0 +1,167 @@
+city: '282219'
+name: 丹波篠山市
+site: www.city.tambasasayama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅の要介護者を介護する家族への紙おむつ等の給付
+  name_on_page: 在宅高齢者等介護用品給付事業
+  summary: 在宅の要介護3〜5の方を介護する家族に、紙おむつなどの介護用品を毎月宅配で給付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3の人は、常時おむつの使用が必要と認められること
+  - 介護する家族等も市内に住所があること
+  - 頁に市民税非課税の記載があるが給付額は課税状況で3段階
+  where: 長寿福祉課 高齢支援係
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/2/7760.html
+  confidence: high
+  amount: 月額の上限は、市民税非課税世帯 6,000円、市民税のみ課税 4,000円、所得税7万円以下 2,000円
+- category: haishoku
+  name: 見守り弁当サービス（弁当代の助成と安否確認）
+  name_on_page: 見守り弁当サービス事業
+  summary: 登録業者から平日昼の弁当を買うと1食200円を助成し、配達時に安否確認も行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者世帯、または障害者手帳所持者
+  - 見守りが必要で、買い物や調理が困難なこと
+  where: 丹波篠山市社会福祉協議会（079-590-1112）
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/2/7752.html
+  confidence: high
+  amount: 1食あたり200円を助成（週3回まで）
+- category: nichijo-yogu
+  name: 電磁調理器・火災警報器・シルバーカーの購入費の半額給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: 卓上電磁調理器、火災警報器、シルバーカーを買うとき、購入額の半額を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある
+  - 購入前に申請して給付券をもらう
+  where: 長寿福祉課（高齢支援係）
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/2/7762.html
+  confidence: high
+  amount: 購入額の50％。上限は電磁調理器20,500円、火災警報器4,000円、シルバーカー13,000円
+- category: gaishutsu
+  name: 車いすの方の福祉車両による通院等の送迎
+  name_on_page: 外出支援サービス事業
+  summary: 常時車いすが必要な高齢者を、福祉車両で自宅から市内の医療機関などへ送迎する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 日常生活で常時車いすが必要で、乗降に介助が必要
+  where: 長寿福祉課 高齢支援係（079-552-5346）
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/2/7767.html
+  confidence: high
+  amount: 利用料は市内片道500円、市外片道1,000円。月の利用は片道8回まで（市外は4回まで）
+- category: gaishutsu
+  name: タクシー料金の助成券交付
+  name_on_page: 高齢者・障がい者タクシー料金助成事業
+  summary: タクシー運賃の一部を助成する券を、毎月2枚交付する。
+  who: {}
+  at_application:
+  - 市内在住で、75歳以上または障害者手帳の所持者
+  - 施設入所者、外出支援サービス利用者、人工透析通院費助成の受給者は対象外
+  where: 長寿福祉課・社会福祉課（即日交付）、各支所（受付のみ）
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/2/16097.html
+  confidence: high
+  amount: 運賃から1,000円を引いた額の3分の2。1枚あたり上限3,000円
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 高齢者・障がい者訪問理美容サービス事業
+  summary: 自宅で散髪やカットを受けられるよう、理美容店の出張費を市が負担する。
+  who: {}
+  at_application:
+  - 市内在住で、要介護1以上、または下肢・体幹障害2級以上の手帳所持者
+  - サービス提供時は家族等の付き添いが必要
+  where: 長寿福祉課
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/2/11558.html
+  confidence: high
+  amount: 出張費は市が負担。利用回数は申請月により年1〜4回
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報体制整備事業
+  summary: 緊急ボタンで看護師につながる通報装置を設置する。24時間の健康相談もできる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内在住で、ひとり暮らしまたは65歳以上のみの世帯
+  - 日中のみ該当する人や、手帳所持者と65歳以上のみの世帯も可
+  - その他の世帯も設置できる場合があり、要相談
+  where: 長寿福祉課 高齢支援係
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/7768.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等の見守り・SOSネットワークへの事前登録
+  name_on_page: 認知症高齢者等の見守り・SOSネットワーク
+  summary: 行方不明の心配がある方を事前登録し、地域で見守り、行方不明時は関係機関が早期発見に動く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 顔写真と全身写真をつけた事前登録票を提出する
+  where: 長寿福祉課 高齢支援係
+  url: https://www.city.tambasasayama.lg.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/4/7751.html
+  confidence: high
+- category: haikai
+  name: GPS端末の初期費用の助成
+  name_on_page: GPS契約の初期費用の助成について
+  summary: 見守り・SOSネットワーク登録者がGPS端末を借りる・買う際の初期費用を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 見守り・SOSネットワークに登録していること
+  where: 長寿福祉課 高齢支援係
+  url: https://www.city.tambasasayama.lg.jp/soshikikarasagasu/chojufukushika/kenko_fukushi/1/ninntisyou/21000.html
+  confidence: high
+  amount: 上限7,000円
+- category: jutaku
+  name: 介護保険の住宅改修に上乗せする住宅改造費の助成
+  name_on_page: 人生いきいき住宅助成事業（要支援・要介護認定のある方）
+  summary: 介護保険の住宅改修費を超える工事費を、市が上乗せして助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護保険住宅改修の実施可能額が20万円あること
+  - 市派遣の住まいの改良相談員が承認した改修であること
+  - 昭和56年6月以前の建築の住宅は耐震診断が必要
+  where: 長寿福祉課 介護保険係（079-552-6928）
+  url: https://www.city.tambasasayama.lg.jp/soshikikarasagasu/chojufukushika/kenko_fukushi/1/jyoseiseido/2270.html
+  confidence: high
+  amount: 介護保険の20万円と合わせて100万円までの工事費が対象。補助率は生計中心者の収入・所得で異なる
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- chusha
+- yutai

@@ -1,0 +1,150 @@
+city: '122131'
+name: 東金市
+site: www.city.togane.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ給付事業
+  name_on_page: 紙おむつ給付事業
+  summary: 在宅で紙おむつを使う重度の要介護高齢者等に、紙おむつを自宅へ届ける。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3〜5、または身体障害者手帳1・2級等（20歳以上）
+  - 要介護3は認定調査の排泄・着脱の項目で条件あり
+  - 市町村民税が課税されていない
+  - 市税・介護保険料等の滞納がない
+  - 施設入所中・入院中の人は対象外
+  where: 高齢者支援課
+  url: https://www.city.togane.chiba.jp/0000001099.html
+  confidence: high
+  amount: 2か月分を隔月に配達。1か月あたり要介護3は30枚、それ以外は45枚（製品による）
+- category: kinkyu-tsuho
+  name: あんしん電話（緊急通報装置の貸与）
+  name_on_page: あんしん電話事業
+  summary: 緊急通報装置とペンダント型送信機を貸し出し、通報・健康相談・毎月の安否確認ができる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者のみ世帯・日中独居世帯
+  - または身体障害者手帳1・2級のひとり暮らし・その人のみの世帯
+  - 固定電話の設置か携帯電話の所有が必要
+  - 1世帯1台まで
+  where: 高齢者支援課（手帳による対象の人は社会福祉課）
+  url: https://www.city.togane.chiba.jp/0000001098.html
+  confidence: high
+  amount: 利用者負担は月額。生活保護は0円、所得割非課税世帯366円、課税世帯1,833円、日中独居3,520円
+- category: sonota
+  name: 軽度生活援助（洗濯・掃除・除草の派遣）
+  name_on_page: 軽度生活援助事業
+  summary: 高齢者のみの家に援助員が来て、洗濯・除草・掃除などを手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 高齢者支援課
+  url: https://www.city.togane.chiba.jp/0000001097.html
+  confidence: high
+  amount: 1時間500円（生活保護は無料）。月1回4時間まで。材料費は自己負担
+- category: sonota
+  name: はり・きゅう・マッサージ等の施術費助成
+  name_on_page: はり・きゅう・マッサージ等助成事業
+  summary: 70歳以上の人に、はり・きゅう・マッサージ等の施術で使える利用券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住んでいる
+  where: 高齢者支援課
+  url: https://www.city.togane.chiba.jp/0000001094.html
+  confidence: high
+  amount: 1回500円分の利用券。年度で最大12枚、1か月に1枚まで使える
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 認知症高齢者等見守りシールの配付について
+  summary: 行方不明時に連絡できる、QRコード付きの見守りシールを配付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の認知症高齢者等
+  - 要介護・要支援で徘徊行動がある、または徘徊で警察に保護等された
+  - 施設入所中・長期入院中の人は対象外
+  where: 高齢者支援課
+  url: https://www.city.togane.chiba.jp/0000009775.html
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットの配布について
+  summary: 緊急連絡先などを入れて冷蔵庫に保管する救急情報キットを配る。
+  who: {}
+  at_application:
+  - 市内に住む70歳以上のひとり暮らしの人
+  - そのほか必要と認められる人
+  where: 高齢者支援課の窓口
+  url: https://www.city.togane.chiba.jp/0000013009.html
+  confidence: high
+- category: sonota
+  name: 在宅高齢者の短期入所（養護老人ホーム）
+  name_on_page: 在宅高齢者短期入所事業
+  summary: 養護する人がいない等のとき、養護老人ホームに短期間泊まれる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所があり、要介護・要支援の認定を受けていない
+  - 養護者の不在、または自立助長・介護予防に必要と認められる
+  - 診断書が必要
+  where: 高齢者支援課
+  url: https://www.city.togane.chiba.jp/0000001101.html
+  confidence: high
+  amount: 利用は原則7日以内。1日1,730円（生活保護は無料）
+- category: gaishutsu
+  name: ケアタクシー券（通院の運賃助成）
+  name_on_page: ケアタクシー事業助成金（ケアタクシー券）
+  summary: 通院・入退院で協定事業者のケアタクシーを使うときの運賃券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 市税・介護保険料の滞納がない
+  - ケアプランにケアタクシー利用か通院等乗降介助がある
+  - 施設・グループホーム等の入所・入居者は対象外
+  where: 高齢者支援課
+  url: https://www.city.togane.chiba.jp/0000001044.html
+  confidence: high
+  amount: 月6,000円分まで（人工透析の人は月12,000円分まで）
+- category: gaishutsu
+  name: 福祉タクシー助成金
+  name_on_page: 福祉タクシー助成金の交付
+  summary: タクシー利用料の一部を助成する。要介護4・5の人も対象。
+  who: {}
+  at_application:
+  - 要介護4・5、または障害者手帳の一定の等級の人
+  - 事前に利用者登録が必要
+  where: 社会福祉課
+  url: https://www.city.togane.chiba.jp/0000000922.html
+  confidence: high
+  amount: 1回900円まで、年24回助成
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

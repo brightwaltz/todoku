@@ -1,0 +1,167 @@
+city: '062073'
+name: 上山市
+site: www.city.kaminoyama.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給
+  summary: 常に失禁状態の要介護（要支援）認定者に紙おむつ等を現物で支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 1か月以上、常時失禁状態にある高齢者
+  - 市民税の課税状況で支給枚数に上限がある
+  where: 健康推進課 高齢介護係（問い合わせ先）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/7/fukushik.html
+  confidence: high
+  amount: 種類を組み合わせて支給（枚数は課税状況で制限）。金額の記載なし
+- category: shingu
+  name: ふとん等の洗濯乾燥
+  name_on_page: 寝具洗濯サービス
+  summary: 寝具の衛生管理が難しい介護保険認定者に、ふとん等の洗濯乾燥を年1回行う。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ふとん等の衛生管理が困難な方
+  where: 健康推進課 高齢介護係（問い合わせ先）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/7/fukushik.html
+  confidence: high
+  amount: 年1回。自己負担あり（額の記載なし）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: ペンダントのボタンで警備会社につながる緊急連絡機器を設置する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 一人暮らしの高齢者等で、持病等のため日常生活上注意を要する方
+  where: 健康推進課 高齢介護係（問い合わせ先）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/7/fukushik.html
+  confidence: high
+- category: nichijo-yogu
+  name: 自動消火器の設置
+  name_on_page: 自動消火器給付
+  summary: 火の取扱いに不安のある高齢者世帯に自動消火器を設置する。
+  who:
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - 火の取扱いに不安のある方
+  where: 健康推進課 高齢介護係（問い合わせ先）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/7/fukushik.html
+  confidence: high
+- category: ribiyo
+  name: 訪問理美容の出張料補助
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院に行けない寝たきりの方が出張理美容を受けたとき、出張料を補助する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 寝たきりで理容所・美容院に行けない高齢者
+  - 理容料・美容料は自己負担
+  where: 健康推進課 高齢介護係（問い合わせ先）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/7/fukushik.html
+  confidence: high
+  amount: 出張料を補助（額の記載なし）
+- category: gaishutsu
+  name: 通院等の移送費の8割負担
+  name_on_page: 移送サービス
+  summary: 寝たきり等の高齢者が特殊車両で入退院・通院する費用の8割を市が負担する。
+  who: {}
+  at_application:
+  - 常に寝たきり等で、家族による移送が困難な高齢者
+  - 家族が自家用車で送れる場合や、発着地が介護施設等の場合は対象外
+  - 利用の前日までに申請
+  where: 健康推進課 高齢介護係（問い合わせ先）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/7/fukushik.html
+  confidence: high
+  amount: 費用の8割を市が負担
+- category: sonota
+  name: 高齢者世帯の除雪費助成
+  name_on_page: 高齢者世帯除雪支援
+  summary: 高齢者の一人暮らし・高齢者のみ世帯が除雪を依頼した費用の一部を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 親族等から支援を受けられない方
+  - 除雪を行った方の領収書の写しが必要
+  where: 健康推進課 高齢介護係（問い合わせ先）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/7/fukushik.html
+  confidence: high
+  amount: 上限2万円（市民税所得割課税世帯は上限1万円）。1回、豪雪対策本部設置時は2回
+- category: sonota
+  name: 鍼灸・マッサージの助成券
+  name_on_page: 鍼灸・マッサージ利用助成
+  summary: 70歳以上に、市内の指定鍼灸院等で使える助成券を年度6回分交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 福祉課
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/8/koureisya-hukushi.html
+  confidence: high
+  amount: 1回1,000円の助成券を年度6回分
+- category: mimamori
+  name: 訪問員による週1回の見守り
+  name_on_page: 安心見守りサービス
+  summary: 訪問員が週1回自宅を訪ね、声がけして安否を確かめる無料の見守り。
+  who: {}
+  at_application:
+  - 一人暮らしや高齢者のみの世帯等
+  where: 福祉課（地域包括支援センターでも問い合わせ可）
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/8/koureisya-hukushi.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.kaminoyama.yamagata.jp/uploaded/attachment/26457.pdf
+- category: haishoku
+  name: 高齢者の昼食配食
+  name_on_page: 配食サービス
+  summary: ボランティアが作った手作り弁当を週1回届け、安否も確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 食に不安のある一人暮らしや高齢者のみの世帯等
+  where: 福祉課、上山市社会福祉協議会
+  url: https://www.city.kaminoyama.yamagata.jp/soshiki/8/koureisya-hukushi.html
+  confidence: high
+  amount: 1食500円。週1回（火・水・木のいずれか）
+  more_urls:
+  - https://www.city.kaminoyama.yamagata.jp/uploaded/attachment/23183.pdf
+not_found:
+- iro
+- haikai
+- koken
+- hochoki
+- jutaku

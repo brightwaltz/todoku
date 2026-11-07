@@ -1,0 +1,209 @@
+city: '262013'
+name: 福知山市
+site: www.city.fukuchiyama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への配食（安否確認つき）
+  name_on_page: 在宅高齢者配食サービス
+  summary: 昼・夜のお弁当を手渡しで届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の支度が困難、または調理する家族等がいない
+  - 重度の心身障害者と65歳以上の人だけの世帯も対象
+  - 地域包括支援センター等の訪問調査を受ける
+  - 入院中は申請できない
+  where: 高齢者福祉課、各支所（事前に地域包括支援センター等へ相談）
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/15/1638.html
+  confidence: high
+  amount: 毎日昼・夜の2食まで。1食520円（おかずのみ510円）の自己負担
+  more_urls:
+  - https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 福知山市高齢者補聴器購入費助成について
+  summary: 補聴器の購入費の2分の1を、一側耳分、1人1回限りで助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳の対象とならない
+  - 両耳40dB以上70dB未満、または一側耳が著しく低く医師が必要と判断
+  - 市税の滞納がない
+  - 購入前に申請し、医師の意見書が必要
+  where: 高齢者福祉課
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/15/84653.html
+  confidence: high
+  amount: 購入費の1/2、上限20,000円（修理費は対象外）
+- category: gaishutsu
+  name: 運転免許のない75歳以上へのおでかけチケット
+  name_on_page: いきいき・おでかけ応援事業
+  summary: バス・タクシー・丹後鉄道などで使えるチケットを年1回交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住所がある
+  - 運転免許証を持っていない
+  - 障害者安心おでかけサポート事業・外出支援助成事業を使っていない
+  where: 高齢者福祉課、各支所（郵送も可）
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/15/56163.html
+  confidence: high
+  amount: 6,000円分のチケット（年度に1回）
+  more_urls:
+  - https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+- category: gaishutsu
+  name: タクシー等の外出支援助成券
+  name_on_page: 在宅高齢者外出支援助成事業
+  summary: 外出が難しい人に、タクシーや福祉有償運送で使える助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 下肢が不自由などで一般の交通機関の利用が困難
+  - 詳しい対象要件は頁の PDF で確認
+  where: 高齢者福祉課、三和・夜久野・大江の各支所
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/15/1641.html
+  confidence: high
+  more_urls:
+  - https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（見守り）
+  name_on_page: 安心生活見守り事業
+  summary: コールセンターにつながる通報装置を無料で貸し出し、定期の見守りもある。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者のみの世帯
+  - または高齢者と障害のある人のみ／障害のある人のみの世帯
+  - 固定電話があること（携帯のみは対象外）
+  - 申請時に近隣協力者が1名必要
+  where: 高齢者福祉課、各支所（先に担当民生委員へ相談）
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/15/1639.html
+  confidence: high
+  amount: 装置の設置・貸与と通話料は無料。見守りセンサーは任意で月418円
+  more_urls:
+  - https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+- category: haikai
+  name: 行方不明に備える事前登録（SOSネットワーク）
+  name_on_page: 福知山ＳＯＳネットワーク
+  summary: 行方不明のおそれがある人の情報を登録し、地域の協力で早く見つける。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市民で、65歳以上
+  - または40〜64歳の介護保険第2号被保険者
+  - 認知症等で行方不明になるおそれがある
+  - 家族などが申請し、本人の写真を添える
+  where: 地域包括ケア推進課連携推進係、各地域包括支援センター
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/71/1769.html
+  confidence: high
+  more_urls:
+  - https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+- category: iro
+  name: 重度の要介護者を介護する家族への支援金
+  name_on_page: 在宅高齢者介護者支援金事業
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、年1回支援金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護状態が6か月以上続いている
+  - 家族が常時直接介護している
+  - 基準日は7月1日または2月1日
+  - 受付は7月1〜15日か2月1〜15日（どちらか1回限り）
+  where: 高齢者福祉課、各支所
+  url: https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+  confidence: high
+  amount: 要介護者1人につき年30,000円
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業について
+  summary: 費用の負担が難しい人に、後見の申立費用や後見人の報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に居住する成年被後見人等
+  - 申立費用：生活保護受給者等、または非課税世帯で保護に移行しそうな人
+  - 報酬：生活保護受給者等、または報酬で預貯金が20万円を下回る人
+  - 審判の確定から3か月以内に申請
+  - 65歳以上は地域包括ケア推進課、65歳未満は障害者福祉課
+  where: 地域包括ケア推進課（65歳以上）、障害者福祉課（65歳未満）
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/71/20205.html
+  confidence: high
+  amount: 申立費用の実費。報酬は月額上限：在宅28,000円、施設入所18,000円
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット配付事業
+  summary: 医療情報を入れる容器とステッカーを配り、救急時に役立てる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - または身体障害者手帳1・2級の人、障害者のみ世帯
+  - 障害者と高齢者のみの世帯、その他市長が認める人
+  where: 高齢者福祉課（担当民生委員にも相談できる）
+  url: https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+  confidence: high
+- category: sonota
+  name: 屋根雪おろし等の費用助成
+  name_on_page: 屋根雪おろし等費用助成金交付事業
+  summary: 積雪が多いとき、業者に頼んだ除雪費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内在住で、65歳以上のみの在宅高齢者世帯
+  - または母子世帯、障害者手帳を持つ人のみの世帯
+  - 積雪がおおむね70cmを超え、有料で依頼した
+  - 民生委員の証明つき申請書と領収書の写しが必要
+  where: 高齢者福祉課、各支所
+  url: https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+  confidence: high
+  amount: 除雪費用の1/2、上限年20,000円
+- category: sonota
+  name: 介護マークの配布
+  name_on_page: 介護マークの配布
+  summary: 介護中であることを周囲に伝える介護マークを、介護者に無料で配る。
+  who: {}
+  at_application: []
+  where: 地域包括ケア推進課、各地域包括支援センター
+  url: https://www.city.fukuchiyama.lg.jp/uploaded/attachment/53847.pdf
+  confidence: high
+- category: sonota
+  name: 在日外国人の高齢者への福祉給付金
+  name_on_page: 在日外国人高齢者福祉給付金事業
+  summary: 国籍の関係で国民年金に入れなかった高齢者に給付金を支給する。
+  who: {}
+  at_application:
+  - 日本国籍がないため国民年金に加入できなかった高齢者
+  where: 高齢者福祉課高齢企画係、各支所
+  url: https://www.city.fukuchiyama.lg.jp/soshiki/15/1645.html
+  confidence: low
+not_found:
+- ribiyo
+- shingu
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

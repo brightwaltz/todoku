@@ -1,0 +1,98 @@
+city: '372072'
+name: 東かがわ市
+site: www.higashikagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきり高齢者等の紙おむつ給付
+  name_on_page: 寝たきり高齢者等紙おむつ給付事業
+  summary: 寝たきり高齢者等を在宅で介護する家族に、紙おむつ（現物）を配る。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 申請者は市内在住で、対象者を現に介護している家族
+  - 要介護3以上、または自立度ランクB・C等のいずれか
+  - 6か月以上ずっと紙おむつを使っている
+  - 対象者と申請者の世帯がどちらも市民税非課税
+  - ケアマネジャーや保健師などの証明が要る
+  where: 長寿保健課
+  url: https://www.higashikagawa.jp/soshikikarasagasu/chojuhokenka/gyomuannai/3/2/1187.html
+  confidence: high
+  amount: 月5,500円以内、年6万円まで（偶数月に2か月分を現物で配布）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金事業
+  summary: 要介護4・5相当の人を在宅で介護する家族に、慰労金を年1回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 1年以上市内に住所があり、過去1年間介護している家族
+  - 過去1年間、介護保険サービスを受けていない
+  - 市民税が非課税
+  - 過去1年に10日超のショートステイや3か月以上の入院がない
+  - 民生委員・児童委員の証明が要る
+  where: 長寿保健課
+  url: https://www.higashikagawa.jp/soshikikarasagasu/chojuhokenka/gyomuannai/3/2/1194.html
+  confidence: high
+  amount: 年額10万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与申請書
+  summary: ひとり暮らしなどの高齢者に、緊急通報装置を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内に住所がある
+  - 民生委員やケアマネジャー等の確認が要る
+  - 通話料などの維持費は利用者が負担
+  where: 長寿保健課
+  url: https://www.higashikagawa.jp/material/files/group/27/kinkyuutuuhousouti.pdf
+  confidence: low
+- category: gaishutsu
+  name: 福祉バス（路線バス1乗車100円）
+  name_on_page: 福祉バス運行事業(1乗車100円)
+  summary: 資格者証を見せると、対象の路線バス区間を1回100円で乗れる。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のどれかに当たる人
+  - 70歳以上、または障害者手帳（身体1〜4級・療育・精神）
+  - または難病患者
+  - 申請には写真と、条件を証明できるものが要る
+  where: 福祉課、市民課、引田窓口、大内窓口、福栄郵便局、五名郵便局
+  url: https://www.higashikagawa.jp/soshikikarasagasu/fukushika/gyomuannai/7/891.html
+  confidence: high
+  amount: 対象区間（大川バス五名福栄線・引田線）で1回100円
+- category: sonota
+  name: 長寿祝金
+  name_on_page: 長寿祝金
+  summary: 80歳・88歳・99歳になる人に、お祝い金を窓口で渡す。
+  who: {}
+  at_application:
+  - 4月2日時点で満80歳・88歳・99歳の人
+  - 市内に引き続き1年以上住んでいる
+  - 対象者に8月下旬ごろ案内が届き、指定の窓口で受け取る
+  where: 市民課、大内支所、引田支所
+  url: https://www.higashikagawa.jp/soshikikarasagasu/chojuhokenka/gyomuannai/3/2/1184.html
+  confidence: high
+  amount: 80歳5,000円、88歳10,000円、99歳20,000円（年額）
+not_found:
+- haishoku
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

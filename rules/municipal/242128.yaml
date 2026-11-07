@@ -1,0 +1,50 @@
+city: '242128'
+name: 熊野市
+site: www.city.kumano.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 認知症高齢者のGPS機器購入・レンタル初期費用の補助
+  name_on_page: 認知症高齢者が携帯するGPS機器の一部補助
+  summary: 認知症の高齢者が持つGPS機器の購入やレンタルの初期費用を、介護する家族に一部補助する。
+  who: {}
+  at_application:
+  - 市内に住所があり、認知症高齢者を介護する家族・親族
+  - 携帯電話は対象機器外、月々の運用費は対象外
+  where: 熊野市地域包括支援センター
+  url: https://www.city.kumano.lg.jp/welfare/?content=2337
+  confidence: high
+  amount: 上限 1 万円（1 人につき 1 回まで）
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（保険料は市負担）
+  name_on_page: 熊野市認知症高齢者等個人賠償責任保険
+  summary: 日常生活の事故で他人に損害を与えた場合の賠償を保険で補償し、保険料は市が全額負担する。
+  who:
+    at_home: true
+  at_application:
+  - 熊野市徘徊SOSネットワークに登録している人
+  - 施設入所など在宅でない人は対象外
+  where: 熊野市（徘徊SOSネットワーク登録申請書と保険事業利用申請書を提出）
+  url: https://www.city.kumano.lg.jp/welfare/?content=2334
+  confidence: high
+  amount: 1 事故あたり国内 3 億円・国外 1 億円まで補償。期間は 1 年
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

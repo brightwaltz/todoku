@@ -1,0 +1,100 @@
+city: '432032'
+name: 人吉市
+site: www.city.hitoyoshi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給（紙おむつ等の利用券）
+  name_on_page: 人吉市家族介護用品支給事業
+  summary: 要介護4・5で常時おむつ等が要る人の非課税世帯に、紙おむつ等の利用券を支給する
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 同じ世帯で主に介護する人が受け取る（介護者がいなければ本人）
+  - 申請する年度に、半月を超える入院や施設入所（短期入所を含む）がない
+  - 介護保険料の滞納がない
+  - 申請書に居宅サービス計画書を添える。続ける場合は毎年4月に再申請する
+  where: 市長あてに申請（要項に窓口名の記載なし）
+  url: https://www.city.hitoyoshi.lg.jp/reiki/reiki_honbun/q404RG00000356.html
+  confidence: high
+  amount: 月額上限 5,000 円の利用券（入院・施設入所が月15日以下の月は 3,000 円）。品目は紙おむつ・尿取りパッド・おむつカバー・清拭剤・使い捨て手袋
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 人吉市緊急通報体制整備事業
+  summary: ひとり暮らしの高齢者等に緊急通報装置を貸し出す
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要支援・要介護の認定を受けているひとり暮らしの人
+  - または、発作や急変のおそれがある疾患のあるひとり暮らしの人（地域包括の意見書で市長が認めた人）
+  - または、寝たきりの高齢者がいる高齢者のみの世帯で、介護者が病弱な人
+  - 申請の前に高齢者支援課へ事前相談する
+  where: 健康福祉部 高齢者支援課 元気・長生き係
+  url: https://www.city.hitoyoshi.lg.jp/fukushi_kaigo/koreifukushi/36428
+  confidence: high
+- category: jutaku
+  name: 高齢者住宅改造の助成
+  name_on_page: 人吉市高齢者・障害者住宅改造助成事業
+  summary: 要介護等の高齢者の住宅改造費を、上限 50 万円まで助成する
+  who: {}
+  at_application:
+  - 65歳以上で要支援・要介護の認定を受けた人（同等の人を含む）か、その同居者
+  - 65歳未満で身体障害者手帳1・2級、療育手帳A1・A2の人も対象
+  - 世帯の生計中心者の前年の所得税額が 7 万円以下
+  - 世帯が過去にこの助成を受けていない（心身の状態が大きく変わった場合は例外）
+  - 改造の前に市へ相談し、助成の決定を受けてから着工する
+  where: 高齢者支援課 介護保険係（要項は市長あて申請とあり窓口名なし。係の担当業務に高齢者住宅改造助成事業とある）
+  url: https://www.city.hitoyoshi.lg.jp/reiki/reiki_honbun/q404RG00000381.html
+  confidence: high
+  amount: 限度額 50 万円（高齢者）。助成率は、生活保護世帯と生計中心者が市民税非課税の世帯は3分の3、ほかの世帯は3分の2
+  more_urls:
+  - https://www.city.hitoyoshi.lg.jp/hihyoji/29721
+- category: koken
+  name: 成年後見制度の利用支援（申立費用・後見人報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用を市が負担・助成し、専門職の後見人の報酬も助成する
+  who: {}
+  at_application:
+  - 認知症などで判断する力が不十分な人（虐待・放置を受けている人も）
+  - 市内に住所があり、ほかの市町村の措置や保険給付を受けていない人
+  - 報酬の助成は、後見人が配偶者・直系血族・兄弟姉妹以外であること
+  where: 65歳以上・介護保険の利用者は高齢者支援課 元気・長生き係、障がいのある人は福祉課 障がい者支援係
+  url: https://www.city.hitoyoshi.lg.jp/fukushi_kaigo/koreifukushi/2499222
+  confidence: high
+  amount: 報酬の助成は家庭裁判所が認めた額の範囲で月額上限 28,000 円（在宅）、18,000 円（半年を超える入院や施設の入所）
+  more_urls:
+  - https://www.city.hitoyoshi.lg.jp/reiki/reiki_honbun/q404RG00001551.html
+- category: sonota
+  name: はり・きゅう・マッサージの施術券
+  name_on_page: はり・きゅう・マッサージ施術券
+  summary: 後期高齢者医療の被保険者に、はり・きゅう・マッサージの施術券を交付する
+  who: {}
+  at_application:
+  - 後期高齢者医療の被保険者である
+  where: 市役所1階6番窓口の高齢者支援課 元気・長生き係
+  url: https://www.city.hitoyoshi.lg.jp/fukushi_kaigo/koreifukushi/2424200
+  confidence: high
+  amount: 1回の施術につき 1 枚（500 円）、1年に 1 冊（12 枚綴り）まで。有効期限は年度末（3月末）
+not_found:
+- haishoku
+- iro
+- haikai
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- gaishutsu

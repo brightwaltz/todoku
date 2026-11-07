@@ -1,0 +1,95 @@
+city: '262021'
+name: 舞鶴市
+site: www.city.maizuru.kyoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品支給チケット（要介護4・5の人を在宅で介護する家族へ）
+  name_on_page: 介護用品支給チケットの交付について
+  summary: 紙おむつ等を薬局で買えるチケットを、介護する家族に年 2 回交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 対象は市民税非課税世帯の65歳以上の要介護者
+  - 介護している家族が申請する
+  - 入院・施設入所中は対象外
+  where: 高齢者支援課
+  url: https://www.city.maizuru.kyoto.jp/kenkou/0000006520.html
+  confidence: high
+  amount: 要介護者 1 人あたり年額上限 4 万円（4月・10月に 2 万円分ずつ）
+- category: gaishutsu
+  name: 高齢者外出支援事業（バス・丹鉄・タクシーの乗車票）
+  name_on_page: 高齢者外出支援事業
+  summary: 75 歳以上の市民に、バス・丹鉄・タクシーの割安な乗車票を販売する。
+  who:
+    age_min: 75
+  at_application:
+  - 舞鶴市民であること
+  - 年齢が確認できる証明書（マイナンバーカード等）を持参
+  - 代理購入も可
+  where: 高齢者支援課、西支所、加佐分室
+  url: https://www.city.maizuru.kyoto.jp/kenkou/0000004033.html
+  confidence: high
+  amount: バス・丹鉄は 200 円で乗れる票 5 枚綴り 1,000 円。タクシー票は 5,000 円分を 2,500 円で販売
+  more_urls:
+  - https://www.city.maizuru.kyoto.jp/kenkou/cmsfiles/contents/0000004/4033/gaisyutusien.pptx.pdf
+- category: haikai
+  name: 認知症等の行方不明に備える事前登録制度
+  name_on_page: 事前登録制度
+  summary: 行方不明のおそれがある人を登録し、警察と連携して捜索。身元判明グッズを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請者の印鑑と、本人の写真（顔・全身）が必要
+  where: 高齢者支援課、西支所
+  url: https://www.city.maizuru.kyoto.jp/kenkou/0000000693.html
+  confidence: high
+  amount: キーホルダー・缶バッジ・反射シールを渡す（費用の記載なし）
+- category: haikai
+  name: 認知症高齢者等位置探索（GPS）利用補助
+  name_on_page: 認知症高齢者等位置探索サービス（GPS）利用支援事業
+  summary: 徘徊のおそれがある人のGPS端末の初期費用を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市に住民登録があり、認知症（疑い含む）で徘徊のおそれがある人
+  - 本人または家族が申請できる
+  - 携帯電話機能が主の機器、GPS専用靴は対象外
+  where: 高齢者支援課、西支所
+  url: https://www.city.maizuru.kyoto.jp/kenkou/0000000693.html
+  confidence: high
+  amount: 初期費用を上限 1 万円まで補助（月額利用料は自己負担）
+  more_urls:
+  - https://www.city.maizuru.kyoto.jp/kenkou/cmsfiles/contents/0000000/693/gpsgaiyou.pdf
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等の報酬に係る費用の助成
+  summary: 市長申立てで選ばれた後見人等の報酬を、生活保護の人など支払いが困難な場合に助成する。
+  who: {}
+  at_application:
+  - 対象は認知症の高齢者・知的障害者・精神障害者
+  - 市長の審判請求で後見人等が選任された人
+  - 生活保護受給者など、助成がないと利用が困難と市長が認めた人
+  where: 市役所（担当課名は要綱に記載なし）
+  url: https://www.city.maizuru.kyoto.jp/html/reiki_int/reiki_honbun/k104RG00000697.html
+  confidence: high
+  amount: 家庭裁判所が決めた報酬額。上限は施設入所で月 18,000 円、在宅で月 28,000 円
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

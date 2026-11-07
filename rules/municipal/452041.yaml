@@ -1,0 +1,130 @@
+city: '452041'
+name: 日南市
+site: www.city.nichinan.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5の65歳以上の方を在宅で介護する家族等に、おむつ等の介護用品を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の65歳以上の方を、在宅で介護している家族等が対象
+  - 詳しい支給条件はチラシ・要綱で確かめる
+  where: 長寿課 高齢者あんしん係（0987-31-1162）
+  url: https://www.city.nichinan.lg.jp/soshikikarasagasu/chojuka/2/1037.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金の支給
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護4・5の方を在宅で介護している同居家族に、家族介護慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護4・5の方を在宅で介護している同居の家族に支給
+  - 詳しい支給条件はチラシで確かめる
+  where: 長寿課 高齢者あんしん係（0987-31-1162）
+  url: https://www.city.nichinan.lg.jp/soshikikarasagasu/chojuka/2/1037.html
+  confidence: high
+- category: haishoku
+  name: 「食」の自立支援（配食サービス）
+  name_on_page: 「食」の自立支援事業
+  summary: 食事の確保が難しい高齢の方に、栄養バランスのとれた弁当を届ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしか高齢者のみの世帯、またはこれに準ずる世帯
+  - 心身の状況により食事の確保が困難な方
+  - 市内に住所がある
+  where: 長寿課 高齢者あんしん係（0987-31-1162）
+  url: https://www.city.nichinan.lg.jp/soshikikarasagasu/chojuka/2/1037.html
+  confidence: high
+- category: koken
+  name: 成年後見制度の利用支援（申立費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見開始などの審判の申立てへの支援と、後見人等の報酬の助成を行う。
+  who: {}
+  at_application:
+  - 認知症高齢者・知的障がい者・精神障がい者で意思能力に乏しい方
+  - 市内に住所がある
+  - 申立ては市長が行う。親族がいると親族の申立てを促す
+  - 報酬助成は生活保護の方か、資産がなく負担で要保護となる方など
+  - 報酬助成の申請は審判決定の翌日から2か月以内
+  where: 長寿課（高齢者あんしん係）
+  url: https://www.city.nichinan.lg.jp/soshikikarasagasu/chojuka/2/1037.html
+  confidence: high
+  more_urls:
+  - https://www.city.nichinan.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/2763.html
+  - https://www.city.nichinan.lg.jp/material/files/group/60/f8234c82440cabb894a0ab97009be963_1.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: 急病などのとき、自宅の通報装置で専門業者につながり、協力員へ連絡して救助する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯で、特に見守りが必要な方
+  - または重度身体障がい者のみ（高齢者との世帯も可）で見守りが必要
+  - 市民税が課税されている世帯は対象外
+  - 市内に住み、住民基本台帳に記載されている
+  where: 地域包括支援センター（北・東・中央・南地区）、長寿課 高齢者あんしん係
+  url: https://www.city.nichinan.lg.jp/soshikikarasagasu/chojuka/2/1428.html
+  confidence: high
+  amount: 装置の設置・撤去・保守は市が負担（電話の基本料金・通話料は自己負担）
+- category: hochoki
+  name: 高齢者補聴器の購入費助成
+  name_on_page: 日南市高齢者補聴器購入助成補助金
+  summary: 聞こえにくい65歳以上の方に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、自宅で生活している
+  - 市税を滞納していない
+  - 聴覚障がいの身体障害者手帳を持っていない
+  - 両耳40dB以上70dB未満、または耳鼻科医が必要と認める
+  - 過去にこの補助金を受けていない
+  where: 長寿課 高齢者あんしん係、各地域振興センター
+  url: https://www.city.nichinan.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/1/7017.html
+  confidence: high
+  amount: 最大30,000円（送料・修理費・部品交換費は対象外）
+- category: haikai
+  name: 認知症高齢者等SOS見守り声かけネットワーク（事前登録）
+  name_on_page: 日南市認知症高齢者等SOS見守り声かけネットワーク事業
+  summary: 行方不明のおそれのある方を事前登録し、二次元コード付きシールを交付して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明のおそれのある高齢者等が対象
+  - 申請できるのは対象者本人や家族など
+  - 申請に申請者の印鑑と登録する方の写真が必要
+  where: 長寿課の窓口
+  url: https://www.city.nichinan.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/2/2770.html
+  confidence: high
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

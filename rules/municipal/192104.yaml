@@ -1,0 +1,155 @@
+city: '192104'
+name: 甲斐市
+site: www.city.kai.yamanashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）クーポンの支給
+  name_on_page: 介護用品支給事業
+  summary: 在宅で要介護者を介護する家族に、おむつ等を買えるクーポン券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護者を在宅で介護している家族が申し込む
+  where: 長寿推進課 長寿あんしん係（申請書で申し込み）
+  url: https://www.city.kai.yamanashi.jp/page/4343.html
+  confidence: high
+  amount: 月 6,250 円分（要介護4・5で世帯全員が市民税非課税）、それ以外は月 3,000 円分
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見人等報酬助成金
+  summary: 成年後見人等に払う報酬を、経済的に難しい人に上限つきで助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている、または報酬の負担が難しい人
+  - 負担能力のある親族に扶養されている人は対象外
+  - 親族が後見人等に選ばれている人は対象外
+  - 審判決定日の翌日から2か月以内に申請
+  where: 長寿推進課 介護予防推進係
+  url: https://www.city.kai.yamanashi.jp/page/4362.html
+  confidence: high
+  amount: 月額上限：居宅 28,000 円、施設入所・入院中 18,000 円
+- category: kinkyu-tsuho
+  name: 緊急通報システム（ふれあいペンダント）の貸与
+  name_on_page: 緊急通報システム（ふれあいペンダント）事業
+  summary: ボタン一つで見守りセンターに通報できる装置を設置（貸与）する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らしで虚弱、または高齢者のみの世帯
+  - 緊急を要する病気等があり、装置が必要と認められる
+  where: 長寿推進課（窓口で相談）
+  url: https://www.city.kai.yamanashi.jp/page/4344.html
+  confidence: high
+  amount: 新規設置費の 1 割を自己負担（市民税非課税世帯は除く）。電話料・電気料は利用者負担
+- category: haishoku
+  name: 見守りを兼ねた夕食の配食
+  name_on_page: 配食サービス事業
+  summary: 夕食を届けて安否確認もする。利用の可否と回数は状況で決まる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね 65 歳以上
+  - 自分で調理することが難しい
+  - 配食が必要と認められる
+  where: 長寿推進課（窓口で相談）
+  url: https://www.city.kai.yamanashi.jp/page/4344.html
+  confidence: high
+  amount: 1 食 300 円（利用者負担）
+- category: ribiyo
+  name: 訪問理美容の利用券
+  name_on_page: 訪問理美容サービス事業
+  summary: 寝たきり等で店に行けない人の、自宅での理美容費用の一部を利用券で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 長寿推進課（申請書で申し込み）
+  url: https://www.city.kai.yamanashi.jp/page/4344.html
+  confidence: high
+  amount: 1 回 3,000 円分の利用券を年 6 回まで（10 月以降の申請は年 3 回まで）
+- category: gaishutsu
+  name: 高齢者のタクシー・バス利用券
+  name_on_page: 高齢者福祉タクシー・バス利用料金助成事業
+  summary: 条件に合う高齢者世帯に、タクシー利用券かバス回数券を渡す。
+  who:
+    age_min: 75
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住む 75 歳以上の高齢者世帯
+  - 自分で自動車等を運転しない
+  - 重度心身障がい者等のタクシー助成を受けた人は除く
+  where: 長寿推進課（申請書で申し込み）
+  url: https://www.city.kai.yamanashi.jp/page/4344.html
+  confidence: high
+  amount: タクシー初乗り分を月2枚、またはバス1,460円分を月1冊（両方なら半々）
+- category: mimamori
+  name: 民生委員による友愛訪問と飲料の支給
+  name_on_page: 友愛訪問事業
+  summary: 民生委員が自宅を訪ねて安否確認をし、乳酸菌飲料を渡す。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 安否確認が必要と認められる
+  where: 長寿推進課（申請書で申し込み）
+  url: https://www.city.kai.yamanashi.jp/page/4344.html
+  confidence: high
+  amount: 原則月 2 回の訪問。乳酸菌飲料を支給
+- category: haikai
+  name: 認知症高齢者等の見守りネットワーク登録
+  name_on_page: 認知症高齢者等見守りネットワーク事業
+  summary: 事前登録した人が行方不明になったら、家族の依頼で地域に情報を配信して捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む、65歳以上、または若年性認知症等の人
+  - 行方不明のおそれがある
+  - 家族等が登録申請書を出す
+  where: 長寿推進課、各支所市民地域課（郵送も可）
+  url: https://www.city.kai.yamanashi.jp/page/4358.html
+  confidence: high
+- category: sonota
+  name: 通所介護の食費の自己負担の助成
+  name_on_page: 介護保険通所サービス利用者食費負担額助成事業
+  summary: デイサービスの食費の自己負担の一部を助成する。事前の認定が必要。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住み、介護認定を受けている
+  - 通所介護サービス等を利用している
+  - 介護保険料の段階が第1段階。滞納がない
+  - 社会福祉法人等の負担軽減の対象でない
+  - 生活保護を受けていない
+  where: 長寿推進課（認定申請書で申し込み）
+  url: https://www.city.kai.yamanashi.jp/page/4344.html
+  confidence: high
+  amount: 食費 1 回につき 100 円
+not_found:
+- iro
+- jutaku
+- shingu
+- nichijo-yogu

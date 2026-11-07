@@ -1,0 +1,27 @@
+pref: '06'
+name: 山形県
+site: www.pref.yamagata.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 身体障がい者等用駐車施設の利用証（要介護の人を含む）
+  name_on_page: 山形県身体障がい者等用駐車施設利用証制度
+  summary: 要介護1〜5などの人に、障がい者等用駐車施設を使うための利用証を交付する
+  who: {}
+  at_application:
+  - 次のいずれかに当たる人が対象。要介護1〜5の認定を受けている人はその一つ
+  - ほか、身体障がい者、療育手帳A、指定難病、精神障害者保健福祉手帳1級、妊産婦などの人も対象
+  - 歩行が困難など、移動に配慮が必要と認められること
+  - 要介護の人は、介護保険被保険者証の写し（要介護度が分かる箇所）を添える
+  - 要介護の要件に当たらなくなったら、利用証を返却する
+  where: 県庁地域福祉推進課、村山保健所、最上・置賜・庄内の各総合支庁の窓口。郵送（県庁地域福祉推進課宛）とやまがたe申請でも申請できる
+  url: https://www.pref.yamagata.jp/090014/kenfuku/shogai/shien/shienservice/shisetsuriyoushou/parking.html
+  confidence: high
+not_found:
+- yutai
+- jutaku

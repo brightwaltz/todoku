@@ -1,0 +1,195 @@
+city: '102032'
+name: 桐生市
+site: www.city.kiryu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅ねたきり高齢者の紙おむつ利用券
+  name_on_page: 在宅ねたきり高齢者等紙おむつサービス利用券の交付
+  summary: ねたきりで要介護4・5の高齢者を介護する同居の家族に、紙おむつ等と交換できる利用券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 6か月以上ねたきりの高齢者を同居の家族が介護している
+  where: 長寿介護課 長寿支援係（民生委員を通じて交付）
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001780.html
+  confidence: high
+  amount: 月3,000円相当の利用券。年12枚で、年4回に3枚ずつ民生委員を通じて交付
+- category: ribiyo
+  name: 在宅ねたきり高齢者の調髪・美容利用券
+  name_on_page: 在宅ねたきり高齢者調髪・美容利用券の交付
+  summary: ねたきりの在宅高齢者が、出張の調髪・美容を無料で受けられる利用券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 申請時に6か月以上ねたきりである
+  where: 長寿介護課 長寿支援係（民生委員を通じて交付）
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001780.html
+  confidence: high
+  amount: 年3枚（年1回4月に交付）、利用負担は無料
+- category: haishoku
+  name: 「食」の自立支援事業（配食）
+  name_on_page: 「食」の自立支援事業
+  summary: 調理が難しい人に、決まった曜日に食事を届ける配食サービス。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯・高齢者のみ世帯、または身体障害者
+  - 病気やけが等で調理が困難
+  - 自立支援の観点から配食利用が適切と認められる
+  where: 長寿介護課 長寿支援係（頁に申請先の記載なし）
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001786.html
+  confidence: high
+  amount: 利用負担は1食400円。配達曜日は地区ごとに決まっている
+- category: haikai
+  name: 認知症高齢者等の見守りSOSネットワーク事前登録
+  name_on_page: 認知症高齢者等見守りSOSネットワーク事業
+  summary: 行方不明の心配がある高齢者を事前登録し、いなくなった時に警察や地域と情報を共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になる心配のある高齢者（認知症等）
+  where: 長寿介護課、新里支所・黒保根支所市民生活課、地域包括支援センター
+  url: https://www.city.kiryu.lg.jp/koureisha/1010434/1001778.html
+  confidence: high
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 住民税非課税世帯の高齢者が補聴器を買う費用の一部を助成する（購入前の申請が必要）。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻科医の意見書で両耳40dB以上70dB未満と認められる
+  - 過去に本事業の助成を受けていない
+  - 管理医療機器認定の新品の補聴器（集音器は対象外）
+  where: 長寿介護課、新里支所・黒保根支所の市民生活課
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001781.html
+  confidence: high
+  amount: 購入費と25,000円のうち低い方の額。1人1台まで
+- category: jutaku
+  name: 高齢者住宅改造補修助成
+  name_on_page: 高齢者住宅改造補修助成事業
+  summary: 高齢者だけが住む家のバリアフリー改造・補修の費用の一部を、市が助成する。
+  who:
+    age_min: 60
+    household:
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 工事の着工前に申請する
+  - 予算の範囲内のため件数に限りがある
+  where: 長寿介護課
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001781.html
+  confidence: high
+  amount: 経費と24万円のうち少ない方の6分の5（最高20万円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無料貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 電話にセットするボタン式の緊急通報装置を貸し出し、消防本部のセンターにつなぐ。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ひとり暮らし、または高齢者のみで一方が要支援以上かつ同居者が病弱
+  - 緊急連絡先と、最寄りの協力員1名以上が必要
+  where: 長寿介護課、新里支所・黒保根支所の市民生活課
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001781.html
+  confidence: high
+  amount: 貸与は無料。通話料・基本料金・電池交換・故障等は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（自己負担あり）
+  name_on_page: 緊急通報装置設置及びシステム利用事業
+  summary: 要介護認定のない65歳以上も、自己負担で緊急通報装置を設置して使える。
+  who:
+    age_min: 65
+  at_application:
+  - 緊急連絡先と、最寄りの協力員1名以上が必要
+  where: 長寿介護課、新里支所・黒保根支所の市民生活課
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001781.html
+  confidence: high
+  amount: 自己負担は課税者76,230円、非課税者38,000円。通話料等も自己負担
+- category: mimamori
+  name: ひとり暮らし高齢者の室内見守りシステム利用助成
+  name_on_page: ひとり暮らし高齢者室内見守りシステム利用助成事業
+  summary: 民間のセンサー式見守りシステムを入れる初期費用の一部を補助する（購入前の申請が必要）。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 購入前に申請する
+  where: 長寿介護課、新里支所・黒保根支所の市民生活課
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001781.html
+  confidence: high
+  amount: 機器設置費・初月利用料などの初期費用を、上限2万円まで補助
+- category: gaishutsu
+  name: 運転免許返納者へのバス等の無料乗車券
+  name_on_page: 運転免許証自主返納に係る路線バス等無料乗車券の交付
+  summary: 運転免許を自主返納した市民に、おりひめバスの定期券かデマンドタクシー回数券を無償で渡す。
+  who: {}
+  at_application:
+  - 有効期間内の運転免許証を自主返納した市民（年齢制限なし）
+  - 返納した日から1か月以内に申請する
+  where: 市役所交通ビジョン推進室（新里・黒保根は各支所でデマンドタクシー分のみ）
+  url: https://www.city.kiryu.lg.jp/kurashi/kotsu/1000999.html
+  confidence: high
+  amount: 70歳以上はバス定期1年分、または新里町デマンドタクシー回数券10セット
+- category: sonota
+  name: ひとり暮らし高齢者の無料入浴券
+  name_on_page: ひとり暮らし高齢者無料入浴券の交付
+  summary: 65歳以上のひとり暮らしの人に、無料で入浴できる券を渡す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 長寿介護課（民生委員を通じて交付）
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001785.html
+  confidence: high
+  amount: 年36枚以内（月3枚）、利用負担は無料
+- category: sonota
+  name: はり・きゅう・マッサージのサービス券
+  name_on_page: はり・きゅう・マッサージサービス券の交付
+  summary: 70歳以上の人に、市と契約した施術所で使える施術の補助券を渡す。
+  who:
+    age_min: 70
+  at_application: []
+  where: 長寿介護課 長寿支援係
+  url: https://www.city.kiryu.lg.jp/koureisha/fukushi/1001785.html
+  confidence: high
+  amount: 年5枚、1枚あたり800円の助成
+not_found:
+- iro
+- shingu
+- nichijo-yogu

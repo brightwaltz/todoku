@@ -1,0 +1,260 @@
+city: 082309
+name: かすみがうら市
+site: www.city.kasumigaura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ利用費の支給
+  name_on_page: おむつ利用費支給
+  summary: 要介護の方が買ったおむつ代の9割を、あとから口座に払い戻す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時おむつが必要
+  - 入院中は対象外
+  - 商品券等で払った分は対象外
+  where: 介護長寿課、霞ヶ浦窓口センター、千代田出張所
+  url: https://www.city.kasumigaura.lg.jp/page/page010200.html
+  confidence: high
+  amount: 1か月のおむつ代の9割、上限5,000円
+- category: ribiyo
+  name: 訪問理容・美容サービス費の支給
+  name_on_page: 訪問理容・美容サービス費支給
+  summary: 要介護3以上の方の訪問理美容の費用の9割を、あとから払い戻す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 自宅でサービスを受けた方（通所先での利用も対象）
+  where: 介護長寿課、霞ヶ浦窓口センター、千代田出張所
+  url: https://www.city.kasumigaura.lg.jp/page/page010200.html
+  confidence: high
+  amount: 2か月に1回分の費用の9割、上限2,000円
+- category: gaishutsu
+  name: 要介護認定者へのタクシー移送費の支給
+  name_on_page: 移送サービス費支給(タクシー)
+  summary: 要支援・要介護の方が使ったタクシー運賃の5割を払い戻す。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - タクシー利用料金助成事業とは併用できない
+  where: 介護長寿課、霞ヶ浦窓口センター、千代田出張所
+  url: https://www.city.kasumigaura.lg.jp/page/page010200.html
+  confidence: high
+  amount: 1か月のタクシー運賃の5割、上限10,000円
+- category: gaishutsu
+  name: タクシー利用助成券の交付
+  name_on_page: タクシー利用料金助成事業
+  summary: 対象の方にタクシー利用助成券を年間52枚まで交付する。
+  who: {}
+  at_application:
+  - 60歳以上で免許なし、または障害者手帳（身1・2級等）の方
+  - 要支援・要介護の認定を受けた方は対象外
+  - 入院中・施設入所中の方、世帯に市税滞納がある方は対象外
+  - 毎年度申請が必要
+  where: 市地域公共交通会議事務局（霞ヶ浦庁舎 都市整備課内）
+  url: https://www.city.kasumigaura.lg.jp/page/page006474.html
+  confidence: high
+  amount: 1枚あたり上限 普通車900円（実際の運賃が低ければその額）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: ｢食｣の自立支援事業(配食サービス)
+  summary: 調理が難しい高齢者に、定期的に食事を届ける（自己負担あり）。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 老衰・障害・病気などで調理が難しい
+  where: 介護長寿課
+  url: https://www.city.kasumigaura.lg.jp/page/page000298.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者見守りサポート事業（旧緊急通報装置事業）
+  summary: ひとり暮らしの高齢者などに緊急通報装置を貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上のひとり暮らし高齢者等
+  - 身体虚弱、突発的に危険な持病、または重度身体障害のいずれか
+  - 固定電話がなくても貸与可能
+  where: 介護長寿課
+  url: https://www.city.kasumigaura.lg.jp/page/page000298.html
+  confidence: high
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 寝たきりの高齢者などの寝具を洗濯・乾燥・消毒する（自己負担あり）。
+  who: {}
+  at_application:
+  - 次のいずれか：
+  - 寝具管理が難しい70歳以上の単身または高齢者のみ世帯
+  - 老衰・病気で寝たきりの65歳以上の方
+  - 寝たきりの重度身体障害者
+  where: 介護長寿課
+  url: https://www.city.kasumigaura.lg.jp/page/page000298.html
+  confidence: high
+- category: iro
+  name: 在宅介護慰労金
+  name_on_page: 在宅介護慰労金支給事業
+  summary: 要介護4・5の方をサービスなしで介護する非課税世帯に10万円を支給。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 基準日（7月31日）時点で介護保険サービスを使っていない
+  - ショートステイは1週間まで可
+  - 対象は介護している市民税非課税世帯の方
+  where: 介護長寿課
+  url: https://www.city.kasumigaura.lg.jp/page/page000298.html
+  confidence: low
+  amount: 10万円
+- category: nichijo-yogu
+  name: 住宅用火災報知器の設置
+  name_on_page: 住宅用火災報知器設置事業
+  summary: 対象のひとり暮らし高齢者の家に火災報知器を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 身体虚弱で緊急時に動きにくい、または突発的に危険な持病がある
+  - 1世帯につき1回限り、1個まで
+  where: 介護長寿課
+  url: https://www.city.kasumigaura.lg.jp/page/page000298.html
+  confidence: low
+- category: sonota
+  name: 軽度生活援助（草取り・清掃など）
+  name_on_page: 軽度生活援助事業
+  summary: シルバー人材センターの人が草取りや清掃を手伝う（自己負担あり）。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 介護長寿課
+  url: https://www.city.kasumigaura.lg.jp/page/page000298.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報キットの無償配布
+  name_on_page: 救急医療情報キット無償配布事業
+  summary: 救急時に備え、医療情報を入れて冷蔵庫に保管するキットを配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしまたは高齢者のみの世帯
+  - または心身に重度の障害がある方のみの世帯
+  where: 介護長寿課
+  url: https://www.city.kasumigaura.lg.jp/page/page000298.html
+  confidence: low
+  amount: 無償
+- category: hochoki
+  name: 高齢者の補聴器・集音器購入費補助
+  name_on_page: 高齢者補聴器等購入費補助金事業
+  summary: 補聴器や集音器の購入費の2分の1を、1人1回補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴力低下で日常的な使用が必要と医師が認めた
+  - 身体障害者手帳（聴覚障害）の交付を受けていない
+  - 購入前に医師の意見書が必要
+  - 予算がなくなると受付終了の場合あり
+  where: 介護長寿課、霞ヶ浦窓口センター、千代田出張所
+  url: https://www.city.kasumigaura.lg.jp/page/page018944.html
+  confidence: high
+  amount: 購入費の2分の1、上限1万円
+- category: haikai
+  name: 認知症高齢者等SOSネットワークの事前登録
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 行方不明に備えて本人の情報を登録し、いなくなったときに早期発見につなげる。
+  who: {}
+  at_application:
+  - 市内に住民登録がある
+  - 65歳以上で認知症（または相当すると認められる）方
+  - または若年性認知症（または相当すると認められる）方
+  where: 介護長寿課（頁に提出先の明記なし。問い合わせ先として記載）
+  url: https://www.city.kasumigaura.lg.jp/page/page008690.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者のQRコードシール配布
+  name_on_page: 認知症高齢者QRコード活用見守り事業
+  summary: 行方不明時に身元が分かるQRコードシール1セット（36枚）を無料で配る。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 65歳以上で認知症（または相当すると認められる）方
+  - または若年性認知症（または相当すると認められる）方
+  - 利用期間は年度ごと。継続は3月中に申請
+  where: 介護長寿課（頁に提出先の明記なし。問い合わせ先として記載）
+  url: https://www.city.kasumigaura.lg.jp/page/page008689.html
+  confidence: high
+  amount: 1セット（36枚）無料。追加は有料
+- category: sonota
+  name: 高齢者ごみ出し支援（戸別収集）
+  name_on_page: 高齢者ごみ出し支援事業
+  summary: ごみを出すのが難しい世帯の家を訪ねて家庭ごみを無料で集める。
+  who: {}
+  at_application:
+  - ごみ出しが難しい世帯（対象の詳細は窓口で確かめる）
+  - 申請後に現地調査をして決定
+  where: 介護長寿課、霞ヶ浦窓口センター、千代田出張所
+  url: https://www.city.kasumigaura.lg.jp/page/page018605.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 居宅サービス利用者負担の助成
+  name_on_page: 居宅介護サービス等利用者負担額助成
+  summary: 低所得の要支援・要介護の方の居宅サービスの自己負担の4分の1を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - サービスを受けた方の合計所得金額が0円以下
+  - 対象の方には市から通知。窓口で申請
+  - サービス利用月の3か月後の1日から2年以内に申請
+  where: 介護長寿課の窓口
+  url: https://www.city.kasumigaura.lg.jp/page/page011054.html
+  confidence: high
+  amount: 自己負担額の4分の1
+not_found:
+- koken
+- jutaku

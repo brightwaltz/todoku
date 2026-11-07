@@ -1,0 +1,28 @@
+pref: '41'
+name: 佐賀県
+site: www.pref.saga.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: パーキングパーミット（身障者用駐車場利用証）の交付
+  name_on_page: 佐賀県パーキングパーミット（身障者用駐車場利用証）制度
+  summary: 歩行が困難な要介護1以上の高齢者などに、身障者用駐車場の利用証を県が交付する。
+  who: {}
+  at_application:
+  - 歩行が困難で、次のどれか 1 つに当たる人（年齢の下限は頁に無い）
+  - 要介護 1 以上の高齢者（介護保険被保険者証の写しが必要）
+  - 身体障害者手帳の基準の等級・難病の受給者証・療育手帳 A の人
+  - 妊産婦、またはけが・病気で一時的に歩行が困難な人（有効 1 年未満）
+  - 高齢者の利用証は有効 5 年。申請書と該当書類の写しを出す
+  where: 県庁の行政の窓口、各保健福祉事務所、各市町の窓口（電子申請もできる）
+  url: https://www.pref.saga.lg.jp/kiji00361285/index.html
+  confidence: high
+  amount: 手数料はかからない
+  more_urls:
+  - https://www.pref.saga.lg.jp/kiji00361285/3_61285_up_w8ebehr7.pdf
+not_found: []

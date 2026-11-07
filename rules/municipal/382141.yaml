@@ -1,0 +1,99 @@
+city: '382141'
+name: 西予市
+site: www.city.seiyo.ehime.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 在宅ねたきり高齢者等の介護者への介護手当
+  name_on_page: 在宅ねたきり老人等介護手当支給
+  summary: 要介護4・5相当の高齢者を在宅で介護する、無職の介護者に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人は65歳以上。介護者も本人も市内に1年以上在住
+  - 介護者は無職で、毎月16日以上在宅で介護している
+  - ねたきり、または重度の認知症の状態が6か月以上続いている
+  - 申請後に訪問調査があり、判定委員会で支給を決める
+  where: 福祉事務所長寿介護課、各支所生活福祉課
+  url: https://www.city.seiyo.ehime.jp/kakuka/fukushi_jimusho/choju_kaigo/koureisyafukusi/8888.html
+  confidence: high
+  amount: 月額10,000円
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の現物給付
+  name_on_page: 介護用品給付（紙オムツなど）
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、紙おむつなどの介護用品を現物で給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人も介護する家族も市内に住所がある
+  - 給付されるのは紙オムツ・尿とりパッド・清拭剤・ドライシャンプー・使い捨て手袋
+  where: 福祉事務所長寿介護課
+  url: https://www.city.seiyo.ehime.jp/kakuka/fukushi_jimusho/choju_kaigo/koureisyafukusi/8889.html
+  confidence: high
+  amount: 年額30,000円が上限（年度の途中からは月割り）
+- category: gaishutsu
+  name: 65歳以上のバス運賃半額助成券
+  name_on_page: 65歳以上の人のバス運賃補助
+  summary: 公共路線バスの運賃の半額を助成する助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある（申請日に65歳以上）
+  - 身体障害者の割引や運転免許の自主返納の割引を使っている人は対象外
+  - 対象は宇和島自動車の路線（急行・特急を除く）と野村地区の代替バス
+  where: 長寿介護課、各支所地域生活課、各地域づくり活動センター
+  url: https://www.city.seiyo.ehime.jp/kakuka/fukushi_jimusho/choju_kaigo/koureisyafukusi/1124.html
+  confidence: high
+  amount: 片道260円以上の区間で半額。年度内72回まで
+- category: haikai
+  name: 徘徊高齢者等SOS登録と見守りQRマーク
+  name_on_page: 徘徊高齢者等SOS登録事業
+  summary: 徘徊のおそれのある認知症高齢者を家族が事前登録し、見守りQRマークの交付を受ける。
+  who: {}
+  at_application:
+  - 市内に居住している高齢者等
+  - 家族が届出書に本人の写真を添えて提出する
+  where: 福祉事務所長寿介護課
+  url: https://www.city.seiyo.ehime.jp/kurashi/koureinokata/ninnchishoushienn/4746.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり、きゅう及びマッサージ等施術費助成
+  summary: 市の指定を受けた施術者のはり・きゅう・マッサージ等で、1回ごとに割引になる助成券を交付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある
+  - 4月1日時点で65歳以上、または身体障害者手帳3級以上
+  - 申請時に住民税非課税世帯に属している
+  where: 福祉事務所長寿介護課、各支所地域生活課、各地域づくり活動センター
+  url: https://www.city.seiyo.ehime.jp/kakuka/fukushi_jimusho/choju_kaigo/koureisyafukusi/1324.html
+  confidence: high
+  amount: 施術1回につき1,000円割引。年度に12回まで
+not_found:
+- haishoku
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- yutai

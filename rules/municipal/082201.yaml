@@ -1,0 +1,304 @@
+city: 082201
+name: つくば市
+site: www.city.tsukuba.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成券
+  name_on_page: 在宅要介護高齢者等紙おむつ購入費助成事業
+  summary: 要介護1〜5で本人が市民税非課税の人に、紙おむつ購入用の助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護1〜3は排尿・排便に介助が必要と認められること
+  - 要介護4・5は日常生活で紙おむつが必要なこと
+  - 同一年度に障害福祉課のおむつ助成を使っていない
+  - 要支援の人は対象外
+  where: 高齢福祉課、各窓口センター（郵送・電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibukoreifukushika/gyomuannai/6/1/1001325.html
+  confidence: high
+  amount: 1,000円券×24枚（申請時期で枚数が減る。1〜3月は6枚）
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: ribiyo
+  name: 寝たきり高齢者の訪問理美容の助成券
+  name_on_page: ねたきり高齢者理美容料助成事業
+  summary: 理美容店に行けない寝たきりの人が、自宅で理美容を受ける費用の一部を助成券で補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護4・5の認定を受けている、または寝たきり状態
+  where: 高齢福祉課、各窓口センター（郵送・電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibukoreifukushika/gyomuannai/6/1/1001325.html
+  confidence: high
+  amount: 4,000円券×2枚
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: sonota
+  name: 部屋掃除・草取りなど軽作業の助成券
+  name_on_page: 高齢者日常生活支援事業（すけっとくん）
+  summary: 自分で行うのが難しい部屋掃除や草取りなどを頼む費用の一部を、助成券で補助する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 同一敷地内・隣接地に親族などが住んでいない
+  - 令和9年（2027年）2月末が申請締切
+  where: 高齢福祉課、各窓口センター（郵送・電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibukoreifukushika/gyomuannai/6/1/1001325.html
+  confidence: high
+  amount: 500円券×12枚（1世帯につき12枚）
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: sonota
+  name: あん摩・マッサージ・はり・きゅう施術費の助成券
+  name_on_page: あん摩・マッサージ・指圧・はり及びきゅう施術費助成事業
+  summary: 70歳以上の人が施術を受ける費用の一部を、助成券で補助する。
+  who:
+    age_min: 70
+    at_home: true
+  at_application:
+  - 健康保険を使う施術には助成券を使えない
+  where: 高齢福祉課、各窓口センター（郵送・電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibukoreifukushika/gyomuannai/6/1/1001325.html
+  confidence: high
+  amount: 1,000円券×8枚（申請時期で枚数が減る。1〜3月は2枚）
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: shingu
+  name: 布団の丸洗い乾燥
+  name_on_page: 在宅高齢者布団丸洗い乾燥事業
+  summary: 掛布団・敷布団・毛布の丸洗い乾燥を年2回無料で行う。替えの布団の貸出しもある。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護4・5の認定を受けている、または寝たきり状態など
+  - 令和9年（2027年）2月末が申請締切
+  where: 高齢福祉課、各窓口センター（郵送・電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibukoreifukushika/gyomuannai/6/1/1001325.html
+  confidence: high
+  amount: 無料（年2回）
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: gaishutsu
+  name: 高齢者のタクシー運賃助成券
+  name_on_page: 高齢者タクシー運賃助成事業
+  summary: 外出時のタクシー運賃の一部を助成券で補助する。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれか：65歳以上ひとり暮らし、70歳以上の高齢者のみ世帯
+  - 70歳以上で市民税非課税世帯、または80歳以上
+  - 自家用車を運転している人は対象外
+  - 同年度に障害者タクシー助成などを使った人は対象外
+  where: 高齢福祉課、各窓口センター（郵送・電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibukoreifukushika/gyomuannai/6/1/1001325.html
+  confidence: high
+  amount: 500円券×24枚（1回の乗車で5枚まで）
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 高齢者補聴器購入費補助事業
+  summary: 手帳の対象でない中等度難聴の65歳以上の人に、補聴器本体の購入費の半額を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力が40dB以上70dB未満で、医師が必要と認めた
+  - 身体障害者手帳（聴覚）の対象でない
+  - 交付決定の前に買ったものは対象外。1人1回限り
+  where: 高齢福祉課
+  url: https://www.city.tsukuba.lg.jp/kenko_iryo_fukushi/koureisha/zaitaku/20154.html
+  confidence: low
+  amount: 本体購入費の2分の1、上限3万円
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らしの高齢者に、固定型か携帯型の緊急通報機器を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65歳以上で病弱・重度障害のため自力通報が困難、または75歳以上
+  - 同一敷地内・同一建物内に親族がいない
+  - 固定電話か携帯電話があり、鍵を開ける協力員が1人以上必要
+  where: 高齢福祉課（郵送も可）
+  url: https://www.city.tsukuba.lg.jp/kenko_iryo_fukushi/koureisha/zaitaku/1001326.html
+  confidence: high
+  amount: 市民税非課税・生活保護の世帯は0円、課税世帯は年額7,560円の負担
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: haishoku
+  name: 宅配食事サービス
+  name_on_page: 宅配食事サービス事業
+  summary: 調理や買い物が難しい高齢者に、安否確認を兼ねて食事を手渡しで届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 安否確認が必要で、心身の障害などで調理・買い物が困難
+  - 同一敷地内・隣接地に65歳未満の親族などがいる場合は対象外
+  - 愛の定期便とは併用できない
+  - 様子を見に行ける緊急連絡先の登録が必要
+  where: 高齢福祉課（郵送も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibukoreifukushika/gyomuannai/6/1/1001329.html
+  confidence: high
+  amount: 普通食1食400円の自己負担（生活保護世帯は300円）
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: mimamori
+  name: 乳製品の配達による見守り
+  name_on_page: 愛の定期便事業
+  summary: 見守りが必要なひとり暮らしの高齢者に、乳製品を週3回まで手渡しで届け、安否を確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 見守りを必要とする人
+  - 同一敷地内・隣接地に親族などがいる場合は対象外
+  - 宅配食事サービスとは併用できない
+  - 様子を見に行ける緊急連絡先の登録が必要
+  where: 高齢福祉課（郵送も可）
+  url: https://www.city.tsukuba.lg.jp/kenko_iryo_fukushi/koureisha/zaitaku/1001327.html
+  confidence: high
+  amount: 乳製品代の半額が自己負担
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/45/goannnaR8i.pdf
+- category: haikai
+  name: 認知症高齢者等SOSネットワークの事前登録
+  name_on_page: つくば市認知症高齢者等SOSネットワーク
+  summary: 行方不明のおそれがある人を事前に登録し、行方不明時に関係機関や警察と情報を共有して捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症またはその疑いがある
+  - 届出に写真が必要。登録は年度の翌々年度末まで有効
+  where: 地域包括支援課（郵送・いばらき電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibuchiikihokatsushienka/gyomuannai/2/1/1001346.html
+  confidence: high
+- category: haikai
+  name: おでかけ見守りシールの配布
+  name_on_page: つくば市おでかけ見守りシール
+  summary: 二次元バーコード付きシールを無料で配り、行方不明時に家族へ読み取り通知が届くようにする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - SOSネットワークの事前登録を申し込んでいる
+  - 在宅で介護されている
+  where: 地域包括支援課（SOS事前登録届と同時に申込み）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibuchiikihokatsushienka/gyomuannai/2/1/22611.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibuchiikihokatsushienka/gyomuannai/2/1/1001346.html
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（市が加入）
+  name_on_page: つくば市認知症高齢者等個人賠償責任保険
+  summary: 認知症の人が事故で賠償責任を負ったとき、市が加入する保険で賠償金を補償する。
+  who:
+    at_home: true
+  at_application:
+  - 住民基本台帳に登録されている
+  - SOSネットワークに事前登録している
+  - 施設・サービス付き高齢者向け住宅の入居者は対象外
+  - 年度ごとに申請が必要
+  where: 地域包括支援課（いばらき電子申請も可）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibuchiikihokatsushienka/gyomuannai/2/1/24690.html
+  confidence: high
+  amount: 加入費用は無料
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の審判請求費用や後見人等への報酬を、条件に当てはまる人に助成する。
+  who: {}
+  at_application:
+  - 申請の前に市の実施要綱を確認する
+  where: 地域包括支援課（障害のある人は障害者地域支援室）
+  url: https://www.city.tsukuba.lg.jp/soshikikarasagasu/fukushibuchiikihokatsushienka/gyomuannai/2/1/15941.html
+  confidence: low
+  more_urls:
+  - https://www.city.tsukuba.lg.jp/material/files/group/7/seinen2.pdf
+- category: sonota
+  name: 高齢者等のごみ出し支援（戸別収集）
+  name_on_page: 高齢者等ごみ出し支援事業
+  summary: ごみ集積所へ出せない世帯の家庭ごみを、週1回戸別に収集し、安否確認も行う。
+  who: {}
+  at_application:
+  - 世帯全員が要支援2以上の認定者など（障害者手帳・18歳未満も可）
+  - 同一敷地内・隣接地に対象外の親族がいない
+  - 親族やヘルパーの協力・福祉サービスで出せない
+  - 敷地内に集積所がある場合は対象外
+  where: 高齢福祉課（介護認定を受けている人）。障害者手帳の人は障害福祉課
+  url: https://www.city.tsukuba.lg.jp/kenko_iryo_fukushi/koureisha/zaitaku/24783.html
+  confidence: high
+  amount: 収集費用は無料（ふた付き容器は自分で用意）
+- category: sonota
+  name: 電動アシスト自転車の購入費補助
+  name_on_page: 高齢者電動アシスト自転車等購入費補助事業
+  summary: 市の交通安全講習を受けた65歳以上の人に、電動アシスト自転車とヘルメットの購入費を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 補助の交付年度内に65歳になる市民
+  - 市の交通安全講習を本人が受講する
+  - 1世帯1人1回まで。市税の滞納がない
+  where: 高齢福祉課
+  url: https://www.city.tsukuba.lg.jp/kenko_iryo_fukushi/koureisha/zaitaku/13600.html
+  confidence: high
+  amount: 本体の4分の3（2輪は上限5万円、3・4輪は上限12万円）。ヘルメットは上限2,000円
+- category: gaishutsu
+  name: つくバス・つくタクの高齢者運賃割引証
+  name_on_page: 高齢者運賃割引証
+  summary: 割引証を見せると、つくバス・つくタク・つくばね号の運賃が半額になる。
+  who:
+    age_min: 65
+  at_application:
+  - 市に住民登録がある
+  - 窓口で申請し即日交付（スマホアプリ「つくスマ」でも利用可）
+  where: 高齢福祉課、各窓口センター
+  url: https://www.city.tsukuba.lg.jp/kurashi/kotsu/bus/index.html
+  confidence: high
+  amount: 運賃が半額
+- category: gaishutsu
+  name: 運転免許を自主返納した人への乗車券・PASMO
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 運転免許を自主返納した65歳以上の人に、つくバス乗車券またはPASMOを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 運転免許を自主返納した人（取消通知書の写しなどを添付）
+  - 申請は返納後1回限り
+  where: 防犯交通安全課、各窓口センター（郵送も可）
+  url: https://www.city.tsukuba.lg.jp/kurashi/anshin/bouhan/1000621.html
+  confidence: high
+  amount: 免許の残り有効期間で6,000円・8,000円・10,000円分
+not_found:
+- iro
+- jutaku

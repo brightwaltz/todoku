@@ -1,0 +1,114 @@
+city: '402249'
+name: 福津市
+site: www.city.fukutsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙パンツ等）購入費の助成
+  name_on_page: 介護用品（紙パンツ等）購入費の一部を助成します
+  summary: 重度の要介護の高齢者が使う紙パンツ等を、月に一度の配達（現物給付）で助成する
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 福津市に住民票がある
+  - 常時、紙パンツ等を使用している状態（常時失禁状態）
+  - 介護施設に入所の場合、対象とならない施設がある
+  where: 高齢者サービス課（家族・ケアマネジャーの代理申請も可）
+  url: https://www.city.fukutsu.lg.jp/kenkou_fukushi/koreisha/auxiliary/citizen/4459.html
+  confidence: high
+  amount: 1か月ごとに上限 5,000 円。介護保険の負担割合1割の人は、上限内の1割（最大 500 円）が自己負担。超過分は全額自己負担
+- category: sonota
+  name: はり・きゅう治療費の助成
+  name_on_page: はり・きゅう治療費の一部を助成します
+  summary: 65歳以上の人が、市の指定業者ではり・きゅうの施術料の助成を受けられる
+  who:
+    age_min: 65
+  at_application:
+  - 福津市に住民票がある（65歳に達する月から）
+  - 指定施術業者に登録証と印鑑を持って行く
+  where: 高齢者サービス課窓口（家族の代理申請も可）
+  url: https://www.city.fukutsu.lg.jp/kenkou_fukushi/koreisha/auxiliary/citizen/17057.html
+  confidence: high
+  amount: 月5回まで、1回の施術につき 500 円の助成
+- category: haishoku
+  name: 見守りを目的とした配食サービスの費用助成
+  name_on_page: 見守りを目的とした配食サービスの一部費用を助成します
+  summary: 調理や買い物が難しい65歳以上のひとり暮らし等に、見守りを兼ねた夕食を届ける
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身機能の低下で食事の準備が困難
+  - 世帯の外から見守りの必要性がある
+  - 夕食のみ。安否確認のため対面で受け取る
+  where: 高齢者サービス課
+  url: https://www.city.fukutsu.lg.jp/kenkou_fukushi/koreisha/auxiliary/citizen/17058.html
+  confidence: high
+  amount: 利用料は1食 500 円。夕食のみ、週5回まで
+- category: jutaku
+  name: 高齢者に配慮した住宅改造費の助成
+  name_on_page: 高齢者に配慮した住宅改造費の一部を助成します
+  summary: 浴室・便所・玄関などの住宅改造に、介護保険の住宅改修とは別に補助する
+  who: {}
+  at_application:
+  - 要支援1以上、または障害者手帳1・2級、または療育手帳A
+  - 世帯が生活保護、または生計中心者が住民税・前年所得税非課税
+  - 住宅改造が必要と市長が認めた人（本人か同居の人）
+  - 介護保険の住宅改修の支給限度額を超えた分などで、書類上区分
+  - 1住宅につき1回限り
+  where: 高齢者サービス課 高齢者福祉係（ページの担当部署）
+  url: https://www.city.fukutsu.lg.jp/kenkou_fukushi/koreisha/auxiliary/citizen/17062.html
+  confidence: high
+  amount: 補助基準額は1住宅につき 30 万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（発作を伴う病歴等）
+  name_on_page: 発作を伴う病歴等による緊急通報システムについて
+  summary: 緊急時に24時間対応の受信センターへ連絡できる装置を、自宅に貸与する
+  who: {}
+  at_application:
+  - 身体的虚弱等で緊急時の連絡手段の確保が困難で、次のどちらか
+  - ひとり暮らし等の高齢者で、心臓疾患・脳血管疾患など発作の病歴がある
+  - ひとり暮らし等の重度身体障害者
+  - 協力員3人程度の登録が必要
+  where: 高齢者サービス課（65歳未満は福祉課）
+  url: https://www.city.fukutsu.lg.jp/kenkou_fukushi/koreisha/life/17049.html
+  confidence: high
+  amount: 費用は無料（装置は貸与）
+- category: haikai
+  name: 認知症高齢者捜してメール
+  name_on_page: 認知症高齢者捜してメール
+  summary: 行方不明のおそれがある高齢者を事前登録し、いなくなったとき協力者にメールで知らせる
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 福津市内に居住し、認知症等で行方不明のおそれのある高齢者等
+  - 申請は本人、3親等内の親族、常時介護している人
+  - 登録に顔と全身の写真2枚が必要
+  where: 高齢者サービス課（申請書の保管は同課・地域包括支援センター・宗像警察署）
+  url: https://www.city.fukutsu.lg.jp/kenkou_fukushi/koreisha/watch/2132.html
+  confidence: high
+  amount: 登録は無料（メールの送受信費用は利用者負担）
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- yutai

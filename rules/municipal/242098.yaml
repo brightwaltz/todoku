@@ -1,0 +1,113 @@
+city: '242098'
+name: 尾鷲市
+site: www.city.owase.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業
+  summary: 調理が困難な高齢者に定期的に食事を届け、安否確認も行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 原則65歳以上
+  - 調理が困難な方
+  where: 福祉保健課高齢者福祉係（申請書あり）
+  url: https://www.city.owase.lg.jp/0000000253.html
+  confidence: high
+  amount: 1食450円の自己負担。週1〜3回
+- category: kaigo-yohin
+  name: 家族介護用品券の支給
+  name_on_page: 尾鷲市家族介護用品券支給事業
+  summary: 要介護4・5の方を在宅で介護する家族に、おむつ等を買える利用券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の方を在宅で介護している家族
+  - 施設入所や1か月以上の入院中は対象外
+  where: 福祉保健課高齢者福祉係、または担当ケアマネジャー経由
+  url: https://www.city.owase.lg.jp/0000021560.html
+  confidence: high
+  amount: 課税世帯3,000円、非課税世帯6,250円（期間の単位は頁に記載なし）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしで虚弱な高齢者に、簡単に通報できる機械を無料で貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 原則65歳以上で、ひとり暮らしの虚弱な高齢者
+  - 地区の民生委員を通して申し込む
+  where: 地区の民生委員経由（福祉保健課高齢者福祉係）
+  url: https://www.city.owase.lg.jp/0000021561.html
+  confidence: high
+  amount: 利用者負担なし
+- category: haikai
+  name: 高齢者等SOSネットワーク（行方不明時の早期発見）
+  name_on_page: 尾鷲市高齢者等ＳＯＳネットワーク事業
+  summary: 徘徊のおそれがある方を事前登録し、行方不明時に関係機関で情報共有して捜索する。
+  who: {}
+  at_application:
+  - 認知症等で徘徊のおそれがある方、または障害等で帰宅が困難な方
+  - 家族などが事前に市へ登録する
+  where: 福祉保健課、尾鷲市地域包括支援センター
+  url: https://www.city.owase.lg.jp/0000014171.html
+  confidence: high
+- category: koken
+  name: 成年後見制度の市長申立てと報酬助成
+  name_on_page: 成年後見制度利用支援
+  summary: 親族が申立てできない場合の市長申立てと、後見人への報酬の助成を行う。
+  who: {}
+  at_application:
+  - 報酬助成は第三者が後見人等の方が対象
+  - 生活保護の方など、報酬の支払いが困難な方
+  - 市長申立ては身寄りがなく親族が申立てできない方
+  - 報酬付与の審判確定の翌日から2か月以内に申請
+  where: 福祉保健課高齢者福祉係
+  url: https://www.city.owase.lg.jp/0000021221.html
+  confidence: high
+  amount: 報酬助成の上限は月額で、在宅28,000円・施設入所18,000円
+- category: sonota
+  name: 生活管理指導短期宿泊（老人ホームでの短期宿泊）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホーム聖光園に短期間泊まり、日常生活の援助を受ける。
+  who: {}
+  at_application:
+  - 原則65歳以上で、介護認定を受けていない方
+  - 利用は原則1週間程度
+  where: 福祉保健課高齢者福祉係（頁に申請先の明記なし。問い合わせ先として記載）
+  url: https://www.city.owase.lg.jp/0000000463.html
+  confidence: high
+  amount: 1日1,730円の自己負担
+- category: gaishutsu
+  name: ふれあいバス 65歳以上フリーパス（運賃無料）
+  name_on_page: ６５歳以上フリーパス
+  summary: 市内在住の65歳以上は、フリーパスを見せるとふれあいバスが無料になる。
+  who:
+    age_min: 65
+  at_application:
+  - 尾鷲市に住所がある
+  - 事前にフリーパスの交付申請が必要
+  where: 市長公室企画調整係、市民サービス課カウンター、各コミュニティセンター、バス車内
+  url: https://www.city.owase.lg.jp/0000024920.html
+  confidence: high
+  amount: ふれあいバスの運賃が無料（2026年10月1日開始）
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

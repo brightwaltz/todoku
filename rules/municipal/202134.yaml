@@ -1,0 +1,193 @@
+city: '202134'
+name: 飯山市
+site: www.city.iiyama.nagano.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食（お弁当の配達）サービス
+  name_on_page: 配食サービス
+  summary: 安否確認を兼ねて、栄養バランスのよい弁当を週3回以内まで自宅に届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 病弱などで調理や食材の買い出しが困難な人
+  - 申込時に日常生活の様子を聞き取りされる
+  where: 地域包括支援センター
+  url: https://www.city.iiyama.nagano.jp/soshiki/tiiki/kaigoshien/jiritsushien/haishoku.html
+  confidence: high
+  amount: 1食450円（ご飯・おかず・汁）または1食400円（おかず・汁）。週3回以内（月・水・金）
+  more_urls:
+  - https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/kaigo/koureishafukushi/seikatsusien.html
+- category: ribiyo
+  name: 訪問理美容の出張料利用券
+  name_on_page: 訪問理美容サービス
+  summary: 出張で理美容を受けるときの出張料にあてる利用券を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+  at_application:
+  - 理容院・美容院に行くことが困難な人
+  - 窓口には介護保険被保険者証を持参
+  where: 保健福祉課 高齢者介護保険係
+  url: https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/kaigo/koureishafukushi/seikatsusien.html
+  confidence: high
+  amount: 1,000円の利用券を年4枚以内（超過分と理美容料金は自己負担）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒の利用券
+  name_on_page: 寝具の洗濯・乾燥・消毒サービス
+  summary: 指定のクリーニング店で掛敷布団の洗濯・乾燥・消毒を受けるときの利用券を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+  at_application:
+  - 寝具の衛生管理が困難な人
+  - 窓口には介護保険被保険者証を持参
+  where: 保健福祉課 高齢者介護保険係
+  url: https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/kaigo/koureishafukushi/seikatsusien.html
+  confidence: high
+  amount: 2,000円の利用券を年4枚以内（超過分は自己負担）
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の利用券
+  name_on_page: 介護用品給付
+  summary: 介護する家族が指定店で紙おむつ・尿取りパッド・使い捨て手袋・おしりふきを買うときの利用券を毎月給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 排泄に介助または見守りが必要と認められる人
+  - 窓口には介護保険被保険者証を持参
+  where: 保健福祉課 高齢者介護保険係
+  url: https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/kaigo/koureishafukushi/seikatsusien.html
+  confidence: high
+  amount: 要介護4・5は月1枚で上限6,200円、要介護2・3は月1枚で上限3,600円
+- category: iro
+  name: 重度の要介護者を在宅で介護する人への慰労金
+  name_on_page: 介護慰労金
+  summary: 要介護3以上の高齢者を長く在宅で介護している人に、12月に慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護している人（家族）が申請する
+  - 1年のうち180日以上、在宅で介護していること
+  where: 保健福祉課 高齢者介護保険係
+  url: https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/kaigo/koureishafukushi/seikatsusien.html
+  confidence: high
+  amount: 1人5万円（12月に支給）
+- category: gaishutsu
+  name: 福祉乗り物利用券（バス・タクシー等）
+  name_on_page: 福祉乗り物利用券給付事業
+  summary: 乗り合いタクシー・路線バス・タクシーのいずれかで使える利用券を、住む地区に応じて給付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 75歳以上、または障害者手帳をもつ18歳以上の人
+  - 運転免許を持っていない人（返納・失効を含む）
+  - 障害者・寝たきり老人等タクシー乗車券の受給者は対象外
+  where: 保健福祉課 高齢者介護保険係
+  url: https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/kaigo/koureishafukushi/norimono
+  confidence: high
+  amount: 2か月あたり800円・1,200円・1,600円（地区で異なる）。年間4,800〜9,600円以内
+- category: gaishutsu
+  name: 障害者・寝たきり老人等のタクシー乗車券
+  name_on_page: タクシー乗車券給付事業
+  summary: 在宅の重度障がい者や要介護2以上の人に、住む地区に応じたタクシー乗車券を交付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護2〜5の認定を受けた人、または重度の障害者手帳等の人
+  - 市内に住所があること
+  - 申請に介護保険証（または手帳）と認印が必要
+  where: 保健福祉課 障がい福祉係
+  url: https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/syougaifukushi/seido/taxi1
+  confidence: high
+  amount: 1か月あたり1,000円・1,500円・2,000円分（地区で異なる）。年間は月数分
+- category: haikai
+  name: GPS等位置検索機器の導入・利用料の補助
+  name_on_page: 高齢者へのGPS等の使用に関する費用の補助について
+  summary: 徘徊のおそれがある高齢者へ持たせるGPS機器の購入費と月額利用料を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+    - dementia_diagnosis
+  at_application:
+  - 介護している人が申請する
+  - 市税の滞納がないこと
+  - 携帯電話・スマートフォンは対象外
+  where: 地域包括支援センター
+  url: https://www.city.iiyama.nagano.jp/soshiki/tiiki/kaigoshien/osirase/61412
+  confidence: high
+  amount: 導入費は上限5,000円（全額）、月額利用料は上限500円で最大36か月。各1回限り
+- category: kinkyu-tsuho
+  name: 高齢者見守り支援システム（安否センサー・緊急通報装置）
+  name_on_page: 高齢者見守り支援システム
+  summary: 安否センサーや緊急通報装置を自宅に設置し、近隣の協力で確認・対応する体制をつくる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らしの人
+  - または、高齢者のみで要介護2以上の人がいる世帯
+  - 条件外でも自己負担で設置できる（要相談）
+  where: 地域包括支援センター
+  url: https://www.city.iiyama.nagano.jp/soshiki/tiiki/kaigoshien/jiritsushien/mimamori.html
+  confidence: high
+  amount: 利用料は無料
+- category: sonota
+  name: 運転免許の自主返納・失効への補助金
+  name_on_page: 高齢者運転免許証自主返納等支援補助金
+  summary: 運転免許を自主返納または失効した65歳以上の人に補助金を1回交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 令和7年4月1日以後に免許を返納または失効した人
+  - 市内に住所がある
+  - 返納・失効日から1年以内に申請
+  where: 保健福祉課 高齢者介護保険係
+  url: https://www.city.iiyama.nagano.jp/soshiki/hokenfukushi/kaigo/koureishafukushi/menkyohennou
+  confidence: high
+  amount: 10,000円（1回限り）
+not_found:
+- jutaku
+- mimamori

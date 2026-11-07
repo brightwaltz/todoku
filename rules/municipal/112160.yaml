@@ -1,0 +1,181 @@
+city: '112160'
+name: 羽生市
+site: www.city.hanyu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 同居の家族が介護する要介護4・5の人に、紙おむつや尿とりパッドを支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 高齢介護課（高齢福祉係）
+  url: https://www.city.hanyu.lg.jp/docs/2012041900186/
+  confidence: high
+  amount: 月1回、紙おむつ（または紙パンツ）と尿とりパッドを現物で支給。自己負担なし
+  more_urls:
+  - https://www.city.hanyu.lg.jp/docs/2016052500014/file_contents/file_20255959244_1.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の人を在宅で介護する同居の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護4・5の状態が6か月以上続いている
+  - 介護される人と同じ住所の家族が対象（市内に住所）
+  - 介護保険料の滞納がないこと
+  - 在宅重度心身障がい者手当・特別障害者手当を受給していない
+  - ショートステイ等で月15日以上在宅介護でない月は支給なし
+  where: 高齢介護課（高齢福祉係）
+  url: https://www.city.hanyu.lg.jp/docs/2012041900230/
+  confidence: high
+  amount: 月額5,000円（申請した月から）
+  more_urls:
+  - https://www.city.hanyu.lg.jp/docs/2016052500014/file_contents/file_20255959244_1.pdf
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 1人暮らし等の高齢者に、週1回昼食を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 1人暮らし等の高齢者
+  where: 高齢介護課、または住所地を担当する地域包括支援センター
+  url: https://www.city.hanyu.lg.jp/docs/2012041900209/
+  confidence: high
+  amount: 1食350円（市民税課税の人は450円）
+  more_urls:
+  - https://www.city.hanyu.lg.jp/docs/2016052500014/file_contents/file_20255959244_1.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ボタン1つで受信センターにつながり、看護師の相談や救急要請ができる装置を設置する。
+  who: {}
+  at_application:
+  - 1人暮らし等の高齢者
+  - 慢性疾患等で健康上の注意が必要な人
+  where: 高齢介護課（高齢福祉係）
+  url: https://www.city.hanyu.lg.jp/docs/2012041900179/
+  confidence: high
+  amount: 設置費5,000円と通話料が自己負担
+  more_urls:
+  - https://www.city.hanyu.lg.jp/docs/2016052500014/file_contents/file_20255959244_1.pdf
+- category: mimamori
+  name: 見守りキットの配布
+  name_on_page: 見守りキット事業
+  summary: かかりつけ医や緊急連絡先を書くシートの入ったキットを無料で配る。
+  who: {}
+  at_application:
+  - 日常生活に不安がある1人暮らしの高齢者等
+  where: 高齢介護課（高齢福祉係）
+  url: https://www.city.hanyu.lg.jp/docs/2013091200028/
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 徘徊高齢者の位置探索端末の貸出
+  name_on_page: 徘徊高齢者等位置探索サービス事業
+  summary: 所在不明時に現在地を探せる端末を、徘徊のおそれがある在宅の人に貸し出す。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application: []
+  where: 高齢介護課（高齢福祉係）
+  url: https://www.city.hanyu.lg.jp/docs/2012041900193/
+  confidence: high
+  amount: 基本料金は月額1,320円。ほかに位置探索情報提供料が必要
+  more_urls:
+  - https://www.city.hanyu.lg.jp/docs/2016052500014/file_contents/file_20255959244_1.pdf
+- category: haikai
+  name: 徘徊高齢者ステッカーの交付
+  name_on_page: 羽生市徘徊高齢者ステッカー
+  summary: 靴や杖に貼る反射材ステッカーを無料で交付し、保護時の身元確認に役立てる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で著しい徘徊行動がある（若年性認知症等も対象）
+  - 申請書と、ケアマネジャー等が作る理由書が必要
+  - ケアマネジャーがいない場合は高齢介護課に相談
+  where: 担当ケアマネジャーに相談、いない場合は高齢介護課
+  url: https://www.city.hanyu.lg.jp/docs/2015112400011/
+  confidence: high
+  amount: 無料
+- category: shingu
+  name: 寝具の洗濯・乾燥サービス
+  name_on_page: 寝具洗濯乾燥等サービス事業
+  summary: 寝具の洗濯・乾燥・消毒を行い、衛生の向上と家族の負担軽減を図る。
+  who: {}
+  at_application:
+  - おおむね65歳以上の1人暮らし、または高齢者のみの世帯
+  - または要介護4・5（相当の人を含む）
+  where: 高齢介護課（高齢福祉係）
+  url: https://www.city.hanyu.lg.jp/docs/2012041900247/
+  confidence: high
+  amount: 自己負担は洗濯1回600円（年2回まで）、乾燥1回240円（月1回まで）
+  more_urls:
+  - https://www.city.hanyu.lg.jp/docs/2016052500014/file_contents/file_20255959244_1.pdf
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付（電磁調理器・火災警報器）
+  name_on_page: 日常生活用具給付
+  summary: 要援護高齢者や1人暮らしの高齢者に、電磁調理器や火災警報器を給付する。
+  who: {}
+  at_application:
+  - 電磁調理器：おおむね65歳以上の1人暮らしで防火の配慮が必要
+  - 火災警報器：おおむね65歳以上の低所得のねたきり・1人暮らし
+  where: 高齢介護課（高齢福祉係）
+  url: https://www.city.hanyu.lg.jp/docs/2012041900278/
+  confidence: high
+  amount: 所得に応じた負担。前年度所得税非課税世帯で基準額内なら無料
+  more_urls:
+  - https://www.city.hanyu.lg.jp/docs/2016052500014/file_contents/file_20255959244_1.pdf
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 基本的な生活習慣が欠けた高齢者が、施設に短期間泊まって生活の支援を受ける。
+  who: {}
+  at_application:
+  - 基本的な生活習慣が欠けている高齢者
+  - 介護保険の対象外の人
+  where: 高齢介護課（頁の問い合わせ先。申請方法の記載なし）
+  url: https://www.city.hanyu.lg.jp/docs/2012041900261/
+  confidence: high
+  amount: 養護老人ホーム利用で1日1,700円（生活保護世帯は600円）
+not_found:
+- koken
+- hochoki
+- ribiyo
+- jutaku
+- gaishutsu

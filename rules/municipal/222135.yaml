@@ -1,0 +1,142 @@
+city: '222135'
+name: 掛川市
+site: www.city.kakegawa.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者等の補聴器購入費助成
+  name_on_page: 高齢者等補聴器購入費助成事業
+  summary: 耳鼻科医が必要と認めた40歳以上の人に、補聴器購入費の半額を1回助成する。
+  who:
+    age_min: 40
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、現に居住している
+  - 市民税所得割額が46万円未満
+  - 身体障害者手帳（聴覚）の交付対象にならない
+  - 両耳の聴力30dB以上70dB未満で、耳鼻科医が補聴器を必要と認める
+  - 過去に助成を受けておらず他制度の助成もなく、調整確認等に協力できる
+  where: 長寿推進課（申請書は市役所・支所・ふくしあ等で入手）
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/409182.html
+  confidence: high
+  amount: 購入費の1/2以内で1回のみ。65歳以上は上限5万円、40〜64歳は上限2万円。
+- category: haishoku
+  name: 配食サービス（見守り声掛け付き）
+  name_on_page: 配食サービス事業
+  summary: 食事の支度が難しい高齢者に、昼か夜の1食を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 障がいのある人と高齢者のみの世帯も対象（同居者がいると原則不可）
+  - 買い物や調理ができず食事の調達が困難
+  - 別居の家族等から調理・買い物の支援を常時受けられない
+  where: 長寿推進課（担当ケアマネジャーや地域包括支援センターでも申請代行可）
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/10168.html
+  confidence: high
+  amount: 1日1食・週7食まで。自己負担は普通食1食365〜468円、特別食430〜510円。
+- category: nichijo-yogu
+  name: ベッド・吸引器の貸与
+  name_on_page: 日常生活用具貸与事業
+  summary: 一時外泊や在宅療養で必要なベッド、医療上必要な吸引器を短期間貸し出す。
+  who: {}
+  at_application:
+  - 市内在住でおおむね65歳以上
+  - ベッド：病院・施設から一時外泊、または在宅療養で一時的に必要
+  - 吸引器：医療上必要で、申請書に医師の証明が必要
+  where: 掛川市役所本庁1階（長寿推進課）
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/10088.html
+  confidence: high
+  amount: 貸与期間はベッドが半年のうち1か月、吸引器が年度で3か月。自己負担はベッド月500円、吸引器月400円。
+- category: iro
+  name: 介護者慰労金
+  name_on_page: 介護者慰労金
+  summary: 要介護4以上の高齢者を在宅で介護する同居の家族に、月額の慰労金を年2回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護を受ける人と同居し、生計が同一で、現に介護している家族が対象
+  - 介護を受ける人は申請時に満65歳以上で要介護4以上
+  - 月15日以上の在宅介護実績がある月が対象
+  where: 長寿推進課高齢者政策係、各ふくしあ（電子申請も可）
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/7558.html
+  confidence: high
+  amount: 対象者1人につき月額7,000円（4月と10月に年2回支給）
+- category: kaigo-yohin
+  name: 紙おむつ引換券の助成
+  name_on_page: 紙おむつ引換券助成事業
+  summary: 在宅で介護を受ける65歳以上に、市内の取扱店で使える紙おむつ引換券を渡す。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内在宅で住民票がある満65歳以上、介護保険料の未納がない
+  - A：要介護3以上で、本人が市民税非課税
+  - B：身体障害者手帳1・2級、療育手帳A、精神障害者保健福祉手帳1級のいずれか所持
+  - AまたはBのどちらかを満たす（自宅で介護を受けていること）
+  where: 長寿推進課高齢者政策係、各ふくしあ（電子申請も可）
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/8714.html
+  confidence: high
+  amount: 月額3,000円分の引換券（紙おむつ・尿取りパッド・紙パンツ用）
+- category: haikai
+  name: 徘徊高齢者の見守りシール（どこシル伝言板）
+  name_on_page: 徘徊高齢者の見守りシール（どこシル伝言板）
+  summary: QRコード入りの見守りシールを交付し、行方不明時に発見者と介護者が連絡できるようにする。
+  who: {}
+  at_application:
+  - 市内に住所があり、おおむね65歳以上
+  - 要介護・要支援で徘徊行動がある人、医師に認知症と診断された人、または市が認めた人のいずれか
+  where: 長寿推進課、各ふくしあ窓口
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/628875.html
+  confidence: high
+  more_urls:
+  - https://www.city.kakegawa.shizuoka.jp/gyosei/docs/8335.html
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システムの貸与
+  name_on_page: 高齢者緊急通報システム事業
+  summary: ペンダント型スイッチで通報先から消防署へつながる緊急通報機器を無償で貸す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らしで、病気で身体に不安がある
+  - 固定電話を持っている
+  - 市内在住か30分以内に駆けつけられる親族等が通報先にいる
+  where: 掛川市役所本庁1階または各支所（担当民生委員か地域包括支援センターに相談の上）
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/8339.html
+  confidence: high
+  amount: 機器は市から無償貸与（設置は業者が訪問）
+- category: koken
+  name: 成年後見人等の報酬費用助成
+  name_on_page: 成年後見人等報酬費用助成
+  summary: 審判請求で後見人等が選ばれ、報酬を払うのが難しい人に報酬費用を助成する。
+  who: {}
+  at_application:
+  - 審判請求により成年後見人等が選任された被後見人・被保佐人・被補助人
+  - 生活保護の要保護者、収入の著しい減少や災害で負担が困難な人など、市長が認める人
+  where: 長寿推進課予防支援係（頁に載っている問い合わせ先）
+  url: https://www.city.kakegawa.shizuoka.jp/gyosei/docs/9156.html
+  confidence: low
+  amount: 報酬費用の全額または一部
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori

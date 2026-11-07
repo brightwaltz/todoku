@@ -1,0 +1,190 @@
+city: '282235'
+name: 丹波市
+site: www.city.tamba.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）の宅配給付
+  name_on_page: 介護用品給付事業
+  summary: 要介護4・5の在宅高齢者を介護する家族に、希望の介護用品を毎月自宅へ宅配する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護する同居の家族（いなければ市内在住の家族）が申請
+  - 高齢者と家族の世帯全員が市民税非課税で、ともに市内に居住
+  - 月15日以上の入院・入所・ショートステイは対象外
+  where: 介護保険課（申請書で申請）
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/2089.html
+  confidence: high
+  amount: 月 4,000 円までの用品（費用の 1 割は自己負担）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理や調達が難しい一人暮らし等の高齢者に、安否確認を兼ねて昼食・夕食を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 食事の調理・調達が困難で、事業の利用が適切と認められる
+  - 要介護・要支援認定者、または要介護状態になるおそれがある人
+  - 日中独居の人、同じ敷地内や隣に親族がいる人は対象外
+  - 包括支援センター職員等の訪問で必要性を判断する
+  where: 介護保険課、市役所各支所
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/1664.html
+  confidence: high
+  amount: 1 食 400 円の自己負担。週 5 日、1 週間に合計 6 食まで
+- category: gaishutsu
+  name: 高齢者のバス・タクシー共通利用券
+  name_on_page: 高齢者外出支援事業
+  summary: 70歳以上で運転しない低所得の高齢者に、バス・デマンドタクシー・タクシーの共通券を交付する。
+  who:
+    age_min: 70
+    at_home: true
+  at_application:
+  - 要介護認定なし、要支援1・2、要介護1のいずれか
+  - 自動車運転免許証を持っていない
+  - 市民税非課税世帯、または本人のみ非課税で年金収入等と所得の合計82.65万円以下
+  - 福祉送迎サービス（おでかけサポート）に登録していない
+  where: 介護保険課、市役所各支所
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/7163.html
+  confidence: high
+  amount: 共通券 100 円×30 枚（3,000 円分）。1 乗車で最大 3 枚
+- category: nichijo-yogu
+  name: 日常生活用具（火災警報器等）の購入費補助
+  name_on_page: 要介護認定者等日常生活用具購入費補助金交付事業
+  summary: 住宅用火災警報器や電磁調理器などの購入後に、費用の一部を補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり居住している
+  - 品目ごとに世帯の条件がある（一人暮らし・高齢者のみ等）
+  - 火災警報器・自動消火器は要介護4・5の世帯も対象
+  where: 介護保険課、市役所各支所
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/2431.html
+  confidence: high
+  amount: 上限は警報器 8,000 円、自動消火器・電磁調理器・押しボタン式電話機 各 20,000 円（1 世帯）
+- category: iro
+  name: 家族介護手当
+  name_on_page: 家族介護手当支給事業
+  summary: 要介護4・5の在宅高齢者を介護する家族に、年間の手当を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護4・5の認定、または要介護4・5相当の高齢者
+  - 介護保険サービスを1年間使っていない（短期入所は合計7日以内なら除く）
+  - 入院期間は除いて1年間を数える
+  where: 介護保険課
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/2582.html
+  confidence: high
+  amount: 年間 12 万円を介護者に支給
+- category: ribiyo
+  name: 訪問理美容の出張交通費助成
+  name_on_page: 訪問理美容サービス
+  summary: 店に行けない高齢者が自宅で散髪する際の、理美容店の出張交通費を助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、心身の障害や傷病で店に行けない
+  - 要介護3〜5、または常時寝たきりの人
+  where: 介護保険課、市役所各支所
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/2584.html
+  confidence: high
+  amount: 出張交通費 2,000 円分。4 か月に 1 枚、年間最大 3 枚
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 固定電話から消防本部の通報センターに通報でき、近隣協力者が援助する仕組みを取り付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 日中独居の人は、慢性的な疾患等がある場合に限る
+  - 近隣協力者3名と、搬送後の住居管理者等が必要
+  - 自宅に固定電話が必要（携帯電話は不可）
+  - 電話機を使えない認知機能低下の人は対象外
+  where: 介護保険課（申請書で申請）
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/2583.html
+  confidence: high
+  amount: 自己負担は緊急通報時の通話料のみ
+- category: haikai
+  name: 高齢者等早期発見SOSシステム（見守りQRシール）
+  name_on_page: 高齢者等早期発見SOSシステム
+  summary: 行方不明に備えて事前登録すると、警察や協力機関と連携して早期発見を図り、QRシールを無料でもらえる。
+  who: {}
+  at_application:
+  - 市内に住む高齢者、または若年性認知症の人
+  - 事前に情報を登録しておく
+  where: 介護保険課、各支所
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/2687.html
+  confidence: high
+  amount: 見守りQRコードシール5枚を無料で交付
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 丹波市高齢者補聴器購入費助成事業
+  summary: 手帳の対象にならない中等度難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 両耳40dB以上70dB未満の難聴で、身体障害者手帳の対象外
+  - 耳鼻科治療で改善が見込めず、市指定の医師意見書がある
+  - 過去5年以内にこの助成を受けていない
+  - 市の交付決定の前に購入したものは対象外
+  where: 介護保険課
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/3/10237.html
+  confidence: high
+  amount: 上限 3 万円。購入費が 6 万円未満ならその 2 分の 1
+- category: sonota
+  name: 認知症の人の個人賠償責任保険（市が加入）
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の人が事故で他人に損害を与えた場合の賠償に備える保険に、自己負担なしで入れる。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 市に住民票があり、早期発見SOSシステムに事前登録している
+  - 日常生活に支障がある認知症の症状があり、自分で外出できる
+  - 症状は認定調査票か主治医意見書で確認する
+  where: 介護保険課、各支所
+  url: https://www.city.tamba.lg.jp/soshiki/kaigohokenka/gyomuannai/3/5/7204.html
+  confidence: high
+  amount: 1 事故あたり上限 1 億円の補償。自己負担なし
+not_found:
+- koken
+- jutaku
+- shingu
+- chusha
+- yutai

@@ -1,0 +1,314 @@
+city: '282031'
+name: 明石市
+site: www.city.akashi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 介護用品の支給
+  summary: 要介護3〜5の方を在宅で介護する非課税世帯の家族に、紙おむつ等を現物で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 支給を受けるのは在宅で介護している市内在住の家族
+  - 介護者と要介護者それぞれの世帯が市民税非課税
+  - 施設入所・入院中の方は対象外
+  where: 高齢者総合支援室 高年福祉係（電子申請も可）
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/kaigo.html
+  confidence: high
+  amount: 月 8,000 円（税込）を上限に現物支給。超えた分は自己負担
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/4601/kaigoyouhinchirashi.pdf
+- category: iro
+  name: 家族介護手当
+  name_on_page: 家族介護手当
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、年額の手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 障害や介護保険のサービスを過去1年間受けていない
+  - 所得制限あり
+  where: 高齢者総合支援室 高年福祉係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/kaigo.html
+  confidence: high
+  amount: 年額 100,000 円（要件確定後に支給）
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: gaishutsu
+  name: 通院支援タクシー利用券
+  name_on_page: 通院支援タクシー利用券の交付
+  summary: 公共交通機関の利用が難しい要介護の在宅高齢者に、通院用のタクシー利用券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 一般の公共交通機関の利用が困難
+  - 利用は通院等に限る。他の制度とは併用できない
+  where: 高齢者総合支援室 いきいき係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/kaigo.html
+  confidence: high
+  amount: 1枚 500 円の利用券を月 4 枚
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: gaishutsu
+  name: 敬老優待乗車券（バス乗車証・タクシー利用券）
+  name_on_page: 敬老優待乗車券
+  summary: 70歳以上の市民に、バス共通寿優待乗車証と寿タクシー利用券をセットで交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内在住。申請は不要で、年度ごとに3月頃送付される
+  - タクシー利用券は1月1日から市内在住で4月1日に70歳以上
+  where: 高齢者総合支援室 いきいき係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/jose/josesedo.html
+  confidence: high
+  amount: タクシー利用券は 500 円×4 枚（2,000 円分）。バスは市内の乗降が現金 120 円
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/4604/r8_keirouyuutai-riyouannnai.pdf
+- category: yutai
+  name: シニアいきいきパスポート
+  name_on_page: シニアいきいきパスポート
+  summary: 65歳以上の市民に、公共施設の割引や協賛店の特典が受けられるカードを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市民であること
+  - 申請は不要で、原則誕生日の前月に郵送される
+  where: 高齢者総合支援室 いきいき係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/ikigai.html
+  confidence: high
+  amount: 市の施設の無料利用や協賛店の割引など（内容は店舗ごと）
+- category: sonota
+  name: 高齢者ふれあい入浴（公衆浴場の割引）
+  name_on_page: 高齢者ふれあい入浴（公衆浴場等の割引）
+  summary: 毎週木曜日に市内の公衆浴場を割引料金で利用できる。
+  who:
+    age_min: 65
+  at_application:
+  - 市民であること
+  - 入浴時にシニアいきいきパスポートの提示が必要
+  where: 高齢者総合支援室 いきいき係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/jose/josesedo.html
+  confidence: high
+  amount: 公衆浴場は 300 円の自己負担。龍の湯は 100 円割引
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり・きゅう・マッサージ施術費助成券
+  summary: 保険診療以外の施術を受けるときに使える助成券を、年度ごとに交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 1月1日から引き続き市内在住で、4月1日現在75歳以上
+  - 市と契約している施術所でのみ使える
+  where: 高齢者総合支援室 いきいき係（オンライン申請か郵送）
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/jose/josesedo.html
+  confidence: high
+  amount: 年度ごとに 4,000 円分（1,000 円券を 4 枚。1 回に 1 枚）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 難聴の高齢者が補聴器を買うとき、費用の一部を1回限り助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 耳鼻科医から補聴器が必要との意見書を受けた
+  - 申請前に購入したものは対象外
+  where: 高齢者総合支援室（本庁舎2階7番窓口。オンライン申請も可）
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/konenfukushi/hochoukijosei.html
+  confidence: high
+  amount: 上限 20,000 円（1人1回限り）
+- category: kinkyu-tsuho
+  name: 緊急通報装置（安心コール）の貸与
+  name_on_page: 緊急通報発信装置の貸与（安心コール）
+  summary: ひとり暮らしの高齢者らに緊急通報装置を貸与し、緊急時にすばやく援助する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または介護や認知症の人がいる高齢者2人世帯
+  - ひとり暮らしの身体障害者手帳1・2級の方も対象
+  - 固定電話か携帯電話があり、近隣協力員を2名確保できる
+  - 所得により設置工事費の負担あり
+  where: 高齢者総合支援室 高年福祉係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/hitorikurashi.html
+  confidence: high
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付（火災予防用具）
+  name_on_page: 高齢者の日常生活用具の給付
+  summary: 要介護の高齢者だけの非課税世帯に、電磁調理器・火災警報器・自動消火器を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 世帯員全員が65歳以上で要介護1〜5の認定を受けている
+  - 世帯で総所得が最も高い人が市民税非課税
+  - 設置後の維持・撤去・付替の費用は自己負担
+  where: 高齢者総合支援室 高年福祉係（オンライン申請も可）
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/hitorikurashi.html
+  confidence: high
+  amount: 電磁調理器・火災警報器・自動消火器を給付（金額の記載なし）
+  more_urls:
+  - https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/ninntisyo.html
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の貸与
+  summary: 電話のないひとり暮らし高齢者に、電話機の貸与と設置工事費の補助を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 電話のない方
+  - 所得制限あり
+  where: 高齢者総合支援室 高年福祉係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/hitorikurashi.html
+  confidence: high
+  amount: 電話機の貸与と設置工事費の補助
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: mimamori
+  name: 安否確認事業（飲料の配布）
+  name_on_page: 安否確認事業（飲料の配布）
+  summary: 社会福祉協議会の見守りサポーターが月1回訪問し、飲料を手渡して安否を確認する。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 近隣に1親等以内の親族がいない
+  - ひとり暮らし台帳への登録が必要な場合あり
+  where: 高齢者総合支援室 高年福祉係、または担当地区の民生委員
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/hitorikurashi.html
+  confidence: high
+  amount: 月1回の訪問時に飲料を配付
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: sonota
+  name: ひとり暮らし高齢者の水道料金・下水道使用料の減免
+  name_on_page: 水道料金、下水道使用料の減免
+  summary: ひとり暮らし高齢者の水道料金・下水道使用料の基本料金を半額にする。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 4月1日現在の年齢と世帯で判定
+  - 使用場所と住民票が一致する
+  - 生活保護や中国残留邦人等の支援給付を受けていない
+  - 所得制限あり
+  where: 水道料金お客様センター
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/hitorikurashi.html
+  confidence: high
+  amount: 基本料金を半額
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: haikai
+  name: 居場所検索用端末機（GPS）の貸与
+  name_on_page: 居場所検索用端末機の貸与
+  summary: 徘徊のおそれのある認知症高齢者を介護する家族に、居場所検索用の端末機を貸与する。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 申し込むのは65歳以上の認知症高齢者を介護する家族
+  - 使用料・検索料・バッテリー代などは本人負担
+  where: 高齢者総合支援室 高年福祉係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/kaigo.html
+  confidence: high
+  amount: 端末機の貸与（通信費などは自己負担）
+  more_urls:
+  - https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/ninntisyo.html
+- category: haikai
+  name: 要援護者見守りSOSネットワーク
+  name_on_page: 要援護者見守りSOSネットワーク
+  summary: 徘徊のおそれのある高齢者を家族が事前登録し、行方不明時に協力者へ一斉にメールで知らせる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 登録するのは徘徊のおそれのある高齢者等の家族
+  where: 明石市社会福祉協議会
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/ninntisyo.html
+  confidence: high
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: haikai
+  name: みまもりあいプロジェクト（ステッカー・アプリ）
+  name_on_page: 明石市みまもりあいプロジェクト
+  summary: 行方不明時に発見者が家族へ連絡できる緊急連絡ステッカーとアプリを案内する。
+  who: {}
+  at_application:
+  - ひとり歩きなどの恐れがある高齢者（詳細は市の頁で確かめる）
+  where: 高齢者総合支援室 高年福祉係
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/ninntisyo.html
+  confidence: low
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: sonota
+  name: 認知症の診断費等の助成
+  name_on_page: 診断費等助成制度
+  summary: 認知症の疑いがある方の診断費用を助成し、診断後はGPS基本料かタクシー券も助成する。
+  who: {}
+  at_application:
+  - 65歳以上の市民向けのチェックシート案内
+  - 免許更新で診断書が必要な方も助成を受けられる場合あり
+  - 申請は来庁
+  where: 高齢者総合支援室 高年福祉係（本庁舎2階7番窓口、来庁で申請）
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/ninntisyo.html
+  confidence: low
+  more_urls:
+  - https://www.city.akashi.lg.jp/documents/34613/kiirosesakuichiran.pdf
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長による審判申立てと、申立費用・成年後見人等の報酬の助成を行う。
+  who: {}
+  at_application:
+  - 認知症等で日常生活に支障がある高齢者・障害者が対象
+  - 市長申立ては配偶者や2親等内の親族がいない等で申立てが見込めない場合
+  - 助成は、助成がないと制度利用が困難な人が対象
+  where: 高齢者総合支援室 高年福祉係（65歳未満は障害福祉課）
+  url: https://www.city.akashi.lg.jp/fukushi/k_kaigo_shitsu/kenko/koresha/jose/josesedo.html
+  confidence: high
+  amount: 申立てに必要な費用と後見人等の報酬の全部または一部
+not_found:
+- haishoku
+- shingu
+- ribiyo

@@ -1,0 +1,158 @@
+city: '012351'
+name: 石狩市
+site: www.city.ishikari.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付（自宅配達）
+  name_on_page: 紙おむつ給付サービス
+  summary: 自宅で紙おむつを使う寝たきり等の方に、紙おむつを自宅まで届ける。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で寝たきり度B以上、排泄に介助が必要と認められる
+  - または40歳以上で認知症自立度3a以上、排泄に介助が必要
+  - または身体1・2級か療育手帳Aで3歳以上の寝たきり等
+  where: 高齢者支援課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1005689/1003136.html
+  confidence: high
+  more_urls:
+  - https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+- category: haishoku
+  name: 配食サービス（夕食・安否確認）
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しい世帯に、夕食を手渡しで届けて安否も確かめる。
+  who:
+    at_home: true
+  at_application:
+  - 食事を作ることが困難な方だけの世帯に属する
+  - 65歳以上、または身体1・2級・療育手帳A・精神1級の方
+  where: 高齢者支援課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1005689/1003136.html
+  confidence: high
+  amount: 自己負担あり（額は頁に記載なし）
+  more_urls:
+  - https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の取り付け
+  name_on_page: 緊急通報サービス
+  summary: 固定電話に通報装置を付け、急病や事故の際に受信センターから救護要請を行う。
+  who: {}
+  at_application:
+  - ひとり暮らしの70歳以上、または寝たきりの方と同居の70歳以上
+  - またはひとり暮らしで身体障害者手帳1・2級の方
+  where: 高齢者支援課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1005689/1003136.html
+  confidence: high
+  amount: 課税状況に応じて自己負担あり（額は頁に記載なし）
+  more_urls:
+  - https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+- category: ribiyo
+  name: 寝たきりの方への訪問理容
+  name_on_page: 理容サービス
+  summary: 在宅で寝たきりの方の自宅へ理容師・美容師が出向き、散髪などを行う。
+  who:
+    at_home: true
+  at_application:
+  - 居宅で常に寝たきりと認められる方
+  - 65歳以上で寝たきり度B以上、または身体障害者手帳1・2級
+  where: 高齢者支援課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1005689/1003136.html
+  confidence: high
+  amount: 自己負担あり（額は頁に記載なし）
+  more_urls:
+  - https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+- category: shingu
+  name: 寝たきりの方のふとんクリーニング
+  name_on_page: ふとんクリーニングサービス
+  summary: 寝具の衛生管理が難しい寝たきりの方の寝具を洗濯・乾燥・消毒する。
+  who:
+    at_home: true
+  at_application:
+  - 居宅で常に寝たきりと認められる方
+  - 65歳以上で寝たきり度B以上
+  - または身体1級、2級（6歳以上）、療育手帳A（6歳以上）
+  where: 高齢者支援課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1005689/1003136.html
+  confidence: high
+  amount: 自己負担あり（額は頁に記載なし）
+  more_urls:
+  - https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+- category: gaishutsu
+  name: 車いす対応車両での外出送迎
+  name_on_page: 外出支援サービス
+  summary: 市内病院への通院・入退院や市の事業参加の際に、車いす対応車両で送迎する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 車いす対応車両でしか移動できない
+  - 身体上の理由で一般の交通機関の利用が困難
+  - 石狩市福祉タクシー利用券の交付を受けていない
+  where: 高齢者支援課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1005689/1003136.html
+  confidence: high
+  amount: 自己負担あり（額は頁に記載なし）
+  more_urls:
+  - https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+- category: gaishutsu
+  name: 福祉利用券・タクシーチケットの交付
+  name_on_page: 福祉利用券・タクシーチケット
+  summary: 対象者に、タクシー・介護タクシーや指定施設で使える券を毎年4月上旬に郵送する。
+  who: {}
+  at_application:
+  - 75歳以上、または重度障がい（身体1・2級、療育A、精神1・2級）
+  - 1月1日時点で市内に住民登録がある（転入が1月2日以降は翌年度）
+  - 有効期限は交付の翌年3月31日まで
+  where: 高齢者支援課
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1007075.html
+  confidence: high
+  more_urls:
+  - https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+- category: sonota
+  name: 緊急連絡先・終活情報の事前登録
+  name_on_page: おひとり暮らし等安心登録サービス事業
+  summary: 緊急連絡先や終活情報を事前に登録し、万一の時に警察・病院などへ開示や連絡をする。
+  who: {}
+  at_application:
+  - 市内在住のおおむね65歳以上のひとり暮らしの方
+  - 同居家族がいても、緊急時の対応に不安があれば相談可
+  - 本人が登録票に自署・押印して登録する
+  where: 石狩市成年後見センター（市社会福祉協議会）、地域包括ケア課
+  url: https://www.city.ishikari.hokkaido.jp/kenko/fukushi/1005269/1005689/1003166.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立て・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 判断能力が不十分な方の後見開始の申立てを市が行い、報酬が払えない場合は助成する。
+  who: {}
+  at_application:
+  - 認知症や障がいなどで判断能力が不十分な方
+  - 詳しい要件は冊子に無く、窓口で確認が必要
+  where: 地域包括ケア課、障がい福祉課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+  confidence: low
+- category: sonota
+  name: 在日外国人等への福祉給付金
+  name_on_page: 在日外国人等福祉給付金
+  summary: 公的年金の対象にならない在日外国人等の高齢者に給付金を支給する。
+  who: {}
+  at_application:
+  - 在日外国人等で、制度上公的年金の対象にならない高齢者
+  where: 高齢者支援課（厚田・浜益は各支所）
+  url: https://www.city.ishikari.hokkaido.jp/_res/projects/default_project/_page_/001/003/133/2026..pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- jutaku

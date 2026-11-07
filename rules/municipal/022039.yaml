@@ -1,0 +1,184 @@
+city: 022039
+name: 八戸市
+site: www.city.hachinohe.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 介護用品（紙おむつ）の支給
+  summary: 要介護4・5の人を在宅で介護する家族に、紙おむつ類を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する人も介護を受ける人も市民税非課税世帯
+  - 入院・施設入所・ショートステイが多い場合は対象外
+  - 申請するのは介護している家族
+  where: 高齢福祉課の窓口
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8260.html
+  confidence: high
+  amount: 4種類26品目から1つを現物支給。偶数月に2か月分を配達
+- category: iro
+  name: 介護者慰労金（寝たきり・認知症等の高齢者の介護者）
+  name_on_page: 介護者慰労金の支給
+  summary: 寝たきりや認知症などの高齢者を在宅で介護している人に慰労金を支給する。
+  who:
+    age_min: 65
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護を受ける人が65歳以上で、1年以上在宅で介護している
+  - 介護を受ける人と同居し生計が同じ（通い介護は相談可）
+  - 1年以上八戸市に住んでいる
+  - 民生委員またはケアマネジャーの確認が必要
+  - 家族介護慰労金とは重複して申請できない
+  where: 高齢福祉課の窓口
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8260.html
+  confidence: high
+  amount: 対象者1人あたり年額3万円
+- category: iro
+  name: 家族介護慰労金（要介護4・5をサービス未利用で介護）
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の高齢者を介護サービスなしで在宅介護している人に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護サービスを受けずに1年以上在宅で介護している
+  - 介護を受ける人と同居し生計が同じ（通い介護は相談可）
+  - 1年以上八戸市に住んでいる
+  - 介護する人と受ける人の両方が市民税非課税世帯
+  - 介護者慰労金とは重複して申請できない
+  where: 高齢福祉課の窓口
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8260.html
+  confidence: high
+  amount: 対象者1人あたり年額10万円
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 寝具（掛・敷布団と毛布の3点）の洗濯・乾燥・消毒を無料で受けられる。
+  who: {}
+  at_application:
+  - 市内に住所がある、おおむね65歳以上の人
+  - ひとり暮らし、高齢者のみの世帯、または家族の援助が困難
+  - 心身の障がいや傷病で寝具の衛生管理が難しい
+  where: 高齢福祉課の窓口（郵送でも可）
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8261.html
+  confidence: high
+  amount: 無料。年度内1回のみ
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置
+  name_on_page: 緊急通報装置の設置
+  summary: ひとり暮らしの高齢者宅に緊急通報装置を設置し、緊急時に対応する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所があり市民税非課税世帯
+  - 健康に不安のある、おおむね65歳以上のひとり暮らし
+  - または、これに準ずると認められる人
+  where: 高齢福祉課の窓口
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8261.html
+  confidence: high
+  amount: 原則無料（使用時の諸経費は自己負担）
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の設置
+  summary: 電話のないひとり暮らしの高齢者に電話を貸し、取付・取外の工事費は市が負担する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所があり市民税非課税世帯
+  - 健康に不安のある、おおむね65歳以上のひとり暮らし
+  - または、これに準ずると認められる人
+  - 電話を持っていない
+  where: 高齢福祉課の窓口
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8261.html
+  confidence: high
+  amount: 工事費は市が負担。電話使用料（基本料金・通話料）は自己負担
+- category: gaishutsu
+  name: 高齢者バス特別乗車証（はつらつ共通バス券）
+  name_on_page: 高齢者バス特別乗車証の交付
+  summary: 70歳以上の市民に、市営バスと南部バスの市内路線で使える乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 障害者手帳の所持者は障がい福祉課で別に交付
+  where: 高齢福祉課の窓口（南郷地区は南郷事務所）
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8268.html
+  confidence: high
+  amount: 年額4,000円（一定所得を超える人は8,000円）。生活保護は無料
+- category: sonota
+  name: はり・きゅう・あんまマッサージ施術の助成券
+  name_on_page: はり・きゅう・あんまマッサージ助成券の交付
+  summary: 指定の施術所で使える、はり・きゅう・あんま施術費の助成券を交付する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 70歳以上、または65歳以上で身体障害者手帳4級以上・愛護手帳所持
+  - 所得制限あり
+  where: 高齢福祉課の窓口（南郷地区は南郷事務所）
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8268.html
+  confidence: high
+  amount: 1枚800円の助成券を年9枚交付
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 八戸市成年後見制度利用支援事業
+  summary: 報酬の支払いが難しい被後見人等に、後見人等への報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 成年被後見人・被保佐人・被補助人で、申立て時に八戸市に住所
+  - 報酬付与期間の収入が年180万円未満、または生活保護
+  - 申立て時の預貯金・現金が60万円未満
+  - 後見人等が本人の親族の場合は対象外
+  - 審判から6か月以内に申請
+  where: 65歳以上は高齢福祉課 地域包括支援センター、65歳未満は障がい福祉課
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/23682.html
+  confidence: high
+  amount: 月額2万円を上限に助成
+- category: haikai
+  name: あんしんカード（道に迷う心配のある人の登録）
+  name_on_page: 八戸市あんしんカード事業
+  summary: 道に迷うおそれのある人を市と警察に登録し、保護時に家族へ連絡できるようカードを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 八戸圏域に住民票がある
+  - おおむね65歳以上（要介護認定があれば64歳以下も可）
+  - 認知症等で外出して戻れなくなるおそれがある
+  - 本人・家族・成年後見人等が申請できる
+  where: 高齢福祉課（市庁別館1階）
+  url: https://www.city.hachinohe.aomori.jp/kenko_fukushi/fukushi_kaigo/koreishafukushi/8258.html
+  confidence: high
+  amount: 無料。カードは1人5枚交付
+not_found:
+- haishoku
+- hochoki
+- jutaku
+- ribiyo
+- mimamori
+- nichijo-yogu

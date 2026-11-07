@@ -1,0 +1,139 @@
+city: '221309'
+name: 浜松市
+site: www.city.hamamatsu.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 在宅で要介護4・5の人を介護する非課税世帯に、紙おむつ等を無料で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人も市民税非課税である
+  - 他の制度で同様のサービスを受けていない
+  - ケアマネジャーを通すか、同居の親族が窓口で申請する
+  where: 各福祉事業所の高齢者福祉担当窓口（中央福祉事業所 長寿支援課、浜名・天竜福祉事業所 長寿保険課）
+  url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/zaitaku/omutsu.html
+  confidence: high
+  amount: 4月から翌年3月までで 60,000 円分まで（無料で支給）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しい非課税世帯の高齢者に、1食300円で食事を届ける。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 原則65歳以上で、ひとり暮らし・高齢者世帯かこれに準ずる世帯
+  - 心身の状態や生活の状況から食事の調理が困難
+  where: 地域包括支援センター（高齢者相談センター）、各福祉事業所。しおりでは、包括の職員かケアマネジャーを通して申請するとある
+  url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/zaitaku/haishoku.html
+  confidence: high
+  amount: 1食300円の自己負担。週1〜3食（状況により回数に制限あり）
+  more_urls:
+  - https://www.city.hamamatsu.shizuoka.jp/documents/171832/shiori1.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システムの貸与
+  summary: 持病などの緊急時にボタンで受信センターへ通報できる装置を貸し出す。
+  who: {}
+  at_application:
+  - 次のどれか1つ。65歳以上で、心疾患・脳血管障害など循環器系の病気があるひとり暮らし高齢者世帯
+  - または、75歳以上のひとり暮らし高齢者世帯
+  - または、75歳以上で支援の必要がある高齢者世帯
+  - どの場合も、昼間や夜間に高齢者のみとなる世帯を含む
+  where: 高齢者相談センター（地域包括支援センター）、各福祉事業所担当窓口
+  url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/zaitaku/kinkyuu.html
+  confidence: high
+  amount: 市民税非課税世帯は無料、課税世帯は月額 1,100 円。通話料と週1回の通信テスト代は実費
+- category: jutaku
+  name: 高齢者住宅改造費補助金
+  name_on_page: 高齢者住宅改造費補助金
+  summary: 60歳以上で要支援・要介護の非課税世帯の、手すり設置や段差解消などの費用の半額を補助する。
+  who:
+    age_min: 60
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市税を完納している世帯に属する
+  - 改造する家屋に現に住み、そこが住所地である
+  - 着工前に申請する（着工後は対象外）
+  - 介護保険の住宅改修と重度身体障害者住宅改造費補助金が優先される
+  - 同じ人への補助は1人1回まで
+  where: 各福祉事業所担当窓口（中央福祉事業所 長寿支援課、浜名・天竜福祉事業所 長寿保険課）
+  url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/zaitaku/kaizou.html
+  confidence: high
+  amount: 対象経費の 1/2 から他制度の補助額を引いた額。限度額75万円（厚生労働大臣が定める地域は100万円）
+- category: koken
+  name: 成年後見人等に対する報酬の助成
+  name_on_page: 成年後見人等に対する報酬の助成
+  summary: 資力が十分でない人の成年後見人等への報酬を、上限つきで市が助成する。
+  who: {}
+  at_application:
+  - 市長申立て、または親族申立てで成年後見人等が確定している
+  - 資力が十分でなく、報酬の支払いが困難
+  - 65歳未満や知的・精神障がいの人は障害者政策課に提出する
+  where: 高齢者福祉課（本庁3階北側。郵送可）。65歳未満や知的・精神障がいの人は障害者政策課（本庁2階北側）
+  url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/seinenkouken/20140312.html
+  confidence: high
+  amount: 家庭裁判所が決めた報酬額（本人が一部負担できる額は除く）。上限は在宅で月28,000円、施設入所・入院で月18,000円
+- category: haikai
+  name: オレンジシール・オレンジメール（認知症高齢者見守り事業）
+  name_on_page: オレンジシール・オレンジメール（認知症高齢者見守り事業）
+  summary: ひとり歩きの心配がある人を家族の届け出で事前登録し、登録番号入りの反射シールを交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の症状でひとり歩き（行方不明）の心配がある高齢者等
+  - 若年性認知症と診断された人も含む
+  - 届け出は本人、家族、成年後見人等
+  where: 地域包括支援センター（高齢者相談センター）
+  url: https://www.city.hamamatsu.shizuoka.jp/documents/171832/shiori1.pdf
+  confidence: high
+  amount: 無料。行方不明時は、登録した見守り協力者へメールで捜索協力を依頼する
+- category: sonota
+  name: 高齢者あんしん一時宿泊事業（短期宿泊事業）
+  name_on_page: 高齢者あんしん一時宿泊事業（短期宿泊事業）
+  summary: 在宅生活が難しい虚弱な高齢者が、市内の養護老人ホーム等に一時的に泊まれる。
+  who:
+    age_min: 65
+  at_application:
+  - 在宅で生活することが困難な虚弱な人
+  - 介護保険サービスの対象とならない人
+  - 利用は原則、年度で28日以内
+  where: 高齢者相談センター（地域包括支援センター）、各福祉事業所担当窓口（頁の問い合わせ先）
+  url: https://www.city.hamamatsu.shizuoka.jp/kourei/welfare/elderly/zaitaku/tanki.html
+  confidence: high
+  amount: 1日あたり、養護老人ホーム・生活支援ハウスは2,670円、特別養護老人ホーム・老人短期入所施設は2,900円（減免制度あり）
+not_found:
+- iro
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

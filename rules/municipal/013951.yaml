@@ -1,0 +1,167 @@
+city: 013951
+name: ニセコ町
+site: www.town.niseko.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 冬期の灯油代の一部助成
+  name_on_page: 冬期灯油の一部を助成
+  summary: ひとり暮らしの高齢者などの冬の暖房用灯油代の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 町内に住んでいる
+  - ひとり暮らしのお年寄り（年齢の数字は頁にない）、または母子家庭の世帯
+  - 世帯収入の合計が80万円未満
+  where: 頁に申請先の記載なし（問い合わせ先はニセコ町役場 0136-44-2121。申請に印鑑が必要）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/teate/
+  confidence: high
+  amount: 1シーズン1世帯あたり400リットルまで（灯油の一部を助成）
+- category: haishoku
+  name: 配食サービス（週1回）
+  name_on_page: 配食サ－ビスの実施
+  summary: 週に1回、希望する65歳以上のひとり暮らしの人に配食する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - ニセコ町に住んでいる
+  where: 頁に申請先の記載なし（問い合わせ先はニセコ町役場 0136-44-2121）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/teate/
+  confidence: high
+  amount: 本人負担は1食300円
+- category: kaigo-yohin
+  name: 紙おむつ代の支給
+  name_on_page: 紙おむつのサ－ビス
+  summary: 在宅で寝たきりの高齢者や障がい者等がいる家庭に紙おむつ代を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で寝たきりのお年寄り、または障がい者等がいる家庭
+  - 紙おむつ購入の領収書と印鑑が必要
+  where: 社会福祉協議会（ニセコ町民センター内、0136-44-2234）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/teate/
+  confidence: high
+  amount: 月4,000円まで
+- category: sonota
+  name: 家事お手伝いサービス
+  name_on_page: 家事お手伝いサ－ビス
+  summary: 家事のお手伝いを受けられるサービス。利用料は1回40円から。
+  who: {}
+  at_application:
+  - 対象の条件は頁に記載なし（高齢者の手当・助成の頁に掲載）
+  where: 社会福祉協議会（ニセコ町民センター内、0136-44-2234）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/teate/
+  confidence: low
+  amount: 30分未満1回40円、1時間未満1回80円、1時間以上1回120円から
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システム
+  name_on_page: 高齢者緊急通報システム
+  summary: ボタン1つで係員が駆けつける緊急通報装置を設置できる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体状況等により日常生活に支障がある
+  - 固定電話・携帯電話がなくても相談できる
+  where: 保健福祉課（0136-56-8840）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/kinkyutuhou/
+  confidence: high
+  amount: 月額契約料は町負担。取付時の費用は協和総合管理11,000円（撤去時11,000円、点検料月550円）、セコム7,700円
+- category: mimamori
+  name: 高齢者声かけ支援
+  name_on_page: 高齢者声かけ支援
+  summary: 生活援助員が約2週間に1回、15〜30分ほど無料で声かけ訪問をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体や物忘れ等、生活上の心配がある
+  - 町の定める基準を満たす
+  - デイサービス・ホームヘルプ利用中の人は対象外
+  - 申請に印鑑が必要
+  where: 地域包括支援センター（ニセコ町役場内、0136-56-8840）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/hokatsu/
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 救急時に備える医療情報キットを無料で配る。1世帯1セット。
+  who:
+    age_min: 60
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 本人または代理の人が申請できる
+  - 申請書の記入に印鑑が必要
+  where: 地域包括支援センター（ニセコ町役場内、0136-56-8840）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/hokatsu/
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 高齢者の私道除雪（町が実施）
+  name_on_page: 高齢者私道除雪サービス事業
+  summary: 公道から玄関まで30m以上ある私道の除雪を町が行う。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または65歳以上と除雪が困難な障害者の世帯
+  - 私道が30m以上で、大型除雪機による除雪ができる
+  - 年齢・収入・介護度・障害の状況などの審査がある
+  - 分譲団地内・複数世帯・事業所が使う道路は対象外
+  - 申込期間は令和8年11月4日〜11月27日
+  where: ニセコ町役場保健福祉課福祉係（0136-44-2121）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/josetu/
+  confidence: high
+  amount: 自己負担は費用の3割（上限5万円）
+- category: sonota
+  name: 高齢者の住宅周辺の除雪（社協が手配）
+  name_on_page: 介護予防及び生活支援事業 除雪サービス事業
+  summary: 住宅周辺（軒下等）の除雪に、社会福祉協議会が除雪業者を派遣する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体・精神に障害がある世帯、または収入200万円以下の世帯
+  - 積雪状況に応じて派遣される
+  - 屋根など危険な場所は対象外
+  - 申込期間は令和8年12月1日〜12月24日
+  where: ニセコ町社会福祉協議会（0136-44-2234）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/josetu/
+  confidence: high
+  amount: 自己負担は1時間あたり 障害者500円・高齢者900円
+- category: sonota
+  name: 高齢者の住宅前通路の除雪費補助
+  name_on_page: 高齢者住宅前通路 除雪費扶助事業
+  summary: 住宅前通路の除雪を業者等へ個人で頼んだ費用の一部を補助する。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+  at_application:
+  - 町民である
+  - 車庫などの通路は対象外
+  - 申込期間は令和8年11月4日〜令和9年3月19日
+  where: ニセコ町役場保健福祉課福祉係（0136-44-2121）
+  url: https://www.town.niseko.lg.jp/kurashi/kenko_fukushi_kaigo/koreisha/josetu/
+  confidence: high
+  amount: 個人負担は5万円と、5万円を超えた分の3分の1。残りが補助
+not_found:
+- haikai
+- iro
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

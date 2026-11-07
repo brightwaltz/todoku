@@ -1,0 +1,114 @@
+city: '212091'
+name: 羽島市
+site: www.city.hashima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の助成
+  name_on_page: 介護用品を助成
+  summary: 在宅で紙おむつ等を使う要介護4・5などの人に、購入用の助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または65歳以上で常時紙おむつを使用(医師の証明等)
+  - 介護施設・グループホームに入所していない
+  - 生活保護を受けていない
+  - 世帯の介護保険料(1号被保険者)を完納している
+  - 世帯全員の市民税所得割課税額の合計が6万円未満
+  where: 高齢福祉課(本庁舎36・37番窓口)
+  url: https://www.city.hashima.lg.jp/1931.html
+  confidence: high
+  amount: 月1,800円分(申請月に年度末までの助成券を交付)。対象は紙おむつ、防水シーツ、ゴム手袋
+- category: haikai
+  name: 見守りSOSシールの交付
+  name_on_page: 羽島市見守りSOS事業
+  summary: 認知症の人などに、見守りSOSシールを無料で交付し台帳で管理する。
+  who: {}
+  at_application:
+  - 市内に住んでいる
+  - 認知症の診断(疑い含む)、成年後見の利用、手帳(身体1級・療育A・精神1級)のいずれか
+  where: 高齢福祉課
+  url: https://www.city.hashima.lg.jp/1968.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 認知症高齢者等あんしん補償(損害賠償の保険)
+  name_on_page: 羽島市認知症高齢者等あんしん補償事業
+  summary: 見守りSOS利用者が賠償責任を負ったとき、市の保険で補償される。
+  who: {}
+  at_application:
+  - 羽島市見守りSOS事業を利用している
+  where: 高齢福祉課
+  url: https://www.city.hashima.lg.jp/1968.html
+  confidence: high
+  amount: 無料で加入。賠償額の全額または一部を最大1億円まで補償
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らしの高齢者に、急病時などにセンターへ通報する機器を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に住んでいる
+  - 緊急通報システムが必要と認められる
+  - 協力員(近所の方)を原則3人以上記入する
+  where: 高齢福祉課
+  url: https://www.city.hashima.lg.jp/1973.html
+  confidence: high
+  amount: 設置時に前年度の所得に応じて2,500円〜30,000円の自己負担
+- category: jutaku
+  name: 高齢者向け住宅改善の助成(介護認定を受けていない人向け)
+  name_on_page: 高齢者いきいき住宅改善助成事業
+  summary: 介護認定のない高齢者の手すり設置や段差解消などの工事費の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上で要支援・要介護認定なし(その人と同居の家族も可)
+  - 市内に住所があり、改修する住宅に住んでいる
+  - 市税と介護保険料を完納している
+  - 介護保険の住宅改修の対象外の工事で、経費3万円以上
+  - 着工前に申請する
+  where: 高齢福祉課(窓口で本人のアセスメントあり)
+  url: https://www.city.hashima.lg.jp/1920.html
+  confidence: high
+  amount: 工事費の3分の1(他制度の助成額を除く)。上限5万円、1住宅につき1回限り
+- category: gaishutsu
+  name: 運転免許返納者へのバス乗車証・乗車券の交付
+  name_on_page: 運転免許証自主返納者等支援事業
+  summary: 免許を返納した65歳以上に、コミュニティバス乗車証かバス券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - 免許を自主返納、または有効期限切れで未更新の人
+  - 返納日または期限日から6か月以内に申請する
+  where: 生活安全課
+  url: https://www.city.hashima.lg.jp/1767.html
+  confidence: high
+  amount: コミュニティバス無料乗車証(12か月)か名阪近鉄バス乗車券10,000円分のどちらか。1人1回限り
+- category: sonota
+  name: 高齢者世帯等の粗大ごみ訪問収集費の助成
+  name_on_page: 粗大ごみの収集運搬費の一部を助成
+  summary: 高齢者のみの世帯などが業者に頼んだ粗大ごみの訪問収集費の一部を助成する。
+  who: {}
+  at_application:
+  - 75歳以上のみ、障害者手帳所持者のみ、要支援・要介護認定者のみのいずれかの世帯
+  - 自分で搬出できる世帯、同一敷地の親族の協力が得られる世帯は対象外
+  - 収集を終えた後に領収書を添えて申請する
+  where: 生活環境課(本庁舎2階72番窓口)
+  url: https://www.city.hashima.lg.jp/1812.html
+  confidence: high
+  amount: 収集費の2分の1(上限2,000円)、年度ごとに1回まで
+not_found:
+- haishoku
+- iro
+- koken
+- shingu
+- ribiyo
+- nichijo-yogu

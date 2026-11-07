@@ -1,0 +1,228 @@
+city: 092118
+name: 矢板市
+site: www.city.yaita.tochigi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給券交付
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5などの在宅の方に、紙おむつ等の支給券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で在宅
+  - 要介護4・5の方、または重度心身障がい児者（ストマ用装具の給付対象外）
+  where: 矢板市社会福祉協議会
+  url: https://www.city.yaita.tochigi.jp/soshiki/shakaifukushi/syakyou0003.html
+  confidence: high
+  amount: 月 2,000 円分の支給券
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+- category: iro
+  name: 在宅ねたきり老人等介護手当
+  name_on_page: 在宅ねたきり老人等介護手当
+  summary: 要介護4・5の方を在宅で常時介護する同一世帯の介護者に手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護者と同一世帯で常時介護している介護者が申請する
+  - 住民票上の世帯分離をしていると対象外
+  where: 幸齢課
+  url: https://www.city.yaita.tochigi.jp/soshiki/koureitaisaku/zaitakunetakiriroujinntoukaigoteate.html
+  confidence: high
+  amount: 月 5,000 円（年2回に分けて口座へ振込）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 介護手当の対象で市民税非課税世帯の要介護者を、介護サービスなしで1年介護した家族に支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者が過去1年間、介護サービスを受けていない
+  - 要介護者を常時介護している方が対象
+  where: 幸齢課
+  url: https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+  confidence: high
+  amount: 年額 100,000 円
+- category: haikai
+  name: 徘徊高齢者等の事前登録
+  name_on_page: 認知症等による徘徊高齢者等事前登録制度
+  summary: 行方不明のおそれがある人の情報を事前登録し、警察と包括支援センターに共有して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人か家族が申請する
+  - 申請者の印鑑と本人の写真（顔・全身）が必要
+  where: 幸齢課
+  url: https://www.city.yaita.tochigi.jp/soshiki/koureitaisaku/ninntisyoutouniyoru.html
+  confidence: high
+- category: haikai
+  name: オレンジヘルプカードの配布
+  name_on_page: オレンジヘルプカード
+  summary: 認知症の診断がある方が携帯するカードを窓口で配布し、早期発見や身元確認に役立てる。
+  who:
+    flags:
+    - dementia_diagnosis
+  at_application: []
+  where: 幸齢課（窓口配布。市ホームページからダウンロードも可）
+  url: https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無料貸与
+  name_on_page: 緊急通報装置の貸与を行っています
+  summary: ひとり暮らしの方に緊急通報端末を無料で貸し、ボタンでコールセンターにつなぐ。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし、またはひとり暮らしの重度身体障害者
+  - 市に住民登録がある
+  - かけつけ可能な協力者を3名以上（うち1名は親族）確保する
+  where: 幸齢課
+  url: https://www.city.yaita.tochigi.jp/soshiki/koureitaisaku/kinkyutuho.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+- category: gaishutsu
+  name: 福祉タクシー利用券（80歳以上は年24枚）
+  name_on_page: 矢板市福祉タクシー利用券
+  summary: 80歳以上の方などにタクシー料金の助成券（1枚500円分）を交付する。
+  who: {}
+  at_application:
+  - 80歳以上の方、または対象の障害者手帳をお持ちの方
+  - 市に住民登録があり、現在住んでいる
+  - 交付申請は毎年度1回
+  where: 社会福祉課
+  url: https://www.city.yaita.tochigi.jp/soshiki/shakaifukushi/fukushitakusii8.html
+  confidence: high
+  amount: 1枚500円分、80歳以上は年24枚（1回の乗車で最大3枚）
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+- category: gaishutsu
+  name: ともなりパス（バス無料・デマンド交通割引）
+  name_on_page: ともなりパス
+  summary: 中央部循環バスが無料、デマンド交通が割引になるパスを交付する。
+  who: {}
+  at_application:
+  - 市内在住の75歳以上（ともなりパス75）
+  - または市内在住で運転免許を自主返納した65歳以上（ともなりパス65）
+  - 事前申請が必要
+  where: 都市整備課
+  url: https://www.city.yaita.tochigi.jp/soshiki/toshiseibi/koureishagaishutsushien-tomonaripass.html
+  confidence: high
+  amount: 循環バス無料。デマンド交通は片道300円→200円、往復500円→300円
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+- category: gaishutsu
+  name: リフト付きワゴン車の貸出
+  name_on_page: リフト付きワゴン車貸出事業
+  summary: 車いす等を使う高齢者や身体の不自由な方に、移送用の車を貸し出す。
+  who: {}
+  at_application:
+  - 車いすやストレッチャーを日常的に使っている
+  - 高齢者はおおむね65歳以上
+  - 一般の交通機関の利用が困難な方
+  where: 矢板市社会福祉協議会
+  url: https://www.city.yaita.tochigi.jp/soshiki/shakaifukushi/syakyou0003.html
+  confidence: high
+  amount: 半日または1日単位で最長2日まで。燃料費は自己負担
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+- category: mimamori
+  name: ヤクルト配達による安否確認
+  name_on_page: ひとり暮らし高齢者「愛の訪問事業」
+  summary: ヤクルトスタッフが原則週2回ヤクルトを手渡しし、安否を確認する。
+  who:
+    age_min: 80
+    household:
+    - alone
+  at_application:
+  - デイサービス・ヘルパー・老人給食等を週2回以上は利用していない
+  where: 矢板市社会福祉協議会
+  url: https://www.city.yaita.tochigi.jp/soshiki/shakaifukushi/syakyou0003.html
+  confidence: high
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+- category: sonota
+  name: ごみ出し支援（ごみ出し応援隊）
+  name_on_page: YAITAごみ出し応援プロジェクト
+  summary: ごみ出しが難しい世帯に、応援隊がごみ置き場まで搬出し、見守りもする。
+  who: {}
+  at_application:
+  - 親族や近所の協力が得られず、ごみステーションへの搬出が困難
+  - 65歳以上で要介護・要支援認定のある方、または一定等級の障害者手帳の方などの世帯
+  - 幸齢課の訪問調査で利用の可否を決める
+  where: 幸齢課
+  url: https://www.city.yaita.tochigi.jp/soshiki/koureitaisaku/yaitagomipuro.html
+  confidence: high
+  amount: 1回100円（ごみ出し応援シール30枚綴り3,000円を社協で購入）
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+- category: sonota
+  name: 救急医療情報キットの給付
+  name_on_page: 救急医療情報キットを給付します
+  summary: かかりつけ医や持病などを入れて冷蔵庫に保管する救急医療情報キットを無料で配る。
+  who: {}
+  at_application:
+  - 市内に住民登録がある世帯
+  - 70歳以上のひとり暮らし、または70歳以上のみの世帯
+  - 手帳のあるひとり暮らしの障がい者も対象
+  - 同居家族がいても日中に上記の状態になる世帯も対象
+  where: 幸齢課
+  url: https://www.city.yaita.tochigi.jp/soshiki/koureitaisaku/kyukyukit2.html
+  confidence: high
+  amount: 無料（保管容器・情報カード・ステッカー一式を1世帯に1セット）
+- category: sonota
+  name: 緊急時連絡カードの配布
+  name_on_page: 緊急時連絡カード交付事業
+  summary: 本人や連絡先を書いて持ち歩く緊急時連絡カードを65歳以上の方に配る。
+  who:
+    age_min: 65
+  at_application:
+  - 市に住所がある
+  where: 幸齢課
+  url: https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+  confidence: low
+- category: sonota
+  name: 福祉機器（車いす等）の貸出
+  name_on_page: 高齢者福祉機器貸出事業
+  summary: 寝たきりの在宅の方などに、車いすなどの福祉機器を貸し出す。
+  who: {}
+  at_application:
+  - 寝たきりの在宅者（おおむね65歳以上）、または重度心身障がい者など
+  - 要介護認定を受けている方は対象外
+  where: 矢板市社会福祉協議会
+  url: https://www.city.yaita.tochigi.jp/soshiki/shakaifukushi/syakyou0003.html
+  confidence: high
+  amount: 一部自己負担あり
+  more_urls:
+  - https://www.city.yaita.tochigi.jp/uploaded/attachment/23884.pdf
+not_found:
+- koken
+- hochoki
+- jutaku
+- ribiyo

@@ -1,0 +1,115 @@
+city: '192015'
+name: 甲府市
+site: www.city.kofu.yamanashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等のクーポン支給
+  name_on_page: 高齢者の紙おむつなどの支給事業
+  summary: 要介護4・5の方を在宅で介護する家族に、紙おむつ等を買えるクーポン券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する家族が要介護者と同居している
+  - 介護者・要介護者・同居家族の全員が市民税非課税
+  where: 福祉保健部 総務課 高齢者支援係
+  url: https://www.city.kofu.yamanashi.jp/korefukushi/faq/kenko/fukushi/kore/00463.html
+  confidence: high
+  amount: 月 6,550 円分（655 円券 10 枚綴り）。申請の翌月分から支給
+  more_urls:
+  - https://www.city.kofu.yamanashi.jp/senior/sekatsu/index.html
+- category: haishoku
+  name: 高齢者への配食（夕食・安否確認）
+  name_on_page: 高齢者の方への配食サービス
+  summary: 調理が難しい高齢者のみの世帯に、平日の夕食を届けて安否も確かめる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 老衰・心身の障害・傷病などで日常の調理が困難
+  - 要介護はケアマネ、それ以外は包括支援センターに事前相談
+  where: 福祉部 長寿介護課 高齢者支援係
+  url: https://www.city.kofu.yamanashi.jp/korefukushi/faq/kenko/fukushi/kore/00466.html
+  confidence: high
+  amount: 1 食 400 円の自己負担。週 5 日（祝日・お盆・年末年始を除く）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置・利用
+  name_on_page: 高齢者等緊急通報システム（ふれあいペンダント）
+  summary: 急病時に 24 時間対応の受信センターにつながる通報装置やスマホアプリを使える。
+  who: {}
+  at_application:
+  - 次のどれか1つ。65歳以上のひとり暮らしで慢性疾患等により注意が必要
+  - または65歳以上の世帯で1人が慢性疾患等、緊急時に他の人が対応困難
+  - または18歳以上のひとり暮らしの重度身体障害者等
+  - 近所の協力員2名以上の登録が必要
+  where: 福祉部 長寿介護課 高齢者支援係
+  url: https://www.city.kofu.yamanashi.jp/korefukushi/kenko/fukushi/kore/kinkyu.html
+  confidence: high
+- category: ribiyo
+  name: 訪問理髪・美容の利用券
+  name_on_page: 訪問理髪・美容サービス
+  summary: 店に行けない在宅のねたきり高齢者に、訪問理髪・美容の利用券を出す。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 老衰・障害・傷病などで来店が困難
+  - 申請書に民生委員・児童委員の署名と捺印が必要
+  where: 福祉部 長寿介護課 高齢者支援係
+  url: https://www.city.kofu.yamanashi.jp/korefukushi/kenko/fukushi/kore/rihatsu.html
+  confidence: high
+  amount: 利用券は年 4 回まで。頁には費用負担 1 回 2,000 円とある
+- category: gaishutsu
+  name: 外出支援（タクシー基本料金の助成）
+  name_on_page: 外出支援サービス（タクシー基本料金の助成）
+  summary: 外出が難しい高齢者に、通院・入退院用のタクシー基本料金のクーポンを出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 移動の際に常時車いすを使っている
+  - 市民税が非課税（頁の表記のまま）
+  - 在宅心身障害者タクシー利用料金助成事業等の利用者でない
+  where: 福祉部 長寿介護課 高齢者支援係
+  url: https://www.city.kofu.yamanashi.jp/korefukushi/kenko/fukushi/kore/taxi.html
+  confidence: high
+  amount: 月 2 枚（基本料金 1 往復分）。自宅と市内病院の間が対象
+  more_urls:
+  - https://www.city.kofu.yamanashi.jp/koho/life/jyosei/korei-idx.html
+- category: haikai
+  name: GPS機能付き機器の購入費等助成
+  name_on_page: 甲府市GPS機能付き機器購入費等助成事業
+  summary: 認知症高齢者等の見守り用の GPS 機器の購入費と通信・レンタル料を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、自宅で生活している
+  - 要介護2以上の認知症高齢者等（要支援・要介護1でも対象の場合あり）
+  - 他制度の給付・助成を受けている経費は対象外
+  where: 地域包括支援課（頁に問い合わせ先として記載）
+  url: https://www.city.kofu.yamanashi.jp/kenko_seisaku/gpszyosei.html
+  confidence: high
+  amount: 本体購入は上限 15,000 円、通信・レンタル料は月額上限 1,000 円
+not_found: []

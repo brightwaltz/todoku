@@ -1,0 +1,233 @@
+city: '032051'
+name: 花巻市
+site: www.city.hanamaki.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給事業（紙おむつ等の購入費補助）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を在宅で介護する家族に、紙おむつ等の購入費を補助する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される方はおおむね65歳以上
+  - 申請するのは介護している家族
+  - 世帯全員の税情報の確認に同意が要る
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004578.html
+  confidence: high
+  amount: 月 6,250 円まで（紙おむつ、尿取りパッド、使い捨て手袋など）
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 低栄養の改善と安否確認のため、お弁当を自宅に届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 低栄養の改善のため配食が必要な方
+  - 申請後に判定表で必要性を判断する
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 利用料は 1 食 410 円
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: haikai
+  name: GPS機器の導入費用の補助
+  name_on_page: 高齢者位置情報検索機器（GPS機器）の導入費用を補助します
+  summary: 行方不明のおそれがある方の GPS 機器の購入・貸与の初期費用を補助する。
+  who:
+    at_home: true
+  at_application:
+  - 認知症等で行方不明のおそれがある方を介護する親族等
+  - 市内に住所があること
+  - SOSネットワークの事前登録者（未登録なら同時に登録）
+  - 機器の導入前に申請が必要
+  where: 長寿福祉課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019854/1009043.html
+  confidence: high
+  amount: 導入費用のうち上限 1 万円（1 人 1 回）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ボタン 1 つで通報できる装置を無料で貸す。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 発作性・慢性の疾患で日常的に常時注意が必要な方
+  - おおむね65歳以上のひとり暮らし等、または重度身体障がい者のみの世帯
+  - 家庭訪問で事前評価し、必要性を判定する
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: jutaku
+  name: 高齢者等住宅改造費の補助
+  name_on_page: 高齢者等住宅改造事業
+  summary: トイレ・浴室の改修や手すり設置などの住宅改造費を市が補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - おおむね65歳以上
+  - 所得による制限がある
+  - 介護保険の住宅改修の給付条件に当たることが前提
+  - 着工前の申請が必要。新築は対象外
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 対象工事費から20万円を引いた額の3分の2以内、上限30万円
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 寝たきりの方の掛け布団・敷き布団・毛布のクリーニングを無料で行う。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - おおむね65歳以上の寝たきりの方
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004578.html
+  confidence: high
+  amount: 無料、年2回まで
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理容・美容サービス事業
+  summary: 理美容師が自宅へ出張する費用を市が負担する。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 身体の障がいで理髪店・美容室へ行くのが困難な方
+  - 理美容料金は実費。組合加盟店の利用に限る
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004578.html
+  confidence: high
+  amount: 出張費用を市が負担、年6回まで
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: gaishutsu
+  name: 高齢者福祉タクシー券
+  name_on_page: 高齢者福祉タクシー等事業
+  summary: タクシー・予約乗合バス・路線バスで使える助成券を交付する。
+  who:
+    age_min: 80
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らし、または65歳以上のみの世帯
+  - 本人・同一世帯員が自動車（バイク除く）を持たない
+  - 障がい者福祉タクシー券の受給者は対象外
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 年12,000円分（100円券120枚）
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: gaishutsu
+  name: 通院時のタクシー料金助成
+  name_on_page: 高齢者通院時交通費助成事業
+  summary: 通院時のタクシー料金のうち片道1,000円を超えた分の助成券を交付する。
+  who:
+    age_min: 80
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 車を持たず、同居家族の送迎も受けていない
+  - 多世代同居は日中独居になる方が対象
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 片道1,000円を超えた額。年間最大3万円分
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: sonota
+  name: 軽度生活援助（草取り・整理などの手伝い）
+  name_on_page: 軽度生活援助事業
+  summary: シルバー人材センター会員が、軽微な修繕、草取り、室内整理などを手伝う。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、高齢者のみの世帯等
+  - 総合事業の事業対象者、または要支援・要介護認定を受けている
+  - 扶養義務者の援助が得られない方
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 30分あたり541円を市が補助。1回延べ2時間まで
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: sonota
+  name: 高齢者世帯等の除雪支援
+  name_on_page: 高齢者世帯等除雪支援事業
+  summary: 玄関から公道までの除雪を、市と契約した団体が行う費用の一部を助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、高齢者のみの世帯等
+  - 総合事業の事業対象者、または要支援・要介護認定を受けている
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 利用料は30分あたり320円
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+- category: sonota
+  name: 安心キットの配布
+  name_on_page: 緊急・救急医療情報キット（安心キット）配布事業
+  summary: かかりつけ医や緊急連絡先などを保管する救急時用のキットを無料で配る。
+  who: {}
+  at_application:
+  - 市内に住み、健康に不安のある方、高齢者、障がいのある方など
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 温泉施設の入浴利用券
+  name_on_page: 湯のまちホット交流事業
+  summary: 市と契約した市内の温泉施設で使える入浴利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 花巻市に住民登録がある
+  - 入浴は無料、ほかのサービスは有料
+  where: 長寿福祉課、各総合支所市民サービス課
+  url: https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019853/1004577.html
+  confidence: high
+  amount: 入浴は無料
+  more_urls:
+  - https://www.city.hanamaki.iwate.jp/_res/projects/default_project/_page_/001/004/577/koureitirashi0806.pdf
+not_found:
+- iro
+- koken
+- hochoki

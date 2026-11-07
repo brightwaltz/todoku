@@ -1,0 +1,155 @@
+city: '342106'
+name: 庄原市
+site: www.city.shobara.hiroshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者への紙おむつ購入助成券
+  name_on_page: 在宅高齢者紙おむつ購入助成券交付事業
+  summary: 重度の要介護者を同居で介護する人に、紙おむつ等を買える助成券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、同居して介護している主たる介護者が申請
+  - 申請にケアマネジャー等の証明が要る
+  where: 高齢者福祉課（介護保険係）。申請書の提出先は頁に明記なし
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat01/post_1568.html
+  confidence: high
+  amount: 1枚3,000円の助成券を月2枚まで。3か月分(6枚)を年4回に分けて交付
+- category: iro
+  name: 在宅高齢者家族介護慰労金
+  name_on_page: 庄原市在宅高齢者家族介護慰労金支給事業
+  summary: 要介護4・5の在宅高齢者を同居で介護する主たる介護者に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 市内に住所があり、同居して介護している主たる介護者が対象
+  - 入院・施設入所・短期入所の期間を除き月20日以上が算定の目安
+  - 年2回の基準日(8/1・2/1)の20日後までに申請
+  - 申請にケアマネジャー等の証明が要る
+  where: 高齢者福祉課（介護保険係）。申請書の提出先は頁に明記なし
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat01/post_1567.html
+  confidence: high
+  amount: 在宅高齢者1人につき月額5,000円。別に特別慰労金あり（市民税非課税世帯で1年間介護保険サービス未利用の場合、年額100,000円）
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業
+  summary: 栄養バランスのよい食事を定期的に届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のどれかに当たる人
+  - おおむね65歳以上のひとり暮らし
+  - 高齢者のみの世帯の人
+  - 身体または精神に障害がある人
+  where: 高齢者福祉課、各支所地域振興室
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat04/post_555.html
+  confidence: high
+  amount: 1日1食・週4回以内。自己負担は1食400円（おかずのみは350円）
+- category: gaishutsu
+  name: 高齢者タクシー利用助成券（外出支援券）
+  name_on_page: 高齢者外出支援券
+  summary: 車椅子を使う在宅の要介護3〜5の人にタクシー利用助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 日常生活で車椅子を使っている
+  - 庄原市障害者外出支援券の交付を受けていない
+  - 令和7年1月2日以降の転入者は非課税証明書が要る
+  where: 高齢者福祉課高齢者福祉係、各支所地域振興室（郵送可）
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat04/post_1818.html
+  confidence: high
+  amount: 年間最大24,000円（500円券×48枚）。申請月や認定期間で変わる
+- category: gaishutsu
+  name: 福祉車両の貸出
+  name_on_page: 福祉車両貸出
+  summary: 車椅子が必要な人の家族等に、車いす移動車（軽自動車）を貸し出す。
+  who: {}
+  at_application:
+  - 市内在住で車椅子が必要な人が対象。次のどれか
+  - 65歳以上で要介護3〜5
+  - 身体障害者手帳（下肢・体幹・移動機能1〜3級、じん臓機能1級）
+  - その他市長が必要と認める人
+  - 運転者は家族か近隣者で、運転経験1年以上
+  where: 高齢者福祉課高齢者福祉係、各支所地域振興室（借用日の1か月前〜3日前、郵送可）
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat04/post_1858.html
+  confidence: high
+  amount: 貸出2日以内（土日を挟むと4日）、月2回まで。燃料費・有料道路料金は自己負担
+- category: mimamori
+  name: ひとり暮らし高齢者等の巡回相談員による見守り
+  name_on_page: ひとり暮らし高齢者等巡回相談事業
+  summary: 委嘱された巡回相談員が訪問し、おおむね月4回安否を確認する。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のどれかに当たる人
+  - 75歳以上の人だけの世帯
+  - 重度の障害がある単身世帯
+  - 65歳以上75歳未満の要介護の単身世帯
+  where: 高齢者福祉課（頁の問い合わせ先）
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat04/post_553.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の給付
+  name_on_page: 緊急通報体制整備事業
+  summary: ひとり暮らし高齢者等に緊急通報装置を給付し、急病や災害時の対応につなぐ。
+  who: {}
+  at_application:
+  - 市内に住所があり、協力員がおおむね3名以上確保できる人
+  - おおむね65歳以上で虚弱なひとり暮らし・高齢者のみ世帯等の高齢者
+  - または身体障害者のみの世帯等の身体障害者
+  where: 高齢者福祉課（頁の問い合わせ先）
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat04/post_553.html
+  confidence: high
+  amount: 世帯の所得に応じた自己負担あり（額は頁に無し）
+- category: sonota
+  name: 高齢者世帯の雪下ろし・生活道除雪の費用補助
+  name_on_page: 高齢者世帯等雪下ろし・生活道除雪支援補助金交付事業
+  summary: 業者に頼んだ雪下ろしや生活道の除雪の費用の一部を、完了後に補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 75歳以上の人だけで構成する市民税非課税世帯
+  - 上記に障害者手帳所持者・15歳未満・要介護/要支援認定者がいる世帯も可
+  - 現に居住している住宅のみ。親族に頼んだ経費は対象外
+  where: 高齢者福祉課、各支所地域振興室（作業完了後に申請）
+  url: https://www.city.shobara.hiroshima.jp/main/health/koreisha/cat04/post_555.html
+  confidence: high
+  amount: 作業費の3分の1以内。同一年度の上限は3万7千円
+not_found:
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo

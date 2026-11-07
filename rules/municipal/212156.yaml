@@ -1,0 +1,146 @@
+city: '212156'
+name: 山県市
+site: www.city.yamagata.gifu.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者紙おむつ購入助成
+  name_on_page: 高齢者紙おむつ購入助成
+  summary: 在宅で常時紙おむつが必要な要介護3以上の非課税世帯の人に、購入助成券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、1カ月以上紙おむつを使っている
+  - 生活保護を受けていない
+  - 介護保険料の滞納がない
+  - ショートステイや入院で在宅でない期間が月10日以上の月は対象外
+  - 申請書に民生委員かケアマネジャーの署名が必要
+  where: 福祉課 介護係（窓口または郵送）
+  url: https://www.city.yamagata.gifu.jp/site/kaigo/48578.html
+  confidence: high
+  amount: 1カ月あたり上限5,000円分の助成券（申請月の翌月から）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者等に、平日の昼食・夕食を届けて安否確認もする。
+  who: {}
+  at_application:
+  - 調理が困難であること
+  - 次のいずれか：おおむね65歳以上のひとり暮らし世帯
+  - 75歳以上の高齢者世帯、または身体障がい者のみの世帯
+  - 申請は地域包括支援センター・ケアマネ・民生委員に相談
+  where: 福祉課（地域包括支援センター・介護支援専門員・民生委員にも相談）
+  url: https://www.city.yamagata.gifu.jp/site/kaigo/33921.html
+  confidence: high
+  amount: 利用者負担は1食500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 緊急ボタンでコールセンターにつながる通報装置を自宅に設置し貸与する。
+  who: {}
+  at_application:
+  - 次のいずれか：65歳以上のひとり暮らし
+  - ねたきりの人がいる65歳以上の高齢者世帯
+  - 身体障害者手帳1〜3級でひとり暮らし
+  - 緊急時に連絡がつく親族2人と近隣の協力員2人が必要
+  where: 地区担当の民生委員・児童委員に相談して申請、福祉課
+  url: https://www.city.yamagata.gifu.jp/soshiki/fukushi/2253.html
+  confidence: high
+  amount: 固定型（ペンダント・火災警報器付き）は無料、携帯型は一部負担あり
+- category: mimamori
+  name: 高齢者の見守り訪問
+  name_on_page: 高齢者の見守り
+  summary: ボランティア2人1組が月2回ほど自宅を訪ね、安否確認や声かけをする。
+  who: {}
+  at_application:
+  - ひとり暮らしや高齢者世帯、認知症高齢者など
+  - 見守りが必要と判断される人
+  where: 福祉課または地域包括支援センターに相談
+  url: https://www.city.yamagata.gifu.jp/site/kaigo/1446.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等見守り事業（見守りシール・賠償保険）
+  name_on_page: 認知症高齢者等見守り事業
+  summary: 二次元バーコードの見守りシールを無料で交付し、個人賠償責任保険にも市が加入する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に居住する高齢者で認知症などによる徘徊症状がある
+  - 同等の状況と市長が認めた人も対象
+  where: 福祉課（申請書を提出）
+  url: https://www.city.yamagata.gifu.jp/soshiki/fukushi/44067.html
+  confidence: high
+  amount: シールは無料（1人40枚）、保険は市が契約者で自己負担なし
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立費用や後見人報酬の負担が難しい人に、費用の一部を助成する。
+  who: {}
+  at_application:
+  - 申立費用や報酬の負担が困難で制度を利用できない人
+  where: 南部・北部の地域包括支援センター、福祉課
+  url: https://www.city.yamagata.gifu.jp/soshiki/fukushi/1441.html
+  confidence: low
+- category: sonota
+  name: 高齢者等の屋根雪下ろし費用助成
+  name_on_page: 高齢者等住宅屋根雪下ろし助成事業
+  summary: 屋根の積雪が50cm以上のとき、雪下ろし費用の一部を助成する。
+  who: {}
+  at_application:
+  - 屋根の積雪が50cm以上であること
+  - 75歳以上の高齢者のみの世帯、身体障害者手帳1・2級の人の世帯、母子・寡婦世帯のいずれか
+  - 手帳の世帯は18〜64歳の他の男性が同居すると対象外
+  - 領収書と雪下ろし前後の写真が必要
+  where: 福祉課
+  url: https://www.city.yamagata.gifu.jp/soshiki/fukushi/2260.html
+  confidence: high
+  amount: 1世帯2万円まで（費用が2万円未満なら支払額）、同一年度1回
+- category: sonota
+  name: 家具転倒防止器具の購入費助成
+  name_on_page: 家具等転倒防止器具購入費・設置推進助成金
+  summary: 高齢者世帯などの家具転倒防止器具の購入費を助成し、取付はNPOが無料で行う。
+  who: {}
+  at_application:
+  - 次のいずれかの人のみの世帯：65歳以上、要支援・要介護認定者
+  - 身体障害者手帳1〜3級、療育手帳A・B、精神手帳1・2級、難病患者等
+  - 母子・寡婦世帯（18〜64歳の同居者がいると除く）も対象
+  - 借家は家屋所有者の承諾が必要
+  where: 福祉課
+  url: https://www.city.yamagata.gifu.jp/soshiki/fukushi/1455.html
+  confidence: high
+  amount: 1世帯3,000円以内（1回限り）
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 持病や服薬、緊急連絡先を入れて冷蔵庫に保管する救急用の容器を配る。
+  who:
+    at_home: true
+  at_application:
+  - 市に住民登録があること
+  - 65歳以上の人、または障害者手帳を持つ人
+  where: 市役所福祉課、伊自良支所、美山支所、西武芸出張所で配布
+  url: https://www.city.yamagata.gifu.jp/uploaded/life/56126_109249_misc.pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

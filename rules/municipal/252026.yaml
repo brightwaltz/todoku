@@ -1,0 +1,97 @@
+city: '252026'
+name: 彦根市
+site: www.city.hikone.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ等購入費の助成
+  name_on_page: 彦根市おむつ等購入費助成
+  summary: 在宅で紙おむつ等を使う要介護・要支援の人に、購入費の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3以上、または要支援1〜要介護2で本人が住民税非課税
+  - 要支援1〜要介護2の人は、認定調査の排尿・排便に介助等が必要
+  - 介護保険の利用者負担割合が1割
+  - 介護保険料の滞納がない
+  where: 高齢福祉推進課（介護保険係）
+  url: https://www.city.hikone.lg.jp/kakuka/fukushi_hoken/7/2/6/4938.html
+  confidence: high
+  amount: 月 5,000 円までの購入費の 9 割（月 4,500 円まで）。4 か月分をまとめて申請する。
+  more_urls:
+  - https://www.city.hikone.lg.jp/material/files/group/122/r8gaiyou.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 彦根市緊急通報システム
+  summary: ボタンを押すと受信センターにつながる通報機器を借りられ、健康相談と月1回の安否電話もある。
+  who:
+    at_home: true
+  at_application:
+  - 病弱で日常生活に不安がある、65歳以上のひとり暮らしか高齢者世帯
+  - ひとり暮らし等の在宅重度身体障害者も対象
+  - 協力員2名以上と自宅の固定電話が必要
+  - 同じ敷地内に親族が住む場合は対象外
+  where: 高齢福祉推進課（地域包括支援係）。担当民生委員への相談が必要
+  url: https://www.city.hikone.lg.jp/kakuka/fukushi_hoken/7/3/2243.html
+  confidence: high
+  amount: 利用料は月 250 円（生活保護世帯は 0 円）。通話料などは実費。
+  more_urls:
+  - https://www.city.hikone.lg.jp/material/files/group/122/r8gaiyou.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 彦根市配食サービス事業
+  summary: ひとり暮らし等の高齢者に、昼食の弁当を届けながら安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、市内に住所がある
+  - 買い物や調理が困難で、食事の確保が十分にできない
+  - 安否確認が必要
+  - 利用の可否は配食サービス会議で決まる
+  where: 高齢福祉推進課、担当のケアマネジャー、地域包括支援センター
+  url: https://www.city.hikone.lg.jp/kakuka/fukushi_hoken/7/4_1/haisyoku/2190.html
+  confidence: high
+  amount: 1食あたりの助成は、費用の2分の1か200円の低い額まで。昼食のみ。
+  more_urls:
+  - https://www.city.hikone.lg.jp/material/files/group/122/r8gaiyou.pdf
+- category: haikai
+  name: 行方不明高齢者の事前登録と見守り安心シール
+  name_on_page: 彦根市メール配信システム（行方不明高齢者等の捜索者情報）
+  summary: 道に迷うおそれのある人の特徴を事前登録し、希望者にQRコード付きの見守り安心シールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症等により行方不明になるおそれがある高齢者
+  - 申込みは家族・親族・ケアマネジャー・民生委員等（家族以外は家族の承諾が必要）
+  - 事前登録申込書と本人の写真を提出
+  where: 高齢福祉推進課（持参または郵送）
+  url: https://www.city.hikone.lg.jp/kakuka/fukushi_hoken/7/5/2189.html
+  confidence: high
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori

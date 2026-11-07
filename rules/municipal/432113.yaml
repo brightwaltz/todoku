@@ -1,0 +1,142 @@
+city: '432113'
+name: 宇土市
+site: www.city.uto.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（配食サービス）
+  name_on_page: 食の自立支援事業(配食サービス)
+  summary: 自分で調理が難しいひとり暮らし等の高齢者に、平日の昼食・夕食を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 自分で調理することが困難
+  - 専門職の会議で利用の可否を決める
+  - 申請書は地域包括支援センター等で作り、市へ代理で出す
+  where: 地域包括支援センター等（地区ごと）。申請書は市の高齢者支援課へ代理で出す
+  url: https://www.city.uto.lg.jp/article/view/1081/958.html
+  confidence: high
+  amount: 1食300円。月〜金の昼・夕を週1回から最大10回（2018年の頁の記載）
+  more_urls:
+  - https://www.city.uto.lg.jp/d?q=7eb787d8d2edb09e783132affc40b9b3.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システム利用事業
+  name_on_page: 緊急通報体制等整備事業(緊急通報システム利用事業)
+  summary: 急病時にボタンで通報できる装置を貸し、看護師等への相談と月2回の安否確認もある。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし、またはそれに準ずる世帯
+  - 寝たきりに近い・転倒で寝たきりのおそれが高い、または命に関わる発作のおそれ
+  - 専門職の会議で利用の可否を決める
+  - 申請書は地域包括支援センター等で作り、市へ代理で出す
+  where: 地域包括支援センター等（地区ごと）。申請書は市の高齢者支援課へ代理で出す
+  url: https://www.city.uto.lg.jp/article/view/1081/958.html
+  confidence: high
+  amount: 月額0円（生活保護等）・200円・500円・700円（住民税と所得で4区分）
+  more_urls:
+  - https://www.city.uto.lg.jp/d?q=7eb787d8d2edb09e783132affc40b9b3.pdf
+- category: jutaku
+  name: 高齢者住宅改造助成事業
+  name_on_page: 高齢者住宅改造助成事業
+  summary: 介護が必要な高齢者の住宅（玄関・廊下・トイレなど）の改造費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の要介護認定を受けているか、同程度の状態と認められる
+  - 生計中心者の前年の所得税課税年額が7万円以下の世帯
+  - この事業による助成を受けたことがない
+  - 工事の前に申請する。新築・増築・改築は対象外
+  where: 担当のケアマネジャー経由で高齢者支援課
+  url: https://www.city.uto.lg.jp/article/view/1081/958.html
+  confidence: high
+  amount: 上限50万円。所得に応じて助成率が異なる
+  more_urls:
+  - https://www.city.uto.lg.jp/d?q=7eb787d8d2edb09e783132affc40b9b3.pdf
+- category: iro
+  name: 在宅高齢者介護手当
+  name_on_page: 在宅高齢者介護手当
+  summary: 要介護3〜5の高齢者を在宅で介護する家族に、介護手当を年1回支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住民登録があり、9月1日まで1年間引き続き在宅で介護した
+  - 基準日前の1年間の入院・デイ・短期入所が通算120日以内
+  - 担当ケアマネジャーが10月に申請書を市へ出す
+  where: 高齢者支援課 高齢者支援係（担当ケアマネジャー経由）
+  url: https://www.city.uto.lg.jp/article/view/1209/10297.html
+  confidence: high
+  amount: 要介護3は年額6万円、要介護4・5は年額12万円（要介護者1人につき）
+  more_urls:
+  - https://www.city.uto.lg.jp/d?q=7eb787d8d2edb09e783132affc40b9b3.pdf
+- category: kaigo-yohin
+  name: 介護用品の給付
+  name_on_page: 介護用品の給付
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、紙おむつ等の介護用品を2万円以内で現物支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おむつ等を6か月以上使っている要介護4・5の高齢者（市町村民税非課税）
+  - その高齢者を3か月以上在宅で介護している家族が対象
+  where: 地域包括支援センター（地区ごとに3か所）
+  url: https://www.city.uto.lg.jp/d?q=7eb787d8d2edb09e783132affc40b9b3.pdf
+  confidence: low
+  amount: 紙おむつ・尿取りパット等を2万円以内で現物支給
+  more_urls:
+  - https://www.city.uto.lg.jp/article/view/1210/6725.html
+- category: nichijo-yogu
+  name: 高齢者世帯等住宅用防災警報器給付事業
+  name_on_page: 高齢者世帯等住宅用防災警報器給付事業
+  summary: 高齢者だけの世帯に、住宅用の防災警報器の設置費用の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上の方のみで構成された世帯
+  - 要件を満たす場合（詳しい要件は冊子に無し）
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.uto.lg.jp/d?q=7eb787d8d2edb09e783132affc40b9b3.pdf
+  confidence: low
+  amount: 設置費用の一部を助成。負担額は所得に応じて異なる
+  more_urls:
+  - https://www.city.uto.lg.jp/article/view/1210/6725.html
+- category: sonota
+  name: 電動アシスト自転車購入費補助
+  name_on_page: 宇土市電動アシスト自転車購入費補助金制度
+  summary: 65歳以上の方が電動アシスト自転車を買うとき、講習会を受けることを条件に購入費の一部を補助する。
+  who: {}
+  at_application:
+  - 市内に住所があり、本人と世帯員に市税等の滞納がない
+  - 申請年度中に65歳以上になる人（年度内に65歳になる人を含む）
+  - 同じ年度に市内の販売店で購入し、市の講習会を修了した
+  - 同要綱の補助を受けたことがない世帯
+  where: 高齢者支援課（講習会は電話で予約）
+  url: https://www.city.uto.lg.jp/article/view/1209/973.html
+  confidence: high
+  amount: 本体購入費の3分の1、上限2万円（免許返納から1年以内は上限4万円）
+not_found:
+- koken
+- hochoki
+- shingu
+- ribiyo
+- haikai
+- mimamori
+- gaishutsu

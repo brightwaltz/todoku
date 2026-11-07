@@ -1,0 +1,136 @@
+city: '422029'
+name: 佐世保市
+site: www.city.sasebo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ購入費の支給
+  name_on_page: おむつ購入費支給申請書
+  summary: おむつの購入費を支給する。施設入所や入院の期間は対象外。
+  who:
+    at_home: true
+  at_application:
+  - 施設入所・入院・住所地以外にいる期間は対象外
+  - 購入のレシートか領収証が必要
+  - 対象者の条件は問い合わせて確かめる
+  where: 長寿社会課（頁に申請先の明記なし。問い合わせ先として記載）
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/chojyu/omutsu.html
+  confidence: high
+- category: haishoku
+  name: 高齢者への配食サービス
+  name_on_page: 配食サービスのご案内
+  summary: 1日1食の食事を手渡しで届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 身体機能の低下や認知症などで、調理と買い物の両方が難しい
+  - 高齢者のみ世帯は世帯全員が条件に当たること
+  - 買い物に行ける人と同居している場合は対象外
+  where: ケアマネジャーか地域包括支援センターに相談（市に直接は申し込めない）
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/chojyu/haisyokusa-bisu.html
+  confidence: high
+  amount: 1食420円（利用者負担。事業所に直接支払う）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システムのご案内
+  summary: 緊急通報装置と安否確認センサーを設置し、コールセンターが協力員や消防に連絡する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で常時注意が必要、または85歳以上
+  - 緊急時の連絡手段の確保が難しい
+  - 近所や市内の親族に協力員2名を頼める
+  - 所得課税証明書か生活保護受給証明書が必要
+  where: ケアマネジャーか地域包括支援センターに相談（市に直接は申し込めない）
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/chojyu/kinkyuutuuhousisutemu.html
+  confidence: high
+  amount: 月額0円（生活保護等）、300〜400円（非課税）、900〜1,000円（課税）。税別
+- category: haikai
+  name: 認知症高齢者の見守り支援登録
+  name_on_page: 佐世保市認知症高齢者見守り支援登録
+  summary: 行方不明のおそれのある認知症の人の情報を登録し、警察や地域包括支援センターなどに共有する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症（疑いを含む）で行方不明になるおそれがある
+  - 有料老人ホームやグループホーム等の利用者は除く
+  - 顔写真と全身写真が必要
+  where: 長寿社会課（ケアマネジャーや地域包括支援センター経由でも可）
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/chojyu/mimamorisien.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者見守りシールの配布
+  name_on_page: 認知症高齢者見守りシール（二次元コード付き）
+  summary: 行方不明のおそれのある認知症の人の衣服につける、二次元コード付きシールを無料で配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者見守り支援登録が済んでいること
+  - 未登録の場合は先に登録する
+  where: 長寿社会課（見守り支援登録と同じ窓口）
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/chojyu/mimamorisien.html
+  confidence: low
+  amount: 無料
+- category: haikai
+  name: 徘徊高齢者家族支援の GPS 端末貸与
+  name_on_page: 位置探索システム専門端末機
+  summary: 認知症で徘徊のおそれのある高齢者を介護する家族に、居場所を探せる小型 GPS 端末を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で、認知症により徘徊の可能性がある
+  - その人を在宅で介護している家族が対象
+  - グループホーム等に入居している場合は除く
+  where: ケアマネジャーか地域包括支援センター経由で長寿社会課（直接は申し込めない）
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/chojyu/mimamorisien.html
+  confidence: high
+  amount: 月額利用料なし。初期費用は2,000円か5,900円、検索1回は電話200円・ネット0円（税別）
+- category: gaishutsu
+  name: 敬老パス（市内路線バスの無料乗車証）
+  name_on_page: 敬老パス
+  summary: 75歳以上の市民に、市内の西肥バス・させぼバスに無料で乗れる IC パスを交付する。
+  who: {}
+  at_application:
+  - 対象年齢は問い合わせて確かめる
+  - 障害者手帳等の所持者は福祉パスの扱い
+  - 本人が手続きする。身分証が必要
+  where: 健康づくり課、各支所、宇久行政センター
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/kenkou/keropath.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用に係る佐世保市の助成制度について
+  summary: 生活保護か資産が少ない場合に、成年後見の申立費用や後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 申立費用は申立人が生活保護か資産が少ない場合
+  - 報酬は本人が生活保護か資産が少ない場合
+  - 詳しい基準は窓口で確かめる
+  where: 長寿社会課または障がい福祉課
+  url: https://www.city.sasebo.lg.jp/hokenhukusi/chojyu/20210924seinenkoukenseido.html
+  confidence: low
+  amount: 申立費用の実費、後見人等への報酬（上限額は頁に記載なし）
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

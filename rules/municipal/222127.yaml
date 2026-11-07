@@ -1,0 +1,182 @@
+city: '222127'
+name: 焼津市
+site: www.city.yaizu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: ひとり暮らし高齢者等への配食（安否確認つき）
+  name_on_page: ひとり暮らし高齢者等「食」の自立支援事業
+  summary: 栄養バランスのよい昼食を届け、安否も確認する配食の費用を市が助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らし、または要介護・要支援の人がいる高齢者のみの世帯
+  - または高齢者と重度障害者のみの世帯の高齢者
+  where: 担当ケアマネジャーまたは地区の地域包括支援センターに依頼（高齢者福祉課）
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/hohoemi-service.html
+  confidence: high
+  amount: 1食あたり普通食280円、高機能食330円を助成（利用者負担額は配食業者ごとに異なる）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置
+  name_on_page: 緊急通報システム設置事業
+  summary: ペンダント型発信機などを設置し、緊急時にすぐ対応できるようにする。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 概ね65歳以上のひとり暮らし世帯
+  - または寝たきり等の人を抱える高齢者のみの世帯（所長が認めた人）
+  - または家族の仕事等で一時的に上の状態になる世帯（所長が認めた人）
+  - 固定電話回線が必要（携帯・スマホ回線は新規受付停止）
+  where: 高齢者福祉課
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/hohoemi-service.html
+  confidence: high
+  amount: 利用料は月額1,000円と、点検の電話料金が1日10円程度
+- category: iro
+  name: 在宅の重度要介護者を介護する同居家族への手当
+  name_on_page: 在宅ねたきり老人等介護手当支給事業
+  summary: 要介護4・5の高齢者を在宅で長く介護する同居家族に、介護手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護4・5の認定が6か月以上続いている
+  - 寝たきり高齢者等を同居家族が常時介護している
+  - 世帯が所得制限に当たらない（基準額は頁に記載なし）
+  where: 高齢者福祉課
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/hohoemi-service.html
+  confidence: high
+  amount: 月額2,500円。前年度の全月が対象なら慰労加算金10,000円
+- category: kaigo-yohin
+  name: 在宅の寝たきり・認知症高齢者への紙おむつ支給
+  name_on_page: 在宅ねたきり老人等紙おむつ支給事業
+  summary: 在宅で紙おむつが必要な住民税非課税の人に、紙おむつ等の引換券を出す。
+  who:
+    tax:
+    - self_exempt
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護認定がある人、または65歳以上で寝たきり・認知症の人など
+  - 排泄やおむつ交換に介助が必要
+  - 生活保護の人、入院・入所中の人、日常用具でおむつ給付を受ける人は対象外
+  where: 高齢者福祉課（申請書を提出）
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/hohoemi-service.html
+  confidence: high
+  amount: 1回6,000円分相当の引換券を年6回（偶数月）
+- category: gaishutsu
+  name: 高齢者外出支援（タクシー料金助成）
+  name_on_page: 高齢者外出支援サービス
+  summary: 要支援の高齢者などが病院や公共施設へ行くときのタクシー初乗り分を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援1・2の認定、または外出支援が必要な総合事業対象者
+  - 家族等による移送が困難
+  - 重度心身障害者のタクシー券を持たず、所得制限に当たらない
+  - 利用区間は医療機関・官公署・市の公共施設のみ
+  where: 高齢者福祉課（電子申請もあり）
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/hohoemi-service.html
+  confidence: high
+  amount: 初乗り分に相当する額を年24回まで
+- category: ribiyo
+  name: 訪問理美容の出張料助成
+  name_on_page: 在宅高齢者訪問理美容サービス
+  summary: 自宅で理容・美容を受けるときの出張料の一部を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理美容店に出向くことが困難
+  where: 高齢者福祉課
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/hohoemi-service.html
+  confidence: high
+  amount: 訪問1回につき上限3,500円
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 高齢者保健福祉用具給付事業（補聴器購入補助）
+  summary: 住民税非課税の高齢者の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力が30デシベル以上で、医師が日常的な使用を必要と認める
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 他の法令等で補聴器購入費の助成を受けていない
+  where: 高齢者福祉課
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/hohoemi-service.html
+  confidence: high
+  amount: 費用の2分の1、片耳3万円まで（両耳で最大6万円）
+- category: haikai
+  name: 認知症高齢者の行方不明対策（事前登録・ステッカー）
+  name_on_page: 焼津市おみね輪プロジェクト（おでかけ見守りネットワーク）
+  summary: 行方不明に備えて情報を事前登録し、二次元コードや靴用のステッカーをもらえる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、おおむね65歳以上
+  - 認知症の診断を受けている、または認知症の治療薬を飲んでいる
+  - 行方不明になったことがある、または家族等が対策をしている
+  where: 高齢者福祉課（市役所本庁舎3階6番窓口）
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/care-system/dementia/ominewa/index.html
+  confidence: high
+  amount: 事前情報登録とステッカー交付は無料
+- category: sonota
+  name: 認知症高齢者の個人賠償責任保険（市が加入）
+  name_on_page: 認知症高齢者個人賠償責任保険事業
+  summary: 認知症高齢者が他人に損害を与えたときの賠償を、市が保険料を負担して補償する。
+  who: {}
+  at_application:
+  - おみね輪プロジェクトの事前情報登録をしている（同時申請も可）
+  - 他の保険の個人賠償特約で本人が被保険者なら対象外
+  where: 高齢者福祉課（市役所本庁舎3階6番窓口）
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/care-system/dementia/insurance.html
+  confidence: high
+  amount: 補償は1億円まで、利用者負担は無料
+- category: sonota
+  name: 高齢者・障害者向けエアコン購入補助
+  name_on_page: 高齢者と障害者の熱中症対策にエアコン購入の補助を行います
+  summary: 非課税世帯の高齢者のみの世帯などが市内の店でエアコンを買うときの費用を補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 自宅にエアコンがない（故障を含む）か、1台だけ
+  - 65歳以上のみの世帯、または障害者手帳（身障1・2級等）の人
+  - 市内の家電販売店で購入し、必ず購入前に申請
+  - 受付は2027年1月29日まで（予算の上限で終了あり）
+  where: 高齢者福祉課（障害者手帳の人は障害福祉課）
+  url: https://www.city.yaizu.lg.jp/health-welfare/nursing-care/senior/aircon-hojo.html
+  confidence: high
+  amount: エアコンがない人は費用の2分の1以内で上限5万円。2台目は3分の1以内で上限3万円
+not_found:
+- koken
+- jutaku
+- shingu

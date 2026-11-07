@@ -1,0 +1,118 @@
+city: '272124'
+name: 八尾市
+site: www.city.yao.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 加齢性難聴者の補聴器購入費助成
+  name_on_page: 八尾市加齢性難聴者補聴器購入助成事業
+  summary: 聞こえにくい高齢者の補聴器の購入費用の一部を市が助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 要介護認定なしから要支援2まで
+  - 聴覚の身体障害者手帳がない、または対象外
+  - 医師が両耳30デシベル以上で必要と証明する
+  - 介護予防事業への参加とアンケート回答ができる
+  - 過去にこの助成を受けていない
+  where: 高齢介護課 地域支援室（市役所本館 1 階）
+  url: https://www.city.yao.osaka.jp/kenkou_fukushi/koureisha_hukushi/1007883/1007903.html
+  confidence: high
+  amount: 購入費用の助成で上限 25,000 円
+- category: haikai
+  name: 徘徊高齢者 SOS ネットワーク登録と見守りグッズ
+  name_on_page: 徘徊高齢者SOSネットワーク
+  summary: 徘徊のおそれのある人を事前登録し、行方不明時に協力して探す。登録者に見守りグッズを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊のおそれがある高齢者
+  where: 高齢介護課、お近くの高齢者あんしんセンター
+  url: https://www.city.yao.osaka.jp/kenkou_fukushi/koureisha_hukushi/1007876/1007881.html
+  confidence: high
+  amount: 登録は無料
+- category: haikai
+  name: 徘徊高齢者の GPS 利用支援
+  name_on_page: GPS（位置検索システム）の利用支援
+  summary: 希望者に GPS 端末による位置検索の利用を支援する。
+  who: {}
+  at_application: []
+  where: 高齢介護課、お近くの高齢者あんしんセンター
+  url: https://www.city.yao.osaka.jp/kenkou_fukushi/koureisha_hukushi/1007876/1007881.html
+  confidence: high
+  amount: 月額使用料 1,200 円（税別）、充電器 2,500 円（税別）など。警備員の出動は 1 回 10,000 円（税別）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 急病や火災時にボタンで 24 時間の受信センターにつながる装置を貸与する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 60歳以上のひとり暮らしで緊急時の対応に不安がある人
+  - または高齢者のみ世帯で、一方が緊急時に対応できない人
+  - 同居家族がいても昼間ひとりで対応が難しい人も含む
+  where: 高齢介護課、お近くの高齢者あんしんセンター
+  url: https://www.city.yao.osaka.jp/kenkou_fukushi/kaigohoken/1007979/1007983.html
+  confidence: high
+  amount: 固定型は所得税課税世帯で月 1,500 円（税抜）、無線型は課税世帯で月 2,200 円（税抜）。非課税・生活保護世帯は固定型 0 円、無線型は非課税で月 700 円
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容
+  summary: 自宅へ理美容師が来る際の出張費を市が負担し、利用券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護3〜5、またはこれに準ずると認められた人
+  - 準ずる場合は、ケアマネか高齢者あんしんセンターの確認が必要
+  - 施設に入所中・入院中の人は対象外
+  where: 高齢介護課、お近くの高齢者あんしんセンター
+  url: https://www.city.yao.osaka.jp/kenkou_fukushi/kaigohoken/1007979/1007980.html
+  confidence: high
+  amount: 出張費 1 回 1,500 円を市が負担。年度内 4 回まで（申請時期で減る）。理美容料金は自己負担
+- category: kaigo-yohin
+  name: 家族介護用品の現物支給
+  name_on_page: 家族介護用品支給
+  summary: 同居の家族を在宅で介護する非課税世帯に、紙おむつなどを現物で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人と介護者がともに市に住民登録している
+  - 要介護3は、認定調査の排尿か排便で見守り以上が必要
+  - 施設入所中・入院中の人は対象外
+  where: 高齢介護課、お近くの高齢者あんしんセンター
+  url: https://www.city.yao.osaka.jp/kenkou_fukushi/kaigohoken/1007979/1007981.html
+  confidence: high
+  amount: 要介護3は月 5,000 円まで、要介護4・5は月 6,000 円まで（紙おむつ・尿取りパッド・使い捨て手袋・清拭剤・ドライシャンプー）
+not_found:
+- haishoku
+- iro
+- koken
+- shingu
+- gaishutsu
+- mimamori
+- jutaku

@@ -1,0 +1,205 @@
+city: '122246'
+name: 鎌ケ谷市
+site: www.city.kamagaya.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつ給付事業について
+  summary: 在宅の要介護3以上の高齢者に、紙おむつを無料で配送する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に居住している
+  - 常に失禁状態にある
+  - 老健・ケアハウス等の入所者や入院中の人は対象外
+  where: 高齢者支援課（窓口・郵送・電子申請）
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/kamiomutu.html
+  confidence: high
+  amount: 無料。テープ止め・はくパンツ・パッド・シートの 11 品目を毎月分給付
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護介護用品支給事業について
+  summary: 要介護4以上の人を介護する家族に、紙おむつと手袋等の介護用品を無料で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 同じ家庭内で家族が常時介護している
+  - 介護される人は常に失禁状態にある
+  - 施設入所者や入院中の人は対象外
+  where: 高齢者支援課（窓口・郵送）
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/kazokukaigo.html
+  confidence: high
+  amount: 無料。おむつ類 1 点と手袋・消臭剤等の用品 1 点を選べる（毎月分）
+- category: haishoku
+  name: 高齢者への配食
+  name_on_page: 給食サービス
+  summary: 高齢者世帯に昼食・夕食を届け、手渡しで安否も確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らし、または調理が困難な世帯（同居者も調理困難）
+  - 近隣に親族がいない
+  - 安否確認が必要、または生活機能評価で低栄養と診断された人
+  - 詳しい事情は訪問調査で確認される
+  where: 高齢者支援課
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/kyusyoku.html
+  confidence: high
+  amount: 1 食 昼 400 円・夕 500 円（生活保護世帯・低栄養は半額）。週 2 回まで
+- category: haikai
+  name: 認知症高齢者の見守りシール
+  name_on_page: 認知症高齢者見守りシール事業
+  summary: 行方不明時に発見者が家族へ連絡できる二次元コード付きシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 要介護・要支援認定を受けている、または過去に行方不明で保護された
+  - 65歳未満は医療機関で若年性認知症の診断を受けている
+  where: 高齢者支援課の窓口
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/mimamoristicker.html
+  confidence: high
+  amount: 1 人 30 枚。初回は無料、2 回目以降は有料
+- category: haikai
+  name: 徘徊高齢者の GPS 位置情報サービス
+  name_on_page: 徘徊高齢者位置情報提供サービス事業
+  summary: GPS 端末を貸し出し、所在不明のときに現在位置を知らせる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 要介護認定を受けている高齢者で、徘徊がみられる
+  where: 高齢者支援課
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/haikaiichijoho.html
+  confidence: high
+  amount: 利用料は月 500 円（非課税世帯は無料）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護者を介護サービスなしで介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護4・5の認定から 1 年以上たっている
+  - 介護サービスを使っていない（年 7 日の短期入所は除く）
+  - 90 日以上の入院がない
+  where: 高齢者支援課 高齢者福祉係
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/kazokuiroukin.html
+  confidence: high
+  amount: 年額 10 万円
+- category: jutaku
+  name: 手すり設置の住まいづくり助成
+  name_on_page: すみよい住まいづくり助成事業
+  summary: 虚弱な高齢者の住宅の手すり設置費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 筋力低下が予想される虚弱高齢者
+  where: 高齢者支援課 地域包括支援係
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/sumiyoisumai.html
+  confidence: high
+  amount: 手すり設置費の 2 分の 1、上限 5 万円
+- category: shingu
+  name: 寝具の乾燥・消毒等サービス
+  name_on_page: 高齢者寝具乾燥等サービス事業について
+  summary: 寝具の水洗い・乾燥・消毒・殺菌・脱臭を行う。
+  who: {}
+  at_application:
+  - 65歳以上で 6 か月以上寝たきりの人
+  - または失禁等があり常に介護が必要な認知症の人
+  - または 65 歳以上のみの世帯で支援が必要な人
+  where: 高齢者支援課 高齢者福祉係
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/singukansouservice.html
+  confidence: high
+  amount: 水洗い年 2 回、乾燥等月 1 回。利用料は無料〜1 回 3,500 円（所得で異なる）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 聞こえにくい住民税非課税の高齢者の補聴器購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 住民税非課税（課税者の扶養になっている人は対象外）
+  - 耳鼻咽喉科の医師が補聴器を必要と認めた
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 購入後 1 年以内に申請し、過去に助成を受けていない
+  where: 高齢者支援課（窓口・郵送）
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/hocyoukijyosei.html
+  confidence: high
+  amount: 最大 2 万円（1 人 1 台・原則 1 回）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システムのご案内
+  summary: ペンダント型発信機つきの緊急通報装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 疾患がある、または緊急時の対応に不安がある
+  - 協力員 1 名以上の登録と合鍵が必要
+  where: 高齢者支援課 高齢者福祉係
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/teate/kinkyutuuhou.html
+  confidence: high
+  amount: 月額 2,000 円（非課税 1,000 円、一部の人は無料。いずれも消費税別）
+- category: gaishutsu
+  name: 車いす対応車両の貸出（外出支援）
+  name_on_page: 外出支援サービス（車いすごと乗車できる車両の貸出）
+  summary: 車いすのまま乗れる車両を最大 4 日間無料で貸し出す。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上で、車いすでの移動が必要
+  - または 40〜64 歳で要介護認定を受け、車いすでの移動が必要
+  - 運転は利用者の家族かその依頼を受けた人
+  where: 高齢者支援課 高齢者福祉係（電話・窓口・申込みフォーム）
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/gaisyutusien.html
+  confidence: high
+  amount: 無料（燃料は利用者負担）。貸出は最大 4 日間
+- category: koken
+  name: 成年後見人等の報酬扶助
+  name_on_page: 報酬扶助
+  summary: 市長申立てで選ばれた後見人等の報酬を、月額上限内で扶助する。
+  who: {}
+  at_application:
+  - 市長が申立てて後見人等が選任された人
+  - 扶助がないと制度利用が困難、または生活保護を受けている
+  where: 高齢者支援課 地域包括支援係
+  url: https://www.city.kamagaya.chiba.jp/kenko-fukushi/koureishafukushi/seinenkoukenseido.html
+  confidence: high
+  amount: 報酬月額を扶助。上限は在宅 28,000 円、施設・長期入院 18,000 円
+not_found:
+- ribiyo
+- yutai
+- mimamori

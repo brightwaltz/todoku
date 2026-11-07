@@ -1,0 +1,184 @@
+city: 052019
+name: 秋田市
+site: www.city.akita.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給事業
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の要介護者を在宅で介護する家族に、紙おむつ等を自宅へ配達する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護する家族が市内に住所があり、要介護者と同居か同一敷地
+  - 要介護者が市の被保険者で、月の半数以上を在宅で過ごす
+  - 65歳以上は保険料の所得段階が1〜3、40〜64歳は市民税非課税
+  - 要介護者が生活保護を受けていない
+  where: 介護保険課、西部・北部・河辺・雄和・南部の各市民サービスセンター
+  url: https://www.city.akita.lg.jp/kurashi/kaigohoken/1006764/1004693.html
+  confidence: high
+  amount: 月額 6,250 円までの介護用品
+- category: iro
+  name: 家族介護慰労事業
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を介護する低所得の家族に、慰労金を年 1 回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する家族が市内に住所がある
+  - 要介護者が市の被保険者で、同居者全員が市民税非課税
+  - 1年間介護保険サービスを使わず在宅で過ごした（短期入所7日以内は除く）
+  - 要介護者が介護保険料を滞納していない
+  where: 介護保険課
+  url: https://www.city.akita.lg.jp/kurashi/kaigohoken/1006764/1004693.html
+  confidence: high
+  amount: 年額 10 万円
+- category: haishoku
+  name: 食の自立支援事業
+  name_on_page: 食の自立支援事業
+  summary: 調理が難しい高齢者に食事を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしなどで援助が必要
+  - 身体の衰え・障がい・病気で食事の調理が難しい
+  - 要介護・要支援認定の有無は問わない
+  where: 地域包括支援センター
+  url: https://www.city.akita.lg.jp/kurashi/koreishafukushi/1006036/1004846.html
+  confidence: high
+  amount: 1日1回・週3回まで。利用者負担は 1 回 350〜1,250 円（事業者により異なる）
+  more_urls:
+  - https://www.city.akita.lg.jp/_res/projects/default_project/_page_/001/023/512/r8-kurasinosiori-gattaiban.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: ボタンを押すだけで救助を求められる緊急通報装置を貸し出し、月1回安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 重度身体障がい者のみの世帯、またはこれらに準ずる世帯も対象
+  - 緊急時に適切な対応が必要と認められる
+  - 申込みには原則として協力員が必要
+  where: 地域包括支援センター（市内18か所）
+  url: https://www.city.akita.lg.jp/kurashi/koreishafukushi/1006014/1004848.html
+  confidence: high
+  amount: 利用料は介護保険料の段階により月額 0 円〜最大 660 円
+- category: koken
+  name: 成年後見制度利用支援事業（申立費用・後見人報酬の助成）
+  name_on_page: 秋田市成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、後見の申立て費用と後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 収入や資産から、申立費用や報酬の負担が困難と認められる
+  - 生活保護の被保護者も申立費用の助成対象
+  - 報酬助成は、家庭裁判所の報酬付与の審判を受けていること
+  - 後見人が本人の配偶者や扶養義務者でないこと
+  where: 長寿福祉課（65歳以上）、障がい福祉課（65歳未満）
+  url: http://www.city.akita.lg.jp/kurashi/koreishafukushi/1006009/1004860.html
+  confidence: high
+  amount: 報酬助成の上限は在宅で月 28,000 円、施設で月 18,000 円
+- category: gaishutsu
+  name: 高齢者コインバス事業（シニアアキカ）
+  name_on_page: 高齢者コインバス事業
+  summary: 高齢者向けの専用ICカードで市内のバスを使える制度。
+  who: {}
+  at_application:
+  - 対象者や運賃・受け取り方は窓口で確かめる
+  where: 長寿福祉課、各市民サービスセンター、駅東サービスセンター、秋田中央交通の窓口
+  url: https://www.city.akita.lg.jp/kurashi/koreishafukushi/1005997/1004840.html
+  confidence: high
+- category: haikai
+  name: 認知症等高齢者事前登録
+  name_on_page: 認知症等高齢者事前登録
+  summary: 道に迷うおそれのある人の情報を市に事前登録し、警察と共有。ステッカーを配付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の介護保険被保険者（40〜64歳の第2号を含む）
+  - 認知症または認知症の疑いで、道に迷うおそれがある
+  where: 地域包括支援センター
+  url: http://www.city.akita.lg.jp/kurashi/koreishafukushi/1006009/1017352.html
+  confidence: high
+- category: haikai
+  name: 見守り機器助成事業
+  name_on_page: 見守り機器助成事業
+  summary: 道に迷うおそれのある人の位置確認機器などの購入・レンタル費用を一部助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 在宅の認知症・知的障がい・精神障がいのかたなどで、道に迷うおそれがある世帯
+  where: 秋田市社会福祉協議会（電話 018-862-7445）
+  url: https://www.city.akita.lg.jp/_res/projects/default_project/_page_/001/023/512/r8-kurasinosiori-gattaiban.pdf
+  confidence: low
+- category: sonota
+  name: 高齢者雪寄せ支援事業
+  name_on_page: 高齢者雪寄せ支援事業
+  summary: 雪寄せが必要な高齢者の世帯に、玄関から道路までの雪寄せの援助員を派遣する。
+  who: {}
+  at_application:
+  - 雪寄せの援助が必要なおおむね65歳以上のひとり暮らしなどの世帯
+  - 屋根の雪下ろしや排雪は対象外
+  where: 長寿福祉課（在宅サービス担当）、地域包括支援センター
+  url: https://www.city.akita.lg.jp/kurashi/koreishafukushi/1004849.html
+  confidence: high
+  amount: 週2回まで、1回1時間以内。利用料は 1 回 550 円
+  more_urls:
+  - https://www.city.akita.lg.jp/_res/projects/default_project/_page_/001/023/512/r8-kurasinosiori-gattaiban.pdf
+- category: sonota
+  name: 高齢者雪下ろし支援事業
+  name_on_page: 高齢者雪下ろし支援事業
+  summary: 豪雪時に、屋根の雪下ろしや排雪にかかった費用の一部を補助する。
+  who: {}
+  at_application:
+  - 市民税非課税の高齢者のみの世帯、または障がい者のみの世帯
+  - 持ち家に限る
+  - 道路豪雪対策本部が設置されたときなどに限る
+  where: 長寿福祉課
+  url: https://www.city.akita.lg.jp/kurashi/koreishafukushi/1004849.html
+  confidence: high
+  amount: 上限は、雪下ろしで 1 万円、雪下ろしと排雪で 1 万 5 千円
+- category: sonota
+  name: はり・きゅう・マッサージの受療費の助成
+  name_on_page: はり・きゅう・マッサージの受療費の助成
+  summary: 55歳以上の国保加入者などに、はり・きゅう・マッサージの受療券を交付する。
+  who:
+    age_min: 55
+  at_application:
+  - 国民健康保険税を完納している世帯のかた
+  - 後期高齢者医療制度のかたは長寿福祉課で交付
+  where: 国民健康保険の窓口（後期高齢者医療は長寿福祉課）
+  url: http://www.city.akita.lg.jp/kurashi/hoken-nenkin/1005311/1010001/1003980.html
+  confidence: high
+  amount: 1日1回1枚につき 800 円の助成。年度内に 40 枚まで
+  more_urls:
+  - https://www.city.akita.lg.jp/_res/projects/default_project/_page_/001/023/512/r8-kurasinosiori-gattaiban.pdf
+not_found:
+- hochoki
+- jutaku
+- ribiyo
+- shingu
+- mimamori

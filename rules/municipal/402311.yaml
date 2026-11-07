@@ -1,0 +1,196 @@
+city: '402311'
+name: 那珂川市
+site: www.city.nakagawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物給付
+  name_on_page: 紙おむつ給付サービス
+  summary: 在宅で常時紙おむつが必要な要介護の市民税非課税の人に、紙おむつを届ける。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住む介護保険の被保険者
+  - 65歳未満は若年性認知症で要介護1〜5の人が対象
+  - 特養・老健に入所中、病院に入院中の人は対象外
+  where: 高齢者支援課 高齢福祉担当
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/kamiomutsu-service.html
+  confidence: high
+  amount: 月の給付限度額は、世帯全員が非課税なら6,000円、本人のみ非課税なら3,000円（現物）
+- category: haishoku
+  name: 配食サービス（見守り・安否確認つき）
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しい人に、昼食・夕食を手渡しで届け、見守りと安否確認も行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者のみ世帯などで、病気や障がいで調理が難しい
+  - または65歳未満の障がい者で、調理が難しく家族の協力が得られない
+  - 社会福祉協議会の職員が訪問して利用の計画を立てる
+  where: 那珂川市社会福祉協議会（電話092-952-4565）に申請書を出す
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/haishoku-service.html
+  confidence: high
+  amount: 1食450円（昼食・夕食の1日2回まで、1月1〜3日は休み）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置（ひとり暮らし高齢者向け緊急通報サービス）貸与事業
+  summary: 在宅のひとり暮らしの人に、緊急時に通報できる機器と人感センサーを貸す。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上で日常生活に常時注意が必要、または身体障害者1・2級
+  - 定期的な安否確認が必要な人
+  - 固定型（電話回線が必要）か携帯型を選ぶ
+  where: 高齢者支援課 高齢福祉担当（申請書を出す）
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/kinkyutuho-service.html
+  confidence: high
+  amount: 月額の自己負担は世帯の所得税課税額で0円〜（固定型1,850円・携帯型2,690円まで）
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒
+  name_on_page: 寝具類洗濯乾燥消毒サービス
+  summary: 寝具の衛生管理が難しい世帯の寝具を、業者が預かって洗い、返す。年2回まで。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ・身体障がい者のみの世帯
+  - 寝具などの衛生管理が難しい人
+  - 利用は年2回まで。洗濯中は寝具を借りられる
+  where: 高齢者支援課の窓口（身体障がい者の世帯は障がい者支援課）
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/futon-service.html
+  confidence: high
+  amount: 3点セット6,320円、4点セット7,970円（税込）
+- category: gaishutsu
+  name: 外出支援（移送）サービス
+  name_on_page: 外出支援（移送）サービス
+  summary: 車いす・寝たきりで電車やバスが使えない人を、自宅と医療機関の間で車両で送迎する。
+  who: {}
+  at_application:
+  - 要介護認定を受け、認定調査の歩行が「できない」に当たる
+  - 65歳以上の高齢者または身体障がい者で、下肢が不自由
+  - 一般の交通機関を使うことが難しい
+  - 福祉タクシー料金助成事業とは併用できない
+  where: 高齢者支援課 高齢福祉担当
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/gaisyutsu-service.html
+  confidence: high
+  amount: 自己負担は距離に応じて1回320円〜1,835円（月16回まで）
+- category: haikai
+  name: 認知症高齢者等ＳＯＳネットワークの事前登録
+  name_on_page: 認知症高齢者等ＳＯＳネットワーク
+  summary: 行方不明のおそれがある人を事前登録し、捜索への協力と早期発見ステッカーを受ける。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、概ね65歳以上で、認知症等で行方不明のおそれがある
+  - その他、必要と認められる人も対象
+  - 登録に申請書と本人の写真が必要
+  where: 市役所（高齢者支援課 高齢福祉担当）
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/haikaikoureisya-sos.html
+  confidence: high
+- category: jutaku
+  name: 住宅改造費助成（介護保険の住宅改修の上乗せ）
+  name_on_page: 住宅改造費助成事業
+  summary: 要支援以上の人を介護するための住宅改造費を、市民税非課税の世帯に助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市民税が非課税の世帯に属する（所得による制限あり）
+  - 工事の前に申請が必要（工事後は不可）
+  - 介護保険の住宅改修費を使った人、または同時に使う人
+  - 1住宅につき1回限り
+  where: 高齢者支援課 高齢福祉担当
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/juutakukaizou-josei.html
+  confidence: high
+  amount: 上限30万円（介護保険の住宅改修の上乗せにも使える）
+  more_urls:
+  - https://www.city.nakagawa.lg.jp/uploaded/attachment/28888.pdf
+- category: nichijo-yogu
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与事業
+  summary: 緊急連絡や安否確認が必要な高齢者に、福祉電話を貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 所得税非課税世帯
+  - 緊急の連絡や定期的な安否確認が必要と認められる
+  where: 高齢者支援課 高齢福祉担当
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/fukusidenwa.html
+  confidence: high
+  amount: 基本料金以外の費用は自己負担
+- category: gaishutsu
+  name: 運転免許証の自主返納の支援（ニモカ交付）
+  name_on_page: 高齢者の運転免許証の自主返納を支援します
+  summary: 70歳以上で免許を自主返納した人に、交通系ICカード（ニモカ）を渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 有効な運転免許証をすべて自主返納し、返納日から6か月以内
+  - 返納日と申請日の両方で市に住所がある
+  - 免許が失効した場合は対象外。支援は1人1回限り
+  where: 高齢者支援課の窓口（取消通知書などを持参）
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/jisyuhennou.html
+  confidence: high
+  amount: ニモカ10,000円分（利用可能額9,500円＋デポジット500円）
+- category: sonota
+  name: 高齢者安全運転支援装置等の購入補助
+  name_on_page: 高齢者安全運転支援装置等購入補助金
+  summary: 70歳以上の運転者が安全運転支援装置を付けるか、サポート車を買う費用を補助する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住み、運転免許証を持っている
+  - 自家用車に安全運転支援装置を付けた、または安全運転サポート車を買った
+  - ドライブレコーダーは安全運転支援機能つきのみ対象
+  where: 高齢者支援課 高齢福祉担当
+  url: https://www.city.nakagawa.lg.jp/uploaded/attachment/28888.pdf
+  confidence: high
+  amount: 対象経費の2分の1、上限2万円
+- category: sonota
+  name: 介護保険サービス利用者負担の助成
+  name_on_page: 介護保険サービス利用者負担助成
+  summary: 低収入で世帯全員が市民税非課税の人の、介護保険サービスの自己負担の3割を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険サービスを利用している
+  - 世帯員全員に所得がなく、世帯の年収が120万円以下（3人以上は加算）
+  - 市民税の課税者に扶養されず、生計も同じくしていない
+  - 資産を活用しても生活が困窮し、生活保護を受けていない
+  - 納期が来た介護保険料を完納している
+  where: 高齢者支援課（介護保険担当）
+  url: https://www.city.nakagawa.lg.jp/soshiki/11/kaigo-riyousya-hutanjosei.html
+  confidence: high
+  amount: 介護保険サービスの利用者負担額の3割
+not_found:
+- iro
+- koken
+- hochoki
+- ribiyo
+- mimamori
+- chusha
+- yutai

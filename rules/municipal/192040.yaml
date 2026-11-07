@@ -1,0 +1,157 @@
+city: '192040'
+name: 都留市
+site: www.city.tsuru.yamanashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 給食サービス（安否確認つきの昼食配達）
+  name_on_page: 給食サービス
+  summary: ひとり暮らし等の高齢者の自宅へ、安否確認を兼ねて昼食を毎日1回届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に居住している
+  - 65歳以上のひとり暮らし、または虚弱な65歳以上の夫婦世帯
+  - 病気などで食事の用意が困難
+  - 身内の見守りを受けにくい
+  - 車を運転する人、家族と同居・同敷地に家族がいる人は対象外
+  where: 長寿介護課 高齢者福祉担当（いきいきプラザ都留6番窓口）。職員の訪問調査が必要
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/1/1122.html
+  confidence: high
+  amount: 1食あたり課税世帯550円、非課税世帯440円。週7回から選べる。
+- category: kinkyu-tsuho
+  name: あんしん見守りセンサー（緊急通報システム）
+  name_on_page: 緊急通報システム（高齢者の見守り）
+  summary: 動きを感知するセンサーとみまもりフォンを設置し、異変時に安否確認や駆けつけを行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住で、虚弱なひとり暮らし、または高齢者世帯でいずれかが虚弱
+  - 家族と同居、同敷地に家族がいる人は対象外
+  - センサーとみまもりフォンはどちらか片方だけの利用不可
+  where: 長寿介護課 高齢者福祉担当（いきいきプラザ都留）。自宅訪問で申請
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/1/12260.html
+  confidence: high
+  amount: 設置費は無料。利用負担金は月400円（課税世帯）、月200円（非課税世帯）。
+- category: kaigo-yohin
+  name: 要介護高齢者等おむつ支給（紙おむつサービス）
+  name_on_page: 紙おむつサービス
+  summary: 在宅で重い介護が必要な人のおむつ等を、カタログから選んで年6回自宅へ届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある人を介護する家族が申請
+  - 施設入所で支給は廃止、ショートステイ1か月以上の月は停止
+  where: 長寿介護課（いきいきプラザ都留6番窓口）
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/1/1123.html
+  confidence: high
+  amount: 2か月分で6,000円分まで。奇数月に配達。超えた分は自己負担。
+- category: shingu
+  name: ふとん丸洗いサービス
+  name_on_page: ふとん丸洗いサービス
+  summary: 年数回、布団や毛布を丸洗い・乾燥消毒する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 老衰・心身の障害・病気などで寝具の衛生管理が困難
+  where: 民生委員を通じて社会福祉協議会に申請（問合せは長寿介護課）
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/1/1121.html
+  confidence: high
+  amount: 無料。毛布・羊毛ふとん・羽毛ふとんから各1種類。
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 都留市では補聴器購入費の一部を助成します
+  summary: 加齢による難聴で医師が必要と認めた65歳以上に、補聴器の購入費の半額を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 耳鼻咽喉科医師が補聴器の装用を認めた
+  - 補装具費の支給対象者でない
+  - 医師の意見書に基づき認定補聴器技能者が調整した補聴器
+  where: 長寿介護課 高齢者福祉担当
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/1/14268.html
+  confidence: high
+  amount: 購入費の1/2。限度額は介護保険料の所得段階で異なる。原則片耳。
+  more_urls:
+  - https://www.city.tsuru.yamanashi.jp/material/files/group/4/2_R8_hukusikoureisha.pdf
+- category: haikai
+  name: 高齢者等SOSネットワークと見守りシール
+  name_on_page: 高齢者等SOSネットワーク
+  summary: 徘徊のおそれがある人を事前登録し、行方不明時に警察等と情報共有する。見守りシールも無料配布。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の65歳以上（若年性認知症などは65歳未満も可）
+  - 認知症等で行方不明になる心配がある
+  - 家族等の介護者が顔写真・全身写真を添えて申請
+  where: 地域包括支援センター（長寿介護課）
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/10779.html
+  confidence: high
+  amount: 登録無料。見守りシールも無料配布。
+- category: haikai
+  name: GPS機器導入費補助金
+  name_on_page: GPS機器導入費補助金
+  summary: 徘徊のおそれのある認知症の人を介護する親族に、位置情報機器の初期費用を補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に居住する認知症高齢者等を介護する親族等で、費用を負担した人
+  - 高齢者等SOSネットワークへの登録が必要
+  - 位置情報専用の機器が対象。携帯電話・スマホ等は対象外
+  - 領収証の原本が必要
+  where: 長寿介護課 高齢者支援室（地域包括支援センター）
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/11091.html
+  confidence: high
+  amount: 機器の購入またはレンタルの初期費用、上限1万円。
+  more_urls:
+  - https://www.city.tsuru.yamanashi.jp/material/files/group/4/2_R8_hukusikoureisha.pdf
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の人が他人にけがをさせた等の賠償に備える保険に、市の事業として加入できる。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 高齢者等SOSネットワークに登録している
+  - 認知症の診断、または要介護認定で認知症自立度2a以上
+  - 市税等の滞納がない
+  where: 地域包括支援センター（長寿介護課）
+  url: https://www.city.tsuru.yamanashi.jp/soshiki/choujukaigo/koreifukushi_hokatsu_t/10779.html
+  confidence: high
+  amount: 賠償補償は上限1億円、死亡時の見舞費用は15万円。
+not_found:
+- iro
+- jutaku
+- ribiyo
+- gaishutsu
+- mimamori

@@ -1,0 +1,138 @@
+city: '212075'
+name: 美濃市
+site: www.city.mino.gifu.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入の助成券
+  name_on_page: 紙おむつ購入助成事業
+  summary: 在宅で常時おむつが必要な住民税非課税の高齢者に、購入助成券を渡す。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 6か月以上のねたきり、または認知症で常時おむつが必要
+  - 市が認める方（介護度や調査で排泄介助の必要を判定）
+  - 新規は担当ケアマネか民生委員等の証明が必要
+  where: 高齢福祉保険課
+  url: https://www.city.mino.gifu.jp/docs/1276.html
+  confidence: high
+  amount: 月 3,000 円分の助成券（4〜9月と10〜3月の2期に分けて交付）
+- category: haishoku
+  name: 高齢者への配食助成
+  name_on_page: 高齢者配食助成事業
+  summary: 配食の費用を一部助成し、届けるときに安否も確認する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  - 同じ町内、または半径1km以内に子どもがいる人は対象外
+  where: 高齢福祉保険課 高齢福祉係
+  url: https://www.city.mino.gifu.jp/docs/1279.html
+  confidence: high
+  amount: 1食につき250円の助成。昼食、月12回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 非常ボタンでコールセンターにつながる装置を、市の負担で設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らしか高齢者のみの世帯で生活に不安がある人
+  - または、身体障害者手帳1〜3級のひとり暮らしの人
+  - 民生委員か身体障害者相談員の証明が必要
+  - 協力員 3 名程度の承諾が必要
+  where: 高齢福祉保険課
+  url: https://www.city.mino.gifu.jp/docs/1278.html
+  confidence: high
+  amount: 機器の設置は市負担。固定型は無料、携帯型は月550円、人感センサーは月649円、駆付けは月330円（最後の2つは希望者のみ）
+- category: iro
+  name: ねたきり高齢者を介護する家族への慰労金
+  name_on_page: ねたきり高齢者介護者慰労金
+  summary: 要介護3以上の人を介護給付サービスなしで介護する家族に慰労金を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 同居か、同居に近い形で介護している介護者
+  - 認定後1年間、介護給付はショートステイ通算1か月以内のみ
+  - 1年間で通算1か月以上の入院がない
+  - 介護保険料・医療保険料・市民税等の滞納がない
+  - 生活保護を受けていない
+  where: 高齢福祉保険課
+  url: https://www.city.mino.gifu.jp/docs/1283.html
+  confidence: high
+  amount: 10万円。基準日前の半年以内に死亡した場合の介護者は一定の条件で5万円
+- category: haikai
+  name: 認知症の人の見守りシール配布
+  name_on_page: 美濃市徘徊高齢者等見守り事業
+  summary: QRコード付きの見守りシールを無料で配り、賠償責任保険にも市が加入する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 認知症等で徘徊行動がある、またはそのおそれがある
+  - ほか、必要と認められる人
+  where: 高齢福祉保険課 高齢福祉係
+  url: https://www.city.mino.gifu.jp/docs/1634.html
+  confidence: high
+  amount: シールは無料（耐洗シール30枚、蓄光シール10枚）。個人賠償責任保険は1事故最大1億円、自己負担なし
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 美濃市高齢者補聴器購入費助成金事業
+  summary: 聴力が下がった高齢者の補聴器購入費の半額まで（上限10万円）を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内在住
+  - 両耳40dB以上70dB未満で、身体障害者手帳の対象外
+  - 耳鼻咽喉科医師が装用の必要を認める
+  - 市税等の滞納がなく、他の補聴器助成や過去の利用がない
+  where: 高齢福祉保険課 高齢福祉係
+  url: https://www.city.mino.gifu.jp/docs/2704787.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限10万円（原則、購入前の事前申請が必要）
+- category: sonota
+  name: 軽度の生活援助員の派遣
+  name_on_page: コミュニティサポート(軽度生活援助)事業
+  summary: 買い物の付き添い、ごみ出し、簡単な修繕などの援助員を自宅に派遣する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 介護保険で自立と判定された高齢者
+  - 在宅の虚弱高齢者等で支援が必要な人
+  where: 高齢福祉保険課 高齢福祉係
+  url: https://www.city.mino.gifu.jp/docs/1281.html
+  confidence: high
+  amount: 1回1時間、月4回（4時間）まで。利用者負担は1回100円
+not_found:
+- koken
+- ribiyo
+- shingu
+- jutaku
+- nichijo-yogu
+- mimamori

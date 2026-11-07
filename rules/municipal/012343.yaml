@@ -1,0 +1,173 @@
+city: '012343'
+name: 北広島市
+site: www.city.kitahiroshima.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食の弁当と安否確認）
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しい在宅の方に、夕食の弁当を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 対象の条件は頁の抜き出しで確認できず、市に問い合わせる
+  where: 保健福祉部高齢者支援課（ケアマネジャー・高齢者支援センターの代理申請可、電子申請可）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00001000.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 急病や事故を知らせる緊急通報装置（固定型か携帯型）を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65歳以上、または身体障害者手帳1・2級
+  - 持病や健康不安があり日常生活に支障がある
+  - 近隣の緊急協力員を2〜3人確保できる
+  where: 保健福祉部高齢者支援課（電子申請は固定型のみ。代理申請可）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00000999.html
+  confidence: high
+  amount: 設置時の自己負担は所得に応じ0〜5,000円。携帯型は別に月400円
+- category: ribiyo
+  name: 訪問理容（利用助成券の交付）
+  name_on_page: 訪問理容サービス
+  summary: 寝たきりで理容店に行けない方の自宅へ理容師が来て、散髪できる。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上、または身体障害者手帳1・2級
+  - 常時寝たきりの状態
+  where: 保健福祉部高齢者支援課（ケアマネジャー等の代理申請可）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00000993.html
+  confidence: high
+  amount: 助成券は最大年6枚（申請月で減る）。利用者負担は申請時に問い合わせ
+- category: kaigo-yohin
+  name: 紙おむつ購入助成券の交付
+  name_on_page: 紙おむつの購入助成
+  summary: 在宅で常時紙おむつを使う方に、市内協力店で使える助成券を交付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、病院・施設（有料老人ホーム等含む）に入っていない
+  - 次のいずれか：65歳以上の寝たきりか重度認知症の方
+  - （上の方は自立度B1またはIIIa以上、排泄に見守り以上）
+  - または3歳以上で身体障害者手帳1・2級
+  - または3歳以上で療育手帳A判定
+  where: 保健福祉部高齢者支援課（ケアマネジャーの代理申請・電子申請可）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00000989.html
+  confidence: high
+  amount: 年額の上限は、世帯全員が市民税非課税なら6万円、それ以外は3万円（券は1枚1,000円）
+- category: haikai
+  name: 居場所発信機の導入費助成
+  name_on_page: いどころ発信システムの助成
+  summary: 徘徊のおそれのある方を介護する家族に、発信機の初期費用を助成する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊かそのおそれのある40歳以上の方を在宅で介護している
+  - 機器の購入前に事前申請する
+  where: 保健福祉部高齢者支援課
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00000986.html
+  confidence: high
+  amount: 初期費用の助成で上限7,000円
+- category: haikai
+  name: 認知症高齢者等の事前登録（行方不明時の早期発見）
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 事前登録すると、行方不明時に地域の協力で探す。個人賠償保険も市が加入する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊かそのおそれのある認知症高齢者
+  - 事前登録届と写真を提出する
+  - 保険は住民票が市内にある方のみ加入できる
+  where: 保健福祉部高齢者支援課（電子申請可）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00004746.html
+  confidence: high
+  amount: 保険料は市が負担（補償限度額3億円）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 補聴器利用促進事業
+  summary: 聞こえにくい65歳以上の方に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 高齢者が対象（年齢は頁の抜き出しで確認できず）
+  - 補聴器相談医の意見書が必要
+  - 購入前に申請する
+  where: 保健福祉部高齢者支援課
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00152960.html
+  confidence: high
+- category: koken
+  name: 成年後見制度の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 所得状況に応じて、申立て費用や後見人などの報酬費用を助成する。
+  who: {}
+  at_application:
+  - 助成は所得状況に応じる（詳しい基準は頁に無し）
+  where: 北広島市成年後見センター（保健福祉部 高齢者・障がい者相談担当）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00126718.html
+  confidence: low
+- category: mimamori
+  name: 一人暮らし高齢者への見守り電話
+  name_on_page: テレホンサービス
+  summary: ボランティアが電話をかけ、健康状態や困りごとを聞く。無料。
+  who:
+    household:
+    - alone
+  at_application:
+  - 一人暮らしの高齢者（年齢の下限は頁に無し）
+  where: 保健福祉部高齢者支援課
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00000998.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 除雪サービス（玄関から公道までの除雪）
+  name_on_page: 北広島市除雪サービス事業
+  summary: 除雪が難しい低所得の高齢者・障がい者のみの世帯の通路を除雪する。
+  who:
+    at_home: true
+  at_application:
+  - 身体的事情で除雪が困難
+  - 世帯全員が65歳以上、または手帳1・2級等の障がい者
+  - 世帯の市民税所得割が非課税
+  - 市内に3親等以内の親族がいる世帯は対象外
+  - 施設・病院に入所・入院中の世帯は対象外
+  where: 保健福祉部高齢者支援課（電子申請可）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00151768.html
+  confidence: high
+  amount: 通路の除雪は無料。置き雪の置き換え除雪は自己負担7,280円
+- category: sonota
+  name: 福祉灯油の支給（暖房費の一部）
+  name_on_page: 福祉灯油の支給
+  summary: 世帯全員が均等割非課税の高齢者世帯などに、暖房費として1万円を支給する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 2026-11-01時点で市内に住民登録がある
+  - 高齢者世帯：70歳以上の単身、または全員65歳以上で1人以上70歳以上
+  - または全員65歳以上で1人以上が要介護4・5
+  - 障がい者世帯・ひとり親世帯・生活保護世帯も対象
+  - 対象の方が病院・施設に入院・入所していない
+  where: 市役所の福祉課・高齢者支援課など（申請は2026-11-02〜2027-03-15）
+  url: https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00160483.html
+  confidence: high
+  amount: 1世帯1万円（生活保護世帯は5,000円）
+not_found:
+- iro
+- jutaku
+- shingu
+- gaishutsu
+- yutai

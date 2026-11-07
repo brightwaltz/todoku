@@ -1,0 +1,110 @@
+city: '332038'
+name: 津山市
+site: www.city.tsuyama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護3〜5の方を在宅で介護する家族に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される方・介護する方が介護保険料を完納している
+  - 津山市内に住む家族が在宅で介護している
+  where: 高齢介護課
+  url: https://www.city.tsuyama.lg.jp/common/photo/free/files/10599/202009070920320202392.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.tsuyama.lg.jp/common/photo/free/files/3528/202401161554150133463.pdf
+- category: iro
+  name: 家族介護慰労金の支給
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護サービスを使わず1年間在宅で介護した家族（主介護者）に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 過去1年間、介護サービス等を利用していない
+  - 支給されるのは主介護者（家族）
+  where: 高齢介護課
+  url: https://www.city.tsuyama.lg.jp/common/photo/free/files/10599/202009070920320202392.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.tsuyama.lg.jp/common/photo/free/files/3528/202401161554150133463.pdf
+- category: haishoku
+  name: 高齢者への昼食配食
+  name_on_page: 高齢者食事サービス
+  summary: 月〜金の昼食弁当を自宅に届ける、ひとり暮らし等の高齢者向けの配食。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市民税の所得割が非課税
+  - 心身の障害や病気などで特に必要と認められる
+  where: 高齢介護課（ケアマネジャーか地域包括支援センター職員を通じて申込）
+  url: https://www.city.tsuyama.lg.jp/common/photo/free/files/5663/R60411_no-masei.pdf
+  confidence: high
+  amount: 1食410円（税込）
+  more_urls:
+  - https://www.city.tsuyama.lg.jp/common/photo/free/files/10599/202009070920320202392.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸出
+  name_on_page: 緊急通報システムの貸出
+  summary: ボタンを押すと登録した近所の人に自動で連絡が行く装置を貸し出す。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上のひとり暮らし、70歳以上の高齢者のみ世帯
+  - または一人暮らしの重度身体障害の方
+  - 協力してくれる近所の人3名の承諾書が必要
+  - 民生委員の証明が必要
+  where: 高齢介護課
+  url: https://www.city.tsuyama.lg.jp/common/photo/free/files/5663/R60411_no-masei.pdf
+  confidence: high
+  amount: 無料（通話料は別）
+  more_urls:
+  - https://www.city.tsuyama.lg.jp/common/photo/free/files/3528/202401161554150133463.pdf
+- category: jutaku
+  name: 住宅改修費の上乗せ助成
+  name_on_page: 住宅改修・改造
+  summary: 住民税非課税の人に、介護保険の住宅改修の限度額を超えた費用の一部を助成する。
+  who: {}
+  at_application:
+  - 住民税非課税の人が対象
+  - 介護保険の住宅改修費の限度額を超えた部分が対象
+  where: 頁に窓口の記載なし（実施にはケアマネジャー等との事前打合せあり）
+  url: https://www.city.tsuyama.lg.jp/common/photo/free/files/3528/202401161554150133463.pdf
+  confidence: low
+- category: sonota
+  name: 短期宿泊（ショートステイ）事業
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 自宅での見守りが難しくなった非課税世帯の高齢者を、特養等に一時的に入所させる。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 居宅での見守りが困難になった高齢者が対象
+  where: 頁に窓口の記載なし
+  url: https://www.city.tsuyama.lg.jp/common/photo/free/files/3528/202401161554150133463.pdf
+  confidence: low
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu

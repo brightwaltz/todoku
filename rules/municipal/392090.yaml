@@ -1,0 +1,206 @@
+city: '392090'
+name: 土佐清水市
+site: www.city.tosashimizu.kochi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙オムツ給付サービス
+  summary: 寝たきり高齢者を在宅で介護する非課税世帯の方に、紙おむつ券を現物で給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 対象は寝たきり高齢者等を介護している方
+  - 冊子では在宅で3か月以上介護している方とある
+  where: 健康推進課 社会長寿係
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/021.html
+  confidence: high
+  amount: 1人あたり年額75,000円まで（現物給付）
+  more_urls:
+  - https://www.city.tosashimizu.kochi.jp/fs/6/3/7/8/9/9/_/iryou_kaigo-guidebook_2025.pdf
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者宅へ栄養バランスのよい食事を届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 老衰等で食事の調理が困難
+  - 冊子では定期的な見守りが必要な方とある
+  where: 健康推進課 社会長寿係
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/022.html
+  confidence: high
+  amount: 1食の利用料は普通食340円、特別食440円など
+  more_urls:
+  - https://www.city.tosashimizu.kochi.jp/fs/6/3/7/8/9/9/_/iryou_kaigo-guidebook_2025.pdf
+- category: nichijo-yogu
+  name: 日常生活用具の給付
+  name_on_page: 日常生活用具給付サービス
+  summary: 電磁調理器・火災警報器・自動消火器を給付する。所得に応じた負担金がある。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で寝たきりの方、またはひとり暮らしの高齢者
+  - 所得に応じた負担金が必要
+  where: 健康推進課 社会長寿係
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/020.html
+  confidence: high
+  more_urls:
+  - https://www.city.tosashimizu.kochi.jp/fs/6/3/7/8/9/9/_/iryou_kaigo-guidebook_2025.pdf
+- category: hochoki
+  name: 高齢者補聴器購入補助金
+  name_on_page: 高齢者補聴器購入補助金
+  summary: 中等度難聴の非課税の高齢者に、補聴器本体の購入費の半分を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 片耳40dB以上70dB未満で、耳鼻科医が必要と認めた
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 市への債務の滞納がない、過去に利用していない
+  - 購入前に申請し、交付決定を受ける
+  where: 健康推進課 社会長寿係
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/18624.html
+  confidence: high
+  amount: 補聴器本体の購入費の1/2、上限5万円
+- category: haikai
+  name: 認知症高齢者等見守りシール
+  name_on_page: 土佐清水市認知症高齢者等見守りネットワーク事業
+  summary: 行方不明のおそれがある方に、QRコード付きの見守りシールを無料で交付する。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、認知機能の低下で行方不明のおそれがある
+  - 全身と顔の写真、登録票を提出する
+  where: 健康推進課 社会長寿係
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/mimamori.html
+  confidence: high
+  amount: シールは無料
+- category: jutaku
+  name: 要介護者等住宅改造の市の補助
+  name_on_page: 土佐清水市要介護者等住宅改造支援事業
+  summary: 要介護・要支援の方の住宅改修・改築費の一部を、市が予算の範囲で補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 主たる生計維持者の前年所得税額が30万円未満
+  - 県税・市税の滞納がない
+  - 借家は所有者の改造承諾が必要
+  - 交付決定前に着工した工事は対象外
+  - 介護保険の住宅改修を使える場合はそちらが先
+  where: 健康推進課（社会長寿係・介護保険係）
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/23075.html
+  confidence: high
+  amount: 補助率2/3以内、上限66万6千円（生活保護世帯は10/10、上限100万円）
+  more_urls:
+  - https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/19734.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制支援
+  summary: ひとり暮らしの高齢者等に緊急通報装置を貸与し、設置料金は市が負担する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または重度身体障害者等
+  - 装置の必要性が認められる
+  - 協力者が2〜3人得られる
+  where: 健康推進課 保健推進係・社会長寿係
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kikaku/iju_04.html
+  confidence: high
+  amount: 設置料金は市負担（課税世帯は本人負担）。通話料等は本人負担
+  more_urls:
+  - https://www.city.tosashimizu.kochi.jp/fs/6/3/7/8/9/9/_/iryou_kaigo-guidebook_2025.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 対象の方に訪問理美容の利用券を年4枚まで交付する。技術料は自己負担。
+  who: {}
+  at_application:
+  - 要介護3以上の高齢者、または身体障害者手帳1・2級の方
+  where: 健康推進課 社会長寿係（冊子の問い合わせ先）
+  url: https://www.city.tosashimizu.kochi.jp/fs/6/3/7/8/9/9/_/iryou_kaigo-guidebook_2025.pdf
+  confidence: low
+  amount: 利用券は1人年4枚まで（技術料は個人負担）
+- category: sonota
+  name: 介護保険の利用者負担額の市独自助成
+  name_on_page: 介護保険の利用者負担額を助成する制度
+  summary: 低所得の要介護・要支援の方の居宅サービス利用料を、半分に助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上は介護保険料の段階が第1〜3段階
+  - 本人の収入年額が100万円未満
+  - 生活保護の方は対象外
+  - 保険料を1年以上滞納していると対象外
+  where: 健康推進課 介護保険係
+  url: https://www.city.tosashimizu.kochi.jp/fs/6/3/7/8/9/9/_/iryou_kaigo-guidebook_2025.pdf
+  confidence: high
+  amount: 利用者負担額の5/10（自己負担が10%のところ5%になる）
+- category: sonota
+  name: はり・きゅう等の施術費補助券
+  name_on_page: はり・きゅう・あんま・マッサージ指圧等施術費補助事業
+  summary: 対象の方に、市指定の施術所で使える補助券（年8枚）を交付する。
+  who: {}
+  at_application:
+  - 市民で、70歳以上の方
+  - または身体障害者手帳3級以上の65歳以上の方
+  - または脳疾患で身体障害者手帳3級以上の20歳以上の方
+  - 本人が申請する（手帳対象の方は手帳を持参）
+  where: 健康推進課 保健推進係、各市民センター
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/007.html
+  confidence: high
+  amount: 年8,000円（1,000円券×8枚）、1回の施術で1枚使う
+- category: yutai
+  name: 長寿手帳（県立施設等の割引）
+  name_on_page: 長寿手帳
+  summary: 65歳になった方に手帳を渡し、主な県立施設等の入場料が無料か割引になる。
+  who:
+    age_min: 65
+  at_application: []
+  where: 健康推進課 社会長寿係
+  url: https://www.city.tosashimizu.kochi.jp/kurashi/section/kenko/018.html
+  confidence: high
+not_found:
+- iro
+- koken
+- shingu
+- gaishutsu
+- mimamori
+- chusha

@@ -1,0 +1,133 @@
+city: '142174'
+name: 南足柄市
+site: www.city.minamiashigara.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の支給（利用券）
+  name_on_page: 介護用品支給事業
+  summary: 紙おむつ等に使える利用券を、年間最大6万円分まで発行する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 一人で排尿・排便の処理が困難な寝たきりか認知症の方
+  - 事前に窓口へ相談してから申請する
+  where: 高齢介護課 地域包括支援班
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/kaigo_youhin_shikyu.html
+  confidence: high
+  amount: 利用券は年間最大6万円分
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 週に1日1食、昼食か夕食を届けて安否を確認する。
+  who: {}
+  at_application:
+  - 調理が困難で、親族等から食事の提供を受けられない
+  - 65歳以上のひとり暮らしか高齢者世帯
+  - または身体障害者手帳1・2級など（頁の区分による）
+  where: 高齢介護課 地域包括支援班、または福祉課 障害福祉班
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/shokuno_jiritushien.html
+  confidence: high
+  amount: 1食あたり310円～650円（税込）の自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: ボタン1つでセキュリティ会社に通報できる機器を貸与する。見守りセンサーは希望制。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 慢性疾患等で定期的な安否確認が必要な方
+  - 合鍵をセキュリティ会社に預ける
+  where: 高齢介護課 地域包括支援班
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/kinkyu_tuhou_system.html
+  confidence: high
+  amount: 月額0円～990円（センサーありは385円～1,155円）、所得で変わる
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聴力低下で日常生活に支障のある在宅高齢者の補聴器購入費を一部助成する。
+  who:
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 購入後1年以内に申請書類を提出する
+  - 装用訓練等を受けた場合は上乗せ助成がある
+  where: 高齢介護課 地域包括支援班
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/p08656.html
+  confidence: low
+  amount: 上限75,000円。装用訓練や専門店での調整を受けた場合は上限105,000円
+- category: mimamori
+  name: 見守り機器の導入費補助
+  name_on_page: 高齢者あんしん見守り支援事業
+  summary: ひとり暮らし高齢者が安否確認用の見守り機器を入れる費用を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市税等の滞納がない
+  - 緊急通報システム事業を利用していない
+  - 入院・入所中の方と敷地内同居者がいる方は対象外
+  - 決定通知の前に契約すると補助対象外
+  where: 高齢介護課 地域包括支援班（市役所1階7番窓口）
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/miamori_jigyosha.html
+  confidence: high
+  amount: 上限15,000円（一人一度まで）
+- category: haikai
+  name: 認知症等の行方不明SOSネットワーク
+  name_on_page: 足柄上地区認知症等行方不明SOSネットワーク
+  summary: 認知症等による行方不明を、警察や地域と連携して早期に見つけるための事前登録制度。
+  who: {}
+  at_application:
+  - 利用には事前登録が必要
+  where: 基幹型地域包括支援センター（高齢介護課 地域包括支援班）
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/sos_network.html
+  confidence: low
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 審判請求の費用や後見人等への報酬の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 市長が家庭裁判所に審判請求を行った方
+  - 必要な費用の負担が困難な方
+  where: 高齢介護課 地域包括支援班
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/seinen_koukennin.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: あしがら安心キット(救急医療情報キット)配布
+  summary: 持病や服薬の情報を入れて冷蔵庫に保管する救急医療情報キットを無料で配る。
+  who: {}
+  at_application:
+  - 持病がある方
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - または障害者のみの世帯、障害者と高齢者の世帯など
+  where: 高齢介護課（7番窓口）、福祉課（8番窓口）、地域包括支援センター
+  url: https://www.city.minamiashigara.kanagawa.jp/kurashi/fukushi/kourei/anshinkit.html
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- chusha
+- yutai

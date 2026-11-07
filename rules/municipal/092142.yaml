@@ -1,0 +1,195 @@
+city: 092142
+name: さくら市
+site: www.city.tochigi-sakura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券
+  name_on_page: 在宅高齢者、重度障害者等紙おむつ給付事業
+  summary: 常時紙おむつが必要な在宅の方に、おむつ代を給付券で助成する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住。要介護1以上、または重度障害の手帳をお持ちの方
+  - 身体1・2級、療育A1・A2、精神1級のいずれか。市長が認める方も可
+  - 施設入所中、1か月以上の入院・ショートステイ中は対象外
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p002373.html
+  confidence: high
+  amount: 要介護1・2は月2,000円分（年24,000円）、その他は月4,000円分（年48,000円）
+- category: haishoku
+  name: 高齢者への配食と安否確認
+  name_on_page: 給食サービス事業
+  summary: 調理が難しい高齢者世帯にお弁当を届け、同時に安否確認をする。
+  who:
+    at_home: true
+  at_application:
+  - 同一敷地内（隣接地）に親族などが住んでいない
+  - 要支援1・2、要介護1〜5、事業対象者、重度障害のいずれか
+  - 重度障害は身体1・2級、療育A1・A2、精神1級の手帳。市長認定も可
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p002376.html
+  confidence: high
+  amount: 1食あたり、市民税非課税世帯250円、課税世帯350円。週3日まで、1日1回
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 急病やけがに備え、受信センターへ通報できる電話型の機器を貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の虚弱な方で、ひとり暮らしか65歳以上のみの世帯
+  - または、ひとり暮らし等の重度身体障害者（身体1・2級）
+  - または、家族の就労（週35時間以上）で日中ひとりになる65歳以上の方
+  - 市長が必要と認めた方も可。親族2名以上の事前登録が必要
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p002375.html
+  confidence: high
+  amount: 月額の自己負担は0〜3,148円（前年の所得税課税額による）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護3〜5の方を介護保険サービスなしで介護する同居家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 同居して主に介護している家族が申請する
+  - 過去半年の入院が45日以内
+  - 過去半年に介護保険サービスを使っていない
+  - 福祉用具貸与・購入、住宅改修、5日以内の利用は除く
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p002379.html
+  confidence: high
+  amount: 要介護者1人につき半年で50,000円
+- category: gaishutsu
+  name: 福祉タクシー利用券
+  name_on_page: 福祉タクシー事業
+  summary: 運転や公共交通の利用が難しい方に、タクシー代を利用券で助成する。
+  who:
+    at_home: true
+  at_application:
+  - 自力で運転でき ず、公共交通の利用も困難な方
+  - 65歳以上のみの世帯で市民税非課税（敷地内・隣接地に親族なし）
+  - または重度障害（身体1・2級、療育A1・A2、精神1級）
+  - 市長が特に必要と認める方も可
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p002369.html
+  confidence: high
+  amount: 1枚500円。65歳以上のみの非課税世帯で75歳以上は月8枚、他は月6枚
+- category: hochoki
+  name: 高齢者の補聴器購入補助
+  name_on_page: 高齢者補聴器補助金
+  summary: 手帳の対象外の難聴の65歳以上に、補聴器の購入費と装用継続を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力がそれぞれ30dB以上で、身体障害者手帳の対象外
+  - 補聴器相談医が、装用で改善が見込まれると判断
+  - 市税を完納。過去5年以内に交付を受けていない
+  - 認定補聴器技能者のいる販売店で購入。購入前に申請する
+  where: 高齢課
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000589/p004248.html
+  confidence: high
+  amount: 購入補助は上限2万円、装用継続補助は上限2万円（合計4万円まで）
+- category: haikai
+  name: 認知症等見守りシールの配布
+  name_on_page: 認知症等見守りシール配布事業
+  summary: 徘徊のおそれがある方の靴や杖に貼るシールを配り、早期の保護につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症などにより徘徊のおそれがある方
+  - 申請は本人のほか、市内・隣接市町に住む家族や親族も可
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000183/p002112.html
+  confidence: high
+  amount: 無料。1年度あたり10枚配布
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 電磁調理器給付事業
+  summary: 防火の配慮が必要なひとり暮らしの高齢者に、電磁調理器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 心身の機能低下で防火などの配慮が必要な高齢者向け
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p003867.html
+  confidence: high
+  amount: 自己負担は前年の所得税課税額で0円〜全額（階層A〜G）
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器の購入助成
+  name_on_page: 住宅用火災警報器等購入設置助成事業
+  summary: 高齢者世帯の住宅用火災警報器・自動消火器の購入設置費を半額助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 同一敷地内（隣接地）に親族などが住んでいない
+  - 他の制度による給付を受けていない
+  - 申請前に購入しないこと
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000589/p002378.html
+  confidence: high
+  amount: 購入設置費の半額、上限1万円
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与事業
+  summary: 電話のないひとり暮らしの高齢者に、固定電話機を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 電話を持っていない方。携帯電話は対象外
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p002380.html
+  confidence: high
+  amount: 電話機の貸与は無料。初期工事費は所得税額で負担あり、月々の料金は自己負担
+- category: sonota
+  name: 軽微な生活支援（清掃・修繕・除草）
+  name_on_page: 高齢者等生活支援サービス事業
+  summary: シルバー人材センターが、屋内外の軽い清掃や修繕、除草・庭木の手入れをする。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上のみの市民税非課税世帯（敷地内・隣接地に親族なし）
+  - または重度障害の手帳をお持ちの方のみの市民税非課税世帯
+  - 市長が特に認める世帯も可
+  - 機械代・材料費・処分費は助成の対象外
+  where: 高齢課 見守り福祉係
+  url: https://www.city.tochigi-sakura.lg.jp/medical/000029/000496/p002377.html
+  confidence: high
+  amount: 事業費の9割を助成（1世帯あたり月8,000円まで）、1割は自己負担
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- chusha
+- yutai

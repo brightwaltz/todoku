@@ -1,0 +1,267 @@
+city: '272108'
+name: 枚方市
+site: www.city.hirakata.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ひとり暮らし等の高齢者宅に、消防署や相談室につながる緊急通報装置を設置する。
+  who:
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - 市内に住所があり、おおむね65歳以上
+  - ひとり暮らしに準ずる人も含む
+  - 日中ひとりの場合は1日約6時間以上かつ週4日以上、就労証明が必要
+  - 固定電話回線が必要（回線により不可の場合あり）
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/0000002404.html
+  confidence: high
+  amount: 設置時 1,500円。通話料は月 40〜50円程度が自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の鍵保管・協力員代行
+  name_on_page: 緊急通報装置の利用にかかる鍵保管及び協力員代行
+  summary: 鍵を預けておくと、深夜などの急な手助けに係員が訪問してくれる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内に住むおおむね65歳以上
+  - 近隣に親族等の協力員がいない
+  - 緊急通報装置を設置している
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+  amount: 係員の出動1回につき 300円
+- category: mimamori
+  name: ひとり暮らしの人への定期連絡
+  name_on_page: ひとり暮らしの人への定期連絡
+  summary: 身寄りが近くにいない弱ったひとり暮らしの人に、市が定期的に連絡して安否を確かめる。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  - 安否の確認が必要と認められる人
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+- category: sonota
+  name: 高齢者SOSキーホルダーの配付
+  name_on_page: ひらかた高齢者ＳＯＳキーホルダーの配付
+  summary: 外出先で倒れたときなどに緊急連絡先を伝えられるキーホルダーを配る。
+  who: {}
+  at_application:
+  - 市内に住む65歳以上、または認知症の症状等がある40〜64歳
+  where: 健康福祉総合相談課、最寄りの地域包括支援センター
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+- category: kaigo-yohin
+  name: 在宅介護用品（おむつ等）の支給
+  name_on_page: 在宅介護用品（おむつ等）支給
+  summary: 在宅で介護を受ける要介護3〜5の非課税世帯に、おむつや介護用品を現物で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護3の人は認定上の別条件あり
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/0000038067.html
+  confidence: high
+  amount: 月 6,250円相当まで（要介護4・5）、月 5,000円相当まで（要介護3）。1割自己負担
+  more_urls:
+  - https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容
+  summary: 店に行けない在宅の高齢者が、自宅で理美容を受けるときの出張費を市が負担する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 要支援・要介護1〜2は、ひとり暮らしか高齢者のみの世帯（準ずる世帯含む）
+  - 要介護3〜5の人は世帯条件なし
+  - 認定上の条件あり
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+  amount: 出張費は市負担。カット代1,905円（税別）は自己負担。利用券は年6枚まで
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 枚方市高齢者補聴器購入費補助金交付事業
+  summary: 中等度難聴の高齢者の補聴器購入費を一部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録がある
+  - 聴覚障害の身体障害者手帳の交付対象ではない
+  - 医師の証明が必要（両耳で中等度難聴程度）
+  - 過去に本事業の補助を受けていない
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/0000051005.html
+  confidence: high
+  amount: 補聴器本体1台分、上限 25,000円（1人1回）
+- category: gaishutsu
+  name: 福祉タクシーの基本料金助成
+  name_on_page: 福祉タクシーの基本料金助成
+  summary: 寝たきりの高齢者が使う福祉タクシーの基本料金の利用券を、月2回分発行する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 日常生活自立度がBまたはC
+  - 生計中心者の市民税所得割額が12万円以下の世帯
+  - 申請は毎年度必要
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/0000023968.html
+  confidence: high
+  amount: 福祉タクシーの基本料金を月2回分助成
+- category: haikai
+  name: 徘徊高齢者SOSネットワーク
+  name_on_page: 徘徊高齢者（行方不明者）ＳＯＳネットワーク
+  summary: 事前登録しておくと、行方不明時に介護事業所等の協力機関が捜索に加わる。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む、認知症等で徘徊のおそれがある人
+  - 捜索開始には警察への捜索願が必要
+  where: 地域包括支援センター、健康福祉政策課
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+- category: haikai
+  name: みまもりあいステッカー
+  name_on_page: みまもりあいステッカー
+  summary: 徘徊で行方不明になったときの身元判明に使うステッカーを48枚もらえる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 要支援・要介護認定を受けている（申請予定・検討中も含む）
+  - 認知症による徘徊症状がある
+  where: 健康福祉政策課、地域包括支援センター
+  url: https://www.city.hirakata.osaka.jp/kourei/0000030786.html
+  confidence: high
+  amount: ステッカー48枚を渡す
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用と、後見人への報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分な高齢者や障害者
+  - 申立て費用は、市長申立て、または生活保護受給者等が対象
+  - 報酬は、親族・市民後見人以外が後見人の生活保護受給者等が対象
+  - 審判決定日から90日以内に申請
+  where: 健康福祉総合相談課（65歳以上）、障害支援課（65歳未満）
+  url: https://www.city.hirakata.osaka.jp/0000034425.html
+  confidence: high
+  amount: 申立て費用（鑑定料は上限10万円）。報酬は月額上限 28,000円（在宅）・18,000円（在宅以外）
+- category: sonota
+  name: 在日外国人等高齢者給付金
+  name_on_page: 在日外国人等高齢者給付金
+  summary: 老齢基礎年金を受けられない在日外国人等の高齢者に給付金を支給する。
+  who: {}
+  at_application:
+  - 大正15年4月1日以前の生まれ
+  - 昭和57年1月1日より前に外国人登録原票に登録されていた
+  - 市に住所があり住民基本台帳に記録されている
+  - 支給制限あり
+  where: 健康福祉総合相談課
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+  amount: 月額1万円以内。年2回（9月・3月）に分けて支給
+- category: sonota
+  name: 生活困窮高齢者の水道料金・下水道使用料の減免
+  name_on_page: 生活困窮者に対する水道料金・下水道使用料の福祉減免
+  summary: 65歳以上の生活困窮者の、水道・下水道の基本料金と一定水量までの従量料金を減免する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に居住し住民基本台帳に記載されている使用名義人
+  - 世帯の年間収入150万円以下（2人目から1人50万円加算）
+  - 預貯金350万円以下、居住用以外の固定資産がない
+  - 課税者に扶養されていない。施設入所者は対象外
+  where: 上下水道局 お客さまセンター
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+  amount: 基本料金と月8立方メートルまでの従量料金を減免
+- category: sonota
+  name: 要介護4・5の世帯の水道料金・下水道使用料の減免
+  name_on_page: 要介護認定による水道料金・下水道使用料の福祉減免
+  summary: 要介護4・5の人がいる世帯の水道・下水道の基本料金と一定水量までの従量料金を減免する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の人がいる世帯
+  - 施設入所者は対象外
+  where: 上下水道局 お客さまセンター
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+  amount: 基本料金と月8立方メートルまでの従量料金を減免
+- category: sonota
+  name: ふれあいサポート収集（ごみの戸別収集）
+  name_on_page: ふれあいサポート収集
+  summary: ごみ出しが難しい高齢者・障害者の世帯のごみを、職員が玄関先まで集めに来る。
+  who: {}
+  at_application:
+  - 要介護1以上、または身体障害者手帳1・2級等の人のみの世帯
+  - ホームヘルプサービスを現に利用している
+  - 対象でも利用できない場合あり
+  where: 環境事業課
+  url: https://www.city.hirakata.osaka.jp/kourei/cmsfiles/contents/0000023/23589/R8.0401koureisyasa-bisutebiki.pdf
+  confidence: high
+not_found:
+- haishoku
+- iro
+- jutaku
+- shingu
+- nichijo-yogu
+- chusha
+- yutai

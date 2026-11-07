@@ -1,0 +1,199 @@
+city: '132217'
+name: 清瀬市
+site: www.city.kiyose.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり高齢者への紙おむつ支給
+  name_on_page: 紙おむつの支給
+  summary: 寝たきり等で常時おむつを使う在宅の方に、おむつ等を自宅へ届けて支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 未申告の場合は住民税の申告が必要
+  - 生活保護を受けていない
+  - 寝たきりまたはこれに準ずる状態
+  - 市外居住・施設入所・入院中の方は対象外
+  where: 福祉総務課 福祉総務係（郵送可。毎月 25 日締切）
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1011696/1011697.html
+  confidence: high
+  amount: 月 6,000 円を上限とする支給。自己負担は 1 割
+- category: haikai
+  name: 徘徊探索サービス（位置探索端末の貸出）
+  name_on_page: 徘徊探索サービス
+  summary: 徘徊のある高齢者を在宅で介護する家族に、位置確認用の端末を貸し出す。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症による徘徊行動がある
+  - 外出時に端末を持ち歩ける
+  - 申請は家族で、実際に捜索できる距離に住む方
+  - 医師意見書が必要な場合がある
+  where: 福祉総務課 福祉総務係
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1011696/1011697.html
+  confidence: high
+  amount: 費用負担なし（破損・紛失は実費）
+- category: jutaku
+  name: 住宅設備改修給付事業（介護保険対象外の改修の助成）
+  name_on_page: 住宅設備改修給付事業
+  summary: 介護保険の住宅改修の対象外となる浴槽・洗面台・便器の取替え費用を市が助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 所得制限あり
+  - 工事前の事前申請が必要（施工後は不可）
+  - 介護保険の住宅改修を先に利用する
+  where: 福祉総務課
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1011696/1011647.html
+  confidence: high
+  amount: 上限は浴槽 379,000 円・洗面台等 156,000 円・洋式便器 106,000 円。自己負担は最大 2 割
+  more_urls:
+  - https://www.city.kiyose.lg.jp/_res/projects/default_project/_page_/001/011/647/jyuutakukaishuutebiki.r7.6.pdf
+- category: jutaku
+  name: 住宅改修予防給付事業（介護認定非該当の方の改修助成）
+  name_on_page: 住宅改修予防給付事業
+  summary: 転倒防止・介護予防のため、手すり設置や段差解消などの工事費を市が助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護認定で「非該当」と判定された方
+  - 所得制限あり
+  - 工事前の事前申請が必要（施工後は不可）
+  where: 福祉総務課
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1011696/1011647.html
+  confidence: high
+  amount: 給付限度額 20 万円。自己負担は最大 2 割
+  more_urls:
+  - https://www.city.kiyose.lg.jp/_res/projects/default_project/_page_/001/011/647/jyuutakukaishuutebiki.r7.6.pdf
+- category: nichijo-yogu
+  name: 自立支援日常生活用具の給付
+  name_on_page: 自立支援日常生活用具の給付
+  summary: 腰掛便座・スロープ・入浴補助用具・歩行支援用具・安全杖・シルバーカーを給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護認定で「非該当」と判定された方
+  - 身体状況や住環境から必要と認められる
+  - 購入前の事前申請が必要
+  where: 福祉総務課
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1011696/1011647.html
+  confidence: high
+  amount: 自己負担 1 割（一定以上の所得は 2 割）、限度額 10 万円
+- category: nichijo-yogu
+  name: 火災安全システムの給付（火災警報器等）
+  name_on_page: 火災安全システムの給付
+  summary: 火の始末に不安のある方に、火災警報器・ガス安全システム・電磁調理器のいずれか 1 種を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 認知症等で火の始末や火元の管理に注意が必要
+  - 1 種目のみ・1 回の申請
+  where: 福祉総務課
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1011696/1011647.html
+  confidence: high
+  amount: 所得に応じた費用負担あり（額は頁に記載なし）
+- category: kinkyu-tsuho
+  name: 救急通報システム機器の貸与
+  name_on_page: 救急通報システム機器の貸与
+  summary: 急病時にペンダントで消防または警備会社へ通報できる専用通報機を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 慢性疾患で常に注意が必要、自力で救急要請が困難
+  - 転倒・加齢による衰え・見守りだけが理由なら対象外
+  - 自宅の鍵を預けることに同意できる
+  - 電話回線があること。医師の診断書が必要な場合あり
+  where: 福祉総務課
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1011696/1011647.html
+  confidence: high
+  amount: 所得に応じた費用負担あり（額は頁に記載なし）
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 住民税非課税の 65 歳以上で中等度難聴の方に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻咽喉科医が両耳 40dB 以上の難聴と認めた方
+  - 身体障害者手帳の聴覚障害で補聴器の支給対象でない方
+  - 過去 5 年以内にこの助成を受けていない
+  - 認定補聴器専門店で購入すること
+  where: 福祉総務課（高齢者補聴器購入費助成担当）
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/1016418.html
+  confidence: high
+  amount: 本体購入費の 2 分の 1、上限 3 万円（1 人 1 台）
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用助成事業
+  summary: 費用の負担が難しい方に、後見の申立費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 市内在住で市が介護保険の保険者の方など
+  - 生活保護受給中、または費用負担が困難と認められる方
+  - 審判確定後 90 日以内に申請
+  where: 介護保険課 地域包括ケア係
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/1014761.html
+  confidence: high
+  amount: 鑑定費用は上限 5 万円。報酬は月額上限 在宅 2.8 万円・施設 1.8 万円
+- category: mimamori
+  name: ふれあい見守り訪問
+  name_on_page: ふれあい見守り訪問をいたします
+  summary: 協力員や民生委員が高齢者世帯を訪問して声かけ・見守りをする。希望すれば台帳未登録でも訪問。
+  who: {}
+  at_application:
+  - 主な対象は災害時等要援護者台帳に登録した高齢者世帯
+  - 未登録でも希望すれば訪問
+  where: 介護保険課 地域包括ケア係（清瀬市地域包括支援センター）
+  url: https://www.city.kiyose.lg.jp/kenkouiryouhukusi/koureisien/koureisyaservice/1004218.html
+  confidence: high
+not_found:
+- haishoku
+- iro
+- ribiyo
+- gaishutsu

@@ -1,0 +1,99 @@
+city: '392065'
+name: 須崎市
+site: www.city.susaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給（チケット）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護3〜5の方を在宅で介護する非課税世帯の家族に、紙おむつ等をチケットで現物支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請者は、同居か同居に準ずる状態で主に介護している家族
+  where: 長寿介護課（長寿支援係）
+  url: https://www.city.susaki.lg.jp/life/detail.php?hdnKey=5911
+  confidence: high
+  amount: 要介護5・4は月6,250円、要介護3は月5,000円（介護用品のチケット）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 須崎市高齢者補聴器購入費助成事業
+  summary: 聴力低下で困っている非課税世帯の65歳以上に、補聴器本体の購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 当該年度内に65歳になる人も対象
+  - 聴覚障害の身体障害者手帳の対象にならない
+  - 両耳が中等度難聴以上で、耳鼻科医が必要と認めた
+  - 市税の滞納がない・過去に本事業の助成を受けていない
+  - 助成が決まる前に買った補聴器は対象外
+  where: 長寿介護課（長寿支援係）
+  url: https://www.city.susaki.lg.jp/life/detail.php?hdnKey=5685
+  confidence: high
+  amount: 補聴器本体の費用の2分の1、上限5万円
+- category: gaishutsu
+  name: 高齢者等福祉タクシーチケット
+  name_on_page: 高齢者等福祉タクシーチケット
+  summary: 交通不便地区の高齢者か要介護4以上の一部の方に、タクシーチケットを交付する。
+  who: {}
+  at_application:
+  - 次のどちらか：対象地区に住む70歳以上で自家用車を運転しない人
+  - または、在宅で要介護4以上かつ自立度ランクB2以上の人
+  - 施設・病院に入所入院中、市税や介護保険料の滞納がある人は対象外
+  - 障害者福祉タクシー等やおでかけ応援事業とは併用不可
+  where: 長寿介護課（長寿支援係）
+  url: https://www.city.susaki.lg.jp/life/detail.php?hdnKey=3915
+  confidence: high
+  amount: 500円券を月4枚、年間上限48枚
+- category: gaishutsu
+  name: 高齢者おでかけ応援チケット（バス・タクシー）
+  name_on_page: 須崎市高齢者おでかけ応援事業
+  summary: 70歳以上の在宅の市民に、バスとタクシーで使えるチケットを交付する。
+  who:
+    age_min: 70
+    at_home: true
+  at_application:
+  - 申請月に満70歳以上で須崎市に住民票がある
+  - 市税・介護保険料の滞納がない
+  - 指定の有料老人ホーム等の入居者は対象になる
+  - 障害者福祉タクシー等や高齢者等福祉タクシーとは併用不可
+  where: 長寿介護課の窓口（令和8年5月11日〜令和9年3月31日受付）
+  url: https://www.city.susaki.lg.jp/life/detail.php?hdnKey=5952
+  confidence: high
+  amount: 居住地区により年3,000円・6,000円・9,000円（区分表は頁の画像）
+- category: jutaku
+  name: 住宅改造費の助成
+  name_on_page: 住宅改造支援事業
+  summary: 要介護・要支援の方などの住宅改修費を、所得税額の条件つきで市が助成する。
+  who: {}
+  at_application:
+  - 次のどれか：要支援・要介護の認定、65歳以上のみで暮らす、身障手帳1・2級
+  - 世帯の主な生計中心者の前年所得税額が30万円未満
+  - 一般高齢者は手すり・段差解消など介護保険の改修範囲内
+  where: 長寿介護課 長寿支援係（障害者は福祉事務所 障害福祉係）
+  url: https://www.city.susaki.lg.jp/life/detail.php?hdnKey=276
+  confidence: high
+  amount: 基準額は要介護高齢者・身体障害者100万円、一般高齢者30万円。助成率は3分の2（生活保護世帯は全額）
+not_found:
+- haishoku
+- haikai
+- iro
+- kinkyu-tsuho
+- shingu
+- ribiyo
+- mimamori

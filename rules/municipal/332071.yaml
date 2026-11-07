@@ -1,0 +1,137 @@
+city: '332071'
+name: 井原市
+site: www.city.ibara.okayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費の助成について
+  summary: 聞こえにくい高齢者が補聴器を買うとき、費用の一部が助成される。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 両耳とも聴力が40dB以上70dB未満
+  - 耳鼻咽喉科医の診療情報提供書がもらえる
+  - 過去にこの助成を受けていない
+  - 世帯員全員が市税を滞納していない
+  where: 福祉課 社会福祉係
+  url: https://www.city.ibara.okayama.jp/soshiki/16/15143.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限5万円（1人1回限り）
+- category: kaigo-yohin
+  name: 紙おしめ利用券の助成
+  name_on_page: 紙おしめ利用券の助成（井原市福祉基金助成事業）
+  summary: 在宅で常時おしめを使う要介護の人などに、紙おしめ等に使える利用券を交付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護1〜5の認定、または一定の障害者手帳・難病の人
+  - 尿とりパッドだけの使用者は対象外
+  - 他の制度で紙おしめ等の給付を受けられる人は除く
+  - 地区の民生委員に相談して申請する
+  where: 地区民生委員を通じて介護保険課 地域包括支援センターへ申請
+  url: https://www.city.ibara.okayama.jp/soshiki/18/12858.html
+  confidence: high
+  amount: 市県民税課税世帯は2万円分、その他の世帯は4万円分の利用券（申請月で枚数が変わる）
+- category: iro
+  name: 在宅介護激励金
+  name_on_page: 在宅介護激励金
+  summary: 寝たきりや認知症の高齢者らを自宅で常時介護している人に、年2回激励金を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 同居の人を6か月以上、常時介護している
+  - 寝たきりで要介護3以上、または障害者手帳等の該当者
+  - 65歳以上で認知症の状態かつ要介護3以上も対象
+  - 申請書と民生委員の証明書が要る
+  where: 福祉課 社会福祉係
+  url: https://www.city.ibara.okayama.jp/soshiki/16/2177.html
+  confidence: high
+  amount: 年5万円（9月末と3月末に分けて支給）
+- category: ribiyo
+  name: 理美容サービス利用料金の助成
+  name_on_page: 理美容サービス利用料金の助成（井原市福祉基金助成事業）
+  summary: 在宅介護激励金の対象になっている被介護者に、理美容の利用券を交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、在宅介護激励金の支給対象の被介護者
+  where: 福祉課 社会福祉係
+  url: https://www.city.ibara.okayama.jp/soshiki/16/1172.html
+  confidence: high
+  amount: 1,500円券を年6枚
+- category: haikai
+  name: あんしん見守りシール（QRコード）
+  name_on_page: 井原市認知症高齢者等ＱＲコード活用見守り事業
+  summary: 行方不明時に家族へ連絡できるQRコード付きシールを、介護する家族が申請して受け取れる。
+  who: {}
+  at_application:
+  - 市内に住み、認知症の65歳以上の人、または若年性認知症の人
+  - 申請できるのは対象者を介護している家族など
+  - 医師の診断か、それに相当すると認められること
+  where: 介護保険課 地域包括支援センター
+  url: https://www.city.ibara.okayama.jp/soshiki/18/1924.html
+  confidence: high
+  amount: 無料（1セット30枚。追加は自己負担）
+- category: gaishutsu
+  name: 福祉タクシー・福祉バス料金の助成
+  name_on_page: 福祉タクシー料金、福祉バス料金の助成（井原市福祉基金助成事業）
+  summary: 住民税非課税で通院が必要な高齢者などに、タクシーまたはバスの乗車券を交付する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 高齢者は65歳以上で交通手段がなく、おおむね週1回以上通院が必要
+  - 通院の事実がわかる資料（領収証など）を添付する
+  - 障害者手帳・難病などの人も対象（別枠）
+  where: 福祉課、または各支所の市民福祉係
+  url: https://www.city.ibara.okayama.jp/soshiki/16/1173.html
+  confidence: high
+  amount: タクシー基本料金またはバス最低運賃の乗車券を月8枚
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり・きゅう・マッサージ施術費助成（井原市福祉基金助成事業）
+  summary: 市内の施術所で施術を受けるときに使える助成券を、住民税非課税の65歳以上の人などに交付する。
+  who: {}
+  at_application:
+  - 65歳以上で市県民税非課税の人、または一定の障害者手帳の人
+  - 市内の免許のある施術所で施術を受ける場合に限る
+  where: 福祉課、または各支所の市民福祉係
+  url: https://www.city.ibara.okayama.jp/soshiki/16/1171.html
+  confidence: high
+  amount: 2,000円券を年24枚
+- category: sonota
+  name: 防犯機能付き電話機器の購入補助
+  name_on_page: 防犯機能付き電話機器購入補助制度
+  summary: 詐欺被害を防ぐ、通話を自動録音する固定電話機器の購入費を一部補助する。
+  who: {}
+  at_application:
+  - 市内に住む満65歳以上の人がいる世帯の世帯主
+  - 世帯員全員が市税を滞納していない
+  - 市内の店で購入した、自動録音機能付きの固定電話機器が対象
+  where: 市民活動推進課
+  url: https://www.city.ibara.okayama.jp/soshiki/12/15376.html
+  confidence: high
+  amount: 購入・設置費の2分の1、上限5,000円
+not_found:
+- haishoku
+- kinkyu-tsuho
+- jutaku
+- nichijo-yogu

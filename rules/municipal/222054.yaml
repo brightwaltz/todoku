@@ -1,0 +1,172 @@
+city: '222054'
+name: 熱海市
+site: www.city.atami.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品券の支給
+  name_on_page: 家族介護用品支給事業
+  summary: おむつを使う重度の要介護者を在宅で介護する家族に、介護用品券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、月の半分以上を在宅で生活している
+  - 常時失禁状態でおむつを使っている
+  - 介護保険料の滞納がない
+  where: 担当ケアマネジャーに連絡のうえ、長寿介護課（長寿支援室）に申請
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1001185.html
+  confidence: high
+  amount: 介護保険料の第1〜3段階は月 8,000 円、第4段階以上は月 5,000 円
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 熱海市高齢者補聴器購入費助成事業
+  summary: 聞こえにくい 65 歳以上の人に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市に住民登録がある
+  - 両耳 40 デシベル以上で、医師が補聴器の必要を証明
+  - 障害者総合支援法などの助成の対象でない
+  - 市税などを滞納していない
+  where: 長寿介護課（長寿支援室）
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1016788.html
+  confidence: high
+  amount: 購入費の 2 分の 1、上限 3 万円（1 人 1 回限り）
+- category: gaishutsu
+  name: 70 歳以上の市内路線バス無料乗車証
+  name_on_page: いきいき外出支援事業
+  summary: 70 歳以上は、毎月 6・16・26 日に市内の路線バスが終日無料になる。
+  who:
+    age_min: 70
+  at_application:
+  - 市の住民基本台帳に記録がある
+  - 対象者に届く通知を受け取ってから、窓口か郵便で事前申込み
+  where: 長寿介護課（長寿支援室）
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1018688.html
+  confidence: high
+  amount: 対象日（毎月 6・16・26 日）の市内バス運賃が無料
+- category: haikai
+  name: 認知症の人の徘徊 SOS 事前登録
+  name_on_page: 認知症高齢者等徘徊SOSネットワーク
+  summary: 徘徊のおそれがある人の情報を事前に登録して警察と共有し、早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症により徘徊の可能性がある人
+  - 申請時に顔がわかる写真を出す
+  where: 長寿支援室の窓口またはメール
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1009045.html
+  confidence: high
+- category: haikai
+  name: QR コードシールによる見守り（どこシル伝言板）
+  name_on_page: 熱海どこシル伝言板
+  summary: QR コードのシールを衣類などに貼り、発見者の書き込みを家族にメールで知らせる。
+  who: {}
+  at_application:
+  - 市に住民登録がある
+  - 徘徊のおそれがある 65 歳以上、または若年性認知症などの 65 歳未満
+  where: 長寿支援室
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1006721.html
+  confidence: high
+  amount: 利用料は無料（シールの追加交付は実費）
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 熱海市成年後見制度利用支援事業
+  summary: 経済的に困難な人の、後見の申立て費用や後見人などへの報酬を助成する。
+  who: {}
+  at_application:
+  - 報酬助成は、原則として市内に住民登録がある成年被後見人・被保佐人・被補助人
+  - 経済的に困難な人が対象
+  - 申立て支援は、親族の申立てが期待できず市長が必要と認めた人
+  where: 長寿介護課
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1004213.html
+  confidence: high
+  amount: 報酬の上限は、在宅の人は月 20,000 円、施設入所や長期入院の人は月 12,000 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（在宅生活安心システム）
+  name_on_page: 在宅生活安心システム
+  summary: 通報装置・ペンダント・人感センサーを貸与し、緊急時は 24 時間のコールセンターが対応する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者などで、NTT アナログ回線が使える人
+  - ケーブル回線や光電話は条件付き
+  - 利用前に地域包括支援センターの実態把握がある
+  where: 担当地区の高齢者相談センター（地域包括支援センター）
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1004209.html
+  confidence: high
+  amount: 利用者負担は月 1,400 円（市民税課税世帯の場合）
+- category: haishoku
+  name: 高齢者への昼食の配食
+  name_on_page: 給食サービス
+  summary: 買い物や調理が難しい高齢者に、栄養バランスのよい昼食を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 買い物や調理ができず、食事の確保に困っている
+  - 利用前に地域包括支援センターの実態把握がある
+  where: 担当地区の高齢者相談センター（地域包括支援センター）
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1004209.html
+  confidence: high
+  amount: 月〜土のうち週 4 回以内（1 日 1 回）、1 食 350 円を配達業者に直接支払う
+- category: nichijo-yogu
+  name: 電磁調理器の支給
+  name_on_page: 電磁調理器支給
+  summary: 防火などの配慮が必要なひとり暮らしの高齢者に、電磁調理器を支給する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 心身機能の低下で、防火などの配慮が必要
+  - 利用前に地域包括支援センターの実態把握がある
+  where: 担当地区の高齢者相談センター（地域包括支援センター）
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1004209.html
+  confidence: high
+  amount: 利用者負担は所得税の課税額によって異なる
+- category: sonota
+  name: 福祉電話の貸与と基本料金の助成
+  name_on_page: 福祉電話の貸与及び基本料金助成事業
+  summary: 安否確認や緊急連絡用に、市が持つ電話加入権を無料で貸し、基本料金を助成する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 低所得の高齢者世帯
+  - 利用前に地域包括支援センターの実態把握がある
+  where: 担当地区の高齢者相談センター（地域包括支援センター）
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1004209.html
+  confidence: high
+  amount: 基本料金は市が助成。利用者は通話料のみ負担
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キットの無償配布
+  summary: 医療情報を冷蔵庫に保管するボトルとシールを、世帯単位で無料配布する。
+  who: {}
+  at_application:
+  - 泉地区の当年度 65 歳到達世帯は年度末に送付（申込不要）
+  - 他地区の当年度 65 歳到達世帯は電話申込み
+  - おおむね 60〜64 歳で身体上の理由がある世帯、別荘などのおおむね 60 歳以上の人も電話申込み
+  where: 長寿介護課（長寿支援室）に電話
+  url: https://www.city.atami.lg.jp/kenko/koureifukushi/1001190.html
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo

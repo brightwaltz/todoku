@@ -1,0 +1,122 @@
+city: 082228
+name: 鹿嶋市
+site: www.city.kashima.ibaraki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ代の特別給付
+  name_on_page: 介護保険市町村特別給付
+  summary: 在宅で要支援・要介護認定を受けた人が買った紙おむつ代の9割が支給される。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 病院入院中・施設入所中に買った分は対象外
+  - 購入月の翌々々月1日から2年以内に申請する
+  where: 介護長寿課（介護保険グループ）窓口・郵送、またはXidアプリでの電子申請
+  url: https://city.kashima.ibaraki.jp/soshiki/44/2902.html
+  confidence: high
+  amount: 月の購入費5,000円まで、その9割（最大4,500円）
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者の緊急通報装置の貸与
+  name_on_page: 鹿嶋市ひとり暮らし高齢者あんしん見守り事業
+  summary: ひとり暮らしの高齢者に緊急通報装置を貸し、24時間の受付と定期の安否確認を行う。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内に住所があり、おおむね65歳以上
+  - 体調不良などの理由がある
+  - 市が指定する電話回線を使っている
+  where: 市（介護長寿課）に利用申込書を提出
+  url: https://www.city.kashima.ibaraki.jp/13reiki/reiki_honbun/e021RG00001252.html
+  confidence: high
+  amount: 貸与料は月300円。回線使用料と電気代は実費。
+- category: mimamori
+  name: ひとり暮らし高齢者の見守り（専門職の訪問）
+  name_on_page: ひとり暮らし高齢者見守り事業
+  summary: 地域包括支援センターの看護師などが、ひとり暮らしの高齢者宅を訪問して様子を聞く。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 要支援・要介護認定を受けていない人
+  - 就労していない人
+  where: お近くの地域包括支援センター
+  url: https://city.kashima.ibaraki.jp/soshiki/44/91454.html
+  confidence: high
+- category: haikai
+  name: おかえりマーク（QRコードのシール）の交付
+  name_on_page: 鹿嶋市おかえりマーク利用事業
+  summary: 行方不明のおそれがある認知症高齢者等の介護者に、QRコード付きのシール30枚を無料で渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み住民基本台帳に記録がある認知症高齢者等が対象
+  - 介護者や家族が申請する
+  where: 介護長寿課
+  url: https://city.kashima.ibaraki.jp/soshiki/44/65463.html
+  confidence: high
+  amount: 1人30枚まで無料。追加分は自己負担。
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 鹿嶋市成年後見制度利用支援事業
+  summary: 費用の負担が難しい成年被後見人等について、申立て費用と後見人の報酬を助成する。
+  who: {}
+  at_application:
+  - 成年被後見人・被保佐人・被補助人で市内に住民登録がある
+  - 費用の負担が難しい（生活保護の人など）
+  - 報酬の助成は、後見人が配偶者・親族以外の場合
+  - 助成の申請は後見人等が行う
+  where: 市（介護長寿課）に助成申請書を提出
+  url: https://city.kashima.ibaraki.jp/13reiki/reiki_honbun/e021RG00000668.html
+  confidence: high
+  amount: 報酬は家庭裁判所が決めた額の範囲で月30,000円まで
+- category: mimamori
+  name: 認知症の人を介護する家族への訪問支援
+  name_on_page: 認知症高齢者家族やすらぎ支援事業
+  summary: やすらぎ支援員が認知症の人の自宅を訪ね、見守りや話し相手をして家族の負担を軽くする。
+  who:
+    at_home: true
+  at_application:
+  - 認知症の高齢者を介護している家族が申請する
+  - 週1回1時間まで
+  where: 市（介護長寿課）に利用申請書を提出
+  url: https://city.kashima.ibaraki.jp/13reiki/reiki_honbun/e021RG00001112.html
+  confidence: low
+  amount: 利用者の負担は材料費などの実費のみ
+- category: sonota
+  name: 介護マークの無料配布
+  name_on_page: 介護マーク
+  summary: 介護中であることを周囲に知らせる名刺大のマークを、介護している人に無料で配る。
+  who: {}
+  at_application:
+  - 市内に住み、高齢者や障がいのある人を介護している人
+  where: 介護長寿課、大野出張所
+  url: https://city.kashima.ibaraki.jp/soshiki/44/81515.html
+  confidence: high
+  amount: 無料
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

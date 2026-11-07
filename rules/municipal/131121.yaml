@@ -1,0 +1,368 @@
+city: '131121'
+name: 世田谷区
+site: www.city.setagaya.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給・おむつ代の助成
+  name_on_page: 紙おむつの支給・助成
+  summary: 要介護3〜5の方に紙おむつを支給し、入院中はおむつ代を助成する。
+  who:
+    age_min: 40
+    flags:
+    - uses_diapers
+  at_application:
+  - 世田谷区に住所がある
+  - 要介護3〜5。65歳以上で入院中なら要介護認定は不要
+  - 失禁状態で2か月以上おむつを使い、引き続き必要と認められる
+  - 65歳未満は介護保険の第2号被保険者（40〜64歳）に限る
+  - 介護保険施設に入所している方は対象外
+  where: 住所地の総合支所保健福祉課、またはあんしんすこやかセンター
+  url: https://www.city.setagaya.lg.jp/02082/2415.html
+  confidence: high
+  amount: 支給は月500円の自己負担（40点分まで、超えた分は1点100円）。入院中のおむつ代助成は月5,000円まで
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず同居の家族を介護している方に、年額10万円を支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護2は認知症高齢者の日常生活自立度Ⅱ以上に限る
+  - 認定有効期間の開始から1年以上たち、その1年は介護保険サービス不使用（一部を除く）
+  - 年間90日以上の入院をしていない
+  - 介護者は同居の家族・親族（同性パートナー等を含む）で、報酬・謝礼なし
+  - 介護を受ける方も介護者も、区内に住所があり住民税非課税の世帯
+  where: 介護保険課 保険給付係、または住所地の総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/02061/2249.html
+  confidence: high
+  amount: 年額10万円
+- category: hochoki
+  name: 高齢者（65歳以上）の補聴器購入費助成
+  name_on_page: 高齢者（65歳以上）のための補聴器購入費助成
+  summary: 住民税非課税の65歳以上で補聴器が有効と認められた方に、購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴力レベルが40デシベル以上（片耳が高度以上の難聴も可）
+  - 耳鼻咽喉科の医師の診察で、補聴器が有効と認められた
+  - 身体障害者手帳（聴覚障害）の交付対象にならない
+  - 過去5年以内に、この助成を受けていない
+  - 助成の決定後に購入した補聴器が対象（決定から1年以内に購入）
+  where: 高齢福祉課（郵送または電子申請）
+  url: https://www.city.setagaya.lg.jp/02082/10803.html
+  confidence: high
+  amount: 5万円以内（購入費が5万円未満ならその額。1,000円未満は切り捨て）
+- category: nichijo-yogu
+  name: 電磁調理器の給付（火災安全システム）
+  name_on_page: 火災安全システムの給付
+  summary: 防火の配慮が必要な方に、居宅の安全のため電磁調理器を給付する。
+  who:
+    flags:
+    - fire_risk
+  at_application:
+  - 要支援・要介護、またはひとりぐらしの方で、防火の配慮が必要な方
+  - 品目により対象者・給付条件が異なる（現在の給付は電磁調理器）
+  - 低所得の方には自己負担の免除がある
+  where: 各総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/02082/2398.html
+  confidence: low
+- category: sonota
+  name: 入浴券の支給
+  name_on_page: 入浴券の支給
+  summary: 65歳以上で公衆浴場を使える方に、入浴券を年間の限度枚数まで支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 世田谷区内に住民登録がある
+  - 公衆浴場を利用できる方
+  - 要介護4・5の方は原則対象外（補助設備のない公衆浴場を使える方は可）
+  - 申込みは1人につき年度に1回
+  where: 高齢福祉課 入浴券担当（電子申請または郵便ハガキ）
+  url: https://www.city.setagaya.lg.jp/02082/online_tetsuzuki/2404.html
+  confidence: high
+  amount: 年間の限度枚数は世帯の状況などで異なる（例：ひとりぐらしで自宅に風呂がある場合30枚、ない場合60枚）
+- category: jutaku
+  name: 高齢者向け住宅改修の助成（介護保険とは別枠）
+  name_on_page: 高齢者向け住宅改修の助成・相談
+  summary: 手すりの取付けや浴槽・便器の取替えなどの改修費を、区が基準額まで助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内に住所がある。身体機能の低下で改修が必要な方
+  - 必ず改修を始める前に相談する（新築・増築は対象外）
+  - 予防改修は、介護保険で要介護・要支援に該当しなかった方
+  - 設備改修は世帯全員の所得合算額が6,232,000円以下。認定者は介護保険が優先
+  - 浴槽・洋式便器の取替えは、介護保険で同様の工事をしていない方に限る
+  where: 各総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/02082/2405.html
+  confidence: low
+  amount: 助成基準額は予防改修が合計20万円、浴槽37.9万円、流し・洗面台15.6万円、洋式便器10.6万円。利用者負担は1〜3割
+- category: koken
+  name: 成年後見の申立費用の助成
+  name_on_page: 成年後見制度の利用に係る申立費用助成
+  summary: 成年後見の申立てにかかる費用を、所得や資産が少ない方に1件30万円まで助成する。
+  who: {}
+  at_application:
+  - 審判の対象者または審判の申立者であること
+  - 審判の対象者が、区内に住民登録がある・介護保険か国保の被保険者・生活保護を受けているなどのいずれか
+  - 対象者と申立者の両方が、住民税の所得割非課税かつ現金預金100万円未満など
+  - 後見等開始の審判確定日から180日以内に申請する
+  - ほかの助成制度と重複して受けていない
+  where: 生活福祉課 申立費用助成担当（郵送可）
+  url: https://www.city.setagaya.lg.jp/02412/2973.html
+  confidence: high
+  amount: 1件の審判申立てにつき上限30万円（専門家に手続きを頼んだ場合の手数料は上限20万円）
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見人等の報酬助成
+  summary: 後見人等への報酬の支払いが難しい方に、報酬の月額（上限28,000円）を助成する。
+  who: {}
+  at_application:
+  - 区内に住民登録がある・介護保険か国保の被保険者・生活保護を受けているなどのいずれか
+  - 住民税の所得割非課税で、報酬を引いた後の現金預金が100万円未満など
+  - 月収から報酬月額を引いた額が最低生活費を下回る場合も対象
+  - 親族が後見人等の方は対象外
+  - 後見人等が報酬付与の審判の告知を受けてから90日以内に申請する
+  where: 生活福祉課 報酬助成担当（郵送可）
+  url: https://www.city.setagaya.lg.jp/02412/2972.html
+  confidence: high
+  amount: 報酬の月額（上限28,000円）に対象月数を掛けた額。原則12か月が上限
+- category: kinkyu-tsuho
+  name: 救急通報システム（愛のペンダント）の貸与
+  name_on_page: 救急通報システム「愛のペンダント」
+  summary: 慢性疾患などで常時注意が必要なひとりぐらし等の方に、救急通報の機器を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 慢性疾患があるなど、日常生活で常時注意を要する方
+  - 日中独居世帯には所得制限がある
+  where: 各総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/02082/2400.html
+  confidence: high
+  amount: 設置時に利用者負担金8,000円（前年度の住民税が非課税の方は免除）。光回線等は非常用電源に別途上限4,000円
+- category: shingu
+  name: 寝具の乾燥・水洗いサービス
+  name_on_page: 寝具乾燥サービス
+  summary: 寝具を干せないねたきり等の要介護3〜5の方に、寝具の乾燥・水洗いを無料で行う。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 身体的条件や住宅環境で、寝具を干すことが困難なねたきりなどの方
+  where: あんしんすこやかセンター、総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料。年に乾燥・消毒10回、水洗い2回（1回に4枚まで）
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容サービス
+  summary: ねたきり等で店に行けない要介護3〜5の方の家に、理美容師が訪問する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ねたきりなどで理美容店に行くことが困難な方
+  where: あんしんすこやかセンター、総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 1回1,000円の自己負担。理美容券を年間6枚まで（洗髪は行わない）
+- category: mimamori
+  name: 高齢者安心コール（電話での見守り）
+  name_on_page: 高齢者安心コール（電話訪問による見守りサービス）
+  summary: ひとりぐらし等の高齢者に、看護師等の資格のある訪問員が定期的に電話で様子を聞く。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 事前の登録が必要
+  - 不在が続くと、登録した緊急連絡先に連絡する
+  where: 高齢者安心コール
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料。月1回・週1回または週2回の電話
+- category: mimamori
+  name: 福祉電話訪問
+  name_on_page: 福祉電話訪問
+  summary: 電話訪問を希望するひとりぐらし等の高齢者に、協力員が週1回電話で相談に応じる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: あんしんすこやかセンター、総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料。週1回の電話
+- category: haikai
+  name: 高齢者見守りステッカー
+  name_on_page: 高齢者見守りステッカー
+  summary: 認知症で外出すると戻れない要介護1以上の方に、登録番号入りのステッカーを配る。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症により外出すると戻れないことが「ときどきある」「常にある」
+  - 氏名・住所・緊急連絡先（2名）などを区へ事前に登録する
+  where: 高齢者安心コール、高齢福祉課 事業担当
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料。おひとり20枚のステッカー
+- category: haikai
+  name: せたがや一人歩きSOSネットワーク
+  name_on_page: せたがや一人歩きSOSネットワーク
+  summary: 認知症状のある方などが行方不明になった際、地域の協力者へ特徴をメール配信する。
+  who: {}
+  at_application:
+  - 区内在住の認知症状のある高齢者や障がいのある方のご家族等
+  - 事前に登録が必要
+  where: 世田谷区社会福祉協議会 地域社協課
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 認知症等の高齢者が行方不明のときの捜索依頼
+  name_on_page: 認知症等高齢者行方不明発生時の通報
+  summary: 認知症等の高齢者が行方不明のとき、家族の希望で地域の協力者や近隣自治体へ捜索を依頼する。
+  who: {}
+  at_application:
+  - 区内在住の認知症等高齢者のご家族等
+  where: 高齢者安心コール
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: リフト付タクシーの補助券
+  name_on_page: リフト付タクシー
+  summary: 常時車いす等を使う要介護3〜5の方などに、介護タクシーの予約料・迎車料の補助券を交付する。
+  who: {}
+  at_application:
+  - 外出時に常時車いすを使う、またはストレッチャーを使うことがある方
+  - 次のいずれか：要介護3〜5、身体障害者手帳（下肢・体幹など1〜3級）、愛の手帳1・2度など
+  - 補助券が使えるのは区の契約事業者のみ
+  where: あんしんすこやかセンター、総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 予約料・迎車料相当額の補助券、ストレッチャー料免除券を交付。区の借上げ車両はメーター運賃のみ（要登録）
+- category: sonota
+  name: 緊急一時宿泊
+  name_on_page: 緊急一時宿泊
+  summary: 家族の介護を受けられない緊急の事情がある高齢者が、特別養護老人ホームを一時利用できる。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の要援護高齢者、要支援、要介護の方など
+  - 介護保険では対応できない緊急的社会的な理由で、家族などの介護を受けられない
+  where: あんしんすこやかセンター、総合支所保健福祉課
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 1日6,100円と食費等。生計中心者が住民税非課税の方、生活保護の方は軽減あり
+- category: sonota
+  name: 自動通話録音機の貸出し
+  name_on_page: 自動通話録音機
+  summary: 特殊詐欺などの対策に、通話を録音する自動通話録音機を無料で貸し出す。
+  who: {}
+  at_application:
+  - 区内在住のおおむね65歳以上の方
+  where: 地域生活安全課、区内警察署、まちづくりセンター（受け渡し）
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料（電気代が年約300円かかる）
+- category: sonota
+  name: 資源・ごみの訪問収集
+  name_on_page: 資源・ごみの訪問収集
+  summary: ごみ集積所まで運べない高齢者のみ世帯の資源・ごみを、玄関先から収集する。
+  who: {}
+  at_application:
+  - 資源・ごみを集積所まで運び出せず、他の方の協力を得ることが難しい
+  - 要介護2または同程度の65歳以上の高齢者のみ世帯、または障害者のみの世帯
+  - 事前に清掃事務所へ相談する（面談の結果、対象外になることもある）
+  where: 地域の清掃事務所（世田谷・玉川・砧）
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 粗大ごみの運び出し収集
+  name_on_page: 粗大ごみの運び出し収集
+  summary: 粗大ごみを室内から運び出せない高齢者のみ世帯の粗大ごみを、室内から運び出して収集する。
+  who: {}
+  at_application:
+  - 粗大ごみを自分で室内から運び出せず、他の方の協力を得ることが難しい
+  - 65歳以上の高齢者のみの世帯、または障害者のみの世帯
+  - 引越し業者が入る場合は対象外
+  where: 世田谷区粗大ごみ受付センター
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 運び出しは無料。粗大ごみの処理手数料は別にかかる
+- category: sonota
+  name: 車いすの貸し出し
+  name_on_page: 車いすの貸し出し
+  summary: 一時的に車いすが必要になった方に、車いすを無料で2か月を限度に貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上、または障害・疾病・けが等で短期間車いすが必要な方
+  - 介護保険サービスが優先
+  where: 総合支所保健福祉課、まちづくりセンター（一部を除く）、保健医療福祉総合プラザ
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料。2か月を限度に貸し出し
+- category: sonota
+  name: 高齢者安心コール（ボランティアの訪問援助）
+  name_on_page: 高齢者安心コール（ボランティアによる訪問援助サービス）
+  summary: 電球の交換や簡単な荷物の移動などを、ボランティアが無料で手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 事前の登録が必要
+  where: 高齢者安心コール
+  url: https://www.city.setagaya.lg.jp/documents/18082/web_silver47-61.pdf
+  confidence: high
+  amount: 無料（交通費や部品代などの実費は本人負担）
+not_found:
+- haishoku

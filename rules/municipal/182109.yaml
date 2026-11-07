@@ -1,0 +1,153 @@
+city: '182109'
+name: 坂井市
+site: www.city.fukui-sakai.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給（自己負担あり）
+  name_on_page: すこやか介護用品支給事業
+  summary: 在宅で介護を受ける人に、紙おむつを月 1 回自宅へ届け、費用の一部を市が負担する。
+  who:
+    at_home: true
+  at_application:
+  - 市に住民票があり、市の介護保険の被保険者
+  - 要介護4・5、または要介護3以下で排泄に介助か見守りが要る
+  - 未認定は、包括のアセスメントで基準を満たす65歳以上
+  - 40〜64歳の第2号被保険者も対象（所得証明か同意書が要る）
+  where: 高齢福祉課（各支所でも受付）
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/shien/sukoyaka.html
+  confidence: high
+  amount: 月の上限は要介護1で3,000円分、2〜3で4,000円分、4〜5で6,000円分。自己負担は実費の3分の1（非課税世帯は10分の1）
+- category: gaishutsu
+  name: 在宅介護のタクシー乗車券の交付
+  name_on_page: 坂井市在宅介護外出支援事業
+  summary: バスや電車を使いにくい在宅の高齢者に、市指定のタクシーで使える乗車券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で要介護認定を受けている方
+  - 細かい条件は高齢福祉課に確認
+  where: 高齢福祉課（各支所でも預かり）
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/shien/gaisyutu.html
+  confidence: high
+- category: jutaku
+  name: 住まい環境整備支援事業費補助金（住宅改造の補助）
+  name_on_page: 住まい環境整備支援事業費補助金
+  summary: 要介護の高齢者が自宅を改造する費用の一部を、介護保険の住宅改修とは別枠で補助する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3以上、または要介護1・2で車いす利用などの要件に当たる
+  - 要介護1・2の要件は、上肢不自由1・2級相当、自立度A〜C、認知症自立度3以上
+  - 重度身体障害者住宅改造助成を受けた工事は対象外
+  - 介護保険の住宅改修の工事、新築・増築、賃貸住宅は対象外
+  - 交付決定前に着工した工事は対象外
+  where: 高齢福祉課（本庁舎1階）
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/shien/sumai.html
+  confidence: high
+  amount: 費用の 9 割（所得により 7〜8 割）。上限は非課税・生活保護世帯 80 万円、それ以外 60 万円
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具類等洗濯乾燥消毒サービス
+  summary: 寝具の衛生管理が難しい高齢者の寝具一式を、業者が回収して洗い、乾燥・消毒して届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市に住所がある
+  - 65歳未満の人と同居、施設入所、長期入院の人は対象外
+  - 広報紙で募集があったときに申請する
+  where: 高齢福祉課
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/shien/singusentaku.html
+  confidence: high
+  amount: 無料（敷布団・掛布団・毛布を各1枚で一式）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与
+  summary: ひとり暮らしの人に緊急通報装置を貸し、24時間の通報受付と月 1 回の安否確認の電話を行う。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内に住所があるひとり暮らし
+  - おおむね65歳以上で健康上不安がある人、または身体障害者手帳1・2級の人
+  - 近くに住む協力員の承諾が要る
+  - 原則、自宅の合鍵1個を事業者に預ける
+  where: 高齢福祉課（各支所でも受付）
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/shien/kinnkyuutuuhou.html
+  confidence: high
+  amount: 固定電話型は生活保護・非課税世帯が無料、課税世帯は月 1,500 円。SIM 型は無料／月 1,000 円／月 2,500 円
+- category: haikai
+  name: 高齢者等 SOS ネットワークの事前登録・見守り QR シール
+  name_on_page: 高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれがある人を事前に市へ登録し、登録時に見守り QR シール 40 枚を無料で受け取る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で認知症か認知症の疑いがあり、行方不明のおそれがある
+  - または、若年性認知症で行方不明のおそれがある
+  - 窓口か Web フォームで申請し、本人の写真を添える
+  where: 高齢福祉課
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/ninchisho/sos.html
+  confidence: high
+  amount: シール 1 人 40 枚まで無料（追加は有料）
+- category: mimamori
+  name: 生活・介護支援サポーターの訪問（見守り）
+  name_on_page: 生活・介護支援サポーター
+  summary: ボランティアが定期的に自宅を訪ね、話し相手、安否確認、簡単な生活の手伝いをする。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 高齢者のみの世帯や、一人になる時間が長い方
+  - コーディネーター（ケアマネ・包括職員）経由で届け出る
+  where: 高齢福祉課（コーディネーター経由で届出）
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/shien/kaisapo.html
+  confidence: high
+  amount: 無料（1 回 1 時間以内、週 2 回まで）
+- category: sonota
+  name: 高齢者等の屋根雪下ろし費用の助成
+  name_on_page: 地域ぐるみ高齢者等屋根雪下ろし助成
+  summary: 自力で屋根雪下ろしができない世帯に、地区や業者が雪下ろしをしたときの費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に居住し、自力で屋根雪下ろしが困難
+  - 市と隣接市町に2親等以内の親族がいない（高齢者・障がい者を除く）
+  - 世帯全員が65歳以上・障がい者・義務教育前の子などのいずれか
+  - 借家・アパートは対象外
+  where: 高齢福祉課（各支所でも預かり）。先に区長に相談する
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/shien/yukiorosi.html
+  confidence: high
+  amount: 1 回あたり 8,000 円以内
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 報酬を払うのが難しい場合に市が費用を助成することがある。申立てを市長が行う場合もある。
+  who: {}
+  at_application:
+  - 成年後見人等への報酬の支払いが困難な場合
+  where: 高齢福祉課（高齢者の場合）
+  url: https://www.city.fukui-sakai.lg.jp/kourei/kenko/fukushi/koreisha/seinennkouken.html
+  confidence: low
+not_found:
+- iro
+- hochoki
+- ribiyo

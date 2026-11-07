@@ -1,0 +1,187 @@
+city: '231002'
+name: 名古屋市
+site: www.city.nagoya.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: あんしん電話（ひとり暮らし高齢者の緊急通報装置）
+  name_on_page: ひとり暮らし高齢者緊急通報事業
+  summary: 緊急ボタンで通報できる装置を貸与し、看護師への24時間相談もできる
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 次のいずれか：慢性疾患があり日常生活に特に注意が必要なひとり暮らし（他の世帯員がねたきりを含む）
+  - または、75歳以上のみの2人以上の世帯で、他の世帯員がねたきり
+  - または、同居人が長時間・継続して不在でひとり暮らし状態（コールセンター方式のみ）
+  - 近隣協力者2名と緊急連絡先1名の登録が必要（駆け付けサービス利用なら近隣協力者は1名）
+  where: お住まいの区の福祉課高齢福祉担当（支所管内は支所区民福祉課福祉担当）
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016428.html
+  confidence: high
+  amount: 前年の所得が1,695,000円以上の場合、機器使用料・保守料が月2,145円（火災警報器連動型は2,970円）
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付（自動消火器・火災警報器・電磁調理器）
+  name_on_page: 日常生活用具の給付
+  summary: 自動消火器・火災警報器・電磁調理器を、1割の自己負担で給付する
+  who:
+    age_min: 65
+  at_application:
+  - 自動消火器・火災警報器：ねたきりの方、または災害時に直ちに脱出が困難なひとり暮らしの方
+  - 電磁調理器：ねたきりの方、または65歳以上のみの世帯（ひとり暮らしを含む）
+  - 自宅に同じ種類の用具が1個でもある場合は対象外
+  where: お住まいの区の福祉課高齢福祉担当（支所管内は支所区民福祉課福祉担当）
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016428.html
+  confidence: high
+  amount: 給付限度額（用具価格）は自動消火器33,000円、火災警報器13,000円（2個）または19,500円（3個）、電磁調理器17,000円。その1割は自己負担（生活保護世帯等を除く）
+- category: mimamori
+  name: 福祉電話の貸与（電話機の貸与とボランティアの電話訪問）
+  name_on_page: 福祉電話の貸与
+  summary: 電話回線と電話機を貸し、ボランティアが週2回電話で見守る
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - ひとり暮らし（他の世帯員がねたきり等の場合を含む）
+  - 同一区内に配偶者と子がおらず、環境的に孤独な生活をしている
+  - 前年の所得が1,695,000円未満（1〜5月の申請は前々年の所得）
+  where: お住まいの区の福祉課高齢福祉担当（支所管内は支所区民福祉課福祉担当）
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016428.html
+  confidence: high
+- category: sonota
+  name: 消防あんしん情報の登録（救急時に消防局が家族等へ連絡）
+  name_on_page: 消防あんしん情報登録制度
+  summary: 救急搬送時に話せなくても、消防局が家族等の緊急連絡先へ連絡する
+  who: {}
+  at_application:
+  - 65歳以上で身体に障害のある方、または70歳以上でひとり暮らしの方
+  where: 消防局予防部予防課
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016428.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金（年額10万円）
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の人を在宅で介護する同居の親族に、慰労金を支給する
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4または5の認定を、申請の1年以上前に受けている
+  - 過去1年間、介護保険サービス等を使わず在宅（ショートステイは年7日以内なら可）
+  - おおむね3か月以上の長期入院は、その前後の期間を合算して判断
+  - 申請できるのは、高齢者を現に介護している同居の親族
+  where: お住まいの区の福祉課福祉係（支所管内は支所区民福祉課福祉係）
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016429.html
+  confidence: high
+  amount: 年額10万円
+- category: shingu
+  name: 在宅要介護高齢者の寝具貸与
+  name_on_page: 在宅要介護高齢者等寝具貸与事業
+  summary: 要介護4・5で在宅の人に、寝具一式を貸し、シーツ類を定期的に交換する
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4または5の認定を受けている在宅の方で、世帯員全員が市町村民税非課税
+  where: お住まいの区の福祉課福祉係（支所管内は支所区民福祉課）
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016429.html
+  confidence: high
+- category: ribiyo
+  name: 在宅高齢者の訪問理美容サービス
+  name_on_page: 在宅高齢者訪問理美容サービス事業
+  summary: 外出が難しい在宅の高齢者の自宅へ理美容師が訪問し、費用を市が負担する
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3の人は、ねたきり度A〜C、または認知症の自立度2a〜Mの認定が必要
+  - 外出して理美容サービスを利用することが困難
+  - 市内に住み、施設に入所していない
+  where: お住まいの区役所福祉課または支所区民福祉課
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016427/1016431.html
+  confidence: high
+  amount: 自己負担は1回2,000円（税込）。理容と美容を合わせて年度6回まで（申請月により回数が減る）
+- category: gaishutsu
+  name: 敬老パス（市バス・地下鉄などの乗車券）
+  name_on_page: 敬老パスの交付
+  summary: 65歳以上に、市バス・地下鉄などを年730回まで使える乗車券を交付する
+  who:
+    age_min: 65
+  at_application:
+  - 名古屋市に住民登録がある（外国籍の方も対象）
+  where: 敬老パスコールセンター（052-766-5500）、お住まいの区役所福祉課・支所区民福祉課
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016534/1016536.html
+  confidence: high
+  amount: 負担金は年額1,000円・3,000円・5,000円（世帯の所得などで決まる）。市バス・地下鉄などは無料で乗れ、年730回まで
+- category: yutai
+  name: 敬老優待カード（敬老手帳）
+  name_on_page: 敬老優待カード
+  summary: 東山動植物園などの市立施設で入場料の割引などが受けられるカードを交付する
+  who:
+    age_min: 65
+  at_application:
+  - 名古屋市に住所がある
+  where: 65歳到達月の約3か月前に住所地へ郵送。再交付は区役所福祉課・支所区民福祉課
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016534/1016535.html
+  confidence: high
+- category: haikai
+  name: はいかい高齢者おかえり支援（事前登録とメール配信での捜索協力）
+  name_on_page: はいかい高齢者おかえり支援事業
+  summary: 徘徊のおそれのある人を事前登録し、行方不明時にメールで捜索協力を求める
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内に在住し、徘徊のおそれがある認知症の方
+  - 登録するのは親族、成年後見人等、または入所施設の職員
+  - 在宅のほか、介護保険施設などに入所中の方も登録できる
+  where: 居住地を担当するいきいき支援センター（地域包括支援センター）
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016506/1016510/1016518.html
+  confidence: high
+  amount: 登録は無料
+- category: haikai
+  name: はいかい高齢者のGPS機器の利用料助成
+  name_on_page: はいかい高齢者捜索システム事業
+  summary: 徘徊のおそれのある認知症の人のGPS機器の利用料を一部助成する
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内在住で徘徊のおそれがある認知症の人の、親族または成年後見人等が申請する
+  - 名古屋市に登録した事業者のGPS機器が対象
+  where: 認知症の人の居住地を担当するいきいき支援センター
+  url: https://www.city.nagoya.jp/kenkofukushi/koureisha/1016506/1016510/1016519.html
+  confidence: high
+  amount: 初期費用は上限6,600円（オペレーター無）または7,800円（有）まで無料。月額は事業者の料金か上限（800円または3,100円）の低い方の1割負担で、市民税非課税世帯・生活保護世帯等は無料
+not_found:
+- jutaku
+- hochoki
+- chusha

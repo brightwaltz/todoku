@@ -1,0 +1,239 @@
+city: '262064'
+name: 亀岡市
+site: www.city.kameoka.kyoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 寝具の衛生管理が難しい人の寝具を、洗濯・乾燥・消毒してくれる。
+  who:
+    age_min: 70
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 寝たきりや尿失禁で寝具の衛生管理が難しい人
+  - 70歳以上の一人暮らし、または70歳以上のみの世帯
+  where: 高齢福祉課（地域包括支援センターかケアマネの意見書が必要）
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 利用者負担：乾燥・消毒は1回165円、洗濯・乾燥・消毒は1回770円。月1回まで
+- category: jutaku
+  name: 高齢者自立支援住宅改修費補助金
+  name_on_page: 高齢者自立支援住宅改修費補助金
+  summary: 要介護認定が非該当だった人の手すり設置や段差解消などの改修費を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護認定の結果が非該当になった人
+  - 日常動作が困難で、改修が必要と認められる
+  - 過去にこの補助金を受けていない
+  - 工事に着手する前に申請する
+  where: 高齢福祉課（地域包括支援センターが書類を作成）
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 工事費総額の3分の2以内、上限16万円（予算の上限あり）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置
+  summary: ひとり暮らしの高齢者宅に緊急通報装置を設置する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 扶養義務者による安否確認ができない
+  - 借家は家主の同意が必要
+  - 緊急時のため鍵2個を預ける
+  where: 高齢福祉課（地域包括支援センターかケアマネが面接記録票を作成）
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 利用者負担は月額1,000円（生活保護世帯は無料、通話料は別）
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の支給
+  name_on_page: 介護用品の支給
+  summary: 在宅で要介護4・5の人を介護する家族に、紙おむつなどを配達で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と介護者の属する世帯全員が市町村税非課税
+  - 介護者は同居か常時介護する配偶者・3親等内親族など
+  - 要介護者の世帯が生活保護を受けていない
+  - 市内に住所がある
+  where: 高齢福祉課（地域包括支援センターかケアマネの意見書が必要）
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 月額7,300円を限度に指定業者が配達（超えた分は自己負担）
+- category: haikai
+  name: 認知症高齢者等の居場所確認端末の貸与
+  name_on_page: 認知症高齢者等居場所確認専用端末機貸与事業
+  summary: 常時徘徊のある認知症などの高齢者に、位置情報端末を貸与する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症などで常時徘徊が見られる
+  where: 高齢福祉課（地域包括支援センターかケアマネの意見書が必要）
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 貸与は無料。リース料は月1,320円、検索料は1回220円などの実費がかかる
+- category: haikai
+  name: 認知症高齢者等の事前登録制度
+  name_on_page: 認知症高齢者などの事前登録制度
+  summary: 道に迷うおそれのある人を事前登録し、行方不明時に警察などへ情報を提供する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症などで道に迷うおそれのある人
+  - 申請できるのは親族や成年後見人など
+  - 情報共有への同意が必要
+  where: 高齢福祉課
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/3367.html
+  confidence: high
+- category: iro
+  name: 在宅高齢者介護激励金（要介護3）
+  name_on_page: 在宅高齢者介護激励金の支給(要介護3)
+  summary: 介護保険サービスを1年使わず在宅で介護した家族に、年1回激励金を支給する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3（要介護2で認知症自立度II以上の人も含む）
+  - 高齢者と介護者の世帯全員が市町村民税非課税
+  - 申請前1年に介護保険サービスを利用していない（福祉用具のみ等は除く）
+  - 介護者は同居か常時介護する配偶者・3親等内親族
+  - 前年度の申請月から12か月たってから申請できる
+  where: 高齢福祉課
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 年額3万円
+- category: iro
+  name: 家族介護者慰労金（要介護4・5）
+  name_on_page: 家族介護者慰労金の支給(要介護4または5）
+  summary: 介護保険サービスを1年使わず在宅で介護した家族に、年1回慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 高齢者と介護者の世帯全員が市町村民税非課税
+  - 申請前1年に介護保険サービスを利用していない（福祉用具のみ等は除く）
+  - 1年内に病院等へ通算3か月超入院・入所していない
+  - 介護者は同居か常時介護する配偶者・3親等内親族
+  where: 高齢福祉課
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 年額10万円
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 中等度難聴の高齢者の補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内在住
+  - 聴覚の身体障害者手帳の交付対象でない
+  - 両耳40dB以上70dB未満など、指定医等の意見書で必要と認められる
+  - 市税等を滞納していない
+  - 交付決定前に購入した補聴器は対象外
+  where: 高齢福祉課高齢者支援係
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/87516.html
+  confidence: high
+  amount: 本体購入費の2分の1、上限2万円（1人1回限り）
+- category: koken
+  name: 成年後見制度利用支援事業（報酬助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人の成年後見人等への報酬を、市が助成する。
+  who: {}
+  at_application:
+  - 市内に住民票がある（住所地特例等を除く）
+  - 助成がないと制度の利用が困難と市長が認める
+  - 配偶者・直系血族・兄弟姉妹が後見人の場合は対象外
+  - 申請者は本人か後見人等
+  where: 高齢福祉課
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/24134.html
+  confidence: high
+  amount: 月額上限は施設入所者18,000円、その他28,000円（家裁の決定額が限度）
+  more_urls:
+  - https://www.city.kameoka.kyoto.jp/reiki_int/reiki_honbun/k108RG00000909.html
+  - https://www.city.kameoka.kyoto.jp/uploaded/attachment/26022.pdf
+  - https://www.city.kameoka.kyoto.jp/uploaded/attachment/25987.pdf
+- category: sonota
+  name: 生活援助事業利用助成金（家事援助の利用料助成）
+  name_on_page: 生活援助事業利用助成金の交付
+  summary: 退院直後などで困っている人の社協の家事援助の利用料を半額助成する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 骨折や退院直後などで一時的に日常動作が困難
+  - 介護保険の要支援・要介護認定を受けていない
+  - 利用は週3時間以内、6か月以内
+  where: 高齢福祉課（サービスの申込は亀岡市社会福祉協議会）
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 社協「くらしのサポートサービス」の利用料の2分の1
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の設置
+  summary: 電話のない非課税世帯に、安否確認などのため電話機を貸与する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 身体障害者手帳1・2級の人、または扶養義務者が近くにいない70歳以上のみ世帯等
+  - 携帯を含め電話を持っていない
+  - 安否確認や相談の連絡が必要と認められる
+  where: 高齢福祉課（地域包括支援センターかケアマネの意見書が必要）
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+  amount: 貸与は無料（月300円を超える通話料は自己負担）
+- category: sonota
+  name: 命のカプセル（救急医療情報キット）の配付
+  name_on_page: 命のカプセル（救急医療情報キット）
+  summary: 救急時に役立つ医療情報を入れる容器を配付する。
+  who: {}
+  at_application:
+  - 70歳以上の一人暮らし、または70歳以上のみの世帯
+  - 身体的に不安のある高齢者で希望する人にも配付
+  where: 高齢福祉課
+  url: https://www.city.kameoka.kyoto.jp/soshiki/25/25991.html
+  confidence: high
+not_found:
+- haishoku
+- ribiyo
+- gaishutsu

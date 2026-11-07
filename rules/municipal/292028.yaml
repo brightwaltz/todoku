@@ -1,0 +1,76 @@
+city: '292028'
+name: 大和高田市
+site: www.city.yamatotakada.nara.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給（家族介護継続支援事業）
+  name_on_page: 家族介護継続支援事業（紙おむつ支給事業）
+  summary: 要介護3〜5の在宅高齢者に、紙おむつを2か月に1回自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内在住
+  - 要介護3は排尿・排便に介助か見守りが必要
+  - 入院中・施設入所中の人は対象外
+  where: 地域包括ケア推進課（市役所1階）
+  url: https://www.city.yamatotakada.nara.jp/soshikikarasagasu/chiikihokatsukaresuishinka/koreishafukushi_kaigo/1/2044.html
+  confidence: low
+  amount: 偶数月に年6回の配達。配達枚数は決まっている（枚数は未確認）
+- category: kinkyu-tsuho
+  name: 緊急通報システム（押しボタン通報）
+  name_on_page: 大和高田市緊急通報システム事業
+  summary: 押しボタンで緊急通報でき、月1回の安否確認電話と24時間の健康相談が付く。
+  who:
+    age_min: 65
+  at_application:
+  - 単身世帯、または単身世帯に準ずる人
+  where: 地域包括ケア推進課（市役所1階）
+  url: https://www.city.yamatotakada.nara.jp/soshikikarasagasu/chiikihokatsukaresuishinka/koreishafukushi_kaigo/1/2044.html
+  confidence: low
+  amount: 利用料は月880円（課税世帯）、月330円（非課税世帯・生活保護世帯）。駆けつけを使わない場合は330円引き
+- category: koken
+  name: 高齢者の成年後見制度利用支援（市長申立・報酬助成）
+  name_on_page: 大和高田市高齢者に係る成年後見制度利用支援事業
+  summary: 身寄りがない高齢者の市長による申立てと、後見人報酬の助成を行う。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所があり、後見人等が必要な状態
+  - 市長申立：4親等内の親族がいない・不明、または親族の申立が期待できない
+  - 報酬助成：生活保護、または市民税非課税で預貯金等が少ない人
+  where: 地域包括ケア推進課（市役所1階）
+  url: https://www.city.yamatotakada.nara.jp/iryo/koreishafukushi_kaigo/chiikishienjigyo/3651.html
+  confidence: high
+  amount: 報酬助成は月額2万円が上限。市長申立の費用も助成する
+  more_urls:
+  - https://www.city.yamatotakada.nara.jp/material/files/group/31/44243843.pdf
+- category: gaishutsu
+  name: きぼう号カード（コミュニティバス無料乗車）
+  name_on_page: きぼう号カード
+  summary: 70歳以上の人にカードを発行し、コミュニティバスきぼう号を無料にする。
+  who:
+    age_min: 70
+  at_application: []
+  where: 地域包括ケア推進課（市役所1階）
+  url: https://www.city.yamatotakada.nara.jp/soshikikarasagasu/shiminkyodoka/1/2625.html
+  confidence: high
+  amount: きぼう号の運賃が無料（通常は片道100円）
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

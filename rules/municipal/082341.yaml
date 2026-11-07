@@ -1,0 +1,135 @@
+city: 082341
+name: 鉾田市
+site: www.city.hokota.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）の支給券
+  name_on_page: 介護用品支給事業
+  summary: 在宅のねたきり高齢者を介護する家族に、おむつ等に使える支給券を配る。
+  who:
+    at_home: true
+  at_application:
+  - 在宅のねたきり高齢者（要介護4以上）等を介護している家族
+  where: 介護保険課、旭市民センター、大洋市民センター
+  url: https://www.city.hokota.lg.jp/page/page000474.html
+  confidence: low
+  amount: 住民税非課税の方は月6,000円、住民税5万円以下の方は月3,000円。3か月ごとに民生委員経由で配布
+- category: iro
+  name: 在宅介護慰労金
+  name_on_page: 在宅介護慰労金支給事業
+  summary: 要介護3以上の高齢者を在宅で介護する人に、年1回、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護者・被介護者とも過去1年住民登録があり市民税非課税
+  - 前年度・前々年度の介護保険料を完納している
+  - 介護者は要介護認定を受けておらず、仕事として介護していない
+  - 被介護者は基準期間中に介護保険サービスを使っていない
+  - 被介護者は介護者の配偶者か三親等内の親族
+  where: 地域包括支援センター、旭市民センター、大洋市民センター（申請は毎年10月1日〜31日）
+  url: https://www.city.hokota.lg.jp/page/page000474.html
+  confidence: high
+  amount: 要介護4〜5の方を介護：10万円。要介護3の方を介護：2万円（年度1回）
+- category: haikai
+  name: 徘徊高齢者の位置検索システム初期費用の助成
+  name_on_page: 徘徊高齢者家族支援事業
+  summary: 徘徊する高齢者の位置検索システムの加入料や充電器代などを助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護者と被介護者が市内に住所がある
+  - 位置情報を提供する事業者と利用契約を結んでいる
+  - 申請書、契約書の写し、領収書が必要
+  where: 介護保険課、旭市民センター、大洋市民センター
+  url: https://www.city.hokota.lg.jp/page/page000474.html
+  confidence: high
+  amount: 加入料・充電器代・充電用電池代の合計で15,000円まで（被介護者1人につき1回）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: ボタンを押すと消防署に通報できる緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね70歳以上のひとり暮らし、またはひとり暮らしの重度身体障碍者
+  - 上記以外でも、市長が特に必要と認めた方
+  - 固定電話（電話回線）のない家庭は利用できない
+  where: 介護保険課 高齢福祉係
+  url: https://www.city.hokota.lg.jp/page/page000480.html
+  confidence: high
+  amount: 利用者負担：設置費5,000円、保守点検費2,000円
+- category: mimamori
+  name: 乳製品配布による安否確認
+  name_on_page: 愛の定期便事業
+  summary: 孤立した病弱な高齢者に乳製品を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - 日常生活で孤立した状況にある方
+  - 市内在住で慢性疾患等により病弱な70歳以上の方
+  - または、要介護1以上に相当する60歳以上70歳未満の方
+  where: 介護保険課 高齢福祉係
+  url: https://www.city.hokota.lg.jp/page/page000480.html
+  confidence: high
+  amount: 利用者の費用負担なし
+- category: nichijo-yogu
+  name: 火災報知器の給付
+  name_on_page: 火災報知器給付事業
+  summary: 高齢者世帯などに、火災報知器を給付する。
+  who: {}
+  at_application:
+  - 65歳以上の方のみの世帯で、下肢・視力等が著しく衰えた方を含む
+  - または、70歳以上のひとり暮らし世帯
+  where: 介護保険課 高齢福祉係
+  url: https://www.city.hokota.lg.jp/page/page000480.html
+  confidence: high
+  amount: 世帯の負担金は1,000円
+- category: sonota
+  name: 生活管理指導員の派遣（家事・外出などの支援）
+  name_on_page: 生活管理指導員派遣事業
+  summary: 日常生活に支障のある方へ指導員を派遣し、付添い・調理補助・洗濯・掃除などを支援する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所があり、同様の援助を他の制度で受けられない
+  - 虚弱等の理由で自立した生活が困難
+  - 介護予防事業の特定高齢者であること
+  where: 地域包括支援センター
+  url: https://www.city.hokota.lg.jp/page/page000474.html
+  confidence: high
+  amount: 利用は原則週3回・週3時間まで。負担は30分あたり、住民税非課税世帯300〜500円、その他の世帯400〜800円
+- category: sonota
+  name: 短期宿泊での生活習慣改善・体調調整
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 体調不良になった高齢者が、養護老人ホーム等に短期間入所して養護を受ける。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の給付対象とならない、ひとり暮らし高齢者等
+  - 病気以外の理由で体調不良になった方
+  where: 地域包括支援センター（申請は同センターが行う）
+  url: https://www.city.hokota.lg.jp/page/page000474.html
+  confidence: high
+  amount: 利用者負担は区分により500円または1,800円。入所は原則7日以内（やむを得ない場合は最大14日）
+not_found:
+- haishoku
+- koken
+- hochoki
+- jutaku
+- shingu
+- gaishutsu
+- chusha

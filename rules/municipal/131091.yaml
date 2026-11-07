@@ -1,0 +1,133 @@
+city: '131091'
+name: 品川区
+site: www.city.shinagawa.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 加齢で聞こえにくくなった高齢者の補聴器購入費を、上限額まで助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区内に住所がある
+  - 聴覚障害の補聴器（補装具）の支給を受けられない
+  - 耳鼻咽喉科の医師が補聴器の必要を認める（聴力図が必要）
+  - 区の助成決定前に買った補聴器は対象外
+  - 5年たてば再度申請できる
+  where: 高齢者地域支援課（申請書は在宅介護支援センター等でも配布）
+  url: https://www.city.shinagawa.tokyo.jp/kenko/koreisha/1009473/1002486.html
+  confidence: high
+  amount: 購入費のうち 72,450 円まで（購入額が下回れば実費）
+- category: kinkyu-tsuho
+  name: 高齢者救急代理通報システム
+  name_on_page: 品川区高齢者救急代理通報システム
+  summary: ペンダントやセンサーが作動すると警備会社に通報され、派遣員が駆けつける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 区内に住所がある
+  where: 在宅介護支援センター（要介護認定等のある方）、支え愛・ほっとステーション（認定のない方）。区役所の窓口・電子申請でも可
+  url: https://www.city.shinagawa.tokyo.jp/kenko/koreisha/1002542/1002543.html
+  confidence: high
+  amount: 月々の利用料金はかからない
+- category: haikai
+  name: GPS端末機の利用料の助成
+  name_on_page: 高齢者等GPS端末機利用助成事業
+  summary: 行方不明のおそれがある高齢者を介護する家族に、GPS端末機の初期費用などを助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内に住所がある
+  - 原則65歳以上で、認知症等により行方不明になるおそれがある
+  - 端末機を持ち歩ける
+  - 申請者は、位置を確認して迎えに行ける家族
+  - 区の助成決定の前に事業者と契約しない
+  where: 担当地区の在宅介護支援センター
+  url: https://www.city.shinagawa.tokyo.jp/kenko/ninchisho/1002554/1002556.html
+  confidence: high
+  amount: 初期登録料は端末ごとの額を助成、月額基本料金の一部（650円まで）も助成
+- category: haikai
+  name: 見守りアイテムの配付と捜索協力の依頼
+  name_on_page: 品川くるみ高齢者見守りアイテム
+  summary: 情報を事前登録した人に、登録番号入りのシールとキーホルダーを配る。
+  who: {}
+  at_application:
+  - 区内に住所がある
+  - 外出に不安のある65歳以上、または認知症（疑い含む）で行方不明のおそれがある人
+  - 本人または家族が申請する
+  where: 担当地区の在宅介護支援センター
+  url: https://www.city.shinagawa.tokyo.jp/kenko/ninchisho/1002554/1002555.html
+  confidence: high
+  amount: シール・キーホルダーの3点セットを配付（金額の記載なし）
+- category: jutaku
+  name: 要介護認定のない方への自立支援住宅改修（予防給付）
+  name_on_page: 高齢者自立支援住宅改修予防給付
+  summary: 要介護認定が非該当または未認定の人に、手すり取付けなどの改修費を給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護認定が非該当、または要支援・要介護認定を受けていない
+  - 住民登録のある自宅が対象
+  - 1人1回のみ。工事前の申請が必要
+  where: 区へ申請（担当ケアマネジャーまたは在宅介護支援センターに相談）
+  url: https://www.city.shinagawa.tokyo.jp/kenko/kaigo/1009475/1002648.html
+  confidence: high
+  amount: 対象工事の合計 20 万円まで（9割〜7割を給付）
+- category: jutaku
+  name: 認定のある方への自立支援住宅改修（設備改修給付）
+  name_on_page: 高齢者自立支援住宅改修設備改修給付
+  summary: 要支援・要介護の人に、浴槽・流し・便器の取替えや階段昇降機の設置費を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 住民登録のある自宅が対象
+  - 1世帯1回のみ。工事前の申請が必要
+  - 浴槽の取替えと昇降機は事前の訪問調査が必要
+  where: 区へ申請（担当ケアマネジャーまたは在宅介護支援センターに相談）
+  url: https://www.city.shinagawa.tokyo.jp/kenko/kaigo/1009475/1002648.html
+  confidence: high
+  amount: 浴槽 37.9 万円、流し・洗面台 15.6 万円、便器洋式化 10.6 万円、階段昇降機 40 万円まで
+- category: ribiyo
+  name: 訪問理容・美容サービス
+  name_on_page: 訪問理容・美容サービス
+  summary: ねたきり等の人の自宅へ理容師・美容師が来て、年6回調髪する。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - ねたきり等の状態にある
+  where: 品川区社会福祉協議会
+  url: https://www.city.shinagawa.tokyo.jp/PC/kenkou/kenkou-syogai/kenkou-syogai-nichizyouenzyo/kenkou-syogai-nichizyouenzyo-sonota/hpg000000595.html
+  confidence: low
+  amount: 年6回まで（1回2,000円の自己負担）
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- shingu
+- gaishutsu
+- mimamori

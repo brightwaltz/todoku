@@ -1,0 +1,160 @@
+city: '112127'
+name: 東松山市
+site: www.city.higashimatsuyama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ給付
+  name_on_page: 紙おむつ給付事業
+  summary: 在宅で要介護1以上の人に、月1回紙おむつを届け、費用の一部を市が負担する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 東松山市の介護保険の被保険者
+  - 入院中・老健などに入所中の人は対象外
+  - 介護保険の給付制限を受けていない
+  where: 高齢介護課（高齢福祉）
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/27371.html
+  confidence: high
+  amount: 市の負担上限は月額で、負担割合1割3,600円・2割3,200円・3割2,800円。超えた分は自己負担。
+- category: haishoku
+  name: 配食サービス（昼食と安否確認）
+  name_on_page: 配食サービス
+  summary: 食事の準備が難しい高齢者などに、昼食を届けながら安否を確認する。
+  who: {}
+  at_application:
+  - 体や心の事情で食事の準備が難しい
+  - 65歳以上のひとり暮らし
+  - または65歳以上の世帯（全員が食事の準備困難）
+  - または65歳以上を含み65歳未満の人が全員障害者手帳
+  - または60〜64歳のみで全員が障害者手帳
+  where: 高齢介護課（高齢福祉）
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/27406.html
+  confidence: high
+  amount: 1食400円（おかずのみは350円。特別食は別料金）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: ボタンで受信センターにつながる通報装置（固定型・携帯型）を設置する。
+  who: {}
+  at_application:
+  - 慢性疾患等で常に注意が必要で緊急時の対応が困難
+  - 同一敷地内に親族がいる人は除く
+  - 65歳以上のひとり暮らし
+  - または65歳以上のみの世帯で同居者がねたきり・認知症等
+  - または日中ひとりの65歳以上／身障手帳1・2級のひとり暮らし
+  where: 高齢介護課（高齢福祉）
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/27442.html
+  confidence: high
+  amount: 無料（通話料は利用者負担）
+  more_urls:
+  - https://www.city.higashimatsuyama.lg.jp/soshiki/32/2349.html
+- category: shingu
+  name: 寝具類の洗濯・乾燥
+  name_on_page: 寝具類洗濯等サービス
+  summary: 在宅の高齢者の布団・まくら・毛布を洗濯、乾燥するサービス。
+  who:
+    at_home: true
+  at_application:
+  - 要介護2以上で寝たきり状態等の人
+  - または洗濯が困難な65歳以上のひとり暮らし・高齢者夫婦世帯
+  - または身障手帳・療育手帳があり寝たきり状態等の人
+  where: 高齢介護課（高齢福祉）
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/27378.html
+  confidence: high
+  amount: 無料。洗濯は年2回、乾燥は月2回まで
+- category: haikai
+  name: 徘徊高齢者の位置探知端末の貸出
+  name_on_page: 徘徊高齢者等家族支援サービス
+  summary: 徘徊のおそれがある人にGPS端末を貸し出し、早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で認知症等により徘徊が見られる、またはそのおそれ
+  - または療育手帳があり徘徊が見られる、またはそのおそれ
+  where: 高齢介護課（高齢福祉）
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/27445.html
+  confidence: high
+  amount: 申込金7,000円（消費税別）
+- category: haikai
+  name: 見守りステッカーの配布
+  name_on_page: 見守りステッカー
+  summary: 登録した人のうち徘徊のおそれがある人に、衣類に貼る登録番号入りステッカーを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - あんしん見守りネットワークの利用者登録をした人
+  - 認知症等による徘徊のおそれがある人に配布
+  where: 高齢介護課または地域包括支援センター
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/2276.html
+  confidence: high
+- category: mimamori
+  name: あんしん見守りネットワークの利用者登録
+  name_on_page: あんしん見守りネットワーク
+  summary: 登録すると地域包括支援センターが連絡・訪問し、地域で見守る。
+  who: {}
+  at_application:
+  - 市内在住のおおむね65歳以上
+  - 援護が必要、またはその可能性がある高齢者等
+  where: 高齢介護課または地域包括支援センター
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/2276.html
+  confidence: high
+- category: sonota
+  name: ねたきり老人等への手当
+  name_on_page: ねたきり老人等手当の支給
+  summary: 寝たきりや重度の認知症の高齢者で、要件を満たす人に月額手当を支給する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 6か月以上寝たきり、または重度の認知症状態
+  - 要介護認定を受け在宅介護サービスを利用している
+  - 該当するかは窓口で相談
+  where: 高齢介護課（高齢福祉）
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/2283.html
+  confidence: high
+  amount: 月額5,000円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい人の自宅に理容師・美容師が来る。出張費を市が負担する。
+  who: {}
+  at_application:
+  - 対象者の条件は窓口で確認
+  where: 高齢介護課（高齢福祉）
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/2365.html
+  confidence: high
+- category: yutai
+  name: いきいきパス・ポイント（協賛店サービス・ポイント交換）
+  name_on_page: いきいきパス・ポイント
+  summary: 65歳以上にカードを交付。協賛店でサービスを受けられ、ポイントを「ぼたん圓」と交換できる。
+  who: {}
+  at_application:
+  - 高齢者向け（年齢などの条件は窓口で確認）
+  where: 高齢介護課、各市民活動センター
+  url: https://www.city.higashimatsuyama.lg.jp/soshiki/32/2279.html
+  confidence: high
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- gaishutsu
+- nichijo-yogu

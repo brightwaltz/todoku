@@ -1,0 +1,258 @@
+city: '131105'
+name: 目黒区
+site: www.city.meguro.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 失禁のある方に、カタログから選んだ紙おむつ等を毎月自宅へ届ける。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住で現に失禁状態にある
+  - 在宅は要介護2〜5。入院中は要介護1以下も可（入院証明書）
+  - 生活保護の方・介護保険施設の入所者は対象外
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/kamiomutsu.html
+  confidence: high
+  amount: カタログ6,600円分まで毎月1回。注文額に応じ自己負担100〜600円
+- category: kaigo-yohin
+  name: 入院中のおむつ代の支給
+  name_on_page: おむつ代の支給
+  summary: 病院に入院中で尿失禁のある方が買ったおむつ代の実費を支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住で病院に入院中、尿失禁状態にある
+  - 介護保険施設などの入所者は対象外（入院中の期間は可）
+  - 紙おむつの現物支給と同じ月は併用できない
+  where: 高齢福祉課、各地域包括支援センター（郵送も可）
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/omutsudai.html
+  confidence: high
+  amount: 月額6,000円を限度に実費。申請は受付月の前6か月分まで
+- category: haishoku
+  name: 栄養改善配食サービス
+  name_on_page: 栄養改善配食サービス
+  summary: 低栄養のおそれがある方に配食し、食生活の改善を評価する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要支援1・2、または総合事業のチェックリスト該当者
+  - 半年で2〜3kg減、またはBMI18.5未満
+  - 介護予防ケアマネジメントで栄養改善が必要とされた
+  - 安否確認の配食との併用不可
+  where: 担当ケアマネジャー、地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/eiyoukaizen.html
+  confidence: high
+  amount: 1食あたり区の補助100円（1日1食まで）。利用は6か月、1回延長可
+- category: haishoku
+  name: 高齢者配食サービス（安否確認を兼ねる）
+  name_on_page: 配食サービス
+  summary: 昼食か夕食を手渡しで届け、安否確認も兼ねる。1日1食まで補助。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 「ひとりぐらし等高齢者登録」をしている
+  - 要支援・要介護で買い物や調理が困難な方
+  - または、単身で介護認定がなく近隣に親族がいない75歳以上
+  - 電話訪問・栄養改善配食との併用不可
+  where: 各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/shokuji.html
+  confidence: high
+  amount: 1食あたり補助263円（糖尿病食・やわらか食などは333円）
+  more_urls:
+  - https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/netakiri.html
+- category: haishoku
+  name: 週1回の日曜食事サービス
+  name_on_page: 食事サービス（週1回）
+  summary: 毎週日曜の昼に高齢者向けの食事を届け、安否確認も兼ねる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 「ひとりぐらし等高齢者登録」をしている
+  - 日曜に同居親族が在宅だと対象外のことがある
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/shokuji.html
+  confidence: high
+  amount: 普通食1食あたり補助263円
+  more_urls:
+  - https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/netakiri.html
+- category: haikai
+  name: はいかい高齢者のGPS位置情報確認
+  name_on_page: はいかい高齢者位置情報確認サービス
+  summary: GPS端末を持つ徘徊の高齢者の位置を、家族がパソコンや電話で探せる。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請者は、区内在住の徘徊のある方を介護する親族
+  - 位置が分かった後に保護に行ける方
+  - 申請者は東京23区・川崎市・横浜市に在住
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/haikai.html
+  confidence: high
+  amount: 加入料700円、月額利用料220円（税別）。非課税世帯・生活保護は利用料無料
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聞こえにくい住民税非課税の高齢者に、補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区内在住
+  - 聴覚障害（高度難聴以上）の補装具費の支給を受けられない
+  - 耳鼻咽喉科専門医の証明（両耳40dB以上70dB未満など）
+  - 認定補聴器専門店で購入。事前確認が必要
+  where: 高齢福祉課在宅事業係
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/hochouki.html
+  confidence: high
+  amount: 上限70,000円（購入費が少なければその額）。1人1回限り
+- category: kinkyu-tsuho
+  name: ひとりぐらし・高齢者世帯の非常通報システム
+  name_on_page: ひとりぐらし・高齢者世帯の非常通報システム
+  summary: 専用の通報機を設置し、ボタンで24時間のコールセンターに通報できる。
+  who: {}
+  at_application:
+  - 「ひとりぐらし等高齢者登録」をしている
+  - 電話訪問・配食（認定なしの方）とは併用不可
+  - 生活リズムセンサーは単身で近隣に親族がいない方のみ
+  where: 高齢福祉課在宅事業係
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/tsuho.html
+  confidence: high
+  amount: 月額286円（センサー併用491円）。生活保護・住民税非課税世帯は無料
+- category: shingu
+  name: 寝具乾燥消毒サービス
+  name_on_page: 寝具乾燥消毒サービス
+  summary: ふとんの乾燥消毒（年6回）と水洗い乾燥消毒（年1回）を無料で行う。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住の65歳以上で要介護4・5
+  - または、ひとりぐらし等高齢者登録の75歳以上で単身・高齢者のみ世帯
+  - 施設入所中の方は後者の対象外
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/shodoku.html
+  confidence: high
+  amount: 自己負担なし
+- category: ribiyo
+  name: 高齢者理美容サービス
+  name_on_page: 高齢者理美容サービス
+  summary: 外出が困難な方の自宅へ理容師・美容師が訪問し、補助券でカット等を行う。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ねたきり・座位が保てない・重度認知症などで外出が困難
+  - 在宅、または治療のため医療機関に入院中
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/ribiyo.html
+  confidence: high
+  amount: 補助券1枚につき自己負担2,000円。年度内の交付は最大4枚
+- category: jutaku
+  name: 自立支援住宅改修予防給付
+  name_on_page: 自立支援住宅改修予防給付
+  summary: 介護認定で非該当の虚弱な方の手すり設置・段差解消などの工事費を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住で日常生活動作に困難がある虚弱な方
+  - 介護保険の認定申請で非該当と判定された
+  - 着工前の申請が必要
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/kaishuhi.html
+  confidence: high
+  amount: 限度額20万円（うち1割自己負担）
+- category: jutaku
+  name: 自立支援住宅設備改修給付
+  name_on_page: 自立支援住宅設備改修給付
+  summary: 洋式便器・低い浴槽・流し台などへの交換工事費を、介護保険とは別に給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住で日常生活動作に困難がある
+  - 要支援・要介護、総合事業の対象者、または虚弱な方
+  - 着工前の申請が必要
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/kaishuhi.html
+  confidence: high
+  amount: 便器16.2万円、浴槽37.9万円、流し・洗面台15.6万円まで（1割自己負担）
+- category: gaishutsu
+  name: 介護タクシー利用補助
+  name_on_page: 介護タクシー利用補助事業
+  summary: 常時車いすの方が介護タクシーを使うときの補助券を交付する。
+  who: {}
+  at_application:
+  - 外出時に常時車いすを使う
+  - 要介護4・5、または身体障害者手帳をお持ちの方
+  where: 障害者支援課支援サービス係
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/koureisyamukeidoushienntou.html
+  confidence: low
+- category: gaishutsu
+  name: ハンディキャブの運行
+  name_on_page: ハンディキャブの運行
+  summary: 一人で公共交通を使えない高齢者などを、車で送迎する（要登録）。
+  who: {}
+  at_application:
+  - 区内在住で、一人では電車・バス・タクシーでの外出が困難
+  - 高齢の方または障害のある方。事前登録が必要
+  where: 目黒区社会福祉協議会
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/koureisyamukeidoushienntou.html
+  confidence: high
+  amount: 直線距離3kmごとに500円。有料道路料金は自己負担
+- category: sonota
+  name: 車いすの貸し出し
+  name_on_page: 車いすの貸し出し
+  summary: 歩行が困難な高齢者などに、車いすを緊急・一時的に貸し出す。
+  who: {}
+  at_application:
+  - 高齢者等で歩行が困難な方
+  - 緊急・一時的な利用
+  where: 目黒区社会福祉協議会 めぐろボランティア・区民活動センター
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/koureisyamukeidoushienntou.html
+  confidence: high
+  amount: 1週間は無料。1か月500円（最大3か月）
+- category: sonota
+  name: 家具転倒防止器具の取り付け助成
+  name_on_page: 家具転倒防止器具の取り付け
+  summary: 地震に備え、家具転倒防止器具の取り付け経費の一部を区が負担する。
+  who: {}
+  at_application:
+  - 要介護4・5の寝たきりなどの方
+  - または、ひとりぐらし等高齢者登録をしている方
+  where: 高齢福祉課（在宅事業係）
+  url: https://www.city.meguro.tokyo.jp/koureifukushi/kenkoufukushi/koureisha/netakiri.html
+  confidence: low
+not_found:
+- iro
+- koken
+- nichijo-yogu
+- yutai

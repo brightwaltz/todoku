@@ -1,0 +1,204 @@
+city: '122033'
+name: 市川市
+site: www.city.ichikawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付
+  summary: 在宅で紙おむつを使う非課税の要介護3〜5の方に、紙おむつを毎月届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に居住している
+  - 排泄に見守り・声かけ以上の介助が必要
+  - 生活保護を受けていない
+  - 入院・施設入所・サ高住入居中は対象外
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口、高齢者サポートセンター
+  url: https://www.city.ichikawa.lg.jp/page/7310.html
+  confidence: high
+  amount: 月 6,000 円以内の紙おむつ（実費負担なし）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 在宅の要介護高齢者を介護する非課税世帯の家族に、慰労金を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護2（認知症自立度2以上）か3〜5で認定1年以上
+  - 同居の全員が市民税非課税
+  - 過去1年に介護保険サービスを使っていない（一部除く）
+  - 過去1年の入院が通算90日以内
+  - 申請前に事前相談が必要
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口
+  url: https://www.city.ichikawa.lg.jp/page/4449.html
+  confidence: high
+  amount: 年額 10 万円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 在宅の要介護4・5の方の自宅へ理容師・美容師が訪問する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に在宅で介護を受けている
+  - 入院・施設入所・サ高住入居中は対象外
+  - 利用時は家族かヘルパーの立ち会いが必要
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口、高齢者サポートセンター
+  url: https://www.city.ichikawa.lg.jp/page/7588.html
+  confidence: high
+  amount: 自己負担 2,094 円（1 回）、年 6 回まで
+- category: jutaku
+  name: 住宅改造費の上乗せ助成（すみよい住まいづくり）
+  name_on_page: 市川市高齢者及び障害者すみよい住まいづくり助成金交付事業
+  summary: 介護保険等の限度額を超えた住宅改修費に、市が上乗せ助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住民登録があり、改修する住宅に住む全員が非課税
+  - 65歳以上で要支援・要介護認定、または下肢等の障害手帳1〜3級
+  - 介護保険の住宅改修などの限度額を超えた分が対象
+  - 工事前の事前申請が必要。1住宅1回限り
+  where: 介護保険課（第1庁舎2階）
+  url: https://www.city.ichikawa.lg.jp/page/3815.html
+  confidence: high
+  amount: 上限 20 万円
+- category: haishoku
+  name: 食の自立支援（配食サービス）
+  name_on_page: 食の自立支援（配食サービス）
+  summary: 食事づくりが難しい方に夕食を届け、届ける際に安否確認もする。
+  who: {}
+  at_application:
+  - 介護保険の被保険者で、食事の支度が困難で安否確認が必要
+  - 65歳以上、認定を受けた40〜64歳、障害者手帳のいずれか
+  - 対象になる方だけで暮らしている世帯
+  - 申請から開始まで 3 週間ほどかかる
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口、高齢者サポートセンター
+  url: https://www.city.ichikawa.lg.jp/page/7920.html
+  confidence: high
+  amount: 1 食 400 円（夕食のみ、週 1〜3 回）
+- category: kinkyu-tsuho
+  name: 見守り通報装置の貸与（高齢者見守り支援事業）
+  name_on_page: 高齢者見守り支援事業
+  summary: 緊急通報装置と見守りタグを貸与し、警備員が駆けつける。
+  who: {}
+  at_application:
+  - 65歳以上、または身体障害者手帳1・2級
+  - 玄関の合鍵1組を警備会社に預ける
+  - 緊急連絡先が最低2つ必要
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口（サポートセンターで代行申請可）
+  url: https://www.city.ichikawa.lg.jp/page/8055.html
+  confidence: high
+  amount: 月額 616 円（非課税世帯）〜 2,772 円。世帯により異なる
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 補聴器購入費の助成
+  summary: 非課税世帯の65歳以上が補聴器を買うとき、本体代を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に居住し住民登録がある
+  - 耳鼻咽喉科医の証明書（市指定様式）が必要
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 過去に市の補聴器助成を受けていない
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口
+  url: https://www.city.ichikawa.lg.jp/page/7501.html
+  confidence: high
+  amount: 補聴器本体の購入費を 3 万円まで
+- category: nichijo-yogu
+  name: 火災警報器の給付・設置
+  name_on_page: 火災警報器の給付
+  summary: 高齢者だけの非課税世帯に、煙式と熱式の火災警報器を無料で設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 住宅の世帯主が申請する
+  - 居住者全員が65歳以上かつ市民税非課税（別世帯の方も含む）
+  - 2回目以降は前回の決定日の翌日から5年経過
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口、高齢者サポートセンター
+  url: https://www.city.ichikawa.lg.jp/page/6977.html
+  confidence: high
+  amount: 無料（煙式・熱式それぞれ 1 個まで）
+- category: koken
+  name: 成年後見人等への報酬助成
+  name_on_page: 成年後見人等への報酬助成
+  summary: 後見人等への報酬を払うのが難しい低所得の方に、報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある、介護保険の被保険者、市が援護している方のいずれか
+  - 生活保護、または市民税非課税世帯で収入・資産基準を満たす
+  - 申請期限は報酬が定められた翌日から2か月
+  where: 地域包括支援課（65歳以上）、障がい者支援課（64歳以下）
+  url: https://www.city.ichikawa.lg.jp/page/6398.html
+  confidence: high
+  amount: 在宅は月額 28,000 円、入院・施設入所中は月額 18,000 円が上限
+- category: sonota
+  name: 高齢者の健康入浴券の交付
+  name_on_page: 健康入浴券の交付
+  summary: 自宅に風呂がない方に、公衆浴場で使える入浴券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に居住し、住家に入浴設備がない（故障は対象外）
+  - ひとり暮らしか高齢者世帯で、同居者全員が市民税非課税
+  - 生活保護の方は世帯・税の条件が不要
+  - 賃貸借契約書の写しか大家の確認書が必要
+  where: 地域包括支援課
+  url: https://www.city.ichikawa.lg.jp/page/3915.html
+  confidence: high
+  amount: 年 72 枚（申請月から 3 月までの月数×6 枚）
+- category: sonota
+  name: シルバーカー購入費の助成
+  name_on_page: シルバーカー購入費の助成
+  summary: 歩行に不安がある非課税の方がシルバーカーを買う費用を半額助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 在宅で歩行に不安がある
+  - 2回目以降は前回購入から3年経過
+  - 介護保険の指定を受けた販売事業者で購入し、6か月以内に申請
+  where: 地域包括支援課、行徳支所 介護福祉相談窓口、高齢者サポートセンター
+  url: https://www.city.ichikawa.lg.jp/page/2825.html
+  confidence: high
+  amount: 購入費の 2 分の 1（上限 8,000 円）
+not_found:
+- haikai
+- shingu
+- yutai
+- mimamori
+- gaishutsu

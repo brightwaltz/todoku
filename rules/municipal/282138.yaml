@@ -1,0 +1,174 @@
+city: '282138'
+name: 西脇市
+site: www.city.nishiwaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（24時間コールセンター）
+  name_on_page: 安心コールセンターサービス事業
+  summary: 緊急通報装置を無料で貸し出し、24時間の相談対応と月1回の安否確認電話を行う。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住。おおむね65歳以上のひとり暮らしか高齢者のみ世帯で、常時注意が必要な方
+  - またはひとり暮らし・のみ世帯の身体障害者、その他必要と認める方
+  - 自宅の固定電話回線が必要（回線の種類によっては設置不可）
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/zaitakushien/1474933276308.html
+  confidence: high
+  amount: 設置・撤去費と利用料は無料（電気代や過失による修理・紛失は自己負担）
+- category: nichijo-yogu
+  name: 電磁調理器・火災警報器の給付
+  name_on_page: 日常生活用具給付事業
+  summary: 火災への注意が必要なひとり暮らし高齢者等に、電磁調理器や火災警報器を給付する。
+  who:
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者等
+  - 電磁調理器は市民税の所得割非課税世帯
+  - 火災警報器は課税対象収入額が老齢福祉年金相当額以下
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/zaitakushien/1474933326867.html
+  confidence: high
+- category: jutaku
+  name: 住宅改造助成（特別型）
+  name_on_page: 住宅改造助成事業
+  summary: バリアフリー改造の工事費の一部を市が助成する（介護保険の住宅改修と同時手続き）。
+  who: {}
+  at_application:
+  - 要介護（支援）認定を受けた方、または身体障害者手帳1・2級の方等
+  - 所得税非課税世帯
+  - 着工前の申請が必要。全面改築・新築は対象外
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/zaitakushien/1474933429590.html
+  confidence: high
+  amount: 対象経費の3分の1〜10分の10（課税状況で変わる）、上限100万円
+- category: mimamori
+  name: 宅配ドライバーによる月1回の見守り
+  name_on_page: 高齢者見守りサポート事業
+  summary: 宅配ドライバーが月1回、市のお知らせを手渡しして声かけし、異変がないか確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 福祉票を提出している方
+  - 介護サービス利用世帯は対象外（福祉用具の購入・貸与のみは可）
+  - 安心コールセンター利用世帯は対象外
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/zaitakushien/1490682893689.html
+  confidence: high
+- category: gaishutsu
+  name: 要介護認定者へのタクシー利用券
+  name_on_page: 要介護認定者へのタクシー運賃の助成
+  summary: 要介護認定を受けた方に、1枚500円のタクシー利用券を交付する。
+  who: {}
+  at_application:
+  - 要介護3以上、または要介護1・2で自立度判定基準を満たす方
+  - 要介護1・2は事前に担当課へ相談
+  - 申請は有効期限内に1人1回限り
+  where: 長寿福祉課（窓口113）またはオンライン申請
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/zaitakushien/23884.html
+  confidence: high
+  amount: 1枚500円の利用券（枚数は交付月で変動）。1回の乗車で最大6枚まで使える
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 家族介護用品給付事業（紙おむつ等の給付）
+  summary: 要介護4・5の高齢者を在宅で介護する方に、紙おむつ等をカタログから選んで毎月給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5（相当）の高齢者等を在宅で介護している方
+  - 市民税の所得割が非課税の世帯に属する高齢者等
+  where: 長寿福祉課（窓口113）またはオンライン申請
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/kazokukaigo/1474933789400.html
+  confidence: high
+  amount: 毎月4,000円（税込）分まで。超えた分は自己負担
+- category: iro
+  name: 在宅の要介護4・5の方を介護する家族への介護手当
+  name_on_page: 在宅老人介護手当支給事業
+  summary: 要介護4・5の方を在宅で介護し、1年間介護保険サービスを使わなかった家族に手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時介護が必要な高齢者を在宅で介護している方
+  - 1年間、介護保険サービスを利用していない
+  - 所得制限あり（基準額は頁に記載なし）
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/kazokukaigo/1474933814543.html
+  confidence: high
+  amount: 年額12万円
+- category: haikai
+  name: 位置情報検索機器（GPS等）の導入費補助
+  name_on_page: 認知症高齢者等位置情報検索機器導入補助金
+  summary: 行方不明のおそれのある高齢者等のため、位置情報機器の購入・レンタル費用を家族に補助する。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者等を介護し、機器の費用を負担する家族
+  - 高齢者等は市に住民登録があり市内に居住（施設入所者は除く）
+  - 購入前の申請が必要。月々の利用料・通信料は対象外
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/kazokukaigo/29632.html
+  confidence: high
+  amount: 上限1万円（利用する高齢者1人につき1回限り）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者の補聴器購入を助成
+  summary: 聴力が落ちた65歳以上で、聴覚障害の手帳がない方の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録がある
+  - 聴覚障害による身体障害者手帳を持っていない
+  - 中等度難聴で、耳鼻咽喉科医の意見書がある
+  - 購入前の申請が必要
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/ninchisho/28036.html
+  confidence: high
+  amount: 上限3万5,000円（1人1回限り）
+- category: haishoku
+  name: ふれあい型の配食（お弁当と安否確認）
+  name_on_page: ふれあい給食サービス事業
+  summary: ボランティアが作ったお弁当を、ひとり暮らしの高齢者に安否確認を兼ねて届ける。
+  who:
+    household:
+    - alone
+  at_application:
+  - 実施日は週1回（水曜日）
+  where: 西脇市社会福祉協議会（0795-22-5400）
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/shakyo/1474934002238.html
+  confidence: low
+  amount: 1食300円
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話設置事業
+  summary: 電話を持たないひとり暮らし高齢者等に福祉電話を貸し出す。費用は通話料のみ。
+  who: {}
+  at_application:
+  - 電話を持たないひとり暮らし高齢者等、または重度障害者
+  - 市民税の所得割非課税世帯
+  where: 長寿福祉課
+  url: https://www.city.nishiwaki.lg.jp/kenkofukushi/koureishafukushi/zaitakushien/1474933399826.html
+  confidence: low
+  amount: 通話料金とその消費税相当額のみ負担
+not_found:
+- ribiyo
+- shingu
+- yutai
+- koken

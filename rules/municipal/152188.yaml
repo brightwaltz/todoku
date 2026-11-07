@@ -1,0 +1,172 @@
+city: '152188'
+name: 五泉市
+site: www.city.gosen.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 緊急時の対応が難しい在宅の一人暮らしの人に、通報装置を貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の一人暮らしの高齢者、または重度身体障がい者
+  - 緊急時に適切な対応が難しい人
+  where: 高齢福祉課、支所福祉係、地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.gosen.lg.jp/organization/10/4/9380.html
+  confidence: low
+  amount: 装置の利用料は無料。固定電話の回線使用料は自己負担。
+- category: haishoku
+  name: 見守り配食サービス
+  name_on_page: 食の自立支援（見守り配食サービス）
+  summary: 調理や買い物が難しく見守りが必要な高齢者世帯に、弁当を週2回届ける。
+  who: {}
+  at_application:
+  - 調理や買い物が困難で、定期的な見守りが必要な高齢者世帯
+  where: 高齢福祉課、支所福祉係、地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.gosen.lg.jp/organization/10/4/9380.html
+  confidence: low
+  amount: 自己負担は1食300円。
+- category: mimamori
+  name: 一人暮らし高齢者の安否確認訪問
+  name_on_page: 高齢者生活安全訪問事業
+  summary: 地域との交流が少ない一人暮らしの高齢者を、月2回ほど訪問か電話で見守る。
+  who:
+    household:
+    - alone
+  at_application:
+  - 地域との交流が少ない一人暮らしの高齢者
+  where: 高齢福祉課、支所福祉係、地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.gosen.lg.jp/organization/10/4/9380.html
+  confidence: low
+- category: sonota
+  name: 一人暮らし高齢者の緊急医療キット配布
+  name_on_page: ひとり暮らし高齢者緊急医療キット配布事業
+  summary: 救急搬送に備え、かかりつけ医や連絡先を入れる保管キットを民生委員が配る。
+  who:
+    household:
+    - alone
+  at_application: []
+  where: 高齢福祉課、支所福祉係、地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.gosen.lg.jp/organization/10/4/9380.html
+  confidence: low
+- category: sonota
+  name: 軽度生活援助（シルバー人材センター利用料の支援）
+  name_on_page: 軽度生活援助事業
+  summary: 買い物・外出の付き添い・家の整理・除雪などの費用の一部を市が支援する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 利用前に事前登録が必要
+  where: 高齢福祉課、支所福祉係、地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.gosen.lg.jp/organization/10/4/9380.html
+  confidence: low
+  amount: 利用料は1時間200円（庭木や除雪は300円）。除雪以外は月10時間まで。
+- category: sonota
+  name: 雪おろしの費用補助
+  name_on_page: 高齢者・障がい者等世帯雪おろし援助
+  summary: 自力で雪おろしできない世帯が業者に頼んだ母屋の雪おろし費用を補助する。
+  who: {}
+  at_application:
+  - 高齢者のみ、高齢者と障がい者・児童・ひとり親の世帯など
+  - 障がい者は身体1・2級、療育手帳A、精神1級の所持者
+  - 実際に住んでいる家の母屋が対象。施設入所は対象外
+  where: 高齢福祉課（申請書は市サイトの手続き頁にある）
+  url: https://www.city.gosen.lg.jp/organization/10/4/9380.html
+  confidence: high
+  amount: 1世帯1回2万円まで。1シーズン2回まで。
+  more_urls:
+  - https://www.city.gosen.lg.jp/organization/10/7/9396.html
+- category: iro
+  name: 在宅寝たきり老人等の介護手当
+  name_on_page: 在宅寝たきり老人等介護手当扶助金の支給
+  summary: 在宅で常時おむつを使う寝たきりの人を介護する家族に、手当を支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護される人が65歳以上で6か月以上寝たきり
+  - または身体障害者手帳1・2級、療育手帳A判定
+  where: 高齢福祉課
+  url: https://www.city.gosen.lg.jp/organization/10/4/9381.html
+  confidence: high
+  amount: 月額6,000円。
+- category: sonota
+  name: 家族介護者への温泉割引利用券
+  name_on_page: 家族介護者支援（温泉無料入浴券の支給）
+  summary: 要介護2以上の人を家庭で介護する世帯に、市営温泉の割引券を渡す。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 高齢福祉課
+  url: https://www.city.gosen.lg.jp/organization/10/4/9381.html
+  confidence: high
+  amount: さくらんど温泉か馬下保養センターに入湯税150円で入れる券を年5回分。
+- category: sonota
+  name: 介護者の事情による緊急ショートステイ
+  name_on_page: 高齢者緊急短期入所
+  summary: 介護者に冠婚葬祭などがあるとき、市内施設に年7日まで短期入所できる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護者の冠婚葬祭などで緊急に短期入所が必要なとき
+  where: 高齢福祉課（頁に申請先の明記なし）
+  url: https://www.city.gosen.lg.jp/organization/10/4/9381.html
+  confidence: low
+  amount: 利用料は1日2,000〜3,400円。居住費・送迎費・食費は別。
+- category: jutaku
+  name: 高齢者・障がい者向け住宅改修の上乗せ補助
+  name_on_page: 高齢者・障がい者向け安心住まいる事業
+  summary: 介護保険の住宅改修などに上乗せして、バリアフリー改修費を補助する。
+  who: {}
+  at_application:
+  - 65歳以上の要支援・要介護認定者、または身体1・2級・療育A
+  - 世帯の前年の収入合計が600万円未満
+  - 対象者が住み、本人か親族が所有する既存住宅
+  - 着工前に事前協議と申請が必要
+  where: 高齢福祉課
+  url: https://www.city.gosen.lg.jp/organization/10/2/kaigoservice/9370.html
+  confidence: high
+  amount: 基準額30万円以内。補助率は生活保護10/10、所得税非課税4分の3、他は2分の1。
+  more_urls:
+  - https://www.city.gosen.lg.jp/organization/10/7/9396.html
+- category: gaishutsu
+  name: 高齢者の運転免許返納支援（バス・タクシー回数券など）
+  name_on_page: 高齢者の運転免証の自主返納を支援します
+  summary: 免許を自主返納した65歳以上に、バス・タクシー回数券などのどれか1つを渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 免許を自主返納して6か月以内。失効した場合は対象外
+  where: 環境保全課（本庁のみ）。先に五泉警察署で返納手続きをする
+  url: https://www.city.gosen.lg.jp/organization/7/12/1201.html
+  confidence: high
+  amount: ふれあいバス回数券6冊、乗合タクシー回数券4冊、温泉券、お買物券から1つ選ぶ（1回のみ）。
+not_found:
+- kaigo-yohin
+- haikai
+- koken
+- ribiyo
+- nichijo-yogu
+- shingu

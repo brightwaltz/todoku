@@ -1,0 +1,236 @@
+city: '131067'
+name: 台東区
+site: www.city.taito.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつの支給
+  summary: 常時紙おむつを使う方に、紙おむつの現物配送・購入補助券・おむつ代補助のどれかを給付する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 要支援1以上の認定がある方、または65歳以上で入院中の方
+  - 特養・老健・介護医療院の入所者、生活保護の方は対象外
+  - 自己負担あり（住民税非課税世帯は免除）
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/kamiomutu.html
+  confidence: high
+  amount: 在宅は月3,000円（要支援）・5,000円（要介護1・2）・7,000円（要介護3〜5）相当。入院・有料老人ホームはおむつ代で月5,000円まで。
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 聞こえの改善機器購入費助成
+  summary: 聴力が落ちた高齢者の補聴器購入費の一部を、1人1回助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻咽喉科医が補聴器の装用が必要と認めた（医師意見書）
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 過去にこの事業の助成を受けていない
+  where: 高齢福祉課 総合相談・給付担当
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/kikoe.html
+  confidence: high
+  amount: 上限は住民税非課税・生活保護の方が144,900円、課税の方が72,450円。
+- category: jutaku
+  name: 高齢者住宅改修給付（区独自）
+  name_on_page: 高齢者住宅改修給付
+  summary: 要介護認定が非該当の方の手すり設置などと、浴槽・便器などの設備改修の費用を一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 着工前の申請が必要、区の調査で必要と認められた方
+  - 手すりなどの予防給付は要介護認定が非該当の方が対象
+  - 設備改修の新設工事は要介護2以上など一定の要件がある
+  - 老朽化・故障に伴う工事は対象外
+  where: 高齢福祉課 総合相談・給付担当
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/juutakukaisyuukyuuhu.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 民間緊急通報システム
+  name_on_page: 民間緊急通報システム
+  summary: 緊急ボタンの機器を貸与し、民間センターが急病時の対応や月1回のお伺い電話をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 慢性疾患があるなど、日常生活で常時注意が必要な方
+  - 窓口で要件の調査がある
+  - 委託業者に自宅の鍵を預ける必要がある
+  where: 高齢福祉課 総合相談・給付担当
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/minkankinkyuutuuhou.html
+  confidence: high
+  amount: 月額利用料は住民税課税世帯が600円、非課税世帯が300円（別途消費税）。
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 高齢者火災安全システム（電磁調理器の給付）
+  summary: 火の扱いに不安がある高齢者に、電磁調理器を1世帯1回給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 申請前に身体・生活状況の聞き取り調査がある
+  - 事業終了のため、申請は令和8年12月28日まで
+  where: 高齢福祉課 総合相談・給付担当
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/koureikasai.html
+  confidence: high
+  amount: 住民税課税世帯は費用の1割を自己負担する。
+- category: haikai
+  name: 高齢者位置確認システム（GPS端末）
+  name_on_page: 高齢者位置確認システム
+  summary: 道に迷うおそれのある認知症の方にGPS端末を持たせ、介護者が居場所を確認できる。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内に住民登録と居住があり、施設に入所していない
+  - 申請者は日常的に介護する家族等で、迎えに行ける方
+  - 介護を仕事にしている方は対象外
+  where: 高齢福祉課 介護予防担当
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/ichikakuninnsystem.html
+  confidence: high
+  amount: 月額利用料は770〜880円（税込）。新規登録料と使用料の一部は区が負担する。
+- category: haikai
+  name: 認知症高齢者等の早期発見ステッカー
+  name_on_page: 認知症高齢者等早期発見ステッカー
+  summary: 居場所が分からなくなるおそれのある方に、反射ステッカーとアイロンシールを無料で配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 台東区に住所がある
+  - 申請者は家族か、状況をよく知るケアマネジャー等
+  - 本人の写真が必要
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/soukihakken.html
+  confidence: high
+  amount: 無料（反射ステッカー10枚とアイロンシール20枚）
+- category: iro
+  name: 寝たきり高齢者の介護者へのマッサージ券・食事券
+  name_on_page: 寝たきり高齢者介護慰労
+  summary: 要介護4・5の方を在宅で介護する家族に、マッサージ券か食事券を年1回給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護する方も介護される方も区内に住所がある
+  - 申請時に入院中・施設入所中の方は除く
+  - 申請期限は令和9年3月8日、郵送申請は不可
+  where: 高齢福祉課（2階5番窓口）
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/kaigoirou.html
+  confidence: high
+  amount: 年度に1回、5,000円相当のマッサージ券か食事券。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 介護サービスを使わず重度の方を在宅で介護する同居家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する方・される方の両世帯が住民税非課税
+  - 介護サービスを使わない、または年10日以内（用具・改修を除く）
+  - 起算日から1年間に通算90日以上の入院がない
+  - 介護保険料の滞納等がない
+  where: 介護保険課 給付担当
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/kaigohokenseido/shikumi/servicenosyurui/zaitakuservice/kazokukaigoiroukin.html
+  confidence: high
+  amount: 年額10万円
+- category: gaishutsu
+  name: 高齢者移送サービス（リフト付福祉タクシー助成）
+  name_on_page: 高齢者移送サービス
+  summary: 通院や入退院などで使うリフト付福祉タクシーの料金の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護3〜5、常時車いす利用、寝たきりのいずれかに当たる
+  - 障害福祉課のリフト付タクシー事業の対象者・生活保護の方は除く
+  - 利用先は施設への入退所と病院への入退院・通院などに限る
+  where: 高齢福祉課（2階5番窓口）
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/isousa-bisu.html
+  confidence: high
+  amount: 区は予約料・迎車料・基本介助料を負担。運賃などは自己負担。
+- category: ribiyo
+  name: 訪問理・美容サービス券
+  name_on_page: 訪問理・美容サービス
+  summary: 外出が難しい方の自宅に理容師・美容師が訪問する理・美容券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または身体障害者手帳1・2級などの外出困難な方
+  - 区内に住所があり、入院中・施設入所中の方は対象外
+  where: 台東区社会福祉協議会
+  url: https://www.city.taito.lg.jp/kenkohukusi/shogai/service/enjo/shaji/houmonriyouservice.html
+  confidence: high
+  amount: 券1枚につき自己負担1,000円
+- category: mimamori
+  name: 友愛訪問員の派遣
+  name_on_page: 友愛訪問員派遣
+  summary: 地域の友愛訪問員が高齢者宅を訪問・電話し、話し相手や安全の確認をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 事前に身体・生活状況の聞き取りがあり、希望に添えない場合もある
+  where: 高齢福祉課 庶務・計画担当
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/koureimiamori/yuuaihoumonin.html
+  confidence: high
+- category: nichijo-yogu
+  name: 高齢者自立支援用具（福祉用具）の給付
+  name_on_page: 高齢者自立支援用具（福祉用具）給付
+  summary: 歩行や入浴・排泄が困難な方に、シルバーカー、杖、入浴・排泄補助用具などを給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 歩行・排泄・入浴などの日常生活が困難
+  - 入院中・特養・老健・介護医療院の入所者は対象外
+  - 便座・入浴用具は介護保険の認定者には給付しない
+  where: 高齢福祉課 総合相談・給付担当、地域包括支援センター
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/silvercar.html
+  confidence: high
+  amount: 品目ごとに給付限度がある。原則、費用の約1割を自己負担する。
+- category: sonota
+  name: 家具転倒防止器具の無料取付
+  name_on_page: 高齢者家具転倒防止器具の取付
+  summary: 高齢者のいる世帯に、家具転倒防止器具を3点まで無料で給付し取り付ける。
+  who: {}
+  at_application:
+  - 世帯全員が65歳以上の世帯
+  - または65歳以上が在宅で、世帯全員が住民税非課税の世帯
+  - 申請は1世帯1回限り
+  where: 高齢福祉課（2階5番窓口）
+  url: https://www.city.taito.lg.jp/kenkohukusi/korei/serviceannai/kyuuhujosei/kagutentoubousi.html
+  confidence: high
+  amount: 無料（7種類の器具から3点まで）
+not_found:
+- koken
+- shingu

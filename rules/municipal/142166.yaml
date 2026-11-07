@@ -1,0 +1,230 @@
+city: '142166'
+name: 座間市
+site: www.city.zama.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ等の現物支給（介護者向け）
+  name_on_page: おむつ等支給事業（高齢者対象）
+  summary: 常時おむつが必要な在宅の人を介護する家族に、カタログから選んだおむつ等を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 支給を受けるのはおむつ必要者を介護する市内在住の家族
+  - 要介護3は認知症自立度Ⅲa以上の場合のみ対象
+  - 介護者の世帯全員も市民税非課税であること
+  - 介護保険料の滞納や給付制限がないこと
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/fukushi/koureisha/shien/1002789.html
+  confidence: high
+  amount: 1回6,000円（600点）以内、年6回（奇数月）
+  more_urls:
+  - https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: ボタンで通報できる発信機と、動きを感知して異常を知らせるセンサーを貸与する。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のいずれかに当たる人
+  - 心疾患・ぜんそくで、世帯全員が65歳以上（または重度障害者との世帯）
+  - 75歳以上のひとり暮らし
+  - 世帯全員が85歳以上
+  - 心疾患・ぜんそくの人は薬の説明書が必要
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/fukushi/koureisha/anzen/1002794.html
+  confidence: high
+  amount: 電話料金のほか月額500円（市民税非課税）／1,000円（課税）
+  more_urls:
+  - https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+- category: haikai
+  name: 認知症高齢者の位置検索機器の貸与
+  name_on_page: 認知症高齢者等位置確認事業
+  summary: 行方不明時に家族へ位置情報を知らせる位置検索用機器を、在宅の認知症高齢者に貸与する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症によるはいかい癖がある人
+  - 見守りネットワーク事業に登録していること
+  - 65歳以上、または40〜64歳で要支援・要介護認定を受けている
+  - 位置確認後の保護は家族が行う
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/fukushi/koureisha/anzen/1002800.html
+  confidence: high
+  amount: 新規加入料0〜2,500円、月額0〜1,000円（世帯の課税状況による）
+  more_urls:
+  - https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+- category: haikai
+  name: 認知症高齢者等の事前登録（見守りネットワーク）
+  name_on_page: 認知症高齢者等見守りネットワーク事業
+  summary: 行方不明に備えて情報と顔写真を登録し、いなくなったとき関係機関の協力で早く探す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 家を出て戻れなくなるおそれのある認知症高齢者等
+  - 申請書と本人の顔写真を窓口へ提出する
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+  confidence: high
+- category: ribiyo
+  name: 寝たきり高齢者への理美容助成券
+  name_on_page: 寝たきり高齢者理髪料等助成事業
+  summary: 理美容組合の店で使える出張の理髪・美容助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある在宅の寝たきり高齢者
+  - 生活保護を受けている人は対象外
+  - 家族が介護保険証と印鑑を持って窓口で申請できる
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/fukushi/koureisha/service/1002805.html
+  confidence: high
+  amount: 出張券1枚5,700円、年最大4枚（申込月で枚数が変わる）
+  more_urls:
+  - https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+- category: shingu
+  name: 寝具の乾燥・丸洗いサービス
+  name_on_page: 寝具乾燥・丸洗いサービス事業
+  summary: 掛・敷布団と毛布の乾燥と丸洗い乾燥を、年に各3回行う。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝具の衛生管理が必要な在宅高齢者
+  - 寝たきり・認知症の診断、要介護認定、障害者手帳のいずれか
+  - 市内に住所がある
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/fukushi/koureisha/service/1002807.html
+  confidence: high
+  amount: 乾燥は無料。丸洗い乾燥の布団は1枚0〜500円（保険料段階）、毛布は無料
+  more_urls:
+  - https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+- category: gaishutsu
+  name: 福祉車両による通院等の送迎
+  name_on_page: 移送サービス事業
+  summary: 歩行が困難な人や寝たきり等の人を、福祉車両で通院などのため送迎する。
+  who:
+    at_home: true
+  at_application:
+  - 身体障害で歩行が困難、または寝たきり等で交通機関が使えない
+  - 事前予約が必要、市役所から半径15km圏内のみ
+  where: ワーカーズ・コレクティブ たすけっと、長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/fukushi/koureisha/service/1002802.html
+  confidence: high
+  amount: 片道の利用者負担は距離により800〜1,600円
+  more_urls:
+  - https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+- category: mimamori
+  name: ひとり暮らし高齢者の訪問見守り
+  name_on_page: ひとり暮らし高齢者訪問活動
+  summary: 地区担当の民生委員が、原則2か月に1回ひとり暮らしの高齢者宅を訪問する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内在住
+  - 親族・ケアマネ等による2か月に1回以上の訪問がない
+  - 定期的な外出の機会がない
+  - 本人か家族の申出で、民生委員を通じて登録
+  where: 長寿支援課 長寿支援係（地区担当民生委員を通じて登録）
+  url: https://www.city.zama.kanagawa.jp/fukushi/koureisha/anzen/1002832.html
+  confidence: high
+  more_urls:
+  - https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+- category: sonota
+  name: あんしん自分登録（緊急連絡先の事前登録）
+  name_on_page: あんしん自分登録
+  summary: 連絡先を地域包括支援センターに登録し、緊急時に代わって家族等へ連絡してもらう。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住
+  - 事前に電話予約のうえ、地域包括支援センターの窓口で申込
+  where: 地域包括支援センター（長寿支援課）
+  url: https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+  confidence: high
+  amount: 登録者カードとマグネットを交付
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: かかりつけ医や持病などの情報を自宅で保管するキットを無料で配る。
+  who:
+    age_min: 65
+  at_application:
+  - 本人または代理の人が窓口で申請
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 生活支援型の短期入所（養護老人ホーム）
+  name_on_page: 生活支援型短期入所事業
+  summary: 介護者が不在などの虚弱な高齢者が、契約先の養護老人ホームに短期間入所できる。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所があるおおむね65歳以上の虚弱な高齢者
+  - 介護が受けられない、または社会適応が困難な状態
+  - 本人の健康診断書が必要な場合がある
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+  confidence: high
+  amount: 1日1,730円、利用は7日以内
+- category: sonota
+  name: 緊急時の短期入所（特別養護老人ホーム）
+  name_on_page: 緊急短期入所事業
+  summary: 介護者の病気などで介護が受けられない寝たきり等の高齢者が、契約施設に長めに短期入所できる。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 寝たきり等の高齢者で、他に介護する人がいない
+  - 介護者の健康診断書等を添えて申請
+  where: 長寿支援課 長寿支援係
+  url: https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+  confidence: high
+  amount: 介護保険に準じた負担額、利用は30日以内
+- category: sonota
+  name: 屋内温水プールの利用料半額助成
+  name_on_page: 高座施設組合屋内温水プール利用料金助成事業
+  summary: 高座施設組合屋内温水プールの利用料を半額にする。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - プール窓口で申請書に署名し、身分証明書を見せる
+  where: 高座施設組合屋内温水プール窓口（問合せは長寿支援課）
+  url: https://www.city.zama.kanagawa.jp/_res/projects/default_project/_page_/001/011/460/R8shiori.pdf
+  confidence: high
+  amount: 通常400円が200円
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,247 @@
+city: '202037'
+name: 上田市
+site: www.city.ueda.nagano.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への配食（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 希望の曜日に弁当を届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の方だけの世帯（車を運転しない）
+  - 近隣に親族が住んでおらず安否確認が必要
+  - 食の確保が困難な方など
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 自己負担は390円から550円（介護保険料段階・弁当の種類で異なる）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: 急病や事故のときに通報でき、24時間体制で見守る装置を設置する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし
+  - または、介護認定を受けた65歳以上を含む高齢者のみの世帯
+  - または、身体障害者手帳1・2級でひとり暮らし
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 利用者負担は月額261円または523円（装置の種類で異なる。減免あり）
+- category: jutaku
+  name: 住宅整備の費用補助（市の上乗せ）
+  name_on_page: 要援護高齢者等住宅整備事業
+  summary: 在宅生活を続けるための居室・風呂・便所などの改修費の9割を補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 世帯全体の前年の合計所得税額が8万円以下
+  - 市税や介護保険料の滞納がない
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 対象経費の9割、上限63万円
+- category: gaishutsu
+  name: 車いす・寝台のまま乗れる外出支援
+  name_on_page: 外出支援サービス
+  summary: 車いすやストレッチャーのまま乗れる車両で、医療機関などへの移動を支援する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で要介護4・5の認定を受けている
+  - または、60歳以上で身体障害者手帳の下肢1・2級
+  - 生活相談・見守り付きの高齢者住宅・有料老人ホームの入所者は対象外
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 利用者負担は距離に応じて片道700円から1,390円
+- category: ribiyo
+  name: 訪問理美容の出張料金助成
+  name_on_page: 訪問理美容サービス
+  summary: 理美容師が自宅へ来るときの出張料金を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理髪店や美容院に出向くことが困難
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 1回あたり上限2,095円（カット代などは自己負担）
+- category: sonota
+  name: 除雪・家周りの手入れなどの軽度生活援助
+  name_on_page: 軽度生活援助
+  summary: ヘルパーでは対応できない除雪や家の周りの手入れなどの支援を受けられる。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上の方だけの世帯
+  - 市内に一親等以内の親族がいない
+  - 軽易な日常生活の支援が必要
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 年3回まで（除雪は回数に含めない）。利用者負担は料金の2割
+- category: nichijo-yogu
+  name: 火災報知器・自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具給付
+  summary: 火災報知器、自動消火器、電磁調理器を給付する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしで認知症のある介護認定者
+  - または、同程度に火の始末ができない認知症の方
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 自己負担は対象者の所得税額により異なる
+- category: sonota
+  name: 養護老人ホームでの短期宿泊と生活指導
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 在宅生活に不安がある方が養護老人ホームに一時宿泊し、生活習慣の指導を受ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、要介護・要支援状態になるおそれが高い方など
+  - 在宅生活に不安があると認められる
+  where: 高齢者介護課、各地域自治センター、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2770.html
+  confidence: high
+  amount: 1回7日程度。自己負担は食費など相当額
+- category: iro
+  name: 家庭介護者への慰労金
+  name_on_page: 家庭介護者慰労金支給事業
+  summary: 要介護3以上の方を同居で介護している家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+  at_application:
+  - 基準日（11月1日）前の1年間に同居して介護している
+  - 介護期間が180日以上
+  - 介護者・要介護者とも市内に住所がある
+  - 介護者に市税の滞納、要介護者に介護保険料の滞納がない
+  where: 高齢者介護課、丸子・真田・武石地域自治センターの高齢者支援担当
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2692.html
+  confidence: high
+  amount: 要介護者1人につき10万円
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成
+  name_on_page: 紙おむつ等購入費助成事業
+  summary: 在宅で紙おむつを使う要介護4・5の非課税世帯に購入費を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市税・後期高齢者医療保険料・介護保険料の滞納がない
+  where: 高齢者介護課、丸子・真田・武石地域自治センターの高齢者支援担当
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2692.html
+  confidence: high
+  amount: 月6,250円に、申請月から年度末までの月数をかけた額（上限75,000円）
+- category: haikai
+  name: GPS 位置情報システムの利用料補助
+  name_on_page: 認知症高齢者等見守り位置情報システム利用料等補助金交付事業
+  summary: 徘徊のある認知症の方を介護する家族に、位置情報システムの加入料と月額基本料を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある被介護者を介護する家族
+  - 市税・介護保険料・後期高齢者医療保険料の滞納がない
+  where: 高齢者介護課、丸子・真田・武石地域自治センターの高齢者支援担当
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2692.html
+  confidence: high
+  amount: 加入料7,000円まで、月額基本料500円まで（検索・急行料金は自己負担）
+  more_urls:
+  - https://www.city.ueda.nagano.jp/contents/reiki/reiki_int/reiki_honbun/r360RG00000349.html
+- category: haikai
+  name: QR コード付き見守りシールの交付
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: 行方不明時に家族へ連絡がつくよう、QR コード付きの見守りシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症により外出時に行方不明になるおそれがある高齢者
+  where: 高齢者介護課、丸子・真田・武石地域自治センターの高齢者支援担当
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/2692.html
+  confidence: high
+  amount: 初回交付分は無料
+- category: haikai
+  name: 認知症見守りネットワークへの事前登録
+  name_on_page: 認知症見守りネットワーク登録
+  summary: 行方不明になる心配のある方が事前登録し、早期発見につなげる。登録者は個人賠償責任保険に自動加入となる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知機能低下などで外出時に行方不明になる心配がある
+  where: 担当のケアマネジャー、地域包括支援センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/127011.html
+  confidence: high
+  amount: 登録者は保険の掛金負担なし
+- category: koken
+  name: 成年後見の申立費用の助成
+  name_on_page: 審判開始の申立費用の助成
+  summary: 成年後見の審判請求にかかった費用を、後から助成する。
+  who: {}
+  at_application:
+  - 申立ての対象者と費用を負担した申立者が、生活保護の受給者
+  - または、市長が費用負担を困難と認める
+  - 審判後おおむね3か月以内に申請
+  where: 高齢者介護課（65歳以上）、障がい者支援課（65歳未満）
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/1745.html
+  confidence: high
+- category: koken
+  name: 後見人等の報酬の助成
+  name_on_page: 後見人等報酬の助成
+  summary: 後見人・保佐人・補助人への報酬の支払いが難しい方に、費用を助成する。
+  who: {}
+  at_application:
+  - 被後見人等が生活保護受給者、または市長が負担困難と認める
+  - 後見人等が親族の場合は対象外
+  - 報酬決定後おおむね3か月以内に申請
+  where: 高齢者介護課（65歳以上）、障がい者支援課（65歳未満）
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/1745.html
+  confidence: high
+  amount: 報酬額が上限。在宅は月28,000円、入所中は月18,000円まで
+- category: sonota
+  name: 介護保険の利用者負担を軽くする市独自の助成
+  name_on_page: 介護保険利用料助成金認定制度
+  summary: 収入の少ない方が居宅介護サービスなどを使うとき、利用者負担を2％軽くする。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 前年の合計所得金額と課税年金収入の合計が82万6,500円以下
+  - 市税等の滞納がない
+  where: 高齢者介護課、各地域自治センター
+  url: https://www.city.ueda.nagano.jp/soshiki/korei/4577.html
+  confidence: high
+  amount: 利用者負担が8％になる（2％軽減）
+not_found:
+- hochoki
+- shingu
+- mimamori

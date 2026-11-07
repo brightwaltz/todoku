@@ -1,0 +1,100 @@
+city: 062138
+name: 南陽市
+site: www.city.nanyo.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護者への紙おむつ券の支給
+  name_on_page: 紙おむつ券支給事業
+  summary: 要介護1以上で常に失禁状態の人に、紙おむつ券を支給する市独自の給付。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時失禁状態で、1日4回以上のおむつ交換が必要
+  where: 福祉課（介護管理係）
+  url: http://www.city.nanyo.yamagata.jp/fukusikaigokourei/345
+  confidence: high
+- category: iro
+  name: 重度要介護者を在宅で介護する家族への手当
+  name_on_page: 重度要介護者介護手当
+  summary: 市に「重度要介護者介護手当」の支給を申請できる。条件・金額は窓口で確認。
+  who: {}
+  at_application:
+  - 条件は福祉課で確かめる
+  where: 福祉課
+  url: http://www.city.nanyo.yamagata.jp/up/files/%E5%8D%97%E9%99%BD%E5%B8%82%E9%AB%98%E9%BD%A2%E8%80%85%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB%E3%83%BB%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%94%BB%E3%80%90%E7%AC%AC%EF%BC%99%E6%9C%9F%E3%80%91%E8%A8%88%E7%94%BB%E6%9B%B8.pdf
+  confidence: low
+  more_urls:
+  - http://www.city.nanyo.yamagata.jp/giyousei/4756
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 健康に不安のあるひとり暮らしの高齢者等に、緊急通報の機器を貸し出す。
+  who: {}
+  at_application:
+  - 健康上の不安がある
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - 身体障害者のみの世帯、65歳以上と身体障害者の世帯も可
+  where: 福祉課（電話や窓口で申込）
+  url: http://www.city.nanyo.yamagata.jp/kurasinosien/3656
+  confidence: high
+  amount: 利用料は月700円（課税世帯）、月400円（非課税世帯）、生活保護世帯は無料
+- category: haikai
+  name: 徘徊のおそれがある高齢者の事前登録と伝言板シール
+  name_on_page: 徘徊高齢者等支援事業（家さかえっぺ登録）
+  summary: 行方不明のおそれがある人を福祉課と警察に登録し、QRコードのシールも受け取れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 南陽市に住んでいる
+  - おおむね65歳以上で、認知症などで行方不明になるおそれがある
+  where: 福祉課、または担当ケアマネジャー
+  url: http://www.city.nanyo.yamagata.jp/nintisyousien/3655
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージ等の施術費助成券
+  name_on_page: はり・きゅう・マッサージ等施術費の助成
+  summary: 70歳以上の人に助成券を交付し、市内の協力事業所で施術費が割引になる。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 毎年4月1日時点で満70歳以上
+  where: 福祉課11番窓口（家族の代理申請も可）
+  url: http://www.city.nanyo.yamagata.jp/fukusikaigokourei/401
+  confidence: high
+  amount: 1回につき1,000円割引。年間最大5枚（10月以降の申請は3枚）
+- category: sonota
+  name: 雪下ろし費用の助成
+  name_on_page: 雪下ろし費用の助成
+  summary: 所得が比較的低い高齢者世帯や障害者世帯に、雪下ろしの費用を助成する。
+  who: {}
+  at_application:
+  - 高齢者世帯または障害者世帯で、所得が比較的低い
+  where: 福祉課
+  url: http://www.city.nanyo.yamagata.jp/yokuarufaq/faq01316
+  confidence: low
+  amount: 年間24,000円まで
+not_found:
+- haishoku
+- ribiyo
+- shingu
+- hochoki
+- jutaku
+- koken
+- gaishutsu
+- nichijo-yogu
+- mimamori

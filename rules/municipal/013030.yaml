@@ -1,0 +1,97 @@
+city: '013030'
+name: 当別町
+site: www.town.tobetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者のタクシー利用券の交付
+  name_on_page: 高齢者外出支援タクシー料金助成事業
+  summary: 外出手段の少ない高齢者世帯に、タクシー利用券（1 枚 500 円）を交付する。
+  who:
+    age_min: 70
+    at_home: true
+  at_application:
+  - 町内に住所がある
+  - 運転免許がない、または免許はあるが自家用車がない
+  - 同居家族がいない、または同居家族の日常的な外出支援がない
+  where: 介護課高齢者支援係、西当別支所
+  url: https://www.town.tobetsu.hokkaido.jp/soshiki/fukushi/53832.html
+  confidence: high
+  amount: 令和 8 年度は 1 世帯につき年間最大 27,000 円分（500 円×54 枚）。年度内に 1 回の交付
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 配食サービス
+  summary: 夕食を自宅に届け、あわせて安否確認と訪問を行う。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし等で、自力で調理することが困難
+  - 申請後に町職員の確認と社協職員の面接がある
+  where: 介護課高齢者支援係（担当ケアマネジャーがいれば先に相談）
+  url: https://www.town.tobetsu.hokkaido.jp/soshiki/fukushi/201.html
+  confidence: high
+  amount: 1 食 490 円の自己負担、週 5 回以内
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報サービス
+  summary: 緊急時に通報できる装置を貸与し、受信センターへつなぎ、安否確認や健康相談も行う。
+  who: {}
+  at_application:
+  - 対象は 65 歳以上の高齢者のみ世帯
+  - 頁に町民税非課税世帯の方も併記（かつ・またはは不明）
+  - すぐ駆けつけられる協力員 3 名を確保する
+  where: 介護課高齢者支援係
+  url: https://www.town.tobetsu.hokkaido.jp/soshiki/fukushi/204.html
+  confidence: low
+  amount: 装置は貸与。通報の通話料は自己負担
+- category: haikai
+  name: 徘徊高齢者のＳＯＳネットワーク事前登録
+  name_on_page: ＳＯＳネットワーク事業
+  summary: 行方不明の心配がある高齢者を事前登録し、いなくなったときの捜索や日頃の見守りにつなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 高齢で、日頃から行方不明になる心配がある
+  - 申請書・登録者台帳・写真 2 種を提出する
+  where: 介護課高齢者支援係
+  url: https://www.town.tobetsu.hokkaido.jp/soshiki/fukushi/36357.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等のＧＰＳ端末の貸出
+  name_on_page: 認知症高齢者等見守り支援事業
+  summary: 行方不明のおそれがある方にＧＰＳ端末を貸し出し、家族が居場所を検索できる。
+  who: {}
+  at_application:
+  - ＳＯＳネットワークに登録していること
+  - 65 歳以上で徘徊の可能性が高い、または 40〜64 歳で認知症の診断
+  - 上記以外でも希望すれば相談できる
+  where: 介護課高齢者支援係
+  url: https://www.town.tobetsu.hokkaido.jp/soshiki/fukushi/36364.html
+  confidence: high
+  amount: 初回登録料と月額利用料は町が全額負担。端末の紛失・破損時は 12,100 円の自己負担
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 自力で除雪できない世帯の、玄関先から公道までの幅 1m を除雪する。
+  who: {}
+  at_application:
+  - 町民税が非課税、または均等割のみの世帯
+  - ひとり暮らし高齢者・高齢者夫婦世帯などで、病気等で除雪できない
+  - 身体障がい等で除雪できない世帯も対象
+  - 除雪を助けてくれる親族・友人が近くにいない
+  where: 介護課高齢者支援係
+  url: https://www.town.tobetsu.hokkaido.jp/soshiki/fukushi/32340.html
+  confidence: high
+  amount: 11〜3 月。一冬 7,000 円（生活保護世帯は 3,000 円）の自己負担
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- ribiyo
+- shingu

@@ -1,0 +1,232 @@
+city: '131156'
+name: 杉並区
+site: www.city.suginami.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の支給・入院時おむつ代助成
+  name_on_page: 介護用品の支給等
+  summary: おむつ等をカタログから選んで毎月自宅へ配送、またはおむつを持ち込めない入院中のおむつ代を一部助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 区内に住所がある
+  - 要介護3以上でおむつが必要、または要介護1・2で常時おむつが必要
+  - 要介護1・2は医師の証明（身体状況確認書）が必要
+  - 介護保険施設（老健・特養等）の入所者は対象外
+  where: 高齢者在宅支援課管理係、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1166.html
+  confidence: high
+  amount: 月 7,000 円まで。課税世帯は 1 割負担、非課税世帯・生活保護の方は無料（全額助成）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 聴力が落ちた高齢者の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内に住所がある
+  - 聴覚障害の身体障害者手帳の対象にならない
+  - 補聴器相談医に補聴器が必要と認められた
+  - 認定補聴器技能者がいる販売店で購入する
+  where: 高齢者在宅支援課、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1170.html
+  confidence: high
+  amount: 上限は住民税非課税世帯 72,450 円、課税世帯 36,230 円。前回助成から 5 年後に再申請できる
+- category: ribiyo
+  name: 高齢者の訪問理美容サービス
+  name_on_page: 高齢者訪問理美容サービス
+  summary: 外出が難しい要介護の方が自宅で理美容を受ける際の出張費に当たる利用券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきり等で外出が困難
+  - 入院中・施設入所中・他の訪問理美容を利用中の方は対象外
+  - 重度心身障害者手当の受給者は別制度を利用
+  where: ケア24（地域包括支援センター）、高齢者在宅支援課管理係（郵送）
+  url: https://www.city.suginami.tokyo.jp/s039/1168.html
+  confidence: high
+  amount: 利用券は最大 6 枚（承認月で変わる）。自己負担は無料〜640 円、カット代は自費
+- category: shingu
+  name: 高齢者の寝具洗濯・乾燥サービス
+  name_on_page: 高齢者寝具洗濯乾燥サービス
+  summary: 寝具を干せない寝たきり等の方に、寝具の洗濯と乾燥消毒を行う。
+  who:
+    at_home: true
+  at_application:
+  - 区内に住所があり、寝たきりなどで寝具を干せない
+  - 65 歳以上、または要介護・要支援認定のある第 2 号被保険者
+  - 寝具を干せる同居者がいる方は対象外
+  - 長期入院・施設入所の方は対象外
+  where: 高齢者在宅支援課管理係、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1167.html
+  confidence: high
+  amount: 乾燥 1 枚 0〜140 円、洗濯 1 枚 0〜300 円（所得に応じた負担）
+- category: haikai
+  name: 認知症高齢者の GPS 探索システム
+  name_on_page: 認知症高齢者探索システム
+  summary: 認知症の方を介護する家族に GPS 端末を貸与し、登録料と月額利用料を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 区内在住の認知症高齢者を介護している家族等が申請
+  - 介護者は区に住民登録がなくても申請できる
+  - 施設入所者は対象外
+  where: 高齢者在宅支援課高齢者見守り連携係、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1155.html
+  confidence: high
+  amount: 月額利用料は所得に応じ 0〜800 円。初期登録料は助成
+- category: kinkyu-tsuho
+  name: 高齢者の緊急通報システム
+  name_on_page: 高齢者緊急通報システム
+  summary: ペンダント型の救急ボタンやセンサーを設置し、急病や火災の際に駆けつけ・通報を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 区内に住所があり、慢性疾患などで常時注意が必要
+  - 固定電話か携帯電話のどちらかが必要
+  - 自宅の鍵を委託事業者に預けられる
+  - 認知症などで適切に使えない方は対象外
+  where: 高齢者在宅支援課、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1154.html
+  confidence: high
+  amount: 月額利用料は所得に応じ 0〜600 円
+- category: mimamori
+  name: 高齢者安心コール（電話での安否確認）
+  name_on_page: 高齢者安心コール
+  summary: 週 1 回の電話で安否を確認し、健康不安の相談にも 24 時間応じる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 区内に住所がある
+  - 固定電話か携帯電話がある
+  where: 高齢者在宅支援課高齢者見守り連携係、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1159.html
+  confidence: high
+  amount: 月額利用料は所得に応じ 0〜400 円
+- category: mimamori
+  name: 高齢者見守りキーホルダー
+  name_on_page: 高齢者見守りキーホルダー事業
+  summary: 緊急連絡先や医療情報を登録し、番号入りキーホルダーを受け取る。外出先での急病時に使える。
+  who: {}
+  at_application:
+  - 対象は主に 65 歳以上の方
+  - 緊急連絡先・かかりつけ医などをケア24で登録する
+  where: 担当地域のケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/news/26297.html
+  confidence: low
+- category: nichijo-yogu
+  name: 火災安全器具の給付
+  name_on_page: 火災安全器具給付
+  summary: 認知機能が低下した高齢者のみの世帯に、自動消火装置・ガス警報器・電磁調理器のいずれか 1 つを給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 認知機能が低下している
+  where: 高齢者在宅支援課高齢者見守り連携係、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1156.html
+  confidence: low
+  amount: 所得に応じた負担（無料〜 2 割以内）
+- category: jutaku
+  name: 高齢者住宅改修給付（介護保険「非該当」の方向け）
+  name_on_page: 高齢者住宅改修給付
+  summary: 介護認定が非該当の高齢者に、手すり取付や便器洋式化の工事と、入浴補助用具などの給付を行う。
+  who:
+    age_min: 65
+  at_application:
+  - 申請日前 6 か月以内に介護認定が「非該当」
+  - 身体機能の低下で日常生活に支障がある
+  - 工事・購入の前に申請する
+  where: 担当区域のケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1153.html
+  confidence: high
+  amount: 工事は 20 万円、附帯用具は 10 万円が限度。自己負担は 1 割（生活保護は無し）
+- category: sonota
+  name: 家族介護者向けヘルパー利用券（ほっと一息、介護者ヘルプ）
+  name_on_page: ほっと一息、介護者ヘルプ
+  summary: 要介護の方を同居で介護する家族に、家事を代行するヘルパーの利用券を交付する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 同居で在宅介護している家族が対象
+  - 要介護1以上、または認知機能低下のある要支援1・2の方の家族
+  - 要支援の場合は認知機能確認書が必要
+  where: 高齢者在宅支援課管理係、ケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1163.html
+  confidence: high
+  amount: 年間最大 24 枚（24 時間）。利用料は 1 時間 300 円、生活保護世帯は無料
+- category: sonota
+  name: 認知症高齢者の家族への安らぎ支援員派遣
+  name_on_page: 認知症高齢者家族安らぎ支援
+  summary: 認知症の方を在宅で介護する家族の休息のため、話し相手になる支援員を派遣する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要支援1以上の認知症高齢者を在宅で介護している家族
+  - ケアマネジャー記載の認知機能確認書が必要（電子申請の場合）
+  where: ケア24（地域包括支援センター）、高齢者在宅支援課管理係（郵送）
+  url: https://www.city.suginami.tokyo.jp/s039/1160.html
+  confidence: high
+  amount: 年間 104 時間まで。1 時間 200 円（生活保護・世帯全員非課税は無料）
+- category: sonota
+  name: 一時的な家事援助のヘルパー派遣（いっときお助け）
+  name_on_page: 高齢者いっときお助けサービス
+  summary: 退院直後やけがで家事が難しい時に、原則 1 か月ヘルパーを派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 区内に住所がある
+  - 退院直後やぎっくり腰などで緊急に家事援助が必要
+  - 介護保険の認定を受けていない方が対象
+  where: 担当区域のケア24（地域包括支援センター）
+  url: https://www.city.suginami.tokyo.jp/s039/1161.html
+  confidence: high
+  amount: 15 分 1 単位で 70 円。1 回 90 分まで、週 180 分が限度
+not_found:
+- haishoku
+- iro
+- koken
+- gaishutsu

@@ -1,0 +1,184 @@
+city: '132250'
+name: 稲城市
+site: www.city.inagi.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: ribiyo
+  name: 高齢者の理美容割引券
+  name_on_page: 高齢者理美容割引券
+  summary: 市内の協定の理容室・美容室で使える千円券を交付する。
+  who: {}
+  at_application:
+  - 住民税非課税の方が対象（転入者は前住所地の非課税証明書が必要）
+  - 年齢などの細かい条件は窓口で確認
+  where: 高齢福祉課、平尾出張所、若葉台出張所（電子フォームでも申請可）
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003479/1003488.html
+  confidence: high
+  amount: 1,000円券を1人5枚まで（申請日で枚数が変わる）。利用期間は令和9年3月31日まで
+- category: ribiyo
+  name: 出張理髪サービスの割引券
+  name_on_page: 高齢者出張理髪サービス割引券
+  summary: 寝たきりの高齢者が自宅で出張理髪を受けるときの割引券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 市内在住
+  - 長期にわたり居宅で寝たきりで介護が必要
+  - 入院中・入所中の人は対象外
+  where: 高齢福祉課、平尾出張所、若葉台出張所
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003479/1003489.html
+  confidence: high
+  amount: 1,000円券を1人10枚まで（申請日で枚数が変わる）。利用期間は令和9年3月31日まで
+- category: shingu
+  name: 寝具の乾燥・消毒サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 業者が自宅を訪問し、寝具の乾燥と消毒を月1回、無料で行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 市内に住所がある
+  - ねたきり状態である
+  where: 高齢福祉課高齢福祉係
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003479/1003483.html
+  confidence: high
+  amount: 無料。敷布団・掛布団・夏掛布団・毛布・マットレス各1枚を月1回
+- category: sonota
+  name: 老人福祉電話の貸与
+  name_on_page: 老人福祉電話
+  summary: 電話のない高齢者世帯に電話を設置し、基本料金と一部の通話料を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に居住している
+  - 市内に2親等以内の親族が住んでいない
+  - 生計中心者の所得税が年額42,000円以下
+  - 携帯電話などを持っていない
+  where: 高齢福祉課高齢福祉係（平尾・若葉台出張所は持参のみ）
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003479/1003482.html
+  confidence: high
+  amount: 基本料金と工事費は市が負担。通話料は月300円まで市が負担し、超過分は本人負担
+- category: mimamori
+  name: 見守りセンサーサービス
+  name_on_page: 稲城市在宅高齢者見守りセンサーサービス
+  summary: 寝室のセンサーで睡眠や生活リズムを見守り、家族や事業者がアプリで確認できる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 対象は在宅高齢者等で、月15名が上限
+  where: 高齢福祉課高齢福祉係
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003424/1003425.html
+  confidence: high
+  amount: 月額3,500円（利用料7,150円のうち3,650円を市が負担）
+- category: mimamori
+  name: 見守り電球サービス
+  name_on_page: 稲城市在宅高齢者見守り電球サービス
+  summary: トイレ等の電球で動きを検知し、24時間動きがないと家族にメールで知らせる。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 市内在住
+  - 設置の上限は220人
+  - 通知先は4名まで登録でき、本人と通知先の同意が必要
+  where: 高齢福祉課高齢福祉係（申請書または申込みフォーム）
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003424/1003426.html
+  confidence: high
+  amount: 月額900円（利用料1,870円のうち970円を市が負担）
+- category: haikai
+  name: 徘徊高齢者家族支援サービス（GPS端末の貸与）
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 徘徊のある高齢者の家族にGPS端末を貸し、居場所を探せるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある、おおむね65歳以上の人
+  - 申請のとき、本人の状況を聞き取る
+  where: 高齢福祉課地域支援係
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003479/1003484.html
+  confidence: high
+  amount: 加入料2,475円、付属品1,375円、月額660円（税込）。住民税非課税で老齢福祉年金受給の世帯などは一部減免あり
+- category: koken
+  name: 高齢者の成年後見の申立費用・報酬の助成
+  name_on_page: 高齢者成年後見人等に係る申立・報酬助成
+  summary: 経済的に困難な人の成年後見の申立費用と後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 65歳以上で市に住民登録がある、または市長申立ての被後見人
+  - 生活保護等の受給者、または報酬負担で保護が必要になる人
+  - 親族が後見人の場合などは対象外
+  - 申請は本人または成年後見人・保佐人・補助人
+  where: 高齢福祉課（事前に地域支援係へ連絡）
+  url: https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003479/1003498.html
+  confidence: high
+  amount: 申立費用は本人負担分の範囲内。報酬は月額2万円が上限
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 緊急通報装置と生活反応を感知する装置を設置し、異常時は受信センターが対応する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上
+  - 心疾患などの慢性疾患で常時注意が必要
+  where: 高齢福祉課高齢福祉係
+  url: https://www.city.inagi.tokyo.jp/faq/kenko/1002019/1002022.html
+  confidence: high
+  more_urls:
+  - https://www.city.inagi.tokyo.jp/kenko/koureifukushi/1003479/1003486.html
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつの支給
+  summary: 常時おむつが必要な在宅の人に、紙おむつを現物で支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上は要介護1〜5、または障害者手帳の所持者
+  - 64歳以下は障害者手帳の所持者
+  - 特養・老健・有料老人ホームの入所者、入院中は対象外
+  - 負担金は住民税の課税状況などで異なる
+  where: 稲城市社会福祉協議会 在宅支援係
+  url: https://www.city.inagi.tokyo.jp/faq/kenko/1002019/1002027.html
+  confidence: high
+  amount: 月5,000円分まで現物支給
+not_found:
+- iro
+- hochoki
+- gaishutsu
+- haishoku

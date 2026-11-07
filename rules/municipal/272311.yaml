@@ -1,0 +1,145 @@
+city: '272311'
+name: 大阪狭山市
+site: www.city.osakasayama.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護高齢者への紙おむつ給付
+  name_on_page: 要介護高齢者おむつ給付事業
+  summary: 在宅で常時おむつを使う要介護3以上の人に、紙おむつを自宅へ届ける。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - ねたきり状態または認知症の状態にある
+  - 介護保険料の所得段階が第5段階以下
+  - 生計中心者の所得税額が年4万円以下
+  - 生活保護を受けている世帯は対象外
+  where: 高齢者福祉グループ
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/1411364847186.html
+  confidence: high
+  amount: 申請日の翌月から月 5,000 円（税込）まで。市の指定業者が届ける。
+- category: haikai
+  name: 徘徊高齢者の位置検索端末の貸与
+  name_on_page: 徘徊高齢者等位置検索用端末機貸与事業
+  summary: 徘徊のある認知症高齢者等の家族に、位置検索用の端末を貸す。
+  who: {}
+  at_application:
+  - 市内在住で徘徊があるおおむね65歳以上の認知症高齢者等を介護する世帯
+  - または療育手帳Aの人の世帯
+  - 申請前に高齢者福祉グループへ相談する
+  where: 高齢者福祉グループ
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/1411365310397.html
+  confidence: high
+  amount: 基本賃借料は月 500 円（6 か月分前納）。端末の貸与にかかる経費の助成あり。
+- category: haikai
+  name: 徘徊SOS事業への事前登録（おれんじカード・保険）
+  name_on_page: 大阪狭山市高齢者SOSネットワーク
+  summary: 事前登録すると、行方不明時に早期発見の連絡網が動き、おれんじカードがもらえる。
+  who: {}
+  at_application:
+  - 徘徊SOS事業に事前登録する（最近の写真が必要）
+  - 登録者は認知症高齢者等の個人賠償責任・傷害保険の対象になる
+  where: 市役所 高齢者福祉グループ
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/1411365681384.html
+  confidence: high
+  amount: 保険は市が契約者になり、被保険者の自己負担なし。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: 緊急時にボタンを押すと受信センター経由で消防へ通報される装置を設ける。
+  who: {}
+  at_application:
+  - 市内に住所があり住民票がある
+  - 在宅のおおむね65歳以上の高齢者のみの世帯
+  - または、ひとり暮らしの重度身体障がい者
+  - または、同居者の就労・就学等で一定期間ひとりになる高齢者等
+  where: 高齢者福祉グループ
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/1411364035300.html
+  confidence: high
+- category: shingu
+  name: 寝具の丸洗い・乾燥サービス
+  name_on_page: 寝具乾燥サービス事業
+  summary: 布団・毛布を回収し、乾燥車で丸洗い殺菌・乾燥して返す。
+  who: {}
+  at_application:
+  - おおむね65歳以上のねたきり高齢者、または重度身体障害者のいる世帯
+  - 家族が介護できず、自宅での寝具の乾燥が困難
+  - 利用前に高齢者福祉グループへ相談する
+  where: 高齢者福祉グループ
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/1411362284773.html
+  confidence: high
+  amount: 年 2 回、無料。
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 家族の介助だけでは店に行けない人の自宅で、協力店が理美容を行う。
+  who: {}
+  at_application:
+  - 65歳以上のねたきりの人
+  - または身体障害者手帳1・2級、療育手帳Aの人
+  - 利用者登録申請書を出す（事前に高齢者福祉グループへ相談）
+  where: 高齢者福祉グループ
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/1411364247992.html
+  confidence: high
+  amount: 年 4 回。1 回 1,000 円（生計中心者の前年所得税が非課税の世帯は無料）。
+- category: jutaku
+  name: 手すり設置など住宅の安全改修への助成
+  name_on_page: 高齢者住宅安全支援事業
+  summary: 要介護認定のない高齢者の手すり設置や軽い段差解消の工事費を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要支援・要介護の認定を受けていない
+  - 市の基本チェックリストで生活機能の低下が認められ、事業の利用が望ましいとされた
+  - 生計中心者の前年所得税課税年額が 40,001 円以上の世帯は助成なし
+  - 工事前に必ず相談し、工事完了後 1 か月以内に申請
+  where: 高齢者福祉グループ
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/1411361288934.html
+  confidence: high
+  amount: 対象工事費の 4 万円まで。生活保護や市町村民税の課税状況で助成額が変わる。
+- category: gaishutsu
+  name: さやりんおでかけサポート（外出支援）
+  name_on_page: 高齢者移動支援事業
+  summary: 運転ボランティアが、買い物・通院・趣味活動などの外出を支える。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内在住
+  - 利用は 1 時間 30 分以内、市から 2.5 km 以内
+  where: 大阪狭山市社会福祉協議会（専用ダイヤル 072-360-4866）
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kenkoufukushibu/koureishafukushi/1/4/3/7654.html
+  confidence: high
+  amount: 1 回 500 円（チケットを事前に購入）。
+- category: sonota
+  name: 自動通話録音装置の貸与（特殊詐欺対策）
+  name_on_page: 自動通話録音装置の貸与について
+  summary: 特殊詐欺を防ぐため、自動通話録音装置を無料で貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または日中に高齢者のみとなる世帯
+  - 先着 200 台（2024年5月更新の頁）
+  where: 危機管理室（市役所 2 階）
+  url: https://www.city.osakasayama.osaka.jp/sosiki/kikikanri/5/1/5528.html
+  confidence: high
+  amount: 貸出は無料。電気代・通話料は自己負担。
+not_found:
+- nichijo-yogu

@@ -1,0 +1,111 @@
+city: '382035'
+name: 宇和島市
+site: www.city.uwajima.ehime.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の現物支給
+  name_on_page: 介護用品支給事業
+  summary: 重度の要介護者を介護する非課税世帯の家族に、介護用品を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する人は要介護者と同居している
+  - 介護する人も要介護者も市民税非課税世帯
+  - 40歳以上の2号被保険者も対象
+  where: 高齢者福祉課または各支所
+  url: https://www.city.uwajima.ehime.jp/soshiki/19/kourei-s0003.html
+  confidence: high
+  amount: 月額1人あたり上限6,000円の現物支給。超えた分は自己負担
+- category: iro
+  name: 在宅高齢者の介護手当
+  name_on_page: 在宅高齢者介護手当支給事業
+  summary: 介護保険サービスをほぼ使わず中重度の高齢者を介護する家族に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 市内に1年以上住所があり、要介護3〜5の認定を1年以上受けている
+  - 申請前1年間、介護保険サービスをほぼ使っていない（例外あり）
+  - 介護する人は同居の主たる介護者で、介護保険料の滞納がない
+  - 生活保護や特別障害者手当を受けていない
+  where: 高齢者福祉課または各支所市民サービス係
+  url: https://www.city.uwajima.ehime.jp/soshiki/19/kourei-0005.html
+  confidence: high
+  amount: 月1万円（課税世帯）、月2万円（非課税世帯）、月5,000円（非課税で訪問入浴か短期入所を利用）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らし等の高齢者に、急病時に受信センターへつながる装置を無料で貸す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の独居または高齢者のみの世帯
+  - 虚弱・重度の身体障害・生活環境などで支援が必要
+  - 近くに住む協力員が2名以上必要
+  - 電話機がないと貸与できない
+  - 家族の支援があり見守りが不要なら対象外のことがある
+  where: 高齢者福祉課または各支所
+  url: https://www.city.uwajima.ehime.jp/soshiki/19/kourei-s0005.html
+  confidence: high
+  amount: 利用料は無料。通話料は利用者負担
+- category: sonota
+  name: 高齢者はり・きゅう施術費の助成
+  name_on_page: 高齢者はり・きゅう施術費助成
+  summary: 市指定の施術所で受けたはり・きゅう施術費の一部を助成する。
+  who: {}
+  at_application:
+  - 市内在住で、75歳以上または障がい認定で後期高齢者医療に加入
+  - 市指定施術所での施術が対象
+  - 毎年度の申請が必要（令和8年度分の受付は2月2日から）
+  where: 高齢者福祉課または市指定施術所
+  url: https://www.city.uwajima.ehime.jp/info/shinkyu08.html
+  confidence: high
+  amount: 1回あたり1術770円、2術840円。月10回まで
+- category: sonota
+  name: 認知症検査費の助成
+  name_on_page: 宇和島市認知症早期支援事業
+  summary: 認知症の疑いがある65歳以上の人の検査費の自己負担分を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市民で、市指定のチェックシートで認知症の疑いありと判断された人
+  - すでに認知症の診断が出ている人は対象外
+  where: 地域包括支援センター
+  url: https://www.city.uwajima.ehime.jp/soshiki/19/kensa.html
+  confidence: high
+  amount: 検査費の自己負担額を上限1万円まで助成（薬代は対象外、後払い）
+not_found:
+- haishoku
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

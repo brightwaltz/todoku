@@ -1,0 +1,200 @@
+city: '222101'
+name: 富士市
+site: www.city.fuji.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費の助成
+  name_on_page: 難聴高齢者補聴器購入費用助成事業
+  summary: 加齢性難聴の高齢者が補聴器を買うとき、費用の一部を助成する（事前申請制）。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民票があり、市内に住んでいる
+  - 聴力40dB以上70dB未満で、耳鼻科で加齢性難聴と診断された
+  - 介護保険料の滞納がない
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 購入前に申請する（購入後の申請は不可）
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p005534.html
+  confidence: high
+  amount: 購入費の2分の1、上限3万円
+- category: kaigo-yohin
+  name: 在宅の寝たきり高齢者等への紙おむつ支給
+  name_on_page: 富士市在宅寝たきり高齢者等紙おむつ支給事業
+  summary: 在宅で寝たきりまたは認知症の高齢者に、紙おむつを毎月配達で支給する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住んでいる
+  - 寝たきりまたは認知症の状態で紙おむつが必要
+  - 入院中の人、施設・サ高住・グループホーム入所者は対象外
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003152.html
+  confidence: high
+  amount: 世帯全員非課税で要介護認定（要支援含む）なら一定額まで負担なし。課税者がいて要介護4・5なら半額負担。それ以外は全額負担
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 富士市訪問理美容サービス事業
+  summary: 理美容店に行けない高齢者のもとへ理美容師が出張する。出張費は市が負担する。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきり・認知症等で理美容店に行くのが難しい
+  - 理美容組合に加入している店から選ぶ
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003153.html
+  confidence: high
+  amount: 理美容料は本人負担。出張費は市負担。年度内4回まで
+- category: iro
+  name: 要介護高齢者の介護者への慰労金
+  name_on_page: 富士市要介護高齢者介護者慰労金の支給
+  summary: 要介護3〜5の高齢者を同居で介護する人に、年額の慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 年齢・要介護度は介護を受ける人の条件。同居して介護する人が申請
+  - 要介護者が入院中でなく、過去1年に3か月以上の入院がない
+  - 過去1年に介護保険サービスを使っていない（1週間以内のショートを除く）
+  - 要介護者が生活保護を受けていない
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003154.html
+  confidence: high
+  amount: 要介護者1人につき年額10万円（過去1年以内に要介護3だった場合は5万円）
+- category: haishoku
+  name: 「食」の自立支援（配食）
+  name_on_page: 富士市「食」の自立支援事業
+  summary: 昼食か夕食を自宅へ届け、手渡しで安否確認も行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 要支援・要介護認定、または事業対象者の認定を受けている
+  - 同一敷地・隣接地に65歳未満の親族が住んでいない
+  - 食事の確保に支援が必要で、安否確認が必要
+  - 直接受け取れない場合は利用できない
+  - 担当ケアマネジャーに確認のうえ申請
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003146.html
+  confidence: high
+  amount: 1食380円（利用者負担）。週1〜5回
+- category: shingu
+  name: 寝具クリーニングサービス
+  name_on_page: 富士市寝具クリーニングサービス事業
+  summary: 掛ふとん・敷ふとん・毛布の消毒乾燥クリーニングを、1割負担で受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - ひとり暮らし、または在宅で寝たきり・認知症の状態のどちらか
+  - 毛布だけの利用は不可
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003149.html
+  confidence: high
+  amount: 料金（レンタル含む）の1割負担。年度内2回まで、1回3枚まで
+- category: gaishutsu
+  name: 外出支援サービス（介護タクシー助成）
+  name_on_page: 富士市外出支援サービス事業
+  summary: 要介護4・5の人の通院などに使う介護タクシー料金を、利用券で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 一般の交通機関の利用が困難
+  - 3か月以上入院中、または週の半分以上宿泊サービス利用の人は不可
+  - 一般タクシー（ユニバーサル車両含む）は利用できない
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003157.html
+  confidence: high
+  amount: 利用券1枚で片道1回1,900円まで助成。乗降介助料は別途自己負担
+- category: gaishutsu
+  name: 70歳以上の公共交通 割引回数券・定期券
+  name_on_page: 高齢者公共交通支援のご案内（70歳以上限定）
+  summary: 70歳以上の市民が、バス・タクシー等の回数券か定期券を割引価格で買える。
+  who:
+    age_min: 70
+  at_application:
+  - 富士市民で令和8年度中に70歳になる人も対象
+  - 回数券か定期券のどちらか1つを選んで購入
+  - 年齢が分かる身分証の原本と購入申込書が必要
+  where: 福祉総務課 地域共生担当（販売は交通事業者・まちづくりセンター等）
+  url: http://www.city.fuji.shizuoka.jp/1020010000/p003159.html
+  confidence: high
+  amount: 2,000円分の回数券を1,000円で（年5冊まで）、または定期券5,000円引
+- category: kinkyu-tsuho
+  name: 高齢者みまもりサービス（通報装置の貸与）
+  name_on_page: 富士市高齢者みまもりサービス事業
+  summary: 火災・ガス漏れセンサー付き通報装置とペンダントを貸与し、24時間対応する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 65歳以上の高齢者を含む世帯
+  - 同一敷地・隣接地に親族がいると一般世帯扱いで利用料が変わる
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003158.html
+  confidence: high
+  amount: 固定電話は無料〜月2,079円、携帯電話は月1,040〜3,119円（世帯区分で異なる）
+- category: mimamori
+  name: 高齢者ふれあいコール（定期の安否確認電話）
+  name_on_page: 高齢者ふれあいコール事業
+  summary: ひとり暮らしの高齢者等に定期的に電話をかけ、安否確認をする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 2週間に1回、1コール5分の電話
+  - 申請書を提出（ファクスも可）
+  where: 高齢者支援課 在宅支援担当
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003151.html
+  confidence: high
+- category: haikai
+  name: 安心おかえり事業（事前登録・見守りシール）
+  name_on_page: 富士市安心おかえり事業
+  summary: 行方不明のおそれがある人を事前登録し、希望者にQR付きシールを無料交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で道に迷うおそれがあり、事前登録をした人
+  - シールは登録者のうち希望者に交付
+  where: 高齢者支援課（地域支援担当）
+  url: http://www.city.fuji.shizuoka.jp/1020030000/p003207.html
+  confidence: high
+  amount: シール30枚を無料で交付
+not_found:
+- koken
+- jutaku
+- nichijo-yogu
+- yutai

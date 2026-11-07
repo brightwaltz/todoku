@@ -1,0 +1,25 @@
+pref: '46'
+name: 鹿児島県
+site: www.pref.kagoshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 身障者用駐車場利用証（パーキングパーミット）の交付
+  name_on_page: 鹿児島県身障者用駐車場利用証制度（パーキングパーミット制度）
+  summary: 歩行が困難な高齢者などに、県内共通の身障者用駐車場の利用証を無料で交付する。
+  who: {}
+  at_application:
+  - 高齢者は要介護2〜5の人が対象（緑色の利用証、有効5年）
+  - 障害者手帳、難病の受給者証の人、妊産婦、けが人も対象
+  - 手帳などの写しが要る。けがの場合は診断書の原本が要る
+  where: 県障害福祉課障害者支援室、各地域振興局・支庁・事務所、ハートピアかごしま総務課
+  url: https://www.pref.kagoshima.jp/ae07/kenko-fukushi/syogai-syakai/machi/parkingpermit/pa-kinngupa-mitto.html
+  confidence: high
+  amount: 申請手数料は無料。郵送の場合は返送用の切手（180円分）が要る。
+not_found:
+- yutai

@@ -1,0 +1,135 @@
+city: 082333
+name: 行方市
+site: www.city.namegata.ibaraki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護保険の紙おむつ等支給サービス
+  name_on_page: 介護保険特別給付紙おむつ等支給サービス
+  summary: 在宅の要介護認定者に、紙おむつ・補助パッドと引き換える利用券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある介護保険の第1号被保険者
+  - 月15日以上ショートステイ・入所・入院の人は対象外
+  - 認定調査票・主治医意見書などで使用の必要を審査
+  - 保険料滞納時は利用券の交付が止まることがある
+  where: 介護福祉課（市の指定店で利用券と引き換え）
+  url: https://www.city.namegata.ibaraki.jp/gyousei/reiki/reiki_int/reiki_honbun/r228RG00000413.html
+  confidence: high
+- category: mimamori
+  name: 愛の定期便（乳製品の訪問配達による見守り）
+  name_on_page: 愛の定期便事業
+  summary: 見守りが必要なひとり暮らし高齢者宅へ定期訪問し、乳製品を届けて安否を確認する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内に住所があるおおむね65歳以上のひとり暮らし
+  - これに準ずる状態で市長が特に必要と認めた人も対象
+  where: 地区の民生委員を通して介護福祉課高齢福祉グループへ申請
+  url: https://www.city.namegata.ibaraki.jp/seikatsu/kaigo-fukushi/koureifukushi/page011086.html
+  confidence: high
+  amount: 利用料は市民税所得割が課税なら月500円、非課税なら無料
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: ボタンを押すと消防本部の受信センターにつながる緊急通報装置を設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または重度身体障害者等のひとり暮らし
+  - これに準ずる状態で市長が必要と認めた人も対象
+  - 緊急時に自力で通報することが難しい
+  - 利用にはNTTのアナログ回線が必要
+  where: 地区の民生委員を通して介護福祉課高齢福祉グループへ申請
+  url: https://www.city.namegata.ibaraki.jp/seikatsu/kaigo-fukushi/koureifukushi/page011094.html
+  confidence: high
+  amount: 設置費用は市民税所得割が課税なら装置代の2分の1を負担、非課税なら無料
+- category: nichijo-yogu
+  name: 電磁調理器・火災報知器などの給付
+  name_on_page: 日常生活用具給付事業
+  summary: 在宅のひとり暮らし高齢者に、電磁調理器・火災報知器・家具転倒防止器具を給付する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等
+  - 電磁調理器は心身機能の低下で防火の配慮が必要な人
+  - 火災報知器は低所得の人
+  where: 介護福祉課高齢福祉グループ
+  url: https://www.city.namegata.ibaraki.jp/seikatsu/kaigo-fukushi/koureifukushi/page011505.html
+  confidence: high
+  amount: 利用者負担は市民税所得割が課税なら購入額の10%、非課税なら無料
+- category: haikai
+  name: 徘徊高齢者の見守りQRコード
+  name_on_page: 行方市徘徊高齢者見守りQRコード活用事業
+  summary: 持ち物に貼るQRシールで、保護された際に身元確認と家族への連絡をしやすくする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり在宅で生活している
+  - おおむね65歳以上で認知症状がある人、または市長が必要と認めた人
+  where: 介護福祉課高齢福祉グループ（申請書・状況表・誓約書を提出）
+  url: https://www.city.namegata.ibaraki.jp/seikatsu/kaigo-fukushi/koureifukushi/page013488.html
+  confidence: high
+- category: sonota
+  name: 高齢者等のごみ出し支援（玄関先収集）
+  name_on_page: 高齢者等ごみ出し支援事業
+  summary: ごみを集積所へ出すのが難しい世帯の玄関先で、家庭ごみを週1回収集する。
+  who: {}
+  at_application:
+  - 市内に住所がありごみを集積所へ出すのが困難
+  - おおむね75歳以上の高齢者のみの世帯、障がい者世帯、または市長が認める世帯
+  where: 介護福祉課高齢福祉グループ（玉造庁舎1階）
+  url: https://www.city.namegata.ibaraki.jp/seikatsu/kaigo-fukushi/koureifukushi/page010774.html
+  confidence: high
+  amount: 週1回（月4回まで）、利用料は月額500円
+- category: sonota
+  name: 緊急医療情報キットの支給
+  name_on_page: 緊急医療情報キット支給事業
+  summary: かかりつけ医や薬などを記入して冷蔵庫に保管する緊急医療情報キットを配る。
+  who: {}
+  at_application:
+  - 市内に住所があり、ひとり暮らし高齢者台帳に登録されている人
+  - その他、市長が必要と認める人も対象
+  where: 介護福祉課高齢福祉グループ
+  url: https://www.city.namegata.ibaraki.jp/seikatsu/kaigo-fukushi/koureifukushi/page011084.html
+  confidence: high
+- category: koken
+  name: 成年後見制度の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立て費用の負担と、第三者の後見人等への報酬の助成を行う。
+  who: {}
+  at_application:
+  - 市内に住民登録があり判断能力が不十分な高齢者・知的障害者・精神障害者等
+  - 報酬助成は、助成がないと制度利用が難しい人か生活保護の人
+  - 報酬助成の対象は親族以外が後見人等に選ばれた場合
+  - 報酬助成の申請は報酬付与の審判の翌日から60日以内
+  where: 介護福祉課（65歳以上）、社会福祉課（65歳未満の知的・精神障害者）
+  url: https://www.city.namegata.ibaraki.jp/gyousei/reiki/reiki_int/reiki_honbun/r228RG00000741.html
+  confidence: high
+  amount: 報酬助成は月額上限で、在宅28,000円、施設・グループホーム・入院18,000円
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

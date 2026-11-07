@@ -1,0 +1,208 @@
+city: '222143'
+name: 藤枝市
+site: www.city.fujieda.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護者への紙おむつ購入助成券の支給
+  name_on_page: 紙おむつの支給
+  summary: 在宅の高齢者を介護する家族に、紙おむつ購入助成券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時紙おむつが必要で、市内の自宅で生活している
+  - 家族による介護（週1回以上の支援）を受けている
+  - おむつを使う本人が市民税非課税（被扶養者も同様）
+  where: 各地区の民生児童委員を通して申請（地域包括ケア推進課）
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242435.html
+  confidence: high
+- category: haishoku
+  name: 一人暮らし高齢者等への配食サービス（1食200円補助）
+  name_on_page: 一人暮らし高齢者等配食サービス
+  summary: 民間業者が昼食を自宅に届け、安否確認と栄養面の支援をする。
+  who:
+    age_min: 65
+  at_application:
+  - 安否確認や栄養面の支援が必要な一人暮らしの人等
+  - 対象世帯の例は頁にある PDF に載っている
+  where: 地域包括ケア推進課
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242247.html
+  confidence: high
+  amount: 1食につき200円を補助。平日週5回まで利用できる。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（在宅安心システム）
+  name_on_page: 在宅安心システム
+  summary: ボタンを押すと警備業者に連絡でき、異変時は駆けつける通報装置を貸す。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 次のいずれか：一人暮らし
+  - 介護認定者や障害者手帳所持者だけの世帯
+  - 同居人が要介護3〜5で寝たきりの世帯
+  - 日中に上記の状態になる世帯（仕事や別居家族の介護の場合）
+  - 一部地域は利用できない、または制限がある
+  where: 地区の民生児童委員を通して申請（地域包括ケア推進課）
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242099.html
+  confidence: high
+  amount: 利用料は月額300円（固定回線あり）、月額500円（固定回線なし）。
+- category: shingu
+  name: 寝具の滅菌クリーニング（年2回）
+  name_on_page: 寝具クリーニングサービス
+  summary: 洗濯や干すのが難しい人の寝具3点まで、年2回滅菌クリーニングする。
+  who: {}
+  at_application:
+  - 65歳以上で要支援以上（事業対象者含む）の在宅一人暮らし、または要介護3以上
+  - 羊毛・羽毛は対応できない
+  where: 地域包括ケア推進課
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242119.html
+  confidence: high
+  amount: 利用者負担は1回あたりシングル700円、ダブル750円。
+- category: ribiyo
+  name: 在宅高齢者の訪問理美容の出張費助成
+  name_on_page: 藤枝市在宅高齢者訪問理美容サービス
+  summary: 訪問理美容を使うときの出張費分を、利用券で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住み、有料老人ホーム等の入所・入居者は対象外
+  - 指定事業所の訪問理美容を利用する
+  where: 地域包括ケア推進課の窓口
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242455.html
+  confidence: high
+  amount: 1回3,500円の利用券。申請時期により年1〜4枚交付される。
+- category: gaishutsu
+  name: バス・タクシー乗車券の交付（3,000円分）
+  name_on_page: 藤の里ふれあい乗車券
+  summary: 路線バスやタクシーなどの回数券のうち1種類を渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 4月1日現在の年齢が対象。前年度4月の介護保険料段階が1〜3
+  - 要介護4・5の人、介護老人福祉施設等の入所・入居者は対象外
+  where: 地域包括ケア推進課（期間により岡部支所・地区交流センター等）
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242351.html
+  confidence: high
+  amount: 3,000円分のバス乗車券、ゆらく線、タクシー乗車券のいずれか1種類。
+- category: sonota
+  name: はり・灸・マッサージ治療の助成券
+  name_on_page: はり・灸・マッサージ治療助成券
+  summary: はり・灸・マッサージの治療に使える助成券を毎年渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 4月1日現在の年齢が対象。前年度4月の介護保険料段階が1〜3
+  where: 地域包括ケア推進課（期間により岡部支所・地区交流センター等）
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242414.html
+  confidence: high
+  amount: 年5枚、1回1枚（1,000円分）として使える。
+- category: hochoki
+  name: 高齢者の補聴器購入費助成（上限5万円）
+  name_on_page: 高齢者の補聴器購入費を助成します
+  summary: 加齢による難聴の高齢者が補聴器を買うとき、費用の一部を給付券で助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 医師が補聴器の使用を必要と認め、聴力レベルが頁の基準内
+  - 身体障害者手帳の対象になる聴力の場合は障害福祉の助成へ
+  - 市税の滞納がなく、過去5年に本助成を受けていない
+  - 購入前に申請が必要。集音器は対象外
+  where: 地域包括ケア推進課
+  url: https://www.city.fujieda.shizuoka.jp/soshiki/kenkofukushi/chiikihokatsu/oshirase/18764.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限50,000円。
+- category: haikai
+  name: GPS端末の導入費補助（お出かけサポート）
+  name_on_page: 藤枝市高齢者等お出かけサポート事業
+  summary: 一人での外出に不安がある人のGPS端末の購入・貸与費用を補助する。
+  who: {}
+  at_application:
+  - 市内在住の高齢者等で、認知症等により一人の外出に不安がある
+  - 購入前に申請が必要
+  where: 地域包括ケア推進課
+  url: https://www.city.fujieda.shizuoka.jp/soshiki/kenkofukushi/chiikihokatsu/oshirase/1537430140059.html
+  confidence: low
+  amount: 上限10,000円（1人1回限り）。
+- category: haikai
+  name: 認知症の人見守りネットワークへの事前登録
+  name_on_page: 認知症の人見守りネットワーク事業
+  summary: 行方不明に備え氏名や写真を登録し、警察・消防等と共有して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 道に迷ったり帰れなくなったりする心配のある高齢者等
+  - 顔写真と全身写真が必要。ケアマネ等の代行申請も可
+  where: 安心すこやかセンター（地域包括支援センター）、地域包括ケア推進課
+  url: https://www.city.fujieda.shizuoka.jp/soshiki/kenkofukushi/chiikihokatsu/gyomu/1/1445918809848.html
+  confidence: high
+- category: mimamori
+  name: 新聞配達員による見守り声かけ
+  name_on_page: 高齢者見守り声かけサービス事業
+  summary: 新聞配達員が月1回以上声かけし、異変時は連絡先や関係機関に通報する。
+  who:
+    age_min: 65
+  at_application:
+  - 次のいずれか：一人暮らし、高齢者のみの世帯、日中独居
+  - またはその他見守りが必要な人
+  - 新聞の購読の有無は問わない
+  where: 地域包括ケア推進課
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731258949.html
+  confidence: high
+  amount: 無料。
+- category: mimamori
+  name: スマートスピーカーによる見守り機器の設置
+  name_on_page: IoTを活用した高齢者見守り機器（スマートスピーカー）
+  summary: 会話で体調や服薬を確認し、異常時は警備会社が確認や駆けつけをする。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らし、または要支援・要介護認定者のみの世帯など
+  - 日本郵便の利用規約への同意が必要
+  where: 地域包括ケア推進課（電話で連絡）
+  url: https://www.city.fujieda.shizuoka.jp/soshiki/kenkofukushi/chiikihokatsu/gyomu/3_/24648.html
+  confidence: high
+  amount: 利用料は月額700円（Wi-Fiあり）、月額1,000円（Wi-Fiなし）。
+- category: sonota
+  name: 一人暮らし高齢者への軽度生活支援（家事の手伝い）
+  name_on_page: 一人暮らし高齢者等軽度生活支援事業
+  summary: シルバー人材センターのヘルパーが買い物・調理・洗濯・掃除などを手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 自立していて、要支援・要介護の認定を受けていない
+  - かかりつけ医が記入する用紙が必要
+  where: 地域包括ケア推進課
+  url: https://www.city.fujieda.shizuoka.jp/kenko/fukushi/koreisha/1447731242475.html
+  confidence: high
+  amount: 利用料は1時間110円（生活保護世帯は無料）。週1日、1日2時間まで。
+not_found:
+- iro
+- koken
+- jutaku
+- nichijo-yogu
+- yutai

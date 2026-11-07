@@ -1,0 +1,206 @@
+city: '121002'
+name: 千葉市
+site: www.city.chiba.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ給付等事業（高齢者）
+  name_on_page: おむつ給付等事業（高齢者）
+  summary: 要介護1〜5で常時失禁の在宅の方に、おむつ代の9割を月額の基準額まで給付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 常時失禁状態にある
+  - 市内に住所があり、市内の居宅で介護を受けている
+  - 同一住所に住む親族全員が市民税非課税
+  - 生活保護などの支援給付を受けていない
+  - 在宅重度心身障害者おむつ給付を受けていない
+  where: 各区の保健福祉センター高齢障害支援課（高齢支援班）
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/diaper.html
+  confidence: high
+  amount: 月額の基準額は要介護1〜3が4,000円、要介護4・5が8,000円。その9割を市が給付し、1割は自己負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の方を在宅で介護し、介護保険サービスを使わなかった家族に年10万円の慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 任意の1年間、介護保険サービスを受けていない（短期のショートステイを除く）
+  - 市内に住所があり、実際に居住している
+  - ねたきり老人福祉手当・認知症老人福祉手当を受けていない
+  - 介護保険料の滞納がない
+  - 生活保護受給世帯は対象外
+  where: 高齢福祉課
+  url: https://www.city.chiba.jp/faq/hokenfukushi/koreishogai/korei/580.html
+  confidence: high
+  amount: 高齢者1人あたり年間10万円
+- category: mimamori
+  name: 安心電話
+  name_on_page: 安心電話事業
+  summary: 在宅のひとり暮らしの65歳以上に、決まった曜日に電話員が電話をかけて安否と健康状態を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 就労していない
+  - 緊急時の連絡先を1名以上登録する
+  where: お住まいの区の保健福祉センター高齢障害支援課
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/anshindenwa.html
+  confidence: high
+  amount: 無料
+- category: nichijo-yogu
+  name: 要援護高齢者等日常生活用具の給付
+  name_on_page: 要援護高齢者等日常生活用具給付事業
+  summary: 低所得の65歳以上のひとり暮らし高齢者等に、電磁調理器・火災警報器・自動消火器・シルバーカーを給付する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上（品目により「おおむね65歳以上」）のひとり暮らし高齢者等
+  - 低所得：生活保護世帯または市民税所得割非課税世帯
+  - 品目で対象が異なる（防火の配慮が必要、ねたきり、下肢が不自由など）
+  - 入院中・施設入所中の方、申請前に購入した用具は対象外
+  where: お住まいの区の保健福祉センター高齢障害支援課
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/nitizyouseikatuyougu.html
+  confidence: high
+  amount: 基準額は電磁調理器19,000円、自動消火器28,700円、シルバーカー25,000円、火災警報器は機器代7,000円/台ほか。超えた分は自己負担
+- category: ribiyo
+  name: 高齢者訪問理美容サービス
+  name_on_page: 高齢者訪問理美容サービス
+  summary: 要介護3〜5で理美容店に行けない在宅の65歳以上へ、理容師・美容師を派遣する。出張費は市が負担。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に居住している
+  - 理容店・美容院で理美容を受けることが困難
+  where: お住まいの区の保健福祉センター高齢障害支援課
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/houmonribiyou.html
+  confidence: high
+  amount: 出張費は市が負担。利用券は年4回まで。カット代などの料金は利用者負担
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 寝具の乾燥が難しいひとり暮らしやねたきりの方の家へ乾燥車が来て、寝具を無料で乾燥・丸洗いする。
+  who:
+    at_home: true
+  at_application:
+  - 市内に居住している
+  - おおむね65歳以上で寝具の乾燥が困難なひとり暮らしの方
+  - または、ねたきり状態の60歳以上で同居者の介護を十分に受けられない方
+  where: お住まいの区の保健福祉センター高齢障害支援課（頁には問い合わせ先として記載）
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/shingukansou.html
+  confidence: high
+  amount: 無料。月1回の乾燥と年1回の丸洗い
+- category: haikai
+  name: 高齢者保護情報共有サービス（どこシル伝言板）
+  name_on_page: 高齢者保護情報共有サービス（どこシル伝言板）
+  summary: 行方不明の心配がある認知症などの方の衣類にQRコード付きラベルを貼り、発見時に家族へ通知する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の高齢者または若年性認知症の方で、在宅で生活している
+  - 認知機能の低下により行方不明になる心配がある
+  - 申請者は対象者と同居または常時介護している方（家族以外も可の場合あり）
+  - これまでにこの事業の利用決定を受けたことがない
+  where: 対象者の住所地の区の保健福祉センター高齢障害支援課（地域包括ケア推進課でも問い合わせ可）
+  url: https://www.city.chiba.jp/hokenfukushi/kenkofukushi/hokatsucare/hogo-joho.html
+  confidence: high
+  amount: QRコード付きのラベル・シール40枚（耐洗30枚、蓄光10枚）を交付
+- category: sonota
+  name: 認知症あんしん保険
+  name_on_page: 認知症あんしん保険
+  summary: 認知症と診断された方が起こした事故の損害賠償を、市が保険料を負担する保険で補償する。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - どこシル伝言板に登録している（未登録なら加入と同時に登録）
+  - 千葉市に住民登録があり、市内の自宅で生活している
+  - 軽度認知障害（MCI）、施設入所中、入院中の方は対象外
+  - 診断書が必要（診断書料は実費）
+  where: 住民登録のある区の保健福祉センター高齢障害支援課（持参または郵送）
+  url: https://www.city.chiba.jp/hokenfukushi/kenkofukushi/hokatsucare/ninchisyoannshinnhoken.html
+  confidence: high
+  amount: 1事故につき1億円限度で補償。保険料は市が全額負担。認知症の方の自動車事故は対象外
+- category: jutaku
+  name: 高齢者住宅改修費支援サービス
+  name_on_page: 高齢者住宅改修費支援サービス事業
+  summary: 65歳以上の要支援・要介護認定者の住宅改修費の一部を、介護保険とは別に市が助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内在住で、介護保険証の住所地の住宅が対象
+  - 世帯で市民税所得割が最も多い方の課税額が21万3千円以下
+  - 身体障害者手帳1・2級、療育手帳Aの方は別の制度の対象
+  - 原則1世帯1回。工事の着工前の申出が必要。指定業者のみ
+  - 介護保険の住宅改修の対象となる場合は、その分を差し引く
+  where: お住まいの区の保健福祉センター高齢障害支援課
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/jyuutakukaisyuu.html
+  confidence: high
+  amount: 実工事費（上限70万円）から利用者負担（2万〜6万円）を除いた額に、課税状況と業者の所在地で決まる割合を掛けて助成
+- category: sonota
+  name: 家具転倒防止金具等の取付費用の助成
+  name_on_page: 家具転倒防止金具取付費用の一部を助成します
+  summary: 高齢者のみの世帯などの家具転倒防止金具の取付費用の一部（出張料と取付費）を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、世帯が自分で金具を取り付けるのが困難
+  - 65歳以上の高齢者のみ、または65歳以上と20歳未満の者のみの世帯
+  - 重度障害者のみ、重度障害者と高齢者または20歳未満の者のみの世帯も対象
+  - 申請前に取り付けた場合は対象外。助成は1世帯1回
+  where: お住まいの区の保健福祉センター高齢障害支援課
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/korei/kagutenntou.html
+  confidence: high
+  amount: 出張料は上限5,000円、取付費用は家具1台あたり上限500円（5台まで）の合計。差額と金具代は自己負担
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 生活保護の方や市民税非課税世帯の方の、成年後見の申立て費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている、または市民税非課税世帯で収入・資産の基準を満たす
+  - 親族等による申立ての支援も行う
+  where: 障害者自立支援課（頁は問い合わせ先として記載）。相談は千葉市成年後見支援センター
+  url: https://www.city.chiba.jp/hokenfukushi/koreishogai/jiritsu/seinenkouken.html
+  confidence: low
+not_found:
+- haishoku
+- hochoki
+- gaishutsu
+- kinkyu-tsuho

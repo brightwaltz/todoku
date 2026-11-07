@@ -1,0 +1,241 @@
+city: '442038'
+name: 中津市
+site: www.city-nakatsu.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報電話貸与事業
+  name_on_page: 緊急通報電話貸与事業
+  summary: 急病時にボタンでコールセンターにつながる緊急通報電話を貸与する。24時間365日対応。
+  who: {}
+  at_application:
+  - 次のどれか。65歳以上でひとり暮らしや寝たきりの人
+  - 75歳以上で構成される世帯（夫婦・兄弟など）
+  - 40〜64歳で要介護状態にあるひとり暮らしの人
+  - 要介護の親や祖父母を世話する未成年者がいる世帯 など
+  - 設置にはNTTアナログ回線の固定電話が必要
+  where: 介護長寿課、各支所 総務・住民課
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: 設置工事費4,466円（最初の設置時のみ）、利用料は月額300円。生活保護世帯は無料
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: mimamori
+  name: ひとり暮らし高齢者愛の訪問事業
+  name_on_page: ひとり暮らし高齢者愛の訪問事業
+  summary: 安否確認が必要な75歳以上のひとり暮らしの家に、乳酸菌飲料を配達して安否を確かめる。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 安否の確認が必要なひとり暮らしの方
+  - 近隣の家族・親戚が安否確認できる人、デイサービス等（週3回以上）で確認できる人は対象外
+  - 申請は民生委員の申出による
+  where: お住まいの地区の民生委員（頁の「申請：民生委員の申出による」）
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: 負担金なし。週3回配達（一部は週1回）
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: haishoku
+  name: 給食ボランティアグループによる給食サービス
+  name_on_page: 給食ボランティアグループによる給食サービス事業
+  summary: 食事の支度に支障がある高齢者の家庭に、ボランティアグループが給食を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らしの高齢者または高齢者のみの世帯（冊子はおおむね65歳以上）
+  - 食事に支障のある家庭
+  where: お住まいの地区の民生委員（冊子）
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: 利用者負担金は1回300円。冊子では月に1回
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: haishoku
+  name: 「食」の自立支援事業（配食）
+  name_on_page: 「食」の自立支援事業
+  summary: 高齢者のみの世帯にお弁当を届け、食の改善と安否確認をする。月〜金のうち3回まで。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある65歳以上で、栄養改善が必要な人
+  - 介護保険サービス（通所・訪問）やヤクルト配達と同じ日には届けられない
+  - 申込後に訪問調査がある
+  where: 介護長寿課、または地域包括支援センターへ電話
+  url: https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+  confidence: high
+  amount: 1食500円（低所得者軽減措置あり）
+- category: gaishutsu
+  name: 安心おでかけタクシー事業
+  name_on_page: 中津市安心おでかけタクシー事業
+  summary: 要介護認定を受けた非課税世帯の人などに、タクシー利用券を交付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 中津市に住民登録があり、市民税非課税世帯に属する
+  - 次のどれか。要介護1〜5の認定を受けている
+  - または身体障害者手帳（視覚・肢体不自由の1・2級）、療育手帳A1・A2
+  - または精神障害者保健福祉手帳1級
+  - 特養・老健等の施設に入所・入院している人は除く
+  where: 介護長寿課、福祉支援課、各支所 総務・住民課（冊子）
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: タクシー利用券12,000円分（500円×24枚）。有効期間は毎年8月〜翌年7月。途中の申請は1か月ごとに2枚減
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: jutaku
+  name: 在宅高齢者住宅改造助成事業
+  name_on_page: 在宅高齢者住宅改造助成事業
+  summary: 段差などで在宅の生活に支障がある家を高齢者向けに改造する費用の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれか。要介護認定を受けた65歳以上の高齢者がいる世帯
+  - または65歳以上の高齢者のみの世帯
+  - または75歳以上の高齢者がいる世帯
+  - 世帯の生計中心者の前年所得が200万円未満（冊子）
+  - 新築・増築は対象外。募集は毎年4〜5月
+  where: 介護長寿課、各支所 総務・住民課
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: 工事費60万円まで（介護保険の住宅改修を使うと40万円まで）の3分の2。小規模改造は30万円までの3分の2
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: jutaku
+  name: 高齢者・子育て世帯リフォーム支援事業（高齢者バリアフリー型）
+  name_on_page: 中津市高齢者・子育て世帯リフォーム支援事業（高齢者バリアフリー型）
+  summary: 65歳以上の高齢者がいる世帯が住宅を高齢者向けに改修する費用の一部を補助する。
+  who: {}
+  at_application:
+  - 満65歳以上の高齢者がいる世帯が居住する持ち家
+  - 世帯全員の前年の所得総額が350万円未満
+  - 工事費30万円以上150万円まで。施工は市内の個人・法人
+  - 新築は対象外。募集は毎年7月頃（冊子）
+  where: 介護長寿課、各支所 総務・住民課
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: 補助対象工事費の20％（最高30万円）
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: nichijo-yogu
+  name: 日常生活用具給付等事業
+  name_on_page: 日常生活用具給付等事業
+  summary: 火の始末などに不安のある高齢者に、電磁調理器・火災警報器・自動消火器・福祉電話を給付・貸与する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、寝たきり、要介護認定を受けた低所得の高齢者（頁はおおむね65歳以上）
+  - 火の始末等で在宅での生活に不安がある
+  - 品目ごとに対象が異なる（火災警報器・自動消火器は低所得の寝たきり・ひとり暮らし）
+  - 所得税額に応じて利用者負担がある
+  where: 介護長寿課、各支所 総務・住民課
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: 1人あたり上限3万円まで。生計中心者が所得税非課税なら利用者負担0円
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: iro
+  name: 老人介護手当
+  name_on_page: 老人介護手当
+  summary: 在宅のねたきり高齢者や重度認知症の高齢者を1年以上介護している人に手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 介護者と高齢者がともに市に引き続き1年以上住所がある
+  - ねたきり高齢者または重度認知症高齢者を1年以上引き続き介護
+  - 重度認知症は精神科医の診断書が必要
+  - 基準日の1年以内に入院していない。ショートステイは年7日以内
+  - 申請の基準日は10月1日と2月1日（申請は10月中・2月中）
+  where: 介護長寿課 高齢者福祉係（電話0979-62-9807）
+  url: https://www.city-nakatsu.jp/doc/2014022800218/
+  confidence: high
+  amount: 年額12万円
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の人を介護保険サービスをほぼ使わず在宅で介護する非課税世帯の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 被介護者と介護者の世帯員全員が前年度住民税非課税
+  - 介護保険サービスの利用が10日以内、入院が90日以内（福祉用具貸与・住宅改修等を除く）
+  where: 申込先の記載なし（冊子の発行元は介護長寿課）
+  url: https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+  confidence: high
+  amount: 年額12万円
+- category: kaigo-yohin
+  name: 家族介護用品支給事業
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の人を在宅で介護する非課税世帯の家族に、介護用品を買うための補助券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 被介護者と介護者の世帯員全員が前年度住民税非課税
+  - 被介護者、介護者ともに中津市内に住所がある
+  - おむつカバー・紙おむつ・尿取りパット・使い捨て手袋・清拭用品・ドライシャンプー
+  where: 申込先の記載なし（冊子の発行元は介護長寿課）
+  url: https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+  confidence: high
+  amount: 年額10万円（3か月ごとに5,000円の補助券を5枚支給）
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク事業
+  name_on_page: 中津市認知症高齢者等SOSネットワーク事業
+  summary: 行方不明になる恐れのある認知症の人を事前登録し、警察・消防・市で情報を共有して探す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になる恐れのある認知症高齢者または若年性認知症の人
+  - 事前登録届と、顔・全身の写真2枚を提出（オンライン申請も可）
+  where: 介護長寿課 高齢者福祉係（電話0979-62-9807）、各支所住民課
+  url: https://www.city-nakatsu.jp/doc/2016121600027/
+  confidence: high
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+- category: haikai
+  name: 認知症高齢者等位置情報提供サービス（GPS機器貸与）
+  name_on_page: 中津市認知症高齢者等位置情報提供サービス事業（GPS機器貸与事業）
+  summary: 行方不明の恐れのある認知症高齢者を在宅で介護する家族に、ポケットサイズのGPS機器を貸し出す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる恐れのある高齢者を在宅で介護している人
+  - 利用対象には要件がある（相談）。SOSネットワーク事前登録者を優先して案内
+  - 申請者の印鑑と、高齢者本人の介護保険証が必要
+  where: 介護長寿課 高齢者福祉係、各支所住民課（電話0979-62-9807）
+  url: https://www.city-nakatsu.jp/doc/2016121600027/
+  confidence: high
+  amount: 初期費用のうち半額（3,850円）を負担。残りの半額と月額利用料は市が負担。紛失時は別途負担
+  more_urls:
+  - https://www.city-nakatsu.jp/doc/2018081700069/file_contents/file_202691159242_1.pdf
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- koken

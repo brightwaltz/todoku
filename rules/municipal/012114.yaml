@@ -1,0 +1,178 @@
+city: '012114'
+name: 網走市
+site: www.city.abashiri.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 高齢者への生活支援助成券の交付
+  name_on_page: 高齢者生活総合支援事業
+  summary: 市内の施設などで使える助成券を、条件に合う70歳以上の方に交付する。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+  at_application:
+  - 4月1日現在、網走市に住民登録がある
+  - 本人が非課税で、同一世帯に所得割課税者がいない
+  - 申請は一人一度（毎年は不要）
+  where: 介護福祉課 高齢者福祉係、または各交付会場
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1974.html
+  confidence: high
+  amount: 6,000円分の助成券
+- category: shingu
+  name: 寝具の乾燥サービス
+  name_on_page: 寝具の乾燥サービス
+  summary: 寝具の乾燥が難しい虚弱な高齢者の世帯に、春と秋の年2回、無料で乾燥を行う。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみの世帯、または重度身体障がい者のみの世帯
+  - 寝具の乾燥を自分で行えない
+  - 個人単位で申請する
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1975.html
+  confidence: high
+  amount: 利用者負担は無料
+- category: haishoku
+  name: お弁当（夕食）の配達サービス
+  name_on_page: お弁当の配達サービス
+  summary: 食事づくりが難しい方の自宅へ、夕食を届ける。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の高齢者のみの世帯、または重度身体障がい者のみの世帯
+  - 身体や生活の状況から必要と認められる
+  where: 介護福祉課 高齢者福祉係（来庁が難しければ電話相談）
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1976.html
+  confidence: high
+  amount: 1食274円から（事業者により異なる）。日曜を除き週6日以内
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金事業
+  summary: 要介護3以上の方を介護保険サービスを使わず在宅で介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 介護保険サービスを使わず在宅で1年以上介護している家族
+  - 3か月以上の入院期間は除く
+  - 要介護度と課税状況で額が変わる
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1973.html
+  confidence: high
+  amount: 要介護4・5で世帯全員非課税は10万円、要介護4・5で本人のみ非課税は2.5万円、要介護3で世帯全員非課税は2.5万円
+- category: kaigo-yohin
+  name: ねたきり高齢者等の介護用品（紙おむつ等）の購入費助成
+  name_on_page: ねたきり高齢者等介護用品支給
+  summary: 紙おむつや尿とりパッドなどの購入費の一部を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 購入時のレシートか領収書、印鑑、通帳を持参して申請
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1982.html
+  confidence: high
+  amount: 年間6万円が上限（要介護認定の月数により異なる）
+- category: gaishutsu
+  name: タクシー・ハイヤー料金の助成
+  name_on_page: 車椅子利用など外出困難な方へのタクシー料金を助成しています
+  summary: 車椅子やストレッチャーが必要な方のタクシー・ハイヤー代の一部を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 車椅子・ストレッチャーを使わないと外出が難しい
+  - 利用時のレシートか領収書、印鑑、通帳を持参して申請
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1983.html
+  confidence: high
+  amount: 乗車基本料24回分まで（機器使用加算あり、認定月数等で変動）
+- category: ribiyo
+  name: 自宅訪問の理美容
+  name_on_page: 自宅訪問による理美容の提供
+  summary: 理容院や美容院へ行けない方の自宅へ、理美容師が来て理髪をする。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 事前に利用申請をして利用券の交付を受ける（印鑑が必要）
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1981.html
+  confidence: high
+  amount: 年6回以内（認定月数等で変動）。1回1,500円は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報システムの機器貸与
+  name_on_page: 緊急通報システム
+  summary: ボタン一つで消防署に通報できる機器を自宅に設置する。
+  who: {}
+  at_application:
+  - 体が弱く緊急時に動くことが難しい独居の高齢者
+  - ねたきりまたはそれに準ずる人がいる高齢者のみの世帯
+  - 独居の重度身体障がい者も対象。世帯の状況により対象外あり
+  where: 介護福祉課 高齢者福祉係（来庁が難しければ電話相談）
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1977.html
+  confidence: high
+  amount: 前年の課税所得に応じて設置時の費用負担が出る場合あり。通話料は自己負担
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用や後見人等への報酬を、要件に合う場合に助成する。
+  who: {}
+  at_application:
+  - 本人と申立てを行う親族の両方が、生活保護受給などの助成要件に当たる
+  - 申立てをする親族がいない場合は市長申立ての制度もある
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1991.html
+  confidence: high
+  amount: 報酬は家庭裁判所が決めた額の範囲内で助成
+- category: mimamori
+  name: 通信機能付き電球による見守り
+  name_on_page: ハローライト・高齢者等見守り支援事業
+  summary: 電球に動きがない時に家族へ通知し、頼めば代理訪問で安否確認をする。
+  who:
+    household:
+    - alone
+  at_application:
+  - ひとり暮らしの65歳以上、またはひとり暮らしの重度身体障がい者
+  - 電気代や変換器具の費用は自己負担
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1979.html
+  confidence: high
+  amount: 利用料は無料
+- category: mimamori
+  name: ごみ出しと安否確認（声かけ）の戸別収集
+  name_on_page: 高齢者等さわやか収集支援事業
+  summary: ごみ出しが難しい世帯を戸別に回って収集し、声かけで安否も確認する。
+  who: {}
+  at_application:
+  - ごみ出しが難しい、要介護・要支援認定を受けた高齢者の世帯
+  - 身体障害者手帳のある世帯、総合事業の対象者世帯、支援が必要と判断された世帯も対象
+  where: 介護福祉課 高齢者福祉係
+  url: https://www.city.abashiri.hokkaido.jp/soshiki/13/1978.html
+  confidence: high
+  amount: 利用者負担は無料
+not_found:
+- hochoki
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

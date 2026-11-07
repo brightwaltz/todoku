@@ -1,0 +1,215 @@
+city: 092045
+name: 佐野市
+site: www.city.sano.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ券の給付
+  name_on_page: 紙おむつ券の給付
+  summary: 在宅で排泄に介助が要る方に、紙おむつ購入に使える助成券を毎月配る。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市の介護保険の第一号被保険者
+  - 要介護3以上、または要介護1以上で認知症自立度ランク1以上
+  - 調査書で排尿か排便が一部・全介助、かつ6か月以上経過
+  - 在宅で6か月以上その状態が続いている
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7499.html
+  confidence: high
+  amount: 1か月1枚（2,000円分）。2,000円以上の購入時に使える
+- category: iro
+  name: 在宅介護者への介護手当
+  name_on_page: 在宅介護者介護手当
+  summary: 寝たきりや認知症の高齢者を在宅で介護する同居の家族に手当を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される人が65歳以上で、同居して6か月以上介護している
+  - 要介護3以上の寝たきり、または認知症自立度3a以上
+  - 介護保険料の滞納がない
+  - 月15日以上在宅で介護できない月は支給停止
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7501.html
+  confidence: high
+  amount: 月12,000円（世帯全員が市民税非課税等）、それ以外は月6,000円
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報装置の貸与
+  name_on_page: 高齢者緊急通報装置貸与事業
+  summary: 高齢者のみの世帯に、24時間看護師につながる緊急通報装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 世帯員全員が要支援1以上、または心臓・脳・呼吸器などの疾患（診断書）
+  - 乳酸飲料の事業や重度障がい者用の通報装置を利用していない
+  - 携帯型は固定電話がなく、携帯電話を扱えること
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7503.html
+  confidence: high
+  amount: 装置は貸与。通信料は自己負担
+- category: haishoku
+  name: 高齢者配食支援
+  name_on_page: 高齢者配食支援事業
+  summary: 高齢者のみの世帯に、見守りを兼ねて昼食か夕食を1日1回届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要支援・要介護認定、または事業対象者で、見守りと配食が必要
+  - ケアプランへの記載が必要（未認定は利用調査票）
+  - 同一敷地内に65歳未満の親族がいない
+  where: いきいき高齢課（ケアマネジャーか地域包括支援センターに相談のうえ申請）
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7506.html
+  confidence: high
+  amount: 食事代は実費。週5回が上限
+- category: haikai
+  name: 徘徊高齢者等見守りシール
+  name_on_page: 徘徊高齢者等見守りシール交付事業
+  summary: 身元がすぐ分かる二次元コードのシールを無料で交付する。申請は家族ができる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある在宅の方
+  - 要支援・要介護認定で徘徊のおそれがある、または認知症と診断
+  - 申請は介護する家族などもできる
+  where: 市役所窓口（いきいき高齢課）
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7590.html
+  confidence: high
+  amount: 無料（毎年自動更新）
+- category: gaishutsu
+  name: 高齢者福祉タクシー運賃助成
+  name_on_page: 高齢者福祉タクシー運賃助成
+  summary: 通院や市内の買物などで使うタクシー料金の一部を助成する。
+  who: {}
+  at_application:
+  - 75歳以上、または70〜74歳で65歳以上のみの世帯
+  - 70〜74歳は窓口で利用者証の交付申請が必要
+  - 同じ年度は障がい者福祉タクシー利用券と併用できない
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7497.html
+  confidence: high
+  amount: タクシー料金の3割（最大1,500円）
+- category: gaishutsu
+  name: 高齢者生活路線バス運賃助成
+  name_on_page: 高齢者生活路線バス運賃助成
+  summary: 生活路線バスの運賃を1回ごとに一部助成する。
+  who:
+    age_min: 70
+  at_application: []
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7509.html
+  confidence: high
+  amount: 普通運賃か1日乗車券の1回の支払につき150円
+- category: gaishutsu
+  name: 高齢者外出支援（リフト付車両の通院送迎）
+  name_on_page: 高齢者外出支援事業
+  summary: 車いすなどの方を、リフト付福祉車両で市内の医療機関へ送迎する。
+  who: {}
+  at_application:
+  - 60歳以上で下肢不自由のため車いす使用
+  - または65歳以上で一般の交通機関が使いにくい（ケアマネ等の意見書）
+  - 介護者の付き添いが必要
+  - 事前に書面で利用登録が必要
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7508.html
+  confidence: high
+  amount: 無料（駐車場代などは自己負担）。月3往復まで
+- category: nichijo-yogu
+  name: 火災警報器の給付
+  name_on_page: 火災警報器の給付
+  summary: 要介護等認定者を含む低所得の高齢者世帯に、寝室用の火災警報器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 持ち家に居住する65歳以上で、要介護等認定高齢者を含む高齢者世帯
+  - 低所得世帯（頁は「市民税非課税・均等割」と記載）
+  - 所得調査の同意書を添付
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7500.html
+  confidence: low
+- category: mimamori
+  name: ひとり暮らし高齢者への乳酸飲料の支給
+  name_on_page: 乳酸飲料の支給
+  summary: 安否確認を兼ねて、在宅のひとり暮らし高齢者に乳酸飲料を届ける。
+  who:
+    age_min: 75
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 安否確認が必要なひとり暮らし（同一敷地内に親族がいれば同居扱い）
+  - 緊急通報装置の貸与を受けていない
+  - 申請書に民生委員の証明が必要
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7502.html
+  confidence: high
+  amount: 週4本
+- category: sonota
+  name: 高齢者軽度生活援助（シルバー人材センターの作業券）
+  name_on_page: 高齢者軽度生活援助事業
+  summary: 草刈りや掃除などの軽い作業を、援助券で安くシルバー人材センターに頼める。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯員全員が要支援1以上の認定を受けている
+  - 申請時に世帯全員の介護保険証と印鑑が必要
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7504.html
+  confidence: high
+  amount: 年間20時間分まで。作業員1人1時間500円、材料費は実費
+- category: sonota
+  name: 高齢者はり・きゅう・マッサージ券
+  name_on_page: 高齢者はり・きゅう・マッサージ券
+  summary: 保険の効かないはり・きゅう・マッサージの施術料を、券で一部助成する。
+  who: {}
+  at_application:
+  - 70歳以上、または65歳以上で身体・療育・精神の手帳（重度）所持
+  - 年齢は年度末（3月31日）時点
+  - 申請に印鑑と該当する手帳が必要
+  where: いきいき高齢課
+  url: https://www.city.sano.lg.jp/kurashi_gyosei/kenko_fukushi/fukushi/1/7498.html
+  confidence: high
+  amount: 1枚800円、年6枚（施術1回につき1枚）
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- yutai
+- chusha

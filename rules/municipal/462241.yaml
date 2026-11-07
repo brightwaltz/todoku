@@ -1,0 +1,216 @@
+city: '462241'
+name: 伊佐市
+site: www.city.isa.kagoshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 福祉タクシー利用券
+  name_on_page: 福祉タクシー利用券
+  summary: 通院や買い物に使える 500 円のタクシー利用券を年 24 枚交付する。
+  who: {}
+  at_application:
+  - 今年度中に 75 歳以上になる人、または各種障害者手帳の所持者
+  - 手帳は身体障害者手帳 1・2 級、療育手帳、精神障害者保健福祉手帳
+  - 毎年度申請が必要
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 1 枚 500 円の利用券を年 24 枚（1 回 5 枚まで使える）。料金から助成額を引いた額を負担
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: sonota
+  name: はり・きゅう施術助成
+  name_on_page: はり・きゅう施術助成
+  summary: 医療給付の対象外のはり・きゅう施術を受けるとき使う受診券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 医療給付の対象とならないはり・きゅう施術を受ける人
+  - 毎年度申請が必要
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 1 枚 500 円の受診券を年 20 枚。1 回あたり 500 円を助成
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: yutai
+  name: まごし温泉浴室利用証
+  name_on_page: まごし温泉浴室利用証
+  summary: まごし温泉の浴室使用料が 1 回 200 円になる利用証を交付する。
+  who: {}
+  at_application:
+  - 70 歳以上の人、または各種障害者手帳の所持者
+  - 手帳は身体障害者手帳、療育手帳、精神障害者保健福祉手帳
+  - 一度申請して取得すれば次年度以降の申請は不要
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 浴室使用料の減額。1 回あたり利用者負担 200 円
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 寝具（掛布団・敷布団・毛布）の洗濯・乾燥を年 3 回まで受けられる。
+  who:
+    flags:
+    - bedridden_6m
+  at_application:
+  - 在宅の 65 歳以上で寝たきり（要介護認定 4 以上）の人
+  - または身体障害者手帳 1・2 級で寝たきりの人
+  - 一度申請して決定を受ければ次年度以降の申請は不要
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 年 3 回まで。1 回あたり利用者負担 660 円
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: ribiyo
+  name: 理髪サービス
+  name_on_page: 理髪サービス
+  summary: 理髪業者が自宅に来て理髪をする（年 4 回まで）。
+  who:
+    flags:
+    - bedridden_6m
+  at_application:
+  - 在宅の 65 歳以上で寝たきり（要介護認定 4 以上）の人
+  - または身体障害者手帳 1・2 級で寝たきりの人
+  - 一度申請して決定を受ければ次年度以降の申請は不要
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 年 4 回まで。1 回あたり利用者負担 400 円
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: iro
+  name: 老人介護手当
+  name_on_page: 老人介護手当支給
+  summary: 要介護 4 以上の高齢者を在宅で介護している人に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 3 か月以上同居、またはこれに準ずる状態で介護している介護者に支給
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 支給決定の翌月分から、対象月に 1 万円（年 2 回支給）
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: haikai
+  name: 徘徊高齢者対策（徘徊探知機の購入助成）
+  name_on_page: 徘徊高齢者対策
+  summary: 徘徊探知機などの購入に要する初期費用を助成する。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 徘徊のみられる認知症の高齢者、またはその高齢者を介護している家族等
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 初期費用を助成（上限 1 万円）。助成額を超える額は自己負担
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: sonota
+  name: 生活支援サービス（支援員の派遣）
+  name_on_page: 生活支援サービス
+  summary: 病中病後などの高齢者に、家事・買い物の支援員を派遣する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護認定を受けていない人で、病中病後など一時的に支援が必要
+  - 1 日 2 時間以内、年 5 日間が限度
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 利用者負担は 1 時間あたり 100 円（費用の一部を助成）
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: nichijo-yogu
+  name: 日常生活用具給付（卓上電磁コンロ）
+  name_on_page: 日常生活用具給付
+  summary: 設置工事のいらない卓上電磁コンロの購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能の低下で防火等の配慮が必要なひとり暮らしの高齢者等
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 購入費を助成（上限 1 万円）。助成額を超える額は自己負担
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 伊佐市高齢者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象でない難聴の高齢者に補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 身体障害者手帳（聴覚障害）の交付を受けていない
+  - 両耳の聴力レベルが 40 dB 以上 70 dB 未満で、耳鼻科医が必要と認める
+  - 市税等の滞納がない
+  - 購入前の申請が必要。医師意見書と見積書を添える
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 補聴器本体 1 台分の費用の 2 分の 1 以内、上限 30,000 円。1 人 1 回限り
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置設置
+  name_on_page: 緊急通報装置設置
+  summary: 自宅の電話に通報装置を設置し、緊急時に協力者へ連絡できるようにする。
+  who: {}
+  at_application:
+  - 65 歳以上の高齢者のみの世帯、または身体障がい者のみの世帯
+  - 固定電話がある世帯のみ
+  - 協力者 2 人以上の同意書が必要
+  where: 長寿介護課高齢福祉係（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/health/fukushi/koureisyahukushi/
+  confidence: high
+  amount: 設置は市が行う。使用電話の基本料金・通話料・破損修理代は自己負担
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+- category: sonota
+  name: 緊急医療情報キット
+  name_on_page: 緊急医療情報キット
+  summary: 医療情報を書いたシートを冷蔵庫に保管し、救急や災害時に隊員へ伝える。
+  who: {}
+  at_application:
+  - 65 歳以上のひとり暮らし、または 65 歳以上のみの世帯に属する人
+  - または避難行動要支援者登録台帳に登録された障がいのある人
+  - そのほか市が適当と認める人
+  where: 長寿介護課（大口庁舎）、長寿介護課分室（菱刈庁舎）
+  url: https://www.city.isa.kagoshima.jp/blog/info-health/66449/
+  confidence: high
+  amount: 無料で配布
+  more_urls:
+  - https://www.city.isa.kagoshima.jp/wp-content/uploads/2026/04/a4e492bed962c9ef88840bf2296cf9cf.pdf
+not_found:
+- kaigo-yohin
+- haishoku
+- koken
+- jutaku
+- mimamori

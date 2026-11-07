@@ -1,0 +1,340 @@
+city: '131211'
+name: 足立区
+site: www.city.adachi.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者補聴器購入費用助成
+  name_on_page: 補聴器購入費用助成
+  summary: 中等度難聴の高齢者が補聴器を買うとき、片耳 1 台分の費用を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区内に住所がある
+  - 耳鼻咽喉科専門医が中等度難聴と記入した申請書が要る
+  - 聴覚障害の身体障害者手帳の対象にならない
+  - 助成決定の前に買った補聴器は対象外
+  where: 地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口（郵送も可）
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 上限 5 万円（千円未満切り捨て）。1 人 1 回 1 台限り
+- category: nichijo-yogu
+  name: シルバーカー購入費の助成
+  name_on_page: シルバーカー
+  summary: 虚弱な高齢者がシルバーカーを買うときの費用を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 近隣へ外出できる程度の虚弱で、安全に使える
+  - 購入前の申請と地域包括支援センターの訪問調査が要る
+  - 歩行車は対象外。1 人 1 回限り
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 上限 1 万円。原則 1 割（所得により 2〜3 割または免除）は自己負担
+- category: nichijo-yogu
+  name: 自動消火装置の設置費助成
+  name_on_page: 自動消火装置
+  summary: ガスコンロ近くに付ける自動消火装置の設置費用を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきり等で初期消火ができない
+  - 購入前の申請と地域包括支援センターの訪問調査が要る
+  - 1 世帯 1 回限り
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 上限 28,700 円。原則 1 割（所得により 2〜3 割または免除）は自己負担
+- category: nichijo-yogu
+  name: 電磁調理器の購入費助成
+  name_on_page: 電磁調理器
+  summary: ガスの使用に不安がある方の電磁調理器と専用鍋の購入費を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 本人が調理を行う
+  - 購入前の申請と地域包括支援センターの訪問調査が要る
+  - 1 世帯 1 回限り
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 上限 2 万円。原則 1 割（所得により 2〜3 割または免除）は自己負担
+- category: jutaku
+  name: 高齢者住宅改修給付（予防給付）
+  name_on_page: 予防給付
+  summary: 介護認定が非該当の方の手すり取り付けや段差解消などの改修費を一部助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険の認定で「非該当（自立）」（1 年以内の認定に限る）
+  - 加齢で心身機能の低下が認められる
+  - 1 世帯 1 回限り。分割利用は不可
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 上限 20 万円。1〜3 割（または減免）は自己負担
+- category: jutaku
+  name: 高齢者住宅改修給付（設備改修・階段昇降機以外）
+  name_on_page: 設備改修（階段昇降機以外）
+  summary: 要支援・要介護の方の浴槽取替え、洋式便器化、車いす対応の流し・洗面台への取替え費を一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 浴槽の取替えと便器の洋式化は、介護保険の住宅改修を一定額以上使った方
+  - 1 世帯 1 回限り。複数人での分割申請は不可
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 浴槽 20 万円、洋式便器 106,000 円、流し・洗面台 156,000 円まで。1〜3 割（または減免）は自己負担
+- category: jutaku
+  name: 高齢者階段昇降機設置費用助成
+  name_on_page: 階段昇降機設置費用助成
+  summary: 要介護 4・5 の方の自宅へのいす式階段昇降機の設置費用を一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 車いすか歩行器を日常的に使い、居室が 2 階以上にある
+  - 本人または親族の持ち家に住んでいる
+  - 障害福祉サービスの屋内移動設備給付の対象にならない
+  - 申請前に窓口へ事前相談が要る。1 世帯 1 回限り
+  where: 高齢福祉課在宅支援係
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 上限 1,332,000 円（機器・付属機器・設置費用）。1〜3 割（または減免）は自己負担
+- category: kaigo-yohin
+  name: 高齢者紙おむつの支給
+  name_on_page: 高齢者紙おむつの支給
+  summary: 常時失禁状態で要介護 2〜5 の方に、カタログから選ぶ紙おむつを毎月自宅へ届ける。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 区内に住民登録がある
+  - 生活保護・中国帰国者支援給付の受給者は対象外
+  - 介護保険施設の入所者は対象外
+  where: 地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 現物支給は月 1 回配送。入院などで持ち込めない場合は月 6,000 円まで助成
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システムの設置
+  name_on_page: 高齢者緊急通報システムの設置
+  summary: ボタンで受信センターにつながる緊急通報機器を無料で設置・貸与する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 原則ひとり暮らしまたは高齢者のみの世帯
+  - 慢性疾患などで日常生活に常時注意が要る
+  - 受信センターへ鍵を預ける。見守りサービス助成とは併用不可
+  - 設置前の申請と訪問調査が要る
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 利用者負担なし
+  more_urls:
+  - https://www.city.adachi.tokyo.jp/documents/75977/kinnkyuutuuhou.pdf
+- category: mimamori
+  name: 高齢者見守りサービス助成
+  name_on_page: 高齢者見守りサービス助成
+  summary: 民間の見守りサービス（活動感知器など）の契約費用を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 原則ひとり暮らしまたは高齢者のみの世帯
+  - 慢性疾患などで日常生活に常時注意が要る
+  - 緊急通報システムの利用中・利用経験者は対象外
+  - 契約前の申請と訪問調査が要る
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 初期設置費 13,500 円まで、利用料は月 1,500 円まで
+  more_urls:
+  - https://www.city.adachi.tokyo.jp/documents/75977/kinnkyuutuuhou.pdf
+- category: haikai
+  name: ひとり歩き高齢者の位置検索サービス費用助成
+  name_on_page: ひとり歩き高齢者等位置検索サービス費用助成
+  summary: 認知症で行方不明のおそれがある方を介護する親族の、位置検索サービスの加入料と月額料を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請できるのは、要支援・要介護の方を介護する区内の親族
+  - 契約前の申請と訪問調査が要る
+  where: 管轄の地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 加入料 5,250 円まで、月額利用料は月 1,500 円まで（加入料は原則 1 割負担）
+- category: haikai
+  name: 高齢者見守りキーホルダー・見守りシール
+  name_on_page: 高齢者見守りキーホルダー・見守りシール・あんしんプリント
+  summary: 登録番号入りのキーホルダーを無料で配り、保護や救急搬送のときの身元確認に使う。
+  who:
+    age_min: 65
+  at_application:
+  - 認知症状などで見守りが必要、またはひとりでの外出に不安がある
+  - 申請は本人か親族。緊急連絡先の同意が要る
+  where: 管轄の地域包括支援センター
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 無料（1 人 1 個。希望者には見守りシールなども渡す）
+  more_urls:
+  - https://www.city.adachi.tokyo.jp/documents/75977/202604kihoruda.pdf
+- category: shingu
+  name: ねたきり高齢者の寝具乾燥消毒
+  name_on_page: ねたきり高齢者寝具乾燥消毒
+  summary: ねたきり等で寝具の乾燥が難しい要介護 3〜5 の方に、月 1 回の寝具乾燥消毒を行う。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきり等のため寝具乾燥が困難
+  - 寝具の受け渡しをする介護者が要る
+  - 実施前の申請と区の決定が要る
+  where: 地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口（郵送も可）
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 月 1 回。1 回 100 円の自己負担
+- category: ribiyo
+  name: ねたきり高齢者の訪問理美容
+  name_on_page: ねたきり高齢者訪問理美容サービス
+  summary: ねたきり等で理美容店に行けない要介護 3〜5 の方に、区内の協力店が年 6 回まで訪問する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきり等で理美容店に行くことが困難
+  - 見守りと片づけをする介護者が要る
+  - 足立区外の介護保険証の方（住所地特例）は対象外
+  where: 地域包括支援センター、高齢福祉課在宅支援係、足立福祉事務所の総合相談窓口（郵送も可）
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/kaigohokengai.html
+  confidence: high
+  amount: 年 6 回まで。1 回 500 円の自己負担
+- category: haishoku
+  name: 高齢者配食サービス支援（元気サポート弁当）
+  name_on_page: 高齢者配食サービス支援（元気サポート弁当）
+  summary: 食事の用意が難しい高齢者が、安否確認つきの弁当を 1 食 300 円引きで買える。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 身体・認知症などの理由、または特別な食事の必要で、食事を用意しにくい
+  - 入院中（退院見込みを除く）や施設入所の方は対象外
+  - 家族や親族に食事を用意してもらえる方は対象外
+  where: 地域包括支援センター、高齢福祉課在宅支援係（郵送も可）
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/genkisupport.html
+  confidence: high
+  amount: 1 日昼か夜のどちらか 1 食、定価から 300 円引き
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護者を在宅で介護する住民税非課税世帯の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 1 年間継続して要介護 4 または 5
+  - 1 年間介護保険サービス未利用（短期入所 7 日以内などは除く）
+  - 介護者も区民税非課税世帯
+  - 世帯全員が介護保険料を滞納していない
+  where: 介護保険課保険給付係
+  url: https://www.city.adachi.tokyo.jp/kaigo/kurashi/hoken/kaigo-irokin-jigyo.html
+  confidence: high
+  amount: 年額 10 万円
+- category: koken
+  name: 成年後見の申立費用の助成
+  name_on_page: 本人・親族申立費用の助成について
+  summary: 成年後見の申立てにかかる収入印紙代・切手代・診断書料・鑑定費用を助成する。
+  who: {}
+  at_application:
+  - 本人が申立て：区内在住で、生活保護か住民税非課税
+  - 親族が申立て：親族が住民税非課税で本人が区の住所要件を満たす
+  - 申立て前の申請が要る
+  where: 医療介護連携課権利擁護推進係（郵送も可）
+  url: https://www.city.adachi.tokyo.jp/koreservice/engo5.html
+  confidence: high
+  amount: 収入印紙代・郵便切手代・診断書作成料・鑑定費用（上限額の記載なし）
+- category: koken
+  name: 成年後見の後見報酬費用の助成
+  name_on_page: 後見報酬費用の助成について
+  summary: 経済的に困難な方の成年後見人への報酬の一部または全部を助成する。
+  who: {}
+  at_application:
+  - 区内在住（一部は区外転出者も可）
+  - 生活保護の受給者などで預貯金 60 万円以下、報酬を払える資産がない
+  - 配偶者や 4 親等内の親族が後見人の場合は対象外
+  - 報酬付与の審判から 90 日以内に申請
+  where: 医療介護連携課権利擁護推進係（郵送も可）
+  url: https://www.city.adachi.tokyo.jp/koreservice/engo5.html
+  confidence: high
+  amount: 月額 2 万円以内（あだち区民後見人は月額 1 万円以内）
+- category: sonota
+  name: 「ゆ～ゆ～湯」入浴証（公衆浴場の割引）
+  name_on_page: 「ゆ～ゆ～湯」入浴証の支給
+  summary: 70 歳以上の区民に入浴証を送り、指定の週に区契約の公衆浴場を割引で使えるようにする。
+  who:
+    age_min: 70
+  at_application:
+  - 区内在住。令和8年度は事前の希望調査で希望した方などに送付
+  - 希望調査を出し忘れた方は問い合わせる
+  - 特養入所者や公衆浴場を使えない方は対象外
+  where: 高齢福祉課在宅支援係
+  url: https://www.city.adachi.tokyo.jp/k-fukushi/nyuyokusho.html
+  confidence: high
+  amount: 通常料金から 450 円引き（利用者負担は 150 円）
+not_found:
+- gaishutsu

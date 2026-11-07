@@ -1,0 +1,145 @@
+city: '442054'
+name: 佐伯市
+site: www.city.saiki.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: jutaku
+  name: 在宅高齢者住宅改造助成
+  name_on_page: 在宅高齢者住宅改造助成事業
+  summary: 高齢者がいる世帯の住宅のバリアフリー改造費を、所得の条件つきで助成する。
+  who: {}
+  at_application:
+  - 次のいずれか：認定を受けた65歳以上がいる世帯・65歳以上のみの世帯・75歳以上がいる世帯
+  - 生計中心者の前年の所得金額が200万円未満
+  - 世帯全員が市税を完納している（完納証明書は不要）
+  - 新築・増築や、すでに着工した工事は対象外
+  - 年度ごとに受付期間がある（令和8年度は8/21まで）
+  where: 高齢者福祉課 地域包括ケア推進係（和楽3階の地域包括支援センター内）
+  url: https://www.city.saiki.oita.jp/kiji0032175/index.html
+  confidence: high
+  amount: 一般住宅改造は60万円まで、自立支援小規模改造は30万円までの費用の3分の2（介護保険の住宅改修の分は差し引く）
+- category: jutaku
+  name: 高齢者世帯リフォーム支援
+  name_on_page: 高齢者世帯リフォーム支援事業
+  summary: 65歳以上がいる世帯のバリアフリー改修工事費の一部を補助する。
+  who: {}
+  at_application:
+  - 65歳以上の人がいる世帯の住宅の所有者等
+  - 世帯全員の前年の所得総額が350万円未満
+  - 市税を滞納している世帯員がいない
+  - 30万円以上のバリアフリー工事。申込多数なら抽選
+  - 年度ごとに受付期間がある（令和8年度は8/21まで）
+  where: 頁に申請先の課名の記載なし（佐伯市）
+  url: https://www.city.saiki.oita.jp/kiji0033107/index.html
+  confidence: high
+  amount: 対象工事費（30万円未満は対象外）の20％、上限30万円
+- category: iro
+  name: ねたきり老人等介護手当
+  name_on_page: ねたきり老人等介護手当支給事業
+  summary: 寝たきりの高齢者などを在宅で介護している人に、介護手当を出す。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4以上、または同等と認められる人（重度心身障がい者を含む）
+  - 市に引き続き1年以上住所があり、在宅で日常介護している人
+  - 介護を受ける人が月10日を超えて入院・入所した月は対象外
+  where: 頁に申請先の課名の記載なし（佐伯市）
+  url: https://www.city.saiki.oita.jp/kiji0032173/index.html
+  confidence: high
+  amount: 月額 8,000円（9月受付は3〜8月分、3月受付は9〜2月分）
+- category: haikai
+  name: SOSネットワーク事業（事前登録）
+  name_on_page: 佐伯市SOSネットワーク事業
+  summary: 行方不明のおそれがある人を市・警察・消防に事前登録し、早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等の疾病・障がいで行方不明となるおそれがある人
+  - 本人・家族・後見人などが登録届を提出する
+  where: 高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.saiki.oita.jp/kiji0032195/index.html
+  confidence: high
+- category: haikai
+  name: 見守り二次元コードシール
+  name_on_page: 見守り二次元コードシール
+  summary: 衣服などに貼る二次元コードシールを渡し、発見時に家族と連絡を取れるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になるおそれがある人
+  - SOSネットワークに事前登録している人
+  where: 高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.saiki.oita.jp/kiji0032195/index.html
+  confidence: high
+  amount: 1人30枚（耐洗ラベル10枚・蓄光シール20枚）、初回無償、追加は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報システム（機器の貸与）
+  name_on_page: 緊急通報システム
+  summary: 一人暮らしの人が急病のとき、通報機器でコールセンターにつなぐ仕組みを無料で使える。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上の虚弱高齢者、重度心身障がい者、または
+  - 突発的に生命に危険を及ぼす持病がある人（いずれも一人暮らし）
+  - 固定電話・回線が必要（無い場合は相談）
+  - 駆けつけられる協力員の登録が必要
+  where: 高齢者福祉課 地域包括ケア推進係、または各振興局
+  url: https://www.city.saiki.oita.jp/kiji0032201/3_2201_up_l7sdwdg4.pdf
+  confidence: high
+  amount: 利用料は無料
+- category: haishoku
+  name: 見守り配食サービス
+  name_on_page: 佐伯市見守り配食サービス
+  summary: 調理が難しい在宅の高齢者に、夕食を届けて安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 対象の3圏域に住所がある介護保険の被保険者（離島は配達不可）
+  - 認定者・総合事業対象者でケアプランに配食の位置付けがある人
+  - または利用基準表で栄養改善・自立支援に配食が必要と認められた人
+  - 基本的に夕食の配達。期間は半年〜1年
+  where: 担当のケアマネジャー・社会福祉士・保健師等。いなければ地域包括支援センター
+  url: https://www.city.saiki.oita.jp/kiji0038862/index.html
+  confidence: high
+  amount: 利用者負担金は300円または400円（介護保険料の所得段階による）
+- category: sonota
+  name: はり・きゅう・あんま助成
+  name_on_page: はり・きゅう・あんま助成事業
+  summary: 70歳以上などの人に、はり・きゅう・あんまの施術料の助成券を交付する。
+  who: {}
+  at_application:
+  - 次のいずれか：70歳以上、身体・療育・精神の障がい者手帳をもつ人
+  - または65〜69歳で後期高齢者医療の被保険者証をもつ人
+  - 市長が指定した施術院で使う
+  where: 頁に申請先の課名の記載なし（佐伯市）
+  url: https://www.city.saiki.oita.jp/kiji0032176/index.html
+  confidence: high
+  amount: 1回につき1,000円助成、年度内に12枚（再交付なし）
+- category: sonota
+  name: 生活支援短期宿泊事業
+  name_on_page: 生活支援短期宿泊事業
+  summary: 一時的に家で世話できない高齢者を、短期間の宿泊で預かる。
+  who: {}
+  at_application:
+  - 市内に住所があるおおむね65歳以上で、要介護・要支援の認定を受けていない人
+  - 次のいずれか：家族が病気・事故等で一時的に援護できない
+  - 虐待・虐待のおそれがある、またはその他市長が必要と認める
+  where: 高齢者福祉課 地域包括ケア推進係、または各振興局
+  url: https://www.city.saiki.oita.jp/kiji0032201/3_2201_up_l7sdwdg4.pdf
+  confidence: high
+  amount: 1日2,776円（生活保護世帯は無料）。半年に14日まで
+not_found:
+- ribiyo
+- shingu
+- hochoki
+- koken
+- nichijo-yogu
+- gaishutsu

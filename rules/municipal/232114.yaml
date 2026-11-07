@@ -1,0 +1,223 @@
+city: '232114'
+name: 豊田市
+site: www.city.toyota.aichi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス（「食」の自立支援事業）
+  summary: 調理や買い物が難しい高齢者宅へ、お弁当を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 安否確認が必要で、調理や買い物が困難
+  where: 地域包括支援センター、居宅介護支援事業所
+  url: https://www.city.toyota.aichi.jp/kurashi/fukushi/koureisha/1003153/1003166.html
+  confidence: high
+  amount: 1 食 300 円から（利用者負担）。週 6〜7 日、1 日 1 食
+- category: haikai
+  name: GPS 機器の導入費助成
+  name_on_page: GPS機器導入費助成（徘徊者捜索機器利用促進補助金）
+  summary: 行方不明のおそれがある高齢者の GPS 機器の導入費を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人は市内在住で行方不明になる可能性のある高齢者
+  - 65 歳未満は要介護・要支援認定のある人
+  - 申請する家族は市内在住で機器を適切に管理できる人
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.toyota.aichi.jp/kurashi/fukushi/koureisha/1021959.html
+  confidence: high
+  amount: 市指定の GPS 機器の導入費を上限 22,000 円。1 人 1 回まで
+  more_urls:
+  - https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073722/index.html
+- category: haikai
+  name: 見守り安心マーク（連絡先を書く反射名札）
+  name_on_page: 見守り安心マーク
+  summary: 連絡先を書いて服に貼れる反射素材の名札を配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65 歳以上、または 65 歳未満で要介護・要支援認定のある人等
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.toyota.aichi.jp/kurashi/fukushi/koureisha/1021958.html
+  confidence: high
+  amount: 年間 10 枚まで
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見開始の審判請求を市が行い、後見人の報酬を払えない人に費用を助成する。
+  who: {}
+  at_application:
+  - 認知症や障がいで判断能力が不十分な人
+  - 報酬費用の助成は、支払いが困難な人が対象
+  where: よりそい支援課（紙の申請、またはあいち電子申請）
+  url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1038128/1003173.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置
+  summary: 急病などの時に消防署へ通報できる機器を自宅に設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - ひとり暮らし高齢者の登録がある
+  - 介護認定があり呼吸器・循環器等の疾患がある、またはひとり暮らしで身体障害者手帳 1・2 級
+  - 協力者 2 人の承認と主治医の証明書が必要
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.toyota.aichi.jp/kurashi/fukushi/koureisha/1003153/1003170.html
+  confidence: high
+  amount: 手帳 1・2 級以外は、所得税非課税世帯は無料、課税世帯は自己負担あり。手帳 1・2 級は無料
+  more_urls:
+  - https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073717/index.html
+- category: jutaku
+  name: すこやか住宅リフォーム費の助成（介護保険住宅改修の上乗せ）
+  name_on_page: 豊田市すこやか住宅リフォーム費（高齢者等）の助成
+  summary: 介護保険の住宅改修の上限を超えた工事や、トイレ・浴室の新設などを上乗せで助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険の自己負担割合が 1 割
+  - 介護保険料の未納による給付制限を受けていない
+  - 工事の前に介護保険課へ相談する
+  where: 介護保険課
+  url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/kaigo/1003153/1073714/1003167.html
+  confidence: high
+  amount: 工事費（上限 20 万円）の 9 割、18 万円まで。上限額まで複数回使える
+- category: shingu
+  name: 寝具の貸与・クリーニング費の助成
+  name_on_page: 高齢者寝具貸与及び寝具クリーニング費（利用券）の助成
+  summary: 寝具の衛生管理が難しい在宅の要介護の人に、寝具の貸与やクリーニングの利用券を出す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 衛生管理が困難と判断される
+  - 単身世帯、または同じ世帯の全員が要介護認定者か障害者手帳の所持者
+  where: 介護保険課、担当のケアマネジャー
+  url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/kaigo/1003153/1073714/1003247.html
+  confidence: high
+  amount: 月の上限 5,000 円（1 割の自己負担あり）
+  more_urls:
+  - https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/019/045/2026/06.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい在宅の人に、理美容師の出張費相当の利用券を出す。
+  who:
+    at_home: true
+  at_application:
+  - 外出が困難
+  - 要介護 3〜5、または身体障害者手帳 1・2 級、療育手帳 A、精神障害者保健福祉手帳 1 級のいずれか
+  where: 地域包括支援センター、高齢福祉課
+  url: https://www.city.toyota.aichi.jp/kurashi/fukushi/koureisha/1003153/1003162.html
+  confidence: high
+  amount: 1 回 1,000 円分の利用券を年度内に最大 6 枚
+- category: gaishutsu
+  name: タクシー料金助成券
+  name_on_page: タクシー料金助成利用券（ひとり暮らし高齢者等移動費助成事業）
+  summary: 移動に家族の支援を受けにくい要介護・要支援の高齢者に、タクシー券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ひとり暮らし、または同居の親族が認定者・運転免許なし等の人
+  - 家族が同居していても仕事で不在がちなら対象
+  - 世帯状況について民生委員の確認が必要
+  where: 高齢福祉課
+  url: https://www.city.toyota.aichi.jp/kurashi/fukushi/koureisha/1003153/1003160.html
+  confidence: high
+  amount: 年度に 1 回、16,000 円相当。1 回の乗車は料金の半額まで
+- category: mimamori
+  name: 福祉電話訪問
+  name_on_page: 福祉電話訪問
+  summary: ひとり暮らしの要介護・要支援の人に、週 1 回、安否確認の電話をかける。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+  at_application:
+  - ひとり暮らし高齢者等登録制度に登録している
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073717/1003171.html
+  confidence: high
+  amount: 無料。電話がない市民税非課税世帯には電話の貸与と基本料金の補助もある
+- category: sonota
+  name: 低所得者の介護サービス利用料の助成
+  name_on_page: 豊田市低所得者利用支援費の助成
+  summary: 在宅の介護サービスを使う低所得の人に、利用料の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護・要支援認定者、または総合事業の対象者
+  - 本人の合計所得と年金収入の合計が 82 万 6,500 円以下
+  - 生活保護受給者・給付制限を受けている月は対象外
+  where: 市の担当課（頁に申請先の記載なし。介護保険課に要確認）
+  url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/kaigo/1003153/1073714/1017814.html
+  confidence: high
+  amount: 対象サービス利用料（月の上限 15,000 円）の 2 割
+  more_urls:
+  - https://www.city.toyota.aichi.jp/_res/projects/default_project/_page_/001/019/045/2026/06.pdf
+- category: sonota
+  name: 家族リフレッシュ用ショートステイ利用費の助成
+  name_on_page: 豊田市家族リフレッシュショートステイ利用費の助成
+  summary: 支給限度額を超えてショートステイを使った人の利用料の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ショートステイが介護保険の支給限度額を超えた
+  - 生活保護受給者・給付制限を受けている月は対象外
+  where: 介護保険課
+  url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/kaigo/1003153/1073715/1017815.html
+  confidence: high
+  amount: 支給限度額を超えた利用料の一部（年間 5 日まで）
+not_found:
+- iro

@@ -1,0 +1,199 @@
+city: '352152'
+name: 周南市
+site: www.city.shunan.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 見守り配食事業
+  name_on_page: 見守り配食事業
+  summary: 昼食か夕食を1日1食届けて、安否確認も行う配食サービス。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の高齢者のみの世帯、または障害者のみの世帯
+  - 心身の障害等で外出・買物や調理が困難
+  - 家族の援助が見込めない
+  - 安否確認が必要
+  where: 担当ケアマネジャー、または最寄りの地域包括支援センター
+  url: https://www.city.shunan.lg.jp/soshiki/24/18665.html
+  confidence: high
+  amount: 1食の自己負担は課税者610円、生活保護・非課税者410円
+- category: kaigo-yohin
+  name: ねたきり高齢者紙おむつ給付
+  name_on_page: ねたきり高齢者紙おむつ給付
+  summary: 在宅で常時失禁状態のねたきり・認知症の高齢者を介護する家族に、紙おむつを毎月届ける。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 利用者の世帯と介護する家族の世帯がともに市民税非課税
+  - ねたきり・認知症のランクによっては対象外になる
+  - 世帯に介護保険料の滞納者がいない
+  - 入院中や施設入所中の人は対象外
+  where: 高齢者支援課（介護認定担当）
+  url: https://www.city.shunan.lg.jp/soshiki/25/6603.html
+  confidence: high
+  amount: 月2,000円分（要介護4・5は月4,000円分）の現物給付
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 通報装置で月1回の安否確認や緊急時の救急要請を受ける。要介護認定者向けにセンサー式の付属機器もある。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または重度身体障害者
+  - 申込時に民生委員の意見を聞く
+  - センサー式付属機器は要支援1〜要介護5で固定型利用者が対象
+  where: 最寄りの民生委員、または地域福祉課もやいネットセンター
+  url: https://www.city.shunan.lg.jp/soshiki/24/8595.html
+  confidence: high
+  amount: 月500円と消費税（生活保護・市民税非課税世帯は無料）。センサー式付属機器は無料
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族がいない認知症高齢者等のため、市長が行う後見の申立て費用を市が助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分で、二親等内の親族がいないか音信不通
+  - 市長が申立ての必要を認めた人
+  - 負担能力があれば後で費用を請求されることがある
+  where: 地域福祉課もやいネットセンター
+  url: https://www.city.shunan.lg.jp/soshiki/24/8593.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者バス・タクシー運賃助成券
+  name_on_page: 周南市高齢者バス・タクシー運賃助成事業
+  summary: 路線バスとタクシーで使える200円引きの助成券を、年度ごとに交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市に住民登録がある
+  - 75歳以上、または65〜74歳で運転免許を持たない人
+  where: 高齢者支援課、各総合支所の市民福祉課、各支所
+  url: https://www.city.shunan.lg.jp/soshiki/25/116171.html
+  confidence: high
+  amount: 年度で48枚（9,600円分）。1枚で200円引き
+- category: nichijo-yogu
+  name: 老人日常生活用具給付
+  name_on_page: 老人日常生活用具給付
+  summary: ひとり暮らし高齢者に、電磁調理器・火災警報器・自動消火器・腰掛便座などを給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 電磁調理器・火災警報器・自動消火器は認知症や物忘れで火災のおそれがある人
+  - 腰掛便座・入浴補助用具・歩行支援用具は心身機能の低下で支障がある人
+  where: 最寄りの地域包括支援センター
+  url: https://www.city.shunan.lg.jp/soshiki/25/2565.html
+  confidence: high
+  amount: 限度額は種目別（電磁調理器22,000円、火災警報器15,500円、自動消火器28,700円、腰掛便座・入浴補助用具15,000円、歩行支援用具25,000円）。所得税額に応じた自己負担あり
+- category: nichijo-yogu
+  name: 高齢者お出かけ支援用具（シルバーカー）給付
+  name_on_page: 高齢者お出かけ支援用具給付
+  summary: 転倒の危険が高い要援護高齢者に、シルバーカーを給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体上の障害があり転倒の危険性が高いと認められる要援護高齢者
+  where: 最寄りの地域包括支援センター
+  url: https://www.city.shunan.lg.jp/soshiki/25/31156.html
+  confidence: high
+  amount: 限度額15,000円。所得税額に応じた自己負担あり
+- category: sonota
+  name: 老人福祉電話の貸与・助成
+  name_on_page: 老人福祉電話貸与・助成事業
+  summary: 電話のないひとり暮らしの非課税高齢者に市の電話を貸し、基本料金や設置工事費を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 安否確認が必要
+  - 電話などの通信手段を持っていない（携帯電話の所持は対象外）
+  where: 地域福祉課もやいネットセンター
+  url: https://www.city.shunan.lg.jp/soshiki/24/8597.html
+  confidence: high
+  amount: 基本料金・屋内配線使用料・消費税と新設・撤去工事費を助成
+- category: mimamori
+  name: 友愛訪問活動促進事業
+  name_on_page: 友愛訪問活動促進事業
+  summary: ひとり暮らし高齢者を訪問し、安否確認や相談への助言を行う。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね70歳以上
+  where: 周南市社会福祉協議会
+  url: https://www.city.shunan.lg.jp/soshiki/24/3583.html
+  confidence: high
+- category: sonota
+  name: 車椅子の貸与
+  name_on_page: 車椅子の貸与
+  summary: 一時的に車椅子が要る人に、車椅子を無料で貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、一時的または永続的に歩行が困難
+  - 貸出期間は原則2週間以内
+  where: 高齢者支援課（高齢者支援担当）
+  url: https://www.city.shunan.lg.jp/soshiki/25/6601.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 生活支援短期宿泊事業（ショートステイ）
+  name_on_page: 生活支援短期宿泊事業（ショートステイ）
+  summary: 養護老人ホームに短期間泊まり、生活習慣の支援や食事の提供を受ける。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で要介護認定を受けていない
+  - 原則として年14日まで利用できる
+  where: 地域福祉課もやいネットセンター
+  url: https://www.city.shunan.lg.jp/soshiki/24/6588.html
+  confidence: high
+  amount: 1日400円（食費として1食400円）
+- category: haikai
+  name: 高齢者等見守りSOSネットワーク（事前登録）
+  name_on_page: 高齢者等見守りSOSネットワーク
+  summary: 行方不明になるおそれのある人の特徴と写真を事前登録し、早期発見や身元確認につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 届出書に外見写真を添えて提出する
+  where: 地域福祉課もやいネットセンター
+  url: https://www.city.shunan.lg.jp/soshiki/24/101971.html
+  confidence: high
+  amount: 登録は無料
+- category: sonota
+  name: はり・きゅう・あん摩マッサージ施術費の助成
+  name_on_page: はり・きゅう・あん摩マッサージの施術費の助成
+  summary: 市と協定した施術所で、はり・きゅう・あん摩マッサージの費用の一部を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、後期高齢者医療の被保険者
+  - または国保以外の医療保険に入っている70歳以上の人
+  - 1日1回、月12回まで。往診は対象外
+  where: 高齢者支援課、各総合支所の福祉担当窓口
+  url: https://www.city.shunan.lg.jp/soshiki/25/6596.html
+  confidence: high
+  amount: 1術800円、併術1,000円を施術所で差し引く
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

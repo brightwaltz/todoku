@@ -1,0 +1,374 @@
+city: '172103'
+name: 白山市
+site: www.city.hakusan.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成券
+  name_on_page: 紙おむつ購入費助成
+  summary: 在宅で要介護3以上などの人に、紙おむつ購入に使える助成券を出す。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3以上の40歳以上、または身体障害者手帳(下肢・体幹1・2級)の18〜64歳
+  - 市内在住
+  where: 長寿介護課、障害福祉課、各支所・サービスセンター
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004665/1001988.html
+  confidence: high
+  amount: 助成券1枚1,000円、年間48枚（期間に応じ月割り）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理や買い物が難しい人に弁当を届け、安否も確かめる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、65歳以上のみの世帯、または身体障害者
+  - 買い物に行けず調理も十分にできない
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004664/1001990.html
+  confidence: high
+  amount: 1食300円の助成。毎日2食（昼・夕）まで
+  more_urls:
+  - https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 自宅に通報装置・安否センサー・火災警報器を付け、急病や火災時に警備員が駆けつける。
+  who:
+    at_home: true
+  at_application:
+  - 日常生活に不安がある
+  - 65歳以上のひとり暮らし・高齢者のみ世帯、または身体障害者のみ世帯
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004664/1001993.html
+  confidence: high
+  amount: 利用者負担は月額で、市民税課税世帯400円、非課税世帯200円。固定電話がなければ別に月1,100円
+- category: jutaku
+  name: 在宅支援型住宅リフォーム助成
+  name_on_page: 在宅支援型住宅リフォーム
+  summary: 手すり取付けや段差解消などの住宅改修費を、介護保険分を引いた額で助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 住民税非課税世帯または生活保護世帯
+  - 市民税課税者が同居していれば対象外
+  - 新築・増築・老朽化の改修は対象外
+  - 着工前にケアマネか窓口へ相談
+  where: 長寿介護課、各支所・サービスセンター
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004663/1001997.html
+  confidence: high
+  amount: 生活保護世帯は100%、住民税非課税世帯は90%。限度100万円で、介護保険の支給額は差し引く
+- category: gaishutsu
+  name: 車いす・ストレッチャー用タクシー券助成
+  name_on_page: 車いす等利用者外出支援事業
+  summary: 車いす対応タクシーを使うとき、料金の一部を助成券で助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきり度ランクB以上、または身体障害者手帳1・2級
+  - 障害者福祉タクシー助成券の交付を受けていない
+  where: 長寿介護課、障害福祉課、各支所・サービスセンター
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004663/1001996.html
+  confidence: high
+  amount: 助成券1枚1,000円まで、月4枚
+- category: gaishutsu
+  name: 要援護高齢者のタクシー券助成
+  name_on_page: 要援護高齢者外出支援事業
+  summary: 外出が難しい非課税世帯の要介護認定者に、タクシー料金の助成券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 自立での移動が困難
+  - 本人も家族も運転免許がなく、自家用車を持たない
+  where: 長寿介護課、各支所・サービスセンター
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004663/1001996.html
+  confidence: high
+  amount: 月3枚、助成券1枚あたり小型車の初乗り運賃相当額
+- category: gaishutsu
+  name: コミュニティバスの運賃無料
+  name_on_page: コミュニティバス「めぐーる」
+  summary: 70歳以上などの人は、コミュニティバス「めぐーる」の運賃が無料になる。
+  who: {}
+  at_application:
+  - 70歳以上、または65歳以上の運転免許自主返納者、または各種障害者手帳の所持者
+  - 70歳以上・免許返納者は事前申請が必要
+  where: 交通政策課
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 対象者は運賃無料
+- category: gaishutsu
+  name: 運転免許自主返納の支援
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 免許を全部返納した65歳以上に、2万円相当の交通券のどれか1つを渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 有効な運転免許をすべて自主返納した
+  - 返納後1年以内に申請する
+  where: 地域安全課
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: ICOCA・ICa・石川県タクシー協会共通乗車券のうち1つ（2万円相当）
+- category: shingu
+  name: 寝具乾燥消毒サービス
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 寝たきりの人の掛布団・敷布団・毛布を、洗って乾燥・消毒する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきり度ランクB以上
+  where: 長寿介護課、各支所・サービスセンター
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004663/1001995.html
+  confidence: high
+  amount: 1回500円（生活保護世帯は無料）。3か月に1回、年4回まで
+- category: ribiyo
+  name: 理髪サービス
+  name_on_page: 理髪サービス
+  summary: 寝たきりで店に行けない人の自宅へ理容師・美容師が来て、整髪と顔そりをする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきり度ランクB以上
+  where: 長寿介護課、各支所・サービスセンター
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004663/1001992.html
+  confidence: high
+  amount: 1回500円（生活保護世帯は無料）。3か月に1回、年4回まで
+- category: haikai
+  name: GPS端末の購入費助成
+  name_on_page: 認知症高齢者等家族支援サービス
+  summary: 行方不明のおそれがある人のGPS端末などの購入費を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上の認知症の人、または療育手帳・精神障害者保健福祉手帳の所持者
+  - 事前に相談が必要
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004665/1001989.html
+  confidence: high
+  amount: 上限1万円、1人1台・1回のみ（事務手数料も含む）
+- category: haikai
+  name: 認知症高齢者等の行方不明SOSネットワーク
+  name_on_page: 認知症高齢者等安心ネットワーク
+  summary: 行方不明のおそれがある人の顔写真などを市に登録し、いなくなったとき協力団体と捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になるおそれのある高齢者等
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+- category: mimamori
+  name: 見守り機器の設置費助成
+  name_on_page: 見守り機器助成
+  summary: センサー型などの見守り機器の購入・設置費を助成する。家族や町内会等も申請できる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 見守りが必要な人
+  - 過去に助成を受けた人は対象外
+  - 緊急通報・配食サービスの利用者は対象外
+  - 設置前に相談し、支払後1か月以内に申請
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004664/1009970.html
+  confidence: high
+  amount: 対象経費または1万円のどちらか少ない額
+  more_urls:
+  - https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+- category: mimamori
+  name: お元気ですか訪問事業
+  name_on_page: お元気ですか訪問事業
+  summary: 75歳以上のひとり暮らし等を、配食や生活物品の届けと声掛けで見守る（社協）。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし高齢者等
+  - 地域での見守りが必要な人
+  where: 白山市社会福祉協議会
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: low
+- category: iro
+  name: 在宅介護支援金
+  name_on_page: 在宅介護支援金支給事業
+  summary: 要介護3〜5の人を在宅で介護し、サービス利用が年10日以内の介護者に月額を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護サービスの利用日数が年10日以内
+  where: 長寿介護課（冊子の相談窓口）
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 介護者に月5,000円
+- category: sonota
+  name: 在宅介護サービス利用料の助成
+  name_on_page: 白山市在宅介護サービス利用料助成事業
+  summary: 低所得の要介護認定者が在宅サービスを使ったとき、自己負担の2割を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 高額介護サービス費等の支給分は差し引く
+  where: 長寿介護課（冊子の相談窓口）
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 自己負担の20%、年間3万円まで
+- category: sonota
+  name: 2号被保険者の在宅サービス利用助成
+  name_on_page: 2号被保険者在宅サービス利用助成事業
+  summary: 40〜64歳の認定者で在宅サービスの自己負担が限度額を超えた分の3分の1を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 40〜64歳の第2号被保険者
+  - 在宅サービスの自己負担額が利用限度額を超えた人
+  where: 長寿介護課（冊子の相談窓口）
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 超えた部分の3分の1、月10万円まで
+- category: sonota
+  name: 生活支援サポーター
+  name_on_page: 生活支援サポーター
+  summary: 地域のボランティアが、買い物代行・ごみ出し・電球交換・話し相手などを手伝う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 概ね65歳以上
+  - 生活の支援が必要な人
+  where: 長寿介護課、地域包括支援センター
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+- category: sonota
+  name: 救急医療情報キット
+  name_on_page: 救急医療情報キット
+  summary: かかりつけ医などの医療情報を入れる専用容器を無料で渡し、救急時に役立てる。
+  who: {}
+  at_application:
+  - 65歳以上、または障害者
+  - 日中独居で救急時の対応に不安がある人も対象
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 無料（1世帯1セット）
+- category: sonota
+  name: 高齢者リフレッシュ支援事業（施術利用券）
+  name_on_page: 高齢者リフレッシュ支援事業
+  summary: 市内登録施術所のはり・きゅう・マッサージ（保険外）に使える利用券を出す。
+  who: {}
+  at_application:
+  - 市内に1年以上住所がある
+  - 満70歳以上、または65〜69歳で身体障害者手帳1〜3級
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 利用券1枚1,300円、年18枚（10月以降の申請は9枚）
+- category: sonota
+  name: 高齢者ふれあい入浴（公衆浴場の利用券）
+  name_on_page: 高齢者ふれあい入浴事業
+  summary: 65歳以上に、指定3温泉施設で使える入浴利用券（年最大12回）を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住
+  - 申請が必要
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004668/1002004.html
+  confidence: high
+  amount: 自己負担は1回100円。利用券は年最大12回
+  more_urls:
+  - https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+- category: sonota
+  name: 生活管理指導短期宿泊（ケアハウスの短期入所）
+  name_on_page: 生活管理指導短期宿泊（入所）
+  summary: 社会適応が難しいひとり暮らしの人が、ケアハウスに短期間入所して生活習慣の指導を受ける。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 要介護認定で「自立」と認定された人
+  - 社会適応が困難な人
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/kenkofukushi/koreifukushi/1004662/1001998.html
+  confidence: high
+  amount: 利用期間は年7日以内。利用料は施設ごとに異なる
+- category: sonota
+  name: 要援護世帯の屋根雪下ろし支援金
+  name_on_page: 要援護者住宅屋根雪下ろし等支援事業
+  summary: 自力で屋根雪下ろしができない非課税の要援護世帯に、その費用を支援する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のみの世帯、重度の障害者手帳の世帯、または母子世帯
+  - 親族等からの支援が受けられない
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 1回あたり6万円まで、1冬期間に3回
+- category: sonota
+  name: 屋根融雪等の設置補助（白山ろく地域）
+  name_on_page: 屋根融雪化等促進事業
+  summary: 白山ろく地域の高齢者のみ世帯などに、持ち家の屋根融雪・ロードヒーティングの設置費を補助する。
+  who: {}
+  at_application:
+  - 河内・吉野谷・鳥越・尾口・白峰地域に居住
+  - 65歳以上のみの世帯、または障害者のみ世帯
+  - 石川県社協の生活福祉資金から借り入れること
+  where: 長寿介護課
+  url: https://www.city.hakusan.lg.jp/_res/projects/default_project/_page_/001/002/005/riyokon2026.pdf
+  confidence: high
+  amount: 上限50万円。ロードヒーティングは生計中心者の所得税額で0〜50%
+not_found:
+- hochoki
+- koken
+- nichijo-yogu

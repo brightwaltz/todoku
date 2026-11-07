@@ -1,0 +1,200 @@
+city: '352161'
+name: 山陽小野田市
+site: www.city.sanyo-onoda.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ナースホン）の貸出
+  name_on_page: 安心相談ナースホン（緊急通報システム）の貸出
+  summary: 在宅の高齢者等に緊急通報装置を貸し出し、緊急時の対応につなげる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - ひとり暮らしの高齢者、高齢者のみの世帯（日中独居も可）
+  - 障害者手帳のあるひとり暮らし・障がい者のみの世帯も対象
+  - 設置には担当地区の民生委員等の所見が必要
+  where: 高齢福祉課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+  amount: 利用者負担は月額0円・399円・798円（住民税と所得による）
+- category: kaigo-yohin
+  name: 紙おむつ等の支給（助成券）
+  name_on_page: 紙おむつ等の支給
+  summary: 在宅で寝たきり高齢者等を介護する家族に、紙おむつ等を買える助成券を渡す。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住の介護保険第1号被保険者
+  - 排せつのたびにおむつ交換が必要な状態が続く見込み
+  - 要介護4以上、または3以下で調査により介助・見守りが必要と認定
+  - 自宅で同居の家族が常時介護している
+  - 入院中・施設入所中は対象外
+  where: 高齢福祉課、南支所、埴生支所、山陽総合事務所市民窓口課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+  amount: 寝たきり高齢者等1人あたり月6,000円まで
+- category: shingu
+  name: 寝具の乾燥・洗濯・消毒サービス
+  name_on_page: 寝具乾燥洗濯消毒サービス
+  summary: 在宅の寝たきり高齢者等の寝具を洗濯・乾燥・消毒する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内在住で、心身の理由により寝具の衛生管理が難しい
+  - 親族など他の人の支援を受けることが難しい
+  - 夏季・冬季の年2回の受付
+  where: 高齢福祉課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院に行けない高齢者の自宅へ理美容師が訪問し、訪問費用を市が負担する。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 心身に障害があり理髪店・美容院に出向くことが困難
+  where: 高齢福祉課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+  amount: 理容・美容の実費のみ本人負担（訪問費用は市が負担）
+- category: haikai
+  name: 見守りQRシールの配布
+  name_on_page: 見守りQRシール
+  summary: 持ち物に貼るQRシールで、行方不明時に発見者が家族等へ場所を知らせられる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症等により行方不明になるおそれのある高齢者
+  - 高齢者本人のほか介護する支援者も受け取れる
+  - 利用期間は登録から1年（更新は再交付）
+  where: 高齢福祉課 地域包括支援センター窓口
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/mimamori-qr-sanyoonoya.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 見守りネットへの高齢者の事前登録
+  name_on_page: 見守りネットさんようおのだ
+  summary: 行方不明時にメールで情報を配信する仕組み。高齢者の事前登録もできる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になるおそれのある高齢者の登録
+  - 登録には本人の顔と全身の写真が必要
+  where: 高齢福祉課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/mimamori-net.html
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援（市長申立て・報酬助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りがない人の市長申立てと、後見人等への報酬の助成を行う。
+  who: {}
+  at_application:
+  - 市長申立ては65歳以上で身寄りがなく申立てが困難な人
+  - 報酬助成は収入・資産から報酬の支払いが困難な人
+  - 利用には条件があり、窓口への問い合わせが必要
+  where: 高齢福祉課 地域包括支援センター
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/seinennkoukenn.html
+  confidence: high
+  amount: 報酬助成は月額上限 在宅28,000円・施設入所18,000円
+- category: hochoki
+  name: 加齢性難聴者の補聴器購入費助成
+  name_on_page: 山陽小野田市加齢性難聴者補聴器購入費助成事業
+  summary: 中等度難聴の65歳以上の非課税の人に、補聴器購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、聴覚の身体障害者手帳の交付を受けていない
+  - 両耳とも会話音域の平均聴力が40デシベル以上
+  - 医師意見書で補聴器の必要が認められる
+  - 過去に助成を受けていない（決定から5年経過は可）
+  - 購入前に申請が必要
+  where: 高齢福祉課、山陽総合事務所市民窓口課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/hotyoukijyosei.html
+  confidence: high
+  amount: 購入費の2分の1、上限30,000円（1人1回）
+- category: sonota
+  name: 福祉電話の貸出
+  name_on_page: 福祉電話の貸出
+  summary: 連絡手段のない高齢者に電話回線を貸し出し、基本料金を助成する。
+  who: {}
+  at_application:
+  - 外部と連絡できる手段のないひとり暮らしの高齢者
+  - または外出が困難な重度障がい者
+  - 所得制限あり。市職員が自宅を訪問して手続きする
+  where: 高齢福祉課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+  amount: 通話料等は本人負担（基本料金は助成）
+- category: sonota
+  name: あんしんキット（医療情報キット）の配布
+  name_on_page: あんしんキット（医療情報キット）の配布
+  summary: かかりつけ医等を書く情報カードと容器を無料で配り、緊急時の救急対応に役立てる。
+  who: {}
+  at_application:
+  - 高齢者、障がい者、身体状況に不安のある人等
+  where: 社会福祉協議会本所・山陽支所
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 介護保険対象外の高齢者向けショートステイ
+  name_on_page: ショートステイ（介護保険の対象とならない高齢者向け）
+  summary: 一時的に在宅生活が難しい高齢者を、養護老人ホームで短期間預かる。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険の対象とならない高齢者
+  - 利用は7日以内
+  where: 高齢福祉課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+  amount: 1日480円（生活保護世帯は0円）、食事代は別
+- category: sonota
+  name: 緊急時ショートステイ
+  name_on_page: 緊急時ショートステイ
+  summary: 介護保険の短期入所が使えない時に、特別養護老人ホームで短期間預かる。
+  who: {}
+  at_application:
+  - 要介護認定等を受けている高齢者
+  - 介護保険の保険給付での短期入所が利用できない
+  - 利用は7日以内
+  where: 高齢福祉課
+  url: https://www.city.sanyo-onoda.lg.jp/soshiki/18/koureisyahukusi.html
+  confidence: high
+  amount: 1日540〜970円（介護度による）、食事代は別
+not_found:
+- haishoku
+- iro
+- jutaku
+- gaishutsu
+- mimamori

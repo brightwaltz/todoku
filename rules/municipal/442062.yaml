@@ -1,0 +1,178 @@
+city: '442062'
+name: 臼杵市
+site: www.city.usuki.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: はり・きゅう・あんま施術料の助成
+  name_on_page: はり・きゅう・あんま施術料の一部助成
+  summary: 70歳以上の人に、はり・きゅう・あんまの施術費の一部を助成する利用券を出す。
+  who:
+    age_min: 70
+  at_application:
+  - 臼杵市に住んでいる
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2014020600704/
+  confidence: high
+  amount: 施術1回につき600円を助成（利用券を年間24枚）
+- category: jutaku
+  name: 在宅高齢者住宅改造費の助成
+  name_on_page: 在宅高齢者住宅改造費の助成
+  summary: 手すり・段差解消など、在宅の高齢者向けの住宅改造の費用の3分の2を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 次のいずれか：認定を受けた在宅の65歳以上、在宅の75歳以上、高齢者のみの世帯
+  - 対象高齢者が市内に1年以上住所があり、市税を完納。生計中心者の前年所得が200万円未満
+  - 公営住宅でない。新築・増築を伴わない。過去に本助成を使っていない
+  - 介護保険の住宅改修の対象工事は、その給付を先に受ける
+  - 大分県と市で補助する事業で、最終決定は県。審査に時間がかかる
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2014020600704/
+  confidence: high
+  amount: 対象経費60万円（介護保険住宅改修の対象世帯は40万円）を限度に3分の2
+- category: nichijo-yogu
+  name: 日常生活用具の給付（高齢者）
+  name_on_page: 日常生活用具給付
+  summary: 要支援2以上のひとり暮らしの高齢者に、火災報知器・自動消火器・電磁調理器を給付する。
+  who:
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+  at_application:
+  - 身体上または精神上の障がいで日常生活に支障がある高齢者
+  - 前年の所得税課税年額に応じた費用負担がある
+  - 取付時に追加工事が必要なら工事費は自己負担
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2014020600704/
+  confidence: high
+  amount: 給付品目は火災報知器・自動消火器・電磁調理器（所得税課税額に応じた自己負担あり）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 栄養改善が必要な高齢者などに、週1〜3回を上限に食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 次のいずれか：おおむね60歳以上のひとり暮らしの虚弱な高齢者
+  - 身体障害者のみの世帯等で、調理を毎日行うことが困難な世帯
+  - 高齢者のみの世帯で、調理を毎日行うことが困難な世帯
+  - 安否確認に協力してくれる近隣の方2名が必要
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2014020600704/
+  confidence: high
+  amount: 1食あたり500円（週に3回まで）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置
+  summary: ひとり暮らしの虚弱な高齢者などに緊急通報装置を貸し、消防署や協力員が対応する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 次のいずれか：おおむね65歳以上のひとり暮らしの虚弱高齢者
+  - ひとり暮らしの重度身体障害者
+  - 高齢者のみの世帯で1人が寝たきり、または2人とも身体虚弱
+  - 近隣の安否確認の協力者3名が必要
+  - NTTの電話回線を利用している
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2014020600704/
+  confidence: high
+  amount: 設置料17,270円（税込）は個人負担（生活保護世帯を除く）
+  more_urls:
+  - https://www.city.usuki.oita.jp/docs/2026042700010/file_contents/260427-2.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を在宅で介護する非課税世帯の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者が過去1年間、介護保険サービスを受けていない
+  - 年1週間程度のショートステイ・福祉用具貸与、3か月未満の入院は除く
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2014020600704/
+  confidence: high
+  amount: 年間10万円を限度
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 要介護4・5の高齢者を介護する非課税世帯の家族に、紙おむつ等の購入の補助券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護高齢者を介護している家族に交付する
+  - 家族の世帯全員と要介護高齢者の市民税が非課税
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2014020600704/
+  confidence: high
+  amount: 年額75,000円（補助券12枚）を限度。紙おむつ・尿取りパット・使い捨て手袋・清拭剤など
+- category: haikai
+  name: 高齢者等SOSネットワークの事前登録
+  name_on_page: 臼杵市高齢者等SOSネットワーク
+  summary: 行方不明の心配がある認知症の高齢者などを事前登録し、関係機関が捜索に協力する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 臼杵市在住の概ね65歳以上で、認知症などにより行方不明になる心配がある人
+  - 家族の同意を得て、登録申請書と写真2枚を出す
+  where: 高齢者支援課、または地域包括支援センターコスモス
+  url: https://www.city.usuki.oita.jp/docs/2015091500023/
+  confidence: high
+- category: haikai
+  name: 高齢者等GPS機器利用支援
+  name_on_page: 高齢者等GPS機器利用支援事業
+  summary: GPS機器を購入して位置情報サービスを使う家族に、機器の購入費を助成する。
+  who: {}
+  at_application:
+  - 臼杵市高齢者等SOSネットワークに登録されている人の介護者
+  - 当該年度の4月1日〜2月末日に購入・支払いした機器が対象
+  - 申請期限は当該年度の2月末日
+  where: 高齢者支援課
+  url: https://www.city.usuki.oita.jp/docs/2021052400011/
+  confidence: high
+  amount: 補助対象額は1万円が限度（導入時の初期経費のみ）
+- category: koken
+  name: 成年後見制度利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立費用と後見人への報酬を、所得・資産の条件つきで助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市に居住し住民基本台帳に登録されている（生活保護の実施者等も可）
+  - 世帯全員の預貯金等が単身50万円以下、単身以外100万円以下
+  - 居住する家屋以外に報酬に充てられる資産がない
+  - 成年後見人が親族である場合は対象外
+  where: 福祉課
+  url: https://www.city.usuki.oita.jp/docs/2026011600044/
+  confidence: high
+  amount: 申立費用は実費、鑑定費用は実費（上限10万円）、報酬は在宅月2.8万円・施設等月1.8万円
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- gaishutsu

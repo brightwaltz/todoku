@@ -1,0 +1,170 @@
+city: '242021'
+name: 四日市市
+site: www.city.yokkaichi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 訪問給食（昼・夕食の配食）
+  name_on_page: 訪問給食事業
+  summary: 調理が難しい高齢者などに、月〜土曜に昼食と夕食を届ける。
+  who: {}
+  at_application:
+  - 65歳以上、または40〜64歳の要介護・要支援の人
+  - ひとり暮らし、または同居家族全員が調理困難で見守りが必要
+  where: お近くの在宅介護支援センター（高齢福祉課）
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+  confidence: high
+  amount: 1食688円のうち市が188円を負担し、自己負担は500円。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 突然倒れるおそれのある高齢者に、緊急通報装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 高血圧症や心臓疾患などで突発的に助けが必要となるおそれがある
+  where: 高齢福祉課、在宅介護支援センター
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+  confidence: high
+  amount: 装置は無料。電話の基本料や通話料は自己負担。
+- category: nichijo-yogu
+  name: 日常生活用具の給付（火災報知器など）
+  name_on_page: 日常生活用具の給付
+  summary: ひとり暮らし高齢者などに、火災報知器・自動消火器・電磁調理器を支給する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし高齢者など（「等」の範囲は頁に詳細なし）
+  - 所得制限あり（基準額は頁に記載なし）
+  where: 高齢福祉課、在宅介護支援センター
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+  confidence: low
+- category: kaigo-yohin
+  name: おむつ等の支援（引換券の支給）
+  name_on_page: おむつ等支援事業
+  summary: 常におむつが必要な在宅の重度の要介護者に、おむつ代の一部を引換券で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 本人が住民税非課税であること
+  - 生活保護を受けていない
+  - グループホームやサービス付き高齢者向け住宅の入居者は対象外
+  - 市内に住所がある
+  where: 高齢福祉課
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+  confidence: high
+  amount: 月額の上限は、世帯も非課税なら6,500円、世帯が課税なら5,000円。
+  more_urls:
+  - https://www.city.yokkaichi.lg.jp/www/contents/1697624793342/index.html
+- category: haikai
+  name: 認知症安心おかえりシール（QRコード）
+  name_on_page: 認知症安心おかえりシール交付事業
+  summary: 服や杖に貼るQRコードを配り、迷った人を見つけた人が家族へ知らせられる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症の人、または40〜64歳の要介護・要支援者
+  - 認知症が原因で道に迷うおそれがある
+  - 認知症高齢者等SOSメールの事前登録をしている
+  - 情報登録シートの提出が必要
+  where: 高齢福祉課
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1600249207682/index.html
+  confidence: high
+- category: haikai
+  name: 認知症の人へのGPS端末の給付
+  name_on_page: 認知症高齢者等あんしんＧＰＳ給付事業
+  summary: 小型のGPS機器を給付し、家族がスマホで居場所を探せる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症の人、または40〜64歳の要介護・要支援者
+  - 認知症が原因で道に迷うおそれがある
+  - 認知症高齢者等SOSメールの事前登録をしている
+  where: 高齢福祉課
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1600249207682/index.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を在宅で介護する非課税世帯の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 1年間、介護保険サービスを使わず入院・入所もなかった
+  - 短期入所1週間程度や入院は例外として除く
+  where: 高齢福祉課
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1504749732943/index.html
+  confidence: high
+  amount: 10万円
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聞こえにくい高齢者の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力30dB以上70dB未満で、身体障害者手帳の対象外
+  - 指定医師が、補聴器の装用効果があり必要と認めた
+  - 世帯の最多納税者の市民税所得割が年46万円未満
+  - 過去にこの助成を受けていない
+  - 市内の認定補聴器専門店等で購入すること
+  where: 高齢福祉課
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1745991839138/index.html
+  confidence: high
+  amount: 購入費の2分の1以内で、上限3万5千円。
+- category: mimamori
+  name: 電力スマートメーターを使ったフレイル検知
+  name_on_page: 電力スマートメーターを活用したフレイル検知事業
+  summary: 電力使用量をAIで分析し、フレイルの兆候があれば職員が連絡して助言する。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 要支援・要介護認定を受けている人、事業対象者は対象外
+  - 太陽光発電など自家発電設備を使っている人は対象外
+  - 申込時に本人確認書類と委任状が必要
+  where: 高齢福祉課（市役所3階）
+  url: https://www.city.yokkaichi.lg.jp/www/contents/1745558253319/index.html
+  confidence: high
+  amount: 無料
+not_found:
+- koken
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu

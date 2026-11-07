@@ -1,0 +1,173 @@
+city: 082058
+name: 石岡市
+site: www.city.ishioka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり老人等への紙おむつ購入費の助成
+  name_on_page: 紙おむつ購入費助成
+  summary: 要介護の在宅の方などが紙おむつ等を買った費用の一部を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 6月末時点で住民税非課税世帯、または生活保護世帯
+  - 介護保険料を滞納していない
+  - 要介護1〜3は排泄に介助か見守りが必要、または前年度に支給済み
+  - 月に20日以上の入院・入所の人は対象外
+  where: 介護保険課、または八郷総合支所 市民窓口課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/page010867.html
+  confidence: high
+  amount: 1か月あたり上限3,000円まで
+- category: haishoku
+  name: 高齢者等配食サービス
+  name_on_page: 高齢者等配食サービス事業
+  summary: 昼にお弁当を自宅へ届け、手渡しで安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 心身の障がい等で自分で調理することが困難
+  - 同一敷地に子などの家族が同居していると対象外
+  - 介護保険料を滞納していると対象外
+  - 愛の定期便との同時利用はできない
+  where: 高齢福祉課、または八郷総合支所 市民窓口課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/zaitakuseikatsushien/page000479.html
+  confidence: high
+  amount: 1食400円（課税状況で減免の場合あり）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 固定電話に緊急通報装置を付け、非常ボタンで消防本部につなぐ。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - ひとり暮らし、または病弱な高齢者のみの世帯
+  - 同一敷地に子などの家族が住む場合は対象外
+  - NTTのアナログ回線の固定電話に限る
+  where: 高齢福祉課、または八郷総合支所 市民窓口課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/zaitakuseikatsushien/page000475.html
+  confidence: high
+  amount: 設置費の自己負担は0円〜75,900円（所得税額による6段階）
+- category: haikai
+  name: 徘徊高齢者の位置情報端末（GPS）の貸出
+  name_on_page: 徘徊高齢者家族支援サービス事業
+  summary: 徘徊のある高齢者を介護する家族にGPS端末を貸し、緊急時に対処員を派遣する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のある高齢者を介護し、保護できる家族が申請
+  - まず高齢福祉課で相談する
+  where: 高齢福祉課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/zaitakuseikatsushien/page000474.html
+  confidence: high
+  amount: 世帯の課税状況により月額料金などの自己負担あり（生活保護世帯は無料）
+- category: haikai
+  name: おかえりマーク（見守りシール）の配付
+  name_on_page: 石岡市おかえりマーク
+  summary: 登録番号入りのシールを配り、保護された際に家族へ早く連絡できるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊がある、またはそのおそれがある
+  - 申請書・同意書・本人の写真が必要
+  where: 高齢福祉課、八郷総合支所 市民窓口課、地域包括支援センター
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/page009214.html
+  confidence: high
+- category: hochoki
+  name: 高齢者の補聴器購入費の補助
+  name_on_page: 高齢者補聴器購入費補助事業
+  summary: 軽度・中等度の加齢性難聴の人が補聴器を買う費用の一部を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 医師から加齢性難聴で補聴器が必要と診断された
+  - 聴力が身体障害者手帳の対象とならない程度
+  - 認定補聴器販売店で購入する（購入前に申請）
+  - 市税の滞納がない、これまでに本事業の補助を受けていない
+  where: 高齢福祉課、または八郷総合支所 市民窓口課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/zaitakuseikatsushien/page012643.html
+  confidence: high
+  amount: 購入費の2分の1、上限3万円（1人1回限り）
+- category: mimamori
+  name: 乳製品の配達による見守り
+  name_on_page: 愛の定期便事業
+  summary: ひとり暮らしの人に乳製品を週2回まで届け、安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 虚弱・疾病等で定期的な見守りが必要
+  - 同居者や、同一・隣接敷地に3親等内の親族がいると対象外
+  - 配食サービス利用中の人は対象外
+  - 土日を除き介護保険サービスを週5日利用する人は対象外
+  where: 高齢福祉課、または八郷総合支所 市民窓口課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/zaitakuseikatsushien/page010734.html
+  confidence: high
+- category: sonota
+  name: シルバーカー購入費の助成
+  name_on_page: シルバーカー購入費支給事業
+  summary: 歩行に補助が要る人がシルバーカーを買った費用の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 歩行時に杖などの補助が必要
+  - 領収証（本人名義）と振込先口座の確認書類が必要
+  where: 高齢福祉課、または八郷総合支所 市民窓口課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/zaitakuseikatsushien/page000476.html
+  confidence: high
+  amount: 購入費の半額、上限5,000円（2年度内に1台分）
+- category: sonota
+  name: ひとり暮らし高齢者の固定電話基本料の助成
+  name_on_page: ひとり暮らし高齢者電話基本料助成事業
+  summary: 自宅の固定電話の基本料金相当額を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 経済的に困難な方
+  - 担当地区の民生委員を通して申請し、直近の電話料明細が必要
+  where: 高齢福祉課、または八郷総合支所 市民窓口課
+  url: https://www.city.ishioka.lg.jp/kenko_fukushi/koreishafukushi/zaitakuseikatsushien/page000484.html
+  confidence: high
+  amount: 固定電話の基本料金（住宅用1回線分）に相当する額
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

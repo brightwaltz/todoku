@@ -1,0 +1,175 @@
+city: '102024'
+name: 高崎市
+site: www.city.takasaki.gunma.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: あんしん見守りシステム（緊急通報装置・見守りセンサー貸与）
+  name_on_page: 高齢者等あんしん見守りシステム
+  summary: 緊急通報装置と見守りセンサーを無料で借りられ、24時間365日、見守りセンターが対応する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者のみの世帯、またはこれに相当する世帯
+  - 通話できる固定電話回線、またはBluetooth付き携帯電話がある
+  - 市内に住所があり実際に住んでいる
+  where: 介護保険課、各支所市民福祉課、最寄りの高齢者あんしんセンター
+  url: https://www.city.takasaki.gunma.jp/site/notice/3574.html
+  confidence: high
+  amount: 機器の設置・貸与は無料。通報時の通話料と電気代は自己負担。
+- category: haikai
+  name: はいかい高齢者救援システム（GPS機器の無料貸出）
+  name_on_page: はいかい高齢者救援システム
+  summary: 徘徊のある高齢者の家族に GPS 機器を無料で貸し出し、行方不明時に位置情報を知らせる。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症による徘徊行動がある高齢者を介護する家族・介護者が申請
+  - 市内在住
+  where: 介護保険課、各支所市民福祉課、最寄りの高齢者あんしんセンター
+  url: https://www.city.takasaki.gunma.jp/site/notice/1736.html
+  confidence: high
+  amount: 設置費用・利用料は無料。充電の電気代などは自己負担。
+- category: iro
+  name: 在宅ねたきり高齢者等介護慰労手当
+  name_on_page: 在宅ねたきり高齢者等介護慰労手当
+  summary: 要介護4・5の65歳以上の人を在宅で介護する家族に、介護期間に応じて慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5に相当する身体状況の人も対象
+  - 基準日（8月1日）以前に6か月以上、在宅で介護している
+  - 施設入所中や長期入院中の人は対象外
+  - 対象の可能性がある人に9月頃、市から申請書が郵送される
+  where: 介護保険課、各支所市民福祉課
+  url: https://www.city.takasaki.gunma.jp/page/3655.html
+  confidence: high
+  amount: 介護6か月以上1年未満は3万円、1年以上は8万円。1年以上で介護サービス利用なし・入院7日以内・非課税世帯は10万円。
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス
+  summary: 調理が難しい高齢者に、登録事業者が食事を届けて安否確認もする。市が1食ごとに補助する。
+  who: {}
+  at_application:
+  - 対象者の条件は頁で確認できず、問い合わせて確かめる
+  where: 担当地域の高齢者あんしんセンター、または担当のケアマネジャー
+  url: https://www.city.takasaki.gunma.jp/page/3576.html
+  confidence: high
+- category: kaigo-yohin
+  name: おむつ給付サービス
+  name_on_page: おむつ給付サービス事業
+  summary: 常に失禁があっておむつが必要な人に、業者が月1〜2回おむつを自宅へ届ける。
+  who:
+    age_min: 65
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護1以上（または身体状況がそれに相当）の人
+  - ほかに肢体不自由1・2級程度の身体障害者、療育手帳A程度の人も対象
+  - 寝たきりや認知症などで常時失禁がある
+  where: 介護保険課、各支所市民福祉課、最寄りの高齢者あんしんセンター
+  url: https://www.city.takasaki.gunma.jp/page/1373.html
+  confidence: high
+  amount: 月5,000円分まで無料。超えた分は自己負担。
+- category: shingu
+  name: 布団乾燥消毒サービス
+  name_on_page: 布団乾燥消毒サービス事業
+  summary: 専用車両が自宅に来て、布団などを乾燥消毒する。原則年6回まで無料。
+  who: {}
+  at_application:
+  - 寝具を自分で干せず、家族の衛生管理も難しい
+  - ひとり暮らし・高齢者のみ2人暮らし、またはそれに相当する世帯
+  - 65歳以上、または肢体不自由1・2級程度、療育手帳A程度
+  where: 40歳以上は地区担当の高齢者あんしんセンター。39歳以下は介護保険課・各支所市民福祉課
+  url: https://www.city.takasaki.gunma.jp/page/5998.html
+  confidence: high
+  amount: 無料（年6回まで。丸洗いと併用なら年4回まで）
+- category: shingu
+  name: 布団丸洗いサービス
+  name_on_page: 布団丸洗いサービス事業
+  summary: 業者が布団などを預かって丸洗いし、自宅へ届ける。年2回まで無料。
+  who: {}
+  at_application:
+  - 寝たきり等で失禁があり、家族の寝具管理が難しい
+  - ひとり暮らし・高齢者のみ2人暮らし、またはそれに相当する世帯
+  - 65歳以上、または肢体不自由1・2級程度、療育手帳A程度
+  where: 40歳以上は地区担当の高齢者あんしんセンター。39歳以下は介護保険課・各支所市民福祉課
+  url: https://www.city.takasaki.gunma.jp/page/6000.html
+  confidence: high
+  amount: 無料（年2回）
+- category: ribiyo
+  name: 出張理美容サービス
+  name_on_page: 出張理美容サービス事業
+  summary: 寝たきり等で店に行けない人の自宅へ理美容師が訪問し、カットなどを行う。
+  who: {}
+  at_application:
+  - 寝たきり等で理美容店に行くのが難しい
+  - 65歳以上で要介護1以上（または身体状況が相当）
+  - ほかに肢体不自由1・2級程度、療育手帳A程度も対象
+  where: 40歳以上は地区担当の高齢者あんしんセンター。39歳以下は介護保険課・各支所市民福祉課
+  url: https://www.city.takasaki.gunma.jp/page/4296.html
+  confidence: high
+  amount: 無料。年4回まで（申請月で枚数が変わる。4〜6月申請は4枚、1〜3月申請は1枚）
+- category: nichijo-yogu
+  name: 火災警報器の給付
+  name_on_page: 火災警報器
+  summary: 日常生活に不安のある低所得の高齢者世帯に、火災警報器を無料で設置する。
+  who: {}
+  at_application:
+  - 疾病等で日常生活に不安がある。ひとり暮らし・高齢者のみ2人暮らし、またはそれに相当する世帯
+  - 生活保護世帯、または生計中心者が前年所得税非課税の世帯
+  - 1世帯に1つ
+  where: 最寄りの高齢者あんしんセンター
+  url: https://www.city.takasaki.gunma.jp/page/5748.html
+  confidence: high
+  amount: 設置費用は無料。設置後の維持費は自己負担。
+- category: sonota
+  name: 福祉電話の貸与（固定電話回線の開通工事）
+  name_on_page: 福祉電話
+  summary: 低所得の高齢者宅に固定電話回線の開通工事を行い、希望すれば電話機も借りられる。
+  who: {}
+  at_application:
+  - 疾病等で日常生活に不安がある。ひとり暮らし・高齢者のみ2人暮らし、またはそれに相当する世帯
+  - 生活保護世帯、またはこれに相当する世帯
+  where: 最寄りの高齢者あんしんセンター
+  url: https://www.city.takasaki.gunma.jp/page/5748.html
+  confidence: high
+  amount: 設置費用は無料。通話料は自己負担。
+- category: sonota
+  name: はり・きゅう・マッサージ施術費助成
+  name_on_page: はり・きゅう・マッサージ施術費助成事業
+  summary: はり・きゅう・マッサージの費用の一部を、受療券で助成する。
+  who:
+    age_min: 60
+  at_application:
+  - マッサージは70歳以上で前年所得税非課税世帯の人のみ
+  where: 介護保険課介護サービス担当（電話または窓口）
+  url: https://www.city.takasaki.gunma.jp/page/1794.html
+  confidence: high
+  amount: 受療券は年度6枚で、1枚1,000円の補助。
+- category: sonota
+  name: 高齢者等買物代行事業
+  name_on_page: 高齢者等買物代行事業
+  summary: 買い物が難しい高齢者の代わりに、ボランティアが近くの店で日用品などを買う。
+  who: {}
+  at_application:
+  - 日常の買い物が難しい、市内に住所がある高齢者等
+  where: 住んでいる地域の高崎市社会福祉協議会（本所・各支所）
+  url: https://www.city.takasaki.gunma.jp/page/3575.html
+  confidence: high
+  amount: 1回の買物代行につき100円
+not_found:
+- koken
+- hochoki
+- jutaku
+- gaishutsu

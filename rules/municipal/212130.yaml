@@ -1,0 +1,138 @@
+city: '212130'
+name: 各務原市
+site: www.city.kakamigahara.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入助成券
+  name_on_page: 紙おむつ購入助成券の支給
+  summary: 在宅で介護する家族向けに、紙おむつ等を買える助成券を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要援護高齢者台帳に登録している
+  - 市内に住所がある65歳以上、または介護保険受給者
+  - 要介護3以上が基本
+  - 要介護2以下は寝たきり度B・Cか認知症度Ⅲ・Ⅳ、かつ排泄に介助等が必要
+  - 予防や夜間のみの使用は対象外
+  where: 高齢介護課 高齢福祉係、民生委員（オンライン申請あり）
+  url: https://www.city.kakamigahara.lg.jp/kenkofukushi/koureisha/1002489/1002491.html
+  confidence: high
+  amount: 月3,000円分の助成券（前期・後期に分けて支給）
+  more_urls:
+  - https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/002/455/tebiki_r8_2.pdf
+- category: haishoku
+  name: 夕食の配食（食の自立支援）
+  name_on_page: 食の自立支援
+  summary: 安否確認が必要で買物・調理が難しい人に、夕食を手渡しで届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要援護高齢者台帳に登録している
+  - 65歳以上のひとり暮らし
+  - または虚弱な高齢者・重度障がい者のみの世帯など
+  - ケアマネ等または地域包括支援センターの調査を経て決定
+  where: 高齢介護課 高齢福祉係（ケアマネ・地域包括支援センターも窓口）
+  url: https://www.city.kakamigahara.lg.jp/kenkofukushi/koureisha/1002489/1002502/1002503.html
+  confidence: high
+  amount: 1食700円（税別）のうち自己負担は非課税世帯300円・課税世帯350円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システムの利用
+  summary: 緊急ボタンで消防署につながる装置を自宅に設置し、月1回の安否確認電話もある。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要援護高齢者台帳に登録している
+  - 65歳以上のひとり暮らし、または虚弱な高齢者等のみの世帯
+  - 疾病・障がい・老衰等で急病時の対応が必要
+  - 設置には固定電話等が必要
+  where: 高齢介護課 高齢福祉係（オンライン申請あり）
+  url: https://www.city.kakamigahara.lg.jp/kenkofukushi/koureisha/1002489/1002502/1002504.html
+  confidence: high
+  amount: 設置費は市民税額により0円・半額（約37,500円）・全額（約75,000円）
+  more_urls:
+  - https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/002/455/tebiki_r8_2.pdf
+- category: haikai
+  name: 認知症の人の見守りシール配布
+  name_on_page: 見守りシール配布事業
+  summary: QRコード付きの見守りシール40枚を無料で配り、行方不明時の早期発見に使う。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症の症状などで行方不明になるおそれがある
+  where: 高齢介護課 高齢福祉係、最寄りの地域包括支援センター（オンライン申請あり）
+  url: https://www.city.kakamigahara.lg.jp/kenkofukushi/koureisha/1002522/1011852.html
+  confidence: high
+  amount: 無料（シールの追加配布は有料）
+  more_urls:
+  - https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/002/455/tebiki_r8_2.pdf
+- category: sonota
+  name: 認知症の人の個人賠償責任保険（市が加入）
+  name_on_page: 認知症者個人賠償責任保険加入事業
+  summary: 市が保険に加入し、認知症の人が他人に損害を与えた場合に備える。
+  who:
+    at_home: true
+  at_application:
+  - 見守りシール配布事業の利用者である
+  - 認知症の診断を受けている、または認知症の程度がⅡa以上
+  where: 高齢介護課 高齢福祉係、最寄りの地域包括支援センター（オンライン申請あり）
+  url: https://www.city.kakamigahara.lg.jp/kenkofukushi/koureisha/1002522/1011852.html
+  confidence: high
+  amount: 補償は上限1億円、利用者の費用負担なし
+  more_urls:
+  - https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/002/455/tebiki_r8_2.pdf
+- category: sonota
+  name: 高齢者などのごみ出し支援
+  name_on_page: 高齢者などごみ出し支援事業
+  summary: ごみ集積所まで出せない虚弱な高齢者の世帯のごみを、原則週1回支援する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 要援護高齢者台帳に登録している
+  - 虚弱な高齢者などのみの世帯（65歳以上、または40〜64歳の要支援・要介護認定者）
+  - 自分でごみを出せず、他の人の協力も得られない
+  - 障害支援区分5・6や視覚障がい者のみの世帯は社会福祉課が窓口
+  where: 高齢介護課 高齢福祉係（まず電話かメールで相談）
+  url: https://www.city.kakamigahara.lg.jp/kenkofukushi/koureisha/1002489/1002502/1015911.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 一定の要件を満たす場合、審判請求の費用や後見人の報酬を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度を利用する方のうち、一定の要件に該当する方（要件は問合せ）
+  where: 生活支援課 寄り添い支援係、各務原市成年後見支援センター
+  url: https://www.city.kakamigahara.lg.jp/_res/projects/default_project/_page_/001/002/455/tebiki_r8_2.pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai
+- gaishutsu

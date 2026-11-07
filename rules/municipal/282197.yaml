@@ -1,0 +1,173 @@
+city: '282197'
+name: 三田市
+site: www.city.sanda.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家庭介護用品（紙おむつ等）の支給
+  name_on_page: 家庭介護用品支給サービス
+  summary: 重い要介護の人を在宅で介護する非課税世帯に、紙おむつ等を宅配する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりか認知症で、常時おむつが必要
+  - 同居家族全員が市民税非課税
+  where: 高齢者支援課（高齢者に関する総合相談窓口）
+  url: https://www.city.sanda.lg.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/12024.html
+  confidence: high
+  amount: 年 75,000 円（月 6,250 円）を限度に紙おむつ等を宅配
+  more_urls:
+  - https://www.city.sanda.lg.jp/material/files/group/28/R3koureisha.pdf
+- category: haishoku
+  name: 食の自立支援（配食）サービス
+  name_on_page: 食の自立支援サービス
+  summary: 夕食を手渡しで届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 食事の確保や安否確認が必要な、ひとり暮らし・高齢者のみ世帯など
+  where: 高齢者支援課（高齢者に関する総合相談窓口）
+  url: https://www.city.sanda.lg.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/12023.html
+  confidence: high
+  amount: 1 食 490 円の自己負担。夕食 1 食、月〜土曜
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム機器設置サービス
+  summary: 急病時にボタンで受信センターへ通報できる機器を貸与し、自宅の電話回線に設置する。
+  who:
+    age_min: 65
+  at_application:
+  - 常時注意が必要な慢性疾患等があるひとり暮らしの人等
+  - 近隣協力員（おおむね3人）を確保できる
+  - 電話回線の種類によっては利用できない
+  where: 高齢者支援課（高齢者に関する総合相談窓口）
+  url: https://www.city.sanda.lg.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/12022.html
+  confidence: high
+  amount: 生計中心者の前年所得税が課税なら月 500 円、非課税なら無料
+- category: jutaku
+  name: 住宅改造費の上乗せ助成
+  name_on_page: 住宅改造費助成サービス
+  summary: 介護保険の住宅改修と同時に行う改造工事の費用を、所得に応じた率で助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険の住宅改修を初めて受ける工事と同時に行う
+  - 生計中心者の給与収入 800 万円以下、または所得 600 万円以下
+  - 世帯に市税の滞納がない
+  - 着工前の申請が必要
+  where: 住まいの地区の地域包括支援センター（市高齢者福祉係には直接申し込めない）
+  url: https://www.city.sanda.lg.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/11990.html
+  confidence: high
+  amount: 介護保険の住宅改修 20 万円とあわせ、助成対象額は上限 100 万円。助成率は所得で 1/3〜10/10
+  more_urls:
+  - https://www.city.sanda.lg.jp/material/files/group/32/r8jyukai_chirashi.pdf
+- category: gaishutsu
+  name: 高齢者運賃助成（バス・電車・タクシー割引証）
+  name_on_page: 高齢者運賃助成
+  summary: バス・神戸電鉄・タクシーの運賃に使える 500 円割引証を毎年交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 令和8年4月1日現在、市内に住所がある
+  - 令和8年3月31日時点で70歳以上
+  where: 交通政策課（前年度に利用した人は申請不要で郵送。それ以外は往復はがきで申請）
+  url: https://www.city.sanda.lg.jp/iryo_kenko_fukushi/kourei_fukushi_kaigo/support_koreisha/8702.html
+  confidence: high
+  amount: 500 円割引証を年 15 枚（7,500 円分）
+  more_urls:
+  - https://www.city.sanda.lg.jp/material/files/group/36/reiwa8nendo.pdf
+- category: haikai
+  name: 認知症の人の見守り用 GPS 端末の貸与
+  name_on_page: 認知症高齢者見守り用GPS端末貸与事業
+  summary: 帰宅困難のおそれがある認知症の人に GPS 端末を無償で貸し、家族がスマホで居場所を探せる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護保険の被保険者
+  - 要介護認定を受けていない場合は、認定申請が条件
+  - 施設入所者・入院中の人は対象外
+  where: 高齢者支援課 高齢者福祉係（市役所本庁舎4階）
+  url: https://www.city.sanda.lg.jp/soshiki/31/gyomu/kourei_fukushi_kaigo/support_koreisha/3493.html
+  confidence: high
+  amount: 無償貸与。通信料・充電の電気代、破損・紛失時の再登録費は自己負担
+- category: haikai
+  name: 高齢者等 SOS ネットワークの事前登録
+  name_on_page: 三田市高齢者等SOSネットワーク
+  summary: 行方不明のおそれがある人の情報を事前登録し、市・地域包括支援センター・警察で共有して捜索につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の65歳以上で、認知症等により行方不明のおそれがある人
+  - または市内在住で、若年性認知症により行方不明のおそれがある人
+  - 顔写真と全身写真が必要
+  where: 高齢者支援課 高齢者福祉係（市役所本庁舎4階）。電子申請も可
+  url: https://www.city.sanda.lg.jp/soshiki/31/gyomu/kourei_fukushi_kaigo/support_koreisha/3492.html
+  confidence: high
+- category: sonota
+  name: 認知症の人の個人賠償責任保険（市が加入）
+  name_on_page: 認知症高齢者個人賠償責任保険事業
+  summary: 認知症の人が他人にけがをさせた等の賠償に備え、市が保険に加入し、本人負担は無い。
+  who:
+    age_min: 40
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - GPS 端末貸与または SOS ネットワークの登録者（同時申込可）
+  - 有料老人ホーム・グループホーム等の入居者は除く
+  where: 高齢者支援課 高齢者福祉係（市役所本庁舎4階）
+  url: https://www.city.sanda.lg.jp/soshiki/31/gyomu/kourei_fukushi_kaigo/support_koreisha/2219.html
+  confidence: high
+  amount: 賠償責任は 1 事故最大 1 億円、見舞費用は 15 万円。保険料は市が負担
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,210 @@
+city: '122220'
+name: 我孫子市
+site: www.city.abiko.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 夕食の配食と安否確認
+  name_on_page: 配食サービス
+  summary: 栄養バランスのとれた夕食を自宅に届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 心身機能の低下で調理や外出が困難
+  - 高齢者のみ世帯か、介護者が12時間以上不在の世帯
+  - 安否確認が必要
+  where: 高齢者なんでも相談室、高齢者支援課 地域包括ケア係
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+  confidence: high
+  amount: 1食420円（令和8年5月18日から。それ以前は400円）
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報機器の設置
+  name_on_page: 緊急通報システム
+  summary: ボタン一つで市委託の受信センターにつながる通報機器を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 疾患などによる発作や急変のおそれが高い
+  - 高齢者のみ世帯か、介護者が12時間以上不在の世帯
+  where: 高齢者なんでも相談室、高齢者支援課 地域包括ケア係
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+  confidence: high
+  amount: 月500円。生計中心者が市民税非課税等、または所得135万円以下は無料
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+- category: haikai
+  name: 見守り安心GPSの貸与
+  name_on_page: 見守り安心GPS貸与事業（徘徊探知システム）
+  summary: ひとり歩きの高齢者の居場所を、家族がパソコン等で調べられる端末を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等でひとり歩き（徘徊）の症状がある
+  - 65歳未満の若年性認知症の人も対象
+  where: 高齢者なんでも相談室、高齢者支援課 地域包括ケア係
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+  confidence: high
+  amount: 月500円。生計中心者が市民税非課税等、または所得135万円以下は無料
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 認知症高齢者等に見守りシールを交付します
+  summary: 保護された時に発見者が家族へ連絡できる、QRコード付きシールを交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 我孫子市に住民票がある
+  - ひとり歩きで警察への相談・通報・保護の経験がある
+  - 65歳未満の若年性認知症の人も対象
+  where: 各地区の高齢者なんでも相談室に申請し、高齢者支援課で受け取る
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/ninchi/koureisyamimamori.html
+  confidence: high
+  amount: 初回は40枚セットを無料で交付。追加交付はない
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+- category: mimamori
+  name: お元気コール（定期の安否確認電話）
+  name_on_page: お元気コール
+  summary: 高齢者なんでも相談室が定期的に電話して、安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 高齢者のみ世帯か、介護者が12時間以上不在の世帯
+  where: 地区の高齢者なんでも相談室、高齢者支援課 地域包括ケア係
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+- category: ribiyo
+  name: 寝たきり高齢者への訪問理髪
+  name_on_page: 理髪サービス
+  summary: 外出が難しい寝たきりの高齢者の自宅に、理髪業者を派遣する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきりまたは認知症の症状が6カ月以上続いている
+  - 車いすでも姿勢保持が難しく、外出が難しい
+  where: 高齢者支援課 地域包括ケア係
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+  confidence: high
+  amount: 1回1,000円（非課税世帯は無料）。年1〜4枚の利用券
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+- category: gaishutsu
+  name: 要介護3以上の通院・通所タクシー助成
+  name_on_page: 移送サービス
+  summary: 通院・通所のタクシー代の一部を、利用券で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 障害者手帳1・2級等の人は福祉タクシー助成が優先
+  - 市と契約したタクシー会社等のみ利用できる
+  where: 高齢者支援課 高齢者福祉係（郵送でも申請可）
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+  confidence: high
+  amount: 月4枚。タクシーは1回500円、特殊車両は3,000円まで助成
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+- category: sonota
+  name: ごみ出し支援（戸別収集）
+  name_on_page: ごみ出し支援ふれあい収集事業
+  summary: ごみ出しが難しい高齢者や障害者の家へ、戸別にごみ収集に伺う。
+  who: {}
+  at_application:
+  - ごみ出しが困難で、他に協力が得られない
+  - ひとり暮らしの高齢者や障害者が対象
+  - 詳しい条件は生活衛生課で確認
+  where: 生活衛生課 生活環境係
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/koureisha_service.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+- category: sonota
+  name: 寝たきり・重度認知症の高齢者への福祉手当
+  name_on_page: 寝たきり高齢者等の福祉手当
+  summary: 寝たきりや重度認知症の高齢者に、手当を年2回に分けて支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきりまたは重度認知症が、おおむね6カ月以上続く
+  - 本人か配偶者が所得割課税なら不支給。均等割のみは半額
+  - 特別障害者手当・生活保護を受けていない
+  - 医師の診断書または意見書が必要
+  where: 高齢者支援課
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/netakiri.html
+  confidence: high
+  amount: 月6,500円（半額支給の場合は3,250円）
+- category: sonota
+  name: はり・きゅう・マッサージの施術利用券
+  name_on_page: はり・きゅう・マッサージの補助（後期高齢者医療）
+  summary: 後期高齢者医療の被保険者に、市指定の施術所で使える利用券を交付する。
+  who: {}
+  at_application:
+  - 後期高齢者医療の被保険者
+  - 前年度までの後期高齢者医療保険料を完納している
+  where: 国保年金課、各行政サービスセンター（郵送可）
+  url: https://www.city.abiko.chiba.jp/kenko/koukikoureisha/seido/hari_kyu.html
+  confidence: high
+  amount: 利用券1枚で1,000円補助。1日1枚、年12枚まで
+- category: sonota
+  name: 居宅介護サービス費の上乗せ助成
+  name_on_page: 居宅介護支援事業
+  summary: 介護保険の利用料の減免に関する制度。詳細は窓口で確認。
+  who: {}
+  at_application:
+  - 利用料の減免の制度。条件は窓口で確認
+  where: 高齢者支援課 介護保険係
+  url: https://www.city.abiko.chiba.jp/kenko/koureishafukushi/live_sup/kirameki_r7.files/kirameki8-9.pdf
+  confidence: high
+- category: koken
+  name: 成年後見の利用支援（市長申立て・報酬等の助成）
+  name_on_page: 市長申立てと制度の利用支援について
+  summary: 市長申立ての対象者らに、後見人の報酬等の経費を助成する制度がある。
+  who: {}
+  at_application:
+  - 市長申立ての対象者や生活保護の被保護者など
+  - 助成がないと成年後見の利用が困難な人
+  where: 高齢者支援課 健康推進係
+  url: https://www.city.abiko.chiba.jp/kenko/seikatsushien/shakaiengo/seinenkouken.html
+  confidence: low
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- shingu
+- nichijo-yogu
+- jutaku

@@ -1,0 +1,137 @@
+city: '272086'
+name: 貝塚市
+site: www.city.kaizuka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給事業
+  summary: 在宅でおむつが常に必要な高齢者に、カタログから選んだ紙おむつを毎月自宅へ届ける。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4以上、または要介護3で調査票の排尿・排便が介助か見守り等
+  - 高齢者向け施設の入所者は対象外
+  - 毎月1日時点で全条件を満たす必要がある
+  - 市内に住民票があり、実際に居住している
+  where: 高齢介護課 高齢者支援担当
+  url: https://www.city.kaizuka.lg.jp/kakuka/kenkohukushi/koreikaigo/menu/hukushi/kamiomutu.html
+  confidence: high
+  amount: 月額5,500円（税込）を上限に紙おむつを支給。超えた分は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: ひとり暮らし等の高齢者に、ボタンを押すと通報先へつながる装置を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 次のいずれか：寝たきり度A-2・B・C／身体障害者手帳1・2級／心疾患等で常時注意が必要
+  - 固定電話の回線と協力員2名が必要
+  - 市内に住民票があり、実際に居住している
+  where: 高齢介護課 高齢者支援担当
+  url: https://www.city.kaizuka.lg.jp/kakuka/kenkohukushi/koreikaigo/menu/hukushi/kinkyuutuuyou.html
+  confidence: high
+  amount: 利用料は月1,430円（税込）。要介護1以上で世帯が市民税非課税なら免除
+- category: nichijo-yogu
+  name: 電磁調理器などの給付
+  name_on_page: 日常生活用具の給付
+  summary: 出火が心配な高齢者世帯に、電磁調理器・火災報知機・自動消火器のうち1種類を給付する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能の低下で出火への配慮が必要と認められる
+  - 市内に住民票があり、実際に居住している
+  where: 高齢介護課 高齢者支援担当
+  url: https://www.city.kaizuka.lg.jp/kakuka/kenkohukushi/koreikaigo/menu/hukushi/nichigukyuuhu.html
+  confidence: high
+  amount: 費用負担は、生計中心者の前年分の所得税額で決まる
+- category: mimamori
+  name: 乳酸菌飲料を配る安否確認
+  name_on_page: 愛の一声運動
+  summary: ひとり暮らし等の高齢者に、乳酸菌飲料を届けながら声をかけて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 寝たきり、病気がち等で安否確認が必要と認められる
+  - 市内に住民票があり、実際に居住している
+  where: 高齢介護課 高齢者支援担当
+  url: https://www.city.kaizuka.lg.jp/kakuka/kenkohukushi/koreikaigo/menu/hukushi/ainohitokoe.html
+  confidence: high
+  amount: 利用料は無料。週6回まで（祝日・年末年始を除く）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 市民税非課税世帯の高齢者が初めて補聴器を買うとき、費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 医師に補聴器が必要と認められ、初めて購入する
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 助成決定前に買った補聴器は対象外
+  where: 高齢介護課 高齢者支援担当
+  url: https://www.city.kaizuka.lg.jp/kakuka/kenkohukushi/koreikaigo/menu/hukushi/hotyoukijosei.html
+  confidence: high
+  amount: 補聴器1台分の費用の2分の1、上限25,000円。1人1回まで
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見人等報酬助成
+  summary: 成年後見人等への報酬を払うのが難しい人に、報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 市内在住で判断能力が不十分、後見等の登記がある
+  - 生活保護受給者、または収入・資産が少ない（資産50万円以下など）
+  - 後見人が親族や市民後見人の場合は対象外
+  - 報酬付与の審判から3か月以内に申請
+  where: 高齢介護課 高齢者支援担当（65歳以上の場合）
+  url: https://www.city.kaizuka.lg.jp/kakuka/kenkohukushi/koreikaigo/menu/hukushi/seinenkoukenhousyujosei.html
+  confidence: high
+  amount: 月額上限は、施設入所・入院中が18,000円、その他が28,000円
+  more_urls:
+  - https://www.city.kaizuka.lg.jp/material/files/group/17/housyujoseiyoukou.pdf
+- category: sonota
+  name: ひとり暮らし高齢者の水道料金減免
+  name_on_page: 水道料金の福祉減免制度
+  summary: ひとり暮らしの高齢者の水道料金のうち、基本使用水量分を免除する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 水道サービス課
+  url: https://www.city.kaizuka.lg.jp/kakuka/kenkohukushi/koreikaigo/menu/hukushi/sonotajigyo.html
+  confidence: high
+  amount: 基本使用水量分を免除
+not_found:
+- haishoku
+- haikai
+- iro
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu

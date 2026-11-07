@@ -1,0 +1,236 @@
+city: '372056'
+name: 観音寺市
+site: www.city.kanonji.kagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ支給事業
+  name_on_page: おむつ支給事業
+  summary: 在宅で要介護3〜5の高齢者に、紙おむつなどを現物で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 月 5,000 円までの現物支給
+- category: iro
+  name: ねたきり者の在宅介護手当
+  name_on_page: ねたきり者在宅介護手当支給事業
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 介護される人が65歳以上
+  - 月15日以上在宅で介護している家族
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 月 5,000 円
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容事業
+  summary: 理容店や美容院に行けない人の自宅へ、理容師・美容師が来てカット等をする。
+  who: {}
+  at_application:
+  - 65歳以上で一人暮らしか高齢者のみの世帯、または身体障害者
+  - 心身の障害や傷病で理美容店に行くのが難しい
+  - 市内に住所がある
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 1 回 2,600 円（利用者負担）。3 か月に 1 回、年 4 回まで
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 寝具の手入れが難しい人の布団・毛布を洗濯・乾燥・消毒する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  - 心身の障害や傷病で寝具の衛生管理が難しい
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 利用者負担は 3 点一式 1,000 円、4 点一式 1,500 円。年 2 回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしで不安のある人に、急病時などに通報できる装置を貸す。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上、または一人暮らしの重度障害者
+  - 日常生活に不安がある
+  - 協力員 2 名が必要
+  - 市内に住所がある
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 利用料は無料。通話料は自己負担
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付
+  name_on_page: 老人日常生活用具給付事業
+  summary: ひとり暮らしで火の元が不安な高齢者に、火災報知器などを給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に住所がある
+  - 防火などの配慮が必要
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+- category: jutaku
+  name: 高齢者の介護予防住宅改修費助成
+  name_on_page: 高齢者介護予防住宅改修費助成事業
+  summary: 転倒防止の手すり取付や段差解消などの改修費の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上の一人暮らし、または75歳以上を含む65歳以上のみの世帯
+  - 生活機能や運動機能の低下が認められる
+  - 世帯に要支援・要介護認定を受けた人がいない
+  - 他の住宅改修の公的助成を受けていない
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 改修費の 9 割。限度額 45,000 円
+- category: haikai
+  name: 認知症高齢者等徘徊SOSネットワーク（事前登録・反射ステッカー）
+  name_on_page: 観音寺市認知症高齢者等徘徊ＳＯＳネットワーク
+  summary: 徘徊のおそれのある人を事前登録し、行方不明時の情報発信と反射ステッカーの配布を受ける。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に居住している
+  - 申請は本人・親族・同居か同居に準ずる介護者
+  - 本人の写真 2 枚が必要
+  where: 高齢介護課 高齢者福祉係、各支所
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/10597.html
+  confidence: high
+  amount: 反射ステッカーを 1 人 20 枚配布
+  more_urls:
+  - https://www.city.kanonji.kagawa.jp/soshiki/16/25545.html
+- category: gaishutsu
+  name: シルバーわくわくタクシーチケット
+  name_on_page: 観音寺市シルバーわくわくタクシーチケット事業
+  summary: 運転免許のない在宅の 75 歳以上に、タクシーチケットを交付する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 住民登録が市内にある
+  - 年齢は年度の4月1日時点
+  - 自動車（原付・二輪含む）の運転免許を持たない
+  - 病院・施設に入院・入所していない
+  where: 高齢介護課（市から送る申請書を返送）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/68835.html
+  confidence: high
+  amount: 1 人 1 万円分（500 円券 20 枚）。令和8年度は10月1日〜3月31日使用
+- category: gaishutsu
+  name: 運転免許返納者へのバス券・タクシー券
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 免許を返納した 65〜74 歳に、のりあいバス回数券かタクシー利用券を渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 75歳未満
+  - 運転免許証を返納した
+  - 過去に回数券等の支援を受けていない
+  where: 地域支援課、各支所
+  url: https://www.city.kanonji.kagawa.jp/soshiki/7/9704.html
+  confidence: high
+  amount: バス回数券1万円分、タクシー券5千円分＋バス5千円分、タクシー券1万円分から選ぶ。1人1回
+- category: sonota
+  name: コミュニティ入浴券（入浴料の助成）
+  name_on_page: コミュニティ入浴事業
+  summary: 指定の公衆浴場等で使える、1 枚 100 円分の入浴助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 年齢は申請時点で判定
+  - 年齢と本人確認の書類が必要
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 年 48 枚まで（月 4 枚）。1 枚につき市が 100 円助成
+  more_urls:
+  - https://www.city.kanonji.kagawa.jp/soshiki/16/1507.html
+- category: sonota
+  name: 老人入浴サービス（無料入浴券）
+  name_on_page: 老人入浴サービス事業
+  summary: 自宅に風呂がない高齢者に、市内の公衆浴場で使える入浴券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 自宅に入浴設備がない
+  - 地区民生委員の意見書が必要
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 月 4 枚を必要な月数分
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与事業
+  summary: 電話のないひとり暮らしの人に、電話を取り付けて貸す。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上、または一人暮らしの重度障害者
+  - 市内に住所がある
+  - 電話を持っていない
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 電話機の貸与（通話料は自己負担）
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護が一時的に必要な高齢者が、老人ホームに短期間泊まって世話を受ける。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護・要支援の認定を受けていない
+  - 主治医の意見書が必要
+  where: 高齢介護課 高齢者福祉係、各支所（大野原・豊浜・伊吹）
+  url: https://www.city.kanonji.kagawa.jp/soshiki/16/1490.html
+  confidence: high
+  amount: 利用料 1 日 1,730 円。7 日間まで
+not_found:
+- haishoku
+- koken
+- mimamori

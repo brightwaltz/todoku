@@ -1,0 +1,84 @@
+city: '432105'
+name: 菊池市
+site: www.city.kikuchi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 見守りシール（どこシル伝言板）
+  name_on_page: 見守りシール(どこシル伝言板)
+  summary: 徘徊のおそれがある事前登録者に、二次元コード付きのシールを配り、発見時に保護者へ連絡が届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 菊池市高齢者地域見守りネットワークへの事前登録が必要
+  - 登録は地域包括支援センターに登録届と写真を出す
+  where: 高齢支援課 地域包括支援係（地域包括支援センター）
+  url: https://www.city.kikuchi.lg.jp/article/view/1172/241.html
+  confidence: high
+  more_urls:
+  - https://www.city.kikuchi.lg.jp/d?q=4524451a1e96413efb37e013a7324768.pdf
+- category: haishoku
+  name: 配食見守りネットワーク事業
+  name_on_page: 配食見守りネットワーク事業
+  summary: 食事の準備が難しく安否確認が必要な高齢者に、昼食を届けて栄養改善と安否確認を行う。
+  who: {}
+  at_application:
+  - 食事の準備が困難で、定期的な安否確認が必要な高齢者
+  - 対象者の条件がある（詳しい条件は頁に無し）
+  where: 高齢支援課 地域包括支援係
+  url: https://www.city.kikuchi.lg.jp/d?q=8966603d7af284fac579150a0e76227d.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 在宅老人等緊急通報システム事業
+  name_on_page: 在宅老人等緊急通報システム事業
+  summary: ひとり暮らし等の高齢者の家に、急病や災害時の連絡通報装置を設置する。
+  who: {}
+  at_application:
+  - ひとり暮らし等の高齢者
+  - 対象者の条件がある（詳しい条件は頁に無し）
+  where: 高齢支援課
+  url: https://www.city.kikuchi.lg.jp/d?q=4524451a1e96413efb37e013a7324768.pdf
+  confidence: low
+- category: sonota
+  name: 緊急医療情報キット（命のバトン）の交付
+  name_on_page: 緊急医療情報キット(命のバトン)
+  summary: 緊急連絡先や病歴を入れる容器とステッカーを無料で配り、冷蔵庫に保管して救急時に備える。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯の人
+  - 昼間だけ高齢者のみの人も申請できる
+  - 障がい者手帳をお持ちの人、その他市長が必要と認める人も対象
+  where: 福祉課または各支所の市民生活課
+  url: https://www.city.kikuchi.lg.jp/article/view/1169/936.html
+  confidence: high
+  amount: 容器一式とステッカーを無料で交付
+- category: gaishutsu
+  name: 自動車運転免許証自主返納者への支援事業
+  name_on_page: 自動車運転免許証自主返納者への支援事業
+  summary: 運転免許を自主返納した65歳以上の市民に、商品券か、べんりカー・あいのりタクシーのチケットを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいて、免許の返納日に満65歳以上
+  - 自主返納日から1年以内の申請が必要
+  - 免許の一部返納は対象外。交付は1人1枚
+  where: 防災交通課
+  url: https://www.city.kikuchi.lg.jp/d?q=29a3a489465743de76e66385a6769aa2.pdf
+  confidence: low
+  amount: めぐるん券1,000円相当、またはべんりカー・あいのりタクシー用の15,000円相当のチケット
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu
+- yutai

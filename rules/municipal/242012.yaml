@@ -1,0 +1,154 @@
+city: '242012'
+name: 津市
+site: www.info.city.tsu.mie.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等給付事業
+  summary: 常時紙おむつが必要な在宅の人に、紙おむつ等を月1回届けて給付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりや認知症などで失禁状態にあり常時紙おむつが必要
+  - 本人が課税の人は令和6年度から対象外
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  amount: 無料の現物給付。テープ・パンツ・尿取りパッドから選べて、月1回配達
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+  - https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003164.html
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい高齢者に食事を届け、あわせて安否を確認する。
+  who:
+    at_home: true
+  at_application:
+  - 調理が困難な在宅の高齢者など
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+- category: haikai
+  name: 徘徊SOSネットワーク
+  name_on_page: 徘徊SOSネットワーク津
+  summary: 行方不明時に、事前登録した人の特徴を協力機関へメール配信して捜索協力を求める。
+  who: {}
+  at_application:
+  - 認知症の人などで事前の登録申請が必要
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+- category: haikai
+  name: 徘徊探知機の購入費補助
+  name_on_page: 津市高齢者徘徊探知機購入費等補助事業
+  summary: 徘徊のおそれがある人の探知機（GPS等）の購入費の半額を補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊が認められる
+  - 徘徊SOSネットワーク津に登録した人
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  amount: 購入費（リースは初期費用）の1/2、上限1万円。毎月の費用は自己負担
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/haikaitanchi.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 介護保険を使わず在宅の高齢者を介護している家族に慰労金を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護保険を利用せず在宅で高齢者を介護している家族
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+- category: koken
+  name: 成年後見制度利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族が申し立てできない人の申し立てを市長が代わり、費用を負担できない人には経費を助成する。
+  who: {}
+  at_application:
+  - 身寄りがない、または親族の申し立てが難しい
+  - 費用を負担できない人が助成の対象
+  where: 津市成年後見サポートセンター（中核機関）、高齢福祉課
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置事業
+  summary: 簡単な操作で通報できる緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - 一人暮らし高齢者等
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 高齢者訪問理美容サービス事業
+  summary: 理美容院に出向くことが困難な高齢者の居宅へ訪問して理美容を行う。
+  who: {}
+  at_application:
+  - 理髪店や美容院に出向くことが困難な高齢者
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+- category: gaishutsu
+  name: シルバーエミカ（バス乗車ポイント付きカード）の交付
+  name_on_page: 高齢者外出支援事業
+  summary: 路線バス等に使える2,000ポイント付きICカードを交付し、コミュニティバスは200円引きになる。
+  who:
+    age_min: 65
+  at_application:
+  - 申請する年度内に65歳になる人も対象
+  - マイナンバーカードと暗証番号が必要
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）
+  url: https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+  confidence: high
+  amount: 2,000ポイント（1ポイント1円）。使った分を翌年度チャージ。コミュニティバスは200円割引
+- category: nichijo-yogu
+  name: 日常生活用具（火災警報器・自動消火器・電磁調理器）の給付
+  name_on_page: 老人日常生活用具給付等事業
+  summary: 日常生活に支障のある高齢者に、火災警報器・自動消火器・電磁調理器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者等
+  - 寝たきりや認知症などで日常生活に支障がある
+  where: 高齢福祉課、各総合支所市民福祉課（福祉課）、在宅介護支援センター、地域包括支援センター
+  url: https://www.info.city.tsu.mie.jp/fukushi_kenkou/koureisha_fukushi/1009861/1003145.html
+  confidence: high
+  more_urls:
+  - https://www.info.city.tsu.mie.jp/_res/projects/default_project/_page_/001/003/145/hukusitohiken.pdf
+not_found:
+- hochoki
+- jutaku
+- mimamori

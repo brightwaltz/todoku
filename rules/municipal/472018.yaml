@@ -1,0 +1,173 @@
+city: '472018'
+name: 那覇市
+site: www.city.naha.okinawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援（昼食の配達）
+  name_on_page: 食の自立支援事業
+  summary: 自分で食事の準備ができない高齢者に、昼食を最大週4回届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 近くに扶養義務者がいない、または支援を受けられない事情がある
+  - 自分で食事の準備ができない
+  where: お住まいの地域担当の地域包括支援センター
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+  amount: 最大週4回の昼食。利用者負担は1食200〜400円
+- category: sonota
+  name: 軽度の家事援助（買い物・掃除）
+  name_on_page: 軽度生活援助事業
+  summary: 日常生活の援助が必要な人に、買い物や掃除などの家事援助の補助員を派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 介護保険の対象とならない人
+  - 市民税非課税
+  - 日常生活の援助が必要
+  where: お住まいの地域担当の地域包括支援センター
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+  amount: 利用者負担は1時間150円、月4時間以内
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 急病や事故を通報センターに知らせる緊急通報装置を設置し、月1回の定期コールもある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 慢性疾患などで生死に関わる危険性が高い
+  - 固定電話があり、医師の診断書（特定様式）が必要
+  - 近所の協力員2人と住居立入り承諾書が必要
+  where: お住まいの地域担当の地域包括支援センター
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+  amount: 装置は設置。電話料金・電気料金は本人負担
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 高齢者福祉電話設置事業
+  summary: 電話を持たないひとり暮らしの高齢者に福祉電話を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市民税非課税
+  - 電話を持っていない
+  where: お住まいの地域担当の地域包括支援センター
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+  amount: 通話料は本人負担
+- category: gaishutsu
+  name: 外出支援（通院などの送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 一般の交通機関が使いにくい人を、自宅から医療機関等へ送迎する。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきりや車いす利用で一般の交通機関の利用が困難
+  where: お住まいの地域担当の地域包括支援センター
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+  amount: 片道480円、月往復2回まで。範囲は那覇市内・隣接市町村・指定の4病院
+- category: mimamori
+  name: 定期の電話による安否確認
+  name_on_page: ふれあいコール事業
+  summary: 孤独感の強いひとり暮らしの高齢者に定期的に電話をかけ、安否を確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 不安感や孤独感が強い
+  - 協力員の確保と住居立入りの承諾が必要
+  - 緊急通報システム利用者は対象外
+  where: お住まいの地域担当の地域包括支援センター
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5相当の在宅高齢者を介護する家族に、紙おむつ等を自宅へ届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4または5に相当する人を介護している家族が対象
+  where: お住まいの地域担当の地域包括支援センター
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+  amount: 月8,333円まで。超えた分は自己負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 介護サービスを使わず在宅で介護を続けた家族に、年10万円の一時金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 認定期間の1年間、介護保険サービスを受けていない
+  - 短期入所は1週間以内ならよい
+  - 連続90日以上（合算180日以上）の入院がない
+  - 支給先は主に介護する同居親族（市民税非課税世帯）
+  where: ちゃーがんじゅう課 在宅福祉グループ
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003069.html
+  confidence: high
+  amount: 年額10万円の一時金
+- category: hochoki
+  name: 加齢性難聴者の補聴器購入費助成
+  name_on_page: 加齢性難聴者に対する補聴器購入費の助成
+  summary: 加齢で聞こえにくい人の補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 障害者総合支援法の補装具で補聴器の交付を受けられない
+  - 両耳50dB以上、または片耳40dB以上かつ他耳80dB以上
+  - 耳鼻咽喉科医が補聴器の使用を必要と判断
+  - 助成を受けたことがない（1人1回）
+  - 助成が決まる前の購入は対象外
+  where: ちゃーがんじゅう課 在宅福祉グループ
+  url: https://www.city.naha.okinawa.jp/fukusi/koureisyafukusi/1003057/1003062/1003063.html
+  confidence: high
+  amount: 補聴器本体の購入費で上限2万5千円
+not_found:
+- haikai
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu

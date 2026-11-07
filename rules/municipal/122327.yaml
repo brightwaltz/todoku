@@ -1,0 +1,156 @@
+city: '122327'
+name: 白井市
+site: www.city.shiroi.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 急病や災害のときにボタンで通報できる装置を自宅に貸してもらえる。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の独居（日中独居を含む）か高齢者のみの世帯
+  - または6カ月以上寝たきりの65歳以上の人
+  - または身体障害者手帳1・2級で単身世帯の人
+  where: 高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/k03/1423222467937.html
+  confidence: high
+  amount: 月額の自己負担は課税世帯300円、非課税世帯150円、生活保護世帯は無料
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 高齢者等訪問理美容サービス
+  summary: 理容院・美容院に行けない人の自宅へ理美容師が来て、出張費用の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の高齢者や重度の心身障害者など
+  - 身体の状態で理容院・美容院へ行くことが困難な人
+  where: 高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/k03/1423222467937.html
+  confidence: high
+  amount: 年4回まで。1回の自己負担は課税世帯300円、非課税世帯150円、生活保護世帯は無料。散髪料金3,000円は自己負担
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等の給付
+  summary: 住民税非課税で自宅でおむつを使う人に、紙おむつを現物で給付する。
+  who:
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で白井市の要介護3〜5の認定（介護保険料の滞納なし）
+  - または身体障害者手帳1・2級を持つ人
+  - 18歳未満の場合は扶養者が住民税非課税であること
+  where: 高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/k03/1423222467937.html
+  confidence: high
+  amount: 無料。紙おむつの種類ごとに上限枚数がある
+- category: sonota
+  name: 介護支援型短期宿泊事業
+  name_on_page: 介護支援型短期宿泊事業
+  summary: 介護者の病気などで自宅での介護が難しいとき、施設で一時的に介護してもらえる。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護状態になる恐れの高い虚弱な人、または緊急の保護が必要な人
+  - 本人や介護者の病気・冠婚葬祭・虐待などで居宅生活が困難なとき
+  where: 高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/k03/1423222467937.html
+  confidence: high
+  amount: 6カ月で7日以内（虐待は20日以内）。1日の自己負担は課税世帯550円、非課税世帯270円、生活保護世帯は無料。食費・居住費は別
+- category: gaishutsu
+  name: 福祉タクシー券の交付
+  name_on_page: 福祉タクシー
+  summary: 要介護の在宅高齢者に、タクシー料金の半額を助成する券を交付する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 介護保険被保険者証を申請時に持参
+  where: 高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/k03/1423222467937.html
+  confidence: high
+  amount: 乗車料金の半額（1回の限度額1,000円）。券は月4枚（年48枚）
+- category: gaishutsu
+  name: 福祉車両（リフト付きワゴン車）の貸出
+  name_on_page: 福祉車両の貸出
+  summary: 車いすのまま乗れるリフト付きワゴン車を無料で借りられる。
+  who: {}
+  at_application:
+  - 市内に住所があり車いすを利用している人
+  - 65歳以上の高齢者や高齢者のいる家族、障害のある人やその家族など
+  - 貸出は1回7日間まで。燃料は返却時に補給
+  where: 障害福祉課
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/k03/1423222467937.html
+  confidence: low
+  amount: 貸出は無料（使った燃料は返却時に補給）
+- category: mimamori
+  name: お元気みまもり事業
+  name_on_page: ひとり暮らし高齢者等見守り事業（お元気みまもり事業）
+  summary: 住民の訪問や団体の電話で、月2回ほど安否を確認してもらえる。
+  who: {}
+  at_application:
+  - 市内在住で、原則、公的サービスによる週1回以上の訪問がない人
+  - ひとり暮らしの65歳以上、または高齢者のみ世帯の75歳以上
+  - または日中ひとりになる75歳以上、見守りが必要なおおむね65歳以上
+  where: 地域包括支援センター（市内3か所）、高齢者福祉課 地域包括ケア推進係
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/mimamori/1499939242174.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立費用の助成
+  name_on_page: 申立費用の助成
+  summary: 成年後見の申立てにかかった手数料や診断書代などを、一定の要件で助成する。
+  who: {}
+  at_application:
+  - 申立人の収入や預貯金が乏しい、または生活保護を受けている
+  - 世帯に費用を負担できる収入・預貯金があると対象外
+  - 家庭裁判所の審判が確定した後に申請
+  where: 高齢者福祉課 地域包括ケア推進係（65歳以上の場合）
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/kenri/1421814126953.html
+  confidence: high
+  amount: 申立てに必要な手数料、登記印紙代、鑑定料、診断書作成費用などが対象
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 報酬の助成
+  summary: 本人の収入や財産が少なく、後見人等への報酬を払うのが難しいとき、報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護世帯、または報酬を払うと世帯の生計維持が困難な場合
+  - 後見人等が親族（配偶者・直系血族・兄弟姉妹）の場合は対象外
+  where: 高齢者福祉課 地域包括ケア推進係（65歳以上の場合）
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/kenri/1421814126953.html
+  confidence: high
+  amount: 月額の上限は、在宅で28,000円、施設入所で18,000円
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 白井市救急医療情報キットの配布
+  summary: 緊急連絡先やかかりつけ医の情報を入れる容器を配り、冷蔵庫に保管してもらう。
+  who: {}
+  at_application:
+  - 65歳以上の1人暮らしか高齢者のみ世帯（日中独居を含む）
+  - または障害者手帳を持つ人
+  where: 高齢者福祉課、障害福祉課、地域包括支援センター（市内3か所）
+  url: https://www.city.shiroi.chiba.jp/kenko/koreisha/zaitaku/1514424578266.html
+  confidence: high
+  amount: 専用容器、情報シート、シール2枚のセットを配布
+not_found:
+- haishoku
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu

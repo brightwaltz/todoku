@@ -1,0 +1,126 @@
+city: '222160'
+name: 袋井市
+site: www.city.fukuroi.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム機器の貸与
+  summary: 急な体調悪化時にボタンで通報できる機器を貸与する（レンタル料・設置料は市負担）。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 65歳以上の在宅ひとり暮らし、またはねたきり高齢者と同居する高齢者のみ世帯
+  - 前年（1〜6月申請は前々年）の所得が限度額以下
+  where: 健康長寿課地域包括ケア推進係（はーとふるプラザ袋井）、浅羽支所市民サービス課
+  url: https://www.city.fukuroi.shizuoka.jp/soshiki/10/1003/korei_service/josei/1422533213597.html
+  confidence: high
+  amount: 機器のレンタル料と設置料は市が負担。通報時の通話料は利用者負担。
+- category: kaigo-yohin
+  name: ねたきり高齢者等の紙おむつ購入費助成
+  name_on_page: ねたきり高齢者等紙おむつ購入費助成
+  summary: 在宅で要介護4以上などの市民税非課税の方に、紙おむつ購入代金を毎月補助する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅での生活が3か月以上続いている（入院・入所は含まない）
+  - 要介護4以上、または排泄に介助・見守りが必要などの状態
+  - ねたきりまたは認知症の高齢者
+  where: 健康長寿課地域包括ケア推進係、浅羽支所市民サービス課（電子申請も可）
+  url: https://www.city.fukuroi.shizuoka.jp/soshiki/10/1003/korei_service/josei/1422533219437.html
+  confidence: high
+  amount: 1か月あたり1,250円分の紙おむつ購入代金を補助
+- category: ribiyo
+  name: 高齢者等訪問理美容サービスの助成
+  name_on_page: 高齢者等訪問理美容サービスの助成
+  summary: 理美容店に行けない在宅の方が自宅で理美容を受ける際の出張費を、利用券で助成する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、理美容店へ行くのが困難な高齢者等
+  - 原則要介護3以上（要介護1・2は意見書と訪問調査で判断）
+  - 施設に入所している方は対象外
+  where: 健康長寿課地域包括ケア推進係、保険課介護保険係、支所市民サービス課
+  url: https://www.city.fukuroi.shizuoka.jp/soshiki/10/1003/korei_service/josei/f_ribiyou_service.html
+  confidence: high
+  amount: 1回の出張につき2,000円の利用券を、年度ごとに1人4枚交付
+- category: haishoku
+  name: 高齢者等配食サービスの助成
+  name_on_page: 高齢者等配食サービスの助成
+  summary: 買い物や調理が難しい在宅高齢者に、昼食・夕食の配食費を1食分補助し、見守り確認も行う。
+  who:
+    at_home: true
+  at_application:
+  - 要介護1以上、または自立度がランクA相当以上・認知症自立度IIa以上
+  - 65歳未満（要介護認定なし）の方と同居していない
+  - 前年の所得が老齢福祉年金の所得制限限度額以下
+  - 介護保険料の滞納がない
+  where: 健康長寿課地域包括ケア推進係（電子申請も可）
+  url: https://www.city.fukuroi.shizuoka.jp/soshiki/10/1003/korei_service/josei/1422533212751.html
+  confidence: high
+  amount: 1食あたり290円を補助（月〜土の昼・夕、週10食まで）
+- category: hochoki
+  name: 加齢性難聴者の補聴器購入費助成
+  name_on_page: 加齢性難聴者補聴器購入費助成事業
+  summary: 加齢性難聴で補聴器が必要な方に、認定店で買う補聴器代の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民票があり、市税の滞納がない
+  - 聴力40dB以上70dB未満で、補聴器相談医が装用を有効と認めた
+  - 聴覚障害の身体障害者手帳の対象でない
+  - 過去に本制度の助成を受けていない
+  - 購入前に申請する（購入後は対象外）
+  where: 健康長寿課（はーとふるプラザ袋井）
+  url: https://www.city.fukuroi.shizuoka.jp/soshiki/10/1003/korei_service/josei/13944.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限3万円
+- category: haikai
+  name: はいかいSOSネットワーク・あんしん見守りシール
+  name_on_page: はいかいSOSネットワーク事業
+  summary: はいかいのおそれがある方を事前登録し、QRコード付きの見守りシールを無料で受け取れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に居住（または市内の施設に入所）するはいかいのおそれがある高齢者等
+  - 登録後に地域包括支援センター職員が訪問して確認する
+  where: 健康長寿課地域包括ケア推進係（電子申請も可）
+  url: https://www.city.fukuroi.shizuoka.jp/soshiki/10/1003/ninchisyou/1422533219268.html
+  confidence: high
+  amount: 登録・見守りシールとも本人・家族の費用負担なし
+- category: sonota
+  name: はり・きゅう・マッサージ施術券の交付
+  name_on_page: はり・きゅう・マッサージの施術費助成
+  summary: 市に登録された施術所で使える施術券を、75歳以上の方に年度ごとに交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 袋井市に住んでいる
+  - 保険診療には使えない
+  where: 健康長寿課地域包括ケア推進係、保険課介護保険係、支所市民サービス課
+  url: https://www.city.fukuroi.shizuoka.jp/soshiki/10/1003/korei_service/josei/hari_kyuu_massage_jyosei.html
+  confidence: high
+  amount: 1回1,000円の施術券を5枚つづり（計5,000円分）で年度に1冊
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- nichijo-yogu

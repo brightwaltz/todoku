@@ -1,0 +1,91 @@
+city: '362051'
+name: 吉野川市
+site: www.city.yoshinogawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 65歳以上の中等度難聴の人が補聴器本体を買うとき、費用の一部が助成される。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住んでいる
+  - 聴覚障がいの手帳を持っていない
+  - 原則、両耳の平均聴力が40dB以上70dB未満
+  - 医師が補聴器の必要を認めた（3か月以内の証明）
+  - 市税等の滞納がない
+  where: 長寿いきがい課 地域支援係
+  url: https://www.city.yoshinogawa.lg.jp/docs/2026040100027/
+  confidence: high
+  amount: 補聴器本体の購入につき上限3万円。集音器は対象外。購入前の申請が必要。
+- category: haishoku
+  name: 「食」の自立支援事業（配食と安否確認）
+  name_on_page: 「食」の自立支援事業
+  summary: 栄養バランスのよい食事を自宅へ届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等
+  - 食事の調理が難しい
+  - 美郷地域は対象外
+  where: 長寿いきがい課（申請書・調査表あり）
+  url: https://www.city.yoshinogawa.lg.jp/docs/2010100700838/
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしの人に緊急通報装置を貸し、急病などのときに対応する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65歳以上で慢性疾患により常時注意が必要、または満75歳以上
+  - ひとり暮らしの重度身体障がい者も対象
+  - 固定電話を接続できる
+  - 近くに住む協力員を2名以上置ける
+  where: 長寿いきがい課
+  url: https://www.city.yoshinogawa.lg.jp/docs/2010100700838/
+  confidence: high
+- category: gaishutsu
+  name: 高齢者等のタクシー料金助成
+  name_on_page: 吉野川市高齢者等外出支援タクシー料金助成事業
+  summary: 免許のない高齢者などに、市内のタクシー会社で使える助成券を交付する。
+  who:
+    household:
+    - alone
+    - alone_daytime
+    - elderly_only
+    at_home: true
+  at_application:
+  - 満75歳以上（障がい等で運転できない75歳未満も対象のことがある）
+  - 運転免許証を持っていない（自主返納者は可）
+  - 家族など第三者の常時の移動支援を受けられない
+  - 同居親族がいても日中不在なら可。75歳以上の夫婦のみも可
+  where: 市民生活課 生活あんしん係、または各支所（川島・山川・美郷）
+  url: https://www.city.yoshinogawa.lg.jp/docs/2026060400015/
+  confidence: high
+  amount: 令和8年度は500円券を12枚綴りで2冊、計12,000円分。美郷地区と山川町川田山地区は1冊3,000円で最大6冊まで追加できる。
+- category: sonota
+  name: 88歳の長寿祝金
+  name_on_page: ８８歳を迎えられる方の長寿祝金について
+  summary: 88歳を迎えた市民に、申請により祝金を口座へ振り込む。
+  who: {}
+  at_application:
+  - 88歳の誕生日時点で吉野川市に住民登録がある
+  - 令和8年4月1日以降に88歳になる人は誕生日が基準日
+  - それより前に88歳になった人は令和8年4月1日が基準日
+  where: 長寿いきがい課 高齢福祉係
+  url: https://www.city.yoshinogawa.lg.jp/docs/2026022400053/
+  confidence: high
+  amount: 1万円
+not_found:
+- kaigo-yohin
+- iro
+- ribiyo

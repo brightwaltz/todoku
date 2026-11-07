@@ -1,0 +1,169 @@
+city: '202126'
+name: 大町市
+site: www.city.omachi.nagano.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入助成事業補助金
+  summary: 高齢者の補聴器購入費の一部を補助する。購入前の申請が必要。
+  who: {}
+  at_application:
+  - 購入前に申請が必要
+  - 対象の条件は頁に無いので窓口で確認
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/oh57i67vaifsccgpjmtx0x9e
+  confidence: high
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 弁当を平日の昼・夕に届け、安否確認も行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の虚弱な方
+  - 食事づくりが困難な方
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: ペンダント式ボタンで 24 時間の受信センターに緊急連絡できる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+- category: gaishutsu
+  name: 福祉タクシー乗車券の交付
+  name_on_page: 福祉タクシー乗車券交付
+  summary: 外出でタクシーを使うときの料金の一部を、チケットで助成する。
+  who: {}
+  at_application:
+  - 身体障害者手帳を持つ人（障害名・級により対象外あり）
+  - または要支援〜要介護2の人がいる世帯で昼間の交通手段がない
+  - 後者は前年度所得税が非課税の世帯
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+  amount: 料金の一部（チケット方式）
+- category: iro
+  name: 寝たきり高齢者等の介護者への慰労金
+  name_on_page: 寝たきり高齢者等介護者慰労金事業
+  summary: 要介護3以上の寝たきりの人や認知症の人を自宅で介護する家族への慰労金。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 6か月以上続けて自宅で介護している
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+  amount: 年 10 万円
+- category: shingu
+  name: 寝具クリーニング費の助成
+  name_on_page: 寝たきり高齢者寝具クリーニング事業
+  summary: 寝具をクリーニングに出す費用の一部を援助する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定を受けている、または身体障害者手帳2級以上
+  - 1 世帯につき年 2 回まで
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+  amount: クリーニング費の一部（年 2 回まで）
+- category: jutaku
+  name: 要支援・要介護の高齢者の住宅整備の助成
+  name_on_page: 要援護高齢者住宅等整備事業
+  summary: 介護保険の住宅改修対象工事や居室・トイレ・風呂の新設改造費の一部を援助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯の所得税額の合算が8万円以下
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+  amount: 経費の一部
+- category: kaigo-yohin
+  name: おむつ引換券の交付
+  name_on_page: 介護用品引換券交付事業
+  summary: 要介護1以上の人を在宅で介護する非課税世帯に、おむつ引換券を渡す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+  amount: チケット方式（金額は頁に無し）
+- category: sonota
+  name: 雪下ろし費用の助成
+  name_on_page: 雪下ろし費用の扶助
+  summary: 積雪がおおむね70cm以上のとき、雪下ろし作業費の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 自分で雪下ろしができない
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+  amount: 1 回上限 8,000 円、年 2 回まで
+- category: sonota
+  name: 緊急時の施設宿泊費の補助
+  name_on_page: 緊急宿泊支援事業
+  summary: 介護者の入院や葬儀などで自宅介護が難しいとき、施設の宿泊費の一部を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護者の入院・葬儀などの緊急事由がある
+  where: 福祉課 高齢者・包括支援係
+  url: https://www.city.omachi.nagano.jp/kenko/fukushi/koreishafukushi/abgl29vtjdtatggrd2w1ldkc
+  confidence: low
+  amount: 宿泊費の一部
+not_found:
+- haikai
+- koken
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha

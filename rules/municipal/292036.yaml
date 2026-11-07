@@ -1,0 +1,182 @@
+city: '292036'
+name: 大和郡山市
+site: www.city.yamatokoriyama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給事業
+  summary: 常時おむつが必要な要介護3以上の非課税世帯の人に、紙おむつを無料で届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住んでいる
+  - 同じ住所の家族も住民税非課税
+  - 常時失禁状態にある
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8325.html
+  confidence: high
+  amount: 月あたり、フラット 120 枚、パンツ 60 枚、リハビリパンツ 30 枚、尿取りパッド 240 枚のいずれか（2 種類選ぶと半数ずつ）
+  more_urls:
+  - https://www.city.yamatokoriyama.lg.jp/section/reiki_int/reiki_honbun/k404RG00000609.html
+- category: haishoku
+  name: 高齢者への昼食の配食（安否確認つき）
+  name_on_page: 「食」の自立支援事業（昼食）
+  summary: 食事の支度が難しい人に、昼食を届けて安否も確認し、費用を一部補助する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上、または40〜64歳の初老期認知症で要介護認定を受けた人
+  - 食事の支度が困難
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8320.html
+  confidence: high
+  amount: 月〜金に週 3 回まで、1 食 450 円の自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置・あんしんライト
+  summary: ボタン一つでコールセンターに通報できる装置を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住んでいる
+  - 近親者・近隣の協力員・民生委員の登録が必要
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8337.html
+  confidence: high
+  amount: 月額 500 円（電話回線を使わない型は 800 円）、6 か月分前払。生活保護世帯は負担なし
+- category: mimamori
+  name: あんしんライトによる見守り
+  name_on_page: あんしんライト
+  summary: 通信機能付き電球が点灯・消灯しないと、事前登録した家族などにメールで知らせる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住んでいる
+  - 近親者等のメールアドレスの登録が必要
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8337.html
+  confidence: high
+  amount: 月額 500 円。生活保護世帯は負担なし
+- category: ribiyo
+  name: 訪問理美容の費用補助
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい寝たきりの高齢者が自宅で理髪を受ける費用を、一部補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 寝たきりで理美容店へ行くのが困難
+  - 原則として要介護4以上（詳細は相談）
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8348.html
+  confidence: high
+  amount: 年 4 回まで、1 回 1,000 円の自己負担
+- category: shingu
+  name: 布団の丸洗い
+  name_on_page: 布団丸洗いサービス
+  summary: 寝具の手入れが難しい人の布団を回収して洗い、乾かして届ける。費用は一部補助。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体機能の低下や病気で寝具の衛生管理が困難
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8356.html
+  confidence: high
+  amount: 年 2 回まで、自己負担 1 割
+- category: haikai
+  name: 認知症高齢者等 SOS ネットワークの事前登録
+  name_on_page: 大和郡山市認知症高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれがある人を事前登録し、市・警察・包括で情報を共有、登録番号シールを送る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む、認知症等で行方不明のおそれがある高齢者等
+  where: 地域包括ケア推進課 地域包括支援センター
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/3/4/1727.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等の見守り GPS 通信費の助成
+  name_on_page: 大和郡山市認知症高齢者等見守りGPS機器利用助成事業
+  summary: 介護保険で借りた GPS 機器の通信費の実費を助成する。
+  who: {}
+  at_application:
+  - 市内に住み、介護保険で貸与された GPS 機器を使っている
+  - SOS ネットワーク事業に登録している
+  - ケアプランの写しなどが必要
+  where: 地域包括ケア推進課 地域包括支援センター
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/3/4/1728.html
+  confidence: high
+  amount: 通信費を月額 1,000 円まで（貸与費用は対象外）
+  more_urls:
+  - https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/3/4/1727.html
+- category: sonota
+  name: 低所得の在宅高齢者への生活支援給付金
+  name_on_page: 生活支援給付金事業
+  summary: 在宅で介護サービスを受けた月に、介護度に応じた給付金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住んでいる
+  - 年間収入が 80 万円以下
+  - 生活保護の受給者・入院中・施設入所中は対象外
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8339.html
+  confidence: high
+  amount: 月額：要支援1・2は2,000円、要介護1・2は3,000円、要介護3は4,000円、要介護4・5は5,000円
+- category: sonota
+  name: 草引きなど軽度生活援助の費用補助
+  name_on_page: 軽度生活援助事業（草引き）
+  summary: 草引きなどの軽い生活の援助を受けるときの費用を、一部補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住んでいる
+  - 心身の状況で日常生活の援助が必要
+  where: 地域包括ケア推進課 高齢支援係
+  url: https://www.city.yamatokoriyama.lg.jp/soshiki/chiikihokatsucaresuishinka/koreifukushi/kourei/8336.html
+  confidence: high
+  amount: 年 4 回まで（月 1 回、1 回 4 時間まで）
+not_found: []

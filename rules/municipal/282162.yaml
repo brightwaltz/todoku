@@ -1,0 +1,180 @@
+city: '282162'
+name: 高砂市
+site: www.city.takasago.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者福祉タクシー利用券の交付
+  name_on_page: 高砂市高齢者福祉タクシー料金助成事業
+  summary: 住民税非課税世帯の高齢の要支援・要介護の人などに、タクシー利用券を交付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要支援1〜要介護5の認定、または運転経歴証明書の交付を受けている
+  - 市内に住民登録がある
+  - 障害者（児）福祉タクシー料金助成を受けていない
+  where: 地域福祉課（本庁1階5番窓口）、各地域交流センター、市民サービスコーナー。電子申請もある
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/1/5866.html
+  confidence: high
+  amount: 申請月により年2〜24枚を交付。1乗車は料金に応じ1〜3枚まで使える
+  more_urls:
+  - https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/9319.html
+- category: gaishutsu
+  name: じょうとんバスの75歳以上半額
+  name_on_page: じょうとんバス 75歳以上の割引
+  summary: 75歳以上は、じょうとんバスの運賃と1日乗車券が半額になる。
+  who:
+    age_min: 75
+  at_application:
+  - マイナンバーカード等の年齢確認書類か「じょうとんパス75」を提示する
+  where: 都市政策課。じょうとんパス75は市役所3階5番窓口、市民サービスコーナー等で発行
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/9319.html
+  confidence: low
+  amount: 運賃200円が100円、1日乗車券300円が150円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システムの貸与
+  summary: 緊急ボタンで警備会社につながる機器を貸し出す。24時間の健康相談もある。
+  who: {}
+  at_application:
+  - 65歳以上で身体に不安のあるひとり暮らし
+  - または要介護3以上の人がいる高齢者のみの世帯
+  - 緊急連絡先1名・近隣協力者3名・民生委員の署名が要る
+  where: 地域福祉課（高年福祉担当）
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/1/2593.html
+  confidence: high
+  amount: 毎月の利用料はなし。設置時に自己負担が最大12,000円かかることがある
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 日常生活用具の給付
+  summary: ひとり暮らしの高齢者に、電磁調理器・火災警報器・自動消火器を給付する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  - 用具ごとに対象者の条件が変わる。防火安全上の注意が必要な人が対象
+  - 購入後の申請は不可。事前に相談する
+  where: 地域福祉課（高年福祉担当）
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/1/1947.html
+  confidence: low
+  amount: 用具ごとに上限額がある。課税状況により自己負担が出ることがある
+  more_urls:
+  - https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/9319.html
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ）の支給
+  name_on_page: 家族介護用品（紙おむつ）の支給
+  summary: 在宅で要介護4・5の人を介護する家族に、紙おむつ等を毎月届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 同居の家族が介護している。入院中は対象外
+  where: 地域福祉課（高年福祉担当）
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/1/1948.html
+  confidence: high
+  amount: 1か月8,000円分まで
+  more_urls:
+  - https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/9319.html
+- category: iro
+  name: 家族介護支援慰労金
+  name_on_page: 家族介護支援慰労金の支給
+  summary: 要介護3以上の人を、介護サービスを使わず家族だけで1年介護した人に支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護サービスを使っていない（短期入所7日以内は除く）
+  - 常時介護が必要な人を家族が介護している
+  where: 地域福祉課（高年福祉担当）
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/1/1948.html
+  confidence: high
+  more_urls:
+  - https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/9319.html
+- category: haikai
+  name: 高齢者等見守り・SOSネットワークの事前登録
+  name_on_page: 高齢者等見守り・SOSネットワーク事業
+  summary: 所在不明のおそれがある人を事前登録し、行方不明時に協力者へメール配信する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、おおむね65歳以上の認知症高齢者など
+  - 若年性認知症の人も対象
+  where: 地域福祉課（高年福祉担当）
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/2/2671.html
+  confidence: high
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 高砂市認知症高齢者等個人賠償責任保険事業
+  summary: SOSネットワーク登録者の賠償責任保険に、市が保険料を負担して加入できる。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者等見守り・SOSネットワークの登録者
+  - 認知症高齢者の日常生活自立度2a以上かつ障害高齢者B2以下
+  - 自分で外出できる
+  where: 地域福祉課（高年福祉担当）
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/2/7304.html
+  confidence: low
+  amount: 補償額は上限3億円。保険料は市が負担する
+  more_urls:
+  - https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/2/2671.html
+- category: jutaku
+  name: 住宅改造費の上乗せ助成
+  name_on_page: 高砂市住宅改造助成事業（住宅改造）
+  summary: 介護保険の住宅改修の20万円を超える分の改造費を、市が助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定を受けている、または申請中
+  - 介護保険の住宅改修の支給限度額が20万円の人
+  - 生計中心者の前年の給与収入800万円以下、または所得600万円以下
+  where: 介護保険課
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/kaigohokenka/koreishafukushi_kaigo/1/6/juutakukaizou.html
+  confidence: low
+  amount: （工事費上限100万円−20万円×認定者数）に世帯階層別の助成率をかけた額
+- category: sonota
+  name: エンディングプラン・サポート事業
+  name_on_page: エンディングプラン・サポート事業
+  summary: 低所得のひとり暮らし高齢者の葬儀・納骨の生前契約を、市が支える。
+  who: {}
+  at_application:
+  - 市内在住のひとり暮らし
+  - 65歳以上。60歳以上で要介護3以上の人も含む
+  - 月収18万円以下、預貯金180万円以下、不動産評価額500万円以下
+  where: 地域福祉課（本庁1階5番窓口）。本人が相談に行く
+  url: https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/sonohokafukushi/3085.html
+  confidence: low
+not_found:
+- haishoku
+- ribiyo
+- shingu
+- hochoki
+- koken

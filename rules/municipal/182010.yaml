@@ -1,0 +1,178 @@
+city: '182010'
+name: 福井市
+site: www.city.fukui.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: すこやか介護用品支給事業
+  summary: 在宅でおむつを常時使う介護保険の被保険者に、紙おむつ等を月1回自己負担つきで届ける。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 福井市の介護保険の被保険者である
+  - 40〜64歳の人は市民税非課税世帯に限る
+  - 要介護3以下の新規は認定調査の排泄項目が介助か見守り等
+  where: 地域包括支援センター、指定居宅介護支援事業所など（いずれか1か所）
+  url: https://www.city.fukui.lg.jp/fukusi/kaigo/service/p012644.html
+  confidence: high
+  amount: 種類ごとに月の枚数が決まり、自己負担は課税世帯と非課税世帯で異なる（例：要介護の尿取りパッド120枚で1,848円／739円）。
+- category: jutaku
+  name: 住まい環境整備支援事業（住宅改修の助成）
+  name_on_page: 住まい環境整備支援事業
+  summary: 介護が必要な高齢者の住宅改修費の一部を、介護保険とは別枠で市が助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護1・2は車いす利用などの追加要件あり
+  - 世帯の生計中心者が市税を完納している
+  - 世帯の総所得から基礎控除を引いた額が600万円未満
+  - 介護保険給付の対象工事や他の市補助を受けた人は対象外
+  where: 地域包括ケア推進課（事前に居宅介護支援事業者かほやねっとに相談）
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/ssien/jyukankyo.html
+  confidence: high
+  amount: 所得区分に応じ、助成率9/10で上限80万円、1/2で40万円、1/4で20万円。
+- category: mimamori
+  name: 見守りICT機器の設置
+  name_on_page: 見守りICT機器の設置
+  summary: 電気の使用を感知する機器を付け、24時間反応がなければ親族にメールで知らせる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし等高齢者登録をしている
+  - 他者との交流が少なく日常的な安否確認が必要
+  - 緊急通報装置などとの併用申請はできない
+  where: 各地域のほやねっと（地域包括支援センター）
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/ssien/kinkyu.html
+  confidence: high
+  amount: 利用料は無料（電気代は自己負担）。
+- category: haishoku
+  name: 会食会・配食による見守り
+  name_on_page: 会食会（配食）
+  summary: 地区の社会福祉協議会が会食や配食を行い、安否確認と交流を図る。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 閉じこもりや身体状態などから見守りが必要と思われる
+  where: 福井市社会福祉協議会（問い合わせ先。申込方法は頁に記載なし）
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/ssien/hitorigurashi.html
+  confidence: high
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 日常生活用具給付事業（電磁調理器）
+  summary: 防火の配慮が必要な非課税世帯のひとり暮らし等高齢者に、電磁調理器を給付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - ひとり暮らし等高齢者登録をしている
+  where: 指定居宅介護支援事業者、各地域のほやねっと（地域包括支援センター）
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/ssien/nichijyou.html
+  confidence: high
+- category: sonota
+  name: 軽作業の生活援助（買い物・清掃・除雪など）
+  name_on_page: えがおでサポート事業
+  summary: 買い物代行・清掃・除草・除雪などの軽作業を、1時間250円で手伝ってもらえる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし等高齢者登録をしている
+  - 生活に不安があり軽作業の援助が必要
+  - 市民税非課税または均等割のみ課税の世帯
+  where: 各地域のほやねっと（地域包括支援センター）
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/ssien/egao.html
+  confidence: high
+  amount: 利用料は1時間250円（材料費・交通費は自己負担）。月4時間または週2時間までなど上限あり。
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与事業
+  summary: 電話加入権を持つのが難しい非課税のひとり暮らし等高齢者に、福祉電話を貸す。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし等高齢者登録をしている
+  - 健康上の不安があり、安否確認や電話加入権の取得が難しい
+  - 市民税非課税の人
+  where: 各地域のほやねっと（地域包括支援センター）
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/ssien/fukushidenwa.html
+  confidence: high
+  amount: 通話料は自己負担。
+- category: sonota
+  name: 高齢者世帯の防犯設備の購入補助
+  name_on_page: 高齢者を守る住まいの防犯対策等支援事業
+  summary: 高齢者のみの戸建て世帯が防犯カメラや補助錠などを買ったとき、費用の一部を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内の戸建て住宅に住民登録がある（共同住宅は対象外）
+  - 市税の滞納がない
+  - 令和9年1月29日までに購入・設置した設備が対象
+  where: 地域包括ケア推進課（窓口持参・郵送・オンライン）
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/keikai/p071274.html
+  confidence: high
+  amount: 購入・設置費の3分の2、最大2万円（1世帯1回）。
+- category: haikai
+  name: 認知症高齢者見守りシールの配付
+  name_on_page: 認知症行方不明高齢者事前登録制度
+  summary: 行方不明のおそれがある人を事前登録し、QRコード付きの見守りシールを無料で配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知機能の低下により行方不明のおそれがある高齢者
+  - 市内在住の若年性認知症の人も対象
+  where: 担当ケアマネジャー、ほやねっと（地域包括支援センター）、地域包括ケア推進課
+  url: https://www.city.fukui.lg.jp/fukusi/kfukusi/ninchisyo/ninchi_hakken.html
+  confidence: low
+  amount: 初回のシール（耐洗20枚・蓄光10枚）は無料。追加分は自己負担。
+- category: gaishutsu
+  name: 運転免許返納者へのICカード等の支援
+  name_on_page: 福井市運転免許自主返納支援事業
+  summary: 運転免許を全て返納した65歳以上に、ICOCA 2,000円分を渡し、75歳以上はタクシー1割引も使える。
+  who:
+    age_min: 65
+  at_application:
+  - 平成28年4月以降に有効期限内の全ての運転免許を返納した
+  - 市内に住所がある（1人1回まで）
+  where: 自転車利用推進課（市役所本館6階）、美山・越廼・清水連絡所。返納と同時なら警察署・運転者教育センターのワンストップ窓口、郵送・電子申請も可
+  url: https://www.city.fukui.lg.jp/kurasi/koutu/koutu-a/koureisyamennkyohennnou.html
+  confidence: low
+  amount: ICOCA 2,000円分（デポジット500円分を含む）。75歳以上はタクシー運賃1割引。
+not_found:
+- iro
+- koken
+- hochoki
+- ribiyo
+- shingu
+- chusha
+- yutai

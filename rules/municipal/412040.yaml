@@ -1,0 +1,127 @@
+city: '412040'
+name: 多久市
+site: www.city.taku.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ・介護用品の支給（クーポン券）
+  name_on_page: 紙おむつ・介護用品支給事業
+  summary: 紙おむつや尿取りパット等の購入に使えるクーポン券を毎月支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住んでいる
+  - 生活保護を受けていない
+  where: 高齢者支援係（高齢・障害者支援課）
+  url: https://www.city.taku.lg.jp/soshiki/8/1051.html
+  confidence: high
+- category: gaishutsu
+  name: タクシー利用料金の一部助成（運転免許の返納者等）
+  name_on_page: タクシー利用料金を一部助成します
+  summary: 免許を返納・失効した高齢者に、タクシー料金の2割を助成する利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - 免許の返納・失効時に65歳以上で、運転経歴証明書の交付を受けている
+  - 返納・失効の日から1年以内に申請する
+  where: 高齢者支援係（高齢・障害者支援課）の窓口
+  url: https://www.city.taku.lg.jp/soshiki/8/29959.html
+  confidence: high
+  amount: 利用券48枚。1回の乗車につき料金の2割（助成の上限600円）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 緊急ボタンで消防署につながる電話端末機を自宅に設置する。
+  who: {}
+  at_application:
+  - 身体虚弱などで緊急時に機敏に動けないと認められる、65歳以上のひとり暮らし高齢者等
+  where: 高齢者支援係（高齢・障害者支援課）。在宅介護支援センターが訪問調査
+  url: https://www.city.taku.lg.jp/soshiki/8/1055.html
+  confidence: high
+  amount: 利用料は月399円。バッテリー交換などは本人負担
+- category: haikai
+  name: 高齢者の見守り支援シール（QRコード付き）の交付
+  name_on_page: 高齢者の見守り支援シール交付事業
+  summary: 認知症で行方不明のおそれがある人に、QRコード付きのシールを無料で交付する。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内に住んでいる
+  - おおむね65歳以上（若年性認知症の診断を受けた人も対象）
+  where: 高齢者支援係（高齢・障害者支援課）
+  url: https://www.city.taku.lg.jp/soshiki/8/13099.html
+  confidence: high
+  amount: 無料（耐洗シール40枚・蓄光シール10枚）。追加のシールは自費
+- category: haishoku
+  name: 配食・見守りサービス（昼食と夕食の手渡し）
+  name_on_page: 市の配食・見守りサービス
+  summary: 昼食と夕食を手渡しで届け、安否を確認する。利用までに一定の期間がかかる。
+  who:
+    age_min: 65
+  at_application:
+  - 一定の基準がある（詳しくは窓口へ）
+  where: 高齢者支援係（高齢・障害者支援課）
+  url: https://www.city.taku.lg.jp/uploaded/attachment/22073.pdf
+  confidence: high
+  amount: 1食410円。1週間（月〜日曜）の昼・夕で最大12食まで
+- category: sonota
+  name: 生活管理短期宿泊事業（施設への短期のお泊り）
+  name_on_page: 生活管理短期宿泊事業
+  summary: 自宅で暮らす高齢者が、短期間、施設に泊まれる。職員が訪問調査する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険の認定を受けている人は利用できない
+  - 介護者の入院・冠婚葬祭などで他に支援がない場合など
+  where: 高齢者支援係（高齢・障害者支援課）
+  url: https://www.city.taku.lg.jp/uploaded/attachment/22073.pdf
+  confidence: high
+  amount: 1日1,900円（食事代込み）
+- category: sonota
+  name: 生活管理指導員派遣事業（ヘルパーによる買い物・家事の支援）
+  name_on_page: 生活管理指導員派遣事業
+  summary: 介護保険の非該当の高齢者に、ヘルパーが買い物の代行や家事の支援をする。
+  who: {}
+  at_application:
+  - 介護保険が非該当で、おおむね65歳以上のひとり暮らしの高齢者など
+  - 生活・家事の指導支援や、人づき合いのサポートが必要な人
+  - 民生委員か担当課に連絡し、そのあと実態調査を受ける
+  where: 高齢者支援係（高齢・障害者支援課）、または地域の民生委員に連絡
+  url: https://www.city.taku.lg.jp/soshiki/8/26335.html
+  confidence: high
+  amount: 1回400円。週2回まで、1回1時間まで
+- category: yutai
+  name: 温泉保養宿泊施設利用者証（入浴料の割引）
+  name_on_page: 温泉保養宿泊施設利用者証
+  summary: 利用者証を見せると、温泉施設の入浴料が1回200円安くなる。
+  who: {}
+  at_application:
+  - 市内に住所があり、65歳以上、または障害者手帳の交付を受けている
+  where: 高齢者支援係（高齢・障害者支援課、市役所1階）
+  url: https://www.city.taku.lg.jp/soshiki/8/1291.html
+  confidence: high
+  amount: 入浴1回につき200円引き（1日1回まで）。利用者証の発行は無料
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

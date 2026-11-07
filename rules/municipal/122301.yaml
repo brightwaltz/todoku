@@ -1,0 +1,166 @@
+city: '122301'
+name: 八街市
+site: www.city.yachimata.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつの給付
+  name_on_page: おむつの給付
+  summary: 在宅で常時おむつを使う高齢者に、おむつを給付する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4・5、または認知症の診断で排泄に全介助が必要
+  - 入院・入所中の人は対象外
+  where: 高齢者福祉課
+  url: https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+  confidence: high
+  amount: 月額の上限は、非課税世帯が 6,000 円、課税世帯（本人非課税）が 5,000 円
+  more_urls:
+  - https://www.city.yachimata.lg.jp/uploaded/attachment/26380.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 安否確認を兼ねて、週 1 回昼食を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のみの世帯の方
+  where: 高齢者福祉課
+  url: https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+  confidence: high
+  amount: 1 食 300 円の自己負担
+  more_urls:
+  - https://www.city.yachimata.lg.jp/uploaded/attachment/26380.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 急病などの時に通報できる装置を貸す。受信は 24 時間対応。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または1・2級の身体障がい者のみの世帯
+  - 近隣の人や親族に協力員（かけつけ役）を頼む
+  where: 高齢者福祉課
+  url: https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+  confidence: high
+  more_urls:
+  - https://www.city.yachimata.lg.jp/uploaded/attachment/26380.pdf
+- category: haikai
+  name: GPS 位置情報検索装置の初期費用助成
+  name_on_page: ＧＰＳ位置情報検索装置の初期費用を助成しています
+  summary: 徘徊のおそれのある人が位置情報の機器を使う時の初期費用を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の人や知的障害のある人などが対象
+  - 契約・購入の前に申請する
+  where: 高齢者福祉課
+  url: https://www.city.yachimata.lg.jp/soshiki/13/19.html
+  confidence: high
+  amount: 初期費用を 10,000 円まで助成
+  more_urls:
+  - https://www.city.yachimata.lg.jp/soshiki/13/1463.html
+  - https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+- category: haikai
+  name: SOS ステッカーの交付
+  name_on_page: 八街市SOSステッカーの配布
+  summary: 連絡先などを事前登録し、番号入りの反射ステッカーを靴に貼る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症等により行方不明のおそれがある
+  - 上半身と全身の写真 2 枚が必要
+  where: 高齢者福祉課（佐倉市・酒々井町と合同実施）
+  url: https://www.city.yachimata.lg.jp/soshiki/13/1463.html
+  confidence: high
+  more_urls:
+  - https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+- category: hochoki
+  name: 高齢者補聴器購入費用助成
+  name_on_page: 八街市高齢者補聴器購入費用助成
+  summary: 加齢性難聴の高齢者が補聴器を買う費用を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市の介護保険被保険者で、聴覚障がいの身体障害者手帳がない
+  - 医師の証明書（市の書式）が必要
+  - 令和7年4月1日以降に購入した補聴器が対象
+  - 助成を受けると 5 年間は対象外
+  where: 高齢者福祉課
+  url: https://www.city.yachimata.lg.jp/soshiki/13/53158.html
+  confidence: high
+  amount: 2 万円を上限に助成
+  more_urls:
+  - https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+- category: mimamori
+  name: ひとり暮らし等高齢者の訪問
+  name_on_page: ひとり暮らし等高齢者の訪問
+  summary: ボランティアが月 1 回ほど自宅を訪ね、安否確認と話し相手をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のみの世帯の方
+  where: 八街市社会福祉協議会（市の委託事業）
+  url: https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+  confidence: high
+  more_urls:
+  - https://www.city.yachimata.lg.jp/uploaded/attachment/26380.pdf
+- category: gaishutsu
+  name: 運転免許自主返納者へのふれあいバス回数乗車券の交付
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 免許を自主返納した高齢者に、ふれあいバスの回数乗車券を渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 市に住民登録があり、返納時に65歳以上
+  - 返納した日から6か月以内に申請する
+  - 支援は1人1回限り、本人のみ使用可
+  where: 企画政策課
+  url: https://www.city.yachimata.lg.jp/soshiki/3/1489.html
+  confidence: high
+  amount: 回数乗車券 55 枚（55 回分）
+  more_urls:
+  - https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+- category: sonota
+  name: はり・きゅう・マッサージ等の助成券
+  name_on_page: はり、きゅう、マッサージ等の助成券の交付
+  summary: 保険がきかない、はり・きゅう・マッサージ等の施術費の助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市に登録された施術所で使う
+  where: 高齢者福祉課
+  url: https://www.city.yachimata.lg.jp/soshiki/13/56059.html
+  confidence: high
+  amount: 1 回 500 円を助成、年間最高 12 枚
+  more_urls:
+  - https://www.city.yachimata.lg.jp/uploaded/attachment/26380.pdf
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

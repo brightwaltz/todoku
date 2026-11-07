@@ -1,0 +1,122 @@
+city: '432024'
+name: 八代市
+site: www.city.yatsushiro.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品購入費の支給（紙おむつ等）
+  name_on_page: 介護用品購入費支給（市町村特別給付）
+  summary: 要介護3〜5の非課税世帯の人に、紙おむつなどの購入費の9割を支給する
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市の住民基本台帳に記録されている
+  - 申請書にケアプラン（なければ届出書）を添え、ケアマネの記入が要る
+  where: 市役所の担当窓口（頁に窓口名の記載なし）
+  url: https://www.city.yatsushiro.lg.jp/kiji0039951/index.html
+  confidence: high
+  amount: 1か月の購入費の9割（購入費の上限は税込 8,000 円なので、支給額の上限は 7,200 円）。対象品目は紙おむつ・尿取りパッド・防水シート・お尻拭き等
+- category: haishoku
+  name: 食の自立支援（配食サービス）
+  name_on_page: 八代市食の自立支援事業（配食サービス）
+  summary: 食事の支度が難しい65歳以上のひとり暮らし等に、弁当を届けて安否も確かめる
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所があり、食事の支度が困難と認められる
+  where: 高齢者支援課 高齢者福祉係（頁は申請先を明記せず、問合せ先として掲載）
+  url: https://www.city.yatsushiro.lg.jp/kiji00321160/index.html
+  confidence: high
+  amount: 利用料は 1 食あたり 300 円〜680 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（安心相談確保事業）
+  name_on_page: 八代市安心相談確保事業（緊急通報装置の貸与）
+  summary: 65歳以上のひとり暮らしの人に緊急通報装置を貸し、緊急時の対応と安否確認をする
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 近隣の協力員 2 名の登録が必要
+  where: 高齢者支援課 高齢者福祉係（頁は申請窓口を明記せず、問合せ先として掲載）
+  url: https://www.city.yatsushiro.lg.jp/kiji003638/index.html
+  confidence: high
+  amount: レンタル料の一部は利用者負担（頁に金額なし。2024年10月の広報に月額 247 円〔税込〕とある）。設置・撤去の費用は市が負担
+  more_urls:
+  - https://www.city.yatsushiro.lg.jp/kiji00322770/3_22770_up_u4jghwpy.pdf
+- category: jutaku
+  name: 高齢者住宅改造の助成
+  name_on_page: 障がい者・高齢者住宅改造助成事業
+  summary: 65歳以上で要介護・要支援認定を受けた人の住宅改造費を、上限 30 万円まで助成する
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 2年以上市内に住み、市税や介護保険料等を納めている
+  - 世帯の生計中心者の前年の所得税年額が 7 万円以下
+  - 過去にこの事業の助成を受けていない
+  - 改造の前に事前相談する（改造後の申請は不可。新築・増築・改築は対象外）
+  where: 介護保険課（65歳以上の人の相談・申請窓口）
+  url: https://www.city.yatsushiro.lg.jp/kiji00314946/index.html
+  confidence: high
+  amount: 上限 30 万円（生活保護・市町村民税非課税の世帯は3分の3。課税世帯は3分の2で上限 20 万円）
+- category: haikai
+  name: 徘徊探知機の購入費等の補助
+  name_on_page: 八代市徘徊探知機購入費等補助金
+  summary: 徘徊のおそれがある高齢者を介護する家族に、徘徊探知機の購入費等を補助する
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上の徘徊のおそれがある高齢者
+  - 専門医の認知症の診断、または認知症自立度Ⅱ以上の記載がある
+  - 申請するのは、同居の人か、介護している親族
+  - 高齢者と申請者の両方が、市に住民登録があり市税の滞納がない
+  where: 市長あてに申請（要綱に窓口名の記載なし）
+  url: https://www.city.yatsushiro.lg.jp/reiki/reiki_honbun/r371RG00001259.html
+  confidence: high
+  amount: 探知機本体・付属機器の購入費と加入・登録手数料の全額、上限 10,000 円（1 人につき 1 回限り）
+- category: gaishutsu
+  name: 山間部の高齢者のタクシー利用券
+  name_on_page: 八代市高齢者外出支援事業
+  summary: 山間部（東町・坂本町・東陽町・泉町）の高齢者に、タクシー利用券を交付する
+  who: {}
+  at_application:
+  - 市内に1年以上住所があり、市税・介護保険料等の滞納がない
+  - 東町・坂本町・東陽町・泉町に住み、バス停や駅から2km以上
+  - 65歳以上で身体障害者手帳・療育手帳A1/A2・精神手帳1級がある
+  - または70歳以上で前年度の市民税が非課税の高齢者のうち、手帳のある人か非課税高齢者のみの世帯の人
+  where: 市長あてに申請（要綱に窓口名の記載なし）
+  url: https://www.city.yatsushiro.lg.jp/reiki/reiki_honbun/r371RG00000915.html
+  confidence: high
+  amount: 500 円券を年間 24 枚（換金・再交付はできない）
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,294 @@
+city: '152161'
+name: 糸魚川市
+site: www.city.itoigawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ利用券の支給
+  name_on_page: 家族介護用品支給事業（おむつ利用券支給）
+  summary: 在宅でおむつを常時使う要支援・要介護認定者らに購入利用券を交付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 総合事業対象者も対象
+  - 要支援・総合事業対象者は排尿障害の診断と処方薬の服用が必要
+  - 介護保険施設など入所中の人は対象外
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/1909.html
+  confidence: high
+  amount: 月1,000〜3,000円分（介護度と市民税課税の有無で変わる）
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: haikai
+  name: 認知症高齢者の見守りシール交付
+  name_on_page: 認知症高齢者等見守り事業（見守りシールの交付）
+  summary: 二次元コード付きの見守りシール30枚を無料で交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり徘徊の心配がある高齢者
+  - 認知症と診断された65歳以上、または若年性認知症の40歳以上
+  - 上記のほか市が必要と認めた人も対象
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+  confidence: high
+  amount: 30枚まで無料（追加は全額自己負担）
+- category: haikai
+  name: GPS見守り機器の購入費補助
+  name_on_page: ひとり歩き見守り機器購入費等補助金交付事業
+  summary: ひとり歩きの恐れがある認知症の人の家族に、GPS機器の初期費用を補助する。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 申請できるのは本人の家族または親族
+  - 市税と介護保険料を滞納していない
+  - 地域包括支援センター等への情報提供に同意できる
+  - 経費を支払った後30日以内に申請
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+  confidence: high
+  amount: 経費の2分の1以内、上限2万円（年度内1回）
+- category: iro
+  name: 在宅高齢者等の介護手当
+  name_on_page: 在宅高齢者等介護手当支給事業
+  summary: 要介護3以上の高齢者を在宅で介護する同一世帯の家族に手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護3の場合は申請者と本人の世帯が非課税であること
+  - 寝たきりまたは認知症の状態で半期に3か月以上在宅
+  - 1か月に在宅介護20日以上が必要
+  - 特別障害者手当を受けていない人の介護が対象
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/28037.html
+  confidence: high
+  amount: 介護月数×5,500円
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: koken
+  name: 成年後見の報酬助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が困難な人の成年後見人等への報酬を市が助成する。
+  who: {}
+  at_application:
+  - 生活保護の人、または助成がないと利用が困難と市長が認める人
+  - 後見人が配偶者・兄弟姉妹・直系血族の場合は対象外
+  - 報酬付与の審判から30日以内に申請
+  where: 福祉事務所 地域包括ケア係
+  url: https://www.city.itoigawa.lg.jp/page/14354.html
+  confidence: high
+  amount: 在宅は月額上限2万8千円、施設入所は月額上限1万8千円
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/18903.pdf
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 認知症予防補聴器購入費助成事業
+  summary: 手帳の対象外の中等度難聴の人に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 50歳以上74歳以下
+  - 身体障害者手帳の対象にならない中等度難聴
+  - 両耳40デシベル以上（医師が必要と認めれば例外あり）
+  - 医師の意見書が必要。市税の滞納がない。助成は1回限り
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+  confidence: high
+  amount: 購入費の1/2、上限2万円（生活保護・非課税世帯は上限3万円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 在宅の一人暮らし高齢者らに緊急通報装置を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、一人暮らしまたは介護者が1人
+  - 65歳以上で健康上の不安があり希望する人
+  - または身障1・2級、精神1級、療育手帳Aのいずれか
+  - 協力員1〜3名の登録が必要
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/1909.html
+  confidence: high
+  amount: 設置・撤去は無料。利用料は月226〜3,960円（回線と課税で変わる）
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: jutaku
+  name: 高齢者向け住宅改修の助成
+  name_on_page: 高齢者向け住宅改修助成事業
+  summary: 要介護認定を受けた人の住宅改修費の一部を市が助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯員の収入合計が600万円未満
+  - この助成は1人1回限り
+  - 工事着手前に申請
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/1909.html
+  confidence: high
+  amount: 工事費30万円まで。補助率は生活保護10/10、所得税非課税3/4、その他1/2
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: jutaku
+  name: 住宅改修・エアコン設置の補助（りほーむ）
+  name_on_page: 在宅介護応援りほーむ事業
+  summary: 高齢者らの住宅改修費と、非課税高齢者世帯のエアコン設置費を補助する。
+  who: {}
+  at_application:
+  - 改修は65歳以上、要支援・要介護認定者（40歳以上）、または身障1・2級か療育A
+  - 改修は工事費30万円以上で市内業者の施工が条件
+  - エアコンは住民税非課税の高齢者のみ世帯で使えるエアコンが無い人
+  - 年1〜2回の募集時に、工事前に申請
+  where: 福祉事務所
+  url: https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+  confidence: high
+  amount: 改修は工事費の1/3（上限25万円）、エアコンは2/3（上限7万5千円）
+- category: gaishutsu
+  name: 高齢者おでかけ支援タクシー券
+  name_on_page: 高齢者おでかけ支援タクシー券
+  summary: 在宅の70歳以上の市民税非課税の人にタクシー券を年額で交付する。
+  who:
+    age_min: 70
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 通院等支援サービス事業の利用者は対象外
+  - 入院中の人、介護保険施設の入所者は対象外
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/1912.html
+  confidence: high
+  amount: 年4,000円分（10月以降の申請や70歳到達は半額）
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: gaishutsu
+  name: 高齢者・障害者おでかけパス（バス割引定期券）
+  name_on_page: 高齢者・障害者おでかけパス事業
+  summary: 市が費用の一部を負担した路線バスの割引定期券を購入できる。
+  who: {}
+  at_application:
+  - 在宅の65歳以上、または各種障害者手帳・精神通院の受給者証
+  - 通院等支援サービス事業の利用者は対象外
+  - 販売場所で本人確認書類を示して購入
+  where: 糸魚川バス本社営業所など市内5か所の販売場所
+  url: https://www.city.itoigawa.lg.jp/page/1911.html
+  confidence: high
+  amount: 6か月券4,000円、1か月券1,000円（あさひまちバスは回数券4,000円分）
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: gaishutsu
+  name: 通院等支援サービス（福祉タクシー費用の支援）
+  name_on_page: 通院等支援サービス事業
+  summary: 公共交通が使いにくい人の通院時のタクシー費用の一部を支援する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3以上で移動時は常に車椅子の人
+  - または下肢・体幹の障害で身体障害者手帳がある人
+  - または人工透析で通院する人（要件あり）
+  - 生活保護世帯、タクシー券やおでかけパスの利用者は対象外
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/1909.html
+  confidence: high
+  amount: 利用者負担は料金の3割（人工透析は5割）、1回片道2,500円が上限
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: gaishutsu
+  name: 運転免許の自主返納支援
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 運転免許を自主返納した人に、タクシー券等2万円相当を1回支給する。
+  who: {}
+  at_application:
+  - 平成28年1月1日以降に申請による免許取消を受けた人
+  - 75歳以上、または65〜74歳で障害者手帳か指定難病の受給者証がある人
+  - 1人1回限り
+  where: 市民生活課、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+  confidence: high
+  amount: タクシー券・バスカード・翠ペイギフトカードのいずれか2万円相当
+- category: sonota
+  name: 屋根雪除雪等の費用助成
+  name_on_page: 屋根雪除雪等費用助成事業
+  summary: 自力で除雪できない非課税の高齢者世帯等の屋根雪除雪費を一部助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のみの世帯、障害者のいる世帯、母子等の世帯のいずれか
+  - 自力や親族の援助で除雪できない世帯
+  - 世帯員が課税者の扶養親族の場合は対象外
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/1909.html
+  confidence: high
+  amount: 屋根雪は期間中の上限が山間部8.4万円・中間部6万円・平野部2.4万円
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: sonota
+  name: 緊急ショートステイの利用料助成
+  name_on_page: 緊急ショートステイサービス事業
+  summary: 介護保険の限度額を超えて緊急にショートステイを使う人の利用料を一部支援する。
+  who:
+    at_home: true
+  at_application:
+  - 介護保険のショートステイ利用中で支給限度額を超えた人
+  - 緊急かつ突発的な理由で在宅介護が困難になった場合のみ
+  - 年14日以内、連続は最大7日まで
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/page/1909.html
+  confidence: high
+  amount: 負担は介護保険の負担割合に1割加算した額（食費・居住費は全額自己負担）
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+- category: sonota
+  name: 65〜69歳の医療費助成
+  name_on_page: 老人医療費助成事業
+  summary: 65〜69歳の一人暮らし等の人の医療費自己負担分を一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳から69歳まで
+  - 前年または前々年の合計所得が135万円以下
+  - 常時一人暮らし、または3か月以上寝たきりで介助が必要
+  where: 福祉事務所、青海事務所、能生事務所
+  url: https://www.city.itoigawa.lg.jp/uploaded/attachment/20487.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.itoigawa.lg.jp/page/1909.html
+not_found:
+- haishoku
+- shingu
+- ribiyo

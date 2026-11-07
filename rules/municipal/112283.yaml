@@ -1,0 +1,63 @@
+city: '112283'
+name: 志木市
+site: www.city.shiki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: mimamori
+  name: ICT見守りサービスの費用補助
+  name_on_page: 高齢者見守りサービス支援事業
+  summary: 人感センサー等の見守りサービスの初期費用と月額料を補助する。
+  who: {}
+  at_application:
+  - 対象者の条件は頁の抜き出しに無いので問い合わせて確かめる
+  - 登録事業者のサービスを契約して利用する
+  where: 長寿応援課 いきがい支援グループ
+  url: https://www.city.shiki.lg.jp/site/kourei-zaitaku/39216.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 介護用品購入費支給事業
+  summary: 要介護4・5で市民税非課税の在宅の人に、毎月紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内在住の介護保険被保険者
+  where: 長寿応援課 いきがい支援グループ
+  url: https://www.city.shiki.lg.jp/site/kourei-zaitaku/2801.html
+  confidence: high
+  amount: 月7,000円分まで。超えた分は自己負担
+- category: jutaku
+  name: 住宅改良の市特別給付（動力付き機器など）
+  name_on_page: 志木市特別給付（住宅改良）
+  summary: 介護保険の住宅改修で対象外の動力付き機器の工事費を市が給付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 階段昇降機や段差解消機（動力付き）などの工事が対象
+  - 事前申請と審査が必要。先にケアマネジャー等へ相談する
+  where: ケアマネジャー、または市の介護保険担当課に事前相談
+  url: https://www.city.shiki.lg.jp/site/kaigo-hoken/19151.html
+  confidence: high
+  amount: 工事費50万円までの9割（上限45万円）・8割（上限40万円）・7割（上限35万円）
+not_found:
+- shingu
+- yutai

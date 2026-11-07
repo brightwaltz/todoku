@@ -1,0 +1,195 @@
+city: '222062'
+name: 三島市
+site: www.city.mishima.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきり高齢者等の紙おむつ給付
+  name_on_page: 寝たきり高齢者等紙おむつ給付
+  summary: 非課税世帯で重度の要介護の在宅高齢者を介護する同居家族に、紙おむつ等を届ける。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 原則、要介護4以上の在宅高齢者を介護する同居の介護者
+  - 要介護1〜3でも重度の尿失禁等があれば対象の場合あり
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/ipn023935.html
+  confidence: low
+  amount: 12種類の紙おむつ等から選び、3か月に1回配達。費用の1割は自己負担。
+- category: iro
+  name: 寝たきり老人等の介護者手当
+  name_on_page: 寝たきり老人等介護者手当
+  summary: 要介護3以上の在宅高齢者を半年以上介護している同居の家族に手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 基準日（6月30日・12月31日）前の6か月以上継続して介護
+  - 期間中に月11日以上の入院・入所があると対象外
+  - 申請は7月と1月
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/ipn023935.html
+  confidence: low
+  amount: 1回につき 50,000 円
+- category: sonota
+  name: 介護者へのはり灸マッサージ治療費助成券
+  name_on_page: はり灸マッサージ治療費の助成
+  summary: 要介護者を介護する家族に、はり灸マッサージの治療費助成券を配る。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 要介護1以上の人の親族で常時介護している人
+  - または、要介護1以上の人と同居し在宅で常時介護している人
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/ipn023935.html
+  confidence: low
+  amount: 年6枚の助成券。1回の施術で3枚まで使える。
+- category: shingu
+  name: 寝具類クリーニング費用の助成
+  name_on_page: 寝具類クリーニング費用助成事業
+  summary: 非課税世帯の高齢者などに、寝具のクリーニング費用の9割を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 75歳以上のひとり暮らし、75歳以上のみの世帯、または要介護3以上
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/ipn023935.html
+  confidence: low
+  amount: 1回の申請で費用の9割（公費上限 4,500 円）。年度内2回まで。
+- category: gaishutsu
+  name: 高齢者バス等利用助成券
+  name_on_page: 高齢者バス等利用助成券
+  summary: 70歳以上の市民に、バス・鉄道・タクシーで使える助成券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 令和9年3月31日時点で満70歳以上の市内在住者
+  - 令和8年1月1日時点で三島市に住民票がある
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/page/3093.html
+  confidence: high
+  amount: 100円分の助成券30枚（3,000円分）。年度内1人1回。
+  more_urls:
+  - https://www.city.mishima.shizuoka.jp/ipn023935.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置費補助
+  name_on_page: 三島市緊急通報装置設置費補助金
+  summary: 民間の緊急通報・見守りサービスの設置費を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の単身高齢者、または65歳以上のみの世帯
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/page/2833.html
+  confidence: high
+  amount: 設置費用の上限 2,000 円（市民税非課税世帯は 4,000 円）
+  more_urls:
+  - https://www.city.mishima.shizuoka.jp/ipn023935.html
+- category: ribiyo
+  name: 高齢者の訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい高齢者の自宅に、市と契約した理美容院が出張する。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきり等で理美容院に行くことが困難
+  - 要介護1以上、または身体障害者手帳1・2級
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/ipn023935.html
+  confidence: low
+  amount: 年4回の出張。理美容代は自己負担。
+- category: haishoku
+  name: 給食サービス（安否確認つき配食）
+  name_on_page: 給食サービス
+  summary: 安否確認をしながら、昼食を自宅へ届ける。
+  who: {}
+  at_application:
+  - 要介護者・要支援者・総合事業の事業対象者
+  - 安否確認が必要なひとり暮らし・高齢者世帯とそれに準ずる世帯
+  where: 長寿政策課 高齢者福祉政策室
+  url: https://www.city.mishima.shizuoka.jp/ipn023935.html
+  confidence: low
+  amount: 1食 420 円（年末年始を除く）
+- category: haikai
+  name: 認知症高齢者等の見守りシール登録
+  name_on_page: 三島市認知症高齢者等見守り登録事業
+  summary: QRコード付きの見守りシールを無料で配り、行方不明時の連絡に使う。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 三島市内に居住し住民登録がある
+  - 認知症等で行方不明になる可能性がある
+  - 申請者は本人または4親等以内の親族
+  where: 長寿政策課 地域包括支援係
+  url: https://www.city.mishima.shizuoka.jp/page/2297.html
+  confidence: high
+  amount: 耐洗ラベル30枚・蓄光シール9枚・キーホルダー1つを無料配付
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（市が保険料負担）
+  name_on_page: 三島市認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の人が起こした事故の賠償に備える保険に、市が保険料を負担して加入できる。
+  who:
+    at_home: true
+  at_application:
+  - 認知症または若年性認知症の人（疑いの人を含む）
+  - 見守り登録事業に登録している
+  - 他の同様の保険に未加入
+  - 年度ごとに申請
+  where: 長寿政策課 地域包括支援係
+  url: https://www.city.mishima.shizuoka.jp/page/2355.html
+  confidence: high
+  amount: 保険料は市が全額負担。補償は上限1億円。
+  more_urls:
+  - https://www.city.mishima.shizuoka.jp/page/2297.html
+- category: hochoki
+  name: 補聴器装用モニター助成（みみサポみしま）
+  name_on_page: 加齢性中等度難聴者補聴器装用モニター助成実証事業
+  summary: 補聴器を初めて使う40歳以上の中等度難聴の人に、購入費の一部を助成する。
+  who:
+    age_min: 40
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 補聴器の装用が初めて
+  - 聴力40dB以上で、補聴器相談医が装用を有効と認めた
+  - アンケート2回に協力でき、市税の滞納がない
+  - 聴覚障害の身体障害者手帳の交付対象でない
+  where: 長寿政策課（市役所）
+  url: https://www.city.mishima.shizuoka.jp/page/3468.html
+  confidence: high
+  amount: 購入費の2分の1以内。上限は片耳 20,000 円、両耳 40,000 円。
+  more_urls:
+  - https://www.city.mishima.shizuoka.jp/page/30316.html
+not_found:
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

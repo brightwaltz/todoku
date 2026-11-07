@@ -1,0 +1,152 @@
+city: '472093'
+name: 名護市
+site: www.city.nago.okinawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（配食サービス）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 昼食・夕食（日曜日を除く）を届けて安否も確認する。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上の高齢者
+  - 自分や家族らが食事の調理・調達をできず確保が困難
+  - 原則として住民税非課税世帯に属する人
+  - 利用の前に審査がある
+  where: 介護長寿課 高齢福祉係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900054/file_contents/692830_web.pdf
+  confidence: high
+  amount: 利用者負担あり（1 食 350 円から）。利用回数に上限あり
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: ボタンひとつで通報センターにつながる機器を設置し、定期コールや相談も行う。
+  who: {}
+  at_application:
+  - 65 歳以上のひとり暮らし、または高齢者のみ・身体障がい者のみの世帯
+  - 慢性疾患があるなど日常生活で常時注意が必要
+  - 利用の前に審査がある
+  where: 介護長寿課 高齢福祉係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900054/file_contents/692830_web.pdf
+  confidence: high
+  amount: 機器利用料は無料（電話料・電気料は自己負担）
+- category: nichijo-yogu
+  name: 老人日常生活用具給付等事業
+  name_on_page: 老人日常生活用具給付等事業
+  summary: 電磁調理器・火災報知器・自動消火器の給付と、福祉電話の貸与を受けられる。
+  who: {}
+  at_application:
+  - 給付項目で対象が違うが、おおむね 65 歳以上の低所得で一人暮らし高齢者など
+  - 利用の前に審査がある
+  where: 介護長寿課 高齢福祉係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900054/file_contents/692830_web.pdf
+  confidence: high
+  amount: 利用料は世帯の階層区分によって異なる
+- category: jutaku
+  name: 高齢者いきいき住宅改造助成事業
+  name_on_page: 高齢者いきいき住宅改造助成事業
+  summary: 転倒予防や介護の悪化を防ぐ住宅改造の費用を限度額内で助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 名護市に住む 65 歳以上の高齢者が居住している世帯
+  - 住民税非課税世帯または生活保護受給世帯
+  - 介護保険料を滞納していない
+  - 住宅改造が必要と名護市長が認める
+  - 過去にこの事業の適用を受けていない
+  where: 介護長寿課 介護給付・保険料係
+  url: https://www.city.nago.okinawa.jp/kurashi/2025102400051/
+  confidence: high
+  amount: 1 世帯 10 万円まで。負担は生活保護世帯が無料、非課税世帯が 1 割。介護保険の住宅改修と併用なら 20 万円を超える額に適用し、計 30 万円が限度
+- category: gaishutsu
+  name: 外出困難高齢者通院支援サービス事業
+  name_on_page: 外出困難高齢者通院支援サービス事業
+  summary: 車イスが必要で外出が難しい人の通院を支援する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね 65 歳以上の要援護者
+  - 下肢不自由で屋内外の日常生活に車イスが必要
+  - 隣接する市町村へは要調整
+  - 利用の前に審査がある
+  where: 介護長寿課 高齢福祉係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900054/file_contents/692830_web.pdf
+  confidence: high
+  amount: 無料（市外など遠方は自己負担あり）。片道 1 回、1 か月に 4 回まで
+- category: kaigo-yohin
+  name: 介護用品給付事業
+  name_on_page: 介護用品給付事業
+  summary: 要介護 4・5 の在宅高齢者を介護する家族に、おむつ等の購入費を一部助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 現に介護している家族が申請する
+  - 介護される人が生活保護を受けていない
+  where: 介護長寿課 高齢福祉係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900054/file_contents/692830_web.pdf
+  confidence: high
+  amount: 月額上限 6,250 円以内の実費相当分
+- category: iro
+  name: 家族介護慰労事業
+  name_on_page: 家族介護慰労事業
+  summary: 在宅高齢者を介護する家族に、慰労として金品を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護 4・5 に相当する在宅高齢者を現に介護している家族
+  - 過去 1 年間に介護保険サービスを受けていない
+  - 年 1 週間程度のショートステイの利用は除く
+  where: 介護長寿課 包括支援係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900054/file_contents/692830_web.pdf
+  confidence: high
+  amount: 金品を年額 10 万円まで
+- category: haikai
+  name: 認知症高齢者等見守り・SOSネットワーク事業
+  name_on_page: 認知症高齢者等見守り・SOSネットワーク事業
+  summary: 事前に登録し、行方不明のとき協力機関に情報を配信して早期発見につなげる。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 名護市在住のおおむね 65 歳以上で、認知症により行方不明になる心配がある
+  - 65 歳未満でも若年性認知症などで同様の心配がある人も可
+  where: 介護長寿課 包括支援係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900047/
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.nago.okinawa.jp/kurashi/2024091900047/file_contents/sosgoannai.pdf
+- category: mimamori
+  name: ふれあいコールサービス事業
+  name_on_page: ふれあいコールサービス事業
+  summary: 定期的に電話をかけ、高齢者の安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね 65 歳以上の一人暮らしの高齢者、または重度身体障がいの一人暮らしの人
+  - 利用の前に審査がある
+  where: 介護長寿課 高齢福祉係
+  url: https://www.city.nago.okinawa.jp/kurashi/2024091900054/file_contents/692830_web.pdf
+  confidence: high
+  amount: 無料。週 3 回程度
+not_found:
+- koken
+- hochoki
+- shingu
+- ribiyo

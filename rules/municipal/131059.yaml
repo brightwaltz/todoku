@@ -1,0 +1,355 @@
+city: '131059'
+name: 文京区
+site: www.city.bunkyo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物支給
+  name_on_page: 高齢者紙おむつ現物支給事業
+  summary: 毎月、選んだ紙おむつを指定の場所へ届けてもらえる。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 区内に住所があり、常時おむつを使っている
+  - 原則要介護3以上、またはおむつ持込可の病院に入院中の65歳以上
+  - 上記以外の40歳以上は、医師の意見書で対象になる
+  - 特養・老健などの入所者や心身障害者おむつ支給の人は対象外
+  where: 高齢福祉課、高齢者あんしん相談センター
+  url: https://www.city.bunkyo.lg.jp/b017/p003184.html
+  confidence: high
+  amount: 月額500円の負担で45点まで選べる（20点以上）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: kaigo-yohin
+  name: おむつ代の費用助成
+  name_on_page: 高齢者おむつ代費用助成事業
+  summary: 紙おむつを持ち込めない病院・施設に入る人のおむつ代を助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 紙おむつ支給の対象者で、おむつ持込不可の病院・有料老人ホーム等にいる
+  - 申請した月から対象（さかのぼり不可）、年度ごとに申請
+  where: 高齢福祉課
+  url: https://www.city.bunkyo.lg.jp/b017/p003185.html
+  confidence: high
+  amount: 月4,000円を上限に助成
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費用助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 補聴器の購入費を助成する。購入前の申請と決定が必要。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区内在住の65歳以上（申請年度に65歳になる64歳も可）
+  - 聴覚障害の障害者手帳がない（納税額で補装具費が出ない人は可）
+  - 医師が補聴器の必要性を認めた
+  - 過去5年以内に助成の交付決定を受けていない
+  where: 高齢福祉課
+  url: https://www.city.bunkyo.lg.jp/b017/p003186.html
+  confidence: high
+  amount: 補聴器本体の購入費に対し72,450円まで
+- category: ribiyo
+  name: 高齢者訪問理美容サービス
+  name_on_page: 高齢者訪問理美容サービス
+  summary: 理容師・美容師が自宅に来て、散髪や整髪をしてくれる。
+  who:
+    at_home: true
+  at_application:
+  - 座位を保てない状態及び重度の認知症状態で、介助でも理美容店の利用が困難
+  where: 高齢福祉課 高齢福祉推進係
+  url: https://www.city.bunkyo.lg.jp/b017/p003173.html
+  confidence: high
+  amount: 1回1,000円の負担で年間最大6回（申請月により変わる）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: kinkyu-tsuho
+  name: 救急通報システム
+  name_on_page: 救急通報システム
+  summary: ボタンを押すと民間会社を通じて救急要請され、警備員が駆けつける。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上のひとり暮らし等で、慢性疾患など常時注意が必要
+  - 主治医に救急通報システムの必要性の意見書をもらう
+  where: 高齢福祉課
+  url: https://www.city.bunkyo.lg.jp/b017/p003178.html
+  confidence: high
+  amount: 月350円の負担（住民税非課税世帯は免除）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: mimamori
+  name: 話し合い員の訪問
+  name_on_page: 話し合い員制度
+  summary: 区が委嘱した話し合い員が自宅を訪ね、話し相手や安否確認をする。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、高齢者世帯、または重度身体障害者世帯
+  - 座位を保てない状態の人を含む高齢者世帯も対象
+  where: 高齢福祉課 高齢福祉推進係
+  url: https://www.city.bunkyo.lg.jp/b017/p003180.html
+  confidence: high
+  amount: 無料（声かけ程度から週1回1時間程度まで）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: mimamori
+  name: 電話による見守り・電話相談
+  name_on_page: 高齢者等見守りあんしん電話
+  summary: 週1〜3回コールセンターが電話で安否確認し、24時間の相談もできる。
+  who: {}
+  at_application:
+  - 区内に住所があり、原則65歳以上
+  - 固定電話か携帯電話を持っている
+  where: 高齢福祉課（窓口か郵送）
+  url: https://www.city.bunkyo.lg.jp/b017/p003188.html
+  confidence: high
+  amount: 無料（申込登録制）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: mimamori
+  name: 見守り電球サービス
+  name_on_page: 高齢者見守りあんしん電球サービス
+  summary: 通信機能付きLED電球が24時間動かないと、家族にメールが届く。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 区内在住のおおむね65歳以上
+  - ひとり暮らし、または同じ世帯全員がおおむね65歳以上
+  - 通知先（家族等）のメールアドレスが必要
+  where: 高齢福祉課 地域包括ケア推進係
+  url: https://www.city.bunkyo.lg.jp/b017/p003190.html
+  confidence: high
+  amount: 無料（電球はレンタルで、中止後は返却）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: mimamori
+  name: みまもり訪問事業
+  name_on_page: みまもり訪問事業
+  summary: ボランティアが月2回ほど自宅を訪ねて声かけをする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 介護保険サービスや他の安否確認の制度を使っていない
+  where: 社会福祉協議会 ささえあいサポート係
+  url: https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: ただいま！支援登録
+  name_on_page: ただいま！支援登録
+  summary: 行方不明のおそれのある人の情報を登録し、保護時の身元確認を早める。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の症状により行方不明になるおそれがある
+  where: 高齢福祉課、高齢者あんしん相談センター
+  url: https://www.city.bunkyo.lg.jp/b017/p003363.html
+  confidence: high
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: haikai
+  name: おでかけ見守りシール
+  name_on_page: おでかけ見守りシール
+  summary: 二次元コードのシールを衣服に貼り、発見者が読むと家族にメールが届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内在住で、ただいま！支援登録を済ませている
+  - スマホ等を持ち、事前の登録が必要
+  where: 高齢福祉課 認知症施策担当、高齢者あんしん相談センター
+  url: https://www.city.bunkyo.lg.jp/b017/p003365.html
+  confidence: high
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: haikai
+  name: GPS探索サービスの費用助成
+  name_on_page: GPS探索サービス
+  summary: 行方不明に備えるGPS端末の申込・機器購入の初期費用を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の症状により行方不明になるおそれがある
+  where: 高齢福祉課 認知症施策担当
+  url: https://www.city.bunkyo.lg.jp/b017/p003343.html
+  confidence: high
+  amount: 申込にかかる費用を助成（月額基本料金等は自己負担）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: jutaku
+  name: 高齢者住宅設備等改造（設備改造）
+  name_on_page: 高齢者住宅設備等改造事業（設備改造）
+  summary: 浴槽・便器・流し洗面台の取替え工事を区が給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 区内に住み、有効な要介護・要支援認定がある
+  - 事前の訪問調査と工事前の申請が必要
+  - 過去に同じ種目の給付を受けていない
+  where: 介護保険課 給付係、高齢者あんしん相談センター
+  url: https://www.city.bunkyo.lg.jp/b020/p000556.html
+  confidence: high
+  amount: 浴槽37万9千円、便器10万6千円、流し等15万6千円まで（自己負担は負担割合証の割合）
+- category: jutaku
+  name: 高齢者等住宅修築資金助成
+  name_on_page: 高齢者等住宅修築資金助成
+  summary: 手すり・段差解消などのバリアフリー工事費の一部を助成する。
+  who: {}
+  at_application:
+  - 条件は住環境課の要綱・パンフレットで確認
+  where: 住環境課
+  url: https://www.city.bunkyo.lg.jp/b032/p000746.html
+  confidence: high
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: koken
+  name: 成年後見人等への報酬助成
+  name_on_page: 成年後見人等への報酬助成
+  summary: 成年後見人等への報酬を払うのが難しい人に、その費用を助成する。
+  who: {}
+  at_application:
+  - 報酬の負担が難しい生活保護受給者など（詳細は窓口で確認）
+  where: 福祉政策課 地域福祉係
+  url: https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+  confidence: low
+- category: sonota
+  name: 敬老杖の支給
+  name_on_page: 敬老杖の支給
+  summary: 歩行を助ける杖を無料で支給する（原則1人1回）。
+  who:
+    age_min: 65
+  at_application:
+  - 区民で、杖を使うと安定して歩ける、または歩行に不安がある
+  where: 高齢福祉課、交流館・地域活動センターなどの窓口
+  url: https://www.city.bunkyo.lg.jp/b017/p003175.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: sonota
+  name: シルバーカー（歩行補助車）の給付
+  name_on_page: シルバーカー（歩行補助車）の給付
+  summary: シルバーカーを給付する。費用の1割が自己負担。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護・要支援の認定を受けている人、または事業対象者
+  - シルバーカーを安全に操作できる
+  - 申込は高齢者あんしん相談センターのみ
+  where: 高齢者あんしん相談センター
+  url: https://www.city.bunkyo.lg.jp/b017/p003183.html
+  confidence: high
+  amount: 費用の原則1割を負担
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: sonota
+  name: 車椅子の貸出し
+  name_on_page: 車椅子の貸出し
+  summary: 一時的に車いすが必要な人に車いすを無料で貸す。
+  who: {}
+  at_application:
+  - 区民で、歩くのが難しく一時的に車いすが必要
+  where: 高齢福祉課、交流館・地域活動センターなどの窓口
+  url: https://www.city.bunkyo.lg.jp/b017/p003176.html
+  confidence: high
+  amount: 無料（原則1か月間）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: sonota
+  name: 一時家事支援
+  name_on_page: 高齢者自立生活支援事業
+  summary: 骨折・退院後などに、買物・掃除・洗濯の支援を受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護・要支援に該当せず、常時の介護が不要
+  - 骨折・退院後や生活管理指導が必要
+  - 区内在住
+  where: 高齢福祉課 高齢者相談係
+  url: https://www.city.bunkyo.lg.jp/b017/p003172.html
+  confidence: high
+  amount: 1時間400円（週3時間まで）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: sonota
+  name: 院内介助サービス
+  name_on_page: 文京区院内介助サービス
+  summary: 通院時、病院内の待ち時間などに付き添ってもらえる。
+  who:
+    age_min: 65
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 介護保険で通院介助を利用し、院内の介助を家族等から得られない
+  - 申込は担当のケアマネジャーに相談
+  where: 担当ケアマネジャー経由（介護保険課 給付係）
+  url: https://www.city.bunkyo.lg.jp/b020/p000557.html
+  confidence: high
+  amount: 月4時間まで、30分130円（生活保護世帯は免除）
+  more_urls:
+  - https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+- category: sonota
+  name: ごみの訪問収集
+  name_on_page: ごみの訪問収集
+  summary: ごみを集積所に出せない世帯のごみを、玄関先で収集する。
+  who: {}
+  at_application:
+  - 満65歳以上のみ、障害者のみなどの世帯で、集積所へ出すのが難しい
+  - 身近な人の協力が得られない
+  where: 文京清掃事務所
+  url: https://www.city.bunkyo.lg.jp/documents/3232/zenntai.pdf
+  confidence: low
+not_found:
+- haishoku
+- iro
+- shingu
+- nichijo-yogu
+- chusha
+- yutai
+- gaishutsu

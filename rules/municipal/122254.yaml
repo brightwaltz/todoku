@@ -1,0 +1,143 @@
+city: '122254'
+name: 君津市
+site: www.city.kimitsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: ひとり暮らし高齢者のタクシー・バス等利用券
+  name_on_page: ひとり暮らし高齢者タクシー等利用券交付事業
+  summary: タクシーや路線バス等で使える100円券を、条件に合うひとり暮らしの方に交付する。
+  who:
+    age_min: 75
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市民税の所得割が非課税である
+  - 移動手段の確保が困難である（令和8年度から追加）
+  - 障がい福祉課の福祉タクシー事業とは併給できない
+  where: 高齢者支援課（市役所1階13番窓口）。郵送申請も可
+  url: https://www.city.kimitsu.lg.jp/soshiki/20/27334.html
+  confidence: high
+  amount: 1枚100円の券を最大180枚（月15枚、申込月で枚数が変わる）
+  more_urls:
+  - https://www.city.kimitsu.lg.jp/uploaded/attachment/59490.pdf
+- category: gaishutsu
+  name: 高齢者外出支援（Go Go！シルバーチケット）
+  name_on_page: 君津市高齢者外出支援事業
+  summary: 物価高騰対策として、75歳以上の在宅の方にタクシー・バス用の利用券を1回限り発行する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 市内に住所登録がある
+  - 令和9年4月1日までに75歳になる方も対象
+  - 申請は1回のみ。申請期限は令和8年12月28日（窓口必着）
+  where: 高齢者支援課窓口、各市民センター窓口。郵送申請も可
+  url: https://www.city.kimitsu.lg.jp/soshiki/20/85574.html
+  confidence: high
+  amount: 10,000円分（100円券100枚）
+- category: kaigo-yohin
+  name: ねたきり高齢者への紙おむつ給付
+  name_on_page: ねたきり老人紙おむつ給付事業
+  summary: 在宅でねたきりの高齢者に、紙おむつを年4回に分けて自宅へ届ける。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 世帯の市民税所得割が非課税である
+  - 障がい福祉課の日常生活用具給付の紙おむつを受けていない
+  where: 高齢者支援課
+  url: https://www.city.kimitsu.lg.jp/soshiki/20/27334.html
+  confidence: high
+  amount: 月30枚まで（4・7・10・1月に3か月分ずつ配送）
+  more_urls:
+  - https://www.city.kimitsu.lg.jp/uploaded/attachment/59490.pdf
+- category: kinkyu-tsuho
+  name: ひとり暮らし等の緊急通報装置の貸与
+  name_on_page: ひとり暮らし老人等緊急通報システム設置事業
+  summary: 緊急時に簡単に通報できる装置を貸し出す。所得に応じた自己負担がある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または75歳以上の方のみの世帯
+  - 固定電話以外で設置すると自己負担あり（事前に要問合せ）
+  where: 高齢者支援課
+  url: https://www.city.kimitsu.lg.jp/soshiki/20/27334.html
+  confidence: high
+  amount: 前年所得に応じた自己負担あり。通話料は本人負担
+  more_urls:
+  - https://www.city.kimitsu.lg.jp/uploaded/attachment/59490.pdf
+- category: haikai
+  name: 徘徊高齢者のGPS端末の利用費助成
+  name_on_page: 徘徊高齢者等位置探索システム利用費助成事業
+  summary: 徘徊のある方を介護する家族等に、GPS端末の契約費用と月額使用料を一部助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請は利用者を介護する配偶者・3親等内の親族・同居人
+  - 対象は65歳以上（一覧表では要介護・要支援認定の40歳以上も可）
+  - 市内に住所がある
+  - GPS機能のみの端末など、端末の条件あり
+  where: 高齢者支援課 地域包括支援室（郵送不可）
+  url: https://www.city.kimitsu.lg.jp/soshiki/20/36867.html
+  confidence: high
+  amount: 契約費用7,700円まで、月額350円まで（生活保護世帯は月1,320円まで）
+  more_urls:
+  - https://www.city.kimitsu.lg.jp/uploaded/attachment/59490.pdf
+- category: haikai
+  name: 認知症高齢者等の見守りシール配布
+  name_on_page: 認知症高齢者等見守りシール
+  summary: 二次元バーコード付きの見守りシールを、徘徊のおそれがある方の家族等に無料で配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊で警察に通報・保護された、または介護認定があり徘徊のおそれがある
+  - 市内在住の認知症高齢者等の家族等が申請する
+  where: 高齢者支援課 地域包括支援室
+  url: https://www.city.kimitsu.lg.jp/soshiki/20/67772.html
+  confidence: high
+  amount: 無料。1人につき30枚セット
+  more_urls:
+  - https://www.city.kimitsu.lg.jp/uploaded/attachment/59490.pdf
+- category: koken
+  name: 成年後見制度の市長申立費用・後見人報酬の助成
+  name_on_page: 君津市成年後見制度利用支援事業
+  summary: 市長申立ての手続き費用の一部と、後見人等への報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 対象者や所得の基準は頁に無く、要綱PDFに記載（未確認）
+  - 65歳以上は高齢者支援課、障がいのある方は障がい福祉課が窓口
+  where: 高齢者支援課（きみつ成年後見支援センターでも相談可）
+  url: https://www.city.kimitsu.lg.jp/soshiki/20/78190.html
+  confidence: low
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

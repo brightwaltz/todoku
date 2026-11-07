@@ -1,0 +1,204 @@
+city: '131130'
+name: 渋谷区
+site: www.city.shibuya.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等配食サービス（1食150円補助）
+  name_on_page: 高齢者等配食サービス
+  summary: 協力店が栄養バランスのよい食事を自宅へ届け、安否確認も行う。
+  who:
+    at_home: true
+  at_application:
+  - 区内在住。75歳以上、または要支援・要介護認定のいずれか
+  - 総合事業の事業対象者、見守りサポート事業の登録者も対象
+  - 障がい者福祉課の配食を利用・申請済の人は不可
+  - 本人以外は利用できない
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（スマート申請・郵送も可）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/haisyoku_sa-bisu.html
+  confidence: high
+  amount: 1食あたり150円を区が補助。1日（配達日のみ）1食まで
+- category: kinkyu-tsuho
+  name: 高齢者救急通報システムの設置
+  name_on_page: 高齢者救急通報システムの設置
+  summary: 通報ボタンで民間事業者につながり、緊急時は救急要請や出動員が駆けつける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 65歳未満の同居家族が病気などで緊急対応できない世帯も対象
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（郵送も可）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/k_tsuho.html
+  confidence: high
+  amount: 月額290円または410円（ライフリズム見守り付）。通信費が月300円ほど別にかかる
+- category: mimamori
+  name: IoT機器による高齢者見守りサービス
+  name_on_page: 高齢者見守りサービス
+  summary: 見守り機器を高齢者宅に付け、離れた家族がスマホで安否を確認できる。
+  who: {}
+  at_application:
+  - 1世帯1回のみ申請できる
+  - 申請前に設置した機器は対象外
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（郵送・オンライン可）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/mimamori_sa-bisu.html
+  confidence: high
+- category: sonota
+  name: 軽作業代行サービス（電球交換・付き添いなど）
+  name_on_page: 軽作業代行サービス
+  summary: 電球交換や清掃、通院の付き添いなどを安い料金でシルバー人材センターが代行する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 区内在住
+  - 生活保護受給者は無料
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（認定後にシルバー人材センターへ申込）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/keisagyou_daikou.html
+  confidence: high
+  amount: 作業者1人で1時間200円〜500円、剪定・除草は3時間3,000円〜5,000円。作業ごとに利用上限あり
+- category: shingu
+  name: 高齢者寝具乾燥
+  name_on_page: 高齢者寝具乾燥
+  summary: 寝具を干すのが難しい人に、月1回の乾燥（年1回は丸洗い）を行う。
+  who: {}
+  at_application: []
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（スマート申請・郵送可）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/n_singu.html
+  confidence: high
+  amount: 乾燥1回570円、丸洗い1回670円（自己負担）
+- category: ribiyo
+  name: 高齢者 理容・美容利用券の交付
+  name_on_page: 高齢者 理容・美容利用券交付
+  summary: 指定の理美容店または自宅で使える利用券を年6枚交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 障がい者福祉課の福祉理美容券を利用・申請済の人は不可
+  - 施設入所中・入院中は申込不可
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（スマート申請・郵送可）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/n_biyou.html
+  confidence: high
+  amount: 年6枚（2か月に1枚）。利用時の負担は店舗450円、自宅600円
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 補聴器1台分の本体費用の一部を助成する。
+  who: {}
+  at_application: []
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（郵送可）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/hocyouki-jyosei.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者リフト付タクシー
+  name_on_page: 高齢者リフト付タクシー
+  summary: 車いすやストレッチャーのまま乗れるリフト付タクシーを予約して使える。
+  who:
+    age_min: 65
+  at_application:
+  - 常時車いすなどを利用している
+  - 障がい者福祉課のリフト付タクシー登録者は除く
+  where: 高齢者福祉課サービス事業係、地域包括支援センター（スマート申請・郵送可）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-idoshien/s_taxi.html
+  confidence: high
+  amount: メーター運賃（迎車・予約料金は無料）
+- category: jutaku
+  name: 住宅設備改修給付（区独自）
+  name_on_page: 住宅設備改修給付
+  summary: 浴槽・流し台・洗面台の取替えや階段昇降機の取付けの費用を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 日常の動作が困難で、改修が必要と認められる
+  - 階段昇降機は要介護3〜5の人のみ
+  - 工事済みや他の補助金を受けた分は対象外
+  where: 高齢者福祉課サービス事業係
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/s_house.html
+  confidence: high
+  amount: 限度額は浴槽379,000円、流し・洗面156,000円、昇降機300,000円。自己負担は限度額の1割と超過分
+  more_urls:
+  - https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/kaigo.html
+- category: haikai
+  name: GPS端末の貸与（認知症高齢者の位置情報探索）
+  name_on_page: GPSを活用した認知症高齢者位置情報探索サービス
+  summary: 行方不明のおそれがある認知症の人の介護者に、位置情報を探せるGPS端末を貸与する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内在住のおおむね65歳以上
+  - 認知症の症状があり見守りが必要
+  where: 高齢者福祉課高齢者相談支援係（郵送・持参）。申請届は地域包括支援センターでも配布
+  url: https://www.city.shibuya.tokyo.jp/kenko/ninchisho/ninchisho-shien/itizyohotansakusabisu.html
+  confidence: high
+  amount: 利用料は月額200円（税込）
+- category: haikai
+  name: 見守りキーホルダーの登録
+  name_on_page: 渋谷区見守りキーホルダー
+  summary: 本人情報を登録した番号入りのキーホルダーで、保護時に身元確認と家族への連絡ができる。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 区内在住
+  - 認知症の症状があり見守りが必要
+  where: 地域包括支援センター（登録場所。問い合わせは高齢者福祉課高齢者相談支援係）
+  url: https://www.city.shibuya.tokyo.jp/kenko/ninchisho/ninchisho-shien/sibuyakumimamorikihoruda.html
+  confidence: low
+  amount: 無料
+- category: kaigo-yohin
+  name: 紙おむつ購入費助成（社会福祉協議会）
+  name_on_page: 紙おむつ購入費助成
+  summary: 紙おむつを使っている人に、渋谷区社会福祉協議会が購入費を助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application: []
+  where: 渋谷区社会福祉協議会
+  url: https://www.city.shibuya.tokyo.jp/kenko/shogai-seikatsu/shien-kaigo-seikatsu/syakyo-service.html
+  confidence: low
+- category: sonota
+  name: 高齢者マッサージサービス
+  name_on_page: 高齢者マッサージサービス
+  summary: 区内の会場で65歳以上の人に約35分のマッサージを行う。
+  who:
+    age_min: 65
+  at_application:
+  - 区内在住
+  - 当日に会場で本人確認書類を見せて申込（先着順）、電話予約不可
+  where: 各実施会場（問い合わせは高齢者福祉課サービス事業係）
+  url: https://www.city.shibuya.tokyo.jp/kenko/koreisha-seikatsu/koreisha-zaitaku/r_massage.html
+  confidence: high
+  amount: 1回1,400円（自己負担）
+not_found:
+- iro
+- nichijo-yogu
+- yutai

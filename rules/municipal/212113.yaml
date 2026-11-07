@@ -1,0 +1,155 @@
+city: '212113'
+name: 美濃加茂市
+site: www.city.minokamo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護支援金
+  name_on_page: 美濃加茂市家族介護支援金支給事業
+  summary: 在宅の要介護高齢者を12か月介護した主たる介護者に支援金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者は市内在住で、介護保険料が第1〜第3段階
+  - 障害高齢者自立度B1〜C2か認知症自立度IIIa〜Mのどちらか
+  - ショートステイ・入院が合計で月7日以内
+  - 介護保険料の滞納がなく、保険給付の制限を受けていない
+  where: 高齢福祉課 介護保険係（市役所西館1階。郵送も可）
+  url: https://www.city.minokamo.lg.jp/soshiki/10/16608.html
+  confidence: high
+  amount: 要介護1・2は月2,000円、要介護3〜5は月5,000円
+- category: nichijo-yogu
+  name: 安心生活用品の給付
+  name_on_page: 高齢者の方への安心生活用品給付
+  summary: シルバーカー・電磁調理器・火災警報器・家具転倒防止器具の給付券などを給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または75歳以上のみの世帯
+  - 介護保険料の所得段階が第1〜第3段階
+  - シルバーカーは介護保険の認定を受けていない人が対象
+  where: 高齢福祉課（窓口・郵送・オンライン申請）
+  url: https://www.city.minokamo.lg.jp/soshiki/10/6926.html
+  confidence: high
+  amount: シルバーカー・電磁調理器・火災警報器は各上限15,000円、家具転倒防止器具は上限8,000円
+- category: sonota
+  name: ひとり暮らし高齢者へのごみ袋配布
+  name_on_page: ひとり暮らし高齢者へのごみ袋配布
+  summary: 市民税非課税のひとり暮らし高齢者にごみ袋と粗大ごみシールを配る。
+  who:
+    household:
+    - alone
+    tax:
+    - self_exempt
+  at_application:
+  - 同じ敷地内や隣・向かいに親族が住んでいない
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.minokamo.lg.jp/soshiki/10/6880.html
+  confidence: high
+  amount: 可燃・不燃・資源のごみ袋と粗大ごみシール（枚数は頁に記載なし）
+- category: sonota
+  name: ひとり暮らし高齢者の上下水道料金等の助成
+  name_on_page: ひとり暮らし高齢者の上下水道料金・し尿取扱料金の助成
+  summary: ひとり暮らし高齢者の上下水道料金とし尿取扱料金の一部を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - self_exempt
+  at_application:
+  - 前年度の1年間、市に住民票があり在宅で独居だった期間がある
+  - 同一敷地内や隣・向かいに親族が住んでいない
+  - 今年度7月1日に市内に住所がある
+  - 介護保険料の滞納がない（欠損分を除く）
+  - 申請期間は7月1日〜2月末日
+  where: 高齢福祉課 高齢福祉係（市役所西館1階）
+  url: https://www.city.minokamo.lg.jp/soshiki/10/15663.html
+  confidence: high
+  amount: 上水道は月600円、下水道は月500円（各対象月数分）。し尿は前年度支払額の半額（月500円×対象月数が上限）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム
+  summary: 持病で急変のおそれがあるひとり暮らし高齢者に、緊急通報機器を無料で貸す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - self_exempt
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 2親等以内の親族が市内に住んでいない
+  - 緊急時に連絡を受けられる親族が国内にいる
+  - 30分以内に駆けつけられる協力員が2名以上いる
+  - 申請書に民生委員の署名が必要
+  where: 高齢福祉課 高齢福祉係（市役所西館1階）
+  url: https://www.city.minokamo.lg.jp/soshiki/10/6912.html
+  confidence: high
+  amount: 利用料は無料
+- category: haikai
+  name: 見守りシール（QRコード）の交付
+  name_on_page: 美濃加茂市見守りシール交付事業
+  summary: 徘徊のおそれがある人にQRコードのシールを無料で交付し、発見時に介護者へ連絡が届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊し行方不明になるおそれがある人
+  where: 高齢福祉課 高齢福祉係
+  url: https://www.city.minokamo.lg.jp/soshiki/10/6902.html
+  confidence: high
+  amount: 無料。耐洗ラベル20枚と蓄光シール10枚を郵送（追加分は購入）
+- category: mimamori
+  name: 市LINEを使った見守り通知サービス
+  name_on_page: 市LINE公式アカウントを活用した高齢者などの見守り通知サービス
+  summary: LINEで毎日の安否通知を送り、2日続けて未回答なら家族などに警報が届く。
+  who: {}
+  at_application:
+  - 対象はひとり暮らしの高齢者など（年齢などの数値条件は頁に記載なし）
+  - 市LINE公式アカウントから利用登録する
+  - 毎年3月31日に登録がリセットされ、4月1日に再登録が必要
+  where: 市LINE公式アカウントから登録（担当は高齢福祉課）
+  url: https://www.city.minokamo.lg.jp/soshiki/10/24733.html
+  confidence: high
+  amount: 無料（通信費は自己負担）
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 美濃加茂市認知症高齢者等個人賠償責任保険事業
+  summary: 市が保険料を負担し、事故で賠償責任を負った場合に補償する保険に加入できる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 見守りシール交付の対象になっている認知症高齢者等
+  where: 高齢福祉課（申請書の提出）
+  url: https://www.city.minokamo.lg.jp/soshiki/10/6999.html
+  confidence: high
+  amount: 保険料は市が負担（補償の上限額は頁に記載なし）
+  more_urls:
+  - https://www.city.minokamo.lg.jp/soshiki/10/6902.html
+not_found:
+- kaigo-yohin
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- chusha
+- yutai

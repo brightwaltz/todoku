@@ -1,0 +1,36 @@
+pref: '22'
+name: 静岡県
+site: www.pref.shizuoka.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ゆずりあい駐車場の利用証の交付
+  name_on_page: 静岡県ゆずりあい駐車場制度
+  summary: 車いすマークの駐車場が必要な歩行困難の人に、県や市町が利用証を交付する。
+  who: {}
+  at_application:
+  - 現に歩行が困難な状態であること（全員に必要）
+  - 静岡県内に住んでいる、または通勤などで県内に来ている
+  - 要介護1以上の高齢者（介護保険被保険者証の写しで確認）
+  - ほかに一定等級の障害者・難病患者・妊産婦・けが人や病人も対象
+  - 上のいずれか1つに当たればよい（要介護以外の基準は頁を参照）
+  where: お住まいの市町、県健康福祉センターの窓口。郵送は県福祉長寿政策課へ（利用証送付用の180円切手を同封）
+  url: https://www.pref.shizuoka.jp/kenkofukushi/shakaifukushi/chiikifukushi/1046850/1043065.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- gaishutsu
+- mimamori
+- yutai

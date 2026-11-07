@@ -1,0 +1,90 @@
+city: '342033'
+name: 竹原市
+site: www.city.takehara.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 重度の高齢者を在宅で介護する家族に、紙おむつなどの介護用品を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する家族も市民税非課税世帯であること
+  - 必要な用品の見積書を申請時に持参する
+  - 半年ごとに更新申請が必要
+  where: 最寄りの在宅介護支援センター、または地域支えあい推進課
+  url: https://www.city.takehara.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/kaigohoken/3334.html
+  confidence: high
+  amount: 年額 6 万円まで（月 5,000 円×申請月以降の月数。前期・後期の 2 回）
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: ボタンを押すと 24 時間のコールセンターにつながる緊急通報装置の設置と健康相談。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らしの人
+  - おおむね65歳以上の高齢者のみ世帯、またはこれに準ずる世帯
+  - 身体障害者のみの世帯等の身体障害者も対象
+  - 民生委員の確認と協力員の承諾書が必要
+  where: 地域支えあい推進課高齢者支援係
+  url: https://www.city.takehara.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/3386.html
+  confidence: high
+  amount: 保守料は固定型が月 510 円、無線型が月 1,018 円。住民税課税世帯は別に月 1,300 円
+- category: haikai
+  name: あんしんホルダー登録システム
+  name_on_page: あんしんホルダー登録システム
+  summary: 家族の連絡先を登録し、番号入りのキーホルダー等を持って迷子や急病に備える。
+  who: {}
+  at_application:
+  - おおむね65歳以上の人
+  - 家族などの連絡先を 2 人まで登録する
+  where: 地域支えあい推進課高齢者支援係または支所
+  url: https://www.city.takehara.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/3386.html
+  confidence: high
+  amount: 無料（キーホルダー 2 個・シール 1 シート・マグネット 1 個を交付）
+- category: gaishutsu
+  name: 福祉バス
+  name_on_page: 福祉バス
+  summary: 通院や買い物のための市の福祉バスに、1 回 100 円で乗れる。
+  who: {}
+  at_application:
+  - 65歳以上で一般の交通機関の利用が困難な人
+  - または、40歳以上で要介護認定を受けた人
+  - または、身体障害者手帳等を持つ人
+  - 平日のみ運行（月・火・水・金のコース別）
+  where: 地域支えあい推進課高齢者支援係（問い合わせ先）
+  url: https://www.city.takehara.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/7939.html
+  confidence: high
+  amount: 1 回（片道）100 円。介助者は無料（冊子の記載）
+  more_urls:
+  - https://www.city.takehara.lg.jp/material/files/group/11/shuseizyouhoushi.pdf
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 判断能力が不十分な人の成年後見制度の利用を市が支援する（助成内容は頁に無い）。
+  who: {}
+  at_application:
+  - 認知症などで判断能力が不十分な人
+  where: 地域支えあい推進課高齢者支援係（頁の問い合わせ先）
+  url: https://www.city.takehara.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/3386.html
+  confidence: low
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

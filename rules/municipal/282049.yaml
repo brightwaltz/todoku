@@ -1,0 +1,111 @@
+city: '282049'
+name: 西宮市
+site: www.nishi.or.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 福祉タクシー利用券の交付
+  name_on_page: 福祉タクシーの派遣
+  summary: 在宅で外出が難しい高齢者などに、福祉タクシーの利用券を交付して通院などの移動を助ける。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で要介護3〜5（予約制は4・5）、介助者が添乗できる
+  - または重度の身体障害者手帳等の人（障害福祉課で交付）
+  - 市外居住・入院中・施設入所の人は対象外
+  - 高齢者バス運賃助成の登録者は対象外
+  where: 高齢介護課（窓口・郵送・電子申請）
+  url: https://www.nishi.or.jp/kenko/koreishafukushi/ido/taxi.html
+  confidence: high
+  amount: 予約制は最大48枚綴り（利用料金の1割と上限額超は自己負担）。定額制は最大72枚綴りで1枚500円。
+- category: iro
+  name: 家族慰労金
+  name_on_page: 家族慰労金の支給
+  summary: 要介護4・5の在宅高齢者を介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人は過去1年間介護保険サービスを使っていない
+  - ショートステイは年7日以内なら可
+  - 介護する配偶者・扶養義務者も市民税非課税世帯
+  where: 高齢介護課 管理チーム
+  url: https://www.nishi.or.jp/kenko/koreishafukushi/zaitaku/irokin.html
+  confidence: high
+  amount: 年額12万円
+- category: haikai
+  name: 認知症高齢者等のGPS端末貸与
+  name_on_page: 認知症高齢者等位置探索サービス事業
+  summary: 行方不明のおそれがある認知症高齢者等を介護する家族に、GPS端末を貸与する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市に住民登録があり市内に居住している
+  - 65歳以上、または要支援・要介護認定を受けた2号被保険者
+  - 介護する家族等が申し込む
+  where: 地域共生推進課
+  url: https://www.nishi.or.jp/kenko/koreishafukushi/zaitaku/haikai.html
+  confidence: high
+  amount: 初期費用等は市が負担（端末は事業者から貸与）
+- category: nichijo-yogu
+  name: 自動消火器・火災警報器・電磁調理器の給付
+  name_on_page: 自動消火器・火災警報器・電磁調理器の給付
+  summary: 防火の配慮が必要な高齢者世帯などに、自動消火器・火災警報器・電磁調理器を給付する。
+  who: {}
+  at_application:
+  - その年度に65歳以上、または要支援・要介護認定の2号被保険者
+  - 防火の配慮が必要なひとり暮らし・高齢者のみの世帯、または寝たきり高齢者
+  - 電磁調理器はひとり暮らし・高齢者のみの世帯が対象
+  where: 高齢者あんしん窓口（地域包括支援センター）または高齢介護課
+  url: https://www.nishi.or.jp/kenko/koreishafukushi/zaitaku/jidoshokaki.html
+  confidence: high
+  amount: 市民税額に応じ費用の一部負担あり（生活保護・市民税非課税世帯は無料）
+- category: gaishutsu
+  name: 高齢者のバス運賃助成
+  name_on_page: 高齢者バス運賃助成事業
+  summary: バス運賃の割引購入証を交付する助成。対象や額は窓口で確かめる。
+  who: {}
+  at_application:
+  - 対象者の条件は読める頁の文字に無く、窓口で確かめる
+  where: 高齢介護課 管理チーム
+  url: https://www.nishi.or.jp/kenko/koreishafukushi/ido/09215532021051117012.html
+  confidence: high
+- category: jutaku
+  name: 人生いきいき住宅改造助成（高齢者）
+  name_on_page: 西宮市人生いきいき住宅改造助成事業
+  summary: 高齢者の住宅改造費の助成。条件と額は窓口で確かめる。
+  who: {}
+  at_application:
+  - 対象者・所得の条件は読める頁の文字に無く、窓口で確かめる
+  where: 高齢介護課（電話 0798-35-3048）
+  url: https://www.nishi.or.jp/kenko/koreishafukushi/barrier_free/koreshafukushi.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 見守りホットライン事業
+  summary: 在宅生活が不安な高齢者等に緊急通報機器を貸与し、24時間の受信、月1回の安否確認電話も行う。
+  who: {}
+  at_application:
+  - 世帯がおおむね65歳以上の高齢者か障害者手帳所持者で構成
+  - 他の緊急通報システムを設置していない
+  - 固定電話または携帯電話の番号で電話連絡ができる
+  - 居宅の鍵を委託業者に預け、緊急連絡先を1名設定する
+  where: 地域共生推進課
+  url: https://www.nishi.or.jp/kenko/koreishafukushi/zaitaku/tsuhokiki.html
+  confidence: low
+  amount: 月額 固定型1,100円・携帯型1,500円（市民税所得割非課税・生活保護は無料）
+not_found:
+- haishoku
+- shingu
+- ribiyo
+- hochoki

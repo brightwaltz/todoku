@@ -1,0 +1,234 @@
+city: '112089'
+name: 所沢市
+site: www.city.tokorozawa.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: mimamori
+  name: 高齢者みまもり相談員の訪問
+  name_on_page: 高齢者みまもり相談員による訪問
+  summary: 市の相談員が月2回ほど自宅を訪ね、安否確認や話し相手をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - alone_daytime
+    - elderly_only
+    - with_family
+  at_application:
+  - 次のいずれか：単身、日中8時間以上ひとり、高齢者のみ世帯、認知症状のある家族を一人で介護
+  - 認知症状は軽度なら対象
+  where: 地域包括支援センター（問合せは高齢者支援課）
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/zaitaku/mimamori/mimamorisoudanin.html
+  confidence: high
+  amount: 無料（訪問は月2回程度）
+  more_urls:
+  - https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス
+  summary: 市指定の事業者が食事を自宅へ届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  where: 地域包括支援センター（問合せは高齢者支援課）
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/zaitaku/mimamori/haishoku.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システムの貸与
+  summary: ボタン一つで通報センターにつながる緊急通報機器を貸与する。
+  who:
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - 65歳以上で慢性疾患があり急変のおそれがある人
+  - または90歳以上で立ち上がりに介助が必要な人
+  - 市内の一人暮らしの重度身体障害者も対象
+  - 緊急時に連絡できる親族や身元保証人がいること
+  where: 高齢者は地域包括支援センター、障害者は障害福祉課
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/zaitaku/mimamori/kinkyutuho.html
+  confidence: high
+  amount: 月額 単身1,500円・日中単身3,000円（市民税額85,000円未満は無料の場合あり）
+  more_urls:
+  - https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+- category: iro
+  name: 特定在宅高齢者介護手当
+  name_on_page: 特定在宅高齢者介護手当
+  summary: 要介護4・5の高齢者を同居で介護している人に年1回手当を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 条件は介護を受ける高齢者の年齢と要介護度
+  - 同居して常時介護した期間が継続6か月以上
+  - 申請は介護している人が行う
+  where: 高齢者支援課（郵送可）
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/zaitaku/teatejoseizei/kaigosya.html
+  confidence: high
+  amount: 1年度につき1世帯あたり40,000円
+  more_urls:
+  - https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+- category: sonota
+  name: 在宅介護者リフレッシュ事業の利用券
+  name_on_page: 在宅介護者リフレッシュ事業
+  summary: 介護者がはり・きゅう・マッサージを低額で受けられる利用券を年2枚交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 特定在宅高齢者介護手当の支給決定を受けた人が対象
+  - 冊子では、その方と同居して介護する人も対象と記載
+  - 利用券は手当の支給決定者へ直接交付される
+  where: 高齢者支援課
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/zaitaku/teatejoseizei/zaitakukaigorefresh.html
+  confidence: high
+  amount: 施術1回あたり 通院500円・訪問1,000円（年2枚）
+  more_urls:
+  - https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+- category: koken
+  name: 後見報酬等の助成
+  name_on_page: 後見報酬等の助成制度
+  summary: 後見報酬などを払うのが難しい人に、費用の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 後見報酬等の負担が困難で、市が定める要件を満たす人
+  - 市長申立以外の申立ても対象になる場合がある
+  where: 高齢者支援課（被後見人等が65歳以上の場合）
+  url: https://www.city.tokorozawa.saitama.jp/kenko/chiikifukushi/seinenkonenninseido.html
+  confidence: low
+  amount: 家庭裁判所の報酬付与額の範囲内で、市の要綱が定める額まで
+  more_urls:
+  - https://www.city.tokorozawa.saitama.jp/dl/fukushi/chiiki20240328134843373.html
+- category: kaigo-yohin
+  name: 紙おむつ購入費の支給
+  name_on_page: 紙おむつ購入費の支給
+  summary: 在宅で介護を受ける人が、市指定業者の紙おむつを自宅配達で購入できる。
+  who:
+    at_home: true
+  at_application:
+  - 市の介護保険の被保険者であること
+  - 要介護2〜5、または軽度でも失禁の疾病で医師が必要と判断した人
+  where: 介護保険課（ケアマネジャーに相談）
+  url: https://www.city.tokorozawa.saitama.jp/kenko/kaigohoken/kaigo4/kyuufu_kamiomutu.html
+  confidence: high
+  amount: 月5,600円分まで対象で、自己負担は1〜3割
+  more_urls:
+  - https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+- category: sonota
+  name: 介護保険の利用者負担の助成
+  name_on_page: 利用者負担助成金制度
+  summary: 住民税非課税世帯の介護サービス自己負担の一部を市が助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険サービスを利用して自己負担がある人
+  - 介護保険料の滞納がない（冊子の記載）
+  - 福祉用具購入・住宅改修・紙おむつ・食費居住費は対象外
+  where: 介護保険課
+  url: https://www.city.tokorozawa.saitama.jp/kenko/kaigohoken/kaigo4/kyuufu_riyoushafutanjyoseikin.html
+  confidence: high
+  amount: 自己負担額の4分の1（老齢福祉年金の受給者は2分の1）
+  more_urls:
+  - https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+- category: gaishutsu
+  name: ところバス・ところワゴン特別乗車証
+  name_on_page: ところバス・ところワゴン特別乗車証
+  summary: 市内循環バスの運賃が100円になる乗車証を交付する。
+  who: {}
+  at_application:
+  - 市内に住民登録があること
+  - 65歳以上、または40歳以上で要介護・要支援認定を受けている人
+  where: 都市計画課、各まちづくりセンター、各市民課サービスコーナー
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+  confidence: high
+  amount: 運賃100円（1日乗車券は200円で購入可）
+- category: gaishutsu
+  name: 免許自主返納者へのバス無料乗車券
+  name_on_page: ところバス・ところワゴン無料乗車券
+  summary: 運転免許を自主返納した人に、市内循環バスの無料定期券か回数券を渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録があること
+  - すべての運転免許を自主返納して1年以内
+  - 1人1回のみの申請で再交付はできない
+  where: 都市計画課
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+  confidence: high
+  amount: 無料定期券か50回分の無料回数券のどちらか（有効1年）
+- category: sonota
+  name: 外国人高齢者等への福祉手当
+  name_on_page: 外国人高齢者等福祉手当
+  summary: 無年金の外国人高齢者などに月額の手当を支給する。
+  who: {}
+  at_application:
+  - 大正15年4月1日以前生まれの外国人、または一定の重度障害のある外国人
+  - 市内に住所があり1年以上居住し、永住許可を受けている
+  - 国民年金などの公的年金を受給していない
+  where: 高齢者支援課
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+  confidence: high
+  amount: 月額10,000円
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 持病や服薬の情報を入れて冷蔵庫に保管する救急医療情報キットを無料で配る。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上の人（1世帯1本）
+  - または65歳未満で一人暮らしの障害者
+  where: 高齢者支援課、地域包括支援センター、まちづくりセンターなど
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 介護マークの配布
+  name_on_page: 介護マーク
+  summary: 介護中だと周囲に伝える名札や腕章の介護マークを無料で配る。
+  who: {}
+  at_application:
+  - 市内在住で認知症高齢者などを介護している人
+  - 法人は対象外
+  where: 高齢者支援課、地域包括支援センター
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 高齢者のごみ収集支援（ふれあい収集）
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しい人の家の戸口から週1回ごみを集め、声かけで安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身近な人の協力がなく、自分でごみ集積所へ出せない人
+  - 65歳以上で要支援2以上の単身、または2級以上の身体障害者手帳を持つ単身
+  - 上記の人だけで構成される世帯の人も対象
+  where: 収集管理事務所
+  url: https://www.city.tokorozawa.saitama.jp/kenko/koureisyafukushi/koureisyahukushigaido.files/r8guide.pdf
+  confidence: high
+not_found:
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

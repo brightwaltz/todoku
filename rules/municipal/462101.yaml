@@ -1,0 +1,136 @@
+city: '462101'
+name: 指宿市
+site: www.city.ibusuki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等支給事業
+  summary: 在宅で要介護3〜5などの方に、紙おむつ・尿取りパッド・防水シートを支給する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住民登録があり、在宅の人
+  - 要介護3・4・5の人、または重度心身障害者の人
+  where: 長寿支援課 高齢者福祉係（指宿庁舎6番窓口）。山川・開聞は各支所の市民福祉課。支給引換券の発行後、指定販売業者で購入
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page029970.html
+  confidence: high
+  amount: 月5,400円分または2,700円分（要介護4・5で対象者が65歳以上、介護者とも市内に住民登録があり市民税非課税世帯は5,400円、それ以外は2,700円）
+- category: haishoku
+  name: 高齢者等訪問給食サービス
+  name_on_page: 高齢者等訪問給食サービス事業
+  summary: 安否確認が必要な高齢者などに、昼食・夕食を届けて食生活と見守りを支える。
+  who:
+    at_home: true
+  at_application:
+  - 定期的な安否確認が必要な人
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯、これに準ずる世帯
+  - または、身体障害者の人（65歳未満も申請可）
+  - おかずのみ・一時的な利用・シルバーハウジング入居の人は対象外
+  where: 長寿支援課（指宿庁舎6番窓口）。山川・開聞は各支所の市民福祉課
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page003376.html
+  confidence: high
+  amount: 1食485円（生活保護、または本人と世帯全員が市民税非課税で所得と課税年金収入の合計が80万9千円以下の人は450円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の給付・貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: ひとり暮らしの高齢者などに、緊急時に通報できる装置を給付または貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の1人暮らし、または高齢者のみの世帯の人
+  - または、一人暮らしの身体障害者、身体障害者のみの世帯の人
+  - または、上のいずれかに準ずると認められる人
+  - NTTの加入電話以外の回線契約ではペンダント型は取り付けられない
+  where: 長寿支援課 高齢者福祉係（指宿庁舎6番窓口）。山川・開聞は各支所の市民福祉課
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page029967.html
+  confidence: high
+  amount: ペンダント型は設置時のみ5,800円。人感センサーは月150円、携帯型は月700円（設置2年後から月1,500円加算）
+- category: ribiyo
+  name: 訪問理容・美容の料金助成
+  name_on_page: 訪問理容・美容サービス費支給事業
+  summary: 寝たきり等で店に行けない在宅の高齢者に、出張理容・美容の料金を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住民登録がある
+  - 寝たきり度の判定でランクBまたはCで、当面その状態が続く見込み
+  where: 長寿支援課 高齢者福祉係（指宿庁舎6番窓口）。山川・開聞は各支所の市民福祉課
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page029973.html
+  confidence: high
+  amount: 出張1回につき、訪問理美容料の2分の1（助成の上限は2,000円）。申請月により年4〜1枚
+- category: sonota
+  name: シルバーカー購入費の助成
+  name_on_page: シルバーカー購入費助成事業
+  summary: 杖が必要な在宅の高齢者が指定店でシルバーカーを買うと、購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住民登録がある
+  - 歩くときに杖等が必要
+  - 指定販売業者で買ったあと、市役所で手続きをする
+  - 過去6か月以内に購入したものが対象
+  where: 長寿支援課 高齢者福祉係（指宿庁舎6番窓口）。山川・開聞は各支所の市民福祉課
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page029969.html
+  confidence: high
+  amount: 4,000円
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット推進事業
+  summary: かかりつけ医などを書いた情報シートを入れる保管容器とステッカーを配付する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみの世帯の人
+  - または、身体障害者手帳（1級または2級）等のみの世帯の人
+  where: 長寿支援課 高齢者福祉係（指宿庁舎6番窓口）。山川・開聞は各支所の市民福祉課
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page029971.html
+  confidence: high
+  amount: 配付は無料
+- category: mimamori
+  name: 高齢者等あんしん登録票
+  name_on_page: 高齢者等あんしん登録票
+  summary: 本人の情報や写真を登録し、市・警察・消防で共有して緊急時の対応に備える。
+  who: {}
+  at_application:
+  - 日常生活に不安を抱える高齢者等
+  where: 地域包括支援センター（長寿支援課内・指宿庁舎6番窓口）、山川・開聞の各支所市民福祉課で書類を配布・受付
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page003360.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう等の施術料助成
+  name_on_page: はり・きゅう等施術料助成事業
+  summary: はり・きゅう・あんまマッサージ指圧の施術料を1回900円助成する受診券を発行する。
+  who: {}
+  at_application:
+  - 市内に住民登録があり、65歳以上、または身体障害者手帳を持つ人
+  - 医療保険が適用される施術には使えない
+  where: 長寿支援課 高齢者福祉係（指宿庁舎6番窓口）。山川・開聞は各支所の市民福祉課（受診券を発行）
+  url: https://www.city.ibusuki.lg.jp/main/kenko/koureisya/koureisya/page029974.html
+  confidence: high
+  amount: 施術料1回につき900円（年間18枚まで、4月〜翌年3月）
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- gaishutsu
+- nichijo-yogu
+- yutai

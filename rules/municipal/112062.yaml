@@ -1,0 +1,173 @@
+city: '112062'
+name: 行田市
+site: www.city.gyoda.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 徘徊高齢者の位置探索端末の貸与
+  name_on_page: 徘徊高齢者等位置探索サービス
+  summary: 徘徊のある高齢者の現在位置を探せる端末を、介護する家族に貸与する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上の徘徊高齢者等を介護する人が申請する
+  where: 高齢者福祉課
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4424.html
+  confidence: high
+  amount: 加入料と付属品代は市が負担。月額1,320円などの維持費は自己負担。
+- category: haishoku
+  name: 見守りを兼ねた配食サービス
+  name_on_page: 配食サービス
+  summary: お弁当を届けながら安否確認を行う。週4食まで、昼か夕を選べる。
+  who: {}
+  at_application:
+  - 食事の支援や提供を他から受けられない人
+  - 65歳以上のみの世帯、その同居の重度心身障害者、要支援1・2か事業対象者のいずれか
+  where: 高齢者福祉課8番窓口（郵送・電子申請も可）
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4425.html
+  confidence: high
+  amount: おかずのみ1食350円、ごはん＋おかず1食430円。
+- category: kaigo-yohin
+  name: 要介護者への紙おむつ・尿取りパッドの給付
+  name_on_page: 紙おむつ給付事業
+  summary: 在宅で要介護3以上の人に、紙おむつ・尿取りパッドを自宅へ届ける。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、市の介護保険に加入している
+  where: 高齢者福祉課8番窓口（郵送・電子申請も可）
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4427.html
+  confidence: high
+  amount: 月の上限は、世帯全員非課税か生活保護世帯で6,000円、課税世帯がある場合は3,500円（税相当額を除く）。
+- category: shingu
+  name: 寝具の乾燥・丸洗いサービス
+  name_on_page: 寝具の乾燥及び丸洗いサービス
+  summary: 寝具の乾燥を年4回行う。希望すれば1回分を丸洗いに変えられる。
+  who:
+    at_home: true
+  at_application:
+  - 75歳以上のひとり暮らし、または要介護4・5が3か月以上続く人
+  - 市内に住民票がある
+  where: 高齢者福祉課
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4429.html
+  confidence: high
+  amount: 1回の負担は、乾燥が非課税150円・課税300円、丸洗いが非課税250円・課税500円。生活保護は無料。
+- category: nichijo-yogu
+  name: 電磁調理器・自動消火器の給付
+  name_on_page: 高齢者日常生活用具給付
+  summary: 防火のため、電磁調理器や自動消火器を高齢者に給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 電磁調理器は防火の配慮が必要なひとり暮らし高齢者等
+  - 自動消火器はねたきり・ひとり暮らし高齢者等
+  where: 高齢者福祉課6番窓口
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4430.html
+  confidence: high
+  amount: 用具の購入額の1割が自己負担。生活保護は無料。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 在宅高齢者緊急通報システムサービス
+  summary: 急病などの際に通報できる固定型か携帯型の装置を自宅に設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしの人、またはねたきり高齢者がいる高齢者のみ世帯
+  - 携帯型は固定電話回線がない人だけ
+  where: 高齢者福祉課6番窓口（郵送も可）
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4431.html
+  confidence: high
+  amount: 月額は固定型が課税世帯400円・非課税世帯40円、携帯型が1,800円・1,440円（税抜）。
+- category: iro
+  name: 重度要介護者を在宅で介護する人への手当
+  name_on_page: 在宅重度要介護高齢者等介護者手当(介護者手当)
+  summary: 要介護4・5の人を在宅で介護する人に、月5,000円の手当を支給する。
+  who:
+    age_min: 40
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の状態が6か月以上続き、介護保険料の滞納がない
+  - 介護される人は市内に6か月以上住民票があり、市民税が非課税
+  - 介護者に市の住民票があり、主に介護する1人
+  where: 高齢者福祉課8番窓口（郵送も可）
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4438.html
+  confidence: high
+  amount: 介護される人1人につき月額5,000円。
+- category: mimamori
+  name: ひとり暮らし高齢者の訪問見守り
+  name_on_page: ひとり暮らし高齢者見守りサービス
+  summary: シルバー人材センターの会員が週2回訪問し、見守りと安否確認をする。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 緊急通報装置・配食・介護保険サービス（一部を除く）を使っていない
+  - 市内に一親等以内の親族や、同一敷地内の親族がいない
+  - 申請に地区の民生委員の署名が必要
+  where: 高齢者福祉課8番窓口（郵送も可）
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/10490.html
+  confidence: high
+  amount: 無料
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成金交付事業
+  summary: 軽度・中等度の難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力が40デシベル以上で、障害者総合支援法の補聴器の対象外
+  - 指定医が補聴器の装用が必要と認めた
+  - 市税の滞納がない
+  - 購入前に申請する
+  where: 高齢者福祉課8番窓口（郵送・電子申請も可）
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/11173.html
+  confidence: high
+  amount: 1回2万円まで。5年間は再度の助成なし。
+- category: sonota
+  name: 訪問介護の利用者負担の助成
+  name_on_page: 訪問介護サービス利用者負担額助成
+  summary: 低所得の人の訪問介護などの利用料の半額を助成する。
+  who: {}
+  at_application:
+  - 要介護認定を受けた人か、総合事業の該当者
+  - 生計中心者の前年度の市民税が非課税の世帯
+  - 年度ごとに資格認定の申請が必要
+  where: 高齢者福祉課8番窓口（郵送・電子申請も可）
+  url: https://www.city.gyoda.lg.jp/iryo_kenko_fukushi/koreishafukushi/koreisha_support/4437.html
+  confidence: high
+  amount: 利用料の2分の1（高額介護サービス費の支給額は差し引く）。
+not_found:
+- koken
+- jutaku
+- ribiyo
+- gaishutsu

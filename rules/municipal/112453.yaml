@@ -1,0 +1,170 @@
+city: '112453'
+name: ふじみ野市
+site: www.city.fujimino.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等給付
+  summary: 常時おむつを使う在宅の要介護3以上の人に、紙おむつ等を業者が届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、住民票も市内
+  - 常時失禁の状態でおむつを使っている
+  - 生活保護を受けていない
+  - 介護保険施設・老人福祉施設に入所していない
+  where: 担当ケアマネジャーまたは高齢者あんしん相談センターに相談（高齢福祉課 地域支援係）
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/yokaigo/2633.html
+  confidence: high
+- category: shingu
+  name: 寝具の洗濯サービス
+  name_on_page: 寝具洗濯サービス
+  summary: 在宅でねたきりの人などの寝具を、年1回無料で洗濯する。
+  who: {}
+  at_application:
+  - 65歳以上・要介護3以上・在宅で常時ねたきりの人
+  - または肢体不自由で身体障害者手帳1級の人
+  where: 担当ケアマネジャーまたは高齢者あんしん相談センターに相談
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/yokaigo/2100.html
+  confidence: high
+  amount: 無料（年1回）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: ねたきりの要介護3以上の人が、登録店の訪問理美容を利用券で安く受けられる。
+  who: {}
+  at_application:
+  - 要介護3以上でねたきりの方
+  - 一部の障がい者も対象
+  where: 担当ケアマネジャーまたは高齢者あんしん相談センターに相談
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/yokaigo/2522.html
+  confidence: high
+- category: iro
+  name: 在宅の要介護高齢者を介護する家族への手当
+  name_on_page: 介護手当支給
+  summary: 要介護3以上の高齢者と同居して介護する家族に、月額の手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される人は65歳以上
+  - 6か月以上、常時ねたきりまたは認知症の状態
+  - 介護される人が施設・病院に入所入院中は対象外
+  where: 高齢福祉課 地域支援係（頁に申請先の明記なし。問い合わせ先）
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/yokaigo/2057.html
+  confidence: high
+  amount: 月額5,000円
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 食事の用意が難しい在宅の人へ、指定業者が安否確認を兼ねて弁当を届ける。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住民票があり市内在住、食事の用意が困難
+  - 40歳以上で要支援以上のひとり暮らし等の人
+  - または65歳以上で要介護のおそれがあると市が認めた人
+  - または18歳以上で身体障害者手帳1・2級等のひとり暮らし等
+  where: 高齢者あんしん相談センターまたは担当ケアマネジャーに相談
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/hitori/2433.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急時連絡システムの設置
+  name_on_page: 緊急時連絡システム
+  summary: 通報機器と無線発信器を無料で貸与し、押すと消防本部につながる。
+  who:
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - 65歳以上または要介護認定者で心疾患等の持病がある人
+  - または聴覚等・1〜3級の身体障害者手帳の人
+  - ひとり暮らし、または同居家族が仕事で家族の救急要請が困難
+  - 電話回線を持っている人に限る
+  where: 高齢福祉課（ケアマネジャーまたは高齢者あんしん相談センターに相談）
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/hitori/2432.html
+  confidence: high
+  amount: 機器の設置・貸与は無料（電話料金や紛失時などは自己負担）
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付
+  summary: 火災警報器・自動消火器・電磁調理器を、条件に合う高齢者に給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 火災警報器・自動消火器：単身または65歳以上と同居のねたきり高齢者等
+  - 電磁調理器：防火の配慮が必要な65歳以上のひとり暮らし
+  - 申請前に高齢福祉課へ相談が必要
+  where: 高齢福祉課
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/hitori/5509.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等の早期発見ステッカー
+  name_on_page: 認知症高齢者等早期発見ステッカー
+  summary: 行方不明のおそれがある人に、QRコード付きの衣服ラベルと蓄光シールを無料で配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の65歳以上、または40〜64歳の要支援・要介護認定者
+  - 在宅で介護する家族等が申請する
+  - ケアマネジャー等の意見書が必要
+  where: ケアマネジャーまたは高齢者あんしん相談センターに相談（高齢福祉課）
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/nintisyo/2457.html
+  confidence: high
+  amount: 無料（追加分は利用者負担）
+- category: haikai
+  name: 認知症高齢者等の位置検索サービス（GPS端末）
+  name_on_page: 認知症高齢者等位置検索サービス
+  summary: 行方不明時に居場所を探せる位置検索端末を貸与する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の65歳以上、または40〜64歳の要支援・要介護認定者
+  - 在宅で介護する家族等が申請する
+  - ケアマネジャー等の意見書が必要
+  where: ケアマネジャーまたは高齢者あんしん相談センターに相談（高齢福祉課）
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/nintisyo/2457.html
+  confidence: high
+  amount: 月額500円。現場急行を頼むと1回1時間まで11,000円
+- category: gaishutsu
+  name: お出かけサポートタクシー（運賃助成）
+  name_on_page: お出かけサポートタクシー
+  summary: 登録した人が専用タクシーを使うと、運賃の半額を助成する。
+  who: {}
+  at_application:
+  - 市に住民登録がある人
+  - 65歳以上、または要介護・要支援の認定を受けている人
+  - 障害者手帳・難病・妊娠中・未就学児なども対象
+  - 事前の利用登録が必要
+  where: 高齢福祉課（高齢者の登録窓口）。電子申請・郵送も可
+  url: https://www.city.fujimino.saitama.jp/soshikiichiran/koreifukushika/chiikishiengakari/fukushi/sonota/2598.html
+  confidence: high
+  amount: 1回の運賃の半額（最大800円）を助成。年度内24回まで
+not_found:
+- koken
+- hochoki
+- jutaku
+- chusha
+- yutai

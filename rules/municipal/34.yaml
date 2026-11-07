@@ -1,0 +1,31 @@
+pref: '34'
+name: 広島県
+site: www.pref.hiroshima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 思いやり駐車場の利用証
+  name_on_page: 広島県思いやり駐車場利用証交付制度
+  summary: 思いやり駐車場を使える利用証を、要介護1以上の高齢者や障害者などに交付する。
+  who: {}
+  at_application:
+  - 次のいずれかの区分に当たる人（緑色は期限なし、赤色は期限付き）
+  - 高齢者は介護保険の要介護状態区分が要介護1以上（被保険者証を持参）
+  - 障害者は手帳の種類・等級が基準以上、難病は医療受給者証がある人
+  - 妊産婦は妊娠7か月から出産後24か月まで（多胎は36か月まで）
+  - けが等は医師の診断書・意見書などで必要と認められる人
+  where: 県が示す市町・県の交付窓口（郵送は県健康福祉局 地域共生社会推進課）
+  url: https://www.pref.hiroshima.lg.jp/soshiki/263/1305535684157.html
+  confidence: high
+  amount: 交付手数料の記載はなく、郵送申請では180円分の切手を同封する
+  more_urls:
+  - https://www.pref.hiroshima.lg.jp/soshiki/263/1307322029078.html
+  - https://www.pref.hiroshima.lg.jp/soshiki/263/1306903559424.html
+  - https://www.pref.hiroshima.lg.jp/soshiki/263/1309255642509.html
+not_found:
+- yutai

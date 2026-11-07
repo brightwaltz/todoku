@@ -1,0 +1,146 @@
+city: '332119'
+name: 備前市
+site: www.city.bizen.okayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: nichijo-yogu
+  name: 高齢者への日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: 手押車・杖・ガス漏れ報知器・自動消火器の購入費を基準額まで助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    - household_exempt
+  at_application:
+  - 市内に住む人
+  - ひとり暮らしの高齢者、または要援護高齢者
+  - 過去にこの助成を受けていない
+  where: 介護福祉課 長寿福祉係
+  url: https://www.city.bizen.okayama.jp/soshiki/14/35720.html
+  confidence: high
+  amount: 基準額は手押車8,300円、杖1,900円、ガス漏れ報知器8,200円、自動消火器28,700円。超えた分は自己負担。1人1回限り
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者に対する補聴器購入助成事業
+  summary: 加齢で聞こえにくい非課税世帯の高齢者に、補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住む人
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻科医の診療情報提供書の交付が受けられる
+  - 過去にこの助成を受けていない
+  where: 介護福祉課 長寿福祉係
+  url: https://www.city.bizen.okayama.jp/soshiki/14/15219.html
+  confidence: high
+  amount: 購入費の上限5万円。1人1回限り。認定補聴器専門店などからの購入が条件
+- category: jutaku
+  name: 高齢者の住宅改造費の上乗せ助成
+  name_on_page: 高齢者に対する住宅改造助成事業
+  summary: 介護保険の住宅改修に上乗せして、手すり取付けなどの改造費を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    - household_exempt
+  at_application:
+  - 市内に住む人
+  - 要介護・要支援の認定を受けている（総合事業対象者は対象外）
+  - 過去にこの助成を受けていない
+  - 決定前に着工した工事は対象外
+  where: 介護福祉課 長寿福祉係
+  url: https://www.city.bizen.okayama.jp/soshiki/14/27645.html
+  confidence: high
+  amount: 工事費上限40万円の3分の2（助成上限266,000円）。原則1人1回
+- category: gaishutsu
+  name: 外出支援タクシーチケット（高齢区分）
+  name_on_page: 備前市外出支援タクシーチケット助成事業
+  summary: 要介護1〜5の在宅の人に、市内で使えるタクシー券の冊子を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり在宅である（病院・特養などの入所は在宅でない）
+  - これは高齢区分の要件。障害区分は別に手帳が要件
+  - 障害区分と高齢区分の重複申請は不可
+  where: 介護福祉課、社会福祉課、日生・吉永・三石の各総合支所
+  url: https://www.city.bizen.okayama.jp/soshiki/14/37417.html
+  confidence: high
+  amount: 1枚500円のチケット72枚（令和8年度分）をまとめて交付
+- category: gaishutsu
+  name: 高齢者のシニアカー購入費助成
+  name_on_page: 高齢者に対するシニアカー購入助成事業
+  summary: 非課税世帯の高齢者に、ハンドル型電動車いすの購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住む人
+  - 介護保険のシニアカー貸与を受けられない
+  - 過去にこの助成を受けていない
+  where: 介護福祉課 長寿福祉係
+  url: https://www.city.bizen.okayama.jp/soshiki/14/27644.html
+  confidence: high
+  amount: 購入費の5分の1以内、上限5万円。1人1回限り
+- category: haikai
+  name: ひとり歩き事前登録とあんしんおまもりシール
+  name_on_page: 備前市あんしんおまもりシール
+  summary: 事前登録をすると、QRコード付きの見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む65歳以上で、認知機能低下により行方不明のおそれがある人
+  - 65歳未満の若年性認知症の人も対象
+  - 本人の写真を持参して事前登録する
+  where: 地域包括支援センター（東・北サブセンターでも相談可）
+  url: https://www.city.bizen.okayama.jp/soshiki/14/10666.html
+  confidence: high
+  amount: 無料。登録時にシール30枚を交付（追加分は自己負担）
+- category: sonota
+  name: 諸島地区の介護サービス利用時の渡航費助成
+  name_on_page: 備前市諸島地区（大多府、鴻島）高齢者等介護支援渡航費助成事業
+  summary: 大多府・鴻島の住民が福祉サービスを受けるための本土との渡航費を助成する。
+  who: {}
+  at_application:
+  - 大多府島か鴻島に住む人
+  - 要介護・要支援認定者か基本チェックリスト該当者で居宅サービス利用者
+  - 障害者手帳の交付を受けサービス利用の人も対象（別の経路）
+  - フェリーは通所系・短期入所生活介護などの利用時のみ
+  where: 日生総合支所 窓口サービス担当
+  url: https://www.city.bizen.okayama.jp/soshiki/60/35649.html
+  confidence: high
+  amount: 渡航費相当額。月に往復4回まで（フェリーは往復2回まで）
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- kinkyu-tsuho
+- shingu
+- ribiyo
+- yutai

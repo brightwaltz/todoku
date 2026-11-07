@@ -1,0 +1,224 @@
+city: '162060'
+name: 滑川市
+site: www.city.namerikawa.toyama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ・尿取りパッド購入費の助成
+  name_on_page: 介護用品支給事業
+  summary: 常時おむつが必要な方の紙おむつ等の購入費の9割を年額上限つきで助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3以上、または身体障害者手帳1・2級
+  - 介護保険料を滞納していない
+  - 入院・入所中の購入分は対象外
+  where: 高齢介護課（申請は例年2月中旬〜3月中旬）
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/2859.html
+  confidence: high
+  amount: 購入費の9割。要介護3は年額3万円まで。要介護4・5と手帳1・2級は課税世帯で年額4.8万円まで、非課税世帯で年額7.2万円まで。
+- category: shingu
+  name: 寝具の乾燥・丸洗い
+  name_on_page: 寝具乾燥・丸洗い事業
+  summary: 在宅の寝たきり高齢者宅を巡回し、寝具の乾燥と丸洗いを年3回行う。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 滑川市社会福祉協議会（電話 076-475-7000）
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/2859.html
+  confidence: high
+  amount: 費用の約3割が利用者負担。年3回。
+- category: ribiyo
+  name: 訪問理髪
+  name_on_page: 訪問理髪サービス事業
+  summary: 在宅の寝たきり高齢者宅へ理髪店が訪問して理髪する。利用前に申請する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理容業組合の加入店のみ利用できる
+  where: 高齢介護課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/2859.html
+  confidence: high
+  amount: 利用者負担は 430 円。年2回まで。
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が困難で見守りが必要な高齢者に、月〜土曜の昼食を届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - おおむね65歳以上で見守りが必要な方
+  - 高齢者と小学生以下の子、または高齢者と障害者の世帯も準ずる扱い
+  - 申請後に実態把握調査がある
+  where: 高齢介護課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/1891.html
+  confidence: high
+  amount: 食事代の負担額は事業者ごとに異なり、事業者へ直接支払う。
+  more_urls:
+  - https://www.city.namerikawa.toyama.jp/material/files/group/11/haishokuri-huretto.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置等設置事業
+  summary: 緊急時の対応が難しい高齢者等に緊急通報装置を貸与し、登録した親族等へ連絡する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ・身障者のみの世帯等
+  - 緊急時の対応が困難な身体状況、または重い疾病の懸念がある
+  - 要支援以上の認定、または身体障害者手帳がある
+  - 専門機関等が設置の必要を認めた方
+  where: 高齢介護課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/1891.html
+  confidence: high
+  amount: 利用者負担は月 400 円。
+  more_urls:
+  - https://www.city.namerikawa.toyama.jp/material/files/group/47/r807kinnkyuutuuhousouti.pdf
+- category: iro
+  name: 在宅の要介護者を介護する家族への手当
+  name_on_page: 在宅福祉介護手当
+  summary: 在宅の重度寝たきり高齢者等を介護する同居の家族に、介護手当を年2回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護する家族と高齢者等が同一世帯であること
+  where: 高齢介護課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/1862.html
+  confidence: high
+  amount: 月額 4,000 円。年2回（4月・10月）に支給。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 介護保険サービスを使わず重度寝たきり高齢者を介護した家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを受けていない
+  - 介護する家族と高齢者等が同一世帯であること
+  where: 高齢介護課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/1862.html
+  confidence: high
+  amount: 年額 10 万円。
+- category: sonota
+  name: 在宅の重度要介護高齢者への福祉金
+  name_on_page: 在宅要介護高齢者福祉金
+  summary: 在宅の重度寝たきり高齢者本人に、福祉金を年2回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 所得制限がある（基準額は頁に無い）
+  where: 高齢介護課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/1862.html
+  confidence: high
+  amount: 月額 5,000 円。年2回（3月・9月）に支給。
+  more_urls:
+  - https://www.city.namerikawa.toyama.jp/soshiki/6/6/683.html
+- category: sonota
+  name: 高齢者福祉利用券（入浴施設券またはバス無料乗車券）
+  name_on_page: 高齢者福祉利用券
+  summary: 70歳以上に、市内の公衆浴場等で使える利用券を交付する。バスの乗車券も選べる。
+  who:
+    age_min: 70
+  at_application:
+  - 障害者手帳をお持ちの方は障がい者福祉利用券の対象になる
+  where: 高齢介護課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/1862.html
+  confidence: high
+  amount: 70〜74歳は年6枚、75歳以上は年12枚。利用券6枚の代わりにバス無料乗車券24枚も選べる。
+- category: hochoki
+  name: 加齢性難聴者の補聴器購入費給付
+  name_on_page: 加齢性難聴者補聴器購入費給付事業
+  summary: 手帳の対象にならない難聴の方に、補聴器の購入費の一部を給付する。購入前の申請が必要。
+  who:
+    age_min: 45
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に1年以上住んでいる
+  - 聴覚障害の身体障害者手帳の対象にならない
+  - 医師が、両耳の聴力 40 デシベル超で補聴器が必要と認めた
+  - 市税の滞納がない
+  - 過去5年以内に本事業の給付を受けていない
+  where: 福祉課（社会福祉係）
+  url: https://www.city.namerikawa.toyama.jp/soshiki/11/1/kareisei_hotyouki.html
+  confidence: high
+- category: gaishutsu
+  name: 運転免許自主返納者へのコミュニティバス無料乗車証
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 運転免許を自主返納した65歳以上に、コミュニティバスの5年間有効のフリー乗車証を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 有効期間内の運転免許証を自主返納した
+  - 支援は1人1回（5年間）限り
+  - 窓口申請のみ（郵送不可）
+  where: 生活環境課
+  url: https://www.city.namerikawa.toyama.jp/kenko/7/2052.html
+  confidence: high
+  amount: コミュニティバス（のるマイカー）のフリー乗車証、5年間有効。
+- category: haikai
+  name: 徘徊 SOS 登録者への見守りシール交付
+  name_on_page: 見守りシール
+  summary: 徘徊SOS登録者のうち希望者に、QRコード付きの見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊SOSに登録している
+  - 家族等がネット上の専用サイトに登録できる
+  - 家族等が発見の連絡を受けて現地に行ける
+  where: 地域包括支援センター
+  url: https://www.city.namerikawa.toyama.jp/soshiki/28/4/8091.html
+  confidence: high
+- category: sonota
+  name: 徘徊SOS登録者の賠償責任保険（市が保険料を負担）
+  name_on_page: 賠償責任保険
+  summary: 徘徊のおそれがある在宅の方が事故で賠償責任を負う場合に備え、市契約の保険に加入できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊SOSに登録している
+  where: 地域包括支援センター
+  url: https://www.city.namerikawa.toyama.jp/soshiki/28/4/8091.html
+  confidence: high
+  amount: 補償は最大1億円。保険料は市が負担する。
+not_found:
+- koken
+- jutaku
+- nichijo-yogu
+- mimamori

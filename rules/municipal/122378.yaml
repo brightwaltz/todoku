@@ -1,0 +1,84 @@
+city: '122378'
+name: 山武市
+site: www.city.sammu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ボタンでコールセンターに通報できる装置を貸す。月1回の安否確認の電話や駆けつけもある。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯（病気等で見守りが必要）、または身障手帳1・2級の方のみの世帯
+  - 固定電話回線が必要（ない場合は相談）
+  - 緊急連絡先として親族等2名以上の登録が必要
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.sammu.lg.jp/kenkou/koureifukushi/fukushizigyou/page001773.html
+  confidence: high
+  amount: 無料（電気代は自己負担）
+- category: hochoki
+  name: 高齢者補聴器購入費用の助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 加齢による難聴の高齢者に、補聴器1台分の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内在住
+  - 両耳とも中等度難聴で、医師の証明書が得られる
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 医療機器認定の補聴器で、令和7年4月以降の購入分
+  - 過去5年以内に同じ助成を受けていない
+  where: 高齢者支援課 高齢者支援係（本庁舎1階11番窓口）
+  url: https://www.city.sammu.lg.jp/kenkou/koureifukushi/fukushizigyou/page007426.html
+  confidence: high
+  amount: 補聴器1台分の購入費、上限2万円
+- category: sonota
+  name: はり・きゅう・マッサージ施術の利用券
+  name_on_page: はり、きゅう、マッサージ等施設利用助成制度（長寿健康助成事業）
+  summary: 65歳以上の方に、はり・きゅう・マッサージ等で使える 1,000 円の利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市に住民登録がある
+  - 保険適用や生活保護法の適用による施術には使えない
+  where: 高齢者支援課、各出張所
+  url: https://www.city.sammu.lg.jp/kenkou/koureifukushi/fukushizigyou/page003465.html
+  confidence: high
+  amount: 1枚1,000円の利用券を年間最大12枚（申請月により枚数が減る）
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 後見人等の報酬等の助成
+  summary: 経済的に報酬を払えない成年後見の利用者に、後見人等への報酬を市が助成する。
+  who: {}
+  at_application:
+  - 次のどれか：生活保護の要保護者
+  - 報酬を負担すると要保護者になる
+  - 助成がないと利用が難しいと市長が認める
+  where: 高齢者支援課、社会福祉課、成東地域包括支援センター
+  url: https://www.city.sammu.lg.jp/kenkou/koureifukushi/seinenkouken/page002430.html
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットの配布
+  summary: 救急連絡先やかかりつけ医を記入するシートを入れた容器とステッカー等を配る。
+  who: {}
+  at_application:
+  - 市内に住所がある65歳以上のひとり暮らしの方
+  - その他必要と認められる方
+  where: 高齢者支援課（申請書を記入して受け取る）
+  url: https://www.city.sammu.lg.jp/kenkou/koureifukushi/fukushizigyou/page002427.html
+  confidence: high
+not_found:
+- haishoku
+- iro
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu

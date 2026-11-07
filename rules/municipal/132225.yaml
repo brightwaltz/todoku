@@ -1,0 +1,186 @@
+city: '132225'
+name: 東久留米市
+site: www.city.higashikurume.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成
+  name_on_page: 紙おむつ等の購入助成支給事業
+  summary: 在宅で常時紙おむつを使う重度の要介護の方に、購入費の助成金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application: []
+  where: 介護福祉課 介護サービス係
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1000335.html
+  confidence: high
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: ひとり暮らしや高齢者のみの世帯に、安否確認を兼ねてお弁当を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 市内に住所がある
+  - 日常生活（食の確保）に支障がある
+  - 訪問介護やデイサービスなど他サービス利用日は不可
+  where: 担当ケアマネジャーまたは地域包括支援センター
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1000336.html
+  confidence: high
+  amount: 1食500円の自己負担。原則週2食まで（最大週4食まで可能）
+  more_urls:
+  - https://www.city.higashikurume.lg.jp/_res/projects/default_project/_page_/001/000/336/haishoku_r8.4.pdf
+  - https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1023663.html
+- category: kinkyu-tsuho
+  name: 救急通報システム
+  name_on_page: 救急通報システム
+  summary: ボタンを押すと消防署に自動通報される機器を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしで心臓などの慢性疾患により注意が必要
+  - または2人世帯で一方が寝たきりかつ介護者が病弱
+  - NTTアナログ回線が必要
+  - 半径500m以内の協力員2人が必要
+  where: 福祉総務課 高齢者福祉係
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1000339.html
+  confidence: high
+  amount: 所得により負担額が異なる
+  more_urls:
+  - https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1023663.html
+- category: ribiyo
+  name: 高齢者訪問理美容助成
+  name_on_page: 高齢者訪問理美容助成事業
+  summary: 自宅へ来てもらう理美容の費用の一部を、助成券で補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 福祉総務課 高齢者福祉係（オンライン申請あり）
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1000339.html
+  confidence: high
+  amount: 1回2,000円の助成券を年4枚（10月以降の申請は2枚）
+- category: jutaku
+  name: 自立支援住宅改修の助成
+  name_on_page: 自立支援住宅改修
+  summary: 手すり取付や段差解消、便器の取替えなどの改修費を市が助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護認定の結果が非該当の方（手すり・段差解消など）
+  - または要支援・要介護で一定の要件を満たす方（浴槽・流し・和式便器の洋式化）
+  - 後者は介護保険の住宅改修費と併用できない場合がある
+  where: 介護福祉課
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1000336.html
+  confidence: high
+- category: sonota
+  name: 自立支援福祉用具購入の助成
+  name_on_page: 自立支援福祉用具購入
+  summary: 要介護認定で非該当だった方の、腰掛便座や歩行支援用具などの購入費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護認定の申請の結果が非該当
+  - 同じ種目の助成は1回まで
+  where: 介護福祉課
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1000336.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等みまもり事業（みまもりシール）
+  name_on_page: 東久留米市認知症高齢者等みまもり事業
+  summary: 二次元コード付きのみまもりシールを30枚交付し、迷い人の早期発見・保護につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民票がある
+  - 認知症等の症状で迷い人となるおそれがある
+  - 申請は本人・介護者・家族・成年後見人
+  where: 介護福祉課 地域ケア係（地域包括支援センターでも申請書を配布）
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1017618/1022684.html
+  confidence: high
+  amount: みまもりシール30枚（耐洗ラベル20枚、蓄光シール10枚）
+- category: mimamori
+  name: みまもりネットワーク事業
+  name_on_page: みまもりネットワーク事業
+  summary: 協力員が声掛けや郵便物の確認などの遠い見守りを行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 介護保険など定期的な公的サービスを使っていない
+  where: 地域包括支援センター、介護福祉課 地域ケア係
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1023663.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立費用助成
+  name_on_page: 成年後見制度利用時の申立費用助成
+  summary: 後見開始の申立てにかかる費用（収入印紙・切手・診断書代など）を市が助成する。
+  who: {}
+  at_application:
+  - 審判の対象者が市内に住所あり（一部例外あり）
+  - 対象者が生活保護、または市民税非課税で資産66万円以下
+  - 令和8年4月から本人・親族の申立ても対象
+  - 審判確定から12か月以内に申請
+  where: 福祉総務課 福祉政策係
+  url: https://www.city.higashikurume.lg.jp/kurashi/fukushi/enjo/1028934.html
+  confidence: high
+  amount: 申立ての印紙・登記・郵便切手代と診断書代（診断書は上限あり）
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等に対する報酬助成
+  summary: 後見人への報酬を本人が払えないとき、市が報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 申請は成年後見人等が行う
+  - 被後見人が市内に住所あり（一部例外あり）
+  - 被後見人が生活保護、または市民税非課税で資産66万円以下
+  - 報酬審判の確定から12か月以内に申請
+  where: 福祉総務課 福祉政策係
+  url: https://www.city.higashikurume.lg.jp/kurashi/fukushi/enjo/1028935.html
+  confidence: high
+  amount: 月額5,000円（市民後見人）、10,000円（施設入所・長期入院）、20,000円（その他）が上限
+- category: sonota
+  name: ひとりぐらし高齢者住宅手当
+  name_on_page: ひとりぐらし高齢者住宅手当支給事業
+  summary: 民間の賃貸住宅に住む住民税非課税のひとり暮らしの方に、住宅費の一部を支給する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - self_exempt
+  at_application:
+  - 民間アパートや借家に自ら居住している
+  - 賃貸借契約書の写しなどが必要
+  where: 福祉総務課 高齢者福祉係
+  url: https://www.city.higashikurume.lg.jp/kurashi/zei/kaigo/1000339.html
+  confidence: high
+  amount: 月額3,500円（7月・11月・3月の末に支払い）
+not_found:
+- hochoki

@@ -1,0 +1,136 @@
+city: '462217'
+name: 志布志市
+site: www.city.shibushi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ひとり暮らしの高齢者などの自宅に、緊急時に通報できるシステムを設置する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者等か重度身体障がい者等で、常に安否確認が必要
+  - または重度身体障がい者のみの世帯で、緊急時に安否確認が必要
+  - または高齢者のみの世帯で、世帯員の1人が要介護3以上
+  - NTTの電話回線と、駆けつけられる協力者2人以上が必要
+  where: 健康長寿課 長寿支援グループ（地域包括支援センター）
+  url: https://www.city.shibushi.lg.jp/soshiki/9/12930.html
+  confidence: high
+  amount: 生活保護・市町村民税非課税世帯は0円、課税世帯は年額3,240円
+- category: haishoku
+  name: 「食」の自立支援事業（配食）
+  name_on_page: 「食」の自立支援事業
+  summary: 食事の確保が難しい人に、食事を届けて食生活の改善と見守りを行う。
+  who: {}
+  at_application:
+  - 食事の援助がなく、調理や食事の確保が困難
+  - 65歳以上の1人暮らし、65歳以上のみの世帯、65歳未満の障がい者のいずれか
+  - 申請書に民生委員の署名が必要
+  where: 健康長寿課 長寿支援グループ（地域包括支援センター）
+  url: https://www.city.shibushi.lg.jp/soshiki/9/12939.html
+  confidence: high
+  amount: 利用者負担金：ごはん＋おかず500円（非課税世帯）・600円（課税世帯）、おかずのみ450円・550円
+- category: haishoku
+  name: 配食支援事業
+  name_on_page: 配食支援事業
+  summary: 食事の確保が難しく栄養改善や見守りが必要な人に、食事を届ける。
+  who: {}
+  at_application:
+  - 食事の援助がなく、調理や食事の確保が困難で、栄養改善や見守りが必要
+  - 90歳以上、要介護認定（要支援1・2、要介護1〜5）あり、低栄養のいずれか
+  - 申請書に民生委員の署名が必要
+  where: 健康長寿課 長寿支援グループ（地域包括支援センター）
+  url: https://www.city.shibushi.lg.jp/soshiki/9/12939.html
+  confidence: high
+  amount: 利用者負担金：ごはん＋おかず400円（非課税世帯）・500円（課税世帯）、おかずのみ350円・450円
+- category: gaishutsu
+  name: 福祉タクシー
+  name_on_page: 志布志市福祉タクシー
+  summary: 自動車のない高齢者等が、買い物や通院に使える乗合のジャンボタクシーを利用できる。
+  who: {}
+  at_application:
+  - 市内に住所があり、65歳以上、または障害等で自動車の運転が困難
+  - 自分で乗り降りできる人に限る
+  - 申請後に届く利用者登録証で、運行会社に依頼して使う
+  where: 志布志庁舎 健康長寿課 長寿支援グループ、有明庁舎 福祉保健課、松山庁舎 総務市民課
+  url: https://www.city.shibushi.lg.jp/soshiki/9/28499.html
+  confidence: high
+- category: iro
+  name: 在宅重度要介護者等介護手当
+  name_on_page: 在宅重度要介護者等介護手当支給事業
+  summary: 要介護4・5の高齢者などを在宅で介護している人に、手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5の高齢者、または同程度の障がい者を在宅で介護している
+  - 民生委員が毎月、在宅を確認する
+  where: 健康長寿課 長寿支援グループ（志布志庁舎）
+  url: https://www.city.shibushi.lg.jp/soshiki/9/12829.html
+  confidence: high
+  amount: 月10,000円（四半期ごとに支給）
+- category: kaigo-yohin
+  name: 家族介護用品の引換券
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の高齢者などを在宅で介護する人に、介護用品の引換券を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の高齢者、または同程度の障がい者を在宅で介護している
+  - 要介護者・介護者ともに非課税世帯
+  - 民生委員が毎月、在宅を確認する
+  where: 健康長寿課 長寿支援グループ（志布志庁舎）
+  url: https://www.city.shibushi.lg.jp/soshiki/9/12829.html
+  confidence: high
+  amount: 月5,000円分の引換券（毎月支給）
+- category: haikai
+  name: 高齢者見守りステッカー
+  name_on_page: 高齢者見守りステッカー
+  summary: 認知症等の高齢者の靴や杖に貼るステッカーを、事前登録した人に配る。
+  who: {}
+  at_application:
+  - 認知症等の高齢者
+  - 登録票を介護保険担当窓口に出して登録する
+  - 登録情報は市・警察・消防・公民館長・民生委員に提供される
+  where: 健康長寿課（志布志庁舎）、福祉保健課（有明庁舎）、総務市民課（松山庁舎）の介護保険担当窓口
+  url: https://www.city.shibushi.lg.jp/soshiki/9/31789.html
+  confidence: high
+- category: sonota
+  name: 保養所利用助成
+  name_on_page: 保養所利用助成
+  summary: 65歳以上の市民に、保養所の入浴料などに使える助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市民
+  - 交付申請に本人確認書類が必要
+  where: 健康長寿課 健康増進グループ（国保担当）
+  url: https://www.city.shibushi.lg.jp/soshiki/9/20340.html
+  confidence: high
+  amount: 200円×24枚（4,800円分）まで（同一年度内）
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 緊急時に救急隊が使う医療情報を、冷蔵庫に保管するキットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし、または65歳以上のみの世帯
+  - または1・2級の障害者手帳（身体・療育・精神）をもつ人のみの世帯
+  - 申請時に生年月日と氏名がわかる本人確認書類が必要
+  where: 志布志庁舎 健康長寿課 長寿支援グループ、有明庁舎 福祉保健課、松山庁舎 総務市民課
+  url: https://www.city.shibushi.lg.jp/soshiki/9/28517.html
+  confidence: high
+  amount: 無料
+not_found:
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

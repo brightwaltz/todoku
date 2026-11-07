@@ -1,0 +1,160 @@
+city: '332127'
+name: 瀬戸内市
+site: www.city.setouchi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢福祉タクシー利用券
+  name_on_page: 高齢福祉タクシー助成
+  summary: 要支援・要介護で免許のない在宅の人に、タクシー等で使える利用券を交付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、認定期間内である
+  - 運転免許証（原付・バイク含む）を持っていない
+  where: 健康長寿課高齢者支援係、長船支所、牛窓支所、裳掛出張所（郵送・FAX も可）
+  url: https://www.city.setouchi.lg.jp/soshiki/16/116478.html
+  confidence: high
+  amount: 利用券 1 枚 500 円まで。月 6 枚（年度の残り月数分を交付）
+- category: haikai
+  name: 見守りシール（QRコード付き）の交付
+  name_on_page: 高齢者徘徊対策促進事業
+  summary: 徘徊のおそれのある高齢者の家族に、QRコード付きの見守りシールを無料で交付する。
+  who: {}
+  at_application:
+  - 市内に住所がある高齢者
+  - 徘徊のある要支援・要介護の人、または医師に認知症と診断された人
+  where: 健康長寿課（窓口）
+  url: https://www.city.setouchi.lg.jp/soshiki/16/3955.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: ひとり歩き高齢者見守り協力体制への事前登録
+  name_on_page: ひとり歩き高齢者見守り協力体制
+  summary: 行方不明のおそれがある認知症高齢者を事前登録し、地域で早く見つける体制に乗せる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある認知症高齢者
+  - 家族・介護者が印鑑と顔写真を持って登録する
+  where: 健康長寿課（地域包括支援センター・居宅介護支援事業所経由の提出も可）
+  url: https://www.city.setouchi.lg.jp/soshiki/16/1412.html
+  confidence: high
+- category: sonota
+  name: 認知症高齢者の個人賠償責任保険（市が加入）
+  name_on_page: 認知症高齢者個人賠償責任保険事業
+  summary: 見守り協力体制と見守りシールに登録した人を、市が賠償責任保険に加入させる。
+  who: {}
+  at_application:
+  - ひとり歩き見守り協力体制と見守りシール事業の両方に登録済み
+  - 市内に住所があり居住している
+  where: 健康長寿課（登録手続き。保険加入の申請は不要）
+  url: https://www.city.setouchi.lg.jp/soshiki/16/3721.html
+  confidence: high
+  amount: 賠償責任の保険金額は 3 億円。保険料の本人負担なし
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 住民税非課税世帯の高齢者に、補聴器購入費の一部を 1 回限り助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻科医の補聴器適合の診療情報提供書が必要
+  - 過去にこの助成を受けていない
+  where: 健康長寿課高齢者支援係、長船支所、牛窓支所、裳掛出張所
+  url: https://www.city.setouchi.lg.jp/soshiki/16/116415.html
+  confidence: high
+  amount: 購入費のうち上限 5 万円（1 人 1 回）
+- category: haishoku
+  name: 配食による高齢者等の見守り
+  name_on_page: 配食による高齢者等見守り事業
+  summary: 調理や買物が難しい高齢者世帯などに、平日の昼か夕の食事を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 調理・買物が難しい 65 歳以上のみの世帯、または見守りが必要なひとり暮らし
+  - 身体・知的障害者と高齢者だけの世帯も対象
+  - 市長が特に必要と認める人も可。訪問調査あり
+  where: 健康長寿課高齢者支援係、長船支所、牛窓支所、裳掛出張所
+  url: https://www.city.setouchi.lg.jp/soshiki/16/115147.html
+  confidence: high
+  amount: 1 食 540 円（利用者負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者見守り体制整備（緊急通報装置の貸与）事業
+  summary: 病弱な高齢者のみの世帯などに緊急通報装置を貸し、委託業者が通報や相談に応じる。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 65 歳以上の病弱な高齢者のみ世帯、または市長が必要と認める人
+  - 緊急時の協力員 2 名以上と固定電話が必要
+  where: 健康長寿課高齢者支援係、長船支所、牛窓支所、裳掛出張所
+  url: https://www.city.setouchi.lg.jp/soshiki/16/117866.html
+  confidence: high
+  amount: 利用料は月額 550 円（利用者負担）
+- category: kaigo-yohin
+  name: 家族介護用品の利用券支給
+  name_on_page: 家族介護用品支給事業
+  summary: 非課税世帯で重度の在宅要介護者を介護する同居家族に、介護用品の利用券を支給する。
+  who: {}
+  at_application:
+  - 要介護 4・5 の市民税非課税世帯の在宅高齢者を介護する同居家族
+  - 身障手帳 1・2 級や療育手帳 A・B の非課税世帯の介護者も対象
+  - 市長が特に必要と認める人も可
+  - 頁の更新日は 2023 年 5 月
+  where: いきいき長寿課高齢者支援係（頁の表記）、福祉課障害福祉係
+  url: https://www.city.setouchi.lg.jp/soshiki/15/2293.html
+  confidence: high
+  amount: 要介護 4・5 の人 1 人につき年 9 万 6,000 円まで（1 枚 1,600 円以内）
+- category: koken
+  name: 成年後見の報酬費用の助成
+  name_on_page: 成年後見制度利用支援事業（報酬費用）
+  summary: 後見人等の報酬を負担しにくい認知症高齢者等に、報酬費用の一部を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、後見人・保佐人・補助人が選任されている
+  - 生活保護受給、または収入と資産がともに基準以下
+  - 本人と後見人等が親族の場合は対象外
+  - 審判確定の翌日から 90 日以内に申請
+  where: 健康長寿課（高齢者の場合）
+  url: https://www.city.setouchi.lg.jp/uploaded/life/159053_210407_misc.pdf
+  confidence: high
+  amount: 報酬額のうち、在宅は月 28,000 円まで、施設入所は月 18,000 円まで
+- category: yutai
+  name: シルバーカード
+  name_on_page: シルバーカード
+  summary: 提示すると美術館や博物館などの入館料が割引・無料になる高齢者の証明カードを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 交通機関の無料パスではない
+  where: 市役所、各支所、出張所の窓口
+  url: https://www.city.setouchi.lg.jp/soshiki/16/1495.html
+  confidence: high
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo
+- mimamori

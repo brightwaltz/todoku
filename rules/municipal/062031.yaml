@@ -1,0 +1,196 @@
+city: '062031'
+name: 鶴岡市
+site: www.city.tsuruoka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 中重度の要介護者を介護する家族に、年額の慰労金を支給する。
+  who: {}
+  at_application:
+  - 要介護3以上、または相当と思われる人を介護している
+  - 福祉用具・住宅改修を除く介護保険サービスを1年間使っていない（年10日以内は可）
+  - 通算90日以上入院した期間は除いて1年を数える
+  where: 地域包括支援センター、地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/iroukinn080401.html
+  confidence: high
+  amount: 年 10 万円
+- category: kinkyu-tsuho
+  name: あんしん見守りコール（緊急通報装置）
+  name_on_page: あんしん見守りコールサービス
+  summary: 通信装置を設置し、24時間の相談・緊急対応と月1回の安否確認を行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし等で、基本チェックリスト該当か要支援1以上
+  - または突発的に命に関わる症状が出る持病がある（上と並ぶ条件）
+  - または、おおむね65歳以上で同居家族全員が高齢者か身障手帳1・2級等
+  - 同居家族がいても緊急時の支援が難しいこと
+  where: 地域包括支援センター、地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/annsinnmimamori0804.html
+  confidence: high
+  amount: 利用料は無料。点検・消耗品などの実費が月220円（安否確認装置ありは385円）
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具の給付
+  summary: 市民税非課税世帯の高齢者に、火災警報器・自動消火器・電磁調理器を給付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 火災警報器・自動消火器は、避難が著しく困難なひとり暮らし高齢者等
+  - 要介護2以上、または認知症自立度2a以上
+  - 電磁調理器は、防火の配慮が必要なひとり暮らし高齢者等
+  - 要支援1以上、または基本チェックリスト該当
+  where: 地域包括支援センター、地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/nitijyouseikatuyougu.html
+  confidence: high
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 寝具3点を年2回まで業者が洗濯・乾燥・消毒し、費用の1割を負担する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯（単身を含む）
+  - 要支援・要介護の認定を受けているか、基本チェックリスト該当
+  - 寝具の衛生管理が困難と認められる
+  - 施設入所中・入院中は対象外
+  where: 地域包括支援センター、地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/sinngu080401.html
+  confidence: high
+  amount: 年2回まで。実施費用の1割が自己負担
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス
+  summary: 自宅で理美容を受ける際の出張費に使える助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 老衰・病気等で理容所や美容院に行くことが困難
+  where: 地域包括支援センター、地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/ribiyou080401.html
+  confidence: high
+  amount: 1回1,000円の助成券を年6枚まで
+- category: gaishutsu
+  name: らくらく移送サービス（リフト付きタクシー券）
+  name_on_page: 外出支援サービス（らくらく移送サービス）
+  summary: 通院等で車いす・ストレッチャー用タクシーを使う人にサービス券を交付する。
+  who: {}
+  at_application:
+  - 65歳以上、または40〜64歳で要介護認定を受けている
+  - 市民税非課税
+  - 通院等に車いす・ストレッチャー専用タクシーが不可欠
+  - 介護保険施設サービスの利用者は対象外
+  where: 地域包括支援センター、地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/rakuraku080401.html
+  confidence: high
+  amount: 1枚300円のサービス券を月8枚（年96枚まで）
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成
+  name_on_page: 紙おむつ等の購入費助成
+  summary: 排泄に全介助が必要な非課税の人に、紙おむつ等の購入費を月額上限内で助成する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 65歳以上、または40〜64歳で要介護認定を受けている
+  - 排泄に全介助が必要（尿意・便意がない、常時失禁など）
+  - 老健・介護医療院・特養の入所者は対象外
+  - 生活保護受給中は対象外
+  where: 地域包括支援センター、地域包括ケア推進課、各庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/omutu080401.html
+  confidence: high
+  amount: 介護保険料の段階に応じ、月7,000円・5,000円・2,000円が上限
+- category: sonota
+  name: 訪問型在宅介護サポート（家族向け訪問支援）
+  name_on_page: 訪問型在宅介護サポート事業
+  summary: 在宅で介護する家族に、専門職が訪問して介護の知識や技術を伝える。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者等を在宅で介護している人（退院後の予定も可）
+  - 介護認定を申請していない、または申請中でサービス未利用
+  - 未利用の判定では福祉用具貸与・住宅改修は除く
+  where: 地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/houmonngata080401.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 屋根の雪下ろし費用の支給
+  name_on_page: 屋根の雪下ろし費用の支給
+  summary: 自力で雪下ろしできない非課税の高齢者世帯に、雪下ろし費用を支給する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市民税非課税（生活保護世帯は除く）
+  - 自力で屋根の雪下ろしができない
+  - 雪下ろしの前に、地区担当の民生委員へ相談する
+  where: 地区担当の民生委員（問合せは地域包括ケア推進課、各地域庁舎地域づくり推進課）
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/yukiorosi080401.html
+  confidence: high
+  amount: かかった費用か16,500円の低いほう（排雪費を含む）
+- category: sonota
+  name: 転ばない生活支援（手すり・シルバーカー・杖の助成）
+  name_on_page: 転ばない生活支援事業
+  summary: 足腰の衰えがある人の手すり取付・シルバーカー・多点杖の費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護認定を受けていない、または総合事業の対象者
+  - 基本チェックリストの運動機能項目で該当
+  - 入院中は対象外
+  - 施工・購入の前に申請する。指定業者のみ対象
+  where: 地域包括ケア推進課、各地域庁舎地域づくり推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/korobanaiseikatusien.html
+  confidence: high
+  amount: 手すりは費用の9割（上限75,000円）、シルバーカーは1/2（上限15,000円）、多点杖は1/2（上限5,000円）
+- category: sonota
+  name: はり・きゅう・マッサージ施術費助成券
+  name_on_page: はり・きゅう・マッサージ等の施術費助成
+  summary: 70歳以上に、協定する施術所で使える助成券を交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 地域包括ケア推進課、各地域庁舎地域づくり推進課、一部の地区コミュニティセンター
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/shien/karikyuu080401.html
+  confidence: high
+  amount: 1回1,000円分の助成券を年6回（10月以降の申請は3枚）
+- category: haikai
+  name: SOS見守りネットワークと見守りシール
+  name_on_page: SOS見守りネットワーク「ほっと安心」つるおか
+  summary: 行方不明に備えて事前登録し、QRコード付きの見守りシールを無料で受け取れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等により自宅等へ帰れなくなるおそれがある
+  - 見守りシールは、ネットワーク登録者で希望する人に交付
+  where: ケアマネジャー、地域包括支援センター、地域包括ケア推進課
+  url: https://www.city.tsuruoka.lg.jp/kenko/kaigo/ninchisho/hottoansinmimamori.html
+  confidence: high
+  amount: 登録時に見守りシール40枚を無料で交付
+not_found:
+- haishoku
+- jutaku
+- koken
+- hochoki

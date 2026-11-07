@@ -1,0 +1,209 @@
+city: '162027'
+name: 高岡市
+site: www.city.takaoka.toyama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の引換券の交付
+  name_on_page: 紙おむつ等の助成
+  summary: 在宅で常時おむつが必要な高齢者に、薬局で使えるおむつ等の引換券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりまたは認知症で常時おむつが必要
+  - 申請は居宅介護支援事業所を通じて行う
+  - 令和8年4月分から所得条件はなくなった
+  where: 長寿福祉課（居宅介護支援事業所・担当ケアマネジャー経由）
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/2342.html
+  confidence: high
+  amount: 要介護1〜3は4,000円分券（負担400円）、要介護4・5は5,000円分券（負担500円）。申請月に応じ最大12枚
+- category: haishoku
+  name: 配食（「食」の自立支援）
+  name_on_page: 「食」の自立支援サービス事業
+  summary: 栄養改善が必要な高齢者に昼食か夕食の弁当を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 栄養改善が必要であること
+  - 事業対象者か、要支援・要介護の認定を受けた人（どちらか）
+  where: 担当ケアマネジャーまたは地域包括支援センター
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/4/5364.html
+  confidence: high
+  amount: 弁当代は1食400〜850円がめやす（事業者で異なる）。週1回から毎日まで利用可
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与とコールセンター
+  name_on_page: 緊急通報装置および高齢者見守りコールセンターの設置
+  summary: ひとり暮らし等の高齢者に通報装置を貸し、24時間のコールセンターにつなぐ。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上でひとり暮らしの在宅高齢者
+  - 65歳以上の在宅寝たきり等の高齢者のみ世帯
+  - 避難行動要支援者名簿に高齢者のみ世帯で登録（いずれか）
+  where: 長寿福祉課（地域包括支援センター・居宅介護支援事業所が代行可）
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/2892.html
+  confidence: high
+  amount: 月額200円（生活保護世帯は無料）。人感・火災センサーは月100円、駆けつけは月400円（任意）
+  more_urls:
+  - https://www.city.takaoka.toyama.jp/material/files/group/35/3sho.pdf
+- category: mimamori
+  name: マゴコロボタンの貸与
+  name_on_page: マゴコロボタンの設置
+  summary: 家族と双方向でやりとりできるボタンを貸し、防災情報も届ける。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみ世帯の人
+  - 避難行動要支援者名簿に載る人のみの世帯の人
+  - その他必要な人（家族同居で日中ひとりの人など）
+  where: 長寿福祉課（窓口・郵送・電子申請）
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/9072.html
+  confidence: high
+  amount: 月額200円
+- category: jutaku
+  name: 高齢者の住宅改善費の助成
+  name_on_page: 高齢者住宅改善資金の助成
+  summary: 手すり設置や段差解消の工事費の一部を市が助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の高齢者本人か、同居する家族が申請する
+  - 前年分所得税が非課税の世帯
+  - 工事の前に申請する
+  - 要支援・要介護の人は介護保険の住宅改修が優先
+  where: 長寿福祉課
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/4346.html
+  confidence: high
+  amount: 対象経費の3分の2。要支援・要介護認定者は60万円まで、それ以外は30万円まで（手すり・段差解消のみ）
+- category: gaishutsu
+  name: 福祉車両タクシー利用券
+  name_on_page: 福祉車両タクシー
+  summary: 車いすのまま乗れる福祉タクシーの料金の一部を、利用券で助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4以上で障害高齢者自立度B2以上の寝たきりの人
+  - または、歩行できず日常的に車いすを使い、介助なしに移乗できない人
+  - 自動車税・軽自動車税の免除を受けている人は対象外
+  where: 長寿福祉課（ケアマネジャーにも相談可）
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/3970.html
+  confidence: high
+  amount: 福祉車両タクシー利用券500円を月4枚
+- category: iro
+  name: 在宅寝たきり・認知症高齢者の介添年金
+  name_on_page: 在宅寝たきり・認知症高齢者介添年金等支給
+  summary: 寝たきりや認知症の高齢者を在宅で介護する人に、年金・手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきりは要介護4以上、認知症は要介護3以上の高齢者を介護している
+  - 市の寝たきり老人・認知症高齢者の認定が必要
+  - 申請時に介護者と高齢者の本人確認が必要
+  where: 長寿福祉課
+  url: https://www.city.takaoka.toyama.jp/gyosei/kenko_iryo_fukushi/koreishafukushi_kaigo/1/8385.html
+  confidence: high
+  amount: 年30,000円（9月末・3月末に支給）
+  more_urls:
+  - https://www.city.takaoka.toyama.jp/material/files/group/35/3sho.pdf
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度利用支援
+  summary: 身寄りのない認知症高齢者等の市長申立てと、後見人報酬の助成を行う。
+  who: {}
+  at_application:
+  - 市長申立ては、65歳以上の認知症高齢者、知的・精神障がい者が対象
+  - 身寄りがなく、申立てができない人
+  - 報酬助成は、助成がないと利用が難しいと市長が認める人
+  where: 長寿福祉課
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/3253.html
+  confidence: high
+  more_urls:
+  - https://www.city.takaoka.toyama.jp/material/files/group/35/3sho.pdf
+- category: sonota
+  name: 軽度生活援助（草むしり・除雪）
+  name_on_page: 軽度生活援助サービス
+  summary: 草むしりと屋根雪以外の除雪を、低料金でシルバー人材センターが行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 事業対象者、要支援1・2、要介護1〜5のいずれか
+  - 申請は地域包括支援センターか居宅介護支援事業所を通す
+  where: 地域包括支援センター・居宅介護支援事業所（長寿福祉課）
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/3843.html
+  confidence: high
+  amount: 草むしり2時間未満200円（年4回まで）、除雪2時間未満400円（年3回まで）。生活保護世帯は無料
+  more_urls:
+  - https://www.city.takaoka.toyama.jp/material/files/group/35/3sho.pdf
+- category: sonota
+  name: 屋根の雪下ろし費用の助成
+  name_on_page: 除雪支援
+  summary: 住民税非課税の高齢者世帯などに、屋根の雪下ろし費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のひとり暮らし世帯、高齢者のみ世帯などが対象
+  - 65歳以上と小学生以下の世帯、障がい者世帯も対象
+  - 作業終了後30日以内に領収書を付けて事後申請
+  where: 長寿福祉課（窓口・郵送・メール）
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/3842.html
+  confidence: high
+  amount: 1回あたり上限10,960円、1冬2回まで（令和6年度の額）
+  more_urls:
+  - https://www.city.takaoka.toyama.jp/material/files/group/35/3sho.pdf
+- category: sonota
+  name: 老人福祉電話の貸与
+  name_on_page: 老人福祉電話の貸与
+  summary: ひとり暮らし等の高齢者に電話機を貸し、基本料金と設置費は市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 所得税非課税世帯であること
+  - 近隣に親族が住んでいないこと
+  where: 長寿福祉課（電子申請あり）
+  url: https://www.city.takaoka.toyama.jp/soshiki/koreikaigoka/2/1/7/3841.html
+  confidence: high
+  amount: 通話料のみ本人負担
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

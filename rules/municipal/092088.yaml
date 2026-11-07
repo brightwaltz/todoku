@@ -1,0 +1,197 @@
+city: 092088
+name: 小山市
+site: www.city.oyama.tochigi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ券の給付（家族介護）
+  name_on_page: 小山市家族介護用品（紙おむつ券）給付事業
+  summary: 在宅で要介護の高齢者を介護する家族に、紙おむつ券を給付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 申請するのは介護している家族
+  - 施設入所・入院中は対象外
+  - 月15日以上のショートステイ利用は対象外
+  where: 高齢生きがい課、各出張所
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/zaitaku/page008551.html
+  confidence: high
+  amount: 券 1 枚 1,000 円。申請月により年度で 12 枚から 2 枚まで
+  more_urls:
+  - https://www.city.oyama.tochigi.jp/data/doc/1772693022_doc_487_0.pdf
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に、業者が食事を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 調理や食材の確保が難しい
+  - ケアプラン等でサービスが必要とされた
+  where: 地域包括支援センター職員かケアマネジャーが市に申請（高齢生きがい課）
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/zaitaku/page004585.html
+  confidence: high
+  amount: 週5食まで。1食あたり市が200円を助成し、残りは自己負担
+- category: iro
+  name: 在宅ねたきり老人等の介護手当
+  name_on_page: 在宅ねたきり老人等介護手当
+  summary: 要介護4・5の高齢者を自宅で介護している人に、介護手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護される方が65歳以上
+  - 3か月以上市内に住所があり3か月以上自宅で介護
+  - 介護保険所得段階が第8以上は対象外
+  where: 高齢生きがい課
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/zaitaku/page001579.html
+  confidence: high
+  amount: 所得段階第1〜3は月10,000円、第4〜7は月5,000円
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯・乾燥・消毒サービス
+  summary: 業者が寝具を預かり、洗濯・乾燥・消毒をして届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - ケアプラン等でサービスが必要とされた
+  where: 地域包括支援センター職員かケアマネジャーが市に申請（高齢生きがい課）
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/zaitaku/page007268.html
+  confidence: high
+  amount: 年2回まで。1回（3枚組）1,000円
+- category: gaishutsu
+  name: タクシー利用券による移送サービス
+  name_on_page: 移送サービス
+  summary: バスなどが使いにくい在宅高齢者に、病院等へ行くタクシー利用券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 病院行き：おおむね65歳以上のひとり暮らしか高齢者のみ世帯
+  - 病院行き：公共交通が使えず自家用車もない
+  - ふれあいセンター行き：おおむね65歳以上でバス範囲外
+  - 身体状況等で対象が変わる場合あり
+  where: 地域包括支援センター職員かケアマネジャーが市に申請（高齢生きがい課）
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/zaitaku/page004590.html
+  confidence: high
+  amount: 月2枚・年24枚まで。病院まで3kmなら400円など距離ごとの自己負担
+- category: nichijo-yogu
+  name: 日常生活用具の給付・貸与
+  name_on_page: 日常生活用具の給付・貸与
+  summary: 電磁調理器・火災警報器・自動消火器を給付し、寝台を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 給付：ひとり暮らし等で防火の配慮が必要、ケアプラン等で必要とされた
+  - 貸与：ひとり暮らしか高齢者のみ世帯で要介護認定を受けていない
+  where: 地域包括支援センター職員かケアマネジャーが市に申請（高齢生きがい課）
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/zaitaku/page004912.html
+  confidence: high
+  amount: 給付は費用の1割負担。寝台の貸与は月500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 急病などの緊急時に通報できる装置を貸与する。固定型と携帯型がある。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみ世帯
+  - または障害者手帳をもつひとり暮らしの方
+  - 携帯型は自宅に固定電話がない方のみ
+  where: 民生委員を通して高齢生きがい課
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/mimamori/page001454.html
+  confidence: high
+  amount: 生活保護・非課税世帯は無料。課税世帯は携帯型とオプションが月500円
+- category: haikai
+  name: 徘徊高齢者の見守り機器 初期費用助成
+  name_on_page: 徘徊高齢者見守り機器の初期費用を助成します
+  summary: 認知症で徘徊のおそれがある人の探索機器の初期費用を、介護する家族に助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上、または医師が認知症と診断した65歳未満
+  - 認知症高齢者の日常生活自立度II以上かそれと同等
+  - 申請者は市内在住の介護家族で市税の滞納がない
+  - これまでに助成を受けていない
+  where: 高齢生きがい課
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/mimamori/page004908.html
+  confidence: high
+  amount: 初期費用の上限7,560円（月々の利用料は対象外）
+  more_urls:
+  - https://www.city.oyama.tochigi.jp/data/doc/1697501156_doc_269_0.pdf
+- category: haikai
+  name: 徘徊高齢者見守りシールの交付
+  name_on_page: 徘徊高齢者見守りシールを交付します
+  summary: 二次元コード付きのシールを無料で1シート配布し、行方不明時の身元確認に使う。
+  who: {}
+  at_application:
+  - SOSネットワーク登録者の同居・見守り・介護をする市内在住の家族等
+  - 未登録なら登録も一緒に行う
+  where: 高齢生きがい課
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/mimamori/page004907.html
+  confidence: high
+  amount: 1シート分は無料。追加分は有料
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり・きゅう・あん摩マッサージ指圧施術費助成
+  summary: はり・灸・マッサージ等の施術に使える助成券を交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、70歳以上
+  - または65歳以上で身体障害者手帳1・2級
+  - 市税の滞納がない
+  where: 高齢生きがい課、各出張所
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/shien/page004529.html
+  confidence: high
+  amount: 1枚800円分を年6枚
+- category: sonota
+  name: シルバーカー購入費の助成
+  name_on_page: シルバーカー購入費助成制度
+  summary: 歩行に支障のある高齢者のシルバーカー購入費を一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+  at_application:
+  - 歩くとき杖などの補助が必要
+  - 市税の滞納がない
+  - 購入日から1年以内に申請。1人1台まで
+  where: 高齢生きがい課（頁に申請先の記載なし）
+  url: https://www.city.oyama.tochigi.jp/kenkou-fukushi-kaigo/koureisha/shien/page001581.html
+  confidence: low
+  amount: 購入費の2分の1、上限6,000円
+not_found:
+- hochoki
+- ribiyo
+- koken
+- chusha
+- yutai

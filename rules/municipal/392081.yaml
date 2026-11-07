@@ -1,0 +1,110 @@
+city: '392081'
+name: 宿毛市
+site: www.city.sukumo.kochi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の給付
+  name_on_page: 介護用品給付事業
+  summary: 重度の要介護の高齢者を介護する家族に、紙おむつ等の介護用品を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護4以上、またはそれに相当する状態と認められる
+  - 申請者は要介護者と同一住所で在宅で常時介護する家族等
+  - 要介護者は市民税非課税（介護者は非課税か課税かで上限額が違う）
+  - 要介護者・介護者とも介護保険料の滞納がなく生活保護でない
+  - 令和7年度から予算の範囲内の給付
+  where: 長寿政策課予防係
+  url: https://www.city.sukumo.kochi.jp/docs-35/40951.html
+  confidence: high
+  amount: 1年間1人あたり、両者非課税の世帯は7万5千円以内、介護者が課税の世帯は6万円以内
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護の高齢者を在宅で介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請日前1年間ずっと要介護3以上、またはそれに相当する状態
+  - 要介護者・介護者とも市民税非課税世帯で、介護保険料の滞納がない
+  - 要介護者・介護者とも生活保護を受けていない
+  - 申請日前1年間、介護保険の居宅・施設サービスを使わず入院もしていない
+  - 年間10日以内の短期入所や入院は除く
+  where: 長寿政策課予防係
+  url: https://www.city.sukumo.kochi.jp/docs-35/40951.html
+  confidence: high
+  amount: 1年間1家族あたり10万円
+- category: haishoku
+  name: 夕食の配食と安否確認
+  name_on_page: 食の自立支援事業
+  summary: 調理が難しい高齢者に夕食を届け、訪問時に安否も確かめる。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯、これに準ずる世帯
+  - 老衰や心身の障害、病気などで食事の調理が困難
+  where: 長寿政策課予防係
+  url: https://www.city.sukumo.kochi.jp/docs-35/p020903.html
+  confidence: high
+  amount: 1食350円から600円（利用者の収入に応じて変わる）
+- category: jutaku
+  name: 住宅改造費の助成
+  name_on_page: 住宅改造支援事業
+  summary: 高齢者の身体状況に合わせた住宅の改修・改築費の一部を市が助成する。
+  who: {}
+  at_application:
+  - 世帯の主たる生計中心者の前年所得税額が30万円未満
+  - 要支援・要介護の認定を受けた人
+  - または身体障害者手帳1・2級の人
+  - または認定なしで、単身か夫婦のみで住む65歳以上の人
+  - 工事の着工前に申請が必要
+  where: 長寿政策課予防係
+  url: https://www.city.sukumo.kochi.jp/docs-35/p020901.html
+  confidence: high
+  amount: 認定者・手帳1・2級は基準額100万円の3分の2（上限66万6千円）。認定なしの65歳以上は基準額30万円の3分の2（上限20万円）。生活保護世帯は10分の10（上限100万円）
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 報酬を負担できない人に、成年後見人等への報酬を予算の範囲で助成する。
+  who: {}
+  at_application:
+  - 認知症等で判断能力が低下し、後見人等への報酬の負担が困難
+  - 市県民税が非課税
+  - 預貯金等の合計が、裁判所が決めた報酬額に30万円を足した額を下回る
+  - 住まいや日常に必要な資産のほか、すぐ処分できる資産がない
+  where: 長寿政策課、地域包括支援センター、福祉事務所
+  url: https://www.city.sukumo.kochi.jp/docs-35/20200623seinenkouken.html
+  confidence: high
+  amount: 家庭裁判所が決めた報酬額まで。上限は月額2万8千円（市指定の施設入所の場合は月額1万8千円）
+not_found:
+- haikai
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- yutai

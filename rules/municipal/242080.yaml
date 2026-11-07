@@ -1,0 +1,115 @@
+city: '242080'
+name: 名張市
+site: www.city.nabari.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等給付事業
+  summary: 在宅で失禁がある要介護1〜5の人に、紙おむつ等を毎月自宅へ届ける。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 名張市の介護保険の被保険者で、市内に住所がある
+  - 失禁があり、昼夜を問わずおむつが必要
+  - 介護保険料を長期に滞納していない
+  - 入院中、介護保険施設・グループホーム・有料老人ホーム等は対象外
+  where: 介護・高齢支援室（市役所1階）、まちの保健室
+  url: https://www.city.nabari.lg.jp/s029/090/040/0012/010/260/201502052091.html
+  confidence: high
+  amount: 自己負担は月500円。月1種類の紙おむつ等が届く（枚数は種類による）
+- category: haishoku
+  name: 配食サービス（夕食と安否確認）
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい単身・高齢者のみ世帯に、夕食を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上の単身、または高齢者のみの世帯
+  - 老化や障害・傷病で調理が困難
+  - 40〜64歳で要介護・要支援の人が高齢者と同世帯の場合も対象
+  - 65歳未満の同居人がいると原則対象外（障害等で調理困難なら可）
+  where: 介護・高齢支援室（市役所1階）、まちの保健室。要支援の人は地域包括支援センター
+  url: https://www.city.nabari.lg.jp/s029/090/040/0012/010/210/20190324104611.html
+  confidence: high
+  amount: 1食430円の自己負担。1日1食（夕食）、週3回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らし等の65歳以上で脳・心臓の病歴がある人に通報機器を貸す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 脳疾患または心臓疾患の既往歴がある（診断書等で確認）
+  - 同居人が全員日中就労等で長時間ひとりの人も対象
+  - 固定電話がない人は使えない
+  - 緊急時に駆けつける地域協力員を3人選ぶ
+  where: 介護・高齢支援室（市役所1階）、まちの保健室
+  url: https://www.city.nabari.lg.jp/s029/090/040/0012/010/190/201502052084.html
+  confidence: high
+  amount: 世帯全員が市民税非課税は通話料のみ。課税世帯は月1,000円と通話料
+- category: haikai
+  name: ひとり歩き高齢者の見守りシール
+  name_on_page: ひとり歩き高齢者等支援サービス事業（見守りシール配布事業）
+  summary: 道に迷うおそれのある人に、身元確認用の見守りシール10枚を配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 名張市の介護保険被保険者
+  - 40〜64歳は要介護・要支援の認定が必要
+  - 65歳以上は要介護認定がなくてもよい
+  - 見守り台帳と顔写真を提出し、警察・消防と情報を共有する
+  where: 介護・高齢支援室（市役所1階）、まちの保健室
+  url: https://www.city.nabari.lg.jp/s029/090/040/0012/010/240/20181227152319.html
+  confidence: high
+  amount: 見守りシール10枚の配布。費用の記載なし
+- category: sonota
+  name: 掃除・洗濯などの軽い生活援助
+  name_on_page: 軽度生活援助事業
+  summary: 在宅の単身・高齢者のみ世帯に、シルバー人材センターが掃除や洗濯等を支援する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上の単身、または高齢者のみの世帯
+  - 老化等で軽い日常生活の援助が必要
+  - 40〜64歳で要介護・要支援の人が高齢者と同世帯の場合も対象
+  - 65歳未満の同居人がいると原則対象外（障害等があれば可）
+  where: 介護・高齢支援室（市役所1階）、まちの保健室。要支援の人は地域包括支援センター
+  url: https://www.city.nabari.lg.jp/s029/090/040/0012/010/230/201502052088.html
+  confidence: high
+  amount: 1時間700円。1世帯で月4時間まで。材料費・交通費は実費
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

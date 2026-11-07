@@ -1,0 +1,191 @@
+city: '412031'
+name: 鳥栖市
+site: www.city.tosu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業
+  summary: 食事の用意が難しい人に、昼食か夕食を手渡しで届けて安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし等で、調理や食材の調達ができない
+  - 家族の支援も難しい
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  amount: 1食520円（1か月分まとめて翌月払、令和8年4月現在）
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム事業
+  summary: 急病や事故のとき、自宅の機器を押すと警備会社が駆けつける仕組みを付ける。
+  who: {}
+  at_application:
+  - おおむね75歳以上のひとり暮らし等の病弱な人で、日常生活に常時注意が必要
+  - または身体障害者手帳1〜3級のひとり暮らしで、緊急時の対応が困難
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 在宅で常時失禁状態の寝たきりなどの人に、紙おむつ等を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上で、寝たきりで常時失禁状態の人がいる世帯
+  - 紙おむつを使う人が在宅で介護を受けている
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: iro
+  name: 在宅寝たきり老人等介護見舞金
+  name_on_page: 在宅寝たきり老人等介護見舞金
+  summary: 寝たきりか重度認知症の65歳以上の人を6か月以上自宅で介護する家族に、見舞金を出す。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の寝たきりか重度認知症の人を、在宅で6か月以上続けて介護している
+  - 介護される人と介護者の両方が市内に住所がある
+  - 生計中心者の前年の所得が1千万円以下の世帯
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  amount: 月額12,000円（生計中心者の前年所得300万円以上は月10,000円、半年で上限5万円）。年2回支給
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りがない人の後見の申立てを市長が行い、生活保護の人などの後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 認知症・知的障害・精神障害などで判断能力が不十分
+  - 申立てをする人がいない場合は、市長が家庭裁判所へ申し立てる
+  - 報酬助成は生活保護の人かそれに準じる人（4親等以内の親族が後見人なら対象外）
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2345.html
+  confidence: high
+  amount: 後見人等への報酬の全部または一部
+- category: haikai
+  name: 行方不明高齢者の事前登録と見守りシール
+  name_on_page: 行方不明高齢者捜索事前登録制度
+  summary: 徘徊のおそれがある人を事前登録し、QRコードつきの見守りシールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で、徘徊や行方不明の不安がある認知症の人
+  - 若年性認知症の診断を受けた人も対象
+  - 「鳥栖市行方不明高齢者等事前登録」の届出が必要
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  amount: 見守りシール30枚セット（耐洗20枚・蓄光10枚）は無料。追加購入は自費
+  more_urls:
+  - https://www.city.tosu.lg.jp/soshiki/38/10620.html
+- category: mimamori
+  name: ふれあいネットワーク事業（訪問連絡員の見守り）
+  name_on_page: ふれあいネットワーク事業
+  summary: 訪問連絡員が自宅を訪ね、話し相手になりながら安否を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし等で、見守りが必要
+  - 高齢者のみの世帯でこれに準ずる世帯も含む
+  where: 鳥栖市社会福祉協議会（委託先、電話0942-85-3555）、高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: nichijo-yogu
+  name: 福祉電話の貸与（電話回線の貸出し）
+  name_on_page: 福祉電話貸与事業
+  summary: 自宅に電話がないひとり暮らし等の高齢者に、電話回線を貸し、基本料を助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、所得税が課税されていない世帯
+  - ひとり暮らし等で自宅に電話がない
+  - 高齢者のみの世帯は、いずれかが常時介護を必要とする状態
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  amount: 回線の基本料金（取付料・撤去料を含む）は市が負担。通話料は自己負担
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: sonota
+  name: 車いすの貸し出し
+  name_on_page: 車いすの貸し出し
+  summary: 歩行が不自由な人に、外出や旅行のときの車いすを短期間、無料で貸す。
+  who: {}
+  at_application:
+  - 歩行が不安定などで、一時的に車いすが必要
+  - 介護認定で介護保険サービスを使える場合は、そちらを優先する
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  amount: 無料。貸出期間は原則1か月以内
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: sonota
+  name: 特殊ベッドの貸し出し
+  name_on_page: 特殊ベッドの貸し出し
+  summary: 常時介護が必要な人に、特殊ベッドを短期間、無料で貸す。
+  who: {}
+  at_application:
+  - 常時介護が必要な状態で、一時的に特殊ベッドが必要
+  - 介護認定や身体障害者手帳でサービスを使える場合は、そちらを優先する
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/2302.html
+  confidence: high
+  amount: 無料。貸出期間は原則1か月以内
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: gaishutsu
+  name: 高齢者福祉乗車券「でかける券」の販売
+  name_on_page: 高齢者福祉乗車券「でかける券」
+  summary: バスやミニバス、乗合タクシーに使える5,000円分の乗車券を1,500円で売る。
+  who: {}
+  at_application:
+  - 市内に居住し、75歳以上
+  - または70〜74歳で運転免許を自主返納・更新しなかった人（証明書で確認）
+  - 使えるのは市内のバス停で乗り降りする場合
+  where: 高齢障害福祉課（1階7番窓口）、各まちづくり推進センター・分館（電話予約）、中央老人福祉センター
+  url: https://www.city.tosu.lg.jp/soshiki/38/2317.html
+  confidence: high
+  amount: 1冊1,500円（5,000円分）。年6冊まで（70〜74歳の返納・失効の人は年8冊まで）
+  more_urls:
+  - https://www.city.tosu.lg.jp/uploaded/attachment/41659.pdf
+- category: sonota
+  name: 敬老祝金
+  name_on_page: 敬老祝金
+  summary: 80・85・88・99・100歳になる人に、お祝い金を支給する。申請書が送られてくる。
+  who: {}
+  at_application:
+  - 令和8年9月1日現在、鳥栖市に1年以上住民登録している
+  - 対象年齢は80・85・88・99・100歳（生年月日で決まる）
+  - 対象の人には申請書が郵送される（電子申請もできる）
+  where: 高齢障害福祉課 高齢者支援係
+  url: https://www.city.tosu.lg.jp/soshiki/38/86749.html
+  confidence: high
+  amount: 80歳・85歳は5,000円、88歳は20,000円、99歳は30,000円、100歳は50,000円
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- hochoki
+- chusha
+- yutai

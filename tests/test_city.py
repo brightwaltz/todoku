@@ -20,6 +20,11 @@ VILLAGE = "023043"  # 青森県 蓬田村
 NO_RULES = "272035"  # 大阪府 豊中市（市の規則も rules/local も無い。大阪市は T-075e で rules/local に入ったので替えた）
 
 
+
+def strip_muni(html: str) -> str:
+    """第 3 の層の段（data-level="municipal"、T-199）を除く。この試験は確かな層と rules/local の段を数えるため。"""
+    return re.sub(r'<section class="card soft city-group" data-level="municipal">.*?</section>', "", html, flags=re.S)
+
 def ids_of(level: str, keep=lambda p: True) -> set[str]:
     return {p.id for p in RULES.programs.values() if p.level == level and keep(p)}
 
@@ -88,7 +93,7 @@ def test_kanagawa_says_it_was_checked_and_none_found_not_that_it_is_not_written_
 
 
 def test_every_program_shows_where_to_apply_and_a_source():
-    html = client.get(f"/city/{OSAKA}").text
+    html = strip_muni(client.get(f"/city/{OSAKA}").text)
     items = re.findall(r'<li class="city-item[^"]*".*?</details></li>', html, re.S)  # 大阪市の事業（local）の項目も
     assert len(items) == len(ids_of("national")) + 5
     for item in items:

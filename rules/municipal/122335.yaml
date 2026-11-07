@@ -1,0 +1,136 @@
+city: '122335'
+name: 富里市
+site: www.city.tomisato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入助成券
+  name_on_page: 富里市紙おむつ等購入助成事業
+  summary: 在宅で常時おむつが必要な住民税非課税の方に、登録店で使える助成券を交付する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3〜5、または身体障害者手帳1・2級
+  - 市の住民基本台帳に記録されている
+  - 病院・介護保険施設・有料老人ホーム等の入所者は対象外
+  - 住民税課税、または介護保険所得段階が第6〜10段階は対象外
+  where: 高齢者福祉課
+  url: https://www.city.tomisato.lg.jp/0000009570.html
+  confidence: high
+  amount: 助成券1枚1,000円。月3枚まで、最大36枚の交付。
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入助成事業
+  summary: 加齢性難聴で補聴器が必要な65歳以上の方に、購入費を1回助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録がある
+  - 聴覚障害の身体障害者手帳を持つ人は対象外
+  - 医師の補聴器使用の証明書が必要
+  - 購入日の翌日から1年以内に申請
+  where: 高齢者福祉課
+  url: https://www.city.tomisato.lg.jp/0000015144.html
+  confidence: high
+  amount: 2万円を上限に1回のみ。購入額が2万円未満ならその額。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸出
+  name_on_page: 緊急通報装置設置事業
+  summary: ボタン1つで24時間の受信センターに通報できる装置を貸し出す。月1回の見守り連絡もある。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、またはそれに準ずる身体に不安のある方
+  - または18歳以上で身体障害者手帳1・2級の方
+  where: 高齢者福祉課 包括支援班
+  url: https://www.city.tomisato.lg.jp/0000014036.html
+  confidence: high
+  amount: 月額は非課税世帯・生活保護世帯が0円、課税世帯が1,210円。空間センサーは月1,100円。
+- category: gaishutsu
+  name: 車いす対応の送迎（移送サービス）
+  name_on_page: 移送サービス利用案内
+  summary: 公共交通を使えない方を、車いす送迎車で医療機関などへ有償で送迎する。
+  who: {}
+  at_application:
+  - 市内に住民登録がある
+  - 要介護認定を受けている、または重度心身障害者（1・2級）
+  - 独居など、家族が送迎できない事情がある
+  - 車いす等が必要で、バス・タクシーの利用が非常に難しい
+  where: 登録は高齢者福祉課、予約は社会福祉協議会
+  url: https://www.city.tomisato.lg.jp/0000015936.html
+  confidence: high
+  amount: 片道ごとに、課税世帯400円、非課税世帯200円。月4回まで。
+- category: gaishutsu
+  name: 福祉カー（スロープ付き車）の貸出
+  name_on_page: 福祉カー貸付事業
+  summary: 車いすの高齢者や家族に、スロープ付きの車を無料で貸し出す。
+  who: {}
+  at_application:
+  - 市内在住で普通自動車免許がある
+  - 車いすが必要な高齢者、心身障害者、またはその家族
+  - 電話で事前予約。1回2日以内、月3回以内
+  where: 高齢者福祉課 包括支援班
+  url: https://www.city.tomisato.lg.jp/0000015675.html
+  confidence: high
+  amount: 貸出は無料。燃料費は自己負担。
+  more_urls:
+  - https://www.city.tomisato.lg.jp/0000009571.html
+- category: haikai
+  name: QRコード付き見守りシールの交付
+  name_on_page: 高齢者等見守りシール交付事業
+  summary: 行方不明になるおそれのある方の持ち物に貼るQRシールを無料で交付する。
+  who:
+    age_min: 40
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、認知症の疑いがある
+  - 保護者のメールアドレス登録が必要
+  where: 高齢者福祉課（郵送可）
+  url: https://www.city.tomisato.lg.jp/0000015138.html
+  confidence: high
+  amount: 初回は無料。1人50枚（耐洗40枚・蓄光10枚）を支給。
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キット事業
+  summary: 持病や連絡先を入れて冷蔵庫に保管するキットを無償で配る。
+  who: {}
+  at_application:
+  - 65歳以上の方、または障害のある方
+  where: 高齢者福祉課
+  url: https://www.city.tomisato.lg.jp/0000009571.html
+  confidence: low
+  amount: 無償配布
+- category: sonota
+  name: 100歳の長寿祝金
+  name_on_page: 富里市長寿祝金
+  summary: その年度に100歳になる市内在住の方へ、祝金を口座振込で贈る。
+  who: {}
+  at_application:
+  - 毎年9月15日時点で市内に居住
+  - その年度内に100歳になる方
+  - 9月中旬に届く書類を返送する
+  where: 高齢者福祉課
+  url: https://www.city.tomisato.lg.jp/0000007826.html
+  confidence: high
+  amount: 30,000円
+not_found:
+- haishoku
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

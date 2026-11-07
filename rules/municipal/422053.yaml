@@ -1,0 +1,161 @@
+city: '422053'
+name: 大村市
+site: www.city.omura.nagasaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給券
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の非課税世帯の高齢者を在宅で介護する家族に、おむつ等の支給券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請するのは、対象の高齢者を在宅で介護している市内在住の家族
+  - 事前に長寿介護課か居宅介護支援事業者へ問い合わせる
+  where: 長寿介護課（給付グループ）
+  url: https://www.city.omura.nagasaki.jp/choujukyuufu/kenko/fukushi/koresha/kurashiservis/kazokukaigo.html
+  confidence: high
+  amount: 月額 6,250 円まで
+  more_urls:
+  - https://www.city.omura.nagasaki.jp/fukushi/kenko/fukushi/shisaku/documents/4koureisha2025.pdf
+- category: jutaku
+  name: 高齢者自立支援事業（住宅改修の助成）
+  name_on_page: 高齢者自立支援事業
+  summary: 手すり・段差解消などの住宅改修費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険で『自立』と判定された方
+  - 地域包括支援センターの介護予防ケアプランで必要とされた方
+  - 所得に応じた負担割合（1〜3割）が設定される
+  where: 長寿介護課または地域包括支援センター
+  url: https://www.city.omura.nagasaki.jp/choujukyuufu/kenko/fukushi/koresha/kurashiservis/jiritsushien.html
+  confidence: high
+  amount: 工事費 100,000 円を限度に、経費の 7〜9 割
+  more_urls:
+  - https://www.city.omura.nagasaki.jp/fukushi/kenko/fukushi/shisaku/documents/4koureisha2025.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与事業
+  summary: 救急・犯罪・災害時の通報や位置確認ができる緊急通報装置を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯の方
+  - 重度の身体障害者のひとり暮らし、またはその方のみの世帯の方
+  - 市長が認める人、介護予防支援計画で必要とされた方も対象
+  where: 長寿介護課、または担当のケアマネジャー
+  url: https://www.city.omura.nagasaki.jp/choujuhokatsu/kenko/fukushi/koresha/kurashi/kinnkyuu.html
+  confidence: high
+  amount: 基本料金は月 820 円、バッテリー代 2,310 円（1年半ごと）。出動時は 1 時間 11,000 円
+  more_urls:
+  - https://www.city.omura.nagasaki.jp/fukushi/kenko/fukushi/shisaku/documents/4koureisha2025.pdf
+- category: hochoki
+  name: 高齢者補聴器購入費補助
+  name_on_page: 高齢者補聴器購入費補助事業
+  summary: 聴力が下がった高齢者の補聴器の購入費を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力レベルがいずれも50デシベル以上
+  - 身体障害者手帳の聴覚障害の等級に該当しない方
+  - 補聴器で認知機能低下の防止などが期待できると医師が判断
+  - 介護保険料の滞納がなく、過去5年に補助を受けていない
+  where: 長寿介護課（耳鼻咽喉科の意見書が必要）
+  url: https://www.city.omura.nagasaki.jp/choujukyuufu/kenko/fukushi/koresha/kurashiservis/hochokihojo.html
+  confidence: high
+  amount: 購入代金と基準価格の少ない方の 9/10、上限 39,000 円
+- category: haikai
+  name: 徘徊SOSネットワークの事前登録
+  name_on_page: 大村市徘徊SOSネットワーク
+  summary: 徘徊のおそれのある人を市に事前登録し、警察や協力団体と早期発見を図る。
+  who:
+    at_home: true
+  at_application:
+  - 市内に居住し在宅で生活している方のうち、次のいずれか
+  - 徘徊のおそれがある65歳以上の方、または若年性認知症の方
+  - その他、市長が認める方
+  - 職員が自宅を訪問して聞き取り・写真撮影を行う
+  where: 担当ケアマネジャーまたは地域包括支援センター
+  url: https://www.city.omura.nagasaki.jp/choujuhokatsu/kenko/fukushi/koresha/ninchisho/sos.html
+  confidence: high
+  more_urls:
+  - https://www.city.omura.nagasaki.jp/fukushi/kenko/fukushi/shisaku/documents/4koureisha2025.pdf
+- category: haikai
+  name: 徘徊GPS端末機の貸与
+  name_on_page: 介護家族者あんしんサポートサービス事業（徘徊GPS端末機の貸与）
+  summary: 徘徊行動のある高齢者の介護者に、位置を確認できるGPS端末機を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊行動が見られる方、およびその介護者
+  - 傷害保険は月額に150円を上乗せすると付けられる
+  where: 大村市地域包括支援センター
+  url: https://www.city.omura.nagasaki.jp/chojuhoukatsu/kenko/fukushi/koresha/ninchisho/gps-kiki-taiyo.html
+  confidence: high
+  amount: 月額 1,025 円（世帯が住民税非課税なら市が負担）
+  more_urls:
+  - https://www.city.omura.nagasaki.jp/fukushi/kenko/fukushi/shisaku/documents/4koureisha2025.pdf
+- category: ribiyo
+  name: 訪問理美容サービス費の支給
+  name_on_page: 訪問理美容サービス費の支給
+  summary: 外出が難しい要介護3以上の方が訪問理美容を受ける際の経費の利用券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、理容所・美容所に行くことが困難な方
+  where: 長寿介護課
+  url: https://www.city.omura.nagasaki.jp/fukushi/kenko/fukushi/shisaku/documents/4koureisha2025.pdf
+  confidence: high
+  amount: 1回 1,500 円の利用券、年6回以内（年度途中の申請は2か月に1回）
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申し立て費用と後見人等への報酬を、利用が難しい人に助成する。
+  who: {}
+  at_application:
+  - 身近に申し立てる親族がいない、または費用・報酬を負担できない方
+  - 対象者の詳しい条件は窓口で確認（頁に無い）
+  where: 長寿介護課 管理グループ（65歳以上の方）
+  url: https://www.city.omura.nagasaki.jp/choujuhokatsu/kenko/fukushi/koresha/kokenn.html
+  confidence: low
+  amount: 申立ての収入印紙代・登記手数料・切手代・診断書費用・鑑定料。報酬は一部または全額
+- category: yutai
+  name: 高齢者リフレッシュ事業（温泉施設の割引）
+  name_on_page: 高齢者リフレッシュ事業
+  summary: 市が指定する温泉施設を、一般料金より安く週3回まで使える。
+  who:
+    age_min: 65
+  at_application:
+  - 事前に利用登録が必要
+  - 介護保険料を6か月以上滞納している方は除く
+  where: 地域包括支援センター
+  url: https://www.city.omura.nagasaki.jp/fukushi/kenko/fukushi/shisaku/documents/4koureisha2025.pdf
+  confidence: low
+  amount: 1 回 300 円（ゆの華・かやぜの湯）
+not_found:
+- haishoku
+- iro
+- shingu
+- gaishutsu
+- mimamori
+- nichijo-yogu

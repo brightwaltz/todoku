@@ -1,0 +1,198 @@
+city: '232211'
+name: 新城市
+site: www.city.shinshiro.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費補助
+  name_on_page: 難聴高齢者補聴器購入費補助金
+  summary: 聞こえにくい高齢者が補聴器を買うとき、費用の半分（上限3万円）を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 両耳の聴力が25dB以上で、障害者手帳の対象にならない
+  - 指定医師の診断で補聴器が必要とされた
+  - 過去にこの補助金を受けていない
+  where: 高齢者支援課
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/chiiki/nantyoukorei.html
+  confidence: high
+  amount: 対象経費の2分の1。上限3万円、1人1回限り
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸出
+  name_on_page: 緊急通報システム
+  summary: ボタンで市契約業者へ通報する装置を無料で貸し出し、月1回電話で体調も確認する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者、または寝たきりの高齢者を介護する高齢者世帯
+  where: 高齢者ふれあい相談センター、高齢者支援課
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+  confidence: low
+  amount: 無料
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 栄養改善が必要な高齢者に、週1〜4回お弁当を届ける。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしや高齢者世帯等で、担当者がサービス該当と判断した人
+  - 栄養改善が必要と判断される
+  where: 高齢者ふれあい相談センター、高齢者支援課
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+  confidence: low
+  amount: 週1回〜4回。1食324〜351円の自己負担（令和8年4月現在）
+- category: mimamori
+  name: ひとり暮らし高齢者の安否確認（乳酸飲料の配達）
+  name_on_page: ひとり暮らし高齢者安否確認
+  summary: 安否確認のため、乳酸飲料を週1回2本、無料で配達する。
+  who: {}
+  at_application:
+  - 80歳以上でひとり暮らしの方等（ほかの対象は案内に明記なし）
+  where: 社会福祉協議会
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+  confidence: low
+  amount: 無料（乳酸飲料2本を週1回）
+- category: mimamori
+  name: 友愛訪問
+  name_on_page: 友愛訪問
+  summary: ボランティア団体等が毎月訪問し、安否確認と日常生活の相談を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 高齢者支援課
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+  confidence: low
+  amount: 無料
+- category: haikai
+  name: 高齢者見守りネットワーク（見守りシール）
+  name_on_page: 新城市おかえり結ネット
+  summary: 事前登録すると、行方不明時に家族へメールが届く見守りシールが交付される。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で外出して帰れなくなるおそれのある高齢者とその家族
+  - 事前に登録票を提出する
+  where: 高齢者支援課
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/kaigo/ninchi/okaeriyuinet.html
+  confidence: high
+  amount: 無料。個人賠償責任保険にも加入できる
+  more_urls:
+  - https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+- category: gaishutsu
+  name: 高齢者のタクシー料金助成
+  name_on_page: 高齢者福祉タクシー料金助成
+  summary: 80歳以上の単身または高齢者のみ世帯に、タクシー券を年24回分交付する。
+  who:
+    age_min: 80
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 高齢者のみ世帯は満70歳以上の世帯員だけの世帯
+  - 世帯に自家用車と運転免許証の両方を持つ人がいると対象外
+  - 介護施設などに入所している人は対象外
+  where: 高齢者支援課（鳳来・作手の総合支所地域課でも受付）
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/shougaishahukushi/kotsu/gaisyutsu.html
+  confidence: high
+  amount: 1乗車700円分×年24回（24枚つづり1冊）
+  more_urls:
+  - https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+- category: gaishutsu
+  name: 高齢者の福祉有償運送料金助成
+  name_on_page: 高齢者福祉有償運送料金助成
+  summary: 要介護・要支援認定などのある高齢者に、福祉有償運送の料金助成券を交付する。
+  who:
+    age_min: 80
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護・要支援認定を受けた人、または身体障害者手帳の人
+  - 高齢者のみ世帯は満70歳以上の世帯員だけの世帯
+  - 世帯に自家用車と運転免許証の両方を持つ人がいると対象外
+  - 介護施設などに入所している人は対象外
+  where: 高齢者支援課（鳳来・作手の総合支所地域課でも受付）
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/shougaishahukushi/kotsu/gaisyutsu.html
+  confidence: high
+  amount: 年56枚つづり1冊（1枚300円分、1回の利用は2枚まで）
+- category: gaishutsu
+  name: 介護タクシー料金助成
+  name_on_page: 介護タクシー料金助成
+  summary: 車いすやストレッチャーでの移動が必要な在宅の人に、介護タクシー券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または体幹・下肢障害の身障1・2級で自力歩行が困難
+  - 世帯に車いす対応車両がある人、自動車税等の減免を受けた人は対象外
+  where: 高齢者支援課（鳳来・作手の総合支所地域課でも受付）
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/shougaishahukushi/kotsu/gaisyutsu.html
+  confidence: high
+  amount: 年24枚つづり1冊（1枚1,250円分、1回1枚）
+- category: gaishutsu
+  name: 運転免許証の自主返納支援（回数券等の交付）
+  name_on_page: 新城市高齢者運転免許証自主返納支援事業
+  summary: 免許を自主返納した70歳以上に、Sバス・タクシー共通回数券などのいずれか1つを交付する。
+  who: {}
+  at_application:
+  - 運転免許証を自主返納した方
+  - 返納の日から1年以内に申請する
+  where: 行政課
+  url: https://www.city.shinshiro.lg.jp/kurashi/seikatsu/kotsuanzen/henno-shien.html
+  confidence: high
+  amount: 次のいずれか1つ。Sバス・タクシー共通回数券（200円券6枚つづり3セット）、高速バス回数券（4枚つづり1セット）、3千円相当の交通安全物品
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット
+  summary: 緊急連絡先や病名を入れる筒型容器を無料で配り、冷蔵庫に保管して急変時に使う。
+  who: {}
+  at_application:
+  - 高齢者、または健康に不安のある方
+  where: 高齢者支援課
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+  confidence: low
+  amount: 無料
+- category: sonota
+  name: あんきにしんしろサポート事業（死亡後の手続き等の支援）
+  name_on_page: あんきにしんしろサポート事業
+  summary: 子や孫がいない高齢者の、葬儀・納骨や賃貸住宅の家財処分などを支援する。
+  who:
+    age_min: 65
+  at_application:
+  - 子や孫がいない方
+  - ほかにも要件がある（案内に詳細なし）
+  where: 社会福祉協議会
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+  confidence: low
+- category: sonota
+  name: 作手高齢者生活福祉センターの居住提供
+  name_on_page: 新城市作手高齢者生活福祉センター居住提供
+  summary: 独立した生活が不安なとき、虹の郷で最長6か月間暮らせる。
+  who: {}
+  at_application:
+  - おおむね60歳以上のひとり暮らし、高齢者夫婦世帯等
+  - 日常生活が自立している
+  where: 虹の郷、高齢者支援課
+  url: https://www.city.shinshiro.lg.jp/kenko/fukushi/korei/20250305.files/koureisyatounokurashinikannsurusa-bisupd.pdf
+  confidence: low
+  amount: 費用は所得に応じた額に食事代・光熱費等が加わる
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

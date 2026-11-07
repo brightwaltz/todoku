@@ -1,0 +1,60 @@
+city: '102121'
+name: みどり市
+site: www.city.midori.gunma.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置
+  summary: 急病や事故のとき消防署へ連絡できる装置を、要支援・要介護の方に貸す。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の状態等で設置が必要と認められる
+  - 緊急連絡先の協力員（親族等）1名以上の登録が必要
+  - NTT回線とコンセントが必要
+  where: 介護高齢課または社会福祉協議会
+  url: https://www.city.midori.gunma.jp/kenkou/1001637/1001777/1009423.html
+  confidence: high
+  amount: 所得税の課税額に応じ0円から全額負担（非課税世帯・生活保護は0円）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者等に、週2回の昼食配達と安否確認を行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者世帯か、これに準ずる世帯の高齢者・身体障がい者
+  - 心身の障がいや傷病等で調理・栄養管理が困難
+  where: 介護高齢課または社会福祉協議会
+  url: https://www.city.midori.gunma.jp/kenkou/1001637/1001777/1009424.html
+  confidence: high
+  amount: 1食300円（利用者負担）
+- category: haikai
+  name: おかえりQRシールの配布
+  name_on_page: おかえりQRシール
+  summary: 迷子の発見に使える QR シールを、希望者に配る。
+  who: {}
+  at_application:
+  - 寄贈品のため在庫がなくなり次第、配布終了
+  where: 介護高齢課窓口、地域包括支援センター
+  url: https://www.city.midori.gunma.jp/kurashi/1001618/1005077/1005081/1005119.html
+  confidence: low
+not_found:
+- koken
+- shingu

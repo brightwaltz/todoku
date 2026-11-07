@@ -1,0 +1,26 @@
+pref: '21'
+name: 岐阜県
+site: www.pref.gifu.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: おもいやり駐車場の利用証の交付
+  name_on_page: ぎふ清流おもいやり駐車場利用証制度
+  summary: 要介護1以上の高齢者などに、県が車椅子使用者用・障害者等用の駐車区画の利用証を交付する。
+  who: {}
+  at_application:
+  - 高齢者は、介護保険被保険者証で要介護1以上と確認できる人
+  - ほか、障害者手帳（障害・等級による）・難病の受給者証も対象
+  - ほか、妊産婦（産後2〜3年）・医師に歩行困難と診断されたけが人も対象
+  - けが人は県の様式の医師の診断書が要る（費用は自己負担、有効1年以内）
+  - 利用証は、本人が乗る車でだけ使え、貸したり譲ったりはできない
+  where: 県地域福祉課（窓口・郵送）、岐阜地域福祉事務所・各県事務所福祉課（窓口）。オンラインでも申請できる
+  url: https://www.pref.gifu.lg.jp/kodomo/tiiki-fukushi-sonota/tiiki-fukushi/11219/omoiyarichushajo.html
+  confidence: high
+not_found:
+- yutai

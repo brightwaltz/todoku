@@ -1,0 +1,25 @@
+pref: '11'
+name: 埼玉県
+site: www.pref.saitama.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 思いやり駐車場の利用証
+  name_on_page: 埼玉県思いやり駐車場制度（パーキング・パーミット制度）
+  summary: 介護保険被保険者証などで交付基準を満たす人に、県か市町村が利用証を交付する。
+  who: {}
+  at_application:
+  - 歩行が困難か、移動に配慮が必要で、県の交付基準を満たす人
+  - 障害者手帳・難病の受給者証・介護保険被保険者証・母子健康手帳などを持つ人が対象
+  - 交付基準の細目は、頁の PDF「利用証の交付基準」で確かめる
+  - 診断書や代理人での申請は、本人確認書類の写しが要る
+  where: 各市町村の受付窓口、または県福祉政策課（電子申請・郵送）
+  url: https://www.pref.saitama.lg.jp/a0601/parking_permit.html
+  confidence: high
+not_found:
+- yutai

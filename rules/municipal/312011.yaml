@@ -1,0 +1,281 @@
+city: '312011'
+name: 鳥取市
+site: www.city.tottori.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 安心ホットライン（緊急通報）
+  name_on_page: 安心ホットライン事業（緊急通報受信サービス）
+  summary: 急病や災害のとき、簡単な操作の通報で協力員などの助けが受けられる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯など
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 利用料は月300円（生活保護世帯は無料）。所得などにより装置分が月500円加わる。
+- category: sonota
+  name: 福祉電話の設置（無償貸与と費用助成）
+  name_on_page: ひとり暮らし高齢者等福祉電話設置サービス
+  summary: 電話を引けない低所得の人に、機器の無償貸与と設置費などの助成をする。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 安心ホットライン事業の利用が必要で、電話をまだ開設できていない
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 設置費・基本料金は市が負担。毎月の通話料は自己負担。
+- category: sonota
+  name: 軽度家事援助（援助員の派遣）
+  name_on_page: 軽度家事援助サービス
+  summary: 病気や骨折で一時的に家事が難しい人へ、援助員が炊事・洗濯・掃除などを手伝う。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者など
+  - 本人や介護者の病気・骨折で一時的に生活機能が低下している
+  - 介護保険の訪問介護で代えられる援助は介護保険が優先
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 月11時間まで。利用料は30分80円（生活保護世帯は無料）。
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊サービス
+  summary: 要介護になるおそれのある人が養護老人ホームに泊まり、生活習慣の指導を受ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上で要介護・要支援状態になるおそれがある人
+  - 要介護・要支援の認定を受けている人は対象外
+  where: 長寿社会課管理係、中央包括支援センター、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 年21日まで。基本料は1日708円、食事は別料金。
+- category: nichijo-yogu
+  name: 電磁調理器・自動消火器の購入費助成
+  name_on_page: 高齢者日常生活用具購入費の助成
+  summary: 火の管理に不安がある低所得の高齢者へ、電磁調理器か自動消火器の購入費の9割を助成する。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上のひとり暮らしなどで、認知症などで火の管理に不安がある
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 上限は電磁調理器3万円・自動消火器2万円で、その9割。1品目のみ。
+- category: shingu
+  name: 寝具の丸洗い・乾燥・消毒
+  name_on_page: 寝具丸洗い乾燥サービス
+  summary: 在宅の要介護の高齢者の寝具を、安い料金で丸洗い・乾燥・消毒する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 要介護1〜3は市民税非課税の高齢者のみ世帯で年2回
+  - 要介護4・5は課税状況を問わず年4回
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 1回に3枚まで。羽毛掛け布団300円、掛・敷布団200円、毛布100円（1枚）。
+- category: jutaku
+  name: 居住環境整備（住宅改修）費の助成
+  name_on_page: 高齢者のための居住環境整備費に対する助成
+  summary: 介護が必要な高齢者の住宅改修費の一部を、介護保険の住宅改修に上乗せして助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 本人と同じ住所の人が全員市民税非課税
+  - 介護保険の住宅改修費の給付が優先
+  - 工事の着工前に申請が必要（新築・増築は対象外）
+  where: 長寿社会課介護保険係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 20万円までは3分の2、20万円超〜80万円は2分の1（上限43万3千円）。
+- category: koken
+  name: 成年後見の審判費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に困難な人の成年後見の審判費用や後見人等の報酬を、全部または一部助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている人かそれに準ずる人、または市長が負担困難と認める人
+  - 親族が後見人の場合、報酬は助成の対象外
+  - 長寿社会課では65歳以上の申請を受け付ける
+  where: 長寿社会課（中央包括支援センター）
+  url: https://www.city.tottori.lg.jp/page/4507.html
+  confidence: high
+- category: kaigo-yohin
+  name: 家族介護用品購入費の助成（クーポン券）
+  name_on_page: 家族介護用品購入費の助成
+  summary: 要介護4・5の人を在宅で介護する非課税世帯の家族に、紙おむつなどに使えるクーポン券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者も家族も市民税非課税で、同居して介護している
+  - 施設入所中・入院中は対象外
+  - 年度に1回の申請が必要
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4427.html
+  confidence: high
+  amount: 1期2万5千円分のクーポン券（年3期、年間7万5千円まで）。
+- category: iro
+  name: 家族介護者への慰労金
+  name_on_page: 家族介護者への慰労金支給
+  summary: 介護保険サービスを使わず要介護4・5の人を在宅で介護した、非課税世帯の家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用していない
+  - 年7日までの短期入所と3か月以上の入院期間は除く
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4427.html
+  confidence: high
+  amount: 10万円
+- category: haikai
+  name: 認知症の人の位置検索（GPS等）の初期費用助成
+  name_on_page: 認知症高齢者等位置検索システム利用支援サービス
+  summary: 一人で外出すると不安な人の居場所を確認できるGPS等の、導入初期費用を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある本人またはその家族
+  - 過去にこの助成を受けた人は対象外
+  - 不特定の相手と通話できる携帯電話などは対象外
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4427.html
+  confidence: high
+  amount: 初期費用の上限1万円（月々の通信料は自己負担）。
+  more_urls:
+  - https://www.city.tottori.lg.jp/page/4509.html
+- category: haikai
+  name: 認知症高齢者等の見守り登録（番号シール）
+  name_on_page: 認知症高齢者等安心見守り登録事業
+  summary: 外出に不安のある人を登録し、番号シールを渡す。行方不明時は市と警察の登録情報を使う。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で一人での外出に不安、またはトラブルに巻き込まれる心配がある
+  where: 鳥取市中央包括支援センター
+  url: https://www.city.tottori.lg.jp/page/4509.html
+  confidence: high
+- category: sonota
+  name: 認知症の人の家族へ支援員を派遣（やすらぎ支援）
+  name_on_page: 認知症高齢者家族やすらぎ支援サービス
+  summary: 在宅で認知症の人を介護する家族のため、支援員が代わりに見守りや話し相手をする。
+  who:
+    at_home: true
+  at_application:
+  - 認知症の在宅高齢者を介護している家族
+  - 見守られる人が常時身体介護を要する場合は利用不可
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4427.html
+  confidence: high
+  amount: 月20時間まで。利用料は30分100円（生活保護世帯は無料）。
+- category: gaishutsu
+  name: 路線バス定期券の半額販売
+  name_on_page: 鳥取市高齢者等公共交通利用支援事業
+  summary: 市内の65歳以上の人や運転免許返納者に、路線バスの定期券を半額で販売する。
+  who: {}
+  at_application:
+  - 市内在住で、65歳以上の人または運転免許返納者（年齢制限なし）
+  where: 鳥取バスターミナル（交通政策課が所管）
+  url: https://www.city.tottori.lg.jp/www/contents/1585126606519/index.html
+  confidence: high
+  amount: 定期券を定価の半額で購入できる（払い戻しは原則不可）。
+- category: sonota
+  name: はり・きゅう・マッサージ施術の助成券
+  name_on_page: はり・きゅう・マッサージ費の助成について
+  summary: 非課税の高齢者に、はり・きゅう・マッサージで使える助成券を交付する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+  at_application:
+  - 75歳以上、または65歳以上の後期高齢者医療の被保険者
+  - 後期高齢者医療の被保険者は、納期が来た保険料を完納している
+  where: 本庁舎福祉総合窓口（13番窓口）、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4657.html
+  confidence: high
+  amount: 1回1,000円の助成券を年間最大12枚。
+- category: sonota
+  name: ひとり暮らしの要介護者への可燃ごみ袋の交付
+  name_on_page: 在宅のひとり暮らし高齢者への可燃ごみ袋交付
+  summary: 家庭ごみ有料化の負担軽減として、可燃ごみ指定袋（中）を無料で交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - alone
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 家族からの支援が困難
+  where: 長寿社会課管理係、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4437.html
+  confidence: high
+  amount: 1回30枚を年2回。
+- category: sonota
+  name: ふれあい収集（ごみの戸別収集）
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しい世帯の自宅前まで、市の委託業者が家庭ごみを収集に行く。
+  who: {}
+  at_application:
+  - 対象かどうかは窓口に問い合わせて確かめる
+  where: 長寿社会課、障がい福祉課、各総合支所市民福祉課
+  url: https://www.city.tottori.lg.jp/page/4130.html
+  confidence: high
+not_found:
+- haishoku
+- hochoki
+- ribiyo

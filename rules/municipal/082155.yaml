@@ -1,0 +1,221 @@
+city: 082155
+name: 北茨城市
+site: www.city.kitaibaraki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報体制等整備事業
+  summary: 緊急通報装置を設置し、急病時に消防本部へ通報して地域の協力者が支援する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者
+  - ひとり暮らしの身体障害者、高齢者のみ等の世帯も対象
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300197/
+  confidence: high
+  amount: 利用料は無料
+- category: nichijo-yogu
+  name: 火災警報機などの日常生活用具の給付
+  name_on_page: 日常生活用具給付事業
+  summary: 火災警報機、自動消火器、電磁調理器などを給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の寝たきりの方等
+  - 品目により対象者の要件が異なる
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300197/
+  confidence: high
+  amount: 生計中心者の所得税額に応じた負担金あり
+- category: mimamori
+  name: 乳製品配布による安否確認（愛の定期便）
+  name_on_page: ひとり暮らし老人「愛の定期便」事業
+  summary: 自宅に乳製品を届けながら安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300197/
+  confidence: high
+  amount: 利用料は無料
+- category: sonota
+  name: ひとり暮らし高齢者への電話の貸与
+  name_on_page: 老人福祉電話貸与事業
+  summary: 安否確認が必要なひとり暮らしの低所得高齢者に電話を無償で貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 低所得のひとり暮らし高齢者等
+  - 安否確認が必要と認められること
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300197/
+  confidence: high
+  amount: 電話は無償貸与。通話料は本人負担
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 栄養バランスのよい食事を定期的に自宅へ届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者のみ世帯
+  - 高齢者と障害のある方だけの世帯も対象
+  - 自分で調理することが困難な方
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300197/
+  confidence: high
+  amount: 利用料は材料費など実費相当分
+- category: gaishutsu
+  name: リハビリ教室への送迎タクシー
+  name_on_page: 外出支援サービス事業
+  summary: 自宅と市のリハビリ教室の会場の間をタクシーで送迎する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市のリハビリ教室の利用者
+  - 一般の交通機関を使うことが困難
+  - 在宅のひとり暮らし、または高齢者のみ世帯（日中同様を含む）
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300197/
+  confidence: high
+  amount: 送迎費用の2割を負担（300円まで）
+- category: gaishutsu
+  name: タクシー助成券
+  name_on_page: 北茨城市地域交通利用券（タクシー助成券）
+  summary: 運転免許のない65歳以上の市民に、タクシー利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 運転免許証を持たない、または返納した
+  - 市税等の滞納がない
+  where: まちづくり協働課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2026031200019/
+  confidence: high
+  amount: 要綱では1枚500円分、年度で合計30,000円まで
+  more_urls:
+  - https://www.city.kitaibaraki.lg.jp/reiki_int/reiki_honbun/e014RG00000873.html
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給事業
+  summary: 重い要介護の高齢者を在宅で介護している家族に慰労金を給付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、要介護4・5またはそれに準ずる65歳以上の方を介護
+  - 在宅で介護している家族が対象
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300234/
+  confidence: high
+- category: kaigo-yohin
+  name: 介護支援用具（食事介助具・空気清浄器）の給付
+  name_on_page: 介護支援用具給付事業
+  summary: ねたきりの高齢者に食事介助具一式と空気清浄器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上でねたきりの方
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300234/
+  confidence: high
+  amount: 生計中心者の所得税額に応じた負担金あり
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 介護用品給付事業
+  summary: 要介護4・5の在宅高齢者を介護する人に、紙おむつなどを給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅の要介護4・5の高齢者を介護している方が対象
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300234/
+  confidence: high
+  amount: 年額36,000円まで
+- category: ribiyo
+  name: 訪問理美容の出張費の助成
+  name_on_page: 訪問理美容費助成事業
+  summary: 理美容師の出張にかかる費用を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300234/
+  confidence: high
+  amount: 年4回まで。理美容代は全額本人負担
+- category: haikai
+  name: 徘徊高齢者の位置検索システム
+  name_on_page: 徘徊高齢者等家族支援サービス事業
+  summary: 位置検索システムで徘徊時の居場所を家族に伝え、必要なら現場へ急行する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊高齢者等を介護している家族が対象
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300234/
+  confidence: high
+  amount: 毎月のシステム利用料などは自己負担
+- category: sonota
+  name: 生活管理指導員の派遣（家事支援）
+  name_on_page: 生活管理指導員派遣事業
+  summary: 介護保険の対象外で生活に支障のある方に、家事の支援や指導を行う人を派遣する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で介護保険の給付対象でない
+  - 日常生活に支障がある方など
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300210/
+  confidence: high
+  amount: 介護保険サービスに準ずる額を負担
+- category: sonota
+  name: 軽度生活援助（家事・家周りの手入れ）
+  name_on_page: 軽度生活援助事業
+  summary: 生活援助員が自宅を訪問し、家事や家周りの軽い手入れ・修繕をする。
+  who: {}
+  at_application:
+  - ひとり暮らしまたは高齢者のみの世帯
+  - その他、援助が必要と認められる方
+  where: 高齢福祉課
+  url: https://www.city.kitaibaraki.lg.jp/docs/2015022300210/
+  confidence: high
+  amount: 利用時間に応じた負担金あり
+- category: sonota
+  name: 介護用車両の購入・改造費の助成
+  name_on_page: 介護用車両購入費等助成事業
+  summary: 要介護者を介護する家族が福祉車両を買うか車を改造するときの費用を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請者は主に介護する家族で、市内に1年以上居住
+  - 介護される方は外出に介護用車両が必要
+  - 市税等の滞納がない
+  where: 市長宛てに申請（担当課は頁に記載なし）
+  url: https://www.city.kitaibaraki.lg.jp/reiki_int/reiki_honbun/e014RG00001008.html
+  confidence: high
+  amount: 新車の福祉車両10万円、改造は費用の3分の2（10万円まで）
+not_found:
+- shingu
+- hochoki
+- jutaku
+- koken

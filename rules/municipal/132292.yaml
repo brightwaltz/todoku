@@ -1,0 +1,225 @@
+city: '132292'
+name: 西東京市
+site: www.city.nishitokyo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物給付
+  name_on_page: 認知症及びねたきり高齢者等紙おむつ給付サービス
+  summary: 常に失禁がある、ねたきり等の方に紙おむつを自宅へ届ける。
+  who:
+    age_min: 40
+  at_application:
+  - 常時失禁状態かそれに準ずる状態
+  - ねたきり状態、または認知症で重度の介護が必要な状態
+  - 生活保護等を受けていない
+  - 同じ月に紙おむつ助成金の助成を受けていない
+  where: 高齢者支援課（田無第二庁舎・保谷保健福祉総合センター）
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/kamiomutu2022.html
+  confidence: high
+  amount: 自己負担は商品代の 1 割（紙おむつを配達）
+- category: kaigo-yohin
+  name: 入院中の紙おむつ代の現金助成
+  name_on_page: 高齢者等紙おむつ助成金の交付
+  summary: 医療保険の病院に入院し、おむつ代を病院へ払った方に現金で助成する。
+  who:
+    age_min: 40
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 入院期間中に市に住民登録がある
+  - 医療保険適用の病院に入院し、おむつ代を病院等へ支払った
+  - 生活保護等を受けていない
+  - 年 3 回の受付期間内に申請（次は 11/10〜11/30）
+  where: 高齢者支援課（窓口または郵送）
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/omutujosei.html
+  confidence: high
+  amount: 月額 4,500 円まで（実費が少なければ実費）
+- category: haishoku
+  name: 見守り配食（昼食）
+  name_on_page: 高齢者見守り配食サービス
+  summary: 必要と認められた曜日（週 6 回まで）に昼食を自宅へ届ける。
+  who: {}
+  at_application:
+  - 心身機能の低下で食事の用意が困難な方のみの世帯の高齢者
+  - 申請後に地域包括支援センターの調査がある
+  where: 高齢者支援課、各地域包括支援センター
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/haisyoku202107.html
+  confidence: high
+- category: haikai
+  name: 認知症ひとり歩きの位置探索端末の貸与
+  name_on_page: 認知症ひとり歩き高齢者位置探索等サービス
+  summary: GPS 端末を介護者に貸し、行方不明時に居場所を確認できる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症でひとり歩きの心配がある高齢者
+  - 申請後に地域包括支援センターの調査がある
+  where: 高齢者支援課、各地域包括支援センター
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/ninchisyoukanren/hitoriarukitansakusabiss.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護 4・5 の高齢者を 1 年以上在宅で介護した家族に年額を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者も市内に住所があり、過去 1 年以上市民税非課税世帯
+  - 高齢者は過去 1 年以上、介護保険サービスを使っていない
+  - 短期入所は通算 7 日までなら可
+  - 介護保険施設以外への長期入院は過去 1 年で 90 日未満
+  - 申請期限は令和 8 年 12 月 28 日
+  where: 高齢者支援課
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/kazokukaigo.html
+  confidence: high
+  amount: 年額 10 万円
+- category: hochoki
+  name: 補聴器購入費の補助
+  name_on_page: 高齢者のための補聴器購入費補助～高齢者聞こえのコミュニケーション支援事業～
+  summary: 市民税非課税の中等度難聴の方の補聴器購入費の半額を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 本人の市民税が非課税
+  - 聴覚の身体障害者手帳の対象になる聴力ではない
+  - 補聴器相談医の診察で要件に当たると認められる
+  - 購入前の申請が必要（購入後は不可）
+  where: 高齢者支援課（田無庁舎・保谷庁舎）
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/koureisyakikoe.html
+  confidence: high
+  amount: 本体購入費の 2 分の 1、上限 4 万円
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 高齢者救急代理通報
+  summary: 緊急時に民間の受信センターへ通報できる機器を貸与する。
+  who: {}
+  at_application:
+  - 市指定様式の医師の意見書が必要
+  - 申請後に地域包括支援センターの調査がある
+  where: 高齢者支援課、各地域包括支援センター
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/kinkyutuho20200507.html
+  confidence: high
+  amount: 自己負担は実費の 1 割（生活保護世帯等は除く）
+- category: nichijo-yogu
+  name: 住宅用防災機器の給付
+  name_on_page: 住宅用防災機器給付サービス
+  summary: 火災警報器・自動消火装置・電磁調理器等のうち必要な機器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 認知症等で心身機能が低下し、防火の配慮が必要と認められる
+  - 令和 8 年度の受付は令和 9 年 2 月 12 日まで
+  - 申請後に地域包括支援センターの調査がある
+  where: 高齢者支援課、各地域包括支援センター
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/kinkyutuho20200507.html
+  confidence: high
+  amount: 火災警報器 2 台など、必要と認められた機器を給付
+- category: jutaku
+  name: 住宅改造費の給付（介護保険の対象外工事）
+  name_on_page: 高齢者住宅改造費給付サービス
+  summary: 介護保険で対象外の浴槽・流し・洗面台の取替え工事費を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護の認定、または事業対象者でサービスが必要と認められる
+  - 介護保険で対象にならない改造が対象
+  - 利用者負担は介護保険の負担割合（1〜3 割）
+  where: 高齢者支援課
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/zyutaku/kaizohi.html
+  confidence: high
+  amount: 浴槽取替え 379,000 円まで、流し・洗面台 156,000 円まで
+- category: jutaku
+  name: 自立支援の住宅改修費助成（非該当の方）
+  name_on_page: 自立支援住宅改修費助成サービス
+  summary: 介護認定が非該当の方の手すり取付けや段差解消等の費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険認定で非該当と認定され、サービスが必要と認められる
+  - 利用者負担は介護保険の負担割合（1〜3 割）
+  - 令和 8 年度の受付は令和 9 年 2 月 12 日まで
+  where: 高齢者支援課（申請後に地域包括支援センターが調査）
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/zyutaku/ziritusien.html
+  confidence: high
+  amount: 助成限度額 20 万円（消費税込み）
+- category: ribiyo
+  name: ねたきり高齢者の訪問理美容券
+  name_on_page: ねたきり高齢者理･美容券交付サービス
+  summary: 理・美容師が訪問して散髪等をする理美容券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - ねたきり、またはそれに準ずる状態
+  - 必要に応じて地域包括支援センターの調査がある
+  where: 高齢者支援課
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/ribiyoken202107.html
+  confidence: high
+  amount: 年 4 枚まで交付、利用者負担は 1 回 660 円（生活保護等は除く）
+- category: gaishutsu
+  name: 福祉車両による外出支援
+  name_on_page: 高齢者等外出支援サービス
+  summary: 介助員付きのリフト付き福祉車両で外出を支援する。
+  who:
+    age_min: 40
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 心身の障害等で公共交通機関での外出が困難
+  - 生活保護等の方は通院等の目的では使えない
+  - 申請後に地域包括支援センターの調査がある
+  where: 高齢者支援課
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/gaisyutusien.html
+  confidence: high
+  amount: 市が迎車・指名・介助料金を負担。実車料金等は自己負担（非課税世帯は一部半額）
+- category: sonota
+  name: 公衆浴場の入浴券の支給
+  name_on_page: 高齢者入浴券支給サービス
+  summary: お風呂のない世帯の高齢者に公衆浴場の入浴券を支給する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65 歳以上のひとり暮らし、または 70 歳以上の高齢者のみ世帯
+  - いずれも自宅にお風呂がない（身体条件で入浴困難な場合は相談）
+  - 申請後に市職員の訪問調査がある
+  where: 高齢者支援課
+  url: https://www.city.nishitokyo.lg.jp/kenko_hukusi/koreisyasien/kaigo_dailylife/nyuyoku202107.html
+  confidence: high
+  amount: 月 1 人 10 枚まで、自己負担なし
+not_found:
+- shingu
+- koken
+- chusha
+- yutai

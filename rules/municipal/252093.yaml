@@ -1,0 +1,192 @@
+city: '252093'
+name: 甲賀市
+site: www.city.koka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（おむつ等）の購入助成券
+  name_on_page: 介護用品購入費助成事業
+  summary: 常時おむつが必要な市民税非課税の要介護者に、介護用品の助成券を渡す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - おむつが必要な状態が3か月以上続いている
+  - 特別障害者手当・福祉手当の受給者や保険料滞納者は対象外
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: high
+  amount: 月 5,000 円分の助成券
+- category: iro
+  name: 在宅の寝たきり高齢者を介護する家族への激励金
+  name_on_page: 在宅寝たきり高齢者等介護激励金支給事業
+  summary: 要介護4・5の寝たきり高齢者を在宅で介護する同居の介護者に激励金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護者が高齢者と同居し、月15日以上在宅で介護している
+  - 特別障害者手当・福祉手当の受給者や保険料滞納者は対象外
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: high
+  amount: 寝たきり高齢者1人につき月 5,000 円。重介護と認められれば年 10,000 円の加算
+- category: gaishutsu
+  name: 要介護認定者の福祉車両運賃助成券
+  name_on_page: 介護認定者福祉車両運賃助成事業
+  summary: 通院や買い物に使えるタクシー・コミュニティバス等の助成券を交付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 障害者福祉車両運賃助成などとは併用できない
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: low
+  amount: 要支援1〜要介護1は年 18,000 円、要介護2〜5は年 48,000 円の助成券（決定時期により変わる）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 調理や買い物が難しい非課税世帯の高齢者に、弁当を届けて安否を確かめる。
+  who:
+    household:
+    - elderly_only
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね 65 歳以上
+  - 病気などで調理や買い物が困難
+  - 食事の支援を受けられない
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: low
+  amount: 週7回以内、1日1食。1食あたり市が300円を助成し、残りは自己負担
+- category: ribiyo
+  name: 訪問理美容の出張料助成券
+  name_on_page: 訪問理美容サービス助成事業
+  summary: 理美容院に行けない非課税世帯の高齢者に、出張料の助成券を交付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上
+  - 一般の理美容サービスを利用することが困難
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: low
+  amount: 年 7,500 円分の助成券（4か月に1枚 2,500 円）。理美容代は自己負担
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具購入費の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 必要な高齢者に、吸入器や腰掛便座、手すりなどの購入費を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 用具ごとに要件が異なる
+  - 吸入器・たん吸引器は住民税非課税世帯で必要な人
+  - 便座・入浴補助・歩行器・杖・手すりは身体状況により必要な人
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/item/10068.htm
+  confidence: low
+  more_urls:
+  - https://reiki.city.koka.lg.jp/reiki_int/reiki_honbun/r055RG00001889.html
+- category: haikai
+  name: 徘徊高齢者の事前登録
+  name_on_page: 徘徊高齢者事前登録事業
+  summary: 徘徊のおそれがある高齢者の特徴や連絡先を事前に登録し、捜索に役立てる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人の同意が必要
+  - 本人の顔写真を持参して申請する
+  where: 高齢福祉課、お近くの地域包括支援センター
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: high
+- category: sonota
+  name: 認知症の方の個人賠償責任保険（市が加入）
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 事前登録した認知症の方が事故で賠償責任を負った場合の保険を無料で付ける。
+  who: {}
+  at_application:
+  - 徘徊高齢者事前登録台帳に登録されている
+  - 市の住民基本台帳に記載のある、認知症またはその疑いの方
+  where: 高齢福祉課（登録者に案内と申請書が届く）
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: high
+  amount: 1事故につき最大1億円まで補償。利用者負担は無料
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 高齢者補聴器購入補助金交付事業
+  summary: 医師が必要と認めた非課税世帯の65歳以上に、補聴器の購入費の一部を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 医師から補聴器使用の必要性を認められた
+  - 他の制度で購入費の補助を受けられる人は除く
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/23975.htm
+  confidence: high
+  amount: 本体の購入費の上限2万円。経費が4万円未満なら2分の1。1人1回限り
+- category: sonota
+  name: 高齢者・障がい者の安心生活支援（家事などの援助）
+  name_on_page: 高齢者・障がい者安心生活支援事業
+  summary: 高齢者のみの世帯などに、1時間未満の家事援助や付き添いなどを有料で行う。
+  who: {}
+  at_application:
+  - 高齢者のみの世帯、または高齢者と18歳未満の世帯
+  - 障がい者のみの世帯なども対象
+  - 介護保険のサービスが使える人は介護保険が優先
+  where: 高齢福祉課
+  url: https://www.city.koka.lg.jp/2299.htm
+  confidence: high
+  amount: 30分未満は 200 円、30分〜1時間未満は 400 円
+- category: koken
+  name: 成年後見制度の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、申立て費用や鑑定費用、後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に住民登録のある、判断能力が不十分な高齢者や障がい者
+  - 医療保険の被扶養者でなく、助成がないと制度を使えない人
+  - 収入と資産の基準あり。3親等内の親族が後見人の場合、報酬助成は原則なし
+  where: 市（審査会の事務は地域共生社会推進課）
+  url: https://reiki.city.koka.lg.jp/reiki_int/reiki_honbun/r055RG00001306.html
+  confidence: high
+  amount: 申立て費用 2万円、鑑定費用 10万円まで。報酬は在宅月 2.8万円、施設月 1.8万円まで
+not_found: []

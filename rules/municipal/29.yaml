@@ -1,0 +1,42 @@
+pref: '29'
+name: 奈良県
+site: www.pref.nara.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: おもいやり駐車場の利用証
+  name_on_page: 奈良県おもいやり駐車場制度
+  summary: 専用の駐車区画を使える利用証を、要介護1以上の人などに県が交付する。
+  who: {}
+  at_application:
+  - 次のいずれかに当たる人（要介護の高齢者、障害者、難病患者など）
+  - 要介護は要介護1以上（被保険者証で確認。車いす優先の区画は要介護3以上）
+  - ほかに妊産婦（母子健康手帳）、けが人・歩行困難者（医師の診断書）も対象
+  - 障害者は手帳の種類・等級が基準以上の人（基準は別紙の一覧）
+  - 利用証は申請者1人に1枚で、代理人による申請もできる
+  where: 県の地域福祉課、中和福祉事務所、吉野福祉事務所の窓口、または地域福祉課へ郵送
+  url: https://www.pref.nara.lg.jp/n063/40899.html
+  confidence: high
+  more_urls:
+  - https://www.pref.nara.lg.jp/n063/41631.html
+  - https://www.pref.nara.lg.jp/documents/5257/taisyou.pdf
+not_found:
+- yutai
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,131 @@
+city: '042072'
+name: 名取市
+site: www.city.natori.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅ねたきり高齢者等への紙おむつ支給
+  name_on_page: 在宅ねたきり老人等紙おむつ支給事業
+  summary: 在宅のねたきりや認知症の高齢者を介護する人に、紙おむつを毎月自宅へ届ける。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - ねたきり、または認知症の高齢者本人が対象
+  - 要介護4以上、または3以下で認定調査票上おむつが必要
+  - 生活保護の人は除く
+  - 長期入院・施設入所・有料老人ホーム入居は対象外
+  where: 介護長寿課
+  url: https://www.city.natori.miyagi.jp/page/3886.html
+  confidence: high
+  amount: 紙おむつ等を月に合計2組まで
+- category: iro
+  name: 在宅ねたきり高齢者等の介護手当
+  name_on_page: 在宅ねたきり老人等介護手当支給事業
+  summary: 在宅のねたきりや認知症の高齢者を常時介護する同居の家族に、介護手当を支給する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される人は65歳以上のねたきりまたは認知症の人
+  - 常時介護している同居の家族が受け取る
+  - ひとりぐらしの人は対象外
+  - 長期入院・施設入所の期間は対象外
+  where: 介護長寿課
+  url: https://www.city.natori.miyagi.jp/page/3886.html
+  confidence: high
+  amount: 月額2,500円（1月下旬に口座振込）
+- category: ribiyo
+  name: 訪問理容・美容サービス
+  name_on_page: 訪問理容・美容サービス
+  summary: 理美容店へ行けない高齢者の自宅へ理容師・美容師を派遣し、出張料が無料になる。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - ねたきり、または心身の機能低下で理美容店に行くのが難しい
+  where: 介護長寿課
+  url: https://www.city.natori.miyagi.jp/page/3886.html
+  confidence: high
+  amount: 出張料が無料。利用券は年6回分。店のサービス料金は自己負担
+- category: haikai
+  name: 認知症ひとり歩き高齢者の事前登録（無事かえる）
+  name_on_page: 認知症ひとり歩き高齢者「無事かえる」事業
+  summary: 道に迷うおそれのある人の情報を市に登録し、警察などと共有して早く家族のもとへ戻す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上の在宅の人
+  - 40歳以上で若年性認知症の人も対象
+  where: お住まいの地区の地域包括支援センター、または担当ケアマネジャー
+  url: https://www.city.natori.miyagi.jp/page/3886.html
+  confidence: high
+  amount: 登録費用は無料
+  more_urls:
+  - https://www.city.natori.miyagi.jp/page/3885.html
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ボタンで警備会社に通報でき、救急車の手配や駆けつけをする機器を無料で設置する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - おおむね65歳以上のひとりぐらし
+  - または要介護認定を受けた人がいる65歳以上のみの世帯
+  where: 介護長寿課
+  url: https://www.city.natori.miyagi.jp/page/30008.html
+  confidence: high
+  amount: 設置・機器貸与・取外しは無料（固定型は通報時の通話料がかかる）
+  more_urls:
+  - https://www.city.natori.miyagi.jp/page/3886.html
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聞こえにくい65歳以上の人に、補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 一耳40デシベル以上で、耳鼻科医が補聴器を必要と認めた（意見書）
+  - 同じ世帯に市税の滞納がない
+  - この助成を受けたことがない
+  - 補聴器を買う前に申請する
+  where: 介護長寿課
+  url: https://www.city.natori.miyagi.jp/page/19143.html
+  confidence: high
+  amount: 補聴器本体の購入費のうち上限2万円（片耳・両耳とも）
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見人等報酬費用助成事業
+  summary: 後見人等に支払う報酬の費用を、一定の要件を満たす人に上限額まで助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている人、または準ずるものと市長が認めた人
+  - 高齢者の窓口は介護長寿課（原則65歳以上）
+  - 報酬付与の審判の翌日から60日以内に申請
+  where: 介護長寿課（障害のある人は社会福祉課）
+  url: https://www.city.natori.miyagi.jp/page/45430.html
+  confidence: high
+  amount: 上限は在宅で月額28,000円、施設で月額18,000円
+not_found:
+- haishoku
+- jutaku
+- shingu
+- mimamori
+- chusha
+- yutai
+- sonota

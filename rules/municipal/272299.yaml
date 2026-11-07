@@ -1,0 +1,88 @@
+city: '272299'
+name: 四條畷市
+site: www.city.shijonawate.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸出
+  summary: ひとり暮らし等の高齢者に、急病などの緊急時に対応する通報装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 虚弱で常時注意が必要、または緊急を要する疾患がある
+  - 市民税所得割非課税の世帯（課税の人は全額本人負担）
+  - 市職員が訪問し、該当すると判断された人
+  where: 高齢福祉課
+  url: https://www.city.shijonawate.lg.jp/page/29-17394.html
+  confidence: high
+  amount: 所得割課税の人は全額本人負担。非課税世帯の負担額は頁に記載なし
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 見守りシール交付事業
+  summary: 道に迷ったときのため、二次元コードのシールを交付し、発見者と家族が連絡できるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 対象の詳しい条件は読めていない（一人歩きに不安のある人向け）
+  where: 高齢福祉課
+  url: https://www.city.shijonawate.lg.jp/page/29-17667.html
+  confidence: low
+  more_urls:
+  - https://www.city.shijonawate.lg.jp/page/29-59678.html
+- category: haikai
+  name: 高齢者等SOSネットワーク事業
+  name_on_page: 高齢者等ＳＯＳネットワーク事業
+  summary: 道に迷ったとき、協力登録事業者にメールで知らせて早く見つける仕組み。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 一人歩きに不安のある方・ご家族向け（詳しい条件は頁に記載なし）
+  where: 高齢福祉課
+  url: https://www.city.shijonawate.lg.jp/page/29-17667.html
+  confidence: low
+  more_urls:
+  - https://www.city.shijonawate.lg.jp/page/29-59678.html
+- category: haikai
+  name: 認知症高齢者等の位置情報（GPS）サービス費の助成
+  name_on_page: 認知症高齢者等位置情報提供サービス費助成事業
+  summary: GPS 付き機器を持ってもらい、家族がスマホ等で居場所を調べるサービス費を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 対象の詳しい条件は読めていない（助成金の交付申請が必要）
+  where: 高齢福祉課
+  url: https://www.city.shijonawate.lg.jp/page/29-17667.html
+  confidence: low
+  more_urls:
+  - https://www.city.shijonawate.lg.jp/page/29-59678.html
+- category: gaishutsu
+  name: コミュニティバスの高齢者割引証
+  name_on_page: 高齢者割引証
+  summary: 割引証を見せると市のコミュニティバスの運賃が安くなる。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - 年齢が分かる物（免許証など）を持参する
+  where: 都市政策課（東別館 3 階）、田原支所
+  url: https://www.city.shijonawate.lg.jp/page/19-23294.html
+  confidence: high
+  amount: 割引証の提示で 1 区 110 円・2 区 130 円（通常は 1 区 220 円・2 区 250 円）。支払いは現金のみ
+not_found:
+- iro
+- haishoku
+- ribiyo
+- jutaku
+- nichijo-yogu

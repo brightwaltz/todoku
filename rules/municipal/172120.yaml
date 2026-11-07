@@ -1,0 +1,215 @@
+city: '172120'
+name: 野々市市
+site: www.city.nonoichi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ・タクシー用の助成券
+  name_on_page: 在宅福祉サービス利用助成券
+  summary: 要介護の在宅の人に、紙おむつ購入やタクシーに使える500円券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり居住している
+  - 入院中の人・指定の入所施設の入所者は対象外
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/1120.html
+  confidence: high
+  amount: 1枚500円の券。要介護1・2は年度初め156枚、要介護3〜5は180枚（申請月で減る）。
+- category: gaishutsu
+  name: タクシー用の助成券（紙おむつと共通の券）
+  name_on_page: 在宅福祉サービス利用助成券
+  summary: 要介護の在宅の人に、市指定のタクシーで使える500円券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり居住している
+  - 入院中の人・指定の入所施設の入所者は対象外
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/1120.html
+  confidence: high
+  amount: 1枚500円の券（紙おむつ購入と共通の券）。お釣りは出ない。
+- category: shingu
+  name: 寝具の洗濯乾燥のサービス券
+  name_on_page: 寝具洗濯乾燥・理美容サービス
+  summary: 要介護2以上の在宅の人に、寝具洗濯乾燥にも使える1,000円券を交付する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝具洗濯乾燥の利用には事前の申し込みが必要
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/1300.html
+  confidence: high
+  amount: 1枚1,000円の券を20枚（10月以降の申請は10枚）。理美容と共通。
+- category: ribiyo
+  name: 訪問理美容のサービス券
+  name_on_page: 寝具洗濯乾燥・理美容サービス
+  summary: 要介護2以上の在宅の人に、市内指定の理美容店の出張サービスに使える券を交付する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 出張は市内の指定理美容店に限る
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/1300.html
+  confidence: high
+  amount: 1枚1,000円の券を20枚（10月以降の申請は10枚）。寝具洗濯乾燥と共通。
+- category: haishoku
+  name: 配食（安否確認つき）の助成
+  name_on_page: ほっと安心（配食）サービス
+  summary: 昼食か夕食を届けて安否確認をし、1食につき200円を市が助成する。
+  who: {}
+  at_application:
+  - ひとり暮らし・高齢者のみの世帯、または身体障害者の人
+  - または日中独居の要支援・要介護の人
+  - いずれも安否確認か健康管理が必要と認められること
+  where: 介護長寿課 高齢者福祉係（身体障害者は福祉総務課 障害福祉係）
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/366.html
+  confidence: high
+  amount: 利用料金から市助成の200円を引いた額が自己負担（1日1回まで）。
+- category: haikai
+  name: 高齢者の行方不明に備えるSOSネットワークの事前登録
+  name_on_page: 高齢者見守りSOSネットワーク
+  summary: 行方不明になるおそれのある人を事前に登録し、地域の協力で早く見つける。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人の写真を添えて登録申請書を出す（ケアマネの代理提出も可）
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/916.html
+  confidence: high
+- category: haikai
+  name: QRコード付き見守りシールの配布
+  name_on_page: 認知症高齢者等見守りシール事業
+  summary: 行方不明のおそれがある人の家族に、QRコード入りの見守りシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症か認知症の疑いのある市民が対象
+  - SOSネットワークの登録も同時にお願いされる
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/60081.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報機器と人感センサーによる見守り
+  name_on_page: 高齢者みまもりサポート事業
+  summary: ヒモを引くと警備員が駆けつける機器と、動きを感知するセンサーを自宅に設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の高齢者のみの世帯に属する人
+  - 自宅の合鍵を委託業者に預ける必要がある
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/650.html
+  confidence: high
+  amount: 利用料は年3,960円（月330円）。生活保護世帯は負担なし。
+- category: nichijo-yogu
+  name: 福祉用具（手すり・入浴補助など）の購入費助成
+  name_on_page: 自立支援型日常生活用具購入費助成
+  summary: 認定を受けていない低所得の高齢者の、福祉用具購入費の9割を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 要支援・要介護の認定を受けていない
+  - 個人住民税が非課税
+  - 用具が必要と認められる
+  where: 介護長寿課（相談は地区の地域包括支援センター）
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/1157.html
+  confidence: high
+  amount: 購入費の90%（年2万円まで）。自己負担は10%。
+- category: jutaku
+  name: 住宅リフォームの上乗せ助成
+  name_on_page: 在宅支援型住宅リフォーム推進事業
+  summary: 介護保険の住宅改修などを超える部分の工事費を、市が助成する。
+  who: {}
+  at_application:
+  - 生活保護世帯または住民税非課税世帯
+  - 要支援・要介護認定を受けた人がいる世帯
+  - または身体・療育・精神の障害者手帳（等級の条件あり）の人がいる世帯
+  where: 介護長寿課の窓口
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/1156.html
+  confidence: high
+  amount: 生活保護世帯は100%、住民税非課税世帯は90%。限度額は100万円。
+- category: gaishutsu
+  name: コミュニティバス乗車券の交付
+  name_on_page: コミュニティバスのっティ乗車券の交付
+  summary: 要支援1・2の在宅の人に、コミュニティバスの乗車券を交付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    at_home: true
+  at_application:
+  - 市内に住所があり居住している
+  - 入院中の人・指定の入所施設の入所者は対象外
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/52184.html
+  confidence: high
+  amount: 年度初めの4月申請は120枚（申請月で減る）。
+- category: sonota
+  name: 低所得世帯の除雪費用の助成
+  name_on_page: 高齢者・母子及び身体障害者除雪助成
+  summary: 屋根や玄関から道路までの除雪費用の半額を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所があり、世帯全員が次のいずれかに当たる
+  - おおむね65歳以上、身体障害者手帳1〜4級、療育手帳A
+  - または母子（配偶者のいない女子と義務教育前の児童のみ）
+  where: 介護長寿課 高齢者福祉係
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/909.html
+  confidence: high
+  amount: 費用の50%。1回18,000円、1冬期5万円まで。
+- category: sonota
+  name: 自立支援型ショートステイ（家族不在時の短期預かり）
+  name_on_page: 自立支援型ショートステイ
+  summary: 家族が不在で1人が心配な高齢者を、特養などで年14日まで預かる。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護の認定を受けていない
+  - 日常生活で支援が必要と認められる
+  - 事前に地域包括支援センターが本人の状態を確認する
+  where: 介護長寿課 高齢者福祉係（事前確認は地域包括支援センター）
+  url: https://www.city.nonoichi.lg.jp/soshiki/15/1155.html
+  confidence: high
+  amount: 1日451円程度（送迎は片道184円加算、食費は実費）。年14日まで。
+not_found:
+- iro
+- koken
+- hochoki

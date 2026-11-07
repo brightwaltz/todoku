@@ -1,0 +1,126 @@
+city: '112437'
+name: 吉川市
+site: www.city.yoshikawa.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 在宅高齢者介護支援手当
+  name_on_page: 在宅高齢者介護支援手当
+  summary: 寝たきり等の65歳以上の在宅の方に、介護手当を毎月支給する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 前年（1〜3月分は前々年）の所得税が世帯非課税
+  - 養護老人ホーム・特養・老健・病院等に入所していない
+  where: 長寿支援課（高齢福祉係）
+  url: https://www.city.yoshikawa.saitama.jp/index.cfm/24,30624,134,753,html
+  confidence: high
+  amount: 対象者1人につき月額4,500円
+- category: kaigo-yohin
+  name: 介護支援用品の支給
+  name_on_page: 介護支援用品の支給
+  summary: おむつ等の介護用品と交換できる利用券を発行する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 長寿支援課窓口、または担当の地域包括支援センター
+  url: https://www.city.yoshikawa.saitama.jp/index.cfm/24,31007,134,753,html
+  confidence: high
+  amount: 月額6,000円（税別）分の利用券。超えた分は自己負担
+- category: gaishutsu
+  name: 外出支援サービス（タクシー券）
+  name_on_page: 外出支援サービス
+  summary: 市内のタクシー・介護タクシーを本人負担1割で使える券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 自宅から病院・介護施設・公共施設・行事等への往復が対象
+  where: 長寿支援課窓口、または担当の地域包括支援センター
+  url: https://www.city.yoshikawa.saitama.jp/index.cfm/24,31009,134,753,html
+  confidence: high
+  amount: 月額16,000円まで（本人負担1割）
+- category: kinkyu-tsuho
+  name: 緊急時通報システムの貸与
+  name_on_page: 緊急時通報システムの貸与
+  summary: 消防署へ通報できる端末を貸与し、月1回の安否確認の電話もある。
+  who:
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - 65歳以上のひとり暮らし、または同居者の就労等で週4日以上・1日6時間以上ひとりになる方
+  - 固定電話が必要（NTTアナログ回線が前提）
+  where: 長寿支援課（高齢福祉係）
+  url: https://www.city.yoshikawa.saitama.jp/index.cfm/24,30499,134,751,html
+  confidence: high
+  amount: 利用料は月額500円
+- category: nichijo-yogu
+  name: 日常生活用具の給付・貸与
+  name_on_page: 日常生活用具の給付・貸与
+  summary: 火災警報器・自動消火器・電磁調理器を給付し、老人用電話を貸与する。
+  who: {}
+  at_application:
+  - 火災警報器：おおむね65歳以上で防火配慮が必要なひとり暮らし
+  - 自動消火器・電磁調理器：おおむね65歳以上の低所得の寝たきり、またはひとり暮らし
+  - 老人用電話の貸与：おおむね65歳以上の低所得のひとり暮らし
+  - 利用は年1回まで。所得に応じた自己負担あり
+  where: 長寿支援課窓口、または地域包括支援センター
+  url: https://www.city.yoshikawa.saitama.jp/index.cfm/24,31266,134,751,html
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立ての後見人等の報酬を、支払いが難しい方に助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、介護福祉サービスを利用している
+  - 配偶者・4親等内の親族がいない、または保護の見込みがない
+  - 親族による成年後見の申立ての見込みがない
+  - 成年後見人への報酬の支払いが困難
+  where: 長寿支援課
+  url: https://www.city.yoshikawa.saitama.jp/index.cfm/24,30631,134,755,html
+  confidence: high
+  amount: 1年度あたり336,000円か、裁判所が決めた報酬額の少ない方
+- category: sonota
+  name: 高齢者世帯の家賃助成
+  name_on_page: 高齢者世帯賃貸住宅家賃助成
+  summary: 民間賃貸に住む低所得の高齢者世帯に、家賃の一部を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 2年以上市内に住んでいる
+  - 家賃が月額30,000円以上（共益費は除く）
+  where: 長寿支援課
+  url: https://www.city.yoshikawa.saitama.jp/index.cfm/24,30620,134,751,html
+  confidence: high
+  amount: 家賃が30,000円を超えた額を、月4,500円まで助成。年3回に分けて振込
+not_found:
+- haishoku
+- haikai
+- shingu
+- hochoki
+- jutaku

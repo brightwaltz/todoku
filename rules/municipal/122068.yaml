@@ -1,0 +1,196 @@
+city: '122068'
+name: 木更津市
+site: www.city.kisarazu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 高齢者等紙おむつ給付
+  summary: 在宅でねたきりや認知症のため常時失禁のある人に、紙おむつを給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきりまたは認知症の状態で、常時失禁している
+  where: 高齢者福祉課窓口（朝日庁舎）
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 紙おむつ月30枚（尿とりパッドは月90枚）。費用は無料。
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/material/files/group/32/20260401-3.pdf
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービス
+  summary: 食事の用意が難しい人に、週2回まで昼食を届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯全員が要支援・要介護の認定を受けている
+  where: 高齢者福祉課窓口（朝日庁舎）
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 1食430円（自己負担）。日曜を除き週2回以内。
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/material/files/group/32/20260401-3.pdf
+- category: haikai
+  name: 認知症高齢者等見守りシールの交付
+  name_on_page: 認知症高齢者等見守りシールの交付
+  summary: 徘徊のおそれがある認知症の人に、二次元コード付きの見守りシールを無料で交付する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 市内在住
+  - 徘徊で警察に保護されたことがある、または
+  - 介護認定を受けていて徘徊のおそれがある
+  where: 高齢者福祉課窓口（朝日庁舎）。家族のほか、ケアマネジャーや地域包括支援センター職員も申請できる。
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 無料。1セット（蓄光シール10枚と耐洗ラベル40枚）。
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1559.html
+- category: mimamori
+  name: 高齢者見守りキーホルダーの配付
+  name_on_page: 高齢者見守りキーホルダーの配付
+  summary: 連絡先などを登録したキーホルダーを無料で配り、緊急時の身元確認や健康相談につなげる。
+  who: {}
+  at_application:
+  - 65歳以上の人、または認知症状がある人
+  where: 地域包括支援センター（市内6か所）
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/material/files/group/32/20260401-3.pdf
+- category: mimamori
+  name: 見守り機能付きタブレット端末の貸与
+  name_on_page: 高齢者にも扱いやすいアプリの配信
+  summary: 65歳以上の世帯に、安否確認機能つきのタブレット端末を無料で貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - スマホやタブレット等を持たず、世帯に自宅で生活する人がいる
+  - または土砂災害警戒区域内に住む高齢者のみの世帯
+  where: 高齢者福祉課窓口（朝日庁舎）
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/material/files/group/32/20260401-3.pdf
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等の緊急通報装置の貸与
+  name_on_page: ひとり暮らし高齢者等緊急通報装置の貸与
+  summary: ボタンで通報でき、警備員が駆け付ける緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし、または75歳以上のみの世帯
+  - 重度身体障がい者のひとり暮らし
+  - 75歳以上の人と重度身体障がい者のみの世帯
+  where: 高齢者福祉課窓口（朝日庁舎）
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 前年の所得税が非課税なら無料。課税なら月1,540円または3,080円。通話料は自己負担。
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/material/files/group/32/20260401-3.pdf
+- category: gaishutsu
+  name: 高齢者タクシー利用助成
+  name_on_page: 高齢者タクシー利用助成事業
+  summary: 移動手段のない高齢者世帯や免許を自主返納した人に、タクシー券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 世帯全員が75歳以上、運転免許なし、住民税非課税
+  - または75歳以上と未成年・重度障がい者の世帯で同条件
+  - または65〜74歳で令和3年7月以降に免許を自主返納した人
+  - 返納した人は市税の滞納がないこと
+  where: 高齢者福祉課、各地域交流センター、金田出張所、郵送
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1367.html
+  confidence: high
+  amount: 1枚最大500円の券を月3枚分まとめて交付。申請月により最大36枚。年度1回。
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付・貸与
+  name_on_page: 高齢者日常生活用具給付貸与
+  summary: 電磁調理器・火災警報器・自動消火器の給付と、老人用電話の貸与を受けられる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしや高齢者のみの世帯などで、所得税が非課税
+  - 日常生活に支障がある（用具により要件が異なる）
+  where: 高齢者福祉課窓口（朝日庁舎）
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 給付は自己負担なし。貸与は毎月の利用料が自己負担。
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/material/files/group/32/20260401-3.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり・きゅう・マッサージ施術費助成
+  summary: 登録施術所での施術に使える利用券を交付し、費用の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 施術が必要である
+  where: 高齢者福祉課窓口、金田出張所、各地域交流センター
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/koreishafukushi/1/1368.html
+  confidence: high
+  amount: 1回500円の助成。利用券は年12枚まで（申請月で変動）。
+  more_urls:
+  - https://www.city.kisarazu.lg.jp/material/files/group/32/20260401-3.pdf
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見制度利用支援事業（報酬助成）
+  summary: 報酬を払うのが難しい被後見人等に、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 市に住民登録がある成年被後見人・被保佐人・被補助人など
+  - 生活保護受給中、または世帯全員が非課税で預貯金100万円以下
+  - 後見人等が配偶者・4親等内の親族の場合は対象外
+  - 審判確定の翌日から90日以内に申請
+  where: 福祉相談課（朝日庁舎）。本人または後見人等が申請する。
+  url: https://www.city.kisarazu.lg.jp/iryo_kenko_fukushi/shakai_seikatsufukushi/seikatsushien/12270.html
+  confidence: high
+  amount: 報酬額のうち月額上限まで。在宅28,000円、施設入所や長期入院中は18,000円。
+- category: sonota
+  name: 認知症高齢者グループホームの家賃軽減
+  name_on_page: 認知症高齢者グループホーム入居者家賃軽減認定
+  summary: 対象のグループホームに入居する低所得の人の家賃を、日額で軽減する。
+  who: {}
+  at_application:
+  - 認知症高齢者グループホームの入居者
+  - 所得・預貯金などの要件あり
+  where: 介護保険課 計画推進係（朝日庁舎）。郵送か持参。
+  url: https://www.city.kisarazu.lg.jp/soshiki/fukushi/kaigohoken/1/1357.html
+  confidence: high
+  amount: 日額1,000円または600円（年金収入と所得の合計額で区分）。
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

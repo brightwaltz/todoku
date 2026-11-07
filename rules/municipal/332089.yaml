@@ -1,0 +1,188 @@
+city: '332089'
+name: 総社市
+site: www.city.soja.okayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への配食（給食）サービス
+  name_on_page: 高齢者　給食サービス
+  summary: 在宅の高齢者に、安否確認を兼ねて1日1回の弁当を手渡しで届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 上記のほか、市長が必要と認めた人も対象
+  - 地域包括支援センター等が作るアセスメント票が必要
+  where: 長寿介護課 地域ケア推進係（地域包括支援センター・担当ケアマネに相談）
+  url: https://www.city.soja.okayama.jp/soshiki/24/3370.html
+  confidence: high
+  amount: 弁当代は自己負担（事業者や種類で異なる）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者　緊急通報装置事業
+  summary: 急病や事故のときボタンで通報できる装置を、設置費・管理費無料で貸与する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし、または85歳以上のみの世帯の人など
+  - 担当民生委員の証明が必要
+  - 駆けつけ協力員を3人以上確保する
+  - 利用は自宅に限る。申請前に市へ相談
+  where: 長寿介護課 地域ケア推進係
+  url: https://www.city.soja.okayama.jp/soshiki/24/3325.html
+  confidence: high
+  amount: 設置・管理・電池代は無料（故意の破損・紛失は負担あり）
+- category: kaigo-yohin
+  name: 重度要介護者の介護者への介護用品引換クーポン
+  name_on_page: 重度要介護者介護用品等引換クーポン券
+  summary: 重度の要介護者を自宅で介護する世帯員に、おむつ等や理容に使えるクーポンを交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 市内在住で、要介護者を自宅で6か月以上介護する世帯員
+  - 介護者と要介護者の双方に介護保険料の滞納がない
+  - 要介護3は医師の証明書が必要
+  - 世帯分離している場合は対象外
+  where: 長寿介護課 地域ケア推進係
+  url: https://www.city.soja.okayama.jp/soshiki/24/3326.html
+  confidence: high
+  amount: 月6,000〜11,000円分（要介護度と課税状況で異なる）。3か月ごと交付
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費助成
+  name_on_page: 総社市難聴高齢者補聴器購入費助成事業
+  summary: 手帳の対象外の難聴の高齢者に、補聴器の購入費を一部助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻科の診療情報提供書で両耳とも40dB以上70dB未満
+  - 世帯に市税の滞納がない
+  - 過去にこの助成を受けていない
+  - 購入前に申請が必要
+  where: 長寿介護課 地域ケア推進係
+  url: https://www.city.soja.okayama.jp/soshiki/24/3319.html
+  confidence: high
+  amount: 1人1回限り、上限5万円
+- category: jutaku
+  name: 高齢者住宅改造費助成（介護保険住宅改修の上乗せ）
+  name_on_page: 高齢者　住宅改造費助成
+  summary: 介護保険の住宅改修に上乗せして、浴室・便所など住宅の改造費を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 肢体不自由等で日常生活に支障がある
+  - 介護保険料が6〜10段階の人は利用できない
+  - 決定前に着工した工事は対象外
+  where: 長寿介護課
+  url: https://www.city.soja.okayama.jp/soshiki/24/3317.html
+  confidence: high
+  amount: 工事費の3分の2以内、上限33万3千円（原則同一住宅1回）
+- category: jutaku
+  name: 高齢者等住宅の手すり設置・段差解消の助成
+  name_on_page: 総社市高齢者等住宅手すり設置・段差解消支援助成事業
+  summary: 要介護認定のない高齢者などの、手すり設置・段差解消工事費を一部助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、市税を完納している
+  - 65歳以上で要介護・要支援認定を受けていない人
+  - または身体障害者手帳があり住宅改修制度の対象外の人
+  - 市内の登録建築業者が施工。着工前に申請が必要
+  where: 長寿介護課 地域ケア推進係
+  url: https://www.city.soja.okayama.jp/soshiki/24/3318.html
+  confidence: high
+  amount: 工事費の2分の1以内、上限10万円（1人1回限り）
+- category: haikai
+  name: 認知症見守りGPS購入費等の助成
+  name_on_page: 総社市認知症見守りGPS購入費等助成事業
+  summary: 徘徊のある認知症の人を在宅で介護する同居家族に、GPS機器の購入費等を助成する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある、同居の家族が申請する
+  - 本人が65歳以上、または40〜64歳で要支援・要介護認定あり
+  - 認知症による徘徊が認められる
+  where: 長寿介護課 地域ケア推進係
+  url: https://www.city.soja.okayama.jp/soshiki/24/3327.html
+  confidence: high
+- category: haikai
+  name: SOS（おかえりサポート）システムの事前登録とお守りシール
+  name_on_page: SOS（そうじゃおかえりサポート）システム
+  summary: 行方不明のおそれのある人を登録し、不明時に協力者へメール配信する。登録時にお守りシールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、認知症等または障がい等で行方不明のおそれがある人
+  - そのほか市長が特に必要と認めた人
+  where: 長寿介護課 地域ケア推進係
+  url: https://www.city.soja.okayama.jp/soshiki/24/3369.html
+  confidence: high
+  more_urls:
+  - https://www.city.soja.okayama.jp/soshiki/24/3316.html
+- category: gaishutsu
+  name: いきいきチケット（介護タクシー等の運賃券）
+  name_on_page: いきいきチケット
+  summary: 「雪舟くん」を使えない人に、介護タクシー・福祉有償運送等で使える運賃チケットを交付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、単独や介助者同伴でも「雪舟くん」が使えない人
+  - 要介護・要支援認定、事業対象者、障がいのある人等のいずれか
+  - 「雪舟くん」に登録している人は交付されない
+  where: 長寿介護課 地域ケア推進係（障がいのある人は福祉課 障がい福祉係）
+  url: https://www.city.soja.okayama.jp/soshiki/24/3358.html
+  confidence: high
+  amount: 4〜9月の申請は100円券100枚、10〜3月の申請は50枚
+- category: sonota
+  name: 認知症の人の賠償責任保険（市が加入）
+  name_on_page: 認知症事故救済制度事業
+  summary: SOSシステムに本人登録した人の賠償責任を、市が契約者の保険で補償する。
+  who:
+    at_home: true
+  at_application:
+  - SOS（おかえりサポート）システムに本人登録している
+  - 市内に住所があり自宅で生活している
+  where: 長寿介護課 地域ケア推進係（SOSシステム登録）
+  url: https://www.city.soja.okayama.jp/soshiki/24/3446.html
+  confidence: high
+  amount: 賠償責任の補償は最大3億円。本人の保険料負担なし
+not_found:
+- iro
+- koken
+- shingu
+- ribiyo

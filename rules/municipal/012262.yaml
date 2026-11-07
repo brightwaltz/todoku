@@ -1,0 +1,179 @@
+city: '012262'
+name: 砂川市
+site: www.city.sunagawa.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 在宅高齢者への配食
+  name_on_page: 在宅高齢者配食サービス
+  summary: 食生活の改善が必要な高齢者に昼食を届け、声かけで安否も確認する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者等で食生活の改善が必要な方
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 1食300円の自己負担（1日1食）
+- category: kaigo-yohin
+  name: 紙おむつ利用券の交付
+  name_on_page: 紙オムツ利用券交付
+  summary: 在宅で介護を受け、常に紙おむつを使う人に紙おむつの利用券を渡す。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきり・認知症の高齢者などで、介護認定を受けた方
+  - または身体障害者手帳1・2級の寝たきりの方
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 月額5,000円分の利用券。自己負担は月500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: 緊急通報装置を自宅に設置し、消防署と直結して急病などに備える。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の病弱な高齢者、重度身体障がい者、療育手帳A判定の方
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 月額利用料・通話料・移設料・電池代などは自己負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護者を介護保険サービスなしで在宅介護した家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅で1年以上、介護保険サービスを使わずに介護した方
+  - そのほか一定の基準あり
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 年額10万円
+- category: iro
+  name: 介護手当
+  name_on_page: 介護手当支給事業
+  summary: 重度の要介護の認知症高齢者等を続けて介護した家族に手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 認知症高齢者等を3か月以上続けて介護した方
+  - そのほか一定の基準あり
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 月額4,500円
+- category: haikai
+  name: 徘徊時の位置情報サービス利用助成
+  name_on_page: 位置情報提供サービス利用助成事業
+  summary: 徘徊で行方不明になる心配がある人の位置情報サービス（ココセコム）の加入費用を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊のおそれがある方
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 毎月の基本料・位置情報提供料・現場急行料金を助成（上限額は頁に無し）
+  more_urls:
+  - https://www.city.sunagawa.hokkaido.jp/shinseisho/hokenfukushibu.html
+- category: gaishutsu
+  name: 敬老助成券（バス券・入浴券・ハイヤー券）
+  name_on_page: 敬老助成券交付事業
+  summary: 市民税非課税の在宅の75歳以上の人に、バス・入浴・ハイヤーのいずれか1種の助成券を渡す。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 4月1日現在で市内に住所がある
+  - 市民税が非課税
+  - 年度内に75歳になる方も対象
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 年額6,000円相当の助成券
+  more_urls:
+  - https://www.city.sunagawa.hokkaido.jp/shinseisho/hokenfukushibu.html
+- category: koken
+  name: 成年後見の申立費用の助成
+  name_on_page: 申立に関する費用助成
+  summary: 費用の負担が難しい人が成年後見を申し立てるとき、手数料や診断書料などを助成する。
+  who: {}
+  at_application:
+  - 生活困窮者や生活保護世帯など、費用負担が難しい方
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 申立にかかる手数料・郵便料・診断書料・鑑定料などを助成
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見人等に対する報酬の助成
+  summary: 成年後見人・保佐人・補助人への報酬の一部を、本人に助成する。
+  who: {}
+  at_application: []
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 月額の上限は、在宅28,000円、施設入所18,000円
+- category: jutaku
+  name: バリアフリーリフォームの補助（永く住まいる）
+  name_on_page: 永く住まいる（住宅改修）補助金
+  summary: 手すりの取付や段差解消などのバリアフリー改修の工事費の一部を市が補助する。
+  who: {}
+  at_application:
+  - 介護認定を受けていない65歳以上の方本人か、同居する方
+  - 自分が住む家の工事費が50万円以上
+  - 着工前の申請が必要、市税の滞納がない
+  where: 建築住宅課（建築指導係）
+  url: https://www.city.sunagawa.hokkaido.jp/seikatsu_kurashi/juutaku/sumai-hozyo.html
+  confidence: high
+  amount: 市内企業は工事費の20%（上限40万円）、市外企業は10%（上限20万円）
+  more_urls:
+  - https://www.city.sunagawa.hokkaido.jp/seikatsu_kurashi/juutaku/heartful-smile2018.html
+- category: sonota
+  name: 高齢者世帯の除雪サービス
+  name_on_page: 除雪サービス
+  summary: 自分で除雪できない高齢者世帯などの玄関先から公道までの通路を除雪する。
+  who: {}
+  at_application:
+  - 自力で除雪が難しい、おおむね70歳以上の高齢者世帯
+  - または重度身体障がい者世帯
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 利用者負担は1シーズン15,000円
+  more_urls:
+  - https://www.city.sunagawa.hokkaido.jp/shinseisho/hokenfukushibu.html
+- category: sonota
+  name: 高齢者世帯の雪下ろし費用の助成
+  name_on_page: 雪下ろし助成事業
+  summary: 自分で屋根の雪下ろしができない高齢者世帯などに、作業費用の一部を助成する。
+  who: {}
+  at_application:
+  - 自力で雪下ろしが難しい、おおむね70歳以上の高齢者世帯
+  - または重度身体障がい者世帯。別途要件あり
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.sunagawa.hokkaido.jp/kenkou_fukushi/koureifukushi/fukusisa-bisu.html
+  confidence: high
+  amount: 作業費の2分の1以内。上限2万円または4万円で、1シーズン2回まで
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

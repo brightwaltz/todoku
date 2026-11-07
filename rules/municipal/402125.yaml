@@ -1,0 +1,119 @@
+city: '402125'
+name: 大川市
+site: www.city.okawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 介護用品(紙おむつ等)給付サービス
+  summary: 常時おむつが要る重度の在宅高齢者に、紙おむつ類を毎月利用券で宅配する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりや認知症で常時おむつが必要
+  - 認定調査票の排便・排尿が介助または見守り等
+  - 市民税課税の人は対象外
+  - 市税・介護保険料の滞納がない
+  - 入院中・施設入所中の人は対象外
+  where: 健康課 介護保険係
+  url: https://www.city.okawa.lg.jp/s016/020/010/160/030/20150213161514.html
+  confidence: high
+  amount: 月 1 回、非課税世帯は 5,000 円分、課税世帯は 3,000 円分まで。超えた分は自己負担。
+- category: jutaku
+  name: 高齢者等の住宅改造費の助成
+  name_on_page: 高齢者等住宅改造支援事業
+  summary: 介護保険の住宅改修に付帯する改造工事の費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上で身体機能が低下し改造が必要、または重度障がい者
+  - 市税・介護保険料等の滞納がない
+  - 介護保険等から住宅改修費の支給を受ける
+  - 工事の着工は市の調査の後
+  where: 健康課 介護保険係
+  url: https://www.city.okawa.lg.jp/s016/020/010/160/070/20150213160445.html
+  confidence: high
+  amount: 1 世帯 1 回のみ 30 万円以内（年度の予算の範囲内）。
+- category: kinkyu-tsuho
+  name: 緊急通報装置・見守りセンサーの貸与
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報装置と見守りセンサーを借りられ、受信センターと近所の協力員が対応する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または一人暮らしの重度身体障がい者
+  - 上記に準ずる人、または SOS ネットワーク「あんしん登録」の登録者
+  where: 健康課 介護保険係
+  url: https://www.city.okawa.lg.jp/s016/020/010/160/040/20150213162001.html
+  confidence: high
+  amount: 据置き型は負担なし。携帯型は月 500 円または 1,000 円（介護保険料段階による）。
+- category: gaishutsu
+  name: 運転免許返納者へのタクシー利用券
+  name_on_page: 高齢者免許証自主返納等支援事業
+  summary: 免許を自主返納または失効した人に、市内タクシーで使える利用券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 免許の返納日または失効日から 1 年以内に申請
+  where: 健康課 介護保険係
+  url: https://www.city.okawa.lg.jp/s016/020/010/160/060/20220328165045.html
+  confidence: high
+  amount: タクシー利用券 1 万円分（500 円券 20 枚）。1 人 1 回限り、有効期限は交付日から 2 年。
+- category: gaishutsu
+  name: 生活支援バスの無料運行
+  name_on_page: おおかわ愛のりバス（生活支援バス）
+  summary: 移動に困る高齢者や障がい者向けに、市内を巡回する福祉バスを無料で運行する。
+  who: {}
+  at_application:
+  - 移動手段に困っている 65 歳以上の高齢者、または障がい者
+  - 感染や発熱のある人は乗車を控える
+  where: 健康課 介護保険係（運行の詳細は社会福祉協議会の案内）
+  url: https://www.city.okawa.lg.jp/s016/020/010/160/010/20241018120448.html
+  confidence: high
+  amount: 運賃は無料。各路線は週 3 回運行。
+- category: haikai
+  name: 認知症高齢者等の事前登録（あんしん登録）
+  name_on_page: 高齢者等SOSネットワーク
+  summary: 行方不明のおそれがある人を事前登録し、行方不明時に協力機関へ情報を出す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 家族等の同意が必要
+  - 申請書と本人の写真（立位・顔 各 1 枚）が必要
+  where: 健康課 健康推進係（障がい者は福祉事務所 障がい福祉係）
+  url: https://www.city.okawa.lg.jp/s019/020/070/030/010/20150214174631.html
+  confidence: high
+- category: sonota
+  name: 家族が世話できないときのショートステイ
+  name_on_page: 生活管理指導ショートステイ事業
+  summary: 家族が世話できない間、要介護認定のない高齢者が特養に短期入所できる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険の要支援・要介護の認定を受けていない
+  - 家族が冠婚葬祭・病気・出産などで世話できない
+  - 原則 7 日以内
+  where: 健康課 介護保険係
+  url: https://www.city.okawa.lg.jp/s016/020/010/160/020/20150213161123.html
+  confidence: high
+  amount: 1 日あたり利用料 600 円、食材料費は朝 400 円・昼 524 円・夜 521 円、居住費 915 円、送迎は片道 1,840 円。世帯の所得により軽減あり。
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu

@@ -1,0 +1,213 @@
+city: '222071'
+name: 富士宮市
+site: www.city.fujinomiya.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成
+  name_on_page: 紙おむつ購入費助成
+  summary: 在宅で紙おむつが必要な人に、購入費の助成券を交付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護・要支援の認定がある人、または65歳以上
+  - 紙おむつの使用が常時必要
+  - 寝たきり状態・排尿排便に支障・疾病による失禁のいずれか
+  - 申請書裏面のアセスメント記入が必要
+  where: 高齢介護支援課 介護保険係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 市民税課税世帯・認定なし・要支援は年5,000円分。非課税で要介護1以上等は年最大20,000円分（申請時期で変わる）
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: haishoku
+  name: 配食サービスの助成
+  name_on_page: 配食サービス助成
+  summary: 買い物や調理ができない人の弁当代を、1日1食分助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定がある人、または65歳以上
+  - 本人と配偶者が市県民税非課税、または均等割のみ
+  - ひとり暮らし・高齢者のみ世帯、またはそれに準ずる状況
+  - 本人と同居の人が買い物・調理できない
+  - 市の審査で対象外になることがある
+  where: 高齢介護支援課 介護保険係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 1日1食 400円
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: haikai
+  name: 徘徊高齢者のGPS機器の貸与
+  name_on_page: 徘徊高齢者在宅生活継続支援
+  summary: 徘徊のある在宅の高齢者に、位置検索できるGPS機器を貸し、初期費用を市が負担する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請書裏面にケアマネ等のアセスメント記入が必要
+  where: 高齢介護支援課 介護保険係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 初期導入費7,700円は市負担。月額基本料1,320円などは利用者負担
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: haikai
+  name: 見守り・SOSの事前登録とお守りシール
+  name_on_page: 富士宮市見守り・SOSネットワーク事業
+  summary: 道に迷うおそれのある人を事前登録し、行方不明時に早く見つける。登録者にお守りシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで道に迷う・自宅がわからなくなるおそれがある人
+  - 事前に名前・住所・連絡先・写真などを登録する
+  where: 高齢介護支援課（地域包括支援センター、ケアマネ経由も可）
+  url: https://www.city.fujinomiya.lg.jp/1035210000/p001572.html
+  confidence: high
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+- category: iro
+  name: ねたきり・認知症の人を介護する家族への手当
+  name_on_page: ねたきり老人等介護手当
+  summary: 65歳以上の同居家族を介護している人に、月額の手当を支給する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+  at_application:
+  - 介護される人と同居し、生計を共にして介護している人が申請
+  - 寝たきり（要介護4以上など）か認知症（要介護1以上など）が6か月以上続く
+  - 介護者名義の預金通帳の写しが必要
+  where: 福祉企画課 福祉企画係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 月額5,000円（9月と3月に支給）
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 補聴器購入費助成
+  summary: 障害者手帳の対象外の難聴の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力が40dB以上で、聴覚障害の手帳の対象でない
+  - 耳鼻科医が補聴器の使用を必要と認めた
+  - 他の補聴器助成や過去の同助成を受けていない
+  - 購入から2か月以内に申請
+  where: 福祉企画課 福祉企画係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 購入費の2分の1以内、上限30,000円
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: kinkyu-tsuho
+  name: 緊急通報・火災ガス漏れ感知の機器設置
+  name_on_page: ホームセキュリティシステム設置
+  summary: 緊急通報ボタンと火災・ガス漏れセンサーを設置し、異常時は警備員が出動する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のひとり暮らし
+  - または、寝たきり高齢者を抱える高齢者のみの世帯
+  - または、身体障害者手帳1・2級の人のみの世帯
+  - 固定電話が必要。停電時や一部山間地は使えない
+  where: 福祉企画課 福祉企画係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 月額利用料500円（別に通信料が毎日約10円）
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: shingu
+  name: 寝具のクリーニング費の助成
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 寝具の衛生管理が難しい人の綿布団・毛布のクリーニング費を助成する。
+  who: {}
+  at_application:
+  - 寝具の衛生管理が困難で、次のいずれか
+  - 65歳以上のひとり暮らしで市民税非課税
+  - 65歳以上のみの世帯で市民税非課税世帯
+  - 65歳以上の寝たきりで市民税非課税世帯
+  - 身体障害者手帳1・2級の人
+  where: 福祉企画課 福祉企画係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 利用料は掛布団550円・敷布団550円・毛布220円。年度内3回まで
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: ribiyo
+  name: 訪問理美容の出張費の負担
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい人の自宅へ理美容師が出張する費用を市が負担する。
+  who:
+    age_min: 65
+  at_application:
+  - 病気等で理容店・美容院へ行くのが困難
+  where: 福祉企画課 福祉企画係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 年度内4回まで。カット代等は自己負担
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: gaishutsu
+  name: 小型タクシーの初乗り運賃の助成券
+  name_on_page: 移動制約者運賃助成券
+  summary: 市民税非課税世帯の要介護者などに、小型タクシーの基本料金の助成券を交付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護1〜5の介護保険証がある人（障害者手帳の人も対象）
+  - 手帳は身体1・2級、療育A、精神1・2級のいずれか
+  - 生活保護や自動車税・軽自動車税の減免を受けている人は除く
+  where: 障がい療育支援課 障がい支援係
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 小型タクシーの初乗り運賃分。助成券は年最大24枚
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+- category: gaishutsu
+  name: 運転免許を返納した高齢者への公共交通補助券
+  name_on_page: 富士宮市公共交通補助券
+  summary: 運転免許を自主返納した人に、バス・タクシー等に使える補助券を交付する。
+  who: {}
+  at_application:
+  - 運転免許証を自主返納した（取消通知書が必要）
+  where: 市民生活課 交通対策室（市役所5階）
+  url: https://www.city.fujinomiya.lg.jp/1023100000/p000146.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージの施術費助成券
+  name_on_page: はり・きゅう・マッサージ費用助成
+  summary: 70歳以上などの人に、はり・きゅう・マッサージで使える助成券を交付する。
+  who: {}
+  at_application:
+  - 満70歳以上、または身体障害者手帳1・2級
+  - 申請に本人確認書類が必要
+  where: 福祉企画課 福祉企画係、各出張所
+  url: https://www.city.fujinomiya.lg.jp/documents/1333/sa-bisunotebiki080910.pdf
+  confidence: high
+  amount: 1枚1,000円の助成券を4枚つづり（年度に1回交付）
+  more_urls:
+  - https://www.city.fujinomiya.lg.jp/1035100000/p001459.html
+not_found:
+- koken
+- jutaku
+- nichijo-yogu
+- yutai

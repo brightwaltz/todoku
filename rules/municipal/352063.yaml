@@ -1,0 +1,196 @@
+city: '352063'
+name: 防府市
+site: www.city.hofu.yamaguchi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無料貸与
+  name_on_page: 防府市高齢者等緊急通報体制整備事業
+  summary: 24時間対応の受信センターにつながる緊急通報装置を無料で借りられる。
+  who: {}
+  at_application:
+  - 次のいずれかに当たる人（申請書に民生委員の署名が必要）
+  - おおむね65歳以上のひとり暮らしで慢性疾患等がある人
+  - 75歳以上の高齢者のみの世帯の人
+  - 重度心身障害者等のみの世帯の人
+  - おおむね65歳以上の慢性疾患等の人で家族が日中不在の人
+  where: 高齢福祉課（在宅支援係）
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/kinntuu.html
+  confidence: high
+  amount: 利用料は無料
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 食事の確保が難しい在宅の高齢者に、食事を届けるサービス。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の単身か高齢者のみの世帯、またはこれに準ずる世帯
+  - 障害のある人も対象になる場合がある
+  - 食の自立支援の観点で利用が適切と認められる
+  - 要支援・事業対象者は総合事業で同様のサービスを受ける
+  where: 高齢福祉課
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/haisyoku.html
+  confidence: high
+  amount: 自己負担は1食450円、週5食まで
+- category: ribiyo
+  name: 訪問理美容の利用券
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容院に行けない高齢者の自宅へ、理美容師が訪問する経費を市が補助する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしの人などが対象
+  - 老衰や心身の障害で一般の理美容の利用が難しいと認められる
+  where: 高齢福祉課
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/houmonnribi.html
+  confidence: high
+  amount: 訪問経費は市が事業者へ補助（年2回まで）。理美容代は実費
+- category: nichijo-yogu
+  name: 自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具給付事業
+  summary: ひとり暮らし高齢者等に、自動消火器や電磁調理器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等が対象
+  where: 高齢福祉課
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/nitijou.html
+  confidence: high
+  amount: 自己負担は世帯の所得税額に応じて決まる
+- category: kaigo-yohin
+  name: 紙おむつ券の給付
+  name_on_page: 在宅寝たきり高齢者等紙おむつ給付事業
+  summary: 住民税非課税世帯の在宅の寝たきり高齢者等に紙おむつ券を給付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 使用者と同居者全員が住民税非課税
+  - 65歳以上の寝たきりか認知症等、または65歳未満で特定疾病
+  - 要介護・要支援の認定を受けている
+  - 常時失禁でおむつ交換が必要（尿漏れ・夜のみは除く）
+  - 防府市の介護保険被保険者。年3回（5・9・1月）の受付
+  where: 高齢福祉課
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/omutu.html
+  confidence: high
+  amount: 年最大4万円分。要介護4・5を介護する家族がいれば年最大10万円分
+- category: iro
+  name: 在宅寝たきり高齢者の介護慰労金
+  name_on_page: 在宅寝たきり高齢者等介護慰労金事業
+  summary: 要介護4・5の人を在宅で介護する家族に年10万円の慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護見舞金の支給対象に当たり、見舞金は受けていない
+  - 要介護者を家族が1年以上、在宅で介護している
+  - 要介護者が過去1年以上、介護保険サービスを使っていない
+  - 市内に住所がある
+  - 見舞金を申請した人のうち該当者に、市が申請書を送る
+  where: 高齢福祉課
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/irou.html
+  confidence: high
+  amount: 年額10万円
+- category: iro
+  name: 寝たきり高齢者の介護見舞金
+  name_on_page: 寝たきり高齢者等介護見舞金助成事業
+  summary: 要介護3以上の人を在宅で介護する家族に年3万円の見舞金を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 10月1日以前に、1年以上市内に住所がある
+  - 10月1日時点で要介護3以上（準ずると認められた人も可）
+  - 要介護3以上の期間が、10月1日以前の1年で6か月以上
+  - 同居の家族が6か月以上、在宅で介護している
+  - 受付は毎年10月
+  where: 高齢福祉課
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/mimai.html
+  confidence: high
+  amount: 年額3万円
+- category: gaishutsu
+  name: 高齢者等のバス・タクシー運賃助成券
+  name_on_page: 高齢者等バス・タクシー運賃助成制度
+  summary: 路線バス・タクシーの運賃が安くなる助成券を交付する。
+  who: {}
+  at_application:
+  - 次のいずれかに当たる人
+  - 70歳以上で運転免許を持っていない
+  - 65歳以上で運転免許をすべて自主返納した
+  - 福祉タクシー助成の交付対象要件を満たす人
+  - 福祉タクシー助成とはどちらか一方のみ
+  where: 高齢福祉課（初回申請）
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/kourei-bustaxi.html
+  confidence: high
+  amount: バスのみ年96枚（1枚100円引）か、バス・タクシー兼用年48枚（バス200円引、タクシー2割引）。枚数は申請月で変わる
+- category: haikai
+  name: みまもりSOSネットワークとみまもりステッカー
+  name_on_page: 防府市みまもりSOSネットワーク
+  summary: 行方不明のおそれがある認知症高齢者等を事前登録し、ステッカーを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になるおそれのある認知症高齢者等を事前登録する
+  where: 高齢福祉課（地域包括支援センター）、各地域包括支援センター、防府警察署
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/mimamori-sos.html
+  confidence: high
+  amount: 登録者に、登録番号入りのみまもりステッカーを1人1シート交付
+  more_urls:
+  - https://www.city.hofu.yamaguchi.jp/soshiki/60/mimamoristk.html
+- category: sonota
+  name: はり・きゅう施術費の助成
+  name_on_page: はり・きゅう施術費助成事業
+  summary: 市指定の施術所で、はり・きゅうの施術費が一部減額される。
+  who: {}
+  at_application:
+  - 後期高齢者医療の被保険者は申請不要で、保険証で利用できる
+  - 国保以外の70歳以上は、受給資格者証の交付申請が必要
+  - 受給資格者証の有効期限は毎年度末で、更新が必要
+  - 国保加入者は保険証で利用（施術回数や施術所は異なる）
+  where: 高齢福祉課、各出張所
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/harikyuu.html
+  confidence: high
+  amount: 初診料350円、一術840円、二術910円を減額。月10回まで
+- category: sonota
+  name: 福祉電話の貸与と基本料金助成
+  name_on_page: 福祉電話貸与・基本料金助成事業
+  summary: 電話のない低所得のひとり暮らし高齢者等に、電話回線を貸して基本料金を助成する。
+  who: {}
+  at_application:
+  - 電話を持たない低所得のひとり暮らし高齢者等が対象
+  - 申請書に地区の民生委員の意見・署名・押印が必要
+  where: 高齢福祉課
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/dennwa.html
+  confidence: low
+  amount: 基本料金を助成。通話料は自己負担
+- category: sonota
+  name: 高齢者等のごみ戸別収集
+  name_on_page: 高齢者等ふれあい戸別収集
+  summary: ごみを集積所まで出せない高齢者や障害者等の家庭ごみを、市が戸別に収集する。
+  who: {}
+  at_application:
+  - 家庭ごみを集積場所まで出すことが困難な高齢者や障害者等
+  where: 高齢福祉課（詳細はごみ担当の案内頁を参照）
+  url: https://www.city.hofu.yamaguchi.jp/soshiki/60/fureai.html
+  confidence: low
+not_found:
+- shingu
+- hochoki
+- jutaku

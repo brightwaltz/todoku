@@ -1,0 +1,163 @@
+city: '132071'
+name: 昭島市
+site: www.city.akishima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費補助（宅配）
+  name_on_page: 紙おむつ購入費補助サービス
+  summary: 在宅の要介護者に、指定業者が月1回自宅へ紙おむつを届け、購入費の一部を市が補助する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 入院中、特養・老健・介護医療院の入所中は対象外
+  where: 介護福祉課 高齢者支援係
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003140.html
+  confidence: high
+  amount: 月8,000円を限度に購入額の9割を補助（自己負担は1割）
+- category: haikai
+  name: 認知症高齢者のGPS探索サービス（初回登録料の補助）
+  name_on_page: 認知症高齢者等探索サービス
+  summary: GPS端末で認知症高齢者の居場所を家族に知らせるサービスの、初回登録料を市が負担する。
+  who: {}
+  at_application: []
+  where: 介護福祉課（市役所）または最寄りの地域包括支援センター
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003141.html
+  confidence: high
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 高齢者自立支援日常生活用具給付サービス
+  summary: 腰掛便座・入浴補助用具・歩行支援用具・スロープなどを、限度額内で給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の認定結果が「自立」と判定された人
+  where: 介護福祉課 高齢者支援係
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003142.html
+  confidence: high
+  amount: 用具ごとに限度額あり（腰掛便座51,500円、入浴補助用具90,000円など）。自己負担は所得に応じ1〜3割
+- category: kinkyu-tsuho
+  name: 住宅の火災警報器等の設置（消防へ自動通報）
+  name_on_page: 高齢者住宅火災通報システム
+  summary: 火災警報器などを設置し、火災時に東京消防庁へ自動で通報する。電磁調理器の給付なども含む。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきりの高齢者、または心身機能の低下で防火の配慮が必要なひとり暮らしの高齢者
+  where: 介護福祉課 高齢者支援係
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003146.html
+  confidence: high
+  amount: 機器設置費用の10％を所得に応じて自己負担
+- category: jutaku
+  name: 高齢者の住宅改修・設備改修の給付
+  name_on_page: 高齢者自立支援住宅改修給付サービス
+  summary: 手すり設置や段差解消、浴槽・流し・便器の取替えなどの改修費の一部を市が給付する。
+  who: {}
+  at_application:
+  - 65歳以上の人、またはその人と同居する世帯
+  - 動作の低下で住宅改修が必要と認められる
+  - 予防給付は介護認定「自立」の人、設備改修は要支援・要介護の人も可
+  - 工事前に市窓口か包括支援センターへ相談が必要
+  where: 介護福祉課 高齢者支援係、地域包括支援センター（事前相談）
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003147.html
+  confidence: high
+  amount: 予防給付は上限20万円。設備改修は浴槽37.9万円、流し・洗面台15.6万円、便器10.6万円が上限。自己負担は所得に応じ1〜3割
+- category: ribiyo
+  name: 寝たきり高齢者への出張理髪
+  name_on_page: 出張理髪サービス
+  summary: 理容師が自宅を訪問して散髪する。年4回まで、無料。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    flags:
+    - bedridden_6m
+  at_application:
+  - 車イスに乗れない人
+  where: 昭島市社会福祉協議会（保健福祉センター2階）
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003143.html
+  confidence: high
+  amount: 無料（年4回まで）
+- category: shingu
+  name: 在宅高齢者の寝具乾燥・消毒
+  name_on_page: 在宅高齢者寝具乾燥サービス
+  summary: 乾燥車が布団を回収し、乾燥を年11回、消毒を年1回行う。無料。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 寝具の衛生を保てる身体状況・住環境にない人
+  where: 介護福祉課 高齢者支援係
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003144.html
+  confidence: high
+  amount: 無料（乾燥年11回、消毒年1回）
+- category: haishoku
+  name: 高齢者への昼食の配食
+  name_on_page: 高齢者食事サービス
+  summary: 炊事が難しい70歳以上の人に、平日の昼食を週1〜5回、自宅へ届ける。
+  who:
+    age_min: 70
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身機能の低下で炊事が困難な状況にある
+  where: 昭島市社会福祉協議会（保健福祉センター2階）
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1003145.html
+  confidence: high
+  amount: 1食400円（自己負担）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 介護保険サービスを使わず在宅で重度の高齢者を介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護される高齢者が1年間、介護保険等のサービスを受けていない
+  - 介護者と要介護高齢者の双方が、要件期間中に市民税非課税
+  where: 介護福祉課 高齢者支援係
+  url: http://www.city.akishima.lg.jp/kenko/korei/1008337/1003136.html
+  confidence: high
+  amount: 10万円
+- category: mimamori
+  name: 水道スマートメーターによる高齢者の見守り
+  name_on_page: 水道の使用状況で高齢者の見守りが可能に
+  summary: 水道の使用状況をもとに、登録した親族等へ元気メールや異変メールを送る見守り。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内在住
+  where: 水道部 業務課 業務係
+  url: http://www.city.akishima.lg.jp/kenko/korei/1003133/1012342.html
+  confidence: high
+  amount: 利用料は月額165円（税込、自己負担）
+not_found:
+- hochoki
+- chusha
+- yutai

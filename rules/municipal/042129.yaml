@@ -1,0 +1,93 @@
+city: 042129
+name: 登米市
+site: www.city.tome.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品支給券の交付（紙おむつ等）
+  name_on_page: 介護用品支給事業
+  summary: 紙おむつなど介護用品の購入に使える支給券が、毎月もらえる。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 常時失禁の状態にある
+  - 要介護4・5、または要支援1・2・要介護1〜3、または障害者手帳等
+  - 要介護4・5以外は初回に医師意見書が必要
+  - 特養・老健・介護医療院・養護老人ホームの入所者は対象外
+  where: 長寿介護課、または各総合支所市民課
+  url: https://www.city.tome.miyagi.jp/chojyukaigo/kurashi/fukushi/koresha/kaigoshien/kaigoyohin.html
+  confidence: high
+  amount: 要介護4・5は月5,000円分、そのほかの対象者は月3,000円分
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者へ、お弁当を届けながら安否を確認する。
+  who: {}
+  at_application:
+  - 食事の調理が困難である
+  - 高齢者のみの世帯、または障害者と高齢者のみの世帯など
+  where: 長寿介護課、または各総合支所市民課
+  url: https://www.city.tome.miyagi.jp/chojyukaigo/kurashi/fukushi/koresha/kaigoshien/haisyoku.html
+  confidence: high
+  amount: 1食300円または500円の自己負担。1日1食・週3回まで
+- category: kinkyu-tsuho
+  name: ひとりぐらし等の緊急通報機器の貸与
+  name_on_page: ひとりぐらし等緊急通報システム
+  summary: 緊急通報機器（本体・ペンダント・センサー）を無料で借りられる。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上のみの世帯、または障害者のいる世帯など
+  - 単身の障害者は手帳1・2級、療育手帳Aなどの条件あり
+  - 協力員が原則2名必要、設置に固定電話が必要
+  where: 長寿介護課、または各総合支所市民課
+  url: https://www.city.tome.miyagi.jp/chojyukaigo/kurashi/fukushi/koresha/shien/kinkyutuho.html
+  confidence: high
+  amount: 機器の貸与は無料（通話料は自己負担）
+- category: gaishutsu
+  name: 外出支援サービス（福祉車両の送迎・貸出）
+  name_on_page: 外出支援サービス
+  summary: 歩行が困難な人の通院などに、福祉車両の送迎か貸出を行う。
+  who:
+    at_home: true
+  at_application:
+  - 介助なしで移動が難しく、バス・タクシーも使いにくい
+  - 身体障害者手帳、要支援・要介護認定、または歩行困難な人
+  - 移送サービスは同行者（家族・ヘルパー）が必要
+  where: 長寿介護課、または各総合支所市民課
+  url: https://www.city.tome.miyagi.jp/chojyukaigo/kurashi/fukushi/koresha/kaigoshien/isosa-bisu.html
+  confidence: high
+  amount: 移送は片道30km以下で1km130円、貸出は無料（燃料は満タン返却）
+- category: sonota
+  name: 高齢者世帯の省エネ冷蔵庫・エアコン購入補助
+  name_on_page: 物価高騰対応高齢者世帯省エネ家電購入支援事業補助金
+  summary: 65歳以上のみの世帯が省エネの冷蔵庫かエアコンを買うと補助が出る。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市税を滞納していない
+  - 令和8年9月1日〜令和9年1月31日に市内店舗で購入
+  - 交付決定後に購入、先着250件程度で予算次第で終了
+  where: 環境課、または各総合支所市民課（地域振興係）
+  url: https://www.city.tome.miyagi.jp/kankyo/shisejoho/machizukuri/kankyo/hojojose/syouenekaden.html
+  confidence: high
+  amount: 本体価格（税抜）の2分の1以内、上限3万円
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

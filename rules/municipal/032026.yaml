@@ -1,0 +1,173 @@
+city: '032026'
+name: 宮古市
+site: www.city.miyako.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅ねたきり老人等の介護用品給付券
+  name_on_page: 在宅ねたきり老人等介護用品給付事業
+  summary: 要介護3以上の在宅の人を介護する方に、紙おむつ等と引き換えられる給付券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請するのは、要介護の人を在宅で介護している方
+  - 入院中・施設入所中・市外転出のときは使えない
+  where: 介護保険課、各総合事務所
+  url: https://www.city.miyako.iwate.jp/gyosei/iryo_kenko_fukushi/koreishafukushi_kaigo/2/5828.html
+  confidence: high
+  amount: 要介護3は月4,000円分、要介護4・5は月8,000円分（令和8年度、券1枚1,000円）
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/19/kaigoyouhin-ticket_flyerR804.pdf
+- category: gaishutsu
+  name: 介護通院タクシー助成券
+  name_on_page: 介護通院支援事業
+  summary: 要介護3以上の在宅高齢者が通院でタクシーに乗るときの助成券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、通院のためにタクシーを使う
+  - 上半期（4〜9月）・下半期（10〜3月）ごとに申請
+  where: 介護保険課、各総合事務所
+  url: https://www.city.miyako.iwate.jp/gyosei/iryo_kenko_fukushi/koreishafukushi_kaigo/2/5828.html
+  confidence: high
+  amount: 1枚700円の助成券。申請月から期末までの月数×4枚（最大24枚）
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/19/taxi-ticket_flyerR804.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしの高齢者等の自宅に、緊急通報装置とペンダントを貸す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らし等の高齢者で、慢性疾患等により日常生活に注意を要する方
+  where: 介護保険課（市役所1階）
+  url: https://www.city.miyako.iwate.jp/gyosei/iryo_kenko_fukushi/koreishafukushi_kaigo/2/5828.html
+  confidence: high
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/19/emergency-call-device_flyerR80415.pdf
+  - https://www.city.miyako.iwate.jp/material/files/group/17/04kourei.pdf
+- category: jutaku
+  name: やさしい住まいづくり推進事業（住宅改善費の上乗せ給付）
+  name_on_page: やさしい住まいづくり推進事業
+  summary: 介護保険の住宅改修に合わせて、トイレ・浴室等の改善費を市が上乗せ給付する。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定を受けている方
+  - 賃貸住宅、平成14年4月以降の新築、過去に本事業を使った世帯は対象外
+  - 決定日より前に着工した工事は対象外
+  - 介護保険住宅改修と同時に申請。ケアマネの理由書が必要
+  where: 介護保険課
+  url: https://www.city.miyako.iwate.jp/gyosei/iryo_kenko_fukushi/koreishafukushi_kaigo/2/5828.html
+  confidence: high
+  amount: 工事費50万円から介護保険の限度額分を引いた額の3分の2、上限20万円
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/19/livable-home_flter.pdf
+  - https://www.city.miyako.iwate.jp/material/files/group/17/04kourei.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者の補聴器購入費用の一部を助成します
+  summary: 65歳以上の中等度難聴の人が補聴器を買ったとき、費用の9割を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、両耳の聴力が40dB以上70dB未満
+  - 身体障害者手帳の交付対象にならない人
+  - 5年に1度の助成。購入後に申請する
+  where: 介護保険課
+  url: https://www.city.miyako.iwate.jp/gyosei/soshiki/kaigohoken/2/2/1395.html
+  confidence: high
+  amount: 購入費用の9割、上限4万2千円（税込）
+- category: nichijo-yogu
+  name: 日常生活用具の給付（火災警報器・自動消火器・電磁調理器）
+  name_on_page: 日常生活用具給付事業
+  summary: 日常生活に支障がある高齢者に、自動消火器・火災警報器・電磁調理器を給付する。
+  who: {}
+  at_application:
+  - 日常生活を営むのに支障がある高齢者
+  where: 介護保険課
+  url: https://www.city.miyako.iwate.jp/gyosei/iryo_kenko_fukushi/koreishafukushi_kaigo/2/5828.html
+  confidence: high
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/17/04kourei.pdf
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 調理が困難な在宅の高齢者に、栄養に配慮した食事を届けて安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 調理が困難、または栄養の改善が必要と認められる人
+  where: 介護保険課（申請先の明記なし）
+  url: https://www.city.miyako.iwate.jp/material/files/group/17/07kaigo.pdf
+  confidence: high
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/19/koureisyamimamori_2026.pdf
+- category: koken
+  name: 成年後見制度の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 支える親族がいない高齢者などの、後見の申立て費用や後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 判断力が著しく衰えた高齢者を支える親族がいない場合など
+  where: 地域包括支援センター、介護保険課に相談（申請先の明記なし）
+  url: https://www.city.miyako.iwate.jp/material/files/group/17/07kaigo.pdf
+  confidence: low
+- category: haikai
+  name: シルバーSOSネットワーク宮古の事前登録
+  name_on_page: シルバーSOSネットワーク宮古事前登録
+  summary: 道に迷うおそれのある高齢者を事前登録し、反射材とみまもりホルダーを受け取れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで外出して帰れなくなるおそれがある高齢の方
+  - 申請書と直近3か月以内の写真が必要
+  - 実施主体は宮古警察署。登録は市の窓口で行う
+  where: 介護保険課（市役所1階）
+  url: https://www.city.miyako.iwate.jp/gyosei/soshiki/kaigohoken/2/3122.html
+  confidence: high
+  amount: 反射材8枚とみまもりホルダーを交付（費用の記載なし）
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/19/SOS.pdf
+- category: sonota
+  name: 安心キット（救急医療情報キット）の無料配布
+  name_on_page: 安心キット（救急医療情報キット）配布事業
+  summary: 救急時に使う情報を入れる容器と表示ステッカーを無料で配る。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上（特に必要と認められる65歳未満も可）
+  - 次のいずれか：65歳以上のみの世帯に属する人
+  - 日中か夜間に同居者が不在で独りが多い人
+  - 同居者が障害・疾病等で緊急時の対応が難しい人
+  where: 介護保険課、各地域包括支援センター（申請書は市内郵便局でも配布）
+  url: https://www.city.miyako.iwate.jp/gyosei/iryo_kenko_fukushi/koreishafukushi_kaigo/2/5828.html
+  confidence: high
+  amount: 無料配布
+  more_urls:
+  - https://www.city.miyako.iwate.jp/material/files/group/19/safety-kit_flyerR80415.pdf
+not_found:
+- iro
+- shingu
+- ribiyo
+- yutai

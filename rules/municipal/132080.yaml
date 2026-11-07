@@ -1,0 +1,178 @@
+city: '132080'
+name: 調布市
+site: www.city.chofu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付
+  summary: 要介護認定を受け在宅でおむつが必要な人に、紙おむつを月1回自宅へ届ける。
+  who:
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3以上は常時おむつ使用が条件
+  - 要支援2・要介護1〜2は疾病等で常時失禁状態（医師意見書）
+  - 特養・老健に入所していない
+  - 生活保護などで他のおむつ給付を受けていない
+  where: 高齢者支援室高齢福祉担当、地域包括支援センター
+  url: https://www.city.chofu.lg.jp/060030/p033070.html
+  confidence: high
+  amount: 無料（月1回の配達）
+- category: kaigo-yohin
+  name: 入院中のおむつ代助成
+  name_on_page: 入院中のおむつ代助成
+  summary: 病院に入院中に自己負担したおむつ代の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 医療保険適用の病院入院が対象（介護保険施設は対象外）
+  - 生活保護受給世帯は除く
+  where: 高齢者支援室高齢福祉担当、地域包括支援センター
+  url: https://www.city.chofu.lg.jp/060030/p033044.html
+  confidence: high
+  amount: 月額 10,000 円まで
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 昼食・夕食を自宅に届け、手渡しで安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の状況から買物や炊事が困難
+  - 職員が訪問して必要な食数を決める
+  where: 地域包括支援センター
+  url: https://www.city.chofu.lg.jp/060030/p033075.html
+  confidence: high
+  amount: 1食 500 円、365 日実施
+- category: haikai
+  name: 認知症徘徊高齢者探知システム
+  name_on_page: 認知症徘徊高齢者探知システム
+  summary: 徘徊のある人にGPS端末を持たせ、位置を探せるようにする。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 対象は本人と、同居または近隣に住む介護者
+  - 施設入居者は対象外
+  where: お住まいの地区の地域包括支援センター
+  url: https://www.city.chofu.lg.jp/060030/p033066.html
+  confidence: high
+  amount: 利用料は無料（オプション・紛失や破損の交換は有料）
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システム
+  name_on_page: 高齢者緊急通報システム
+  summary: 自宅に通報機を設置し、ボタンで救急車を呼べるようにする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心疾患等で日常的に常時注意が必要な状態
+  - 75歳以上のひとり暮らしは希望すれば利用可
+  - 日中高齢者のみの世帯は相談に応じる
+  where: 地域包括支援センター（75歳以上ひとり暮らしの本人申請は高齢福祉担当も可）
+  url: https://www.city.chofu.lg.jp/060030/p033063.html
+  confidence: high
+  amount: 利用料は無料
+- category: kinkyu-tsuho
+  name: 人感センサー安否通報システム
+  name_on_page: 高齢者人感センサー安否通報システム
+  summary: 室内にセンサーを置き、長時間動きがないと通報・確認・駆けつけを行う。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市の高齢者緊急通報システムを利用しているひとり暮らしの人
+  - 賃貸住宅は建物所有者等の同意が必要
+  where: 各地域包括支援センター
+  url: https://www.city.chofu.lg.jp/060030/p033079.html
+  confidence: high
+  amount: 利用料は無料
+- category: shingu
+  name: 寝具乾燥・丸洗い
+  name_on_page: 寝具乾燥・丸洗い
+  summary: 布団の乾燥消毒を月1回、丸洗いか水洗いを年1回行う。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 家庭で寝たきり、またはそれに準じる状態
+  where: 地域包括支援センター、高齢者支援室高齢福祉担当
+  url: https://www.city.chofu.lg.jp/060030/p033076.html
+  confidence: high
+  amount: 無料
+- category: ribiyo
+  name: 高齢者訪問理美容サービス
+  name_on_page: 高齢者訪問理美容サービス
+  summary: 要介護3〜5の人が、自宅で出張の理容・美容を年4回まで受けられる。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 申請書に介護保険証の写しを添えて申し込む
+  - 10月以降の申込みは年2回
+  where: 調布市社会福祉協議会（電話 042-481-7693）
+  url: https://www.city.chofu.lg.jp/060030/p033067.html
+  confidence: high
+  amount: 1回2,000円
+- category: jutaku
+  name: 住宅改修費助成
+  name_on_page: 住宅改修費助成
+  summary: 手すり・段差解消や浴槽取替などの改修費の1割を市が給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 改修しないと在宅生活が著しく困難と認められる
+  - 生計中心者の総所得金額が700万円超は対象外
+  - 介護保険サービスが優先、工事前に相談が必要
+  - 予防給付は介護保険で非該当（自立）の人のみ
+  where: お住まいの地区の地域包括支援センター
+  url: https://www.city.chofu.lg.jp/060030/p033061.html
+  confidence: high
+  amount: 改修費の1割（給付限度額あり）
+- category: nichijo-yogu
+  name: 日常生活用具の給付とレンタル
+  name_on_page: 日常生活用具の給付とレンタル
+  summary: 防水シーツ・入浴補助用具・T字杖などの給付と、特殊寝台の貸出し。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護度や身体状況で給付できる用具が決まる
+  - レンタルは介護保険で貸与を受けられない人が対象
+  - 事前に職員が自宅を訪問して確認する
+  where: お住まいの地区の地域包括支援センター
+  url: https://www.city.chofu.lg.jp/060030/p033072.html
+  confidence: high
+  amount: 給付は世帯所得に応じ1割負担（T字杖は無料）、特殊寝台は月700円
+not_found:
+- iro
+- koken
+- gaishutsu

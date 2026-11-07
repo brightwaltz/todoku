@@ -1,0 +1,66 @@
+city: '432121'
+name: 上天草市
+site: www.city.kamiamakusa.kumamoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 手帳の対象にならない聞こえにくい65歳以上の方の補聴器購入費を、半額（上限3万円）助成する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり現に居住している
+  - 聴覚障害の身体障害者手帳を受けられない（等級に当たらない）
+  - 両耳30デシベル以上で、耳鼻咽喉科医が補聴器の使用を必要と認めた
+  - 市税等の滞納がない
+  - 令和8年4月以降に購入し、購入から1年以内に申請する
+  where: 高齢者ふれあい課（申請書は松島庁舎・大矢野窓口センター・姫戸・龍ヶ岳の各支所でも受け取れる）
+  url: https://www.city.kamiamakusa.kumamoto.jp/q/aview/287/22651.html
+  confidence: high
+  amount: 購入費の半額、上限30,000円（新規に購入する1台分）
+- category: haikai
+  name: 認知症高齢者等見守りネットワーク事業（どこシル伝言板）
+  name_on_page: 上天草市認知症高齢者等見守りネットワーク事業
+  summary: 行方不明のおそれがある認知症高齢者等を事前登録し、二次元コード付きの見守りシールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請できるのは本人・家族・親族・後見人等・地域包括支援センター長
+  - 登録後に見守りシールが渡される
+  - 登録は無料。追加の見守りシールは有料
+  where: 高齢者ふれあい課 地域包括支援係
+  url: https://www.city.kamiamakusa.kumamoto.jp/q/aview/91/13084.html
+  confidence: high
+  amount: 登録は無料（追加の見守りシールは有料、金額の記載なし）
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用と、後見人への報酬の一部または全部を助成する。
+  who: {}
+  at_application:
+  - 介護・障害福祉サービスを利用する（しようとする）身寄りのない重度の認知症高齢者等
+  - 生活保護の被保護者かこれに準ずる人、または助成なしでは利用が困難
+  - 親族が後見人等の場合は報酬の助成の対象外
+  - 申立て費用は審判決定の翌日から60日以内に申請する
+  where: 高齢者ふれあい課 地域包括支援係（65歳以上の認知症高齢者）
+  url: https://www.city.kamiamakusa.kumamoto.jp/q/aview/91/6553.html
+  confidence: high
+  amount: 申立て費用（切手・印紙・診断書・鑑定）と後見人報酬。報酬は月額上限28,000円（施設入所は18,000円）
+not_found:
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- gaishutsu
+- jutaku
+- yutai

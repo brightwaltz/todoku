@@ -1,0 +1,83 @@
+city: '422126'
+name: 西海市
+site: www.city.saikai.nagasaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 要介護者配食サービス事業
+  name_on_page: 要介護者配食サービス事業
+  summary: 食の確保が難しく安否確認が必要な要介護の高齢者に、配食サービスを行う。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 単身世帯、高齢者のみの世帯またはこれに準ずる世帯の高齢者
+  - 心身の状況等により食の確保が困難で、安否確認が必要
+  - 居宅サービス計画書などを添えて申請する
+  where: 長寿介護課（西海市地域包括支援センター）（頁の問い合わせ先）
+  url: https://www.city.saikai.nagasaki.jp/bamen/kourei/10471.html
+  confidence: high
+- category: gaishutsu
+  name: 外出支援サービス事業（リフト付き車両の移送）
+  name_on_page: 西海市外出支援サービス事業
+  summary: 一般の交通機関が使えない高齢者などを、リフト付き車両で通院などへ送迎する。
+  who: {}
+  at_application:
+  - 市内に住所があり、一般の交通機関の利用が困難
+  - 65歳以上か要介護認定を受け、寝たきりまたは車いすを常時利用
+  - または60歳以上で、下肢不自由のため車いすを常時利用
+  - または重い身体障害者手帳の人で、寝たきり・車いすを常時利用
+  - 介護タクシー等助成・障害者等交通費助成の利用者は対象外
+  where: 長寿介護課、本庁市民課、各総合支所市民課（郵送可）。予約は市社会福祉協議会
+  url: https://www.city.saikai.nagasaki.jp/iryo/kaigo/9393.html
+  confidence: high
+  amount: 利用料は無料（駐車場料金等の実費を除く）
+- category: kinkyu-tsuho
+  name: 緊急通報体制等整備事業（緊急通報装置の設置）
+  name_on_page: 緊急通報体制等整備事業
+  summary: ひとり暮らしの高齢者などの自宅に、緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上の高齢者のみの世帯
+  - または身体障害者のみの世帯等に属する身体障害者
+  - 自宅に固定電話がある（設置できる）人
+  - 10分以内に駆け付けられる協力員を原則3名登録する
+  - 社会福祉協議会の実態把握調査のあと、設置の可否を審査
+  where: 長寿介護課
+  url: https://www.city.saikai.nagasaki.jp/iryo/kaigo/9610.html
+  confidence: high
+  amount: レンタルは月418円（設置時の基本料金6,468円）。購入は本体の3分の1（12,650円）と工事費10,780円
+- category: gaishutsu
+  name: 障害者等交通費助成事業（バス・船・タクシー券）
+  name_on_page: 西海市障害者等交通費助成事業
+  summary: 手帳のある人、要介護・要支援の人などに、バス券・船舶券・タクシー券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 市に住所がある在宅の人で、本人と世帯員に市税の滞納がない
+  - 身体・療育・精神の各手帳を持っている人
+  - または要介護・要支援の認定を受け、居宅・介護予防サービス計画のサービスを受けている人
+  - または特定の地区（西彼町上岳川山分区など）に住む75歳以上の人
+  where: 本庁市民課・各総合支所・出張所の窓口（電子申請も可、審査は福祉課）
+  url: https://www.city.saikai.nagasaki.jp/iryo/fukushi/2613.html
+  confidence: high
+  amount: 利用券は年額10,000円まで（バス券・船舶券・タクシー券）
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- haikai
+- ribiyo
+- shingu
+- jutaku
+- koken
+- mimamori

@@ -1,0 +1,174 @@
+city: '212105'
+name: 恵那市
+site: www.city.ena.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の購入助成
+  name_on_page: 介護用品の購入助成
+  summary: 常時おむつが必要な重度の要介護者を在宅で介護する非課税世帯に、購入券で費用を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3は主治医意見書で寝たきり度B・Cかつ尿失禁に該当
+  - 入院中や施設入所中の人は利用できない
+  where: 高齢福祉課、各振興事務所（継続の申請）
+  url: https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/2/1551.html
+  confidence: high
+  amount: 月1回まで。購入額7,000円を上限に購入額の9割を助成
+- category: haishoku
+  name: お元気見守り食事サービス（配食）
+  name_on_page: お元気見守り食事サービス
+  summary: 昼食の弁当を自宅に届け、手渡しで安否も確認する。週2回まで。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 見守りが必要で、事業対象者または要支援1・2の認定を受けた人
+  where: 担当のケアマネジャーに相談（高齢福祉課）
+  url: https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/2/1554.html
+  confidence: high
+  amount: 弁当代は実費（店ごとに価格が違う）
+- category: shingu
+  name: 寝具の消毒・乾燥サービス
+  name_on_page: 寝具消毒乾燥サービス
+  summary: 消毒乾燥車が自宅に来て、布団を干せない人の寝具を乾燥する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし・高齢者世帯、介護認定者や障がい者など
+  - 寝具の乾燥（布団干し）ができない人
+  - 介護者や見守り者が身近にいる場合は対象外
+  - 申請後に職員が自宅を訪問して調査する
+  where: ケアマネジャー、地域包括支援センター、高齢福祉課
+  url: https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/2/1553.html
+  confidence: high
+  amount: 1回230円、月1回
+- category: ribiyo
+  name: 訪問理容・美容サービス
+  name_on_page: 訪問理容・美容サービス
+  summary: 理容師・美容師が自宅に来てカットをする。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし・高齢者世帯、介護認定者や障がい者など
+  - 一般の理容・美容を利用することが困難な人
+  - 介護者や見守り者が身近にいる場合は対象外
+  - 申請後に職員が自宅を訪問して調査する
+  where: ケアマネジャー、地域包括支援センター、高齢福祉課
+  url: https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/2/1552.html
+  confidence: high
+  amount: 理容2,000円・美容2,500円（カットのみ）、月1回
+- category: kinkyu-tsuho
+  name: 緊急通報システムの機器貸与
+  name_on_page: 緊急通報体制などの整備（緊急通報システム）
+  summary: ボタンで消防署に直接通報できる機器を無料で貸し出し、月1回安否確認の電話もある。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上の一人暮らし
+  - 心疾患などで常に注意が必要、または介護認定や障がいで自力通報が難しい
+  - 様子を確認する協力員が3人必要
+  - 機器の設置に固定電話の回線が必要
+  where: 地域包括支援センター、ケアマネジャー
+  url: https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/2/1547.html
+  confidence: high
+  amount: 設置費用は無料（機器は貸与）
+- category: sonota
+  name: 安心お守りキットの設置
+  name_on_page: 安心お守りキット設置
+  summary: 救急情報を入れた容器を冷蔵庫に保管し、緊急時に救急隊が使えるようにする。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らしまたは65歳以上の高齢者世帯
+  - 意思疎通が困難な一人暮らしの人、療育手帳Aの人も対象
+  - 日中などに一人になる高齢者等で希望する人も対象
+  where: 民生児童委員、ケアマネジャー、高齢福祉課、各振興事務所
+  url: https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/2/1548.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 認知症高齢者等あんしん見守り登録（見守りシール・保険）
+  name_on_page: 恵那市認知症高齢者等あんしん見守り登録事業
+  summary: 行方不明のおそれがある人を登録し、QRの見守りシールや賠償保険加入を受けられる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になるおそれがある人（本人・家族が登録）
+  where: 地域包括支援センター
+  url: https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/1/6749.html
+  confidence: high
+  amount: 見守りシール30枚セットは初回無料。賠償保険は個人負担なし
+- category: haikai
+  name: GPS端末の購入費助成
+  name_on_page: GPS機器購入費の一部を助成します
+  summary: 認知症の人の位置検索端末の購入費やレンタル初期費用の一部を助成する。
+  who: {}
+  at_application:
+  - あんしん見守り登録事業に登録している
+  - 市税と介護保険料を滞納していない
+  - 利用開始から6カ月以内に申請する
+  where: 高齢福祉課
+  url: https://www.city.ena.lg.jp/life_scene/korei_kaigo/4796.html
+  confidence: high
+  amount: 上限10,000円、1人1回まで（月額利用料は対象外）
+  more_urls:
+  - https://www.city.ena.lg.jp/soshikiichiran/iryofukushibu/koreifukushika/1/5/1/6749.html
+- category: gaishutsu
+  name: 高齢者の公共交通利用券（令和8年度）
+  name_on_page: 令和8年度公共交通利用券（高齢者公共交通支援事業）
+  summary: バス・鉄道・タクシーの運賃に使える利用券を無料で交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 令和8年4月1日時点で市内に住民登録がある
+  - 4月2日以降に75歳になった人は対象外
+  where: 高齢福祉課、各振興事務所（郵送・ウェブも可）
+  url: https://www.city.ena.lg.jp/life_scene/korei_kaigo/20770.html
+  confidence: high
+  amount: 1人10,000円分（100円券100枚）。申請は令和9年3月1日まで
+- category: sonota
+  name: 温泉施設の利用料助成
+  name_on_page: 高齢者などの温泉施設利用助成
+  summary: 市内の温泉施設の利用券を交付し、利用料を一部助成する。
+  who: {}
+  at_application:
+  - 65歳以上の市民
+  - または要介護3以上の人と介助者1人
+  - または身体障害者手帳1〜3級・療育手帳A/B1の人と介助者1人
+  where: 高齢福祉課、各振興事務所
+  url: https://www.city.ena.lg.jp/life_scene/korei_kaigo/4795.html
+  confidence: high
+  amount: 1回1人300円。個人は年4回まで
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用や後見人への報酬を負担できない人に、市が費用を助成する。
+  who: {}
+  at_application:
+  - 申立て費用や後見人報酬の負担が困難な人
+  where: 地域包括支援センター
+  url: https://www.city.ena.lg.jp/kenko_iryo_fukushi/koreishafukushi/seikatsunosupport/5061.html
+  confidence: low
+not_found:
+- iro
+- hochoki
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai
+- mimamori

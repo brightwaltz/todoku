@@ -1,0 +1,182 @@
+city: '182087'
+name: あわら市
+site: www.city.awara.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給（介護用品支給）
+  name_on_page: 介護用品支給事業
+  summary: 在宅の要介護高齢者を介護する家族へ、紙おむつを月1回自宅に届けて支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護1〜3は一定の条件に当たる人のみ（主治医意見書等で確認）
+  - 市内の在宅で生活する65歳以上（第2号被保険者含むとも記載）
+  - 施設・グループホーム等の入居者は対象外
+  - 介護保険料を滞納している世帯は対象外
+  where: 健康長寿課 高齢福祉グループ（家族・ケアマネジャーからの申請も可）
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/p000360.html
+  confidence: high
+  amount: 月5,000円分まで（要介護1〜2）、7,000円分まで（要介護3〜5）。自己負担は非課税世帯が購入費の10分の1、課税世帯が3分の1
+  more_urls:
+  - https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/zaitakukeanoshiori_d/fil/siori.pdf
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業
+  summary: 週1回水曜の昼に弁当を自宅へ届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 調理が困難な高齢者のみの世帯
+  - 家族・民生委員・ケアマネ経由で申請
+  where: 健康長寿課 高齢福祉グループ（民生委員・ケアマネジャー・地域包括支援センター経由で申請）
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/p000314.html
+  confidence: high
+  amount: 1食あたり自己負担 市民税課税世帯500円、非課税世帯250円
+  more_urls:
+  - https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/zaitakukeanoshiori_d/fil/siori.pdf
+- category: haikai
+  name: 行方不明時の捜索協力の事前登録
+  name_on_page: あわら市安心生活ネットワーク事業
+  summary: 名前・特徴・写真を事前登録し、行方不明時に市や警察などが連携して捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者・知的障害者等で、一人歩きによる行方不明のおそれがある人
+  where: 健康長寿課 高齢福祉グループ
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/p008458.html
+  confidence: high
+  amount: 利用料なし
+- category: haikai
+  name: 見守りシール（二次元コード付き）の交付
+  name_on_page: あわら市見守りシール（どこシル伝言板）
+  summary: 二次元コード付きシールを衣服に貼り、発見者と家族が伝言板でやりとりできる。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明となるおそれがある人
+  - 安心生活ネットワーク事業の事前登録時に申し込む
+  where: 健康長寿課 高齢福祉グループ
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/p008458.html
+  confidence: high
+  amount: 無料（追加シールは50枚4,290円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制整備事業
+  summary: 緊急通報装置・ペンダント・生活反応センサーを貸与し、24時間体制で対応する。
+  who: {}
+  at_application:
+  - 定期的な安否確認が必要な、65歳以上の高齢者のみ世帯の人
+  - または、それに準じる世帯の人
+  - LTE回線型は携帯電話を持っていることが条件
+  where: 担当の民生委員を通じて健康長寿課へ申請
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/p000331.html
+  confidence: high
+  amount: 自己負担 月880円（電話回線型）、月1,393円（LTE回線型）
+  more_urls:
+  - https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/zaitakukeanoshiori_d/fil/siori.pdf
+- category: jutaku
+  name: 住宅改造費の上乗せ助成（介護保険対象外の改造）
+  name_on_page: 住まい環境整備支援事業
+  summary: 介護保険の給付対象外の改造（洗面台取替え・階段昇降機など）に助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護1・2は市の要件を満たし、市長が必要と認めた人のみ
+  - 工事前に事前相談・申請が必要
+  where: 健康長寿課 高齢福祉グループ
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/zaitakukeanoshiori_d/fil/siori.pdf
+  confidence: high
+  amount: 助成上限80万円（自己負担は所得に応じて対象経費の1〜3割）
+- category: hochoki
+  name: 軽度・中等度難聴高齢者の補聴器購入費助成
+  name_on_page: 軽度・中等度難聴高齢者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象外の難聴の高齢者に、補聴器本体の購入費を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 軽度・中等度難聴の高齢者
+  - 詳しい条件は市の頁で確認
+  where: 健康長寿課 高齢福祉グループ
+  url: https://www.city.awara.lg.jp/shitsumon/health-welfare/koureisya-kaigo/p015549.html
+  confidence: high
+- category: gaishutsu
+  name: 乗合タクシーの自宅までのタクシー助成券
+  name_on_page: 高齢者外出支援助成事業
+  summary: 乗合タクシー利用後、最寄り停留所から自宅まで200円で乗れる助成券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所があり、乗合タクシーの登録者
+  - 運転免許を持っていない人（返納済み、または取得歴なし）
+  where: 生活環境課 生活グループ
+  url: https://www.city.awara.lg.jp/mokuteki/life/life0701/p013336.html
+  confidence: high
+  amount: 助成券は月3枚（最大36枚綴）。利用時の自己負担は1回200円
+- category: mimamori
+  name: サポーターによる定期訪問・安否確認
+  name_on_page: 生活・介護支援サポーターの利用・養成について
+  summary: 登録サポーターが自宅を訪問し、話し相手や安否確認、環境整備をする。
+  who:
+    at_home: true
+  at_application:
+  - 市内の自宅で暮らす人で、次のいずれか
+  - 高齢者世帯／日中ひとりになる高齢者
+  - 第2号被保険者で要介護・要支援認定を受けた人
+  - その他、市長が利用を認めた人
+  where: 利用者登録届出書をコーディネーター経由で健康長寿課へ提出
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/kaisapo.html
+  confidence: high
+  amount: 無料（1回1時間以内、平日のみ）
+  more_urls:
+  - https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/zaitakukeanoshiori_d/fil/siori.pdf
+- category: sonota
+  name: 屋根雪下ろし・住宅前除雪の費用助成
+  name_on_page: 高齢者世帯等除雪支援事業
+  summary: 自力で除雪できない世帯の除雪費用の2分の1を助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 世帯が65歳以上・18歳未満・身体障害者3級以上のみで構成
+  - 自力で除雪できず、近隣に除雪を頼める親族等がいない
+  - 生活保護を受けていない。アパート等は対象外
+  - 屋根は積雪60cm以上、住宅前は30cm以上のとき
+  where: 健康長寿課 高齢福祉グループ
+  url: https://www.city.awara.lg.jp/mokuteki/health/health03/health0301/p000379.html
+  confidence: high
+  amount: 費用の2分の1。屋根雪下ろしは年7,000円、住宅前除雪は年3,000円まで
+not_found:
+- iro
+- koken
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

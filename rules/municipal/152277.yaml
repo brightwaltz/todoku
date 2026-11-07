@@ -1,0 +1,145 @@
+city: '152277'
+name: 胎内市
+site: www.city.tainai.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 食生活の援助が必要な高齢者世帯などに、栄養バランスのとれた食事を届ける。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者、高齢者のみ、高齢者と障がい者のみ等の世帯
+  - アセスメントで食生活の援助が必要と判断された人
+  where: 福祉介護課地域福祉係、または担当地区の地域包括支援センター
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 食材料費・調理費の一部が自己負担（市民税非課税世帯は減額あり）
+- category: gaishutsu
+  name: 外出支援（送迎）サービス
+  name_on_page: 外出支援サービス事業
+  summary: 公共交通を使えない高齢者を、車椅子等のまま乗れる車で医療機関などへ送迎する。
+  who: {}
+  at_application:
+  - 要介護3以上の人
+  - または おおむね65歳以上で常に車椅子・ストレッチャーが必要な人
+  - または おおむね65歳以上で移動に介助が要り、親族の送迎なし
+  - 付添いする人が必要
+  where: 福祉介護課地域福祉係（利用予約は胎内市社会福祉協議会）
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 利用料は無料、月2日まで（駐車料金・有料道路料金は自己負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 押しボタンで警備会社に通報できる装置を自宅に設置（貸与）する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者、またはひとり暮らしの障がい者
+  - 要支援1以上、または心臓・脳・糖尿病等の治療中か既往歴がある
+  - または 心身が虚弱で親族の支援を受けにくい
+  where: 福祉介護課地域福祉係
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 徘徊高齢者の検索システム
+  name_on_page: 徘徊高齢者検索システムの設置
+  summary: 徘徊のある認知症高齢者が携帯する発信機で、居場所を検索できるようにする。
+  who:
+    flags:
+    - wandering_risk
+    - dementia_diagnosis
+  at_application:
+  - おおむね65歳以上で徘徊行動のある認知症高齢者がいる世帯
+  - 世帯の合計収入が年間600万円未満
+  where: 福祉介護課地域福祉係
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 無料
+- category: shingu
+  name: 寝具の乾燥消毒（訪問）
+  name_on_page: 寝具乾燥消毒サービス事業
+  summary: 寝具の乾燥が難しい人の家を毎月訪問し、使っている寝具を乾燥消毒する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、高齢者世帯、寝たきりの人
+  - または 重度心身障がい者（児）。寝具の乾燥が困難な人
+  where: 福祉介護課地域福祉係
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 自己負担は1割（約160円）。寝たきり3か月以上や70歳以上のひとり暮らし・高齢者世帯は無料
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス助成事業
+  summary: 理美容店に行けない在宅の要介護者に、自宅への出張費を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 老衰や心身の障害、傷病で理美容店に行くのが困難
+  - 利用前に申請が必要。市内の店舗に限る
+  where: 福祉介護課地域福祉係
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 1回2,000円（年4回まで）
+- category: iro
+  name: 介護手当
+  name_on_page: 介護手当の支給
+  summary: 重度障がい者や要介護者を常時介護して仕事に就けない家族に手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 世帯員全員が市民税の所得割を課されていない
+  - 要介護3〜5（65歳以上）の人、または手帳1・2級等の人を3か月以上常時介護
+  - 介護のため仕事に就けない。施設入所・長期入院の人は対象外
+  - 月15日超のショートステイ利用月は支給停止
+  where: 福祉介護課地域福祉係
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 月額5,000円
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用と後見人等の報酬を、収入に応じて助成する。
+  who: {}
+  at_application:
+  - 認知症高齢者、知的障がい者または精神障がい者
+  - 親族がいない・不明、または親族がいても申立てができない
+  where: 福祉介護課 健康長寿推進係、障がい福祉係
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 収入に応じて費用の3分の2または全額（上限あり）
+- category: jutaku
+  name: 住宅整備の上乗せ補助
+  name_on_page: 高齢者・障害者向け住宅整備補助事業
+  summary: 介護保険の住宅改修に上乗せして、バリアフリー工事等の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 要支援1以上の認定（対象工事費30万円まで）
+  - または 身体障害者手帳1・2級、療育手帳Aの人（50万円まで）
+  - 前年の世帯収入が600万円を超える世帯は対象外
+  - 工事前に申請が必要
+  where: 福祉介護課地域福祉係
+  url: https://www.city.tainai.niigata.jp/kurashi/kenko/koresha/sekatsu.html
+  confidence: high
+  amount: 対象工事費の一部（収入・課税状況で補助率が変わる）
+not_found:
+- kaigo-yohin
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

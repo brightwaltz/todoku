@@ -1,0 +1,60 @@
+city: '402273'
+name: 嘉麻市
+site: www.city.kama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 西鉄グランドパス65・75の購入補助
+  name_on_page: 西鉄グランドパス65・75の購入補助事業
+  summary: 市内の65歳以上が西鉄バスの乗り放題定期券を買うとき、費用の一部が補助される。
+  who:
+    age_min: 65
+  at_application:
+  - 市内の65歳以上の方
+  - グランドパス75は75歳以上限定の定期券
+  - 1か月券は補助の対象外
+  - 本人確認書類が必要
+  where: 高齢者介護課、または各庁舎の市民サービス課（補助証明書を受け取る）
+  url: https://www.city.kama.lg.jp/soshiki/15/21207.html
+  confidence: high
+  amount: グランドパス65は3か月券4,500円・6か月券9,000円・1年券16,000円、75は3,500円・7,000円・13,000円を補助
+- category: gaishutsu
+  name: 高齢者交通支援証明書（市バス回数券をもう1冊）
+  name_on_page: 嘉麻市高齢者交通支援証明書
+  summary: 証明書のカードを見せて市バス回数券を買うと、回数券がもう1冊もらえる。
+  who:
+    age_min: 65
+  at_application:
+  - 嘉麻市に住民登録がある（申請時に65歳以上）
+  - 本人確認書類が必要
+  where: 高齢者介護課（本庁舎2階25番窓口）または各総合支所
+  url: https://www.city.kama.lg.jp/soshiki/15/40299.html
+  confidence: high
+  amount: 市バス回数券をもう1冊交付（証明書の有効期限は令和10年3月31日）
+- category: haishoku
+  name: 配食サービス（夕食・朝食を届け安否確認）
+  name_on_page: 嘉麻市配食サービス事業
+  summary: 食事の準備が難しい在宅の高齢者に、夕食や朝食を自宅へ届け、安否も確かめる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住むおおむね65歳以上の独居・高齢者のみ世帯等
+  - 重度障がい者等も対象
+  - 虚弱等で食事の準備が困難
+  - 市から利用決定を受けること
+  where: 高齢者介護課 高齢者支援係（市が利用を決定）
+  url: https://www.city.kama.lg.jp/uploaded/attachment/27470.pdf
+  confidence: low
+  more_urls:
+  - https://www.city.kama.lg.jp/site/kaigohoken/44920.html
+not_found:
+- koken
+- hochoki
+- mimamori
+- chusha
+- yutai

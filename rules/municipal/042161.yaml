@@ -1,0 +1,179 @@
+city: '042161'
+name: 富谷市
+site: www.tomiya-city.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給事業
+  summary: 常時おむつで排泄管理をしている在宅の方に、紙おむつを支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4・5で常時おむつの方、または失禁が多くおむつ中心の方
+  - 在宅の高齢者が対象
+  where: 保健福祉総合支援センター
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/jigyousya/kourei-ikigai.html
+  confidence: high
+  more_urls:
+  - https://www.tomiya-city.miyagi.jp/uploads/pdf/ec4c760cb1357ecc9ce23664580df98d2d7c1a47.pdf
+- category: haishoku
+  name: 給食サービス（配食・見守り）
+  name_on_page: 給食サービス事業
+  summary: ボランティアが食事を届け、見守り確認も行う。病態食の提供もある。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 一人暮らしや高齢者のみの世帯「等」が対象
+  - 目的は栄養の補完・低栄養の改善
+  where: 保健福祉総合支援センター、担当の地域包括支援センター・ケアマネジャー
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/jigyousya/kourei-ikigai.html
+  confidence: high
+  more_urls:
+  - https://www.tomiya-city.miyagi.jp/uploads/pdf/ec4c760cb1357ecc9ce23664580df98d2d7c1a47.pdf
+- category: haikai
+  name: 認知症高齢者等のGPS機器利用料の助成
+  name_on_page: 認知症高齢者等GPS機器利用助成事業
+  summary: 徘徊感知機器に付けて借りるGPS機器の、屋外の通信費を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 警察・消防・地域包括支援センター等との情報共有に同意する
+  - 介護保険の徘徊感知機器を借りている（申請に貸与契約書の写し）
+  - 市と契約した事業者の機器に限る
+  where: 保健福祉総合支援センター
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/shimin/6aecbe0e97f94fd42227c0f5eda6abe57a1f5a60.html
+  confidence: high
+  amount: 月額1,000円＋消費税相当額まで（補助金は事業者に交付）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成制度（令和８年度）
+  summary: 聞こえが低下した65歳以上の方の、補聴器本体の購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻科医が片耳40dB以上で補聴器が必要と認めた（意見書）
+  - 聴力の身体障害者手帳や補装具（補聴器）の支給がない
+  - 市税の滞納がない
+  - 初めて、または前回の助成から5年以上たっている
+  - 市の交付決定の前に買った補聴器は対象外
+  where: 保健福祉総合支援センター、地域包括支援センター
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/shimin/efd54cf735780d90ccdbdf18b59f575fc5e81937.html
+  confidence: high
+  amount: 補聴器本体の購入費に対し、1人1回、上限3万円（令和8年4月から）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（相談支援型）
+  name_on_page: 緊急通報システム(相談支援型)について
+  summary: ボタン1つで看護師等に健康相談や緊急対応を頼める装置を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者のみの世帯（概ね65歳以上）
+  - または、緊急対応が必要と認められる一人暮らしの障がい者
+  - 合鍵を協力員か委託事業者に預ける
+  where: 保健福祉総合支援センター
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/shimin/kintsuu01.html
+  confidence: high
+  amount: 月550円の自己負担（令和8年3月末までの利用決定者は420円。生活保護世帯は自己負担なし）
+- category: gaishutsu
+  name: 外出支援乗車証「とみぱす」
+  name_on_page: 外出支援乗車証「とみぱす」
+  summary: バス・地下鉄等の運賃を、年間2万円まで助成する乗車証を交付する。
+  who: {}
+  at_application:
+  - 70歳以上、または18歳以上の障害者手帳所持者、または60歳以上の免許自主返納者
+  - 本人が申請する（代理申請は不可）
+  - 福祉タクシー券・燃料費助成券を使っている方は利用できない
+  - 新規申請の受付は年1回（令和8年度は5〜6月）
+  where: 長寿福祉課
+  url: https://www.tomiya-city.miyagi.jp/information/2026/04/816c44c3369e0ee3b9d71198c3d8954d98f13eb4.html
+  confidence: high
+  amount: バス・地下鉄等の運賃を年間2万円分まで助成（1割は自己負担）
+- category: gaishutsu
+  name: 重度障がい者等福祉タクシー利用券（要介護3〜5を含む）
+  name_on_page: 富谷市重度障がい者等福祉タクシー利用券助成事業
+  summary: 公共交通の利用が難しい要介護3〜5の方などに、タクシー券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 重度の障がいや要介護状態で公共交通の利用が困難な方
+  - とみぱす・燃料費助成券の利用中の方、施設入所の方は対象外
+  where: 地域福祉課（市役所1階）
+  url: https://www.tomiya-city.miyagi.jp/kenkou/syougai/42cecdf56172d71da2b99326fd430b44ed2cbed1.html
+  confidence: high
+  more_urls:
+  - https://www.tomiya-city.miyagi.jp/uploads/pdf/ec4c760cb1357ecc9ce23664580df98d2d7c1a47.pdf
+- category: sonota
+  name: 元気回復ショートステイ（介護者の負担軽減）
+  name_on_page: 元気回復ショートステイ事業
+  summary: 介護者に代わり、施設で一時的に介護して家族の負担を軽くする。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3は、認知症高齢者の自立度がⅢ以上の方のみ
+  - 要介護4・5は条件なし
+  - 予約や申請は原則ケアマネジャーを通す
+  where: 保健福祉総合支援センター（ケアマネジャー経由）
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/shimin/ss02.html
+  confidence: high
+  amount: 年7日以内。原則無料（介護保険適用分のみ）
+  more_urls:
+  - https://www.tomiya-city.miyagi.jp/uploads/pdf/ec4c760cb1357ecc9ce23664580df98d2d7c1a47.pdf
+- category: sonota
+  name: 緊急ショートステイ（介護者の急な不在時）
+  name_on_page: 緊急ショートステイ事業
+  summary: 介護者が病気や災害で不在になる間、施設で一時的に受け入れる。
+  who:
+    at_home: true
+  at_application:
+  - 身体が虚弱で日常生活に支障のある概ね65歳以上の市民
+  - 要介護認定を受けていない方が対象
+  - 認定済みの方は介護保険のショートステイが優先
+  - 家族が病気・出産・冠婚葬祭・事故・災害で介護できないとき
+  where: 保健福祉総合支援センター
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/shimin/ss02.html
+  confidence: high
+  amount: 1日830円の自己負担。1回あたり原則7日以内
+- category: sonota
+  name: 敬老祝金・特別敬老祝金
+  name_on_page: 敬老祝金・特別敬老祝金
+  summary: 80・88・90歳の方に祝金、100歳の方に特別祝金を支給する。
+  who: {}
+  at_application:
+  - 4月1日現在で市内に住所があり、年度内に80・88・90歳になる方
+  - 100歳の特別祝金は市民歴などで金額が変わる（申請不要）
+  - 敬老祝金は、案内通知に同封の口座振込依頼書を返送する
+  where: 保健福祉総合支援センター
+  url: https://www.tomiya-city.miyagi.jp/kenkou/koureisyahukushi/shimin/610c4d5b22ac7b6d9923e3902cd5f4cf3c006f2d.html
+  confidence: high
+  amount: 80歳5,000円、88歳10,000円、90歳20,000円。100歳は3万〜30万円
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

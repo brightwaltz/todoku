@@ -1,0 +1,273 @@
+city: '142123'
+name: 厚木市
+site: www.city.atsugi.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等給付
+  summary: 紙おむつや尿とりパッドを現物で給付し、月4,000円分まで自己負担なし。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきり等高齢者登録者、または介護保険2号被保険者
+  - 6か月以上在宅で生活している
+  - 前年度の市民税が非課税
+  - 生活保護を受けている人は対象外
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/soshiki/fukushisomuka/30659.html
+  confidence: high
+  amount: 月4,000円分まで利用者負担なし。超えた分は自己負担。
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システム機器の貸与
+  name_on_page: 緊急通報システム
+  summary: 常時注意が必要な持病のあるひとり暮らし等の高齢者に、緊急通報機器を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 市内に住所があり、機器が使える通信環境がある
+  - ひとり暮らし高齢者登録者、または65歳以上のみの世帯
+  - 脳血管・心疾患・呼吸器疾患など常時注意が必要
+  - ひとり暮らし登録が未了なら先に登録する
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/13559.html
+  confidence: high
+  amount: LTE回線方式は月額1,100円。固定電話方式は電話料金が自己負担。
+- category: shingu
+  name: 寝具の乾燥消毒サービス
+  name_on_page: 寝具乾燥消毒サービス
+  summary: ねたきり等高齢者登録者の敷布団・掛布団・毛布を乾燥消毒する。
+  who: {}
+  at_application:
+  - ねたきり等高齢者登録者
+  - 事業実施年度の9月までに申請する
+  where: 福祉総合支援課（第2庁舎1階）
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/13558.html
+  confidence: high
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+- category: ribiyo
+  name: 理容・美容助成券の交付
+  name_on_page: 高齢者理髪サービス事業
+  summary: 登録した高齢者に、協力する理容店・美容店で使える助成券を年6枚交付する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし高齢者登録者、またはねたきり等高齢者登録者
+  - 前年度1月1日時点で市内に住んでいる
+  - 施設に入所していない
+  where: 福祉総合支援課（第2庁舎1階）、電子申請
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/10861.html
+  confidence: high
+  amount: ひとり暮らし登録者は1枚1,500円分、ねたきり登録者は出張費込みで1枚5,500円分。いずれも年6枚。
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/soshiki/fukushisomuka/50109.html
+- category: gaishutsu
+  name: 高齢者タクシー利用券
+  name_on_page: 高齢者タクシー助成事業のご案内
+  summary: 協定タクシー事業者で使える400円券を年48枚交付する。
+  who: {}
+  at_application:
+  - 70歳以上で運転免許がない人、または要介護3〜5の人
+  - 前年度1月1日現在、市内に住んでいる
+  - 特別養護老人ホーム入所者は対象外
+  - かなちゃんパス助成などとは重複して受けられない
+  where: 福祉総合支援課の窓口、電子申請
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/40521.html
+  confidence: high
+  amount: 1枚400円×48枚（年度内）
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+- category: gaishutsu
+  name: 高齢者バス割引乗車券（かなちゃんパス）の購入費助成
+  name_on_page: 令和8年度 高齢者バス割引乗車券（かなちゃんパス）購入についてのご案内
+  summary: 神奈川中央交通の高齢者バス割引乗車券の購入費を一部助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 令和8年1月1日現在、市の住民基本台帳に記録がある
+  - 令和8年度内に満70歳以上
+  - 特別養護老人ホーム入所者は対象外
+  - タクシー利用券などの交付を受けている人は対象外
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/36632.html
+  confidence: high
+  amount: 1年券・6か月券は最大2万円、3か月券は1万円（年度内2回）を助成。
+- category: haikai
+  name: 徘徊SOSネットワーク登録（見守りシール・位置情報端末）
+  name_on_page: 厚木市認知症高齢者等徘徊SOSネットワークシステム登録について
+  summary: 徘徊のおそれがある人を事前登録し、見守りシールと位置情報端末が使える。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 原則、市内に住所がある
+  - 高齢者のほか若年性認知症や障がいのある人も登録できる
+  - 顔写真と全身写真を各1枚付けて申請する
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/13600.html
+  confidence: high
+  amount: 見守りシールは無料。位置情報端末は月額242円（生活保護世帯は無料）。
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/55198.html
+  - https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/55176.html
+- category: hochoki
+  name: 補聴器の購入費助成
+  name_on_page: 自立支援用具購入費助成事業の御案内
+  summary: 75歳以上の在宅の人が補聴器を買ったとき、購入費を助成する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 市内店舗か地域包括支援センター紹介の店舗で購入した新品
+  - 購入日から1年以内に申請する
+  - 5年に1回まで助成
+  where: 福祉総合支援課
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/41073.html
+  confidence: high
+  amount: 補聴器は上限20,000円（消費税は対象外）
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+- category: nichijo-yogu
+  name: 杖・シルバーカー・電磁調理器の購入費助成
+  name_on_page: 自立支援用具購入費助成事業の御案内
+  summary: 75歳以上の在宅の人が杖・シルバーカー・卓上IHヒーターを買うとき助成する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 杖・シルバーカーは介護保険の対象外のものに限る
+  - 購入日から1年以内に申請する
+  - 領収書と振込先のわかる通帳などを持参する
+  where: 福祉総合支援課
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/41073.html
+  confidence: high
+  amount: 上限は杖1,500円、シルバーカー5,000円、電磁調理器5,000円。
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+- category: jutaku
+  name: セーフティ住宅支援事業（住宅改修の助成）
+  name_on_page: 厚木市セーフティ住宅支援事業
+  summary: 要介護認定のない75歳以上の人の手すり設置や段差解消などの改修費を一部助成する。
+  who:
+    age_min: 75
+  at_application:
+  - 介護保険の要介護・要支援の認定を受けていない
+  - 市内の工務店などによる工事に限る
+  - 工事を始める前に申請する
+  - 助成は一度限り
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/13580.html
+  confidence: low
+  amount: 対象経費（消費税を除く）の2分の1、上限3万円
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/81/koureisya.pdf
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見等利用支援事業について
+  summary: 費用の負担が難しい生活保護世帯等に、成年後見の申立費用や後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護利用世帯など、助成がないと後見制度を使えない人
+  - 報酬助成は市長・本人・親族の申立てのいずれも対象
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/material/files/group/81/koureisya.pdf
+  confidence: low
+  amount: 申立費用は実費相当分。報酬助成の金額は載っていない。
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり・きゅう・マッサージ施術費助成事業
+  summary: 75歳以上またはねたきり等登録者に、施術費の助成券を年7枚交付する。
+  who: {}
+  at_application:
+  - 年度内に75歳以上、またはねたきり等高齢者登録者
+  - 令和8年1月1日現在、市内に住んでいる
+  where: 福祉総合支援課（第2庁舎1階）、電子申請
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/10856.html
+  confidence: low
+  amount: 75歳以上は1枚1,800円、ねたきり登録者は1枚3,000円。いずれも年7枚。
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/soshiki/fukushisomuka/50109.html
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+- category: sonota
+  name: 家具転倒防止板の無料設置
+  name_on_page: 家具転倒防止対策事業
+  summary: 対象の高齢者世帯のタンスなどに、家具転倒防止板を無料で設置する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし登録者で前年度市民税非課税
+  - または、ねたきり等登録者を含む65歳以上のみの世帯
+  - 床置き型の家具が対象（冷蔵庫・テレビなどは不可）
+  - 9月までに申請する
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/13561.html
+  confidence: low
+  amount: 設置費用は無料（台数制限あり）
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/81/koureisya.pdf
+- category: sonota
+  name: 保養施設等の利用助成券
+  name_on_page: シルバーチケット(保養施設等利用助成券)のご案内
+  summary: 65歳以上の人に、市内の指定保養施設などの利用料を一部または全額助成する券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 令和8年1月1日現在、市内に住んでいる
+  - 原則、本人へ郵送で交付
+  where: 福祉総合支援課（第2庁舎1階）、電子申請
+  url: https://www.city.atsugi.kanagawa.jp/iryo_fukushi/koreisha/1/40275.html
+  confidence: low
+  amount: 宿泊1泊1,500円、日帰り1回1,000円、入浴1回500円など（令和7年度の冊子の値）。
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/81/koureisya.pdf
+- category: sonota
+  name: 高齢者緊急一時保護
+  name_on_page: 高齢者緊急一時保護
+  summary: 介護する家族の入院などで在宅生活が難しくなった高齢者を、緊急に一時保護する。
+  who: {}
+  at_application:
+  - 日常生活の自立度が低く、家庭での生活が困難な高齢者
+  - 介護保険の認定を受けていなくても利用できる
+  where: 福祉総合支援課 福祉相談係
+  url: https://www.city.atsugi.kanagawa.jp/material/files/group/81/koureisya.pdf
+  confidence: low
+  amount: 介護報酬相当額の1割と食事代等の実費。生活保護世帯は食事代等のみ。
+  more_urls:
+  - https://www.city.atsugi.kanagawa.jp/material/files/group/16/0421.pdf
+- category: sonota
+  name: 外国籍高齢者等への福祉給付金
+  name_on_page: 外国籍高齢者等福祉給付金支給事業
+  summary: 国民年金の要件を満たせなかった外国籍等の高齢者に、月額の福祉給付金を支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 国籍・居住要件で国民年金に入れず、公的年金を受けていない
+  - 昭和61年3月31日以前から日本に居住し、市に住民登録がある
+  - 生年月日などの区分あり（冊子参照）
+  - 支給停止要件や所得制限がある
+  where: 福祉総合支援課 福祉サービス係
+  url: https://www.city.atsugi.kanagawa.jp/material/files/group/81/koureisya.pdf
+  confidence: low
+  amount: 月額20,000円
+not_found:
+- haishoku
+- mimamori
+- chusha
+- yutai

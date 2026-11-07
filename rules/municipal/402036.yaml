@@ -1,0 +1,207 @@
+city: '402036'
+name: 久留米市
+site: www.city.kurume.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 一般高齢者配食サービス
+  name_on_page: 一般高齢者配食サービス
+  summary: 炊事や買い物が難しい要介護の方に、昼と夕の食事を届け、状態も確認する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内在住
+  - 体力低下などで炊事や買い物が困難
+  - 実質同居や近隣に家族がいる場合は対象外
+  where: 長寿支援課、各総合支所市民福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/koureisyahaisyoku.html
+  confidence: high
+  amount: 1日2食まで・週6日以内。1食あたり非課税世帯550円、課税世帯750円
+  more_urls:
+  - https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 一人暮らしの方に緊急通報機器とセンサーを貸し出し、警備会社が安否確認や駆けつけをする。
+  who:
+    household:
+    - alone
+  at_application:
+  - 概ね65歳以上で慢性疾患等により常時注意を要する方
+  - または75歳以上で常時注意が必要な方
+  - または身体障害者手帳1・2級の方
+  - 自宅の合鍵を警備業者に預ける
+  where: ケアマネジャーまたは地域包括支援センターを通じて申請（長寿支援課）
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/kinkyu.html
+  confidence: high
+  amount: 自己負担は月額0〜1,700円（課税区分と回線方式による）
+  more_urls:
+  - https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 日常生活用具給付サービス
+  summary: 市民税非課税世帯の在宅高齢者に、電磁調理器・自動消火器・火災警報器を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 概ね65歳以上で市に住民票がある
+  - 用具が日常生活上必要と認められる
+  - 品目ごとに防火上の配慮や火災初期対応の困難が要件
+  where: 長寿支援課、各総合支所市民福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/seikatsuyougu.html
+  confidence: high
+  amount: 限度額は電磁調理器16,000円、火災警報器15,500円、自動消火器28,700円
+  more_urls:
+  - https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成
+  name_on_page: 介護用品支給事業
+  summary: 要介護3以上でおむつが常時必要な非課税世帯の在宅の方に、紙おむつ購入の給付券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 久留米市の介護保険被保険者
+  - 生活保護を受けていない
+  where: 長寿支援課、各総合支所市民福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/shikyu.html
+  confidence: high
+  amount: 月額3,000円分の介護用品給付券
+  more_urls:
+  - https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の方を介護保険サービスをほぼ使わず在宅で介護した家族に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 本人と介護者が市に住民票があり、同居か同居に準ずる
+  - 本人・介護者とも介護保険料を滞納していない
+  - 1年以上在宅で介護していた
+  - 対象期間の介護サービス利用がほぼない（年10日以内）
+  - 介護者が生活保護を受けていない
+  where: 長寿支援課、各総合支所市民福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/iroukin.html
+  confidence: high
+  amount: 年間12万円まで（30日超の入院があれば減額）
+  more_urls:
+  - https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+- category: koken
+  name: 成年後見制度利用支援（申立費用・報酬の補助）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に難しい生活保護の方などに、後見の申立て費用や後見人への報酬を補助する。
+  who: {}
+  at_application:
+  - 申立費用は生活保護受給者が対象
+  - 報酬は生活保護受給者か、報酬を払うと生活保護に該当する人
+  - 後見人が配偶者・親族の場合、報酬補助は対象外
+  where: 長寿支援課、障害者福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/riyousienjigyou20160725.html
+  confidence: high
+  amount: 報酬補助は月額の上限が在宅28,000円、施設入所18,000円
+- category: haikai
+  name: 行方不明高齢者の位置情報検索（GPS等）の利用補助
+  name_on_page: 久留米市行方不明高齢者等位置情報検索サービス利用補助金
+  summary: 行方不明の恐れがある認知症の方を介護する家族に、GPS機器などの初期費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内の65歳以上の認知症の方を介護する家族等
+  - または市内の40〜64歳で初老期認知症により介護認定を受けた方の家族等
+  - GPS等の機器を使う（携帯電話・スマホは除く）
+  - 契約や購入の前に申請して交付決定を受ける
+  where: 長寿支援課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/2017-1003-1050-34.html
+  confidence: high
+  amount: 初期費用に対し上限28,000円
+  more_urls:
+  - https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+- category: haikai
+  name: 高齢者あんしん登録制度
+  name_on_page: 久留米市高齢者あんしん登録制度
+  summary: 行方不明の恐れのある方の情報を事前登録し、捜索や身元確認に備える。緊急連絡用シールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる恐れのある高齢者等
+  where: 長寿支援課、各総合支所市民福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/2018-0329-2258-34.html
+  confidence: high
+  amount: 緊急連絡用シール（アイロンプリント）10枚を無料で配布
+  more_urls:
+  - https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+- category: jutaku
+  name: 住宅改造費の助成（介護保険の住宅改修の上乗せ）
+  name_on_page: 住宅改造費の助成
+  summary: 介護保険の住宅改修20万円を使い切った非課税世帯などの改造費を、一部助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市民税非課税世帯で介護保険の住宅改修20万円を使い切った場合等に限る
+  - 老朽部分の補修、新築、増築は対象外
+  - まず担当のケアマネジャーに相談
+  where: 介護保険課、各総合支所市民福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3030kaigoseido/files/R8koreisyashienpamphlet.pdf.pdf
+  confidence: low
+  amount: 上限30万円（超えた分は自己負担）
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ
+  summary: 家族の不在などで留守番が不安な認定を受けていない高齢者が、短期間施設に泊まれる。
+  who: {}
+  at_application:
+  - 市内在住で概ね65歳以上
+  - 要介護・要支援の認定を受けていない
+  - 高齢者福祉施設に一時的に入所する必要がある
+  where: 長寿支援課、地域包括支援センター、各総合支所市民福祉課
+  url: https://www.city.kurume.fukuoka.jp/1070kenkou/2030koureikaigo/3010kourei/short.html
+  confidence: high
+  amount: 原則30日間に1回7日まで。1日2,333円または2,627円（生活保護世帯は1,882円）
+not_found:
+- shingu
+- ribiyo
+- hochoki
+- gaishutsu

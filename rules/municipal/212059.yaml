@@ -1,0 +1,187 @@
+city: '212059'
+name: 関市
+site: www.city.seki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者の紙おむつ購入助成
+  name_on_page: 関市在宅高齢者紙おむつ購入助成事業
+  summary: 常時紙おむつを使う要介護3以上の在宅高齢者に、購入助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 関市に住所がある
+  - ケアマネジャーの記名押印による証明が必要
+  - 入院・入所（ショートステイ含む）が月8日以上ある月は対象外
+  where: 高齢福祉課、各地域事務所（西部支所を除く）
+  url: https://www.city.seki.lg.jp/0000016713.html
+  confidence: high
+  amount: 月 4,000 円分（年間最大 48,000 円）
+- category: haishoku
+  name: 配食サービス（安否確認つき昼食の配達）
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい高齢者に昼食の弁当を手渡しで届け、安否も確認する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし高齢者または高齢者世帯等で調理が困難
+  - 前年所得税が非課税の世帯
+  - 弁当の受け取り時に自宅にいる必要がある
+  where: 高齢福祉課、居住地の事務所・包括支援センター
+  url: https://www.city.seki.lg.jp/0000016744.html
+  confidence: high
+  amount: 利用者負担は弁当 1 食 500 円
+- category: haikai
+  name: 高齢者等見守りシールの交付
+  name_on_page: 関市高齢者等見守りシール交付事業
+  summary: 行方不明のおそれがある方に、QRコードつきの見守りシールを無料で交付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる可能性がある
+  - QRコードを読めるスマホ等とメールアドレスが必要
+  - GPSではなく、市が捜索するサービスでもない
+  where: 高齢福祉課、地域事務所
+  url: https://www.city.seki.lg.jp/0000014065.html
+  confidence: high
+  amount: 無料（賠償責任補償制度にも無料で登録できる）
+- category: iro
+  name: ねたきり高齢者を介護する家族への慰労（せきチケ交付）
+  name_on_page: ねたきり高齢者等介護者慰労事業
+  summary: 在宅で常時介護している同一世帯の介護者に、地域経済応援券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 年齢と要介護度は介護を受ける高齢者の条件
+  - 申請者は過去6か月同一世帯で、介護保険サービスを使わず介護
+  - 6か月のうち入院8日以上、保険料滞納の場合は対象外
+  where: 高齢福祉課
+  url: https://www.city.seki.lg.jp/0000000795.html
+  confidence: high
+  amount: 6か月あたり関市地域経済応援券（せきチケ）30,000円分
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立ての費用負担、親族等の申立費用の支援金、後見人報酬の支援金がある。
+  who: {}
+  at_application:
+  - 判断能力が十分でない方（認知機能低下、障害等）が対象
+  - 市内に住所がある等の要件
+  - 報酬支援は、報酬の支払いが困難なことが条件（資産額を考慮）
+  where: 関市権利擁護センター（福祉政策課内）
+  url: https://www.city.seki.lg.jp/0000020188.html
+  confidence: high
+  amount: 申立費用の支援金。報酬は家庭裁判所が決めた額を上限に支援
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 手帳の対象外で聞こえにくい非課税世帯の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力40dB以上で身体障害者手帳の対象外
+  - 医師が補聴器の装用を必要と判断（医師意見書が必要）
+  - 購入前に申請。5年以内に市の助成を受けていない
+  - 市税等を滞納していない
+  where: 高齢福祉課、地域事務所（西部支所を除く）
+  url: https://www.city.seki.lg.jp/0000019692.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限 40,000 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置
+  name_on_page: 緊急通報システム事業
+  summary: 非常ボタンでコールセンターに自動通報される機器を設置する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者、または身体障害者1〜3級のみの世帯
+  - 担当地区の民生委員の証明が必要
+  - 協力員を3名程度依頼する必要がある
+  where: 高齢福祉課、居住地の事務所
+  url: https://www.city.seki.lg.jp/0000000789.html
+  confidence: high
+  amount: 固定型は無料。携帯型は所得に応じ月0〜500円（通話料は自己負担）
+- category: jutaku
+  name: 住宅改善費の上乗せ助成
+  name_on_page: 高齢者いきいき住宅改善助成事業
+  summary: 介護保険の住宅改修と合わせて、段差解消や手すり設置などの費用を一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護保険の住宅改修を行う方
+  - 介護保険を優先して使う
+  - 1戸の住宅につき1回のみ
+  - 所得に応じて利用者負担（0〜40%）がある
+  where: 高齢福祉課
+  url: https://www.city.seki.lg.jp/0000000773.html
+  confidence: high
+  amount: 25万円を限度に、利用者負担額を引いた額
+- category: ribiyo
+  name: 訪問理美容の費用助成
+  name_on_page: 訪問理美容サービス費用助成事業
+  summary: 外出が難しい方が自宅で理美容を受けるときに使う助成券を交付する。
+  who: {}
+  at_application:
+  - 要介護1〜5の認定を受けている方
+  - または、身体障害者手帳があり、寝たきりか常時車椅子の方
+  - 市税等を滞納していない
+  - 市の登録理美容者が自宅で行うサービスのみ対象
+  where: 高齢福祉課、福祉政策課、地域事務所（西部支所を除く）
+  url: https://www.city.seki.lg.jp/0000019378.html
+  confidence: high
+  amount: 2,000円券を申請月により年4〜1枚交付（4〜6月申請は4枚）
+- category: sonota
+  name: 温泉施設の入浴割引券の交付
+  name_on_page: 高齢者いきいきふれあい入浴助成事業
+  summary: 市内の温泉施設で使える入浴料300円割引の券を年12枚交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - 老人福祉施設の入所者は除く
+  - 申請時に身分証明書が必要
+  where: 高齢福祉課、居住地の地域事務所（西部支所を除く）
+  url: https://www.city.seki.lg.jp/0000006007.html
+  confidence: high
+  amount: 利用1回につき300円割引、年度に12枚
+not_found:
+- shingu
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

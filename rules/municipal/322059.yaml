@@ -1,0 +1,53 @@
+city: '322059'
+name: 大田市
+site: www.city.oda.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の要介護者を在宅で介護する家族に、紙おむつ等の介護用品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、要介護者を自宅で介護している家族
+  - 介護者世帯と要介護者世帯がともに市民税非課税
+  - 入所中・入院中の人は申請できない
+  - 購入前に申請し、受給者証の交付を受ける
+  where: 介護保険課
+  url: https://www.city.oda.lg.jp/ohda_city/city_organization/24a/40/8309
+  confidence: high
+  amount: 月 8,000 円分まで（現金の支給ではない）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 大田市高齢者補聴器購入費助成金
+  summary: 聴覚の身体障害者手帳の対象にならない 65 歳以上の人の補聴器購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付を受けておらず、該当にもならない
+  - 市町村民税が非課税、または生活保護を受けている
+  - 医師の意見書が必要（両耳 40 デシベル以上などの確認）
+  where: 市（担当課は申請書の頁では未確認）
+  url: https://www.city.oda.lg.jp/files/original/202603171125412069059623d.pdf
+  confidence: low
+not_found:
+- haishoku
+- kinkyu-tsuho
+- ribiyo
+- gaishutsu
+- mimamori
+- haikai
+- jutaku

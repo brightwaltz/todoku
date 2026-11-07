@@ -1,0 +1,186 @@
+city: '112372'
+name: 三郷市
+site: www.city.misato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重度の要介護高齢者を在宅で介護した同居家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 年齢は介護される方が65歳以上
+  - 要介護4・5の状態が1年以上続いている
+  - 申請前1年間、介護保険サービス未利用（ショート年1週間程度は可）
+  - 申請前1年間に概ね3か月以上の長期入院がない
+  - 介護される方が生活保護を受けていない
+  where: 長寿いきがい課 長寿いきがい係
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/1234.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 通報ボタンで受信センターにつながる緊急通報装置を市が貸与する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし高齢者等で、緊急時の連絡が困難な方
+  where: 地域包括支援センター
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/1131.html
+  confidence: high
+  amount: 月額200円（市民税非課税世帯は免除。通話料等は自己負担）
+- category: haishoku
+  name: 見守り配食
+  name_on_page: 見守り配食サービス
+  summary: 昼食か夕食を届け、あわせて安否を確認する。週5食まで。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきりや虚弱な一人暮らし高齢者等
+  - 日常的に食事の確保が困難な方
+  where: 地域包括支援センター
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/1076.html
+  confidence: high
+  amount: 1食あたりの負担額は事業者により異なる（6社から選択）
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給
+  summary: 常時おむつが必要な在宅の高齢者等に、紙おむつを毎月配達する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で要介護3〜5、または排泄が全介助と認定された方
+  - 市内に居住し、生活保護を受けていない
+  - 介護保険施設に入所していない
+  where: 長寿いきがい課 長寿いきがい係
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/802.html
+  confidence: high
+  amount: 6,500円分までは1割負担、超過分は自己負担。非課税世帯は6,500円分まで免除
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容サービス
+  summary: 市指定の理美容店が自宅を訪れ、調髪や顔そりをする。年2回まで。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 理髪店や美容院に行くことが困難な方
+  - 介護保険施設に入所していない
+  - 三郷市の第1号被保険者
+  where: 長寿いきがい課窓口（郵送も可）
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/333.html
+  confidence: high
+  amount: 基本サービスは無料（パーマ・毛染め等は実費）
+- category: haikai
+  name: 徘徊高齢者の探索システム利用料助成
+  name_on_page: 徘徊高齢者等探索システム
+  summary: 探索システムの申込料と月額利用料の一部を、介護する家族に助成する。
+  who: {}
+  at_application:
+  - 申請は介護する市内在住の家族
+  - 65歳以上の在宅の徘徊高齢者で、利用が必要と認められる方
+  - または初老期の認知症で市長が特に必要と認める方
+  where: 地域包括支援センター
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/125.html
+  confidence: high
+  amount: 申込料11,000円のうち7,500円、月額3,410円のうち2,790円を助成
+- category: haikai
+  name: 高齢者等SOSネットワークへの登録
+  name_on_page: 高齢者等SOSネットワーク
+  summary: 自宅に戻れなくなった時に備え、見守りシールで登録者を保護・連絡する。
+  who: {}
+  at_application:
+  - 市内在住で次のいずれか：認知症と診断された40歳以上の方
+  - 所在不明になるおそれのある障がい者
+  - 市内事業者で介護保険サービスを利用している方 等
+  where: 長寿いきがい課（登録票を提出）
+  url: https://www.city.misato.lg.jp/kenko_iryo_fukushi/koreishafukushi/koreishafukushi/5/7376.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立費用助成
+  name_on_page: 申立費用の助成
+  summary: 後見開始の審判請求にかかった手数料や鑑定料などを助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある成年被後見人等で、請求は本人か4親等内親族
+  - 住民税非課税で助成がないと利用困難、または生活保護等の受給
+  - 世帯に費用を負担できる収入・資産があると対象外
+  where: 長寿いきがい課 長寿いきがい係
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/seinenkoukenseido/12254.html
+  confidence: low
+  amount: 手数料、登記印紙代、鑑定料、診断書作成費用など申立てに必要な費用
+- category: sonota
+  name: 老人福祉電話の貸与
+  name_on_page: 老人福祉電話
+  summary: 電話の設置が経済的に難しいひとり暮らし高齢者等に電話を貸与する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし、または寝たきり・認知症の方がいる高齢者世帯
+  - 老齢福祉年金受給で世帯全員非課税、生活保護受給、または非課税で収入基準以下
+  - 貸与台数に限りがあり断られる場合あり
+  where: 長寿いきがい課 長寿いきがい係
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/124.html
+  confidence: high
+  amount: 設置料・基本料は無料（通話料は自己負担）
+- category: sonota
+  name: 軽度生活援助（ホームヘルパー派遣）
+  name_on_page: 軽度生活援助
+  summary: ホームヘルパーが簡単な家事などの生活援助を行う。週1〜2回。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護の認定を受けておらず、家事援助が必要な方
+  where: 地域包括支援センター
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/1116.html
+  confidence: high
+  amount: 1時間あたり200円（最長6か月、延長可）
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットの配布
+  summary: かかりつけ医や服薬情報を入れて冷蔵庫に保管するキットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、障がい者と同居の65歳以上の方など
+  where: 長寿いきがい課窓口（民生委員経由の配布もあり）
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/chojuikigai/6/1163.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 介護保険利用料の助成
+  name_on_page: 三郷市介護保険利用料助成
+  summary: 低所得世帯に、介護保険サービスの利用者負担の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 世帯の年間収入が単身80万円以下（1人増ごとに80万円加算）
+  - 世帯の預貯金等が単身350万円以下（1人増ごとに100万円加算）
+  - 活用できる資産がなく、親族の扶養・仕送りを受けていない
+  - 生活保護受給中、保険料滞納、給付制限中の方は除く
+  where: 介護保険課
+  url: https://www.city.misato.lg.jp/soshiki/ikiikikenko/kaigohoken/kaigosa-bisunikannsurukoto/1205.html
+  confidence: low
+  amount: 利用者負担額の2分の1（第1段階）、3分の1（第2・3段階、第2号被保険者）
+not_found:
+- hochoki
+- jutaku
+- shingu
+- gaishutsu

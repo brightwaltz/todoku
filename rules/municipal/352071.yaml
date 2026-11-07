@@ -1,0 +1,90 @@
+city: '352071'
+name: 下松市
+site: www.city.kudamatsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅の寝たきり高齢者等への紙おむつ給付
+  name_on_page: 在宅高齢者等紙おむつ給付事業
+  summary: 在宅で常時失禁状態の寝たきり高齢者等に、紙おむつを年2回届ける。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上で市内に住民登録がある
+  - 要介護3以上＋自立度の基準、または要介護1・2＋基準の両方
+  - 上記以外は寝たきりかつ常時失禁で、医師の診断書が必要
+  - 施設入所中・入院中の人は対象外
+  where: 高齢福祉課長寿支援係（1階10番窓口）。申請は年2回（5月・9月）
+  url: https://www.city.kudamatsu.lg.jp/chouju/kamiomutsu.html
+  confidence: high
+  amount: 1回1万円分の紙おむつを年2回（8月上旬・12月上旬）自宅へ届ける
+- category: gaishutsu
+  name: 高齢者バス・タクシー利用助成券
+  name_on_page: 高齢者バス・タクシー利用助成事業
+  summary: 70歳以上に、路線バスとタクシーで使える運賃200円引きの助成券を交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 高齢福祉課長寿支援係（1階10番窓口）、出張所（久保・花岡・笠戸島・米川）。郵送・申込フォームも可
+  url: https://www.city.kudamatsu.lg.jp/chouju/shien/koureisyabustaxi.html
+  confidence: high
+  amount: 助成券1枚200円分（枚数は申請月で変わる）
+- category: kinkyu-tsuho
+  name: 高齢者等見守り通報システム（緊急通報）
+  name_on_page: 高齢者等見守り通報システム事業
+  summary: 24時間対応の受信センターにつながる緊急通報と、月1回程度の電話確認が使える。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 健康上注意を要する状態にある人など
+  - 申請書に民生委員の意見が必要
+  where: 高齢福祉課長寿支援係（1階11番窓口）
+  url: https://www.city.kudamatsu.lg.jp/chouju/shien/kinnkyuutuuhousouti.html
+  confidence: high
+  amount: 利用料は月700円（住民税非課税世帯は免除）。設置工事費は無料（FAQ）
+  more_urls:
+  - https://www.city.kudamatsu.lg.jp/chouju/faq/004.html
+- category: haikai
+  name: くだまつ絆ネット（事前登録・見守りシール）
+  name_on_page: くだまつ絆ネット
+  summary: 帰宅が難しくなるおそれのある人を市と警察に事前登録し、見守りシールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住
+  - 認知症などで家に帰れなくなるおそれがある高齢者等
+  where: 高齢福祉課長寿支援係（10番窓口）
+  url: https://www.city.kudamatsu.lg.jp/chouju/houkatsu/kudamatsuizunanetto.html
+  confidence: high
+  amount: 見守りシール1シート（20枚入り）を渡す
+- category: sonota
+  name: はり・きゅう施術費の一部助成
+  name_on_page: はり及びきゅう施術費の助成
+  summary: 市指定の施術所ではり・きゅうを受けると、施術費の一部を市が助成する。
+  who: {}
+  at_application:
+  - 市内在住の満70歳以上、または後期高齢者医療の被保険者
+  - 社会保険など加入の70〜74歳は受給資格者証が必要
+  where: 高齢福祉課長寿支援係（1階10番窓口）で受給資格者証を申請
+  url: https://www.city.kudamatsu.lg.jp/chouju/shien/harikyu.html
+  confidence: high
+  amount: はり700円・きゅう500円・併用1,000円（1回あたり、月15回まで）
+not_found:
+- haishoku
+- koken
+- hochoki
+- shingu
+- mimamori
+- chusha
+- yutai

@@ -1,0 +1,157 @@
+city: '112011'
+name: 川越市
+site: www.city.kawagoe.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの自宅配送
+  name_on_page: 紙おむつ給付事業（高齢者福祉）
+  summary: 常に失禁がある在宅の要介護の方に、紙おむつを毎月自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、常時失禁の状態にある
+  - 要介護4・5、または要介護1〜3で市の調査により要件に該当
+  - 特養・老健などの施設に入所していない
+  where: 高齢者いきがい課（申請書は電子申請も可）
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006705/1006717.html
+  confidence: high
+  amount: 月額 5,000 円の範囲内の紙おむつを月 1 回配送
+- category: haishoku
+  name: 在宅高齢者への配食と安否確認
+  name_on_page: 在宅高齢者配食サービス事業
+  summary: 調理や買い物が難しい高齢者に、食事を届けて安否も確認する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所があり、老衰・心身の障害・傷病で調理や買い物が困難
+  - ひとり暮らし、または家族が病気・就労等で食事支援が難しい
+  where: 高齢者いきがい課（申請書は電子申請も可）
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006705/1006716.html
+  confidence: high
+  amount: 1 食 500 円の自己負担。昼か夕の 1 日 1 食、週 4 回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム（高齢者福祉）
+  summary: 緊急時に消防本部へ通報できる装置を、ひとり暮らしの高齢者等に貸す。
+  who:
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - おおむね65歳以上
+  - 慢性疾患で日常生活に注意が必要
+  - ひとり暮らし、または日中おおむね8時間以上ひとりになる
+  - 電話に加入している
+  where: 高齢者いきがい課
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006705/1006714.html
+  confidence: high
+  amount: 日中独居で世帯の生計中心者が所得税課税なら自己負担あり
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容店に行けない要支援・要介護の方の自宅で調髪などをする。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、身体機能の低下や病気で理美容店へ行くのが困難
+  where: 高齢者いきがい課
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006705/1006711.html
+  confidence: high
+  amount: 1 回 2,000 円（調髪・カットのみの場合）。年度内 4 回まで
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の方を在宅で介護している家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、要介護4か5が続いている
+  - 過去1年間、介護保険サービスを使っていない（短期入所は年7日以内なら可）
+  - 要介護者と家族の双方が市民税非課税世帯
+  - 毎年度申請が必要
+  where: 高齢者いきがい課 高齢者いきがい担当
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006689.html
+  confidence: high
+  amount: 年度につき 10 万円（1 回）
+- category: sonota
+  name: 要介護高齢者への手当
+  name_on_page: 要介護高齢者手当支給事業
+  summary: 在宅で要介護3〜5の高齢者本人に、手当を年3回に分けて振り込む。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があり、川越市の介護保険の被保険者
+  - 特養・老健などの施設に入所していない
+  - グループホームや介護付有料老人ホーム等を利用していない
+  where: 高齢者いきがい課（変更・申請は電子申請も可）
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006693.html
+  confidence: high
+  amount: 月額 8,000 円（4月・8月・12月末に 4 か月分ずつ振込）
+- category: jutaku
+  name: 高齢者の居宅改善費の助成
+  name_on_page: 居宅改善費助成
+  summary: 要介護・要支援認定のない高齢者の手すり設置などの工事費を一部助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に1年以上引き続き居住している
+  - 本人と同居者が要介護・要支援の認定を受けていない
+  - 本人と同居者の市民税所得割額がそれぞれ10万円以下
+  - 同じ居宅で過去に同事業の助成を受けていない
+  where: 高齢者いきがい課
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006705/1006715.html
+  confidence: high
+  amount: 対象経費の 3 分の 1 以内、10 万円まで
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付、老人用電話の貸与
+  name_on_page: 日常生活用具給付等事業
+  summary: 要介護の方やひとり暮らしの高齢者に、火災警報器等を給付し電話回線を貸す。
+  who:
+    age_min: 65
+  at_application:
+  - 火災警報器・自動消火器は在宅の要介護1〜5またはひとり暮らし
+  - 電磁調理器はひとり暮らし
+  - 老人用電話はひとり暮らしで市民税所得割非課税、電話未所有
+  - 市内に住所がある
+  where: 高齢者いきがい課
+  url: https://www.city.kawagoe.saitama.jp/kenko/fukushi/1006679/1006705/1006709.html
+  confidence: high
+  amount: 年度内にいずれか 1 品目 1 つ。生計中心者の所得により自己負担あり
+not_found:
+- haikai
+- mimamori
+- yutai

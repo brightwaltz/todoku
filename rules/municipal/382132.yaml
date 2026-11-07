@@ -1,0 +1,220 @@
+city: '382132'
+name: 四国中央市
+site: www.city.shikokuchuo.ehime.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: バス乗車券の購入費助成
+  name_on_page: バス利用費助成事業
+  summary: せとうちバスの組合せ乗車券の購入費を半額補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上は年2冊まで、75歳以上は年3冊まで
+  - 本人以外が申請する場合は委任状が必要
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 1冊2,000円の乗車券（実際の組合せは2,200円分）を半額で購入できる
+- category: sonota
+  name: はり・灸・マッサージの施術費助成
+  name_on_page: はり・灸・マッサージ施術費助成事業
+  summary: 市内の治療院で施術を受けたときの費用を助成する。
+  who: {}
+  at_application:
+  - 70歳以上、または70歳未満で身体障害者手帳1・2級か療育手帳A・B
+  - 医療保険による施術は対象外
+  - 治療院の証明が必要
+  where: 長寿支援課 高齢者福祉係（請求書は治療院にもある）
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 1回1,000円、月2回まで
+- category: sonota
+  name: 養護老人ホームでの短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 介護認定がなくても、養護老人ホームに短期間入所できる。
+  who: {}
+  at_application:
+  - 家族の外出などで在宅生活に不安がある場合
+  - 介護認定は不要
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: low
+  amount: 1日2,250円。原則1回3日以内、年12日以内
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報サービス事業
+  summary: ひとり暮らしの高齢者宅に緊急通報装置を設置し、安否確認や緊急対応を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 利用料は1割負担で、住民税非課税なら無料
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 駆けつけ型は月385円、見守り型は月198円
+- category: mimamori
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与事業
+  summary: 固定電話も携帯電話もない人に電話機を貸し、安否確認ができるようにする。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 定期的な見守りが必要で、自宅に固定電話も携帯電話もない
+  - 住民税非課税の人
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 基本料金と設置費は市が負担。通話料などは自己負担
+- category: haishoku
+  name: お弁当の配達と安否確認
+  name_on_page: 食の自立支援事業
+  summary: 宅配業者が弁当を手渡しで届け、安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 週3回まで（月〜土）
+  - デイサービスなど安否確認ができる日は利用不可
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 弁当代は実費
+- category: sonota
+  name: 軽度な家事のお手伝い（シルバー人材センター）
+  name_on_page: 軽度生活援助事業
+  summary: 家周りの清掃や家の中の整理などを、シルバー人材センターの会員が手伝う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 高齢者のみの世帯
+  - 墓地や田畑など敷地外の作業は不可
+  - 介護保険の訪問介護で足りる作業は対象外
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 1世帯につき年6時間分の人件費を市が負担
+- category: kaigo-yohin
+  name: 介護用品の引換券
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5の人を在宅で介護する同居家族に介護用品の引換券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する人が同居の家族で、住民税非課税世帯
+  - 対象品は紙おむつ・尿とりパッド・使い捨て手袋・清拭剤・ドライシャンプー
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 月6,250円分の引換券
+- category: iro
+  name: 家族への介護慰労金
+  name_on_page: 介護慰労金支給事業
+  summary: 要介護4・5の高齢者を在宅で長く介護する同居家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護される方が65歳以上
+  - 同居の家族が在宅で6か月以上介護している
+  - 入院や短期入所で半月以上在宅でない月は支給されない
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: high
+  amount: 月額で、住民税課税世帯は5,000円、非課税世帯は7,000円。支給は四半期ごと
+- category: mimamori
+  name: ひとり暮らし高齢者の見守り訪問
+  name_on_page: 独居高齢者福祉ネットワーク事業
+  summary: 見守り推進員が、在宅のひとり暮らしの高齢者を定期的に安否確認する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 原則70歳以上のひとり暮らし
+  - 申込みの方法は頁に書かれていない
+  where: 長寿支援課 高齢者福祉係
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/26167.html
+  confidence: low
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成金について
+  summary: 聞こえにくい高齢者が補聴器を買うとき、本体代の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 両耳の平均聴力が40dB以上70dB未満
+  - 耳鼻咽喉科の医師が必要と認めた（意見書）
+  - 世帯が市民税の所得割非課税で、市税の滞納がない
+  - 令和7年10月1日以降に購入した補聴器が対象
+  where: 長寿支援課 高齢者福祉係（購入前に相談）
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/52351.html
+  confidence: high
+  amount: 本体購入費の2分の1、上限30,000円
+- category: haikai
+  name: 認知症高齢者のあんしん登録と行方不明時の情報配信
+  name_on_page: あんしん登録制度
+  summary: 徘徊のおそれのある人の情報を事前に市へ登録し、行方不明時の早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で徘徊のおそれがある高齢者
+  - 情報の配信には家族の同意が必要
+  where: 市役所 長寿支援課
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/62/3634.html
+  confidence: high
+- category: sonota
+  name: ハンドル型電動車椅子の購入費補助（令和8年度）
+  name_on_page: 令和8年度ハンドル型電動車椅子購入費補助事業
+  summary: 運転免許を自主返納した高齢者のハンドル型電動車椅子の本体購入費を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 運転免許を自主返納している
+  - 令和8年4月1日以降に市内の事業者から購入したJIS T9208適合の車椅子
+  - 市税等の滞納がない
+  - 1人1台まで。先着順で予算がなくなり次第終了
+  where: 地域振興部 公共交通課
+  url: https://www.city.shikokuchuo.ehime.jp/soshiki/68/56526.html
+  confidence: high
+  amount: 1台につき2万円まで（本体購入費の範囲内）
+not_found:
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

@@ -1,0 +1,41 @@
+pref: '18'
+name: 福井県
+site: www.pref.fukui.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ハートフル専用パーキング利用証の交付
+  name_on_page: ハートフル専用パーキング（身体障がい者等用駐車場）利用証制度
+  summary: 歩行が困難な要介護1以上の人などに、県が専用駐車場の利用証を交付する
+  who: {}
+  at_application:
+  - 身体・知的・精神障がい、高齢、難病、けがの区分は、歩行困難が条件
+  - 高齢の人は要介護1以上。妊産婦は、出産後は乳幼児を同伴する場合に限る
+  - 電子申請・郵送・窓口で申請。手数料は無料（郵送は送料自己負担）
+  - 申請理由となる手帳等（等級のわかるもの）や診断書等の写しを出す
+  - 有効期限は区分で違う（身体・知的は5年、けがは1年未満、妊産婦は産後1年まで）
+  where: 県障がい福祉課地域生活支援室、または県の各健康福祉センター（福井・坂井・奥越・丹南・二州・若狭）。電子申請・郵送も可
+  url: https://www.pref.fukui.lg.jp/doc/shougai/heartpk/heartfulst.html
+  confidence: high
+- category: sonota
+  name: 高齢者の安全運転装置の購入助成
+  name_on_page: 令和８年度交通死亡事故防止対策事業補助金
+  summary: 65歳以上の人が使う車に安全運転装置を付ける費用を、県が1装置1万円助成する
+  who: {}
+  at_application:
+  - 県内在住で免許のある満65歳以上（年度内に65歳になる人を含む）が対象
+  - その人の親族や同居の人も申請できる
+  - 自家用車で、車検証の使用者の住所が免許証と同じ。サポカーは対象外
+  - 令和8年4月21日〜令和9年2月28日に県内の業者で購入・設置した分
+  - 限定運転宣言書が要る。予算に達すると受付終了（申請は令和9年3月5日必着）
+  where: 県防災安全部県民安全課（郵送）。電子申請は、頁に「システムが完成次第運用を開始」とあり準備中
+  url: https://www.pref.fukui.lg.jp/doc/kenan/koutuu/atoduke.html
+  confidence: high
+  amount: 後付け急発進抑制装置とドライブレコーダーの各 1 万円（経費が 2 万円未満だと対象外）
+not_found:
+- yutai

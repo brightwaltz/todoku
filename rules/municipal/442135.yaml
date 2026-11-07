@@ -1,0 +1,129 @@
+city: '442135'
+name: 由布市
+site: www.city.yufu.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ・尿とりパッドの購入助成
+  name_on_page: 紙おむつ・尿とりパッド購入助成事業
+  summary: 要介護4・5で常に失禁する方を在宅で介護する非課税世帯に、おむつ代を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市に住民登録がある在宅の高齢者等で、常時失禁状態にある
+  - 介護する家族と介護を受ける人の世帯が、ともに非課税
+  - 施設などに入所している場合は対象外
+  - 購入した月ごとに、領収書を添えて申請する
+  where: 高齢者支援課（本庁舎新館1階）
+  url: https://www.city.yufu.oita.jp/kurashi/fukusikaigo/fukusikaigo_cate_1/zaitakufukusi/kamiomutukounyuujoseijigyou
+  confidence: high
+  amount: 月額5,000円まで（一部に交付制限あり）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 食事づくりが難しい高齢者に、夕食を訪問して届け、安否確認もする。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、食事の調理が困難
+  - 介護保険の認定を受けている（総合事業対象者を含む）
+  - 利用基準票の基準を満たす（年1回、状態を評価）
+  - 目的に「一人暮らしの高齢者」とある。利用は月〜土の週6回まで
+  where: 認定がある方はケアマネージャー。それ以外は高齢者支援課か地域包括支援センター
+  url: https://www.city.yufu.oita.jp/kurashi/fukusikaigo/fukusikaigo_cate_1/zaitakufukusi/haisyokuservicejigyou
+  confidence: high
+  amount: 費用負担は440円（1食あたりかは頁に記載なし）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 緊急時にすばやく動けない方に緊急通報装置を貸し、在宅時の見守りと通報に使えるようにする。
+  who:
+    at_home: true
+  at_application:
+  - 緊急時に機敏に行動することが困難な方
+  - 65歳以上のみの世帯、身体障害者手帳1〜3級の方のみの世帯のどちらか
+  - 家族の就労等で、長時間そのような状態になる方も対象
+  - その他、市長が必要と認めた方。市内に住民票があり居住している
+  where: 高齢者支援課（本庁舎新館1階）
+  url: https://www.city.yufu.oita.jp/kurashi/fukusikaigo/fukusikaigo_cate_1/zaitakufukusi/kinkyuutuuhousisutemujigyou/
+  confidence: high
+  amount: 月額使用料：固定型は世帯全員非課税0円・課税者がいる世帯1,400円、携帯型は500円・2,300円
+- category: sonota
+  name: あん摩・マッサージ・はり・きゅう施術料の助成
+  name_on_page: あん摩、マッサージ、指圧、はり、きゅう施術料助成事業
+  summary: 70歳以上の方に、あん摩やはり・きゅうなどの施術料の一部を補助券で助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に1年以上居住している満70歳以上の方
+  where: 高齢者支援課（本庁舎新館1階）。申請窓口は頁に明記なし
+  url: https://www.city.yufu.oita.jp/kurashi/fukusikaigo/fukusikaigo_cate_1/zaitakufukusi/sejuturyoujoseijigyou
+  confidence: high
+  amount: 1回1,000円の補助券、年12回まで
+- category: iro
+  name: ねたきり老人等介護手当
+  name_on_page: ねたきり老人等介護手当
+  summary: 在宅のねたきりや重度認知症の高齢者を介護する人をねぎらい、月額の手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - ねたきり、または認知症で常時介護が必要な状態が6か月以上続く
+  - 市に1年以上住所がある
+  - 居宅で終日臥床し、日常生活で常に介護が必要
+  - 特別障害者手当を受けている場合は対象外
+  where: 高齢者支援課（本庁舎新館1階）。申請窓口は頁に明記なし
+  url: https://www.city.yufu.oita.jp/kurashi/fukusikaigo/fukusikaigo_cate_1/zaitakufukusi/netakiriroujintoukaigoteate
+  confidence: high
+  amount: 1人につき月額6,000円
+- category: koken
+  name: 成年後見制度の市長申立て・利用支援
+  name_on_page: 成年後見制度における市長申立ておよび利用支援事業
+  summary: 身寄りのない方の市長申立てと、後見人等への報酬・申立て費用の助成を行う。
+  who: {}
+  at_application:
+  - 市長申立て：重度の認知症高齢者などで身寄りがなく、申立てをする親族がいない
+  - 報酬助成：経済的な理由で成年後見制度を利用できない
+  where: 高齢者支援課（本庁舎新館1階）。申請窓口は頁に明記なし
+  url: https://www.city.yufu.oita.jp/kurashi/fukusikaigo/fukusikaigo_cate_1/zaitakufukusi/seinenkoukenseidosienjigyou
+  confidence: high
+- category: haikai
+  name: GPS機器による位置情報検索サービス導入経費の助成
+  name_on_page: ＧＰＳ機器による位置情報検索サービス導入経費助成事業
+  summary: 徘徊のおそれのある方を介護する家族に、GPS機器やサービスの導入にかかる初期費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者等を介護している家族等が申請する
+  - 市内に住民票がある。入所・入院していない
+  - 要支援・要介護の認定がある、または市のSOSネットワーク登録者台帳に登録済み
+  - 領収書の日付が入る年度の3月31日までに申請する
+  where: 高齢者支援課（本庁舎新館1階）。申請窓口は頁に明記なし
+  url: https://www.city.yufu.oita.jp/kurashi/fukusikaigo/fukusikaigo_cate_1/zaitakufukusi/gpsdounyuukeihijoseijigyou/
+  confidence: high
+  amount: GPS機器の購入・レンタル代や加入・登録手数料などの初期経費を、上限8,000円まで助成
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

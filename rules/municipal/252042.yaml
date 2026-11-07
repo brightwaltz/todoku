@@ -1,0 +1,187 @@
+city: '252042'
+name: 近江八幡市
+site: www.city.omihachiman.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者への紙おむつ等の支給
+  name_on_page: 在宅高齢者紙おむつ支給事業
+  summary: 要介護1以上で在宅の非課税世帯の人に、紙おむつ等を月1回自宅へ届ける。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 非課税世帯で課税者に扶養されていない、または生活保護
+  - 介護保険料の滞納がない
+  - 4〜7月の支給は前年度の課税・扶養状況で審査
+  where: 長寿福祉課（担当ケアマネジャーの確認が必要）
+  url: https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/2/shien_service/4674.html
+  confidence: high
+  amount: 要介護1は月4,000円、要介護2〜5は月6,000円まで（超過分は自己負担）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 買い物や調理が難しい在宅の高齢者に、栄養バランスのよい食事を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 非課税世帯で課税者に扶養されていない、または生活保護
+  - 介護保険料の滞納がない
+  - 老衰・障害・傷病で買い物と調理が困難（市が判断）
+  - 同居家族がいる場合は家族も調理等ができない状態
+  where: 担当ケアマネジャー、地域包括支援センター、長寿福祉課
+  url: https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/2/shien_service/11869.html
+  confidence: high
+  amount: 利用料は事業所のメニューごとに異なる（頁に事業所別の一覧あり）
+- category: haikai
+  name: 認知症高齢者のGPS等位置情報サービスの初期費用助成
+  name_on_page: 認知症高齢者位置情報提供サービス利用助成事業
+  summary: 認知症高齢者を在宅で介護する人に、位置情報端末サービスの加入金等を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で自力で自宅に戻れなくなるおそれがある高齢者の介護者
+  - 介護保険料の滞納がない
+  - 携帯電話機能が主の端末は対象外
+  where: 長寿福祉課
+  url: https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/2/shien_service/4677.html
+  confidence: high
+  amount: 初期費用（加入金等）に対して7,500円まで
+- category: haikai
+  name: 認知症高齢者等の事前登録と見守りシール
+  name_on_page: 認知症高齢者等事前登録事業
+  summary: 行方不明に備えて情報を市に登録でき、希望者には QR コード入りの見守りシールが交付される。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で自力で居宅に戻れなくなるおそれのある高齢者等
+  - 見守りシールは事前登録をした人のうち希望者
+  where: 長寿福祉課（申請書を提出）
+  url: https://www.city.omihachiman.lg.jp/iryo/3/2/16027.html
+  confidence: high
+  amount: 1人につき耐洗ラベル20枚と光るシール10枚を交付（追加分は実費）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置（お元気コールつき）
+  name_on_page: 緊急通報システム事業
+  summary: 押すと通報センターにつながる装置を設置し、月2回のお元気コールもある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 介護保険料の滞納がない
+  - 近隣の協力員3人（原則）の了解がある
+  - 無料は、心疾患等の既往か手帳等級の要件も必要
+  - 無料は、非課税世帯で課税者に扶養されていない等も必要
+  - 原則固定電話が必要（なければ携帯型）
+  where: 長寿福祉課
+  url: https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/2/shien_service/2650.html
+  confidence: high
+  amount: 装置は無料貸与。固定型は月1,485円、条件を全て満たせば無料。携帯型は月2,310円、満たせば825円（税込）
+- category: ribiyo
+  name: 訪問理美容の助成券
+  name_on_page: 訪問理美容助成サービス事業
+  summary: 理美容院に行けない要介護の人が自宅で理美容を受けるとき、1回ごとに助成券で費用を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 非課税世帯で課税者に扶養されていない、または生活保護
+  - 寝たきり度判定がランクBまたはC
+  - 介護保険料の滞納がない
+  - 理美容院に行くのが困難。利用時は家族等の立ち会いが必要
+  where: 長寿福祉課
+  url: https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/2/shien_service/4675.html
+  confidence: high
+  amount: 利用1回につき1,500円（助成券1枚）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 補聴器の購入費助成事業
+  summary: 手帳の対象でない中程度の難聴の65歳以上に、補聴器の購入費を一部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力が各40dB以上で、聴覚障害の手帳要件に当たらない
+  - 医師から補聴器の装用が有用との診断を受けている
+  - 補装具費の支給対象にならない
+  - 購入前に申請する（購入後は不可）
+  where: 長寿福祉課
+  url: https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/2/shien_service/27678.html
+  confidence: high
+  amount: 購入費の助成は20,000円まで（1人1回）
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見人等報酬助成
+  summary: 家庭裁判所が決めた後見人等への報酬を払うのが難しい人に、報酬の一部または全部を助成する。
+  who: {}
+  at_application:
+  - 家庭裁判所が決定した後見人等の報酬の支払いが困難
+  - 本人が一部負担できる場合はその額を除いて助成
+  where: 長寿福祉課（認知症高齢者の場合）
+  url: https://www.city.omihachiman.lg.jp/iryo/3/2/3117.html
+  confidence: high
+  amount: 上限は月22,000円（在宅・施設入所とも）
+- category: gaishutsu
+  name: 沖島の通船料助成（介護サービス利用時）
+  name_on_page: 沖島通船料助成サービス
+  summary: 沖島の要支援・要介護の人が島外の通所等に通うときの定期船の乗船料を一部助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 沖島に住んでいる
+  - 島外で介護保険の通所・短期入所サービスを受けるための乗船
+  - 定期券と助成券の交付申請が必要
+  where: 長寿福祉課
+  url: https://www.city.omihachiman.lg.jp/riyoushabetu/koureisha/3/2/shien_service/24489.html
+  confidence: high
+  amount: 沖島港〜堀切港の乗船1回につき200円を助成（乗船料は片道500円）
+not_found:
+- iro
+- jutaku
+- shingu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

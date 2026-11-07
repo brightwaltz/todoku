@@ -1,0 +1,151 @@
+city: '142115'
+name: 秦野市
+site: www.city.hadano.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与
+  summary: 急病時に通報できる装置を貸与し、委託事業者が親族連絡や救急要請を代行する。
+  who: {}
+  at_application:
+  - 65歳以上、または身体障害者手帳1・2級のひとり暮らしの方
+  - 住民票があり、実際に市内に居住している
+  - 緊急時に連絡できる親族等の連絡先が2名以上必要
+  where: 担当の地域高齢者支援センター（問い合わせ：高齢介護課 地域包括ケア担当）
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/8924.html
+  confidence: high
+  amount: 月額の利用料は所得等で決まる。固定型は0円・600円・1,760円、携帯型は0円・900円・3,025円のいずれか。人感センサーは希望者のみ月500円。
+- category: haishoku
+  name: 給食サービス（安否確認つき弁当の配達）
+  name_on_page: 給食サービス
+  summary: ひとり暮らし等の登録者に、安否確認を兼ねて弁当を玄関先で手渡しする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - ひとり暮らし高齢者登録または高齢者世帯登録を済ませている
+  - 買い物や調理ができず、食生活に支障がある
+  - 玄関先で直接受け取れる（宅内への配達はしない）
+  where: 要介護認定者は担当ケアマネジャー、それ以外は担当の地域高齢者支援センター
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/8925.html
+  confidence: high
+  amount: 週4回まで（土日除く）。食材料費と調理費相当の自己負担があり、事業者で異なる。
+  more_urls:
+  - https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/8915.html
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつ給付
+  summary: 要介護者を在宅で介護する非課税世帯の介護者に、紙おむつを給付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護者と介護者がともに市内に住民登録している
+  - 介護保険料の滞納がない
+  - 申込者は要介護者ではなく介護者
+  - 要介護度が変わったら再申請が必要
+  where: 高齢介護課 高齢者福祉担当
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/1/8894.html
+  confidence: high
+  amount: 月5,000円分までの紙おむつ。自己負担は要介護1〜3が3割、要介護4・5が1割。
+- category: haikai
+  name: 迷い高齢者等SOSネットワークの事前登録
+  name_on_page: 秦野市迷い高齢者等SOSネットワーク
+  summary: 迷うおそれのある人を事前登録し、行方不明時に警察や協力機関が連携して捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市に住民登録のある65歳以上で迷うおそれがある人
+  - または要介護・要支援認定を受け、迷うおそれがある人
+  - または療育手帳を持ち、迷うおそれがある人
+  - 登録の有効期間は2年間で、更新には再申請が必要
+  where: 高齢介護課（秦野警察署や地域高齢者支援センターなどでも登録申込書を扱う）
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/1/8895.html
+  confidence: high
+  amount: 登録も捜索も無料。
+- category: haikai
+  name: 見守りキーホルダーの交付
+  name_on_page: 見守りキーホルダー
+  summary: 緊急連絡先などを登録するとキーホルダーが交付され、搬送時や保護時に家族へ連絡できる。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上（65歳未満の要介護認定者等は相談可）
+  - 介護保険証と顔写真（縦4×横3cm程度）が必要
+  - 年1回、誕生月までに更新が必要
+  where: 担当地域の地域高齢者支援センター
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/1/8898.html
+  confidence: high
+  amount: 無料（再発行のときだけ実費）。
+- category: mimamori
+  name: ひとり暮らし高齢者・高齢者世帯の登録（地域での見守り）
+  name_on_page: ひとり暮らし高齢者・高齢者世帯の登録
+  summary: 登録すると、民生委員や地域高齢者支援センター職員が必要に応じて訪問・相談する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - ほかにも登録要件がある（民生委員か高齢介護課に確認）
+  where: 民生委員を通じて高齢介護課へ申込書を提出
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/8915.html
+  confidence: high
+- category: gaishutsu
+  name: ねたきり高齢者向けの福祉タクシー券
+  name_on_page: 福祉タクシー券
+  summary: ねたきり高齢者登録をした人に、通院などに使えるタクシー利用券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - ねたきり高齢者登録を済ませている（老人ホーム等の入所者は除く）
+  - 半年以上ねたきりで、今後も続くと認められる
+  where: 登録は民生委員経由で高齢介護課、券の交付は障害福祉課
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/8897.html
+  confidence: high
+  amount: 500円券を年48枚まで（申請月により枚数が変わる）。
+  more_urls:
+  - https://www.city.hadano.kanagawa.jp/material/files/group/37/netakiri.pdf
+- category: sonota
+  name: 水道料金・下水道使用料の基本料減免
+  name_on_page: 重度認知症高齢者及びねたきり高齢者の水道料金・下水道使用料の減免
+  summary: 重度認知症やねたきりの高齢者がいる非課税世帯の水道・下水道の基本料を減免する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 世帯が市民税の所得割非課税
+  - 要介護4・5で認知症自立度が4またはMの人がいる世帯
+  - またはねたきり高齢者登録をしている人がいる世帯
+  where: 高齢介護課（印鑑を持参して申請）
+  url: https://www.city.hadano.kanagawa.jp/iryo-kenko-fukushi/fukushi/1/1/8896.html
+  confidence: high
+  amount: 水道は家事用の基本料金相当額、下水道は基本使用料相当額を減免。
+  more_urls:
+  - https://www.city.hadano.kanagawa.jp/material/files/group/37/netakiri.pdf
+not_found:
+- iro
+- ribiyo

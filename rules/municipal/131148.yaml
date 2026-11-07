@@ -1,0 +1,214 @@
+city: '131148'
+name: 中野区
+site: www.city.tokyo-nakano.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつの支給
+  summary: 在宅で常時おむつが必要な方に、紙おむつを月1回自宅へ配送する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 区内に住所。介護保険施設・障害者施設の入所中は対象外
+  - (1)65歳以上・要介護1〜5・世帯全員の所得350万円未満
+  - (2)3歳以上で身障・精神1〜2級または愛の手帳1〜2度
+  - いずれも常時おむつが必要
+  where: 担当区域の地域包括支援センター（障害者は障害福祉課）
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/omutsu.html
+  confidence: high
+  amount: 月60点の支給限度点数の範囲で製品を選べる
+- category: kaigo-yohin
+  name: 入院中のおむつ費用の助成
+  name_on_page: おむつ費用の助成
+  summary: 入院中で常時おむつが必要な方に、入院期間中のおむつ代を助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 区内に住所。医療機関に入院中で常時おむつが必要
+  - (1)65歳以上・世帯全員の所得350万円未満（要介護認定は不要）
+  - (2)3歳以上で身障・精神1〜2級または愛の手帳1〜2度
+  - 施設入所中・生活保護等の受給者は対象外
+  where: 担当区域の地域包括支援センター（障害者は障害福祉課）
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/omutsu_hiyoujosei.html
+  confidence: high
+  amount: 実費のうち月6,000円まで
+- category: hochoki
+  name: 高齢者補聴器購入費用の助成
+  name_on_page: 高齢者補聴器購入費用助成
+  summary: 耳が遠い高齢者が、交付決定後に買った補聴器の費用の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 区の住民基本台帳に登録がある
+  - 世帯全員の前年合計所得が350万円未満
+  - 中等度難聴の診断、または耳鼻科医が装用が必要と認めた
+  - 補装具費の対象者・5年以内に助成を受けた人は対象外
+  where: 区役所担当課（郵送・電子申請可）、地域包括支援センター
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/0235245120240605163422503.html
+  confidence: high
+  amount: 1台につき上限4万5千円（医師が両耳必要と認めれば2台で9万円）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: ペンダントとセンサー等の機器を貸与し、緊急時に民間受信センターへ通報する。
+  who: {}
+  at_application:
+  - 区内に住所があり、次のいずれか（常時見守りが必要）
+  - 65歳以上で、ひとり暮らし・高齢者のみ・日中独居のいずれか
+  - 18歳以上の重度身体障害者（1・2級）で同様の世帯状況
+  - その他、区長が特に必要と認める方
+  where: 地域包括支援センター（障害者は障害者福祉相談窓口）
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/kinkyutsuho.html
+  confidence: high
+  amount: 利用者負担は月300円〜1,300円（課税状況や世帯で異なる）
+- category: haikai
+  name: 徘徊高齢者探索サービス（位置情報の検索）
+  name_on_page: 徘徊高齢者探索サービス
+  summary: 徘徊のある高齢者を介護する方が、スマホ等のアプリで本人の位置を確認できる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申込みは徘徊のある高齢者を日常的に介護している方
+  - 本人は区内在住で認知症により徘徊行動がある65歳以上
+  - （40歳以上の初老期認知症の方を含む）
+  - 位置確認後に迎えに行ける方がいること
+  where: 担当区域の地域包括支援センター
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/haikai.html
+  confidence: high
+  amount: 介護者の自己負担は月600円（生活保護世帯は月300円）
+- category: jutaku
+  name: 高齢者自立支援住宅改修等給付事業
+  name_on_page: 高齢者自立支援住宅改修等給付事業
+  summary: 要支援・要介護または自立の高齢者の浴室・便所等の改修や日常生活用具に、区が給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 区内に住所。世帯全員の前年合計所得が200万円未満
+  - 要支援・要介護の方は浴室・台所・便所の改修が対象
+  - 過去1年以内に介護保険で非該当の方は手すり等の工事や用具
+  - 工事・購入の前に申請が必要（事後は不可）
+  where: 担当区域の地域包括支援センター
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/jiritsushienjyutaku.html
+  confidence: high
+  amount: 種目ごとに限度額あり（浴室改善20万円、便所改善9万円など）。自己負担は事業対象額の1割
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 介護保険特別給付 訪問理美容サービス
+  summary: 理美容券で、協定する理美容店に自宅へ来てもらい調髪を受けられる。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりまたは認知症で、理美容店での調髪が困難
+  - 申請時と利用時に要介護3〜5であること
+  where: 介護保険課 介護給付係
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/kaigohoken/kaigohokenkanren/homonribiyo.html
+  confidence: high
+  amount: 2か月に1枚、年6枚まで。1回1,500円の自己負担
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 介護保険特別給付 寝具乾燥サービス
+  summary: 寝たきり等の在宅の方に、寝具乾燥などのサービスを行う。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 身体や家屋の環境により寝具乾燥を行うことが困難
+  - 申請時と利用時に要介護4・5であること
+  where: 高齢者総合窓口（区役所3階4番）、地域包括支援センター
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/kaigohoken/kaigohokenkanren/shingukanso.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立経費・後見人報酬の助成
+  name_on_page: 成年後見制度の申立経費、成年後見人等の報酬費用の助成
+  summary: 費用の負担が難しい方に、成年後見の申立経費や後見人の報酬を助成する。
+  who: {}
+  at_application:
+  - 住所や所得の条件あり（詳細は頁に無し）
+  where: 中野区成年後見支援センター
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/soudan/seinenkokenseido/seinenkokennin-jyosei.html
+  confidence: low
+  amount: 申立手数料・鑑定費用等、家庭裁判所が決めた報酬の全額（期間に限りあり）
+- category: sonota
+  name: 高齢者スマートフォン購入等費用の助成
+  name_on_page: 中野区高齢者スマートフォン購入等費用助成事業
+  summary: スマホを初めて買う、または対応機種へ替える高齢者に購入費等の一部を助成する。
+  who: {}
+  at_application:
+  - 購入日時点で区に住民登録があり、令和9年3月31日時点で65歳以上
+  - 初めて購入する方、またはNFC非対応機等から替える方
+  - 指定店舗で購入し、当日中に手続き、スマホ教室を受講
+  - 申請期間は令和9年3月23日まで（予定）。予算が尽きたら終了
+  where: 区の指定店舗（携帯電話販売店）
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/sumahohojyo.html
+  confidence: high
+  amount: 1人1回、上限3万円
+- category: sonota
+  name: 三療（はり・灸・マッサージ）出張サービス
+  name_on_page: 三療（はり・灸・マッサージ）サービス（出張サービス）
+  summary: 施設へ通えない方の自宅に施術者が訪問し、はり・灸・マッサージを行う。
+  who: {}
+  at_application:
+  - 施設内施術を受けることが困難で、次のいずれか
+  - 65歳以上で常時寝たきり、または重度の認知症
+  - 身体障害者手帳1級、または被爆者健康手帳の交付を受けている
+  where: 担当区域の地域包括支援センター（障害者は障害者等の保健福祉相談）
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/sanryo-syuccyo.html
+  confidence: high
+  amount: 1回900円の自己負担、年4回まで
+- category: sonota
+  name: 高齢者緊急一時宿泊事業
+  name_on_page: 高齢者緊急一時宿泊事業
+  summary: 介護者の急病や災害などの緊急時に、区内の特養等へ原則14日以内で泊まれる。
+  who: {}
+  at_application:
+  - 区内に住む概ね65歳以上で、他のサービスが使えず緊急性がある
+  - 家庭の事情や災害、介護者の急病などで在宅生活が困難
+  - 感染性の疾患や入院治療が必要な方は対象外
+  where: 担当区域の地域包括支援センター
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/kinkyu-syukuhaku.html
+  confidence: high
+  amount: 施設の利用者負担あり（有料老人ホームは1日3,000円と雑費等）
+- category: sonota
+  name: 緊急連絡キーホルダーの配布
+  name_on_page: 緊急連絡キーホルダー
+  summary: 緊急連絡カードを作った高齢者世帯に、外出先の救急時に役立つキーホルダーを配る。
+  who: {}
+  at_application:
+  - おおむね70歳以上のひとり暮らしや日中ひとりの高齢者世帯
+  - 「緊急連絡カード」を作成した方
+  where: 地域活動推進課 地域支えあい活動支援係
+  url: https://www.city.tokyo-nakano.lg.jp/kenko_hukushi/kourei/hokenhukushi/0237089120231226092819004.html
+  confidence: high
+not_found:
+- iro
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha

@@ -1,0 +1,105 @@
+city: '032034'
+name: 大船渡市
+site: www.city.ofunato.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 介護用品の支給
+  summary: 重度の要介護者を在宅で介護する家族に、紙おむつなどを支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3は、排尿か排便に介助が必要と認められた人に限る
+  - 在宅の高齢者を介護している家族が対象
+  where: 長寿社会課
+  url: https://www.city.ofunato.iwate.jp/archive/p20250411162103
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与（地域生活サポート事業）
+  summary: 急病や災害のときに通報できる装置を無料で貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上で市民税非課税のひとり暮らし高齢者などが対象
+  where: 長寿社会課
+  url: https://www.city.ofunato.iwate.jp/archive/p20250411163727
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: どこシル伝言板（見守りQRシール）
+  name_on_page: 高齢者等見守り情報共有システム推進事業「どこシル伝言板」
+  summary: 行方不明時に発見者がQRを読み取り、家族に知らせられるシールを使える。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり在宅であること
+  - 認知症の診断がある、または認知症等で一人の外出に不安がある
+  where: 地域包括ケア推進室
+  url: https://www.city.ofunato.iwate.jp/archive/contents-28113/
+  confidence: high
+- category: gaishutsu
+  name: タクシーチケットの配布
+  name_on_page: タクシーチケット配布事業
+  summary: 免許のない75歳以上で、バス停等から遠い人にタクシーチケットを配る。
+  who:
+    age_min: 75
+  at_application:
+  - 盛町・大船渡町・赤崎町・猪川町・立根町に住んでいる
+  - 最寄りのバス停か駅まで300m以上離れている
+  - 運転免許を持たず、福祉タクシー助成を受けていない
+  where: 港湾振興課
+  url: https://www.city.ofunato.iwate.jp/archive/contents-34760
+  confidence: high
+- category: gaishutsu
+  name: 福祉タクシー助成券
+  name_on_page: 福祉タクシー助成券の支給
+  summary: 対象の人に、タクシーの基本料金分の助成券を毎月配る。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または1・2級の身体障害者手帳など
+  - 施設入所中・長期入院中の人は対象外
+  - 自動車税・軽自動車税の減免を受けている人は対象外
+  where: 地域福祉課
+  url: https://www.city.ofunato.iwate.jp/archive/contents-2025
+  confidence: high
+  amount: 月2枚まで。1枚はタクシーの基本料金分
+- category: jutaku
+  name: 住まいづくり推進事業による住宅改修の助成
+  name_on_page: 住宅改修費への助成（高齢者及び障害者にやさしい住まいづくり推進事業）
+  summary: 在宅生活を続けるための住宅改修費を市が助成する。新築は対象外。
+  who: {}
+  at_application:
+  - 要支援・要介護認定を受けた人、または重度の身体障害者
+  - 増築は一部のみ対象
+  where: 長寿社会課
+  url: https://www.city.ofunato.iwate.jp/archive/p20250411162103
+  confidence: low
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ事業
+  summary: 特養などの空き部屋に、一時的に入所できる。費用は一部自己負担。
+  who: {}
+  at_application:
+  - 社会適応が困難な、おおむね65歳以上の人
+  where: 長寿社会課
+  url: https://www.city.ofunato.iwate.jp/archive/p20250411163727
+  confidence: low
+not_found:
+- haishoku
+- iro
+- shingu
+- mimamori
+- nichijo-yogu

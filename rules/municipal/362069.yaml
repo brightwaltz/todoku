@@ -1,0 +1,140 @@
+city: '362069'
+name: 阿波市
+site: www.city.awa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給事業（紙おむつ等の給付券）
+  name_on_page: 阿波市家族介護用品支給事業
+  summary: 要介護4・5の方を在宅で介護する家族に、紙おむつ等の購入助成券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある要介護者を在宅で常時介護している家族等
+  - 要介護者と介護者の世帯全員が市民税非課税
+  - 入院中・施設入所中の期間は使えない
+  - 毎年度申請が必要（有効期間は年度末まで）
+  where: 阿波市地域包括支援センター（本庁1階）、阿波・吉野・土成各支所の地域課
+  url: https://www.city.awa.lg.jp/docs/2025041000015/
+  confidence: high
+  amount: 月5,000円まで（年額60,000円）。紙おむつ・紙パンツ・尿とりパッドが対象
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 阿波市緊急通報装置貸与事業
+  summary: ひとり暮らしの高齢者などに、ボタンを押すと通報できる装置を無料で貸す。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または外出困難な重度身体障害者
+  - ひとり暮らしの方は近隣に扶養義務者がなく連絡の必要があること
+  - 装置を付けられる固定電話があり、協力員が3名（最低2名）
+  - 見守り体制が整っていない（ひとり暮らしの方）
+  - 申請には民生委員の意見が必要
+  where: 阿波市地域包括支援センター、阿波・吉野・土成支所地域課
+  url: https://www.city.awa.lg.jp/docs/2011033100504/
+  confidence: high
+  amount: 貸与料は無料、使用料は市が負担。電池代（約4千円）は利用者負担
+- category: jutaku
+  name: 高齢者住宅改造の助成
+  name_on_page: 高齢者住宅改造促進事業
+  summary: 介助が必要な高齢者のいる非課税世帯の住宅改造費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の高齢者のいる世帯
+  - 身体の虚弱化などで日常生活に何らかの介助が必要
+  - 世帯員全員が所得税非課税
+  - 工事着工前の申請が必要（事前に相談）
+  - 要支援・要介護の方は先に介護保険の住宅改修を相談
+  where: 福祉事務所社会福祉課
+  url: https://www.city.awa.lg.jp/docs/2012062200012
+  confidence: high
+  amount: 工事費のうち30万円を限度にその2/3（最高20万円）
+- category: haikai
+  name: 認知症の方のGPS機器の購入・レンタル費補助
+  name_on_page: 認知症高齢者等見守り支援補助金
+  summary: 徘徊のおそれがある方の位置情報GPS機器の購入費やレンタル費を一部補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住のおおむね65歳以上の高齢者が対象
+  - 機器の費用を負担した本人または家族が申請
+  - 令和4年4月1日以降に購入・レンタル開始した機器が対象
+  - 領収書が必要
+  where: 介護保険課
+  url: https://www.city.awa.lg.jp/docs/2022060100030/
+  confidence: high
+  amount: 購入は費用の5割（上限1万5千円）、レンタルは全額（上限1万円）
+- category: haikai
+  name: 認知症高齢者等見守りネットワークの事前登録
+  name_on_page: 認知症高齢者等見守りネットワーク事業
+  summary: 行方不明になるおそれのある方を事前登録し、不明時にメールで地域に知らせる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住のおおむね65歳以上で、認知症で行方不明になる心配がある方
+  - 介護保険の第2号被保険者の方も対象
+  - 本人または家族の申請で事前登録（登録申請書）
+  where: 介護保険課（問い合わせ先）
+  url: https://www.city.awa.lg.jp/docs/2025080700013/
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キットを配布します
+  summary: 緊急時の連絡先や持病を入れる情報キットを、ひとり暮らしの高齢者などに無料で配る。
+  who: {}
+  at_application:
+  - 市内に住所があり、65歳以上のひとり暮らしの方
+  - または65歳以上の高齢者のみの世帯の方
+  - そのほか市長が認めた方（障がい者、日中ひとりの方など）
+  where: 社会福祉課、阿波・土成・吉野各支所地域課、各地区の民生委員児童委員
+  url: https://www.city.awa.lg.jp/docs/2013012900013/
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 迷惑電話防止機能付き電話機等の購入補助
+  name_on_page: 迷惑電話防止機能付電話機等購入補助事業
+  summary: 65歳以上の方が迷惑電話防止の電話機や外付け機器を買う費用の一部を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 市税を滞納していない
+  - 対象は推奨番号の機器（令和8年5月1日以降に店舗で購入）
+  - 交付は1世帯1台限り、予算に達し次第終了
+  where: 阿波市消費生活センター（市役所1階）
+  url: https://www.city.awa.lg.jp/docs/2026040300021
+  confidence: high
+  amount: 購入額の2分の1、上限1万円（受付は令和9年1月29日まで）
+- category: sonota
+  name: 長寿祝金の支給
+  name_on_page: 長寿祝金
+  summary: 節目の年齢（77・88・99歳・100歳以上）の方に祝金を支給する。
+  who: {}
+  at_application:
+  - 77歳・88歳・99歳・100歳以上の節目の年齢の方のみ
+  - 市に住民登録があり、引き続き1年以上居住している
+  - 申請書の提出が必要（7月下旬に送付）。本人名義口座へ振込
+  where: 社会福祉課
+  url: https://www.city.awa.lg.jp/docs/2024032700026/file_contents/2024032700026_docs_2024032700026_file_contents_202408.pdf
+  confidence: low
+  amount: 令和6年度は77歳5,000円、88歳1万円、99歳3万円、100歳以上5万円
+not_found:
+- haishoku
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- mimamori

@@ -1,0 +1,140 @@
+city: '112186'
+name: 深谷市
+site: www.city.fukaya.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者配食サービス（安否確認つき）
+  name_on_page: 高齢者配食サービス事業
+  summary: 安否確認をしながら、本人に直接、栄養バランスのよい食事を手渡しする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 安否確認が必要な人
+  - 食事は本人が直接受け取る（置き配不可）
+  where: 長寿福祉課 8番窓口、各総合支所の福祉係
+  url: https://www.city.fukaya.saitama.jp/kenko_fukushi/fukushi/fukushikaigo/koreishanotamenofukusisabisu/17799.html
+  confidence: high
+  amount: 1回あたり自己負担。非課税世帯（介護保険料の第1〜3段階）は300円、第4段階以上は400円
+- category: kaigo-yohin
+  name: おむつの現物支給
+  name_on_page: おむつサービス
+  summary: 常時失禁状態の人に、希望するおむつを月1回配送で支給する。
+  who: {}
+  at_application:
+  - 常時失禁状態で、要介護3（排尿・排便全介助）〜5の認定
+  - または3歳以上で身体障害者手帳1〜3級・療育手帳を持つ
+  - （療育手帳はマルA・A・B）
+  - 配送先は市内に限る
+  where: 長寿福祉課、岡部・川本・花園の各総合支所の福祉係、オンライン申請
+  url: https://www.city.fukaya.saitama.jp/kenko_fukushi/fukushi/fukushikaigo/koreishanotamenofukusisabisu/18171.html
+  confidence: high
+  amount: 月4,500円までを給付。課税世帯は利用額の1割負担、非課税世帯は上限額まで負担なし
+- category: gaishutsu
+  name: 寝台車による移動サービスの利用料助成
+  name_on_page: ねたきり高齢者等移動支援事業
+  summary: 寝台専用車両による移動サービスの利用料を、全部または一部助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 入院中でも在宅の扱い
+  - 福祉タクシー利用補助とは併用不可
+  where: 長寿福祉課 8番窓口、各総合支所の福祉係、オンライン申請
+  url: https://www.city.fukaya.saitama.jp/soshiki/fukushikenko/chojufukushi/tanto/idoshien/13859.html
+  confidence: high
+  amount: 1回5,000円まで。課税世帯は1割負担、非課税世帯は負担なし。超過分は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置と警備員の駆けつけ
+  name_on_page: 緊急通報システム事業
+  summary: 通報装置や無線ペンダントで通報すると、警備員が駆けつける。
+  who: {}
+  at_application:
+  - 65歳以上で慢性疾患があり、常時注意が必要
+  - または身体障害者手帳1〜3級で、常時注意が必要
+  - 例：糖尿病、高血圧症、骨粗しょう症
+  where: 長寿福祉課 8番窓口、オンライン手続き
+  url: https://www.city.fukaya.saitama.jp/kenko_fukushi/fukushi/fukushikaigo/koreishanotamenofukusisabisu/18173.html
+  confidence: high
+  amount: 通報できる家族等が同一敷地にいない人は利用料なし。いる場合は月880〜2,860円、通信料は自己負担
+- category: hochoki
+  name: 高齢者の補聴器購入費の補助
+  name_on_page: 高齢者補聴器購入補助制度
+  summary: 手帳の対象でない難聴の高齢者に、医療機器認定のある補聴器の購入費を一部補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 身体障害者手帳の対象になる聴力ではない
+  - 耳鼻科医が補聴器の装用が必要と認めている
+  - 市税の滞納がない
+  - 過去にこの補助を受けていない
+  where: 長寿福祉課
+  url: https://www.city.fukaya.saitama.jp/kenko_fukushi/fukushi/fukushikaigo/koreishanotamenofukusisabisu/20030.html
+  confidence: high
+  amount: 上限3万円。申請前に購入した補聴器と集音器は対象外
+- category: haikai
+  name: GPS端末による徘徊者の位置確認
+  name_on_page: 徘徊者探索システム
+  summary: 端末を持ち歩くと、ネットや事業者への電話で位置を確認できる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症高齢者
+  - または要介護認定のある40歳以上
+  - （知的障害児・者は障害福祉課が窓口）
+  where: 長寿福祉課 8番窓口
+  url: https://www.city.fukaya.saitama.jp/soshiki/fukushikenko/chojufukushi/tanto/seikatsushien/13871.html
+  confidence: high
+  amount: 月額料金なし。バッテリー交換は1個2,310円の自己負担
+- category: haikai
+  name: 認知症の人の見守りシールの無料交付
+  name_on_page: おでかけ見守りシール
+  summary: 衣類や靴などに貼る見守りシールを交付し、早期発見につなげる。
+  who: {}
+  at_application:
+  - 要介護・要支援認定を受け、徘徊症状がある
+  - または医師に認知症と診断された
+  where: 長寿福祉課 8番窓口（総合支所では受付なし）
+  url: https://www.city.fukaya.saitama.jp/soshiki/fukushikenko/chojufukushi/tanto/seikatsushien/1625799074262.html
+  confidence: high
+  amount: シール20枚を無料で交付
+- category: jutaku
+  name: 高齢者の住宅改修費の補助（介護保険とは別枠）
+  name_on_page: 高齢者住宅改修費補助事業
+  summary: 要介護認定のない高齢者の、手すり取り付けや段差解消などの工事費を補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住民票があり、大里広域の介護保険被保険者
+  - 要介護（要支援）認定を受けていない・申請中でない
+  - 市税と介護保険料の滞納がない
+  - 着工前の申請と許可が必要。施工は市内業者
+  where: 長寿福祉課 8番窓口
+  url: https://www.city.fukaya.saitama.jp/soshiki/fukushikenko/chojufukushi/tanto/teatezyosei/1548639798214.html
+  confidence: high
+  amount: 工事費の2分の1、上限20万円
+not_found:
+- iro
+- koken
+- shingu
+- ribiyo
+- chusha
+- yutai
+- nichijo-yogu

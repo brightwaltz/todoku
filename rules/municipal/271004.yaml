@@ -1,0 +1,84 @@
+city: '271004'
+name: 大阪市
+site: www.city.osaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 介護保険サービスを使わず要介護4・5の人を介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と介護者が1年以上市内に住んでいる
+  - 介護者は同居か同一敷地・隣地に住む家族など
+  - 1年以上、介護保険サービスを使っていない（短期入所は年7日まで可）
+  - 介護者が複数でも申請は代表1人
+  where: 福祉局高齢者施策部 地域包括ケア推進課（問合せ後に書類が届く）
+  url: https://www.city.osaka.lg.jp/fukushi/page/0000682148.html
+  confidence: high
+  amount: 年額10万円
+- category: jutaku
+  name: 高齢者住宅改修費の上乗せ給付
+  name_on_page: 高齢者住宅改修費給付事業
+  summary: 介護保険の住宅改修と同時に行う、保険対象外の工事費を給付する。
+  who: {}
+  at_application:
+  - 介護保険の住宅改修と同時に行う、保険対象外の工事が対象
+  where: 区の保健福祉センター 保健福祉課（福祉業務担当）
+  url: https://www.city.osaka.lg.jp/fukushi/page/0000630443.html
+  confidence: high
+- category: nichijo-yogu
+  name: 自動消火器の給付
+  name_on_page: 自動消火器
+  summary: 在宅の高齢者に、自動消火器を給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 所得税非課税で要介護1〜5の人、または防火の配慮が必要なひとり暮らし等
+  - 自宅に適当な用具を持っていない
+  where: 区の保健福祉センター 保健福祉課
+  url: https://www.city.osaka.lg.jp/fukushi/page/0000644985.html
+  confidence: high
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 電磁調理器
+  summary: 防火の配慮が必要なひとり暮らし高齢者等に、電磁調理器を給付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 防火等の配慮が必要なひとり暮らし高齢者等
+  - 自宅に適当な用具を持っていない
+  where: 区の保健福祉センター 保健福祉課
+  url: https://www.city.osaka.lg.jp/fukushi/page/0000644985.html
+  confidence: high
+  amount: 前年の所得税額に応じた自己負担あり。非課税世帯は0円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 区の保健福祉センターで受け付ける緊急通報システム。
+  who: {}
+  at_application:
+  - 対象の条件は区の保健福祉センターに問い合わせて確認
+  where: 各区役所（保健福祉センター）
+  url: https://www.city.osaka.lg.jp/fukushi/cmsfiles/contents/0000477/477117/R80zenntai.pdf
+  confidence: low
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- koken

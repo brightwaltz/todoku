@@ -1,0 +1,145 @@
+city: '122025'
+name: 銚子市
+site: www.city.choshi.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成金
+  summary: 難聴で困っている高齢者が補聴器を買うとき、費用の一部が助成される。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻咽喉科の医師が補聴器の使用を必要と認めた
+  - 購入時の調整と購入後の点検を受けられる
+  - 聴覚障害の身体障害者手帳を持っていない
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090040_00002.html
+  confidence: high
+  amount: 補聴器本体の購入費の上限 20,000 円（1 台分）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: 高齢者だけの世帯などに、コールセンターへ通報できる装置を貸す。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者だけの世帯などが対象（詳しい条件は頁に無し）
+  - 新規の申請は市民税非課税世帯のみ
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090034.html
+  confidence: low
+  amount: 利用料は月額 200 円
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付
+  summary: 在宅で要介護3〜5の方のうち、常時紙おむつを使う方に紙おむつを支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市民税非課税世帯のみの受け付け
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090034.html
+  confidence: low
+  amount: 1 か月 30 枚
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りのない認知症高齢者の後見申立ての支援と、後見人等の報酬の助成。
+  who: {}
+  at_application:
+  - 身寄りのない認知症高齢者が対象
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090034.html
+  confidence: low
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の高齢者を介護する同居の家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+  at_application:
+  - 過去 1 年間に介護保険サービスを利用していない
+  - 市民税非課税世帯に属する
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090034.html
+  confidence: low
+  amount: 年額 100,000 円
+- category: haikai
+  name: 徘徊高齢者の探索サービス登録料の助成
+  name_on_page: 徘徊高齢者等家族支援サービス
+  summary: 在宅の徘徊高齢者の探索サービスの登録料の一部を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 対象の細かい条件は頁に無し
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090034.html
+  confidence: low
+  amount: 助成額は 8,000 円まで
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: QR コード付きシールを衣服などに貼り、発見時に家族へメールで通知される。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 医師の認知症の診断がある、または徘徊のおそれがある
+  - 家族や介護者が携帯電話等で情報入力・連絡できる
+  - 事前に問い合わせて申請・登録が必要
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090040.html
+  confidence: high
+  amount: 初回の交付分（耐洗ラベル 20 枚と蓄光シール 10 枚）は無料。追加分は有料
+- category: sonota
+  name: 家具転倒防止器具等の設置費の助成
+  name_on_page: 家具転倒防止器具等設置費用の助成
+  summary: 地震に備えて家具の転倒防止器具などを付ける費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者福祉サービスの頁に載る（年齢などの条件は頁に無し）
+  - 市民税非課税世帯のみの受け付け
+  where: 高齢者福祉課 高齢者福祉班
+  url: https://www.city.choshi.chiba.jp/kurashi/page090034.html
+  confidence: low
+  amount: 助成額は 10,000 円まで
+not_found:
+- haishoku
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- yutai

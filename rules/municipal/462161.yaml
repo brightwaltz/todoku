@@ -1,0 +1,114 @@
+city: '462161'
+name: 日置市
+site: www.city.hioki.kagoshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 「食」の自立支援（配食サービス）
+  name_on_page: 「食」の自立支援事業(配食サービス)
+  summary: 調理が難しい高齢者等に、計画的に配食サービスを提供する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯、または障がいのある人
+  - 身体が虚弱等で日常生活に支障があり、食事の調理が困難
+  - 同居・同一敷地に介護や援助のできる人がいると対象外
+  where: 福祉課（市福祉事務所）長寿福祉係
+  url: https://www.city.hioki.kagoshima.jp/korei/kurashi/kenko-iryo/fukushi/koresha/shoku.html
+  confidence: high
+  amount: 1食450円。1日に昼と夜の2食まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置設置費補助
+  summary: 自宅に付け、24時間のコールセンターなどへ通報できる装置を貸与する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、高齢者のみの世帯、障がい者等の世帯の人など
+  where: 福祉課（市福祉事務所）長寿福祉係
+  url: https://www.city.hioki.kagoshima.jp/korei/kurashi/kenko-iryo/fukushi/koresha/kinkyutsuho.html
+  confidence: high
+  amount: 利用料は月額400円
+- category: iro
+  name: 高齢者介護手当
+  name_on_page: 高齢者介護手当支給事業
+  summary: 要介護4以上の寝たきり高齢者を在宅で介護する家族に、手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 寝たきりの状態が3か月以上続き、在宅で常時介護が必要
+  - 介護者は同居か、これに準ずる状態の親族で、現に介護している
+  - ともに市の住民基本台帳に引き続き3か月以上記録されている
+  - 特別障害者手当・福祉手当を受給中の人は対象外
+  where: 福祉課（市福祉事務所）長寿福祉係
+  url: https://www.city.hioki.kagoshima.jp/korei/kurashi/kenko-iryo/fukushi/koresha/rojinkaigo.html
+  confidence: high
+  amount: 月額10,000円
+- category: sonota
+  name: 高齢者はり・きゅう等の施術費助成
+  name_on_page: 高齢者はり・きゅう等施術費助成事業
+  summary: はり・きゅう等の施術を受けるときの受療券を発行し、施術費を助成する。
+  who: {}
+  at_application:
+  - 70歳以上（65歳以上で後期高齢者医療の被保険者証がある人を含む）
+  where: 福祉課（市福祉事務所）長寿福祉係
+  url: https://www.city.hioki.kagoshima.jp/korei/kurashi/kenko-iryo/fukushi/koresha/hari-kyunado.html
+  confidence: high
+  amount: 施術1回につき800円。同一人は1日1回、年間30回以内
+- category: sonota
+  name: 公衆浴場の入浴利用券
+  name_on_page: 日置市ひおき健やか憩いの湯事業
+  summary: 外出を控えがちな高齢者に、市内の公衆浴場で使える入浴利用券を交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、70歳以上
+  - 令和9年3月31日までに70歳になる人を含む
+  where: 福祉課 長寿福祉係、各支所の地域振興課健康福祉係
+  url: https://www.city.hioki.kagoshima.jp/korei/fukushi3.html
+  confidence: high
+  amount: 1人2,000円分（100円券20枚）。使える期間は交付日から令和9年3月31日まで
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: 医療情報を入れる保管容器・冷蔵庫用マグネット・玄関用シールを無料で配る。
+  who: {}
+  at_application: []
+  where: 本庁または各支所（印鑑を持参）
+  url: https://www.city.hioki.kagoshima.jp/korei/kurashi/kenko-iryo/fukushi/koresha/joho-kit.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 支え愛あんしんネットワーク（事前登録）
+  name_on_page: 支え愛あんしんネットワーク
+  summary: 行方不明になるおそれのある人を事前登録し、地域で早期発見・保護につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症または認知症の疑いで、行方不明になる可能性がある人
+  where: 介護保険課 地域包括ケア推進係（登録は頁のウェブフォームから）
+  url: https://www.city.hioki.kagoshima.jp/houkatsukea/sasaeai.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,148 @@
+city: 082244
+name: 守谷市
+site: www.city.moriya.ibaraki.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者の緊急通報サービス
+  name_on_page: ひとり暮らし高齢者等緊急通報サービス
+  summary: 通報ボタンで警備会社が駆け付け、反応がない時の自動通報や健康相談もある。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に住所がある
+  where: 健幸長寿課（窓口に本人確認書類を持参して申請）
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/kaigohoken/1003326/1003327.html
+  confidence: high
+  amount: 導入時 10,000 円。市民税非課税の人は負担なし
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給事業
+  summary: 在宅で高齢者を介護する家族に、月 5,000 円分までの紙おむつ等を毎月届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり、在宅で介護を受けている
+  - 排尿または排便の介助が必要
+  - 市町村民税が非課税（本人か世帯かは頁に明記なし）
+  where: 健幸長寿課
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/kaigohoken/1003326/1003328.html
+  confidence: high
+  amount: 月 5,000 円分まで（差額の持ち越し・現金での給付はなし）
+- category: haishoku
+  name: 夕食の配食サービス
+  name_on_page: 食の自立支援（配食サービス）
+  summary: 調理が難しい人に夕食を届け、安否も確認する。週 3 日以内。
+  who:
+    age_min: 40
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 食事の調理が困難
+  - 65歳以上のひとり暮らし、または65歳以上だけの世帯の人
+  - 40〜64歳のひとり暮らしで、要支援・要介護認定がある人も対象
+  - 本人に市町村民税が課税されている人は対象外
+  where: 健幸長寿課
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/kaigohoken/1003326/1003329.html
+  confidence: high
+  amount: 1 食 460 円（変更されることがある）
+- category: haikai
+  name: 認知症高齢者等 SOS ネットワーク（みまもりシール）
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれのある人を登録し、みまもりシールを交付して早期発見につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症による行方不明のおそれがある
+  - 登録は 5 年間で、期間後は再申請が必要
+  where: 健幸長寿課（登録申請書と写真 2 枚を提出）
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/kaigohoken/1003284/1003292.html
+  confidence: high
+  amount: 無料（登録時にシールを交付）
+- category: gaishutsu
+  name: 70 歳以上の高齢者世帯向けの福祉タクシー券
+  name_on_page: 福祉タクシー券
+  summary: 通院などのタクシー代を助成する券（1 枚 500 円）を年度ごとに交付する。
+  who: {}
+  at_application:
+  - 次のどれか。(1)身体手帳1・2級、療育手帳A、精神手帳1級の人
+  - (2)指定難病などの医療受給者証の交付を受けている人
+  - (3)満70歳以上の高齢者のみの世帯で、市民税非課税
+  - (3)は同一敷地内の70歳未満・住民税課税の人と同居しない
+  - 障がいによる自動車税の減免、施設への入所・入院は対象外
+  where: 健幸長寿課（交付申請書を提出）
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/shougai_fukushi/1003200/1003209.html
+  confidence: high
+  amount: 1 枚 500 円、年度 36 枚（慢性透析療法の人は 72 枚）、1 回の乗車に 2 枚まで
+- category: mimamori
+  name: 愛の定期便（乳製品の配達による安否確認）
+  name_on_page: 愛の定期便事業
+  summary: ひとり暮らしの人に乳製品を週 2 回以内届け、安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 身体が虚弱、心身に機能障がい、疾病等、孤立のいずれかに当てはまる
+  where: 健幸長寿課
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/kaigohoken/1003326/1003332.html
+  confidence: high
+  amount: 利用者負担なし。週 2 回以内、1 回に乳製品 2 本
+- category: sonota
+  name: 軽度生活援助（掃除・洗濯などの手伝い）
+  name_on_page: 軽度生活援助事業
+  summary: 掃除や洗濯など軽い家事を、シルバー人材センターの人が手伝いに来る。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 要支援・要介護の認定を受けていない
+  - 日常生活上の援助が必要
+  where: 健幸長寿課
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/kaigohoken/1003326/1003332.html
+  confidence: high
+  amount: 1 時間 240 円。月曜〜金曜のうち 2 時間以内
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（市が保険料を負担）
+  name_on_page: 認知症高齢者等個人賠償責任保険
+  summary: SOS ネットワーク登録者の賠償責任を保険で補償する。保険料は市が全額負担。
+  who: {}
+  at_application:
+  - 守谷市認知症高齢者等 SOS ネットワークに登録している
+  where: 健幸長寿課（SOS ネットワーク登録時に保険加入申請書を提出）
+  url: https://www.city.moriya.ibaraki.jp/kenkou_fukushi/kaigohoken/1003284/1009512.html
+  confidence: high
+  amount: 保険料は市が全額負担。補償額は頁に記載なし
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

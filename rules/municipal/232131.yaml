@@ -1,0 +1,210 @@
+city: '232131'
+name: 西尾市
+site: www.city.nishio.aichi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 高齢者おかえりネットワーク（行方不明のおそれのある人の事前登録）
+  name_on_page: 西尾市高齢者おかえりネットワーク
+  summary: 行方不明になるおそれのある高齢者を事前登録し、行方不明時に協力者へ情報を配信する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になるおそれがある高齢者
+  - 事前登録届と顔・全身の写真を提出する
+  where: 長寿課 地域支援担当、各地域包括支援センター（高齢者サポートセンター）
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1002499.html
+  confidence: high
+  amount: 登録した人は認知症高齢者等個人賠償責任補償の保険料を市が負担（自己負担なし）
+- category: haikai
+  name: 認知症高齢者のGPS位置情報サービス導入費の補助
+  name_on_page: 認知症高齢者位置情報検索サービス導入費等補助金
+  summary: 認知症の人が持つGPS機器等の導入初期費用を、支える家族等に補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 市内に住民票がある
+  - おかえりネットワークに事前登録している
+  - 申請するのは本人を支える家族等
+  where: 長寿課
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1010820.html
+  confidence: high
+  amount: 初期費用の補助で上限1万円（1人1回限り）。月額利用料などは対象外
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム設置
+  summary: ひとり暮らしの人の急病などに備え、緊急通報システムの機器を無料で貸与する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内に住所がある
+  - 要支援・要介護認定のひとり暮らし高齢者で、介護保険料所得段階が第1〜7段階
+  - かつ転倒や心臓疾患で急に動けなくなる危険がある
+  - または身体障害者手帳1・2級で前年の本人所得200万円以下のひとり暮らし
+  where: 長寿課 高齢者福祉担当
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1002503.html
+  confidence: high
+  amount: 利用料は無料
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 高齢者配食サービス
+  summary: 調理が難しい高齢者に、手渡しで安否確認しながら昼食か夕食を届け、費用を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 世帯全員の介護保険料所得段階が第1〜8段階
+  - 担当のケアマネジャーが利用を適切と確認できる
+  - 世帯全員が介護保険料を滞納していない
+  - 本人が調理できない、または調理が困難
+  - 佐久島は配食業者がなく対象外
+  where: 長寿課 高齢者福祉担当（申請は親族が基本）
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1002502.html
+  confidence: high
+  amount: 本人1人につき1日1食あたり250円の助成（週1〜7日）
+- category: gaishutsu
+  name: 高齢者のタクシー利用券の交付
+  name_on_page: 高齢者タクシー利用支援事業
+  summary: 交通手段に困る75歳以上だけの世帯に、通院・買い物用のタクシー助成券を渡す。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所があり、世帯全員が75歳以上
+  - 世帯全員の介護保険料所得段階が第1〜7段階
+  - 車で移動できる世帯員がいない
+  - 自動車税・軽自動車税の減免を受けていない
+  - 心身障害者福祉タクシー助成の対象者、施設入所者、保険料滞納者は除く
+  where: 長寿課（市役所1階）、一色・吉良・幡豆の各支所
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1002501.html
+  confidence: high
+  amount: 1か月あたり500円の助成券を3枚交付
+- category: kaigo-yohin
+  name: 紙おむつ購入券の支給（非課税世帯）
+  name_on_page: おむつ支給（低所得世帯）
+  summary: 重い要介護の高齢者を在宅で介護する同一世帯の1人に、おむつ購入券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3〜5の高齢者を在宅で介護する同一世帯員1人が申請
+  - 介護保険料の滞納者は除く
+  where: 長寿課 高齢者福祉担当
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1002496.html
+  confidence: high
+  amount: 月額5,500円の購入券。申請月の翌月分から。指定の薬局・薬店で使用
+- category: iro
+  name: 家族介護慰労金の支給（非課税世帯）
+  name_on_page: 家族介護慰労金支給（低所得世帯）
+  summary: 介護保険サービスを使わず重度の高齢者を在宅介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去半年間、介護保険サービスを使わずに在宅で介護している
+  - 申請の半年以上前に要介護4・5の認定を受けている
+  - 介護保険料の滞納者は除く
+  where: 長寿課 高齢者福祉担当
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1002497.html
+  confidence: high
+  amount: 年額10万円を、介護している家族の口座に振込
+- category: ribiyo
+  name: 訪問理美容の利用券交付
+  name_on_page: 訪問理美容利用支援事業
+  summary: 外出できない在宅の重度要介護の高齢者が訪問理美容を使うときの料金を一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 本人と世帯員が介護保険料を滞納していない
+  - 身体障害者の訪問理美容支援とは重複できない
+  - 市に登録した理美容店のみ利用できる
+  where: 長寿課
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1008143.html
+  confidence: high
+  amount: 1枚1,000円を上限とする利用券を年度に最大4枚（1回に2枚まで使える）
+- category: mimamori
+  name: 高齢者安否確認通知サービス（LINE）
+  name_on_page: 高齢者安否確認通知サービス
+  summary: 毎日LINEで安否を返信し、2日連続で無回答なら登録した家族に通知が届く。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者向け。高齢者以外も利用できる
+  - 見守られる人と見守る人（家族など）を事前登録する
+  where: 西尾市LINE公式アカウントで登録。問合せは長寿課 高齢者福祉担当
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1011592.html
+  confidence: high
+  amount: 利用無料（通信料は自己負担）
+- category: nichijo-yogu
+  name: 住宅用火災警報器の設置費の市負担
+  name_on_page: 住宅用火災警報器設置
+  summary: 高齢者のみの世帯に、住宅用火災警報器の設置費用を市が負担する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯全員の介護保険料所得段階が第1〜7段階
+  - 給付決定前に設置したものは対象外。利用は1回限り
+  where: 長寿課 高齢者福祉担当
+  url: https://www.city.nishio.aichi.jp/kenkofukushi/kourei/1001451/1002500.html
+  confidence: high
+  amount: 平屋は2個まで、2階建て以上（集合住宅除く）は3個まで。超えた分は自己負担
+not_found:
+- koken
+- jutaku
+- shingu
+- yutai

@@ -1,0 +1,182 @@
+city: '122351'
+name: 匝瑳市
+site: www.city.sosa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付
+  summary: 在宅で要介護4・5の低所得の高齢者に、紙おむつを現物で給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 常時尿失禁の状態にある
+  - 本人が市民税非課税
+  where: 高齢者支援課 支援班
+  url: https://www.city.sosa.lg.jp/page/page000492.html
+  confidence: high
+  amount: 月30枚相当を年4回（5・8・11・2月）に分けて給付
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず要介護4・5の人を介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、7日以内の短期入所を除く介護保険サービスを使っていない
+  - 在宅で1年以上介護している家族が申請
+  where: 高齢者支援課 支援班
+  url: https://www.city.sosa.lg.jp/page/page000498.html
+  confidence: high
+  amount: 10万円（年1回）
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 訪問理容サービス
+  summary: 理容院に行けない高齢者の自宅への出張理容で、出張経費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体の不自由などで自分では理容院に行けない
+  where: 高齢者支援課 支援班
+  url: https://www.city.sosa.lg.jp/page/page000492.html
+  confidence: high
+  amount: 出張経費を助成（年4回分の利用券）。散髪料は実費
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: gaishutsu
+  name: 外出支援サービス（通院の送迎）
+  name_on_page: 外出支援サービス
+  summary: 車いす等が必要な人の通院に、福祉車両での送迎（介護タクシー）の利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 車いすやストレッチャーが必要で、通院に特殊車両が要る
+  - 病院・診療所への通院や入退院の送迎のみ
+  where: 高齢者支援課 支援班
+  url: https://www.city.sosa.lg.jp/page/page000492.html
+  confidence: high
+  amount: 自己負担は市内で片道500円、隣接市町（20kmまで）で片道700円。月1枚の利用券
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: gaishutsu
+  name: 地域交通利用券（タクシー券）
+  name_on_page: 匝瑳市地域交通利用料助成事業
+  summary: 運転免許を持たない75歳以上に、タクシー料金の一部を助成する利用券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 有効な自動車・バイク・原付の運転免許がない
+  - 福祉タクシー助成・外出支援サービスを利用していない
+  - 生活保護を受けていない
+  - 市税・国保税に滞納がない
+  where: 環境生活課、野栄総合支所
+  url: https://www.city.sosa.lg.jp/page/page000251.html
+  confidence: high
+  amount: 1枚500円分の利用券を月2枚（最大24枚）
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: 24時間対応の通報装置を設置し、月1回のお伺い電話や健康相談もある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 病弱など身体状況に不安があり緊急時に備える必要がある
+  - 協力員の承諾書が2〜3名分必要
+  where: 高齢者支援課 支援班
+  url: https://www.city.sosa.lg.jp/page/page000492.html
+  confidence: high
+  amount: 所得税課税世帯は自己負担あり（月額1,358円〜2,200円）
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: haikai
+  name: 認知症高齢者あんしん見守りシール
+  name_on_page: 認知症高齢者あんしん見守りシール
+  summary: QRコード付きシールを無料で配り、行方不明時の早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上、または40〜64歳で若年性認知症と診断された人
+  - 高齢者SOSネットワークへの登録（本人写真）をお願いしている
+  where: 高齢者支援課 地域包括支援センター
+  url: https://www.city.sosa.lg.jp/page/page003801.html
+  confidence: high
+  amount: 無料（耐洗ラベル30枚、蓄光シール10枚）
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: koken
+  name: 成年後見人等への報酬助成
+  name_on_page: 成年後見人等への報酬助成
+  summary: 成年後見人等への報酬の支払いが難しい人に、市が報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 介護保険の第1号被保険者など市が福祉の措置を行う人
+  - 生活保護を受けているか、資産で報酬全額を払うと生計維持が困難
+  - 成年後見人等が民法725条の親族の場合は対象外
+  where: 高齢者支援課 支援班（高齢者の被後見人等）
+  url: https://www.city.sosa.lg.jp/page/page006133.html
+  confidence: high
+  amount: 上限は月額28,000円（在宅）、18,000円（在宅以外）
+- category: sonota
+  name: 老人短期入所（養護老人ホームでの短期入所）
+  name_on_page: 老人短期入所事業
+  summary: 一時的に養護が必要な在宅高齢者が、養護老人ホームに1か月以内で短期入所できる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 身体上または精神上の障がいがある
+  - 養護者が病気や事故等で養護できない、または独居で衰弱し在宅生活が困難
+  - 医療機関での治療が必要な人は対象外
+  where: 高齢者支援課 支援班
+  url: https://www.city.sosa.lg.jp/page/page000493.html
+  confidence: high
+  amount: 1日2,500円（生活保護受給者は無料）、1か月以内
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: かかりつけ医や持病など救急時に要る情報を保管するキットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上で救急時に情報伝達が困難な人
+  - または障害者手帳の交付を受けた人、市長が認める人
+  where: 高齢者支援課 支援班
+  url: https://www.city.sosa.lg.jp/page/page000492.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.sosa.lg.jp/data/doc/1761026845_doc_171_0.pdf
+not_found:
+- haishoku
+- hochoki
+- shingu
+- jutaku
+- nichijo-yogu
+- mimamori

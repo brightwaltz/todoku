@@ -1,0 +1,163 @@
+city: '222097'
+name: 島田市
+site: www.city.shimada.shizuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給券
+  name_on_page: 家族介護用品支給事業
+  summary: おむつ等の介護用品と交換できる支給券を、介護している家族に毎月出す。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 申請は市内に住む家族等（おむつ交換をしている人）
+  - 失禁があり常に必要で、自力での交換が難しい
+  - ヘルパーが交換の大半を行う場合は対象外
+  where: 長寿介護課総合窓口（市役所本庁舎1階）
+  url: https://www.city.shimada.shizuoka.jp/gyosei-docs/omutsuken.html
+  confidence: high
+  amount: 月額3,000円分の支給券
+- category: haishoku
+  name: 高齢者への配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい人に昼食を届け、手渡しで安否も確かめる。
+  who:
+    age_min: 65
+  at_application:
+  - 高齢者のみの世帯またはこれに準ずる世帯
+  - 身体機能の低下や傷病で調理が難しく、他に支援する人がいない
+  - 申請後に職員が訪問して状況を確認する
+  where: 長寿介護課（総合窓口・高齢者政策係）、各支所
+  url: https://www.city.shimada.shizuoka.jp/kurashi-docs/kourei_haisyoku.html
+  confidence: high
+  amount: 利用者負担は1食380円（ごはんセット）、おかずのみ310円（笹間地区は400円・320円）
+  more_urls:
+  - https://www.city.shimada.shizuoka.jp/fs/9/6/9/1/1/7/_/pinnkubonn.pdf
+- category: haikai
+  name: 徘徊高齢者等の事前登録
+  name_on_page: 徘徊高齢者等事前登録事業
+  summary: 行方不明のおそれがある認知症の人を事前登録し、警察等と情報を共有する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請できるのは配偶者または4親等内の親族
+  - 顔写真と全身写真が必要
+  where: 包括ケア推進課
+  url: https://www.city.shimada.shizuoka.jp/kurashi-docs/157283729.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 認知症高齢者等の位置探索GPS補助金
+  name_on_page: 島田市認知症高齢者等位置探索サービス利用補助金交付事業
+  summary: GPS機器の購入費や加入費の一部を、家族の申請で補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊高齢者等事前登録事業を利用している
+  - 申請者は対象高齢者の家族
+  - 購入前に申請する。1人1回まで
+  - 毎月の利用料やGPS以外の機能付き機器は対象外
+  where: 包括ケア推進課
+  url: https://www.city.shimada.shizuoka.jp/kurashi-docs/ititansakusa-bisuriyouhojokin.html
+  confidence: high
+  amount: 対象経費で最大10,000円
+  more_urls:
+  - https://www.city.shimada.shizuoka.jp/kurashi-docs/157283729.html
+- category: hochoki
+  name: 高齢者等補聴器の購入助成
+  name_on_page: 高齢者等補聴器購入助成事業
+  summary: 補聴器の購入に使える助成券を出す。聴覚の障害者手帳の対象でない人向け。
+  who:
+    age_min: 40
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付対象でない
+  - 両耳30dB以上で、耳鼻科医が日常使用を必要と認めた
+  - 過去にこの事業の助成を受けていない
+  - 他の法令等による補聴器の購入助成を受けていない
+  where: 長寿介護課（総合窓口・高齢者政策係）
+  url: https://www.city.shimada.shizuoka.jp/gyosei-docs/795959675.html
+  confidence: high
+  amount: 補聴器本体代の2分の1以内、上限5万円
+  more_urls:
+  - https://www.city.shimada.shizuoka.jp/fs/9/6/9/1/1/7/_/pinnkubonn.pdf
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等の緊急通報装置の設置
+  name_on_page: ひとり暮らし高齢者等緊急通報システム事業
+  summary: 緊急通報装置や火災感知器等を無料で設置し、週1回の安否確認電話もある。
+  who: {}
+  at_application:
+  - ひとり暮らしの65歳以上、またはこれに準ずる世帯
+  - または肢体不自由・視覚障害の手帳1・2級でひとり暮らし等
+  - 設置には対象の固定電話回線が必要（携帯のみの方式もある）
+  where: 長寿介護課または各支所
+  url: https://www.city.shimada.shizuoka.jp/kurashi-docs/hitorikurashikinnkyuutuuhou.html
+  confidence: high
+  amount: 設置料・利用料は無料（通話料が月300円程度）
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立費用や後見人への報酬を払うのが難しい人に、その費用を助成する。
+  who: {}
+  at_application:
+  - 申立費用や後見人報酬の支払いが困難
+  - 詳しい所得の基準は冊子に書かれていない
+  where: 包括ケア推進課地域支援係
+  url: https://www.city.shimada.shizuoka.jp/fs/9/6/9/1/1/7/_/pinnkubonn.pdf
+  confidence: low
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（市が加入）
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 事前登録した認知症の人が起こした事故の賠償を、最大1億円まで補償する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊高齢者等事前登録事業に申請している（同時でも可）
+  - 同種の補償がなく、運転免許証を持っていない
+  where: 包括ケア推進課
+  url: https://www.city.shimada.shizuoka.jp/kurashi-docs/157283729.html
+  confidence: high
+  amount: 保険料の利用者負担は無料、補償は最大1億円
+- category: sonota
+  name: 養護老人ホームへの短期宿泊による生活指導
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホームに短期間泊まり、生活習慣の指導や体調管理を受ける。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護・要支援の認定を受けていない
+  - 宿泊で生活習慣の指導や体調を整える必要がある
+  where: 長寿介護課高齢者政策係
+  url: https://www.city.shimada.shizuoka.jp/fs/9/6/9/1/1/7/_/pinnkubonn.pdf
+  confidence: low
+  amount: 1日380円（食事代は別）、年7日以内
+not_found:
+- iro
+- ribiyo
+- shingu
+- mimamori
+- nichijo-yogu

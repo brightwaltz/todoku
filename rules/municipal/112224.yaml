@@ -1,0 +1,175 @@
+city: '112224'
+name: 越谷市
+site: www.city.koshigaya.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 手帳の対象にならない聞こえにくい高齢者の補聴器購入費を一部助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり現に住んでいる
+  - 耳鼻科医が補聴器を必要と認める（市の意見書様式）
+  - 聴覚障害の手帳の対象でない（聴力の基準が頁にあり）
+  - 過去5年以内に本事業の助成を受けていない
+  - 購入前に申請する（購入後の申請は対象外）
+  where: 地域包括ケア課（市役所第二庁舎1階）
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/koureisha/zaitakufukushi/koshigaya_contents_hochouki.html
+  confidence: high
+  amount: 補聴器購入費の上限 3万円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容室に行けない人の自宅へ理美容師が出張し、出張料を市が負担する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護3〜5の65歳以上、または下肢・体幹の身障手帳1・2級
+  - または療育手帳の最重度・重度（Aまたは○A）
+  where: 地域包括ケア課
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/koureisha/zaitakufukushi/koshigaya_contents_ribiyou.html
+  confidence: high
+  amount: 出張料は市が負担、理美容代は自己負担。年4回まで（申請時期で異なる）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 発作を伴う病気のある高齢者に、通報センターにつながる装置を貸す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 市内に住所があり、市民税非課税世帯に属する
+  - 発作症状を伴う病気がある本人、または同じ世帯に当人がいる
+  - 申込後に職員が電話・訪問で対象かを確認する
+  where: 地域包括ケア課、地域包括支援センター
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/koureisha/zaitakufukushi/koshigaya_contents_kinntuu.html
+  confidence: high
+  amount: 装置は貸与。電話の基本料金・通話料・電気料金は自己負担
+- category: iro
+  name: 在宅介護者への福祉手当
+  name_on_page: 在宅介護者福祉手当
+  summary: 要介護4・5の高齢者を在宅で常時介護する主な介護者に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 年齢・要介護度は介護を受ける本人の条件
+  - 市内に住所があり、主たる介護者が常時介護している
+  - 本人が施設・病院に入っている間は受給できない
+  where: 高齢福祉課
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/koureisha/zaitakufukushi/koshigaya_contents_zaitaku.html
+  confidence: high
+  amount: 月 5,000 円（2人以上介護は 1 万円）、年3回に分けて支給
+  more_urls:
+  - https://www.city.koshigaya.saitama.jp/kurashi_shisei/navi/koureisha.html
+- category: haikai
+  name: 認知症の徘徊に備える位置検索端末の貸与
+  name_on_page: 認知症徘徊高齢者家族支援サービス事業
+  summary: 行方不明のおそれがある認知症高齢者の介護者に、位置検索端末を貸す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある高齢者を在宅で介護している人が申し込む
+  - 認知症で外出時に行方不明になるおそれがある
+  where: 地域包括ケア課
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/koureisha/ninchisho/koshigaya_contents_haikai.html
+  confidence: high
+  amount: 月額 900 円（税込、生活保護の人は無料）。損害賠償補償と電話相談が付く
+- category: gaishutsu
+  name: 75歳以上のバス・タクシー運賃補助
+  name_on_page: 越谷げんき de MaaS
+  summary: 交通系ICカードを登録すると、市内のバス・タクシー運賃が補助される。
+  who:
+    age_min: 75
+  at_application:
+  - 市内在住（年度内に75歳になる人を含む）
+  - 交通系ICカードを登録して利用する
+  where: スマホで自己登録、または市役所本庁舎6階の登録支援会
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/sumai/koukyokoutsu/koshigayagenkidemaasunnchinhojo.html
+  confidence: high
+  amount: バス 1 回 100 円（回数上限なし）、タクシー 1 回 500 円（年度 12 回まで）
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立ての場合に、申立て費用や後見人報酬の助成を受けられる。
+  who: {}
+  at_application:
+  - 市長が申立てを行う場合が対象。法定後見のみ（任意後見は除く）
+  - 助成がないと制度の利用が困難な人
+  - 報酬助成は市民税非課税世帯で支払いが困難な人
+  - 申立て費用の助成額は収入の程度で家庭裁判所が決める
+  where: 地域包括支援センター、成年後見センターこしがや
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/koureisha/kenriyougo/seinenkouken.html
+  confidence: high
+  amount: 報酬助成は上限月額 28,000 円（施設入所は 18,000 円）
+- category: kaigo-yohin
+  name: 紙おむつ等の配付
+  name_on_page: 紙おむつ等の配付
+  summary: 年2回、紙おむつや尿取りパッドなどを自宅へ届ける（社会福祉協議会）。
+  who: {}
+  at_application:
+  - 年齢・所得などの詳しい条件は頁に無い。社協に確認が必要
+  where: 越谷市社会福祉協議会 生活支援課
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/navi/koureisha.html
+  confidence: low
+  amount: 年2回（9月・3月）配付。金額は頁に無い
+  more_urls:
+  - https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/syakaihukusi/chiikifukushi/koureisya-carer.html
+- category: sonota
+  name: 生活支援短期宿泊（一時的な施設での生活支援）
+  name_on_page: 生活支援短期宿泊事業
+  summary: 介護者が一時的に介護できないとき、特養などの空きベッドで生活を支援する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の認定の対象外で、生活に支障がある
+  - 見守りや部分的な介助が必要
+  - 介護者の病気・事故などで一時的に介護が困難
+  - 空きベッドがあるときのみ
+  where: 地域包括ケア課
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/fukushi/koureisha/zaitakufukushi/koshigaya_contents_tannki.html
+  confidence: high
+  amount: 1日 2,500 円。年間14日以内
+  more_urls:
+  - https://www.city.koshigaya.saitama.jp/kurashi_shisei/navi/koureisha.html
+- category: sonota
+  name: ごみの戸別収集と安否確認
+  name_on_page: ふれあい収集
+  summary: ごみ集積所に出せない世帯の自宅を週1回訪問してごみを収集し、声かけで安否を確認する。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または障がいのある人のみの世帯
+  - その他、市長が必要と認める世帯
+  - 訪問調査のうえ実施を決める
+  where: リサイクルプラザ業務担当（電話 048-976-5375）
+  url: https://www.city.koshigaya.saitama.jp/kurashi_shisei/kurashi/gomi_recycle/kateigomi/koshigaya_contents_20180614.html
+  confidence: high
+not_found:
+- haishoku
+- shingu
+- jutaku
+- nichijo-yogu
+- mimamori

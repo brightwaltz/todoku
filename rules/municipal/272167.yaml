@@ -1,0 +1,210 @@
+city: '272167'
+name: 河内長野市
+site: www.city.kawachinagano.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（配食サービス）
+  name_on_page: 食の自立支援事業
+  summary: 食の支援が必要な高齢者に、見守りを兼ねて昼食を手渡しで届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 「食」に関して支援が必要
+  - 配食は必要がある場合
+  where: 地域福祉高齢課 高齢者支援グループ（担当地区の施設職員が訪問）
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/26139.html
+  confidence: high
+  amount: 1食550円の自己負担。週5回以内、1日1食（昼食）
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: kinkyu-tsuho
+  name: 高齢者等総合見守りシステム（緊急通報装置・みまもりタグ）
+  name_on_page: 高齢者等総合見守りシステム
+  summary: 自宅の通報装置とペンダントで24時間の駆け付け対応。認知症の方向けに位置検索のタグもある。
+  who: {}
+  at_application:
+  - ひとり暮らしや寝たきり、認知症の高齢者等が対象
+  - 緊急連絡先は原則2名の登録
+  - 自宅の合鍵1本を預ける
+  where: 地域福祉高齢課
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/126099.html
+  confidence: high
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: haikai
+  name: 認知症高齢者SOSネットワーク
+  name_on_page: 認知症高齢者SOSネットワーク
+  summary: 行方不明時に捜索チラシを協力機関へ配信する。事前登録もできる。
+  who: {}
+  at_application:
+  - 認知症の高齢者が対象
+  - 道に迷うおそれがあれば事前登録できる
+  - 本人の写真と申請者の印鑑が必要
+  where: 地域福祉高齢課（閉庁時は地域包括支援センター）
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/26139.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: iro
+  name: 在宅老人介護支援金
+  name_on_page: 在宅介護支援金の給付
+  summary: 重度の要介護高齢者を在宅で介護する同居家族に、支援金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人は65歳以上で、その状態が3か月以上続いている
+  - 介護者と要介護者を含む同居者全員の市民税が非課税など
+  where: 地域福祉高齢課 高齢者支援グループ
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/26139.html
+  confidence: high
+  amount: 月額1万円
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: ribiyo
+  name: 訪問理容サービス助成
+  name_on_page: 訪問理容サービス助成事業
+  summary: 理容店に行けない高齢者の自宅へ登録理容店が訪問する費用を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 寝たきり等で自力で理容店に行けない
+  - 所得の要件あり
+  where: 地域福祉高齢課
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/26139.html
+  confidence: high
+  amount: 年4枚の助成券。自己負担2,000円あり
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: shingu
+  name: 寝具の洗濯乾燥サービス助成
+  name_on_page: 寝具洗濯乾燥サービス助成事業
+  summary: 布団・毛布の洗濯乾燥の費用の一部を助成券で助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 寝たきりや失禁などで頻繁な洗濯乾燥が必要
+  - 所得の要件あり
+  where: 地域福祉高齢課
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/26139.html
+  confidence: high
+  amount: 年間10枚の助成券。1枚につき170円の自己負担
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: hochoki
+  name: 高齢者難聴補聴器購入費の助成
+  name_on_page: 高齢者難聴補聴器購入費助成事業
+  summary: 手帳の対象でない難聴の高齢者に、補聴器の購入費の半額を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 生活保護世帯または非課税世帯
+  - 身体障害者手帳（聴力）がなく、交付対象にもならない
+  - 指定医師が補聴器を必要と認めた。初めての助成
+  - 両耳40dB以上70dB未満など聴力の基準あり
+  - 購入前の相談が必須（購入後の申請は対象外）
+  where: 地域福祉高齢課（市役所7階）
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/97110.html
+  confidence: high
+  amount: 対象経費の半額（千円未満切り捨て）、上限25,000円
+- category: jutaku
+  name: 高齢者住宅改造助成
+  name_on_page: 高齢者住宅改造助成事業
+  summary: 要介護認定のない高齢者の段差解消や手すり設置などの改造費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護（要支援）認定を受けていない
+  - 心身の状況から住宅改造が必要と認められる
+  - 改造する居宅の居住者全員の市民税が非課税
+  - 工事着手前に相談が必要
+  where: 地域福祉高齢課 高齢者支援グループ
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/4193.html
+  confidence: high
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付・貸与
+  name_on_page: 日常生活用具の給付・貸与
+  summary: 電磁調理器・自動消火器・火災警報器などを給付または貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者
+  where: 地域福祉高齢課（詳細は問い合わせ）
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/26139.html
+  confidence: low
+- category: sonota
+  name: 短期ベッド貸出
+  name_on_page: 短期ベッド貸出
+  summary: 入院・入所中の親族を自宅で一時介護する家族に、介護用ベッドを貸し出す。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 入院・入所中の65歳以上の親族を自宅で一時的に介護する
+  - 1人年度2回まで、1回14日以内
+  where: 地域福祉高齢課
+  url: https://www.city.kawachinagano.lg.jp/soshiki/4/26139.html
+  confidence: high
+  amount: 1回あたりの自己負担は650～900円
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 河内長野市認知症高齢者等個人賠償責任保険事業
+  summary: 市が保険料を負担し、認知症の人が起こした事故の賠償などに備える。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 市に住民登録がある
+  - SOSネットワークに事前登録している
+  - 認知症高齢者の日常生活自立度2a以上、または認知症の診断書を出せる
+  where: 地域福祉高齢課 高齢者支援グループ
+  url: https://www.city.kawachinagano.lg.jp/site/ninchisho/59196.html
+  confidence: high
+  amount: 保険料の自己負担なし。賠償責任は1事故最大1億円
+  more_urls:
+  - https://www.city.kawachinagano.lg.jp/uploaded/life/125533_360401_misc.pdf
+- category: sonota
+  name: ふれあい収集（ごみ出し困難世帯の玄関先収集）
+  name_on_page: ふれあい収集
+  summary: ごみを集積所へ出せない世帯の家庭ごみを、玄関先で収集する。
+  who: {}
+  at_application:
+  - 要介護1以上、要支援1・2（介護サービス利用中）などの方の世帯
+  - 身体障がい1・2級、妊娠届から1年以内なども対象
+  - 同居者や親族・近隣の協力が得られる世帯は除く
+  where: 環境衛生課 資源循環グループ
+  url: https://www.city.kawachinagano.lg.jp/soshiki/15/1806.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- koken
+- gaishutsu
+- mimamori

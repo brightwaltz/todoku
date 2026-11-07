@@ -1,0 +1,122 @@
+city: '452050'
+name: 小林市
+site: www.city.kobayashi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: ボタン1つで通報できる機器を使え、月1回の安否確認も受けられる。
+  who:
+    at_home: true
+  at_application:
+  - 自身で火災報知専用電話の利用が困難と判断される方
+  - 65歳以上で要支援・要介護認定、または身障1・2級・精神1級・療育Aの手帳
+  - 同居の親族がいない、または同居親族全員が119番通報困難と判断される
+  - 住民税所得割非課税世帯に属している
+  - 市内に住所があり、在宅で生活している
+  where: 担当のケアマネジャー、地域包括支援センター（小林市・のじり・小林市西部）、居宅介護支援事業所 美穂の里（須木地区）。問い合わせは長寿介護課（0984-23-1140）
+  url: https://www.city.kobayashi.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/2830.html
+  confidence: high
+  amount: 利用者負担は月額0円（生活保護）・314円（住民税非課税）・629円（住民税所得割非課税）
+- category: haishoku
+  name: 訪問給食サービス事業
+  name_on_page: 訪問給食サービス事業
+  summary: 調理が難しい高齢の方などに、昼と夕の給食を届け、安否確認も行う。
+  who: {}
+  at_application:
+  - 市内に住所があるおおむね65歳以上の高齢者等（訪問調査あり）
+  - 調理や買い物が困難で支援者がいない、または医師指示の食事が必要
+  - 本人と生計を同じくする者に住民税所得割が課税されていない
+  - 日中の安否確認を要する場合
+  where: 地域包括支援センター（小林市・のじり・小林市西部）、居宅介護支援事業所 美穂の里（須木地区）。問い合わせは長寿介護課（0984-23-1140）
+  url: https://www.city.kobayashi.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/3721.html
+  confidence: high
+  amount: 1食 ごはん付き400円・おかずのみ350円（生活保護は350円・300円）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 在宅の要介護の方などの寝具を、年に1回、洗濯・乾燥・消毒する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定を受けている、または身体障害者手帳1級・2級を持っている
+  - 市内に住所があり、在宅で生活している
+  - 施設に入所中、または3か月以上入院中の方は対象外
+  - 本人も同一世帯の人も住民税所得割が課されていない
+  where: 地域包括支援センター（小林市・のじり・小林市西部）、居宅介護支援事業所 美穂の里（須木地区）。問い合わせは長寿介護課（0984-23-1140）
+  url: https://www.city.kobayashi.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/3323.html
+  confidence: high
+  amount: 年1回、500円
+- category: gaishutsu
+  name: 福祉タクシー料金助成（タクシー利用券）
+  name_on_page: 福祉タクシー料金助成事業
+  summary: 75歳以上の高齢者や障がい者に、タクシー利用券を交付し料金の一部を助成する。
+  who: {}
+  at_application:
+  - 75歳以上で本人が運転免許も車両も持たない、または身障1・2級・精神1級・療育Aの手帳
+  - 対象世帯に前年度の住民税所得割が課税されていない
+  - 同居等の親族がいない、または親族全員が免許・車両なし、就労、長期入院等
+  - 市内に住所がある
+  where: 地域包括支援センター、居宅介護支援事業所 美穂の里、長寿介護課、須木庁舎・野尻庁舎の住民生活課
+  url: https://www.city.kobayashi.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/3588.html
+  confidence: high
+  amount: 利用券1枚500円、年間最大30枚（年度の途中で申請した場合は残り月数×2.5枚）
+- category: gaishutsu
+  name: 高齢者等外出支援サービス（須木地域）
+  name_on_page: 高齢者等外出支援サービス
+  summary: バスなどを使いにくい須木地域の方が、通院や買い物に乗れる外出支援。
+  who: {}
+  at_application:
+  - 須木地域内に住んでいる
+  - おおむね65歳以上で、介護認定を受けているか、身体・精神・療育の手帳を持っている
+  - 利用は須木地域内の通院・買い物・公共機関の利用などに限る
+  - 事前の申請と予約が必要。地区ごとに利用できる曜日が決まっている
+  where: 須木庁舎 住民生活課（0984-48-3132）
+  url: https://www.city.kobayashi.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/2967.html
+  confidence: high
+  amount: 片道100円
+- category: iro
+  name: 在宅介護手当の支給
+  name_on_page: 在宅介護手当給付事業
+  summary: 要介護3以上の高齢者を在宅で介護している人に、月額の手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3以上・65歳以上の寝たきり高齢者などを常に介護している人
+  - 在宅で高齢者を3か月以上介護している
+  - 市内に住所がある
+  where: 地域包括支援センター（小林市・のじり・小林市西部）、居宅介護支援事業所 美穂の里（須木地区）。問い合わせは長寿介護課（0984-23-1140）
+  url: https://www.city.kobayashi.lg.jp/soshikikarasagasu/kenkofukushibuchokotobukikaigoka/koreishafukushi_kaigo/2/4583.html
+  confidence: high
+  amount: 月額 住民税所得割が非課税10,000円、7万円未満6,000円、14万円以下3,000円
+- category: haikai
+  name: 見守りSOSネットワーク「愛優見ねっと」（事前登録）
+  name_on_page: 見守りSOSネットワーク（愛優見ねっと）
+  summary: ひとり歩きの心配がある高齢者を事前に登録し、地域で見守り早期対応につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - ひとり歩きの心配がある高齢者を事前に登録申請する
+  where: お近くの地域包括支援センター（小林市・のじり・小林市西部）、長寿介護課（0984-23-1140）
+  url: https://www.city.kobayashi.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/7336.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- hochoki
+- koken
+- jutaku
+- ribiyo
+- nichijo-yogu
+- mimamori

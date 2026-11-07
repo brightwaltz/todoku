@@ -1,0 +1,144 @@
+city: '322032'
+name: 出雲市
+site: www.city.izumo.shimane.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 軽度・中等度難聴者の補聴器購入費助成
+  name_on_page: 出雲市軽度・中等度難聴者補聴器購入費助成
+  summary: 身体障害者手帳の対象にならない難聴の人に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、現に住んでいる
+  - 住民税非課税世帯、または生活保護世帯に属する
+  - 身体障害者手帳や県の難聴児補聴器助成の対象でない
+  - 聴力30dB以上（医師が必要と認めれば可）
+  - 前回の助成から5年以上たっている
+  where: 高齢者福祉課（65歳以上）、各行政センター市民サービス課
+  url: https://www.city.izumo.shimane.jp/www/contents/1755560182849/index.html
+  confidence: high
+  amount: 1件25,000円（5万円以上の補聴器一式を買う場合のみ）
+- category: gaishutsu
+  name: 高齢者福祉タクシー利用券
+  name_on_page: 高齢者福祉タクシー利用券を交付します
+  summary: 駅やバス停から遠い70歳以上の高齢者のみの世帯に、タクシー利用券を交付する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 自家用車を持っていない
+  - 最寄りの駅・バス停まで500m以上（中山間地域は200m以上）
+  - 障がい者福祉タクシーの助成世帯は対象外
+  - 他の外出支援事業・乗合交通がある地域は対象外
+  - 長期入院中・施設入所中は対象外
+  where: 高齢者福祉課、各行政センター市民サービス課（郵送可）
+  url: https://www.city.izumo.shimane.jp/www/contents/1760062521782/index.html
+  confidence: high
+  amount: 1年で500円券24枚（12,000円分）
+  more_urls:
+  - https://www.city.izumo.shimane.jp/www/contents/1616743086238/files/izumokaigo202406.pdf
+- category: gaishutsu
+  name: 斐川まめながタクシー外出支援（斐川地域）
+  name_on_page: 出雲市斐川まめながタクシー外出支援事業
+  summary: 斐川地域の外出が難しい高齢者等が、予約制の乗合タクシーを安く使える。
+  who: {}
+  at_application:
+  - 斐川地域に住んでいる
+  - 65歳以上、障害者手帳所持者、または同乗する介護者
+  - 1人で乗り降りできる、または介護者が同乗すれば利用できる
+  - 利用には事前の登録申請が必要
+  where: 斐川行政センター市民サービス課健康福祉係（郵送可）
+  url: https://www.city.izumo.shimane.jp/www/contents/1324511709670/index.html
+  confidence: high
+  amount: 1乗車300円（斐川地域外へは300円加算）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置費助成
+  name_on_page: 緊急通報装置設置費補助金
+  summary: 民間警備会社の緊急通報・火災通報装置の設置費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の独居世帯、高齢者のみ世帯のいずれか
+  - または重度身体障害者のみ世帯、高齢者と障害者のみ世帯
+  - 設置する前に申請が必要（設置後は無効）
+  where: 高齢者福祉課
+  url: https://www.city.izumo.shimane.jp/www/contents/1458203927260/index.html
+  confidence: high
+  amount: 設置費用の助成は上限22,000円（月額利用料は自己負担）
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付（電磁調理器・自動消火器）
+  name_on_page: 高齢者のための日常生活用具の給付について
+  summary: 防火の配慮が必要な高齢者世帯に、電磁調理器か自動消火器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 市内に住所がある
+  - 病気や認知症で防火の配慮が特に必要（市が聞き取りする）
+  - 電磁調理器は火の消し忘れがある人が対象
+  - 自動消火器は電磁調理器の操作が理解できない人が対象
+  where: 高齢者福祉課
+  url: https://www.city.izumo.shimane.jp/www/contents/1218520718289/index.html
+  confidence: high
+  amount: 電磁調理器か自動消火器のどちらか1台（1世帯につき）
+- category: sonota
+  name: 老老介護世帯への生活支援サービス利用券の支給
+  name_on_page: 老老介護生活支援サービス
+  summary: 老老介護世帯に、市指定事業者の家事支援等に使える利用券を支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護1以上で一人暮らし、または要介護1以上の人を介護する65歳以上の世帯
+  where: 高齢者福祉課、各行政センター市民サービス課
+  url: https://www.city.izumo.shimane.jp/www/contents/1454373267423/index.html
+  confidence: high
+- category: haishoku
+  name: 高齢者への配食サービス
+  name_on_page: 配食サービス事業
+  summary: 食事の確保が難しい高齢者に、お弁当を届ける。
+  who: {}
+  at_application:
+  - 65歳以上、または介護認定を受けた第2号被保険者
+  - 一人暮らしや高齢者世帯等で食事の確保が困難
+  - 民間事業者の利用が困難な人
+  where: 高齢者福祉課
+  url: https://www.city.izumo.shimane.jp/www/contents/1616743086238/files/izumokaigo202406.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- yutai

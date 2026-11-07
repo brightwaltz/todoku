@@ -1,0 +1,251 @@
+city: '442011'
+name: 大分市
+site: www.city.oita.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 在宅高齢者の緊急通報装置の貸与
+  name_on_page: 在宅高齢者緊急通報サービス
+  summary: ひとり暮らしなどの高齢者に緊急通報機器を貸し、通報や月1回の電話確認を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 高齢者のみの世帯は、一方が寝たきりなどの場合に限る
+  - 近所に住む協力者が2人以上必要
+  - IP電話(050)や携帯電話網(VoLTE等)の回線では利用不可
+  where: 担当地域の地域包括支援センター
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1455757514621.html
+  confidence: high
+  amount: 市民税課税世帯は設置料の負担あり（額は頁になし）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具類洗濯乾燥消毒サービス
+  summary: 敷布団・掛け布団・毛布の一式を洗濯・乾燥・消毒してもらえる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 次のどれかに当てはまる人：
+  - 要介護・要支援で足腰が弱く布団を干せない
+  - 干す場所がない、または同じ寝具を長く使い衛生管理が難しい
+  where: 長寿福祉課、東部・西部保健福祉センター、各支所
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1087464234097.html
+  confidence: high
+  amount: 一式1,100円（生活保護世帯は無料）、年度内2回まで
+- category: mimamori
+  name: 乳酸菌飲料の配達による見守り
+  name_on_page: 愛の訪問事業
+  summary: ひとり暮らしの高齢者に乳酸菌飲料を週2回届け、安否を確認する。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 申請は民生委員・児童委員が行う
+  where: 地域の民生委員・児童委員に相談（受付は長寿福祉課）
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1087536820733.html
+  confidence: high
+  amount: 無料
+- category: haishoku
+  name: 食事の配達（食の自立支援）
+  name_on_page: 食の自立支援事業
+  summary: 調理が難しい高齢者世帯に、栄養バランスのとれた食事を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体的な衰えなどで調理が困難
+  - 職員の訪問調査（アセスメント）がある
+  where: 担当地域の地域包括支援センター
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1087520454452.html
+  confidence: high
+  amount: 1食450円、最高で週6回（食）
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付・貸与
+  name_on_page: 日常生活用具給付・貸与事業
+  summary: 火災警報器、自動消火器、電磁調理器、シルバーカーなどを給付し、60〜64歳の要介護者には介護用具を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - 火災警報器・自動消火器：65歳以上の寝たきり・一人暮らしなど
+  - 電磁調理器：65歳以上で防火の配慮が要る一人暮らしなど
+  - シルバーカー：65歳以上で介護保険サービス対象外、歩行に支障
+  - 入浴補助用具・貸与品：60〜64歳で特定疾病外の介護が要る人
+  where: 担当地域の地域包括支援センター
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1510811093625.html
+  confidence: high
+  amount: 自己負担は種目ごとに異なる（頁の別表PDFを参照）
+- category: sonota
+  name: 電話のない高齢者への電話の貸与
+  name_on_page: 福祉電話設置
+  summary: 電話のない非課税のひとり暮らし高齢者に電話を貸し、設置費や基本料金を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 電話を持っていない
+  where: 長寿福祉課
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1014193569609.html
+  confidence: low
+  amount: 設置費・基本料金と月300円までの通話料を補助
+- category: sonota
+  name: 軽度の生活援助（草取り・整理・付添いなど）
+  name_on_page: 軽度生活援助事業
+  summary: 草取りや片付け、ごみ出し、外出の付添いなど軽い手助けを受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 草刈り・剪定・枝切りは対象外
+  where: 長寿福祉課、東部・西部保健福祉センター、各支所
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1080195861182.html
+  confidence: high
+  amount: 1時間200円（生活保護世帯は無料）、原則月1回2時間まで
+- category: gaishutsu
+  name: 路線バスの乗車証（1乗車180円）
+  name_on_page: 長寿応援バス事業
+  summary: 乗車証を見せると市内の路線バスに1乗車180円で乗れる。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に1カ月以上住所がある
+  - 70歳以上、または運転免許を持たない65〜69歳
+  - 写真が必要。回数券・ICカードでの支払い不可
+  where: 長寿福祉課、東部・西部保健福祉センター、各支所
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1113469976484.html
+  confidence: high
+  amount: 市内1乗車180円（臼津交通は150円）
+- category: sonota
+  name: はり・きゅうなどの施術料助成
+  name_on_page: はり・きゅうなど施術料助成事業
+  summary: 市指定の施術所で、はり・きゅう・マッサージ等の施術料が1回分助成される。
+  who:
+    age_min: 65
+  at_application:
+  - 健康保険の療養費が出る施術は対象外
+  where: 長寿福祉課、東部・西部保健福祉センター、各支所
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/harikyuu.html
+  confidence: high
+  amount: 1回1,100円、年度内24回まで
+- category: kaigo-yohin
+  name: おむつ等の介護用品購入費の助成
+  name_on_page: 介護用品購入費の助成
+  summary: 常時おむつが必要な在宅の要介護者の、おむつ等の購入費の9割を支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時おむつが必要と市が認めた人
+  - 購入前に市への受給資格申請が必要
+  where: 長寿福祉課（居宅介護支援事業所にも相談可）
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1202976103799.html
+  confidence: high
+  amount: 購入費の9割、年度の上限48,000円
+- category: kaigo-yohin
+  name: 重度の要介護者を介護する家族への介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の人を介護する非課税世帯の家族に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同じ世帯の家族が介護している
+  - 対象品は紙おむつ、尿取りパッド、使い捨て手袋、清拭剤など
+  where: 担当地域の地域包括支援センター
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1080189593260.html
+  confidence: low
+  amount: 年額1人あたり上限100,000円
+- category: iro
+  name: 重度の要介護者を介護する家族への慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護4・5の人を長く在宅介護する非課税世帯の家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 同じ世帯の家族が1年以上介護している
+  - 要介護者は市内に1年以上居住し、要介護4・5が1年以上続く
+  - その間、介護保険サービス未利用（7日以内のショートステイを除く）
+  where: 担当地域の地域包括支援センター
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1014192008008.html
+  confidence: high
+  amount: 1人あたり100,000円
+- category: haikai
+  name: 認知症等の見守りシール（QRコード付き）の交付
+  name_on_page: 「大分市見守りシール」の利用方法
+  summary: 行方不明ネットワークに登録した人に、保護時に役立つ見守りシールを無料で交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民票があり、市内の自宅に住む
+  - 「大分あんしんみまもりネットワーク」に事前登録済み
+  - 申請は本人またはその親族（郵送不可）
+  where: 長寿福祉課の窓口
+  url: https://www.city.oita.oita.jp/o081/kenko/fukushi/mimamoriseal.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.oita.oita.jp/o081/kenko/fukushi/1486082969445.html
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 大分市成年後見人等報酬助成事業
+  summary: 後見人等への報酬を払うのが難しい被後見人等に、報酬の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 対象の条件は要綱で確認が必要
+  where: 長寿福祉課
+  url: https://www.city.oita.oita.jp/o081/seinenkoukenhenkou.html
+  confidence: low
+not_found:
+- hochoki
+- ribiyo

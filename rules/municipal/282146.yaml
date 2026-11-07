@@ -1,0 +1,198 @@
+city: '282146'
+name: 宝塚市
+site: www.city.takarazuka.hyogo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ給付
+  name_on_page: おむつ給付
+  summary: カタログから選んだ紙おむつ等を月 1 回自宅へ配達してもらえる。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 実態として同居する世帯全員が市民税非課税
+  - 申請は担当ケアマネジャーを通じて行う
+  where: 高齢福祉課（担当ケアマネジャー経由）
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1000584.html
+  confidence: high
+  amount: 月額 6,000 円まで（超えた分は自己負担）
+  more_urls:
+  - https://www.city.takarazuka.hyogo.jp/_res/projects/default_project/_page_/001/046/458/r8gaidobukku.pdf
+- category: gaishutsu
+  name: 福祉タクシー料金の助成
+  name_on_page: 福祉タクシー料金助成
+  summary: タクシーの基本料金相当の利用券が月 4 枚交付される。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 外出が困難であること
+  - 本人の所得制限あり
+  - 障碍福祉課で同じ利用券を受けている人は重ねて交付されない
+  - 申請は担当ケアマネジャーを通じて行う
+  where: 高齢福祉課（担当ケアマネジャー経由）
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1000584.html
+  confidence: high
+  amount: 基本料金相当額、月 4 枚の利用券
+- category: gaishutsu
+  name: リフト付タクシー料金の助成
+  name_on_page: リフト付タクシー料金助成
+  summary: リフト付タクシーの迎車料金相当の利用券が月 4 枚交付される。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時車椅子を利用していること
+  - 障碍福祉課で同じ利用券を受けている人は重ねて交付されない
+  - 申請は担当ケアマネジャーを通じて行う
+  where: 高齢福祉課（担当ケアマネジャー経由）
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1000584.html
+  confidence: high
+  amount: 迎車料金相当額、月 4 枚の利用券
+- category: ribiyo
+  name: 訪問理容・美容サービスの助成
+  name_on_page: 訪問理容・美容サービス助成
+  summary: 訪問による理容・美容の料金の一部を助成する利用券が交付される。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 外出が困難であること
+  - 障碍福祉課で同じ利用券を受けている人は重ねて交付されない
+  - 申請は担当ケアマネジャーを通じて行う
+  where: 高齢福祉課（担当ケアマネジャー経由）
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1000584.html
+  confidence: high
+  amount: 1 回 2,500 円の利用券を 3 か月に 1 枚（年 4 枚まで）
+- category: jutaku
+  name: 高齢者等住宅改造資金助成
+  name_on_page: 住宅改造制度（高齢者がお住まいの住宅を改造する場合）
+  summary: 高齢者の住宅のバリアフリー改造費を、介護保険の住宅改修とは別に一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 工事開始前の申請が必要
+  - 身体状況により助成要件が異なる
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.takarazuka.hyogo.jp/1060678/1060691/1061537/1008343/1000406.html
+  confidence: high
+  more_urls:
+  - https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1000584.html
+  - https://www.city.takarazuka.hyogo.jp/_res/projects/default_project/_page_/001/046/458/r8gaidobukku.pdf
+  - https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1000290.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システムの給付
+  summary: ボタンひとつで相談センターにつながる緊急通報装置をレンタルできる。
+  who: {}
+  at_application:
+  - 次のいずれか：おおむね65歳以上の一人暮らし、または身体障害者手帳1・2級の一人暮らし
+  - 脳疾患・心疾患等で発作の危険があり昼間一人の高齢者も対象
+  - 同居家族全員が支援・介護を要する高齢者のみの世帯も対象
+  - 近隣の福祉協力員 2 名以上の登録が必要
+  - 市内に住所がある
+  where: 宝塚市社会福祉協議会
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1049526.html
+  confidence: high
+  amount: 月額 0〜600 円（固定型）、0〜2,085 円（携帯型）。非課税世帯・生活保護世帯は 0 円
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付（電磁調理器）
+  name_on_page: 高齢者日常生活用具の給付
+  summary: 介護保険の対象外である電磁調理器を給付してもらえる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 心身機能の低下により防火等の配慮が必要
+  where: 担当ケアマネジャーまたは地域包括支援センター、高齢福祉課
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1049527.html
+  confidence: high
+  amount: 所得税額に応じた自己負担あり（金額は頁に記載なし）
+- category: haikai
+  name: 認知症高齢者等みまもり登録
+  name_on_page: 宝塚市認知症高齢者等みまもり登録
+  summary: 行方不明が心配な人を事前に登録し、地域の見守りの輪と警察への情報共有につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症により行方不明や事故のおそれがある人（案内冊子の記載）
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1013012/1013016.html
+  confidence: high
+  more_urls:
+  - https://www.city.takarazuka.hyogo.jp/_res/projects/default_project/_page_/001/046/458/r8gaidobukku.pdf
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 市が保険に加入し、認知症の人が起こした事故の賠償に備える。
+  who: {}
+  at_application:
+  - 「みまもり登録」を済ませていること
+  - 介護保険の認定上で認知症の症状が認められる等、一定の要件を満たすこと
+  where: 高齢福祉課
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1013012/1013016.html
+  confidence: high
+  amount: 保険料の自己負担なし
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族が申立てできない場合の市長申立てと、申立費用・後見人報酬の助成を行う。
+  who: {}
+  at_application:
+  - 報酬助成は市内に住所・居所がある人が対象
+  - 生活保護世帯、または資産が乏しく報酬負担が困難な人
+  - 市長申立ては本人に判断能力がなく、2親等内に申立てできる親族がいない場合など
+  - まず高齢福祉課に相談したうえで手続きする
+  where: 高齢福祉課
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1000614.html
+  confidence: high
+  amount: 申立費用・後見人等の報酬の全部または一部を助成
+- category: sonota
+  name: 高齢者安心キットの配布
+  name_on_page: 高齢者安心キット
+  summary: 緊急連絡先などを書いた連絡票を入れる冷蔵庫保管用の容器を無料でもらえる。
+  who:
+    household:
+    - alone
+  at_application:
+  - ひとり暮らしの高齢者が対象（年齢の条件は頁で確認できない）
+  where: お近くの民生委員または地域福祉課
+  url: https://www.city.takarazuka.hyogo.jp/1060682/1060704/1049450/1014371.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 福祉電話（民生委員による安否確認の電話）
+  name_on_page: 福祉電話
+  summary: 民生児童委員が週 1〜2 回電話をかけ、安否確認や話し相手をする。
+  who:
+    household:
+    - alone
+  at_application:
+  - 宝塚市在住の独居高齢者
+  where: 宝塚市社会福祉協議会
+  url: https://www.city.takarazuka.hyogo.jp/_res/projects/default_project/_page_/001/046/458/r8gaidobukku.pdf
+  confidence: low
+not_found:
+- haishoku
+- iro
+- hochoki
+- shingu

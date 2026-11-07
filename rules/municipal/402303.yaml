@@ -1,0 +1,155 @@
+city: '402303'
+name: 糸島市
+site: www.city.itoshima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（食事を届け安否確認）
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい・見守りが必要な高齢者の自宅に昼・夕食を届け、安否も確かめる。
+  who: {}
+  at_application:
+  - 市内に住むおおむね65歳以上のひとり暮らし高齢者等
+  - 調理が困難、または見守りが必要
+  - 食事の提供だけを希望する場合は対象外
+  where: お住まいの校区を担当する地域包括支援センター
+  url: https://www.city.itoshima.lg.jp/s014/010/010/020/fukushi.pdf
+  confidence: high
+  amount: 利用者負担は1食500円（毎日、昼・夕食）
+  more_urls:
+  - https://www.city.itoshima.lg.jp/s014/010/010/020/koureisyafukushisa-bisu.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 緊急時に連絡が難しいひとり暮らし高齢者等に、ペンダント式の緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - 市内に住むおおむね65歳以上のひとり暮らし高齢者等（日中含む）
+  - 健康に不安があり、緊急時の連絡手段の確保が難しい
+  where: お住まいの校区を担当する地域包括支援センター
+  url: https://www.city.itoshima.lg.jp/s014/010/010/020/fukushi.pdf
+  confidence: high
+  amount: 負担は生計中心者の所得税額により月0〜3,500円（消費税は別）
+  more_urls:
+  - https://www.city.itoshima.lg.jp/s014/010/010/020/koureisyafukushisa-bisu.html
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 介護用品給付サービス事業
+  summary: 排せつの介助が必要な要介護の人に、紙おむつや尿取りパッドを自宅へ配達して給付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住み、糸島市の介護保険被保険者
+  - 介護保険料の所得段階が第1〜5段階
+  - 65歳以上（65歳未満で初老期の認知症の人も含む）
+  - 要介護3〜5（令和6年6月以前から受給中なら要介護1〜2も対象になる場合あり）
+  - 生活保護の同様のサービスや介護保険施設・病院は対象外
+  where: お住まいの校区を担当する地域包括支援センター
+  url: https://www.city.itoshima.lg.jp/s014/010/010/020/050/20241118171519.html
+  confidence: high
+  amount: 月の限度額は、保険料の所得段階1〜3で4,000円、4〜5で2,000円
+  more_urls:
+  - https://www.city.itoshima.lg.jp/s014/010/010/020/fukushi.pdf
+- category: gaishutsu
+  name: 移送サービス（車いす等のまま乗れる車で通院など）
+  name_on_page: 移送サービス事業
+  summary: 公共交通を使えない寝たきり等の高齢者を、専用の車で医療機関などへ送迎する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住むおおむね65歳以上の高齢者等
+  - 座位保持ができず、車いすやストレッチャーのまま乗る必要がある
+  - 通院・入院・退院のときに利用でき、月2回以内
+  - 利用予定日の3開庁日前までに委託業者へ申請書を出す
+  where: 委託先の業者（申請書を提出）。相談はお住まいの校区を担当する地域包括支援センター
+  url: https://www.city.itoshima.lg.jp/s014/010/010/020/fukushi.pdf
+  confidence: high
+  amount: 1時間以下800円、2時間以下1,000円、3時間以下1,200円（以後1時間ごとに200円加算）
+  more_urls:
+  - https://www.city.itoshima.lg.jp/s014/010/010/020/koureisyafukushisa-bisu.html
+- category: haikai
+  name: SOSネットワーク（見守りステッカー）
+  name_on_page: SOSネットワーク事業
+  summary: 所在不明になったとき警察・市・協力者で早期発見に努める。登録者に見守りステッカーを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等により、所在不明になる恐れのある高齢者
+  - 申請時に写真（顔と全身の各2枚）が必要
+  where: お住まいの校区を担当する地域包括支援センター
+  url: https://www.city.itoshima.lg.jp/s014/010/010/020/fukushi.pdf
+  confidence: high
+  amount: 利用者負担なし
+  more_urls:
+  - https://www.city.itoshima.lg.jp/s014/010/010/020/koureisyafukushisa-bisu.html
+- category: sonota
+  name: 緊急ショートステイ（特別養護老人ホームでの一時預かり）
+  name_on_page: 緊急ショートステイ事業
+  summary: 家族等の支援が一時的に受けられないとき、見守りが必要な高齢者を特養で預かる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住む、在宅の見守りが必要なおおむね65歳以上
+  - 要介護認定を持っている人は対象外
+  - 原則6か月に1回、1回7日以内
+  where: お住まいの校区を担当する地域包括支援センター
+  url: https://www.city.itoshima.lg.jp/s014/010/010/020/fukushi.pdf
+  confidence: high
+  amount: 利用料466円/日、送迎代190円/片道（食費等は別）
+  more_urls:
+  - https://www.city.itoshima.lg.jp/s014/010/010/020/koureisyafukushisa-bisu.html
+- category: mimamori
+  name: 見守り台帳への登録（救急医療情報キットの配布）
+  name_on_page: 見守り台帳
+  summary: 地域の支援者が日ごろ見守る「見守り台帳」に登録でき、登録世帯に救急医療情報キットが配られる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に在宅で生活している人で、次のいずれか
+  - 70歳以上のひとり暮らし、または70歳以上のみの世帯
+  - 65歳以上の高齢者
+  - 同意した障がいのある人（手帳取得者）
+  where: 糸島市社会福祉協議会（申込先）
+  url: https://www.city.itoshima.lg.jp/s014/010/010/020/100/mimamori.html
+  confidence: high
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見人報酬助成
+  summary: 後見等の審判を受けた人のうち生活保護の人や報酬の負担が難しい人に、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 市長の審判請求で後見・保佐・補助開始の審判を受けた人（市長以外の申立ても令和6年4月から対象）
+  - 生活保護受給者、または生活状況から報酬の負担が困難な人
+  where: 介護・高齢者支援課 高齢者支援係（申請様式は頁に掲載）
+  url: https://www.city.itoshima.lg.jp/s014/010/010/010/010/seinenkoukenseifonituite.html
+  confidence: high
+  amount: 月額の限度は、施設入所者18,000円、施設入所者以外28,000円
+- category: koken
+  name: 成年後見開始の市長申し立て（費用は市が負担）
+  name_on_page: 成年後見開始の市長申し立て
+  summary: 身寄りがなく親族が申立てできないとき、市長が家庭裁判所に申立てをし、その費用を市が負担する。
+  who: {}
+  at_application:
+  - 身寄りがなく、親族等による成年後見の申立てができない人
+  - 負担する能力がある人には、後日本人に請求する
+  where: 糸島市成年後見センター、または地域包括支援センターで相談
+  url: https://www.city.itoshima.lg.jp/s014/010/010/010/010/seinenkoukenseifonituite.html
+  confidence: low
+  amount: 申立ての費用を市が負担（負担能力のある人には後日請求）
+not_found:
+- hochoki
+- iro
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,242 @@
+city: '261009'
+name: 京都市
+site: www.city.kyoto.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の給付券交付
+  name_on_page: 家族介護用品給付事業
+  summary: 寝たきり等の高齢者を介護する家族に、おむつ等と交換できる給付券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上の本人（介護される人）が市内に住所と居住がある
+  - 居宅（軽費・有料老人ホーム、サ高住を含む）で介護されている
+  - 申請者は介護している家族など
+  - 毎年度、申請が必要
+  where: 区役所・支所の健康長寿推進課（高齢介護保険担当）、京北出張所
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000324770.html
+  confidence: high
+  amount: 給付券 1 枚 5,000 円相当。申請月により 3〜13 枚（4・5月が 13 枚）
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に、栄養のとれた昼食を届け、安否も確認する。
+  who:
+    age_min: 60
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体状況などで自分で買物・調理が難しい
+  - 未認定の人は高齢サポートで一次判定相当の調査を受ける制度あり
+  where: 京都市社会福祉協議会、介護ケア推進課、各高齢サポート（担当ケアマネにも相談可）
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+  confidence: high
+  amount: 1 食 500 円まで（自己負担。事業者により異なる）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの機器貸与
+  name_on_page: あんしんネット119
+  summary: ボタンで消防に通報でき、健康相談もできる専用機器を貸与する。
+  who: {}
+  at_application:
+  - 市内在住
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯で、緊急時に自分で対処しにくい
+  - ひとり暮らしの重度身体障害者（1・2級）も対象
+  - 近隣協力員 2 名以上を申請者が確保する
+  where: 区役所・支所の健康長寿推進課（65歳以上の方）
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000338385.html
+  confidence: high
+  amount: 機器利用料は月 0〜1,462 円（所得で 4 区分）。電話の基本料・通話料は別
+  more_urls:
+  - https://www.city.kyoto.lg.jp/sogo/page/0000246805.html
+- category: kinkyu-tsuho
+  name: 住宅用火災警報器の貸与
+  name_on_page: 住宅用火災警報器の貸与
+  summary: あんしんネット119の利用者に、消防へ自動通報する火災警報器を貸与する。
+  who: {}
+  at_application:
+  - あんしんネット119を利用している
+  - 要介護3〜5、または身体障害者手帳1・2級で自力歩行不能
+  where: 各地域の消防署
+  url: https://www.city.kyoto.lg.jp/sogo/page/0000246805.html
+  confidence: low
+  amount: 月 0〜455 円
+- category: nichijo-yogu
+  name: 自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具の給付
+  summary: ひとり暮らし等の高齢者に、自動消火器か電磁調理器を給付する。
+  who: {}
+  at_application:
+  - ひとり暮らし（昼間独居含む）や高齢者のみ世帯などで日常生活に支障がある
+  - 生活保護を受けている、または市民税非課税世帯
+  - おおむね65歳以上
+  - 自動消火器は火災時に機敏な行動が難しい方、電磁調理器は認知症等で火災のおそれがある方
+  where: 区役所・支所の健康長寿推進課（健康長寿推進担当）、京北出張所、高齢サポート
+  url: https://www.city.kyoto.lg.jp/sogo/page/0000246805.html
+  confidence: high
+  amount: 無料（自動消火器または電磁調理器を給付）
+  more_urls:
+  - https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+- category: haikai
+  name: 小型 GPS 端末機の貸出
+  name_on_page: 高齢者あんしんお出かけサービス
+  summary: 外出して戻れなくなるおそれのある認知症の人の家族に GPS 端末を貸す。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症により外出時に戻れなくなるおそれのある高齢者を在宅で介護する家族など
+  where: 区役所・支所の健康長寿推進課（高齢介護保険担当）、京北出張所、高齢サポート
+  url: https://www.city.kyoto.lg.jp/sogo/page/0000246806.html
+  confidence: high
+  amount: 月額 1,500 円（生活保護等は無料）
+  more_urls:
+  - https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+- category: haikai
+  name: みまもりあいステッカーの給付
+  name_on_page: みまもりあいステッカー
+  summary: 行方不明のおそれのある認知症の人向けに、連絡用の布ステッカーを無料で給付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり居宅で生活している
+  - 高齢者見守り・行方不明高齢者発見ネットワークに登録されている
+  - 申請できるのは介護する 3 親等以内の親族や法定後見人等
+  where: 介護ケア推進課（認知症・医療介護連携担当）へ来庁または郵送
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000342648.html
+  confidence: high
+  amount: 無料（1 シート 48 枚）
+- category: gaishutsu
+  name: 敬老乗車証（バス・地下鉄パスまたは回数券）
+  name_on_page: 敬老乗車証
+  summary: 高齢者に、市バス・地下鉄のフリーパス証か敬老バス回数券を交付する。
+  who: {}
+  at_application:
+  - 市内在住
+  - 交付開始年齢に達している（生年月日により70〜75歳）
+  - 合計所得金額が 700 万円未満
+  - どちらか一方のみ選べる
+  where: 敬老乗車証交付事務センター（050-5443-6647）
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000232683.html
+  confidence: high
+  amount: フリーパスは年 9,000〜45,000 円の負担。回数券は半額で最大 10,000 円分
+  more_urls:
+  - https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+- category: sonota
+  name: 単身高齢者の安否確認と死後事務の契約
+  name_on_page: 単身高齢者万一あんしんサービス
+  summary: 身寄りのない低所得の一人暮らしの人に、定期の安否確認と葬儀・納骨の契約を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 市内在住で身寄りがなく、契約能力がある
+  - 不動産を持たない（居住中を除く）、預貯金 350 万円以下
+  - 生活保護の人は対象外
+  - 契約時に預託金を一括で預けられる
+  - 日常生活自立支援事業・成年後見の利用者は対象外
+  where: 京都市長寿すこやかセンター（京都市社会福祉協議会）
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/page/0000325247.html
+  confidence: high
+  amount: 預託金は葬儀・納骨 25 万円。家財処分は見積額（希望者のみ）
+  more_urls:
+  - https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+- category: sonota
+  name: 60〜64 歳向けの在宅ホームヘルプ
+  name_on_page: 在宅生活支援ホームヘルプサービス
+  summary: 介護保険の対象外の 60〜64 歳に、家事などのヘルパーを派遣する。
+  who:
+    age_min: 60
+    at_home: true
+  at_application:
+  - 60歳以上65歳未満で、介護保険に該当しない
+  - 在宅生活の継続に支援が必要
+  where: 区役所・支所の健康長寿推進課（健康長寿推進担当）、京北出張所、高齢サポート
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+  confidence: high
+  amount: 月 1,259 円、または 30 分 118〜207 円（生活保護は実費のみ）
+- category: sonota
+  name: ごみ出し支援と安否確認
+  name_on_page: ごみ収集福祉サービス
+  summary: ごみ出しが難しい世帯の玄関先でごみを回収し、出ていなければ安否確認する。
+  who:
+    at_home: true
+  at_application:
+  - 介護保険か障害福祉のサービスを使い、ホームヘルプも利用している
+  - 本人・親族・近隣者がごみを出すのが難しい世帯
+  - 障害のある方・65歳以上の方などのみで同居している世帯
+  where: 各区役所・支所内のエコまちステーション
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージの施術費助成
+  name_on_page: はり・きゅう・マッサージ施術費助成事業
+  summary: 75 歳以上の人に、はり・きゅう・マッサージ施術に使える補助券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内在住
+  - 保険適用の治療目的の施術には使えない
+  - 申込は 12〜2 月にはがきで（次年度分）
+  where: 保健福祉局福祉のまちづくり推進室（保険年金担当）
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+  confidence: high
+  amount: 1 枚 1,000 円相当の補助券を 1 人 4 枚
+- category: jutaku
+  name: 介護予防のための住宅改修費補助
+  name_on_page: 住宅改修費補助
+  summary: 要介護認定が非該当の非課税世帯の高齢者に、手すり設置などの工事費を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要支援・要介護認定の結果が非該当
+  - 基本チェックリストで運動器の機能低下のおそれがあり、事業対象者になった
+  - 高齢サポートのアセスメントで住宅改修が必要と認められる
+  where: 各高齢サポート（地域包括支援センター）
+  url: https://www.city.kyoto.lg.jp/hokenfukushi/cmsfiles/contents/0000355/355208/GB2026.pdf
+  confidence: high
+  amount: 工事費の 3 分の 2 を補助（上限 16 万円、予算の範囲内）
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori

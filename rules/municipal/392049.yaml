@@ -1,0 +1,134 @@
+city: '392049'
+name: 南国市
+site: www.city.nankoku.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 通院支援のタクシー券
+  name_on_page: 通院支援サービス事業
+  summary: 通院や福祉サービス利用の送迎に使えるタクシー券を支給する。
+  who:
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 65歳以上、または65歳未満で要介護・要支援認定を受けた人
+  - 一般の交通機関の利用が困難で、家族の外出支援が受けられない
+  - 心身の障害や傷病の程度が特に重い
+  - 福祉タクシー助成や生活保護の移送扶助を受けていない
+  where: 長寿支援課介護保険係、地域包括支援センター
+  url: https://www.city.nankoku.lg.jp/life/life_dtl.php?hdnKey=8019
+  confidence: high
+  amount: タクシー券を月 3,000 円分（自宅から医療機関等への送迎のみ使用可）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の利用料助成
+  name_on_page: 緊急通報装置利用助成金交付事業
+  summary: 指定事業所と契約した緊急通報装置の利用料を助成する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または40歳以上の重度身体障害者のひとり暮らし
+  - 居宅での生活に不安がある
+  - 市の指定事業所と契約して設置する（設置済みも可）
+  where: 長寿支援課介護保険係、地域包括支援センター
+  url: https://www.city.nankoku.lg.jp/life/life_dtl.php?hdnKey=8019
+  confidence: high
+  amount: 月額利用料のうち 380 円＋消費税を助成。生活保護の人などは設置費を上限 10,000 円＋税まで助成
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業（ 配食サービス ）
+  summary: 安否確認を兼ねて、昼食・夕食を自宅へ届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上の独居か高齢者のみの世帯（要介護認定者は65歳未満も可）
+  - 心身の障害や病気で食事の確保が難しく、栄養改善が必要
+  - 支援できる家族等がいない
+  where: 長寿支援課介護保険係、地域包括支援センター
+  url: https://www.city.nankoku.lg.jp/life/life_dtl.php?hdnKey=8019
+  confidence: high
+  amount: 利用者負担は 1 食 500 円（内容により変わる）
+- category: kaigo-yohin
+  name: 介護用品券の支給
+  name_on_page: 介護用品支給事業
+  summary: 重度の要介護で住民税非課税世帯の人に介護用品券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護認定の期間ごとに再調査して更新する
+  where: 長寿支援課介護保険係、地域包括支援センター
+  url: https://www.city.nankoku.lg.jp/life/life_dtl.php?hdnKey=8019
+  confidence: high
+  amount: 月 6,000 円分の券（紙おむつ、尿取りパッド、使い捨て手袋など）
+- category: sonota
+  name: 福祉電話の設置工事費の助成
+  name_on_page: 福祉電話助成サービス
+  summary: ひとり暮らしの低所得の高齢者に、電話の設置工事費を助成する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 低所得で、心身機能が低下した高齢者
+  - 基本料金・使用料は本人負担
+  where: 長寿支援課介護保険係、地域包括支援センター
+  url: https://www.city.nankoku.lg.jp/life/life_dtl.php?hdnKey=8019
+  confidence: low
+- category: haikai
+  name: 認知症の見守りシール交付
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: 道に迷うおそれのある認知症の人に、見守りシールを無料で交付する。
+  who: {}
+  at_application:
+  - 65歳以上で認知症と診断された人、または若年性認知症と診断された人
+  - 上記に準ずるとして市長が認めた人
+  - 本人、家族等の介護者、法定代理人が申請できる
+  where: 長寿支援課介護保険係、地域包括支援センター
+  url: https://www.city.nankoku.lg.jp/life/life_dtl.php?hdnKey=8019
+  confidence: high
+  amount: 新規はシール 20 枚、再交付は 10 枚まで（前回から 1 年以上あけること）
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 南国市成年後見制度利用支援事業助成金
+  summary: 費用を負担しにくい人の後見申立て費用や後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 判断能力が十分でない高齢者・障害者等が対象
+  - 本人が生活保護、またはそれに準ずる状態（費用負担が困難）
+  - 申立人・後見人が本人の配偶者や二親等以内の親族でない
+  - 報酬助成は、本人の財産から報酬を得ていない後見人が対象
+  where: 市長宛に申請（要綱に担当課の記載なし）
+  url: https://www.city.nankoku.lg.jp/reiki/reiki_honbun/i900RG00001168.html
+  confidence: high
+  amount: 申立て費用の合計額。報酬は在宅月 28,000 円、施設・病院月 18,000 円が上限
+- category: jutaku
+  name: 住宅改造費の補助（介護保険の住宅改修とは別枠）
+  name_on_page: 南国市住宅等改造支援事業実施要綱
+  summary: 高齢者のいる世帯の住宅改造費を補助する。
+  who: {}
+  at_application:
+  - 対象者・条件は頁の抜き出しで確認できず、問い合わせて確かめる
+  where: 市長宛に申請（要綱に担当課の記載なし）
+  url: https://www.city.nankoku.lg.jp/reiki/reiki_honbun/i900RG00000362.html
+  confidence: high
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu

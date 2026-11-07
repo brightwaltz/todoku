@@ -1,0 +1,112 @@
+city: '132136'
+name: 東村山市
+site: www.city.higashimurayama.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者の夕食配食（安否確認つき）
+  name_on_page: 高齢者配食サービス
+  summary: 平日の夕食を手渡しで届け、ひとり暮らし等の高齢者の安否も確かめる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らしで自炊が困難
+  - または70歳以上の高齢者のみの世帯で自炊が困難
+  - 市内に住所がある
+  where: 健康増進課、地域包括支援センター（相談窓口）
+  url: https://www.city.higashimurayama.tokyo.jp/kenko/korei/korei/7haisyoku.html
+  confidence: high
+  amount: 1食580円の自己負担（超える分は市が助成）。週5日、月〜金の夕食
+- category: kaigo-yohin
+  name: 要介護高齢者の紙おむつ購入費助成
+  name_on_page: 要介護高齢者紙おむつ購入費助成
+  summary: 住民税非課税で要介護3以上の人の紙おむつ・尿取りパッド購入費を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 介護認定の有効期間内が対象
+  - 生活保護等で紙おむつ代の支給を受けている人は除く
+  - 特養・老健など一部施設の入所者は対象外または減額
+  where: 健康増進課 高齢者事業係（窓口または郵送）
+  url: https://www.city.higashimurayama.tokyo.jp/kenko/korei/korei/kamiomutu.html
+  confidence: high
+  amount: 購入費相当額、年24,000円まで
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 住民税非課税で中等度難聴の高齢者に、補聴器本体の購入費を一部助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 耳鼻科で中等度難聴（両耳40dB以上70dB未満）以上と診断
+  - 身体障害者手帳の対象（高度難聴以上）にならない
+  - 過去5年間にこの助成を受けていない
+  - 購入前の申請が必須
+  where: 健康増進課 高齢者事業係（窓口・郵送・申請フォーム）
+  url: https://www.city.higashimurayama.tokyo.jp/kenko/korei/korei/hochouki.html
+  confidence: high
+  amount: 上限4万円（補聴器本体のみ）
+- category: kinkyu-tsuho
+  name: 高齢者の救急代理通報・住宅火災代理通報システム
+  name_on_page: 高齢者救急代理通報・住宅火災代理通報システム事業
+  summary: ボタン一つで警備会社に通報できる機器を設置し、必要なら火災警報器も付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  - 慢性疾患などで日常生活に常時注意が必要
+  - 年間の合計所得金額が200万円未満
+  - 火災通報は救急通報の利用者のみ（単独利用不可）
+  where: 健康増進課（郵送または窓口）
+  url: https://www.city.higashimurayama.tokyo.jp/kenko/korei/korei/11kintu.html
+  confidence: high
+  amount: 機器の設置・撤去は無料。住民税課税は月300円、非課税は無料
+- category: koken
+  name: 成年後見人等の報酬費用の助成
+  name_on_page: 成年後見人等の報酬費用助成
+  summary: 所得や資産が少ない人の成年後見人等への報酬費用を、全部または一部助成する。
+  who:
+    tax:
+    - self_exempt
+  at_application:
+  - 預貯金等の資産が50万円以下
+  - 後見人が四親等内の親族の場合は対象外
+  - 令和5年4月1日以後の報酬付与審判決定から対象
+  where: 地域福祉推進課 調整担当（内線3515）
+  url: https://www.city.higashimurayama.tokyo.jp/kurashi/sodan/fukushi/seinenkoukentop.html
+  confidence: high
+not_found:
+- haikai
+- iro
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- chusha
+- yutai

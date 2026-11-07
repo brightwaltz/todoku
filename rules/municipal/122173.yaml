@@ -1,0 +1,226 @@
+city: '122173'
+name: 柏市
+site: www.city.kashiwa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: ボタンを押すと24時間受信センターにつながる緊急通報装置を借りられる。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らし、または世帯員が疾病等で緊急対応できない
+  - 本人と同一住所の一親等内親族の市民税所得割が合計16万円未満
+  - 本人と連絡が取れる電話回線と機器が必要
+  - 緊急連絡先（親族等）の登録が必要
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/kinkyutsuho.html
+  confidence: high
+  amount: 利用者負担は月額で、課税世帯800円、非課税世帯300円、生活保護世帯は無料
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: shingu
+  name: 寝具の乾燥消毒
+  name_on_page: 寝具乾燥消毒
+  summary: 乾燥車が自宅に来て、布団などを月1回まで乾燥消毒してくれる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要支援・要介護認定か事業対象者、または身体・療育手帳の所持
+  - 一人暮らし、または全世帯員が疾病・障害で布団を干せない
+  - 本人と同一住所の一親等内親族の市民税所得割が合算16万円未満
+  - 市内の一般住宅に居住
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/1254.html
+  confidence: high
+  amount: 無料。月1回まで、1回4点まで
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: shingu
+  name: 寝具の丸洗い
+  name_on_page: 寝具丸洗い
+  summary: 寝具を預かって丸洗いし、返してくれる。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護認定か事業対象者、または身体・療育手帳の所持
+  - 失禁症状があり、寝たきりまたは認知症
+  - 本人と同一住所の一親等内親族の市民税所得割が合算16万円未満
+  - 市内の一般住宅かサービス付き高齢者住宅に居住
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/1255.html
+  confidence: high
+  amount: 無料。年2回まで、1回4点まで。寝具は10日間預かる
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理髪費助成
+  summary: 寝たきりの人が市指定業者の訪問理美容を使うとき、出張費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護認定を受けている、または身体障害者手帳1級を所持
+  - 寝たきりで、自分で座った状態を保てない
+  - 本人と同一住所の一親等内親族の市民税所得割が合算16万円未満
+  - 市内の一般住宅かサービス付き高齢者住宅に居住
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/1294.html
+  confidence: high
+  amount: 年4回まで。理髪・髭剃り料金は1回3,200円まで
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 介護用品（紙おむつ）給付
+  summary: 失禁のある人に、紙おむつを月1回自宅へ配達する。A・Bの2タイプがある。
+  who:
+    age_min: 65
+    flags:
+    - uses_diapers
+  at_application:
+  - Aは要介護4以上で、本人と一親等内親族の市民税が非課税
+  - Aは有料老人ホーム・グループホーム・サ高住の入居者は不可
+  - Bは要介護2以上または身体障害者手帳2級以上
+  - Bは一親等内親族の市民税所得割が合算16万円未満
+  - 生活保護・中国残留邦人等支援給付の世帯は対象外
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/kaigoyohin.html
+  confidence: high
+  amount: 無料。Aは月2セット、Bは月1セットを配達
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/documents/1251/r8pamphlet.pdf
+- category: haishoku
+  name: 嚥下食の配食費助成
+  name_on_page: 配食サービス費助成
+  summary: 嚥下食が必要な人が市指定業者の弁当配達を使うとき、費用を一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援・要介護認定か事業対象者、または各種障害者手帳の所持
+  - ミキサー食・ムース食など嚥下食での食事が必要
+  - 本人と一親等内親族の市民税所得割が合計16万円未満
+  - 対象は嚥下食のみ（普通食は対象外）
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/haishoku.html
+  confidence: high
+  amount: 利用者負担は1食500円。年365食まで
+- category: jutaku
+  name: 要介護高齢者等の住宅改造費補助
+  name_on_page: 柏市要介護高齢者等住宅改造費補助制度
+  summary: 要支援・要介護の人が手すり設置などの住宅改造をするとき、費用の一部を補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 本人と同一住所の親族の市民税所得割が合計16万円未満
+  - 本人と同一住所の親族が前年度・前々年度の市民税を滞納していない
+  - 介護保険の住宅改修が使えるときは、そちらが先
+  - 工事前に、ケアマネ等に相談のうえ事前申込が必要
+  where: 高齢者支援課（事前相談はケアマネジャーか地域包括支援センター）
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/hojosedo.html
+  confidence: high
+  amount: 対象経費は上限36万円。補助率は課税世帯3分の1、非課税等は90%
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護サービスを使わず要介護4・5の人を介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 居宅で介護サービスを利用していない
+  - 医療機関に8日以上入院していない
+  - 対象と思われる人には市から申請書が届く
+  where: 高齢者支援課
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigohoken/service/kazokukaigo.html
+  confidence: high
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: gaishutsu
+  name: 寝台車での通院送迎費の助成
+  name_on_page: 送迎費助成
+  summary: 寝たきりの人がストレッチャー付き車で通院・入退院するとき、費用を一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 寝たきりで、寝台車でないと移動が困難
+  - 本人と同一住所の一親等内親族の市民税所得割が合算16万円未満
+  - 福祉タクシー・燃料費助成の対象者、入院中、生活保護世帯は不可
+  - 市内の一般住宅かサービス付き高齢者住宅に居住
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/1257.html
+  confidence: high
+  amount: 片道1回あたり最大4,000円（1,000円券4枚分）。年96枚まで
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: koken
+  name: 成年後見人等の報酬費助成
+  name_on_page: 柏市成年後見人等報酬費助成制度
+  summary: 成年後見人等への報酬を、月額の上限内で市が助成する。
+  who: {}
+  at_application:
+  - 高齢者・知的障害者・精神障害者で後見人等が付いている人
+  - 市長申立てで預貯金100万円未満かつ市町村民税非課税、または
+  - 親族以外が後見人等で、本人が生活保護受給者
+  - 柏市に住民登録がある（一部の例外あり）
+  where: 地域包括支援課（65歳以上）、障害福祉課（知的・精神障害のある人）
+  url: https://www.city.kashiwa.lg.jp/chikihokatsu/kaigo/ninchisho/kokennin.html
+  confidence: high
+  amount: 月額の上限は、在宅28,000円、対象施設入所18,000円
+- category: sonota
+  name: 生活支援短期宿泊の助成
+  name_on_page: 生活支援短期宿泊助成
+  summary: おおむね自立の高齢者が、年10日まで老人ホームに短期宿泊できる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要支援・要介護認定を受けていない
+  - おおむね自立だが、心身の障害で日常生活に支障がある
+  - 市内の一般住宅に居住
+  where: 高齢者支援課、沼南支所福祉担当、地域包括支援センター
+  url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/1256.html
+  confidence: high
+  amount: 年10日まで。1日380円のほか食事代（約2,000円）が自己負担
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/zaitakufukushi.html
+- category: haikai
+  name: かしわオレンジSOSネットワークの事前登録
+  name_on_page: かしわオレンジSOSネットワーク
+  summary: 認知症などで行方不明の心配がある人の情報を事前登録し、捜索を早める。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 柏市在住のおおむね65歳以上
+  - 65歳未満でも、若年性認知症などで同様の心配があれば可
+  where: 柏市地域包括支援センター（市内12ヶ所）が登録窓口
+  url: https://www.city.kashiwa.lg.jp/chikihokatsu/kaigo/ninchisho/1341.html
+  confidence: low
+  more_urls:
+  - https://www.city.kashiwa.lg.jp/chikihokatsu/kaigo/ninchisho/1343.html
+not_found:
+- hochoki

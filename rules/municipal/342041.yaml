@@ -1,0 +1,162 @@
+city: '342041'
+name: 三原市
+site: www.city.mihara.hiroshima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品購入助成券（オムツ券）の交付
+  name_on_page: 家族介護用品支給事業（オムツ券）
+  summary: 重度の要介護者を在宅で介護する家族に、指定店で使うおむつ等の購入助成券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者を在宅で介護している同居家族が対象
+  - 高齢者と同居家族がともに市民税非課税世帯
+  - 申請書に担当ケアマネジャーの意見が必要
+  where: 高齢者福祉課、高齢者相談センター、担当ケアマネジャー
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/seikatusienn123.html
+  confidence: high
+  amount: 要介護3は月 3,000 円分、要介護4・5は月 6,000 円分
+- category: haishoku
+  name: ふれあい訪問給食サービス
+  name_on_page: ふれあい訪問給食サービス
+  summary: 調理が難しい高齢者に、安否確認を兼ねて食事を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 虚弱や病気などで調理や食材の調達が難しい
+  - 申請書に高齢者相談センターかケアマネの意見が必要
+  where: 高齢者福祉課、高齢者相談センター、担当ケアマネジャー
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/seikatusienn123.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置（安心電話）の設置
+  name_on_page: ふれあい安心電話設置事業
+  summary: ひとり暮らしの虚弱な高齢者に、ボタン一つで通報センターにつながる装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 身体が虚弱で日常生活に常時注意が必要な状態
+  - 申請書に高齢者相談センターかケアマネの意見が必要
+  where: 高齢者福祉課、高齢者相談センター、担当ケアマネジャー
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/seikatusienn123.html
+  confidence: high
+  amount: 装置レンタル料は固定型 662 円／月、携帯型 1,019 円／月（電話料金は実費）
+- category: hochoki
+  name: 高齢者の補聴器購入費の補助
+  name_on_page: 高齢者補聴器購入費用補助事業
+  summary: 聞こえが低下した高齢者の補聴器購入費の一部または全部を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の対象にならない人
+  - 両耳の聴力が 40 デシベル以上
+  - 指定医か補聴器相談医が使用を必要と認めた
+  - 過去 5 年以内にこの補助を受けていない
+  - 交付決定前に購入すると対象外
+  where: 高齢者福祉課、各支所の窓口
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/177458.html
+  confidence: high
+  amount: 購入費の 3 分の 2（住民税非課税世帯は全額）、上限 37,000 円
+- category: haikai
+  name: 認知症の人の見守り GPS 機器の購入・レンタル初期費用の助成
+  name_on_page: 認知症高齢者等見守りGPS機器等購入費等助成制度
+  summary: 行方不明のおそれがある認知症の人のGPS端末などの初期費用を、家族に助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市民で、認知症のため外出時に行方不明になるおそれのある人の家族または成年後見人等が申請
+  - 若年性認知症の人も対象
+  - 購入・レンタルの前に申請が必要
+  - 申請書に包括支援センターかケアマネの確認欄がある
+  where: 高齢者福祉課（事前に地域包括支援センターかケアマネに相談）
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/109982.html
+  confidence: high
+  amount: 上限 1 万円（認知症の人 1 人につき 1 回）
+- category: haikai
+  name: 認知症高齢者等の事前登録と個人賠償責任保険
+  name_on_page: 認知症高齢者等事前登録制度
+  summary: 行方不明のおそれのある認知症の人を市に登録して見守りに生かし、市負担の賠償保険にも入れる。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 主治医意見書で認知症の自立度が 2a 以上、または認知症の診断を確認できる
+  - 主治医意見書の障害高齢者の自立度が A2 以下
+  - 申請は本人、4親等以内の親族、法定代理人
+  where: 高齢者福祉課
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/129236.html
+  confidence: high
+  amount: 保険料は市が負担、保険金は 1 事故あたり上限 1 億円
+- category: mimamori
+  name: 認知症の人宅へのやすらぎ支援員の訪問
+  name_on_page: 認知症高齢者家族やすらぎ支援事業
+  summary: 支援員が在宅の認知症の人を訪問して話し相手や見守りをし、介護家族の休息をつくる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住む在宅の認知症の人が対象
+  - 申請する家族が週 1 回以上訪問して介護している（同居は問わない）
+  - 身体介護はできない
+  where: 三原市社会福祉協議会の地域センター（ケアマネ、包括支援センター、高齢者福祉課でも相談可）
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/146987.html
+  confidence: high
+  amount: 利用料は 1 時間 100 円、1 回 2 時間まで・月 10 時間まで（平日 9〜17 時）
+- category: gaishutsu
+  name: 敬老優待乗車証（市内バス）
+  name_on_page: 敬老優待乗車証
+  summary: 70 歳以上の人に、市内運行バスの優待乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 70 歳の誕生月から申請できる
+  - 一部のバスは対象外
+  - 本人確認書類が必要
+  where: 高齢者福祉課、各支所地域振興課
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/sonota.html
+  confidence: high
+- category: gaishutsu
+  name: 敬老優待乗船券（鷺浦町）
+  name_on_page: 敬老優待乗船券
+  summary: 鷺浦町に住む 70 歳以上の人に、優待乗船券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 鷺浦町に住んでいる人が対象
+  - 70 歳の誕生月から申請できる
+  - 本人確認書類が必要
+  where: 高齢者福祉課、三原鷺浦郵便局
+  url: https://www.city.mihara.hiroshima.jp/soshiki/15/sonota.html
+  confidence: high
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

@@ -1,0 +1,149 @@
+city: 082252
+name: 常陸大宮市
+site: www.city.hitachiomiya.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の助成券交付
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で介護する家族に、紙おむつなどを買える助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 65歳以上で要介護3以上、身体障害者手帳1・2級、または
+  - 特定疾病で65歳未満の要介護認定者（要支援を除く）を介護
+  - 入院・入所中、ショートステイが月の半数超は対象外
+  where: 長寿福祉課 高齢者支援G
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page001393.html
+  confidence: high
+  amount: 年間6万円分（65歳以上・要介護3以上・前年度市民税非課税世帯は7.5万円分）。申請月で変わる。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 市民税非課税の重度要介護高齢者を在宅で介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 6月30日現在、要介護者と介護者の双方が市内に住所あり
+  - 要介護4・5の認定が基準日前6か月以上続いている
+  - 入院・入所の合計が対象期間内で90日以内
+  - 双方に市税や保険料の未納がない
+  where: 長寿福祉課 高齢者支援G
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page005729.html
+  confidence: high
+  amount: 年額6万円（1年間介護保険を使わなかった場合は12万円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム設置事業
+  summary: ボタン1つで消防署へつながる緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、
+  - おおむね65歳以上の病弱な高齢者のみの世帯、
+  - またはひとり暮らしの重度身体障害者
+  - 親族が近隣に住むなど対象外の場合あり
+  where: 民生委員経由で申請（長寿福祉課）
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page001398.html
+  confidence: high
+  amount: 前年度の所得に応じて利用者負担金あり
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 布団や毛布のクリーニング料金を助成する利用券を交付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 寝具の衛生管理が困難な方
+  where: 長寿福祉課 高齢者支援G
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page001397.html
+  confidence: high
+  amount: 原則年2回まで。自己負担は布団1枚200円、毛布1枚100円
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 調理が困難な方に、費用を一部助成して食事を届け安否も確認する。
+  who: {}
+  at_application:
+  - 市内に住所があり、高齢・障害・疾病で調理が困難
+  - おおむね65歳以上のひとり暮らし、
+  - 高齢者のみの世帯、または在宅の障害者（手帳等あり）
+  - 親族が近隣に住むなど対象外の場合あり
+  - 申請時にアセスメント票が必要
+  where: 長寿福祉課 高齢者支援G
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page001395.html
+  confidence: high
+  amount: 週7回まで。利用者負担は1食350円（令和6年10月から）
+- category: gaishutsu
+  name: 福祉タクシー利用料金の助成
+  name_on_page: 福祉タクシー利用料金助成事業
+  summary: 公共交通の利用が難しい方のタクシー代を一部助成する利用券を交付する。
+  who: {}
+  at_application:
+  - 公共交通の利用が困難、または下肢が不自由
+  - かつ満65歳以上、または各種手帳・難病受給者証の交付を受けている
+  - 手帳等は申請時に提示する
+  where: 長寿福祉課 高齢者支援G（乗合タクシーは社会福祉協議会）
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page001392.html
+  confidence: high
+  amount: 年48回まで（往復で2回）。料金に応じた自己負担額あり（1,000円以下は400円など）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 寝たきり等で店に行けない方へ訪問理美容の費用を一部助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の寝たきり、または認知症の方
+  - 常時臥床、または日常生活の大半に介護が必要な状態が続く
+  - 長期入院者は除く
+  where: 長寿福祉課 高齢者支援G
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page001399.html
+  confidence: high
+  amount: 利用者負担は1回2,000円
+- category: haikai
+  name: おかえりマーク（身元確認シール）の配布
+  name_on_page: おかえりマーク登録事業
+  summary: 徘徊のおそれがある方に、登録番号つきの無料シールを配布する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 事前登録が必要。情報は同意のうえ県警へ提供される
+  - 本人または家族が申請できる
+  where: 長寿福祉課（本庁）
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page006398.html
+  confidence: high
+  amount: 無料（防水反射素材20枚、アイロンシール10枚）
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成券
+  name_on_page: はり・きゅう・マッサージ施術費助成事業
+  summary: はり・きゅう・マッサージの施術に使える1枚1,000円の助成券を交付する。
+  who: {}
+  at_application:
+  - 70歳以上、または身体障害者手帳1・2級
+  - または60歳以上で身体障害者手帳3〜6級
+  - または療育手帳A
+  where: 長寿福祉課 高齢者支援G
+  url: https://www.city.hitachiomiya.lg.jp/kurashi_gyousei/iryou_kenkou_fukushi/kaigo/koureisha_shien/page001394.html
+  confidence: high
+  amount: 年10回（10,000円分）。自己負担は料金から1,000円を引いた額
+not_found:
+- koken
+- hochoki
+- jutaku
+- nichijo-yogu
+- mimamori

@@ -1,0 +1,100 @@
+city: '402206'
+name: 宗像市
+site: www.city.munakata.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 調理や食事の確保が難しい一人暮らし等の高齢者に、安否確認を兼ねて弁当を手渡す
+  who: {}
+  at_application:
+  - 総合事業対象者か、要支援・要介護認定を受けている
+  - 一人暮らし、またはこれに準じる世帯の高齢者
+  - 調理・食事の確保が困難、または栄養改善が必要
+  - 要介護度によっては訪問調査を行う
+  where: 高齢者支援課（電話 0940-36-9288）
+  url: https://www.city.munakata.lg.jp/kiji0031846/index.html
+  confidence: high
+  amount: 1食 470 円または 500 円（令和7年4月現在）。栄養改善目的の低所得者は1食 300 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム（緊急通報装置設置事業）
+  summary: 急病などで自力の救急要請が難しい一人暮らし高齢者等の自宅に、緊急通報装置を設置する
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 生計中心者が前年度の市民税非課税
+  - おおむね65歳以上
+  - 緊急対応の必要性が高い疾病（脳・心臓・肺疾患等）がある
+  - 訪問調査で身体状況を確認する
+  where: 高齢者支援課（電話 0940-36-9288）
+  url: https://www.city.munakata.lg.jp/kiji0031848/index.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者捜してメールの事前登録
+  name_on_page: 認知症高齢者捜してメール
+  summary: 行方不明の恐れがある人を事前登録し、行方不明時に協力者へメールで情報を流す
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に居住（施設入所を含む）している
+  - 認知症等で行方不明になる可能性がある高齢者等
+  - 本人の写真が必要。電子申請か窓口で登録する
+  where: 高齢者支援課（電話 0940-36-9288）。電子申請もできる
+  url: https://www.city.munakata.lg.jp/kiji0031856/index.html
+  confidence: high
+  amount: 利用者負担なし
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 要介護4・5の人を介護保険サービスを使わず家族で介護する非課税世帯に年10万円を支給する
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 過去1年間、介護保険サービスを利用していない
+  - 年1週間程度のショートステイの利用は除く
+  - 入院していた期間は算定の対象期間から除く
+  where: 高齢者支援課（電話 0940-36-9288）
+  url: https://www.city.munakata.lg.jp/kiji0031849/index.html
+  confidence: high
+  amount: 年額 10 万円
+- category: sonota
+  name: 在日外国人高齢者福祉手当
+  name_on_page: 在日外国人高齢者福祉手当支給
+  summary: 大正15年4月1日以前生まれの在日外国人の高齢者に、月1万円の福祉手当を支給する
+  who: {}
+  at_application:
+  - 大正15年4月1日以前に生まれ、昭和57年1月1日以前に外国人登録をした人
+  - 市に1年以上居住している
+  - 昭和57年1月2日以降に帰化し、住民基本台帳に記載されている
+  - 各種年金や生活保護の受給者は対象外
+  - 毎年7月に更新申請が必要
+  where: 高齢者支援課（市役所北館1階）
+  url: https://www.city.munakata.lg.jp/kiji0031855/index.html
+  confidence: low
+  amount: 1人月額 1 万円
+not_found:
+- kaigo-yohin
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- koken
+- nichijo-yogu
+- mimamori
+- yutai

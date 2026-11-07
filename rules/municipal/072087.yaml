@@ -1,0 +1,172 @@
+city: 072087
+name: 喜多方市
+site: www.city.kitakata.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 安否確認を兼ねて、昼食の弁当を週7日以内で自宅に届けてくれる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし高齢者等で、買物や調理が難しい、または食事制限が必要
+  - 配達時に不在になることが明らかな人は利用できない
+  - 要介護認定を受けている人はケアマネジャーに相談
+  where: 高齢福祉課、各総合支所住民課
+  url: https://www.city.kitakata.fukushima.jp/soshiki/koufuku/681.html
+  confidence: high
+  amount: 自己負担は1食300円（栄養改善食は350円）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報用装置・人感センサー・火災報知器を貸してもらえる。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者
+  - または、ひとり暮らしの重度身体障がい者、特に必要と認められた人
+  - 市内に住所がある
+  where: 高齢福祉課いきがい支援班、各総合支所住民課
+  url: https://www.city.kitakata.fukushima.jp/soshiki/koufuku/682.html
+  confidence: high
+  amount: 利用者負担は月額300円（住民税課税世帯）か100円（非課税世帯）。通話料は自己負担
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券
+  name_on_page: 家族介護用品給付事業
+  summary: おむつや尿取りパッドなどを買うときに使える給付券がもらえる。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上
+  - 市内に住所がある
+  - 常時失禁があり、おむつが必要
+  - 実態調査で給付の可否を決める
+  where: 高齢福祉課いきがい支援班
+  url: https://www.city.kitakata.fukushima.jp/soshiki/koufuku/683.html
+  confidence: high
+  amount: 月3,000円
+- category: gaishutsu
+  name: 高齢者福祉タクシー利用券
+  name_on_page: 高齢者福祉タクシー利用助成事業
+  summary: 通院でタクシーや介護タクシーを使うときの利用券がもらえる。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある高齢者
+  - 定期的な通院が必要で、ケアプランにその旨が必要
+  - 重度障がい者タクシー助成・人工透析通院交通費助成とは重複不可
+  where: 高齢福祉課（ケアマネジャーに相談）
+  url: http://www.city.kitakata.fukushima.jp/soshiki/koufuku/684.html
+  confidence: high
+  amount: 1枚500円の利用券。申請月により6〜72枚
+- category: gaishutsu
+  name: 高齢者おでかけ助成券（バス運賃）
+  name_on_page: 高齢者おでかけ助成事業
+  summary: のるーと喜多方とまちなか循環線の運賃に使える助成券がもらえる。
+  who:
+    age_min: 75
+  at_application:
+  - 市民（年度内に75歳になる人を含む）
+  - 原発避難者特例法に基づく避難者も対象
+  where: 高齢福祉課いきがい支援班
+  url: https://www.city.kitakata.fukushima.jp/soshiki/koufuku/61196.html
+  confidence: high
+  amount: 1枚250円分の助成券を12枚（3,000円分）
+- category: ribiyo
+  name: 訪問理美容の助成券
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容室に行けない人が自宅で理美容を受ける費用の助成券がもらえる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、心身の理由で理美容室に行くのが難しい
+  - 家族の協力で行ける人は対象外
+  - 要介護2以下の人は申請前に市へ相談
+  - 市内に住所がある
+  where: 高齢福祉課いきがい支援班
+  url: https://www.city.kitakata.fukushima.jp/soshiki/koufuku/685.html
+  confidence: high
+  amount: 1回につき1,000円の助成券。枚数は申請月により1〜4枚
+- category: nichijo-yogu
+  name: 火災警報器・家具転倒防止器具の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: 住宅用火災警報器の設置費の助成と、家具転倒防止器具の設置が受けられる。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 次のいずれか：65歳以上のひとり暮らしか高齢者のみ世帯
+  - ひとり暮らし障がい者か障がい者のみ世帯
+  - 65歳以上の高齢者と障がい者のみの世帯
+  - 市内に住所がある
+  where: 高齢福祉課、各総合支所住民課
+  url: https://www.city.kitakata.fukushima.jp/soshiki/koufuku/23289.html
+  confidence: high
+  amount: 警報器は1個3,000円まで（1世帯3個まで）。家具転倒防止器具は全額市負担（3点まで）
+- category: koken
+  name: 成年後見の費用助成
+  name_on_page: 喜多方市成年後見制度利用支援事業
+  summary: 申立て費用や後見人の報酬を負担しにくい人に、その費用を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度の利用が必要な状況
+  - 本人の収入や資産から費用負担が難しい
+  - 事前に市へ相談
+  where: 高齢福祉課いきがい支援班
+  url: https://www.city.kitakata.fukushima.jp/soshiki/koufuku/692.html
+  confidence: high
+  amount: 月額上限は施設入所で18,000円、在宅で28,000円
+- category: haikai
+  name: 身元確認QRコードシール
+  name_on_page: 高齢者身元確認QRコード事業
+  summary: 徘徊や迷子のときに身元を確認できるQRコード付きシールを使える。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 申請は親族や支援者などが行う
+  where: 高齢福祉課いきがい支援班
+  url: http://www.city.kitakata.fukushima.jp/soshiki/koufuku/10813.html
+  confidence: high
+  amount: 利用者負担なし
+- category: gaishutsu
+  name: 運転免許自主返納者への交通券の交付
+  name_on_page: 喜多方市運転免許証自主返納者支援事業
+  summary: 免許を自主返納した高齢者に、バス回数券やタクシー券などを交付する。
+  who: {}
+  at_application:
+  - 返納時に満65歳以上
+  - 平成25年4月1日以降に自主返納した人
+  - 住民基本台帳に記録されている
+  - 1人1回限り。事業は令和9年3月31日までの予定
+  where: 危機管理課（頁に申請先の明記なし）
+  url: https://www.city.kitakata.fukushima.jp/soshiki/seikatsu/10219.html
+  confidence: low
+  amount: バス回数券・タクシー助成券・AIZUNORUCAカードを合計2万円分
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu

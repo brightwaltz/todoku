@@ -1,0 +1,200 @@
+city: '112429'
+name: 日高市
+site: www.city.hidaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物支給
+  name_on_page: ねたきり老人等紙おむつの支給
+  summary: 在宅で常時紙おむつを使う、要支援・要介護の人に紙おむつを支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - ねたきり、またはそれに準ずる状態の人
+  - 詳しくは担当課・ケアマネ・地域包括支援センターへ
+  where: 長寿いきがい課 高齢者支援担当（地域包括支援センター・ケアマネジャーにも相談可）
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/19171.html
+  confidence: high
+  amount: 月 6,000 円分までの現物支給
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 平日の希望日に昼食を届け、あわせて安否確認をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体的・精神的な理由で調理が困難な人
+  - 同居者の短期入院などでの一時利用は対象外
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/19173.html
+  confidence: high
+  amount: 1 食 500 円、420 円または 390 円（利用者負担）
+- category: iro
+  name: ねたきり高齢者の介護手当
+  name_on_page: ねたきり老人介護手当の支給
+  summary: ねたきりの 65 歳以上の人を家庭で介護している人に手当を出す。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 年齢は介護される人のもの。常時ねたきりかそれに準ずる状態
+  - 6 か月以上続けて家庭で介護している人（入院期間は除く）
+  - 月の半数以上入院・入所（ショート含む）の月は対象外
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/19172.html
+  confidence: high
+  amount: 月額 5,000 円まで（4・8・12 月に 4 か月分ずつ支給）
+- category: koken
+  name: 成年後見制度の利用支援（報酬助成など）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に困る身寄りのない高齢者の後見の申し立てを支援し、報酬を全部か一部助成する。
+  who: {}
+  at_application:
+  - 重度の認知症などで判断能力が不十分な高齢者
+  - 身寄りがない人
+  - 介護保険サービスを利用中か利用予定の人
+  - 老人福祉法による申し立てが必要と認められる人
+  where: 長寿いきがい課 高齢者支援担当（民生委員・福祉関係者からの要請に基づく）
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/16516.html
+  confidence: high
+  amount: 報酬の全部または一部を、本人の所得をみて助成
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 高齢者補聴器購入費補助事業
+  summary: 難聴の高齢者が補聴器を買った費用の一部を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある人
+  - 聴力が両耳 40dB 以上で障害者手帳の対象でない、または耳鼻科医が有用と認めた人
+  - 労災などほかの法令による補聴器の補助を受けていない
+  - 市税・介護保険料に滞納がない
+  - 交付決定前に買った補聴器は対象外
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/34504.html
+  confidence: high
+  amount: 上限 2 万円（1 人 1 回限り）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システムの設置
+  summary: ボタンを押すと受信センターにつながる通報装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 1 人暮らしで心臓病・脳血管疾患・発作を伴う病気がある人
+  - または 65 歳以上の 2 人世帯で、一方が寝たきり・認知症、他方が上記の病気
+  - 固定電話の回線が必要
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/20031.html
+  confidence: high
+  amount: 装置は無料（通話料などは自己負担）
+- category: shingu
+  name: 寝具の消毒乾燥（乾燥車の派遣）
+  name_on_page: 寝具消毒乾燥車の派遣
+  summary: 寝具の消毒乾燥を月 1 回行う（年 1 回は丸洗い）。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 日常生活を営むのに支障がある人
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/20029.html
+  confidence: high
+  amount: 無料。月 1 回（年 1 回は丸洗い）
+- category: nichijo-yogu
+  name: 火災警報器の給付
+  name_on_page: 高齢者日常生活用具の給付
+  summary: 条件に合う高齢者に住宅用の火災警報器を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし等で、持ち家に住んでいる人
+  - 生計中心者が前年度の市町村民税非課税
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/20030.html
+  confidence: high
+  amount: 給付品目は火災警報器。所得に応じた自己負担あり
+- category: haikai
+  name: 認知症の見守りシール交付
+  name_on_page: 認知症高齢者等見守りシールの交付
+  summary: ひとり歩きのおそれがある人に、二次元コード付きの見守りシールを無料で交付する。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定があり、ひとり歩きがある人
+  - 医師に認知症と診断された人
+  - 上の 2 項目は頁に並記。両方必要かは頁から不明
+  where: 長寿いきがい課（本庁舎 1 階 5 番窓口）、地域包括支援センターにも相談可
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/20034.html
+  confidence: high
+  amount: 無料（通信料などは自己負担）。ラベル 30 枚と蓄光シール 10 枚
+- category: haikai
+  name: 認知症の位置情報端末の初期費用助成
+  name_on_page: 認知症高齢者位置情報サービスの助成
+  summary: 位置情報端末の加入料・登録料・機器代など利用開始時の費用を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請するのは、認知症でひとり歩きのある人を在宅で介護する人
+  - 年齢・要介護度は介護される人のもの
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/20035.html
+  confidence: high
+  amount: 上限 7,000 円
+- category: sonota
+  name: 家具転倒防止器具の取り付け
+  name_on_page: 家具転倒防止器具の取付け
+  summary: 地震に備え、タンスなどの家具に転倒防止の金具を 3 つまで取り付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 器具の取り付けが自分では困難な世帯
+  - 壁の状況によっては取り付けられないことがある
+  where: 長寿いきがい課 高齢者支援担当
+  url: https://www.city.hidaka.lg.jp/soshiki/kenkosuishin/chojuikigai/koreishashien/koreisha/20032.html
+  confidence: high
+  amount: 取り付けは無料（器具の購入費は自己負担）
+not_found:
+- ribiyo
+- jutaku
+- mimamori
+- gaishutsu
+- yutai

@@ -1,0 +1,29 @@
+pref: '40'
+name: 福岡県
+site: www.pref.fukuoka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: まごころ駐車場の利用証の交付（要介護1以上の人など）
+  name_on_page: ふくおか・まごころ駐車場
+  summary: 要介護1以上の人などに、障がい者等用の駐車場を使える緑色の利用証を交付する。
+  who: {}
+  at_application:
+  - 原則として福岡県に住んでいる人が対象
+  - 次のどれか：要介護1以上、障がい者の手帳（種類ごとに等級あり）、難病の受給者証、妊産婦、けが人
+  - 高齢者は介護保険被保険者証で要介護1以上を確かめる
+  - 対象の本人が運転または同乗しているときに使える
+  - 申請書と確認書類を出す。代理申請は代理人の身分証明書も要る
+  where: 居住地の窓口（市町村の保健福祉担当課や県の保健福祉（環境）事務所など。地域で異なる）。郵送・電子申請は県障がい福祉課
+  url: https://www.pref.fukuoka.lg.jp/contents/fukuokamagokorochusyazyou.html
+  confidence: high
+  more_urls:
+  - https://www.pref.fukuoka.lg.jp/uploaded/life/733597_62184959_misc.pdf
+not_found:
+- yutai
+- jutaku

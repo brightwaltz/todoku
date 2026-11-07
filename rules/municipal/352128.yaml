@@ -1,0 +1,138 @@
+city: '352128'
+name: 柳井市
+site: www.city-yanai.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入・修理費の助成
+  name_on_page: 高齢者補聴器購入費等助成事業
+  summary: 聴力が下がった65歳以上が、認定店で補聴器を買う・直すときの費用の一部を市が助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、市税の滞納がない
+  - 両耳の聴力が30dB以上70dB未満で、補聴器相談医が必要と判断
+  - 過去5年間にこの助成を受けていない
+  - 認定補聴器専門店等で購入・修理する（購入前に申請が必要）
+  where: 高齢者支援課、各出張所・連絡所（郵送可）
+  url: https://www.city-yanai.jp/soshiki/70/koureishahochouki.html
+  confidence: high
+  amount: 購入は本体1台の費用の2分の1（上限3万円）。修理は2分の1（上限1万円）
+  more_urls:
+  - https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システムの設置
+  summary: ひとり暮らしの高齢者などの家に、緊急時に通報できる装置を設置する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし
+  - または65歳以上のひとり暮らし・高齢者のみ世帯等で、慢性疾患等があり要注意
+  where: 高齢者支援課（一覧の頁に申請先の記載なし）
+  url: https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+  confidence: low
+  amount: 利用者負担は月500円（別に電話料金）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 高齢者のみの世帯の寝具（掛敷布団・毛布で3枚と枕1個まで）を洗濯・乾燥・消毒する。
+  who:
+    household:
+    - elderly_only
+  at_application:
+  - 80歳以上の高齢者のみの世帯
+  - または75歳以上の高齢者のみ世帯で、要介護や指定難病等で寝たきり
+  - 同居者が寝具を管理できる場合などは対象外
+  where: 高齢者支援課（一覧の頁に申請先の記載なし）
+  url: https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+  confidence: low
+  amount: 費用の1割相当は利用者負担
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきり等で店に行けない高齢者の自宅へ理美容師が出向く、その出張費を市が助成する。
+  who: {}
+  at_application:
+  - 寝たきり等の理由で理髪店・美容院に行くことが困難な高齢者
+  where: 高齢者支援課（一覧の頁に申請先の記載なし）
+  url: https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+  confidence: low
+  amount: 出張費を市が助成。理美容料金は本人負担
+- category: haishoku
+  name: 配食サービス（安否確認）
+  name_on_page: 配食サービス
+  summary: 独居や高齢者のみの世帯に、ボランティアが月1〜2回ほど食事を届けて安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 高齢者支援課（一覧の頁に申請先の記載なし）
+  url: https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+  confidence: low
+  amount: 利用者負担あり（金額の記載なし）
+- category: kaigo-yohin
+  name: 家族への紙おむつの現物支給
+  name_on_page: 紙おむつの支給
+  summary: 常時おむつを使う在宅の高齢者を介護する家族に、毎月紙おむつを現物で支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりや認知症状がある高齢者を在宅で介護している家族
+  where: 高齢者支援課（一覧の頁に申請先の記載なし）
+  url: https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+  confidence: low
+  amount: 月6,875円相当額まで
+- category: haikai
+  name: 徘徊・見守りネットワーク登録と認知症みまもりシール
+  name_on_page: 徘徊・見守りネットワーク及び認知症みまもりシール
+  summary: ひとり歩きのおそれのある人を事前登録し、希望者にはQRコード付きの見守りシールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で認知症等によるひとり歩きの可能性がある高齢者等
+  - 申請できるのは家族・親族・後見人等
+  - シール希望の場合は通知先メールアドレス（3件まで）が必要
+  where: 高齢者支援課（地域包括支援センター）
+  url: https://www.city-yanai.jp/soshiki/70/haikai-mimamori.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう施術費の助成
+  name_on_page: はり・きゅう施術費助成
+  summary: 70歳以上の人が、はり・きゅうの施術を受けたときの費用の一部を、月10回まで助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 国民健康保険の加入者は対象外
+  where: 高齢者支援課（一覧の頁に申請先の記載なし）
+  url: https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+  confidence: low
+  amount: はりかきゅうの一方は1回700円、併用は1回800円
+- category: sonota
+  name: 生活管理指導短期宿泊サービス
+  name_on_page: 生活管理指導短期宿泊サービス
+  summary: 施設に7日間ほど短期間泊まり、日常生活の指導や支援を受ける。
+  who: {}
+  at_application: []
+  where: 高齢者支援課（一覧の頁に申請先の記載なし）
+  url: https://www.city-yanai.jp/soshiki/70/koureisya-fukushi.html
+  confidence: low
+  amount: 1日450円と食費等の実費
+not_found:
+- iro
+- koken
+- jutaku
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

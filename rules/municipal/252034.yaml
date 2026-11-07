@@ -1,0 +1,123 @@
+city: '252034'
+name: 長浜市
+site: www.city.nagahama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給券の交付
+  name_on_page: 衛生材料支給事業
+  summary: 在宅で常時おむつを使う要介護3〜5の非課税世帯に、紙おむつ等と交換できる券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市税・介護保険料・国保料・後期高齢者医療保険料を完納
+  - 施設入所中・入院中の人は対象外
+  - 障害者の日常生活用具でおむつ給付を受けられる人は対象外
+  where: 長寿推進課（北部合同庁舎くらし窓口課でも受付、電子申請可）
+  url: https://www.city.nagahama.lg.jp/0000016463.html
+  confidence: high
+  amount: 1枚4,500円分の券を対象月数分交付（おむつ類・防水シーツ等と交換、現金不可）
+- category: haishoku
+  name: 見守り配食支援
+  name_on_page: 見守り配食支援事業のご案内
+  summary: 配食の際に声かけして安否確認をする、昼食か夕食のどちらか1日1回のお弁当サービス。
+  who: {}
+  at_application:
+  - 65歳以上、または重度の障害手帳（1・2級等）を持つ人
+  - 安否確認が必要と判断される人
+  - 同居者の見守りや週5日以上の見守りがある場合は対象外
+  - 市税・介護保険料等に未納がない
+  where: 長寿推進課（電子申請可）
+  url: https://www.city.nagahama.lg.jp/0000007813.html
+  confidence: high
+  amount: 週5回まで、1日1回（昼食か夕食のどちらか）。自己負担額は頁に記載なし
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 急病や事故のときに通報できる装置を貸与し、月1回のお元気コールや健康相談も受けられる。
+  who: {}
+  at_application:
+  - 市内在住で、協力員3人を確保できる
+  - 65歳以上で、心臓疾患など急変の危険があり、ひとり暮らしか緊急時に対応できる人のいない世帯
+  - または1・2級の身体障害者手帳を持つひとり暮らしの人
+  - 病状は診断書等で確認する場合がある
+  where: 長寿推進課（65歳以上）、しょうがい福祉課（手帳所持者）
+  url: https://www.city.nagahama.lg.jp/0000013601.html
+  confidence: high
+  amount: 機器費用の1割負担（固定型 月143円、モバイル型 月231円）。生活保護または世帯全員非課税は無料
+- category: haikai
+  name: GPS端末の初期費用の市負担
+  name_on_page: 認知症高齢者等家族支援サービス（GPS端末貸与に係る初期費用の市費負担）
+  summary: 行方不明のおそれのある認知症の人を介護する家族に、GPS端末貸与の初期費用を市が負担する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 対象の人は市の介護保険被保険者
+  - 要介護・要支援認定を受けた人、またはそれに相当すると判断される人
+  - 利用者は対象の人を在宅で介護する家族等
+  - 市税・介護保険料等に未納がない、過去に本事業の対象でない
+  where: 長寿推進課
+  url: https://www.city.nagahama.lg.jp/0000005469.html
+  confidence: high
+- category: haikai
+  name: 認知症SOSネットワークの事前登録と見守りシール
+  name_on_page: 長浜市認知症高齢者等SOSほんわかネットワーク事業
+  summary: 事前登録をすると見守りシールが配られ、行方不明時は協力者へメールで情報が届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住のおおむね65歳以上で、認知症等により行方不明の心配がある人
+  - 65歳未満でも若年性認知症などで同様の心配があれば申込可
+  where: 地域包括支援センター、長寿推進課（電子申請可）
+  url: https://www.city.nagahama.lg.jp/0000001923.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援
+  summary: 申立費用や後見人報酬の支払いが難しい人に費用を助成する。申立人がいない場合は市長申立もある。
+  who: {}
+  at_application:
+  - 市内在住で後見開始の審判を行う人、または後見人等が選任された人
+  - 生活保護受給中、または市民税非課税世帯で収入・資産が基準以下
+  - 単身世帯は年収見込150万円以下・資産100万円以下
+  where: 長寿推進課（認知症のある高齢者）、しょうがい福祉課（知的・精神障害のある人）
+  url: https://www.city.nagahama.lg.jp/0000011950.html
+  confidence: high
+  amount: 申立費用（診断書料・収入印紙代等）や後見人等の報酬の一部または全部
+- category: sonota
+  name: 認知症の人の個人賠償責任保険（市が加入）
+  name_on_page: 長浜市認知症高齢者等おでかけあんしん保険
+  summary: 市が保険料を負担し、認知症の人が他人に損害を与えた場合の賠償を補償する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 住民票が長浜市にある
+  - 認知症等により行方不明になる心配がある
+  - SOSほんわかネットワークに登録している（申請と同時に登録可）
+  where: 長寿推進課（電子申請可）
+  url: https://www.city.nagahama.lg.jp/0000011305.html
+  confidence: high
+  amount: 自己負担なし。最大1億円まで補償
+not_found:
+- iro
+- shingu
+- gaishutsu
+- nichijo-yogu

@@ -1,0 +1,181 @@
+city: '112275'
+name: 朝霞市
+site: www.city.asaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつの支給
+  summary: 寝たきりや重度認知症で失禁のある在宅の方に、紙おむつを支給する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきり、または重度認知症で失禁状態にある
+  - 生活保護で紙おむつの支給を受けられる方は対象外
+  - 特養・老健に入所中の方は対象外
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/kamiomutu.html
+  confidence: high
+- category: sonota
+  name: ねたきり老人等手当
+  name_on_page: ねたきり老人等手当
+  summary: 寝たきりや重度認知症の状態が6か月以上続く在宅の高齢者に、月額の手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりは要介護3以上かつ寝たきり度C1・C2
+  - 重度認知症は要介護1以上かつ認知症自立度4またはM
+  - 6か月以上その状態が続いている
+  - 施設入所中や長期入院（1年）の方は対象外
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/netakiriteate.html
+  confidence: high
+  amount: 月額1万円
+- category: gaishutsu
+  name: 移送サービス（寝台・車いす対応車両の費用補助）
+  name_on_page: 移送サービス
+  summary: 寝たきりや車いすの方が医療機関や介護施設へ行くとき、移送用車両の費用の一部を市が負担する。
+  who: {}
+  at_application:
+  - 65歳以上で寝たきりか常時車いす、移送用車両が必要
+  - または40歳以上で要介護認定を受けている方
+  - 利用先は医療機関や介護保険施設など
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/iso.html
+  confidence: high
+  amount: 本人負担は住民税非課税で1割、課税で3割。月の利用限度は移送費用3万円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容店に行けない在宅の方の自宅へ理美容師が来て散髪し、出張料を市が負担する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 身体機能の低下や病気で理美容店に出向くのが難しい
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/houmonribiyou.html
+  confidence: high
+  amount: 出張料2,000円を市が負担（カット料金は自己負担）。利用は最大6回
+- category: shingu
+  name: 寝具乾燥車の派遣
+  name_on_page: 寝具乾燥車の派遣
+  summary: 家で寝具を干せない非課税世帯の方に、月2回、寝具乾燥車を派遣する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 心身の障害などで寝具を乾燥させるのが難しい
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/singukansosya.html
+  confidence: high
+- category: mimamori
+  name: 見守りライトの設置
+  name_on_page: 見守りライトの設置
+  summary: 通信機能つきの電球を設置し、点灯・消灯がないと家族にメールで知らせる。
+  who:
+    age_min: 75
+    tax:
+    - household_exempt
+  at_application:
+  - ひとり暮らし等の方
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/mimamorilight.html
+  confidence: high
+  amount: 利用料は無料（メール受信の通信料は除く）
+- category: mimamori
+  name: 訪問による見守り
+  name_on_page: 訪問による見守り
+  summary: 委託業者が月1回自宅を訪ね、生活状況を確かめて家族にメールで報告する。
+  who:
+    age_min: 75
+    tax:
+    - household_exempt
+  at_application:
+  - ひとり暮らし等の方
+  - 介護保険等のサービスを利用していない
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/houmonmimamori.html
+  confidence: high
+  amount: 利用料は無料（メール受信の通信料は除く）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事の支度が難しい方に昼食を届け、安否も確認する。1食あたり市が助成する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし等の方
+  - 自分で食事の支度が困難
+  - ほかの方から食事の提供を受けられない
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/haisyoku.html
+  confidence: high
+  amount: 1食あたり200円を市が助成。残りは自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報システム・安心見守り通報システム
+  name_on_page: 緊急通報システム・安心見守り通報システム
+  summary: ボタンを押すと消防署に通報される機器を、ひとり暮らし等の方の家に設置する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし等の方
+  - 緊急通報は緊急性のある慢性疾患等の人、安心見守り通報は生活に不安を感じる人
+  - 固定電話回線が必要
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/kinnkyuansin.html
+  confidence: high
+  amount: 緊急通報は無料。安心見守り通報は月額500円
+- category: haikai
+  name: ひとり歩き高齢者等位置検索サービス
+  name_on_page: ひとり歩き高齢者等位置検索サービス
+  summary: 道に迷うおそれのある方を在宅で介護する家族に、位置がわかる端末を貸す。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 認知症により道に迷うおそれのある人を、在宅で介護する家族が申し込む
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/hitoriaruki.html
+  confidence: high
+- category: jutaku
+  name: 住宅改善費の補助
+  name_on_page: 住宅改善費の補助
+  summary: 身体の状況にあわせた住宅改修や階段昇降機の取り付けの費用を、市が一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 対象は介護保険の給付対象の住宅改修（手すり・段差解消など）と階段昇降機の取り付け
+  where: 高齢者・地域福祉課（高齢者あんしん係）
+  url: https://www.city.asaka.lg.jp/soshiki/58/koureijutaku.html
+  confidence: high
+not_found:
+- iro
+- koken
+- hochoki
+- nichijo-yogu
+- chusha
+- yutai

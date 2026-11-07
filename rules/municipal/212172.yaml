@@ -1,0 +1,320 @@
+city: '212172'
+name: 飛騨市
+site: www.city.hida.gifu.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: お手本配食事業
+  name_on_page: 飛騨市お手本配食事業
+  summary: 食生活の改善が必要な方に、栄養バランスのよい弁当を届ける。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上、または要支援・要介護認定を受けた40〜64歳
+  - 独居か高齢者のみ世帯（市長が認めれば同居でも可）
+  - 食事に偏りがあり改善の支援が必要と判断された方
+  - ケアマネか地域包括支援センターを通して申請する
+  where: 地域包括支援センター、地域包括ケア課高齢支援係
+  url: https://www.city.hida.gifu.jp/soshiki/12/11004.html
+  confidence: high
+  amount: 週5食まで（治療食は7食）。1食あたりの自己負担は原則500円。
+  more_urls:
+  - https://www.city.hida.gifu.jp/uploaded/attachment/36180.pdf
+- category: haishoku
+  name: 給食サービス（社協）
+  name_on_page: 給食サービス
+  summary: 虚弱なひとり暮らし高齢者などへ弁当を届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 虚弱な高齢者
+  where: 飛騨市社会福祉協議会
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: low
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク事業
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: ひとり歩きが心配な方を事前登録し、みまもりシールと賠償保険を無料で提供する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の症状があり外出中に道に迷うおそれがある
+  - 若年性認知症も対象
+  - 保険加入は登録者の世帯全員に住民税の滞納がないこと
+  where: 飛騨市地域包括支援センター（神岡窓口もあり）
+  url: https://www.city.hida.gifu.jp/soshiki/12/sos.html
+  confidence: high
+  amount: 利用料は無料。賠償保険料は市が全額負担（補償は上限1億円）。
+- category: iro
+  name: 家族介護応援手当
+  name_on_page: 家族介護応援手当
+  summary: 要介護3以上の方を在宅で介護している同一世帯の方に手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 同一世帯の方が月15日以上、在宅で介護している
+  - 支給は介護する家族に対して
+  where: 地域包括ケア課介護保険係、各振興事務所
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 月額10,000円（年4回にまとめて支給）。ダブルケアは月5,000円加算。
+- category: hochoki
+  name: 65歳以上の補聴器購入費補助
+  name_on_page: 65歳以上の方の補聴器購入の補助制度
+  summary: 手帳の対象でない中等度難聴の65歳以上の方へ補聴器購入費を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市民であること
+  - 両耳の聴力レベルが40デシベル以上
+  - 身体障害者手帳の交付対象でない
+  - 市内の販売店で購入した中等度難聴用の補聴器に限る
+  where: 地域包括ケア課高齢支援係、各振興事務所
+  url: https://www.city.hida.gifu.jp/soshiki/12/40276.html
+  confidence: high
+  amount: 購入費10万円以上は5万円、10万円未満は購入費の1/2。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者・障がい者等への緊急通報装置の貸与
+  summary: 急病などの緊急時に通報できる装置を貸与する。
+  who: {}
+  at_application:
+  - 70歳以上のひとり暮らし
+  - または、ひとり暮らしの重度身体障害者
+  - または、後期高齢者医療の被保険者だけの世帯
+  where: 地域包括ケア課高齢支援係、総合福祉課、各振興事務所
+  url: https://www.city.hida.gifu.jp/soshiki/12/43785.html
+  confidence: high
+  amount: 固定電話版は無料。LTE版は月700円、人感センサー付きは月1,000円または1,200円。
+  more_urls:
+  - https://www.city.hida.gifu.jp/site/sougouhukusi/43433.html
+  - https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+- category: jutaku
+  name: いきいき住宅改善助成事業
+  name_on_page: いきいき住宅改善助成事業
+  summary: 要援護の高齢者などの住宅改修費を、介護保険とは別に市が助成する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、生計中心者の前年所得税額が7万円以下
+  - 65歳以上で寝たきり度A〜C、または認知症の自立度2a以上
+  - または、満6歳以上で身体障害者手帳1・2級（下肢・体幹・視覚）
+  - 同一住宅につき原則1回限り。着工前に申請する
+  where: 地域包括ケア課介護保険係、各振興事務所
+  url: https://www.city.hida.gifu.jp/soshiki/12/537.html
+  confidence: high
+  amount: 最大75万円。介護保険分を差し引き、所得に応じた自己負担率で算定。
+- category: gaishutsu
+  name: いきいき地域生活応援事業
+  name_on_page: いきいき地域生活応援事業
+  summary: 毎年1つ選べる。入浴・タクシー・訪問理美容に使える助成券、バス券、外出器具などがある。
+  who: {}
+  at_application:
+  - 市内在住で、70歳以上
+  - または、障害者手帳（身体・療育・精神）の所持者
+  - または、要支援・要介護認定を受けている方
+  - 年度内に1回限りで、コースを1つ選ぶ
+  where: 地域包括ケア課、各振興事務所、一部の郵便局
+  url: https://www.city.hida.gifu.jp/soshiki/12/540.html
+  confidence: high
+  amount: いきいき券45枚綴り（4,500円分）、バス利用券4,800円分、外出器具は1/2（上限1万円）または上限4,500円。
+  more_urls:
+  - https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+- category: gaishutsu
+  name: 運転免許自主返納者の支援
+  name_on_page: 運転免許自主返納者の支援
+  summary: 免許を自主返納した70歳以上の方に、いきいき券かバス利用券を最大3年間支給する。
+  who:
+    age_min: 70
+  at_application:
+  - 令和6年4月1日以降に自分で運転免許を返納した
+  - 運転免許取消通知書を持参する
+  where: 地域包括ケア課高齢支援係（ハートピア古川）、各振興事務所
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 毎年いきいき券1冊（4,500円分）またはバス利用券1冊（6,000円分）。
+  more_urls:
+  - https://www.city.hida.gifu.jp/soshiki/12/540.html
+- category: gaishutsu
+  name: 通院支援タクシー助成券
+  name_on_page: 通院支援タクシー助成券の交付
+  summary: 古川町・神岡町の対象医療機関へ通院した帰りのタクシー代を助成する。
+  who: {}
+  at_application:
+  - 市民で、70歳以上
+  - または、障害者手帳の所持者、または介護保険認定者
+  - 対象の医療機関を受診した後に医療機関の窓口で券を受け取る
+  where: 対象の医療機関の窓口（問い合わせは総務課行政係）
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 1回400円
+- category: gaishutsu
+  name: ショートステイ利用時の送迎助成
+  name_on_page: 高齢者短期入所事業利用時の送迎助成
+  summary: 施設の送迎範囲外の方がタクシー等でショートステイに行く送迎費用を支援する。
+  who: {}
+  at_application:
+  - 施設が定める送迎提供範囲の外に住んでいる
+  - 家族の送迎ではなくタクシー等を使う
+  - 利用前に担当ケアマネジャーへ相談する
+  where: 地域包括ケア課介護保険係
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 施設送迎と同程度の負担金を乗車時に支払い、残りは市が運行業者へ支払う。
+- category: mimamori
+  name: ICT見守り機器の購入費補助
+  name_on_page: 見守り機器購入費等の支援
+  summary: ICTを使った見守り機器の購入・設置費用の一部を補助する。
+  who: {}
+  at_application:
+  - 70歳以上のひとり暮らし
+  - または、75歳以上のみで構成される世帯
+  - または、重度の障害があるひとり暮らしの方
+  - 市から緊急通報装置の貸与を受けている方は対象外
+  where: 地域包括ケア課高齢支援係
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 購入費と設置費の1/2（上限2万円）
+- category: kaigo-yohin
+  name: おむつ処分用ごみ袋の進呈
+  name_on_page: おむつ等処分用ごみ袋の支援
+  summary: 常時おむつが必要な方を在宅で介護する世帯に、処分用ごみ袋を進呈する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護1以上で常時おむつを使う方を在宅で介護する世帯
+  - または、紙おむつ支援を受けている障害者世帯、0〜3歳未満の子育て世帯
+  - ケアマネが「常時おむつ等が必要」と判断した方
+  where: 地域包括ケア課高齢支援係
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 年間100枚
+- category: kaigo-yohin
+  name: 水洗式ポータブルトイレ購入費の上乗せ助成
+  name_on_page: 水洗式ポータブルトイレ購入費助成事業
+  summary: 水洗式ポータブルトイレの購入費を、介護保険の福祉用具購入の枠に上乗せして給付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 特定福祉用具販売事業所で購入し、設置した方
+  where: 地域包括ケア課介護保険係
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 購入額50万円までを、所得に応じ7〜9割を介護保険で負担（通常は年10万円まで）。
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度の利用支援
+  summary: 身寄りがない認知症高齢者などの申立て手続きと、後見人報酬の助成。
+  who:
+    age_min: 65
+  at_application:
+  - 認知症等で判断能力が低下している
+  - 身寄りがない、虐待を受けている、親族が非協力などで契約や財産管理が困難
+  - 後見人報酬は、支払いが困難と認められる方が対象
+  where: 地域包括ケア課高齢支援係、各振興事務所
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 後見人等の報酬の一部または全部を助成。申立て費用は市が一旦負担し、生活保護の方などは助成。
+- category: sonota
+  name: 高齢者熱中症予防のエアコン購入補助
+  name_on_page: 高齢者熱中症予防対策補助金（エアコン購入支援）
+  summary: エアコンがない高齢者の非課税世帯に、エアコン購入・設置費を補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のみの世帯、または65歳以上と65歳未満の障害者の世帯
+  - 市税等を滞納していない
+  - 使えるエアコンが1台もない市内の住宅に住む
+  - 見守り相談員やケアマネジャー等が設置の必要を確認
+  where: 地域包括ケア課高齢支援係（ハートピア古川）
+  url: https://www.city.hida.gifu.jp/soshiki/12/83054.html
+  confidence: high
+  amount: 本体と設置費の合計か5万円の、少ない方（1世帯1台）。
+- category: sonota
+  name: 高齢者等雪下ろし助成事業
+  name_on_page: 高齢者等雪下ろし助成事業
+  summary: 自力で雪下ろしできない困窮世帯の雪下ろし費用の一部を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のみで構成される高齢者世帯
+  - 世帯全員の市民税が非課税または均等割のみ
+  - 二親等以内の親族から作業・金銭の援助を受けられない
+  where: 地域包括ケア課高齢支援係、各振興事務所
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 1年度につき5万円以内（市が建設業協会へ直接支払い）。
+- category: sonota
+  name: 屋根融雪等整備費の助成
+  name_on_page: 屋根融雪等整備費の助成
+  summary: 高齢者世帯などが屋根の融雪装置等を整備する費用の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の世帯、または生計中心者が障害者手帳をお持ちの世帯
+  - または、母子世帯
+  - 工事に着手する前に申請する
+  where: 地域包括ケア課高齢支援係
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 対象経費の1/2以内。限度額は前年の所得税額に応じ20万〜50万円。
+- category: sonota
+  name: 短期宿泊事業（養護老人ホーム和光園）
+  name_on_page: 短期宿泊事業
+  summary: 在宅生活が難しくなった高齢者が、和光園で原則1週間まで短期宿泊できる。
+  who: {}
+  at_application:
+  - ひとりでの自立した生活が困難な高齢者
+  - または、災害等で家族と住めない高齢者、虐待で安定した生活が困難な高齢者
+  where: 地域包括ケア課高齢支援係
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: low
+  amount: 1泊3食2,700円（住民税非課税世帯は1,500円）。
+- category: sonota
+  name: 福祉用具・福祉車両の無料貸出
+  name_on_page: 福祉用具・福祉車両の貸出
+  summary: 入退院などで一時的に必要な車いすや車いす対応軽自動車を無料で貸し出す。
+  who: {}
+  at_application:
+  - 一時的に必要な場合（入退院など）
+  where: 飛騨市社会福祉協議会、地域包括支援センター
+  url: https://www.city.hida.gifu.jp/uploaded/attachment/34548.pdf
+  confidence: high
+  amount: 無料（運転手は各自で手配し、返却時は満タンにする）。
+not_found:
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

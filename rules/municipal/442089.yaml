@@ -1,0 +1,95 @@
+city: '442089'
+name: 竹田市
+site: www.city.taketa.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置
+  summary: 据置型・携帯型の機器を貸し、毎日の安否確認と緊急時の対応を支援する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし、またはこれに準ずる高齢者のみの世帯
+  - または一人暮らしの重度身体障がい者等の世帯
+  where: 高齢者福祉課高齢者支援係・各支所
+  url: https://www.city.taketa.oita.jp/soshiki/koreishahukushi/1/287.html
+  confidence: high
+  amount: 利用者負担は月額880円（別途回線使用料）
+- category: haishoku
+  name: 「食」の自立支援（配食）
+  name_on_page: 「食」の自立支援事業
+  summary: 週3食を限度に、安否確認をしながら弁当を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 「安否確認」と「『食』の確保」が両方必要な人
+  where: 高齢者福祉課高齢者支援係・各支所
+  url: https://www.city.taketa.oita.jp/soshiki/koreishahukushi/1/287.html
+  confidence: high
+  amount: 市民税非課税世帯は主食あり350円・なし300円、均等割課税世帯は450円・400円、所得割課税世帯は550円・500円
+- category: kaigo-yohin
+  name: 在宅介護用品費の給付
+  name_on_page: 在宅介護用品費給付事業
+  summary: 重度の要介護者を介護する非課税世帯の介護者に、おむつ等の購入に使える給付券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おむつ等（紙おむつ・尿取りパット等）が必要な要介護者を介護している介護者
+  - 要介護者が入院や施設に入所した場合は対象外
+  where: 高齢者福祉課高齢者支援係・各支所
+  url: https://www.city.taketa.oita.jp/soshiki/koreishahukushi/1/287.html
+  confidence: high
+  amount: 申請の翌月から、1,000円相当の給付券を月8枚（年96枚）まで
+- category: sonota
+  name: はり・きゅう・あん摩マッサージ指圧の施設利用助成
+  name_on_page: はり、きゅう、あん摩マッサージ指圧施設利用助成事業
+  summary: 65歳以上の人に、指定施設で使える施術費助成の利用証を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 竹田市に住所がある
+  - 市長が指定するはり・きゅう・あん摩マッサージ指圧施設で使う
+  where: 高齢者福祉課高齢者支援係・各支所
+  url: https://www.city.taketa.oita.jp/soshiki/koreishahukushi/1/287.html
+  confidence: high
+  amount: 施術1回につき1,000円相当を助成する利用証を6枚交付
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護サービスを使わず寝たきりの人を1年以上在宅で介護した非課税世帯に慰労金を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護サービスを利用していない寝たきり状態等の人を、1年以上在宅で介護している
+  where: 高齢者福祉課高齢者支援係・各支所
+  url: https://www.city.taketa.oita.jp/soshiki/koreishahukushi/1/287.html
+  confidence: high
+  amount: 申請により60,000円を支給
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- nichijo-yogu
+- gaishutsu

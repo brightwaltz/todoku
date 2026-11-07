@@ -1,0 +1,109 @@
+city: '442071'
+name: 津久見市
+site: www.city.tsukumi.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 独り暮らし等の高齢者が、ボタン一つでコールセンターに通報できる仕組み。
+  who: {}
+  at_application:
+  - 独り暮らし等の高齢者（計画書では身体虚弱な一人暮らし高齢者等）
+  where: 頁に申請先の記載なし（高齢者福祉は長寿支援課）
+  url: https://www.city.tsukumi.oita.jp/site/koureisha/
+  confidence: low
+  more_urls:
+  - https://www.city.tsukumi.oita.jp/uploaded/attachment/15612.pdf
+- category: shingu
+  name: ふとん丸洗いサービス
+  name_on_page: ふとん丸洗いサービス
+  summary: 寝たきり等で寝具の衛生管理が難しい人の、寝具の洗濯乾燥消毒の費用を助成する。
+  who: {}
+  at_application:
+  - 寝たきり等で衛生管理が困難な、寝具の洗濯乾燥消毒が必要な人
+  where: 頁に申請先の記載なし（高齢者福祉は長寿支援課）
+  url: https://www.city.tsukumi.oita.jp/site/koureisha/
+  confidence: low
+  more_urls:
+  - https://www.city.tsukumi.oita.jp/uploaded/attachment/15612.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重度の要介護の高齢者を1年以上在宅で常時介護している家族に、年1回手当を出す。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 要介護4・5の人（未認定なら相当と判断される人）を介護する家族
+  - 市に引き続き1年以上居住し、全日臥床の状態が1年以上続いている
+  - 入院は30日以内・ショートステイは10日以内の人が対象
+  - 介護保険のサービスを全く利用していない
+  - 基準日は毎年10月1日
+  where: 長寿支援課
+  url: https://www.city.tsukumi.oita.jp/site/koureisha/5759.html
+  confidence: high
+- category: sonota
+  name: 高齢者はり・きゅう・マッサージ施設利用証
+  name_on_page: 高齢者はり・きゅう・マッサージ施設利用証
+  summary: 65歳以上の人に、指定施設で使えるはり・きゅう・マッサージの利用証を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市の指定するはり・きゅう・マッサージ施設で使う
+  - 申請にマイナンバーカードなどの身分証明書が必要
+  where: 長寿支援課、各出張所
+  url: https://www.city.tsukumi.oita.jp/site/koureisha/21202.html
+  confidence: high
+  amount: 1回につき500円を助成（1年度に24枚交付）
+- category: haikai
+  name: 認知症高齢者等事前登録制度
+  name_on_page: 認知症高齢者等事前登録制度
+  summary: 行方不明の恐れがある人を事前に市に登録し、警察と情報を共有して早期発見に備える。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等の認知機能の低下で行方不明になる恐れがある人
+  - 申請書・同意書・個人票・顔写真を市に出す
+  where: 長寿支援課、または津久見港出張所
+  url: https://www.city.tsukumi.oita.jp/site/koureisha/23761.html
+  confidence: high
+- category: haikai
+  name: どこ・どこサービス（GPS機器の貸与）
+  name_on_page: どこ・どこサービス
+  summary: 行方不明の恐れがある高齢者にGPS機器を貸し、居場所を探知できるようにする。
+  who: {}
+  at_application:
+  - 要介護・要支援の認定を受け行方不明等のおそれがある人、または
+  - 認知症見守り緊急ネットワーク事業の事前登録者
+  where: 長寿支援課
+  url: https://www.city.tsukumi.oita.jp/site/koureisha/20156.html
+  confidence: high
+  amount: 初期費用7,700円は市が負担。月額1,980円のうち1,100円が自己負担
+- category: sonota
+  name: 認知症高齢者等個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 事前登録をした認知症の人が賠償責任を負ったとき、市が保険料を負担する保険金が出る。
+  who:
+    at_home: true
+  at_application:
+  - 市に住民票があり、市内の自宅に住んでいる
+  - 認知症見守り緊急ネットワークの事前登録をしている
+  - 事前登録で自動加入。保険のみの加入はできない
+  where: 長寿支援課
+  url: https://www.city.tsukumi.oita.jp/site/koureisha/29714.html
+  confidence: high
+  amount: 保険料は市が全額負担。補償は1事故あたり上限1億円
+not_found:
+- haishoku
+- hochoki
+- ribiyo
+- gaishutsu

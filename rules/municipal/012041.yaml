@@ -1,0 +1,80 @@
+city: '012041'
+name: 旭川市
+site: www.city.asahikawa.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ホットライン119）の貸与・設置
+  name_on_page: 緊急通報システム・ホットライン119
+  summary: 自宅で急病や火災のとき消防に通報できる機器を、条件に合う人に貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住み、自宅に固定電話回線がある
+  - 貸与は、ひとり暮らしで65歳以上の身体虚弱の人など
+  - 65歳以上のみで寝たきりの世帯、指定地域の75歳以上のみ世帯も対象
+  - 自費で機器を用意して使う一般利用の方法もある
+  where: 消防本部 指令課
+  url: https://www.city.asahikawa.hokkaido.jp/kurashi/311/315/p006640.html
+  confidence: high
+  amount: 貸与は、生計維持者が市民税課税なら開始時に所得に応じた負担が1回ある。自費購入は費用の3分の1（上限4万円）を助成する制度がある。
+  more_urls:
+  - https://www.city.asahikawa.hokkaido.jp/kurashi/311/315/p006640_d/fil/tebiki.pdf
+- category: gaishutsu
+  name: 高齢者バス料金助成乗車証（寿バスカード）
+  name_on_page: 高齢者バス料金助成乗車証（寿バスカード）
+  summary: 70歳以上の市民が、市内の路線バスを1乗車100円で使えるカードを有料で受け取れる。
+  who: {}
+  at_application:
+  - 70歳以上（その年度内に70歳になる人も含む）で、バスを利用できる人
+  where: 郵便局の窓口で受け取り。申請書兼受領書は長寿社会課 高齢者支援係、各支所などで発行
+  url: https://www.city.asahikawa.hokkaido.jp/kurashi/135/160/170/d053717.html
+  confidence: high
+  amount: 1乗車100円（身体障害者手帳・療育手帳の人は50円）。交付時の負担金は時期で変わり、5・6月は3,000円（手帳のある人は1,500円）。
+- category: sonota
+  name: 高齢者等の屋根の雪下ろし費用の助成券
+  name_on_page: 高齢者等屋根雪下ろし事業
+  summary: 雪下ろしができない非課税の高齢者世帯などに、雪下ろし費用に使える助成券を交付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 70歳以上のみの世帯、母子・寡婦世帯、身体障害者世帯のいずれか
+  - 自力や家族・近隣の協力で雪下ろしができない
+  - 借家・アパート住まいは対象外
+  - 市内に70歳未満の扶養義務者がいる世帯、生活保護世帯は対象外
+  where: 長寿社会課 高齢者支援係、または地域の民生委員
+  url: https://www.city.asahikawa.hokkaido.jp/kurashi/135/160/170/d078148.html
+  confidence: high
+  amount: 15,000円分の助成券
+- category: sonota
+  name: 安心カード（救急時の情報カード）の配付
+  name_on_page: 安心カード
+  summary: かかりつけ医や緊急連絡先を書いて冷蔵庫に貼る救急用カードを配る。
+  who: {}
+  at_application: []
+  where: 長寿社会課窓口、地域包括支援センター、老人福祉センターなど
+  url: https://www.city.asahikawa.hokkaido.jp/kurashi/135/160/170/p002551.html
+  confidence: high
+- category: mimamori
+  name: 認知症の人の見守り・話し相手（有料）
+  name_on_page: 認知症高齢者見守り事業
+  summary: 認知症の人の見守りやお話相手を、旭川認知症サポートセンターを通じて有料で利用できる。
+  who: {}
+  at_application:
+  - 認知症の人の見守り・お話相手の事業（対象の細かい条件は頁に無い）
+  where: 旭川市社会福祉協議会 旭川認知症サポートセンター（ときわ市民ホール1階）
+  url: https://www.city.asahikawa.hokkaido.jp/kurashi/135/160/175/d071414_d/fil/orennzigaido.pdf
+  confidence: low
+  amount: 1時間500円（以降30分ごとに200円加算）。別途交通費がかかる。
+not_found:
+- iro
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu

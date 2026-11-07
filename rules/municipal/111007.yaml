@@ -1,0 +1,286 @@
+city: '111007'
+name: さいたま市
+site: www.city.saitama.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 重度要介護高齢者の紙おむつ等の支給
+  name_on_page: 重度要介護高齢者紙おむつ等支給事業
+  summary: 要介護3〜5で常時おむつを使う在宅の方に、紙おむつ等の利用券を配る。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住み、介護保険の被保険者で保険料を滞納していない
+  - 介護保険料の段階が第1〜第5段階
+  - 要介護3は、認定調査票の排尿か排便が「介助」「見守り等」
+  - 生活保護を受けていない。介護保険施設に入所していない
+  - 病院・診療所への入院が3か月を超えていない
+  where: お住まいの区の区役所 高齢介護課 高齢福祉係（毎月24日17:15までの申請で申請月から支給）
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p064031.html
+  confidence: high
+  amount: 月6,000円（税込）を限度とした利用券、年度最大12枚。超えた分は自己負担
+- category: haishoku
+  name: 在宅高齢者等の宅配食事サービス
+  name_on_page: さいたま市在宅高齢者等宅配食事サービス事業
+  summary: ひとり暮らしの高齢者などに夕食を届け、安否も確かめる（1食400円）。
+  who: {}
+  at_application:
+  - おおむね65歳以上の、ひとり暮らし・高齢者のみ世帯か、準ずる世帯
+  - 自分で調理や買い物をするのが困難
+  - 家族などから食事の提供を受けられない
+  where: お住まいの区の社会福祉協議会の区事務所（市が社協に委託）
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p018419.html
+  confidence: high
+  amount: 夕食1食400円（利用者負担）。週5回以内（月〜金、祝日・年末年始を除く）
+  more_urls:
+  - https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P58-P69.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報機器の設置（あんしんコールセンター）
+  name_on_page: あんしんコールセンター相談事業（緊急通報機器の設置）
+  summary: ひとり暮らしの方の家に緊急通報機器を置き、24時間の通報・相談に応じる。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に居住する
+  - 慢性疾患などで日常生活に常時注意が必要
+  - 固定電話が必要（無い場合は条件により市が回線を貸与）
+  where: お住まいの区の区役所 高齢介護課 高齢福祉係（電子申請も可）
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/kinkyuutuuhou.html
+  confidence: high
+  amount: 機器の設置・維持管理費は市が負担。破損・紛失や移設の費用は利用者負担
+- category: mimamori
+  name: ひとり暮らし高齢者の安否確認
+  name_on_page: ひとり暮らし高齢者安否確認事業
+  summary: 専門スタッフが月2回、ひとり暮らしの方へ電話やFAXで安否を確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に居住する
+  - あんしんコールセンター相談事業の利用対象者ではない
+  where: お住まいの区の区役所 高齢介護課 高齢福祉係（電子申請も可）
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/annpikakuninn.html
+  confidence: high
+  amount: 費用は無料。月2回、平日8:30〜17:00に利用者が決めた曜日の時間帯
+- category: shingu
+  name: 重度要介護高齢者の寝具乾燥
+  name_on_page: 重度要介護高齢者等寝具乾燥事業
+  summary: 寝たきりの要介護3〜5の方の寝具を、乾燥・消毒・丸洗いする。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 市内に住み、介護保険の被保険者で保険料を滞納していない
+  - 寝具の乾燥などを自分や家族で行うことが困難
+  - 介護保険施設・病院等に入所・入院していない
+  where: 各区役所 高齢介護課 高齢福祉係
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P39-P57.pdf
+  confidence: high
+  amount: 無料。ふとん乾燥消毒か洗濯乾燥消毒を月1回まで（洗濯は年度2回まで）
+- category: ribiyo
+  name: 重度要介護高齢者の訪問理・美容
+  name_on_page: 重度要介護高齢者訪問理・美容サービス事業
+  summary: 外出が難しい要介護3〜5の方の自宅に、理・美容師が来る券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住み、介護保険の被保険者で保険料を滞納していない
+  - 理・美容店に行くことが困難と認められる
+  - 介護保険施設・病院等に入所・入院していない
+  where: 各区役所 高齢介護課 高齢福祉係
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P39-P57.pdf
+  confidence: high
+  amount: 訪問理・美容券で年度4回まで1回無料（内容により追加料金あり）
+- category: nichijo-yogu
+  name: ひとり暮らし高齢者への日常生活用具の給付
+  name_on_page: 日常生活用具の給付
+  summary: ひとり暮らしの方に、シルバーカーや電磁調理器を無料で給付する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内に居住する、おおむね65歳以上のひとり暮らしの方
+  - 生活保護等を受けている、または市県民税が課されていない
+  - 日常生活を営むことに支障がある
+  - 電磁調理器は、防火などの配慮が必要な方向け
+  where: 各区役所 高齢介護課（高齢福祉係）
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P39-P57.pdf
+  confidence: high
+  amount: 無料（シルバーカー、電磁調理器）
+- category: koken
+  name: 成年後見の市長申立てと後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りがない方の後見の申立て費用を市が負担し、第三者後見人の報酬も助成する。
+  who: {}
+  at_application:
+  - 市長申立ては、65歳以上で2親等内の親族がいないか音信不通など
+  - 報酬助成は、市長申立てで後見人等が確定した方、または親族でない第三者の後見人等が確定した方
+  - 報酬助成は、生活保護を受けているなど報酬の負担が困難な方
+  - 報酬助成の申請は、報酬付与の審判確定の翌日から2か月以内
+  where: お住まいの区の区役所 高齢介護課
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p020247.html
+  confidence: high
+  amount: 報酬助成は月額上限 在宅者28,000円・施設入所者18,000円。市長申立ての費用は市が先に負担
+- category: jutaku
+  name: 介護予防のための住環境改善の補助
+  name_on_page: 介護予防高齢者住環境改善支援事業
+  summary: 認定前で要介護のおそれが高い方の、手すり取付け等の住宅改修費を補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に1年以上住み、介護保険の被保険者で保険料の滞納がない
+  - 要介護・要支援の認定を受けておらず、認定の申請もしていない
+  - 基本チェックリストで要介護状態等のおそれが高いと認められる
+  - 工事の前に、担当のシニアサポートセンターの確認と交付決定が必要
+  where: お住まいの区の区役所 高齢介護課
+  url: https://www.city.saitama.lg.jp/007/007/007/p018981.html
+  confidence: high
+  amount: 介護保険料第1・2段階は全額（上限15万円）、第3段階以上は費用の2/3（上限10万円）
+- category: jutaku
+  name: 要介護高齢者の居宅改善費の補助
+  name_on_page: 要介護高齢者居宅改善費補助事業
+  summary: 要介護・要支援認定のある方の、介護保険の対象外の住宅改善費を補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に1年以上住み、介護保険の被保険者で保険料の滞納がない
+  - 身体の障害で日常生活に支障がある
+  - 介護保険料の段階が第1〜第3段階
+  - 介護保険施設・病院等に入所・入院していない
+  - 工事の前に補助金の交付決定を受ける。補助は1回限り
+  where: 各区役所 高齢介護課（高齢福祉係）
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P58-P69.pdf
+  confidence: high
+  amount: 対象経費の3分の2、上限30万円（介護保険給付の対象外の工事が対象）
+- category: haikai
+  name: 徘徊見守りSOSネットワークの事前登録
+  name_on_page: さいたま市徘徊見守りSOSネットワーク
+  summary: 行方不明時に市と協力機関が情報を共有して早期発見につなぐ、事前登録の仕組み。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症等のために徘徊する、またはそのおそれがある高齢者等
+  - 家族などが事前登録申請書（様式第1号）を出す
+  where: 本人の居住地の区の区役所 高齢介護課
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p017652.html
+  confidence: high
+  more_urls:
+  - https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P39-P57.pdf
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: さいたま市認知症高齢者等見守りシール事業
+  summary: QRコード付きのシールを交付し、行方不明時に個人情報を出さず身元を確かめられる。
+  who: {}
+  at_application:
+  - 場所に関する見当識障害のある高齢者（認知症など）
+  - 利用できるのは、同居か同じ状況で日常的に介護している方
+  - 市内に居住し、在宅である
+  where: 本人の居住地の区の区役所 高齢介護課
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p086667.html
+  confidence: high
+  amount: 30枚（耐洗ラベル20・蓄光シール10）。初回交付は無料、追加分は自己負担
+  more_urls:
+  - https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P39-P57.pdf
+- category: sonota
+  name: 公衆浴場の浴場利用券
+  name_on_page: 入浴サービス（浴場利用事業）
+  summary: ひとり暮らし等の方に、市内の公衆浴場を1回100円で使える券を交付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に居住する
+  where: 各区役所 高齢介護課 高齢福祉係
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P39-P57.pdf
+  confidence: high
+  amount: 1回100円で使える浴場利用券。年度最大64枚（申請月で枚数が変わる）
+- category: sonota
+  name: 敬老マッサージ・はり・きゅうの施術料補助
+  name_on_page: さいたま市敬老マッサージ・はり・きゅう施術料補助
+  summary: 75歳以上の方に、あんま・はり・きゅう等の施術料の一部に使える補助券を渡す。
+  who:
+    age_min: 75
+  at_application:
+  - 住民基本台帳に登録がある市民
+  - 生活保護の医療扶助や療養費で受ける施術は対象外
+  where: お住まいの区の区役所 高齢介護課 高齢福祉係
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p061664.html
+  confidence: high
+  amount: 補助券は年度3枚、1回1,000円
+- category: sonota
+  name: 高齢者の住替え家賃助成
+  name_on_page: 高齢者民間賃貸住宅住替え家賃助成事業
+  summary: 家主の都合で立ち退き転居した高齢者に、家賃の差額を月2万円まで助成する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし、または60歳以上の方と同居している
+  - 市内に引き続き2年以上住所がある
+  - 取り壊しなど家主の都合で立ち退きを求められ、市内で転居した
+  - 同じ家に住む全員の現年度の市民税所得割が非課税
+  - 生活保護等を受けていない
+  where: 各区役所 高齢介護課（高齢福祉係）
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P58-P69.pdf
+  confidence: high
+  amount: 転居前後の月額家賃の差額、月2万円まで（申請月から該当しなくなる月まで）
+- category: sonota
+  name: ごみ出しが困難な方へのふれあい収集
+  name_on_page: ふれあい収集（家庭ごみの収集）
+  summary: ごみを収集所へ出せない方の玄関先まで、市の職員がごみを取りに来る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしの方
+  - または、ひとり暮らしの障害者
+  - または、同居者も高齢者・障害者でごみを出せない方
+  - 職員が状況を調査し、収集方法を決める（原則週1回）
+  where: 担当の清掃事務所（西部または東部）に利用申請書を出す
+  url: https://www.city.saitama.lg.jp/002/003/003/002/005/p006643_d/fil/P58-P69.pdf
+  confidence: high
+not_found:
+- iro
+- hochoki
+- gaishutsu
+- yutai

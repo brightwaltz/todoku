@@ -1,0 +1,208 @@
+city: '042064'
+name: 白石市
+site: www.city.shiroishi.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 夕食の配食（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 平日の夕食を自宅へ手渡しで届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または全員がその年代の世帯
+  - または障害者手帳1〜3級を持つ18歳以上のひとり暮らし
+  - 訪問調査の上で決定
+  - 緊急連絡先として別世帯の2名の情報が必要
+  where: 長寿課（市民課福祉窓口でも手続可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 1食あたり500円（自己負担）
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置・安否確認センサーの設置
+  name_on_page: 高齢者等安心見守り事業
+  summary: 緊急通報端末と動きを感知するセンサーを設置し、月1回のお元気コールなども行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし
+  - または全員が65歳以上の世帯
+  - または特に必要と認める、ひとり暮らしの重度身体障害者
+  - 市内の協力員3名（原則）の情報が必要
+  where: 長寿課（市民課福祉窓口でも手続可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 月500円（電話料・自己都合の移設・紛失は自己負担）
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: かかりつけ医や服薬の情報を冷蔵庫に保管するキットを配る。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者世帯、または要支援者名簿に登録されている人
+  - 再交付の人は対象外（再交付は有料）
+  where: 長寿課、市民課福祉窓口、各地区公民館（中央公民館を除く）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 初回無料、再交付は200円
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 在宅老人等紙おむつ給付事業
+  summary: 指定の薬局で、限度額の範囲内の紙おむつ等を受け取れる。
+  who: {}
+  at_application:
+  - 65歳以上で、要介護3以上または認知症自立度Ⅲa以上
+  - または身体障害者手帳1・2級で障害部位が下肢か体幹
+  where: 長寿課（市民課福祉窓口でも手続可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 月額の限度額は、市民税非課税世帯が4,000円、課税世帯が2,000円。差額は自己負担
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 掛布団・敷布団・毛布を自宅で回収して洗濯乾燥消毒し、届ける（年2回）。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application: []
+  where: 長寿課（市民課福祉窓口でも手続可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 1枚あたり220円（自己負担）
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: ribiyo
+  name: 訪問理容
+  name_on_page: 訪問理容サービス事業
+  summary: 理容師が自宅に来て散髪する。送迎費用は市が負担し、3か月に1回使える。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしか高齢者世帯の方
+  - 要介護3以上の認定を受けた方
+  - 上の2項目がどちらか1つでよいのか、一覧では不明
+  where: 長寿課（市民課福祉窓口でも手続可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: low
+  amount: 1回あたり3,000円（自己負担）
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: gaishutsu
+  name: タクシー利用の割引助成券
+  name_on_page: 高齢者タクシー利用助成事業
+  summary: 契約タクシーで1乗車500円引きになる助成券が月2枚もらえる。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市民税非課税の方
+  - 重度心身障害者移動サービス利用助成券とは併用できない
+  - 申請時に介護保険被保険者証を持参
+  where: 長寿課（市民課福祉窓口でも手続可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 1乗車500円割引、助成券は月2枚
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: gaishutsu
+  name: 路線バスの乗車証・乗車券
+  name_on_page: 高齢者バス乗車証等交付事業
+  summary: 白石遠刈田線のバス乗車証と、月4枚の乗車券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 令和8年度は昭和32年4月1日までに生まれた方
+  where: 長寿課（市民課福祉窓口でも手続可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 乗車券は月4枚。降車時に1乗車100円を支払う
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: haikai
+  name: 高齢者等の行方不明時の早期発見ネットワーク
+  name_on_page: 高齢者等ＳＯＳネットワーク事業
+  summary: 情報を市に登録し、警察などと連携して行方不明時に早く見つける。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症、または若年性認知症等で、徘徊のおそれがある
+  - 本人の顔写真を持参
+  where: 長寿課
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: haikai
+  name: 見守りQRコードの登録
+  name_on_page: 認知症高齢者等見守りＱＲコード活用事業
+  summary: 服や靴に貼るQRコードで、保護された時にコールセンター経由で身元が分かる。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症、または若年性認知症等で、徘徊のおそれがある
+  where: 長寿課
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 年間登録料とQRコード作成料で1,100円
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: yutai
+  name: 温泉日帰り入浴の割引パス
+  name_on_page: いきいき高齢者温泉入浴助成事業
+  summary: 「ほっときゃっするパス」で、対象の温泉施設の日帰り入浴が200円引きになる。
+  who:
+    age_min: 70
+  at_application:
+  - 令和8年度は昭和32年4月1日までに生まれた方
+  - パスは70歳になる年度に郵送されるため、申請が要るのは再交付
+  where: 長寿課（再交付は市民課福祉窓口でも可）
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 1施設1日1回まで、入浴料から200円引き（再発行は100円）
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+- category: sonota
+  name: 有償ボランティアの家事支援・移動支援
+  name_on_page: 白石市高齢者等地域ささえ愛互助活動支援事業
+  summary: 家事や通院などの移動を、有償ボランティアが手伝う生活支援サービス。
+  who:
+    at_home: true
+  at_application:
+  - 家庭内での支援が難しい在宅の高齢者等
+  - 移動支援は非課税世帯で本人の前年収入155万円未満
+  - 移動支援は、要支援以上の65歳以上か身体障害者手帳の人
+  - 訪問調査の上で決定
+  where: 白石市社会福祉協議会
+  url: https://www.city.shiroishi.miyagi.jp/uploaded/attachment/29570.pdf
+  confidence: high
+  amount: 登録料は年1,000円。家事支援は1時間500円、移動支援は1時間1,000円と1kmあたり20円
+  more_urls:
+  - https://www.city.shiroishi.miyagi.jp/soshiki/13/334.html
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- nichijo-yogu
+- chusha

@@ -1,0 +1,214 @@
+city: '112216'
+name: 草加市
+site: www.city.soka.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: おむつ支給
+  summary: 常時おむつが必要な人に、月1回決まった枚数のおむつを自宅へ配達する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時ねたきり、または重度認知症で常に排せつ介助が必要
+  - 住民税非課税、または介護保険料の所得段階が第6段階
+  - 第7段階は前年の合計所得金額135万円以下の人
+  - 施設入所中・申請時に入院中の人は対象外
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/050/PAGE000000000000073049.html
+  confidence: high
+  amount: 無料（月1回、決まった枚数のおむつを配達）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 昼食か夕食を週の希望曜日に届け、そのときに安否と健康状態を確かめる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし、または高年者のみの世帯など
+  - 自分で食事の支度が困難で、他から食事の提供がない
+  - 施設（特養・グループホーム・有料老人ホーム等）に入所していない
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/PAGE000000000000072912.html
+  confidence: high
+  amount: 利用料は配食業者ごとに異なる（頁のパンフレット参照）
+- category: gaishutsu
+  name: 高年者移送サービス（タクシー移送費の軽減）
+  name_on_page: 高年者移送サービス
+  summary: 寝たきり等の人の通院・入退院などのタクシー移送費を軽減する。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時ねたきり、または車いす利用（10分以上の座位が保てない）
+  - 車いす専用車・寝台車などの移送手段が必要
+  - 自宅からの通院、入退院、施設への入退所の移送が対象
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/06.html
+  confidence: high
+  amount: 指定タクシーの移送料金（上限月額2万円）の1割が自己負担
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 訪問理容サービス
+  summary: ねたきり等で理容店に行けない人に理容券を交付し、訪問で理容を行う。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ねたきりの状態等で理容店に行けない
+  - 施設（特養・グループホーム・有料老人ホーム等）に入所していない
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/10.html
+  confidence: high
+  amount: 年6回まで。利用料は住民税課税者2,500円、非課税者500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: あんしん見守りネットワーク（緊急通報システム）
+  summary: 緊急時に通報しにくい人へ緊急通報装置を貸与する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らしで発作性の疾患があり、通報が困難な人
+  - または常時ねたきり等の人を介護する高年者のみの世帯
+  - 草加市に介護保険料を納めている
+  - 施設等に入所している人は対象外
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/14.html
+  confidence: high
+  amount: 無料（通報時の通話料は自己負担）
+- category: hochoki
+  name: 高年者補聴器購入費用の助成
+  name_on_page: 高年者補聴器購入費用助成
+  summary: 耳鼻科医が必要と認めた住民税非課税の人に、補聴器本体の購入費を一部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市に住民登録がある
+  - 耳鼻咽喉科の医師が補聴器の必要性を認めた
+  - 申請受付日時点で住民税非課税
+  - 障害者総合支援法の補装具費（補聴器）の対象でない
+  - 交付決定通知が届く前に購入したものは対象外
+  where: 長寿支援課（事前に相談支援係へ問い合わせ）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/PAGE000000000000076454.html
+  confidence: high
+  amount: 1人1台1回限り、上限2万円（補聴器本体のみ）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: ねたきりの人の寝具を水洗い・丸洗い・乾燥し、年4回行う。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ねたきり（重度認知症で常時排泄管理が必要な人を含む）
+  - 寝具の衛生管理が困難
+  - 施設（特養・グループホーム・有料老人ホーム等）に入所していない
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/09.html
+  confidence: high
+  amount: 無料（6月水洗い・9月乾燥・12月丸洗い・3月乾燥の年4回）
+- category: haikai
+  name: 認知症の人のGPS端末の貸与
+  name_on_page: 認知症高年者位置情報探索事業
+  summary: 道に迷った経験のある認知症の人の居場所を探せるGPS端末を貸与する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症の人を在宅で介護している家族が申請する
+  - 草加市に介護保険料を納めている
+  - 外出して道が分からず帰宅困難になった経験がある
+  - 施設等に入所していない
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/13.html
+  confidence: high
+  amount: 月額340円（3か月ごとに口座引落し）
+- category: sonota
+  name: ねたきり老人手当
+  name_on_page: ねたきり老人手当
+  summary: ねたきりや重度認知症で介護が必要な状態が続く人に、本人へ手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 常時ねたきり、または重度認知症で常に介護が必要
+  - その状態が6か月以上続いている
+  - 施設（特養・グループホーム等）に入所・入居していない
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/08.html
+  confidence: high
+  amount: 月額5,000円（4月・8月・12月に年3回に分けて振込）
+- category: mimamori
+  name: 認知症の人の家族のやすらぎ支援（見守り員の派遣）
+  name_on_page: 認知症高年者家族やすらぎ支援事業
+  summary: 家族の休息のため、支援員が自宅で認知症の人の見守りや話し相手をする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 草加市に介護保険料を納めている
+  - 認知症の日常生活自立度がおおよそ2aから3a
+  - 施設等に入所していない
+  - 訪問調査のうえ審査で決定
+  where: 長寿支援課（窓口または郵送）
+  url: https://www.city.soka.saitama.jp/cont/s1502/020/010/040/02.html
+  confidence: high
+  amount: 無料（1回2時間まで、週2回まで）
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具給付
+  summary: ひとり暮らしの低所得の高年者に、火災警報器・自動消火器・電磁調理器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 低所得の人（所得の基準は一覧の頁に無い）
+  - 火災警報器・自動消火器はねたきりの人が対象
+  - 電磁調理器は防火の配慮が必要な人が対象
+  - 施設入所者は対象外
+  where: 長寿支援課 相談支援係
+  url: https://www.city.soka.saitama.jp/cont/s1301/010/PAGE000000000000047456.html
+  confidence: low
+  amount: 所得に応じた費用負担（金額は頁に無い）
+- category: mimamori
+  name: おしゃべりボランティアの派遣
+  name_on_page: おしゃべりボランティア
+  summary: 支援員が自宅を訪ね、見守りや話し相手になる。
+  who:
+    age_min: 60
+    household:
+    - alone
+    - alone_daytime
+    - elderly_only
+  at_application: []
+  where: 長寿支援課の頁に掲載（一覧の頁に窓口の記載なし）
+  url: https://www.city.soka.saitama.jp/cont/s1301/010/PAGE000000000000047456.html
+  confidence: low
+not_found:
+- iro
+- koken
+- jutaku

@@ -1,0 +1,304 @@
+city: 082040
+name: 古河市
+site: www.city.ibaraki-koga.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給事業（紙おむつ等の現物支給）
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の要介護者を介護する同居家族に、紙おむつ等を自宅へ届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 申請者は要介護者を介護している同居の家族
+  - 要介護3は認定調査の排尿・排便が介助か見守り等の人のみ
+  - ショートステイを月15日以上使う場合は対象外
+  where: 高齢介護課、各庁舎の市民総合窓口課・室（郵送可）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12321.html
+  confidence: high
+  amount: 市民税非課税世帯は月 6,000 円分、課税世帯は月 3,000 円分の用品
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: haishoku
+  name: ひとり暮らし高齢者等給食サービス（配食）
+  name_on_page: ひとり暮らし高齢者等給食サービス事業
+  summary: 調理が難しい高齢者に、安否確認を兼ねて昼食の弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 老衰・障害・傷病などで調理や調達が難しい
+  - 申請後に在宅介護支援センターの訪問調査で可否を決定
+  where: 高齢介護課、各庁舎の市民総合窓口課・室
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12316.html
+  confidence: high
+  amount: 週 3 回まで。1 食 800 円からのうち市が 400 円を助成
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: kinkyu-tsuho
+  name: 高齢者見守りサポート事業（緊急通報装置の貸与）
+  name_on_page: 高齢者見守りサポート事業
+  summary: 健康に不安のある高齢者宅に、緊急通報装置や人感センサーを貸与する。
+  who:
+    age_min: 70
+  at_application:
+  - 病気等で健康に不安があり見守りが必要
+  - 70歳以上ひとり暮らし、75歳以上のみの世帯、または
+  - 70歳以上で同居者が重度の障害・要介護4以上・認知症
+  - 隣接敷地などに支援できる親族がいる場合は対象外
+  where: 高齢介護課、各庁舎の市民総合窓口課・室
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/14078.html
+  confidence: high
+  amount: 月額 300 円の利用料（携帯端末型は携帯会社の契約費用が別にかかる）
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: shingu
+  name: 寝具類洗濯サービス（洗濯・乾燥消毒）
+  name_on_page: 寝具類洗濯サービス事業
+  summary: 寝具の衛生管理が難しい高齢者に、寝具の洗濯と乾燥消毒の利用券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 要支援・要介護の認定を受けている
+  where: 高齢介護課、各庁舎の市民総合窓口課・室
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12316.html
+  confidence: high
+  amount: 年 2 回まで。市民税非課税世帯は無料、課税世帯は 1 回 3,050 円
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: ribiyo
+  name: 訪問理美容サービス費助成
+  name_on_page: 訪問理美容サービス事業
+  summary: 外出が難しい高齢者の自宅へ理美容師が訪問する際の助成券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 介護保険等の他サービスで代替できる場合は対象外
+  - 最寄りの理美容所へ自力で行ける場合は対象外
+  where: 高齢介護課、各庁舎の市民総合窓口課・室
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12316.html
+  confidence: high
+  amount: 1,000 円分の助成券。年最大 4 枚（申請時期で枚数が変わる）
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: gaishutsu
+  name: 高齢者外出支援タクシー運賃助成（ふくとく・チケット）
+  name_on_page: 古河市高齢者外出支援タクシー運賃助成事業「ふくとく・チケット」
+  summary: 75歳以上の人に、登録タクシーで使える助成チケットを交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住所がある
+  - 交付は 1 人 1 回のみ。申請期間は令和9年5月20日まで
+  where: 高齢介護課、市民総合窓口課・室、郵送、電子申請
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/18143.html
+  confidence: high
+  amount: 500 円券 48 枚（24,000 円分）。運賃 1,000 円以上から使える
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12317.html
+- category: gaishutsu
+  name: 高齢者通院等交通費助成（タクシー代）
+  name_on_page: 高齢者通院等交通費助成
+  summary: 通院が難しい在宅高齢者のタクシー代の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 70歳以上、または65〜69歳のひとり暮らし・高齢者のみ世帯、または要支援・要介護認定者
+  - 自力通院や家族の送迎が難しい
+  - 自動車税の減免や障害者福祉タクシー助成を受けている人は対象外
+  where: 高齢介護課（窓口か郵送。利用月から 2 か月以内に申請）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12317.html
+  confidence: high
+  amount: 運賃の 1/2。月 8 回まで、月額上限 5,000 円
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 白内障補助眼鏡・補聴器購入費等助成事業
+  summary: 聴覚の障害者手帳がない 65 歳以上の人の補聴器購入費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 聴覚障害による身体障害者手帳の交付を受けていない
+  - 購入日に市内に住所があり、申請時も居住している
+  - 購入の翌日から 1 年以内に申請
+  where: 高齢介護課（窓口か郵送）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12317.html
+  confidence: high
+  amount: 購入費の 1/2 以内、上限 30,000 円（1 人 1 回 1 台）
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: sonota
+  name: 白内障補助眼鏡用レンズの購入費助成
+  name_on_page: 白内障補助眼鏡用レンズ
+  summary: 白内障手術後に必要な補助眼鏡のレンズ代を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 白内障手術日に市内に住所があり、申請時も居住している
+  - 補助眼鏡が必要と医師が認める（市指定用紙の証明）
+  - 手術後 1 年以内に購入したものに限る
+  where: 高齢介護課（窓口か郵送）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12317.html
+  confidence: high
+  amount: 購入費の 1/2 以内、上限 10,000 円（1 人 1 回 1 対）
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: sonota
+  name: ストマ用装具の購入費助成
+  name_on_page: ストマ用装具
+  summary: 障害者手帳のない 65 歳以上の人のストマ用装具の購入費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - ぼうこう・直腸機能障害の身体障害者手帳がない
+  - 他の制度で給付や助成を受けていない
+  - 購入の翌日から 1 年以内に申請
+  where: 高齢介護課（窓口か郵送）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12317.html
+  confidence: high
+  amount: 蓄尿袋は月 6,000 円まで、蓄便袋は月 5,000 円まで
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: sonota
+  name: シルバーカー購入費の助成
+  name_on_page: シルバーカー購入費助成事業
+  summary: 歩行に不安のある人のシルバーカー購入費の一部を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 歩行に不安がある
+  - 4 輪で荷物入れ付き、SG 規格適合の商品が対象
+  - 介護保険の貸与対象品は対象外。購入から 1 年以内に申請
+  where: 高齢介護課（窓口か郵送）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12317.html
+  confidence: high
+  amount: 購入費の 1/2 以内、上限 5,000 円
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: sonota
+  name: はり・きゅう・あんま・マッサージ施術費助成
+  name_on_page: はり・きゅう・あんま・マッサージ施術費助成事業
+  summary: 指定の施術機関で使える施術費の助成券を年 2 回交付する。
+  who: {}
+  at_application:
+  - 70歳以上の人、または重度心身障害者
+  - 市が指定した施術機関でのみ使える
+  where: 高齢介護課、各庁舎の市民総合窓口課・室
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12316.html
+  confidence: high
+  amount: 1 回 1,000 円分の助成券を年 2 枚
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: sonota
+  name: 緊急医療情報カプセル「伝言くん」の配布
+  name_on_page: 緊急医療情報カプセル「伝言くん」
+  summary: 持病や連絡先を書いたシートを入れるカプセルを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者のみ世帯の人
+  - または日中ひとりで健康に不安のある65歳以上の人
+  - または内部障害の身障1〜3級・療育手帳A・精神手帳1級の人
+  where: 高齢介護課、各庁舎の市民総合窓口課・室
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12316.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: haikai
+  name: 徘徊高齢者家族支援サービス費助成（GPS 端末の利用料助成）
+  name_on_page: 徘徊高齢者家族支援サービス費助成事業
+  summary: 認知症の人の位置を家族が確認できる探知システムの利用料を助成する。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 認知症の高齢者を在宅で介護している家族
+  - ペースメーカーや除細動器を装着している人は利用不可
+  - 申請後に訪問調査で可否を決定。年度ごとに申請
+  where: 高齢介護課、各庁舎の市民総合窓口課・室
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/6/12318.html
+  confidence: high
+  amount: 月額利用料 1,320 円を助成。加入料 4,950 円と充電器代は自己負担
+  more_urls:
+  - https://www.city.ibaraki-koga.lg.jp/material/files/group/86/R88koureiA4.pdf
+- category: haikai
+  name: おかえりマークの配布（見守りシール）
+  name_on_page: おかえりマークの配布
+  summary: 徘徊のおそれのある人の靴や衣類に貼る、登録番号入りシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症またはその疑いで徘徊行動がある、またはそのおそれがある
+  - 申請時に写真 1〜2 枚と緊急連絡先などを登録
+  where: 高齢介護課、高齢者サポートセンター（地域包括支援センター）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/ninchisyoushien/18116.html
+  confidence: high
+  amount: 無料（防水反射シール 20 枚、アイロンシール 10 枚）
+- category: koken
+  name: 成年後見制度利用支援事業（後見人等の報酬助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に負担が難しい人の、成年後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 後見等の支援を受けていて、市内に住所がある（施設入所は入所前が市内）
+  - 生活保護を受けている人、または報酬を負担できない人
+  - 世帯全員が市民税非課税で活用できる資産がない人など
+  where: 高齢介護課
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/5/988.html
+  confidence: high
+  amount: 報酬の助成上限は月額、在宅 28,000 円、入院・施設入所 18,000 円
+- category: sonota
+  name: 介護マークの配布
+  name_on_page: 「介護マーク」を配布しています
+  summary: 介護中であることを周囲に伝える首かけ式の介護マークを無料で配る。
+  who: {}
+  at_application:
+  - 認知症高齢者など介護が必要な人を介護している人
+  - 市内に住所がある人（または市内の施設等）
+  where: 高齢介護課、高齢者サポートセンター（地域包括支援センター）
+  url: https://www.city.ibaraki-koga.lg.jp/soshiki/koureikaigo/1/shiminnoshirase/15761.html
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- jutaku
+- nichijo-yogu
+- mimamori

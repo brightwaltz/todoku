@@ -1,0 +1,243 @@
+city: '272302'
+name: 交野市
+site: www.city.katano.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器等購入費の助成
+  name_on_page: 高齢者の補聴器等の購入を助成します
+  summary: 耳が聞こえにくくなった65歳以上の人の補聴器購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 市民税非課税世帯、または生活保護世帯に属する
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 耳鼻咽喉科医師の、補聴器等が必要との証明がある
+  where: 高齢介護課
+  url: https://www.city.katano.osaka.jp/docs/2023030600024/
+  confidence: high
+  amount: 30,000円を上限に、1人1回限り（補聴器1台分）
+- category: haikai
+  name: 徘徊高齢者等SOSネットワークの事前登録
+  name_on_page: 徘徊高齢者等SOSネットワーク事業
+  summary: 行方不明時に関係機関へ捜索協力を依頼する仕組み。事前登録しておく。
+  who:
+    age_min: 65
+  at_application:
+  - 市民であること
+  - 事前登録に対象者の写真が必要
+  where: 高齢介護課（地域包括支援センターでも案内）
+  url: https://www.city.katano.osaka.jp/docs/2018052300014/
+  confidence: high
+  more_urls:
+  - https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+- category: haikai
+  name: 認知症の人の見守り二次元コードシール交付
+  name_on_page: 認知症高齢者等見守り二次元コードシール交付事業
+  summary: 読み取ると市の連絡先が出る二次元コードシールを交付する。賠償責任保険にも加入できる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症状で徘徊する可能性のある、概ね65歳以上の人
+  where: 高齢介護課
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: シール5枚まで無料（賠償責任保険は最大1億円、費用も無料）
+- category: gaishutsu
+  name: 外出支援（おりひめバス乗車券・タクシーチケット）
+  name_on_page: 交野市外出支援制度
+  summary: 対象者におりひめバス乗車券かタクシーチケットを支給する（どちらか1事業のみ申請）。
+  who: {}
+  at_application:
+  - 70歳以上、または対象の障がい者手帳を持つ人など
+  - 要介護3〜5の人は支給額の多い区分（対象者B）
+  - 特養・養護老人ホーム等の入所者は対象外
+  - 年度ごとに申請が必要（1年度に1回）
+  where: 福祉総務課 外出支援担当（窓口・郵送・オンライン）
+  url: https://www.city.katano.osaka.jp/docs/2020032700080/
+  confidence: high
+  amount: バス券6,000円分または18,000円分、タクシー券は年12枚（6,000円分）または36枚（18,000円分）
+- category: gaishutsu
+  name: 高齢者運転免許証自主返納支援（タクシー券・バス券）
+  name_on_page: 交野市高齢者運転免許証自主返納支援事業
+  summary: 免許を自主返納した70歳以上に、タクシー券かおりひめバス券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 免許を自主返納し運転経歴証明書の交付を受けた
+  - 運転経歴証明書の交付から1年以内に申請
+  where: 福祉総務課（ゆうゆうセンター1階 外出支援窓口）、郵送も可
+  url: https://www.city.katano.osaka.jp/docs/2023122100043/
+  confidence: high
+  amount: タクシー券500円×24枚、またはバス券100円×120枚（どちらか1つ・1人1回）
+- category: gaishutsu
+  name: 社会福祉協議会の移送サービス
+  name_on_page: 移送サービス事業
+  summary: 福祉車両とボランティア運転手で外出を支援する有償サービス。
+  who: {}
+  at_application:
+  - 要介護・要支援認定を受けている、または身体障がい者手帳を持つ
+  - 市内在住で住民票がある
+  - 介助人1人の同乗と、事前の登録面談が必要
+  where: 交野市社会福祉協議会
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 月3回まで。2kmまで500円、以後1kmごとに200円加算
+- category: gaishutsu
+  name: 高齢者ガイドヘルプサービス
+  name_on_page: 高齢者ガイドヘルプサービス
+  summary: 一人で外出が難しい高齢者にガイドヘルパーを派遣する（通院介助は除く）。
+  who:
+    age_min: 65
+  at_application:
+  - 原則、市内に外出を手伝える家族がいない
+  - 一人で外出することが困難
+  - 障がい者施策の対象でない
+  - 行き先に決まりがある
+  where: 高齢介護課
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 年48時間まで。1時間まで160円、以後15分ごとに40円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: 緊急ボタンでナースコールセンターにつながる緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - 概ね65歳以上の一人暮らしが中心
+  - 昼間のみ一人暮らしの世帯も条件付きで対象
+  - その他、世帯の状況により必要な人も利用できる
+  - 詳しい条件は社会福祉協議会に確認
+  where: 交野市社会福祉協議会
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 一人暮らしは設置費・リース料を市が負担（通話料は自己負担）。昼間のみ一人の世帯はリース料が月1,650円
+- category: mimamori
+  name: お元気コール（安否確認の電話）
+  name_on_page: お元気コール
+  summary: 月2回ほど、ナースコールセンターが電話で健康状態を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 概ね65歳以上
+  - 緊急通報装置を設置している
+  where: 交野市社会福祉協議会
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 無料
+- category: shingu
+  name: ふとん丸洗い・乾燥消毒の費用助成
+  name_on_page: ふとん丸洗いサービス
+  summary: 寝具の丸洗いや乾燥消毒の費用を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上
+  - 心身の障がいや傷病で寝具の衛生管理が著しく困難
+  where: 高齢介護課
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 1回7,150円まで（年2回まで、1回につき寝具2枚まで）。超過分は自己負担
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院に行けない人の自宅への出張費を助成する。
+  who: {}
+  at_application:
+  - 概ね65歳以上で要介護3以上の認定等を受けている
+  - または身体障がい者のみの世帯
+  - 自力や介助があっても理美容院へ行くのが困難
+  where: 高齢介護課
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 年4回まで、出張費分を上限1,000円で助成（理美容料金は自己負担）
+- category: nichijo-yogu
+  name: 日常生活用具の給付・貸与
+  name_on_page: 日常生活用具給付・貸与
+  summary: 電磁調理器・火災警報機・自動消火器・老人用電話などを給付・貸与する。
+  who: {}
+  at_application:
+  - 概ね65歳以上
+  - 調理器・警報機・消火器は防火配慮が必要な一人暮らしなど
+  - 老人用電話は緊急通報が必要な一人暮らしの人
+  - 入浴補助・歩行支援用具は介護保険非該当の人
+  where: 高齢介護課
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 品目ごとに上限あり（電磁調理器41,000円、火災警報機15,500円、自動消火器28,700円など）。費用負担は所得税額による
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立て費用と後見人等の報酬を、困難な場合に助成する。
+  who: {}
+  at_application:
+  - 申立て費用：市内在住の認知症高齢者等の申立てをする親族で、費用を出すのが困難
+  - 報酬：助成がないと制度の利用が困難な人
+  - 申立て費用は、後で本人に返還を求める場合がある
+  where: 高齢介護課（申立ての相談は地域包括支援センター）
+  url: https://www.city.katano.osaka.jp/docs/2013051700049/
+  confidence: high
+  amount: 報酬は費用の一部または全部を助成（金額は頁に無し）
+  more_urls:
+  - https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+- category: sonota
+  name: 生活管理指導短期宿泊（老人ホームに一時宿泊）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 介護者の不在や体調不良時に、市内の介護保険施設へ一時的に宿泊できる。
+  who: {}
+  at_application:
+  - 概ね65歳以上
+  - 要介護・要支援の認定を受けていない
+  - 医師の情報提供書が必要な場合がある
+  - 事前登録すると電話で申込みできる
+  where: 高齢介護課
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 年度内14日以内（1回7日以内）。基本料1日740円、食費・滞在費は所得等で異なる
+- category: sonota
+  name: 高齢者家族やすらぎ支援（認知症の人の話し相手・見守り）
+  name_on_page: 高齢者家族やすらぎ支援事業
+  summary: 支援員が認知症の人の自宅で話し相手や見守りをし、介護する家族の休息や外出を支える。
+  who:
+    at_home: true
+  at_application:
+  - 概ね65歳以上の認知症の人、およびその介護者家族等
+  - 直接の介護は行わない
+  where: 地域包括支援センター（交野市社会福祉協議会内）
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+  amount: 月10時間まで（1回5時間以内）。1時間80円
+  more_urls:
+  - https://www.city.katano.osaka.jp/docs/2018052300014/
+- category: sonota
+  name: ごみの戸別収集
+  name_on_page: まごころダイレクト収集
+  summary: ごみ出しが難しい一人暮らしの人の玄関先まで、ごみの収集に来る。
+  who: {}
+  at_application:
+  - ホームヘルプ利用中の一人暮らし（二人暮らしでも市長が認める例外あり）
+  - 要介護・要支援認定、事業対象者、または重度の障がい者手帳
+  - 近隣・親族・ヘルパー等でごみ出しできる人は対象外
+  where: 環境事業所、高齢介護課（要介護・要支援・事業対象者の人）
+  url: https://www.city.katano.osaka.jp/docs/2026040600015/file_contents/file_2026461112917_1.pdf
+  confidence: high
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- jutaku
+- chusha
+- yutai
