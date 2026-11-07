@@ -50,6 +50,6 @@ def test_page_falls_back_to_questions_keeping_the_text():
     assert "if (!e.claudeDown) throw e;" in send
     assert 'return { ...(await api("/api/begin", { municipality: pick.city })), fallback: true };' in send
     # 書いた文は吹き出しに残し（地名はお住まいの欄に先に入る、T-200）、まとめ（Claude）は送らない（blank と同じ扱い）
-    assert "const own = !data.sample && (!data.blank || data.fallback);" in js
+    assert "const own = !data.sample && (!data.blank || Boolean(data.fallback));" in js
     assert "state.event = Boolean(data.event || data.blank);" in js
     assert "文章の読み取りがいま使えないので、いくつか質問します。" in js

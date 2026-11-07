@@ -368,7 +368,8 @@ function renderExtracted(data, text) {
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
   else if (data.blank) head.replaceChildren(...keepTail("質問から", "始めます"));  // 文も出来事もない（T-204）か、読み取りが使えない（T-206）
   else head.replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
-  const own = !data.sample && (!data.blank || data.fallback);  // 読み取りが使えないときも、書いた文は「あなた」の吹き出しに残す
+  // 読み取りが使えないときも、書いた文は「あなた」の吹き出しに残す。undefined を渡すと show() の既定（出す）になるので真偽にする
+  const own = !data.sample && (!data.blank || Boolean(data.fallback));
   $("said").replaceChildren(...(own ? marked : []));
   show("said", own);
   const list = $("extracted-list");

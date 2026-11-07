@@ -73,7 +73,7 @@ def test_entrance_has_the_blank_start_under_event_start():
     # 文が無いので「あなた」の吹き出しを出さず、Claude のまとめ（合言葉の要る口）も送らない
     extracted = re.search(r"^function renderExtracted\(.*?^\}", js, re.S | re.M).group(0)
     # T-206 で、読み取りが使えずに質問の道へ来た人（data.fallback）だけは書いた文を残すようにした。文も絵もない道では出さないまま
-    assert "const own = !data.sample && (!data.blank || data.fallback);" in extracted and 'show("said", own);' in extracted
+    assert "const own = !data.sample && (!data.blank || Boolean(data.fallback));" in extracted and 'show("said", own);' in extracted
     assert "state.event = Boolean(data.event || data.blank);" in js  # まとめを送らない条件は出来事の道と同じ（test_events）
     css = (ROOT / "web" / "style.css").read_text(encoding="utf-8")
     assert "#blank-start {" in css
