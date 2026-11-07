@@ -87,7 +87,7 @@ def test_saved_summaries_match_current_rules():
 
 def test_estimate_does_not_call_api():
     line = mss.estimate(copy.deepcopy(app_mod.SAMPLES))
-    assert "4 回" in line and "米ドル" in line
+    assert "5 回" in line and "米ドル" in line  # 見本 5 件（11/7 に宇都宮市を足した）
 
 
 def test_page_asks_for_saved_summary():

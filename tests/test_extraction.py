@@ -79,9 +79,9 @@ def test_long_evidence_is_cut(rs):
 
 
 def test_sample_evidence_is_unchanged(rs):
-    # 見本 4 件は、置いてある根拠がそのまま画面に出る（どれも相談文の中にあり、200 字より短い）
+    # 見本 5 件（11/7 に宇都宮市を足した）は、置いてある根拠がそのまま画面に出る（どれも相談文の中にあり、200 字より短い）
     samples = json.loads((Path(__file__).parents[1] / "web" / "samples.json").read_text(encoding="utf-8"))
-    assert len(samples) == 4
+    assert len(samples) == 5
     for s in samples:
         ex = check_extraction(rs, s["text"], s["reading"])
         assert [e.evidence for e in ex.facts] == [f["evidence"].strip() for f in s["reading"]["facts"]], s["id"]

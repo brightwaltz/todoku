@@ -197,7 +197,7 @@ export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所の
 
 合言葉と回数制限は、使いすぎの手間を増やすだけの対策です。費用を止めるのは、API の専用ワークスペースに設定した上限です。相談の文章と答えはサーバに保存しません（画面が持ち、毎回送ります）。応答には CSP（よその出どころとインラインのスクリプト・style 属性を止める）・`X-Content-Type-Options: nosniff`・`Referrer-Policy: no-referrer`・ほかのサイトの枠に入れさせないヘッダを付けています（`src/todoku/app.py` の `SECURITY_HEADERS`）。
 
-見本 4 件（`web/samples.json`。町田市 3 件と、横浜市の制度と全国対応を見せる横浜市 1 件）は、前もって本物の Claude が読み取った結果を入れておき、合言葉なしで最後まで試せます。作り直すときは `uv run --env-file <鍵のファイル> python scripts/make_samples.py`（Claude を 4 回呼ぶ）。
+見本 5 件（`web/samples.json`。町田市 3 件と、横浜市の制度と全国対応を見せる横浜市 1 件、全国から自動で集めた第 3 の層を見せる宇都宮市 1 件）は、前もって本物の Claude が読み取った結果を入れておき、合言葉なしで最後まで試せます。宇都宮市の 1 件（2026-11-07）は、API が組織の月の上限で使えなかったため、`make_samples.py` と同じ指示・出力の形・モデル（claude-opus-5-5、effort low）を Claude Code（`claude -p`、サブスク）に渡して読み取り、窓口と同じ根拠の検査（`check_extraction`）を通しました。この 1 件には、Claude が書くまとめはありません。作り直すときは `uv run --env-file <鍵のファイル> python scripts/make_samples.py`（Claude を 4 回呼ぶ）。
 
 ## 評価
 

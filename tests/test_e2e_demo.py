@@ -98,7 +98,7 @@ SAMPLES = [s["id"] for s in client.get("/api/samples").json()]
 
 def test_four_samples_are_ready():
     listed = client.get("/api/samples").json()
-    assert len(listed) == 4 and all(s["ready"] for s in listed)
+    assert len(listed) == 5 and all(s["ready"] for s in listed)  # 11/7 に宇都宮市を足して 5 件
 
 
 @pytest.mark.parametrize("choose", [pick_demo, pick_dont_know], ids=["demo", "dont_know"])
