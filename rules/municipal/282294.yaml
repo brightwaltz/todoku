@@ -1,0 +1,225 @@
+city: '282294'
+name: たつの市
+site: www.city.tatsuno.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護4以上の人を在宅で介護する家族に、紙おむつ等を宅配で給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 同居して在宅で介護している家族が申請する
+  - 所得制限あり（基準は頁に記載なし）
+  where: 高年福祉課 高年福祉係、各総合支所 地域振興課
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: high
+  more_urls:
+  - https://www.city.tatsuno.lg.jp/soshiki/1017/shinsei_dl/2/3197.html
+- category: haishoku
+  name: 自立支援配食サービス
+  name_on_page: 自立支援配食サービス事業
+  summary: 調理が困難な高齢者世帯に弁当を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - 調理が困難で、次のいずれかに当たる
+  - 75歳以上の高齢者のみの世帯
+  - 65歳以上のみで要介護認定者がいる世帯
+  - 重度障害者と65歳以上のみの世帯
+  - 昼食は地区により新規受付停止の場合あり
+  where: 高年福祉課 高年福祉係、各総合支所 地域振興課
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: high
+  more_urls:
+  - https://www.city.tatsuno.lg.jp/soshiki/1017/shinsei_dl/2/1604.html
+- category: haikai
+  name: はいかい高齢者家族支援（GPS 端末）
+  name_on_page: はいかい高齢者家族支援サービス事業
+  summary: 専用端末の GPS と携帯回線で、はいかい時に探して保護する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上のはいかい高齢者を介護する家族
+  - 個人負担あり（金額は頁に記載なし）
+  where: 高年福祉課 高年福祉係（一覧頁の問い合わせ先）
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: low
+- category: haikai
+  name: はいかい高齢者等見守りSOSネットワーク（見守りQRシール）
+  name_on_page: たつの市はいかい高齢者等見守りSOSネットワーク
+  summary: 事前登録した人に見守りQRシールを配り、行方不明時に関係機関が捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などではいかいする人、またはそのおそれのある人
+  - 家族等が登録届に本人の写真を添えて提出する
+  where: 地域包括支援課（各総合支所 地域振興課にも書類あり）
+  url: https://www.city.tatsuno.lg.jp/iryo-kenko-fukushi/koreishafukushi-kaigo/8/7073.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護保険サービスを使わず在宅で1年以上介護した家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険サービスを利用せず1年以上在宅で介護した介護者
+  - 所得制限あり（基準は頁に記載なし）
+  where: 高年福祉課 高年福祉係、各総合支所 地域振興課
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: high
+  more_urls:
+  - https://www.city.tatsuno.lg.jp/soshiki/1017/shinsei_dl/2/2405.html
+- category: koken
+  name: 成年後見制度の申立費用・後見人報酬の支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の審判申立てにかかる費用と、後見人等への報酬を支援する。
+  who: {}
+  at_application:
+  - 認知症高齢者や知的障害者等で、2親等以内の親族がいない等
+  - 支援がないと成年後見の利用が難しい人
+  where: 高年福祉課 高年福祉係（一覧頁の問い合わせ先）
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: low
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 65歳以上の方へ補聴器の購入費用を助成します
+  summary: 医師が必要と認めた65歳以上の人に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 両耳おおむね40dB以上70dB未満で、耳鼻科医の使用必要の証明がある
+  - 購入前に申請する（1人1回限り）
+  where: 高年福祉課 高年福祉係
+  url: https://www.city.tatsuno.lg.jp/iryo-kenko-fukushi/koreishafukushi-kaigo/8/7103.html
+  confidence: high
+  amount: 片耳・両耳を問わず上限2万円
+- category: kinkyu-tsuho
+  name: 安心見守りコール（緊急通報装置の貸与）
+  name_on_page: 安心見守りコール事業（緊急通報システム事業）
+  summary: 緊急・相談通報装置を貸与し、24時間の緊急受付と月1回の安否確認をする。
+  who:
+    at_home: true
+  at_application:
+  - 次のいずれかに当たる
+  - 65歳以上のひとり暮らし
+  - 65歳以上の世帯で、同居者が寝たきりか認知症
+  - 身体障害者手帳1・2級でひとり暮らし
+  - 装置取り付けの承諾書が必要
+  where: 高年福祉課 高年福祉係、各総合支所 地域振興課
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: high
+  more_urls:
+  - https://www.city.tatsuno.lg.jp/soshiki/1017/shinsei_dl/2/2984.html
+- category: gaishutsu
+  name: 高齢者タクシー券
+  name_on_page: 高齢者タクシー事業
+  summary: 車を持たない高齢者世帯に、タクシー料金の一部を助成する利用券を交付する。
+  who: {}
+  at_application:
+  - 70歳以上を含み、世帯員が全員65歳以上で、車を持たない世帯
+  - 18歳未満や障害者を養育する場合も可。単身は70歳以上
+  - 所得制限あり（基準は頁に記載なし）
+  - 民生委員の確認印が必要
+  where: 高年福祉課 高年福祉係、各総合支所 地域振興課
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/shinsei_dl/2/2981.html
+  confidence: high
+  amount: 申請時期で枚数が変わる（4月前半30枚〜3月後半1枚）。1枚の額は頁に記載なし
+  more_urls:
+  - https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+- category: gaishutsu
+  name: 高齢者おでかけ支援券（タクシー券）
+  name_on_page: 令和8年度高齢者おでかけ支援券について
+  summary: 高齢者タクシー券等を受けていない75歳以上の世帯に、タクシー券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 高齢者タクシー券・障害者福祉タクシー券を受けていない世帯
+  - 昭和27年4月1日以前生まれの人がいる世帯
+  - 対象世帯に申請書を送付（6月16日発送済み）。返信で申請
+  where: 高年福祉課 高年福祉係
+  url: https://www.city.tatsuno.lg.jp/iryo-kenko-fukushi/koreishafukushi-kaigo/8/7076.html
+  confidence: high
+  amount: 3,000円分（500円券6枚）。1乗車で最大4枚まで
+- category: gaishutsu
+  name: 運転免許証の自主返納で無料定期券等を交付
+  name_on_page: 高齢者運転免許証自主返促進進事業
+  summary: 免許を自主返納した65歳以上の人等に、バスの無料定期券と乗り合いタクシー券を交付する。
+  who: {}
+  at_application:
+  - 65歳以上で平成27年度以降に免許を自主返納した人
+  - または、その配偶者で免許を持たない人
+  where: 高年福祉課 高年福祉係、各総合支所 地域振興課
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: low
+  amount: 3年有効のコミュニティバス・てくてくバス無料定期券と、乗り合いタクシー乗車券60枚
+- category: mimamori
+  name: ICT見守り機器の購入費助成
+  name_on_page: ICTを使った高齢者の見守り機器購入費用の一部を助成します
+  summary: 市が指定する見守り機器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある65歳以上のみの世帯
+  - 令和5年4月1日以降に指定機器を購入し設置した
+  - 助成は1世帯1台1回限り。設置費・通信料は対象外
+  where: 高年福祉課 高年福祉係
+  url: https://www.city.tatsuno.lg.jp/iryo-kenko-fukushi/koreishafukushi-kaigo/8/7087.html
+  confidence: high
+  amount: 上限3万円
+- category: sonota
+  name: はいかい高齢者等の賠償責任保険（市が全額負担）
+  name_on_page: はいかい高齢者等おでかけリスクゼロ事業
+  summary: 他人にけがを負わせた等の賠償を、市が掛ける保険で補償する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - はいかい高齢者等見守りSOSネットワークに登録している人
+  - この事業だけの利用はできない
+  where: 地域包括支援課（SOSネットワーク登録の届出時に申請）
+  url: https://www.city.tatsuno.lg.jp/iryo-kenko-fukushi/koreishafukushi-kaigo/8/7143.html
+  confidence: high
+  amount: 自己負担なし。賠償責任は最大3億円、死亡見舞金は50万円等
+- category: sonota
+  name: 高齢者生活支援短期入所
+  name_on_page: 高齢者生活支援短期入所事業
+  summary: 生活習慣等を改善するため、施設へ一時的に入所できる。
+  who: {}
+  at_application:
+  - 体調調整・生活指導が必要なおおむね65歳以上
+  - 介護保険の認定を受けている人は除く
+  where: 高年福祉課 高年福祉係（一覧頁の問い合わせ先）
+  url: https://www.city.tatsuno.lg.jp/soshiki/1017/gyomu/konenfukushigakari/2/2/1861.html
+  confidence: low
+not_found:
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

@@ -1,0 +1,112 @@
+city: '282103'
+name: 加古川市
+site: www.city.kakogawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システム（あんしんボタン）
+  name_on_page: 緊急通報システム(あんしんボタン)
+  summary: ボタン一つで受信センターにつながる緊急通報装置を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住で、65歳以上のひとり暮らし
+  - または、要介護3以上の人がいる65歳以上のみの世帯
+  - 近隣の協力者が原則3名必要
+  where: 高齢者支援課 高齢者福祉係
+  url: https://www.city.kakogawa.lg.jp/soshikikarasagasu/fukushibu/koreisha/koreishafukushi/zaitakufukushi/1413770013950.html
+  confidence: high
+  amount: 設置時、世帯の所得状況により負担金がかかる場合がある
+- category: kaigo-yohin
+  name: 介護家族への紙おむつ等の支給
+  name_on_page: 介護用品の支給
+  summary: 要介護4・5の人を同居介護する家族に、おむつ等を現物支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所があり、要介護4・5の人を同居で介護している
+  - 市・県民税非課税世帯に属する人に限る
+  - 申請書と指定業者の見積書を出す
+  where: 高齢者支援課 高齢者福祉係
+  url: https://www.city.kakogawa.lg.jp/soshikikarasagasu/fukushibu/koreisha/koreishafukushi/zaitakufukushi/1413770910910.html
+  confidence: high
+  amount: 月8,000円分まで（指定業者が自宅へ配達）
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきりで店に行けない人が自宅で理美容を受ける際の出張費を助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、寝たきりで理美容院へ行くのが困難
+  - 対象は高齢者または障害者
+  - 保険証など身分証明が必要
+  where: 高齢者支援課、各市民センター
+  url: https://www.city.kakogawa.lg.jp/soshikikarasagasu/fukushibu/koreisha/koreishafukushi/zaitakufukushi/1413770440598.html
+  confidence: high
+  amount: 1回2,500円（出張費）を年4回まで。カット代等は自己負担
+- category: haikai
+  name: 認知症高齢者の見守りタグ利用料の全額負担
+  name_on_page: 認知症高齢者の見守りサービス
+  summary: 行方不明のおそれがある認知症の人の見守りタグ費用を市が全額負担する。
+  who: {}
+  at_application:
+  - 次のどれか1つでよい（所得制限なし）
+  - 見守り・SOSネットワークに事前登録している
+  - 認知症高齢者の日常生活自立度ランク2以上
+  - 地域包括支援センター等の聞き取りで認知症の症状ありと認められた
+  where: お住まいの地域の地域包括支援センター
+  url: https://www.city.kakogawa.lg.jp/soshikikarasagasu/fukushibu/koreisha/koreishafukushi/ninchisho/29207.html
+  confidence: high
+  amount: 見守りタグの利用料等を市が全額負担
+- category: jutaku
+  name: 住宅改造費助成（介護保険の住宅改修への上乗せ）
+  name_on_page: 住宅改造費助成事業
+  summary: 高齢者等に対応するバリアフリー工事費の一部を、介護保険とは別枠で助成する。
+  who: {}
+  at_application:
+  - 要介護・要支援認定者、または身体障害者手帳・療育手帳の所持者がいる世帯
+  - 居住者の前年収入が給与のみ800万円以下、その他は所得600万円以下
+  - 過去に住宅改造助成金・住宅改修費の支給を受けていない
+  - 工事着工前に申請し、助成決定後に着工する
+  where: 介護保険課 給付係
+  url: https://www.city.kakogawa.lg.jp/soshikikarasagasu/fukushibu/kaigohokenka/kakushushinseisho/j_kaisyu_kaizo/1413872945470.html
+  confidence: high
+  amount: 対象経費は上限100万円。世帯の課税状況により助成率は1/3・1/2・2/3
+  more_urls:
+  - https://www.city.kakogawa.lg.jp/soshikikarasagasu/kikakubu/kikakubukohoka/kouhou/kohokakogawa/kohokakogawabakkunanba/reiwa8nen/tekisutoban/50130.html
+- category: sonota
+  name: 車いすの短期貸し出し
+  name_on_page: 車いすの短期貸し出し
+  summary: 歩行が困難な人に、車いすを2週間程度、無料で貸し出す。
+  who: {}
+  at_application:
+  - 市内に住所がある、おおむね65歳以上で歩行が困難な人
+  - 一時的な利用に限る
+  - 本人確認書類を持参する
+  where: 高齢者支援課
+  url: https://www.city.kakogawa.lg.jp/soshikikarasagasu/fukushibu/koreisha/koreishafukushi/zaitakufukushi/1413770284109.html
+  confidence: high
+  amount: 無料
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- shingu
+- gaishutsu

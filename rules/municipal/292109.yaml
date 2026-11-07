@@ -1,0 +1,85 @@
+city: '292109'
+name: 香芝市
+site: www.city.kashiba.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ひとり暮らしの高齢者に緊急通報装置を貸し出し、24時間の通報対応と健康相談を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内に住所がある
+  - 協力員（近所の人など）を確保できる
+  - 利用料を口座振替で支払える
+  - 制度の頁は「おおむね65歳以上の一人暮らし等」と書いている
+  where: 香芝市地域包括支援センター（介護福祉課）
+  url: https://www.city.kashiba.lg.jp/soshiki/22/4692.html
+  confidence: high
+  amount: 利用料は月額で、市民税非課税世帯が200円、課税世帯が300円（通話料は自己負担）
+  more_urls:
+  - https://www.city.kashiba.lg.jp/uploaded/attachment/28509.pdf
+- category: kaigo-yohin
+  name: 紙おむつの現物支給
+  name_on_page: 紙おむつの支給
+  summary: 条件を満たす在宅の方に、紙おむつを現物で自宅へ届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 常時失禁の状態にある
+  - 入院中の人、施設入所者、居住系施設の利用者は対象外
+  where: 介護福祉課（窓口で申請用紙を配布）
+  url: https://www.city.kashiba.lg.jp/soshiki/22/4692.html
+  confidence: high
+  amount: 種類ごとに決まった枚数を支給（2種類を組み合わせると各枚数は半分）
+- category: hochoki
+  name: 非課税世帯の高齢者補聴器購入費助成
+  name_on_page: 非課税世帯の高齢者補聴器購入費助成金
+  summary: 身体障害者手帳の対象外の中等度難聴の非課税世帯の高齢者に、補聴器購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴力が両耳50dB以上70dB未満など、頁の基準に当たる
+  - 聴覚障がいの身体障害者手帳を持っていない
+  - 市税の滞納がない
+  - 15条指定医師の意見書が必要
+  - 購入前の事前申請。1人1回限り。先着10名
+  where: 介護福祉課
+  url: https://www.city.kashiba.lg.jp/soshiki/22/38838.html
+  confidence: high
+  amount: 補聴器1台分の購入費の半額（上限2万円）
+- category: haikai
+  name: 高齢者見守り事前登録（二次元コードシール）
+  name_on_page: 高齢者見守り事前登録
+  summary: 認知症の症状がある方の情報を事前に登録し、警察と共有する。希望すれば身元確認用の二次元コードシールも配る。
+  who: {}
+  at_application:
+  - 認知症の症状があり、外出中に道に迷うおそれがある方
+  - 頁に年齢の条件は書かれていない
+  where: 介護福祉課（総合福祉センター1階）
+  url: https://www.city.kashiba.lg.jp/soshiki/22/5319.html
+  confidence: high
+not_found:
+- haishoku
+- shingu
+- ribiyo
+- gaishutsu

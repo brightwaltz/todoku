@@ -1,0 +1,181 @@
+city: '332046'
+name: 玉野市
+site: www.city.tamano.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の引換クーポン券
+  name_on_page: 介護用品引換クーポン券
+  summary: 要介護4・5の人を在宅で介護する家族に、紙おむつ等と引き換えられるクーポン券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請するのは市内に住む介護家族
+  - 在宅介護手当を受けていない人はケアマネの署名が必要
+  where: 長寿介護課（長寿支援係）
+  url: https://www.city.tamano.lg.jp/site/cyoju/1073.html
+  confidence: high
+  amount: 申請月により支給限度額が変わる（4〜6月は75,000円、3月は6,250円）
+- category: iro
+  name: 在宅介護手当
+  name_on_page: 在宅介護手当
+  summary: ねたきりか認知症の高齢者を在宅で介護している人に、月ごとの手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 被介護者はねたきり、または認知症の人
+  - 通算6か月以上、在宅で介護している
+  - 介護者と被介護者が市内に住民票があり居住している
+  - 自宅での介護が月15日未満の場合や家族介護慰労金の受給中は対象外
+  where: 長寿介護課
+  url: https://www.city.tamano.lg.jp/site/cyoju/1072.html
+  confidence: high
+  amount: 月額4,000円
+- category: jutaku
+  name: 高齢者の住宅改造費助成
+  name_on_page: 高齢者住宅改造助成
+  summary: 要支援・要介護の高齢者の住宅改造費の一部を助成する（介護保険の住宅改修分は除く）。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市民税非課税であること
+  - 同じ住宅で過去に住宅改造の助成を受けていない
+  - 着工前の申請が必要
+  where: 長寿介護課（長寿支援係）
+  url: https://www.city.tamano.lg.jp/site/cyoju/1078.html
+  confidence: high
+  amount: 対象工事（上限50万円）の3分の2
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者の補聴器購入費用助成
+  summary: 加齢性難聴で補聴器が必要と医師に認められた非課税世帯の高齢者に、購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市に住民登録がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻咽喉科医が補聴器の必要性を認めた
+  - 過去に補聴器購入費の助成を受けていない
+  where: 長寿介護課（9番窓口）
+  url: https://www.city.tamano.lg.jp/site/cyoju/54565.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限5万円（1人1回）
+- category: haishoku
+  name: 給食（配食）サービス
+  name_on_page: 玉野市給食サービス事業
+  summary: 調理が難しい高齢者に、お弁当を手渡しで届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内に住所がある
+  - 調理が困難、または援護が得られない
+  where: 長寿介護課（長寿支援係）
+  url: https://www.city.tamano.lg.jp/site/cyoju/2108.html
+  confidence: high
+  amount: 1食350円または400円（事業者により異なる）、週2回まで（火・金の夕食）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・給付
+  name_on_page: 緊急通報システム
+  summary: 急病などの時に受信センターへ通報できる装置を貸与または給付する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯で、慢性疾患等により見守りが必要
+  - または、重度身体障害者のみの世帯
+  - 協力員2名の記名が必要
+  where: 長寿介護課
+  url: https://www.city.tamano.lg.jp/site/cyoju/1384.html
+  confidence: high
+  amount: 世帯の市民税区分で機器代の負担が変わる（生活保護・非課税世帯は0円）
+- category: nichijo-yogu
+  name: 住宅用火災警報器の給付
+  name_on_page: 高齢者の日常生活用具（住宅用火災警報器）の給付
+  summary: 低所得世帯の寝たきり高齢者またはひとり暮らし高齢者に、住宅用火災警報器を給付する。
+  who: {}
+  at_application:
+  - 低所得世帯の寝たきり高齢者、またはひとり暮らし高齢者
+  where: 長寿介護課
+  url: https://www.city.tamano.lg.jp/site/cyoju/1070.html
+  confidence: high
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 資力がなく後見人等への報酬を払えない人に、報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 市の介護保険または障害福祉サービスを利用できる被後見人等
+  - 生活保護を受けている、または報酬負担が困難と市長が認める
+  - 後見人等と被後見人等が親族の場合は対象外
+  where: 長寿介護課（成年後見支援センター）
+  url: https://www.city.tamano.lg.jp/site/cyoju/8032.html
+  confidence: high
+  amount: 後見人等は月額上限（在宅28,000円、施設18,000円）、監督人等は10,000円
+- category: gaishutsu
+  name: 高齢者タクシーチケット
+  name_on_page: 玉野市高齢者タクシーチケット助成事業
+  summary: 移動が難しい高齢者に、タクシー乗車に使えるチケットを交付する。
+  who:
+    age_min: 75
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 運転免許証を持っていない
+  - 障害者タクシーチケットの交付を受けた人は申請不可
+  where: 長寿介護課（長寿支援係）
+  url: https://www.city.tamano.lg.jp/soshiki/14/40202.html
+  confidence: high
+  amount: 1枚500円、月4枚（年間48枚まで）
+- category: haikai
+  name: 認知症高齢者等のみまもりシール
+  name_on_page: 玉野市認知症高齢者等みまもりシール交付事業
+  summary: 徘徊のおそれがある認知症の人向けに、QRコード付きのみまもりシールを無料で交付する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 認知症と診断された人、または認知症の疑いがある人
+  where: 長寿介護課（9番窓口）
+  url: https://www.city.tamano.lg.jp/soshiki/14/37637.html
+  confidence: high
+  amount: 無料（初回30枚のみ）
+not_found:
+- shingu
+- ribiyo
+- mimamori

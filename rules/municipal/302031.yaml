@@ -1,0 +1,156 @@
+city: '302031'
+name: 橋本市
+site: www.city.hashimoto.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券
+  name_on_page: 紙おむつ等給付事業
+  summary: 在宅で要介護の人を介護する家族に、紙おむつ等と交換できる給付券を出す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時失禁状態で、ケアプランに紙おむつ等の必要が書かれている
+  - 世帯は所得税または市民税が非課税
+  - 入院中や介護保険施設などに入所中の月は対象外
+  - 新規は認定調査票の排尿または排便が介助か見守り等
+  where: いきいき健康課 高齢福祉係（毎月 15 日締め、窓口か郵送）
+  url: https://www.city.hashimoto.lg.jp/life_mokuteki/kaigo_korei/kourei/1359960696229.html
+  confidence: high
+  amount: 月 4,500 円分（要介護 4・5 で市民税非課税世帯は月 6,000 円分）
+- category: haishoku
+  name: 高齢者配食・見守り事業
+  name_on_page: 高齢者配食サービス見守り事業
+  summary: お弁当を届けながら対面で安否を確かめる。安否確認が必要な人が使える。
+  who: {}
+  at_application:
+  - 市内在住の介護保険被保険者
+  - 65歳以上で要支援・要介護、かつ単身・高齢者のみ・日中独居で要安否確認
+  - または要介護・要支援と同程度の状態で安否確認が必要
+  - 家族が十分に見守れている人や、調理が困難なだけの人は対象外
+  where: いきいき健康課 高齢福祉係（窓口か郵送）
+  url: https://www.city.hashimoto.lg.jp/guide/kenko_fukushibu/ikiiki_kenko/koureihukusi/seikatusien/1359959092962.html
+  confidence: high
+  amount: 週 3 回、1 日 1 食まで。1 食 450 円から自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置
+  name_on_page: 安全生活支援サービス（緊急通報装置の設置等）
+  summary: 通報機器を無料で設置し、警備会社が駆けつけ、月 1 回の安否電話もある。
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 所得税非課税世帯
+  - 脳・心臓・呼吸器などの慢性疾患で常時注意が必要
+  - 電話を持っていること（健康相談は固定電話が必要）
+  - 協力員 3 人（うち 1 人は民生委員）の承諾
+  - 同居や近隣の家族が見守れる人、施設・サ高住の入居者は対象外
+  where: いきいき健康課 高齢福祉係（窓口か郵送）
+  url: https://www.city.hashimoto.lg.jp/life_mokuteki/kaigo_korei/kourei/1359959391203.html
+  confidence: high
+  amount: 工事費・月額利用料は無料（電話料金や破損時の修理費は自己負担）
+- category: iro
+  name: 家族介護慰労給付金
+  name_on_page: 家族介護慰労給付
+  summary: 介護保険サービスを使わず要介護 4・5 の高齢者を在宅介護した家族に給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去 1 年間、介護保険サービスを受けずに在宅で介護している
+  - 入院・施設入所の期間は 1 年から除く
+  where: いきいき健康課（該当しそうなら問い合わせ）
+  url: https://www.city.hashimoto.lg.jp/life_mokuteki/kaigo_korei/kourei/1359960864893.html
+  confidence: high
+  amount: 1 年度あたり 10 万円
+- category: jutaku
+  name: 高齢者の居宅改修補助
+  name_on_page: 高齢者居宅改修補助事業
+  summary: 手すり・段差解消・洋式便器への取替えなど、小規模な住宅改修の費用を補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯員の課税状況・資産要件等の基準がある（詳細は頁に無し）
+  where: いきいき健康課（地域包括支援センター）
+  url: https://www.city.hashimoto.lg.jp/life_mokuteki/kaigo_korei/kourei/1359959720217.html
+  confidence: low
+- category: ribiyo
+  name: 訪問理髪サービス
+  name_on_page: 訪問理髪サービス事業
+  summary: 外出が難しい在宅の人に、自宅での散髪などの利用券を年 3 回まで出す。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、要介護 4・5、または身体障害者手帳 1・2 級
+  - 老衰・障がい・疾病などで外出が困難
+  - 入院中や介護保険施設などに入所中の人は対象外
+  where: いきいき健康課 高齢福祉係（窓口か郵送）
+  url: https://www.city.hashimoto.lg.jp/guide/kenko_fukushibu/ikiiki_kenko/koureihukusi/seikatusien/1469751063692.html
+  confidence: high
+  amount: 費用 4,000 円以上は 2,000 円を引いた残りが自己負担。未満は半額。年 3 回まで
+- category: haikai
+  name: 見守り・安心ネットワーク登録と見守りシール
+  name_on_page: 橋本市高齢者等見守り・安心ネットワーク事業
+  summary: 行方不明のおそれがある人を事前登録し、登録者に二次元コードの見守りシールを無料で配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になるおそれのある人（家族等が登録届を出す）
+  - 登録時に本人の写真（1 年以内の上半身と全身）が必要
+  where: いきいき健康課（地域包括支援センター）
+  url: https://www.city.hashimoto.lg.jp/guide/kenko_fukushibu/ikiiki_kenko/ninchisyou/23008.html
+  confidence: high
+  amount: 無料。シールはアイロン式 20 枚と蓄光 10 枚
+  more_urls:
+  - https://www.city.hashimoto.lg.jp/life_mokuteki/kaigo_korei/kourei/1490176638527.html
+- category: sonota
+  name: 電動ベッドの無料貸出（車イスの貸出も案内あり）
+  name_on_page: 電動ベッド・車イスの貸し出し
+  summary: 在宅で寝たきりなどの人に電動ベッドを無料で貸す。台数に限りがある。
+  who:
+    at_home: true
+  at_application:
+  - 前年分の所得税が非課税の世帯
+  - おおむね65歳以上の要援護高齢者、または身体障がい者（児）
+  - 車イスは一時的に必要な人向けで、受付は社会福祉協議会
+  where: いきいき健康課 高齢福祉係（車イスは橋本市社会福祉協議会）
+  url: https://www.city.hashimoto.lg.jp/life_mokuteki/kaigo_korei/kourei/1359959951841.html
+  confidence: high
+  amount: 貸出は無料（搬入・搬出も市負担。故障時の修理費などは自己負担）
+not_found:
+- koken
+- hochoki
+- shingu
+- gaishutsu
+- nichijo-yogu

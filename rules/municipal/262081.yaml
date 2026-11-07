@@ -1,0 +1,176 @@
+city: '262081'
+name: 向日市
+site: www.city.muko.kyoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 見守りつき配食サービス
+  name_on_page: 高齢者配食サービス事業
+  summary: 指定事業者の配食を使え、見守り（安否確認）の費用を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 緊急連絡先を確保できる
+  - 調理や栄養管理が自分では難しい（自立支援に適当と認められる）
+  - 申請後に審査と訪問調査がある
+  where: 高齢介護課（高齢者支援係）
+  url: https://www.city.muko.kyoto.jp/site/shinsei/11697.html
+  confidence: high
+  amount: 1世帯1日1回、週6回まで。見守り費用は市が負担（1回320円分）。弁当代は本人負担。
+  more_urls:
+  - https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（あんしんホットライン）
+  name_on_page: あんしんホットライン
+  summary: 24時間のコールセンターにつながる緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしで日常生活に支障がある方、
+  - または第1種身体障がい者で災害時に独自避難が困難な方
+  - 設置前に自宅を訪問し、可否を決める
+  where: 高齢介護課（高齢者支援係）
+  url: https://www.city.muko.kyoto.jp/soshiki/18/1805.html
+  confidence: high
+  amount: 課税世帯は固定型が月500円、携帯型が月1,000円。非課税世帯と生活保護世帯は無料。
+  more_urls:
+  - https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+- category: shingu
+  name: 寝具の乾燥・洗濯
+  name_on_page: 寝具乾燥事業
+  summary: 寝具の乾燥や洗濯が難しい高齢者の寝具を乾燥・洗濯する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身機能の低下で寝具の乾燥が難しい
+  - 自宅訪問で身体の状況を聞き、利用可否を決める
+  where: 高齢介護課（高齢者支援係）
+  url: https://www.city.muko.kyoto.jp/soshiki/18/2462.html
+  confidence: high
+  amount: 乾燥300円、洗濯500円（本人負担）。月1回、洗濯は4月と10月のみ。
+- category: nichijo-yogu
+  name: 電磁調理器・自動消火器の給付
+  name_on_page: 日常生活用具給付
+  summary: 電磁調理器や自動消火器を給付する（世帯に応じた自己負担あり）。
+  who: {}
+  at_application:
+  - おおむね65歳以上で日常生活に支障のあるひとり暮らしの高齢者など
+  - ガイドブックは「65歳以上のひとり暮らし」と記載
+  where: 高齢介護課（高齢者支援係）
+  url: https://www.city.muko.kyoto.jp/soshiki/18/1815.html
+  confidence: high
+  more_urls:
+  - https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+- category: iro
+  name: 在宅高齢者介護者支援金
+  name_on_page: 在宅高齢者介護者支援金
+  summary: 在宅で要介護の高齢者を介護する人への支援金（年度内1回）。
+  who: {}
+  at_application:
+  - 対象者の条件は頁に無い（申請書の頁のみ）
+  - 申請は7月と2月。要介護高齢者1人につき年度内1回
+  - 要介護高齢者の介護保険被保険者証が必要
+  where: 高齢介護課（東向日別館3階）
+  url: https://www.city.muko.kyoto.jp/soshiki/18/3463.html
+  confidence: low
+- category: jutaku
+  name: 介護予防の住宅改良の助成（介護保険の別枠）
+  name_on_page: 住宅改良相談・助成
+  summary: 手すりの設置や段差解消などの工事費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 同居の世帯全員が前年度の市民税非課税
+  - 要介護・要支援の認定を受けていない、または非該当の方
+  - 市の生活機能チェックで機能低下が認められる方に限る
+  - 市内の住宅が対象。工事着工前に相談が必要
+  where: 高齢介護課（高齢者支援係）
+  url: https://www.city.muko.kyoto.jp/soshiki/18/1811.html
+  confidence: high
+  amount: 工事費総額の10分の9（上限16万円、千円未満は切り捨て）。
+  more_urls:
+  - https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+- category: sonota
+  name: 民間賃貸住宅の家賃助成
+  name_on_page: 家賃助成
+  summary: 市内の民間賃貸住宅に住むひとり暮らしの高齢者に家賃の一部を助成する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 市内に5年以上住んでいる
+  - 自分で払う民間賃貸の家賃が月5万円未満（共益費を除く）
+  - 生活保護世帯は対象外
+  where: 高齢介護課（高齢者支援係）
+  url: https://www.city.muko.kyoto.jp/soshiki/18/1816.html
+  confidence: high
+  amount: 月額家賃の3分の1（1か月あたり上限1万円）。
+  more_urls:
+  - https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+- category: haikai
+  name: 認知症高齢者の行方不明時の情報共有（QRコードシール付き）
+  name_on_page: 見守りSOSネットワーク
+  summary: 帰宅できなくなるおそれのある人を事前登録し、行方不明時に情報を共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などの高齢者（家族や成年後見人も申請できる）
+  - L判の写真（上半身と全身）と印鑑が必要
+  where: 高齢介護課、地域包括支援センター（北・中・南）
+  url: https://www.city.muko.kyoto.jp/site/shinsei/2419.html
+  confidence: high
+  more_urls:
+  - https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立てにかかる費用や、後見人への報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 資産等申告書の提出が必要
+  - 申請書は審判請求費用用と報酬用の2種類
+  where: 高齢介護課（東向日別館3階）
+  url: https://www.city.muko.kyoto.jp/site/shinsei/1799.html
+  confidence: high
+  more_urls:
+  - https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+- category: sonota
+  name: 救急医療情報キット（命のカプセル）の配布
+  name_on_page: 命のカプセル
+  summary: 医療情報や緊急連絡先を入れる容器を無料で受け取れる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  where: 高齢介護課（075-874-2576）
+  url: https://www.city.muko.kyoto.jp/uploaded/life/19511_28072_misc.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- kaigo-yohin
+- hochoki
+- ribiyo
+- gaishutsu
+- yutai
+- mimamori

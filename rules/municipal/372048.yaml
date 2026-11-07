@@ -1,0 +1,113 @@
+city: '372048'
+name: 善通寺市
+site: www.city.zentsuji.kagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制整備事業
+  summary: ひとり暮らしや高齢者のみの世帯などに、緊急通報装置を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - これに準ずる世帯も対象
+  - 固定電話を設置している世帯
+  - 申請書に民生委員の署名が必要
+  where: 高齢者課
+  url: https://www.city.zentsuji.kagawa.jp/soshiki/14/koureisya.html
+  confidence: high
+  amount: 設置時の負担金は、生計中心者の前年分の所得税額で決まる
+- category: iro
+  name: 在宅ねたきり老人等の介護手当
+  name_on_page: 在宅ねたきり老人等介護手当
+  summary: 要介護4・5の高齢者を同居で在宅介護する家族に、月額の手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護者は引き続き1年以上市内に住所がある
+  - 生活保護を受けている世帯の人は対象外
+  - 申請書に民生委員の署名が必要
+  - 入院・入所が月の半分以上の月は支給されない
+  where: 高齢者課
+  url: https://www.city.zentsuji.kagawa.jp/soshiki/14/koureisya.html
+  confidence: high
+  amount: 月額 10,000円（4〜9月分は11月、10〜3月分は5月に支給）
+- category: koken
+  name: 成年後見制度の費用助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立ての費用や後見人等への報酬を払うのが難しい人に、市が費用を助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分な認知症高齢者などで市内に住民登録がある
+  - 生活保護、またはそれに準ずる資産・収入の状況
+  - 報酬助成は後見人が配偶者・直系血族・兄弟姉妹だと対象外
+  - 市長申立ては親族がいない等の場合に市が行う
+  where: 市長宛てに申請（相談は地域包括支援センター）
+  url: https://www.city.zentsuji.kagawa.jp/soshiki/14/seinennkoukenn.html
+  confidence: high
+  amount: 報酬助成は月額換算で上限 在宅28,000円・施設や入院18,000円。申立て費用（印紙代・鑑定料等）も助成
+  more_urls:
+  - https://www.city.zentsuji.kagawa.jp/uploaded/life/57910_129948_misc.pdf
+- category: sonota
+  name: ごみの戸別収集（安否確認つき）
+  name_on_page: ふれあい戸別収集
+  summary: ごみを集積場へ出せない高齢者の家を、安否を確かめながら回って収集する。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 身近な人の協力が得られず、ごみを集積場へ出せない
+  - ひとり暮らし、または同居者がいても出せない人
+  - 要支援・要介護認定、または同等の身体状況
+  - 申請書に民生委員の証明が必要
+  where: 高齢者課
+  url: https://www.city.zentsuji.kagawa.jp/soshiki/14/koureisya.html
+  confidence: high
+- category: gaishutsu
+  name: 運転免許返納者へのタクシー利用券
+  name_on_page: 善通寺市運転免許証自主返納支援事業
+  summary: 運転免許を自主返納した市民に、タクシー利用券を1回限り交付する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 申請による運転免許の取消通知書（原本）を提出できる
+  - 年齢制限はない
+  - 1人1回限り
+  where: くらし支援課
+  url: https://www.city.zentsuji.kagawa.jp/soshiki/70/jisyuhennou.html
+  confidence: high
+  amount: 1万円相当（500円券20枚）、有効期限は交付から3年
+- category: sonota
+  name: 介護機器の貸出
+  name_on_page: 介護機器貸出
+  summary: 社会福祉協議会が、65歳以上の市民に介護機器を貸し出す。
+  who:
+    age_min: 65
+  at_application: []
+  where: 社会福祉協議会
+  url: https://www.city.zentsuji.kagawa.jp/uploaded/attachment/13175.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haishoku
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

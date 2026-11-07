@@ -1,0 +1,93 @@
+city: '332054'
+name: 笠岡市
+site: www.city.kasaoka.okayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者のタクシー料金助成
+  name_on_page: 高齢者タクシー利用助成制度
+  summary: 移動手段のない75歳以上の人が、マイナンバーカードでタクシー料金の一部助成を受けられる。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住民登録があり、実際に市内に住んでいる
+  - 本人と同居の親族などに市税等の滞納がない
+  - 運転免許証がない（原付のみの免許の人は可）
+  - 市の他制度でタクシー料金助成を受けていない
+  where: 福祉総務課（中央公民館1階）
+  url: https://www.city.kasaoka.okayama.jp/soshiki/19/55546.html
+  confidence: high
+  amount: 住民税非課税の人は年間最大24,000円、課税の人は年間最大12,000円
+- category: gaishutsu
+  name: 島しょ部高齢者の通院船賃助成
+  name_on_page: 島しょ部高齢者通院交通費助成事業
+  summary: 島に住む高齢者が通院で市内定期船を使うとき、帰りの運賃の利用券がもらえる。
+  who:
+    age_min: 70
+  at_application:
+  - 島しょ部に住民票がある
+  - 所得税非課税世帯
+  - 月1回以上、通院のため定期旅客船を使う
+  - 申請時に満70歳以上
+  where: 長寿支援課、各出張所
+  url: https://www.city.kasaoka.okayama.jp/soshiki/21/56138.html
+  confidence: high
+  amount: 年度に12枚の利用券（市内定期船のみ）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・給付
+  name_on_page: 緊急通報装置の貸与・給付
+  summary: ひとり暮らしの高齢者などに、緊急通報装置を貸与または一部補助で給付する。
+  who:
+    at_home: true
+  at_application:
+  - 70歳以上のひとり暮らし、または高齢者のみの世帯
+  - ひとり暮らしの身体障がい者、またはこれに準ずる世帯も対象
+  - 緊急時に連絡を受ける協力員を、おおむね3人登録する
+  where: 長寿支援課 高齢福祉係
+  url: https://www.city.kasaoka.okayama.jp/soshiki/21/1849.html
+  confidence: high
+  amount: 非課税・生活保護世帯は貸与で自己負担なし。他は所得税額に応じ給付で自己負担16,300円〜全額
+- category: haishoku
+  name: 高齢者の配食（給食）サービス補助
+  name_on_page: 高齢者給食サービス事業
+  summary: 調理が難しい高齢者に、安否確認を兼ねた食事の配達を、利用料の補助つきで行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住み、所得税非課税の世帯
+  - 自立支援の観点から配食利用が適切と認められる
+  where: 長寿支援課（食の自立支援シートはケアマネか地域包括支援センター）
+  url: https://www.city.kasaoka.okayama.jp/soshiki/21/1851.html
+  confidence: high
+  amount: 週2回（2食）まで、1食の利用料の2分の1（上限400円）を補助
+- category: haikai
+  name: 認知症ひとり歩きSOSネットワーク
+  name_on_page: 笠岡市認知症ひとり歩きS O Sネットワーク
+  summary: 行方不明の心配がある認知症の人を事前登録し、行方不明時に緊急メール等で情報配信する。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 家族またはケアマネが市役所で事前登録する（印かん、写真が必要）
+  - 65歳未満の若年性認知症の人も登録できる
+  where: 長寿支援課、笠岡市地域包括支援センター
+  url: https://www.city.kasaoka.okayama.jp/soshiki/21/74985.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,124 @@
+city: '272116'
+name: 茨木市
+site: www.city.ibaraki.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券
+  name_on_page: 紙おむつ等支給サービス（家族介護用品支給）
+  summary: 在宅で紙おむつ等を使う要介護3〜5の人に、介護用品と交換できる給付券が出る。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上
+  - 要介護3は、新規申請時に排尿・排便で介助や見守りが要る
+  - 生活保護を受けていない
+  - 同居していれば別世帯でも同一世帯とみなす
+  where: 長寿政策課（窓口・郵送・オンライン）
+  url: https://www.city.ibaraki.osaka.jp/kikou/kenkof/soudanshien/menu/sabisu/anshin_support/kazokuyohinshikyu.html
+  confidence: high
+  amount: 月 5,000 円までの介護用品と交換できる給付券（市内契約の薬局・薬店で使う）
+  more_urls:
+  - https://www.city.ibaraki.osaka.jp/material/files/group/107/kamiomutsuyoukouR080101.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置サービス
+  summary: 自宅に緊急通報装置を付け、警備会社が24時間受け付けて駆け付ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等
+  - 電話で緊急の連絡をするのが難しいと認められる
+  - インターネット・IP電話は回線により使えないことがある
+  where: 長寿政策課
+  url: https://www.city.ibaraki.osaka.jp/kenko_iryo_fukushi/koreishafukushi/koreisha_support/54597.html
+  confidence: high
+  amount: 利用料は月 0 円・896 円・1,793 円（世帯の課税状況と所得で決まる）
+- category: gaishutsu
+  name: 高齢者のタクシー利用券
+  name_on_page: 高齢者福祉タクシー料金助成サービス
+  summary: 要介護1〜5の人に、市と契約したタクシーで使える利用券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - おおむね65歳以上
+  - 本人が市民税非課税、または生活保護を受けている
+  - 入院中でなく、施設入所中でもない（市内の有料老人ホーム等は除く）
+  - 重度障害者福祉タクシー利用券を受けていない
+  where: 長寿政策課（窓口・オンライン）
+  url: https://www.city.ibaraki.osaka.jp/kenko_iryo_fukushi/koreishafukushi/koreisha_support/55052.html
+  confidence: high
+  amount: 1 枚 500 円まで、月 4 枚（年度分を一括交付）。1 乗車で最大 2 枚
+- category: sonota
+  name: 認知症の人の外出付き添い・見守り
+  name_on_page: 高齢者ごいっしょサービス事業
+  summary: 認知症の高齢者の外出の付き添いや通院時の院内介助、家族の外出中の見守りをする。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 認定調査の認知症高齢者日常生活自立度がランク2以上
+  where: 長寿政策課（窓口・郵送・オンライン）
+  url: https://www.city.ibaraki.osaka.jp/kenko_iryo_fukushi/koreishafukushi/koreisha_support/55048.html
+  confidence: high
+  amount: 利用者負担は 1 時間 500 円。1 日 2 時間以内、月 10 時間以内
+- category: sonota
+  name: ひとり暮らし高齢者等の軽作業の支援
+  name_on_page: ひとり暮らし高齢者等ちょこっとサービス
+  summary: ごみ出しや電球交換など、介護保険外の軽作業を1回30分以内で手伝う。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 長寿政策課（窓口・オンライン）
+  url: https://www.city.ibaraki.osaka.jp/kenko_iryo_fukushi/koreishafukushi/koreisha_support/53107.html
+  confidence: high
+  amount: 1 回 250 円（市民税非課税・生活保護は 150 円）。月 2 回まで
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、成年後見の申立て費用や後見人への報酬を公費で助成する。
+  who: {}
+  at_application:
+  - 申立て費用や後見人等への報酬の負担が経済的に困難な人
+  where: 地域福祉課
+  url: https://www.city.ibaraki.osaka.jp/kikou/kenkof/fukushiseisakuka/menu/seinennkoukenn/seinenshien.html
+  confidence: low
+not_found:
+- haikai
+- iro
+- hochoki
+- shingu

@@ -1,0 +1,143 @@
+city: '272205'
+name: 箕面市
+site: www.city.minoh.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者等紙おむつの給付
+  name_on_page: 高齢者等紙おむつの給付
+  summary: 在宅で常時紙おむつを使う非課税世帯に、紙おむつ交換の給付券を送る。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 箕面市の住民基本台帳に載っている
+  - 要介護4・5、または排尿・排便に介助や見守りが要る認定
+  - 65歳以上で、排泄の状況を市が確認した人も対象
+  where: 高齢福祉課、高齢者くらしサポート（地域包括支援センター）、担当ケアマネジャー
+  url: https://www.city.minoh.lg.jp/kaigo/ji/osirase/zaitakuservie.html
+  confidence: high
+  amount: 月 4,400 円分の給付券（指定の薬局などで交換）
+  more_urls:
+  - https://www.city.minoh.lg.jp/kaigo/ji/fukushiservice/documents/p54-58.pdf
+- category: sonota
+  name: 燃えるごみ専用袋の福祉加算（紙おむつ使用者）
+  name_on_page: 福祉加算
+  summary: 紙おむつを常時使う高齢者などに、燃えるごみ専用袋を無料で多めに配る。
+  who: {}
+  at_application:
+  - 65歳以上、または高齢者紙おむつ給付の要件に該当する人
+  - 詳しい要件は環境クリーンセンターで確認
+  where: 市民サービス政策室、豊川支所、止々呂美支所、ライフプラザ（LoGoフォームも可）
+  url: https://www.city.minoh.lg.jp/shigen/04_yuuryousei/kasan/seidogaiyou.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報機器の設置
+  name_on_page: 緊急通報機器の設置
+  summary: 急病などのときボタンで警備員が駆けつける通報機器を自宅に付ける。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者、またはこれに準ずる人
+  - 緊急時に速やかに通報することが難しい
+  where: 高齢福祉課、高齢者くらしサポート（地域包括支援センター）、担当ケアマネジャー
+  url: https://www.city.minoh.lg.jp/kaigo/ji/osirase/zaitakuservie.html
+  confidence: high
+  amount: 利用料は月 440 円（固定電話あり）、月 2,273 円（なし）
+  more_urls:
+  - https://www.city.minoh.lg.jp/kaigo/ji/fukushiservice/documents/p54-58.pdf
+- category: ribiyo
+  name: 訪問理容・美容サービス
+  name_on_page: 訪問理容・美容サービス
+  summary: 理美容院に行けない人が自宅で理美容を受ける際の出張料を助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身・高齢者のみ世帯等、または身体障害者
+  - 心身の障害や傷病で理美容院に出向くことが困難
+  - 実施期間は 9 月 1 日から翌年 2 月末
+  where: 総合保健福祉センター（高齢福祉課）
+  url: https://www.city.minoh.lg.jp/kaigo/ji/osirase/zaitakuservie.html
+  confidence: high
+  amount: 1 回 1,000 円分のサービス券（期間ごとに 3 回分まで、出張料のみ）
+  more_urls:
+  - https://www.city.minoh.lg.jp/kaigo/ji/fukushiservice/documents/p54-58.pdf
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 日常生活用具の給付
+  summary: 防火に配慮が必要な高齢者に、電磁調理器・火災警報器・自動消火器の購入費を給付する。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者等で、所得が一定基準以下
+  - 身体障害者手帳がある人は障害福祉課に相談
+  where: 高齢福祉課、高齢者くらしサポート（地域包括支援センター）、担当ケアマネジャー
+  url: https://www.city.minoh.lg.jp/kaigo/ji/osirase/zaitakuservie.html
+  confidence: high
+  amount: 上限は電磁調理器 41,000 円、火災警報器 15,500 円、自動消火器 28,700 円。自己負担は前年の所得税額で決まる（非課税は 0 円）
+  more_urls:
+  - https://www.city.minoh.lg.jp/kaigo/ji/fukushiservice/documents/p54-58.pdf
+- category: haikai
+  name: 位置情報提供サービス（認知症の方のGPS端末）
+  name_on_page: 位置情報提供サービス
+  summary: 行方不明時に専用端末で居場所を探せる。対象は、徘徊のある認知症の方を介護する家族。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊が見られる認知症高齢者を介護している家族が申し込む
+  where: 高齢福祉課、高齢者くらしサポート（地域包括支援センター）、担当ケアマネジャー
+  url: https://www.city.minoh.lg.jp/kaigo/ji/osirase/ichijohoteikyo.html
+  confidence: high
+  amount: 月 1,320 円（前納）。検索料・現場急行料などは実費
+  more_urls:
+  - https://www.city.minoh.lg.jp/kaigo/ji/fukushiservice/documents/p54-58.pdf
+- category: haikai
+  name: みのお行方不明者SOSネットの事前登録
+  name_on_page: みのお行方不明者SOSネット
+  summary: 行方不明になるおそれのある人を事前登録しておくと、すぐに協力機関へ捜索を依頼できる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 届出票・家族の同意確認票・本人の写真が要る
+  - オンライン申請もできる
+  where: 地域包括ケア室（総合保健福祉センター1階）
+  url: https://www.city.minoh.lg.jp/kaigo/ninnchishou.html
+  confidence: high
+- category: mimamori
+  name: 見守りサービスotta（見守り端末）
+  name_on_page: 見守りサービスotta（オッタ）
+  summary: カバンや靴に付ける端末で、家族が外出時の移動情報を確認できる。
+  who: {}
+  at_application:
+  - 認知症状のある人、または外出に不安のある高齢者
+  where: 地域包括ケア室、高齢者くらしサポート、担当ケアマネジャー
+  url: https://www.city.minoh.lg.jp/kaigo/ji/fukushiservice/documents/p54-58.pdf
+  confidence: low
+  amount: 最大 3 か月は無料のお試し。その後の費用は窓口に確認
+- category: mimamori
+  name: 一声訪問活動（定期訪問・安否確認）
+  name_on_page: 一声訪問活動
+  summary: 訪問員が定期的に自宅を訪ね、安否確認や生活の相談に乗る（無料）。
+  who: {}
+  at_application:
+  - 75歳以上の一人暮らし、80歳以上の高齢者世帯など
+  - そのほか見守りが必要な人
+  where: 社会福祉協議会 地域福祉推進課、地区の民生委員
+  url: https://www.city.minoh.lg.jp/kaigo/ji/fukushiservice/documents/p54-58.pdf
+  confidence: low
+  amount: 無料
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- yutai

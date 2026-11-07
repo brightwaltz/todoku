@@ -1,0 +1,194 @@
+city: '342149'
+name: 安芸高田市
+site: www.akitakata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給
+  summary: 要介護3以上の人を在宅で介護する家族に、紙おむつ等と換える引換券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護している家族が市内に住んでいる
+  - 常時介護が必要な人を介護している
+  where: 保険医療課介護保険係（0826-42-5618）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/zaitakuhukusi/
+  confidence: high
+  amount: 月 5,000 円分の引換券（介護保険料に滞納があると 3,000 円）
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: iro
+  name: 家族介護支援手当
+  name_on_page: 家族介護支援手当
+  summary: 要介護3以上の人を在宅で同居して介護する家族に、手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護している家族が市内に住んでいる
+  - 介護する家族は市民税非課税世帯（案内冊子の記載）
+  where: 保険医療課介護保険係（0826-42-5618）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/zaitakuhukusi/
+  confidence: high
+  amount: 月 5,000 円。1・4・7・10 月に 3 か月分ずつ支給
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: gaishutsu
+  name: 外出支援（タクシー利用助成）
+  name_on_page: 外出支援サービス
+  summary: 公共交通が使いにくい高齢者が、市内の医療機関へタクシーで通院するときの助成券をもらえる。
+  who: {}
+  at_application:
+  - 要介護認定者で歩行困難など、お太助ワゴン等が使いにくい
+  - 市民税非課税（冊子の記載）
+  - 要介護1・2は、一人暮らしか同居家族が65歳以上・障害者のみ
+  - 重度障害者外出支援等の利用者は対象外
+  where: 社会福祉課地域福祉係（0826-42-5615）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/zaitakuhukusi/
+  confidence: high
+  amount: 毎月 2 往復分の助成券。通院距離に応じて助成
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきりで外出できない高齢者が、自宅で理美容を受けられる利用券をもらえる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、寝たきりのため外出が困難
+  - 要介護認定者、または身体障害者手帳3級以上（下肢・体幹・移動機能）
+  where: 社会福祉課地域福祉係（0826-42-5615）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/zaitakuhukusi/
+  confidence: high
+  amount: 利用券を支給。理美容の費用は自己負担
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 日常生活用具の給付
+  summary: 電磁調理器・火災報知器・自動消火器を給付する（購入費の支給）。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等
+  - 市民税非課税（冊子の記載）
+  - 用具ごとに対象者・限度額・自己負担が異なる
+  - 希望する用具の見積書を添える
+  where: 社会福祉課地域福祉係（0826-42-5615）。冊子では保険医療課（0826-42-5618）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/zaitakuhukusi/
+  confidence: high
+  amount: 限度額の範囲内で支給（用具ごとに異なる）
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者に食事を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、食事の調理が困難
+  - 一人暮らし、または同居家族が65歳以上か身体障害者手帳所持者
+  - 一覧頁の対象地域は八千代・高宮・甲田・向原
+  where: 社会福祉課地域福祉係（0826-42-5615）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/zaitakuhukusi/
+  confidence: high
+  amount: 利用者は食材費相当額を負担
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: haikai
+  name: 徘徊高齢者の所在確認端末（GPS）の貸与
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 認知症の高齢者を在宅で介護する家族に、居場所がわかる GPS 端末を貸す。
+  who:
+    at_home: true
+  at_application:
+  - 認知症高齢者を在宅で介護している家族
+  - 自宅付近の地図を添えて申請
+  where: 社会福祉課地域福祉係（0826-42-5615）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/zaitakuhukusi/
+  confidence: high
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: haikai
+  name: 徘徊SOSネットワーク（事前登録）
+  name_on_page: 徘徊SOSネットワーク
+  summary: 行方不明時に協力機関へ情報が流れる。徘徊が心配な人は事前登録票を出せる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで所在不明になるおそれがある高齢者
+  - 事前登録は登録票を社会福祉課へ提出
+  where: 社会福祉課（0826-42-5615）
+  url: https://www.akitakata.jp/ja/shisei/section/syakaihukusi/news/haikaisos/
+  confidence: high
+  more_urls:
+  - https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報（あんしんボタン）の設定
+  name_on_page: 緊急通報システム運営事業（あんしん電話機能）
+  summary: 自宅のお太助フォンにあんしんボタンを設定し、急病時に消防署へ直接つなぐ。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし
+  - または同居家族が65歳以上か重度身体障害者（手帳2級以上）の世帯
+  where: 社会福祉課（0826-42-5615）
+  url: https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+  confidence: high
+  amount: 設定の利用者負担は 0〜5,400 円（世帯の課税状況で異なる）
+- category: mimamori
+  name: 登録訪問員による見守り（安心生活創造事業）
+  name_on_page: 安心生活創造事業
+  summary: 一人暮らしの高齢者らに、登録訪問員が定期訪問して見守りや困り事の手伝いをする。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者、高齢者世帯、障害者世帯
+  where: 安芸高田市社会福祉協議会（0826-47-1131）
+  url: https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+  confidence: high
+  amount: 巡回訪問（月1回）は無料。契約訪問は月600円、オプションは1時間300円
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に困っている人の、成年後見の申立て費用や後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 経済的に困窮し、申立て費用や後見人報酬の支払いが困難
+  where: 社会福祉課（0826-42-5615）
+  url: https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+  confidence: high
+- category: jutaku
+  name: 高齢者住宅整備資金の補助
+  name_on_page: 高齢者住宅整備資金
+  summary: 高齢者の専用居室の増改築・改造のために融資を受けた人に、補助金を出す。
+  who: {}
+  at_application:
+  - 60歳以上の高齢者と市内で同居（予定を含む）する市内在住者
+  - 対象者が所有し居住する住宅の工事で、指定の融資を受ける
+  - 着工前に申請が必要
+  where: 社会福祉課（0826-42-5615）
+  url: https://www.akitakata.jp/akitakata-media/filer_public/ef/31/ef31c199-085c-4125-ac66-d02d11ed7fcd/o-tasuke-gaido-ninchi-shou-keapasu-_202541_.pdf
+  confidence: high
+not_found:
+- shingu
+- hochoki

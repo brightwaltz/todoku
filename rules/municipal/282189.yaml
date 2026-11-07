@@ -1,0 +1,183 @@
+city: '282189'
+name: 小野市
+site: www.city.ono.hyogo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 介護用品の支給
+  summary: 寝たきりや認知症の高齢者を在宅で介護する家族に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 寝たきりまたは認知症の高齢者を介護している
+  - 市内に住所がある
+  - 同居者などを含む世帯が生活保護を受けていない
+  where: 市民福祉部 高齢介護課（長寿社会係）
+  url: https://www.city.ono.hyogo.jp/kurashi_fukushi/fukushi/koreishafukushi_kaigo/4/6688.html
+  confidence: high
+  amount: 1か月あたり6,250円まで（紙おむつ、介護用シーツ、手袋、ウェットティッシュ等）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の高齢者を介護保険サービスを使わず在宅で介護する非課税世帯に、年額で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される高齢者の世帯が市内に住所を有する
+  - 過去1年に介護保険の介護給付を受けていない
+  - 短期入所が合計7日以内なら受けていても可、入院期間は除く
+  where: 市民福祉部 高齢介護課（長寿社会係）
+  url: https://www.city.ono.hyogo.jp/kurashi_fukushi/fukushi/koreishafukushi_kaigo/4/6686.html
+  confidence: high
+  amount: 在宅高齢者1人につき年額10万円
+- category: nichijo-yogu
+  name: 電磁調理器・火災警報器・消火器の給付
+  name_on_page: 高齢者日常生活用具の給付
+  summary: 介護保険の対象外の日常生活用具（電磁調理器、火災警報器、住宅用消火器）を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で市内に住所がある
+  - 市民税非課税世帯で、ひとり暮らしか同居者の援助を受けられない人
+  - 上記のほか、市長が特に必要と認めた人
+  where: 市民福祉部 高齢介護課（長寿社会係）
+  url: https://www.city.ono.hyogo.jp/kurashi_fukushi/fukushi/koreishafukushi_kaigo/4/6689.html
+  confidence: high
+- category: haikai
+  name: お出かけ見守りQRコードシールの配布
+  name_on_page: お出かけ見守りQRコードシール
+  summary: 事前登録した人に、靴や服に貼るQRコードシールを無料で配る。
+  who: {}
+  at_application:
+  - 外出に見守りが必要な65歳以上、または40〜64歳の要介護認定者
+  - 高齢者外出見守り事前登録の届出書と写真の提出が必要
+  where: 高齢介護課 長寿社会係
+  url: https://www.city.ono.hyogo.jp/kurashi_fukushi/fukushi/koreishafukushi_kaigo/4/6699.html
+  confidence: high
+  amount: 登録者1人につきシール1シート（10枚分）を無料
+- category: haikai
+  name: 認知症高齢者等のGPS機器購入費等の助成
+  name_on_page: 認知症高齢者等見守り機器購入費等助成
+  summary: 行方不明に備えるGPS機器の購入またはレンタルの費用を助成する。
+  who: {}
+  at_application:
+  - 要介護（支援）認定を受けている人など（詳細は要問い合わせ）
+  - 高齢者外出見守り事前登録をしている
+  where: 高齢介護課 長寿社会係
+  url: https://www.city.ono.hyogo.jp/material/files/group/19/R6kaigo14-27P.pdf
+  confidence: low
+  amount: GPS機器の購入またはレンタル費用の助成、上限2万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ひとり暮らし等の高齢者に緊急通報装置を無償で貸し出し、急病時に救急や協力員へつなぐ。
+  who: {}
+  at_application:
+  - 市内在住で固定電話回線がある
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯で要支援以上の認定者がいる
+  - 認定が非該当・未認定なら心臓・脳・呼吸器の病気、がん等の持病が必要
+  - または身体障がい者のみの世帯
+  - 緊急時に駆け付ける協力員が3名必要
+  where: 市民福祉部 高齢介護課（長寿社会係）
+  url: https://www.city.ono.hyogo.jp/kurashi_fukushi/fukushi/koreishafukushi_kaigo/4/6705.html
+  confidence: high
+  amount: 無償（固定電話の基本料・通話料は利用者負担、装置の損傷・紛失は実費）
+  more_urls:
+  - https://www.city.ono.hyogo.jp/material/files/group/19/R6kaigo14-27P.pdf
+- category: jutaku
+  name: 住宅改造費の助成（介護保険の住宅改修への上乗せ）
+  name_on_page: 住宅改造費助成事業
+  summary: 介護保険の住宅改修と一体で、手すり設置や段差解消などの改造費の一部を助成する。
+  who: {}
+  at_application:
+  - 要介護・要支援認定者、または身体・療育手帳所持者がいる世帯
+  - 生計中心者が給与のみなら前年の給与収入800万円以下
+  - 給与以外を含むなら前年の所得600万円以下
+  - 住まいの改良相談員等の承認が必要、契約・着工前に申請
+  - 介護保険の住宅改修の初回申請時に一体で申請、原則1世帯1回
+  where: 市民福祉部 高齢介護課（長寿社会係）
+  url: https://www.city.ono.hyogo.jp/kurashi_fukushi/fukushi/koreishafukushi_kaigo/4/6704.html
+  confidence: high
+  amount: 工事費から介護保険の限度額20万円を引いた額に助成率（1/3〜9/10、生活保護は全額）を乗じた額。箇所別の上限があり、合計100万円まで
+- category: gaishutsu
+  name: らんらんタクシー（運賃が半額程度になる登録制タクシー）
+  name_on_page: らんらんタクシー
+  summary: 登録した人が、市内の乗降ポイント間をタクシー運賃の半額程度の料金で利用できる。
+  who: {}
+  at_application:
+  - 利用者登録が必要（高齢介護課で登録者証を発行）
+  - 対象の条件は高齢介護課に要確認
+  where: 高齢介護課窓口（登録申請）
+  url: https://www.city.ono.hyogo.jp/soshikikarasagasu/sogoseisakubu_kotsuseisakugroup/gyomuannai/3/1/10331.html
+  confidence: high
+- category: haishoku
+  name: 給食サービス（配食と安否確認）
+  name_on_page: 給食サービス事業
+  summary: ボランティアが調理した昼食を週1回、手渡しで届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の低所得のひとり暮らし高齢者等
+  - 利用には訪問調査が必要
+  - 毎週火曜または金曜の昼食（第5週を除く）
+  where: 小野市社会福祉協議会
+  url: https://www.city.ono.hyogo.jp/material/files/group/19/R6kaigo14-27P.pdf
+  confidence: high
+  amount: 1食200円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 外出が困難な人の自宅へ理美容師を派遣し、カットを行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の寝たきり等で外出が困難な高齢者、障がい者(児)など
+  - 利用には訪問調査が必要
+  - サービスを受けるときは介助者の付き添いが要る
+  where: 小野市社会福祉協議会
+  url: https://www.city.ono.hyogo.jp/material/files/group/19/R6kaigo14-27P.pdf
+  confidence: high
+  amount: 寝たきりの高齢者・障がい者は2,000円（年4回まで）、寝たきり以外で外出困難な人は3,500円
+- category: gaishutsu
+  name: 車椅子利用者の移送サービス
+  name_on_page: 移送サービス事業
+  summary: 車椅子で外出が困難な人を、ボランティアがリフト付き車で通院等に送迎する。
+  who: {}
+  at_application:
+  - 車椅子を使うおおむね65歳以上の高齢者、身体障がい者(児)など
+  - 利用には訪問調査が必要、原則として同乗者が必要
+  - 送迎先は北播磨地域内、買い物には使えない
+  where: 小野市社会福祉協議会
+  url: https://www.city.ono.hyogo.jp/material/files/group/19/R6kaigo14-27P.pdf
+  confidence: high
+  amount: 年会費500円、利用料は市内往復500円・市外往復700円
+- category: sonota
+  name: 車椅子の一時貸出
+  name_on_page: 在宅福祉機器貸出事業
+  summary: 介護者の負担を減らすため、車椅子を一時的に無料で貸し出す。
+  who: {}
+  at_application:
+  - 日常生活に支障のある高齢者、身体障がい者(児)など
+  - 介護保険で利用できる人は対象外
+  where: 小野市社会福祉協議会
+  url: https://www.city.ono.hyogo.jp/material/files/group/19/R6kaigo14-27P.pdf
+  confidence: high
+  amount: 無料で最長3か月（超える場合は要相談）
+not_found:
+- hochoki
+- koken
+- mimamori

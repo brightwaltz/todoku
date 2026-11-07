@@ -1,0 +1,99 @@
+city: '292052'
+name: 橿原市
+site: www.city.kashihara.nara.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の現物支給
+  name_on_page: 紙おむつなどの支給
+  summary: 在宅で要介護の高齢者を介護する家庭に、紙おむつ等を2か月分まとめて自宅へ届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住民票がある
+  - 常時失禁状態にある
+  - 施設入所中・入院中・ショートステイ月15日以上は対象外
+  where: 長寿介護課（分庁舎2階）
+  url: https://www.city.kashihara.nara.jp/soshiki/1033/gyomu/3/6/1/1095.html
+  confidence: high
+  amount: 無料。テープ式パンツ月60枚、リハビリパンツ月30枚、尿とりパッド月180枚などから選ぶ（追加はできない）。
+- category: haishoku
+  name: 配食サービス（見守り・安否確認つき）
+  name_on_page: 「食」の自立支援事業(配食サービス)
+  summary: 市の委託業者が、安否確認を兼ねて自宅へお弁当を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住民票があり、おおむね65歳以上
+  - 栄養改善や見守りが必要
+  - 同じ敷地・同じ町内に家族がいると対象外
+  where: 長寿介護課（分庁舎2階）
+  url: https://www.city.kashihara.nara.jp/soshiki/1033/gyomu/3/6/1/1094.html
+  confidence: high
+  amount: 自己負担は1食450円。昼食を週5回まで。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制の整備
+  summary: 固定電話につなぐ安否確認型の緊急通報装置を貸し出し、24時間のコールセンターが対応する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住民票があり、おおむね65歳以上
+  - 同じ住所に家族がいると対象外
+  - 協力員1〜2名の登録が必要（駆け付け有料サービスで代替可）
+  - 原則NTTのアナログ回線が前提
+  where: 長寿介護課（分庁舎2階）
+  url: https://www.city.kashihara.nara.jp/soshiki/1033/gyomu/3/6/1/1096.html
+  confidence: high
+  amount: 端末利用料は月500円（生活保護世帯は免除）。
+- category: haikai
+  name: はいかい探知機（GPS端末）の貸与
+  name_on_page: はいかい探知機のレンタル
+  summary: はいかいのおそれがある人の居場所を24時間検索できるGPS端末を貸し出す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民票があり、おおむね40歳以上
+  - 認知症などで行方不明になるおそれがある
+  - 申請の同意書は世帯全員の署名が必要
+  where: 長寿介護課（分庁舎2階）
+  url: https://www.city.kashihara.nara.jp/soshiki/1033/gyomu/3/6/1/2611.html
+  confidence: high
+  amount: 基本は月1,300円。非課税世帯・生活保護世帯などは月700円、条件が重なると免除。
+- category: haikai
+  name: はいかいSOSネットワーク事前登録・見守り安心シール
+  name_on_page: 橿原市はいかいSOSネットワーク
+  summary: 事前登録で行方不明時に警察等と情報を共有し、希望者は身元確認用シールも受け取れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民票があり、おおむね40歳以上
+  - 認知症などで行方不明になるおそれがある
+  - 登録届と本人の顔・全身写真が必要
+  where: 長寿介護課
+  url: https://www.city.kashihara.nara.jp/soshiki/1033/gyomu/3/6/1/3225.html
+  confidence: high
+not_found:
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu

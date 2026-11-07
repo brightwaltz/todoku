@@ -1,0 +1,243 @@
+city: '332101'
+name: 新見市
+site: www.city.niimi.okayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の給付
+  name_on_page: 介護用品給付
+  summary: 重度の要介護者を在宅で介護する家族に、介護用品の引換券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請するのは市内に住所がある介護者（家族）
+  - 毎年6月に現況届の提出が必要
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/31507.html
+  confidence: high
+  amount: 月6,250円を限度に、市指定業者で使える引換券を交付
+  more_urls:
+  - https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+- category: iro
+  name: 介護手当（在宅介護者への手当）
+  name_on_page: 介護手当
+  summary: 寝たきりや認知症の高齢者を在宅で介護する人に月額の手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護される人は市内居住の65歳以上
+  - 要介護4以上、または要介護1〜3で認知症自立度Ⅲa以上
+  - 民生委員か介護支援専門員の証明が必要
+  - 在宅介護が15日未満の月は支給されない
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/31507.html
+  confidence: high
+  amount: 月額10,000円（主な介護者に支給）
+  more_urls:
+  - https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費助成
+  name_on_page: 新見市難聴高齢者補聴器購入費助成事業
+  summary: 手帳の対象外の中等度難聴の65歳以上に、補聴器購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民登録があり、市税の滞納がない
+  - 聴覚障害の身体障害者手帳がない中等度難聴（聴力の基準あり）
+  - 過去にこの助成を受けていない
+  - 購入前に相談が必要、申請期限は令和9年1月29日
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/37948
+  confidence: high
+  amount: 購入費のうち上限3万円（1人1回限り）
+  more_urls:
+  - https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報事業（告知放送機器）
+  name_on_page: 緊急通報事業
+  summary: 告知放送機器のボタンで、登録した協力員へ緊急事態を知らせる。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者がいる世帯
+  - または障害者手帳（身体・療育・精神）所持者がいる世帯
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/31507.html
+  confidence: high
+  amount: 費用負担なし
+  more_urls:
+  - https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+- category: kinkyu-tsuho
+  name: 高齢者等ICT見守り事業
+  name_on_page: 新見市高齢者等ＩＣＴ見守り事業
+  summary: 人感センサーと携帯型の緊急通報装置を配布し、コールセンターが対応する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 65歳以上のみの世帯、または就労等で長時間65歳以上のみになる人
+  - 親族や身の回りの世話をする人も申請できる
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/44828
+  confidence: high
+  amount: 月額利用料のうち300円を負担（通信費などは別途利用者負担）
+- category: haikai
+  name: 高齢者等捜索位置検索事業（GPS端末の配布）
+  name_on_page: 新見市高齢者等捜索位置検索事業
+  summary: 徘徊のおそれがある高齢者にGPS端末を配布し、位置を確認できるようにする。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内居住で、認知症または認知症の疑いがある
+  - 親族や日常的に世話をする人が申請する
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/44828
+  confidence: high
+  amount: 月額利用料のうち200円を負担。介護シューズは代金の半額（約5,000円）
+- category: haikai
+  name: 高齢者等捜索身元確認事業（二次元コードシール）
+  name_on_page: 新見市高齢者等捜索身元確認事業
+  summary: 所持品に貼る二次元コードシールを配布し、発見者と家族が連絡できるようにする。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内居住で、認知症または認知症の疑いがある
+  - 親族や日常的に世話をする人が申請する
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/44828
+  confidence: high
+  amount: 無料（追加分のシール作成費は申請者負担）
+- category: jutaku
+  name: 高齢者等住宅改造助成（介護保険の住宅改修と併用可）
+  name_on_page: 住宅改造助成
+  summary: 手すり設置や段差解消などの改造工事費の一部を市が助成する。
+  who: {}
+  at_application:
+  - 要介護認定の65歳以上で介護保険料が第1〜5段階の人
+  - または肢体不自由1・2級の手帳所持で本人が市民税非課税の人
+  - 工事前の相談が必須（工事後は受付不可）
+  where: 高齢者支援課（0867-72-3148）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/31507.html
+  confidence: high
+  amount: 対象経費の3分の2以内、上限333,000円。介護保険の住宅改修と併用可
+  more_urls:
+  - https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+- category: gaishutsu
+  name: 高齢者等タクシー利用助成
+  name_on_page: 新見市高齢者等タクシー利用助成事業
+  summary: 運転免許のない高齢者等に、市内事業者で使えるタクシー助成券を交付する。
+  who: {}
+  at_application:
+  - 市内に住民登録があり、運転免許を持っていない
+  - 75歳以上、または要介護1以上、または障害者手帳（身障1・2級等）
+  - 運転免許返納の証明（おかやま愛カード等）の写しが必要
+  - 申請期限は令和9年2月26日（令和7年度までの申請者は不要）
+  where: 高齢者支援課、各支局・各市民センター
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/28004.html
+  confidence: high
+  amount: 500円券を月6枚（最大72枚・36,000円分）
+  more_urls:
+  - https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付等
+  summary: 歩行支援用具、入浴補助用具、腰掛便座、電磁調理器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、生活に支援が必要な要援護高齢者
+  - 電磁調理器は、防火の配慮が必要なひとり暮らし高齢者
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/31507.html
+  confidence: high
+  amount: 基準額は歩行用具4万円、入浴用具6万円、便座1.2万円、電磁調理器4.1万円。所得等に応じた自己負担あり
+  more_urls:
+  - https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+- category: mimamori
+  name: ひとり暮らし高齢者訪問（安否確認）
+  name_on_page: ひとり暮らし高齢者訪問
+  summary: 80歳以上のひとり暮らしの人に、月1回の訪問か電話で安否確認をする。
+  who:
+    age_min: 80
+    household:
+    - alone
+  at_application:
+  - 介護サービス等を受けている人は対象外
+  where: 新見市社会福祉協議会（0867-72-7306）
+  url: https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+  confidence: low
+  more_urls:
+  - https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/3279
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 支援が必要な高齢者を一時的に老人ホームに泊め、生活の指導を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護認定は自立で、概ね65歳以上の高齢者のみの世帯
+  - 日常生活に支援が必要な人
+  where: 高齢者支援課（0867-72-6125）
+  url: https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+  confidence: low
+  amount: 1日920円と施設の食費（生活保護世帯は食費のみ）。月6日まで
+  more_urls:
+  - https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/3279
+- category: sonota
+  name: 福祉用具（電動ベッド・車いす）の貸し出し
+  name_on_page: 福祉用具の貸し出し
+  summary: 電動ベッドや車いすを社会福祉協議会が貸し出す。
+  who: {}
+  at_application:
+  - ベッドは要支援1・2、要介護1で介護保険でレンタルできない人
+  - 車いすはけがや病気で一時的に必要な人
+  - 市内に住んでいる
+  where: 新見市社会福祉協議会（0867-72-7306）
+  url: https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+  confidence: low
+  amount: ベッドは運搬費のみ自己負担、車いすは無料
+  more_urls:
+  - https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/3279
+- category: sonota
+  name: 在宅医療機器の購入補助
+  name_on_page: 在宅医療機器購入補助金
+  summary: ネブライザーや吸引器の購入費の一部を補助する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の重度身体障害者、または寝たきりの高齢者
+  - 医師が必要と認めること
+  where: 福祉課（0867-72-6126）
+  url: https://www.city.niimi.okayama.jp/media_images_01/files/R8ikiikigaido%281%29.pdf
+  confidence: low
+  amount: 購入額の2分の1以内。上限はネブライザー2万円、卓上小型吸引器3.5万円
+  more_urls:
+  - https://www.city.niimi.okayama.jp/kurashi/kurashi_detail/index/3279
+not_found:
+- haishoku
+- shingu
+- ribiyo
+- koken
+- yutai

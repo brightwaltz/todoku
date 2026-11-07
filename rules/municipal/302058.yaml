@@ -1,0 +1,120 @@
+city: '302058'
+name: 御坊市
+site: www.city.gobo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品費の給付（紙おむつ等の助成券）
+  name_on_page: 介護用品費給付事業
+  summary: 在宅の要介護高齢者を介護する家族等に、紙おむつ等を買うための助成券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3は、認定調査票等で必要と認められること
+  - 介護保険料の滞納がないこと
+  where: 健康長寿課
+  url: https://www.city.gobo.lg.jp/sosiki/siminfukusi/kaigo/tanto/kaigo/hoken/1383099635886.html
+  confidence: high
+  amount: 要介護4・5は月6,000円、要介護3は月4,000円
+- category: jutaku
+  name: 高齢者居宅改修補助（介護保険の住宅改修の上乗せ）
+  name_on_page: 高齢者居宅改修補助事業
+  summary: 介護保険の住宅改修で支給限度額を超えた分に、市が補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 一定の低所得者、または生活保護世帯であること
+  - 介護保険による住宅改修を行うこと
+  where: 健康長寿課
+  url: https://www.city.gobo.lg.jp/sosiki/siminfukusi/kaigo/tanto/kaigo/hoken/1383099635886.html
+  confidence: high
+  amount: 介護保険の支給分を超える部分について、20万円まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報サービス
+  summary: ひとり暮らし高齢者宅に緊急通報装置を付け、急病や災害時に対応する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者
+  where: 健康長寿課（頁に申請先の明記なし）
+  url: https://www.city.gobo.lg.jp/sosiki/siminfukusi/kaigo/tanto/kourei/koureihukushi/1383098631604.html
+  confidence: low
+- category: gaishutsu
+  name: 高齢者外出支援チケット
+  name_on_page: 高齢者外出支援事業
+  summary: バス・タクシー・紀州鉄道などで使えるチケットを交付して外出を支援する。
+  who:
+    age_min: 75
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application: []
+  where: 健康長寿課（頁に申請先の明記なし）
+  url: https://www.city.gobo.lg.jp/sosiki/siminfukusi/kaigo/tanto/kourei/koureihukushi/1383098631604.html
+  confidence: low
+  amount: 1枚100円のチケットを年間100枚
+- category: haikai
+  name: 高齢者等安心サポート事業（行方不明時の捜索協力の事前登録）
+  name_on_page: 高齢者等安心サポート事業
+  summary: 行方不明のおそれがある人を事前に登録し、いなくなったとき関係機関が捜索に協力する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住んでいる
+  - 認知症の症状等で行方不明になるおそれがある
+  where: 健康長寿課（登録様式に本人の写真を添えて市へ提出）
+  url: https://www.city.gobo.lg.jp/fukusi/korei/ninchisyou_soukatsuyaku/1383112119780.html
+  confidence: high
+- category: sonota
+  name: 見守り機器等の購入補助
+  name_on_page: 見守り機器等の購入補助
+  summary: 安心サポート事業に登録した人が見守り機器等を買うとき、初期費用の一部を補助する。
+  who: {}
+  at_application:
+  - 市内に住み、高齢者等安心サポート事業に登録していること
+  - 本人または親族が機器を操作・管理できること
+  - 機器の購入前に市の審査・承認が必要
+  - 対象者1人につき1回のみ
+  where: 健康長寿課
+  url: https://www.city.gobo.lg.jp/fukusi/korei/ninchisyou_soukatsuyaku/1383112119780.html
+  confidence: high
+  amount: 初期導入費用のみ、1万円まで
+  more_urls:
+  - https://www.city.gobo.lg.jp/material/files/group/17/anshinsupportyoukou.pdf
+- category: sonota
+  name: 生活管理指導短期宿泊（非該当の方の一時宿泊）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 介護保険非該当で支援が必要な人が、養護老人ホーム等に一時的に泊まれる。
+  who: {}
+  at_application:
+  - 介護保険が非該当で、日常生活に支援が必要
+  where: 健康長寿課
+  url: https://www.city.gobo.lg.jp/lifeevent/korei/zaitaku/1383099938818.html
+  confidence: high
+  amount: 利用料は1日380円、6か月で7日以内
+not_found:
+- haishoku
+- ribiyo
+- shingu

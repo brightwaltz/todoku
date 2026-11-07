@@ -1,0 +1,115 @@
+city: '292061'
+name: 桜井市
+site: www.city.sakurai.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 介護用品(紙おむつ等)給付事業
+  summary: 在宅の寝たきり高齢者等に、カタログから選んだ紙おむつ等を偶数月に自宅へ届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に居住している
+  - 市税等の滞納がない世帯に属する
+  where: 高齢福祉課
+  url: https://www.city.sakurai.lg.jp/sosiki/hukushihokenbu/koureihukushika/kyufujosei/1394420150176.html
+  confidence: high
+  amount: カタログから上限 7,000 円分まで選べる。自己負担は 0 円。
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 外出が難しい在宅の高齢者の自宅へ理美容師が来て、頭髪の刈り込み等を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に居住するおおむね 65 歳以上
+  - 心身の障害等で一般の理美容の利用が困難
+  - 市税等を滞納していない
+  where: 高齢福祉課
+  url: https://www.city.sakurai.lg.jp/sosiki/hukushihokenbu/koureihukushika/kyufujosei/1394420377589.html
+  confidence: high
+  amount: 利用料金は 1 回 2,500 円、年 4 回まで（頁の表記どおり）。利用券を交付。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者福祉電話等貸与事業
+  summary: ボタンを押すと看護師のいるコールセンターにつながる緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - 市内に居住するおおむね 65 歳以上のひとり暮らし等
+  - 安否の確認が必要と認められる
+  where: 高齢福祉課
+  url: https://www.city.sakurai.lg.jp/life/life18/koureishien/1418717886999.html
+  confidence: high
+  amount: 自己負担は月 500 円（税込）。市民税非課税世帯・生活保護世帯は全額免除。
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費用補助制度
+  summary: 住民税非課税世帯の難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、聴力が頁の基準（両耳 50〜70dB 未満など）
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 指定の耳鼻咽喉科で補聴器の必要性の証明を受けられる
+  - 市税等の滞納がなく、過去 5 年以内にこの助成を受けていない
+  where: 高齢福祉課
+  url: https://www.city.sakurai.lg.jp/sosiki/hukushihokenbu/koureihukushika/kyufujosei/6372.html
+  confidence: high
+  amount: 購入費の 2 分の 1、上限 20,000 円（1,000 円未満は切り捨て）。
+- category: nichijo-yogu
+  name: 高齢者への火災予防用具の給付
+  name_on_page: 日常生活用具給付事業
+  summary: 非課税世帯のひとり暮らし高齢者等に、電磁調理器・火災報知器・自動消火器を給付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に居住するおおむね 65 歳以上のひとり暮らし高齢者等
+  - 電磁調理器は心身機能の低下で防火の配慮が必要な人
+  - 火災報知器・自動消火器はねたきり高齢者かひとり暮らし高齢者等
+  where: 高齢福祉課（申請書は窓口で受け取る。事前に連絡）
+  url: https://www.city.sakurai.lg.jp/life/lifestage/koreishakaigo/kyufujosei/1394420634976.html
+  confidence: high
+- category: haikai
+  name: 見守りQRコードシールの交付
+  name_on_page: 桜井市見守りQRコードシール
+  summary: 行方不明のおそれがある人の衣類などに貼る、QRコード付きシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住のおおむね 65 歳以上で、認知症等で行方不明のおそれがある
+  - 申請できるのは家族、担当のケアマネ・介護事業者、後見人等
+  - 事前登録が必要。本人の写真 1 枚を用意する
+  where: 高齢福祉課
+  url: https://www.city.sakurai.lg.jp/sosiki/hukushihokenbu/koureihukushika/1545381933967.html
+  confidence: high
+  amount: シールは 20 枚まで交付。
+not_found:
+- haishoku
+- iro
+- koken
+- jutaku
+- shingu
+- gaishutsu

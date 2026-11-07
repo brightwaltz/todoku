@@ -1,0 +1,207 @@
+city: '392103'
+name: 四万十市
+site: www.city.shimanto.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: あんしんコール（緊急通報装置の貸与）
+  name_on_page: あんしんコール事業
+  summary: 急病や火災に備え、緊急通報装置を貸してもらえる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 装置の必要性が認められること
+  - 通報を受ける協力員（2名程度）の承諾が必要
+  - 高齢者のみは二人世帯が対象。ガイドブックは障害者等も記載
+  where: 高齢者支援課 高齢者福祉係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1006.html
+  confidence: high
+  more_urls:
+  - https://www.city.shimanto.lg.jp/uploaded/attachment/11341.pdf
+- category: kaigo-yohin
+  name: 家族介護用品の支給（介護用品クーポン）
+  name_on_page: 家族介護用品の支給
+  summary: 重い要介護の方を家で介護する家族に、介護用品のクーポン券が出る。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3は調査票の排尿か排便が介助・見守り等であること
+  - 入院・入所の日数が当月の5割未満
+  - 介護保険料の滞納がないこと
+  where: 高齢者支援課 介護保険係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1016.html
+  confidence: high
+  amount: 月額5,000円分のクーポン券（5,000円券1枚）
+- category: iro
+  name: 在宅介護手当
+  name_on_page: 在宅介護手当
+  summary: 要介護3〜5の方を家で介護する家族に、手当が毎月出る。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所があること
+  - 介護者と要介護者に介護保険料の滞納がないこと
+  - 要介護3は申請前1年以内に介護サービスを使っていない
+  - 要介護4・5は月の半分以上在宅で、サービス利用が支給限度額の半分以内
+  where: 高齢者支援課 介護保険係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1044.html
+  confidence: high
+  amount: 月額7,000円
+- category: haishoku
+  name: 高齢者配食サービス
+  name_on_page: 高齢者配食サービスについて
+  summary: 調理済みの食事を届けてもらえる。中村は社協、西土佐は支所が窓口。
+  who: {}
+  at_application:
+  - 中村：75歳以上のひとり暮らし、または寝たきり・認知症の配偶者を介護する夫婦（ともに65歳以上）、重度身障者
+  - 西土佐：おおむね65歳以上のひとり暮らしや高齢者のみ世帯で、市長が必要と認めた人
+  - 中村は毎週水曜の昼食、西土佐は回数が心身の状態で異なる
+  where: 中村：四万十市社会福祉協議会、西土佐：西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1038.html
+  confidence: high
+  amount: 利用者負担は中村が1回300円、西土佐が1回350円
+- category: nichijo-yogu
+  name: 高齢者防火用具購入費の補助
+  name_on_page: 高齢者防火用具購入費補助
+  summary: 電磁調理器・火災警報器・消火器の購入費の一部が補助される。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の高齢者だけで構成される市民税非課税世帯
+  - 購入前の申請が必要（購入後は受付不可）
+  where: 高齢者支援課 高齢者福祉係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1039.html
+  confidence: high
+  amount: 上限は電磁調理器20,000円、火災警報器9,000円、消火器5,000円
+- category: jutaku
+  name: 要介護者等の住宅改造補助
+  name_on_page: 要介護者等住宅改造支援事業
+  summary: 要支援・要介護の方の住宅改造費を、市が補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 生計中心者の前年の所得税額が30万円未満、または生活保護世帯
+  - 事前申請が必要
+  - 市長が必要と認めた経費が対象
+  where: 高齢者支援課 介護保険係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1078.html
+  confidence: high
+  amount: 補助基準額100万円。補助率は3分の2以内、生活保護世帯は全額以内
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容院へ行けない在宅の方が、自宅で理美容を受けられる。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3〜5、または身体障害者手帳1・2級の人
+  - 理容所・美容所に行くのが困難な在宅の人
+  where: 高齢者支援課 高齢者福祉係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1122.html
+  confidence: high
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 高齢者の補聴器購入費用の補助について
+  summary: 補聴器の購入費の半分（上限5万円）が補助される。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市の介護保険の被保険者で、保険料の滞納がない
+  - 耳鼻科医師が補聴器の必要を認めた
+  - 聴覚障害の身体障害者手帳の対象にならない
+  - 過去にこの補助を受けていない
+  where: 高齢者支援課 高齢者福祉係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/15515.html
+  confidence: high
+  amount: 購入費の2分の1、上限5万円
+- category: haikai
+  name: 認知症高齢者等見守りシール
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: 行方不明に備え、二次元コード付きの見守りシールが無料でもらえる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上、または若年性認知症の人
+  - 認知機能の低下で行方不明のおそれがある
+  - 顔写真と利用申請書を提出
+  where: 地域包括支援センター（本庁1階）
+  url: https://www.city.shimanto.lg.jp/soshiki/10/13040.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見制度の利用支援助成金
+  name_on_page: 成年後見制度の利用支援助成金
+  summary: 親族の申立て費用と第三者の後見人等への報酬に助成がある。
+  who: {}
+  at_application:
+  - 対象者の細かい条件は頁になく、要綱で確認が必要
+  - 活用を考えるときは先に相談する
+  where: 地域包括支援センター
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1301.html
+  confidence: low
+- category: sonota
+  name: 長寿祝金
+  name_on_page: 長寿祝金
+  summary: 9月1日現在で満88歳・99歳・100歳以上の方に祝金が出る。
+  who: {}
+  at_application:
+  - 9月1日現在で満88歳、満99歳、または満100歳以上
+  - 手続きの書類は9月1日頃に郵送される
+  where: 高齢者支援課 高齢者福祉係、西土佐保健分室 保健係
+  url: https://www.city.shimanto.lg.jp/soshiki/10/1105.html
+  confidence: high
+  amount: 10,000円
+- category: sonota
+  name: 運転経歴証明書の発行手数料の補助
+  name_on_page: 高齢者免許返納サポート制度
+  summary: 免許返納後1年以内なら、運転経歴証明書の手数料1,100円が補助される。
+  who: {}
+  at_application:
+  - 運転免許を自主返納した65歳以上（病気等での65歳未満も含む）
+  - 運転経歴証明書の交付から1年以内
+  where: 環境生活課 市民生活係（本庁4階）
+  url: https://www.city.shimanto.lg.jp/uploaded/attachment/11341.pdf
+  confidence: low
+  amount: 手数料1,100円の補助
+not_found:
+- shingu
+- gaishutsu
+- mimamori
+- chusha
+- yutai

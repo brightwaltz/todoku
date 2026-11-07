@@ -1,0 +1,253 @@
+city: '302082'
+name: 紀の川市
+site: www.city.kinokawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入の助成
+  name_on_page: 高齢者紙おむつ助成事業
+  summary: 常時失禁状態の要介護の方に、紙おむつ購入の助成券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時失禁状態にある
+  - 市町村民税非課税世帯、または生活保護受給世帯
+  - 介護保険料に未納がない
+  - 毎年度の申請が必要
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/seikatsushien.html
+  confidence: high
+  amount: 要介護1・2は年額上限30,000円、要介護3〜5は年額上限55,200円
+- category: gaishutsu
+  name: 通院などの送迎（外出支援）
+  name_on_page: 外出支援サービス事業
+  summary: リフト車などで自宅と医療機関の間を送迎する。原則週1回。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - おおむね65歳以上
+  - 一般の交通機関を使うことが難しい
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/seikatsushien.html
+  confidence: high
+  amount: 利用者負担は市内・岩出市内200円、それ以外500円
+- category: ribiyo
+  name: 訪問理容の利用助成
+  name_on_page: 在宅高齢者等訪問理容サービス事業
+  summary: 自宅に理容師を呼ぶときの利用助成券を年4枚まで交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3〜5でおおむね65歳以上の方
+  - または身体障害者手帳1・2級の方
+  - または療育手帳A1・A2の方
+  - または精神障害者保健福祉手帳1・2級の方
+  - 毎年度の申請が必要
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/seikatsushien.html
+  confidence: high
+  amount: 1枚2,000円の助成券を年4枚まで（申請月で枚数が変わる）
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊（ショートステイ）事業
+  summary: 介護保険の対象外（自立）の方が、特養などに一時的に泊まり生活指導を受ける。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 介護保険の申請結果が「自立」で、養護の必要が生じた方
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/seikatsushien.html
+  confidence: high
+  amount: 利用料は1日500円と食事代などの実費
+- category: mimamori
+  name: 高齢者の見守り訪問
+  name_on_page: 高齢者見守り事業
+  summary: 委託業者や社協が定期的に自宅を訪問し、見守りと安否確認をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - これに準ずる世帯の方も対象
+  - 弁当宅配業者による見守りは弁当代が実費
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/hitorikurashi-koureishasetai.html
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 急病や災害などの緊急時に備え、緊急通報装置を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし、65歳以上のみの世帯
+  - またはひとり暮らしの重度心身障害者
+  - 日常生活で注意を要する状態にある
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/hitorikurashi-koureishasetai.html
+  confidence: high
+  amount: 所得割課税世帯は月額1,000円（税別）、所得割非課税世帯は無料。通話料は実費
+- category: mimamori
+  name: 通信機能付き電球の貸与
+  name_on_page: 通信機能付き電球設置事業
+  summary: 点灯・消灯の動きが長時間ないと連絡がいく電球を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市町村民税の所得割が非課税
+  - 高齢者見守り事業・緊急通報システム事業を使っていない
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/hitorikurashi-koureishasetai.html
+  confidence: high
+  amount: 無料（電気代は実費）
+- category: nichijo-yogu
+  name: 老人の日常生活用具の給付
+  name_on_page: 老人日常生活用具給付事業
+  summary: 電磁調理器、火災警報器、自動消火器などの用具を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの方など
+  - 日常生活の便宜を図る必要がある
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/hitorikurashi-koureishasetai.html
+  confidence: high
+  amount: 用具と所得に応じた利用者負担あり。詳細は問い合わせ
+- category: haikai
+  name: 徘徊SOSネットワークと見守りシール
+  name_on_page: ほっと安心ネットワーク事業
+  summary: 行方不明時に協力機関へ情報を提供する。登録者に見守りシールも配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のおそれのある認知症高齢者など
+  - 事前登録届の提出が必要
+  - 捜索には警察署への行方不明届が必要
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/kamiomutsu.html
+  confidence: high
+- category: haikai
+  name: 徘徊高齢者のGPS端末貸与
+  name_on_page: 徘徊高齢者位置探索サービス事業
+  summary: 家族にGPS端末を貸し出し、行方不明時に現在位置を探せる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、徘徊のある高齢者を在宅で介護している家族等
+  - 利用申請書は窓口で受け取る（HP掲載なし）
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/kamiomutsu.html
+  confidence: high
+  amount: 端末の貸与と位置探索は無料。警備員の現場急行は自己負担
+- category: sonota
+  name: 認知症の方の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の方の事故による賠償に備え、市が保険料を全額負担して加入させる。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、ほっと安心ネットワークの登録者
+  - 認知症が医師の診断や認定資料で確認できる
+  - または認知症自立度2a以上かつ障害自立度B2以下
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/kamiomutsu.html
+  confidence: high
+  amount: 保険料は市が全額負担（自己負担なし）
+- category: jutaku
+  name: 高齢者の住宅改修への補助
+  name_on_page: 高齢者居宅改修補助事業
+  summary: 手すり設置や段差解消などの住宅改修費を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護または要支援と判定された方
+  - 身体の障害等で住宅の改修が必要
+  - 重度身体日常生活用具給付の住宅改修費助成を受けていない
+  - 所得等の要件で対象外になる場合あり
+  where: 高齢介護課、各支所・出張所
+  url: https://www.city.kinokawa.lg.jp/024/jutakukankyo-seibi.html
+  confidence: high
+  amount: 上限20万円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を在宅で介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の期間が1年を超えている
+  - 過去1年間、介護保険サービスを使っていない（一部除く）
+  - 過去1年の入院が通算90日以内
+  - 生活保護を受けていない
+  where: 高齢介護課（市）
+  url: https://www.city.kinokawa.lg.jp/024/kazokukaigo.html
+  confidence: high
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見人の報酬を払うのが難しい非課税世帯の方に、報酬を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 預貯金などが基礎控除後に報酬額を下回る
+  - 報酬付与の審判確定の翌日から3か月以内に申請
+  - 後見人が四親等内の親族の場合は対象外
+  - 身寄りがない方は市長申立ての制度もある
+  where: 高齢介護課（65歳以上）、障害福祉課（65歳未満）
+  url: https://www.city.kinokawa.lg.jp/024/2025-0310-1506-80.html
+  confidence: high
+  amount: 家庭裁判所が審判した報酬額の範囲内で、不足分を助成
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: 医療情報を書いた用紙を入れる容器を配り、冷蔵庫に保管して救急に備える。
+  who: {}
+  at_application:
+  - 65歳以上の方がいる世帯
+  - または障害のあるひとり暮らしの方
+  where: 高齢介護課
+  url: https://www.city.kinokawa.lg.jp/024/sonota-torikumi.html
+  confidence: high
+not_found:
+- haishoku
+- hochoki
+- shingu
+- chusha
+- yutai

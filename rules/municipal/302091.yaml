@@ -1,0 +1,173 @@
+city: '302091'
+name: 岩出市
+site: www.city.iwade.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券の支給
+  name_on_page: 岩出市紙おむつ支給申請書
+  summary: 在宅で寝たきり・認知症の高齢者を介護する家族に、紙おむつ購入用の給付券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 対象の高齢者は寝たきりまたは認知症で、常時失禁状態
+  - 申請者は同居の親族等で、市内に住所がある
+  - 同一住所の人の直近の市町村民税所得割が非課税
+  - 入院中・施設入所中の人は対象外
+  where: 保険介護課 高齢者福祉担当（郵送可）
+  url: https://www.city.iwade.lg.jp/soshiki/8/1251.html
+  confidence: high
+  amount: 月額4,600円分（税込）の給付券。申請月から3月分まで最大12か月分
+- category: haishoku
+  name: 「食」の自立支援事業（配食）
+  name_on_page: 岩出市「食」の自立支援事業
+  summary: 調理が困難なひとり暮らしや高齢者世帯に、夕方、食事を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 調理が困難で、単身・高齢者のみまたはこれに準ずる世帯
+  - ケアプラン等に配食利用計画がある等、市長が適切と認めた人
+  - ふれあい給食サービスとの重複利用は不可
+  where: 保険介護課 高齢者福祉担当（郵送可）
+  url: https://www.city.iwade.lg.jp/soshiki/8/1248.html
+  confidence: high
+  amount: 1食440円の自己負担。火・木・金のうち希望日、週3回まで
+- category: haishoku
+  name: ふれあい給食サービス
+  name_on_page: 岩出市ふれあい給食サービス事業
+  summary: 調理が困難なひとり暮らしや高齢者世帯に、月2回、夕方に食事を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 調理が困難で、単身・高齢者のみまたはこれに準ずる世帯
+  - 自立支援の観点から利用が適切と市長が認めた人
+  - 「食」の自立支援事業との重複利用は不可
+  where: 保険介護課 高齢者福祉担当（郵送可）
+  url: https://www.city.iwade.lg.jp/soshiki/8/1249.html
+  confidence: high
+  amount: 1食200円の自己負担（配達時に支払う）。月2回
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: ひとり暮らし等の高齢者に、ボタンで通報・健康相談できる装置を貸し出す。
+  who:
+    household:
+    - alone
+    - alone_daytime
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし・日中ひとり暮らし・高齢者のみ世帯
+  - ひとり暮らしの重度心身障害者も対象（年齢の要件なし）
+  - 原則3名の協力員を登録できる（1名は民生委員）
+  - 固定電話があること（無ければ携帯電話）
+  where: 保険介護課 高齢者福祉担当（郵送可）
+  url: https://www.city.iwade.lg.jp/soshiki/8/1268.html
+  confidence: high
+  amount: 利用料は月額0円〜2,640円。所得割額や回線の種類で変わる
+  more_urls:
+  - https://www.city.iwade.lg.jp/uploaded/attachment/9925.pdf
+  - https://www.city.iwade.lg.jp/soshiki/8/1384.html
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 住民税非課税世帯の65歳以上に、補聴器本体等の購入費を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力が40dB以上で、聴覚障害の手帳の対象にならない
+  - 耳鼻咽喉科医が補聴器の必要性を証明する
+  - 過去にこの助成を受けていない
+  where: 保険介護課 高齢者福祉担当
+  url: https://www.city.iwade.lg.jp/soshiki/8/1379.html
+  confidence: high
+  amount: 上限20,000円（1人1台・1回限り）。補聴器本体と電池が対象
+- category: koken
+  name: 成年後見の後見人等報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 報酬を払うのが難しい人の、後見人等への報酬の一部または全部を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている、または資産等がなく助成が要ると市長が認める
+  - 岩出市に住所がある（住所地特例などの例外あり）
+  - 後見人等が配偶者・4親等内の親族の場合は対象外
+  - 他の自治体等の報酬助成を受けられる場合は対象外
+  where: 保険介護課 高齢者福祉担当
+  url: https://www.city.iwade.lg.jp/soshiki/8/1383.html
+  confidence: high
+  amount: 月額28,000円まで。令和7年4月から市長申立以外の案件も対象
+- category: jutaku
+  name: 高齢者居宅改修の上乗せ助成
+  name_on_page: 高齢者居宅改修補助事業
+  summary: 介護保険の給付対象額を超える住宅改修に、一定条件で市が助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険対象者がいる世帯で、介護保険の給付額を超える改修
+  - 収入・資産などにも要件がある（詳細は頁に無し）
+  where: 保険介護課 高齢者福祉担当
+  url: https://www.city.iwade.lg.jp/soshiki/8/1384.html
+  confidence: low
+- category: haikai
+  name: 見守り愛ネットワークの事前登録・靴用ステッカー
+  name_on_page: 岩出市見守り愛ネットワーク事業
+  summary: 行方不明に備え事前登録し、番号入りの靴・杖用ステッカーをもらう。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の認知症高齢者等
+  - 市内に住所があり在宅で生活している
+  - 本人の写真2枚（正面・横顔）が必要
+  where: 保険介護課の窓口（問い合わせは地域包括支援センター）
+  url: https://www.city.iwade.lg.jp/soshiki/40/1273.html
+  confidence: high
+  amount: ステッカーを1人10足分配布
+- category: sonota
+  name: 75歳以上のみ世帯の水道基本料金の半額
+  name_on_page: 高齢者のみ世帯水道料金減額事業
+  summary: 75歳以上だけの世帯の水道基本料金を半額にする（申請が必要）。
+  who:
+    age_min: 75
+    household:
+    - elderly_only
+  at_application:
+  - 市内に住民票があり、水道の用途が家庭用
+  - 同じ水道メーターを使う全員が75歳以上
+  - 対象と思われる世帯に申請書が郵送される
+  where: 保険介護課 高齢者福祉担当
+  url: https://www.city.iwade.lg.jp/soshiki/8/1378.html
+  confidence: high
+  amount: 基本料金2,200円を半額にする。原則、令和10年3月31日まで
+not_found:
+- iro
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

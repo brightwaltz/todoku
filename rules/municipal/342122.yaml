@@ -1,0 +1,201 @@
+city: '342122'
+name: 東広島市
+site: www.city.higashihiroshima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入助成券
+  name_on_page: 紙おむつ等購入助成(介護用品支給事業)
+  summary: 要介護4・5の人を同居で介護する家族に、紙おむつ等の購入助成券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する同居の家族が申請する
+  - 医師やケアマネジャーなどの証明が必要
+  - 介護保険第2号被保険者も対象
+  where: 地域包括ケア推進課、各支所担当課、各出張所
+  url: https://www.city.higashihiroshima.lg.jp/kenko/koreishafukushi/1/6641.html
+  confidence: high
+  amount: 年間75,000円分の助成券を前期と後期の2回に分けて交付
+- category: iro
+  name: 在宅寝たきり高齢者等の介護者慰労金
+  name_on_page: 在宅寝たきり高齢者等介護者慰労金
+  summary: 要介護3〜5の人を在宅で常時介護する家族に、慰労金を年1回支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者と要介護者が市民税非課税世帯で、ともに市民
+  - 要介護者と同居または近隣に住んで介護している
+  - 対象期間中に介護保険サービスを使っていない
+  - 重度心身障害者の慰労金を受けている人は対象外
+  where: 地域包括ケア推進課、各支所
+  url: https://www.city.higashihiroshima.lg.jp/kenko/koreishafukushi/1/6646.html
+  confidence: high
+  amount: 年間10万円
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理が困難なひとり暮らし等の高齢者に、食事を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 毎日の食事の調理が困難
+  - 介護保険第2号被保険者も対象
+  - ケアマネジャー経由で申請（いない人は地域包括支援センターへ）
+  where: 担当ケアマネジャー経由で地域包括ケア推進課。ケアマネジャーがいない人は地域包括支援センター
+  url: https://www.city.higashihiroshima.lg.jp/soshiki/kenkofukushi/3/7/2079.html
+  confidence: high
+  amount: 1食520円（税込）の自己負担。週6日、1日1食まで
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報システム
+  summary: 急病などのときにボタンで受信センターにつながる通報機器を貸す。
+  who: {}
+  at_application:
+  - 65歳以上で意識消失のおそれのある病気がある、ひとり暮らしか高齢者のみの世帯
+  - または、ひとり暮らしの重度身体障害者
+  - 電話の基本料・通話料は自己負担
+  - 利用申請書のほか、協力員（鍵管理者）の承諾書が必要
+  where: 地域包括ケア推進課、各支所
+  url: https://www.city.higashihiroshima.lg.jp/soshiki/kenkofukushi/3/7/2081.html
+  confidence: high
+  amount: 所得税か市民税が非課税の世帯は無料。両方課税の世帯は月1,078円
+- category: shingu
+  name: 寝具の丸洗い（寝具洗濯）
+  name_on_page: 寝具洗濯サービス
+  summary: 寝具の衛生管理が難しい人に、寝具の水洗いなどをする。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯・高齢者のみ世帯の人
+  - または身体障害者手帳か療育手帳をもつ人
+  - 老衰・心身の障害・傷病で寝具の衛生管理が困難
+  where: 地域包括ケア推進課、各支所
+  url: https://www.city.higashihiroshima.lg.jp/soshiki/kenkofukushi/3/7/2078.html
+  confidence: high
+  amount: 年4回まで無料
+- category: nichijo-yogu
+  name: 電磁調理器・自動消火器の給付
+  name_on_page: 日常生活用具の給付
+  summary: 火の元の管理が難しい高齢者に、電磁調理器か自動消火器を給付する。
+  who:
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上の寝たきりやひとり暮らしの高齢者等
+  - 本人と同居家族の全員が火の元の管理が難しい状態
+  - 市が給付の必要を認めたとき
+  where: 地域包括ケア推進課、各支所
+  url: https://www.city.higashihiroshima.lg.jp/soshiki/kenkofukushi/3/7/2076.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者割引乗車券（タクシー・バス）
+  name_on_page: 高齢者割引乗車券（タクシー・バス）
+  summary: 70歳以上の非課税世帯の人に、タクシー・バスで使える割引乗車券を年1回交付する。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある
+  - ひとり暮らし、または世帯員全員が65歳以上などの高齢者等世帯
+  - 障がい福祉課発行のタクシー乗車助成券を受けていない
+  where: 地域包括ケア推進課、各支所・出張所
+  url: https://www.city.higashihiroshima.lg.jp/soshiki/kenkofukushi/3/7/27328.html
+  confidence: high
+  amount: 100円券を年100枚（1万円分）。利用期間は8月1日から翌年7月31日
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見人等への報酬支払助成
+  summary: 後見人への報酬を払う資力がない人に、報酬相当の費用を助成する。
+  who: {}
+  at_application:
+  - 市内に住む成年被後見人・被保佐人・被補助人
+  - 生活保護の人、支援給付の人、または非課税世帯で預貯金50万円未満など
+  - 後見人等が親族の場合は対象外
+  where: 地域包括ケア推進課
+  url: https://www.city.higashihiroshima.lg.jp/kenko/koreishafukushi/5/44839.html
+  confidence: high
+  amount: 報酬額を助成。上限は在宅の期間で月2万8,000円、入院・入所の期間で月1万8,000円
+- category: haikai
+  name: 認知症高齢者等の見守りシール・事前登録
+  name_on_page: 認知症高齢者等見守り支援事業
+  summary: 行方不明のおそれがある認知症の人に、見守りシール交付と情報登録、賠償保険加入をする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市に住民票があり、認知症で行方不明になるおそれがある
+  - 認知症高齢者の日常生活自立度2以上相当、または市が同様と認める
+  - 申請できるのは対象者の家族か介護している人
+  - 介護保険第2号被保険者も対象
+  where: 地域包括ケア推進課、各地域包括支援センター
+  url: https://www.city.higashihiroshima.lg.jp/soshiki/kenkofukushi/3/orangemap/27704.html
+  confidence: high
+  amount: 個人賠償責任保険の保険料は全額市が負担
+- category: sonota
+  name: 軽度生活援助（草刈り・剪定・障子張替えなど）
+  name_on_page: 軽度生活援助サービス
+  summary: 草刈り、樹木の剪定、障子などの張替えをシルバー人材センターが行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 必要な作業を本人や家族ができない
+  - 日常生活を安全・衛生的に保つ範囲の作業のみ
+  where: 地域包括ケア推進課、各支所担当課、各地域包括支援センター
+  url: https://www.city.higashihiroshima.lg.jp/soshiki/kenkofukushi/3/7/20165.html
+  confidence: high
+  amount: 作業費の1割が自己負担。材料費や交通費などの実費は全額自己負担
+- category: sonota
+  name: 迷惑電話防止機器の購入費補助
+  name_on_page: 迷惑電話防止機器購入費補助金
+  summary: 65歳以上のみの世帯が迷惑電話防止機器を買ったとき、購入費の半額を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯員全員が65歳以上
+  - 市内の店舗で新たに購入し、自宅に設置した
+  - 市税の滞納がない
+  - 1世帯1回まで。購入した年度の末日までに申請
+  where: 市（要綱は申請先の課を示していない）
+  url: https://www.city.higashihiroshima.lg.jp/section/reiki_int/reiki_honbun/m313RG00001519.html
+  confidence: high
+  amount: 購入費の2分の1。上限1万円（運送・設置費などは除く）
+not_found:
+- hochoki
+- ribiyo
+- jutaku
+- yutai

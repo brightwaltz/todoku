@@ -1,0 +1,201 @@
+city: '332097'
+name: 高梁市
+site: www.city.takahashi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で重い要介護者を介護する家族に、紙おむつ等と交換できる支給券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護者と要介護者の両方が市内に住所がある
+  - 要介護者が非課税世帯に属している
+  - 入院・入所の日数が月の半分を超えていない
+  where: 高齢者支援課 高齢福祉係
+  url: https://www.city.takahashi.lg.jp/soshiki/19/kaigoyouhin1.html
+  confidence: high
+  amount: 月 6,000 円まで。介護者が市民税課税世帯なら月 3,000 円まで。支給券は通常年 3 回交付。
+- category: iro
+  name: 在宅介護者への激励慰労金
+  name_on_page: 在宅介護激励慰労金
+  summary: 重い要介護者を在宅で介護する家族に、年 1 回慰労金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護3以上の状態が6か月以上続き、生計を一にして介護
+  - 12月1日現在、市内に6か月以上居住
+  - 前1年の入院・入所が通算6か月以内
+  - ショートステイを概ね月の半分以上は使っていない
+  where: 地区の民生委員を通じて高齢者支援課 高齢福祉係へ進達
+  url: https://www.city.takahashi.lg.jp/soshiki/19/iroukin.html
+  confidence: high
+  amount: 要介護3は 1 万円、要介護4は 2 万円、要介護5は 3 万円（年 1 回）。
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理が難しいひとり暮らし等の高齢者に、食事を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 調理が困難であること
+  - 障害者のひとり暮らし・障害者のみの世帯も対象
+  where: 高齢者総合相談センター（地域包括支援センター）、詳細は高梁市社会福祉協議会
+  url: https://www.city.takahashi.lg.jp/soshiki/55/haisyoku.html
+  confidence: high
+  amount: 1 食 500 円の自己負担。配食は地域により週 1〜4 食。
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 急病や事故のとき、看護師等が常駐する通報センターにつながる装置を使える。
+  who: {}
+  at_application:
+  - 市内に住所があり現に居住している
+  - おおむね65歳以上のひとり暮らしで病弱
+  - または75歳以上のみの世帯で一方が寝たきり・病弱
+  - または重度身体障害のひとり暮らし等、市長が認めた人
+  - 協力員が 2 名以上必要
+  where: 高齢者総合相談センター（地域包括支援センター）
+  url: https://www.city.takahashi.lg.jp/soshiki/55/kinnkyuutuuhousouti.html
+  confidence: high
+  amount: 利用者負担は機種により月 150 円〜600 円。
+- category: haikai
+  name: 認知症高齢者等みまもりネットワークの登録
+  name_on_page: 高梁市認知症高齢者等みまもりネットワーク事業
+  summary: 道に迷うおそれのある高齢者の情報を事前登録し、行方不明時に早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 登録届出書・顔と全身の写真・自宅周辺地図が必要
+  where: 地域包括支援センター、各地域包括ステーション、地域局
+  url: https://www.city.takahashi.lg.jp/soshiki/55/mimamorinettowa-ku.html
+  confidence: high
+- category: haikai
+  name: GPS 端末の利用費の助成
+  name_on_page: 位置情報サービス利用助成金交付事業
+  summary: 認知症高齢者等が持つ GPS 端末の加入料や購入費を、介護する親族に助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請者は対象者を介護している3親等以内の親族
+  - 対象者が市内在住で、みまもりネットワークに登録済み
+  - 携帯電話・スマホ・スマートウォッチは対象外
+  where: 地域包括支援センター
+  url: https://www.city.takahashi.lg.jp/soshiki/55/itijouhou-joseijigyou.html
+  confidence: high
+  amount: 上限 1 万円（100 円未満は切り捨て）。
+  more_urls:
+  - https://www.city.takahashi.lg.jp/soshiki/55/mimamorinettowa-ku.html
+- category: jutaku
+  name: 高齢者在宅生活支援事業補助金（住宅改造の上乗せ）
+  name_on_page: 高齢者在宅生活支援事業補助金
+  summary: 介護保険の住宅改修に上乗せして、要介護者の住宅改造費の一部を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+  at_application:
+  - 被保険者証の住所に本人が居住している
+  - 工事前の事前申請が必要
+  - 同じ人・同じ住宅には原則 1 回のみ
+  where: 高齢者支援課 介護保険係
+  url: https://www.city.takahashi.lg.jp/soshiki/19/jyuutakukaishuu.html
+  confidence: high
+  amount: 工事費の 3 分の 2。工事費 50 万円に対し給付 33.3 万円が上限。
+- category: koken
+  name: 成年後見制度の利用支援（申立費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用や後見人の報酬を、生活保護またはそれに準じる人に助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、審判の申立てが必要な人
+  - 生活保護を受けている、またはそれに準じる収入・資産
+  - 目安は単身で年収・資産とも 150 万円以下
+  - 2 人以上世帯は年収・資産とも 200 万円以下
+  - 高齢者のほか知的・精神障害者等も対象
+  where: 市（要綱に担当課の記載なし）
+  url: https://www.city.takahashi.lg.jp/reiki_int/reiki_honbun/r052RG00001371.html
+  confidence: high
+  amount: 申立費用は 7 万円まで。報酬は在宅で月 2.8 万円、施設入所で月 1.8 万円まで。
+- category: gaishutsu
+  name: タクシー利用助成
+  name_on_page: 高梁市タクシー利用助成事業
+  summary: 対象地区に住む免許のない 65 歳以上に、タクシー助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 対象地区に居住（高倉町田井・飯部、落合町福地、成羽町下日名・上日名）
+  - 運転免許がない、または免許自主返納カードを持っている
+  where: 市（タクシー利用者証交付申請書を提出）
+  url: https://www.city.takahashi.lg.jp/reiki_int/reiki_honbun/r052RG00001359.html
+  confidence: high
+  amount: 月 3,000 円分の助成券を、年度末までの分まとめて交付。
+- category: gaishutsu
+  name: 福祉移送サービス（車での送迎）
+  name_on_page: 福祉移送サービス
+  summary: 歩行などが難しい人を、車で目的地まで送迎する有料サービス。
+  who: {}
+  at_application:
+  - 市内在住で、1人でタクシー等の利用が困難
+  - 高齢者世帯で前々年の所得税が非課税の75歳以上
+  - または要支援・要介護認定、障害者手帳、透析・難病の人
+  - 福祉移送サービス会への年会員登録が必要
+  where: 高梁市社会福祉協議会（本所または各支所）
+  url: https://www.city.takahashi.lg.jp/soshiki/16/isouservice.html
+  confidence: high
+  amount: 年会費 2,000 円と、15 分ごとに 250 円。
+- category: sonota
+  name: 高齢者緊急ショートステイ
+  name_on_page: 高齢者緊急ショートステイ事業
+  summary: 虐待や独居での緊急時に、協力施設で最長 14 日まで一時的に保護する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、要支援・要介護認定を受けていない
+  - 虐待のおそれ、または独居で緊急の保護が必要
+  - 入院が必要な人・伝染性疾患のある人は対象外
+  - 1 世帯 2 人まで、14 日以内
+  where: 市（利用申請書を提出。緊急時は電話でも可）
+  url: https://www.city.takahashi.lg.jp/reiki_int/reiki_honbun/r052RG00001233.html
+  confidence: high
+  amount: 事業費は日額 4,000 円で、利用者はその 1 割を負担。
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- mimamori

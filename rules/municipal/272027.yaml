@@ -1,0 +1,120 @@
+city: '272027'
+name: 岸和田市
+site: www.city.kishiwada.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者への紙おむつ給付
+  name_on_page: 紙おむつの給付
+  summary: 要介護3〜5で紙おむつを使う在宅の高齢者に、給付券で紙おむつを届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 同居家族の生計中心者の市・府民税が非課税（均等割課税は対象外）
+  - 要介護3は調査票の排尿・排便が「見守り等」に当たること
+  - 生活保護世帯は対象外
+  - 入院中・介護保険施設に入所中の人は対象外
+  where: 福祉政策課（高齢福祉担当）
+  url: https://www.city.kishiwada.lg.jp/page/31-koureisha-omutsu.html
+  confidence: high
+  amount: 月 6,000 円分まで（超えた分は自己負担）
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報機の貸出
+  name_on_page: 緊急通報機の貸し出し
+  summary: ボタンを押すと警備会社の受信センターにつながる通報機を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上の高齢者のみの世帯
+  - 病弱・障害で緊急時に動けない、寝たきり、急に倒れる病気のいずれか
+  - 協力員 3 名の登録、固定電話回線、合鍵の預託が必要
+  - 日中だけ高齢者のみになる世帯は対象外
+  where: 福祉政策課 地域福祉推進担当
+  url: https://www.city.kishiwada.lg.jp/page/31-kinkyutsuho.html
+  confidence: high
+  amount: 月額 0 円（生活保護・前年所得税非課税）、847 円（所得税課税）
+- category: koken
+  name: 成年後見制度の報酬助成
+  name_on_page: 成年後見制度利用支援助成金
+  summary: 費用の補助がないと後見制度を使いにくい人に、後見人等の報酬の全部か一部を助成する。
+  who: {}
+  at_application:
+  - 補助がないと後見制度の利用が難しいと認められること
+  where: 福祉政策課 地域福祉推進担当（成年後見制度報酬助成担当）
+  url: https://www.city.kishiwada.lg.jp/page/31-seinenkouken.html
+  confidence: low
+  more_urls:
+  - https://www.city.kishiwada.lg.jp/page/housyuujosei01.html
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 岸和田市高齢者補聴器購入費助成事業
+  summary: 住民税非課税世帯の65歳以上で、中等度の難聴の人に補聴器購入費の半額を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻咽喉科医師が補聴器の必要を認めていること
+  - 両耳の聴力レベルが 40dB 以上 70dB 未満
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 過去に本市・他市でこの助成を受けていない
+  - 購入前に申請。アンケートへの協力が必要
+  where: 福祉政策課（旧館2階41番窓口）
+  url: https://www.city.kishiwada.lg.jp/page/08koureisya-hotyoukizyosei.html
+  confidence: high
+  amount: 購入額の 2 分の 1（上限 25,000 円）、1 人 1 回限り
+- category: ribiyo
+  name: 訪問調髪の利用券（さわやか調髪助成）
+  name_on_page: さわやか調髪助成
+  summary: 要介護3以上の在宅の人に、自宅での調髪の利用券を年2回分送る。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 4月1日現在で上の条件にすべて当てはまること
+  - 申請書を出した人に利用券を送る
+  where: 福祉政策課 地域福祉推進担当
+  url: https://www.city.kishiwada.lg.jp/page/31-sawayakaribiyo.html
+  confidence: high
+  amount: 年 2 回分の利用券。自己負担はカット 1 回 2,000 円。パーマ・毛染めは対象外
+- category: sonota
+  name: きんきゅうカード（医療情報の保管容器）の配布
+  name_on_page: 岸和田市きんきゅうカードの配布
+  summary: かかりつけ医などの情報を入れた容器を冷蔵庫に置き、救急時に役立てる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 緊急時に対応できる人がいない世帯
+  - 何らかの支援が必要な人
+  - 市役所では配らない
+  where: 福祉総合センター（市社会福祉協議会ボランティアセンター）、市内の郵便局窓口
+  url: https://www.city.kishiwada.lg.jp/page/31-kinkyucard.html
+  confidence: high
+not_found:
+- iro
+- haishoku
+- gaishutsu

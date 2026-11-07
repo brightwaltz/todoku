@@ -1,0 +1,122 @@
+city: '332160'
+name: 浅口市
+site: www.city.asakuchi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 要介護4・5の方を在宅で介護する非課税世帯の家族に、紙おむつ等と交換できる交付券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者と要介護者が市内の同じ住所に住んでいる
+  - 世帯全員が介護保険料を滞納していない
+  - ケアマネか民生委員の家族介護確認書が必要
+  where: 高齢者支援課（高齢者福祉係・介護保険係）
+  url: https://www.city.asakuchi.lg.jp/page/1329.html
+  confidence: high
+  amount: 年額の上限は支給決定日で 2 万円〜10 万円、1 か月の購入上限は 2 万円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5で介護保険サービスを1年使っていない方を在宅で介護する家族に、慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の認定から1年以上たっている
+  - 過去1年間、介護保険サービスを受けていない（入院期間を除く）
+  - 要介護者と介護者が1年以上市内に住所がある
+  - 世帯全員が介護保険料を完納している
+  where: 高齢者支援課（高齢者福祉係・介護保険係）
+  url: https://www.city.asakuchi.lg.jp/page/1330.html
+  confidence: high
+  amount: 年額 10 万円
+- category: jutaku
+  name: 高齢者住宅改造の助成
+  name_on_page: 高齢者住宅改造の助成
+  summary: 手すりの取り付けやトイレの改造など、高齢者向けの住宅改造費を市が助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 住民税非課税者であること
+  - 市内に住所がある
+  - 世帯全員が納付すべき市税を完納している
+  - 工事は支給決定の後に着工し、2月末までに完了する
+  where: 高齢者支援課（高齢者福祉係・介護保険係）
+  url: https://www.city.asakuchi.lg.jp/page/1332.html
+  confidence: high
+- category: nichijo-yogu
+  name: 日常生活用具の給付
+  name_on_page: 日常生活用具の給付
+  summary: 防火などの配慮が必要なひとり暮らし高齢者などに、電磁調理器や火災警報機などを給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 心身機能の低下で防火などの配慮が必要なひとり暮らし高齢者など
+  - 所得状況により個人負担が出る場合がある
+  where: 高齢者支援課（高齢者福祉係・介護保険係）
+  url: https://www.city.asakuchi.lg.jp/page/1331.html
+  confidence: low
+  amount: 品目は電磁調理器、火災警報機、つえ、老人用手押し車。金額は頁に無い
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置
+  summary: ボタンを押すと緊急通報センターに通報が入る装置を設置する。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上のひとり暮らしか高齢者のみの世帯で、通報手段の確保が困難
+  - または、ひとり暮らしの重度身体障害者で通報手段の確保が困難
+  - 緊急時に駆けつけられる協力員が3名以上必要
+  - 固定電話が必要
+  where: 高齢者支援課
+  url: https://www.city.asakuchi.lg.jp/page/1317.html
+  confidence: high
+  amount: 電池交換 330 円（2年に1度）、バッテリー交換 4,180 円（4年に1度）
+- category: sonota
+  name: 迷惑電話防止機能付き電話機の購入補助
+  name_on_page: 特殊詐欺・迷惑電話防止機能付き電話機の購入補助
+  summary: 詐欺電話を防ぐ機能付きの電話機を買う費用の半額を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所があり、現に市内に住んでいる
+  - 本人と同一世帯の人が市税を滞納していない
+  - ひとり暮らしでなくてもよい
+  - 同一世帯につき1回限り、購入前に申請する
+  where: 産業振興課（市役所分庁舎1階）
+  url: https://www.city.asakuchi.lg.jp/page/2239.html
+  confidence: high
+  amount: 購入・設置費の2分の1、上限 5,000 円
+not_found:
+- hochoki
+- ribiyo
+- shingu
+- gaishutsu

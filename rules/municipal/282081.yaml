@@ -1,0 +1,149 @@
+city: '282081'
+name: 相生市
+site: www.city.aioi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5相当の高齢者を介護する非課税世帯に、紙おむつ等の介護用品を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 介護されている高齢者が65歳以上で要介護4・5相当
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 年間10万円以内（12か月未満は月8,340円×月数が限度）。品目は紙おむつ、尿取りパッド、使い捨て手袋、清拭剤
+- category: haishoku
+  name: 配食サービスの助成
+  name_on_page: 配食サービス事業
+  summary: 食事の用意が難しい非課税世帯の高齢者に、配食費を助成し安否も確認する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 食事の準備や買い物が難しい高齢者（65歳以上が目安）
+  - ひとり暮らし、高齢者のみの世帯などが対象
+  - 申請後に職員の調査で利用の可否を決める
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 1食につき200円を助成、月20回まで
+  more_urls:
+  - https://www.city.aioi.lg.jp/reiki/reiki_int/reiki_honbun/k310RG00000372.html
+- category: ribiyo
+  name: 訪問理・美容の出張費助成
+  name_on_page: 訪問理・美容サービス
+  summary: 理美容院に行けない方の、自宅での理美容の出張費を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 理容所や美容院に行くことが困難な方
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 出張費相当分を助成、年6回まで（カット代等の実費は自己負担）
+- category: haikai
+  name: ひとり歩き高齢者の位置検索端末の貸与
+  name_on_page: ひとり歩き高齢者等家族支援サービス事業
+  summary: ひとり歩きのある高齢者を在宅で介護する家族に、位置検索の専用端末を貸与する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、ひとり歩き行動のある高齢者等を介護する家族等
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 初期費用5,500円は市が負担。基本使用料月2,200円とオプション料は利用者負担
+- category: haikai
+  name: あんしん見守りグッズの交付
+  name_on_page: あんしん見守り事業
+  summary: 事前登録した高齢者等に、外出時の身元確認用の見守りグッズを交付する。
+  who: {}
+  at_application:
+  - 65歳以上、認知症の症状がある方、障害のある方のいずれか
+  - その他、市長が特に必要と認める方も対象
+  - 写真と申請書を提出して登録する
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  more_urls:
+  - https://www.city.aioi.lg.jp/soshiki/chouju/mimamori.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: アイアイコール（緊急通報装置）設置事業
+  summary: 援護が必要な一人暮らしの高齢者等に、緊急時に通報できる装置を貸与する。
+  who: {}
+  at_application:
+  - 身体上援護が必要な65歳以上の一人暮らしの方「等」
+  - 緊急補助員が2名必要
+  where: お住まいの地区の民生委員に相談（長寿福祉室）
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 費用は無料。市民税課税世帯は設置費を負担
+- category: jutaku
+  name: 住宅改造費の助成
+  name_on_page: 高齢者等住宅改造助成事業
+  summary: 介護保険や障害者制度の助成を優先したうえで、残る改造工事費を助成する。
+  who: {}
+  at_application:
+  - 要介護認定、身体障害者手帳、療育手帳のいずれかを持つ方
+  - 工事前に調査があるため、着工前に相談が必要
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 世帯の課税状況に応じ、対象経費の1/3〜9/10を助成
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 難聴で生活に支障のある高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、聴覚障害の身体障害者手帳を持たない
+  - 耳鼻咽喉科で診断を受け、補聴器適合の診療情報提供書がある
+  - 認定補聴器専門店等で購入した補聴器本体と付属品が対象
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 上限2万円、1人1回限り
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット配付事業
+  summary: 持病や服薬の情報を救急時に伝えるキット等を無料で配付する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし、または65歳以上のみの世帯
+  - 重度の障害者手帳を持つ方のみ（高齢者との同居含む）の世帯
+  - 命にかかわる病気（心臓疾患等）のある方がいる世帯
+  where: 長寿福祉室
+  url: https://www.city.aioi.lg.jp/soshiki/chouju/if-2.html
+  confidence: high
+  amount: 無料（キット、ステッカー、救急安心カード）
+not_found:
+- iro
+- koken
+- shingu
+- nichijo-yogu

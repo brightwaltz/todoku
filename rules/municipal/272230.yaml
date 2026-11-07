@@ -1,0 +1,154 @@
+city: '272230'
+name: 門真市
+site: www.city.kadoma.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 急病時にボタンで看護師のいるセンターにつながる装置を貸してもらえる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 健康に不安のあるおおむね65歳以上
+  - 同居家族が日中不在なだけの独居は対象外
+  - 固定電話（使えない回線あり）が必要
+  - 家族2名と市内の協力員2名以上が必要
+  where: 高齢福祉課 高齢介護グループ
+  url: https://www.city.kadoma.osaka.jp/kenko_fukushi/kaigohoken/service/29562.html
+  confidence: high
+  amount: 世帯の市民税所得割額で負担が変わる。生活保護・非課税世帯は負担なし
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券
+  name_on_page: 紙おむつなどの給付
+  summary: 市内協力店で紙おむつ・尿取りパッド・介護シーツを買える給付券が出る。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護者と家族介護者がともに市内在住
+  - 家族が在宅で介護している
+  - 生活保護受給者・入院中・施設入居者は対象外
+  where: 高齢福祉課 高齢介護グループ
+  url: https://www.city.kadoma.osaka.jp/mokutekibetsu/korei_kaigo/29611.html
+  confidence: high
+  amount: ひと月あたり上限4,000円分
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず要介護4・5の人を在宅で介護する家族に年額を支給。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請前の1年間、介護保険サービス未利用（短期入所1週間程度は除く）
+  - 要介護者と家族介護者が介護保険料を滞納していない
+  - 3か月以上入院した場合は退院後1年間サービス未利用
+  where: 高齢福祉課（郵送または持参）
+  url: https://www.city.kadoma.osaka.jp/kenko_fukushi/kaigohoken/service/29564.html
+  confidence: high
+  amount: 年額10万円
+- category: haikai
+  name: 認知症の方の見守りQRコードシール
+  name_on_page: QRコード付きシール・ラベルの交付
+  summary: 衣服などに貼るQRコードで、発見者から家族へ通知が届くシールを交付。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる心配がある
+  - どこシル伝言板登録シートの添付が必要
+  where: 高齢福祉課（郵送または持参）
+  url: https://www.city.kadoma.osaka.jp/kenko_fukushi/kaigohoken/6/29405.html
+  confidence: high
+  amount: 無料（追加分や高齢者住宅入居者は自己負担）
+- category: haikai
+  name: 徘徊対策のGPS機器の初期費用助成
+  name_on_page: 認知症高齢者等位置探索システム(GPS)利用助成金交付
+  summary: 行方不明に備えたGPS機器の初期導入費用を助成する（購入前に事前申請）。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 要支援・要介護認定を受けた本人を介護している家族
+  - 認知症等で行方不明になる心配がある
+  - 機器の購入前に事前審査の申請が必要
+  where: 高齢福祉課（郵送または持参）
+  url: https://www.city.kadoma.osaka.jp/kenko_fukushi/kaigohoken/6/29405.html
+  confidence: high
+  amount: 初期導入費用の助成（上限18,480円）。月額料金は自己負担
+- category: haikai
+  name: 高齢者等SOSネットワークの登録
+  name_on_page: SOSネットワーク登録
+  summary: 徘徊のおそれがある人の情報を事前登録し、行方不明時に協力事業者へ共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊等のおそれのある高齢者等
+  - 行方不明時は警察への届出と利用依頼書の提出が必要
+  where: 高齢福祉課（郵送または持参）
+  url: https://www.city.kadoma.osaka.jp/kenko_fukushi/kaigohoken/6/29405.html
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援事業（申立て費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見の申立て費用や後見人への報酬の負担が難しい人に費用を助成する。
+  who: {}
+  at_application:
+  - 65歳以上は高齢福祉課、65歳未満は障がい福祉課が窓口
+  where: 高齢福祉課（65歳以上）、障がい福祉課（65歳未満）
+  url: https://www.city.kadoma.osaka.jp/soshiki/hokenfukushi/6/3_1/2/37323.html
+  confidence: high
+- category: sonota
+  name: ごみの戸別収集（ふれあいサポート収集）
+  name_on_page: ふれあいサポート収集
+  summary: ごみ出しが難しい世帯の家庭ごみを、市職員が週1回玄関先で無料収集する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 介護サービス等を受けている世帯で、ごみを出すのが難しい
+  - 65歳以上で要介護2以上、または重度の障害者手帳等の人を含む
+  - ヘルパーや親族・近隣の協力が得られる世帯は対象外
+  - 安否確認も希望できる
+  where: クリーンセンター業務課、高齢福祉課
+  url: https://www.city.kadoma.osaka.jp/kurashi/gomi/9/3/4397.html
+  confidence: high
+  amount: 無料
+not_found:
+- haishoku
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori

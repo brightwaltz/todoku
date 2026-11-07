@@ -1,0 +1,159 @@
+city: '352110'
+name: 長門市
+site: www.city.nagato.yamaguchi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給事業
+  summary: 重い要介護の人を在宅で介護する非課税世帯の家族に、紙おむつ等を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おおむね要介護4・5の人を在宅で介護している市内の家族
+  - 常時失禁等のねたきり高齢者を介護する場合も対象になりうる
+  - 要介護認定がなくても、相当と認められる人の介護なら対象になりうる
+  where: 高齢福祉課 地域包括ケア推進室
+  url: https://www.city.nagato.yamaguchi.jp/soshiki/70/1091.html
+  confidence: high
+  amount: 月 8,000 円まで（紙おむつ、尿取りパッド、使い捨て手袋、清拭剤など）
+  more_urls:
+  - https://www.city.nagato.yamaguchi.jp/uploaded/attachment/34572.pdf
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 「食」の自立支援事業
+  summary: 調理や食材調達が難しい高齢者宅へ、安否確認を兼ねてお弁当を手渡しで届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 安否確認等の見守りが必要で、調理や食材調達が困難
+  - 心身の状況などから利用調整を行う
+  where: 高齢福祉課 地域包括ケア推進室、地域包括支援センター
+  url: https://www.city.nagato.yamaguchi.jp/soshiki/70/1091.html
+  confidence: high
+  amount: 自己負担は 1 食 650 円（課税世帯）、400 円（非課税世帯）。原則週 3 回まで
+- category: haikai
+  name: 認知症の徘徊見守り用 GPS 端末の購入・レンタル補助
+  name_on_page: 認知症家族等支援事業
+  summary: 徘徊のおそれがある人の家族に、GPS 見守り端末の購入費や初回レンタル料を補助する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症による徘徊のおそれがある在宅の人の家族等が申請
+  - 購入または初回レンタル分の領収書が必要
+  - 1 人につき 1 回限り
+  where: 高齢福祉課 地域包括ケア推進室、地域包括支援センター
+  url: https://www.city.nagato.yamaguchi.jp/soshiki/70/35137.html
+  confidence: high
+  amount: 上限 2 万円（ランニングコストは別途自己負担）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報サービス
+  summary: 在宅の高齢者や重度障害者の自宅に緊急通報装置を設置し、緊急時に対応する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、慢性疾患等により日常生活に注意を要する状態
+  - 65歳以上の単身世帯、または65歳以上のみで全員が要援護状態の世帯
+  - ひとり暮らしの重度障害者、高齢者と重度障害者のみの世帯等も可
+  where: 高齢福祉課、各支所、各出張所
+  url: https://www.city.nagato.yamaguchi.jp/soshiki/70/29092.html
+  confidence: high
+  amount: 利用料は月 440 円（住民税非課税世帯・ひとり暮らしの重度障害者は免除）
+  more_urls:
+  - https://www.city.nagato.yamaguchi.jp/uploaded/life/54105_222954_misc.pdf
+- category: gaishutsu
+  name: 福祉タクシー券（要介護認定者）
+  name_on_page: 高齢者等福祉タクシー助成事業
+  summary: 要介護 1〜5 の在宅の人に、タクシー料金を助成する利用券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 心身障害者向けの福祉タクシー券の交付を受けていない
+  - 介護保険施設の入所者は対象外
+  where: 高齢福祉課、各支所、各出張所
+  url: https://www.city.nagato.yamaguchi.jp/soshiki/70/36829.html
+  confidence: high
+  amount: 年 48 枚（1 枚 500 円分）。10 月以降の申請は 24 枚
+- category: iro
+  name: 家族介護見舞金
+  name_on_page: 家族介護見舞金支給事業
+  summary: 要介護 4・5 の人を在宅で介護する非課税世帯の同居家族に見舞金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 基準日（10月1日）に市内に住所がある
+  - 在宅介護の日数が基準日前 1 年間で 180 日を超える
+  where: 高齢福祉課 高齢福祉班
+  url: https://www.city.nagato.yamaguchi.jp/uploaded/attachment/34572.pdf
+  confidence: high
+  amount: 上限 2 万円
+  more_urls:
+  - https://www.city.nagato.yamaguchi.jp/uploaded/life/54105_222954_misc.pdf
+- category: sonota
+  name: 通話録音装置の無料貸出
+  name_on_page: 通話録音装置
+  summary: 詐欺電話対策の警告メッセージ付き通話録音装置を、高齢者のみの世帯に無料で貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内在住の65歳以上の高齢者のみの世帯
+  - または日中、住居に高齢者のみとなる世帯
+  - 貸出期間は設置から 6 か月
+  where: 長門市消費生活センター（市民活動推進課）
+  url: https://www.city.nagato.yamaguchi.jp/uploaded/life/54105_222954_misc.pdf
+  confidence: low
+  amount: 無料
+- category: sonota
+  name: はり・きゅう施術費の助成（後期高齢者）
+  name_on_page: はり、きゅう施術費助成事業
+  summary: 市指定の施術所ではり・きゅうを受けたとき、1 回ごとに施術費を一部助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、後期高齢者医療の被保険者
+  - または満75歳以上で生活保護世帯に属する人
+  - 市指定の施術所のみ。月 10 回まで
+  where: 総合窓口課 保険管理班
+  url: https://www.city.nagato.yamaguchi.jp/uploaded/attachment/34572.pdf
+  confidence: low
+  amount: はりまたはきゅう 1 回 800 円、併用 1 回 1,000 円
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

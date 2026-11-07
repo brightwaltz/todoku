@@ -1,0 +1,89 @@
+city: '362085'
+name: 三好市
+site: www.miyoshi.i-tokushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者等のタクシー券半額販売
+  name_on_page: 三好市高齢者等タクシー利用助成事業
+  summary: 登録すると、200円のタクシー券を半額で買って市内の指定タクシーで使える。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上、重度障害のある人、生活保護の人のいずれか
+  - 自動車・二輪車・原付などの運転免許を持たない
+  - 市税の滞納がない
+  - 施設入所中や継続して入院中の人は対象外
+  - 登録は毎年更新
+  where: 長寿・障害福祉課、またはお住まいの地区の支所
+  url: https://www.miyoshi.i-tokushima.jp/docs/696196.html
+  confidence: high
+  amount: 券1枚200円を半額で購入。運転免許を返納し運転経歴証明書がある人は1回のみ3,000円分の券を支給
+- category: koken
+  name: 成年後見の市長申立てと後見人報酬の助成
+  name_on_page: 三好市成年後見制度利用支援事業
+  summary: 身寄りがない人の後見申立てを市長が行い、生活保護等の人は後見人報酬の助成を受けられる。
+  who: {}
+  at_application:
+  - 市内に住み、認知症などで判断能力が不十分
+  - 市長申立ては、2親等内の親族がいない・申立てしない等の場合
+  - 報酬助成は、生活保護等で報酬を払うのが難しい人
+  - 報酬助成の申請は、審判の翌日から2か月以内
+  where: みよし地域包括支援センター（長寿・障害福祉課）
+  url: https://www.miyoshi.i-tokushima.jp/docs/3010218.html
+  confidence: high
+  amount: 報酬助成は月額の上限が在宅28,000円、施設入所18,000円
+- category: haikai
+  name: 認知症の行方不明に備える事前登録と見守りシール
+  name_on_page: つながろう三好ネットワーク事業
+  summary: 外出中に行方不明になるおそれのある認知症の人を事前登録し、早期発見につなげる。
+  who: {}
+  at_application:
+  - 市内に住み、認知症状があり支援が必要と認められる人
+  - 本人のほか、3親等内の親族や民生委員なども申請できる
+  where: みよし地域包括支援センター
+  url: https://www.miyoshi.i-tokushima.jp/docs/2487121.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制整備事業
+  summary: 急病や災害時に備え、見守りが必要な高齢者の家庭に緊急通報装置を貸す。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしで、健康上の注意が必要な人
+  - または、75歳以上の高齢者だけの世帯
+  - または、寝たきり・重度障害の人を在宅で介護する高齢者
+  where: 頁に記載なし（長寿・障害福祉課、地域包括支援センターに確認）
+  url: https://www.miyoshi.i-tokushima.jp/fs/5/6/1/8/1/4/_/%E4%B8%89%E5%A5%BD%E5%B8%82%E9%AB%98%E9%BD%A2%E8%80%85%E4%BF%9D%E5%81%A5%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB(%E7%AC%AC10%E6%AC%A1).pdf
+  confidence: low
+- category: jutaku
+  name: 高齢者の住宅改造費の助成
+  name_on_page: 高齢者住宅改造促進事業
+  summary: 介助が必要な高齢者の家を暮らしやすく改造する費用を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 全世帯員の前年度所得が所得税非課税の世帯
+  - 徳島県の長寿社会づくり支援費補助金を利用する事業
+  where: 頁に記載なし（長寿・障害福祉課に確認）
+  url: https://www.miyoshi.i-tokushima.jp/fs/5/6/1/8/1/4/_/%E4%B8%89%E5%A5%BD%E5%B8%82%E9%AB%98%E9%BD%A2%E8%80%85%E4%BF%9D%E5%81%A5%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB(%E7%AC%AC10%E6%AC%A1).pdf
+  confidence: low
+  amount: 対象経費（上限90万円）の3分の2
+not_found:
+- kaigo-yohin
+- haishoku
+- hochoki
+- mimamori

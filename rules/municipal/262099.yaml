@@ -1,0 +1,239 @@
+city: '262099'
+name: 長岡京市
+site: www.city.nagaokakyo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 見守りつき配食サービス
+  name_on_page: 配食サービス
+  summary: 指定事業者の配食を使うとき、安否確認にかかる費用を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 要支援・要介護認定を受けている、または総合事業対象者
+  - 高齢者世帯・独居世帯、またはこれに準ずる世帯
+  - 先に配食事業者と契約し、ケース相談記録票等が必要
+  where: 高齢介護課 高齢福祉係（地域包括支援センターも相談先）
+  url: https://www.city.nagaokakyo.lg.jp/0000002450.html
+  confidence: high
+  amount: 1回325円分を市が負担（月20回以上は6,500円）。1日1回、1か月に1事業所分まで
+- category: kinkyu-tsuho
+  name: 緊急・相談通報装置の貸出（シルバーほっとライン）
+  name_on_page: 緊急・相談通報装置（シルバーほっとライン）
+  summary: ボタンで受信センターにつながる通報装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の一人暮らしか65歳以上世帯で、要支援・要介護認定者等
+  - または75歳以上の一人暮らし・75歳以上のみの世帯
+  - 申請に民生児童委員の署名と近所の協力員1名以上が必要
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000002449.html
+  confidence: high
+  amount: 利用料は月0〜1,200円（税別、所得で区分）。機器変更は5,000円
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）給付券の支給
+  name_on_page: 介護用品給付事業
+  summary: 要介護者を家で介護する人に、紙おむつ等の給付券を毎月出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3は、おむつの必要性が認定調査票で認められること
+  - 本市の介護保険被保険者で、介護している人が申請
+  - 受付は4月・10月の各1〜15日（随時も可）
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000002437.html
+  confidence: high
+  amount: 月4,000円分の給付券を1枚。超えた分は自己負担
+- category: nichijo-yogu
+  name: 防火対策用具の給付
+  name_on_page: 防火対策用具給付
+  summary: 電磁調理器や火災警報器などの購入費を限度額まで助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 生計中心者の市民税が非課税
+  - 認知機能の低下や住宅環境で、防火の配慮が必要
+  - 使える用具を持っておらず、日常的に使う
+  - 決定後に購入する（償還払いか受領委任払い）
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000002449.html
+  confidence: high
+  amount: 電磁調理器1.2万円、Siコンロ2.5万円、電子レンジ1.5万円、警報器1万円、自動消火3万円まで
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: sonota
+  name: 介護保険外ホームヘルプ等の利用費助成
+  name_on_page: 介護保険外ホームヘルプ等利用費助成事業
+  summary: 介護保険外のホームヘルプ等に使える給付券を、介護する家族に出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 主たる介護者1名が申請
+  - 本市の介護保険被保険者で、介護施設・病院に入っていない
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000002449.html
+  confidence: high
+  amount: 要介護者1人に3,000円分の券を年度ごとに12枚（有効期限は3月末）
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: jutaku
+  name: 高齢者いきいき住まい改造助成
+  name_on_page: 高齢者いきいき住まい改造助成
+  summary: 介護保険の住宅改修の限度額を超えた工事費を市が助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 生活保護世帯、または市民税非課税世帯
+  - 介護保険の限度額20万円を超える住宅改修が必要
+  - 工事前に住宅改修チームの訪問とプラン作成が必要
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000002449.html
+  confidence: high
+  amount: 限度額20万円を超えた分のうち20万円以内を助成（自己負担は助成額の1割）
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: jutaku
+  name: 介護予防安心住まい事業（住宅改修費の助成）
+  name_on_page: 介護予防安心住まい事業
+  summary: 要介護認定のない高齢者の住宅改修費を、2/3助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 基本チェックリストで運動機能の低下が認められる
+  - 総合事業の介護予防・生活支援サービスを利用している
+  - 健康保険の扶養なら、扶養している人も非課税
+  - 工事前に住宅改修チームの訪問とプラン作成が必要
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000002449.html
+  confidence: high
+  amount: 対象工事費と24万円の低い方の2/3、上限16万円
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: sonota
+  name: 認知症高齢者の家族への、やすらぎ支援員の派遣
+  name_on_page: 認知症高齢者等やすらぎ支援
+  summary: 支援員が家を訪ね、見守りや話し相手をして介護家族を休ませる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    at_home: true
+  at_application:
+  - 市内在住のおおむね65歳以上の認知症高齢者を、在宅で介護する家族
+  - 身体に触れる介護はしない
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000005875.html
+  confidence: high
+  amount: 無料。1日4時間まで、週8時間以内（平日8:30〜17:00）
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: haikai
+  name: おでかけあんしん見守り事業（事前登録・反射シール・タグ）
+  name_on_page: おでかけあんしん見守り事業
+  summary: 行方不明のおそれのある人を事前登録し、反射シールやBluetoothタグを受け取る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症等により行方不明になるおそれがある
+  - 届出は家族かこれに準ずる人。家族の印鑑と本人の写真が必要
+  - タグは事前登録者のうち希望者に配布
+  where: 高齢介護課窓口（届出用紙は地域包括支援センターにもある）
+  url: https://www.city.nagaokakyo.lg.jp/0000005875.html
+  confidence: high
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: haikai
+  name: おでかけあんしん助成（GPS端末の利用費助成）
+  name_on_page: おでかけあんしん助成（GPS利用助成）
+  summary: 行方不明のおそれのある高齢者のGPS端末の費用を市が助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明のおそれのある高齢者を介護する家族が申請
+  - ミマモルメかココセコムの端末が対象
+  where: 高齢介護課 高齢福祉係
+  url: https://www.city.nagaokakyo.lg.jp/0000005875.html
+  confidence: high
+  amount: 初期費用・機器買替費等を市が負担。月額料金は非課税世帯は半額、生活保護世帯は全額を3月末に助成
+  more_urls:
+  - https://www.city.nagaokakyo.lg.jp/cmsfiles/contents/0000006/6396/R8shiori.pdf
+- category: gaishutsu
+  name: 高齢者の運転免許自主返納への支援（バス定期券等）
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 運転免許を全部返納した人に、バス定期券か回数券等のセットを渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 有効期間内の運転免許証を自主的に全部返納した市民
+  - 一人1回限り。返納から1年以内に申請
+  - 令和8年度の受付は令和9年2月26日まで
+  where: 交通政策課（LINEでも申請可）
+  url: https://www.city.nagaokakyo.lg.jp/0000004053.html
+  confidence: high
+  amount: A阪急バス「グランドパス70」(3か月分・21,400円相当)か、Bのセット(はっぴぃバス回数券2冊・hanica5,000円券・ICOCA1枚、またはタクシー割引券2,000円分)のどちらか一方
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に困難な人の後見申立て費用と後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 本人が生活保護、または世帯全員非課税で収入・預貯金が基準以下
+  - 収入は単身で年150万円以下、預貯金は単身で350万円以下
+  - 後見人が配偶者・直系血族・兄弟姉妹なら報酬は対象外
+  - 認知症高齢者は高齢福祉係が窓口
+  where: 高齢介護課 高齢福祉係（認知症高齢者の場合）
+  url: https://www.city.nagaokakyo.lg.jp/0000004733.html
+  confidence: high
+  amount: 申立て費用の実費と、報酬（上限は在宅月28,000円、施設等月18,000円）
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- chusha
+- yutai

@@ -1,0 +1,86 @@
+city: '272191'
+name: 和泉市
+site: www.city.osaka-izumi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ給付券の給付
+  name_on_page: 紙おむつの給付
+  summary: 在宅で常におむつを使う非課税の高齢者に、おむつ代の給付券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 対象者本人の市・府民税が非課税
+  - 要介護3の人は医師の意見書が必要
+  - 生活保護世帯・入院中・施設入所中の人は対象外
+  - 令和8年度の保険料算定で課税とみなされる人は対象外
+  where: 高齢介護室 高齢支援担当、地域包括支援センター
+  url: https://www.city.osaka-izumi.lg.jp/kakukano/fukusibu/koureikaigo/gyoumu/kaigoyobou/hukusi/kamiomutu.html
+  confidence: high
+  amount: 同じ世帯に課税者がいれば月 5,000 円まで、世帯全員非課税なら月 7,000 円までの給付券
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 急病やケガのとき警備会社に通報できる装置を貸す。取り付け費は市が負担する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 65歳以上の高齢者世帯、または昼間ひとりになる世帯
+  - 自宅の合鍵を預け、承諾書を出す必要がある
+  where: 高齢介護室 高齢支援担当（地域包括支援センターでも相談可）
+  url: https://www.city.osaka-izumi.lg.jp/kakukano/fukusibu/koureikaigo/gyoumu/kaigoyobou/hukusi/kinnberu.html
+  confidence: high
+  amount: 月額の自己負担は課税状況で 0 円・1,475 円・2,950 円
+  more_urls:
+  - https://www.city.osaka-izumi.lg.jp/material/files/group/32/tebiki20250930.pdf
+- category: ribiyo
+  name: 訪問理美容の出張料助成
+  name_on_page: 訪問理美容サービス
+  summary: 店に行けない高齢者が自宅で理美容を受けるときの出張料を助成する利用券を渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 心身の障がいやけが・病気で一般の理美容の利用が難しい
+  where: 高齢介護室 高齢支援担当、地域包括支援センター
+  url: https://www.city.osaka-izumi.lg.jp/kakukano/fukusibu/koureikaigo/gyoumu/kaigoyobou/hukusi/houmonribiyou.html
+  confidence: high
+  amount: 1 回 2,500 円（調髪料）、年 4 回まで利用できる利用券
+- category: jutaku
+  name: 介護予防の住まい改修助成（スマイル事業）
+  name_on_page: いずみ安心住まいる（スマイル）事業(和泉市介護予防住まい改修支援事業）
+  summary: 要支援・要介護認定のない高齢者が、家庭内の事故を防ぐ住まい改修の費用助成を受けられる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - お元気チェックリストで介護予防が必要と判断された人
+  - 要支援・要介護の認定を受けていない（申請予定・申請中も除く）
+  - 過去にこの事業や介護保険の住宅改修を使っていない
+  - 工事着工前に事前申出書を出す
+  where: 高齢介護室（直接受付）
+  url: https://www.city.osaka-izumi.lg.jp/kakukano/fukusibu/koureikaigo/osirase/sumaikaisyuu.html
+  confidence: high
+  amount: 改修費の 9 割、上限 45,000 円
+not_found:
+- iro
+- hochoki
+- shingu
+- nichijo-yogu

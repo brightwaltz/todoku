@@ -1,0 +1,136 @@
+city: '372030'
+name: 坂出市
+site: www.city.sakaide.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 在宅ねたきり高齢者・障がい者紙おむつ給付事業
+  summary: 常時おむつが必要な在宅の要介護3以上の方に、紙おむつを毎月配る。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護2以下でも重度の身体障がい者は対象になる場合がある
+  - 申請書に地区の民生児童委員の証明が必要
+  where: かいご課 介護保険係（重度身体障がい者はふくし課 障がい福祉係）
+  url: https://www.city.sakaide.lg.jp/site/kaigo-hoken/omutsu.html
+  confidence: high
+  amount: 毎月 32〜120 枚（種類により異なる）。申請の翌月から民生児童委員が配布
+- category: iro
+  name: 在宅ねたきり高齢者の介護慰労金
+  name_on_page: 在宅ねたきり高齢者・障がい者介護慰労金支給事業
+  summary: 要介護4以上の在宅の方を常時介護する家族に、慰労金を支給する。
+  who:
+    age_min: 40
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護される方は市内に引き続き1年以上住んでいる
+  - 要介護3以下でも重度の身体障がい者は対象になる場合がある
+  - 申請書に地区の民生児童委員の証明が必要
+  where: かいご課 介護保険係（重度身体障がい者はふくし課 障がい福祉係）
+  url: https://www.city.sakaide.lg.jp/site/kaigo-hoken/iroukin.html
+  confidence: high
+  amount: 月額 5,000 円。9月1日と3月1日に該当すれば一時見舞金 5,000 円を加算
+- category: shingu
+  name: 寝具の水洗い・乾燥消毒サービス
+  name_on_page: 寝具乾燥消毒サービス事業
+  summary: 寝具の衛生管理が難しい高齢者に、寝具の水洗いと乾燥消毒を自己負担なしで提供する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 65歳以上（40歳以上で特定疾病の方も含む）
+  - 市内に住んでいる
+  - 申請書に地区の民生児童委員の証明が必要
+  where: かいご課 介護保険係
+  url: https://www.city.sakaide.lg.jp/site/kaigo-hoken/shingu.html
+  confidence: high
+  amount: 年6回（水洗い2回・乾燥消毒4回）、自己負担なし
+- category: kinkyu-tsuho
+  name: あんしん通報サービス（緊急通報）
+  name_on_page: 坂出市あんしん通報サービス事業
+  summary: 緊急通報システムの初期費用と月額料金を市が負担する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - ひとり暮らし、または高齢者のみで虚弱か介護者不在が多い世帯
+  - 要援護高齢者と同居し、介護者が日中か夜間に不在がちな世帯
+  - 上のどれかに当たること
+  where: ふくし課 高齢福祉係
+  url: https://www.city.sakaide.lg.jp/soshiki/fukusi/anshintuuhoujigyou.html
+  confidence: high
+  amount: 初期導入費用と月額利用料（オプション除く）を市が負担
+- category: sonota
+  name: 高齢者への福祉電話の貸与
+  name_on_page: 高齢者福祉電話貸与事業
+  summary: 安否確認用の固定電話を設置し、基本料金相当額を市が負担する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者のみで1人が病弱か寝たきり
+  - 所得税非課税世帯
+  - 近くに親族がいない（同一旧小学校区に配偶者・3親等内の血族がいない）
+  - 安否確認のために電話が必要
+  where: ふくし課 高齢福祉係
+  url: https://www.city.sakaide.lg.jp/soshiki/fukusi/fukusidenwa.html
+  confidence: high
+  amount: 基本料金相当額（月額 1,550 円）を市が負担。電話機代・工事費・通話料は自己負担
+- category: sonota
+  name: 軟骨伝導イヤホンの無料貸出し
+  name_on_page: 軟骨伝導イヤホンの無料貸出しについて
+  summary: 補聴器を買う前に試せるよう、軟骨伝導イヤホンを無料で貸し出す。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住んでいる
+  - 本人確認書類が必要。貸出台数に限りがある
+  where: ふくし課 高齢福祉係（市役所の窓口にも体験用を設置）
+  url: https://www.city.sakaide.lg.jp/soshiki/fukusi/nankotudendouiyahon.html
+  confidence: high
+  amount: 無料。貸出期間は 2 週間以内
+not_found:
+- haishoku
+- haikai
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

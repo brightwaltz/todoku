@@ -1,0 +1,106 @@
+city: '262102'
+name: 八幡市
+site: www.city.yawata.kyoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 在宅介護者への慰労金（年10万円）
+  name_on_page: 在宅介護者に10万円を支給します
+  summary: 介護保険サービスを1年使わず重度の家族を在宅で介護する人に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 介護者は配偶者か3親等内の親族
+  - 介護者と要介護者の双方が市内に住所がある
+  - 過去1年介護保険サービス未利用（短期入所年7日以下等は除く）
+  - 要介護者の保険料に滞納がない
+  - 介護者が被保険者なら保険料に滞納がない
+  where: 高齢介護課
+  url: https://www.city.yawata.kyoto.jp/0000000159.html
+  confidence: high
+  amount: 要介護者1人につき年1回、年額10万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（シルバーライフライン）
+  name_on_page: シルバーライフラインシステム事業
+  summary: ひとり暮らしの高齢者等に緊急通報装置を貸し、24時間365日で通報に対応する。
+  who: {}
+  at_application:
+  - 市内在住で、65歳以上のひとり暮らし
+  - または身体障害者手帳1・2級のひとり暮らし
+  - その他、市長が特に必要と認めた人も対象
+  - 駆けつけ可能な協力員2名以上の登録と民生委員の署名が要る
+  where: 高齢介護課
+  url: https://www.city.yawata.kyoto.jp/0000005249.html
+  confidence: high
+  amount: 固定型は設置・貸借料無料（通話料は自己負担）。モバイル型は市民税非課税世帯が無料、課税世帯は月1,000円
+- category: haikai
+  name: あんしんネットワーク（行方不明のおそれのある人の事前登録）
+  name_on_page: 八幡市あんしんネットワーク事業
+  summary: 行方不明のおそれのある認知症高齢者等を事前登録し、捜索協力や賠償保険（市負担）が使える。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 家族が事前登録書を高齢介護課に提出する
+  - 賠償保険は市内在住の在宅者が対象
+  where: 高齢介護課
+  url: https://www.city.yawata.kyoto.jp/0000003734.html
+  confidence: high
+  amount: 登録は無料。個人賠償責任保険の保険料は市が負担
+- category: haikai
+  name: GPS端末の利用料補助
+  name_on_page: GPS端末利用料補助金
+  summary: あんしんネットワーク登録者のGPS端末サービスの初期費用と月額利用料を補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 八幡市あんしんネットワークに事前登録している
+  - 市内在住で、親族等が申請する
+  - 補助対象機器はミマモルメ
+  where: 高齢介護課
+  url: https://www.city.yawata.kyoto.jp/0000006714.html
+  confidence: high
+  amount: 初期導入費と月額利用料12か月分
+  more_urls:
+  - https://www.city.yawata.kyoto.jp/0000003734.html
+- category: shingu
+  name: 寝具の乾燥消毒・丸洗いサービス
+  name_on_page: 寝具乾燥サービスについて
+  summary: 在宅の要支援・要介護の高齢者宅を訪問し、寝具の乾燥消毒や丸洗いをする。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある介護保険被保険者
+  - 保険給付の制限を受けていない
+  where: 高齢介護課（窓口またはLogoフォーム）
+  url: https://www.city.yawata.kyoto.jp/0000011067.html
+  confidence: high
+  amount: 乾燥は1組500円（年4回、1組3枚まで）、丸洗いは1枚400円（年2回、2枚まで）。生活保護は無料
+not_found:
+- kaigo-yohin
+- haishoku
+- hochoki
+- ribiyo
+- gaishutsu

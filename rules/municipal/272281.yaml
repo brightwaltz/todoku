@@ -1,0 +1,134 @@
+city: '272281'
+name: 泉南市
+site: www.city.sennan.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 泉南市介護用品支給事業
+  summary: 在宅で要介護3以上の高齢者に、支給券を交付して紙おむつ等を現物で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 世帯分離に関わらず、同一敷地内の全員が非課税
+  where: 長寿社会推進課 介護保険係
+  url: https://www.city.sennan.lg.jp/kurashi/kourei/fukushi_service/1458795179409.html
+  confidence: high
+  amount: 無料（現物支給）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 要介護4・5の高齢者を在宅で介護する家族のうち、要件を満たす人に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者・介護者とも市内に1年以上継続して居住
+  - 要介護4・5に1年以上該当している
+  - 介護保険サービスを月単位で12か月以上利用していない
+  - 介護者が同居（同一敷地内・隣地も同居とみなす）
+  where: 長寿社会推進課 介護保険係
+  url: https://www.city.sennan.lg.jp/kurashi/kourei/fukushi_service/1458795179439.html
+  confidence: high
+- category: nichijo-yogu
+  name: 日常生活用具の給付（出火等への配慮が必要な高齢者）
+  name_on_page: 日常生活用具給付事業
+  summary: 出火等への配慮が必要なひとり暮らし高齢者などに、日常生活用具を給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身機能の低下で出火等への配慮が必要
+  - 用具の給付が必要と認められること
+  where: 長寿社会推進課 介護保険係
+  url: https://www.city.sennan.lg.jp/kurashi/kourei/fukushi_service/1458795179544.html
+  confidence: high
+  amount: 費用負担は、生計中心者の前年の所得税額で決まる
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業(緊急通報システム)
+  summary: 緊急時にボタンで警備会社につながる通報装置を設置し、必要なら救急車を要請する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - with_family
+  at_application:
+  - ひとり暮らし、または同居者の介護力が低く十分な介護が受けられない
+  - 心疾患等で常時注意を要する、または身体障害者手帳1・2級
+  - または運動機能等の障害で緊急時に自分で通報できない
+  where: 長寿社会推進課 介護保険係
+  url: https://www.city.sennan.lg.jp/kurashi/kourei/fukushi_service/1458795179491.html
+  confidence: high
+  amount: 費用負担は、世帯の市民税課税額で決まる
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の貸与
+  summary: 電話を持たない低所得のひとり暮らし・高齢者のみ世帯に、緊急連絡用の電話を貸す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 現在電話を持っていない低所得世帯
+  where: 長寿社会推進課 介護保険係
+  url: https://www.city.sennan.lg.jp/kurashi/kourei/fukushi_service/1458795179383.html
+  confidence: high
+  amount: 設置費・移転料（市内のみ）と基本料金・通話料は利用者負担
+- category: haikai
+  name: 徘徊高齢者等SOSネットワーク
+  name_on_page: 徘徊高齢者等SOSネットワーク事業
+  summary: 徘徊のおそれのある人を事前登録すると、行方不明時に関係機関へ情報が発信される。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 家族や本人の同意のうえで登録する
+  - 未登録でも行方不明時に登録・捜索支援の依頼ができる
+  where: 長寿社会推進課、地域包括支援センター、コミュニティソーシャルワーカー（CSW）
+  url: https://www.city.sennan.lg.jp/kurashi/kourei/fukushi_service/1561344130596.html
+  confidence: high
+- category: mimamori
+  name: 乳酸菌飲料の配布による安否確認
+  name_on_page: 愛の一声運動事業(乳酸菌飲料配布)
+  summary: 配達員が乳酸菌飲料を週1回届け、あわせて安否確認をする。
+  who:
+    household:
+    - alone
+  at_application:
+  - 心疾患等で常時注意を要する高齢者
+  - または手帳（身体・療育・精神）所持で40歳以上、引きこもりがちの人
+  where: 長寿社会推進課 介護保険係
+  url: https://www.city.sennan.lg.jp/kurashi/kourei/fukushi_service/1458795179304.html
+  confidence: high
+  amount: 無料。週1回、1回2本
+not_found:
+- haishoku
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu

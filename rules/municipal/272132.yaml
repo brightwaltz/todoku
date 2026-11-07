@@ -1,0 +1,129 @@
+city: '272132'
+name: 泉佐野市
+site: www.city.izumisano.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券
+  name_on_page: 高齢者介護用品(紙おむつ)給付事業
+  summary: 紙おむつ等の購入に使える給付券を、要介護2〜5の在宅の人に交付する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住で住民税非課税の介護保険被保険者
+  - 同じ住所の全員の住民税所得割が0円
+  - ケアマネか主治医がおむつ使用を必要と認める
+  - 生活保護の人は対象外
+  where: 地域共生推進課（郵送でも申請可）
+  url: https://www.city.izumisano.lg.jp/kakuka/kenkou/shogai/menu/kourei_fukusi/17262.html
+  confidence: high
+  amount: 月 2,500 円（要介護2）、月 5,000 円（要介護3〜5）の給付券
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 泉佐野市高齢者補聴器購入費助成金
+  summary: 手帳の対象でない難聴の高齢者に、補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 住民税非課税の世帯、または生活保護世帯の人
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 医師が両耳40dB以上70dB未満、または補聴器が必要と認める
+  - この助成を受けたことがない（1人1回）
+  - 購入前に申請が必要
+  where: 地域共生推進課
+  url: https://www.city.izumisano.lg.jp/kakuka/kenkou/shogai/menu/kourei_fukusi/13091.html
+  confidence: high
+  amount: 補聴器本体の費用の2分の1、上限5万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与について
+  summary: 急病や火災のときに通報できる装置を貸し出し、月1回ほど安否の電話もある。
+  who: {}
+  at_application:
+  - 日常生活に不安がある65歳以上のひとり暮らしの人
+  - または65歳以上の夫婦世帯で一方が寝たきり・身障1,2級
+  - またはひとり暮らしの重度身体障害者
+  - 固定電話回線が必要
+  - 協力員を2〜3人登録する
+  where: 地域共生推進課（民生委員を通じて出す方法もある）
+  url: https://www.city.izumisano.lg.jp/kakuka/kenkou/shogai/menu/kourei_fukusi/11839.html
+  confidence: high
+  amount: 利用料は月1,210円（所得割非課税世帯と生活保護世帯は無料）
+  more_urls:
+  - https://www.city.izumisano.lg.jp/material/files/group/22/kinkyu.pdf
+- category: haikai
+  name: 高齢者等見守りSOSネットワークの登録
+  name_on_page: 泉佐野市高齢者等見守りSOSネットワーク
+  summary: 行方不明のおそれがある人を事前登録し、行方不明時に近隣市町や協力事業所と捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になるおそれのある認知症高齢者等
+  where: 基幹包括支援センターいずみさの（市社会福祉協議会）
+  url: https://www.city.izumisano.lg.jp/kakuka/kenkou/shogai/menu/kourei_fukusi/nintisyou/14577.html
+  confidence: high
+- category: sonota
+  name: 高齢者の入浴料助成（さのぽポイント付与）
+  name_on_page: 高齢者入浴料助成事業
+  summary: 市内5か所の浴場で入浴すると、入浴料相当分のポイントが付く。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住でさのぽカードを持っている
+  - カード作成後2週間ほど経っている
+  where: 地域共生推進課
+  url: https://www.city.izumisano.lg.jp/kakuka/kenkou/shogai/menu/kourei_fukusi/12219.html
+  confidence: high
+  amount: 浴場の利用料相当分をポイントで付与（指定の曜日・時間）
+- category: sonota
+  name: 高齢者世帯の水道料金・下水道使用料の減免
+  name_on_page: 水道料金・下水道使用料の減免について
+  summary: 65歳以上だけの世帯の水道・下水道の基本料金などを減免する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 同じ水栓を使う全員が市に住民登録のある65歳以上
+  - 所得制限あり（詳細は問い合わせ）
+  - 生活保護の人は対象外
+  where: 地域共生推進課
+  url: https://www.city.izumisano.lg.jp/material/files/group/22/suidougennmenn2019-2.pdf
+  confidence: high
+  amount: 基本料金と2か月20㎥までの料金を免除（水道のみ約2,000円、下水道込み約4,000円）
+  more_urls:
+  - https://www.city.izumisano.lg.jp/kakuka/kenkou/shogai/menu/kourei_fukusi/1299119172020.html
+- category: sonota
+  name: 在宅高齢者への車いすの短期貸与
+  name_on_page: 車いすの貸与
+  summary: 在宅の高齢者に、車いすを原則1週間、無料で貸す。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の高齢者（年齢は頁に記載なし）
+  where: 地域共生推進課（福祉総務係）
+  url: https://www.city.izumisano.lg.jp/material/files/group/22/kinkyu.pdf
+  confidence: low
+  amount: 無料（原則1週間）
+not_found:
+- haishoku
+- iro
+- shingu
+- ribiyo
+- jutaku

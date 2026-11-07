@@ -1,0 +1,108 @@
+city: '362034'
+name: 小松島市
+site: www.city.komatsushima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 固定電話型の緊急通報装置の貸与
+  name_on_page: 小松島市固定電話型緊急通報装置を活用した高齢者見守り事業
+  summary: ボタン1つで24時間対応の受信センターにつながる固定電話型の通報装置を設置・貸与する。
+  who: {}
+  at_application:
+  - 自宅に固定電話がある
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - 重度障害者のひとり暮らし、または重度障害者と65歳以上の世帯も可
+  - 緊急時の連絡先（協力員）を3名ほど記入する
+  where: 介護福祉課
+  url: https://www.city.komatsushima.lg.jp/docs/707542.html
+  confidence: high
+  amount: 無料（装置を使った際の通話料は自己負担）
+- category: kinkyu-tsuho
+  name: 携帯電話型の緊急通報装置の貸与
+  name_on_page: 小松島市携帯型緊急通報装置を活用した見守り事業
+  summary: 24時間対応の受信センターにつながる携帯電話型の通報装置を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 緊急時の連絡先（協力員）として親族などを3名ほど記入する
+  where: 介護福祉課
+  url: https://www.city.komatsushima.lg.jp/docs/707542.html
+  confidence: high
+  amount: 無料（機器利用の電気代等は自己負担）
+- category: kaigo-yohin
+  name: 家族介護用品の現物支給
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で高齢者を介護する家族に、紙おむつなどの介護用品を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 高齢者と介護する家族の両方が非課税
+  - 入院中の方は対象外
+  where: 介護福祉課
+  url: https://www.city.komatsushima.lg.jp/docs/707542.html
+  confidence: high
+  amount: 6,250円を上限に現物支給
+- category: haikai
+  name: 見守りシールの配布
+  name_on_page: 小松島市見守りシール事業
+  summary: 二次元バーコード付きシールを配り、行方不明時に発見者と家族が連絡できるようにする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 65歳以上、または医師に初老期認知症と診断された方
+  - 施設入所中の方は対象外
+  where: 介護福祉課（市役所1階8番窓口）
+  url: https://www.city.komatsushima.lg.jp/docs/6370009.html
+  confidence: high
+  amount: 1人40枚を無料配布（追加分は有料）
+- category: haikai
+  name: 認知症の方のGPS機器導入費の補助
+  name_on_page: 認知症家族等支援GPS機器導入補助金
+  summary: 徘徊のおそれがある認知症の方が持つGPS機器の購入・貸与の初期費用を、介護する家族に補助する。
+  who:
+    at_home: true
+  at_application:
+  - 本人は市民で、徘徊がある65歳以上、または診断を受けた40歳以上の若年性認知症の方
+  - 申請者は本人を在宅で介護する市民の家族
+  - 市税と介護保険料の滞納がない
+  - 申請前にケアマネか地域包括支援センターに相談する
+  where: 介護福祉課
+  url: https://www.city.komatsushima.lg.jp/docs/6370048.html
+  confidence: high
+  amount: 対象経費の合計か1万円のいずれか低い額（1人1回限り）
+- category: gaishutsu
+  name: 老人等バス無料優待証
+  name_on_page: 老人等バス無料優待証
+  summary: 対象の徳島バス路線（徳島－小松島間）に、優待証と利用券で無料で乗れる。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 70歳以上、または身体・療育・精神の障害者手帳（身体は1〜4級）の所持者
+  - 申請には証明写真と身分証が必要
+  where: 市民環境課2番窓口
+  url: https://www.city.komatsushima.lg.jp/docs/2731.html
+  confidence: high
+  amount: 対象路線のバス運賃が無料
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

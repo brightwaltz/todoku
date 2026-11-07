@@ -1,0 +1,183 @@
+city: '272094'
+name: 守口市
+site: www.city.moriguchi.osaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 守口市紙おむつ給付事業
+  summary: 在宅で介護する家族に、紙おむつなどの介護用品をカタログから選んで自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護者の世帯員全員が市民税非課税
+  - 家族介護者と、その世帯員全員も市民税非課税
+  - 家族介護者は同居の親族か市内に住む親族
+  - 生活保護を受けていない
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/kaigohoken/16951.html
+  confidence: high
+  amount: 2か月分で上限8,240円（税込）。偶数月に申請した初回のみ上限4,120円。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 介護保険サービスを使わず在宅で介護した家族に、年額の慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請者は要介護者を在宅で介護する家族
+  - 対象期間の1年間、介護保険サービスを使っていない
+  - 通算7日以内のショートステイは可
+  - 90日以上の入院がない
+  - 申請は翌年2月1日から2月末日
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/kaigohoken/17478.html
+  confidence: high
+  amount: 要介護者1人につき年額10万円
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入助成金
+  summary: 加齢で聞こえにくい高齢者の補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体障害者手帳の交付対象でない
+  - 耳鼻咽喉科の医師が補聴器の必要を認めた
+  - 介護保険料を滞納していない
+  - 過去にこの助成を受けていない
+  - 購入前に申請し、交付決定後に購入する
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/korei_fukushi/seikatsu_shien/20351.html
+  confidence: high
+  amount: 実費の2分の1、上限25,000円
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者の緊急通報機器の貸与
+  name_on_page: ひとり暮らし高齢者緊急通報機器の貸与について
+  summary: ボタンを押すと受信センターにつながる緊急通報機器を、ひとり暮らしの高齢者に貸与する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上で、虚弱のため常時注意が必要
+  - 5〜10分以内に駆けつけられる協力員2名が必要
+  - 市外局番06の固定電話回線が必要（一部の回線は不可）
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/korei_fukushi/seikatsu_shien/19929.html
+  confidence: high
+  amount: 機器利用料は月1,320円が自己負担（生活保護・非課税の人は全額助成）。電話代は自己負担。
+- category: haikai
+  name: 高齢者見守りシール（QRコード）の交付
+  name_on_page: 守口市高齢者見守りシール交付事業
+  summary: 徘徊のある認知症高齢者の衣服などに貼るQRコードシールを配り、家族と連絡できるようにする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上、認知症の診断を受けた人、または市長が必要と認めた人
+  - 申請者は親族、担当ケアマネジャー、地域包括支援センター職員など
+  - 発見時に申請者が速やかに保護できること
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/ninchisyo/16012.html
+  confidence: high
+  amount: 1人につき30枚（耐洗ラベル20枚、蓄光シール10枚）を配布
+- category: haikai
+  name: 徘徊探知機（GPS）の購入費補助
+  name_on_page: 守口市徘徊探知機購入補助金交付事業
+  summary: 徘徊のある認知症高齢者を介護する家族に、GPS探知機の購入費の一部を補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 認定調査で徘徊などの問題行動が認められる
+  - 申請者は同居の家族か市内に住む家族で、捜索ができる
+  - 購入から30日以内に申請
+  - 補助は高齢者1人につき1回限り
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/ninchisyo/16081.html
+  confidence: high
+  amount: 経費2万円以下は2分の1、2万円超は上限1万円
+- category: mimamori
+  name: 高齢者見守り機器の購入費補助
+  name_on_page: おうちであんしん高齢者見守り支援事業
+  summary: ひとり暮らしの高齢者の在宅の様子を見守り人に知らせる登録機器の購入費の一部を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 見守り人（離れて暮らす家族・知人など）がいる
+  - ひとり暮らし高齢者緊急通報機器の貸与を受けていない
+  - 介護保険料を滞納していない
+  - 市の登録事業者から機器を購入する
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/korei_fukushi/seikatsu_shien/19928.html
+  confidence: high
+  amount: 経費1万円未満は2分の1、1万円以上は5,000円。月々の利用料は自己負担。
+- category: gaishutsu
+  name: 福祉タクシー利用券の交付
+  name_on_page: 守口市高齢者及び重度障がい者（児）外出支援事業
+  summary: 移動が難しい高齢者などに、リフト付き福祉タクシーなどで使える利用券を交付する。
+  who: {}
+  at_application:
+  - 市内在住で、次のどれかに当たる
+  - 65歳以上で要介護4・5
+  - 65歳以上で要介護1〜3かつ車椅子を使っている
+  - 65歳以上で負傷などにより一時的に車椅子を使っている
+  - 身体障がい者手帳の肢体不自由1・2級（障がい福祉課で受付）
+  where: 高齢介護課（手帳での申請は障がい福祉課）
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/korei_fukushi/seikatsu_shien/1990.html
+  confidence: high
+  amount: 1回（片道）1,200円分。申請月から年度末までの月数×2枚を交付（最大24枚）。
+  more_urls:
+  - https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/korei_fukushi/seikatsu_shien/19929.html
+- category: sonota
+  name: 高齢者への車椅子の無料貸与
+  name_on_page: 車椅子貸与について
+  summary: 歩行が困難な在宅の高齢者などに、車椅子を短期間無料で貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 歩行が困難な人、または緊急に必要な人
+  - 要介護・要支援の認定を受けている人は対象外
+  - 在庫確認のため事前に電話する
+  where: 高齢介護課
+  url: https://www.city.moriguchi.osaka.jp/kakukanoannai/kenkofukushibu/koreikaigoka/koureikaigo/korei_fukushi/seikatsu_shien/19927.html
+  confidence: high
+  amount: 利用者負担は無料
+not_found:
+- koken
+- jutaku
+- haishoku
+- shingu
+- ribiyo

@@ -1,0 +1,120 @@
+city: '262056'
+name: 宮津市
+site: www.city.miyazu.kyoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食の配達と安否確認）
+  name_on_page: 配食サービス
+  summary: 食事の支度が難しい高齢者に夕食を届け、食生活の改善と安否確認を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の支度が困難な人
+  - 配達の曜日は地域により異なる
+  where: 健康・介護課 介護給付係
+  url: https://www.city.miyazu.kyoto.jp/uploaded/attachment/11553.pdf
+  confidence: high
+  amount: 利用者負担は 1 食 600 円
+- category: kaigo-yohin
+  name: 介護用品支給券の支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護 4・5 の在宅高齢者を介護する人に、介護用品を買える支給券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 支給の対象は、要介護者を介護する人
+  - 施設入所・長期入院の人を除く
+  where: 健康・介護課 介護給付係
+  url: https://www.city.miyazu.kyoto.jp/uploaded/attachment/11553.pdf
+  confidence: high
+  amount: 年額 48,000 円（年度途中の申請は月額 4,000 円）。紙おむつ、尿取りパッド、おしりふき、防水シーツなどを購入できる。
+- category: haikai
+  name: 認知症高齢者のGPS位置探索サービスの初期費用補助
+  name_on_page: 認知症高齢者等位置探索サービス利用補助事業
+  summary: 行方不明のおそれがある認知症高齢者のGPS端末の購入費や契約費用を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 高齢者等SOSネットワークの事前登録書を地域包括支援センターに提出している
+  - 位置探索サービスの利用契約を結んでいる
+  - 対象は高齢者本人とその家族
+  where: 地域包括支援センター（健康・介護課 介護給付係）
+  url: https://www.city.miyazu.kyoto.jp/uploaded/attachment/11553.pdf
+  confidence: high
+  amount: 1 人につき 1 万円まで（1 回限り）
+  more_urls:
+  - https://www.city.miyazu.kyoto.jp/soshiki/8/12203.html
+- category: haikai
+  name: 認知症高齢者等SOSネットワークの事前登録
+  name_on_page: 認知症高齢者等SOSネットワークの事前登録制度について
+  summary: 帰れなくなるおそれのある人の情報を市に登録し、行方不明時に警察などと共有して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 宮津市に住む、認知症またはその疑いのある人
+  - 親族や成年後見人などが事前登録書を提出する
+  - 直近の写真が必要
+  where: 宮津市地域包括支援センター（ミップル 4 階）
+  url: https://www.city.miyazu.kyoto.jp/site/koureisha/10868.html
+  confidence: high
+- category: koken
+  name: 成年後見制度の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 判断能力が低下した高齢者の、成年後見の申立て費用や後見人報酬の支払いを助成する。
+  who: {}
+  at_application:
+  - 認知症等の高齢者で、申立てする親族がおらず後見人等の支援が特に必要
+  - または親族はいるが報酬の支払いが困難で後見人を利用できない
+  - 申立て費用や報酬の支払いが困難なこと
+  where: 健康・介護課 介護予防係（地域包括支援センター）
+  url: https://www.city.miyazu.kyoto.jp/uploaded/attachment/11553.pdf
+  confidence: low
+- category: gaishutsu
+  name: 高齢者の丹鉄片道200円レール
+  name_on_page: 宮津市高齢者片道上限200円レール
+  summary: 65 歳以上の市民が京都丹後鉄道の普通・快速列車に片道 200 円で乗れる。
+  who:
+    age_min: 65
+  at_application:
+  - 宮津市内に住んでいる
+  - 乗る駅か降りる駅のどちらかが市内の駅
+  - 特急は不可。お盆と年末年始の期間は利用できない
+  where: パンフレット（200円レール切符）は市役所・地区連絡所・市内有人駅で入手。問合せは企画課 企画政策係
+  url: https://www.city.miyazu.kyoto.jp/site/publictransport/2079.html
+  confidence: high
+  amount: 片道 200 円
+  more_urls:
+  - https://www.city.miyazu.kyoto.jp/uploaded/life/26227_55714_misc.pdf
+not_found:
+- iro
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

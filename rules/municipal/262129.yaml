@@ -1,0 +1,72 @@
+city: '262129'
+name: 京丹後市
+site: www.city.kyotango.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: タクシー等乗車チケットの販売（75歳以上）
+  name_on_page: 令和8年度タクシー等乗車チケットを販売します（75歳以上の方）
+  summary: 75歳以上の市民が、タクシー等で使える割引チケットを窓口で買える。
+  who:
+    age_min: 75
+  at_application:
+  - 市税等の滞納がない京丹後市民
+  - 年2冊まで購入可。要介護認定者・非課税世帯は3冊まで
+  where: 長寿福祉課、生活福祉課、各市民局（峰山市民局を除く）
+  url: https://www.city.kyotango.lg.jp/top/soshiki/kenkochoju/chojufukushi/3/2/15826.html
+  confidence: high
+  amount: 1冊2,000円で4,000円分（400円券10枚つづり）。1回の乗車で最大4枚使える。
+- category: haikai
+  name: 認知症高齢者等の位置探索（GPS）サービス利用の補助
+  name_on_page: 京丹後市認知症高齢者等位置探索サービス利用補助金交付事業
+  summary: 帰宅できなくなるおそれのある認知症の方が GPS 端末サービスを使う初期費用の一部を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症またはその疑いで帰宅できなくなるおそれがある
+  - 本人か4親等以内の親族で、市に情報登録をしている
+  - 位置探索サービスの利用契約を結んでいる
+  where: 長寿福祉課、市民局
+  url: https://www.city.kyotango.lg.jp/top/soshiki/kenkochoju/chojufukushi/3/2/shien/1347.html
+  confidence: high
+  amount: 上限1万円、1人1回限り（端末・充電器の購入費や加入料などの初期経費。月額料金は対象外）
+- category: haikai
+  name: 認知症高齢者等の見守りQRコードシールの配布
+  name_on_page: 京丹後市認知症高齢者等見守りQRコード活用事業のご案内
+  summary: 事前登録した認知症高齢者等に、行方不明時に身元がわかる QR コードシールを無料で配る。
+  who: {}
+  at_application:
+  - 市内に住所があり、認知症高齢者等の事前登録をしている
+  - 申請は本人、4親等以内の親族、法定代理人
+  - 事前登録がまだなら、あわせて申請する
+  where: 長寿福祉課、市民局
+  url: https://www.city.kyotango.lg.jp/top/soshiki/kenkochoju/chojufukushi/3/2/ninchisho/17000.html
+  confidence: high
+  amount: 1人10枚まで無料。再交付は実費負担（10枚単位）。
+- category: sonota
+  name: 認知症の方の個人賠償責任保険（市が加入）
+  name_on_page: 京丹後市認知症あんしん補償事業のご案内
+  summary: 事前登録した認知症の方が他人にケガをさせたり物を壊したりした場合に備え、市が保険に加入する。
+  who:
+    age_min: 40
+  at_application:
+  - 市内に住所があり、認知症高齢者等の事前登録をしている
+  - 未登録なら事前登録もあわせて申請する
+  where: 長寿福祉課、市民局
+  url: https://www.city.kyotango.lg.jp/top/soshiki/kenkochoju/chojufukushi/3/2/ninchisho/13337.html
+  confidence: high
+  amount: 保険料の自己負担なし。賠償補償は最大1億円、見舞費用15万円、ケガの補償は2〜50万円。
+not_found:
+- kaigo-yohin
+- haishoku
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori

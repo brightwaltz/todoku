@@ -1,0 +1,193 @@
+city: '272256'
+name: 高石市
+site: www.city.takaishi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ給付券の交付
+  name_on_page: 紙おむつの給付
+  summary: 要介護3〜5で在宅の非課税世帯の方に、紙おむつの給付券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に居住している
+  - 本人と生計を同一にする人全員の市民税が非課税
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kurashi/fukushi/koureisya/1458786703266.html
+  confidence: high
+  amount: 月 6,000 円を上限とする給付券
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の高齢者を介護サービス無しで介護する非課税世帯の家族に支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年、介護保険サービスを受けていない（短期入所1週間程度は除く）
+  - 介護される人と同居している家族が申請する
+  - 介護される人の市民税も非課税
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kakuka/fukushi_hoken/koureisyougai/koureisyafukushi/kazokukaigo_iroukin_shikyu.html
+  confidence: high
+  amount: 年額 100,000 円
+  more_urls:
+  - https://www.city.takaishi.lg.jp/section/reiki_int/reiki_honbun/k227RG00000442.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の給付
+  name_on_page: 緊急通報装置の給付
+  summary: 急病などの際に消防や在宅介護支援センターにつながる通報装置を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上、または身体障害者手帳1・2級の方のみの世帯
+  - 日中または夜間にひとりになるおおむね65歳以上の方なども対象
+  - 市内に住んでいる
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kurashi/fukushi/koureisya/1458786702126.html
+  confidence: high
+  amount: 初期設置の自己負担は前年の所得税額で0円〜全額（50,400円）
+- category: haikai
+  name: 徘徊高齢者の位置検索システム費用の助成
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 徘徊で戻れない高齢者の居場所を探すシステムの加入料や充電器代を一部助成する。
+  who:
+    age_min: 65
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊の見られる高齢者と同居する家族が対象
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kurashi/fukushi/koureisya/1458786741998.html
+  confidence: high
+  amount: 加入料金（端末リース初期費用を含む）と充電器購入費を助成。月額の基本料金などは自己負担
+- category: mimamori
+  name: 見守り機器（レフパック）の給付
+  name_on_page: 見守り機器の給付
+  summary: ドアなどのセンサーが振動を感知しない時、社協が電話や訪問で安否を確認する。
+  who: {}
+  at_application:
+  - 75歳以上の方のみの世帯
+  - または障がい者手帳をお持ちの方のみの世帯
+  - または75歳以上の方と障がい者手帳をお持ちの方のみの世帯
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kurashi/fukushi/koureisya/1625703264734.html
+  confidence: high
+  amount: 利用料は年額 2,000 円（税込）が自己負担
+- category: haishoku
+  name: 高齢者配食サービス（夕食）
+  name_on_page: 配食サービス
+  summary: 調理や買い物が難しい高齢者世帯に、平日の夕食を届け安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の方のみの世帯（またはこれに準ずる世帯）
+  - 食事の調理や買い物が困難な方
+  where: 高石市社会福祉協議会（072-265-1313）
+  url: https://www.city.takaishi.lg.jp/kakuka/fukushi_hoken/koureisyougai/koureisyafukushi/haisyoku_service.html
+  confidence: high
+  amount: 1食 500 円（食材費と調理費）。月〜金曜の夕食
+  more_urls:
+  - https://www.city.takaishi.lg.jp/section/reiki_int/reiki_honbun/k227RG00000447.html
+- category: mimamori
+  name: 独居老人訪問（相談員の派遣）
+  name_on_page: 独居老人訪問
+  summary: ひとり暮らしの高齢者の家に相談員が訪問し、相談や話し相手になる。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 市内在住
+  - 身体が弱く一日中家にこもりがちな方
+  where: 高石市社会福祉協議会（072-261-3656）
+  url: https://www.city.takaishi.lg.jp/kakuka/fukushi_hoken/koureisyougai/koureisyafukushi/dokkyoroujinhoumon.html
+  confidence: high
+  amount: 無料
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付・貸与
+  name_on_page: 日常生活用具の給付(貸与)
+  summary: ねたきりやひとり暮らしの高齢者に、火災警報器・自動消火器・電磁調理器の給付や老人福祉電話の貸与をする。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上（要綱）
+  - ねたきり、またはひとり暮らしの方
+  - 火災警報器・自動消火器・老人福祉電話は非課税世帯の方
+  - 電磁調理器は課税世帯の方も対象
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kakuka/fukushi_hoken/koureisyougai/koureisyafukushi/nichijoseikatsuyougu_kyufu.html
+  confidence: high
+  amount: 電磁調理器は生計中心者の前年の所得税額で負担額が決まる
+  more_urls:
+  - https://www.city.takaishi.lg.jp/section/reiki_int/reiki_honbun/k227RG00000476.html
+- category: gaishutsu
+  name: 福祉バス（らくらく号）の無料乗車
+  name_on_page: 福祉バス（らくらく号）の運行について
+  summary: 市民のうち60歳以上の方などが、市の福祉バスに無料で乗れる。
+  who: {}
+  at_application:
+  - 高石市民で、60歳以上の方
+  - または障がいのある方・妊産婦・乳幼児連れの方・その介添者
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kakuka/fukushi_hoken/koureisyougai/koureisyafukushi/fukushibus/4571.html
+  confidence: high
+  amount: 利用料は無料
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 高石市補聴器購入費助成事業
+  summary: 加齢などで聞こえにくい非課税世帯などの方に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 40
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市民税非課税の人のみの世帯、または生活保護世帯の方
+  - 両耳の聴力が40dB以上70dB未満で、障害者総合支援法の補装具費の対象外
+  - 耳鼻咽喉科医の意見書と見積書を付け、購入前に申請する
+  - 過去にこの助成を受けていない
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/section/reiki_int/reiki_honbun/k227RG00000919.html
+  confidence: high
+  amount: 購入費と 25,000 円のどちらか低い額
+- category: jutaku
+  name: 高齢者の住宅改造費の助成
+  name_on_page: 高齢者に対する住宅改造助成
+  summary: 高齢者のいる世帯の住宅改造費の一部を助成する。介護保険の住宅改修を先に使う。
+  who: {}
+  at_application:
+  - 高齢者のいる世帯が対象
+  - 生計中心者の前年所得税額が70,001円以上の世帯は対象外
+  - 介護保険の被保険者は、先に介護保険の住宅改修を利用する
+  where: 高齢・障がい福祉課（高齢・障がい福祉係）
+  url: https://www.city.takaishi.lg.jp/kurashi/fukushi/koureisya/1458786701614.html
+  confidence: low
+  amount: 対象経費と70万円の低い方が上限（対象世帯によっては35万円）
+  more_urls:
+  - https://www.city.takaishi.lg.jp/section/reiki_int/reiki_honbun/k227RG00000445.html
+not_found:
+- ribiyo
+- shingu
+- yutai

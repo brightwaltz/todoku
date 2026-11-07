@@ -1,0 +1,222 @@
+city: '262111'
+name: 京田辺市
+site: www.city.kyotanabe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給サービス
+  name_on_page: 京田辺市紙おむつ支給サービス
+  summary: 在宅で要支援・要介護認定を受けた人に、紙おむつ等を現物で支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険料を滞納していない
+  - 生活保護を受けていない
+  - 要支援1・2、要介護1は排泄の状況などの確認あり
+  - 住宅型有料・サ高住・特定施設・グループホーム入居者は除く
+  where: 介護保険課
+  url: https://www.city.kyotanabe.lg.jp/0000021590.html
+  confidence: high
+  amount: 要支援1〜要介護3は月3,000円、要介護4・5は月5,000円まで
+- category: haishoku
+  name: ふれあい給食サービス（夕食弁当の配達）
+  name_on_page: ふれあい給食サービス
+  summary: ボランティアが作った夕食弁当を、民生委員等を通じて自宅へ届ける。
+  who: {}
+  at_application:
+  - 市内在住
+  - 介護が必要で見守りが要るおおむね70歳以上の人、または
+  - 食事の用意が難しいひとり暮らし・高齢者世帯
+  - 本人の申請と民生委員の現況報告書が必要
+  where: 京田辺市社会福祉協議会（0774-68-5005）
+  url: https://www.city.kyotanabe.lg.jp/0000021342.html
+  confidence: high
+  amount: 利用料は無料
+- category: mimamori
+  name: ふれあいテレフォンサービス（電話での安否確認）
+  name_on_page: ふれあいテレフォンサービス
+  summary: ボランティアが月1〜2回ほど電話をかけ、話し相手と安否確認をする。
+  who: {}
+  at_application:
+  - 市内在住のおおむね65歳以上の高齢者等
+  - ひとり暮らし・昼間独居・高齢者世帯・障がいのある人など
+  - 申請書の提出が必要
+  where: 京田辺市社会福祉協議会（0774-68-5005）
+  url: https://www.city.kyotanabe.lg.jp/0000021342.html
+  confidence: high
+  amount: 利用料は無料
+- category: shingu
+  name: ふとん丸洗いサービス
+  name_on_page: ふとん丸洗いサービス
+  summary: 在宅で介護を受けている高齢者の寝具を、2枚まで無料で丸洗いする。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で在宅介護を受けている高齢者（概ね60歳以上）
+  - または寝たきり等で常時介護が必要な人
+  where: 京田辺市社会福祉協議会（0774-68-5005）
+  url: https://www.city.kyotanabe.lg.jp/0000021342.html
+  confidence: high
+  amount: 利用料は無料（掛・敷布団、毛布、肌布団のうち2枚まで）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（24時間見守り）
+  name_on_page: 独居高齢者等24時間安心見守り事業
+  summary: 緊急通報装置を貸し出し、救急要請・健康相談・月1回の安否確認を行う。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住、世帯員全員に市税の滞納がない
+  - 固定電話または携帯電話回線がある、緊急連絡先1名以上
+  - 65〜74歳：特定の病気があり65歳未満と同居しない
+  - 75〜84歳：何らかの病気があり65歳未満と同居しない
+  - 85歳以上：何らかの病気がある
+  where: 高齢者支援課
+  url: https://www.city.kyotanabe.lg.jp/0000021361.html
+  confidence: high
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付（電磁調理器・自動消火器）
+  name_on_page: 日常生活用具給付事業
+  summary: 電磁調理器や自動消火器の購入費を、上限額まで市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 生活保護の世帯、または世帯全員が市町村民税非課税の世帯
+  - 購入前の申請が必要
+  where: 高齢者支援課
+  url: https://www.city.kyotanabe.lg.jp/0000021256.html
+  confidence: high
+  amount: 電磁調理器は2万円、自動消火器は3万円まで（各1回限り）
+  more_urls:
+  - https://www.city.kyotanabe.lg.jp/0000000410.html
+- category: jutaku
+  name: 介護予防安心住まい推進事業（住宅改善の助成）
+  name_on_page: 介護予防安心住まい推進事業
+  summary: 手すり設置や段差解消など、住まいの改善費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険の認定を受けておらず、認定申請もしていない
+  - 居住設備の改善が必要と認められる
+  - その住所で過去にこの事業を使っていない
+  - 着工前に申請が必要
+  where: 高齢者支援課
+  url: https://www.city.kyotanabe.lg.jp/0000021180.html
+  confidence: high
+  amount: 工事費の3分の2、上限16万円
+- category: jutaku
+  name: 高齢者向け居住設備改善費補助金
+  name_on_page: 高齢者向け居住設備改善費補助金支給事業
+  summary: 手すり設置や段差解消など、住まいの改善費用の半分を補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険の認定を受けておらず、認定申請もしていない
+  - 居住設備の改善が必要と認められる
+  - その住所で過去にこの事業を使っていない
+  - 京田辺市税を滞納していない
+  - 着工前に申請が必要
+  where: 高齢者支援課
+  url: https://www.city.kyotanabe.lg.jp/0000021180.html
+  confidence: high
+  amount: 工事費の2分の1、上限10万円
+- category: haikai
+  name: 認知症高齢者等GPS利用助成
+  name_on_page: 京田辺市認知症高齢者等GPS利用助成
+  summary: 行方不明のおそれがある認知症の人のGPS端末の初期費用を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市SOSネットワークに登録している
+  - 65歳以上の高齢者、または若年性認知症の人
+  - スマホ・携帯電話や介護保険で使えるGPSは対象外
+  - 購入・レンタルの前に相談が必要
+  where: 地域包括支援センターあんあん市役所（0774-63-1268）
+  url: https://www.city.kyotanabe.lg.jp/0000016739.html
+  confidence: high
+  amount: 初期導入費用のみ、上限1万円（1人1台、3年に1度）
+- category: haikai
+  name: SOSネットワークの事前登録（QRコードシール）
+  name_on_page: 京田辺市SOSネットワーク
+  summary: 認知症で道に迷うおそれのある人を登録し、QRコードシールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む高齢者
+  - 64歳以下は医師の診断書等が必要
+  - 本人か同居家族が窓口で登録（郵送不可）
+  where: 地域包括支援センターあんあん市役所（庁舎2階）
+  url: https://www.city.kyotanabe.lg.jp/0000013656.html
+  confidence: high
+  amount: 登録は無料
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 京田辺市高齢者補聴器購入費助成事業
+  summary: 障害者手帳の対象外で聞こえにくい65歳以上に、補聴器代の半額を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付対象でない
+  - 両耳40dB以上70dB未満、または片耳が著しく低く医師が必要と判断
+  - 市税の滞納がない
+  - 指定医の意見書が必要、購入前に申請
+  where: 高齢者支援課
+  url: https://www.city.kyotanabe.lg.jp/0000020734.html
+  confidence: high
+  amount: 購入費の2分の1、上限2万円（一側耳分、1人1回）
+- category: sonota
+  name: 運転免許証自主返納の支援（運転経歴証明書の手数料助成）
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 運転免許を全部返納した65歳以上に、運転経歴証明書の手数料を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 返納時に65歳以上で、市内に住所がある
+  - すべての免許を返納し、運転経歴証明書の交付を受けた
+  - 返納と証明書の交付を済ませてから申請（1人1回限り）
+  where: 高齢者支援課
+  url: https://www.city.kyotanabe.lg.jp/0000021236.html
+  confidence: high
+  amount: 運転経歴証明書の交付手数料（交付日で金額が異なる）
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり・きゅう・マッサージ施術費助成事業
+  summary: 65歳以上に助成券を交付し、契約施術所での施術費を1回2,000円助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 医療保険等が使えない施術が対象
+  - 1回2,000円以下の施術費は対象外
+  where: 国保医療課
+  url: https://www.city.kyotanabe.lg.jp/0000020426.html
+  confidence: high
+  amount: 1回2,000円（市1,000円＋施術所1,000円）、年度内最大12回
+not_found:
+- iro
+- koken
+- ribiyo
+- gaishutsu

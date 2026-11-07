@@ -1,0 +1,177 @@
+city: '382027'
+name: 今治市
+site: www.city.imabari.ehime.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 安否確認を兼ねた配食サービス
+  name_on_page: 安否確認を兼ねた配食サービス
+  summary: 安否確認が必要な高齢者に、対面で温かい食事を届ける。
+  who: {}
+  at_application:
+  - ひとり暮らしなど安否確認が必要な高齢者
+  - 回数は市の調査で決まる
+  where: 介護保険課
+  url: https://www.city.imabari.ehime.jp/kaigo/haishoku/
+  confidence: high
+  amount: 週 5 回まで。自己負担あり
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず在宅の重度の方を介護する家族に支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 1 年以上介護保険サービスを利用していない
+  - 介護される方を常時介護している家族が対象
+  where: 介護保険課、各支所の高齢福祉担当窓口
+  url: https://www.city.imabari.ehime.jp/kaigo/kazokukaigo/
+  confidence: high
+  amount: 要介護度と世帯の市民税課税状況で金額が変わる（額は頁に無し）
+- category: kaigo-yohin
+  name: 介護用品券の支給（おむつ等）
+  name_on_page: 介護用品の支給
+  summary: おむつや尿とりパッド等に使える介護用品券を介護者に支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきり、または重度の認知症の方を常時介護している
+  - 申請前に確認シートで確認する
+  where: 介護保険課、各支所の高齢福祉担当窓口
+  url: https://www.city.imabari.ehime.jp/kaigo/kazokukaigo/
+  confidence: high
+  amount: 介護者世帯の市民税課税状況で金額が変わる（額は頁に無し）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ボタン一つでコールセンターに連絡できる機器を貸す。
+  who: {}
+  at_application:
+  - 特に虚弱なひとり暮らし等の高齢者
+  where: 福祉政策課
+  url: https://www.city.imabari.ehime.jp/fukusis/anpikakunin.html
+  confidence: low
+- category: mimamori
+  name: 福祉電話による安否確認
+  name_on_page: 福祉電話
+  summary: 定期的に電話をかけ、安否確認や健康相談を行う。
+  who: {}
+  at_application:
+  - ひとり暮らし等で安否確認が必要な高齢者
+  where: 福祉政策課
+  url: https://www.city.imabari.ehime.jp/fukusis/anpikakunin.html
+  confidence: low
+- category: mimamori
+  name: 見守り推進員による安否確認
+  name_on_page: 見守り推進員による安否確認
+  summary: 見守りが望ましい一人暮らし等の高齢者を、定期的に訪ねて安否確認する。
+  who: {}
+  at_application:
+  - ひとり暮らし等で見守りが望ましいと思われる高齢者
+  where: 福祉政策課
+  url: https://www.city.imabari.ehime.jp/fukusis/anpikakunin.html
+  confidence: low
+- category: mimamori
+  name: 高齢者等 ICT 見守りサービス導入の助成
+  name_on_page: 今治市高齢者等ICT見守りサービス導入支援事業
+  summary: ICT 見守り機器の初期費用と初月利用料の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし、または寝たきり高齢者のいる高齢者のみ世帯
+  - または身体障害者手帳の方のみの世帯
+  - 市税の滞納や緊急通報装置の貸与がある方は対象外
+  - 申請は本人または本人の同意を得た親族
+  - 令和9年2月26日まで（令和8年10月1日開始）
+  where: 福祉政策課
+  url: https://www.city.imabari.ehime.jp/fukusis/ICT/
+  confidence: high
+  amount: 上限 3 万円（初期導入費用と初月利用料）
+- category: ribiyo
+  name: 在宅要介護者と介護者の理美容サービス補助
+  name_on_page: 今治市在宅高齢者・身障者等理美容サービス支援補助金
+  summary: 要介護者とその介護者 1 人の理美容（訪問含む）費用を補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 月の半分以上在宅で生活している
+  - 介護者は同居の家族か、月半分以上通う3親等内の親族
+  - 市税を滞納していない
+  - 令和9年2月26日まで。予算に達し次第終了
+  where: 介護保険課、各支所
+  url: https://www.city.imabari.ehime.jp/kaigo/info/015/
+  confidence: high
+  amount: 1 回上限 4,000 円（被介護者・介護者それぞれ 1 回まで）
+- category: sonota
+  name: 手押し車または杖の購入費補助
+  name_on_page: 老人福祉車（手押し車）または杖の購入費補助
+  summary: 手押し車または杖を買ったとき、購入費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 住民税所得割額が非課税の世帯
+  - 過去 4 年間に同じ補助を受けていない
+  where: 福祉政策課
+  url: https://www.city.imabari.ehime.jp/fukusis/roujinfukusihsa/
+  confidence: high
+  amount: 上限 4,000 円
+- category: sonota
+  name: 公衆浴場の入浴利用券
+  name_on_page: 高齢者公衆浴場入浴事業
+  summary: 市内の公衆浴場で使える入浴利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  where: 福祉政策課、各支所住民サービス課、旧今治地域公民館
+  url: https://www.city.imabari.ehime.jp/fukusis/riyouken/nyuyoku.html
+  confidence: high
+  amount: 1 回 200 円助成、年 27 回
+- category: sonota
+  name: 敬老マッサージ施術利用券
+  name_on_page: 敬老マッサージ施術事業
+  summary: 市内の登録施術所で使えるマッサージ施術利用券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 医療保険の療養費が出る施術は対象外
+  where: 福祉政策課、各支所住民サービス課、旧今治地域公民館
+  url: https://www.city.imabari.ehime.jp/fukusis/riyouken/massage.html
+  confidence: high
+  amount: 1 回 1,000 円助成、年 6 回
+- category: haikai
+  name: みまもりあいステッカーの配付
+  name_on_page: みまもりあいステッカー
+  summary: 認知症の方が行方不明になったときの連絡用ステッカーを配る。
+  who: {}
+  at_application:
+  - 認知症の方（詳しい対象は問い合わせて確かめる）
+  where: 介護保険課地域包括支援担当、地域包括支援センター
+  url: https://www.city.imabari.ehime.jp/kaigo/mimamoriai/
+  confidence: high
+not_found:
+- koken
+- jutaku
+- shingu
+- gaishutsu
+- nichijo-yogu

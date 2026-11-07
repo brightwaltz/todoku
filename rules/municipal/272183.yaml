@@ -1,0 +1,131 @@
+city: '272183'
+name: 大東市
+site: www.city.daito.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置（あんしんボタン）の設置
+  name_on_page: あんしん・通報システム
+  summary: ボタンで24時間通報でき、月1回の安否確認電話もある装置を無料で設置する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし
+  - または在宅で持病等の注意が必要な65〜74歳ひとり暮らし
+  - または身体障害者手帳1・2級の18歳以上
+  - 駆け付けられる協力者が2、3人必要
+  where: 高齢介護室 高齢支援グループ（電子申請も可）
+  url: https://www.city.daito.lg.jp/soshiki/64/1464.html
+  confidence: high
+  amount: 設置工事費・利用料とも無料
+  more_urls:
+  - https://www.city.daito.lg.jp/soshiki/64/52192.html
+- category: mimamori
+  name: ハローライト（電球見守り）の月額料金助成
+  name_on_page: 大東市ハローライト事業
+  summary: 動きがないと家族へ通知する見守り電球サービスの月額料金を市が助成する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - ひとり暮らし、またはこれと同等とみなせる状態
+  - 介護事業者・福祉関連団体は対象外
+  where: 高齢介護室 高齢支援グループ（電子申請も可）
+  url: https://www.city.daito.lg.jp/soshiki/64/37084.html
+  confidence: high
+  amount: 月額利用料1,870円を助成（利用者は無料）
+  more_urls:
+  - https://www.city.daito.lg.jp/soshiki/64/52192.html
+- category: haikai
+  name: GPS付きスマートタグの購入費助成
+  name_on_page: GPS発信機能付きIoT機器購入費助成事業
+  summary: 認知機能が低下した人の迷い人対策として、位置がわかる機器の購入費を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - HDS-R20点以下、MMSE23点以下、認知症診断のいずれか
+  - 行方不明時に対応できる家族等がいる
+  - 機器購入から1か月以内に申請
+  where: 高齢介護室 高齢支援グループ（電子申請も可）
+  url: https://www.city.daito.lg.jp/soshiki/64/51873.html
+  confidence: high
+  amount: 機器代の上限5,000円
+  more_urls:
+  - https://www.city.daito.lg.jp/soshiki/64/33421.html
+- category: haikai
+  name: みまもりあいステッカーの無料提供
+  name_on_page: みまもりあいステッカー事業
+  summary: 迷い人になるおそれのある人の持ち物に貼る連絡用ステッカーを無料で提供する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上でHDS-R20点以下、MMSE23点以下、認知症診断のいずれか
+  - または40歳以上で認知症の診断がある
+  - 連絡に対応できる家族等・協力者がいる
+  where: 高齢介護室 高齢支援グループ（電子申請も可）
+  url: https://www.city.daito.lg.jp/soshiki/64/54939.html
+  confidence: high
+  amount: ステッカー48枚を無料
+  more_urls:
+  - https://www.city.daito.lg.jp/soshiki/64/52192.html
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 訪問理容サービス
+  summary: 理容店へ行くのが難しい人の自宅へ理容師が来て、年4回散髪する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護4・5、または身体障害者手帳1・2級、または療育手帳A
+  - 理容店へ行くことが困難
+  - 毎年申込みが必要
+  where: 高齢介護室 高齢支援グループ（来庁・郵送・電子申請）
+  url: https://www.city.daito.lg.jp/soshiki/64/17608.html
+  confidence: high
+  amount: 利用券は年4回分。1回1,100円（実費）を理容師へ支払う
+  more_urls:
+  - https://www.city.daito.lg.jp/soshiki/64/33421.html
+- category: mimamori
+  name: 地域SOSカードの登録
+  name_on_page: 地域SOSカード
+  summary: 持病や連絡先を書いたカードを冷蔵庫に保管し、緊急時の救急活動や見守りに役立てる。
+  who: {}
+  at_application:
+  - 原則65歳以上の単身世帯
+  - または75歳以上のみで構成される世帯
+  where: 高齢介護室 高齢支援グループ
+  url: https://www.city.daito.lg.jp/soshiki/64/1462.html
+  confidence: high
+  more_urls:
+  - https://www.city.daito.lg.jp/soshiki/64/52192.html
+- category: sonota
+  name: 高齢者のはり・きゅう・マッサージ施術費助成
+  name_on_page: 高齢者のはり・きゅう・マッサージ施術費用を助成
+  summary: 市と契約した施術所で、助成証明書を出すと施術費の一部を市が負担する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+  at_application:
+  - 市内に住所がある
+  - 大東市鍼灸マッサージ師協会の契約施術所で利用
+  - 健康保険等の療養費の対象外の施術
+  where: 福祉政策課 医療助成担当窓口（西別館1階）
+  url: https://www.city.daito.lg.jp/soshiki/20/44773.html
+  confidence: low
+  more_urls:
+  - https://www.city.daito.lg.jp/reiki_int/reiki_honbun/k220RG00000422.html
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- jutaku
+- shingu
+- gaishutsu
+- nichijo-yogu
+- chusha
+- yutai

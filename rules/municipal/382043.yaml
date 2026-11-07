@@ -1,0 +1,186 @@
+city: '382043'
+name: 八幡浜市
+site: www.city.yawatahama.ehime.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の人を在宅で介護する家族に、紙おむつなどの介護用品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市民税所得割が非課税の世帯
+  - 入院・施設入所中は利用できない
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 月 5,000 円分まで（紙おむつ・尿取りパッド・使い捨て手袋・清拭剤・ドライシャンプーに限る）
+- category: iro
+  name: 寝たきり老人等の介護慰労金
+  name_on_page: 寝たきり老人等介護慰労金支給事業
+  summary: 寝たきりの人や重度の認知症の人を在宅で常時介護する家族に、慰労金を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 同居で6か月以上の寝たきりの人（要介護4・5か相当）を介護
+  - 重度の認知症の人を常時介護している
+  - 市に1年以上住所があり住民登録している
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 介護保険料の第1段階は月 7,000 円、第2・3段階は月 5,000 円（年2回支給）
+- category: kinkyu-tsuho
+  name: 高齢者の緊急通報装置の貸与
+  name_on_page: 高齢者緊急通報システム事業
+  summary: 緊急通報の機器を貸し出し、月1回の安否確認も受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 日常生活に注意が必要な人
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 利用者負担は月 500 円
+- category: gaishutsu
+  name: 高齢者の外出支援チケット
+  name_on_page: 高齢者外出支援事業
+  summary: 市内の移動で使えるタクシー・バス・船のチケットを支給する。
+  who:
+    age_min: 75
+  at_application:
+  - 市民税所得割が非課税の人
+  - 介護保険施設に入所中の人や、ほかの外出支援を利用中の人は対象外
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 年 18,000 円分（月 1,500 円×12）。申請月により減額。タクシーは1回 1,000 円まで
+- category: nichijo-yogu
+  name: 日常生活用具の給付
+  name_on_page: 日常生活用具給付事業
+  summary: 自動消火器・火災警報器・電磁調理器のどれかを給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 日常生活上の援助が必要な人
+  - 市民税所得割が非課税の世帯
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 個人負担なし
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 軽度・中等度難聴高齢者の補聴器購入費用を一部助成します
+  summary: 軽度・中等度の難聴の高齢者に、補聴器の購入費を一部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 購入前の申請が必要
+  - 聴覚障害の身体障害者手帳を交付されていない
+  - 医師が補聴器の使用を必要と認めた
+  - 市税・介護保険料・後期高齢者医療保険料の滞納がない
+  - 介護予防教室等の参加案内に同意する
+  where: 地域包括支援センター
+  url: https://www.city.yawatahama.ehime.jp/doc/2026032700020/
+  confidence: high
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与事業
+  summary: 電話のない低所得の高齢者らに電話を設置して貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の独居高齢者、または重度の身体障害者
+  - 市民税所得割が非課税の世帯
+  - 電話を設置していない
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 通話料のみ自己負担
+- category: sonota
+  name: 生活管理指導員の派遣
+  name_on_page: 生活管理指導員派遣事業
+  summary: 自立した生活に援助が必要な高齢者の家に、家事などの支援・指導の担当者を派遣する。
+  who:
+    age_min: 65
+  at_application:
+  - 独居高齢者等で援助が必要な人
+  - 介護認定を受けている人は対象外
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 週1回1時間。1回 700 円（所得割非課税世帯は 350 円）
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 老人ホームに短期間泊まり、生活習慣の指導や体調管理を受ける。
+  who:
+    age_min: 65
+  at_application:
+  - 社会適応が困難な人
+  - 介護認定を受けている人は対象外
+  - 申請に健康診断書が必要
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 1日 3,300 円程度（所得割非課税世帯は 2,600 円程度）。年2回、1回7日以内
+- category: sonota
+  name: 家具転倒防止金具の取り付け
+  name_on_page: 家具転倒防止金具等取付事業
+  summary: 高齢者のみの世帯などに、家具の転倒防止金具を取り付ける。
+  who: {}
+  at_application:
+  - 75歳以上の高齢者のみの世帯
+  - または要介護3〜5の人のみの世帯
+  - または障害者のみの世帯、もしくはこれらの人のみの世帯
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 金具などの実費は自己負担。1世帯1回、4台まで
+- category: sonota
+  name: 高齢者世帯のエアコン購入費助成
+  name_on_page: 高齢者世帯エアコン購入費助成金事業
+  summary: エアコンのない非課税の高齢者世帯に、購入・設置費を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 市税等と介護保険料の滞納がない
+  - 使えるエアコンが1台もない
+  - 購入・設置の前に申請が必要
+  - 過去にこの助成を受けていない
+  where: 保健センター 高齢者福祉係
+  url: https://www.city.yawatahama.ehime.jp/doc/2022042500018/
+  confidence: high
+  amount: 購入設置費と5万円のうち少ない額（上限5万円）
+not_found:
+- haishoku
+- haikai
+- ribiyo
+- koken
+- jutaku

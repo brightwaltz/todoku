@@ -1,0 +1,128 @@
+city: '252123'
+name: 高島市
+site: www.city.takashima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品助成券の支給
+  name_on_page: 介護用品助成券の支給
+  summary: 紙おむつなどの介護用品に使える助成券が毎月分もらえる。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 介護保険の認定があり常時介護用品を使う、または障がいがある
+  - 市民税非課税世帯（3歳以上20歳未満で手帳がある人は別枠）
+  - 民生委員・市保健師・ケアマネ事業所の確認印が要る
+  where: 高齢者支援課（確認印を得た申請書を提出）
+  url: https://www.city.takashima.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/3/4653.html
+  confidence: high
+  amount: 月額3,000円分。要介護4・5相当で非課税世帯は月額5,000円分。
+  more_urls:
+  - https://www.city.takashima.lg.jp/section/reiki_int/reiki_honbun/r152RG00000456.html
+- category: gaishutsu
+  name: 福祉総合交通利用助成券
+  name_on_page: 福祉総合交通利用助成券の交付
+  summary: タクシー・福祉輸送・路線バスに使える利用券が毎月交付される。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所がある
+  - 要支援・要介護の認定を受けている
+  - または75歳以上でひとり暮らし
+  - または70歳以上のみの世帯等で暮らす75歳以上
+  where: 高齢者支援課、各支所（電子申請も可）
+  url: https://www.city.takashima.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/3/4654.html
+  confidence: high
+  amount: 月額1,000円分（100円券）。
+- category: kinkyu-tsuho
+  name: 緊急通報システムの利用
+  name_on_page: 緊急通報システムの利用
+  summary: 自宅に緊急通報機を無料で設置し、急病時に相談センターへ通報できる。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - ひとり暮らしの高齢者・重度身体障がい者・要介護認定者など
+  - 昼間ひとりのねたきり高齢者、緊急時対応が難しい世帯も対象
+  - 固定電話回線が必要
+  - 近隣の協力者を3人以上確保し、地域ケア会議で決定
+  where: 高齢者支援課
+  url: https://www.city.takashima.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/3/4655.html
+  confidence: high
+  amount: 利用料は無料（期間はおおむね1年、再検討あり）。
+- category: haikai
+  name: 認知症高齢者位置探索（GPS）利用助成
+  name_on_page: 位置探索システム（GPS)の利用助成
+  summary: 徘徊のおそれがある認知症の人のGPS機器の初期導入費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 市内在住の認知症高齢者・若年性認知症の人
+  - 市税と介護保険料の滞納がない
+  - 一人歩きの事前登録をしている
+  - 機器の携帯と充電管理を家族・支援者ができる
+  where: 市（申請書兼請求書を提出）
+  url: https://www.city.takashima.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/4/9785.html
+  confidence: high
+  amount: GPS本体・付属品・契約手数料の初期費用で上限8,000円。
+- category: haikai
+  name: 一人歩き（徘徊）の事前情報登録
+  name_on_page: 認知症（疑い）の方の一人歩き事前情報登録について
+  summary: 行方不明の心配がある人を事前登録し、いざという時に情報を発信できる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症（疑い含む）で行方不明になる可能性がある
+  - 登録には家族の了解が要る
+  where: 市（頁に窓口名の記載なし）
+  url: https://www.city.takashima.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/4/9785.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 高島市成年後見制度利用支援および成年後見人等報酬助成金交付要綱
+  summary: 成年後見の審判請求費用や後見人等の報酬を、条件に応じて助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある（市の措置で施設利用中の人も含む）
+  - 費用助成は生活保護、または助成なしでは申立てが困難な人
+  - 報酬助成は生活保護、または非課税・年収150万円以下・預貯金100万円以下
+  - 配偶者や2親等内の親族が後見人になる場合は報酬助成なし
+  where: 市（要綱では市長宛に申請）
+  url: https://www.city.takashima.lg.jp/section/reiki_int/reiki_honbun/r152RG00001507.html
+  confidence: high
+  amount: 報酬助成は月額上限 在宅28,000円、施設18,000円。
+- category: sonota
+  name: 高齢者等の除雪費用の支援金
+  name_on_page: 高齢者等除雪支援事業
+  summary: 雪下ろし・雪かきを委託した費用の3分の2を支援金で給付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所があり、自力や親族の支援での除雪が困難
+  - 70歳以上のみの世帯、手帳1・2級等のみの世帯などが対象
+  - 同一敷地・同一区の親族がいると対象外の場合あり
+  where: 高齢者支援課、各支所
+  url: https://www.city.takashima.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/3/4961.html
+  confidence: high
+  amount: 雪下ろしは1回5万円まで、雪かきは1回5千円までの2/3。年間上限は66,000円と10,000円。
+not_found:
+- haishoku
+- iro
+- hochoki
+- shingu
+- ribiyo
+- jutaku

@@ -1,0 +1,120 @@
+city: '272060'
+name: 泉大津市
+site: www.city.izumiotsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ等の介護用品の現物給付
+  name_on_page: 介護用品の給付
+  summary: 在宅でおむつを常時使う人に、紙おむつ等を毎月カタログから選んで現物で給付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3〜5、または18歳以上で身障手帳1・2級か療育手帳A
+  - 世帯全員が市民税非課税、または均等割のみ課税
+  - 市内に住民登録があり在宅介護を受けている
+  where: 高齢介護課
+  url: https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/zaitakusabisu/kaigoyouhinn.html
+  confidence: high
+  amount: 月額上限4,000円分の現物給付
+- category: haishoku
+  name: 配食サービス（夕食と安否確認）
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しいひとり暮らしの高齢者等に、夕食を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 規則的な食事づくりが困難な世帯の人
+  - ひとり暮らしで、おおむね65歳以上、または障害者手帳(一定の等級)
+  - 上記に当たる人だけの世帯に属する人も対象
+  where: 高齢介護課（オンライン申請・郵送も可。地域包括支援センター職員等の代理申請も可）
+  url: https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/zaitakusabisu/haisyokusabisu.html
+  confidence: high
+  amount: 1食370円（自己負担）
+- category: haikai
+  name: みまもりあい事業（ステッカーとアプリ）
+  name_on_page: 泉大津市みまもりあい事業
+  summary: 一人歩きで行方不明のおそれがある高齢者に、連絡用ステッカーを配り、捜索アプリと連動させる。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、認知症等で一人歩きのおそれがある
+  - 緊急連絡先を1名以上登録する
+  - 要介護認定がない場合は認知症の診断書等が必要
+  where: 高齢介護課（オンライン申請も可）
+  url: https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/14862.html
+  confidence: high
+  amount: 自己負担なし（ステッカー48枚を配付）
+- category: haikai
+  name: 高齢者等見守りSOSネットワークの事前登録
+  name_on_page: 高齢者等見守りSOSネットワーク事業
+  summary: 認知症高齢者等の情報を事前登録し、行方不明時に関係機関へ早く情報発信してもらう。
+  who: {}
+  at_application:
+  - 本人や家族の同意のもとで登録する
+  - 登録届と顔と全体が写る写真2枚を提出する
+  where: 高齢介護課（オンライン申請も可）
+  url: https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/mimamorisos/mimamorisos_02.html
+  confidence: low
+- category: hochoki
+  name: 補聴器の購入費助成
+  name_on_page: 補聴器購入費用助成事業
+  summary: 50歳以上で聴覚の身体障害者手帳がない人の補聴器本体の購入費を一部助成する。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障がいによる身体障害者手帳の交付を受けていない
+  - 両耳とも40デシベル以上で、医師が補聴器装用を必要と認める
+  - 1人1回限り。助成決定前の購入は対象外
+  where: 高齢介護課（事前に相談。オンライン申請も可）
+  url: https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/10536.html
+  confidence: high
+  amount: 生活保護・市民税非課税世帯は1/2（上限5万円）、課税世帯は1/4（上限2.5万円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 通報用の本体機とペンダント、火災報知器を貸し出し、コールセンターが緊急対応と安否確認をする。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または同年齢以上のみの世帯
+  - または、身障手帳1・2級のひとり暮らしの人
+  - または、同居人の就労・就学で日中か夜間に本人だけになる世帯
+  - 固定電話回線が必要。協力員3名の承諾書が必要
+  where: 高齢介護課
+  url: https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/zaitakusabisu/kinkyutuhosouti.html
+  confidence: high
+  amount: 利用者負担は月額0円・847円・1,210円（前年所得税による）
+- category: ribiyo
+  name: 訪問理美容サービスの利用助成券
+  name_on_page: 訪問理美容サービス利用費の助成
+  summary: 理美容店に行けない在宅の高齢者に、訪問カットを安く使える助成券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内に住所があり、自力や介助でも理美容店に行けない
+  - 施設入所中・入院中の人は対象外
+  - サービスを受ける際は家族等の立会いが必要
+  where: 高齢介護課（オンライン申請も可）
+  url: https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/zaitakusabisu/ribiyousabisu/8648.html
+  confidence: high
+  amount: 助成券は年度最大4枚。カット1回2,000円の自己負担で利用できる
+  more_urls:
+  - https://www.city.izumiotsu.lg.jp/kakuka/fukushi/koreikaigo/gyoumunogoannai/koureisyafukushisabisu/zaitakusabisu/ribiyousabisu/index.html
+not_found:
+- iro
+- koken
+- nichijo-yogu
+- chusha
+- yutai

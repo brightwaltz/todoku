@@ -1,0 +1,179 @@
+city: '282227'
+name: 養父市
+site: www.city.yabu.hyogo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の給付
+  name_on_page: 介護用品給付事業
+  summary: 要介護4・5の方を在宅で介護する非課税世帯の家族に、紙おむつ等の引換券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 養父市在住
+  - 介護されている要介護者の認定が要介護4または5
+  where: 介護保険課
+  url: https://www.city.yabu.hyogo.jp/soshiki/kenkofukushi/kaigo/1/2520.html
+  confidence: high
+  amount: 年額 1人当たり 75,000円分（指定事業者で使う引換券）
+- category: kaigo-yohin
+  name: 紙おむつ用ごみ袋の支給
+  name_on_page: 紙おむつ用ごみ袋支給事業
+  summary: 常に紙おむつを使う要介護4・5の方を在宅で介護する人に、指定ごみ袋を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 入院や長期入所中の人は対象外
+  where: 介護保険課窓口、各地域局市民グループ窓口
+  url: https://www.city.yabu.hyogo.jp/iryo_kenko_fukushi/fukushi_kaigo/koreisha/10368.html
+  confidence: high
+  amount: 要介護者1人あたり年間50枚（燃やすごみ用の大袋）
+  more_urls:
+  - https://www.city.yabu.hyogo.jp/soshiki/kenkofukushi/kaigo/1/2520.html
+- category: haishoku
+  name: 高齢者への配食（給食）サービス
+  name_on_page: 給食サービス（委託事業）
+  summary: 調理が難しい方へ、お弁当を配食ボランティアが届けて安否確認も行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者夫婦世帯、これに準ずる世帯
+  - または身体障害者で、調理が困難な人
+  - 老衰・心身の障害・傷病等で調理が困難
+  where: 養父市社会福祉協議会（079-662-0160）
+  url: https://www.city.yabu.hyogo.jp/soshiki/kenkofukushi/kaigo/1/2520.html
+  confidence: high
+  amount: 利用料600円、週2回（水・金の昼食）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院へ行けない方の自宅へ理容師・美容師が訪問し、訪問費用を補助する。
+  who: {}
+  at_application:
+  - 要介護4・5の認定を受けている人
+  - または身体障害者手帳1・2級の交付を受けている人
+  where: 介護保険課
+  url: https://www.city.yabu.hyogo.jp/soshiki/kenkofukushi/kaigo/1/2520.html
+  confidence: high
+  amount: 訪問にかかる費用として2,000円を補助（理美容料金は通常料金）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 在宅の方に通報装置を貸し、ボタンで受信センターへつなぐ。月1回の確認電話もある。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - おおむね65歳以上で援護を要する一人暮らしの方
+  - または全員がおおむね65歳以上で常時注意を要する2人以上の世帯
+  - または重度の障害のある方（一人暮らし・障害者のいる世帯）
+  where: 介護保険課、各地区の民生委員
+  url: https://www.city.yabu.hyogo.jp/iryo_kenko_fukushi/fukushi_kaigo/koreisha/10366.html
+  confidence: high
+  amount: 設置費用は無料、自己負担は月300円（生活保護・低所得は0円）
+  more_urls:
+  - https://www.city.yabu.hyogo.jp/soshiki/kenkofukushi/kaigo/1/2520.html
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 養父市高齢者補聴器購入助成事業
+  summary: 中等度難聴の65歳以上で、障害者手帳の対象でない方の補聴器購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴力での身体障害者手帳の対象でない
+  - 医師の意見書で両耳40dB以上70dB未満と認められる
+  - 助成は一人1回限り
+  where: 市の担当窓口（頁に窓口名の記載なし。問い合わせは介護保険課の頁に記載）
+  url: https://www.city.yabu.hyogo.jp/iryo_kenko_fukushi/fukushi_kaigo/koreisha/10372.html
+  confidence: high
+  amount: 上限3万円（補聴器本体の費用のみ）
+- category: gaishutsu
+  name: タクシー等利用料の半額助成（タクシーポイント）
+  name_on_page: 養父市タクシー等利用料助成事業（タクシーポイント）
+  summary: 対象の方がタクシーやぶくる等を使うとき、利用料の半額をポイントで助成する。
+  who: {}
+  at_application:
+  - 養父市に住民票がある
+  - 75歳以上、または70歳以上の免許返納者
+  - または要介護4・5、障害者手帳（種別・等級に条件あり）等
+  where: 社会福祉課、各地域局窓口
+  url: https://www.city.yabu.hyogo.jp/iryo_kenko_fukushi/fukushi_kaigo/koreisha/14518.html
+  confidence: high
+  amount: 利用料の半額、年度ごとに最大6万円（月5,000円×年度末までの月数）
+- category: gaishutsu
+  name: 路線バスの高齢者等優待乗車証
+  name_on_page: 高齢者等優待乗車証交付事業
+  summary: 全但バスの市内区間を、1回降車ごとに定額で乗れる乗車証を交付する。
+  who: {}
+  at_application:
+  - 養父市に住所がある
+  - 満65歳以上の方
+  - または身体障害者手帳・療育手帳・精神障害者保健福祉手帳の交付を受けている方
+  - または生活保護を受けている方
+  where: 社会福祉課、各地域局
+  url: https://www.city.yabu.hyogo.jp/iryo_kenko_fukushi/fukushi_kaigo/koreisha/14519.html
+  confidence: high
+  amount: 1回降車ごとに現金200円（市外区間は別途運賃）
+- category: haikai
+  name: 認知症の方の見守り・SOS事前登録と個人賠償責任保険
+  name_on_page: 認知症高齢者等の見守り・SOSネットワーク
+  summary: 行方不明の恐れがある方を事前登録し、地域で見守る。登録者は市契約の賠償保険にも入れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になる恐れがある
+  - 保険のみの加入は不可（事前登録と同時に申請）
+  where: 養父市地域包括支援センター（079-662-6141）
+  url: https://www.city.yabu.hyogo.jp/soshiki/kenkofukushi/shakai_shoho/ninntisyou/10197.html
+  confidence: high
+  amount: 個人賠償責任保険の補償上限1億円、傷害死亡・後遺障害は100万円
+  more_urls:
+  - https://www.city.yabu.hyogo.jp/material/files/group/20/chirashi.pdf
+- category: sonota
+  name: 緊急情報キットの配布
+  name_on_page: 養父市緊急情報キット配布事業
+  summary: 持病や内服薬などを書いた情報用紙を冷蔵庫に保管するキットを配る。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - おおむね65歳以上の一人暮らし、または高齢者夫婦世帯
+  - または障害のある家族がいる世帯、健康上不安のある世帯
+  where: 介護保険課、各地域局
+  url: https://www.city.yabu.hyogo.jp/iryo_kenko_fukushi/fukushi_kaigo/koreisha/10363.html
+  confidence: high
+- category: sonota
+  name: 無年金の外国籍高齢者等への福祉給付金
+  name_on_page: 無年金外国籍高齢者等福祉給付金
+  summary: 国籍要件で年金を受けられなかった、大正15年4月1日以前生まれの高齢者に給付金を支給する。
+  who: {}
+  at_application:
+  - 大正15年4月1日以前に生まれた人
+  - 外国人登録の時期など、頁に挙げた3つのいずれかに当たる
+  - 所得制限などの要件あり（詳細は窓口で確認）
+  where: 社会福祉課
+  url: https://www.city.yabu.hyogo.jp/iryo_kenko_fukushi/fukushi_kaigo/koreisha/10370.html
+  confidence: high
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- nichijo-yogu

@@ -1,0 +1,189 @@
+city: '252085'
+name: 栗東市
+site: www.city.ritto.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅の要介護者への紙おむつ費用助成券
+  name_on_page: 在宅要介護高齢者等紙おむつ費用助成事業
+  summary: 常に紙おむつが必要な在宅の要介護3以上の方に、市指定店で使える助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3は認定調査票の排尿・排泄項目で介助等に該当
+  - 配偶者・扶養義務者に所得制限あり
+  - 市内居住1年未満は世帯全員が市民税非課税
+  - 入所・入院中は利用できない（支給休止）
+  where: 長寿福祉課 高齢福祉係
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 月額 5,000 円相当の助成券
+- category: haikai
+  name: 認知症高齢者等の事前登録（反射シール交付）
+  name_on_page: 認知症高齢者等事前登録事業
+  summary: 行方不明に備え本人情報を市に登録し、警察などと共有。登録番号入りの反射シールを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で在宅、認知症等により行方不明のおそれがある人
+  - または40〜64歳で在宅、加齢に伴う疾病により同様のおそれ
+  - または市長が特に必要と認める人
+  - 申請は本人、配偶者、四親等内親族、同居家族など
+  where: 長寿福祉課（担当の地域包括支援センターに情報共有）
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/oshirase/10257.html
+  confidence: high
+  amount: 反射シール（登録番号入り）32枚を交付
+  more_urls:
+  - https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+- category: haikai
+  name: 位置情報端末（GPS等）の初期費用助成
+  name_on_page: 行方不明高齢者等位置情報システム利用助成
+  summary: GPS等で位置を把握する端末の購入などの初期費用を、1人1回助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明のおそれがある高齢者等
+  - 認知症高齢者等事前登録事業を利用していること
+  - 契約日の翌日から60日以内に申請
+  - スマホ等や月額利用料・レンタル代は対象外
+  where: 長寿福祉課
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 1万円を限度に利用者1人につき1回
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険（市が加入）
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の方が事故で賠償責任を負った場合に損害賠償額が補償される保険。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明のおそれがある高齢者等
+  - 栗東市の住民基本台帳に登録がある
+  - 認知症高齢者等事前登録事業の利用者に限る
+  - 事前登録の申請書と加入申請書は兼用
+  where: 長寿福祉課
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 1事故につき1億円が上限
+  more_urls:
+  - https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/oshirase/10257.html
+- category: jutaku
+  name: 住宅の小規模改造への市の助成
+  name_on_page: すこやか住まい助成事業
+  summary: 浴室・トイレ・玄関などの小規模な住宅改造費の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上、または要介護・要支援認定を受けた40〜64歳
+  - 障がい老人の日常生活自立度でランクA以上
+  - 日常生活に支障があり住宅の改修が必要
+  - 所得制限あり
+  - 介護保険の住宅改修を優先して利用する
+  where: 長寿福祉課
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 費用の2分の1以内、上限25万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 急病時に受信センター経由で消防署や協力員へ連絡できる機器を設置。健康相談も使える。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 病弱等で日常生活に不安がある、おおむね65歳以上の方
+  where: 長寿福祉課 高齢福祉係
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 利用者負担は固定型が月500円、携帯型が月900円
+- category: haishoku
+  name: 配食サービス（昼食・安否確認）
+  name_on_page: 配食サービス事業
+  summary: 栄養バランスのよい昼食を届け、安否も確認する。週4日まで。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 老衰・心身の障がい・疾病で栄養改善が必要
+  - 調理や買い物が特に困難と認められる
+  - 申請は担当ケアマネジャー等を通じて行う
+  where: 担当ケアマネジャー経由で長寿福祉課
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 1食450円（普通食）、昼食のみ週4日まで
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 高齢者日常生活用具の給付
+  summary: 電磁調理器・火災警報器・自動消火器を給付する。所得に応じ自己負担あり。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 経済的・身体的事情により必要性が認められる
+  where: 長寿福祉課
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 給付あり、所得に応じて負担（金額は頁になし）
+- category: gaishutsu
+  name: 高齢者福祉タクシー運賃助成券
+  name_on_page: 福祉タクシー運賃助成券交付事業
+  summary: 通院でタクシーに頼る要介護者へ、市指定タクシーで使える助成券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 通院で乗降の介護が必要で、交通手段をタクシーに依存
+  - 所得制限あり
+  - 障がい福祉の燃料費助成券・タクシー券の受給者は除く
+  - 申請は担当ケアマネジャーを通じて行う
+  where: 担当ケアマネジャー経由で長寿福祉課
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/1381.html
+  confidence: high
+  amount: 500円券で月2,000円分
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 栗東市成年後見制度利用支援事業
+  summary: 経済的に利用が難しい認知症高齢者等の、申立費用と後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 家庭裁判所で後見人等が選任された人
+  - 生活保護受給、または資産がなく報酬助成がないと困難
+  - または市長が必要と認める人
+  - 親族が後見人等に選任された場合は対象外
+  where: 長寿福祉課（65歳以上の場合）
+  url: https://www.city.ritto.lg.jp/soshiki/kenkofukushi/tyoujyu/gyoumu/15699.html
+  confidence: high
+  amount: 申立費用は全額（1人1回）。報酬は月上限が在宅2.8万円・施設1.8万円
+  more_urls:
+  - http://www.city.ritto.lg.jp/reiki/reiki_honbun/k010RG00001045.html
+not_found:
+- iro
+- hochoki
+- ribiyo
+- shingu

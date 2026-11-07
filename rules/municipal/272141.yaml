@@ -1,0 +1,140 @@
+city: '272141'
+name: 富田林市
+site: www.city.tondabayashi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 介護用品（紙おむつ等）の支給
+  summary: 要介護度の高い在宅の人に、毎月、紙おむつ等を自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3は排尿か排便に介助・見守り等が必要な場合のみ
+  - 当該年度の市民税が非課税
+  - 生活保護世帯は対象外
+  - 入所・入院すると給付停止
+  where: 高齢介護課、金剛連絡所、ほんわかセンター、在宅介護支援センター
+  url: https://www.city.tondabayashi.lg.jp/soshiki/26/1309.html
+  confidence: high
+  amount: 月 5,000 円分まで（超える分は自己負担）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 安否確認を兼ねて、昼食のお弁当を手渡しで届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 昼間一人で過ごす人は対象外
+  where: 高齢介護課、金剛連絡所、ほんわかセンター、在宅介護支援センター
+  url: https://www.city.tondabayashi.lg.jp/soshiki/26/1303.html
+  confidence: high
+  amount: 1食 350円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの登録・設置
+  summary: ボタンで受信センターに通報できる装置を設置する。2 か月に 1 度の安否の電話もある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 65歳以上のみの世帯は対象者以外が全員要介護認定の場合
+  - 昼間一人の人も可（同居者の就労・就学証明が要る）
+  - 固定電話が無い人は携帯型を利用
+  where: 高齢介護課、ほんわかセンター、在宅介護支援センター
+  url: https://www.city.tondabayashi.lg.jp/soshiki/26/1300.html
+  confidence: high
+  amount: 所得税額 7 万円以下の世帯は固定型が無料、超える世帯は月 1,760 円（携帯型は別料金）
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 訪問理容サービス
+  summary: 外出が難しい人の自宅へ理容師が訪問して散髪する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 座位が保てる（家族の介助でもよい）
+  where: 高齢介護課、金剛連絡所、ほんわかセンター、在宅介護支援センター
+  url: https://www.city.tondabayashi.lg.jp/soshiki/26/1308.html
+  confidence: high
+  amount: 年 4 回まで。利用者負担は実費相当で約 3,000 円
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 難聴の高齢者が補聴器を買うとき、費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻科医が補聴器の必要を認めた意見書がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 過去にこの助成を受けていない（生涯 1 回）
+  where: 高齢介護課
+  url: https://www.city.tondabayashi.lg.jp/soshiki/26/95339.html
+  confidence: high
+  amount: 補聴器本体 1 台分、上限 25,000 円
+- category: haikai
+  name: 高齢者等見守りSOSネットワークの事前登録
+  name_on_page: 富田林市高齢者等見守りSOSネットワーク
+  summary: 行方不明の恐れがある人を事前登録し、行方不明時に協力機関へ情報を流す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になる可能性のある認知症高齢者等
+  where: 高齢介護課
+  url: https://www.city.tondabayashi.lg.jp/soshiki/26/1313.html
+  confidence: high
+- category: mimamori
+  name: 見守り訪問支援
+  name_on_page: 見守り訪問支援事業
+  summary: 社会参加が難しい高齢者の自宅を訪問し、安否確認や助言をする。
+  who:
+    age_min: 65
+  at_application:
+  - 社会参加や社会適応が困難な人等
+  where: 高齢介護課、金剛連絡所、ほんわかセンター
+  url: https://www.city.tondabayashi.lg.jp/soshiki/26/1301.html
+  confidence: high
+  amount: 利用料は無料
+- category: sonota
+  name: 認知症の人の個人賠償責任保険（市が保険料負担）
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 事故で他人に損害を与えた場合に備える保険に、市の負担で加入できる。
+  who:
+    age_min: 40
+  at_application:
+  - SOSネットワークに事前登録している
+  - 原則自宅で生活している
+  - 認知症の診断があるか、認定調査の自立度がⅡa以上
+  where: 高齢介護課
+  url: https://www.city.tondabayashi.lg.jp/uploaded/attachment/91739.pdf
+  confidence: low
+not_found:
+- iro
+- jutaku
+- shingu
+- gaishutsu

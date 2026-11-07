@@ -1,0 +1,165 @@
+city: '262030'
+name: 綾部市
+site: www.city.ayabe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品引換チケットの支給
+  name_on_page: 介護用品支給事業
+  summary: 寝たきりや認知症の人を在宅で介護する家族に、介護用品と引き換えるチケットを支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護している家族の名前で申請（本人申請は不可）
+  - 市府民税が非課税であること
+  - 要介護3は排泄が介助か見守りの人のみ
+  - おむつ等が必要な人を在宅で介護している
+  where: 高齢者支援課 高齢者福祉担当
+  url: https://www.city.ayabe.lg.jp/0000001619.html
+  confidence: high
+  amount: 1か月あたり2,700円分のチケット（半年ごとに送付）
+- category: haishoku
+  name: 配食サービス（夕食の配達と見守り）
+  name_on_page: 在宅高齢者等配食サービス事業
+  summary: 食事の支度が難しい在宅の高齢者に、夕食を届けて見守りも行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上で食事の支度が困難な人
+  - 同じ自治会内に65歳未満の扶養義務者がいない
+  - 要介護・要支援認定を受けた人、または生活支援が必要な人
+  - ケアマネか地域包括支援センターを通じて申請
+  where: 担当ケアマネジャー、地域包括支援センター（市は高齢者支援課）
+  url: https://www.city.ayabe.lg.jp/0000001617.html
+  confidence: high
+  amount: 1日1食（夕食）、利用者負担は1食500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしの高齢者などに、緊急ボタン付きの通報装置を貸し出す。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または外出困難な重度身体障害者
+  - NTTの固定電話（光回線・ISDNは不可）がある
+  - ひとり暮らしの人は同じ自治会内に扶養義務者がいない
+  - 近隣で3名の受信協力者が必要
+  - 所得税課税世帯は月額418円の自己負担
+  where: 高齢者支援課
+  url: https://www.city.ayabe.lg.jp/0000001622.html
+  confidence: high
+  amount: 所得税非課税世帯は装置使用料を市が負担。設置工事費・通話料は自己負担
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 高齢者等訪問理美容サービス事業
+  summary: 理美容院に行けない人が自宅などで理美容を受ける際の出張費を、市が利用券で負担する。
+  who: {}
+  at_application:
+  - おおむね60歳の高齢者、または重度の身体障害者
+  - 理美容院に出向くことが困難な人
+  - 申請時に要介護度などを確認される
+  where: 高齢者支援課
+  url: https://www.city.ayabe.lg.jp/0000001620.html
+  confidence: high
+  amount: 出張費を利用券で年度内4回まで市が負担（10月以降は2回まで）。理美容の実費は自己負担
+- category: haikai
+  name: 認知症高齢者のGPS端末利用料の助成
+  name_on_page: 認知症高齢者支援事業（GPS機器の利用助成）
+  summary: 行方不明の心配がある認知症の高齢者のGPS端末の加入料・基本料を市が負担する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で行方不明になる心配がある
+  - 認知症高齢者の日常生活自立度が2以下
+  - 高齢者を介護する人が申請する
+  where: 高齢者支援課（西庁舎1階）
+  url: https://www.city.ayabe.lg.jp/0000004405.html
+  confidence: high
+  amount: 加入料・基本料・充電器は市が負担。警備員の急行料などは自己負担
+- category: haikai
+  name: SOSネットワーク事前登録とSOS見守りシール
+  name_on_page: 綾部市高齢者対策SOSネットワーク事前登録事業
+  summary: 行方不明のおそれがある人の情報を事前登録し、QRコード付きの見守りシールを発行する。
+  who: {}
+  at_application:
+  - 市内在住で、認知症などで行方不明のおそれがある人
+  - または市内の介護保険施設・グループホーム等の利用者
+  - 親族や成年後見人等の同意を得られること
+  - 登録は1年ごとに更新
+  where: 地域包括支援課（市役所窓口）
+  url: https://www.city.ayabe.lg.jp/0000001628.html
+  confidence: high
+- category: mimamori
+  name: 見守り電球による安否確認
+  name_on_page: 高齢者等見守りサービス事業
+  summary: 自宅の電球を見守り機器に替え、24時間動きがなければ緊急連絡先に通知する。
+  who: {}
+  at_application:
+  - ひとり暮らしで65歳以上、または身障1・2級、療育A、精神1級
+  - または上記の人で同居者が単独で移動できない場合
+  - 特に利用が必要と認められる場合
+  - メールで受け取れる緊急連絡先が必要
+  where: 高齢者支援課 高齢者福祉担当（電子申請・郵送・窓口）
+  url: https://www.city.ayabe.lg.jp/0000004424.html
+  confidence: high
+  amount: 利用料は月額583円（税込）を事業者へ支払う。電気代は自己負担
+- category: jutaku
+  name: 介護予防のための住宅改修費補助（非認定の人向け）
+  name_on_page: 介護予防安心住まい推進事業
+  summary: 手すり設置や段差解消などの住宅改修費の一部を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 基本チェックリストで運動機能の低下が認められた人
+  - 介護保険の認定を受けていない（認定申請中は除く）
+  - 工事の着工前に交付申請して決定を受ける
+  where: 高齢者支援課 高齢者福祉担当（基本チェックリストは地域包括支援センター）
+  url: https://www.city.ayabe.lg.jp/0000001616.html
+  confidence: high
+  amount: 工事費の3分の2、上限16万円
+- category: jutaku
+  name: 高齢者・身体障害者の住宅改修補助
+  name_on_page: すこやか住まい改修事業
+  summary: スロープ・手すり・便所や浴室の改修などの費用の一部を補助する。
+  who: {}
+  at_application:
+  - 要支援以上の高齢者、身体障害者または戦傷病者
+  - 世帯の市民税所得割が23万5千円未満
+  - 特養などの入所申請中の人は対象外
+  - 屋外工事は対象外。着工前に交付決定が必要
+  where: 高齢者支援課 高齢者福祉担当
+  url: https://www.city.ayabe.lg.jp/0000001621.html
+  confidence: high
+  amount: 補助対象額は1住宅40万円まで、補助率3分の2、上限13万3千円
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援
+  summary: 成年後見の申立て費用や後見人等への報酬を、要件に当てはまる場合に助成する。
+  who: {}
+  at_application:
+  - 要件に当てはまる場合のみ助成（要件は要綱に定められている）
+  where: 地域包括支援課（成年後見支援センター）、綾部市社会福祉協議会でも相談可
+  url: https://www.city.ayabe.lg.jp/0000001626.html
+  confidence: low
+not_found:
+- iro
+- hochoki
+- shingu
+- nichijo-yogu
+- yutai

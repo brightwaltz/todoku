@@ -1,0 +1,175 @@
+city: '312029'
+name: 米子市
+site: www.city.yonago.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: mimamori
+  name: 見守り用デジタル機器の設置費補助
+  name_on_page: ICTによる高齢者見守り体制充実事業補助金
+  summary: 自宅に見守り用のデジタル機器を設置した一人暮らしの高齢者に、購入費の一部を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 申請日時点で市内に住所がある
+  - 一人暮らし、または就労・入院などで一人暮らしに準ずる世帯
+  - 同年度に65歳になる人も含む
+  - 国や他の自治体から同じ補助を受けていない
+  - 1世帯1回、先着順（予算に達したら終了）
+  where: 長寿社会課（電子申請も可）
+  url: https://www.city.yonago.lg.jp/46050.htm
+  confidence: high
+  amount: 購入・設置費の2分の1、上限10,000円（1,000円未満切り捨て）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置費助成
+  name_on_page: 緊急通報装置設置費助成
+  summary: 民間の緊急通報装置を設置する一人暮らしの高齢者などに、初期費用の一部を助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 65歳以上の一人暮らし、その準ずる世帯、高齢者か障がい者のみの世帯
+  - 上記のほか市長が必要と認める人
+  - 装置の設置前に申請する（設置後は不可）
+  - 1世帯につき年度内1回
+  where: 長寿社会課（電子申請も可）
+  url: https://www.city.yonago.lg.jp/41008.htm
+  confidence: high
+  amount: 設置費を上限2万円まで助成（月々の利用料は対象外）
+- category: kaigo-yohin
+  name: 家族介護用品のクーポン券支給
+  name_on_page: 家族介護用品助成
+  summary: 要介護4・5の人を在宅で介護する非課税世帯に、紙おむつ等に使えるクーポン券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と介護者の両方の世帯が市民税非課税
+  - 介護者がその年の4月1日時点で市民である
+  - 4・5月の申請は前年度の課税状況で判定
+  where: 担当の地域包括支援センターまたは居宅介護支援事業所
+  url: https://www.city.yonago.lg.jp/41005.htm
+  confidence: high
+  amount: クーポン券1枚2,500円分。枚数は申請月で異なる
+- category: sonota
+  name: シルバー人材センターによる軽度の生活援助
+  name_on_page: 軽度生活援助
+  summary: 家事が難しい在宅の高齢者宅へ、寝具の洗濯や掃除、簡単な修繕などの支援が来る。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護1程度で、身体機能の衰えにより援助が必要
+  - 家族等の支援が受けられない
+  - 4・5月の申請は前年度の課税状況で判定
+  where: 担当の地域包括支援センターまたは居宅介護支援事業所
+  url: https://www.city.yonago.lg.jp/41004.htm
+  confidence: high
+  amount: 月1回2時間以内。1時間170円の手数料（生活保護世帯は無料）
+- category: sonota
+  name: はり・きゅう・マッサージの施術費助成
+  name_on_page: 高齢者はり・きゅう・マッサージ施術費助成
+  summary: 非課税世帯の70歳以上の後期高齢者に、はり・きゅう・マッサージの助成券を交付する。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+  at_application:
+  - 4月1日時点で市内に住所がある
+  - 4月1日時点で後期高齢者医療の被保険者
+  - 4・5月の申請は前年度の課税状況で判定
+  where: 長寿社会課
+  url: https://www.city.yonago.lg.jp/41009.htm
+  confidence: high
+  amount: 1回の施術につき上限900円。助成券の枚数は決定日で変わる（最大6回）
+- category: jutaku
+  name: 高齢者等の住宅改良費助成
+  name_on_page: 高齢者等住宅改良費助成
+  summary: 要支援・要介護の人のための手すり設置や段差解消などの住宅改良費を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 同一家屋に住む別世帯の親族等も非課税世帯の判定に含む
+  - 4・5月の申請は前年度の課税状況で判定
+  where: 担当の地域包括支援センターまたは居宅介護支援事業所
+  url: https://www.city.yonago.lg.jp/41013.htm
+  confidence: high
+  amount: 支給限度額80万円。費用の3分の2、上限53万3,000円まで
+- category: haikai
+  name: 認知症見守りGPS機器の購入費等補助
+  name_on_page: 認知症見守りGPS機器購入費等補助金
+  summary: 行方不明のおそれがある認知症の人を介護する家族に、GPS機器の購入・レンタル費を補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 対象者は市内在住で、行方不明になる可能性がある人
+  - 65歳以上の認知症、若年性認知症、または市長が認める人
+  - 対象者を在宅で介護している人が申請する
+  - 購入・レンタル前に申請する。1人1回
+  where: 長寿社会課
+  url: https://www.city.yonago.lg.jp/42331.htm
+  confidence: high
+  amount: 上限10,000円（千円未満切り捨て）。月々の利用料は対象外
+- category: haikai
+  name: 認知症見守りシールの交付
+  name_on_page: 認知症見守りシール交付事業
+  summary: 行方不明時に二次元バーコードで家族へ連絡できる見守りシールを交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、行方不明になる可能性がある人
+  - 65歳以上の認知症、若年性認知症、または市長が認める人
+  - 介護している家族等が申請できる
+  where: 長寿社会課
+  url: https://www.city.yonago.lg.jp/42374.htm
+  confidence: high
+  amount: 耐洗コードラベル20枚と蓄光シール10枚を交付
+- category: haikai
+  name: 行方不明になるおそれのある人の事前登録
+  name_on_page: 認知症高齢者等事前登録制度
+  summary: 行方不明のおそれがある人の情報を市と警察に登録しておき、早期発見に役立てる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、行方不明になる可能性がある人
+  - 65歳以上の認知症、若年性認知症、精神・知的障がいのある人など
+  - 診断書は不要。本人または家族が申請する
+  - 申請書と顔・全身の写真を出す
+  where: 長寿社会課、または担当の地域包括支援センター
+  url: https://www.city.yonago.lg.jp/24506.htm
+  confidence: high
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- yutai

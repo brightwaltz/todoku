@@ -1,0 +1,153 @@
+city: '322024'
+name: 浜田市
+site: www.city.hamada.shimane.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の現物支給
+  name_on_page: 紙オムツなどを支給します
+  summary: 在宅で要介護4・5の人に、紙おむつや尿取りパットを宅配で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 本人の世帯全員と介護者の世帯全員が市民税非課税
+  - 浜田市の住民
+  where: 高齢障がい福祉課、各支所市民福祉課
+  url: https://www.city.hamada.shimane.jp/www/contents/1001000001936/index.html
+  confidence: high
+  amount: 1年に4万円分まで
+- category: iro
+  name: 在宅介護慰労金
+  name_on_page: 在宅介護慰労金を支給します
+  summary: 要介護4・5の人を在宅で主に介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 支給を受ける家族は浜田市に住所があり市民税非課税世帯
+  - 要介護者は1年のうち180日以上在宅（入院等の期間は除く）
+  - 要介護者は通所介護や訪問介護を利用している
+  where: 高齢障がい福祉課、各支所市民福祉課
+  url: https://www.city.hamada.shimane.jp/www/contents/1418779349316/index.html
+  confidence: high
+  amount: 要介護高齢者1人につき3万円
+- category: haishoku
+  name: いきいき配食サービス
+  name_on_page: いきいき配食サービス事業の利用申請
+  summary: 昼食の確保が難しい在宅の高齢者等に、昼食を届けて安否確認も行う。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の高齢者または障がい者のみで生活している
+  - 心身の状態等で買い物・調理ができず食事の確保が難しい
+  - 申請時の聞き取りで対象者を決定
+  where: 高齢障がい福祉課、各支所の窓口
+  url: https://www.city.hamada.shimane.jp/www/contents/1001000001939/index.html
+  confidence: high
+  amount: お弁当1食530円、おかずのみ1食450円（利用者負担）
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付事業の利用申請
+  summary: 電磁調理器・火災報知器・自動消火器を在宅の高齢者に給付する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の在宅の虚弱な高齢者、または高齢者のみの世帯
+  - 職員の訪問調査のうえ給付を決定
+  where: 最寄りの支所（電話または窓口）
+  url: https://www.city.hamada.shimane.jp/www/contents/1001000001941/index.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与・設置
+  name_on_page: 緊急通報体制整備事業の利用申請
+  summary: ボタンで受信センターに通報できる装置を高齢者の自宅に設置する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯
+  - または障がい者のみの世帯、高齢者と障がい者のみの世帯
+  where: 高齢障がい福祉課（東分庁舎）、各支所市民福祉課
+  url: https://www.city.hamada.shimane.jp/www/contents/1001000001940/index.html
+  confidence: high
+  amount: 利用料は固定型が月500円、携帯型が月700円
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 浜田市高齢者補聴器購入費助成事業
+  summary: 聴力低下で日常生活に支障がある高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害による身体障害者手帳の対象でない
+  - 両耳の聴力レベルがそれぞれ40dB以上（医師の意見書が必要）
+  - 認定補聴器技能者がいる対象店で購入、交付決定前の購入は対象外
+  where: 高齢障がい福祉課（東分庁舎）、各支所市民福祉課
+  url: https://www.city.hamada.shimane.jp/www/contents/1743375235673/index.html
+  confidence: high
+  amount: 25,000円（1人1回限り）
+- category: gaishutsu
+  name: 敬老福祉乗車券（半額販売）
+  name_on_page: 浜田市敬老福祉乗車券を販売します
+  summary: バスやタクシーの運賃に使える乗車券を半額で購入できる。
+  who: {}
+  at_application:
+  - 市の住民基本台帳に記録されている
+  - 年度末時点で70歳以上、または一定の障害者手帳を持つ69歳以下
+  - 鉄道や定期券・回数券の購入には使えない
+  where: 本庁総合窓口課、各支所、各まちづくりセンター
+  url: https://www.city.hamada.shimane.jp/www/contents/1742881240450/index.html
+  confidence: high
+  amount: 3,000円分の1冊を1,500円で販売。年度の購入上限は15冊または20冊（町により異なる）
+- category: gaishutsu
+  name: 免許返納者への敬老福祉乗車券の進呈
+  name_on_page: 運転免許証を自主返納又は失効された高齢者の方に敬老福祉乗車券を進呈します
+  summary: 運転免許を返納または失効した高齢者に、公共交通の乗車券を無料で渡す。
+  who:
+    age_min: 70
+  at_application:
+  - 平成28年7月1日以降に全ての免許を自主返納または更新せず失効
+  - 返納等の時点で市内に住所があり、年度末に70歳以上
+  - 失効の場合は運転経歴証明書が必要
+  - 返納後または失効後に1回限り
+  where: 本庁総合窓口課、各支所防災自治課（金城・三隅は市民福祉課）
+  url: https://www.city.hamada.shimane.jp/www/contents/1616467033862/index.html
+  confidence: high
+  amount: 15,000円分（3,000円分の乗車券5冊）
+- category: sonota
+  name: 敬老入浴券の販売
+  name_on_page: 敬老入浴券を販売します
+  summary: 市内の日帰り入浴施設で使える入浴券を、70歳以上の人に安く販売する。
+  who:
+    age_min: 70
+  at_application:
+  - 浜田市に住所があり、令和8年度に70歳以上になる
+  - 同行者1名も入浴券1枚で利用できる
+  where: 本庁総合窓口課、各支所（弥栄は防災自治課、他は市民福祉課）
+  url: https://www.city.hamada.shimane.jp/www/contents/1613108813028/index.html
+  confidence: high
+  amount: 6回綴り1冊1,000円、1人2冊まで
+not_found:
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- chusha
+- yutai

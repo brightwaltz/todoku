@@ -1,0 +1,163 @@
+city: '352047'
+name: 萩市
+site: www.city.hagi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給制度
+  summary: 要介護の人を在宅で介護する非課税世帯の家族に、紙おむつ等と引き換えられる利用券を渡す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住民票がある
+  - 介護する家族のうち 1 人が対象
+  - 介護者が別世帯なら両世帯とも市民税非課税
+  where: 高齢者支援課高齢福祉係、各総合事務所市民生活部門
+  url: https://www.city.hagi.lg.jp/soshiki/96/1360.html
+  confidence: high
+  amount: 年額の上限。個別頁は要介護4・5が84,000円、1〜3が39,000円。一覧頁は75,000円と35,000円。10月以降の申請は半額
+  more_urls:
+  - https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 萩市高齢者補聴器購入費助成金
+  summary: 耳が聞こえにくい 65 歳以上の人に、補聴器の購入費の半額を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 両耳 40 デシベル以上で、耳鼻科医が装用必要と診断
+  - 過去 5 年以内にこの助成を受けていない
+  where: 高齢者支援課（総合事務所・支所・出張所でも申請書を受け取れる）
+  url: https://www.city.hagi.lg.jp/site/hagikoureihukusi/h69289.html
+  confidence: high
+  amount: 購入費の 2 分の 1（上限 30,000 円）。令和8年4月1日以降の購入分から
+  more_urls:
+  - https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+- category: haishoku
+  name: 生活支援給食サービス（配食）
+  name_on_page: 生活支援給食サービス
+  summary: 調理や食材の確保が難しい高齢者に、昼食・夕食の弁当を届け、安否も確かめる。
+  who: {}
+  at_application:
+  - 市内に住み、おおむね 65 歳以上のひとり暮らし高齢者等
+  - 心身の障がいや疾病で食事の調理・調達が困難
+  - 別に審査基準がある
+  where: 高齢者支援課高齢福祉係、各総合事務所、担当地区の在宅介護支援センター
+  url: https://www.city.hagi.lg.jp/soshiki/96/1348.html
+  confidence: high
+  amount: 1 食 360 円から（おかずのみ、配送料込み）。ご飯代は全額自己負担
+  more_urls:
+  - https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム
+  summary: 緊急時にボタンを押すと消防署や協力員に連絡が行く機器を無料で貸す。
+  who: {}
+  at_application:
+  - 市内に住み、おおむね 65 歳以上のひとり暮らし等
+  - 一覧頁では、ひとり暮らしに準じた世帯も対象
+  - 固定電話が必要
+  - 近隣の協力員 2 名の登録が必要
+  where: 高齢者支援課高齢福祉係、各総合事務所、担当地区の在宅介護支援センター
+  url: https://www.city.hagi.lg.jp/soshiki/96/1359.html
+  confidence: high
+  amount: 機器は無償貸与。通話料は自己負担
+  more_urls:
+  - https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院に行けない人の自宅に理美容師が来る際の出張経費を助成する。
+  who: {}
+  at_application:
+  - 市内に住み、おおむね 65 歳以上の高齢者、または身体障がい者
+  - 心身の障がいで一般の理美容を使いにくい（寝たきり等）
+  where: 高齢者支援課高齢福祉係、各総合事務所、担当地区の在宅介護支援センター
+  url: https://www.city.hagi.lg.jp/soshiki/96/1357.html
+  confidence: high
+  amount: 年 6 回まで（10〜3月の申請は 3 回）。訪問経費は無料、理美容代は実費
+  more_urls:
+  - https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+- category: gaishutsu
+  name: リフト付タクシー専用利用券の交付
+  name_on_page: リフト付タクシー券の交付
+  summary: 車いすなどで通常のタクシーに乗れない在宅の人に、通院用のリフト付タクシー利用券を渡す。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、原則要介護 3 以上
+  - ストレッチャーや常時車いすで一般のタクシーが困難
+  - 障がい者福祉タクシー券の交付や自動車税の減免を受けていない
+  - 利用は通院等に限る
+  where: 高齢者支援課高齢福祉係、各総合事務所、担当地区の在宅介護支援センター
+  url: https://www.city.hagi.lg.jp/soshiki/96/21.html
+  confidence: high
+  amount: 年 20,000 円分（10〜3月の申請は 10,000 円分）
+  more_urls:
+  - https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+- category: haikai
+  name: 徘徊・見守り SOS ネットワークの事前登録
+  name_on_page: 萩市徘徊・見守りSOSネットワーク
+  summary: 徘徊のおそれがある人を家族が事前登録し、行方不明時に警察や協力機関と情報を共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症による徘徊のおそれがある
+  - 申請は原則、家族・親族・後見人
+  - 事前登録票と本人の写真、認印が必要
+  where: 地域包括支援センター、各総合事務所市民窓口部門、在宅介護支援センター、萩警察署生活安全課
+  url: https://www.city.hagi.lg.jp/soshiki/37/1948.html
+  confidence: high
+- category: sonota
+  name: 生活支援ホームヘルプサービス
+  name_on_page: 生活支援ホームヘルプサービス
+  summary: 要介護認定が自立のひとり暮らし等の人に、調理・掃除・買い物代行などの家事援助をする。
+  who: {}
+  at_application:
+  - 市内に住み、おおむね 65 歳以上
+  - 日常生活に支障があるひとり暮らしまたはこれに準ずる世帯
+  - 要介護認定の結果が自立
+  - 別に審査基準がある
+  where: 高齢者支援課高齢福祉係、在宅介護支援センター、各総合事務所
+  url: https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+  confidence: low
+  amount: 月 4 時間まで。1 時間 176 円
+- category: sonota
+  name: 生活支援ショートステイサービス
+  name_on_page: 生活支援ショートステイサービス
+  summary: 一時的に在宅で暮らせない人が、特養などに短期間入所できる。
+  who: {}
+  at_application:
+  - 市内に住み、おおむね 65 歳以上
+  - 要介護認定の結果が自立、または要支援・事業対象者
+  - 要支援・事業対象者は別途調整が必要
+  where: 高齢者支援課高齢福祉係、在宅介護支援センター、各総合事務所
+  url: https://www.city.hagi.lg.jp/site/hagikoureihukusi/
+  confidence: low
+  amount: 月 5 日まで。1 日 406 円（養護老人ホーム等）または 483 円（特養）。食費・部屋代は別
+not_found:
+- iro
+- shingu
+- jutaku
+- nichijo-yogu
+- yutai
+- mimamori

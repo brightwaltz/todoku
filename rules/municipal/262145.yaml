@@ -1,0 +1,176 @@
+city: '262145'
+name: 木津川市
+site: www.city.kizugawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付券
+  name_on_page: 在宅高齢者等紙おむつ等給付事業
+  summary: 要介護3〜5の在宅の方を介護する家族に、紙おむつ等に使える給付券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 本市の被保険者で市内に住所がある在宅の要介護者
+  - 介護する配偶者・3親等内の親族等が対象（家族に支給）
+  - 頁の対象文は住民税非課税とあるが課税世帯の額も記載あり
+  - 介護保険施設に入所中の方は対象外
+  where: 高齢介護課の窓口
+  url: https://www.city.kizugawa.lg.jp/0000000284.html
+  confidence: high
+  amount: 課税世帯は月3,000円、非課税世帯は月6,000円分の給付券（500円単位）。
+- category: haikai
+  name: SOSネットワークQRシール配付
+  name_on_page: SOSネットワークQRシール
+  summary: SOSネットワークに事前登録した人に、身元確認用のQRシールを無料で配る。
+  who: {}
+  at_application:
+  - 認知症高齢者等SOSネットワーク事業に事前登録した人
+  where: 高齢介護課
+  url: https://www.city.kizugawa.lg.jp/0000000272.html
+  confidence: high
+  amount: 無料（1人5枚）
+- category: haikai
+  name: GPS端末など位置探索サービスの利用補助
+  name_on_page: 認知症高齢者等位置探索サービス（GPS）利用補助事業
+  summary: 行方不明のおそれがある認知症の人の位置探索サービスの契約費用を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - SOSネットワークに事前登録した市内在住の人、またはその家族等
+  - 携帯電話・スマホ等GPS専用機器以外と福祉用具貸与は対象外
+  - 契約前に高齢介護課へ相談する
+  where: 高齢介護課
+  url: https://www.city.kizugawa.lg.jp/0000000253.html
+  confidence: high
+  amount: 契約費用を上限1万円まで補助（登録者1人につき1回限り）。月額料金は自己負担。
+- category: haikai
+  name: みまもりあいステッカーの利用補助
+  name_on_page: 認知症高齢者等みまもりあいシステム利用補助事業
+  summary: 行方不明時に身元が分かるステッカーの初期費用と1年目の利用料を補助する。
+  who: {}
+  at_application:
+  - SOSネットワークに事前登録した市内在住の人、またはその家族等
+  - ステッカーを申し込んだ人
+  where: 高齢介護課
+  url: https://www.city.kizugawa.lg.jp/0000000252.html
+  confidence: high
+  amount: 5,600円（初期費用2,000円と1年目の利用料3,600円）。2年目以降は利用料3,600円が自己負担。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急時通報システム事業
+  summary: 慢性疾患などで不安のある人に、ボタンで通報できる緊急通報装置を貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のみの世帯、身障1・2級、養育手帳Aのいずれか
+  - 自宅に電話があり、慢性疾患等で日常生活に常に注意が必要
+  - 緊急時に駆けつける協力員（約30分圏内）が必要
+  - 申請後に訪問調査で可否を決める
+  where: 高齢介護課の窓口
+  url: https://www.city.kizugawa.lg.jp/0000000283.html
+  confidence: high
+  amount: 設置費用は原則無料。看護師への24時間相談と月1回の安否確認電話つき。
+- category: iro
+  name: 家族介護者慰労金
+  name_on_page: 家族介護者慰労金支給事業
+  summary: 介護サービスを使わずに要介護4・5の人を介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市の被保険者で市に1年以上居住する在宅の要介護者を1年以上介護
+  - 要介護者と介護者の世帯が市町村民税非課税
+  - 申請日前1年以内に介護サービス未利用（短期入所7日以内は可）
+  where: 高齢介護課
+  url: https://www.city.kizugawa.lg.jp/0000000303.html
+  confidence: high
+  amount: 年額10万円
+- category: haishoku
+  name: 高齢者への配食サービス
+  name_on_page: 在宅高齢者等配食サービス事業
+  summary: 調理が難しい高齢者に、安否確認を兼ねて週1回夕食弁当を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 心身の障がいや傷病等で調理が困難
+  - 訪問調査で利用の可否を審査（決定まで約2週間）
+  where: 高齢介護課の窓口（配達は社会福祉協議会）
+  url: https://www.city.kizugawa.lg.jp/0000000282.html
+  confidence: high
+  amount: 1食300円（原材料費）。月4回、週1回の配達。
+- category: shingu
+  name: ふとんの水洗い・乾燥
+  name_on_page: ふとん水洗い乾燥サービス事業
+  summary: 寝具の衛生管理が難しい要介護3以上の高齢者の布団を洗って乾燥する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 老衰・心身の障害・傷病等で寝具の衛生管理が困難
+  where: 高齢介護課
+  url: https://www.city.kizugawa.lg.jp/0000000285.html
+  confidence: high
+  amount: 経費の1割が自己負担。5・8・11・2月のうち年2回以内。
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具（火災対策）の給付
+  name_on_page: 高齢者日常生活用具の給付事業
+  summary: 火気の管理が難しい高齢者に電磁調理器・火災警報器・自動消火器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 市内に住所がある
+  - 心身機能が低下し防火などの配慮が必要
+  where: 高齢介護課の窓口
+  url: https://www.city.kizugawa.lg.jp/0000000286.html
+  confidence: high
+  amount: 電磁調理器1台、火災警報器2台まで、自動消火器1基。経費の1割が自己負担（生活保護世帯は無料）。
+- category: sonota
+  name: 特殊詐欺防止の自動録音機器の購入補助
+  name_on_page: 特殊詐欺等防止対策機器購入費補助金交付事業
+  summary: 通話の自動録音機能つき電話機等の購入費の半額を補助する。
+  who: {}
+  at_application:
+  - 満65歳以上の本人、または65歳以上の人がいる世帯の世帯員
+  - 市内居住で住民基本台帳に記録されている
+  - 65歳以上の人のいる世帯の全員が市税を滞納していない
+  - 購入前に申請し、交付決定後に購入する
+  where: 総務課
+  url: https://www.city.kizugawa.lg.jp/0000002089.html
+  confidence: high
+  amount: 購入費の2分の1、上限1万円
+not_found:
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu
+- mimamori

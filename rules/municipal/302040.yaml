@@ -1,0 +1,111 @@
+city: '302040'
+name: 有田市
+site: www.city.arida.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置事業
+  summary: ひとり暮らしの高齢者宅に緊急通報装置を設置し、急病などの際に対応できるようにする。
+  who: {}
+  at_application:
+  - 市内在住で、65歳以上のひとり暮らし、またはこれに準ずる人
+  - 固定電話回線か携帯電話を持っている
+  - 申請書に民生委員の署名が必要
+  where: 高齢介護課（市役所窓口、または地区の民生委員に相談）
+  url: https://www.city.arida.lg.jp/kurashi/koreikaigo/1000841.html
+  confidence: high
+  amount: 設置費用と月額料金はかからない。通話料などは自己負担。
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 補聴器本体の購入費の一部を助成する（購入前の申請が必要）。
+  who:
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、原則65歳以上
+  - 聴覚障害の身体障害者手帳の交付対象でない
+  - 医師が補聴器の使用を必要と認めた（申請書に意見欄）
+  - 過去にこの助成を受けていない
+  where: 高齢介護課
+  url: https://www.city.arida.lg.jp/kurashi/koreikaigo/1004790.html
+  confidence: high
+  amount: 上限40,000円（実支出額が少ない場合はその額）。補聴器本体1台のみ対象。
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 食事の用意が難しい高齢者に弁当を届け、1食あたり一定額を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住。独居、または同居の世帯員全員が65歳以上
+  - 買い物や調理ができない、または栄養改善が必要
+  - 安否確認が必要、または困難
+  - 介護保険料の滞納がない
+  - デイ・ヘルパー等で確認できない日に限る
+  where: 担当ケアマネジャー、または高齢介護課窓口
+  url: https://www.city.arida.lg.jp/kurashi/koreikaigo/1000837.html
+  confidence: high
+  amount: 1食150円を補助。週3回まで（1日1食）。弁当は500円から（自己負担350円から）。
+- category: ribiyo
+  name: 訪問理容の助成券
+  name_on_page: 訪問理容サービス助成事業
+  summary: 協力店が自宅に来て理容する費用に使える助成券を交付する。
+  who: {}
+  at_application:
+  - 市内在住で、理容店に出向くことが困難
+  - 65歳以上で要介護3以上かそれと同程度のねたきり、または手帳等の対象
+  - 身体障害者手帳1・2級、療育手帳A1・A2も対象
+  - 付き添える家族等の介助者がいる
+  - 市税等の未納がない
+  where: 高齢介護課（高齢者支援係）。家族や世話をする人も申請できる。
+  url: https://www.city.arida.lg.jp/kurashi/koreikaigo/1000810.html
+  confidence: high
+  amount: 1枚2,000円の券を年6枚まで（申請時期で枚数が変わる）。
+- category: gaishutsu
+  name: デマンドバスの無料チケット
+  name_on_page: デマンドバス無料チケットについて
+  summary: 75歳以上の人などに、デマンドバスの無料乗車券（33枚綴り）を支給する。
+  who: {}
+  at_application:
+  - 75歳以上の市民
+  - または身体・療育・精神の手帳を持つ人
+  - または指定難病の受給者証を持つ人
+  where: 福祉課窓口（電話で申し込めば郵送も可）
+  url: https://www.city.arida.lg.jp/kurashi/chiikifukushi/1004920.html
+  confidence: high
+  amount: 33枚綴りの乗車券を支給
+- category: koken
+  name: 成年後見制度の利用支援（費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人の後見開始の申立費用や後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている人かそれに準ずる人
+  - または費用の負担が難しいと市長が認めた人
+  - 本人の資産状況を調べて助成を決める
+  where: 地域包括支援センター（問い合わせ先）。申請は対象者または後見人等。
+  url: https://www.city.arida.lg.jp/kurashi/koreikaigo/koreishashien/1003024.html
+  confidence: high
+  amount: 報酬助成は月額上限28,000円（施設入所者は18,000円）。
+  more_urls:
+  - https://www.city.arida.lg.jp/_res/projects/default_project/_page_/001/003/024/koukenyoukou.pdf
+not_found:
+- kaigo-yohin
+- iro
+- jutaku
+- shingu
+- mimamori
+- nichijo-yogu
+- yutai

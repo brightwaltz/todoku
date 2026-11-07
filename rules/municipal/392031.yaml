@@ -1,0 +1,130 @@
+city: '392031'
+name: 安芸市
+site: www.city.aki.kochi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者補聴器購入費の補助
+  name_on_page: 高齢者補聴器購入補助金交付事業
+  summary: 耳鼻科医が補聴器を必要と診断した高齢者に、購入費の一部を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 介護保険料の滞納がない
+  - 聴覚障害の身体障害者手帳の対象でない
+  - 中等度難聴（両耳40dB以上70dB未満など）で医師の証明がある
+  - 過去にこの補助を受けていない
+  where: 健康介護課 介護保険係（1階4番窓口）
+  url: https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=8687
+  confidence: high
+  amount: 補聴器本体の購入費の2分の1（上限5万円）
+- category: gaishutsu
+  name: 介護タクシー利用料の助成（移送サービス）
+  name_on_page: 介護障害移送サービス事業
+  summary: 車いすを常用する人が市内の介護タクシーで通院などをするとき、料金の一部を市が助成する。
+  who: {}
+  at_application:
+  - 市内に住所があり、車いすを常用し単独で公共交通を使えない
+  - 要介護者で自立度B1以上、身体障害者手帳所持者、難病患者のいずれか
+  - 利用者負担は片道200円、月4回まで
+  where: 健康介護課 介護保険係（65歳未満で手帳のみの人は福祉事務所 障害ふくし係）
+  url: https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=7656
+  confidence: high
+  amount: 助成は片道1,500円まで（超えた分は自己負担）
+- category: kaigo-yohin
+  name: 家族介護用品チケットの支給
+  name_on_page: 家族介護用品の支給
+  summary: 要介護3〜5の人を在宅で介護する家族に、紙おむつ等に使える商品券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護を受ける高齢者と介護者の両方が非課税世帯
+  - 指定薬局で紙おむつ・尿取りパッド等に使える
+  where: 健康介護課
+  url: https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=261
+  confidence: low
+  amount: 月6,250円（要介護4・5）、月5,000円（要介護3）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置
+  summary: ひとり暮らしの人の急病や災害に24時間対応する通報装置を、市の負担で設置する。
+  who:
+    household:
+    - alone
+  at_application: []
+  where: 健康介護課
+  url: https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=261
+  confidence: low
+  amount: 設置費用は市が負担
+- category: nichijo-yogu
+  name: 火災警報機・電磁調理器等の給付
+  name_on_page: 日常生活用具の給付
+  summary: 火の始末が心配な高齢者世帯に、電磁調理器・火災警報機・自動消火器を設置する。
+  who:
+    household:
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 防火などの配慮に心配がある
+  - 生計中心者の前年所得税の課税状況で自己負担あり
+  where: 健康介護課
+  url: https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=261
+  confidence: low
+  amount: 設置費用は市が負担（課税状況により自己負担あり）
+- category: jutaku
+  name: 高齢者住宅改造の助成
+  name_on_page: 高齢者住宅改造支援事業
+  summary: トイレ・浴室・玄関などの改造費の3分の2を市と県が助成する。
+  who: {}
+  at_application:
+  - 要支援・要介護認定のある人、または認定のない65歳以上
+  - 前年所得税30万円以下の世帯
+  - 新築は対象外
+  where: 健康介護課
+  url: https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=261
+  confidence: low
+  amount: 認定者は工事費100万円まで（最高66万6千円）、認定なしは30万円まで（最高20万円）
+- category: sonota
+  name: 寝たきり高齢者の訪問歯科診療
+  name_on_page: 在宅寝たきり老人訪問歯科診療
+  summary: 在宅で寝たきりの人のお宅へ歯科医が訪問し、口の中の診査や入れ歯の調整などをする。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 費用は保険診療の自己負担分
+  - 訪問は原則年1回
+  where: 安芸市健康ふれあいセンター「元気館」
+  url: https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=290
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- shingu
+- ribiyo
+- mimamori

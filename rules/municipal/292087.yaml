@@ -1,0 +1,170 @@
+city: '292087'
+name: 御所市
+site: www.city.gose.nara.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 常に紙おむつが必要な在宅の要介護者に、紙おむつ等を現物で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上（特に必要と認められれば65歳未満も可）
+  - 要介護3は認定調査で排尿・排便が介護や見守り等に該当
+  - 同じ敷地内に住む人全員が非課税
+  - 本人またはその家族が申請
+  where: 高齢対策課
+  url: https://www.city.gose.nara.jp/0000003310.html
+  confidence: high
+  amount: 2か月に1回（偶数月）、税込10,000円を上限に紙おむつ等を2種類まで現物支給
+- category: haishoku
+  name: 夕食の配食（見守り付き）
+  name_on_page: 在宅高齢者「食」の自立支援事業
+  summary: 調理が難しい等の高齢者に、平日の夕食を届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 配食の利用が適切と市が認めた人（アセスメントあり）
+  where: 高齢対策課
+  url: https://www.city.gose.nara.jp/0000003308.html
+  confidence: high
+  amount: 自己負担は1食550円（税込）、週5回まで
+  more_urls:
+  - https://www.city.gose.nara.jp/html/reiki_int/reiki_honbun/k409RG00000552.html
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 難聴高齢者補聴器購入費助成制度
+  summary: 耳鼻科医が必要と認めた65歳以上の難聴の人に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴力が両耳50dB以上70dB未満、または一耳30dB以上で他耳70dB以上
+  - 耳鼻科医の意見書で補聴器の装着が必要と判断された
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 市税を滞納していない
+  where: 高齢対策課（地域包括支援センター）
+  url: https://www.city.gose.nara.jp/0000004301.html
+  confidence: high
+  amount: 購入費の2分の1、上限20,000円（1人1回のみ）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 急変のおそれがある高齢者に緊急通報装置を貸し、月1回の安否確認電話も行う。
+  who:
+    at_home: true
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上
+  - 心臓・呼吸器等の疾患や障害で常に注意が必要と認められる
+  - 独居、一時的な独居、同居者全員が通報できない、のいずれか
+  - 緊急連絡先と協力員を登録する
+  where: 高齢対策課
+  url: https://www.city.gose.nara.jp/0000003312.html
+  confidence: high
+  amount: 要綱では、世帯に市民税の課税者がいる場合、設置時に5,000円を負担
+  more_urls:
+  - https://www.city.gose.nara.jp/html/reiki_int/reiki_honbun/k409RG00000899.html
+- category: koken
+  name: 成年後見人等の報酬費用の助成と市長申立て
+  name_on_page: 成年後見制度利用支援事業
+  summary: 資産が乏しい人の後見人等の報酬を助成し、身寄りのない人は市長が申立てを行う。
+  who: {}
+  at_application:
+  - 認知症高齢者、知的障害者、精神障害者が対象
+  - 報酬助成は生活保護、または資産がなく利用が難しい人等
+  - 市内に住所か居所がある
+  - 他市町村で同種の助成を受けられる人は対象外
+  where: 御所市役所（市長宛て。担当課は頁に記載なし）
+  url: https://www.city.gose.nara.jp/html/reiki_int/reiki_honbun/k409RG00000704.html
+  confidence: high
+  amount: 報酬の実額。上限は在宅で月28,000円、それ以外は月18,000円
+- category: haikai
+  name: 徘徊高齢者の事前登録
+  name_on_page: 徘かい高齢者事前登録
+  summary: 行方不明時に早く見つけられるよう、警察署と連携して事前に登録する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の人が行方不明になる場合に備える登録
+  where: 高齢対策課
+  url: https://www.city.gose.nara.jp/0000003627.html
+  confidence: low
+  more_urls:
+  - https://www.city.gose.nara.jp/cmsfiles/contents/0000004/4303/annsinngaidobukku.pdf
+- category: sonota
+  name: 自動車誤発進防止装置の設置費助成
+  name_on_page: 自動車誤発進防止装置の設置費用を一部助成します
+  summary: 70歳以上の人が車に後付けする誤発進防止装置の費用を一部助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内在住で自動車運転免許証を持っている
+  - 市税を滞納していない
+  - 自分が使う車に後付けで設置（購入後6か月以内に申請）
+  where: 高齢対策課
+  url: https://www.city.gose.nara.jp/0000002720.html
+  confidence: high
+  amount: 購入・設置費の3分の2、上限4万円（1人1回限り）
+- category: sonota
+  name: 特殊詐欺防止機能付き電話器の購入費助成
+  name_on_page: 特殊詐欺防止機能付き電話器購入費の一部を助成します
+  summary: 65歳以上がいる世帯に、特殊詐欺対策機器の購入費の一部を助成する。
+  who: {}
+  at_application:
+  - 市内在住で、同一世帯に満65歳以上の人がいる
+  - 同一世帯に市税の滞納者がいない
+  where: 高齢対策課
+  url: https://www.city.gose.nara.jp/0000002865.html
+  confidence: high
+  amount: 購入費の1/2、上限10,000円（100円未満切り捨て、1世帯1台）
+- category: sonota
+  name: ごみ出し支援（安否確認付き）
+  name_on_page: ふれあい収集（ごみ出し支援）
+  summary: ごみ出しが難しい世帯の玄関先や屋内からごみを収集し、声がけで安否も確認する。
+  who: {}
+  at_application:
+  - 75歳以上、障害認定、要介護・要支援認定のいずれかの人だけの世帯
+  - ごみ出しが困難と認められる
+  - 屋内での粗大ごみ収集は、市内に出せる家族がいると対象外
+  where: 環境業務課、福祉課、高齢対策課
+  url: https://www.city.gose.nara.jp/0000004158.html
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: ひとり暮らしの高齢者に、持病や薬を書いて備える救急医療情報キットを配る。
+  who:
+    household:
+    - alone
+  at_application: []
+  where: 高齢対策課
+  url: https://www.city.gose.nara.jp/cmsfiles/contents/0000004/4303/annsinngaidobukku.pdf
+  confidence: low
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

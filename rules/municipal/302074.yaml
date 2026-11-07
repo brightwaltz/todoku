@@ -1,0 +1,184 @@
+city: '302074'
+name: 新宮市
+site: www.city.shingu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の給付
+  name_on_page: 家族介護用品給付事業
+  summary: 要介護の人を介護する家族に、紙おむつなどの介護用品を現物で給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する家族が市内に住所を有する（単身世帯は本人）
+  - 日常生活で失禁することがある
+  - 新規は認定調査票の排尿・排便等の項目で必要性が認められる
+  where: 健康長寿課（電子申請もあり）
+  url: https://www.city.shingu.lg.jp/Info/2598
+  confidence: high
+  amount: 年 55,000 円まで（現物支給）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 「食」の自立支援事業（配食サービス）
+  summary: 調理が難しい高齢者に、希望の曜日の昼食か夕食を届け、安否を確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 単身か高齢者のみの世帯、または重度身体障がい者のいる世帯
+  - 身体・精神の理由で食事の調理が困難
+  where: 健康長寿課（電子申請もあり）
+  url: https://www.city.shingu.lg.jp/Info/2599
+  confidence: high
+  amount: 利用料は 1 食 400 円（月〜土、祝日・年末年始を除く）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重い要介護の人を在宅で介護する家族に、慰労金を年 1 回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護の人と同居して介護している家族が対象
+  - 過去 1 年間に介護保険サービスを受けていない
+  - 介護保険料の滞納がない
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/info/2600
+  confidence: high
+  amount: 年 100,000 円
+- category: haikai
+  name: 認知症高齢者等の見守りシール（QRコード）
+  name_on_page: 認知症高齢者等見守りＱＲコード活用事業
+  summary: QRコード付き見守りシールを無料で交付し、発見者の連絡で家族につなぐ。
+  who: {}
+  at_application:
+  - 対象者の写真が必要
+  - 迎えに来られる緊急連絡先 2 名が必要
+  where: 健康長寿課、三輪崎支所、高田支所、熊野川行政局
+  url: https://www.city.shingu.lg.jp/Info/1155
+  confidence: high
+  amount: 初回 10 枚、年度に 1 回 10 枚を追加交付（無料）
+- category: gaishutsu
+  name: 高齢者等のタクシー・バス券
+  name_on_page: 高齢者等タクシー・バス券交付事業
+  summary: タクシーと一部の路線バスに使える券を年額分まとめて交付する。
+  who:
+    at_home: true
+  at_application:
+  - 75歳以上は免許を持たないか返納を申告した人
+  - 75歳未満は免許返納の証明書類が必要
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/info/2592
+  confidence: low
+  amount: 年 20,000 円分（500 円券を 40 枚）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入助成事業
+  summary: 要件を満たす人の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力レベルが40デシベル以上
+  - 聴覚障害の手帳の交付を受けていない、または対象外
+  - 耳鼻咽喉科医師の意見書が必要
+  - 過去にこの助成を受けたことがない
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/Info/2593
+  confidence: low
+  amount: 実支出額か 20,000 円の少ないほう
+- category: jutaku
+  name: 高齢者居宅改修の補助（介護保険の上乗せ）
+  name_on_page: 高齢者居宅改修補助事業
+  summary: 介護保険の住宅改修費を除いた改修費を補助する。工事前の申請が必要。
+  who: {}
+  at_application:
+  - 世帯員に活用できる資産を持つ人がいない
+  - 工事前に申請し、市の審査を受ける
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/info/2603
+  confidence: low
+  amount: 60万円までの経費から介護保険の改修費（上限20万円）を引いた額の 3/4（生活保護は全額）
+- category: jutaku
+  name: 高齢者の手すり設置費の補助
+  name_on_page: 高齢者手すり設置事業
+  summary: 玄関から道路までの間に手すりを付ける費用を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 転倒の危険性がある
+  - 市民税非課税世帯か生活保護受給者
+  - 介護保険の住宅改修など他の助成を利用できない
+  - 同じ住宅で過去に本事業の補助を受けていない
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/Info/2604
+  confidence: low
+  amount: 対象額（上限20万円）の1/2（生活保護は4/5）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム
+  summary: ボタン一つで 24 時間対応の事業者に通報できる装置を貸与する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の単身世帯か身体障がい者の単身世帯
+  - 利用できる固定電話がある
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/Info/2594
+  confidence: low
+  amount: 利用料は月 500 円（熊野川地区は 300 円）
+- category: shingu
+  name: 寝具の乾燥消毒
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 専用車で自宅を訪問し、布団など寝具の乾燥消毒をする。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 身体上または精神上の理由で寝具の衛生管理が困難
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/Info/2595
+  confidence: low
+  amount: 利用料は 1 回 200 円（月1回、4点以内）
+- category: ribiyo
+  name: 訪問理髪
+  name_on_page: 訪問理髪サービス
+  summary: 自宅を訪問して理容サービスをする。
+  who: {}
+  at_application:
+  - 要介護3〜5で外出が困難、または手帳と手当の受給で外出が困難
+  where: 健康長寿課
+  url: https://www.city.shingu.lg.jp/Info/2597
+  confidence: low
+  amount: 利用料は 1 回 2,500 円（年6回まで）
+not_found:
+- koken
+- mimamori
+- chusha
+- yutai

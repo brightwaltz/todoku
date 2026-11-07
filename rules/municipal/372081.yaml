@@ -1,0 +1,132 @@
+city: '372081'
+name: 三豊市
+site: www.city.mitoyo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: nichijo-yogu
+  name: 高齢者への日常生活用具の給付（火災警報器等）
+  name_on_page: 高齢者老人日常生活用具給付事業
+  summary: 火災警報器・自動消火器・電磁調理器を給付する。
+  who: {}
+  at_application:
+  - 概ね65歳以上
+  - 防火などの配慮が必要な方、一人暮らし、寝たきりの方など
+  where: 長寿介護課・地域包括支援センター（頁に申請先の明記なし）
+  url: https://www.city.mitoyo.lg.jp/kakuka/kenkofukushi/kaigo_hoken/1/972.html
+  confidence: low
+  amount: 所得に応じて自己負担あり
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 寝具の洗濯・乾燥・消毒をしてくれる。
+  who: {}
+  at_application:
+  - 概ね65歳以上の一人暮らしか、これに準ずる方
+  - 寝具の衛生管理が困難な方
+  where: 長寿介護課・地域包括支援センター（頁に申請先の明記なし）
+  url: https://www.city.mitoyo.lg.jp/kakuka/kenkofukushi/kaigo_hoken/1/972.html
+  confidence: low
+  amount: 利用料が必要（金額は頁に無し）
+- category: iro
+  name: 在宅の要介護者を介護する家族への手当
+  name_on_page: 在宅要介護者家族介護手当支給事業
+  summary: 要介護4・5の方を在宅で介護する家族の代表者に手当を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 引き続き6か月以上市内に住んでいる
+  - 要介護者と同居し常時介護している家族の代表者
+  - 要介護者が特別障害者手当を受けていない
+  where: 長寿介護課（頁に申請先の明記なし）
+  url: https://www.city.mitoyo.lg.jp/kakuka/kenkofukushi/kaigo_hoken/1/972.html
+  confidence: high
+  amount: 要介護者1人あたり月額10,000円（月の半数以上在宅で介護した月）
+- category: kaigo-yohin
+  name: 家族介護用品の支給（おむつ等）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を介護する市民税非課税世帯に、おむつ等の介護用品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 引き続き6か月以上市内に住んでいる
+  - 要介護者と同居し在宅で常時介護している
+  where: 長寿介護課（頁に申請先の明記なし）
+  url: https://www.city.mitoyo.lg.jp/kakuka/kenkofukushi/kaigo_hoken/1/972.html
+  confidence: high
+  amount: おむつ・尿取りパッド等を1人につき月額6,500円まで
+- category: kinkyu-tsuho
+  name: あんしん通報サービス（緊急通報・月1回の見守り電話）
+  name_on_page: 三豊市あんしん通報サービス事業
+  summary: 在宅のひとり暮らし高齢者等の緊急時対応・見守りの通報サービス。
+  who:
+    at_home: true
+  at_application:
+  - 在宅のひとり暮らし高齢者等（利用条件の詳細は頁に無し）
+  where: 長寿介護課・地域包括支援センター
+  url: https://www.city.mitoyo.lg.jp/kakuka/kenkofukushi/kaigo_hoken/10496.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者福祉タクシー利用券の交付
+  name_on_page: 高齢者福祉タクシー利用券
+  summary: 運転免許を持たない・返納した高齢者にタクシー利用券を毎年度交付する。
+  who: {}
+  at_application:
+  - 運転免許を持たない・返納した高齢者（年齢は問い合わせ）
+  - 取消通知書・失効免許証・運転経歴証明書のいずれかが必要
+  where: 長寿介護課（高瀬町）または各支所の窓口（郵送不可）
+  url: https://www.city.mitoyo.lg.jp/kakuka/kenkofukushi/kaigo_hoken/LongTermWelfare/2236.html
+  confidence: high
+- category: haikai
+  name: 高齢者等見守りSOSネットワークの事前登録
+  name_on_page: 三豊市高齢者等見守りSOSネットワーク
+  summary: 行方不明のおそれがある高齢者を事前登録し、地域の協力で早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある概ね65歳以上の方
+  - 本人または家族が事前登録票と写真を提出
+  where: 三豊市地域包括支援センター
+  url: https://www.city.mitoyo.lg.jp/kakuka/kenkofukushi/kaigo_hoken/1/dementia/1897.html
+  confidence: high
+- category: sonota
+  name: ごみ出し支援（玄関先での収集と安否確認の声かけ）
+  name_on_page: 高齢者等ごみ出し支援事業
+  summary: ごみ出しが困難な世帯の玄関先まで週1回ごみを収集に来る。
+  who: {}
+  at_application:
+  - 世帯全員が次のいずれかに該当する
+  - 要支援1〜要介護5の認定、または各種障害者手帳等
+  - 指定難病の受給者証でも可
+  where: 環境衛生課または各支所
+  url: https://www.city.mitoyo.lg.jp/kakuka/shiminkankyou/eisei/2/gomi/12147.html
+  confidence: high
+  amount: 1世帯あたり月額1,000円の利用料
+not_found:
+- haishoku
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- mimamori

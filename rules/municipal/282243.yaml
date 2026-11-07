@@ -1,0 +1,180 @@
+city: '282243'
+name: 南あわじ市
+site: www.city.minamiawaji.hyogo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者等の紙おむつ支給
+  name_on_page: 在宅高齢者等紙おむつ支給事業
+  summary: 在宅で失禁があり常時おむつが必要な人に、紙おむつを支給する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で失禁があり、常時おむつを使う人
+  - または障害者手帳（身体・療育）を持ち、おむつ使用が適切な人
+  - または40〜64歳で若年性認知症と診断され、使用が適切な人
+  where: 地域包括ケア推進課（電話 0799-43-5237）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+  confidence: high
+  more_urls:
+  - https://www.city.minamiawaji.hyogo.jp/uploaded/attachment/326531.pdf
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の人を在宅で介護する家族に、紙おむつなどの介護用品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 支給の対象は介護している家族
+  where: 地域包括ケア推進課（電話 0799-43-5237）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+  confidence: high
+  more_urls:
+  - https://www.city.minamiawaji.hyogo.jp/uploaded/attachment/326531.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 在宅の高齢者を介護する家族に、介護慰労金を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3以上、または要介護2で認知症自立度2a以上
+  - 過去1年間に介護サービスを受けていないことが条件
+  - 福祉用具や短期入所10日以内などの例外あり
+  where: 地域包括ケア推進課（電話 0799-43-5237）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+  confidence: high
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 「食」の自立支援事業（配食サービス）
+  summary: 調理が難しい人に食事を届け、届けるときに安否も確認する（週3回まで）。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯か高齢者のみの世帯（準ずる世帯も可）
+  - 身体障害者も対象に含まれる
+  - 調理が難しく、自立支援の面で利用が適切な人
+  where: 地域包括ケア推進課 介護予防推進係（電話 0799-43-5237）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+  confidence: high
+  more_urls:
+  - https://www.city.minamiawaji.hyogo.jp/uploaded/attachment/326531.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置費補助
+  name_on_page: 緊急通報体制等整備事業
+  summary: 緊急時に通報できる装置の設置にかかる費用を補助する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で援護が必要な一人暮らし、または高齢者のみの世帯
+  - または身体障害者手帳1・2級の重度身体障害者のみの世帯
+  where: 長寿・保険課 高齢者福祉係（電話 0799-43-5260）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+  confidence: high
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 低所得の高齢者のみの世帯に、電磁調理器・火災警報器などの購入補助や電話の貸与をする。
+  who:
+    household:
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯
+  - 前年の所得税が世帯全員で非課税または免除
+  - 購入前の事前申請が必要。予算がなくなり次第終了
+  where: 長寿・保険課（電話 0799-43-5217）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/choujyu/seikatsuyougu.html
+  confidence: high
+  amount: 上限は電磁調理器15,000円、火災警報器1台2,500円（1世帯2台まで）、自動消火器28,700円。電話は貸与。
+  more_urls:
+  - https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+- category: jutaku
+  name: 福祉いきいき住宅改修助成
+  name_on_page: 福祉いきいき住宅改修助成事業
+  summary: 高齢者などの自宅の改造費を、介護保険の住宅改修と一体で助成する。
+  who: {}
+  at_application:
+  - 要介護・要支援の認定を受けた被保険者
+  - または身体障害者手帳か療育手帳を持つ人
+  - 所得要件あり（所得税課税世帯は所得制限あり）
+  where: 長寿・保険課 介護保険係（電話 0799-43-5217）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+  confidence: high
+- category: gaishutsu
+  name: 外出支援サービス（タクシー利用券など）
+  name_on_page: 外出支援サービス
+  summary: 公共交通が使いにくい人に、居宅と医療機関の間のタクシー利用券を交付する。
+  who: {}
+  at_application:
+  - 要介護4・5の人
+  - または身体障害者手帳第1種（視覚・聴覚・肢体）の人
+  - または療育手帳A・B1、精神障害者保健福祉手帳1・2級の人
+  - 自動車税・軽自動車税の減免を受けていないこと
+  where: 長寿・保険課 高齢者福祉係（電話 0799-43-5217）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/houkatsu/zaitakufukusi.html
+  confidence: high
+  amount: 枚数に上限があり、自己負担あり。
+  more_urls:
+  - https://www.city.minamiawaji.hyogo.jp/uploaded/attachment/326535.pdf
+- category: gaishutsu
+  name: らん・らんバスの運賃補助
+  name_on_page: らん・らんバスの補助
+  summary: 75歳以上は運賃が半額になり、免許を自主返納した65歳以上には1年フリーパスを贈る。
+  who: {}
+  at_application:
+  - 75歳以上は後期高齢者医療被保険者証の提示で運賃半額
+  - 65歳以上で運転免許を自主返納した人は1年フリーパス（最大5回）
+  - 障害者手帳の所持者は運賃全額助成
+  where: 交通政策課（電話 0799-43-5262）
+  url: https://www.city.minamiawaji.hyogo.jp/uploaded/attachment/326535.pdf
+  confidence: high
+  amount: 75歳以上は運賃半額。免許返納者は1年フリーパス券を最大5回（5年間）。
+- category: haikai
+  name: 高齢者等の見守り・SOSネットワーク（見守りQRシール）
+  name_on_page: 見守り・ＳＯＳネットワーク
+  summary: 行方不明の恐れがある認知症の人を事前登録し、希望者に見守りQRシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで所在不明になる可能性のある人
+  - 登録しても自動で捜索・保護されるわけではない
+  where: 地域包括ケア推進課（電話 0799-43-5237）
+  url: https://www.city.minamiawaji.hyogo.jp/uploaded/attachment/326534.pdf
+  confidence: high
+- category: sonota
+  name: 防犯機能付き電話機等の購入費補助
+  name_on_page: 令和8年度防犯機能付電話機等購入費補助金
+  summary: 詐欺電話対策の機能がある電話機や外付け機器の購入費を一部補助する。
+  who: {}
+  at_application:
+  - 市内在住で65歳以上の人がいる世帯
+  - 機器を買う前に事前申込が必要（令和9年2月26日必着）
+  - 着信前の自動警告と自動録音の両方がある機器が対象
+  where: 危機管理課（電話 0799-43-5203）
+  url: https://www.city.minamiawaji.hyogo.jp/soshiki/kikikanri/bouhandenwaki.html
+  confidence: high
+  amount: 購入額の3分の2。固定電話機は上限10,000円、外付け機器は上限5,000円。
+- category: sonota
+  name: ごみ出し支援（玄関先での収集）
+  name_on_page: ごみ出し支援事業
+  summary: ごみを集積所に出せない単身の高齢者などから、玄関先でごみを収集する。
+  who: {}
+  at_application:
+  - 単身世帯（同居者も搬出が難しい世帯を含む）
+  - おおむね65歳以上で要支援・要介護の認定を受けた人
+  - または障害者手帳を持つ人か難病患者
+  - 親族や近所の協力を得られないこと
+  where: 環境課（電話 0799-43-5214）
+  url: https://www.city.minamiawaji.hyogo.jp/uploaded/attachment/326531.pdf
+  confidence: high
+not_found:
+- ribiyo
+- shingu
+- mimamori
