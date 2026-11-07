@@ -44,19 +44,6 @@ programs:
   url: https://www.city.saga.lg.jp/kenko-fukushi/fukushi/3/2/7761.html
   confidence: high
   amount: 無料（上下の布団各1枚と、毛布かシーツ1枚）
-- category: mimamori
-  name: 安否確認事業（訪問、弁当つきも選べる）
-  name_on_page: 安否確認事業
-  summary: 決まった曜日に委託業者が自宅を訪ねて安否を確認する。弁当を一緒に頼むこともできる。
-  who: {}
-  at_application:
-  - 65歳以上の単身世帯・高齢者のみの世帯、またはこれに準ずる世帯の高齢者等
-  - 心身の状況・家庭状況・介護サービス等の利用を見て決める（非該当もある）
-  - 申請の前に、まず電話で相談する
-  where: 担当地区のおたっしゃ本舗（地域包括支援センター）に相談。問い合わせは高齢福祉課 長寿推進係
-  url: https://www.city.saga.lg.jp/kenko-fukushi/fukushi/3/2/1253.html
-  confidence: high
-  amount: 訪問のみ1回120円。弁当つきは弁当代（税込）から150円を引いた額
 - category: kinkyu-tsuho
   name: 緊急通報システムの設置
   name_on_page: 緊急通報システム
