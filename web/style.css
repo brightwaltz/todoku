@@ -420,7 +420,12 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 details.muni-item { padding: 0 14px; margin: 8px 0 0; }
 details.muni-item > summary { font-weight: 700; color: var(--ink); padding: 10px 0; min-height: 44px; box-sizing: border-box; }
 details.muni-item > p { margin: 0 0 8px; }
-details.muni-item a { color: var(--accent); word-break: break-all; display: inline-block; min-height: 44px; padding: 10px 0; box-sizing: border-box; }
+details.muni-item a { color: var(--accent); word-break: break-all; display: block; min-height: 44px; padding: 10px 0; box-sizing: border-box; }  /* block：頁の名前が 2 行に折れても「•」が 1 行目に付く（inline-block だと最後の行に付く。T-202） */
+/* T-201：申し込む先（by）ごとの小見出しと、型の名前（制度の名前の下に小さく） */
+.muni-by { margin: 14px 0 0; }
+.muni-by > h3 { margin: 0; font-size: 1rem; }
+.muni-by > h3 .n { font-size: .9375rem; color: var(--muted); font-weight: 400; margin-left: 8px; white-space: nowrap; }
+.muni-cat { display: block; font-size: .875rem; font-weight: 400; color: var(--muted); }
 .city-group .note, .wrap > .note { overflow-wrap: anywhere; }
 .city-link { margin: 8px 0 0; font-size: 1rem; }
 .city-link a { display: inline-flex; align-items: center; min-height: 44px; }
