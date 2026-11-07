@@ -1,0 +1,73 @@
+city: "342076"
+name: 福山市
+site: www.city.fukuyama.hiroshima.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品の支給
+    where: 介護保険課（本庁舎 3 階、保険給付担当 084-928-1166）か、松永・北部・東部・神辺の保健福祉課、新市支所・沼隈支所（保健福祉担当）に申請書を出す
+    conditions:
+      - 要介護 4・5（またはこれに相当する）の人と同居し、家で介護している家族
+      - 介護される人も、介護する人も市民税非課税
+      - 施設や病院に入っている間は対象外
+      - 市の登録店で使える用品券を、年 75,000 円分まで（月 6,250 円分）。3 期に分けて渡す
+    sources:
+      - url: https://www.city.fukuyama.hiroshima.jp/soshiki/kaigo/57510.html
+        publisher: 福山市
+        title: 家族介護用品の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金の支給
+    where: 介護保険課（本庁舎 3 階、保険給付担当 084-928-1166）・高齢者支援課か、松永・北部・東部・神辺の保健福祉課、新市支所・沼隈支所（保健福祉担当）に申請書を出す
+    conditions:
+      - 要介護 4・5（またはこれに相当する）の人と同居し、家で 1 年以上介護している家族
+      - 介護される人も、介護する人も市民税非課税
+      - その間、介護保険のサービスを使っていない（ショートステイは通算 7 日まで）
+      - 介護される人 1 人につき年 100,000 円
+    sources:
+      - url: https://www.city.fukuyama.hiroshima.jp/soshiki/kaigo/57513.html
+        publisher: 福山市
+        title: 家族介護慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 福山市「食」の自立支援事業（配食サービス）
+    where: ケアマネジャー（地域包括支援センターなど）を通して、高齢者支援課（介護予防・政策担当 084-928-1189）か各支所（保健福祉担当）に申出書を出す
+    conditions:
+      - 65 歳以上で、ひとり暮らしか高齢者だけの世帯など
+      - 要支援・要介護の認定か、基本チェックリストで事業対象者になった人
+      - 栄養の改善と安否の確認が要ると認められた人
+      - 1 日 1 食（昼か夜）を週 5 日まで届け、安否も確かめる
+    sources:
+      - url: https://www.city.fukuyama.hiroshima.jp/site/koureisha-shien/378917.html
+        publisher: 福山市
+        title: 福山市「食」の自立支援事業（配食サービス）の利用・申請
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 福山市認知症ひとり歩きＳＯＳネットワーク・認知症高齢者等個人賠償責任保険事業
+    where: 事前登録と保険の申し込みは福山市社会福祉協議会 福祉のまちづくり課（084-928-1333）。市の問い合わせ先は高齢者支援課 相談支援担当（084-928-1310）
+    conditions:
+      - 認知症などで行方不明になるおそれのある高齢者を、社会福祉協議会に前もって登録できる
+      - 行方不明のときは警察署に届けを出す。協力団体や社会福祉協議会の公式 LINE の登録者に知らせる
+      - 市内でＳＯＳネットワークに事前登録し、要介護か要支援の人は、賠償の保険に無料で入れる
+      - 備後圏域（三原市・尾道市・府中市・世羅町・神石高原町・笠岡市・井原市）にも広げている
+    sources:
+      - url: https://www.city.fukuyama.hiroshima.jp/soshiki/koreisha/112984.html
+        publisher: 福山市
+        title: 高齢者の認知症などによるひとり歩き
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.fukuyama.hiroshima.jp/soshiki/koreisha/265850.html
+        publisher: 福山市
+        title: 認知症の人の事故に備える 認知症高齢者等個人賠償責任保険事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
