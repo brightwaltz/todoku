@@ -1,0 +1,89 @@
+city: "122173"
+name: 柏市
+site: www.city.kashiwa.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品（紙おむつ）給付
+    where: 高齢者支援課 介護サービス係（電子申請・郵送・窓口）
+    conditions:
+      - 市内に住み住民登録のある 65 歳以上で、常におむつを使い失禁のある人（生活保護の世帯は除く）
+      - A（月 2 セット）：要介護 4 以上で、本人と同じ住所の一親等の親族がみな市民税非課税
+      - A は有料老人ホーム・グループホーム・サ高住の人は対象外
+      - B（月 1 セット）：要介護 2 以上か身体障害者手帳 2 級以上。有料老人ホームなども対象
+      - B は本人と同じ住所の一親等の親族の所得割の合計が 16 万円未満。どちらも無料で届く
+    sources:
+      - url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/kaigoyohin.html
+        publisher: 柏市
+        title: 介護用品（紙おむつ）給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス費助成（嚥下食のお弁当）
+    where: 高齢者支援課 介護サービス係（電子申請・郵送・窓口）
+    conditions:
+      - 噛む・飲み込むのが難しく、ミキサー食・ムース食などの嚥下食が要る人。普通の食事は対象外
+      - 65 歳以上で要支援・要介護・事業対象者、または身体・療育・精神の手帳を持つ人。一般住宅か食堂の無いサ高住で暮らす
+      - 本人と同じ住所に住民登録のある一親等の親族の所得割の合計が 16 万円未満
+      - 市の指定事業者の嚥下食弁当が 1 食 500 円の負担になり、超える分を市が助成する。年 365 食まで
+    sources:
+      - url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigoshien/nichijoshien/haishoku.html
+        publisher: 柏市
+        title: 配食サービス費助成
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: かしわオレンジSOSネットワーク（行方不明のときの知らせと事前登録）
+    where: 事前登録は市内 12 か所の地域包括支援センター（問い合わせは地域包括支援課）。行方不明のときは柏警察署へ
+    conditions:
+      - 行方不明のときは柏警察署に届け、ネットワークの利用も申し込むと、市が協力者にメールなどで知らせる
+      - 事前登録：市内のおおむね 65 歳以上で、認知症などで行方不明になるおそれのある人（若年性認知症なら 65 歳未満も可）
+      - 本人の写真を持って登録する。ケアマネジャーを通しても申し込める。無料で、1 年ごとに更新する
+    sources:
+      - url: https://www.city.kashiwa.lg.jp/chikihokatsu/kaigo/ninchisho/1343.html
+        publisher: 柏市
+        title: かしわオレンジSOSネットワーク～地域ネットワークによる認知症などの行方不明者の発見と支援～
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.kashiwa.lg.jp/chikihokatsu/kaigo/ninchisho/1341.html
+        publisher: 柏市
+        title: かしわオレンジSOSネットワーク事前登録ご利用のご案内
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 柏市家族介護慰労金支給制度
+    where: 高齢者支援課 介護サービス係
+    conditions:
+      - 要介護 4・5 の高齢者を家で介護している家族
+      - 介護される人が在宅の介護サービスを使わず、医療機関に 8 日以上入院していないこと
+      - 対象と思われる人には市から申請書が届く。額は頁に無いので、窓口で確かめる
+    sources:
+      - url: https://www.city.kashiwa.lg.jp/kourei/kaigo/kaigohoken/service/kazokukaigo.html
+        publisher: 柏市
+        title: 家族介護慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 柏市成年後見人等報酬費助成制度
+    where: 65 歳以上は地域包括支援課、知的障害・精神障害の人は障害福祉課
+    conditions:
+      - 市長申立てで後見人等が付いた人で、預貯金が 100 万円未満かつ市町村民税が非課税の人
+      - または、親族でない第三者が後見人等に付いた生活保護の人
+      - 市内に住み住民登録のある人（市外の住所地特例施設・病院にいる人も対象のことがある）
+      - 他の自治体の援護を受けている人は対象外
+      - 上限は月 在宅 28,000 円・施設 18,000 円。報酬の審判から 1 年以内に申請する
+    sources:
+      - url: https://www.city.kashiwa.lg.jp/chikihokatsu/kaigo/ninchisho/kokennin.html
+        publisher: 柏市
+        title: 柏市成年後見人等報酬費助成制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
