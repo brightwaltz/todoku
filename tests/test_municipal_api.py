@@ -81,7 +81,8 @@ def test_read_resumes_pause_turn_and_sums_cost(tmp_path):
     assert len(client.calls) == 2
     # 送り返すときは、前の返事を assistant として足し、残りの回数を max_uses にする
     assert client.calls[1]["messages"][-1]["role"] == "assistant"
-    assert client.calls[1]["tools"][0]["max_uses"] == 1 and client.calls[1]["tools"][1]["max_uses"] == 11
+    assert client.calls[1]["tools"][0]["max_uses"] == api.SEARCH_MAX - 2
+    assert client.calls[1]["tools"][1]["max_uses"] == api.FETCH_MAX - 4
     assert all(t["allowed_domains"] == ["city.nagoya.jp"] for t in client.calls[0]["tools"])
     assert (tally["searches"], tally["fetches"]) == (3, 7)
     assert budget.spent == pytest.approx(tally["usd"])
@@ -93,3 +94,21 @@ def test_one_city_over_its_cap_stops(tmp_path):
     client = FakeClient([_msg("pause_turn", usage=_usage(i=2_000_000))])
     with pytest.raises(api.Stop):
         api.read_city(client, "231002", {"231002": "名古屋市"}, api.Budget(10, 1.0), "high", tmp_path)
+
+
+@needs_work
+def test_unexpected_stop_gets_one_wrap_up(tmp_path):
+    """京都市（11/7）：stop_reason が tool_use のまま JSON を書かずに止まったら、1 回だけ記録を書くよう頼む。"""
+    record = {"site_host": "www.city.kyoto.lg.jp", "programs": []}
+    client = FakeClient([_msg("tool_use", ""), _msg("end_turn", "```json\n" + json.dumps(record) + "\n```")])
+    tally: dict = {}
+    raw, _ = api.read_city(client, "261009", {"261009": "京都市"}, api.Budget(10, 2), "high", tmp_path, tally)
+    assert client.calls[1]["messages"][-1] == {"role": "user", "content": api.WRAP_UP}
+    assert tally["wrapped"] and raw["code"] == "261009"
+    # 2 回目も JSON が無ければ、それ以上は頼まずに失敗にし、かかった費用は tally に残る
+    # （そのあと道具なしで JSON を取り出す呼び出しが 1 回ある）
+    client = FakeClient([_msg("tool_use", ""), _msg("end_turn", "書けませんでした"), _msg("end_turn", "無い")])
+    tally = {}
+    with pytest.raises(ValueError):
+        api.read_city(client, "261009", {"261009": "京都市"}, api.Budget(10, 2), "high", tmp_path, tally)
+    assert len(client.calls) == 3 and tally["calls"] == 2 and tally["usd"] > 0
