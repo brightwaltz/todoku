@@ -1,0 +1,68 @@
+city: "292010"
+name: 奈良市
+site: www.city.nara.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 在宅要介護者紙おむつ等支給事業
+    where: 居住地の地域包括支援センターか長寿福祉課（0742-34-5439）に申請書を出す。電子申請もできる
+    conditions:
+      - 市内に住所があり、家で暮らす要介護 4・5 の人（入院中・入所中は使えない）
+      - 本人が市民税非課税で、同居の人全員（世帯分離も含む）が市民税所得割非課税
+      - 市が登録した事業者を 1 つ選び、紙おむつや尿取りパッドなどを 2 か月に 1 度届けてもらう
+      - 上限は月 3,500 円分（2 か月で 7,000 円分）。申請した翌月の中旬から月末に届く
+    sources:
+      - url: https://www.city.nara.lg.jp/soshiki/36/3523.html
+        publisher: 奈良市
+        title: 在宅要介護者紙おむつ等支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 65歳以上のひとり暮らしなど見守りが必要な人への配食サービス事業
+    where: 住所地を担当する地域包括支援センターに、申込書とケアプラン（介護予防プラン）を出す。電子申請もできる
+    conditions:
+      - 65 歳以上のひとり暮らしなどで、障がいや病気で食事の用意が難しく、見守りが要る人
+      - ケアプランで配食サービスが要るとされている人
+      - 昼食か夕食を 1 日 1 食届け、そのときに安否を確かめる。最大で週 7 回
+      - 普通食は 1 食 530 円以下の自己負担。昼間だけひとりの人と、デイサービスの日は使えない
+    sources:
+      - url: https://www.city.nara.lg.jp/soshiki/36/187185.html
+        publisher: 奈良市
+        title: 65歳以上のひとり暮らしなど見守りが必要な人への配食サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 奈良市安心・安全“なら”見守りネットワーク（事前登録制度）
+    where: 長寿福祉課（0742-34-5439）か地域包括支援センターに、親族・後見人・保佐人が本人の写真と身分証を持って申し込む
+    conditions:
+      - 市内に住所があり家で暮らす、認知症などで行方が分からなくなる心配のある人
+      - 事前に登録しておくと、行方が分からないとき市役所が協力機関にメールで知らせる
+      - 希望すると、読むと警察か市役所への連絡を頼む QR コードのシールを無料でもらえる
+      - GPS 端末も借りられる。加入料と充電器は市が持ち、月 1,200 円（税別）などは自分で払う
+    sources:
+      - url: https://www.city.nara.lg.jp/soshiki/36/10804.html
+        publisher: 奈良市
+        title: 奈良市安心・安全“なら”見守りネットワーク（事前登録制度）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（市長申立て・報酬の助成）
+    where: 65 歳以上の認知症の人などは長寿福祉課（0742-34-5439）、それ以外の人は障がい福祉課（0742-34-4593）
+    conditions:
+      - 親族がいないか音信不通などで申し立てられないときは、市長が代わりに申し立てる
+      - 本人の財産では後見人等の報酬を払うのが難しい人に、報酬を助成する
+      - 市長申立てのときか、親族でない第三者が後見人等に選ばれたとき（平成 31 年 4 月以降）
+      - 家庭裁判所の報酬付与の審判が確定した日の翌日から 90 日以内に申請する
+    sources:
+      - url: https://www.city.nara.lg.jp/soshiki/36/2458.html
+        publisher: 奈良市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
