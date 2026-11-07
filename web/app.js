@@ -807,10 +807,16 @@ const GROUPS = [
 // 読み取れなかった事実（unread）は、値打ちの高い順にこの数だけ先に出し、残りはボタンに畳む（T-014）。
 // 0 にして全部を畳んでいる：結果の画面の先頭が問いで埋まり、「当てはまる見込み」が下へ押し出されるため（D-0011 で確認中。3 なら先に 3 問出す）
 const UNREAD_FIRST = 0;
+// 質問だけで始めた道（main の T-204、/api/begin。文も出来事もないので state.event が真で state.text が空）では、
+// 「相談の文から読み取れなかった」とは言えないので、欄の注の 1 文目とボタンの名前だけを替える（T-205）
+const LATER_LEAD = $("later").querySelector(".lead-note").textContent;
+const BLANK_LEAD = LATER_LEAD.replace(/^[^。]*。/, "まだ答えていない質問です。");
 
 // 聞き返しのあとも確かめていない読み取り（unconfirmed）と、読み取れなかった事実（unread）。
 // 答えると規則だけで判定し直す（Claude は呼ばない）
 function renderLater(unconfirmed, unread = []) {
+  const blank = state.event && !state.text;
+  $("later").querySelector(".lead-note").textContent = blank ? BLANK_LEAD : LATER_LEAD;
   const item = (q) => {
     const box = el("div");
     const node = el("div", { class: "later-item" },
@@ -831,7 +837,7 @@ function renderLater(unconfirmed, unread = []) {
     const more = el("button", { class: "link", onclick: () => {
       rest.hidden = false; more.remove(); state.laterOpen = true; focusOn(rest.querySelector("h3"));
     } },
-      first ? `ほか ${unread.length - first} 件を見る` : keepTail("読み取れなかったことにも答える", `（${unread.length} 件）`));
+      first ? `ほか ${unread.length - first} 件を見る` : keepTail(blank ? "ほかの質問にも答える" : "読み取れなかったことにも答える", `（${unread.length} 件）`));
     nodes.push(more, rest);
   }
   $("later-list").replaceChildren(...nodes);
