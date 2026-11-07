@@ -182,11 +182,17 @@ def json_block(text: str):
     """返事の最後の ```json ブロック（無ければ、いちばん外の {…} か […]）を読む。"""
     blocks = re.findall(r"```(?:json)?\s*\n(.*?)```", text, re.S)
     if blocks:
-        return json.loads(blocks[-1])
-    m = re.search(r"[\[{].*[\]}]", text, re.S)
-    if not m:
-        raise ValueError("JSON が無い")
-    return json.loads(m.group(0))
+        body = blocks[-1]
+    else:
+        m = re.search(r"[\[{].*[\]}]", text, re.S)
+        if not m:
+            raise ValueError("JSON が無い")
+        body = m.group(0)
+    try:
+        return json.loads(body)
+    except json.JSONDecodeError:
+        # 11/7 朝霞市：裁定役が閉じ括弧の前に余分なカンマを書いた。それだけを外して読み直す
+        return json.loads(re.sub(r",\s*([\]}])", r"\1", body))
 
 
 def final_text(msg) -> str:

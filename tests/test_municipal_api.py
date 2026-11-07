@@ -60,6 +60,7 @@ def test_json_block_takes_the_last_block():
     text = "見つけた 2\n```json\n{\"a\": 1}\n```\n直し\n```json\n{\"a\": 2}\n```"
     assert api.json_block(text) == {"a": 2}
     assert api.json_block("前置き [ {\"i\": 0, \"verdict\": \"keep\"} ]") == [{"i": 0, "verdict": "keep"}]
+    assert api.json_block('```json\n[{"i": 0, "verdict": "keep",},\n]\n```') == [{"i": 0, "verdict": "keep"}]
 
 
 @needs_work
