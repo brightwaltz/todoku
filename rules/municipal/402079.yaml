@@ -165,12 +165,9 @@ programs:
   name: 生活支援ショートステイ
   name_on_page: 生活支援ショートステイ
   summary: ひとり暮らしなどの高齢者が、特養などに短期間入所して体調を整える。
-  who:
-    age_min: 65
-    household:
-    - alone
-    - elderly_only
+  who: {}
   at_application:
+  - 65歳以上で一人暮らし、または高齢者のみ世帯
   - 介護保険で非該当（自立）と認定された人など
   - 1回7日まで
   where: 在宅介護支援センター、福祉課高齢者福祉係
