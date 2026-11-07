@@ -1,0 +1,127 @@
+city: '281000'
+name: 神戸市
+site: www.city.kobe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給（利用券）
+  name_on_page: 紙おむつ支給事業
+  summary: 在宅で要介護4・5の非課税世帯の高齢者に、紙おむつ・尿とりパッドの利用券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 神戸市の介護保険の被保険者である
+  - 生活保護・中国残留邦人等支援給付を受けていない
+  - 原則は介護する市内在住の家族が申請（いなければ本人）
+  - 毎年度、申請が必要
+  where: 福祉局高齢福祉課へ郵送（担当ケアマネジャー・えがおの窓口が案内）
+  url: https://www.city.kobe.lg.jp/a39067/kurashi/registration/shinsei/koureisha/wh1306008.html
+  confidence: high
+  amount: 年額 25,000〜100,000 円分（支給決定日で変わる）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: ねたきりや認知症の65歳以上の人を家庭で介護している人に、慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 年齢・要介護度は介護を受ける高齢者の条件
+  - 要介護3でも認知症が顕著なら対象になる場合がある
+  - 過去1年、介護保険サービスを使わず在宅で家族介護
+  - 老齢福祉年金の所得制限以下（介護者に制限の場合あり）
+  where: 居住地の区役所 保健福祉課
+  url: https://www.city.kobe.lg.jp/a39067/kenko/fukushi/koreshafukushi/am04/zaitaku/a0375.html
+  confidence: high
+  amount: 年額 120,000 円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容所へ行けない要介護4・5の在宅高齢者の自宅へ理容師・美容師が来る。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理容所・美容所へ出かけることが困難
+  - 自宅に来てもらう場合のみ（デイサービス等での利用は対象外）
+  - 毎年度、申請が必要
+  where: 福祉局高齢福祉課へ郵送（担当ケアマネジャー・えがおの窓口が案内）
+  url: https://www.city.kobe.lg.jp/a39067/kenko/fukushi/koreshafukushi/am04/zaitaku/a0381.html
+  confidence: high
+  amount: 年1〜4回（申請書の到着日で変わる）。自己負担は1回2,000円（調髪・カットのみ）
+- category: jutaku
+  name: 住宅改修助成（バリアフリー工事の助成）
+  name_on_page: 住宅改修助成事業
+  summary: 高齢者や障害者の自宅のバリアフリー工事費の一部を市が助成する。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定、または身体障害者手帳の交付を受けている
+  - 生計中心者の前年所得が600万円以下（給与のみは収入800万円以下）
+  - 原則1世帯1回限り、工事着工前に申請
+  - 新築・増改築・老朽による取替や修繕は対象外
+  where: あんしんすこやかセンター（要支援・要介護の人）／区役所 保健福祉課（手帳の人）
+  url: https://www.city.kobe.lg.jp/a39067/kenko/fukushi/koreshafukushi/am06/juukyo/a045.html
+  confidence: high
+  amount: 上限100万円（介護保険等の分と合わせ、20万円を引いた額が対象。助成率は課税状況で変わる）
+- category: mimamori
+  name: KOBEみまもりヘルパー
+  name_on_page: KOBEみまもりヘルパー
+  summary: 認知症・軽度認知障害の人の自宅へヘルパーが来て、見守り・話し相手・外出の付き添いをする。
+  who: {}
+  at_application:
+  - 市内に住み、認知症または軽度認知障害（MCI）の診断がある
+  - 寝たきりではない（自立度BランクまたはCランクでないのが目安）
+  where: 担当ケアマネジャー・えがおの窓口、またはあんしんすこやかセンター
+  url: https://www.city.kobe.lg.jp/a39067/kenko/fukushi/koreshafukushi/am04/zaitaku/a0367.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システム（ケアライン119）
+  name_on_page: ケアライン119
+  summary: 急病などの緊急時に、近隣の協力者と消防が駆けつける通報システムに登録できる。
+  who: {}
+  at_application:
+  - ひとり暮らしで持病・病弱・重度障害などの人（ふたり暮らしも条件つき）
+  - 固定電話がある（IP電話は可、携帯電話は不可）
+  - 5分ほどで駆けつける近隣協力者の協力が得られる（見つからなくても登録可）
+  - 地区の民生委員の確認が必要
+  where: 最寄りの消防署（申込書は消防署・区役所で配布、電子申請も可）
+  url: https://www.city.kobe.lg.jp/a10878/bosai/shobo/119/careline.html
+  confidence: high
+- category: gaishutsu
+  name: 敬老パス（バス・鉄道のICカード）
+  name_on_page: 敬老パス
+  summary: 70歳以上の市民に、市内のバス・地下鉄等で使える敬老パスのICカードを交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 福祉乗車証・タクシー利用券・自動車燃料費助成を受けている人は除く
+  where: 70歳前に郵送される申請書を返送、またはe-KOBEで申請
+  url: https://www.city.kobe.lg.jp/a39067/kenko/fukushi/koreshafukushi/am02/yutai/keropass/index.html
+  confidence: high
+not_found:
+- haishoku
+- koken
+- hochoki
+- shingu
+- nichijo-yogu

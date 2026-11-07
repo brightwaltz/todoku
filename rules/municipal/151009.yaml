@@ -1,0 +1,150 @@
+city: '151009'
+name: 新潟市
+site: www.city.niigata.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給（引換券の交付）
+  name_on_page: 紙おむつ支給事業
+  summary: 紙おむつ等と引き換える券を毎月交付する（枚数は要介護度と課税状況で変わる）。
+  who:
+    age_min: 40
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 障がい高齢者の日常生活自立度がB以上、または認知症高齢者の自立度が3以上
+  where: 各区役所健康福祉課高齢介護担当
+  url: https://www.city.niigata.lg.jp/iryo/korei/zaitakukaigo/kamiomutsu.html
+  confidence: high
+  amount: 毎月、パンツ型30〜90枚または平型100〜300枚相当の券（要介護度と課税状況で異なる）
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容サービス
+  summary: 理美容師が自宅を訪問して理美容を行い、出張料金は公費で負担する。
+  who:
+    age_min: 65
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 理髪店や美容院に出向くことが困難な高齢者
+  where: 各区役所健康福祉課高齢介護担当
+  url: https://www.city.niigata.lg.jp/iryo/korei/zaitakukaigo/ribiyo.html
+  confidence: high
+  amount: 年に最大6回。理美容の料金は自己負担、出張料金は公費負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与と安否確認
+  name_on_page: あんしん連絡システム
+  summary: 緊急通報装置を貸与し、センサーと月1回の電話で安否を確かめ、健康相談にも応じる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 要介護状態、または慢性疾患で医師の治療が必要な方
+  - 日常生活上注意を要し、定期的な安否確認が必要
+  - 65歳以上のみ、または65歳以上と重度障がい者のみの世帯
+  - 本人以外の緊急連絡先と協力員の同意書が必要
+  where: 各区役所健康福祉課高齢介護担当、地域保健福祉センター、地域包括支援センター
+  url: https://www.city.niigata.lg.jp/iryo/korei/anshinseikatsu/anshinrenraku.html
+  confidence: high
+  amount: 月額0円・550円・1,100円（世帯の市民税の課税状況で決まる）
+- category: haikai
+  name: 徘徊のある高齢者への位置検索端末の貸与
+  name_on_page: 徘徊高齢者の家族支援（位置検索用端末の貸与）
+  summary: 徘徊のある高齢者にGPS付きの小型端末を貸し、家族が居場所を探せるようにする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上、または65歳未満で要介護・要支援認定があり、認知症等で徘徊が見られる
+  - 在宅で介護している家族が申請する
+  where: 各区役所健康福祉課高齢介護担当、地域保健福祉センター、地域包括支援センター
+  url: https://www.city.niigata.lg.jp/iryo/korei/anshinseikatsu/haikai.html
+  confidence: high
+  amount: 月額0円（世帯全員が市民税非課税）、1,100円（市民税の課税者がいる世帯）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事を自宅へ届け、あわせて安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事づくりが困難な方
+  - 実施内容は区によって異なる
+  - 東区と中央区では実施していない
+  where: 各区役所健康福祉課高齢介護担当
+  url: https://www.city.niigata.lg.jp/iryo/korei/anshinseikatsu/haishoku.html
+  confidence: high
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立て費用と、後見人等への報酬の一部を助成する。
+  who: {}
+  at_application: []
+  where: 住民票の住所地を管轄する区役所健康福祉課（窓口・郵送・e-NIIGATA）
+  url: https://www.city.niigata.lg.jp/iryo/korei/anshinseikatsu/koreisha-seinenkoken.html
+  confidence: high
+- category: jutaku
+  name: 高齢者向け住宅リフォーム助成
+  name_on_page: 高齢者向け住宅リフォーム助成
+  summary: 手すり・段差解消・浴室改修などの住宅リフォーム費の一部を助成する。
+  who: {}
+  at_application: []
+  where: 各区役所健康福祉課高齢介護担当（e-NIIGATAでも申請可）
+  url: https://www.city.niigata.lg.jp/iryo/korei/koreisha-reform.html
+  confidence: high
+- category: hochoki
+  name: 補聴器購入費の助成（認知症予防）
+  name_on_page: 認知症予防のための補聴器購入費助成
+  summary: 認知症予防のため、補聴器の購入費の2分の1（上限25,000円）を助成する。
+  who: {}
+  at_application: []
+  where: 保健所健康増進課、または区役所健康福祉課
+  url: https://www.city.niigata.lg.jp/iryo/kenko/yobo_kenshin/yobou-hotyouki/yobouhotyouki.html
+  confidence: high
+- category: sonota
+  name: 公衆浴場の入浴券の交付
+  name_on_page: 入浴券の交付
+  summary: 自宅に風呂のない高齢者に、公衆浴場で使える入浴券を毎月6枚交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、自宅に浴槽・風呂釜などの入浴設備がない方
+  - 設備が故障している方は対象外
+  - 民生委員が配る申請書と本人確認書類が必要
+  where: 各区役所健康福祉課高齢介護担当（中央区は窓口サービス課）、出張所・連絡所など
+  url: https://www.city.niigata.lg.jp/iryo/korei/genkikorei/bath.html
+  confidence: high
+  amount: 月6枚、自己負担なし。申請月から年度末分をまとめて交付
+not_found:
+- iro
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai
+- shingu

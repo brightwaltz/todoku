@@ -1,0 +1,27 @@
+pref: '44'
+name: 大分県
+site: www.pref.oita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: あったか・はーと駐車場の利用証の交付
+  name_on_page: 大分あったか・はーと駐車場利用証制度
+  summary: 障がいのある方や介護が必要な高齢の方などに、協力施設の車いすマーク駐車場を使える県共通の利用証を交付する。
+  who: {}
+  at_application:
+  - 障がいのある方、介護が必要な方、妊産婦などで交付基準に当たる
+  - 高齢者は介護保険被保険者証（要介護状態区分）で確認する
+  - 基準外でも、医師の診断書で歩行が困難と認められれば申請できる
+  where: 福祉保健企画課 地域福祉班（電子申請・郵送）、県の窓口、市町村（大分市を除く）、市町村社会福祉協議会
+  url: https://www.pref.oita.jp/soshiki/12000/attaka-heart.html
+  confidence: high
+  amount: 手数料は無料
+  more_urls:
+  - https://www.pref.oita.jp/uploaded/attachment/2255549.pdf
+not_found:
+- yutai

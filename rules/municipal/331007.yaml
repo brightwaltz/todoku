@@ -1,0 +1,192 @@
+city: '331007'
+name: 岡山市
+site: www.city.okayama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 難聴の高齢者への補聴器購入費の助成
+  name_on_page: 難聴高齢者補聴器購入費助成事業
+  summary: 中等度の難聴がある市民税非課税世帯の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 岡山市に住民登録がある
+  - 身体障害者手帳（聴覚）の交付対象にならない
+  - 原則、両耳とも 40dB 以上で耳鼻科医が必要と認める意見書がある
+  - 過去に助成を受けた人は、決定から 5 年以上たっている
+  - 補聴器を買う前に申請する
+  where: もよりの福祉事務所、各支所総務民生課
+  url: https://www.city.okayama.jp/kurashi/0000061124.html
+  confidence: high
+  amount: 購入費の 2 分の 1 以内（上限 25,000 円）
+- category: iro
+  name: 在宅の家族介護者への慰労金
+  name_on_page: 家族介護者慰労金の支給
+  summary: 要介護3以上の高齢者を在宅で介護する家族に、年 1 回慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者と要介護者が市内に住所があり、同居の全員が市民税非課税
+  - 同居して介護した期間が年度内に通算 6 か月以上ある
+  - 要介護3以上の認定を受けて 1 年以上たっている
+  - 直近 1 年間、介護保険サービスを利用していない
+  - 申請は 10 月 1 日〜3 月 31 日
+  where: もよりの福祉事務所、御津・灘崎・建部・瀬戸支所の総務民生課
+  url: https://www.city.okayama.jp/kurashi/0000013271.html
+  confidence: high
+  amount: 年額 100,000 円（年 1 回）
+- category: ribiyo
+  name: 寝たきり高齢者の理容券の交付
+  name_on_page: 理容サービス料の助成
+  summary: 在宅の寝たきり高齢者に、理容券を年 6 枚まで交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 岡山市内に 6 か月以上住んでいる
+  - 寝たきりの状態である
+  where: もよりの福祉事務所、御津・灘崎・建部・瀬戸支所の総務民生課
+  url: https://www.city.okayama.jp/kurashi/0000014405.html
+  confidence: high
+  amount: 年間最高 6 枚（1 回につき自己負担 1,500 円）
+- category: nichijo-yogu
+  name: 高齢者への日常生活用具の給付
+  name_on_page: 日常生活用具の給付
+  summary: ひとり暮らしの高齢者などに電磁調理器・電子レンジ、寝たきり以外の方に手押車・杖を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 電磁調理器・電子レンジはひとり暮らしの方などが対象
+  - 老人用手押車・杖は寝たきり以外の方が対象
+  - 購入前に福祉事務所へ申請する
+  where: もよりの福祉事務所、御津・建部・瀬戸・灘崎支所の総務民生課
+  url: https://www.city.okayama.jp/kurashi/0000014408.html
+  confidence: high
+- category: haishoku
+  name: ひまわり給食（ボランティアによる弁当の配食）
+  name_on_page: ひまわり給食サービス
+  summary: 調理が難しい高齢者に、平日の昼食弁当を自宅へ届け、安否も確かめる。
+  who:
+    age_min: 65
+  at_application:
+  - 虚弱で調理が難しい、または援護が受けられない
+  - ひとり暮らし、高齢者のみの世帯などの方
+  - 実施地区は石井・福島の 2 小学校区と建部中学校区のみ
+  - 利用前に関係者による対面調査がある
+  where: 岡山市社会福祉協議会（石井・福島）、建部町在宅福祉サービスセンター（建部）
+  url: https://www.city.okayama.jp/kurashi/0000018629.html
+  confidence: high
+  amount: 1 食 400 円（石井・福島）、410 円（建部中学校区）
+- category: haishoku
+  name: まごころ給食（民間業者による弁当の配食）
+  name_on_page: まごころ給食サービス
+  summary: ひまわり給食がない地区で、民間業者が平日の昼食弁当を自宅へ届け、安否も確かめる。
+  who:
+    age_min: 65
+  at_application:
+  - 虚弱で調理が難しい、または援護が受けられない
+  - ひとり暮らし、高齢者のみの世帯などの方
+  - ひまわり給食を使えない地区の方が対象（34 中学校区ほか）
+  - 利用前に関係者による対面調査がある
+  where: 高齢者福祉課、もよりの地域包括支援センター
+  url: https://www.city.okayama.jp/kurashi/0000018629.html
+  confidence: high
+  amount: 1 食 400 円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与・設置
+  name_on_page: 緊急通報システムの貸与・給付
+  summary: ボタンを押すと協力員や消防局に連絡できる緊急通報装置を、ひとり暮らしの高齢者らに設置する。
+  who: {}
+  at_application:
+  - 自宅に電話があり、市内の近隣協力員 3 人が原則得られる
+  - 65歳以上のひとり暮らし、60〜64歳で病弱なひとり暮らしなど
+  - 65歳以上のみの世帯の寝たきり・病弱な方、重度身体障害者世帯も対象
+  - 同一敷地内や隣に 3 親等以内の親族がいる方は対象外
+  where: もよりの福祉事務所、御津・建部・瀬戸・灘崎支所の総務民生課
+  url: https://www.city.okayama.jp/kurashi/0000014403.html
+  confidence: high
+  amount: 生計中心者の課税状況で自己負担が変わる（非課税世帯は無料）。通話料は自己負担
+- category: haikai
+  name: 行方不明高齢者の事前登録とメール捜索
+  name_on_page: 岡山市行方不明高齢者さがしてメール
+  summary: 行方不明の恐れがある認知症の人を事前登録し、行方不明時に協力者へメールで捜索を依頼する。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 認知症の方で、ひとり歩きなどで行方不明になる恐れがある
+  - 若年性認知症の方も対象
+  - 本人または家族が登録申請書を提出する
+  where: 高齢者福祉課、地域包括支援センター
+  url: https://www.city.okayama.jp/kurashi/0000014939.html
+  confidence: high
+- category: sonota
+  name: 公衆浴場の入浴券の給付
+  name_on_page: 入浴券の給付
+  summary: 自宅に風呂がない高齢者に、市内の公衆浴場で使える入浴券を月 6 枚渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 自宅にお風呂がない
+  - 生計の中心者が市民税非課税の世帯
+  where: もよりの福祉事務所、御津・灘崎・建部・瀬戸支所の総務民生課
+  url: https://www.city.okayama.jp/kurashi/0000018630.html
+  confidence: high
+  amount: 1 か月 6 枚（1 枚は 350 円まで助成）
+- category: sonota
+  name: はり・きゅう・マッサージ券の交付
+  name_on_page: はり・きゅう・マッサージ施術費の助成
+  summary: 市民税非課税世帯の高齢者に、指定施術所で使える施術券を年 18 枚まで渡す。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 68〜69歳のひとり暮らしの方、または 70 歳以上の方
+  - 利用は市の指定施術所に限る
+  - 自己負担金が必要
+  where: もよりの福祉事務所、御津・建部・瀬戸・灘崎支所の総務民生課
+  url: https://www.city.okayama.jp/kurashi/0000014398.html
+  confidence: high
+  amount: 年間最高 18 枚
+- category: yutai
+  name: シルバーカード（観光施設などの無料・割引）
+  name_on_page: シルバーカード
+  summary: 65歳以上の市民に、市内の美術館・植物園・プールなどを無料や割引で使えるカードを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民票がある
+  - 65歳になる前年度末に一斉に発送される（転入者は翌月ごろ）
+  - 交通機関の無料パスではない
+  where: 高齢者福祉課（再交付はもよりの福祉事務所、支所、区役所でも可）
+  url: https://www.city.okayama.jp/kurashi/0000014409.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- shingu
+- gaishutsu

@@ -1,0 +1,239 @@
+city: '401005'
+name: 北九州市
+site: www.city.kitakyushu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の毎月配達
+  name_on_page: おむつ給付サービス
+  summary: 在宅で常時おむつが必要な人に、紙おむつ等を毎月自宅へ届ける。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住む介護保険の被保険者
+  - 認定調査で排尿か排便が見守り以上
+  - 原則として要介護3以上と認められた人
+  - 施設入所中・入院中は利用できない
+  where: 各区役所 高齢者・障害者相談係
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+  amount: 助成対象限度額内の利用額の1割が自己負担（生活保護は限度額内なら負担なし）
+- category: haishoku
+  name: 訪問給食（安否確認つき配食）
+  name_on_page: 訪問給食サービス
+  summary: 栄養管理が必要なひとり暮らしの人に、安否確認をしながら食事を届ける。
+  who:
+    household:
+    - alone
+  at_application:
+  - 栄養管理・改善が必要と判定された人
+  - 65歳以上の単身世帯、または重度障害者の単身世帯
+  where: 各区役所 高齢者・障害者相談係
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+  amount: 週5日以内・1日1食、自己負担は1食550円以内
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具給付
+  summary: ひとり暮らし高齢者等に、火災警報器などの用具を給付する。
+  who: {}
+  at_application:
+  - 用具ごとに対象が異なり、おおむね65歳以上が目安
+  - 火災警報器は前年所得税非課税の寝たきり・ひとり暮らし
+  - 自動消火器・電磁調理器は防火配慮が必要なひとり暮らし
+  - 電磁調理器は前年の所得税額で自己負担が変わる
+  where: 各区役所 高齢者・障害者相談係
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+  amount: 公費負担の上限は火災警報器7,700円、自動消火器21,800円、電磁調理器13,400円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給
+  summary: 介護保険サービスを使わず重度の人を在宅で介護する家族に慰労金を支給。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の状態が1年以上続いている
+  - その間、介護保険サービスを全く使っていない
+  - 7日以内のショートステイは除く
+  - その間ずっと市民税非課税世帯に属している
+  where: 介護を受ける人が住む区の区役所 高齢者・障害者相談係
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+  amount: 年額10万円
+- category: ribiyo
+  name: 訪問理美容
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきり等で店に行けない人の家へ、理容師・美容師が訪問する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきり等で理髪店・美容院へ行くのが難しい人
+  - 施設入所中・入院中は利用できない
+  where: 各区役所 高齢者・障害者相談係
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+  amount: 年6回まで。自己負担は理容・美容とも3,500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: あんしん通報システム
+  summary: 緊急ボタンと火災センサーを設置し、警備会社の24時間通報につなぐ。
+  who: {}
+  at_application:
+  - おおむね65歳以上のみの世帯で、急な発作の恐れなど要注意の人
+  - または重度身体障害（1・2級）の人のみの世帯等で自力回避が難しい人
+  - 電話回線の用意は本人負担（携帯電話は不可）
+  where: 地域包括支援センター
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+  amount: 月額利用料は市民税非課税世帯・生活保護は無料、それ以外は1,705円
+- category: mimamori
+  name: 高齢者見守りサポーター派遣
+  name_on_page: 高齢者見守りサポーター派遣
+  summary: 介護家族の外出時などに、サポーターが自宅で見守り・話し相手をする。
+  who:
+    at_home: true
+  at_application:
+  - 認知症等で見守りが必要な高齢者を在宅で介護する家族等
+  - 40歳以上の初老期認知症で要介護認定の人も含む
+  where: 地域包括支援センター（小倉北区）、各区役所 高齢者・障害者相談係（他の区）
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+- category: sonota
+  name: 介護マークの交付
+  name_on_page: 介護マーク交付事業
+  summary: 外出先で介護中と示す「介護マーク」を、希望する家族に交付する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で認知症高齢者等を介護している家族または親族
+  where: 地域包括支援センター、各区役所 高齢者・障害者相談係
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+- category: sonota
+  name: ごみ出しが難しい世帯の玄関先収集
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しい世帯の玄関前で、週1回家庭ごみを収集する。
+  who: {}
+  at_application:
+  - 要介護2以上または障害福祉サービスの受給認定がある人の世帯
+  - 同居者がいる場合は同居者も同じ要件が必要
+  - 親族・地域・ボランティアの協力が得られない
+  - 申込後に市職員が訪問して決定する
+  where: 環境局業務課、または住所地の区役所保健福祉課
+  url: https://www.city.kitakyushu.lg.jp/files/001104956.pdf
+  confidence: high
+- category: haikai
+  name: 認知症行方不明者等SOSネットワーク登録
+  name_on_page: 認知症行方不明者等SOSネットワークシステムへの登録
+  summary: 行方不明の恐れがある認知症の人を事前登録し、早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 申込は本人の家族、成年後見人等、または主たる介護者
+  where: 各区役所 高齢者・障害者相談係、地域包括支援センター、またはインターネット
+  url: https://www.city.kitakyushu.lg.jp/files/001104958.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 認知症高齢者等の GPS 位置探索
+  name_on_page: 認知症高齢者等位置探索サービス
+  summary: GPS 専用端末で、所在不明時に家族が位置情報を探せる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 要支援・要介護の認知症の人を介護している家族
+  - 施設入所中・入院中の人の家族は利用できない
+  where: 各区役所 高齢者・障害者相談係、地域包括支援センター
+  url: https://www.city.kitakyushu.lg.jp/files/001104958.pdf
+  confidence: high
+- category: haikai
+  name: 見守りシール（二次元コード）
+  name_on_page: 北九州市見守りシール
+  summary: 二次元コードのシールで、行方不明時に発見通知が家族へ届く。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要支援・要介護の人を介護している家族など
+  - 伝言板用にスマートフォン等が必要
+  - 施設入所中・入院中の人は対象外
+  where: 北九州市電子申請システム（問い合わせは長寿社会対策推進室）
+  url: https://www.city.kitakyushu.lg.jp/files/001104958.pdf
+  confidence: high
+  amount: 無料（耐洗ラベル40枚、蓄光シール10枚）。追加・再発行は有料
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見人等の申立てに係る費用及び後見人等への報酬の助成について
+  summary: 判断能力が不十分な生活困窮者等の、申立費用と後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 認知症や障害で判断能力が不十分な「生活困窮者等」
+  - 生活保護受給者のほか、これに準ずる経済状況の人
+  - 例：単身で年収見込み150万円以下、資産350万円以下
+  where: 地域包括支援センター、各区役所 高齢者・障害者相談係（相談は成年後見支援センター）
+  url: https://www.city.kitakyushu.lg.jp/files/001104958.pdf
+  confidence: high
+  amount: 申立費用は全額。報酬は月額上限が施設入所18,000円、在宅等28,000円
+- category: jutaku
+  name: すこやか住宅改造助成（介護保険の上乗せ）
+  name_on_page: すこやか住宅改造助成
+  summary: 介護保険の限度額を超える改造や、市が認める改造工事費を助成する。
+  who: {}
+  at_application:
+  - 要介護・要支援認定を受けた人がいる世帯で改造が必要な場合
+  - または重度の障害のある人がいる世帯（手帳等の要件あり）
+  - 生計中心者の前年所得税額が7万円以下の世帯
+  - 原則1住宅につき1回
+  where: 各区役所 高齢者・障害者相談係
+  url: https://www.city.kitakyushu.lg.jp/files/001104959.pdf
+  confidence: high
+  amount: 助成限度額30万円に、所得に応じ75%または100%の助成率をかけた額
+not_found:
+- hochoki
+- shingu
+- gaishutsu

@@ -1,0 +1,27 @@
+pref: '47'
+name: 沖縄県
+site: www.pref.okinawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ちゅらパーキング利用証（思いやり駐車場）の交付
+  name_on_page: 沖縄県ちゅらパーキング利用証制度
+  summary: 車いすマークの駐車区画を使える共通の利用証が、歩行が難しい高齢者や障害者などに交付される。
+  who: {}
+  at_application:
+  - 高齢者等は要介護1以上（介護保険被保険者証で確認）
+  - 障害者手帳の等級、難病の受給者証、妊産婦も対象
+  - 上記以外でも歩行が困難などで知事が認めた人は交付対象
+  - 一時的なけがや病気の人は診断書で申請（有効期間1年未満）
+  where: お住まいの市町村役場の窓口、または県障害福祉課へ郵送
+  url: https://www.pref.okinawa.lg.jp/kyoiku/shogaifukushi/1018758/1007472.html
+  confidence: high
+  more_urls:
+  - https://www.pref.okinawa.lg.jp/_res/projects/default_project/_page_/001/007/472/kouhukijun_yukokikan.pdf
+not_found:
+- yutai

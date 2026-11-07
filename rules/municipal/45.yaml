@@ -1,0 +1,33 @@
+pref: '45'
+name: 宮崎県
+site: www.pref.miyazaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: おもいやり駐車場の利用証の交付
+  name_on_page: おもいやり駐車場制度
+  summary: 歩行が困難な人に県内共通の利用証を交付し、身体障がい者用駐車場などを使えるようにする。
+  who: {}
+  at_application: []
+  where: 県の障がい福祉課・福祉こどもセンター・保健所など、または市町村の窓口。郵送でも申請できる
+  url: https://www.pref.miyazaki.lg.jp/shogaifukushi/kurashi/shogaisha/page00163.html
+  confidence: high
+- category: sonota
+  name: 介護保険等利用被爆者助成
+  name_on_page: 宮崎県介護保険等利用被爆者助成事業
+  summary: 被爆者が介護保険の福祉系サービスを使ったときの利用者負担が、公費負担になる。
+  who: {}
+  at_application:
+  - 被爆者健康手帳を持ち、介護保険の福祉系サービスを利用している
+  - 訪問介護の助成は低所得者世帯のみが対象
+  where: 最寄りの保健所（自己負担を支払った場合の償還払いの手続き）
+  url: https://www.pref.miyazaki.lg.jp/kenkozoshin/kurashi/hoken/page00150.html
+  confidence: high
+  amount: 対象サービスの利用者負担分（食費・居住費などは自己負担）
+not_found:
+- yutai

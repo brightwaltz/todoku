@@ -1,0 +1,311 @@
+city: '141500'
+name: 相模原市
+site: www.city.sagamihara.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 在宅のねたきり・認知症の方などに、紙おむつや尿とりパッドを年6回支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅のねたきり・認知症の方で、要介護4・5またはおむつが必要と認められる
+  - 本人と世帯全員が市民税非課税（均等割のみ課税の場合を含む）
+  - 生活保護を利用していない
+  - 施設・有料老人ホームの入所者、長期入院の方は対象外
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006388.html
+  confidence: high
+  amount: 年6回（5・7・9・11・1・3月）に現物支給、無料。冊子では単品でフラット型120枚程度、テープ型・パンツ型60枚程度、尿とりパッド150枚程度
+  more_urls:
+  - https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+- category: haishoku
+  name: 給食サービス（配食）
+  name_on_page: 給食サービス
+  summary: 食事の支度が難しい高齢の方に、週4回まで昼食か夕食を自宅へ届ける。
+  who:
+    at_home: true
+  at_application:
+  - 自分で食事を用意するのが難しく、家族などの食事提供も受けられない
+  - 要介護・要支援の認定、または基本チェックリストに該当（事業対象者）
+  - 冊子（令和8年度版）は、60歳以上のひとり暮らしか高齢者のみの世帯
+  - 頁には、障害者手帳1・2級や療育手帳A1・A2の方も対象と記載
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006379.html
+  confidence: high
+  amount: 週4回（月・火・木・金）以内。1食500円は自己負担。城山・津久井・相模湖・藤野地区は昼食、ほかは夕食
+  more_urls:
+  - https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+- category: haikai
+  name: 認知症高齢者等の見守り検索サービス（GPS端末）
+  name_on_page: 認知症高齢者・障害者等見守り検索サービス
+  summary: 認知症や障害のある方の行方がわからなくなったとき、GPS端末で居場所を家族に知らせる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、在宅で生活している（施設入所者は除く）
+  - 要介護・要支援の認定を受け、認知症でサービスが必要と認められる方
+  - または、障害があり、サービスが必要と認められる方
+  where: 地域包括支援センター、各区の高齢・障害者相談課、城山・相模湖・藤野の福祉相談センター
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006383.html
+  confidence: high
+  amount: 機器レンタル料など月1,155円（市民税非課税世帯は420円、生活保護世帯は無料）。個人賠償責任の保険が付く
+  more_urls:
+  - https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+- category: haikai
+  name: SOSネットワークと見守りシール
+  name_on_page: 認知症高齢者・障害者等SOSネットワークシステム（見守りシール事業含む）
+  summary: 行方不明に備えて事前に登録し、警察などと連携して早期発見を支援する。希望者に見守りシールを配る。
+  who:
+    at_home: true
+  at_application:
+  - 認知症や障害があり、行方不明になる可能性がある方
+  - 市内に住所がある（施設などの入所者は除く）
+  - 見守りシールは、迎えなどに協力できる家族や支援者がいる方
+  - 登録に、最近撮影した本人の写真（6cm四方ほど）5枚が必要
+  where: 認知症の方は地域包括支援センターか各区の高齢・障害者相談課、障害のある方は各区の障害福祉の窓口
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006384.html
+  confidence: high
+  amount: 無料（見守りシールは2種類をセットで配布。追加発行は自己負担）
+  more_urls:
+  - https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業（高齢者等）
+  summary: 後見人が必要な方に、市長による申立てと、申立て費用や後見人報酬の助成を行う。
+  who: {}
+  at_application:
+  - 市長申立て：申立てをする親族がいないなど、利用が必要と認められる認知症高齢者等
+  - 費用の助成：生活保護を受けている方、または費用負担が困難と認められる方
+  where: 地域包括支援センター、各区の高齢・障害者相談課、城山・相模湖・藤野の福祉相談センター
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006406.html
+  confidence: high
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 介護予防促進事業（高齢者補聴器購入費助成）
+  summary: 補聴器が必要な65歳以上の市民税非課税の方に、購入費を上限2万円まで助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある。当年度中に65歳になる方を含む
+  - 医師が補聴器の使用を必要と証明（原則、両耳30デシベル以上）
+  - 身体障害者手帳（聴覚）がない、または対象とならない
+  - 介護予防事業等への参加と、アンケートへの回答ができる
+  - 助成決定の通知後に購入（購入前に申請）。過去に助成を受けた方は不可
+  where: 地域包括支援センター、各区の高齢・障害者相談課、城山・相模湖・藤野の福祉相談センター
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/1026646/kaigo/1025658.html
+  confidence: high
+  amount: 補聴器本体の購入費と2万円のうち低い額（上限2万円、1人1回限り）
+- category: kinkyu-tsuho
+  name: 緊急通報サービス
+  name_on_page: 緊急通報サービス
+  summary: 押しボタンで自動的に119番へ通報できる装置を、自宅に設置する。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で在宅。申込後に訪問調査がある
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 心身が虚弱などで常に注意が必要な65歳以上の方がいる世帯
+  - 重度の身体障害のあるひとり暮らしの方や、その方のみの世帯なども対象
+  - 電話回線によっては利用できない場合がある
+  where: 地域包括支援センター、各区の高齢・障害者相談課（高齢福祉班）、城山・相模湖・藤野の福祉相談センター
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/korei_shien/1006378.html
+  confidence: high
+  amount: レンタル料は月約400円（NTTアナログ・ひかり電話）、それ以外は月約1,600円。設置工事費は所定の額のみ市が負担
+  more_urls:
+  - https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+- category: shingu
+  name: 寝具乾燥消毒サービス
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 寝具を事業者が預かり、水洗いと乾燥消毒をして年6回返す。費用はかからない。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護1〜5の認定、ねたきり、認知症、ひとり暮らし等（冊子の書き方があいまい）
+  - 地域包括支援センターなどの調査で必要と認められる方
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: low
+  amount: 年6回、掛布団・敷布団・毛布の水洗い乾燥消毒。費用なし
+- category: ribiyo
+  name: ねたきり高齢者の出張理美容助成
+  name_on_page: ねたきり高齢者出張理美容サービス助成
+  summary: ねたきりで店に行けない方に、理容師・美容師の出張料金と理美容代の一部を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - ねたきりで、理髪店や美容院に行くことが困難
+  - 助成券は当年度末まで有効。翌年度は新たに申請が必要
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 助成券（1枚3,000円）を年間最大6枚（年度途中の申請は2か月に1枚）。助成額を超える分は自己負担
+- category: gaishutsu
+  name: ねたきり高齢者等の移送サービス利用助成
+  name_on_page: ねたきり高齢者等移送サービス利用助成
+  summary: 全介助が必要な方の介護タクシー等の移送料金を、利用券で一部助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3は、地域包括支援センターの調査で認められた方のみ
+  - ストレッチャーや車いすで、居室と車両の間の全介助が必要
+  - 生活保護の方、福祉タクシー券・燃料給油券を受けている方は除く
+  - 利用券は当年度末まで有効。翌年度は新たに申請が必要
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 1枚1,000円の利用券。市民税非課税世帯は年96枚まで、その他の世帯は年60枚まで（1回の利用は8枚・5枚まで）
+- category: gaishutsu
+  name: かなちゃんパス1年券の半額助成
+  name_on_page: かなちゃんパス1年券半額助成
+  summary: 70歳以上の方が、神奈中バスなどに乗れるかなちゃんパス1年券を半額で買える。
+  who: {}
+  at_application:
+  - 昭和32年4月1日以前生まれ（令和8年度中に70歳以上になる方）
+  - 令和8年4月以降に市へ転入した方は対象外
+  - 申込期間は令和8年6月1日〜12月31日
+  - すでにかなちゃんパスを持つ方は、有効期限が切れるまで購入できない
+  - 対象は神奈中の路線バス全線、市内コミュニティバス、市内の乗合タクシー
+  where: 高齢・障害者福祉課（かなちゃんパス専用）。購入はアプリ「ライドパス」か市内の神奈中サービスセンターなど
+  url: https://www.city.sagamihara.kanagawa.jp/kosodate/fukushi/1026635/1035147.html
+  confidence: high
+  amount: 1年券54,000円を、市が半額を助成して27,000円で購入できる
+- category: mimamori
+  name: 電話訪問サービス
+  name_on_page: 電話訪問サービス
+  summary: ひとり暮らし等の高齢の方に、地域包括支援センターが週1回以上電話で安否確認と相談を行う。
+  who:
+    age_min: 60
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 心身が虚弱・傷病などで、常時注意が必要な方
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 週1回以上の電話。費用なし
+- category: sonota
+  name: 電話の貸与
+  name_on_page: 電話の貸与
+  summary: 電話を持たない非課税世帯のひとり暮らし等の高齢の方に電話を貸し、基本料を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 現に電話（携帯電話などを含む）を持っていない世帯
+  - 生活保護制度を利用している世帯も、市民税非課税世帯に含まれる
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 電話を貸与し、毎月の基本料などを市が負担（通話料は自己負担）
+- category: sonota
+  name: はり・きゅう・マッサージ施術料の助成
+  name_on_page: はり・きゅう・マッサージ施術料助成
+  summary: 75歳以上の方に、はり・きゅう・マッサージの施術料の一部を助成券で助成する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 当年度中に75歳になる方を含む
+  - 75〜79歳は、世帯全員の市民税が非課税か均等割課税のみ
+  - 保険診療費には使えない
+  - 助成券は当年度末まで有効。翌年度は新たに申請が必要
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 助成券（1枚1,000円）を年間最大12枚（年度途中の申請は月1枚）。助成額を超える分は自己負担
+- category: sonota
+  name: 緊急一時入所事業（介護者の入院時の一時預かり）
+  name_on_page: 緊急一時入所事業
+  summary: 介護者の入院などで介護できないとき、高齢の方を特別養護老人ホームなどで一時的に預かる。
+  who:
+    age_min: 60
+    at_home: true
+  at_application:
+  - 介護者の入院などにより、在宅で介護ができない場合
+  - 要介護・要支援の認定がある方は、介護保険サービスを先に利用
+  - 期間は事由が初めて生じた月から6か月以内、かつ月7日以内が原則
+  - 対象の細かい要件は冊子に具体的な記載なし（窓口で確認）
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: low
+  amount: 施設利用料・滞在費・食事代が必要（所得や身体の状態で異なる）
+- category: sonota
+  name: 下水道使用料の減免
+  name_on_page: 下水道使用料の減免
+  summary: 要介護4・5の方が在宅でいる世帯の、下水道使用料の基本額と消費税相当額を減免する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険被保険者証（要介護4・5）の写しを添えて申請する
+  where: 下水道料金課（窓口か郵送で申請）
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 下水道使用料の基本額と、その消費税等相当額が減免される
+- category: sonota
+  name: 粗大ごみ福祉ふれあい収集
+  name_on_page: 粗大ごみ福祉ふれあい収集
+  summary: 粗大ごみを建物の外へ運び出せない方に代わり、市が運び出して収集する。
+  who: {}
+  at_application:
+  - ひとり暮らし、または世帯全員が次のいずれかに当たる方
+  - 65歳以上、要介護・要支援の認定を受けている、身体障害者手帳など
+  - 粗大ごみを建物の外へ運び出すことが困難な状態
+  - 解体が必要な物や、作業員2人で持てない物は対象外
+  where: 粗大ごみ受付事務所（電話042-774-9933、電話のみ受付）
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 粗大ごみごとの収集運搬手数料がかかる
+- category: sonota
+  name: 在日外国人高齢者等福祉給付金
+  name_on_page: 在日外国人高齢者等福祉給付金
+  summary: 年金の要件を満たせなかった大正15年4月1日以前生まれの在日外国人等に、月2万円を支給する。
+  who: {}
+  at_application:
+  - 1年以上市内に在住している
+  - 国民年金の受給に必要な要件を制度上満たせなかった在日外国人など
+  - 大正15年（1926年）4月1日以前の生まれ
+  where: 各区の高齢・障害者相談課（緑・中央・南・津久井）、城山・相模湖・藤野の福祉相談センター、または地域包括支援センター
+  url: https://www.city.sagamihara.kanagawa.jp/_res/projects/default_project/_page_/001/006/370/fureai_fukushi_2026s.pdf
+  confidence: high
+  amount: 月額20,000円
+not_found:
+- iro
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,167 @@
+city: '341002'
+name: 広島市
+site: www.city.hiroshima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅介護用品の現物支給
+  name_on_page: 高齢者在宅介護用品の支給
+  summary: 要介護4・5で市民税非課税世帯の人に、紙おむつ等を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所があり在宅で生活している
+  - 介護している市内在住の家族も申請できる
+  - 生活保護・支援給付を受けている世帯は除く
+  where: 各区厚生部福祉課 高齢介護係
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1015439.html
+  confidence: high
+  amount: 1 か月あたり 6,500 円の範囲内で現物支給
+- category: haishoku
+  name: 高齢者配食サービス（安否確認つき）
+  name_on_page: 高齢者配食サービスのご案内
+  summary: 見守りが必要な高齢者に、昼食か夕食を届けながら安否を確認する。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上
+  - ひとり暮らし、または高齢者のみ等の世帯
+  - 準ずる世帯：日中高齢者のみ、高齢者と障害者・18 歳未満
+  - 虚弱で調理が困難
+  - 原則週 5 日以上の利用（介護サービス利用中は週 3 日以上）
+  where: 各区福祉課 高齢介護係
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1003211.html
+  confidence: high
+  amount: 1 食あたり 514 円程度を事業者に支払う
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 介護サービスを使わず重度の高齢者を在宅で介護する家族に慰労金を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される人が要介護 4・5、または相当と認められる
+  - その状態が 1 年間続いている
+  - 1 年間、介護保険サービスを使っていない（短期入所 7 日以内は除く）
+  - 入院・入所が判定期間の半分を超えない
+  where: 各区厚生部福祉課
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1015395.html
+  confidence: high
+  amount: 10 万円
+- category: koken
+  name: 成年後見人等への報酬助成
+  name_on_page: 成年後見人等への報酬支払助成
+  summary: 報酬を払う資力がない被後見人等に、後見人等への報酬相当額を助成する。
+  who: {}
+  at_application:
+  - 市内に住む成年被後見人・被保佐人・被補助人
+  - 生活保護受給、または非課税世帯で収入・預貯金が基準以下
+  - 後見人等が親族の場合は対象外
+  where: 各区厚生部地域支えあい課（地域包括支援係）
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1029760/1015449.html
+  confidence: high
+  amount: 報酬額の範囲で上限は月額 2.8 万円（入院・入所中の期間は 1.8 万円）
+- category: kinkyu-tsuho
+  name: あんしん電話の設置（緊急通報）
+  name_on_page: あんしん電話設置（高齢者）
+  summary: 緊急時にボタンで通報できる機器を設置し、相談や月 1 回以上の声掛けも行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね 65 歳以上で、病弱など日常生活で注意が必要
+  - 機器を正しく操作できる
+  - 協力員を原則 2 人確保できる
+  where: 各区福祉課（制度の問合せは高齢福祉課）
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1015440.html
+  confidence: high
+  amount: 月額 169〜2,233 円（課税状況と機器の型で異なる）。生活保護世帯は無料
+- category: jutaku
+  name: 高齢者等住宅改修費補助（介護保険の上乗せ）
+  name_on_page: 高齢者等住宅改修費補助
+  summary: 介護保険の住宅改修を補うため、最大 60 万円までの工事費の一部を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内に住む。40〜64 歳は特定疾病で生活保護の介護扶助等の資格が必要
+  - 生計中心者の市民税所得割額が 9 万円以下の世帯
+  - 工事の着工前に申請が必要
+  where: 各区厚生部福祉課
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1015437.html
+  confidence: high
+  amount: 工事費 60 万円まで。補助率は生活保護 5/5、非課税 3/5、所得割 9 万円以下 2/5
+- category: nichijo-yogu
+  name: 自動消火器・卓上電磁調理器の給付
+  name_on_page: （高齢者）日常生活用具の給付
+  summary: 在宅の高齢者等に、自動消火器か卓上電磁調理器を給付する。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 要介護・要支援認定を受けている、または40〜64歳で特定疾病かつ介護扶助等の資格あり
+  - 自動消火器：ねたきり、ひとり暮らしの高齢者等
+  - 電磁調理器：高齢者等のみで出火への配慮が必要な世帯
+  where: 各区厚生部福祉課
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1025760/1015438.html
+  confidence: high
+  amount: 自己負担は市民税で変わる。非課税は無料、自動消火器は最大 60,500 円、電磁調理器は 11,990 円
+- category: gaishutsu
+  name: 要支援・要介護者の外出支援交通費助成
+  name_on_page: 要支援・要介護高齢者外出支援交通費助成
+  summary: 要支援・要介護の高齢者に、タクシーチケットや乗合タクシー回数券等を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 毎年 9 月 1 日に市内に住所がある
+  - 前年の所得が一定以上の人は対象外
+  - 障害者公共交通機関利用助成の対象者等は対象外
+  where: 区役所福祉課高齢介護係、市役所高齢福祉課（問合せはコールセンター）
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1025759/1003204.html
+  confidence: high
+  amount: 要支援は 2,500 円、要介護は 5,000 円（年額）
+- category: haikai
+  name: 認知症高齢者等の見守りシール交付
+  name_on_page: 認知症高齢者等保護情報共有サービス
+  summary: 道に迷うおそれのある人にQRコード付きの見守りシールを無料で交付する。
+  who: {}
+  at_application:
+  - 認知症高齢者等SOSネットワークに登録している人
+  - 申請は常時介護している同居の家族等が行う
+  where: 対象者の住む区の地域支えあい課
+  url: https://www.city.hiroshima.lg.jp/living/fukushi-kaigo/1014902/1021245/1006041/1025806/1012809.html
+  confidence: low
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- chusha
+- yutai
