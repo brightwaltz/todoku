@@ -34,7 +34,10 @@ programs:
   name: 緊急通報装置の貸与
   name_on_page: 人吉市緊急通報体制整備事業
   summary: ひとり暮らしの高齢者等に緊急通報装置を貸し出す
-  who: {}
+  who:
+    household:
+    - alone
+    - elderly_only
   at_application:
   - 要支援・要介護の認定を受けているひとり暮らしの人
   - または、発作や急変のおそれがある疾患のあるひとり暮らしの人（地域包括の意見書で市長が認めた人）

@@ -57,9 +57,13 @@ programs:
   name: 緊急通報装置の貸与（緊急通報システム）
   name_on_page: 独居等高齢者緊急対応支援事業（緊急通報システム）
   summary: ひとり暮らしの高齢者等に緊急通報装置を貸与し、急病や災害のとき通報センターや協力員が対応する
-  who: {}
+  who:
+    household:
+    - alone
+    - elderly_only
   at_application:
-  - 概ね65歳以上で、ひとり暮らしか高齢者のみの非課税世帯の要介護者等
+  - 概ね65歳以上の要介護高齢者等
+  - 「住民税非課税世帯」が誰にかかるか頁の文では不明（窓口で確かめる）
   where: 市役所（頁に窓口名の記載なし）
   url: https://www.city.minamata.lg.jp/kiji003289/index.html
   confidence: low

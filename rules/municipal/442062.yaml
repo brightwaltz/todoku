@@ -25,7 +25,6 @@ programs:
   name_on_page: 在宅高齢者住宅改造費の助成
   summary: 手すり・段差解消など、在宅の高齢者向けの住宅改造の費用の3分の2を助成する。
   who:
-    age_min: 65
     at_home: true
   at_application:
   - 次のいずれか：認定を受けた在宅の65歳以上、在宅の75歳以上、高齢者のみの世帯
@@ -77,7 +76,10 @@ programs:
   name: 緊急通報装置の貸与
   name_on_page: 緊急通報装置
   summary: ひとり暮らしの虚弱な高齢者などに緊急通報装置を貸し、消防署や協力員が対応する。
-  who: {}
+  who:
+    household:
+    - alone
+    - elderly_only
   at_application:
   - 次のいずれか：おおむね65歳以上のひとり暮らしの虚弱高齢者
   - ひとり暮らしの重度身体障害者
