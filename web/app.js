@@ -298,7 +298,7 @@ async function openEvents() {
   await consultWith(text, () => api("/api/event", { ids, municipality: pick.city }));
 }
 
-// 書くのも難しく、当てはまる絵もないとき（T-203）。何も置かずに、規則のプログラムの問いだけで進める（Claude を呼ばない）
+// 書くのも難しく、当てはまる絵もないとき（T-204）。何も置かずに、規則のプログラムの問いだけで進める（Claude を呼ばない）
 async function openBlank() {
   await consultWith("", () => api("/api/begin", { municipality: pick.city }));
 }
@@ -328,7 +328,7 @@ async function consultWith(text, call) {
     state.sample = Boolean(data.sample);
     state.sampleId = data.sample_id || "";
     state.sampleSummary = null;
-    state.event = Boolean(data.event || data.blank);  // 質問だけの道（T-203）も出来事の道と同じく、合言葉なしで結果まで来る
+    state.event = Boolean(data.event || data.blank);  // 質問だけの道（T-204）も出来事の道と同じく、合言葉なしで結果まで来る
     state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
     render(data, true);
@@ -357,7 +357,7 @@ function renderExtracted(data, text) {
   head.classList.toggle("sample-head", Boolean(data.sample));
   if (data.sample) head.replaceChildren(el("span", { class: "kicker" }, "見本"), ...marked);
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
-  else if (data.blank) head.replaceChildren(...keepTail("質問から", "始めます"));  // 文も出来事もない（T-203）
+  else if (data.blank) head.replaceChildren(...keepTail("質問から", "始めます"));  // 文も出来事もない（T-204）
   else head.replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
   $("said").replaceChildren(...(data.sample || data.blank ? [] : marked));
   show("said", !data.sample && !data.blank);
@@ -1703,7 +1703,7 @@ earlyFetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
     showPlace(places[0][0]);
   }
   $("event-start").addEventListener("click", openEvents);
-  $("blank-start").addEventListener("click", openBlank);  // 当てはまる絵がないとき（T-203）
+  $("blank-start").addEventListener("click", openBlank);  // 当てはまる絵がないとき（T-204）
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す

@@ -130,7 +130,7 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .scene-caption { margin: 8px 0 0; font-size: .9375rem; color: var(--muted); }
 #event-start { margin: 12px 0 0; }
 #event-start:disabled { opacity: .45; cursor: not-allowed; }
-/* 当てはまる絵がないときの道（T-203）。「選んだ出来事で始める」の下に 1 行で、押す所は 44px のまま */
+/* 当てはまる絵がないときの道（T-204）。「選んだ出来事で始める」の下に 1 行で、押す所は 44px のまま */
 #blank-start { display: block; margin: 4px 0 0; text-align: left; }
 /* use の中身には頁の CSS が届かないので、線は受け継ぐ形で入れ物に置き、塗りは symbol の属性に書く */
 .ev-card svg, #scene { stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: #fff; }
