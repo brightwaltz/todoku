@@ -1,0 +1,163 @@
+city: '462152'
+name: 薩摩川内市
+site: www.city.satsumasendai.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者訪問給食サービス
+  name_on_page: 高齢者訪問給食サービス事業
+  summary: 食事を配達して食生活を整え、安否確認も行う。
+  who:
+    at_home: true
+  at_application:
+  - 日常生活に支障のある在宅の虚弱な人で、週5日以上の配食が必要
+  - 65歳以上のひとり暮らし
+  - 要介護認定を受けた65歳以上の人だけの世帯の人
+  - 要介護3〜5の人がいる65歳以上だけの世帯の人
+  - 上の4行は、最初の行に加えて、2〜4行のどれか。市長が認める人も対象
+  where: 高齢・障害福祉課（高齢者福祉グループ）、各支所の地域振興課。相談は在宅介護支援センターでも可
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 1食500円（おかずのみ450円）。昼食と夕食の2食以内
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: ひとり暮らしの高齢者に、急病などのときの緊急通報装置を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上で虚弱な人
+  - 固定電話（NTTアナログ）回線が必要
+  where: 高齢・障害福祉課。申請は居宅介護支援事業所や在宅介護支援センターを通して
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 工事費は無料。通信料・消耗品等は自己負担
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 自動消火器・火災警報機・電磁調理器のいずれかを給付する。
+  who:
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等
+  - 自動消火器と電磁調理器の重複申請はできない
+  where: 高齢・障害福祉課、各支所の地域振興課
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 給付。生計中心者の市民税所得割額に応じた自己負担がある
+- category: iro
+  name: ねたきり老人介護手当
+  name_on_page: ねたきり老人介護手当
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、介護手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護者が要介護者と起居をともにし、3か月以上続けて介護
+  - 要介護者・介護者とも市に1年以上住所がある
+  - 同居の世帯員全員が市民税所得割非課税
+  - 特別障害者手当・経過的福祉手当を受けていない
+  - 申請の受付月は8月と2月
+  where: 高齢・障害福祉課（高齢者福祉グループ）、各支所の地域振興課
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 1回6万円（受付月の翌月に支給）
+- category: kaigo-yohin
+  name: 家族介護用品の購入助成
+  name_on_page: 家族介護用品購入助成事業
+  summary: 在宅で介護する家族に、紙おむつなど介護用品の購入に使える利用券を支給する。
+  who:
+    age_min: 40
+    at_home: true
+  at_application:
+  - 市に住民登録して1年以上の要介護者。40〜64歳は要支援・要介護認定が必要
+  - 65歳以上は、要支援・要介護認定、身体障害者手帳1・2級、療育手帳A1・A2の
+  - いずれか、または寝たきり度B1以上かつ認知度3A以上が3か月以上続く
+  - 直近180日のうち90日以上、在宅で介護している
+  - 特別障害者手当・経過的福祉手当を受けていない
+  where: 高齢・障害福祉課、各支所の地域振興課
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 年度内に、課税世帯は3万6千円分、非課税世帯は7万5千円分の利用券（同一世帯全員の課税状況で決まる）
+  more_urls:
+  - https://www.city.satsumasendai.lg.jp/material/files/group/1/493_HP_6-7.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ等の施術料助成
+  name_on_page: はり、きゅう、マッサージ等施術料助成事業
+  summary: 市内の指定施術者での施術料の一部を、受診券の交付で助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市に1年以上住所がある
+  where: 高齢・障害福祉課、各支所の地域振興課（頁の備考）
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 1会計年度に800円の受診券を45枚（1日1枚まで使える）
+- category: mimamori
+  name: 高齢者見守り確認機器の導入費補助
+  name_on_page: 高齢者見守り確認機器導入費用補助金交付事業
+  summary: 別居の親族が高齢者の見守り機器（カメラ・センサー・GPSタグ等）を入れる費用を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 申請するのは、高齢者と別の居宅で暮らす親族
+  - 対象の高齢者が緊急通報装置の貸与を受けていない
+  - 高齢者は市に住所があり、市内で在宅生活をしている
+  where: 高齢・障害福祉課 高齢者福祉グループの窓口（郵送も可）
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 機器購入・設置費や登録手数料の2分の1。上限2万円、1回限り
+  more_urls:
+  - https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/19863.html
+- category: haikai
+  name: 認知症高齢者等SOSネットワークの事前登録
+  name_on_page: 認知症高齢者等SOSネットワーク
+  summary: 徘徊のおそれのある高齢者を事前に登録し、関係機関で見守り、早期発見・保護につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のおそれのある高齢者
+  where: 地域包括支援センター（登録の連絡先）
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/2/6687.html
+  confidence: high
+- category: sonota
+  name: 生活指導型ショートステイ
+  name_on_page: 生活指導型ショートステイ事業
+  summary: 体調不良の高齢者を養護老人ホーム等に一時宿泊させ、生活習慣を指導する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で自立した生活に不安がある高齢者
+  - 要介護・要支援の認定を受けていない
+  where: 高齢・障害福祉課、在宅介護支援センター（相談、頁の案内）
+  url: https://www.city.satsumasendai.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/6660.html
+  confidence: high
+  amount: 利用料は施設ごとに異なる
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- chusha
+- yutai

@@ -1,0 +1,161 @@
+city: '402168'
+name: 小郡市
+site: www.city.ogori.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援（配食サービス）
+  name_on_page: 食の自立支援
+  summary: 買物や調理が難しい高齢者に、夕食を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 老衰・心身の障害・傷病で買物や調理が困難
+  - 同居や敷地内・隣地に家族がいる人は対象外
+  - 長年炊事をしていない等、本人の意欲の問題は対象外
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/906
+  confidence: high
+  amount: 1食あたり普通食530円・治療食630円。介護保険料の第1〜3段階は350円・450円。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム整備
+  summary: ボタンを押すと24時間体制の通報センターにつながる装置を自宅に置く。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 緊急時の連絡手段の確保が困難な人
+  - ひとり暮らしで常時注意が必要、または判断能力に不安のある世帯
+  - 高齢者のみ世帯で虐待認定を受けた、または受けるおそれがある
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/906
+  confidence: high
+  amount: 月額600円。介護保険料の第1〜3段階は月額300円。
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品給付
+  name_on_page: 介護用品（おむつ）給付サービス
+  summary: 券と引き換えに、紙おむつなどの介護用品を自宅へ届けてもらえる。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護保険料の段階が第1〜3段階
+  - 障害高齢者の日常生活自立度がランクB・C、または認知症高齢者の自立度がIII・IV・M
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/906
+  confidence: high
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院に行けない高齢者の自宅へ、理容師・美容師が出向く。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 一般の理美容サービスを利用することが困難
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/906
+  confidence: high
+  amount: 理美容代の実費。年度内6回まで。
+- category: jutaku
+  name: 高齢者向け住宅改修の補助（すみよか）
+  name_on_page: すみよか
+  summary: 介護が必要な高齢者らに配慮した住宅改修費の一部を市が補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 世帯の生計中心者の住民税と前年所得税の課税年額が非課税
+  - 住宅改修に詳しい人が改修を必要と判断している
+  - 工事の着手前に申請する
+  - 介護保険の住宅改修と併用できるが、工事は明確に分ける
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/906
+  confidence: high
+  amount: 対象工事費の補助上限は30万円。
+- category: haikai
+  name: 高齢者等SOS事前登録制度
+  name_on_page: 高齢者等SOS事前登録制度
+  summary: 行方不明に備え、身体の特徴や写真を市に登録し、警察と共有する。
+  who: {}
+  at_application:
+  - 65歳以上、または40〜64歳で若年性認知症など加齢に伴う疾病がある人
+  - 在宅で生活し、認知症等で行方不明のおそれがある
+  - その他、市長が必要と認める人
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/4998
+  confidence: high
+- category: haikai
+  name: あんしん見守りシールの配布
+  name_on_page: 小郡市あんしん見守りシール
+  summary: 二次元コード付きシールを衣類などに貼り、発見時に家族へメールで知らせる。
+  who: {}
+  at_application:
+  - 認知症等で見守りが必要な人
+  - 高齢者等SOS事前登録制度に登録している
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/5642
+  confidence: high
+  more_urls:
+  - https://www.city.ogori.fukuoka.jp/202/886/4998
+- category: koken
+  name: 成年後見制度の申立費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、後見の申立費用や後見人への報酬を補助する。
+  who: {}
+  at_application:
+  - 生活保護を受けているなど、申立費用や報酬の負担が困難
+  - 報酬助成は市長申立て、または第三者後見人が確定した人
+  - 市長申立て以外の報酬は令和8年4月以降の職務分が対象
+  where: 長寿支援課 地域包括支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/890/5542
+  confidence: high
+- category: sonota
+  name: 軽度生活援助サービス（庭の手入れ等）
+  name_on_page: 軽度生活援助サービス
+  summary: 庭や生垣など家の周りの手入れといった軽い生活の援助を受けられる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし、高齢者のみの世帯、またはこれに準ずる世帯
+  - 日常生活上の援助が必要
+  where: 長寿支援課 高齢者支援グループ
+  url: https://www.city.ogori.fukuoka.jp/202/886/906
+  confidence: high
+  amount: 利用料は見積書の金額による。年度に1回まで（1回6時間以内）。
+not_found:
+- iro
+- hochoki
+- gaishutsu
+- shingu

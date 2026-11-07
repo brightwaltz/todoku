@@ -1,0 +1,178 @@
+city: '402141'
+name: 豊前市
+site: www.city.buzen.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食）
+  name_on_page: 食の自立支援サービス（配食サービス）
+  summary: 高齢者向けの配食サービス。内容と条件は市に問い合わせて確かめる。
+  who: {}
+  at_application:
+  - 対象者の条件は問い合わせて確かめる
+  where: 長寿支援課 長寿介護係
+  url: https://www.city.buzen.lg.jp/fukushi/korei/itiran.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与サービス
+  summary: 高齢者向けの緊急通報装置貸与サービス。内容と条件は市に問い合わせて確かめる。
+  who: {}
+  at_application:
+  - 対象者の条件は問い合わせて確かめる
+  where: 長寿支援課 長寿介護係
+  url: https://www.city.buzen.lg.jp/fukushi/korei/itiran.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ券の給付
+  name_on_page: 紙おむつ券給付サービス
+  summary: 高齢者向けの紙おむつ券給付サービス。内容と条件は市に問い合わせて確かめる。
+  who: {}
+  at_application:
+  - 対象者の条件は問い合わせて確かめる
+  where: 長寿支援課 長寿介護係
+  url: https://www.city.buzen.lg.jp/fukushi/korei/itiran.html
+  confidence: high
+- category: ribiyo
+  name: 訪問理髪
+  name_on_page: 訪問理髪サービス
+  summary: 高齢者向けの訪問理髪サービス。内容と条件は市に問い合わせて確かめる。
+  who: {}
+  at_application:
+  - 対象者の条件は問い合わせて確かめる
+  where: 長寿支援課 長寿介護係
+  url: https://www.city.buzen.lg.jp/fukushi/korei/itiran.html
+  confidence: high
+- category: haikai
+  name: GPS端末機の購入費補助
+  name_on_page: GPS端末機器購入等補助
+  summary: GPS端末機器の購入費等の補助。令和3年4月1日以降の購入分が対象。詳しくは問い合わせ。
+  who: {}
+  at_application:
+  - 令和3年4月1日以降の購入分から適用
+  - 詳しい条件は問い合わせて確かめる
+  where: 長寿支援課 長寿介護係
+  url: https://www.city.buzen.lg.jp/fukushi/korei/itiran.html
+  confidence: high
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重度の要介護高齢者を在宅で1年以上介護する家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護2は認知症自立度Ⅱ以上の場合のみ
+  - 1年以上同じ要介護度で、介護保険サービスをほぼ使っていない
+  - 過去1年の入院が通算31日未満
+  - 介護者・要介護者とも市内に住所があり、市への滞納がない
+  where: 長寿支援課 長寿介護係
+  url: https://www.city.buzen.lg.jp/kaigo/kazokukaigo.html
+  confidence: high
+  amount: 年額10万円
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 65歳以上の高齢者の補聴器購入費を助成します
+  summary: 難聴の高齢者が補聴器を買うときに、費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 医師意見書で補聴器が必要と認められる
+  - 過去にこの助成を受けていない
+  where: 長寿支援課 長寿介護係（市役所窓口）
+  url: https://www.city.buzen.lg.jp/hochouki-hojyokin.html
+  confidence: high
+  amount: 上限20,000円（1人1回限り、補聴器本体のみ）
+- category: jutaku
+  name: 住宅改造費の助成（福岡住みよか事業）
+  name_on_page: 高齢者等住宅の改造費の助成
+  summary: 手すり設置や段差解消などの住宅改造費を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護・要支援認定を受けている、または一定の障害者手帳等がある
+  - 改造の必要性があり、所得税・市民税が非課税の世帯
+  - 同一地番の同居世帯に課税者がいない
+  - 市への滞納がない
+  where: 長寿支援課 長寿介護係（障害者は福祉課 障害者福祉係）
+  url: https://www.city.buzen.lg.jp/fukushi/korei/juutaku-josei.html
+  confidence: high
+  amount: 30万円以内
+- category: gaishutsu
+  name: 運転免許自主返納のバス券・タクシー券
+  name_on_page: 高齢者（70歳以上）運転免許証自主返納支援事業
+  summary: 免許を自主返納した人に、バス券やタクシー券を1回交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 運転免許を全部自主返納した（有効期限内）
+  - 申請時に市に住民登録がある
+  - 返納日から6か月以内に申請する
+  where: 長寿支援課 長寿介護係（20番窓口）
+  url: https://www.city.buzen.lg.jp/syougaigeneki/unntennmennkyojisyuhennnou.html
+  confidence: high
+  amount: 1万円分（バス券・タクシー券・福祉タクシー券から選択）
+- category: gaishutsu
+  name: 中津線バスの高齢者割引チケット
+  name_on_page: 高齢者割引チケット
+  summary: 豊前・中津線の東本町〜中津市民病院前の間が一律100円になる回数券。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住む人
+  - 利用できるのは東本町〜中津市民病院前の区間のみ
+  where: 市役所1階 交通政策室、豊前観光まちづくり協会（宇島駅前）
+  url: https://www.city.buzen.lg.jp/koutuu/bus/65saiijyoukoureisha.html
+  confidence: high
+  amount: 1冊1,000円（100円券10枚）で購入。使用期限なし
+  more_urls:
+  - https://www.city.buzen.lg.jp/koutuu/bus/communitybus/comibus/comibus.html
+- category: yutai
+  name: 入浴割引チケット
+  name_on_page: ６５歳以上限定高齢者入浴割引チケット配布について
+  summary: 市内3か所の温泉施設で使える250円引き券を毎年配る。
+  who:
+    age_min: 65
+  at_application:
+  - 本人確認書類が必要
+  - 本人のみ利用でき、他人に譲れない
+  where: 長寿支援課 長寿介護係（20番窓口）
+  url: https://www.city.buzen.lg.jp/syougaigeneki/sioyunosato.html
+  confidence: high
+  amount: 年1枚（250円引き×12回分）
+  more_urls:
+  - https://www.city.buzen.lg.jp/fukushi/korei/itiran.html
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊サービス
+  summary: 自宅で生活できない高齢者を養護老人ホーム等で一時的に預かる。
+  who: {}
+  at_application:
+  - 何らかの事情で自宅での生活ができない高齢者
+  where: 長寿支援課 長寿介護係
+  url: https://www.city.buzen.lg.jp/fukushi/korei/itiran.html
+  confidence: low
+  amount: 負担金は1日1,445円（1週間程度）
+not_found:
+- koken
+- shingu
+- mimamori
+- nichijo-yogu

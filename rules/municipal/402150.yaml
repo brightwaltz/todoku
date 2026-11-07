@@ -1,0 +1,187 @@
+city: '402150'
+name: 中間市
+site: www.city.nakama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつ給付事業
+  summary: 要介護の在宅の人の自宅へ、月 1 回紙おむつを届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住んでいる（市外居住者は対象外）
+  - 生活保護世帯は対象外
+  - 排便・排尿に介助を受けている（失禁などで常時必要）
+  where: 介護保険課 地域包括支援センター（高齢者支援係）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1579.html
+  confidence: high
+  amount: 月 6,000 円まで（世帯非課税）。本人のみ非課税で世帯課税なら 3,000 円まで。
+  more_urls:
+  - https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 夕方のお弁当を週 3 回届け、安否や健康の確認も行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 安否確認が必要と認められる
+  - 買い物や調理ができず食事の確保が困難
+  where: 介護保険課 地域包括支援センター（高齢者支援係）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1580.html
+  confidence: high
+  amount: 1 食 400 円（月・水・金の夕方）
+  more_urls:
+  - https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置を貸与します
+  summary: ひとり暮らしの人に通報装置を無料で貸し出し、健康相談も受け付ける。
+  who:
+    at_home: true
+  at_application:
+  - 次のどちらか：重い心疾患がある 65 歳以上のひとり暮らし等、
+  - または身体障害者手帳 1・2 級のひとり暮らしの人
+  - 自宅に固定電話回線が必要
+  - 駆けつけられる協力員 2 名以上の登録が必要
+  where: 地域包括支援センター（093-246-6278）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1529.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: はいかい高齢者等 SOS ネットワーク
+  name_on_page: はいかい高齢者等SOSネットワークシステム
+  summary: 行方不明時に警察・地域と連携して捜索し、情報を発信する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - はいかいで行方不明になるおそれのある認知症高齢者等
+  where: 介護保険課 地域包括支援センター（高齢者支援係）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1732.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+- category: haikai
+  name: どこシル伝言板（見守りシール）
+  name_on_page: どこシル伝言板
+  summary: QR コード付きシールを持ち物に貼り、発見者が読み取って家族に連絡が入る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - はいかいで行方不明になるおそれのある認知症高齢者等
+  where: 介護保険課 地域包括支援センター（高齢者支援係）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1732.html
+  confidence: low
+  amount: 無料
+  more_urls:
+  - https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+- category: haikai
+  name: オレンジセーフティネット（捜索依頼アプリ）
+  name_on_page: 中間市オレンジセーフティネット事業
+  summary: 行方不明時に家族がアプリで捜索を依頼し、協力者が捜す仕組み。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の認知症の人など
+  - 本人または家族の事前登録が必要
+  where: 介護保険課 地域包括支援センター（高齢者支援係）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1101.html
+  confidence: high
+  amount: 無料（通信料は自己負担）
+  more_urls:
+  - https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+- category: mimamori
+  name: ひとり暮らし高齢者等の見守り隊による安否確認・声かけ
+  name_on_page: ひとり暮らし高齢者等見守りネットワーク事業
+  summary: 地域の見守り隊が、安否確認や声かけをしてくれる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの高齢者等
+  - 近所付き合いがなく、自立した生活が困難
+  - 介護保険サービスを使っている人は対象外
+  where: 介護保険課 地域包括支援センター（高齢者支援係）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1578.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+- category: sonota
+  name: あんしん見守り情報キットの配布
+  name_on_page: あんしん見守り情報キット配布事業
+  summary: かかりつけ医や緊急連絡先を入れる容器を無料で配る。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 高齢者のみの世帯（日中だけ該当する人も対象）
+  - 申請書と情報シートを提出する
+  where: 介護保険課 地域包括支援センター（高齢者支援係）
+  url: https://www.city.nakama.lg.jp/soshiki/17/1731.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+- category: koken
+  name: 成年後見制度の利用支援（申立費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見開始の申立て支援と、申立費用や後見人報酬の助成。
+  who: {}
+  at_application:
+  - 認知症・知的・精神障がいで、身寄りがないか親族が音信不通
+  - 費用の助成は生活に困窮している人に限る
+  where: 介護保険課 地域包括支援センター／なかま成年後見支援センター
+  url: https://www.city.nakama.lg.jp/uploaded/attachment/14134.pdf
+  confidence: low
+  amount: 申立費用と成年後見人等の報酬の助成（金額は記載なし）
+  more_urls:
+  - https://www.city.nakama.lg.jp/soshiki/17/9827.html
+- category: gaishutsu
+  name: 運転免許自主返納の支援（交通手段の 1 万円相当）
+  name_on_page: 中間市高齢者運転免許証自主返納支援事業
+  summary: 免許を自主返納した 70 歳以上に、ICカード・定期券・タクシー回数券などを 1 人 1 回。
+  who:
+    age_min: 70
+  at_application:
+  - 免許返納時に 70 歳以上
+  - 申請時に市に住民票がある
+  - 返納した日から 1 年以内に申請
+  where: 安全安心まちづくり課（本館 2 階）
+  url: https://www.city.nakama.lg.jp/soshiki/7/1512.html
+  confidence: high
+  amount: 1 万円相当（nimoca、定期券、グランドパス、タクシー回数券、コミュニティバス回数券から 1 つ）
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu
+- yutai

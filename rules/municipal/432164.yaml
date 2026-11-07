@@ -1,0 +1,109 @@
+city: '432164'
+name: 合志市
+site: www.city.koshi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者の家族介護用品の給付
+  name_on_page: 在宅高齢者家族介護用品給付支給について
+  summary: 住民税非課税で要介護4・5等の高齢者を在宅で介護する家族に、紙おむつ等の介護用品を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 要介護3は、訪問調査で常時おむつが必要と判断された人
+  - 介護される高齢者が住民税非課税。介護する家族が申請
+  - 生活保護世帯は対象外
+  - 入院・入所した翌月から退院の月までは支給されない
+  where: 高齢者支援課 包括支援センター班
+  url: https://www.city.koshi.lg.jp/kiji0034832/index.html
+  confidence: high
+  amount: ひと月の支給限度額4,500円（超過分は自己負担）。紙おむつ・尿取りパット・使い捨て手袋・清拭剤・ドライシャンプー
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業
+  summary: 栄養バランスのよい食事を届け、安否確認もする。1食250円（特別食290円）。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 住民税非課税で一人暮らしの高齢者、または高齢者のみの世帯
+  - 食事の調理・調達が困難な人
+  - 社会福祉士など専門職による身体状況等の調査・審査が必要
+  - 利用中も定期的に状況を確認し、見直し（再評価）を行う
+  where: 窓口の記載なし（頁は「下記までお問い合わせください」とだけ書く）
+  url: https://www.city.koshi.lg.jp/kiji0034928/index.html
+  confidence: high
+  amount: 1食あたり250円（きざみ食など特別食は290円）。月〜土の昼食または夕食（曜日・回数は身体状況で判断）
+- category: kinkyu-tsuho
+  name: 在宅高齢者安心確保事業（緊急通報装置）
+  name_on_page: 在宅高齢者安心確保事業
+  summary: ひとり暮らし等の高齢者に通報装置を貸与・設置し、緊急時の対応と定期的な安否確認をする。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者、またはひとり暮らし相当の世帯
+  - 次のどちらか。(1)発作など突発的な症状で生命の危険が生じるおそれ
+  - (2)下肢筋力の虚弱による転倒のおそれ
+  - 通報時に状況確認ができる協力員（近隣の方）の登録が必要
+  - 担当者や社会福祉士などによる身体状況等の調査・審査がある
+  where: 窓口の記載なし（頁は「下記までお問い合わせください」とだけ書く）
+  url: https://www.city.koshi.lg.jp/kiji0034930/index.html
+  confidence: high
+  amount: 設置費用・機器レンタル料・サービス利用料・撤去費用は無料（市負担）
+- category: iro
+  name: 在宅家族介護慰労金
+  name_on_page: 在宅家族介護慰労金の申請について
+  summary: 要介護4・5の人を介護保険サービスを使わず在宅で介護する非課税世帯の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に居住し住民基本台帳に記載されている要介護者と家族
+  - 過去1年間、介護保険サービスを利用していない（年7日以内のショートステイは除く）
+  - 要介護者と家族の世帯が生活保護を受給していない
+  - 20日以上の在宅介護実績を1か月とみなす
+  - 申請は毎年1月に受付（広報こうし12月号に掲載予定）
+  where: 窓口の記載なし（申請期間・方法は「広報こうし」に掲載）
+  url: https://www.city.koshi.lg.jp/kiji0034500/index.html
+  confidence: high
+  amount: 月額1万円。1世帯あたり年額12万円が上限
+- category: haikai
+  name: ささえ愛ネットワーク（行方不明の事前登録・見守りシール）
+  name_on_page: 合志市ささえ愛ネットワーク
+  summary: 行方不明のおそれのある認知症の人の情報を家族が事前登録し、警察等と連携して探す。見守りシールも渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、認知症などで行方不明になるおそれのある方
+  - 家族などが情報と写真2枚（顔・全身）を事前登録
+  - 見守りシール（どこシル伝言板）は、家族などのメールアドレスが必要
+  where: 包括支援センター班
+  url: https://www.city.koshi.lg.jp/kiji00323521/index.html
+  confidence: high
+not_found:
+- hochoki
+- gaishutsu
+- ribiyo
+- shingu
+- koken
+- jutaku

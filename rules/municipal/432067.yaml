@@ -1,0 +1,171 @@
+city: '432067'
+name: 玉名市
+site: www.city.tamana.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 「食」の自立支援事業（配食サービス）
+  name_on_page: 「食」の自立支援事業（配食サービス）
+  summary: 食事づくりが難しいひとり暮らし等の高齢者に、安否確認を兼ねて昼・夕の食事を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 日常生活動作の低下や認知症などで、買物や調理が自立して難しい
+  - 配食による安否確認が必要
+  - サービス判定会議で利用の要否を決める
+  where: 高齢介護課または包括支援センター
+  url: https://www.city.tamana.lg.jp/dl?q=183654_filelib_1c1cbd377803a0a88dbf3f3706b15df6.pdf
+  confidence: high
+  amount: 1食400円の自己負担。月〜金の昼・夕計10食のうち3食が補助の対象
+  more_urls:
+  - https://www.city.tamana.lg.jp/q/aview/305/28514.html
+- category: kinkyu-tsuho
+  name: 安心相談確保事業（緊急通報装置の貸与）
+  name_on_page: 安心相談確保事業
+  summary: 急病時に24時間のコールセンターへ通報できる装置を貸し、健康相談も行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で、高齢者のみの世帯に属する
+  - 突発的に命に危険のある持病、災害時に動きにくい、心身の緊急の危険のどれか
+  - 緊急連絡先の親族等と近隣協力員2名の登録が必要
+  - 認知症や難聴で装置の操作・会話が難しいと利用できないことがある
+  - サービス判定会議で利用の可否を決める
+  where: 高齢介護課または包括支援センター
+  url: https://www.city.tamana.lg.jp/dl?q=183654_filelib_1c1cbd377803a0a88dbf3f3706b15df6.pdf
+  confidence: high
+  amount: 利用料は月額300円（生活保護世帯とシルバーハウジング入居者は無料）
+  more_urls:
+  - https://www.city.tamana.lg.jp/q/aview/305/28514.html
+- category: gaishutsu
+  name: 外出支援サービス事業（医療機関への送迎）
+  name_on_page: 玉名市外出支援サービス事業
+  summary: 一般の交通機関が使いにくい在宅の高齢者を、自宅から病院などへ送迎する。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり、おおむね60歳以上
+  - 要介護4・5、または自立〜要介護3で次の3つすべてに当たる
+  - 3つ：ひとり暮らし等（高齢者のみ世帯含む）・交通手段なし
+  - 世帯全員が市民税非課税で、所得と課税年金の合計が100万円以下
+  - 事前に利用申請が必要で、状況を見て可否を決める
+  where: 高齢介護課または玉名市包括支援センター
+  url: https://www.city.tamana.lg.jp/q/aview/305/28203.html
+  confidence: high
+  amount: 市内片道300円・市外片道600円、月4回（片道）まで
+  more_urls:
+  - https://www.city.tamana.lg.jp/dl?q=183654_filelib_1c1cbd377803a0a88dbf3f3706b15df6.pdf
+- category: jutaku
+  name: 住宅改造助成事業
+  name_on_page: 住宅改造助成事業
+  summary: 介護保険の住宅改修の限度を超える分などの改造工事費を、市が上乗せして助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯の生計中心者の前年所得税課税額が7万円以下
+  - 介護保険の支給限度額（20万円）を超える分と市が認めた工事が対象
+  - 必ず工事の前に高齢介護課へ相談する（改修後の申請は不可）
+  - 1住宅につき原則1回
+  where: 高齢介護課
+  url: https://www.city.tamana.lg.jp/dl?q=183654_filelib_1c1cbd377803a0a88dbf3f3706b15df6.pdf
+  confidence: high
+  amount: 工事額の3/3（生活保護・市民税非課税世帯、上限30万円）か2/3（上限20万円）
+  more_urls:
+  - https://www.city.tamana.lg.jp/q/aview/305/28514.html
+- category: iro
+  name: 家族介護慰労事業（慰労金）
+  name_on_page: 家族介護慰労事業（慰労金支給）
+  summary: 要介護4・5の高齢者を在宅で介護する家族に、慰労金を年1回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 4月1日現在、市内に1年以上住民登録がある
+  - 要介護4・5の状態が1年以上続いている（前年4月1日が基準）
+  - 通算61日以上の入院か21日以上の短期入所があると対象外
+  - 申請は例年7月の1か月間、支給は9月下旬
+  where: 高齢介護課
+  url: https://www.city.tamana.lg.jp/dl?q=183654_filelib_1c1cbd377803a0a88dbf3f3706b15df6.pdf
+  confidence: high
+  amount: 年額10万円
+  more_urls:
+  - https://www.city.tamana.lg.jp/q/aview/305/28514.html
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の市長申立て、申立て費用の助成、後見人への報酬の助成を行う。
+  who: {}
+  at_application:
+  - 市長申立て：介護・障害福祉サービスが必要で、申立てる親族がいない
+  - 申立て費用の助成：申立人が生活保護世帯など
+  - 報酬の助成：親族以外が後見人で、本人が生活保護世帯など
+  - 市長申立てと報酬助成は、介護保険の保険者が玉名市であること
+  where: 高齢介護課
+  url: https://www.city.tamana.lg.jp/q/aview/515/21531.html
+  confidence: high
+  amount: 報酬の助成は月額上限が在宅28,000円・施設入所や入院中18,000円。申立て費用は実費
+  more_urls:
+  - https://www.city.tamana.lg.jp/dl?q=183654_filelib_1c1cbd377803a0a88dbf3f3706b15df6.pdf
+- category: haikai
+  name: 高齢者見守り情報登録事業（二次元コードシール・見守りアプリ）
+  name_on_page: 玉名市高齢者見守り情報登録事業
+  summary: 行方不明のおそれのある高齢者の情報を登録し、二次元コードシールや捜索アプリを使えるようにする。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある在宅の、認知症または認知症のおそれがある人
+  - 家族等が見守り高齢者情報登録票を出して登録する
+  - アプリの利用にはスマホ等とApple IDまたはGoogle IDが必要
+  where: 高齢介護課
+  url: https://www.city.tamana.lg.jp/q/aview/515/26720.html
+  confidence: high
+  more_urls:
+  - https://www.city.tamana.lg.jp/q/aview/515/26127.html
+- category: sonota
+  name: 生活管理指導短期宿泊事業
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 介護する家族の入院や冠婚葬祭のときなどに、高齢者が施設に一時的に泊まれる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、介護者の事情で在宅生活が一時的に難しい
+  - 感染性の疾病がある人、入院治療が必要な人は利用できない
+  - 介護保険の給付が受けられる人は対象外
+  - サービス判定会議で利用の要否を決める
+  where: 高齢介護課または包括支援センター
+  url: https://www.city.tamana.lg.jp/dl?q=183654_filelib_1c1cbd377803a0a88dbf3f3706b15df6.pdf
+  confidence: high
+  amount: 1日1,000円と食材料費等の実費。利用は原則7日以内
+  more_urls:
+  - https://www.city.tamana.lg.jp/q/aview/305/28514.html
+not_found:
+- kaigo-yohin
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

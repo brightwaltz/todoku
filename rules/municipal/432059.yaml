@@ -1,0 +1,110 @@
+city: '432059'
+name: 水俣市
+site: www.city.minamata.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給（引換券）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の高齢者を在宅で介護する非課税世帯の家族に、介護用品の引換券を支給する
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の在宅の高齢者を介護している家族
+  - 住民税が非課税で、介護保険料の滞納がない世帯に属する
+  where: 市役所（頁に窓口名の記載なし）
+  url: https://www.city.minamata.lg.jp/kiji003289/index.html
+  confidence: high
+  amount: 1 か月に 5,000 円の介護用品引換券（紙おむつ・尿取りパッド・使い捨て手袋・清拭剤）
+- category: iro
+  name: 在宅の寝たきり・認知症高齢者の介護手当
+  name_on_page: 在宅寝たきり高齢者等介護手当支給事業
+  summary: 寝たきりや認知症の高齢者を1年間在宅で介護した家族に、手当を年1回支給する
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 水俣市に1年以上住んでいる
+  - 寝たきり（要介護4・5相当）か認知症（自立度4以上）の65歳以上の人を、1年間在宅で介護している家族等
+  where: 市役所（頁に窓口名の記載なし。申請書類のリンクがある）
+  url: https://www.city.minamata.lg.jp/kiji003289/index.html
+  confidence: high
+  amount: 要介護者 1 人につき年 50,000 円（年に 1 回）
+- category: jutaku
+  name: 住宅改造の助成
+  name_on_page: 住宅改造助成事業
+  summary: 要介護高齢者等の住宅改造費を、予算の範囲内で上限 30 万円まで助成する
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の要介護高齢者等
+  - 世帯の前年の所得税額が 7 万円以下
+  where: 市役所（頁に窓口名の記載なし）
+  url: https://www.city.minamata.lg.jp/kiji003289/index.html
+  confidence: high
+  amount: 予算の範囲内で、30 万円か対象経費のどちらか低い額
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（緊急通報システム）
+  name_on_page: 独居等高齢者緊急対応支援事業（緊急通報システム）
+  summary: ひとり暮らしの高齢者等に緊急通報装置を貸与し、急病や災害のとき通報センターや協力員が対応する
+  who: {}
+  at_application:
+  - 概ね65歳以上で、ひとり暮らしか高齢者のみの非課税世帯の要介護者等
+  where: 市役所（頁に窓口名の記載なし）
+  url: https://www.city.minamata.lg.jp/kiji003289/index.html
+  confidence: low
+  amount: 貸与は無料（電話使用料・電池代等は利用者負担）
+- category: gaishutsu
+  name: 高齢者の移送サービス（自宅と医療機関の送迎）
+  name_on_page: 移送サービス
+  summary: 座位がとれず公共交通を使えない高齢者を、専用車両で自宅と医療機関等の間で送迎する
+  who:
+    at_home: true
+  at_application:
+  - 寝たきり等で公共交通機関を利用できない概ね65歳以上の在宅高齢者等
+  where: 市役所（頁に窓口名の記載なし）
+  url: https://www.city.minamata.lg.jp/kiji003289/index.html
+  confidence: low
+  amount: 利用料は 1 回 500 円（有限会社大洋タクシーへ委託）
+- category: haikai
+  name: 認知症見守り・SOSネットワークへの事前登録
+  name_on_page: 認知症見守り・ＳＯＳネットワーク
+  summary: 行方不明のおそれがある人の特徴や家族の連絡先を事前に市へ登録し、警察や協力機関と共有する
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明になるおそれのある方（認知症によるひとり歩きなど）
+  - 登録票に、身体的特徴・行動の特徴・家族の連絡先などを書いて登録する
+  where: いきいき健康課 高齢介護支援室（もやい館1階 保健センター内）
+  url: https://www.city.minamata.lg.jp/kiji0034009/index.html
+  confidence: high
+- category: haikai
+  name: おかえりサポートシール
+  name_on_page: 水俣市おかえりサポートシール事業
+  summary: 衣服などに貼るQRコードのシールで、発見した人から事前登録した家族へメールが届く
+  who: {}
+  at_application:
+  - 事前に「認知症見守り・SOSネットワーク」へ登録する
+  - 様式1の申請書と登録シートを出す
+  where: 市役所（頁に窓口名の記載なし。SOSネットワークの登録は高齢介護支援室）
+  url: https://www.city.minamata.lg.jp/kiji0034001/index.html
+  confidence: high
+not_found:
+- haishoku
+- hochoki
+- shingu
+- ribiyo
+- koken
+- mimamori
+- nichijo-yogu

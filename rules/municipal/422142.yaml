@@ -1,0 +1,98 @@
+city: '422142'
+name: 南島原市
+site: www.city.minamishimabara.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ券の給付
+  name_on_page: 紙おむつ給付事業
+  summary: 要介護4・5で寝たきり等の人を在宅で介護する非課税世帯に、紙おむつ券を給付する
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅で寝たきり等の状態の人を介護している
+  - 訪問調査で条件を満たすと認められる
+  where: 福祉課総務高齢班
+  url: https://www.city.minamishimabara.lg.jp/kiji00311566/index.html
+  confidence: high
+  amount: 要介護者 1 人につき月額 4,000 円の紙おむつ給付券（市が指定した薬局・薬店で使う）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らしの高齢者に緊急通報装置を貸与し、健康相談や月1回の電話もつく
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上で援護が必要な人、またはひとり暮らしの重度身体障がい者など
+  - 緊急時の連絡手段の確保が難しい
+  - 緊急時の協力員を原則2名登録する。NTT回線の固定電話が必要
+  where: 福祉課（頁に申請先の記載はなく、一覧の頁の問い合わせ先が福祉保健部 福祉課）
+  url: https://www.city.minamishimabara.lg.jp/kiji003493/index.html
+  confidence: high
+  amount: 利用料は無料。設置時に 1 台あたり 2,000 円を利用者が負担
+  more_urls:
+  - https://www.city.minamishimabara.lg.jp/kiji003482/index.html
+- category: gaishutsu
+  name: 高齢者・障害者等のタクシー券
+  name_on_page: 高齢者、障害者等交通費助成利用券（タクシー券）
+  summary: 自分で運転しない75歳以上の人などに、タクシー利用券を交付する（令和8年度）
+  who: {}
+  at_application:
+  - 市内に住所があり、現に住んでいる
+  - 自分で自動車等（原付を含む）を運転しない
+  - 75歳以上、または障害者手帳のある人（75歳未満も可）
+  - または令和7年4月以降に運転免許を自主返納し、返納者用の券が未交付の人
+  where: 各支所（支所名の記載なし）
+  url: https://www.city.minamishimabara.lg.jp/kiji00312406/index.html
+  confidence: high
+  amount: 高齢者・障がい者は 14,000 円、運転免許の自主返納者は 24,000 円（頁の助成額の表）
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 南島原市認知症高齢者等見守り事業
+  summary: 徘徊のおそれがある人の家族に、QRコード付きの見守りシールを交付する
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のおそれがある高齢者・精神障がい者・知的障がい者を介護する家族等
+  - 市内に住所がある（グループホーム・有料老人ホーム等の入居者は対象外）
+  - 訪問調査（面接と簡易知能評価）で審査される
+  where: 福祉保健部福祉課、市民サービス課、各支所の窓口（申請様式の受け取り先）
+  url: https://www.city.minamishimabara.lg.jp/kiji0037756/index.html
+  confidence: high
+  amount: 初回交付（アイロン貼付30枚・蓄光10枚）は無料。追加交付は自己負担 3,590 円（税別）
+- category: sonota
+  name: 救急医療情報カプセルの配布
+  name_on_page: 救急医療情報カプセル
+  summary: かかりつけ医や持病の情報を入れて冷蔵庫に保管するカプセルを配る
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  where: 福祉保健部 福祉課（頁に個別の申請先の記載なし。福祉事務所・各支所へ問い合わせ）
+  url: https://www.city.minamishimabara.lg.jp/kiji003482/index.html
+  confidence: low
+  amount: 負担金なし
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo

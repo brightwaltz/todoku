@@ -1,0 +1,148 @@
+city: '472051'
+name: 宜野湾市
+site: www.city.ginowan.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（栄養に配慮した昼食の配達と安否確認）
+  name_on_page: 「食」の自立支援事業
+  summary: 調理が難しい高齢者に、月〜土に昼食を5食以内で届け、手渡しで安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で、調理が困難な方
+  - 要介護認定を受け、市内に支援者のいない非課税世帯の方
+  - または、総合事業対象者・要支援認定を受けている方
+  - 二世帯住居・同敷地に親族がいる、日中のみ独居は原則対象外
+  where: 介護長寿課 長寿支援係、地域包括支援センター
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+  amount: 1食あたり普通食400円・特別食450円の自己負担
+- category: sonota
+  name: 福祉電話の貸与設置
+  name_on_page: 福祉電話設置事業
+  summary: 電話のないひとり暮らしの高齢者に福祉電話を貸与し、設置する。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上で、携帯電話も含め電話を持っていない
+  - 日常生活に不自由が多い
+  where: 介護長寿課 長寿支援係、地域包括支援センター
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+  amount: 設置料・基本料金は市負担、通話料は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置事業
+  summary: ペンダントのボタンで通報センターに連絡できる緊急通報の機器を設置する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の虚弱なひとり暮らし、または虚弱な方がいる高齢夫婦のみの世帯など
+  - 常時注意を必要とする方
+  - 固定電話（アナログ回線）が必要、光回線・IP電話は設置不可
+  where: 介護長寿課 長寿支援係、地域包括支援センター
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+  amount: 機器の設置工事・レンタル料・定期コールは市が負担
+- category: kaigo-yohin
+  name: 家族介護用品の支給証の交付
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を在宅で介護する非課税世帯の家族に、紙おむつ等の支給証を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護している家族が対象
+  - 同住所地に世帯を分けた親族がいる場合も、全員が非課税であること
+  where: 介護長寿課 長寿支援係
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+  amount: 月額6,250円（年間上限75,000円）分の紙おむつ等
+- category: jutaku
+  name: 高齢者の転倒予防の住宅改修費助成
+  name_on_page: 介護予防・日常生活支援総合事業高齢者住宅改修費助成事業
+  summary: 介護認定を受けていない転倒の危険が高い高齢者の手すり設置などの改修費を助成する。
+  who: {}
+  at_application:
+  - 基本チェックリストで事業対象者と承認され、転倒の危険が高い
+  - 介護保険の認定申請をしていない、介護保険料の滞納がない
+  - 持ち家または同一世帯の持ち家（賃貸は所有者等の承諾が必要）
+  - 同じ家屋で過去にこの助成を受けていない、1人1回
+  where: 介護長寿課 長寿支援係
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+  amount: 上限75,000円（市が改修事業者へ直接支払う）
+- category: haikai
+  name: おかえり支援ネットワークへの事前登録
+  name_on_page: おかえり支援ネットワーク
+  summary: 道迷いのおそれがある方が事前登録し、迷ったときに地域の協力機関が発見・保護する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症やその疑いで道迷いをする可能性がある
+  where: 介護長寿課 長寿支援係、地域包括支援センター
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+- category: haikai
+  name: ミマモライド（見守りタグの貸出）
+  name_on_page: ミマモライド
+  summary: 見守りタグを身に着けて外出すると、受信機の近くを通った位置が家族のLINEに届く。
+  who: {}
+  at_application:
+  - おかえり支援ネットワークに登録している方
+  - タグなどの機器は貸出で、利用終了時に返却
+  where: 介護長寿課 長寿支援係、地域包括支援センター
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+  amount: 無料
+- category: yutai
+  name: シルバーパスポート（協力事業所の割引・特典）
+  name_on_page: シルバーパスポート事業
+  summary: 提示すると市内の協力事業所で割引や特典を受けられるパスポートを郵送で受け取る。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住
+  - 65歳の誕生月、または転入の翌月にパスポートが郵送される
+  where: 介護長寿課 長寿支援係
+  url: https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+  confidence: high
+  amount: 協力事業所ごとの割引・特典（例：入泉料200円割引）
+- category: mimamori
+  name: 保健飲料の週1回の配達と見守り
+  name_on_page: 保健飲料給付事業
+  summary: ひとり暮らしの方へ週1回、保健飲料を届けて見守る。実施は市社会福祉協議会。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳未満のひとり暮らしの身体障害者
+  where: 宜野湾市社会福祉協議会、地域包括支援センター
+  url: https://www.city.ginowan.lg.jp/soshiki/kenko/1/koureifukushi/4/1570.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.ginowan.lg.jp/material/files/group/25/R8_chuishiji.pdf
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

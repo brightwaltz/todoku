@@ -1,0 +1,149 @@
+city: '422100'
+name: 壱岐市
+site: www.city.iki.nagasaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 市内路線バス乗車カード
+  name_on_page: 市内路線バス乗車カード
+  summary: 75歳以上の人に、市内の路線バスを1路線100円で使えるカードを交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 満75歳以上
+  - 申請書・本人確認書類・写真（縦4cm×横3cm）が要る
+  where: 長寿支援課 長寿福祉班（芦辺庁舎）（頁の問い合わせ先）。写真は各支所で撮れる
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16183.html
+  confidence: high
+  amount: 路線バス（壱岐交通）が一路線あたり100円
+- category: gaishutsu
+  name: 三島航路乗船カード
+  name_on_page: 三島航路乗船カード
+  summary: 三島地区に住む75歳以上の人に、三島航路フェリーを片道100円で使えるカードを交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 三島地区に住んでいる
+  - 申請書・本人確認書類が要る
+  where: 長寿支援課 長寿福祉班（芦辺庁舎）（頁の問い合わせ先）
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16183.html
+  confidence: high
+  amount: 三島航路フェリーが片道100円
+- category: gaishutsu
+  name: 外出支援サービス（福祉車両での通院の移送）
+  name_on_page: 外出支援サービス
+  summary: 寝たきり・車椅子の高齢者を、福祉車両で病院へ送り届ける。
+  who: {}
+  at_application:
+  - 市内に住むおおむね65歳以上の寝たきり・車椅子利用の人
+  - 一般の交通機関での移送が困難な人
+  - 介護保険の利用者はケアマネジャーに相談する
+  where: 長寿支援課 長寿福祉班（芦辺庁舎）（頁の問い合わせ先）
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16183.html
+  confidence: high
+  amount: 片道の利用料：課税世帯900円、その他の世帯600円
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付
+  name_on_page: 老人日常生活用具給付事業
+  summary: 認知症などで支援が必要な高齢者に、火災警報器・自動消火器を給付する。
+  who: {}
+  at_application:
+  - 市内に住む65歳以上の高齢者のみの世帯等
+  - 認知症等により何らかの支援が必要
+  - 介護保険の利用者はケアマネジャーに相談する
+  where: 長寿支援課 長寿福祉班（芦辺庁舎）（頁の問い合わせ先）
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16183.html
+  confidence: high
+  amount: 火災警報器・自動消火器を給付。自己負担は前年の所得税の課税状況による
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の給付
+  name_on_page: 壱岐市介護用品給付事業
+  summary: 要介護4・5の在宅の人を介護する市民税非課税世帯に、紙おむつ等の給付券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住み、在宅の要介護4・5の人を介護する主たる介護者
+  - 市民税非課税世帯（頁の書き方では誰の世帯かあいまい）
+  - 入院中・施設入所中の人は対象外
+  - 対象は紙おむつ・リハビリパンツ・尿とりパット等
+  where: 地域包括支援センター（芦辺庁舎）または各支所窓口
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/2378.html
+  confidence: high
+  amount: 月額2,500円の給付券（超えた分は自己負担）
+- category: haikai
+  name: いきいきあんしんネットワーク（高齢者等SOSネットワーク）
+  name_on_page: いきいきあんしんネットワーク（壱岐市高齢者等SOSネットワーク）
+  summary: 所在不明のおそれのある高齢者を事前に登録し、警察・消防・社協で情報を共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等により所在不明となるおそれのある高齢者
+  - 登録申請書などは長寿支援課へ提出する
+  where: 長寿支援課（壱岐市地域包括支援センター）
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16050.html
+  confidence: high
+- category: haikai
+  name: 高齢者等GPS・見守り機器導入支援
+  name_on_page: 壱岐市高齢者等GPS･見守り機器導入支援事業
+  summary: SOSネットワークに登録した高齢者のGPS・見守り機器の初期費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - いきいきあんしんネットワークに登録された高齢者（未登録は同時に登録）
+  - 機器の購入・レンタルの前に長寿支援課へ相談する
+  - GPS機能付きの携帯電話・スマートフォンは対象外
+  where: 長寿支援課 長寿福祉班（芦辺庁舎）
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16065.html
+  confidence: high
+  amount: 購入・レンタルの初期費用の一部。上限10,000円（百円未満切捨て、1人1回）
+  more_urls:
+  - https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16050.html
+- category: yutai
+  name: 入湯優待券・はり灸あんま等助成券
+  name_on_page: 入湯優待券・はり灸あんま等助成券
+  summary: 公衆浴場の入湯優待券と、はり・灸・あんま等の助成券を年度ごとに交付する。
+  who: {}
+  at_application:
+  - 令和8年4月1日時点で市内に3か月以上住所がある
+  - 65歳以上の人、または50〜64歳の身体障がい者
+  - 申請書・本人確認書類が要る
+  where: 各支所・事務所、長寿支援課（芦辺庁舎）の窓口
+  url: https://www.city.iki.nagasaki.jp/kenkou/koureihukushi/16184.html
+  confidence: high
+  amount: 入湯優待券は年12枚（1枚200円助成）、はり・灸・あんま等は年5枚（1枚700円助成）
+- category: koken
+  name: 成年後見制度利用支援事業（報酬等の助成）
+  name_on_page: 壱岐市成年後見制度利用支援事業
+  summary: 成年後見人等への報酬や、審判の請求費用が負担できない人に、市が費用を助成する。
+  who: {}
+  at_application:
+  - 認知症・知的障害・精神障害で判断能力が不十分な人
+  - 報酬助成は、生活保護受給者か市民税非課税世帯で資産が少ない人など
+  - 審判の請求費用は、助成がないと利用が困難な人など
+  - 報酬助成の申請は審判の翌日から2か月以内
+  where: 市長あての申請書（要綱）。権利擁護業務は長寿支援課
+  url: https://www.city.iki.nagasaki.jp/section/reiki/reiki_honbun/r014RG00000794.html
+  confidence: high
+  amount: 報酬は実費の範囲で、月額の上限は在宅28,000円・施設入所18,000円
+  more_urls:
+  - https://www.city.iki.nagasaki.jp/soshiki/tyouzyu/66.html
+not_found:
+- haishoku
+- iro
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori

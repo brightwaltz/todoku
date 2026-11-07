@@ -1,0 +1,186 @@
+city: '402079'
+name: 柳川市
+site: www.city.yanagawa.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 在宅の寝たきり高齢者を介護する家族への介護手当
+  name_on_page: 介護手当
+  summary: 在宅で寝たきりの高齢者を介護する非課税世帯の人に手当を支給する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 介護される人が要介護4・5、またはそれ相当
+  - その状態が6か月以上続いている
+  - 介護している人が非課税世帯
+  where: 在宅介護支援センター、福祉課高齢者福祉係
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/koreisha_kaigoteate.html
+  confidence: high
+  amount: 月額20,000円（年3回に分けて窓口で支給）
+- category: kaigo-yohin
+  name: 紙おむつ給付券の支給
+  name_on_page: 介護用品（紙おむつ）給付事業
+  summary: 在宅でおむつが必要な非課税世帯の高齢者に、紙おむつの給付券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3は排尿・排便に介助か見守りが必要な人だけ
+  - 施設入所・入院中、月の半分以上不在の人は対象外
+  - 生活保護を受けている人は対象外
+  - 毎年更新の手続きが必要
+  where: 福祉課高齢者福祉係、三橋・大和市民サービス課
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/koreisha_kaigoyohin.html
+  confidence: high
+  amount: 1か月につき上限5,000円分の給付券
+- category: haishoku
+  name: 配食による見守り
+  name_on_page: 配食による高齢者等見守り
+  summary: 見守りが必要な高齢者のみ世帯などに、食事を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 要支援2・要介護1〜5、または重度障がい（手帳等の等級あり）
+  - 65歳以上のみの世帯、または重度障がいのある人を含む世帯
+  - 見守りが必要で、近隣に見守れる親族がいない
+  where: 福祉課高齢者福祉係
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/haishoku.html
+  confidence: high
+  amount: 非課税世帯は事業者の料金から1食280円を市が助成。課税世帯は実費
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 【令和５年８月１日～携帯型導入】緊急通報システム
+  summary: ひとり暮らしの高齢者などに、緊急通報装置を月額負担で貸し出す。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし
+  - おおむね75歳以上の高齢者のみ世帯
+  - ひとり暮らしの重度身体障害者
+  - 緊急時の協力員が原則2名必要
+  where: 福祉課高齢者福祉係
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/5316.html
+  confidence: high
+  amount: 自己負担は固定型が月400円、携帯型が月800円
+- category: jutaku
+  name: 住宅改造費の上乗せ助成
+  name_on_page: すみよか住宅改造助成
+  summary: 介護保険などで足りない住宅改造費を、市が上限まで助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 同居者を含め全員が市民税非課税
+  - 市税・国保税などの滞納がない
+  - 要支援・要介護の認定、または一定の障がいがある
+  - 工事の前に申請する（工事後は不可）
+  where: 福祉課高齢者福祉係
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/11810.html
+  confidence: high
+  amount: 上限20万円。介護保険の住宅改修を先に使い、超えた分を助成
+- category: shingu
+  name: 寝具の乾燥消毒
+  name_on_page: 寝具類乾燥消毒サービス
+  summary: 体の弱い高齢者などの寝具を、自宅を訪問して乾燥消毒する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、寝たきり・認知症のいずれか
+  - または虚弱なひとり暮らし・高齢者のみ世帯
+  - 重度身体障がい者（児）も対象
+  - 年2回実施で、実施前に申込期間がある
+  where: 福祉課高齢者福祉係、大和・三橋市民サービス課、在宅介護支援センター
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/4978.html
+  confidence: high
+  amount: 1回300円、1人4点まで
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 柳川市成年後見制度利用支援事業
+  summary: 資力が乏しい人の後見人報酬などを市が助成する。
+  who: {}
+  at_application:
+  - 後見・保佐・補助の開始審判を受けた人
+  - 資産が乏しい、または生活保護を受けている
+  - 他に費用を負担する人がいない
+  - 後見人が親族の場合は対象外
+  where: 柳川市（要綱では市長あてに申請。窓口は要確認）
+  url: https://www.city.yanagawa.fukuoka.jp/reiki_int/reiki_honbun/r203RG00000847.html
+  confidence: high
+  amount: 報酬は在宅で月上限28,000円、施設入所・長期入院で月上限18,000円
+- category: haikai
+  name: 高齢者等SOSネットワークの事前登録
+  name_on_page: 高齢者等ＳＯＳネットワーク事前登録
+  summary: 行方不明のおそれがある人を事前登録し、行方不明時に関係団体で捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 顔写真の提出が必須
+  - 情報提供への同意が必要
+  where: 福祉課高齢者福祉係、大和・三橋市民サービス課市民係
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/ninchishou/sonaeru/8435.html
+  confidence: high
+- category: sonota
+  name: 100歳の敬老祝金
+  name_on_page: 敬老祝金
+  summary: 令和8年度に100歳になる市民に、長寿の祝金を振り込む。
+  who: {}
+  at_application:
+  - 令和8年度に100歳になる人
+  - 令和8年9月1日に市に住民登録がある
+  - 振込先は本人名義の口座のみ
+  - 申請期限は令和8年12月28日
+  where: 福祉課高齢者福祉係、大和・三橋市民サービス課市民係
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/7857.html
+  confidence: high
+  amount: 30,000円
+- category: sonota
+  name: はり・きゅう・あん摩の施術券助成
+  name_on_page: はり、きゅう、あん摩等施術料助成
+  summary: 市指定の施術所で使える施術券を出し、施術料を一部助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある人（年齢の制限はなく、70歳以上は助成が厚い）
+  - 施術券は年間60枚まで
+  - 保険適用の治療や美容針は対象外
+  where: 福祉課高齢者福祉係、三橋・大和市民サービス課
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/5593.html
+  confidence: high
+  amount: 70歳以上は1回700〜1,200円、69歳以下は200〜800円を助成
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ
+  summary: ひとり暮らしなどの高齢者が、特養などに短期間入所して体調を整える。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 介護保険で非該当（自立）と認定された人など
+  - 1回7日まで
+  where: 在宅介護支援センター、福祉課高齢者福祉係
+  url: https://www.city.yanagawa.fukuoka.jp/kenko/koreisha/koureisha-service/koreisha_shortstay.html
+  confidence: high
+  amount: 1日あたり特養2,320円、養護老人ホーム1,700円（交通費は自己負担）
+not_found:
+- hochoki
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- yutai

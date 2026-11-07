@@ -1,0 +1,137 @@
+city: '432148'
+name: 阿蘇市
+site: www.city.aso.kumamoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（配食）
+  name_on_page: 食の自立支援事業
+  summary: 月・水・金の夕食を届け、安否確認もする。非課税の人は市が1食450円を負担。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし・高齢者のみ世帯かそれに準ずる世帯の高齢者
+  - または身体障がい者
+  - サービスの利用が適切と市が認める方
+  where: 阿蘇市地域包括支援センター、市民部ほけん課（頁の問い合わせ先。申請窓口の記載なし）
+  url: https://www.city.aso.kumamoto.jp/citizens/health_medical_welfare/insurance_elderly/home_welfare_services/
+  confidence: high
+  amount: 食材料費と調理費は自己負担。市民税非課税の人は市が1食450円（特別食550円）を負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者安心ネットワーク体制整備事業
+  summary: ボタンで緊急通報受信センターにつながる装置を貸与する。24時間対応。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の状況等により緊急時の対応が必要な方等
+  - 家族や地域の方を協力員として登録する
+  - BOX型の利用には固定電話回線が必要
+  where: 阿蘇市地域包括支援センター、市民部ほけん課（頁の問い合わせ先。申請窓口の記載なし）
+  url: https://www.city.aso.kumamoto.jp/citizens/health_medical_welfare/insurance_elderly/home_welfare_services/
+  confidence: high
+  amount: 月額680〜1,575円（機種と世帯の課税状況で異なる）。通話料・電池代は自己負担
+- category: gaishutsu
+  name: おでかけサービス（タクシー券）
+  name_on_page: おでかけサービス事業
+  summary: 買い物や通院にタクシーを使う高齢者に、1枚500円のタクシー券を交付する。
+  who: {}
+  at_application:
+  - 次のどちらか。(1)市民税非課税の65歳以上で、ひとり暮らしか高齢者のみの世帯
+  - かつ要介護認定を受け、日常生活の能力低下で移動に配慮が必要
+  - (2)総合事業の通所型サービスの対象者で、利用終了後に市が必要と認める方
+  where: 阿蘇市地域包括支援センター、市民部ほけん課（頁の問い合わせ先。申請窓口の記載なし）
+  url: https://www.city.aso.kumamoto.jp/citizens/health_medical_welfare/insurance_elderly/home_welfare_services/
+  confidence: high
+  amount: 1枚500円の利用券を1月あたり4枚
+- category: kaigo-yohin
+  name: 介護用品支給事業（紙おむつ等）
+  name_on_page: 介護用品支給事業
+  summary: 在宅の要介護3〜5の非課税の人を介護する同一世帯の家族に、紙おむつ等を現物で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護される方が市民税非課税
+  - 介護している同一世帯の家族が対象
+  - 在宅で紙おむつ等が必要
+  where: 阿蘇市地域包括支援センター、市民部ほけん課（頁の問い合わせ先。申請窓口の記載なし）
+  url: https://www.city.aso.kumamoto.jp/citizens/health_medical_welfare/insurance_elderly/home_welfare_services/
+  confidence: high
+  amount: 1月あたり5,000円を上限に、紙おむつ・尿取りパッド・使い捨て手袋等を支給
+- category: iro
+  name: 家族介護慰労事業
+  name_on_page: 家族介護慰労事業
+  summary: 在宅の要介護3〜5の人を介護する同一世帯の家族等に、慰労金を給付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 世帯で介護保険料の滞納がない
+  - 1か月に通算20日を超えて介護した月が対象
+  - 毎月、介護状況の確認書類の提出が必要
+  where: 阿蘇市地域包括支援センター、市民部ほけん課（頁の問い合わせ先。申請窓口の記載なし）
+  url: https://www.city.aso.kumamoto.jp/citizens/health_medical_welfare/insurance_elderly/home_welfare_services/
+  confidence: high
+  amount: 1月あたり3,000円
+- category: haikai
+  name: あんしんネットワーク事業（事前登録）
+  name_on_page: 阿蘇市あんしんネットワーク事業（事前登録事業）
+  summary: 行方不明の心配がある認知症高齢者等の情報を家族が事前登録し、市・警察・消防で捜索に使う。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 行方不明の心配がある認知症高齢者等
+  - 家族等が氏名・身体的特徴・写真などを事前に登録
+  - 事前登録事業利用開始・変更・廃止届出書を使う
+  where: 市民部ほけん課（頁の問い合わせ先。届出書の提出先の記載なし）
+  url: https://www.city.aso.kumamoto.jp/citizens/health_medical_welfare/care-insurance/ansin_network/
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援事業（報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見人等への報酬を支払うのが難しい人に、報酬の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 経済的な理由などで成年後見制度の利用が困難な方
+  - 後見人等への報酬を支払うことが困難
+  where: 市民部ほけん課、市民部福祉課（阿蘇市成年後見支援センター）
+  url: https://www.city.aso.kumamoto.jp/citizens/health_medical_welfare/koukennin/
+  confidence: high
+  amount: 報酬の全部または一部（金額・上限の記載なし）
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

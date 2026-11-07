@@ -1,0 +1,123 @@
+city: '432130'
+name: 宇城市
+site: www.city.uki.kumamoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者在宅介護用品購入助成
+  name_on_page: 高齢者在宅介護用品購入助成事業
+  summary: 要介護の高齢者を在宅で介護する非課税世帯の家族に、紙おむつ等を買える助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 宇城市に住民登録がある（介護者がいなければ要介護者が対象）
+  - 要介護3は認定調査票の排尿か排便が「介助」「見守り等」
+  - 介護保険料の滞納がなく、給付額減額期間中でない
+  - 生活保護の生活扶助を受けていない
+  - 年度ごとに申請が必要
+  where: 高齢介護課 高齢者支援係（本庁）または各支所窓口
+  url: https://www.city.uki.kumamoto.jp/toppage/shinseisho/dl_kaigo/2010113
+  confidence: high
+  amount: 月2,500円分の助成券（紙おむつ・尿取りパッド。軽失禁用パッドは対象外）
+- category: kinkyu-tsuho
+  name: 安心相談確保事業（緊急通報装置の貸与）
+  name_on_page: 安心相談確保事業
+  summary: 持病や災害時の避難に不安がある高齢者のみの世帯に、緊急通報装置を貸与する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住むおおむね65歳以上の高齢者のみの世帯
+  - 命に関わる持病、災害時に動きにくい、心身の緊急事態の危険が高いのどれか
+  - 装置は貸与で、不要になれば返還する
+  where: 高齢介護課 高齢者支援係（頁の問い合わせ先）
+  url: https://www.city.uki.kumamoto.jp/toppage/shinseisho/dl_kaigo/2011103
+  confidence: high
+  amount: 利用者負担は月額330円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 1年以上在宅で介護している家族に、介護保険サービスをほとんど使っていない場合の慰労金を支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護2は認知症高齢者の日常生活自立度2以上のときだけ対象
+  - 介護保険サービスの利用が年間10日以内
+  - 入院期間が合わせて90日以内
+  - 対象の高齢者を1年以上在宅で介護している家族
+  - 市の住民基本台帳に記載されている
+  where: 高齢介護課 高齢者支援係（3番窓口）または各支所窓口係
+  url: https://www.city.uki.kumamoto.jp/toppage/shinseisho/dl_kaigo/2411187
+  confidence: high
+  amount: 年額10万円（要介護者1人につき）
+- category: jutaku
+  name: 在宅要介護等高齢者住宅改造助成
+  name_on_page: 在宅要介護等高齢者住宅改造助成事業
+  summary: 要介護等の高齢者がいる世帯の住宅改造（手すり・段差解消など）の費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある65歳以上で、要介護認定を受けた人等
+  - 世帯の生計中心者の前年の所得税額が7万円以下
+  - 以前にこの事業の助成を受けていない
+  - 工事の着工前に事前申請が必要
+  where: 高齢介護課 高齢者支援係（頁の問い合わせ先）
+  url: https://www.city.uki.kumamoto.jp/toppage/shinseisho/dl_kaigo/2010090
+  confidence: high
+  amount: 工事費と上限30万円の少ない方に、助成率（非課税・生活保護は3分の3、課税は3分の2）を乗じた額
+- category: haikai
+  name: 認知症高齢者等見守りSOSネットワーク事業
+  name_on_page: 宇城市認知症高齢者等見守りSOSネットワーク事業
+  summary: 認知症等で行方不明のおそれがある人を事前登録し、警察等と共有して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む65歳以上、または市長が特に必要と認めた人
+  - 本人が申請する（配偶者・2親等内の親族・後見人等の代理申請も可）
+  - 登録は年度末までで、年度ごとに登録が必要
+  where: 高齢介護課
+  url: https://www.city.uki.kumamoto.jp/toppage/shinseisho/dl_kaigo/2023717
+  confidence: high
+- category: sonota
+  name: 認知症高齢者等個人賠償責任保険事業
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: SOSネットワーク登録者のため、市が賠償責任保険に加入し保険料を全額負担する。
+  who: {}
+  at_application:
+  - 宇城市認知症高齢者等SOSネットワーク事業に登録している
+  - 申請書を出し、市が対象の可否を決めて通知する
+  where: 高齢介護課
+  url: https://www.city.uki.kumamoto.jp/toppage/shinseisho/dl_kaigo/2029290
+  confidence: high
+  amount: 保険料は市が全額負担
+not_found:
+- haishoku
+- gaishutsu
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- koken
+- yutai

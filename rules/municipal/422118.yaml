@@ -1,0 +1,108 @@
+city: '422118'
+name: 五島市
+site: www.city.goto.nagasaki.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 要介護度の高い高齢者を同居で1年以上介護した家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護者・介護を受ける高齢者ともに五島市民
+  - 同居で1年以上続けて介護している家族が対象
+  - 要介護2は認知症の日常生活自立度2以上が条件
+  - 過去1年の介護保険サービスは、福祉用具・住宅改修を除き年10日以内
+  - 対象期間の入院は合計90日未満。生活保護世帯は対象外
+  where: 長寿介護課または各支所窓口班
+  url: https://www.city.goto.nagasaki.jp/s032/010/010/010/280/20190306233949.html
+  confidence: high
+  amount: 対象となる1年間につき70,000円
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者の補聴器購入費用を助成します
+  summary: 難聴で手帳の対象でない低所得の高齢者に、補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 五島市に住所がある
+  - 両耳の聴力レベルがそれぞれ50デシベル以上
+  - 身体障害者福祉法の聴覚障害の等級に該当しない
+  - 耳鼻咽喉科の医師が、補聴器の効果が期待できると判断（意見書が必要）
+  - 世帯全員が市民税非課税、または生活保護法の要保護者
+  where: 市役所 長寿介護課、各支所
+  url: https://www.city.goto.nagasaki.jp/s032/010/010/010/230/20210407161528.html
+  confidence: high
+  amount: 補聴器購入費の10分の9以内（上限39,000円）
+- category: kinkyu-tsuho
+  name: 緊急通報システム（シルバーホン）
+  name_on_page: 緊急通報システム（シルバーホン）
+  summary: 緊急時にボタンを押すと、登録した協力員に電話で知らせる端末を無料で使える。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしで、要介護・要支援の認定を受けている人
+  - または一人暮らしの障がい者（各種手帳の交付を受けている人）
+  - その他、市長が特に必要と認める人
+  - 協力員（家族以外も可）を3名まで登録する
+  where: 長寿介護課 長寿支援班（障がい者は社会福祉課 障がい福祉班）
+  url: https://www.city.goto.nagasaki.jp/s032/010/010/050/060/20190307150021.html
+  confidence: high
+  amount: 利用料は無料（通話料・電気料金・ペンダントの電池代は自己負担）
+- category: haikai
+  name: 高齢者等SOSネットワーク
+  name_on_page: 五島市高齢者等SOSネットワーク
+  summary: 行方不明のおそれのある人を事前に登録し、QRコード付きステッカーで早期発見につなげる。
+  who: {}
+  at_application:
+  - 認知症の人や、行方不明になるおそれがある見守りが必要な人
+  - 名前・特徴・顔写真などを事前に登録する
+  where: 長寿介護課（五島市地域包括支援センター）
+  url: https://www.city.goto.nagasaki.jp/s032/010/010/050/050/20190426163828.html
+  confidence: high
+- category: mimamori
+  name: 高齢者の見守りシステム導入費の助成
+  name_on_page: 高齢者を見守るためのシステム導入費を助成します
+  summary: 認知症高齢者等の見守り機器（カメラ・センサー等）の初期費用を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 市内の自宅に住む65歳以上の認知症高齢者、若年性認知症の診断を受けた人、または要介護認定を受けている人
+  - その見守りを行う人も申請できる
+  - 施設・グループホーム等の入居者、購入済みの機器は対象外
+  - 事前に長寿介護課へ電話か窓口で相談する
+  where: 長寿介護課
+  url: https://www.city.goto.nagasaki.jp/s032/010/010/050/090/20230407173557.html
+  confidence: high
+  amount: 初期費用（初回利用料を含む）を助成、上限1万円
+- category: sonota
+  name: 自動通話録音装置の貸出し
+  name_on_page: 自動通話録音装置を貸し出します
+  summary: 特殊詐欺・悪質商法の対策に、高齢者の世帯へ自動通話録音装置を2年間貸し出す。
+  who: {}
+  at_application:
+  - 市に住民登録のあるおおむね65歳以上の高齢者の世帯
+  - 高齢者のみ、日中高齢者のみ、またはその他市長が認める世帯
+  - 1世帯1台、貸出期間は2年間（延長可）
+  where: 五島市消費生活センター（市民課内）
+  url: https://www.city.goto.nagasaki.jp/s020/010/040/010/010/20190306223122.html
+  confidence: high
+not_found:
+- ribiyo
+- shingu

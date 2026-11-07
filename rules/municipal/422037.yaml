@@ -1,0 +1,193 @@
+city: '422037'
+name: 島原市
+site: www.city.shimabara.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり高齢者等の紙おむつ費助成
+  name_on_page: ねたきり高齢者等おむつ費助成
+  summary: ねたきりで常時おむつを使う方の世帯に、紙おむつ購入費の一部を助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 満65歳以上のねたきり高齢者、またはねたきりの身体障害者
+  - 世帯に前年分の所得税が課税されている人がいない
+  - 紙おむつ調査票の判断基準に該当する
+  - 介護保険施設（特養・老健・介護医療院）の入所者は対象外
+  where: 福祉課 地域福祉班（市役所本庁舎）
+  url: https://www.city.shimabara.lg.jp/page19290.html
+  confidence: high
+  amount: 購入額の1/3を助成、上限は月 5,000 円
+  more_urls:
+  - https://www.city.shimabara.lg.jp/page1313.html
+- category: iro
+  name: 在宅高齢者の介護見舞金
+  name_on_page: 在宅高齢者介護見舞金
+  summary: 要介護3以上の高齢者を在宅で長く介護した親族・同居の方に見舞金を出す。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者は基準日（9/1）に65歳以上で市に1年以上住所がある
+  - 要介護3以上（認定がなくても同程度と認められる場合あり）
+  - 基準日前1年の入院・入所が合計183日以内
+  - 介護した親族か同居の人が、183日以上介護した場合に申請
+  - 申請は毎年9月1日から9月末日まで
+  where: 福祉課 地域福祉班（市役所本庁舎）
+  url: https://www.city.shimabara.lg.jp/page1313.html
+  confidence: high
+  amount: 年額 50,000 円（在宅高齢者1人につき年1回）
+  more_urls:
+  - https://www.city.shimabara.lg.jp/reiki/H407902500044/H407902500044_j.html
+- category: gaishutsu
+  name: 高齢者福祉交通機関利用券
+  name_on_page: 高齢者福祉交通機関利用助成
+  summary: タクシー・バス・鉄道・コミュニティバスで使える利用券を年間分交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のどちらか
+  - 満75歳以上の所得税非課税者で運転をしない方
+  - 満65歳以上の運転免許証の自主返納者（課税でも可）
+  - 受付は毎年7月1日から翌年6月30日まで
+  where: 福祉課（市役所本庁舎）または有明支所
+  url: https://www.city.shimabara.lg.jp/page1311.html
+  confidence: high
+  amount: 年間 6,000 円分（年度途中に65歳・75歳になる方は減額あり）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 外出が難しい要介護2〜5の方の自宅へ、美容師（理容師）を派遣する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 身体が悪く自分では外出が難しい方
+  - 家族が美容院等へ連れて行くことが困難なお宅
+  - 一人暮らし・高齢者だけの世帯などが例として挙がる
+  where: 福祉課 地域福祉班（市役所本庁舎）
+  url: https://www.city.shimabara.lg.jp/page1311.html
+  confidence: high
+  amount: 散髪料金は自己負担。年4回まで利用できる
+- category: jutaku
+  name: 高齢者等住環境改善支援助成（住宅改造費）
+  name_on_page: 高齢者等住環境改善支援助成
+  summary: 手すり・段差解消などの住宅改造の工事費の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定を受けていない方
+  - 生活機能の低下が心配で、調査票の基準を満たす方
+  - 世帯の誰かの前年の所得税額が14万円超だと対象外
+  - 助成は1世帯につき原則1回
+  where: 福祉課 地域福祉班（市役所本庁舎）
+  url: https://www.city.shimabara.lg.jp/page1314.html
+  confidence: high
+  amount: 工事費の2/3、上限 30,000 円（要綱）
+  more_urls:
+  - https://www.city.shimabara.lg.jp/reiki/H421902500083/H421902500083_j.html
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 島原市認知症高齢者等個人賠償責任保険
+  summary: 市が契約者となり、事故で損害賠償を負ったとき1事故1億円まで補償する。
+  who:
+    at_home: true
+  at_application:
+  - 市に住所があり、SOSおかえりネットワークに登録している方
+  - 市税等の滞納がない
+  - 保険期間は毎年3月1日から翌年2月末（自動更新）
+  where: 島原市地域包括支援センター（SOSおかえりネットワーク登録と同時に申請）
+  url: https://www.city.shimabara.lg.jp/page17343.html
+  confidence: high
+  amount: 補償は1事故最大1億円。登録費は年 500 円（世帯が住民税非課税なら無料）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置
+  summary: 身体に不安のある一人暮らし等の高齢者宅に、緊急電話発信装置を付ける。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの方等で、お身体が悪い・弱ってきた等の不安がある
+  where: 福祉課（頁の担当は障害福祉班）
+  url: https://www.city.shimabara.lg.jp/page1312.html
+  confidence: low
+  amount: 月 300 円の利用者負担（3月と9月に6か月分を一括徴収）
+- category: mimamori
+  name: 電話による安否確認（テレフォンサービス）
+  name_on_page: テレフォンサービス（電話による安否確認）
+  summary: ひとり暮らしの高齢者に、定期的に電話をかけて安否確認と簡単な相談を行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 健康などに不安がある
+  where: 福祉課（頁の担当は障害福祉班）
+  url: https://www.city.shimabara.lg.jp/page1312.html
+  confidence: low
+  amount: 週3回まで（曜日は応相談）
+- category: nichijo-yogu
+  name: 日常生活用具の給付（火災警報器等）
+  name_on_page: 日常生活用具給付
+  summary: 心身機能が低下した一人暮らしの高齢者に、火災警報器等を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 心身機能が低下している方
+  - 前年度の所得税が非課税の方
+  where: 福祉課（頁の担当は障害福祉班）
+  url: https://www.city.shimabara.lg.jp/page1312.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報カプセルの配付
+  name_on_page: 救急医療情報カプセル配付
+  summary: 医療情報・緊急連絡先を入れたカプセルを冷蔵庫に置き、緊急時に使う。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの方等が対象（頁の記載）
+  where: 福祉課（頁の担当は障害福祉班）
+  url: https://www.city.shimabara.lg.jp/page1312.html
+  confidence: low
+- category: sonota
+  name: 交通安全杖の無料支給
+  name_on_page: 交通安全杖支給
+  summary: 歩行に杖が必要な方に、交通安全対策の黄色の杖を無料で渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 歩行に杖が必要
+  - 支給は1人1回のみ
+  where: 福祉課 地域福祉班（市役所本庁舎）
+  url: https://www.city.shimabara.lg.jp/page1314.html
+  confidence: low
+  amount: 無料
+- category: sonota
+  name: 特殊ベッドの貸出
+  name_on_page: 特殊ベッド貸出
+  summary: 身体の不自由な高齢者に、電動式の介護ベッドを一時的に貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 身体の不自由な方
+  - 入院者の一時帰宅や介護認定が出るまでなど一時的に必要な場合
+  - 貸出期間は3か月以内
+  where: 福祉課 地域福祉班（市役所本庁舎）
+  url: https://www.city.shimabara.lg.jp/page1314.html
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- koken
+- hochoki
+- shingu

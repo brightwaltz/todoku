@@ -1,0 +1,88 @@
+city: '422088'
+name: 松浦市
+site: www.city-matsuura.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置の設置
+  summary: 虚弱な高齢者の世帯に緊急通報装置を設置する。設置費用は市が負担する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯、重度身体障害者のみの世帯
+  - 疾病・障害等の理由により虚弱な人
+  where: 長寿介護課 長寿支援係（頁の問い合わせ先）
+  url: https://www.city-matsuura.jp/top/kenko_fukushi/koreishanotamenofukushi/1762.html
+  confidence: high
+  amount: 設置費用は市が負担、通報・相談時の電話料金は自己負担
+- category: gaishutsu
+  name: 離島の高齢者の通院の乗船料助成
+  name_on_page: 乗船料等助成
+  summary: 医療機関のない離島に住む65歳以上が、フェリーで通院した乗船料を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 医療機関のない離島（今福町飛島免・鷹島町黒島免）に住所がある
+  - フェリーを使って通院した場合が対象
+  - 助成は月2往復分まで
+  where: 長寿介護課 長寿支援係（頁の問い合わせ先）
+  url: https://www.city-matsuura.jp/top/kenko_fukushi/koreishanotamenofukushi/1762.html
+  confidence: high
+  amount: 乗船料を助成（月2往復分まで）
+  more_urls:
+  - https://www.city-matsuura.jp/material/files/group/33/benri1.pdf
+- category: gaishutsu
+  name: 外出支援券
+  name_on_page: 外出支援券
+  summary: バス・鉄道・タクシー・船で使える外出支援券を、車を運転しない人などに交付する。
+  who:
+    at_home: true
+  at_application:
+  - 自動車・バイクを運転していない人、または離島（青島・飛島・黒島）の居住者
+  - 当年度に75歳以上、要介護・要支援認定者、総合事業の対象者
+  - または各種手帳・指定難病の受給者証を持つ人
+  - 介護保険施設に入所中の人は対象外
+  where: 長寿介護課・福祉事務所・各支所出張所
+  url: https://www.city-matsuura.jp/top/purpose/kaigo/3532.html
+  confidence: high
+  amount: 令和8年12月末までの申請は15,000円分（離島居住者は18,000円分）。令和9年1月申請分から10,000円分（離島は13,000円分）
+- category: gaishutsu
+  name: 離島居住の要介護者等の渡航費支援
+  name_on_page: 渡航費支援事業
+  summary: 離島に住む介護サービス利用者が、島外の事業所を使うときの乗船料を助成する。
+  who: {}
+  at_application:
+  - 星鹿町青島免・今福町飛島免・鷹島町黒島免に居住している
+  - 要介護・要支援・事業対象者で、介護サービスを受けている
+  - 島内で使えないサービスを市内事業所で使う場合が対象
+  where: 長寿介護課（べんり帳に申請先の記載なし）
+  url: https://www.city-matsuura.jp/material/files/group/33/benri1.pdf
+  confidence: low
+  amount: 乗船料を助成（家族等1人までの送迎者の乗船料も助成、車両は対象外）
+- category: kaigo-yohin
+  name: 介護用品の支給（家族介護支援事業）
+  name_on_page: 介護用品の支給
+  summary: 在宅の要介護者を介護する家族に、介護用品を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の要介護者を介護している家族
+  where: 長寿介護課（べんり帳に申請先の記載なし）
+  url: https://www.city-matsuura.jp/material/files/group/33/benri1.pdf
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

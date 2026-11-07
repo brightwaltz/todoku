@@ -1,0 +1,109 @@
+city: '432083'
+name: 山鹿市
+site: www.city.yamaga.kumamoto.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護保険特別給付の紙おむつ等購入費支給
+  name_on_page: 特別給付紙おむつ等購入費支給
+  summary: 在宅で要介護3以上の方の紙おむつ・尿とりパッド等の購入費を、市が9割支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 山鹿市の介護保険被保険者で、保険料の未納がない
+  - 排泄の動作に障害があり、紙おむつ等が必要と市長が認めた
+  - 入院・施設入所・短期入所の間は認定証で買えない
+  - 認定証の交付は郵送のみ（令和7年9月16日から）
+  where: 長寿支援課（本庁1階3番窓口）または各市民センター
+  url: https://www.city.yamaga.kumamoto.jp/kiji003119/index.html
+  confidence: high
+  amount: 購入額の9割を支給（月額上限6,000円）。1割は自己負担
+- category: haishoku
+  name: 食の自立支援事業（夕食の配食）
+  name_on_page: 食の自立支援事業
+  summary: 自分で調理することが難しい高齢者世帯に、夕食の弁当を届けて手渡しで安否を確かめる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の高齢者世帯
+  - 自分で調理をすることが困難
+  - 自己負担は利用する事業所によって異なる
+  where: 頁に申請先の記載なし（山鹿市の担当窓口に問い合わせ）
+  url: https://www.city.yamaga.kumamoto.jp/kiji003929/index.html
+  confidence: low
+  amount: 自己負担は事業所によって異なる（金額の記載なし）
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報の装置を設置し、緊急時の対応とお元気コールでの安否確認を行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしの高齢者など
+  - 疾病等により緊急時の対応が必要
+  - 市民税が非課税かつ均等割のみの世帯（頁の書きぶり）
+  - 近隣に協力員が必要
+  where: 頁に申請先の記載なし（山鹿市の担当窓口に問い合わせ）
+  url: https://www.city.yamaga.kumamoto.jp/kiji003929/index.html
+  confidence: low
+  amount: 設置2,140円・撤去990円・月1,120円（生活保護世帯は710円・330円・370円）
+- category: gaishutsu
+  name: 外出支援タクシー券助成事業
+  name_on_page: 外出支援タクシー券助成事業
+  summary: 移動が難しい非課税世帯の高齢者等に、400円のタクシー券を年間最大48枚交付する。
+  who: {}
+  at_application:
+  - 非課税世帯（頁は「住民税」とは書いていない）
+  - 家庭での移送や路線バス等の利用が困難
+  - 介護保険の認定を受けているか、同等程度の状態と認められる
+  where: 頁に申請先の記載なし（山鹿市の担当窓口に問い合わせ）
+  url: https://www.city.yamaga.kumamoto.jp/kiji003929/index.html
+  confidence: low
+  amount: 400円のタクシー券を年間最大48枚
+- category: jutaku
+  name: 住宅改造助成事業
+  name_on_page: 住宅改造助成事業
+  summary: 高齢者が生活で使う部分の住宅改造費を助成する。
+  who: {}
+  at_application:
+  - 介護保険の認定を受けているか、同等程度の状態と認められる
+  - 生計中心者の前年の所得税課税年額が7万円以下の世帯
+  - 助成率は課税額に応じて異なる
+  where: 頁に申請先の記載なし（山鹿市の担当窓口に問い合わせ）
+  url: https://www.city.yamaga.kumamoto.jp/kiji003929/index.html
+  confidence: low
+  amount: 改造費の上限は介護保険の住宅改修費と合わせて50万円
+- category: koken
+  name: 成年後見制度利用の支援（市長申立て・費用助成・報酬助成）
+  name_on_page: 経済的な理由等に対する成年後見制度利用の支援
+  summary: 経済的な理由などで成年後見の利用が難しい人に、市長申立て・申立費用の負担・後見人報酬の助成をする。
+  who: {}
+  at_application:
+  - 経済的な理由などで成年後見制度の利用が困難
+  - 市長申立て：判断能力が不十分で、親族等が申立てできない場合
+  - 申立費用の負担と報酬の助成：生活保護受給者などに当たる場合
+  where: 長寿支援課（認知症等）、福祉課障がい福祉係（障がい等）
+  url: https://www.city.yamaga.kumamoto.jp/kiji0031223/index.html
+  confidence: high
+  amount: 申立費用は市が負担、後見人報酬は全部または一部を助成（金額の記載なし）
+not_found:
+- haikai
+- iro
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

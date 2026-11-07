@@ -1,0 +1,147 @@
+city: '462063'
+name: 阿久根市
+site: www.city.akune.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 介護手当
+  name_on_page: 介護手当支給事業
+  summary: 要介護の高齢者を在宅で6か月以上介護している人に、介護手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護者・介護者とも、申請日に1年以上阿久根市に住民登録がある
+  - 要介護3〜5の寝たきりの高齢者を6か月以上継続して在宅で介護
+  - または要介護2〜5の重度の認知症高齢者を6か月以上継続して在宅で介護
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/1284.html
+  confidence: high
+  amount: 年額72,000円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム設置事業
+  summary: 自宅に緊急通報装置を取り付け、緊急時に対応できる体制を整える。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者などで、疾患などにより緊急時の対応が困難な人
+  - 利用申請書を提出する
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/1286.html
+  confidence: high
+  amount: 利用料は月500円（ボックス型）、月800円（携帯型）
+- category: kaigo-yohin
+  name: 紙おむつ利用券の支給
+  name_on_page: 高齢者紙おむつ支給事業
+  summary: 紙おむつが常時必要な要介護高齢者に、紙おむつ利用券を支給する。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住で、要介護3〜5の認定を受けている高齢者
+  - または要介護2の認定を受けた重度の認知症高齢者
+  - 介護保険料の所得段階が第1〜5段階（市民税非課税の人）
+  - 常時紙おむつの使用が必要
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/1288.html
+  confidence: high
+  amount: 年間最高48,000円（申請月により月割りで計算し、一括で支給）
+- category: gaishutsu
+  name: 高齢者等福祉タクシー
+  name_on_page: 高齢者等福祉タクシー
+  summary: 運転免許のない75歳以上の人等に、タクシー利用券を交付する。
+  who: {}
+  at_application:
+  - 市内に住所があり、市税などを滞納していない
+  - 75歳以上で運転免許証を持っていない人
+  - または74歳以下で免許がなく、要介護1以上か障害者手帳（一定の等級）の人
+  - 免許があっても3か月以上運転できない人は、医師の意見書で対象
+  - 入院中・施設入所中の人は対象外
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/1291.html
+  confidence: high
+  amount: 利用券（1枚400円）を年間最大48枚（月4枚、月割り）。1回の乗車に1枚使える
+- category: haishoku
+  name: 訪問給食サービス
+  name_on_page: 訪問給食サービス
+  summary: 買い物や調理が困難な一人暮らしの高齢者などに、安否確認を含む配食をする。
+  who: {}
+  at_application:
+  - 身体虚弱、障がいなどの理由で買い物や調理が困難な人
+  - 申請後に職員の訪問調査と利用可否の審査がある
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/1295.html
+  confidence: high
+  amount: 1食あたり370円（日曜、8/14・8/15、12/31〜1/2は休止）
+- category: hochoki
+  name: 高齢者補聴器購入助成
+  name_on_page: 高齢者補聴器購入助成事業
+  summary: 難聴の高齢者に、補聴器の購入費の一部を補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 耳鼻咽喉科で「中等度難聴以上」と診断された
+  - 聴覚障がいによる身体障害者手帳の交付を受けていない
+  - 購入前の申請と医師の意見書が必要。補助は1人1回限り
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/6018.html
+  confidence: high
+  amount: 補聴器本体と付属品の購入費の2分の1（上限2万円）
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 後見人などの報酬について
+  summary: 本人が負担困難な場合に限り、後見人などの報酬を市が助成する。
+  who: {}
+  at_application:
+  - 本人が報酬を負担することが困難と認められる
+  - 後見人などが親族の場合は対象外
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/3928.html
+  confidence: low
+- category: haikai
+  name: 認知症見守りネットワーク（行方不明時の情報共有）
+  name_on_page: あくね認知症見守りネットワーク事業
+  summary: 登録した認知症の人の情報を関係機関で共有し、行方不明時の早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症やその疑いで行方不明になるおそれがある人
+  - 満65歳以上で認知症により徘徊のおそれがある人
+  - または若年性認知症などで徘徊のおそれがある人
+  - その他、市長が特に必要と認める人
+  - 窓口に顔写真・全身写真と身分証明書を持参して登録
+  where: 介護長寿課地域包括支援係（事前に登録）
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/chiikihokatsushiencenter/5520.html
+  confidence: high
+- category: sonota
+  name: 緊急医療情報キットの無料配布
+  name_on_page: 緊急医療情報キット配布事業
+  summary: 緊急時に必要な医療情報を入れる「緊急医療情報キット」を無料で配布する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の高齢者、障がいのある人、健康上不安のある人（難病患者など）
+  - 在宅の1人暮らしや身体の不自由な人が対象
+  - 本人確認書類を持って窓口に問い合わせる（代理も可）
+  where: 介護長寿課高齢者支援係
+  url: https://www.city.akune.lg.jp/kenko_iryo_fukushi/koreishafukushi/1285.html
+  confidence: high
+  amount: 無料
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

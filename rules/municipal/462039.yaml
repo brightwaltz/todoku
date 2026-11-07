@@ -1,0 +1,196 @@
+city: '462039'
+name: 鹿屋市
+site: www.city.kanoya.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付券
+  name_on_page: 紙おむつの支給
+  summary: 寝たきり・認知症の人を在宅で介護する家族に、紙おむつの給付券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住民登録がある要介護認定者を在宅で介護している
+  - 生活自立度B以上、または認知症自立度3.a以上と判定された人
+  - 在宅日数が1月あたり20日以上
+  - 医療機関や介護施設等に入院・入所していない
+  - 継続の希望は毎年6月に申請書の提出が必要
+  where: 高齢福祉課介護福祉係（窓口に直接申請）
+  url: https://www.city.kanoya.lg.jp/kaifuku/kenko/fukushi/koresha/kaigohukusi/omutu.html
+  confidence: high
+  amount: 1月あたり1,000円の給付券を3枚（月3,000円分）。市指定の店舗で使う
+- category: haishoku
+  name: 高齢者等の訪問給食（配食）
+  name_on_page: 高齢者等訪問給食サービス事業
+  summary: 在宅の虚弱な高齢者等に、昼食・夕食を週6回届け、安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 次のいずれか。おおむね65歳以上または障がい者のみの世帯
+  - おおむね65歳以上か障がい者で、同居親族が就労等で昼間不在
+  - おおむね80歳以上の高齢者のみ世帯で、同居の配偶者が要介護
+  - 老衰・心身の障がい・傷病で食生活の支援と安否確認が必要
+  - 市内に住所がある
+  where: 高齢福祉課介護福祉係
+  url: https://www.city.kanoya.lg.jp/kaifuku/kenko/fukushi/koresha/kaigohukusi/kyusyoku.html
+  confidence: high
+  amount: 月〜土の昼食・夕食。1食あたり非課税世帯・生活保護受給者400円、課税世帯550円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制整備事業
+  summary: ボタンで24時間の通報センターにつながる緊急通報装置を貸与し、月1回電話で確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 慢性疾患等で日常生活上の注意が必要（急変のリスクや機能低下等）
+  - 緊急時に協力してくれる緊急協力員を原則2人選ぶ
+  - 市内に住所がある
+  where: 高齢福祉課または各総合支所
+  url: https://www.city.kanoya.lg.jp/houkatu/kenko/fukushi/koresha/kinkyutuhou.html
+  confidence: high
+  amount: 月額1,595円（安否確認センサー付は月額1,925円）
+- category: haikai
+  name: 認知症の人のGPS端末機の貸与
+  name_on_page: 位置検索システム端末機貸与事業
+  summary: 行方不明に備え、位置を検索できるGPS端末機を介護する家族等に貸与する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で生活する認知症高齢者や若年性認知症に相当する人を介護する家族等
+  - 市内に住所があり、市内に居住している
+  - 貸与を受けるのは介護者・主たる支援者
+  where: 高齢福祉課または各総合支所
+  url: https://www.city.kanoya.lg.jp/houkatu/kenko/fukushi/koresha/ninchisyou.html
+  confidence: high
+  amount: 利用者負担は月額利用料の1割（月330円）。初期費用11,000円は市の負担
+- category: haikai
+  name: 認知症の人の見守りシールの交付
+  name_on_page: 見守りシール交付事業
+  summary: 身元が早くわかるよう、二次元コード付きの見守りシールを介護する家族等に交付する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で生活する認知症高齢者や若年性認知症に相当する人を介護する家族等
+  - 市内に住所があり、市内に居住している
+  - 交付を受けるのは介護者・主たる支援者
+  where: 高齢福祉課または各総合支所
+  url: https://www.city.kanoya.lg.jp/houkatu/kenko/fukushi/koresha/ninchisyou.html
+  confidence: high
+  amount: 無料
+- category: iro
+  name: 介護慰労金
+  name_on_page: 高齢者等介護慰労金の支給
+  summary: 要介護の高齢者や障がい者を在宅で介護している人に、慰労金を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 8月1日・2月1日現在、市内に1年以上居住し住民登録がある
+  - 介護者が同居またはこれに準ずる状態で、6か月以上在宅介護
+  - 要介護高齢者（65歳以上）は要介護2（重度認知症のみ）〜5
+  - 要介護障がい者（20〜64歳）の介護者も対象
+  - 詳しい要件は窓口に問い合わせる
+  where: 高齢福祉課介護福祉係
+  url: https://www.city.kanoya.lg.jp/kaifuku/kenko/fukushi/koresha/kaigohukusi/kaigoiroukin.html
+  confidence: high
+  amount: 要介護2（重度認知症のみ）・3は年3万円、要介護4・5は年6万円。障がい者（20〜64歳）は年3万円
+- category: gaishutsu
+  name: 高齢者福祉共通券（タクシー・バスIC等）
+  name_on_page: 高齢者福祉共通券
+  summary: 200円券40枚を交付し、タクシー・バスICカード・温泉・はり灸等に使える。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある65歳以上
+  - 前年度に特定健診等を受診した人
+  - 未受診でも、85歳以上・要介護4・5・施設入所等の人は可
+  - ほか、当年度の受診が確認できる人など（令和8年度の特例）
+  - 年度ごとに1回交付。使用期限は翌年3月31日
+  where: 高齢福祉課（1階7番窓口）、各総合支所住民サービス課、各出張所
+  url: https://www.city.kanoya.lg.jp/kaifuku/kenko/fukushi/koresha/kyoutuukenn.html
+  confidence: high
+  amount: 200円券を40枚（8,000円分）。ICバスカードの購入・積み増しは支払額の2分の1（上限5,000円）を助成
+- category: hochoki
+  name: 高齢者福祉共通券（補聴器購入に使える）
+  name_on_page: 高齢者福祉共通券
+  summary: 共通券（200円券）を補聴器の購入費に使える。ほかの使い道と共通の券。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある65歳以上
+  - 前年度に特定健診等を受診した人
+  - 未受診でも、85歳以上・要介護4・5・施設入所等の人は可
+  - 補聴器専用の助成ではなく、共通券の使い道の1つ
+  - 補聴器は市に登録された販売業者で購入する
+  where: 高齢福祉課（1階7番窓口）、各総合支所住民サービス課、各出張所
+  url: https://www.city.kanoya.lg.jp/kaifuku/kenko/fukushi/koresha/kyoutuukenn.html
+  confidence: high
+  amount: 200円券を40枚（8,000円分）を年度ごとに交付。補聴器だけの助成額の記載なし
+- category: koken
+  name: 成年後見の市長申立てと申立て経費の負担
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りがない等の人に、親族に代わり市長が家庭裁判所に申立てし、経費も市が負担する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある65歳以上
+  - 判断能力が十分でなく、後見人などが必要
+  - 配偶者・4親等内の親族がいない、または音信不通等で申立てが困難
+  where: 高齢福祉課（地域包括ケア推進係）
+  url: https://www.city.kanoya.lg.jp/houkatu/kourei/kourei/kennriyougo.html
+  confidence: high
+  amount: 申立てに必要な経費を市が負担（負担能力のある人には後日求償）
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見人等に対する報酬の助成
+  summary: 家庭裁判所が決めた後見人等の報酬を、負担が難しい人に市が助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている人、またはそれに準ずる人
+  - 本人の収入等から報酬の負担が困難と認められる
+  - 後見人等が親族の場合は対象外
+  where: 高齢福祉課（申請書を提出）
+  url: https://www.city.kanoya.lg.jp/houkatu/kourei/kourei/kennriyougo.html
+  confidence: high
+- category: sonota
+  name: 高齢者生活支援ショートステイ
+  name_on_page: 高齢者生活支援ショートステイ事業
+  summary: 体調不良で在宅生活が難しい高齢者を養護老人ホーム等に原則7日以内で一時入所させる。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者等で基本的生活習慣が欠如している人
+  - または体調不良で在宅生活が一時的に困難になった人
+  - 要介護認定で該当となった人、医療が必要な人は除く
+  - 申請書と医師の診断書が必要
+  where: 高齢福祉課介護福祉係
+  url: https://www.city.kanoya.lg.jp/kaifuku/kenko/fukushi/koresha/syotosutei.html
+  confidence: high
+  amount: 一部負担金あり（金額の記載なし）
+not_found:
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

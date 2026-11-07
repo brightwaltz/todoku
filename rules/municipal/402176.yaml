@@ -1,0 +1,163 @@
+city: '402176'
+name: 筑紫野市
+site: www.city.chikushino.fukuoka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（夕食の配食）
+  name_on_page: 食の自立支援事業
+  summary: 買い物や調理が難しい一人暮らしの高齢者等に、夕食を届けて見守る。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者、または障がい者
+  - 単身、高齢者のみ、障がい者のみ、またはこれらに準ずる世帯
+  - 自立した食生活が難しく、見守りが必要な人
+  - 別途審査基準あり。事前調査が必要
+  where: 地域包括支援センター、高齢者支援課高齢者福祉担当
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/3784.html
+  confidence: high
+  amount: 夕食のみ。1食460円の利用料がかかる
+- category: kaigo-yohin
+  name: 紙おむつ給付
+  name_on_page: 紙おむつ給付サービス事業
+  summary: 常時紙おむつが必要な在宅の要支援・要介護の人に、紙おむつを給付する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上、または40〜64歳の認定を受けた人
+  - 介護保険料の所得段階が第1〜5段階（頁冒頭は市県民税非課税）
+  - 訪問調査の排便・排尿・ズボン等の着脱で見守り以上
+  - 施設入所者・入院中の人は対象外
+  - 毎年3月に更新手続きが必要
+  where: 高齢者支援課高齢者福祉担当の窓口
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/3784.html
+  confidence: high
+  amount: 第1〜3段階は月5,000円分まで、第4〜5段階は月3,000円分まで
+- category: iro
+  name: 寝たきり老人等介護手当
+  name_on_page: 寝たきり老人等介護手当
+  summary: 寝たきりや認知症の高齢者を在宅で介護する家族に、手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 年齢は介護される高齢者の年齢（65歳以上）
+  - 介護者と同一生計であること
+  - 市内に住民登録があり、常時在宅で介護している
+  where: 高齢者支援課高齢者福祉担当
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/3784.html
+  confidence: high
+  amount: 月額20,000円。6月と12月の年2回に分けて支給
+- category: jutaku
+  name: 高齢者等住宅改造費助成
+  name_on_page: 高齢者等住宅改造費助成
+  summary: 介護保険の住宅改修とは別に、住宅の改造費を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市民税・所得税が非課税の世帯
+  - 要支援・要介護の認定を受けた人、または重度障がい者
+  - 改造前の事前調査・申請が必要
+  - 新築や全面的な改築は対象外
+  where: 地域包括支援センター、高齢者支援課高齢者福祉担当
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/3784.html
+  confidence: high
+  amount: 30万円を限度に助成。介護保険の住宅改修該当分（20万円以内）は対象外
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ひとり暮らしの高齢者等に緊急通報装置を貸し出し、24時間対応する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らし、またはひとり暮らしの重度身体障がい者等
+  - 市内に居住していること
+  - 事前調査が必要
+  where: 地域包括支援センター、高齢者支援課高齢者福祉担当
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/3784.html
+  confidence: high
+  amount: 利用者負担は月0円〜1,210円（介護保険料の段階による）
+- category: shingu
+  name: 寝具洗濯サービス
+  name_on_page: 寝具洗濯サービス
+  summary: 寝たきりの高齢者等などの寝具を洗濯するサービス。
+  who: {}
+  at_application:
+  - 次のいずれか：寝具の衛生管理が難しいおおむね65歳以上の一人暮らし
+  - 寝たきりかそれに準ずるおおむね65歳以上の人
+  - 寝たきりかそれに準ずる重度身体障がい者
+  - 市内に住所があり、事前調査が必要
+  where: 地域包括支援センター、高齢者支援課高齢者福祉担当
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/3784.html
+  confidence: high
+  amount: 利用は年2回まで。1回あたり三点一式1,265円、四点一式1,595円
+- category: haikai
+  name: 認知症高齢者等の事前登録とみまもりあいステッカー
+  name_on_page: 認知症高齢者等事前登録制度
+  summary: 行方不明に備えて情報を事前登録し、希望者に連絡用ステッカーを交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、行方不明になるおそれのある高齢者
+  - 施設入所者は対象外
+  - 登録者と家族等にステッカー48枚1セットを交付
+  where: お住まいの地域を担当する地域包括支援センター
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/39701.html
+  confidence: high
+  amount: みまもりあいステッカー48枚1セットを交付
+- category: yutai
+  name: 御前湯の入湯料割引（御前湯利用証）
+  name_on_page: 御前湯割引サービス
+  summary: 市内の65歳以上に、二日市温泉御前湯の入湯料が割引になる利用証を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に居住していること
+  - 申請時に本人確認書類が必要
+  where: 御前湯受付
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/16844.html
+  confidence: high
+  amount: 利用証を見せると入湯料250円（見せない場合は450円）
+- category: sonota
+  name: 短期入所（養護老人ホームでの一時預かり）
+  name_on_page: 短期入所（ショートスティ）
+  summary: 在宅で介護する人が世話できない時、高齢者を養護老人ホームで一時的に預かる。
+  who: {}
+  at_application:
+  - 市内に住所があるおおむね65歳以上で、介護保険の適用を受けていない人
+  - 伝染性疾患がある人などは対象外
+  - 原則として7日以内
+  where: 地域包括支援センター、高齢者支援課高齢者福祉担当
+  url: https://www.city.chikushino.fukuoka.jp/site/kaigo/3784.html
+  confidence: high
+  amount: 1日あたり入所480円、送迎は片道180円
+not_found:
+- koken
+- hochoki
+- gaishutsu
+- ribiyo
+- mimamori

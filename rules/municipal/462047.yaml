@@ -1,0 +1,119 @@
+city: '462047'
+name: 枕崎市
+site: www.city.makurazaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 福祉給食サービス
+  name_on_page: 福祉給食サービス
+  summary: 買い物や調理が困難な高齢者等に食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 市内に居住するおおむね65歳以上のひとり暮らしか夫婦暮らし等の高齢者
+  - または身体障害者等で、買い物や調理が困難な人
+  - 申請書の提出が必要
+  where: 長寿介護課高齢者介護保険係
+  url: https://www.city.makurazaki.lg.jp/site/shinsei-navi/296.html
+  confidence: high
+  amount: 1食500円（市県民税非課税世帯は450円）。365日、昼夜2食
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ペンダントを押すと消防署や協力員に通報が届く緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者、重度身体障害者の方など
+  - 近隣の協力員3名が必要
+  - 利用申請書を提出する
+  where: 長寿介護課高齢者介護保険係
+  url: https://www.city.makurazaki.lg.jp/soshiki/houkatsu/5334.html
+  confidence: high
+- category: iro
+  name: 介護手当
+  name_on_page: 介護手当の支給
+  summary: 在宅の重度の高齢者を3か月以上介護している人に、介護手当を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 65歳以上の在宅の寝たきり（原則要介護4以上）か重度認知症の人を介護
+  - 引き続き3か月以上、常に介護している
+  - 本人が入院・入所している期間は受給できない
+  where: 長寿介護課高齢者介護保険係
+  url: https://www.city.makurazaki.lg.jp/soshiki/houkatsu/5335.html
+  confidence: high
+  amount: 月6,000円（期間中に介護保険サービスの利用あり）、利用なしは月10,000円。特別障害者手当・福祉手当の受給者は半額
+- category: kaigo-yohin
+  name: 家族介護用品支給事業
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の在宅高齢者を介護する家族に、介護用品の引換券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 被介護者は要介護4・5で在宅の、市民税非課税世帯の高齢者
+  - 介護している家族も市民税非課税世帯に属している
+  where: 長寿介護課高齢者介護保険係
+  url: https://www.city.makurazaki.lg.jp/soshiki/houkatsu/5333.html
+  confidence: high
+  amount: 1回15,000円分の引換券を6・8・10・12・2月に交付（年75,000円以内）
+- category: kaigo-yohin
+  name: おむつ給付
+  name_on_page: おむつ給付
+  summary: 在宅で寝たきりの高齢者等に、紙おむつを給付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で常時おむつを使っている人
+  - または重度心身障害者（1・2級）で常時おむつを使っている人（1歳未満を除く）
+  where: 長寿介護課高齢者介護保険係
+  url: https://www.city.makurazaki.lg.jp/soshiki/houkatsu/5332.html
+  confidence: high
+  amount: フラットタイプ600枚、またはその金額に相当する紙おむつ（期間の記載なし）
+- category: nichijo-yogu
+  name: 日常生活用具の給付・貸与
+  name_on_page: 日常生活用具の給付・貸与
+  summary: 火災警報器・自動消火器・電磁調理器を給付し、老人用電話を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしなどの人が対象（品目ごとに条件が違う）
+  - 火災警報器・自動消火器：低所得の寝たきりの高齢者など
+  - 電磁調理器：心身機能の低下で防火等の配慮が必要なひとり暮らしの高齢者など
+  - 老人用電話（貸与）：低所得のひとり暮らしの高齢者など
+  - 負担額は生計中心者の前年所得税額で区分される
+  where: 長寿介護課高齢者介護保険係
+  url: https://www.city.makurazaki.lg.jp/site/shinsei-navi/295.html
+  confidence: high
+  amount: 生活保護世帯・前年所得税非課税世帯は0円、課税世帯は16,300円〜全額（所得税額で区分）
+- category: gaishutsu
+  name: タクシー運賃の助成（利用券）
+  name_on_page: 交通弱者に対するタクシー運賃の助成
+  summary: 交通弱者のタクシー運賃の一部を助成する。75歳以上は長寿介護課で交付。
+  who: {}
+  at_application:
+  - 75歳以上の人は長寿介護課の窓口で交付
+  - 障害者手帳をお持ちの人は障害福祉係の窓口で交付
+  - ほかの条件は頁に無い（窓口で確かめる）
+  where: 長寿介護課高齢者介護保険係（75歳以上）、福祉課障害福祉係（障害者手帳の人）
+  url: https://www.city.makurazaki.lg.jp/soshiki/fukushi/12305.html
+  confidence: high
+not_found:
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- yutai
