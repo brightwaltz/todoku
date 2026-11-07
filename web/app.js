@@ -298,6 +298,11 @@ async function openEvents() {
   await consultWith(text, () => api("/api/event", { ids, municipality: pick.city }));
 }
 
+// 書くのも難しく、当てはまる絵もないとき（T-203）。何も置かずに、規則のプログラムの問いだけで進める（Claude を呼ばない）
+async function openBlank() {
+  await consultWith("", () => api("/api/begin", { municipality: pick.city }));
+}
+
 async function consultWith(text, call) {
   state = fresh();
   const mine = state;  // 読み取りを待つ間に見本・出来事・別の相談を始めたら、遅れて返った前の答えは描かない（T-162。step と同じ）
@@ -323,7 +328,7 @@ async function consultWith(text, call) {
     state.sample = Boolean(data.sample);
     state.sampleId = data.sample_id || "";
     state.sampleSummary = null;
-    state.event = Boolean(data.event);
+    state.event = Boolean(data.event || data.blank);  // 質問だけの道（T-203）も出来事の道と同じく、合言葉なしで結果まで来る
     state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
     render(data, true);
@@ -352,9 +357,10 @@ function renderExtracted(data, text) {
   head.classList.toggle("sample-head", Boolean(data.sample));
   if (data.sample) head.replaceChildren(el("span", { class: "kicker" }, "見本"), ...marked);
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
+  else if (data.blank) head.replaceChildren(...keepTail("質問から", "始めます"));  // 文も出来事もない（T-203）
   else head.replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
-  $("said").replaceChildren(...(data.sample ? [] : marked));
-  show("said", !data.sample);
+  $("said").replaceChildren(...(data.sample || data.blank ? [] : marked));
+  show("said", !data.sample && !data.blank);
   const list = $("extracted-list");
   list.replaceChildren();
   for (const [i, f] of data.extracted.entries()) {
@@ -364,10 +370,13 @@ function renderExtracted(data, text) {
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
   }
   if (!data.extracted.length) {
-    list.append(el("li", {}, data.event ? "この出来事だけで決まることはありません。いくつか質問します。" : "読み取れた事実はありませんでした。いくつか質問します。"));
+    list.append(el("li", {}, data.blank ? "まだ何も分かっていないので、いくつか質問します。"
+      : data.event ? "この出来事だけで決まることはありません。いくつか質問します。" : "読み取れた事実はありませんでした。いくつか質問します。"));
   }
   const made = data.made && data.made.model && data.made.date ? `（${data.made.model}、${data.made.date}）` : "";
-  $("engine-note").textContent = data.event
+  $("engine-note").textContent = data.blank
+    ? "規則のプログラムが、答えると分かることの多い質問から聞きます。Claude は使っていません。"
+    : data.event
     ? "選んだ出来事の文から、言えることだけをプログラムが置きました。Claude は使っていません。"
     : data.sample
     ? `見本：前もって Claude${made}が読み取った結果です。この見本では Claude を呼びません。`
@@ -1694,6 +1703,7 @@ earlyFetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
     showPlace(places[0][0]);
   }
   $("event-start").addEventListener("click", openEvents);
+  $("blank-start").addEventListener("click", openBlank);  // 当てはまる絵がないとき（T-203）
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す

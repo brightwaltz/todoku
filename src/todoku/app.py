@@ -754,6 +754,22 @@ def event(body: EventIn, request: Request) -> dict:
     return {"engine": "event", "event": True, "text": e["text"], **consult_view(extraction, body.municipality)}
 
 
+class BeginIn(In):
+    municipality: str = Field("", max_length=6)
+
+
+@app.post("/api/begin")
+def begin(body: BeginIn, request: Request) -> dict:
+    """書くのも難しく、当てはまる絵もない人の入口（T-203。11/7 柴田の気づき）。何も置かずに、最初の問いを返す。
+
+    分かっている事実が無いので、規則のプログラムが問い（住所が先、あとは判定に効く順）だけで進める。
+    Claude を呼ばないので合言葉は求めず、出来事のボタンと同じゆるい回数制限だけを掛ける。
+    """
+    guard(request, costly=False)
+    extraction = check_extraction(RULES, "", {"subject": "ご本人", "facts": []})
+    return {"engine": "questions", "blank": True, "text": "", **consult_view(extraction, body.municipality)}
+
+
 class BodyLimit:
     """本文が MAX_BODY を超える要求を 413 で断る。
 

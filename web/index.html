@@ -129,6 +129,9 @@
     </fieldset>
     </details>
       <button type="button" class="secondary" id="event-start" disabled>選んだ出来事で始める</button>
+      <!-- 書くのも難しく、当てはまる絵もない人の道（T-203。11/7 柴田「絵の中に当てはまる場面がなく、文章で書くことも難しい場合が
+           考慮されていない」）。いつでも押せる。何も置かずに /api/begin で最初の問いへ進む（Claude を呼ばない、合言葉も要らない） -->
+      <button type="button" class="link" id="blank-start">当てはまる絵がないときは、質問に答えて始める</button>
     </div>
     <svg id="art-defs" width="0" height="0" aria-hidden="true" focusable="false">
       <symbol id="art-discharged" viewBox="0 0 100 100"><rect fill="#cfe6df" x="8" y="30" width="10" height="55" rx="3"/><rect fill="#fff" x="18" y="54" width="76" height="16" rx="4"/><rect fill="#cfe6df" x="44" y="47" width="50" height="11" rx="4"/><ellipse fill="#fff" cx="31" cy="49" rx="10" ry="6"/><line x1="24" y1="70" x2="24" y2="95"/><line x1="88" y1="70" x2="88" y2="95"/></symbol>
