@@ -1,0 +1,53 @@
+city: "272051"
+name: 吹田市
+site: www.city.suita.osaka.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品の給付
+    where: 高齢福祉室 支援グループ（基幹型地域包括支援センター、06-6384-1360）に申請書を出す。郵送でもよい
+    conditions:
+      - 要介護 4・5 でおむつを使う人を、家で介護している家族（通いで介護する家族も含む）
+      - おむつを使う人と介護する人を含む家族全員が市町村民税非課税の世帯
+      - 生活保護を受けている世帯は対象外
+      - おむつなどと引き換える給付券（上限 6,250 円分）を、市に登録した薬局や介護用品店で使う
+      - 10 日までに申請するとその月の分から、11 日以降は翌月の分から
+    sources:
+      - url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014559.html
+        publisher: 吹田市
+        title: 家族介護用品の給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 徘徊高齢者SOSネットワーク（みまもりあいステッカー）
+    where: 高齢福祉室 支援グループ（06-6384-1360）に申請書と誓約書を郵送するか、市の電子申込システムで申し込む
+    conditions:
+      - 市内で家に住む 65 歳以上（第 2 号被保険者も含む）で、道に迷ったことがあるかそのおそれのある人
+      - 認知症の診断がある、認知症の自立度が IIa 以上、受診を考えている、のどれか
+      - 見つけた人がフリーダイヤルにかけると、番号を伏せたまま家族につながるステッカーを 48 枚配る
+      - ステッカー代と利用料は市が持つ（2 年目以降も無料）。アプリで協力者に捜索を頼むこともできる
+    sources:
+      - url: https://www.city.suita.osaka.jp/kenko/1018656/1018663/1014256.html
+        publisher: 吹田市
+        title: 徘徊高齢者SOSネットワーク（みまもりあいステッカー）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（市長申立て・申立て費用と報酬の助成）
+    where: 高齢福祉室 支援グループ（06-6384-1360）に交付申請書を出す。郵送でもよい
+    conditions:
+      - 65 歳以上で、配偶者や 4 親等内の親族がいないか音信不通などで申し立てられないときは、市長が申し立てる
+      - 助成は生活保護の人か、費用を払うと生活保護が要る人（預貯金 50 万円未満で資産が無い）
+      - 後見人等が親族でない専門職のとき。市外の施設や病院にいて市内に住む実態が無い人は対象外
+      - 申立て費用は印紙・切手代と鑑定料（10 万円まで）。報酬は月 28,000 円まで（在宅でない人は 18,000 円）
+    sources:
+      - url: https://www.city.suita.osaka.jp/kenko/1018656/1018665/1014558.html
+        publisher: 吹田市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
