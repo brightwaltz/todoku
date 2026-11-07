@@ -109,10 +109,20 @@ def check_city(raw: dict, cache: Path, names: dict[str, str]) -> tuple[dict | No
     if code not in names:
         return None, [{"code": code, "reason": "団体コードが一覧に無い"}]
     name = names[code]
+    if raw.get("blocked"):
+        # サイトが自動の取得を止めていて調べられなかった。「見つからなかった」とは言わないので、規則のファイルを作らない
+        return None, [{"code": code, "reason": "サイトが自動の取得を止めていて調べられなかった"}]
     site = (raw.get("site_host") or "").lower().strip()
     if not site:
         return None, [{"code": code, "reason": "site_host が無い"}]
-    site_level = "lg.jp" if site.endswith(".lg.jp") else "title"
+    wd = WIKIDATA.get(code, set())
+    bare = site.removeprefix("www.")
+    if any(bare == h.removeprefix("www.") for h in wd):
+        site_level = "wikidata"  # Wikidata（P429 全国地方公共団体コード・P856 公式サイト）のホストと同じ。係とは別の出どころ
+    elif site.endswith(".lg.jp"):
+        site_level = "lg.jp"
+    else:
+        site_level = "title"
     if site_level == "title":
         st, txt = fetch(f"https://{site}/", cache)
         title = re.search(r"<title>(.*?)</title>", txt, re.S | re.I)
@@ -186,6 +196,22 @@ def to_yaml(city: dict, date: str, read_by: str) -> dict:
     return {key: city["code"], "name": city["name"], "site": city["site"], "site_level": city["site_level"],
             "review": {"read_by": read_by, "checked_by": "機械（公式のホスト・頁の取り直し・名前の一致）", "date": date},
             "programs": out, "not_found": city["not_found"]}
+
+
+def _wikidata() -> dict[str, set[str]]:
+    """団体コード → 公式サイトのホスト（~/dev/todoku-municipal-work/sites/sites.tsv。Wikidata の CC0 のデータから作った）。"""
+    path = Path.home() / "dev" / "todoku-municipal-work" / "sites" / "sites.tsv"
+    if not path.exists():
+        return {}
+    out = {}
+    for line in path.read_text().splitlines():
+        parts = line.split("\t")
+        if len(parts) >= 4:
+            out[parts[0]] = set(parts[3].split())
+    return out
+
+
+WIKIDATA = _wikidata()
 
 
 def municipality_names() -> dict[str, str]:

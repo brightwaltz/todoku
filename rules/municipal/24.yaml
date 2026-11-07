@@ -1,0 +1,23 @@
+pref: '24'
+name: 三重県
+site: www.pref.mie.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: おもいやり駐車場の利用証の交付
+  name_on_page: 三重おもいやり駐車場利用証制度
+  summary: 要介護1〜5の高齢者・障がい者・難病患者・妊産婦・けが人などに、駐車場の利用証を交付する。
+  who: {}
+  at_application:
+  - 高齢者は介護保険の要介護1〜5の認定を受けた人
+  - ほか障害の手帳（等級の条件あり）・難病の受給者・妊産婦・けが人なども対象
+  where: 県子ども・福祉部 家庭福祉・施設整備課（頁の問い合わせ先）。申請の窓口・方法は頁に無いので別頁で確かめる
+  url: https://www.pref.mie.lg.jp/UD/HP/72387012562.htm
+  confidence: high
+not_found:
+- yutai

@@ -1,0 +1,25 @@
+pref: '19'
+name: 山梨県
+site: www.pref.yamanashi.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 思いやりパーキングの利用証の交付
+  name_on_page: やまなし思いやりパーキング制度
+  summary: 歩行が困難な人に、思いやり駐車区画に停められる利用証を交付する（申請手数料は無料）。
+  who: {}
+  at_application:
+  - 歩行が困難な、身体・知的・精神障害、難病、高齢者、妊産婦、発達障害、けが人などが対象
+  - 対象者の細目は、頁の PDF「交付対象者一覧表」で確かめる
+  - 傷病人等は、歩行困難な期間を明示した医師の意見書等が要る（必要な人は一覧表のとおり）
+  - 利用証は、交付された本人が運転か同乗する車でだけ使える
+  where: 県障害福祉課、県保健福祉事務所、市町村の福祉担当課。電子申請（やまなしくらしねっと）や、郵送・FAX・メールでも申請できる
+  url: https://www.pref.yamanashi.jp/shogai-fks/tyuusyajou.html
+  confidence: high
+not_found:
+- yutai

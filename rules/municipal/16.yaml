@@ -1,0 +1,26 @@
+pref: '16'
+name: 富山県
+site: www.pref.toyama.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ゆずりあいパーキングの利用証の交付
+  name_on_page: 富山県ゆずりあいパーキング（障害者等用駐車場）利用証制度
+  summary: 歩行が困難な要介護の人などに、障害者等用の協力駐車区画を使える利用証を県が交付する。
+  who: {}
+  at_application:
+  - 次のどれか：障害者手帳、難病の受給者証、要介護認定、妊産婦、歩行困難なけが人等
+  - 対象者の範囲と有効期限は、頁の PDF「対象者の範囲及び利用証の有効期限」で確かめる
+  - 要介護の人は介護保険被保険者証で確かめる
+  where: お住まいの市町村窓口（原則その場で交付。要介護の人の担当課は市町村ごとに違う）。郵送は県厚生企画課 地域共生福祉係
+  url: https://www.pref.toyama.jp/1200/kurashi/kenkou/koureisha/kj00021188.html
+  confidence: high
+not_found:
+- yutai
+- jutaku
+- haikai

@@ -1,0 +1,205 @@
+city: 041009
+name: 仙台市
+site: www.city.sendai.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への食の自立支援（配食と安否確認）
+  name_on_page: 食の自立支援サービス
+  summary: 昼食か夕食を自宅に届け、手渡しで安否も確かめる。最大で週7回まで。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要支援・要介護の認定、または事業対象者で、低栄養の改善が必要
+  - ひとり暮らしで、虚弱などで食事の用意が困難
+  - または高齢者のみの世帯で、同居者が入院・病気等のため用意が困難
+  - 状態と生活状況の調査のうえで回数が決まる
+  where: 区役所・総合支所の担当課、地域包括支援センター
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/hitorigurashi/jiritsushien.html
+  confidence: high
+  amount: 利用者負担は1食544円（税込）。最大1日1食、週7回まで。
+- category: kinkyu-tsuho
+  name: 緊急通報システム機器の貸与
+  name_on_page: 緊急通報システム機器の貸し出し
+  summary: 通報ボタンで警備会社が安否確認と駆けつけをする機器を貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - 日常生活に注意が必要な65歳以上のひとり暮らし（日中ひとりも含む）
+  - または重度の要介護者と同居などで、実質ひとり暮らしの65歳以上
+  - 3か月以上の施設入所・入院をする人は原則対象外
+  - 警備会社の事前訪問調査と、自宅の合鍵の預け入れが必要
+  where: 区役所・総合支所の担当課窓口、地域包括支援センター
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/hitorigurashi/tsuho.html
+  confidence: high
+  amount: 機器の貸与・設置は無料。月額利用料は550円（税込、介護保険料の第1・第2段階などは無料）。
+- category: shingu
+  name: 寝具の丸洗い
+  name_on_page: 寝具洗濯サービス
+  summary: 委託事業者が寝具を預かって丸洗いする。年3回まで。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または寝たきりの方
+  - 寝具の衛生管理が困難
+  where: 区役所・総合支所の担当課窓口、地域包括支援センター
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/hitorigurashi/sentaku.html
+  confidence: high
+  amount: 年3回まで。費用は世帯の生計中心者の市県民税額に応じた負担がある。
+- category: koken
+  name: 成年後見の申立費用と後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 法定後見の申立費用と後見人等への報酬を、一定の要件で助成する。
+  who: {}
+  at_application:
+  - 生活保護、市民税非課税、または報酬を払う収入・財産がない方
+  - 上のような方は助成の対象となる場合がある（詳細は窓口で確認）
+  - 親族以外の後見人候補者の推薦を成年後見総合センターへ依頼済み
+  - 申立費用の助成は、申立ての前に相談窓口で申請を済ませる
+  where: 住所地の区役所・宮城総合支所の障害高齢課
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/hitorigurashi/jigyo.html
+  confidence: high
+  amount: 報酬助成は月額の上限あり（在宅28,000円、施設18,000円）。申立費用は印紙・切手代・鑑定料など。
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 介護用品の給付
+  summary: 使い捨ておむつ、おむつカバー、尿とりパッド、失禁シーツを自宅に届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険の要介護4・5の認定（第2号被保険者も含む）
+  - 市民税非課税世帯
+  - 入院中の方、生活保護受給者などは対象外
+  - 4〜6月の申請は前年度の税情報で利用の可否を判断
+  where: 住所地の区役所・総合支所の担当課窓口
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/zaitaku/fukushi/kaigoyohin.html
+  confidence: high
+  amount: 年間（4月〜翌3月）7万5千円まで。負担は利用額の1割と限度額を超えた分。
+- category: ribiyo
+  name: 訪問理美容（自宅でのカット）
+  name_on_page: 訪問理美容サービス
+  summary: 理容師・美容師が自宅に来て髪をカットする。年4回まで。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 仙台市の介護保険で要介護3〜5の認定（第2号被保険者も含む）
+  - 入院中の方は対象外
+  - 自宅への訪問のみ（店舗では使えない）。原則カットのみ
+  where: 住所地の区役所・総合支所の担当課窓口
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/zaitaku/homon/service.html
+  confidence: high
+  amount: 1回2,095円（理容師等に直接支払う）。年4回まで、申請時期により回数が減る。
+- category: jutaku
+  name: 高齢者世帯の住宅改造費の助成
+  name_on_page: 住宅改造費の助成制度
+  summary: 手すりや段差解消などの住宅改造費の一部を助成する。介護保険の改修が優先。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 世帯全員が所得税非課税
+  - 市税の滞納がない
+  - 身体機能の低下で日常生活に支障があり、改造が必要
+  - 介護保険の住宅改修が優先（同時に申請できる）
+  - 工事の着工前に相談する。新築・増築・購入時の工事は対象外
+  where: 区役所・総合支所の担当課、地域包括支援センター
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/sumai/shiensedo/kaizohi.html
+  confidence: high
+  amount: 工事費の4分の3（限度額60万円）。介護保険の改修を使う場合は保険対象分（上限20万円）を引いた額が対象。
+- category: haikai
+  name: 認知症の人の行方不明時のメール配信による捜索
+  name_on_page: 認知症の人の見守りネットワーク事業
+  summary: 利用届を出すと、行方不明時に協力者へメールで情報を配信し、早期発見につなげる。
+  who: {}
+  at_application:
+  - 市内に住み、行方不明のおそれのある認知症の診断を受けた方
+  - または認知症の可能性がある方
+  - 65歳未満の若年性認知症の方も利用できる
+  - 利用届の提出は本人・親族・同居人・後見人などができる
+  where: 地域包括ケア推進課（利用届を郵送または持参）
+  url: https://www.city.sendai.jp/kaigo-suishin/kurashi/kenkotofukushi/korenokata/ninchisho/torikumi/mimamori.html
+  confidence: high
+- category: hochoki
+  name: 難聴の高齢者の補聴器購入費の助成
+  name_on_page: 難聴高齢者補聴器購入費助成事業
+  summary: 補聴器の購入費の一部を助成する。購入前の申請と医師意見書が必要。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市に住民登録があり、両耳の聴力が40dB以上70dB未満
+  - 身体障害者手帳の交付対象でない
+  - 市税の滞納がない。過去にこの助成を受けていない
+  - 医師意見書が必要。登録された販売事業者から購入する
+  - 必ず購入前に申請する（購入後の申請は受け付けない）
+  where: 住所地の区役所・宮城総合支所の障害高齢課
+  url: https://www.city.sendai.jp/hokatsushien/zaitakushien/hochoukizyosei.html
+  confidence: high
+  amount: 購入額の2分の1以内。上限は市県民税非課税世帯4万円、課税世帯2万円。
+- category: gaishutsu
+  name: バス・地下鉄の敬老乗車証
+  name_on_page: 敬老乗車証
+  summary: 市バス・地下鉄・宮城交通バスで使える専用ICカードを交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 仙台市内に住んでいる
+  - 1人1枚まで
+  - 手帳をお持ちの方は福祉割引用の乗車証を申し出られる
+  where: 住所地の区役所・総合支所の敬老乗車証担当窓口
+  url: https://www.city.sendai.jp/korekikaku-kikaku/kurashi/kenkotofukushi/korenokata/katsudo/sedo/joshasho/
+  confidence: high
+  amount: 1,000円のチャージにつき250円を自己負担（介護保険料の所得段階により100円）。年間の入金上限12万円。
+- category: sonota
+  name: 痰の吸引器の購入費の一部支給
+  name_on_page: 痰等吸引器購入費の支給
+  summary: 痰を自力で出しにくい方の、吸引器の購入費の一部を支給する。
+  who: {}
+  at_application:
+  - 65歳以上の在宅の方等で、自力で痰等の排出が困難
+  where: 区役所・総合支所の担当課、地域包括支援センター
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/zaitaku/fukushi/kyufu.html
+  confidence: high
+  amount: 世帯の生計中心者の市県民税額に応じた費用負担がある
+- category: sonota
+  name: 養護老人ホームでの短期宿泊（7日以内）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホームに7日以内で泊まり、日常生活の指導・支援を受ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、日常生活に指導・支援が必要な方
+  where: 区役所・総合支所の担当課、地域包括支援センター
+  url: https://www.city.sendai.jp/hokatsushien/kurashi/kenkotofukushi/korenokata/zaitaku/gaihaku/shukuhaku.html
+  confidence: high
+  amount: 1日380円のほか、施設が定める食材料費等。生活保護の方は食材料費等のみ。
+not_found:
+- iro
+- nichijo-yogu
+- mimamori
