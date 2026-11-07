@@ -145,7 +145,29 @@ def check_city(raw: dict, cache: Path, names: dict[str, str]) -> tuple[dict | No
             continue
         programs.append(p)
     return {"code": code, "name": name, "site": site, "site_level": site_level, "programs": programs,
-            "not_found": [c for c in raw.get("not_found") or [] if c in CATEGORIES]}, log
+            "not_found": [c for c in raw.get("not_found") or [] if c in CATEGORIES],
+            "read_via": raw.get("read_via", "subagent")}, log
+
+
+def enrich(city: dict, cache: Path) -> dict:
+    """裁定役に渡す頁の抜き出しを付ける（page_text・page_excerpt・more_urls・more_excerpts）。"""
+    for p in city["programs"]:
+        p["page_text"] = page_path(p["url"], cache)
+        p["page_excerpt"] = excerpt(Path(p["page_text"]).read_text(), p["name_on_page"])
+        # 条件が書かれた別の公式の頁（対象者の表・要綱の PDF など）。公式のホストで 200 のものだけ残す
+        more, ex = [], []
+        for u in (p.get("more_urls") or [])[:3]:
+            if isinstance(u, str) and u.startswith("http") and host_ok(u, city["site"]):
+                st, txt = fetch(u, cache)
+                if st == 200 and txt.strip():
+                    more.append(u)
+                    ex.append(re.sub(r"\s+", " ", unicodedata.normalize("NFKC", txt))[:3000])
+        p["more_urls"], p["more_excerpts"] = more, ex
+    return city
+
+
+READ_BY = {"subagent": "Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）",
+           "api": "Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）"}
 
 
 def problems(p: dict) -> str:
@@ -288,18 +310,7 @@ def main(argv: list[str]) -> None:
             if city is None:
                 summary.append((code, found, 0))
                 continue
-            for p in city["programs"]:
-                p["page_text"] = page_path(p["url"], cache)
-                p["page_excerpt"] = excerpt(Path(p["page_text"]).read_text(), p["name_on_page"])
-                # 条件が書かれた別の公式の頁（対象者の表・要綱の PDF など）。公式のホストで 200 のものだけ残す
-                more, ex = [], []
-                for u in (p.get("more_urls") or [])[:3]:
-                    if isinstance(u, str) and u.startswith("http") and host_ok(u, city["site"]):
-                        st, txt = fetch(u, cache)
-                        if st == 200 and txt.strip():
-                            more.append(u)
-                            ex.append(re.sub(r"\s+", " ", unicodedata.normalize("NFKC", txt))[:3000])
-                p["more_urls"], p["more_excerpts"] = more, ex
+            enrich(city, cache)
             (passed_dir / f"{code}.json").write_text(json.dumps(city, ensure_ascii=False, indent=1))
             summary.append((code, found, len(city["programs"])))
         else:
@@ -310,7 +321,8 @@ def main(argv: list[str]) -> None:
             if judged:
                 city["programs"] = apply_verdicts(city["programs"], json.loads(jf.read_text()), all_log, code)
             OUT.mkdir(parents=True, exist_ok=True)
-            doc = to_yaml(city, today, "Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）")
+            via = "api" if str(city.get("read_via", "")).startswith("api") else "subagent"
+            doc = to_yaml(city, today, READ_BY[via])
             doc["review"]["judged_by"] = "自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）" if judged else "なし"
             (OUT / f"{code}.yaml").write_text(yaml.safe_dump(doc, allow_unicode=True, sort_keys=False, width=200))
             summary.append((code, n, len(city["programs"])))
