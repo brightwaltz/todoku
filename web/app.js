@@ -862,14 +862,17 @@ function renderOptions(options) {
   show("options-box", options.length > 0);
 }
 
-// ---- 第 3 の層（T-199）----
-// step_view の municipal（住所の市区町村に rules/municipal/<団体コード>.yaml があるときだけ。無ければ null）。
-// 市区町村の公式サイトから Claude が集め、機械で確かめた制度で、人は照らしていない。確かな層（results）と分けて、畳んだ枠に出す。
+// ---- 第 3 の層（T-199・T-201）----
+// step_view の municipal（住所の市区町村か、その都道府県に rules/municipal/<コード>.yaml があるときだけ。無ければ null）。
+// 市区町村・都道府県の公式サイトから Claude が集め、機械で確かめた制度で、人は照らしていない。確かな層（results）と分けて、畳んだ枠に出す。
 // results には入っていないので、制度の地図・見立ての帯・押した数の図・いま先にすること・申請メモには入らない。並びはサーバのまま
+// T-201：都道府県の分と市区町村の分が 1 つの並びで来る。各行の by（申し込む先の自治体の名前）ごとに小見出しを分ける。
+// 都道府県の制度は結果の画面ではこの枠だけに出る（rules/pref_programs.yaml は /city/ の頁だけ）
 const MUNI_LOW = "一覧の説明だけから読んだもの";
 function muniCard(p) {
   return el("details", { class: "card muni-item", "data-id": p.id },
-    el("summary", {}, el("span", { class: `pill ${p.status}` }, p.status_label), " ", p.name),
+    el("summary", {}, el("span", { class: `pill ${p.status}` }, p.status_label), " ", p.name,
+      p.category_label ? el("span", { class: "muni-cat" }, p.category_label) : ""),
     el("p", {}, p.summary),
     p.confidence === "low" ? el("p", { class: "note" }, MUNI_LOW) : "",
     el("p", {}, "申請先：", p.where),
@@ -877,11 +880,26 @@ function muniCard(p) {
     el("ul", { class: "plain note" }, el("li", {}, el("a", { href: p.url, target: "_blank", rel: "noopener" }, p.name_on_page))));
 }
 
+// by ごとに分ける。組の並びは、サーバの並び（見込みの近い順）で最初に出てきた順。組の中もサーバの並びのまま。
+// by の無い行（T-199 の形）は、住所の市区町村の名前（fallback）の組に入れる
+function muniGroups(programs, fallback) {
+  const groups = new Map();
+  for (const p of programs) {
+    const by = p.by || fallback;
+    if (!groups.has(by)) groups.set(by, []);
+    groups.get(by).push(p);
+  }
+  return [...groups].map(([by, list]) => ({ by, programs: list }));
+}
+
 function renderMunicipal(m) {
   const programs = (m && m.programs) || [];
   $("muni-n").textContent = `${programs.length} 件`;
   $("muni-mark").textContent = m ? m.mark : "";
-  $("muni-list").replaceChildren(...programs.map(muniCard));
+  $("muni-list").replaceChildren(...muniGroups(programs, m ? m.name : "").map((g) =>
+    el("section", { class: "muni-by", "data-by": g.by },
+      el("h3", {}, `${g.by}の制度`, el("span", { class: "n" }, `${g.programs.length} 件`)),
+      g.programs.map(muniCard))));
   show("muni-box", programs.length > 0);
 }
 
