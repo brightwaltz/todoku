@@ -108,22 +108,6 @@ programs:
   where: 高齢福祉課
   url: https://www.city.yokkaichi.lg.jp/www/contents/1600249207682/index.html
   confidence: high
-- category: sonota
-  name: 認知症の人の個人賠償責任保険（市が加入）
-  name_on_page: 認知症高齢者等あんしん保険事業
-  summary: 事故で賠償責任を負った場合に備え、市が個人賠償責任保険に加入する。
-  who:
-    at_home: true
-    flags:
-    - wandering_risk
-  at_application:
-  - 65歳以上の認知症の人、または40〜64歳の要介護・要支援者
-  - 認知症が原因で道に迷うおそれがある
-  - 認知症高齢者等SOSメールの事前登録をしている
-  where: 高齢福祉課
-  url: https://www.city.yokkaichi.lg.jp/www/contents/1600249207682/index.html
-  confidence: high
-  amount: 1事故あたり最高1億円が保険会社から支払われる。
 - category: iro
   name: 家族介護慰労金
   name_on_page: 家族介護慰労事業
