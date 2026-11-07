@@ -103,7 +103,7 @@ def test_unexpected_stop_gets_one_wrap_up(tmp_path):
     client = FakeClient([_msg("tool_use", ""), _msg("end_turn", "```json\n" + json.dumps(record) + "\n```")])
     tally: dict = {}
     raw, _ = api.read_city(client, "261009", {"261009": "京都市"}, api.Budget(10, 2), "high", tmp_path, tally)
-    assert client.calls[1]["messages"][-1] == {"role": "user", "content": api.WRAP_UP}
+    assert client.calls[1]["messages"][-1] == {"role": "user", "content": [{"type": "text", "text": api.WRAP_UP}]}
     assert tally["wrapped"] and raw["code"] == "261009"
     # 2 回目も JSON が無ければ、それ以上は頼まずに失敗にし、かかった費用は tally に残る
     # （そのあと道具なしで JSON を取り出す呼び出しが 1 回ある）
@@ -112,3 +112,16 @@ def test_unexpected_stop_gets_one_wrap_up(tmp_path):
     with pytest.raises(ValueError):
         api.read_city(client, "261009", {"261009": "京都市"}, api.Budget(10, 2), "high", tmp_path, tally)
     assert len(client.calls) == 3 and tally["calls"] == 2 and tally["usd"] > 0
+
+
+@needs_work
+def test_pending_tool_use_gets_a_result_before_the_wrap_up(tmp_path):
+    """釧路市（11/7）：返事に tool_use が残ったまま止まったら、その答え（tool_result）を先に置いてから記録を頼む。"""
+    record = {"site_host": "www.city.kushiro.lg.jp", "programs": []}
+    stuck = NS(stop_reason="tool_use", usage=_usage(),
+               content=[NS(type="text", text=""), NS(type="tool_use", id="toolu_x", name="web_fetch", input={})])
+    client = FakeClient([stuck, _msg("end_turn", "```json\n" + json.dumps(record) + "\n```")])
+    api.read_city(client, "012068", {"012068": "釧路市"}, api.Budget(10, 2), "high", tmp_path)
+    first = client.calls[1]["messages"][-1]["content"][0]
+    assert first["type"] == "tool_result" and first["tool_use_id"] == "toolu_x"
+    assert all(t["allowed_callers"] == ["direct", "code_execution_20260120"] for t in client.calls[0]["tools"])
