@@ -66,6 +66,7 @@ programs:
   summary: 行方不明のおそれのある方を事前に登録し、警察や地域と連携して早期発見につなげる。
   who:
     flags:
+    - dementia_diagnosis
     - wandering_risk
   at_application:
   - 行方不明となるおそれのある認知症高齢者等（年齢や居住の条件は頁に記載なし）
