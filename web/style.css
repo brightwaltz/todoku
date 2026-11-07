@@ -141,9 +141,50 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .scene-item { pointer-events: none; opacity: 0; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease; }
 .scene-item.on { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .scene-item { transition: none; transform: none; } }
-/* 紹介の動画（T-140）。札の内側の幅いっぱい、広い画面では 480px まで。width・height の属性と aspect-ratio で、静止画が届く前から場所を取る */
-.intro { margin: 18px 0 0; }
-.intro video { display: block; width: 100%; max-width: 480px; height: auto; aspect-ratio: 1 / 1; border-radius: 10px; background: var(--soft); }
+/* 紹介の動画の札（T-140 → T-197）。押す前は静止画（PC 160px・スマホ 96px）と題・手順の小さな札。押すと静止画を外して、
+   札の幅の中央に動画（最大 560px）とその下の自前の操作を出す。色・角・枠はほかの札と同じで、黒は使わない。
+   width・height の属性と aspect-ratio で、静止画・動画が届く前から場所を取る */
+.intro { display: grid; grid-template-columns: 160px minmax(0, 1fr); grid-template-rows: auto auto 1fr;
+  grid-template-areas: "thumb title" "thumb silent" "thumb steps"; column-gap: 16px; align-items: start; }
+.intro h2 { grid-area: title; margin: 0; font-size: 1.125rem; }
+.intro-silent { grid-area: silent; margin: 2px 0 0; color: var(--muted); font-size: .875rem; }
+.intro-thumb { grid-area: thumb; position: relative; display: block; width: 160px; padding: 0; border: 1px solid var(--line);
+  border-radius: 10px; overflow: hidden; background: var(--soft); }
+.intro-thumb img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; }
+.intro-play { position: absolute; inset: 0; margin: auto; width: 48px; height: 48px; }
+.intro-play circle { fill: var(--accent); }
+.intro-play path { fill: var(--accent-ink); }
+.intro-thumb:hover .intro-play circle { fill: #0a5a4c; }
+.intro-thumb:focus-visible, .intro-btn:focus-visible { outline: 3px solid #9fd3c7; outline-offset: 2px; }
+.intro-steps { grid-area: steps; list-style: none; margin: 8px 0 0; padding: 0; counter-reset: intro-step; }
+.intro-steps li { counter-increment: intro-step; display: flex; gap: 8px; align-items: baseline; padding: 3px 8px; margin: 0 -8px;
+  border-radius: 8px; font-size: .9375rem; transition: background-color .2s; }
+.intro-steps li::before { content: counter(intro-step); flex: none; display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem;
+  border: 1.5px solid var(--accent); border-radius: 50%; color: var(--accent); font-size: .8125rem; font-weight: 700; line-height: 1; }
+.intro-steps li[aria-current="step"] { background: #e3f1ec; font-weight: 700; }
+.intro-steps li[aria-current="step"]::before { background: var(--accent); color: var(--accent-ink); }
+.intro.open { grid-template-columns: minmax(0, 1fr); grid-template-rows: none; grid-template-areas: "title" "silent" "player" "steps"; }
+.intro.open .intro-thumb { display: none; }
+.intro-player { grid-area: player; }
+.intro-player video { display: block; width: 100%; max-width: 560px; height: auto; aspect-ratio: 1 / 1; margin: 12px auto 0;
+  border-radius: 10px; background: var(--soft); cursor: pointer; }
+.intro-controls { display: flex; align-items: center; gap: 10px; max-width: 560px; margin: 8px auto 0; }
+.intro-btn { flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 48px; padding: 4px 12px;
+  border: 2px solid var(--accent); border-radius: 10px; background: #fff; color: var(--accent); font-size: .9375rem; font-weight: 700; }
+.intro-btn svg { width: 16px; height: 16px; fill: currentColor; }
+/* 止まっている間は ▶、流れている間は ❚❚（.playing は app.js が付ける） */
+.intro-icon-pause, .intro.playing .intro-icon-play { display: none; }
+.intro.playing .intro-icon-pause { display: block; }
+.intro-bar { flex: 1 1 auto; min-width: 40px; height: 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--soft); overflow: hidden; }
+.intro-fill { display: block; width: 100%; height: 100%; background: var(--accent); transform-origin: left center; transform: scaleX(var(--p, 0)); }
+.intro-time { flex: none; color: var(--muted); font-size: .875rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 32.5em) {
+  .intro { grid-template-columns: 96px minmax(0, 1fr); grid-template-rows: auto 1fr auto; grid-template-areas: "thumb title" "thumb silent" "steps steps"; column-gap: 12px; }
+  .intro-thumb { width: 96px; }
+  .intro-play { width: 40px; height: 40px; }
+  .intro-controls { gap: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .intro-steps li { transition: none; } }
 #samples { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--line); }
 #samples .note { margin-top: 8px; }
 #samples .examples { margin-top: 6px; }
@@ -567,4 +608,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .primary:disabled { border-color: GrayText; }
   .place-tab[aria-pressed="true"] { forced-color-adjust: none; background: Highlight; border-color: Highlight; color: HighlightText; }
   .seg, .effort-swatch, .pmap-swatch, .map-swatch { forced-color-adjust: none; }
+  /* T-197：紹介の動画の緑の丸と進み具合の線は色で描くので残す。静止画のボタンには系の枠を付ける */
+  .intro-play, .intro-fill, .intro-steps li[aria-current="step"]::before { forced-color-adjust: none; }
+  .intro-thumb { border: 2px solid ButtonText; }
 }

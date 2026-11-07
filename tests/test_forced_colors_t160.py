@@ -58,4 +58,6 @@ def test_forced_block_only_touches_listed_selectors():
     # forced-colors の中に、ふつうの画面の規則を動かすものを紛れ込ませない（ここに足すときは検査も足す）
     sels = re.findall(r"^\s*([^{}\n]+?)\s*\{", forced_block(), re.M)
     assert sels == ['.primary', '.primary:disabled', '.place-tab[aria-pressed="true"]',
-                    '.seg, .effort-swatch, .pmap-swatch, .map-swatch']
+                    '.seg, .effort-swatch, .pmap-swatch, .map-swatch',
+                    # T-197：紹介の動画の緑の丸・進み具合の線・いまの手順の番号は色で描くので残し、静止画のボタンに系の枠
+                    '.intro-play, .intro-fill, .intro-steps li[aria-current="step"]::before', '.intro-thumb']

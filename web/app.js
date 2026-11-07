@@ -1751,3 +1751,57 @@ const healthReady = earlyFetch("/api/health").then((r) => r.json()).then((h) => 
 window.addEventListener("hashchange", () => { if (openSite && location.hash === ADMIN_HASH) openAdminGate(); });
 // 合言葉が要る置き場かを知ってから開く（知る前に結果を出すと、まとめを送って合言葉の欄へ飛ばされる）
 if (keptAtLoad) healthReady.then(() => restoreFrom(location.hash.slice(KEEP_PREFIX.length)));
+
+// 紹介の動画（T-197）。押す前は小さな札。静止画を押すとその場で広げて流す（ダイアログは使わない）。ブラウザの再生の帯は
+// 焼き込みの字幕に重なるので使わず、画の下の自前の操作（再生と一時停止・進み具合の線・時間・もう一度）で動かす。
+// 再生中は、いまの場面の手順に印（aria-current="step"）を付ける。場面の切れ目の秒は web/intro-scenes.json（{"steps": [始まりの秒…], "duration": 秒}）。
+// play() は押した出来事の中ですぐ呼ぶ（JSON を待ってからだと、WebKit が利用者の操作と見なさず再生を断ることがある）。JSON が取れなくても流れる
+(() => {
+  const card = $("intro"), video = $("intro-video");
+  if (!card || !video) return;
+  const items = [...$("intro-steps").children];
+  let starts = [], total = 0, scenes = null;
+  const clock = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  const length = () => total || (Number.isFinite(video.duration) ? video.duration : 0);
+  function paint() {
+    const d = length(), t = Math.min(video.currentTime, d || video.currentTime);
+    const end = Math.round(d);
+    const now = video.ended ? end : Math.min(Math.floor(t), end);
+    const text = `${clock(now)} / ${clock(end)}`;
+    $("intro-time").textContent = text;
+    const bar = $("intro-bar");
+    bar.setAttribute("aria-valuemax", String(end));
+    bar.setAttribute("aria-valuenow", String(now));
+    bar.setAttribute("aria-valuetext", text);
+    $("intro-fill").style.setProperty("--p", d ? String(video.ended ? 1 : Math.min(t / d, 1)) : "0");
+    let at = -1;
+    starts.forEach((s, i) => { if (t + 0.05 >= s) at = i; });
+    items.forEach((li, i) => { if (i === at) li.setAttribute("aria-current", "step"); else li.removeAttribute("aria-current"); });
+  }
+  function state() {
+    const playing = !video.paused && !video.ended;
+    card.classList.toggle("playing", playing);
+    $("intro-toggle").setAttribute("aria-label", playing ? "一時停止" : "再生");
+    paint();
+  }
+  function play() { const p = video.play(); if (p) p.catch(state); }
+  $("intro-open").addEventListener("click", () => {
+    card.classList.add("open");
+    $("intro-open").setAttribute("aria-expanded", "true");
+    show("intro-player");
+    play();
+    $("intro-toggle").focus();
+    if (!scenes) scenes = fetch("/static/intro-scenes.json").then((r) => (r.ok ? r.json() : null)).then((j) => {
+      if (j && Array.isArray(j.steps)) {
+        starts = j.steps.map(Number).filter(Number.isFinite).slice(0, items.length);
+        total = Number(j.duration) > 0 ? Number(j.duration) : 0;
+        paint();
+      }
+    }).catch(() => { /* 切れ目が分からなければ、手順の印を付けずに流す */ });
+  });
+  $("intro-toggle").addEventListener("click", () => { if (video.paused || video.ended) play(); else video.pause(); });
+  $("intro-again").addEventListener("click", () => { video.currentTime = 0; play(); });
+  video.addEventListener("click", () => $("intro-toggle").click());
+  for (const ev of ["play", "playing", "pause", "ended", "loadedmetadata"]) video.addEventListener(ev, state);
+  video.addEventListener("timeupdate", paint);
+})();
