@@ -1,0 +1,104 @@
+city: "332020"
+name: 倉敷市
+site: www.city.kurashiki.okayama.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品（紙おむつ等）の支給
+    where: 健康長寿課か、水島・児島・玉島支所の福祉課、真備支所の真備保健福祉課（介護者の住む地区で決まる）
+    conditions:
+      - 家で介護する人の紙おむつなどの購入費を助成する。買う前に申請し、入院・入所中は対象外
+      - 区分1：6 か月以上ねたきりか認知症の 65 歳以上の人、重度身体障がいの人を介護。上限 30,000 円
+      - 区分1 は本人と介護者の両方の世帯に所得税の課税者がいない。領収書を出すと口座に振り込む
+      - 区分2：要介護 4・5 の人を介護し、両方の世帯に所得税・市民税の課税者がいない。上限 75,000 円
+      - 区分2 は決定通知と認印を持って見積りの業者から受け取る。額は決定した月で変わる
+    sources:
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/elderly/1004318/1004325.html
+        publisher: 倉敷市
+        title: 介護用品（紙おむつ等）の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 給食サービス（高齢者等給食サービス事業）
+    where: 担当のケアマネジャーが調べて市へ申請する。いなければ地区の高齢者支援センター。問い合わせは健康長寿課か各支所の福祉課
+    conditions:
+      - 調理・買い物が難しい在宅の人で、65 歳以上のひとり暮らしか、65 歳以上だけの世帯の人など
+      - 障がい者手帳を持つ人や、昼間ひとりなどになる人も対象。65 歳未満の要介護の人もこれに準じる
+      - 調理したことがなく作れない人や、治療食が要る人は対象にならない
+      - 昼食の弁当を 1 日 1 回届けて安否を確かめる。1 食 430 円の負担で、年末年始は休み
+      - 決定の通知が届いたら、指定の弁当業者を 1 つ選んで連絡する
+    sources:
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/elderly/1004318/1011233.html
+        publisher: 倉敷市
+        title: 給食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 倉敷市安心おかえりシール・認知症GPS端末購入費等補助金の助成
+    where: 健康長寿課 地域包括ケア推進室。シールは水島・児島・玉島支所の福祉課と真備支所の真備保健福祉課でも申請できる
+    conditions:
+      - シール：在宅の人で、認知症の診断で行方不明のおそれがあるか、警察などに保護されたことがある
+      - 家族か介護者が申請し、QR コード付きのシールを 50 枚無料でもらう。印鑑とスマートフォンを持っていく
+      - GPS：市内に住む在宅の 40 歳以上で、要介護・要支援の認定か認知症の診断があり、保険料の滞納がない
+      - 行方不明になったことがあるか、そのおそれがある。端末の購入費かレンタル初月分を 10,000 円まで
+      - GPS は買う前・借りる前に申請する。後からの申請は受け付けない
+    sources:
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/elderly/1004100/1012661/1004131.html
+        publisher: 倉敷市
+        title: 倉敷市安心おかえりシール
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/elderly/1004100/1012661/1010913.html
+        publisher: 倉敷市
+        title: 倉敷市認知症GPS端末購入費等補助金の助成
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 介護手当の支給・家族介護慰労金の支給
+    where: 健康長寿課か、水島・児島・玉島支所の福祉課、真備支所の真備保健福祉課（介護者の住む地区で決まる）
+    conditions:
+      - 介護手当：65 歳以上のねたきりか認知症の人を家で 6 か月以上介護する人に年 40,000 円
+      - 入院・施設入所・ショートステイなどの期間は 6 か月に数えない。所得の条件は頁に書かれていない
+      - 慰労金：要介護 4・5 の認定から 1 年以上たち、申請前の 1 年に介護保険のサービスを使っていない
+      - 慰労金は市民税非課税の世帯で、申請前の 1 年に 3 か月以上の入院・入所が無い。年 100,000 円
+      - 2 つは重ねて受けられない。申請書・民生委員の状況調査票・医師の診断書を出す
+    sources:
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/elderly/1004328/1004329.html
+        publisher: 倉敷市
+        title: 介護手当の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/elderly/1004328/1004330.html
+        publisher: 倉敷市
+        title: 家族介護慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（後見人などの報酬の助成）
+    where: 社会福祉部 福祉援護課
+    conditions:
+      - 介護保険か障がい福祉のサービスを使える人で、後見人などへの報酬を払えないときに一部を助成する
+      - 生活保護か、単身は年収見込みと資産がどちらも 150 万円以下（2 人以上の世帯は 200 万円以下）
+      - 上限は月 28,000 円（施設に入っている人は月 18,000 円）。後見人などが親族なら対象外
+      - 報酬を決めた審判の日から 1 年以内に申請する。本人や親族が申し立てた場合も対象
+      - 申立て費用の助成は頁に無い。身寄りがないときなどは市長が申し立てる
+    sources:
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/welfare/1004296/1012641/1004303.html
+        publisher: 倉敷市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.kurashiki.okayama.jp/fukushi/welfare/1004296/1012641/1010927.html
+        publisher: 倉敷市
+        title: 成年後見制度の利用
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
