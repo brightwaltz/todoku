@@ -1,0 +1,166 @@
+city: 013994
+name: 京極町
+site: www.town-kyogoku.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅介護の家族へのオムツ等の費用助成
+  name_on_page: 家族介護支援事業
+  summary: 在宅で介護が必要な高齢者や重度心身障害者を介護する家族に、オムツ等の費用を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 介護度・寝たきり度・身体障害認定状況・課税状況などを点数化して認定された方
+  where: 役場住民福祉課
+  url: https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+  confidence: high
+  amount: 1 人当たり月額 6,250 円まで
+- category: haishoku
+  name: 夕食の配食サービス
+  name_on_page: 配食サービス
+  summary: 月〜金曜の夕食を最大週5回届ける。制限食にも対応する。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯の方
+  - 心身の障害・傷病等で調理が困難な方
+  - 栄養改善と定期的な安否確認が必要な方
+  - または社協会長が必要と認めた方
+  - 申請後に判定会議で提供の可否を決める
+  where: 京極町地域包括支援センター、京極町社会福祉協議会
+  url: https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+  confidence: high
+  amount: 料金は 1 食 500 円
+- category: mimamori
+  name: 社協職員による電話の安否確認
+  name_on_page: 電話サービス
+  summary: 社協職員が週1回ほど電話をかけ、安否と困りごとを聞く。
+  who: {}
+  at_application:
+  - 町内に住むおおむね65歳以上の一人暮らしまたは夫婦世帯
+  - または社協会長が必要と判断した方
+  where: 京極町地域包括支援センター、京極町社会福祉協議会
+  url: https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 通院の送迎（移送サービス）
+  name_on_page: 移送サービス
+  summary: 公共交通機関の利用や定期的な通院が難しい方の通院を送迎する。
+  who: {}
+  at_application:
+  - 町内に住むおおむね65歳以上の一人暮らしまたは夫婦世帯
+  - または社協会長が必要と認めた方
+  - 人工透析の方のみ町外への移送
+  where: 京極町地域包括支援センター、京極町社会福祉協議会
+  url: https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+  confidence: high
+  amount: 1 往復 230 円（片道でも同額）
+- category: sonota
+  name: 高齢者世帯などの除雪
+  name_on_page: 除雪サービス
+  summary: 通常の出入口と緊急避難口、住宅の窓下の雪を除く。
+  who: {}
+  at_application:
+  - 70歳以上のみの世帯で、町内に親族がなく除雪支援を要する世帯
+  - または重度（1・2級）身体障害者で構成される世帯
+  - または社協会長が必要と認めた世帯
+  where: 京極町地域包括支援センター、京極町社会福祉協議会
+  url: https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸出し
+  name_on_page: 緊急通報システム
+  summary: 自宅の電話機と端末機をつなぎ、ボタンで受信センターへ通報できる一式を無償で貸す。
+  who: {}
+  at_application:
+  - 町内に住む65歳以上の一人暮らしまたは夫婦世帯
+  - 健康状態・身体状況から日常生活動作に支障がある方
+  where: 京極町地域包括支援センター、京極町社会福祉協議会
+  url: https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+  confidence: high
+  amount: 端末機等一式は無償で貸出し
+- category: mimamori
+  name: かぎ預かりと日頃の見守り
+  name_on_page: 一人暮らし高齢者等かぎ預かり事業
+  summary: 不安のある方の自宅のかぎを預かって緊急時に対応し、町内会と協力して見守る。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者・障がい者、その他心配のある方
+  where: 京極町地域包括支援センター、京極町社会福祉協議会
+  url: https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+  confidence: high
+- category: yutai
+  name: 京極温泉の入館料免除証明書
+  name_on_page: 京極温泉入館料助成事業
+  summary: 免除証明書を提示すると、京極温泉に週2回まで無料で入館できる。
+  who: {}
+  at_application:
+  - 町内に住む満70歳以上の方
+  - または65〜69歳で世帯全員が65歳以上かつ非課税の方
+  - または69歳までの障害者手帳等の所持者、ひとり親世帯の親と18歳以下の子
+  - 申請により証明書を発行
+  where: 役場住民福祉課
+  url: https://www.town-kyogoku.jp/uploaded/attachment/2894.pdf
+  confidence: high
+  amount: 入館料が週 2 回まで無料
+  more_urls:
+  - https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+- category: gaishutsu
+  name: 高齢者デマンドタクシー
+  name_on_page: 高齢者デマンドタクシー
+  summary: 町内の移動でタクシーを使うとき、1回（片道）200円で利用できる。事前登録が要る。
+  who: {}
+  at_application:
+  - 65歳以上、または64歳以下の障害者手帳等をお持ちの方
+  - 交通移動手段がない、免許を自主返納した（予定）、または屋外の移動が困難
+  - 事前登録が必要
+  - 障害者交通費助成を受けている方は対象外
+  where: 役場住民福祉課
+  url: https://www.town-kyogoku.jp/page/1163.html
+  confidence: high
+  amount: 1 回（片道）200 円。運行は平日 8〜17 時、町内のみ
+  more_urls:
+  - https://www.town-kyogoku.jp/uploaded/attachment/2536.pdf
+  - https://www.town-kyogoku.jp/uploaded/attachment/2894.pdf
+- category: haikai
+  name: あんしんネットワークの登録
+  name_on_page: あんしんネットワーク
+  summary: 認知症等で所在不明になったとき、町と関係機関が初動で捜索する。事前に登録する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内に住み、認知症等で所在不明になる心配のある方
+  - 登録申請書に全身写真と顔写真を添えて提出
+  where: 役場住民福祉課
+  url: https://www.town-kyogoku.jp/page/1164.html
+  confidence: high
+  amount: 費用は無料
+  more_urls:
+  - https://www.town-kyogoku.jp/uploaded/life/1169_3378_misc.pdf
+- category: sonota
+  name: 福祉灯油の購入券
+  name_on_page: 福祉灯油助成事業
+  summary: 灯油の高騰を受け、非課税世帯などに灯油 10,000 円分の購入券を給付する。
+  who: {}
+  at_application:
+  - 非課税世帯で、世帯員全員が令和8年1月1日に町に住民票がある
+  - 65歳以上で構成される世帯、ひとり親世帯、障害者手帳等のある方がいる世帯
+  where: 京極町役場（ガイドブックには申請先の記載がない）
+  url: https://www.town-kyogoku.jp/uploaded/attachment/2894.pdf
+  confidence: high
+  amount: 灯油 10,000 円分の購入券
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

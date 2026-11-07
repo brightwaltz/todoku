@@ -1,0 +1,128 @@
+city: 015148
+name: 枝幸町
+site: www.esashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: koken
+  name: 成年後見制度の利用支援（町長申立て・費用と報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族が申し立てられない人の申立てを町長が行い、被保護者などは費用と報酬を助成する。
+  who: {}
+  at_application:
+  - 認知症・知的障がい・精神障がいなどで判断能力が不十分
+  - 身寄りや親族による後見等開始の審判の申立てができない
+  - 申立費用・報酬の助成は、生活保護法の被保護者などが対象の場合
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/fukushi.html
+  confidence: high
+  amount: 申立費用と後見人などへの報酬の一部または全部を町が助成
+- category: haishoku
+  name: 高齢者への配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい高齢者等へ栄養のとれた食事を届け、声かけで安否も確かめる。
+  who: {}
+  at_application:
+  - 食事の調理が困難な高齢者等（年齢や世帯の細かな条件は頁に無い）
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/fukushi.html
+  confidence: low
+- category: mimamori
+  name: 電話による安否確認等サービス
+  name_on_page: 安否確認等サービス
+  summary: 70歳以上の単身世帯などへ、定期的に電話で安否と健康状態を確かめる。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 相談を受けたときは必要に応じて関係機関と連携する
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/fukushi.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: 在宅の高齢者等に緊急通報装置などを貸し出し、急病や緊急時に備える。
+  who:
+    at_home: true
+  at_application:
+  - 基本料金と通話料金は自己負担
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/fukushi.html
+  confidence: high
+  amount: 無料（基本料金および通話料金は自己負担）
+  more_urls:
+  - https://www.esashi.jp/health/care/kakushuhojyojigyo.html
+- category: kaigo-yohin
+  name: 家族介護者への介護用品購入費の助成
+  name_on_page: 家族介護者等助成事業
+  summary: 在宅で介護する家族の負担を減らすため、介護用品の購入費を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で介護している家族（要介護度などの細かな条件は頁に無い）
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/fukushi.html
+  confidence: high
+  amount: 1か月の購入費用の90％（上限7,000円）
+  more_urls:
+  - https://www.esashi.jp/health/care/kakushuhojyojigyo.html
+- category: gaishutsu
+  name: 高齢者の無料バスパスカード
+  name_on_page: 高齢者無料バス乗車助成事業
+  summary: 70歳以上の人に、町内を走るバスが無料で乗れるパスカードを交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/care/kakushuhojyojigyo.html
+  confidence: high
+  amount: 町内のバスが無料（乗車回数の制限なし）
+- category: gaishutsu
+  name: 通院のための移送サービス
+  name_on_page: 移送サービス
+  summary: 歩行などが難しく通院しにくい70歳以上の人の、自宅から町内の医療機関への通院を支援する。
+  who:
+    age_min: 70
+  at_application:
+  - 歩行等の問題で、一般の交通機関での通院が難しい
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/fukushi.html
+  confidence: low
+- category: sonota
+  name: 地域生活支援助成金・運転免許自主返納の一時金
+  name_on_page: 枝幸町地域生活支援助成事業
+  summary: 低所得の在宅高齢者などの生活費の一部と、免許返納時の一時金を助成する。
+  who: {}
+  at_application:
+  - 低所得の在宅の高齢者、中度以上の障がい者、ひとり親世帯など（所得基準等の審査あり）
+  - 免許返納の一時金は満75歳以上で、返納の翌日から1年以内の人
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/kakushuhojyojigyo.html
+  confidence: low
+  amount: 生活支援助成金は年24,000円、移送サービス利用等は年12,000円、免許自主返納時は30,000円（1回）
+  more_urls:
+  - https://www.esashi.jp/health/welfare/fukushi.html
+- category: sonota
+  name: 高齢者・障がい者世帯の除雪費の助成
+  name_on_page: 除雪支援助成金交付事業
+  summary: 自力で除雪が難しい高齢者や障がい者の世帯に、除雪費用の一部を助成する。
+  who: {}
+  at_application:
+  - 自力での除雪が困難な高齢者または障がい者の世帯
+  where: 保健福祉課福祉係
+  url: https://www.esashi.jp/health/welfare/fukushi.html
+  confidence: low
+not_found:
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo

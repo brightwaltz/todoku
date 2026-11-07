@@ -1,0 +1,68 @@
+city: '013617'
+name: 江差町
+site: www.hokkaido-esashi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 高齢者等緊急通報システムの設置（機器の貸与）
+  name_on_page: 高齢者等緊急通報システム設置事業
+  summary: 日常生活上注意を要する高齢者等に、家庭用の緊急通報機器を貸与する。
+  who: {}
+  at_application:
+  - 高齢者の日常生活上注意を要する方等
+  where: 高齢あんしん課 高齢者支援係
+  url: https://www.hokkaido-esashi.jp/modules/lifeinfo/content0028.html
+  confidence: low
+  amount: 設置料 2,500 円（設置時のみ）
+- category: sonota
+  name: 高齢者等の玄関先から生活道路までの除雪サービス
+  name_on_page: 在宅高齢者等除雪サービス事業
+  summary: 12月から3月の降雪日に、居宅の玄関先から生活道路等までを除雪する。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上のみの世帯で、除雪の労力等の確保が困難
+  - または、65 歳未満で身体障害者手帳 1・2 級等により、除雪の労力等の確保が困難
+  where: 高齢あんしん課 高齢者支援係
+  url: https://www.hokkaido-esashi.jp/modules/lifeinfo/content0028.html
+  confidence: high
+  amount: 1 シーズン 1,000 円
+- category: gaishutsu
+  name: 路線バス運賃の半額助成（乗車証）
+  name_on_page: 高齢者等交通費助成事業
+  summary: 町内を走る路線バスの運賃の2分の1を助成する乗車証を交付する。
+  who: {}
+  at_application:
+  - 65 歳以上の高齢者、または難病認定者（特定疾患者）
+  where: 高齢あんしん課 高齢者支援係
+  url: https://www.hokkaido-esashi.jp/modules/lifeinfo/content0028.html
+  confidence: high
+  amount: 江差町内の路線バス運賃の 2 分の 1
+- category: gaishutsu
+  name: 高齢者等の外出支援（移送用車両による送迎）
+  name_on_page: 高齢者等外出支援サービス事業
+  summary: 外出が困難な高齢者を、移送用の車両で町内に限って送り迎えする。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上で、一般の交通機関での外出が困難
+  - 寝たきり、車椅子の利用、または歩行に必ず介助者が要る人
+  - 介護保険サービスの適用を受けられる人は対象外
+  where: 高齢あんしん課 高齢者支援係
+  url: https://www.hokkaido-esashi.jp/modules/lifeinfo/content0028.html
+  confidence: high
+  amount: 1 回あたり 640 円。送迎は江差町内のみ
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai
+- chusha

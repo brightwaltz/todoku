@@ -1,0 +1,99 @@
+city: '015164'
+name: 豊富町
+site: www.town.toyotomi.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 介護負担軽減のための短期宿泊費の助成
+  name_on_page: 介護負担軽減短期宿泊費助成事業
+  summary: 介護保険のショートステイを使い切っても自宅の介護が難しい人の利用料の一部を補助する。
+  who: {}
+  at_application:
+  - 介護保険の短期入所生活介護の利用可能日数をすべて使い切った
+  - 引き続き自宅での介護が困難と認められる
+  - 対象は年度内で通算50日が限度
+  where: 保健推進課介護保険係
+  url: https://www.town.toyotomi.hokkaido.jp/section/hokensuishinka/vvrb7v0000005lfz.html
+  confidence: high
+  amount: 利用料の一部を町が補助（年度内で通算50日まで）
+- category: haishoku
+  name: 高齢者への配食サービス
+  name_on_page: 配食サービス
+  summary: 指定した曜日にお弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 保健推進課介護保険係
+  url: https://www.town.toyotomi.hokkaido.jp/section/hokensuishinka/vvrb7v0000005lfz.html
+  confidence: high
+- category: sonota
+  name: 医療機関での受診の介助
+  name_on_page: 医療機関受診介助
+  summary: 介助者が同行し、医療機関の受付から会計、薬の受け取りまで支援する。
+  who:
+    age_min: 65
+  at_application:
+  - 家族や親族、知人等による受診介助を受けられない
+  where: 保健推進課介護保険係
+  url: https://www.town.toyotomi.hokkaido.jp/section/hokensuishinka/vvrb7v0000005lfz.html
+  confidence: high
+- category: gaishutsu
+  name: 自宅と医療機関の送迎（外出支援）
+  name_on_page: 外出支援サービス
+  summary: 専用車両で、自宅から医療機関、町診療所から他市町村の医療機関などへ送迎する。
+  who:
+    age_min: 60
+  at_application:
+  - 移動手段がない（免許を返納した、車がない、自分で運転できない）
+  - 病気や身体の状況で公共交通機関の利用が難しい
+  - 町内に家族・親族がいない、または仕事などで送迎を頼めない
+  where: 保健推進課介護保険係
+  url: https://www.town.toyotomi.hokkaido.jp/section/hokensuishinka/vvrb7v0000005lfz.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者のハイヤー券の交付
+  name_on_page: 高齢者生活支援交通費助成
+  summary: 65歳以上で自家用車のない人に、基本料金相当のハイヤー券を年36枚交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住所があり、基準日4月1日に65歳以上
+  - 本人や配偶者が自家用車を持っていない（新規は民生委員の証明が要る）
+  - 重度肢体不自由者等交通費助成を受けている人は対象外
+  where: 町民課社会福祉係
+  url: https://www.town.toyotomi.hokkaido.jp/section/chominka/a7cug60000000u59.html
+  confidence: high
+  amount: 基本料金相当額のハイヤー券を年間1人36枚
+- category: kinkyu-tsuho
+  name: 高齢者への緊急通報システムの設置
+  name_on_page: 高齢者緊急通報システム
+  summary: ひとり暮らし等の高齢者の家に、救急ボタンなどの緊急通報の機器を設置する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上のひとり暮らし等で、町の住民基本台帳に記載がある
+  - 健康状態や身体状況から日常生活動作に支障がある
+  - 固定電話か携帯電話のどちらかを持っている
+  - 緊急時連絡先（家族等）1名以上の同意が要る
+  where: 保健推進課介護保険係
+  url: https://www.town.toyotomi.hokkaido.jp/section/hokensuishinka/ufvuj5000000hxsx.html
+  confidence: high
+  amount: 設置・利用・保守点検・撤去の費用は無料（紛失・破損や移転、鍵の作製は自己負担）
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

@@ -1,0 +1,150 @@
+city: '014656'
+name: 剣淵町
+site: www.town.kembuchi.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 寝たきり高齢者等の介護手当
+  name_on_page: 寝たきり高齢者等介護手当
+  summary: 在宅で寝たきり高齢者等を介護する人に、介護手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で、次のような人を介護している（支給は介護する人へ）
+  - 6か月以上寝たきりの高齢者・重度心身障害者・特定疾患者
+  - または、3か月を超えて介護を受けている重度の認知症高齢者
+  - 審査の上で支給を決定。証明書が要る場合がある
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 介護者が生活保護世帯か町民税非課税世帯なら月額10,000円、町民税課税世帯なら月額5,000円
+- category: kaigo-yohin
+  name: 寝たきり要介護高齢者等の介護用品の支給
+  name_on_page: 寝たきり要介護高齢者等介護用品助成
+  summary: 在宅の寝たきり要介護者等を介護する人に、紙おむつや尿とりパットなどを支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 在宅の寝たきり要介護高齢者等を介護する人
+  - 寝たきりの人は要介護4・5、認知症の人は要介護3・4・5の認定
+  - 前年度の世帯の所得を審査して助成額を決める
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 介護者が町民税非課税世帯なら月額10,000円以内、課税世帯なら月額5,000円以内
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 栄養バランスのとれた昼食を週2回以内届け、安否の確認も行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 町内に住む、おおむね65歳以上の単身者または65歳以上の高齢者のみの世帯
+  - 心身の障害や病気で、在宅での日常生活に支障があると町長が認めた人
+  - 所得制限がある
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 1食450円（昼食を週2回（火・金）以内）
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 除雪が難しい世帯の、居宅から道路までの通路と軒下の除雪を行う。
+  who: {}
+  at_application:
+  - 除雪を自力で行うのが難しく、世帯の全員が次のいずれかに当たる
+  - 心身の疾病等のある70歳以上の高齢者
+  - 身体障害者手帳1・2級、療育手帳A、精神障害者保健福祉手帳1級の人
+  - 要介護1〜5の認定を受けている人
+  - 所得制限があり、生活保護世帯は対象外
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 利用料は通路除雪が月額3,000円、軒下除雪が1時間500円（1シーズン5時間まで）
+- category: sonota
+  name: 高齢者等の除雪費の助成
+  name_on_page: 高齢者等除雪費助成事業
+  summary: 除雪事業者に頼んだシーズン契約除雪や屋根雪下ろしの費用の一部を助成する。
+  who: {}
+  at_application:
+  - 除雪を自力で行うのが難しく、世帯の全員が次のいずれかに当たる
+  - 心身の疾病等のある70歳以上、手帳1・2級等の人、要介護1〜5の人
+  - 所得制限があり、生活保護世帯は対象外
+  - 除雪を事業者に依頼する前に利用申請が必要
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 費用の2分の1。上限はシーズン契約除雪3万円（1世帯1回）、屋根雪下ろし5,000円（1世帯2回まで）
+- category: gaishutsu
+  name: 通院のタクシー料金の助成
+  name_on_page: 通院交通費助成事業（外出支援サービス）
+  summary: 公共交通を使えない人の通院のタクシー・ハイヤー料金の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住むおおむね65歳以上で、心身の障害や病気により公共交通の利用が困難
+  - 町内に、医療機関へ送迎できる親族がいない
+  - 介護保険の訪問介護で通院介助を受けられる人は除く。所得制限あり
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 片道1回5,000円を上限に料金の半額を助成（償還払い）。月に片道4回（年48回）まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ワンタッチで安全センターに通報できる装置と、連動する火災警報器を貸す。
+  who: {}
+  at_application:
+  - 次のいずれかに当たる人
+  - おおむね65歳以上の一人暮らしで、身体虚弱のため緊急時に動きにくい
+  - 寝たきりの高齢者（に準ずる人）を抱える高齢者のみの世帯
+  - 一人暮らしの重度身体障害者で、緊急時に機敏に行動できない
+  - 上記と同等で援護が必要と町長が認めた人
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 利用料は電話の基本料金と通話料。機器の設置経費・消耗品は町が負担
+- category: haikai
+  name: SOSネットワークへの登録
+  name_on_page: 剣淵町SOSネットワーク事業
+  summary: 認知症などで行方不明になった人を、警察・消防・地域の協力で早く捜し、保護する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 町に住民記録があり、在宅で認知症や障がい等により徘徊のおそれがある
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+- category: haikai
+  name: 徘徊者捜索機器等の購入助成
+  name_on_page: 剣淵町徘徊者捜索機器等購入助成事業
+  summary: 認知症の人の見守り機器や外出先を把握する機器の購入費の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 町に住民記録があり、認知症等をわずらい在宅で生活している
+  - 認知症の診断か主治医意見書の自立度Ⅱ以上、または障がいで行動障がいがある
+  - またはSOSネットワーク事業の登録者、町長が必要と認めた人
+  where: 健康福祉課 福祉介護グループ（ふれあい健康センター内）
+  url: https://www.town.kembuchi.hokkaido.jp/kurashi/%e5%81%a5%e5%ba%b7/%e9%ab%98%e9%bd%a2%e8%80%85%e7%a6%8f%e7%a5%89%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 機器等購入額の一部を助成（1世帯1回限り、上限3万円）
+not_found:
+- ribiyo
+- shingu
+- koken
+- hochoki
+- jutaku
+- mimamori
+- nichijo-yogu

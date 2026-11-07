@@ -1,0 +1,197 @@
+city: '014524'
+name: 鷹栖町
+site: www.town.takasu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者・障がい者への交通費助成
+  name_on_page: 交通費助成
+  summary: 高齢者や障がいのある人に、バスやハイヤーに使える交通券を交付する。
+  who: {}
+  at_application:
+  - 令和8年1月1日以前から町に住民票がある
+  - 令和8年4月1日現在で満80歳以上
+  - または身体障がい者1・2級、3級の一部（内臓疾患）
+  - または70歳以上で、持っている運転免許をすべて自主返納した
+  where: 健康福祉課 地域福祉係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1625.html
+  confidence: high
+  amount: 町営バス・道北バス・ハイヤーの交通券10,000円分（5,000円分×2通でも可）。人工透析などの人は30,000円分
+- category: yutai
+  name: お風呂優待券の交付
+  name_on_page: お風呂優待券の交付
+  summary: 対象の人に、お風呂などが無料で使える優待券を1人20枚交付する。
+  who: {}
+  at_application:
+  - 3か月以上町に住民票がある
+  - 令和8年度中に70歳以上になる人
+  - または身体・療育・精神の障がい者手帳を持っている人
+  where: 健康福祉課 地域福祉係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1625.html
+  confidence: high
+  amount: 優待券20枚（使い終えたら年度内に1回、追加で20枚）
+- category: sonota
+  name: 生きがいショートステイ
+  name_on_page: 生きがいショートステイ
+  summary: 体が弱い高齢者を介護する家族が介護できないとき、施設に一時的に泊まれる。
+  who:
+    age_min: 60
+  at_application:
+  - 体が弱い高齢者の介護を家族が病気・出産・冠婚葬祭・旅行・介護疲れなどでできない
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 1日 従来型個室3,660円・多床室3,220円（非課税世帯は2,160円・1,830円）、送迎200円（非課税世帯150円）
+- category: sonota
+  name: 生きがいミドルステイ
+  name_on_page: 生きがいミドルステイ
+  summary: 介護保険の給付限度を超えるとき、施設に一時的に泊まれる。
+  who: {}
+  at_application:
+  - 要介護認定を受けていて、介護保険の給付限度を超える場合
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 1日 従来型個室3,660円・多床室3,220円（非課税世帯は2,160円・1,830円）、送迎200円（非課税世帯150円）。年14日まで
+- category: sonota
+  name: ふれあい生活用具貸与（車いす）
+  name_on_page: ふれあい生活用具貸与
+  summary: 病気などで一時的に必要な高齢者に、車いすを貸し出す。
+  who:
+    age_min: 60
+  at_application:
+  - 体が弱く、病気などで一時的に生活用具が必要
+  - 要介護認定を受けている人は介護保険での利用
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 月額 町民税課税の人600円、非課税の人300円
+- category: nichijo-yogu
+  name: 日常生活用具の給付
+  name_on_page: 日常生活用具の給付
+  summary: 体が弱い高齢者に、自動消火器・電磁調理器などの用具を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らしや寝たきりなどの体が弱い人
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 世帯の所得に応じた負担がある
+- category: gaishutsu
+  name: 移送サービス
+  name_on_page: 移送サービス
+  summary: 寝たきりの高齢者を、福祉サービスの利用や受診のとき車いす対応車で送る。
+  who:
+    age_min: 60
+    flags:
+    - bedridden_6m
+  at_application:
+  - 介護タクシーを利用できる人は除く
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 町内500円（非課税世帯250円）、町外1,500円（非課税世帯750円）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 急病や事故のとき消防に通報できる機器を貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者や障がい者世帯など
+  - 設置にはアナログの電話回線が必要
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 月額 ペンダントありは1,000円（非課税世帯500円）、なしは800円（非課税世帯400円）
+- category: haikai
+  name: 徘徊者家族支援事業（ココセコム）
+  name_on_page: 徘徊者家族支援事業（ココセコム）
+  summary: 徘徊のおそれがある人を介護する家族に、位置情報（GPS）端末を貸し出す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知機能の低下がみられる40歳以上の人や障がいのある人を介護する家族
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1537.html
+  confidence: high
+  amount: 月1,320円。電話での位置確認は1回220円、現場急行は1回11,000円（1時間）、バッテリー交換は2,310円
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 除雪が難しい世帯の玄関・通路・1階の屋根などの除雪を町が行う。
+  who: {}
+  at_application:
+  - 自力で除雪が困難な70歳以上の人、手帳所持者、介護認定を受けている人のみの世帯
+  - または要介護4・5の人と介護者のみの世帯
+  - または身体障がい者手帳1〜3級（3級は内部障がい）・療育手帳A・精神障がい者保健福祉手帳1級の人と介護者のみの世帯
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 1時間 人力580円（非課税世帯290円）、機械860円（非課税世帯430円）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が困難な世帯に、安否確認を兼ねて夕食を月〜金曜に届ける。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の高齢者世帯、または障がい者世帯
+  - 調理が困難（制限食にも対応）
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 1食440円
+- category: sonota
+  name: 住宅の軽微修繕・環境整備事業
+  name_on_page: 住宅の軽微修繕・環境整備事業
+  summary: 窓ガラスのあて木や窓拭きなど、住まいの軽い手入れをしてもらえる。
+  who: {}
+  at_application:
+  - 高齢者の一人暮らしか高齢者夫婦世帯、または障がい者のみの世帯
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 1時間 500円（非課税世帯250円）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容師が自宅に来て調髪する。
+  who:
+    flags:
+    - bedridden_6m
+  at_application:
+  - 高齢者または障がい者
+  - 自分で理美容院へ行くことができない
+  where: 健康福祉課 健康長寿係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1544.html
+  confidence: high
+  amount: 実費
+- category: sonota
+  name: 福祉灯油等助成事業
+  name_on_page: 福祉灯油等助成事業
+  summary: 冬の暖房費の支援として、対象世帯に灯油代の助成金を支給する。
+  who: {}
+  at_application:
+  - 令和8年10月1日に町の住民基本台帳に記録されている
+  - 高齢者世帯は、世帯全員65歳以上で住民税非課税かつ所得などの条件あり
+  - またはひとり親世帯・障がい者のいる世帯（所得などの条件あり）
+  - 世帯全員が施設に入所している場合は対象外
+  - 令和9年2月26日までに申請
+  where: 健康福祉課 地域福祉係（サンホールはぴねす内）
+  url: https://www.town.takasu.hokkaido.jp/page/1510.html
+  confidence: high
+  amount: 高齢者世帯は1万3,000円（2人目から1人につき半額を加算）
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- jutaku
+- chusha

@@ -1,0 +1,120 @@
+city: '014621'
+name: 南富良野町
+site: www.town.minamifurano.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: jutaku
+  name: 住宅改修の上乗せ助成
+  name_on_page: 住宅改修助成事業
+  summary: 介護保険の限度額を超える住宅改修が必要なとき、経費の一部を助成する。
+  who: {}
+  at_application:
+  - 介護保険の対象者で、生活の中心者が所得税非課税者
+  - 対象工事の例は手すりの取付・段差解消・すべり防止・ドア改修・便器の取替
+  where: 保健福祉課 社会福祉係
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/kourei-shien/%e4%bd%8f%e5%ae%85%e6%94%b9%e4%bf%ae%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad/
+  confidence: high
+  amount: 費用の9割を助成（限度額20万円）
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の助成
+  name_on_page: オムツ等助成事業
+  summary: 寝たきりや認知症の高齢者を抱える家族に、介護用品の購入経費の一部を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 寝たきりや認知症の高齢者を抱える家族が対象
+  - 対象用品は紙おむつ・尿取りパッド・介護用使い捨て手袋・清拭タオルなど
+  where: 保健福祉課 社会福祉係
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/kourei-shien/%e3%82%aa%e3%83%a0%e3%83%84%e7%ad%89%e5%8a%a9%e6%88%90%e4%ba%8b%e6%a5%ad/
+  confidence: high
+  amount: 購入費の9割を助成（限度額10万円）
+- category: haishoku
+  name: 夕食の配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が困難な人などに、栄養バランスのとれた夕食を届ける。
+  who: {}
+  at_application:
+  - 町内に住む65歳以上の高齢者世帯など
+  - 調理が困難な人などが対象
+  where: 社会福祉協議会（保健福祉センター内）
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/kourei-shien/%e9%85%8d%e9%a3%9f%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 1食300円
+- category: shingu
+  name: ふとんの洗濯・乾燥消毒
+  name_on_page: ふとん洗濯サービス事業
+  summary: ふとんの洗濯と乾燥消毒を行い、衛生管理を助ける。
+  who:
+    age_min: 65
+  at_application:
+  - 心身の障害や病気で、ふとんの上げ下げができないと認められる
+  where: 社会福祉協議会（保健福祉センター内）
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/kourei-shien/%e3%81%b5%e3%81%a8%e3%82%93%e6%b4%97%e6%bf%af%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e4%ba%8b%e6%a5%ad/
+  confidence: high
+  amount: 1枚あたり100円
+- category: sonota
+  name: 自宅の通路の除雪
+  name_on_page: 除雪サービス事業
+  summary: 除雪が難しい世帯の、住宅の出入口から公道までの通路を除雪する。
+  who:
+    age_min: 65
+  at_application:
+  - 障害または病気で除雪作業が困難と認められた65歳以上の世帯
+  - 除雪する範囲は通路の幅1.5m
+  where: 社会福祉協議会（保健福祉センター内）
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/kourei-shien/%e9%99%a4%e9%9b%aa%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e4%ba%8b%e6%a5%ad/
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 町内の診療所への送迎
+  name_on_page: 町内の移送サービス事業
+  summary: 65歳以上の世帯に、町内の診療所への送迎を行う。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の世帯が対象
+  where: 社会福祉協議会（保健福祉センター内）
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/kourei-shien/%e7%94%ba%e5%86%85%e3%81%ae%e7%a7%bb%e9%80%81%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9%e4%ba%8b%e6%a5%ad/
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 町外の病院への移送
+  name_on_page: 移送サービス
+  summary: 身体的な理由などで移動できない人を、町外の病院へ送迎する。
+  who: {}
+  at_application:
+  - 身体障害者、要介護・要支援の認定を受けている人、そのほか障害のある人
+  - 町内に住み、身体的な理由などで移動ができない
+  where: 社会福祉協議会（保健福祉センター内）
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/disabled/%e7%a7%bb%e9%80%81%e3%82%b5%e3%83%bc%e3%83%93%e3%82%b9/
+  confidence: high
+  amount: 片道450円〜2,160円（行き先と出発の地区で異なる）。市町村民税非課税で人工透析の人は半額
+- category: sonota
+  name: 買い物や運転の代行
+  name_on_page: 生活援助事業
+  summary: 買い物や運転代行などの生活の手助けを、1時間200円で受けられる。
+  who:
+    age_min: 65
+  at_application: []
+  where: 社会福祉協議会（保健福祉センター内）
+  url: https://www.town.minamifurano.hokkaido.jp/kurashi-info/kourei-shien/%e7%94%9f%e6%b4%bb%e6%8f%b4%e5%8a%a9%e4%ba%8b%e6%a5%ad/
+  confidence: high
+  amount: 1時間あたり200円
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- ribiyo
+- mimamori

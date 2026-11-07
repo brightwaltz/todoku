@@ -1,0 +1,67 @@
+city: '014711'
+name: 中川町
+site: www.town.nakagawa.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 夕食の配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が困難な高齢者などの自宅に夕食を届け、安否確認を行う。
+  who: {}
+  at_application:
+  - 調理が困難な高齢者などが対象
+  - 役場住民課 社会福祉係で申請が必要
+  where: 住民課 社会福祉係（事業者は中川町社会福祉協議会）
+  url: https://www.town.nakagawa.hokkaido.jp/section/shiawasesuishin/b02d3l00000015vr-att/i1bi2n00000000bm.pdf
+  confidence: high
+  amount: 1食につき350円
+- category: gaishutsu
+  name: 外出支援サービス
+  name_on_page: 外出支援サービス
+  summary: 外出が困難な人を、町内の診療所や名寄市立総合病院まで送迎する。
+  who: {}
+  at_application:
+  - 心身の著しい障害のため常時臥床している人
+  - 重度の下肢機能障害で、車いす等がないと外出が困難な人
+  - 心身の障害で外出が困難と町長が認めた人
+  - 申請書と事前の申込が必要
+  where: 住民課 社会福祉係
+  url: https://www.town.nakagawa.hokkaido.jp/section/shiawasesuishin/b02d3l00000015vr-att/i1bi2n00000000bm.pdf
+  confidence: low
+  amount: 1キロメートルにつき20円。町内は片道100円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 急病や事故のとき対応できる通報端末とペンダントを設置する。
+  who: {}
+  at_application:
+  - 一人暮らし高齢者および重度身体障がい者等が対象
+  where: 住民課 社会福祉係
+  url: https://www.town.nakagawa.hokkaido.jp/section/shiawasesuishin/b02d3l00000015vr-att/i1bi2n00000000bm.pdf
+  confidence: low
+- category: sonota
+  name: 緊急医療情報キットの配布
+  name_on_page: 緊急医療情報キット
+  summary: 緊急時の救急活動につなげるため、70歳以上の高齢者に緊急医療情報キットを配布する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 住民課 社会福祉係
+  url: https://www.town.nakagawa.hokkaido.jp/section/shiawasesuishin/b02d3l00000015vr-att/i1bi2n00000000bm.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,188 @@
+city: '013625'
+name: 上ノ国町
+site: www.town.kaminokuni.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（見守りを兼ねた弁当の配達）
+  name_on_page: 配食サービス事業
+  summary: 調理が困難な高齢者らに、見守りを兼ねて弁当を自宅に届ける。
+  who: {}
+  at_application:
+  - 65 歳以上、または障害者手帳の所持者、難病認定者のいずれか
+  - かつ、町の専用チェックリストに該当する
+  where: 福祉課 地域包括支援係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003594.html
+  confidence: high
+  amount: 弁当代 500 円（自己負担）。配送料は無料
+- category: mimamori
+  name: 見守りサービスの利用料助成（ハローライト訪問プラン）
+  name_on_page: 見守りサービス助成事業
+  summary: 電球を交換するだけの見守りサービスを使う独居の方に、費用の 9 割を助成する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65 歳以上、または障害者手帳の所持者、難病認定者のいずれか
+  where: 福祉課 地域包括支援係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003593.html
+  confidence: high
+  amount: 月額 利用料 1,738 円のうち 1,568 円を助成。利用者負担は月 170 円
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 一人暮らしの高齢者らに、緊急通報と安否確認のシステムを提供する。
+  who: {}
+  at_application:
+  - 75 歳以上の単独世帯の方
+  - または、身体障害者手帳 1〜2 級を持つ単身世帯の方
+  - または、難病認定者
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003468.html
+  confidence: high
+  amount: 本人負担は月 0〜2,358 円（携帯電話のレンタル・人感センサーの有無で異なる）
+- category: gaishutsu
+  name: 外出支援サービス（移送用車輌の送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 上ノ国町と江差町の区域で、移送用の車輌により送迎する。
+  who: {}
+  at_application:
+  - 65 歳以上、または障害者手帳の所持者、難病認定者のいずれか
+  - その支援が必要と認められる人
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003465.html
+  confidence: high
+  amount: 片道 住民税課税者 370 円、課税者以外 180 円
+- category: sonota
+  name: 除雪サービス（玄関から生活路まで約 1 メートル幅）
+  name_on_page: 除雪サービス事業
+  summary: 自宅玄関から生活路までの間を、約 1 メートル幅で除雪する。
+  who: {}
+  at_application:
+  - 65 歳以上の単身世帯、または虚弱な夫婦のみの世帯
+  - または、身体障害者手帳 1〜2 級・療育手帳・精神保健福祉手帳等の所持者、難病認定者
+  - その支援が必要と認められる人
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003465.html
+  confidence: high
+  amount: 1 シーズン（年額）2,000 円
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布サービス事業
+  summary: かかりつけ医など医療情報を救急隊に伝えるためのキットを配布する。
+  who: {}
+  at_application:
+  - 65 歳以上の単身世帯、または虚弱な夫婦のみの世帯
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003465.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 特別入浴サービス
+  name_on_page: 特別入浴サービス事業
+  summary: 一般の入浴が困難な方に、入浴の機会を提供する。
+  who: {}
+  at_application:
+  - 65 歳以上、または障害者手帳の所持者、難病認定者のいずれか
+  - その支援が必要と認められる人
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003465.html
+  confidence: high
+  amount: 生活保護受給者以外は 1 回 700 円。生活保護受給者は 0 円
+- category: gaishutsu
+  name: 福祉タクシーの料金助成（通院などの移動）
+  name_on_page: 外出支援サービス（福祉タクシー）料金助成事業
+  summary: 寝たきりなどで通院に福祉タクシーが欠かせない方に、料金の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 上ノ国町に住所があり、町内の在宅で生活している
+  - 寝たきり等で、通院等に福祉タクシーの利用が不可欠
+  - 利用前に「事業利用申請書」を出し、利用決定通知書を受ける
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003463.html
+  confidence: high
+  amount: 住民税課税世帯 7 割、非課税世帯 9 割、生活保護受給者 10 割を助成
+- category: sonota
+  name: 通院等乗降介助サービス（要支援認定者向けの町独自の事業）
+  name_on_page: 通院等乗降介助サービス事業
+  summary: 在宅の要支援認定者に、訪問介護事業所による通院等の乗降介助を提供する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    at_home: true
+  at_application:
+  - 上ノ国町に住所があり、町内の在宅で生活している
+  - 介護保険料に未納がない
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003462.html
+  confidence: high
+  amount: 1 回 住民税課税者 370 円、課税者以外 180 円
+- category: sonota
+  name: 通院時院内介助サービス（要介護認定者向けの町独自の事業）
+  name_on_page: 通院時院内介助サービス事業
+  summary: 在宅の要介護認定者に、訪問介護事業所による通院時の院内の介助を提供する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 上ノ国町に住所があり、町内の在宅で生活している
+  - 介護保険料に未納がない
+  - 他の法や施策で対応できないこと
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003462.html
+  confidence: high
+  amount: 課税者は 1 時間未満 600 円、1 時間以上 1 時間 30 分未満 900 円、以降 30 分ごとに 200 円加算（課税者以外は半額）
+- category: kaigo-yohin
+  name: 家族介護継続支援（おむつ等の購入費の半額助成）
+  name_on_page: 家族介護継続支援事業
+  summary: おむつ等が必要な在宅高齢者に、購入金額の半額を助成する給付券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 上ノ国町に住所があり、町内の在宅で生活している
+  - 介護保険料に未納がない
+  where: 福祉課 高齢介護係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003450.html
+  confidence: high
+  amount: 月額 4,000 円を限度に、紙おむつ・おむつカバー・尿取りパットの購入金額の半額
+- category: gaishutsu
+  name: 免許返納者へのバス利用券（75 歳以上）
+  name_on_page: 高齢者運転免許証自主返納支援制度
+  summary: 運転免許を返納した 75 歳以上に、函館バスの定額バス利用券（100 円で乗車）を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 町内に住所があり、運転免許証を返納した（配偶者で免許を持たない人も可）
+  - 乗車か降車のどちらかが町内の場合に限る。年度末に利用証の更新が必要
+  where: 政策推進課 地域振興係
+  url: https://www.town.kaminokuni.lg.jp/hotnews/detail/00003707.html
+  confidence: high
+  amount: 函館バス小砂子線・江差木古内線の全区間で、利用証の提示により 1 回 100 円
+not_found:
+- hochoki
+- haikai
+- iro
+- jutaku
+- shingu
+- ribiyo
+- chusha

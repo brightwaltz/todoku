@@ -1,0 +1,82 @@
+city: '014257'
+name: 上砂川町
+site: town.kamisunagawa.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 在宅高齢者等の除雪
+  name_on_page: 在宅高齢者等除雪サービス
+  summary: 自力で除雪できない世帯の門口や屋根の除雪費用の一部を助成する。
+  who: {}
+  at_application:
+  - 町内に住所があり、町税等の滞納がない
+  - 次のいずれかの人のみの世帯：おおむね70歳以上の単身者や夫婦世帯など
+  - 身体障害者手帳1・2級（3・4級の肢体不自由を含む）、母子世帯、町長が認める世帯
+  - 入院中や施設に入所中の場合は除雪できない
+  where: 福祉課福祉係（0125-62-2222）
+  url: https://town.kamisunagawa.hokkaido.jp/kenko_fukushi/kourei/847.html
+  confidence: high
+  amount: シーズン契約は費用の3分の1以内（非課税世帯、上限15,000円）か4分の1以内（課税世帯、上限10,000円）。1回分は自己負担で門口除雪が1,000〜3,000円
+- category: haikai
+  name: 徘徊者見守りステッカーの配布
+  name_on_page: 徘徊者見守りステッカー配布
+  summary: 徘徊のおそれのある人と家族に、自治体名と番号入りの反射ステッカーを配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊するおそれのある在宅高齢者など、およびその家族
+  - 配付のとき、本人の特徴と緊急連絡先を町に登録する
+  where: 福祉課地域包括支援係（0125-62-3370）
+  url: https://town.kamisunagawa.hokkaido.jp/kenko_fukushi/kourei/965.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の購入券
+  name_on_page: 介護用品支給事業
+  summary: 在宅の要介護者に、紙おむつなどの購入に使う支給券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時、紙おむつ等を使用している
+  - 町内に住所があり、町民税等の滞納がない
+  - 生活保護世帯でない
+  where: 福祉課福祉係（0125-62-2222）
+  url: http://town.kamisunagawa.hokkaido.jp/kenko_fukushi/kourei/1164.html
+  confidence: high
+  amount: 介護用品支給券を1か月3,000円分
+- category: jutaku
+  name: 高齢者等の住宅改修費の助成
+  name_on_page: 高齢者等住宅改修費用助成事業
+  summary: 手すりの設置や段差解消などの改修費の9割（上限5万円）を助成する。
+  who: {}
+  at_application:
+  - 介護認定を受けていない65歳以上の人
+  - または65歳未満で身体障害者手帳があり、障害者地域生活支援事業の対象でない人
+  - 町内に住所があり、町税等の滞納がない
+  - 町内の事業所が施工した1万円以上の工事が対象
+  where: 福祉課福祉係（0125-62-2222）
+  url: http://town.kamisunagawa.hokkaido.jp/kenko_fukushi/kourei/1166.html
+  confidence: high
+  amount: 改修費の9割（上限5万円）
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

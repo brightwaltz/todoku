@@ -1,0 +1,60 @@
+city: 014699
+name: 美深町
+site: www.town.bifuka.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 要介護者等のハイヤー移送サービス
+  name_on_page: 要介護者等移送サービス
+  summary: 歩行が困難な高齢者や重度身体障害者を、ハイヤーで町内や名寄市内の医療機関への通院などに移送する。
+  who: {}
+  at_application:
+  - おおむね65歳以上、または身体障害1・2級の人で、ハイヤー以外での移送が困難
+  - 世帯の課税状況や扶養義務者の状況などの条件がある
+  - 町内・名寄市内の医療機関への通院など。回数に制限がある
+  - 人工透析の通院には、費用の一部の助成がある（町税の納付状況などの条件）
+  where: 保健福祉課 保健福祉グループ 福祉係
+  url: https://www.town.bifuka.hokkaido.jp/cms/section/hoken/qlmcaj0000002s4y.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者敬老バス乗車証
+  name_on_page: 高齢者バス料金助成
+  summary: 70歳以上の人が、町内区間のバスやデマンド型乗合タクシーを無料で使える乗車証を発行する。
+  who:
+    age_min: 70
+  at_application:
+  - 高齢者敬老バス乗車証（バス券）を提示して乗る
+  - 乗車証は発行の日から1年間有効
+  where: 保健福祉課 保健福祉グループ 福祉係
+  url: https://www.town.bifuka.hokkaido.jp/cms/section/hoken/qlmcaj0000002s4y.html
+  confidence: high
+  amount: 町内区間の名士バス・スクールバス・フレんどバス・デマンド型乗合タクシー・仁宇布デマンドバスが無料。乗車証の発行手数料は2,000円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: 押しボタン・ペンダント・ガス火災警報つきの電話機を設置する。
+  who: {}
+  at_application:
+  - 一人暮らしの老人などで、緊急時の対応に困難がある世帯
+  - 病弱などで緊急時に機敏に行動することが困難な、おおむね65歳以上の人
+  - または、重度障害者など
+  where: 保健福祉課 保健福祉グループ 福祉係
+  url: https://www.town.bifuka.hokkaido.jp/cms/section/hoken/qlmcaj0000002s4y.html
+  confidence: high
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- kaigo-yohin
+- mimamori
+- nichijo-yogu

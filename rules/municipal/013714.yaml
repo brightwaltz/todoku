@@ -1,0 +1,104 @@
+city: '013714'
+name: せたな町
+site: www.town.setana.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の費用補助
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で寝たきりの高齢者等を介護する家族等に、おむつなど介護用品の費用の一部を補助する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で寝たきり等の高齢者を介護する家族等
+  where: 福祉課 社会福祉係（北檜山）、瀬棚支所 福祉係、大成支所 福祉係
+  url: https://www.town.setana.lg.jp/kurashi/fukushi/post_1021.html
+  confidence: low
+  more_urls:
+  - https://www.town.setana.lg.jp/kurashi/kaigo/post_552.html
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 栄養バランスのとれた食事を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らしや高齢者夫婦世帯等
+  where: 福祉課 社会福祉係（北檜山）、瀬棚支所 福祉係、大成支所 福祉係
+  url: https://www.town.setana.lg.jp/kurashi/fukushi/post_1021.html
+  confidence: low
+  amount: 利用料は 1 食 510 円
+  more_urls:
+  - https://www.town.setana.lg.jp/kurashi/kaigo/post_552.html
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報サービス事業
+  summary: 通報システムを設置して、緊急時の安全を確保する。
+  who: {}
+  at_application:
+  - 一人暮らしや高齢者夫婦世帯等
+  where: 福祉課 社会福祉係（北檜山）、瀬棚支所 福祉係、大成支所 福祉係
+  url: https://www.town.setana.lg.jp/kurashi/fukushi/post_1021.html
+  confidence: low
+  more_urls:
+  - https://www.town.setana.lg.jp/kurashi/kaigo/post_552.html
+- category: gaishutsu
+  name: 福祉専門車両による通院送迎
+  name_on_page: 移送サービス事業
+  summary: 一般の車での移動が難しい高齢者等を、福祉専門車両で医療機関へ送迎する。
+  who: {}
+  at_application:
+  - 一般車両による移動が困難な高齢者等
+  where: 福祉課 社会福祉係（北檜山）、瀬棚支所 福祉係、大成支所 福祉係
+  url: https://www.town.setana.lg.jp/kurashi/fukushi/post_1021.html
+  confidence: low
+  more_urls:
+  - https://www.town.setana.lg.jp/kurashi/kaigo/post_552.html
+- category: sonota
+  name: 施設での入浴の提供
+  name_on_page: 入浴サービス事業
+  summary: 家庭での入浴が難しい高齢者等に、施設での入浴を提供する。
+  who: {}
+  at_application:
+  - 家庭での入浴が困難な高齢者等
+  where: 福祉課 社会福祉係（北檜山）、瀬棚支所 福祉係、大成支所 福祉係
+  url: https://www.town.setana.lg.jp/kurashi/fukushi/post_1021.html
+  confidence: low
+  amount: 利用料は機械浴 520 円
+  more_urls:
+  - https://www.town.setana.lg.jp/kurashi/kaigo/post_552.html
+- category: sonota
+  name: 高齢者世帯の除雪費用の助成
+  name_on_page: 除雪サービス事業
+  summary: 自力で除雪できない高齢者世帯等に、除雪費用の一部を助成する。
+  who: {}
+  at_application:
+  - 自力で除雪できない高齢者世帯等
+  where: 福祉課 社会福祉係（北檜山）、瀬棚支所 福祉係、大成支所 福祉係
+  url: https://www.town.setana.lg.jp/kurashi/fukushi/post_1021.html
+  confidence: low
+- category: jutaku
+  name: 住宅改修の費用助成
+  name_on_page: せたな町人にやさしい家づくり事業
+  summary: 高齢者等の暮らしに合うよう住宅を改修する費用の3分の1を助成する。
+  who: {}
+  at_application:
+  - 重度の身体障害者・高齢者等がいる世帯
+  - 工事費が20万円以上の改修が対象
+  where: 福祉課 社会福祉係（北檜山）、瀬棚支所 福祉係、大成支所 福祉係
+  url: https://www.town.setana.lg.jp/kurashi/fukushi/post_1021.html
+  confidence: low
+  amount: 改修費の 3 分の 1、上限 30 万円（工事費 20 万円以上が対象）
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

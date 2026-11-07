@@ -1,0 +1,179 @@
+city: '013471'
+name: 長万部町
+site: www.town.oshamambe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 給配食サービス（夕食の配達と安否確認）
+  name_on_page: 給配食サービス
+  summary: 自分で食事を作るのが難しい高齢者世帯に、週 3 回夕食を届け、安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体等の状態により、自分で食事を作ることが困難
+  - 申請には担当地区の民生児童委員の確認印が必要
+  where: 保健福祉課 介護支援係
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/586.html
+  confidence: high
+  amount: 月・水・金の夕食。1 食 500 円（非課税・生活保護の世帯は 250 円）
+  more_urls:
+  - https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+- category: gaishutsu
+  name: 外出支援サービス（医療機関への送迎）
+  name_on_page: 外出支援サービス
+  summary: 移動が困難な高齢者世帯などを、町内外の医療機関へ送り迎えする。
+  who: {}
+  at_application:
+  - 身体等の状態により、自分や家族での移送が困難な高齢者世帯等
+  - 心身に障がいのある方、またはその家族で移送が困難な方も対象
+  - 申請には担当地区の民生児童委員の確認印が必要
+  where: 保健福祉課 介護支援係
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/586.html
+  confidence: high
+  amount: 無料。原則月 2 回まで
+  more_urls:
+  - https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+- category: mimamori
+  name: 訪問安否確認サービス（週 1 回の訪問・電話）
+  name_on_page: 訪問安否確認サービス
+  summary: ひとり暮らしや高齢者だけの世帯に、原則週 1 回、訪問か電話で安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体等の状態により、一人や夫婦での生活に不安がある
+  - 民生児童委員・町内会などから届出を受けた方
+  - 申請には担当地区の民生児童委員の確認印が必要
+  where: 保健福祉課 介護支援係
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/586.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの整備
+  name_on_page: 緊急通報システム整備
+  summary: 緊急通報システム・ペンダント・熱とガスのセンサーを貸す。携帯電話の購入費も助成する。
+  who: {}
+  at_application:
+  - 身体等の状態により、一人や夫婦での生活に支障がある高齢者世帯等
+  - 近所の協力員 3 名（担当地区の民生児童委員を含む）の同意が必要
+  where: 保健福祉課 介護支援係
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/586.html
+  confidence: high
+  amount: 無料（電話料金は実費）。緊急通報機能つき携帯電話の購入費は助成
+  more_urls:
+  - https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+- category: sonota
+  name: 軽度生活援助サービス（玄関先の除排雪など）
+  name_on_page: 軽度生活援助サービス
+  summary: 雪がおおむね 10 センチ以上のとき、玄関先の除排雪などの軽い作業を手伝う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体等の状態により、自分で作業できず、家族等の協力も得られない
+  - 申請には担当地区の民生児童委員の確認印が必要
+  where: 保健福祉課 介護支援係
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/586.html
+  confidence: high
+  amount: 1 時間 100 円（非課税世帯は 50 円、生活保護世帯は免除）
+  more_urls:
+  - https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+- category: iro
+  name: 家族介護慰労金（年額 10 万円）
+  name_on_page: 家族介護慰労
+  summary: 在宅の重度の要介護高齢者を介護している家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - その高齢者が過去 1 年間、介護保険サービスを受けていない
+  where: 冊子に申請先の記載なし（在宅福祉の問い合わせ先は保健福祉課 介護支援係）
+  url: https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+  confidence: high
+  amount: 年額 10 万円
+- category: jutaku
+  name: 高齢者向け住宅改修の助成
+  name_on_page: 住宅改修助成
+  summary: 在宅で日常生活に支障のある高齢者世帯に、住宅の整備費の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 町内に居住し、住民基本台帳に記載されている
+  - 在宅で日常生活を営むのに支障がある高齢者世帯
+  where: 冊子に申請先の記載なし
+  url: https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+  confidence: low
+- category: nichijo-yogu
+  name: 自立生活支援用具（杖・シルバーカー等）の購入費助成
+  name_on_page: 自立生活支援用具購入費助成
+  summary: 一本杖やシルバーカーなど、日常生活の補助用具を買う費用の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 自立した高齢者等で、何らかの障害があり日常生活に支障があると認められる
+  where: 冊子に申請先の記載なし
+  url: https://www.town.oshamambe.lg.jp/uploaded/attachment/8381.pdf
+  confidence: low
+- category: haikai
+  name: ふれあいネットワークの登録（徘徊高齢者の捜索・保護）
+  name_on_page: ふれあいネットワーク
+  summary: 徘徊で行方不明になった高齢者を、地域の機関が連携して早く捜し、保護する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等により、徘徊のおそれがある人
+  where: 地域包括支援センター
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/582.html
+  confidence: high
+- category: sonota
+  name: 救急連絡カードの登録
+  name_on_page: 救急連絡カード登録
+  summary: 連絡先や既往歴を登録し、救急搬送のとき消防署と町立病院で対応しやすくする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 町内に家族または身内がいない
+  - 健康に不安がある
+  where: 地域包括支援センター
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/582.html
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 病歴や薬などを書いたシートを入れたキットを無料で渡し、冷蔵庫に保管して救急に備える。
+  who:
+    at_home: true
+  at_application:
+  - 概ね 65 歳以上の 1 人世帯・高齢者のみの世帯
+  - 日中 1 人になることがある概ね 65 歳以上の世帯
+  - 健康に不安を抱えている方など
+  where: 長万部地域包括支援センター（ふれあい健康センター内）
+  url: https://www.town.oshamambe.lg.jp/soshiki/7/583.html
+  confidence: high
+  amount: キットは無料
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- yutai
+- chusha

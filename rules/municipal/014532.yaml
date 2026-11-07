@@ -1,0 +1,150 @@
+city: '014532'
+name: 東神楽町
+site: www.town.higashikagura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい人に、夕食のお弁当を週1〜6回届け、安否確認も行う。
+  who: {}
+  at_application:
+  - 食事の調理が困難
+  - 世帯の未成年者を除く全員が、次のいずれかに当たる
+  - 満80歳以上、要支援以上、手帳（身体3級以上・精神・療育）、総合事業の対象者
+  where: 健康ふくし課 包括支援係
+  url: https://www.town.higashikagura.lg.jp/docs/154.html
+  confidence: high
+  amount: 1食 ごはん付き400円、おかずのみ340円（口座引き落とし）
+- category: kaigo-yohin
+  name: 在宅支援用具給付事業
+  name_on_page: 在宅支援用具給付事業
+  summary: 要介護・要支援の人に、杖・防水シーツ・入浴用の滑り止めなどの購入費の一部を補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 他の制度で給付や貸与の対象になるものは除く
+  - 購入日の年度末までに申請（3月購入は30日以内）
+  where: 健康ふくし課 包括支援係
+  url: https://www.town.higashikagura.lg.jp/docs/154.html
+  confidence: high
+- category: kaigo-yohin
+  name: 在宅介護用品助成事業
+  name_on_page: 在宅介護用品助成事業
+  summary: 在宅で要介護認定者を介護する家族などに、介護用品の購入費の一部を助成する。
+  who: {}
+  at_application:
+  - 在宅で要介護認定者を介護している家族など
+  where: 社会福祉協議会
+  url: https://www.town.higashikagura.lg.jp/docs/154.html
+  confidence: low
+- category: haikai
+  name: SOSやまびこネットワーク事業
+  name_on_page: SOSやまびこネットワーク事業
+  summary: 行方不明のおそれがある人の情報を事前に登録し、早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 病気（認知症など）や障がいで行方不明となるおそれがある
+  - 顔写真つきの登録票を出す
+  where: 健康ふくし課 包括支援係
+  url: https://www.town.higashikagura.lg.jp/docs/154.html
+  confidence: high
+- category: sonota
+  name: 無料ゴミ処理券の配布
+  name_on_page: 無料ゴミ処理券の配布
+  summary: 寝たきりなどで紙おむつを使う人に、ゴミ処理券を配る。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりなどで紙おむつを使っている
+  - 印鑑を持って申請。紙おむつの使用状況を聞き取る
+  where: くらしの窓口課 環境生活係
+  url: https://www.town.higashikagura.lg.jp/docs/154.html
+  confidence: high
+  amount: 該当する人には年度内に1回40枚を追加で配布
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 手帳の対象にならない65歳以上の難聴の人に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 両耳か片耳の聴力が40デシベル以上で、聴覚障害の手帳の対象にならない
+  - 耳鼻科の医師が補聴器の使用を必要と認めた
+  - 補聴器の購入から3か月以内に申請
+  where: 健康ふくし課 社会福祉係
+  url: https://www.town.higashikagura.lg.jp/docs/hochouki.html
+  confidence: high
+  amount: 住民税非課税世帯は40,000円まで、課税世帯は購入費の2分の1以内で20,000円まで
+- category: sonota
+  name: 除雪支援事業
+  name_on_page: 除雪支援事業
+  summary: 除雪が困難な世帯に、地域ボランティアの除雪支援員を派遣する。
+  who: {}
+  at_application:
+  - 町内に住み自力での除雪が困難
+  - 満80歳以上、介護保険認定を受けている、身体障害者手帳3級以上などの人で構成される世帯
+  - または医師から除雪作業を禁止されている人など
+  - 実施は11月1日から翌年3月31日
+  where: 健康ふくし課 地域包括支援センター
+  url: https://www.town.higashikagura.lg.jp/docs/14900.html
+  confidence: high
+  amount: 1回 30分未満300円、30分以上500円
+- category: sonota
+  name: 屋根雪下ろし等費用助成事業
+  name_on_page: 屋根雪下ろし等費用助成事業
+  summary: 屋根雪下ろしが難しい低所得の高齢者などの世帯に、その費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 70歳以上・介護保険認定者・身体障害者手帳3級以上などの人のみの世帯（18歳未満は含めない）
+  - 屋根雪下ろしができる人との同居、町税の滞納がある世帯は対象外
+  - 作業を頼む前に事前登録申請書を出す
+  where: 健康ふくし課 地域包括支援センター
+  url: https://www.town.higashikagura.lg.jp/docs/15159.html
+  confidence: high
+  amount: 15,000円まで、同一年度に1回
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットを配布しています
+  summary: 持病などの情報を入れて冷蔵庫に保管する容器と、ステッカーを配る。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住所があり在宅で生活している
+  - 65歳以上のみで構成された世帯、または手帳（身体1・2級、療育A・B、精神1級）
+  - または要介護・要支援認定を受けている人など
+  where: 健康ふくし課 包括支援係
+  url: https://www.town.higashikagura.lg.jp/docs/15066.html
+  confidence: high
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- kinkyu-tsuho
+- nichijo-yogu
+- gaishutsu
+- mimamori
+- chusha
+- yutai

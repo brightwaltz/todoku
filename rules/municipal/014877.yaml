@@ -1,0 +1,83 @@
+city: 014877
+name: 天塩町
+site: www.teshiotown.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: mimamori
+  name: 高齢者の見守り訪問
+  name_on_page: 高齢者見守り事業
+  summary: ボランティア等が月1回ほど自宅を訪ね、暮らしの様子や健康を見守る。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住む、見守りが必要な認知症高齢者・独居高齢者等
+  where: 天塩町地域包括支援センター（福祉課）
+  url: https://www.teshiotown.hokkaido.jp/?page_id=767
+  confidence: high
+- category: mimamori
+  name: 見守り・声かけボランティアの登録
+  name_on_page: 安心見守りネットワーク事業
+  summary: 見守る人と見守られる人を登録し、月2回以上の声かけで見守る。
+  who: {}
+  at_application:
+  - 65歳以上、障害や病気で希望する人、一人暮らしに不安がある人など
+  - 見守りボランティアがいなければ事務局が町内会等と調整する
+  where: 安心見守りネットワーク事務局（福祉課地域ケア係）
+  url: https://www.teshiotown.hokkaido.jp/?page_id=767
+  confidence: high
+- category: mimamori
+  name: 見守り機器の購入費の助成
+  name_on_page: 高齢者見守り機器購入費助成事業
+  summary: 離れて暮らす親族が見守れる機器の購入費の一部を助成する。
+  who: {}
+  at_application:
+  - 80歳以上のひとり暮らし、または70歳以上で要介護認定か障害者手帳があるひとり暮らし
+  - 上のほか町長が必要と認めた人も対象
+  - 通報機器を設置済み、町内に見守れる親族がいる、過去に交付済みの人は対象外
+  - 購入は交付決定の後
+  where: 福祉課地域ケア係
+  url: https://www.teshiotown.hokkaido.jp/?page_id=25204
+  confidence: high
+  amount: 購入費（1万円を超えると1万円まで）、1世帯1台
+- category: mimamori
+  name: ハローライト（通信機能付きLED電球）による見守り
+  name_on_page: 見守り支援事業（ハローライトによる見守り）
+  summary: 電球の点灯が24時間ないと、登録した親族等へメールで知らせる無料の見守り。
+  who: {}
+  at_application:
+  - 80歳以上のひとり暮らし、または70歳以上で要介護認定か障害者手帳があるひとり暮らし
+  - 上のほか町長が必要と認めた人も対象
+  - 通報機器を設置済み、町内に見守れる親族がいる人は対象外
+  - 通知メールを受け取れる協力者のメールアドレスが要る
+  where: 福祉課地域ケア係
+  url: https://www.teshiotown.hokkaido.jp/?page_id=25204
+  confidence: high
+  amount: 無料（電気代や変換アダプタ代は利用者負担）
+- category: gaishutsu
+  name: 日常生活活動支援券（ハイヤー運賃助成券・温泉入浴券）
+  name_on_page: 天塩町日常生活活動支援事業（温泉入浴券・ハイヤー運賃助成券）
+  summary: 高齢者や要介護認定の人に、ハイヤー運賃や入浴料に使える券を支給する。
+  who: {}
+  at_application:
+  - 70歳以上の人、要介護認定の人、免許返納者、障害者手帳の人などが対象
+  - 印鑑と資格を証明できるもの（手帳や運転経歴証明書）を持参
+  where: 福祉課福祉係
+  url: https://www.teshiotown.hokkaido.jp/?page_id=18475
+  confidence: high
+  amount: 年度で70歳以上は30枚、要介護認定・手帳の人などは48枚（月割あり）
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo

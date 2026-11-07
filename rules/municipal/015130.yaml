@@ -1,0 +1,92 @@
+city: '015130'
+name: 中頓別町
+site: www.town.nakatombetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 家庭用緊急通報機器の貸与
+  name_on_page: 緊急通報装置設置
+  summary: 急病や事故に備え、高齢の人に家庭用の緊急通報機器を貸し出す。
+  who: {}
+  at_application:
+  - 対象者の細かな条件は頁に無く、民生委員か保健福祉課に相談する
+  - 緊急性のある人が優先される
+  where: 保健福祉課（または地区担当の民生委員に相談）
+  url: https://www.town.nakatombetsu.hokkaido.jp/bunya/8001/
+  confidence: high
+- category: haishoku
+  name: ひとり暮らしのお年寄りへの夕食の配食
+  name_on_page: 給食サービス
+  summary: 調理が負担なひとり暮らしのお年寄りへ、夕食のお弁当を届ける。
+  who:
+    household:
+    - alone
+  at_application:
+  - 町内に住み、調理することが負担になっている
+  - 申請に印鑑が要る
+  where: 保健福祉課
+  url: https://www.town.nakatombetsu.hokkaido.jp/bunya/7998/
+  confidence: high
+- category: gaishutsu
+  name: 高齢者・障がい者へのハイヤーチケットの交付
+  name_on_page: ハイヤー乗車券
+  summary: 通院などの負担を軽くするため、ハイヤーチケットを年に24〜48枚交付する。
+  who: {}
+  at_application:
+  - 自家用車を持たない70歳以上の人、または障がいを持つ人
+  - 車を持っていても、夫か妻のどちらかが免許証を持たなければ24枚
+  - 障がい者は年間48枚
+  where: 保健福祉課
+  url: https://www.town.nakatombetsu.hokkaido.jp/bunya/7995/
+  confidence: high
+  amount: ハイヤーチケット年間48枚または24枚（1枚520円）
+- category: gaishutsu
+  name: 高齢者のバス無料乗車券
+  name_on_page: バス無料乗車券
+  summary: 75歳以上の町民に、町内のバス路線区間で使える無料乗車券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 町内に住んでいる
+  - 使えるのは町内のバス路線区間（弥生から小頓別）だけ
+  where: 保健福祉課
+  url: https://www.town.nakatombetsu.hokkaido.jp/bunya/7994/
+  confidence: high
+  amount: 町内のバス路線区間が無料
+- category: gaishutsu
+  name: 自宅から病院への送迎
+  name_on_page: 病院患者送迎サービス
+  summary: 通院が難しい高齢の人などを、予約制で自宅から病院まで送迎する。
+  who: {}
+  at_application:
+  - 60歳以上、自動車を持たない人、その他の理由で通院が難しいと認められた人（頁の並びのとおり。条件のつながりは不明）
+  - 予約制で、前日の午後4時までに中頓別ハイヤーへ申し込む
+  where: 予約先は中頓別ハイヤー（問い合わせは保健福祉課）
+  url: https://www.town.nakatombetsu.hokkaido.jp/bunya/8002/
+  confidence: low
+- category: sonota
+  name: 老人世帯の冬期の除雪支援
+  name_on_page: 高齢者世帯等除雪支援
+  summary: 除雪に不安のある老人世帯の、冬の住宅等の除雪作業を支援する。
+  who: {}
+  at_application:
+  - 老人世帯で、民生委員協議会が認定した世帯
+  - 所得制限や世帯要件がある（詳しくは問い合わせ）
+  where: 保健福祉課
+  url: https://www.town.nakatombetsu.hokkaido.jp/bunya/8000/
+  confidence: high
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

@@ -1,0 +1,192 @@
+city: '014320'
+name: 新十津川町
+site: www.town.shintotsukawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 在宅高齢者等生活支援機器購入費の助成
+  summary: 65歳以上で中等度難聴の人に、補聴器の購入費の半額を助成する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴力レベルが40デシベル以上（中等度難聴）
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 購入費の2分の1、上限50,000円
+- category: sonota
+  name: コミュニケーションロボット購入費の助成
+  name_on_page: 在宅高齢者等生活支援機器購入費の助成
+  summary: 介護認定を受けた在宅の人に、コミュニケーションロボットの購入費の半額を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 介護認定を受けている
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 購入費の2分の1、上限30,000円
+- category: sonota
+  name: 階段昇降機購入費の助成
+  name_on_page: 在宅高齢者等生活支援機器購入費の助成
+  summary: 階段の昇り降りが難しい在宅の人に、階段昇降機の購入費の半額を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 身体障害者手帳3級以上で下肢か体幹に機能障害がある
+  - または内部障害があり車椅子の補装具費の支給を受けている
+  - または要介護1以上か要支援で階段の昇降が困難
+  - 設置する住宅に3年以上住み、設置後も住み続ける
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 購入費の2分の1、上限300,000円
+- category: sonota
+  name: 電話録音防犯機器購入費の助成
+  name_on_page: 在宅高齢者等生活支援機器購入費の助成
+  summary: 65歳以上の在宅の人に、電話録音防犯機器の購入費の半額を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application: []
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 購入費の2分の1、上限5,000円
+- category: gaishutsu
+  name: 通院支援のタクシー券
+  name_on_page: 通院支援タクシー券の給付
+  summary: 在宅の要介護の人に、通院に使うタクシー・ハイヤーの利用券を配る。
+  who:
+    at_home: true
+  at_application:
+  - 要介護認定を受けている
+  - 心身の障害や疾病で2か月に1回以上通院する
+  - 生活保護世帯ではない
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 月2回・年24枚の利用券（初乗り料金600円分）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置
+  summary: ボタン1つで消防署につながる通報装置を設置する。
+  who: {}
+  at_application:
+  - 病気などで不安がある75歳以上
+  - または病気などで不安がある65〜74歳のみの世帯
+  - または要支援・要介護認定を受けている
+  - または身体障害者手帳をもっている
+  - NTTの固定電話回線が必要
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 機器のレンタル料が月額418円（設置費用はかからない）
+- category: haishoku
+  name: 配食サービス（昼食と安否確認）
+  name_on_page: 給食サービス（配食サービス）
+  summary: 調理が難しい人に、昼食を週3回届けて見守りも行う。
+  who: {}
+  at_application:
+  - 要介護認定か障害支援区分認定を受けている65歳以上
+  - または85歳以上
+  - 毎週火・水・金曜日の昼食
+  where: 社会福祉協議会（改善センターみらいえ内）
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 1食500円
+- category: mimamori
+  name: ハートコール（ボランティアの安否確認）
+  name_on_page: ハートコール
+  summary: ボランティアが月・水曜に定期的に安否確認をし、話し相手になる。
+  who:
+    age_min: 65
+  at_application:
+  - 町民
+  - 事前の利用登録が必要
+  where: 社会福祉協議会（改善センターみらいえ内）
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 除雪困難世帯の生活通路などの除雪支援
+  name_on_page: 除雪困難世帯生活通路等除雪支援
+  summary: 除雪が難しい世帯の生活通路や避難経路の除雪を、町が有料で行う。
+  who: {}
+  at_application:
+  - 11月15日時点で70歳以上（18歳未満も可）
+  - または重度の障害手帳・認定などがある
+  - 70歳未満の人と同居、公租公課の滞納があると不可
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 生活通路は月1,500〜3,000円（課税世帯）、非課税世帯は月1,000〜2,000円
+- category: sonota
+  name: 高齢者世帯などの除雪費の助成
+  name_on_page: 高齢者世帯等除雪費助成
+  summary: 除雪が難しい世帯に、除雪業者へ払った費用の半額を助成する。
+  who: {}
+  at_application:
+  - 世帯員全員が住民税非課税か均等割のみ課税
+  - 18歳未満か65歳以上、または各種手帳などがある
+  - 65歳未満の人と同居、公租公課の滞納があると不可
+  - 除雪業者などとの委託契約が必要
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/02.pdf
+  confidence: high
+  amount: 業者に払った費用の2分の1、上限50,000円
+- category: koken
+  name: 成年後見の申立て費用の助成
+  name_on_page: 成年後見人費用助成
+  summary: 成年後見人の申立てにかかる費用を助成する。
+  who: {}
+  at_application: []
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/detail/00002855.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットの配布
+  summary: 健康情報や緊急連絡先を入れて冷蔵庫に保管する容器を無料で配る。
+  who: {}
+  at_application:
+  - 75歳以上で構成する夫婦世帯か独居者
+  - または要介護認定区分が要支援以上の人
+  - または身体障害者手帳1・2級、療育手帳A判定の人
+  - または精神障害者保健福祉手帳・自立支援医療・特定疾患医療の人
+  where: 地域包括支援センター（改善センターみらいえ内）
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/11.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 災害時避難支援制度
+  name_on_page: 災害時避難支援制度
+  summary: 災害時に避難情報の伝達や安否確認、避難の支援を受けられるよう事前に登録する。
+  who: {}
+  at_application:
+  - 75歳以上で構成する夫婦世帯か独居者
+  - または要支援以上の要介護認定区分の人
+  - または身体障害者手帳1・2級など（そのほかの手帳・受給者証も）
+  - 近隣の「避難支援者」の登録が必要
+  where: 保健福祉課子育て・福祉グループ
+  url: https://www.town.shintotsukawa.lg.jp/hotnews/files/00005300/00005346/11.pdf
+  confidence: high
+not_found:
+- kaigo-yohin
+- iro
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai
+- haikai

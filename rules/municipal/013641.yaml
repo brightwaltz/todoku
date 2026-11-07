@@ -1,0 +1,56 @@
+city: '013641'
+name: 乙部町
+site: www.town.otobe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者のバス料金半額助成
+  name_on_page: 高齢者交通費助成事業
+  summary: 最寄りのバス停から道立江差病院のバス停までの往復料金の半額を助成する。
+  who: {}
+  at_application:
+  - 70歳以上、または65歳以上70歳未満で後期高齢者医療保険に加入
+  where: 町民課福祉係
+  url: https://www.town.otobe.lg.jp/section/choumin/e0taal00000007f7.html
+  confidence: high
+  amount: 往復区間のバス料金の半額
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸付
+  name_on_page: 緊急通報装置設置事業
+  summary: 急病などのとき消防署に連絡できる機器を貸し付ける。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上
+  - 健康や身体の状況から日常生活に不安がある
+  where: 町民課福祉係
+  url: https://www.town.otobe.lg.jp/section/choumin/e0taal00000007f7.html
+  confidence: high
+- category: haishoku
+  name: 昼食の配食
+  name_on_page: 配食サービス事業
+  summary: 月曜から金曜の昼食を届ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 老衰・心身の障害・疾病などで調理が困難
+  where: 町民課福祉係
+  url: https://www.town.otobe.lg.jp/section/choumin/e0taal00000007f7.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

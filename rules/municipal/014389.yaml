@@ -1,0 +1,114 @@
+city: 014389
+name: 沼田町
+site: www.town.numata.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 要介護高齢者等の外出支援（通院交通費助成）
+  name_on_page: 要介護高齢者等の外出支援サービス（通院交通費助成）
+  summary: 公共交通での通院が難しい要介護の人に、通院のハイヤー代を助成する。
+  who: {}
+  at_application:
+  - 町内に住み、非課税か均等割課税の世帯で要介護1以上（相当を含む）
+  - または要介護3以上、身体障害者手帳（下肢・体幹・視覚の1〜2級）の人は課税不問
+  - 生活保護世帯・施設入所型サービスの人は対象外
+  - 入退院時の交通費は除く
+  where: 保健福祉課 福祉グループ
+  url: https://www.town.numata.hokkaido.jp/section/hoken/h0opp2000000816p.html
+  confidence: high
+  amount: ハイヤー料金（福祉有償運送を含む）の9割、月額12,000円まで
+- category: sonota
+  name: 入院者支援の交通費助成
+  name_on_page: 高齢者等への入院者支援にかかる交通費助成
+  summary: 高齢者の入院を支援する人の交通費の一部を助成する。
+  who: {}
+  at_application:
+  - 町民税非課税、または町民税均等割課税の世帯
+  - 高齢者世帯で同居者の入院を支援した人
+  - または高齢独居世帯の入院を支援した町内の2親等以内の高齢の親族
+  - または世帯主65歳以上の独居世帯（付添人がいない場合は入退院時のみ本人に助成）
+  where: 保健福祉課 福祉グループ
+  url: https://www.town.numata.hokkaido.jp/section/hoken/h0opp2000000816p.html
+  confidence: high
+  amount: 入院日数÷2×1,500円（1人年度90日まで）。入退院時は加算が入院時5,000円・退院時5,000円
+- category: sonota
+  name: 高齢者世帯等除雪費の助成
+  name_on_page: 高齢者世帯等除雪費の助成
+  summary: 除雪を業者などに委託した高齢者世帯に、除雪費用の半分を助成する。
+  who: {}
+  at_application:
+  - 12月1日に居住し、除雪を業者等に委託している
+  - 町民税非課税、または町民税均等割のみ課税の世帯
+  - 世帯主70歳以上で同居親族が65歳以上、または70歳以上の独居
+  - または世帯全員65歳以上で、手帳か要介護認定の人がいる、病弱で除雪が困難
+  where: 保健福祉課 福祉グループ
+  url: https://www.town.numata.hokkaido.jp/section/hoken/h0opp2000000816p.html
+  confidence: high
+  amount: 費用の2分の1。生活道路の除雪は上限23,000円、屋根・窓の除雪は上限21,000円
+- category: mimamori
+  name: 見守りサポート事業「はあとふる沼田」
+  name_on_page: 高齢者等見守りサポート事業「はあとふる沼田」
+  summary: 見守りを希望する人を台帳に載せ、地域の人や団体が異変に気づいたとき対応する。
+  who: {}
+  at_application:
+  - 見守り等サポート申込書を出す
+  where: 保健福祉課 福祉グループ
+  url: https://www.town.numata.hokkaido.jp/section/hoken/h0opp2000000lm7m.html
+  confidence: low
+- category: sonota
+  name: 救急医療情報キット「あんしんバトン」
+  name_on_page: あんしんバトン
+  summary: 70歳以上の町民に、救急時に必要な情報を入れる容器とシールを無料で配る。
+  who:
+    age_min: 70
+  at_application: []
+  where: 保健福祉課 福祉グループ
+  url: https://www.town.numata.hokkaido.jp/section/hoken/h0opp2000000lm7m.html
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置
+  summary: 緊急時にボタンで看護師常駐のセンターに通報できる端末を取りつける。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者（おおむね65歳以上）で身体病弱
+  - またはひとり暮らしの重度身体障害者
+  - またはひとり暮らしで突発的に命の危険がある持病がある
+  - または寝たきりの高齢者がいる高齢者のみ世帯で介護者が病弱
+  where: 保健福祉課 福祉グループ
+  url: https://www.town.numata.hokkaido.jp/section/hoken/ujj7s30000000r2i.html
+  confidence: high
+- category: hochoki
+  name: 軽度・中等度難聴の補聴器購入費助成
+  name_on_page: 軽度・中等度難聴児（者）補聴器購入事業
+  summary: 身体障害者手帳の対象にならない軽度・中等度難聴の人に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所があり、身体障害者手帳を持っていない
+  - 18歳以上は本人が町民税非課税または均等割のみ
+  - 18歳未満は世帯員全員の所得割が46万円以上ではない
+  - 医師の意見書と見積書が必要。購入前に申請
+  where: 保健福祉課 福祉グループ
+  url: https://www.town.numata.hokkaido.jp/section/hoken/h0opp2000000ljts.html
+  confidence: high
+  amount: 18歳以上は購入費の1/2以内、上限3万円。18歳未満は購入費・修理費または基準額の2/3以内
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,52 @@
+city: 014338
+name: 妹背牛町
+site: www.town.moseushi.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 配食サービス事業
+  summary: 日常生活に不安がある高齢者などに、朝・昼・夕食を毎日希望に応じて届ける。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者か、高齢者のみの世帯
+  - そのほか町長が特に認めた人
+  - 町内に住み、日常生活に不安がある
+  - 申請のあと、必要性を見て利用の可否を決める
+  where: 健康福祉課 地域包括支援グループ
+  url: https://www.town.moseushi.hokkaido.jp/kosodate_iryou_fukushi/fukushi_kaigo/haisyoku_service.html
+  confidence: high
+  amount: 朝食400円（おかずのみ350円）、昼食・夕食は450円（おかずのみ400円）
+- category: gaishutsu
+  name: 高齢者等交通費助成事業
+  name_on_page: 高齢者等交通費助成事業
+  summary: タクシー・バス共通の助成券などを年度ごとに交付し、通院や外出の交通費を助ける。
+  who: {}
+  at_application:
+  - 本人も配偶者も自家用車を持っていない
+  - 満65歳以上の人がいる世帯、または身体障害者手帳1・2級などの人がいる世帯
+  - 町税の滞納世帯・生活保護世帯は対象外
+  - 毎年申請が必要
+  where: 保健センター 健康福祉課 福祉グループ
+  url: https://www.town.moseushi.hokkaido.jp/kosodate_iryou_fukushi/fukushi_kaigo/2026-0831-1028-58.html
+  confidence: high
+  amount: 助成券は年度で上限20,000円（最初は10,000円分）。JRは通院に限り上限10,000円
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

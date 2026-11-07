@@ -1,0 +1,71 @@
+city: 014826
+name: 小平町
+site: www.town.obira.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システムの貸し付け
+  summary: ひとり暮らしの高齢者の家庭に緊急通報機器を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 電話料金は本人の負担
+  where: 保健福祉課福祉係（頁の問い合わせ先）
+  url: http://www.town.obira.hokkaido.jp/hotnews/detail/00000129.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者の無料バス券の交付
+  name_on_page: 高齢者無料バス券の助成
+  summary: 65歳以上の人に町内で使える無料のバス乗車券を年30枚交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 町税等の滞納があると交付されない
+  - 初回は写真（縦4cm横3cm）と印鑑を持参
+  where: 保健福祉課福祉係（頁の問い合わせ先）
+  url: http://www.town.obira.hokkaido.jp/hotnews/detail/00000129.html
+  confidence: high
+  amount: 年間30枚の乗車券。デマンドバスが走らない地区はタクシー助成あり（自己負担あり）
+- category: iro
+  name: 家族介護手当
+  name_on_page: 家族介護手当の支給
+  summary: 常時臥床の人を6か月以上無報酬で介護する町民に月額の手当を出す。
+  who:
+    flags:
+    - bedridden_6m
+  at_application:
+  - 被介護者が要介護3〜5、身障手帳1・2級、重度知的障害、特定疾患の証のいずれか
+  - 介護する人は町民で、無報酬で介護している
+  - 障害を事由とする年金等を受けている被介護者は対象外
+  where: 保健福祉課福祉係（頁の問い合わせ先）
+  url: http://www.town.obira.hokkaido.jp/hotnews/detail/00000129.html
+  confidence: high
+  amount: 要介護3は月5,000円、4・5は月10,000円（前年に居宅介護サービス費の支給なしなら7,000円・15,000円）。手帳等の対象は月11,000円
+- category: mimamori
+  name: 水道アプリによる高齢者の見守り
+  name_on_page: 小平町水道アプリを活用した「高齢者等の見守りサービス」
+  summary: 水道の使用量を見て、離れた家族などへメールで知らせる無料の見守り。
+  who: {}
+  at_application:
+  - 水道スマートメーターが付いた水栓を使っている
+  - 見守る家族などのメールアドレスを登録する
+  where: 小平町水道アプリの「見守り登録」。困ったら地域包括支援センター
+  url: http://www.town.obira.hokkaido.jp/hotnews/detail/00004073.html
+  confidence: high
+  amount: サービスは無料（通信費は利用者負担）
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo

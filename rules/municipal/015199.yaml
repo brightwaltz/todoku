@@ -1,0 +1,35 @@
+city: 015199
+name: 利尻富士町
+site: www.town.rishirifuji.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者のバス利用定期券・回数券
+  name_on_page: 高齢者バス利用定期券
+  summary: 70歳以上の人が、島内の路線バスの全区間で使える定期券か回数券を1,000円で買える。
+  who: {}
+  at_application:
+  - 利尻富士町内に住所がある
+  - 満70歳以上、または申請する年度内に70歳になる人
+  - 新規は「利尻富士町高齢者証」の発行を受け、定期券は毎年更新する
+  where: 福祉課福祉介護係または鬼脇支所窓口
+  url: https://www.town.rishirifuji.hokkaido.jp/rishirifuji/1249.htm
+  confidence: high
+  amount: 定期券1枚1,000円（購入日から最初の3月31日まで）、バス利用券は11枚つづり1,000円
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori

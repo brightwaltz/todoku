@@ -1,0 +1,118 @@
+city: 014028
+name: 岩内町
+site: www.town.iwanai.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 訪問給食サービス
+  name_on_page: 訪問給食サービス事業
+  summary: 午後の訪問で給食を届け、見守りと食事の確保をする。週6日か3日のコースを選ぶ。
+  who: {}
+  at_application:
+  - おおむね65歳以上の方、または身体に障がいがある方
+  - 日常生活に支障があり、自分で食事を用意することが困難
+  - 町の職員が調査を行う
+  where: 長寿介護課（役場10番窓口）
+  url: https://www.town.iwanai.hokkaido.jp/%E7%A6%8F%E7%A5%89/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA/%E7%94%BA%E7%8B%AC%E8%87%AA%E3%81%AE%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/
+  confidence: high
+  amount: 1 食 550 円（パンフレットの記載）
+  more_urls:
+  - https://www.town.iwanai.hokkaido.jp/wp-content/uploads/2020/06/houmonkyuusyokupanfu.pdf
+- category: gaishutsu
+  name: 老人福祉センターへのタクシー送迎
+  name_on_page: 老人福祉センター移送サービス事業
+  summary: 徒歩での来館が困難な高齢者に、月・木曜、指定場所間のタクシー往復乗車を1日1回行う。
+  who:
+    age_min: 65
+  at_application:
+  - タクシーの利用が必要と認められる方
+  where: 長寿介護課（役場10番窓口）
+  url: https://www.town.iwanai.hokkaido.jp/%E7%A6%8F%E7%A5%89/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA/%E7%94%BA%E7%8B%AC%E8%87%AA%E3%81%AE%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/
+  confidence: low
+- category: gaishutsu
+  name: 訪問介護利用者の通院・外出のタクシー支援
+  name_on_page: 訪問介護移送サービス事業
+  summary: 訪問介護を使う高齢者に、民間タクシーによる通院や外出の支援をする。
+  who: {}
+  at_application:
+  - 介護保険の訪問介護サービスを利用している方
+  where: 長寿介護課（役場10番窓口）
+  url: https://www.town.iwanai.hokkaido.jp/%E7%A6%8F%E7%A5%89/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA/%E7%94%BA%E7%8B%AC%E8%87%AA%E3%81%AE%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/
+  confidence: low
+- category: sonota
+  name: 高齢者のみ世帯の除排雪
+  name_on_page: 在宅老人除排雪サービス事業
+  summary: 除排雪が困難な高齢者のみ世帯等に、冬期間の除排雪の援護をする。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者のみ世帯等
+  - 除排雪の労力の確保が困難
+  - 町民税が非課税または均等割のみの世帯
+  where: 長寿介護課（役場10番窓口）
+  url: https://www.town.iwanai.hokkaido.jp/%E7%A6%8F%E7%A5%89/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA/%E7%94%BA%E7%8B%AC%E8%87%AA%E3%81%AE%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/
+  confidence: high
+  amount: 無料（頁の「無料のもの」の区分）
+- category: sonota
+  name: 交通安全の杖の支給
+  name_on_page: 老人交通安全杖支給事業
+  summary: 外出時に交通事故から身を守るための杖を、希望者に支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体が虚弱と認められる方
+  where: 長寿介護課（役場10番窓口）
+  url: https://www.town.iwanai.hokkaido.jp/%E7%A6%8F%E7%A5%89/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA/%E7%94%BA%E7%8B%AC%E8%87%AA%E3%81%AE%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/
+  confidence: high
+  amount: 無料（頁の「無料のもの」の区分）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: 専用の通報器とペンダント型無線発信機を無償で貸与する（通話料等は自己負担）。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上の一人暮らしで、電話機があり、慢性疾患等で日常生活に注意を要する方
+  - または1級の身体障害者手帳がある一人暮らしで、日常生活に注意を要する方
+  where: 長寿介護課（役場10番窓口）
+  url: https://www.town.iwanai.hokkaido.jp/%E7%A6%8F%E7%A5%89/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA/%E7%94%BA%E7%8B%AC%E8%87%AA%E3%81%AE%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/
+  confidence: high
+  amount: 機器は無償貸与、通話料等は自己負担
+- category: kaigo-yohin
+  name: 在宅高齢者の介護用品購入費の助成
+  name_on_page: 在宅高齢者介護用品購入費助成事業
+  summary: 紙おむつなど介護用品の購入費の9割を、年3回の申請で助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上（要綱は第2号被保険者も対象と記載）
+  - 前年の合計所得金額と非課税年金収入の合計が148万円以下
+  - 生活保護受給者・介護保険料滞納世帯の方は対象外
+  - 購入時と申請時の両方で要件を満たす
+  where: 長寿介護課（役場10番窓口）
+  url: https://www.town.iwanai.hokkaido.jp/%E7%A6%8F%E7%A5%89/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA/%E7%94%BA%E7%8B%AC%E8%87%AA%E3%81%AE%E7%94%9F%E6%B4%BB%E6%94%AF%E6%8F%B4%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9/
+  confidence: high
+  amount: 購入費の 9 割。1 回の申請で上限 24,000 円、年間最高 72,000 円
+  more_urls:
+  - https://www.town.iwanai.hokkaido.jp/wp-content/uploads/2018/05/omutsu%EF%BC%8F2018.5-1.pdf
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

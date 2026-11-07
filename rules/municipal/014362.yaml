@@ -1,0 +1,60 @@
+city: '014362'
+name: 雨竜町
+site: www.town.uryu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: タクシー利用助成事業
+  name_on_page: 雨竜町タクシー利用助成事業
+  summary: 町内のタクシー利用券を交付し、医療機関・商店・バス停などへの移動の料金を助ける。
+  who: {}
+  at_application:
+  - 4月1日時点で町内に住所がある
+  - 65歳以上、または身体障害者手帳1〜3級
+  - または高校生、または運転免許がない18〜64歳
+  - 町税などの滞納がない
+  where: 住民課 福祉生活環境担当
+  url: https://www.town.uryu.hokkaido.jp/docs/4322.html
+  confidence: high
+  amount: 利用料の50％以内、利用券1枚につき500円まで。1人年度ごとに3冊（225枚）まで
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: かかりつけ医や持病など緊急時に必要な情報を入れて保管するキットを配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし
+  - または65歳以上で構成されている世帯
+  - または身体障害者手帳1・2級でひとり暮らし
+  where: 住民課 保健担当、社会福祉協議会（申請書を置いている）
+  url: https://www.town.uryu.hokkaido.jp/docs/kyukyu-kit.html
+  confidence: high
+- category: sonota
+  name: ごみ袋の減免
+  name_on_page: ごみ袋の減免措置について
+  summary: 対象の世帯に、指定ごみ袋か粗大ごみ処理券を手数料の減免として交付する。
+  who: {}
+  at_application:
+  - 70歳以上の高齢者世帯か単身世帯（町民税非課税・町税の滞納なし）
+  - または生活保護世帯、または母子・父子家庭
+  - 減免の申請が必要
+  where: 住民課 福祉生活環境担当
+  url: https://www.town.uryu.hokkaido.jp/docs/gomi-genmen.html
+  confidence: high
+  amount: 単身世帯は2,000円相当、ほかの世帯は4,000円相当
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

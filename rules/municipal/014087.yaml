@@ -1,0 +1,78 @@
+city: 014087
+name: 余市町
+site: www.town.yoichi.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: 自宅に緊急通報装置を付け、24時間オペレーターが相談と通報を受ける。
+  who:
+    age_min: 65
+  at_application:
+  - 身体上の慢性疾患などで日常生活に支障があり、緊急時の対応ができないと認められる
+  where: 保険課介護保険係（21-2119）、福祉課福祉係（21-2120）、地域包括支援センター（48-6015）などに相談
+  url: https://www.town.yoichi.hokkaido.jp/kurashi/kurashinojouhou/fukushi-kaigo/files/gaidor8.7.29.pdf
+  confidence: high
+  amount: 利用料は無料（通話料金は利用者負担）
+- category: sonota
+  name: 高齢者等の除雪
+  name_on_page: 高齢者等除雪サービス事業
+  summary: 自力で除雪できない家庭の生活道路などの雪を、冬の間に除雪する。
+  who: {}
+  at_application:
+  - 冬期間、身体的・経済的な理由で自力で除雪できない家庭
+  where: 保険課介護保険係（21-2119）、福祉課福祉係（21-2120）、地域包括支援センター（48-6015）などに相談
+  url: https://www.town.yoichi.hokkaido.jp/kurashi/kurashinojouhou/fukushi-kaigo/files/gaidor8.7.29.pdf
+  confidence: high
+  amount: 利用料は無料
+- category: haishoku
+  name: 訪問配食
+  name_on_page: 訪問配食サービス事業
+  summary: 栄養バランスのとれた食事を定期的に届け、状況も調べる。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の単身世帯や高齢者世帯など（「など」の範囲は頁にない）
+  - 栄養改善か、在宅での自立支援が必要な人
+  where: 保険課介護保険係（21-2119）、福祉課福祉係（21-2120）、地域包括支援センター（48-6015）などに相談
+  url: https://www.town.yoichi.hokkaido.jp/kurashi/kurashinojouhou/fukushi-kaigo/files/gaidor8.7.29.pdf
+  confidence: high
+  amount: 1食450円、週1〜2回
+- category: jutaku
+  name: 住宅改修費の上限を町独自に40万円へ
+  name_on_page: 住宅改修費の支給
+  summary: 介護保険の住宅改修費の上限を、町が独自に20万円から40万円に引き上げている。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 実際に住んでいる住所地の住宅の改修が対象
+  - 改修の前に、役場（介護保険係）へ事前申請が必要
+  where: 役場介護保険係（保険課、21-2119）
+  url: https://www.town.yoichi.hokkaido.jp/kurashi/kurashinojouhou/fukushi-kaigo/files/gaidor8.7.29.pdf
+  confidence: high
+  amount: 上限40万円（介護保険法の上限は20万円）の9〜7割
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- yutai

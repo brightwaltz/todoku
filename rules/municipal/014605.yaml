@@ -1,0 +1,132 @@
+city: '014605'
+name: 上富良野町
+site: www.town.kamifurano.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事の準備が難しい高齢者に、栄養に配慮した食事を定期的に自宅へ届ける。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者または高齢者のみの世帯で、食事の準備が困難
+  - 長時間の立位が困難、火気の使用が難しいなどの理由がある
+  - 対象要件に準ずる障害者も対象
+  where: 保健福祉課 高齢者支援班
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1474
+  confidence: high
+  amount: 1食450円（副食のみは350円）
+  more_urls:
+  - https://www.town.kamifurano.hokkaido.jp/contents/05hofuku/0550kourei/jyutakufukushi2025.4.pdf
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 理容サービス
+  summary: 理美容院へ行けない人の自宅に、町内の理美容師が訪問して散髪する。
+  who: {}
+  at_application:
+  - 要介護3以上の人（同程度の障害がある人も対象）
+  - 歩行が困難または寝たきりで、理美容院に行けない
+  where: 保健福祉課 高齢者支援班
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1474
+  confidence: high
+  amount: 1回2,000円
+  more_urls:
+  - https://www.town.kamifurano.hokkaido.jp/contents/05hofuku/0550kourei/jyutakufukushi2025.4.pdf
+- category: gaishutsu
+  name: 特殊車両による移送サービス
+  name_on_page: 移送サービス
+  summary: 普通車両での移動が難しい人を、通院や社会活動のため特殊車両で送迎する。
+  who: {}
+  at_application:
+  - 歩行が困難・寝たきりなどで普通車両での移動が困難
+  - 要介護2以上の人（同程度の障害がある人も対象）
+  where: 保健福祉課 高齢者支援班
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1474
+  confidence: high
+  amount: 町内は片道250円（富良野市1,250円、旭川市2,500円、ほかは距離に応じる）
+  more_urls:
+  - https://www.town.kamifurano.hokkaido.jp/contents/05hofuku/0550kourei/jyutakufukushi2025.4.pdf
+- category: sonota
+  name: 冬期間の除雪サービス
+  name_on_page: 除雪サービス
+  summary: 除雪が難しい非課税世帯に、冬の間の除雪を行う。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 近隣に近親者がなく、除雪が困難なひとり暮らし高齢者や高齢者世帯など
+  - 日常生活や救急通路の確保に必要な範囲を、積雪15cm以上のときに実施
+  where: 保健福祉課 高齢者支援班
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1474
+  confidence: high
+  amount: 利用料は15分につき75円
+  more_urls:
+  - https://www.town.kamifurano.hokkaido.jp/contents/05hofuku/0550kourei/jyutakufukushi2025.4.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 消防や包括支援センターへ直接連絡できる通報装置を自宅に設置する。
+  who: {}
+  at_application:
+  - ひとり暮らしまたは高齢者のみの世帯で、虚弱で急な体調変化に不安がある
+  - 要介護認定を受けている人など。準ずる障害者も対象
+  where: 保健福祉課 高齢者支援班、地域包括支援センター
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1474
+  confidence: high
+  amount: 年間の利用料は、生活保護世帯 無料、町民税非課税世帯 3,000円、町民税課税世帯 6,000円
+  more_urls:
+  - https://www.town.kamifurano.hokkaido.jp/contents/05hofuku/0550kourei/jyutakufukushi2025.4.pdf
+- category: kaigo-yohin
+  name: おむつ購入費の助成
+  name_on_page: おむつ購入費助成
+  summary: 常時おむつが必要な人に、おむつの購入費の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりや認知症などで常時おむつが必要
+  - 福祉施設に入所した場合や、入院が91日を超える場合は対象外
+  - おむつが必要との意見を、担当の保健師・ケアマネ・包括職員が申請書に記入
+  where: 保健福祉課 高齢者支援班
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1474
+  confidence: high
+  amount: 月5,000円まで
+  more_urls:
+  - https://www.town.kamifurano.hokkaido.jp/contents/05hofuku/0550kourei/jyutakufukushi2025.4.pdf
+- category: gaishutsu
+  name: 敬老パス
+  name_on_page: 敬老パス
+  summary: 70歳以上の人に、町営バス全路線の運賃が半額になる顔写真つきのパスを発行する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 保健福祉課 高齢者支援班
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1478
+  confidence: high
+  amount: 町営バス全路線の運賃が半額
+- category: koken
+  name: 成年後見の申し立て費用の助成
+  name_on_page: 成年後見制度利用促進事業
+  summary: 判断力が十分でない高齢者などの成年後見の申し立てに対し、助成を行う。
+  who: {}
+  at_application:
+  - 認知症や障害などで判断力が十分でない高齢者や障害者が対象
+  - 助成の金額・条件の詳しい記載は頁に無い
+  where: 権利擁護センター（社会福祉協議会）
+  url: https://www.town.kamifurano.hokkaido.jp/index.php?id=1477
+  confidence: low
+not_found:
+- haikai
+- iro
+- jutaku
+- shingu
+- hochoki
+- mimamori

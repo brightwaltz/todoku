@@ -1,0 +1,123 @@
+city: '013455'
+name: 森町
+site: www.town.hokkaido-mori.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食の配達と安否確認）
+  name_on_page: 「食」の自立支援事事業（配食サービス）
+  summary: 月曜から土曜の夕食を届け、安否確認や状態の把握も兼ねる。
+  who:
+    at_home: true
+  at_application:
+  - おおむね 65 歳以上の単身世帯、高齢者のみ（に準ずる）世帯の高齢者
+  - または身体障害者で、在宅で調理が困難な人
+  where: 保健福祉子育て課 福祉係（砂原支所 地域振興課 町民係でも受付）
+  url: https://www.town.hokkaido-mori.lg.jp/soshiki/hokenfukushi/koureisha_hukushi/215.html
+  confidence: high
+  amount: 1 食 300 円
+- category: sonota
+  name: 軽度生活援助（軽作業や冬の除雪などの援助）
+  name_on_page: 軽度生活援助事業
+  summary: 日常生活上の軽作業や冬期間の除雪などの援助を、低い自己負担で受けられる。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上の単身世帯、高齢者のみ（に準ずる）世帯の高齢者
+  - 日常生活上の援助が必要な人
+  where: 保健福祉子育て課 福祉係（砂原支所 地域振興課 町民係でも受付）
+  url: https://www.town.hokkaido-mori.lg.jp/soshiki/hokenfukushi/koureisha_hukushi/215.html
+  confidence: high
+  amount: 1 時間 100 円（月 5 時間まで）
+- category: kaigo-yohin
+  name: 介護用品の支給（おむつ等の一部助成）
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5相当の低所得の高齢者を在宅で介護する家族に、おむつなどの費用を助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護 4・5 に相当する高齢者を在宅で介護している家族
+  - 所得制限あり
+  where: 保健福祉子育て課 福祉係（砂原支所 地域振興課 町民係でも受付）
+  url: https://www.town.hokkaido-mori.lg.jp/soshiki/hokenfukushi/koureisha_hukushi/215.html
+  confidence: high
+  amount: 月額 6,000 円
+- category: iro
+  name: 家族介護慰労金（年額 10 万円）
+  name_on_page: 家族介護慰労事業
+  summary: 介護の慰労として、在宅で介護している家族に金品を贈る。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護 4・5 に相当する高齢者を在宅で介護している家族
+  - その高齢者が過去 1 年間、介護保険のサービスを受けていない
+  where: 保健福祉子育て課 福祉係（砂原支所 地域振興課 町民係でも受付）
+  url: https://www.town.hokkaido-mori.lg.jp/soshiki/hokenfukushi/koureisha_hukushi/215.html
+  confidence: high
+  amount: 年額 10 万円（金品）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（貸与）
+  name_on_page: 緊急通報体制等整備事業
+  summary: 健康に不安のあるひとり暮らしの高齢者らに、緊急通報装置を貸与して設置する。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上の単身世帯、高齢者のみ（に準ずる）世帯の高齢者
+  - または身体障害者のみ（に準ずる）世帯の身体障害者
+  - 近隣の緊急連絡員や民生委員の協力を得て運用する
+  where: 保健福祉子育て課 福祉係（砂原支所 地域振興課 町民係でも受付）
+  url: https://www.town.hokkaido-mori.lg.jp/soshiki/hokenfukushi/koureisha_hukushi/215.html
+  confidence: high
+- category: yutai
+  name: 高齢者の入浴料金助成券（年 12 回分）
+  name_on_page: 高齢者入浴料金助成事業
+  summary: 町内すべての温泉施設で使える入浴料金の助成券を、毎年度配る。
+  who:
+    age_min: 65
+  at_application:
+  - 森町に住所があり、その年の 4 月 1 日現在で満 65 歳以上
+  - 年の途中で 65 歳になった人・転入した人は、その月から対象
+  where: 保健福祉子育て課 福祉係（砂原支所 地域振興課 町民係でも受付）
+  url: https://www.town.hokkaido-mori.lg.jp/soshiki/hokenfukushi/koureisha_hukushi/215.html
+  confidence: high
+  amount: 年間 12 回分の入浴料金助成券
+- category: sonota
+  name: 福祉灯油助成券（100 リットル分、令和 8 年度のみ）
+  name_on_page: 福祉灯油助成券
+  summary: 住民税非課税の高齢者世帯などに、100リットル分の灯油の助成券を発行する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 令和 8 年 11 月 1 日現在、森町に住民登録がある
+  - 満 70 歳以上のみの世帯、または障害者手帳 1・2 級等の人の同居世帯
+  - または、ひとり親世帯、特定疾患の受給者証を持つ人の同居世帯
+  - 生活保護の受給者・施設入所者・長期入院者は対象外
+  where: 保健福祉子育て課 福祉係（砂原支所 地域振興課 町民係でも受付）
+  url: https://www.town.hokkaido-mori.lg.jp/soshiki/hokenfukushi/koureisha_hukushi/441.html
+  confidence: high
+  amount: 100 リットル分の助成券（令和 8 年度に限る）。受付は令和 9 年 3 月 31 日まで
+not_found:
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- mimamori
+- chusha

@@ -1,0 +1,136 @@
+city: 014591
+name: 美瑛町
+site: town.biei.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 在宅の一人暮らしで緊急時に動きにくい人などに、消防へ簡単に通報できる装置を設置する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 身体病弱や重度障害で、緊急時に機敏に行動することが困難な人
+  - または、突発的に命に関わる症状が出る持病（重度の心疾患など）がある人
+  - 協力員2名が必要
+  where: 保健福祉課 地域支援係（地域包括支援センター）
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 利用者負担は通話料・基本料金・ペンダントの電池などの消耗品代
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 毎日昼食を1食届けて、食事の確保と安否の確認を行う。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみの世帯など
+  - または、視覚・平衡機能・肢体不自由の障害が1〜3級の人
+  - 食生活の自立が困難かどうかの調査がある
+  where: 保健福祉課 地域支援係（地域包括支援センター）
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 利用者負担は550円
+- category: gaishutsu
+  name: 移送サービス
+  name_on_page: 移送サービス
+  summary: 車での外出が難しい人を、主に通院のため特殊車両で送迎する。
+  who: {}
+  at_application:
+  - 町内に住むおおむね65歳以上で、身体虚弱や障がいにより一般車両の利用が困難
+  - 家族などの付き添いが必要
+  where: 保健福祉課 地域支援係（地域包括支援センター）
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 利用者負担は町内1回200円、町外1回1,000円（片道のみでも1回）
+- category: sonota
+  name: 除排雪等の費用助成
+  name_on_page: 除排雪等助成事業
+  summary: 自力で除排雪が難しい世帯に、除排雪や雪害対策の費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 70歳以上の人か身体障がい者手帳のある人だけで構成される世帯
+  - 町内に支援可能な親族が住んでいない世帯
+  - 雪下ろし・除排雪の費用や、雪かき用具・雪止め・窓囲いの費用が対象
+  where: 保健福祉課 地域支援係（地域包括支援センター）
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 対象費用の4分の3以内、上限は年3万円
+- category: gaishutsu
+  name: 道北バス白金線の無料乗車証
+  name_on_page: 道北バス（白金線）無料乗車証
+  summary: 道北バス白金線の一部区間を無料で乗れる乗車証を発行する。
+  who: {}
+  at_application:
+  - 年度末年齢が70歳以上、または障がい者手帳・療育手帳の交付を受けている
+  - 本人だけが使える。顔写真付き身分証か顔写真を持参して申請
+  where: 保健福祉課 社会係
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 美瑛駅前〜白金温泉（青年の家）の区間が無料
+- category: kaigo-yohin
+  name: 寝たきり者等の紙おむつ購入助成
+  name_on_page: 寝たきり者等介護用品（オムツ等）購入助成サービス
+  summary: 常時おむつが必要な要介護者の世帯に、おむつ等の購入助成券を渡す。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 2か月以上、常時おむつを使う状態の要介護者がいる世帯
+  - 所得税課税世帯に属する場合は対象外
+  - 生活保護世帯、介護保険施設に入所した場合も対象外
+  where: 保健福祉課 地域支援係（地域包括支援センター）
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 月額5,000円分の購入助成券。医療保険の入院でおむつ代を病院に払う場合は月5,000円まで助成（領収書が必要）
+- category: hochoki
+  name: 高齢者の補聴器購入助成
+  name_on_page: 高齢者補聴器購入助成事業
+  summary: 軽度の難聴で補聴器を買う70歳以上の人に、購入費の一部を助成する。
+  who:
+    age_min: 70
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻科専門医の意見書で補聴器が必要と認められる（30dB以上70dB未満など）
+  - 町民税所得割が非課税の世帯に属する（生活保護世帯は除く）
+  - 町民税に滞納がない
+  - 身体障害者手帳による補聴器の交付を受けられない
+  where: 保健福祉課 地域支援係（6番窓口）
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 助成対象費用の2分の1（片耳の上限25,000円）
+- category: gaishutsu
+  name: 高齢者のハイヤー料金助成券
+  name_on_page: 高齢者福祉ハイヤー料金助成事業
+  summary: 車を持たない70歳以上の非課税世帯に、町内ハイヤーの料金助成券を年1冊交付する。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 70歳以上の人が自家用車を所有していない世帯
+  - 町民税に滞納がない
+  - 重度障害者ハイヤー料金助成・移送サービスの利用者は除く
+  - 介護保険施設に入所している人は除く
+  where: 保健福祉課 社会係（8番窓口）
+  url: https://town.biei.hokkaido.jp/health/senior/welfare-services.html
+  confidence: high
+  amount: 年1冊。市街地は500円×30枚（15,000円分）、郊外は500円×40枚（20,000円分）
+not_found:
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo

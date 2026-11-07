@@ -1,0 +1,101 @@
+city: '013676'
+name: 奥尻町
+site: www.town.okushiri.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅の要介護者に、紙おむつ・尿取パッドと引き換える給付券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者とその介護者で、市町村民税が非課税
+  - 施設入所・病院入院の期間は対象外
+  where: くらし安心課 福祉介護係・包括支援係
+  url: https://www.town.okushiri.lg.jp/hotnews/detail/00004970.html
+  confidence: high
+  amount: 月額 5,000 円または 6,500 円を限度
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 栄養バランスのとれた食事を届け、あわせて安否を確認する。
+  who: {}
+  at_application:
+  - 要介護認定を受けた方
+  - または要介護認定が非該当で、基本チェックリストで必要と認められる方
+  where: くらし安心課 福祉介護係・包括支援係
+  url: https://www.town.okushiri.lg.jp/hotnews/detail/00004970.html
+  confidence: high
+  amount: 利用者負担は 1 食につき食材料費 430 円
+- category: mimamori
+  name: 電話による安否確認
+  name_on_page: 電話サービス
+  summary: 1人暮らしで交流の少ない高齢者に、週2回ほど電話で安否確認と情報提供をする。
+  who: {}
+  at_application:
+  - 65歳以上の1人暮らしの高齢者
+  - またはサービスが必要と認められる方
+  - 町社会福祉協議会に委託して実施
+  where: くらし安心課 福祉介護係・包括支援係
+  url: https://www.town.okushiri.lg.jp/hotnews/detail/00004970.html
+  confidence: high
+- category: mimamori
+  name: 自宅訪問による安否確認
+  name_on_page: 訪問サービス
+  summary: 訪問員が自宅を月2回ほど訪ね、安否を確認する。
+  who: {}
+  at_application:
+  - 70歳以上の1人暮らしの高齢者
+  - またはサービスが必要と認められる方
+  - 町社会福祉協議会に委託して実施
+  where: くらし安心課 福祉介護係・包括支援係
+  url: https://www.town.okushiri.lg.jp/hotnews/detail/00004970.html
+  confidence: high
+- category: sonota
+  name: 高齢者世帯の除雪
+  name_on_page: 除雪サービス
+  summary: 除雪が困難な高齢者らの世帯に、12月から3月ごろ最低限の範囲の除雪をする。
+  who: {}
+  at_application:
+  - 除雪が困難で、親族などの援助がないと認められる世帯
+  - 65歳以上のみの世帯、65歳以上と障害者のみの世帯、要介護者のみの世帯
+  - ボランティアを確保できないときは受けられない場合がある
+  where: くらし安心課 福祉介護係・包括支援係
+  url: https://www.town.okushiri.lg.jp/hotnews/detail/00004970.html
+  confidence: high
+- category: mimamori
+  name: 見守りサービス利用費の助成
+  name_on_page: 高齢者の見守りサービス
+  summary: 民間の見守りサービスを新しく使う高齢者に、費用の一部を助成する。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者等
+  - サービス開始前に申請する
+  - 助成は1人につき1回まで
+  where: くらし安心課 包括支援係
+  url: https://www.town.okushiri.lg.jp/hotnews/detail/00008501.html
+  confidence: high
+  amount: 初期費用 24,000 円、または月額利用料 12 か月分と 15,000 円のいずれか低い方が限度
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

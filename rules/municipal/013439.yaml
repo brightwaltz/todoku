@@ -1,0 +1,65 @@
+city: 013439
+name: 鹿部町
+site: www.town.shikabe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給（介護用品利用券）
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で要介護3以上の方を介護する家族に、紙おむつなどの介護用品利用券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 町民税非課税世帯に属する人、または生活保護を受けている人
+  - 鹿部町民で、在宅で生活している
+  where: 保健福祉課 地域包括支援係
+  url: https://www.town.shikabe.lg.jp/iryo_kenko_fukushi/koreishafukushi/1146.html
+  confidence: high
+  amount: 1 人あたり月額 5,000 円を限度とする利用券
+- category: gaishutsu
+  name: 地域交通クーポンの交付（バス・タクシー）
+  name_on_page: 地域交通クーポン交付事業
+  summary: 路線バス・デマンドバス・タクシーで使える年間 12,000 円相当のクーポンを交付する。
+  who: {}
+  at_application:
+  - 町内在住で、次のどれかに当たる人
+  - 75 歳以上（その年度に 75 歳になる人を含む）
+  - 65〜74 歳の単身世帯の人
+  - 身体障害者手帳・療育手帳・精神障害者保健福祉手帳を持つ人
+  - 要支援認定を受けた人
+  where: 保健福祉課 福祉係
+  url: https://www.town.shikabe.lg.jp/iryo_kenko_fukushi/koreishafukushi/2214.html
+  confidence: high
+  amount: 年間 12,000 円相当（100 円×120 枚）。乗車か降車のどちらかが町内の場合に使える
+- category: sonota
+  name: 救急カードの配布と保管
+  name_on_page: 救急カード
+  summary: 病歴や服薬を書いた救急カードを筒に入れて冷蔵庫に保管し、救急時に役立てる。
+  who: {}
+  at_application:
+  - 65 歳以上の一人暮らしの人および夫婦世帯
+  - または、障がいのある一人暮らしの人
+  - 申込み後、職員が自宅で記入と保管の方法を説明する
+  where: 保健福祉課 地域包括支援係
+  url: https://www.town.shikabe.lg.jp/iryo_kenko_fukushi/koreishafukushi/950.html
+  confidence: high
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori

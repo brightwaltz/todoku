@@ -1,0 +1,119 @@
+city: '013374'
+name: 七飯町
+site: www.town.nanae.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: nichijo-yogu
+  name: 日常生活用具の給付（火災警報器・自動消火器・電磁調理器）
+  name_on_page: 日常生活用具の給付
+  summary: 満65歳以上のひとり暮らしの方などに、火災警報器・自動消火器・電磁調理器を給付する。
+  who: {}
+  at_application:
+  - 満 65 歳以上のひとり暮らしの方など
+  where: 福祉課地域福祉係
+  url: https://www.town.nanae.hokkaido.jp/hotnews/detail/00000293.html
+  confidence: low
+  amount: 生計中心者の前年の所得税課税年額により利用者の負担がある
+- category: sonota
+  name: 福祉機器の貸出（社会福祉協議会）
+  name_on_page: 生活用具の給付・貸出など（社会福祉協議会が貸し出し）
+  summary: ねたきり等の方に、電動ベッドや車椅子などの福祉機器を無料で貸し出す。
+  who: {}
+  at_application:
+  - ねたきり等の方
+  where: 七飯町社会福祉協議会（電話 0138-65-2067）
+  url: https://www.town.nanae.hokkaido.jp/hotnews/detail/00000293.html
+  confidence: low
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置
+  summary: ペンダントや押しボタンで通報できる機器を設置し、地域の協力員が駆け付ける。
+  who: {}
+  at_application:
+  - 要支援以上の認定を受けたおおむね 65 歳以上の一人暮らし
+  - または、重度の高齢者を抱える高齢者のみの世帯
+  - または、一人暮らしの重度身体障害者世帯など
+  - 申請時に、駆け付けられる協力員を事前に登録する
+  where: 福祉課地域福祉係
+  url: https://www.town.nanae.hokkaido.jp/hotnews/detail/00000293.html
+  confidence: high
+  amount: 利用者の費用負担はない
+- category: gaishutsu
+  name: 外出支援サービス（ハンディキャブの送迎）
+  name_on_page: 外出支援サービス
+  summary: 一般の交通機関が使いにくい方を、リフト付きワゴン車で送り迎えする。
+  who: {}
+  at_application:
+  - おおむね 65 歳以上で一般の交通機関の利用が困難な人
+  - または、おおむね 60 歳以上で下肢が不自由な人
+  - 通院・入退院・老人福祉施設への入退所などの利用に限る
+  where: 福祉課地域福祉係
+  url: https://www.town.nanae.hokkaido.jp/hotnews/detail/00000293.html
+  confidence: high
+  amount: 片道 町内 200 円、函館市内 600 円、北斗市内 400 円
+- category: haikai
+  name: ひとり歩き高齢者家族支援サービス（GPS探索機）
+  name_on_page: ひとり歩き高齢者家族支援サービス
+  summary: GPS探索機を付けた高齢者がひとり歩きしたとき、家族の通報で居場所を探して知らせる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application: []
+  where: 福祉課地域福祉係
+  url: https://www.town.nanae.hokkaido.jp/hotnews/detail/00000293.html
+  confidence: high
+  amount: 探索機使用代 510 円／月
+- category: sonota
+  name: 福祉灯油等助成（5,000 円分の商品券）
+  name_on_page: 七飯町福祉灯油等助成事業
+  summary: 世帯全員が住民税非課税の高齢者世帯などに、冬の暖房費の助成として商品券を渡す。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 満 65 歳以上のみの世帯（単身を含む）、障がい者（児）世帯、ひとり親世帯のどれか
+  - 高齢者などが全員入院・入所中の世帯、生活保護の世帯は対象外
+  - 町税などの滞納がない
+  - 令和 8 年 11 月 1 日現在の町の住民基本台帳に載っている
+  where: 福祉課（役場・大中山出張所・大沼出張所）。受付は 2027 年 2 月 26 日まで
+  url: https://www.town.nanae.hokkaido.jp/hotnews/detail/00015612.html
+  confidence: high
+  amount: 1 世帯 5,000 円分のアップル商品券
+- category: sonota
+  name: 特殊詐欺等防止対策機器（電話機等）の購入費補助
+  name_on_page: 特殊詐欺等防止対策機器購入費補助金
+  summary: 65歳以上のみの世帯が、迷惑電話対策の電話機等を町内の店で買う費用を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に居住し、住民票上で 65 歳以上のみの世帯に属する
+  - 過去に同じ補助金を受けた人がいない世帯
+  - 町内の店舗で買った機器が対象（1 世帯 1 台）
+  where: 福祉課地域福祉係
+  url: https://www.town.nanae.hokkaido.jp/hotnews/detail/00016690.html
+  confidence: high
+  amount: 購入費の 2 分の 1 以内、上限 1 万円
+not_found:
+- haishoku
+- hochoki
+- shingu
+- ribiyo
+- jutaku
+- mimamori
+- yutai
+- chusha

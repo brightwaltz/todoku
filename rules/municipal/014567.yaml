@@ -1,0 +1,118 @@
+city: '014567'
+name: 愛別町
+site: www.town.aibetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 軽度生活援助事業（ヘルパー事業）
+  name_on_page: 軽度生活援助事業（ヘルパー事業）
+  summary: ホームヘルパーが訪問し、家の中の清掃やゴミ出しなど軽い日常生活の援助をする。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 在宅で1人暮らしの65歳以上（65歳未満で特に必要と認められる人も含む）
+  where: 保健福祉課 介護保険係、地域包括支援センター
+  url: https://www.town.aibetsu.hokkaido.jp/01/03/08/419
+  confidence: high
+  amount: 30分100円
+- category: sonota
+  name: 軽度生活援助事業（除雪サービス）
+  name_on_page: 軽度生活援助事業（除雪サービス事業）
+  summary: 除雪が困難な世帯の間口・通路の除雪と屋根の雪下ろしを行う。
+  who: {}
+  at_application:
+  - 自力で除雪できない世帯で、概ね70歳以上の人だけ、身体障害者だけ、または両方のみの世帯
+  - またはひとり親世帯（屋根の雪下ろしのみ）、そのほか特に必要とする世帯
+  - 同じ区内に扶養義務者（子・兄弟等）が住んでいる世帯は対象外
+  where: 愛別町社会福祉協議会（地域の福祉委員を通じて申請）、保健福祉課 介護保険係
+  url: https://www.town.aibetsu.hokkaido.jp/01/03/08/419
+  confidence: high
+  amount: 間口除雪は無料。通路は1回100円（非課税）・200円（課税）。屋根は30分350円（非課税）・700円（課税）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報体制等整備事業
+  summary: ボタン1つで消防に通報できる緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - 概ね65歳以上の1人暮らし、老人夫婦世帯、これに準ずる身体障害者世帯等
+  where: 保健福祉課 介護保険係、地域包括支援センター
+  url: https://www.town.aibetsu.hokkaido.jp/01/03/08/419
+  confidence: high
+  amount: 月200円
+- category: haishoku
+  name: 食の自立支援事業（配食サービス）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 希望する曜日に夕食を届け、安否確認も行う。
+  who: {}
+  at_application:
+  - 概ね65歳以上の単身世帯・高齢者夫婦世帯・高齢者のみの世帯、またはこれに準ずる世帯
+  - サービスを利用することが適切と認められる
+  where: 保健福祉課 介護保険係、地域包括支援センター
+  url: https://www.town.aibetsu.hokkaido.jp/01/03/08/419
+  confidence: high
+  amount: 経費の2分の1（例：1食960円なら480円）
+- category: gaishutsu
+  name: 福祉有償運送
+  name_on_page: 福祉有償運送等事業
+  summary: 移送用車両で、通院や在宅福祉サービスのための送迎をする。
+  who: {}
+  at_application:
+  - 町の福祉有償運送の運営協議会に登録された、単独での移動が困難な人
+  - 要介護者・要支援者、身体障害者、そのほか単独で公共交通機関を使うことが困難な障害のある人
+  where: 愛別町社会福祉協議会（利用料の助成は保健福祉課 介護保険係）
+  url: https://www.town.aibetsu.hokkaido.jp/01/03/08/419
+  confidence: high
+  amount: 車賃（1kmあたり140円）×距離＋1,500円（往復の介助料）。利用料の半額を助成する制度がある
+- category: iro
+  name: 介護手当支給事業
+  name_on_page: 介護手当支給事業
+  summary: 要介護3〜5に相当する高齢者を在宅で介護する家族に、介護手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護を受ける高齢者の世帯が町民税非課税
+  - その高齢者を現に介護している家族が申込む
+  where: 保健福祉課 介護保険係、地域包括支援センター
+  url: https://www.town.aibetsu.hokkaido.jp/01/03/08/419
+  confidence: high
+  amount: 月額10,000円
+- category: gaishutsu
+  name: 高齢者等交通助成事業
+  name_on_page: 高齢者等交通助成事業
+  summary: 高齢の人・障がいのある人・免許返納者に、ハイヤー料金の助成券などを交付する。
+  who: {}
+  at_application:
+  - 令和8年4月1日現在、町の住民基本台帳に載っている
+  - 世帯非課税で、75歳以上、または障害者手帳（身体1・2級など）、または65歳以上で要介護・要支援認定
+  - 世帯課税の場合は、上の条件に加えて本人と配偶者がともに運転免許を持たない
+  - または65歳以上で運転免許を自主返納した人（失効も可）
+  - 社協の福祉有償運送に登録している人は対象外
+  where: 保健福祉課 介護保険係
+  url: https://www.town.aibetsu.hokkaido.jp/01/03/08/419
+  confidence: high
+  amount: 愛別ハイヤーの750円券を地域により36枚（36,000円分）・48枚（27,000円分）・24枚（18,000円分）。免許返納の人は証明書の交付手数料1,100円を助成
+not_found:
+- kaigo-yohin
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori
+- chusha
+- yutai

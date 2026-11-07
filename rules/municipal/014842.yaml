@@ -1,0 +1,33 @@
+city: 014842
+name: 羽幌町
+site: www.town.haboro.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: はいかい高齢者等SOSネットワークの事前登録
+  name_on_page: 羽幌町はいかい高齢者等SOSネットワーク事業
+  summary: はいかいのおそれがある人を家族の同意で事前登録し、行方不明時の早期発見に備える。
+  who: {}
+  at_application:
+  - 認知症・障がい・病気などではいかいのおそれがある人、または町長が必要と認めた人
+  - 家族の同意が要る
+  where: 羽幌町地域包括支援センター（すこやか健康センター内）
+  url: https://www.town.haboro.lg.jp/kurashi/fukushi/kaigokourei/sosnett.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori

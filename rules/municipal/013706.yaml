@@ -1,0 +1,82 @@
+city: '013706'
+name: 今金町
+site: www.town.imakane.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 今金町配食サービス
+  summary: 栄養バランスのとれた昼食・夕食を自宅へ届け、手渡しで安否も確認する。
+  who: {}
+  at_application:
+  - 65歳以上の独居・高齢者夫婦世帯、または心身の障がいなどがある方
+  - 上記のうち、調理や食事の調達が困難な方
+  where: 地域包括支援センター（総合福祉施設としべつ内）
+  url: https://www.town.imakane.lg.jp/gyousei/kenkoufukushi/post_23.html
+  confidence: high
+  amount: 1 食 600 円（税込）
+  more_urls:
+  - https://www.town.imakane.lg.jp/gyousei/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%A6%E3%81%B3%E3%81%8DR7.pdf
+- category: sonota
+  name: 高齢者世帯などの除雪
+  name_on_page: 除雪サービス事業
+  summary: 冬の間、自力で除雪できない高齢者らの世帯の生活道路を除雪する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上
+  - 心身の障がいや傷病などで自力で除雪が困難な方
+  where: 保健福祉課 総務グループ
+  url: https://www.town.imakane.lg.jp/gyousei/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%A6%E3%81%B3%E3%81%8DR7.pdf
+  confidence: high
+  amount: 利用料は無料
+- category: sonota
+  name: 福祉灯油券の支給
+  name_on_page: 福祉灯油券支給事業
+  summary: 冬の暖房費の援助として、低所得の高齢者や障がいのある方に灯油券か現金を支給する。
+  who: {}
+  at_application:
+  - 高齢者や障がいのある方等で低所得
+  - 前年収入が150万円以下
+  where: 保健福祉課 総務グループ
+  url: https://www.town.imakane.lg.jp/gyousei/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%A6%E3%81%B3%E3%81%8DR7.pdf
+  confidence: high
+  amount: 年間 150 リットル分の灯油券、または 15,000 円分の現金
+- category: kinkyu-tsuho
+  name: 緊急通報装置（あんしん電話）の貸与
+  name_on_page: 緊急通報装置設置事業（あんしん電話）
+  summary: 急病や災害などに備え、24時間通報できるあんしん電話を貸与する。
+  who: {}
+  at_application:
+  - 概ね65歳以上のひとり暮らし高齢者等
+  where: 地域包括支援センター
+  url: https://www.town.imakane.lg.jp/gyousei/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%A6%E3%81%B3%E3%81%8DR7.pdf
+  confidence: high
+- category: sonota
+  name: 救急カードの登録
+  name_on_page: 救急カード登録事業
+  summary: 救急搬送のときに必要なら連絡してもらえるよう、救急カードに前もって登録する。
+  who: {}
+  at_application:
+  - ひとり暮らし、または夫婦で65歳以上の高齢者
+  - 障がいのある方等
+  where: 地域包括支援センター
+  url: https://www.town.imakane.lg.jp/gyousei/%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E5%88%A9%E7%94%A8%E3%81%AE%E3%81%A6%E3%81%B3%E3%81%8DR7.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

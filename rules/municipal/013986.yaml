@@ -1,0 +1,56 @@
+city: 013986
+name: 喜茂別町
+site: www.town.kimobetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい方の居宅へ定期的に食事を届け、健康状態と安否を確認する。
+  who: {}
+  at_application:
+  - 概ね65歳以上の単身・高齢者のみ世帯等
+  - 加齢や傷病等で食事の調理が困難な方
+  - 一部自己負担がある（額は頁に無い）
+  where: 喜茂別町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.kimobetsu.hokkaido.jp/common/img/content/content_20240704_120612.pdf
+  confidence: low
+- category: sonota
+  name: 高齢者世帯の除雪
+  name_on_page: 除雪サービス
+  summary: 冬期間、除雪の労力を確保しにくい世帯の家の周りを除雪する。
+  who: {}
+  at_application:
+  - 概ね65歳以上の単身・高齢者のみ世帯、またはこれに準ずる世帯
+  - 冬期間の除雪の労力の確保が困難な世帯
+  where: 喜茂別町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.kimobetsu.hokkaido.jp/common/img/content/content_20240704_120612.pdf
+  confidence: low
+- category: sonota
+  name: 除雪費用の助成
+  name_on_page: 除雪費用助成事業
+  summary: 冬期間の自宅の除雪にかかる費用を助成する。町が補助金を出し、社協が事務局を担う。
+  who: {}
+  at_application:
+  - 独居高齢者世帯、高齢者のみ世帯等
+  where: 喜茂別町社会福祉協議会（事務局）
+  url: https://www.town.kimobetsu.hokkaido.jp/common/img/content/content_20240704_120612.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,179 @@
+city: '014371'
+name: 北竜町
+site: www.town.hokuryu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 屋根雪や軒下などの除雪を町（社会福祉協議会）が行う。
+  who: {}
+  at_application:
+  - 65歳以上の人の世帯、または身体障害者手帳1・2級の人の世帯
+  - 除排雪が困難な世帯
+  where: 北竜町社会福祉協議会
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-fukusi/
+  confidence: high
+  amount: 1時間500円（30分250円）
+- category: sonota
+  name: 高齢者世帯等除雪費の助成
+  name_on_page: 高齢者世帯等除雪費助成
+  summary: 玄関前の除雪や屋根の雪下ろしなどを委託した費用の半分を助成する。
+  who: {}
+  at_application:
+  - 町民税非課税、または町民税均等割のみ課税の世帯
+  - 世帯主65歳以上で同居の親族も全員65歳以上、または65歳以上のひとり暮らし
+  - または世帯全員が病弱で除雪が困難
+  where: こども・くらし応援課 こども未来・福祉係
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-fukusi/
+  confidence: high
+  amount: 委託費用の2分の1、上限2万円（対象の人には1月初旬に申請書を郵送）
+- category: mimamori
+  name: 電話サービス（安否確認）
+  name_on_page: 電話サービス
+  summary: 月1回、電話で安否確認・話題の提供・生活相談を行う。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application: []
+  where: 北竜町社会福祉協議会
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-fukusi/
+  confidence: high
+  amount: 年間200円
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: ボタン1つで24時間コールセンターにつながる通報装置を使える。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体上、日常生活に注意を要する
+  where: こども・くらし応援課 こども未来・福祉係
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-fukusi/
+  confidence: high
+- category: sonota
+  name: 家事サポーター（家事の手伝い）
+  name_on_page: わが家の「家事サポーター」
+  summary: 介護認定のない高齢の人の家庭で、調理・洗濯・掃除・買い物を手伝う。
+  who: {}
+  at_application:
+  - 日常生活に支障がある、おおむね65歳以上の人がいる家庭
+  - 介護認定を受けていない
+  - 自力での生活や家事が難しいと認められる
+  - 申請と面談の審査で承認されたとき利用できる
+  where: こども・くらし応援課 高齢者支援係
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-support/
+  confidence: high
+  amount: 1時間200円
+- category: haishoku
+  name: 見守りつきお弁当配達
+  name_on_page: 見守りつきお弁当配達
+  summary: 食事の準備が難しい人に、昼食か夕食を届け、安否確認も兼ねる。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住み、日常的に食事の確保が困難と認められる
+  - ひとり暮らし、または高齢者のみの世帯
+  - または日中就労・疾病や障がいのある同居家族がいて食事が困難
+  - または緊急性が高く一時的に支援が必要
+  - 審査のうえ決定する
+  where: こども・くらし応援課 高齢者支援係
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-support/
+  confidence: high
+  amount: 1食550円
+- category: gaishutsu
+  name: 通院の「あし」サポート
+  name_on_page: 通院の「あし」サポート
+  summary: 介助なしでは外出が難しい人を、専用車で自宅から病院まで送迎する。
+  who: {}
+  at_application:
+  - 町内に住み、他者の介助なしでは外出が困難
+  - 要介護・要支援認定、基本チェックリストで機能低下、障がい・難病など
+  - または車椅子・ストレッチャーの使用、寝たきりなど介助が必要
+  - 送迎先は医療機関のみ
+  where: こども・くらし応援課 高齢者支援係
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-support/
+  confidence: high
+  amount: 課税・非課税世帯で異なる。砂川市立病院まで往復でおよそ4,300〜6,140円＋介護乗務員費用
+- category: jutaku
+  name: あんしん・住まいサポート（住宅改修費の助成）
+  name_on_page: あんしん・住まいサポート
+  summary: 介護が必要な高齢の人などの住宅改修費の一部を町が助成する。
+  who: {}
+  at_application:
+  - 町内に住民票があり、実際にその家に住んでいる
+  - おおむね65歳以上で介護が必要な人、または身体障害者手帳で介助が必要な人
+  - またはその人と同居し生計をともにする家族
+  - 工事費の総額が36万円以上
+  - 同一住宅につき原則1回
+  where: こども・くらし応援課 高齢者支援係
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/koureisha-support/
+  confidence: high
+  amount: 対象工事費の2分の1、上限50万円
+- category: sonota
+  name: 在宅介護サービス利用手当
+  name_on_page: 要介護3以上の方の在宅介護サービス利用費助成
+  summary: 要介護3〜5で在宅サービスを毎月使う人に、手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 町内に住所があり、実際に住んでいる
+  - 毎月1種類以上の在宅サービスを利用している
+  - 申請が必要
+  where: 地域包括支援センター（担当のケアマネージャーにも相談）
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/kaigoyobo-shien/
+  confidence: high
+  amount: 月額9,000円
+- category: sonota
+  name: 水道料金などの負担軽減
+  name_on_page: 水道料金などの負担軽減
+  summary: 対象の高齢者世帯の水道・下水道料金を、決まった低い料金にする。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 申請が必要（印鑑を持参）
+  where: こども・くらし応援課 こども未来・福祉係
+  url: https://www.town.hokuryu.hokkaido.jp/kenko/suidouryoukin/
+  confidence: high
+  amount: 水道は6㎥まで1,630円、超過は1㎥270円。下水道・浄化槽は6㎥まで1,500円、超過は1㎥250円
+- category: gaishutsu
+  name: 高齢者運転免許証自主返納サポート
+  name_on_page: 高齢者運転免許証自主返納サポート事業
+  summary: 免許を自主返納した人に、タクシー利用券と証明書の費用助成を行う。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住み、免許を自主返納して運転経歴証明書の交付を受けた
+  - 有効期限切れで失効した人は対象外
+  where: こども・くらし応援課 戸籍・町民生活係
+  url: https://www.town.hokuryu.hokkaido.jp/kurashi/menkyohennou-support/
+  confidence: high
+  amount: 和ハイヤー限定のタクシー利用券5万円分（10年間有効）と、運転経歴証明書の交付手数料・写真代の助成
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha

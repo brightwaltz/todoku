@@ -1,0 +1,85 @@
+city: '013315'
+name: 松前町
+site: www.town.matsumae.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システム設置事業
+  name_on_page: 緊急通報システム設置事業
+  summary: ボタン1つで通報できる電話機と熱・ガス漏れセンサーを無償で貸与する。
+  who:
+    age_min: 70
+  at_application:
+  - 単身世帯、または単身世帯と同様の人
+  - 町内に住み駆けつけられる協力員 3 名を確保する
+  where: 役場保健福祉課
+  url: https://www.town.matsumae.hokkaido.jp/hotnews/detail/00000158.html
+  confidence: high
+  amount: 設置・移設・撤去の費用は町が負担。通常の通話料は利用者負担
+- category: iro
+  name: 家族介護慰労金の支給
+  name_on_page: 家族介護慰労金支給事業
+  summary: 介護保険のサービスを使わず在宅で介護する世帯に、年額を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 1 年間、介護サービスを利用していない
+  - 1 年の間に 3 か月以上の長期入院をしていない
+  where: 保健福祉課介護保険係
+  url: https://www.town.matsumae.hokkaido.jp/hotnews/detail/00002467.html
+  confidence: high
+  amount: 年額 10 万円
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品給付事業
+  summary: 紙おむつ・尿取りパッドなどの購入に使える給付券を月ごとに交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりや認知症のため紙おむつ等を使っている
+  - 3 親等以内の家族が在宅で介護している
+  where: 保健福祉課介護保険係
+  url: https://www.town.matsumae.hokkaido.jp/hotnews/detail/00002467.html
+  confidence: high
+  amount: 月額 8,700 円まで町が負担
+- category: koken
+  name: 成年後見制度の申立・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 生活に困る人の、後見の申立費用・鑑定費用・後見報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護の被保護者、またはそれに準じると認められる人
+  where: 保健福祉課介護保険係
+  url: https://www.town.matsumae.hokkaido.jp/hotnews/detail/00002467.html
+  confidence: high
+  amount: 申立費用・鑑定費用・後見報酬を助成（後見報酬は上限あり）
+not_found:
+- haishoku
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- yutai
+- chusha

@@ -1,0 +1,39 @@
+city: '014613'
+name: 中富良野町
+site: www.town.nakafurano.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事を作ることが困難なひとり暮らしの人や老人世帯に、調理した食事を自宅へ届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事を作ることが困難なひとり暮らしの人（65歳以上）
+  - または、食事を作ることが困難な老人世帯（70歳以上）
+  - 月〜金の昼食・夕食。土日・祝日・年末年始は休み
+  where: 福祉課 社会福祉係（ふれあいセンターなかまーる）
+  url: https://www.town.nakafurano.lg.jp/hotnews/detail/00001162.html
+  confidence: high
+  amount: お弁当1食400円、おかずのみ1食350円（令和7年4月から）
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

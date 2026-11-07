@@ -1,0 +1,154 @@
+city: '014001'
+name: 倶知安町
+site: www.town.kutchan.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 除雪ヘルパーの派遣
+  name_on_page: 除雪ヘルパー派遣事業
+  summary: 玄関先・通路・窓周りなど、日常生活に支障のある範囲を除雪する。
+  who: {}
+  at_application:
+  - 世帯全員が70歳以上、65歳以上の高齢者と障害者・病弱者の世帯、世帯全員が障害者の世帯等
+  - 自力や親戚・近隣の協力で除雪できる世帯などは対象外
+  - 担当の民生委員を経由して申請
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: high
+  amount: 利用料は無料
+- category: shingu
+  name: 寝具の洗濯サービス
+  name_on_page: 寝具洗濯サービス
+  summary: 掛布団・敷布団・毛布を洗濯するサービス。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 在宅の寝たきり状態の高齢者・障害者・病弱者で、寝具の衛生管理が困難な方
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: high
+  amount: 1 回ごとの基本料金 500 円、寝具 1 枚につき 200 円（世帯の前年の所得税額で変わる）
+- category: mimamori
+  name: ホームヘルパーの訪問
+  name_on_page: 訪問サービス
+  summary: ホームヘルパーが15分ほど訪問し、健康状態の把握と安否確認をする。
+  who: {}
+  at_application:
+  - 町内の高齢者（65歳以上）または障害者世帯等
+  - 介護保険サービスを利用していない方
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: high
+  amount: 利用料は無料
+- category: mimamori
+  name: 電話による見守り
+  name_on_page: 電話サービス
+  summary: 電話サービス員が自宅へ電話をかけ、健康状態の把握や生活の相談をする。
+  who: {}
+  at_application:
+  - 町内の高齢者（65歳以上）等
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: high
+  amount: 利用料は無料
+- category: gaishutsu
+  name: 福祉ハイヤー券の配布
+  name_on_page: 福祉ハイヤー（バス）利用助成事業
+  summary: 車などの交通手段のない70歳以上の高齢者世帯に、ハイヤー・バス券を配る。
+  who: {}
+  at_application:
+  - 申請年度の4月1日に町内に住む70歳以上の世帯で、自動車などの交通手段がない高齢者世帯
+  - 障害者福祉ハイヤー券を受けている方、3か月以上不在になる方は対象外
+  - 前年度の介護保険の負担段階が第8段階以上の人がいる世帯は対象外
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: high
+  amount: 介護保険の負担段階による。第1〜5段階は 21,000 円分（ひとり暮らしは 14,000 円分）、第6〜7段階は 14,000 円分
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム事業
+  summary: タブレット型の機械を貸し出し、緊急時に通報して支援につなげる。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者世帯の方
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: high
+  amount: 利用料は無料
+- category: kaigo-yohin
+  name: 介護用品の給付券
+  name_on_page: 高齢者介護用品支給事業
+  summary: 要介護4・5で住民税非課税の方に、紙おむつなど介護用品の給付券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 倶知安町の住民票がある
+  - 介護保険施設に入所していない
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: high
+  amount: 1 人につき月額 6,250 円を限度とする給付券
+- category: iro
+  name: 要介護4・5の方を介護する世帯への年10万円の支給
+  name_on_page: 高齢者介護用品支給事業
+  summary: 要介護4・5の方を介護し、介護保険サービスを使っていない非課税世帯に年10万円を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間に介護保険サービスを利用していない
+  - 要介護者が介護保険施設に入所していない
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/zaitakufukushi-service/
+  confidence: low
+  amount: 要介護者 1 人につき年間 10 万円
+- category: haikai
+  name: 徘徊探知機（GPS等）の購入・レンタル費用の補助
+  name_on_page: 倶知安町徘徊高齢者等家族支援事業
+  summary: 徘徊のある在宅の高齢者を介護する家族に、GPS等の購入・レンタル費用を補助する。
+  who: {}
+  at_application:
+  - 認知症等で徘徊症状のある在宅の高齢者を介護する家族等
+  - 町の住民基本台帳に記録された高齢者等を介護している方、またはその他町長が特に必要と認めた方
+  - 購入契約書など金額のわかるものの写しを添えて申請
+  where: 福祉医療課 地域包括支援センター
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/fukushi-kaigo/koureinokata/haikaikoureisya-gpshojo/
+  confidence: high
+  amount: 1 人につき 1 万円を限度、1 回まで（契約時の加入手数料・登録料も対象）
+- category: jutaku
+  name: バリアフリー住宅改修の補助
+  name_on_page: 倶知安町バリアフリー住宅改修補助金
+  summary: 手すり・段差解消などのバリアフリー改修費の一部を補助する（介護保険の住宅改修費などは差し引く）。
+  who: {}
+  at_application:
+  - 町に住民登録があり、改修する住宅に居住（予定）
+  - 65歳以上、身体障害者手帳の交付を受けた方、またはその同居者
+  - 世帯全員が町税を滞納していない
+  - 施工業者は町内に営業の拠点がある建設業者
+  where: 建設課住宅係
+  url: https://www.town.kutchan.hokkaido.jp/Living_Information/sumai-koutu/sumai/hojyo/barrierfree/
+  confidence: high
+  amount: 改修費（消費税除く）の 2/10、上限 50 万円。同一住宅は原則 1 回
+not_found:
+- haishoku
+- hochoki
+- ribiyo
+- koken
+- nichijo-yogu

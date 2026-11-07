@@ -1,0 +1,70 @@
+city: '013323'
+name: 福島町
+site: www.town.fukushima.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: ひとり暮らしの高齢者への除雪ボランティア
+  name_on_page: 除雪ボランティアサービス
+  summary: 除雪の人手を確保しにくいひとり暮らしの高齢者に、除雪ボランティアを派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 除雪の労力の確保が困難な人
+  where: 福島町社会福祉協議会
+  url: https://www.town.fukushima.hokkaido.jp/hukushi/koureisha/otoshiyori/
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置（専用電話機の貸与）
+  name_on_page: 緊急通報システム設置
+  summary: ひとり暮らしの高齢者に、急病や事故のとき簡単に通報できる専用電話機を貸す。
+  who:
+    household:
+    - alone
+  at_application: []
+  where: 福祉課 介護保険係
+  url: https://www.town.fukushima.hokkaido.jp/hukushi/koureisha/otoshiyori/
+  confidence: low
+- category: mimamori
+  name: 電力データによる見守り（でんきでミマモ）
+  name_on_page: 高齢者等見守り事業（でんきでミマモ）
+  summary: 電気の使用量から異常を見つけ、本人や家族へ連絡する見守りサービス。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね 65 歳以上、または身体障害者手帳の交付を受けている
+  - 町内に住み、北海道電力との電気契約がある
+  where: 福祉課（介護保険係）
+  url: https://www.town.fukushima.hokkaido.jp/hukushi/koureisha/%e9%ab%98%e9%bd%a2%e8%80%85%e7%ad%89%e8%a6%8b%e5%ae%88%e3%82%8a%e4%ba%8b%e6%a5%ad%ef%bc%88%e3%81%a7%e3%82%93%e3%81%8d%e3%81%a7%e3%83%9f%e3%83%9e%e3%83%a2%ef%bc%89/
+  confidence: high
+  amount: 利用料は無料。初期費用や解約金も不要
+- category: yutai
+  name: 吉岡温泉の優待券の配布
+  name_on_page: 温泉優待
+  summary: 高齢者などに吉岡温泉の優待券を配る。
+  who: {}
+  at_application:
+  - 65 歳以上、または身体障害者手帳の交付を受けている人など
+  where: 福祉課 健康増進係
+  url: https://www.town.fukushima.hokkaido.jp/hukushi/koureisha/otoshiyori/
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- kaigo-yohin
+- nichijo-yogu
+- chusha

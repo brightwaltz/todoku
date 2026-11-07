@@ -1,0 +1,98 @@
+city: '015121'
+name: 浜頓別町
+site: www.town.hamatonbetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきりの人等への紙おむつ代の助成
+  name_on_page: 寝たきり老人等紙おむつ助成
+  summary: 在宅で紙おむつを使う寝たきりの人に、購入費を月5,000円まで助成する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+    - uses_diapers
+  at_application:
+  - 6か月以上寝たきりで、概ね65歳以上の人
+  - または6か月以上寝たきりで、身体障害者手帳か療育手帳があり排泄障がいがある人
+  - 給付が決まった後は、毎月の支給申請が要る
+  where: 保健福祉課福祉係
+  url: http://www.town.hamatonbetsu.hokkaido.jp/welfare/detail.php?content=309
+  confidence: high
+  amount: 1か月5,000円を限度
+- category: gaishutsu
+  name: 高齢者の無料バス乗車証
+  name_on_page: 高齢者無料バス
+  summary: 70歳以上の町民に、町内の定期路線バスが無料になる乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 町内で乗って町内で降りる場合に限り使える
+  - 印鑑と写真（縦3cm横2.4cm）を持参する
+  where: 保健福祉課福祉係
+  url: http://www.town.hamatonbetsu.hokkaido.jp/welfare/detail.php?content=307
+  confidence: high
+  amount: 町内の定期路線バスが無料
+- category: gaishutsu
+  name: 福祉タクシー券の交付
+  name_on_page: 高齢者等生活交通サポート（福祉タクシー）
+  summary: 対象の人に、町内のタクシーの初乗運賃分の券を年48回分助成する。
+  who: {}
+  at_application:
+  - 要支援・要介護認定を受けている人、または満88歳以上の人
+  - または満65歳以上で運転免許を自主返納した人（助成は3年まで）
+  - または身体障害者手帳1・2級、3級（下肢・体幹機能障害）の人
+  - 町内の利用に限る
+  where: 保健福祉課福祉係
+  url: http://www.town.hamatonbetsu.hokkaido.jp/life/detail.php?content=76
+  confidence: high
+  amount: タクシーの初乗運賃分、年間48回分
+- category: gaishutsu
+  name: 通院などの移送サービス
+  name_on_page: 移送サービス
+  summary: 病院受診や施設の入退所、役場での手続きの際の移送を町が行う。
+  who: {}
+  at_application:
+  - 要介護（支援）認定を受けている人
+  - または概ね65歳以上の独居・高齢者世帯で、親族等の支援を受けられない人
+  - または身体障害者手帳3級以上で、車いす等がないと外出が難しい人
+  where: 保健福祉課福祉係
+  url: http://www.town.hamatonbetsu.hokkaido.jp/welfare/detail.php?content=305
+  confidence: high
+- category: sonota
+  name: 高齢者世帯等の冬期の除雪サービス
+  name_on_page: 除雪サービス
+  summary: 自力で除雪できず援助も受けられない世帯の、屋根や避難路などを除雪する。
+  who: {}
+  at_application:
+  - 高齢または身体上の理由で自力の除雪が難しい世帯
+  - 親族やご近所の援助を受けられない世帯
+  - 除雪は生活の本拠の屋根と避難路など必要最低限
+  where: 保健福祉課福祉係
+  url: http://www.town.hamatonbetsu.hokkaido.jp/welfare/detail.php?content=305
+  confidence: high
+- category: mimamori
+  name: 水道使用状況による見守り
+  name_on_page: 浜頓別町水道見守りサービス
+  summary: 高齢者等の水道の使用状況を、離れて暮らす家族へメールで知らせる。
+  who: {}
+  at_application:
+  - 高齢者等が対象（詳しい条件は頁に書かれていない）
+  where: 保健福祉課福祉係
+  url: http://www.town.hamatonbetsu.hokkaido.jp/welfare/detail.php?content=973
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo

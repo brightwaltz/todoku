@@ -1,0 +1,102 @@
+city: 014869
+name: 遠別町
+site: www.town.embetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置（貸与）
+  name_on_page: 緊急通報システム設置サービス
+  summary: 緊急ボタンでオペレーターにつながる通報装置とペンダントを無料で貸す。
+  who: {}
+  at_application:
+  - 町内に住み、緊急通報の手段を確保しにくい
+  - おおむね70歳以上のひとり暮らしの人、身体障がいの人など
+  - 通話料金は利用者負担
+  where: 役場福祉課福祉保険係
+  url: https://www.town.embetsu.hokkaido.jp/docs/page2017101100018.html
+  confidence: high
+  amount: 利用料は無料（通話料金、機器の紛失・損害の場合を除く）
+- category: mimamori
+  name: 電話による安否確認（電話訪問サービス）
+  name_on_page: 電話訪問サービス
+  summary: 高齢者などの自宅へ電話をかけて、安否を確かめる無料のサービス。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、高齢者世帯、障がい者の世帯
+  - 高齢者自立支援事業申請書を出す
+  where: 役場福祉課福祉保険係
+  url: https://www.town.embetsu.hokkaido.jp/docs/page2017101100032.html
+  confidence: high
+  amount: 利用料は無料
+- category: sonota
+  name: 福祉相談員の派遣（日常生活の軽い支援と相談）
+  name_on_page: 福祉相談員派遣サービス
+  summary: 高齢の人などの自宅へ相談員が行き、軽い生活の支援と相談を無料で行う。
+  who: {}
+  at_application:
+  - 高齢の人や心身に障がいがある人（年齢の数字は頁に無い）
+  - 高齢者自立支援事業申請書を出す
+  where: 役場福祉課福祉保険係
+  url: https://www.town.embetsu.hokkaido.jp/docs/page2017101100025.html
+  confidence: low
+  amount: 利用料は無料
+- category: gaishutsu
+  name: 高齢者のバス・タクシー乗車券の交付
+  name_on_page: 遠別町高齢者交通費助成事業
+  summary: 70歳以上の人に、バス乗車券30枚かタクシー乗車券10枚を毎年4月に交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 前年度に交付を受けていない人は手続きが必要
+  - 公共施設等へ行くときの利用が対象
+  where: 役場福祉課福祉保険係
+  url: https://www.town.embetsu.hokkaido.jp/docs/page2017101100063.html
+  confidence: high
+  amount: バス乗車券30枚、またはタクシー乗車券10枚（基本料金相当額）
+- category: sonota
+  name: 高齢者の温泉入浴券の交付
+  name_on_page: 遠別町高齢者温泉入浴券交付助成
+  summary: 65歳以上の人に、無料の入浴券を毎年4月に10枚交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住所がある
+  where: 役場福祉課福祉保険係
+  url: https://www.town.embetsu.hokkaido.jp/docs/4106.html
+  confidence: high
+  amount: 無料入浴券10枚（毎年4月に送付）
+- category: sonota
+  name: 高齢者世帯の玄関前の除雪サービス
+  name_on_page: 令和８年度除雪サービス利用者の募集
+  summary: 除雪が難しい非課税の高齢者世帯の玄関前を、機械で無料で除雪する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 対象は本町地区（汐見町・錦町・1〜5区・緑町・若葉町・文光町）
+  - 介護認定や障害者手帳などで、身体的に除雪が難しい
+  - 機械除雪が難しいと断られることがある
+  - 令和8年度の申込期限は11月17日（過ぎても受付、断る場合あり）
+  where: 役場福祉課福祉保険係（窓口3）
+  url: https://www.town.embetsu.hokkaido.jp/docs/3694.html
+  confidence: high
+  amount: 無料（12月5日〜3月14日、人ひとり通れる幅）
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo

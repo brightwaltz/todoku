@@ -1,0 +1,90 @@
+city: 014648
+name: 和寒町
+site: www.town.wassamu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム
+  summary: 急病などのとき、ボタンや煙・熱の感知で消防署や協力員に通報できる装置を貸す。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者、または障がいのある人
+  where: 保健福祉課 福祉係
+  url: https://www.town.wassamu.hokkaido.jp/health-welfare/welfare/healthy-life/
+  confidence: high
+  amount: 利用料は固定型で700円（1,430円のうち町が730円を助成）
+- category: jutaku
+  name: ふれ愛住宅補助
+  name_on_page: ふれ愛住宅補助
+  summary: 手すりの設置や段差解消などの住宅改修の費用の一部を補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 住民税均等割非課税世帯で、次のいずれかに当たる人
+  - 65歳以上で要介護認定に該当しない高齢者
+  - 身体障害者手帳・療育手帳・精神障害者保健福祉手帳のある人
+  - 本町に3か月以上居住し、町税などを滞納していない
+  - 同一住宅に1回限り。事前に事業認定の申請が必要
+  where: 保健福祉課 福祉係
+  url: https://www.town.wassamu.hokkaido.jp/health-welfare/welfare/healthy-life/
+  confidence: high
+  amount: 補助率90％（補助基準限度額200,000円）
+- category: mimamori
+  name: きずなサービス事業（電話・訪問の見守り）
+  name_on_page: きずなサービス事業
+  summary: 定期的に電話や訪問で、生活や健康の状態をうかがう見守りを無料で行う。
+  who: {}
+  at_application:
+  - 80歳以上のひとり暮らし高齢者
+  - または、障がいや家庭環境により見守り支援が必要と認められる世帯
+  where: 和寒町社会福祉協議会（町の補助事業）
+  url: https://www.town.wassamu.hokkaido.jp/health-welfare/welfare/independent-living/
+  confidence: high
+  amount: 無料
+- category: kaigo-yohin
+  name: 紙おむつ購入費の補助
+  name_on_page: 紙おむつ購入費補助
+  summary: 寝たきりで常時紙おむつを使う人の、おむつの購入費の一部を補助する。
+  who:
+    tax:
+    - household_exempt
+    flags:
+    - uses_diapers
+    - bedridden_6m
+  at_application:
+  - 住民税非課税世帯で、町内に住所があり、自宅・町内のグループホーム・病院にいる
+  - 要介護2以上、または一定の障がいがある
+  where: 和寒町社会福祉協議会（町の補助事業）
+  url: https://www.town.wassamu.hokkaido.jp/health-welfare/welfare/independent-living/
+  confidence: high
+  amount: 購入月額合計の2分の1以内、月額5,000円を上限
+- category: sonota
+  name: 高齢者等の除雪費用の支援
+  name_on_page: 高齢者等除雪費用支援事業
+  summary: 在宅の高齢者や障がいのある人の、除雪（玄関前・通路・屋根・排雪など）の費用を助成する。
+  who: {}
+  at_application:
+  - 70歳以上の高齢者のみの世帯
+  - または、身体障害者手帳1・2級、療育手帳、精神障害者保健福祉手帳のある人のいる世帯
+  - 町税等の滞納者、2親等以内の親族から支援を受けている人は対象外
+  where: 保健福祉課 福祉係
+  url: https://www.town.wassamu.hokkaido.jp/health-welfare/welfare/independent-living/
+  confidence: high
+  amount: 介護保険料の所得段階で異なる。1段階は7割・限度7万円、2段階は5割・5万円、3段階は3割・3万円
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

@@ -1,0 +1,114 @@
+city: '013633'
+name: 厚沢部町
+site: www.town.assabu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置事業
+  summary: 独居・高齢夫婦世帯に緊急通報機を設置し、消防署と近隣の協力員が対応する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: haishoku
+  name: 給食サービス（配食）
+  name_on_page: 給食サービス
+  summary: 食事の支度が困難な高齢者に、バランスのとれた食事を定期的に届け、安否も確認する。
+  who: {}
+  at_application:
+  - 食事の支度が困難な高齢者
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: 介護用品の支給（紙おむつ・清拭用品など）
+  name_on_page: 介護用品支給事業
+  summary: 在宅で寝たきりや重度の認知症の高齢者を介護する家族に、紙おむつなどを支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の寝たきりや重度の認知症の高齢者を介護している家族
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: sonota
+  name: 除雪サービス（高齢者世帯の生活通路の除雪）
+  name_on_page: 除雪サービス
+  summary: 除雪が困難な独居や体が不自由な高齢者の世帯に、冬期間、生活通路の除雪をする。
+  who: {}
+  at_application:
+  - 独居や体が不自由な高齢者で、除雪が困難な世帯
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: gaishutsu
+  name: 移送サービス（医療機関への送迎）
+  name_on_page: 移送サービス
+  summary: 公共交通機関の利用が困難な高齢者を、医療機関へ送迎する。
+  who: {}
+  at_application:
+  - 公共交通機関の利用が困難な高齢者
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: gaishutsu
+  name: 特別移送サービス（リフト付車両の送迎）
+  name_on_page: 特別移送サービス
+  summary: 一般車両での通院等が困難な高齢者を、リフト付車両で病院や施設へ送迎する。
+  who: {}
+  at_application:
+  - 一般車両での通院等が困難な高齢者
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: gaishutsu
+  name: 外出支援サービス（買物・通院の移送支援）
+  name_on_page: 外出支援サービス事業
+  summary: 1人での外出が困難な高齢者に、移送の支援を行い、必要なら介助もする。
+  who: {}
+  at_application:
+  - 老衰、傷病等の理由により、1 人で外出するのが困難な高齢者
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: sonota
+  name: 入浴サービス（入浴施設への送迎）
+  name_on_page: 入浴サービス
+  summary: 入浴の機会を確保しにくい高齢者を、入浴施設へ送迎する。
+  who: {}
+  at_application:
+  - 高齢者のみの世帯で移動手段がなく、自宅に浴室がない人
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: sonota
+  name: 特別入浴事業（特殊浴槽での入浴）
+  name_on_page: 特別入浴事業
+  summary: 自宅での入浴が困難な方に、特殊浴槽で入浴する機会を提供する。
+  who: {}
+  at_application:
+  - 自宅での入浴が困難な方
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+- category: nichijo-yogu
+  name: 介護予防用具の給付（シルバーカー・杖など）
+  name_on_page: 介護予防用具給付事業
+  summary: 転倒リスクの高い高齢者に、シルバーカーや杖などの購入費を扶助する。
+  who: {}
+  at_application:
+  - 転倒リスクの高い高齢者
+  where: 保健福祉課（計画書に申請先の記載なし）
+  url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
+  confidence: low
+not_found: []

@@ -1,0 +1,117 @@
+city: '014541'
+name: 当麻町
+site: www.town.tohma.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者定期通院ハイヤー料金助成
+  name_on_page: 高齢者定期通院ハイヤー料金助成
+  summary: 町外の医療機関へ通うハイヤー料金の一部を、口座振込で助成する。
+  who: {}
+  at_application:
+  - ハイヤー初回利用時点で町の住民基本台帳に記録され、町内に住んでいる
+  - 助成対象年度内に80歳以上になる
+  - 町外の医療機関にハイヤーで2回以上定期通院したと証明できる
+  - 重度障害者ハイヤー料金助成・外出支援サービスの対象者は併用できない
+  where: 保健福祉課 福祉係
+  url: https://www.town.tohma.hokkaido.jp/living/11/02/2540
+  confidence: high
+  amount: 1人あたり上限15,000円（申請は年1回）
+- category: hochoki
+  name: 高齢者の方への補聴器購入費助成
+  name_on_page: 高齢者の方への補聴器購入費助成
+  summary: 手帳の対象にならない65歳以上の難聴の人に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 両耳とも聴力レベルが40デシベル以上
+  - 聴覚障害による身体障害者手帳の交付対象外
+  - 耳鼻科の医師から補聴器が必要と認められた
+  where: 保健福祉課 福祉係
+  url: https://www.town.tohma.hokkaido.jp/living/11/02/2144
+  confidence: high
+  amount: 片耳の補聴器と付属品の購入費の1/2（上限25,000円）
+- category: iro
+  name: 寝たきり老人介護手当の支給
+  name_on_page: 寝たきり老人介護手当の支給
+  summary: 寝たきりや認知症などの高齢者を在宅で介護する人に、介護手当を支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 在宅で6か月以上寝たきり、または認知症などで常時介護が必要な高齢者を介護している
+  - 介護する人の世帯が市町村民税非課税
+  where: 保健福祉課 介護係
+  url: https://www.town.tohma.hokkaido.jp/living/11/02/2044
+  confidence: high
+  amount: 月額15,000円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 消防署に連絡できる緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - おおむね75歳以上の病弱な単身世帯・高齢者世帯、または障がい者のみの世帯
+  where: 保健福祉課 介護係
+  url: https://www.town.tohma.hokkaido.jp/living/11/02/2042
+  confidence: high
+  amount: 月の利用料は0円か810円、設置費用は2,030円か7,120円（装置の種類による）
+- category: sonota
+  name: 高齢者の除雪サービス
+  name_on_page: 高齢者の除雪サービス
+  summary: 除雪が難しい高齢者の住宅から道路までの生活路を除雪する。
+  who: {}
+  at_application:
+  - 要支援・要介護認定者のみの世帯、または認定者と75歳以上の高齢者のみの世帯
+  - または単身で緊急通報装置を使う世帯、生活援助ヘルパー・配食を使う世帯
+  - または重度身体障がい者と75歳以上のみの世帯など、地域ケア会議が必要と認めた世帯
+  - 集合住宅は対象外。500m以内に除雪を助けられる子などがいる場合も対象外
+  where: 保健福祉課 介護係
+  url: https://www.town.tohma.hokkaido.jp/living/11/02/2041
+  confidence: high
+  amount: 1回650円
+- category: gaishutsu
+  name: 外出支援サービス
+  name_on_page: 外出支援サービス
+  summary: 介助なしで移動が困難な高齢者を、福祉車両で自宅と医療機関などの間を送迎する。
+  who: {}
+  at_application:
+  - 身体的な要因で、単独で一般の車両や公共交通機関を使うことが困難
+  where: 保健福祉課 介護係
+  url: https://www.town.tohma.hokkaido.jp/living/11/02/2040
+  confidence: high
+  amount: 町内500円、町外は30km未満2,030円・30km以上2,540円
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が困難な高齢者に、夕食を届けて安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の単身世帯か高齢者のみの世帯
+  - 心身の障害や傷病などで食事の調理が困難
+  where: 保健福祉課 介護係
+  url: https://www.town.tohma.hokkaido.jp/living/11/02/2039
+  confidence: high
+  amount: 1食400円
+not_found:
+- kaigo-yohin
+- haikai
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- mimamori

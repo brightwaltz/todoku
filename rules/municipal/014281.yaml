@@ -1,0 +1,66 @@
+city: 014281
+name: 長沼町
+site: www.maoi-net.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 夕食の配食
+  name_on_page: 配食サービス
+  summary: 調理が難しい人に、夕食を毎日（年365日）自宅へ届ける。
+  who: {}
+  at_application:
+  - 町内に住む、おおむね65歳以上の単身世帯・高齢者のみの世帯など
+  - または知的・身体・精神障がい者のみの世帯など
+  - 調理が困難で、町長が配食の利用を必要と認めた人
+  where: 保健福祉課福祉係（頁の問い合わせ先、電話 0123-82-5555）。申請の窓口は頁に書かれていない
+  url: https://www.maoi-net.jp/kenko_fukushi/korei/fukushi_service/haishoku.html
+  confidence: high
+  amount: 自己負担は1人1食500円（令和7年6月1日から）
+- category: mimamori
+  name: 定期の訪問・電話
+  name_on_page: 訪問サービス、電話サービス
+  summary: 定期的に自宅を訪問し、電話もして、孤独感の解消や安否確認をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に住んでいる
+  where: 頁に申請先の記載なし（関連の頁ではりふれ保健福祉課福祉係が窓口）
+  url: https://www.maoi-net.jp/kenko_fukushi/korei/fukushi_service/homon_denwa_josetsu.html
+  confidence: high
+- category: sonota
+  name: 高齢者世帯などの除雪
+  name_on_page: 除雪サービス
+  summary: 除雪が難しい世帯の玄関先と通路部分を除雪する。
+  who: {}
+  at_application:
+  - 世帯全員の町民税が非課税、または均等割のみ課税
+  - 満65歳以上の1人暮らし、満65歳以上のみの世帯、または身体障害等で除雪が困難な世帯
+  - 利用には申請が必要
+  where: りふれ保健福祉課福祉係
+  url: https://www.maoi-net.jp/kenko_fukushi/korei/fukushi_service/homon_denwa_josetsu.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム
+  summary: 通信機・火災報知器・センサーを設置し、急病や災害のとき警備会社に通報できる。
+  who:
+    household:
+    - alone
+  at_application:
+  - 次のいずれかに当たる人
+  - おおむね65歳以上で、身体が病弱で緊急時に機敏に動けない
+  - 障害者で、緊急時に機敏に動けない
+  - おおむね90歳以上の人、または町長が援護が必要と認めた人
+  where: 頁に申請先の記載なし
+  url: https://www.maoi-net.jp/kenko_fukushi/shogaishafukushi/kinkyutsuhosystem.html
+  confidence: high
+  amount: 無料で貸与
+not_found: []

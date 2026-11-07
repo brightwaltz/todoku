@@ -1,0 +1,75 @@
+city: 014834
+name: 苫前町
+site: www.town.tomamae.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 苫前町高齢者補聴器購入費助成事業
+  summary: 65歳以上で中等度難聴の人に、補聴器の購入費の半額（上限4万円）を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 平均聴力40dB以上70dB未満（中等度難聴）の医師の証明
+  - 申請は1人1回まで
+  where: 保健福祉課福祉係または古丹別支所
+  url: http://www.town.tomamae.lg.jp/section/hoken/hochoki.html
+  confidence: high
+  amount: 購入額の2分の1（上限4万円、100円未満切り捨て）
+- category: haikai
+  name: はいかい高齢者等SOSネットワークの事前登録
+  name_on_page: 苫前町はいかい高齢者等SOSネットワーク事業
+  summary: はいかいのおそれがある人を家族の同意で事前登録し、行方不明時の早期発見に備える。
+  who: {}
+  at_application:
+  - 認知症・障がい・病気などではいかいのおそれがある人、または町長が必要と認めた人
+  - 家族の同意が要る
+  where: 苫前町地域包括支援センター（役場保健福祉課内）
+  url: http://www.town.tomamae.lg.jp/section/hoken/t55cub00000039on.html
+  confidence: high
+- category: sonota
+  name: 高齢者世帯の住み替え支援費
+  name_on_page: 高齢者世帯住み替え支援費支給事業
+  summary: 高齢者世帯が住み替えるとき、引っ越しや敷金などの費用を支給する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に1年以上住み、住民登録がある
+  - 年間収入が1人暮らし150万円以下（1人増えるごとに50万円加算）
+  - 負担能力のある親族等に扶養されていない
+  - 住み替えの前（契約前）に申請する
+  where: 保健福祉課
+  url: http://www.town.tomamae.lg.jp/section/hoken/lg6iib0000001uzb.html
+  confidence: high
+  amount: 引っ越し・退去の修繕・敷金礼金・仲介手数料の合計で上限10万円
+- category: koken
+  name: 成年後見制度の利用支援（申立て・報酬の負担）
+  name_on_page: 成年後見制度の利用支援
+  summary: 申立てをする親族がいない人や報酬を払えない人の申立て・報酬を町が負担する。
+  who: {}
+  at_application:
+  - 申立てをする親族がいない、または後見人等への報酬を経済的に払えない
+  where: 苫前町成年後見センター（保健福祉課）
+  url: http://www.town.tomamae.lg.jp/section/hoken/seinenkouken.html
+  confidence: low
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori

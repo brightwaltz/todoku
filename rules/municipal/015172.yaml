@@ -1,0 +1,114 @@
+city: '015172'
+name: 礼文町
+site: www.town.rebun.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者等のバス運賃助成（福祉バス乗車証）
+  name_on_page: 高齢者等バス運賃助成（福祉バス）
+  summary: 福祉バス乗車証で、町内の路線バスを区間に関わらず1回100円で利用できる。
+  who: {}
+  at_application:
+  - 満70歳以上の高齢者、または障がい者（身体障害者手帳1・2級、療育手帳、精神障害者保健福祉手帳の所持者）
+  - 町内に在住している
+  where: 役場（申請用紙を提出）
+  url: https://www.town.rebun.hokkaido.jp/hotnews/detail/00000237.html
+  confidence: high
+  amount: 宗谷バス礼文営業所の全路線で、区間に関わらず1回100円
+- category: iro
+  name: 家族介護手当
+  name_on_page: 家族介護手当
+  summary: 要介護4以上の高齢者を在宅で介護する家族に、手当を年2回に分けて支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 申請できるのは、対象者と同一世帯で常時無報酬で介護している人
+  - または別世帯でも同等の介護をしていると認められる人
+  where: 役場（申請用紙を提出）
+  url: https://www.town.rebun.hokkaido.jp/hotnews/detail/00000236.html
+  confidence: high
+  amount: 要介護4は月額8,000円、要介護5は月額10,000円（9月と3月の年2回支給）
+- category: kaigo-yohin
+  name: 在宅要介護者の紙おむつ購入費の助成
+  name_on_page: 在宅要介護者紙おむつ助成事業
+  summary: 紙おむつを使う在宅の要支援・要介護の人の購入費の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 町内に住み、住民票が礼文町にある
+  - 申請は7月・10月・1月・3月に、その月までの分を領収書つきで出す
+  where: 役場（申請書を提出）
+  url: https://www.town.rebun.hokkaido.jp/hotnews/detail/00000235.html
+  confidence: high
+  amount: 1か月の上限5,000円、年額の上限60,000円
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 高齢者配食サービス事業
+  summary: 高齢者に食事を届ける配食サービス。
+  who: {}
+  at_application:
+  - 概ね65歳以上の高齢者（地域支援事業の対象）
+  - 世帯や心身の状態などの条件は頁に無い
+  where: 役場（委託先の社会福祉協議会の場合あり）
+  url: https://www.town.rebun.hokkaido.jp/hotnews/detail/00000232.html
+  confidence: low
+  amount: 1食400円
+- category: mimamori
+  name: 電話による在宅生活の見守り
+  name_on_page: 在宅生活見守り（電話）事業
+  summary: 電話で安否を確かめる見守りの事業。
+  who: {}
+  at_application:
+  - 概ね65歳以上の高齢者（地域支援事業の対象）
+  - 世帯や心身の状態などの条件は頁に無い
+  where: 役場（委託先の社会福祉協議会の場合あり）
+  url: https://www.town.rebun.hokkaido.jp/hotnews/detail/00000232.html
+  confidence: low
+- category: sonota
+  name: 冬期の在宅生活のための除雪サービス
+  name_on_page: 冬期在宅生活安心確保（除雪）事業
+  summary: 冬の間、高齢者の在宅生活を支える除雪のサービス。
+  who: {}
+  at_application:
+  - 概ね65歳以上の高齢者（地域支援事業の対象）
+  - 世帯や心身の状態などの条件は頁に無い
+  where: 役場（委託先の社会福祉協議会の場合あり）
+  url: https://www.town.rebun.hokkaido.jp/hotnews/detail/00000232.html
+  confidence: low
+- category: gaishutsu
+  name: 外出支援（移送）
+  name_on_page: 外出支援（移送）事業
+  summary: 高齢者の外出を支援する移送の事業。
+  who: {}
+  at_application:
+  - 概ね65歳以上の高齢者（地域支援事業の対象）
+  - 世帯や心身の状態などの条件は頁に無い
+  where: 役場（委託先の社会福祉協議会の場合あり）
+  url: https://www.town.rebun.hokkaido.jp/hotnews/detail/00000232.html
+  confidence: low
+not_found:
+- haikai
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo

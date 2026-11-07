@@ -1,0 +1,88 @@
+city: '013463'
+name: 八雲町
+site: www.town.yakumo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ利用券の給付
+  name_on_page: 紙おむつ利用券給付事業
+  summary: 常時おむつを使う在宅の寝たきり高齢者に、紙おむつ利用券を給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 町内に住むおおむね 65 歳以上の在宅高齢者
+  - 要介護 4 以上に相当する人
+  where: 保健福祉課（シルバープラザ）
+  url: https://www.town.yakumo.lg.jp/soshiki/hoken/content0012.html
+  confidence: high
+  amount: 月額 5,000 円（6 か月分を毎年 4 月と 10 月に交付）
+- category: iro
+  name: 家族介護慰労金の支給（10 万円）
+  name_on_page: 家族介護慰労金贈呈事業
+  summary: 重度の要介護の高齢者を在宅で介護している家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護 4・5 に相当する高齢者等を現に介護している家族
+  - 過去 1 年間、介護保険サービスを使っていない（短期入所は年 1 週間程度まで可）
+  - 前回の慰労金の支給から 1 年以上たっている
+  where: 保健福祉課 介護保険係（シルバープラザ内）
+  url: https://www.town.yakumo.lg.jp/soshiki/hoken/content0011.html
+  confidence: high
+  amount: 10 万円を介護者に支給
+- category: haishoku
+  name: 給食サービス（夕食の配達）
+  name_on_page: 給食サービス事業
+  summary: 独り暮らしの高齢者らに夕食を届け、安否の確認も兼ねる。
+  who: {}
+  at_application:
+  - 独り暮らしの高齢者、またはこれに準ずる人で、日常生活に支障がある
+  where: 保健福祉課（シルバープラザ）
+  url: https://www.town.yakumo.lg.jp/soshiki/hoken/content0008.html
+  confidence: high
+  amount: 1 食（夕食）。利用者負担は八雲地域 500 円、熊石地域 400 円
+- category: gaishutsu
+  name: 福祉タクシーの助成（タクシー券）
+  name_on_page: 福祉タクシー助成事業
+  summary: 高齢者や障がいのある方がタクシーを使うとき、料金の一部を助成する券を交付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 満 75 歳以上、または次のいずれかの手帳を持つ人
+  - 身体障害者手帳（下肢・体幹・視覚・内部障がいの 1〜3 級）
+  - 療育手帳 A 判定、精神障害者保健福祉手帳 1・2 級
+  - 入院中・施設入所中の人は対象外（退院・退所後に手続き）
+  where: シルバープラザ（保健福祉課 高齢者福祉係）、役場住民生活課、落部支所、熊石総合支所など
+  url: https://www.town.yakumo.lg.jp/soshiki/hoken/content0006-2022.html
+  confidence: high
+  amount: 年額 12,000 円以内（1 枚 100 円）。申請月により 3,000〜12,000 円分
+not_found:
+- haikai
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori
+- chusha

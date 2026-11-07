@@ -1,0 +1,34 @@
+city: 014681
+name: 下川町
+site: www.town.shimokawa.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 高齢者の入湯料・入湯交通費の助成
+  name_on_page: 高齢者入湯料・入湯交通費助成事業
+  summary: 五味温泉の入湯券を年100回まで発行し、70歳以上にはバス交通費の一部も支援する。
+  who: {}
+  at_application:
+  - 70歳以上の人（70歳の誕生日から）
+  - または身体障害者手帳のある人、療育手帳があり在宅生活の人
+  - 入湯券の有効期限は翌年3月31日まで
+  - 一定の障害や要介護認定のある人の介護者にも入湯券を発行できる
+  where: 保健福祉課（総合福祉センター内）
+  url: https://www.town.shimokawa.hokkaido.jp/gyousei/.assets/%E7%B5%90%E5%90%88%E7%89%88.pdf
+  confidence: high
+  amount: 入湯券は年間100回まで（窓口で一度に発行できるのは20回分か40回分まで）。70歳以上はバス交通費の一部を100往復分まで支援
+not_found:
+- kaigo-yohin
+- iro
+- haikai
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
