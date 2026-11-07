@@ -1,0 +1,86 @@
+city: "102024"
+name: 高崎市
+site: www.city.takasaki.gunma.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: おむつ給付サービス事業
+    where: 介護保険課 介護サービス担当（027-321-1250）か各支所の市民福祉課、または最寄りの高齢者あんしんセンターに申し込む
+    conditions:
+      - 65 歳以上で、寝たきりや認知症などでいつも失禁があり、おむつが要る人
+      - 要介護 1 以上の人（認定がなくても体の状態が同じくらいなら対象）。肢体不自由 1・2 級程度、療育手帳 A 程度の人も
+      - 委託の業者が月 1〜2 回ほど家に来て、尿取りパッドや紙おむつを届ける
+      - 月 5,000 円分までは無料。超えた分は自分で払う
+    sources:
+      - url: https://www.city.takasaki.gunma.jp/page/1373.html
+        publisher: 高崎市
+        title: おむつ給付サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 在宅ねたきり高齢者等介護慰労手当
+    where: 対象になりそうな家には 9 月ごろ市から調査票と申請書が届く。書いて介護保険課（027-321-1250）か各支所の市民福祉課に出す
+    conditions:
+      - 65 歳以上で要介護 4・5（同じくらいの状態も含む）の人を、家で介護している人
+      - 8 月 1 日の時点で 6 か月以上続けて介護している。施設に入所中や長く入院中の人は対象外
+      - 介護が 6 か月以上 1 年未満なら 3 万円、1 年以上なら 8 万円
+      - 1 年以上で介護サービスを使わず、入院が 7 日以内、非課税世帯なら 10 万円
+    sources:
+      - url: https://www.city.takasaki.gunma.jp/page/3655.html
+        publisher: 高崎市
+        title: 在宅ねたきり高齢者等介護慰労手当
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 高齢者配食サービス
+    where: 住んでいる地域の高齢者あんしんセンターか、担当のケアマネジャーに相談して申請書を出す（長寿社会課 027-321-1319）
+    conditions:
+      - 65 歳以上で、事業対象者・要支援・要介護のどれかに当たる人
+      - 自分で調理するのが難しく、食事の手助けを受けられず、栄養の改善や見守りが要る人
+      - 配食サービスをケアプランに入れる必要がある
+      - 市に登録した事業者が週 1〜7 日、朝・昼・夕食を届け、そのときに安否を確かめる
+      - 自分で払うのは事業者の値段から市の補助（朝 280 円・昼と夕 430 円）を引いた額
+    sources:
+      - url: https://www.city.takasaki.gunma.jp/page/3576.html
+        publisher: 高崎市
+        title: 高齢者配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: はいかい高齢者救援システム（GPS 機器の無料貸出）
+    where: 申請書を介護保険課 介護サービス担当（027-321-1250）か各支所の市民福祉課、または最寄りの高齢者あんしんセンターに出す
+    conditions:
+      - 認知症で徘徊がある、市内に住む 65 歳以上の人を介護する家族や介護者
+      - GPS 機器を無料で借り、靴やバッグなどに付ける。設置の費用と利用料は市が持つ
+      - 行方が分からないとき、見守りセンターが 24 時間、位置を家族の携帯電話などに知らせる
+      - 家族が探しに行けないときは、見守りセンターの職員や警察が保護する
+      - 充電の電気代や、機器を付ける靴の代金などは自分で払う
+    sources:
+      - url: https://www.city.takasaki.gunma.jp/site/notice/1736.html
+        publisher: 高崎市
+        title: 認知症による徘徊行動がみられる家族をお持ちの方へ（はいかい高齢者救援システム（GPS））
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（市長申立て・報酬の助成）
+    where: 65 歳以上の人は長寿社会課（027-321-1319）、65 歳未満の人は障害福祉課（027-321-1245）に相談する
+    conditions:
+      - 認知症や知的障害などで判断する力が足りず、自分で申し立てられない人
+      - 代わりに申し立てられる 4 親等以内の親族がいなければ、市長が代わりに申し立てる
+      - 本人や同居の親族の財産では後見人等の報酬を払うのが難しい人に、報酬の一部か全部を助成する
+      - 助成の額や申請の期限は頁に無いので、窓口で確かめる
+    sources:
+      - url: https://www.city.takasaki.gunma.jp/page/40667.html
+        publisher: 高崎市
+        title: 成年後見制度について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

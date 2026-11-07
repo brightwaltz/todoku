@@ -1,0 +1,67 @@
+city: "302015"
+name: 和歌山市
+site: www.city.wakayama.wakayama.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 高齢者紙おむつ給付事業
+    where: 住んでいる地区の地域包括支援センターに連絡する（職員が家に来て申請を代わりに行う。問い合わせは地域包括支援課）
+    conditions:
+      - 65 歳以上・要介護 1〜5 で、家で 3 か月以上寝たきりか、認知症で常に失禁している人
+      - 生活保護の世帯か、市民税非課税の世帯
+      - 新しく使う要介護 1〜3 の人は、認定調査で排尿か排便に介助や見守りが要るなどの条件が加わる
+      - 利用料は無料。品目や量は頁に無いので、窓口で確かめる
+    sources:
+      - url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001100/1005328.html
+        publisher: 和歌山市
+        title: 高齢者紙おむつ給付事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 住んでいる地区の地域包括支援センターに連絡する（職員が家に来て申請を代わりに行う）
+    conditions:
+      - 65 歳以上で、高齢者などだけの世帯
+      - 自分で食事を作るのが難しく、同居の人などから食事の手助けを受けにくい人
+      - 定期的に食事を届け、あわせて安否を確かめる。負担は弁当代の実費（額は頁に無い）
+    sources:
+      - url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001100/1001597.html
+        publisher: 和歌山市
+        title: 配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 認知症要配慮者見守り端末貸与事業（otta による見守りサービス）
+    where: 地域包括支援課に貸与の申込書を出す（端末を用意するので、先に電話か問い合わせフォームで連絡する）
+    conditions:
+      - 認知症で外出に不安がある人を介護している人（市内の一般の住宅で暮らす人に限る）
+      - 見守りの端末を 3 か月無料で借りられる。その後も使うなら運営会社と有料で契約する
+      - 位置を見るスマートフォンが要り、通信料は自分で払う
+      - 見守りの場所やアプリを入れた人の近くを通ると位置が残る仕組みで、GPS のようにいつも分かるわけではない
+    sources:
+      - url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1001100/1017311/1049597.html
+        publisher: 和歌山市
+        title: もしもの時の「otta（オッタ）」による見守りサービス（認知症要配慮者見守り端末貸与事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 和歌山市成年後見制度利用支援事業（市長申立て・後見人等報酬助成）
+    where: 高齢者・地域福祉課 高齢者・障害者成年後見センター（持参か郵送）
+    conditions:
+      - 本人が申し立てられず、4 親等内の親族がいないか音信不通などで頼れないときは、市長が申し立てる
+      - 報酬の助成：本人の預貯金などで後見人等の報酬を払うのが難しい人（市長申立て以外も対象）
+      - 後見人等が親族のときの報酬と、任意後見人の報酬は対象外
+      - 令和 7 年 4 月 1 日以降に確定した報酬の審判が対象。確定から 1 年以内に申請する
+    sources:
+      - url: https://www.city.wakayama.wakayama.jp/kurashi/kourei_kaigo/1034195.html
+        publisher: 和歌山市
+        title: 成年後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

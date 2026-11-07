@@ -1,0 +1,60 @@
+city: "142018"
+name: 横須賀市
+site: www.city.yokosuka.kanagawa.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつの支給（65歳以上の方）
+    where: 介護保険課 福祉サービス係か地域包括支援センター。郵送と電子申請もできる
+    conditions:
+      - 市内に住む 65 歳以上で本人の市民税が非課税の人。施設などに入っている人は除く
+      - 要介護 5 か 4。要介護 3 は、排尿・排便の基準（認定調査票か申請書裏面の確認票）を満たす人
+      - 介護保険料を滞納しておらず、給付制限を受けていない
+      - 協定の事業者が紙おむつを月 1 回届け、市が月 3,000 円（配送料込み）まで負担する
+      - 超えた分は自己負担。入院中は申請できず、持ち物は窓口で確かめる
+    sources:
+      - url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000526.html
+        publisher: 横須賀市
+        title: 紙おむつの支給（65歳以上の方）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 横須賀にこっとSOSネットワーク・GPS機器を用いた位置情報検索システムの導入費などの助成
+    where: 地域福祉課（消防局庁舎 1 階）。SOS の登録は地域包括支援センターでもよい。GPS の助成は窓口か郵送で、行政センターでは受け付けない
+    conditions:
+      - SOS ネットワーク：行方が分からなくなるおそれのある認知症の市民を、前もって無料で登録する
+      - 登録には申請書と顔写真が要り、行方不明のとき県警の照合に使う
+      - GPS の助成：登録した人を介護し、位置情報の検索システムを契約した人。携帯電話などは対象外
+      - 導入費は 1 人 1 回 10,000 円まで（令和 8 年 4 月 1 日以降の契約。介護保険のレンタル品は除く）
+      - 利用料は月 1,000 円・年 12,000 円まで。年齢などの条件は窓口で確かめる
+    sources:
+      - url: https://www.city.yokosuka.kanagawa.jp/2610/haikaisos20160905.html
+        publisher: 横須賀市
+        title: 横須賀にこっとSOSネットワーク
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.yokosuka.kanagawa.jp/2610/gps.html
+        publisher: 横須賀市
+        title: GPS機器を用いた位置情報検索システムの導入費などの助成
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金の支給
+    where: 介護保険課 福祉サービス係
+    conditions:
+      - 65 歳以上のねたきりなどの高齢者を家で介護する家族（同性パートナーを含む）に年 100,000 円
+      - 介護される人が要介護 4 か 5 で、過去 1 年に介護保険のサービスを使っていない
+      - 1 週間ほどのショートステイは、使っていてもよい
+      - 同じ世帯の全員が市民税非課税
+      - 申請の時期・方法・書類は窓口で確かめる
+    sources:
+      - url: https://www.city.yokosuka.kanagawa.jp/2640/g_info/l100000529.html
+        publisher: 横須賀市
+        title: 家族介護慰労金の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

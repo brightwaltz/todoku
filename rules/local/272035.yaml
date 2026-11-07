@@ -1,0 +1,73 @@
+city: "272035"
+name: 豊中市
+site: www.city.toyonaka.osaka.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 紙おむつ給付事業（介護用品〔おむつ〕の給付）
+    where: 長寿安心課（窓口・郵送・電子申込）
+    conditions:
+      - 市内に住民登録があり、そこで暮らす要介護 3〜5 の人（入院・入所中は対象外）
+      - 本人と同居の人全員が市民税非課税。生活保護などを受けている世帯は対象外
+      - 要介護 3 の人は、新しく申し込むときに排尿・排便に介助や見守りが要る人に限る
+      - 紙おむつを月 1 回現物で届ける。要介護 4・5 は 8 千円分まで、要介護 3 は 5 千円分まで
+    sources:
+      - url: https://www.city.toyonaka.osaka.jp/kenko/kaigo_hukushi/koureisya_shien/omutu.html
+        publisher: 豊中市
+        title: 介護用品（おむつ）の給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 高齢者位置情報システム事業・オレンジセーフティネット・みまもりステッカー・認知症個人賠償責任保険
+    where: 長寿安心課（オレンジセーフティネットは地域共生課）
+    conditions:
+      - GPS・ステッカー・保険は、市内の 65 歳以上か若年性認知症の人で、認知症の診断や行方不明の前歴などがある人
+      - GPS は 2 種の端末のどちらかの初期費用を市が負担する。月々の料金は本人の負担
+      - 行方不明のときに協力者へ知らせるオレンジセーフティネット（スマホのアプリ）は無料
+      - 二次元コードのみまもりステッカーは初回 1 シート無料、2 回目からは 990 円
+      - 認知症の人の賠償責任保険は市が契約者で保険料も市が払う（上限 3 億円）
+    sources:
+      - url: https://www.city.toyonaka.osaka.jp/kenko/kaigo_hukushi/koureisya_ninchi/kazokusienn.html
+        publisher: 豊中市
+        title: 高齢者位置情報システム事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.toyonaka.osaka.jp/kenko/chiiki/chiikifukushi/sosmail.html
+        publisher: 豊中市
+        title: オレンジセーフティネット（認知症高齢者・障害者等行方不明捜索システム）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.toyonaka.osaka.jp/kenko/kaigo_hukushi/koureisya_ninchi/sutextuka.html
+        publisher: 豊中市
+        title: みまもりステッカー配付事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.toyonaka.osaka.jp/kenko/kaigo_hukushi/koureisya_ninchi/nintisyoukojinbaisyo.html
+        publisher: 豊中市
+        title: 認知症個人賠償責任保険
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見人等の報酬助成・市長申立て
+    where: 65 歳以上は長寿安心課、65 歳未満は障害福祉センターひまわり
+    conditions:
+      - 申し立てる親族がいないか、親族が申し立てを断るときなどは、市長が申し立てる
+      - 報酬の助成：親族でない専門職が後見人等に選ばれた人
+      - 本人と同じ生計の世帯員全員が生活保護か市民税非課税で、本人の預貯金が 50 万円未満
+      - 上限は月数 × 在宅 28,000 円・施設 18,000 円。報酬が決まってから 1 年以内に申請する
+    sources:
+      - url: https://www.city.toyonaka.osaka.jp/kenko/seinenkouken/houshujosei.html
+        publisher: 豊中市
+        title: 成年後見人等の報酬助成
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.toyonaka.osaka.jp/kenko/seinenkouken/houteikouken.html
+        publisher: 豊中市
+        title: 成年後見制度（法定後見制度）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

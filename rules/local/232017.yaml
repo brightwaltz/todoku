@@ -1,0 +1,52 @@
+city: "232017"
+name: 豊橋市
+site: city.toyohashi.lg.jp
+programs:
+  - template: local-haikai
+    status: found
+    name: とよはし高齢者等おかえり安心ネットワーク事業（豊橋おかえりネット）
+    where: 最寄りの地域包括支援センター（担当のケアマネジャーを通してもよい）。問い合わせは長寿介護課
+    conditions:
+      - 市内に住み、認知症などで行方が分からなくなるおそれのある人（施設に入っている人も可）
+      - 親族や後見人などが、登録カード（様式第1号）と本人の写真 2 枚（全身と顔）を出しておく
+      - 前もって登録しておく仕組みで、GPS 端末の貸与や購入の助成は頁に無い
+      - 費用と期限は頁に書かれていないので、窓口で確かめる
+    sources:
+      - url: https://www.city.toyohashi.lg.jp/18807.htm
+        publisher: 豊橋市
+        title: とよはし高齢者等おかえり安心ネットワーク事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 給食サービス（高齢者向けの配食と安否確認）
+    where: 担当のケアマネジャーか、いなければ地域包括支援センターに相談。問い合わせは長寿介護課
+    conditions:
+      - 市内に住む 65 歳以上の在宅の人で、高齢者だけ・調理が難しい人だけなどの世帯
+      - 低栄養の目安（BMI 18.5 未満・血清アルブミン 3.5g/dl 以下・医師の診断）のどれかに当たる
+      - 昼か夕の 1 食を週 5 食まで届け、届けるときに安否も確かめる
+      - 自己負担は、1 食の値段から市の負担 340 円を引いた額
+      - 申請書・アセスメント票と、3 か月以内の検査結果か診断資料の写しを出す
+    sources:
+      - url: https://www.city.toyohashi.lg.jp/41563.htm
+        publisher: 豊橋市
+        title: 給食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 高齢者は東三河広域連合の介護保険課、障害のある人は障害福祉課（頁の問い合わせ先は福祉政策課）
+    conditions:
+      - 判断する力が十分でなく、市の決めた要件に当たる人が対象
+      - 後見などの申立ての費用と、後見人などへの報酬の全部か一部を助成する
+      - 要件・金額・申請の仕方・持ち物は頁から読み取れないので、窓口で確かめる
+    sources:
+      - url: https://www.city.toyohashi.lg.jp/5118.htm
+        publisher: 豊橋市
+        title: 成年後見支援センター
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

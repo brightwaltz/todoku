@@ -1,0 +1,78 @@
+city: "232033"
+name: 一宮市
+site: www.city.ichinomiya.aichi.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品給付
+    where: 高年福祉課 在宅福祉グループ（本庁舎 2 階、0586-28-9021）か、尾西庁舎窓口課・木曽川庁舎総務窓口課に申請書を出す
+    conditions:
+      - 要介護 4 か 5 の人を家で介護している家族など
+      - 介護される人の世帯も、介護する人の世帯も市民税非課税
+      - 紙おむつなどの介護用品を年 60,000 円まで。家に届けるか、医薬品券で買う
+    sources:
+      - url: https://www.city.ichinomiya.aichi.jp/fukushi/kounenfukushi/kourei/1000146/1010613/1001006.html
+        publisher: 一宮市
+        title: 家族介護用品給付
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス
+    where: 高年福祉課（本庁舎 2 階）か、尾西庁舎窓口課・木曽川庁舎総務窓口課に申請書を出す
+    conditions:
+      - 65 歳以上のひとり暮らしなどで、調理や買い物が難しい人
+      - 本人も同居の人も、要介護・要支援の認定か障害者手帳のどれかがある
+      - 緊急連絡通報システムを付けた世帯は対象外。ひとり暮らしは台帳への登録が要る
+      - 昼食を週 7 回まで届け、安否も確かめる。1 食 330〜570 円を業者に払う
+    sources:
+      - url: https://www.city.ichinomiya.aichi.jp/fukushi/kounenfukushi/kourei/1000146/1010613/1001012.html
+        publisher: 一宮市
+        title: 配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 認知症高齢者捜索支援サービス・認知症高齢者個人賠償責任保険
+    where: 高年福祉課（本庁舎 2 階 27 番窓口）か、尾西庁舎窓口課・木曽川庁舎総務窓口課。電子申請もできる
+    conditions:
+      - 道に迷うおそれのある認知症などの人を介護する家族など
+      - 介護される人は 65 歳以上か、65 歳未満で要介護・要支援の人（頁の書き方があいまい。窓口で確かめる）
+      - GPS 端末は月 240 円か 390 円、GPS 入りの中敷きは月 330 円を業者に払う
+      - サービスを使う人は、賠償の保険（5 億円まで）に無料で入る。保険だけの申請は不可
+    sources:
+      - url: https://www.city.ichinomiya.aichi.jp/fukushi/kounenfukushi/kourei/1000146/1010613/1001003.html
+        publisher: 一宮市
+        title: 認知症高齢者捜索支援サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.ichinomiya.aichi.jp/fukushi/kounenfukushi/kourei/1000146/1010613/1049243.html
+        publisher: 一宮市
+        title: 認知症高齢者個人賠償責任保険
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 一宮市成年後見制度利用支援事業（市長申立て・後見人等報酬助成）
+    where: 高齢者は高年福祉課 地域支援グループ（2 階 27 番窓口、0586-28-9151）。生活保護の世帯は生活福祉課
+    conditions:
+      - 本人が申し立てられず、配偶者や 2 親等内の親族にも頼めないときは、市長が申し立てる
+      - 報酬の助成：生活保護の人か、世帯の年収と預貯金が市の基準以下の人
+      - 年収は単身 150 万円以下・預貯金は 350 万円以下（世帯の人数で上がる）
+      - 後見人等が親族のときは対象外。上限は月 28,000 円（施設は 18,000 円）
+      - 報酬の審判の翌日から 30 日以内に申請する
+    sources:
+      - url: https://www.city.ichinomiya.aichi.jp/fukushi/fukushisoumu/1044105/1000149/1063171.html
+        publisher: 一宮市
+        title: 成年後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.ichinomiya.aichi.jp/_res/projects/default_project/_page_/001/063/171/seinennkoukennseidoriyousiennjigyoujissiyoukou20250401.pdf
+        publisher: 一宮市
+        title: 一宮市成年後見制度利用支援事業実施要綱
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

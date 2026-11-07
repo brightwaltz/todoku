@@ -1,0 +1,100 @@
+city: "442011"
+name: 大分市
+site: www.city.oita.oita.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 介護用品購入費の助成・家族介護用品支給事業
+    where: 購入費の助成は長寿福祉課（まず担当のケアマネジャーに相談）。家族介護用品は担当地域の地域包括支援センター
+    conditions:
+      - 購入費の助成：家で介護を受ける要介護 1〜5 の人で、常におむつが要ると市が認めた人
+      - 紙おむつ・尿取りパッドなどの購入費の 9 割。購入額は年度 48,000 円まで
+      - 買う前に受給資格を申請する（ケアマネジャーの証明が要る）。領収証は市の様式に限る
+      - 家族介護用品：要介護 4・5 の人を同じ世帯で介護する、市民税非課税世帯の家族に年 10 万円まで
+      - 家族介護用品は紙おむつ・手袋などの引換券を渡す。買った後は助成しないので先に相談する
+    sources:
+      - url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1202976103799.html
+        publisher: 大分市
+        title: 介護用品購入費の助成
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1080189593260.html
+        publisher: 大分市
+        title: 家族介護用品支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 食の自立支援事業
+    where: 担当地域の地域包括支援センター（職員が訪問して調べる）
+    conditions:
+      - 65 歳以上のひとり暮らしか高齢者だけの世帯などで、体の衰えなどで調理が難しい世帯
+      - 訪問の調査（アセスメント）の後、栄養のバランスがとれた食事を届ける
+      - 週 6 回（食）まで。1 食 450 円の負担
+    sources:
+      - url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1087520454452.html
+        publisher: 大分市
+        title: 食の自立支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 大分あんしんみまもりネットワークの事前登録・大分市見守りシール
+    where: 長寿福祉課（ネットワーク事務局）。登録は地域包括支援センターにも相談できる
+    conditions:
+      - 市に住民票があり市内の自宅に住む、認知症などで道に迷い行方不明になるおそれのある人
+      - 物忘れだけでは登録できない。登録届・登録表・本人の顔写真を出す（郵送可）。無料
+      - 登録すると、市が保険料を払う認知症高齢者等の個人賠償責任保険に自動で入る
+      - シール：登録した本人か親族が長寿福祉課の窓口で申請し（郵送不可）、20 枚を無料で受け取る
+    sources:
+      - url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1486082969445.html
+        publisher: 大分市
+        title: 「大分あんしんみまもりネットワーク」に登録しませんか
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.oita.oita.jp/o081/kenko/fukushi/mimamoriseal.html
+        publisher: 大分市
+        title: 「大分市見守りシール」の利用方法
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給事業
+    where: 担当地域の地域包括支援センター（職員が訪問して調べる）
+    conditions:
+      - 要介護 4・5 の人を同じ世帯で 1 年以上家で介護している、市民税非課税世帯の家族
+      - 介護される人は市内に 1 年以上住み、要介護 4・5 の状態が 1 年以上続いている
+      - その 1 年の間、介護保険のサービスを使っていない（7 日以内のショートステイは除く）
+      - 1 人あたり 100,000 円
+    sources:
+      - url: https://www.city.oita.oita.jp/o081/kenko/fukushi/1014192008008.html
+        publisher: 大分市
+        title: 家族介護慰労金支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 大分市成年後見人等報酬助成事業
+    where: 福祉保健部 長寿福祉課
+    conditions:
+      - 後見人などへの報酬を払うのが難しい市内の人に、報酬の全部か一部を助成する
+      - 預貯金などが 100 万円未満（単身は 50 万円未満）で、生活保護か、報酬を払うと保護の基準を下回る人など
+      - 市長が申し立てた人に限らない。後見人などが配偶者か 4 親等内の親族なら対象外
+      - 上限は月 28,000 円（施設に入っている人は月 18,000 円）
+      - 報酬を決めた審判の日から 2 か月以内に、交付申請書と収支の申告書を出す
+    sources:
+      - url: https://www.city.oita.oita.jp/o081/seinenkoukenhenkou.html
+        publisher: 大分市
+        title: 大分市成年後見人等報酬助成事業の内容が変更されました
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.oita.oita.jp/o081/documents/youkou.pdf
+        publisher: 大分市
+        title: 大分市成年後見人等報酬助成事業実施要綱
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

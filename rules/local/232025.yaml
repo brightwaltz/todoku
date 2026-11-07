@@ -1,0 +1,55 @@
+city: "232025"
+name: 岡崎市
+site: city.okazaki.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品購入助成券（おむつ券）
+    where: 長寿課 地域支援係（福祉会館 1 階）。地域包括支援センターかケアマネジャーが代わりに出せる
+    conditions:
+      - 在宅で要介護 3〜5（要介護 3 は追加の要件あり）、おむつを使い、本人の市民税が非課税
+      - 入院・入所・ショートステイの日を除いて、家にいる日が月 10 日以上
+      - 指定の店で使うおむつ券（1 か月 1 枚・1 枚 2,700 円）。年に 12 枚まで
+      - その月のおむつ代 3,000 円ごとに 1 枚使える（3,000 円に届かない月は使えない）
+      - 毎月 1 日〜月末に申請（必着）。9 月と 3 月に届く確認書を出すと続く
+    sources:
+      - url: https://www.city.okazaki.lg.jp/kenko/kourei/1012326/1004112/1004113.html
+        publisher: 岡崎市
+        title: 家族介護用品購入助成券（おむつ券）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: ひとり暮らし高齢者見守り配食サービス
+    where: 長寿課 地域支援係（窓口か郵送）。地域包括支援センターかケアマネジャーが代わりに出せる
+    conditions:
+      - 75 歳以上で本当にひとりで暮らし（世帯を分けただけは不可）、市民税が非課税
+      - 2 親等以内の親族が隣の建物に住むか、日ごろ行き来して見守れるときは対象外
+      - 昼か夕の 1 日 1 食を手渡しし、安否を確かめる（会えないときは緊急連絡先へ）
+      - 自己負担はふつうの食事で 1 食 350 円。市が指定した事業者に限る
+      - 1〜15 日に届けば 16 日、16 日〜月末なら翌月 1 日に利用が決まる
+    sources:
+      - url: https://www.city.okazaki.lg.jp/1100/1183/1145/p002214.html
+        publisher: 岡崎市
+        title: ひとり暮らし高齢者見守り配食サービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 岡崎市成年後見制度利用支援事業
+    where: 長寿課 地域支援係か、障がい福祉課 審査給付係に申請（問い合わせはふくし相談課）
+    conditions:
+      - 生活保護か中国残留邦人等の支援給付を受けている人、または次の行の線に当たる人
+      - 市民税非課税・年収 150 万円以下・預貯金 350 万円以下で、ほかに使える資産も扶養する親族も無い
+      - 申立ての費用（切手・印紙・診断書・鑑定・戸籍など）を助成。上限は頁に無い
+      - 後見人の報酬は月 2.8 万円まで（施設や病院に 1 か月を通していたら 1.8 万円まで）
+      - 審判が決まった日の翌日から 90 日以内に申請する
+    sources:
+      - url: https://www.city.okazaki.lg.jp/kenko/fukushi/1012491/1012493/1004128.html
+        publisher: 岡崎市
+        title: 岡崎市成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

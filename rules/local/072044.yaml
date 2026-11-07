@@ -1,0 +1,73 @@
+city: "072044"
+name: いわき市
+site: www.city.iwaki.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品給付事業
+    where: 受給者証の申請書を書いて、住んでいる地区の地区保健福祉センターに出す（高齢福祉課 0246-22-7453）
+    conditions:
+      - 市内に住み、要介護 4・5 と認定された 65 歳以上の人を、家で介護している家族
+      - 本人の世帯も介護する家族の世帯も、市民税が非課税であること
+      - 尿取りパッドと紙おむつに使える 5,000 円の給付券を、3 か月ごとに年 4 回もらえる（年 2 万円まで）
+      - 給付券は市が指定した薬局などで使う
+    sources:
+      - url: https://www.city.iwaki.lg.jp/www/contents/1001000000103/index.html
+        publisher: いわき市
+        title: 家族介護用品給付事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 要介護老人介護手当支給事業
+    where: 申請書と、主に介護する家族の通帳を持って、住んでいる地区の地区保健福祉センターに出す（0246-22-7453）
+    conditions:
+      - 市内に住む 65 歳以上で、寝たきりか認知症でいつも介護が要る状態が 3 か月以上続く人を、家で介護する家族
+      - 介護される人が施設に入所中や入院中のときは出ない
+      - 介護される人 1 人につき年 4 万円
+      - 認知症で介護が要る人のときは、医師の意見書（認知症老人に関する意見書）も要る
+    sources:
+      - url: https://www.city.iwaki.lg.jp/www/contents/1001000000181/index.html
+        publisher: いわき市
+        title: 要介護老人介護手当支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: いわき市配食サービス事業
+    where: 申請書と同意書を、住んでいる地区の地区保健福祉センターに出す（ケアマネジャーが代わりに出してもよい）
+    conditions:
+      - 体の弱りや病気などで食事の用意が難しく、親族などの手助けを受けられない人
+      - 65 歳以上のひとり暮らしか高齢者だけの世帯の人、または 40〜64 歳で要支援・要介護の人など
+      - 1 日 1 食まで。ケアマネジャーか地域包括支援センターが必要かを確かめてから食数が決まる
+      - 届けるときに安否を確かめる。市が 1 食 350 円を助成する（弁当代が 700 円を超えると自分の負担が増える）
+    sources:
+      - url: https://www.city.iwaki.lg.jp/www/contents/1454474833594/index.html
+        publisher: いわき市
+        title: いわき市配食サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 徘徊高齢者家族支援サービス事業（GPS 端末の貸与）・はいかい高齢者等ＳＯＳネットワーク事業
+    where: どちらも住んでいる地区の地区保健福祉センターに出す（GPS は地域包括ケア推進課 0246-27-8574、SOS は保健福祉課 0246-22-7009）
+    conditions:
+      - 市内に住み、徘徊のおそれがあるおおむね 65 歳以上の認知症の人を、家で介護している家族
+      - 市が委託した事業者の GPS 端末を借り、行方が分からないときは居場所を家族に知らせる
+      - 加入料などの初めの費用は市が払う。月々の基本料金や位置を調べる料金は自分で払う
+      - SOS ネットワーク：行方不明になるおそれのある人の名前・住所・連絡先・写真を前もって登録する
+    sources:
+      - url: https://www.city.iwaki.lg.jp/www/contents/1001000000185/index.html
+        publisher: いわき市
+        title: 徘徊高齢者家族支援サービス事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.iwaki.lg.jp/www/contents/1468281066818/index.html
+        publisher: いわき市
+        title: はいかい高齢者等ＳＯＳネットワーク事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

@@ -1,0 +1,83 @@
+city: "232114"
+name: 豊田市
+site: www.city.toyota.aichi.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 豊田市介護保険特別給付費（おむつ購入利用券）の支給
+    where: 介護保険課（東庁舎 1 階、0565-34-6634）に申請書を出す（電子申請・郵送・窓口）。券はケアマネジャーからも受け取れる
+    conditions:
+      - 要介護 1〜5 の認定を受け、家で介護を受けていて、おむつが要る人
+      - 特別養護老人ホームなどの施設に入っている人や、入院している人は使えない
+      - 月 1 枚の券で、市内の登録店で買うおむつ代の 9 割を助成する（月 3,000 円分まで）
+      - 登録店の外や認定の前に買うときは、買う前に介護保険課に相談する
+    sources:
+      - url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/kaigo/1003153/1017816/1017820.html
+        publisher: 豊田市
+        title: 豊田市介護保険特別給付費（おむつ購入利用券）の支給
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス（「食」の自立支援事業）
+    where: 地域包括支援センターか居宅介護支援事業所に申し込む。問い合わせは高齢福祉課（0565-34-6984）
+    conditions:
+      - 65 歳以上のひとり暮らしや高齢者の世帯などで、調理や買い物が難しく安否の確認が要る人
+      - 栄養のバランスのよい弁当を届け、そのときに安否を確かめる
+      - 1 食 300 円から自分で払う。週 6〜7 日、1 日 1 食の昼か夕（地域によって違う）
+      - 配食の事業者は地区によって違う
+    sources:
+      - url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073628/1073380/1003166.html
+        publisher: 豊田市
+        title: 配食サービス（「食」の自立支援事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 徘徊高齢者・障がい者等事前登録制度・個人賠償責任保険・GPS機器導入費助成・見守り安心マーク
+    where: 高齢福祉課（東庁舎 1 階、0565-34-6984）か地域包括支援センターに相談する
+    conditions:
+      - 事前登録：行方不明になるおそれのある人を写真つきで登録し、日ごろの見守りと捜索に使う
+      - 登録した人は、市が入る個人賠償責任保険（1 事故 1 億円まで、自分の負担なし）にも申し込める
+      - GPS：市内の、行方不明になるおそれのある高齢者や、65 歳未満で要介護・要支援の人
+      - GPS 機器の本体などと契約手数料を 1 人 1 回、22,000 円まで補助。契約して使い始めた後に申請する
+      - 見守り安心マーク：連絡先を書いて服に貼る反射する名札を、年 10 枚まで配る（65 歳以上の人など）
+    sources:
+      - url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073722/1033997.html
+        publisher: 豊田市
+        title: 徘徊高齢者・障がい者等事前登録制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073722/1031085.html
+        publisher: 豊田市
+        title: 認知症高齢者等個人賠償責任保険事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073722/1021959.html
+        publisher: 豊田市
+        title: GPS機器導入費助成（徘徊者捜索機器利用促進補助金）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1073713/1073722/1021958.html
+        publisher: 豊田市
+        title: 見守り安心マーク
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: よりそい支援課（0565-34-6791）に相談する。申請は紙か、あいち電子申請・届出システムで
+    conditions:
+      - 認知症や障がいで判断する力が足りない人のために、市が後見を始める審判を申し立てる
+      - 後見人等の報酬を払うのが難しい人に、その費用を助成する
+      - 対象の細かい条件と助成の額は実施要綱（PDF）にあり頁に無いので、窓口で確かめる
+    sources:
+      - url: https://www.city.toyota.aichi.jp/kenkoiryo/korei/1038128/1003173.html
+        publisher: 豊田市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

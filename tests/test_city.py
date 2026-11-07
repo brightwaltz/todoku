@@ -17,7 +17,7 @@ WEB = Path(__file__).resolve().parents[1] / "web"
 
 MACHIDA, OSAKA, YOKOHAMA = "132098", "271004", "141003"
 VILLAGE = "023043"  # 青森県 蓬田村
-NO_RULES = "272035"  # 大阪府 豊中市（市の規則も rules/local も無い。大阪市は T-075e で rules/local に入ったので替えた）
+NO_RULES = "272043"  # 大阪府 池田市（市の規則も rules/local も無い。大阪市は T-075e、豊中市は T-137 で rules/local に入ったので替えた）
 
 
 
@@ -41,7 +41,7 @@ def test_codes_used_here_are_the_places_named():
     assert PLACES[MACHIDA] == ("東京都", "町田市")
     assert PLACES[OSAKA] == ("大阪府", "大阪市")
     assert PLACES[VILLAGE] == ("青森県", "蓬田村")
-    assert PLACES[NO_RULES] == ("大阪府", "豊中市")
+    assert PLACES[NO_RULES] == ("大阪府", "池田市")
 
 
 def test_machida_lists_national_tokyo_machida_and_only_shown_in_types():

@@ -1,0 +1,88 @@
+city: "212016"
+name: 岐阜市
+site: www.city.gifu.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品支給事業
+    where: 担当の地域包括支援センターに申請する（問い合わせは介護保険課 給付係）
+    conditions:
+      - 市に住み、家で暮らす要介護 3〜5 の人
+      - 本人・世帯の人・同居の人・扶養する人がみな市民税非課税であることなど
+      - 紙おむつの支給券が 6 月・10 月・2 月の年 3 回届く
+      - 券の額は頁に無いので、窓口で確かめる
+    sources:
+      - url: https://www.city.gifu.lg.jp/kenko/kaigo/1004813/1004826.html
+        publisher: 岐阜市
+        title: 家族介護用品支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 配食による安否確認事業
+    where: 地域包括支援センターを通して申請する（所管は高齢福祉課 高齢者サービス係）
+    conditions:
+      - おおむね 65 歳以上で、ひとり暮らしか高齢者だけの世帯
+      - 食事の用意が難しく、食事と安否の確認が要ると市が認めた人
+      - 1 食の負担は普通食 昼 400〜520 円・夜 480〜620 円、特別食 550〜650 円
+    sources:
+      - url: https://www.city.gifu.lg.jp/kenko/koureisyafukushi/1004557/1004564/1004569.html
+        publisher: 岐阜市
+        title: 配食による安否確認事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 岐阜市認知症高齢者等見守り事業・岐阜市認知症高齢者等GPS機器等購入等助成金交付事業
+    where: 高齢福祉課（シールは地域包括支援センターでも申請できる。GPS は地域包括支援係）
+    conditions:
+      - 家で暮らし、認知症で行方不明のおそれがある人に、二次元コードの見守りシール 40 枚を無料で渡す
+      - シールの利用者は、市が契約した個人賠償責任保険に無料で入れる（上限 1 億円）
+      - GPS：65 歳以上の認知症か若年性認知症の人を、同居か通いで介護する人
+      - GPS は初期費用を 2 万円まで、BLE は半額を 2 万円まで助成。月額の料金は対象外
+      - GPS は買う・借りる前に市の事前審査を受ける
+    sources:
+      - url: https://www.city.gifu.lg.jp/kenko/koureisyafukushi/1004584/1004588.html
+        publisher: 岐阜市
+        title: 岐阜市認知症高齢者等見守り事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+      - url: https://www.city.gifu.lg.jp/kenko/koureisyafukushi/1004584/1020471.html
+        publisher: 岐阜市
+        title: 岐阜市認知症高齢者等GPS機器等購入等助成金交付事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 家族介護慰労金支給事業
+    where: 介護保険課 給付係
+    conditions:
+      - 市民税非課税の世帯の、要介護 4・5 の高齢者を介護する家族
+      - 介護される人が過去 1 年に介護保険と障害福祉のサービスを使わず、3 か月以上の入院もないことなど
+      - 年 10 万円。介護される人 1 人につき 1 回
+    sources:
+      - url: https://www.city.gifu.lg.jp/kenko/kaigo/1004813/1004825.html
+        publisher: 岐阜市
+        title: 家族介護慰労金支給事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（高齢者）
+    where: 高齢福祉課 高齢者サービス係
+    conditions:
+      - 身寄りがなく重い認知症の高齢者などは市長が申し立て、費用は市が出す（払える人には後で請求）
+      - 報酬の補助：補助が無いと払えない人で、市長申立ての人か生活保護などを受けている人など
+      - 後見人が親族のとき、払える親族に扶養されているときなどは対象外
+      - 補助の額は本人の資産と報酬で決まる。報酬の審判の翌日から 60 日以内に申請
+    sources:
+      - url: https://www.city.gifu.lg.jp/kenko/koureisyafukushi/1004557/1004564/1004571.html
+        publisher: 岐阜市
+        title: 成年後見制度利用支援事業(高齢者)
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}

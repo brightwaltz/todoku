@@ -1,0 +1,87 @@
+city: "422011"
+name: 長崎市
+site: www.city.nagasaki.lg.jp
+programs:
+  - template: local-kaigo-yohin
+    status: found
+    name: 家族介護用品支給
+    where: お近くの総合事務所（中央・東・南・北）。担当は高齢者すこやか支援課
+    conditions:
+      - 寝たきりの高齢者などを家で介護している家族
+      - 世帯の市民税が非課税で、介護される人が要介護 3 以上。ほかの要件は窓口で確かめる
+      - 紙おむつ・尿取りパッド・使い捨て手袋・防水シーツなどを、品物で支給する
+      - 利用料は無料で、支給は月 5,000 円分まで
+      - 申請の時期と書類は窓口で確かめる
+    sources:
+      - url: https://www.city.nagasaki.lg.jp/page/1426.html
+        publisher: 長崎市
+        title: 自宅で介護されている家族のかたに
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 要介護者配食サービス
+    where: お近くの総合事務所か地域包括支援センター
+    conditions:
+      - ひとり暮らしなどで、自分で食事を作るのが難しい高齢者
+      - 食事を家に届け、届けるときに安否を確かめる
+      - 利用者の負担は実費で、1 食 270〜620 円
+      - 年齢・要介護度・所得の条件と、配達の回数は窓口で確かめる
+    sources:
+      - url: https://www.city.nagasaki.lg.jp/page/20026.html
+        publisher: 長崎市
+        title: ひとり暮らし高齢者等のためのサービス
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haikai
+    status: found
+    name: 徘徊高齢者等家族支援事業・徘徊高齢者等SOSネットワーク事業
+    where: 各総合事務所の地域福祉課。担当は高齢者すこやか支援課
+    conditions:
+      - 認知症で行方が分からなくなるおそれのある高齢者と、その家族のための事業
+      - 家族支援事業：行方不明のとき、家族に位置情報を知らせて早く見つけられるようにする
+      - 行方不明の間の事故で家族が損害賠償の責任を負ったときは、保険で補う
+      - SOS ネットワーク：前もって本人を登録し、行方不明のとき早く見つけて保護する
+      - 機器の種類・自己負担・年齢などの条件は窓口で確かめる
+    sources:
+      - url: https://www.city.nagasaki.lg.jp/page/5951.html
+        publisher: 長崎市
+        title: 認知症への取り組み
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 介護者慰労金支給
+    where: お近くの総合事務所（中央・東・南・北）。担当は高齢者すこやか支援課
+    conditions:
+      - 寝たきりの高齢者を家で介護している家族に、年 100,000 円を支給する
+      - 介護される人が要介護 4 か 5 で、市民税非課税の世帯
+      - 申請前の 6 か月（入院の期間を除く）に介護保険のサービスを使っていない
+      - 1 か月ほどのショートステイは、使っていてもよい
+      - 申請の時期と書類は窓口で確かめる
+    sources:
+      - url: https://www.city.nagasaki.lg.jp/page/1426.html
+        publisher: 長崎市
+        title: 自宅で介護されている家族のかたに
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見人等の報酬助成
+    where: 高齢者すこやか支援課か障害福祉課。市長申立ての相談は長崎市権利擁護・成年後見支援センター
+    conditions:
+      - 後見人などへの報酬を払うのが難しい所得の低い人に、市が報酬を助成する
+      - 所得・資産の基準、助成の額、申請の期限は窓口で確かめる
+      - 申立て費用の助成があるかは頁に無いので、窓口で確かめる
+      - 身寄りがなく本人が申し立てられないときなどは、市長が申し立てる
+    sources:
+      - url: https://www.city.nagasaki.lg.jp/page/58658.html
+        publisher: 長崎市
+        title: 成年後見制度について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
