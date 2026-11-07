@@ -1,0 +1,214 @@
+city: '152137'
+name: 燕市
+site: www.city.tsubame.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ支給券の支給
+  name_on_page: 紙おむつ支給事業
+  summary: 市民税非課税の在宅の人で常時紙おむつが必要な人に、紙おむつ支給券を出す。
+  who:
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 次のどれか：要介護1〜5の人
+  - または身障手帳1・2級＋重度心身障害者医療費助成の受給者証
+  - または療育手帳A＋重度心身障害者医療費助成の受給者証
+  - 尿取りパッド（150cc以上）が常時必要
+  - 手帳の人は3歳未満を除く
+  where: 長寿福祉課 長寿福祉係（ケアマネジャーか地域包括支援センター職員等の署名が必要）
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8048.html
+  confidence: high
+  amount: 市民税非課税世帯は月5,500円、課税世帯（本人非課税）は月3,300円
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 安否確認が必要で食事の用意が難しい高齢者に、食事を届ける。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯全員が次のどれかに当たること
+  - 要支援・要介護の認定を受けている
+  - または身体障害者手帳・療育手帳・精神障害者保健福祉手帳を持つ
+  where: 長寿福祉課 長寿福祉係
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8795.html
+  confidence: high
+  amount: 1食300円の自己負担、週2日以内（1日1食）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム設置事業
+  summary: 急病や災害に備え、緊急通報機器などを貸与し、受信センターが24時間対応する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上のひとり暮らしの人
+  - または、ほかの家族が病弱・寝たきり等でひとり暮らし同等と認められる人
+  - 固定電話型は固定電話が必要、携帯型は携帯電話が必要
+  where: 長寿福祉課 長寿福祉係（調査員の記入欄あり：ケアマネジャー・包括支援センター職員等）
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/2515.html
+  confidence: high
+  amount: 利用者負担は市民税非課税世帯が月500円、課税世帯が月1,000円
+- category: nichijo-yogu
+  name: 電磁調理器・火災警報器・自動消火器の給付
+  name_on_page: 老人日常生活用具給付事業
+  summary: ひとり暮らしや高齢者のみ世帯に、電磁調理器・火災警報器・自動消火器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 電磁調理器：心身機能の低下、または認知症
+  - 火災警報器・自動消火器：生計中心者の前年所得税が非課税
+  - 火災警報器・自動消火器：認知症であること（上の条件と両方）
+  - 購入前の申請が必要
+  where: 長寿福祉課 長寿福祉係
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8782.html
+  confidence: high
+  amount: 品目や所得で利用者負担が変わる（頁に金額の記載なし）
+- category: gaishutsu
+  name: 福祉タクシー（ストレッチャー利用）の介護料金助成
+  name_on_page: 福祉タクシー介護料金助成事業
+  summary: ストレッチャーが必要な人の福祉タクシー介護料金の半額を助成する。
+  who: {}
+  at_application:
+  - 要介護3〜5の人
+  - または身障手帳1・2級＋重度心身障害者医療費助成の受給者証
+  - または療育手帳A＋重度心身障害者医療費助成の受給者証
+  - ストレッチャーを使わないと移動できない人
+  - 燕タクシー・中央タクシーの利用分のみ
+  where: 長寿福祉課 長寿福祉係
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8789.html
+  confidence: high
+  amount: 介護料金の半額（燕タクシーは片道250円、中央タクシーは片道785円）
+- category: shingu
+  name: 寝具の乾燥消毒・丸洗い
+  name_on_page: 寝具乾燥サービス事業
+  summary: 寝具の衛生管理が難しい在宅の人に、年4回の乾燥消毒と年2回の丸洗いをする。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3〜5の人
+  - または身障手帳1・2級＋重度心身障害者医療費助成の受給者証
+  - または療育手帳A＋重度心身障害者医療費助成の受給者証
+  where: 長寿福祉課 長寿福祉係（民生委員・ケアマネジャー・包括職員の署名が必要）
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8658.html
+  confidence: high
+  amount: 市民税非課税世帯は無料、課税世帯は実費の3割程度（消毒乾燥640円・丸洗い1,300円）
+- category: ribiyo
+  name: 訪問理美容の助成
+  name_on_page: 訪問理美容サービス助成事業
+  summary: 在宅で寝たきりの人などが市内店の訪問理美容を受けるとき、費用を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3〜5の人
+  - または身障手帳1・2級＋重度心身障害者医療費助成の受給者証
+  - または療育手帳A＋重度心身障害者医療費助成の受給者証
+  - 自宅への出張のみ対象（施設・店舗は対象外）
+  where: 長寿福祉課 長寿福祉係（ケアマネジャーか包括支援センター職員等の署名が必要）
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8655.html
+  confidence: high
+  amount: 1回2,500円を年度内に2回まで
+- category: jutaku
+  name: 高齢者・障がい者向け住宅改造費の補助
+  name_on_page: 高齢者向け住宅整備補助事業
+  summary: バリアフリーなど在宅生活に必要な住宅改造費の一部を、世帯1回限りで補助する。
+  who: {}
+  at_application:
+  - 世帯全員の前年の収入合計が600万円未満
+  - おおむね65歳以上で要介護認定を受けている人
+  - または身障手帳1・2級、療育手帳Aの人（同居の家族も可）
+  - 過去にこの補助を受けた世帯は対象外
+  - 新築・増築は対象外
+  where: 長寿福祉課 地域支援相談チーム
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8883.html
+  confidence: high
+  amount: 基準額30万円または50万円。補助率は生活保護世帯100％、所得税非課税世帯75％、課税世帯50％
+- category: iro
+  name: 在宅介護手当
+  name_on_page: 在宅介護手当支給事業
+  summary: 要介護3以上の人を在宅で介護する家族等に、介護手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3以上の人を在宅で介護している人が申請する
+  - 要介護者が介護扶助を受けている場合は対象外
+  - 入院・入所中は支給されない
+  where: 長寿福祉課 長寿福祉係
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/8761.html
+  confidence: high
+  amount: 月額：要介護3は8,000円、要介護4は9,200円、要介護5は10,700円
+- category: koken
+  name: 成年後見の申立て費用の助成
+  name_on_page: 成年後見人等への申立費用の助成
+  summary: 成年後見の申立てにかかる手数料や診断書料などの費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 本人の年間収入が150万円以下
+  - 本人の預貯金が50万円以下
+  - 居住する家屋や日常に必要な資産以外に活用できる資産がない
+  where: 長寿福祉課 地域支援相談チーム
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/9732.html
+  confidence: high
+  amount: 申立手数料・登記手数料・切手代・診断書料・鑑定費用・添付書類の取得費用
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見人等への報酬の支払い助成
+  summary: 資力が十分でなく後見人報酬の支払いが難しい人に、裁判所が決めた報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に住む被後見人等で、生活保護か中国残留邦人等の支援給付を受ける人
+  - または世帯全員が市民税非課税で、収入・預貯金が基準以下の人
+  - （報酬を引いた収入150万円以下、預貯金50万円以下）
+  - 後見人等が親族の場合は対象外
+  where: 長寿福祉課 地域支援相談チーム
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/9732.html
+  confidence: high
+  amount: 報酬のうち、在宅の期間は月額28,000円まで、施設・入院の期間は月額18,000円まで
+- category: haikai
+  name: 行方不明のおそれのある人の事前登録（おかえりつばめ～ル）
+  name_on_page: おかえりつばめ～ル
+  summary: 行方不明のおそれのある人を事前登録し、行方不明時にメール配信する。靴に貼る反射ステッカーももらえる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で認知症または軽度認知症の診断を受けた人
+  - または障がい者・子ども等で行方不明のおそれが高い人
+  - 家族や入所施設などが申請する
+  where: 長寿福祉課窓口、各地域包括支援センター
+  url: https://www.city.tsubame.niigata.jp/kenko/fukushi_kaigo/2/109/4056.html
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: 医療情報や緊急連絡先を入れる専用容器のキットを、冷蔵庫保管用に配る。
+  who: {}
+  at_application:
+  - 70歳以上のひとり暮らし、または高齢者のみの世帯
+  - または70歳以上で日中ひとり暮らしの人
+  - その他、障がいのある人など必要と認められる人
+  - 申請書は不要（窓口で氏名や住所などを聞かれる）
+  where: 長寿福祉課、燕市社会福祉協議会（法人本部・燕支所・分水支所）
+  url: https://www.city.tsubame.niigata.jp/soshiki/kenko_fukushi/3/1/1241.html
+  confidence: high
+not_found:
+- mimamori
+- yutai

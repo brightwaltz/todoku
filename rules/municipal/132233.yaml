@@ -1,0 +1,224 @@
+city: '132233'
+name: 武蔵村山市
+site: www.city.musashimurayama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者等おむつ給付
+  name_on_page: 在宅高齢者等おむつ給付事業
+  summary: 常時おむつが必要な在宅の高齢者に、紙おむつと尿取りパッドを給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上で、市町村民税が非課税
+  - 常時おむつを着用する必要がある
+  - 同様のおむつ給付を受けていない
+  where: 高齢福祉課（市民総合センター内）。申請フォームか紙の申請書
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019124.html
+  confidence: high
+  amount: 無料（給付枚数・組み合わせに上限あり）
+- category: haishoku
+  name: 高齢者の食事サービス（昼食の手渡し配食）
+  name_on_page: 高齢者食事サービス事業
+  summary: 昼食を自宅へ届け、手渡しで安否確認も兼ねる配食サービス。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要支援・要介護認定を受けているか、総合事業対象者
+  - 日常の買物や炊事が困難と認められる
+  where: 高齢福祉課（市民総合センター内）。申請フォームか紙の申請書
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019125.html
+  confidence: high
+  amount: 自己負担は1食330円（普通食）、低カロリー食・ソフト食は400円
+- category: haikai
+  name: 徘徊高齢者の位置情報（GPS）探索サービス
+  name_on_page: 徘徊高齢者等家族支援サービス
+  summary: 徘徊のある高齢者にGPS機器を持たせ、家族等が居場所を探せる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で日常的に徘徊があるおおむね65歳以上の市内の方
+  - 申請者は緊急時に保護できる家族等（成年後見人等を含む）
+  - 申請後に面接調査がある
+  where: 高齢福祉課（市民総合センター内）。申請フォームか紙の申請書
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019130.html
+  confidence: high
+  amount: 課税世帯は月242円（セコム）または330円（ホームネット）。非課税世帯・生活保護世帯は無料
+- category: kinkyu-tsuho
+  name: 高齢者の救急通報システム
+  name_on_page: 高齢者救急通報システム
+  summary: 急病時にボタンで民間事業所に通報できる機器を自宅に設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 脳血管疾患・心疾患などの慢性疾患で常時注意が必要
+  - NTTアナログ電話回線の利用が前提
+  where: 高齢福祉課（市民総合センター内）。申請フォームか紙の申請書
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019128.html
+  confidence: high
+  amount: 住民税非課税は無料。課税は月500円か2,200円。安否確認センサは月1,000円（任意）
+- category: nichijo-yogu
+  name: 高齢者火災安全システム（火災警報器・電磁調理器等の給付）
+  name_on_page: 高齢者火災安全システム
+  summary: 火災警報器、自動消火装置、電磁調理器などの防災機器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能が低下し、防火の配慮が必要
+  - 寝たきりの方の自室に設置する場合は同居家族がいても対象になることがある
+  - 自動消火装置・電磁調理器等は購入前に見積書つきで申請
+  where: 高齢福祉課（市民総合センター内）。申請フォームか紙の申請書
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019129.html
+  confidence: high
+  amount: 課税者は機器費用の1割負担。非課税世帯・生活保護世帯は無料。給付限度額あり（火災警報器は1台15,500円など）
+- category: nichijo-yogu
+  name: 高齢者日常生活用具の給付（歩行器・シルバーカー等）
+  name_on_page: 高齢者日常生活用具給付
+  summary: 要介護認定が非該当の高齢者に、歩行器や入浴補助用具などの購入費を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護認定の結果が非該当
+  - 用具の給付は1品目につき1回まで
+  where: 高齢福祉課（介護認定給付係）。紙の申請書を提出
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019450.html
+  confidence: high
+  amount: 限度額内で実費の1〜3割を負担。生活保護世帯は無料。限度額は歩行器35,100円、シルバーカー27,000円など
+- category: jutaku
+  name: 高齢者自立支援住宅改修費の給付（市独自）
+  name_on_page: 高齢者自立支援住宅改修費給付
+  summary: 手すり・段差解消などの改修費を給付する。介護認定のある人は浴槽・洗面台・便器の別枠もある。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 日常生活の動作に困難があり、住宅改修が必要
+  - 非該当の方は手すり等の改修が対象（申請前1年以内の結果）
+  - 認定を受けている方は浴槽・流し・便器の改修が対象
+  where: 高齢福祉課（介護認定給付係）。紙の申請書を提出
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019454.html
+  confidence: high
+  amount: 非該当の方は限度20万円。認定者は浴槽379,000円、流し156,000円、便器106,000円まで。実費の1〜3割負担
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聴力が低下した住民税非課税の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 申請年度に65歳以上になる市内の住民登録者
+  - 住民税非課税
+  - 耳鼻咽喉科医が補聴器の必要性を認める（両耳40dB以上70dB未満など）
+  - 障害者総合支援法の補聴器の補装具費の対象でない
+  - 購入前に申請し、交付決定後に購入する
+  where: 高齢福祉課高齢者支援係
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1022078.html
+  confidence: high
+  amount: 上限40,000円（予算に達し次第受付終了）
+- category: gaishutsu
+  name: リフトカーによる移送サービス
+  name_on_page: 移送サービス（リフトカー）
+  summary: 車いす等のまま乗れるリフトカーで、通院などの送迎を無料で行う。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で要介護4・5のねたきり、または下肢・体幹1・2級の身体障害者
+  - 用途は通院・入退院、福祉団体の行事、学校行事に限る
+  - 事前の利用登録が必要。原則として介護人が必要
+  where: 障害福祉課（市民総合センター1階）。予約は村山運送
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1020917.html
+  confidence: high
+  amount: 運行料金は無料（有料道路料金・駐車料金は本人負担）
+- category: mimamori
+  name: 友愛訪問（話し相手の訪問）
+  name_on_page: 友愛訪問
+  summary: 近隣との交流が少ない高齢者のもとへ訪問員が訪れ、話し相手や相談に応じる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 近隣との交流に乏しい
+  - 地域によっては訪問員の都合がつかず、開始まで待つことがある
+  where: 高齢福祉課（市民総合センター内）。申請フォームか紙の申請書
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019127.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見制度の申立費用・後見人等報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用を負担できない人の、審判請求費用や後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 市の住民基本台帳に記録され、他に費用を負担する人がいない
+  - 資産が乏しい、生活保護等、または住民税非課税で資産80万円以下
+  - 後見人等が本人の親族の場合は対象外
+  where: 福祉総務課福祉総務係（市役所1階）。オンライン・窓口・郵送
+  url: https://www.city.musashimurayama.lg.jp/kurashi/seikatsu/1012251/1018507.html
+  confidence: high
+  amount: 報酬助成は月2万円（年24万円）まで。審判請求費用は印紙代・鑑定料等が対象
+- category: sonota
+  name: 高齢者等のごみ出し支援
+  name_on_page: 高齢者等ごみ出し支援
+  summary: ごみ出しが難しい人の玄関先から回収場所まで、ごみを運んでもらえる。
+  who: {}
+  at_application:
+  - 親族や近隣の協力を得にくい（一人暮らし等）
+  - 要介護3〜5、または医師等が認知症と認めた高齢者
+  - 障害福祉サービス（居宅介護等）を受けている障害者も対象
+  where: 高齢福祉課（市民総合センター内）。申請フォームか紙の申請書
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019131.html
+  confidence: high
+  amount: 無料（ごみ箱等は自分で用意）
+- category: sonota
+  name: 老人性白内障の特殊眼鏡・コンタクトレンズ購入費の助成
+  name_on_page: 老人性白内障用特殊眼鏡等購入費助成
+  summary: 眼内レンズを入れられない白内障の人の、特殊眼鏡等の購入費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で医療保険に加入している
+  - 水晶体摘出手術後、医師が眼内レンズ挿入不可と診断
+  - 本人の所得が基準額以内（扶養親族0人で2,572,000円）
+  - 購入から1年以内の申請
+  where: 高齢福祉課高齢者支援係
+  url: https://www.city.musashimurayama.lg.jp/koureisha/ikiiki/1019797/1019132.html
+  confidence: high
+  amount: 特殊眼鏡は一式40,000円、コンタクトレンズは1個25,000円まで
+not_found:
+- iro
+- shingu
+- ribiyo

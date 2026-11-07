@@ -1,0 +1,180 @@
+city: '142051'
+name: 藤沢市
+site: www.city.fujisawa.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 大人用紙おむつの支給（紙おむつ支給事業）
+  summary: 在宅で常時おむつが必要な方へ、紙おむつを月1回自宅へ配送する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4・5の40歳以上で本人の合計所得400万円未満
+  - または要支援1〜要介護3の65歳以上で住民税非課税世帯
+  - 生活保護を利用している世帯は対象外
+  where: 在宅福祉サービスセンター、各市民センターの地区福祉窓口
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/kamiomutsu.html
+  confidence: high
+  amount: 注文額4,000円までは1割負担、超える分は全額に400円を加えた額が自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報サービスについて
+  summary: 緊急通報装置を貸与し、コールセンターが緊急対応と月1回の健康確認を行う。
+  who:
+    at_home: true
+  at_application:
+  - 原則65歳以上で慢性疾患等により日常生活上の注意が必要
+  - ひとり暮らし、または原則65歳以上のみの世帯
+  - 同居者の就労等で準ずると認められる方も対象
+  - 近くの親族が緊急時に対応できる方は除く
+  - 固定型は固定電話回線、携帯型は通話できる携帯電話が必要
+  where: 在宅福祉サービスセンター、各市民センターの地区福祉窓口
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/kinkyutsuho.html
+  confidence: high
+  amount: 月額は固定型250円、携帯型1,000円。設置費と保守費は市が負担
+- category: haikai
+  name: 認知症等行方不明SOSネットワーク
+  name_on_page: 認知症等行方不明SOSネットワークについて
+  summary: 事前登録により警察等が捜索に協力し、二次元コード付き見守りシールを交付する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住民登録があり居住している
+  - 登録届に本人の顔写真の貼付が必要
+  where: 在宅福祉サービスセンター、各市民センターの地区福祉窓口
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/sos-network.html
+  confidence: high
+  amount: 登録とシール交付は無料。特養での一時保護は費用がかかる場合あり
+- category: shingu
+  name: 寝具乾燥消毒サービス
+  name_on_page: 寝具乾燥消毒サービスについて
+  summary: 業者が寝具を自宅で回収し、丸洗い・乾燥・消毒して届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 布団干し等の寝具の衛生管理が困難
+  where: 在宅福祉サービスセンター、各市民センターの地区福祉窓口
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/shingukanso.html
+  confidence: high
+  amount: 無料。年回数は世帯が非課税で8回、課税で4回
+- category: gaishutsu
+  name: 福祉タクシー利用券
+  name_on_page: 福祉タクシー利用券について
+  summary: 在宅ねたきり高齢者に、通院等で使うタクシー利用券を交付する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 在宅ねたきり高齢者台帳に登録されている（民生委員に申出）
+  - 障がい者の福祉タクシー利用券を受けている方は対象外
+  where: 高齢者支援課、各市民センターの地区福祉窓口
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/taxi.html
+  confidence: high
+  amount: 月3,600円分、年間最大43,200円分。1乗車2,400円分まで
+- category: gaishutsu
+  name: 湘南すまいるバス（無料巡回バス）
+  name_on_page: 湘南すまいるバス
+  summary: 交通不便地域を中心に、老人福祉センターから出る巡回バスに無料で乗れる。
+  who:
+    age_min: 60
+  at_application:
+  - 市内在住で、いきいきシニアセンターの利用カードを持っている
+  - 1人で乗降が難しい方は付添いが同行すれば利用可
+  where: いきいきシニアセンター（利用カードの申請）、高齢者支援課
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/smilebus.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 高齢者はり・きゅう・マッサージ利用券
+  name_on_page: 高齢者はり・きゅう・マッサージ利用券
+  summary: 指定の施術所で使える施術の利用券を、1人3枚交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内在住（2026年度に75歳になる方を含む）
+  - 健康保険が使える治療には使えない
+  where: 高齢者支援課、各市民センターの地区福祉窓口
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/harikyumassage.html
+  confidence: high
+  amount: 1枚3,000円分の利用券を3枚。交付は無料
+- category: sonota
+  name: 外国籍等高齢者の福祉給付金
+  name_on_page: 外国籍等高齢者福祉給付金支給事業について
+  summary: 制度上、公的年金を受けられなかった外国籍等の高齢者に月額給付金を支給する。
+  who: {}
+  at_application:
+  - 1926年4月1日以前生まれの外国籍の方（日本人は別の要件あり）
+  - 国民年金や厚生年金などの公的年金を受けていない
+  - 1986年3月以前から日本に居住し、市に1年以上住民登録
+  - 生活保護を受けていない
+  - 特養・養護老人ホームに入所していない
+  where: 高齢者支援課
+  url: https://www.city.fujisawa.kanagawa.jp/kourei-s/kenko/fukushi/kore/sekatsu/gaikokuseki.html
+  confidence: high
+  amount: 月額20,000円（9月と3月に振込）
+- category: koken
+  name: 成年後見制度利用支援事業（申立費用・後見人報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に成年後見の利用が難しい方に、申立費用と後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある（または市の措置を受けている）
+  - 収入・資産等が要綱の別表のいずれかに該当する
+  - 報酬助成は家庭裁判所が決めた後見人等の報酬が対象
+  where: 地域福祉推進課（地域共生社会推進室）
+  url: https://www.city.fujisawa.kanagawa.jp/koreifu/kenko/fukushi/senenkoken/senenkoken.html
+  confidence: high
+  amount: 報酬の助成上限は在宅28,000円、施設入所18,000円
+  more_urls:
+  - https://www.city.fujisawa.kanagawa.jp/documents/10308/annnaibun.pdf
+- category: mimamori
+  name: 一声ふれあい収集
+  name_on_page: 一声ふれあい収集
+  summary: ごみを集積所へ出せない世帯を、職員が声かけで安否確認しつつ週1回戸別収集する。
+  who: {}
+  at_application:
+  - 介助・介護が必要な高齢者（概ね65歳以上）のみの世帯
+  - または障害者手帳のある方のみの世帯
+  - 同居者が虚弱・年少者のみの世帯も対象
+  - 家族等の協力が得られず集積所への持出しが困難
+  where: 高齢者支援課、地区福祉窓口
+  url: https://www.city.fujisawa.kanagawa.jp/kankyo-j/kurashi/gomi/shushu/hitokoe.html
+  confidence: high
+- category: sonota
+  name: あんしん入居サービス補助金
+  name_on_page: 藤沢市あんしん入居サービス補助金
+  summary: ひとり入居の高齢者が見守りサービスと原状回復補償に加入する初期費用を補助する。
+  who: {}
+  at_application:
+  - 市内の民間賃貸住宅に入居して3か月以内に申請
+  - 見守りサービスと補償制度の契約をしている
+  where: 住まい暮らし政策課
+  url: https://www.city.fujisawa.kanagawa.jp/jutaku/annsinnnyuukyo.html
+  confidence: high
+  amount: 対象経費の合計が上限10,000円
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku

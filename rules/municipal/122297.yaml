@@ -1,0 +1,213 @@
+city: '122297'
+name: 袖ケ浦市
+site: www.city.sodegaura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システムの貸与
+  summary: ボタン一つで警備会社に繋がる緊急通報装置などを無料で貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの高齢者等
+  - 前年の合計所得170万円未満
+  - 所得170万円以上でも年金等の合計280万円未満なら可
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-1koufukuzaitakuseikatsu.html
+  confidence: high
+  amount: 利用者負担は無料
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の貸与
+  summary: 固定電話がない方に、電話加入権・工事費・基本料金を市が負担して貸与する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの高齢者等
+  - 生活保護世帯、または所得税非課税世帯に属する
+  - 固定電話を利用（設置）していない
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-1koufukuzaitakuseikatsu.html
+  confidence: high
+  amount: 通話料と電話機の購入費は自己負担
+- category: nichijo-yogu
+  name: 火災警報器の給付
+  name_on_page: 火災警報器の給付
+  summary: 自宅に火災警報器がない方に、警報器を無料で給付する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしの高齢者等
+  - 自宅に火災警報器を設置していない
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-1koufukuzaitakuseikatsu.html
+  confidence: high
+  amount: 利用者負担は無料
+- category: sonota
+  name: 家具転倒防止器具の取付代行
+  name_on_page: 家具転倒防止器具取付事業
+  summary: 自分で取り付けが難しい高齢世帯の家具に、市が転倒防止器具を取り付ける。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または65歳以上と18歳未満の世帯
+  - 自分で器具の取付作業をするのが困難
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-1koufukuzaitakuseikatsu.html
+  confidence: high
+  amount: 取付作業費は市が負担。器具代は自己負担。家具3個まで
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットの配布
+  summary: 持病やかかりつけ医を記入したシートを入れる容器を無料で配る。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者等
+  - 65歳以上のみで暮らし、救急時の対応に不安がある
+  - 同居者の就労等で日中65歳以上のみになり不安がある
+  where: 地域福祉課 生活相談班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-1koufukuzaitakuseikatsu.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 高齢者と子等の同居・近居の費用助成
+  name_on_page: 世代間支え合い家族支援事業
+  summary: 離れて暮らす高齢の親と子等が市内で同居・近居するための住宅取得や引越費用を一部助成する。
+  who: {}
+  at_application:
+  - 高齢者は60歳以上、または要介護認定を受けた人
+  - 同居、または直線1km以内に住むことになる
+  - 住民税・固定資産税の滞納がない
+  - 要件が多いため詳細は事業の頁で確認
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-1koufukuzaitakuseikatsu.html
+  confidence: high
+  amount: 新築・購入・増築は費用の1/2で上限30万円。引越は1/2で上限5万円
+  more_urls:
+  - https://www.city.sodegaura.lg.jp/soshiki/koreisha/sedaikansasaeai.html
+- category: gaishutsu
+  name: 高齢者のタクシー料金助成
+  name_on_page: 高齢者タクシー料金助成事業
+  summary: 移動手段のない高齢世帯に、タクシー利用券（1枚500円）を交付する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 世帯が65歳以上のみで、本人が75歳以上
+  - 車や免許がなく、移動手段の確保が困難な世帯
+  - 障がい者の福祉タクシー券を受けている人、施設入所者は対象外
+  where: 高齢者支援課（北庁舎1階）。郵送申請も可
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/koureisyaidousien.html
+  confidence: high
+  amount: 1枚500円。年間最大36枚（申請月により減る）
+- category: ribiyo
+  name: 理容師の派遣（訪問理容）
+  name_on_page: 理容師派遣
+  summary: 理髪に行けない在宅の要介護高齢者の家に、利用券で理容師を派遣する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきり、または歩行が困難で理髪に行けない
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-2koufukusyousaikazoku.html
+  confidence: high
+  amount: 年4回（原則3か月に1回）。理髪代は自己負担
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 高齢者紙おむつ等支給
+  summary: 在宅の要介護高齢者を介護する家族等に、紙おむつ等を自宅へ配送する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護者を介護している家族、または一人暮らしの要介護者
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-2koufukusyousaikazoku.html
+  confidence: high
+  amount: 月3,000円分まで。年6回、2か月分ずつ配送
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給
+  summary: 介護保険サービスを使わず在宅で介護している家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを使っていない
+  - 短期入所1週間以内の利用は可
+  - 要介護者と生計をともにし、常時介護している人が申請
+  where: 高齢者支援課 地域包括支援班
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-2koufukusyousaikazoku.html
+  confidence: high
+  amount: 月額8,400円。9月・1月・5月に支給
+- category: haikai
+  name: 認知症おでかけ安心シールの配布
+  name_on_page: 認知症おでかけ安心シール
+  summary: 二次元コード付きシールを無料で配り、迷った時に登録先へ自動通報する。
+  who: {}
+  at_application:
+  - 市内在住で、医師に認知症と診断された40歳以上の人など
+  - 事前に連絡先の登録申請が必要
+  where: 高齢者支援課、各地域包括支援センター
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/odekakeanshinshi-ru.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の助成
+  name_on_page: 申立て費用及び報酬費用の助成
+  summary: 費用の負担が難しい方に、後見等の申立て費用や後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 市が介護保険の保険者となる人など
+  - 世帯収入と資産が基準以下（単身は収入150万円・資産350万円以下）
+  - 審判の翌日から12か月以内に申請
+  where: 高齢者支援課（65歳以上の方）
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/seinennkoukenn.html
+  confidence: high
+  amount: 報酬は在宅で月2.8万円、施設で月1.8万円まで。鑑定料は10万円まで
+  more_urls:
+  - https://www.city.sodegaura.lg.jp/uploaded/attachment/38177.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり・きゅう・マッサージ施術費の助成
+  summary: 市登録の施術所で使える施術利用券（1枚800円）を交付する。
+  who:
+    age_min: 75
+  at_application: []
+  where: 高齢者支援課、平川・長浦交流センター
+  url: https://www.city.sodegaura.lg.jp/soshiki/koreisha/21-3koufukuitsumademogenki.html
+  confidence: high
+  amount: 1枚800円。年間最大12枚（申請月により減る）
+not_found:
+- haishoku
+- hochoki
+- jutaku
+- shingu
+- mimamori

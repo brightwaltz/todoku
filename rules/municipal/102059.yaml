@@ -1,0 +1,211 @@
+city: '102059'
+name: 太田市
+site: www.city.ota.gunma.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用紙おむつの給付
+  name_on_page: 介護用紙おむつの給付
+  summary: 要介護4・5で非課税世帯の在宅高齢者に、2か月ごとにおむつ等を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市民税非課税世帯が対象
+  where: 太田市社会福祉協議会（0276-46-6208）
+  url: https://www.city.ota.gunma.jp/page/3795.html
+  confidence: high
+  amount: 2か月ごとに一定量のおむつ等
+- category: ribiyo
+  name: 在宅高齢者の出張理容
+  name_on_page: 出張理容サービス
+  summary: 在宅でねたきりの要介護4・5の人の自宅へ理容師が出張して理髪する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきり状態で理髪に困っている人
+  where: 長寿あんしん課
+  url: https://www.city.ota.gunma.jp/page/3795.html
+  confidence: high
+  amount: 年4回まで。住民税本人課税者は1,000円負担
+- category: shingu
+  name: 寝具の丸洗い・乾燥
+  name_on_page: 寝具丸洗い乾燥事業
+  summary: 自力で寝具を干せない人の寝具を預かり、乾燥消毒や丸洗いをして当日返す。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - ひとり暮らしで自力で寝具を干せない人
+  - 一覧頁はねたきりの高齢者等も対象と記載
+  where: 長寿あんしん課
+  url: https://www.city.ota.gunma.jp/page/1035141.html
+  confidence: high
+  amount: 無料。乾燥は年10回まで、丸洗いは年2回（9月・3月）
+  more_urls:
+  - https://www.city.ota.gunma.jp/page/3795.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 緊急性の高い疾病があるひとり暮らしの高齢者に通報装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 緊急性が高い疾病がある人（調査に基づき決定）
+  where: 長寿あんしん課
+  url: https://www.city.ota.gunma.jp/page/3795.html
+  confidence: low
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の貸与
+  summary: 経済的に電話を引けないひとり暮らし高齢者等の電話設置費用を市が負担する。
+  who:
+    age_min: 65
+  at_application:
+  - 経済的理由で電話加入できないひとり暮らし高齢者等
+  where: 長寿あんしん課
+  url: https://www.city.ota.gunma.jp/page/3795.html
+  confidence: low
+- category: iro
+  name: 介護慰労金
+  name_on_page: 介護慰労金の支給
+  summary: 要介護4・5の高齢者を在宅で1年以上介護している家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護者は市に住民登録がある人
+  - 在宅で1年以上継続して介護している
+  - 施設・入院等で在宅を離れた期間が1年で100日以内
+  - 世帯に市税等・介護保険料の滞納がない
+  where: 長寿あんしん課
+  url: https://www.city.ota.gunma.jp/page/3795.html
+  confidence: high
+- category: sonota
+  name: 介護用車両購入費の補助
+  name_on_page: 介護用車両購入費の一部を補助します
+  summary: 車いす使用の要介護3以上の人の介護車両購入時、改造費の一部を補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 車椅子を使用している（本人またはその家族が申請）
+  - 世帯全員が市税等を滞納していない
+  - 車両の契約前に申請が必要
+  where: 長寿あんしん課（窓口）
+  url: https://www.city.ota.gunma.jp/page/3794.html
+  confidence: high
+  amount: 新車等の改造は半額で上限5万円。改造済み中古は3万円か1万5千円
+  more_urls:
+  - https://www.city.ota.gunma.jp/page/3795.html
+- category: mimamori
+  name: ふれあい相談員によるひとり暮らし高齢者の見守り
+  name_on_page: ふれあい相談員
+  summary: 相談員が月1〜2回の安否確認をし、バスツアーなども行う。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね70歳以上
+  - ひとり暮らし高齢者調査名簿に記載がある
+  - 介護保険サービスを利用していない
+  - 自立支援を必要としている
+  where: お住まいの地区の行政センターのふれあい相談員（委託先は市社会福祉協議会）
+  url: https://www.city.ota.gunma.jp/page/1035003.html
+  confidence: high
+  more_urls:
+  - https://www.city.ota.gunma.jp/page/3798.html
+- category: sonota
+  name: 自動通話録音機の貸出
+  name_on_page: 自動通話録音機の貸し出し
+  summary: 特殊詐欺防止のため、通話を自動録音する装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 65歳以上の高齢者のみの世帯、または日中高齢者のみが常態の世帯
+  - 令和8年11月9日から先着順（在庫がなくなり次第終了）
+  - 緊急通報装置の設置世帯は併用不可
+  - インターネット回線の電話は使用不可
+  where: 長寿あんしん課（本庁舎1階15番窓口）
+  url: https://www.city.ota.gunma.jp/page/1024298.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者買い物支援（お買い物クラブ）
+  name_on_page: お買い物クラブ
+  summary: 買い物に行けない高齢者を自宅から指定スーパーへ週1回無料で送迎する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 70歳以上のみの世帯で、徒歩・自転車以外の交通手段がない
+  - 介助なしで車の乗降と買い物ができる
+  - 登録制で、定員に達すると締め切り
+  where: お住まいの地区の行政センター
+  url: https://www.city.ota.gunma.jp/page/1033270.html
+  confidence: high
+  amount: 利用料無料
+- category: sonota
+  name: 高齢者はり・きゅう・マッサージ受療券
+  name_on_page: 高齢者はり・きゅうマッサージ受療券の給付
+  summary: 市指定の施術所で使える1,000円割引券を年4枚配る。
+  who:
+    age_min: 70
+  at_application:
+  - 申請方法・窓口は一覧頁に記載なし
+  where: 長寿あんしん課
+  url: https://www.city.ota.gunma.jp/page/3798.html
+  confidence: low
+  amount: 1枚1,000円の割引券を年4枚
+- category: yutai
+  name: げんき手帳
+  name_on_page: げんき手帳の発行
+  summary: 手帳を見せると市内の老人福祉センターの入場料が免除される。
+  who:
+    age_min: 65
+  at_application:
+  - 申請方法・窓口は一覧頁に記載なし
+  where: 長寿あんしん課
+  url: https://www.city.ota.gunma.jp/page/3798.html
+  confidence: low
+  amount: 老人福祉センターの入場料免除
+not_found:
+- haishoku
+- haikai
+- koken
+- jutaku
+- nichijo-yogu

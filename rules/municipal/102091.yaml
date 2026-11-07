@@ -1,0 +1,196 @@
+city: '102091'
+name: 藤岡市
+site: www.city.fujioka.gunma.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費補助
+  name_on_page: 紙おむつ等購入費補助
+  summary: 在宅で常に失禁のある要介護の人の、紙おむつ等の購入費を半年分まとめて補助する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市税等の滞納がない
+  - 生活保護世帯は対象外
+  - 他制度で補助・給付を受けていない
+  where: 介護保険課（担当ケアマネジャーに相談も可）
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+  amount: 月の上限は住民税非課税世帯 3,000 円、課税世帯 1,500 円。半年分をまとめて申請（7 月と 1 月に受付）
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 調理や買い物が難しいひとり暮らし・高齢者世帯に、昼食か夕食を届けて安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定を受けている、または事業対象者
+  - 自宅で調理や食事の用意が難しい
+  - 市税等の滞納がない
+  where: 介護保険課（担当ケアマネジャーに相談も可）
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+  amount: 1 食あたり、お弁当代から市の負担 300 円を引いた額が自己負担。週 3 回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置設置サービス
+  summary: 病気があり緊急時に自分で助けを呼べないひとり暮らし等の人に、通報装置を無料で貸す。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 75 歳以上、または要介護・要支援の認定を受けている
+  - 疾病があり緊急時に自ら助けを呼べない
+  - 市税等の滞納がない
+  - 協力員 3 名が必要
+  where: 介護保険課（担当ケアマネジャーに相談も可）
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+  amount: 利用料は無料（NTT アナログ回線を使う）
+- category: haikai
+  name: 徘徊高齢者の GPS 装置の導入費給付
+  name_on_page: 徘徊高齢者支援給付
+  summary: 認知症で徘徊のある人の GPS 装置（どこさいる）の導入費の一部を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症による徘徊がある
+  - 市税等の滞納がない
+  where: 介護保険課（担当ケアマネジャーに相談も可）
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+  amount: 初期費用 5,500 円と充電器代 1,650 円を後日給付。月額 2,200 円などは自己負担
+- category: ribiyo
+  name: 訪問理美容の利用券
+  name_on_page: 理美容サービス
+  summary: 店に行けない要介護の人に、自宅での出張理美容に使える利用券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 歩行や移乗ができない
+  - 市税等の滞納がない
+  where: 介護保険課（担当ケアマネジャーに相談も可）
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+  amount: 1 枚 3,000 円分の利用券を最大 4 枚（申請月で枚数が変わる）
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具（電磁調理器・火災警報器・自動消火器）の給付
+  name_on_page: 日常生活用具給付サービス
+  summary: 火の始末に配慮が要るひとり暮らし等の高齢者に、電磁調理器などの購入費の一部を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - fire_risk
+  at_application:
+  - 心身機能または認知機能の低下がある
+  - 市税等の滞納がない
+  - 64 歳以下で要介護認定を受けている人は相談
+  where: 介護保険課（担当ケアマネジャーに相談も可）
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+  amount: 非課税世帯は上限まで全額、課税世帯は半額。上限は電磁調理器 2 万円〜自動消火器 3.8 万円（非課税世帯）
+- category: iro
+  name: 介護慰労金
+  name_on_page: 介護慰労金
+  summary: 在宅で要介護 3 以上の人を 1 年間介護した家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 年齢は介護される人の年齢（基準日 8 月 1 日に市内に住所）
+  - 要介護 3 は介護サービス・入院・施設入所がない
+  - 要介護 4・5 はショートステイ・入院の合計 100 日以内
+  - 毎年 11 月ごろ対象者に申請書が届く
+  where: 介護保険課
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+- category: sonota
+  name: 高齢者生活支援短期入所（家族が養護できないときの短期宿泊）
+  name_on_page: 高齢者生活支援短期入所サービス
+  summary: 養護する家族が特別な理由で困難になったとき、一時的な短期宿泊を補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定を受けていない
+  - 家族が特別な理由で養護できない
+  where: 介護保険課
+  url: https://www.city.fujioka.gunma.jp/soshiki/fukushibu/kaigokorei/9/1391.html
+  confidence: high
+  amount: 利用料は日額 710〜2,160 円（介護保険料の段階で異なる）。原則 7 日以内
+- category: gaishutsu
+  name: シニアカー購入・レンタル費の補助
+  name_on_page: 藤岡市シニアカー購入費等補助金
+  summary: 歩行に不安のある高齢者が、シニアカーを買う・借りるときの費用の一部を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住民登録がある
+  - 市税の滞納がない
+  - 購入・契約の前に申請が必要
+  - 1 人 1 回まで。他制度で補助を受けていない
+  where: 地域安全課（防災センター 1 階）、電子申請も可
+  url: https://www.city.fujioka.gunma.jp/soshiki/somubu/chiikianzen/3/11338.html
+  confidence: high
+  amount: 購入は費用の 3 分の 1（最大 10 万円）。レンタル・リースは 4 分の 1（累計 10 万円まで）
+- category: gaishutsu
+  name: 運転免許返納者へのバス券・タクシー券の交付
+  name_on_page: 藤岡市高齢者運転免許証自主返納支援事業
+  summary: 運転免許を自主返納した高齢者に、手数料の補助と市内バス券かタクシー券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 運転免許証を自主返納した（有効期限切れは対象外）
+  - 市内に住民登録がある
+  - 利用券の交付は 1 回のみ
+  where: 地域安全課交通防犯係
+  url: https://www.city.fujioka.gunma.jp/soshiki/somubu/chiikianzen/1/1/992.html
+  confidence: high
+  amount: バス券 1 万円分かタクシー券 5,000 円分のどちらか。手数料補助は 900〜1,250 円
+not_found:
+- hochoki
+- koken
+- shingu
+- jutaku
+- mimamori
+- chusha

@@ -1,0 +1,143 @@
+city: '152170'
+name: 妙高市
+site: www.city.myoko.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきり高齢者等の紙おむつ支給
+  name_on_page: 寝たきり高齢者等紙おむつ支給事業
+  summary: 要介護1以上で紙おむつが必要な在宅の人に、紙おむつを宅配で給付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護1・2の人は市民税非課税世帯に限る
+  - 入院中でも対象に含まれる
+  where: 福祉介護課（高齢福祉係）
+  url: https://www.city.myoko.niigata.jp/docs/965.html
+  confidence: high
+  amount: 利用者負担は要介護度と世帯の課税状況で変わる（頁の区分表に記載）
+- category: sonota
+  name: 在宅介護者ほっとサービス（介護者への費用助成）
+  name_on_page: 在宅介護者ほっとサービス事業
+  summary: 要介護4・5の人を在宅で介護する家族に、対象サービスの利用費の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5の人を在宅で介護している市内在住者
+  - または要介護1〜3で認知症状が重い人を在宅で介護している市内在住者
+  - 年2回の手続きで、該当者には市から案内が届く
+  where: 福祉介護課
+  url: https://www.city.myoko.niigata.jp/docs/965.html
+  confidence: high
+  amount: 月額5,000円まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らし高齢者世帯などに、火災警報機能付きの緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者世帯などが対象
+  - 市民税非課税世帯・課税世帯のどちらも対象
+  where: 福祉介護課、各支所窓口、社会福祉協議会
+  url: https://www.city.myoko.niigata.jp/docs/967.html
+  confidence: low
+  amount: 課税世帯は月々の利用料が自己負担
+- category: sonota
+  name: 高齢者世帯の冬期除雪支援
+  name_on_page: 高齢者世帯冬期在宅支援事業
+  summary: 援助が必要な高齢者世帯などの屋根雪除雪費を助成し、雪踏み支援も行う。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 高齢者世帯・障がい者世帯・母子世帯などが対象
+  - 前年の年間収入が単身150万円以下（1人増ごとに50万円加算）
+  - 自力で除雪できず、援助できる子や親族がいない世帯
+  - 除雪する住宅が生活の本拠であること
+  where: 民生委員・児童委員、または福祉介護課
+  url: https://www.city.myoko.niigata.jp/docs/967.html
+  confidence: high
+  amount: 除雪にかかる必要最低限の費用（収入が一定額を超えると1割自己負担）
+- category: sonota
+  name: 介護者の急病時などの在宅要援護者緊急対策
+  name_on_page: 在宅要援護者緊急対策事業
+  summary: 介護者が急病などで介護できないとき、訪問介護・通所介護・短期入所を一定期間提供する。
+  who: {}
+  at_application:
+  - 制度上、介護保険を利用できない人が対象
+  - 介護者が急病などで介護できない状況であること
+  where: 福祉介護課、各支所窓口、社会福祉協議会
+  url: https://www.city.myoko.niigata.jp/docs/967.html
+  confidence: low
+- category: sonota
+  name: 家族不在時の短期宿泊（ショートステイ）
+  name_on_page: やすらぎショートステイ
+  summary: 家族が社会的な理由で一時的に不在になる高齢者に、短期宿泊サービスを提供する。
+  who: {}
+  at_application:
+  - 家族が社会的理由で一時的に高齢者のみの生活になる場合など
+  where: 福祉介護課、各支所窓口、社会福祉協議会
+  url: https://www.city.myoko.niigata.jp/docs/967.html
+  confidence: low
+- category: sonota
+  name: 生活支援ボランティア（有償）
+  name_on_page: 生活支援ボランティア
+  summary: 公的制度で対応できない掃除・買い物・通院付き添いなどに有償ボランティアを派遣する。
+  who: {}
+  at_application:
+  - 高齢者や障がい者が対象
+  where: 妙高市社会福祉協議会
+  url: https://www.city.myoko.niigata.jp/docs/967.html
+  confidence: high
+  amount: 1時間500円（30分250円）
+- category: gaishutsu
+  name: 市内バス利用料金の助成（バス利用券）
+  name_on_page: 市内バス利用料金の助成
+  summary: バス利用券を交付し、市内で乗降する区間の運賃を100円にする。
+  who: {}
+  at_application:
+  - 75歳以上、または要介護認定を受けた75歳未満
+  - または身体・療育・精神の障害者手帳の所持者
+  where: 環境生活課生活安全係、各支所窓口
+  url: https://www.city.myoko.niigata.jp/docs/976.html
+  confidence: high
+  amount: 市内乗降区間は運賃100円（上越市内の区間は実費）
+- category: gaishutsu
+  name: 運転免許返納者へのバス・タクシー利用券
+  name_on_page: 運転免許返納支援事業
+  summary: 運転免許を全部返納した人に、バス・タクシー利用券2万円分を1回限り交付する。
+  who: {}
+  at_application:
+  - 市内在住で運転免許を全部返納した人
+  - 返納時に70歳以上、または病気等で運転に不安がある人
+  - 公安委員会発行の「運転免許の取消通知書」が必要
+  where: 環境生活課、各支所
+  url: https://www.city.myoko.niigata.jp/docs/2632.html
+  confidence: high
+  amount: 2万円分（200円券100枚、1人1回限り）
+  more_urls:
+  - https://www.city.myoko.niigata.jp/fs/2/4/4/5/4/0/_/menkyohennouchirasi.pdf
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

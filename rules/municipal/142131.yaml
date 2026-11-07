@@ -1,0 +1,165 @@
+city: '142131'
+name: 大和市
+site: www.city.yamato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ支給
+  name_on_page: 紙おむつ支給
+  summary: 在宅の要介護者を介護する家族（独居なら本人）に、紙おむつ類を年5回届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住民登録があり実際に住んでいる
+  - 要介護3は寝たきり・認知症の調査結果で支給の可否を判定
+  - 本人と同一世帯の家族がともに市民税非課税
+  where: 地域包括支援センター、在宅介護支援センター、人生100年推進課
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/seniorlife/5256.html
+  confidence: high
+  amount: 尿取りパッド・テープ止め・パンツタイプから1種類を選び、年5回（7・9・11・1・3月）配送
+- category: kinkyu-tsuho
+  name: 高齢者見守り（緊急通報）システム
+  name_on_page: 高齢者見守り（緊急通報）システム
+  summary: 緊急通報ボタンや人感センサーの機器を貸し出し、24時間のコールセンターにつなぐ。
+  who: {}
+  at_application:
+  - 一人暮らしの65〜79歳で、心疾患等により緊急時の連絡が難しい方
+  - または一人暮らしの80歳以上の方（日中独居は対象外）
+  - または二人世帯で、一方が上記に当たり他方が認知症等で対応できない
+  - 固定電話か携帯電話があり、電話でやりとりできる
+  where: お住まいの地域を担当する地域包括支援センター
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/seniorlife/26461.html
+  confidence: high
+  amount: 自己負担は介護保険料の所得段階による。固定型は月0〜1,000円、モバイル型は月1,485〜2,485円
+- category: haikai
+  name: 認知症高齢者等のSOSネットワーク（登録・身元確認シール）
+  name_on_page: 認知症高齢者等のためのSOSネットワーク
+  summary: 道に迷うおそれのある高齢者を登録し、身元確認シールの配布や賠償責任保険の加入を行う。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知機能の低下で道に迷い行方不明になる心配がある高齢者
+  where: 地域包括支援センター、在宅介護支援センター
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/ninchisho/yamatosos/18118.html
+  confidence: high
+  amount: シール等の配布。賠償責任保険は補償最大3億円、傷害保険は死亡・後遺障害で最大50万円
+- category: haikai
+  name: 位置確認支援事業（GPSシューズ）
+  name_on_page: 位置確認支援事業（GPSシューズ）
+  summary: GPS端末を貸与し、専用シューズ1足目を無料で渡す。位置情報を家族が検索できる。
+  who: {}
+  at_application:
+  - SOSネットワークに登録している市民
+  where: お住まいの地区を担当する地域包括支援センター
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/ninchisho/yamatosos/18118.html
+  confidence: high
+  amount: 介護保険料の所得段階で月0円・500円・1,000円
+- category: iro
+  name: 家族介護慰労金の支給
+  name_on_page: 家族介護慰労金の支給
+  summary: 要介護4・5の方を在宅で介護し、介護サービスを使わなかった家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 基準日からの過去1年、入院90日以内で介護サービスを全く使っていない
+  - 介護される方と介護する家族がともに市内に1年以上在住
+  - 世帯が市町村民税非課税
+  where: 人生100年推進課（頁に申込先の明記なし。頁全体の問い合わせ先）
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/seniorlife/5256.html
+  confidence: high
+  amount: 年額100,000円
+- category: koken
+  name: 成年後見制度の申立にかかる費用助成
+  name_on_page: 成年後見制度の申立にかかる費用助成
+  summary: 成年後見の申立て費用と、親族以外の後見人への報酬を一部または全額助成する。
+  who: {}
+  at_application:
+  - 詳しい条件は市の要綱で定められている（要綱 PDF は未確認）
+  where: 人生100年推進課（頁全体の問い合わせ先）
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/seniorlife/5256.html
+  confidence: low
+- category: ribiyo
+  name: 理髪サービス（出張散髪）
+  name_on_page: 理髪サービス
+  summary: 障がい等で理美容店に行けない方の自宅へ、登録店が出張して軽い散髪をする。
+  who: {}
+  at_application:
+  - 市内在住で、障がい等により理美容店へ行くのが困難
+  - 年齢の条件は頁に書かれていない（高齢者向け頁に掲載）
+  where: 大和市社会福祉協議会 生活支援課
+  url: https://www.city.yamato.lg.jp/gyosei/iryo_kenkofukushi/kenko/kenkozukuri_kaigoyobo/10017.html
+  confidence: low
+  amount: 利用料2,000円（カットのみ）
+- category: mimamori
+  name: ふれあい訪問
+  name_on_page: ふれあい訪問
+  summary: ひとり暮らし等の高齢の方を、地区社協のボランティアが定期的に訪問する。
+  who: {}
+  at_application:
+  - おひとり暮らし等の高齢の方（年齢の目安は頁になし）
+  where: 大和市社会福祉協議会ボランティアセンター
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/seniorlife/5256.html
+  confidence: high
+  more_urls:
+  - https://www.city.yamato.lg.jp/gyosei/iryo_kenkofukushi/kenko/kenkozukuri_kaigoyobo/10017.html
+- category: sonota
+  name: 高齢者の日常の困りごと支援（個別支援）
+  name_on_page: 個別支援
+  summary: 電球交換・庭木の剪定・草むしり・ゴミ出しなど、高齢の方の困りごとを支援する。
+  who: {}
+  at_application:
+  - 高齢の方（対象の詳しい条件は頁になし）
+  where: 大和市社会福祉協議会ボランティアセンター
+  url: https://www.city.yamato.lg.jp/gyosei/iryo_kenkofukushi/kenko/kenkozukuri_kaigoyobo/10017.html
+  confidence: low
+- category: yutai
+  name: 福寿カード（高齢者入浴サービス等の利用証）
+  name_on_page: 福寿カード
+  summary: 市内公衆浴場の月3日の無料利用や柳橋ふれあいプラザ浴場の無料日を使うためのカード。
+  who: {}
+  at_application:
+  - 65歳以上（シニアクラブ加入者は60歳以上）
+  - 代理申込も可（本人と代理人の本人確認書類が必要）
+  where: 老人福祉センター、人生100年推進課、各分室・連絡所
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/seniorlife/5256.html
+  confidence: high
+  amount: 公衆浴場は毎月6・16・26日、柳橋ふれあいプラザ浴場は毎月1・8・18・28日に無料
+- category: sonota
+  name: 在日外国人高齢者・障害者などの福祉給付金
+  name_on_page: 在日外国人高齢者・障害者などの福祉給付金
+  summary: 昭和61年3月末以前から在住の在日外国人の高齢者・障害者等に福祉給付金を給付する。
+  who: {}
+  at_application:
+  - 昭和61年3月末以前から日本に在住し、公的年金・生活保護を受けていない
+  - 市内に1年以上外国人登録か住民登録がある
+  - 生年月日や障害の程度などの要件あり（頁に5区分）
+  - 所得の要件あり（詳細は人生100年推進課へ）
+  where: 人生100年推進課
+  url: https://www.city.yamato.lg.jp/gyosei/soshik/60/seniorlife/5256.html
+  confidence: high
+  amount: 月額20,000円〜38,000円（6か月分を9月と3月に給付）
+not_found:
+- haishoku
+- hochoki
+- shingu
+- gaishutsu
+- jutaku

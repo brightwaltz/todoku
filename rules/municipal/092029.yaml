@@ -1,0 +1,212 @@
+city: 092029
+name: 足利市
+site: www.city.ashikaga.tochigi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者の紙おむつ券給付
+  name_on_page: 高齢者紙おむつ券給付事業
+  summary: 要介護2以上の在宅高齢者に、紙おむつ購入に使える券を毎月給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、市税等の滞納がない
+  - 入院中・施設入所中の人は対象外
+  where: 元気高齢課窓口、各公民館（織姫・助戸を除く）。郵送・ケアマネ代行提出も可
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p004218.html
+  confidence: high
+  amount: 要介護2は月1,000円分、要介護3〜5は月2,000円分の券
+- category: kinkyu-tsuho
+  name: 高齢者安心相談システム（緊急通報機器の設置）
+  name_on_page: 高齢者安心相談システム事業
+  summary: ひとり暮らし等の高齢者宅に、健康相談と緊急通報ができる機器を設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 75歳以上、または65歳以上で要支援・要介護認定か総合事業対象
+  - 愛のひと声事業とはどちらか一方のみ利用できる
+  - 緊急時に駆けつける協力員を1名登録する
+  where: 担当町内の民生委員を通して市役所（元気高齢課）へ申込み
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p003870.html
+  confidence: high
+  amount: 固定電話回線は無料（通話料は自己負担）、LTE回線は月440円
+- category: mimamori
+  name: 愛のひと声（乳酸菌飲料の配達による安否確認）
+  name_on_page: 愛のひと声事業
+  summary: ひとり暮らしの高齢者に乳酸菌飲料を声かけして届け、安否を確認する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 75歳以上、または65歳以上で要支援・要介護認定か総合事業対象
+  - 安否確認が必要な人。ほかの方法で確認できる人は対象外
+  - 就労・サークル活動・デイ利用の人、近くに親族がいる人は対象外
+  - 安心相談システムとはどちらか一方のみ利用できる
+  where: 各町内の民生委員・児童委員を通して市役所へ申込み
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p001990.html
+  confidence: high
+  amount: 無料（土日祝・年末年始を除く配達）
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 電磁調理器
+  summary: 防火に配慮が必要な高齢者宅に、卓上IH調理器を一部負担で設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 75歳以上、または65歳以上で要支援・要介護認定か総合事業対象
+  - 市民税非課税世帯、または生活保護世帯
+  - 同一敷地内に家族がいる人は対象外
+  - 心身機能の低下で防火等への配慮が必要
+  where: 元気高齢課
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p001998.html
+  confidence: high
+  amount: 給付費用の1割を自己負担（生活保護世帯は無料）
+- category: nichijo-yogu
+  name: 火災警報器の給付
+  name_on_page: 火災警報器
+  summary: ひとり暮らしの高齢者宅に、火災警報器を一部負担で設置する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 75歳以上、または65歳以上で要支援・要介護認定か総合事業対象
+  - 市民税非課税世帯、または生活保護世帯
+  where: 元気高齢課
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p001998.html
+  confidence: high
+  amount: 給付費用の1割を自己負担（生活保護世帯は無料）
+- category: hochoki
+  name: ポケット型補聴器の一部負担購入
+  name_on_page: 補聴器（ポケット型）
+  summary: 身体障害者手帳の対象でない難聴の高齢者が、補聴器を1割負担で買える。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 75歳以上、または65歳以上で要支援・要介護認定か総合事業対象
+  - 市民税非課税世帯、または生活保護世帯
+  - 両耳の聴力損失が55デシベル以上で、専門医が必要と認めた
+  - 聴覚障害が身体障害者福祉法の程度に該当しない
+  where: 元気高齢課16番窓口
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p001998.html
+  confidence: high
+  amount: 給付費用の1割を自己負担（生活保護世帯は無料）
+- category: haikai
+  name: 認知症高齢者等の位置検索機器の初期費用助成
+  name_on_page: 認知症高齢者等の位置検索機器等の初期費用を助成します！
+  summary: 見守りが必要な認知症の人を介護する家族に、位置検索機器の初期費用を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 本人は市内に住民票がある在宅の人
+  - 65歳以上で認知症またはその疑いがあり見守りが必要
+  - 40〜64歳は若年性認知症またはその疑いで見守りが必要
+  - 申請は介護する家族等（親族・同居人）が行う
+  where: 元気高齢課17番窓口
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000278/p004145.html
+  confidence: high
+  amount: 機器の初期費用（レンタルは初回分）を上限5,000円まで助成
+- category: sonota
+  name: 高齢者の家事・身体介助の生活支援（シルバー人材センター利用）
+  name_on_page: 高齢者暮らしのお手伝い事業
+  summary: ひとり暮らし等の高齢者が、掃除・付添い・庭仕事などをシルバー人材センターに頼める。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に居住し、日常生活上の援助が必要
+  - 介護認定者は介護保険にない家事・身体介助等のみ利用可
+  where: 市（元気高齢課）へ申請。2親等以内の親族・地域包括支援センター等の代行も可
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p001995.html
+  confidence: high
+  amount: 利用料の1割負担、月額1世帯10,000円まで（材料費は自己負担）
+- category: sonota
+  name: 老人性白内障の特殊眼鏡等の費用助成
+  name_on_page: 老人性白内障特殊眼鏡等費用助成事業
+  summary: 白内障手術後にレンズを入れられない高齢者の特殊眼鏡・コンタクト代を助成する。
+  who: {}
+  at_application:
+  - 75歳以上、または65歳以上で要支援・要介護認定か総合事業対象
+  - 市民税非課税世帯、または生活保護世帯
+  - 水晶体摘出後にレンズを挿入できず、専門医が特殊眼鏡等を必要と認めた
+  - 身体障害者福祉法による特殊眼鏡等の給付を受けられない
+  where: 元気高齢課17番窓口
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p001997.html
+  confidence: high
+  amount: 特殊眼鏡は1対30,000円、コンタクトは1眼25,000円（どちらか一方）
+- category: sonota
+  name: あん摩・はり・きゅう等の施術費助成券
+  name_on_page: あん摩マッサージ指圧、はり、きゅうにかかる施術費の助成が受けられます
+  summary: 保険適用外のあん摩・はり・きゅう等の施術に使える助成券を交付する。
+  who: {}
+  at_application:
+  - 市内に住民票がある人
+  - 75歳以上、または身体障害者手帳1・2級
+  - または65〜74歳で後期高齢者医療被保険者
+  - または65〜74歳で要支援1以上か総合事業対象
+  where: 元気高齢課16番窓口、各公民館（織姫・助戸を除く）
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000275/p001999.html
+  confidence: high
+  amount: 1枚800円の助成券を年度内に4枚
+- category: yutai
+  name: あしかが・いきいきパスポート（高齢者の割引・優待）
+  name_on_page: あしかが・いきいきパスポート
+  summary: 65歳以上に、市内施設の入場無料や路線バス・加盟店の割引が受けられるパスポートを交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に居住している
+  - 本人確認書類が必要
+  where: 元気高齢課16番窓口、各公民館（織姫・助戸を除く）、各幸楽荘、総合福祉センター
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000275/p001992.html
+  confidence: high
+  amount: 足利学校等は入場無料、あしバスは1乗車100円割引、加盟店は5%割引など
+- category: sonota
+  name: 高齢者の短期入所（ショートステイ）
+  name_on_page: 高齢者短期入所事業
+  summary: 介護認定を受けていない在宅高齢者が、契約施設で短期入所を安く利用できる。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 介護保険の認定を受けていない人
+  - 心身機能の低下で日常生活に配慮が必要
+  - 事前申請が必要
+  where: 市へ申請（元気高齢課）。2親等以内の親族・地域包括支援センター等の代行も可
+  url: https://www.city.ashikaga.tochigi.jp/health/000053/000274/p006456.html
+  confidence: high
+  amount: 1日2,000円（生活保護世帯は1,000円）、6か月で7日以内
+not_found:
+- haishoku
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu

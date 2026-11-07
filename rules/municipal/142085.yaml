@@ -1,0 +1,184 @@
+city: '142085'
+name: 逗子市
+site: www.city.zushi.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象にならない難聴の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 補聴器相談医の意見書等が取れる人
+  - 購入前に事前確認書の提出が必要
+  where: 高齢介護課（市役所 1 階 9 番窓口、郵送可）
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004160.html
+  confidence: high
+  amount: 上限 30,000 円（片耳でも両耳でも 1 回限り）
+- category: haishoku
+  name: 福祉配食サービス
+  name_on_page: 福祉配食サービス
+  summary: 買物や調理が難しいひとり暮らしの高齢者等に、昼食を届けて安否も確認する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - ひとり暮らしの高齢者等が対象
+  - 身体状況等で買物・調理による食事の確保が困難
+  - ケアマネ等のアセスメントを経て利用決定
+  where: 高齢介護課高齢福祉係。利用中の介護サービスがある人は担当ケアマネ、ない人は地域包括支援センターへ相談
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004160.html
+  confidence: high
+  amount: 利用者負担は 1 食 432 円
+- category: kinkyu-tsuho
+  name: 福祉緊急通報システム
+  name_on_page: 福祉緊急通報システム
+  summary: 急変のおそれがある高齢者に、通報用ペンダント・火災感知器・生活行動探知機を貸与する。
+  who:
+    age_min: 65
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - ひとり暮らし高齢者等が対象
+  - 心臓疾患や脳血管疾患等で、救急車を呼べないおそれがある
+  - 固定電話の契約が必要
+  - 必要に応じて診断書（自費）を提出
+  where: 高齢介護課高齢福祉係
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004160.html
+  confidence: high
+  amount: 月額 3,300 円に消費税等を加えた額（世帯全員が市民税非課税なら無料）。別途通信費は自己負担
+- category: mimamori
+  name: ひとり暮らし高齢者等訪問
+  name_on_page: ひとり暮らし高齢者等訪問
+  summary: 70 歳以上のひとり暮らしの人を、市職員・社協・包括職員が定期的に訪問して見守る。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application:
+  - 申込の要否は頁に記載なし
+  - 同意した人は緊急時用の台帳に登録される
+  where: 高齢介護課高齢福祉係、地域包括支援センター
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004160.html
+  confidence: low
+- category: gaishutsu
+  name: ふれあいパス購入費助成
+  name_on_page: ふれあいパス購入費助成事業
+  summary: 京急バスのふれあいパスを買った高齢者に、購入費の一部を助成する。
+  who: {}
+  at_application:
+  - 市区町村民税が非課税の人、または運転免許の自主返納者
+  - 自主返納者は返納時 65 歳以上（課税でも可）で 1 回限り
+  - ICふれあいパスの購入が前提
+  where: 窓口へ申請書兼請求書を提出（高齢介護課高齢福祉係）
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004160.html
+  confidence: high
+  amount: 非課税の人は 4,000 円、免許返納者は 7,000 円（年 2 回の事業）
+- category: sonota
+  name: 高齢者入浴手帳（入浴助成券）
+  name_on_page: 高齢者入浴手帳【入浴助成券】
+  summary: 指定の公衆浴場で使える入浴助成券つきの手帳を、年 1 回交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市に住民登録がある
+  - 手帳に本人の写真が必要で、本人以外は使えない
+  where: 高齢介護課高齢福祉係（市役所 1 階 9 番窓口）
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004160.html
+  confidence: low
+  amount: 月 6 枚の助成券。1 回の利用につき自己負担 200 円
+- category: kaigo-yohin
+  name: 在宅高齢者への紙おむつ等の支給
+  name_on_page: 紙おむつ等の支給
+  summary: 要介護3〜5で非課税世帯の高齢者を在宅で介護する家族に、紙おむつ等を現物支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 対象者は在宅か有料老人ホーム・グループホームで生活
+  - 申請者（生計同一の家族等）の世帯全員も非課税
+  - 介護保険料を滞納していない
+  - 特養・老健に入所すると廃止、入院中は休止
+  where: 高齢介護課高齢福祉係
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004170.html
+  confidence: high
+  amount: 現物支給（月額の支給限度額あり。限度額の金額は頁に記載なし）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の人を在宅で介護してきた家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去 1 年間、介護保険給付を受けていない
+  - 年 1 週間程度の短期入所は利用してもよい
+  - 年 1 週間程度の入院は在宅扱い
+  where: 高齢介護課介護保険係
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1007656.html
+  confidence: high
+  amount: 要介護者 1 人につき年 100,000 円
+- category: haikai
+  name: 行方不明高齢者等 SOS ネットワーク登録
+  name_on_page: 行方不明高齢者等SOSネットワーク
+  summary: 名前・特徴・写真を事前登録し、行方不明時に関係機関へ早く情報発信してもらう。
+  who: {}
+  at_application:
+  - 認知症等で行方不明になるおそれのある高齢者等
+  - 写真を添えた登録申込書を提出
+  - 未登録でも行方不明時は相談すれば利用できる
+  where: 高齢介護課
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004171/1004173.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 見守りシール交付
+  name_on_page: 見守りシール交付事業
+  summary: QR コード付きシールを交付し、発見者と家族が個人情報なしで連絡を取れるようにする。
+  who: {}
+  at_application:
+  - SOS ネットワークに登録した高齢者等が対象
+  - 未登録なら登録も同時に申請する
+  where: 高齢介護課
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004171/1004173.html
+  confidence: high
+  amount: 利用料 3,590 円（耐洗ラベル 30 枚、蓄光シール 10 枚）
+- category: koken
+  name: 成年後見制度利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、成年後見の申立費用や後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 費用負担が困難な人（詳しい条件は窓口で確認）
+  where: 高齢介護課高齢福祉係
+  url: https://www.city.zushi.kanagawa.jp/kenkofukushi/shogaisha/1004193.html
+  confidence: low
+not_found:
+- ribiyo
+- shingu
+- jutaku
+- nichijo-yogu

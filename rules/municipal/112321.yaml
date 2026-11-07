@@ -1,0 +1,171 @@
+city: '112321'
+name: 久喜市
+site: www.city.kuki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（固定型・携帯型）
+  name_on_page: 緊急時通報システム
+  summary: 非常ボタンで受信センターにつながり、救急要請や24時間の健康相談ができる装置を設置する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または身障1〜3級でひとり暮らし
+  - 65歳以上か身障1〜3級の人だけの世帯で、緊急時に対処困難
+  - 世帯員の就労等で同じ状態になる場合も相談可
+  - 携帯型は自宅に固定型の回線が無い人のみ
+  where: 高齢者福祉課（電子申請も可）
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002197/1003878.html
+  confidence: high
+  amount: 年額の自己負担：固定型は 0〜3,600 円、携帯型は 0〜9,936 円（所得区分で異なる）。通話料や携帯型の撤去費は別
+- category: haishoku
+  name: 配食サービス（安否確認つき昼食）
+  name_on_page: 配食サービス
+  summary: 調理や買い物が難しい人に、栄養を考えた昼食を自宅へ届けて安否も確認する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみの世帯
+  - 身障1〜3級・療育手帳・精神手帳の人のみの世帯、または高齢者と手帳の人のみの世帯
+  - 身体的・精神的理由で日常的に調理や買い物が困難
+  - 家族の就労等で同じ状態になる場合も対象
+  where: 高齢者福祉課（電子申請も可）
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002197/1003879.html
+  confidence: high
+  amount: 週6回まで（月〜土）。食事の種類と自己負担は配食業者ごとに異なる
+- category: haikai
+  name: 見守りオレンジシールの交付
+  name_on_page: 徘徊高齢者・障がい者見守りオレンジシール交付事業
+  summary: 靴などに貼る登録番号つきシールを配り、保護されたとき警察と市が家族に連絡する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住
+  - 65歳以上で医師が認知症と診断
+  - 40歳以上で認知症により要介護・要支援認定
+  - 18歳以上で療育手帳、または高次脳機能障がいの診断など
+  - 家族等が申請する
+  where: 高齢者福祉課、各行政センターの福祉係
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002198/1003884.html
+  confidence: high
+  amount: シール1シート（20枚分）を配布。費用の記載なし
+- category: haikai
+  name: 徘徊探索システム（位置検索端末の貸与）
+  name_on_page: 徘徊高齢者・障がい者探索システム
+  summary: 市が貸す携帯端末で行方不明時におおよその居場所を知らせ、緊急対処員が駆けつけて保護する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のおそれのある人を在宅で介護している家族が対象
+  - 65歳以上で認知症の症状がある
+  - 40歳以上の若年性認知症で要支援・要介護認定
+  - 18歳以上で療育手帳
+  where: 高齢者福祉課
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002198/1003885.html
+  confidence: high
+  amount: 加入料等 1,144 円（税込）、基本使用料 月 750 円（税込）
+- category: kaigo-yohin
+  name: 家族介護用品の支給（紙おむつ等）
+  name_on_page: 家族介護用品支給
+  summary: 在宅で家族の介護を受ける非課税世帯の人に、紙おむつなどの介護用品を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護3の人は排泄の介護が必要な人に限る
+  - 在宅で家族の介護を受けている
+  - 転入1年以内は世帯全員の非課税証明書を求められることがある
+  where: 高齢者福祉課
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002199/1003888.html
+  confidence: high
+  amount: 月 6,300 円まで（超えた分は自己負担）。品目は紙おむつ、尿取りパッド、手袋、清拭剤、ドライシャンプー、シーツ
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 訪問理容サービス
+  summary: 外出が難しい人の自宅に理容師が来て調髪する。年4回分の利用券が出る。
+  who:
+    at_home: true
+  at_application:
+  - 日常的に外出が困難
+  - おおむね65歳以上で寝たきりかそれに準ずる状態
+  - または身体障害者手帳1・2級
+  where: 高齢者福祉課（電子申請も可）
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002199/1003886.html
+  confidence: high
+  amount: 利用券は年4枚まで。1回 2,000 円の自己負担
+- category: shingu
+  name: 寝具の乾燥消毒・水洗い
+  name_on_page: 寝具乾燥消毒等サービス
+  summary: 寝たきり等の人の寝具を乾燥消毒したり水洗いしたりする。
+  who: {}
+  at_application:
+  - 65歳以上で疾病等により寝たきりかそれに準ずる状態
+  - または身障1・2級の手帳がある18歳以上で、寝たきりかそれに準ずる状態
+  where: 高齢者福祉課（電子申請も可）
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002199/1003889.html
+  confidence: high
+  amount: 乾燥消毒は月1回で 550 円、水洗いは年2回（9月・3月）で 1,100 円
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の購入費助成
+  name_on_page: 高齢者日常生活用具購入費助成
+  summary: 防火の配慮が必要なひとり暮らしの人に、火災警報器等の購入費を助成する。購入前に申請が必要。
+  who:
+    age_min: 65
+    household:
+    - alone
+    flags:
+    - fire_risk
+  at_application:
+  - 生活保護を受けている、または市町村民税非課税世帯
+  - 同じ建物に他の人が同居していない
+  - 購入前の申請が必要。登録事業者で購入する
+  where: 高齢者福祉課
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002199/1003890.html
+  confidence: high
+  amount: 生活保護世帯は全額、非課税世帯は9割。限度額は火災警報器 6,000 円、自動消火器 30,900 円、電磁調理器 41,000 円
+- category: gaishutsu
+  name: くきふれあいタクシー（補助タク）
+  name_on_page: くきふれあいタクシー（補助タク）をご利用ください
+  summary: 登録した人が、運賃の一部を市が補助するタクシーを月〜土の日中に使える。
+  who: {}
+  at_application:
+  - 市に住民登録がある
+  - 75歳以上、または要介護・要支援認定を受けている
+  - または障害者手帳、難病の受給者証がある人、妊産婦
+  - 事前の利用登録が必要
+  where: 交通住宅課交通係、各行政センター地域振興係（電子申請・郵送も可）
+  url: https://www.city.kuki.lg.jp/kurashi/kotsu/hureaitaxi/1003444.html
+  confidence: high
+  amount: 利用者負担は運賃に応じ 600 円〜（運賃 1,000円・1,100円で 600 円）。運賃 3,500 円以上は運賃から 1,500 円を引いた額
+- category: sonota
+  name: あんしんサポートねっと利用料の助成
+  name_on_page: 県社協あんしんサポートねっと利用料助成
+  summary: 社協の金銭管理等の支援を使うとき、利用料の一部を市が助成する。
+  who: {}
+  at_application:
+  - 65歳以上、または療育手帳・精神障害者保健福祉手帳がある
+  - ひとりで生活するには不安がある
+  where: 高齢者福祉課
+  url: https://www.city.kuki.lg.jp/kenko/korei/koreishafukushi/1002197/1003881.html
+  confidence: high
+  amount: 利用援助は1回400円（月4回まで）、金銭管理は1回400円または800円（月2回まで）、書類預りは年2,000円
+not_found:
+- koken
+- hochoki
+- jutaku
+- iro
+- mimamori
+- yutai

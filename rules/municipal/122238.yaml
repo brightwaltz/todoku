@@ -1,0 +1,62 @@
+city: '122238'
+name: 鴨川市
+site: www.city.kamogawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ・尿取りパッドの支給
+  name_on_page: 介護用品（紙おむつ・尿取りパッド）の支給
+  summary: 在宅で要介護の高齢者を介護する非課税世帯の家族に、紙おむつか尿取りパッドを無料で支給する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の人が対象（令和2年度に受けていた障害者手帳1・2級の人も）
+  - 鴨川市に住民票がある
+  - 介護者がいない場合は本人が対象
+  where: 健康推進課 福祉総合相談センター（ふれあいセンター）。出張所でも提出可
+  url: https://www.city.kamogawa.lg.jp/site/shinsei/5467.html
+  confidence: high
+  amount: 年度内に最大4回、1回あたり4,000円相当（申請時期で回数が変わる）
+  more_urls:
+  - https://www.city.kamogawa.lg.jp/uploaded/attachment/22666.pdf
+- category: haishoku
+  name: ひまわり配食サービス（夕食の配達と安否確認）
+  name_on_page: ひまわり配食サービス
+  summary: 調理が難しい高齢者などに、安否確認を兼ねて夕食を届ける。訪問調査で必要と認められた人が対象。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - または手帳のある心身障害者のみの世帯
+  - 上記以外でも必要に応じて対象になる場合がある
+  - 鴨川市に住民票があり、訪問調査で必要と認められる
+  where: 健康推進課 福祉総合相談センター（ふれあいセンター）
+  url: https://www.city.kamogawa.lg.jp/site/shinsei/5459.html
+  confidence: high
+  amount: 1食450円（主食・汁物・おかず）、おかずのみ300円。平日の週1〜5回
+  more_urls:
+  - https://www.city.kamogawa.lg.jp/uploaded/attachment/9978.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置
+  summary: 急病が心配な人に、ボタンで受信センターへつながる通報機器を設置する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし高齢者など（「など」の範囲は頁に無い）
+  where: 福祉課 地域ささえあい係、または福祉総合相談センター
+  url: https://www.city.kamogawa.lg.jp/soshiki/16/1271.html
+  confidence: low
+  amount: 機器の設置工事費とリース料は無料。駆け付けサービスを使う場合は300円＋税
+not_found:
+- iro
+- koken
+- haikai
+- mimamori
+- shingu
+- ribiyo

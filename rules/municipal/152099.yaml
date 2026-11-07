@@ -1,0 +1,120 @@
+city: '152099'
+name: 加茂市
+site: www.city.kamo.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 在宅介護手当
+  name_on_page: 在宅介護手当
+  summary: 在宅の要介護3以上の人を同居して介護している家族に、月額の手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 加茂市に住所があり、要介護者と同居・生計同一の介護者
+  - すでに受給中で要介護2以下の人の介護者は令和9年3月末まで対象
+  - 15日以上の入院・ショートステイ・施設入所で資格を失う
+  where: 長寿あんしん課
+  url: https://www.city.kamo.niigata.jp/docs/249073.html
+  confidence: high
+  amount: 月額 5,000 円（申請書を出した月分から）
+- category: kaigo-yohin
+  name: 紙おむつ購入助成券の支給
+  name_on_page: 紙おむつ購入助成券の支給
+  summary: 要介護1〜5の認定を受けた人に、紙おむつ購入助成券を支給する（社協の事業）。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application: []
+  where: 加茂市社会福祉協議会
+  url: https://www.city.kamo.niigata.jp/fs/1/6/7/8/9/4/_/%E5%8A%A0%E8%8C%82%E5%B8%82%E8%80%81%E4%BA%BA%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB%E3%83%BB%E7%AC%AC%EF%BC%99%E6%9C%9F%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%94%BB.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置助成
+  name_on_page: 緊急通報装置の設置助成
+  summary: ひとり暮らしの高齢者に、警備会社へ自動通報できる装置の設置を助成する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 年齢の基準は計画書に記載なし
+  where: 計画書に記載なし
+  url: https://www.city.kamo.niigata.jp/fs/1/6/7/8/9/4/_/%E5%8A%A0%E8%8C%82%E5%B8%82%E8%80%81%E4%BA%BA%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB%E3%83%BB%E7%AC%AC%EF%BC%99%E6%9C%9F%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%94%BB.pdf
+  confidence: low
+- category: nichijo-yogu
+  name: 自動消火器の設置助成
+  name_on_page: 自動消火器の設置助成
+  summary: ひとり暮らしの高齢者に、熱を感知して自動で消火する機器の設置を助成する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 年齢の基準は計画書に記載なし
+  where: 計画書に記載なし
+  url: https://www.city.kamo.niigata.jp/fs/1/6/7/8/9/4/_/%E5%8A%A0%E8%8C%82%E5%B8%82%E8%80%81%E4%BA%BA%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB%E3%83%BB%E7%AC%AC%EF%BC%99%E6%9C%9F%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%94%BB.pdf
+  confidence: low
+- category: nichijo-yogu
+  name: 火災警報器の設置費用の助成
+  name_on_page: 火災警報器設置費用の助成
+  summary: 住民税非課税の、ひとり暮らしや高齢者のみの世帯に、火災警報器の設置費用を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 住民税非課税（世帯か本人かは計画書に記載なし）
+  where: 計画書に記載なし
+  url: https://www.city.kamo.niigata.jp/fs/1/6/7/8/9/4/_/%E5%8A%A0%E8%8C%82%E5%B8%82%E8%80%81%E4%BA%BA%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB%E3%83%BB%E7%AC%AC%EF%BC%99%E6%9C%9F%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%94%BB.pdf
+  confidence: low
+- category: haishoku
+  name: ふれあい弁当（月1回の夕食弁当の配達）
+  name_on_page: ふれあい弁当
+  summary: ひとり暮らしや高齢者のみの世帯に、月1回、ボランティアが夕食弁当を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 加茂市社会福祉協議会
+  url: https://www.city.kamo.niigata.jp/fs/1/6/7/8/9/4/_/%E5%8A%A0%E8%8C%82%E5%B8%82%E8%80%81%E4%BA%BA%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB%E3%83%BB%E7%AC%AC%EF%BC%99%E6%9C%9F%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%94%BB.pdf
+  confidence: low
+- category: sonota
+  name: 屋根雪などの除雪費用の助成
+  name_on_page: 除雪費用の助成
+  summary: 低所得のひとり暮らしや高齢者のみの世帯の、屋根雪などの除雪費用を一部助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 低所得の世帯（所得の基準は計画書に記載なし）
+  where: 加茂市社会福祉協議会
+  url: https://www.city.kamo.niigata.jp/fs/1/6/7/8/9/4/_/%E5%8A%A0%E8%8C%82%E5%B8%82%E8%80%81%E4%BA%BA%E7%A6%8F%E7%A5%89%E8%A8%88%E7%94%BB%E3%83%BB%E7%AC%AC%EF%BC%99%E6%9C%9F%E4%BB%8B%E8%AD%B7%E4%BF%9D%E9%99%BA%E4%BA%8B%E6%A5%AD%E8%A8%88%E7%94%BB.pdf
+  confidence: low
+  amount: 除雪費用の一部
+not_found:
+- haikai
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- gaishutsu
+- chusha
+- yutai

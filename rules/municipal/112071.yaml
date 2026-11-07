@@ -1,0 +1,178 @@
+city: '112071'
+name: 秩父市
+site: www.city.chichibu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 在宅要介護高齢者手当
+  name_on_page: 在宅要介護高齢者手当
+  summary: 要介護4・5が半年以上続く高齢者に、月1万円を年3回まとめて振り込む。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 市内に住所がある
+  - 要介護4・5の認定後、6か月以上続いている
+  where: 高齢者介護課、市民福祉課（総合支所）
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+  amount: 月額10,000円（4月・8月・12月に本人口座へ振込）
+- category: sonota
+  name: 敬老入浴券の交付
+  name_on_page: 敬老入浴事業
+  summary: 65歳以上の市民に、年度内に使える入浴券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  where: 高齢者介護課、市民福祉課（総合支所）
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+  amount: 1人につき年度12枚
+- category: sonota
+  name: 敬老マッサージ等の利用券
+  name_on_page: 敬老マッサージ等事業
+  summary: 70歳以上の市民に、鍼灸院等で使える割引利用券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住所がある
+  - 本人確認書類を持参する
+  where: 高齢者介護課、市民福祉課（総合支所）
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+  amount: 年度2枚、1枚で施術1回2,000円の割引
+- category: sonota
+  name: 敬老祝金
+  name_on_page: 敬老祝金の支給
+  summary: 77歳・88歳・99歳の節目の年に祝金を支給する。
+  who: {}
+  at_application:
+  - 9月1日時点で77歳・88歳・99歳の方
+  - 市内に1年以上住民登録がある
+  where: 高齢者介護課、市民福祉課（総合支所）
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+  amount: 77歳1万円、88歳2万円、99歳3万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム事業
+  summary: ボタンを押すだけで消防署に通報できる装置を設置する（無料枠と有料枠がある）。
+  who: {}
+  at_application:
+  - 無料：同一建物内に通報できる親族がおらず、慢性疾患で常時注意が必要な概ね65歳以上等
+  - 有料：緊急の病気はないが、ひとり暮らし等で不安がある高齢者
+  - 服用中の薬がわかるもの（お薬手帳の写し等）を添付する
+  where: 高齢者介護課、市民福祉課（総合支所）
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 秩父市認知症高齢者等見守りシール交付事業
+  summary: QRコード付きシールを無料で渡し、行方不明時に発見者から家族へ連絡できる。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住
+  - 認知症の診断を受けた方、または徘徊行動のある方
+  - 徘徊高齢者等探索システムを使っている人は対象外
+  where: 高齢者介護課
+  url: https://www.city.chichibu.lg.jp/10327.html
+  confidence: high
+  amount: 無料（耐洗シール20枚と蓄光シール10枚のセット）
+- category: hochoki
+  name: 中等度難聴高齢者の補聴器購入助成
+  name_on_page: 中等度難聴高齢者補聴器購入助成金
+  summary: 手帳の対象でない中等度難聴の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市に住民登録がある
+  - 両耳40デシベル以上で、医師が補聴器を必要と認めた
+  - 聴覚障がいの身体障害者手帳の対象でない
+  - 本人と同一世帯が市税等を滞納していない
+  where: 高齢者介護課、市民福祉課（総合支所）
+  url: https://www.city.chichibu.lg.jp/10270.html
+  confidence: high
+  amount: 1人1回、上限20,000円
+- category: sonota
+  name: 介護保険サービス利用料の助成
+  name_on_page: 介護保険サービス利用料助成金
+  summary: 在宅の介護保険サービスの自己負担の一部を、所得段階に応じて助成する。
+  who: {}
+  at_application:
+  - 介護保険料の所得段階が第1〜3段階
+  - 保険料の滞納がなく、給付制限を受けていない
+  - 生活保護を受給していない
+  - グループホーム等3種のサービスは対象外
+  where: 高齢者介護課
+  url: https://www.city.chichibu.lg.jp/12000.html
+  confidence: high
+  amount: 利用者負担額の15〜50％（老齢福祉年金50％、第1段階25％、第2・3段階15％）
+- category: sonota
+  name: ごみ出し支援（専用ごみボックス）
+  name_on_page: 秩父市ごみ出し支援事業
+  summary: ごみ出しが難しい世帯に専用ボックスを設け、曜日を問わず可燃ごみを出せる。
+  who: {}
+  at_application:
+  - 要介護・要支援認定者、事業対象者、各種手帳の所持者のみの世帯
+  - または市長がこれに準ずると認める方のみの世帯
+  - 申請受付は令和8年11月2日から
+  where: 高齢者介護課
+  url: https://www.city.chichibu.lg.jp/12003.html
+  confidence: high
+- category: gaishutsu
+  name: 大滝・荒川地区の移送サービス
+  name_on_page: 移送サービス事業
+  summary: 公共交通が使いにくい旧大滝・荒川地区の人を、社会参加のため送迎する。
+  who: {}
+  at_application:
+  - 旧大滝村・旧荒川村の地域に住んでいる
+  - 公共交通の利用が困難な虚弱高齢者、または身体障がい者
+  where: 大滝・荒川の総合支所市民福祉課
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+  amount: 月1回、市内500円・市外1,000円
+- category: sonota
+  name: ショートステイ事業（老人ホーム短期入所）
+  name_on_page: ショートステイ事業
+  summary: 社会適応が難しい在宅の高齢者を、老人ホームに7日以内で短期入所させる。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある、おおむね65歳以上
+  - 対人関係が成立しない等、社会適応が困難
+  - 介護保険の対象者以外の方
+  where: 高齢者介護課
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+  amount: 1日2,000円の負担金
+- category: sonota
+  name: 車椅子の無料貸し出し
+  name_on_page: 車椅子の貸し出し
+  summary: 在宅で暮らす市民に、車椅子を1か月以内（延長可）無料で貸す。
+  who:
+    at_home: true
+  at_application:
+  - 市内に居住し、居宅で生活している
+  where: 障がい者福祉課、秩父市社会福祉協議会
+  url: https://www.city.chichibu.lg.jp/secure/1293/R7koureisya_sesaku.pdf.pdf
+  confidence: high
+  amount: 無料（1か月以内、延長可）
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha

@@ -1,0 +1,192 @@
+city: '132195'
+name: 狛江市
+site: www.city.komae.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者等のおむつ支給
+  name_on_page: 在宅高齢者等おむつ支給事業
+  summary: 要介護3〜5で常時おむつを使う在宅の方に、カタログから選んだおむつを毎月自宅へ届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住んでいる
+  - 施設入所・入居中や入院中の人は対象外
+  where: 高齢障がい課（福祉総合相談窓口）
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,116383,340,2075,html
+  confidence: high
+  amount: 月1回配達。月5,000円を超えた額の3割が自己負担（100円未満切り捨て）
+- category: kinkyu-tsuho
+  name: 緊急通報装置（あんしんＳ）の設置・使用料助成
+  name_on_page: 緊急通報装置（あんしんＳ）設置及び使用料助成事業
+  summary: 具合が悪くなったとき、登録した近所の人や親族へ知らせる NTT の機器を貸与し設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - おおむね65歳以上
+  - NTT のアナログ回線の人だけ取り付けできる
+  - 通報先に親族や知人など3人を指定する
+  where: 高齢障がい課（福祉総合相談窓口）
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,37062,340,3398,html
+  confidence: high
+  amount: 機器の取り付け・貸与。緊急時の電話度数料は自己負担
+- category: kinkyu-tsuho
+  name: 高齢者救急代理通報システム
+  name_on_page: 高齢者救急代理通報システム事業
+  summary: 通報ボタンと生活リズムセンサーを貸与し、異常時に警備会社が安否確認や救急要請をする。
+  who:
+    age_min: 75
+    household:
+    - alone
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 心臓などの慢性疾患があり常時注意が必要な状態
+  - 固定電話回線が必要
+  - 警備会社に自宅の鍵を預ける
+  - 地域包括支援センターの調査を受ける
+  where: 高齢障がい課（福祉総合相談窓口）、地域包括支援センター
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,37071,340,3398,html
+  confidence: high
+  amount: 設置費は無料。使用料は課税の人が月330円、非課税の人は負担なし
+- category: haikai
+  name: 認知症高齢者の位置情報提供サービス
+  name_on_page: 認知症高齢者位置情報提供サービス
+  summary: 認知症の在宅の方が端末を持ち、家族の問い合わせに24時間で位置を知らせる。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 65歳以上（65歳未満の初老期認知症も含む）
+  - 認知症高齢者の日常生活自立度がⅡaからＭ
+  - 市内に住所があり、現に市内に住んでいる
+  where: 高齢障がい課（福祉総合相談窓口）、地域包括支援センター
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,4422,340,3059,html
+  confidence: high
+  amount: 機器使用料 月550円
+- category: ribiyo
+  name: 理容・美容サービス券の交付
+  name_on_page: 理容・美容サービス
+  summary: 寝たきりなどで在宅の方に、散髪やカットを年6回受けられる券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3は主治医意見書の自立度がB1〜C2の人に限る
+  - 市内在住
+  where: 高齢障がい課（福祉総合相談窓口）
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,4443,340,2075,html
+  confidence: high
+  amount: 年6回分の券。市の助成額を超えると自己負担あり
+- category: jutaku
+  name: 高齢者自立支援の住宅改修費給付
+  name_on_page: 高齢者自立支援住宅改修費給付
+  summary: 手すり・段差解消や浴槽・便器の取替えなどの改修費を、市が区分ごとの限度額まで給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 予防改修は要介護認定で自立と判定された人が対象
+  - 設備改修は自立・要支援・要介護のいずれも対象
+  - 着工前に申請する
+  - 自己所有以外の家は所有者の承諾書が必要
+  where: 高齢障がい課 高齢者支援係、地域包括支援センター
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,28534,340,2075,html
+  confidence: high
+  amount: 対象の限度額は予防改修20万円、浴槽37.9万円、流し15.6万円、便器10.6万円。自己負担は1〜3割
+- category: nichijo-yogu
+  name: 高齢者自立支援の日常生活用具給付
+  name_on_page: 高齢者自立支援日常生活用具の給付
+  summary: 別表の日常生活用具の購入費の一部を支給する（介護保険が優先、購入前に申請）。
+  who: {}
+  at_application:
+  - おおむね65歳以上で市内在住
+  - 用具の購入前に申請する
+  where: 高齢障がい課（福祉総合相談窓口）、地域包括支援センター
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,4448,340,2075,html
+  confidence: high
+  amount: 自己負担は、生活保護は免除、世帯全員非課税は1割、課税者がいる世帯は2割
+- category: mimamori
+  name: 電話訪問による見守り
+  name_on_page: 電話訪問サービス
+  summary: ボランティアが週2回電話をかけ、安否や体調を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者世帯、または外出困難な障がいのある人
+  - 市内在住
+  where: 狛江市社会福祉協議会
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,115975,340,3398,html
+  confidence: high
+- category: sonota
+  name: 入浴券の交付
+  name_on_page: 入浴券の交付
+  summary: 自宅で入浴できない非課税の高齢者に、公衆浴場で使える入浴券を交付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 自宅に入浴施設がない、またはやむを得ず使えず、常時公衆浴場を使う
+  - 生活扶助を受けている生活保護の人は除く
+  - 申請後に職員が自宅の状況を確認する
+  where: 高齢障がい課（福祉総合相談窓口）
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,4435,340,2075,html
+  confidence: high
+  amount: 月4枚
+- category: sonota
+  name: 居宅内に蓄積したごみの片付け費用の給付
+  name_on_page: 居宅内に蓄積したごみの片付け費用の給付
+  summary: 認知機能の低下で家にごみが大量にたまった非課税世帯に、片付け費用を給付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 同居者全員が65歳以上で、全員が市民税非課税（生活保護は除く）
+  - おおむね10㎡超のごみが居宅内にたまっている
+  - 認知症の自立度Ⅱb以上、または障害高齢者の自立度B2以上
+  - 上の自立度に当たらなくても、意見書で市長が認めれば対象の可能性あり
+  where: 高齢障がい課（市役所2階）
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,98807,340,3398,html
+  confidence: high
+  amount: 1世帯あたり20万円まで。事業者へ市が直接支払う
+- category: sonota
+  name: 居宅内からごみ置場への日常的なごみ出しサポート
+  name_on_page: 居宅内からごみ置場への日常的なごみ出しサポート
+  summary: ごみを出せない非課税世帯の高齢者宅へ、シルバー人材センターの会員が出しに来る。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 同居者全員が65歳以上で、全員が市民税非課税
+  - 居宅内のごみを自分か訪問介護などでまとめられる
+  - 認知症の自立度Ⅱb以上か障害高齢者の自立度B2以上で、ごみ置場へ出せない
+  - 自立度がこれより軽くても、意見書で市長が認めれば対象の可能性あり
+  where: 高齢障がい課（市役所2階）
+  url: https://www.city.komae.tokyo.jp/index.cfm/44,98807,340,3398,html
+  confidence: high
+  amount: 無料。可燃ごみは原則週1回、資源物は原則月1回
+not_found:
+- iro
+- koken
+- shingu
+- yutai

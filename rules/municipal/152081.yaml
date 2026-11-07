@@ -1,0 +1,181 @@
+city: '152081'
+name: 小千谷市
+site: www.city.ojiya.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品支給サービス
+  summary: 重度の高齢者を在宅で介護する家族に、介護用品を買える給付券を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 対象は要介護者と同居して在宅で介護している家族
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+  more_urls:
+  - https://www.city.ojiya.niigata.jp/soshiki/fukushi/zaitakukourei-download.html
+- category: iro
+  name: 在宅ねたきり老人等の介護手当
+  name_on_page: ねたきり老人等介護手当支給
+  summary: 要介護3以上の高齢者と同居して在宅で介護する人に、手当を年2回支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 対象は要介護者と同居して在宅で介護している人
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+  amount: 月8,000円（年2回に分けて支給）
+  more_urls:
+  - https://www.city.ojiya.niigata.jp/soshiki/fukushi/zaitakukourei-download.html
+- category: gaishutsu
+  name: 通院等のタクシー券
+  name_on_page: 通院等支援サービス事業
+  summary: 電車やバスでの外出が難しい在宅の方に、通院などで使うタクシー券を渡す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市民税非課税であること
+  - 一般の交通機関での外出が困難
+  - 自宅と医療機関・福祉施設の間で使える
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+  more_urls:
+  - https://www.city.ojiya.niigata.jp/soshiki/fukushi/zaitakukourei-download.html
+- category: kinkyu-tsuho
+  name: 電話回線の見守り装置の貸与
+  name_on_page: 高齢者見守り相談サービス事業
+  summary: 電話回線を使う見守り装置を貸し出し、24時間の相談・火災警報・緊急通報に対応する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者など
+  - 市民税課税世帯は実費で対応
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+- category: jutaku
+  name: 高齢者の住宅改造費の補助
+  name_on_page: 高齢者住宅整備事業費補助金
+  summary: 介護認定を受けた高齢者の住宅の一部改造や専用居室の増改築の費用を助成する。
+  who: {}
+  at_application:
+  - 市内に住所がある高齢者で介護認定を受けている
+  - 世帯の年間収入合計が600万円未満
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+  more_urls:
+  - https://www.city.ojiya.niigata.jp/soshiki/fukushi/fukushinomatidukuri.html
+- category: hochoki
+  name: 難聴者の補聴器購入費助成
+  name_on_page: 難聴者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象にならない難聴の50歳以上に、補聴器の購入費を助成する。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 片耳40dB以上、または医師が補聴器を必要と認めた
+  - 補聴器で効果が期待できると医師が判断
+  - 購入前に申請が必要
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/ninntisyou-hotyoukijyosei.html
+  confidence: high
+  amount: 生活保護・市民税非課税世帯は上限5万円、課税世帯は1/2で上限3万円
+- category: haikai
+  name: 徘徊の事前登録と見守りステッカー
+  name_on_page: 認知症による徘徊の心配がある人の事前登録・見守りステッカー交付事業
+  summary: 徘徊のおそれがある人の情報を事前登録し、希望者に登録番号入りの反射ステッカーを無料で渡す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症による徘徊の心配がある
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/ninchisyou.html
+  confidence: high
+  amount: 無料（ステッカー20枚）
+- category: sonota
+  name: 雪下ろしサービス券の交付
+  name_on_page: 除雪援助サービス
+  summary: 自力で雪下ろしができない非課税の高齢者世帯に、雪下ろしのサービス券を渡す。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - ひとり暮らし、高齢者のみ、またはこれに準ずる世帯
+  - 自力での除雪が困難で親族の支援が得られない
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+  more_urls:
+  - https://www.city.ojiya.niigata.jp/soshiki/fukushi/fukushinomatidukuri.html
+- category: sonota
+  name: 福祉電話の設置
+  name_on_page: 福祉電話の設置
+  summary: 電話を持たない非課税世帯の高齢者宅に福祉電話を設置する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 電話を持たないひとり暮らしの高齢者
+  - または高齢者のみで1人がねたきり等の世帯
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+- category: sonota
+  name: 短期宿泊での生活管理指導
+  name_on_page: 生活管理指導短期宿泊サービス事業
+  summary: 介護認定のない在宅高齢者が短期入所施設で生活訓練や入浴などを受けられる。
+  who:
+    at_home: true
+  at_application:
+  - 介護認定を受けていない
+  - 基本的な生活習慣の欠如などで日常生活に不安がある
+  where: 福祉課高齢福祉係
+  url: https://www.city.ojiya.niigata.jp/soshiki/fukushi/joseiservice.html
+  confidence: low
+not_found:
+- haishoku
+- koken
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

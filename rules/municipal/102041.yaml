@@ -1,0 +1,178 @@
+city: '102041'
+name: 伊勢崎市
+site: www.city.isesaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 介護慰労金の支給
+  summary: 要介護4・5の高齢者を在宅で1年以上介護している家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住み、在宅で1年以上介護している介護者が対象
+  - 前年8/1〜本年7/31に入院・短期入所等で在宅を離れた日が120日以下
+  - 市が該当者を確認し申請書を送る旨の注意書きあり
+  where: 高齢政策課 生活支援係
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/16043.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつなどの支給
+  summary: 在宅で常時おむつが必要な高齢者に、紙おむつ等を毎月自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4・5の寝たきり状態、または重度認知症で要介護3以上
+  - 常時おむつを必要としている
+  - 要介護3は重度認知症の場合が対象
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/17642.html
+  confidence: high
+  amount: 月額上限：市民税非課税世帯7,590円、課税世帯4,560円
+- category: haishoku
+  name: ひとり暮らし高齢者等の昼食配達
+  name_on_page: 給食サービス
+  summary: 調理が難しい高齢者に昼食を届け、配達時に安否も確認する。
+  who: {}
+  at_application:
+  - 申請書に担当民生委員の署名が必要
+  - 対象の条件は窓口で確認する
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/17643.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸し出し
+  summary: ボタンを押すと警備会社につながる緊急通報装置を無料で貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし高齢者などで、慢性疾患・障害のため常時見守りが必要
+  - 固定電話の回線が必要
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/17644.html
+  confidence: high
+  amount: 無料（設置費・月々のレンタル料は市が負担）
+- category: ribiyo
+  name: 訪問理美容の利用券
+  name_on_page: 訪問理美容サービス利用料の助成
+  summary: 店に行けない高齢者に、自宅で理容・美容を受けられる利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護3以上の在宅の人
+  - または要介護2以下で理美容店へ出向くのが困難と認められる人
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/17645.html
+  confidence: high
+  amount: 1枚3,500円。年間最大4枚（申請月で枚数が変わる）
+- category: shingu
+  name: 布団の乾燥・丸洗い
+  name_on_page: 布団乾燥・丸洗いサービス
+  summary: 寝具の手入れが難しい高齢者の布団を、市契約の事業者が乾燥・丸洗いする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 寝具類を十分に手入れできない
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/17640.html
+  confidence: high
+  amount: 無料。乾燥は年10回、丸洗いは年2回（7月・12月）
+- category: jutaku
+  name: 高齢者住宅のバリアフリー改造費の補助
+  name_on_page: 住宅改造費の補助
+  summary: 高齢者の住まいのバリアフリー工事費の一部を市が補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 要支援〜要介護1で、ひとり暮らしか高齢者のみの世帯：市県民税非課税等
+  - 要介護2〜5の人がいる世帯：生計中心者の所得割16万円未満
+  - 2年以上居住している住宅のバリアフリー工事が対象
+  - 工事の前に申し込む
+  where: 高齢政策課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/16834.html
+  confidence: high
+  amount: 工事費の6分の5、1世帯30万円まで
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 補聴器購入費の補助
+  summary: 手帳の対象でない難聴の高齢者が補聴器を買うとき、費用の半分を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻科医が両耳40dB以上70dB未満と認めた意見書が必要
+  - 購入前に申請する。補助は1人1回限り
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/23059.html
+  confidence: high
+  amount: 購入費の2分の1、上限3万円
+- category: haikai
+  name: 認知症等の位置情報端末の費用負担
+  name_on_page: 認知症高齢者等見守りサービス
+  summary: 行方不明のおそれがある人の位置を調べる端末の借用費用を、市が一部負担する。
+  who: {}
+  at_application:
+  - 認知症などで行方不明のおそれがある人が対象（詳細は窓口で確認）
+  - 家族などが地域包括支援センターか支所で申し込む
+  - ペースメーカー装着者は利用不可
+  where: 地域包括支援センター、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/17655.html
+  confidence: high
+- category: mimamori
+  name: 見守りライトの貸与
+  name_on_page: 見守りライト(通信機能付き電球)の貸与
+  summary: 通信機能付き電球を貸し、点灯の動きがないと家族へ自動でメール通知する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 高齢者のみの世帯の人は、日常生活に不安があること
+  - 市の緊急通報装置の貸与を受けている人は対象外
+  - 同じ敷地・建物に65歳未満の親族がいると対象外
+  - 通知先のメールアドレスが必要
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/20023.html
+  confidence: high
+  amount: 無料（電気代は自己負担）
+- category: nichijo-yogu
+  name: シルバーカー等の日常生活用具の給付
+  name_on_page: 日常生活用具の給付(マイサポ事業)
+  summary: シルバーカー、入浴補助用具、電磁調理器具を自己負担3割で給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 身体機能が低下し始めた人
+  - 調査票は担当の民生委員に記入を依頼する
+  where: 高齢政策課、各支所市民サービス課
+  url: https://www.city.isesaki.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/17641.html
+  confidence: high
+  amount: 用具価格の3割が自己負担（生活保護受給者は自己負担なし）
+not_found:
+- koken

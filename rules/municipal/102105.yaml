@@ -1,0 +1,138 @@
+city: '102105'
+name: 富岡市
+site: www.city.tomioka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅の寝たきり・認知症高齢者の紙おむつ購入費の助成
+  name_on_page: 在宅寝たきり高齢者など紙おむつ購入費扶助
+  summary: 在宅で介護を受ける高齢者の紙おむつ購入費の半額を市が補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 寝たきり（要介護3以上）か、認知症の自立度III以上
+  - 入院中・入所中は対象外
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 購入金額の2分の1
+- category: haishoku
+  name: 昼食の配食と安否確認
+  name_on_page: 配食サービス事業
+  summary: 食事の準備が難しい虚弱な高齢者に昼食を届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 虚弱な高齢者
+  - 日中独居は特別な支援が必要な場合のみ。要個別相談
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 1食200円（月〜土、年末年始・祝日は除く）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置設置サービス
+  summary: 急病や災害時にボタンで通報できる装置を貸し出し、無反応時は安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 65歳以上の虚弱高齢者がいる世帯で、固定電話がある
+  - 日中ひとりの世帯は、世帯全員が市民税非課税であること
+  - 上記以外でも、80歳以上の高齢者のみの世帯は対象
+  - 80歳未満の親族が同敷地・同建物にいる場合は対象外
+  - 予算額に達し次第、受付終了
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 65歳以上の対象者は無料、80歳以上のみの世帯は月額500円
+- category: haikai
+  name: 認知症などの高齢者の見守り用GPS端末の貸与
+  name_on_page: 認知症など高齢者見守り事業(GPS貸与)
+  summary: 徘徊のおそれのある高齢者の位置を家族がGPS端末で確認できる。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 申請者は、市内在住の65歳以上の高齢者を在宅で介護する同居の家族
+  - または、市内で介護し位置確認時に保護できる家族
+  - 充電の電気代と靴などの装着品代は自己負担
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 利用料は月額1,200円
+- category: gaishutsu
+  name: 運転免許返納者への手数料補助とタクシー券
+  name_on_page: 運転免許証自主返納による補助金及びタクシー券扶助
+  summary: 免許を自主返納した高齢者に、運転経歴証明書の手数料補助とタクシー券を渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 運転免許証を自主返納した人
+  - 免許返納時に満65歳以上
+  - 市民税などの滞納がない
+  - これまでにこの事業の助成を受けていない
+  - 返納した日から1年以内に申請
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 運転経歴証明書の交付手数料相当額の補助と、600円分のタクシー券24枚
+- category: sonota
+  name: 一人暮らし高齢者の銭湯利用料の補助
+  name_on_page: 一人暮らし高齢者公衆浴場利用料扶助
+  summary: ひとり暮らしの高齢者が市内の銭湯を使うとき、利用料の一部を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 利用できる施設は大正湯（七日市）と大島鉱泉（大島）
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 年間72枚まで、1枚あたりの本人負担は100円
+- category: sonota
+  name: 高齢者のあん摩マッサージ指圧・はり・きゅう施術料の割引
+  name_on_page: 高齢者あん摩マッサージ指圧、はり及びきゅう施術扶助
+  summary: 身体に障害のある施術者の施術を受けるとき、受療券で料金が割り引かれる。
+  who:
+    age_min: 70
+  at_application:
+  - 対象の施術は、身体に障害がある施術者によるもの
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 年間4枚まで、1回につき1,000円割引
+- category: sonota
+  name: 在宅高齢者の短期入所（ショートステイ）
+  name_on_page: 在宅高齢者短期入所事業
+  summary: 家庭の事情で一人になる虚弱高齢者が、養護老人ホームに1週間程度泊まれる。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険対象外の虚弱高齢者など
+  - 緊急時以外は予約が必要
+  where: 高齢介護課
+  url: https://www.city.tomioka.lg.jp/www/contents/1580190256693/index.html
+  confidence: high
+  amount: 所得に応じ1割〜3割負担で、1日950円〜2,850円
+not_found:
+- hochoki
+- jutaku
+- ribiyo
+- shingu

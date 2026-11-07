@@ -1,0 +1,211 @@
+city: '122271'
+name: 浦安市
+site: www.city.urayasu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつの給付（高齢者）
+  summary: 紙おむつが必要な高齢者に、紙おむつを月1回自宅へ届ける。
+  who:
+    age_min: 65
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3〜5、または医師がおむつが必要と証明した方
+  - 障がい者手帳の方は障がい福祉課、生活保護の方は社会福祉課へ
+  - 同じ月に入院患者のおむつ代助成とは併用できない
+  where: 高齢者福祉課（市役所3階）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/iryo/1001206.html
+  confidence: high
+  amount: 注文代金6,000円以内なら無料（超えた分は自己負担）
+- category: kaigo-yohin
+  name: 入院中のおむつ代の助成
+  name_on_page: 入院患者のおむつ代の助成（高齢者）
+  summary: 入院中に病院へ支払ったおむつ代を、市が助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護3〜5、または医師がおむつが必要と証明した方
+  - 病院に入院している
+  - 同じ月に紙おむつの給付を受けた方は対象外
+  - 障がい者手帳の方は障がい福祉課、生活保護の方は社会福祉課へ
+  where: 高齢者福祉課（市役所3階）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/iryo/1019384.html
+  confidence: high
+  amount: ひと月あたり12,000円まで
+- category: hochoki
+  name: 補聴器の購入費助成
+  name_on_page: 補聴器の購入費助成
+  summary: 医師が必要と認めた難聴の方の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 医師の証明書（市指定の様式）がある
+  - 購入日に市内に住民票がある
+  - 障害者総合支援法の補装具（補聴器）の支給を受けられない方
+  - 医療機器として認定された補聴器のみ対象
+  - 購入日の翌日から1年以内に申請
+  where: 高齢者福祉課（市役所3階）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/iryo/1001204.html
+  confidence: high
+  amount: 35,000円を限度に1回だけ
+- category: haishoku
+  name: 高齢者の給食（夕食配達）サービス
+  name_on_page: 給食サービス（高齢者）
+  summary: 調理が難しい方の自宅へ夕食を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の調理が困難である
+  - 市内の身内から食事の提供を受けられない
+  - 申請時に聞き取り調査がある
+  where: 高齢者福祉課（市役所3階）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/service/1001189.html
+  confidence: high
+  amount: 毎日配達、週7回まで。自己負担は1食391円
+- category: ribiyo
+  name: 要介護高齢者の出張理髪
+  name_on_page: 出張理髪サービス（高齢者）
+  summary: 要介護4・5の方の自宅へ理容師が来て、理髪をする。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 市内に住民票がある
+  - 介護保険の第2号被保険者も対象
+  where: 高齢者福祉課（市役所3階）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/service/1001190.html
+  confidence: high
+  amount: 利用券を年6枚まで（申請月で枚数が変わる）。1回の利用料は1,000円
+- category: kinkyu-tsuho
+  name: 高齢者の緊急通報装置の貸与
+  name_on_page: 高齢者などへの緊急通報装置の貸与
+  summary: ボタン1つで通報できる装置を貸与し、警備員が駆けつける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 同居の方の就労・就学で一時的に高齢者のみになる場合も対象
+  - 介助・防犯の目的では使えない
+  where: 高齢者福祉課（市役所3階）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/sumai/1001208.html
+  confidence: high
+  amount: 装置の利用と駆けつけは無料（電気代・通信料は自己負担）
+- category: jutaku
+  name: 要介護者等の住宅改修費の市独自助成
+  name_on_page: 浦安市要介護者等住宅改修費用の助成
+  summary: 要介護者等の住宅改修にかかる費用を市が助成する。
+  who: {}
+  at_application:
+  - 要介護者等が対象。詳しい条件は窓口で確認
+  where: 介護保険課（市役所3階）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/sumai/1001210.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者の外出支援ICカード助成
+  name_on_page: 外出支援ICカード利用負担額助成（高齢者の外出支援助成）
+  summary: 70歳以上の方の交通系ICカードへ、年度ごとに助成額をチャージする。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住んでいる
+  - 障害者手帳をお持ちの方は対象外
+  - Suica・PASMO などの交通系ICカードを利用している
+  - 同じ年度に紙のバス券との併給はできない
+  - 年度ごとに申請（令和8年度は令和9年2月28日まで）
+  where: 高齢者福祉課（市役所3階）、電子申請も可
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/gaishutsu/1043993.html
+  confidence: high
+  amount: 1年度につき6,500円分
+- category: sonota
+  name: はり・きゅう・マッサージ施術の助成券
+  name_on_page: はり・きゅう・マッサージなどの費用の助成（高齢者）
+  summary: 登録施術者での施術費を、1回ごとに助成する利用券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 障害者手帳所持者など障がい福祉課の対象者は除く
+  - 利用は市に登録した施術者に限る
+  - 保険診療外の施術が対象
+  where: 高齢者福祉課（市役所3階）、電子申請・郵送も可
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/iryo/1001205.html
+  confidence: high
+  amount: 1回800円分の券を月2枚の割合で年24枚まで
+- category: sonota
+  name: 高齢者世帯の住み替え費用助成
+  name_on_page: 住み替え費用の助成（高齢者世帯）
+  summary: 民間賃貸に住む高齢者世帯が立ち退き等で転居する費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に1年以上居住し、民間賃貸住宅に住む高齢者世帯
+  - 65歳以上のひとり暮らし、または65歳以上を含む高齢者世帯
+  - 立ち退きを求められた、または階段の上り下りが難しい等で転居
+  - 生活保護受給世帯は除く
+  - 転居前に申請が必要
+  where: 高齢者福祉課
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/josei/sumai/1001209.html
+  confidence: high
+  amount: 礼金・敷金・仲介手数料と引越し費用の半額などの合計で上限25万円
+- category: nichijo-yogu
+  name: 高齢者への住宅用火災警報器の給付
+  name_on_page: 高齢者住宅用火災警報器の給付
+  summary: ひとり暮らし等の非課税の高齢者に、住宅用火災警報器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 市内に住んでいる
+  - 高齢者のみの世帯は世帯主が対象
+  - 65歳未満の方との同居、前年度に市民税が課税の方は対象外
+  where: 高齢者福祉課
+  url: https://www.city.urayasu.lg.jp/todokede/anzen/shobo/keihouki/1002162.html
+  confidence: low
+- category: sonota
+  name: 介護保険外の生活支援サービス（市単独）
+  name_on_page: 介護保険外生活支援サービス事業
+  summary: 要介護の方に、草むしりや衣替えなど介護保険外の手助けをする。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住民票がある
+  - 65歳未満の方と同居している場合は対象外
+  - 訪問介護等を受ける中で、保険外の手助けが必要と認められる
+  - 利用申込書と意見書を提出
+  where: 浦安市役所（担当課はページ要確認）
+  url: https://www.city.urayasu.lg.jp/fukushi/koureisha/hoken/1029064.html
+  confidence: high
+  amount: 1回30分を目安に週2回まで（時間外・1時間超は自己負担）
+not_found:
+- iro

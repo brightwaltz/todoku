@@ -1,0 +1,194 @@
+city: '112291'
+name: 和光市
+site: www.city.wako.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食・栄養改善サービスの費用助成
+  name_on_page: 食の自立支援・栄養改善サービス費助成事業
+  summary: 市指定の事業者が昼食・夕食を届け、栄養改善の支援もつく配食の費用を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 栄養状態に課題がある、または食事の準備ができない方
+  - 総合事業対象者も同様に使える場合がある
+  where: 長寿あんしん課、地域包括支援センター
+  url: https://www.city.wako.lg.jp/kenko/kaigo/1003987/1004000.html
+  confidence: high
+  amount: 1食あたり300円を助成（所得制限なし）。昼食・夕食を365日提供できる
+- category: kaigo-yohin
+  name: 高齢者の紙おむつ等購入費助成
+  name_on_page: 高齢者紙おむつ等購入費助成事業
+  summary: 市指定の事業者が紙おむつや介護周辺用品を自宅へ届け、費用の7割を市が助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 主治医意見書で尿失禁またはカテーテルの記載がある
+  - 寝たきり度B1以上、または認知症自立度Ⅲa以上
+  - 上に当たらなくても常時尿失禁ならおむつ使用証明書で可
+  - 生活保護を受けている方は対象外
+  where: 長寿あんしん課（地域支援事業担当）
+  url: https://www.city.wako.lg.jp/kenko/kaigo/1003987/1004000.html
+  confidence: high
+  amount: 月額上限：紙おむつ10,000円、介護周辺用品3,000円（自己負担は所得によらず3割）
+- category: gaishutsu
+  name: 高齢者の地域送迎サービス費助成
+  name_on_page: 高齢者地域送迎サービス助成事業
+  summary: 市指定の送迎事業者（介護タクシー等）の利用料の8割を市が助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 主治医意見書で寝たきり度B1以上、または認知症自立度Ⅲa以上
+  where: 長寿あんしん課（地域支援事業担当）
+  url: https://www.city.wako.lg.jp/kenko/kaigo/1003987/1004000.html
+  confidence: high
+  amount: 送迎費用は月40,000円、階段介助料は月8,000円まで。利用料の8割を助成
+- category: kinkyu-tsuho
+  name: 高齢者の緊急時通報システム
+  name_on_page: 高齢者の緊急時通報システム
+  summary: ボタンでコールセンターにつながる通報機器や人感センサー型の機器を貸し出す。
+  who: {}
+  at_application:
+  - ひとり暮らしや高齢者のみの世帯などの、おおむね65歳以上
+  - 市に住民登録があり、住民登録地で生活している
+  - 介護保険料の所得段階が1〜3段階のいずれか
+  - 重い疾患または要介護相当で、在宅での日常生活が困難
+  where: 長寿あんしん課、担当地域の地域包括支援センター
+  url: https://www.city.wako.lg.jp/kenko/koreisha/1009659/1004050.html
+  confidence: high
+- category: ribiyo
+  name: 理容出張の助成券
+  name_on_page: 理容出張助成
+  summary: ほぼ寝たきりで外出が難しい高齢者に、自宅での調髪に使う助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅でほぼ寝たきりの状態で、外出が困難な高齢者
+  where: 長寿あんしん課（長寿支援担当）
+  url: https://www.city.wako.lg.jp/kenko/koreisha/1009659/1004087.html
+  confidence: high
+  amount: 2,000円の助成券を年1〜6枚交付
+- category: sonota
+  name: 高齢者の入浴助成券
+  name_on_page: 高齢者入浴券
+  summary: 自宅に入浴設備がない高齢者に、入浴の基本料金の助成券を交付する。
+  who: {}
+  at_application:
+  - 自宅に入浴設備がない高齢者
+  where: 長寿あんしん課（長寿支援担当）
+  url: https://www.city.wako.lg.jp/kenko/koreisha/1009659/1004087.html
+  confidence: high
+  amount: 入浴基本料金の助成券を年5〜64枚交付
+- category: sonota
+  name: 浴場施設の利用補助券
+  name_on_page: 65歳以上の方・家族介護者の浴場施設の利用を補助します
+  summary: 市内外の指定の浴場施設で使える補助券を、高齢者や介護認定者、同居の介護者に出す。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上、または要支援・要介護認定を受けた方
+  - 認定者と同じ世帯で日常的に介護する20歳以上の方も対象
+  - 介護保険料の滞納者と市外の公的介護保険加入者は対象外
+  where: 長寿あんしん課（市役所1階）
+  url: https://www.city.wako.lg.jp/kenko/kaigo/1003987/1004015.html
+  confidence: high
+  amount: 1人年12枚まで、1枚あたり500円を上限に補助（令和8年度分）
+- category: jutaku
+  name: 介護保険の住宅改修・福祉用具購入への市の上乗せ助成
+  name_on_page: 和光市介護保険居宅介護等住宅改修等助成事業
+  summary: 介護保険の住宅改修や福祉用具購入の法定給付に、市が一部を上乗せして助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 福祉用具購入は、認定期間の終了後に非該当となる方が対象
+  - 工事の着工前や購入前に申請して審査を受ける
+  where: 長寿あんしん課（介護保険担当）
+  url: https://www.city.wako.lg.jp/kenko/koreisha/1009659/1004086.html
+  confidence: high
+  amount: 限度額20万円。改修費の7〜9割（法定給付割合）を助成
+- category: sonota
+  name: 介護保険の利用料助成
+  name_on_page: 和光市介護保険利用料助成事業
+  summary: 所得の低い要介護・要支援の方の介護保険サービス利用料の一部を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険料の所得段階が1〜3段階の方
+  - 生活保護を受けている方は対象外
+  where: 長寿あんしん課（市役所1階、郵送も可）
+  url: https://www.city.wako.lg.jp/kenko/kaigo/1003987/1011752.html
+  confidence: high
+  amount: 利用料の35〜55％（第1段階55%、第2段階40%、第3段階35%）
+- category: sonota
+  name: 119あんしんシートの無料配布
+  name_on_page: 119あんしんシート無料配布
+  summary: 救急時に必要な情報を書いて冷蔵庫に貼るシートとマグネットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上の方、または身体障害者手帳を持っている方
+  where: 長寿あんしん課、地域包括支援センター、高齢者福祉センター
+  url: https://www.city.wako.lg.jp/kenko/koreisha/1009659/1013080.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: ごみの戸別収集（玄関先まで収集）
+  name_on_page: ごみの戸別収集
+  summary: 集積所までごみを出せない一人住まいの方などの玄関先までごみを取りに来る。
+  who: {}
+  at_application:
+  - 一人住まい、または健康な同居人がいない
+  - 要介護の方、65歳以上でごみ出しが困難な方、障害のある方のいずれか
+  where: 長寿あんしん課、障害福祉課
+  url: https://www.city.wako.lg.jp/kurashi/gomi/1002742/1002789.html
+  confidence: low
+not_found:
+- haikai
+- iro
+- hochoki
+- shingu
+- nichijo-yogu
+- yutai
+- mimamori

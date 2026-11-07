@@ -1,0 +1,264 @@
+city: '132128'
+name: 日野市
+site: www.city.hino.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅ねたきり高齢者へのおむつ給付
+  name_on_page: 在宅ねたきり高齢者等おむつ給付事業
+  summary: おむつが必要な在宅の重度要介護の方に、紙おむつ等を毎月届けて給付する。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3は医師の診断書等でおむつ介助が必要と認められる
+  - 生活保護を受けていない
+  - 市内に住所があり、現に市内に住んでいる
+  where: 高齢福祉課福祉係（窓口・郵送・電子申請）
+  url: https://www.city.hino.lg.jp/fukushi/kourei/1003599.html
+  confidence: high
+  amount: 月 6,000 円までの給付。超えた分は自己負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護高齢者を在宅で介護する家族に、慰労金を年 1 回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者は 65 歳以上で市内在住、生計を共にする家族が介護
+  - 過去 1 年以上、要介護 4 か 5 の状態
+  - 過去 1 年以上、介護保険サービスを使っていない
+  - 短期入所は 1 週間以内なら可
+  - 過去 1 年に病院等へおおむね 3 か月以上入院していない
+  where: 介護保険課介護保険係（窓口・郵送）
+  url: https://www.city.hino.lg.jp/fukushi/kaigo/1023274.html
+  confidence: high
+  amount: 要介護者 1 人につき年 10 万円
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成について
+  summary: 聞こえが低下した 65 歳以上の方の補聴器本体の購入費を一部助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 身体障害者手帳（聴覚）の対象にならない
+  - 住民税非課税、または前年の合計所得 135 万円以下
+  - 耳鼻科医の意見書で補聴器が必要と認められる
+  - 5 年以内にこの制度を使っていない
+  - 助成決定前に買った補聴器は対象外
+  where: 高齢福祉課福祉係（窓口・郵送）
+  url: https://www.city.hino.lg.jp/fukushi/kourei/1023834.html
+  confidence: high
+  amount: 補聴器本体の購入費、上限 35,000 円
+- category: ribiyo
+  name: ねたきり高齢者の訪問理容・美容券
+  name_on_page: ねたきり高齢者理容・美容利用券交付事業
+  summary: 寝たきりの方に、自宅でカットを受けられる理容・美容利用券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時寝たきりで、理容店・美容店に行くことが難しい
+  - 市内に住所があり、現に市内に住んでいる
+  - 入院中や市外施設に入所中の方は対象外
+  where: 高齢福祉課福祉係（窓口・郵送）
+  url: https://www.city.hino.lg.jp/fukushi/kourei/1020059.html
+  confidence: high
+  amount: 年に最大 6 枚（申請月で枚数が変わる）。店により出張料あり
+- category: jutaku
+  name: 高齢者の自立支援住宅改修給付
+  name_on_page: 高齢者自立支援住宅改修給付事業
+  summary: 手すり取付や浴槽・便器の取替など、市独自の住宅改修費を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 予防給付は要介護認定が非該当、またはチェックリストで必要と判断された方
+  - 設備給付は要支援以上の認定を持つ方
+  - 工事の前に必ず地域包括支援センターへ相談する
+  - 市の登録業者 2 社以上の見積りが必要
+  - 設備給付は 1 世帯 1 回限り
+  where: 地域包括支援センター（市へ取り次ぐ）
+  url: https://www.city.hino.lg.jp/fukushi/kourei/1003597.html
+  confidence: high
+  amount: 予防給付は上限 20 万円。設備給付は浴槽 37.9 万円、流し・洗面台 15.6 万円、便器 10.6 万円まで。自己負担は 1〜3 割
+- category: haikai
+  name: 徘徊高齢者の GPS 探索サービス
+  name_on_page: 徘徊高齢者等探索サービス事業
+  summary: 認知症で徘徊のおそれがある方が GPS 端末を持ち、居場所を探せる。損害賠償の保険付き。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 65 歳以上、または 40 歳以上の若年性認知症（疑い含む）
+  - 端末を持たせて探索を使える家族等の支援者が周りにいる
+  - 市内に住所があり在宅で生活している
+  where: 地域包括支援センター
+  url: https://www.city.hino.lg.jp/fukushi/kourei/1010675/1010682.html
+  confidence: high
+  amount: 利用料は月 297 円（税込）。生活保護世帯は免除
+- category: haikai
+  name: 認知症徘徊高齢者 SOS ネットワーク（事前登録・靴シール）
+  name_on_page: 認知症徘徊高齢者SOSネットワーク
+  summary: 徘徊のおそれがある方を事前登録し、行方不明時に警察・事業所と早期発見に努める。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人や家族の同意を得て事前登録する
+  - 登録者には靴のかかとに貼るオレンジ色のシールを案内
+  where: 地域包括支援センター
+  url: https://www.city.hino.lg.jp/fukushi/kourei/1010675/1010682.html
+  confidence: high
+- category: mimamori
+  name: 高齢者見守り支援ネットワーク（見守り推進員の声かけ）
+  name_on_page: 高齢者見守り支援ネットワーク
+  summary: 地元の見守り推進員が、月 1 回ほど声かけ、週 1 回ほど様子見をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 高齢のひとり暮らしや高齢のご夫婦などが対象
+  - 事前の登録が必要（一覧表では地域包括支援センターへ相談）
+  where: 地域包括支援センター、高齢福祉課在宅支援係
+  url: https://www.city.hino.lg.jp/fukushi/kourei/torikumi/1003577.html
+  confidence: high
+  more_urls:
+  - https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/008/766/koureisyagokazokusabisur8.pdf
+- category: haishoku
+  name: 高齢者への食事の宅配と安否確認
+  name_on_page: 高齢者食事宅配サービス
+  summary: 買い物や調理が難しく見守りが必要な方に、昼食・夕食を届けて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 病気や高齢のため買い物・調理が難しく、見守りが必要
+  - ほかにも条件あり（一覧表の注記）。詳細は問い合わせ
+  where: 日野市社会福祉協議会（042-591-1567）
+  url: https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/008/766/koureisyagokazokusabisur8.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 救急代理通報（専用通報機の貸出し）
+  name_on_page: 救急代理通報
+  summary: 慢性疾患などで常時注意が必要な方に、専用通報機等を貸し出す。
+  who:
+    age_min: 65
+  at_application:
+  - 身体上の慢性疾患があるなど、常時注意を要する状態
+  - ひとり暮らし・高齢者のみ世帯が対象
+  - 高齢者のいる世帯は他にも条件あり
+  where: 高齢福祉課福祉係（042-514-8495）
+  url: https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/008/766/koureisyagokazokusabisur8.pdf
+  confidence: low
+- category: nichijo-yogu
+  name: 自立支援の日常生活用具の給付
+  name_on_page: 自立支援日常生活用具給付
+  summary: 腰かけ便座・入浴補助用具・歩行支援用具・スロープのうち 1 種目を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険で非該当と認定された方
+  - または基本チェックリストで用具が必要と認められた方
+  where: 地域包括支援センター（事前に相談）
+  url: https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/008/766/koureisyagokazokusabisur8.pdf
+  confidence: low
+- category: mimamori
+  name: 見守り機器（ハローライト）の設置費助成
+  name_on_page: 見守り機器(ハローライト)設置助成
+  summary: 民間賃貸に一人で住む方の、見守り機器の設置費を助成する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 概ね 60 歳以上
+  - 民間賃貸住宅（公共公営住宅・UR・社宅を除く）に一人で居住
+  where: 都市計画課住宅政策係（042-514-8371）
+  url: https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/008/766/koureisyagokazokusabisur8.pdf
+  confidence: low
+  amount: 設置費用の助成、上限 2 万円
+- category: sonota
+  name: 高齢者の民間賃貸住宅の家賃助成
+  name_on_page: 高齢者民間住宅家賃助成
+  summary: 民間賃貸に住む高齢者のみの世帯に、家賃の一部を毎月助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 世帯員全員が市内に引き続き 3 年以上住所がある
+  - 家賃が基準未満（1 人世帯は 7 万円未満など）
+  - 世帯全員の前年収入が基準額以内
+  - 生活保護を受けていない
+  - 都営・UR・社宅等は対象外
+  where: 高齢福祉課福祉係（事前に電話してから窓口へ）
+  url: https://www.city.hino.lg.jp/fukushi/kourei/1026646.html
+  confidence: high
+  amount: 月 1 万円（家賃 3 万円未満は家賃の 3 分の 1）
+- category: sonota
+  name: ひとり暮らし高齢者等の通院介助・生活支援（市独自）
+  name_on_page: ひとり暮らし高齢者等安心サポート事業
+  summary: 要介護・要支援の方に、通院の待ち時間の介助や掃除などを 1 割負担で提供する。
+  who:
+    age_min: 40
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 収入制限あり（詳細は問い合わせ）
+  - 同居家族が高齢などで介護できない場合も対象
+  - ケアプランで利用が必要とされている
+  - 介護保険が使えるときは介護保険を優先
+  where: 居宅介護支援事業所か地域包括支援センターに相談し、市（高齢福祉課在宅支援係）へ申請
+  url: https://www.city.hino.lg.jp/fukushi/kaigo/support/1003654.html
+  confidence: high
+- category: sonota
+  name: 高齢者の緊急一時保護
+  name_on_page: 高齢者緊急一時保護
+  summary: 介護者の緊急入院などで在宅介護ができないとき、一時的に施設で高齢者を保護する。
+  who:
+    at_home: true
+  at_application:
+  - 概ね 65 歳以上
+  - 介護者の緊急入院や親族の葬儀などで在宅介護ができない
+  where: 高齢福祉課在宅支援係、または地域包括支援センター
+  url: https://www.city.hino.lg.jp/_res/projects/default_project/_page_/001/008/766/koureisyagokazokusabisur8.pdf
+  confidence: low
+not_found:
+- gaishutsu

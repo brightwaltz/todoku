@@ -1,0 +1,185 @@
+city: '132187'
+name: 福生市
+site: www.city.fussa.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 福生市高齢者補聴器購入費助成事業
+  summary: 加齢で聞こえにくい住民税非課税の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内在住で住民税が非課税
+  - 障害者総合支援法の補聴器支援の対象でない
+  - 中等度難聴以上で医師意見書を出せる
+  - 過去5年以内にこの制度の助成を受けていない
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1019957.html
+  confidence: high
+  amount: 購入費の2分の1、上限4万円
+- category: sonota
+  name: 高齢者の家賃の月額給付
+  name_on_page: 高齢者居住支援特別給付金
+  summary: 賃貸住宅に住む低収入の高齢者世帯に、家賃の支援として毎月一定額を支給する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上を含む60歳以上のみの世帯
+  - 市内に3年以上住所がある
+  - 家賃月5千円以上7万円以下の民間賃貸に住む
+  - 収入が生活保護基準の1.5倍以内
+  - 公営・UR・サ高住などは対象外、滞納なし
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1002425.html
+  confidence: high
+  amount: 1世帯あたり月額5,000円
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス（高齢者専門宅配業者）
+  summary: 調理が難しい高齢者に、昼食の弁当を届けて安否も確認する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし等で買い物や調理が難しいと認められる
+  - 他の在宅サービスや親族・地域の支援状況も見て判断
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1005608.html
+  confidence: high
+  amount: 1食400円。週2回以内、月〜土の昼食
+- category: kinkyu-tsuho
+  name: 民間型の緊急通報システム
+  name_on_page: 高齢者救急代理通報システム（民間型）
+  summary: ボタンを押すと民間の受信センターに通報でき、救急要請や安否確認の出動を受けられる。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし等の高齢者
+  - 慢性疾患などで常時注意が必要な状態
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1009792.html
+  confidence: high
+  amount: 利用料は月594円（基本料の2割）。オプションは自己負担
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付
+  name_on_page: 自立支援日常生活用具給付
+  summary: 要介護・要支援でない高齢者に、腰掛便座や杖などの用具を給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護・要支援の認定を受けていない
+  - 用具の給付が必要と認められる
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1002414.html
+  confidence: high
+  amount: 費用の1割負担（市民税非課税・生活保護は無料）
+- category: jutaku
+  name: 高齢者の住宅改修の給付
+  name_on_page: 自立支援住宅改修給付
+  summary: 手すり設置や段差解消、浴槽・流し等の改修費を市が給付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 住宅改修が必要と認められる
+  - 手すり等は要支援・要介護の人は介護保険の対象
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1002415.html
+  confidence: high
+  amount: 限度額は工事内容により20万円・37万9千円・15万6千円。費用の1割負担（非課税等は無料）
+- category: haikai
+  name: 認知症高齢者の位置情報端末の貸与
+  name_on_page: 認知症高齢者位置情報探索機器貸与
+  summary: 道に迷う認知症の高齢者を介護する家族に、位置を調べられる機器を貸与する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 認知症の高齢者を介護している家族
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1002413.html
+  confidence: high
+  amount: 利用料は月330円
+- category: haikai
+  name: 見守りキーホルダー・アイロンシールの交付
+  name_on_page: 高齢者見守りキーホルダー・アイロンシール
+  summary: 登録番号と連絡先入りのキーホルダーとアイロンシールを無料で交付し、身元確認に役立てる。
+  who: {}
+  at_application:
+  - 65歳以上で外出に不安がある、または認知症のおそれがある
+  where: 介護福祉課 高齢者支援係
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1008428.html
+  confidence: high
+  amount: 無料
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきり等の要介護3以上の在宅の方の自宅へ理美容店が来て散髪する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時臥床またはそれに準ずる状態が続くと認められる
+  - 入院中の人は対象外、毎年度申請が必要
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1002418.html
+  confidence: high
+  amount: 利用券は年度6枚まで（10月以降の申請は3枚）、1回400円
+- category: kaigo-yohin
+  name: 紙おむつ等の助成
+  name_on_page: おむつ等助成
+  summary: 寝たきり等で要介護3以上の方に、紙おむつや尿取りパッドを支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりまたはそれに準ずる状態（認知症を含む）が続く
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1002419.html
+  confidence: high
+  amount: 費用負担なし。紙おむつは1日5枚まで等、種類ごとに上限あり
+- category: sonota
+  name: 家具転倒防止装置の取り付け
+  name_on_page: 高齢者家具転倒防止装置設置
+  summary: 高齢者世帯の家具に転倒防止装置を無料で取り付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護・要支援・事業対象者、または身体障害者手帳・愛の手帳を持つ
+  where: 介護福祉課 高齢者支援係（介護保険証を持参）
+  url: https://www.city.fussa.tokyo.jp/life/health/elderlypeople/1012612.html
+  confidence: high
+  amount: 無料。1世帯3個まで
+not_found:
+- iro
+- koken
+- shingu
+- gaishutsu
+- yutai
+- chusha

@@ -1,0 +1,161 @@
+city: '122122'
+name: 佐倉市
+site: www.city.sakura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: ふれあい配食サービス
+  name_on_page: ふれあい配食サービス
+  summary: 平日の夕食を手渡しで届け、不在時は安否を確認する配食サービス。
+  who: {}
+  at_application:
+  - 心身の障害等で調理や買い物が困難
+  - 近隣の扶養義務者から食事提供を受けられる人は除く
+  where: 高齢者福祉課（包括支援班）
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/3317.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報サービス事業
+  summary: 自宅に通報装置を設置し、24時間の受信センター対応と毎月の安否確認の電話を受けられる。
+  who:
+    at_home: true
+  at_application:
+  - ひとり暮らし、または同居者が緊急対応できない方
+  - 75歳以上、65〜74歳で要介護・疾病等の不安、または身体障害者手帳1・2級
+  - 日中のみひとりになる場合は対象外
+  - 協力員2名が必要（難しければ現場派遣員サービス月額330円）
+  - 固定電話か携帯電話が必要
+  where: 高齢者福祉課
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/12887.html
+  confidence: high
+  amount: 設置料なし。市民税所得割課税世帯は月額500円、それ以外は無料。
+- category: kaigo-yohin
+  name: 紙おむつ等の購入助成券
+  name_on_page: 紙おむつ等購入助成券
+  summary: 紙おむつ・尿とりパッド等の購入に使える助成券を毎月交付する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で要介護3〜5、または6歳以上で身体障害者手帳1・2級、重度の療育手帳
+  - 入院中・施設入所中の方は対象外
+  - ねたきり身体障害者等福祉手当の受給者は対象外
+  where: 高齢者福祉課
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/3318.html
+  confidence: high
+  amount: 1,500円券を月2枚（月3,000円分）。
+- category: ribiyo
+  name: 訪問理美容の費用助成
+  name_on_page: 訪問理美容の利用助成
+  summary: 自宅で理容・美容を受けるときに使える助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 高齢者または障害者のみで在宅生活をしている
+  - 市に登録された事業者の出張が必要
+  where: 高齢者福祉課（包括支援班）
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/2644.html
+  confidence: high
+  amount: 1枚1,000円の助成券を3か月ごとに1枚。
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立てにかかった費用や後見人等の報酬を、条件を満たせば助成する。
+  who: {}
+  at_application:
+  - 生活保護受給、または市民税非課税世帯で収入・資産が基準内
+  - その他、市長が特に必要と認める方
+  - 申請は審判のあった日から3か月以内
+  where: 高齢者福祉課（包括支援班）
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/5561.html
+  confidence: high
+  amount: 申立費用の実費。報酬は在宅で月28,000円、施設・入院で月18,000円が上限。
+- category: haikai
+  name: SOSステッカーの事前登録
+  name_on_page: 2市1町SOS高齢者等事前登録(SOSステッカー配布)
+  summary: 身体的特徴や連絡先を事前登録すると、登録番号入りの反射ステッカーを靴用に受け取れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に居住し、認知症等で行方不明になるおそれがある
+  - 上半身と全身の写真2枚が必要
+  where: 高齢者福祉課
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/131/2693.html
+  confidence: high
+- category: haikai
+  name: 位置情報（GPS）サービスの初期費用助成
+  name_on_page: 位置情報検索サービスの初期費用助成
+  summary: GPS端末を使う位置情報サービスの契約時の初期費用を助成する（上限あり）。
+  who: {}
+  at_application:
+  - GPS端末を使う位置情報サービスの利用者
+  - 契約・購入前に高齢者福祉課へ相談する
+  where: 高齢者福祉課
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/5422.html
+  confidence: high
+- category: gaishutsu
+  name: 福祉タクシー・福祉寝台車の運賃助成券
+  name_on_page: 佐倉市福祉タクシー（寝台車）運賃助成券
+  summary: 登録タクシーや寝台車の運賃を割り引く助成券を交付する。
+  who: {}
+  at_application:
+  - 65歳以上でねたきり高齢者台帳に登録されている方
+  - または身体障害者手帳（1・2級等）・療育手帳A・精神障害者保健福祉手帳1級の方
+  where: 障害福祉課（給付事業班）
+  url: https://www.city.sakura.lg.jp/soshiki/shogaifukushika/18153/18309.html
+  confidence: high
+  amount: タクシー券は運賃2,000円超で1,000円割引、2,000円以内は半額。年100枚まで。
+- category: sonota
+  name: はり・きゅう・マッサージの施術費助成券
+  name_on_page: はり、きゅう、マッサージ等施設利用助成券
+  summary: 登録施術者で施術を受けるときに使える助成券を年度ごとに交付する。
+  who: {}
+  at_application:
+  - 60歳以上、または身体障害者手帳・療育手帳をお持ちの18歳以上
+  - 健康保険や生活保護で施術を受ける場合は使えない
+  where: 高齢者福祉課、出張所・派出所
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/ikigai/2704.html
+  confidence: high
+  amount: 1枚600円の助成。4〜9月申請は12枚、10〜3月申請は6枚。
+- category: sonota
+  name: 養護老人ホームの短期宿泊
+  name_on_page: 佐倉市生活管理指導短期宿泊事業について
+  summary: 家族の用事や入院などのとき、自立した高齢者が養護老人ホームに短期宿泊できる。
+  who:
+    age_min: 65
+  at_application:
+  - 日常生活は自立していて介護保険給付の対象外
+  - 診断書が必要
+  - 入院治療が必要な方・感染症の方は除く
+  where: 高齢者福祉課（包括支援班）
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/3315.html
+  confidence: high
+  amount: 半年に7日まで。1日850円（生活保護世帯は無料）、食費等は実費。
+- category: sonota
+  name: 救急医療情報キットの給付
+  name_on_page: 佐倉市救急医療情報キットの給付（高齢者安心キット）
+  summary: 病歴や連絡先を入れて冷蔵庫に保管する救急医療情報キットを配布する。
+  who: {}
+  at_application:
+  - 75歳以上の在宅の方
+  - 65〜74歳はひとり暮らし・日中や夜間ひとり・認知症・障害等の方も申請可
+  where: 地域包括支援センター、高齢者福祉課
+  url: https://www.city.sakura.lg.jp/soshiki/koreishafukushika/126/3749.html
+  confidence: high
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- nichijo-yogu
+- mimamori

@@ -1,0 +1,139 @@
+city: '122289'
+name: 四街道市
+site: www.city.yotsukaido.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置
+  summary: ボタン一つで受信センターにつながる通報装置を貸与し、24時間相談と救急要請ができる。
+  who: {}
+  at_application:
+  - ひとり暮らしのおおむね65歳以上、または要援護高齢者
+  - 装置の目的を理解し、操作できる
+  where: 高齢者支援課（高齢者福祉係）
+  url: https://www.city.yotsukaido.chiba.jp/smph/kenkofukushi/koreifukushi/shien/koureisyafukushi.html
+  confidence: high
+  amount: ひとり暮らしで非課税は無料、課税は月1,000円。その他の世帯は課税状況で負担あり。
+  more_urls:
+  - https://www.city.yotsukaido.chiba.jp/kenkofukushi/koreifukushi/shien/welfare-guide2026.files/zaitakufukusi2026.pdf
+- category: gaishutsu
+  name: 福祉タクシー利用券の交付
+  name_on_page: 福祉タクシー
+  summary: ねたきりの高齢者などが市契約のタクシーに乗る際、料金の半額を助成する利用券を交付する。
+  who:
+    flags:
+    - bedridden_6m
+  at_application:
+  - 65歳以上、または要介護認定を受けた第2号被保険者
+  - 日常生活自立度がBまたはCランクのねたきり状態
+  - 市内在住（市外施設の入居者は対象外）
+  - 利用前に利用券の交付申請が必要
+  where: 高齢者支援課（高齢者福祉係）
+  url: https://www.city.yotsukaido.chiba.jp/smph/kenkofukushi/koreifukushi/shien/koureisyafukushi.html
+  confidence: high
+  amount: 1回の乗車料金の半額（上限1,000円）、年72枚まで。
+  more_urls:
+  - https://www.city.yotsukaido.chiba.jp/kenkofukushi/koreifukushi/shien/welfare-guide2026.files/zaitakufukusi2026.pdf
+- category: kaigo-yohin
+  name: 介護用品引換券の給付
+  name_on_page: 介護用品の給付
+  summary: 紙おむつや尿とりパットなどを買える引換券（購入業者は指定）を渡す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所があり、常時紙おむつや尿とりパットを使っている
+  - 施設入所中・入院中の人は対象外
+  - 生活保護受給者、障がい福祉の日常生活用具の対象者は対象外
+  - 世帯に課税者がいれば、本人が非課税でも対象外
+  where: 高齢者支援課（高齢者福祉係）
+  url: https://www.city.yotsukaido.chiba.jp/smph/kenkofukushi/koreifukushi/shien/koureisyafukushi.html
+  confidence: high
+  amount: 要介護3は月4,000円分、要介護4・5は月8,000円分（3か月分ずつ発送）。
+  more_urls:
+  - https://www.city.yotsukaido.chiba.jp/kenkofukushi/koreifukushi/shien/welfare-guide2026.files/zaitakufukusi2026.pdf
+- category: haikai
+  name: 認知症の人向け見守りシール
+  name_on_page: 見守りシール
+  summary: 発見者が二次元コードを読み取ると家族と直接連絡できるシールを無料で渡す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護保険の被保険者で、市内に住民票がある
+  - 認知症などで外出時に帰れなくなるおそれがある
+  - 読み取り時のメールを受け取り、対応できる介護者などがいる
+  where: 高齢者支援課（高齢者福祉係）
+  url: https://www.city.yotsukaido.chiba.jp/smph/kenkofukushi/koreifukushi/shien/koureisyafukushi.html
+  confidence: high
+  amount: シール30枚（耐洗ラベル20枚、蓄光シール10枚）を無料で支給。追加分は実費。
+  more_urls:
+  - https://www.city.yotsukaido.chiba.jp/kenkofukushi/koreifukushi/shien/welfare-guide2026.files/zaitakufukusi2026.pdf
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 後見人等報酬の助成
+  summary: 報酬を払うのが難しい高齢者に、家庭裁判所が決めた後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 「高齢者の方」とあり年齢の数字は頁に無い
+  - 市内在住で住民基本台帳に記録されている
+  - 生活保護を受けている、または非課税世帯・前年収入150万円以下・資産100万円以下の全てに当たる
+  - 後見人等が配偶者・直系血族・兄弟姉妹なら対象外
+  - 報酬付与の審判の翌日から3か月以内に申請
+  where: 高齢者支援課（高齢者福祉係）
+  url: https://www.city.yotsukaido.chiba.jp/kenkofukushi/seikatsusien/seinenkouken/korei2023.html
+  confidence: high
+  amount: 在宅は月28,000円以内、施設入所中は月18,000円以内。
+  more_urls:
+  - https://www.city.yotsukaido.chiba.jp/kenkofukushi/koreifukushi/shien/welfare-guide2026.files/1yoriyoiseikatsu2026.pdf
+- category: sonota
+  name: 電話de詐欺対策機器の購入費補助
+  name_on_page: 電話de詐欺対策機器等購入費補助金
+  summary: 詐欺対策機能つきの固定電話機などを買った65歳以上に、費用の一部を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に居住し、住民基本台帳に記録されている
+  - 市税等の滞納がない
+  - 1世帯1回のみ。過去に同種の補助を受けた人は対象外
+  - 令和8年4月1日以降に購入した対象機器が対象
+  where: くらし安全交通課（くらし安全係）
+  url: https://www.city.yotsukaido.chiba.jp/kurashi/bohan/bohan/denwadesagitaisaku.html
+  confidence: high
+  amount: 対象経費の2分の1（上限5,000円）。申請は令和9年1月31日まで、予算がなくなり次第終了。
+- category: sonota
+  name: ごみの戸別収集
+  name_on_page: 家庭ごみの戸別収集
+  summary: ごみ集積所までごみを出せない人の家へ、家庭ごみの収集に来てくれる。
+  who: {}
+  at_application:
+  - 65歳以上の単身または65歳以上のみの世帯で、要支援・要介護の認定を受けている
+  - または障害者手帳等を持つ単身者・その人のみの世帯、もしくは市長が認めた人
+  - 集積所へ出すのが難しく、他の人の協力も得られない
+  - 申請時に聞き取り調査がある
+  where: 高齢者支援課（要介護・要支援の認定を受けた高齢者）、障がい者支援課、廃棄物対策課またはクリーンセンター
+  url: https://www.city.yotsukaido.chiba.jp/kenkofukushi/koreifukushi/shien/welfare-guide2026.files/sonota2026.pdf
+  confidence: high
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- mimamori

@@ -1,0 +1,122 @@
+city: '122106'
+name: 茂原市
+site: www.city.mobara.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を在宅で介護する非課税世帯の家族が、指定の紙おむつ等を購入できる。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の高齢者を在宅で介護している家族が申請する
+  - 同居の介護者がいない場合は対象外
+  - 入院中・施設入所中は対象外
+  - 社協の紙おむつ支給とは併用できない
+  - 事前申請が必要（電子申請も可）
+  where: 高齢者支援課 地域包括支援室
+  url: https://www.city.mobara.chiba.jp/0000000347.html
+  confidence: high
+  amount: 令和8年度は年間60,000円まで（年度途中の開始は月割）。指定品目のみ
+  more_urls:
+  - https://www.city.mobara.chiba.jp/cmsfiles/contents/0000000/347/r8syouhinrisuto.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の方を同居で介護する家族に、慰労金が支給される。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用していない
+  - その方を同居で介護する家族に支給
+  where: 高齢者支援課 地域包括支援室
+  url: https://www.city.mobara.chiba.jp/0000000347.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与（あんしん電話）
+  name_on_page: 緊急通報装置の貸与（あんしん電話事業）
+  summary: ボタンでコールセンターにつながる緊急通報装置とペンダントを貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - ひとり暮らしの高齢者、高齢者のみの世帯の方、または日中か夜間にひとりになる高齢者
+  - 電話回線が必要
+  where: 高齢者支援課 地域包括支援室
+  url: https://www.city.mobara.chiba.jp/0000000347.html
+  confidence: high
+  amount: 月2,453円（税込）。ひとり暮らし・高齢者のみで非課税世帯、または生活保護世帯は無料
+- category: haikai
+  name: 認知症高齢者等の見守りシールの交付
+  name_on_page: 認知症高齢者等見守りシール交付事業
+  summary: QRコード付きの見守りシールを無料で支給し、迷ったときの発見と連絡に使える。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市の住民基本台帳に記録されている
+  - 認知症による徘徊症状が見られる
+  where: 高齢者支援課 地域包括支援室（市役所2階6番窓口）または本納支所
+  url: https://www.city.mobara.chiba.jp/0000006908.html
+  confidence: high
+  amount: 1人40枚セットを無料で支給
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話の貸与
+  summary: 固定電話も携帯電話もない単身高齢者に固定電話を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 市内在住
+  - 固定電話・携帯電話を持っていない
+  - 近隣に扶養者がいない
+  where: 高齢者支援課 地域包括支援室
+  url: https://www.city.mobara.chiba.jp/0000000347.html
+  confidence: high
+  amount: 基本料金と月30度数分までの通話料は無料。携帯への通話などは自己負担
+not_found:
+- haishoku
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

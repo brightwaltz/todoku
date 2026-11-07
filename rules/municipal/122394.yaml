@@ -1,0 +1,141 @@
+city: '122394'
+name: 大網白里市
+site: www.city.oamishirasato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の購入費助成（要介護4・5の在宅の方）
+  name_on_page: 介護用品購入の助成
+  summary: 在宅の要介護4・5の方の紙おむつ等の購入費を月額で助成する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 65歳以上は本人所得段階が1〜5号（本人が住民税非課税）の方
+  - 65歳未満の第2号被保険者も対象
+  - 施設入所中・入院中の方は対象外
+  where: 高齢者支援課（高齢者支援班）
+  url: https://www.city.oamishirasato.lg.jp/0000004255.html
+  confidence: high
+  amount: 月額4,000円まで（超過分は自己負担）
+  more_urls:
+  - https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置のレンタル
+  name_on_page: 緊急通報装置をレンタル
+  summary: ボタンを押すと受信センターにつながる緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - おおむね65歳以上のひとり暮らし・高齢者のみの世帯
+  - または重度身体障害者を含む世帯、日中独居の方（病状等の条件あり）
+  where: 高齢者支援課（高齢者支援班）
+  url: https://www.city.oamishirasato.lg.jp/0000003033.html
+  confidence: high
+  amount: 利用料は月200円（住民税非課税世帯）、400円（課税世帯）、日中独居は1,200円
+  more_urls:
+  - https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+- category: koken
+  name: 成年後見の申立て費用・後見人報酬の市負担
+  name_on_page: 成年後見制度の利用支援
+  summary: 親族の申立てが難しい場合に、市長が申立人となり費用や報酬を市が負担する。
+  who: {}
+  at_application:
+  - 市内に住所があり、判断能力が不十分な方
+  - 配偶者・2親等内の親族がいない、または音信不通の方
+  - 経済的な理由等で申立てが難しい場合
+  where: 高齢者支援課（高齢者支援班）
+  url: https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+  confidence: high
+  amount: 申立て費用や後見人報酬を、必要に応じて市が負担
+- category: gaishutsu
+  name: 送迎バスの無料乗車（パスカード）
+  name_on_page: 高齢者外出支援について
+  summary: 季美の森整形外科の送迎バスに、パスカード提示で無料で乗れる。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、1人で乗り降りできる方
+  - 事前にパスカードの交付申請が必要（1週間程度）
+  where: 高齢者支援課
+  url: https://www.city.oamishirasato.lg.jp/0000010335.html
+  confidence: high
+  amount: 運賃は無料
+  more_urls:
+  - https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+- category: gaishutsu
+  name: 福祉タクシー利用券の交付
+  name_on_page: 福祉タクシー助成事業
+  summary: 指定のタクシー利用時に1回500円まで助成する利用券を交付する。
+  who: {}
+  at_application:
+  - 要介護4・5の方
+  - または身体障害者手帳1・2級、療育手帳の重度以上、精神障害者保健福祉手帳1・2級の方
+  where: 社会福祉課（障がい福祉班）
+  url: https://www.city.oamishirasato.lg.jp/0000001482.html
+  confidence: high
+  amount: 1回500円まで、24枚
+  more_urls:
+  - https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+- category: gaishutsu
+  name: 福祉カー（車いす対応車）の貸出
+  name_on_page: 福祉カー貸出し
+  summary: 通院や外出のため、車いすのまま乗れる福祉カーを貸し出す。
+  who: {}
+  at_application:
+  - 市内在住の心身障害者または高齢者、その家族
+  - 運転する方の普通免許が必要
+  - 障害者手帳または介護保険被保険者証を提示
+  where: 社会福祉課（障がい福祉班）
+  url: https://www.city.oamishirasato.lg.jp/0000000167.html
+  confidence: high
+  amount: 車両の使用は無料（燃料は満タンで返却）
+  more_urls:
+  - https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり、きゅう、マッサージ等の施術費助成について
+  summary: 市に登録された施術所で使える利用票を交付し、施術料金から割り引く。
+  who:
+    age_min: 75
+  at_application:
+  - 市内に住所がある
+  - 保険診療で施術を受ける場合は使えない
+  where: 高齢者支援課、白里出張所
+  url: https://www.city.oamishirasato.lg.jp/0000004821.html
+  confidence: high
+  amount: 1回500円の割引（月2回まで）
+  more_urls:
+  - https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キットの配布
+  summary: 緊急連絡先などを入れて冷蔵庫に保管する救急医療情報キットを配る。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  where: 地域包括支援センター
+  url: https://www.city.oamishirasato.lg.jp/cmsfiles/contents/0000006/6876/shiori%28r8%29.pdf
+  confidence: high
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

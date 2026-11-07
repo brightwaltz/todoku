@@ -1,0 +1,217 @@
+city: '132063'
+name: 府中市
+site: www.city.fuchu.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: ねたきり高齢者の介護者への慰労金
+  name_on_page: ねたきり高齢者介護者慰労金
+  summary: 要介護3以上の人を在宅で常時介護する家族に、慰労金が振り込まれる。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者と被介護者の住民票の住所が同じで、共に生活している
+  - 介護者が要介護認定を受けていない
+  - 介護者が総合事業の事業対象者でない
+  - 介護者・被介護者とも市民税非課税世帯
+  - 介護者が就労等で不在がちで常時介護でないと対象外
+  where: 介護保険課介護サービス係（地域包括支援センターで申請代行）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/kaigosyairoukin.html
+  confidence: high
+  amount: 月額5,000円（4月・8月・12月にまとめて振込）
+- category: kaigo-yohin
+  name: 要介護3以上の人へのおむつ助成
+  name_on_page: 日常生活用品おむつの助成
+  summary: 要介護3以上でおむつが必要な人に、おむつを自宅へ届ける（入院中は使用料を助成）。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 生活保護を受けている人は対象外
+  - 障害者のおむつ助成を受けている人は対象外
+  - 申請した月分から対象（さかのぼり不可）
+  where: 介護保険課介護サービス係（地域包括支援センターで申請代行）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/itijouseikatuyouhinomutunojosei.html
+  confidence: high
+  amount: 在宅は月8千円相当まで現物、入院中は月8千円まで助成金
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 一定の聴力低下がある65歳以上に、補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住民票があり居住している
+  - 前年の合計所得金額が210万円未満
+  - 聴力が両耳とも40dB以上、または片耳70dB以上
+  - 補装具（補聴器）の支給を受けていない
+  - 過去5年以内にこの助成を受けていない
+  where: 高齢者支援課（地域包括支援センターで申請書配付）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/hochouki.html
+  confidence: high
+  amount: 補聴器本体費用の2分の1、上限4万円
+- category: gaishutsu
+  name: 要介護3以上の人のリフト付タクシー券
+  name_on_page: 高齢者車いす福祉タクシー
+  summary: 車いす等のまま乗れるリフト付タクシーで通院するための利用券を発行する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 車いす・ストレッチャーのまま乗降する通院が必要
+  - 障害者の福祉タクシー券やガソリン費助成を受けていない
+  where: 介護保険課介護サービス係（地域包括支援センターで申請代行）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/koureisyakurumaisufukusitaxi.html
+  confidence: high
+  amount: 30分1枚の券を年間24枚まで
+- category: ribiyo
+  name: 訪問理美容（調髪）の派遣
+  name_on_page: 訪問理容師・美容師の派遣
+  summary: 理容師・美容師が自宅を訪ね、無料で調髪する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 訪問当日に付き添いの人の同席が必要
+  - ヘアーカットのみのサービス
+  where: 高齢者支援課（市役所おもや1階9番窓口）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/houmonrihatubiyou.html
+  confidence: high
+  amount: 無料。月1回まで、年度で計8回まで
+- category: shingu
+  name: 寝具の乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 自宅で寝具を預かり、月1回乾燥して当日中に返す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 64歳以下の家族等と同居している人は対象外
+  - 障害者の寝具乾燥サービスを受けている人は対象外
+  where: 介護保険課介護サービス係、または地域包括支援センター
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/singukansousa-bisu.html
+  confidence: high
+  amount: 月1回の乾燥（水洗いの月あり）。費用は頁に記載なし
+- category: nichijo-yogu
+  name: 介護用具の貸与・入浴補助用具等の給付
+  name_on_page: 日常生活用具貸与・給付事業
+  summary: 介護用ベッド等の貸与や、入浴補助用具・電磁調理器の給付を受けられる。
+  who: {}
+  at_application:
+  - 原則65歳以上
+  - 介護認定が未申請か申請中、または一時的に身体機能が低下
+  - 貸与は要介護認定をすでに持つ人は対象外
+  - 電磁調理器だけは要介護認定を持つ人も申請できる
+  where: 介護保険課介護サービス係、または地域包括支援センター
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/nitijoseikatuyougutaiyokyufu.html
+  confidence: high
+  amount: 費用の1割が自己負担（生活保護は自己負担なし）。貸与は最長3か月
+- category: jutaku
+  name: 高齢者の自立支援住宅改修給付（市独自）
+  name_on_page: 高齢者自立支援住宅改修給付
+  summary: 手すり取付けや浴槽・トイレの改修などの費用を、市が一部給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 日常生活動作に困難があり、改修が必要と認められる
+  - 要介護認定の結果が出ている
+  - 予防給付は認定が非該当の人、設備給付は要介護・要支援の人
+  - 改修後の申込みは不可。自己負担は所得で異なる
+  where: 地域包括支援センター（問合せは介護保険課介護サービス係）
+  url: https://www.city.fuchu.tokyo.jp/kurashi/machi/jutaku/koresha.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 高齢者の救急通報システム
+  name_on_page: 高齢者救急通報システム
+  summary: 救急通報機器（希望で火災警報器・生活リズムセンサー）を貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 無料枠：心疾患・脳血管疾患等があり常時注意が必要な人
+  - 有料枠：70歳以上の単身か75歳以上のみの世帯で日常生活に不安
+  - 地域包括支援センター職員の調査が必要
+  where: 地域包括支援センター（問合せは高齢者支援課）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/koreisha/kintsusystem.html
+  confidence: high
+  amount: 無料枠は無料。有料枠は通報機器が月838円（火災警報器・センサー等は別料金）
+- category: haikai
+  name: 認知症の人のGPS探索端末の貸出し
+  name_on_page: 認知症高齢者等探索サービス
+  summary: 認知症の人を在宅で介護する家族に、GPS端末を貸し出し居場所を知らせる。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 市内に住民票があり居住している
+  - 本人が65歳以上、または要介護（要支援）認定を受けている
+  - 申請者は在宅で介護している家族
+  where: 地域包括支援センター
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/nintisyo/ninnchisyoukannrennjigyou/tannsaku.html
+  confidence: low
+  amount: 利用料は1割負担
+- category: haikai
+  name: おかえりサポートシールの配付
+  name_on_page: 認知症高齢者等おかえりサポートシールの配付
+  summary: 行方不明の恐れがある認知症の人の家族に、二次元コード付きシールを渡す。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住民票がある
+  - 65歳以上で認知症の症状がある、または64歳以下で認知症と診断されている
+  - 過去にこの事業を利用した人は対象外
+  where: 高齢者支援課（市役所おもや1階8番窓口）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/nintisyo/ninnchisyoukazokusienn/okaerisapo-to.html
+  confidence: low
+  amount: 無料（衣類用シール20枚・蓄光シール10枚）
+- category: mimamori
+  name: 認知症の人の見守り・話し相手・散歩の付添い
+  name_on_page: 認知症見守り等支援事業
+  summary: 社会福祉協議会の有償ボランティアが、自宅で見守りや散歩の付添いをする。
+  who:
+    at_home: true
+  at_application:
+  - 市に住民登録があり、認知症の症状が確認できる
+  - 前年の合計所得125万円未満、または生活保護受給世帯
+  - 生活援助員の派遣を受けていない
+  where: 府中市社会福祉協議会 まちづくり推進係（電話042-334-3040）
+  url: https://www.city.fuchu.tokyo.jp/kenko/korenokata/nintisyo/ninnchisyoukannrennjigyou/dimentia-mimamori.html
+  confidence: low
+  amount: 所得125万円未満の人は1時間350円から。生活保護世帯は無料
+not_found:
+- yutai
+- chusha

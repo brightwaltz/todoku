@@ -1,0 +1,202 @@
+city: 092053
+name: 鹿沼市
+site: www.city.kanuma.tochigi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ券の給付
+  name_on_page: ねたきり老人等紙オムツ券給付
+  summary: 在宅で要介護2以上の人に、紙おむつ・尿とりパッド用の券を毎月給付する。
+  who:
+    age_min: 40
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきり・認知症等で常時紙オムツを使っている
+  - 市税・後期高齢者医療保険料・介護保険料の滞納がない
+  - 入院中や施設入所中の人は対象外
+  where: 高齢福祉課、コミュニティセンター（オンライン申請も可）
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002267-0.html
+  confidence: high
+  amount: 月 2,000 円相当分（1,000 円券 2 枚）。指定ごみ袋引換券も併せて給付
+- category: iro
+  name: 介護手当
+  name_on_page: 介護手当
+  summary: 要介護4・5の高齢者を同居して在宅で介護している人に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 高齢者・介護者とも市内に6か月以上住所がある
+  - 介護者が同居し、介護を主として行っている
+  - 月15日以上、市内の居宅で介護した月が対象
+  where: 高齢福祉課、コミュニティセンター（オンライン申請も可）
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002277-0.html
+  confidence: high
+  amount: 高齢者 1 人につき月額 4,000 円（年 2 回に分けて支給）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者の補聴器購入費を助成します
+  summary: 手帳の対象とならない難聴の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳の聴力 40dB 以上で、聴覚の障害者手帳の対象でない
+  - 医師が補聴器の効果を見込めると診断した
+  - 市税・後期高齢者医療保険料・介護保険料の滞納がない
+  - 市内の認定補聴器技能者がいる販売店で購入する
+  where: 高齢福祉課
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000008636-0.html
+  confidence: high
+  amount: 課税者は購入費の 1/2 以内（上限 4 万円）。非課税者・生活保護は実費相当
+- category: haishoku
+  name: 配食サービス（食の自立支援事業）
+  name_on_page: 「食」の自立支援事業(配食サービス等)
+  summary: 調理が難しい要介護状態の高齢者に、昼食を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 高齢者と障がい者のみの世帯も対象
+  - 要介護認定者等で、自分での調理が難しい
+  - 家族や介護保険のサービスでは支援が足りない
+  where: 高齢福祉課、地域包括支援センター
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002270-0.html
+  confidence: high
+  amount: 昼食のみ原則週 2 回。1 食 400 円を事業者に支払う
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: ひとり暮らし等の高齢者宅に緊急通報装置を設置し、月 1 回安否確認の電話をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 病気などで日常生活に不安がある
+  - 30分以内に駆けつけられる協力員が 2 人以上必要
+  - 緊急連絡先となる親族等が必要
+  where: 高齢福祉課
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002268-0.html
+  confidence: high
+  amount: 設置・撤去工事費とレンタル料は市が負担。通信料は本人負担
+- category: haikai
+  name: 認知症高齢者等みまもりシールの交付
+  name_on_page: 認知症高齢者等みまもりシール交付事業
+  summary: 行方不明のおそれがある人の持ち物に貼る二次元コード付きシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住
+  - 認知症等で行方がわからなくなるおそれがある
+  - 医師の診断の有無は問わない
+  where: 高齢福祉課、コミュニティセンター（オンライン申請も可）
+  url: https://www.city.kanuma.tochigi.jp/0156/info-0000011136-0.html
+  confidence: high
+  amount: 1 人あたり 30 枚（耐洗ラベル 20 枚、蓄光シール 10 枚）
+- category: gaishutsu
+  name: 運転免許自主返納者へのバス回数券
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 運転免許をすべて返納した65歳以上の市民に、リーバス等の回数券を渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 有効な運転免許をすべて返納した
+  - 返納時と申請時のどちらも鹿沼市民
+  - 終身無料乗車券を持つ人は回数券を受けられない
+  where: 生活課交通政策係（行政棟2階）
+  url: https://www.city.kanuma.tochigi.jp/0156/info-0000003954-0.html
+  confidence: high
+  amount: 65〜74歳は11,000円分、75歳以上は1,100円分（1回のみ）
+- category: sonota
+  name: 高齢者くらしのお手伝い事業
+  name_on_page: 高齢者くらしのお手伝い事業
+  summary: 草むしりや掃除など介護保険外の生活援助を、月3時間分の利用券で受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 同一敷地内に親族の世帯がない
+  - 本人か同居者が要介護・要支援認定者または事業対象者
+  where: 高齢福祉課
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002265-0.html
+  confidence: high
+  amount: 月3時間分の利用券。利用料は事業者料金の20%（令和8年度は1時間230円）、材料費は別
+- category: sonota
+  name: 無料入浴券の交付
+  name_on_page: 無料入浴券の交付
+  summary: 自宅に風呂がない高齢者に、公衆浴場で使える無料入浴券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 自宅に入浴設備がない（故障中は除く）
+  - 申請に担当地区の民生委員の署名・捺印が必要
+  where: 高齢福祉課
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002273-0.html
+  confidence: high
+  amount: 月5枚（7〜9月は月10枚）
+- category: sonota
+  name: 救急医療情報キットの給付
+  name_on_page: 救急医療情報キット（みまもりくん）の給付
+  summary: 急病に備え、医療情報を冷蔵庫に保管する救急医療情報キットを給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 健康に不安のある65歳以上の高齢者、または対象の障がい者
+  - 障がい者は身体1・2級、療育A1・A2、精神1・2級の手帳が対象
+  - 上の世帯以外でも、市長が必要と認めた人は対象
+  where: 高齢福祉課（65歳未満の障がい者は障がい福祉課）
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002264-0.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージ施術費の助成
+  name_on_page: はり・きゅう・マッサージ施術費の助成
+  summary: 保険適用外のはり・きゅう・マッサージの施術費が割引になる助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 75歳以上、または65歳以上で身体障害者手帳1・2級
+  - 市内に住所がある
+  - 市税等の滞納がない
+  where: 高齢福祉課、コミュニティセンター（オンライン申請も可）
+  url: https://www.city.kanuma.tochigi.jp/0155/info-0000002266-0.html
+  confidence: high
+  amount: 助成券1枚で施術費から1,000円割引。年6枚まで（申請時期で3枚）
+not_found:
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

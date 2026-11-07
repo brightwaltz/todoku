@@ -1,0 +1,195 @@
+city: '122319'
+name: 印西市
+site: www.city.inzai.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置設置等サービス
+  summary: 緊急ボタン付きの通報装置を貸与し、24時間受信センターが対応、月1回の安否確認電話もある。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし、または高齢者世帯（日中不在が多い世帯を含む）
+  - 協力員が最低2名必要
+  - 市内に居住している
+  where: 高齢者福祉課生きがい支援係、印旛支所・本埜支所の市民サービス課
+  url: https://www.city.inzai.lg.jp/0000000676.html
+  confidence: high
+  amount: 利用料は月930円。住民税非課税世帯・生活保護世帯は0円
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/zaitakufukushi(R8.6).pdf
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつ給付サービス
+  summary: 常におむつが必要な要介護2以上の人に、紙おむつを月1回自宅へ配達する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 印西市の介護保険の被保険者
+  - 時々使う程度の人は対象外
+  - 配達先は市内に限る
+  where: 高齢者福祉課生きがい支援係、印旛支所・本埜支所の市民サービス課（ちば電子申請・郵送も可）
+  url: https://www.city.inzai.lg.jp/0000000770.html
+  confidence: high
+  amount: 商品ごとの上限パック数まで現物給付（月1回）
+- category: haishoku
+  name: 夕食の配食と安否確認
+  name_on_page: 配食サービス
+  summary: 調理が難しい人に夕食を手渡しで届け、安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、身体的・環境的に調理が困難
+  - 高齢者のみ・障害者のみ・両者のみの世帯
+  - または日中独居で調理が困難な世帯
+  - 利用前に聞き取りあり
+  where: 高齢者福祉課生きがい支援係、印旛支所・本埜支所の市民サービス課（郵送可）
+  url: https://www.city.inzai.lg.jp/0000000766.html
+  confidence: high
+  amount: 1食500円（生活保護世帯は400円）、週7日まで
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/zaitakufukushi(R8.6).pdf
+- category: gaishutsu
+  name: 福祉タクシー利用券
+  name_on_page: 福祉タクシー事業
+  summary: 要介護1以上の人にタクシー利用券を交付し、乗車料金の半額を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 印西市の介護保険の被保険者で市内に住所がある
+  - 特養・老健・介護医療院に入所中の人は不可
+  where: 高齢者福祉課生きがい支援係、印旛支所・本埜支所の市民サービス課
+  url: https://www.city.inzai.lg.jp/0000000684.html
+  confidence: high
+  amount: 年度30枚、1回の助成は料金の2分の1で上限1,000円
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/zaitakufukushi(R8.6).pdf
+- category: gaishutsu
+  name: 外出支援（移送）サービス
+  name_on_page: 外出支援サービス
+  summary: 電車・バス・タクシーを介助なしで使えない人を、医療機関や市の施設などへ送迎する。
+  who: {}
+  at_application:
+  - 介助なしでは公共交通機関の利用が困難な人
+  - 65歳以上の要支援・要介護認定者、身体障害者手帳を持つ人、またはそれと同等と判断された人
+  where: 高齢者福祉課生きがい支援係、印旛支所・本埜支所の市民サービス課（郵送可）
+  url: https://www.city.inzai.lg.jp/0000000723.html
+  confidence: high
+  amount: 基本1,000円（2時間まで）＋迎車500円＋1kmあたり30円など。週1回まで
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/zaitakufukushi(R8.6).pdf
+- category: gaishutsu
+  name: 福祉カー（車いす仕様車）の無料貸出
+  name_on_page: 福祉カー貸付事業
+  summary: 車いすでの移動が必要な高齢者らを介助する人に、車いす仕様車を無料で貸す。
+  who: {}
+  at_application:
+  - 市内に居住し、常時車いすでの移動が必要な高齢者を介助する人
+  - 運転者の手配はできない
+  - 運転免許証の写しが必要
+  where: 高齢者福祉課生きがい支援係
+  url: https://www.city.inzai.lg.jp/0000019063.html
+  confidence: high
+  amount: 貸出は無料（燃料は満タンで返却）、期間は2日以内
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/zaitakufukushi(R8.6).pdf
+- category: gaishutsu
+  name: ふれあいバス無料乗車カード
+  name_on_page: 高齢者ふれあいバス等無料乗車カードFUREiCA（フレアイカ）
+  summary: カードを見せると、ふれあいバスの運賃が無料になる。
+  who:
+    age_min: 70
+  at_application:
+  - 印西市内に住民登録がある
+  where: 高齢者福祉課生きがい支援係、各支所の市民サービス課、各出張所（ちば電子申請も可）
+  url: https://www.city.inzai.lg.jp/0000021204.html
+  confidence: high
+  amount: ふれあいバス運賃が無料
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/zaitakufukushi(R8.6).pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 印西市高齢者補聴器購入費用助成事業
+  summary: 医師が必要と証明した65歳以上の人の補聴器購入費を、1人1回助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 購入時と申請時に市内に住民登録がある
+  - 購入前に医師の証明書を取る
+  - 医療機器認定の補聴器で、購入の翌日から1年以内に申請
+  - 聴覚障害の身体障害者手帳を持つ人は対象外
+  where: 高齢者福祉課生きがい支援係、印旛支所・本埜支所（郵送可、出張所では申請不可）
+  url: https://www.city.inzai.lg.jp/0000012804.html
+  confidence: high
+  amount: 上限2万円（1人1回）
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: かかりつけ医や持病を書いて冷蔵庫に保管する救急医療情報キットを無料で配る。
+  who: {}
+  at_application:
+  - 市内に住所がある65歳以上の高齢者世帯の方など
+  - 障がいのある人も対象
+  where: 高齢者福祉課生きがい支援係、障がい福祉課、各支所の市民サービス課
+  url: https://www.city.inzai.lg.jp/0000003270.html
+  confidence: low
+  amount: 無料
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/zaitakufukushi(R8.6).pdf
+- category: koken
+  name: 成年後見人等への報酬助成
+  name_on_page: 成年後見人等の報酬助成
+  summary: 報酬を払うことが難しい成年後見制度の利用者に、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 成年被後見人・被保佐人・被補助人で、報酬の支払いが困難
+  - 報酬額の決定後に申請する
+  - 詳しい要件は市の案内に別記
+  where: 高齢者福祉課包括支援係（障がい福祉課支援係でも受付）
+  url: https://www.city.inzai.lg.jp/0000015834.html
+  confidence: low
+  more_urls:
+  - https://www.city.inzai.lg.jp/cmsfiles/contents/0000000/780/sonota(R8.6).pdf
+- category: sonota
+  name: 電話de詐欺対策の自動通話録音機器の貸与
+  name_on_page: 電話de詐欺対策機器の貸与事業を実施
+  summary: 75歳以上の人と同居する世帯に、通話を録音して警告する機器を3年間無料で貸す。
+  who: {}
+  at_application:
+  - 年度末に75歳以上になる市民と同居する世帯
+  - 機器を付けられる固定電話があり、録音機能付きの電話機は未所有
+  - 千葉県警察から貸与を受けていない
+  - 先着50台、令和9年3月12日必着
+  where: 市民活動推進課防犯対策係（郵送可）
+  url: https://www.city.inzai.lg.jp/0000017832.html
+  confidence: high
+  amount: 機器は無料貸与（電気代・通信料・修理費は自己負担）
+not_found:
+- iro
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

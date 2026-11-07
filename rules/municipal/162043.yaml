@@ -1,0 +1,200 @@
+city: '162043'
+name: 魚津市
+site: www.city.uozu.toyama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給
+  name_on_page: 魚津市おむつ等介護用品支給事業
+  summary: 常時おむつ等が必要な在宅の方に、介護用品を指定業者が自宅へ配達し、自己負担を軽くする。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所と居住実態があり、生活保護を受けていない
+  - 要介護3以上で自立度がB2以上または認知症Ⅲa以上
+  - または身体障害者手帳1・2級、市長が特に認める人
+  - 頁に現年度住民税非課税の方に限るとの注記あり
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=16328&cdkb=ctg&cd=2702&topkb=H
+  confidence: high
+  amount: 月 8,000 円を上限に、非課税世帯は 1 割、課税世帯は 4 割を自己負担
+- category: jutaku
+  name: 住宅改善（手すり・段差解消）の助成
+  name_on_page: 住宅改善の支援
+  summary: 要介護認定を受けていない高齢者の、手すり取付けと段差解消の工事費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護認定を受けていない人が対象
+  - 世帯に所得税が課税されている人がいると対象外
+  - 申請前に工事を始めたものは対象外
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=540&cdkb=ctg&cd=2702&topkb=H
+  confidence: high
+  amount: 対象工事費 45 万円まで、その 2/3 を助成
+- category: sonota
+  name: 屋根雪除雪費用の助成
+  name_on_page: 屋根雪除雪費用の助成
+  summary: ひとり暮らし高齢者などの非課税世帯が屋根雪を除雪した費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 70歳以上のみの世帯で市内に子がいない
+  - または身体障害者手帳1・2級の人のみの世帯で、市内に子か兄弟姉妹がいない
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=3574&cdkb=ctg&cd=2702&topkb=H
+  confidence: high
+  amount: 1 回 1 万円まで、年度 2 回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 傷病や障害のある一人暮らし等の高齢者に、緊急通報装置を無料で貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のひとり暮らし、または75歳以上のみの世帯
+  - 傷病や障害の状態で装置が必要と認められる
+  - 住民税課税世帯は対象外
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=537&cdkb=ctg&cd=2702&topkb=H
+  confidence: high
+  amount: 利用者負担は無料（通報時の通話料のみ自己負担）
+- category: nichijo-yogu
+  name: 車いすの短期貸与
+  name_on_page: 日常生活用具の貸与
+  summary: 短期間だけ車いすが必要な市内の方に、車いすを無料で貸し出す。
+  who: {}
+  at_application:
+  - 市内に住み、短期間のみ車いすが必要な人
+  - 事前に申請書を提出する
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=538&cdkb=ctg&cd=2702&topkb=H
+  confidence: high
+  amount: 貸与は最長 1 か月、本人負担なし
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい人に、昼・夜の食事を届ける（住民税非課税世帯に限る）。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上、または介護認定を受けた人、または身体障害者手帳の人
+  - 対象者のみの世帯、または同居者が食事の用意をできない世帯
+  - ヘルパー・家族対応や一般の宅配弁当が使える場合は対象外
+  - 配達できない地区がある
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=536&cdkb=ctg&cd=2702&topkb=H
+  confidence: high
+  amount: 必要に応じて 1 日 2 食（昼・夜）まで。土日祝・年末年始は除く
+- category: shingu
+  name: 寝具の丸洗いサービス
+  name_on_page: 寝具クリーニングサービス
+  summary: 寝具の衛生管理が難しい非課税世帯の方の寝具を、年 2 回無料で丸洗いする。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護1以上、または身体障害者手帳1・2級の人
+  - 同一世帯に②以外の65歳未満がいると対象外
+  - 入院・入所中は対象外
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=543&cdkb=ctg&cd=2702&topkb=H
+  confidence: high
+  amount: 年 2 回（8 月・12 月）、1 人 3 点まで無料
+- category: sonota
+  name: 在宅の要介護高齢者への福祉金
+  name_on_page: 在宅要介護高齢者福祉金の支給
+  summary: 在宅で暮らす要介護4以上の方に、福祉金を年2回に分けて支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 本人と同一世帯の人に所得制限がある（基準額は頁に無し）
+  - 入院・施設入所の月は対象外
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=539&cdkb=ctg&cd=2704&topkb=H
+  confidence: high
+  amount: 月額 5,000 円（9 月と 3 月に支給）
+- category: iro
+  name: 家族介護手当
+  name_on_page: 家族介護手当
+  summary: 在宅で要介護3以上の方を介護している家族に、介護手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 入院・施設入所の月は対象外
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=544&cdkb=ctg&cd=2704&topkb=H
+  confidence: high
+  amount: 月額 4,000 円（福祉金を受ける方の介護者は 2,000 円）。9 月と 3 月に支給
+- category: haikai
+  name: ひとり歩き高齢者等SOSネットワーク
+  name_on_page: ひとり歩き高齢者等ＳＯＳネットワーク事業
+  summary: 行方不明のおそれがある高齢者を事前に登録し、市内の協力者と早期発見・保護につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - ご家族が事前に申請書を出して登録する
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=3913&cdkb=ctg&cd=2705&topkb=H
+  confidence: high
+- category: haikai
+  name: 見守りシール（みつかるちゃシール）の無料交付
+  name_on_page: ひとり歩き高齢者等あんしん見守りシール交付事業（みつかるちゃシール）
+  summary: QRコード付きの見守りシールを無料で配り、行方不明時に家族へ発見メールが届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 魚津市に住民登録があり、SOSネットワーク事業に登録済み
+  - 未登録の方は同時に申請できる
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=21206&cdkb=ctg&cd=2705&topkb=H
+  confidence: high
+  amount: 耐洗ラベル 20 枚と蓄光シール 10 枚を無償交付（追加は自己負担）
+  more_urls:
+  - https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=3913&cdkb=ctg&cd=2705&topkb=H
+- category: koken
+  name: 成年後見制度の利用支援（報酬・申立て費用の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に困難な方の後見人等への報酬を助成し、市長申立ての場合は申立て費用も助成する。
+  who: {}
+  at_application:
+  - 市内に居住（介護保険・生活保護の保険者・援護地が魚津市の方も含む）
+  - 生活保護を受けている、または市県民税非課税で現金化できる資産がない
+  - その他、市長が報酬の負担が困難と認める人
+  - 申立て費用の助成は、身寄りがなく市長が申立てる場合のみ
+  where: 社会福祉課 高齢福祉係
+  url: https://www.city.uozu.toyama.jp/guide/svGuideDtl.aspx?servno=20316&cdkb=ctg&cd=2706&topkb=H
+  confidence: high
+  amount: 報酬は月 28,000 円まで（施設入所者は月 18,000 円まで）
+not_found:
+- hochoki
+- ribiyo
+- gaishutsu
+- mimamori
+- chusha
+- yutai

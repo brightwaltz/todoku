@@ -1,0 +1,249 @@
+city: '112241'
+name: 戸田市
+site: www.city.toda.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食事サービス（昼食配達と安否確認）
+  name_on_page: 食事サービス
+  summary: 調理や買い物が難しい人に、昼食を届けて安否も確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 買い物や調理ができず食事の確保が難しい
+  - 一般住宅に住む人が対象（施設は例外あり）
+  where: 健康長寿課（ケアマネジャー経由、いない場合は健康長寿課へ相談）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 利用者負担は 1 食 400 円
+- category: kaigo-yohin
+  name: 紙おむつ等の支給（現物・現金）
+  name_on_page: 紙おむつ等支給（現物支給・現金支給）
+  summary: 紙おむつ等を月 1 回支給。入院時などは購入費を現金で助成。
+  who:
+    age_min: 65
+    flags:
+    - uses_diapers
+  at_application:
+  - 現物は在宅で紙おむつ等を使う人が対象
+  - 現金は入院時や排泄介護機器用の紙おむつ利用者が対象
+  - 現物支給の月は現金支給を受けられない
+  where: 健康長寿課（ケアマネジャー経由）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 現物は 1 人月 5 パックまで（1 パック 150〜500 円の負担）。現金は月 5,000 円まで
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急時連絡システム
+  summary: 緊急時に発信できる相談機能付きの通報機器とペンダント型発信機を貸す。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし、または世帯員が病弱な高齢者世帯
+  - 固定電話か携帯電話が必要。緊急通報先を決めておく
+  - 業者の駆けつけサービスは付かない
+  where: 健康長寿課
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 利用者負担は通話料
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 日常生活用具の給付
+  summary: 電磁調理器、火災警報機、天ぷら火災用の自動消火器を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 住民税非課税世帯、または生活保護世帯
+  - 一般住宅に住む人が対象（施設は例外あり）
+  where: 健康長寿課（ケアマネジャー経由）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 利用者負担 0 円
+- category: shingu
+  name: 寝具類の乾燥・丸洗い
+  name_on_page: 寝具類乾燥等
+  summary: 敷布団・掛布団・毛布の乾燥と丸洗いを行う。
+  who:
+    age_min: 65
+  at_application:
+  - 自分で寝具を乾燥・丸洗いするのが難しい
+  - 家族の介護を受けられない
+  - 非課税世帯、または生活保護世帯
+  - 在宅要介護高齢者介護支援金とは併用できない
+  where: 健康長寿課（ケアマネジャー経由）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 利用者負担 100 円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきりの人の自宅へ理容師・美容師が年 4 回訪問する。
+  who:
+    age_min: 65
+  at_application:
+  - 寝たきり状態であること
+  - 一般住宅に住む人が対象（施設は例外あり）
+  where: 健康長寿課（ケアマネジャー経由）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 1 回の負担は世帯の課税状況で 100〜500 円
+- category: gaishutsu
+  name: 移送サービス（福祉車両の移送費助成）
+  name_on_page: 移送サービス
+  summary: 車いす・寝台のまま乗れる車両での、病院や施設への移送費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 一般の交通機関の利用が難しい寝たきり状態、または車いす利用
+  - 目的地は病院か施設に限る
+  where: 健康長寿課（ケアマネジャー経由）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 1 回 2,000 円を上限に助成。往復で 1 回、月 2 回まで
+- category: haikai
+  name: 徘徊高齢者探索システム利用助成
+  name_on_page: 徘徊高齢者探索システム
+  summary: 位置情報の端末を使う探索システムの初期費用と月額費用を一部助成する。
+  who:
+    age_min: 40
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 介護認定を受けている人
+  - 認知症等で徘徊癖がある
+  - 介護保険の施設に入所中は対象外
+  where: 健康長寿課
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 自己負担額の 90〜95％を助成
+- category: sonota
+  name: 歩行補助つえの支給
+  name_on_page: 歩行補助つえの支給
+  summary: 歩行が難しい人に歩行補助つえを支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 歩行が困難であること
+  - 一度支給を受けると 3 年間は再申請できない
+  - 申請には身分証が必要
+  where: 健康長寿課、各福祉センター、あいパル
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 利用者負担 500 円
+- category: sonota
+  name: 健康長寿入浴事業（銭湯の割引入浴証）
+  name_on_page: 健康長寿入浴事業
+  summary: 申請すると入浴証の引換券が出て、市内の銭湯を 200 円で使える。
+  who: {}
+  at_application:
+  - 対象者の条件はこの頁に書かれていない
+  - サウナ料金などは全額自己負担
+  where: 健康長寿課
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: low
+  amount: 入浴は 1 回 200 円
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 聞こえが低下した高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住み、住民基本台帳に記録がある
+  - 両耳 40 デシベル以上で、身体障害者手帳の対象にならない
+  - 耳鼻咽喉科の医師が補聴器の必要性を認めている
+  - 過去にこの助成を受けていない
+  where: 健康長寿課
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 上限 40,000 円（実費が少なければ実費）
+- category: koken
+  name: 成年後見制度の申立て・後見人報酬の助成
+  name_on_page: 成年後見制度利用者の助成
+  summary: 身寄りのない人の後見申立てを市が行い、後見人報酬の一部を補助する。
+  who: {}
+  at_application:
+  - 生活保護世帯、または報酬の補助がないと利用が難しい人
+  - 親族が後見人等の場合は対象外
+  - 住所要件と経済的要件がある
+  where: 健康長寿課（窓口に直接相談）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 報酬補助は月額上限 在宅 28,000 円、在宅以外 18,000 円
+- category: sonota
+  name: 日常生活自立支援事業の利用料助成
+  name_on_page: 日常生活自立支援事業（愛称：あんしんサポートねっと）利用者の助成
+  summary: 金銭管理などの支援事業を使った際の利用料を一部助成する。
+  who: {}
+  at_application:
+  - あんしんサポートねっとの利用者
+  where: 戸田市社会福祉協議会（048-442-0309）
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: low
+  amount: 1 か月分の利用料の 90〜95％（月 5,000 円まで）
+- category: iro
+  name: 在宅要介護高齢者介護支援金
+  name_on_page: 在宅要介護高齢者介護支援金
+  summary: 在宅で要介護 3 以上の高齢者を介護する市内の家族に支援金を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 年齢と要介護度は介護される高齢者の条件
+  - 介護する家族が市内に住んでいる
+  - 戸田市民で、一般住宅で介護を受けている
+  where: 健康長寿課
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 月額 5,000 円を年 2 回（9 月・3 月）に支給
+- category: sonota
+  name: 介護保険サービス利用者の特例助成
+  name_on_page: 介護保険サービス利用者特例助成
+  summary: 在宅で介護保険サービスを使った低所得の人の自己負担を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 低所得者であること（詳しい基準はこの頁に無い）
+  - 高額介護サービス費を除いた負担額が対象
+  where: 健康長寿課
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: low
+- category: sonota
+  name: 家具転倒防止器具の給付設置
+  name_on_page: 家具転倒防止器具給付設置事業
+  summary: 設置が難しい世帯に、家具転倒防止器具を無料で給付し取り付ける。
+  who: {}
+  at_application:
+  - 65 歳以上のみの世帯、要介護 4・5 の人がいる世帯などのどれか
+  - 障害者手帳 1・2 級などの人がいる世帯も対象
+  - 申請者は世帯主。1 世帯 1 回、先着順で予算がなくなると終了
+  where: 健康長寿課、各福祉センター、あいパル
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 利用者負担 0 円
+- category: mimamori
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 医療情報などを入れる専用容器を無料で配る。
+  who: {}
+  at_application:
+  - 健康上の不安がある人、高齢者、障害者のどれか
+  where: 健康長寿課、各福祉センター、あいパル
+  url: https://www.city.toda.saitama.jp/soshiki/234/chojukaigo-shien-zaitakufukusi.html
+  confidence: high
+  amount: 利用者負担 0 円
+not_found:
+- jutaku

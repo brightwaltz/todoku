@@ -1,0 +1,162 @@
+city: '102067'
+name: 沼田市
+site: www.city.numata.gunma.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの給付
+  name_on_page: 紙おむつ給付事業
+  summary: 常時おむつが必要な在宅の要介護3〜5の人に、紙おむつを2か月に1度届ける。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上
+  - 6か月以上ねたきり、または認知症の人
+  - 給付内容は課税状況や要介護度で分かれる
+  where: 介護高齢課 認定給付係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002335.html
+  confidence: high
+  amount: 費用負担なし
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+- category: haishoku
+  name: 配食サービス（昼食）
+  name_on_page: 「食」の自立支援事業
+  summary: ひとり暮らし等の高齢者に、週2日ほど昼食を手渡しで届け、安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし等の高齢者
+  - 自立支援のため利用が適当と認められた人
+  where: 介護高齢課 長寿支援係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002325.html
+  confidence: high
+  amount: 1食250円（自己負担）
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+- category: iro
+  name: 介護慰労金
+  name_on_page: 介護慰労金事業
+  summary: 在宅の高齢者を1年以上介護している人のうち、市の条件に合う人に慰労金を出す。
+  who: {}
+  at_application:
+  - 自宅で1年以上継続して介護している
+  - 市の定める条件に該当する（詳細は頁に無し）
+  - 該当者に市から申請書が送られる
+  where: 介護高齢課 認定給付係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002337.html
+  confidence: low
+- category: koken
+  name: 成年後見の申立費用・報酬の助成
+  name_on_page: 認知症高齢者等成年後見制度利用支援事業
+  summary: 成年後見の申立てにかかる経費と後見人等の報酬を、上限の範囲で一部助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険サービスを使う（使おうとする）認知症高齢者等
+  - 生活保護受給者、または本人が住民税非課税世帯
+  - 成年後見の申立てが必要な人
+  where: 介護高齢課 長寿支援係、ぬまた成年後見支援センター（社会福祉協議会内）
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002334.html
+  confidence: high
+  amount: 内容ごとに上限額あり（金額は頁に無し）
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+- category: shingu
+  name: 布団の乾燥・丸洗い
+  name_on_page: 布団乾燥・丸洗いサービス
+  summary: 寝具の乾燥消毒を月1回、丸洗いを年2回行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - ひとり暮らし、またはねたきりの人
+  - 寝具の乾燥が困難な人
+  where: 介護高齢課 長寿支援係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002326.html
+  confidence: high
+  amount: 乾燥は0〜1,250円、丸洗いは0〜4,500円（生計中心者の所得で決まる）
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+- category: ribiyo
+  name: 訪問理美容の利用券
+  name_on_page: 在宅訪問理美容サービス
+  summary: 理容師・美容師が自宅を訪問してカット等を行う利用券を、年4枚交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ねたきり、または認知症の人
+  where: 介護高齢課 長寿支援係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002328.html
+  confidence: high
+  amount: 1枚3,000円分の助成、年4枚。超えた分は自己負担
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付等
+  name_on_page: 日常生活用具給付等サービス
+  summary: 火災警報器・自動消火器・電磁調理器を補助付きで給付し、老人用電話の回線を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし等の高齢者
+  - 用具ごとに対象者が決まっている（詳細は窓口）
+  where: 介護高齢課 長寿支援係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002327.html
+  confidence: high
+  amount: 生計中心者の所得に応じて費用負担あり（金額は頁に無し）
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+- category: sonota
+  name: 救急医療情報キットの給付
+  name_on_page: 救急医療情報キット給付事業
+  summary: 医療情報や緊急連絡先を保管する容器とステッカーを無料で給付する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 日中または夜間に同様の状態の人
+  - 障害者総合支援法の障害者・障害児も対象
+  where: 介護高齢課 長寿支援係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002336.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: はり・きゅう・マッサージの施術助成券
+  name_on_page: はり・きゅう・マッサージ助成
+  summary: 施術1回につき1,500円分の助成券を年4枚交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 介護高齢課（テラス沼田3階）、白沢支所、利根支所
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002331.html
+  confidence: high
+  amount: 1回1,500円の助成、年4枚
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+- category: sonota
+  name: 生活管理指導員の派遣・短期宿泊
+  name_on_page: 生活管理指導員派遣及び短期宿泊事業
+  summary: 生活習慣の支援が要る人に、指導員を派遣するか養護老人ホーム等で短期間預かる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で介護認定が非該当（相当）の人
+  - 基本的な生活習慣が欠け、社会生活が困難な人
+  where: 介護高齢課 長寿支援係
+  url: https://www.city.numata.gunma.jp/life/fukushi/zaitaku/1002323.html
+  confidence: high
+  amount: 派遣・宿泊とも費用の10%を自己負担。生活保護世帯は無料
+  more_urls:
+  - https://www.city.numata.gunma.jp/_res/projects/default_project/_page_/001/014/134/2026pamphlet.pdf
+not_found:
+- haikai
+- hochoki
+- jutaku

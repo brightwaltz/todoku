@@ -1,0 +1,184 @@
+city: '142034'
+name: 平塚市
+site: www.city.hiratsuka.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 紙おむつの支給（家族介護用品支給事業）
+  summary: 要介護5の方を在宅で介護する非課税世帯に、紙おむつ等を毎月自宅へ届ける。
+  who:
+    care_levels:
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 平塚市に住民登録があり、居住実態がある
+  - 要介護5の高齢者と同居して介護している
+  - 同一住所の家族全員が市県民税非課税
+  where: 高齢福祉課（市役所本館1階120番窓口）
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01696.html
+  confidence: high
+  amount: 紙おむつ等を現物で支給（組み合わせ表から選ぶ。原則月1回配達）
+- category: shingu
+  name: ふとんの乾燥・丸洗い
+  name_on_page: ふとん乾燥・丸洗いサービス事業
+  summary: 自宅でふとんを預かり、乾燥または丸洗いをして届けてくれる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 病気等で寝具で過ごす時間が長い
+  - 本人と同居家族では乾燥・洗浄ができず清潔を保てない
+  where: 高齢者よろず相談センター（地域包括支援センター）、担当ケアマネジャー
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01695.html
+  confidence: high
+  amount: 利用者負担は1回1枚あたり、乾燥が課税世帯500円・非課税世帯250円・生活保護世帯100円、丸洗いが1,000円・500円・200円。乾燥は年10回程度、丸洗いは年2回。
+- category: ribiyo
+  name: 訪問理容・美容の助成券
+  name_on_page: 訪問理容・美容サービス
+  summary: 寝たきり等の高齢者が、助成券を使って自宅で理容・美容を受けられる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護3〜5の寝たきり高齢者、または
+  - 身体障害者手帳1・2級で外出が難しい高齢者
+  where: 高齢福祉課（市役所1階120番窓口）
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01693.html
+  confidence: high
+  amount: 助成券を使い、利用者負担は1回2,000円（理容で顔そりをする場合は3,000円）
+- category: kinkyu-tsuho
+  name: 在宅時緊急通報システム
+  name_on_page: 在宅時緊急通報システム
+  summary: 自宅に通報機器とセンサーを置き、緊急時に看護師への通話や警備員の駆け付けを受けられる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上
+  - 緊急対応が必要な発作を頻発するおそれがある
+  - 緊急連絡先2〜3名（原則市内在住）の登録が必要
+  - 緊急時に立ち入るため自宅の鍵（スペアキー）を預ける
+  where: 高齢者よろず相談センター（地域包括支援センター）、担当ケアマネジャー
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01699.html
+  confidence: high
+  amount: 機器の負担は月額400円（固定電話型）または500円（SIMカード内蔵型）
+- category: mimamori
+  name: お話し見守りケータイ
+  name_on_page: お話し見守りケータイ
+  summary: 携帯端末と見守りセンサーを貸与し、ブザー通報・安否確認・健康相談ができる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - おおむね65歳以上
+  - 日中独居は、同じ世帯の全員が就労等で週3日以上、1日6時間以上ひとりになる世帯
+  - 緊急連絡先2〜3名（原則市内在住）の登録が必要
+  where: 高齢者よろず相談センター（地域包括支援センター）、担当ケアマネジャー
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01698.html
+  confidence: high
+  amount: 利用者負担は月額、課税世帯800円・非課税世帯400円・生活保護世帯200円。鍵預かりは任意で月額550円（税込）
+- category: haikai
+  name: 認知症等行方不明SOS平塚（事前登録）
+  name_on_page: 認知症等行方不明SOS平塚
+  summary: 行方不明のおそれがある方を事前登録し、行方不明時に協力機関が捜索に協力する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 平塚市内に住んでいる
+  - 認知症によるひとり歩きで行方不明になるおそれ、または行方不明になった経験がある
+  - 申請書と顔写真1枚が必要
+  where: 高齢福祉課（市役所1階120番窓口）、高齢者よろず相談センター（地域包括支援センター）
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01700.html
+  confidence: high
+  amount: 利用者負担なし
+- category: haikai
+  name: 見守りGPSの貸与
+  name_on_page: 見守りGPS貸与サービス
+  summary: 登録者を介護する家族に、賠償保険付きの見守りGPS端末を貸与する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - SOS平塚に登録した高齢者等を介護している家族等が申し込む
+  - 施設入居中で外出に付き添いが要る方、療養病床入院中の方は対象外
+  where: 高齢福祉課（市役所1階120番窓口）、高齢者よろず相談センター（地域包括支援センター）
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01700.html
+  confidence: high
+  amount: 利用者負担は月額、課税世帯1,200円・非課税世帯900円・生活保護世帯600円
+- category: haikai
+  name: みまもりシールの交付
+  name_on_page: みまもりシール
+  summary: 二次元コード付きシールを交付し、発見されると家族にメールが届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - SOS平塚に登録した高齢者等を介護している家族等が申し込む
+  - 申請書と伝言板登録シートが必要
+  where: 高齢福祉課（市役所1階120番窓口）、高齢者よろず相談センター（地域包括支援センター）
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01700.html
+  confidence: high
+  amount: 30枚1セットを無料で配付（追加分は実費）
+- category: sonota
+  name: 軽作業代行（掃除・草むしり）
+  name_on_page: 軽作業代行事業
+  summary: 非日常的な掃除や草むしり・枝払いを従事者が代行してくれる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 親族等の協力を得られない
+  - 1回最大2時間。年4回まで（掃除と草むしりの合計）
+  where: 高齢者よろず相談センター、担当ケアマネジャー
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01709.html
+  confidence: high
+  amount: 利用者負担は1回あたり、掃除が非課税世帯3,850円・生活保護世帯2,850円、草むしり・枝払いが6,320円・5,320円（ごみ処分費1,160円を含む）
+- category: gaishutsu
+  name: 通院の付き添い派遣
+  name_on_page: 通院介助事業
+  summary: 通院に介助が必要な方へ介助者を1人派遣する。移動は原則タクシー。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 別に住む親族等の協力を得られない
+  - 身体介護はできない。1回最大2時間
+  - タクシー代（往復）は実費負担
+  where: 高齢者よろず相談センター、担当ケアマネジャー
+  url: https://www.city.hiratsuka.kanagawa.jp/fukushi/page-c_01746.html
+  confidence: high
+  amount: 利用者負担は1回あたり、課税世帯1,900円・非課税世帯1,400円・生活保護世帯900円。2時間超は15分ごとに525円
+not_found:
+- haishoku
+- iro
+- jutaku
+- nichijo-yogu
+- yutai

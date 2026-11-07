@@ -1,0 +1,139 @@
+city: '122050'
+name: 館山市
+site: www.city.tateyama.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等への配食サービス
+  name_on_page: 配食サービス
+  summary: 昼食の弁当を平日に届け、あわせて安否確認をする。
+  who: {}
+  at_application:
+  - 市内に住所があり、今も住んでいる
+  - 体の衰えなどで食事の調理や買物が困難
+  - おおむね65歳以上か心身障害者で、ひとり暮らしか高齢者のみ等
+  - 近くに扶養義務者がいない（いても食事の提供を受けられない）
+  where: 高齢者福祉課（または社会福祉課）
+  url: https://www.city.tateyama.chiba.jp/kourei/page100002.html
+  confidence: high
+  amount: 1食550円。市民税非課税世帯・生活保護世帯は1食350円。
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ボタン1つで緊急連絡先に電話できる装置を無料で貸し出す。
+  who: {}
+  at_application:
+  - 市内に住所があり、今も住んでいる
+  - おおむね65歳以上で、ひとり暮らしかそれに準ずる世帯
+  - NTTの電話回線と固定電話が必要
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.tateyama.chiba.jp/kourei/page100006.html
+  confidence: high
+  amount: 取付工事費・毎月の基本使用料は原則無料（通話料は自己負担）。
+- category: kaigo-yohin
+  name: 家族介護用品の給付
+  name_on_page: 家族介護用品の給付
+  summary: 在宅で介護する家族に、紙おむつなどの介護用品を現物で給付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 要介護4・5、または要介護3でねたきり・重度認知症
+  - 入院・入所中に使うものは対象外
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.tateyama.chiba.jp/kourei/page100005.html
+  confidence: high
+  amount: 要介護4・5は年額8万円、要介護3は年額5万円まで（現物給付）。
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重度の要介護者を介護する同一世帯の家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+  at_application:
+  - 本人が市内に1年以上住所を有している
+  - 要介護4か5が1年以上続いている
+  - 過去1年間、介護サービスを利用していない
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.tateyama.chiba.jp/kourei/page100008.html
+  confidence: high
+  amount: 年額10万円。
+- category: haikai
+  name: 徘徊高齢者等見守りシールの支給
+  name_on_page: 徘徊高齢者等見守りシール支給事業
+  summary: QRコード付きの見守りシールを無料で支給し、徘徊時の早期発見につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 次のいずれか：要介護・要支援で徘徊行動がある
+  - 徘徊で行方不明になり防災無線の捜索放送を使ったことがある
+  - 徘徊で警察に通報・保護されたことがある
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.tateyama.chiba.jp/kourei/page000001_00041.html
+  confidence: high
+  amount: 1人につきシール50枚セットを1回無料で支給。
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 家庭裁判所への申立費用や後見人への報酬の負担が難しい人に助成する。
+  who: {}
+  at_application:
+  - 認知症・知的障害・精神障害などで成年後見の利用が必要
+  - 申立費用や報酬を収入・資産の状況から負担しにくい
+  where: 高齢者福祉課 高齢者福祉係（0470-22-3487）
+  url: https://www.city.tateyama.chiba.jp/shafuku/page100025_00002.html
+  confidence: low
+- category: gaishutsu
+  name: 運転免許返納者へのタクシー利用助成券等
+  name_on_page: 運転免許自主返納者向けの特典
+  summary: 75歳以上で免許を返納した人に市内共通商品券を渡す。
+  who:
+    age_min: 75
+  at_application:
+  - 運転免許証を自主返納した（返納時に満75歳以上）
+  - 返納日から3年以内に申請、1度限り
+  - 運転免許取消通知書か運転経歴証明書が必要
+  - 令和8年12月31日で事業終了
+  where: 危機管理課（0470-22-3442）
+  url: https://www.city.tateyama.chiba.jp/kikaku/page100140.html
+  confidence: high
+  amount: 市内共通商品券5,000円相当
+- category: sonota
+  name: 高齢者ショートステイ事業
+  name_on_page: ショートステイ事業
+  summary: 要介護認定が非該当の人が、養護老人ホーム等に短期入所できる。
+  who: {}
+  at_application:
+  - 市内に住所があり、今も住んでいる
+  - 要介護認定が「非該当」
+  - 生活習慣や対人関係に問題があり、介護予防の生活支援が必要
+  - 申請時に診断書が必要
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.tateyama.chiba.jp/kourei/page100015.html
+  confidence: high
+  amount: 1回7日以内。1日2,360円（居住費・飲食物費）。生活保護世帯は無料。
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

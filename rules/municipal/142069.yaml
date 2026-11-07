@@ -1,0 +1,145 @@
+city: '142069'
+name: 小田原市
+site: www.city.odawara.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給（家族介護用品支給事業）
+  name_on_page: 紙おむつの支給（家族介護用品支給事業）
+  summary: 要介護3以上で非課税世帯の人を在宅で介護する家族に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 申請するのは介護している家族（介護者自身も住民税非課税）
+  - 要介護3は排せつの介護が必要と認められること
+  - 市内に住所があり現に居住している
+  - 紙おむつを使う本人は申請者になれない
+  where: 高齢介護課、地域包括支援センター
+  url: https://www.city.odawara.kanagawa.jp/field/welfare/s-support/homecare/2204omutu.html
+  confidence: high
+  amount: 要介護4・5は年2回、要介護3は年1回、紙おむつ等の現物を支給
+- category: kinkyu-tsuho
+  name: 独居老人等緊急通報システムの設置
+  name_on_page: 独居老人等緊急通報システム
+  summary: 要介護3〜5で65歳以上のひとり暮らし等の人に、緊急通報装置を設置する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住
+  - 取付工事が必要
+  where: 高齢介護課（高齢者福祉係）
+  url: https://www.city.odawara.kanagawa.jp/field/welfare/s-support/homecare/2202kintuu.html
+  confidence: high
+- category: gaishutsu
+  name: 在宅高齢者等福祉タクシー利用助成
+  name_on_page: 在宅高齢者等福祉タクシー利用助成（タクシー利用券）
+  summary: 要介護3〜5の在宅の人に、通院等のタクシー初乗り運賃相当額の利用券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内在住
+  - 重度障がい者等のタクシー券の対象者は対象外
+  - 自動車税・軽自動車税の減免を受けている人は対象外
+  - 施設入所者、3か月超の入院者は対象外
+  where: 高齢介護課（16番窓口）
+  url: https://www.city.odawara.kanagawa.jp/field/welfare/s-support/homecare/2203takusi-.html
+  confidence: high
+  amount: 1か月4枚（4月末までの申請は48枚）、利用券1枚で初乗り運賃相当額
+- category: haikai
+  name: 認知症等行方不明SOSネットワーク事業
+  name_on_page: 小田原市認知症等行方不明SOSネットワーク事業
+  summary: 行方不明のおそれがある認知症の人を事前登録し、見守りアイロンシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上の認知症で行方不明のおそれがある人
+  - 65歳未満は若年性認知症で市長が必要と認める人
+  - 届出者は親族（ケアマネジャーは不可）
+  - 本人のカラー写真2枚（全身・顔）が必要
+  where: 高齢介護課（16番窓口）、地域包括支援センター
+  url: https://www.city.odawara.kanagawa.jp/field/welfare/s-support/homecare/2210mayoi.html
+  confidence: high
+  amount: 初回と2年ごとの更新時に、見守りアイロンシールを1人10枚配布
+- category: koken
+  name: 成年後見制度の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度の助成について
+  summary: 費用の負担が難しい人の、審判請求費用と後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 小田原市に住民登録がある成年被後見人等
+  - 生活保護の人、または非課税世帯か年収150万円以下で預貯金100万円以下の人
+  - 上記以外でも、費用負担が困難と市が認める人
+  where: 高齢介護課（地域包括支援係）
+  url: https://www.city.odawara.kanagawa.jp/global-image/units/338917/1-20260310120136_b69af8990bc6fa.pdf
+  confidence: high
+  amount: 審判請求費用の実費相当と後見人報酬（上限は月額で施設18,000円、在宅28,000円）
+- category: yutai
+  name: 福寿カード（市内施設の入場無料）
+  name_on_page: 福寿カード
+  summary: 60歳以上に交付するカードで、小田原城などの市内施設に無料で入れる。
+  who:
+    age_min: 60
+  at_application:
+  - 市内在住
+  - 本人確認書類を持参して申請する
+  where: 高齢介護課、各タウンセンター住民窓口、アークロード市民窓口
+  url: https://www.city.odawara.kanagawa.jp/global-image/units/338917/1-20260310120136_b69af8990bc6fa.pdf
+  confidence: high
+  amount: 小田原城天守閣など対象施設の入場が無料（付き添い1名も無料の施設あり）
+- category: sonota
+  name: はり・きゅう・マッサージ等の施術費助成
+  name_on_page: はり・きゅう・マッサージ等施術費助成
+  summary: 75歳以上に、協定施術所での施術1回につき1,000円を助成する助成券を出す。
+  who:
+    age_min: 75
+  at_application:
+  - 市内在住
+  - 年度内に75歳になる人を含む
+  where: 高齢介護課、各タウンセンター住民窓口、アークロード市民窓口（郵送可）
+  url: https://www.city.odawara.kanagawa.jp/global-image/units/338917/1-20260310120136_b69af8990bc6fa.pdf
+  confidence: high
+  amount: 1回1,000円、年3回まで
+- category: sonota
+  name: 特殊詐欺対策の電話機器購入費補助
+  name_on_page: 特殊詐欺対策電話機器の購入費の補助
+  summary: 70歳以上に、迷惑電話防止機能つきの電話機器の購入費の一部を補助する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内在住
+  - 1世帯1台まで、携帯電話・スマホは対象外
+  - 先着順で、予算に達したら受付終了
+  where: 地域安全課
+  url: https://www.city.odawara.kanagawa.jp/global-image/units/338917/1-20260310120136_b69af8990bc6fa.pdf
+  confidence: low
+  amount: 購入費の3分の2（上限6,000円）
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

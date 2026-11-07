@@ -1,0 +1,203 @@
+city: '152048'
+name: 三条市
+site: www.city.sanjo.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与
+  summary: 緊急通報・安否センサー・火災警報器つきの装置を貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 固定電話か携帯電話・スマホ等の端末を持っている
+  - 65歳未満でも持病や障がいで安否確認が必要なら相談できる
+  where: 高齢介護課 介護保険係、栄・下田サービスセンター
+  url: https://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/8864.html
+  confidence: high
+  amount: 月額の利用料が課税状況と機種で変わる（0円〜3,500円）。工事費は無料。
+- category: sonota
+  name: 福祉電話の貸与
+  name_on_page: 福祉電話貸与
+  summary: 電話のない高齢者に電話機を貸し、基本料金を市が助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 携帯電話を含め電話を持っていない
+  - 市民税非課税の方
+  - 65歳未満でも持病や障がいで連絡手段が必要なら相談できる
+  where: 高齢介護課 介護保険係、栄・下田サービスセンター
+  url: https://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/8865.html
+  confidence: high
+  amount: 回線使用料・電話機使用料などを助成。通話料と工事費は自己負担。
+- category: iro
+  name: 在宅介護支援金
+  name_on_page: 在宅介護支援金支給
+  summary: 在宅の要介護3以上の人（または介護する人）に支援金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住んでいる
+  - 要介護者本人またはその介護をする方が申請
+  where: 高齢介護課 介護保険係、栄・下田サービスセンター
+  url: https://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/8861.html
+  confidence: high
+  amount: 月額6,000円（年3回、4か月分ずつ振込）
+- category: jutaku
+  name: 高齢者住宅整備補助（介護保険の住宅改修に上乗せ）
+  name_on_page: 高齢者住宅整備補助
+  summary: 段差解消や手すりなどの住宅改修費の一部を補助する。介護保険と併用できる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内に住み、おおむね65歳以上
+  - 世帯員の前年の収入合計が600万円未満
+  - 過去に補助を受けた世帯は対象外（1世帯1回）
+  - 介護保険の住宅改修費が先に適用される
+  where: 高齢介護課 介護保険係、栄・下田サービスセンター
+  url: https://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/8867.html
+  confidence: high
+  amount: 上限30万円。補助率は生活保護世帯100%、所得税非課税世帯75%、その他50%。
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成券
+  name_on_page: 紙おむつ購入費助成
+  summary: 在宅で紙おむつを使う要介護1以上の人に、購入用の助成券を渡す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 三条市の介護保険被保険者で、市に住民登録がある
+  - ケアハウス・グループホーム・有料老人ホームも在宅に含む
+  where: 高齢介護課 介護保険係、栄・下田サービスセンター
+  url: https://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/8859.html
+  confidence: high
+  amount: 月額で課税世帯は2,000円分、非課税世帯は4,000円分の助成券
+- category: hochoki
+  name: 難聴者の補聴器購入費助成
+  name_on_page: 難聴者補聴器購入費助成事業
+  summary: 手帳の対象でない難聴の50歳以上の人に補聴器購入費を助成する。
+  who:
+    age_min: 50
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住み、身体障害者手帳の対象にならない難聴の方
+  - 片耳の聴力が40デシベル以上
+  - 医師が補聴器の装用を必要と認めた
+  - 技能者の調整か耳鼻科受診のうえ1週間以上試聴した
+  where: 高齢介護課 介護保険係、栄・下田サービスセンター
+  url: https://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/14428.html
+  confidence: high
+  amount: 非課税・生活保護世帯は購入費（上限5万円）、その他は1/2（上限2万5千円）
+- category: haikai
+  name: 認知症の人への靴ステッカー配布
+  name_on_page: 認知症高齢者等靴ステッカー見守り事業
+  summary: 行方不明のおそれがある認知症の人に、番号入りの靴ステッカーを無料で渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで外出後に自力で帰れず行方不明になるおそれ
+  - 医師の診断がなくても同様の行動があれば対象
+  - 家族・本人・後見人が申請（ケアマネ経由も可）
+  where: 高齢介護課 介護保険係、各地域包括支援センター
+  url: http://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/11592.html
+  confidence: high
+  amount: 無料。番号つきステッカー10足分を郵送。
+- category: haikai
+  name: GPS機器の試用レンタル費の助成
+  name_on_page: 見守り装置レンタル費用助成事業
+  summary: 徘徊のおそれがある人のGPS機器の試用レンタル費用を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、65歳以上、または要介護・要支援の認定を受けている
+  - 認知症等で徘徊するおそれがあると認められる
+  - 入院中や介護保険施設入所中（短期入所を除く）でない
+  where: 高齢介護課 介護保険係
+  url: https://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/nintisyomonowasure/14431.html
+  confidence: high
+  amount: 初期手数料は1回1万円（上限2回）、月額は3,000円で3か月まで。非課税世帯は全期間。
+- category: mimamori
+  name: ボランティアによる高齢者の見守り訪問
+  name_on_page: 高齢者等見守り事業
+  summary: 地域のボランティアが週1回を基本に訪問し、声掛けやごみ出しなどを行う。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上だけの世帯
+  - 家族と同居でも日中ひとりになる65歳以上の方
+  - その他、声掛けが必要な方（障害手帳の方など）
+  - 本人・家族のほか民生委員等も本人の同意で申請できる
+  where: 高齢介護課 高齢福祉係
+  url: http://www.city.sanjo.niigata.jp/kenko_fukushi/koureisyamukeservicekaigohoken/koureisyahukushisservice/12659.html
+  confidence: high
+- category: sonota
+  name: 認知症の人の個人賠償責任保険への加入支援
+  name_on_page: 認知症高齢者等個人賠償責任保険
+  summary: 認知症の人の事故に備える賠償責任保険に、市が全額負担で加入できる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内に住んでいる
+  - 認定調査で認知症高齢者の日常生活自立度が2a以上
+  where: 高齢介護課 介護保険係（認定結果に同封の申請書を返送）
+  url: https://www.city.sanjo.niigata.jp/soshiki/fukushihokembu/koreikaigoka/kaigohoken/zaitakuderiyoudekiruservice/15280.html
+  confidence: high
+  amount: 加入料は無料。1事故あたり最大1億円（国内のみ）。
+- category: gaishutsu
+  name: デマンド交通の割引カード「おでかけパス」
+  name_on_page: おでかけパス
+  summary: デマンド交通の運賃が割引になり、協賛店の特典も受けられるカード。
+  who: {}
+  at_application:
+  - 市内在住の満65歳以上、または運転免許を返納した方
+  - 免許返納から1年以内は発行料が無料
+  where: 環境課、栄・下田サービスセンター
+  url: https://www.city.sanjo.niigata.jp/soshiki/shimimbu/kankyoka/seikatsuanzen/kokyokotsu/2547.html
+  confidence: high
+  amount: 発行料1,000円。市街地エリア内は500円が400円になる。
+not_found:
+- haishoku
+- koken
+- ribiyo
+- shingu
+- nichijo-yogu
+- chusha

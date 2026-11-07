@@ -1,0 +1,128 @@
+city: '152234'
+name: 阿賀野市
+site: www.city.agano.niigata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費助成券
+  name_on_page: 紙おむつ等購入費助成事業
+  summary: 常時紙おむつが必要な在宅高齢者に、介護用品を買える助成券を出す。
+  who:
+    age_min: 65
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 世帯の市民税所得割の合計が20万円未満
+  - 状態調査で14点以上（要介護4以上は調査なし）
+  where: 福祉支援課 介護保険係、各支所、または電子申請
+  url: https://www.city.agano.niigata.jp/kenko_iryo_fukushi/koreishafukushi_kaigo/4679.html
+  confidence: high
+  amount: 月額 5,000円（世帯非課税）、3,500円（均等割課税）、2,000円（所得割課税）の助成券
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ボタンで警備会社に通報できるペンダント式の装置を貸し、火災報知器も付ける。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所がある在宅の人で、緊急時の対応が難しいと認められる
+  - 概ね65歳以上の一人暮らし
+  - 概ね65歳以上のみの世帯で、1人が病弱または寝たきり
+  - 重度の心身障害があり、上記の世帯に準ずる世帯の人
+  where: 福祉支援課 介護保険係、各支所、または電子申請
+  url: https://www.city.agano.niigata.jp/kenko_iryo_fukushi/koreishafukushi_kaigo/4678.html
+  confidence: high
+  amount: 利用料は月額 0円（世帯非課税）、500円（均等割課税）、1,000円（所得割課税）
+- category: ribiyo
+  name: 訪問理美容の助成券
+  name_on_page: 高齢者訪問理美容サービス助成事業
+  summary: 店に行けない要介護3以上の在宅の人に、訪問理美容に使える助成券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 心身の状態で理美容店に出向くのが難しい
+  - 年度ごとに申請が必要
+  where: 福祉支援課 介護保険係、各支所、または電子申請
+  url: https://www.city.agano.niigata.jp/kenko_iryo_fukushi/koreishafukushi_kaigo/4671.html
+  confidence: high
+  amount: 1回あたり上限 3,000円、年度に 4回まで
+- category: jutaku
+  name: 高齢者・障がい者向け住宅改造費の助成
+  name_on_page: 高齢者・障がい者向け住宅改造費助成
+  summary: 居室・浴室・トイレなどの改造やホームエレベーター設置の費用を助成する。
+  who: {}
+  at_application:
+  - 世帯員の収入合計が600万円未満
+  - 要介護認定を受けた人、身体障害者手帳1・2級、療育手帳Aのいずれか
+  - 工事は決定通知を受けてから着工する
+  where: 要介護認定の人は高齢福祉課 高齢福祉係。手帳の人は社会福祉課 相談支援係
+  url: https://www.city.agano.niigata.jp/kenko_iryo_fukushi/koreishafukushi_kaigo/koreishamukenosupport/5176.html
+  confidence: high
+  amount: 基準額は要介護認定の人 30万円、手帳の人 50万円。所得税課税世帯は1/2、非課税世帯は3/4、生活保護世帯は全額を助成
+- category: haikai
+  name: 認知症高齢者等の見守り（反射ステッカー）
+  name_on_page: 認知症高齢者等見守り事業
+  summary: 登録した人に、靴などに貼る登録番号入りの反射ステッカーを渡し、行方不明時の身元確認に役立てる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明や事故が心配される市民
+  - 65歳以上、または40〜64歳で認知症と診断された人
+  where: 福祉支援課 地域包括支援センター阿賀野
+  url: https://www.city.agano.niigata.jp/kenko_iryo_fukushi/koreishafukushi_kaigo/koreishamukenosupport/11509.html
+  confidence: high
+  more_urls:
+  - https://www.city.agano.niigata.jp/material/files/group/14/mimamri.pdf
+- category: koken
+  name: 成年後見制度の申立費用・報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人の、後見の申立費用や後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護の受給者、または市長が準ずると認める人
+  - 申立費用は市内在住で、市長申立てをする人が対象
+  - 報酬は後見人等がついた市内在住の人が対象（市外は条件あり）
+  where: 地域包括支援センター（65歳以上）、障がい者基幹相談支援センター（65歳未満）
+  url: https://www.city.agano.niigata.jp/soshiki/fukushi-shienka/kikansoudan/9784.html
+  confidence: high
+  amount: 報酬は上限が月 28,000円（在宅）、月 18,000円（入所）。申立費用は手数料・診断書料などを助成
+- category: sonota
+  name: 屋根の雪降ろし費用の助成
+  name_on_page: 高齢者世帯等雪降ろし費用扶助事業
+  summary: 援助を受けられない非課税世帯の、住宅の屋根の雪降ろし費用を一部助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内に住所があり、親族や知人の援助が受けられない
+  - 65歳以上のみの世帯、母子世帯、身体障がい者のみの世帯などのいずれか
+  - 世帯分離をしていると対象外になることがある
+  where: 福祉支援課（介護保険係）、各支所
+  url: https://www.city.agano.niigata.jp/kenko_iryo_fukushi/koreishafukushi_kaigo/4680.html
+  confidence: high
+  amount: 1回最大 2万円まで、1世帯で年度に 3回まで
+not_found:
+- haishoku
+- iro
+- hochoki
+- shingu
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

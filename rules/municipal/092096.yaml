@@ -1,0 +1,196 @@
+city: 092096
+name: 真岡市
+site: www.city.moka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり高齢者等の紙おむつ給付券
+  name_on_page: ねたきり高齢者等紙おむつ給付
+  summary: 在宅でおむつを常時使う要介護者などに、市内協定店で使える紙おむつ給付券を出す。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で要介護3以上、常時おむつ使用
+  - 65歳未満は要介護3以上で認知症の状態が高い方
+  - 身体障害者手帳2級以上などの重度障がい者も対象
+  - 入院中・施設入所中は対象外
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/2/16556.html
+  confidence: high
+  amount: 月3枚、1枚で1,000円分の割引（申請月から交付）
+- category: iro
+  name: ねたきり在宅者等の介護手当
+  name_on_page: ねたきり在宅者等介護手当
+  summary: 在宅のねたきり・認知症の方などを同居して常時介護する家族に、介護手当を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 被介護者と同居して常時介護している方が対象
+  - 要介護4以上で6か月以上ねたきり、または要介護3以上で認知症が6か月以上
+  - 身体障害者手帳2級以上などの重度障がい者の介護も対象
+  - 被介護者が入院・施設入所中は対象外
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/2/16555.html
+  confidence: high
+  amount: 月額8,000円（1か月に28日以上ショートステイを使うと、その月は対象外）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無料設置
+  name_on_page: 緊急通報システム
+  summary: 人感センサー・熱センサー・緊急通報装置を設置し、24時間の電話相談と月1回の訪問がある。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - with_family
+    at_home: true
+  at_application:
+  - 65歳以上、または65歳未満の重度身体障がい者
+  - ひとり暮らし、高齢者のみの世帯、重度障がい者と同居のいずれか
+  - 市長が必要と認める方（健康状態などで判断）
+  - 訪問調査あり
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/18245.html
+  confidence: high
+  amount: 設置は無料（修理代などは自己負担）
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者に補聴器購入費を助成します
+  summary: 耳が聞こえにくい非課税世帯の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻科医の意見書が出る
+  - 過去にこの助成を受けていない
+  - 購入前に申請・相談する（認定店での購入が条件）
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/kakuka/ikiiki/gyomu/koreisha_fukushi/support_koreisha/2/20020.html
+  confidence: high
+  amount: 補聴器1台分、上限50,000円（1人1回）
+- category: gaishutsu
+  name: 老人福祉タクシー券
+  name_on_page: 老人福祉タクシーの利用を助成します！
+  summary: 車を持たない高齢者のみの世帯などに、市内協定タクシーで使える利用券を交付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 自動車（原付を含む）を所有・使用していない
+  - 同一敷地・隣近所に若い世帯がいない
+  - 民生委員の確認のうえで交付
+  where: 高齢福祉課（窓口またはオンライン申請）
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/2/18263.html
+  confidence: high
+  amount: 月5枚（年60枚まで）、1枚500円。バスの無料乗車券がない世帯には回数券（年12枚まで）
+- category: gaishutsu
+  name: 介護タクシー等の外出支援利用券
+  name_on_page: 高齢者等外出支援事業
+  summary: 在宅で介護が必要な方の通院などの外出に、リフト付き車両などの利用券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4以上のねたきり高齢者
+  - または身体障害者手帳2級以上、療育手帳A2以上の方も対象
+  - 市内に住所がある
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/18513.html
+  confidence: high
+  amount: 月3枚（年36枚まで）、1枚500円分の割引
+- category: mimamori
+  name: ハローコール（電話での安否確認）
+  name_on_page: ハローコール
+  summary: 在宅のひとり暮らし高齢者に、定期的に電話で安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 介護保険サービス、緊急通報システム、社協の配食を使っていない
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/16657.html
+  confidence: high
+- category: kaigo-yohin
+  name: シルバーカー購入費の助成
+  name_on_page: 老人福祉車購入助成
+  summary: 杖などが必要な高齢者に、シルバーカー購入費の一部を助成券で助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 歩くときに杖などが必要
+  - 5年以内にこの助成を受けていない
+  - 購入前に助成券の交付を受ける
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/2/18264.html
+  confidence: high
+  amount: 購入費の2分の1、上限6,000円
+- category: sonota
+  name: はり・きゅう・マッサージ施術料の助成券
+  name_on_page: はり、きゅう、マッサージ施術料助成
+  summary: 保険がきかないはり・きゅう・マッサージの施術に使える助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 70歳以上
+  - または65歳以上で身体障害者手帳1・2級
+  - または65歳以上で6か月以上ねたきり
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/2/16558.html
+  confidence: high
+  amount: 2か月に1枚（年6枚まで）、1枚1,000円分の割引
+- category: sonota
+  name: 白内障手術後の眼鏡等の費用助成
+  name_on_page: 老人性白内障特殊眼鏡等費用助成
+  summary: 老人性白内障の手術後に買った眼鏡やコンタクトレンズの費用の一部を助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 法令などで同様の給付を受けられない
+  - 手術した月の翌月から1年以内に申請
+  - 医師の証明書と領収書が必要
+  where: 高齢福祉課 高齢者福祉係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/2/18261.html
+  confidence: high
+  amount: 購入費の2分の1。限度額は眼鏡一対10,000〜30,000円、コンタクト一眼5,000〜15,000円（1回のみ）
+- category: sonota
+  name: 特殊詐欺対策電話機等の購入補助
+  name_on_page: 詐欺対策に防犯用電話機等の購入を検討中の方へ｜購入補助金
+  summary: 65歳以上の方がいる世帯が、通話録音などの機能がある電話機を買うときの費用を補助する。
+  who: {}
+  at_application:
+  - 65歳以上の方、またはその世帯員が申請できる
+  - 購入から1年以内の電話機等
+  - 世帯員全員が市税等を完納している
+  - 1世帯1度限り
+  where: くらし安全課 交通防犯係
+  url: https://www.city.moka.lg.jp/iryo_kenko_fukushi/koreisha_fukushi/support_koreisha/2/27262.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限5,000円
+not_found:
+- haishoku
+- haikai
+- koken
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

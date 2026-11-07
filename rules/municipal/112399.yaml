@@ -1,0 +1,306 @@
+city: '112399'
+name: 坂戸市
+site: www.city.sakado.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急時通報システムの設置
+  name_on_page: 緊急時通報システム
+  summary: 緊急時にボタンを押すと受信センターに通報される装置を設置する。
+  who: {}
+  at_application:
+  - 市内に住所があり、次のどれかに当たる
+  - 同一敷地に親族なしの65歳以上ひとり暮らしか高齢者のみ世帯で、
+  - 要介護1〜5、または急変に注意が要る慢性疾患がある
+  - 同一敷地に親族なしのひとり暮らしで障害の程度が1・2級
+  - 同一敷地の親族の就労等で上記に準ずる状態
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 機器利用料は月500円（通話料は利用者負担）
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等の給付
+  summary: 在宅で重度の介護が要る方に、紙おむつや尿とりパッドを配達で給付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上（40〜64歳で特定疾病の方を含む）
+  - 排泄の介護が必要
+  - 本人と同居家族全員の市民税が非課税
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 月5,000円を限度に給付（超えた分は自己負担）
+- category: iro
+  name: 要介護高齢者手当
+  name_on_page: 要介護高齢者手当
+  summary: 在宅で重度の介護が要る高齢者に、毎月手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間ずっと要介護4・5で施設に入所していない
+  - 過去1年間、介護保険サービスを使っていない
+  - （年1週間以内のショートステイは除く）
+  - 本人と同居家族全員の市民税が非課税
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 月額6,000円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重度の要介護の方を在宅で介護している家族に、年1回慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護される方は65歳以上（40〜64歳で特定疾病の方を含む）
+  - 介護される方が過去1年間ずっと要介護4・5で施設に入所していない
+  - 過去1年間、介護保険サービスを使っていない
+  - （年1週間以内のショートステイは除く）
+  - 介護される方と同居家族全員の市民税が非課税
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 年額100,000円（年1回）
+- category: gaishutsu
+  name: 移送支援サービス
+  name_on_page: 移送支援サービス
+  summary: 移送用車両で自宅と病院・介護施設などの間を送迎する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 家族での移送や一般の交通機関の利用が困難
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 月180分まで。利用料は事業者ごとに異なる
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容店に行けない在宅の方の自宅へ、理美容師が訪問する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 心身の障害などで理美容店に出向くことが困難
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 年4回まで。1回2,000円（利用者が店に支払う）
+- category: shingu
+  name: 寝具の乾燥消毒・水洗い
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 自宅で寝具を乾かせない方に、寝具の乾燥消毒と水洗いを行う。
+  who: {}
+  at_application:
+  - 自宅で寝具の乾燥が困難で、次のどちらか
+  - 同一敷地に親族なしの65歳以上ひとり暮らしか高齢者のみ世帯
+  - 身体障害者手帳と療育手帳を受けていて、障害の程度が1・2級
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 乾燥消毒は月1回200円、水洗いは年1回600円（非課税世帯は無料・300円）
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 配食サービス
+  summary: 食事の支度が難しい方に、食事を定期的に届けて安否確認もする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の支度が困難と認められる
+  - 支度できる家族がいる場合は対象外
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 1食400円（おかずのみ350円）。1日1食、週4食まで
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災警報器・自動消火器）
+  name_on_page: 日常生活用具の給付
+  summary: 防火の配慮が必要な方に、電磁調理器・火災警報器・自動消火器を給付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    flags:
+    - fire_risk
+  at_application:
+  - 電磁調理器はひとり暮らしの方のみ
+  - 火災警報器・自動消火器はひとり暮らしか高齢者のみ世帯
+  - 本人と同居家族全員の市民税が非課税
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 購入額の1割が自己負担（生活保護世帯は無料）
+- category: hochoki
+  name: 高齢者の補聴器購入費補助
+  name_on_page: 高齢者補聴器購入費補助金
+  summary: 聴力低下で日常生活に支障がある高齢者の補聴器購入費を一部補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳40dB以上70dB未満、または医師が必要と認めた（医師意見書）
+  - 身体障害者手帳の対象にならない
+  - 過去に本事業の補助を受けていない・市税の滞納がない
+  - 購入前の申請が必要。1人1回限り
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/50999.html
+  confidence: high
+  amount: 市民税非課税世帯は上限5万円、課税世帯は上限2万円
+- category: haikai
+  name: 認知症高齢者の位置探索システム利用費補助
+  name_on_page: 位置探索システムの利用に要する経費の一部を補助します
+  summary: 位置探索システムの契約・開始にかかる費用の一部を補助する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住の認知症高齢者
+  - 駆け付けサービス付きの位置探索システムを利用（携帯端末は除く）
+  - 申請者は費用を支払った本人か家族等
+  - 契約前・支払前は申請できない
+  where: 高齢者福祉課
+  url: https://www.city.sakado.lg.jp/soshiki/33/1312.html
+  confidence: high
+  amount: 対象経費の全額、上限1万2,000円（1人1回限り）
+- category: haikai
+  name: 見守りキーホルダーの交付
+  name_on_page: 坂戸市見守りキーホルダー
+  summary: 登録番号入りのキーホルダーを交付し、保護時に家族へ連絡する。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症による徘徊がある方かそのおそれがある方
+  where: 高齢者福祉課 高齢者福祉係または地域包括ケア推進係
+  url: https://www.city.sakado.lg.jp/soshiki/33/323.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見の市長申立て費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 市長申立ての費用を市が負担し、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 市長申立ては、市内在住で親族による申立てができない方
+  - 報酬助成は、第三者の後見人等がついた生活保護等の受給者
+  - 報酬助成は、審判決定の翌日から2か月以内に申請
+  where: 高齢者福祉課（障害者は障害者福祉課）
+  url: https://www.city.sakado.lg.jp/soshiki/33/785.html
+  confidence: high
+  amount: 報酬助成は月額上限 在宅2万8,000円・施設1万8,000円
+- category: gaishutsu
+  name: 市民バス特別乗車証（70歳以上は無料）
+  name_on_page: 市民バス特別乗車証の交付
+  summary: 70歳以上の市民が、市民バスに無料で乗れる乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 坂戸市在住
+  - 申請時に本人確認書類が必要
+  where: 高齢者福祉課、各出張所
+  url: https://www.city.sakado.lg.jp/soshiki/33/597.html
+  confidence: high
+  amount: 坂戸市・鶴ヶ島市の市民バスが無料
+- category: sonota
+  name: ふれあい入浴補助券
+  name_on_page: ふれあい入浴補助券
+  summary: 日帰り温泉などの入浴施設で使える200円分の補助券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住所がある
+  - 年度内1人1セットまで。郵送・家族の代理申請もできる
+  where: 高齢者福祉課、各出張所、各地域交流センター
+  url: https://www.city.sakado.lg.jp/soshiki/33/8771.html
+  confidence: high
+  amount: 1回200円分の券を年度に12枚
+- category: sonota
+  name: 介護支援短期宿泊
+  name_on_page: 介護支援短期宿泊
+  summary: 介護者が特別な事情で介護できないとき、老人福祉施設に短期宿泊できる。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 介護者の入院・事故・葬儀などの特別な理由がある
+  - または本人が単身で、利用しないと生命の危急に係る等の切実な理由がある
+  - 入院治療が要る方・感染する疾患のある方などは利用できない
+  where: 高齢者福祉課 高齢者福祉係
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 月7日まで。利用料は介護保険単価の1割（日常生活費は自己負担）
+- category: sonota
+  name: ふれあい収集（ごみ出し支援と安否確認）
+  name_on_page: ふれあい収集
+  summary: ごみ出しが難しい方の自宅を訪ねてごみを収集し、安否確認もする。
+  who: {}
+  at_application:
+  - 集積所へ出せず、身近な人の協力も得られない
+  - ひとり暮らしの65歳以上か身体障害者、または65歳以上のみ世帯
+  where: 高齢者福祉課（申請書：ふれあい収集事業申請書）
+  url: https://www.city.sakado.lg.jp/soshiki/33/355.html
+  confidence: high
+  amount: 週1回（月〜金のいずれか）の一括収集
+not_found:
+- jutaku
+- mimamori
+- yutai

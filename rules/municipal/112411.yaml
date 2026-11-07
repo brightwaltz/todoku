@@ -1,0 +1,114 @@
+city: '112411'
+name: 鶴ヶ島市
+site: www.city.tsurugashima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急時通報システム
+  summary: 通報ボタンで受信センターにつながる緊急通報装置を無償で借りられる。
+  who:
+    at_home: true
+  at_application:
+  - 慢性・急性の病気で常時注意が要り、緊急時の対応が難しい
+  - 固定電話がある
+  - 65歳以上のひとり暮らし・65歳以上のみの世帯（同一敷地に親族なし）
+  - または同居家族の就労等で昼間ひとりになる方
+  - または親族が同一敷地にいないひとり暮らしで身体障害者手帳1・2級
+  where: 健康長寿課高齢者福祉担当（手帳の方は障害者福祉課）
+  url: https://www.city.tsurugashima.lg.jp/kenkou-iryou-fukushi/koureisha-kaigo/fukushi-service/page001157.html
+  confidence: high
+  amount: 装置は無償貸与、通話料は自己負担
+- category: gaishutsu
+  name: 移送支援サービス（専用車両での移送）
+  name_on_page: 移送支援サービス
+  summary: 家族や公共交通での移動が難しい方が、専用車両で通院などに出かけられる。
+  who: {}
+  at_application:
+  - 常時ねたきり、または常時車いすで、家族等や公共交通での移送が困難
+  - 要介護認定を受けている、または身体障害者手帳1・2級（下肢・体幹）
+  where: 健康長寿課高齢者福祉担当、障害者福祉課
+  url: https://www.city.tsurugashima.lg.jp/kenkou-iryou-fukushi/koureisha-kaigo/fukushi-service/page001155.html
+  confidence: high
+  amount: 費用の1割負担。月6時間を超える分は全額自己負担
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容店に行けない在宅の要介護の方の自宅へ、理美容師が来てカットする。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時ねたきり状態等で理美容店に行くのが難しい
+  where: 健康長寿課高齢者福祉担当
+  url: https://www.city.tsurugashima.lg.jp/kenkou-iryou-fukushi/koureisha-kaigo/fukushi-service/page001151.html
+  confidence: high
+  amount: 年4回まで。カット料金は自己負担で、出張料は市が負担
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ給付事業
+  summary: 常時おむつが必要な在宅の要介護の方に、おむつを配達し購入費を一部助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住で介護保険の給付制限がない
+  - 在宅、または特定施設指定のない有料老人ホーム・サ高住に住む
+  - 認知症自立度3a以上、または障害自立度C1以上
+  - ケアマネ等の意見で常時失禁状態と認められる
+  where: 健康長寿課（高齢者福祉担当）
+  url: https://www.city.tsurugashima.lg.jp/kenkou-iryou-fukushi/koureisha-kaigo/fukushi-service/page001147.html
+  confidence: high
+  amount: 対象額は月5,000円まで。介護保険の負担割合（1〜3割）が自己負担
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス
+  summary: 食事の支度が難しい高齢者に、安否確認を兼ねて昼食か夕食を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住で、自分で食事の支度が難しく栄養改善が必要
+  - 要介護・要支援の認定、または総合事業の対象者
+  where: 健康長寿課高齢者福祉担当
+  url: https://www.city.tsurugashima.lg.jp/kenkou-iryou-fukushi/koureisha-kaigo/fukushi-service/page001156.html
+  confidence: high
+  amount: 1食410〜750円。生活保護か市民税非課税世帯は1日1食210円助成
+- category: haikai
+  name: 認知症等高齢者の見守りシール配付
+  name_on_page: 認知症等高齢者見守りシール配付事業
+  summary: QRコード付きの見守りシールを無料で配付し、迷子になったとき家族に連絡がいく。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住
+  - 65歳以上で認知症等により道に迷う、または迷うおそれがある
+  - その他、シールが必要と認められる方
+  where: 健康長寿課高齢者福祉担当
+  url: https://www.city.tsurugashima.lg.jp/kenkou-iryou-fukushi/koureisha-kaigo/fukushi-service/page004601.html
+  confidence: high
+  amount: 無料（衣類用40枚と蓄光10枚）。2回目の追加配付は自己負担
+not_found:
+- koken
+- shingu
+- mimamori
+- jutaku
+- chusha

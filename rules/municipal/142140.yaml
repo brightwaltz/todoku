@@ -1,0 +1,176 @@
+city: '142140'
+name: 伊勢原市
+site: www.city.isehara.kanagawa.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付（ねたきり・認知症高齢者登録者）
+  name_on_page: 日常生活用具支援サ−ビス
+  summary: ねたきりや認知症の登録者に、紙おむつやおむつカバー等を無料で宅配する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ねたきり高齢者または認知症高齢者の登録をしている
+  - ねたきり登録は要介護4以上で6か月以上ねたきり
+  - 認知症登録は要介護1以上で自立度ランク3以上
+  - 市内に住所があり在宅で介護を受けている
+  where: 長寿介護課 高齢者支援係
+  url: https://www.city.isehara.kanagawa.jp/docs/2014042200074/
+  confidence: high
+  amount: 無料。紙おむつは奇数月に宅配（テープ式Mで月30枚程度）。カバー・防水シーツ等は5月・11月に各1枚
+  more_urls:
+  - https://www.city.isehara.kanagawa.jp/docs/2011100700040/
+- category: shingu
+  name: 寝具の乾燥消毒・丸洗い
+  name_on_page: 寝具乾燥・丸洗いサ−ビス
+  summary: ねたきり等の登録者の自宅へ業者が行き、寝具を乾燥消毒・丸洗いする。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ねたきり老人または認知症老人の登録をしている
+  - ねたきり登録は要介護4以上で6か月以上ねたきり
+  - 認知症登録は要介護1以上で自立度ランク3以上
+  where: 長寿介護課 高齢者支援係（対象者に申請書が送られる）
+  url: https://www.city.isehara.kanagawa.jp/docs/2006040500034/
+  confidence: high
+  amount: 無料。乾燥消毒は年8回、丸洗い乾燥は年2回（5月・11月と新規利用者）。対象は掛け布団・敷き布団・毛布
+  more_urls:
+  - https://www.city.isehara.kanagawa.jp/docs/2011100700040/
+- category: ribiyo
+  name: ねたきり高齢者の出張理髪
+  name_on_page: 出張理髪サービス
+  summary: 在宅のねたきり登録者に、理髪サービス券を年4回送り、出張理美容を受けられる。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - ねたきり老人登録をしている
+  where: 長寿介護課 高齢者支援係（対象者に申請書が送られる）
+  url: https://www.city.isehara.kanagawa.jp/docs/2006040500027/
+  confidence: high
+  amount: 四半期ごと（年4回）に理髪サービス券を送付。利用者負担額は頁に記載なし
+  more_urls:
+  - https://www.city.isehara.kanagawa.jp/docs/2011100700040/
+- category: gaishutsu
+  name: 重度要介護者等のタクシー利用助成券
+  name_on_page: 在宅重度要介護者等タクシー利用助成
+  summary: 在宅のねたきり・認知症の登録者に、タクシー利用助成券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 在宅ねたきり老人または認知症老人の登録をしている
+  - 障がい福祉課の福祉タクシー券・燃料費助成とは重複不可
+  where: 長寿介護課（窓口または郵送）
+  url: https://www.city.isehara.kanagawa.jp/docs/2025063000024/
+  confidence: high
+  amount: 500円券を最大48枚（交付月により枚数が変わる）
+  more_urls:
+  - https://www.city.isehara.kanagawa.jp/docs/2011100700040/
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 福祉緊急通報システム
+  summary: 緊急通報機器を貸与し、急病時は警備会社が消防署や親族へ連絡する。
+  who: {}
+  at_application:
+  - 身体的に不安のあるひとり暮らし高齢者
+  - または、ねたきり・認知症の高齢者を抱える高齢者世帯
+  - またはひとり暮らしの重度障害者
+  - 登録前に職員の訪問・審査がある
+  where: 長寿介護課 高齢者支援係
+  url: https://www.city.isehara.kanagawa.jp/docs/2014042200036/
+  confidence: high
+  amount: 介護保険料第1〜5段階は無料、第6段階以上は月682円。かけつけサービスはない
+- category: haikai
+  name: GPS端末による徘徊高齢者の探索サービス
+  name_on_page: 徘徊高齢者等探索情報サービス
+  summary: GPS端末を携帯して、行方不明時に居場所を探せる。賠償補償が付く。
+  who:
+    at_home: true
+  at_application:
+  - 徘徊のおそれがある高齢者を在宅で介護する人が対象
+  - 療育手帳をもつ知的障害児・者を介護する人も対象
+  - 導入前に市職員の訪問・審査がある
+  where: 地域福祉推進課 地域包括ケア推進係
+  url: https://www.city.isehara.kanagawa.jp/docs/2014042200050/
+  confidence: high
+  amount: 月額660円（所得税課税世帯）、440円（非課税世帯）、生活保護世帯は0円。専用の靴は全額自己負担
+- category: haikai
+  name: 徘徊高齢者等SOSネットワークの事前登録
+  name_on_page: 徘徊高齢者等SOSネットワーク
+  summary: 本人情報を事前登録し、行方不明時に関係機関の捜索協力を受けられる。
+  who: {}
+  at_application:
+  - 認知症で徘徊のおそれがある、または徘徊歴のある高齢者
+  - 療育手帳をもち徘徊・迷子のおそれがある知的障害児・者も可
+  - 申請時に顔写真が必要
+  where: 地域福祉推進課 地域包括ケア推進係
+  url: https://www.city.isehara.kanagawa.jp/docs/2019082600112/
+  confidence: high
+  amount: 登録した人が希望すれば、見守りクルリンステッカーを無料で10枚受けられる
+- category: haikai
+  name: 見守りクルリンステッカーの配布
+  name_on_page: 見守りクルリンステッカー配布事業
+  summary: QRコード付きの見守りステッカーを無料配布し、身元確認と早期発見に役立てる。
+  who: {}
+  at_application:
+  - 徘徊高齢者等SOSネットワークの事前登録を受けている
+  - 申請時に登録することも可（顔写真が必要）
+  where: 地域福祉推進課 地域包括ケア推進係
+  url: https://www.city.isehara.kanagawa.jp/docs/2020012700024/
+  confidence: high
+  amount: ステッカー10枚を無料で配布
+  more_urls:
+  - https://www.city.isehara.kanagawa.jp/docs/2019082600112/
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 伊勢原市成年後見制度に基づく助成に関する要綱
+  summary: 費用負担が難しい人に、成年後見の申立費用や後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 本人が市内に住所がある（例外あり）
+  - 生活保護等を受けている、または世帯全員が市民税非課税
+  - 非課税の場合は活用できる資産がないこと（預貯金100万円以下は除く）
+  - 報酬助成は後見人が配偶者・直系血族・兄弟姉妹だと対象外
+  - 審判確定日から180日以内に申請
+  where: 地域福祉推進課 福祉総務係
+  url: https://www.city.isehara.kanagawa.jp/docs/2015013000075/
+  confidence: high
+  amount: 申立費用（印紙・切手・鑑定・診断書）。報酬は上限が月額2万8千円（在宅）・1万8千円（施設）で、最長12か月
+  more_urls:
+  - https://www.city.isehara.kanagawa.jp/docs/2015013000075/file_contents/joseiyoukou.pdf
+- category: mimamori
+  name: ひとり暮らし高齢者の登録と民生委員の見守り訪問
+  name_on_page: ひとり暮らし高齢者登録制度
+  summary: 登録すると、民生委員による見守り訪問などのサービスを受けられる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市内に住所がある
+  - 敷地内に配偶者や親族などの同居者がいない
+  where: 長寿介護課 高齢者支援係（民生委員を通じて申請）
+  url: https://www.city.isehara.kanagawa.jp/docs/2011100700033/
+  confidence: high
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

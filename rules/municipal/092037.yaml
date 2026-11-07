@@ -1,0 +1,231 @@
+city: 092037
+name: 栃木市
+site: www.city.tochigi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの宅配給付
+  name_on_page: 紙おむつ給付事業
+  summary: 常時紙おむつを使う在宅の要介護3以上の方に、おむつを宅配し代金の一部を市が負担する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/967.html
+  confidence: high
+  amount: 1か月あたり3,500円まで市が負担。超えた分は自己負担
+- category: iro
+  name: 在宅寝たきり老人等の介護手当
+  name_on_page: 在宅寝たきり老人等介護手当支給事業
+  summary: 在宅で要介護3以上の方と同居して常時介護している家族に、手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 支給されるのは介護している同居の家族
+  - 住民票上も同一世帯であること（世帯分離は対象外）
+  - 月の半分以上在宅でない月は対象外
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/870.html
+  confidence: high
+  amount: 月額3,000円を年2回（10月・4月）に分けて振込
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者の補聴器購入費を助成します
+  summary: 聞こえにくい高齢者世帯の非課税の方に、補聴器の購入費を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所がある
+  - 両耳とも聴力40デシベル以上（手帳の対象となる人は除く）
+  - 補聴器が必要と医師が判断した
+  - この助成を受けたことがない
+  - 決定通知前に買った補聴器は対象外
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/79533.html
+  confidence: high
+  amount: 購入費の上限50,000円（専門業者で購入したもの）
+  more_urls:
+  - https://www.city.tochigi.lg.jp/uploaded/attachment/72135.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 急に具合が悪くなるおそれのあるひとり暮らしの方に、ボタンで通報できる装置を貸す。
+  who:
+    household:
+    - alone
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上
+  - 脳血管疾患・心疾患などで体調急変や転倒のおそれ
+  - 5分以内に駆けつける協力員が2名必要
+  - 申請前に問い合わせる
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/573.html
+  confidence: high
+- category: haishoku
+  name: 高齢者への昼食配食と安否確認
+  name_on_page: 高齢者配食サービス事業
+  summary: ひとり暮らしなどの高齢者に、昼食を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - ひとり暮らし・高齢者のみの世帯・これに準ずる世帯
+  - 食材の確保や調理が困難
+  - 隣接地に親族が住んでいると非該当になることがある
+  - 市内に住所がある
+  where: 地域包括ケア推進課、各地域包括支援センター係
+  url: https://www.city.tochigi.lg.jp/soshiki/103/2004.html
+  confidence: high
+  amount: 1日1食（昼食、平日）、1食300円の自己負担（令和9年4月から料金体制が変わる）
+- category: nichijo-yogu
+  name: 電磁調理器・火災警報器・自動消火器・エアコンの購入費助成
+  name_on_page: 日常生活用具購入費助成事業
+  summary: 非課税の高齢者世帯に、防火用具やエアコンの購入・設置費を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 心身機能の低下で防火などの配慮・支援が必要（エアコンを除く）
+  - エアコンは未設置か使えない住宅で1世帯1台まで
+  - 購入後1年以内に申請。購入前に問い合わせる
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/1951.html
+  confidence: high
+  amount: 上限：電磁調理器1万円、火災警報器7千円、自動消火器1.2万円、エアコン5万円
+- category: nichijo-yogu
+  name: シルバーカー・小型暖房器具の購入費助成
+  name_on_page: 日常生活用具購入費助成事業
+  summary: 歩行に杖が要る方のシルバーカーや、暖房が必要な方の小型暖房器具の購入費を半額助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - シルバーカーは歩行に杖などが必要な方
+  - 小型暖房器具は暖房器具が必要な方（1世帯1台）
+  - 再交付はシルバーカー3年、暖房器具5年は不可
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/1951.html
+  confidence: high
+  amount: 購入費の2分の1、上限7,500円
+- category: nichijo-yogu
+  name: 吸引機・特殊寝台・じょくそう予防用具のレンタル料助成
+  name_on_page: 日常生活用具レンタル料助成事業
+  summary: 介護保険などで借りられない在宅高齢者の用具レンタル料の9割を6か月分助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 介護保険や身体障害者福祉法でレンタル等を受けられる人は除く
+  - 契約日から30日以内に申請
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/1950.html
+  confidence: high
+  amount: 月額上限：吸引機4,800円、特殊寝台10,800円、予防用具5,400円（最長6か月）
+- category: haikai
+  name: 安心見守りカプセルの配付
+  name_on_page: 安心見守りカプセル配付事業
+  summary: 徘徊のおそれがある認知症の方に、緊急連絡先を入れるカプセルを配る。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所がある
+  - 認知症の症状があり、徘徊がある・徘徊のおそれがある
+  - 本人か家族が申請（代理申請可）
+  where: 地域包括ケア推進課、各地域包括支援センター
+  url: https://www.city.tochigi.lg.jp/soshiki/103/360.html
+  confidence: high
+- category: sonota
+  name: はり・きゅう・マッサージの施術料助成券
+  name_on_page: 健康はり、きゅう及びあん摩マッサージ指圧施術料助成
+  summary: 在宅の75歳以上の非課税の方に、はり・きゅう等の施術料の助成券を交付する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 市町村民税が非課税
+  - 市と協定を結んだ施術者で、健康保険適用外の施術に限る
+  where: 高齢介護課 高齢福祉係、各総合支所の地域づくり推進課
+  url: https://www.city.tochigi.lg.jp/soshiki/28/596.html
+  confidence: high
+  amount: 助成券1枚800円分。2か月に1枚の割合で交付
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 栃木市認知症高齢者等個人賠償責任保険事業
+  summary: 認知症の方が起こした事故の賠償に備える保険に、市の負担で加入できる。
+  who:
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 認知症等SOSネットワークに登録している
+  - 市内に住所がある
+  - 要介護認定を受けていない場合は医師の診断書が必要
+  where: 地域包括ケア推進課、各地域包括支援センター
+  url: https://www.city.tochigi.lg.jp/soshiki/103/42258.html
+  confidence: high
+  amount: 保険料は市が負担（本人負担なし）
+- category: sonota
+  name: 軽度生活援助員の派遣
+  name_on_page: 軽度生活援助員派遣事業
+  summary: 非課税の高齢者世帯に、掃除や草取りなどの援助員を1割負担で派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - ひとり暮らし・高齢者のみの世帯・これに準ずる世帯
+  - 日常生活に支援が必要
+  - 隣接地に親族が住んでいると非該当になることがある
+  where: 地域包括ケア推進課、各地域包括支援センター係
+  url: https://www.city.tochigi.lg.jp/soshiki/103/592.html
+  confidence: high
+  amount: 月10時間まで1割負担（1時間あたり112〜143円）。超過分は10割負担
+not_found:
+- gaishutsu
+- jutaku
+- koken
+- ribiyo
+- shingu

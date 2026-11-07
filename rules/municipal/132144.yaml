@@ -1,0 +1,198 @@
+city: '132144'
+name: 国分寺市
+site: www.city.kokubunji.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: mimamori
+  name: 高齢者見守りサービス導入費の助成
+  name_on_page: 高齢者見守りサービス助成事業
+  summary: 家電や水道などの使用状況を家族に知らせる見守り機器の費用を助成する。
+  who: {}
+  at_application:
+  - 申請は契約日・購入日から1年以内のものが有効
+  where: 高齢福祉課 計画係（郵送も可）
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1030282.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 高齢者等紙おむつ等支給事業
+  summary: 要介護3以上で常時おむつが必要な在宅の人に、月1回紙おむつ等を届ける。
+  who:
+    age_min: 40
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住で居宅で生活している
+  - 入院中・施設入所中の人は申請できない
+  - 月の半分以上ショートステイを使う人は対象外
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1013891.html
+  confidence: high
+  amount: 月の支給限度額9,000円で、その1割が自己負担
+- category: ribiyo
+  name: 訪問理容・美容券
+  name_on_page: 高齢者等訪問理容・美容サービス
+  summary: 要介護3以上の在宅の人が、協力店の理美容師のカットを自宅や店舗で受けられる。
+  who: {}
+  at_application: []
+  where: 高齢福祉課、市内の地域包括支援センター
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1020083.html
+  confidence: high
+  amount: 自己負担は訪問500円、店舗300円（生活保護は無料）
+- category: kinkyu-tsuho
+  name: 高齢者救急通報システム
+  name_on_page: 高齢者救急通報システム
+  summary: ボタンで通報できる機器を自宅に設置する。消防直接型と民間代理型がある。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 脳・心臓・呼吸器の慢性疾患で常時注意が必要
+  - 日中だけひとりになる人は対象外
+  - 歩行障害・転びやすさ・認知症だけでは対象外
+  - 固定電話の回線と電話機が必要
+  where: 高齢福祉課（まず連絡し、訪問調査と判定会議を経る）
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1001801.html
+  confidence: high
+  amount: 生活保護・住民税非課税世帯は無料。それ以外は消防直接型が費用の10％、民間代理型が月500円
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 布団を干しにくい高齢者などの寝具を乾燥消毒したり丸洗いしたりする。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 寝具を干すことが困難な、65歳以上のひとり暮らし、または高齢者か身体障害者のみの世帯
+  - 心身障害者（児）居宅生活支援ヘルパー派遣の利用者は除く
+  where: 高齢福祉課 計画係（頁の問い合わせ先。申請先の記載は無い）
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1001804.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: はいかい高齢者の家族へのGPS探索機の貸与
+  name_on_page: はいかい高齢者など家族支援サービス
+  summary: はいかいのある認知症の人の家族にGPS探索機を貸し出し、保険も付く。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 本人は65歳以上（初老期認知症は40歳以上）で、家族が申し込む
+  - 心臓ペースメーカー使用者には貸与できない
+  - 認定を受けていないと医師の診断書が必要な場合がある
+  where: 地域包括ケア課 地域包括ケア担当、各地域包括支援センター
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1001811.html
+  confidence: high
+  amount: 利用料は無料（紛失・破損は実費）
+- category: jutaku
+  name: 高齢者自立支援住宅改修（介護保険の対象外・上乗せ）
+  name_on_page: 高齢者自立支援住宅改修
+  summary: 介護保険で非該当の人の改修や、浴槽・流し・便器の改修費を一部助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 非該当の人は手すり・段差解消などの改修が対象
+  - 要支援・要介護の人も、介護保険対象外の改修は対象
+  - 施設入所中・入院中の人は申請できない
+  - 介護保険の住宅改修が優先される
+  where: 高齢福祉課 計画係
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1001815.html
+  confidence: high
+  amount: 非該当向けは合計20万円まで。浴槽37.9万円、流し15.6万円、便器10.6万円が上限。自己負担は生活保護なし、非課税世帯6％、その他10％
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 加齢で聞こえにくい人の補聴器購入費の一部を助成する（令和8年7月開始）。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 介護保険料の所得段階が第1〜7段階
+  - 耳鼻咽喉科医の意見書が必要
+  - 聴覚障害による補聴器の支給対象でない人
+  - 過去5年以内に同じ助成を受けていない
+  - 購入前に申請する（助成決定前の購入は対象外）
+  where: 地域包括ケア課
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/1011655/1037384.html
+  confidence: high
+  amount: 上限4万円
+- category: gaishutsu
+  name: 運転免許返納者へのぶんバス無料乗車パス
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 免許を自主返納した人に、ぶんバス全ルートで使える無料乗車パスを渡す。
+  who: {}
+  at_application:
+  - 運転免許を自主返納し、運転経歴証明書がある人
+  - 原付免許の返納も対象
+  - 他の自治体で返納した場合も対象
+  where: 高齢福祉課 計画係、各地域包括支援センター
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/1011722/1016394/index.html
+  confidence: high
+- category: sonota
+  name: 無料入浴券の支給
+  name_on_page: 無料入浴券
+  summary: 自宅に風呂がない高齢者のみの世帯に、銭湯で使える無料入浴券を出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住で、自宅に入浴設備がない
+  - 申請後に審査があり、印鑑が必要
+  where: 生活福祉課
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1001809.html
+  confidence: high
+  amount: 1人あたり月5枚
+- category: sonota
+  name: 生活支援ヘルパーの派遣
+  name_on_page: 高齢者生活支援ヘルパー
+  summary: 骨折などで困っている人や、認定更新で非該当になった人にヘルパーを派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 短期間で回復が見込まれ日常生活に支障がある人（要介護・要支援は不可）
+  - または、認定更新で非該当になって1か月以内の人
+  where: 最寄りの地域包括支援センター
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/zaitaku/1001798.html
+  confidence: high
+  amount: 生活保護・非課税世帯は無料。それ以外はヘルパー費用の10％
+- category: yutai
+  name: オパール会員証（スポーツ施設の無料個人利用）
+  name_on_page: オパール会員証
+  summary: 市内スポーツセンターのフィットネス室や個人開放を無料で使える会員証。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上、または障害のある人
+  - 年度ごとに更新（4月1日〜翌3月31日）
+  - プール利用は当面停止中、ひかりSCの個人開放も中止中
+  where: 市民スポーツセンター、ひかりスポーツセンター
+  url: https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/koureishien/1011673/1011677.html
+  confidence: high
+  amount: 対象施設の個人利用が無料
+not_found:
+- haishoku
+- iro
+- koken
+- nichijo-yogu

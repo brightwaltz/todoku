@@ -1,0 +1,250 @@
+city: '102113'
+name: 安中市
+site: www.city.annaka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 寝たきり・認知症の高齢者への紙おむつ給付
+  name_on_page: 在宅寝たきり等高齢者おむつサービス事業
+  summary: 常時おむつが必要な在宅の寝たきり・認知症の高齢者に、紙おむつを2か月に1回自宅へ届ける。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護4以上で寝たきり度B2以上、または要介護3以上で認知症自立度III以上
+  - 常時失禁状態で排尿・排便に介助が必要
+  - 生活保護を受けていない
+  - 施設入所・長期入院は対象外
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1905.html
+  confidence: high
+  amount: 給付限度額は、前年の所得税が非課税なら7,000円、課税なら5,500円（期間の単位は頁に明記なし）
+- category: haishoku
+  name: 高齢者への配食（安否確認つき）
+  name_on_page: 配食支援事業
+  summary: 自分で食事を用意しにくい在宅の高齢者に、昼食を届けて安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 身体機能の低下で自分で食事の用意が難しい
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1935.html
+  confidence: high
+  amount: 1食あたり、委託業者の価格から市の補助366円を引いた額を自己負担。週5日以内の昼食
+- category: haikai
+  name: 徘徊高齢者等の事前登録
+  name_on_page: 徘徊高齢者等事前登録制度
+  summary: 行方不明のおそれがある人の特徴や写真を事前に登録し、緊急時の早期発見・保護に備える。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住所があり、徘徊のおそれがある高齢者など
+  - 申請書と上半身の写真が必要
+  where: 高齢者支援課地域包括支援センター（安中警察署でも申請可）
+  url: https://www.city.annaka.lg.jp/page/1943.html
+  confidence: high
+- category: haikai
+  name: 徘徊高齢者等のGPS端末の貸与
+  name_on_page: 徘徊高齢者等位置情報提供サービス
+  summary: GPS端末を貸与し、緊急時に家族のメールへ位置情報を知らせる。
+  who:
+    age_min: 40
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症等で行方不明になるおそれがある
+  - 徘徊高齢者等事前登録制度に登録している
+  - 家族がメールで位置情報を受け取り保護できる
+  where: 高齢者支援課地域包括支援センター
+  url: https://www.city.annaka.lg.jp/page/1942.html
+  confidence: high
+  amount: 利用者負担は1,320円から（税別、契約内容で異なる）
+- category: haikai
+  name: あんしん見守りシールの交付
+  name_on_page: 安中市あんしん見守りシール交付事業
+  summary: 二次元コードの見守りシールを無料で交付し、発見者と家族がウェブ上でやり取りできるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明のおそれがあり、事前登録制度に登録している
+  - 申請できるのは同居の人または見守り・介護をする人
+  where: 高齢者支援課地域包括支援センター
+  url: https://www.city.annaka.lg.jp/page/1912.html
+  confidence: high
+  amount: 無料（対象者1人に耐性ラベル30枚と蓄光シール10枚。追加分は有償）
+- category: iro
+  name: 在宅介護慰労金
+  name_on_page: 在宅介護慰労金
+  summary: 要介護4・5の高齢者を自宅で1年以上介護している人に、慰労金を年1回支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 基準日（8月1日）に自宅で1年以上介護している
+  - 要介護4・5の状態が1年を超えて続いている
+  - 過去1年のショートステイ・入院等が合計100日以下
+  - 過去1年に施設入所をしていない
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1908.html
+  confidence: high
+  amount: 被介護者1人につき年額10万円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 在宅高齢者見守り支援体制整備事業（緊急通報装置の設置）
+  summary: 緊急通報装置・ペンダント・センサーを無料で設置し、月1回の安否確認も行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 健康状態・身体状況のため緊急時の対応に支障がある
+  - 固定の電話回線が使える
+  - 申請書に担当民生委員の意見が必要
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1927.html
+  confidence: high
+  amount: 設置は無料（電話回線の変更費用と通信料は利用者負担）
+- category: jutaku
+  name: 高齢者住宅改造費の補助
+  name_on_page: 高齢者住宅改造費補助
+  summary: 要介護高齢者の住宅のバリアフリー改造工事費を、市が補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 要介護2以上は、生計中心者の所得税課税年額が8万円以下の世帯
+  - 要支援・要介護1は、ひとり暮らしか高齢者のみで所得税非課税の世帯
+  - 工事前に申請と審査が必要。予算に達したら受付終了
+  - 介護保険の住宅改修が優先。1家屋につき1回限り
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1924.html
+  confidence: high
+  amount: 対象工事費の6分の5、上限20万円
+- category: gaishutsu
+  name: タクシー利用券の交付
+  name_on_page: タクシー料金補助
+  summary: 他の交通機関が使いにくい在宅高齢者などに、タクシー料金の一部を補助する利用券を交付する。
+  who: {}
+  at_application:
+  - 安中地域：75歳以上、身障手帳1〜3級、またはひとり親で車なし
+  - 松井田地域：70歳以上、身障・精神・療育手帳の人、ひとり親
+  - お住まいの地域で窓口と対象が異なる
+  where: 安中地域は高齢者支援課長寿支援係、松井田地域は支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1909.html
+  confidence: high
+  amount: 安中地域は1枚300円の券を年60枚、松井田地域は1枚330円から（地区・距離で19段階）の券を年24枚
+- category: ribiyo
+  name: 在宅訪問理美容の利用券
+  name_on_page: 在宅訪問理美容サービス
+  summary: 理美容院に行けない在宅高齢者の自宅へ、協力店が来てカットをする（利用券を交付）。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5の人
+  - またはそれ以外の要介護で外出困難、かつ支援が得られず市長が認めた人
+  - 施設入所中・入院中・心身の状態が著しく不良の人は対象外
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1928.html
+  confidence: high
+  amount: カットのみ無料。利用券は年4枚まで（申請時期で枚数が変わる）
+- category: sonota
+  name: はり・きゅう・マッサージ施術料の割引券
+  name_on_page: はり・きゅう・マッサージ施術料助成
+  summary: 市と契約した施術者の施術料を、1回1,000円割り引く券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 前年の所得税課税年額が42,000円以下
+  - 医師の同意による健康保険適用の施術は対象外
+  where: 頁に申請先の記載なし（高齢者支援課の頁に掲載）
+  url: https://www.city.annaka.lg.jp/page/1911.html
+  confidence: high
+  amount: 1回1,000円割引の券を年4枚まで（申請時期で枚数が変わる）
+- category: sonota
+  name: ごみ出しサポート（戸別収集）
+  name_on_page: ごみ出しサポート事業
+  summary: ごみ出しが困難な75歳以上のみの世帯の家庭ごみを、週1回、戸別に収集する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 身体上の理由でごみステーションへ出すことが困難
+  - 別居親族・近隣・介護サービスのごみ出し支援を受けていない
+  - 定員200世帯
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係、環境政策課
+  url: https://www.city.annaka.lg.jp/page/19290.html
+  confidence: high
+  amount: 収集は無料。個別回収ボックス代3,000円が必要
+- category: sonota
+  name: 車椅子の無料貸出
+  name_on_page: 車椅子の貸出
+  summary: 高齢・病気・けがで車椅子が必要な人に、車椅子を半年間無料で貸す。
+  who: {}
+  at_application:
+  - 介護保険の給付を受けている人は対象外
+  - 半年間の貸出。必要なら更新できる
+  where: 安中市社会福祉協議会、同松井田支所
+  url: https://www.city.annaka.lg.jp/page/1908.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 生活管理指導短期宿泊（ショートステイ）
+  name_on_page: 生活管理指導短期宿泊事業（ショートステイ）
+  summary: 生活習慣が乱れ体調を崩した1人暮らし高齢者が、養護老人ホームに短期間泊まれる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 1人暮らし高齢者等で、基本的生活習慣が欠け体調不良に陥った人
+  - 介護保険の要支援・要介護の人は除く
+  where: 高齢者支援課長寿支援係、松井田支所住民福祉課健康介護係
+  url: https://www.city.annaka.lg.jp/page/1908.html
+  confidence: high
+  amount: 1日400円
+not_found:
+- koken
+- hochoki
+- shingu
+- nichijo-yogu
+- mimamori
+- chusha
+- yutai

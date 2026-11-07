@@ -1,0 +1,219 @@
+city: '132055'
+name: 青梅市
+site: www.city.ome.tokyo.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の給付
+  name_on_page: 紙おむつ等の給付
+  summary: 住民税非課税世帯で在宅の寝たきり・失禁の方に、紙おむつ等を毎月給付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上
+  - 寝たきりまたは失禁状態で紙おむつが必要
+  - 地域包括支援センターの調査が必要
+  where: 高齢者支援課いきいき高齢者係（地域包括支援センターの調査あり）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/110.html
+  confidence: high
+  amount: 月額 8,000 円を限度に給付。給付額の 1 割は自己負担。
+- category: haishoku
+  name: 配食サービス（昼食）
+  name_on_page: 配食サービス
+  summary: 炊事が難しい高齢者に、業者が昼食を週 3 日まで届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 心身機能の低下で炊事が困難
+  - 地域包括支援センターの身体状況調査が必要
+  where: 高齢者支援課（事前に地域包括支援センターの調査）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/98.html
+  confidence: high
+  amount: 1 食 400 円。月〜金のうち 3 日まで選べる。
+- category: haikai
+  name: 認知症高齢者の位置探索 GPS 機器の貸与
+  name_on_page: 認知症高齢者の位置探索用のGPS機器を貸与しています
+  summary: 道に迷うおそれのある認知症の方の家族に、位置探索用の GPS 機器を貸す。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住む認知症の方の家族等が申請
+  - 一人で外出でき、帰り方が分からなくなるおそれ
+  where: お住まいの地区の地域包括支援センター
+  url: https://www.city.ome.tokyo.jp/soshiki/30/117051.html
+  confidence: high
+  amount: ココセコムは月 198 円。小型端末は登録料 11,000 円と月 330 円（非課税・生活保護は月額無料）。
+- category: haikai
+  name: GPS 機器の取り付け加工費の助成
+  name_on_page: 青梅市在宅認知症高齢者位置探索機器取付加工費等助成金
+  summary: 認知症の方の靴などに GPS 機器を付ける加工費を、介護する家族に助成する。
+  who:
+    age_min: 65
+    flags:
+    - wandering_risk
+  at_application:
+  - 申請者は市民で、認知症の方を介護する家族等
+  - 市町村民税を滞納していない
+  - 自宅または有料老人ホームで暮らす方が対象
+  where: 高齢者支援課窓口（市役所 1 階）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/114044.html
+  confidence: high
+  amount: 材料費と加工費を、5,000 円を上限に助成。
+- category: haikai
+  name: 高齢者見守りシールの交付
+  name_on_page: 見守りシール
+  summary: 行方不明のおそれのある高齢者の家族に、2 次元コード付きシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症で行方不明になるおそれのある高齢者を介護する家族等
+  where: 高齢者支援課窓口（申請書を提出、後日郵送）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/64273.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 救急通報システムの設置
+  name_on_page: 救急通報システム
+  summary: 急病時に通報機で民間センターに連絡し、現場派遣員の援助を受けられる。
+  who:
+    household:
+    - alone
+    - elderly_only
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上
+  - 発作を起こしやすい病気等で常時注意が必要
+  - 地域包括支援センターの調査が必要
+  where: 高齢者支援課（地域包括支援センターの調査あり）。社会福祉協議会でも同様のサービスあり。
+  url: https://www.city.ome.tokyo.jp/soshiki/30/63498.html
+  confidence: high
+  amount: 住民税課税の方は設置時に 7,030 円程度の負担。非課税の方は負担なし。
+  more_urls:
+  - https://www.city.ome.tokyo.jp/soshiki/30/96.html
+- category: kinkyu-tsuho
+  name: 住宅火災通報システムの設置
+  name_on_page: 住宅火災通報システム
+  summary: 火災警報器と通報機を連動させ、火災時に消防車の出動を受けられる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 心身機能の低下や住環境から防火の配慮が必要
+  - 地域包括支援センターの調査が必要
+  where: 高齢者支援課（地域包括支援センターの調査あり）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/63498.html
+  confidence: high
+  amount: 住民税課税の方は設置時に 18,070 円程度の負担。非課税の方は負担なし。
+  more_urls:
+  - https://www.city.ome.tokyo.jp/soshiki/30/96.html
+- category: jutaku
+  name: 住宅改造費の助成（市独自）
+  name_on_page: 住宅改造費の助成
+  summary: 浴槽・流し台・洋式便器の改造や、非該当の方の手すり工事を現物助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、改造が必要と認められる
+  - 介護保険の判定（非該当〜要介護5）を受ける
+  - 工事着手前の申請が必要。リフォーム目的は対象外
+  where: 高齢者支援課（事前に地域包括支援センターの本人・家屋調査）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/102.html
+  confidence: high
+  amount: 基準額は浴槽 379,000 円、流し台 156,000 円、洋式便器 106,000 円。非該当の手すり等は 20 万円まで。自己負担は 1〜3 割。
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 寝具乾燥が難しい高齢者の寝具を、月 1 回乾燥してもらえる。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の寝たきりの方がいる世帯、または65歳以上のひとり暮らし
+  - または65歳以上だけの世帯。いずれも寝具乾燥が困難な方
+  - 地域包括支援センターの調査が必要
+  where: 高齢者支援課（地域包括支援センターの調査あり）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/116.html
+  confidence: high
+  amount: 月 1 回、4 枚まで。費用の 1 割を自己負担。
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 自宅で理美容を受ける際の出張料を助成する券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 高齢者支援課窓口（郵送・電子申請も可）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/117.html
+  confidence: high
+  amount: 訪問サービス券を年 6 回分まで交付。
+- category: mimamori
+  name: 在宅独居高齢者の見守り ICT 電球の貸与
+  name_on_page: 青梅市在宅独居高齢者安心見守り支援事業
+  summary: 通信機能付き電球を貸し、点灯・消灯がないとき家族等に知らせる。
+  who:
+    age_min: 70
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 市民で、自宅で単身生活の方。本人か2親等以内の家族が申請
+  - 見守り付き住宅・食事等の支援がある住宅や施設は除く
+  - 高齢者救急通報システムの利用者は除く
+  where: 高齢者支援課窓口（市役所本庁舎 1 階）
+  url: https://www.city.ome.tokyo.jp/soshiki/30/113446.html
+  confidence: high
+  amount: 4 プランあり。月額 0〜2,200 円、初期費用 0〜16,500 円。
+- category: nichijo-yogu
+  name: 日常生活用具の給付（高齢者・介護保険非該当の方）
+  name_on_page: 日常生活用具の給付
+  summary: 介護保険で非該当の方に、入浴補助用具やシルバーカー等を給付する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険で非該当（自立）と判定された方
+  - 介護用品の給付が必要と認められる
+  where: 高齢者支援課いきいき高齢者係
+  url: https://www.city.ome.tokyo.jp/soshiki/30/104.html
+  confidence: high
+  amount: 腰掛便座 51,500 円、入浴補助用具 90,000 円、歩行支援用具 53,600 円、段差解消機 50,500 円、シルバーカー 35,100 円までを給付。自己負担は 1〜3 割。
+- category: sonota
+  name: 高齢者の温泉保養施設利用料の助成
+  name_on_page: 市内在住で在宅の65歳以上の方に温泉保養施設の利用料を助成します
+  summary: 指定の温泉施設の利用助成券を交付し、日帰り・宿泊の利用料を一部助成する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 市内在住
+  - 援護が必要と認められた方は援護者 1 人も助成
+  where: 高齢者支援課（市役所 1 階）または市民センター、電子申請も可
+  url: https://www.city.ome.tokyo.jp/soshiki/30/21763.html
+  confidence: high
+  amount: 日帰りは 1 回 300 円まで・年 12 日以内。宿泊は 1 泊 3,000 円まで・年 4 泊以内。
+not_found:
+- iro
+- koken
+- hochoki
+- gaishutsu
+- chusha
+- yutai

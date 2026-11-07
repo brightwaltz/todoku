@@ -1,0 +1,141 @@
+city: '122181'
+name: 勝浦市
+site: www.city.katsuura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 在宅介護福祉手当
+  name_on_page: 在宅介護福祉手当
+  summary: 重い要介護の高齢者を在宅で介護している家族に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 介護される人と生計が同じ介護者が申請する
+  - 寝たきり度B以上、または認知症自立度3以上
+  - 特別障害者手当などを受けている方は対象外
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.katsuura.lg.jp/page/1122.html
+  confidence: high
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 理容サービス事業
+  summary: 委託の理容業者が訪問し、散髪と顔そりをする無料券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきり度がB以上
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.katsuura.lg.jp/page/1122.html
+  confidence: high
+  amount: 年 6 回まで無料の理容サービス券
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システムサービス事業
+  summary: 緊急通報装置と火災・動きのセンサーを貸し、警備員が駆けつける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上（一覧の頁は「おおむね」と書く）
+  - 装置の使用に固定電話回線が必要
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.katsuura.lg.jp/page/1122.html
+  confidence: high
+  more_urls:
+  - https://www.city.katsuura.lg.jp/page/1252.html
+- category: haishoku
+  name: 高齢者の配食サービス
+  name_on_page: 高齢者等配食サービス事業
+  summary: 昼のお弁当を週 3 回まで手渡しで届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事の調理が困難な方
+  - 家族と同居で食事を受けられない方は相談
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.katsuura.lg.jp/page/1122.html
+  confidence: high
+  amount: 1 食 400 円（自己負担）、月〜金のうち週 3 回まで
+  more_urls:
+  - https://www.city.katsuura.lg.jp/page/5865.html
+  - https://www.city.katsuura.lg.jp/uploaded/attachment/7421.pdf
+- category: gaishutsu
+  name: 高齢者タクシー利用券の交付
+  name_on_page: 高齢者タクシー利用料助成事業
+  summary: 指定のタクシーで使える 1 枚 400 円の利用券を交付する。
+  who: {}
+  at_application:
+  - 80歳以上、または免許を自主返納した75歳以上
+  - 住民基本台帳に登録されている
+  - 免許返納の方は運転経歴証明書などが必要
+  - 福祉タクシー利用券とは同時に使えない
+  where: 高齢者支援課、移動市役所、興津集会所
+  url: https://www.city.katsuura.lg.jp/page/5659.html
+  confidence: high
+  amount: 400円券を最大24枚（6月末までの申請の場合。以後は月ごとに減る）
+- category: sonota
+  name: 高齢者の入湯券の交付
+  name_on_page: 入湯料助成事業
+  summary: 市内の温泉・スパ施設で使える入湯券を年 10 回まで交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 市内に住んでいる
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.katsuura.lg.jp/page/1122.html
+  confidence: high
+  amount: 年10回まで
+- category: sonota
+  name: はり・きゅう・マッサージの施術券
+  name_on_page: はり・きゅう・マッサージ等施術利用者助成事業
+  summary: 登録施術業者で使える助成券を年 12 回まで交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に住んでいる
+  - 医療保険が使える施術には使えない
+  where: 高齢者支援課 高齢者支援係
+  url: https://www.city.katsuura.lg.jp/page/1122.html
+  confidence: high
+  amount: 1 回 800 円、年 12 回まで
+- category: sonota
+  name: 介護マークの交付
+  name_on_page: 「介護マーク」の交付について
+  summary: 介護中であることを周囲に知らせる介護マークを介護者に交付する。
+  who: {}
+  at_application:
+  - 市内に住む、障害者・高齢者などの介護者
+  - 市内で介護ボランティアをしている方も対象
+  where: 高齢者支援課（頁には「介護健康課の窓口」とも書かれている）
+  url: https://www.city.katsuura.lg.jp/page/1165.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,172 @@
+city: 092100
+name: 大田原市
+site: www.city.ohtawara.tochigi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者等への紙おむつ・尿取りパッドの給付
+  name_on_page: 高齢者等紙おむつ等給付事業
+  summary: 要介護4・5で在宅の方に、紙おむつと尿取りパッドを毎月自宅へ届ける。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内に住所がある
+  - 障害者紙おむつ等給付事業の給付を受けていない
+  - 生活保護の一時扶助などを受けていない
+  - 施設の介護給付(特養・老健・介護医療院)を受けていない
+  where: 高齢者幸福課 高齢支援係（家族・居宅介護支援事業所の代理申請可）
+  url: https://www.city.ohtawara.tochigi.jp/docs/2016011900022/
+  confidence: high
+  amount: 3種類から選べる。月ごとに決まった枚数を現物で支給。
+- category: haishoku
+  name: 高齢者への夕食弁当の配達（安否確認つき）
+  name_on_page: 高齢者給食サービス事業（夕食）
+  summary: 調理が困難なひとり暮らしや高齢者のみの世帯に、夕食弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 毎日の食事の調理が困難
+  - 申請にケアプランまたは介護予防プラン等の添付が必要
+  where: 高齢者幸福課 高齢支援係（担当ケアマネジャーか地域包括支援センターに相談）
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020040100056/
+  confidence: high
+  amount: 1食350円（自己負担）
+- category: haikai
+  name: 認知症などで行方不明のおそれがある方の事前登録
+  name_on_page: 認知症要配慮高齢者等事前登録制度
+  summary: 行方不明のおそれがある方の特徴や写真を事前登録し、警察等と共有する。
+  who: {}
+  at_application:
+  - 市内に住所がある
+  - 認知症などで行方不明のおそれがある高齢者、または市長が必要と認める方
+  where: 高齢者幸福課 地域支援係
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020040900045/
+  confidence: high
+- category: iro
+  name: ねたきり高齢者等を介護する家族への手当
+  name_on_page: ねたきり高齢者等介護手当
+  summary: 要介護4・5などの方と同居して介護する市民に、介護手当を年2回支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 介護を受ける方は要介護4・5、または常時介護が必要な20歳以上の身体・知的障害者
+  - 市内に住所があり、同居して日常の介護をしている市民が申請
+  where: 高齢者幸福課 高齢支援係
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020040900052/
+  confidence: high
+  amount: 月額3,000円（9月・3月に支給）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 異変や出火、ボタン操作があると協力員に連絡が入る通報装置を貸す。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または要介護・要支援で居宅サービス利用者がいる高齢者のみの世帯
+  - または慢性疾患で常時注意を要する方がいる高齢者のみの世帯
+  - 緊急連絡先1人と協力員3人の登録が必要
+  - 申請にケアプラン等の添付が必要
+  where: 高齢者幸福課 高齢支援係
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020040700058/
+  confidence: high
+  amount: 月額1,000円（生活保護世帯は無料）。電話料は自己負担。
+- category: nichijo-yogu
+  name: 高齢者向け日常生活用具の給付・貸与
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: ひとり暮らしの高齢者に、火災警報器・自動消火器・電磁調理器・高齢者用電話を給付か貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 火災警報器・自動消火器・高齢者用電話は低所得の方が対象
+  - 電磁調理器は心身機能の低下で防火の配慮が必要な方が対象
+  - 申請にケアプラン等の添付が必要
+  where: 高齢者幸福課 高齢支援係（ケアマネジャーか地域包括支援センターに相談）
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020040900069/
+  confidence: high
+  amount: 高齢者用電話は月々の電話料金も一部市が負担。他の金額は頁に記載なし。
+- category: ribiyo
+  name: 訪問理美容の出張経費の補助
+  name_on_page: 高齢者等訪問理美容サービス事業
+  summary: ねたきり等で外出が難しい方の、理美容師の出張経費を市が負担する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または身体障害者手帳1・2級で常時介護が必要
+  - ねたきり等で理髪店・美容院に行くのが困難
+  - 申請にケアプラン等の添付が必要
+  where: 高齢者幸福課 高齢支援係（ケアマネジャーか地域包括支援センターに相談）
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020033100063/
+  confidence: high
+  amount: 年6回まで。理美容代は利用者が事業者に支払う。
+- category: shingu
+  name: 寝具の丸洗い・乾燥消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 掛布団・敷布団・毛布の3点を専門業者が預かり、丸洗いして消毒する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - 身体的に寝具の衛生管理が困難
+  - 申請にケアプラン等の添付が必要
+  where: 高齢者幸福課 高齢支援係（ケアマネジャーか地域包括支援センターに相談）
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020032700097/
+  confidence: high
+  amount: 年2回まで。1回890円（税別）を業者に支払う。
+- category: gaishutsu
+  name: 高齢者の通院等タクシー利用券
+  name_on_page: 高齢者通院等タクシー事業
+  summary: 交通手段に困る高齢者に、市内の通院等で使うタクシー利用券を交付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 一般の交通機関や家族の送迎が困難
+  - デマンド交通区域（黒羽・湯津上・親園・佐久山・野崎）以外に住む
+  - 高齢者外出支援事業・福祉タクシー事業の対象でない
+  - 運転免許がない、または返納した
+  - 市税等を滞納していない
+  where: 高齢者幸福課 高齢支援係
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020040700041/
+  confidence: high
+  amount: 利用券は年度内で最大48枚。乗車料金1,000円以上のとき、券1枚と自己負担1,000円を支払う。
+- category: gaishutsu
+  name: 通院のための移送車両の送迎
+  name_on_page: 高齢者等外出支援事業（通院のみ）
+  summary: 移送用車両で自宅と医療機関の間を送迎する。事前予約が必要。
+  who: {}
+  at_application:
+  - 一般の交通機関や家族の送迎が困難
+  - 要介護・要支援認定を受け居宅サービス等を利用、または身体障害者手帳・療育手帳があるひとり暮らし
+  - 申請にケアプラン等の添付が必要
+  where: 高齢者幸福課（ケアマネジャーか地域包括支援センターに相談）
+  url: https://www.city.ohtawara.tochigi.jp/docs/2020040700034/
+  confidence: high
+  amount: 片道1回300円。利用券は初回26往復分を交付。
+not_found:
+- koken
+- hochoki
+- mimamori

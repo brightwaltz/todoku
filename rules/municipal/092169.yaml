@@ -1,0 +1,126 @@
+city: 092169
+name: 下野市
+site: www.city.shimotsuke.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり老人等への紙おむつ購入券の給付
+  name_on_page: ねたきり老人等紙おむつ購入券給付事業
+  summary: 常時紙おむつを使う要介護の方などに、毎月の紙おむつ購入券を郵送で給付する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で要介護2〜5、または身体障害者手帳1・2級か療育手帳
+  - 要介護2・3は重度の認知症や障がい等でねたきりの方が対象
+  - 在宅でも入院中でも対象
+  where: 高齢福祉課
+  url: https://www.city.shimotsuke.lg.jp/0998/info-0000001016-3.html
+  confidence: high
+  amount: 申請の翌月分から毎月3,000円分の購入券
+- category: haishoku
+  name: 配食サービス（昼食の配達と安否確認）
+  name_on_page: 配食サービス事業
+  summary: 昼食の弁当を届け、安否確認も兼ねる。週3回まで。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上のひとり暮らしか高齢者のみの世帯
+  where: 高齢福祉課
+  url: https://www.city.shimotsuke.lg.jp/0998/info-0000001016-3.html
+  confidence: high
+  amount: 利用者負担は1食400円。配達は月・水・金で週3回まで
+- category: haikai
+  name: 徘徊高齢者等のGPS利用助成・QRシール配布
+  name_on_page: 徘徊高齢者等あんしんサービス事業
+  summary: 徘徊のおそれがある方を介護する家族に、GPS機器の利用費助成とQRコード付きシール等の配布を行う。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、対象者を在宅で介護している家族が申請する
+  - 対象は要支援・要介護認定で認知症による徘徊等がある方、または所在不明のおそれがある障がい者・児
+  where: 高齢福祉課
+  url: http://www.city.shimotsuke.lg.jp/0627/info-0000002413-3.html
+  confidence: high
+  amount: GPSは月440円の自己負担。QRシールは年1,100円、アイロンプリントは年1,320円の自己負担
+- category: iro
+  name: ねたきり老人等の介護手当
+  name_on_page: ねたきり老人等介護手当事業
+  summary: 在宅で重い要介護の方と同居して主に介護している家族に、手当を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護4・5の方、または要介護2・3で重度の認知症の方と同居し主に介護する人
+  - 入所・入院したときや市外へ転出したときは対象外
+  where: 高齢福祉課
+  url: https://www.city.shimotsuke.lg.jp/0998/info-0000001016-3.html
+  confidence: high
+  amount: 月3,000円（9月と3月に半年分ずつ支給）
+- category: kinkyu-tsuho
+  name: 安否確認・緊急通報システムの貸与
+  name_on_page: 安否確認システム貸与事業
+  summary: ひとり暮らしで体調に不安のある方に、緊急通報機能つきの機器を貸与する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 概ね65歳以上、またはひとり暮らしで身体障害者手帳1・2級の方
+  - 特に体調等に不安を感じている
+  - 駆けつける親族・協力者を2名以上登録
+  where: 高齢福祉課
+  url: https://www.city.shimotsuke.lg.jp/0998/info-0000001016-3.html
+  confidence: high
+  amount: 利用者負担は月300円（固定電話回線）、月800円（携帯電話回線）
+- category: gaishutsu
+  name: 高齢者外出支援（デマンド交通おでかけ号の利用券）
+  name_on_page: 下野市高齢者外出支援事業（デマンド交通おでかけ号利用券）
+  summary: 電車やバスを使いにくい75歳以上の方に、デマンド交通の利用券を交付する。
+  who: {}
+  at_application:
+  - おでかけ号の利用登録者で、年度末に75歳以上
+  - 年度内に75歳になる方は74歳でも申請可
+  - 毎年度申請が必要
+  where: 高齢福祉課（郵送・オンライン申請も可）
+  url: https://www.city.shimotsuke.lg.jp/0629/info-0000000507-3.html
+  confidence: high
+  amount: 年10枚の利用券
+- category: mimamori
+  name: 声かけふれあい収集（見守りを兼ねたごみ収集）
+  name_on_page: 声かけふれあい収集事業
+  summary: ごみ出しが難しい世帯の玄関まで週1回訪問し、声かけをしながら家庭ごみを回収する。
+  who: {}
+  at_application:
+  - 次のいずれかの人だけの世帯：65歳以上で要介護1〜5、または各種障害者手帳の重度の方
+  - 自力でごみを出せず、親族や近所の支援も受けにくい方
+  where: 高齢福祉課
+  url: https://www.city.shimotsuke.lg.jp/0998/info-0000001505-3.html
+  confidence: high
+- category: koken
+  name: 成年後見制度の利用支援（後見人報酬の助成など）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族の申立てが望めない場合の市長申立てと、報酬を払いにくい場合の後見人報酬の助成がある。
+  who: {}
+  at_application:
+  - 判断能力が不十分で制度の利用が必要な方
+  - 報酬助成は経済的理由で本人の財産から払えない場合
+  where: 社会福祉課、地域包括支援センター
+  url: https://www.city.shimotsuke.lg.jp/0322/info-0000008237-3.html
+  confidence: low
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

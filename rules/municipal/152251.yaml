@@ -1,0 +1,139 @@
+city: '152251'
+name: 魚沼市
+site: www.city.uonuma.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: 急病などの緊急時に警備会社へ通報できる装置を貸し出し、駆けつけ対応を受けられる。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身・高齢者のみの世帯やこれに準ずる世帯
+  - または日中ひとりになる高齢者・身体障がい者
+  - 電話回線（電話）があること
+  where: 介護福祉課 高齢福祉係
+  url: https://www.city.uonuma.lg.jp/page/2109.html
+  confidence: high
+  amount: 市民税非課税世帯は無料、課税世帯は月額500円。
+- category: gaishutsu
+  name: 高齢者福祉タクシー券
+  name_on_page: 外出支援サービス事業
+  summary: 通院や買い物などに使える1枚100円のタクシー券を年度ごとに交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住
+  - 要支援2以上、または身体的理由でバス等の利用が困難
+  - 市民税非課税世帯、または均等割のみ課税の世帯
+  - 要支援2未満で初回は利用者チェックシートが必要
+  where: 介護福祉課（本庁舎1階2番窓口）、北部事務所総合窓口係
+  url: https://www.city.uonuma.lg.jp/page/2138.html
+  confidence: high
+  amount: 100円券を年間最大144枚（守門・入広瀬地域は240枚）。
+- category: iro
+  name: 寝たきり老人等の介護手当
+  name_on_page: 寝たきり老人等介護手当支給事業
+  summary: 在宅で常時介護が必要な人を介護している市内の人に、介護手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 介護される人が要介護3以上、身体障害者手帳1〜3級、療育手帳Aのいずれか
+  - 常時介護が必要な状態が3か月以上続いている
+  - 特別障害者手当を受けていない
+  where: 介護福祉課 高齢福祉係
+  url: https://www.city.uonuma.lg.jp/page/2106.html
+  confidence: high
+  amount: 月額5,000円。市民税非課税世帯は7,000円。
+  more_urls:
+  - https://www.city.uonuma.lg.jp/page/2118.html
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 週2回まで昼食を自宅へ届け、安否確認と栄養面の支援をする。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯・高齢者世帯、または
+  - 日中ひとりで見守りが必要な65歳以上、または身体障がい者
+  - 自立支援のため配食が必要と認められる
+  where: 介護福祉課 高齢福祉係
+  url: https://www.city.uonuma.lg.jp/site/shinsei-navi/2139.html
+  confidence: high
+  amount: 1食あたり市民税非課税世帯200円、課税世帯300円。
+- category: jutaku
+  name: 高齢者向け住宅のバリアフリー改造補助
+  name_on_page: 高齢者向け住宅整備事業補助金
+  summary: 高齢者の身体状況に合わせた住宅改造のバリアフリー工事費を一部補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 世帯の前年の収入合計が600万円未満
+  - 工事着手前に相談する
+  - 補助は1世帯1回のみ
+  where: 介護福祉課 高齢福祉係
+  url: https://www.city.uonuma.lg.jp/page/2105.html
+  confidence: high
+  amount: 基準額30万円。補助率は生活保護世帯が全額、所得税非課税世帯が4分の3、その他は2分の1。
+- category: koken
+  name: 成年後見制度の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用負担が難しい人の成年後見の申立費用と後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 対象は認知症高齢者・知的障害者・精神障害者
+  - 生活保護、または世帯全員が市民税非課税で預貯金100万円未満など
+  - 後見人が配偶者・直系血族・兄弟姉妹なら対象外
+  - 65歳以上は介護福祉課、64歳未満は福祉支援課に申請
+  where: 介護福祉課（64歳未満は福祉支援課）
+  url: https://www.city.uonuma.lg.jp/page/1025005.html
+  confidence: high
+  amount: 報酬は在宅で月額28,000円まで（上限336,000円）。施設入所等は月額18,000円まで。
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キット
+  summary: 持病や緊急連絡先を入れて冷蔵庫に保管する救急医療情報キットを無料で配る。
+  who: {}
+  at_application:
+  - 市内在住の人
+  - 希望者多数の場合は65歳以上のひとり暮らし・高齢者のみ世帯などを優先
+  - 電話（025-792-9755）で申請
+  where: 介護福祉課（電話で申請）
+  url: https://www.city.uonuma.lg.jp/page/2147.html
+  confidence: high
+  amount: 無料（1人1セット）
+- category: sonota
+  name: 高齢者世帯の除雪援助・融雪屋根の助成
+  name_on_page: 軽度生活支援事業（除雪援助）
+  summary: 自力で除雪できない高齢者世帯などの屋根雪・門払いを援助し、融雪設備の費用も助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身・高齢者のみ世帯などの要援護世帯
+  - 市民税非課税、または均等割のみ課税の世帯
+  - 自力で除雪が困難で、親族の労力・経済的援助がない
+  - 冬期間は対象の住宅に居住している
+  - 年度ごとに申請
+  where: 介護福祉課 高齢福祉係
+  url: https://www.city.uonuma.lg.jp/page/2111.html
+  confidence: high
+  amount: 利用者負担は屋根雪1人1時間500円、門払い1回150円。融雪屋根助成は積雪深により1万〜2万円、玄関先は5,000円。
+not_found:
+- haikai
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

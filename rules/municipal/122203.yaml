@@ -1,0 +1,269 @@
+city: '122203'
+name: 流山市
+site: www.city.nagareyama.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 紙おむつ等の介護用品と交換できる利用券を、介護する家族に支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内に居住し住民票がある（申請時に入院中は不可）
+  - 要介護3は認定調査票等で介護用品が必要と判断できること
+  - 要介護者と同居し常時介護する親族がいる
+  - 介護者の世帯員も含め世帯全員が市民税非課税
+  where: 介護支援課
+  url: https://www.city.nagareyama.chiba.jp/1000011/1012908/1012940.html
+  confidence: high
+  amount: 年額最大75,000円分の利用券（支給決定日により25,000〜75,000円）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金の支給
+  summary: 介護保険サービスを使わず重度の家族を介護する世帯に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+  at_application:
+  - 1年以上介護保険サービス未利用（居宅介護支援と年7日までの短期入所は可）
+  - 1年以上、要介護4または5
+  - 要介護者と同居し主に介護する親族がいる
+  - 介護する家族も含め世帯が市民税非課税
+  where: 介護支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000764/1000833/1026340.html
+  confidence: high
+  amount: 年額100,000円
+- category: haikai
+  name: 徘徊高齢者のGPS端末等の導入費助成
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 徘徊のおそれのある方にGPS端末等を使う家族へ、購入費や登録料を助成する。
+  who:
+    age_min: 40
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症または認知症の疑いで、徘徊または徘徊のおそれがある
+  - 同居して常時介護する人がGPS等の利用契約を結んでいる
+  - 助成は対象者1人につき1回限り
+  where: 介護支援課
+  url: https://www.city.nagareyama.chiba.jp/1000011/1012908/1012943.html
+  confidence: high
+  amount: 上限20,000円（月額利用料や修理費は対象外）
+- category: haikai
+  name: 認知症の方への見守りシール交付
+  name_on_page: 認知症高齢者等見守り事業（見守りシール）
+  summary: 行方不明時に備え、QRコード付きの見守りシールを交付する。
+  who:
+    age_min: 40
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症または認知症の疑いがあり徘徊のおそれがある
+  - 保護者1名以上のメールアドレス登録が必要
+  where: 介護支援課、高齢者なんでも相談室
+  url: https://www.city.nagareyama.chiba.jp/life/1000764/1000833/1040065.html
+  confidence: high
+  amount: シール40枚を交付。希望者は個人賠償責任保険の保険料を市が負担
+- category: haishoku
+  name: 高齢者給食サービス（配食）
+  name_on_page: 高齢者給食サービス
+  summary: 食事の調達が難しい高齢者に、昼食か夕食を週3食まで届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 市内に居住し住民基本台帳に記録されている
+  - 家族全員が加齢や心身の障害で食事の調達が困難
+  - 申請後に職員が自宅を訪問して実態調査をする
+  where: 高齢者支援課、高齢者なんでも相談室（地域包括支援センター）
+  url: https://www.city.nagareyama.chiba.jp/life/1000764/1000833/1020088.html
+  confidence: high
+  amount: 1食350円（生活保護・全員非課税世帯）、その他は462円＋消費税。1日1食・週3食まで
+- category: hochoki
+  name: 難聴高齢者の補聴器購入費助成
+  name_on_page: 難聴高齢者補聴器購入費用助成制度
+  summary: 中等度難聴の高齢者に、補聴器1台分の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内在住で聴覚障害の身体障害者手帳（高度難聴以上）の対象でない
+  - 医師の証明で両耳とも40dB以上70dB未満と診断された
+  - 市民税が非課税または均等割のみ課税の世帯
+  - 購入前の申請が必要
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1049236.html
+  confidence: high
+  amount: 上限30,000円（1人1回、補聴器本体1台分）
+- category: kinkyu-tsuho
+  name: 緊急通報装置（消防署対応方式）の給付
+  name_on_page: 緊急通報装置（消防署対応方式）
+  summary: 急病時にボタン1つで消防署へ通報できる装置を給付する。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 65歳以上のひとり暮らし、またはそれに準ずる方
+  - 狭心症・心筋梗塞・脳梗塞など急変しうる病気がある（既往も可）
+  - 申請後に職員が自宅を訪問して必要性を審査する
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1000922.html
+  confidence: high
+  amount: 自己負担は前年所得税額で0〜105,325円（非課税・生活保護は0円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置（民間事業者対応方式）の貸与
+  name_on_page: 緊急通報装置（民間事業者対応方式）
+  summary: ALSOKの駆け付け付き通報装置とトイレのセンサーを貸与する。
+  who: {}
+  at_application:
+  - 市内在住の75歳以上のひとり暮らし、またはそれに準ずる方
+  - 要介護1〜5、または重度の障害者手帳（身体1・2級等）がある
+  - 住民税が非課税か均等割のみ課税の世帯、または生活保護世帯
+  - ALSOKに自宅の鍵を1本預けられる
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1000922.html
+  confidence: high
+  amount: 月額1,000円（税込。生活保護受給者は0円）
+- category: jutaku
+  name: 住宅改造費の上乗せ助成（要介護・要支援認定者）
+  name_on_page: 住宅改造費助成制度
+  summary: 介護保険の住宅改修後も残る自己負担分に、市が追加で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 日常生活で移動・歩行に支障があり介助が必要
+  - 世帯に市税滞納者がいない
+  - 介護保険の自己負担割合が1割または2割
+  - 工事は市内事業者が請け負うものに限る
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1000921.html
+  confidence: high
+  amount: 介護保険分を除いた工事費の2分の1が基準、最高20万円
+- category: jutaku
+  name: 手すり設置工事の助成（認定を受けていない75歳以上）
+  name_on_page: 住宅改造費助成制度
+  summary: 要介護認定等のない75歳以上の方の手すり設置工事費を助成する。
+  who:
+    age_min: 75
+  at_application:
+  - 要介護（要支援）認定や身体障害者手帳を受けていない
+  - 世帯に市税滞納者がいない
+  - 後期高齢者医療の自己負担割合が1割または2割
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1000921.html
+  confidence: low
+- category: gaishutsu
+  name: 外出支援サービス（通院の送迎）
+  name_on_page: 外出支援サービス
+  summary: 自宅から通院先まで、委託事業者の車で介助つきで送迎する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らし・高齢者のみ世帯、またはこれに準じる世帯
+  - 要支援・要介護認定か障害者手帳等のいずれかがある
+  - 介助なしで移動できず、単独でタクシー等も使えない
+  - 送迎を頼める家族等がおらず、生活保護を受けていない
+  - 福祉タクシー券・燃料費給油券の交付を受けていない
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1000917.html
+  confidence: high
+  amount: 1回300円、片道を1回として月4回まで。自宅から車で片道30分以内の施設に限る
+- category: gaishutsu
+  name: 高齢者等市内移動支援バス
+  name_on_page: 高齢者等市内移動支援バス事業
+  summary: 協力病院などの送迎バスの空席に、パスカードで無料で乗れる。
+  who:
+    age_min: 65
+  at_application:
+  - 市内に居住し住民基本台帳に記録されている
+  - 送迎バスに一人で乗り降りできる（ドアの開閉を含む）
+  - 利用規約に同意し、事前にパスカードの交付を受ける
+  where: 高齢者支援課、各出張所
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000930/1000955/index.html
+  confidence: high
+  amount: 無料（空席がない場合は利用できないことがある）
+  more_urls:
+  - https://www.city.nagareyama.chiba.jp/life/1000909/1000930/1000955/1000957.html
+- category: gaishutsu
+  name: 高齢者免許返納一時金（タクシー・バス助成券）
+  name_on_page: 高齢者免許返納一時金制度
+  summary: 免許を自主返納した高齢者に、タクシー・路線バスの助成券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 市内在住で、運転経歴証明書の取得時に75歳以上
+  - 過去にこの制度を利用したことがない（申請は一度限り）
+  - 福祉タクシー利用券とは併用できない
+  where: まちづくり推進課、各出張所
+  url: https://www.city.nagareyama.chiba.jp/life/1002088/1002101/1043452.html
+  confidence: high
+  amount: 合計10,800円分のタクシー・バス助成券（3プランから選択）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容店へ行けない高齢者のもとへ、理容師・美容師が訪問する。
+  who: {}
+  at_application:
+  - おおむね65歳以上
+  - 老衰や心身の障害で一般の理美容サービスを使うのが困難
+  - 申請後に市が必要性を審査する
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1000919.html
+  confidence: high
+  amount: 出張費は無料、技術料等の実費は自己負担。年6回まで
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 布団を干せない高齢者宅へ乾燥車が来て、乾燥と消毒をする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の高齢者のみ世帯
+  - 寝具の乾燥・消毒を行うことが困難と認められる
+  - 申請後に職員が自宅を訪問して審査する
+  where: 高齢者支援課
+  url: https://www.city.nagareyama.chiba.jp/life/1000909/1000912/1000920.html
+  confidence: high
+  amount: 月2回まで、無料（電気代のみ負担）
+not_found:
+- mimamori
+- nichijo-yogu

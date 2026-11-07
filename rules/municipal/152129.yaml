@@ -1,0 +1,196 @@
+city: '152129'
+name: 村上市
+site: www.city.murakami.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への給食（お弁当）サービス
+  name_on_page: 給食サービス
+  summary: 調理や買い物が難しい高齢者に、お弁当を届けて安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の単身、または80歳以上の高齢者のみ世帯
+  - 調理や買い物が困難で、利用が必要と認められる
+  where: 介護高齢課 高齢者支援室、または各支所の地域福祉室
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/kyuusyoku-sabisu.html
+  confidence: high
+  amount: 1食300円の自己負担
+- category: gaishutsu
+  name: リフト付き等タクシーの利用券交付
+  name_on_page: 外出支援サービス
+  summary: 高齢者に、通院などで使えるタクシー利用券を交付する。
+  who: {}
+  at_application:
+  - サービス付き高齢者向け住宅などの利用者は対象外
+  - 対象者の詳しい条件は窓口で確かめる
+  where: 介護高齢課 高齢者支援室、または各支所の地域福祉室
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/gaisyutusienn-sabisu.html
+  confidence: high
+  amount: 利用券1枚につきタクシーの基本料金相当額
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らしなどの世帯に通報装置・センサー・火災警報器を貸与し、24時間対応する。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者世帯、または高齢者のみの世帯
+  - 重度障害者のみの世帯、高齢者と重度障害者のみの世帯も可
+  - 協力員（近所の人や親族）を2名以上登録する
+  where: 介護高齢課 高齢者支援室、または各支所の地域福祉室
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/kinnkyuutuuhou-taiyo.html
+  confidence: high
+  amount: 月額1,400円（要配慮者のいない高齢者のみ世帯等）。その他の世帯は無料
+- category: nichijo-yogu
+  name: 高齢者への日常生活用具の給付
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: IHコンロ・火災警報器・自動消火器・緊急通報装置を給付する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で、防火や安否確認への配慮が必要
+  - 市民税の所得割が1万円を超える世帯は対象外
+  - 購入前に見積書を付けて申請する
+  where: 介護高齢課 高齢者支援室、または各支所の地域福祉室
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/rouzinnnitizyouseikatuyougu.html
+  confidence: high
+  amount: 基準額：IHコンロ41,000円、火災警報器15,500円、自動消火器28,700円、緊急通報装置55,000円
+- category: jutaku
+  name: 高齢者・障害者向け住宅改造費の補助
+  name_on_page: 高齢者・障がい者向け住宅整備補助事業
+  summary: 高齢者等が使いやすいよう住宅を改造する工事費の一部を補助する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で要介護・要支援認定を受けている人
+  - 身体障害者手帳1・2級、または療育手帳Aの人も対象
+  - 世帯の前年収入合計が600万円未満、世帯で1回のみ
+  - 着工前に申請する
+  where: 介護高齢課 高齢者支援室、福祉課 福祉政策室、または各支所の地域福祉室
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/koureisya-zyuutakuseibizyosei.html
+  confidence: high
+  amount: 高齢者区分は基準額30万円。補助率は生活保護10/10、所得税非課税4分の3、その他2分の1
+- category: kaigo-yohin
+  name: 高齢者の紙おむつ購入費助成券
+  name_on_page: 高齢者紙おむつ購入費助成事業
+  summary: 要介護3〜5の在宅高齢者に、大人用紙おむつの購入に使える助成券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 居宅介護支援事業所等の支援を受けている
+  - 月に15日以上自宅で生活していない月は券を使えない
+  where: 介護高齢課 高齢者支援室（電子申請も可）
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/koureisya-kamiomutu.html
+  confidence: high
+  amount: 月額3,000円（4か月分ずつ年3回、助成券で交付）
+- category: iro
+  name: 在宅の高齢者を介護する家族への介護手当
+  name_on_page: 在宅生活高齢者介護手当
+  summary: 在宅の高齢者を介護している人に、介護手当を支給する。
+  who: {}
+  at_application:
+  - 介護する人は市内に住所がある
+  - 介護する人自身が要介護3〜5だと対象外
+  - 15日以上自宅で生活していない月は支給しない
+  where: 介護高齢課 高齢者支援室（電子申請も可）
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/zaitakunetakiri-teate.html
+  confidence: high
+  amount: 月額3,000円（4か月分ずつ年3回支給）
+- category: koken
+  name: 成年後見人等への報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見人等への報酬を負担できない人に、報酬費用を助成する。
+  who: {}
+  at_application:
+  - 後見人等の選任を受けている
+  - 生活保護、または市民税非課税で預貯金等が50万円未満
+  - 後見人等が配偶者・直系血族・兄弟姉妹の場合は対象外
+  where: 介護高齢課 高齢者支援室（地域包括支援センター）
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/kouken-riyoushien.html
+  confidence: high
+  amount: 報酬額を助成。上限は在宅月28,000円、施設入所月18,000円
+- category: sonota
+  name: 高齢者等の除雪費の援助
+  name_on_page: 高齢者等除雪費援助事業
+  summary: 除雪ができない高齢者世帯等に、屋根の雪下ろしや避難路の除雪の費用を援助する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身または高齢者のみの世帯
+  - 障がい者のみの世帯なども対象
+  - 市民税非課税または均等割のみ課税の世帯
+  - 除雪ができず、援助も受けられない
+  where: 介護高齢課 高齢者支援室、または各支所の地域福祉室（民生委員に相談のうえ）
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/koureisyazyosetu-ennzyo.html
+  confidence: high
+  amount: 屋根の雪下ろし1回上限1万円、避難路除雪1回上限1,000円（各年3回まで）
+- category: sonota
+  name: 熱中症対策のエアコン設置費補助
+  name_on_page: 熱中症対策エアコン設置費補助事業
+  summary: エアコンが1台もない低所得の高齢者のみ世帯等に、設置費の一部を補助する。
+  who: {}
+  at_application:
+  - 住民税非課税または生活保護で、居宅にエアコンが1台もない
+  - 65歳以上のみの世帯。障害者手帳世帯・ひとり親世帯等も対象
+  - 着工前に申請する。1世帯1回のみ
+  where: 介護高齢課 高齢者支援室、福祉課 福祉政策室、こども課、または各支所の地域福祉室
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/eakon-secchi-hojyo.html
+  confidence: high
+  amount: 費用の2分の1以内、上限5万円
+- category: sonota
+  name: ホームヘルパーによる軽度の家事援助
+  name_on_page: 軽度生活援助
+  summary: 高齢者に、ヘルパーが調理・掃除・買い物代行などをする。
+  who: {}
+  at_application:
+  - 利用の可否は職員の訪問・聞き取り調査で決める
+  - 申請書と身体状況自己申告書を出す
+  where: 介護高齢課 高齢者支援室、または各支所の地域福祉室
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/keidoseikatu.html
+  confidence: high
+  amount: 1回200円、1回1時間まで・週2回まで
+- category: sonota
+  name: 救急医療情報キットの無料配布
+  name_on_page: 救急医療情報キットを配布します
+  summary: かかりつけ医や薬の情報を入れて冷蔵庫に置くキットを、無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上のみの世帯
+  - 1人になる時間帯がある65歳以上の人も対象
+  - 障害者手帳の所持者などの条件もある
+  where: 介護高齢課 高齢者支援室、または各支所の地域福祉室（代理申請可）
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/kyuukyuuiryouzyouhoukitto.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 養護老人ホームでの短期宿泊による生活指導
+  name_on_page: 生活管理指導短期宿泊サービス
+  summary: 生活習慣の改善が必要な高齢者が、やまゆり荘に短期宿泊して生活指導を受ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、生活習慣の改善や日常生活の指導支援が必要
+  where: 介護高齢課 高齢者支援室（地域包括支援センター）
+  url: https://www.city.murakami.lg.jp/site/koureisya-fukushi/tannkisyukuhaku-sabisu.html
+  confidence: high
+  amount: 利用料は1日1,905円
+not_found:
+- haikai
+- shingu
+- ribiyo
+- mimamori
+- chusha
+- yutai

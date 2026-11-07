@@ -1,0 +1,243 @@
+city: '122084'
+name: 野田市
+site: www.city.noda.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 介護用品支給事業
+  summary: 要介護等の方に、紙おむつなどを毎月自宅へ配送する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - おむつ使用の記載、自立度B・C、尿失禁のいずれかに当たる
+  - 市税に著しい滞納がない
+  - 生活保護を受けていない
+  where: 高齢者支援課、支所、各出張所
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/hoken/1000486.html
+  confidence: high
+  amount: 毎月 4,700 円相当分のおむつ
+  more_urls:
+  - https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護者を在宅で介護する家族に、年額の慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5の状態が1年以上続いている
+  - 介護者が要介護者と同居または同一敷地に住む
+  - 過去1年に介護保険サービスを使っていない（短期入所は年7日程度まで可）
+  - 過去1年の入院が通算90日以内
+  - 生活保護を受けておらず、市税の長期滞納がない
+  where: 高齢者支援課
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/hoken/1000488.html
+  confidence: high
+  amount: 要介護者1人につき年額 10 万円
+- category: haishoku
+  name: 夕食の配食
+  name_on_page: 配食サービス
+  summary: 夕食を毎日届け、手渡しで安否も確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 心身の衰え・障がい・傷病などで食事の調達が難しい
+  where: 高齢者支援課
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/1000449.html
+  confidence: high
+  amount: 1食 370 円（自己負担）
+  more_urls:
+  - https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+- category: haikai
+  name: 徘徊高齢者の位置確認（GPS）
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 徘徊のある高齢者に発信機を持たせ、家族へ居場所を知らせる。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で、認知症等により徘徊が見られる
+  - 同居（同一敷地の別棟を含む）して介護する家族が申請
+  where: 高齢者支援課
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/1000451.html
+  confidence: high
+  amount: 加入料・付属品は市負担。月額1,320円、電話での位置案内は1回220円などは自己負担
+  more_urls:
+  - https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報システム
+  summary: ボタン一つで消防本部につながる緊急通報装置を設置する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65歳以上、または65歳未満の身体障がい者で、ひとり暮らし
+  - 慢性的な疾患などで日常的に常時注意が必要
+  - 前年分の所得税が非課税
+  - 担当地区の民生委員を通じて申請
+  where: 高齢者支援課（民生委員経由で市役所・支所・出張所）
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/1000446.html
+  confidence: high
+  amount: 利用料は無料。電話回線使用料などは自己負担
+  more_urls:
+  - https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+- category: ribiyo
+  name: 訪問理容の費用助成
+  name_on_page: 訪問理容サービス
+  summary: 理容店に来てもらう訪問費用を、1回ごとに助成する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らしか高齢者のみ世帯で、理容店に行くのが難しい
+  - または要介護3以上の認定を受けている
+  where: 高齢者支援課
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/1000450.html
+  confidence: high
+  amount: 1回 1,500 円を助成（助成券は年4枚）
+  more_urls:
+  - https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+- category: gaishutsu
+  name: 福祉タクシー料金の助成
+  name_on_page: 福祉タクシー
+  summary: 契約タクシーの運賃の半額を、助成券で助成する。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定を受けている
+  - または70歳以上のひとり世帯・夫婦世帯で、市民税が課税されていない
+  where: 高齢者支援課
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/1000444.html
+  confidence: high
+  amount: 運賃の2分の1（1回につき上限 1,000 円）
+  more_urls:
+  - https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+- category: jutaku
+  name: 高齢者住宅改造費の上乗せ助成
+  name_on_page: 高齢者住宅改造費の助成
+  summary: 介護保険の住宅改修の上限を超えた分の一部を、市が助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 住宅の所有者、または所有者の改造承諾を得ている
+  - 介護保険の負担割合が1割または2割
+  - 市税・介護保険料を滞納していない
+  - 介護保険の対象品目の改修が対象
+  where: 介護支援課
+  url: https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/1000452.html
+  confidence: high
+  amount: 最高 30 万円。非課税世帯は2分の1、課税世帯は4分の1
+  more_urls:
+  - https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 医療情報を書いて冷蔵庫に保管するキットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみ世帯に属する方
+  - または持病があり日中ひとりになる高齢者
+  where: 高齢者支援課
+  url: https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/index.html
+- category: sonota
+  name: 民間賃貸住宅の入居・保証料支援
+  name_on_page: 住宅困窮者民間賃貸住宅居住支援事業
+  summary: 入居が難しい高齢世帯の民間賃貸入居を支え、保証料を助成する。
+  who:
+    age_min: 60
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に引き続き1年以上居住し、住民登録をしている
+  - 家賃などを納められる見込みがあり、自立した生活ができる
+  - 連帯保証人を確保できない
+  - 保証料の助成は世帯全員が市民税非課税の場合
+  where: 営繕課、高齢者支援課
+  url: https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+  confidence: high
+  amount: 保証料の助成は家賃等合計の10分の3、上限 2 万円
+  more_urls:
+  - https://www.city.noda.chiba.jp/kurashi/fukushi/kourei/service/index.html
+- category: sonota
+  name: ごみ出し支援（戸別収集）
+  name_on_page: ひとり暮らし高齢者等ごみ出し支援事業
+  summary: ごみ出しが難しい世帯のごみを、安否確認をしながら戸別に収集する。
+  who: {}
+  at_application:
+  - 要支援・要介護認定を受けた、概ね65歳以上のみの世帯
+  - または身体障がい者のみの世帯
+  where: 清掃管理課
+  url: https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+  confidence: high
+- category: sonota
+  name: 車いすの無料貸出
+  name_on_page: 車いすの貸出
+  summary: 下肢が不自由な高齢者に、車いすを無料で貸し出す。
+  who: {}
+  at_application:
+  - 下肢の不自由な高齢者
+  where: 社会福祉協議会（関宿出張所でも取扱い）
+  url: https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+  confidence: low
+  amount: 無料
+- category: sonota
+  name: 車いす対応自動車の無料貸出
+  name_on_page: 車いす対応自動車の貸出
+  summary: 車いす利用の高齢者や家族に、車いす対応の自動車を貸し出す。
+  who: {}
+  at_application:
+  - 下肢の不自由な車いす利用の高齢者、またはその家族
+  where: 社会福祉協議会（関宿出張所でも取扱い）
+  url: https://www.city.noda.chiba.jp/_res/projects/default_project/_page_/001/022/713/R8koureihukushi.pdf
+  confidence: low
+  amount: 貸出は無料（燃料は利用者負担）
+not_found:
+- koken
+- hochoki
+- shingu
+- mimamori
+- nichijo-yogu
+- yutai

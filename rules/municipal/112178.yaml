@@ -1,0 +1,249 @@
+city: '112178'
+name: 鴻巣市
+site: www.city.kounosu.saitama.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 重度要介護高齢者への月額手当
+  name_on_page: 重度要介護高齢者手当
+  summary: 要介護4・5の高齢者に月額の手当を支給する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護4・5、または3か月超の入院で同程度の人
+  - 介護保険料を滞納していない
+  - 生活保護・在宅重度心身障害者手当を受けていない
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 月額5,000円（該当月分をまとめて口座振込）
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: kaigo-yohin
+  name: 重度要介護高齢者への紙おむつ等の支給
+  name_on_page: 重度要介護高齢者紙おむつ等支給
+  summary: 重度の要介護者に紙おむつの現物、またはおむつ代を支給する。
+  who:
+    age_min: 65
+  at_application:
+  - 要介護4・5、または要介護3で排尿排便が全介助の人
+  - 3か月超の入院で同程度の人も対象（代金支給のみ）
+  - 介護保険料を滞納していない
+  - 介護保険施設の入所者・1か月以上継続のショートステイ利用者は除く
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 月額3,000円を上限とした現物またはおむつ代
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: shingu
+  name: 寝具の乾燥消毒・丸洗い
+  name_on_page: 重度要介護高齢者等寝具乾燥消毒等事業
+  summary: 委託業者が寝具を預かり、乾燥消毒や丸洗いをして届ける。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 要介護4・5、またはひとり暮らしで調査の結果必要な人
+  - 介護保険料を滞納していない
+  - 介護保険施設の入所者は除く
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 無料（乾燥消毒は年10回、丸洗いは年2回）
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: ribiyo
+  name: 重度要介護者の訪問理容・美容
+  name_on_page: 重度要介護高齢者等訪問理容・美容サービス
+  summary: 理美容店に行けない要介護4・5の人の訪問散髪に利用券で補助する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 介護保険料を滞納していない
+  - 介護保険施設の入所者は除く
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 1回4,000円を年4回まで補助（出張費込みの差額は自己負担）
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: iro
+  name: 要介護4・5の人を介護する家族への手当
+  name_on_page: 在宅要援護高齢者介護者手当
+  summary: 要介護4・5の高齢者を常時介護する人に手当を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 年齢・要介護度は介護される側の条件
+  - 介護される人と市内で1年以上同居し3か月超介護している1名
+  - 介護者が要介護2〜5の認定を受けていない
+  - 介護保険料を滞納していない
+  - 介護保険施設の入所者の介護者は除く
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 月額5,000円（該当月分をまとめて口座振込）
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: haikai
+  name: 徘徊高齢者のGPS探索サービスの利用助成
+  name_on_page: 徘徊高齢者等探索サービス事業
+  summary: 行方不明が心配な人にGPS端末を持たせる探索サービスの加入料と月額基本料を市が負担する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で介護している人が申請する
+  - 65歳以上で認知症により行方不明が心配な人
+  - または40歳以上の若年性認知症・高次脳機能障害等でサービスが必要と認められる人
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 加入料金と月額基本料金を市が負担（充電器・オプション等は自己負担）
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/27780.pdf
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: mimamori
+  name: 高齢者あんしんみまもりサービスの利用料助成
+  name_on_page: 高齢者あんしんみまもりサービス
+  summary: 市の委託事業者の見守りサービスの利用料を、全部または一部を市が負担する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 同一敷地内・同一建物内に65歳未満の親族等がいない
+  - 高齢者のみの世帯は日常生活に不安のある人
+  - 申請前に緊急連絡先の人の同意が必要
+  - 利用できるサービスは1つのみ
+  where: 介護保険課 高齢福祉担当、吹上支所・川里支所の福祉グループ
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1750.html
+  confidence: high
+  amount: 市の負担は月額2,000円（税込）まで
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報機器による見守り（あんしんみまもりの選択肢）
+  name_on_page: 高齢者あんしんみまもりサービス
+  summary: ペンダント型発信機や通報電話機で緊急時に通報できるサービスを、あんしんみまもりの1つとして利用料助成で使える。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 同一敷地内・同一建物内に65歳未満の親族等がいない
+  - 高齢者のみの世帯は日常生活に不安のある人
+  - 申請前に緊急連絡先の人の同意が必要
+  - 利用できるサービスは1つのみ
+  where: 介護保険課 高齢福祉担当、吹上支所・川里支所の福祉グループ
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1750.html
+  confidence: high
+  amount: 市の負担は月額2,000円（税込）まで
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: haishoku
+  name: 在宅高齢者等への配食
+  name_on_page: 在宅高齢者等配食サービス
+  summary: 調理が難しい人に、安否確認を兼ねて食事を届ける。
+  who: {}
+  at_application:
+  - 安否確認と栄養改善が必要で、自分で調理するのが困難な人
+  - 在宅で65歳以上の高齢者のみの世帯の人
+  - または障害者手帳を持ち自分で調理が困難な人
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 1食500円の自己負担で利用日ごとに1食を配達
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: nichijo-yogu
+  name: 火災警報器・自動消火器・電磁調理器の給付
+  name_on_page: 日常生活用具給付等事業
+  summary: 低所得などの条件に合う高齢者に、火災警報器・自動消火器・電磁調理器を給付する。
+  who: {}
+  at_application:
+  - 低所得世帯に属する概ね65歳以上の人（所得制限あり）
+  - 長期臥床の要介護高齢者、または要支援以上のひとり暮らし高齢者等
+  - 詳しい条件は担当窓口に問い合わせる
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: gaishutsu
+  name: 車椅子・臥床の人の外出支援（送迎）
+  name_on_page: 外出支援サービス
+  summary: 移送用車両で自宅と医療機関などの間を送迎する利用者証を発行する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 常時車椅子または臥床の状態で公共交通機関を使えない
+  - 要介護・要支援の認定を受けている、または申請中
+  - 市の介護保険第1号被保険者で保険料の滞納がない
+  where: 介護保険課 高齢福祉担当（吹上・川里支所福祉グループでも受付）
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1745.html
+  confidence: high
+  amount: 月180分まで利用でき、費用の2割は自己負担
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: gaishutsu
+  name: コミュニティバス・乗合タクシー等の特別乗車証
+  name_on_page: フラワー号特別乗車証の交付
+  summary: 対象の人に、フラワー号などを無料で使える特別乗車証を交付する。
+  who: {}
+  at_application:
+  - 市内在住の80歳以上の人
+  - または要介護・要支援の認定を受けている人
+  - 障害者手帳・難病の受給者証を持つ人や妊娠中の人なども対象
+  where: 自治振興課 防犯・交通担当（介護保険課でも申請可）
+  url: https://www.city.kounosu.saitama.jp/page/22550.html
+  confidence: high
+  amount: 特別乗車証の提示で運賃が無料
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+- category: sonota
+  name: 介護保険サービス利用者負担額の半額助成
+  name_on_page: 介護保険サービス利用者負担額助成金事業
+  summary: 住民税非課税世帯の高齢者の、対象の介護サービスの利用者負担を原則2分の1助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険第1号被保険者で、保険料の所得段階が第1〜3段階
+  - 介護保険料を滞納していない
+  - 給付制限を受けていない、生活保護を受けていない
+  - 対象は認知症対応型通所介護、小規模多機能型居宅介護など
+  where: 介護保険課 介護推進担当
+  url: https://www.city.kounosu.saitama.jp/site/kaigohoken/1796.html
+  confidence: high
+  amount: 利用者負担額の2分の1（高額介護サービス費を差し引いた額が基準）
+  more_urls:
+  - https://www.city.kounosu.saitama.jp/uploaded/attachment/22500.pdf
+not_found:
+- koken
+- jutaku

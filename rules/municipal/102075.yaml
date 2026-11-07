@@ -1,0 +1,221 @@
+city: '102075'
+name: 館林市
+site: www.city.tatebayashi.gunma.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 平日の昼食を自宅に届け、安否確認も兼ねる配食サービス。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 市内在住で、おおむね65歳以上
+  - ひとり・二人暮らし、または日中ひとり・二人暮らし
+  - 二世帯住宅等でも生計が別で上記に当たれば対象
+  where: 高齢障がい政策課 高齢者支援係（問い合わせは介護保険課 地域包括ケア係）
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+  confidence: high
+  amount: 1食350円の自己負担（祝日を除く月〜金）
+  more_urls:
+  - https://www.city.tatebayashi.gunma.jp/s110/kenko/100/130/R7shiminseikatutohukushiAll908.pdf
+- category: ribiyo
+  name: 在宅ねたきり高齢者の出張理美容利用券
+  name_on_page: 出張理容・美容サービスをご利用ください
+  summary: 外出できないねたきりの方に、出張理容・美容の利用券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住民登録がある在宅のねたきり高齢者
+  where: 高齢障がい政策課 高齢者支援係（1階7番窓口）
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/090/20210315111634.html
+  confidence: high
+  amount: 1枚3,500円分の利用券を年間最大4枚
+  more_urls:
+  - https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+- category: jutaku
+  name: 住宅改修費補助（市独自）
+  name_on_page: 住宅改修費補助
+  summary: 段差解消・手すり設置などの住宅改修費の一部を市が補助する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 常に介助や注意を要する方
+  - 前年の所得税が非課税の世帯
+  - 住宅改修相談員の提案書に基づく工事が対象
+  - 工事着手前に相談が必要
+  where: 高齢障がい政策課 高齢者支援係
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+  confidence: high
+  amount: 補助基本額60万円（市が6分の5、改造者負担は6分の1）
+  more_urls:
+  - https://www.city.tatebayashi.gunma.jp/s110/kenko/100/130/R7shiminseikatutohukushiAll908.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: 急病時に消防署へ通報でき救急車を呼べる装置を貸与する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らしなどの在宅高齢者
+  - 別途固定電話が必要
+  - 申請時に誓約書（署名捺印）の提出が必要
+  where: 高齢障がい政策課 高齢者支援係
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+  confidence: high
+- category: shingu
+  name: 寝具乾燥殺菌
+  name_on_page: 寝具乾燥殺菌
+  summary: 寝具の乾燥が難しい方の寝具を丸洗い乾燥・殺菌する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上の在宅の方
+  - ひとり暮らし、またはねたきりで寝具の乾燥が困難
+  where: 高齢障がい政策課 高齢者支援係
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+  confidence: high
+- category: kaigo-yohin
+  name: 尿漏れパットの給付
+  name_on_page: 尿漏れパットの給付
+  summary: 要介護4・5の在宅高齢者に尿漏れパットを給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上（PDFの記載）
+  where: 高齢障がい政策課 高齢者支援係
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+  confidence: high
+  amount: 所得税非課税世帯は年4回、課税世帯は年2回（PDFの記載）
+  more_urls:
+  - https://www.city.tatebayashi.gunma.jp/s110/kenko/100/130/R7shiminseikatutohukushiAll908.pdf
+- category: iro
+  name: 介護慰労金
+  name_on_page: 介護慰労金支給事業
+  summary: 要介護4・5の高齢者を在宅で1年以上介護する家族に慰労金を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 支給対象は介護している人。要介護者は65歳以上
+  - 在宅で1年以上介護していること
+  where: 高齢障がい政策課 高齢者支援係
+  url: https://www.city.tatebayashi.gunma.jp/s110/kenko/100/130/R7shiminseikatutohukushiAll908.pdf
+  confidence: low
+  amount: 1人60,000円
+- category: hochoki
+  name: 高齢者補聴器購入費補助
+  name_on_page: 補聴器の購入費の一部を補助します
+  summary: 手帳対象外の難聴の高齢者に、補聴器購入費の一部を補助する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 市内に住所があり、聴覚の身体障害者手帳を持っていない
+  - 両耳とも聴力レベルが40デシベル以上
+  - 耳鼻咽喉科医が必要と認め、意見書を提出できる
+  - 市税の滞納がない
+  - 購入前に申請が必要
+  where: 高齢障がい政策課（1階7番窓口）
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/170/20230525145402.html
+  confidence: high
+  amount: 購入費の2分の1（上限30,000円、1,000円未満切捨て）
+- category: haikai
+  name: 認知症高齢者等事前登録（見守りシール）
+  name_on_page: 認知症高齢者等事前登録事業（「どこシル伝言板」見守りシール）
+  summary: 行方不明のおそれがある方を事前登録し、二次元コード付きの見守りシールを渡す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症またはその疑いにより行方不明のおそれがある方を在宅で介護する家族等
+  - 本人は65歳以上、または40〜64歳で若年性認知症の要介護認定を受けている
+  - 写真と上州くん安全・安心メール同意書が必要
+  where: 介護保険課 地域包括ケア係（1階6番窓口）
+  url: https://www.city.tatebayashi.gunma.jp/s031/kenko/120/030/100/20200105231000.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等探索システム（GPS端末）導入費補助
+  name_on_page: 認知症高齢者等探索システム導入費用補助事業
+  summary: 行方不明のおそれがある方のGPS端末の導入費用の一部を補助する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内在住で、認知症またはその疑いにより行方不明のおそれがある方を在宅で介護する家族等
+  - 本人は65歳以上、または40〜64歳で若年性認知症の要介護認定を受けている
+  - 機器の購入前に相談。購入・契約から90日以内に申請
+  where: 介護保険課 地域包括ケア係（1階6番窓口）
+  url: https://www.city.tatebayashi.gunma.jp/s031/kenko/120/030/020/20200106003000.html
+  confidence: high
+  amount: 導入費用の合計額（上限12,000円、1人1回限り）
+- category: gaishutsu
+  name: 高齢者等タクシー助成
+  name_on_page: 令和8年度高齢者等タクシー助成について
+  summary: マイナンバーカード等を登録して、タクシー料金の3割の助成を受ける。
+  who: {}
+  at_application:
+  - 70歳以上、または69歳以下で要支援・要介護認定を受けている
+  - ほか69歳以下で障がい者手帳該当の在宅の方、ひとり親も対象
+  - 事前の利用登録が必要（代理申請可）
+  where: 安全安心課（市役所3階）。障がい該当の方は高齢障がい政策課、ひとり親は子育て支援課
+  url: https://www.city.tatebayashi.gunma.jp/s015/kurashi/140/20260120153803.html
+  confidence: high
+  amount: 1回の乗車で料金の3割（上限1,500円、最低500円）、年最大36回
+- category: sonota
+  name: はり・きゅう・マッサージ利用券の交付
+  name_on_page: はり・きゅう・マッサージ利用券の交付
+  summary: 保険適用外のはり・きゅう・マッサージの施術料を助成する券を交付する。
+  who: {}
+  at_application:
+  - 市内に住民登録がある、次のいずれか
+  - 満70歳以上で前年の所得税が非課税
+  - 介護慰労金の受給者、またはその介護を受けている方
+  where: 高齢障がい政策課 高齢者支援係（1階7番窓口）
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+  confidence: high
+  amount: 1回につき1,000円の助成券を年間6枚
+  more_urls:
+  - https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/080/20210315111117.html
+- category: sonota
+  name: 介護用車両購入費等補助金
+  name_on_page: 介護用車両購入費等補助金
+  summary: 福祉車両や助手席回転シート車の購入・改造費の一部を補助する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で日常的に車椅子が必要な要介護者を自宅で介護する世帯
+  - または下肢・体幹の障がい1・2級の身体障がい者のいる世帯
+  - 購入前に申請が必要
+  where: 高齢障がい政策課 高齢者支援係
+  url: https://www.city.tatebayashi.gunma.jp/s030/kenko/120/020/040/20200106010000.html
+  confidence: high
+not_found:
+- koken
+- mimamori

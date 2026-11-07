@@ -1,0 +1,145 @@
+city: '152056'
+name: 柏崎市
+site: www.city.kashiwazaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成券
+  name_on_page: 在宅の要介護認定を受けている方などに紙おむつの購入費を助成します
+  summary: 在宅でおむつを常時使う高齢の方に、紙おむつ購入用の助成券を年2回郵送する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住でおおむね65歳以上
+  - 排せつに介助が必要（要介護1以上、または重度の手帳等）
+  - 手帳等は身障1・2級、療育A、精神1・2級、特別障害者手当
+  where: 介護高齢課高齢対策係（担当ケアマネジャーにも相談可）
+  url: https://www.city.kashiwazaki.lg.jp/kenko_fukushi_kaigo/fukushi_kaigo/koreishafukushi/6/10205.html
+  confidence: high
+  amount: 月額3,000円（市民税非課税・均等割のみ課税世帯）、2,000円（所得割課税世帯）の助成券
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸し出し
+  name_on_page: 緊急通報装置
+  summary: ひとり暮らしの高齢の方などに、ボタンで通報できる緊急通報装置を無料で貸す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住で市民税非課税
+  - 65歳以上または重度障がい者で、ひとり暮らし
+  - または、ひとり暮らしに準ずる世帯（高齢者2人で1人が寝たきり等）
+  - 固定電話回線を使う
+  where: 地域包括支援センター、ケアマネジャー、民生委員、介護高齢課
+  url: https://www.city.kashiwazaki.lg.jp/kenko_fukushi_kaigo/fukushi_kaigo/koreishafukushi/6/10206.html
+  confidence: high
+  amount: 機器の貸与は無料（市が負担）
+- category: jutaku
+  name: 高齢者向け住宅改造費の補助
+  name_on_page: 高齢者向け安心住まいる整備補助事業
+  summary: 要支援・要介護の高齢者の住宅改造費の一部を、介護保険の住宅改修とは別に補助する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 市内在住でおおむね65歳以上
+  - 世帯の前年の収入合計が600万円未満
+  - 改造で日常生活が容易になると認められる
+  - 着工前の申請が必要。介護保険の住宅改修が優先
+  where: 介護高齢課高齢対策係
+  url: https://www.city.kashiwazaki.lg.jp/kenko_fukushi_kaigo/fukushi_kaigo/koreishafukushi/6/10209.html
+  confidence: high
+  amount: 対象額の50%（上限15万円）。所得税非課税世帯は75%（上限22.5万円）、生活保護世帯は100%（上限30万円）
+- category: hochoki
+  name: 軽・中等度難聴者の補聴器購入費助成
+  name_on_page: 軽・中等度難聴者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象外の軽・中等度難聴の方に、補聴器購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 18歳以上で市内在住、身体障害者手帳の対象外
+  - 両耳の聴力が30デシベル以上
+  - 補聴器の効果があると医師が判断
+  - 所得割が最多の納税者で46万円以上の世帯は対象外
+  - 購入前の申請が必要
+  where: 65歳以上は介護高齢課地域包括支援係、64歳以下は福祉課障害福祉係
+  url: https://www.city.kashiwazaki.lg.jp/soshikiichiran/fukushihokembu/kaigokoreika/4/3/34789.html
+  confidence: high
+  amount: 非課税・生活保護世帯は経費の全額（上限5万円）、課税世帯は2分の1（上限2.5万円）
+- category: koken
+  name: 成年後見制度の利用費用の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見開始の申立て費用や後見人への報酬を、生活保護またはそれに準ずる方に助成する。
+  who: {}
+  at_application:
+  - 市内在住の成年被後見人・被保佐人・被補助人
+  - 生活保護、またはそれに準ずる方で助成がないと利用が困難
+  - 準ずる方：世帯全員が市民税非課税、預貯金100万円以下など
+  - 申請は審判確定から1年以内
+  where: 65歳以上は介護高齢課地域包括支援係、65歳未満の知的・精神障がい者は福祉課障害福祉係
+  url: https://www.city.kashiwazaki.lg.jp/kenko_fukushi_kaigo/fukushi_kaigo/seinenkoken/34709.html
+  confidence: high
+  amount: 報酬は月額上限2.8万円（1回の申請で24か月分まで）。申立て費用も対象
+- category: sonota
+  name: 高齢者世帯等の屋根の雪下ろし費用の助成
+  name_on_page: 高齢者世帯等除雪費助成事業
+  summary: 支援が必要な高齢者世帯などに、屋根の雪下ろしにかかった費用の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、障がい者のみの世帯、母子世帯など
+  - 自力や親族の支援で雪下ろしができない
+  - 世帯全員が市民税非課税または均等割のみ課税
+  - 事前の登録申請が必要
+  where: 地区担当の民生委員または介護高齢課
+  url: https://www.city.kashiwazaki.lg.jp/kenko_fukushi_kaigo/fukushi_kaigo/koreishafukushi/6/10207.html
+  confidence: high
+  amount: 1回の作業費の8割（上限2万円）
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 65歳以上のひとり暮らし等の方に、医療情報を入れて冷蔵庫に置くキットを配る。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 同居家族が長時間不在で実質ひとりになる方も含む
+  - 1世帯1本、数に限りあり
+  where: 介護高齢課高齢対策係、高柳・西山町事務所、各地域包括支援センター
+  url: https://www.city.kashiwazaki.lg.jp/kenko_fukushi_kaigo/fukushi_kaigo/koreishafukushi/6/10208.html
+  confidence: high
+- category: sonota
+  name: 緊急時のショートステイ利用の助成
+  name_on_page: 高齢者生活支援短期入所事業
+  summary: 介護者の急な事情で在宅介護ができないとき、ショートステイ費用の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上で要介護認定が非該当、または60〜64歳で一人暮らしが危険な方
+  - または要支援・要介護の方（支給限度を超える場合）
+  - 介護者の病気・事故・葬祭などで一時的に介護が困難
+  where: 介護高齢課、地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.kashiwazaki.lg.jp/kenko_fukushi_kaigo/fukushi_kaigo/koreishafukushi/6/10204.html
+  confidence: high
+  amount: 非該当等は年5日以内で1日1,800円。要支援・要介護は年30日以内で介護費用の3割（食費等は別）
+not_found:
+- haishoku
+- haikai
+- iro
+- gaishutsu
+- mimamori

@@ -1,0 +1,296 @@
+city: 082350
+name: つくばみらい市
+site: www.city.tsukubamirai.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品助成（紙おむつ等）
+  name_on_page: 介護用品助成
+  summary: 非課税世帯で在宅介護する家族に、紙おむつ等の購入助成券を交付する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 市内在住の市民税非課税世帯に属する人を介護する家族
+  - ①要介護4・5で65歳以上、介護用品が常時必要
+  - ②要支援・要介護の40歳以上で、寝たきり・認知症等の基準あり
+  - 年度ごとに申請が必要
+  where: 介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 1,250円の助成券を年24枚まで（年3万円限度）。②は年12枚まで（年1万5千円限度）
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255659_doc_33_0.pdf
+- category: haishoku
+  name: まごころ弁当
+  name_on_page: まごころ弁当
+  summary: 夕食の弁当を火・木に手渡しで届け、応答がなければ安否確認をする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住
+  where: 地区担当の民生委員児童委員、または介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 1食480円、週2回（火・木。どちらか1日のみも可）
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255655_doc_33_0.pdf
+- category: haishoku
+  name: 配食サービス（社協）
+  name_on_page: 配食サービス
+  summary: ボランティアが作った夕食弁当を年11回、手渡しで届ける。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内在住
+  - 75歳以上のみの世帯は、一方が要介護認定者か障害者手帳所持者
+  where: 地区担当の民生委員児童委員、またはボランティア市民活動センター（社会福祉協議会）
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 無料、年11回
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255655_doc_33_0.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システム見守りサポート
+  name_on_page: ひとり暮らし高齢者等緊急通報システム見守りサポート事業
+  summary: 緊急通報装置・人感センサー・ペンダントを貸与し、24時間受信センターにつなぐ。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 65歳以上、または障害者手帳等を持つ人が対象
+  - ひとり暮らし、同様の人のみの世帯、日中独居世帯のいずれか
+  - 日中独居は親族が就労等で週4日以上不在の世帯
+  - 障害者手帳等のみで該当する人は利用料が月額かかる
+  where: ひとり暮らしの人は地区民生委員児童委員、世帯や日中独居の人は介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/koureisyafukushi/page000539.html
+  confidence: high
+  amount: 65歳以上のひとり暮らしは無料。その他の対象者は月2,310円。別途通信料あり
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255655_doc_33_0.pdf
+- category: haikai
+  name: 認知症高齢者等探索支援サービス（GPS端末の貸与）
+  name_on_page: 認知症高齢者等探索支援サービス
+  summary: 行方不明のおそれがある認知症の人の家族に、GPS端末を貸与する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の人と介護する家族がともに市内在住
+  - ペースメーカーを装着していない
+  - 家族が窓口で申し込む
+  where: 介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/soudan/page004407.html
+  confidence: high
+  amount: 初期費用は市が負担。月額料金は端末で異なる（1,320円または2,200円）。非課税世帯等は基本料金が無料
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255667_doc_33_0.pdf
+  - https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+- category: haikai
+  name: 認知症高齢者等見守りQRコードシール
+  name_on_page: 認知症高齢者等見守りQRコード
+  summary: 衣類や靴に貼るQRコードシールを配布し、行方不明時に身元確認や保護につなげる。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住の認知症高齢者等
+  - 家族か担当ケアマネジャーが申し込む
+  - 写真2枚が必要
+  where: 介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/soudan/page004407.html
+  confidence: high
+  amount: 無料。年度ごとに1シート（36枚入り）。登録すると個人賠償責任保険にも加入できる
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255667_doc_33_0.pdf
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒サービス
+  name_on_page: 寝具洗濯乾燥消毒サービス
+  summary: 対象の高齢者の寝具（掛布団・敷布団・毛布）を年1回、無料で洗濯・消毒する。
+  who: {}
+  at_application:
+  - 市内在住
+  - 75歳以上のひとり暮らし、または75歳以上のみの世帯
+  - または65歳以上の寝たきりの人
+  - 令和8年度分の申請は7月15日が期限だった（次年度は要確認）
+  where: 介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 無料、年1回
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255659_doc_33_0.pdf
+- category: ribiyo
+  name: 理髪サービス（理容師の派遣）
+  name_on_page: 理髪サービス
+  summary: 非課税世帯の寝たきりの高齢者の自宅へ、理容師を派遣する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 市内在住で非課税世帯に属する人
+  - 65歳以上の寝たきりの人、または重度心身障がい者
+  - 消耗品・水道・電気代は介護者の負担
+  where: 介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 無料、年4回（3か月に1回）
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255659_doc_33_0.pdf
+- category: gaishutsu
+  name: 高齢者の通院・通所タクシー料金助成
+  name_on_page: 高齢者通院通所交通費助成
+  summary: 非課税の75歳以上のみの世帯に、医療機関等への往復タクシー券を交付する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 市内在住
+  - 同一敷地・建物に親族等と同居していない
+  - 年度ごとに申請が必要
+  where: 介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 500円の利用券を1世帯あたり年24枚まで。1回の乗車で2枚まで使える
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255651_doc_33_0.pdf
+- category: gaishutsu
+  name: コミュニティバス「みらい号」の運賃助成
+  name_on_page: 循環バス運賃助成事業
+  summary: 65歳以上の市民らに乗車券を交付し、コミュニティバスの運賃を実質無料にする。
+  who: {}
+  at_application:
+  - 市内在住の65歳以上が対象
+  - 妊産婦、小学生、障害者手帳等の所持者も対象
+  - 電子申請・郵送・窓口で申請
+  where: 都市計画課（谷和原庁舎）、市民窓口課、各コミュニティセンター等
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 運賃が実質無料（乗車券を提示）
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/jyumin/shisetu-koutsu/koukyoukoutsu/page005773.html
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255651_doc_33_0.pdf
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 持病や薬の情報を入れる容器を無料で配布し、救急時に備える。
+  who: {}
+  at_application:
+  - 市内在住
+  - 65歳以上のひとり暮らし、高齢者のみの世帯、日中独居の人
+  - または視覚・聴覚障害の身体障害者手帳3級以上の人等
+  where: 介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/koureisyafukushi/page000544.html
+  confidence: high
+  amount: 無料（1人1セット）
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255655_doc_33_0.pdf
+- category: mimamori
+  name: 福祉連絡票による民生委員の定期見守り
+  name_on_page: つくばみらい市福祉連絡票
+  summary: 福祉連絡票を出すと、民生委員児童委員が定期的に見守る。
+  who: {}
+  at_application:
+  - 市内在住
+  - 65歳以上のひとり暮らし、高齢者のみの世帯
+  - または障害等があり見守りが必要な人
+  where: 地区の民生委員児童委員、または介護福祉課
+  url: https://www.city.tsukubamirai.lg.jp/data/doc/1753255655_doc_33_0.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 福祉機器の貸出（介護用ベッド・車いす）
+  name_on_page: 福祉機器貸出事業
+  summary: 介護保険の対象外の在宅療養者や歩行困難者に、介護用ベッドや車いすを貸し出す。
+  who:
+    at_home: true
+  at_application:
+  - 市内在住で、介護認定を受けていない在宅療養者・歩行困難者
+  - 機器の運搬は原則、利用者が行う
+  where: 市社会福祉協議会
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 無料（マットレスは貸出なし）
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255659_doc_33_0.pdf
+- category: sonota
+  name: 有料在宅福祉サービス（家事などの手伝い）
+  name_on_page: 有料在宅福祉サービス
+  summary: 洗濯・掃除・買い物などを手伝う協力会員を、有料で派遣する。
+  who: {}
+  at_application:
+  - 市内在住でおおむね60歳以上の人（利用会員）
+  where: 市社会福祉協議会
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: high
+  amount: 1時間700円と、協力会員の交通費
+  more_urls:
+  - https://www.city.tsukubamirai.lg.jp/data/doc/1753255659_doc_33_0.pdf
+- category: gaishutsu
+  name: 買い物ぶらり旅（買い物の送迎）
+  name_on_page: 買い物ぶらり旅
+  summary: 買い物が困難な高齢者を、大型スーパー等へ月1回送迎する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 買い物に行くことが困難な人
+  - 社協だより（隔月）で募集
+  where: 市社会福祉協議会 ボランティア市民活動センター
+  url: https://www.city.tsukubamirai.lg.jp/jyumin/fukushi-kaigo/kaigoservice/page002463.html
+  confidence: low
+  amount: 無料（各地区月1回）。買い物代は実費
+- category: sonota
+  name: ごみ出し支援（自宅での回収）
+  name_on_page: ごみ出し支援
+  summary: ごみ出しが難しい世帯の自宅へ、市職員が週1回ごみを取りに行く。
+  who: {}
+  at_application:
+  - 要介護2以上、または身体障害者手帳1・2級の人のみの世帯
+  - 自分でごみを出すことが困難と認められる
+  - ごみ出しに他の人の協力を得られない環境
+  where: 生活環境課
+  url: https://www.city.tsukubamirai.lg.jp/data/doc/1753255659_doc_33_0.pdf
+  confidence: high
+  amount: 無料、週1回の訪問収集
+- category: sonota
+  name: 介護マークの交付
+  name_on_page: 介護マーク
+  summary: 介護中であることを周囲に伝える「介護マーク」を交付する。
+  who: {}
+  at_application:
+  - 市内在住で介護中の人（障害者の介護も含む）
+  where: 介護福祉課、社会福祉協議会など
+  url: https://www.city.tsukubamirai.lg.jp/data/doc/1753255659_doc_33_0.pdf
+  confidence: high
+  amount: 無料（対象者1人につき1枚）
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- nichijo-yogu
+- chusha

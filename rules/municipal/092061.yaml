@@ -1,0 +1,260 @@
+city: 092061
+name: 日光市
+site: www.city.nikko.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 訪問給食（配食と安否確認）
+  name_on_page: 訪問給食サービス事業
+  summary: 調理が難しい高齢者宅へ食事を届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 市内に住所がある
+  - 身体的または精神的な事情で調理が困難
+  - 希望者が多い場合や配達区域外は受けられないことがある
+  where: 高齢福祉課、各行政センター市民サービス係、担当地域の地域包括支援センター
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 1食あたり、生活保護・市民税非課税世帯は400円、それ以外は500円の自己負担
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: kaigo-yohin
+  name: 紙おむつ券の給付
+  name_on_page: 紙おむつ給付事業
+  summary: 常時紙おむつが必要なねたきりや認知症の人に、紙おむつ券を給付する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅は市の介護保険の被保険者、入院中は市内に住所がある人
+  - 要介護4・5は、寝たきりか認知症による失禁で常時使用
+  - 要支援・要介護1〜3等は、認知症による失禁で常時使用
+  - 入院中の65歳以上で認定なしも対象（医師の証明が必要）
+  - 施設入所者、一時的な使用、加齢や疾病による失禁は対象外
+  where: 高齢福祉課、各行政センター市民サービス係
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 月 6,000 円分の紙おむつ券
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: iro
+  name: ねたきり在宅者等の介護手当
+  name_on_page: ねたきり在宅者等介護手当支給事業
+  summary: 要介護4・5の人を同居で常時介護している家族に手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護4・5の人を日常生活で同居して常時介護している人が対象
+  where: 高齢福祉課、各行政センター市民サービス係
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: ねたきり在宅者等 1 人につき月額 8,000 円
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしの人などに、ボタンで通報できる緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし（片方がねたきりの高齢者のみ世帯を含む）
+  - または日中に同居者が就労で不在となる65歳以上の人
+  - 一覧の頁には、重度の障害があるひとり暮らしの人も記載あり
+  - 緊急時に駆けつける協力員（原則2〜3名）の選任が必要
+  where: 高齢福祉課、各行政センター市民サービス係、地域包括支援センター、民生委員
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 費用負担なし（固定型・携帯型から選べる）
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: sonota
+  name: 見守りキット（救急医療情報の容器）の配布
+  name_on_page: 見守りキット配布事業
+  summary: 救急時に必要な医療情報を入れる容器とステッカーを無料で配る。
+  who: {}
+  at_application:
+  - 緊急通報装置の貸与対象者と同様の人
+  - またはキットの配布が必要と市が認める人
+  where: 民生委員、社会福祉課社会福祉係、各行政センター市民サービス係
+  url: https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 命のカプセルの配付
+  name_on_page: 命のカプセル配付事業
+  summary: 認知症の人の徘徊時や災害時に備え、情報シートを入れる容器を配る。
+  who:
+    at_home: true
+  at_application:
+  - 市内に住所があり自宅に住んでいる
+  - 認知症の症状がある
+  - 本人・家族の申請後に本人の状況を調査する
+  where: 高齢福祉課地域包括支援センター、担当地域の地域包括支援センター、担当ケアマネジャー
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: haikai
+  name: QRコード入り見守りキーホルダーの配布
+  name_on_page: にっこう安心見守りグッズ配布事業
+  summary: 行方不明時に早く身元が分かるよう、QRコード入りキーホルダーを配る。
+  who: {}
+  at_application:
+  - 見守りが必要と思われる人（家族や支援者も申請できる）
+  - にっこう安心カルテの記入と、警察への情報提供への同意が必要
+  where: 高齢福祉課、各地域包括支援センター
+  url: https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+  confidence: high
+- category: gaishutsu
+  name: 通院などの移送サービス
+  name_on_page: 移送サービス事業
+  summary: 移動が難しい非課税世帯の高齢者を、医療機関や施設へ無料で送迎する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 自分で移動することが困難
+  - 障がい者向けタクシー利用券を支給されていない
+  - 同一敷地内に別居の家族がいる人は除く
+  - 送迎先は保険診療の医療機関や施設の入退所（平日のみ）
+  where: 高齢福祉課、各行政センター市民サービス係、地域包括支援センター
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 無料。週1回または月4回まで、運行範囲は日光市・鹿沼市
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: gaishutsu
+  name: 運転免許自主返納者へのバス・タクシー券等の交付
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 免許を自主返納した65歳以上に、バス・タクシー共通券か交通系ICカードを渡す。
+  who:
+    age_min: 65
+  at_application:
+  - 市内在住で、平成24年4月1日以降に運転免許を自主返納した人
+  - 免許が失効した場合は対象外
+  - 本人のみ、1回限り。返納の分かる書類の写しが必要
+  where: 生活安全課、各行政センター市民サービス係（土日祝は市民課）
+  url: https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+  confidence: high
+  amount: 11,000 円分の共通利用券、または交通系ICカード（保証金500円を含む11,000円分）
+- category: koken
+  name: 成年後見の申立費用・後見人報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用を払えない人に、成年後見の申立費用と後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 活用できる資産や貯蓄がなく、費用の支払いが困難
+  - 対象が高齢者の場合の窓口は高齢福祉課
+  where: 高齢福祉課（高齢者の場合）、地域包括支援センター
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/727.html
+  confidence: high
+- category: sonota
+  name: 生活支援ホームヘルパーの派遣
+  name_on_page: 生活支援ホームヘルプサービス事業
+  summary: 認定を受けていない高齢者に、調理・買物・洗濯などのヘルパーを派遣する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上のひとり暮らしで、生活支援が必要な人
+  - 要介護・要支援・総合事業対象の認定を受けていない人に限る
+  - または身寄りのない65歳以上の入院中の人
+  where: 高齢福祉課、各行政センター市民サービス係、地域包括支援センター
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 在宅は45分187円、45分〜1時間230円（別途消費税）。週1〜2回
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: sonota
+  name: 軽度な日常生活の援助（暮らしのお手伝い）
+  name_on_page: 暮らしのお手伝い事業
+  summary: 介護保険等で対応できない家事、植木、除雪などの軽い援助を提供する。
+  who: {}
+  at_application:
+  - 日常生活に援助が必要
+  - 65歳以上または身体障害者手帳1・2級の人のみの世帯
+  - 生活保護世帯または市民税非課税世帯
+  where: 高齢福祉課、各行政センター市民サービス係、地域包括支援センター
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 利用料は基準額の15%（家事援助は1時間184円）。月8時間まで、材料費は実費
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: sonota
+  name: 家具転倒防止器具の取付支援
+  name_on_page: 家具転倒防止器具等取付事業
+  summary: 自分で取り付けられない世帯に、家具の転倒防止器具の取付けを無料で行う。
+  who: {}
+  at_application:
+  - 65歳以上、または障害者手帳等（頁に等級の条件あり）の人のみの世帯
+  - 取付けられる家具は5台まで。借家は家主の承諾書が必要
+  where: 社会福祉課社会福祉係、各行政センター市民サービス係
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 取付費は無料（器具の購入は自己負担。買物支援あり）
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+- category: sonota
+  name: 特殊詐欺撃退機器の無償貸与
+  name_on_page: 特殊詐欺撃退機器の無償貸与
+  summary: 固定電話につなぐ詐欺対策の機器（警告と自動録音）を1年間無料で貸す。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上の夫婦世帯
+  - または日中65歳以上のみとなる世帯、市長が特に認める世帯
+  where: 生活安全課くらし安心係
+  url: https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+  confidence: high
+  amount: 無料（貸与期間1年間）
+- category: sonota
+  name: ごみの戸別収集と安否確認（ふれあい収集）
+  name_on_page: ふれあい収集
+  summary: ごみを出せない世帯に、週1回の戸別収集と安否確認を行う。
+  who: {}
+  at_application:
+  - 身近な人の協力が難しく、自分でごみを出せない世帯
+  - 要介護2〜5の人、または一定の障害者手帳の人を含む世帯
+  - 申請前に資源循環推進課へ問い合わせが必要。審査あり
+  where: 資源循環推進課 資源循環推進係
+  url: https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+  confidence: high
+- category: sonota
+  name: 生活管理指導の短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 介護者の事情などで一時的に養護が必要な高齢者が、短期間宿泊して支援を受ける。
+  who: {}
+  at_application:
+  - 要支援・要介護の認定を受けていない
+  - 社会への適応が困難で、介護者の疾病等により一時的に困難
+  - 入院が必要な人や感染のおそれがある人は対象外
+  where: 高齢福祉課
+  url: https://www.city.nikko.lg.jp/soshiki/5/1019/4/723.html
+  confidence: high
+  amount: 7日間以内で半年に1回。負担額は世帯の市民税の課税状況で決まる
+  more_urls:
+  - https://www.city.nikko.lg.jp/material/files/group/20/koureifukushiguidebook_R80901.pdf
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

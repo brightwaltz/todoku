@@ -1,0 +1,204 @@
+city: '122076'
+name: 松戸市
+site: www.city.matsudo.chiba.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（Claude API、公式サイトの中だけを検索・取得して読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の支給（家族介護用品）
+  name_on_page: 介護用品（紙おむつ等）の支給
+  summary: 在宅で重度の要介護者を介護する家族に、紙おむつ等の支給券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護者の住民票が市内にある
+  - 申請するのは要介護者を介護している家族
+  - 入院中・施設入所中は対象外
+  where: 介護保険課（松戸市介護保険事務センター）。郵送・オンライン申請も可
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/kaigoyouhinshikyu.html
+  confidence: high
+  amount: 無料。要介護3は月1組、要介護4・5は非課税世帯で月2組・課税世帯で月1組
+- category: haishoku
+  name: 在宅高齢者の配食サービス
+  name_on_page: 配食サービス
+  summary: 安否確認が必要な在宅高齢者に、週4日以内の夕食を手渡しで届ける。
+  who:
+    at_home: true
+  at_application:
+  - 要介護・要支援（申請中含む）または事業対象者
+  - 65歳以上の単身、高齢者のみ、または高齢者と障害者の世帯
+  - 外出や食事の用意が困難。家族と同居していない
+  - 緊急通報装置貸与を利用していない
+  - 担当ケアマネジャーを通じて申請する
+  where: 介護保険課（松戸市介護保険事務センター給付担当）
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/haisyokuservice.html
+  confidence: high
+  amount: 1食450円（自己負担）
+- category: haikai
+  name: 徘徊高齢者のGPS探索サービス利用料助成
+  name_on_page: 松戸市徘徊高齢者等探索サービス利用者助成事業
+  summary: 徘徊のおそれがある方を介護する家族に、GPS探索サービス費用の一部を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 要介護認定があり認知症で徘徊する方、または40歳以上で初老期認知症等により徘徊する方
+  - 申請するのは指定事業者と契約する介護者（市内在住）
+  - 市税の滞納がない
+  - 介護施設のスタッフ等は対象外
+  where: 高齢者支援課（市役所本館1階）。原則窓口持参、郵送も可
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/ninchisho/matudosihaikaikourei.html
+  confidence: high
+  amount: 課税世帯は費用の45%（初期2,500円・月1,000円まで）、非課税世帯は90%（初期5,000円・月2,000円まで）
+- category: haikai
+  name: 高齢者の見守りシール無料支給
+  name_on_page: 「高齢者の見守りシール」について
+  summary: 行方不明になった高齢者の発見用に、QRコード付きの見守りシールを無料で配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 防災行政無線で探索されたことがある高齢者の家族等
+  - または道に迷い警察に連絡・保護されたことがある高齢者の家族等
+  - QRコードを読めるスマートフォン等が必要
+  where: 高齢者支援課、または高齢者いきいき安心センター（地域包括支援センター）。オンライン申請も可
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/ninchisho/mimamorisi-ru.html
+  confidence: high
+  amount: 対象者1名につき50枚セットを無料で支給
+- category: koken
+  name: 成年後見の本人・親族申立費用の助成
+  name_on_page: 本人・親族申立費用助成
+  summary: 低所得の方の成年後見の申立てにかかった費用を、審判後に助成する。
+  who: {}
+  at_application:
+  - 生活保護受給者、中国残留邦人等支援給付受給者、または世帯の預貯金が100万円未満
+  - 申立てを行う本人・配偶者・四親等内の親族が申請する
+  - 市内に住所がある（一部の施設入所者の特例あり）
+  - 審判の前に必ず相談する。審判から60日以内に申請
+  - 費用は先に立て替える必要がある（前払い不可）
+  where: 65歳以上は地域包括ケア推進課、それ以外は障害福祉課
+  url: https://www.city.matsudo.chiba.jp/kenko_fukushi/shougaifukushi/kakushuteate/seinenkouken/mousitatehiyoujosei.html
+  confidence: high
+  amount: 対象費用の実費、1件につき30万円まで
+- category: hochoki
+  name: 高齢者の補聴器購入費助成
+  name_on_page: 高齢者補聴器購入費助成制度
+  summary: 耳鼻科医が必要と認めた非課税世帯の高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 購入日に市内に住民票がある
+  - 耳鼻咽喉科医が補聴器の使用を必要と診断（市指定の証明書）
+  - 聴覚障害の身体障害者手帳を持っていない（申請中も対象外）
+  - 過去にこの助成を受けていない
+  - 購入日の翌日から1年以内に申請
+  where: 高齢者支援課（市役所本館1階）。窓口持参または郵送
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/hotyoukijyosei.html
+  confidence: high
+  amount: 購入費と3万円の低いほうの額（上限3万円、1回限り）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の貸与
+  summary: ひとり暮らしの非課税の高齢者に、緊急通報装置を無料で貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 市内に住民登録がある
+  - 玄関の鍵を1本、委託業者（ALSOK）に預ける（原則）
+  where: 地区の民生委員児童委員を通じて申請（問合せは介護保険課）
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/kinkyutuhousouti.html
+  confidence: high
+  amount: 設置・レンタル・撤去は無料（事故破損などは自己負担）
+- category: jutaku
+  name: 高齢者住宅増改築資金の助成
+  name_on_page: 高齢者住宅増改築資金の助成
+  summary: 要介護・要支援の高齢者の住宅改造費を、介護保険の住宅改修分を除いて一部助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 松戸市に2年以上居住している
+  - 市税を滞納していない世帯
+  - 介護保険の住宅改修が優先される
+  where: 介護保険課（松戸市介護保険事務センター給付担当）。オンライン申請あり
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/jyosei-kasituke.html
+  confidence: high
+  amount: 限度額は非課税世帯30万円・課税世帯15万円。介護保険分を除いた額の7〜9割を助成
+- category: ribiyo
+  name: 訪問理容の出張費助成
+  name_on_page: 訪問理容出張費の助成
+  summary: 外出が難しい在宅の重度要介護者に、訪問理容の出張費助成券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 松戸市の住民基本台帳に記載があり市内に居住している
+  - 施設に入所していない
+  where: 介護保険課。郵送・オンライン申請も可
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/houmonriyou.html
+  confidence: high
+  amount: 助成券は出張費1,200円相当を1回1枚。年度内の発行は申請月により4〜1枚
+- category: sonota
+  name: 軽度生活援助（ミニ援助券）
+  name_on_page: 軽度生活援助
+  summary: ひとり暮らしの高齢者等が、掃除・買い物などの援助をシルバー人材センターに頼める券を支給する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らし、または75歳以上の高齢者のみ世帯
+  - または40歳以上で要介護・要支援認定のひとり暮らし
+  - または65歳以上で事業対象者のひとり暮らし
+  - 新規申請は毎年4月から翌年1月末まで
+  where: 介護保険課。郵送・オンライン申請も可
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/keidoseikatuenjo.html
+  confidence: high
+  amount: 月1枚。1枚で1時間の援助、利用者負担は1枚300円
+- category: sonota
+  name: 家具転倒防止器具等の取付費助成
+  name_on_page: 家具転倒防止器具等取付費の助成
+  summary: 高齢者等だけの非課税世帯に、家具転倒防止器具の購入・取付費を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 市内在住で、世帯主が申請する
+  - 世帯全員が65歳以上、または65歳未満で要介護・要支援認定を受けた方
+  - または65歳未満の障害者（手帳等の条件あり）
+  - 障害者のみの世帯は窓口が障害福祉課
+  where: 介護保険課。窓口・郵送・オンライン申請も可
+  url: https://www.city.matsudo.chiba.jp/matsudodeikiiki/mokuteki/seikatsushien/kagutentoubousi.html
+  confidence: high
+  amount: 上限1万円（65歳以上・要介護等は1割自己負担で9,000円限度）
+not_found:
+- iro
+- shingu
+- gaishutsu
