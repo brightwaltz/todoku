@@ -809,6 +809,29 @@ function renderOptions(options) {
   show("options-box", options.length > 0);
 }
 
+// ---- 第 3 の層（T-199）----
+// step_view の municipal（住所の市区町村に rules/municipal/<団体コード>.yaml があるときだけ。無ければ null）。
+// 市区町村の公式サイトから Claude が集め、機械で確かめた制度で、人は照らしていない。確かな層（results）と分けて、畳んだ枠に出す。
+// results には入っていないので、制度の地図・見立ての帯・押した数の図・いま先にすること・申請メモには入らない。並びはサーバのまま
+const MUNI_LOW = "一覧の説明だけから読んだもの";
+function muniCard(p) {
+  return el("details", { class: "card muni-item", "data-id": p.id },
+    el("summary", {}, el("span", { class: `pill ${p.status}` }, p.status_label), " ", p.name),
+    el("p", {}, p.summary),
+    p.confidence === "low" ? el("p", { class: "note" }, MUNI_LOW) : "",
+    el("p", {}, "申請先：", p.where),
+    p.amount && p.amount.length ? el("p", {}, p.amount.join("・")) : "",
+    el("ul", { class: "plain note" }, el("li", {}, el("a", { href: p.url, target: "_blank", rel: "noopener" }, p.name_on_page))));
+}
+
+function renderMunicipal(m) {
+  const programs = (m && m.programs) || [];
+  $("muni-n").textContent = `${programs.length} 件`;
+  $("muni-mark").textContent = m ? m.mark : "";
+  $("muni-list").replaceChildren(...programs.map(muniCard));
+  show("muni-box", programs.length > 0);
+}
+
 // いま先にすること（T-121）：結果の画面の先頭に、判定の結果だけから 1〜TODO_MAX 件を選ぶ（Claude は使わない）。
 // 順：(1) 当てはまる見込みのうち、「先に手続き」の制度が待っている手続き（待っている数の多い順）
 // (2) ほかの当てはまる見込み（サーバの並び順） (3) 読み取りを確かめる問いが残っていれば、その欄へ
@@ -936,6 +959,7 @@ function renderResult(data) {
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
   renderRegion(data.region);
+  renderMunicipal(data.municipal);
   renderOptions(data.options || []);
   show("result");
   show("board", false);  // T-133：結果の頁では見立ての帯を出さない（件数は札の一覧の見出しだけ。帯の動きは問いの間だけ）

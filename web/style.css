@@ -412,6 +412,13 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 /* その市の事業に替えた型の印（T-075b）。色だけに頼らず、文で「Claude が書いた」と言う */
 .local-mark { display: inline-block; margin: 4px 0; padding: 2px 8px; border: 1px solid var(--accent); border-radius: 4px;
   font-size: .875rem; color: var(--accent); }
+
+/* T-199：第 3 の層の札。確かな層の札（.prog）より控えめにし、本文は地の字の大きさ。押す所は 44px 以上（T-146） */
+.muni > .local-mark { margin: 2px 0 4px; }
+details.muni-item { padding: 0 14px; margin: 8px 0 0; }
+details.muni-item > summary { font-weight: 700; color: var(--ink); padding: 10px 0; min-height: 44px; box-sizing: border-box; }
+details.muni-item > p { margin: 0 0 8px; }
+details.muni-item a { color: var(--accent); word-break: break-all; display: inline-block; min-height: 44px; padding: 10px 0; box-sizing: border-box; }
 .city-group .note, .wrap > .note { overflow-wrap: anywhere; }
 .city-link { margin: 8px 0 0; font-size: 1rem; }
 .city-link a { display: inline-flex; align-items: center; min-height: 44px; }

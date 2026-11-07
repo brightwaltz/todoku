@@ -291,6 +291,13 @@
     </div>
     <div id="groups"></div>
     <p class="note" id="region-line" hidden></p>
+    <!-- T-199：第 3 の層。市区町村の公式サイトから Claude が集め、機械で確かめた制度（人は照らしていない）。
+         確かな層（results）とは別の枠に畳んで出す。制度の地図・見立ての帯・押した数の図・いま先にすること・申請メモには入れない -->
+    <details class="card soft fold muni" id="muni-box" hidden>
+      <summary><h2>市区町村の公式サイトから自動で集めた制度<span class="n" id="muni-n"></span></h2></summary>
+      <p class="local-mark" id="muni-mark"></p>
+      <div id="muni-list"></div>
+    </details>
     <details class="card soft" id="ineligible-box">
       <summary id="ineligible-title"></summary>
       <ul id="ineligible-list" class="plain"></ul>
