@@ -1,0 +1,23 @@
+pref: '02'
+name: 青森県
+site: www.pref.aomori.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: おもいやり駐車場の利用証
+  name_on_page: 青森県おもいやり駐車場制度（パーキング・パーミット制度）
+  summary: 要介護1〜5の人などに、県が車いす使用者用・優先駐車区画の利用証を郵便で交付する。
+  who: {}
+  at_application:
+  - 高齢者は要介護1〜5の認定を受けた人（介護保険証の写しを添える）
+  - ほか、各種手帳・指定難病・妊産婦・未就学児・けが人なども対象
+  where: 青森県おもいやり駐車場サポートセンター（青森市、郵送か電子申請）
+  url: https://www.pref.aomori.lg.jp/soshiki/kenko/syofuku/omoiyari-parking.html
+  confidence: high
+not_found:
+- yutai

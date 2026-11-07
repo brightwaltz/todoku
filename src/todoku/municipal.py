@@ -125,9 +125,11 @@ def _program(code: str, i: int, raw: dict, date: dt.date, where: str) -> Program
             raise RuleError(f"{where}: programs[{i}] の who.{k} に決まった値でないもの")
     src = Source(url=raw["url"], publisher=where.split(":")[0], license="利用条件を確かめていない（引用しない）",
                  checked=date, title=raw["name_on_page"])
+    more = [Source(url=u, publisher=where.split(":")[0], license="利用条件を確かめていない（引用しない）",
+                   checked=date, title="条件などが書かれた頁") for u in raw.get("more_urls") or []]
     return Program(
         id=f"muni-{code}-{i + 1:02d}", number=0, name=raw["name"], level="municipal", kind="review",
-        summary=raw["summary"], weight=0, eligibility=compile_who(who), sources=[src],
+        summary=raw["summary"], weight=0, eligibility=compile_who(who), sources=[src, *more],
         at_application=list(raw.get("at_application") or []),
         apply={"where": raw["where"]}, amount=[raw["amount"]] if raw.get("amount") else [],
     )

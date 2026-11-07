@@ -1,0 +1,26 @@
+pref: '03'
+name: 岩手県
+site: www.pref.iwate.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ひとにやさしい駐車場利用証（パーキングパーミット）の交付
+  name_on_page: ひとにやさしい駐車場利用証制度
+  summary: 歩行が困難な人（要介護1以上など）に、車いす用の駐車区画を使える対象だと示す利用証を県が交付する。
+  who: {}
+  at_application:
+  - 歩行困難などがあり、次のどれか 1 つに当たる人（年齢の制限なし）
+  - 要介護 1 以上の認定を受けている
+  - 障害の手帳があり、種類ごとの等級の基準に当たる
+  - 妊娠中か出産から 1 年未満／難病で特定疾患医療を受けている
+  - けがなどで一時的に歩行が困難（6 か月以内の医師の診断書）
+  where: 住んでいる市町村ごとに決まった県の広域振興局の保健福祉環境部か保健福祉環境センター（郵送・ファクスも可）
+  url: https://www.pref.iwate.jp/kurashikankyou/fukushi/chiiki/machizukuri/1003538/1003542.html
+  confidence: high
+not_found:
+- yutai

@@ -1,0 +1,26 @@
+pref: '04'
+name: 宮城県
+site: www.pref.miyagi.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ゆずりあい駐車場の利用証の交付
+  name_on_page: 宮城県ゆずりあい駐車場利用制度
+  summary: 歩行が困難な障害者・要介護認定を受けた人・妊産婦などに、駐車区画の利用証を県が交付する。
+  who: {}
+  at_application:
+  - 歩行が困難な人のうち、頁の表に定める要件に当たる人
+  - 対象は身体・知的・精神の障害のある人、難病患者、要介護認定を受けた人、妊産婦、けが人など
+  - 運転免許の有無や自動車の保有は要件に含まれない
+  - 利用証は 1 人に 1 枚。協力施設の対象区画で使う
+  where: 県の申請窓口、郵送（県社会福祉課宛て）、みやぎ電子申請サービス。柴田町・七ヶ浜町・大郷町の住民は町の窓口でも申請できる
+  url: https://www.pref.miyagi.jp/soshiki/syahuku/parking.html
+  confidence: high
+  amount: 利用証の交付手数料は無料
+not_found:
+- yutai

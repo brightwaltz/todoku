@@ -1,0 +1,26 @@
+pref: 09
+name: 栃木県
+site: www.pref.tochigi.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: おもいやり駐車スペース利用証の交付
+  name_on_page: おもいやり駐車スペースつぎつぎ事業（パーキングパーミット制度）
+  summary: 要支援・要介護の認定を受けた人などに、県内共通の駐車スペース用の利用証を県が交付する。
+  who: {}
+  at_application:
+  - 次のどれか 1 つに当たる人（頁に年齢の制限は書かれていない）
+  - 高齢の人は、要支援 1・2 か要介護 1〜5 の認定を受けている
+  - ほか、障害の手帳（種類ごとに等級の基準）・指定難病・妊産婦も対象
+  - ほか、けがや病気で歩行が一時的に困難な人（医療機関を受診）
+  - 県内に住んでいる（県外に住む人は交付の対象外）
+  where: 県・市町・障害者団体の交付窓口（窓口一覧は別頁）、または県の電子申請（利用証は郵送、約 2 週間）
+  url: https://www.pref.tochigi.lg.jp/e12/welfare/shisetsu/baria/1220246130756.html
+  confidence: high
+not_found:
+- yutai

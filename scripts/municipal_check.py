@@ -179,6 +179,8 @@ def to_yaml(city: dict, date: str, read_by: str) -> dict:
                 "where": p["where"].strip(), "url": p["url"].strip(), "confidence": p["confidence"]}
         if p.get("amount"):
             item["amount"] = str(p["amount"]).strip()
+        if p.get("more_urls"):
+            item["more_urls"] = list(p["more_urls"])
         out.append(item)
     key = "pref" if len(city["code"]) == 2 else "city"
     return {key: city["code"], "name": city["name"], "site": city["site"], "site_level": city["site_level"],
@@ -263,6 +265,15 @@ def main(argv: list[str]) -> None:
             for p in city["programs"]:
                 p["page_text"] = page_path(p["url"], cache)
                 p["page_excerpt"] = excerpt(Path(p["page_text"]).read_text(), p["name_on_page"])
+                # 条件が書かれた別の公式の頁（対象者の表・要綱の PDF など）。公式のホストで 200 のものだけ残す
+                more, ex = [], []
+                for u in (p.get("more_urls") or [])[:3]:
+                    if isinstance(u, str) and u.startswith("http") and host_ok(u, city["site"]):
+                        st, txt = fetch(u, cache)
+                        if st == 200 and txt.strip():
+                            more.append(u)
+                            ex.append(re.sub(r"\s+", " ", unicodedata.normalize("NFKC", txt))[:3000])
+                p["more_urls"], p["more_excerpts"] = more, ex
             (passed_dir / f"{code}.json").write_text(json.dumps(city, ensure_ascii=False, indent=1))
             summary.append((code, found, len(city["programs"])))
         else:

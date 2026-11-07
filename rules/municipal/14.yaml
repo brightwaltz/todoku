@@ -1,0 +1,28 @@
+pref: '14'
+name: 神奈川県
+site: www.pref.kanagawa.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 障害者等用駐車区画の利用証（要介護の人を含む）
+  name_on_page: かながわ障害者等用駐車区画利用証制度
+  summary: 要介護1以上の人などに、県が障害者等用駐車区画で使う利用証を交付する。
+  who: {}
+  at_application:
+  - 県内に住み、歩行が困難か移動に配慮が必要な人
+  - 次のどれか：要介護1以上、障害者手帳の等級基準、指定難病、妊産婦、けが人など
+  - 要介護の人は、介護保険被保険者証の写しで確かめる
+  - 利用証は1人1枚。駐車禁止の除外や使用料の減免は受けられない
+  where: 県の地域福祉課（電子申請か郵送）。制度実施市町村に住む人は市町村の窓口でも申請できる（横浜市・川崎市は郵送か電子申請のみ）
+  url: https://www.pref.kanagawa.jp/docs/n7j/cnt/f6880/parking_permit_shinsei.html
+  confidence: high
+not_found:
+- yutai
+- haikai
+- gaishutsu
+- iro

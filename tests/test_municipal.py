@@ -11,7 +11,9 @@ from todoku import engine, municipal, rules
 from todoku.rules import RuleError
 
 ROOT = Path(__file__).resolve().parents[1]
-NAMES = {c: n for p in json.loads((ROOT / "web" / "municipalities.json").read_text())["prefectures"] for c, n in p["cities"]}
+_M = json.loads((ROOT / "web" / "municipalities.json").read_text())["prefectures"]
+# 市区町村（6 桁）と都道府県（2 桁）の名前。app.py の MUNI と同じ表
+NAMES = {**{c: n for p in _M for c, n in p["cities"]}, **{p["code"]: p["name"] for p in _M}}
 RULES = rules.load()
 
 
@@ -75,6 +77,7 @@ def test_real_files_load_and_stay_out_of_the_scored_set():
     loaded = municipal.load(ROOT / "rules" / "municipal", NAMES)
     for city in loaded.values():
         assert city.code not in ("132098", "141003")  # 町田市・横浜市は市の制度を一つずつ判定している
+        assert len(city.code) in (2, 6)
         for p in city.programs:
             assert p.number == 0 and p.weight == 0 and p.level == "municipal"
             assert p.id not in RULES.programs
