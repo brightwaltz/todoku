@@ -1,0 +1,167 @@
+city: '141305'
+name: 川崎市
+site: www.city.kawasaki.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等介護用品の給付
+  name_on_page: 紙おむつ等介護用品の給付
+  summary: 要介護3〜5で紙おむつが必要な在宅の方に、介護用品を月6,000円分まで給付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上、または40〜64歳で初老期認知症に当たる方
+  - 施設に入所中、または1か月に達する入院中でない
+  where: 各区役所 高齢・障害課（高齢者支援担当）。オンライン申請もできる
+  url: https://www.city.kawasaki.jp/350/page/0000022608.html
+  confidence: high
+  amount: 月1回、月6,000円分まで（生活保護の方は3,000円で紙おむつ類は対象外）。自己負担は所得により0〜20%
+- category: kinkyu-tsuho
+  name: 高齢者等緊急通報システム
+  name_on_page: 高齢者等緊急通報システム
+  summary: ひとり暮らし等の高齢者に、緊急通報の端末（携帯型か自宅設置型）を貸し出す。
+  who: {}
+  at_application:
+  - 65歳以上で慢性疾患があり、ひとり暮らし等（型により条件が違う）
+  - 75歳以上のひとり暮らしも対象（基本サービスのみの型あり）
+  - 認知症で行方不明のおそれ（65歳以上、または若年性で要介護1〜5）
+  - 地域包括支援センターの調査が必要
+  where: 地域包括支援センター、各区役所 高齢・障害課
+  url: https://www.city.kawasaki.jp/350/page/0000022594.html
+  confidence: high
+  amount: 利用料は月額0円〜4,580円（所得と型により異なる）
+- category: shingu
+  name: 寝具乾燥
+  name_on_page: 寝具乾燥
+  summary: 在宅で要介護3〜5の高齢者の寝具を、年4回ほど乾燥または丸洗いする。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application: []
+  where: 各区役所 高齢・障害課 高齢者支援係。オンライン申請もできる
+  url: https://www.city.kawasaki.jp/350/page/0000022616.html
+  confidence: high
+  amount: 年おおむね4回。自己負担は世帯区分により0〜10%（円の金額は頁に無い）
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理美容院に行けない要介護3〜5の方の自宅へ、理容師・美容師が訪問する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 市内に住み、理美容院に行けない
+  where: 各区役所 高齢・障害課。オンライン申請もできる
+  url: https://www.city.kawasaki.jp/350/page/0000022711.html
+  confidence: high
+  amount: 年6回まで。1回2,000円の自己負担（所得にかかわらず一律）
+- category: nichijo-yogu
+  name: 日常生活用具の給付（自動消火器・電磁調理器）
+  name_on_page: 日常生活用具の給付
+  summary: 自動消火器または電磁調理器を、基準額の範囲で給付する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 自動消火器は寝たきり（要介護4・5相当）かひとり暮らし
+  - 電磁調理器は防火等の配慮が必要な高齢者世帯等
+  where: 各区役所 高齢・障害課（高齢者支援担当）
+  url: https://www.city.kawasaki.jp/350/page/0000022625.html
+  confidence: high
+  amount: 基準額は自動消火器36,800円、電磁調理器33,000円。自己負担は0〜10%で、基準額を超えた分は全額自己負担
+- category: jutaku
+  name: 高齢者住宅改造費助成事業
+  name_on_page: 高齢者住宅改造費助成事業
+  summary: 介護保険の対象外の住宅改造を、所得に応じた自己負担で助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 住宅改造が必要と認められる
+  - 介護保険の住宅改修の対象にならない工事であること
+  - 工事に着手する前に区役所へ相談・申請する
+  where: 各区役所 高齢・障害課（高齢者支援担当）。オンライン申請もできる
+  url: https://www.city.kawasaki.jp/350/page/0000022587.html
+  confidence: high
+  amount: 基準額の上限は100万円。利用者負担は所得により0%〜全額（所得が高いと助成なし）
+- category: haikai
+  name: 認知症等行方不明SOSネットワーク
+  name_on_page: 認知症等行方不明SOSネットワーク
+  summary: 行方不明のおそれのある認知症の方を事前登録し、SOSネームプリントを無料で作る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 市内に住み、認知症で行方不明になるおそれがある（若年性も可）
+  - 事前登録が必要
+  where: 各区役所 高齢・障害課、担当地区の地域包括支援センター。オンライン登録もできる
+  url: https://www.city.kawasaki.jp/350/page/0000022701.html
+  confidence: high
+  amount: 登録・ネームプリント作成は無料（作成に2〜3週間）
+- category: koken
+  name: 成年後見制度利用支援事業（審判請求費用・後見人等報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 後見などの申立ての鑑定費用や、後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 収入や資産の状況から費用の負担が困難
+  where: 65歳以上は健康福祉局 認知症・権利擁護担当、65歳未満は障害計画課 地域支援担当
+  url: https://www.city.kawasaki.jp/350/page/0000066653.html
+  confidence: low
+- category: gaishutsu
+  name: 高齢者外出支援乗車事業（バスの割引・フリーパス）
+  name_on_page: 高齢者外出支援乗車事業
+  summary: 70歳以上が市内の路線バスを半額で乗れる。負担金を払うフリーパスもある。
+  who:
+    age_min: 70
+  at_application:
+  - 川崎市に住民登録がある
+  where: 市から届く申請書類を返送（相談窓口 044-200-1316）。フリーパスは所定の窓口
+  url: https://www.city.kawasaki.jp/350/page/0000146391.html
+  confidence: high
+  amount: 対象の市内路線バス（市バス・民間バスの一部）で、ICカード登録により大人運賃の半額。フリーパスは負担金で乗り放題（金額は案内チラシ）
+- category: sonota
+  name: 外国人高齢者福祉手当
+  name_on_page: 外国人高齢者福祉手当
+  summary: 条件を満たす高齢の外国人に、月22,000円の手当を支給する。
+  who: {}
+  at_application:
+  - 昭和4年（1929年）8月15日以前に生まれた方
+  - 戦前に来日し、市の住民基本台帳に記録されて1年以上
+  - 生活保護を受けていない
+  where: 高齢者在宅サービス課（オンライン申請あり）
+  url: https://www.city.kawasaki.jp/350/page/0000022548.html
+  confidence: high
+  amount: 月額22,000円
+not_found:
+- haishoku
+- iro
+- hochoki
+- mimamori
