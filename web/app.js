@@ -53,7 +53,7 @@ function showClosed() {
 }
 
 function fresh() {
-  return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
+  return { subject: "ご本人", text: "", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
     municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
     oneOnly: false, held: null, trail: [], thread: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
     // trail：押した数ごとの見立ての数（T-082。手間と分かることの図）
@@ -303,6 +303,7 @@ async function consultWith(text, call) {
   const mine = state;  // 読み取りを待つ間に見本・出来事・別の相談を始めたら、遅れて返った前の答えは描かない（T-162。step と同じ）
   forgetKeep();  // 前に開いた・残した結果のリンクを、アドレス欄から外す
   state.startedAt = Date.now();
+  state.text = text;  // お住まいの問いで、文にある地名を欄に先に入れておくため（T-200。送った後に欄を書き換えても、送った文で見る）
   const pressed = document.activeElement;
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
@@ -652,6 +653,55 @@ function pauseMore() {
 // お住まいは、町田市かどうかではなく市区町村で聞く（市区町村の一覧が取れなかったときは、はい・いいえで聞く）
 const asksPlace = (q) => Boolean(q.place && prefs.length);
 const askText = (q) => (asksPlace(q) ? q.place.text : q.text);
+// 相談の文にある地名から、お住まいの問いの欄に先に入れておく所を決める（T-200）。都道府県（「大阪府」と「大阪」）と市区町村の名前を、
+// 長い名前を先にして左から拾う（「東京都」を「京都」、「大津市」を「津市」と読まない）。指す都道府県がちょうど 1 つのときだけ返し、
+// 市区町村は 1 つに決まったときだけ入れる。違う所が 2 つ以上出てくる（大阪に住む父・東京の私）ときは何も入れない。
+// 漢字・カタカナの後に続く名前は、都道府県の名前の直後（東京都中央区）でなければ語の一部とみなす（大阪市中央区の「中央区」、港北区の「北区」）。
+// 「大阪」のような短い形は、後ろが助詞・句読点などのときだけ（「大分弱って」「山口さん」を拾わない）。判定・問いは変えない
+function guessPlace(text, list) {
+  const s = String(text || "").normalize("NFKC").replace(/\s+/g, "");
+  if (!s || !list || !list.length) return null;
+  const names = new Map();  // 名前 → [{ pref, city, short }]
+  const add = (name, ref) => names.set(name, [...(names.get(name) || []), ref]);
+  for (const p of list) {
+    add(p.name, { pref: p.code, city: "" });
+    const short = p.name.replace(/[都府県]$/, "");
+    if (short !== p.name) add(short, { pref: p.code, city: "", short: true });
+    for (const [code, name] of p.cities || []) add(name.replace(/（.*）$/, ""), { pref: p.code, city: code });
+  }
+  const alts = [...names.keys()].sort((a, b) => b.length - a.length).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(alts.join("|"), "g");
+  const inWord = /[\p{Script=Han}\p{Script=Katakana}ー]/u;
+  const after = /^[にのでへはがもとかま在住暮、。・,)）」』]/;
+  const found = [];  // [{ name, refs }]
+  let prevEnd = -1, prevPref = false;
+  for (let m; (m = re.exec(s));) {
+    const name = m[0], refs = names.get(name), start = m.index, end = start + name.length;
+    const isPref = refs.every((r) => !r.city && !r.short);
+    const glued = start > 0 && inWord.test(s[start - 1]) && !(prevEnd === start && prevPref);
+    const shortOk = !refs[0].short || end === s.length || after.test(s.slice(end));
+    if ((isPref || !glued) && shortOk) found.push({ name, refs });
+    prevEnd = end; prevPref = isPref;
+  }
+  if (!found.length) return null;
+  const prefsOf = (f) => new Set(f.refs.map((r) => r.pref));
+  const sure = new Set(found.filter((f) => prefsOf(f).size === 1).flatMap((f) => [...prefsOf(f)]));
+  let pref = "";
+  if (sure.size > 1) return null;
+  if (sure.size === 1) {
+    pref = [...sure][0];
+    if (!found.every((f) => prefsOf(f).has(pref))) return null;  // 同じ名前の市区町村が、別の都道府県のものとして出てきた
+  } else {
+    const common = found.map(prefsOf).reduce((a, b) => new Set([...a].filter((x) => b.has(x))));
+    if (common.size !== 1) return null;  // 「伊達市」だけ（北海道と福島県）は決められない
+    pref = [...common][0];
+  }
+  const cityNames = found.filter((f) => f.refs.some((r) => r.city && r.pref === pref)).map((f) => f.name);
+  if (new Set(cityNames).size > 1) return null;  // 同じ都道府県の違う市区町村が 2 つ（大阪市と堺市）
+  const codes = cityNames.length ? names.get(cityNames[0]).filter((r) => r.city && r.pref === pref).map((r) => r.city) : [];
+  return { pref, city: codes.length === 1 ? codes[0] : "" };
+}
+
 const affectNames = (list) => list.slice(0, 3).join("、") + (list.length > 3 ? ` ほか ${list.length - 3} 件` : "");
 
 // 問いの答え方を box に並べる。結果の画面の「まだ確かめていないこと」でも同じ形にする
@@ -667,6 +717,9 @@ function fillAnswers(box, q, pick, pickPlace) {
     const go = el("button", { class: "option", disabled: "", onclick: () => pickPlace(city.value) }, "この市区町村で進める");
     pref.addEventListener("change", () => { state.presses += 1; fillCities(pref.value, city); go.disabled = true; });
     city.addEventListener("change", () => { state.presses += 1; go.disabled = !city.value; });
+    // 相談の文に地名が 1 つだけあれば、その所を先に選んでおく（T-200）。change は起こさないので押した数に入れない
+    const guess = guessPlace(state.text, prefs);
+    if (guess) { pref.value = guess.pref; fillCities(guess.pref, city); city.value = guess.city; go.disabled = !city.value; }
     box.append(el("div", { class: "places" }, pref, city), go,
       el("button", { class: "option dk", onclick: () => pick(DONT_KNOW) }, "わからない"));
     return;
