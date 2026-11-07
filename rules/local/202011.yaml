@@ -1,0 +1,38 @@
+city: "202011"
+name: 長野市
+site: www.city.nagano.nagano.jp
+programs:
+  - template: local-haikai
+    status: found
+    name: はいかい高齢者家族支援サービス助成事業
+    where: 地域包括ケア推進課 高齢者福祉担当、福祉政策課篠ノ井分室、各支所の窓口
+    conditions:
+      - 市内に住む 65 歳以上で、はいかい行動のある認知症の人（要支援 1〜要介護 5 の認定を受けた人か、事業対象者）
+      - その人を在宅で、または通いで介護している人が申し込む
+      - GPS 機能の付いた端末を新しく買う費用を助成する。初期費用は 8,000 円、月の利用料は 700 円まで
+      - どちらも対象の費用の 10 分の 10 以内。解約金は対象外
+      - 利用申込書・利用同意書・請求書・廃止届の様式がある。期限は頁に無いので、窓口で確かめる
+    sources:
+      - url: https://www.city.nagano.nagano.jp/n101200/contents/p002477.html
+        publisher: 長野市
+        title: はいかい高齢者家族支援サービス助成事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-iro
+    status: found
+    name: 在宅福祉介護料（要介護高齢者用）
+    where: 地域包括ケア推進課 高齢者福祉担当（第二庁舎 1 階）か各支所の窓口
+    conditions:
+      - 市内に 1 年以上住む 65 歳以上で要介護 3〜5 の人を、家で介護している人
+      - 基準日（7 月 1 日か 1 月 1 日）の前の 1 年間に、家での介護が通算 180 日以上
+      - 年額で、要介護 4・5（第 1 種）は 35,000 円、要介護 3（第 2 種）は 25,000 円。口座に振り込む
+      - 申請は 7 月か 1 月の 1〜31 日。7 月の申請は 9 月、1 月の申請は 3 月に支給（重ねては受けない）
+      - 基準日の前日までの死亡・市外転出、前日より前からの施設入所（ショートステイを除く）は対象外
+    sources:
+      - url: https://www.city.nagano.nagano.jp/n101200/contents/p002391.html
+        publisher: 長野市
+        title: 在宅福祉介護料
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
