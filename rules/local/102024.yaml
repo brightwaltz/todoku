@@ -68,3 +68,19 @@ programs:
         license: 利用条件を確かめていない（引用しない）
         checked: 2026-11-07
     review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業（市長申立て・報酬の助成）
+    where: 65 歳以上の人は長寿社会課（027-321-1319）、65 歳未満の人は障害福祉課（027-321-1245）に相談する
+    conditions:
+      - 認知症や知的障害などで判断する力が足りず、自分で申し立てられない人
+      - 代わりに申し立てられる 4 親等以内の親族がいなければ、市長が代わりに申し立てる
+      - 本人や同居の親族の財産では後見人等の報酬を払うのが難しい人に、報酬の一部か全部を助成する
+      - 助成の額や申請の期限は頁に無いので、窓口で確かめる
+    sources:
+      - url: https://www.city.takasaki.gunma.jp/page/40667.html
+        publisher: 高崎市
+        title: 成年後見制度について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
