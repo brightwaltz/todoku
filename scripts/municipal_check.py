@@ -81,6 +81,12 @@ def fetch(url: str, cache: Path) -> tuple[int, str]:
         if "pdf" in ctype or data[:5] == b"%PDF-":
             p = subprocess.run(["pdftotext", "-q", str(raw), "-"], capture_output=True)
             text = p.stdout.decode("utf-8", "replace")
+            # 表の中で制度の名前が改行で割れると、ふつうの取り出しでは名前がつながらない（11/7 菊池市・宇土市・上天草市）。
+            # 並びのまま取り出した文字（-raw）も後ろに足して、どちらかに名前があれば頁にあるとみなす
+            q = subprocess.run(["pdftotext", "-q", "-raw", str(raw), "-"], capture_output=True)
+            alt = q.stdout.decode("utf-8", "replace")
+            if alt.strip() and alt != text:
+                text = text + "\n\f\n" + alt
         else:
             for enc in ("utf-8", "cp932", "euc_jp"):
                 try:
