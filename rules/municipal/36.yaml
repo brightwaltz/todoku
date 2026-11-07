@@ -1,0 +1,30 @@
+pref: '36'
+name: 徳島県
+site: www.pref.tokushima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: パーキングパーミット（身体障がい者等用駐車場利用証）
+  name_on_page: パーキングパーミット制度
+  summary: 要介護1以上の人などに、県が協力施設の障がい者等用駐車場の利用証を無料で交付する。
+  who: {}
+  at_application:
+  - 高齢者等の区分は、要介護度1以上の人（介護保険被保険者証を提示）
+  - ほか、身体障害者手帳（等級による）・療育手帳重度A・精神1級の人も対象
+  - ほか、指定難病の受給者・妊産婦・けが人・診断書のある人も対象
+  - 窓口か郵送で交付申請書を出す。窓口なら原則その場で交付
+  - 協力施設の障がい者等用駐車場だけで使える（道路は対象外）
+  where: 県庁障がい福祉課、東部・南部・西部の福祉事務所、阿南保健所、美馬地域連携事務所、障がい者相談支援センター（郵送は県庁障がい福祉課）
+  url: https://www.pref.tokushima.lg.jp/ippannokata/kenko/shogaifukushi/7210063/
+  confidence: high
+  amount: 利用証の交付は無料（郵送で申請するときは返信用切手180円分が必要）
+  more_urls:
+  - https://www.pref.tokushima.lg.jp/file/attachment/804714.pdf
+  - https://www.pref.tokushima.lg.jp/file/attachment/804713.pdf
+not_found:
+- yutai

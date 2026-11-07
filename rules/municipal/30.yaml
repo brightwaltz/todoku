@@ -1,0 +1,42 @@
+pref: '30'
+name: 和歌山県
+site: www.pref.wakayama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 障害者等用駐車区画の利用証
+  name_on_page: 和歌山県障害者等用駐車区画利用証制度
+  summary: 障害者等用の駐車区画を使える利用証を、要介護1以上の人などに県が交付する。
+  who: {}
+  at_application:
+  - 次のいずれかに当たる歩行が困難な人（要介護の高齢者、障害者、難病患者など）
+  - 要介護は要介護1以上（介護保険被保険者証で確認）
+  - 身体障害者手帳などは、種別・等級が基準以上の人（基準は別表）
+  - ほかに妊産婦（母子健康手帳）、けが人・医師の診断書で必要と認められる人も対象
+  where: 県庁障害福祉課、各振興局健康福祉部、一部の市町村の窓口（和歌山市は身体・知的障害の人のみ）。郵送は障害福祉課へ
+  url: https://www.pref.wakayama.lg.jp/prefg/040400/riyosho.html
+  confidence: high
+  more_urls:
+  - https://www.pref.wakayama.lg.jp/prefg/040400/riyosho_d/fil/beppyou.pdf
+  - https://www.pref.wakayama.lg.jp/prefg/040400/riyosho_d/fil/beppyouR71001.pdf
+  - https://www.pref.wakayama.lg.jp/prefg/040400/riyosho_d/fil/chuikankichirashi.pdf
+not_found:
+- yutai
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,26 @@
+pref: '25'
+name: 滋賀県
+site: www.pref.shiga.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 車いす使用者等用駐車場利用証（思いやり駐車場の利用証）
+  name_on_page: 滋賀県車いす使用者等用駐車場利用証制度
+  summary: 障害者・高齢者・妊産婦・けが人など移動に配慮が必要な人に、県が駐車場の利用証を交付する。
+  who: {}
+  at_application:
+  - 障害者・難病患者・高齢者・妊産婦・けが人等で、移動に配慮が必要な人のうち、頁の表に定める人
+  - 表の中身は、頁の PDF「利用証交付対象者」で確かめる
+  - 車いすを常時使う人は優先区画用、それ以外は思いやり区画用の利用証になる
+  - 介護保険被保険者証などを持つ人に交付する利用証は、期限つき
+  where: 頁の作成所属は健康医療福祉部 健康福祉政策課。申請の方法は、頁の「利用者の皆様へ（利用証の申請・更新・再交付）」で確かめる
+  url: https://www.pref.shiga.lg.jp/ud/seido/index.html
+  confidence: high
+not_found:
+- yutai
+- hochoki

@@ -1,0 +1,30 @@
+pref: '28'
+name: 兵庫県
+site: web.pref.hyogo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: 兵庫ゆずりあい駐車場の利用証（思いやり駐車場の利用証）
+  name_on_page: 兵庫ゆずりあい駐車場利用証
+  summary: 要介護1以上の人などに、県が駐車スペースの利用証を交付する。
+  who: {}
+  at_application:
+  - 歩行が困難な人が対象（高齢者のほか、手帳・難病・妊産婦などの欄もある）
+  - 高齢者の欄は、要介護1〜5の認定を受けた人（介護保険被保険者証で確認）
+  - ほか、身体・知的・精神の手帳（等級あり）、難病の受給者証、妊産婦、傷病人も対象
+  - 協力市町の窓口は、その市町に住む人だけが受け付けの対象
+  - 利用証は人に交付するもので、有料駐車場の割引は受けられない
+  where: 県福祉部ユニバーサル推進課（県庁）・神戸県民センター・各健康福祉事務所の窓口（月〜金、祝日を除く）、郵送、電子申請。協力市町の窓口でも受付（その市町の在住者のみ）
+  url: https://web.pref.hyogo.lg.jp/kf10/tyuusyajyou.html
+  confidence: high
+  amount: 申請手数料は無料（確認書類の取得費は自己負担）。郵送・電子申請は返信用切手180円分が必要
+  more_urls:
+  - https://web.pref.hyogo.lg.jp/kf10/documents/ko-hutaisyousya_202512.pdf
+  - https://web.pref.hyogo.lg.jp/kf10/documents/riyousyo-shinseinituite_202512.pdf
+not_found:
+- yutai

@@ -1,0 +1,25 @@
+pref: '31'
+name: 鳥取県
+site: www.pref.tottori.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: chusha
+  name: ハートフル駐車場の利用証
+  name_on_page: ハートフル駐車場利用証制度
+  summary: 要支援・要介護の認定がある人などに、県が駐車場の利用証を無料で交付する。
+  who: {}
+  at_application:
+  - 高齢者は要支援1・2か要介護1〜5の認定がある人
+  - ほか、障がい・難病・けが・妊娠中で歩行が困難な人も対象
+  - 確認書類（介護保険被保険者証など）が要る
+  where: 県福祉保健課、中部総合事務所県民福祉局、西部総合事務所県民福祉局、日野振興局、各市町村（郵送・電子申請も可）
+  url: https://www.pref.tottori.lg.jp/119758.htm
+  confidence: high
+  amount: 手数料は無料（確認書類の取得費は自己負担）
+not_found:
+- yutai
