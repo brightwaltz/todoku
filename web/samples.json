@@ -418,5 +418,56 @@
         "date": "2026-11-06"
       }
     }
+  },
+  {
+    "id": "utsunomiya-haha",
+    "label": "宇都宮市の母（ひとり暮らし）",
+    "text": "宇都宮市でひとり暮らしをしている母（80歳）が、最近耳が聞こえにくくなり、電話に出ないことが増えました。足腰も弱って、買い物や通院に出かけるのがつらそうです。私は東京に住んでいて、すぐには行けません。",
+    "municipality": "092011",
+    "made": {
+      "model": "claude-opus-5-5",
+      "date": "2026-11-07"
+    },
+    "reading": {
+      "subject": "お母さま",
+      "facts": [
+        {
+          "fact": "lives_in_machida",
+          "value": "false",
+          "confidence": "high",
+          "evidence": "宇都宮市でひとり暮らしをしている母"
+        },
+        {
+          "fact": "age_band",
+          "value": "age_75_plus",
+          "confidence": "high",
+          "evidence": "母（80歳）"
+        },
+        {
+          "fact": "residence",
+          "value": "home",
+          "confidence": "high",
+          "evidence": "ひとり暮らしをしている"
+        },
+        {
+          "fact": "household",
+          "value": "alone",
+          "confidence": "high",
+          "evidence": "ひとり暮らしをしている"
+        },
+        {
+          "fact": "needs_daily_help",
+          "value": "true",
+          "confidence": "low",
+          "evidence": "足腰も弱って、買い物や通院に出かけるのがつらそうです"
+        },
+        {
+          "fact": "hearing_difficulty",
+          "value": "true",
+          "confidence": "low",
+          "evidence": "最近耳が聞こえにくくなり"
+        }
+      ]
+    }
   }
 ]

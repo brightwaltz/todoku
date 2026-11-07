@@ -715,7 +715,7 @@ def test_samples_without_claude(monkeypatch):
     from todoku import app as app_mod
 
     listed = client.get("/api/samples").json()
-    assert len(listed) == 4  # 町田市 3 件と、町田市以外（横浜市）1 件
+    assert len(listed) == 5  # 町田市 3 件と、町田市以外（横浜市・宇都宮市〔11/7〕）2 件
     assert all(set(s) == {"id", "label", "text", "ready"} for s in listed)
     # 用意のない見本（reading が null）は 404
     blank = {"id": "blank", "label": "空", "text": "母のことです。", "municipality": "", "reading": None, "made": None}
