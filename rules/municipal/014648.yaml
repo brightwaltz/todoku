@@ -57,7 +57,6 @@ programs:
     - household_exempt
     flags:
     - uses_diapers
-    - bedridden_6m
   at_application:
   - 住民税非課税世帯で、町内に住所があり、自宅・町内のグループホーム・病院にいる
   - 要介護2以上、または一定の障がいがある

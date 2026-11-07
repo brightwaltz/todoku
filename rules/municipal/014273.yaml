@@ -1,0 +1,142 @@
+city: '014273'
+name: 由仁町
+site: www.town.yuni.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつなど介護用品の給付券
+  name_on_page: 介護用品の給付
+  summary: 在宅の要介護者に、おむつなどの介護用品を買える給付券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 生活保護を受けている人、住民税が課税されている人に扶養されている人は除く
+  where: 保健福祉課 高齢・障がい担当（0123-83-4750）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: 月額4,500円
+- category: haishoku
+  name: お弁当の配食
+  name_on_page: 配食サービス
+  summary: 月〜土曜の昼食・夕食時に温かい弁当を届け、安否も確かめる。
+  who: {}
+  at_application:
+  - おおむね65歳以上の人、または障がい者（町が定める基準がある）
+  - 安否確認のため、直接の受け取りが必要
+  where: 保健福祉課 高齢・障がい担当（0123-83-4750）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: 1食622円（税込）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（診療所駆けつけ）
+  name_on_page: 緊急通報装置（診療所駆けつけサービス）
+  summary: 緊急ボタンを押すとガードマンが対応し、診療所の医師や看護師が相談や駆けつけを行う。
+  who: {}
+  at_application:
+  - 世帯全員がおおむね80歳以上で、交通手段のない高齢者世帯
+  - または障害者手帳があるひとり暮らしの人など（町の設置基準あり）
+  where: 保健福祉課 高齢・障がい担当（0123-83-4750）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: 利用者負担は月額462円（高齢者世帯は初期設置費660円も1回）
+- category: sonota
+  name: T字型の歩行杖の給付
+  name_on_page: 歩行杖の給付
+  summary: 歩行が不自由で杖が必要な人に、T字型の杖を給付する。
+  who: {}
+  at_application:
+  - 歩行が不自由で杖が必要な人
+  where: 社会福祉協議会（0123-82-2167）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: 自己負担200円
+- category: sonota
+  name: 家事などのボランティア支援
+  name_on_page: 生活支援ボランティア
+  summary: 介護保険のヘルパーにできない日常の家事などを、ボランティアが訪問して手伝う。
+  who: {}
+  at_application:
+  - 社会福祉協議会で事前にチケットを買い、内容と日にちを相談する
+  where: 社会福祉協議会（0123-82-2167）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: チケット1枚（1回）100円、買い物支援は200〜300円
+- category: sonota
+  name: 命のバトン
+  name_on_page: 命のバトン
+  summary: 連絡先や薬などの情報を専用容器に入れて冷蔵庫に保管し、緊急時に備える。
+  who: {}
+  at_application: []
+  where: 社会福祉協議会（0123-82-2167）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+- category: sonota
+  name: 車イスの無料貸出し
+  name_on_page: 車イスの貸出し
+  summary: 旅行や買い物など出かけるときに車イスが必要な人に、無料で最長1か月貸す。
+  who: {}
+  at_application:
+  - 出かけるときに車イスが必要な人
+  where: 社会福祉協議会（0123-82-2167）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: 無料（最長1か月）
+- category: gaishutsu
+  name: デマンドタクシー
+  name_on_page: デマンドタクシー
+  summary: 自宅から役場・診療所などの間を、乗合タクシーで送迎する。
+  who: {}
+  at_application:
+  - 対象の自治区に住む65歳以上の人や運転免許を返納した人など
+  - 利用には事前登録が必要
+  where: 住民課 環境・交通担当（0123-83-3902）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: 1乗車300円（免許返納者などは100円）
+- category: haikai
+  name: 認知症高齢者等見守りネットワーク
+  name_on_page: 認知症高齢者等見守りネットワーク
+  summary: 所在不明のときに早く探せるよう、捜索に必要な情報を事前に登録する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊行動の見られるおおむね65歳以上の認知症高齢者など
+  - 登録内容は警察署と共有される
+  where: 地域包括支援センター（0123-83-4750）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+- category: haikai
+  name: GPS徘徊探知機の初期費用の助成
+  name_on_page: 認知症高齢者等ＧＰＳ購入料の助成
+  summary: GPSを使った徘徊探知機を買う・契約するときの初期費用を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のおそれのあるおおむね65歳以上の認知症高齢者など
+  - 認知症高齢者等見守りネットワークに登録している人の家族など
+  where: 地域包括支援センター（0123-83-4750）
+  url: https://www.town.yuni.lg.jp/wp-content/uploads/2026/05/R08%E8%A9%B3%E7%B4%B0%E7%89%88.pdf
+  confidence: high
+  amount: 上限20,000円（初期費用のみ）
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- jutaku
+- mimamori
+- nichijo-yogu
+- yutai

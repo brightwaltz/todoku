@@ -1,0 +1,141 @@
+city: 014818
+name: 増毛町
+site: www.town.mashike.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 介護タクシー利用料金の補助
+  name_on_page: 介護タクシー利用料金補助事業
+  summary: 公共交通を使うのが難しい人が介護タクシーを使ったとき、その費用の一部を補助する。
+  who: {}
+  at_application:
+  - 増毛町の介護保険の被保険者で、事業対象者・要支援1・要支援2の人
+  - 下肢等の障がい等で、バスや一般の公共交通機関を使うのが困難
+  - 生活保護の人や町税等の滞納者が世帯にいる場合は対象外
+  where: 福祉厚生課 介護保険係
+  url: https://www.town.mashike.hokkaido.jp/division/hukusikousei/1664326307.html
+  confidence: high
+  amount: 1回の利用料金の2割以内（上限2,500円）
+  more_urls:
+  - https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の人を在宅で介護する非課税世帯の家族に、紙おむつなどを支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 在宅で要介護4・5の人を介護している家族（非課税世帯）
+  where: 福祉厚生課 介護保険係
+  url: https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+  confidence: low
+  amount: 年間約75,000円分の紙おむつ・尿取りパッド・使い捨て手袋を支給
+- category: mimamori
+  name: 高齢者見守り支援事業
+  name_on_page: 高齢者見守り支援事業
+  summary: トイレなどにSIM一体型電球を付け、24時間使われないと登録した家族にメールで知らせる。
+  who:
+    age_min: 75
+  at_application:
+  - 75歳以上の一人暮らしの人
+  - または、異常時に通報が困難な同居者と住む75歳以上の人
+  - 町内に子が住んでいる人、他の緊急通報機器を設置済みの人は対象外
+  where: 地域包括支援センター
+  url: https://www.town.mashike.hokkaido.jp/division/shiencenter/index.html
+  confidence: high
+  amount: 利用料は申込時に3,000円
+  more_urls:
+  - https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+- category: haikai
+  name: はいかい老人等SOSネットワーク
+  name_on_page: はいかい老人等SOSネットワークシステム
+  summary: はいかいの恐れがある人の情報を事前に登録し、行方不明のとき消防や役場などが捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者等で、はいかいの恐れがある人が、写真や名前などを事前に登録する
+  where: 地域包括支援センター
+  url: https://www.town.mashike.hokkaido.jp/division/shiencenter/index.html
+  confidence: high
+  more_urls:
+  - https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+- category: haishoku
+  name: 夕食の配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が困難な人に、週2回、夕食のおかず4品を届け、安否確認も行う。
+  who: {}
+  at_application:
+  - 調理が困難な人（一覧のPDFでは高齢者・障がい者）
+  - 配食サービス申請書と町税等滞納確認同意書が必要
+  where: 地域包括支援センター
+  url: https://www.town.mashike.hokkaido.jp/division/shiencenter/index.html
+  confidence: high
+  amount: 栄養表示付き1食400円（週2回、夕食のおかず4品、ごはん無し）
+  more_urls:
+  - https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+- category: sonota
+  name: 介護用品の一時貸し出し
+  name_on_page: 介護用品の一時貸し出し
+  summary: 車いす・歩行器・杖・シャワーチェアなどを一時的に貸し出す。
+  who: {}
+  at_application:
+  - 介護保険サービスが利用できる場合は、そちらを優先する
+  - 日常生活福祉用具貸与申請書が必要
+  where: 地域包括支援センター
+  url: https://www.town.mashike.hokkaido.jp/division/shiencenter/index.html
+  confidence: low
+  more_urls:
+  - https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+- category: gaishutsu
+  name: 高齢者運転免許自主返納支援
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 70歳以上で運転免許証を自主返納した人に、バス回数券やハイヤー利用券などを交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 有効期間内の運転免許証を自主返納した人
+  where: 町民課 町民環境係
+  url: https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+  confidence: low
+  amount: バス回数券やあっぷるハイヤー利用券等を5万円分交付
+- category: sonota
+  name: 屋根及び家のまわりの除雪
+  name_on_page: 屋根及び家のまわりの除雪サービス事業
+  summary: 屋根の雪おろしや軒下などの除雪を、低額の負担で受けられる。
+  who: {}
+  at_application:
+  - 世帯全員の町民税が非課税、または所得割が非課税の高齢者・障がい者
+  where: 福祉厚生課 介護保険係
+  url: https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+  confidence: low
+  amount: 2回まで1,000円、3回目は500円
+- category: sonota
+  name: 有償ボランティアによる玄関前の除雪
+  name_on_page: 有償ボランティア除雪事業
+  summary: 玄関前の除雪を、近所のボランティアが行う。
+  who: {}
+  at_application:
+  - 世帯全員の町民税が非課税、または所得割が非課税の高齢者・障がい者
+  where: 福祉厚生課 介護保険係
+  url: https://www.town.mashike.hokkaido.jp/documents/m_files/1767926430.pdf
+  confidence: low
+  amount: 負担金は1,500円
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- kinkyu-tsuho

@@ -44,7 +44,10 @@ programs:
   name: 救急カードの配布と保管
   name_on_page: 救急カード
   summary: 病歴や服薬を書いた救急カードを筒に入れて冷蔵庫に保管し、救急時に役立てる。
-  who: {}
+  who:
+    household:
+    - alone
+    - elderly_only
   at_application:
   - 65 歳以上の一人暮らしの人および夫婦世帯
   - または、障がいのある一人暮らしの人

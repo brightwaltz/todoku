@@ -1,0 +1,153 @@
+city: '014303'
+name: 月形町
+site: www.town.tsukigata.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 夕食の配食
+  name_on_page: 配食サービス
+  summary: 調理が困難な人に、月〜金曜の週5回、夕食を届けて安否も確かめる。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 調理が困難な人
+  where: 月形町社会福祉協議会（表の問合せ先）
+  url: https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  confidence: high
+- category: gaishutsu
+  name: 福祉有償運送
+  name_on_page: 福祉有償運送
+  summary: 公共交通機関の利用が難しい人を、車で送迎する。
+  who: {}
+  at_application:
+  - 要介護認定を受けている人、または障害者手帳がある人
+  - 公共交通機関の利用が困難な人
+  where: 表に申請先の記載なし（高齢者サービスの窓口は保健福祉課高齢者支援係 0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: おむつ代の助成
+  name_on_page: おむつ代助成
+  summary: 紙おむつや尿とりパットの購入費用の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の人、または障害者手帳がある人
+  where: 保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  confidence: high
+- category: sonota
+  name: 有償の生活支援サービス
+  name_on_page: 生活支援サービス事業
+  summary: 生活支援が必要な人の家を訪ね、有償で家事援助や身体介護をする。
+  who: {}
+  at_application:
+  - おおむね65歳以上の人、または心身に障害がある人
+  where: 保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  confidence: low
+  amount: 有償（金額は表にない）
+- category: mimamori
+  name: 訪問・電話による見守り
+  name_on_page: ふれあい見守り推進事業
+  summary: 月1〜2回ほど、訪問や電話で安否を確かめる。
+  who: {}
+  at_application:
+  - 70歳以上の独居、全員75歳以上の世帯、障害者世帯のどれか
+  - 利用には登録が必要
+  where: 保健福祉課高齢者支援係（0126-53-3155）。登録は月形町社会福祉協議会（0126-53-2928）
+  url: https://www.town.tsukigata.hokkaido.jp/page/1738.html
+  confidence: high
+  more_urls:
+  - https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+- category: gaishutsu
+  name: ぬくもり福祉券（温泉・ハイヤー・バスなどの助成券）
+  name_on_page: ぬくもり福祉
+  summary: 月形温泉・ハイヤー・路線バス・配食などに使える助成券を年間1万円分交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  confidence: high
+  amount: 年間1万円分の助成券
+- category: sonota
+  name: 高齢者世帯等の除雪費の助成
+  name_on_page: 除雪費助成
+  summary: 自力で除雪できない世帯が事業者に委託した除雪費用の一部を助成する。
+  who: {}
+  at_application:
+  - 全員70歳以上の世帯、見守り事業対象世帯、障害者世帯、ひとり親世帯のどれか
+  - 除雪作業を自力で行うことが困難
+  where: 保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  confidence: high
+- category: sonota
+  name: 在宅高齢者の短期宿泊
+  name_on_page: 在宅高齢者短期宿泊事業
+  summary: 家族が病気や冠婚葬祭などで介護できないとき、老人ホームで短期間預かる。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の適用を受けない（要介護認定が非該当の）人
+  - 家族が病気や冠婚葬祭、旅行などで一時的に介護できない
+  where: 保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/page/1685.html
+  confidence: high
+  more_urls:
+  - https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+- category: sonota
+  name: あんしんバトン（救急医療情報キット）
+  name_on_page: あんしんバトン
+  summary: 連絡先やかかりつけ病院、薬などの情報をまとめて保存する容器を配付する。
+  who: {}
+  at_application:
+  - 70歳以上の人、または障害者手帳がある人
+  where: 保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  confidence: high
+- category: iro
+  name: 家族介護応援手当
+  name_on_page: 家族介護応援手当
+  summary: 在宅で重い要介護者や障がい者を介護する家族に、慰労の手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 月形町に住所があり、同じ住宅に住んで介護している
+  - 介護されている人が要介護3以上、または障害支援区分4以上
+  - 特別児童扶養手当の所得の限度額を超えていない
+  - 新たに認定された人は、認定から6か月を過ぎるまで申請できない
+  where: 保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/page/1756.html
+  confidence: high
+  amount: 月額20,000円（1か月の介護日数が15日に満たない月は支給なし）
+- category: koken
+  name: 成年後見の費用の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見制度の申立て費用や後見人への報酬などの自己負担分を補助する。
+  who: {}
+  at_application:
+  - 認知症高齢者、知的障がい者、精神障がい者が対象
+  - 利用には条件があり、窓口への問い合わせが必要
+  where: 月形町地域包括支援センター・保健福祉課高齢者支援係（0126-53-3155）
+  url: https://www.town.tsukigata.hokkaido.jp/page/1685.html
+  confidence: high
+  amount: 自己負担分の全額または一部を補助
+  more_urls:
+  - https://www.town.tsukigata.hokkaido.jp/uploaded/attachment/4242.pdf
+  - https://www.town.tsukigata.hokkaido.jp/page/1703.html
+not_found:
+- haikai
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

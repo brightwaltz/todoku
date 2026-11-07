@@ -1,0 +1,103 @@
+city: 014290
+name: 栗山町
+site: www.town.kuriyama.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 高齢者世帯などの除雪費の助成
+  name_on_page: 高齢者除雪サービス事業
+  summary: 自力で除雪できない世帯が事業者に頼んだ除雪や排雪、雪下ろしの費用の7割を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 次のどれか：世帯全員が70歳以上、または全員が要支援・要介護認定
+  - または70歳以上の人と、要支援・要介護認定や障害者手帳の人のみの世帯
+  - 同じ町内会・自治会に65歳未満の子がいない世帯
+  - 町税などの滞納がなく、町内会等の共同負担で除雪していない
+  - 毎年申請が必要で、除雪事業者と契約する前に申請する
+  where: 福祉課高齢者・介護・医療グループ（窓口6番、0123-73-7507）
+  url: https://www.town.kuriyama.hokkaido.jp/soshiki/43/33388.html
+  confidence: high
+  amount: 費用の7割を助成（生活保護世帯は9割）。助成対象額の上限は、シーズン契約が5万円、排雪・屋根の雪下ろしが2万円
+- category: kaigo-yohin
+  name: 介護用品給付券の支給
+  name_on_page: 在宅で介護されている家族に介護用品給付券を支給
+  summary: 紙おむつや尿取りパッド、ドライシャンプーなどを買える給付券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 長期入院や介護保険施設への入所をしていない
+  - 介護する家族に町税などの滞納がない
+  where: 福祉課高齢者・介護・医療グループ（0123-73-7507）
+  url: https://www.town.kuriyama.hokkaido.jp/soshiki/43/27303.html
+  confidence: high
+  amount: 月額6,250円（上限額）
+- category: sonota
+  name: ケアラーお出かけ安心サービス（短期入所）
+  name_on_page: 栗山町ケアラーお出かけ安心サービス事業
+  summary: 介護している人が冠婚葬祭や急病などで出かけるとき、介護される人が短期入所を使える。
+  who:
+    age_min: 40
+  at_application:
+  - 栗山町に住所登録がある、介護等を受けている人（ケアラーが申請）
+  - ケアラーは友人・知人でもよい。事前に登録申請と利用申請が必要
+  - 利用は月1回、1回7日以内（ケアラーの急病・事故は30日以内）
+  where: 栗山町社会福祉協議会（0123-72-1322）
+  url: https://www.town.kuriyama.hokkaido.jp/soshiki/43/20047.html
+  confidence: high
+  amount: 施設の滞在費・食費など実費相当（1日あたり概ね3,000円程度）
+- category: haishoku
+  name: 昼食・夕食の配食
+  name_on_page: 配食サービス
+  summary: 調理が難しくなった高齢者に昼食・夕食を届け、栄養管理や声かけ・見守りをする。
+  who: {}
+  at_application:
+  - 調理が難しくなった高齢者（計画には詳しい条件がない）
+  where: 栗山町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.kuriyama.hokkaido.jp/uploaded/attachment/13490.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置事業
+  summary: 住宅に緊急通報システムを設置し、緊急時の安全確保と健康相談を行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしの高齢者など
+  - 身体や健康面で支障がある人
+  where: 栗山町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.kuriyama.hokkaido.jp/uploaded/attachment/13490.pdf
+  confidence: low
+- category: gaishutsu
+  name: 通院などの送迎
+  name_on_page: 外出支援サービス
+  summary: リフト付き車両で、通院などのときに自宅との間を送迎する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 公共交通機関を利用して外出することが困難な高齢者
+  where: 栗山町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.kuriyama.hokkaido.jp/uploaded/attachment/13490.pdf
+  confidence: low
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

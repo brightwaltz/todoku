@@ -1,0 +1,192 @@
+city: '014575'
+name: 上川町
+site: www.town.hokkaido-kamikawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 家事援助サービス
+  name_on_page: 家事援助サービス
+  summary: 家事援助サービス員を派遣し、炊事・洗濯・掃除などの日常生活の手伝いをする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護認定が非該当
+  - 家事援護などの支援が必要
+  - 介護予防・生活支援事業の利用申請が必要
+  where: 健康ふくし課 介護高齢者係（利用申請は役場窓口）
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001des.html
+  confidence: high
+  amount: 1時間未満310円、1時間以上1時間30分未満440円、以降30分ごとに100円加算（身体介護・外出の援助は530円〜）
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ
+  summary: 一時的に養護などが必要な高齢者や障がいのある人が、施設に短期入所する。
+  who: {}
+  at_application:
+  - 高齢者または障がいのある人で、社会生活が困難
+  - 一時的に養護などの援助が必要
+  where: 健康ふくし課 介護高齢者係（利用申請は役場窓口）
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001des.html
+  confidence: high
+  amount: 1人1日600円（非課税・年収80万円以下）、1,200円（非課税）、1,800円（課税）。1回14日以内、6か月に3回まで
+- category: haishoku
+  name: 給食サービス
+  name_on_page: 給食サービス
+  summary: 自宅を訪問して定期的に食事を届け、安否の確認も行う。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者、高齢者夫婦世帯、または障がいのある人
+  - 食事の調理が困難
+  where: 健康ふくし課 介護高齢者係（利用申請は役場窓口）
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001des.html
+  confidence: high
+  amount: 1食500円
+- category: gaishutsu
+  name: 外出支援サービス
+  name_on_page: 外出支援サービス
+  summary: 交通機関を使うのが難しい人を、自宅から在宅福祉サービスや医療機関まで送迎する。
+  who: {}
+  at_application:
+  - 身体が虚弱または障がいがあり、寝たきりや車椅子などで一般の車両の利用が困難な高齢者・障がい者
+  - 家族などの付き添いが必要
+  where: 健康ふくし課 介護高齢者係（利用申請は役場窓口）
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001des.html
+  confidence: high
+  amount: 費用額の20％が基本。非課税世帯は軽減（年収80万円以下は50％、非課税は70％を乗じる）
+- category: mimamori
+  name: 電話サービス（安否確認）
+  name_on_page: 電話サービス
+  summary: 電話で安否確認と相談を行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 病弱などの理由で近隣とのコミュニケーションが少ない
+  where: 健康ふくし課 介護高齢者係（利用申請は役場窓口）
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001des.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 玄関前や通路などの除雪を行う。
+  who: {}
+  at_application:
+  - 身の回りの作業が困難なひとり暮らしの高齢者・老夫婦世帯、または障害者世帯
+  where: 健康ふくし課 介護高齢者係（利用申請は役場窓口）
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001des.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 成年後見の申立ての経費や後見人等の報酬の一部を助成する。
+  who: {}
+  at_application:
+  - 介護・障害福祉サービスを使う身寄りのない重度の認知症高齢者・知的障害者・精神障害者
+  - 後見開始などの審判の請求が必要と認められる
+  - 助成がないと制度の利用が困難と認められる
+  where: 健康ふくし課 介護高齢者係（利用申請は役場窓口）
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001des.html
+  confidence: high
+  amount: 申立ての経費や後見人等の報酬の全部または一部。年間収入に応じて助成割合100％・75％・50％
+- category: gaishutsu
+  name: 高齢者福祉タクシー料金等助成
+  name_on_page: 高齢者福祉タクシー料金等助成事業
+  summary: タクシー・バス・コミュニティバスに使える乗車券を交付する。
+  who:
+    age_min: 75
+    at_home: true
+  at_application:
+  - 上川町内に住民票があり住んでいる
+  - 4月1日現在で満75歳以上
+  - 町民税が非課税または均等割のみ課税
+  - 施設入所・入院中・認知症対応型共同生活介護の人は対象外
+  where: 健康ふくし課 介護高齢者係
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001f11.html
+  confidence: high
+  amount: 100円分の乗車券20枚（2,000円分）。周辺地域は距離に応じて8,000〜29,600円を追加
+- category: hochoki
+  name: 高齢者補聴器購入費用助成
+  name_on_page: 高齢者補聴器購入費用助成事業
+  summary: 中等度難聴の65歳以上の人に、補聴器の購入費の半額を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 上川町民（住民基本台帳に登録）
+  - 両耳の聴力レベルが40デシベル以上70デシベル未満（医師の証明が必要）
+  - メンテナンス代・修理代・診断書料は対象外
+  where: 健康ふくし課 介護高齢者係
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/fnrje7000000378k.html
+  confidence: high
+  amount: 購入費の2分の1、上限50,000円（1人1回）
+- category: kaigo-yohin
+  name: 介護用品費助成金
+  name_on_page: 介護用品費助成金
+  summary: 紙おむつなどの介護用品の費用を、町民税非課税世帯に助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきりか認知症の65歳以上の在宅高齢者、または在宅の身体障がい者
+  - 医師・保健師・ケアマネの介護用品使用証明書が必要
+  where: 健康ふくし課 介護高齢者係
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001e7d.html
+  confidence: high
+  amount: 月額8,000円以内（満たないときは平均的な1か月の支出額）。年2回まとめて支給
+- category: iro
+  name: 寝たきり老人等介護手当
+  name_on_page: 寝たきり老人等介護手当
+  summary: 寝たきりや認知症などの人を在宅で同居して介護する人に、手当を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 非課税世帯で、要介護3〜5の65歳以上の寝たきりの人を介護
+  - または65歳以上の認知症の人を介護
+  - または65歳未満の重度心身障がい者・寝たきりの特定疾患患者を介護
+  - いずれも在宅で同居し無報酬で介護する。6か月以上介護が続いたとき支給を開始
+  where: 健康ふくし課 介護高齢者係
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001e21.html
+  confidence: high
+  amount: 月額10,000円（9月と3月にまとめて支給）
+- category: sonota
+  name: 福祉灯油助成事業
+  name_on_page: 福祉灯油助成事業
+  summary: 対象世帯に、町内の灯油販売店で使える福祉灯油助成券を交付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 上川町内に住所があり現に居住している
+  - 75歳以上の高齢者がいる単身世帯・夫婦世帯、または手帳をもつ人がいる世帯、ひとり親世帯
+  - 対象者全員が施設入所・長期入院などの世帯は対象外
+  where: 健康ふくし課 福祉係
+  url: https://www.town.hokkaido-kamikawa.lg.jp/section/hokenhukushi/chs8120000001c5y.html
+  confidence: high
+  amount: 25リットル券4枚（100リットル分）
+not_found:
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

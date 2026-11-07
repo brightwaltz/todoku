@@ -1,0 +1,133 @@
+city: 014079
+name: 仁木町
+site: www.town.niki.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸出し
+  name_on_page: 緊急通報サービス事業
+  summary: 緊急時に通報できる装置を貸し出し、安否センサーで24時間見守る。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 身体が病弱で緊急時に機敏に動けない人
+  - 突発的に命の危険が起きる持病や障がいのあるひとり暮らしの人
+  - 上の2つのどちらかに当たる人
+  where: 福祉課介護保険係（印鑑を持って窓口に申請）
+  url: https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm.html
+  confidence: high
+  amount: 利用料は無料
+  more_urls:
+  - https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm-att/ucpof7000000033r.pdf
+- category: haishoku
+  name: 夕食の配食
+  name_on_page: 配食（食の自立支援）サービス事業
+  summary: 調理が難しい高齢者に夕食の弁当を届け、安否も確かめる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 仁木町に住所がある、おおむね65歳以上の人
+  - 調理が困難か栄養の改善が必要で、配食が適切と認められる
+  where: 福祉課介護保険係（印鑑を持って窓口に申請）
+  url: https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm.html
+  confidence: high
+  amount: 1食400円（冊子では最大週5回）
+  more_urls:
+  - https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm-att/ucpof7000000033r.pdf
+- category: gaishutsu
+  name: 外出の送迎
+  name_on_page: 外出支援サービス事業
+  summary: バスなどが使いにくい人を、自宅から病院や買い物先へ送迎する。
+  who: {}
+  at_application:
+  - 介護保険で自立または要支援と判断された人
+  - 公共交通機関の利用が困難
+  - 送迎範囲は仁木町内と余市町内
+  where: 福祉課介護保険係（印鑑を持って窓口に申請）
+  url: https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm.html
+  confidence: high
+  amount: 片道290円（月2回まで）
+  more_urls:
+  - https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm-att/ucpof7000000033r.pdf
+- category: sonota
+  name: 高齢者の除雪
+  name_on_page: 除雪サービス事業
+  summary: 除雪が難しい高齢者の家の玄関から公道までを1メートルほどの幅で除雪する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 除雪が困難な人
+  where: 福祉課介護保険係（印鑑を持って窓口に申請）
+  url: https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm.html
+  confidence: high
+  amount: 1回290円
+  more_urls:
+  - https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm-att/ucpof7000000033r.pdf
+- category: mimamori
+  name: 電話による安否確認
+  name_on_page: ハートコール事業
+  summary: 週2、3回、電話で話しかけて安否を確かめ、相談に応じる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 福祉課介護保険係（印鑑を持って窓口に申請）
+  url: https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm-att/ucpof7000000033r.pdf
+- category: kaigo-yohin
+  name: 介護用品の支給
+  name_on_page: 家族介護支援事業
+  summary: 重い要介護の高齢者を在宅で介護する家族に、紙おむつなどの交付券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 仁木町に住み、本人と介護する人の世帯員全員が町道民税非課税
+  - 要介護者と同居して介護している（別の頁の記載）
+  where: 担当ケアマネジャーまたは福祉課介護保険係（毎月5日までに申請書を提出）
+  url: https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002c2.html
+  confidence: high
+  amount: 介護用品の交付券、月額8,350円まで（紙おむつ・尿取りパッドなど）
+  more_urls:
+  - https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm.html
+  - https://www.town.niki.hokkaido.jp/section/hokenka/ucpof700000002lm-att/ucpof7000000033r.pdf
+- category: sonota
+  name: 介護マークの交付
+  name_on_page: 介護マーク
+  summary: 介護中であることを周りに伝える、ストラップ式の名札を交付する。
+  who: {}
+  at_application:
+  - 介護する人、介護される人が申請する（申請書が必要）
+  where: 福祉課介護保険係
+  url: https://www.town.niki.hokkaido.jp/section/hokenka/ucpof70000000509.html
+  confidence: high
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

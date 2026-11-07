@@ -1,0 +1,133 @@
+city: '014231'
+name: 南幌町
+site: www.town.nanporo.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: あんしんキットの配布
+  name_on_page: あんしんキット配布事業
+  summary: かかりつけ医や薬、緊急連絡先を書いて収める「あんしんキット」を配る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしの人
+  - 65歳以上の高齢者夫婦世帯（同居を除く）
+  - そのほか障がい者世帯
+  - 上の3つのどれかに当たる人
+  where: 保健福祉課高齢者包括係（保健福祉総合センターあいくる、011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: high
+- category: sonota
+  name: 屋根雪下ろしの費用助成
+  name_on_page: 高齢者等屋根雪下ろし助成事業
+  summary: 町が指定する事業者に頼んだ屋根の雪下ろしや排雪の費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 町内の一戸建て住宅に住んでいる
+  - 65歳以上のみの世帯、障がい者のいる世帯、ひとり親世帯のどれか
+  - 町税などの滞納がない・生活保護世帯でない
+  - 利用者登録の前に作業をした分は対象外
+  where: 保健福祉課高齢者包括係（保健福祉総合センターあいくる、011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: high
+  amount: 雪下ろし費用の3分の2（1回3万円まで、期間内2回まで）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置設置事業
+  summary: 急病や災害のときに消防へ直通で通報できる装置を設置（貸与）する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上の一人暮らし、または健康状態や日常動作に支障のある65歳以上の一人暮らし
+  - または、65歳以上のみの世帯で、重度障がい者か要介護3以上の人がいる
+  - NTTの固定電話回線があること
+  - 緊急協力員2名と親族の緊急連絡先2名を登録できること
+  where: 保健福祉課高齢者包括係（保健福祉総合センターあいくる、011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: high
+  amount: 機器の使用料と設置料は無料（電気代・電池代は自己負担）
+- category: mimamori
+  name: 安否確認ボタンの貸与
+  name_on_page: マゴコロボタン
+  summary: ボタンを押すと家族にLINEで知らせる安否確認の機器を設置（貸与）する。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 家族などの緊急連絡先が2か所必要
+  - 申請は随時、設置まで1〜2か月かかる
+  where: 保健福祉課高齢者包括係（保健福祉総合センターあいくる、011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: high
+  amount: 機器の使用料と設置料は無料（電気代は自己負担）
+- category: sonota
+  name: ごみ出し支援
+  name_on_page: 高齢者等ごみ出し支援
+  summary: ごみ出しが難しい世帯の玄関先からごみステーションまで、ごみを運ぶ（基本は週1回）。
+  who: {}
+  at_application:
+  - 高齢者や障がいのある人で、ごみステーションまで運ぶのが難しい世帯
+  - 体力の5項目のうち4つ以上に当たる、要支援1以上、または下肢障がい2級以上
+  - 近所の親族等の協力が得られる人と施設入居者は除く
+  - 同居者がいる場合は、同居者全員が上のどれかに当たること
+  where: 保健福祉課高齢者包括係／福祉障がい係（保健福祉総合センターあいくる、011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 行方不明になった徘徊のある認知症高齢者を、関係機関が連携して探し、保護する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内に居住または滞在している、徘徊がみられる認知症高齢者
+  - 登録申請書・同意書・本人の写真が必要
+  where: 保健福祉課高齢者包括係（保健福祉総合センターあいくる、011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等のGPS機器の貸与
+  name_on_page: 認知症高齢者等GPS機器貸与事業
+  summary: 認知症高齢者などを在宅で介護する家族に、居場所を調べるGPS機器を貸す。
+  who:
+    at_home: true
+  at_application:
+  - 認知症高齢者などを在宅で介護している家族など
+  - 認知症高齢者等SOSネットワーク事業への登録が必要
+  where: 保健福祉課高齢者包括係（保健福祉総合センターあいくる、011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: high
+  amount: 貸与と利用の料金は無料（バッテリー交換や修理費は原則自己負担）
+- category: sonota
+  name: 福祉用具の貸出し
+  name_on_page: 福祉用具貸出
+  summary: ポータブルトイレ・四点杖・歩行器などを貸し出し、自宅での生活を支える。
+  who: {}
+  at_application:
+  - 介護保険を利用していない人や、退院したばかりの人
+  where: 頁に申請先の記載なし（問い合わせは保健福祉課高齢者包括係 011-378-5888）
+  url: https://www.town.nanporo.hokkaido.jp/health/elderly-welfare/
+  confidence: low
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- yutai

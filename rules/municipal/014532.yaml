@@ -21,7 +21,7 @@ programs:
   url: https://www.town.higashikagura.lg.jp/docs/154.html
   confidence: high
   amount: 1食 ごはん付き400円、おかずのみ340円（口座引き落とし）
-- category: kaigo-yohin
+- category: nichijo-yogu
   name: 在宅支援用具給付事業
   name_on_page: 在宅支援用具給付事業
   summary: 要介護・要支援の人に、杖・防水シーツ・入浴用の滑り止めなどの購入費の一部を補助する。

@@ -1,0 +1,151 @@
+city: '014052'
+name: 積丹町
+site: www.town.shakotan.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理や栄養管理が難しい高齢者の家へ食事を届け、安否も確かめる。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者世帯など
+  - 心身の障がいや疾病で調理・栄養管理が難しい
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: mimamori
+  name: 訪問による安否確認
+  name_on_page: 訪問安否確認サービス事業
+  summary: 見守りが必要な高齢者を訪ね、声かけや健康状態の確認、相談に応じる。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者など
+  - 見守りが必要と認められる
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: mimamori
+  name: 見守り電球の設置
+  name_on_page: 高齢者見守りサービス事業
+  summary: 点灯・消灯の動きをメールで知らせる電球を付け、日ごろの安否を見守る。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上のひとり暮らし高齢者など（「など」の範囲は頁にない）
+  - 身体や生活の状況で見守りが必要
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: sonota
+  name: 救急バトンの配付
+  name_on_page: 救急バトン配付事業
+  summary: 救急時に必要な情報を入れて保管する容器（救急バトン）を配る。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上のひとり暮らしや高齢者世帯など（「など」の範囲は頁にない）
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: sonota
+  name: 高齢者の除雪
+  name_on_page: 除雪サービス事業
+  summary: 除雪が難しい高齢者の家の出入口・窓・ベランダなど避難路の雪をかく。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者など
+  - 心身の障がいや疾病で除雪が難しい
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: gaishutsu
+  name: 外出の送迎
+  name_on_page: 外出支援サービス事業
+  summary: 外出が難しい高齢者を、移送用の車で自宅と医療機関や施設の間で送迎する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者世帯など
+  - 心身の障がいや疾病で外出が難しい
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: sonota
+  name: 軽度生活援助
+  name_on_page: 軽度生活援助事業
+  summary: 外出の付き添い、食材の確保、家の中の整理など軽い日常の手伝いをする。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者など
+  - 軽い日常生活の援助が必要
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: gaishutsu
+  name: バス・タクシー利用費の助成
+  name_on_page: 地域福祉交通支援対策事業
+  summary: 路線バスと町内のタクシーの利用にかかる費用の一部を助成する。
+  who: {}
+  at_application:
+  - 高齢者世帯、障がい者世帯、子育て世帯のいずれか
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: sonota
+  name: 福祉灯油の購入助成
+  name_on_page: 福祉灯油購入助成事業
+  summary: 冬の暖房に使う灯油の購入費の一部を助成する。
+  who: {}
+  at_application:
+  - 高齢者世帯、障がい者世帯、子育て世帯のいずれか
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: iro
+  name: 寝たきり高齢者の介護手当
+  name_on_page: 寝たきり老人等介護手当給付事業
+  summary: 在宅の寝たきり高齢者などを介護している人に、介護手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の寝たきり高齢者などを介護している人（介護者に支給）
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: koken
+  name: 成年後見の費用の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 費用の負担が難しい人に、審判の請求にかかる費用と後見人への報酬を助成する。
+  who: {}
+  at_application:
+  - 成年後見制度を使うことが望ましい高齢者など
+  - 費用の負担が難しいと町が認めた人
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+- category: sonota
+  name: 短期の宿泊（短期入所）
+  name_on_page: 短期入所事業
+  summary: 生活上の都合で一時宿泊が必要な高齢者に、居室と食事を提供し自立生活を見守る。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者など
+  - 生活上の都合で一時的に宿泊などが必要
+  where: 積丹町（頁は計画書で、申請の窓口は書かれていない）
+  url: https://www.town.shakotan.lg.jp/66fecb6501b9ff5fc7e98ec3c0c1d588735eb438.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haikai
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

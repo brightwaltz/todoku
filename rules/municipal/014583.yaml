@@ -1,0 +1,135 @@
+city: 014583
+name: 東川町
+site: higashikawa-town.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者のハイヤー料金助成券
+  name_on_page: 高齢者福祉ハイヤー利用料金助成
+  summary: 車も免許も持たない65歳以上の世帯に、ハイヤー料金の助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の人が自家用車も運転免許証も持たない世帯
+  - 重度障害者ハイヤー助成・移送サービス・福祉有償運送の対象者は除く
+  - 施設に入所している人は除く
+  where: 保健福祉課 社会福祉室
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 1枚500円を限度とする助成券を、1世帯で年30枚まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 急病や災害のとき消防署に連絡できる機器を設置する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしや身体障害者などで所得税非課税世帯
+  - それ以外の高齢者のみの世帯は、有料で利用できる
+  - 申請が必要
+  where: 保健福祉課 社会福祉室、地域包括支援センター
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 有料で利用する場合は月1,000円
+- category: kinkyu-tsuho
+  name: あんしん連絡機器の設置
+  name_on_page: あんしん連絡機器設置助成事業
+  summary: 急病や災害のとき、最大9か所の登録先へ連絡できる機器を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上の高齢者世帯で、世帯員に特定疾患のある人がいる世帯
+  - または、75歳以上の高齢者世帯
+  where: 保健福祉課 社会福祉室、地域包括支援センター
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 機器のレンタル料として月額189円または399円を負担
+- category: gaishutsu
+  name: ストレッチャー付きタクシーの移送費補助
+  name_on_page: 移送サービス利用料補助事業
+  summary: ストレッチャー付きタクシーで医療機関などへ移送されるときの利用料の一部を補助する。
+  who: {}
+  at_application:
+  - 要介護・要支援の人で、外出にストレッチャー付き車両が必要
+  - 身体障害者・知的障害者・障害児も同じ条件で対象
+  - 申請が必要
+  where: 保健福祉課 社会福祉室、地域包括支援センター
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+- category: nichijo-yogu
+  name: 日常生活用具の助成
+  name_on_page: 日常生活用具助成等事業
+  summary: 歩行器・電磁調理器・自動消火器・補聴器などの購入を助成する。
+  who: {}
+  at_application:
+  - 居宅の要介護・要支援の認定を受けた人など
+  - 対象は歩行器・リモコン式施錠装置・電磁調理器・ガスコンロ・徘徊情報検索機器・自動消火器・補聴器
+  - 世帯の所得に応じて一部自己負担、1品目につき原則1回
+  where: 保健福祉課 社会福祉室、地域包括支援センター
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 世帯の所得階層により一部自己負担あり
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス（食の自立支援事業）
+  summary: 調理が難しい人に、夕食を1日1食届ける。
+  who: {}
+  at_application:
+  - 町内に住み、心身の障害や病気で食事の調理が困難
+  - おおむね65歳以上の一人暮らし
+  - または高齢者のみの世帯、障害者など
+  where: 社会福祉協議会（そらいろ内）、地域包括支援センター
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 町民税の課税状況に応じ、原材料費のうち360円〜875円を負担
+- category: gaishutsu
+  name: 外出支援（福祉有償運送）
+  name_on_page: 外出支援事業（福祉有償運送）
+  summary: ひとりで移動できず公共交通も使えない人の通院や買い物の外出を支援する。
+  who: {}
+  at_application:
+  - 他人の介助なしで移動が困難で、公共交通機関を使えない人
+  - 身体障害者・介護認定を受けた人など
+  where: 社会福祉協議会（そらいろ内）、地域包括支援センター
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 基本料金250円、3kmを超えると1kmごとに50円
+- category: mimamori
+  name: みまわりヘルパーの派遣
+  name_on_page: みまわりヘルパー派遣事業
+  summary: 日常生活に少し支障がある人へ、助言・軽い手伝い・見守りを無料で行う。
+  who: {}
+  at_application:
+  - 日常生活に若干の支障があり、地域ケア会議で決定された人
+  - 申請が必要
+  where: 社会福祉協議会（そらいろ内）、地域包括支援センター
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 除雪費用の助成
+  name_on_page: 除雪サービス事業
+  summary: 除雪が難しい高齢者や障がいのある人の世帯に、住宅の通路の除雪費用を助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者や、障がいなどで除雪が困難な人
+  - 除雪を個人・事業者などに委託して契約している
+  - 単身世帯、高齢者のみの世帯、そのほか必要と認められる人
+  where: 社会福祉協議会（そらいろ内）、保健福祉課 社会福祉室
+  url: https://higashikawa-town.jp/portal/kurashi/panel/80
+  confidence: high
+  amount: 助成単価は原則、月額4,000円
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo

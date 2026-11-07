@@ -1,0 +1,187 @@
+city: '014311'
+name: 浦臼町
+site: www.town.urausu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: タクシー助成券の交付
+  name_on_page: タクシー等利用助成
+  summary: ビジコータクシーや福祉有償運送で使えるタクシー助成券を交付する。
+  who: {}
+  at_application:
+  - 年度の4月1日現在で70歳以上、障害者手帳がある、または要介護・要支援認定を受けている
+  - 町税・使用料等の滞納がない
+  where: 役場総務課交通防災係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 12,000円分のタクシー助成券
+- category: gaishutsu
+  name: 運転免許証自主返納のタクシー券
+  name_on_page: 運転免許証自主返納支援
+  summary: 運転免許証を自主返納した人に、タクシー券を3年間交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 申請時までの1年以内に、すべての種類の運転免許証を自主返納した人
+  - 免許を更新せず失効した場合は対象外
+  where: 役場総務課交通防災係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 30,000円分のタクシー券を3か年交付
+- category: haishoku
+  name: 昼食の配食
+  name_on_page: 配食サービス
+  summary: 昼食の弁当を週3回（月・水・金）届け、声かけもする。希望で週1〜2回も可。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者や高齢者夫婦世帯、並びに身体障がい者
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 1食400円
+- category: mimamori
+  name: 訪問・電話の安否確認
+  name_on_page: 安否確認サービス
+  summary: 訪問や電話で定期的に困りごとを聞く。回数は相談で決める。
+  who:
+    at_home: true
+  at_application:
+  - ひとり暮らしの高齢者や高齢者夫婦世帯
+  - または身体が虚弱等で自宅での生活に不安がある人
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 1か月150円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の取り付け
+  name_on_page: あんしんホットライン（緊急通報装置）
+  summary: ボタンを押すと消防につながる機械を付け、急病や災害のときに対応する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者・高齢者夫婦世帯・重度障がい者で、緊急時に避難が難しい人
+  - または突発的に危険な症状が出る持病がある人
+  - 固定電話回線が必要（使用料は自己負担）
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 無料（電池などの消耗品は実費の場合あり）
+- category: sonota
+  name: 除雪サービス（窓周りの除雪）
+  name_on_page: 除雪サービス
+  summary: 生活部分の窓周りの明かり取りの除雪をする（自宅前や屋根の雪下ろしは対象外）。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者や高齢者夫婦世帯、身体が虚弱等で自力で除雪が困難な人
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 1回1,000円（30分以内）、1,500円（30分以上）
+- category: sonota
+  name: 除雪費の助成
+  name_on_page: 除雪費助成
+  summary: 家屋や敷地の除排雪にかかった費用の2分の1を助成する。
+  who: {}
+  at_application:
+  - 町税の滞納がない世帯
+  - 70歳以上のみの世帯、身体障害者手帳1・2級等の人のみの世帯など
+  - 要介護1以上の認定を受けている単身世帯なども対象
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 除雪費用の2分の1（上限5万円）
+- category: sonota
+  name: 福祉灯油（高齢者等冬の生活支援助成）
+  name_on_page: 高齢者等冬の生活支援助成（福祉灯油）
+  summary: 冬の生活を支えるため、灯油を使う世帯とオール電化世帯に助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 町税の滞納がない
+  - 65歳以上の人、身体障害者手帳1・2級の人、精神障害者保健福祉手帳1級の人などが属する世帯
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide1_260401.pdf
+  confidence: high
+  amount: 助成額はその年の燃油価格の動向で決める
+- category: koken
+  name: 成年後見の申立て費用・報酬の助成
+  name_on_page: 成年後見制度利用支援
+  summary: 申立ての支援をし、低所得者には申立て費用や後見人への報酬などを町が助成する。
+  who: {}
+  at_application:
+  - 認知症などで判断能力が十分でない人
+  - 助成の対象は低所得者（基準は頁にない）
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide3_260401.pdf
+  confidence: high
+  amount: 申立て費用と後見人への報酬等を助成
+- category: gaishutsu
+  name: 福祉有償運送（移送サービス）
+  name_on_page: 福祉有償運送（移送サービス）
+  summary: 移動に介助が必要な人の自宅と医療機関の間を送迎する。利用には登録が必要。
+  who: {}
+  at_application:
+  - 移動時に介助が必要で、一人でタクシー等を利用することが難しい人
+  where: 社会福祉協議会
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide3_260401.pdf
+  confidence: high
+- category: kaigo-yohin
+  name: おむつ代の補助
+  name_on_page: 在宅介護おむつ手当
+  summary: 自宅で介護を受けている人に、おむつ代として月額の上限内で補助する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 自宅やグループホームに入所しており、常時おむつが必要な高齢者
+  where: 社会福祉協議会
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide3_260401.pdf
+  confidence: high
+  amount: 月額上限3,000円
+- category: sonota
+  name: 介護用品の貸し出し
+  name_on_page: 介護用品の貸し出し
+  summary: 車椅子やポータブルトイレなどの介護用品を、短期間貸し出す。
+  who: {}
+  at_application: []
+  where: 社会福祉協議会
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide3_260401.pdf
+  confidence: high
+- category: sonota
+  name: 有償ボランティアサービス
+  name_on_page: 有償ボランティアサービス
+  summary: 電球の交換や物置の片付けなど、ちょっとした困りごとを有償で手伝う。
+  who: {}
+  at_application:
+  - 65歳以上の人、または身体に障害がある人
+  - 利用には登録が必要
+  where: 社会福祉協議会
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide3_260401.pdf
+  confidence: high
+  amount: 30分につき300円
+- category: sonota
+  name: 訪問介護の利用者負担の減額
+  name_on_page: 訪問介護利用者負担金の減額
+  summary: 住民税非課税の人の訪問介護の利用者負担率を、10％から9％に減らす。
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+  at_application:
+  - 空知中部広域連合管内の訪問介護事業所を利用している
+  where: 福祉課介護福祉係
+  url: https://www.town.urausu.hokkaido.jp/kurashi/kenko/kaigo/files/seniorserviceguide3_260401.pdf
+  confidence: low
+  amount: 利用者負担率を10％から9％に減額
+not_found:
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- yutai

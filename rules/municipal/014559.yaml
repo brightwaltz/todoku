@@ -9,19 +9,6 @@ review:
   judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
 programs:
 - category: sonota
-  name: 生きがいデイサービス
-  name_on_page: 生きがいデイサービス
-  summary: 介護認定にならない在宅の高齢者が、趣味活動や日常生活訓練などを行う通いのサービス。
-  who:
-    at_home: true
-  at_application:
-  - おおむね60歳以上の在宅高齢者
-  - 介護保険の要介護（要支援）の認定にならない人
-  where: 保健福祉課 社会福祉室 福祉係
-  url: https://www.town.pippu.hokkaido.jp/cms/section/fukushi/elhgch0000003ck7.html
-  confidence: high
-  amount: 1回1,400円
-- category: sonota
   name: 生きがいショートステイサービス
   name_on_page: 生きがいショートステイサービス
   summary: 見守りの家族が不在になるとき、老人ホームなどで一時的に養護・介護する。

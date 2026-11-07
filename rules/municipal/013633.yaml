@@ -17,7 +17,7 @@ programs:
     - alone
     - elderly_only
   at_application: []
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: haishoku
@@ -27,7 +27,7 @@ programs:
   who: {}
   at_application:
   - 食事の支度が困難な高齢者
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: kaigo-yohin
@@ -38,7 +38,7 @@ programs:
     at_home: true
   at_application:
   - 在宅の寝たきりや重度の認知症の高齢者を介護している家族
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: sonota
@@ -48,7 +48,7 @@ programs:
   who: {}
   at_application:
   - 独居や体が不自由な高齢者で、除雪が困難な世帯
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: gaishutsu
@@ -58,7 +58,7 @@ programs:
   who: {}
   at_application:
   - 公共交通機関の利用が困難な高齢者
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: gaishutsu
@@ -68,7 +68,7 @@ programs:
   who: {}
   at_application:
   - 一般車両での通院等が困難な高齢者
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: gaishutsu
@@ -78,7 +78,7 @@ programs:
   who: {}
   at_application:
   - 老衰、傷病等の理由により、1 人で外出するのが困難な高齢者
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: sonota
@@ -88,7 +88,7 @@ programs:
   who: {}
   at_application:
   - 高齢者のみの世帯で移動手段がなく、自宅に浴室がない人
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: sonota
@@ -98,7 +98,7 @@ programs:
   who: {}
   at_application:
   - 自宅での入浴が困難な方
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 - category: nichijo-yogu
@@ -108,7 +108,7 @@ programs:
   who: {}
   at_application:
   - 転倒リスクの高い高齢者
-  where: 保健福祉課（計画書に申請先の記載なし）
+  where: 厚沢部町（計画書に申請先の記載なし）
   url: https://www.town.assabu.lg.jp/uploaded/attachment/1169.pdf
   confidence: low
 not_found: []

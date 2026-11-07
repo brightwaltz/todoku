@@ -1,0 +1,132 @@
+city: '014061'
+name: 古平町
+site: www.town.furubira.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 高齢者の除雪サービス
+  name_on_page: 除雪サービス
+  summary: 玄関先から道路までの間を、1メートルほどの幅で除雪する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 要介護（要支援）認定を受けている人、または身体障害者手帳1・2級の人
+  - 16〜64歳の人と同居している場合は対象外
+  where: 保健福祉課高齢者支援係（直通 0135-48-9839）
+  url: https://www.town.furubira.lg.jp/info/detail.php?id=527
+  confidence: high
+  amount: 利用料は無料（冊子の記載）
+  more_urls:
+  - https://www.town.furubira.lg.jp/common/img/content/cassette_1_pdf01_20241202_153917.pdf
+- category: gaishutsu
+  name: 通院等の送迎の利用料助成
+  name_on_page: 通院等支援助成事業
+  summary: 通院が難しい人が町外へ通うときの送迎の利用料の一部を助成する。
+  who: {}
+  at_application:
+  - 要介護1〜5：家族などの支援では入退院が困難か危険な人
+  - 要支援1・2と事業対象者：支援なしでは通院が困難か危険な人
+  - 助成の対象区域は古平町外
+  where: 保健福祉課高齢者支援係
+  url: https://www.town.furubira.lg.jp/common/img/content/cassette_1_pdf01_20241202_153917.pdf
+  confidence: high
+  amount: 利用料の2〜4割（上限あり）、月3回まで
+- category: jutaku
+  name: 高齢者の住宅改修助成
+  name_on_page: 高齢者住宅改修助成事業
+  summary: 介護保険の住宅改修の対象外で、暮らしやすくする改修費の9割を支給する。
+  who: {}
+  at_application:
+  - 要介護（要支援）認定を受けた人、または身体障害者手帳1〜3級の人
+  - 所得制限がある
+  where: 保健福祉課高齢者支援係
+  url: https://www.town.furubira.lg.jp/common/img/content/cassette_1_pdf01_20241202_153917.pdf
+  confidence: high
+  amount: 改修費の9割（上限20万円）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報サービス
+  summary: 緊急通報装置や火災感知器などを付け、急病や火災のときに対応する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で身体の虚弱な人
+  - 発作などの起きる危険のある持病がある人
+  - 上の2つのどちらかに当たる人（年齢の掛かり方は頁から不明）
+  where: 保健福祉課高齢者支援係
+  url: https://www.town.furubira.lg.jp/common/img/content/cassette_1_pdf01_20241202_153917.pdf
+  confidence: high
+  amount: 利用料は無料
+- category: kaigo-yohin
+  name: 紙おむつ・尿取りパッド等の支給
+  name_on_page: 介護用品支給サービス
+  summary: 要介護の高齢者に、おむつや尿取りパッドなどを年4回支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 古平町内に住所がある高齢者
+  - 社協の事業は要介護2以上、町の事業は要介護4以上で町民税非課税世帯
+  - 町の事業と社協の事業は同時に受けられない
+  where: 社協の事業は古平町社会福祉協議会、町の事業は保健福祉課高齢者支援係
+  url: https://www.town.furubira.lg.jp/common/img/content/cassette_1_pdf01_20241202_153917.pdf
+  confidence: high
+  amount: 社協の事業は年15,000〜30,000円、町の事業は年75,000円（年4回に分けて支給）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労事業
+  summary: 重い要介護の在宅高齢者を介護サービスなしで介護した家族に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 1年間、介護保険サービスを利用しなかった高齢者を介護している家族に支給
+  where: 保健福祉課高齢者支援係
+  url: https://www.town.furubira.lg.jp/common/img/content/cassette_1_pdf01_20241202_153917.pdf
+  confidence: high
+  amount: 10万円
+- category: gaishutsu
+  name: コミュニティバスの運賃無料
+  name_on_page: コミュニティバス
+  summary: コミュニティバスの運賃が、65歳以上の人は無料になる。
+  who:
+    age_min: 65
+  at_application:
+  - 年齢を確認できるものの提示を求められる場合がある
+  where: 総合政策課企画調整係（0135-48-9836）
+  url: https://www.town.furubira.lg.jp/life/detail.php?id=18
+  confidence: high
+  amount: 運賃無料（通常は1乗車100円）
+- category: sonota
+  name: 元気プラザでの短期宿泊（町独自のショートステイ）
+  name_on_page: ショートステイ
+  summary: 高齢者生活支援ハウス元気プラザで、介護サービスに準じた短期の宿泊のサービスを受けられる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、要介護（要支援）と事業対象のどちらでもない人
+  where: 保健福祉課高齢者支援係
+  url: https://www.town.furubira.lg.jp/common/img/content/cassette_1_pdf01_20241202_153917.pdf
+  confidence: high
+  amount: 利用料2,250円/日、食費460円/1食、寝具代105円/日
+not_found:
+- haishoku
+- haikai
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai
