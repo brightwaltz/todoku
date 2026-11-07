@@ -55,3 +55,19 @@ programs:
         license: 利用条件を確かめていない（引用しない）
         checked: 2026-11-07
     review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見人等の報酬助成制度
+    where: 福祉相談支援課（本館 1 階 14 番窓口、072-674-7171）に相談する。申請書と要綱は頁から取れる
+    conditions:
+      - 家庭裁判所が、親族でない専門職か法人を後見人等に選んだ高齢者など
+      - 使える資産や貯金がなく、報酬の助成が無いと成年後見制度を使うのが難しい人
+      - 後見人等の報酬の全部か一部を助成する。2026 年 4 月から 65 歳以上の人などに対象を広げた
+      - 身寄りがなく申し立てられないときも福祉相談支援課に相談する。助成の上限と期限は窓口で確かめる
+    sources:
+      - url: https://www.city.takatsuki.osaka.jp/soshiki/35/2463.html
+        publisher: 高槻市
+        title: 成年後見制度
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
