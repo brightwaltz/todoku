@@ -1,0 +1,54 @@
+city: "392014"
+name: 高知市
+site: www.city.kochi.kochi.jp
+programs:
+  - template: local-haikai
+    status: found
+    name: オレンジセーフティネット（高知市認知症高齢者等行方不明ICTシステム捜索事業）
+    where: 基幹型地域包括支援センターか、近くの地域包括支援センターの窓口
+    conditions:
+      - 市内に住み、認知機能の低下で行方不明のおそれがある高齢者（若年性認知症の人も）の家族などが登録する
+      - スマートフォンの専用アプリで、登録した協力者に捜索を頼む。まず警察に届けてから使う
+      - 申請書に顔と全身の写真を添える。スマートフォンとメールアドレスが要り、通信料は自分持ち
+      - GPS 端末の貸与や購入の助成、見守りシールは頁に無い
+    sources:
+      - url: https://www.city.kochi.kochi.jp/soshiki/194/orenge.html
+        publisher: 高知市
+        title: オレンジセーフティネット（高知市認知症高齢者等行方不明ＩＣＴシステム捜索事業）
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-haishoku
+    status: found
+    name: 配食サービス事業
+    where: 担当のケアマネジャーか地域包括支援センターが代わりに申請する（決めるのは高齢者支援課）
+    conditions:
+      - 生活保護などを受けているか、市民税が非課税の世帯
+      - 在宅で 65 歳以上だけの世帯（これに近い世帯も）で、近くに支えてくれる親族がいない
+      - 買い物や調理が難しい（目安は寝たきり度 A1 以上か、認知症の度合い 2a 以上）
+      - 食事を届けるときに安否を確かめる。週 7 食まで。自己負担は事業所と弁当で違う
+      - 3 か月以上使わない、施設に入るなどのときは廃止になることがある
+    sources:
+      - url: https://www.city.kochi.kochi.jp/soshiki/130/haishoku20260401.html
+        publisher: 高知市
+        title: 配食サービス事業について
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5）", recheck: match, date: 2026-11-07}
+  - template: local-koken
+    status: found
+    name: 成年後見制度利用支援事業
+    where: 基幹型地域包括支援センター（申請の窓口と出し方は頁に無い）
+    conditions:
+      - 市長の申立てで後見人・保佐人・補助人が選ばれた人が対象
+      - 助成がないと後見人などへの報酬を払うのが難しい、と市長が認める人
+      - 後見人の報酬を月に在宅 28,000 円・施設など 18,000 円まで助成する
+      - 申立ての費用の助成は頁に無い。頁の更新は 2023 年
+      - 所得や資産の基準と期限は頁から読み取れないので、窓口で確かめる
+    sources:
+      - url: https://www.city.kochi.kochi.jp/soshiki/194/housyuu.html
+        publisher: 高知市
+        title: 成年後見制度利用支援事業
+        license: 利用条件を確かめていない（引用しない）
+        checked: 2026-11-07
+    review: {read_by: "rule-reader（Sonnet 5.5）、照らし直しは rule-reader（Sonnet 5.5、本文を開けなかったので頁 1 つだけ読み直し）", recheck: match, date: 2026-11-07}
