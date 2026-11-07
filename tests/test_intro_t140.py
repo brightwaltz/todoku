@@ -24,7 +24,7 @@ def _video_tag() -> str:
 
 
 def _src() -> str:
-    m = re.search(r'<figure class="intro" id="intro">.*?<source src="/static/([^"]+)" type="video/mp4">', HTML, re.S)
+    m = re.search(r'<section id="intro" class="card intro"[^>]*>.*?<source src="/static/([^"]+)" type="video/mp4">', HTML, re.S)
     assert m
     return m.group(1)
 
@@ -44,10 +44,13 @@ def _boxes(data: bytes, start: int = 0, end: int | None = None):
         i += size
 
 
-def test_intro_sits_after_the_pictures_and_below_the_samples():
-    # T-140 では絵と見本の間に置いた。T-182（RSI-002）で見本が「相談する」のすぐ下に移ったので、動画は絵の下・合言葉の欄の上
+def test_intro_is_its_own_card_between_the_input_card_and_about():
+    # T-140 では絵と見本の間に置き、T-182（RSI-002）で絵の下・合言葉の欄の上に移った。T-197 で入力の札から外し、
+    # 入力の札のすぐ下・「このサイトについて」の上の独立した札にした
     i = HTML.index('id="intro"')
-    assert HTML.index('id="samples"') < HTML.index('id="events"') < i < HTML.index('id="gate"')
+    input_end = HTML.index("</section>", HTML.index('id="input"'))
+    assert HTML.index('id="gate"') < input_end < i < HTML.index('id="about"')
+    assert '<section id="intro" class="card intro"' in HTML
     # 相談を書く欄・相談する・見本・絵から選ぶの順（test_app の順の検査と同じ並び）
     order = [HTML.index(k) for k in ('id="input"', 'id="text"', 'id="send"', 'id="samples"', 'id="sample-list"', 'id="events"', 'id="gate"')]
     assert order == sorted(order)
@@ -55,22 +58,24 @@ def test_intro_sits_after_the_pictures_and_below_the_samples():
 
 def test_intro_video_is_click_to_play_with_a_poster_and_no_autoplay():
     tag = _video_tag()
-    for want in (" controls", " playsinline", 'preload="none"', 'poster="/static/', 'width="720"', 'height="720"'):
+    # T-197：ブラウザの再生の帯（controls）は焼き込みの字幕に重なるので外し、自前の操作を画の外に置く
+    for want in (" playsinline", 'preload="none"', 'poster="/static/', 'width="720"', 'height="720"'):
         assert want in tag, want
-    for ng in ("autoplay", "loop", "style="):
+    for ng in ("autoplay", "loop", "style=", " controls"):
         assert ng not in tag, ng
     assert "音声なし" in re.search(r'aria-label="([^"]+)"', tag).group(1)
     desc_id = re.search(r'aria-describedby="([^"]+)"', tag).group(1)
-    m = re.search(rf'<p id="{desc_id}" class="sr-only">([^<]+)</p>', HTML)
-    assert m and m.group(1).strip()
+    m = re.search(rf'<ol class="intro-steps" id="{desc_id}"[^>]*>(.*?)</ol>', HTML, re.S)
+    assert m and re.sub(r"<[^>]+>", "", m.group(1)).strip()
 
 
-def test_intro_adds_no_visible_words():
-    """柴田の条件「文と言葉を増やさない」。figure の中で見える文は無い（読み上げの文は sr-only だけ）。"""
-    fig = re.search(r'<figure class="intro" id="intro">(.*?)</figure>', HTML, re.S).group(1)
-    visible = re.sub(r'<p id="intro-desc" class="sr-only">[^<]*</p>', "", fig)
-    visible = re.sub(r"<[^>]+>", "", visible)
-    assert visible.strip() == ""
+def test_intro_adds_only_the_approved_words():
+    """T-140 では見える文を足さなかった（柴田の条件「文と言葉を増やさない」）。T-197 で柴田が承認した文だけを見える字にする：
+    題・「音声なし」・4 つの手順（前の読み上げだけの #intro-desc）・操作の名前（もう一度・時間）。ほかの文は足さない。"""
+    card = re.search(r'<section id="intro" class="card intro"[^>]*>(.*?)</section>', HTML, re.S).group(1)
+    words = [w.strip() for w in re.sub(r"<[^>]+>", "\n", card).split("\n") if w.strip()]
+    assert words == ["21秒でわかる、とどくの使い方", "音声なし", "0:00 / 0:21", "もう一度",
+                     "困りごとを一度書く", "尋ねていなかった制度が見えてくる", "判定の理由と出典", "申請先と持ち物を1枚に"], words
 
 
 def test_intro_files_are_small_faststart_and_silent():
@@ -102,7 +107,7 @@ def test_intro_video_is_served_with_range_and_revalidation():
 
 def test_intro_is_not_printed_and_has_room_before_the_poster_arrives():
     css = (WEB / "style.css").read_text(encoding="utf-8")
-    rule = re.search(r"\.intro video \{([^}]+)\}", css).group(1)
-    assert "aspect-ratio: 1 / 1" in rule and "width: 100%" in rule and "max-width: 480px" in rule
+    rule = re.search(r"\.intro-player video \{([^}]+)\}", css).group(1)  # T-197：480px → 札の幅の中央で 560px まで
+    assert "aspect-ratio: 1 / 1" in rule and "width: 100%" in rule and "max-width: 560px" in rule and "margin: 12px auto 0" in rule
     prints = re.findall(r"@media print \{(.*?)\n\}", css, re.S)
     assert any(".intro { display: none; }" in p for p in prints)

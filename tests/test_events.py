@@ -125,7 +125,9 @@ def test_every_event_has_a_picture_and_a_place_in_the_scene():
     placed = re.findall(r'data-ev="(\w+)"><use href="#art-(\w+)"', html)
     assert all(a == b for a, b in placed), placed
     assert sorted(a for a, _ in placed) == sorted(ids)
-    assert not re.search(r'<(image|img)\b', html.split('id="events"')[1].split("</svg>\n    <svg")[0])  # 外の画像は使わない
+    # 外の画像は使わない。T-197：前の切り方（"</svg>\n    <svg"）は入口が変わって当たらず文書の終わりまで見ていたので、入力の札の終わりで切る
+    # （紹介の動画の札〔入力の札の外〕の静止画 img は絵から選ぶの絵ではない）
+    assert not re.search(r'<(image|img)\b', html.split('id="events"')[1].split("</section>")[0])
     assert '<figure class="scene" aria-hidden="true">' in html and 'aria-live="polite"' in html
     assert 'el("button", { type: "button", class: "ev-card", "aria-pressed": "false"' in js
     assert "prefers-reduced-motion: reduce) { .scene-item { transition: none" in css

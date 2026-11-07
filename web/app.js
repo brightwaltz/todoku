@@ -53,7 +53,7 @@ function showClosed() {
 }
 
 function fresh() {
-  return { subject: "ご本人", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
+  return { subject: "ご本人", text: "", facts: {}, suggestions: {}, asked: 0, presses: 0, startedAt: 0, engine: "",
     municipality: "", sample: false, event: false, restored: false, resultShown: false, summaryKey: "", laterOpen: false,
     oneOnly: false, held: null, trail: [], thread: [] };  // oneOnly・held：1 問だけ答える道（T-072b）。held は答えた後に止めておく次の問いの応答
     // trail：押した数ごとの見立ての数（T-082。手間と分かることの図）
@@ -298,11 +298,17 @@ async function openEvents() {
   await consultWith(text, () => api("/api/event", { ids, municipality: pick.city }));
 }
 
+// 書くのも難しく、当てはまる絵もないとき（T-204）。何も置かずに、規則のプログラムの問いだけで進める（Claude を呼ばない）
+async function openBlank() {
+  await consultWith("", () => api("/api/begin", { municipality: pick.city }));
+}
+
 async function consultWith(text, call) {
   state = fresh();
   const mine = state;  // 読み取りを待つ間に見本・出来事・別の相談を始めたら、遅れて返った前の答えは描かない（T-162。step と同じ）
   forgetKeep();  // 前に開いた・残した結果のリンクを、アドレス欄から外す
   state.startedAt = Date.now();
+  state.text = text;  // お住まいの問いで、文にある地名を欄に先に入れておくため（T-200。送った後に欄を書き換えても、送った文で見る）
   const pressed = document.activeElement;
   $("send").disabled = true;
   $("reading").replaceChildren(el("p", {}, "読み取っています…"));
@@ -322,7 +328,7 @@ async function consultWith(text, call) {
     state.sample = Boolean(data.sample);
     state.sampleId = data.sample_id || "";
     state.sampleSummary = null;
-    state.event = Boolean(data.event);
+    state.event = Boolean(data.event || data.blank);  // 質問だけの道（T-204）も出来事の道と同じく、合言葉なしで結果まで来る
     state.municipality = data.place ? data.place.code : "";
     renderExtracted(data, text);
     render(data, true);
@@ -351,9 +357,10 @@ function renderExtracted(data, text) {
   head.classList.toggle("sample-head", Boolean(data.sample));
   if (data.sample) head.replaceChildren(el("span", { class: "kicker" }, "見本"), ...marked);
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
+  else if (data.blank) head.replaceChildren(...keepTail("質問から", "始めます"));  // 文も出来事もない（T-204）
   else head.replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
-  $("said").replaceChildren(...(data.sample ? [] : marked));
-  show("said", !data.sample);
+  $("said").replaceChildren(...(data.sample || data.blank ? [] : marked));
+  show("said", !data.sample && !data.blank);
   const list = $("extracted-list");
   list.replaceChildren();
   for (const [i, f] of data.extracted.entries()) {
@@ -363,10 +370,13 @@ function renderExtracted(data, text) {
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
   }
   if (!data.extracted.length) {
-    list.append(el("li", {}, data.event ? "この出来事だけで決まることはありません。いくつか質問します。" : "読み取れた事実はありませんでした。いくつか質問します。"));
+    list.append(el("li", {}, data.blank ? "まだ何も分かっていないので、いくつか質問します。"
+      : data.event ? "この出来事だけで決まることはありません。いくつか質問します。" : "読み取れた事実はありませんでした。いくつか質問します。"));
   }
   const made = data.made && data.made.model && data.made.date ? `（${data.made.model}、${data.made.date}）` : "";
-  $("engine-note").textContent = data.event
+  $("engine-note").textContent = data.blank
+    ? "規則のプログラムが、答えると分かることの多い質問から聞きます。Claude は使っていません。"
+    : data.event
     ? "選んだ出来事の文から、言えることだけをプログラムが置きました。Claude は使っていません。"
     : data.sample
     ? `見本：前もって Claude${made}が読み取った結果です。この見本では Claude を呼びません。`
@@ -652,6 +662,55 @@ function pauseMore() {
 // お住まいは、町田市かどうかではなく市区町村で聞く（市区町村の一覧が取れなかったときは、はい・いいえで聞く）
 const asksPlace = (q) => Boolean(q.place && prefs.length);
 const askText = (q) => (asksPlace(q) ? q.place.text : q.text);
+// 相談の文にある地名から、お住まいの問いの欄に先に入れておく所を決める（T-200）。都道府県（「大阪府」と「大阪」）と市区町村の名前を、
+// 長い名前を先にして左から拾う（「東京都」を「京都」、「大津市」を「津市」と読まない）。指す都道府県がちょうど 1 つのときだけ返し、
+// 市区町村は 1 つに決まったときだけ入れる。違う所が 2 つ以上出てくる（大阪に住む父・東京の私）ときは何も入れない。
+// 漢字・カタカナの後に続く名前は、都道府県の名前の直後（東京都中央区）でなければ語の一部とみなす（大阪市中央区の「中央区」、港北区の「北区」）。
+// 「大阪」のような短い形は、後ろが助詞・句読点などのときだけ（「大分弱って」「山口さん」を拾わない）。判定・問いは変えない
+function guessPlace(text, list) {
+  const s = String(text || "").normalize("NFKC").replace(/\s+/g, "");
+  if (!s || !list || !list.length) return null;
+  const names = new Map();  // 名前 → [{ pref, city, short }]
+  const add = (name, ref) => names.set(name, [...(names.get(name) || []), ref]);
+  for (const p of list) {
+    add(p.name, { pref: p.code, city: "" });
+    const short = p.name.replace(/[都府県]$/, "");
+    if (short !== p.name) add(short, { pref: p.code, city: "", short: true });
+    for (const [code, name] of p.cities || []) add(name.replace(/（.*）$/, ""), { pref: p.code, city: code });
+  }
+  const alts = [...names.keys()].sort((a, b) => b.length - a.length).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  const re = new RegExp(alts.join("|"), "g");
+  const inWord = /[\p{Script=Han}\p{Script=Katakana}ー]/u;
+  const after = /^[にのでへはがもとかま在住暮、。・,)）」』]/;
+  const found = [];  // [{ name, refs }]
+  let prevEnd = -1, prevPref = false;
+  for (let m; (m = re.exec(s));) {
+    const name = m[0], refs = names.get(name), start = m.index, end = start + name.length;
+    const isPref = refs.every((r) => !r.city && !r.short);
+    const glued = start > 0 && inWord.test(s[start - 1]) && !(prevEnd === start && prevPref);
+    const shortOk = !refs[0].short || end === s.length || after.test(s.slice(end));
+    if ((isPref || !glued) && shortOk) found.push({ name, refs });
+    prevEnd = end; prevPref = isPref;
+  }
+  if (!found.length) return null;
+  const prefsOf = (f) => new Set(f.refs.map((r) => r.pref));
+  const sure = new Set(found.filter((f) => prefsOf(f).size === 1).flatMap((f) => [...prefsOf(f)]));
+  let pref = "";
+  if (sure.size > 1) return null;
+  if (sure.size === 1) {
+    pref = [...sure][0];
+    if (!found.every((f) => prefsOf(f).has(pref))) return null;  // 同じ名前の市区町村が、別の都道府県のものとして出てきた
+  } else {
+    const common = found.map(prefsOf).reduce((a, b) => new Set([...a].filter((x) => b.has(x))));
+    if (common.size !== 1) return null;  // 「伊達市」だけ（北海道と福島県）は決められない
+    pref = [...common][0];
+  }
+  const cityNames = found.filter((f) => f.refs.some((r) => r.city && r.pref === pref)).map((f) => f.name);
+  if (new Set(cityNames).size > 1) return null;  // 同じ都道府県の違う市区町村が 2 つ（大阪市と堺市）
+  const codes = cityNames.length ? names.get(cityNames[0]).filter((r) => r.city && r.pref === pref).map((r) => r.city) : [];
+  return { pref, city: codes.length === 1 ? codes[0] : "" };
+}
+
 const affectNames = (list) => list.slice(0, 3).join("、") + (list.length > 3 ? ` ほか ${list.length - 3} 件` : "");
 
 // 問いの答え方を box に並べる。結果の画面の「まだ確かめていないこと」でも同じ形にする
@@ -667,6 +726,9 @@ function fillAnswers(box, q, pick, pickPlace) {
     const go = el("button", { class: "option", disabled: "", onclick: () => pickPlace(city.value) }, "この市区町村で進める");
     pref.addEventListener("change", () => { state.presses += 1; fillCities(pref.value, city); go.disabled = true; });
     city.addEventListener("change", () => { state.presses += 1; go.disabled = !city.value; });
+    // 相談の文に地名が 1 つだけあれば、その所を先に選んでおく（T-200）。change は起こさないので押した数に入れない
+    const guess = guessPlace(state.text, prefs);
+    if (guess) { pref.value = guess.pref; fillCities(guess.pref, city); city.value = guess.city; go.disabled = !city.value; }
     box.append(el("div", { class: "places" }, pref, city), go,
       el("button", { class: "option dk", onclick: () => pick(DONT_KNOW) }, "わからない"));
     return;
@@ -809,6 +871,29 @@ function renderOptions(options) {
   show("options-box", options.length > 0);
 }
 
+// ---- 第 3 の層（T-199）----
+// step_view の municipal（住所の市区町村に rules/municipal/<団体コード>.yaml があるときだけ。無ければ null）。
+// 市区町村の公式サイトから Claude が集め、機械で確かめた制度で、人は照らしていない。確かな層（results）と分けて、畳んだ枠に出す。
+// results には入っていないので、制度の地図・見立ての帯・押した数の図・いま先にすること・申請メモには入らない。並びはサーバのまま
+const MUNI_LOW = "一覧の説明だけから読んだもの";
+function muniCard(p) {
+  return el("details", { class: "card muni-item", "data-id": p.id },
+    el("summary", {}, el("span", { class: `pill ${p.status}` }, p.status_label), " ", p.name),
+    el("p", {}, p.summary),
+    p.confidence === "low" ? el("p", { class: "note" }, MUNI_LOW) : "",
+    el("p", {}, "申請先：", p.where),
+    p.amount && p.amount.length ? el("p", {}, p.amount.join("・")) : "",
+    el("ul", { class: "plain note" }, el("li", {}, el("a", { href: p.url, target: "_blank", rel: "noopener" }, p.name_on_page))));
+}
+
+function renderMunicipal(m) {
+  const programs = (m && m.programs) || [];
+  $("muni-n").textContent = `${programs.length} 件`;
+  $("muni-mark").textContent = m ? m.mark : "";
+  $("muni-list").replaceChildren(...programs.map(muniCard));
+  show("muni-box", programs.length > 0);
+}
+
 // いま先にすること（T-121）：結果の画面の先頭に、判定の結果だけから 1〜TODO_MAX 件を選ぶ（Claude は使わない）。
 // 順：(1) 当てはまる見込みのうち、「先に手続き」の制度が待っている手続き（待っている数の多い順）
 // (2) ほかの当てはまる見込み（サーバの並び順） (3) 読み取りを確かめる問いが残っていれば、その欄へ
@@ -936,6 +1021,7 @@ function renderResult(data) {
     `${r.name}：`, r.status === "done" ? "済んでいる" : reasonText(r))));
   show("ineligible-box", no.length > 0);
   renderRegion(data.region);
+  renderMunicipal(data.municipal);
   renderOptions(data.options || []);
   show("result");
   show("board", false);  // T-133：結果の頁では見立ての帯を出さない（件数は札の一覧の見出しだけ。帯の動きは問いの間だけ）
@@ -1617,6 +1703,7 @@ earlyFetch("/api/events").then((r) => (r.ok ? r.json() : [])).then((list) => {
     showPlace(places[0][0]);
   }
   $("event-start").addEventListener("click", openEvents);
+  $("blank-start").addEventListener("click", openBlank);  // 当てはまる絵がないとき（T-204）
   show("events");
 }).catch(() => { /* 出来事の行は出さない */ });
 // 見本は取れたときだけ出す
@@ -1751,3 +1838,57 @@ const healthReady = earlyFetch("/api/health").then((r) => r.json()).then((h) => 
 window.addEventListener("hashchange", () => { if (openSite && location.hash === ADMIN_HASH) openAdminGate(); });
 // 合言葉が要る置き場かを知ってから開く（知る前に結果を出すと、まとめを送って合言葉の欄へ飛ばされる）
 if (keptAtLoad) healthReady.then(() => restoreFrom(location.hash.slice(KEEP_PREFIX.length)));
+
+// 紹介の動画（T-197）。押す前は小さな札。静止画を押すとその場で広げて流す（ダイアログは使わない）。ブラウザの再生の帯は
+// 焼き込みの字幕に重なるので使わず、画の下の自前の操作（再生と一時停止・進み具合の線・時間・もう一度）で動かす。
+// 再生中は、いまの場面の手順に印（aria-current="step"）を付ける。場面の切れ目の秒は web/intro-scenes.json（{"steps": [始まりの秒…], "duration": 秒}）。
+// play() は押した出来事の中ですぐ呼ぶ（JSON を待ってからだと、WebKit が利用者の操作と見なさず再生を断ることがある）。JSON が取れなくても流れる
+(() => {
+  const card = $("intro"), video = $("intro-video");
+  if (!card || !video) return;
+  const items = [...$("intro-steps").children];
+  let starts = [], total = 0, scenes = null;
+  const clock = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+  const length = () => total || (Number.isFinite(video.duration) ? video.duration : 0);
+  function paint() {
+    const d = length(), t = Math.min(video.currentTime, d || video.currentTime);
+    const end = Math.round(d);
+    const now = video.ended ? end : Math.min(Math.floor(t), end);
+    const text = `${clock(now)} / ${clock(end)}`;
+    $("intro-time").textContent = text;
+    const bar = $("intro-bar");
+    bar.setAttribute("aria-valuemax", String(end));
+    bar.setAttribute("aria-valuenow", String(now));
+    bar.setAttribute("aria-valuetext", text);
+    $("intro-fill").style.setProperty("--p", d ? String(video.ended ? 1 : Math.min(t / d, 1)) : "0");
+    let at = -1;
+    starts.forEach((s, i) => { if (t + 0.05 >= s) at = i; });
+    items.forEach((li, i) => { if (i === at) li.setAttribute("aria-current", "step"); else li.removeAttribute("aria-current"); });
+  }
+  function state() {
+    const playing = !video.paused && !video.ended;
+    card.classList.toggle("playing", playing);
+    $("intro-toggle").setAttribute("aria-label", playing ? "一時停止" : "再生");
+    paint();
+  }
+  function play() { const p = video.play(); if (p) p.catch(state); }
+  $("intro-open").addEventListener("click", () => {
+    card.classList.add("open");
+    $("intro-open").setAttribute("aria-expanded", "true");
+    show("intro-player");
+    play();
+    $("intro-toggle").focus();
+    if (!scenes) scenes = fetch("/static/intro-scenes.json").then((r) => (r.ok ? r.json() : null)).then((j) => {
+      if (j && Array.isArray(j.steps)) {
+        starts = j.steps.map(Number).filter(Number.isFinite).slice(0, items.length);
+        total = Number(j.duration) > 0 ? Number(j.duration) : 0;
+        paint();
+      }
+    }).catch(() => { /* 切れ目が分からなければ、手順の印を付けずに流す */ });
+  });
+  $("intro-toggle").addEventListener("click", () => { if (video.paused || video.ended) play(); else video.pause(); });
+  $("intro-again").addEventListener("click", () => { video.currentTime = 0; play(); });
+  video.addEventListener("click", () => $("intro-toggle").click());
+  for (const ev of ["play", "playing", "pause", "ended", "loadedmetadata"]) video.addEventListener(ev, state);
+  video.addEventListener("timeupdate", paint);
+})();

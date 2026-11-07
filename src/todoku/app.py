@@ -22,7 +22,7 @@ from typing import Annotated, Any
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exception_handlers import http_exception_handler
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import HTMLResponse, JSONResponse, Response
+from fastapi.responses import HTMLResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.middleware.gzip import GZipMiddleware
@@ -806,6 +806,22 @@ def event(body: EventIn, request: Request) -> dict:
     return {"engine": "event", "event": True, "text": e["text"], **consult_view(extraction, body.municipality)}
 
 
+class BeginIn(In):
+    municipality: str = Field("", max_length=6)
+
+
+@app.post("/api/begin")
+def begin(body: BeginIn, request: Request) -> dict:
+    """書くのも難しく、当てはまる絵もない人の入口（T-204。11/7 柴田の気づき）。何も置かずに、最初の問いを返す。
+
+    分かっている事実が無いので、規則のプログラムが問い（住所が先、あとは判定に効く順）だけで進める。
+    Claude を呼ばないので合言葉は求めず、出来事のボタンと同じゆるい回数制限だけを掛ける。
+    """
+    guard(request, costly=False)
+    extraction = check_extraction(RULES, "", {"subject": "ご本人", "facts": []})
+    return {"engine": "questions", "blank": True, "text": "", **consult_view(extraction, body.municipality)}
+
+
 class BodyLimit:
     """本文が MAX_BODY を超える要求を 413 で断る。
 
@@ -953,8 +969,19 @@ SECURITY_HEADERS = {
 }
 
 
+# 前の URL（todoku-machida.fly.dev）を新しい URL へ転送する（11/7、柴田の承認）。TODOKU_REDIRECT_TO に転送先
+# （例 https://todoku.fly.dev）があるときだけ効く。/api/health だけは転送せず、そのアプリの死活を答える
+REDIRECT_TO = os.environ.get("TODOKU_REDIRECT_TO", "").rstrip("/")
+
+
 @app.middleware("http")
 async def revalidate_pages(request: Request, call_next):
+    if REDIRECT_TO and request.url.path != "/api/health":
+        target = REDIRECT_TO + request.url.path + (("?" + request.url.query) if request.url.query else "")
+        response = RedirectResponse(target, status_code=308)  # 308：POST も同じ形で送り直させる
+        for k, v in SECURITY_HEADERS.items():
+            response.headers[k] = v
+        return response
     response = await call_next(request)
     for k, v in SECURITY_HEADERS.items():
         response.headers[k] = v
