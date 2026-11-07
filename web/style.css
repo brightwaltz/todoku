@@ -46,6 +46,13 @@ body {
 .pick-more > summary { padding: 11px 0; }
 .gate-open { display: block; margin-top: 6px; font-size: .875rem; color: var(--muted); }
 .gate-open[hidden] { display: none; }
+/* 今日の受付が終わった日の断り（T-180b）。強い色にせず、見本への案内を同じ行に置く */
+.closed { margin: 10px 0 0; padding: 4px 14px; background: var(--soft); border-radius: 10px; font-weight: 700; display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; }
+.closed[hidden] { display: none; }
+.closed .link { font-weight: 700; }
+/* T-185：文字を特大（24）にした 320・360・390 で「今日の受付は終わ / りました。」「…終わりまし / た。」と語の途中で折れていた。
+   問いの見出し（#ask-text）と同じく、Chrome は文節で折って行をそろえ、1 文節が 1 行に入らないときだけ文節の中で折る。ふつうの文字では 1 行のまま。Safari は今のまま */
+@supports (word-break: auto-phrase) { .closed span { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; } }
 .pictures-sub { font-weight: 400; font-size: .9375rem; color: var(--muted); display: inline-block; white-space: nowrap; }
 h2 { font-size: 1.3125rem; line-height: 1.5; margin: 0 0 12px; }
 .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; }
@@ -134,6 +141,9 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .scene-item { pointer-events: none; opacity: 0; transform: translateY(10px); transition: opacity .35s ease, transform .35s ease; }
 .scene-item.on { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .scene-item { transition: none; transform: none; } }
+/* 紹介の動画（T-140）。札の内側の幅いっぱい、広い画面では 480px まで。width・height の属性と aspect-ratio で、静止画が届く前から場所を取る */
+.intro { margin: 18px 0 0; }
+.intro video { display: block; width: 100%; max-width: 480px; height: auto; aspect-ratio: 1 / 1; border-radius: 10px; background: var(--soft); }
 #samples { margin-top: 18px; padding-top: 4px; border-top: 1px dashed var(--line); }
 #samples .note { margin-top: 8px; }
 #samples .examples { margin-top: 6px; }
@@ -155,12 +165,12 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .facts .tentative { color: var(--pre); font-size: .875rem; font-weight: 700; margin-left: .4em; }
 /* 相談の文章の印と事実の行は、--i 番目ごとに 150ms ずつ遅れて現れる */
 .said { white-space: pre-wrap; margin: 0 0 12px; padding: 10px 12px; background: var(--card); border-radius: 10px; font-size: 1rem; }
-.said mark {
+.said mark, .sample-head mark {
   color: inherit; background: linear-gradient(var(--pre-bg), var(--pre-bg)) no-repeat; background-size: 100% 100%;
   border-bottom: 2px solid var(--pre); -webkit-box-decoration-break: clone; box-decoration-break: clone;
   animation: mark-in .45s ease-out both; animation-delay: calc(var(--i) * 150ms);
 }
-.said mark.low { background: none; border-bottom: 2px dotted var(--pre); animation-name: fade-in; }
+.said mark.low, .sample-head mark.low { background: none; border-bottom: 2px dotted var(--pre); animation-name: fade-in; }
 .facts li { animation: fade-in .45s ease-out both; animation-delay: calc(var(--i, 0) * 150ms); }
 @keyframes mark-in { from { background-size: 0 100%; border-bottom-color: transparent; } }
 @keyframes fade-in { from { opacity: 0; transform: translateY(4px); } }
@@ -218,7 +228,7 @@ select:disabled { color: var(--muted); background-color: var(--soft); }
 .one-only .link { margin-right: 8px; }
 .one-only .link[aria-pressed="true"] { color: var(--ink); text-decoration: none; font-weight: 700; }
 @media (prefers-reduced-motion: reduce) {
-  .said mark, .facts li, .col-head .count.bump, .tile.pulse::after { animation: none; }
+  .said mark, .sample-head mark, .facts li, .col-head .count.bump, .tile.pulse::after { animation: none; }
 }
 .ask { border: 3px solid var(--accent); }
 .ask-count { color: var(--accent); font-weight: 700; margin: 0 0 4px; font-size: .9375rem; }
@@ -321,6 +331,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
   .tel::after { content: none; }
   .foot { padding-bottom: 0; }
   .foot a { min-height: 0; }
+  .intro { display: none; }
 }
 /* /city/<団体コード> の頁（T-080b） */
 .city-n { font-size: .9375rem; font-weight: 400; color: var(--muted); margin-left: .6em; }
@@ -439,7 +450,7 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
 .memo { border: 1px dashed var(--line, #bbb); border-radius: 8px; padding: 6px 10px; margin: 0 0 12px; }
 .memo > summary { cursor: pointer; font-weight: 600; }
 .memo-sheet .memo-title { font-weight: 700; margin: 8px 0 2px; font-size: 1em; color: inherit; }  /* h3 にしたが、見た目は前の p のまま（.prog h3 の 16px・色を打ち消す。T-150） */
-.memo-sheet .memo-name { display: inline-block; word-break: auto-phrase; text-wrap: balance; }  /* T-169：名前は 1 かたまり。行に入らなければ名前ごと次の行へ。1 行より長い名前は釣り合わせて折る */
+.memo-sheet .memo-name { display: inline-block; word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; }  /* T-169：名前は 1 かたまり。行に入らなければ名前ごと次の行へ。1 行より長い名前は釣り合わせて折る。T-181：文字を特大にした 320 で 1 文節が 1 行に入らないときも折る（inline-block の幅は最小の幅より縮まないので、break-word では枠を越える） */
 .memo-sheet h4 { margin: 10px 0 2px; font-size: 1em; }
 .memo-sheet ul.check { list-style: none; padding-left: 0; margin: 0; }
 .memo-sheet ul.check li::before { content: "□ "; }
@@ -524,6 +535,23 @@ blockquote { margin: 6px 0; padding: 6px 12px; border-left: 4px solid var(--line
    「いま先にすること」の制度の名前は、/city/ の事業の名前（T-148）と同じく Chrome の文節で折る（「介護保険の住宅改修費の支 / 給」）。ops の shot_t148.py で測った */
 .nowrap, .group-title .n, .fold > summary h2 .n { white-space: nowrap; }
 .todo-list a { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; }  /* T-164：文字を大きくした 320 で 1 文節が 1 行に入らないときも折る（inline-flex の中なので break-word では幅が縮まない） */
+/* T-179：問いの見出しの最後の行が「か？」「さい」だけになる折れ残り（430〜1280 で 84 個中 11 個。1280 の「選んでくだ / さい」も）を減らす。
+   Chrome は文節で折り、行の長さをそろえる（auto-phrase + balance）。auto-phrase の無いブラウザ（Safari）で balance にすると語の途中
+   （「介 / 助」）で釣り合わせるので、最後の行だけを整える pretty にする。ops の wrap_t179.py で、Chrome・WebKit とも 0 にした */
+#ask-text { text-wrap: pretty; }
+@supports (word-break: auto-phrase) { #ask-text { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; } }
+/* T-180c：見本を開いたときは、見本の相談の文そのものを「読み取ったこと」の欄の見出しにする（右の吹き出しは出さない）。
+   問いの見出しと同じく、Chrome は文節で折って行をそろえ、auto-phrase の無い Safari は pretty だけにする。上の小さな札は「見本」の一語 */
+.sample-head { font-size: 1.375rem; line-height: 1.6; white-space: pre-wrap; text-wrap: pretty; }
+@supports (word-break: auto-phrase) { .sample-head { word-break: auto-phrase; text-wrap: balance; overflow-wrap: anywhere; } }
+/* T-186：Safari（WebKit）は、行をまたぐ印に box-decoration-break: clone があると text-wrap: pretty を効かせず、
+   「…住民税非課税で / す。」のように最後の行が 1〜2 字になる。auto-phrase の無いブラウザでだけ印を slice にして pretty を効かせる。
+   印の色と下線の見た目は同じ（左右の枠と余白が無いので）。Chrome は今のまま */
+@supports not (word-break: auto-phrase) { .sample-head mark { -webkit-box-decoration-break: slice; box-decoration-break: slice; } }
+.sample-head .kicker {
+  display: block; width: fit-content; margin: 0 0 6px; padding: 1px 10px; border: 1px solid var(--accent); border-radius: 999px;
+  color: var(--accent); background: #fff; font-size: .8125rem; line-height: 1.6; white-space: nowrap;
+}
 /* T-171：JavaScript を切ったブラウザでは、相談の欄と「相談する」は押しても何も起きないので隠し、noscript の知らせだけを見せる */
 .noscript { margin: 12px 0 0; padding: 12px 14px; border: 2px solid var(--accent); border-radius: 10px; }
 .noscript span { display: inline-block; }  /* 文節のかたまりごとに折る。「くださ / い。」「してか / ら」にしない */

@@ -12,13 +12,28 @@ import re
 import time
 import unicodedata
 from dataclasses import dataclass, field
-from typing import Any, Protocol
+from typing import Any, Callable, Protocol
 
 from .engine import Result
 from .rules import LEVEL_PLACE, LEVELS, RuleSet
 
 MODEL = os.environ.get("TODOKU_MODEL", "claude-opus-5-5")
 EFFORT = os.environ.get("TODOKU_EFFORT", "low")
+# 1M トークンあたりのドル（eval/blind_read.py の PRICES と同じ。claude-api スキルの models.md、2026-11-03 に読んだ）。
+# サーバーの 1 日の費用の上限（app.py、T-180）で使う。表に無いモデル（拒否されたときの代わりのモデルなど）は一番高い単価で数える
+PRICES = {
+    "claude-fable-5-1": {"in": 10.0, "out": 50.0},
+    "claude-sonnet-5-5": {"in": 2.0, "out": 10.0},
+    "claude-opus-5-5": {"in": 4.0, "out": 20.0},
+}
+
+
+def cost_usd(model: str, usage: Any) -> float:
+    """応答 1 回の費用（ドル）。キャッシュの書き込みは入力の 1.25 倍、読み出しは高めに入力と同じで数える。"""
+    price = next((v for k, v in PRICES.items() if model.startswith(k)), None) or max(PRICES.values(), key=lambda v: v["out"])
+    tokens_in = (getattr(usage, "input_tokens", 0) or 0) + (getattr(usage, "cache_read_input_tokens", 0) or 0) \
+        + 1.25 * (getattr(usage, "cache_creation_input_tokens", 0) or 0)
+    return (tokens_in * price["in"] + (getattr(usage, "output_tokens", 0) or 0) * price["out"]) / 1e6
 
 
 @dataclass
@@ -296,6 +311,8 @@ class RealClaude:
         # 上限で古いものを捨てる形にはしない。何日も動くサーバーは誰も読まないので、keep_calls=False で貯めない
         self.keep_calls = keep_calls
         self.calls: list[dict] = []
+        # 応答ごとに (答えたモデル, usage) を渡す先。サーバーが 1 日の費用を数える（T-180）。拒否・切れた応答も費用はかかるので先に渡す
+        self.on_usage: Callable[[str, Any], None] | None = None
 
     def _fallback(self) -> dict:
         # 拒否されたときの代わりのモデル（サーバー側）は Opus と Sonnet だけ。Haiku 5.5 には付けられない
@@ -313,6 +330,8 @@ class RealClaude:
             messages=[{"role": "user", "content": user}],
             **self._fallback(),
         )
+        if self.on_usage is not None:
+            self.on_usage(response.model, response.usage)
         if self.keep_calls:
             self.calls.append({"model": response.model, "stop": response.stop_reason,
                                "input_tokens": response.usage.input_tokens, "output_tokens": response.usage.output_tokens,

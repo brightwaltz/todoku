@@ -133,7 +133,8 @@ def test_every_event_has_a_picture_and_a_place_in_the_scene():
     rows = re.findall(r"\.pictures-row\s*\{([^}]*)\}", css)
     assert rows and all("grid-template-columns: 1fr;" in r for r in rows), rows
     # 相談の欄が最初で、絵はその下（11/5 21 時半の柴田の気づき）
-    assert html.index('id="text"') < html.index('id="send"') < html.index('id="events"') < html.index('id="samples"')
+    # 見本は T-182（RSI-002）で「相談する」と絵の間に移した
+    assert html.index('id="text"') < html.index('id="send"') < html.index('id="samples"') < html.index('id="events"')
 
 
 def _drawn_bounds(symbol_markup):

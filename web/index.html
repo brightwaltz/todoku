@@ -44,6 +44,15 @@
     <textarea id="text" rows="4" maxlength="2000" placeholder="例：一人で暮らす母（82歳）が退院してから、家の中で転びやすくなりました。"></textarea>
     <button class="link" id="redraft" hidden>選んだ内容で下書きを作り直す</button>
     <button class="primary" id="send">相談する</button>
+    <!-- 1 日の費用の上限に届いた日（T-180b）。合言葉の欄は出さず、短い断りと見本への案内だけ。/api/health の today.closed か、
+         /api/consult の 429（x-todoku-closed: 1）で app.js の showClosed が出す。送るボタンのすぐ下なので、送った人の目の先に出る -->
+    <p class="closed" id="closed" hidden role="status"><span>今日の受付は終わりました。</span><button type="button" class="link" id="closed-go">見本で試す</button></p>
+    <!-- 見本は「相談する」のすぐ下、絵から選ぶの上に置く（T-182、RSI-002）。見本は合言葉なしで最後まで動くので、家の絵と紹介の動画の
+         下だと 390・1280 とも最初の 1 画面に出なかった。見本の札は文字だけで低いので、ここなら書く欄・相談する・見本が 1 画面に入る -->
+    <div id="samples" hidden>
+      <p class="note">見本で試す（合言葉なしで動きます）</p>
+      <div class="examples" id="sample-list"></div>
+    </div>
 
     <!-- 絵から選ぶ（T-124。11/5 の柴田の感想「文字だけだとイメージが湧かない」）。相談の欄の下に置く。札は /api/events から作り、
          絵は下の art-defs の symbol（id は art-<出来事の id>）。選ぶたびに家の絵に同じ絵が足される。Claude を呼ばず、合言葉も要らない（T-071） -->
@@ -140,10 +149,15 @@
       <symbol id="art-lost" viewBox="0 0 100 100"><line x1="40" y1="20" x2="40" y2="92"/><path fill="#cfe6df" d="M40 22 L74 22 L84 30 L74 38 L40 38 Z"/><path fill="#fff" d="M40 46 L16 46 L6 54 L16 62 L40 62 Z"/><path fill="none" d="M62 66 q0 -9 9 -9 q9 0 9 9 q0 7 -9 9 v6"/><circle fill="#cfe6df" cx="71" cy="90" r="2"/></symbol>
       <symbol id="art-outing" viewBox="0 0 100 100"><circle fill="#fff" cx="42" cy="18" r="10"/><path fill="#cfe6df" d="M28 86 L30 40 Q42 30 54 40 L56 86 Z"/><line x1="54" y1="46" x2="68" y2="58"/><line x1="70" y1="56" x2="76" y2="94"/><path fill="none" d="M64 58 q4 -6 8 -2"/></symbol>
     </svg>
-    <div id="samples" hidden>
-      <p class="note">見本で試す（合言葉なしで動きます）</p>
-      <div class="examples" id="sample-list"></div>
-    </div>
+    <!-- 紹介の動画（T-140。bwc-intro の仕様どおり）。押すまで動かさず、押すまで動画を取りに行かない（preload="none"）。音の道は無い。
+         字幕は画に焼き込み、読み上げには同じ中身を #intro-desc で渡す。素材を差し替えるときは同じ名前で web/ に置く -->
+    <figure class="intro" id="intro">
+      <video id="intro-video" controls playsinline preload="none" disablepictureinpicture controlslist="nodownload noremoteplayback noplaybackrate"
+        width="720" height="720" poster="/static/intro-poster.jpg" aria-label="とどくの紹介の動画（21秒・音声なし）" aria-describedby="intro-desc">
+        <source src="/static/intro.mp4" type="video/mp4">
+      </video>
+      <p id="intro-desc" class="sr-only">音声のない動画です。相談の欄に困りごとを一度書く。絵からも選べる。答えると、制度の地図に尋ねていなかった制度が見えてくる。札を開くと、判定の理由と出典。申請先と持ち物を1枚の申請メモに。</p>
+    </figure>
 
     <!-- 合言葉の欄は見本より下に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044）。T-124 で相談の欄が
          いちばん上に移り、T-126 で最初は小さな入口（#gate-open）だけにした。合言葉なしで送ったときは askGate が欄を出す -->

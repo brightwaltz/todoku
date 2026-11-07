@@ -2,7 +2,7 @@
 
 高齢の方や介護する家族が困りごとを書くと、**尋ねていない公的制度まで**、判定の理由・申請先・持ち物・出典つきで示す相談窓口の試作です。**全国の市区町村（1,741）のどこでも使えます。** 国の制度はどこでも規則で判定し、市区町村の事業 5 種類は全国の実施率つきの候補として示し、東京都・横浜市・町田市は都・市の制度まで詳しく判定します。書くのが難しければ、選ぶだけで相談の文の下書きを作れます。
 
-**試す**：https://todoku.fly.dev/ の「見本で試す」（例：「要介護4の祖母」）は、合言葉なしで最後まで動きます（前の URL https://todoku-machida.fly.dev/ も動きます）。ご自分の相談を送るには合言葉が要ります（試作のため）。
+**試す**：https://todoku.fly.dev/ で、ご自分の相談を合言葉なしで送れます。「見本で試す」（例：「要介護4の祖母」）は、いつでも最後まで動きます（前の URL https://todoku-machida.fly.dev/ でも動きます）。Claude に使う費用が 1 日の上限に届いた日は、見本だけになります。
 
 扱う範囲は次の 3 段です。
 
@@ -180,7 +180,7 @@ uv run pytest                      # 判定器・規則・API のテスト（公
 TODOKU_FAKE_CLAUDE=1 uv run uvicorn todoku.app:app --port 8000   # 鍵なしの試験モード（キーワードで読み取る）
 ANTHROPIC_API_KEY=... TODOKU_PASSPHRASE=... uv run uvicorn todoku.app:app --port 8000  # Claude で読み取る（合言葉も要る）
 ANTHROPIC_API_KEY=... uv run python scripts/first_call.py           # デモの相談文を Claude で 1 回だけ読み取る（トークン数も出す）
-python3 -I scripts/check_live.py https://todoku-machida.fly.dev    # deploy の後に外から確かめる（Claude は呼ばない。手元の試験モードには --allow-fake）
+python3 -I scripts/check_live.py https://todoku.fly.dev --expect-open   # deploy の後に外から確かめる（Claude は呼ばない。TODOKU_OPEN=1 の置き場では --expect-open、手元の試験モードには --allow-fake）
 ```
 
 行政手続データの MCP サーバーを Claude Code から使うとき（開発用。窓口の実行には要りません）：
@@ -191,7 +191,7 @@ cd administrative-procedures-mcp && ./setup.sh   # データの取得と準備�
 export ADMIN_PROCEDURES_MCP_DIR=$PWD              # .mcp.json がこの場所のサーバーを起動する
 ```
 
-環境変数：`TODOKU_PASSPHRASE`（合言葉。半角の英数字と記号で決める。画面はヘッダで送るので日本語の文字は送れず、欄で断る。Claude を呼ぶ読み取り `/api/consult` とまとめ `/api/summary` で求める。鍵があるのに設定していなければ、この 2 つは 503 で断る〔設定し忘れて合言葉なしで開かないため〕。規則だけで判定し直す `/api/step`、見本 `/api/sample`、入口の出来事のボタン `/api/event` には要らない）、`TODOKU_RATE_LIMIT`（Claude を呼ぶ API の 10 分あたりの回数、IP ごと〔IPv6 は /64 ごと〕。IP は、Fly の上〔FLY_APP_NAME がある〕では中継が付ける Fly-Client-IP、ほかの置き場では接続の相手。既定 20。合言葉を間違えた回も数える）、`TODOKU_RATE_LIMIT_ALL`（同じくアプリ全体の 10 分あたりの回数。既定 60。接続元を偽って IP ごとの制限を外しても、これは超えない。合言葉が通った回だけ数える。数えるのはマシンごとなので、マシンが 2 台なら 2 倍になる）、`TODOKU_STEP_LIMIT`（規則だけで判定し直す `/api/step` と `/api/event` の 1 分あたりの回数、IP ごと。IP の決め方は `TODOKU_RATE_LIMIT` と同じ。既定 300。合言葉なしで CPU を使うので、1 人が送り続けてほかの人の画面を遅くしないため。同じ Wi-Fi から何人も同時に使っても届かないよう大きめにしてある。Claude を呼ぶ API の回数とは別に数える）、`TODOKU_MODEL`（既定 `claude-opus-5-5`）、`TODOKU_EFFORT`（既定 `low`）。
+環境変数：`TODOKU_PASSPHRASE`（合言葉。半角の英数字と記号で決める。画面はヘッダで送るので日本語の文字は送れず、欄で断る。Claude を呼ぶ読み取り `/api/consult` とまとめ `/api/summary` で求める。鍵があるのに設定していなければ、この 2 つは 503 で断る〔設定し忘れて合言葉なしで開かないため〕。規則だけで判定し直す `/api/step`、見本 `/api/sample`、入口の出来事のボタン `/api/event` には要らない）、`TODOKU_RATE_LIMIT`（Claude を呼ぶ API の 10 分あたりの回数、IP ごと〔IPv6 は /64 ごと〕。IP は、Fly の上〔FLY_APP_NAME がある〕では中継が付ける Fly-Client-IP、ほかの置き場では接続の相手。既定 20。合言葉を間違えた回も数える）、`TODOKU_RATE_LIMIT_ALL`（同じくアプリ全体の 10 分あたりの回数。既定 60。接続元を偽って IP ごとの制限を外しても、これは超えない。合言葉が通った回だけ数える。数えるのはマシンごとなので、マシンが 2 台なら 2 倍になる）、`TODOKU_STEP_LIMIT`（規則だけで判定し直す `/api/step` と `/api/event` の 1 分あたりの回数、IP ごと。IP の決め方は `TODOKU_RATE_LIMIT` と同じ。既定 300。合言葉なしで CPU を使うので、1 人が送り続けてほかの人の画面を遅くしないため。同じ Wi-Fi から何人も同時に使っても届かないよう大きめにしてある。Claude を呼ぶ API の回数とは別に数える）、`TODOKU_OPEN`（`1` で、合言葉なしで `/api/consult`・`/api/summary` を通す。既定 `0`〔今のまま合言葉が要る〕。開いても `TODOKU_PASSPHRASE` は管理者の外し方として残り、合っていれば 1 日の費用の上限に数えない。回数の制限は今のまま効く。開いたときは、鍵があって合言葉が無くても 503 にしない）、`TODOKU_DAILY_USD`（Claude に使う 1 日〔日本時間の 0 時から〕の費用の上限、ドル。既定 30。応答ごとの usage とモデルの単価から数える。届いたら `/api/consult`・`/api/summary` を 429 で断り、画面は見本へ寄せる）、`TODOKU_MACHINES`（マシンの台数。既定 1。数えるのはマシンごとなので、1 台あたりの上限は `TODOKU_DAILY_USD` ÷ `TODOKU_MACHINES`。数は再起動・一時停止で 0 に戻るので、手間を増やすだけ。費用を止めるのは API の専用ワークスペースの上限）、`TODOKU_MODEL`（既定 `claude-opus-5-5`）、`TODOKU_EFFORT`（既定 `low`）。
 
 合言葉と回数制限は、使いすぎの手間を増やすだけの対策です。費用を止めるのは、API の専用ワークスペースに設定した上限です。相談の文章と答えはサーバに保存しません（画面が持ち、毎回送ります）。応答には CSP（よその出どころとインラインのスクリプト・style 属性を止める）・`X-Content-Type-Options: nosniff`・`Referrer-Policy: no-referrer`・ほかのサイトの枠に入れさせないヘッダを付けています（`src/todoku/app.py` の `SECURITY_HEADERS`）。
 
@@ -315,6 +315,7 @@ Claude Agent SDK は使っていません。
 - このリポジトリのコード・規則ファイル・テスト・架空事例・画面は MIT ライセンスです（`LICENSE`）。
 - 外部の出典の内容は、それぞれの利用条件に従います（上の「出典と利用条件」）。規則ファイルの中の原文の引用と、`tests/fixtures/procedures_r7.json`（デジタル庁のデータの抜き出し）は PDL1.0 の出典表示つきです。
 - 町田市のページの文章は、このリポジトリに入れていません。条件は作者の言葉で書き、リンクを示しています。
+- 入口の紹介の動画（`web/intro.mp4`・`web/intro-poster.jpg`）は、このサイトの画面を撮って作りました。字は BIZ UDPGothic（SIL Open Font License）で、曲と声は使っていません。
 
 ## 今後
 

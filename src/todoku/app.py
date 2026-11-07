@@ -6,6 +6,7 @@
 
 from __future__ import annotations
 
+import contextvars
 import hmac
 import ipaddress
 import json
@@ -14,6 +15,7 @@ import os
 import threading
 import time
 from collections import defaultdict, deque
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Annotated, Any
 
@@ -35,7 +37,7 @@ from . import options as options_mod
 from . import rules as rules_mod
 import anthropic
 
-from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, check_summary, make_client
+from .claude import ALWAYS_CONFIRM, ClaudeFailed, ClaudeRefused, Extraction, check_extraction, check_summary, cost_usd, make_client
 from .engine import DONT_KNOW, SHOWN, T, U, Result, evaluate, known, prereq_edges, statuses, with_implied
 from .questions import MAX_QUESTIONS, Question, candidates, next_question, place_fact, score_fact
 
@@ -47,6 +49,15 @@ for _ext, _type in EXTRA_MIME_TYPES.items():
 
 WEB_DIR = Path(os.environ.get("TODOKU_WEB_DIR", Path(__file__).resolve().parents[2] / "web"))
 PASSPHRASE = os.environ.get("TODOKU_PASSPHRASE", "")
+# 合言葉なしで Claude を呼ぶ口（/api/consult・/api/summary）を開くか（T-180）。既定は "0"（今のまま合言葉が要る）。
+# 開いても合言葉は管理者の外し方として残る：合っていれば 1 日の費用の上限に数えない（回数の制限は効かせる）
+OPEN = os.environ.get("TODOKU_OPEN", "0") == "1"
+# 1 日（日本時間の 0 時から）の費用の上限（ドル）。数えるのはマシンごとのプロセスの中なので、1 台あたり DAILY_USD ÷ MACHINES。
+# 再起動・一時停止で 0 に戻り、同時に来た要求は上限を少し超えて通るので、手間を増やすだけの対策。費用を止めるのは API の専用ワークスペースの上限
+DAILY_USD = float(os.environ.get("TODOKU_DAILY_USD", "30"))
+MACHINES = max(1, int(os.environ.get("TODOKU_MACHINES", "1")))
+JST = timezone(timedelta(hours=9))
+CLOSED_FOR_TODAY = "今日の受付は終わりました。見本で試せます"
 # Claude を呼ぶ API の回数制限（IP ごと、10 分あたり）
 RATE_LIMIT = int(os.environ.get("TODOKU_RATE_LIMIT", "20"))
 # アプリ全体の回数制限（10 分あたり、合言葉が通った回だけ）。接続元を偽って IP ごとの制限を外しても、Claude を呼ぶ回数はこれを超えない。
@@ -95,6 +106,38 @@ RULES = rules_mod.load()
 # 有料・民間の支え（行政の制度ではない候補。判定はせず、並べ替えるだけ。T-084）
 OPTIONS = options_mod.load(rules_mod.rules_dir() / "options.yaml", RULES.facts)
 CLAUDE = make_client()
+_spent = {"day": "", "usd": 0.0}  # 今日（日本時間）この台で Claude に使った額。_lock を持って読み書きする
+# この要求の費用を 1 日の上限に数えるか。合言葉が合った要求（管理者）は数えない。口は同期の関数なので、guard と Claude の呼び出しは同じ文脈で動く
+_counting: contextvars.ContextVar[bool] = contextvars.ContextVar("counting", default=True)
+
+
+def clock() -> datetime:
+    return datetime.now(JST)
+
+
+def spent_today() -> float:
+    """今日この台で使った額。日本時間の日付が変わっていれば 0 に戻す（_lock を持って呼ぶ）。"""
+    day = clock().date().isoformat()
+    if _spent["day"] != day:
+        _spent.update(day=day, usd=0.0)
+    return _spent["usd"]
+
+
+def machine_cap() -> float:
+    return DAILY_USD / MACHINES
+
+
+def note_cost(model: str, usage: Any) -> None:
+    """Claude の応答ごとに呼ばれる（RealClaude.on_usage）。合言葉が合った要求の分は数えない。"""
+    if not _counting.get():
+        return
+    usd = cost_usd(model, usage)
+    with _lock:
+        spent_today()
+        _spent["usd"] += usd
+
+
+CLAUDE.on_usage = note_cost
 _hits: dict[str, deque] = defaultdict(deque)
 _hits_all: deque = deque()
 _swept = 0.0  # 最後に forget_idle で _hits を見回した時刻
@@ -193,6 +236,7 @@ class EventIn(In):
 
 
 def guard(request: Request, costly: bool) -> None:
+    """断るときは HTTPException。Claude を呼ぶ口（costly）では、この要求の費用を 1 日の上限に数えるかを _counting に置く。"""
     # 合言葉は Claude を呼ぶ口だけ。聞き返し（/api/step）は規則だけで費用がかからないので、合言葉なしで通し、
     # 接続元ごとのゆるい回数制限（STEP_LIMIT）だけを掛ける。Claude を呼ぶ口の回数（_hits・_hits_all）は減らさない
     if not costly:
@@ -208,7 +252,7 @@ def guard(request: Request, costly: bool) -> None:
         # 本物の Claude を呼ぶのに合言葉がない（fly secrets の設定し忘れなど）ときは、Claude を呼ぶ口を閉じる。
         # 黙って合言葉なしで開くと、だれでも費用を使える。起動で止めると見本と判定し直しまで止まるので、ここで断る。
         # 数える前に断る（設定の誤りで、利用者の回数を減らさない）
-        if CLAUDE.name == "claude" and not PASSPHRASE:
+        if CLAUDE.name == "claude" and not PASSPHRASE and not OPEN:
             raise HTTPException(503, "この窓口は合言葉が設定されていないため、相談の読み取りを止めています。見本は試せます")
         # 回数制限は手間を増やすだけ。費用を止めるのはワークスペースの上限
         # 見回し・数え・積むまでを鍵 1 本で囲む。数えてから積むまでの間に別のスレッドが入ると、上限を超えて通る
@@ -224,8 +268,13 @@ def guard(request: Request, costly: bool) -> None:
                 raise HTTPException(429, "しばらく時間をおいてから試してください")
             # 合言葉を確かめる前に数える。間違えた回も数えないと、合言葉を何度でも試せる
             hits.append(now)
-            if PASSPHRASE and not same_word(request.headers.get("x-aikotoba", ""), PASSPHRASE):
+            admin = bool(PASSPHRASE) and same_word(request.headers.get("x-aikotoba", ""), PASSPHRASE)
+            if PASSPHRASE and not OPEN and not admin:
                 raise HTTPException(401, "合言葉が違います")
+            # 1 日の費用の上限（T-180）。合言葉が合えば数えない。上限に届いた日は合言葉の欄に戻さず、見本へ寄せる（画面は印のヘッダで見分ける）
+            if not admin and spent_today() >= machine_cap():
+                raise HTTPException(429, CLOSED_FOR_TODAY, headers={"x-todoku-closed": "1"})
+            _counting.set(not admin)
             # アプリ全体は、合言葉が通った回（Claude を呼ぶ回）だけ数える。間違えた回も数えると、
             # 合言葉を知らない人が接続元を変えながら送るだけで、ほかの全員を止められる
             _hits_all.append(now)
@@ -866,7 +915,11 @@ async def revalidate_pages(request: Request, call_next):
 # 死活の見張り（HEAD で聞くものがある）が「落ちている」と読む。「/」は HEAD では本文を送らない（index が長さだけ返す）
 @app.api_route("/api/health", methods=["GET", "HEAD"])
 def health() -> dict:
-    return {"ok": True, "programs": len(RULES.programs), "engine": CLAUDE.name, "passphrase": bool(PASSPHRASE)}
+    with _lock:
+        left = max(0.0, machine_cap() - spent_today())
+    # 残りは丸めて出す（この台の分。上限の額そのものは出してよい）
+    return {"ok": True, "programs": len(RULES.programs), "engine": CLAUDE.name, "passphrase": bool(PASSPHRASE), "open": OPEN,
+            "today": {"daily_usd": DAILY_USD, "machines": MACHINES, "left_usd": int(left), "closed": left <= 0}}
 
 
 # リンクを貼ったときの絵（og:image、T-155）は絶対 URL が要る。本番は 2 つの名前で同じ版が動くので、要求の host が

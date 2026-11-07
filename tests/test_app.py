@@ -1412,8 +1412,9 @@ def test_gate_sits_below_samples_and_is_not_the_loudest_button():
 
     # T-124（11/5 21 時半の柴田の気づき「相談の文をいちばん上に置く」）で、相談の欄と「相談する」を見本より上に移した。
     # 見本より上の塗りのボタンは「相談する」の 1 つだけ。合言葉の欄は見本より下に残す（最初の画面でいちばん目立たせない）
+    # T-182（RSI-002）で、見本を「相談する」のすぐ下・絵から選ぶの上に移した（絵と動画の下だと最初の 1 画面に出なかった）
     at = {k: html.index(f'id="{k}"') for k in ("input", "text", "send", "events", "samples", "sample-list", "gate")}
-    assert at["input"] < at["text"] < at["send"] < at["events"] < at["samples"] < at["sample-list"] < at["gate"]
+    assert at["input"] < at["text"] < at["send"] < at["samples"] < at["sample-list"] < at["events"] < at["gate"]
     gate_ok = re.search(r'<button[^>]*id="gate-ok"[^>]*>', html).group(0)
     assert "primary" not in gate_ok
     assert html[: at["samples"]].count('class="primary"') == 1
