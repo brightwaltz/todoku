@@ -133,7 +133,7 @@ async function api(path, body) {
   if (!res.ok) {
     let msg = "うまくいきませんでした";
     try { msg = (await res.json()).detail || msg; } catch (e) { /* 本文なし */ }
-    throw new Error(msg);
+    throw Object.assign(new Error(msg), { claudeDown: res.headers.get("x-todoku-claude") === "failed" });
   }
   return res.json();
 }
@@ -210,7 +210,16 @@ function resetPick() {
 async function send() {
   const text = $("text").value.trim();
   if (!text) { $("text").focus(); return; }
-  await consultWith(text, () => withClock(api("/api/consult", { text, municipality: pick.city })));
+  await consultWith(text, async () => {
+    try {
+      return await withClock(api("/api/consult", { text, municipality: pick.city }));
+    } catch (e) {
+      // Claude の読み取りが使えないとき（T-206）は、書いた文を残したまま、質問だけの道（T-204）で続ける。
+      // 文の地名はお住まいの欄に先に入る（T-200）。合言葉・受付終了・通信の切れは今までどおり
+      if (!e.claudeDown) throw e;
+      return { ...(await api("/api/begin", { municipality: pick.city })), fallback: true };
+    }
+  });
 }
 
 // 本物の Claude の読み取りは十数秒かかることがある。止まって見えないよう、3 秒を過ぎたら読み取り中の札に経過の秒を足す（T-165）。
@@ -357,10 +366,12 @@ function renderExtracted(data, text) {
   head.classList.toggle("sample-head", Boolean(data.sample));
   if (data.sample) head.replaceChildren(el("span", { class: "kicker" }, "見本"), ...marked);
   // 出来事のボタンから来たときは、相談の文章を読み取ったのではないので見出しを替える（T-071）
-  else if (data.blank) head.replaceChildren(...keepTail("質問から", "始めます"));  // 文も出来事もない（T-204）
+  else if (data.blank) head.replaceChildren(...keepTail("質問から", "始めます"));  // 文も出来事もない（T-204）か、読み取りが使えない（T-206）
   else head.replaceChildren(...(data.event ? keepTail("選んだ出来事から", "分かったこと") : keepTail("相談の文章から", "読み取ったこと")));
-  $("said").replaceChildren(...(data.sample || data.blank ? [] : marked));
-  show("said", !data.sample && !data.blank);
+  // 読み取りが使えないときも、書いた文は「あなた」の吹き出しに残す。undefined を渡すと show() の既定（出す）になるので真偽にする
+  const own = !data.sample && (!data.blank || Boolean(data.fallback));
+  $("said").replaceChildren(...(own ? marked : []));
+  show("said", own);
   const list = $("extracted-list");
   list.replaceChildren();
   for (const [i, f] of data.extracted.entries()) {
@@ -370,11 +381,14 @@ function renderExtracted(data, text) {
       f.evidence ? el("div", { class: "ev" }, `「${f.evidence}」から`) : null));
   }
   if (!data.extracted.length) {
-    list.append(el("li", {}, data.blank ? "まだ何も分かっていないので、いくつか質問します。"
+    list.append(el("li", {}, data.fallback ? "文章の読み取りがいま使えないので、いくつか質問します。"
+      : data.blank ? "まだ何も分かっていないので、いくつか質問します。"
       : data.event ? "この出来事だけで決まることはありません。いくつか質問します。" : "読み取れた事実はありませんでした。いくつか質問します。"));
   }
   const made = data.made && data.made.model && data.made.date ? `（${data.made.model}、${data.made.date}）` : "";
-  $("engine-note").textContent = data.blank
+  $("engine-note").textContent = data.fallback
+    ? "Claude による文章の読み取りが、いま使えません。規則のプログラムが、答えると分かることの多い質問から聞きます。"
+    : data.blank
     ? "規則のプログラムが、答えると分かることの多い質問から聞きます。Claude は使っていません。"
     : data.event
     ? "選んだ出来事の文から、言えることだけをプログラムが置きました。Claude は使っていません。"

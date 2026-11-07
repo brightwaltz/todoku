@@ -658,7 +658,10 @@ def consult(body: ConsultIn, request: Request) -> dict:
     except ClaudeRefused:
         raise HTTPException(422, "この相談文は読み取れませんでした。言い方を変えて試してください")
     except (ClaudeFailed, anthropic.APIError):
-        raise HTTPException(503, "読み取りがうまくいきませんでした。少し待ってから、もう一度試してください")
+        # x-todoku-claude: failed は、画面がこの失敗を見分けて質問だけの道（/api/begin）へ進めるための印（T-206。11/7 16 時、
+        # 組織の API が月の上限を超えて Claude が使えなくなり、書いた人が「少し待ってから」で止まっていた）。状態と文は変えない
+        raise HTTPException(503, "読み取りがうまくいきませんでした。少し待ってから、もう一度試してください",
+                            headers={"x-todoku-claude": "failed"})
     return {"engine": CLAUDE.name, **consult_view(extraction, body.municipality)}
 
 
