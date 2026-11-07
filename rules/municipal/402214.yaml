@@ -54,15 +54,12 @@ programs:
   name: 配食サービス（夕食・安否確認つき）
   name_on_page: 配食サービス事業
   summary: 買い物や調理が難しい高齢者に、夕食の弁当を毎日手渡しで届け、安否確認をする
-  who:
-    age_min: 65
-    household:
-    - alone
-    - elderly_only
+  who: {}
   at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 障がい者のみの世帯も対象となる場合がある
   - 加齢等の理由で買い物・調理が困難
   - 安否確認が必要
-  - 障がい者のみの世帯も対象となる場合がある
   - 利用前に担当職員が自宅を訪問して調べる
   where: 高齢者支援課 高齢者支援係
   url: https://www.city.dazaifu.lg.jp/site/navi/3353.html
