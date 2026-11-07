@@ -229,13 +229,21 @@ MUNI_LOW = "一覧の説明だけから読んだもの"
 
 
 def municipal_section(municipal: dict | None) -> str:
-    """第 3 の層の段。この頁はご本人の状況を知らないので、判定（status）は出さない。無ければ空の文字列。"""
-    programs = (municipal or {}).get("programs") or []
+    """第 3 の層の段。この頁はご本人の状況を知らないので、判定（status）は出さない。無ければ空の文字列。
+
+    T-201：municipal には都道府県の分も 1 つの並びで来る（各行の by が申し込む先の自治体）。この頁では、その市区町村の分
+    （by がその市区町村の名前の行。by の無い行は市区町村の分と見る）だけを出す。この頁の都道府県の段は rules/pref_programs.yaml
+    （T-129）のままで、両方にある制度（茨城県のシニアカード・群馬県のシニアパスポート）が 2 回出るため。
+    """
+    name = (municipal or {}).get("name")
+    programs = [p for p in (municipal or {}).get("programs") or () if p.get("by", name) == name]
     if not programs:
         return ""
     e = escape
     items = "".join(
-        f'<li class="city-item muni-item" data-id="{e(p["id"])}"><h3>{e(p["name"])}</h3><p>{e(p["summary"])}</p>'
+        f'<li class="city-item muni-item" data-id="{e(p["id"])}"><h3>{e(p["name"])}</h3>'
+        + (f'<p class="muni-cat">{e(p["category_label"])}</p>' if p.get("category_label") else "")
+        + f'<p>{e(p["summary"])}</p>'
         + (f'<p class="note">{e(MUNI_LOW)}</p>' if p.get("confidence") == "low" else "")
         + (f'<p class="city-where"><b>申請先</b> {e(p["where"])}</p>' if p.get("where") else "")
         + f'<details><summary>出典</summary><ul class="city-src"><li><a href="{e(p["url"], quote=True)}" target="_blank" rel="noopener">'

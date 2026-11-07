@@ -30,7 +30,8 @@ def test_tails_are_kept_together_in_app_js():
     for head, tail in [("申請のときに", "確かめられること"), ("相談の答えから", "書けること"),
                        ("相談の文章から", "読み取ったこと"), ("選んだ出来事から", "分かったこと")]:
         assert f'keepTail("{head}", "{tail}")' in JS
-    assert 'keepTail("読み取れなかったことにも答える", `（${unread.length} 件）`)' in JS
+    # 質問だけの道（T-205）では名前を替えるが、どちらの名前も件数と離さない
+    assert 'keepTail(blank ? "ほかの質問にも答える" : "読み取れなかったことにも答える", `（${unread.length} 件）`)' in JS
     assert 'keepTail("当てはまらない・済んでいる制度", `（${no.length} 件）`)' in JS
     # 文は前と同じ（見出しを 2 つに分けただけ）
     assert '"申請のときに確かめられること"' not in JS and '"相談の答えから書けること"' not in JS
