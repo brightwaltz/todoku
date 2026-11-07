@@ -149,15 +149,6 @@
       <symbol id="art-lost" viewBox="0 0 100 100"><line x1="40" y1="20" x2="40" y2="92"/><path fill="#cfe6df" d="M40 22 L74 22 L84 30 L74 38 L40 38 Z"/><path fill="#fff" d="M40 46 L16 46 L6 54 L16 62 L40 62 Z"/><path fill="none" d="M62 66 q0 -9 9 -9 q9 0 9 9 q0 7 -9 9 v6"/><circle fill="#cfe6df" cx="71" cy="90" r="2"/></symbol>
       <symbol id="art-outing" viewBox="0 0 100 100"><circle fill="#fff" cx="42" cy="18" r="10"/><path fill="#cfe6df" d="M28 86 L30 40 Q42 30 54 40 L56 86 Z"/><line x1="54" y1="46" x2="68" y2="58"/><line x1="70" y1="56" x2="76" y2="94"/><path fill="none" d="M64 58 q4 -6 8 -2"/></symbol>
     </svg>
-    <!-- 紹介の動画（T-140。bwc-intro の仕様どおり）。押すまで動かさず、押すまで動画を取りに行かない（preload="none"）。音の道は無い。
-         字幕は画に焼き込み、読み上げには同じ中身を #intro-desc で渡す。素材を差し替えるときは同じ名前で web/ に置く -->
-    <figure class="intro" id="intro">
-      <video id="intro-video" controls playsinline preload="none" disablepictureinpicture controlslist="nodownload noremoteplayback noplaybackrate"
-        width="720" height="720" poster="/static/intro-poster.jpg" aria-label="とどくの紹介の動画（21秒・音声なし）" aria-describedby="intro-desc">
-        <source src="/static/intro.mp4" type="video/mp4">
-      </video>
-      <p id="intro-desc" class="sr-only">音声のない動画です。相談の欄に困りごとを一度書く。絵からも選べる。答えると、制度の地図に尋ねていなかった制度が見えてくる。札を開くと、判定の理由と出典。申請先と持ち物を1枚の申請メモに。</p>
-    </figure>
 
     <!-- 合言葉の欄は見本より下に置く（見本は合言葉なしで動くので、最初の画面でいちばん目立たせない。T-044）。T-124 で相談の欄が
          いちばん上に移り、T-126 で最初は小さな入口（#gate-open）だけにした。合言葉なしで送ったときは askGate が欄を出す -->
@@ -170,6 +161,40 @@
         <button type="button" class="gate-ok" id="gate-ok">合言葉を使う</button>
       </div>
     </div>
+  </section>
+
+  <!-- 紹介の動画（T-140 → T-197）。入力の札の外の小さな札にし、押すとその場で広げて流す（ダイアログは使わない）。押すまで動画を
+       取りに行かない（preload="none"、再生の場は hidden）。ブラウザの再生の帯は焼き込みの字幕に重なるので使わず、画の下に自前の操作を
+       置く（app.js の T-197）。音の道が無いので音量は付けない。素材は同じ名前で web/ に置く（intro.mp4・intro-poster.jpg・intro-scenes.json）。
+       見える文は題・「音声なし」・4 つの手順・操作の名前だけ（手順は前の読み上げだけの #intro-desc を見える字にしたもの。11/7 柴田の承認） -->
+  <section id="intro" class="card intro" aria-labelledby="intro-title">
+    <button type="button" class="intro-thumb" id="intro-open" aria-controls="intro-player" aria-expanded="false" aria-label="紹介の動画を再生する（21秒・音声なし）">
+      <img src="/static/intro-poster.jpg" alt="" width="720" height="720" loading="lazy" decoding="async">
+      <svg class="intro-play" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="24"/><path d="M19 14.5 L35 24 L19 33.5 Z"/></svg>
+    </button>
+    <h2 id="intro-title">21秒でわかる、とどくの使い方</h2>
+    <p class="intro-silent">音声なし</p>
+    <div class="intro-player" id="intro-player" hidden>
+      <video id="intro-video" playsinline preload="none" disablepictureinpicture disableremoteplayback width="720" height="720"
+        poster="/static/intro-poster.jpg" aria-label="とどくの紹介の動画（21秒・音声なし）" aria-describedby="intro-steps">
+        <source src="/static/intro.mp4" type="video/mp4">
+      </video>
+      <div class="intro-controls" role="group" aria-label="動画の操作">
+        <button type="button" class="intro-btn" id="intro-toggle" aria-label="一時停止">
+          <svg class="intro-icon-pause" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><rect x="3" y="2" width="3.5" height="12"/><rect x="9.5" y="2" width="3.5" height="12"/></svg>
+          <svg class="intro-icon-play" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 2 L14 8 L4 14 Z"/></svg>
+        </button>
+        <div class="intro-bar" id="intro-bar" role="progressbar" aria-label="進み具合" aria-valuemin="0" aria-valuemax="21" aria-valuenow="0" aria-valuetext="0:00 / 0:21"><span class="intro-fill" id="intro-fill"></span></div>
+        <span class="intro-time" id="intro-time" aria-hidden="true">0:00 / 0:21</span>
+        <button type="button" class="intro-btn intro-again" id="intro-again">もう一度</button>
+      </div>
+    </div>
+    <ol class="intro-steps" id="intro-steps" role="list">
+      <li>困りごとを一度書く</li>
+      <li>尋ねていなかった制度が見えてくる</li>
+      <li>判定の理由と出典</li>
+      <li>申請先と持ち物を1枚に</li>
+    </ol>
   </section>
 
   <!-- このサイトについて（T-126）。最初の画面にあった説明（全国 1,741・型 5 種類・判定の仕組み・注）と全国の見取り図をここへ移した。
@@ -266,6 +291,13 @@
     </div>
     <div id="groups"></div>
     <p class="note" id="region-line" hidden></p>
+    <!-- T-199：第 3 の層。市区町村の公式サイトから Claude が集め、機械で確かめた制度（人は照らしていない）。
+         確かな層（results）とは別の枠に畳んで出す。制度の地図・見立ての帯・押した数の図・いま先にすること・申請メモには入れない -->
+    <details class="card soft fold muni" id="muni-box" hidden>
+      <summary><h2>市区町村の公式サイトから自動で集めた制度<span class="n" id="muni-n"></span></h2></summary>
+      <p class="local-mark" id="muni-mark"></p>
+      <div id="muni-list"></div>
+    </details>
     <details class="card soft" id="ineligible-box">
       <summary id="ineligible-title"></summary>
       <ul id="ineligible-list" class="plain"></ul>

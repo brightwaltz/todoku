@@ -220,9 +220,36 @@ def _contacts_html(g: Group, pref: str) -> str:
     return f'<div class="city-contacts"><h3>{e(CONTACTS_TITLE.format(pref=pref))}</h3><ul>{items}</ul></div>'
 
 
+# 第 3 の層（T-199）。枠の名前と、確かさの低いものに添える 1 行（結果の画面の web/app.js の MUNI_LOW と同じ字）
+MUNI_TITLE = "市区町村の公式サイトから自動で集めた制度"
+MUNI_LOW = "一覧の説明だけから読んだもの"
+
+
+def municipal_section(municipal: dict | None) -> str:
+    """第 3 の層の段。この頁はご本人の状況を知らないので、判定（status）は出さない。無ければ空の文字列。"""
+    programs = (municipal or {}).get("programs") or []
+    if not programs:
+        return ""
+    e = escape
+    items = "".join(
+        f'<li class="city-item muni-item" data-id="{e(p["id"])}"><h3>{e(p["name"])}</h3><p>{e(p["summary"])}</p>'
+        + (f'<p class="note">{e(MUNI_LOW)}</p>' if p.get("confidence") == "low" else "")
+        + (f'<p class="city-where"><b>申請先</b> {e(p["where"])}</p>' if p.get("where") else "")
+        + f'<details><summary>出典</summary><ul class="city-src"><li><a href="{e(p["url"], quote=True)}" target="_blank" rel="noopener">'
+        f'{e(municipal["name"])}「{e(p["name_on_page"])}」</a></li></ul></details></li>'
+        for p in programs)
+    return (f'<section class="card soft city-group" data-level="municipal"><h2>{e(MUNI_TITLE)}'
+            f'<span class="city-n">{len(programs)} 件</span></h2>'
+            f'<p class="local-mark">{e(municipal["mark"])}</p><ul class="city-list">{items}</ul></section>')
+
+
 def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, map_html: str = "",
-              local: CityRules | None = None) -> str:
-    """local はその市の事業（rules/local。T-075b）。見つかった型は、名前・申請先・主な条件・出典をその市のものにして印を付ける。"""
+              local: CityRules | None = None, municipal: dict | None = None) -> str:
+    """local はその市の事業（rules/local。T-075b）。見つかった型は、名前・申請先・主な条件・出典をその市のものにして印を付ける。
+
+    municipal は第 3 の層（T-199）：市区町村の公式サイトから自動で集めた制度。step_view の municipal と同じ形
+    （code・name・site・mark・programs）。確かな層の段と合計には入れず、別の段にする。
+    """
     groups = city_groups(rules, code, pref, name)
     found = local.found() if local else {}
     values = rules.place_values(code)
@@ -271,6 +298,7 @@ def city_page(rules: RuleSet, code: str, pref: str, name: str, center_url: str, 
                 + (f'<p class="city-where"><b>申請先</b> {e(where)}</p>' if where else "")
                 + f'<details><summary>出典</summary><ul class="city-src">{links}</ul></details></li>')
         body.append(f"</ul>{_contacts_html(g, pref)}</section>")
+    body.append(municipal_section(municipal))
     local_note = (f"印の付いた事業は、Claude が{e(name)}の公式頁を読んで名前・申請先・主な条件を書き、別の読み手が原文と照らし直したものです。"
                   "当てはまるかの目安は型のままです。") if found else ""
     return f"""<!doctype html>
