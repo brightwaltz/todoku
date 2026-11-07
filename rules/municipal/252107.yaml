@@ -1,0 +1,188 @@
+city: '252107'
+name: 野洲市
+site: www.city.yasu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-07'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 栄養改善配食サービス
+  name_on_page: 栄養改善配食サービス事業
+  summary: 低栄養などで調理が難しい高齢者に、平日の昼食を届けて安否も確認する
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 低栄養状態か、食事療法が必要な疾患（生活習慣病など）で治療中
+  - 本人と家族では調理が困難
+  - 管理栄養士の訪問指導で栄養改善の見込みがある
+  - 専門職の評価で可否を判断。利用は6か月限定
+  where: 高齢福祉課（野洲市）
+  url: https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+  confidence: high
+  amount: 1食400円（平日の昼食のみ。前日の午後5時までに連絡しない場合は全額負担）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: ボタンひとつで通報できる緊急通報装置を、高齢者のひとり暮らし等の家に設置する
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 在宅の65歳以上のひとり暮らし（日中独居を含む）か高齢者世帯
+  - または、ひとり暮らし（日中独居を含む）の重度の障害がある人
+  - 申請に民生委員の押印と、固定電話の設置が必要
+  where: 高齢福祉課・地域包括支援センター
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/koreishamuke_support/4713.html
+  confidence: high
+  amount: 月額1,210円。虚弱な高齢者（発作・動悸・意識消失で治療中）は月300円で、そのうち市民税非課税・生活保護世帯は免除。電話代・電気代は個人負担
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: gaishutsu
+  name: 高齢者福祉タクシー運賃助成
+  name_on_page: 高齢者福祉タクシー運賃助成事業
+  summary: 外出を支えるため、タクシー運賃の一部を助成する助成券を交付する
+  who: {}
+  at_application:
+  - 市内に居住するおおむね65歳以上の人
+  - 障害高齢者の日常生活自立度がランクA・B・C
+  - 生活保護世帯、または市町村民税非課税世帯の人
+  - 心身障害者（児）自動車燃料費の助成を受けていない人
+  where: 高齢福祉課・地域包括支援センター
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/koreishamuke_support/4713.html
+  confidence: high
+  amount: 助成券1枚500円。最大57枚（申請月から次の6月まで）。1回の乗車で2枚まで
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: kaigo-yohin
+  name: 高齢者等おむつ費用給付
+  name_on_page: 高齢者等おむつ費用給付事業
+  summary: 在宅生活を支えるため、紙おむつの購入に使える給付券を交付する
+  who:
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 野洲市に住民票がある
+  - 在宅の高齢者、または要介護認定を受けた40〜64歳
+  - 寝たきり度ランクB・C、または認知症高齢者の自立度Ⅲ・Ⅳ・M
+  - 介護保険料の滞納がない。障害者おむつ助成を受けている人は除く
+  where: 高齢福祉課・地域包括支援センター
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/koreishamuke_support/4713.html
+  confidence: high
+  amount: 給付券は1枚500円分で、月10枚交付（年2回に分けて交付）
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: haikai
+  name: ひとり歩き認知症高齢者等事前登録
+  name_on_page: ひとり歩き認知症高齢者等事前登録制度
+  summary: 行方不明になるおそれのある人の情報を事前に登録し、警察と共有して早く捜せるようにする
+  who: {}
+  at_application:
+  - 市内に住所があり、居住している
+  - 要介護1〜5で、ひとりで外出し行方不明になるおそれがある人
+  - または、市長が特に必要と認める人
+  - 全身写真と顔写真（裏面に撮影日）を出す
+  where: 高齢福祉課・地域包括支援センター
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/ninchisho/4716.html
+  confidence: high
+  amount: 登録は無料。見守りシール（靴の反射シール5足分・アイロンシール20枚）を配付
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: haikai
+  name: ひとり歩き認知症高齢者等位置情報端末機器購入費等補助
+  name_on_page: ひとり歩き認知症高齢者等位置情報端末機器購入費等補助金交付事業
+  summary: 事前登録をした人の家族に、位置情報の端末機器の購入費などの一部を補助する
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - ひとり歩き認知症高齢者等の事前登録をしている人の家族
+  - スマートフォン・携帯電話は対象外
+  - 契約・購入日から3か月以内に申請する
+  where: 高齢福祉課・地域包括支援センター
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/ninchisho/4716.html
+  confidence: high
+  amount: 認知症高齢者1人につき1機種、上限10,000円（再購入は対象外）
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: jutaku
+  name: 高齢者住宅小規模改造助成
+  name_on_page: 高齢者住宅小規模改造助成事業
+  summary: 段差の解消や手すりの設置など、住宅の小規模な改造の費用を助成する
+  who:
+    age_min: 65
+  at_application:
+  - 身体の障害で日常生活に支障があり、住宅の改造が必要
+  - 障害高齢者の日常生活自立度がランクA・B・C
+  - 本人・配偶者・扶養義務者の前年の所得税課税所得が基準額以下
+  - 事前に申請が必要。新築・増改築は原則対象外
+  - 重度障害者の住宅改造費助成の最高限度額を受けていない
+  where: 介護保険課（申請の受付）。事業の問い合わせは高齢福祉課
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/koreishamuke_support/4713.html
+  confidence: high
+  amount: 対象経費の2分の1以内、1世帯につき最高250,000円（2回目以降は残額まで）
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: koken
+  name: 成年後見制度利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 経済的に難しい人に、成年後見の申立ての費用と、後見人等への報酬を助成する
+  who: {}
+  at_application:
+  - 判断能力が不十分な認知症などの人で、生活保護の受給者か、資産・預貯金がなく助成がないと申立てが見込めない
+  - 報酬助成は、後見人等の報酬を賄う現金・預貯金等がない人
+  - 報酬助成は、後見人等が配偶者・3親等内の親族の場合は対象外
+  - 他の市区町村などの助成を受けられる人は対象外
+  where: 65歳以上は高齢福祉課・地域包括支援センター（64歳以下は障がい者自立支援課）
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/koreishamuke_support/4722.html
+  confidence: high
+  amount: 報酬助成は月額上限28,000円（在宅）か18,000円（その他）。申立費用は切手代・診断書料などの実費
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/youkou_20260729.pdf
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 体調不良などのとき、施設に短期間（原則14日以内）泊まって生活習慣の指導を受ける
+  who: {}
+  at_application:
+  - 市内在住で、要支援・要介護の認定を受けていない在宅の65歳以上
+  - または、市長が特に必要と認めた人
+  where: 高齢福祉課・地域包括支援センター
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/koreishamuke_support/4713.html
+  confidence: high
+  amount: 施設利用料の1割、食事代などの実費、送迎費用（生活保護世帯は施設利用料を免除）
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+- category: sonota
+  name: ごみの前日搬出地域承認制度
+  name_on_page: ごみの前日搬出地域承認制度
+  summary: ごみ出しが難しい世帯の支援者が前日夕方に出せるよう、自治会の承認を勧めてシールを配る
+  who: {}
+  at_application:
+  - 要支援高齢者等のみの世帯か、これに準じる世帯
+  - 自力でごみを集積所まで運べず、支援者が出す必要がある
+  - 自治会の承認が前提。承認後にお助けシールを配布
+  where: 高齢福祉課・地域包括支援センター
+  url: https://www.city.yasu.lg.jp/iryo-kenko-fukushi/fukushi/koreishafukushi-kaigo/koreishamuke_support/4713.html
+  confidence: high
+  amount: お助けシールは無料
+  more_urls:
+  - https://www.city.yasu.lg.jp/material/files/group/31/hp.pdf
+not_found:
+- iro
+- hochoki
+- ribiyo
+- shingu
+- mimamori
+- nichijo-yogu
