@@ -14,12 +14,9 @@ programs:
   summary: 食事の用意が難しい65歳以上に弁当を届け、手渡しで安否と健康状態を確かめる。
   who:
     age_min: 65
-    household:
-    - alone
-    - elderly_only
   at_application:
   - 食事を用意することが難しい
-  - 安否確認と配食が必要な人（高齢夫婦のみの世帯に準ずる世帯も含む）
+  - 1人暮らし・高齢夫婦のみの世帯、またはこれに準ずる世帯で、安否確認と配食が必要な人
   where: 野辺地町社会福祉協議会
   url: https://www.town.noheji.aomori.jp/life/seikatsu/hukushi/2877/3329
   confidence: high

@@ -60,13 +60,10 @@ programs:
   name: 高齢者への配食（安否確認つき）
   name_on_page: 配食サービス事業
   summary: 栄養改善が必要な高齢者の単身世帯などに、食事を1日1回届け、安否を確かめる。
-  who:
-    household:
-    - alone
-    - elderly_only
+  who: {}
   at_application:
+  - 高齢者の単身世帯、高齢者のみの世帯、またはこれに準ずる世帯
   - 町が実態を調べ、特に栄養状態の改善が必要と認めた高齢者
-  - 高齢者のみの世帯に準ずる世帯でもよい
   where: 町（町長あての申請書、実施は社会福祉協議会へ委託）
   url: https://www.town.nakadomari.lg.jp/section/reiki_int/reiki_honbun/r114RG00000558.html
   confidence: high
