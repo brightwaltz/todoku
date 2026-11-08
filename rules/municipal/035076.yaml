@@ -1,0 +1,55 @@
+city: '035076'
+name: 洋野町
+site: www.town.hirono.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: yutai
+  name: 高齢者等の入浴優待券
+  name_on_page: 洋野町高齢者等入浴優待事業
+  summary: 町内の入浴施設を無料で使える入浴優待券（年12枚）を交付する。
+  who: {}
+  at_application:
+  - 70歳以上の方（年度末までに70歳になる方を含む）、または身体障害者手帳の交付を受けている方
+  - 町の住民基本台帳に登録されている
+  where: 種市庁舎 福祉課、または大野庁舎 総合サービス課
+  url: https://www.town.hirono.iwate.jp/doc/2025061800022/
+  confidence: high
+  amount: 各年度12枚（4月1日〜3月31日）。町内の入浴施設を無料で利用
+- category: haikai
+  name: 認知症見守り・SOSネットワークの事前登録
+  name_on_page: 洋野町認知症見守り・ＳＯＳネットワーク
+  summary: 認知症の方が事前登録すると、行方不明時に協力機関が捜索や情報提供に協力する。
+  who: {}
+  at_application:
+  - 認知症の方、または認知機能に心配のある方（医師の診断の有無は問わない）
+  - 事前登録が必要
+  where: 洋野町地域包括支援センター
+  url: https://www.town.hirono.iwate.jp/doc/2022031000024/
+  confidence: high
+- category: gaishutsu
+  name: 外出支援サービス（通院の移送）
+  name_on_page: 外出支援サービス
+  summary: 歩行が困難な方を、リフト付車両や福祉タクシーで自宅と医療機関等の間で送迎する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上で、町民税非課税世帯に属する
+  - 要介護3以上、または身体障害者手帳（下肢2級以上・体幹3級以上）で歩行が困難
+  - 家族等の付き添いが必要
+  where: 種市・大野の地域包括支援センター、または担当ケアマネジャー
+  url: https://www.town.hirono.iwate.jp/doc/2021081000039/
+  confidence: high
+  amount: 費用の2割が自己負担。1回の限度額1万円、月4回まで
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- koken
+- shingu
+- ribiyo

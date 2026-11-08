@@ -1,0 +1,137 @@
+city: '033227'
+name: 矢巾町
+site: www.town.yahaba.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 虚弱で食事づくりが難しい高齢者に、昼食か夕食の弁当を届ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、虚弱のため食事を作ることが困難な方
+  - 特殊な病人食が必要な方は対象外
+  - 週3回まで
+  where: 健康長寿課 長寿支援係
+  url: https://www.town.yahaba.iwate.jp/soshiki/kenkou/kenkoufukushi/2016021200167/
+  confidence: high
+  amount: 1食 290〜350 円
+- category: kaigo-yohin
+  name: 介護用品支給サービス
+  name_on_page: 介護用品支給サービス
+  summary: 要介護3以上の人を在宅で介護する非課税世帯に、介護用品の支給券を出す。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 健康長寿課 長寿支援係
+  url: https://www.town.yahaba.iwate.jp/soshiki/kenkou/kenkoufukushi/2016021200143/
+  confidence: high
+  amount: 年額 72,000 円分の支給券
+- category: iro
+  name: 在宅要介護家族 介護慰労金
+  name_on_page: 在宅要介護家族 介護慰労金（介護手当）
+  summary: 要介護4・5の人を同居で1年介護し、サービスを使わなかった家族に慰労金。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同居し1年間介護している家族で、町内に住所がある
+  - 期間内に要介護者が介護保険サービスを利用していない（福祉用具・住宅改修・短期入所合計7日以内を除く）
+  where: 健康長寿課 長寿支援係（前年の所得の状況がわかる書類を添付して申請）
+  url: https://www.town.yahaba.iwate.jp/soshiki/kenkou/kenkoufukushi/2016021200174/
+  confidence: high
+  amount: 要介護者1人につき 100,000 円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸し出し
+  name_on_page: 高齢者等への緊急通報装置の貸し出し
+  summary: 緊急通報ボタンと煙・熱センサーを無料で貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - 同一敷地内・同一建物内に親族が住んでいない
+  - 発作を伴う持病や慢性疾患で日常生活に常に注意が必要
+  - 状況を確認できる協力者が原則1名以上必要
+  where: 健康長寿課
+  url: https://www.town.yahaba.iwate.jp/soshiki/kenkou/kenkoufukushi/2016021200181/
+  confidence: high
+  amount: 機器の取り付け・利用料は無料（回線使用料・通話料は自己負担）
+- category: shingu
+  name: 寝具洗濯乾燥サービス
+  name_on_page: 寝具洗濯乾燥サービス
+  summary: 寝たきりや認知症で寝具の洗濯が難しい人の寝具を洗濯・乾燥する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 寝たきりまたは認知症のため寝具の洗濯乾燥が困難な方
+  where: 健康長寿課 長寿支援係
+  url: https://www.town.yahaba.iwate.jp/soshiki/kenkou/kenkoufukushi/2016021200136/
+  confidence: high
+  amount: 無料（年3回まで）
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり推進事業
+  name_on_page: 高齢者にやさしい住まいづくり推進事業
+  summary: 要支援・要介護の高齢者の住宅改修費の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - おおむね65歳以上
+  - 世帯の所得制限あり
+  - 賃貸住宅・新築は対象外、過去に補助を受けた世帯は対象外
+  where: 健康長寿課 長寿支援係
+  url: https://www.town.yahaba.iwate.jp/soshiki/kenkou/kenkoufukushi/2016021200204/
+  confidence: high
+  amount: 工事費の3分の2（上限 40 万円）。介護保険の給付（上限18万円）は別
+- category: haikai
+  name: 認知症見守りSOSネットワーク
+  name_on_page: 認知症見守りSOSネットワーク
+  summary: ひとり歩きの心配がある認知症の人を登録し、ステッカーを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症の高齢者で、ひとり歩きで道に迷うなどの心配がある方
+  - ステッカー交付は在宅の登録者
+  where: 矢巾町地域包括支援センター（ケアセンター南昌内）
+  url: https://www.town.yahaba.iwate.jp/soshiki/kenkou/kenkoufukushi/2016021200198/
+  confidence: high
+not_found:
+- hochoki
+- gaishutsu
+- ribiyo
+- nichijo-yogu

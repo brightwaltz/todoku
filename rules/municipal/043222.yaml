@@ -1,0 +1,129 @@
+city: '043222'
+name: 村田町
+site: www.town.murata.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者等の食事サービス（夕食の弁当）
+  name_on_page: 高齢者等食事サービス事業
+  summary: 見守りを兼ねた夕食用のお弁当を、希望する日に自宅へ届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、一人暮らしまたは高齢者のみの世帯
+  - 村田町に住所があり在宅で生活している
+  where: 健康福祉課
+  url: https://www.town.murata.miyagi.jp/kenko/hukushi/kurashi_shien/index.html
+  confidence: high
+  amount: 1食300円。月〜金の希望日に週1〜5回（午後3〜5時）
+- category: kaigo-yohin
+  name: 高齢者の紙おむつ等の支給
+  name_on_page: 高齢者紙おむつ等支給事業
+  summary: 在宅で介護されている家族へ、紙おむつの引換券と指定ごみ袋を支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 常に紙おむつが必要な方
+  - 申請時に地区担当民生委員の所見が必要
+  where: 健康福祉課
+  url: https://www.town.murata.miyagi.jp/kenko/hukushi/kurashi_shien/index.html
+  confidence: high
+  amount: 月5,000円分の紙おむつ引換券と指定ごみ袋10枚
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付・貸与
+  name_on_page: 老人日常生活用具給付等事業
+  summary: 一人暮らし高齢者等に、電磁調理器・火災報知器・自動消火器を給付または貸与する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 電磁調理器：心身機能の低下で防火などに配慮が必要な一人暮らし高齢者など
+  - 火災報知器・自動消火器：低所得の寝たきり、一人暮らし高齢者など
+  where: 健康福祉課
+  url: https://www.town.murata.miyagi.jp/kenko/hukushi/kurashi_shien/index.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システム機器の貸与
+  name_on_page: ひとりぐらし高齢者等緊急通報システム事業
+  summary: 一人暮らしの高齢者や重度障害者に、緊急通報システム機器を貸与する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で慢性疾患等により自宅での生活に注意が必要な方
+  - または、65歳以上の二人世帯で、一方が認知症か寝たきりで他方が慢性疾患の方
+  - または、障害者手帳1級・2級の方
+  - 協力員3名（1名は地区担当民生委員）が必要
+  where: 健康福祉課
+  url: https://www.town.murata.miyagi.jp/kenko/hukushi/kurashi_shien/index.html
+  confidence: high
+  amount: 工事費・利用料は課税状況で異なる（生活保護・非課税世帯は利用料なし）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度要介護の高齢者を常に介護している方に、慰労金を年額で支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 無報酬で日常の介護をする、同居またはそれに近い形の主たる介護者
+  - 町県民税が非課税
+  - 重度要介護の高齢者が1年間、介護給付を受けていない
+  where: 健康福祉課
+  url: https://www.town.murata.miyagi.jp/kenko/hukushi/kurashi_shien/index.html
+  confidence: high
+  amount: 重度要介護の高齢者1名につき年額100,000円
+- category: sonota
+  name: 生活管理指導短期宿泊（養護老人ホーム等に短期間泊まる）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 養護老人ホーム等に原則7日間泊まり、基本的な生活習慣の指導を受ける。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 基本的生活習慣の欠如や、対人関係が成立しないほど社会生活の適応が困難な方
+  where: 健康福祉課
+  url: https://www.town.murata.miyagi.jp/kenko/hukushi/kurashi_shien/index.html
+  confidence: high
+  amount: 1日380円と食材料費等を利用者が負担
+- category: haikai
+  name: 認知症高齢者の見守りQRコード（QRコードシールの交付）
+  name_on_page: 見守りＱＲコード活用事業
+  summary: 行方不明になるおそれのある認知症の方に、身元確認用のQRコードシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内に住所がある認知症の方で、外出すると行方不明になる可能性がある
+  - 家族等の申請で、氏名・住所・緊急連絡先・医療情報等を事前に登録
+  where: 健康福祉課（役場庁舎1階）
+  url: https://www.town.murata.miyagi.jp/kenko/hukushi/chikihoukatsu_shiencenter/file/03.pdf
+  confidence: high
+  amount: 費用負担なし
+not_found:
+- hochoki
+- koken
+- shingu
+- ribiyo
+- jutaku
+- gaishutsu

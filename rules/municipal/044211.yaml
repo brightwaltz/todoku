@@ -1,0 +1,146 @@
+city: '044211'
+name: 大和町
+site: www.town.taiwa.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品購入費の助成
+  name_on_page: 介護用品購入費助成事業
+  summary: 紙おむつ等が必要な非課税の要介護3以上の方に、月6,000円分の助成券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 町内に住所があり、利用申請時に町民税が非課税
+  - 常時、紙おむつ等の使用を必要とする
+  - 介護保険施設等に入所している人は対象外
+  where: 福祉課
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/2575.html
+  confidence: high
+  amount: 月6,000円分の介護用品購入助成券（町の指定業者でのみ使える）
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 調理などが難しい高齢者に、週3回以内で弁当を届け安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 買い物や調理が難しいなど、サービスが必要と判断された人
+  - 申請の受理後、福祉課が利用の可否を判断する
+  where: 福祉課
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/2575.html
+  confidence: high
+  amount: 1食300円。月・水・金の週3回以内
+- category: shingu
+  name: 寝具の乾燥消毒
+  name_on_page: 寝具乾燥消毒サービス
+  summary: 掛布団・敷布団・毛布のクリーニングを行う（クリーニング中の寝具の貸出も可）。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - サービスが必要と判断された人
+  - 申請の受理後、福祉課が利用の可否を判断する
+  where: 福祉課
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/2575.html
+  confidence: high
+  amount: 1回500円
+- category: kinkyu-tsuho
+  name: あんしんコールセンターサービス
+  name_on_page: あんしんコールセンターサービス事業
+  summary: 通報連絡機器を貸し出し、緊急時の救援連絡と看護師の相談を24時間受け付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - サービスが必要と判断された人
+  - 町内に住む協力員を登録できる
+  where: 福祉課
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/2575.html
+  confidence: high
+  amount: 利用者負担なし（通話料は本人負担）
+- category: sonota
+  name: 生活援助事業（ヘルパーの派遣）
+  name_on_page: 生活援助事業
+  summary: 要介護認定が非該当の高齢者に、調理・洗濯・掃除・買い物の援助をヘルパーが行う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護認定で「非該当」となった人
+  - ヘルパーの派遣は週1回1時間以内
+  where: 福祉課
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/2575.html
+  confidence: high
+  amount: サービス費用の1割
+- category: sonota
+  name: 軽度生活援助事業
+  name_on_page: 軽度生活援助事業
+  summary: 家屋内の整理、大掃除、窓拭き、草取りなどの軽易な援助をヘルパーが行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上の人、または65歳以上で要介護・要支援の認定を受けた人
+  - ヘルパーの派遣は1回4時間以内、月4時間以内
+  where: 福祉課
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/2575.html
+  confidence: high
+  amount: サービス費用の1割
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊
+  summary: 介護保険施設などに原則14日以内の短期間入所し、日常生活の世話を受ける。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - ひとり暮らし高齢者等で、一時的に養護する必要がある
+  - 要介護認定が「非該当」の人
+  where: 福祉課
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/2575.html
+  confidence: high
+  amount: サービス費用の1割と、食事代・部屋代
+- category: gaishutsu
+  name: 高齢者のタクシー助成券・サブローカード
+  name_on_page: 大和町高齢者外出支援事業
+  summary: サブローカード（交通ICカード）かタクシー助成券のどちらかを選んで受け取れる。
+  who: {}
+  at_application:
+  - 大和町に1年以上住んでいる
+  - 75歳以上、または65歳以上で運転免許証を自主返納した人
+  - 施設入所中、3か月以上の入院中の人は対象外
+  where: 福祉課（サブローカードは10/1〜12/28の期間中に申請）
+  url: https://www.town.taiwa.miyagi.jp/kenko_fukushi/koreishafukushi_kaigo/koreisha_support/3401.html
+  confidence: high
+not_found:
+- iro
+- haikai
+- hochoki
+- jutaku
+- ribiyo
+- koken
+- nichijo-yogu
+- mimamori

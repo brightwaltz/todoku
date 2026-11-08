@@ -1,0 +1,100 @@
+city: '044041'
+name: 七ヶ浜町
+site: www.shichigahama.com
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: ひとりぐらし老人等緊急通報システム
+  summary: ひとり暮らしで不安のある高齢者などに、緊急通報の装置を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上でひとり暮らしに不安がある人、または身体障害者手帳1・2級の人
+  - 自宅取付型は固定電話回線と、駆けつける協力者3名の同意が必要
+  - 携帯型は警備会社に合鍵を預ける
+  where: 長寿社会課 地域福祉係
+  url: https://www.shichigahama.com/benricho/otoiawase/kenko2-010-12551.html
+  confidence: high
+  amount: 自宅取付型は貸出無料。携帯型は基本料金が月500円（税込）
+- category: haikai
+  name: はいかい高齢者SOSネットワーク
+  name_on_page: はいかい高齢者 SOS ネットワークシステム
+  summary: はいかいのおそれがある方の行方不明時に、早く見つけて保護する仕組み。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上で、認知症によるはいかいのおそれがある
+  where: 長寿社会課 地域福祉係
+  url: https://www.shichigahama.com/benricho/oshirase/assets/%E2%98%85%E4%B8%83%E3%83%B6%E6%B5%9C%E7%94%BA%E9%AB%98%E9%BD%A2%E8%80%85%E3%81%8A%E5%BD%B9%E7%AB%8B%E3%81%A1%E3%82%AC%E3%82%A4%E3%83%89_R8.3%E7%89%88.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 認知症高齢者等見守りシール事業
+  summary: はいかいのおそれがある方に、身元が分かる二次元コードのシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - はいかいのおそれがある
+  - 要介護・要支援の認定を受けている、または認知症と診断された
+  where: 地域包括支援センター
+  url: https://www.shichigahama.com/benricho/oshirase/assets/%E2%98%85%E4%B8%83%E3%83%B6%E6%B5%9C%E7%94%BA%E9%AB%98%E9%BD%A2%E8%80%85%E3%81%8A%E5%BD%B9%E7%AB%8B%E3%81%A1%E3%82%AC%E3%82%A4%E3%83%89_R8.3%E7%89%88.pdf
+  confidence: high
+  amount: 無料（初回交付分に限る）
+- category: haishoku
+  name: 高齢者等の配食サービス
+  name_on_page: 高齢者等配食サービス事業
+  summary: 調理が難しい高齢者に弁当を届け、安否の確認もする。町が1食350円を補助する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の単身世帯、または高齢者のみの世帯
+  - 老衰や疾病などで食事の調理が困難
+  where: 地域包括支援センター
+  url: https://www.shichigahama.com/benricho/oshirase/assets/%E2%98%85%E4%B8%83%E3%83%B6%E6%B5%9C%E7%94%BA%E9%AB%98%E9%BD%A2%E8%80%85%E3%81%8A%E5%BD%B9%E7%AB%8B%E3%81%A1%E3%82%AC%E3%82%A4%E3%83%89_R8.3%E7%89%88.pdf
+  confidence: high
+  amount: 弁当1食につき町が350円補助。差額は委託事業者へ支払う
+- category: sonota
+  name: 介護家族緊急支援（レスパイト）
+  name_on_page: 介護家族緊急支援事業（レスパイト事業）
+  summary: 家族が介護できなくなったとき、原則7日以内の一時的な施設入所で介護する。
+  who: {}
+  at_application:
+  - 日常生活に支障のある高齢者（おおむね65歳以上）を介護する家族
+  - 家族がやむを得ない理由で介護できなくなった場合
+  where: 地域包括支援センター
+  url: https://www.shichigahama.com/benricho/oshirase/assets/%E2%98%85%E4%B8%83%E3%83%B6%E6%B5%9C%E7%94%BA%E9%AB%98%E9%BD%A2%E8%80%85%E3%81%8A%E5%BD%B9%E7%AB%8B%E3%81%A1%E3%82%AC%E3%82%A4%E3%83%89_R8.3%E7%89%88.pdf
+  confidence: high
+  amount: 宿泊費の1割と、食費・日常生活費等を負担
+- category: kaigo-yohin
+  name: 在宅ねたきり老人への紙おむつの支給
+  name_on_page: 在宅ねたきり老人紙おむつ支給事業
+  summary: 常時失禁状態の在宅の高齢者に、紙おむつを毎月自宅へ届ける。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で常時失禁状態
+  - ねたきりの人、または認知症等の人
+  where: 地域包括支援センター
+  url: https://www.shichigahama.com/benricho/oshirase/assets/%E2%98%85%E4%B8%83%E3%83%B6%E6%B5%9C%E7%94%BA%E9%AB%98%E9%BD%A2%E8%80%85%E3%81%8A%E5%BD%B9%E7%AB%8B%E3%81%A1%E3%82%AC%E3%82%A4%E3%83%89_R8.3%E7%89%88.pdf
+  confidence: high
+  amount: 無料。町指定の紙おむつから選び、毎月届ける
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

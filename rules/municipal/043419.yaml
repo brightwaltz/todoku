@@ -1,0 +1,128 @@
+city: 043419
+name: 丸森町
+site: www.town.marumori.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 軽度生活支援（ホームヘルパーの派遣）
+  name_on_page: 軽度生活支援サービス事業
+  summary: 介護保険で非該当の高齢者に、洗濯・掃除・買い物などの支援員を派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 介護保険の認定で非該当となった人
+  - 日常生活に軽度の支障がある
+  - 委託先を調整中のため、利用前に問い合わせる
+  where: 保健福祉課社会福祉班
+  url: https://www.town.marumori.miyagi.jp/welfare/detail.php?content=254
+  confidence: high
+  amount: 派遣にかかる費用の1割を本人が負担。時間は1回30分以上1時間未満、原則週2回
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 外出が難しい要支援・要介護の方の自宅へ理美容師が出向いてカットなどをする。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 一般の理美容サービスを利用できない
+  - 現在、理容（床屋）サービスは行っていない
+  where: 保健福祉課社会福祉班
+  url: https://www.town.marumori.miyagi.jp/welfare/detail.php?content=262
+  confidence: high
+  amount: 出張料金は町が負担。カット料金2,000円などは自己負担。2か月に1回
+- category: haishoku
+  name: 給食サービス（配食と安否確認）
+  name_on_page: 給食サービス事業
+  summary: 調理が難しいひとり暮らしや高齢者のみの世帯に、食事を届け安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 食事の調理が困難
+  - 週1回、水曜日
+  where: 保健福祉課社会福祉班
+  url: https://www.town.marumori.miyagi.jp/welfare/detail.php?content=369
+  confidence: high
+  amount: 1食400円（材料費などの実費）
+- category: kaigo-yohin
+  name: 介護用品購入費の助成
+  name_on_page: 介護用品購入支援事業
+  summary: 紙おむつなどの購入費を、月2,000円（年24,000円まで）助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 居宅で介護を受け、常時、紙おむつ・紙パンツ・尿取りパッドを使う
+  - 申請者は本人または親族
+  - 初回はケアマネジャーか民生委員の在宅の証明が必要
+  where: 保健福祉課社会福祉班
+  url: https://www.town.marumori.miyagi.jp/welfare/detail.php?content=389
+  confidence: high
+  amount: 要介護者等1人につき月2,000円、年24,000円まで
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: ひとり暮らし老人等緊急通報システム事業
+  summary: 病弱などで必要と認められるひとり暮らしの高齢者に、緊急通報の機器を貸す。
+  who:
+    household:
+    - alone
+  at_application:
+  - 65歳以上の病弱または障害のあるひとり暮らしの高齢者等
+  - 疾病等のため機器の設置が必要と認められる
+  - 電話回線が必要
+  where: 保健福祉課社会福祉班
+  url: https://www.town.marumori.miyagi.jp/welfare/detail.php?content=390
+  confidence: high
+  amount: 利用料は無料。電話回線の使用料は本人負担
+- category: gaishutsu
+  name: 通院等のタクシー料金の助成
+  name_on_page: 丸森町通院等タクシー料金助成事業
+  summary: 町外の医療機関への通院・入院のタクシー料金の半額を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 丸森病院の紹介で町外の医療機関に通院・入院する
+  - タクシーに乗り降りできる（または介助者が同行できる）
+  - 事業期間は令和9年3月31日まで
+  where: 保健福祉課地域包括支援班（事前の登録申請が必要）
+  url: https://www.town.marumori.miyagi.jp/welfare/detail.php?content=1764
+  confidence: high
+  amount: 料金の半額、1回の乗車につき上限3,000円、月4回まで
+not_found:
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- koken
+- nichijo-yogu
+- mimamori

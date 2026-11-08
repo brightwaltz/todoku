@@ -1,0 +1,138 @@
+city: '044067'
+name: 利府町
+site: www.town.rifu.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット配付事業
+  summary: もしもの時のため、緊急連絡先や持病などを書く用紙入りのキットを無料で配る。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者世帯（ひとり暮らし、二人暮らしなど）
+  - または、避難行動要支援者リストに登録している人がいる世帯
+  where: 健康推進課 長生き支援係、または地域包括支援センターの窓口
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/1346.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: SOSネットワークシステム
+  name_on_page: SOSネットワークシステム
+  summary: 認知症などで行方不明になったとき、協力機関へ情報を流して早く見つける仕組み。
+  who: {}
+  at_application:
+  - 町内の65歳以上で、認知症などで徘徊のおそれがある、または徘徊したことがある
+  - 要支援・要介護認定を受け徘徊のおそれがある人（40歳以上の若年性認知症を含む）
+  - その他町長が認める人
+  - 事前の登録が必要
+  where: 健康推進課 長生き支援係
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/1346.html
+  confidence: high
+  amount: 無料
+- category: koken
+  name: 成年後見人等の報酬助成
+  name_on_page: 成年後見制度利用支援助成事業
+  summary: 成年後見人等の報酬の支払いに要する費用を、全部または一部助成する。
+  who: {}
+  at_application:
+  - 後見開始等の審判を受けた人
+  - 生活保護の被保護者、または助成がないと制度の利用が困難な人
+  where: 保健福祉部 健康推進課 長生き支援係
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/1346.html
+  confidence: high
+  amount: 在宅は月額28,000円、施設入所者は月額18,000円の範囲内
+- category: haishoku
+  name: 食の自立支援（配食）
+  name_on_page: 食の自立支援事業
+  summary: 食事の準備が難しい方に、昼食を届けて安否も確認する。1食350円を補助。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者・身体障害者のみの世帯など
+  - 食事の準備が困難と認められた人
+  - 火曜・木曜の昼食、週2回まで
+  where: 保健福祉部 健康推進課 長生き支援係
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/1346.html
+  confidence: high
+  amount: 1食350円を補助。超える分（250円程度）は自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 自宅に緊急通報の装置を設置し、通報時は救急車や警備員の出動を要請する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らしの人、または身体障害者のひとり暮らしの人
+  where: 保健福祉部 健康推進課 長生き支援係
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/1346.html
+  confidence: high
+  amount: 工事費と月々の利用料は無料。通報時などの通信料は自己負担
+- category: kaigo-yohin
+  name: 紙おむつ等の支給
+  name_on_page: 高齢者等紙おむつ支給事業
+  summary: 常時紙おむつを使う非課税の在宅の方に、おむつ等の引換券を月5,000円または2,500円分交付する。
+  who:
+    tax:
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上で寝たきり、または寝たきり・認知症で常時失禁、または要介護4・5
+  - 介護している人が同居（同居に近い形も可）で、無報酬で介護している
+  - 介護を受ける人が町内に住所がある
+  where: 保健福祉部 健康推進課 長生き支援係
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/1346.html
+  confidence: high
+  amount: 月の限度額：本人と世帯が非課税は5,000円、世帯が課税は2,500円。本人が課税は対象外
+- category: shingu
+  name: 布団クリーニングサービス
+  name_on_page: 布団クリーニングサービス事業
+  summary: 寝たきり等で寝具の衛生管理が難しい世帯の、掛け布団・敷き布団・毛布を消毒乾燥する。
+  who: {}
+  at_application:
+  - 高齢者のみ、障害者のみ、または高齢者及び障害者のみの世帯
+  - 寝たきり等により寝具の衛生管理が困難
+  where: 健康推進課 長生き支援係（頁の問い合わせ先）
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/1346.html
+  confidence: high
+  amount: 自己負担なし。実施は年2回（9月中旬頃、3月上旬頃）
+- category: gaishutsu
+  name: 町民バスの無料乗車証
+  name_on_page: 町民バス減免事業
+  summary: 70歳以上などの方に、町民バスの無料乗車証（シルバーパス）を交付する。
+  who: {}
+  at_application:
+  - 町内に住民登録のある70歳以上の人
+  - 運転免許証の自主返納者、障がい者、介護者も対象（条件あり）
+  - 令和8年度分の使用期限は令和9年3月31日
+  where: 生活環境課 公共交通係（役場1階2番窓口）
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/2/3741.html
+  confidence: high
+  amount: 町民バスに無料で乗車できる
+- category: gaishutsu
+  name: 民間バスの割引チケット
+  name_on_page: 民間バスチケットサービス事業
+  summary: 70歳以上などの方に、民間バスで1回200円引きになるチケットを交付する。
+  who: {}
+  at_application:
+  - 町内に住民登録のある70歳以上の人
+  - 障がい者、介護者も対象（条件あり）
+  - 障害者の燃料費補助や福祉タクシー助成を受けている人は申請不可
+  where: 生活環境課 公共交通係（役場1階2番窓口）
+  url: https://www.town.rifu.miyagi.jp/gyosei/kenko_fukushi/koreisha_kaigo/2/3741.html
+  confidence: high
+  amount: 200円チケットを1回の乗車に1枚使用。1人最大120枚（申請月で枚数が変わる）
+not_found:
+- iro
+- hochoki
+- jutaku
+- nichijo-yogu
+- ribiyo
+- mimamori

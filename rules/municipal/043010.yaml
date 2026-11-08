@@ -1,0 +1,68 @@
+city: '043010'
+name: 蔵王町
+site: www.town.zao.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食のお弁当）
+  name_on_page: 配食サービス
+  summary: 栄養バランスのとれた夕食のお弁当を、利用券と引き換えに届ける。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上からなる世帯の方
+  - または、手帳（身体1・2級・内部3級、療育、精神）を持つ18歳以上のひとり暮らしの方
+  where: 保健福祉課または蔵王町社会福祉協議会
+  url: https://www.town.zao.miyagi.jp/kurashi_guide/kenkou_fukushi/koureisya/haisyoku.html
+  confidence: high
+  amount: 1食500円（事前に配食サービス利用券を購入）。月〜金、週5回以内
+- category: kaigo-yohin
+  name: 介護用品支給（紙おむつ等の助成券）
+  name_on_page: 介護用品支給事業
+  summary: 在宅で常時失禁状態の方に、紙おむつ・尿とりパット等に使える助成券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上（40〜64歳は特定疾病の方を含む）、または手帳をお持ちで市町村民税非課税世帯に属する
+  - 担当地区の民生委員による確認が必要
+  - 施設入所・3か月以上の入院は対象外
+  where: 保健福祉課または地区担当民生委員
+  url: https://www.town.zao.miyagi.jp/kurashi_guide/kenkou_fukushi/koureisya/kaigoyohin.html
+  confidence: high
+  amount: 月額：65歳以上は非課税世帯2,000円・課税世帯1,000円。手帳所持者（非課税世帯）は1,000円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: ひとり暮らし高齢者等緊急通報システム事業
+  summary: ひとり暮らしの高齢者等に、非常ボタンつきの通報機器を貸し出す。警備員が出動する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上の病弱な高齢者、重度身体障がい者、または町長が特に必要と認めた方
+  - 協力員が1名以上必要
+  where: 保健福祉課
+  url: https://www.town.zao.miyagi.jp/kurashi_guide/kenkou_fukushi/koureisya/kinkyutuho.html
+  confidence: high
+  amount: 固定電話があれば負担なし。無ければ回線使用料1,000円
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット
+  summary: かかりつけ医などの情報を入れる容器とシールを配付し、救急時に役立てる。
+  who: {}
+  at_application:
+  - 災害時要援護者台帳に登録した方、65歳以上の方、または健康上不安を抱えている方
+  - 家族や代理の方でも受け取れる
+  where: 保健福祉課
+  url: https://www.town.zao.miyagi.jp/kurashi_guide/kenkou_fukushi/koureisya/kinnkyuuiryoujyouhou.html
+  confidence: high
+not_found:
+- iro
+- hochoki
+- koken
+- shingu
+- ribiyo

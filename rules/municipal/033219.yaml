@@ -1,0 +1,116 @@
+city: 033219
+name: 紫波町
+site: www.town.shiwa.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者用紙おむつ・尿取りパッドの支給
+  name_on_page: 高齢者用紙おむつ・尿取りパッドの支給申請について
+  summary: 要介護3以上の人を在宅介護する非課税世帯に、紙おむつ等の支給券を交付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護3は排尿・排便が全介助で常時おむつが必要と町が判断した場合のみ
+  - 介護する人・される人とも町内に住所がある
+  - 判定基準日は毎年9月1日、生活保護世帯は対象外
+  - 申請は毎年度必要
+  where: 長寿介護課 介護保険係
+  url: https://www.town.shiwa.iwate.jp/kenko/kaigohoken1/kaigohoken2/173128593519999/
+  confidence: high
+  amount: 年度分52枚（1枚1,000円、計52,000円分）
+  more_urls:
+  - https://www.town.shiwa.iwate.jp/shiwatown/cms/kenko/kaigohoken1/kaigohoken2/%E4%BF%AE%E6%AD%A304_R8%E6%A6%82%E8%A6%81_%E7%B4%AB%E6%B3%A2%E7%94%BA%E5%AE%B6%E6%97%8F%E4%BB%8B%E8%AD%B7%E7%94%A8%E5%93%81%E6%94%AF%E7%B5%A6%E4%BA%8B%E6%A5%AD%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf
+- category: gaishutsu
+  name: 外出支援事業
+  name_on_page: 外出支援事業
+  summary: 常時車いすの高齢者を福祉車両で通院や施設の入退所に送迎する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、自家用車やタクシーを使うことが困難な方
+  - 足に障害があり常時車いすで生活している高齢者
+  where: 長寿介護課（地域包括支援センター）。申請様式あり
+  url: https://www.town.shiwa.iwate.jp/soshiki/1_1/2_4/841.html/
+  confidence: high
+  amount: 利用者負担は片道 500 円（町内）〜1,300 円（雫石町・滝沢市）
+- category: haishoku
+  name: 高齢者ふれあい交流事業
+  name_on_page: 高齢者ふれあい交流事業
+  summary: 見守りを兼ねて、おかず弁当を配達する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に住所があるおおむね65歳以上の方
+  where: 紫波町社会福祉協議会（委託・申込み先）
+  url: https://www.town.shiwa.iwate.jp/soshiki/1_1/2_4/841.html/
+  confidence: high
+  amount: 弁当配達 300 円程度
+- category: ribiyo
+  name: 訪問理容サービス
+  name_on_page: 訪問理容サービス事業
+  summary: 外出が難しい寝たきりの人の自宅に理容師を派遣して理髪をする。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    flags:
+    - bedridden_6m
+  at_application:
+  - 寝たきり状態で外出が困難な方
+  - 理髪の際は家族の立会いが必要
+  - 2か月に1回を限度とする
+  where: 長寿介護課（申請様式あり）
+  url: https://www.town.shiwa.iwate.jp/soshiki/1_1/2_4/841.html/
+  confidence: high
+  amount: 1回 1,000 円（利用者負担）
+- category: iro
+  name: 家族介護者慰労金
+  name_on_page: 家族介護者慰労金支給事業
+  summary: 特定のサービスを使わず要介護5以上の人を在宅で介護する家族に慰労金。
+  who:
+    care_levels:
+    - care5
+    at_home: true
+  at_application:
+  - 特定の介護保険サービスを利用しない
+  where: 長寿介護課 介護保険係
+  url: https://www.town.shiwa.iwate.jp/soshiki/1_1/2_4/841.html/
+  confidence: low
+- category: sonota
+  name: 生活指導短期宿泊（ショートステイ）
+  name_on_page: 生活指導短期宿泊(ショートステイ)事業
+  summary: 自力での生活が一時的に難しい人が、老人ホームに短期間泊まれる。
+  who:
+    age_min: 65
+  at_application:
+  - 一時的に自力での生活が困難な方
+  - 介護認定を受けていない方に限る
+  - 原則1回につき7日以内
+  where: 長寿介護課（申請様式あり）
+  url: https://www.town.shiwa.iwate.jp/soshiki/1_1/2_4/841.html/
+  confidence: high
+  amount: 1日 1,730 円（利用者負担）
+not_found:
+- haikai
+- hochoki
+- kinkyu-tsuho
+- shingu
+- jutaku
+- nichijo-yogu

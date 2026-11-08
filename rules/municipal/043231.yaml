@@ -1,0 +1,65 @@
+city: '043231'
+name: 柴田町
+site: www.town.shibata.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: ひとりぐらし老人等の緊急通報システム貸与
+  name_on_page: ひとりぐらし老人等緊急通報システム事業
+  summary: 在宅のひとりぐらしの方に、緊急通報の機器一式を無料で貸し出す。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上の高齢者、または重度身体障害者等
+  - 電話回線が必要
+  where: 福祉課-長寿介護班
+  url: https://www.town.shibata.miyagi.jp/index.cfm/89,26922,216,388,html
+  confidence: high
+  amount: 機器は無料で貸与。電話回線の費用は本人負担
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の支給（家族介護）
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の在宅の方で住民税非課税世帯に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 紙おむつ等を必要とする高齢者等
+  where: 頁に記載なし（高齢者福祉は福祉課-長寿介護班の担当）
+  url: https://www.town.shibata.miyagi.jp/index.cfm/89,26921,216,389,html
+  confidence: high
+- category: mimamori
+  name: 町の電話の貸与（安否確認・相談）
+  name_on_page: 老人福祉電話貸与事業
+  summary: ひとりぐらしの高齢者等に、安否確認や相談のため町所有の電話を貸す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとりぐらし高齢者等
+  where: 福祉課-長寿介護班（問い合わせ先。申請方法は頁に無い）
+  url: https://www.town.shibata.miyagi.jp/index.cfm/89,26922,216,388,html
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu

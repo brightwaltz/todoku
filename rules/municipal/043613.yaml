@@ -1,0 +1,90 @@
+city: '043613'
+name: 亘理町
+site: www.town.watari.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: ひとりぐらし高齢者等緊急通報システム
+  summary: 在宅のひとり暮らしの高齢者などに、緊急通報の機器を取り付ける。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者、または重度身体障害者
+  where: 長寿介護課 高齢者支援班
+  url: https://www.town.watari.miyagi.jp/welfare/detail.php?content=791
+  confidence: high
+  amount: 利用料は月500円
+- category: nichijo-yogu
+  name: 電気式たん吸引器の給付
+  name_on_page: 高齢者日常生活用具給付（電気式たん吸引器）
+  summary: 呼吸器に障害のある高齢者に、電気式のたん吸引器を給付する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で呼吸器機能障害がある
+  - 医師が吸引器の使用を必要と判断した
+  where: 長寿介護課 高齢者支援班
+  url: https://www.town.watari.miyagi.jp/welfare/detail.php?content=791
+  confidence: high
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきりなどで店に行けない方の、理美容の出張料を助成する。
+  who: {}
+  at_application:
+  - 町内に住所があるおおむね65歳以上
+  - 加齢・心身の障がい・傷病で寝たきりまたは歩行困難
+  - 散髪料は自己負担
+  where: 長寿介護課 高齢者支援班
+  url: https://www.town.watari.miyagi.jp/welfare/detail.php?content=791
+  confidence: high
+  amount: 店から自宅までの出張料は無料（年4回分）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 聞こえにくい65歳以上の方の補聴器購入費を、上限30,000円まで助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴力レベルが両耳とも40デシベル以上で、医師が必要と認めた
+  - 身体障害者手帳（聴力障害）の交付を受けていない
+  - 町の介護予防事業等に参加する意思がある
+  - 町税の滞納がない（同居の世帯員も）
+  - 購入前と1年後のアンケートに協力できる
+  where: 長寿介護課 高齢者支援班（購入前に事前相談）
+  url: https://www.town.watari.miyagi.jp/welfare/detail.php?content=2028
+  confidence: high
+  amount: 片耳・両耳を問わず上限30,000円（1人1回）
+- category: haikai
+  name: 認知症高齢者等見守りシール
+  name_on_page: 認知症高齢者等見守りシール活用事業
+  summary: 徘徊のおそれがある方に、二次元コード付きの見守りシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 亘理町に住んでいる
+  - 家族等が地域包括支援センターで申請し、緊急連絡先を登録する
+  where: 長寿介護課 地域包括支援センター
+  url: https://www.town.watari.miyagi.jp/welfare/detail.php?content=799
+  confidence: high
+  amount: 登録料1,100円、年度ごとの更新料1,100円（いずれも税込）
+not_found:
+- haishoku
+- kaigo-yohin
+- iro
+- jutaku
+- shingu
+- gaishutsu
+- koken
+- mimamori

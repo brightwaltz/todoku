@@ -1,0 +1,95 @@
+city: '024422'
+name: 五戸町
+site: www.town.gonohe.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品給付事業
+  name_on_page: 介護用品給付事業
+  summary: 要介護4・5の人を在宅で介護する家族に、紙おむつ等の引換券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 住民税非課税世帯の方
+  - 対象品目は紙おむつ・尿取りパット・清拭剤・使い捨て手袋
+  where: 五戸町（計画に申請先の記載なし）
+  url: https://www.town.gonohe.aomori.jp/kurashi/kaigohoken/9_keikku.pdf
+  confidence: low
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 配食サービス事業
+  summary: 食事づくりが難しい人に、栄養を考えた食事を届け安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の単身世帯・高齢者のみの世帯
+  - 調理が困難な方
+  where: 五戸町（計画に申請先の記載なし）
+  url: https://www.town.gonohe.aomori.jp/kurashi/kaigohoken/9_keikku.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報体制等整備事業
+  name_on_page: 緊急通報体制等整備事業
+  summary: 緊急時に通報できる装置を、申請した高齢者の家に設置する。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者等で、健康に不安のある方
+  - 本人が利用申請をする
+  where: 五戸町（計画に申請先の記載なし）
+  url: https://www.town.gonohe.aomori.jp/kurashi/kaigohoken/9_keikku.pdf
+  confidence: low
+- category: gaishutsu
+  name: 外出支援サービス事業
+  name_on_page: 外出支援サービス事業
+  summary: 寝たきり等の人が、車いすのまま乗れる車で通院などに移動できる。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきり状態や自力での歩行ができない方
+  - 家族等が町に登録申請し、利用時は委託業者に予約
+  where: 町（登録申請）。利用は委託業者へ予約
+  url: https://www.town.gonohe.aomori.jp/kurashi/kaigohoken/9_keikku.pdf
+  confidence: low
+- category: sonota
+  name: 軽度生活援助事業
+  name_on_page: 軽度生活援助事業
+  summary: 支援が必要な高齢者に、除雪など日常生活の軽い手助けをする。
+  who: {}
+  at_application:
+  - 要援護高齢者
+  where: 五戸町（計画に申請先の記載なし）
+  url: https://www.town.gonohe.aomori.jp/kurashi/kaigohoken/9_keikku.pdf
+  confidence: low
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 五戸町成年後見制度利用支援事業
+  summary: 成年後見の申立て費用や後見人への報酬を、費用が出せない人に助成する。
+  who: {}
+  at_application:
+  - 町内に住所がある方（例外あり）
+  - 世帯全員が生活保護受給者、または非課税世帯
+  - 世帯の活用できる資産が1人あたり50万円以下
+  - 負担能力のある親族等に扶養されていない方
+  where: 65歳以上は介護支援課 高齢者支援班、65歳未満は福祉課 障がい福祉班
+  url: https://www.town.gonohe.aomori.jp/kurashi/kaigohoken/seinenkoukenseidoriyousienjigyou.html
+  confidence: high
+  amount: 在宅は月額 28,000 円、入所等は月額 18,000 円が上限
+not_found:
+- iro
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo

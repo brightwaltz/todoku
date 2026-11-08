@@ -1,0 +1,102 @@
+city: '033031'
+name: 岩手町
+site: town.iwate.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ給付事業
+  name_on_page: おむつ給付事業（在宅要介護者等）
+  summary: 常時おむつが必要な在宅の人に、おむつ券を支給する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護2〜5、または一定の身体障害者手帳・療育手帳Aの方など
+  - 同様のおむつ給付を他の制度で受けていない
+  - 入院・入所が月合計15日以上の場合は対象外
+  where: 福祉介護課 高齢者支援係（庁舎1階⑧番窓口）
+  url: https://town.iwate.iwate.jp/town/life/netakiri-2/
+  confidence: high
+  amount: 世帯の所得や要介護度に応じ、月額 1,000〜3,000 円分のおむつ券
+- category: haishoku
+  name: 食の自立支援サービス
+  name_on_page: 食の自立支援サービス
+  summary: 調理が困難な高齢者に、昼食を届けて安否を確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯、これに準ずる世帯
+  - 食事の調理が困難な方
+  - 入院治療が必要な方などは除く
+  where: 役場1階 高齢者福祉係窓口
+  url: https://town.iwate.iwate.jp/town/life/shoku-jiritsu/
+  confidence: high
+  amount: 1食 市町村民税非課税世帯400円、課税世帯600円
+- category: kinkyu-tsuho
+  name: 緊急通報装置貸与サービス
+  name_on_page: 緊急通報装置貸与サービス
+  summary: 急変の恐れがある人に、24時間対応の緊急通報装置を貸与する。
+  who:
+    flags:
+    - chronic_attack_risk
+  at_application:
+  - おおむね65歳以上の市町村民税非課税の単身世帯、これに準ずる世帯
+  - 突発的に生命に危険な症状が出る疾患等で常時注意が必要
+  - 協力員3名を確保すること
+  where: 役場1階 高齢者福祉係窓口
+  url: https://town.iwate.iwate.jp/town/life/kinkyutsuho/
+  confidence: high
+  amount: 利用料 無料
+- category: gaishutsu
+  name: 外出支援サービス
+  name_on_page: 外出支援サービス
+  summary: 寝たきりや車いすの高齢者の通院などの外出を送迎で支援する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、寝たきりまたは車いす利用など、一般の交通手段が困難な方
+  - 通院・入退院、福祉施設への通所、福祉活動、公共機関の手続きのとき
+  where: 役場1階 高齢者福祉係窓口
+  url: https://town.iwate.iwate.jp/town/life/gaishutsu-shien/
+  confidence: high
+  amount: 1回（往復）町内 1,500 円、隣接市町 3,000 円
+- category: hochoki
+  name: 高齢者補聴器購入費助成
+  name_on_page: 岩手町高齢者補聴器購入費助成
+  summary: 聞こえにくい高齢者の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付対象でない方
+  - 聴力の良い方の耳が40dB以上で、耳鼻咽喉科医が必要と認めた
+  - 世帯員全員に町税の滞納がない
+  - 過去に同様の助成を受けていない
+  where: 福祉介護課 高齢者支援係（庁舎1階⑧番窓口）
+  url: https://town.iwate.iwate.jp/town/life/koureihotyouki/
+  confidence: high
+  amount: 補聴器本体の購入費と4万円のいずれか低い額
+  more_urls:
+  - https://town.iwate.iwate.jp/town/wp-content/uploads/2025/04/koureihotyouki_tebiki_20260714.pdf
+- category: nichijo-yogu
+  name: 老人日常生活用具給付
+  name_on_page: 老人日常生活用具給付
+  summary: 電磁調理器・自動消火器の給付か、老人用電話の貸与をする。
+  who: {}
+  at_application:
+  - 町内に住所がある65歳以上のひとり暮らしの高齢者等
+  where: 役場1階 高齢者福祉係窓口
+  url: https://town.iwate.iwate.jp/town/life/rojin-yogu/
+  confidence: high
+  amount: 所得に応じて負担あり
+not_found:
+- ribiyo
+- shingu
+- jutaku
+- koken
+- haikai

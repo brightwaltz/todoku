@@ -1,0 +1,94 @@
+city: 044229
+name: 大郷町
+site: www.town.miyagi-osato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者外出支援（ふれあい号）
+  name_on_page: 大郷町高齢者外出支援事業「ふれあい号」
+  summary: 自宅と町内・近隣市町の乗降所の間を、予約した人同士で乗り合って無料で送迎する。
+  who:
+    age_min: 70
+  at_application:
+  - 町に住民登録があり、自力で車に乗り降りできる
+  - 事前登録が必要（登録料1,000円、有効期間は1年間）
+  where: 保健福祉課（予約は運行事業者の予約センター）
+  url: https://www.town.miyagi-osato.lg.jp/soshiki/hoken/fureaigo.html
+  confidence: high
+  amount: 乗車料は無料（片道10回/月まで）。登録料は1人1,000円
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 住民税非課税世帯の聞こえにくい高齢者に、補聴器の購入費を上限30,000円まで助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 耳鼻科医の診断と、補聴器が必要との証明（診療情報提供書か医師の意見書）がある
+  - 過去にこの助成金を受けていない
+  - 申請が4〜6月のときは前年度の住民税で判断する
+  where: 保健福祉課
+  url: https://www.town.miyagi-osato.lg.jp/soshiki/hoken/hotyouki.html
+  confidence: high
+  amount: 片耳・両耳を問わず上限30,000円（1人1回）
+- category: haikai
+  name: 認知症高齢者等の見守りシール
+  name_on_page: 大郷町認知症高齢者等見守り事業
+  summary: 認知症などで道に迷うおそれのある方に、二次元コードの見守りシールを無料で交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内に住所があり、認知症等で外出中に道に迷う可能性がある
+  - 65歳以上の認知症の人、または初老期認知症等の症状がある65歳未満の人
+  where: 保健福祉課
+  url: https://www.town.miyagi-osato.lg.jp/soshiki/hoken/ninchisyou-mimamori.html
+  confidence: high
+  amount: 見守りシール40枚セットを無料交付（1人1回。追加分は自己負担）
+- category: kinkyu-tsuho
+  name: あんしん見守りネットワーク（緊急通報機器の貸与）
+  name_on_page: 大郷町あんしん見守りネットワーク事業
+  summary: ひとり暮らしの高齢者などの自宅に機器を設置し、緊急時の連絡と安否確認をする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  where: 大郷町地域包括支援センター（申請書の提出先）
+  url: https://www.town.miyagi-osato.lg.jp/soshiki/hoken/anshinmimamori-network.html
+  confidence: high
+  amount: 機器の設置費用は無料。通話料は本人負担
+- category: sonota
+  name: 高齢者シェルター事業
+  name_on_page: 高齢者シェルター事業
+  summary: 家族の虐待などで在宅生活が難しい高齢者を、原則7日以内、施設で一時的に保護する。
+  who:
+    at_home: true
+  at_application:
+  - 町に住所があるおおむね65歳以上の要援護高齢者
+  - 虐待などで在宅生活が難しく、緊急に施設での保護が必要
+  - 医師の治療が不要で、感染症がない
+  - 介護保険の短期入所が使える場合は、そちらを優先
+  where: 保健福祉課（本人・家族・代理人が申請。緊急時は口頭でも可）
+  url: https://www.town.miyagi-osato.lg.jp/soshiki/hoken/koureisyasheltter.html
+  confidence: high
+  amount: 1日400円（生活保護世帯は0円）。別に食材費等がかかる
+not_found:
+- haishoku
+- iro
+- kaigo-yohin
+- jutaku
+- shingu
+- ribiyo
+- koken
+- nichijo-yogu

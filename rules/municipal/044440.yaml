@@ -1,0 +1,74 @@
+city: '044440'
+name: 色麻町
+site: www.town.shikama.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: ひとり暮らし高齢者等 緊急通報システム事業
+  summary: 緊急通報装置を貸し出し、急病などの緊急時に迅速に対応する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、高齢者のみの世帯、または身体上の障がいで日常生活に支障がある人
+  - 調査の結果、必要と認められた人
+  where: 保健福祉課
+  url: https://www.town.shikama.miyagi.jp/life/kaigo_korei/2/1391.html
+  confidence: high
+  amount: 利用料金は無料（町負担）
+- category: kaigo-yohin
+  name: 寝たきり者等へのおむつ補助
+  name_on_page: 寝たきり者等おむつ補助事業
+  summary: 寝たきり高齢者などを抱える非課税世帯に、紙おむつ代を月5,000円まで補助する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 寝たきり高齢者などを抱える世帯
+  where: 保健福祉課
+  url: https://www.town.shikama.miyagi.jp/life/kaigo_korei/2/1392.html
+  confidence: high
+  amount: 紙おむつ代の一部を月5,000円を限度に補助
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒サービス事業
+  summary: 寝たきり高齢者が使う寝具を洗濯・乾燥・消毒して、利用者と介護者の負担を軽くする。
+  who:
+    flags:
+    - bedridden_6m
+  at_application:
+  - 寝たきり高齢者
+  where: 保健福祉課
+  url: https://www.town.shikama.miyagi.jp/life/kaigo_korei/2/1392.html
+  confidence: high
+  amount: 費用の1割相当分が利用者負担
+- category: haikai
+  name: 認知症高齢者等の見守りQRコード
+  name_on_page: 色麻町認知症高齢者等見守りQRコード活用事業
+  summary: 徘徊のおそれがある方に、身元が分かるQRコードのシールを交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症高齢者等で町内に住所がある人を介護している親族や支援者が申請
+  - 登録前に、担当のケアマネジャーか地域包括支援センターに相談する
+  where: 色麻町地域包括支援センター（保健福祉課内）
+  url: https://www.town.shikama.miyagi.jp/life/kaigo_korei/2/1462.html
+  confidence: high
+  amount: シール代1,000円（税別）で35枚。追加分も利用者負担
+  more_urls:
+  - https://www.town.shikama.miyagi.jp/material/files/group/9/20200310-172324.pdf
+not_found:
+- haishoku
+- iro
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu
+- koken
+- nichijo-yogu
+- mimamori

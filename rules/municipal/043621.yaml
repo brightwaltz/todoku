@@ -1,0 +1,118 @@
+city: '043621'
+name: 山元町
+site: www.town.yamamoto.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 出かけるのが難しい高齢者の自宅へ理美容師が出向く、出張料の助成券を出す。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 心身の障がい・疾病で理美容店に出掛けることが困難
+  - 障がい高齢者の日常生活自立度がB以上
+  where: 地域福祉課介護保険班
+  url: https://www.town.yamamoto.miyagi.jp/soshiki/10/7354.html
+  confidence: high
+  amount: 出張料の助成券1,500円分を年4枚。利用料金は自己負担
+- category: kaigo-yohin
+  name: 家族介護用品の購入費助成
+  name_on_page: 家族介護用品支給事業
+  summary: 紙おむつなどの介護用品の購入費を、年間75,000円まで助成する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5、または認知症の日常生活自立度3以上
+  - 要介護者がおおむね65歳以上
+  - 要介護者と介護者がともに町内に住み、同居している
+  where: 地域福祉課介護保険班
+  url: https://www.town.yamamoto.miyagi.jp/soshiki/10/7354.html
+  confidence: high
+  amount: 介護用品の購入費を年間75,000円を上限に助成
+- category: kinkyu-tsuho
+  name: 高齢者等緊急通報システム
+  name_on_page: 高齢者等緊急通報システム事業
+  summary: ひとり暮らしの高齢者などに、警備会社へ通報できる機器を設置・貸与する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上の高齢者、または重度の身体障がい者
+  - 慢性的な疾患等で常時注意を要する状態
+  - 同一敷地・建物内に通報できる親族がいない
+  - 固定電話型は自宅に電話が必要（無ければ携帯型）
+  where: 地域福祉課介護保険班
+  url: https://www.town.yamamoto.miyagi.jp/soshiki/10/7354.html
+  confidence: high
+  amount: 設置・初期費用は無料。基本料金は自己負担（口座振替）
+- category: haikai
+  name: 徘徊高齢者の家族支援（GPS貸与）
+  name_on_page: 徘徊高齢者家族支援サービス
+  summary: 徘徊のある高齢者の居場所を家族が探せる、GPS機器を貸し出す。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上
+  - 重度の認知症症状がある（日常生活自立度3以上）
+  where: 地域福祉課介護保険班
+  url: https://www.town.yamamoto.miyagi.jp/soshiki/10/7354.html
+  confidence: high
+  amount: 機器代・月額の基本料金は無料。基本料金を超える所在地検索費用は自己負担
+- category: mimamori
+  name: 高齢者等見守りサービスの設置費助成
+  name_on_page: 高齢者等見守りサービス支援事業
+  summary: ひとり暮らし高齢者などの見守りサービスの費用を、一律15,000円助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし、または65歳以上だけの世帯
+  - ひとり暮らしで身体障害者手帳1・2級の人も対象
+  - 同等のサービスを利用していない
+  - 対象の見守りサービスを1年以上続けて利用する
+  where: 地域福祉課介護保険班
+  url: https://www.town.yamamoto.miyagi.jp/soshiki/10/7354.html
+  confidence: high
+  amount: 1人（1世帯）につき1回限り、初期費用と月額利用料の相当分として一律15,000円
+  more_urls:
+  - https://www.town.yamamoto.miyagi.jp/uploaded/attachment/19304.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 聞こえにくい65歳以上の方の補聴器購入費を、上限30,000円まで助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 両耳の聴力が40デシベル以上で、医師が必要と認めた
+  - 本人と同居の世帯員が公共料金の滞納者でない
+  where: 地域福祉課窓口
+  url: https://www.town.yamamoto.miyagi.jp/soshiki/10/29523.html
+  confidence: high
+  amount: 片耳・両耳を問わず上限30,000円（1人1回）
+not_found:
+- haishoku
+- iro
+- jutaku
+- shingu
+- gaishutsu
+- koken
+- nichijo-yogu

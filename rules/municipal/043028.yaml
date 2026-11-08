@@ -1,0 +1,80 @@
+city: 043028
+name: 七ヶ宿町
+site: town.shichikashuku.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（食事の提供と安否確認）
+  name_on_page: 配食サービス事業
+  summary: 食事の調理が難しい高齢者等に、栄養バランスのとれた食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 町内に住所があり、食事の調理や食材の調達に継続的な支障がある
+  - 単身の高齢者、高齢者のみの世帯、単身の身体障害者の世帯など（これに準ずる世帯を含む）
+  - 事前に利用登録の申請が必要
+  where: 七ケ宿町（要綱では町長に利用登録申請書を提出。担当課の記載なし）
+  url: https://town.shichikashuku.miyagi.jp/town/gyosei/reiki_int/reiki_honbun/c213RG00000367.html
+  confidence: high
+  amount: 食材料費等の実費を利用者が負担（町長が認めれば減免）
+- category: kaigo-yohin
+  name: 在宅老人等の紙おむつ支給
+  name_on_page: 在宅老人等紙おむつ支給事業
+  summary: 在宅のおむつ使用者に、紙おむつ・尿取りパット等と引き換える支給券を出す。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 65歳以上のねたきり老人・認知症老人、身体障害者手帳1・2級の方、または常時失禁状態で町長が認めた方
+  - 介護保険料の滞納がない
+  - 施設入所や3か月を超える入院をしていない
+  where: 七ケ宿町（要綱では町長に支給申請書と紙おむつ使用証明書を提出。担当課の記載なし）
+  url: https://town.shichikashuku.miyagi.jp/town/gyosei/reiki_int/reiki_honbun/c213RG00000361.html
+  confidence: high
+  amount: 月8,000円の範囲内（支給券を町指定の販売業者に出して受け取る）
+- category: jutaku
+  name: バリアフリー住宅推進事業補助金（住宅の改築・改修）
+  name_on_page: バリアフリー住宅推進事業補助金
+  summary: 高齢者や身体障害者が安心して住めるよう、住宅の改築・改修の経費を町が補助する。
+  who: {}
+  at_application:
+  - 高齢者及び身体障害者が安心して居住できる住宅の改築・改修が対象
+  - 介護保険の住宅改修費の対象となる場合は、不足する部分に限る
+  where: 頁に申請先の記載なし
+  url: https://town.shichikashuku.miyagi.jp/town/gyosei/reiki_int/reiki_honbun/c213RG00000365.html
+  confidence: low
+  amount: 経費の上限は、世帯非課税の方18万円・本人非課税の方9万円
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: ひとり暮らしの高齢者が急病等のとき、通報で受信センターや協力員・消防が対応する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者
+  where: 頁に申請先の記載なし
+  url: https://town.shichikashuku.miyagi.jp/upload_images/6884e86997f5b298dbe9ada28f475ac34675a706.pdf
+  confidence: low
+- category: shingu
+  name: 在宅ねたきり老人等の寝具洗濯
+  name_on_page: 在宅ねたきり老人等寝具洗濯サービス事業
+  summary: 寝たきりなどの高齢者の布団の洗濯・乾燥を行い、在宅生活を支える。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきりなどの高齢者
+  where: 頁に申請先の記載なし
+  url: https://town.shichikashuku.miyagi.jp/upload_images/6884e86997f5b298dbe9ada28f475ac34675a706.pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- koken
+- ribiyo

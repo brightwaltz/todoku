@@ -1,0 +1,95 @@
+city: '024465'
+name: 階上町
+site: www.town.hashikami.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置（福祉安心電話）
+  name_on_page: 緊急通報装置（福祉安心電話）
+  summary: 固定電話に緊急・相談・火災の通報ができる端末を設置し、費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - ひとり暮らしや高齢者のみの世帯などで、利用が必要と認められる方
+  - そのほかの要件は窓口で相談
+  where: 介護福祉課 介護グループ（管理運営は町社会福祉協議会）
+  url: https://www.town.hashikami.lg.jp/index.cfm/7,692,19,446,html
+  confidence: high
+  amount: 月額 200 円（課税状況により機器設置費用の自己負担あり）
+- category: iro
+  name: 介護慰労金
+  name_on_page: 介護慰労金
+  summary: 要介護4・5の人を介護保険サービスなしで在宅介護した家族に慰労金。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護を受けている人と同居し生計を同じくしている人
+  - 1年以上階上町に居住している人
+  - 過去1年、介護保険サービスを利用していない（年1週間程度のショートステイは除く）
+  where: 介護福祉課 介護グループ（対象者には案内を送付）
+  url: https://www.town.hashikami.lg.jp/index.cfm/7,95,19,446,html
+  confidence: high
+  amount: 介護を受けている人1人につき年額 10 万円
+- category: haikai
+  name: あんしんカード事業
+  name_on_page: あんしんカード事業
+  summary: 道に迷うおそれのある人の情報を町と警察に登録し、保護に備える。無料。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上
+  - 八戸圏域の8市町村のいずれかに住んでいる
+  - 認知症などで徘徊して自宅に戻れなくなるおそれがある方
+  where: 介護福祉課窓口
+  url: https://www.town.hashikami.lg.jp/index.cfm/7,25014,19,446,html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 敬老祝金
+  name_on_page: 敬老祝金の支給
+  summary: 88歳になる人に1万円、100歳に達した人に10万円を支給する。
+  who: {}
+  at_application:
+  - 当該年度に88歳になる人（4月1日時点で1年以上町に住所）
+  - または、100歳に達した人（1年以上町に住所）
+  where: 介護福祉課 介護グループ（申請の要否は頁に記載なし）
+  url: https://www.town.hashikami.lg.jp/index.cfm/7,93,19,106,html
+  confidence: high
+  amount: 88歳 10,000 円、100歳 100,000 円
+- category: sonota
+  name: 高齢者サポートセンター
+  name_on_page: 階上町高齢者サポートセンター
+  summary: ひとり暮らしの高齢者の通院の付き添いや家事を、有料のサポーターが助ける。
+  who:
+    age_min: 65
+  at_application:
+  - 町内在住で、ひとり暮らしなど支援を必要とする方（依頼会員になる）
+  where: 介護福祉課 介護グループ（事業は見心園在宅介護支援センターに委託）
+  url: https://www.town.hashikami.lg.jp/index.cfm/7,1384,19,106,html
+  confidence: low
+  amount: サポーター1人につき1時間 500 円
+not_found:
+- kaigo-yohin
+- haishoku
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- koken

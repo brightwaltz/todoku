@@ -1,0 +1,66 @@
+city: '024457'
+name: 南部町
+site: www.town.aomori-nanbu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品給付
+  name_on_page: 介護用品給付事業
+  summary: 要介護4・5の人を在宅で介護する家族に、紙おむつ等の引換券を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護している家族も住民税非課税世帯
+  - 生活保護の適用を受けている方は対象外
+  where: 南部町健康センター 福祉介護課 地域福祉班
+  url: https://www.town.aomori-nanbu.lg.jp/page/1204.html
+  confidence: high
+  amount: 月 6,250 円分の引換券（7月から翌年6月まで）
+- category: gaishutsu
+  name: 外出支援サービス
+  name_on_page: 外出支援サービス事業
+  summary: 交通機関を使いにくい在宅の高齢者を、通院や入退院のとき送迎する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で心身の障害・疾病等により一般の交通機関を使いにくい方
+  - または、おおむね60歳以上で下肢が不自由な方
+  - 利用は通院、入退院、介護保険施設への入退所のとき
+  - 利用の可否は申請後に関係者の会議で決定
+  where: 南部町健康センター 福祉介護課 地域福祉班（要介護認定者は担当ケアマネジャー）
+  url: https://www.town.aomori-nanbu.lg.jp/page/1205.html
+  confidence: high
+  amount: 登録料 年1,000円、5kmまで1,000円、1kmごとに100円加算
+- category: sonota
+  name: 入浴施設等の無料利用券
+  name_on_page: 南部町入浴施設等利用事業
+  summary: 高齢者に、町内3か所の入浴施設で使える無料利用券を交付する。
+  who: {}
+  at_application:
+  - 令和8年4月1日時点で町に住民登録がある、昭和37年4月1日以前生まれの方
+  - 施設入所者は除く
+  - 利用券は再発行しない
+  where: 頁に申請先の記載なし（福祉介護課の頁）
+  url: https://www.town.aomori-nanbu.lg.jp/page/1807.html
+  confidence: low
+  amount: 町内3施設の無料利用券（令和8年4月〜令和9年3月）
+not_found:
+- haishoku
+- kinkyu-tsuho
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- koken
+- iro

@@ -1,0 +1,83 @@
+city: '033014'
+name: 雫石町
+site: www.town.shizukuishi.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者等紙おむつ支給
+  name_on_page: 高齢者等紙おむつ支給事業
+  summary: 要介護3〜5の人を在宅で介護する家族に、紙おむつの購入助成券を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 対象は在宅の高齢者または身体障がい者
+  - 紙おむつ代が恒常的に月額6,000円を超える見込み
+  - 生活保護を受けている世帯は除く
+  where: 地域包括支援センター（役場福祉課窓口でも申請書を受け取れる）
+  url: https://www.town.shizukuishi.iwate.jp/docs/2014112800104/
+  confidence: high
+  amount: 助成券1枚3,000円を月1枚（年度分を一括交付）
+- category: haishoku
+  name: 在宅昼食サービス
+  name_on_page: 在宅昼食サービス事業
+  summary: 調理が難しい高齢者に昼食を届け、あわせて安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - おおむね65歳以上
+  - 老衰・心身の障害・傷病等で調理が困難な方
+  - 特殊な病人食を必要としない方
+  where: 地域包括支援センター（役場福祉課窓口でも申請書を受け取れる）。事業は町社会福祉協議会に委託
+  url: https://www.town.shizukuishi.iwate.jp/docs/2014112800043/
+  confidence: high
+  amount: 1食 500 円（昼食のみ、月〜金の希望曜日）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らし高齢者に、緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等
+  - 同一敷地内・同一建物内に親族が住んでいない
+  - 慢性的な疾患等で日常生活に常時注意が必要
+  - 世帯の生計中心者が住民税非課税
+  - 緊急時に確認できる協力者を確保できる
+  where: 地域包括支援センター
+  url: https://www.town.shizukuishi.iwate.jp/docs/2014112800111/
+  confidence: high
+  amount: 設置費用は無料（回線使用料・通話料等は自己負担）
+- category: gaishutsu
+  name: 高齢者外出支援（タクシー助成券）
+  name_on_page: 高齢者外出支援事業
+  summary: 車いすが必要な高齢者に、リフト付きタクシーの利用助成券を出す。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上
+  - 心身の障害・疾病等で常時車椅子が必要、一般の交通機関が困難
+  - 世帯の生計中心者が住民税非課税
+  where: 地域包括支援センター（役場福祉課窓口でも申請書を受け取れる）
+  url: https://www.town.shizukuishi.iwate.jp/docs/2016082300066/
+  confidence: high
+  amount: 助成券は月1枚、1か月あたり 12,000 円以内（年度分を一括交付）
+not_found:
+- haikai
+- hochoki
+- koken
+- mimamori

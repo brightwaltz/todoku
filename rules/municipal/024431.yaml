@@ -1,0 +1,53 @@
+city: '024431'
+name: 田子町
+site: www.town.takko.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護支援金
+  name_on_page: 家族介護支援金支給事業
+  summary: 要介護3以上の人を在宅で介護する家族に、支援金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 町内に3か月以上住み、3か月以上在宅で介護している主たる介護者
+  - 介護者が住民税非課税で、介護保険料を滞納していない
+  - 介護者・本人が生活保護・特別障害者手当を受けていない
+  - 入院・施設入所が月15日以上でない
+  where: 地域包括支援課（せせらぎの郷内）
+  url: https://www.town.takko.lg.jp/index.cfm/10,0,25,233,html
+  confidence: high
+  amount: 要介護高齢者1人につき月額 6,000 円（年3回支給）
+- category: koken
+  name: 成年後見制度利用支援事業（報酬助成）
+  name_on_page: 田子町成年後見制度利用支援事業
+  summary: 後見人等への報酬の支払いが難しい人に、報酬を助成する。
+  who: {}
+  at_application:
+  - 被後見人等で、居住・収入・資産の要件をすべて満たす方
+  - 後見人等が本人の親族である場合は対象外
+  - 家庭裁判所の報酬付与審判から6か月以内に申請
+  where: 65歳以上は地域包括支援課、65歳未満は住民課 福祉グループ
+  url: https://www.town.takko.lg.jp/index.cfm/10,12892,html
+  confidence: high
+  amount: 在宅は月額 28,000 円、入所等は月額 18,000 円が上限
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori

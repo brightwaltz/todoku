@@ -1,0 +1,77 @@
+city: '044016'
+name: 松島町
+site: www.town.miyagi-matsushima.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 夕食の宅配サービス
+  name_on_page: お晩ディッシュ（宅配夕食サービス）
+  summary: ひとり暮らしなどの高齢者に、栄養のとれた夕食を自宅へ届ける。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし、高齢者世帯の方等
+  - 自立支援の観点からサービスの利用が必要な方
+  where: 健康長寿課 高齢者支援班介護保険担当（この頁の問い合わせ先）
+  url: https://www.town.miyagi-matsushima.lg.jp/page/1213.html
+  confidence: high
+  amount: 1食550円。月〜土曜日（日曜・祝日・年末年始を除く）
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 緊急通報システム
+  summary: 病気などで不安のある一人暮らしや高齢者世帯に、緊急通報の機器を貸し出す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の一人暮らし、高齢者世帯の方
+  - 病気等で日常生活に不安がある
+  where: 健康長寿課 高齢者支援班介護保険担当（この頁の問い合わせ先）
+  url: https://www.town.miyagi-matsushima.lg.jp/page/1213.html
+  confidence: high
+  amount: 利用料は月額500円と電話通話料
+- category: kaigo-yohin
+  name: 高齢者の紙おむつ購入助成
+  name_on_page: 高齢者紙おむつ購入助成事業
+  summary: 寝たきり等で常時おむつを使う在宅の高齢者に、紙おむつの助成券を交付する。
+  who:
+    age_min: 65
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 寝たきり等で常時おむつを使っている要介護の高齢者
+  - 申請期限は5月15日（上半期）と11月15日（下半期）
+  - 申請に介護保険被保険者証等が必要
+  where: 松島町保健福祉センター 健康長寿課高齢者支援班の窓口
+  url: https://www.town.miyagi-matsushima.lg.jp/page/1213.html
+  confidence: high
+  amount: 助成券を上半期1,500円分・下半期1,500円分（社会福祉協議会の助成券と併せて交付）
+- category: haikai
+  name: はいかい高齢者SOSネットワーク
+  name_on_page: 松島町はいかい高齢者SOSネットワークシステム
+  summary: はいかいのおそれがある方を登録し、行方不明のときに早く見つける仕組み。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 松島町に住んでいる
+  - おおむね65歳以上で、認知症等によりはいかいのおそれがある
+  where: 松島町地域包括支援センター（保健福祉センターどんぐり内）。家族等が申請
+  url: https://www.town.miyagi-matsushima.lg.jp/page/1320.html
+  confidence: high
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- koken
+- nichijo-yogu
+- mimamori

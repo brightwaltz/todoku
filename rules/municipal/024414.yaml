@@ -1,0 +1,148 @@
+city: '024414'
+name: 三戸町
+site: www.town.sannohe.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の給付
+  name_on_page: 家族介護用品給付事業
+  summary: 重度の要介護者を在宅で介護する人に、紙おむつ等の給付券を送る。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護3は主治医意見書の尿失禁欄に該当等が条件（4・5は不要）
+  - 3か月以上在宅で介護している介護者
+  - 町に3か月以上居住、町への債務の滞納がない
+  - 介護者本人が住民税課税以外の方
+  where: 健康長寿課 高齢者支援班
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: high
+  amount: 月額 6,000 円相当分の給付券
+- category: iro
+  name: 家族介護支援金
+  name_on_page: 家族介護支援金支給事業
+  summary: 要介護3以上の人を在宅で長く介護する家族に、支援金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 同居して1年以上、在宅で介護している介護者
+  - 過去1年に介護保険サービスを使っていない
+  - 過去1年に90日以上の入院がない
+  - 滞納がない。特別障害者手当等の受給者の介護者は除く
+  where: 健康長寿課 高齢者支援班
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: high
+  amount: 月額 5,000 円（年3回、要件を満たした月数分）
+- category: haishoku
+  name: みまもり配食
+  name_on_page: みまもり配食サービス事業
+  summary: 昼食の弁当を自宅に届け、あわせて安否を確認する。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らし、高齢者のみの世帯、これに準ずる世帯
+  - 心身の障がい・傷病等で食事の準備が困難な方
+  where: 健康長寿課 高齢者支援班
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: high
+  amount: 利用者負担 弁当1食 450 円、おかず1食 350 円
+- category: kinkyu-tsuho
+  name: 福祉安心電話
+  name_on_page: 福祉安心電話サービス事業（緊急通報装置）
+  summary: 緊急通報装置を既存の電話に付け、相談にも応じる。利用料は無料。
+  who: {}
+  at_application:
+  - 一人暮らし高齢者、高齢者のみの世帯、これに準ずる世帯
+  - 緊急時の対応に不安のある方
+  where: 三戸町社会福祉協議会
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: high
+  amount: 利用料 無料
+- category: mimamori
+  name: ほのぼの見守りネットワーク
+  name_on_page: ほのぼの見守りネットワーク事業
+  summary: 協力員が高齢者宅を訪ね、安否を確認する。
+  who: {}
+  at_application:
+  - 65歳以上で近所の見守りが必要な一人暮らし・高齢者のみの世帯等
+  - または、寝たきりの高齢者や障害者がいる家庭
+  where: 三戸町社会福祉協議会
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: low
+- category: haikai
+  name: あんしんカード
+  name_on_page: 三戸町あんしんカード事業
+  summary: 道に迷うおそれのある人の情報を町と警察に登録し、保護に備える。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 道に迷うようになったり、家に帰れなくなる恐れのある方
+  where: 町窓口（健康長寿課・地域包括支援センター）
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: high
+- category: gaishutsu
+  name: 外出支援サービス（移送）
+  name_on_page: 外出支援サービス事業
+  summary: 車いす・ストレッチャー対応車で、医療機関等へ移送する。
+  who: {}
+  at_application:
+  - 寝たきりなどで一般の交通機関を利用できない方
+  - 発着のどちらかが三戸町であること
+  where: 三戸町社会福祉協議会（申請・予約）
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: high
+  amount: 1回（5km まで）300 円、1km ごとに 50 円加算
+- category: gaishutsu
+  name: シニアおでかけ応援タクシー券
+  name_on_page: 三戸町シニアおでかけ応援！タクシー利用助成事業
+  summary: 65歳以上で車を運転しない人に、タクシー利用助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 町内在住で自動車を運転しない方
+  - 病院・施設に入院・入所していない方
+  - 生活保護受給者は除く
+  - 申請期限は令和8年12月28日
+  where: 健康長寿課（保健センター）、斗川支所、猿辺支所
+  url: https://www.town.sannohe.aomori.jp/kenko_fukushi_kaigo/1/koureihukushi/5729.html
+  confidence: high
+  amount: 700 円券を月数分（年間最大12枚）
+- category: sonota
+  name: 除雪支援
+  name_on_page: 除雪支援サービス事業
+  summary: 大雪のとき、玄関前から公道までの通り道の除雪をしてくれる。
+  who:
+    age_min: 65
+  at_application:
+  - 一人暮らし、高齢者のみの世帯、これに準ずる世帯
+  - おおむね15cm以上の降雪のとき
+  where: 健康長寿課 高齢者支援班
+  url: https://www.town.sannohe.aomori.jp/material/files/group/8/R7soudannnaiyoubetu.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo

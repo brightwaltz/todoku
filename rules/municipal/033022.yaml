@@ -1,0 +1,174 @@
+city: '033022'
+name: 葛巻町
+site: www.town.kuzumaki.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者等外出支援（タクシー利用助成券）
+  name_on_page: 高齢者等外出支援事業（タクシー利用助成）
+  summary: 75歳以上の人などに、タクシー料金の8割を助成する券を月4枚交付する。
+  who:
+    at_home: true
+  at_application:
+  - 令和8年4月1日時点で町に住民登録があり在宅生活の方
+  - 75歳以上、障害者手帳、運転免許の自主返納のいずれかに当たる
+  - タクシー料金が1回1,000円以上のとき1枚使える
+  where: 健康福祉課（くずま〜る1階）
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000359/
+  confidence: high
+  amount: 利用金額の8割（100円未満切り捨て）、助成券は月4枚（最大6か月分まとめて可）
+- category: shingu
+  name: 寝具の洗濯乾燥サービス
+  name_on_page: 寝具の洗濯乾燥サービス
+  summary: 在宅の寝たきりの高齢者などの寝具を洗濯・乾燥・消毒する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯・高齢者のみ世帯などの高齢者と身体障がい者
+  - 寝具類の衛生管理が困難な方
+  where: 健康福祉課福祉担当
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000359/
+  confidence: high
+  amount: 年度内2回以内（利用料は頁に記載なし）
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 電磁調理器（給付）
+  summary: 防火に配慮が必要な一人暮らしの高齢者などに、電磁調理器を給付する。
+  who:
+    flags:
+    - fire_risk
+  at_application:
+  - おおむね65歳以上の高齢者など
+  - 心身機能の低下で防火などの配慮が必要な一人暮らしの高齢者など
+  where: 健康福祉課福祉担当
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000359/
+  confidence: high
+  amount: 利用者負担は世帯の所得税額により0円〜全額（別表）
+- category: nichijo-yogu
+  name: 福祉電話の貸し付け
+  name_on_page: 福祉電話（貸し付け）
+  summary: 低所得の一人暮らしの高齢者などに、福祉電話を貸し付ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者など
+  - 低所得の一人暮らしの高齢者など
+  where: 健康福祉課福祉担当
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000359/
+  confidence: high
+  amount: 利用者負担は世帯の所得税額により0円〜全額（別表）
+- category: kaigo-yohin
+  name: 家族介護用品給付券（おむつ券）
+  name_on_page: 家族介護用品給付券（おむつ券）の給付
+  summary: 要介護の人を在宅で介護する家族に、おむつ券を年4回送る。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護2〜5、または身体障害者手帳1・2級（下肢・体幹）の方を介護
+  - 介護者と要介護者の双方が町内に住所がある
+  - 常時おむつが必要（就寝時や外出時のみは対象外）
+  where: 健康福祉課
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000373/
+  confidence: high
+  amount: 町民税非課税・均等割課税世帯は月 3,000 円、課税世帯は月 2,000 円
+- category: iro
+  name: 家族介護慰労
+  name_on_page: 家族介護慰労
+  summary: 要介護4・5の人を介護保険サービスなしで介護する家族に慰労金。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間に介護保険サービスを受けていない等の条件を満たす方
+  - 所得制限あり
+  where: 健康福祉課（頁に申請先の明記なし）
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000373/
+  confidence: high
+  amount: 年額 10 万円まで
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 電話回線の緊急通報電話機で、急病などの際に在宅介護支援センターへ通報できる。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者、重度の身体障がい者
+  - 日常生活に支障がある高齢者のみの世帯
+  - 世帯員の就労などで一人暮らしと同様の状態になる高齢者 など
+  where: 健康福祉課
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000373/
+  confidence: high
+- category: sonota
+  name: 生活管理指導員派遣（ホームヘルプ）
+  name_on_page: 生活管理指導員派遣（ホームヘルプサービス）
+  summary: 社会適応が難しい高齢者の家を訪問し、生活の支援と指導をする。
+  who:
+    age_min: 60
+  at_application:
+  - 社会適応が困難な60歳以上の高齢者がいる家庭
+  - 日常生活の支援と指導が必要な方
+  where: 健康福祉課介護係
+  url: https://www.town.kuzumaki.lg.jp/docs/2015111000366/
+  confidence: high
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 配食サービス事業
+  summary: 宅配ボランティアが弁当を届け、安否も確認する（計画の記載）。
+  who: {}
+  at_application:
+  - 70歳以上の一人暮らし、75歳以上の高齢者、心身に障がい・傷病のある人
+  - そのほか町長が特に必要と認めた人
+  where: 葛巻町社会福祉協議会（事業の委託先。申請先の記載なし）
+  url: https://www.town.kuzumaki.lg.jp/docs/2018070400017/file_contents/kuzumaki_elderly_R6-8.pdf
+  confidence: low
+- category: ribiyo
+  name: 訪問理美容サービス事業
+  name_on_page: 訪問理美容サービス事業
+  summary: 店に行けない高齢者に、訪問理美容の利用券を1年分まとめて給付する。
+  who: {}
+  at_application:
+  - 要介護度が高い高齢者や心身の障がい・傷病で、理美容店に行くことが困難な人
+  where: 町内の理美容店へ委託（申請先の記載なし）
+  url: https://www.town.kuzumaki.lg.jp/docs/2018070400017/file_contents/kuzumaki_elderly_R6-8.pdf
+  confidence: low
+  amount: 1枚1,000円の利用券を4枚（1年分）
+- category: jutaku
+  name: やさしい住まいづくり事業
+  name_on_page: 高齢者及び障がい者にやさしい住まいづくり事業
+  summary: 要介護・要支援の高齢者などの住宅改修費の一部を助成する（計画の記載）。
+  who: {}
+  at_application:
+  - 住宅改修が必要な要介護者・要支援者、または重度身体障がい者（1〜3級）のいる世帯
+  where: 町（計画に申請先の記載なし）
+  url: https://www.town.kuzumaki.lg.jp/docs/2018070400017/file_contents/kuzumaki_elderly_R6-8.pdf
+  confidence: low
+  amount: 改修経費の一部を助成（上限 40 万円）
+- category: gaishutsu
+  name: 外出支援事業（リフト付き車両の送迎）
+  name_on_page: 外出支援事業
+  summary: 車いすの人を、リフト付き車両で通院や買い物などに送迎する（計画の記載）。
+  who: {}
+  at_application:
+  - 町内在住で歩行が困難なため車椅子等を使用し、公共交通機関の利用が困難な人
+  where: 葛巻町社会福祉協議会（事業の委託先。申請先の記載なし）
+  url: https://www.town.kuzumaki.lg.jp/docs/2018070400017/file_contents/kuzumaki_elderly_R6-8.pdf
+  confidence: low
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 低所得の高齢者の成年後見の申立て費用や後見人報酬を助成する（計画の記載）。
+  who: {}
+  at_application:
+  - 低所得者の高齢者
+  where: 町（計画に申請先の記載なし）
+  url: https://www.town.kuzumaki.lg.jp/docs/2018070400017/file_contents/kuzumaki_elderly_R6-8.pdf
+  confidence: low
+not_found:
+- hochoki

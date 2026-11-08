@@ -1,0 +1,151 @@
+city: '035246'
+name: 一戸町
+site: www.town.ichinohe.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 外出支援サービス（通院・入退院の移送）
+  name_on_page: 外出支援サービス事業（移送）
+  summary: 歩行が困難な高齢者を、リフト付き車両などで通院・入退院の送迎をする。
+  who: {}
+  at_application:
+  - 歩行が困難な高齢者
+  - 所得などの制限はない
+  where: 福祉課 福祉班（運営は一戸町社会福祉協議会）
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2849.html
+  confidence: high
+  amount: 自己負担は1回500円（15km未満）、700円（15km以上）
+- category: sonota
+  name: 軽度生活援助（家周りの手入れ・軽微な修繕・除雪など）
+  name_on_page: 軽度生活援助事業
+  summary: ひとり暮らし等の高齢者に、家周りの手入れや軽微な修繕などの手伝いをする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 所得などの制限はない
+  where: 福祉課 福祉班
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2849.html
+  confidence: high
+  amount: サービス提供者1人あたり1時間300円（材料費などは実費）
+- category: haishoku
+  name: 配食サービス（昼食の配達と安否確認）
+  name_on_page: 配食サービス事業
+  summary: 在宅の調理が困難な高齢者に、昼食を届けて安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 調理が困難な高齢者
+  - 所得などの制限はない
+  where: 福祉課 福祉班（運営は一戸町社会福祉協議会）
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2849.html
+  confidence: high
+  amount: 1食400円。毎週水曜日の昼食
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らし等の高齢者に、緊急連絡用の通報装置などを貸与する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者のみの世帯
+  - 所得などの制限はない
+  where: 福祉課 福祉班
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2849.html
+  confidence: high
+  amount: 設置費1,507円・利用料月385円（町民税非課税世帯は設置費無料）
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付・貸与
+  name_on_page: 日常生活用具給付事業
+  summary: 寝たきりやひとり暮らしの高齢者に、電磁調理器・火災報知器・自動消火器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の長期の寝たきり、またはひとり暮らしの高齢者等
+  - 品目ごとに利用要件が異なる
+  where: 福祉課 福祉班
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2849.html
+  confidence: high
+  amount: 自己負担は0円〜全額（世帯の所得階層で決定）。電話加入権は貸与
+- category: iro
+  name: 在宅介護者支援給付金（家族介護慰労）
+  name_on_page: 在宅介護者支援給付金事業（家族介護慰労事業）
+  summary: 要介護4・5（相当）の方を在宅で介護する家族に、給付金を年1回支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 要介護4・5、またはそれに相当する在宅要介護者を介護している家族
+  - 過去1年のサービス利用が支給限度基準額の1割に満たない
+  - 所得などの制限はない
+  where: 福祉課 福祉班
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2851.html
+  confidence: high
+  amount: 年額：要介護4相当 36,000円、要介護5相当 42,000円
+- category: kaigo-yohin
+  name: オムツ助成（老人日常生活総合援助事業）
+  name_on_page: 老人日常生活総合援助事業（オムツ助成）
+  summary: 昼夜オムツを使う寝たきり等の高齢者を在宅で介護する世帯に、購入費の給付券を出す。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上で、寝たきりや認知症などで昼夜オムツを使用
+  - 生計中心者の前年分の所得税が課税されている場合は対象外
+  where: 福祉課 福祉班
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2851.html
+  confidence: high
+  amount: 月5,000円分の給付券を年12枚
+- category: jutaku
+  name: 高齢者・障害者にやさしい住まいづくり（住宅改修の助成）
+  name_on_page: 高齢者及び障害者にやさしい住まいづくり事業
+  summary: 要介護認定を受けた高齢者の世帯が住宅改修をするとき、工事費の一部を助成する。
+  who: {}
+  at_application:
+  - 要介護認定を受けている高齢者の世帯
+  - 所得の制限がある
+  - 着工前に申請（申請前の着工は対象外）
+  where: 福祉課 福祉班
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2846.html
+  confidence: high
+  amount: 対象工事費の3分の2、最大40万円
+- category: mimamori
+  name: あんしんハローライト（見守り電球）の利用補助
+  name_on_page: あんしんハローライトプラン活用事業
+  summary: 見守り電球を設置し、24時間動きが無いと家族等にメールが届く。月額の一部を町が補助。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者等
+  - 見守られる方は一戸町民で、設置先は町内に限る
+  where: 福祉課（登録届出書を提出）
+  url: https://www.town.ichinohe.iwate.jp/soshikikarasagasu/fukushi/fukushihan/koreisyafukushi/HelloLight.html
+  confidence: high
+  amount: 月額580円（月額1,738円のうち1,158円を町が補助）
+- category: sonota
+  name: 生きがい外出支援（杖・シルバーカーの購入補助）
+  name_on_page: 生きがい外出支援事業（杖・シルバーカー補助）
+  summary: シルバーカーや歩行用の杖の購入費の一部を助成する。
+  who: {}
+  at_application:
+  - 所得の制限がある
+  - シルバーカー・杖それぞれ1回の利用に限る
+  where: 福祉課 福祉班
+  url: https://www.town.ichinohe.iwate.jp/lifescenekarasagasu/kaigo_korei/2853.html
+  confidence: high
+  amount: 購入費の2分の1以内、5,000円が限度
+not_found:
+- hochoki
+- koken
+- shingu
+- ribiyo
