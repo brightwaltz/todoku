@@ -1,0 +1,59 @@
+city: '024236'
+name: 大間町
+site: www.town.ooma.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（社会福祉協議会）
+  name_on_page: 配食サービス
+  summary: 栄養改善や一人暮らし高齢者の見守りを兼ねて、社会福祉協議会が配食を行う。
+  who: {}
+  at_application: []
+  where: 社会福祉協議会（業務委託先。計画に申込先の明記なし）
+  url: https://www.town.ooma.lg.jp/lifeguide/fukushi/files/aa.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: 家族介護支援特別事業（介護用品の支給）
+  name_on_page: 家族介護支援特別事業
+  summary: 在宅で介護している世帯に、家族の負担を軽くするため介護用品を支給する。
+  who:
+    at_home: true
+  at_application: []
+  where: 計画に申請先の明記なし
+  url: https://www.town.ooma.lg.jp/lifeguide/fukushi/files/aa.pdf
+  confidence: low
+- category: gaishutsu
+  name: 外出支援サービス（移送用車両の送迎）
+  name_on_page: 外出支援サービス
+  summary: 移動手段に乏しい人を、移送用車両で自宅と老人福祉施設や医療施設などの間で送迎する。
+  who: {}
+  at_application:
+  - 移動手段に乏しい人
+  where: 計画に申請先の明記なし
+  url: https://www.town.ooma.lg.jp/lifeguide/fukushi/files/aa.pdf
+  confidence: low
+- category: sonota
+  name: 軽度生活支援サービス（軽微な修理・雪下ろし・外出時の援助など）
+  name_on_page: 軽度生活支援サービス
+  summary: 軽度な援助が必要な在宅の一人暮らし高齢者等に、軽微な修理や雪下ろしなどの援助をする。
+  who: {}
+  at_application:
+  - 軽度な援助が必要な在宅の一人暮らし高齢者等
+  where: 計画に申請先の明記なし
+  url: https://www.town.ooma.lg.jp/lifeguide/fukushi/files/aa.pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- haikai
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,163 @@
+city: 015491
+name: 訓子府町
+site: www.town.kunneppu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食・週3回）
+  name_on_page: 配食サービス
+  summary: 調理が難しい方へ、週3回（月・水・金）夕食を配達する。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者、高齢者世帯、障がい者で食事の調理が難しい方
+  - ひとり暮らしに準ずる世帯で心身に障がいのある方も可
+  where: 福祉保健課（総合福祉センター内。申請用紙も同じ）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/syakaihukusi/zaitaku_sabisu.html
+  confidence: high
+  amount: 1食 300 円
+- category: gaishutsu
+  name: 移送サービス（通院）
+  name_on_page: 移送サービス
+  summary: 公共交通を使えず家族も送迎できない高齢者が、通院するとき月2回利用できる。
+  who: {}
+  at_application:
+  - 歩行困難で公共交通機関を使えず、家族が送迎できない高齢者など
+  where: 福祉保健課（総合福祉センター内。申請用紙も同じ）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/syakaihukusi/zaitaku_sabisu.html
+  confidence: high
+  amount: 町内医療機関は往復 100 円（2km以内）か 300 円（2km以上）。町外は北見市などで往復 1,400 円
+- category: mimamori
+  name: 愛の声かけ訪問
+  name_on_page: 愛の声かけ訪問
+  summary: ヤクルト販売員が週3回訪問し、ひとり暮らしの高齢者の安否を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 日出地区を除く市街地区のみ
+  where: 福祉保健課（総合福祉センター内。申請用紙も同じ）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/syakaihukusi/zaitaku_sabisu.html
+  confidence: high
+  amount: 無料
+- category: mimamori
+  name: 訪問サービス
+  name_on_page: 訪問サービス
+  summary: 病弱でコミュニケーションが取りにくい高齢者を定期的に訪問し、安否や健康状態を確認する。
+  who:
+    household:
+    - alone
+    - alone_daytime
+  at_application:
+  - 病弱などで近隣とのコミュニケーションが取りにくい方
+  where: 福祉保健課（総合福祉センター内。申請用紙も同じ）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/syakaihukusi/zaitaku_sabisu.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 自分で除雪ができない方の、玄関前の緊急避難通路と置き雪を除雪する。
+  who: {}
+  at_application:
+  - 病弱などの理由で自分で除雪ができない方
+  - 高齢者のみの世帯、障がい者のみの世帯などが対象
+  where: 福祉保健課（総合福祉センター内。申請用紙も同じ）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/syakaihukusi/zaitaku_sabisu.html
+  confidence: high
+  amount: 市町村民税非課税世帯 1,000 円、課税世帯 3,000 円
+- category: jutaku
+  name: 高齢者等健やか住宅改造費補助
+  name_on_page: 高齢者等健やか住宅改造費補助
+  summary: 手すりの設置や段差解消などの住宅改修の費用の半額を助成する。
+  who: {}
+  at_application:
+  - 日常生活に介助を要するおおむね65歳以上の高齢者のいる世帯
+  where: 福祉保健課（総合福祉センター内。申請用紙も同じ）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/syakaihukusi/zaitaku_sabisu.html
+  confidence: high
+  amount: 費用の半額（助成限度額 18 万円）
+- category: kinkyu-tsuho
+  name: 災害弱者緊急通報装置
+  name_on_page: 災害弱者緊急通報装置
+  summary: 急病などのとき通報センターにつながる装置を貸し出す。
+  who:
+    household:
+    - alone
+  at_application:
+  - ひとり暮らしの高齢者で病弱な方
+  where: 福祉保健課（総合福祉センター内。申請用紙も同じ）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/syakaihukusi/zaitaku_sabisu.html
+  confidence: high
+  amount: 設置取付料は無料（通話料は自己負担）
+- category: gaishutsu
+  name: 高齢者ハイヤー利用サービス
+  name_on_page: 高齢者ハイヤー利用サービス
+  summary: 町内のハイヤーに300円でどこまでも乗れ、超えた運賃は町が負担する。
+  who:
+    age_min: 75
+  at_application:
+  - 町内に住所があり、利用登録が必要
+  - 利用券は最大120枚（申請月で変わる）
+  where: 役場企画財政課（庁舎2階 窓口12番）
+  url: https://www.town.kunneppu.hokkaido.jp/life/kikaku/haiya.html
+  confidence: high
+  amount: 1回 300 円（超えた運賃は町が負担）
+  more_urls:
+  - https://www.town.kunneppu.hokkaido.jp/fs/1/7/0/2/_/haiyatirashi.pdf
+- category: gaishutsu
+  name: 路線バス高齢者利用支援
+  name_on_page: 路線バス高齢者利用支援
+  summary: 北見行・置戸行のバスを300円で利用でき、超えた運賃は町が負担する。
+  who:
+    age_min: 75
+  at_application:
+  - 町内に住所があり、利用登録が必要
+  - 現金で払う普通運賃のみ（バスカードは不可）
+  where: 役場企画財政課（庁舎2階 窓口12番）
+  url: https://www.town.kunneppu.hokkaido.jp/life/kikaku/haiya.html
+  confidence: high
+  amount: 1回 300 円（超えた運賃は町が負担）
+  more_urls:
+  - https://www.town.kunneppu.hokkaido.jp/fs/1/7/0/3/_/bustirashi.pdf
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク（事前登録）
+  name_on_page: 認知症高齢者等SOSネットワーク
+  summary: 所在不明になるおそれのある方を事前登録し、行方不明のとき協力機関で探す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症や障がいなどで所在不明となるおそれのある方
+  - 本人の情報を事前に登録
+  where: 福祉保健課 高齢者支援係（頁に登録窓口の明記なし）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/koresyasien/ninnchisyou.html
+  confidence: high
+- category: haikai
+  name: 高齢者等見守り位置探索サービス（GPS端末の助成）
+  name_on_page: 高齢者等見守り位置探索サービス
+  summary: 徘徊のある認知症高齢者の位置を探せるGPS端末の購入費などを助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - おおむね65歳以上の徘徊のある認知症高齢者を在宅で介護している家族
+  where: 窓口で申請（福祉保健課。頁に課名の明記なし）
+  url: https://www.town.kunneppu.hokkaido.jp/life/hukusihoken/koresyasien/ninnchisyou.html
+  confidence: high
+  amount: 加入料金と機器購入費（上限 1 万 5,000 円）。月額基本料金・利用料は自己負担
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

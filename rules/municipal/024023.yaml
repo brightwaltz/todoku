@@ -1,0 +1,52 @@
+city: '024023'
+name: 七戸町
+site: www.town.shichinohe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 七戸町高齢者補聴器購入費助成事業
+  summary: 65歳以上で手帳の対象にならない難聴の人の、補聴器本体の購入費を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 両耳の聴力40dB以上70dB未満で、耳鼻科医が補聴器の有用性を認めた
+  - 身体障害者（聴覚障害）の手帳の交付対象にならない
+  - 過去5年間にこの助成を受けていない
+  - 購入前に申請し、決定前に買った補聴器は対象外
+  where: 介護高齢課
+  url: https://www.town.shichinohe.lg.jp/kurashi/iryou/shien/post-566.html
+  confidence: high
+  amount: 補聴器本体の実支出額、上限30,000円
+- category: haikai
+  name: 徘徊高齢者等の事前登録（見守りネットワーク）
+  name_on_page: 七戸町徘徊高齢者等見守りネットワーク事業（七戸町徘徊高齢者等登録事業）
+  summary: 家族等が事前に登録し、行方不明のときに警察・消防・関係機関へ情報を提供して早く保護する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 家族等が登録届を出す（印鑑と顔写真・全身写真の2枚）
+  - 登録情報は本人（届出者）の同意のもとで関係機関へ提供される
+  where: 介護高齢課
+  url: https://www.town.shichinohe.lg.jp/kurashi/iryou/shien/haikai.html
+  confidence: high
+not_found:
+- iro
+- haishoku
+- kinkyu-tsuho
+- gaishutsu
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- koken

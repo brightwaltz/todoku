@@ -1,0 +1,65 @@
+city: 023019
+name: 平内町
+site: www.town.hiranai.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（低栄養の予防）
+  name_on_page: 配食サービス
+  summary: 調理が困難で低栄養のおそれのある方に、栄養バランスのとれた食事を届ける。
+  who: {}
+  at_application:
+  - 調理が困難な方
+  - 閉じこもり等で通所サービスが困難、または低栄養の改善に必要と認められる方
+  - そのほか状態に応じて必要と認められる方
+  - 申請の前に血液検査を受ける
+  where: 平内町地域包括支援センター（福祉介護課）
+  url: https://www.town.hiranai.aomori.jp/soshiki/fukushi/1/3/5/483.html
+  confidence: high
+  amount: 利用者負担は1食（ごはんとおかず）420円
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 平内町高齢者補聴器購入費助成事業
+  summary: 聴力が落ちて生活に支障のある65歳以上の方に、補聴器本体の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 平内町に住所がある（介護保険の住所地特例の方を含む）
+  - 両耳の聴力が30dB以上70dB未満で、聴覚の障害者手帳の対象外
+  - 補聴器相談医が装用を必要と認めた意見書がある
+  - 認定補聴器技能者がいる販売店で、申請・交付決定のあとに購入する
+  - 過去5年に助成を受けていない（反対の耳は可）
+  where: 福祉介護課 介護保険係
+  url: https://www.town.hiranai.aomori.jp/soshiki/fukushi/1/3/5/2165.html
+  confidence: high
+  amount: 片耳は実支出額か5万円の少ない方、両耳は実支出額か10万円の少ない方
+- category: haikai
+  name: 認知症高齢者等のみまもりシールの交付
+  name_on_page: みまもりシール
+  summary: ひとり歩きのおそれのある方に、事前登録した番号入りのシールを交付し、早期の身元確認につなげる。
+  who: {}
+  at_application:
+  - 要介護・要支援の認定を受け、在宅で生活している町民
+  - または認知症のひとり歩きで警察に通報・保護されたことがある方
+  - または65歳未満の若年性認知症の方
+  - またはそのほか帰宅困難となるおそれがある方
+  - 事前登録には本人の同意が必要
+  where: 福祉介護課 地域包括支援センター
+  url: https://www.town.hiranai.aomori.jp/soshiki/fukushi/1/3/5/1/946.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- kinkyu-tsuho
+- shingu
+- ribiyo
+- jutaku
+- nichijo-yogu

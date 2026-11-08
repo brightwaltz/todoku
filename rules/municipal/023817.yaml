@@ -1,0 +1,58 @@
+city: 023817
+name: 板柳町
+site: www.town.itayanagi.aomori.jp
+site_level: title
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅介護用品（おむつ券）の支給
+  name_on_page: 介護用品（おむつ券）支援
+  summary: 在宅で寝たきりの高齢者を介護する家族等に、介護用品（おむつ券）を支給する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 寝たきりの高齢者を在宅で介護している家族等が対象
+  where: 介護福祉課（計画に申請先の明記なし）
+  url: https://www.town.itayanagi.aomori.jp/administration/salary/files/fukushi-kaigohoken_keikaku.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 福祉安心電話（緊急通報装置の接続）
+  name_on_page: 福祉安心電話サービス事業（緊急通報体制システム）
+  summary: ひとり暮らしや高齢者世帯の電話に緊急通報装置を接続し、緊急時の通報と相談に応じる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上で日常生活に支援を要する人（計画の防災の節の記述）
+  where: 計画に申込先の明記なし（相談は板柳町社会福祉協議会につながる）
+  url: https://www.town.itayanagi.aomori.jp/administration/salary/files/fukushi-kaigohoken_keikaku.pdf
+  confidence: low
+- category: sonota
+  name: ひとり暮らし高齢者への無料入浴券
+  name_on_page: 入浴券支給
+  summary: 65歳以上のひとり暮らしの人に、町内の公衆浴場で使える無料入浴券を渡す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 計画に申請先の明記なし
+  url: https://www.town.itayanagi.aomori.jp/administration/salary/files/fukushi-kaigohoken_keikaku.pdf
+  confidence: low
+  amount: 一人当たり20枚（計画の表の値）
+not_found:
+- hochoki
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori

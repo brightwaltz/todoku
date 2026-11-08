@@ -1,0 +1,155 @@
+city: '016047'
+name: 新冠町
+site: www.niikappu.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: ふれあい夕食事業（夕食の宅配）
+  name_on_page: ふれあい夕食事業
+  summary: 調理が困難な在宅の人に、夕食の弁当を届けて安否も確かめる。
+  who:
+    at_home: true
+  at_application:
+  - 単身の高齢者・高齢夫婦世帯・障がいのある方のいずれか
+  - 高齢や障がいで調理が困難
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/yobou.html
+  confidence: high
+  amount: 自己負担あり
+- category: gaishutsu
+  name: 移送サービス（福祉車両での送迎）
+  name_on_page: 移送サービス事業
+  summary: 公共交通が使えず通院の足がない人を、福祉車両で医療機関などへ送迎する。
+  who: {}
+  at_application:
+  - 高齢や障がいなどで公共交通機関の利用が困難
+  - 医療機関等への移動手段がない
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/yobou.html
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報システム端末電話機の貸出
+  name_on_page: 緊急通報システム端末電話機設置事業
+  summary: 緊急連絡の体制が必要な世帯に、緊急通報システムの端末電話機を貸し出す。
+  who: {}
+  at_application:
+  - 町長が設置の必要を認めた単身高齢者世帯・高齢者夫婦世帯など
+  - 単身重度障がい者世帯、高齢者や重度障がい者と同居する世帯も対象
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/sonota.html
+  confidence: high
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の在宅高齢者を介護する家族に、介護用品の購入費を月額で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 町内に居住している
+  - 要介護4か5の在宅高齢者を介護している家族
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/sonota.html
+  confidence: high
+  amount: 月 6,000 円
+- category: sonota
+  name: 家族介護者リフレッシュ（ショートステイ利用料助成）
+  name_on_page: 家族介護者リフレッシュ事業
+  summary: 在宅の要介護者を介護する家族に、ショートステイ 4 日分の利用者負担額を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 町内に居住している
+  - 助成の対象施設は新冠町内・新ひだか町内の介護保険施設
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/sonota.html
+  confidence: high
+  amount: ショートステイ 4 日分の利用者負担額
+- category: gaishutsu
+  name: 寿バス（路線バスの乗車料金を町が負担）
+  name_on_page: 寿バス事業
+  summary: 70 歳以上の町民の、道南バスの町内区間と静内駅・厚賀間の乗車料金を町が負担する。
+  who:
+    age_min: 70
+  at_application:
+  - 新冠町に居住している
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/sonota.html
+  confidence: high
+  amount: 乗車料金の全額
+- category: yutai
+  name: 寿入浴（温泉の無料入浴券）
+  name_on_page: 寿入浴事業
+  summary: 70 歳以上の人や手帳の交付を受けた人に、新冠温泉の無料入浴券を交付する。
+  who: {}
+  at_application:
+  - 新冠町に居住している
+  - 70歳以上、または障害者手帳等の交付を受けている
+  - 身体障害者手帳3級以上の体幹機能障害・下肢障害で補装具の要件を満たす人には、家族風呂半額券も交付
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/sonota.html
+  confidence: high
+  amount: 無料入浴券 年 36 枚まで
+- category: jutaku
+  name: 社会福祉振興補助金（住宅改修の上乗せ）
+  name_on_page: 社会福祉振興補助金
+  summary: 大規模な住宅改修に、介護保険などの助成へ上乗せして予算の範囲内で助成する。
+  who: {}
+  at_application:
+  - 高齢者または重度身体障がい者が在宅生活を続けるための大規模な改修
+  - 移動が困難な人が同乗する福祉車の購入・改造にも助成あり
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/sonota.html
+  confidence: high
+  amount: 上限 100 万円
+- category: sonota
+  name: エンゼル券（町指定ごみ袋の支給）
+  name_on_page: ごみ処理手数料軽減対策事業（エンゼル券）
+  summary: 常時紙おむつを使う要介護の在宅高齢者に、町指定のごみ袋を支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application: []
+  where: 保健福祉課 保健福祉グループ
+  url: https://www.niikappu.jp/kurashi/kenko/koresha/sonota.html
+  confidence: high
+  amount: 町指定ごみ袋 年 30 枚
+not_found:
+- haikai
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha

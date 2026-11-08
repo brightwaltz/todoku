@@ -1,0 +1,143 @@
+city: 016080
+name: 様似町
+site: www.samani.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（見守りを兼ねた夕食の宅配）
+  name_on_page: 配食サービス事業
+  summary: 高齢者などに、見守りを兼ねて定期的に食事（夕食）を届ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者など
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/index17.html
+  confidence: high
+  amount: 1 食 400 円（利用者負担）
+  more_urls:
+  - http://www.samani.jp/annai/kaigo/index9.html
+- category: gaishutsu
+  name: 外出支援サービス（自宅から病院などへの移送）
+  name_on_page: 外出支援サービス事業
+  summary: 介助なしでは移動できず公共交通も使えない人の、自宅と病院などの間の移送を支援する。
+  who: {}
+  at_application:
+  - 他人の介助なしでは移動が困難
+  - 自力で公共交通機関を利用できない
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/index17.html
+  confidence: high
+  amount: 1 回往復で町内 200 円・町外 400 円（付添人を使うと町内 250 円・町外 500 円）
+- category: kinkyu-tsuho
+  name: 緊急通報機の設置
+  name_on_page: 緊急通報体制等整備事業
+  summary: ひとり暮らしなどの高齢者の自宅に緊急通報機を設置し、急病や火災などに備える。
+  who: {}
+  at_application:
+  - 日常生活に不安のあるひとり暮らしの高齢者（65歳以上）など
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/index17.html
+  confidence: high
+  amount: 設置費用は無料
+  more_urls:
+  - http://www.samani.jp/annai/kaigo/index9.html
+- category: iro
+  name: 家族介護等支援事業（要介護支援手当）
+  name_on_page: 家族介護等支援事業
+  summary: 重度の要介護者を在宅で介護している家族などに、月額の支援手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 施設に入所中や、1か月以上入院が続くと支給されない
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/index17.html
+  confidence: high
+  amount: 月額 要介護3は5,000円、要介護4は8,000円、要介護5は10,000円
+  more_urls:
+  - http://www.samani.jp/annai/kaigo/index9.html
+- category: gaishutsu
+  name: 老人等通院費助成（路線バス運賃の半額）
+  name_on_page: 老人等通院費助成事業
+  summary: 通院で路線バスを使うときの運賃の半額を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者など
+  - 町内または隣町の医療機関へ路線バスで通院する
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/index17.html
+  confidence: high
+  amount: 運賃の半額、1人1か月に往復8回まで
+  more_urls:
+  - http://www.samani.jp/annai/kaigo/index9.html
+- category: yutai
+  name: さまにシルバー券（入浴・ハイヤー割引の券）
+  name_on_page: さまにシルバー券交付事業
+  summary: アポイ山荘の入浴券またはハイヤーの割引券に使える 500 円分の券を交付する。
+  who: {}
+  at_application:
+  - 満70歳以上、または障害者手帳の交付を受けている人
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/kaigo/index9.html
+  confidence: high
+  amount: 1 枚 500 円分の券を年 48 枚
+  more_urls:
+  - http://www.samani.jp/annai/index17.html
+- category: sonota
+  name: 短期入所サービス（介護保険の限度額を超える分の宿泊支援）
+  name_on_page: 短期入所サービス事業
+  summary: 介護保険のショートステイの限度額を超える分を、公費で宿泊支援する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 特別な事情で、介護保険の短期入所の支給限度額を超える
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/index17.html
+  confidence: high
+  more_urls:
+  - http://www.samani.jp/annai/kaigo/index9.html
+- category: sonota
+  name: 生活管理指導短期宿泊（自立の人のショートステイ）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 自力での在宅生活に支障がある自立の人に、ソビラ荘での短期の宿泊を提供する。
+  who: {}
+  at_application:
+  - 介護認定を受けていない（自立）人
+  - 基本的生活習慣の欠如などで自力の在宅生活に支障
+  where: 保健福祉課（保健福祉センターきらく）
+  url: http://www.samani.jp/annai/kaigo/index9.html
+  confidence: high
+  amount: 1 日 1,700 円（利用者負担）、年 10 日まで
+  more_urls:
+  - http://www.samani.jp/annai/index17.html
+not_found:
+- kaigo-yohin
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha

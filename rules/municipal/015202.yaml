@@ -1,0 +1,91 @@
+city: '015202'
+name: 幌延町
+site: www.town.horonobe.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: ハイヤー運賃等の助成（利用カード）
+  name_on_page: ハイヤー運賃等助成制度
+  summary: ハイヤーなどの運賃を、電子チケットで町が助成し、安い自己負担で乗れる。
+  who:
+    at_home: true
+  at_application:
+  - 70歳以上の方は全員が対象
+  - 70歳未満は、免許や自家用車が無く障害者手帳等がある方
+  - 70歳未満は、運転免許を自主返納した方なども対象
+  where: 役場等の窓口（申請後に利用カードを交付）
+  url: https://www.town.horonobe.lg.jp/www4/section/jumin/le009f000001m9ff.html
+  confidence: high
+  amount: 自己負担は 1 回 100〜500 円。電子チケットは年度 36〜108 枚（居住地・世帯構成で異なる）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金事業
+  summary: 介護保険サービスを使わずに重度の方を介護した家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用せずに介護している家族に支給
+  where: 幌延町保健福祉課（計画に申請先の記載なし）
+  url: https://www.town.horonobe.lg.jp/www4/section/fukushi/le009f0000009412-att/le009f000001tg46.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報用の電話を設置し、緊急時の通報・駆けつけと定期の安否確認を行う。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者等で、設置が必要と把握された方
+  where: 幌延町保健福祉課・地域包括支援センター（計画に申請先の記載なし）
+  url: https://www.town.horonobe.lg.jp/www4/section/fukushi/le009f0000009412-att/le009f000001tg46.pdf
+  confidence: low
+- category: haishoku
+  name: 給食サービス（食事の配達と安否確認）
+  name_on_page: 給食サービス事業
+  summary: 調理が難しい高齢者世帯に、食事を訪問して定期的に届け、安否も確認する。
+  who: {}
+  at_application:
+  - 調理が困難なひとり暮らしなどの高齢者世帯等
+  where: 幌延町保健福祉課（計画に申請先の記載なし）
+  url: https://www.town.horonobe.lg.jp/www4/section/fukushi/le009f0000009412-att/le009f000001tg46.pdf
+  confidence: low
+- category: sonota
+  name: 高齢者の除雪サービス
+  name_on_page: 除雪サービス事業
+  summary: 冬の除雪が負担になる高齢者の家の除雪を、町が支援する。
+  who: {}
+  at_application:
+  - 所得や家族状況等の基準に当たる高齢者（基準は計画に記載なし）
+  where: 幌延町保健福祉課・地域包括支援センター（計画に申請先の記載なし）
+  url: https://www.town.horonobe.lg.jp/www4/section/fukushi/le009f0000009412-att/le009f000001tg46.pdf
+  confidence: low
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: ほろのべ安心バトン
+  summary: 希望者に救急医療情報キットを配り、緊急時に家族へ連絡できるようにする。
+  who: {}
+  at_application:
+  - 年齢などの条件は計画に記載なし
+  where: 幌延町保健福祉課（計画に申請先の記載なし）
+  url: https://www.town.horonobe.lg.jp/www4/section/fukushi/le009f0000009412-att/le009f000001tg46.pdf
+  confidence: low
+not_found:
+- kaigo-yohin
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai
+- koken

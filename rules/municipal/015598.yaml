@@ -1,0 +1,170 @@
+city: 015598
+name: 湧別町
+site: www.town.yubetsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 寝たきり老人等介護手当
+  name_on_page: 寝たきり老人等介護手当助成事業
+  summary: 重度の寝たきり・認知症の高齢者を介護する人に、介護手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 寝たきり及び認知症の高齢者で、3か月以上継続して要介護4相当以上の方
+  - 入院・ショートステイ等で在宅でない期間は除く
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 月 2 万円（介護保険サービス等との併給は可能）
+- category: kaigo-yohin
+  name: 寝たきり高齢者等紙おむつ購入費助成
+  name_on_page: 寝たきり高齢者等紙おむつ購入費助成事業
+  summary: 紙おむつの購入費の2分の1を助成する（町内で購入したものに限る）。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅で今後1か月以上常時おむつが必要な方
+  - 要介護2以上、要介護2相当以上、または障害者手帳等の一定の等級の方
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 購入費の2分の1（月の助成限度額 5,000 円）
+- category: sonota
+  name: おむつに係る有料ごみ袋の配布
+  name_on_page: 高齢者等生活応援事業（おむつに係る有料ごみ袋の配布）
+  summary: 在宅でおむつを使う方に、燃やすごみ用の15リットル袋を毎月無料で配る。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 在宅でおむつを使用し、75歳以上、要介護1〜5、または障害者・障害児
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 1人につき月5枚（15リットルの燃やすごみ用袋）
+- category: nichijo-yogu
+  name: 高齢者用歩行車購入助成
+  name_on_page: 高齢者用歩行車購入助成事業
+  summary: 屋外用の歩行車を買う方に、購入費の2分の1を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 歩行が困難で、屋外用歩行車を使えば外出が可能な在宅の高齢者等
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 購入費の2分の1（助成限度額 15,000 円）
+- category: jutaku
+  name: 高齢者等さわやか住宅改造補助
+  name_on_page: 高齢者等さわやか住宅改造補助事業
+  summary: 浴室・手すり・段差解消などの住宅改造費の3分の1を補助する。
+  who: {}
+  at_application:
+  - 町民税所得割非課税世帯（どちらの場合も必要）
+  - 65歳以上の方がいる世帯、または日常生活に介助が必要な重度身体障害者のいる世帯
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 費用の3分の1（補助限度額 30 万円）
+- category: gaishutsu
+  name: 高齢者バス通院費助成（バス券）
+  name_on_page: 高齢者バス通院費助成事業
+  summary: 通院のためのバス券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - バスによる通院が必要な方
+  - 高齢者外出支援ハイヤー料金助成事業とは併用できない
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 1人年間72枚（人工透析は年間300枚）
+- category: gaishutsu
+  name: 高齢者外出支援ハイヤー料金助成
+  name_on_page: 高齢者外出支援ハイヤー料金助成事業
+  summary: 歩行困難でハイヤーを使わざるをえない方に、ハイヤー券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 要支援1以上、または同等と認められる方
+  - 車の運転ができず、送迎してくれる親族が近くにおらず、バスに乗ることが困難
+  - バス通院費助成事業とは併用できない
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 1枚500円のハイヤー券を年間288枚（中湧別・北兵村地区は144枚）
+- category: kinkyu-tsuho
+  name: 高齢者等緊急通報システム設置事業
+  name_on_page: 高齢者等緊急通報システム設置事業
+  summary: 緊急通報用の電話機を貸与し、急病や災害のとき救急対応につなげる。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者夫婦世帯で、安否確認が必要な方
+  - 身体障害者や、日中独居の高齢者で安否確認が必要な方も対象
+  - 固定電話が設置されていること
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+- category: sonota
+  name: 介護サービス等利用者負担額助成
+  name_on_page: 介護サービス等利用者負担額助成
+  summary: 非課税世帯の介護保険在宅系サービスの自己負担額の2分の1を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 湧別町の介護保険被保険者で住民税非課税世帯の方（基準日7月1日）
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+  amount: 自己負担額の2分の1
+- category: mimamori
+  name: 軽度生活援助事業（ふれあい訪問）
+  name_on_page: 軽度生活援助事業（ふれあい訪問）
+  summary: 訪問や電話で健康状態の確認や心配事の相談、軽易な支援を行う。
+  who: {}
+  at_application:
+  - 要介護認定で「自立」と判定された方、または概ね65歳以上の在宅のひとり暮らしの高齢者等
+  where: 湧別町役場湧別庁舎 福祉課高齢介護グループ（問合せ・申込先は地域包括支援センター）
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+- category: gaishutsu
+  name: 外出支援サービス事業（移送サービス）
+  name_on_page: 外出支援サービス事業（移送サービス）
+  summary: 機能訓練や通院等の送迎の交通手段を提供する。
+  who: {}
+  at_application:
+  - 歩行機能の低下や認知症で公共交通機関の移動が困難で、家族等に交通手段がない方
+  - または車椅子・ストレッチャーでないと移動が困難な方
+  - または介護者がいないと医療機関等の利用が困難で、家族等がいない方
+  where: 湧別町役場湧別庁舎 福祉課地域包括支援センター
+  url: https://www.town.yubetsu.lg.jp/common/img/content/content_20260514_084958.pdf
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りがなく申立てできない方は町長が申立て、費用の負担が難しい方に限度額内で助成する。
+  who: {}
+  at_application:
+  - 身寄りのないなどで裁判所へ申立てができない方は町長が申立て
+  - 申立ての費用や後見人等への支払費用の負担が困難な方
+  where: 湧別町地域包括支援センター（高齢者）、福祉課福祉グループ（障害者）
+  url: https://www.town.yubetsu.lg.jp/administration/welfare/detail.html?content=1660
+  confidence: high
+  amount: 限度額内で助成（額は頁に記載なし）
+not_found:
+- haikai
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

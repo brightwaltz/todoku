@@ -1,0 +1,39 @@
+city: '016641'
+name: 標茶町
+site: town.shibecha.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 徘徊高齢者の位置情報検索機器の購入助成
+  name_on_page: 高齢者位置情報検索機器の助成制度
+  summary: 徘徊をくり返す方が位置情報検索機器を使うとき、初期費用の一部を町が助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 65歳以上で徘徊をくり返す、または40〜64歳で認知症等による徘徊
+  - 町に住民登録がある
+  - 事前に社会福祉係へ相談し、運営会社と利用契約を結ぶ
+  - 身体状況等確認書の提出が要る
+  where: 保健福祉課 社会福祉係
+  url: https://town.shibecha.hokkaido.jp/kurashi/kenkou_hukushi/koureihukushi/koureisyahogo/itijouhou.html
+  confidence: high
+  amount: 初期費用の一部を上限12,000円まで助成（月額の利用料は自己負担）
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

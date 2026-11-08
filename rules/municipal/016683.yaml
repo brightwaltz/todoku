@@ -1,0 +1,117 @@
+city: 016683
+name: 白糠町
+site: www.town.shiranuka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 白糠町高齢者補聴器購入費助成事業
+  summary: 聴力が落ちて生活に支障のある65歳以上の方に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所があり、4月1日現在で65歳以上
+  - 聴力40デシベル以上で、耳鼻科医が補聴器を必要と認める
+  - 身体障害者手帳（聴覚）に当たらない方
+  - 町税等の滞納がない
+  - 助成を受けてから5年は再申請できない
+  where: 介護福祉課 高齢者支援係（役場介護福祉課窓口）
+  url: https://www.town.shiranuka.lg.jp/section/hoken/h8v21a000000nyq3.html
+  confidence: high
+  amount: 片耳5万円まで（医師が両耳の装用を認めた場合は10万円まで）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム事業
+  summary: 在宅の高齢者等に緊急通報の装置を設置し、急病や火災などの連絡体制をつくる。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上でひとり暮らしの方
+  - おおむね65歳以上のみの世帯で、臥床している方や慢性疾患で要注意の方
+  - 1・2級の手帳があるひとり暮らしの重度障害者で、所得税非課税世帯の方も対象
+  - ISDN回線と光電話には対応していない
+  where: 介護福祉課 高齢者支援係（役場介護福祉課窓口）
+  url: https://www.town.shiranuka.lg.jp/section/hoken/h8v21a000000e84v.html
+  confidence: high
+  amount: 設置費用は町が負担。利用者は月額418円（電話料金に上乗せ）
+- category: gaishutsu
+  name: 外出支援のタクシー・町営バス運賃補助券
+  name_on_page: 生き活きしらぬか外出支援助成事業
+  summary: 対象の高齢者や重度障害者に、年間1万円分のタクシー・町営バスの運賃補助券を渡す。
+  who: {}
+  at_application:
+  - 4月1日現在で75歳以上
+  - または65〜74歳で要支援1・2の認定を受けている
+  - または65〜74歳で運転免許証を自主返納している
+  - または重度の障害者手帳等がある（障害者の区分）
+  - 本人確認の書類を持参し、窓口で申請する（郵送は不可）
+  where: 介護福祉課 高齢者支援係（役場介護福祉課窓口）
+  url: https://www.town.shiranuka.lg.jp/section/hoken/h8v21a000000e7je.html
+  confidence: high
+  amount: 年間10,000円分の補助券
+- category: sonota
+  name: 高齢者の入院費の助成
+  name_on_page: 白糠町高齢者入院費助成事業
+  summary: 75歳以上で非課税世帯の方が入院したとき、日用品等の費用を日数に応じて助成する。
+  who:
+    age_min: 75
+    tax:
+    - household_exempt
+  at_application:
+  - 後期高齢者医療制度に加入している
+  - 1年以上町内に住所がある
+  - 町税等の滞納がない
+  - 生活保護や重度心身障害者医療費を受けている方は対象外
+  - 1回の入院が7日以上
+  where: 介護福祉課 高齢者支援係（役場介護福祉課窓口）
+  url: https://www.town.shiranuka.lg.jp/section/hoken/h8v21a000000nysp.html
+  confidence: high
+  amount: 1年度内の累計入院日数に応じ、7〜30日で1万円から121日以上で5万円（上限）
+- category: sonota
+  name: 70歳以上の町民の温浴施設の無料入浴日
+  name_on_page: 生き活きしらぬか健康入浴事業
+  summary: 70歳以上の町民が、温浴施設「しらぬかの湯」に月2回無料で入れる。
+  who:
+    age_min: 70
+  at_application:
+  - 住民基本台帳上の白糠町民で、4月1日現在70歳以上
+  - 申請書を「しらぬかの湯」窓口に出す
+  where: しらぬかの湯の窓口（問い合わせは介護福祉課 高齢者支援係）
+  url: https://www.town.shiranuka.lg.jp/section/hoken/h8v21a000000e7q4.html
+  confidence: high
+  amount: 第2・第4金曜日（午前10時〜午後4時）の入浴が無料
+- category: sonota
+  name: 高齢者世帯の除雪サービス
+  name_on_page: 白糠町除雪サービス事業
+  summary: 65歳以上のみの世帯で除雪が困難な方に、玄関から道路までの通路を除雪する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 高齢や身体上の理由で自力の除雪が困難
+  - 親族や近隣の人の援助を受けることが困難
+  - 申請内容によっては断られることがある
+  where: 介護福祉課 高齢者支援係（役場介護福祉課窓口）
+  url: https://www.town.shiranuka.lg.jp/section/hoken/h8v21a000000p1t9.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- jutaku

@@ -1,0 +1,110 @@
+city: 016918
+name: 別海町
+site: betsukai.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 調理が困難な高齢者等のみの世帯に、栄養のとれた食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、または65歳以上のみの世帯の方
+  - 65歳以上がいる世帯で特に生活支援が必要と認められる方
+  - そのほか町長が特に必要と認める方
+  - 調理が困難な高齢者等の世帯が対象
+  - 生活支援事業利用申請書と状況調書を出す
+  where: 介護支援課 高齢者福祉担当
+  url: https://betsukai.jp/kurashi/fukushi/kourei_fukushi/seikatsushien/
+  confidence: high
+  amount: 1日1食・週5食以内。利用者負担は1食400円
+- category: gaishutsu
+  name: 外出支援サービス（車いす等の送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 車いすなどで移動が困難な方を、移送用車両で自宅と介護事業所・医療機関の間を送迎する。
+  who: {}
+  at_application:
+  - 車いすやストレッチャーがないと移動が困難な高齢者または重度身体障害者
+  - 行き先は町内の介護サービス事業所や医療機関等
+  - 生活支援事業利用申請書と状況調書を出す
+  where: 介護支援課 高齢者福祉担当
+  url: https://betsukai.jp/kurashi/fukushi/kourei_fukushi/seikatsushien/
+  confidence: high
+  amount: 利用者負担は片道1回250円（非課税世帯）、500円（課税世帯）
+- category: kaigo-yohin
+  name: 家族介護用品の給付券
+  name_on_page: 家族介護用品支給事業
+  summary: 重度の要介護者を在宅で介護する非課税世帯に、介護用品と引換えできる給付券を渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 別海町に居住している
+  - 要介護4・5の認定を受けた方を介護している
+  - 要介護者が介護保険施設に入所していない
+  - 要介護者が短期入所等で在宅でない月は交付されない
+  where: 介護支援課 高齢者福祉担当
+  url: https://betsukai.jp/kurashi/fukushi/kourei_fukushi/kazokukaigoyouhin/
+  confidence: high
+  amount: 月額10,000円分の介護用品と引換えできる給付券（翌月への繰越しなし）
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与
+  name_on_page: 高齢者等緊急通報システム
+  summary: 高齢者宅等に緊急通報機器を貸し、急病や事故のときに受信センターが救援につなぐ。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしの方
+  - ひとり暮らしの重度身体障害者
+  - そのほか町長が特に必要と認めた方
+  - 自宅に電話回線が必要（ひかり電話は停電時に使えない）
+  where: 介護支援課 高齢者福祉担当
+  url: https://betsukai.jp/kurashi/fukushi/kourei_fukushi/kinkyuutsuuhou/
+  confidence: high
+  amount: 機器の設置費・利用料は町が負担。利用者は電話の基本料金と通話料
+- category: mimamori
+  name: 電話や訪問による安否確認・生活相談
+  name_on_page: 高齢者等安否確認及び日常生活相談事業
+  summary: 相談員が定期的に電話か訪問で安否を確認し、日常生活の相談を受ける。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯、または65歳以上のひとり暮らしの方
+  - ひとり暮らしの重度身体障害者・重度知的障害者・精神障害者
+  - そのほか町長が必要と認めた方
+  where: 介護支援課（高齢者福祉担当）
+  url: https://betsukai.jp/kurashi/fukushi/kourei_fukushi/anpikakunin_seikatsusoudan/
+  confidence: high
+  amount: 無料。電話・訪問それぞれ月2回以上（どちらか一方だけも可）
+- category: gaishutsu
+  name: 70歳以上のバス・ハイヤー共通利用券
+  name_on_page: 高齢者バス・ハイヤー共通利用券
+  summary: 70歳以上で所得が基準内の町民に、バスやハイヤーで使える2万円分の利用券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 本町に居住している
+  - 本人と世帯の住民税課税標準額が、扶養人数ごとの限度額以内
+  - 初回は印鑑と顔写真が必要（受給登録者証を交付）
+  - 有効期間は7月1日から翌年6月30日
+  where: 役場福祉課または各支所、連絡事務所
+  url: https://betsukai.jp/kurashi/fukushi/syakai_fukushi/f_kbshiy/
+  confidence: high
+  amount: 1人20,000円分（100円券200枚）。使い切ると追加で20,000円分を1回交付
+  more_urls:
+  - https://betsukai.jp/kurashi/fukushi/kourei_fukushi/basu/
+not_found:
+- haikai
+- iro
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- jutaku

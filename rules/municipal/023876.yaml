@@ -1,0 +1,99 @@
+city: 023876
+name: 中泊町
+site: www.town.nakadomari.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: ひとり暮らしで設置が必要と判断された非課税世帯の高齢者に、緊急通報装置を貸す。
+  who:
+    household:
+    - alone
+    tax:
+    - household_exempt
+  at_application:
+  - 設置が必要と判断された人
+  where: 福祉課（頁のお問い合わせ先）
+  url: https://www.town.nakadomari.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/1815.html
+  confidence: high
+  amount: 利用料は半額負担で月500円
+- category: kaigo-yohin
+  name: 家族への紙おむつ・尿取りパット等の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 寝たきりの重度の高齢者を在宅で介護する非課税世帯の家族に、紙おむつ等を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 寝たきりで常時失禁状態の在宅の高齢者を介護する家族
+  - 頁には所得税課税世帯は対象外とある
+  where: 福祉課（頁のお問い合わせ先）
+  url: https://www.town.nakadomari.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/1815.html
+  confidence: high
+  amount: 月額5,000円の範囲内で紙おむつや尿取りパットなどの用品を支給
+- category: haikai
+  name: 徘徊高齢者等SOSネットワークへの事前登録
+  name_on_page: 徘徊高齢者等SOSネットワーク
+  summary: 行方不明の心配がある人を事前に登録し、警察や協力機関と一緒に早く捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で行方不明になる心配がある
+  - 町内に住んでいる、または町内の施設に入所している
+  where: 福祉課、中泊町地域包括支援センター
+  url: https://www.town.nakadomari.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishamukenosupport/5236.html
+  confidence: high
+- category: haishoku
+  name: 高齢者への配食（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 栄養改善が必要な高齢者の単身世帯などに、食事を1日1回届け、安否を確かめる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町が実態を調べ、特に栄養状態の改善が必要と認めた高齢者
+  - 高齢者のみの世帯に準ずる世帯でもよい
+  where: 町（町長あての申請書、実施は社会福祉協議会へ委託）
+  url: https://www.town.nakadomari.lg.jp/section/reiki_int/reiki_honbun/r114RG00000558.html
+  confidence: high
+  amount: 利用者負担は1食400円
+- category: hochoki
+  name: 軽度・中等度難聴者の補聴器購入費の助成
+  name_on_page: 軽度・中等度難聴者補聴器購入費助成事業
+  summary: 手帳の対象にならない難聴の人の、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 18歳以上で町内に住所がある
+  - 両耳の聴力が30dB以上70dB未満で手帳の対象外
+  - 相談医が装用を必要と診断し、認定補聴器専門店で購入する
+  - 世帯に所得割46万円以上の人がおらず、町への滞納がない
+  - 5年以内にこの助成を受けていない
+  where: 町（町長あて、担当課の記載なし）
+  url: https://www.town.nakadomari.lg.jp/section/reiki_int/reiki_honbun/r114RG00000930.html
+  confidence: high
+  amount: 購入費が対象で上限3万円
+not_found:
+- iro
+- koken
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- jutaku
+- mimamori

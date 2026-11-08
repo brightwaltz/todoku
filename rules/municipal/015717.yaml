@@ -1,0 +1,110 @@
+city: '015717'
+name: 豊浦町
+site: www.town.toyoura.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 高齢者世帯の除雪費の助成
+  name_on_page: 高齢者除雪費用助成事業
+  summary: 自力で除雪できない高齢者だけの非課税世帯が頼んだ除雪の費用の一部を助成する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 自力での除雪が難しい世帯
+  - 三親等以内の親族から労働的・経済的な援助を受けられない
+  - 除雪を業者や個人に自分で頼む（町は人を派遣しない）
+  - 生活保護の世帯は対象外（保護費から支給）
+  - 申請期限は令和9年2月19日
+  where: 総合保健福祉施設やまびこの保険福祉係
+  url: https://www.town.toyoura.hokkaido.jp/hotnews/detail/00007004.html
+  confidence: high
+  amount: 上限は重機を使う除雪が3万円、使わない除雪が2万5千円（4か月以内は月割）
+- category: sonota
+  name: 福祉灯油の購入費助成
+  name_on_page: 福祉灯油購入費助成事業
+  summary: 住民税非課税の高齢者のみの世帯などに、灯油代として1世帯15,000円を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 次のどれか：70歳以上の高齢者のみの世帯
+  - （配偶者が70歳未満の夫婦のみの世帯も含む）
+  - または重度心身障害者医療費受給者証が交付されている人の世帯
+  - またはひとり親で児童扶養手当を受けている世帯
+  - 10月1日に町に住民登録がある。申請期限は令和8年12月25日
+  where: 総合保健福祉施設やまびこの保険福祉係、役場町民課
+  url: https://www.town.toyoura.hokkaido.jp/hotnews/detail/00006965.html
+  confidence: high
+  amount: 1世帯15,000円（口座に振込）
+- category: haikai
+  name: 認知症高齢者等の見守りSOSネットワークの事前登録
+  name_on_page: 豊浦町認知症高齢者等の見守りSOSネットワーク事業
+  summary: 行方不明に備えて事前に登録すると、警察や地域の協力者が捜索に協力する。
+  who: {}
+  at_application:
+  - 町内に住む、徘徊のおそれがある認知症（疑いも含む）の高齢者など
+  - 本人か家族が事前に登録申請をする
+  where: 豊浦町地域包括支援センター
+  url: https://www.town.toyoura.hokkaido.jp/hotnews/detail/00003344.html
+  confidence: high
+  more_urls:
+  - https://www.town.toyoura.hokkaido.jp/hotnews/files/00003300/00003344/%E8%A6%81%E7%B6%B1.pdf
+- category: kaigo-yohin
+  name: 要介護3〜5の人の家族への介護用品給付券
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護3〜5の人の家族で町民税非課税世帯に、介護用品の給付券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者の家族が対象
+  - 施設入所者・入院患者・生活保護の人は除く
+  where: 町の福祉関連サービスの一覧に載る（窓口は頁に書かれていない）
+  url: https://www.town.toyoura.hokkaido.jp/hotnews/files/00002600/00002649/2026%E6%94%B9%E8%A8%82.pdf
+  confidence: low
+  amount: 月額6,000円を限度とする給付券
+- category: kinkyu-tsuho
+  name: 緊急通報システムの機器の貸与・設置費の助成
+  name_on_page: 緊急通報システム
+  summary: 救急車や協力者に通報する機器を貸与し、設置費を助成する。
+  who: {}
+  at_application:
+  - 対象者の条件は一覧に書かれていない
+  where: 町の福祉関連サービスの一覧に載る（窓口は頁に書かれていない）
+  url: https://www.town.toyoura.hokkaido.jp/hotnews/files/00002600/00002649/2026%E6%94%B9%E8%A8%82.pdf
+  confidence: low
+- category: gaishutsu
+  name: 病院受診の送迎（移送サービス）
+  name_on_page: 移送サービス
+  summary: 病院に通うときの送迎をしてくれる町のサービス。
+  who: {}
+  at_application:
+  - 公共交通機関の利用や家族の協力が得られないなど一定の要件がある
+  where: 町の福祉関連サービスの一覧に載る（窓口は頁に書かれていない）
+  url: https://www.town.toyoura.hokkaido.jp/hotnews/files/00002600/00002649/2026%E6%94%B9%E8%A8%82.pdf
+  confidence: low
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

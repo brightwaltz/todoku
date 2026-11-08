@@ -1,0 +1,134 @@
+city: '015555'
+name: 遠軽町
+site: engaru.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 高齢者等緊急通報システムの貸出
+  name_on_page: 高齢者等緊急通報システム
+  summary: 端末やペンダントのボタンで通報でき、定期の安否確認の電話もある装置を貸し出す。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者で病弱のため緊急時の行動が困難な方
+  - ひとり暮らしの身体障がい者や、突発的に危険な持病のある方も対象
+  - 特に安否の確認を要すると認めた世帯
+  where: 民生部 保健福祉課または最寄りの総合支所
+  url: https://engaru.jp/health/page.php?id=200
+  confidence: high
+  amount: 設置費は町が負担。基本料金と通話料は自己負担
+- category: gaishutsu
+  name: 高齢者のりもの助成（バス・ハイヤー）
+  name_on_page: 高齢者のりもの助成（割引）サービス
+  summary: 助成証と助成券を交付し、バスとハイヤーの料金の一部を助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 町内に住所がある方
+  - 令和7年度以前の助成証・助成券は令和8年4月1日以降は使えない
+  where: 民生部 保健福祉課 福祉担当（最寄りの総合支所でも受付）
+  url: https://engaru.jp/health/page.php?id=199
+  confidence: high
+  amount: 1回の乗車につき1人100円（助成券1枚）。助成券は年間72枚
+- category: koken
+  name: 成年後見制度利用支援事業（申立て費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 申立ての費用や後見人等への支払いが難しい方に、町が限度額内で助成する。
+  who: {}
+  at_application:
+  - 四親等内に身寄りのいない方は町長が申立てを代行
+  - 申立ての費用や後見人等への支払費用の負担が困難な方
+  where: 民生部 保健福祉課（電話 0158-42-4813）
+  url: https://engaru.jp/health/page.php?id=235
+  confidence: high
+  amount: 限度額内で助成（額は頁に記載なし）
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 配食サービス事業
+  summary: 日常生活が難しい高齢者の居宅に食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、または世帯員が65歳以上の世帯
+  - 世帯員のいずれもが日常生活に支障があり、自分で調理することが困難
+  - このほか町長が特に必要と認めた方も対象
+  where: 町長に申請書を提出（窓口は条例に記載なし）
+  url: https://engaru.jp/reiki/reiki_honbun/r266RG00000254.html
+  confidence: high
+  amount: 手数料は 1 食 400 円
+- category: gaishutsu
+  name: 外出支援サービス事業（送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 移送用車両で、居宅と医療機関や在宅福祉サービスの場所の間を送迎する。
+  who: {}
+  at_application:
+  - 要介護認定で「自立」と判定され、規則の基準に当たる方
+  - または65歳以上で日常生活に支障があり、外出が困難な方
+  - 要支援1・2の方は通院時のみ利用可。町長が特に認めた方も対象
+  where: 町長に申請書を提出（窓口は条例に記載なし）
+  url: https://engaru.jp/reiki/reiki_honbun/r266RG00000254.html
+  confidence: high
+  amount: 手数料は 1 乗降 100 円
+- category: sonota
+  name: 除雪サービス事業
+  name_on_page: 除雪サービス事業
+  summary: 除雪が難しい高齢者世帯の、軽易な日常生活上の援助として除雪を行う。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、または世帯員が65歳以上の世帯
+  - 世帯員の全員が除雪困難で、家族・親族・隣人等の援助が得られない
+  - 前年の収入が基準以下（単身は120万円以下）。町長が特に認めた方も対象
+  where: 町長に申請書を提出（窓口は条例に記載なし）
+  url: https://engaru.jp/reiki/reiki_honbun/r266RG00000254.html
+  confidence: high
+  amount: 手数料は 1 回 100 円
+- category: ribiyo
+  name: 在宅高齢者等訪問理髪事業
+  name_on_page: 在宅高齢者等訪問理髪事業
+  summary: 歩行困難で介護を要する高齢者に、訪問理髪の給付券を年間4枚交付して料金を助成する。
+  who: {}
+  at_application:
+  - 歩行困難で介護を要する、おおむね60歳以上の高齢者
+  where: 遠軽町（計画に申請先の記載なし）
+  url: https://engaru.jp/common/img/content/content_20240312_164232.pdf
+  confidence: low
+  amount: 給付券を年間4枚
+- category: kaigo-yohin
+  name: 在宅介護用品支給事業
+  name_on_page: 在宅介護用品支給事業
+  summary: 要介護3〜5の高齢者を介護する非課税世帯に、紙おむつや尿とりパットを支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護3〜5の高齢者を介護している方のうち、前年度町民税非課税世帯
+  where: 遠軽町（計画に申請先の記載なし）
+  url: https://engaru.jp/common/img/content/content_20240312_164232.pdf
+  confidence: low
+- category: jutaku
+  name: 高齢者等住宅設備改造支援費支給事業
+  name_on_page: 高齢者等住宅設備改造支援費支給事業
+  summary: 在宅生活に必要な住宅設備の改造にかかる経費を支給する。
+  who: {}
+  at_application:
+  - 条件は計画に記載なし
+  where: 遠軽町（計画に申請先の記載なし）
+  url: https://engaru.jp/common/img/content/content_20240312_164232.pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- shingu
+- haikai
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

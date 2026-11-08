@@ -1,0 +1,134 @@
+city: '016454'
+name: 豊頃町
+site: www.toyokoro.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（食事の配達と安否確認）
+  name_on_page: 配食サービス
+  summary: 調理が困難な高齢者宅へ、週3回以内、栄養バランスのよい食事を届ける。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯などで、食事の調理が困難
+  where: 福祉課 福祉介護係
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: high
+  amount: 利用料 1食300円（週3回以内）
+  more_urls:
+  - https://www.toyokoro.jp/page/1022.html
+- category: gaishutsu
+  name: 福祉タクシー券の交付
+  name_on_page: 福祉タクシー券
+  summary: 自家用車を持たない高齢者世帯などに、福祉タクシーの乗車券を交付する。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、高齢者世帯などで、自家用車を持たない世帯
+  - 運転者が仕事で不在・冬道が不安など、特別な理由がある場合も可
+  where: 福祉課 福祉介護係
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: high
+  amount: 1世帯につき基本料金分の乗車券 24枚（茂岩・中央・豊頃の市街地域）、その他の地域は72枚
+- category: sonota
+  name: 福祉灯油等の支給
+  name_on_page: 福祉灯油等
+  summary: 収入の少ない高齢者世帯などに、200リットル分の灯油券を交付する。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、高齢者世帯、ひとり親世帯、障がい者世帯、準要保護世帯など
+  - 前年の世帯収入が生活保護基準の1.3倍以下
+  where: 福祉課 福祉介護係
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: high
+  amount: 1世帯につき灯油券200リットル分（薪等は相当額）
+- category: hochoki
+  name: 高齢者等の補聴器購入費助成
+  name_on_page: 高齢者等補聴器
+  summary: 65歳以上の方の補聴器1台の購入費用を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 現に町に居住している
+  - 聴覚障害による身体障害者手帳を持っていない
+  where: 福祉課 福祉介護係
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: high
+  amount: 補聴器1台の購入費を上限3万円まで（実費が3万円未満なら実費）。1人1台1回限り
+- category: nichijo-yogu
+  name: 高齢者住宅用火災警報器の購入費助成
+  name_on_page: 高齢者住宅用
+  summary: 住宅用火災警報器1個の購入費の2分の1を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の単身者、または寝たきりの方
+  - 町民税が非課税。ただし頁の書き方では、非課税がどちらにかかるか読み取れない
+  where: 福祉課 福祉介護係
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: low
+  amount: 購入費の2分の1（限度額3,000円）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 電話に緊急通報装置を設置し、ボタンで消防署に自動通報できるようにする。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者
+  - または、寝たきり高齢者とその方を抱える高齢者世帯
+  - または、ひとり暮らしの重度身体障害者など
+  - 加入電話があり、緊急時に対応できる協力員2名が必要
+  where: 福祉課 福祉介護係
+  url: https://www.toyokoro.jp/page/1022.html
+  confidence: high
+  amount: 設置は無料（回線使用料は個人負担）
+  more_urls:
+  - https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+- category: mimamori
+  name: 安心みまもーる君事業（週1回程度の見守り訪問）
+  name_on_page: みまもーる君
+  summary: 養成講座を受けたサポーターが、週1回程度訪問して見守る。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯、認知症高齢者などで、見守りが必要な方
+  where: 福祉課 福祉介護係
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 通話録音装置の無料貸出
+  name_on_page: 通話録音装置
+  summary: 振り込め詐欺などを防ぐ通話録音装置を、高齢者世帯に無料で貸し出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 緊急通報装置との併用はできない
+  where: 住民課 生活環境係
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: high
+  amount: 無料貸出
+- category: sonota
+  name: 買い物配達サポート事業
+  name_on_page: 買い物配達
+  summary: 町内店舗で支払い済みの商品を、自宅まで無料で届ける。
+  who: {}
+  at_application:
+  - 高齢者、障がいのある方、妊産婦、病弱な方など
+  where: 福祉課 福祉介護係（表の問い合わせ先）
+  url: https://www.toyokoro.jp/uploaded/attachment/7208.pdf
+  confidence: low
+  amount: 無料
+not_found:
+- haikai
+- iro
+- koken
+- shingu
+- ribiyo
+- jutaku
+- chusha
+- yutai

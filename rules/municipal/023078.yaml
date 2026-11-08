@@ -1,0 +1,54 @@
+city: 023078
+name: 外ヶ浜町
+site: www.town.sotogahama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品代（紙おむつ等）の助成
+  name_on_page: 介護用品代（紙おむつ等）助成事業
+  summary: 在宅で紙おむつ等を使う要介護認定者に、介護用品代を助成する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護の認定を受けている
+  - そのほか町が定めた要件がある（内容は計画に書かれていない）
+  where: 福祉課（計画に申請先の明記なし）
+  url: https://www.town.sotogahama.lg.jp/fukushi/koureisya/files/240324_kaigohokenkeikaku.pdf
+  confidence: low
+- category: iro
+  name: 介護者への介護慰労金
+  name_on_page: 介護慰労金の支給
+  summary: 在宅で要介護の高齢者等を日常的に介護する人に、要件を満たせば介護慰労金を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅で要介護状態の高齢者等を日常的に介護している
+  - 規定の要件を満たす（内容は計画に書かれていない）
+  where: 福祉課（計画に申請先の明記なし）
+  url: https://www.town.sotogahama.lg.jp/fukushi/koureisya/files/240324_kaigohokenkeikaku.pdf
+  confidence: low
+- category: haishoku
+  name: 配食サービス（栄養改善と安否確認）
+  name_on_page: 配食サービス事業
+  summary: 対象の高齢者に、栄養改善を目的とした配食をして、安否も確認する。
+  who: {}
+  at_application:
+  - 単身または高齢者のみの世帯、もしくはこれに準ずる世帯
+  - 要支援認定者、または基本チェックリストで一つ以上の基準に該当した高齢者
+  where: 福祉課（計画に申請先の明記なし）
+  url: https://www.town.sotogahama.lg.jp/fukushi/koureisya/files/240324_kaigohokenkeikaku.pdf
+  confidence: low
+not_found:
+- hochoki
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

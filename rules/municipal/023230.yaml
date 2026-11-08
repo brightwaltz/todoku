@@ -1,0 +1,59 @@
+city: '023230'
+name: 深浦町
+site: www.town.fukaura.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 認知症高齢者等の事前登録（行方不明に備える）
+  name_on_page: 認知症高齢者等事前登録事業
+  summary: 行方不明が心配な認知症の方を登録し、行方不明時に関係機関へ情報を伝えて捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町に住所がある65歳以上で、認知症による行方不明が心配される方
+  - 65歳未満でも心配があれば相談できる
+  - 家族が申請書を出し、6か月以内に撮った写真を持参する
+  where: 地域包括支援センター
+  url: https://www.town.fukaura.lg.jp/doc/2019071100517/
+  confidence: high
+  amount: 登録は無料
+- category: haikai
+  name: 認知症高齢者の見守り用GPS端末の利用料の助成
+  name_on_page: 見守り用ＧＰＳ助成事業
+  summary: 行方不明のおそれのある高齢者を介護する家族に、GPS端末の初期料金などを助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町に住所があり、認知症などで行方不明のおそれがある高齢者を介護する家族
+  - 町指定の事業者と契約し初期料金を払ってから、助成を申請する
+  - 7か月目以降の基本料金は自己負担
+  where: 地域包括支援センター
+  url: https://www.town.fukaura.lg.jp/doc/2019071100517/
+  confidence: high
+  amount: 初期登録料と6か月目までの基本利用料を、3万円を上限に助成
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット
+  summary: 65歳以上の方に、救急のときに必要な情報を書き留めておくキットを配る。
+  who:
+    age_min: 65
+  at_application:
+  - 深浦町に住所がある
+  where: 地域包括支援センター
+  url: https://www.town.fukaura.lg.jp/doc/2023030600017/
+  confidence: high
+not_found:
+- iro
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- koken

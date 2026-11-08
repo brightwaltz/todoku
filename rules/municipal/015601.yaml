@@ -1,0 +1,63 @@
+city: '015601'
+name: 滝上町
+site: town.takinoue.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: バス乗車証の交付
+  name_on_page: バス乗車証
+  summary: 町内の乗車区間で使えるバスの無料乗車証を交付する（回数の制限なし）。
+  who:
+    age_min: 70
+  at_application:
+  - 滝上町に在住の方
+  - 乗車証の利用範囲は町内の乗車区間
+  where: 保健福祉課 福祉係（電話 0158-29-3616）
+  url: https://town.takinoue.hokkaido.jp/kurashi/fukushikenko/otoshiyori/keirofukushi.html
+  confidence: high
+  amount: 町内の乗車区間は無料（回数の制限なし）
+- category: gaishutsu
+  name: ハイヤー券の交付
+  name_on_page: ハイヤー券
+  summary: 役場からの距離に応じ、ハイヤーの基本料金相当額の券を月1〜3回分交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 滝上町に在住の方
+  - 交付は申請月の翌月から
+  where: 保健福祉課 福祉係（電話 0158-29-3616）
+  url: https://town.takinoue.hokkaido.jp/kurashi/fukushikenko/otoshiyori/keirofukushi.html
+  confidence: high
+  amount: 役場から2km未満は月1回分、2km以上は月2回分、6km以上は月3回分（基本料金相当額）
+- category: mimamori
+  name: 高齢者あんしん見守り支援事業（見守りサービス費用の助成）
+  name_on_page: 高齢者あんしん見守り支援事業
+  summary: センサーや通報機器などを使う民間の見守りサービスの初期費用と月額料金の一部を助成する。
+  who: {}
+  at_application:
+  - 町内に住所があり、65歳以上のひとり暮らしの方
+  - 65歳以上の2人世帯で、どちらかが要介護・要支援認定を受けている方
+  - ひとり暮らしで身体障害者手帳1・2級の方。施設入所・入院中・利用中の方は対象外
+  where: 保健福祉課 福祉係（電話 0158-29-3616）（助成申請書を提出）
+  url: https://town.takinoue.hokkaido.jp/kurashi/fukushikenko/otoshiyori/koureishaanshin/20260413.html
+  confidence: high
+  amount: 初期費用は上限 15,000 円。月額料金は3か月分で上限 3,000 円（契約前の1回限り）
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

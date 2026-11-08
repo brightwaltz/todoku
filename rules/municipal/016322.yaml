@@ -1,0 +1,96 @@
+city: '016322'
+name: 士幌町
+site: www.shihoro.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者交通費の助成（町内の民間バス乗車券）
+  name_on_page: 高齢者交通費の助成（町内）
+  summary: 町営バスが走らない地帯で民間バスを使う 70 歳以上の人に、乗車券を発行する。
+  who:
+    age_min: 70
+  at_application:
+  - 町営バス非運行地帯（国道241号の士幌23号バス停以南、または28号バス停以北）の民間バス利用
+  where: 保健福祉課 地域福祉係
+  url: https://www.shihoro.jp/welfare/detail.php?content=86
+  confidence: high
+  amount: 乗車券を 1 か月に 4 枚
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システムの設置
+  name_on_page: 高齢者緊急通報システムの設置
+  summary: 緊急時の対応が難しい世帯に緊急通報システムを設置し、設置費・機器使用料を補助する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らしの虚弱な高齢者、高齢者のみの世帯、障がい者のいる世帯
+  - 緊急時に適切な対応が困難と認められる
+  where: 保健福祉課 地域福祉係
+  url: https://www.shihoro.jp/welfare/detail.php?content=86
+  confidence: high
+  amount: 設置費・機器使用料を補助
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 高齢者を対象とした補聴器購入費用の助成について
+  summary: 身体障害者手帳の対象にならない中等度難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 両耳の聴力が身体障害者手帳の交付対象でない
+  - 医師が補聴器の使用の必要性を認めた
+  - 過去に助成を受けたことがない
+  where: 保健福祉課 地域福祉係
+  url: https://www.shihoro.jp/welfare/detail.php?content=1235
+  confidence: high
+  amount: 購入費の 2 分の 1、上限 5 万円
+- category: gaishutsu
+  name: 高齢者等移動支援事業（ハイヤーチケット）
+  name_on_page: 高齢者等移動支援事業
+  summary: 運転免許のない高齢者などに、自宅から役場までのハイヤー代をチケットで助成する。
+  who: {}
+  at_application:
+  - 士幌市街地区以外の人は、免許のない75歳以上
+  - 70歳以上は、要介護認定・手帳（身障1〜3級など）・免許返納のいずれか
+  - 市街地区は、令和4年4月以降に免許を返納した70歳以上（1回限り）
+  where: 保健福祉課 地域福祉係
+  url: https://www.shihoro.jp/welfare/detail.php?content=472
+  confidence: high
+  amount: 役場までのハイヤー代 12 往復分相当（免許返納者には 6 往復分を追加）
+- category: sonota
+  name: 高齢者等熱中症対策エアコン購入費の助成
+  name_on_page: 高齢者等熱中症対策エアコン購入費助成交付金
+  summary: エアコンのない高齢者世帯などに、エアコンの購入・設置費の一部を助成する。
+  who:
+    age_min: 70
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 75歳以上のみの世帯、または70歳以上のみで要介護1以上・手帳の人がいる世帯
+  - エアコンを設置していない
+  - 受付は令和9年2月15日まで、予算上限あり
+  - 施設・有料老人ホームなどに入所中は対象外
+  where: 保健福祉課 地域福祉係
+  url: https://www.shihoro.jp/welfare/detail.php?content=974
+  confidence: high
+  amount: 対象経費の 2 分の 1、上限 7 万 5 千円（1 世帯 1 回）
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,102 @@
+city: '023621'
+name: 大鰐町
+site: www.town.owani.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置（福祉安心電話）の設置
+  name_on_page: 緊急通報装置（福祉安心電話）の設置
+  summary: ひとり暮らしや高齢者世帯の家の電話に、24時間対応の緊急通報の機器を付ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に住所がある
+  where: 大鰐町社会福祉協議会
+  url: http://www.town.owani.lg.jp/kurashi/kaigofukushi/koreisyafukushi/zaitaku-seikatsushien.html
+  confidence: high
+  amount: 会費は月500円（使用時の諸経費は自己負担、生活保護の人は会費無料）
+- category: kaigo-yohin
+  name: 重度の要介護の人を介護する家族への介護用品の支給
+  name_on_page: 介護用品支給サービス
+  summary: 要介護4・5の人を在宅で介護する非課税世帯の家族に、紙おむつ等の介護用品を現物で渡す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護する家族が申し込む
+  - 介護する人も介護を受ける人も住民税非課税世帯
+  where: 保健福祉課介護保険係の窓口
+  url: http://www.town.owani.lg.jp/kurashi/kaigofukushi/koreisyafukushi/zaitaku-kaigoshien.html
+  confidence: high
+  amount: 年間1人あたり60,000円までの現物支給（紙おむつ・尿とりパッド・清拭剤など）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給
+  summary: 介護サービスを受けない要介護3〜5の人を在宅で介護する非課税世帯の家族に慰労金を出す。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護サービスを受けていない人を介護する家族が対象
+  - 介護する人も介護を受ける人も住民税非課税世帯
+  where: 保健福祉課介護保険係の窓口
+  url: http://www.town.owani.lg.jp/kurashi/kaigofukushi/koreisyafukushi/zaitaku-kaigoshien.html
+  confidence: high
+  amount: 対象者1人あたり年額10万円
+- category: hochoki
+  name: 軽度・中等度難聴者の補聴器購入費等の助成
+  name_on_page: 軽度・中等度難聴者補聴器購入費等助成事業
+  summary: 65歳以上で手帳の対象にならない難聴の人の、補聴器の購入費と修理費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 両耳の聴力が原則30dB以上で身体障害者手帳の対象でない
+  - 補聴器相談医が装用を必要と診断している
+  - 認定補聴器専門店から購入する
+  - 本人か配偶者の市町村民税所得割が46万円以上だと対象外
+  where: 保健福祉課福祉係
+  url: http://www.town.owani.lg.jp/kurashi/kaigofukushi/syogaisyafukushi/hotyouki-josei.html
+  confidence: high
+  amount: 購入費は3万円まで、修理費は2分の1
+- category: haikai
+  name: 認知症高齢者の徘徊見守りカードの交付
+  name_on_page: 認知症高齢者徘徊見守りカード交付事業
+  summary: 徘徊のおそれのある高齢者を事前登録し、見守りカード・ワッペン・靴用ステッカーを渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊、または徘徊のおそれのある高齢者
+  - 事前に登録する（受付は地域包括支援センター）
+  where: 地域包括支援センター（保健福祉課地域包括支援係）
+  url: http://www.town.owani.lg.jp/kurashi/kaigofukushi/koreisyafukushi/ninchisho.html
+  confidence: high
+  amount: 見守りカード、衣服用ワッペン、シューズ用ステッカーを交付（費用は頁に記載なし）
+not_found:
+- haishoku
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- koken

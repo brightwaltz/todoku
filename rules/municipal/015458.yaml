@@ -1,0 +1,199 @@
+city: 015458
+name: 斜里町
+site: www.town.shari.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（夕食の配送と安否確認）
+  name_on_page: 食の自立支援事業
+  summary: 調理が難しい高齢者等に、夕食を週1〜5回届けて安否も確認する。
+  who: {}
+  at_application:
+  - 単身の高齢者、高齢者夫婦世帯、障がい者等で食事の調理が困難な方
+  - 利用の状況をアセスメントして回数を決める
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+- category: sonota
+  name: 除雪等サービス事業
+  name_on_page: 除雪等サービス事業
+  summary: 高齢者等の生活用通路の除雪を行う。
+  who: {}
+  at_application:
+  - 単身の高齢者、高齢者夫婦世帯、身体障がい者等
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+- category: kaigo-yohin
+  name: 介護用品支給事業（おむつ等の費用の助成）
+  name_on_page: 介護用品支給事業
+  summary: 常時失禁状態の高齢者等に、おむつや清拭タオル等の費用を助成する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護保険主治医意見書の「尿失禁」の項目に当たる方
+  - または医師意見書で常時失禁状態と認められる方
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+  amount: 月額 4,950 円まで
+- category: iro
+  name: 家族介護者元気回復事業（温泉宿泊補助券）
+  name_on_page: 家族介護者元気回復事業
+  summary: 在宅で介護している人に、温泉利用の宿泊補助券を交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 高齢者等を在宅で6か月以上継続して介護している方
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+  amount: 一人年間 3 万円以内の温泉利用宿泊補助券
+- category: ribiyo
+  name: 理美容サービス事業（訪問）
+  name_on_page: 理美容サービス事業
+  summary: 出かけにくい高齢者等に、訪問の理美容サービスを年4回まで提供する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきりなどで理美容院に出かけることが困難な方
+  - 利用者の一部負担あり
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+  amount: 年4回まで
+- category: gaishutsu
+  name: 移送サービス事業（リフト付車両）
+  name_on_page: 移送サービス事業
+  summary: リフト付車両で、居宅と医療機関等の間を送迎する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 車イスやストレッチャーでの移動が必要な高齢者
+  - 利用者の一部負担あり。範囲は北見市まで
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+  amount: 年50回まで（片道を1回。町外は年24回まで）
+- category: sonota
+  name: 介護保険低所得利用者負担軽減助成
+  name_on_page: 介護保険低所得利用者負担軽減助成事業
+  summary: 低所得の方の介護サービスの利用者負担を一律25％助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 訪問介護・在宅介護サービス・特養の旧措置者以外の施設を利用
+  - 負担能力のある親族等の扶養控除対象者でない
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+  amount: 利用者負担金の 25％を一律助成
+- category: kinkyu-tsuho
+  name: 緊急通報システム（モバイル型）
+  name_on_page: 緊急通報システム事業
+  summary: 単身で虚弱な高齢者世帯等に、モバイル型の緊急通報端末を貸与する。
+  who: {}
+  at_application:
+  - 単身で虚弱な高齢者世帯等（自立者・要支援者・要介護者）
+  - 利用者の一部負担あり
+  where: 民生部 地域福祉課 福祉係（頁のお問い合わせ先。申請先の明記なし）
+  url: https://www.town.shari.hokkaido.jp/hoken_fukushi_iryo/koreishafukushisabisu/835.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク（事前登録）
+  name_on_page: 認知症高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれのある人を事前登録し、いなくなったとき地域で早く探す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 斜里町に在住し、認知症や障害など行方不明のおそれのある人
+  - 家族・施設関係者が事前登録届と写真を出す
+  where: 斜里町総合保健福祉センターぽると21 地域支援係
+  url: https://www.town.shari.hokkaido.jp/soshikikarasagasu/chiikifukushi/tiikishien/nintnisyou/4046.html
+  confidence: high
+  amount: 登録料無料
+- category: gaishutsu
+  name: ハイヤー利用助成事業（郡部地区）
+  name_on_page: ハイヤー利用助成事業
+  summary: 郡部に住む高齢者のハイヤー運賃の一部を、助成券で助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 郡部の地区に住み、原則運転免許証を持たない方
+  - 12〜3月は免許を持つ方も対象
+  where: 住民生活課 住民活動係
+  url: https://www.town.shari.hokkaido.jp/material/files/group/33/4koureikaigo.pdf
+  confidence: high
+  amount: 片道1回の利用者負担は初乗り750円で、残りを助成（上限3,000円、地区により4,000〜5,000円）。通年用6回/月・冬期用4回/月
+- category: gaishutsu
+  name: ハイヤー利用助成事業（ウトロ地区）
+  name_on_page: ハイヤー利用助成事業
+  summary: ウトロ地区に住む高齢者のハイヤー運賃の一部を、助成券で助成する。
+  who:
+    age_min: 70
+  at_application:
+  - ウトロ地区に住み、原則運転免許証を持たない方
+  - 12〜3月は免許を持つ方も対象
+  where: 住民生活課 住民活動係
+  url: https://www.town.shari.hokkaido.jp/material/files/group/33/4koureikaigo.pdf
+  confidence: high
+  amount: 片道1回の利用者負担は初乗り300円で、残りを助成（上限1,000円）。通年用6回/月・冬期用4回/月
+- category: gaishutsu
+  name: バス利用助成事業（ウトロ地区）
+  name_on_page: バス利用助成事業
+  summary: ウトロ地区から斜里市街地へのバス運賃を、助成券で助成する。
+  who: {}
+  at_application:
+  - ウトロ地区に住む高齢者等（対象の細かい条件は表から読み切れず）
+  where: 住民生活課 住民活動係
+  url: https://www.town.shari.hokkaido.jp/material/files/group/33/4koureikaigo.pdf
+  confidence: low
+  amount: 1回につき 1,300 円を助成（通年用6回/月・冬期用4回/月）
+- category: sonota
+  name: 高齢者運転免許自主返納支援（運転経歴証明書の手数料助成）
+  name_on_page: 高齢者運転免許自主返納支援
+  summary: 免許を自主返納して運転経歴証明書を取る手数料を助成する。
+  who: {}
+  at_application:
+  - 町内に住所があり、75歳以上80歳未満の方
+  - 平成29年4月1日以降に免許を自主返納し、運転経歴証明書の交付を受けた方
+  where: 住民生活課 住民活動係
+  url: https://www.town.shari.hokkaido.jp/material/files/group/33/4koureikaigo.pdf
+  confidence: high
+  amount: 1,150 円
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

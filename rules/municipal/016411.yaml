@@ -1,0 +1,160 @@
+city: '016411'
+name: 大樹町
+site: www.town.taiki.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 栄養バランスのとれた弁当を週3回まで届け、安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住所がある
+  - 生活保護世帯、または住民税非課税世帯
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯
+  - または、障害者手帳（身体・療育・精神）を持っている
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+  amount: 1食あたり おかず337円・ごはん64円（利用者負担）
+- category: gaishutsu
+  name: 福祉車両の無料貸出
+  name_on_page: 福祉車両貸出事業
+  summary: 車椅子の人が通院や外出に使う福祉車両を無料で貸し出す。
+  who: {}
+  at_application:
+  - 町内に住所があり、公共交通機関の利用が困難な車椅子利用者
+  - 運転手を確保できる
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+  amount: 貸出は無料（最大3日間。燃料費・有料道路代は自己負担）
+- category: gaishutsu
+  name: 介護タクシー利用料金の半額助成
+  name_on_page: 介護タクシー利用料金助成事業
+  summary: 通院・入退院で介護タクシーを使った料金の半額を助成する。
+  who: {}
+  at_application:
+  - 町内に住所がある高齢者等で、車いすかストレッチャーが必要
+  - 利用前に申請する（事前申請なしは助成されない）
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+  amount: 利用料金の半額（100円未満は切り捨て）
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の現物支給
+  name_on_page: 介護用品支給事業
+  summary: 在宅で介護する家族に、紙おむつなどの介護用品を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護認定者を介護している家族に支給
+  - 要介護認定者が町民で、長期入院していない
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+  amount: 年額 100,000 円分まで
+- category: sonota
+  name: 冬の除雪サービス
+  name_on_page: 除雪サービス事業
+  summary: 自宅の玄関前から公道までの避難経路を無料で除雪する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上の高齢者のみの世帯
+  - または、身体障害者手帳1・2級の方のみの世帯
+  - 自力で除雪が困難で、親族の援助も受けられない
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+  amount: 無料（除雪幅 約120センチメートル）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: ひとり暮らし高齢者等緊急通報装置設置事業
+  summary: ボタンで24時間対応のコールセンターに通報できる装置を設置する。
+  who: {}
+  at_application:
+  - 町内に住所がある、おおむね70歳以上の高齢者等
+  - ひとり暮らしで、健康・身体状況や日常動作に支障がある
+  - または、障がいがあり日常動作に支障がある
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+  amount: 使用料は無料。設置料は前年度町民税課税世帯 10,000 円、その他は無料
+- category: gaishutsu
+  name: 通院用タクシーチケットの交付
+  name_on_page: 高齢者等通院交通費助成
+  summary: 通院の手段がない高齢者に、タクシーチケットを年額で交付する。
+  who: {}
+  at_application:
+  - 70歳以上の高齢者、または60〜69歳の虚弱老人
+  - 通院の手段がなく、親族の援助も受けられない
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+  amount: 年額 15,000〜70,000 円分（住む行政区で異なる）
+- category: koken
+  name: 成年後見の申立て代行・報酬助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 町長による申立ての代行と、後見人等への報酬の助成。
+  who: {}
+  at_application:
+  - 申立て代行：身寄りがない等で町長の申立てが必要と認められた方
+  - 報酬助成：生活保護の方、または報酬負担で生活保護になる方
+  where: 保健福祉課 高齢者支援係
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1052.html
+  confidence: high
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 中等度難聴の高齢者の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 中等度難聴（40dB以上70dB未満）で、医師が使用を必要と認めた
+  - 聴覚障害による身体障害者手帳を持っていない
+  - 過去にこの助成を受けていない
+  - 町税などを納め終えている
+  where: らいふ窓口（保健福祉課 高齢者支援係）
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/2429.html
+  confidence: high
+  amount: 購入費の2分の1以内、上限5万円（1人1回限り）
+- category: haikai
+  name: 徘徊高齢者等SOSネットワークの事前登録
+  name_on_page: 大樹町徘徊高齢者等SOSネットワークシステム
+  summary: 行方不明のおそれがある人を事前登録し、地域の支援で早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内在住で、行方不明になるおそれのある高齢者や障がい者
+  - 本人の特徴がわかる写真（全身・顔）を添える
+  where: 保健福祉課 高齢者支援係（登録届出書を提出）
+  url: https://www.town.taiki.hokkaido.jp/kurashi-tetsuzuki/kenko-iryo-fukushi/7/1287.html
+  confidence: high
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- yutai

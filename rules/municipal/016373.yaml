@@ -1,0 +1,159 @@
+city: '016373'
+name: 芽室町
+site: www.memuro.net
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者食事サービス（食事の配達と安否確認）
+  name_on_page: 高齢者食事サービス
+  summary: 調理や買い物が困難な高齢者等に、食事を届けて安否も確認する。
+  who: {}
+  at_application:
+  - 調理・買い物が困難な65歳以上の人、または40歳以上の介護保険認定者
+  - 利用の可否は訪問調査等のうえ審査
+  - 申請書を在宅支援係へ提出
+  where: 高齢者支援課 在宅支援係
+  url: https://www.memuro.net/administration/soshiki/kourei/14guide-14508.html
+  confidence: high
+  amount: 食事代 450〜833 円（事業者が定める）。生活保護・非課税世帯には助成あり
+  more_urls:
+  - https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与（月1回の保健師の安否確認つき）
+  name_on_page: 緊急通報システム
+  summary: 緊急通報装置とペンダントを貸与し、月 1 回、保健師が安否を確認する。
+  who: {}
+  at_application:
+  - 独居高齢者、高齢者夫婦世帯、身体障がい者のいる世帯
+  - 利用の可否は審査後に決定
+  - 隣接地に親族がいない80歳以上の独居の人は審査不要
+  where: 地区の民生委員児童委員、または在宅支援係
+  url: https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+  confidence: high
+  amount: 利用料・設置料は無料
+  more_urls:
+  - https://www.memuro.net/administration/soshiki/kourei/14guide-14511.html
+- category: gaishutsu
+  name: 高齢者等通院移送交通費の助成（タクシー運賃の半額）
+  name_on_page: 高齢者等通院移送交通費の助成
+  summary: 通院に車いす等が必要な在宅の人に、タクシー運賃の半額を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 通院にストレッチャーか車いすが必要
+  - 身体障害者手帳（下肢・体幹1・2級など）、要介護4・5、要介護1以上で常時車いす利用のいずれか
+  - 事前登録が必要
+  where: 高齢者支援課 在宅支援係
+  url: https://www.memuro.net/administration/soshiki/kourei/14guide-14503.html
+  confidence: high
+  amount: 運賃の半額（償還払い）
+  more_urls:
+  - https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+- category: kaigo-yohin
+  name: 家族介護用品の支給（給付券）
+  name_on_page: 家族介護用品支給
+  summary: 要介護4・5の人を在宅で介護する家族に、介護用品の給付券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護者と要介護者のどちらも非課税世帯に属している
+  - 入院・施設入所中や、生活保護等の同様の給付を受けている場合は対象外
+  where: 高齢者支援課 在宅支援係
+  url: https://www.memuro.net/administration/soshiki/kourei/14guide-14505.html
+  confidence: high
+  amount: 要介護者 1 人につき月額 6,500 円（紙おむつ・尿取りパッド等と引き換え）
+  more_urls:
+  - https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+- category: sonota
+  name: 除雪サービス（玄関から公道まで）
+  name_on_page: 除雪サービス
+  summary: 除雪が困難な一人暮らしの高齢者等の世帯の玄関から公道までを、積雪 10cm 以上で除雪する。
+  who: {}
+  at_application:
+  - 除雪が困難な一人暮らしの高齢者、身体障がい者等の世帯
+  - 申請時は民生委員児童委員か社会福祉協議会に相談
+  where: 芽室町社会福祉協議会
+  url: https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+  confidence: high
+  amount: 1 回 非課税世帯 300 円、課税世帯 800 円（キャンセル料 50 円）
+- category: sonota
+  name: ちょこっとサポート事業（暮らしの困りごとの助け合い）
+  name_on_page: ちょこっとサポート事業
+  summary: 暮らしの小さな困りごとを、会員どうしが助け合うしくみ。会員登録が必要。
+  who: {}
+  at_application:
+  - 概ね65歳以上で支援を必要とする人
+  - 会員登録（無料）が必要
+  - 平日の午前9時〜午後5時、1日1時間まで
+  where: 芽室町社会福祉協議会
+  url: https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+  confidence: high
+  amount: 30 分 250 円（チケット 1 枚）
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク（事前登録）
+  name_on_page: 認知症高齢者等SOSネットワーク
+  summary: 所在不明になったときに備えて事前に登録し、協力機関へ情報を提供する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等の高齢者
+  - 本人の写真（顔・全身）と事前登録申請書が必要
+  - 必要に応じて見守りシールも同時に登録できる
+  where: 高齢者支援課 在宅支援係
+  url: https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+  confidence: high
+- category: gaishutsu
+  name: 重度身体障がい者等交通費助成（タクシーチケット）
+  name_on_page: 重度身体障がい者等交通費助成
+  summary: 在宅で外出が困難な人に、外出用のタクシーチケットを交付する（通院には使えない）。
+  who:
+    at_home: true
+  at_application:
+  - 下肢・体幹1・2級、視覚1・2級、車いす利用の身体障がい者のいずれか
+  - または要介護4・5、要介護1以上で車いす利用
+  - 車いす利用は医師等の意見書が必要
+  where: 健康福祉課 障がい福祉係
+  url: https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+  confidence: high
+- category: sonota
+  name: 介護保険低所得者等利用者負担助成事業
+  name_on_page: 介護保険低所得者等利用者負担助成事業
+  summary: 低所得で生計が困難な人が介護サービスを使ったとき、利用者負担の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 年間収入が単身世帯で150万円以下（1人増えるごとに50万円加算）
+  - 預貯金等が単身世帯で350万円以下（1人増えるごとに100万円加算）
+  - 負担能力のある親族に扶養されていない、介護保険料を滞納していない
+  - 生活保護受給者は対象外
+  where: 高齢者支援課 介護保険係
+  url: https://www.memuro.net/administration/soshiki/kourei/files/R8_ichiran.pdf
+  confidence: high
+  amount: 利用者負担（1 割）の 4 分の 1
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

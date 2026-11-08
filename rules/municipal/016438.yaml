@@ -1,0 +1,93 @@
+city: 016438
+name: 幕別町
+site: www.town.makubetsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援サービス（配食と安否確認）
+  name_on_page: 食の自立支援サービス
+  summary: 調理が困難な高齢者に栄養バランスのよい食事を届け、安否も確認する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 調理が困難な高齢者
+  - 管理栄養士の面談や調査を受ける
+  where: 役場保健課、札内支所、糠内出張所、保健福祉課（忠類ふれあいセンター福寿内）
+  url: https://www.town.makubetsu.lg.jp/kenko/kaigoshien/kaigohoken_hokan/1323.html
+  confidence: high
+  amount: 町が弁当代1食108円と配送料等を補助。自己負担は1食342〜789円（事業者・メニューによる）
+- category: kaigo-yohin
+  name: 介護用品等の購入費助成
+  name_on_page: 介護用品等給付事業
+  summary: 重度の要介護者の紙おむつなどの購入費を月6,000円まで助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5で常時介護用品が必要、または認知症等で常時必要と認められる
+  - 生活保護など他制度で同様の給付を受けていない
+  - 月15日以上入所・入院した月は対象外
+  where: 役場保健課、札内支所、糠内出張所、保健福祉課（忠類ふれあいセンター福寿内）
+  url: https://www.town.makubetsu.lg.jp/kenko/kaigoshien/kaigohoken_hokan/1313.html
+  confidence: high
+  amount: 月額1人あたり6,000円まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: ひとり暮らしの高齢者宅に緊急通報装置を設置する（設置は無料）。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 健康状態・身体状況・日常動作に支障がある（65歳以上の場合）
+  - または、75歳以上のひとり暮らしで設置を希望する
+  where: 役場保健課、札内支所、糠内出張所、保健福祉課（忠類ふれあいセンター福寿内）
+  url: https://www.town.makubetsu.lg.jp/kenko/kaigoshien/kaigohoken_hokan/1314.html
+  confidence: high
+  amount: 設置は無料（通話の基本料金などは利用者負担）
+- category: gaishutsu
+  name: 外出支援サービス（送迎）
+  name_on_page: 外出支援サービス
+  summary: 通院や買い物などの外出を、リフト付きまたは通常のワゴン車で送迎する。
+  who: {}
+  at_application:
+  - 65歳以上で歩行が困難、通常の車両の移動が不可能（リフト付き車）
+  - 65歳以上のひとり暮らし等で、公共交通機関の移動が困難（通常車）
+  - または、手帳1・2級の下肢・体幹障がい等で移動が困難
+  where: 役場保健課、札内支所、糠内出張所、保健福祉課（忠類ふれあいセンター福寿内）
+  url: https://www.town.makubetsu.lg.jp/kenko/kaigoshien/kaigohoken_hokan/1305.html
+  confidence: high
+  amount: 無料（月3回まで。行事参加・投票は回数に含めない）
+- category: hochoki
+  name: 中等度難聴者の補聴器購入費助成
+  name_on_page: 中等度難聴者補聴器購入費助成事業
+  summary: 中等度難聴で補聴器が必要な方の購入費の一部を助成する。
+  who:
+    age_min: 40
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚の身体障害者手帳の交付を受けていない
+  - 耳鼻咽喉科専門医が装用を必要と認めた（医師意見書）
+  - 認定補聴器技能者がいる販売店で購入し、購入から6か月以内に申請
+  where: 役場窓口（高齢者支援係）
+  url: https://www.town.makubetsu.lg.jp/kenko/kaigoshien/koreishafukushi/12988.html
+  confidence: high
+  amount: 購入費の1/2以内、片耳につき上限50,000円（前回から5年で再申請可）
+not_found:
+- haikai
+- iro
+- shingu
+- ribiyo
+- jutaku
+- chusha
+- yutai

@@ -1,0 +1,98 @@
+city: 015784
+name: 白老町
+site: www.town.shiraoi.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 冬季生活支援給付金（高齢者世帯・住民税非課税世帯）
+  name_on_page: 冬季生活支援給付金
+  summary: 世帯主が65歳以上の世帯や住民税非課税世帯に、1世帯5,000円を給付する。
+  who: {}
+  at_application:
+  - 令和8年8月1日に町に住民登録がある世帯
+  - 次のどれか：世帯主が65歳以上（令和8年度中に65歳になる人も含む）
+  - または世帯全員の令和8年度住民税均等割が非課税
+  - 均等割が課税されている人の扶養親族等だけの世帯は対象外
+  - 申請が必要。期限は令和9年2月1日（郵送は当日消印有効）
+  where: 企画振興部企画政策課（オンライン申請か郵送）
+  url: https://www.town.shiraoi.hokkaido.jp/docs/8553.html
+  confidence: high
+  amount: 1世帯5,000円（両方に当たっても5,000円）
+- category: haikai
+  name: 認知症高齢者等SOSネットワークの事前登録
+  name_on_page: 白老町認知症高齢者等SOSネットワーク事業
+  summary: 認知症の高齢者が行方不明になったとき、警察と関係機関が捜索する。事前登録で早く動ける。
+  who: {}
+  at_application:
+  - 認知症の高齢者などが対象。事前登録をしなくても利用はできる
+  - 事前登録は写真（顔と全身）と事前登録届を窓口に出す
+  where: 福祉課高齢者福祉係（高齢者介護課窓口）
+  url: https://www.town.shiraoi.hokkaido.jp/docs/6242.html
+  confidence: high
+- category: haikai
+  name: 認知症の人の家族への高齢者向けGPS端末の貸出し
+  name_on_page: 高齢者向けＧＰＳ端末貸出
+  summary: ひとり歩きがある高齢者を介護する家族に、位置を確認できるGPS端末を貸し出す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症によるひとり歩きがみられる高齢者を介護している人
+  - 高齢者と介護者がともに町内に住んでいる
+  where: 保健福祉部福祉課高齢者福祉係
+  url: https://www.town.shiraoi.hokkaido.jp/fs/6/2/6/1/9/_/05._______2026_-_____.pdf
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置
+  summary: ボタンひとつで24時間対応の支援センターにつながる通報装置を自宅に設置する。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住んでいる
+  - 次のどれか：突発的に命に危険な症状が出る持病がある
+  - または災害時に機敏に行動することが困難
+  where: 白老町社会福祉協議会
+  url: https://www.town.shiraoi.hokkaido.jp/fs/6/2/6/1/9/_/05._______2026_-_____.pdf
+  confidence: low
+- category: haishoku
+  name: 夕食の配食サービス
+  name_on_page: 配食サービス
+  summary: 調理が難しい人に、夕方に弁当を1日1食届け、訪問時に安否確認をする。
+  who: {}
+  at_application:
+  - 町内に住み、心身等の理由から調理が困難な人
+  - 利用できるかは判定会議で決まる
+  where: 白老町社会福祉協議会
+  url: https://www.town.shiraoi.hokkaido.jp/fs/6/2/6/1/7/_/03._______2026_-_______.pdf
+  confidence: high
+  amount: 1食500円（毎日）
+- category: sonota
+  name: 安心筒の配布
+  name_on_page: 安心筒配布
+  summary: 救急時に使う医療情報を入れておく専用の容器とシールを配る。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住む65歳以上の世帯
+  where: 保健福祉部福祉課高齢者福祉係
+  url: https://www.town.shiraoi.hokkaido.jp/fs/6/2/6/1/9/_/05._______2026_-_____.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

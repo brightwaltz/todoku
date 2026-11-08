@@ -1,0 +1,82 @@
+city: 016926
+name: 中標津町
+site: www.nakashibetsu.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 家族介護支援給付金
+  name_on_page: 家族介護支援給付金
+  summary: 要介護4・5でサービスを1年以上使っていない方を介護する家族に、年10万円を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+  at_application:
+  - 介護保険のサービスを1年以上利用していない
+  - 所得制限がある（基準額は頁になし）
+  where: 介護保険課 介護保険係
+  url: https://www.nakashibetsu.jp/kurashi/kosodate_fukushi/koureisya/kazokukaigo_kyuhukin/
+  confidence: high
+  amount: 年10万円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ひとり暮らしの高齢者宅に通報機器を設置し、緊急時に情報処理センターが連絡・援助する。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らしの方
+  - 病弱、身体が不自由、発作的な病気がある方などが対象
+  - 所得に応じて別途利用料がかかる
+  where: 福祉課 社会福祉係
+  url: https://www.nakashibetsu.jp/kurashi/kosodate_fukushi/koureisya/kinkyu/
+  confidence: high
+  more_urls:
+  - https://www.nakashibetsu.jp/file/contents/1349/53789/koureisyagaidobukkuR8.pdf
+- category: gaishutsu
+  name: 車いす等の方の移送サービス
+  name_on_page: 移送サービス
+  summary: 車いす等で普通車に乗れない方を、町内の病院や福祉施設へワゴン車などで送る。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、車椅子生活や寝たきりで普通乗用車を使えない方
+  - 行き先は町内の医療機関や福祉施設（通院・入所）
+  - 所得に応じて別途利用料がかかる
+  where: 福祉課 障がい福祉係
+  url: https://www.nakashibetsu.jp/kurashi/kosodate_fukushi/koureisya/isou/
+  confidence: high
+  more_urls:
+  - https://www.nakashibetsu.jp/file/contents/1349/53789/koureisyagaidobukkuR8.pdf
+- category: sonota
+  name: 高齢者世帯の除雪サービス
+  name_on_page: 除雪サービス
+  summary: 除雪が難しい一人暮らしや高齢夫婦の世帯に、自宅玄関から道路までの通路を除雪する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の一人暮らし、または高齢夫婦の世帯
+  - 冬期間の除雪の労力等の確保が困難
+  - 町内に家族等が在住している方は対象外
+  - 除雪するのは玄関から道路までの避難通路分
+  where: 福祉課 社会福祉係
+  url: https://www.nakashibetsu.jp/file/contents/1349/53789/koureisyagaidobukkuR8.pdf
+  confidence: high
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- koken
+- jutaku
+- nichijo-yogu

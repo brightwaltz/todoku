@@ -1,0 +1,74 @@
+city: '016021'
+name: 平取町
+site: www.town.biratori.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への弁当の配食サービス
+  name_on_page: 配食サービス
+  summary: 栄養バランスのとれた弁当を自宅に届け、安否確認もする。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町に住んでいる
+  - 次のどれか：要支援・要介護認定を受けている
+  - または定期的な見守りが必要
+  - または低栄養の予防・改善が必要
+  - 利用前に登録（申請）が必要
+  where: 保健福祉課介護支援係
+  url: https://www.town.biratori.hokkaido.jp/soshikikarasagasu/hokenfukushika/kaigoshiengakari/1/1/1/3/zaitakuseikatu/2210.html
+  confidence: high
+  amount: 1食500円（コープさっぽろと契約し、口座引き落とし）
+- category: mimamori
+  name: 見守りスマートスピーカーの貸与
+  name_on_page: 高齢者の見守り事業
+  summary: ひとり暮らしの高齢者に見守りスマートスピーカーを貸与し、体調の確認や安否確認をする。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住所があり、民生児童委員のひとり暮らし高齢者リストにある
+  - 75歳以上で虚弱状態にあるひとり暮らし高齢者
+  - 町税等を滞納していない
+  - 町長が必要と認めたときは、この限りでない
+  where: 保健福祉課介護支援係
+  url: https://www.town.biratori.hokkaido.jp/soshikikarasagasu/hokenfukushika/kaigoshiengakari/1/1/1/3/zaitakuseikatu/2216.html
+  confidence: high
+  amount: 通信費として月500円
+- category: kaigo-yohin
+  name: 要介護3〜5の人の家族への介護用品券
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護3〜5の人を介護する家族の非課税世帯に、紙おむつなどを買える券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+  at_application:
+  - 町内に住所がある要介護3〜5の方と、介護する家族が属する世帯の全員が非課税
+  - 町が指定した店舗だけで使える
+  - 申請は問合せ先に連絡する
+  where: 保健福祉課介護支援係
+  url: https://www.town.biratori.hokkaido.jp/soshikikarasagasu/hokenfukushika/kaigoshiengakari/1/1/1/3/zaitakuseikatu/2232.html
+  confidence: high
+  amount: 月10,000円を上限とする券（紙おむつ、尿とりパッド、ドライシャンプー、清拭剤、防水シート、使い捨て手袋など）
+not_found:
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- haikai
+- nichijo-yogu

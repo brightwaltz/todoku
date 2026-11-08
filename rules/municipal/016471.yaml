@@ -1,0 +1,139 @@
+city: '016471'
+name: 足寄町
+site: www.town.ashoro.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置
+  summary: 病気や災害時のために緊急通報装置を設置する。設置料は町が負担する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者世帯（独居を含む）
+  - または、健康状態等で日常生活に支障のある世帯
+  where: 高齢者支援課 総合支援相談室 高齢者福祉担当
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/kenko-fukushi/kaigo-fukushi/folder_3/page_58.html
+  confidence: high
+  amount: 設置料は町負担（通話料・電池等は利用者負担）
+  more_urls:
+  - https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理容院・美容院に行けない方の自宅へ、登録業者が訪問して理美容を行う。
+  who: {}
+  at_application:
+  - 身体状況や心身の疾病・障がいで、理容院・美容院に出向くことが困難
+  where: 高齢者支援課 総合支援相談室 高齢者福祉担当
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/kenko-fukushi/kaigo-fukushi/folder_3/page_58.html
+  confidence: high
+  amount: 理美容料金は自己負担
+  more_urls:
+  - https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+- category: haishoku
+  name: 食の自立支援（配食サービス）
+  name_on_page: 食の自立支援（配食サービス）
+  summary: 食事の調理が困難な方に、週2回昼食を宅配し安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上のひとり暮らし、高齢者のみの世帯、これに準ずる世帯、または障がい者
+  - 高齢・心身の障がい・疾病等で食事の調理が困難
+  where: 足寄町社会福祉協議会、高齢者支援課 総合支援相談室 高齢者福祉担当
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/kenko-fukushi/kaigo-fukushi/folder_3/page_58.html
+  confidence: high
+  amount: 1食300円（週2回、火・木曜日の昼食）
+  more_urls:
+  - https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+- category: gaishutsu
+  name: 外出支援サービス（送迎）
+  name_on_page: 外出支援サービス
+  summary: 外出が困難な方を、自宅と福祉・医療施設などの間で送迎する。
+  who: {}
+  at_application:
+  - 町内に住むおおむね65歳以上の高齢者、心身障がい者等
+  - 自力で公共交通機関等による外出が困難（家族が送迎できる場合を除く）
+  where: 足寄町社会福祉協議会
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/kenko-fukushi/kaigo-fukushi/folder_3/page_58.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+- category: mimamori
+  name: あんしん電話サービス（週2回の安否確認の電話）
+  name_on_page: あんしん電話サービス（ハートコール）
+  summary: 週2回、電話で安否確認や健康状態の把握・相談を行う。
+  who: {}
+  at_application:
+  - 満70歳以上の1人暮らしの高齢者世帯など
+  where: 足寄町社会福祉協議会（冊子の事業者）
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/kenko-fukushi/kaigo-fukushi/folder_3/page_58.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+- category: haikai
+  name: 徘徊高齢者家族支援（徘徊探知機の初期費用助成）
+  name_on_page: 徘徊高齢者家族支援
+  summary: 徘徊探知機を導入する初期費用の一部を助成する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+    - dementia_diagnosis
+  at_application:
+  - 町内に居住し、認知症で徘徊がみられる在宅の高齢者等
+  where: 高齢者支援課 総合支援相談室 高齢者福祉担当
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/kenko-fukushi/kaigo-fukushi/folder_3/page_58.html
+  confidence: high
+  amount: 初期費用の助成、限度額12,000円（毎月の利用料等は自己負担）
+  more_urls:
+  - https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+- category: haikai
+  name: かえるシール交付（見守りシール）
+  name_on_page: 「かえるシール」交付事業
+  summary: 衣服に貼ったQRコードが読まれると、家族に発見メールが届くシールを交付する。
+  who: {}
+  at_application:
+  - 登録申請をすることでシールの交付を受けられる
+  where: 高齢者支援課（冊子の問い合わせ先）
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+  confidence: low
+- category: gaishutsu
+  name: 100円タクシー（乗り合いタクシー）
+  name_on_page: １００円タクシー
+  summary: 市街地の移動手段のない高齢者などが、町内の医療機関へ通院できる乗り合いタクシー。
+  who: {}
+  at_application:
+  - 市街地区に住み、移動手段がない
+  - 70歳以上、または障がい者等の手帳の交付を受けている
+  - 自分で車の乗降ができる（事前登録が必要）
+  where: 役場こども・健康課 福祉担当
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: 介護用品購入利用券（紙おむつ等）
+  name_on_page: 介護用品購入利用券
+  summary: 紙おむつ・紙パンツ・尿取りパットを1割負担で買える利用券を支給する。
+  who: {}
+  at_application:
+  - 要支援1・2、要介護1〜5の方、または総合事業の対象者
+  - 事前申請が必要（指定業者で購入）
+  where: 高齢者支援課（事前申請。冊子に窓口の明記なし）
+  url: https://www.town.ashoro.hokkaido.jp/kurashi/assets/%E8%B6%B3%E5%AF%84%E7%94%BA%E4%BB%8B%E8%AD%B7%E3%83%BB%E4%BF%9D%E5%81%A5%E3%83%BB%E7%A6%8F%E7%A5%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF%EF%BC%88%E4%BB%A4%E5%92%8C%EF%BC%97%E5%B9%B4%EF%BC%96%E6%9C%88%E6%94%B9%E8%A8%82%E7%89%88%EF%BC%89.docx.pdf
+  confidence: low
+  amount: 1割負担で購入できる利用券（購入額で月額6,000円以内）
+not_found:
+- iro
+- koken
+- hochoki
+- shingu
+- jutaku
+- nichijo-yogu
+- chusha
+- yutai

@@ -1,0 +1,125 @@
+city: '024015'
+name: 野辺地町
+site: www.town.noheji.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 高齢者への配食と見守り（社会福祉協議会）
+  name_on_page: 配食・見守りサービス事業
+  summary: 食事の用意が難しい65歳以上に弁当を届け、手渡しで安否と健康状態を確かめる。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 食事を用意することが難しい
+  - 安否確認と配食が必要な人（高齢夫婦のみの世帯に準ずる世帯も含む）
+  where: 野辺地町社会福祉協議会
+  url: https://www.town.noheji.aomori.jp/life/seikatsu/hukushi/2877/3329
+  confidence: high
+  amount: 弁当代は自己負担、配食手数料・交通費・見守り・救急時の連絡は無料。月〜金に利用できる
+- category: gaishutsu
+  name: お出かけ支援タクシー利用料金の助成券
+  name_on_page: お出かけ支援タクシー利用料金助成事業
+  summary: 免許のない非課税世帯の70歳以上などに、通院などのタクシー初乗運賃の助成券を出す。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 4月1日時点で70歳以上、または身体・精神の障害者手帳1・2級か愛護手帳Aの人
+  - 町内に住所があり、前々年の収入が148万円未満（非課税収入を含む）
+  - 世帯全員が運転免許証を持たない、または高齢や病気で返納した
+  - 同じ住宅内に同一生計の課税世帯の人が同居していない
+  - ほかに送迎等の支援を受けられない
+  where: 介護・福祉課
+  url: https://www.town.noheji.aomori.jp/life/seikatsu/hukushi/2877/4338
+  confidence: high
+  amount: 月3枚（年間最大36枚）の助成券でタクシーの初乗運賃を助成
+- category: sonota
+  name: 高齢者の公衆浴場の入浴サービス券
+  name_on_page: 高齢者入浴サービス助成事業
+  summary: 在宅の65歳以上で非課税の人に、町内の公衆浴場で使える入浴サービス券を出す。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 町内に住所があり、4月1日時点で65歳以上
+  - 前々年の収入が148万円未満（非課税収入を含む）
+  where: 介護・福祉課
+  url: https://www.town.noheji.aomori.jp/life/seikatsu/hukushi/2877/4337
+  confidence: high
+  amount: 月4枚（年間最大48枚）の入浴サービス券
+- category: hochoki
+  name: 軽度・中等度難聴者の補聴器購入費の助成
+  name_on_page: 軽度・中等度難聴者への補聴器購入費助成
+  summary: 手帳の対象にならない難聴の人の、補聴器購入費の2分の1を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 18歳以上で町内に住所がある
+  - 両耳の聴力30dB以上70dB未満で手帳の対象外
+  - 補聴器相談医が装用を必要と診断している
+  - 認定補聴器専門店で購入し、約3か月のトレーニングとアンケートに協力できる
+  - 世帯全員に町民税の滞納がない
+  where: 介護・福祉課（地域福祉担当）。申請の前にまず相談
+  url: https://www.town.noheji.aomori.jp/life_event/743/4079
+  confidence: high
+  amount: 購入費の2分の1、上限5万円、1人1回限り
+- category: koken
+  name: 成年後見の申立て費用と後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 身寄りのない人の町長申立てと、申立て費用・後見人等の報酬の助成を行う。
+  who: {}
+  at_application:
+  - 費用の助成は別表第2の要件に当たる人など、町長が認める人
+  - 報酬の助成は町内に住所があり別表第2の要件に当たる人など
+  - 別表の中身は頁になく、要綱で確かめる必要がある
+  where: 介護・福祉課
+  url: https://www.town.noheji.aomori.jp/life/seikatsu/hukushi/2621/2635
+  confidence: low
+  amount: 申立て費用は収入印紙代・切手代・診断書料・鑑定料。報酬は専門職後見人は別表第3の額まで、混在時は月28,000円まで、市民後見人は月10,000円まで
+- category: sonota
+  name: 救急キットの交付
+  name_on_page: 救急キット交付事業
+  summary: 救急搬送のときに医療情報と緊急連絡先を病院へ伝えるための救急キットを渡す。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者や障がい者で、健康上の不安を抱えている人
+  - 申請書を出す（頁に申請書あり）
+  where: 野辺地町地域包括支援センター（頁のお問い合わせ先）
+  url: https://www.town.noheji.aomori.jp/life/seikatsu/hukushi/2877/kourei-hukushi
+  confidence: high
+- category: haikai
+  name: 認知症高齢者の安心外出の登録
+  name_on_page: 認知症高齢者安心外出登録事業
+  summary: 自宅に戻れなくなるおそれのある認知症高齢者の情報を町に登録し、警察署・消防署と共有する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で自宅に戻れなくなるおそれのある認知症高齢者
+  - 登録届に顔写真と全身写真の2枚を付ける
+  where: 野辺地町地域包括支援センター
+  url: https://www.town.noheji.aomori.jp/life/seikatsu/hukushi/2877/kourei-hukushi
+  confidence: high
+not_found:
+- kaigo-yohin
+- iro
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,50 @@
+city: '023213'
+name: 鰺ヶ沢町
+site: www.town.ajigasawa.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 軽度・中等度難聴者の補聴器購入費の助成
+  name_on_page: 鰺ヶ沢町軽度・中等度難聴者補聴器購入費助成事業
+  summary: 障害者手帳の対象外の難聴の方に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある18歳以上の方
+  - 原則、両耳の聴力が30dB以上で、身体障害者手帳の対象外
+  - 補聴器相談医が装用を必要と診断している
+  - 補聴器を買う前に申請する
+  - 助成の決定から5年たてば再申請できる
+  where: ほけん福祉課 福祉班
+  url: https://www.town.ajigasawa.lg.jp/kenko_fukushi/nanchousyahochouki.html
+  confidence: high
+  amount: 上限5万円（生活保護世帯・町民税非課税世帯）、それ以外は上限2万5千円
+- category: sonota
+  name: 救急情報キットの配付
+  name_on_page: 救急情報キット
+  summary: 高齢者等に、緊急連絡先などを入れて冷蔵庫に保管する救急情報キットを配る。
+  who: {}
+  at_application:
+  - 町内在住で、65歳以上の一人暮らし、または65歳以上のみの世帯の方
+  - 1・2級などの障害者手帳があるひとり暮らしの方も対象
+  - そのほか町長が必要と認める方
+  - 本人が行けないときは親族や民生委員などが代理で申請できる
+  where: ほけん福祉課 福祉班
+  url: https://www.town.ajigasawa.lg.jp/kenko_fukushi/kinkyujoho_kit.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- haikai
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

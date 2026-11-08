@@ -1,0 +1,58 @@
+city: 023841
+name: 鶴田町
+site: www.town.tsuruta.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: koken
+  name: 成年後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業（報酬助成）
+  summary: 成年後見制度の費用を負担できない人に、成年後見人等への報酬を助成する。
+  who: {}
+  at_application:
+  - 生活保護を受けている人、またはそれに準じる人（町長が認める）
+  - そのほか助成がないと制度の利用が困難と町長が認める人
+  where: 健康保険課 国保介護班（介護）
+  url: https://www.town.tsuruta.lg.jp/kurashi/kurashi-hoken/seinenkouken.html
+  confidence: high
+  amount: 家庭裁判所が決めた報酬が基準で、上限は在宅は月28,000円、施設入所や長期入院は月18,000円
+- category: kaigo-yohin
+  name: 高齢者の紙おむつ券の交付
+  name_on_page: 高齢者紙おむつ給付事業
+  summary: 要介護4・5で在宅生活に紙おむつが必要な高齢者に、紙おむつ券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application: []
+  where: 計画に申請先の明記なし
+  url: https://www.town.tsuruta.lg.jp/info/document/kaigo_keikaku9.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 福祉安心電話の設置
+  name_on_page: 福祉安心電話の設置及び活用
+  summary: ひとり暮らしや二人暮らしの高齢者世帯に、緊急通報受診センターとつながる安心電話を設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 計画に申込先の明記なし
+  url: https://www.town.tsuruta.lg.jp/info/document/roujinn_keikaku.pdf
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

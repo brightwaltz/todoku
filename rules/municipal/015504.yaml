@@ -1,0 +1,69 @@
+city: '015504'
+name: 置戸町
+site: www.town.oketo.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 定期的に食事を届け、健康維持と安否の確認をする（最大で週4回）。
+  who: {}
+  at_application:
+  - ひとり暮らしの60歳以上の高齢者や高齢者夫婦世帯等
+  where: 置戸町地域福祉センター 包括支援係
+  url: https://www.town.oketo.hokkaido.jp/kenko_fukushi/koureisya/koreisha/haishoku/
+  confidence: high
+  amount: 昼食 400 円（キッチン木の実）、夕食 300 円（社会福祉協議会）。週1回から利用可
+- category: jutaku
+  name: 住宅改修費助成金
+  name_on_page: 住宅改修費助成金交付
+  summary: 手すりの設置や段差の解消などの改修費の半額を助成する。
+  who: {}
+  at_application:
+  - 町内に居住し、65歳以上、または身体障害者手帳1・2級の方（同居する方も可）
+  - 改修相談員の助言で着工前に申請
+  where: 置戸町地域福祉センター（頁に窓口の明記なし）
+  url: https://www.town.oketo.hokkaido.jp/kenko_fukushi/koureisya/koreisha/jutaku_kaishu/
+  confidence: high
+  amount: 改修工事費 100 万円を限度にその2分の1。介護保険の住宅改修の給付がある場合はそれを引いた額
+- category: gaishutsu
+  name: 通院交通費の助成（バス運賃）
+  name_on_page: 通院交通費助成事業
+  summary: 町外の医療機関に通うときの北見バス運賃の2分の1を助成する。
+  who:
+    age_min: 75
+  at_application:
+  - 北見バスを使い、訓子府町・北見市の医療機関に通院している方
+  - 町税等の未納者は除く
+  where: 置戸町地域福祉センター 高齢者福祉係
+  url: https://www.town.oketo.hokkaido.jp/kenko_fukushi/koureisya/koreisha/kotsuhi_josei/
+  confidence: high
+  amount: バス運賃の2分の1
+- category: kinkyu-tsuho
+  name: 緊急通報システム（機器の貸与）
+  name_on_page: 緊急通報システム事業
+  summary: ボタンひとつで安全センターに通報できる緊急通報機を設置（貸与）する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で援護を要するひとり暮らしの方など、緊急時の対応が困難な方
+  - 固定電話の一般回線と、町内の協力員（原則3名）が必要
+  where: 置戸町地域福祉センター 高齢者福祉係（または地区担当の民生委員）
+  url: https://www.town.oketo.hokkaido.jp/kenko_fukushi/koureisya/koreisha/kinkyu/
+  confidence: high
+  amount: 設置・撤去の費用負担なし。電話回線の基本料金や通話料は自己負担
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

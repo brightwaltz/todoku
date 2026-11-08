@@ -1,0 +1,102 @@
+city: '023612'
+name: 藤崎町
+site: www.town.fujisaki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者のタクシー初乗り運賃助成（チケット交付）
+  name_on_page: 藤崎町高齢者外出支援促進事業
+  summary: 運転免許のない65歳以上の在宅の人に、タクシー初乗り運賃分のチケットを渡す。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 町内に住所がある
+  - 運転免許を持っていない、または免許を返納・失効した
+  - タクシーは前日17時までの予約制（専用の町内タクシー会社）
+  where: 福祉課福祉係
+  url: https://www.town.fujisaki.lg.jp/index.cfm/7,19990,17,111,html
+  confidence: high
+  amount: 初乗り670円分を1枚とするチケットを、往復2枚×申請月から3月までの月数分
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 藤崎町高齢者補聴器購入費助成事業
+  summary: 65歳以上で手帳の対象にならない難聴の人の、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 両耳の聴力が原則30dB以上70dB未満で身体障害者手帳の対象でない
+  - 補聴器相談医が装用を必要と判断している
+  - 過去5年間にこの助成を受けていない
+  - 購入前に申請する（購入後は不可）
+  where: 福祉課福祉係
+  url: https://www.town.fujisaki.lg.jp/index.cfm/7,19983,17,111,html
+  confidence: high
+  amount: 1人につき30,000円まで
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 介護慰労金の支給
+  summary: 介護保険サービスを使わない重度の要介護の人を在宅で介護する家族に、慰労金を出す。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5またはこれに相当する在宅の高齢者（第2号被保険者を含む）を介護している家族
+  - 対象の人は過去1年間、介護保険サービスを受けていない
+  - 介護保険料の滞納がない
+  - 年1週間程度のショートステイは利用に数えない
+  - ほかの要件もあるため申請前に相談する
+  where: 福祉課介護保険係
+  url: https://www.town.fujisaki.lg.jp/index.cfm/7,755,17,111,html
+  confidence: high
+  amount: 年額100,000円
+- category: yutai
+  name: いきいき手形（老人福祉センターの温泉割引）
+  name_on_page: いきいき手形
+  summary: 65歳以上の人が、町内の老人福祉センターの温泉を1回100円で使える手形。
+  who:
+    age_min: 65
+  at_application:
+  - 交付の申請には認め印と顔写真（縦3cm×横2.5cm程度）が必要
+  where: 福祉課福祉係（頁に申請先の明記なし、担当課として記載）
+  url: https://www.town.fujisaki.lg.jp/index.cfm/7,98,17,111,html
+  confidence: high
+  amount: 温泉の利用料が1回100円
+- category: haikai
+  name: 認知症の人の見守りGPS端末の貸与
+  name_on_page: 認知症高齢者等GPS貸与事業
+  summary: 在宅介護の家族に、徘徊のおそれのある人の居場所を探すGPS端末を無料で貸す。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅で介護している家族（介護者）が申請する
+  - 申請者も介護される人も町内に住所がある
+  - 事前に申請が必要
+  where: 福祉課介護保険係
+  url: https://www.town.fujisaki.lg.jp/index.cfm/7,15729,17,381,html
+  confidence: high
+  amount: 端末は無料の貸与、初期登録料と月額料金は町が負担（破損・紛失時は修理費の負担を求めることがある）
+not_found:
+- kaigo-yohin
+- haishoku
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

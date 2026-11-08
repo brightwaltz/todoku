@@ -1,0 +1,110 @@
+city: 016934
+name: 標津町
+site: www.shibetsutown.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（安否確認つき）
+  name_on_page: 配食サービス事業
+  summary: 食事の調理が困難な高齢者に、栄養のとれた食事を届け、安否も確認する。
+  who: {}
+  at_application:
+  - 食事の調理が困難な高齢者
+  - 頁の見出しは、介護認定で「自立」とされた方への予防・生活支援事業
+  where: 保健福祉センター（頁の問い合わせ先）
+  url: https://www.shibetsutown.jp/welfare/?content=510
+  confidence: low
+  amount: 利用者負担は1食300円
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸付
+  name_on_page: 緊急通報システム
+  summary: 一人暮らしの高齢者の家に、急病や事故に備えた緊急通報機器を貸し付ける。
+  who:
+    household:
+    - alone
+  at_application:
+  - 一人暮らしの高齢者（年齢の数字は頁になし）
+  where: 保健福祉センター（頁の問い合わせ先）
+  url: https://www.shibetsutown.jp/welfare/?content=510
+  confidence: low
+  amount: 機器は貸付。電話料金は本人負担
+- category: gaishutsu
+  name: 70歳以上の無料バス券
+  name_on_page: 高齢者無料バス券の交付
+  summary: 70歳以上の方に、町内の各停留所間の運賃が無料になる乗車券を交付する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 保健福祉センター（頁の問い合わせ先）
+  url: https://www.shibetsutown.jp/welfare/?content=510
+  confidence: low
+  amount: 町内各停留所間が無料になる乗車券を年24枚
+- category: mimamori
+  name: 乳飲料を届ける見守り訪問
+  name_on_page: 訪問サービス
+  summary: 一人暮らしの高齢者に乳飲料を届けながら声をかけ、健康を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 一人暮らしの高齢者（年齢の数字は頁になし）
+  where: 保健福祉センター（頁の問い合わせ先）
+  url: https://www.shibetsutown.jp/welfare/?content=510
+  confidence: low
+- category: mimamori
+  name: 電話での健康確認
+  name_on_page: すこやかコール
+  summary: 一人暮らしの高齢者に、電話で健康状態を確認する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 一人暮らしの高齢者（年齢の数字は頁になし）
+  where: 保健福祉センター（頁の問い合わせ先）
+  url: https://www.shibetsutown.jp/welfare/?content=510
+  confidence: low
+- category: sonota
+  name: 一人暮らし・高齢者夫婦世帯への公共料金の助成
+  name_on_page: 公共料金の助成
+  summary: 一人暮らしや高齢者夫婦の世帯に、し尿処理手数料・上下水道使用料の一部を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 所得制限がある（基準は頁になし）
+  where: 保健福祉センター（頁の問い合わせ先）
+  url: https://www.shibetsutown.jp/welfare/?content=510
+  confidence: low
+- category: sonota
+  name: 急発進防止装置の取り付け費の補助（高齢ドライバー）
+  name_on_page: 高齢者安全運転サポート補助金事業
+  summary: 65歳以上の運転免許を持つ方が自動車に急発進防止装置を後付けする費用の一部を補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 町に住所があり、申請時に運転免許証を持っている
+  - 自分か同一世帯員の自動車に後付けする（新車の取付は対象外）
+  - 世帯全員が町民税や使用料等を滞納していない
+  - 販売店で装置の操作の説明を受けて理解している
+  where: 住民生活課 交通住民担当（1階6番窓口）
+  url: https://www.shibetsutown.jp/life/?content=349
+  confidence: high
+  amount: 取付費の2分の1、上限20,000円（1人1回）
+  more_urls:
+  - https://www.shibetsutown.jp/assets/images/content/content_20260216_134201.pdf
+not_found:
+- kaigo-yohin
+- iro
+- haikai
+- hochoki
+- shingu
+- ribiyo
+- koken
+- jutaku
+- nichijo-yogu

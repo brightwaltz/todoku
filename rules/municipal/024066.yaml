@@ -1,0 +1,58 @@
+city: '024066'
+name: 横浜町
+site: www.town.yokohama.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 食の自立支援事業（配食サービス）
+  name_on_page: 食の自立支援事業（配食サービス）
+  summary: 調理が困難な高齢者の居宅を定期的に訪問して、食事を届け、安否を確かめる。
+  who: {}
+  at_application:
+  - 調理が困難な高齢者（計画の記述）
+  where: 横浜町（計画に申請先の記載なし）
+  url: https://www.town.yokohama.lg.jp/index.cfm/6,11988,c,html/11988/20240729-120021.pdf
+  confidence: low
+  more_urls:
+  - https://www.town.yokohama.lg.jp/index.cfm/6,11990,c,html/11990/20240729-132906.pdf
+- category: kaigo-yohin
+  name: 介護用品の支給（紙おむつ等の購入費の補助）
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5の非課税世帯の、居宅での介護の負担を軽くするため、紙おむつ等の購入費の一部を補助する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application: []
+  where: 横浜町（計画に申請先の記載なし）
+  url: https://www.town.yokohama.lg.jp/index.cfm/6,11988,c,html/11988/20240729-120021.pdf
+  confidence: low
+  amount: 紙おむつ等の購入費の一部を補助する介護用品の支給
+  more_urls:
+  - https://www.town.yokohama.lg.jp/index.cfm/6,11990,c,html/11990/20240729-132906.pdf
+- category: koken
+  name: 成年後見の申立て費用と後見人等の報酬の助成
+  name_on_page: 成年後見制度利用支援事業
+  summary: 低所得の高齢者の、成年後見の申立てにかかる費用と成年後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 低所得の高齢者（所得などの具体的な基準は計画に無い）
+  where: 横浜町（計画に申請先の記載なし）
+  url: https://www.town.yokohama.lg.jp/index.cfm/6,11988,c,html/11988/20240729-120021.pdf
+  confidence: low
+not_found:
+- iro
+- haikai
+- hochoki
+- shingu
+- jutaku
+- nichijo-yogu
+- mimamori

@@ -1,0 +1,281 @@
+city: '016420'
+name: 広尾町
+site: www.town.hiroo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 軽度生活援助（草刈り・除雪などの手伝い）
+  name_on_page: 軽度生活支援事業
+  summary: 草刈りや除雪など軽い生活の手伝いを、1時間単位の利用料で受けられる。
+  who: {}
+  at_application:
+  - 高齢者
+  - または、介護保険の申請手続きを終えた65歳未満の方
+  - または、重度の身体・精神・知的障がい者
+  where: 福祉係（保健福祉課）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/hukushisaabisu/
+  confidence: high
+  amount: 利用料 1時間あたり 200円（所得税課税世帯）・150円（非課税世帯）・0円（生活保護世帯）
+  more_urls:
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+- category: haishoku
+  name: 「食」の自立支援（夕食の配食と安否確認）
+  name_on_page: 「食」の自立支援事業
+  summary: 在宅の高齢者に夕食を週6回まで届け、安否も確認する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者夫婦のみの世帯
+  - または、それに準ずる世帯の高齢者・身体障害者
+  - アセスメント調査で利用が適切と認められる
+  where: 福祉係（保健福祉課）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/hukushisaabisu/
+  confidence: high
+  amount: 1食あたり500円（月〜土の週6回まで）
+  more_urls:
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/27332/kyuusyoku.pdf
+- category: sonota
+  name: 短期宿泊（ショートステイ）
+  name_on_page: 生活管理指導、短期宿泊事業（ショートステイ事業）
+  summary: 家族の不在などで一時的に養護が必要な高齢者が、特養に7日以内で泊まれる。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 家族の不在・体調不良などで、一時的に養護が必要
+  - アセスメント調査で自立支援の観点から適切と認められる
+  - 要支援・要介護の人は介護保険のショートステイが優先
+  where: 福祉係（保健福祉課）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/hukushisaabisu/
+  confidence: high
+  amount: 利用者負担は要支援1の単価の1割＋食費1日1,445円＋居住費1日915円（多床室）
+  more_urls:
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/27332/shortstay.pdf
+- category: mimamori
+  name: 訪問サービス（月1回程度のケア推進員の訪問）
+  name_on_page: 訪問サービス
+  summary: ケア推進員が月に1回ほど訪問し、健康状態や生活状況を聞く。
+  who: {}
+  at_application:
+  - 定期的な訪問が必要なひとり暮らしの高齢者など
+  where: 地域包括支援センター・福祉係（担当窓口は一覧に明記なし）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ等）の給付券
+  name_on_page: 介護用品の支給
+  summary: 紙おむつを必要とする方を介護する家族に、紙おむつ等とごみ袋の給付券を渡す。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護1以上、または障害支援区分1以上の方を介護する家族
+  - 介護される方と同一世帯で、世帯が町民税非課税
+  where: 福祉係・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 1か月あたり10,000円分の紙おむつ等と指定ごみ袋
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 広尾町災害弱者緊急通報装置設置事業
+  summary: 非常ボタンで警備会社に通報できる装置（固定型・モバイル型）を設置する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上で通院治療中、日常生活に支障のあるひとり暮らし
+  - または、要支援・要介護認定を受けたひとり暮らしの方
+  - または、一定の障害者手帳を持つひとり暮らしの方
+  - 上記と同等と認められる世帯も対象
+  where: 福祉係（保健福祉課）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/hukushisaabisu/
+  confidence: high
+  amount: 設置・撤去の費用は町が負担（通話料・電気料金は自己負担）
+  more_urls:
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/27820/kinkyuutuuhou.pdf
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+- category: sonota
+  name: 老人福祉電話の貸与
+  name_on_page: 老人福祉電話
+  summary: 電話の設置が困難な方に電話を貸与し、緊急時の連絡を確保する。
+  who: {}
+  at_application:
+  - 福祉電話の設置が必要と認められる所得税非課税世帯
+  - ひとり暮らしの高齢者、重度障がい者世帯などのいずれか
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 設置工事費と基本料は町が負担（通話料は自己負担）
+- category: ribiyo
+  name: 訪問理美容の出張費助成
+  name_on_page: 訪問理美容
+  summary: 理美容院に行けない方の、自宅での理美容の出張費用を助成する。
+  who: {}
+  at_application:
+  - 理髪店や美容院に出向くことが困難
+  - 要介護3以上、または下肢・体幹障がい1・2級の身体障がい者
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 布団洗濯
+  summary: 介護が必要な方の寝具の洗濯・乾燥・消毒を行う。
+  who: {}
+  at_application:
+  - 寝具の洗濯・乾燥・消毒が困難
+  - 要介護4以上、または障害支援区分5以上
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+- category: sonota
+  name: 福祉灯油の支給
+  name_on_page: 福祉灯油の支給
+  summary: 冬の暖房用に、灯油100リットル分の引換券か商品券を支給する。
+  who: {}
+  at_application:
+  - 高齢者世帯、障がい者世帯、ひとり親世帯、生活困窮世帯のいずれか
+  - 世帯収入や生活状況を見て決める
+  - 施設入所者や入院中の世帯は対象外
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 灯油100リットルの引換券、または相当額の商品券
+- category: nichijo-yogu
+  name: 住宅用火災警報器の購入費助成
+  name_on_page: 住宅用火災警報器
+  summary: 火災警報器（煙探知式）の購入費の9割を助成する。事前の申請が必要。
+  who: {}
+  at_application:
+  - 所得税非課税世帯で、高齢者世帯または重度障がい者を含む世帯
+  - 事前に申請する（検定合格品のみ対象）
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 購入価格の9割（上限13,950円。2個まで、1世帯1回）
+- category: sonota
+  name: 雪下ろし費用の助成
+  name_on_page: 雪下ろし費用
+  summary: 住宅の屋根の雪下ろしにかかった経費の一部を助成する。事前の申請が必要。
+  who: {}
+  at_application:
+  - 所得税非課税世帯で、高齢者世帯・ひとり親世帯・障がい者世帯などのいずれか
+  - 親族の援助を受けられる世帯、生活保護世帯は対象外
+  - 事前に申請する
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 限度額10,000円（1世帯 年度1回まで）
+- category: iro
+  name: 要介護高齢者等の介護手当
+  name_on_page: 介護手当の支給
+  summary: 在宅で重い要介護の方を介護している家族に、慰労金を毎月支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護4以上、または障害支援区分5以上の方を日常的に介護している
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 毎月10,000円
+- category: sonota
+  name: 介護サービス利用者の負担軽減助成
+  name_on_page: 介護サービス利用者
+  summary: 居宅介護サービスの自己負担額の4分の1を助成する。
+  who: {}
+  at_application:
+  - 居宅介護サービスを利用している所得税非課税の高齢者
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 自己負担額の4分の1
+- category: koken
+  name: 成年後見制度の利用支援
+  name_on_page: 成年後見制度
+  summary: 町長による申立ての代行と、申立て費用や報酬の一部助成。
+  who: {}
+  at_application:
+  - 判断能力が十分でない方（認知症・知的障がい・精神障がい）
+  - 身寄りがいない等の場合は町長が申立てを行う
+  where: 福祉係・地域包括支援センター・介護保険係（一覧の担当窓口）
+  url: https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+  confidence: high
+  amount: 申し立てに必要な費用や報酬の一部を助成
+- category: sonota
+  name: 介護マークの配布
+  name_on_page: 介護マーク配布事業
+  summary: 介護中であることを周囲に伝える介護マークを、介護する家族等に配る。
+  who: {}
+  at_application:
+  - 要支援・要介護認定者や身体障がい者などを介護する家族・関係者
+  - 申請時に介護保険証・身体障害者手帳を持参する
+  where: 広尾町地域包括支援センター（保健福祉課内）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/hukushisaabisu/
+  confidence: high
+  more_urls:
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+- category: haikai
+  name: 高齢者等SOSネットワークへの事前登録
+  name_on_page: 広尾町高齢者等SOSネットワーク事業
+  summary: 行方不明のおそれがある人を事前登録し、早期発見・保護につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで行方不明になるおそれのある高齢者・障がい者など
+  - 事前の登録が必要
+  where: 福祉係・地域包括支援センター（事前登録申請書を提出）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/hukushisaabisu/
+  confidence: high
+  more_urls:
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+- category: gaishutsu
+  name: 高齢者外出支援のタクシー・バス助成券
+  name_on_page: 高齢者外出支援交通費助成事業
+  summary: 75歳以上の方に、タクシー・バスで使える助成券を毎月分交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 運転免許証を持っていても対象
+  - 申請が必要（一度申請すれば翌年度以降は不要）
+  where: 保健福祉課 福祉係（地域包括支援センター・社会福祉協議会の職員にも提出可）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/koureigaisyutu/
+  confidence: high
+  amount: 1人1か月 1,500〜4,000円相当（住む地区で異なる）
+  more_urls:
+  - https://www.town.hiroo.lg.jp/output/contents/file/release/208/2348/fukushi.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成制度
+  summary: 中等度難聴の65歳以上の方の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 中等度難聴（平均聴力40dB以上70dB未満）で、医師が必要と証明
+  - 聴覚障害による身体障害者手帳を持っていない
+  - 町税・都市計画税・国民健康保険税を完納している
+  where: 福祉係（役場。来庁が難しければ電話相談）
+  url: https://www.town.hiroo.lg.jp/kurashi/hokenhukushi/koureisha/hochokisien/
+  confidence: high
+  amount: 購入費の2分の1まで、上限50,000円
+not_found:
+- jutaku
+- chusha
+- yutai

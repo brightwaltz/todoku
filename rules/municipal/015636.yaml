@@ -1,0 +1,80 @@
+city: '015636'
+name: 雄武町
+site: www.town.oumu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者の通院などのハイヤー助成券
+  name_on_page: 高齢者交通費助成
+  summary: 車を持たない高齢者などに、通院などで使うハイヤーの助成券を交付する。
+  who: {}
+  at_application:
+  - 次のどれか：75歳以上で車がない／70歳以上の独居で車がない
+  - または70歳以上のみの世帯で本人と配偶者に車がない
+  - または70歳以上で運転免許を自主返納した
+  - 住所が町内にあり、自宅で暮らしている
+  - 納付状況確認書を一緒に出す
+  where: 役場庁舎別館の福祉給付課社会福祉係
+  url: https://www.town.oumu.hokkaido.jp/kurashinojoho/kaigo_korei/koreihukushi/1228.html
+  confidence: high
+  amount: 助成券は1回の乗車に1枚で初乗料金分。交付枚数は行政区と対象者で24〜54枚
+  more_urls:
+  - https://www.town.oumu.hokkaido.jp/material/files/group/6/3.pdf
+- category: yutai
+  name: 高齢者などの入浴優待券
+  name_on_page: 高齢者等入浴優待券交付
+  summary: 温泉ホテルの入浴優待券を交付する。
+  who: {}
+  at_application:
+  - 次のどれか：満70歳以上の人
+  - または身体障害者手帳1・2級、療育手帳A判定の人
+  - または精神障害者手帳1級の人
+  - 納付状況確認書を一緒に出す
+  where: 役場庁舎別館の福祉給付課社会福祉係
+  url: https://www.town.oumu.hokkaido.jp/kurashinojoho/kaigo_korei/koreihukushi/1230.html
+  confidence: high
+  amount: 優待券12枚
+- category: kaigo-yohin
+  name: 重度の要介護者の家族への介護用品給付券
+  name_on_page: 家族介護用品支給
+  summary: 要介護4・5の人を在宅で介護する世帯に、介護用品と引き換える給付券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 町内に居住地がある
+  - 要介護者を介護している人が申請する
+  - 要介護者が介護保険施設に入所していない
+  where: 保健福祉課
+  url: https://www.town.oumu.hokkaido.jp/kurashinojoho/kaigo_korei/koreihukushi/1231.html
+  confidence: high
+  amount: 町内の登録販売店で介護用品の購入に使える券。月額6,000円まで
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸出し
+  name_on_page: 緊急通報システム設置
+  summary: ひとり暮らしの高齢者などに、急病や事故のときの連絡用の専用機器を貸し出す。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者など（「など」の範囲は頁に無い）
+  - 事前に相談し、申請時に聞き取り調査がある
+  where: 保健福祉課
+  url: https://www.town.oumu.hokkaido.jp/kurashinojoho/kaigo_korei/koreihukushi/1232.html
+  confidence: high
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

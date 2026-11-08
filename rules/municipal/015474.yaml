@@ -1,0 +1,195 @@
+city: '015474'
+name: 小清水町
+site: www.town.koshimizu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 冬に除雪が難しい方の避難路を、自治会等の協力で除雪する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で除雪が困難な方
+  where: 小清水町社会福祉協議会
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 条件により自己負担あり（1,000円）
+- category: shingu
+  name: 寝具乾燥サービス
+  name_on_page: 寝具乾燥サービス
+  summary: 寝具の衛生管理のため、春と秋に布団乾燥サービスを行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし高齢者、高齢夫婦世帯、虚弱・障がい者等
+  where: 小清水町社会福祉協議会
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 自己負担なし
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス
+  summary: 食事づくりが難しい高齢者の自宅に弁当を届け、見守り・安否確認もする。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし高齢者、高齢者のみの世帯、障がい者等
+  where: 小清水町社会福祉協議会
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 1食 270 円または 400 円
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 緊急時の連絡体制をとるためのシステムを貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし高齢者、高齢者のみの世帯、障がい者等
+  where: 保健福祉課 福祉介護係
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 自己負担なし
+- category: kaigo-yohin
+  name: 家族介護用品の支給（おむつ等）
+  name_on_page: 家族介護用品支給
+  summary: 寝たきり高齢者等を在宅で介護する家族に、おむつ等の介護用品を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 施設への入所や一定期間以上の入院は除く（補助制度の冊子）
+  where: 保健福祉課 福祉介護係
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 月 8,000 円まで（所得段階1〜3）、月 5,000 円まで（所得段階4〜5）
+  more_urls:
+  - https://www.town.koshimizu.hokkaido.jp/hotnews/files/00010800/00010847/R8%E3%80%80%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%A3%9C%E5%8A%A9%E5%88%B6%E5%BA%A6.pdf
+- category: jutaku
+  name: 高齢者等住宅整備助成事業
+  name_on_page: 高齢者等住宅整備助成事業
+  summary: 高齢者等が住みやすいよう住宅を改修する費用を、所得に応じて助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者、障がい者等（高齢者のいる世帯）
+  where: 保健福祉課 福祉介護係
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 世帯員の課税区分により3分の2〜4分の4。支給対象額の上限 50 万円
+- category: yutai
+  name: 温泉入湯券の給付
+  name_on_page: 温泉入湯券給付事業
+  summary: 町内に住む高齢者に、温泉の入湯招待券（無料）と割引券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 町内に居住する方
+  where: 保健福祉課 福祉介護係
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 入湯招待券12枚＋割引券
+- category: gaishutsu
+  name: 高齢者等タクシー利用料の給付
+  name_on_page: 高齢者等タクシー利用料給付事業
+  summary: 町内でタクシーに乗るとき、自己負担を超える運賃を利用券で助成する。
+  who: {}
+  at_application:
+  - 70歳以上の方、または運転免許証の返納者（70歳未満）
+  where: 保健福祉課 福祉介護係
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 令和8年度の冊子では、400円を超える運賃を助成。年60枚まで（人工透析の方は年120枚）。頁の一覧は自己負担300円と書く
+  more_urls:
+  - https://www.town.koshimizu.hokkaido.jp/hotnews/files/00010800/00010847/R8%E3%80%80%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%A3%9C%E5%8A%A9%E5%88%B6%E5%BA%A6.pdf
+- category: gaishutsu
+  name: 外出支援サービス（町外受診のタクシー券）
+  name_on_page: 外出支援サービス
+  summary: 町内に無い診療科で町外の病院に通うとき、タクシー券を交付する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者、身体障がい者、外出支援が必要な精神障がい者
+  - 町内病院で診療していない科目の受診が必要な方
+  where: 保健福祉課 福祉介護係
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 運賃総額の 80％（年12往復まで）
+  more_urls:
+  - https://www.town.koshimizu.hokkaido.jp/hotnews/files/00010800/00010847/R8%E3%80%80%E3%81%BF%E3%82%93%E3%81%AA%E3%81%AE%E8%A3%9C%E5%8A%A9%E5%88%B6%E5%BA%A6.pdf
+- category: sonota
+  name: 暖房費助成事業
+  name_on_page: 暖房費助成事業
+  summary: 冬の暖房費の一部を助成する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者世帯で、一定の所得以下の方
+  where: 小清水町社会福祉協議会
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 1戸 12,000 円
+- category: sonota
+  name: 高齢者住宅のビニール張り
+  name_on_page: 高齢者住宅のビニール張り
+  summary: 秋に窓へビニールを張り、春に撤去に伺う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者、障がい者等
+  where: 小清水町社会福祉協議会
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 自己負担なし
+- category: nichijo-yogu
+  name: 日常生活用具の給付（1本杖）
+  name_on_page: 日常生活用具の給付
+  summary: 1本杖を支給する。
+  who:
+    age_min: 65
+  at_application: []
+  where: 小清水町社会福祉協議会
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 自己負担なし
+- category: sonota
+  name: 介護用品の貸出（福祉ベッド・車椅子）
+  name_on_page: 介護用品の貸出
+  summary: 福祉ベッドや車椅子を貸し出す。
+  who: {}
+  at_application:
+  - 介護保険や障害者の制度を使えない方、またはそれに準ずる方
+  where: 小清水町社会福祉協議会
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 自己負担なし
+- category: mimamori
+  name: 高齢者見守り支援事業
+  name_on_page: 高齢者見守り支援事業
+  summary: 町内の高齢者に、週1回の安否確認を行う。
+  who: {}
+  at_application:
+  - 町内に居住する一人暮らし高齢者、高齢者世帯、障がい者等
+  where: 保健福祉課 福祉介護係
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00000117.html
+  confidence: high
+  amount: 自己負担なし
+- category: haikai
+  name: 認知症高齢者等SOSネットワーク（事前登録）
+  name_on_page: 認知症高齢者等のためのＳＯＳネットワーク事業
+  summary: 行方不明のおそれのある方を地域包括支援センターに事前登録し、早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊で行方不明になるおそれのある高齢者等（家族等が事前登録）
+  where: 地域包括支援センター（保健福祉課 総合相談係）
+  url: https://www.town.koshimizu.hokkaido.jp/hotnews/detail/00005675.html
+  confidence: high
+not_found:
+- iro
+- koken
+- hochoki
+- ribiyo
+- chusha

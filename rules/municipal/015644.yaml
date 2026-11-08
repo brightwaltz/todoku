@@ -1,0 +1,76 @@
+city: '015644'
+name: 大空町
+site: www.town.ozora.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報用電話機の無料貸与
+  name_on_page: 緊急通報システム貸与事業
+  summary: ひとり暮らしで緊急時に動けない高齢者などに、緊急通報用の電話機を無料で貸す。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれか：ひとり暮らしの高齢者等で病弱のため緊急時に動けない
+  - または緊急時に動けないひとり暮らしの身体障がい者
+  - または突然命に危険が及ぶ持病があるひとり暮らしの人
+  - または上記と同程度と認められる人
+  where: 福祉課
+  url: https://www.town.ozora.hokkaido.jp/mokuteki/fukushi_kaigo/1/1743.html
+  confidence: high
+  amount: 機器の貸与は無料。設置・撤去費は町負担、通話料は本人負担
+- category: iro
+  name: 寝たきりの高齢者などを在宅で介護する人への介護手当
+  name_on_page: 介護手当の支給
+  summary: 寝たきりの高齢者や認知症の人などを在宅で介護している人に、手当を年2回支給する。
+  who:
+    at_home: true
+  at_application:
+  - 次のどれかの人を在宅で介護している：
+  - 6か月以上寝たきりの65歳以上の人や認知症の高齢者
+  - 寝たきりの重度心身障がい者、寝たきりの特定疾患の患者
+  where: 福祉課
+  url: https://www.town.ozora.hokkaido.jp/mokuteki/fukushi_kaigo/2/1744.html
+  confidence: high
+  amount: 月額5,000円。在宅介護が6か月に達した月から。3月と9月に支給
+- category: sonota
+  name: 高齢者世帯などの除雪サービス・除雪費の助成
+  name_on_page: 除雪サービス
+  summary: 出入口や玄関先の除雪に人を派遣し、自分で業者に頼んだ除雪費の一部を助成する。
+  who: {}
+  at_application:
+  - 町民税所得割が非課税の世帯
+  - 次のどれか：65歳以上の単身世帯
+  - または65歳以上の人と60歳以上の人だけの世帯
+  - または身体障害者手帳の人だけ、または手帳の人と60歳以上の人だけの世帯
+  where: 福祉課
+  url: https://www.town.ozora.hokkaido.jp/mokuteki/fukushi_kaigo/1/1746.html
+  confidence: high
+  amount: 派遣の除雪は無料。業者に頼んだ除雪は費用の一部を助成（割合は頁に無い）
+- category: sonota
+  name: 寝たきりの高齢者などの通所入浴サービス
+  name_on_page: 入浴サービス
+  summary: 家庭で入浴が難しい寝たきりの高齢者などを、送迎して特養で入浴させる。
+  who: {}
+  at_application:
+  - 家庭で入浴が難しい、寝たきりの高齢者か重度の身体障がい者
+  where: 福祉課
+  url: https://www.town.ozora.hokkaido.jp/mokuteki/fukushi_kaigo/2/1751.html
+  confidence: high
+  amount: 1回1,000円（送迎費用を含む）
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

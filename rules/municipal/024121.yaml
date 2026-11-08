@@ -1,0 +1,120 @@
+city: '024121'
+name: おいらせ町
+site: www.town.oirase.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システム（福祉安心電話）の設置
+  name_on_page: 緊急通報システム（福祉安心電話）
+  summary: 65歳以上の一人暮らしで必要と認められた人に、24時間の緊急通報と定期の安否確認の電話を付ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 設置が必要と認められた人
+  where: 介護福祉課 地域包括支援センター（電話 0178-56-2132）
+  url: https://www.town.oirase.aomori.jp/soshiki/1152/koureisyafukushi.html
+  confidence: high
+- category: haishoku
+  name: 高齢者への配食（食の自立支援）
+  name_on_page: 食の自立支援（配食サービス）
+  summary: 調理が困難な65歳以上の一人暮らし・高齢者世帯や身体障がい者等に、昼食を届けて安否を確かめる。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし・高齢者世帯、または身体障がい者等
+  - 心身の障害や疾病等により、自力での食事の準備や調理が困難
+  - 周囲の援助が得られない人や低栄養の人が対象（個別の頁）
+  where: おいらせ町社会福祉協議会（委託先）。手続きは介護福祉課 地域包括支援センター（電話 0178-56-2132）へ問い合わせ
+  url: https://www.town.oirase.aomori.jp/soshiki/1152/koureisyafukushi.html
+  confidence: high
+  amount: 1食400円。月〜金の昼食で週5回まで（祝日・お盆・正月は休み）
+  more_urls:
+  - https://www.town.oirase.aomori.jp/soshiki/1152/syokujiservice.html
+- category: gaishutsu
+  name: 外出支援サービス（通院などの送迎）
+  name_on_page: 外出支援サービス
+  summary: 一般の交通機関を使えない在宅の高齢者や身体障がい者を、自宅と医療機関等の間で送迎する。
+  who:
+    at_home: true
+  at_application:
+  - タクシーを含む一般の交通機関を利用することが困難
+  - 事前に登録申請書を出し、登録決定を受ける
+  - 利用は月5回まで
+  where: おいらせ町地域包括支援センター
+  url: https://www.town.oirase.aomori.jp/soshiki/1152/gaisyutsuservice.html
+  confidence: high
+  amount: 送迎30分まで1,000円、以降15分ごとに250円加算
+- category: sonota
+  name: 軽度生活援助事業（庭の草刈り・枝払いの作業代行）
+  name_on_page: 軽度生活援助事業（高齢者等世帯の作業代行サービス）
+  summary: 自力での作業が困難な高齢者のみの世帯などの、庭の草刈り・掃除や枝払いを代行する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、65歳以上だけの世帯、または身体障害者手帳の人のみの世帯
+  - 自力での作業が困難
+  - 利用は1人あたり年間16時間まで
+  where: おいらせ町地域包括支援センター（申請書を出す）
+  url: https://www.town.oirase.aomori.jp/soshiki/1152/keidoseikatuenjyo.html
+  confidence: high
+  amount: 1時間あたり草刈り・掃除109円、枝払い144円（一覧の頁では95円・123円とあり食い違う）
+- category: kaigo-yohin
+  name: 家族介護用品の支給（おむつ・尿とりパッド）
+  name_on_page: 家族介護用品の支給
+  summary: 要介護4・5の人を在宅で介護する非課税世帯の家族に、おむつ等を現物で支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 在宅で介護しているご家族が対象
+  - 一定の要件を満たす場合に支給（要件の詳細は頁に無い）
+  where: 介護福祉課 地域包括支援センター（電話 0178-56-2132）
+  url: https://www.town.oirase.aomori.jp/soshiki/1152/koureisyafukushi.html
+  confidence: high
+  amount: 1年間の限度額上限75,000円（年度途中の認定は限度額が下がる）
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労
+  summary: 要介護4・5の人を介護保険サービスなしで在宅で介護した非課税世帯の家族に慰労金を出す。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用せずに在宅で看護した家族
+  where: 介護福祉課 地域包括支援センター（電話 0178-56-2132）
+  url: https://www.town.oirase.aomori.jp/soshiki/1152/koureisyafukushi.html
+  confidence: high
+  amount: 年額10万円（金品）
+- category: sonota
+  name: 生活管理指導短期宿泊
+  name_on_page: 生活管理指導短期宿泊
+  summary: 要介護状態への進行を防ぐため、短期の宿泊で日常生活の支援・指導をする。
+  who: {}
+  at_application:
+  - 介護認定で自立と判定された高齢者
+  where: 介護福祉課 地域包括支援センター（電話 0178-56-2132）（頁のお問い合わせ先）
+  url: https://www.town.oirase.aomori.jp/soshiki/1152/koureisyafukushi.html
+  confidence: low
+  amount: 1日1,730円（生活保護の人は無料）
+not_found:
+- hochoki
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- koken
+- mimamori

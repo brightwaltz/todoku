@@ -1,0 +1,64 @@
+city: '016357'
+name: 新得町
+site: www.shintoku-town.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 補聴器等の購入費の助成（認知症対策）
+  name_on_page: 補聴器等の助成（認知症対策）
+  summary: 聞こえにくい高齢者に、補聴器等の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町民で、両耳の聴力レベルが40dB以上70dB未満
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 税金の滞納がない
+  - 購入から3か月以内に手続きする。助成は片耳につき2回まで
+  where: 保健福祉課 在宅支援係（保健福祉センターなごみ・屈足支所）
+  url: https://www.shintoku-town.jp/kenkou-hukushi/hukushi/hukushi_kourei_jyosei/hotyoukitouwojyoseisimasu/
+  confidence: high
+  amount: 購入金額の 4 分の 1、上限は片耳 5 万円
+  more_urls:
+  - https://www.shintoku-town.jp/output/contents/file/release/2005/18309/hotyoukitounokounyuujosei.pdf
+- category: sonota
+  name: 高齢者安全運転サポート補助（ペダル踏み間違い急発進抑制装置）
+  name_on_page: 高齢者安全運転サポート補助
+  summary: 高齢者の自家用車に後付けする急発進抑制装置の費用の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 自己所有する自動車に後付けで装置を搭載した費用が対象
+  - 令和8年度の受付は令和9年2月26日まで
+  where: 町民課、屈足支所
+  url: https://www.shintoku-town.jp/kenkou-hukushi/hukushi/hukushi_kourei_jyosei/sapocar/
+  confidence: high
+  amount: 国の補助額を除いた自己負担分、上限 2 万円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置事業
+  summary: 緊急通報用機器・ペンダント・火災警報器などを設置する。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、または75歳以上のみの世帯
+  - 重度障がいの人のみの世帯、75歳以上と重度障がいの人のみの世帯も対象
+  - 協力員3人（2人は町内の人が望ましい）が必要
+  where: 保健福祉課 福祉係
+  url: https://www.shintoku-town.jp/kenkou-hukushi/hukushi/tiikimimamori/
+  confidence: high
+  amount: 電話設置工事費の一部 5,000 円と通話料などは自己負担
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo

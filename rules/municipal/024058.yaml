@@ -1,0 +1,54 @@
+city: 024058
+name: 六戸町
+site: www.town.rokunohe.aomori.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 六戸町高齢者補聴器購入費助成事業実施要綱
+  summary: 65歳以上で手帳の対象にならない難聴の人の、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所があり、介護保険の被保険者である
+  - 両耳の聴力30dB以上70dB未満で手帳（聴覚障害）の対象外
+  - 補聴器相談医に補聴器が必要と診断された
+  - 認定補聴器専門店で購入する
+  - 過去5年以内にこの助成を受けていない
+  where: 介護高齢課
+  url: https://www.town.rokunohe.aomori.jp/docs/2026033100027/
+  confidence: high
+  amount: 購入費用と30,000円のいずれか少ない額（両耳・片耳を問わない）
+- category: haikai
+  name: 徘徊高齢者等の事前登録
+  name_on_page: 徘徊高齢者等支援事業
+  summary: 徘徊のおそれのある人の情報を事前に登録し、見つかったときの身元確認と早い帰宅を助ける。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊またはそのおそれのある65歳以上の高齢者
+  - 若年性認知症等で徘徊のおそれのある人も対象
+  - 登録情報は十和田警察署と共有される
+  where: 介護高齢課
+  url: https://www.town.rokunohe.aomori.jp/docs/2025071700022/
+  confidence: high
+not_found:
+- kaigo-yohin
+- iro
+- kinkyu-tsuho
+- haishoku
+- gaishutsu
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- koken

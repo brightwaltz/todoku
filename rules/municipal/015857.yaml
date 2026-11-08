@@ -1,0 +1,161 @@
+city: 015857
+name: 安平町
+site: www.town.abira.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 要介護認定を受けた非課税世帯の外出支援（移送サービス）
+  name_on_page: 外出支援サービス
+  summary: 公共交通での外出が難しい要介護認定者の非課税世帯に、町内の受診や買い物の送迎をする。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護認定を受けている
+  - 公共の交通機関による単独での外出が困難
+  - 非課税世帯（住民税かどうかは頁に無い）
+  where: 健康福祉課（福祉グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 無料
+- category: gaishutsu
+  name: 通院の送迎
+  name_on_page: 通院移送サービス
+  summary: 公共交通や自家用車が使えない人を、苫小牧市・千歳市・安平町の医療機関へ送迎する。
+  who: {}
+  at_application:
+  - 次のどれか：身体障害者手帳の交付を受けている
+  - または概ね65歳以上
+  - 一般の公共交通機関や自家用車などを使うのが困難
+  - 人工透析の患者を優先する
+  where: 健康福祉課（福祉グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 1回の利用につき片道のJR運賃相当額の自己負担
+- category: gaishutsu
+  name: 福祉交通の共通回数乗車券
+  name_on_page: 安平町福祉交通助成事業
+  summary: 公共交通で通院や買い物をする高齢者などに、共通回数乗車券を交付して交通費を助ける。
+  who: {}
+  at_application:
+  - 高齢者、しょうがい者等で、公共交通を使って通院や買い物をする人
+  - 年齢などの細かい条件は頁に無い
+  where: 健康福祉課（福祉グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 年間16,500円を上限に共通回数乗車券を交付
+- category: iro
+  name: 要介護3以上の人を同居介護する非課税世帯への介護手当
+  name_on_page: 介護手当
+  summary: 要介護3以上の在宅の高齢者と同居し、無報酬で介護している住民税非課税世帯に手当を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同居し、無報酬で介護している
+  where: 健康福祉課（福祉グループ／介護グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 要介護3は月5,000円、要介護4は月10,000円、要介護5は月20,000円
+- category: iro
+  name: 介護保険サービスを使わず介護した家族への慰労金
+  name_on_page: 家族介護慰労金
+  summary: 過去1年間介護保険サービスを使わず、要介護4・5の在宅の人を介護した家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険サービスを利用していない
+  - 町民非課税世帯に属する在宅の高齢者等を介護している家族
+  where: 健康福祉課（福祉グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 100,000円
+- category: nichijo-yogu
+  name: 介護予防のための福祉用具の購入費助成
+  name_on_page: 福祉用具購入費助成
+  summary: 介護保険の対象外の杖・シルバーカー・風呂用マットを買った費用の90%を助成する。
+  who: {}
+  at_application:
+  - 概ね65歳以上で、介護保険料が第1段階（要件あり）の人
+  - 介護予防のために、杖・シルバーカー・風呂用マットを買った
+  where: 健康福祉課（福祉グループ／介護グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 購入費用の90%を助成
+- category: shingu
+  name: 寝具類の洗濯・乾燥・消毒
+  name_on_page: 寝具類洗濯乾燥消毒サービス
+  summary: 寝具の上げ下げなどの衛生管理が難しい高齢者に、寝具類の洗濯・乾燥などをする。
+  who: {}
+  at_application:
+  - 次のどれか：概ね65歳以上の一人暮らし
+  - または夫婦のどちらかが65歳以上の世帯
+  - 傷病等の理由で寝具の上げ下げなど衛生管理が困難
+  where: 健康福祉課（福祉グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 無料
+- category: kaigo-yohin
+  name: 要介護3以上の人を在宅介護する非課税世帯への介護用品給付券
+  name_on_page: 介護用品支給
+  summary: 紙おむつなどの介護用品の給付券を、要介護3以上を在宅介護する町民税非課税世帯に発行する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者を在宅で介護している
+  where: 健康福祉課（福祉グループ／介護グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 1人年額75,000円まで（紙おむつ・尿取りパット・使い捨て手袋・清拭剤・ドライシャンプー）
+- category: yutai
+  name: 自宅で入浴できない70歳以上の入浴券
+  name_on_page: 高齢者入浴券助成
+  summary: 自宅に入浴設備がなく入浴できない70歳以上の人に、入浴券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 自宅に入浴設備がなく、家庭で入浴できない人
+  - 設備の故障などで一定期間入浴できない人を含む
+  where: 健康福祉課（福祉グループ）
+  url: https://www.town.abira.lg.jp/kurashi/kurashi-guide/fukushi
+  confidence: low
+  amount: 1人1か月5枚まで
+not_found:
+- haishoku
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- mimamori
+- nichijo-yogu

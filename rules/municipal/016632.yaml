@@ -1,0 +1,159 @@
+city: '016632'
+name: 浜中町
+site: www.townhamanaka.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の助成（介護者向け）
+  name_on_page: 寝たきり高齢者等紙おむつ購入助成事業
+  summary: 日常的に紙おむつを使う方の介護者に、購入費の一部を助成する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 町内に居住し、紙おむつを日常的に使う方を介護している
+  - 対象の方は65歳以上で要介護3以上（相当）など、一定の要件のいずれか
+  - 介護保険による紙おむつ支給の対象者は除く
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-kamiomutsu.html
+  confidence: high
+  amount: 4月認定申請者の上限60,000円（認定申請の月で限度額が変わる）
+- category: iro
+  name: 認知症高齢者の介護手当
+  name_on_page: 認知症高齢者介護手当支給事業
+  summary: 在宅の認知症高齢者を介護している同居家族に、手当を支給する。
+  who:
+    age_min: 65
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 認知症の診断（長谷川式15点以下）後、3か月の経過観察で継続して介護が必要
+  - 町の審査で認められる
+  - 障害基礎年金の受給者、在宅重度障害者等福祉介護手当の受給者などは対象外
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/ninchisyoukoureisyakaigoteate.html
+  confidence: high
+  amount: 月額10,000円（9月期・3月期の年2回に支給）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸付
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報用装置とペンダント型送信機を貸し付ける。24時間体制で連絡・援助する。
+  who: {}
+  at_application:
+  - 町内に居住し、住民票があるおおむね65歳以上の高齢者、または心身に障がいのある方
+  - 緊急時に機敏に動作することが困難
+  - 協力員（緊急連絡先）2名の同意書が必要
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/kinkyutsuhousystem.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者バス等利用助成（共通回数券）
+  name_on_page: 高齢者バス等利用助成事業
+  summary: 70歳以上の方に、バス・ハイヤー・JRなどに使える共通回数券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 町内に居住し、4月1日現在70歳以上
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-bus.html
+  confidence: high
+  amount: 共通回数券 年額10,000円（町営バス・くしろバス・ハイヤー・JR花咲線・ゆうゆの入浴料に使える）
+- category: sonota
+  name: 電動ベッド・車椅子の貸付
+  name_on_page: ねたきり老人日常生活用具貸付事業
+  summary: 一時的に電動ベッドや車椅子が必要な方に貸し付ける。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に居住し、身体に障がいがある（疾病等で一時的に必要）
+  - 介護保険のレンタルを受けられる場合は対象外
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-netakiri.html
+  confidence: high
+- category: sonota
+  name: 自立生活支援サービス（整理整頓・買い物・安否確認）
+  name_on_page: 自立生活支援サービス
+  summary: 居宅の整理整頓、買い物、安否確認などを行う。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住所があり、サービスが必要と認められる高齢者
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-yoboujiritsushien.html
+  confidence: high
+  amount: 手数料 30分150円
+- category: gaishutsu
+  name: 外出支援サービス（町内の送迎）
+  name_on_page: 外出支援サービス
+  summary: 居宅から医療機関などへ、町内の送迎を行う。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住所があり、サービスが必要と認められる高齢者
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-yoboujiritsushien.html
+  confidence: high
+  amount: 手数料 30分150円
+- category: sonota
+  name: 短期宿泊（特別養護老人ホーム）
+  name_on_page: 短期宿泊
+  summary: 一時的に在宅で介護を受けられない方が、特養に泊まれる（7日以内）。
+  who:
+    at_home: true
+  at_application:
+  - 介護認定で非該当と認定された方
+  - または、要支援・要介護の方で、居宅介護サービスの支給限度額を超えた方
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-yoboujiritsushien.html
+  confidence: high
+  amount: 1日3,000円（7日以内）
+- category: shingu
+  name: 布団乾燥殺菌消毒サービス（寝具の丸洗い）
+  name_on_page: 布団乾燥殺菌消毒サービス
+  summary: 布団干しなどが困難な方の寝具を丸洗いする。
+  who: {}
+  at_application:
+  - 町内に住所があり、寝具の衛生管理が困難
+  - 65歳以上のひとり暮らし、65歳以上のみの世帯、または重度身体障がい者
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-yoboujiritsushien.html
+  confidence: high
+  amount: 1回3,000円（年2回まで）
+- category: sonota
+  name: 除雪サービス（玄関から道路まで）
+  name_on_page: 除雪サービス
+  summary: 積雪20cm以上のとき、玄関から道路までの通り道を除雪する。
+  who:
+    at_home: true
+  at_application:
+  - ひとり暮らしの高齢者、高齢者のみの世帯、または障がい者のみの世帯
+  - 除排雪が困難な世帯
+  where: 健康福祉課 社会福祉係
+  url: https://www.townhamanaka.jp/kenkou_fukushi_iryou/fukushi/2017-0322-yoboujiritsushien.html
+  confidence: high
+not_found:
+- haishoku
+- haikai
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

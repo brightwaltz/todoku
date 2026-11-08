@@ -1,0 +1,65 @@
+city: 016659
+name: 弟子屈町
+site: www.town.teshikaga.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 徘徊のおそれがある方のGPS装置の貸し出し
+  name_on_page: 簡単位置情報サービス
+  summary: 徘徊で行方不明になるおそれのある方の居場所を家族が分かるよう、GPS装置を貸す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊で行方不明になる可能性のある方
+  where: 福祉課 地域包括支援係（頁の問い合わせ先）
+  url: https://www.town.teshikaga.hokkaido.jp/kurashi/kenko_fukushi_kosodate/kaigo_fukushi/2/1194.html
+  confidence: low
+- category: haikai
+  name: 徘徊の行方不明に備えるSOSネットワークの事前登録
+  name_on_page: SOSネットワーク
+  summary: 徘徊のおそれのある方の情報を町や警察で共有し、行方不明時にすぐ捜索する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊で行方不明になる可能性のある方
+  - 事前登録の様式を出す
+  where: 福祉課 地域包括支援係（頁の問い合わせ先）
+  url: https://www.town.teshikaga.hokkaido.jp/kurashi/kenko_fukushi_kosodate/kaigo_fukushi/2/1194.html
+  confidence: low
+- category: sonota
+  name: 福祉灯油の購入助成（非課税の高齢者世帯など）
+  name_on_page: 福祉灯油等購入助成事業
+  summary: 世帯全員が町民税非課税の高齢者世帯などに、灯油代の助成金を口座に振り込む。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 11月1日現在、町に住民票がある世帯
+  - 70歳以上のみの世帯、または一定の障害者手帳等の方がいる世帯
+  - 18歳未満の児童とひとり親だけの世帯も対象
+  - 生活保護を受けている世帯は対象外
+  - 申請は1世帯1回、令和9年1月29日まで
+  where: 福祉課 地域福祉係（役場福祉課窓口）
+  url: https://www.town.teshikaga.hokkaido.jp/kurashi/kenko_fukushi_kosodate/kaigo_fukushi/3786.html
+  confidence: high
+  amount: 世帯につき15,000円（今年度は5,000円を追加）、対象者1人につき5,000円を加算
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

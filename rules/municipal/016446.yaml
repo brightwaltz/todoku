@@ -1,0 +1,100 @@
+city: '016446'
+name: 池田町
+site: www.town.hokkaido-ikeda.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: 高齢者世帯等への除雪サービス
+  name_on_page: 高齢者世帯等への除雪サービス
+  summary: 冬の間、玄関から生活道路までの通路を無料で除雪する。
+  who:
+    age_min: 75
+    care_levels:
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 独居・高齢者のみ、または高齢者と身体障害者（聴覚障害を除く）のみの世帯
+  - 自力で除雪が困難
+  - 町内に除雪を支援できる親族等がおらず、地域の除雪も困難
+  where: 福祉課 高齢者支援係（保健センター内）
+  url: https://www.town.hokkaido-ikeda.lg.jp/kenko/korei_kaigo/koreisafukushi/josetsu.html
+  confidence: high
+  amount: 無料（12月1日〜3月31日、玄関から生活道路まで幅約1m）
+- category: sonota
+  name: 高齢者等のエアコン購入費補助
+  name_on_page: 高齢者等熱中症対策エアコン購入費補助金
+  summary: エアコンのない高齢者世帯などに、購入・設置費の一部を補助する。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯（単身を含む）、または65歳以上と65歳未満の障がい者のみの世帯
+  - 申請時にエアコンが無い、または故障で使えない住宅
+  - 設置工事の開始前に申請する（賃貸は家主の同意が必要）
+  where: 福祉課 高齢者支援係（保健センター内）
+  url: https://www.town.hokkaido-ikeda.lg.jp/kenko/korei_kaigo/koreisafukushi/kourei-ac.html
+  confidence: high
+  amount: 対象費用の2分の1、上限80,000円（1世帯1回）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 補聴器購入費の一部を助成します
+  summary: 中等度難聴の65歳以上の方の補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 中等度難聴（平均聴力40dB以上70dB未満）で、医師が使用の必要を証明
+  - 聴覚障害の身体障害者手帳を交付されていない
+  - 助成決定前に購入した場合は対象外
+  where: 福祉課 高齢者支援係（保健センター内）
+  url: https://www.town.hokkaido-ikeda.lg.jp/kenko/korei_kaigo/koreisafukushi/7075.html
+  confidence: high
+  amount: 購入費の2分の1、上限50,000円（1人1回限り）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ひとり暮らしの方などの家に緊急通報装置を設置する。設置は無料。
+  who:
+    at_home: true
+  at_application:
+  - おおむね75歳以上の在宅のひとり暮らし、または同居人全員がおおむね75歳以上
+  - または、おおむね75歳以上で徘徊行動を起こす（おそれがある）在宅の方
+  - または、在宅でひとり暮らしの重度身体障害者（など）
+  where: 福祉課 高齢者支援係（保健センター内）
+  url: https://www.town.hokkaido-ikeda.lg.jp/kenko/korei_kaigo/koreisafukushi/348.html
+  confidence: high
+  amount: 設置工事費・機器使用料は無料（電池・電気料・通話料は自己負担）
+- category: haishoku
+  name: 訪問給食サービス（弁当の配達と安否確認）
+  name_on_page: 訪問給食サービス
+  summary: 調理が困難な高齢者に夕食の弁当を届け、健康状態も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 75歳以上、または75歳未満で要支援・要介護認定を受けている方のみの世帯
+  - 上記以外の方が同居していると、別世帯でも対象外
+  where: 福祉課 高齢者支援係（保健センター内）
+  url: https://www.town.hokkaido-ikeda.lg.jp/kenko/korei_kaigo/koreisafukushi/347.html
+  confidence: high
+  amount: 給食代の1/2（上限500円）を町が助成。自己負担は1食385〜562円
+not_found:
+- kaigo-yohin
+- iro
+- shingu
+- ribiyo
+- jutaku
+- gaishutsu
+- haikai
+- mimamori
+- nichijo-yogu
+- koken

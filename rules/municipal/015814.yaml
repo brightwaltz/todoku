@@ -1,0 +1,155 @@
+city: 015814
+name: 厚真町
+site: www.town.atsuma.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 認知症などの人の見守り・捜索ネットワークの事前登録
+  name_on_page: 厚真町見守りあんしんネットワーク
+  summary: 徘徊のおそれがある人を事前に登録し、行方不明のとき警察への捜索協力につなぐ。
+  who: {}
+  at_application:
+  - 次のどれか：認知症の診断を受けている人
+  - または診断がなくても徘徊行動がみられる人
+  - または障がいにより徘徊などのおそれがある人
+  - 登録には事前の申請が必要。変更や廃止は届出が要る
+  where: 福祉グループ（総合ケアセンターゆくり内）
+  url: https://www.town.atsuma.lg.jp/page/1192.html
+  confidence: high
+- category: mimamori
+  name: 見守りのためのタブレット端末の貸出し
+  name_on_page: 高齢者ウェブ見守り環境整備事業
+  summary: 見守りが必要な高齢者に、家族と連絡を取れるタブレット端末を無料で貸し出す。
+  who: {}
+  at_application:
+  - 町内に住む65歳以上のひとり暮らしの高齢者など
+  - 次のどれか：町などの見守り支援を受けている
+  - または事業対象者・要支援・要介護の認定を受けている
+  - またはその他必要と認められる人
+  - 貸出期間は申請日から年度末まで（延長は届出）
+  where: 福祉グループ（総合ケアセンターゆくり内）
+  url: https://www.town.atsuma.lg.jp/page/1274.html
+  confidence: high
+  amount: 端末は無料。通信費は自己負担だが補助あり（SIM基本使用料は月1,430円まで）
+- category: shingu
+  name: 一人暮らしの人のふとんの丸洗い・乾燥
+  name_on_page: 寝具洗濯乾燥サービス事業
+  summary: 65歳以上の一人暮らしの人に、ふとんの丸洗いを年1回、乾燥を年2回する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置事業
+  summary: 70歳以上の一人暮らしの人が、急病のときに消防署に通報できる装置を設置する。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application: []
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+- category: sonota
+  name: 介護保険の対象外の人へのホームヘルパー派遣
+  name_on_page: 軽度生活援助事業
+  summary: 介護保険の対象とならない65歳以上の一人暮らしの人に、ホームヘルパーを派遣する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 介護保険の対象とならない人
+  - 社会福祉協議会に業務を委託している
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+- category: jutaku
+  name: 住宅改修費の上乗せ補助（居宅介護サービス利用負担額軽減）
+  name_on_page: 居宅介護サービス利用負担額軽減対策事業
+  summary: 所得税非課税世帯に、介護保険の住宅改修費の支給限度額へ10万円を限度に上乗せして補助する。
+  who: {}
+  at_application:
+  - 所得税非課税世帯
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+  amount: 介護保険の住宅改修費の支給限度額に、10万円を限度に上乗せ
+- category: jutaku
+  name: 介護が必要な人の住宅改修の補助
+  name_on_page: 介護住宅改修補助事業
+  summary: 要介護者などがいる住宅のトイレや浴槽、居室の改修費を、所得税の区分に応じて補助する。
+  who: {}
+  at_application:
+  - 介護保険による要介護者等がいる住宅の改修
+  - 所得税非課税世帯、または前年の所得税の合計額が50万円以下の課税世帯
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+  amount: 所得税非課税世帯は70万円、課税世帯（所得税50万円以下）は35万円を限度
+- category: gaishutsu
+  name: あつまバスの利用補助
+  name_on_page: バス利用補助事業
+  summary: 路線バスが走る地区の65歳以上などに、あつまバスのパスを発行し、町外移動を補助する。
+  who: {}
+  at_application:
+  - 路線バスが運行している地区に住む65歳以上の高齢者など
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+  amount: 町内移動は1回の利用者負担が100円のパス。町外は介護保険料の第1〜3段階が月3往復分無料、第4段階以上は半額
+- category: yutai
+  name: 70歳以上の入浴券の発行
+  name_on_page: 入浴助成事業
+  summary: 70歳以上の人に、「こぶしの湯」の入浴券を月1回分発行する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+  amount: 月1回分の入浴券
+- category: iro
+  name: 要介護3以上の人を介護する家族への慰労金
+  name_on_page: 介護手当支給事業
+  summary: 要介護3以上の人を介護している家族に、慰労金を月額1万円支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 要介護者を介護している家族が対象
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+  amount: 月額1万円
+- category: gaishutsu
+  name: 介護タクシーで通院する費用の半額助成
+  name_on_page: 介護タクシ一利用者助成
+  summary: 介護タクシーで苫小牧市内の病院に通う場合に、往復料金の半額を助成する。
+  who: {}
+  at_application:
+  - 要介護度が重く、自家用車での通院が困難な人
+  - 介護タクシーで苫小牧市内の病院に通院する場合
+  where: 窓口は頁に書かれていない
+  url: https://www.town.atsuma.lg.jp/page/1277.html
+  confidence: low
+  amount: 往復料金の半額
+not_found:
+- kaigo-yohin
+- haishoku
+- koken
+- hochoki
+- ribiyo
+- nichijo-yogu

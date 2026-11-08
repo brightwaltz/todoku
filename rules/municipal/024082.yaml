@@ -1,0 +1,40 @@
+city: 024082
+name: 東北町
+site: www.town.tohoku.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品支給事業（紙おむつ等の給付）
+  name_on_page: 介護用品の支給（家族介護用品支給事業）
+  summary: 要介護4・5で非課税世帯の人を介護する人や本人に、紙おむつなどの介護用品を給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 町内に居住している
+  - 生活保護費を受給していない
+  - 介護保険施設・地域密着型施設・高齢者専用住宅等に入所・入居していない
+  - 在宅での介護日数が月の半数以上
+  - 前年度にこの事業の対象者であった
+  where: 地域包括支援センター（申請書の提出先）
+  url: https://www.town.tohoku.lg.jp/kenkoiryofukushi/kourei/kourei_02.html
+  confidence: high
+  amount: 月額5,000円相当の紙おむつ、介護用衛生品などを給付
+not_found:
+- iro
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- koken

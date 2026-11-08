@@ -1,0 +1,81 @@
+city: 015849
+name: 洞爺湖町
+site: www.town.toyako.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: yutai
+  name: 70歳以上の入浴助成券
+  name_on_page: 高齢者入浴事業
+  summary: 70歳以上の人が入浴施設を使うときの助成券を、1枚150円で買える。
+  who:
+    age_min: 70
+  at_application:
+  - 町に住民登録がある
+  - 窓口で高齢者福祉証を見せて、入浴助成券を購入する
+  where: 本庁舎の総合案内、洞爺湖温泉支所、洞爺総合支所の窓口
+  url: http://www.town.toyako.hokkaido.jp/town_guide/welfare_and_nursing_care/wec003/p002/
+  confidence: high
+  amount: 1回（1枚）150円。1か月15枚（年180枚）まで、一度に45枚まで購入できる
+- category: kaigo-yohin
+  name: 要介護4・5の人の家族への紙おむつなどの給付券
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の寝たきりの人と同居する介護者に、紙おむつ・尿取りパッドの利用券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - self_exempt
+    at_home: true
+  at_application:
+  - 寝たきり等の高齢者と同居している介護者が申請する
+  - 介護者と要介護者がともに町の住民基本台帳に登録されている
+  - 要介護者が町民税非課税で、施設や病院にいない
+  - 印鑑が要る
+  where: 介護高齢課の窓口（温泉支所・洞爺総合支所でも申請できる）
+  url: http://www.town.toyako.hokkaido.jp/town_guide/welfare_and_nursing_care/wec001/
+  confidence: high
+  amount: 利用券で町内の指定業者から買える。1か月5,000円まで
+- category: kaigo-yohin
+  name: 要介護4・5の人の家族への日常の介護用品の給付券
+  name_on_page: 日常生活介護用品支給事業
+  summary: 要介護4・5の寝たきりの人と同居する介護者に、清拭剤やお尻拭きなどの利用券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 寝たきり等の高齢者と同居している介護者が申請する
+  - 介護者と要介護者がともに町の住民基本台帳に登録されている
+  - 要介護者が施設や病院にいない
+  - 印鑑が要る
+  where: 介護高齢課の窓口（温泉支所・洞爺総合支所でも申請できる）
+  url: http://www.town.toyako.hokkaido.jp/town_guide/welfare_and_nursing_care/wec001/
+  confidence: high
+  amount: 利用券で町内の指定業者から買える。1か月1,500円まで
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

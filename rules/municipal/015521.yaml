@@ -1,0 +1,198 @@
+city: '015521'
+name: 佐呂間町
+site: www.town.saroma.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: jutaku
+  name: 高齢者等住宅設備改造助成事業
+  name_on_page: 高齢者等住宅設備改造助成事業
+  summary: 手すりや段差解消などの住宅改修の費用の2分の1以内を助成する。
+  who: {}
+  at_application:
+  - 概ね65歳以上で日常生活に介助が必要な方、または障害者手帳があり介助が必要な方
+  - 要介護認定者は介護保険の給付を優先
+  where: 役場保健福祉課 社会福祉係
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/koureisyafukushi.html
+  confidence: high
+  amount: 対象事業の2分の1以内。単独改修は補助限度額30万円、介護保険と併用は20万円
+- category: nichijo-yogu
+  name: 老人日常生活用具給付事業
+  name_on_page: 老人日常生活用具給付事業
+  summary: 入浴補助用具や排泄補助用具などを給付または貸与する。
+  who: {}
+  at_application:
+  - 介護認定で「自立」と判定された方、または概ね65歳以上で給付等が必要と認められる方
+  where: 役場保健福祉課 社会福祉係
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/koureisyafukushi.html
+  confidence: high
+- category: gaishutsu
+  name: 外出支援サービス事業（移送サービス）
+  name_on_page: 外出支援サービス事業（移送サービス）
+  summary: 寝たきりなどで普通車での外出が困難な高齢者の、通院等の外出を支援する。
+  who: {}
+  at_application:
+  - 概ね60歳以上で、寝たきり・車椅子使用・歩行に常時介護者が必要な方など
+  - 町外はオホーツク管内に限る。家族の付き添いが原則
+  where: 役場保健福祉課 社会福祉係（業務委託先は社会福祉協議会）
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/koureisyafukushi.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 高齢者緊急通報システム設置事業
+  name_on_page: 高齢者緊急通報システム設置事業
+  summary: 緊急通報装置を設置し、安否確認の電話や救急車・消防車の要請につなげる。
+  who: {}
+  at_application:
+  - 概ね65歳以上の単身世帯で日常生活動作に支障のある方など
+  - 寝たきり高齢者等を抱える高齢者のみの世帯、単身の重度身体障がい者も対象
+  - 協力員3名の確保が必要
+  where: 役場保健福祉課 社会福祉係
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/koureisyafukushi.html
+  confidence: high
+- category: sonota
+  name: 福祉路線除雪
+  name_on_page: 福祉路線除雪
+  summary: 老人世帯等の公道から住宅までの生活路線を、除雪車で除雪する。
+  who:
+    at_home: true
+  at_application:
+  - 世帯主70歳以上のひとり暮らし・老人夫婦・老人と障がい者等の世帯など
+  - 公道から住宅まで50m以上で、自力や親族・地域の支援で除雪できない
+  - 当年度の町民税非課税（公道から150m以上は不問）。条件は頁に1〜11
+  where: 役場保健福祉課 社会福祉係（民生委員を経由して申請）
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/koureisyafukushi.html
+  confidence: high
+- category: gaishutsu
+  name: 高齢者ハイヤー乗車料金助成
+  name_on_page: 高齢者ハイヤー乗車料金助成事業
+  summary: 町内のハイヤーの基本料金を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住所があり、85歳以上の方、または運転免許証の返納者
+  where: 役場保健福祉課 社会福祉係、若佐支所、浜佐呂間出張所
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/2022-0620-0950-13.html
+  confidence: high
+  amount: 年間48回（年度途中の申請は月割り）
+- category: gaishutsu
+  name: 入退院時等の交通費助成
+  name_on_page: 入退院時等交通費助成事業
+  summary: 町外の医療機関への入退院などのハイヤー料金の一部を助成する。
+  who: {}
+  at_application:
+  - 家族・親族等から送迎の支援が受けられない方
+  - 町民税非課税世帯、65歳以上、または各種手帳・受給者証のある方
+  where: 役場保健福祉課 社会福祉係
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/2022-0620-1004-13.html
+  confidence: high
+  amount: ハイヤーの実費料金から1回3,000円を差し引いた額
+- category: gaishutsu
+  name: ふれあいタクシー（予約制の乗り合い）
+  name_on_page: ふれあいタクシー
+  summary: 市街地以外に住む高齢者が、予約制の乗り合いタクシーで通院や買い物に行ける。
+  who:
+    age_min: 65
+  at_application:
+  - 佐呂間市街地以外の遠距離地域に住所があり、町発行の証明書が必要
+  - 各地区週1回の運行。団体利用は不可
+  where: 役場保健福祉課 社会福祉係
+  url: https://www.town.saroma.hokkaido.jp/machi/kenkou_fukushi/koureisya/fureai_taxi.html
+  confidence: high
+- category: haishoku
+  name: 宅配給食サービス
+  name_on_page: 宅配給食サービス事業
+  summary: 介護が必要で調理が難しい方に、給食サービスを行う。
+  who: {}
+  at_application:
+  - 介護が必要で調理が困難な方
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: 寝たきり高齢者オムツ支給
+  name_on_page: 寝たきり高齢者オムツ支給事業
+  summary: 在宅の寝たきり高齢者を介護する人に、紙オムツを支給する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 在宅の寝たきり高齢者の介護者
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+- category: haikai
+  name: 徘徊高齢者等安心ネットワーク事業
+  name_on_page: 徘徊高齢者等安心ネットワーク事業
+  summary: 徘徊のおそれがある高齢者等を登録し、行方不明のときメール配信で早く探す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊のおそれがある高齢者等（事前登録）
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+- category: sonota
+  name: あんしんQRコード事業（情報認識カードの作成）
+  name_on_page: あんしんＱＲコード事業
+  summary: 携帯できる情報認識カードを作り、緊急時に本人の情報を伝えやすくする。
+  who: {}
+  at_application:
+  - 条件は計画に記載なし
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+- category: sonota
+  name: 介護サービス低所得者対策助成事業
+  name_on_page: 介護サービス低所得者対策助成事業
+  summary: 低所得世帯の介護保険サービスの利用者負担の一部を助成する。
+  who: {}
+  at_application:
+  - 低所得世帯の方（詳しい条件は計画に記載なし）
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+- category: gaishutsu
+  name: 介護輸送運賃助成事業
+  name_on_page: 介護輸送運賃助成事業
+  summary: 通院の乗降に介助が必要な利用者の、輸送運賃を助成する。
+  who: {}
+  at_application:
+  - 介護保険で通院の際に乗降の介助サービスが必要な利用者
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+- category: mimamori
+  name: 軽度生活援助事業（訪問による健康確認）
+  name_on_page: 軽度生活援助事業
+  summary: 身体的に不安のある一人暮らし高齢者を訪問し、健康確認や軽易な援助をする。
+  who:
+    household:
+    - alone
+  at_application:
+  - 身体的に不安を抱える一人暮らし高齢者
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+- category: koken
+  name: 成年後見制度利用支援事業（低所得者の費用軽減）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 低所得者の成年後見制度の利用に向けた費用負担の軽減を支援する。
+  who: {}
+  at_application:
+  - 低所得の方（条件・金額は計画に記載なし）
+  where: 佐呂間町保健福祉課（計画に申請先の記載なし）
+  url: https://town.saroma.hokkaido.jp/kakuka/hokenfukushika/files/dai9kikaigokeikakusho.pdf
+  confidence: low
+not_found:
+- iro
+- hochoki
+- shingu
+- ribiyo
+- chusha
+- yutai

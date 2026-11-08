@@ -1,0 +1,175 @@
+city: 016349
+name: 鹿追町
+site: www.town.shikaoi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者補聴器購入費の助成
+  name_on_page: 鹿追町高齢者補聴器購入費助成事業
+  summary: 中等度の聴力低下の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 耳鼻咽喉科医が補聴器の使用が必要と証明
+  - 聴力が中等度（40dB以上70dB未満）
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 購入の前に申請が必要
+  where: トリムセンター（保健福祉課）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/kaigo_service/
+  confidence: high
+  amount: 一人一回、3 万円を限度
+- category: gaishutsu
+  name: 高齢者通院助成事業（路線バス利用券）
+  name_on_page: 高齢者通院助成事業
+  summary: 患者輸送バスを使えない地域の高齢者に、通院などの路線バス利用券を交付する。
+  who: {}
+  at_application:
+  - 患者輸送バスを利用できない地域に住む高齢者
+  - 通院等で路線バスを利用する
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/kaigo_service/
+  confidence: low
+- category: gaishutsu
+  name: 高齢者等社会参加促進事業（タクシー助成券）
+  name_on_page: 鹿追町高齢者等社会参加促進事業
+  summary: 町内で使えるタクシーの助成券を、年度ごとに交付する。
+  who: {}
+  at_application:
+  - 町内に住所があり、車を持たないか運転できない
+  - 満70歳以上、免許の自主返納、障害者手帳、要支援・要介護認定のいずれか
+  - 町税などを滞納していない（施設入所・入院中は除く）
+  where: 企画課、瓜幕支所、トリムセンター
+  url: https://www.town.shikaoi.lg.jp/kurashi/life/kokyo_kotsu/korei_sankasokushin/
+  confidence: high
+  amount: 助成券 1 枚につき 710 円分を年度ごとに交付
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等緊急通報機器の貸与
+  name_on_page: ひとり暮らし高齢者等緊急通報機器設置事業
+  summary: 見守りセンサー付きの緊急通報機を貸与し、ボタンで受信センターにつなぐ。
+  who:
+    age_min: 70
+    household:
+    - alone
+  at_application: []
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/kaigo_service/
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システム（地域支援事業）
+  name_on_page: 緊急通報システム
+  summary: 緊急通報器とペンダントを貸し出す。審査会でサービス該当と決定された人が対象。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 体調に不安がある、または地域の見守りが必要
+  - 町の地域支援事業審査会でサービス該当と決定
+  - 自宅に固定電話があり、原則として協力員が2名必要
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/yoro_home/
+  confidence: high
+  amount: 自己負担は無料
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支援
+  summary: 要介護4・5で介護保険サービスを使わなかった人を介護する家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+  at_application:
+  - 過去1年間、介護保険サービスを受けなかった高齢者を現在介護している家族
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/kaigo_service/
+  confidence: high
+  amount: 年額 10 万円
+- category: haikai
+  name: 徘徊高齢者家族支援事業（探知端末の初期費用の助成）
+  name_on_page: 徘徊高齢者家族支援事業
+  summary: 徘徊のある高齢者の家族に、徘徊探知機能のある端末の初期費用を助成する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊のある高齢者やその家族
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/kaigo_service/
+  confidence: low
+  amount: 初期費用の助成、上限 5,000 円
+- category: haishoku
+  name: 配食サービス（お弁当の宅配）
+  name_on_page: 配食サービス
+  summary: 食事の調理が困難なひとり暮らしの高齢者等に、定期的にお弁当を宅配する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 食事の調理が困難
+  - 町の地域支援事業審査会でサービス該当と決定
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/yoro_home/
+  confidence: high
+  amount: 1 食 420 円（自己負担）
+- category: mimamori
+  name: 軽度生活援助サービスのうち、電話や訪問の声掛けによる見守り
+  name_on_page: 軽度生活援助サービス
+  summary: 電話や訪問で声掛けなどの見守りを、1 世帯に週 1 回程度行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 地域の見守りが必要
+  - 町の地域支援事業審査会でサービス該当と決定
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/yoro_home/
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 生活管理指導短期宿泊事業（非該当の人のショートステイ）
+  name_on_page: 生活管理指導短期宿泊事業
+  summary: 要介護認定が非該当の高齢者が、施設に短期間宿泊して生活の支援を受けられる。
+  who: {}
+  at_application:
+  - おおむね65歳以上で日常生活の支援が必要
+  - 要介護認定で非該当と判定された
+  where: 保健福祉課 包括ケア係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_fukushi/yoro_home/
+  confidence: high
+  amount: 1 日 520 円（自己負担）
+- category: jutaku
+  name: 在宅支援住宅改修費助成事業（住宅改修の上乗せ）
+  name_on_page: 在宅支援住宅改修費助成事業
+  summary: 介護保険の住宅改修費が 20 万円を超えるとき、上乗せで改修費を商品券で助成する。
+  who: {}
+  at_application:
+  - 介護保険の住宅改修費が20万円を超える
+  where: 保健福祉課 介護保険係（トリムセンター内）
+  url: https://www.town.shikaoi.lg.jp/kurashi/iryo_fukushi/koreisha_kaigohoken/kanren_service/
+  confidence: low
+  amount: 介護保険の住宅改修費と合わせて最高 50 万円
+not_found:
+- kaigo-yohin
+- koken
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

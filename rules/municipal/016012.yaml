@@ -1,0 +1,112 @@
+city: '016012'
+name: 日高町
+site: www.town.hidaka.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: yutai
+  name: 70歳以上の温泉入浴優待証
+  name_on_page: 門別温泉とねっこの湯入浴優待証
+  summary: 70歳以上の人などに、温泉施設に年24回入浴できる優待券を交付する。
+  who: {}
+  at_application:
+  - 町に住んでいる
+  - 次のどれか：満70歳以上
+  - または身体障害者手帳1・2級を持っている
+  - 本人の顔写真が要る
+  where: 高齢者福祉課、日高総合支所地域住民課、富川出張所、厚賀出張所
+  url: https://www.town.hidaka.hokkaido.jp/welfare/?content=4029
+  confidence: high
+  amount: 年24回（とねっこの湯とひだか高原荘の合計、年度内）
+- category: gaishutsu
+  name: 70歳以上のバス乗車証
+  name_on_page: 高齢者バス乗車証交付事業
+  summary: 70歳以上の人に、負担金を納めると町内の運行バスの乗車証を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 町内に居住している
+  - 本人の顔写真が要る
+  - 利用できるのは町内の運行路線と区間
+  where: 子育て福祉課、日高総合支所地域住民課、水・くらしサービスセンター、厚賀出張所
+  url: https://www.town.hidaka.hokkaido.jp/welfare/?content=96
+  confidence: high
+  amount: 交付負担金は1か月800円、3か月2,000円、6か月4,000円、12か月8,000円
+- category: haishoku
+  name: 高齢者への弁当の配達
+  name_on_page: 配食サービス事業
+  summary: 自分で調理できない在宅の高齢者に、弁当を自宅へ配達する。
+  who:
+    at_home: true
+  at_application:
+  - 高齢者の単身世帯、世帯全員が高齢者の世帯、または身体障害者
+  - 老衰・心身の障害・疾病等で食事の調理が困難
+  - 配達区域によっては対応できない場合がある
+  where: 門別地区は高齢者福祉課、日高地区は特別養護老人ホーム日高高寿園
+  url: https://www.town.hidaka.hokkaido.jp/welfare/?content=1114
+  confidence: high
+  amount: 門別地区は夕食500円。日高地区は昼食700円、夕食500円
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報サービス事業
+  summary: ひとり暮らしで緊急時に動けない高齢者などに、緊急通報装置を貸与する。
+  who:
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 次のどれか：おおむね65歳以上で、病弱のため緊急時に動けない
+  - または緊急時に動けない重度身体障害者等
+  - または突然命に危険が及ぶ持病がある
+  - 協力員の承諾書などが要る
+  where: 役場窓口（高齢者福祉課）
+  url: https://www.town.hidaka.hokkaido.jp/welfare/?content=95
+  confidence: high
+  amount: 取り付け費用は無料。通話料は自己負担
+- category: sonota
+  name: 高齢者世帯の除雪サービス（日高地区）
+  name_on_page: 除雪サービス事業
+  summary: 除雪が負担になっている高齢者世帯に、委託業者が出動して除雪する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らし等の高齢者世帯で、障がいや疾病で除雪が身体的負担
+  - 自力で除雪できる世帯、支障のない家族が同居・近隣にいる世帯は対象外
+  - 入院・入所中や、玄関が共同のアパートなどは対象外
+  - 12月から3月末、概ね10cm以上の降雪時
+  where: 日高総合支所地域住民課 福祉・保険グループ
+  url: https://www.town.hidaka.hokkaido.jp/welfare/?content=89
+  confidence: high
+  amount: 1回30分まで300円（以降30分ごとに300円加算）
+- category: kaigo-yohin
+  name: 要介護4・5の高齢者を介護する家族への介護用品券
+  name_on_page: 介護用品支給事業
+  summary: 要介護4・5の在宅の高齢者を介護する家族に、紙おむつなどの介護用品券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 町に住む町民税非課税世帯の高齢者を介護している家族
+  - 介護保険施設・グループホーム・長期入院などの人は対象外
+  where: 高齢者福祉課（役場窓口）
+  url: https://www.town.hidaka.hokkaido.jp/welfare/?content=91
+  confidence: high
+  amount: 年10万円まで（紙おむつ、尿取りパット、使い捨て手袋、清拭剤、ドライシャンプーなど）
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

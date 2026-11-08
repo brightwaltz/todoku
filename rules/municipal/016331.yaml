@@ -1,0 +1,250 @@
+city: '016331'
+name: 上士幌町
+site: www.kamishihoro.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 給食サービス（夕食の宅配、三愛介護サービス事業）
+  name_on_page: 給食サービス
+  summary: 調理が困難なひとり暮らしの高齢者等に、夕食を届けて安否も確かめる。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし、または高齢者夫婦世帯等
+  - 心身の虚弱や障がいで調理が困難
+  - 事前の利用相談・申請が必要
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/page/00000085
+  confidence: high
+  amount: 1 食 500 円（住民税非課税世帯は 300 円）
+  more_urls:
+  - https://www.kamishihoro.jp/dl.php?up_code=7369
+- category: gaishutsu
+  name: 通院サービス（タクシー利用の支援、三愛介護サービス事業）
+  name_on_page: 通院サービス
+  summary: 一般の交通機関が使えず、町外の専門医へ通う人のタクシー利用を支援する。
+  who: {}
+  at_application:
+  - 心身の虚弱等で一般の交通機関の利用が困難
+  - 町外の専門医療機関への定期受診が必要
+  - 町内の医療機関へは、市街地以外の人と市街地の75歳以上が対象
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/page/00000085
+  confidence: high
+  amount: 利用者負担はタクシー運賃の 5 分の 1
+  more_urls:
+  - https://www.kamishihoro.jp/dl.php?up_code=7369
+- category: sonota
+  name: ショートステイ（要介護認定が非該当の人向け）
+  name_on_page: ショートステイ
+  summary: 介護認定が非該当でも、家族の事情で介護が受けられない人が短期入所できる。
+  who: {}
+  at_application:
+  - 介護保険の要介護認定で非該当と判定された人
+  - 家族の事情で一時的に介護者がいない
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/page/00000085
+  confidence: high
+  amount: 1 日 2,750 円
+  more_urls:
+  - https://www.kamishihoro.jp/dl.php?up_code=7369
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置
+  summary: ひとり暮らしで生活に不安のある高齢者の住宅に、緊急通報システムを設置する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしなどで、病気や障がい等により緊急体制が必要
+  - 家族や近所の人など緊急協力員2〜3名の登録が必要
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+  amount: 設置費用は無料（電話の基本料金・通話料は自己負担）
+- category: kaigo-yohin
+  name: 家族介護用品の支給（紙おむつ等）
+  name_on_page: 家族介護用品支給事業
+  summary: 住民税非課税世帯の重度の要介護の高齢者を介護する家族に、紙おむつなどを支給する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    tax:
+    - household_exempt
+  at_application:
+  - 排泄・食事介助用品は要介護2以上、入浴介助用品は要支援1以上
+  - 介護している家族等が対象
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+  amount: 排泄・食事介助用品は月額 6,300 円相当、入浴介助用品は年額 12,600 円相当
+- category: sonota
+  name: 紙おむつの処理手数料の免除（町指定ごみ袋の支給）
+  name_on_page: 紙オムツの処理手数料の免除（町指定ごみ袋の支給）
+  summary: 要介護4・5の人を在宅で介護する世帯に、町指定のごみ袋を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 高齢者等を在宅で介護している世帯
+  where: 町民課 生活環境担当
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+  amount: 3 か月分で約 1,800〜2,070 円分のごみ袋
+- category: sonota
+  name: 高齢者及び障害者除雪費助成事業
+  name_on_page: 高齢者及び障害者除雪費助成事業
+  summary: 除雪が困難な非課税世帯の高齢者・障がい者に、除雪・雪下ろしの費用を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上の高齢者や障がい者
+  - 心身の虚弱や障がいで除雪が困難
+  - 事前の利用申請と認定が必要
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+  amount: 1 回につき除雪 1,200 円、雪下ろし 6,000 円まで
+- category: sonota
+  name: 高齢者等福祉除雪ボランティア活動支援事業
+  name_on_page: 高齢者等福祉除雪ボランティア活動支援事業
+  summary: 玄関先の除雪が困難な高齢者等に、ボランティアの除雪支援を調整する。
+  who: {}
+  at_application:
+  - 75歳以上の高齢者のみの世帯等
+  - 心身の虚弱や障がいで除雪が困難
+  - 事前の登録申請が必要
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+- category: hochoki
+  name: 高齢者補聴器購入費助成事業
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 中等度難聴の高齢者に、補聴器の購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある
+  - 補聴器の使用の必要性について医師の証明がある
+  - 平均聴力レベルが40dB以上70dB未満
+  - 聴覚障害の身体障害者手帳を持っていない
+  - 助成決定から5年たてば再度の申請ができる
+  where: 地域包括支援センター（保健福祉課 介護支援担当）
+  url: https://www.kamishihoro.jp/page/00000456
+  confidence: high
+  amount: 購入費の 2 分の 1、上限 5 万円
+- category: sonota
+  name: 高齢者等熱中症対策エアコン購入費補助事業
+  name_on_page: 上士幌町高齢者等熱中症対策エアコン購入費補助事業
+  summary: エアコンのない高齢者世帯に、エアコンの購入・設置費の一部を補助する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 町税を滞納していない
+  - エアコンのない（または故障で使えない）住宅に居住
+  - 申請は令和9年1月29日まで、予算がなくなり次第終了
+  - 所有者でない場合は所有者の承諾が必要
+  where: 保健福祉課（ふれあいプラザ）
+  url: https://www.kamishihoro.jp/page/00000494
+  confidence: high
+  amount: 対象経費の 2 分の 1、上限 7 万 5 千円（1 世帯 1 回）
+- category: haikai
+  name: 高齢者等見守りSOSネットワークシステム（事前登録）
+  name_on_page: 高齢者等見守りSOSネットワークシステム
+  summary: 行方不明のおそれがある人を事前登録し、行方不明時に関係機関が連携して捜す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内に居住している
+  - 行方不明になるおそれのある障がい者や認知症の高齢者
+  - 家族の同意があれば一斉情報配信で地域に知らせる
+  where: 地域包括支援センター（ふれあいプラザ内）
+  url: https://www.kamishihoro.jp/page/00000455
+  confidence: high
+- category: sonota
+  name: 高齢者運転免許自主返納支援事業
+  name_on_page: 高齢者運転免許自主返納支援事業
+  summary: 運転免許を自主返納した高齢者に、運転経歴証明書の手数料などを補助する。
+  who:
+    age_min: 65
+  at_application:
+  - 返納時に満65歳以上
+  - 毎年度4月1日以降に運転経歴証明書の交付を受けた
+  - 過去にこの補助を受けていない
+  where: 町民課 生活環境担当
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+  amount: 運転経歴証明書の交付手数料の全額と、帯広の試験場への往復バス運賃相当額の 4 分の 3
+- category: koken
+  name: 成年後見制度の利用支援（申立て費用・後見人報酬の助成）
+  name_on_page: 成年後見制度の利用支援
+  summary: 低所得で費用を払えない人の、後見の申立て費用と後見人の報酬を助成する。
+  who: {}
+  at_application:
+  - 低所得で、申立て費用・後見人報酬の支払いが困難
+  - 町が後見開始の審判等の請求が必要と認める
+  where: 地域包括支援センター、権利擁護センター（社会福祉協議会内）
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+- category: sonota
+  name: 外国人高齢者・障がい者への福祉給付金
+  name_on_page: 外国人高齢者・障がい者への福祉給付金の支給
+  summary: 年金を受けられない在日外国人の高齢者・障がい者に、給付金を支給する。
+  who: {}
+  at_application:
+  - 外国人登録または住民登録をしている在日外国人
+  - 公的年金の受給要件を制度上満たせない人、または重度心身障がい者
+  where: 保健福祉課 福祉担当
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+  amount: 高齢者は月額 10,000 円、障がい者は月額 25,000 円
+- category: sonota
+  name: 介護保険利用者負担額減額制度
+  name_on_page: 介護保険利用者負担額減額制度
+  summary: 住民税非課税世帯の人に、居宅サービスの利用者負担の 4 分の 1 を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険料の滞納がない
+  - 訪問介護や通所介護など居宅サービスの利用者
+  - 助成を受けるには申請が必要
+  where: 保健福祉課 介護保険担当
+  url: https://www.kamishihoro.jp/dl.php?up_code=7369
+  confidence: high
+  amount: 支払った金額の 4 分の 1
+not_found:
+- iro
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

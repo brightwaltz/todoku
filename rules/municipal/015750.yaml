@@ -1,0 +1,150 @@
+city: '015750'
+name: 壮瞥町
+site: www.town.sobetsu.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: yutai
+  name: 65〜69歳の町営温泉の入浴割引証
+  name_on_page: 特定利用証
+  summary: 町営温泉施設に1回130円で入浴できる証を、65〜69歳の人に無料で発行する。
+  who:
+    age_min: 65
+  at_application:
+  - 対象は65〜69歳（70歳以上は敬老福祉証に代わる）
+  - 町内に住んでいる
+  - 印鑑と本人の顔写真が要る
+  where: 壮瞥町保健センター
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 入浴1回130円（証の発行は無料）
+- category: gaishutsu
+  name: 70歳以上の入浴割引とバス無料の敬老福祉証
+  name_on_page: 敬老福祉証
+  summary: 町営温泉に1回130円で入浴でき、町内区間の路線バスが無料になる証を発行する。
+  who:
+    age_min: 70
+  at_application:
+  - 町内に住んでいる
+  - 5年ごとに更新が必要
+  - 印鑑と本人の顔写真が要る
+  where: 壮瞥町保健センター
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 入浴1回130円。町内区間の路線バス（道南バス）は無料（証の発行は無料）
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システムの設置
+  summary: ボタンを押すと管理センターにつながる緊急通報の機器を設置する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に住む65歳以上の独り暮らし、または高齢者世帯
+  - 健康状態や身体状況から日常生活に支障を感じている
+  where: 壮瞥町保健センター
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 利用者負担は年額3,000円（月額250円）。端末の設置・撤去の経費は町が負担
+- category: haishoku
+  name: 高齢者世帯への夕食の配食
+  name_on_page: 配食サービス
+  summary: 買い物や調理が難しい高齢者世帯に、週1〜2回、夕食をボランティアが届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上の高齢者世帯
+  - 体が不自由で買い物や調理ができず、栄養状態に不安がある
+  - 自宅を訪問して体の状態を聞いたうえで、利用できるか連絡がある
+  where: 壮瞥町社会福祉協議会
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 1食400円（週1〜2回、火曜と木曜の夕食）
+- category: sonota
+  name: 高齢者世帯の屋根の雪下ろし
+  name_on_page: 雪下ろしサービス
+  summary: 除雪できない高齢者世帯の自宅母屋の屋根の雪下ろしをする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上の高齢者世帯
+  - 体が不自由で除雪ができない
+  - 家の周りや倉庫は対象外。現地を見て要不要と時期を判断する
+  where: 壮瞥町社会福祉協議会
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 一部自己負担あり（金額は頁に無い）
+- category: sonota
+  name: 自宅で入浴できない人の入浴送迎
+  name_on_page: 入浴送迎サービス
+  summary: 自宅で入浴できない高齢者世帯の人を、特養に送迎して週1回入浴させる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 概ね65歳以上の高齢者世帯
+  - 体が不自由で自宅でお風呂に入れない
+  - デイサービスなど入浴を含む他のサービスとは併用できない
+  - 利用ごとに抗原検査（自己負担）が必要
+  where: 壮瞥町社会福祉協議会
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 年間1,000円（送迎サービス補償制度保険料）
+- category: mimamori
+  name: 80歳以上の独り暮らしなどへの友愛訪問
+  name_on_page: ふれあい友愛訪問
+  summary: 月2回、ボランティアが飲み物を届けて安否確認や話し相手になる。
+  who:
+    age_min: 80
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 次のどれか：80歳以上で自宅に独りで暮らしている
+  - または世帯全員が90歳以上で在宅生活をしている
+  - 該当する人はいつでも始められる
+  where: 壮瞥町社会福祉協議会
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 無料
+- category: kaigo-yohin
+  name: 要介護3〜5の高齢者の家族介護用品の助成
+  name_on_page: 家族介護用品の支給
+  summary: 同居の家族が介護している要介護3〜5の高齢者に、介護用品の費用を助成する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 町内に住所がある
+  where: 壮瞥町保健センター住民福祉課高齢者福祉係
+  url: https://www.town.sobetsu.lg.jp/kurashi/kenko/kaigo-fukushi.html
+  confidence: high
+  amount: 1か月8,000円まで
+not_found:
+- iro
+- koken
+- hochoki
+- haikai
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

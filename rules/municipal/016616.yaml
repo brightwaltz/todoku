@@ -1,0 +1,161 @@
+city: '016616'
+name: 釧路町
+site: www.town.kushiro.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: 緊急時に直接消防署に連絡できる通報装置を貸し出す（設置）。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし等で、慢性疾患等により日常生活上注意を要する
+  - または、75歳以上の高齢者のみの世帯、重度の身体障がい等をもつ方
+  - 協力員2名の確保が必要（NTT電話回線のみ設置可）
+  where: 福祉課 地域福祉係
+  url: http://www.town.kushiro.lg.jp/living-guide/30701/00005/220927150319.html
+  confidence: high
+  amount: 月額418円（税込）。非課税世帯は無料
+  more_urls:
+  - http://www.town.kushiro.lg.jp/guide_data/490932150319/01.pdf
+- category: sonota
+  name: 軽度生活支援（家事支援・軽度支援）
+  name_on_page: 軽度生活支援事業（家事支援・軽度支援）
+  summary: 買い物などの家事支援と、窓拭き・草刈りなど軽易な援助を受けられる。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯で、在宅で日常生活に支障がある
+  - または、疾病・退院時に緊急的に支援が必要
+  - 家事支援は週1回1時間以内、軽度支援は月1回1時間以内
+  where: 介護支援課 地域包括支援係
+  url: http://www.town.kushiro.lg.jp/guide_data/490932150319/01.pdf
+  confidence: high
+  amount: 家事支援 1回220円、軽度支援 1回200円（生活保護は無料・減免の申請が必要）
+- category: sonota
+  name: 軽度生活支援（除雪支援）
+  name_on_page: 軽度生活支援事業（除雪支援）
+  summary: 除雪が困難な世帯に、サポーターが玄関から公道までの歩行範囲を除雪する。
+  who: {}
+  at_application:
+  - 65歳以上のみの世帯で、在宅で日常生活に支障がある
+  - または、重度身体障がい者（手帳1・2級）のみの世帯
+  - 事前登録が必要（10月上旬から受付）
+  where: 介護支援課 地域包括支援係
+  url: http://www.town.kushiro.lg.jp/guide_data/490932150319/01.pdf
+  confidence: high
+  amount: 1回100円（生活保護は無料・減免の申請が必要）
+- category: haishoku
+  name: 栄養改善配食サービス（昼食・夕食の配達と安否確認）
+  name_on_page: 栄養改善配食サービス事業
+  summary: 昼食か夕食を週4回まで届け、声かけで安否も確認する。
+  who: {}
+  at_application:
+  - 65歳以上の独居高齢者、または高齢者のみの世帯
+  - または、家族の就業等で日常的に独居となる65歳以上の方
+  - または、障害者手帳等を持ち、食事など日常生活が困難
+  - または、傷病等で一時的に食事など日常生活が困難
+  - または、地域支援事業で低栄養と判断された（おそれのある）方
+  where: 介護支援課 地域包括支援係
+  url: http://www.town.kushiro.lg.jp/living-guide/30902/00005/490932150319.html
+  confidence: high
+  amount: 1食480円（非課税世帯は360円・減免の申請が必要）。週4回まで
+  more_urls:
+  - http://www.town.kushiro.lg.jp/guide_data/490932150319/01.pdf
+- category: mimamori
+  name: 元気確認コール（電話での安否確認）
+  name_on_page: 元気確認コール事業
+  summary: ひとり暮らしの高齢者等に、週3回まで電話で健康状態などを確認する。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - 他の福祉サービスで健康状態等の確認ができない町内の方
+  - ひとり暮らしの場合は健康に不安を抱えている
+  where: 介護支援課 地域包括支援係
+  url: http://www.town.kushiro.lg.jp/guide_data/490932150319/01.pdf
+  confidence: high
+  amount: 無料（週3回まで）
+- category: gaishutsu
+  name: 高齢者外出支援（タクシー運賃の外出支援券）
+  name_on_page: 釧路町高齢者外出支援事業
+  summary: タクシー運賃に使える外出支援券を年間8,000円分助成する。
+  who:
+    age_min: 75
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 4月1日現在、町に住民登録があり3か月以上居住している
+  where: 福祉課 地域福祉係
+  url: http://www.town.kushiro.lg.jp/living-guide/30701/00005/212024470516.html
+  confidence: high
+  amount: 外出支援券 年間8,000円分
+- category: gaishutsu
+  name: いきいきシニアパスポート（路線バスの割引）
+  name_on_page: いきいきシニアパスポート事業
+  summary: パスポートの提示で路線バスが1乗車100円。定期券購入も助成する。
+  who:
+    age_min: 70
+  at_application:
+  - 郵便局窓口・各支所・あいぱーるで申請し、パスポートの交付を受ける
+  where: 福祉課 地域福祉係
+  url: http://www.town.kushiro.lg.jp/living-guide/30701/00005/244828060815.html
+  confidence: high
+  amount: 町内・釧路市内の路線バス等 1乗車100円。定期券購入 月1,000円助成
+- category: sonota
+  name: 緊急等短期宿泊（介護予防の短期宿泊）
+  name_on_page: 緊急等短期宿泊事業
+  summary: 委託施設に短期間宿泊し、生活習慣等の指導や体調調整を受ける（送迎あり）。
+  who: {}
+  at_application:
+  - 要支援・要介護になる可能性の高い事業対象者
+  - または、家庭の状況の変化で一時的に保護が必要な方
+  - または、支給限度基準額を超え緊急的に保護が必要な方
+  where: 介護支援課 地域包括支援係
+  url: http://www.town.kushiro.lg.jp/living-guide/30902/00005/202516141112.html
+  confidence: high
+  amount: 宿泊費 1日360〜880円（認定の等級で異なる）＋食費・多床室利用料、送迎 片道180円。原則6か月に14日以内
+- category: gaishutsu
+  name: 移送支援（介護予防の場所・医療機関への送迎）
+  name_on_page: 移送支援事業
+  summary: 移送用車両で、介護予防の場所や医療機関までを片道100円で送迎する。
+  who: {}
+  at_application:
+  - 要支援1・2の方、または要介護に陥る可能性の高い事業対象者
+  - または、認知症等が疑われ、経済的困窮で受診に移送の支援が必要と町長が認める方
+  where: 介護支援課 地域包括支援係
+  url: http://www.town.kushiro.lg.jp/living-guide/30902/00005/202516141112.html
+  confidence: high
+  amount: 片道100円（医療機関への受診は同一年度3回まで）
+- category: haikai
+  name: SOSネットワークの事前登録
+  name_on_page: 釧路町SOSネットワークの取組み
+  summary: 所在不明になる前に登録し、警察・消防などに情報を提供して早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+    - dementia_diagnosis
+  at_application:
+  - 認知症高齢者とその家族
+  - 事前の申請が必要
+  where: 係（釧路町地域包括支援センター）
+  url: http://www.town.kushiro.lg.jp/living-guide/30902/00005/150909570319.html
+  confidence: low
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha

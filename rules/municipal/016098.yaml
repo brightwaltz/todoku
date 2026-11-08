@@ -1,0 +1,56 @@
+city: 016098
+name: えりも町
+site: www.town.erimo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: ひとり暮らし高齢者等緊急通報システムの設置
+  name_on_page: ひとり暮らし高齢者等緊急通報システム設置
+  summary: 緊急時の通報手段の確保が困難な高齢者等に、専用の端末機を貸与する。
+  who: {}
+  at_application:
+  - 緊急時の通報手段の確保が困難な高齢者等
+  where: 保健福祉課 高齢者福祉係
+  url: https://www.town.erimo.lg.jp/mobile/section/kikaku/koho/sg6h94000000fr3r-att/sg6h94000000gbbi.pdf
+  confidence: low
+- category: kaigo-yohin
+  name: 家族介護支援事業（家族介護用品の支給券）
+  name_on_page: えりも町家族介護支援事業
+  summary: 重度の要介護者を介護する家族などに、家族介護用品の引換券（支給券）を発行する。
+  who: {}
+  at_application:
+  - 住所があり、重度の要介護者を介護している家族
+  - 重度の要介護者で一人暮らしの人も対象
+  where: 保健福祉課 介護保険係
+  url: https://www.town.erimo.lg.jp/mobile/section/kikaku/koho/sg6h94000000fr3r-att/sg6h94000000gbbi.pdf
+  confidence: low
+- category: sonota
+  name: 水道料金・下水道使用料の減免
+  name_on_page: 水道料金・下水道使用料減免
+  summary: 高齢者世帯等で町民税の所得割額の納付を要しない世帯の、基本料金を軽減する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者世帯等
+  - 町民税の所得割額の納付を要しない世帯
+  where: 建設水道課 水道係・下水道係
+  url: https://www.town.erimo.lg.jp/mobile/section/kikaku/koho/sg6h94000000fr3r-att/sg6h94000000gbbi.pdf
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

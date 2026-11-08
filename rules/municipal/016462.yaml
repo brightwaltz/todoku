@@ -1,0 +1,121 @@
+city: '016462'
+name: 本別町
+site: www.town.honbetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食の宅配と見守り）
+  name_on_page: 配食サービス
+  summary: 事前登録した方に夕食を宅配し、健康状態や防犯状況の確認も行う。
+  who: {}
+  at_application:
+  - 買い物・調理が困難で、親族等の援助が受けられない町内の方
+  - 高齢者のみの世帯で要支援・要介護認定を受けている方
+  - または、在宅で生活している障がい者等（など）
+  where: 本別町社会福祉協議会（あいの里交流センター）
+  url: https://www.town.honbetsu.hokkaido.jp/web/welfare/details/post_6.html
+  confidence: high
+  amount: 1食400円（毎週月曜・木曜に配達）
+- category: haikai
+  name: はいかい高齢者SOSネットワークの事前登録
+  name_on_page: はいかい高齢者SOSネットワークシステム
+  summary: はいかいのおそれがある人を事前登録し、行方不明時に早く捜せるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 本別町に居住している
+  where: 総合ケアセンター 高齢者福祉担当
+  url: https://www.town.honbetsu.hokkaido.jp/web/welfare/details/sos.html
+  confidence: high
+  amount: 利用料は無料
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: ALSOKコールセンターにつながる通報装置などを自宅に設置する。
+  who: {}
+  at_application:
+  - 要件はなく、必要な人は誰でも設置できる
+  - 警備業法により、25分以内に駆けつけられる範囲に限る
+  where: 総合ケアセンター内 保健福祉課
+  url: https://www.town.honbetsu.hokkaido.jp/web/welfare/details/post_4.html
+  confidence: high
+  amount: 月額2,000円の自己負担
+- category: sonota
+  name: 除雪サービス
+  name_on_page: 除雪サービス
+  summary: 冬の間、外出のための通路などを除雪する。
+  who: {}
+  at_application:
+  - 市街地：65歳以上の一人暮らし・高齢者夫婦・重度心身障害者世帯
+  - 市街地：除雪が困難（同じ自治会に家族等がいる方を除く）
+  - 農村部：65歳以上の一人暮らし・高齢者夫婦・障害者世帯
+  - 農村部：身体的・経済的にも除雪の労力の確保が困難
+  where: 総合ケアセンター 高齢者福祉担当
+  url: https://www.town.honbetsu.hokkaido.jp/web/welfare/details/post_7.html
+  confidence: high
+  amount: 無料
+- category: jutaku
+  name: 高齢者などの住宅改修費の助成
+  name_on_page: 高齢者などの住宅改修費用の助成
+  summary: 手すり設置や段差解消などの住宅改修費の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 町内在住で、自ら住む町内の住宅（公営住宅を除く）を改修
+  - 要支援以上の認定者・重度身体障がい者（条件あり）、または65歳以上
+  - 維持補修的な工事は対象外
+  where: 総合ケアセンター 高齢者福祉担当
+  url: https://www.town.honbetsu.hokkaido.jp/web/welfare/details/post_33.html
+  confidence: high
+  amount: 介護保険の20万円を超えた分の30万円までの9割、または3万円以上の改修の30万円までの3分の2（対象で異なる・1回のみ）
+- category: gaishutsu
+  name: ハイヤー利用券の交付
+  name_on_page: ハイヤー利用券
+  summary: 運転免許や車のない方に、ハイヤー（タクシー）の利用券を交付する。
+  who:
+    at_home: true
+  at_application:
+  - 運転免許や自家用車がない、または運転できない・しない
+  - 町税や使用料を滞納していない
+  - 65歳以上、または障害者手帳・要支援要介護認定などのいずれか
+  where: 企画財政課 地域戦略担当（頁の問い合わせ先）
+  url: https://www.town.honbetsu.hokkaido.jp/web/news/details/post_517.html
+  confidence: high
+  amount: 1人15,000円分（500円券×30枚）。有効期限は令和9年3月31日
+- category: mimamori
+  name: 認知症高齢者の見守り（やすらぎ支援事業）
+  name_on_page: 認知症高齢者の見守り（やすらぎ支援事業）
+  summary: 登録の支援員が自宅を訪問し、話し相手や見守りをする。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 要支援・要介護認定を受けた、何らかの認知症の症状がある人とその家族
+  where: 総合ケアセンター 高齢者福祉担当（担当ケアマネがいれば先に相談）
+  url: https://www.town.honbetsu.hokkaido.jp/web/welfare/details/post_41.html
+  confidence: high
+  amount: 1時間100円（週2回・月8回まで、原則8時間以内）
+not_found:
+- iro
+- kaigo-yohin
+- hochoki
+- shingu
+- ribiyo
+- nichijo-yogu
+- chusha
+- yutai

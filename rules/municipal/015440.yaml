@@ -1,0 +1,145 @@
+city: '015440'
+name: 津別町
+site: www.town.tsubetsu.hokkaido.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-08'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 寝たきり老人介護手当
+  name_on_page: 寝たきり老人介護手当支給事業
+  summary: 寝たきりの方を在宅で介護している人に、介護手当を支給する。
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - 65歳以上の寝たきり老人を介護している人（65歳未満の重度心身障がい者等の介護者も対象）
+  - 6か月以上の寝たきりで、被介護者が障害年金を受けていない
+  - 食事・入浴・トイレなどに介護が要る
+  where: 保健福祉課 福祉係
+  url: https://www.town.tsubetsu.hokkaido.jp/mokutekibetsumenu/korei_kaigo/2479.html
+  confidence: high
+  amount: 月額 6,000 円（9月と3月に支給）
+- category: sonota
+  name: 老人無料入浴券の交付
+  name_on_page: 老人無料入浴券交付
+  summary: 生活に困る高齢者世帯に、無料入浴券を交付する。
+  who:
+    age_min: 70
+    tax:
+    - household_exempt
+  at_application:
+  - 町内に住み、自家用風呂を持たない
+  - 毎年4月1日現在で確認
+  where: 保健福祉課 福祉係
+  url: https://www.town.tsubetsu.hokkaido.jp/mokutekibetsumenu/korei_kaigo/2479.html
+  confidence: high
+  amount: 年 52 枚
+- category: gaishutsu
+  name: バス無料乗車券の交付
+  name_on_page: バス無料乗車券交付事業
+  summary: 高齢者に、北見バスの津別線で使える無料券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 年度途中に70歳になった場合は翌月分から対象
+  - IC カード事業（令和8年10月開始）との関係は頁から読み切れず
+  where: 保健福祉課 福祉係
+  url: https://www.town.tsubetsu.hokkaido.jp/mokutekibetsumenu/korei_kaigo/2479.html
+  confidence: low
+  amount: 市街地は全線利用券 36 枚。市街地外は全線 36 枚と町内利用券 24 枚
+- category: gaishutsu
+  name: バス無料乗車ICカードの交付
+  name_on_page: バス無料乗車ICカード交付事業
+  summary: 高齢者や障がい者に、北見バスの津別線で使える無料の IC カードを交付する。
+  who: {}
+  at_application:
+  - 70歳以上、または身体・療育・精神の障害者手帳がある方とその介護人
+  - 令和8年10月開始
+  where: 保健福祉課 福祉係
+  url: https://www.town.tsubetsu.hokkaido.jp/mokutekibetsumenu/korei_kaigo/2479.html
+  confidence: high
+- category: gaishutsu
+  name: 通院等の交通費の助成
+  name_on_page: 通院等交通費助成事業
+  summary: 在宅の高齢者や身体障がい者に、通院などの交通費の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 町民税非課税世帯の方
+  - 町内に子がおらず通院の手段が無い高齢者や手帳のある方
+  - 通院先の事情（町内に診療科が無い等）の条件もあり、頁に並ぶ
+  where: 保健福祉課 福祉係
+  url: https://www.town.tsubetsu.hokkaido.jp/mokutekibetsumenu/korei_kaigo/2479.html
+  confidence: high
+  amount: タクシー・ハイヤーは利用料金の2分の1。バスも2分の1（診療科などの条件あり）
+- category: sonota
+  name: 高齢者等の除雪サービス
+  name_on_page: 除雪サービス
+  summary: 町内に身内のいない虚弱な高齢者や障がい者の家の除雪をする。
+  who: {}
+  at_application:
+  - 町内に身内のいない虚弱老人（障がい者も対象）
+  where: 保健福祉課 福祉係
+  url: https://www.town.tsubetsu.hokkaido.jp/mokutekibetsumenu/korei_kaigo/2479.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 高齢者等緊急通報システム
+  name_on_page: 高齢者等緊急通報システム事業
+  summary: 動作感知センサーと通報ボタンの簡易機器を設置し、緊急時に消防へつなぐ。
+  who:
+    at_home: true
+  at_application:
+  - 居宅に固定電話回線がある
+  - 75歳以上の一人暮らし、または寝たきり等の高齢者のみの世帯
+  - 一人暮らしの重度障がい者なども対象
+  where: 福祉係（保健福祉課）
+  url: https://www.town.tsubetsu.hokkaido.jp/mokutekibetsumenu/korei_kaigo/2479.html
+  confidence: high
+- category: sonota
+  name: 高齢者世帯のエアコン等購入費助成
+  name_on_page: 津別町高齢者世帯熱中症対策エアコン等購入費助成金
+  summary: 高齢者のみの非課税世帯が買うエアコンなどの購入費を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上のみの世帯（64歳以下は障害者手帳の方なら可）
+  - 世帯全員に税や水道・住宅料金の滞納が無い
+  - 1世帯につき1台・1回限り
+  where: 役場窓口
+  url: https://www.town.tsubetsu.hokkaido.jp/iryo_kenko_fukushi/fukushi/4524.html
+  confidence: high
+  amount: エアコンは購入・設置費の半額（上限5万円）。冷風機などは購入額か5万円の低い方
+- category: hochoki
+  name: 中等度難聴者の補聴器購入費の助成
+  name_on_page: 中等度難聴者への「補聴器購入費」を助成します
+  summary: 手帳の対象外の中等度難聴の方に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町の住民基本台帳に登録された18歳以上
+  - 両耳40dB以上70dB未満で、医師が補聴器の必要を認めた
+  - 障害者総合支援法の補聴器の交付を受けられない
+  - 過去にこの制度の助成を受けていない
+  where: 保健福祉課（申請書の提出先は頁に記載なし）
+  url: https://www.town.tsubetsu.hokkaido.jp/soshiki/hokenfukushi/17/syougaifukusi/3974.html
+  confidence: high
+  amount: 補聴器1個につき上限3万円（両耳は6万円まで）
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai
