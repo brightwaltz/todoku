@@ -12,7 +12,7 @@
 | 誰の、どんな課題 | 働きながら親を介護する家族と、高齢の本人。知らない制度は、尋ねることもできない |
 | できること | 困りごとを書く・絵から選ぶ・質問に答えるだけで、尋ねていない公的制度まで、判定の理由・申請先・持ち物・出典つきで示す |
 | 試す | https://todoku.fly.dev/ （見本と、質問だけで始める道は、合言葉なしで最後まで動きます） |
-| デモ動画（3 分） | https://youtu.be/oz0XEOweGBc |
+| デモ動画（3 分） | https://youtu.be/kOk5gGP9N4M |
 | 使った技術 | Python 3.12・FastAPI・Claude API（Claude Opus 5.5）・Claude Code・素の HTML／CSS／JavaScript・Fly.io |
 | ライセンス | MIT（外部の出典の条件は「出典と利用条件」） |
 
