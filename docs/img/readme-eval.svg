@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="250" viewBox="0 0 960 250" role="img" aria-labelledby="t d">
+  <title id="t">評価：当てはまらない制度を「当てはまる見込み」と案内した数</title>
+  <desc id="d">架空の事例 42 件の合計、正解表「全部」で、とどくは 12 件、Claude だけは 45 件。とどくは Claude だけのおよそ 4 分の 1。</desc>
+  <style>
+    text { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif; }
+    .title { font-size: 20px; font-weight: 700; fill: #1f2328; }
+    .sub { font-size: 14px; fill: #5b6168; }
+    .k { font-size: 18px; font-weight: 700; fill: #1f2328; }
+    .k2 { font-size: 13px; fill: #5b6168; }
+    .num { font-size: 26px; font-weight: 700; }
+    .cap { font-size: 17px; font-weight: 700; fill: #0d6b5b; }
+  </style>
+  <rect x="1" y="1" width="958" height="248" rx="16" fill="#fbf7ef" stroke="#e6dcc8" stroke-width="2"/>
+  <text class="title" x="28" y="42">当てはまらない制度を「当てはまる見込み」と案内した数</text>
+  <text class="sub" x="28" y="66">架空の事例 42 件の合計・正解表「全部」（少ないほどよい）</text>
+
+  <text class="k" x="28" y="112">とどく</text>
+  <text class="k2" x="28" y="132">相談文 → 読み取り → 3 問まで</text>
+  <rect x="250" y="94" width="640" height="34" rx="6" fill="#efe9dc"/>
+  <rect x="250" y="94" width="171" height="34" rx="6" fill="#0d6b5b"/>
+  <text class="num" x="434" y="121" fill="#0d6b5b">12</text>
+
+  <text class="k" x="28" y="172">Claude だけ</text>
+  <text class="k2" x="28" y="192">同じ相談文から選ばせる</text>
+  <rect x="250" y="154" width="640" height="34" rx="6" fill="#efe9dc"/>
+  <rect x="250" y="154" width="640" height="34" rx="6" fill="#d97757"/>
+  <text class="num" x="876" y="181" text-anchor="end" fill="#ffffff">45</text>
+
+  <text class="cap" x="28" y="232">とどくは Claude だけのおよそ 4 分の 1。ほかの 2 つの正解表でも同じでした</text>
+</svg>

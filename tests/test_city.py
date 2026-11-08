@@ -88,7 +88,8 @@ def test_kanagawa_says_it_was_checked_and_none_found_not_that_it_is_not_written_
     pref = re.search(r'<section class="card[^"]*" data-level="pref">(.*?)</section>', html, re.S).group(1)
     assert "神奈川県の制度は、まだ規則にしていません" not in html
     assert "2026-11-03" in pref and "見つかりませんでした" in pref
-    readme = (Path(__file__).resolve().parents[1] / "README.md").read_text()
+    root = Path(__file__).resolve().parents[1]
+    readme = (root / "README.md").read_text() + "\n" + (root / "DETAILS.md").read_text()  # 要約版と詳細版を合わせて読む
     assert "神奈川県は、個人で申し込める県の制度が見つかりませんでした（2026-11-03" in readme  # 頁と README が同じ事実を言う
 
 

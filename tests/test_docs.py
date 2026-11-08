@@ -15,7 +15,7 @@ from pathlib import Path
 from todoku import rules
 
 ROOT = Path(__file__).resolve().parents[1]
-README = (ROOT / "README.md").read_text(encoding="utf-8")
+README = (ROOT / "README.md").read_text(encoding="utf-8") + "\n" + (ROOT / "DETAILS.md").read_text(encoding="utf-8")  # 要約版と詳細版を合わせて読む
 SPEC = (ROOT / "docs" / "spec.md").read_text(encoding="utf-8")
 
 

@@ -990,7 +990,8 @@ def test_status_names_are_the_result_headings():
     from pathlib import Path
     from todoku.app import STATUS_LABEL
     root = Path(__file__).resolve().parents[1]
-    js, readme = (root / "web/app.js").read_text(encoding="utf-8"), (root / "README.md").read_text(encoding="utf-8")
+    js = (root / "web/app.js").read_text(encoding="utf-8")
+    readme = (root / "README.md").read_text(encoding="utf-8") + "\n" + (root / "DETAILS.md").read_text(encoding="utf-8")  # 要約版と詳細版を合わせて読む
     for status in ("eligible", "pending", "after_prereq", "unknown"):
         label = STATUS_LABEL[status]
         assert f'["{status}", "{label}",' in js

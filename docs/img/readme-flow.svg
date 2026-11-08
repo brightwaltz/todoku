@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-labelledby="t d">
+  <title id="t">とどくのしくみ：相談から結果まで</title>
+  <desc id="d">書く・選ぶ、Claude が根拠つきで読む、本人が問い 3 つまでで確かめる、規則が判定する、理由・申請先・持ち物・出典を示す、の 5 段。判定するのは Claude ではなく規則。</desc>
+  <style>
+    text { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif; }
+    .h { font-size: 20px; font-weight: 700; fill: #ffffff; }
+    .s { font-size: 15px; fill: #ffffff; }
+    .n { font-size: 15px; font-weight: 700; fill: #ffffff; opacity: .85; }
+    .title { font-size: 20px; font-weight: 700; fill: #1f2328; }
+    .cap { font-size: 18px; font-weight: 700; fill: #1f2328; }
+    .arrow { fill: #8a8f96; }
+  </style>
+  <rect x="1" y="1" width="958" height="298" rx="16" fill="#fbf7ef" stroke="#e6dcc8" stroke-width="2"/>
+  <text class="title" x="28" y="42">相談から結果まで</text>
+
+  <!-- 1 書く・選ぶ -->
+  <rect x="28" y="64" width="152" height="150" rx="14" fill="#6b7280"/>
+  <text class="n" x="44" y="90">1</text>
+  <text class="h" x="104" y="124" text-anchor="middle">書く・選ぶ</text>
+  <text class="s" x="104" y="156" text-anchor="middle">困りごとをそのまま</text>
+  <text class="s" x="104" y="178" text-anchor="middle">絵や質問からも</text>
+  <path class="arrow" d="M186 139 l18 0 l0 -8 l14 12 l-14 12 l0 -8 l-18 0 z"/>
+
+  <!-- 2 Claude が読む -->
+  <rect x="216" y="64" width="152" height="150" rx="14" fill="#d97757"/>
+  <text class="n" x="232" y="90">2</text>
+  <text class="h" x="292" y="124" text-anchor="middle">Claude が読む</text>
+  <text class="s" x="292" y="156" text-anchor="middle">年齢や暮らし方を</text>
+  <text class="s" x="292" y="178" text-anchor="middle">根拠の言葉つきで</text>
+  <path class="arrow" d="M374 139 l18 0 l0 -8 l14 12 l-14 12 l0 -8 l-18 0 z"/>
+
+  <!-- 3 本人が確かめる -->
+  <rect x="404" y="64" width="152" height="150" rx="14" fill="#2f7d4f"/>
+  <text class="n" x="420" y="90">3</text>
+  <text class="h" x="480" y="124" text-anchor="middle">本人が確かめる</text>
+  <text class="s" x="480" y="156" text-anchor="middle">分からない所だけ</text>
+  <text class="s" x="480" y="178" text-anchor="middle">問いは 3 つまで</text>
+  <path class="arrow" d="M562 139 l18 0 l0 -8 l14 12 l-14 12 l0 -8 l-18 0 z"/>
+
+  <!-- 4 規則が判定 -->
+  <rect x="592" y="64" width="152" height="150" rx="14" fill="#0d6b5b"/>
+  <text class="n" x="608" y="90">4</text>
+  <text class="h" x="668" y="124" text-anchor="middle">規則が判定</text>
+  <text class="s" x="668" y="156" text-anchor="middle">Rules as Code</text>
+  <text class="s" x="668" y="178" text-anchor="middle">AI は判定しない</text>
+  <path class="arrow" d="M750 139 l18 0 l0 -8 l14 12 l-14 12 l0 -8 l-18 0 z"/>
+
+  <!-- 5 結果 -->
+  <rect x="780" y="64" width="152" height="150" rx="14" fill="#3b5b8a"/>
+  <text class="n" x="796" y="90">5</text>
+  <text class="h" x="856" y="124" text-anchor="middle">結果</text>
+  <text class="s" x="856" y="150" text-anchor="middle">理由・申請先</text>
+  <text class="s" x="856" y="170" text-anchor="middle">持ち物・出典</text>
+  <text class="s" x="856" y="190" text-anchor="middle">申請メモ</text>
+
+  <text class="cap" x="480" y="258" text-anchor="middle">判定するのは Claude ではなく、公式ページの条件をコードにした規則です</text>
+  <rect x="230" y="268" width="500" height="4" rx="2" fill="#0d6b5b"/>
+</svg>

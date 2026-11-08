@@ -14,7 +14,7 @@ from todoku import local_rules
 from todoku.app import LOCAL, PLACES
 
 ROOT = Path(__file__).resolve().parents[1]
-README = (ROOT / "README.md").read_text(encoding="utf-8")
+README = (ROOT / "README.md").read_text(encoding="utf-8") + "\n" + (ROOT / "DETAILS.md").read_text(encoding="utf-8")  # 要約版と詳細版を合わせて読む
 
 
 def _local_line() -> str:
