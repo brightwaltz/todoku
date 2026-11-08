@@ -102,3 +102,18 @@ def test_city_page_shows_the_city_layer_only():
     no_file = next(c for c in NAMES if len(c) == 6 and not (ROOT / "rules" / "municipal" / f"{c}.yaml").exists()
                    and c not in ("132098", "141003"))
     assert "muni-item" not in client.get(f"/city/{no_file}").text
+
+
+def test_every_source_url_is_plain_http():
+    """第 3 の層の出典は外の頁から読んだもの。画面は href にそのまま入れるので、http(s) で変な字の無い URL だけにする。"""
+    from urllib.parse import urlparse
+    loaded = municipal.load(ROOT / "rules" / "municipal", NAMES)
+    n = 0
+    for city in loaded.values():
+        for p in city.programs:
+            for s in p.sources:
+                n += 1
+                u = urlparse(s.url)
+                assert u.scheme in ("http", "https") and u.hostname, s.url
+                assert not any(c in s.url for c in "<>\"'\\ \n"), s.url
+    assert n > 0
