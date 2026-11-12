@@ -1,0 +1,253 @@
+city: '064262'
+name: 三川町
+site: www.town.mikawa.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの現物支給
+  name_on_page: おむつの支給
+  summary: 常時おむつが必要な要支援・要介護の方へ、課税状況で限度額の違う紙おむつを自宅に配達する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 要介護認定を受けている
+  - 常時おむつを使うようになって3か月以上経過
+  where: 地域包括支援センター
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+  confidence: high
+  amount: 月額6,000円を上限に、おむつを現物支給
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+- category: iro
+  name: 介護人手当
+  name_on_page: 介護人手当支給事業
+  summary: 寝たきりや認知症の高齢者を居宅で6か月以上介護している方へ、月5,000円を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 居宅で、日常生活のすべてに介助が必要な寝たきりの高齢者や一定程度以上の認知症の高齢者などを6か月以上介護している方
+  where: 健康福祉課 福祉介護支援係
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 月額5,000円（4〜9月分は10月、10〜3月分は4月に支給）
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: gaishutsu
+  name: 通院等支援サービス（専用タクシーの助成）
+  name_on_page: 通院等支援サービス
+  summary: 一般の交通機関が使えない方が、車いす・ストレッチャー対応の専用車で通院した料金の8割を助成する。
+  who: {}
+  at_application:
+  - 一般の交通機関の利用が困難で、専用のタクシーで自宅から通院する
+  - 特養・老健・有料老人ホーム・グループホーム等の入所者は対象外
+  - 福祉タクシー券を支給されている方も対象外
+  where: 健康福祉課 福祉介護支援係
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 料金の8割。年24回（月2回）まで、片道を1回と数える
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: gaishutsu
+  name: 移動困難者の通院タクシー運賃の助成
+  name_on_page: 移動困難者通院タクシー利用扶助費支給事業
+  summary: 移動手段の確保が難しい高齢者が町外の医療機関へ通院するタクシー運賃の半額を助成する。
+  who: {}
+  at_application:
+  - 移動手段の確保が難しい高齢者
+  - 町外の医療機関へ通院する
+  where: 健康福祉課 福祉介護支援係
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+  confidence: low
+  amount: 運賃の2分の1。片道1回につき上限1,000円、月4回まで
+- category: haikai
+  name: 認知症等高齢者の事前登録（無事お帰り事業）
+  name_on_page: 認知症等高齢者事前登録事業（無事お帰り事業）
+  summary: 徘徊のおそれのある高齢者の情報を事前登録し、行方不明時の早期発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊または徘徊のおそれがある高齢者
+  - 登録情報は鶴岡警察署と共有される
+  where: 地域包括支援センター
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 位置情報システム機器の購入補助
+  name_on_page: 認知症等高齢者位置情報システム事業
+  summary: 徘徊のおそれのある高齢者の位置情報機器（くつ・ペンダント等）の初期整備費を一部補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊または徘徊のおそれがある高齢者
+  - 購入した領収書が必要
+  where: 地域包括支援センター
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 初期整備費（購入費・手数料）の一部を補助。上限10,000円
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: haikai
+  name: 見守りシールの交付（どこシル伝言板）
+  name_on_page: 認知症高齢者見守りシール交付事業（どこシル伝言板）
+  summary: 登録者に二次元コードシールを交付し、発見者が読み取ると家族に通知が届く。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊または徘徊のおそれがある高齢者
+  - 情報の事前把握・登録が必要
+  where: 地域包括支援センター
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 無料。二次元コードシール20枚（1人1回限り）
+- category: mimamori
+  name: 認知症等高齢者の見守り訪問（認とも見守り訪問）
+  name_on_page: 認知症等高齢者見守り支援事業
+  summary: 見守り支援員が自宅を訪問し、本人の見守りや話し相手になり、介護者の負担を軽くする。
+  who:
+    at_home: true
+  at_application:
+  - 認知症等の高齢者を在宅で介護している家庭
+  where: 地域包括支援センター
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: haishoku
+  name: 配食サービス（ふれあい弁当）
+  name_on_page: 配食サービス（ふれあい弁当）
+  summary: ひとり暮らしの高齢者等へ、ボランティアが弁当を届け、安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らし高齢者または高齢者のみの世帯
+  - 実施は月2回（原則第2・第4水曜日）
+  - 7〜9月は業者弁当になる
+  where: 三川町社会福祉協議会
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 手作り弁当は1食350円、業者弁当は1食400円（配達時に支払い）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 機器を自宅に設置し、緊急時に受信センターが対応する。機材・設置は無料。
+  who: {}
+  at_application:
+  - ひとり暮らしの高齢者、高齢者世帯など
+  where: 健康福祉課 福祉介護支援係
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 機材と設置費は無料。機器の使用にかかる電気料金は自己負担
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒の助成
+  name_on_page: 寝具洗濯乾燥等サービス
+  summary: 寝たきりなどで寝具の管理が難しい高齢者へ、洗濯・乾燥・消毒の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 寝たきりなどで寝具の衛生管理が困難なひとり暮らし高齢者または高齢者世帯など
+  - 年2回まで（6月下旬と11月下旬）
+  where: 健康福祉課 福祉介護支援係
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 利用者の費用は、4点で1,639円、3点で1,155円、代替寝具970円
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: sonota
+  name: ひとり暮らし高齢者の無料入浴券
+  name_on_page: ひとり暮らし高齢者無料入浴利用券交付事業
+  summary: 町内に在宅の65歳以上のひとり暮らしの方へ、無料入浴券を交付する。
+  who:
+    age_min: 65
+    household:
+    - alone
+    at_home: true
+  at_application:
+  - 町の住民基本台帳に登録され、町内に在宅している
+  - 年度途中の申請も可（残月×4回）
+  where: 健康福祉課 福祉介護支援係
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 年48回の無料入浴券
+- category: sonota
+  name: 冬期間の見守り援助活動（除雪・雪下ろし）
+  name_on_page: 冬期間の見守り援助活動事業
+  summary: 除雪が難しい高齢者世帯等へ、除雪機での除雪や雪下ろしを行う（作業は低料金）。
+  who: {}
+  at_application:
+  - 町に住むひとり暮らし高齢者、高齢者世帯、障がい者で除雪が難しい
+  - 登録が必要
+  where: 三川町社会福祉協議会
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 除雪は500円／30分（2人作業）
+- category: koken
+  name: 成年後見制度の利用支援（町長申立てと費用・報酬の助成）
+  name_on_page: 成年後見制度利用支援事業
+  summary: 町長申立ての手続き・費用の負担と、審判請求費用・後見人報酬の助成を行う。
+  who: {}
+  at_application:
+  - 町内に住み、認知症・知的障害・精神障害等で判断能力が不十分
+  - 町長申立ては、親族による申立てが見込めない方
+  - 費用・報酬の助成は、生活保護の方か、非課税で資産・収入がこれに準ずる方
+  - 後見人が配偶者・4親等以内の親族なら報酬助成なし
+  where: 地域包括支援センター（成年後見制度利用促進中核機関）
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 後見人報酬の助成は、在宅の場合に月額28,000円まで、入院等は月額18,000円まで
+- category: sonota
+  name: 緊急連絡先カードの作成
+  name_on_page: 緊急連絡先カード作成
+  summary: ひとり暮らし高齢者等の緊急連絡先を書いた掲示用カードを作って配る。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者または高齢者世帯等で、支援の必要な方
+  where: 三川町社会福祉協議会
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: gaishutsu
+  name: 通院送迎サービス（社会福祉協議会）
+  name_on_page: 通院送迎サービス
+  summary: 出かけにくいひとり暮らし高齢者等へ、通院のための交通手段を提供する（会員制）。
+  who: {}
+  at_application:
+  - 社会福祉協議会の会員で、利用の登録に社協賛助会費も納める
+  - 出かけることが困難なひとり暮らし高齢者など
+  - 福祉タクシー券を利用している方は除く
+  - 原則月1回。1か月前〜5日前に要予約。運行は庄内地域
+  where: 三川町社会福祉協議会
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/kaigo/kaigohoken/houkatu9920220526.files/2.pdf
+  confidence: high
+  amount: 社協会費2,500円と賛助会費3,000円が必要（利用料は頁に無い）
+  more_urls:
+  - https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+- category: mimamori
+  name: 訪問型見守り支援事業（保健師の訪問）
+  name_on_page: 訪問型見守り支援事業
+  summary: 閉じこもりや認知症、うつ等の傾向がある方を、保健師などが自宅で訪問して見守る。
+  who: {}
+  at_application:
+  - 閉じこもりや認知症、うつ等の傾向がある方
+  where: 健康福祉課 福祉介護支援係
+  url: https://www.town.mikawa.yamagata.jp/kurashi/kenkouiryou/fukushi/koureisyasien.html
+  confidence: low
+not_found:
+- hochoki
+- jutaku
+- ribiyo
+- nichijo-yogu

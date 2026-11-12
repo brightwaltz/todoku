@@ -1,0 +1,138 @@
+city: 054348
+name: 美郷町
+site: www.town.misato.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ふれあい安心電話）の設置
+  name_on_page: 緊急通報装置（ふれあい安心電話）
+  summary: ひとり暮らしの高齢者等に、相談や急病・災害時の通報に対応する緊急通報装置を設置する。
+  who: {}
+  at_application:
+  - 次のいずれか：65歳以上の独居世帯
+  - 高齢者のみの世帯
+  - 身体障がい者のみの世帯
+  where: 美郷町社会福祉協議会（みさと福祉センター）
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+- category: iro
+  name: 介護者手当
+  name_on_page: 介護者手当支給
+  summary: 介護度4・5の人や重い障がいのある人を在宅で介護している人に、年4回、月額1万円の手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または障がい児・者等で1種1級の人を、在宅で1か月以上続けて介護している
+  - 特別障害者手当・障害児福祉手当を受けていない
+  - 申請書の『調査員の所見』欄はケアマネジャーが記入
+  where: 福祉保健課、千畑在宅介護支援センター、在宅介護支援センター緑泉、在宅介護支援センター仙南
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+  amount: 年4回の支給（月額1万円）。入院やショートステイが8日以上の月は支給なし
+- category: kaigo-yohin
+  name: 紙おむつ等の介護用品の給付
+  name_on_page: 介護用品給付事業
+  summary: 要介護4・5の人などを介護する家族等に、紙おむつ等の介護用品を年6回支給する。
+  who: {}
+  at_application:
+  - 要介護4・5の人、または特別障害者手当等を受けている人を介護する家族等（ひとり暮らしの場合は本人）
+  - 毎年申込が必要。申請書の『調査員の所見』欄はケアマネジャーが記入
+  where: 福祉保健課、美郷町社会福祉協議会
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+  amount: 1人年6回、予算の範囲内で紙おむつ等を支給
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい高齢者等の家に、週1回または2回、栄養バランスのとれた食事を届け、安否も確かめる。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者、または心身の障がい・傷病などで調理が困難な人
+  where: 福祉保健課、美郷町社会福祉協議会
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+  amount: 1回400円（アセスメント10点未満）。10点以上は町民税非課税世帯300円、課税世帯400円
+- category: sonota
+  name: 除草・冬囲い・除雪などの軽度生活援助
+  name_on_page: 軽度生活援助事業
+  summary: シルバー人材センター会員が、除草・冬囲いの取付と取外し・玄関まわりの除雪などを手伝う。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - 心身の障がいや疾病で生活援助が必要
+  - 年間40時間まで。毎年申込が必要
+  where: 福祉保健課、美郷町シルバー人材センター
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+  amount: シルバー人材センターの利用単価の1割を負担
+- category: sonota
+  name: 高齢者世帯等の雪下ろし費用の助成
+  name_on_page: 高齢者世帯等の雪下ろしに係る費用の一部を助成します。
+  summary: 自力で雪下ろしが難しい高齢者世帯等に、雪下ろしにかかる費用の一部を助成する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 70歳以上の高齢者、要介護認定者、障害者手帳所持者等で構成される世帯
+  - 自力で雪下ろしが困難
+  where: 福祉保健課（申請書は各出張所や民生児童委員宅にもある）
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+- category: sonota
+  name: 生活支援ホームヘルパーの派遣
+  name_on_page: 生活支援ホームヘルプサービス事業
+  summary: 介護保険で自立と認定された高齢者の家にホームヘルパーを派遣し、家事や日常生活を援助・指導する。
+  who: {}
+  at_application:
+  - 介護保険で『自立』と認定された、おおむね65歳以上
+  - 社会適応が難しい独居高齢者、または高齢者のみの世帯など
+  - 派遣は週1回1時間（特に認められた場合は2時間）
+  where: 福祉保健課、美郷町社会福祉協議会
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+  amount: 個人負担あり（金額は頁に無い）
+- category: yutai
+  name: シニア元気いきいき支援事業の助成券
+  name_on_page: 美郷町シニア元気いきいき支援事業
+  summary: 65歳以上の町民に300円券50枚を交付し、はり・きゅう、温泉・プール、タクシー・バス運賃に使える。
+  who:
+    age_min: 65
+  at_application:
+  - タクシー・バスの運賃に使えるのは運転免許を持たない人だけ
+  - 本人以外は使えない。交付日から3月31日まで有効
+  where: 福祉保健課、六郷出張所、仙南出張所
+  url: https://www.town.misato.akita.jp/archive/contents-2985
+  confidence: high
+  amount: 15,000円相当（300円券50枚）。再交付なし
+- category: hochoki
+  name: 補聴器の購入費の助成（軽度・中等度難聴）
+  name_on_page: 美郷町軽度・中等度難聴者補聴器購入費助成事業
+  summary: 障害者手帳の対象にならない軽度・中等度の難聴の人に、補聴器の購入費の2分の1（上限5万円）を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある18歳以上
+  - 両耳の聴力が原則30デシベル以上70デシベル未満で、障害者手帳の対象外
+  - 医師が補聴器の必要を認める。町税等の滞納がない
+  - 過去5年以内に町の補聴器の助成を受けていない
+  - 世帯に町民税の所得割が46万円以上の人がいると対象外。購入前に申請
+  where: 福祉保健課 福祉班
+  url: https://www.town.misato.akita.jp/fukusihan/4918
+  confidence: high
+  amount: 購入費の2分の1、上限5万円（修理・部品交換・調整費は除く）
+not_found:
+- haikai
+- shingu
+- ribiyo
+- jutaku

@@ -1,0 +1,97 @@
+city: 073679
+name: 只見町
+site: www.town.tadami.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無償貸与
+  name_on_page: 緊急通報システム
+  summary: 高齢者世帯や一人暮らしの高齢者に緊急通報装置を無償で貸す。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 各制度に要件がある（詳細は担当課）
+  where: 保健福祉課 0241-84-7005
+  url: https://www.town.tadami.lg.jp/2025/06/10/223134ba77defb99cdaa107d22c17810.pdf
+  confidence: low
+  amount: 無償で貸与
+- category: shingu
+  name: 寝具の洗濯・乾燥
+  name_on_page: 寝具洗濯乾燥サービス
+  summary: 年1回、毛布や布団等のクリーニングを行う。
+  who: {}
+  at_application:
+  - 各制度に要件がある（詳細は担当課）
+  where: 保健福祉課 0241-84-7005
+  url: https://www.town.tadami.lg.jp/2025/06/10/223134ba77defb99cdaa107d22c17810.pdf
+  confidence: low
+  amount: 一部有料
+- category: kaigo-yohin
+  name: 介護用品券の支給
+  name_on_page: 介護用品券
+  summary: 介護度に応じて介護用品券を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 介護度に応じて支給（事業名は在宅介護支援）
+  - 各制度に要件がある（詳細は担当課）
+  where: 保健福祉課 0241-84-7005
+  url: https://www.town.tadami.lg.jp/2025/06/10/223134ba77defb99cdaa107d22c17810.pdf
+  confidence: low
+  amount: 月額6,000円上限
+- category: gaishutsu
+  name: 介護タクシー運賃の助成
+  name_on_page: 介護タクシー利用助成事業
+  summary: 介護タクシー運賃の一部を助成する。
+  who: {}
+  at_application:
+  - 各制度に要件がある（詳細は担当課）
+  where: 保健福祉課 0241-84-7005
+  url: https://www.town.tadami.lg.jp/2025/06/10/223134ba77defb99cdaa107d22c17810.pdf
+  confidence: low
+  amount: 町内は個人負担200円、町外は個人負担3分の1（上限25,000円まで）
+- category: gaishutsu
+  name: 運転免許返納者への雪んこタクシー券
+  name_on_page: 運転免許証自主返納事業
+  summary: 運転免許証を自主返納した高齢者に雪んこタクシー券を交付する。
+  who: {}
+  at_application:
+  - 高齢者で運転免許証（バイク含む）を自主返納した
+  - 各制度に要件がある（詳細は担当課）
+  where: 保健福祉課 0241-84-7005
+  url: https://www.town.tadami.lg.jp/2025/06/10/223134ba77defb99cdaa107d22c17810.pdf
+  confidence: low
+  amount: 雪んこタクシー券100枚（2万円分）
+- category: sonota
+  name: 高齢者等の住宅屋根の除雪費助成
+  name_on_page: 高齢者等住宅屋根除雪費助成
+  summary: 65歳以上の住民税非課税世帯の屋根除雪費用の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 各制度に要件がある（詳細は担当課）
+  where: 保健福祉課 0241-84-7005
+  url: https://www.town.tadami.lg.jp/2025/06/10/223134ba77defb99cdaa107d22c17810.pdf
+  confidence: low
+  amount: 補助率1/2、上限4万円
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

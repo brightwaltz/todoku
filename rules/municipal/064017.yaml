@@ -1,0 +1,74 @@
+city: '064017'
+name: 小国町
+site: www.town.oguni.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給（自宅へ配達）
+  name_on_page: 紙おむつ支給制度
+  summary: 紙おむつが必要な非課税の方を同居して介護する家族へ、紙おむつを自宅に配達する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - uses_diapers
+  at_application:
+  - 次のいずれか：要介護3〜5、認知症自立度3以上、身障手帳1・2級や療育手帳等
+  - 介護を受ける本人が町民税非課税
+  - 介護している方が同居していること
+  - 年度が変わったら再度申請する
+  where: 健康福祉課 長寿介護担当
+  url: https://www.town.oguni.yamagata.jp/soshiki/kenkou/1513.html
+  confidence: high
+  amount: 月の限度は、町民税課税世帯4,000円分、非課税世帯8,000円分
+- category: sonota
+  name: 高齢者等の除雪支援（生活援助員の派遣）
+  name_on_page: 高齢者等暮らし応援（除雪支援）
+  summary: 自力で除雪できない非課税の高齢のひとり暮らし等へ、生活援助員を派遣して除雪する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 病弱などで自力で除雪できない
+  - 65歳以上のひとり暮らし、これに準ずる高齢者夫婦世帯、肢体不自由の身体障がい者手帳の方
+  - 生活保護や親族・近隣から同様の援助を受けられる方は対象外
+  - 対象要件の確認のため毎年手続きする
+  where: 健康福祉課 長寿介護担当
+  url: https://www.town.oguni.yamagata.jp/soshiki/kenkou/1514.html
+  confidence: high
+  amount: 自己負担なし
+- category: gaishutsu
+  name: 町営バスの高齢者半額利用券
+  name_on_page: 高齢者半額利用券
+  summary: 70歳以上の方は、町営バスを降りるときに半額利用券を見せると運賃が半額になる。
+  who:
+    age_min: 70
+  at_application:
+  - 国民健康保険の方は70歳の誕生日に郵送される
+  - 国保に入っていない方は、保険証やマイナンバーカードを持って申し込む
+  where: 町民課 町民生活担当
+  url: https://www.town.oguni.yamagata.jp/soshiki/choumin/1512.html
+  confidence: high
+  amount: 町営バスの利用料金を半額免除
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,159 @@
+city: '064025'
+name: 白鷹町
+site: www.town.shirataka.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の補助
+  name_on_page: 高齢者の補聴器購入を支援します
+  summary: 65歳以上で補聴器相談医が必要と認めた方の補聴器購入費を一部補助する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 障害者総合支援制度の補装具費の支給対象でない
+  - 補聴器相談医の診断で使用が必要と認められた
+  - 補聴器専門店等で購入した初めての購入で、これまで補助を受けていない
+  - 町などのアンケート・調査への継続協力に同意
+  - 購入前に必要な手続きがある
+  where: 健康福祉課 地域生活支援係
+  url: https://www.town.shirataka.lg.jp/1243.htm
+  confidence: high
+  amount: 自己負担額の2分の1と下記のいずれか少ない額。非課税は両耳4万円・片耳2万円、課税は両耳2万円・片耳1万円
+- category: kaigo-yohin
+  name: 紙おむつの支給（自宅へ配達）
+  name_on_page: 市町村特別給付（おむつ支給事業）
+  summary: 在宅で常時失禁状態の要介護の高齢者へ、紙おむつを業者が自宅に配達して支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 常時失禁状態にある介護が必要な方
+  - 要介護1・2は、認知症高齢者の日常生活自立度Ⅲa以上の方に限る
+  - 自己負担はない
+  where: 健康福祉課 地域生活支援係
+  url: https://www.town.shirataka.lg.jp/secure/4266/ホームページ掲載版.pdf
+  confidence: high
+  amount: 月の上限は、介護保険の負担割合が1割の方4,000円、1割以外の方2,000円（自宅での介護が月14日未満なら半額）
+- category: kinkyu-tsuho
+  name: 地域生活あんしんネットワーク（緊急通報機器の設置）
+  name_on_page: 地域生活あんしんネットワーク事業
+  summary: 一人暮らし等の低所得の高齢者に、緊急時に通報できる機器を設置し、かけつけ協力員を登録する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上で町民税非課税の一人暮らし、またはこれに準ずる高齢者夫婦世帯等
+  - 介護保険の認定を受けている、または何らかの支援が必要と認められる
+  - あらかじめ、かけつけ協力員を登録する
+  where: 地域包括支援センター（社会福祉協議会）
+  url: https://www.town.shirataka.lg.jp/secure/4266/ホームページ掲載版.pdf
+  confidence: high
+  amount: 利用料は月額500円＋消費税
+- category: haikai
+  name: おでかけ見守り事前登録（徘徊のおそれのある方）
+  name_on_page: おでかけ見守り事前登録
+  summary: 徘徊のおそれのある在宅の高齢者の情報を事前に登録し、早期発見につなげる。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等で徘徊や行方不明になるおそれがある高齢者とその家族
+  - 在宅で生活している
+  where: 地域包括支援センター（社会福祉協議会）
+  url: https://www.town.shirataka.lg.jp/secure/4266/ホームページ掲載版.pdf
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 免許返納者へのデマンドタクシー券（65歳以上）
+  name_on_page: 高齢者運転免許証自主返納等支援事業
+  summary: 65歳以上で運転免許を自主返納した方に、デマンドタクシーの回数乗車券を贈る。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住み、運転免許証を自主返納した
+  - 返納日から1年間申請できる
+  - タクシー利用助成券の事業とは併用できない
+  where: 健康福祉課 地域生活支援係
+  url: https://www.town.shirataka.lg.jp/secure/4266/ホームページ掲載版.pdf
+  confidence: high
+  amount: デマンドタクシー料金11,000円分の回数乗車券（100円×10枚綴）
+- category: gaishutsu
+  name: 認知症の方の免許返納等へのタクシー券
+  name_on_page: 認知症の高齢者運転免許証自主返納等支援事業
+  summary: 認知症で免許を返納した、または取消処分を受けた高齢者に、タクシー利用助成券を交付する。
+  who:
+    age_min: 65
+    flags:
+    - dementia_diagnosis
+  at_application:
+  - 認知症で要介護・要支援認定の65歳以上で、免許を自主返納した
+  - または、75歳以上で認知症により免許の取消処分を受けた
+  - 返納日（取消処分日）から1年間申請できる
+  - デマンドタクシー券の事業とは併用できない
+  where: 健康福祉課 地域生活支援係
+  url: https://www.town.shirataka.lg.jp/secure/4266/ホームページ掲載版.pdf
+  confidence: high
+  amount: タクシー利用助成券（500円×34枚綴）
+- category: sonota
+  name: 高齢者世帯等の雪はき支援
+  name_on_page: 高齢者世帯等雪はき支援事業
+  summary: 雪はきができない非課税世帯のため、出入り口から生活道路までの除雪を行う。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の高齢者世帯、または障害者手帳をもつ人だけの世帯等
+  - 近所の方や親族等の支援（金銭的な支援を含む）を受けられない
+  - 地区担当の民生委員・児童委員を通して福祉係へ申請
+  where: 健康福祉課 福祉係
+  url: https://www.town.shirataka.lg.jp/1241.htm
+  confidence: high
+- category: sonota
+  name: 高齢者世帯等の雪下ろし費の支給
+  name_on_page: 高齢者世帯等雪おろし費支給事業
+  summary: 屋根の雪下ろしができない非課税世帯へ、雪下ろし費用を支給する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - 65歳以上の高齢者世帯、または障害者手帳をもつ人だけの世帯等
+  - 近所の方や親族等の支援（金銭的な支援を含む）を受けられない
+  - 生活保護世帯は対象外
+  - 民生委員・児童委員を通し、請求書か領収書を添えて申請
+  where: 健康福祉課 福祉係
+  url: https://www.town.shirataka.lg.jp/1241.htm
+  confidence: high
+  amount: 1回18,000円まで、1世帯で年度内に3回まで
+- category: koken
+  name: 成年後見の申立て費用と後見人報酬の助成
+  name_on_page: 成年後見制度に関する相談窓口
+  summary: 費用の負担が難しい方に、審判の申立て費用と後見人等への報酬の助成制度がある。
+  who: {}
+  at_application:
+  - 認知症や障がいなどで判断能力が不十分な方
+  - 費用を負担することが困難など、経済状況などの要件を満たす
+  where: 地域包括支援センター（社会福祉協議会）
+  url: https://www.town.shirataka.lg.jp/secure/4266/ホームページ掲載版.pdf
+  confidence: low
+not_found:
+- haishoku
+- iro
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

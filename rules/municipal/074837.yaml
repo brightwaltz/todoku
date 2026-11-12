@@ -1,0 +1,121 @@
+city: 074837
+name: 塙町
+site: www.town.hanawa.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等の購入費給付
+  name_on_page: 塙町紙おむつ給付事業
+  summary: 紙おむつ・リハビリパンツ・尿取りパッドの購入費を給付する
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 町内に住所があり、概ね65歳以上で自宅に住んでいる
+  - 老衰・身体の障害・認知症等で紙おむつが必要
+  - 本人と生計を一にする家族の町民税の合計が12万円以下
+  - 入院中・施設入所中は対象外
+  where: 健康福祉課 高齢者支援係
+  url: https://www.town.hanawa.fukushima.jp/page/page000649.html
+  confidence: high
+  amount: 購入費を月6,000円まで
+  more_urls:
+  - https://www.town.hanawa.fukushima.jp/data/doc/1706832948_doc_43_0.pdf
+- category: gaishutsu
+  name: お出かけタクシー利用券の交付
+  name_on_page: 塙町高齢者外出支援タクシー利用料金助成事業
+  summary: 対象の高齢者にタクシー利用券（1枚500円）を交付する
+  who:
+    age_min: 70
+    at_home: true
+  at_application:
+  - 70歳以上80歳未満は自動車運転免許証（二輪を除く）がない人
+  - 80歳以上は全員が対象
+  - 介護施設等に入所している人は対象外
+  where: 健康福祉課 高齢者支援係
+  url: https://www.town.hanawa.fukushima.jp/page/page001219.html
+  confidence: high
+  amount: 月6枚（ひとり暮らしは9枚）を基準に交付。町内で乗降するときに使える
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり助成
+  name_on_page: 高齢者にやさしい住まいづくり助成事業
+  summary: 転倒を防ぐ住宅改修の費用を助成する
+  who:
+    age_min: 60
+  at_application:
+  - 介護保険の要介護・要支援の認定を受けていない人
+  - 要介護（要支援）状態にならないための改修であること
+  - 1棟につき1回限り。工事前に事前申請が必要
+  where: 健康福祉課 高齢者支援係
+  url: https://www.town.hanawa.fukushima.jp/data/doc/1706832948_doc_43_0.pdf
+  confidence: high
+  amount: 工事額の9割、最大180,000円
+- category: mimamori
+  name: 高齢者見守り（月1回の訪問）
+  name_on_page: 高齢者見守り事業
+  summary: 希望するひとり暮らしの高齢者を、見守り隊が月1回訪問する
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 介護保険サービスを利用していない人
+  where: 健康福祉課 高齢者支援係
+  url: https://www.town.hanawa.fukushima.jp/data/doc/1706832948_doc_43_0.pdf
+  confidence: high
+- category: sonota
+  name: 救急医療情報キットの配布
+  name_on_page: 救急医療情報キット配布事業
+  summary: 緊急時の連絡先や病名を書く情報キットを無料で配る
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 健康福祉課 高齢者支援係
+  url: https://www.town.hanawa.fukushima.jp/data/doc/1706832948_doc_43_0.pdf
+  confidence: high
+  amount: 無料
+- category: shingu
+  name: 寝具の消毒・丸洗い・乾燥
+  name_on_page: 寝具消毒丸洗い乾燥事業
+  summary: 寝たきりの高齢者の寝具の消毒・丸洗い・乾燥を無料で年2回行う
+  who:
+    at_home: true
+    flags:
+    - bedridden_6m
+  at_application:
+  - おおむね65歳以上で寝たきりの在宅の高齢者
+  where: 健康福祉課 高齢者支援係
+  url: https://www.town.hanawa.fukushima.jp/data/doc/1706832948_doc_43_0.pdf
+  confidence: high
+  amount: 無料（年2回）
+- category: sonota
+  name: 敬老祝金の支給
+  name_on_page: 敬老祝金支給事業
+  summary: 80歳以上の高齢者に敬老祝金を9月に口座振込で支給する
+  who:
+    age_min: 80
+  at_application:
+  - 町内に住所がある（基準日は9月1日）
+  - 申請が必要なのは初年度のみ
+  where: 健康福祉課 高齢者支援係
+  url: https://www.town.hanawa.fukushima.jp/data/doc/1706832948_doc_43_0.pdf
+  confidence: high
+  amount: 5,000円
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- ribiyo
+- nichijo-yogu
+- yutai

@@ -1,0 +1,154 @@
+city: '073016'
+name: 桑折町
+site: www.town.koori.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品給付券（おむつ券）
+  name_on_page: 家族介護用品給付券（おむつ券）
+  summary: 在宅の要介護4・5で非課税世帯の方を介護する家族に、紙おむつ等と引換えできる給付券を交付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と介護者の両方が町内に住所を有する
+  - 要介護者が要介護4または5で、在宅で生活している
+  - 要介護者の属する世帯が町民税非課税
+  - 転出・死亡、要介護4・5以外、課税世帯になると翌月から対象外
+  where: 健康福祉課 福祉介護係（役場4番窓口）
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1331.html
+  confidence: high
+  amount: 要介護者1人につき月額5,000円分の給付券（超過分は自己負担、おつりなし）
+  more_urls:
+  - https://www.town.koori.fukushima.jp/soshiki/4/1337.html
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らし等の非課税世帯の高齢者に緊急通報装置を貸与し、毎月の安否確認も行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上の町民税非課税世帯に属する方
+  - 疾病・障がい等で日常生活に不安のあるひとり暮らしの方
+  - または、要介護者を抱える高齢者（65歳以上）のみの世帯
+  - 親族や近隣の協力員3名の確保が必要
+  where: 健康福祉課 福祉介護係
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1332.html
+  confidence: high
+  amount: 機械の設置費用は町が負担（電話回線の基本料金・通話料は利用者負担）
+  more_urls:
+  - https://www.town.koori.fukushima.jp/soshiki/4/1337.html
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 食事の準備ができず低栄養の高齢者に、安否確認を兼ねて配食する。調査で利用可否を決める。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしの高齢者（65歳以上）または高齢者世帯
+  - 低栄養またはそれに近い状態
+  - 本人で食事準備ができず、家族等の支援も得られない
+  - 職員の調査で利用可能と判定された場合に利用できる
+  where: 健康福祉課 福祉介護係（役場1階窓口）
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1333.html
+  confidence: high
+  more_urls:
+  - https://www.town.koori.fukushima.jp/soshiki/4/1337.html
+- category: haikai
+  name: 認知症高齢者等の見守りQRコード（シール）
+  name_on_page: 桑折町認知症高齢者等見守りQRコード活用事業
+  summary: 徘徊の可能性がある在宅の高齢者等に、持ち物に貼る見守りQRコードのシールを交付する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内で在宅で生活している、概ね65歳以上の方
+  - 認知症や疾病等でひとり歩き（徘徊）の可能性がある
+  - 申請は本人、3親等以内の親族、常時介護している人など
+  where: 健康福祉課 福祉介護係（役場1階4番窓口）
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1335.html
+  confidence: high
+  amount: 年度ごとに1人1シート（36枚）無料。再交付・追加は実費
+- category: haikai
+  name: 高齢者地域見守り事前登録
+  name_on_page: 高齢者地域見守り事前登録制度
+  summary: 徘徊のおそれがある在宅の方の情報を町と地域包括支援センターに登録し、警察等とも共有する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 自宅で生活し、認知症等でひとり歩き（徘徊）のおそれがある方等
+  - 登録情報は警察や関係機関等で共有される
+  where: 健康福祉課 福祉介護係、桑折町地域包括支援センター
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1341.html
+  confidence: high
+- category: gaishutsu
+  name: 献上桃の郷おでかけパス（タクシー1回500円）
+  name_on_page: 献上桃の郷おでかけパス事業
+  summary: 対象の方にタクシー利用者証を交付し、町認定のタクシーを1回500円で使えるようにする。
+  who: {}
+  at_application:
+  - 65〜69歳で前年度の町民税が非課税の方、70歳以上の方、運転免許証を自主返納した方のいずれか
+  - 町内での乗降が対象（公立藤田総合病院は町内）
+  - 町外は通院・調剤薬局のみ可。町外分は全額自己負担
+  where: 健康福祉課（役場庁舎1階）
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1347.html
+  confidence: high
+  amount: 運賃1回500円（利用時間は7時〜19時）
+  more_urls:
+  - https://www.town.koori.fukushima.jp/soshiki/4/1337.html
+- category: gaishutsu
+  name: 75歳以上の免許返納者へのタクシー券
+  name_on_page: 高齢者運転免許証自主返納支援事業
+  summary: 有効期限内の運転免許を自主返納した75歳以上の方に、タクシー券12,000円分を支給する。
+  who:
+    age_min: 75
+  at_application:
+  - 町内に住民登録があり、有効期限内の運転免許証を自主返納した
+  - 返納日から1年以内に申請する
+  - 認定事業者のタクシーのみ使える。給付は1人1回限り
+  where: 健康福祉課 福祉介護係
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1340.html
+  confidence: high
+  amount: タクシー券12,000円分
+  more_urls:
+  - https://www.town.koori.fukushima.jp/soshiki/4/1337.html
+- category: sonota
+  name: 生活支援ショートステイ事業
+  name_on_page: 生活支援ショートステイ事業
+  summary: 家族が不在のとき、介護保険対象外の在宅高齢者の養護老人ホーム等のショートステイ費を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 同居家族が冠婚葬祭等で不在となり、一時的に養護が必要
+  - 介護保険の対象外の在宅高齢者
+  where: 健康福祉課 福祉介護係
+  url: https://www.town.koori.fukushima.jp/soshiki/4/1337.html
+  confidence: low
+  amount: ショートステイ利用費用の一部を助成
+not_found:
+- hochoki
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

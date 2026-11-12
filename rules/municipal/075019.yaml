@@ -1,0 +1,53 @@
+city: 075019
+name: 石川町
+site: www.town.ishikawa.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者タクシー料金兼温泉施設利用料金の助成券
+  name_on_page: 石川町高齢者タクシー料金兼温泉施設利用料金助成事業
+  summary: タクシーまたは温泉施設で使える助成券を交付する
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住所があり、令和8年3月31日現在で75歳以上
+  - または65〜74歳で運転免許証を自主返納し、証明できる人
+  - 年度内に1人1回の申請。過去に申請済みなら原則不要
+  where: 保健福祉課 高齢福祉係
+  url: https://www.town.ishikawa.fukushima.jp/admin/welfare/03/taxi.html
+  confidence: high
+  amount: 10,000円分（500円券20枚）。1回にタクシーは10枚、温泉は5枚まで
+- category: kaigo-yohin
+  name: 紙おむつ購入費の支給（市町村特別給付）
+  name_on_page: 市町村特別給付事業
+  summary: 在宅で紙おむつを使う要介護の人に、購入費を支給する
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護保険料を滞納していない
+  - 月の半分以上ショートステイを受けている人は除く
+  where: 保健福祉課 高齢福祉係（計画書に申請先の記載なし）
+  url: https://www.town.ishikawa.fukushima.jp/admin/welfare/03/PDF/hokenhukushi2024.pdf
+  confidence: low
+  amount: 要介護3以上は月4,000円、要介護1〜2は月2,000円
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- ribiyo
+- shingu

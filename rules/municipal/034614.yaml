@@ -1,0 +1,48 @@
+city: '034614'
+name: 大槌町
+site: www.town.otsuchi.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢に伴う難聴による補聴器購入費の一部助成
+  summary: 難聴の高齢者が補聴器を買うとき、費用の9割（上限あり）を町が助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 生活保護世帯、または市町村民税非課税世帯に属する
+  - 両耳40dB以上70dB未満で、身体障害者手帳の対象でない
+  - 補聴器相談医が補聴器の装用を認めた
+  - 過去5年以内にこの助成を受けていない
+  where: 長寿社会課 介護係
+  url: https://www.town.otsuchi.iwate.jp/gyosei/docs/455697.html
+  confidence: high
+  amount: 購入費の9割、上限は税込42,000円
+- category: haikai
+  name: 見守りSOSネットの登録と見守りシール
+  name_on_page: おおつち見守りSOSネット
+  summary: 道に迷うおそれのある認知症の方の情報を警察・消防・包括に登録し、見守りシールを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症（65歳以上）か若年性認知症（40歳以上）の方
+  - 道に迷う恐れや、自力で帰宅が困難と予想される
+  - 全身写真・顔写真が必要（過去1年以内）
+  where: 大槌町役場1階 長寿社会課窓口（地域包括支援センター）
+  url: https://www.town.otsuchi.iwate.jp/gyosei/docs/461470.html
+  confidence: high
+  amount: 登録者に見守りシール（QRコード付き）を配布
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- kinkyu-tsuho
+- koken

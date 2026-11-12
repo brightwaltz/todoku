@@ -1,0 +1,134 @@
+city: 083097
+name: 大洗町
+site: www.town.oarai.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護3以上の在宅の方への紙おむつ等購入費の助成（利用券）
+  name_on_page: 大洗町居宅要介護者支援事業(紙おむつ等購入費助成事業)
+  summary: 常時紙おむつ等を使う在宅の要介護3〜5の非課税の方に、購入費の9割を助成する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 大洗町の介護保険被保険者で、町内に住所があり居住している
+  - 介護保険料を滞納していない
+  - 1か月のうち15日以上ショートステイや入院だと対象外
+  where: 福祉課 介護保険係
+  url: https://www.town.oarai.lg.jp/kennkoufukushi/kaigo/shinnsei/8566/
+  confidence: high
+  amount: 紙おむつ等の購入費の9割（上限4,500円／月）
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 補聴器購入費助成事業
+  summary: 補聴器が必要な65歳以上の住民税非課税の方に、購入費の一部を助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 大洗町に住所があり、現に居住している
+  - 聴覚障害による身体障害者手帳の交付を受けていない
+  - 日常的に補聴器が必要と医師が認めた
+  where: 福祉課 高齢者支援係
+  url: https://www.town.oarai.lg.jp/kennkoufukushi/koureishanokatahe/koureisyasiennjigyou/23320/
+  confidence: high
+  amount: 補聴器購入費の2分の1以内（上限10,000円）。集音器は対象外
+- category: haishoku
+  name: 配食サービス（月6回）
+  name_on_page: 配食サービス事業
+  summary: 見守りが必要な虚弱なひとり暮らしの高齢者や高齢者世帯に、月6回食事を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上の虚弱で、見守りの必要がある
+  - まずは近くの民生委員に相談する
+  where: 福祉課 高齢者支援係（まず民生委員へ相談）
+  url: https://www.town.oarai.lg.jp/kennkoufukushi/koureishanokatahe/koureisyasiennjigyou/1734/
+  confidence: high
+  amount: 1食200円の自己負担（頁に所得制度ありと記載）、毎週火曜と第2・4水曜に配食
+- category: kinkyu-tsuho
+  name: 緊急通報機器の貸与と月1回以上の安否確認
+  name_on_page: 高齢者等あんしん見守り緊急通報システム事業
+  summary: 在宅のひとり暮らしの高齢者などに、緊急通報の機器を貸し、月1回以上電話で安否を確認する。
+  who:
+    at_home: true
+  at_application:
+  - 65歳以上の病弱なひとり暮らしの高齢者
+  - または65歳以上の病弱な高齢者のみの世帯
+  - またはひとり暮らしの重度身体障害者
+  - 調査のうえ町が利用の可否を決める
+  where: 福祉課 高齢者支援係
+  url: https://www.town.oarai.lg.jp/kennkoufukushi/koureishanokatahe/koureisyasiennjigyou/2746/
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 徘徊高齢者等SOSネットワークへの事前登録
+  name_on_page: 大洗町徘徊高齢者等SOSネットワーク事業
+  summary: 行方不明時に町が協定機関へ情報提供し捜索に協力してもらえるよう、事前に登録する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症状等により自宅に戻れなくなる可能性のある方など
+  - 申請者は対象者本人とその家族、養護者
+  - 本人の写真1枚、申請者の印鑑と身分証明書を持参する
+  where: 福祉課 高齢者支援係
+  url: https://www.town.oarai.lg.jp/kennkoufukushi/koureishanokatahe/koureisyasiennjigyou/1680/
+  confidence: high
+- category: haikai
+  name: 徘徊探知システムを使う家族への支援
+  name_on_page: 徘徊高齢者家族支援サービス事業
+  summary: 認知症で行方不明のおそれのある高齢者の家族が、徘徊探知システムで居場所を知れる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内に住所があるおおむね65歳以上の認知症のある高齢者
+  - 行方不明になる可能性がある
+  - 申請は家族（印鑑と写真1枚を持参）
+  where: 福祉課 高齢者支援係
+  url: https://www.town.oarai.lg.jp/kennkoufukushi/koureishanokatahe/koureisyasiennjigyou/1714/
+  confidence: high
+  amount: 利用時に情報取得料（電話300円/回・パソコン100円/回）、現場急行料10,000円/回
+- category: mimamori
+  name: 牛乳の配達による安否確認
+  name_on_page: 愛の定期便
+  summary: 一人暮らしの高齢者に牛乳を配達し、安否確認や孤独の解消を図る。
+  who:
+    household:
+    - alone
+  at_application:
+  - 概ね65歳以上の一人暮らしの高齢者
+  where: 福祉課 高齢者支援係
+  url: https://www.town.oarai.lg.jp/kennkoufukushi/koureishanokatahe/koureisyasiennjigyou/1723/
+  confidence: high
+  amount: 無料
+not_found:
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- yutai

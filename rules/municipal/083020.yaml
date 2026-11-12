@@ -1,0 +1,39 @@
+city: 083020
+name: 茨城町
+site: www.town.ibaraki.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: おかえりマーク（徘徊時の身元確認シール）の配布
+  name_on_page: おかえりマーク
+  summary: 徘徊のおそれのある方の登録番号入りシールを無料で配り、保護時に家族へ連絡できるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 茨城町在住で、認知症等で徘徊行動がある、またはそのおそれがある
+  - 本人と申請者が登録情報の警察等への提供に同意している
+  - 緊急連絡先を2名分登録する
+  where: 長寿福祉課
+  url: https://www.town.ibaraki.lg.jp/gyousei/kenkoukaigo/kaigo/chouminmuke/003078.html
+  confidence: high
+  amount: 無料
+not_found:
+- kaigo-yohin
+- haishoku
+- iro
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu
+- yutai

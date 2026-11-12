@@ -1,0 +1,59 @@
+city: '053031'
+name: 小坂町
+site: www.town.kosaka.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（食の自立支援）
+  name_on_page: 食の自立支援事業（配食サービス事業）
+  summary: 食事づくりが難しい高齢者に、週3回、栄養のとれた食事を届けて安否も確かめる。
+  who: {}
+  at_application:
+  - 食事づくりが難しい高齢者
+  where: 社会福祉協議会が実施（町の委託事業）
+  url: https://www.town.kosaka.akita.jp/material/files/group/10/kaigokeikaku9.pdf
+  confidence: low
+- category: gaishutsu
+  name: 移送用車両による通院等の送迎（外出支援）
+  name_on_page: 外出支援サービス事業
+  summary: 通院が難しい寝たきりの高齢者や障がい者を、移送用車両で自宅と医療機関等の間を送迎する。
+  who: {}
+  at_application:
+  - 一般の交通機関で通院するのが難しい寝たきりの高齢者・障がい者
+  where: タクト介護センターへ委託して実施
+  url: https://www.town.kosaka.akita.jp/material/files/group/10/kaigokeikaku9.pdf
+  confidence: low
+  amount: 利用は週1回または月4回まで
+- category: kinkyu-tsuho
+  name: 緊急通報装置（ふれあい安心電話）の設置
+  name_on_page: 緊急通報体制等整備事業（ふれあい安心電話）
+  summary: 一人暮らし高齢者等の家に「ふれあい安心電話」を置き、急病や災害のとき迅速に対応する。
+  who: {}
+  at_application:
+  - 一人暮らし高齢者等
+  where: 社会福祉協議会が実施（町の委託事業）
+  url: https://www.town.kosaka.akita.jp/material/files/group/10/kaigokeikaku9.pdf
+  confidence: low
+- category: sonota
+  name: 買い物・家の周りの手入れ・除排雪の支援（軽度生活支援）
+  name_on_page: 軽度生活支援事業
+  summary: 一人暮らし高齢者等に、買い物や家の周りの手入れ、除排雪などの軽い支援を行う。
+  who: {}
+  at_application:
+  - 一人暮らし高齢者等
+  where: 鹿角地域シルバー人材センター、花輪ふくし会（除雪のみ）が実施
+  url: https://www.town.kosaka.akita.jp/material/files/group/10/kaigokeikaku9.pdf
+  confidence: low
+  amount: 月12時間まで（雪おろしは月4時間）が目安
+not_found:
+- iro
+- haikai
+- hochoki
+- shingu
+- ribiyo
+- jutaku

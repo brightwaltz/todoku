@@ -1,0 +1,169 @@
+city: 074811
+name: 棚倉町
+site: www.town.tanagura.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（昼食）
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい人に、安否確認を兼ねて昼食を届ける
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯など
+  - 調理が困難な身体障害者も対象
+  where: 保健福祉センター 健康福祉課 高齢者係
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: 1食400円の自己負担。月〜土曜の希望日（祝日・お盆・年末年始を除く）
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ）の支給
+  name_on_page: 家族介護用品支給事業（紙おむつ支給）
+  summary: 要介護の人を介護する家族に、紙おむつの利用券を毎月出す
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - おおむね65歳以上の在宅高齢者を介護し、紙おむつが必要な家族
+  - 町県民税額12万円以内、または要介護4・5相当で非課税
+  - 毎月1日時点で入院・施設入所の人は対象外
+  where: 保健福祉センター 健康福祉課 高齢者係
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: 利用券で月2,000〜5,000円以内（要介護度・課税状況で違う）
+- category: shingu
+  name: 寝具類の洗濯乾燥消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 寝具の洗濯と乾燥消毒を年2回（7月・2月）行う
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯など
+  - 寝具の衛生管理が困難な身体障害者も対象
+  where: 保健福祉センター 健康福祉課 高齢者係
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: かかった経費の3割を自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: 急病や災害時に通報できる緊急装置を貸し出す
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者
+  - ひとり暮らしの身体障害者等も対象
+  - 駆けつけ協力者2名以上（1名は親族）の登録が必要
+  where: 保健福祉センター 健康福祉課 高齢者係
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: 町民税非課税世帯は無料、課税世帯は自己負担あり（額の記載なし）
+  more_urls:
+  - https://www.town.tanagura.fukushima.jp/data/doc/1756429124_doc_18_0.pdf
+- category: haikai
+  name: 見守りQRコードシール
+  name_on_page: 高齢者見守り標識（QRコードシール）利用事業
+  summary: 徘徊のおそれがある人の情報を登録し、QRコードシールを交付する
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊または徘徊するおそれのある高齢者
+  - 事前に本人の情報を登録する
+  where: 保健福祉センター 健康福祉課 高齢者係
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000675.html
+- category: gaishutsu
+  name: 車いす同乗軽自動車の貸出し
+  name_on_page: 車いす同乗軽自動車貸出サービス
+  summary: 寝たきりなどで移動が難しい人に、車いすのまま乗れる軽自動車を貸す
+  who: {}
+  at_application:
+  - 寝たきりまたは重度の障害で自分で移動することが困難
+  - 運転は原則として家族が行う
+  - 事前の申請が必要で、月2回まで使える
+  where: 保健福祉センター 健康福祉課 高齢者係
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: 無料
+  more_urls:
+  - https://www.town.tanagura.fukushima.jp/data/doc/1756429124_doc_18_0.pdf
+- category: gaishutsu
+  name: タクシー利用料金の助成
+  name_on_page: タクシー利用料金助成事業
+  summary: タクシー利用料金の一部を助成する券を交付する
+  who: {}
+  at_application:
+  - 町内に住所があり、町税等の滞納がない
+  - 65歳以上で運転免許がない（小型特殊のみも可）人
+  - または重度心身障がい者、または要介護4・5の人
+  where: 住民課 生活環境係
+  url: https://www.town.tanagura.fukushima.jp/data/doc/1756429124_doc_18_0.pdf
+  confidence: high
+  amount: 1枚300円の助成券を年120枚分（最大36,000円）
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり助成
+  name_on_page: 高齢者にやさしい住まいづくり助成事業（住宅改修事業）
+  summary: 手すり・段差解消などの住宅改修費を町が助成する
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の住宅改修の対象者（認定者）は除く
+  - 工事前の事前申請と許可が必要。1棟につき1回限り
+  where: 保健福祉センター 健康福祉課 高齢者係、地域包括支援センター
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: 工事費の90%、限度額18万円
+  more_urls:
+  - https://www.town.tanagura.fukushima.jp/data/doc/1756429124_doc_18_0.pdf
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 補聴器購入費補助金交付事業
+  summary: 補聴器の購入費用の一部を助成する
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所があり、聴覚障害の身体障害者手帳がない
+  - 耳鼻咽喉科専門医の意見書を出せる
+  - 町税等の滞納がない。1人1回限りで、購入前に申請する
+  where: 保健福祉センター 健康福祉課 高齢者係、地域包括支援センター
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page002965.html
+  confidence: high
+  amount: 購入費の2分の1、上限30,000円
+- category: sonota
+  name: 軽度生活援助
+  name_on_page: 軽度生活援助事業
+  summary: 買い物・除草・除雪などの軽い日常の手伝いに援助員が来る
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしか高齢者のみの世帯など
+  - 障害者のみの世帯も対象。日常生活の援助が必要な人
+  where: 保健福祉センター 健康福祉課 高齢者係
+  url: https://www.town.tanagura.fukushima.jp/jumin/kaigo-fukushi/page000417.html
+  confidence: high
+  amount: かかった経費の3割を自己負担
+not_found:
+- iro
+- koken
+- ribiyo
+- nichijo-yogu
+- yutai

@@ -1,0 +1,112 @@
+city: 063819
+name: 高畠町
+site: www.town.takahata.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ券の給付
+  name_on_page: 高畠町紙おむつ券給付事業
+  summary: 常時紙おむつが必要な要介護の方に、月額3,500円分の紙おむつ券を給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護保険の第1号被保険者（65歳以上）
+  - 寝たきりや認知症などで常時紙おむつを使っている
+  - 要介護1・2は認定調査票等で常時使用を確認できる人
+  - 特養・老健・介護医療院・地域密着型特養の入所者は対象外
+  - 毎年度の申請が必要（申請は4月15日から）
+  where: 役場1階 福祉課（高齢者支援係）
+  url: https://www.town.takahata.yamagata.jp/soshiki/6/1254.html
+  confidence: high
+  amount: 月額3,500円分の紙おむつ券（1割の350円は自己負担）
+  more_urls:
+  - https://www.town.takahata.yamagata.jp/uploaded/attachment/4045.pdf
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成
+  summary: 住民税非課税の65歳以上で医師が必要と認めた方の補聴器購入費を一部助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 障害者総合支援法の補聴器の補装具費の支給対象でない
+  - 耳鼻咽喉科医が補聴器の装用が必要と判断した
+  - 認定補聴器専門店などで購入する
+  - アンケートや定期受診など事業への協力に同意する
+  - 購入前に申請する。助成は1人1回
+  where: 福祉課（高齢者支援係）
+  url: https://www.town.takahata.yamagata.jp/soshiki/6/1228.html
+  confidence: high
+  amount: 本体価格の2分の1（上限は両耳4万円、片耳2万円）
+- category: kinkyu-tsuho
+  name: あんしん見守りネットワーク（通報機器の貸出）
+  name_on_page: 高畠町あんしん見守りネットワーク事業
+  summary: 通報機器を貸し出し、ボタンで24時間のあんしんセンターに通報・相談できる。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上で日常生活や健康に不安のある単身・高齢者世帯
+  - そのほか町長が必要と認める世帯も対象
+  where: 福祉課（高齢者支援係）。高畠病院隣のげんき館でも相談・申請できる
+  url: https://www.town.takahata.yamagata.jp/soshiki/6/1253.html
+  confidence: high
+  amount: 月額275円・設置料1,100円（町民税非課税世帯）、月額550円・設置料3,300円（町民税課税世帯）。所得税課税世帯は月額1,100円・設置料5,500円、生活保護世帯は無料
+- category: gaishutsu
+  name: 通院用の定額タクシー券（75歳以上で免許のない方）
+  name_on_page: 公立置賜総合病院・米沢市立病院通院支援事業
+  summary: 免許を持たない75歳以上の方に、2つの病院への通院用の定額タクシー券を交付する。
+  who:
+    age_min: 75
+  at_application:
+  - 町内に住所があり、対象の病院への通院が必要
+  - 運転免許証を持っていない
+  - 対象は公立置賜総合病院・米沢市立病院への自宅からの往復のみ
+  - 障がい者タクシー助成券とは併用できない
+  where: 役場庁舎1階 福祉課窓口
+  url: https://www.town.takahata.yamagata.jp/soshiki/6/1250.html
+  confidence: high
+  amount: 片道用のタクシー券を病院ごとに1人12枚（両方の病院で最大24枚）
+- category: sonota
+  name: 高齢者世帯などの除雪支援金
+  name_on_page: 単身高齢者等世帯除雪支援金交付事業
+  summary: 自力で除雪できない低収入の高齢者のみの世帯などに、除雪費用の支援金を交付する。
+  who: {}
+  at_application:
+  - 満65歳以上だけの世帯、または身体障がい者だけ等の世帯
+  - 前年の収入が1人世帯120万円以内、2人世帯180万円以内など
+  - 生活保護世帯、2親等内の親族の援助を受けられる世帯は対象外
+  - 同居・同じ敷地内の親族がいる世帯、冬期に全員が留守の世帯も対象外
+  - 12月1日以降に課税台帳閲覧承諾書などを提出
+  where: 福祉課
+  url: https://www.town.takahata.yamagata.jp/soshiki/6/1897.html
+  confidence: high
+  amount: 屋根の雪下ろしは上限33,000円、玄関前から道路までは上限12,000円、両方は上限40,000円
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

@@ -1,0 +1,96 @@
+city: 034827
+name: 山田町
+site: www.town.yamada.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 要介護高齢者等のおむつ給付
+  name_on_page: 要介護高齢者等おむつ給付事業
+  summary: 在宅の寝たきり・認知症の高齢者などに、紙おむつ等を現物で給付する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護1以上、または要支援2以下で常時おむつが必要と認められる
+  - 町民税が非課税、または均等割のみ課税の世帯に属する
+  - 生活保護を受けていない
+  - 施設入所・3か月以上の長期入院をしていない
+  where: 長寿福祉課 福祉チーム 高齢者福祉係
+  url: https://www.town.yamada.iwate.jp/docs/863.html
+  confidence: high
+  amount: 月3,000円分まで（紙おむつ等の現物。年3回、社会福祉協議会が自宅へ届ける）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報体制等整備事業
+  summary: ひとり暮らしの高齢者などに、ボタン操作で通報できる緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者
+  - または、病弱者等のいるおおむね65歳以上の高齢者のみの世帯
+  - または、ひとり暮らしの重度身体障がい者
+  - 協力員が2名以上必要
+  where: 長寿福祉課 福祉チーム 高齢者福祉係
+  url: https://www.town.yamada.iwate.jp/docs/866.html
+  confidence: high
+  amount: 利用料は実費（生活保護世帯・町民税非課税世帯は無料）
+- category: gaishutsu
+  name: 福祉タクシーの利用助成（通院）
+  name_on_page: 山田町福祉タクシー利用助成事業
+  summary: 寝たきりや車いすの方が通院にストレッチャー・車いす対応タクシーを使う運賃を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 日常的に寝たきりまたは車いすで、公共交通機関での単独移動が難しい
+  - 要介護1以上、身体障害者手帳2級以上、または指定難病等の受給者証がある
+  - 医療機関への定期通院・入退院・転院の利用が対象
+  where: 長寿福祉課 障がい福祉係
+  url: https://www.town.yamada.iwate.jp/docs/8791.html
+  confidence: high
+  amount: 介助料を除く運賃の半額。1回の上限はストレッチャー車2万円・車いす車1万円。月4回まで
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者補聴器購入費助成事業
+  summary: 耳の聞こえに不安のある高齢者に、補聴器購入費の一部を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳40dB以上70dB未満で、身体障害者手帳の対象にならない
+  - 治療等で聴力が改善する見込みがない
+  - 一度助成を受けると5年間は申請できない
+  where: 長寿福祉課 福祉チーム 高齢者福祉係
+  url: https://www.town.yamada.iwate.jp/docs/7088.html
+  confidence: high
+  amount: 購入費の9割、上限4万2千円
+- category: ribiyo
+  name: 訪問理美容の助成
+  name_on_page: 訪問理美容サービス助成事業
+  summary: 理美容店に行けない在宅の方が訪問理美容を受けた料金の一部を助成する。
+  who:
+    at_home: true
+  at_application:
+  - 町民税が非課税、または均等割のみ課税の世帯に属する
+  - 要介護4・5、または重度身体障害者（下肢・体幹障害のみ）
+  where: 長寿福祉課 福祉チーム 高齢者福祉係
+  url: https://www.town.yamada.iwate.jp/docs/869.html
+  confidence: high
+  amount: 1人1回1,200円、年度内2回まで
+- category: nichijo-yogu
+  name: 高齢者の日常生活用具の給付（電磁調理器・火災報知器など）
+  name_on_page: 高齢者日常生活用具給付事業
+  summary: ひとり暮らしの高齢者などに、電磁調理器・火災報知器・自動消火器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上で、防火等の配慮が必要なひとり暮らし高齢者等
+  - または、おおむね65歳以上の低所得の寝たきり・ひとり暮らし高齢者等
+  where: 長寿福祉課 福祉チーム 高齢者福祉係
+  url: https://www.town.yamada.iwate.jp/docs/870.html
+  confidence: high
+not_found:
+- haikai
+- shingu

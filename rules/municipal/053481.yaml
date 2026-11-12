@@ -1,0 +1,50 @@
+city: 053481
+name: 三種町
+site: www.town.mitane.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品（紙おむつ等）の現物支給
+  name_on_page: 家族介護用品支給事業
+  summary: 在宅で要介護3以上の人またはその家族に、紙おむつ・尿取りパッド・清拭剤等を現物で支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険料・町税等を滞納していない
+  - 要介護者の世帯員全員が町民税非課税
+  where: 福祉課、各支所の地域生活係
+  url: https://www.town.mitane.akita.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/1986.html
+  confidence: high
+  amount: 要介護3は月額5,000円、要介護4・5は月額6,250円（四半期ごとの支給）
+- category: hochoki
+  name: 補聴器の購入費の助成（軽度・中等度難聴）
+  name_on_page: 三種町軽度・中等度難聴者補聴器購入費助成事業
+  summary: 身体障害者手帳の対象にならない軽度・中等度の難聴の人に、補聴器の購入費の一部を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所がある18歳以上
+  - 両耳の聴力が30デシベル以上（または医師が相当と認める）
+  - 聴覚障害の身体障害者手帳の交付対象でない
+  - 町税の滞納がない。過去5年以内に同じ助成を受けていない
+  - 医師が補聴器の使用が必要と認める。購入前に申請する
+  where: 福祉課 地域福祉係
+  url: https://www.town.mitane.akita.jp/shinseisho_download/iryo_kenko_fukushinikansurushinseisho/4075.html
+  confidence: high
+  amount: 上限5万円
+not_found:
+- shingu
+- ribiyo
+- jutaku

@@ -1,0 +1,43 @@
+city: '035017'
+name: 軽米町
+site: www.town.karumai.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 福祉タクシー助成券
+  name_on_page: 軽米町福祉タクシー助成券
+  summary: 町内のタクシー会社で使える助成券（1枚800円まで割引）を年24枚まで交付する。
+  who: {}
+  at_application:
+  - 身体障害者手帳1・2級か療育手帳Aの方（自動車税等の減免を受けている方を除く）
+  - または、80歳以上のひとり暮らしの方（民生委員の証明が必要）
+  where: 健康福祉課窓口（役場1階）
+  url: https://www.town.karumai.iwate.jp/article/kenkofukushi/entry-basename-25.html
+  confidence: high
+  amount: 助成券1枚で800円まで割引。年24枚（申請月で枚数が変わる）
+- category: haishoku
+  name: よりそい弁当（高齢者見守り配食サービス）
+  name_on_page: よりそい弁当
+  summary: 調理が難しい高齢者に、夕食の弁当を月〜土曜に届けて安否も確認する。
+  who: {}
+  at_application:
+  - 食事の調理・買い物が困難な65歳以上のひとり暮らし
+  - または、同じく困難な65歳以上の高齢者世帯・障がい者のみの世帯
+  - または、基本チェックリストで栄養改善が必要と判定された方
+  where: 軽米町地域包括支援センター（軽米町社会福祉協議会のブランチも窓口）
+  url: https://www.town.karumai.iwate.jp/article/docs/shinseisyo/kenkoufukushi/27_%EF%BC%92%EF%BC%97%EF%BC%8E%EF%BC%92%EF%BC%8E%E3%82%88%E3%82%8A%E3%81%9D%E3%81%84%E5%BC%81%E5%BD%93.pdf
+  confidence: low
+  amount: 1食の自己負担：弁当300円、おかずのみ200円
+not_found:
+- kaigo-yohin
+- iro
+- kinkyu-tsuho
+- hochoki
+- koken
+- shingu
+- ribiyo

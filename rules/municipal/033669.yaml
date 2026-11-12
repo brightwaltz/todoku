@@ -1,0 +1,60 @@
+city: 033669
+name: 西和賀町
+site: www.town.nishiwaga.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス事業
+  name_on_page: 配食サービス事業
+  summary: 町の高齢者サービスとして配食を行う事業（条件・金額は頁に記載なし）。
+  who: {}
+  at_application: []
+  where: 健康福祉課（福祉・医療保険）
+  url: https://www.town.nishiwaga.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/1515.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報システム事業
+  name_on_page: 緊急通報システム事業
+  summary: 町の高齢者サービスとして緊急通報システムを設ける事業（条件は頁に記載なし）。
+  who: {}
+  at_application: []
+  where: 健康福祉課（福祉・医療保険）
+  url: https://www.town.nishiwaga.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/1515.html
+  confidence: low
+- category: jutaku
+  name: 高齢者及び障害者にやさしい住まいづくり事業
+  name_on_page: 高齢者及び障害者にやさしい住まいづくり事業
+  summary: 高齢者・障害者向けの住まいづくりの事業（条件・金額は頁に記載なし）。
+  who: {}
+  at_application: []
+  where: 健康福祉課（福祉・医療保険）
+  url: https://www.town.nishiwaga.lg.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/1515.html
+  confidence: low
+- category: sonota
+  name: 老人医療費給付制度
+  name_on_page: 老人医療費給付制度
+  summary: 70歳以上の人の、町内の医療機関での自己負担を一部給付する。
+  who:
+    age_min: 70
+  at_application:
+  - 町に住所がある方（他市町村の特養・養護老人ホーム入所者を含む）
+  - 生活保護や重度心身障害者医療費助成などを受けていない方
+  - 給付の対象は西和賀町内の指定医療機関・薬局のみ
+  where: 町（受給者証の交付申請。窓口は頁に記載なし）
+  url: https://www.town.nishiwaga.lg.jp/mokutekibetsudesagasu/korei_kaigo/2/2003.html
+  confidence: high
+  amount: 外来は自己負担から1,500円、入院は5,000円を引いた額（世帯非課税は全額）
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- ribiyo
+- shingu
+- gaishutsu
+- haikai
+- koken

@@ -1,0 +1,83 @@
+city: 033812
+name: 金ケ崎町
+site: www.town.kanegasaki.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haikai
+  name: 徘徊SOSネットワーク事業
+  name_on_page: 金ケ崎町徘徊SOSネットワーク事業
+  summary: 徘徊のおそれのある認知症高齢者を事前登録し、行方不明時の発見につなげる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町に居住し、認知症等の症状で徘徊の恐れのある高齢者
+  - 事前登録が必要（個人情報の取り扱いへの同意）
+  - 本人の写真（顔と全体、概ね3か月以内）が必要
+  where: 金ケ崎町地域包括支援センター（保健福祉センター窓口で申請書を受け取れる）
+  url: https://www.town.kanegasaki.iwate.jp/articles/2021031100017/
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置貸与事業
+  name_on_page: 緊急通報装置貸与事業
+  summary: ひとり暮らしの高齢者に緊急通報装置を貸与し、利用費用を助成する（計画の記載）。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 保健福祉センター（事業ごとの申請先は計画に記載なし）
+  url: https://www.town.kanegasaki.iwate.jp/articles/2021032900029/file_contents/zenbun_keikaku.pdf
+  confidence: low
+- category: gaishutsu
+  name: 福祉有償運送利用助成事業
+  name_on_page: 福祉有償運送利用助成事業
+  summary: 要介護3以上の人の福祉有償運送の利用料の半額を助成する（計画の記載）。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application: []
+  where: 保健福祉センター（事業ごとの申請先は計画に記載なし）
+  url: https://www.town.kanegasaki.iwate.jp/articles/2021032900029/file_contents/zenbun_keikaku.pdf
+  confidence: low
+  amount: 毎月の利用額の半額（上限 1,500 円）
+- category: gaishutsu
+  name: 福祉タクシー事業
+  name_on_page: 福祉タクシー事業
+  summary: 75歳以上のひとり暮らしなどに、タクシー券を交付して外出を支援する（計画の記載）。
+  who:
+    age_min: 75
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 住民税非課税の世帯
+  where: 保健福祉センター（事業ごとの申請先は計画に記載なし）
+  url: https://www.town.kanegasaki.iwate.jp/articles/2021032900029/file_contents/zenbun_keikaku.pdf
+  confidence: low
+  amount: タクシーの初乗り（基本）料金を助成する券（枚数は記載なし）
+- category: jutaku
+  name: 高齢者及び障がい者にやさしい住まいづくり事業
+  name_on_page: 高齢者及び障がい者にやさしい住まいづくり事業
+  summary: 介護認定を受けた高齢者等の段差解消などの住宅改修費を補助する（計画の記載）。
+  who: {}
+  at_application:
+  - 介護認定を受けている高齢者等
+  where: 保健福祉センター（事業ごとの申請先は計画に記載なし）
+  url: https://www.town.kanegasaki.iwate.jp/articles/2021032900029/file_contents/zenbun_keikaku.pdf
+  confidence: low
+  amount: 1件 40 万円を上限に補助
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- ribiyo
+- shingu
+- koken

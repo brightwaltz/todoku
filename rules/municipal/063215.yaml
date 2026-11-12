@@ -1,0 +1,150 @@
+city: '063215'
+name: 河北町
+site: www.town.kahoku.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ等購入券の支給
+  name_on_page: 紙おむつ等購入費支給
+  summary: 在宅で常時失禁状態等の要介護1〜5の方に、紙おむつ等の購入券を出す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅で常時失禁状態等にある要介護被保険者
+  - 申請は担当のケアマネジャーに相談する
+  where: 担当のケアマネジャーに相談（頁に窓口の記載なし）
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/kaigohoken/2208.html
+  confidence: high
+  amount: 月5,000円分まで（自己負担1割）
+- category: gaishutsu
+  name: 外出支援サービス（ストレッチャー車の送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 寝たきりと認定された在宅の方の、介護保険施設・医療機関への送迎費を助成する。
+  who:
+    at_home: true
+  at_application:
+  - おおむね65歳以上で、介護保険認定で「寝たきり」と認定された在宅の方
+  - 身体障害者福祉タクシー券の交付を受けていない
+  where: 健康福祉課 高齢者福祉係
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2220.html
+  confidence: high
+  amount: サービス券1枚につき2,560円を助成（年6枚、30分以上は2枚まで）
+- category: haikai
+  name: 無事かえる支援事業
+  name_on_page: 無事かえる支援事業
+  summary: 徘徊や迷子のおそれがある高齢者の情報を警察署に事前登録し、名前シールなどの見守りグッズを配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症等のため徘徊や迷子になるおそれのある高齢者とその家族
+  where: 健康福祉課 高齢者福祉係
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2220.html
+  confidence: high
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 判断能力が不十分な方の成年後見の利用に、後見人等の報酬などの助成がある。
+  who: {}
+  at_application:
+  - 認知症等で判断能力が不十分
+  - 町長申立て以外は、生活保護や準ずる補助を受けないと利用が困難な方の報酬助成
+  where: 健康福祉課 高齢者福祉係、または河北町地域包括支援センター
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2220.html
+  confidence: low
+- category: shingu
+  name: 寝具類等の洗濯乾燥消毒サービス
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 寝具の洗濯・乾燥・消毒の費用を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らし高齢者
+  - または常時介護が必要な寝たきりの在宅高齢者
+  where: 河北町社会福祉協議会
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2219.html
+  confidence: high
+  amount: 4,000円まで助成（年1回）
+- category: kinkyu-tsuho
+  name: 緊急通報体制等整備
+  name_on_page: 緊急通報体制等整備事業
+  summary: 緊急ボタンで警備保障会社に電話がつながる警報器を無料で貸す。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上、または身体障害者手帳1・2級
+  where: 河北町社会福祉協議会
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2219.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 自立生活支援事業（庭木の手入れ・除草・除雪など）
+  name_on_page: 自立生活支援事業
+  summary: 庭の手入れ、除草、除雪などの軽い日常生活の援助の費用を助成する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 除雪は65歳以上の方のみの世帯で、町内に住所があり在宅
+  where: 健康福祉課 高齢者福祉係
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2219.html
+  confidence: high
+  amount: 1時間712〜1,192円を助成（除雪は基本料金から1,035〜1,192円）
+- category: sonota
+  name: 雪下ろし支援事業
+  name_on_page: 雪下ろし支援事業
+  summary: 豪雪対策本部の設置時に、非課税世帯の高齢者のみの世帯などの雪下ろし費用を補助する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 70歳以上の高齢者のみの世帯、または身体障害者手帳1・2級の方のみの世帯など
+  - 町に豪雪対策本部が設置されたときに実施
+  where: 健康福祉課 高齢者福祉係
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2219.html
+  confidence: high
+  amount: 1世帯あたり18,000円まで（償還払い）
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 救急医療情報キット配付事業
+  summary: 医療情報や緊急連絡先を入れて自宅に保管するキットを配る。
+  who: {}
+  at_application:
+  - 70歳以上のひとり暮らし高齢者世帯（民生委員を通して配付）
+  - その他希望者（70歳以上の高齢者のみの世帯など）
+  where: 健康福祉課 高齢者福祉係
+  url: https://www.town.kahoku.yamagata.jp/iryou_kenkou_hukusi/koureisyahukusi_kaigo/koureisyanikansurukakusyuzigyou/2221.html
+  confidence: high
+- category: gaishutsu
+  name: タクシー利用助成
+  name_on_page: 公共交通としてのタクシー利用助成制度
+  summary: 町内の通院・買い物などの移動を、タクシーで1回500円で利用できる。
+  who: {}
+  at_application:
+  - 65歳以上、または身体・療育・精神の障害者手帳を持つ町民
+  - 事前にくらし応援課で利用登録が必要
+  where: くらし応援課 生活環境・GX推進係
+  url: https://www.town.kahoku.yamagata.jp/soshiki/machizukurisuishinka/seikatukankyo/kotsu_kankyo/3304.html
+  confidence: high
+  amount: 乗車1回500円の自己負担（差額は町が負担）、回数の制限なし
+not_found:
+- haishoku
+- hochoki
+- iro
+- jutaku
+- ribiyo
+- nichijo-yogu

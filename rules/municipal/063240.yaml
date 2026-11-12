@@ -1,0 +1,100 @@
+city: '063240'
+name: 大江町
+site: www.town.oe.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: ぬくもり介護手当
+  name_on_page: ぬくもり介護手当
+  summary: 寝たきりの高齢者などを在宅で6か月を超えて介護している方に、介護手当を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 「ねたきり老人等」（日常生活のすべてに介護が必要な高齢者・障がい者）を在宅で6か月を超えて介護している
+  - 申請の時期は広報おおえ等でお知らせ
+  where: 健康福祉課 福祉係
+  url: https://www.town.oe.yamagata.jp/life/welfare/zaitakufukushi/185
+  confidence: high
+  amount: 所得税非課税世帯は月7,000円、課税世帯は月2,000円
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給
+  summary: 要介護3〜5の在宅の高齢者に、紙おむつ購入の引換券を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 寝たきり状態、または常時失禁
+  - 施設入所中、3か月を超える入院中は対象外
+  where: 健康福祉課 福祉係
+  url: https://www.town.oe.yamagata.jp/life/welfare/zaitakufukushi/489
+  confidence: high
+  amount: 購入費の月上限5,000円の8割（最大月4,000円）、利用者負担2割
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無償貸与
+  name_on_page: 緊急通報装置の無償貸与
+  summary: 緊急通報装置一式を無償で貸し出し、押すと業者が安否確認と対応をする。
+  who:
+    tax:
+    - self_exempt
+  at_application:
+  - 町内に居住している
+  - 一人暮らしの高齢者、一人暮らしの身体障害者、またはこれに準ずる方
+  - 町の窓口への申請が必要
+  where: 健康福祉課 福祉係
+  url: https://www.town.oe.yamagata.jp/life/welfare/zaitakufukushi/492
+  confidence: high
+  amount: 機器の使用料は町負担（電気料金・緊急時の電話料金は本人負担）
+- category: gaishutsu
+  name: 高齢者の移送サービス（ストレッチャー付き介護タクシーの助成）
+  name_on_page: 高齢者等移送支援事業
+  summary: 在宅の要介護の方が介護タクシーで通院・施設へ移動する際の利用料を助成する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅で介護を受けている
+  - 大江町障害者等移動支援事業の利用決定を受けていない
+  - 事前に利用登録申請書を町長に提出する
+  where: 健康福祉課 福祉係
+  url: https://www.town.oe.yamagata.jp/life/welfare/zaitakufukushi/492
+  confidence: high
+  amount: 基準額の9割を助成（基準額は30分未満3,000円、30〜60分5,000円など）
+  more_urls:
+  - https://www.town.oe.yamagata.jp/files/original/20210624105904919d6ed93a0.pdf
+- category: sonota
+  name: 住宅の雪下ろし支援
+  name_on_page: 住宅の雪下ろし支援
+  summary: 自力で雪下ろしできない高齢者等の世帯に、雪下ろしと玄関除雪の費用の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者・障害者のみの世帯かこれに準ずる世帯で、自力で雪下ろしができない
+  - 町民税（所得割）の課税者がいない（75歳以上のみの世帯は課税の有無を問わない）
+  - 子や親戚から雪下ろし等の支援を受けられない
+  - 作業前の事前申請が必要
+  where: 健康福祉課 福祉係
+  url: https://www.town.oe.yamagata.jp/life/welfare/zaitakufukushi/490
+  confidence: high
+  amount: 雪下ろし1回30,000円まで（課税世帯は12,000円）、年3回まで。非課税世帯は1割負担
+not_found:
+- haishoku
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori

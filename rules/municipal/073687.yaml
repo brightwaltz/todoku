@@ -1,0 +1,98 @@
+city: 073687
+name: 南会津町
+site: www.town.minamiaizu.lg.jp
+site_level: lg.jp
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり（住宅改修費の助成）
+  name_on_page: 高齢者にやさしい住まいづくり事業
+  summary: 転倒予防の住宅改修費の9割を助成する（介護保険の対象外の人向け）。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+  at_application:
+  - 介護保険の要介護・要支援の認定を受けていない
+  - 世帯に税等の滞納がない
+  - 受付期間があるので事前に問い合わせ
+  where: 健康福祉課 介護保険係 0241-62-5050
+  url: https://www.town.minamiaizu.lg.jp/official/kenko_fukushi/kaigo/kaigohoken/1030.html
+  confidence: high
+  amount: 対象工事費の9割（対象工事費の上限15万円、支給上限13万5千円）
+  more_urls:
+  - https://www.town.minamiaizu.lg.jp/material/files/group/6/20181010135400.pdf
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム貸与
+  summary: 65歳以上のひとり暮らしの世帯に緊急通報システムを貸す。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application: []
+  where: 健康福祉課 介護保険係 0241-62-5050
+  url: https://www.town.minamiaizu.lg.jp/official/kenko_fukushi/kaigo/kaigohoken/1030.html
+  confidence: low
+- category: yutai
+  name: 元気でゆうゆう温泉等利用助成
+  name_on_page: 元気でゆうゆう温泉等利用助成事業
+  summary: 70歳以上の元気な高齢者に町内指定温泉の利用助成券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 介護保険の要介護・要支援の認定を受けていない
+  where: 健康福祉課または各総合支所町民課
+  url: https://www.town.minamiaizu.lg.jp/official/kenko_fukushi/shakaifukushi/koreishafukushi/1027.html
+  confidence: high
+  amount: 助成券1枚あたり限度額500円、年間5枚と送迎者用2枚（最大7枚）
+- category: sonota
+  name: はり・きゅう・マッサージ施術所の利用助成
+  name_on_page: はり、きゅう、マッサージ等施術所利用者助成事業
+  summary: 70歳以上の人に、はり・きゅう・マッサージ等の施術費の利用券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 医療保険の給付対象となる施術には使えない
+  where: 健康福祉課または各総合支所町民課
+  url: https://www.town.minamiaizu.lg.jp/official/kenko_fukushi/shakaifukushi/koreishafukushi/3230.html
+  confidence: high
+  amount: 利用券1枚あたり1,000円、申請月により年1〜12枚
+- category: sonota
+  name: 自立支援ホームヘルプ事業
+  name_on_page: 自立支援ホームヘルプ事業
+  summary: 援護が必要な高齢者にホームヘルパーを派遣し、日常生活を援助する。
+  who: {}
+  at_application:
+  - 援護を必要とする高齢者
+  - 介護認定を受けていない
+  - 原則として週1回1時間まで
+  where: 健康福祉課 介護保険係 0241-62-5050
+  url: https://www.town.minamiaizu.lg.jp/official/kenko_fukushi/kaigo/kaigohoken/1030.html
+  confidence: low
+- category: sonota
+  name: 生活支援ショートステイ事業
+  name_on_page: 生活支援ショートステイ事業
+  summary: 同居家族が冠婚葬祭等で一時不在のとき、虚弱な高齢者を施設で預かる。
+  who: {}
+  at_application:
+  - 在宅の虚弱高齢者で介護認定を受けていない
+  - 原則7日以内
+  where: 健康福祉課 介護保険係 0241-62-5050
+  url: https://www.town.minamiaizu.lg.jp/official/kenko_fukushi/kaigo/kaigohoken/1030.html
+  confidence: low
+not_found:
+- kaigo-yohin
+- haishoku
+- haikai
+- iro
+- hochoki
+- shingu
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

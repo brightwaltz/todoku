@@ -1,0 +1,147 @@
+city: 034835
+name: 岩泉町
+site: www.town.iwaizumi.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 高齢者等の介護用品の給付（給付券）
+  name_on_page: 岩泉町高齢者等介護用品給付事業
+  summary: 在宅で排泄に介助が必要な要介護者に、紙おむつ等と引き換える給付券を交付する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    - self_exempt
+    at_home: true
+  at_application:
+  - 町内に住所がある介護保険の被保険者
+  - 認定調査票の排尿・排便が全介助か一部介助（または介護者）
+  - 介護保険料の滞納がない
+  - 生活保護で同様の給付を受けていない
+  - 月15日を超える入院・ショートステイをしていない
+  where: 健康推進課 長寿支援室または各支所
+  url: https://www.town.iwaizumi.lg.jp/docs/2024112000022/
+  confidence: high
+  amount: 給付券（1枚1,000円）を交付。紙おむつ・尿取りパット・防水シーツなどと引き換え
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成
+  name_on_page: 高齢者の補聴器購入費の一部助成
+  summary: 中等度難聴の高齢者が補聴器を買うとき、費用の9割（上限あり）を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 両耳40dB以上70dB未満で、身体障害者手帳の対象にならない
+  - 助成は5年に1度
+  where: 健康推進課 長寿支援室または各支所
+  url: https://www.town.iwaizumi.lg.jp/docs/2025061600035/
+  confidence: high
+  amount: 購入費の9割、上限4万2千円
+- category: haikai
+  name: QRコード付き見守りシールの配付（SOSネットワーク）
+  name_on_page: ＱＲコード活用見守り事業
+  summary: 行方不明になるおそれのある高齢者に、QRコード付きの見守りシールを無料で配る。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 住民基本台帳に登録されている町民
+  - 介護認定を受けており徘徊する方、またはそのおそれのある方
+  - 事前に町への登録が必要
+  where: 地域包括支援センター（健康推進課）
+  url: https://www.town.iwaizumi.lg.jp/docs/2021072600033/
+  confidence: high
+  amount: シールの配付は無料
+- category: haikai
+  name: GPS端末の貸出と利用費の補助
+  name_on_page: 位置情報探索システム事業
+  summary: 行方不明のおそれのある高齢者の家族に、GPS端末を貸し出し利用費を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 住民基本台帳に登録されている町民
+  - 介護認定を受けており徘徊する方、またはそのおそれのある方
+  - 事前に町への登録が必要
+  where: 地域包括支援センター（健康推進課）
+  url: https://www.town.iwaizumi.lg.jp/docs/2021072600033/
+  confidence: high
+  amount: 自己負担は介護保険負担割合証の割合で月額300円〜900円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 重度の要介護状態の高齢者を在宅で介護している家族に、慰労金を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 重度の要介護状態の高齢者を在宅で介護している家族
+  where: 健康推進課 長寿支援室（各支所でも手続き）
+  url: https://www.town.iwaizumi.lg.jp/docs/2024040100030/file_contents/9keikaku.pdf
+  confidence: low
+- category: gaishutsu
+  name: 外出支援サービス（リフト車の送迎）
+  name_on_page: 外出支援サービス事業
+  summary: 自力で移動が難しい方を、リフト車で自宅と医療機関等の間で送迎する。
+  who: {}
+  at_application:
+  - 自力での移動が困難な人
+  where: 頁に申請先の記載なし
+  url: https://www.town.iwaizumi.lg.jp/docs/2024040100030/file_contents/9keikaku.pdf
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 緊急通報装置設置事業
+  summary: ひとり暮らし高齢者や高齢者のみの世帯に、緊急通報装置を設置する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application: []
+  where: 頁に申請先の記載なし
+  url: https://www.town.iwaizumi.lg.jp/docs/2024040100030/file_contents/9keikaku.pdf
+  confidence: low
+- category: mimamori
+  name: シルバーメイト（1日1回の安否確認）
+  name_on_page: シルバーメイト事業
+  summary: 老人クラブ等への委託で、見守りが必要なひとり暮らし高齢者等の安否を1日1回確認する。
+  who: {}
+  at_application:
+  - 見守りが必要なひとり暮らし高齢者等
+  where: 頁に申請先の記載なし
+  url: https://www.town.iwaizumi.lg.jp/docs/2024040100030/file_contents/9keikaku.pdf
+  confidence: low
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい高齢者に食事を届け、配達時に安否も確認する。
+  who: {}
+  at_application:
+  - 調理が困難な高齢者
+  where: 頁に申請先の記載なし
+  url: https://www.town.iwaizumi.lg.jp/docs/2024040100030/file_contents/9keikaku.pdf
+  confidence: low
+- category: jutaku
+  name: 高齢者・障がい者にやさしい住まいづくり（住宅改善の助成）
+  name_on_page: 高齢者及び障がい者にやさしい住まいづくり推進事業
+  summary: 段差の解消や手すりの設置などの住宅改善に必要な経費を助成する。
+  who: {}
+  at_application:
+  - 要介護等認定者や重度身体障がい者など
+  where: 頁に申請先の記載なし
+  url: https://www.town.iwaizumi.lg.jp/docs/2024040100030/file_contents/9keikaku.pdf
+  confidence: low
+not_found:
+- koken
+- shingu
+- ribiyo

@@ -1,0 +1,131 @@
+city: '063410'
+name: 大石田町
+site: www.town.oishida.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品引換券の支給
+  name_on_page: 介護用品支給事業
+  summary: 在宅で介護が必要な方に、紙おむつなどの介護用品の引換券を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 本人が町県民税非課税で、要介護4・5の認定を受けた方
+  - 本人が非課税で要支援2・要介護1〜3、排尿か排便に介助がある方など
+  - 重度身体障がい者（1・2級）、重度知的障がい者（療育手帳A）も対象
+  - 生活保護法など他の法令で同様の給付を受けていない
+  - 毎年申請が必要（支給期間は7月から翌年6月）
+  where: 保健福祉課8番窓口、または担当のケアマネジャーを通して
+  url: https://www.town.oishida.yamagata.jp/life/fukushikenkou/kaigo/kaigoyouhin.html
+  confidence: high
+  amount: 町民税所得割非課税世帯は月5,000円分、課税世帯は月2,000円分
+- category: kinkyu-tsuho
+  name: 緊急通報支援事業
+  name_on_page: 緊急通報支援事業
+  summary: 一人暮らし高齢者宅に緊急通報装置を付け、緊急時にガードマンが駆けつける。
+  who:
+    household:
+    - alone
+  at_application:
+  - おおむね65歳以上の一人暮らしの方で、慢性的な疾患を持つ方など
+  where: 保健福祉課 福祉介護グループ
+  url: https://www.town.oishida.yamagata.jp/life/fukushikenkou/koureisya/kinkyutuho.html
+  confidence: high
+  amount: 無料（通信の電話料金、設置の電気料金、故意の破損は利用者負担）
+- category: haishoku
+  name: 配食サービス（大石田町食の自立支援事業）
+  name_on_page: 配食サービス
+  summary: 一人暮らしの高齢者等に、月2回程度、自宅へお弁当を配達する。
+  who: {}
+  at_application:
+  - 一人暮らしで見守りが必要な高齢者等
+  where: 保健福祉課 福祉介護グループ
+  url: https://www.town.oishida.yamagata.jp/life/hojo/sienpamph.files/No.840-hienpanhu.pdf
+  confidence: low
+  amount: 1食750円のうち自己負担1食200円
+- category: gaishutsu
+  name: 高齢者タクシー事業
+  name_on_page: 高齢者タクシー事業
+  summary: 70歳以上で自家用車がない・運転できない方に、タクシー券を配る。
+  who:
+    age_min: 70
+  at_application:
+  - 70歳以上の高齢者世帯で、自家用車を所有していない、または運転できない
+  where: 保健福祉課 福祉介護グループ
+  url: https://www.town.oishida.yamagata.jp/life/hojo/sienpamph.files/No.840-hienpanhu.pdf
+  confidence: low
+  amount: タクシー券1枚500円を助成（交付上限48枚）
+- category: gaishutsu
+  name: 運転免許証自主返納支援（タクシー券）
+  name_on_page: 運転免許証自主返納支援事業
+  summary: 運転免許証を自主返納した65歳以上の方に、タクシー券を配る。
+  who:
+    age_min: 65
+  at_application:
+  - 運転免許証を自主返納した
+  where: 町民税務課 生活安全グループ
+  url: https://www.town.oishida.yamagata.jp/life/hojo/sienpamph.files/No.840-hienpanhu.pdf
+  confidence: low
+  amount: 2万円分（500円×40枚）
+- category: gaishutsu
+  name: リフト付タクシー事業
+  name_on_page: リフト付タクシー事業
+  summary: リフト付タクシーを使う場合の利用料の一部を助成する。
+  who: {}
+  at_application:
+  - 在宅で要介護4・5の認定を受けた方
+  - または身体障害者手帳1・2級の交付を受けた方
+  where: 保健福祉課 福祉介護グループ
+  url: https://www.town.oishida.yamagata.jp/life/hojo/sienpamph.files/No.840-hienpanhu.pdf
+  confidence: low
+  amount: タクシー券1枚5,000円を助成（交付上限12枚）
+- category: sonota
+  name: 一人暮らし高齢者等の除雪費助成
+  name_on_page: 一人暮らし高齢者等除雪費
+  summary: 自力で除雪できない一人暮らし高齢者等に、除雪にかかった費用の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 自力で除雪できない一人暮らし高齢者等
+  - 65歳以上の高齢者世帯等
+  where: 保健福祉課 福祉介護グループ
+  url: https://www.town.oishida.yamagata.jp/life/hojo/sienpamph.files/No.840-hienpanhu.pdf
+  confidence: low
+  amount: 非課税世帯3万円（豪雪対策本部設置時は4万5千円）、課税世帯1万円
+- category: sonota
+  name: 高齢者世帯等のエアコン購入費助成
+  name_on_page: 高齢者世帯等エアコン購入
+  summary: エアコンを付けていない高齢者世帯等に、購入費の一部を助成する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者世帯等で、エアコン未設置の世帯
+  where: 保健福祉課 福祉介護グループ
+  url: https://www.town.oishida.yamagata.jp/life/hojo/sienpamph.files/No.840-hienpanhu.pdf
+  confidence: low
+  amount: 上限5万円
+- category: sonota
+  name: 暖房費助成事業
+  name_on_page: 暖房費助成事業
+  summary: 生活困窮世帯等の暖房にかかる費用の一部を助成する。
+  who: {}
+  at_application:
+  - 生活困窮世帯等
+  - 65歳以上の高齢者世帯等
+  where: 保健福祉課 福祉介護グループ
+  url: https://www.town.oishida.yamagata.jp/life/hojo/sienpamph.files/No.840-hienpanhu.pdf
+  confidence: low
+  amount: 1万円
+not_found:
+- iro
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

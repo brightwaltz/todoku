@@ -1,0 +1,70 @@
+city: '075213'
+name: 三春町
+site: www.town.miharu.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 宅配給食サービス
+  name_on_page: 宅配給食サービス
+  summary: 自宅へ定期的に昼食を届ける（日曜を除く）
+  who: {}
+  at_application:
+  - 65歳以上の高齢者世帯、または障がい者の一人暮らしの人
+  - 申請書と印鑑が必要
+  where: 三春町社会福祉協議会
+  url: https://www.town.miharu.fukushima.jp/soshiki/6/koureisyahukusi2020.html
+  confidence: high
+  amount: 1食600円の自己負担
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム
+  summary: 自宅に電話タイプの緊急通報装置を設け、ボタン1つで社会福祉協議会に連絡できる
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者
+  - または障がい者のみの世帯
+  - 申請書と印鑑が必要
+  where: 三春町社会福祉協議会
+  url: https://www.town.miharu.fukushima.jp/soshiki/6/koureisyahukusi2020.html
+  confidence: high
+  amount: 所得に応じて費用負担がある場合あり。通話料等は自己負担
+- category: haikai
+  name: 認知症高齢者見守りネットワーク
+  name_on_page: 認知症高齢者見守りネットワーク
+  summary: 徘徊で行方不明になったとき、地域の協力団体の支援で早く見つける体制
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内に住所があり、徘徊の恐れのある認知症の人
+  - 事前の登録が必要
+  where: 地域包括支援センター、保健福祉課
+  url: https://www.town.miharu.fukushima.jp/soshiki/6/koureisyahukusi2020.html
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 認知症高齢者等の個人賠償責任保険
+  name_on_page: 認知症高齢者等個人賠償責任保険事業
+  summary: 他人の物を壊すなどの損害賠償に備える保険に、町が加入する
+  who: {}
+  at_application:
+  - 認知症高齢者見守りネットワークに登録している人
+  where: 地域包括支援センター、保健福祉課
+  url: https://www.town.miharu.fukushima.jp/soshiki/6/koureisyahukusi2020.html
+  confidence: high
+  amount: 無料（保険料は町が負担）
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- yutai

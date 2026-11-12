@@ -1,0 +1,153 @@
+city: 045811
+name: 女川町
+site: www.town.onagawa.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの無料貸与
+  name_on_page: 緊急通報システム
+  summary: ひとりぐらしの高齢者の自宅に緊急通報機器を無料で貸し、急病や事故のとき協力員が駆けつける。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 町内に住んでいる
+  - 申請時に緊急通報協力員を2人以上登録する
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 機器は無料の貸与。電話料金が月300円ほど増える
+- category: jutaku
+  name: 住宅改造費の助成
+  name_on_page: 住宅改造資金助成
+  summary: 身体の障害で生活に支障がある高齢者の、廊下・階段・浴室などの改造工事費の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住んでいる
+  - 身体の障害で日常生活に支障があり、改造工事が必要
+  - 工事の着工前に申請する
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 工事費の9割、上限30万円
+- category: gaishutsu
+  name: タクシー利用料金の助成（外出支援）
+  name_on_page: 外出支援サービス利用助成
+  summary: 要支援・要介護の人に、小型タクシーまたは寝台車等の利用券を毎月渡し、料金の一部を助成する。
+  who:
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 入院中・施設入所中は対象外
+  - 申請に介護保険被保険者証が必要
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 小型タクシーは基本料金相当の利用券を月2枚（要支援1・2、要介護1）または月4枚（要介護2〜5）。寝台車等は30分の料金の9割と回送料、月2枚
+- category: kaigo-yohin
+  name: 紙おむつ等の助成券
+  name_on_page: 紙おむつ等助成券支給
+  summary: 要介護の人に、紙おむつ・尿取りパッド・清拭剤・使い捨て手袋を買う助成券を毎月渡す。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 施設入所中は対象外
+  - 申請に介護保険被保険者証が必要
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 月1枚。要介護1・2は3,000円、要介護3は4,000円、要介護4・5は5,000円の助成券
+- category: haishoku
+  name: 配食サービス費の助成
+  name_on_page: 配食サービス費助成
+  summary: 町の指定事業者の配食の費用の一部を、1食あたり200円を上限に助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 高齢者で、加齢や病気で調理・栄養管理が自分では難しい
+  - 指定の配食事業者と先に契約する
+  - 入院中・施設入所中は対象外
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 1食あたり200円まで助成（利用者の負担は最低400円）。1日1食まで
+- category: sonota
+  name: ホームヘルパーの派遣（老人福祉の事業）
+  name_on_page: 老人ホームヘルパー派遣
+  summary: 介護保険の訪問介護を使えない高齢者のいる世帯に、ホームヘルパーを派遣して家事や介護を手伝う。
+  who:
+    at_home: true
+  at_application:
+  - 次のどちらかの高齢者がいて、養護者がいない・介護が難しい世帯
+  - (1) 障害で生活に支障があり、やむを得ず訪問介護を使えない人
+  - (2) 要介護認定の結果、要介護・要支援に当たらなかった人
+  - 入院中・施設入所中は対象外
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 訪問介護の利用者負担金相当額（家事援助中心型30分以上1時間未満の単位）を負担
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給
+  summary: 介護保険のサービスを使わず在宅の要介護高齢者を介護している同居の家族に、慰労金を支給する。
+  who:
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 申請月の前3か月に介護保険のサービスを受けていない
+  - （14日以内のショートステイの利用は除く）
+  - 町に住所があり、同居して常時介護している家族が申請
+  - 一覧の頁には、要介護3〜5の人を介護する家族とある
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 25,000円
+  more_urls:
+  - https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_06.html
+- category: haikai
+  name: 認知症高齢者等のSOSネットワーク登録
+  name_on_page: 認知症高齢者等 SOS ネットワーク登録
+  summary: 徘徊のおそれがある認知症の人の情報を事前に登録し、行方不明のとき町から警察署へ伝える。
+  who:
+    flags:
+    - dementia_diagnosis
+    - wandering_risk
+  at_application:
+  - 町に住所がある
+  - 登録証のため写真を撮る
+  where: 役場（健康福祉課 長寿介護係）
+  url: https://www.town.onagawa.miyagi.jp/05_14hukushi/05_14_pdf/hukushi_service_guidebook.pdf
+  confidence: high
+  amount: 無料
+not_found:
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

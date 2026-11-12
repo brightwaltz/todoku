@@ -1,0 +1,156 @@
+city: '063631'
+name: 舟形町
+site: www.town.funagata.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 衛生用品（オムツ）の支給
+  name_on_page: 衛生用品支給事業（オムツ）
+  summary: 在宅で介護が必要な寝たきりの高齢者の、おむつ等の衛生用品を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 常時失禁状態で、寝たきり度B2以上・認知症自立度Ⅲa以上・要介護4以上のいずれか
+  - 生活保護世帯、施設入所中、3か月以上の入院中の方は対象外
+  where: 健康福祉課 福祉係
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 月額7,000円以内
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金支給事業
+  summary: 65歳以上の高齢者を在宅で介護している方に、年間50,000円を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 要介護者が身体障害者1級（肢体不自由）、要介護4・5、または認知症Ⅲ以上かつ要介護3以上
+  - 介護者は要介護者と同居し6か月以上介護している
+  - 介護者が生活保護世帯に属さず、町税等の滞納がない
+  - 入院・入所中は対象外
+  where: 健康福祉課 介護保険係
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 年間50,000円
+- category: gaishutsu
+  name: 寝たきり老人等の移送サービス助成
+  name_on_page: 寝たきり老人等移送サービス事業
+  summary: 65歳以上の方の通院や福祉サービス機関への、リフト付車等での移動の経費を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 主治医意見書で自立度B2以上、または身体障がい者等級2級以上
+  - リフト付車等でなければ移動できない
+  - 他の移送サービスや福祉タクシーを使っていない、自動車税等の減免を受けていない
+  - 通院または福祉サービス機関と居宅の往来のみ
+  where: 健康福祉課 福祉係
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+- category: haishoku
+  name: ふれあい宅配弁当
+  name_on_page: ふれあい宅配弁当事業
+  summary: 65歳以上の一人暮らしなどの高齢者世帯に、週1回お弁当を届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 栄養管理や調理等が困難な世帯
+  - 継続して利用できる
+  where: 舟形町社会福祉協議会
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 1食300円の自己負担、週1回
+- category: sonota
+  name: 高齢者等除雪サービス（屋根の雪下ろし・玄関前の雪払い）
+  name_on_page: 高齢者等除雪サービス事業
+  summary: 条件に合う高齢者世帯の、屋根の雪下ろしや玄関前の雪払いの費用を助成する。
+  who: {}
+  at_application:
+  - 高齢者がいる世帯で、所得税非課税世帯
+  - 近隣に親族がいない（親族による除雪は対象外）
+  - 民生委員に相談して申請する
+  where: 舟形町社会福祉協議会、または地区民生委員
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 重機が必要と町が認めた場合は費用のうち63,000円まで（7万円以下は依頼者が1割負担）。年4回まで（豪雪対策本部の設置時は6回まで）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム
+  summary: 急病や火災のときに消防本部へ通報できる電話とペンダントを貸与する。
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 身体上慢性的な疾患等で、システムの利用が適当と認められた方
+  where: 健康福祉課 福祉係
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 利用料は無料
+- category: gaishutsu
+  name: 高齢者タクシー券の交付
+  name_on_page: 高齢者タクシー券交付事業
+  summary: 満80歳以上の方に、タクシー利用券（500円）を年間40枚交付する。
+  who:
+    age_min: 80
+  at_application:
+  - 移送サービスや福祉タクシー事業を利用していない
+  - 自動車税等の免税を受けていない
+  - 80歳到達後に社会福祉協議会へ申請が必要
+  where: 舟形町社会福祉協議会
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 500円券を年間40枚
+- category: sonota
+  name: 老人鍼灸マッサージサービス
+  name_on_page: 老人鍼灸マッサージサービス事業
+  summary: 満65歳以上の方に、鍼灸マッサージ施術院で使える助成券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 新庄最上鍼灸マッサージ師会加入の施術院等で使える
+  - 65歳到達後に社会福祉協議会へ申請が必要
+  where: 舟形町社会福祉協議会
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 1,000円の助成券を年間4枚
+- category: mimamori
+  name: ふれあいヤクルト事業
+  name_on_page: ふれあいヤクルト事業
+  summary: 一人暮らし高齢者の健康増進と見守りのために、ヤクルトを週2回無料で届ける。
+  who:
+    age_min: 75
+  at_application:
+  - 町内在住の75歳以上
+  - 内容欄は一人暮らし高齢者向けと記載
+  where: 舟形町社会福祉協議会
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: high
+  amount: 無料、週2回
+- category: koken
+  name: 成年後見制度利用支援事業
+  name_on_page: 成年後見制度利用支援事業
+  summary: 必要に応じて申立の支援をし、資産状況等に応じて申立費用や後見人等の報酬を助成する。
+  who: {}
+  at_application:
+  - 資産状況等に応じて助成される
+  where: 舟形町地域包括支援センター
+  url: https://www.town.funagata.yamagata.jp/s015/kenko/010/010/R8.hokennfukushisa-bisu.pdf
+  confidence: low
+not_found:
+- haikai
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

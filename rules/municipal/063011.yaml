@@ -1,0 +1,109 @@
+city: '063011'
+name: 山辺町
+site: www.town.yamanobe.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: ねたきり高齢者等の介護者へのおむつ支給
+  name_on_page: ねたきり老人等介護者へのおむつの支給
+  summary: 要介護3以上の高齢者を自宅で介護する人に、おむつを支給する。
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - ねたきりや重度の認知症の高齢者を居宅で介護している
+  - 所得要件あり（所得により負担金が1割か2割）
+  where: 保健福祉課 福祉係
+  url: https://www.town.yamanobe.yamagata.jp/uploaded/attachment/8064.pdf
+  confidence: high
+  amount: 月5,000円分まで。世帯全員非課税は1割、町民税額の合計15万円以下は2割を負担
+  more_urls:
+  - https://www.town.yamanobe.yamagata.jp/soshiki/8/kourisyafukusi.html
+- category: sonota
+  name: 在宅介護者への温泉入浴券の支給
+  name_on_page: 在宅介護者への温泉入浴券の支給
+  summary: 要介護2以上の高齢者を自宅で介護する人に、山辺温泉保養センターの入浴優待券を渡す。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 対象の高齢者を居宅で介護している人が申し込む
+  where: 保健福祉課 福祉係
+  url: https://www.town.yamanobe.yamagata.jp/uploaded/attachment/8064.pdf
+  confidence: high
+- category: mimamori
+  name: ひとり暮らし等高齢者の見守り（乳酸飲料サービス）
+  name_on_page: ひとり暮らし等高齢者見守り支援事業（乳酸飲料サービス）
+  summary: 一人暮らしの高齢者等に乳酸飲料を手渡しし、安否確認と見守りをする。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者等
+  where: 保健福祉課 福祉係
+  url: https://www.town.yamanobe.yamagata.jp/uploaded/attachment/8064.pdf
+  confidence: high
+  amount: 無料。地区により週3回または週1回
+  more_urls:
+  - https://www.town.yamanobe.yamagata.jp/soshiki/8/kourisyafukusi.html
+- category: haikai
+  name: 「無事におかえり」事前登録とGPS機器購入費補助
+  name_on_page: 「無事におかえり」事前登録事業
+  summary: 徘徊のおそれがある人を登録して警察と情報を共有し、GPS機器の購入費を補助する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症などで徘徊のおそれがある方
+  where: 保健福祉課 福祉係
+  url: https://www.town.yamanobe.yamagata.jp/uploaded/attachment/8064.pdf
+  confidence: high
+  amount: GPS機器購入費を8,000円まで補助
+  more_urls:
+  - https://www.town.yamanobe.yamagata.jp/soshiki/8/kourisyafukusi.html
+- category: gaishutsu
+  name: 移送サービス利用券の交付
+  name_on_page: 移送サービス利用者への助成
+  summary: ねたきりの高齢者などが、リフト付き特殊車両で通院・入退院する際の利用券を交付する。
+  who: {}
+  at_application:
+  - ねたきりの高齢者など、病院・施設への移動にリフト付き車両が必要
+  - 福祉タクシー券・福祉給油券・福祉リフト付タクシー券の交付を受けていない
+  where: 保健福祉課 福祉係
+  url: https://www.town.yamanobe.yamagata.jp/uploaded/attachment/8064.pdf
+  confidence: high
+  amount: 1枚1,000円の助成、年間最大20枚（申請時期で決まる）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置の設置
+  summary: 一人暮らしの高齢者等に緊急通報装置を貸し出す。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者等
+  where: 保健福祉課 福祉係
+  url: https://www.town.yamanobe.yamagata.jp/uploaded/attachment/8064.pdf
+  confidence: high
+  amount: 月500円の利用者負担（生活保護の方・被災で困窮の方は免除）
+  more_urls:
+  - https://www.town.yamanobe.yamagata.jp/soshiki/8/kourisyafukusi.html
+not_found:
+- haishoku
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

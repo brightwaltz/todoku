@@ -1,0 +1,86 @@
+city: '053660'
+name: 井川町
+site: www.town.ikawa.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品の購入費の補助
+  name_on_page: 介護用品購入費補助金
+  summary: 在宅で要介護4・5の家族を介護している人に、紙おむつ等の介護用品の購入費の9割を補助する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 在宅で要介護4・5の家族を介護している人が対象（長期の入院・短期入所は除く）
+  - 医療用品は対象外
+  - 申請に領収書の原本（レシート可）が必要
+  where: 地域包括支援センター
+  url: https://www.town.ikawa.akita.jp/page/1379.html
+  confidence: high
+  amount: 購入金額の9割。要介護者1人につき年間75,000円まで
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 要介護4・5の在宅の高齢者を、介護保険サービスを使わず介護している家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 過去1年間、介護保険のサービスを受けていない
+  - 課税状況により条件がある
+  where: 井川町地域包括支援センター（在宅福祉サービスの問い合わせ先）
+  url: https://www.town.ikawa.akita.jp/page/1351.html
+  confidence: high
+  amount: 年額5万円
+- category: haishoku
+  name: 食の自立支援（配食）
+  name_on_page: 食の自立支援
+  summary: 一人暮らし高齢者世帯や高齢者のみの世帯、障がい者等に、食事の配達などの支援を行う。
+  who: {}
+  at_application:
+  - 一人暮らし高齢者世帯、高齢者のみの世帯、または障がい者等
+  where: 井川町地域包括支援センター（在宅福祉サービスの問い合わせ先）
+  url: https://www.town.ikawa.akita.jp/page/1351.html
+  confidence: high
+  amount: 1食420円
+- category: sonota
+  name: 生活管理指導員の派遣
+  name_on_page: 生活管理指導員の派遣
+  summary: 一人暮らしの高齢者等の日常生活や家事の支援・指導を行う指導員を派遣する。
+  who: {}
+  at_application:
+  - 1人暮らしの高齢者、または要介護認定で非該当となった人
+  where: 井川町地域包括支援センター（在宅福祉サービスの問い合わせ先）
+  url: https://www.town.ikawa.akita.jp/page/1351.html
+  confidence: high
+  amount: 無料
+- category: yutai
+  name: 老人福祉センターの入浴料の無料券
+  name_on_page: 入浴料の軽減措置
+  summary: 町内在住の65歳以上などに、老人福祉センター（ゆうゆう）の入浴の無料券を毎月発行する。
+  who: {}
+  at_application:
+  - 町内に住んでいる
+  - 65歳以上は月8回、60〜64歳または障害の手帳のある60歳未満は月5回
+  - 生活保護を受けている人は毎回無料
+  where: 老人福祉センター（ゆうゆう）
+  url: https://www.town.ikawa.akita.jp/page/1351.html
+  confidence: high
+  amount: 65歳以上は月8回の無料券（60〜64歳等は月5回）
+not_found:
+- haikai
+- kinkyu-tsuho
+- hochoki
+- shingu
+- ribiyo
+- jutaku
+- gaishutsu

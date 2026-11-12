@@ -1,0 +1,104 @@
+city: '075051'
+name: 古殿町
+site: www.town.furudono.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護支援（おむつ券の給付）
+  name_on_page: 家族介護支援事業
+  summary: 要介護3以上でおむつを使う在宅の人の家族に、介護用品給付券を出す
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 月の半分以上の入院やショートステイがあった月は使えない
+  where: 健康福祉課
+  url: https://www.town.furudono.fukushima.jp/kurashi/kenkou-fukushi/kaigohoken/kaigohokenhojo
+  confidence: high
+  amount: 月3,000円分の給付券（指定の介護用品店などで使う）
+- category: jutaku
+  name: 高齢者住宅改修の助成
+  name_on_page: 高齢者住宅改修
+  summary: 手すり取付けや段差解消などの住宅改修費の一部を助成する
+  who:
+    age_min: 60
+  at_application:
+  - 要介護状態の人は対象外（認定を受けている人は介護担当へ相談）
+  - 所得制限あり。工事着工前に事前申請が必要
+  where: 健康福祉課
+  url: https://www.town.furudono.fukushima.jp/kurashi/kenkou-fukushi/kaigohoken/kaigohokenhojo
+  confidence: high
+  amount: 事業費の90%、上限18万円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム貸与
+  summary: 緊急ボタンで支援センターにつながる装置を貸し出す。週1回の安否確認もある
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らしの高齢者
+  - ひとり暮らしの重度身体障害者も対象
+  - 65歳以上の病弱な高齢者のみの世帯等も対象
+  where: 担当地区の民生委員、健康福祉課
+  url: https://www.town.furudono.fukushima.jp/kurashi/kenkou-fukushi/kaigohoken/kaigohokenhojo
+  confidence: high
+  amount: 無料
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒
+  name_on_page: 寝具洗濯乾燥消毒
+  summary: 寝具の洗濯・消毒乾燥のサービスを年2回行う
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし高齢者、または高齢者のみの世帯に属する要援護高齢者
+  where: 健康福祉課
+  url: https://www.town.furudono.fukushima.jp/kurashi/kenkou-fukushi/kaigohoken/kaigohokenhojo
+  confidence: high
+  amount: 無料。年2回、1回1人3枚まで
+- category: nichijo-yogu
+  name: 日常生活用具の給付・貸与
+  name_on_page: 日常生活用具給付
+  summary: 電磁調理器・火災報知機・自動消火器を給付し、老人用電話を貸与する
+  who:
+    age_min: 65
+    household:
+    - alone
+  at_application:
+  - 低所得、寝たきり、防火等の配慮が必要のいずれかに当たる人
+  where: 健康福祉課
+  url: https://www.town.furudono.fukushima.jp/kurashi/kenkou-fukushi/kaigohoken/kaigohokenhojo
+  confidence: high
+  amount: 所得税課税額に応じて利用者負担額が決まる
+- category: sonota
+  name: 高齢者の宿泊費助成
+  name_on_page: 健康管理（宿泊費助成）事業
+  summary: 町指定施設への宿泊費の一部を助成する
+  who: {}
+  at_application:
+  - 65歳以上（老人クラブ会員は60歳以上）の高齢者
+  - または60歳未満の障害者手帳等の所持者
+  - 1人年3泊まで。指定施設へ3名以上で宿泊したとき使える
+  where: 健康福祉課
+  url: https://www.town.furudono.fukushima.jp/kurashi/kenkou-fukushi/kaigohoken/kaigohokenhojo
+  confidence: high
+  amount: 1泊1,500円
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- ribiyo
+- gaishutsu
+- mimamori

@@ -1,0 +1,160 @@
+city: 063827
+name: 川西町
+site: www.town.kawanishi.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつ購入費の給付
+  name_on_page: 紙おむつ購入費給付事業
+  summary: 在宅の65歳以上で要介護2以上の方の紙おむつ購入費を、月3,500円分を上限に給付する。
+  who:
+    age_min: 65
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 要介護2は、常時失禁と認知症自立度Ⅲ以上の両方が必要
+  - 要介護3以上は、常時失禁状態または認知症自立度Ⅲ以上
+  - 在宅の方（一部の病院・診療所の入院中も含む）
+  - 生活保護を受けていない
+  - 介護保険被保険者証を持って申請（町外の家族も可）
+  where: 役場 福祉介護課 介護係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/kaigo/serviceguide8.pdf
+  confidence: high
+  amount: 購入額3,500円以下は9割を給付（1割は自己負担）。3,500円超は3,150円を給付
+- category: haishoku
+  name: 配食サービス
+  name_on_page: 配食サービス事業
+  summary: 自分で食事の支度が難しい高齢のひとり暮らし等へ、安否確認を兼ねて平日の昼食を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上で、自分で食事の支度をすることが困難
+  - 平日の昼食を、安否確認を兼ねて宅配する
+  where: 役場 福祉介護課 介護係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/kaigo/serviceguide8.pdf
+  confidence: high
+  amount: 1食350円
+- category: haikai
+  name: 徘徊高齢者の事前登録（かえっぺ）
+  name_on_page: 徘徊高齢者等事前登録事業「かえっぺ」
+  summary: 徘徊のおそれのある方の情報を事前登録し、QRコードシール（かえっぺシール）も渡す。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 徘徊などで行方不明になるおそれのある高齢者（認知症の方など）
+  - 登録申請書の写しを米沢警察署が保管する
+  - 希望者にQRコードのかえっぺシールを渡す
+  where: 役場 福祉介護課 包括支援係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/kaigo/serviceguide8.pdf
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報システムの設置
+  name_on_page: 緊急通報システム設置事業
+  summary: ボタンを押すと警備員に連絡できる機器を設置し、月1回電話で安否も確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上のひとり暮らし世帯
+  - または、おおむね65歳以上のみで1人が寝たきり・病弱（常に医師の治療が必要）な世帯
+  - 申請書に緊急連絡先と担当民生委員の意見が必要
+  where: 福祉介護課 福祉グループ（福祉係）
+  url: https://www.town.kawanishi.yamagata.jp/kenko/fukushi/kinkyu.pdf
+  confidence: high
+  amount: 月額550円（住民税非課税世帯）、月額900円（課税世帯）、生活保護世帯は無料
+  more_urls:
+  - https://www.town.kawanishi.yamagata.jp/kenko/kaigo/serviceguide8.pdf
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス
+  summary: 理容所・美容院に行けない方の自宅へ理美容師が出張する際の出張費を一部助成する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護3以上、または身体障がい者手帳（下肢・脳原性運動機能・体幹の1・2級）
+  - 施設入所中・入院中の方は対象外
+  - 利用前に申請（介護保険証または手帳と印鑑を持参）
+  - 町と契約した町内の事業所のみ利用できる
+  where: 役場 福祉介護課 福祉係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/fukushi/houmonribiyou.pdf
+  confidence: high
+  amount: 助成券3枚（1回1枚、1,500円分まで）。出張費の一部のみで、料金は自己負担
+  more_urls:
+  - https://www.town.kawanishi.yamagata.jp/kenko/fukushi/koreisyafukushi.html
+- category: koken
+  name: 成年後見制度利用支援
+  name_on_page: 成年後見制度利用支援事業
+  summary: 親族が申立てできない方の成年後見の町長申立てと、その費用・後見人報酬を助成する。
+  who: {}
+  at_application:
+  - 成年後見人等の申立てが必要
+  - 申立てできる4親等以内の親族がいない
+  where: 役場 福祉介護課 包括支援係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/kaigo/serviceguide8.pdf
+  confidence: high
+- category: sonota
+  name: 高齢者等の雪下ろし費の助成
+  name_on_page: 令和8年度高齢者等雪下ろし等助成事業
+  summary: 自力で除雪できない非課税世帯の雪下ろし等の費用を、登録事業者の作業分から一部助成する。
+  who:
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 65歳以上だけの世帯、または身体・療育・精神の手帳を持つ人だけの世帯
+  - 自力で除雪できず、2親等以内の親族の援助も受けられない
+  - 生活保護を受けていない。アパート・集合住宅の居住者は対象外
+  - 事前に請け負う事業者の承諾を得て町へ申請（令和8年は11月30日まで）
+  - 助成は登録事業者の作業のみ。空き家・他の敷地は対象外
+  where: 役場 福祉介護課 福祉係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/fukushi/2023-1002-1031-64.html
+  confidence: high
+  amount: 1世帯32,000円まで（玉庭・東沢地区のみ48,000円まで）
+- category: sonota
+  name: 救急医療情報キットの配備
+  name_on_page: 救急医療情報キット配備事業
+  summary: 医療情報を記した用紙を入れたキットを、自宅に配備する（無料）。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし、または高齢者のみの世帯
+  - または、一人暮らしの障がい者・障がい者のみの世帯
+  where: 役場 福祉介護課 福祉係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/kaigo/serviceguide8.pdf
+  confidence: high
+  amount: 無料
+- category: sonota
+  name: 生活援助員の派遣（家事援助）
+  name_on_page: 生活援助員派遣事業
+  summary: 要介護認定のない高齢のひとり暮らし等へヘルパーを派遣し、掃除や買い物を手伝う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 要介護（支援）認定を受けていない、おおむね65歳以上
+  - 日常生活に支障がある
+  - 週2回まで利用できる
+  where: 役場 福祉介護課 介護係
+  url: https://www.town.kawanishi.yamagata.jp/kenko/kaigo/serviceguide8.pdf
+  confidence: high
+  amount: 1時間以内580円（生活保護世帯は無料）
+not_found:
+- hochoki
+- jutaku
+- shingu
+- iro
+- mimamori
+- nichijo-yogu
+- gaishutsu

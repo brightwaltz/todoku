@@ -1,0 +1,44 @@
+city: 053619
+name: 五城目町
+site: www.town.gojome.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: sonota
+  name: はり・きゅう・マッサージの施術費の助成
+  name_on_page: 「はり・きゅう・マッサージ」の施術費を助成しております！
+  summary: 65歳以上の町民が町の指定施術所で受ける、はり・きゅう・マッサージの費用の一部を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 町に住民登録がある
+  - 町が指定した施術所でだけ使える（受療券を提出）
+  - 健康保険との併用はできない
+  - 年度（4〜3月）に5回まで。繰り越しはできない
+  where: 地域福祉課の窓口
+  url: https://www.town.gojome.akita.jp/kenkouiryoufukusi/koureisyahukusi/2962
+  confidence: high
+  amount: 施術1回につき1,000円
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金
+  summary: 重度の要介護や認知症の高齢者を在宅で介護している家族に、慰労金を支給する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 家族が在宅で月15日以上介護し、町に住所がある
+  - 介護を受ける人が次のいずれか：要介護4または5
+  - または認知症高齢者の日常生活自立度がランクⅢa以上
+  where: 地域福祉課（問い合わせ先）
+  url: https://www.town.gojome.akita.jp/kenkouiryoufukusi/kaigo/133
+  confidence: high
+not_found:
+- hochoki
+- shingu
+- ribiyo
+- jutaku

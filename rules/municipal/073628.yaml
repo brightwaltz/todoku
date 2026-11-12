@@ -1,0 +1,95 @@
+city: 073628
+name: 下郷町
+site: www.town.shimogo.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 高齢者のタクシー料金助成
+  name_on_page: 高齢者タクシー助成事業
+  summary: 70歳以上の高齢者にタクシー料金の一部を助成する。
+  who:
+    age_min: 70
+  at_application: []
+  where: 健康福祉課 福祉係
+  url: https://www.town.shimogo.fukushima.jp/kenkou_fukushi/fukushi/413.html
+  confidence: low
+- category: kinkyu-tsuho
+  name: 緊急通報装置の給付
+  name_on_page: 緊急通報体制整備事業
+  summary: ひとり暮らし高齢者等に緊急通報装置を給付する。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者等
+  where: 健康福祉課 福祉係
+  url: https://www.town.shimogo.fukushima.jp/kenkou_fukushi/fukushi/413.html
+  confidence: low
+- category: kaigo-yohin
+  name: 介護用品の購入助成
+  name_on_page: 介護用品給付事業
+  summary: 在宅高齢者を介護する家族に介護用品購入の助成をする。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の高齢者を介護している家族が対象
+  where: 健康福祉課 福祉係
+  url: https://www.town.shimogo.fukushima.jp/kenkou_fukushi/fukushi/413.html
+  confidence: low
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり（住宅改修の助成）
+  name_on_page: 高齢者にやさしい住まいづくり事業
+  summary: 介護保険の対象外の60歳以上在宅高齢者の住宅改修費を助成する。
+  who:
+    age_min: 60
+    at_home: true
+  at_application:
+  - 介護保険の対象者は除く
+  where: 健康福祉課 福祉係
+  url: https://www.town.shimogo.fukushima.jp/kenkou_fukushi/fukushi/413.html
+  confidence: low
+- category: sonota
+  name: 除雪作業の援助
+  name_on_page: 除雪作業援助事業
+  summary: ひとり暮らし高齢者等の生活道路確保のため除雪を援助する。
+  who: {}
+  at_application:
+  - ひとり暮らし高齢者等
+  where: 健康福祉課 福祉係
+  url: https://www.town.shimogo.fukushima.jp/kenkou_fukushi/fukushi/413.html
+  confidence: low
+- category: sonota
+  name: 自立支援ホームヘルプ（軽易な生活援助）
+  name_on_page: 自立支援ホームヘルプサービス事業
+  summary: 日常生活の援助が必要な高齢者に軽易な生活上のサービスを行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身・高齢者のみの世帯等で援助が必要
+  where: 健康福祉課 福祉係
+  url: https://www.town.shimogo.fukushima.jp/kenkou_fukushi/fukushi/413.html
+  confidence: low
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ事業
+  summary: 同居家族が一時不在で不安のある高齢者に一時的な宿泊を提供する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者・身体障害者で家族が一時不在
+  where: 健康福祉課 福祉係
+  url: https://www.town.shimogo.fukushima.jp/kenkou_fukushi/fukushi/413.html
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu
+- chusha
+- yutai

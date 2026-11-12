@@ -1,0 +1,72 @@
+city: 053490
+name: 八峰町
+site: www.town.happo.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 夕食の配達と安否確認（配食サービス）
+  name_on_page: 配食サービス
+  summary: 夕食を自宅へ週3回までを上限に届け、あわせて安否を確かめる。
+  who: {}
+  at_application:
+  - 食事の調理が困難
+  - 次のいずれか：65歳以上のひとり暮らし、75歳以上のみの世帯、重度身体障害者、その他町長が必要と認める人
+  - 申請時に生活状況を聞いて提供を調整する
+  where: 福祉保健課
+  url: https://www.town.happo.lg.jp/archive/contents-235
+  confidence: high
+  amount: 1食200円（月ごとの前払い）。週3回が上限
+- category: gaishutsu
+  name: リフト付き車両による通院等の送迎（外出支援）
+  name_on_page: 外出支援サービス
+  summary: 歩行が困難で公共交通機関を使えない人を、リフト付き車両で医療機関や役場などへ送迎する。
+  who: {}
+  at_application:
+  - 歩行が困難で公共交通機関を利用できない
+  - かつ次のいずれか：要介護1〜5で下肢に障害がある（寝たきりを除く）
+  - 体幹・下肢・視覚の身体障害者等級が2級以上
+  - その他町長が必要と認める人（人工透析等）
+  - 障害を事由とする自動車税等の減免を受けている人は除く
+  where: 福祉保健課
+  url: https://www.town.happo.lg.jp/archive/contents-233
+  confidence: high
+  amount: 距離に応じて300円（5キロまで）〜1,600円（50キロ以上）。原則週1回まで
+- category: sonota
+  name: 家周りの手入れ・除排雪などの軽い援助（軽度生活援助）
+  name_on_page: 軽度生活援助事業
+  summary: 家周りの手入れや軽い修繕、家の中の整理、除排雪などの軽易な作業を、1回1時間100円で手伝う。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、65歳以上のみの世帯、またはこれに準ずる世帯
+  - 作業はおよそ1時間以内。高さ2m以上や危険を伴う作業は対象外
+  - 家周りの手入れは4〜11月に週1回まで、除排雪は12〜3月に15回まで
+  where: 福祉保健課
+  url: https://www.town.happo.lg.jp/archive/contents-253
+  confidence: high
+  amount: 1回1時間の作業で100円。廃棄費用や修繕部材は実費
+- category: gaishutsu
+  name: 車椅子対応車両の無料貸出
+  name_on_page: 車椅子対応車両を貸出しています
+  summary: 移動に車椅子が必要な町民に、車椅子対応の軽自動車を無料で貸し出す。
+  who: {}
+  at_application:
+  - 町民で、日常生活での移動に車椅子が必要
+  - 使う日の3日前までに申請する
+  - 運転者の同意が必要（申請者本人が運転する場合は不要）
+  where: 福祉保健課
+  url: https://www.town.happo.lg.jp/archive/contents-90
+  confidence: high
+  amount: 無料の貸出（使用後は燃料を満タンにして返す）
+not_found:
+- kaigo-yohin
+- haikai
+- iro
+- hochoki
+- shingu
+- ribiyo
+- jutaku

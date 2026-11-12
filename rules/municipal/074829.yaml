@@ -1,0 +1,101 @@
+city: 074829
+name: 矢祭町
+site: www.town.yamatsuri.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: mimamori
+  name: 高齢者安心サポート（訪問による見守り）
+  name_on_page: 高齢者安心サポート事業
+  summary: 安否確認や生活相談のため、月1回以上の訪問を受けられる
+  who: {}
+  at_application:
+  - 町内に住所があるおおむね70歳以上のひとり暮らしや虚弱等の高齢者等
+  where: 町民福祉課 健康づくりグループ
+  url: https://www.town.yamatsuri.fukushima.jp/page/page000071.html
+  confidence: high
+- category: sonota
+  name: 軽度生活援助（食事・洗濯・掃除など）
+  name_on_page: 軽度生活援助事業
+  summary: 食事の準備、洗濯、掃除、庭の手入れなど軽い日常の援助を受けられる
+  who: {}
+  at_application:
+  - 町内在住で、おおむね65歳以上の単身か高齢者のみの世帯など
+  - 日常生活の援助が必要な人（必要なら医師の診断書を付ける）
+  where: 町民福祉課 健康づくりグループ
+  url: https://www.town.yamatsuri.fukushima.jp/page/page000071.html
+  confidence: high
+  amount: 事業にかかった経費の1割を自己負担
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり助成
+  name_on_page: 高齢者にやさしい住まいづくり助成事業
+  summary: 手すり取付や段差解消などの住宅改修費を助成する
+  who:
+    age_min: 60
+  at_application:
+  - 町内に住所があり、介護認定を受けていない人
+  - 実際に住んでいる住宅の改修が対象
+  where: 町民福祉課 健康づくりグループ
+  url: https://www.town.yamatsuri.fukushima.jp/page/page000071.html
+  confidence: high
+  amount: 工事費の9割、上限180,000円
+- category: ribiyo
+  name: 訪問理美容サービス
+  name_on_page: 訪問理美容サービス事業
+  summary: 理美容院に行けない人が自宅で理美容を受ける際の出張料金を助成する
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身か高齢者のみの世帯など
+  - 老衰・心身の障害・傷病で一般の理美容の利用が困難な人
+  where: 町民福祉課 健康づくりグループ
+  url: https://www.town.yamatsuri.fukushima.jp/page/page000071.html
+  confidence: high
+  amount: 利用券1枚につき出張費用を2,000円まで助成、年10枚まで
+- category: kaigo-yohin
+  name: 介護用品の給付
+  name_on_page: 介護用品給付事業
+  summary: 在宅の要介護者に、紙おむつなどの介護用品の給付券を出す
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 施設入所後は利用できない
+  - 月16日以上のショートステイや入院があった月は利用できない
+  where: 町民福祉課 健康づくりグループ
+  url: https://www.town.yamatsuri.fukushima.jp/page/page000071.html
+  confidence: high
+  amount: 要介護2は月3,000円まで、要介護3以上は月5,000円まで
+- category: hochoki
+  name: 高齢者補聴器購入費の補助
+  name_on_page: 高齢者補聴器購入費補助金
+  summary: 補聴器の購入費用の一部を補助する
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内に住所があり、聴覚障害の身体障害者手帳がない
+  - 医師の意見書が必要（聴力の目安が頁に書かれている）
+  - 本人と家族に町税等の滞納がない
+  where: 町民福祉課 健康づくりグループ
+  url: https://www.town.yamatsuri.fukushima.jp/page/page001218.html
+  confidence: high
+  amount: 上限25,000円（1人1回。交付後5年間は対象外）
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- kinkyu-tsuho
+- shingu
+- gaishutsu
+- nichijo-yogu
+- yutai

@@ -1,0 +1,99 @@
+city: 083101
+name: 城里町
+site: www.town.shirosato.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の無料貸与
+  name_on_page: 緊急通報装置貸与事業
+  summary: 高齢者世帯に緊急通報装置とペンダントを無償で貸し、急病時に受信センターへ通報できる。
+  who:
+    age_min: 65
+  at_application:
+  - 65歳以上の高齢者世帯（一覧の頁はひとり暮らし高齢者等と記載）
+  - NTTアナログ回線を使う装置で、回線によっては設置できない
+  where: 長寿応援課
+  url: https://www.town.shirosato.lg.jp/page/page007588.html
+  confidence: high
+  amount: 無料（装置とペンダントは無償貸与、利用終了後に返却）
+  more_urls:
+  - https://www.town.shirosato.lg.jp/kurashi/fukushi/kaigohoken/page000189.html
+- category: haishoku
+  name: 配食サービス（週1回の昼食）
+  name_on_page: 配食サービス事業
+  summary: 調理が難しい70歳以上の方などに、栄養のとれた昼食を週1回届け、安否も確認する。
+  who: {}
+  at_application:
+  - 70歳以上のひとり暮らし、高齢者のみの世帯、または日中ひとり暮らし
+  - または心身障害者等で調理が困難な方
+  where: 長寿応援課（食券は城里町社会福祉協議会）
+  url: https://www.town.shirosato.lg.jp/page/page007588.html
+  confidence: high
+  amount: 1食200円（10枚綴り2,000円分の食券を社会福祉協議会から事前に購入）
+  more_urls:
+  - https://www.town.shirosato.lg.jp/kurashi/fukushi/kaigohoken/page000189.html
+- category: mimamori
+  name: 乳製品の配布による安否確認
+  name_on_page: 愛の定期便事業
+  summary: 75歳以上のひとり暮らし高齢者に、週1回乳製品を配って安否を確認する。
+  who:
+    age_min: 75
+    household:
+    - alone
+  at_application:
+  - 一覧の頁は「75歳以上のひとり暮らし高齢者等」と記載
+  where: 長寿応援課
+  url: https://www.town.shirosato.lg.jp/page/page007588.html
+  confidence: high
+  amount: 無料（週1回、乳製品3本）
+  more_urls:
+  - https://www.town.shirosato.lg.jp/kurashi/fukushi/kaigohoken/page000189.html
+- category: hochoki
+  name: 補聴器購入費の助成
+  name_on_page: 補聴器購入費の一部を助成します
+  summary: 補聴器を必要とする65歳以上の方に、補聴器の購入費の2分の1を助成する。
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 聴覚障害による身体障害者手帳の交付を受けていない
+  - 助成を受けて5年を経過していない方は対象外
+  - 領収書の日付の翌日から1年以内に申請する
+  where: 長寿応援課
+  url: https://www.town.shirosato.lg.jp/page/page005961.html
+  confidence: high
+  amount: 購入費の2分の1（100円未満切り捨て、上限1万円）。集音器は対象外
+- category: kaigo-yohin
+  name: 家族介護用品の給付（紙おむつ・尿取りパッド）
+  name_on_page: 家族介護用品給付事業
+  summary: 在宅の非課税世帯で要介護4以上の高齢者に、紙おむつや尿取りパッドを給付する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 介護用品（紙おむつなど）を必要としている
+  where: 長寿応援課
+  url: https://www.town.shirosato.lg.jp/kurashi/fukushi/kaigohoken/page000189.html
+  confidence: low
+not_found:
+- haikai
+- iro
+- koken
+- jutaku
+- shingu
+- ribiyo
+- gaishutsu
+- nichijo-yogu
+- yutai

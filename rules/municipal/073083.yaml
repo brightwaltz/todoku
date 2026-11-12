@@ -1,0 +1,211 @@
+city: 073083
+name: 川俣町
+site: www.town.kawamata.lg.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品の支給
+  summary: 要介護4・5の方を在宅で介護する非課税世帯の家族に、介護用品の給付券を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護4・5に認定された方を在宅で介護している家族
+  - 町民税非課税世帯
+  - 対象の用品は紙おむつ・尿取りパッド・使い捨て手袋・清拭剤等
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 月額5,000円分の給付券
+- category: iro
+  name: 家族介護慰労金
+  name_on_page: 家族介護慰労金給付
+  summary: 要介護4・5の方を在宅で介護し、サービスを1年間使わなかった非課税世帯の家族に慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 介護保険の認定者が、介護サービスを1年間利用しなかった
+  - 在宅で介護している家族（世帯が町民税非課税）
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 100,000円
+- category: iro
+  name: 介護者激励金
+  name_on_page: 介護者激励金支給事業
+  summary: 要介護3〜5の方を在宅で6か月以上介護している家族へ、年1回、激励金を支給する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 基準日（毎年1月1日）前の1年間に、6か月以上の在宅介護期間がある
+  - 在宅で介護している家族
+  where: 保健福祉課 地域福祉係、社会福祉協議会
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 年1回、町5,000円と社協5,000円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システム事業
+  summary: 緊急通報装置を貸与し、急病・事故の際に委託業者へ通報して救急車の手配等を行う。
+  who: {}
+  at_application:
+  - 概ね65歳以上の一人暮らし高齢者、ねたきりの高齢者
+  - または、高齢者のみの世帯で町長が必要と認めた方
+  - または、一人暮らしの重度身体障がい者等
+  - 固定電話型か携帯電話型を選ぶ
+  where: 保健福祉課 地域福祉係（代理申請も可）
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/kinkyuutuuhou.html
+  confidence: high
+  amount: 利用料は前年度の所得に応じて月額0〜1,200円。携帯電話型は別途基本料金652円
+  more_urls:
+  - https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+- category: shingu
+  name: 寝具の丸洗い・乾燥・消毒
+  name_on_page: 寝具丸洗乾燥消毒サービス
+  summary: 寝具の衛生管理のため、水洗いと消毒乾燥のサービスを年1回行う。
+  who: {}
+  at_application:
+  - 寝たきり、または一人暮らしの高齢者（概ね65歳以上）
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+- category: nichijo-yogu
+  name: 日常生活用具の給付（電磁調理器・火災報知器・自動消火器）
+  name_on_page: 日常生活用具給付
+  summary: 介護保険の対象外の電磁調理器・火災報知器・自動消火器を給付する。
+  who: {}
+  at_application:
+  - 寝たきり、または一人暮らしの高齢者（概ね65歳以上）
+  - 生計中心者の所得税額により自己負担がある
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 生計中心者の所得税額により自己負担あり（金額は頁に無い）
+- category: jutaku
+  name: 高齢者にやさしい住まいづくりの助成
+  name_on_page: 高齢者にやさしい住まいづくり助成事業
+  summary: 介護保険の認定非該当の65歳以上の方の住宅改修（手すり・段差解消など）を助成する。
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の認定非該当の方
+  - 生計中心者に所得制限がある
+  - 手すり・床段差の解消・床材変更・扉や便器の取替えが対象
+  - 一人につき1回のみ
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 限度額200,000円（1割は自己負担）
+- category: hochoki
+  name: 中等度難聴者の補聴器購入費の助成
+  name_on_page: 川俣町中等度難聴者補聴器購入費助成事業
+  summary: 中等度難聴の方に、補聴器本体1台の購入費の一部を、世帯の課税状況で率を変えて助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町に引き続き1年以上住所があり、満18歳以上
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 両耳とも聴力40dB以上70dB未満で、治療で改善が見込めない
+  - 本人と世帯員全員に町税等の滞納がない
+  - 購入前の事前申請が必須。耳鼻科医の意見書が必要
+  where: 町役場（保健福祉課）
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/cyuutoudo-nancyou.html
+  confidence: high
+  amount: 非課税世帯は購入費の2/3（上限10万円）、課税世帯は1/2（上限7万5千円）。5年経過後に再申請可
+- category: mimamori
+  name: 高齢者ごみ出し安否確認事業
+  name_on_page: 高齢者ごみ出し安否確認事業
+  summary: ごみ出しが困難な高齢者世帯に、週1回ごみを回収に伺い、顔を見て安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    - with_family
+    at_home: true
+  at_application:
+  - 町に住所があり在宅の高齢者のみの世帯で、ごみ集積所までのごみ出しが困難
+  - 高齢者と同居の家族が障がい等でごみ出しできない世帯も含む
+  - 実態調査のあと、決定通知が届く。ごみの回収は水曜日か木曜日
+  where: 保健福祉課 地域福祉係（代理申請も可）
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/gomidasianpi.html
+  confidence: high
+  more_urls:
+  - https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+- category: sonota
+  name: 自立支援ホームヘルプサービス
+  name_on_page: 自立支援ホームヘルプサービス
+  summary: 介護保険非該当の一人暮らし高齢者宅へホームヘルパーが訪問し、掃除・洗濯・買い物をする。
+  who:
+    household:
+    - alone
+  at_application:
+  - 介護保険非該当の一人暮らし高齢者（概ね65歳以上）
+  - 在宅で日常生活を営むのに支障がある
+  where: 保健福祉課 地域福祉係、社会福祉協議会
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 利用料は1時間150円
+- category: sonota
+  name: 軽度生活援助サービス事業
+  name_on_page: 軽度生活援助サービス事業
+  summary: 障子・ふすま張り、草むしりなどの軽易な援助を、シルバー人材センターが行う。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 一人暮らし・高齢者のみの世帯（概ね65歳以上）
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 利用料（事務費含む）は1割自己負担。材料費は全額自己負担
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートスティ
+  summary: 自立した高齢者の家族が不在のとき、7日以内で老人福祉施設が養護する。
+  who: {}
+  at_application:
+  - 介護保険非該当の方（概ね65歳以上）
+  - 身体上自立した高齢者で、同居家族等が一時的に不在
+  - 利用は7日以内
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: high
+  amount: 自己負担は1日1,730円
+- category: sonota
+  name: 在宅福祉診断書料の助成
+  name_on_page: 在宅福祉診断書料助成
+  summary: 介護保険対象外の在宅福祉サービスを使うための診断書料等を助成する。
+  who: {}
+  at_application:
+  - 高齢者在宅福祉制度の利用者（概ね65歳以上）
+  where: 保健福祉課 地域福祉係
+  url: https://www.town.kawamata.lg.jp/site/kosodate-iryo/koureisya-sa-bisu.html
+  confidence: low
+  amount: 助成限度額5,000円
+not_found:
+- haishoku
+- haikai
+- koken
+- ribiyo
+- gaishutsu

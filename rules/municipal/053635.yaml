@@ -1,0 +1,87 @@
+city: '053635'
+name: 八郎潟町
+site: www.town.hachirogata.akita.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: gaishutsu
+  name: 通院タクシーの利用券の交付
+  name_on_page: 八郎潟町通院タクシー利用券交付について
+  summary: 他の交通機関を使いにくい在宅の要援護高齢者等に、通院のタクシー代を1回500円まで補助する利用券を交付する。
+  who: {}
+  at_application:
+  - 在宅で、タクシー以外の交通機関を利用するのが困難
+  - 次のいずれか：介護保険の要介護1以上
+  - 障害者手帳1・2・3級（通院で人工透析を受けている人は除く）
+  - 身体障害者手帳で下肢に障害がある人、または療育手帳Aの人
+  where: 健康福祉課
+  url: https://www.town.hachirogata.akita.jp/kenko/1001499/1001710.html
+  confidence: high
+  amount: 3か月に18枚（4月・7月・10月・1月に交付）。1枚500円で、超えた分は自己負担
+- category: gaishutsu
+  name: 介護タクシーの利用料の補助
+  name_on_page: 八郎潟町介護タクシー利用料補助事業について
+  summary: 車いす等の利用者で通院・通所などが難しい人に、介護タクシーの利用料の一部を補助する。
+  who:
+    at_home: true
+  at_application:
+  - 町内に住所があり、要介護認定を受けていない在宅の人
+  - 車いす等を使い、車に乗り入れないと移動できない
+  - 利用できる事業者は頁に書かれた1事業者
+  where: 健康福祉課
+  url: https://www.town.hachirogata.akita.jp/kenko/1001499/1002760.html
+  confidence: high
+  amount: 例：10分までの1,800円のうち、利用者600円・町1,200円（30分までの料金表があり、30分超は5分ごとに利用者負担が600円増える）
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置
+  name_on_page: 八郎潟町緊急通報システム事業
+  summary: ひとり暮らしの高齢者等の自宅に緊急通報装置を設置し、24時間の受信センターにつなぐ。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - ひとり暮らしの高齢者（おおむね65歳以上）、または高齢者のみの世帯
+  - 申請は本人または親族。申請から利用開始まで2週間ほど
+  where: 健康福祉課 地域包括支援センター担当
+  url: https://www.town.hachirogata.akita.jp/kenko/1001499/1004008.html
+  confidence: high
+  amount: 利用者負担は月額500円（機器を追加すると別料金）
+- category: sonota
+  name: 救急医療情報キットの配付
+  name_on_page: 「救急医療情報キット」について
+  summary: 緊急連絡先やかかりつけ医の情報を入れる容器を配り、自宅の冷蔵庫に保管して万一に備える。
+  who: {}
+  at_application:
+  - 次のような人：65歳以上のひとり暮らし高齢者、65歳以上の高齢者世帯
+  - 言語・聴覚障がい等で意思疎通が難しいひとり暮らしの人
+  - その他町長が適当と認める人
+  - 配付の申請が必要
+  where: 健康福祉課、地域包括支援センター、民生委員・地域福祉協力員
+  url: https://www.town.hachirogata.akita.jp/kenko/1001499/1002800.html
+  confidence: high
+- category: haikai
+  name: 認知症SOSネットワークの事前登録
+  name_on_page: 八郎潟町地域で見守る認知症SOSネットワーク
+  summary: 行方不明のおそれがある認知症高齢者等を事前に登録し、町が警察等と協力して早期に探し、保護する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 町に住所があり、徘徊または行方不明になるおそれのある認知症高齢者等
+  - 事前に登録票を提出して登録する
+  where: 地域包括支援センター
+  url: https://www.town.hachirogata.akita.jp/kenko/1001499/1001501/1003825.html
+  confidence: high
+not_found:
+- haishoku
+- kaigo-yohin
+- iro
+- hochoki
+- shingu
+- ribiyo
+- jutaku

@@ -1,0 +1,103 @@
+city: 044458
+name: 加美町
+site: www.town.kami.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 配食サービス（夕食弁当）
+  name_on_page: 配食サービス事業
+  summary: 食事づくりが大変な高齢者に、週5回まで夕食の弁当を届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - おおむね65歳以上
+  - 要介護認定を受けた等の理由で、日常の食事づくりが大変
+  where: 加美町社会福祉協議会（頁の問い合わせ先）
+  url: https://www.town.kami.miyagi.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishafukushi/1104.html
+  confidence: high
+  amount: 1食500円。月〜金曜日の週5回（曜日は選べる）
+- category: kaigo-yohin
+  name: 寝たきり老人等への紙おむつ代の補助
+  name_on_page: ねたきり老人等紙おむつ代支給事業
+  summary: 常時紙おむつを使う在宅の方に、紙おむつなどの購入代を月5,000円まで補助する。
+  who:
+    age_min: 65
+    at_home: true
+  at_application:
+  - 在宅で寝たきりとなり常時紙おむつを使う人、または認知症で常時介護を必要とする人
+  - 町民税非課税世帯、または町民税の所得割が課税されていない世帯
+  - 1か月に14日以上の入院・施設入所の月は対象外
+  where: 加美町高齢障がい福祉課 高齢者福祉係
+  url: https://www.town.kami.miyagi.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishafukushi/1106.html
+  confidence: high
+  amount: 月額5,000円を年2回（4月、10月）に分けて支給
+- category: iro
+  name: 寝たきり老人等の介護慰労金
+  name_on_page: ねたきり老人等介護慰労金支給事業
+  summary: 寝たきり等で要介護4・5相当の方を在宅で介護する非課税世帯の家族に、慰労金を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - ねたきり老人または認知症老人で、要介護4・5に相当する人を介護している家族
+  - 介護保険の介護サービスを受けない
+  where: 加美町高齢障がい福祉課 高齢者福祉係
+  url: https://www.town.kami.miyagi.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishafukushi/1106.html
+  confidence: high
+  amount: 月額5,000円
+- category: yutai
+  name: 高齢者の温泉入湯助成券
+  name_on_page: 高齢者入湯助成事業
+  summary: 65歳以上の方が、町内の温泉施設を半額で使える助成券を受け取れる。
+  who:
+    age_min: 65
+  at_application:
+  - 町内に住み、年齢が確認できる証明書（被保険者証、運転免許証等）が必要
+  where: 対象の温泉施設（やくらい薬師の湯・陶芸の里ゆ～らんど）のフロント
+  url: https://www.town.kami.miyagi.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishafukushi/1107.html
+  confidence: high
+  amount: 対象の町内の温泉施設3か所を半額で利用。助成券の交付手数料は500円
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: ひとり暮らし老人等緊急通報システム事業
+  summary: ひとり暮らしの高齢者などの自宅に通報機器を設置し、緊急時に備える。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし高齢者、または身体障害者のみの世帯
+  - 令和8年度から固定電話回線のない人も使える
+  where: 加美町高齢障がい福祉課 高齢者福祉係、または各福祉センター
+  url: https://www.town.kami.miyagi.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishafukushi/1111.html
+  confidence: high
+  amount: 無料
+- category: shingu
+  name: 寝具類等の洗濯乾燥消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス事業
+  summary: 寝具の衛生管理が難しい世帯の寝具を、年1回、洗濯・乾燥・消毒する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし世帯、高齢者のみの世帯、または寝たきりの人がいる世帯
+  - 寝具類の衛生管理が困難
+  - 例年10月頃に年1回実施
+  where: 加美町高齢障がい福祉課 高齢者福祉係、または各福祉センター（頁の問い合わせ先）
+  url: https://www.town.kami.miyagi.jp/iryo_kenko_fukushi/koreishafukushi_kaigo/koreishafukushi/1111.html
+  confidence: high
+not_found:
+- haikai
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu
+- koken
+- nichijo-yogu
+- mimamori

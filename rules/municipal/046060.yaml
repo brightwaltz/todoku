@@ -1,0 +1,85 @@
+city: '046060'
+name: 南三陸町
+site: www.town.minamisanriku.miyagi.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の設置（ひとり暮らし高齢者等）
+  name_on_page: ひとり暮らし高齢者等緊急通報事業
+  summary: 急病や災害のとき安否を確かめられるよう、緊急通報装置を自宅に設置する。
+  who: {}
+  at_application:
+  - 65歳以上の単身世帯、または65歳以上のみの世帯等の高齢者
+  - 身体障害者のみの世帯等の身体障害者も対象
+  - 固定電話の回線がある
+  - 近隣の親族や住民から協力員3名を選ぶ
+  where: 地域包括支援センター、歌津総合支所
+  url: https://www.town.minamisanriku.miyagi.jp/life-info/korei/3/7678.html
+  confidence: high
+- category: kaigo-yohin
+  name: 紙おむつ等と交換できる引換券の支給
+  name_on_page: 南三陸町家族等介護用品支給事業
+  summary: 要介護の高齢者に、紙おむつ等と交換できる引換券を毎月支給する。
+  who:
+    care_levels:
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+    tax:
+    - household_exempt
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 高齢者を介護する同居家族、またはひとり暮らしの高齢者
+  - 町内に住所があり、紙おむつ等が常に必要
+  - 生活保護や他制度で同様の支給を受けている人は対象外
+  - 入院中・施設入所中は対象外
+  where: 地域包括支援センター、歌津総合支所
+  url: https://www.town.minamisanriku.miyagi.jp/life-info/korei/3/7681.html
+  confidence: high
+  amount: 要介護1・2は月3,400円、要介護3〜5は月6,200円
+- category: gaishutsu
+  name: 高齢者福祉タクシーの利用助成券
+  name_on_page: 高齢者福祉タクシー利用助成券
+  summary: 要介護3〜5の人に、協定のタクシーで使える650円分の助成券を毎月2枚交付する。
+  who:
+    care_levels:
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 町内に住所がある
+  - 介護保険施設の入所者ではない
+  - 他の制度から通院費の助成を受けていない
+  - 町と協定を結んだタクシー事業者でだけ使える
+  where: 保健福祉課 高齢者福祉係（総合ケアセンター南三陸1階）
+  url: https://www.town.minamisanriku.miyagi.jp/life-info/korei/3/7684.html
+  confidence: high
+  amount: 650円分の助成券を1か月に2枚
+- category: nichijo-yogu
+  name: 老人日常生活用具の給付・貸与
+  name_on_page: 老人日常生活用具給付サービス
+  summary: ひとり暮らし等の高齢者に、日常生活用具を給付または貸与する。
+  who: {}
+  at_application:
+  - ひとり暮らし等の高齢者
+  where: 保健福祉課 高齢者福祉係（問い合わせ先）
+  url: https://www.town.minamisanriku.miyagi.jp/life-info/korei/3/7679.html
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- hochoki
+- shingu
+- ribiyo
+- jutaku
+- mimamori

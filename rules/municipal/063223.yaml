@@ -1,0 +1,89 @@
+city: '063223'
+name: 西川町
+site: www.town.nishikawa.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 介護用品（紙おむつ）購入費の助成
+  name_on_page: 介護用品（紙おむつ）購入費助成事業
+  summary: 要介護2以上で常時失禁状態の方に、紙おむつ・尿とりパッド等の介護用品を支給する。
+  who:
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 常時失禁状態にある（入院中も対象、施設入所中は対象外）
+  - 支給には担当ケアマネジャーの確認が必要
+  where: 西川町保健センター（健康福祉課 地域包括支援センター係）
+  url: https://www.town.nishikawa.yamagata.jp/soshiki/kenko/1192.html
+  confidence: high
+  amount: 1か月あたり6,000円まで（超えた分は自己負担）
+- category: haishoku
+  name: 地産地消弁当の提供見守り
+  name_on_page: 地産地消弁当提供見守り事業
+  summary: 週3回お弁当を届け、安否確認を兼ねて見守る。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし高齢者、高齢者のみの世帯など
+  - 事前の申請が必要
+  where: 西川町保健センター（健康福祉課 地域包括支援センター係）
+  url: https://www.town.nishikawa.yamagata.jp/soshiki/kenko/2834.html
+  confidence: high
+  amount: 1食200〜400円の自己負担（所得状況で決まる）、月・水・金の週3回
+- category: gaishutsu
+  name: お出かけ支援（タクシー利用料の助成）
+  name_on_page: お出かけ支援事業
+  summary: 在宅の要介護2以上の方の、介護タクシー・一般タクシーの利用料の一部を助成する。
+  who:
+    age_min: 40
+    care_levels:
+    - care2
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 町内に住所があり在宅で生活している
+  - 月山観光タクシー以外を使うときは事前の連絡が必要
+  where: 西川町保健センター（健康福祉課 地域包括支援センター係）
+  url: https://www.town.nishikawa.yamagata.jp/soshiki/kenko/1186.html
+  confidence: high
+  amount: 1か月あたり4,000円、または月4回までの利用のどちらか
+- category: sonota
+  name: 高齢者生活援助サービス（ホームヘルパーの派遣）
+  name_on_page: 高齢者生活援助サービス（ホームヘルパーの派遣）
+  summary: 介護保険では使えない見守りや家事援助に、ホームヘルパーを派遣する。
+  who:
+    age_min: 65
+    care_levels:
+    - support1
+    - support2
+    - care1
+    - care2
+    - care3
+    - care4
+    - care5
+  at_application:
+  - 介護認定を持つ65歳以上で、家族等の支援が受けられない
+  - 事前の申請が必要
+  where: 西川町保健センター（健康福祉課 地域包括支援センター係）
+  url: https://www.town.nishikawa.yamagata.jp/soshiki/kenko/1191.html
+  confidence: high
+  amount: 1回1時間（月16時間まで）、利用料は1時間200円
+not_found:
+- iro
+- haikai
+- koken
+- hochoki
+- kinkyu-tsuho
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

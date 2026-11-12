@@ -1,0 +1,133 @@
+city: '073032'
+name: 国見町
+site: www.town.kunimi.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置給付事業
+  summary: 緊急通報装置を貸与し、急病や災害などの緊急時に迅速に対応できるようにする。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らし高齢者、80歳以上の高齢者のみの世帯等
+  - 緊急通報協力員が2名必要
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/51.html
+  confidence: high
+- category: haishoku
+  name: 給食配食サービス（まごころサービス）
+  name_on_page: 給食配食サービス事業(まごころサービス)
+  summary: 栄養バランスのとれた弁当を、1日1食、自宅へ届ける。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 65歳以上のひとり暮らしの高齢者、または80歳以上の高齢者のみの世帯
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/51.html
+  confidence: high
+- category: haikai
+  name: 認知症高齢者等の見守りQRコード
+  name_on_page: 認知症高齢者等見守りQRコード活用事業
+  summary: 持ち物に貼るQRコードを配り、外出して保護されたときに早く身元が分かるようにする。
+  who: {}
+  at_application:
+  - 町内に住所がある認知症高齢者を介護している親族や支援者が対象
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/51.html
+  confidence: high
+- category: nichijo-yogu
+  name: 日常生活用具の給付（自動消火器・電磁調理器・火災報知器）
+  name_on_page: 日常生活用具給付等事業
+  summary: ひとり暮らし高齢者等に、自動消火器・電磁調理器・火災報知器を給付する。
+  who: {}
+  at_application:
+  - 65歳以上のひとり暮らし高齢者等
+  - 給付の品は自動消火器・電磁調理器・火災報知器
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/51.html
+  confidence: high
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり助成
+  name_on_page: 高齢者にやさしい住まいづくり助成事業
+  summary: 転倒等で要介護にならないための住宅改修費を、予算の範囲内で助成する。
+  who:
+    age_min: 60
+  at_application:
+  - 介護保険非該当の方
+  - 転倒等を防ぐための住宅改修が対象
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/51.html
+  confidence: high
+  amount: 住宅改修費用の9割（18万円限度）
+- category: hochoki
+  name: 中等度難聴者の補聴器購入費の助成
+  name_on_page: 中等度難聴者補聴器購入費助成事業
+  summary: 中等度難聴の方に、補聴器本体1台の購入費の2分の1（上限3万円）を助成する。
+  who:
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 18歳以上で、町に引き続き1年以上住所がある
+  - 聴覚障害の身体障害者手帳の交付を受けていない
+  - 両耳が40dB以上70dB未満など、治療で改善が見込めない中等度難聴
+  - 本人と世帯員全員に町税等の滞納がない
+  - 購入前の事前申請が必須。耳鼻科医の意見書が必要
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/19784.html
+  confidence: high
+  amount: 購入費の2分の1、上限30,000円（5年経過するまで再申請不可）
+  more_urls:
+  - https://www.town.kunimi.fukushima.jp/soshiki/17/22490.html
+- category: gaishutsu
+  name: 運転免許返納者へのタクシー券（75歳以上など）
+  name_on_page: 高齢者等運転免許証自主返納支援事業
+  summary: 免許を自主返納した方に、タクシー券をあわせて10,000円分、1回限り支給する。
+  who: {}
+  at_application:
+  - 町の住民基本台帳に記載され、有効期限内の免許証を自主返納した
+  - 返納時に満75歳以上、または障害者手帳（身体・療育・精神）を持つ
+  - 返納した日から1年以内に申請する
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/5926.html
+  confidence: high
+  amount: タクシー券10,000円分（指定会社の券5,000円分と、まちなかタクシーの券5,000円分。どちらか10,000円分も選べる）
+- category: sonota
+  name: 在宅高齢者等の除雪支援
+  name_on_page: 在宅高齢者等除雪支援事業
+  summary: ひとり暮らし高齢者等の自立を支えるため、冬季の除雪を支援する。
+  who: {}
+  at_application:
+  - 75歳以上のひとり暮らしの高齢者、80歳以上の高齢者のみの世帯等
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/51.html
+  confidence: high
+- category: sonota
+  name: 生活支援ショートステイ
+  name_on_page: 生活支援ショートステイ事業
+  summary: 家族が一時的に不在で1人の生活が不安な高齢者が、養護老人ホームに短期間入所できる。
+  who:
+    age_min: 65
+  at_application:
+  - 自立していて介護保険に非該当の方
+  - 同居の家族が一時的に不在で、1人での生活に不安がある
+  - 利用施設は養護老人ホーム桑折緑風園
+  where: 福祉課 長寿介護係
+  url: https://www.town.kunimi.fukushima.jp/soshiki/17/51.html
+  confidence: high
+not_found:
+- kaigo-yohin
+- iro
+- koken
+- shingu
+- ribiyo
+- mimamori

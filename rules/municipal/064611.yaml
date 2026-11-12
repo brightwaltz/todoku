@@ -1,0 +1,103 @@
+city: '064611'
+name: 遊佐町
+site: www.town.yuza.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急時通報システム事業
+  summary: 緊急通報機器（本体・ペンダント・火災センサ）を貸与する。設置・保守の費用は町が負担する。
+  who: {}
+  at_application:
+  - 慢性的な疾患で身体虚弱のため緊急時の行動が困難な方
+  - または、突発的に命に危険な症状が出る持病のある方
+  - 上のどちらかで、高齢者のみの世帯か身体障がい者のみの世帯等に属する方
+  - 申請書に協力員と親族の登録が必要
+  where: 健康福祉課 福祉係
+  url: https://www.town.yuza.yamagata.jp/archive/contents-368
+  confidence: high
+  amount: 機器の設置・保守費は町が負担。定時通報を含む通話料等は利用者負担
+- category: koken
+  name: 成年後見制度の利用助成
+  name_on_page: 成年後見制度の利用助成
+  summary: 成年後見制度の費用の支払いが難しい身寄りのない方に、経費の全部または一部を助成する。
+  who: {}
+  at_application:
+  - 判断能力が不十分で身寄りのない認知症高齢者、精神障がい者、知的障がい者等
+  - 制度の利用を希望し、費用の支払いが困難
+  where: 健康福祉課 福祉係
+  url: https://www.town.yuza.yamagata.jp/archive/contents-369
+  confidence: high
+  amount: 後見制度の経費の全部または一部
+- category: haishoku
+  name: 配食サービス（食の自立支援事業）
+  name_on_page: 配食サービス
+  summary: 自分で調理が難しい高齢者世帯へ、週1回ボランティアが配食し、安否も確認する。
+  who: {}
+  at_application:
+  - 町内に居住し、自ら調理することが困難な方
+  - おおむね65歳以上の単身世帯・高齢者のみの世帯、または身体障がい者のみの世帯
+  - ケアマネジャーによる代行申請も可
+  where: 健康福祉課 福祉係、遊佐町地域包括支援センター
+  url: https://www.town.yuza.yamagata.jp/archive/contents-372
+  confidence: high
+  amount: 1回200円の自己負担
+- category: shingu
+  name: 寝具の洗濯・消毒・乾燥サービス
+  name_on_page: 寝具洗濯・消毒・乾燥サービス
+  summary: 寝具の衛生管理が難しい高齢者の寝具を回収し、洗濯・消毒・乾燥して届ける。
+  who:
+    age_min: 65
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に居住する65歳以上の単身高齢者世帯、または高齢者のみの世帯
+  - 心身の障がい・虚弱・傷病等で寝具の衛生管理が困難と思われる方
+  - 年1回実施。掛布団・敷布団・毛布各1枚の3枚まで
+  where: 健康福祉課 福祉係
+  url: https://www.town.yuza.yamagata.jp/archive/contents-373
+  confidence: high
+  amount: 自己負担800円
+- category: haikai
+  name: 高齢者等地域見守り事前登録（どこシル伝言板のシール）
+  name_on_page: 遊佐町高齢者等地域見守り事前登録事業
+  summary: 徘徊のおそれのある高齢者等を事前に登録し、希望者にはQRコードのシール30枚を交付する。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症や認知症の疑いで徘徊のおそれがある高齢者等
+  - シールの交付は、登録者のうち希望した方が対象
+  - 申請できるのは、対象者を常時介護している同居の方など
+  where: 遊佐町地域包括支援センター、健康福祉課 介護保険係
+  url: https://www.town.yuza.yamagata.jp/archive/contents-376
+  confidence: high
+  amount: シール30枚を交付（追加分は自己負担）
+- category: sonota
+  name: 高齢者鍼・灸・マッサージの助成券
+  name_on_page: 高齢者鍼・灸・マッサージ助成事業
+  summary: 70歳以上の方に、指定の治療院で使える鍼・灸・マッサージの助成券を交付する。
+  who:
+    age_min: 70
+  at_application:
+  - 町の住民基本台帳に登録があり、町内に居住
+  - 助成券は指定の治療院のみで使える
+  where: 健康福祉課 福祉係
+  url: https://www.town.yuza.yamagata.jp/archive/contents-371
+  confidence: high
+  amount: 助成券1枚につき1,000円の割引。年度内6枚まで（施術1回に1枚）
+not_found:
+- kaigo-yohin
+- iro
+- hochoki
+- jutaku
+- ribiyo
+- gaishutsu
+- mimamori
+- nichijo-yogu

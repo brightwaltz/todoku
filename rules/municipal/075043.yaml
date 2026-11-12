@@ -1,0 +1,77 @@
+city: '075043'
+name: 浅川町
+site: www.town.asakawa.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: おむつ券の支給（要介護高齢者の日常生活用品給付）
+  name_on_page: 要介護高齢者等日常生活用品給付事業（おむつ券支給）
+  summary: 在宅で介護を受ける人に、紙おむつなどの介護用品を支給する
+  who:
+    age_min: 65
+    care_levels:
+    - care3
+    - care4
+    - care5
+    at_home: true
+  at_application:
+  - 半月以上在宅で介護を受けている要介護3相当以上の人
+  - 頁には『等』とあり、ほかの条件は書かれていない
+  where: 保健福祉課
+  url: https://www.town.asakawa.fukushima.jp/welfare/000753.html
+  confidence: high
+  amount: 上限月額3,300円
+- category: hochoki
+  name: 高齢者補聴器購入費の補助
+  name_on_page: 高齢者補聴器購入費補助金交付事業
+  summary: 聴力の低下で日常生活に支障がある高齢者に、補聴器の購入費を補助する
+  who:
+    age_min: 65
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 町内在住で、申請する年度に65歳以上
+  - 聴力が両耳とも40dB以上70dB未満、または片耳70dB以上で他方70dB未満
+  - 申請に「補聴器に関する意見書」を出す
+  where: 保健福祉課
+  url: https://www.town.asakawa.fukushima.jp/welfare/002327.html
+  confidence: high
+  amount: 購入費用の補助で、上限25,000円
+- category: kinkyu-tsuho
+  name: 緊急通報システムの装置貸与
+  name_on_page: 緊急通報システム事業
+  summary: 急病や事故のとき登録先に通報できる装置を貸し出す
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らしの高齢者
+  - ひとり暮らしの重度身体障害者、または高齢者のみ世帯等で町長が認める人
+  - 介護保険認定者は対象外
+  - 協力員（地区担当民生委員1名、その他2名）の承諾書が必要
+  where: 保健福祉課
+  url: https://www.town.asakawa.fukushima.jp/welfare/kourei/seikatsu/000734.html
+  confidence: high
+  amount: 生計中心者の課税額に応じ、利用者負担は年0〜54,432円
+- category: jutaku
+  name: 高齢者にやさしい住まいづくり助成
+  name_on_page: 浅川町高齢者にやさしい住まいづくり助成事業
+  summary: 手すりの取付けや段差解消など、転倒を防ぐ住宅改修費を助成する
+  who:
+    age_min: 65
+  at_application:
+  - 介護保険の認定を受けている人は対象外
+  - 工事前に計画書を出し、決定の通知後に着工する
+  where: 保健福祉課
+  url: https://www.town.asakawa.fukushima.jp/welfare/kourei/seikatsu/000733.html
+  confidence: high
+  amount: 工事費の90%、または180,000円のいずれか少ない額まで
+not_found:
+- haishoku
+- iro
+- shingu
+- ribiyo
+- nichijo-yogu

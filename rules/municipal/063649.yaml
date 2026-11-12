@@ -1,0 +1,87 @@
+city: 063649
+name: 真室川町
+site: www.town.mamurogawa.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: iro
+  name: 重度要介護高齢者介護者激励金
+  name_on_page: 重度要介護高齢者介護者激励金支給事業
+  summary: 重度の要介護者を在宅で6か月以上介護している方に、激励金を支給する。
+  who:
+    at_home: true
+  at_application:
+  - 要介護4・5、または同程度の状態の重度要介護者を在宅で介護している
+  - 基準日（7月1日、1月1日）前6か月以上介護している
+  where: 福祉課 福祉係
+  url: https://www.town.mamurogawa.yamagata.jp/iryo_kenko_fukushi/fukushi_kaigo/2156.html
+  confidence: low
+  amount: 年額20,000円（重度要介護者が2名以上でも同額）
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給事業
+  summary: 常時失禁の状態にある高齢者を介護している方に、紙おむつを支給する。
+  who:
+    flags:
+    - uses_diapers
+  at_application:
+  - 常時失禁の状態で、おむつを使用して3か月以上が経過した高齢者を介護している
+  where: 福祉課 福祉係
+  url: https://www.town.mamurogawa.yamagata.jp/iryo_kenko_fukushi/fukushi_kaigo/2156.html
+  confidence: low
+- category: sonota
+  name: 除雪支援事業
+  name_on_page: 除雪支援事業
+  summary: 自力で除雪できない一人暮らしの高齢者等に、除雪作業員を派遣する。
+  who: {}
+  at_application:
+  - 一人暮らしの高齢者や高齢者夫婦世帯等で、自力で除雪できない
+  where: 福祉課 福祉係
+  url: https://www.town.mamurogawa.yamagata.jp/iryo_kenko_fukushi/fukushi_kaigo/2156.html
+  confidence: low
+  amount: 年間8人分（1人1日8時間）まで派遣。利用者負担は除雪料金の1割
+  more_urls:
+  - https://www.town.mamurogawa.yamagata.jp/material/files/group/4/kaigokeikaku9.pdf
+- category: gaishutsu
+  name: 救急タクシー事業
+  name_on_page: 救急タクシー事業
+  summary: ねたきりの高齢者等が通院などで救急タクシーを使った費用の半額を助成する。
+  who: {}
+  at_application:
+  - ねたきりの高齢者等で、通院などのために救急タクシーを利用した
+  where: 福祉課 福祉係
+  url: https://www.town.mamurogawa.yamagata.jp/iryo_kenko_fukushi/fukushi_kaigo/2156.html
+  confidence: low
+  amount: 実際の料金の半額、年間6日分まで（1日あたり上限10,000円）
+- category: kinkyu-tsuho
+  name: 緊急通報システム
+  name_on_page: 緊急通報システム事業
+  summary: 町が緊急通報機器（ペンダント型・火災報知器・安否センサー）を貸与し、委託業者が緊急時に対応する。
+  who:
+    household:
+    - alone
+    - elderly_only
+  at_application:
+  - 町内に居住し、75歳以上の高齢者のみの世帯
+  - または65歳以上で心疾患等・脳血管疾患の経緯がある人（町長が特に必要と認める人）のみの世帯
+  - 緊急連絡先と協力者（計3人）の登録が必要
+  where: 福祉課 福祉係
+  url: https://www.town.mamurogawa.yamagata.jp/material/files/group/4/R7emergencycall.pdf
+  confidence: high
+  amount: システム利用料は町が全額負担（通話料・電気料は利用者負担）
+  more_urls:
+  - https://www.town.mamurogawa.yamagata.jp/iryo_kenko_fukushi/fukushi_kaigo/2156.html
+not_found:
+- haishoku
+- haikai
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- mimamori
+- nichijo-yogu

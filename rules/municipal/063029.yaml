@@ -1,0 +1,132 @@
+city: 063029
+name: 中山町
+site: www.town.nakayama.yamagata.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 紙おむつの支給
+  name_on_page: 紙おむつ支給
+  summary: 常時失禁状態が続く要介護の方などに、紙おむつを自宅へ配達して支給する。
+  who: {}
+  at_application:
+  - 寝たきり・認知症・障がい等で常時失禁状態が1か月以上続く
+  - 要介護3〜5、寝たきり判定、重度認知症判定、またはこれらと同程度
+  - 世帯の最多納税者の町民税が133,000円未満
+  where: 健康福祉課 介護支援グループ
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 1か月あたり約5,000円程度分まで（無料）
+- category: iro
+  name: 介護者激励金
+  name_on_page: 介護者激励金の支給
+  summary: 寝たきり・認知症の高齢者を6か月以上介護している家族に、激励金を年1回支給する。
+  who:
+    at_home: true
+  at_application:
+  - 在宅の寝たきり・認知症の高齢者で要介護4〜5の人を介護する家族
+  - または重度障がい者（障がい程度区分5〜6）を介護する家族
+  - 6か月以上継続して介護している
+  - 申請の案内はお知らせ版で周知される
+  where: 健康福祉課 介護支援グループ
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 年50,000円（9月または3月頃に支給）
+- category: mimamori
+  name: 高齢者見守りの乳酸菌飲料配達
+  name_on_page: 高齢者見守り乳酸菌飲料配達
+  summary: 70歳以上の在宅の高齢者宅へ乳酸菌飲料を手渡しに訪問し、安否を確認する。
+  who:
+    age_min: 70
+    at_home: true
+  at_application:
+  - 一人暮らし等で見守りが必要
+  where: 健康福祉課 介護支援グループ
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 無料（基本は週2回、月曜日・木曜日）
+- category: haikai
+  name: 高齢者おかえり支援の事前登録
+  name_on_page: 高齢者おかえり支援登録
+  summary: 行方不明になるおそれのある高齢者の情報を事前に登録し、警察などへの情報提供を円滑にする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知機能の低下等で行方が分からなくなるおそれのある高齢者
+  where: 健康福祉課 介護支援グループ（中山町地域包括支援センターにも情報提供）
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 見守りシールの交付
+  name_on_page: 見守りシール交付
+  summary: 二次元バーコードのシールを渡し、行方不明時に発見者と家族が連絡できるようにする。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知機能の低下等で行方が分からなくなるおそれのある高齢者
+  - 高齢者おかえり支援に登録している
+  where: 健康福祉課 介護支援グループ
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 無料
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 緊急通報装置貸与
+  summary: 急病等の緊急連絡に対応する緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - 65歳以上の一人暮らしの高齢者、高齢者のみの世帯
+  - または身体障がい者のみの世帯
+  where: 健康福祉課 介護支援グループ
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 町民税所得割が非課税の世帯は無料、課税の方は月500円
+- category: haishoku
+  name: 昼食の配食サービス
+  name_on_page: 配食サービス
+  summary: 調理や買い物が難しい方に、昼食を週2回届ける。
+  who: {}
+  at_application:
+  - 町民税非課税世帯で65歳以上の高齢者のみの世帯、または身体障がい者
+  - 老衰・心身の障がい等で調理と買い物が困難
+  where: 健康福祉課（頁に申請先の記載なし）
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 1食300円、週2回（火曜日・金曜日）
+- category: gaishutsu
+  name: 移送サービスの利用券
+  name_on_page: 移送サービス
+  summary: 寝たきりで普通車両で外出できない高齢者に、特殊車両の利用費を一部助成する。
+  who: {}
+  at_application:
+  - 寝たきり状態で普通車両では外出が困難な高齢者（または重度障がい者）
+  where: 健康福祉課 介護支援グループ
+  url: https://www.town.nakayama.yamagata.jp/soshiki/kenkou_fukushi/1973.html
+  confidence: high
+  amount: 1,000円の利用券を年20枚交付（1乗車で4枚まで使える）
+- category: gaishutsu
+  name: タクシー利用助成
+  name_on_page: 中山町タクシー利用助成制度
+  summary: 町内の通院・買い物などの移動を、タクシーで1回500円で利用できるようにする。
+  who: {}
+  at_application:
+  - 65歳以上、または身体・療育・精神の障害者手帳を持つ町民
+  - 事前に役場で利用者登録（登録証の交付）が必要
+  where: 総合政策課 まちづくり推進グループ
+  url: https://www.town.nakayama.yamagata.jp/soshiki/seisaku/machidukurisuishin/2149.html
+  confidence: high
+  amount: 利用者負担1回500円（相乗りも1台500円）、差額は町が負担
+not_found:
+- koken
+- hochoki
+- jutaku
+- shingu
+- ribiyo
+- nichijo-yogu

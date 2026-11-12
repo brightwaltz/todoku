@@ -1,0 +1,126 @@
+city: '073423'
+name: 鏡石町
+site: www.town.kagamiishi.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kinkyu-tsuho
+  name: 緊急通報システムの貸与
+  name_on_page: 緊急通報システムサービス
+  summary: 緊急通報装置・ペンダント等を貸し出し、急病や事故のときに迅速に対応する。
+  who:
+    household:
+    - alone
+  at_application:
+  - 町内に住所があり、おおむね65歳以上の一人暮らし高齢者
+  - または、一人暮らしの重度心身障がい者
+  - 緊急時に協力する協力員を3人指定する
+  - 固定電話回線がない家では利用できない
+  where: 福祉こども課 福祉グループ、地域包括支援センター
+  url: https://www.town.kagamiishi.fukushima.jp/kurashi/kenko_fukushi/koureisha/008463.html
+  confidence: high
+- category: ribiyo
+  name: 訪問理美容サービスの助成券
+  name_on_page: 訪問理美容サービス
+  summary: 寝たきり等で理美容店に行けない方へ、訪問による理美容サービスの助成券を支給する。
+  who: {}
+  at_application:
+  - 町内に住所があり、要介護3以上、または身体障害者手帳2級以上の方
+  - 利用には家族等の付き添いが必要
+  - 年度をまたいで使えない
+  where: 福祉こども課
+  url: https://www.town.kagamiishi.fukushima.jp/kurashi/kenko_fukushi/koureisha/008456.html
+  confidence: high
+  amount: 1回の理美容に助成券1枚（1,000円分）まで。年に4枚まで（新規は申請月で3〜1枚）
+- category: shingu
+  name: 寝具の洗濯・乾燥・消毒（寝具クリーニング）
+  name_on_page: 寝具乾燥消毒事業
+  summary: 寝たきりや一人暮らしの高齢者の寝具を、年に1度、洗濯・乾燥・消毒する（無料）。
+  who: {}
+  at_application:
+  - 町内に住所があり、寝たきりや一人暮らし世帯の方（自立している一人暮らしの方は除く）、またはおおむね65歳以上の方
+  - 申請はなく、民生児童委員の訪問時に希望を伝える。回収は1人2枚まで
+  where: 福祉こども課 福祉グループ
+  url: https://www.town.kagamiishi.fukushima.jp/kurashi/kenko_fukushi/koureisha/008462.html
+  confidence: high
+  amount: 無料
+- category: haikai
+  name: 認知症高齢者のGPS端末機の貸与
+  name_on_page: 認知症高齢者位置情報探索（GPS）機器貸与事業
+  summary: 行方不明になる不安がある認知症高齢者の家族へ、GPS端末機を貸与する。
+  who:
+    at_home: true
+    flags:
+    - wandering_risk
+  at_application:
+  - 町内在住の認知症高齢者を在宅で介護する家族など
+  - 心臓ペースメーカーを使う方は利用できない
+  - 利用申請書と同意書を提出する
+  where: 福祉こども課 福祉グループ
+  url: https://www.town.kagamiishi.fukushima.jp/kurashi/kenko_fukushi/koureisha/009448.html
+  confidence: high
+  amount: 基本料金は月額1,200円（税込1,320円）。生活保護・非課税世帯は基本料金と交換用バッテリー代を町が負担。電話対応200円、現場急行10,000円などは利用時のみ
+- category: iro
+  name: 寝たきり高齢者等介護手当
+  name_on_page: 寝たきり高齢者等介護手当支給事業
+  summary: 寝たきり高齢者等を在宅で介護する家族に、月1万円の手当を支給する。
+  who:
+    household:
+    - with_family
+    - elderly_only
+    - alone_daytime
+    at_home: true
+  at_application:
+  - 町内に住所があり、常時家庭で寝たきり高齢者等を介護し、同居が6か月以上
+  - 寝たきり・認知症は65歳以上で要介護4・5、在宅で6か月以上
+  - または重度心身障がい者（児）で同程度以上の方
+  - 手当を受けても紙おむつ給付券の支給は続く
+  where: 福祉こども課
+  url: https://www.town.kagamiishi.fukushima.jp/kurashi/kenko_fukushi/koureisha/010824.html
+  confidence: high
+  amount: 月額1万円（在宅期間が20日以上の月が対象）
+- category: hochoki
+  name: 高齢者の補聴器購入費の助成（生きがい活動応援事業）
+  name_on_page: 鏡石町高齢者生きがい活動応援（補聴器購入費助成）事業
+  summary: 65歳以上で町民税非課税の方の補聴器購入費を、2万円を上限に助成する。
+  who:
+    age_min: 65
+    tax:
+    - household_exempt
+    - self_exempt
+    flags:
+    - hearing_difficulty
+  at_application:
+  - 耳鼻科医が、聴力低下で日常生活に支障があり装用が必要と認めた
+  - 聴力が両耳70dB以上など重い難聴の方は対象外
+  - 過去5年以内にこの要綱による助成を受けていない
+  - 町民税等の滞納がない
+  - 補聴器の購入前に申請し、医師の証明書と見積書を添える
+  where: 福祉こども課（健康福祉センター内）
+  url: https://www.town.kagamiishi.fukushima.jp/kurashi/kenko_fukushi/koureisha/011645.html
+  confidence: high
+  amount: 助成対象費用の全額。上限20,000円
+- category: jutaku
+  name: 高齢者住宅改修費の助成（高齢者にやさしい住まいづくり）
+  name_on_page: 高齢者住宅改修費助成事業
+  summary: 転倒等で要介護にならないための住宅改修費の9割（上限18万円）を助成する。
+  who: {}
+  at_application:
+  - 町内に住所があり、おおむね65歳以上で要介護認定を受けていない
+  - 同一世帯の生計中心者の年間所得が限度額内
+  - 事前に調査と申請が必要。すでに改修したものは対象外
+  where: 福祉こども課、地域包括支援センター
+  url: https://www.town.kagamiishi.fukushima.jp/kurashi/kenko_fukushi/koureisha/008460.html
+  confidence: high
+  amount: 対象費用の10分の9以内、上限18万円
+not_found:
+- haishoku
+- koken
+- mimamori
+- gaishutsu
+- nichijo-yogu
+- kaigo-yohin

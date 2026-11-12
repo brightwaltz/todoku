@@ -1,0 +1,144 @@
+city: '074055'
+name: 西会津町
+site: www.town.nishiaizu.fukushima.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: kaigo-yohin
+  name: 在宅高齢者の紙おむつ購入券
+  name_on_page: 在宅高齢者等福祉サービス事業
+  summary: 寝たきりや認知症の在宅高齢者に、紙おむつの購入券を毎月給付する。
+  who:
+    at_home: true
+  at_application:
+  - 疾病・老衰等で寝たきりか認知症で、日常生活に支障のあるおおむね65歳以上
+  - または身体障害者手帳1・2級かそれと同程度の65歳未満の人
+  - 介護認定調査等で排泄全介助の人（頁の注記）
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+  amount: 1カ月あたり3,000円分のおむつ購入券
+- category: ribiyo
+  name: 在宅高齢者の散髪券
+  name_on_page: 在宅高齢者等福祉サービス事業
+  summary: 紙おむつの対象者と同じ人に、散髪券を2か月ごとに給付する。
+  who:
+    at_home: true
+  at_application:
+  - 紙おむつの対象者と同じ（寝たきり・認知症等）
+  - 自力で車椅子歩行できる人、座位を保てる人は対象外
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+  amount: 2か月あたり3,500円分の散髪券
+- category: sonota
+  name: 在宅介護者リフレッシュサービス
+  name_on_page: 在宅介護者リフレッシュサービス事業
+  summary: 寝たきり高齢者等を介護する家族に、日帰り・宿泊・ショートステイ・理美容を提供する。
+  who: {}
+  at_application:
+  - 在宅で寝たきり高齢者等を常時介護している人
+  - 要介護者が入院・施設入所中は対象外
+  - 要介護者は寝たきり度B・C以上か認知症自立度3以上
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+- category: nichijo-yogu
+  name: 自動消火器・火災警報器の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 寝たきり・一人暮らし高齢者等に、自動消火器と火災警報器を給付する。
+  who:
+    tax:
+    - household_exempt
+  at_application:
+  - おおむね65歳以上の寝たきり・一人暮らし高齢者等
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+- category: nichijo-yogu
+  name: 電磁調理器の給付
+  name_on_page: 高齢者日常生活用具給付等事業
+  summary: 防火の配慮が必要な一人暮らし高齢者等に、電磁調理器を給付する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の一人暮らし高齢者等
+  - 心身機能の低下で防火等の配慮が必要
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+- category: kinkyu-tsuho
+  name: 緊急通報装置の貸与
+  name_on_page: 高齢者日常生活用具給付等事業（緊急通報システム）
+  summary: ひとり暮らし高齢者等に、操作が簡単な緊急通報装置を貸与する。
+  who: {}
+  at_application:
+  - おおむね65歳以上のひとり暮らし高齢者等で見守りの必要な人
+  - 所得に応じた費用負担がある
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+  amount: 基本料金月額4,620円
+- category: shingu
+  name: 寝具類の洗濯乾燥消毒
+  name_on_page: 寝具類等洗濯乾燥消毒サービス
+  summary: 専門業者が在宅で使う寝具類の洗濯・乾燥・消毒を年1回行う。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者・身体障がい等で寝具の衛生管理が困難
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+  amount: 利用者負担は実費の1割程度
+- category: haishoku
+  name: 高齢者等配食サービス
+  name_on_page: 高齢者等配食サービス事業
+  summary: 一人暮らし高齢者等に、毎週木曜に夕食の弁当を届け安否を確認する。
+  who:
+    household:
+    - alone
+    - elderly_only
+    at_home: true
+  at_application:
+  - おおむね65歳以上の単身世帯・高齢者のみ世帯の高齢者等
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+  amount: 1食あたり380円（利用者負担）
+- category: haikai
+  name: 見守りQRコード
+  name_on_page: 見守りQRコード事業
+  summary: 専用QRコードを衣類等に貼り、行方不明時に身元を特定できるようにする。
+  who: {}
+  at_application:
+  - 認知症やその他の疾患・障がい等で見守りが必要な人
+  where: 福祉介護課 福祉係 0241-45-2214
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/4/759.html
+  confidence: high
+  amount: 無料
+- category: gaishutsu
+  name: 運転免許自主返納者へのバス回数券・商品券
+  name_on_page: 運転免許証自主返納支援事業
+  summary: 65歳以上で免許を自主返納した人に、町民バス回数券か商品券を交付する。
+  who:
+    age_min: 65
+  at_application:
+  - 平成30年4月1日以降に免許を返納（失効含む）し運転経歴証明書がある
+  - 西会津町に住民票がある
+  - 町税等を滞納していない
+  - 1人1回限り
+  where: 町民税務課 町民生活係（町役場）
+  url: https://www.town.nishiaizu.fukushima.jp/soshiki/3/5607.html
+  confidence: high
+  amount: 町民バス回数券または共通商品券、1万円単位で上限3万円
+not_found:
+- iro
+- koken
+- hochoki
+- jutaku
+- mimamori
+- chusha
+- yutai

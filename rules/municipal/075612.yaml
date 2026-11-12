@@ -1,0 +1,77 @@
+city: '075612'
+name: 新地町
+site: www.shinchi-town.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: ribiyo
+  name: 高齢者等の在宅訪問理美容の助成
+  name_on_page: 高齢者等在宅訪問理美容サービス
+  summary: 外出が困難な要介護3以上などの方が、自宅で理美容を受ける際の料金を助成する。
+  who: {}
+  at_application:
+  - 町内に住所があり、理美容院への外出が困難
+  - 要介護3・4・5の認定を受けている
+  - または身体障害者手帳1級か2級を持っている
+  where: 保健福祉課（福祉係）
+  url: https://www.shinchi-town.jp/soshiki/7/ribiyou-shinnchi.html
+  confidence: high
+  amount: 1回の利用につき1,000円を助成（年間4回まで）
+- category: kaigo-yohin
+  name: 紙おむつ購入の助成（利用券の交付）
+  name_on_page: 紙おむつ助成事業
+  summary: 在宅で紙おむつを使う寝たきり・認知症の高齢者などに、紙おむつの利用券を交付する。
+  who:
+    at_home: true
+    flags:
+    - uses_diapers
+  at_application:
+  - 新地町に1年以上継続して住所がある
+  - 紙おむつを使う状態が6か月以上続いている
+  - 寝たきりのおおむね65歳以上（ベッド中心で2項目以上介助）
+  - または認知症の症状があるおおむね65歳以上（3項目以上）
+  - または身体障害者手帳1級か2級を持っている
+  where: 保健福祉課（福祉係）
+  url: https://www.shinchi-town.jp/soshiki/7/omutu-shinchi.html
+  confidence: high
+  amount: 月5,000円まで（利用券、年12回まで）
+- category: kinkyu-tsuho
+  name: 緊急通報装置などの利用支援
+  name_on_page: 緊急通報システム事業
+  summary: 高齢者のみの世帯などに、緊急通報装置・火災通報装置・見守りセンサーの利用を支援する。
+  who: {}
+  at_application:
+  - 65歳以上の高齢者のみの世帯
+  - またはひとり暮らしの重度身体障害者等
+  - またはその他町長が認めた者を抱える高齢者世帯
+  - 緊急時に対応できる親族等の協力員を3名登録する
+  where: 保健福祉課（福祉係）
+  url: https://www.shinchi-town.jp/soshiki/7/kinkyu-shinchi.html
+  confidence: high
+  amount: 利用料は国の日常生活用具費用徴収基準額表で計算（装置の追加やオプションは別途自己負担）
+- category: gaishutsu
+  name: しんちゃんタクシー（タクシー助成）
+  name_on_page: しんちゃんタクシー
+  summary: 高齢者等の買物や通院のため、登録証の提示で定額料金でタクシーを使える助成。
+  who: {}
+  at_application:
+  - 町内に住所がある高齢者（70歳以上）等
+  - 事前に利用者登録をして登録証の交付を受ける
+  where: 企画政策課（役場）
+  url: https://www.shinchi-town.jp/soshiki/2/koutuusyuppatusiki.html
+  confidence: low
+not_found:
+- haishoku
+- haikai
+- iro
+- koken
+- hochoki
+- jutaku
+- shingu
+- mimamori
+- nichijo-yogu
+- yutai

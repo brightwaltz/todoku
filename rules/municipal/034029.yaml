@@ -1,0 +1,107 @@
+city: 034029
+name: 平泉町
+site: www.town.hiraizumi.iwate.jp
+site_level: wikidata
+review:
+  read_by: Claude Sonnet 5.5（サブエージェント、公式サイトを読んだ）
+  checked_by: 機械（公式のホスト・頁の取り直し・名前の一致）
+  date: '2026-11-12'
+  judged_by: 自動の裁定役（Claude Sonnet 5.5、柴田先生のこれまでの基準）
+programs:
+- category: haishoku
+  name: 訪問給食（昼食のお弁当配達と安否確認）
+  name_on_page: 訪問給食サービス事業
+  summary: 調理が難しいひとり暮らしの高齢者に、昼のお弁当を届けて安否も確認する。
+  who: {}
+  at_application:
+  - おおむね65歳以上の単身世帯、高齢者のみの世帯、または身体障害者
+  - 老衰や心身の障害などで食事の調理が困難
+  where: 保健センター（配達は平泉町社会福祉協議会に委託）
+  url: https://www.town.hiraizumi.iwate.jp/%E8%A8%AA%E5%95%8F%E7%B5%A6%E9%A3%9F%E3%83%BB%E8%A8%AA%E5%95%8F%E7%90%86%E5%AE%B9-20362/
+  confidence: high
+  amount: 1食450円（食材料の実費）。週6回まで（日曜を除く）
+- category: ribiyo
+  name: 訪問理容
+  name_on_page: 訪問理容サービス事業
+  summary: 理容店に行けない高齢者の自宅へ理容師が出向いて理容をする。
+  who: {}
+  at_application:
+  - おおむね65歳以上の高齢者または身体障害者
+  - 老衰・心身の障害・疾病などで一般の理容店の利用が困難
+  where: 保健センター
+  url: https://www.town.hiraizumi.iwate.jp/%E8%A8%AA%E5%95%8F%E7%B5%A6%E9%A3%9F%E3%83%BB%E8%A8%AA%E5%95%8F%E7%90%86%E5%AE%B9-20362/
+  confidence: high
+  amount: 1回3,000円、年度に4回まで
+- category: iro
+  name: 在宅寝たきり高齢者の介護手当
+  name_on_page: 在宅寝たきり高齢者介護手当支給事業
+  summary: 要介護4・5の方を在宅で介護する同居の家族に、月額の手当を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    at_home: true
+  at_application:
+  - 要介護者と同居し、常時介護している方が対象
+  - 課税等の要件はない
+  where: 保健センター
+  url: https://www.town.hiraizumi.iwate.jp/%e4%bb%8b%e8%ad%b7%e7%94%a8%e5%93%81%e6%94%af%e7%b5%a6%e3%83%bb%e6%89%8b%e5%bd%93-20354/
+  confidence: high
+  amount: 要介護者1人につき月6,000円
+- category: kaigo-yohin
+  name: 家族介護用品の支給
+  name_on_page: 家族介護用品支給事業
+  summary: 要介護4・5の方を介護する同居家族に、紙おむつなどの介護用品を支給する。
+  who:
+    care_levels:
+    - care4
+    - care5
+    household:
+    - elderly_only
+    - alone_daytime
+    - with_family
+    tax:
+    - household_exempt
+    at_home: true
+  at_application:
+  - 要介護者と同居し、常時介護している方が対象
+  - 町民税非課税の世帯
+  where: 保健センター
+  url: https://www.town.hiraizumi.iwate.jp/%e4%bb%8b%e8%ad%b7%e7%94%a8%e5%93%81%e6%94%af%e7%b5%a6%e3%83%bb%e6%89%8b%e5%bd%93-20354/
+  confidence: high
+  amount: 要介護者1人につき月8,000円まで（紙おむつ・尿とりパット・使い捨て手袋・清拭剤など）
+- category: haikai
+  name: 徘徊SOSネットワークの事前登録と見守りステッカー
+  name_on_page: 徘徊S0Sネットワーク
+  summary: 徘徊のおそれのある認知症の方の情報を登録し、行方不明時の早期発見に役立てる。
+  who:
+    flags:
+    - wandering_risk
+  at_application:
+  - 認知症により徘徊するおそれのある高齢者等
+  - あらかじめ情報の登録が必要
+  where: 保健センター
+  url: https://www.town.hiraizumi.iwate.jp/%E8%AA%8D%E7%9F%A5%E7%97%87%E3%81%82%E3%82%93%E3%81%97%E3%82%93%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9-20366/
+  confidence: high
+  amount: 登録した方に見守りステッカーを1人20枚配布
+- category: jutaku
+  name: 高齢者・障がい者にやさしい住まいづくり（住宅改造費の補助）
+  name_on_page: 高齢者及び障がい者にやさしい住まいづくり事業
+  summary: 手すり設置や段差解消などの住宅改良費の一部を、介護保険の分に上乗せして補助する。
+  who: {}
+  at_application:
+  - 要介護認定を受けた方、または身体障害者手帳1〜3級の方（内部・聴覚障がいを除く）
+  - 所得制限がある
+  - 新築・増築・賃貸住宅・補助決定前の着工は対象外
+  where: 保健センター
+  url: https://www.town.hiraizumi.iwate.jp/%E4%BA%BA%E3%81%AB%E3%82%84%E3%81%95%E3%81%97%E3%81%84%E4%BD%8F%E3%81%BE%E3%81%84%E3%81%A5%E3%81%8F%E3%82%8A-20361/
+  confidence: high
+  amount: 改修費80万円までを対象に、介護保険等の20万円を引いた額の3分の2以内、上限40万円
+not_found:
+- koken
+- hochoki
+- shingu
