@@ -13,9 +13,9 @@
   1 つの自治体が --max-usd-each を超えたら、その自治体はやめる（raw を書かない）。
 
 使い方（鍵は先生が `!` で渡す。費用がかかる）：
-  uv run --env-file ~/.config/bwcj26/.env python scripts/municipal_api.py run --pilot --max-usd 10
-  uv run --env-file ~/.config/bwcj26/.env python scripts/municipal_api.py run --codes 42,43 --max-usd 3
-  uv run --env-file ~/.config/bwcj26/.env python scripts/municipal_api.py run --todo 100 --max-usd 50
+  uv run --env-file "$TODOKU_ENV_FILE" python scripts/municipal_api.py run --pilot --max-usd 10
+  uv run --env-file "$TODOKU_ENV_FILE" python scripts/municipal_api.py run --codes 42,43 --max-usd 3
+  uv run --env-file "$TODOKU_ENV_FILE" python scripts/municipal_api.py run --todo 100 --max-usd 50
   uv run python scripts/municipal_api.py run --pilot --dry-run      （鍵なし。何を回すかだけ出す）
 """
 from __future__ import annotations
@@ -33,7 +33,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import municipal_check as mc  # noqa: E402
 
-WORK = Path.home() / "dev" / "todoku-municipal-work"
+WORK = mc.WORK
 PREF_YAML = mc.ROOT / "rules" / "pref_programs.yaml"
 MODEL = "claude-sonnet-5-5"
 # 1M トークンあたりのドル（claude-api スキルの models.md、2026-11-07 に読んだ）。キャッシュの書き込みは 5 分で 1.25 倍
@@ -83,7 +83,7 @@ def reader_system(pref: bool) -> str:
         return base
     head = (WORK / "INSTRUCTIONS_PREF.md").read_text().split("\n---\n", 1)[0]
     head = _swap(head, [
-        ("前の調べの記録があります。`/Users/kenichi.shibata/dev/todoku-municipal/rules/pref_programs.yaml` の、"
+        (f"前の調べの記録があります。`{Path.home() / 'dev' / 'todoku-municipal' / 'rules' / 'pref_programs.yaml'}` の、"
          "あなたの都道府県の段（キーは 2 桁のコード）を最初に読んでください。",
          "前の調べの記録（rules/pref_programs.yaml の、あなたの都道府県の段）を、依頼文に載せました。最初に読んでください。"),
     ], "INSTRUCTIONS_PREF.md")

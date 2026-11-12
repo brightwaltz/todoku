@@ -1,4 +1,4 @@
-# 鍵はリポジトリの外（~/.config/bwcj26/.env）に置く。念のためここでも除外する
+# 鍵はリポジトリの外のファイルに置き、uv run --env-file "$TODOKU_ENV_FILE"（そのファイルのパス）で渡す。念のためここでも除外する
 .env
 .env.*
 !.env.example

@@ -9,10 +9,10 @@
 - 費用は呼び出しごとに usage から数え、--max-usd を超えそうなら止める。
 
 使い方（鍵は先生が `!` で渡す。費用がかかる）：
-  uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py facts --max-usd 1
-  uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py facts --facts needs_daily_help --max-usd 1   （11/4：裁定のあとに足す事実）
-  uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py read --model claude-fable-5-1 --programs 1,11 --label pilot --max-usd 3
-  uv run --env-file ~/.config/bwcj26/.env python eval/blind_read.py read --model claude-sonnet-5-5 --programs all --label main --max-usd 8
+  uv run --env-file "$TODOKU_ENV_FILE" python eval/blind_read.py facts --max-usd 1
+  uv run --env-file "$TODOKU_ENV_FILE" python eval/blind_read.py facts --facts needs_daily_help --max-usd 1   （11/4：裁定のあとに足す事実）
+  uv run --env-file "$TODOKU_ENV_FILE" python eval/blind_read.py read --model claude-fable-5-1 --programs 1,11 --label pilot --max-usd 3
+  uv run --env-file "$TODOKU_ENV_FILE" python eval/blind_read.py read --model claude-sonnet-5-5 --programs all --label main --max-usd 8
   （11/6：ほかの地域の事例だけ）… read --model claude-fable-5-1 --programs all --cases c31-c42 --label add --max-usd 10
 結果は eval/out/blind/（.gitignore 済み。町田市の引用を含むのでリポジトリに入れない）。
 """

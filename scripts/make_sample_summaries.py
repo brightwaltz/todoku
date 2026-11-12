@@ -10,7 +10,7 @@
 使い方：
   見積もり（API を呼ばない）：uv run python scripts/make_sample_summaries.py --estimate
   試し（FakeClaude で流し、書き戻さない）：uv run python scripts/make_sample_summaries.py --fake
-  本物：uv run --env-file ~/.config/bwcj26/.env python scripts/make_sample_summaries.py
+  本物：uv run --env-file "$TODOKU_ENV_FILE" python scripts/make_sample_summaries.py
 """
 
 from __future__ import annotations

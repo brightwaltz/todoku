@@ -18,6 +18,7 @@ from __future__ import annotations
 import datetime as dt
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -56,6 +57,8 @@ FLAGS = ["uses_diapers", "hearing_difficulty", "dementia_diagnosis", "wandering_
 LINE_MAX = 60
 LINES_MAX = 5
 UA = "Mozilla/5.0 (compatible; todoku-municipal-check/1.0; +https://github.com/brightwaltz/todoku)"
+# 作業の置き場（リポジトリの外）。環境変数 TODOKU_MUNICIPAL_WORK で変えられる
+WORK = Path(os.environ.get("TODOKU_MUNICIPAL_WORK") or Path.home() / "dev" / "todoku-municipal-work")
 
 
 def norm(s: str) -> str:
@@ -227,8 +230,8 @@ def to_yaml(city: dict, date: str, read_by: str) -> dict:
 
 
 def _wikidata() -> dict[str, set[str]]:
-    """団体コード → 公式サイトのホスト（~/dev/todoku-municipal-work/sites/sites.tsv。Wikidata の CC0 のデータから作った）。"""
-    path = Path.home() / "dev" / "todoku-municipal-work" / "sites" / "sites.tsv"
+    """団体コード → 公式サイトのホスト（作業の置き場（WORK）の sites/sites.tsv。Wikidata の CC0 のデータから作った）。"""
+    path = WORK / "sites" / "sites.tsv"
     if not path.exists():
         return {}
     out = {}
