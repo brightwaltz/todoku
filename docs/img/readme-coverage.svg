@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" role="img" aria-labelledby="t d">
   <title id="t">とどくが扱う範囲：3 つの層</title>
-  <desc id="d">確かな層は規則で判定する 35 件（国 17・東京都 1・町田市 10・横浜市 7）。気づくための候補は市区町村の事業の型 5 件で、全国の実施率つき。第 3 の層は公式サイトから Claude が自動で集めた 8,453 件で、人は照らしていない印つき。</desc>
+  <desc id="d">確かな層は規則で判定する 35 件（国 17・東京都 1・町田市 10・横浜市 7）。気づくための候補は市区町村の事業の型 5 件で、全国の実施率つき。第 3 の層は公式サイトから Claude が自動で集めた 8,812 件で、人は照らしていない印つき。</desc>
   <style>
     text { font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', Meiryo, sans-serif; }
     .title { font-size: 20px; font-weight: 700; fill: #1f2328; }
@@ -37,8 +37,8 @@
   <rect x="28" y="242" width="904" height="76" rx="12" fill="#ffffff" stroke="#8a8f96" stroke-width="2" stroke-dasharray="8 6"/>
   <text class="k" x="56" y="274" fill="#4b5157">第 3 の層</text>
   <text class="k2" x="56" y="298">人は照らしていない印つき</text>
-  <text class="v" x="250" y="274">46 都道府県・771 市・東京 23 区・165 町村の公式サイトから</text>
+  <text class="v" x="250" y="274">46 都道府県・771 市・東京 23 区・232 町村の公式サイトから</text>
   <text class="v" x="250" y="298">Claude が集めた補助・助成・サービスを、お住まいに合わせて別の枠に</text>
-  <text class="num" x="880" y="292" text-anchor="end" fill="#4b5157">8,453</text>
+  <text class="num" x="880" y="292" text-anchor="end" fill="#4b5157">8,812</text>
   <text class="unit" x="912" y="292" text-anchor="end" fill="#4b5157">件</text>
 </svg>
