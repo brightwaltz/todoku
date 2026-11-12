@@ -15,7 +15,7 @@
 
 使い方（API の料金がかかる。鍵はリポジトリの外のファイルから渡す）：
   uv run python eval/compare_models.py --dry-run                         見込みの費用だけを出す
-  uv run --env-file ~/.config/bwcj26/.env python eval/compare_models.py   3 モデルで 30 件
+  uv run --env-file "$TODOKU_ENV_FILE" python eval/compare_models.py   3 モデルで 30 件
   uv run python eval/compare_models.py --fake                            鍵なし（試験モードの読み取り。道具の確かめ用）
   uv run python eval/compare_models.py --rescore eval/out/compare-models-….json   保存した読み取りを今の事例で数え直す（API は呼ばない）
 """

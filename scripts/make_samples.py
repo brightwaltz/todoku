@@ -2,7 +2,7 @@
 
 画面の見本は、ここで書いた読み取りの結果をそのまま使う（見本のときはサーバが Claude を呼ばない）。
 鍵は環境変数 ANTHROPIC_API_KEY から読む。この台本は鍵のファイルを開かない。
-使い方：uv run --env-file ~/.config/bwcj26/.env python scripts/make_samples.py
+使い方：uv run --env-file "$TODOKU_ENV_FILE" python scripts/make_samples.py
 """
 
 from __future__ import annotations

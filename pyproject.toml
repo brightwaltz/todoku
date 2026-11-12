@@ -3,7 +3,7 @@ name = "todoku"
 version = "0.1.0"
 description = "高齢の方や介護する家族が困りごとを書くと、尋ねていない公的制度まで、判定の理由・申請先・持ち物・出典つきで示す相談窓口"
 authors = [
-    { name = "Kenichi Shibata", email = "brightwaltz@gmail.com" }
+    { name = "Kenichi Shibata", email = "1144934+brightwaltz@users.noreply.github.com" }
 ]
 requires-python = ">=3.12"
 dependencies = [
